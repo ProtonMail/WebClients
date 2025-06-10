@@ -315,6 +315,9 @@
       "Download anyway": [
         "Last ned uansett"
       ],
+      "Download logs": [
+        "Last ned logger"
+      ],
       "Edit": [
         "Rediger"
       ],
@@ -402,8 +405,14 @@
       "Help and resources": [
         "Hjelp og ressurser"
       ],
+      "Hide": [
+        "Skjul"
+      ],
       "Hide advanced PGP settings": [
         "Skjul avanserte PGP-innstillinger"
+      ],
+      "Hide more benefits": [
+        "Skjul flere fordeler"
       ],
       "Image could not be loaded with tracker protection.": [
         "Bilde kunne ikke lastes med sporingsbeskyttelse."
@@ -500,6 +509,9 @@
       ],
       "More actions": [
         "Flere handlinger"
+      ],
+      "More benefits": [
+        "Flere fordeler"
       ],
       "More info: ${ safeTitle }": [
         "Mer informasjon: ${ safeTitle }"
@@ -734,6 +746,9 @@
       ],
       "Show more": [
         "Vis mer"
+      ],
+      "Show more benefits": [
+        "Vis flere fordeler"
       ],
       "Show options": [
         "Vis alternativer"
@@ -2348,11 +2363,6 @@
         "Forfalt faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "bruk Easy Switch-importassistenten"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert og kryptert miljø."
@@ -2476,6 +2486,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "bruk Easy Switch-importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3596,6 +3611,11 @@
         "Tjenester"
       ]
     },
+    "Header": {
+      "Drawer": [
+        "Sidepanel"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Fant ${ itemsCount } forslag, bruk tastaturet til å navigere.",
@@ -4498,9 +4518,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Hvis du avbryter, mister du tilgang til ${ boldPlanTitle } med én gang, og du blir nedgradert til ${ boldProtonFree }-planen. Dersom forbruket overskrider grensene for gratisplanen, kan du oppleve begrenset tilgang til produktfunksjoner og data."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
       ],
@@ -5088,9 +5105,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "For å fortsette å nyte ${ boldPlanTitle } gratis til ${ boldCancelDate }, ikke avbryt."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "For å laste ned ${ DOCS_APP_NAME }-filene, åpne de i ${ DOCS_APP_NAME } og eksporter dem."
       ],
@@ -5226,9 +5240,6 @@
       "What do you want to do?": [
         "Hva ønsker du å gjøre?"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Dette gir du avkall på når du avbestiller ${ boldPlanTitle }:"
-      ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "Når dialogboksen åpnes, endre \"Destinasjon\" til \"Lagre som PDF\", og trykk deretter på Lagre."
       ],
@@ -5305,9 +5316,6 @@
       ],
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
-      ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Du kan fortsatt få tilgang til alle dataene på kontoen din. Du kan abonnere på nytt når som helst for å fortsette å nyte alle funksjonene våre."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
@@ -5421,9 +5429,6 @@
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Din gratis prøveversjon av ${ boldPlanTitle } er avbrutt, og kontoen din ${ boldUserEmail } er nedgradert til ${ boldProtonFree }."
-      ],
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
       ],
@@ -5447,9 +5452,6 @@
       ],
       "Your online activity is protected": [
         "Nettaktiviteten din er beskyttet"
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Din organisasjon ${ boldOrganizationName } er deaktivert og alle brukerlisensene har blitt fjernet."
       ],
       "Your password was leaked:": [
         "Passordet ditt ble lekket:"
@@ -5584,6 +5586,9 @@
       ],
       "Address": [
         "Adresse"
+      ],
+      "Alias title": [
+        "Aliastittel"
       ],
       "Anderson": [
         "Andersen"
@@ -6601,17 +6606,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planer starter fra ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -6633,6 +6627,17 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planer starter fra ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
       ]
     },
     "new_plans: feature": {
@@ -7177,6 +7182,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Få sikker tilgang til internett fra hvor som helst med viktig nettverksovervåking"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Sikker skylagring som lar deg lagre, synkronisere og dele filer lett og trygt."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
@@ -7894,6 +7902,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Tilgang til alle ${ BRAND_NAME }s apper og premiumfunksjoner"
+      ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
       ],
@@ -9042,25 +9053,6 @@
         "For ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } lagringsplass per bruker"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } gir deg alle apper, alle funksjoner, tidlig tilgang til nye utgivelser og alt du trenger for å ha kontroll over dataene dine og sikkerheten."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } egendefinert e-postdomene",
-        "${ planNumberOfDomains } egendefinerte e-postdomener"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-postadresse",
-        "${ planNumberOfEmails } e-postadresser"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mapper, etiketter og egendefinerte filtre"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagringsplass"
@@ -9100,6 +9092,25 @@
       ],
       "Your privacy is our mission": [
         "Personvernet ditt er vårt oppdrag"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagringsplass per bruker"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } gir deg alle apper, alle funksjoner, tidlig tilgang til nye utgivelser og alt du trenger for å ha kontroll over dataene dine og sikkerheten."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } egendefinert e-postdomene",
+        "${ planNumberOfDomains } egendefinerte e-postdomener"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-postadresse",
+        "${ planNumberOfEmails } e-postadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mapper, etiketter og egendefinerte filtre"
       ]
     },
     "Subscription renewal state": {
@@ -9888,6 +9899,9 @@
       ],
       "Untitled document ${ date }": [
         "Dokument uten tittel ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Regneark uten tittel ${ date }"
       ],
       "Upgrade complete!": [
         "Oppgradering fullført!"

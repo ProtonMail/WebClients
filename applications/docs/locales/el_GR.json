@@ -315,6 +315,9 @@
       "Download anyway": [
         "Λήψη οπωσδήποτε"
       ],
+      "Download logs": [
+        "Λήψη αρχείων καταγραφής"
+      ],
       "Edit": [
         "Επεξεργασία"
       ],
@@ -402,8 +405,14 @@
       "Help and resources": [
         "Βοήθεια και πληροφορίες"
       ],
+      "Hide": [
+        "Απόκρυψη"
+      ],
       "Hide advanced PGP settings": [
         "Απόκρυψη προηγμένων ρυθμίσεων PGP"
+      ],
+      "Hide more benefits": [
+        "Απόκρυψη περισσότερων οφελών"
       ],
       "Image could not be loaded with tracker protection.": [
         "Η εικόνα απέτυχε να φορτωθεί με προστασία παρακολούθησης."
@@ -500,6 +509,9 @@
       ],
       "More actions": [
         "Περισσότερες ενέργειες"
+      ],
+      "More benefits": [
+        "Περισσότερα οφέλη"
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
@@ -734,6 +746,9 @@
       ],
       "Show more": [
         "Εμφάνιση περισσότερων"
+      ],
+      "Show more benefits": [
+        "Εμφάνιση περισσότερων οφελών"
       ],
       "Show options": [
         "Εμφάνιση ενεργειών"
@@ -2348,11 +2363,6 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Το ${ DOCS_SHORT_APP_NAME } στο ${ DRIVE_APP_NAME } σάς επιτρέπει να συνεργάζεστε με άλλους σε ένα ασφαλές, κρυπτογραφημένο περιβάλλον."
@@ -2476,6 +2486,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4192,6 +4207,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Τουλάχιστον ${ BETTER_PASSWORD_LENGTH } χαρακτήρες"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Στο τέλος της δοκιμαστικής περιόδου σας ${ boldCancelDate }, το πλάνο σας θα υποβαθμιστεί σε ${ boldProtonFree }. Όλοι οι λογαριασμοί χρηστών θα αφαιρεθούν από τον οργανισμό σας."
+      ],
       "Attention required": [
         "Απαιτείται προσοχή"
       ],
@@ -4503,11 +4521,11 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Εάν ακυρώσετε, θα χάσετε την πρόσβαση στο ${ boldPlanTitle } άμεσα και θα υποβαθμιστείτε στο πλάνο ${ boldProtonFree }. Εάν η χρήση σας ξεπεράσει τα όρια του δωρεάν πλάνου, ίσως να αντιμετωπίσετε περιορισμένη πρόσβαση σε δυνατότητες του προϊόντος και τα δεδομένα σας."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Εάν ακυρώσετε, η συνδρομή σας ${ planTitle } δε θα ανανεωθεί όταν λήξει στις ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Αν αλλάξετε γνώμη, μπορείτε να εγγραφείτε ξανά οποιαδήποτε στιγμή. Λυπούμαστε που φεύγετε!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
@@ -5093,9 +5111,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Για να ολοκληρώσετε την πληρωμή σας, στείλτε ${ btcAmountBold } στην παρακάτω διεύθυνση."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Για να συνεχίσετε να απολαμβάνετε το ${ boldPlanTitle } δωρεάν έως το ${ boldCancelDate }, μην ακυρώσετε."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Για να κατεβάσετε τα αρχεία ${ DOCS_APP_NAME }, ανοίξτε τα στο ${ DOCS_APP_NAME } και εξαγάγετε τα."
       ],
@@ -5231,9 +5246,6 @@
       "What do you want to do?": [
         "Τι θέλετε να κάνετε;"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Τι εγκαταλείπετε όταν ακυρώσετε το ${ boldPlanTitle }:"
-      ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "Όταν ανοίξει ο διάλογος, αλλάξτε τον \"Προορισμό\" σε \"Αποθήκευση ως PDF\" και, στη συνέχεια, πατήστε Αποθήκευση."
       ],
@@ -5311,9 +5323,6 @@
       "You can now return to the application to continue": [
         "Τώρα μπορείτε να επιστρέψετε στην εφαρμογή για να συνεχίσετε"
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Μπορείτε ακόμα να αποκτήσετε πρόσβαση σε όλα τα δεδομένα του λογαριασμού σας. Μπορείτε να εγγραφείτε ξανά ανά πάσα στιγμή για να συνεχίσετε να απολαμβάνετε όλες τις δυνατότητες μας."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
       ],
@@ -5355,6 +5364,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Θα χάσετε επίσης την πρόσβαση στις δυνατότητες του ${ boldPlanTitle }:"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }.",
@@ -5426,9 +5438,6 @@
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Η δωρεάν δοκιμή σας του ${ boldPlanTitle } έχει ακυρωθεί, και ο λογαριασμός σας ${ boldUserEmail } έχει υποβαθμιστεί σε ${ boldProtonFree }."
-      ],
       "Your information was found on ${ displayedDate }": [
         "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
       ],
@@ -5453,9 +5462,6 @@
       "Your online activity is protected": [
         "Η δραστηριότητά σας στο διαδίκτυο προστατεύεται"
       ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Η οργανισμός σας ${ boldOrganizationName } είναι απενεργοποιημένος και όλες οι θέσεις χρηστών της έχουν αφαιρεθεί."
-      ],
       "Your password was leaked:": [
         "Ο κωδικός πρόσβασής σας διέρρευσε:"
       ],
@@ -5477,6 +5483,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Η δοκιμή σας θα τελειώσει σε ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Θα χάσετε την πρόσβαση σε ${ boldPlanTitle } στις ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
       ]
     },
     "info": {
@@ -6552,17 +6564,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Πλάνα που ξεκινούν από ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -6584,6 +6585,17 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Πλάνα που ξεκινούν από ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
       ]
     },
     "new_plans: feature": {
@@ -7069,12 +7081,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
       ],
-      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "1 TB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
-      ],
-      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "200 GB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Προηγμένη ασφάλεια δικτύου και διαχείριση πρόσβασης με αποκλειστικές ασφαλείς Πύλες"
       ],
@@ -7134,6 +7140,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Ασφαλής πρόσβαση στο διαδίκτυο από οπουδήποτε με απαραίτητη παρακολούθηση δικτύου"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Ασφαλής αποθηκευτικός χώρος cloud που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
@@ -7806,6 +7815,23 @@
         "Αποθηκευτικός χώρος"
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Ακυρώστε οποιαδήποτε στιγμή πριν από τότε."
+      ],
+      "Once your full subscription starts...": [
+        "Μόλις ξεκινήσει η πλήρης συνδρομή σας..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Μπορείτε ακόμα να ακυρώσετε εντός 30 ημερών και να λάβετε αναλογική επιστροφή χρημάτων."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Η πλήρης συνδρομή σας ${ planTitle } ξεκινά στις ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Θα μπορείτε να χρησιμοποιήσετε ${ planTitle } δωρεάν μέχρι το τέλος της δοκιμαστικής περιόδου."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Προσθήκη σε υπάρχουσα ομάδα"
@@ -7851,6 +7877,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Πρόσβαση σε όλες τις εφαρμογές ${ BRAND_NAME } και τις premium δυνατότητες"
+      ],
       "Secure vault sharing": [
         "Ασφαλής κοινή χρήση κρύπτης"
       ],
@@ -8999,25 +9028,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
-        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } διεύθυνση email",
-        "${ planNumberOfEmails } διευθύνσεις email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
@@ -9057,6 +9067,25 @@
       ],
       "Your privacy is our mission": [
         "Το απόρρητό σας είναι η αποστολή μας"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
+        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } διεύθυνση email",
+        "${ planNumberOfEmails } διευθύνσεις email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
       ]
     },
     "Subscription renewal state": {
@@ -9914,6 +9943,9 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Η δωρεάν δοκιμή σας λήγει σε ${ trialDurationFormatted } μέρες"
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"

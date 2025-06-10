@@ -315,6 +315,9 @@
       "Download anyway": [
         "Toch downloaden"
       ],
+      "Download logs": [
+        "Logboeken downloaden"
+      ],
       "Edit": [
         "Bewerken"
       ],
@@ -402,8 +405,14 @@
       "Help and resources": [
         "Hulp en bronnen"
       ],
+      "Hide": [
+        "Verbergen"
+      ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
+      ],
+      "Hide more benefits": [
+        "Toon minder voordelen"
       ],
       "Image could not be loaded with tracker protection.": [
         "Afbeelding kan niet worden geladen met trackerbeveiliging."
@@ -500,6 +509,9 @@
       ],
       "More actions": [
         "Meer acties"
+      ],
+      "More benefits": [
+        "Meer voordelen"
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
@@ -734,6 +746,9 @@
       ],
       "Show more": [
         "Meer weergeven"
+      ],
+      "Show more benefits": [
+        "Toon meer voordelen"
       ],
       "Show options": [
         "Opties tonen"
@@ -2356,11 +2371,6 @@
         "Onbetaalde factuur"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
@@ -2484,6 +2494,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4200,6 +4215,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Voer minstens ${ BETTER_PASSWORD_LENGTH } tekens in"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Aan het einde van uw proefversie ${ boldCancelDate } wordt u gedowngraded naar ${ boldProtonFree }. Alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
       "Attention required": [
         "Aandacht vereist"
       ],
@@ -4511,11 +4529,11 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Als u annuleert, verliest u direct toegang tot ${ boldPlanTitle }, en wordt u gedowngraded naar het ${ boldProtonFree } abonnement. Indien uw gebruik de limieten van het gratis abonnement overschrijdt, kunt u beperkte toegang tot productfuncties en uw data ervaren."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Als u van gedachten verandert, kunt u op elk moment opnieuw abonneren. Jammer dat u vertrekt!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
@@ -5101,9 +5119,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Om te blijven genieten van ${ boldPlanTitle } tot ${ boldCancelDate }, annuleer niet."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Om de ${ DOCS_APP_NAME } bestanden te downloaden, open ze in ${ DOCS_APP_NAME } en exporteer ze."
       ],
@@ -5239,9 +5254,6 @@
       "What do you want to do?": [
         "Wat wilt u doen?"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Wat u opgeeft wanneer u ${ boldPlanTitle } annuleert:"
-      ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "Wanneer het dialoogvenster wordt geopend, verander de \"bestemming\" in \"Opslaan als PDF\" en druk dan op Opslaan."
       ],
@@ -5319,9 +5331,6 @@
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "U hebt nog steeds toegang tot al uw accountgegevens. U kunt op elk moment weer abonneren om te blijven genieten van al onze functies."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
       ],
@@ -5363,6 +5372,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "U verliest ook toegang tot ${ boldPlanTitle } functies:"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
@@ -5434,9 +5446,6 @@
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Uw gratis proefperiode van ${ boldPlanTitle } is geannuleerd, en uw account ${ boldUserEmail } is gedowngraded naar ${ boldProtonFree }."
-      ],
       "Your information was found on ${ displayedDate }": [
         "Uw informatie is gevonden op ${ displayedDate }"
       ],
@@ -5461,9 +5470,6 @@
       "Your online activity is protected": [
         "Uw online activiteiten zijn beschermd"
       ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Uw organisatie ${ boldOrganizationName } is uitgeschakeld en al haar gebruikerslicenties zijn verwijderd."
-      ],
       "Your password was leaked:": [
         "Uw wachtwoord werd gelekt:"
       ],
@@ -5485,6 +5491,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Uw proefperiode eindigt over ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "U verliest toegang tot ${ boldPlanTitle } op ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
       ]
     },
     "info": {
@@ -6560,17 +6572,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Plannen vanaf ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -6592,6 +6593,17 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Plannen vanaf ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ]
     },
     "new_plans: feature": {
@@ -7077,12 +7089,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
       ],
-      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
-      ],
-      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "200 GB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd door end-to-end versleuteling."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
       ],
@@ -7142,6 +7148,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Veilig toegang krijgen tot internet vanaf elke locatie met essentiële netwerkmonitoring."
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
@@ -7814,6 +7823,23 @@
         "Opslagruimte"
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "U kunt op elk moment ervoor annuleren."
+      ],
+      "Once your full subscription starts...": [
+        "Zodra uw volledige abonnement ingaat..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "U kunt nog steeds annuleren binnen 30 dagen en een pro-rata restitutie krijgen."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Uw volledige ${ planTitle } abonnement begint op ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "U kunt kosteloos gebruikmaken van ${ planTitle } totdat de proefversie eindigt."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Toevoegen aan bestaande groep"
@@ -7859,6 +7885,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Toegang tot alle ${ BRAND_NAME }-apps en premium functies"
+      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
       ],
@@ -9042,25 +9071,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } opslagruimte per gebruiker"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigen e-maildomein",
-        "${ planNumberOfDomains } eigen e-maildomeinen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadres",
-        "${ planNumberOfEmails } e-mailadressen"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappen, labels en aangepaste filters"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB opslagruimte"
@@ -9100,6 +9110,25 @@
       ],
       "Your privacy is our mission": [
         "Uw privacy is onze missie"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } opslagruimte per gebruiker"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigen e-maildomein",
+        "${ planNumberOfDomains } eigen e-maildomeinen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadres",
+        "${ planNumberOfEmails } e-mailadressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappen, labels en aangepaste filters"
       ]
     },
     "Subscription renewal state": {
@@ -9957,6 +9986,9 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Uw gratis proefversie eindigt op ${ trialDurationFormatted }."
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"

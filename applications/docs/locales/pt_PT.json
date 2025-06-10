@@ -315,6 +315,9 @@
       "Download anyway": [
         "Transferir assim mesmo"
       ],
+      "Download logs": [
+        "Transferir os registos"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -402,8 +405,14 @@
       "Help and resources": [
         "Ajuda e recursos"
       ],
+      "Hide": [
+        "Ocultar"
+      ],
       "Hide advanced PGP settings": [
         "Ocultar definições de PGP avançadas"
+      ],
+      "Hide more benefits": [
+        "Ocultar mais benefícios"
       ],
       "Image could not be loaded with tracker protection.": [
         "Não foi possível carregar a imagem devido à proteção contra rastreadores."
@@ -500,6 +509,9 @@
       ],
       "More actions": [
         "Mais ações"
+      ],
+      "More benefits": [
+        "Mais benefícios"
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
@@ -734,6 +746,9 @@
       ],
       "Show more": [
         "Mostrar mais"
+      ],
+      "Show more benefits": [
+        "Mostrar mais benefícios"
       ],
       "Show options": [
         "Mostrar as opções"
@@ -2348,11 +2363,6 @@
         "Fatura em dívida"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilize o assistente de importação Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "O ${ DOCS_SHORT_APP_NAME } no ${ DRIVE_APP_NAME } permite que trabalhe em conjunto com outras pessoas num ambiente seguro e encriptado."
@@ -2476,6 +2486,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com o ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilize o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4503,9 +4518,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Se cancelar, perderá o acesso a ${ boldPlanTitle } imediatamente, e será revertido para o plano ${ boldProtonFree }. Se a sua utilização exceder os limites do plano Free, poderá ter acesso restrito a funcionalidades do produto e aos seus dados."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se cancelar, a sua subscrição ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
       ],
@@ -5093,9 +5105,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Para continuar a desfrutar de ${ boldPlanTitle } gratuitamente até ${ boldCancelDate }, não cancele."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Para descarregar os ficheiros ${ DOCS_APP_NAME }, abra-os no ${ DOCS_APP_NAME } e exporte-os."
       ],
@@ -5231,9 +5240,6 @@
       "What do you want to do?": [
         "O que deseja fazer?"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "O que perde ao cancelar o ${ boldPlanTitle }:"
-      ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "Quando a janela de diálogo abrir, altere o destino para Guardar como PDF, depois pressione Guardar."
       ],
@@ -5310,9 +5316,6 @@
       ],
       "You can now return to the application to continue": [
         "Pode agora voltar à aplicação e continuar."
-      ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Ainda pode aceder a todos os dados da sua conta. Pode subscrever novamente a qualquer momento para continuar a desfrutar de todas as nossas funcionalidades."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -5426,9 +5429,6 @@
       "Your files will be encrypted and then saved": [
         "Os seus ficheiros serão encriptados e depois guardados."
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "A sua avaliação gratuita de ${ boldPlanTitle } foi cancelada e a sua conta ${ boldUserEmail } foi revertida para ${ boldProtonFree }."
-      ],
       "Your information was found on ${ displayedDate }": [
         "As suas informações foram encontradas em ${ displayedDate }"
       ],
@@ -5452,9 +5452,6 @@
       ],
       "Your online activity is protected": [
         "A sua atividade online está protegida."
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "A sua organização ${ boldOrganizationName } está desativada e todas as suas licenças de utilizador foram removidas."
       ],
       "Your password was leaked:": [
         "A sua palavra-passe foi divulgada:"
@@ -6552,17 +6549,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planos a partir de ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Apagar conta"
@@ -6584,6 +6570,17 @@
       ],
       "Switch plan": [
         "Alterar o plano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planos a partir de ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
       ]
     },
     "new_plans: feature": {
@@ -7128,6 +7125,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Aceder à internet com segurança a partir de qualquer sítio com monitorização essencial de rede"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com caraterísticas avançadas para as suas comunicações diárias."
@@ -7845,6 +7845,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Acede a todas as aplicações ${ BRAND_NAME } e funcionalidades premium"
+      ],
       "Secure vault sharing": [
         "Partilha segura de cofre"
       ],
@@ -8993,25 +8996,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de armazenamento por utilizador"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } dá-lhe acesso a todas as aplicações, todas as funcionalidades, acesso antecipado às novas versões e tudo o que precisa para ter controlo sobre os seus dados e a sua segurança."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domínio de e-mail personalizado",
-        "${ planNumberOfDomains } domínios de e-mail personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } endereço de e-mail",
-        "${ planNumberOfEmails } endereços de e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Pastas, etiquetas e filtros personalizados"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de armazenamento"
@@ -9051,6 +9035,25 @@
       ],
       "Your privacy is our mission": [
         "A sua privacidade é a nossa missão."
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de armazenamento por utilizador"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } dá-lhe acesso a todas as aplicações, todas as funcionalidades, acesso antecipado às novas versões e tudo o que precisa para ter controlo sobre os seus dados e a sua segurança."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domínio de e-mail personalizado",
+        "${ planNumberOfDomains } domínios de e-mail personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } endereço de e-mail",
+        "${ planNumberOfEmails } endereços de e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Pastas, etiquetas e filtros personalizados"
       ]
     },
     "Subscription renewal state": {

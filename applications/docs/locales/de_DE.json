@@ -315,6 +315,9 @@
       "Download anyway": [
         "Trotzdem herunterladen"
       ],
+      "Download logs": [
+        "Protokolle herunterladen"
+      ],
       "Edit": [
         "Bearbeiten"
       ],
@@ -402,8 +405,14 @@
       "Help and resources": [
         "Hilfe und Ressourcen"
       ],
+      "Hide": [
+        "Ausblenden"
+      ],
       "Hide advanced PGP settings": [
         "Erweiterte PGP-Einstellungen ausblenden"
+      ],
+      "Hide more benefits": [
+        "Mehr Vorteile ausblenden"
       ],
       "Image could not be loaded with tracker protection.": [
         "Das Bild konnte aufgrund des Tracking-Schutzes nicht geladen werden."
@@ -500,6 +509,9 @@
       ],
       "More actions": [
         "Weitere Aktionen"
+      ],
+      "More benefits": [
+        "Weitere Vorteile"
       ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
@@ -734,6 +746,9 @@
       ],
       "Show more": [
         "Mehr anzeigen"
+      ],
+      "Show more benefits": [
+        "Mehr Vorteile anzeigen"
       ],
       "Show options": [
         "Optionen anzeigen"
@@ -2356,11 +2371,6 @@
         "Überfällige Rechnung"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ermöglicht es dir, mit anderen in einer sicheren, verschlüsselten Umgebung zusammenzuarbeiten."
@@ -2484,6 +2494,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4200,6 +4215,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindestens ${ BETTER_PASSWORD_LENGTH } Zeichen"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Beim Auslaufen deiner Testversion ${ boldCancelDate } wirst du auf ${ boldProtonFree } zurückgestuft. Alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -4511,11 +4529,11 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Wenn du kündigst, verlierst du sofort den Zugang zu ${ boldPlanTitle } und wirst auf das ${ boldProtonFree }-Abonnement zurückgestuft. Wenn deine Nutzung die Grenzen des kostenlosen Abonnements überschreitet, kann der Zugang zu den Produktfunktionen und deinen Daten eingeschränkt sein."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Wenn du deine Meinung änderst, kannst du jederzeit wieder abonnieren. Schade, dass du gehst."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
@@ -5101,9 +5119,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Um die Zahlung abzuschließen, sende bitte ${ btcAmountBold } an die untenstehende Adresse."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Damit du ${ boldPlanTitle } bis zum ${ boldCancelDate } weiterhin kostenlos genießen kannst, kündige nicht."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Um ${ DOCS_APP_NAME }-Dateien herunterladen zu können, öffne sie in ${ DOCS_APP_NAME } und exportiere sie."
       ],
@@ -5239,9 +5254,6 @@
       "What do you want to do?": [
         "Was möchtest du tun?"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Bei der Kündigung von ${ boldPlanTitle } verlierst du folgende Vorteile:"
-      ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "Wenn sich das Dialogfeld öffnet, ändere das „Ziel“ in „Als PDF speichern“ und drücke dann auf Speichern."
       ],
@@ -5319,9 +5331,6 @@
       "You can now return to the application to continue": [
         "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Du kannst weiterhin auf all deine Kontodaten zugreifen. Du kannst jederzeit wieder abonnieren, um weiterhin all unsere Funktionen zu nutzen."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
       ],
@@ -5363,6 +5372,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Dir wird nichts berechnet, wenn du vor ${ trialEndsOnFormatted } kündigst."
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Du verlierst auch den Zugang zu den Funktionen von ${ boldPlanTitle }:"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
@@ -5434,9 +5446,6 @@
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Deine kostenlose Testversion von ${ boldPlanTitle } wurde gekündigt und dein Konto ${ boldUserEmail } wurde auf ${ boldProtonFree } zurückgestuft."
-      ],
       "Your information was found on ${ displayedDate }": [
         "Deine Informationen wurden am ${ displayedDate } gefunden."
       ],
@@ -5461,9 +5470,6 @@
       "Your online activity is protected": [
         "Deine Online-Aktivitäten sind geschützt."
       ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Deine Organisation ${ boldOrganizationName } wurde deaktiviert und alle ihre Benutzerlizenzen wurden entfernt."
-      ],
       "Your password was leaked:": [
         "Dein Passwort wurde offengelegt"
       ],
@@ -5485,6 +5491,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Deine Testversion endet in ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Du verlierst den Zugriff auf ${ boldPlanTitle } am ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
       ]
     },
     "info": {
@@ -6617,17 +6629,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnements ab ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Konto löschen"
@@ -6649,6 +6650,17 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnements ab ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ]
     },
     "new_plans: feature": {
@@ -7134,12 +7146,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
       ],
-      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "1 TB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
-      ],
-      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "200 GB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Erweiterte Netzwerksicherheit und Zugangsverwaltung mit dedizierten sicheren Gateways"
       ],
@@ -7199,6 +7205,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Sicherer Internetzugang von überall aus mit grundlegender Netzwerküberwachung"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Sicherer Cloud-Speicher, mit dem du Dateien einfach und sicher speichern, synchronisieren und gemeinsam nutzen kannst."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
@@ -7871,6 +7880,23 @@
         "Speicherplatz"
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Du kannst jederzeit vorher abbrechen."
+      ],
+      "Once your full subscription starts...": [
+        "Sobald dein vollständiges Abonnement beginnt ..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Du kannst immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Dein vollständiges ${ planTitle }-Abonnement beginnt am ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Du kannst ${ planTitle } kostenlos nutzen, bis die Testversion ausläuft."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Zu bestehender Gruppe hinzufügen"
@@ -7916,6 +7942,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Zugang zu allen ${ BRAND_NAME }-Anwendungen und Premiumfunktionen"
+      ],
       "Secure vault sharing": [
         "Sicheres Teilen von Tresoren"
       ],
@@ -9099,25 +9128,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } Speicherplatz pro Benutzer"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigene E-Mail-Domain",
-        "${ planNumberOfDomains } eigene E-Mail-Domains"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } E-Mail-Adresse",
-        "${ planNumberOfEmails } E-Mail-Adressen"
-      ],
-      "Folders, labels, and custom filters": [
-        "Ordner, Kategorien und benutzerdefinierte Filter"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB Speicherplatz"
@@ -9157,6 +9167,25 @@
       ],
       "Your privacy is our mission": [
         "Deine Privatsphäre ist unsere Mission"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } Speicherplatz pro Benutzer"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigene E-Mail-Domain",
+        "${ planNumberOfDomains } eigene E-Mail-Domains"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } E-Mail-Adresse",
+        "${ planNumberOfEmails } E-Mail-Adressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Ordner, Kategorien und benutzerdefinierte Filter"
       ]
     },
     "Subscription renewal state": {
@@ -10014,6 +10043,9 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Deine kostenlose Testversion endet in ${ trialDurationFormatted } Tagen."
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
