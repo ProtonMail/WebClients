@@ -19,7 +19,7 @@ interface Props {
     onNext: () => void;
 }
 
-const getTrialInfo = (subscriptionEnd: number | undefined, planTitle: string | undefined) => {
+const getTrialInfo = (subscriptionEnd?: number, planTitle?: string) => {
     if (!subscriptionEnd || !planTitle) {
         return [];
     }
