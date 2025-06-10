@@ -4,8 +4,9 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { HandshakeInfoVendorType } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useOpenDocument } from '../_documents';
@@ -78,11 +79,10 @@ export default function usePublicAuth(
         setIsLoading(true);
         initHandshake(token, session)
             .then(({ handshakeInfo, isLegacySharedUrl, hasCustomPassword }) => {
-                // TODO: Need either a separate `IsSheet` property on handshakeInfo
-                // or change `IsDoc` allow differentiating between "doc" or "sheet"
-                if (handshakeInfo.IsDoc && client === 'drive') {
+                const vendorType = handshakeInfo.VendorType;
+                if (vendorType !== HandshakeInfoVendorType.ProtonDrive && client === 'drive') {
                     openDocumentWindow({
-                        type: 'doc',
+                        type: vendorType === HandshakeInfoVendorType.ProtonDoc ? 'document' : 'spreadsheet',
                         mode: 'open-url',
                         token,
                         urlPassword,

@@ -114,5 +114,13 @@ function Content({ openAction, providerType }: { openAction: DocumentAction | nu
     linkId: linkId,
   }
 
-  return <DocumentViewer nodeMeta={nodeMeta} openAction={openAction} providerType={providerType} />
+  return (
+    <DocumentViewer
+      nodeMeta={nodeMeta}
+      openAction={openAction}
+      actionMode={undefined}
+      providerType={providerType}
+      documentType={openAction.type}
+    />
+  )
 }
