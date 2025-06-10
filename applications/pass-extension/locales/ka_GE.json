@@ -152,10 +152,10 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create alias": [
@@ -392,10 +392,10 @@
       "Move to another vault": [
         "სხვა საცავში გადატანა"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
       "Multiple select": [
@@ -1765,6 +1765,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -2989,6 +2993,9 @@
       "Oldest to newest": [
         "უძველესიდან ახლისკენ"
       ],
+      "Operating System": [
+        "ოპერაციული სისტემა"
+      ],
       "Organization": [
         "ორგანიზაცია"
       ],
@@ -3184,10 +3191,10 @@
       "Show website favicons": [
         "ვებგვერდის favicon-ების ჩვენება"
       ],
-      "Social security": [
+      "Social Security": [
         "სოციალური უსაფრთხოება"
       ],
-      "Social Security": [
+      "Social security": [
         "სოციალური უსაფრთხოება"
       ],
       "Social security number": [
