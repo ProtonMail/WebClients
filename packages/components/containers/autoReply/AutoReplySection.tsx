@@ -201,7 +201,12 @@ export const AutoReplySection = () => {
 
                         <SettingsLayout>
                             <SettingsLayoutLeft>
-                                <label className="text-semibold" onClick={() => editorActionsRef.current?.focus()}>
+                                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
+                                <label
+                                    htmlFor="rooster-editor"
+                                    className="text-semibold"
+                                    onClick={() => editorActionsRef.current?.focus()}
+                                >
                                     {c('Label').t`Message`}
                                 </label>
                             </SettingsLayoutLeft>
@@ -219,6 +224,7 @@ export const AutoReplySection = () => {
                                         modalImage={modalImage}
                                         modalDefaultFont={modalDefaultFont}
                                         mailSettings={mailSettings}
+                                        title={c('Label').t`Message (auto-reply)`}
                                     />
                                 </div>
                                 {messageLimitReached && (
