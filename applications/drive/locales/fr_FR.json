@@ -506,11 +506,17 @@
       "Help and resources": [
         "Aide et ressources"
       ],
+      "Hide": [
+        "Masquer"
+      ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
       ],
       "Hide download options": [
         "Masquer les options de téléchargement"
+      ],
+      "Hide more benefits": [
+        "Masquer plus d'avantages"
       ],
       "Image could not be loaded with tracker protection.": [
         "L'image n'a pas pu être chargée en raison de la protection contre les traqueurs."
@@ -634,6 +640,9 @@
       ],
       "More actions": [
         "Actions supplémentaires"
+      ],
+      "More benefits": [
+        "Plus d'avantages"
       ],
       "More info: ${ safeTitle }": [
         "Plus d'informations : ${ safeTitle }"
@@ -940,6 +949,9 @@
       ],
       "Show more": [
         "Afficher plus"
+      ],
+      "Show more benefits": [
+        "Afficher plus d'avantages"
       ],
       "Show more download options": [
         "Afficher plus d'options de téléchargement"
@@ -5017,9 +5029,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Si vous annulez, vous n'aurez immédiatement plus accès à ${ boldPlanTitle } et vous passerez à l'abonnement ${ boldProtonFree }. Si votre utilisation dépasse les limites de l'abonnement Free, l'accès aux fonctionnalités du produit et à vos données pourrait être restreint."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si vous annulez, votre abonnement ${ planTitle } ne sera pas renouvelé quand il arrivera à sa date de fin de validité le ${ expiryDate }."
       ],
@@ -5688,6 +5697,9 @@
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Merci d'avoir choisi ${ BRAND_NAME } pour sécuriser votre organisation."
+      ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Merci de vous être abonné. La navigation sécurisée commence maintenant."
       ],
@@ -5811,9 +5823,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pour finaliser votre paiement, vous devez envoyer ${ btcAmountBold } à l'adresse ci-dessous."
-      ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "Pour continuer à profiter de ${ boldPlanTitle } gratuitement jusqu'au ${ boldCancelDate }, n'annulez pas."
       ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Pour télécharger les fichiers ${ DOCS_APP_NAME }, ouvrez les dans ${ DOCS_APP_NAME } et exportez-les."
@@ -6019,9 +6028,6 @@
       "What would you like to do?": [
         "Que voulez-vous faire ?"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "En annulant ${ boldPlanTitle }, vous ne bénéficierez plus des avantages suivants :"
-      ],
       "When working remotely": [
         "Lorsque vous travaillez à distance"
       ],
@@ -6112,9 +6118,6 @@
       "You can now return to the application to continue": [
         "Vous pouvez maintenant revenir à l'application pour continuer."
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Vous pouvez toujours accéder à toutes les données de votre compte. Vous pouvez vous réabonner à tout moment pour continuer à profiter de toutes nos fonctionnalités."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes quand de nouveaux messages arrivent dans ce dossier."
       ],
@@ -6190,9 +6193,6 @@
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Votre abonnement ${ PASS_SHORT_APP_NAME } Plus sera remplacé par ${ PASS_SHORT_APP_NAME } Lifetime. Le solde de votre abonnement sera ajouté à votre compte. L'offre ${ PASS_SHORT_APP_NAME } Lifetime n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
-        "Votre abonnement ${ planName } est maintenant un abonnement payant qui se renouvelle automatiquement tous les 12 mois. Votre prochaine date de facturation est le ${ nextBillingDate }."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
       ],
@@ -6229,8 +6229,11 @@
       "Your files will be encrypted and then saved.": [
         "Vos fichiers seront chiffrés puis sauvegardés."
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Votre essai gratuit de ${ boldPlanTitle } a été annulé et votre compte ${ boldUserEmail } a été passé à un abonnement inférieur : ${ boldProtonFree }."
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Votre période d'essaie a été convertie avec succès en abonnement de ${ cycle } mois. Votre date de renouvellement est le ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Votre période d'essai a été convertie avec succès en abonnement mensuel. Votre date de renouvellement est le ${ nextBillingDate }."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
@@ -6255,9 +6258,6 @@
       ],
       "Your online activity is protected": [
         "Votre activité en ligne est protégée."
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Votre organisation ${ boldOrganizationName } est désactivée et tous ses accès utilisateur ont été retirés."
       ],
       "Your password was leaked:": [
         "Votre mot de passe a été exposé :"
@@ -7600,17 +7600,6 @@
         "Vitesse VPN moyenne"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Abonnements à partir de ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -7631,6 +7620,17 @@
         "Conserver le compte"
       ],
       "Switch plan": [
+        "Changer d'abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnements à partir de ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
         "Changer d'abonnement"
       ]
     },
@@ -8176,6 +8176,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Accédez à internet en toute sécurité, où que vous soyez, avec les fonctionnalités essentielles de surveillance du réseau."
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Un stockage cloud sécurisé qui vous permet de stocker, synchroniser et partager des fichiers facilement et en toute sécurité."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
@@ -9091,6 +9094,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Accès à toutes les applications ${ BRAND_NAME } et les fonctionnalités premium"
+      ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
       ],
@@ -10219,6 +10225,47 @@
         "Pour ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
@@ -10477,47 +10524,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
@@ -11657,8 +11663,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Votre essai gratuit ${ planName } se termine le ${ textDate }."
       ],
-      "Your ${ planName } subscription started": [
-        "Votre abonnement ${ planName } a commencé."
+      "Your ${ planName } subscription has started": [
+        "Votre abonnement ${ planName } a débuté."
       ],
       "Your 3 GB bonus": [
         "Votre bonus de 3 Go"

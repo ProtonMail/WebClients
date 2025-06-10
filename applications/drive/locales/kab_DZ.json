@@ -351,6 +351,9 @@
       "Grid layout": [
         "Tissi n uferrug"
       ],
+      "Hide": [
+        "Ffer"
+      ],
       "Hide advanced PGP settings": [
         "Ffer iɣewwaren n PGP leqqayen"
       ],
@@ -1297,6 +1300,9 @@
       ],
       "Work": [
         "Amahil"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2782,6 +2788,9 @@
       ],
       "MB": [
         "KAṬ"
+      ],
+      "TB": [
+        "TAṬ"
       ]
     },
     "file size format, long": {
@@ -4175,6 +4184,9 @@
       ],
       "Trusted": [
         "Yettwamen"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -4920,14 +4932,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -4946,6 +4950,14 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ]
     },
     "new_plans: feature": {
@@ -5451,6 +5463,9 @@
       ],
       "Free": [
         "Baṭel"
+      ],
+      "Plus": [
+        "Plus"
       ],
       "Storage": [
         "Asekles"
@@ -6020,6 +6035,14 @@
         "Imultaɣen"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -6054,14 +6077,6 @@
       ],
       "Version history": [
         "Azray n lqem"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
       ]
     },
     "Subscription renewal state": {
@@ -6231,6 +6246,11 @@
       ],
       "vCard field": [
         "urti vCard"
+      ]
+    },
+    "Tag": {
+      "RAW": [
+        "RAW"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
