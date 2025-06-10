@@ -431,6 +431,9 @@
       "Export selection as .vcf": [
         "Eksporter utvalg som .vcf"
       ],
+      "Export system log": [
+        "Eksporter systemlogg"
+      ],
       "Fit to window": [
         "Tilpass til vindu"
       ],
@@ -454,6 +457,9 @@
       ],
       "Get link": [
         "Få kobling"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "Få sikker lagring for ${ simplePriceString }"
       ],
       "Get Started": [
         "Kom i gang"
@@ -500,11 +506,17 @@
       "Help and resources": [
         "Hjelp og ressurser"
       ],
+      "Hide": [
+        "Skjul"
+      ],
       "Hide advanced PGP settings": [
         "Skjul avanserte PGP-innstillinger"
       ],
       "Hide download options": [
         "Skjul nedlastingsalternativer"
+      ],
+      "Hide more benefits": [
+        "Skjul flere fordeler"
       ],
       "Image could not be loaded with tracker protection.": [
         "Bilde kunne ikke lastes med sporingsbeskyttelse."
@@ -628,6 +640,9 @@
       ],
       "More actions": [
         "Flere handlinger"
+      ],
+      "More benefits": [
+        "Flere fordeler"
       ],
       "More info: ${ safeTitle }": [
         "Mer informasjon: ${ safeTitle }"
@@ -935,6 +950,9 @@
       "Show more": [
         "Vis mer"
       ],
+      "Show more benefits": [
+        "Vis flere fordeler"
+      ],
       "Show more download options": [
         "Vis flere nedlastingsalternativer"
       ],
@@ -1006,6 +1024,9 @@
       ],
       "Try another method": [
         "Prøv annen metode"
+      ],
+      "Try it now": [
+        "Prøv det nå"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv å lagre igjen. Lagring mislyktes på grunn av: ${ saveError }"
@@ -3904,6 +3925,9 @@
       "Create new shared album": [
         "Opprett nytt delt album"
       ],
+      "Drawer": [
+        "Sidepanel"
+      ],
       "Rename album": [
         "Gi album nytt navn"
       ],
@@ -4901,6 +4925,9 @@
       "Expired": [
         "Utløpt"
       ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "Eksporter diagnoselogger for teknisk støtte og feilsøking"
+      ],
       "Failed": [
         "Mislyktes"
       ],
@@ -4993,9 +5020,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
-      ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Hvis du avbryter, mister du tilgang til ${ boldPlanTitle } med én gang, og du blir nedgradert til ${ boldProtonFree }-planen. Dersom forbruket overskrider grensene for gratisplanen, kan du oppleve begrenset tilgang til produktfunksjoner og data."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
@@ -5789,9 +5813,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "For å fortsette å nyte ${ boldPlanTitle } gratis til ${ boldCancelDate }, ikke avbryt."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "For å laste ned ${ DOCS_APP_NAME }-filene, åpne de i ${ DOCS_APP_NAME } og eksporter dem."
       ],
@@ -5996,9 +6017,6 @@
       "What would you like to do?": [
         "Hva ønsker du å gjøre?"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Dette gir du avkall på når du avbestiller ${ boldPlanTitle }:"
-      ],
       "When working remotely": [
         "Når du jobber eksternt"
       ],
@@ -6089,9 +6107,6 @@
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
       ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Du kan fortsatt få tilgang til alle dataene på kontoen din. Du kan abonnere på nytt når som helst for å fortsette å nyte alle funksjonene våre."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
       ],
@@ -6167,9 +6182,6 @@
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ditt ${ PASS_SHORT_APP_NAME } Plus-abonnement vil bli erstattet med livsvarig avtale for ${ PASS_SHORT_APP_NAME }. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } livstidsavtale har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your ${ planName } plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${ nextBillingDate }.": [
-        "${ planName }-planen din er nå et betalt abonnement som automatisk fornyes hver 12. måned. Neste faktureringsdato er ${ nextBillingDate }."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Kontoen din har minst en forfalt faktura. Din tilgang vil snart bli begrenset. ${ payInvoiceLink }"
       ],
@@ -6206,9 +6218,6 @@
       "Your files will be encrypted and then saved.": [
         "Filene dine vil bli kryptert og deretter lagret."
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Din gratis prøveversjon av ${ boldPlanTitle } er avbrutt, og kontoen din ${ boldUserEmail } er nedgradert til ${ boldProtonFree }."
-      ],
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
       ],
@@ -6232,9 +6241,6 @@
       ],
       "Your online activity is protected": [
         "Nettaktiviteten din er beskyttet"
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Din organisasjon ${ boldOrganizationName } er deaktivert og alle brukerlisensene har blitt fjernet."
       ],
       "Your password was leaked:": [
         "Passordet ditt ble lekket:"
@@ -6395,6 +6401,9 @@
       ],
       "Address": [
         "Adresse"
+      ],
+      "Alias title": [
+        "Aliastittel"
       ],
       "All": [
         "Alle"
@@ -7568,17 +7577,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planer starter fra ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -7600,6 +7598,17 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planer starter fra ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
       ]
     },
     "new_plans: feature": {
@@ -8144,6 +8153,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Få sikker tilgang til internett fra hvor som helst med viktig nettverksovervåking"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Sikker skylagring som lar deg lagre, synkronisere og dele filer lett og trygt."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
@@ -9059,6 +9071,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Tilgang til alle ${ BRAND_NAME }s apper og premiumfunksjoner"
+      ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
       ],
@@ -10179,6 +10194,47 @@
         "For ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -10439,47 +10495,6 @@
         "Ditt eget korte @pm.me e-postalias"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -10517,6 +10532,9 @@
       ],
       "Albums you've shared will appear here": [
         "Albumene du har delt, vises her"
+      ],
+      "Securely share your favorite moments with friends and family using Albums.": [
+        "Del trygt dine favorittøyeblikk med venner og familie ved å bruke Album."
       ],
       "Your favorited photos will appear here": [
         "Dine favorittbilder vises her"
@@ -11352,6 +11370,9 @@
       "Phone numbers": [
         "Telefonnumre"
       ],
+      "Photo albums are here!": [
+        "Fotoalbum er her!"
+      ],
       "Photos": [
         "Bilder"
       ],
@@ -11610,9 +11631,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
-      ],
-      "Your ${ planName } subscription started": [
-        "${ planName }-abonnementet startet"
       ],
       "Your 3 GB bonus": [
         "Dine bonus 3 GB"
