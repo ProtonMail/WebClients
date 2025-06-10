@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate organization key": [
         "Aktivera organisationsnyckel"
@@ -267,10 +267,10 @@
       "Discard": [
         "Avfärda"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Kasta ändringar"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Kasta ändringar"
       ],
       "Discover ${ planName }": [
@@ -438,6 +438,9 @@
       "Hide": [
         "Dölj"
       ],
+      "Hide more benefits": [
+        "Dölj fler fördelar"
+      ],
       "Hide plan features": [
         "Dölj paketfunktioner"
       ],
@@ -471,6 +474,9 @@
       "Keep subscription": [
         "Behåll prenumeration"
       ],
+      "Learn more": [
+        "Lär dig mer"
+      ],
       "Let's talk": [
         "Låt oss prata"
       ],
@@ -503,6 +509,9 @@
       ],
       "Mark as favorite": [
         "Markera som favorit"
+      ],
+      "More benefits": [
+        "Fler fördelar"
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
@@ -699,11 +708,11 @@
       "Select country ${ country }": [
         "Välj land ${ country }"
       ],
-      "select file": [
-        "välj fil"
-      ],
       "Select file": [
         "Välj fil"
+      ],
+      "select file": [
+        "välj fil"
       ],
       "Send code": [
         "Skicka kod"
@@ -767,6 +776,9 @@
       ],
       "Show more": [
         "Visa mer"
+      ],
+      "Show more benefits": [
+        "Visa fler fördelar"
       ],
       "Show preview": [
         "Visa förhandsgranskning"
@@ -4524,11 +4536,11 @@
       "Data recoverable on this device": [
         "Data återställningsbart på denna enhet"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -4804,6 +4816,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Om du ångrar dig kan du prenumerera igen när som helst. Tråkigt att du lämnar oss!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
@@ -5118,9 +5133,6 @@
       ],
       "Or select a particular server:": [
         "Eller välj en specifik server:"
-      ],
-      "Organization --> Groups": [
-        "Organisation --> Grupper"
       ],
       "Organization size": [
         "Organisationens storlek"
@@ -5596,9 +5608,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "För att bekräfta, ange namnet på den användare du vill ta bort."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "För att fortsätta njuta av ${ boldPlanTitle } gratis fram till ${ boldCancelDate }, avbryt inte."
-      ],
       "To continue to ${ product }": [
         "För att fortsätta till ${ product }"
       ],
@@ -5707,11 +5716,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "Username": [
-        "Användarnamn"
-      ],
       "username": [
         "användarnamn"
+      ],
+      "Username": [
+        "Användarnamn"
       ],
       "Users": [
         "Användare"
@@ -5827,9 +5836,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Vi kommer skicka en återställningskod till det telefonnummer som du angav för kontoåterställning."
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Vad du förlorar när du avbryter ${ boldPlanTitle }:"
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Vid aktivering av SAML för ${ appName } hos din identitetsleverantör så kan du bli ombedd att använda callback (ACS) URL och utfärdar-ID. Kopiera och klistra in värdena nedan i fälten hos din identitetsleverantör."
       ],
@@ -5928,9 +5934,6 @@
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Du kan bara ha en chattinstans öppen åt gången. Stäng tidigare konversationer innan du startar en ny."
-      ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Du kan fortfarande komma åt all din kontodata. Du kan prenumerera igen när som helst för att fortsätta att njuta av alla våra funktioner."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
@@ -6046,9 +6049,6 @@
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Din gratis provperiod för ${ boldPlanTitle } har avbrutits, och ditt konto ${ boldUserEmail } har nedgraderats till ${ boldProtonFree }."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information är säker hos oss. Vi kommer endast kontakta dig när det krävs för att tillhandahålla våra tjänster."
       ],
@@ -6057,9 +6057,6 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Ditt nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Din organisation ${ boldOrganizationName } är inaktiverad och alla dess användarplatser har tagits bort."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation använder enkel inloggning (SSO). Tryck på “Logga in“ för att fortsätta med din SSO-leverantör."
@@ -6278,10 +6275,10 @@
       "Allow recovery by phone": [
         "Tillåt återställning via telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6992,6 +6989,9 @@
       "Forgot username?": [
         "Glömt användarnamn?"
       ],
+      "Groups": [
+        "Grupper"
+      ],
       "Help": [
         "Hjälp"
       ],
@@ -7328,20 +7328,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -7363,6 +7349,20 @@
       ],
       "Switch plan": [
         "Byt paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
       ]
     },
     "new_plans: feature": {
@@ -7828,12 +7828,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } låter dig skapa e-postadresser och hantera konton för underanvändare. Idealiskt för familjer och organisationer."
       ],
-      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
-      ],
-      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "200 GB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avancerad nätverkssäkerhet och åtkomsthantering med dedikerade säkra gateways"
       ],
@@ -7893,6 +7887,9 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Säker åtkomst till Internet var som helst med väsentlig nätverksövervakning"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Säker molnlagring som låter dig lagra, synkronisera och dela filer enkelt och säkert."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
@@ -8493,6 +8490,14 @@
         "Välkommen till ${ appName }"
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Avbryt när som helst innan dess."
+      ],
+      "Once your full subscription starts...": [
+        "När din fullständiga prenumeration startar …"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "Tillåtet ${ defaultLabel }"
@@ -8702,6 +8707,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Åtkomst till alla ${ BRAND_NAME }-appar och premiumfunktioner"
+      ],
       "Secure vault sharing": [
         "Säker valvdelning"
       ],
@@ -10451,6 +10459,47 @@
         "För ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -10741,47 +10790,6 @@
         "Ditt egna korta @pm.me e-postalias"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Är du säker?"
@@ -10940,6 +10948,12 @@
       ],
       "Phone number updated": [
         "Telefonnummer uppdaterat"
+      ],
+      "Policy changed. It will take effect only after you publish the changes.": [
+        "Policy ändrad. Den träder i kraft först efter att du publicerat ändringarna."
+      ],
+      "Policy deleted. It will take effect only after you publish the changes.": [
+        "Policy borttagen. Den träder i kraft först efter att du publicerat ändringarna."
       ],
       "Preference saved": [
         "Preferens sparad"
@@ -11319,10 +11333,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -11985,6 +11999,9 @@
       ],
       "Your current plan": [
         "Ditt nuvarande paket"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Din gratis provperiod slutar om ${ trialDurationFormatted } dagar"
       ],
       "Your plan": [
         "Ditt paket"

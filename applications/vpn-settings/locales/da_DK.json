@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"
@@ -261,11 +261,11 @@
       "Discard": [
         "Kassér"
       ],
-      "Discard changes": [
-        "Kassér ændringer"
-      ],
       "Discard Changes": [
         "Kasser ændringer"
+      ],
+      "Discard changes": [
+        "Kassér ændringer"
       ],
       "Discover ${ planName }": [
         "Opdag ${ planName }"
@@ -458,6 +458,9 @@
       ],
       "Keep my subscription": [
         "Bevar mit abonnement"
+      ],
+      "Learn more": [
+        "Få mere at vide"
       ],
       "Let's talk": [
         "Lad os snakke"
@@ -681,11 +684,11 @@
       "Select country": [
         "Vælg land"
       ],
-      "select file": [
-        "vælg fil"
-      ],
       "Select file": [
         "Vælg fil"
+      ],
+      "select file": [
+        "vælg fil"
       ],
       "Send code": [
         "Send kode"
@@ -2783,7 +2786,7 @@
         "${ name } kunne ikke flyttes til spamliste"
       ],
       "${ name } moved to allow list": [
-        "${ name } flyttet til tillad-liste"
+        "${ name } flyttet til tilladt-liste"
       ],
       "${ name } moved to block list": [
         "${ name } flyttet til blokeringsliste"
@@ -4286,11 +4289,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
-      "Dedicated servers": [
-        "Dedikerede servere"
-      ],
       "dedicated servers": [
         "dedikerede servere"
+      ],
+      "Dedicated servers": [
+        "Dedikerede servere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresser kan tilføjes til private gateways for at finjustere adgangen."
@@ -4846,9 +4849,6 @@
       "Or select a particular server:": [
         "Eller vælg en bestemt server:"
       ],
-      "Organization --> Groups": [
-        "Organisation --> Grupper"
-      ],
       "Organization size": [
         "Størrelse på organisationen"
       ],
@@ -5379,11 +5379,11 @@
       "User activated": [
         "Bruger aktiveret"
       ],
-      "Username": [
-        "Brugernavn"
-      ],
       "username": [
         "brugernavn"
+      ],
+      "Username": [
+        "Brugernavn"
       ],
       "Users": [
         "Brugere"
@@ -5461,7 +5461,7 @@
         "Vi anbefaler, at du i stedet bruger din gendannelsessætning."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Vi bruger 3-D Secure til at beskytte dine betalinger"
+        "Vi bruger 3-D Secure til at sikre dine betalinger"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
@@ -5885,10 +5885,10 @@
       "Allow recovery by phone": [
         "Tillad gendannelse via telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tilladt domæne"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tilladt domæne"
       ],
       "Amount": [
@@ -6887,20 +6887,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -6922,6 +6908,20 @@
       ],
       "Switch plan": [
         "Skift abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Opgradér"
       ]
     },
     "new_plans: feature": {
@@ -9822,6 +9822,47 @@
         "Til ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
@@ -10104,47 +10145,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -10637,11 +10637,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-all address": [
-        "Catch-all-adresse"
-      ],
       "Catch-All address": [
         "Catch-All-adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"

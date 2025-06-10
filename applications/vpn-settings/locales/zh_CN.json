@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate organization key": [
         "激活机构密钥"
@@ -267,11 +267,11 @@
       "Discard": [
         "放弃"
       ],
-      "Discard changes": [
-        "放弃修改"
-      ],
       "Discard Changes": [
         "放弃更改"
+      ],
+      "Discard changes": [
+        "放弃修改"
       ],
       "Discover ${ planName }": [
         "探索 ${ planName }"
@@ -470,6 +470,9 @@
       ],
       "Keep subscription": [
         "继续订阅"
+      ],
+      "Learn more": [
+        "了解详情"
       ],
       "Let's talk": [
         "让我们聊聊"
@@ -699,10 +702,10 @@
       "Select country ${ country }": [
         "选择国家/地区 ${ country }"
       ],
-      "select file": [
+      "Select file": [
         "选择文件"
       ],
-      "Select file": [
+      "select file": [
         "选择文件"
       ],
       "Send code": [
@@ -4476,10 +4479,10 @@
       "Data recoverable on this device": [
         "此设备上的数据可能被恢复"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -4751,9 +4754,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "如有异议，请点击${ contactLink }联系我们。"
-      ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "如果取消，您将立即失去对 ${ boldPlanTitle } 的访问，并将降级到 ${ boldProtonFree } 套餐。如果您的使用量超过免费套餐限制，那么您对产品功能和数据的访问可能会受到限制。"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
@@ -5069,9 +5069,6 @@
       ],
       "Or select a particular server:": [
         "或指定服务器："
-      ],
-      "Organization --> Groups": [
-        "组织 --> 群组"
       ],
       "Organization size": [
         "组织规模"
@@ -5535,9 +5532,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "如果确定要执行此操作，请再次输入您要删除的用户名称。"
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "若要在 ${ boldCancelDate } 之前继续免费使用 ${ boldPlanTitle }，请不要取消。"
-      ],
       "To continue to ${ product }": [
         "即可使用 ${ product }"
       ],
@@ -5646,10 +5640,10 @@
       "User activated": [
         "用户已激活"
       ],
-      "Username": [
+      "username": [
         "用户名"
       ],
-      "username": [
+      "Username": [
         "用户名"
       ],
       "Users": [
@@ -5766,9 +5760,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "我们会将重置代码发送到您先前提供的密保手机。"
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "当您取消 ${ boldPlanTitle } 即视为您自动放弃以下权利："
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "在身份提供商中为 ${ appName } 启用 SAML 时，系统可能会提示您使用回调 (ACS) URL 和颁发者 ID。只需将以下数据复制粘贴到您的身份提供商字段中即可。"
       ],
@@ -5864,9 +5855,6 @@
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "一次只能打开一个聊天实例。开始新对话之前，请关闭前一个对话。"
-      ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "您仍然可以访问您账户的所有数据。您也可以随时再次订阅，继续享受我们的所有功能。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
@@ -5982,9 +5970,6 @@
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "您的 ${ boldPlanTitle } 免费试用已取消，您的账户 ${ boldUserEmail } 已降级到 ${ boldProtonFree }。"
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "您的个人信息交由我们处理是安全的，我们只会在提供服务所必需的情况下联系您。"
       ],
@@ -5993,9 +5978,6 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "您的下一个账单日期是 ${ renewalTime }。如果您需要立即更改套餐，请联系支持部门。"
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "您的组织 ${ boldOrganizationName } 已被禁用，其所有用户席位已被删除。"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "您的组织使用单点登录 (SSO)。按下登录以使用 SSO 登录。"
@@ -6209,10 +6191,10 @@
       "Allow recovery by phone": [
         "允许通过密保手机恢复"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "允许的域"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "允许的域"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -6919,6 +6901,9 @@
       "Forgot username?": [
         "忘记用户名"
       ],
+      "Groups": [
+        "群组"
+      ],
       "Help": [
         "帮助"
       ],
@@ -7255,20 +7240,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "删除账号"
@@ -7290,6 +7261,20 @@
       ],
       "Switch plan": [
         "切换计划"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Upgrade": [
+        "升级账户"
       ]
     },
     "new_plans: feature": {
@@ -8290,6 +8275,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "由于当前选中的文件名重复，某些图像未上传。"
+      ]
+    },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "在登录您的 Gmail 账户时出现了一些问题。"
       ]
     },
     "Offer": {
@@ -10268,6 +10258,47 @@
         "总计 ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -10552,47 +10583,6 @@
         "您自己的短 @pm.me 邮箱别名"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "您确定吗？"
@@ -10630,6 +10620,9 @@
       ],
       "Expiring": [
         "即将到期"
+      ],
+      "Free Trial": [
+        "免费试用"
       ]
     },
     "Subtitle": {
@@ -11125,10 +11118,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
       "Change login password": [

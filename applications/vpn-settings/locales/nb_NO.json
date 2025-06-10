@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
-      "Activate": [
-        "Aktiver"
-      ],
       "activate": [
         "aktiver"
+      ],
+      "Activate": [
+        "Aktiver"
       ],
       "Activate organization key": [
         "Aktiver organisasjonsnøkkel"
@@ -267,10 +267,10 @@
       "Discard": [
         "Forkast"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Forkast endringer"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Forkast endringer"
       ],
       "Discover ${ planName }": [
@@ -438,6 +438,9 @@
       "Hide": [
         "Skjul"
       ],
+      "Hide more benefits": [
+        "Skjul flere fordeler"
+      ],
       "Hide plan features": [
         "Skjul planfunksjoner"
       ],
@@ -471,6 +474,9 @@
       "Keep subscription": [
         "Behold abonnementet"
       ],
+      "Learn more": [
+        "Lær mer"
+      ],
       "Let's talk": [
         "La oss snakke"
       ],
@@ -503,6 +509,9 @@
       ],
       "Mark as favorite": [
         "Merk som favoritt"
+      ],
+      "More benefits": [
+        "Flere fordeler"
       ],
       "More info: ${ safeTitle }": [
         "Mer informasjon: ${ safeTitle }"
@@ -699,11 +708,11 @@
       "Select country ${ country }": [
         "Velg land ${ country }"
       ],
-      "select file": [
-        "velg fil"
-      ],
       "Select file": [
         "Velg fil"
+      ],
+      "select file": [
+        "velg fil"
       ],
       "Send code": [
         "Send kode"
@@ -767,6 +776,9 @@
       ],
       "Show more": [
         "Vis mer"
+      ],
+      "Show more benefits": [
+        "Vis flere fordeler"
       ],
       "Show preview": [
         "Vis forhåndsvisning"
@@ -4527,11 +4539,11 @@
       "Data recoverable on this device": [
         "Data kan gjenopprettes på denne enheten"
       ],
-      "Dedicated servers": [
-        "Dedikerte tjenere"
-      ],
       "dedicated servers": [
         "dedikerte tjenere"
+      ],
+      "Dedicated servers": [
+        "Dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
@@ -4804,9 +4816,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener det er en feil, kontakt oss ${ contactLink }."
-      ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Hvis du avbryter, mister du tilgang til ${ boldPlanTitle } med én gang, og du blir nedgradert til ${ boldProtonFree }-planen. Dersom forbruket overskrider grensene for gratisplanen, kan du oppleve begrenset tilgang til produktfunksjoner og data."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
@@ -5124,9 +5133,6 @@
       ],
       "Or select a particular server:": [
         "Eller velg en spesiell tjener:"
-      ],
-      "Organization --> Groups": [
-        "Organisasjon --> Grupper"
       ],
       "Organization size": [
         "Organisasjonsstørrelse"
@@ -5602,9 +5608,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "For å bekrefte, angi navnet på brukeren du ønsker å slette."
       ],
-      "To continue enjoying ${ boldPlanTitle } for free until ${ boldCancelDate }, don't cancel.": [
-        "For å fortsette å nyte ${ boldPlanTitle } gratis til ${ boldCancelDate }, ikke avbryt."
-      ],
       "To continue to ${ product }": [
         "for å fortsette til ${ product }"
       ],
@@ -5713,11 +5716,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "Username": [
-        "Brukernavn"
-      ],
       "username": [
         "brukernavn"
+      ],
+      "Username": [
+        "Brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -5833,9 +5836,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Vi vil sende en tilbakestillingskode til telefonnummeret du oppga for kontogjenoppretting."
       ],
-      "What you give up when you cancel ${ boldPlanTitle }:": [
-        "Dette gir du avkall på når du avbestiller ${ boldPlanTitle }:"
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Når du aktiverer SAML for ${ appName } i identitetsleverandøren, kan du bli bedt om å bruke URL-adressen for tilbakeringing (ACS) og utsteder-ID. Bare kopier og lim inn dataene nedenfor i identitetsleverandørfeltene dine."
       ],
@@ -5937,9 +5937,6 @@
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Du kan kun ha én chat-instans åpen om gangen. Lukk tidligere samtaler før du starter en ny."
-      ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Du kan fortsatt få tilgang til alle dataene på kontoen din. Du kan abonnere på nytt når som helst for å fortsette å nyte alle funksjonene våre."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
@@ -6059,9 +6056,6 @@
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
-      "Your free trial of ${ boldPlanTitle } has been canceled, and your account ${ boldUserEmail } has been downgraded to ${ boldProtonFree }.": [
-        "Din gratis prøveversjon av ${ boldPlanTitle } er avbrutt, og kontoen din ${ boldUserEmail } er nedgradert til ${ boldProtonFree }."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din informasjon er trygg hos oss. Vi kontakter deg kun når det kreves for å tilby våre tjenester."
       ],
@@ -6070,9 +6064,6 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Neste faktureringsdato er ${ renewalTime }. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
-      ],
-      "Your organization ${ boldOrganizationName } is disabled and all its user seats have been removed.": [
-        "Din organisasjon ${ boldOrganizationName } er deaktivert og alle brukerlisensene har blitt fjernet."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisasjonen bruker enkel pålogging (SSO). Trykk på 'logg på' for å fortsette med SSO-leverandøren."
@@ -6291,10 +6282,10 @@
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7005,6 +6996,9 @@
       "Forgot username?": [
         "Glemt brukernavn?"
       ],
+      "Groups": [
+        "Grupper"
+      ],
       "Help": [
         "Hjelp"
       ],
@@ -7341,20 +7335,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradere til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -7376,6 +7356,20 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradere til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
       ]
     },
     "new_plans: feature": {
@@ -7893,6 +7887,9 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Få sikker tilgang til internett fra hvor som helst med viktig nettverksovervåking"
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Sikker skylagring som lar deg lagre, synkronisere og dele filer lett og trygt."
+      ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
       ],
@@ -8393,6 +8390,11 @@
         "Noen bilder ble ikke lastet opp på grunn av dupliserte filnavn i gjeldende utvalg."
       ]
     },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "Noe gikk galt under pålogging til din Gmail-konto"
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Ubegrenset i 12 måneder"
@@ -8698,6 +8700,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Tilgang til alle ${ BRAND_NAME }s apper og premiumfunksjoner"
+      ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
       ],
@@ -10440,6 +10445,47 @@
         "For ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -10730,47 +10776,6 @@
         "Ditt eget korte @pm.me e-postalias"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -10808,6 +10813,9 @@
       ],
       "Expiring": [
         "Utløper"
+      ],
+      "Free Trial": [
+        "Gratis prøveversjon"
       ]
     },
     "Subtitle": {
@@ -11308,10 +11316,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
