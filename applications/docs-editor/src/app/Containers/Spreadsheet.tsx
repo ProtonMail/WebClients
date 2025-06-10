@@ -23,7 +23,6 @@ import type {
   ConditionalFormatRule,
   ProtectedRange,
   SpreadsheetTheme,
-  ColorMode,
   NamedRange,
 } from '@rowsncolumns/spreadsheet'
 import {
@@ -40,7 +39,6 @@ import {
   ButtonItalic,
   ButtonRedo,
   ButtonStrikethrough,
-  ButtonSwitchColorMode,
   ButtonUnderline,
   ButtonUndo,
   DEFAULT_FONT_SIZE_PT,
@@ -144,7 +142,6 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const [theme, onChangeTheme] = useState<SpreadsheetTheme>(defaultSpreadsheetTheme)
   const [conditionalFormats, onChangeConditionalFormats] = useState<ConditionalFormatRule[]>([])
   const [protectedRanges, onChangeProtectedRanges] = useState<ProtectedRange[]>([])
-  const [colorMode, onChangeColorMode] = useState<ColorMode>()
   const [charts, onChangeCharts] = useState<EmbeddedChart[]>([])
   const [embeds, onChangeEmbeds] = useState<EmbeddedObject[]>([])
   const [tables, onChangeTables] = useState<TableView[]>([])
@@ -275,7 +272,6 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     namedRanges,
     conditionalFormats,
     theme,
-    colorMode,
     locale,
     onChangeSheets,
     onChangeSheetData,
@@ -637,10 +633,6 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
             />
             <ToolbarSeparator />
             <ThemeSelector theme={theme} onChangeTheme={onChangeSpreadsheetTheme} />
-            <ButtonSwitchColorMode
-              colorMode={colorMode}
-              onClick={() => onChangeColorMode((prev) => (prev === 'dark' ? 'light' : 'dark'))}
-            />
             <IconButton onClick={onRequestSearch}>
               <MagnifyingGlassIcon />
             </IconButton>
