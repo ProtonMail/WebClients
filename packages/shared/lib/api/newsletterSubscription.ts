@@ -1,4 +1,4 @@
-import { getSortParams } from 'proton-mail/store/newsletterSubscriptions/helpers';
+import { getFilteredPaginationData, getSortParams } from 'proton-mail/store/newsletterSubscriptions/helpers';
 import type {
     SortSubscriptionsValue,
     SubscriptionPagination,
@@ -18,7 +18,7 @@ export const getNewsletterSubscription = ({ pagination, sort }: GetNewslettersPr
     url: 'mail/v4/newsletter-subscriptions',
     method: 'GET',
     params: {
-        ...pagination,
+        ...getFilteredPaginationData(pagination),
         ...getSortParams(sort),
         // We hardcode this sort because it's used as fallback in case of coliding sorting
         'Sort[ID]': 'DESC',

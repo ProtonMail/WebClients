@@ -35,6 +35,7 @@ export interface GetNewsletterSubscriptionsNextPage {
         AddressIDs: string[];
         AnchorID: string | null;
         AnchorLastReceivedTime: string | null;
+        AnchorUnreadMessageCount: number | null;
         PageSize: number;
     };
 }
