@@ -8,11 +8,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate organization key": [
         "Aktivirajte ključ organizacije"
@@ -260,6 +260,9 @@
       "Keep editing": [
         "Nastavite uređivati"
       ],
+      "Learn more": [
+        "Saznajte više"
+      ],
       "Load more": [
         "Učitaj više"
       ],
@@ -410,11 +413,11 @@
       "Select country": [
         "Odaberi državu"
       ],
-      "select file": [
-        "odaberi datoteku"
-      ],
       "Select file": [
         "Odaberi datoteku"
+      ],
+      "select file": [
+        "odaberi datoteku"
       ],
       "Send code": [
         "Pošalji kôd"
@@ -2821,11 +2824,11 @@
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
-      "Username": [
-        "Korisničko ime"
-      ],
       "username": [
         "korisničko ime"
+      ],
+      "Username": [
+        "Korisničko ime"
       ],
       "Users": [
         "Korisnika"
@@ -3609,11 +3612,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -3623,6 +3621,11 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
       ]
     },
     "new_plans: feature": {
@@ -4552,6 +4555,17 @@
         "Razumijem"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -4599,17 +4613,6 @@
       ],
       "Version history": [
         "Povijest verzija"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -4883,10 +4886,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [
