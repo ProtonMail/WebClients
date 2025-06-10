@@ -42,7 +42,12 @@ const DownloadDropdown = ({ app }: { app: DesktopVersion }) => {
 
     return (
         <div className="flex gap-2 w-full">
-            <SelectTwo value={value} onChange={({ value }) => setValue(value)}>
+            <SelectTwo
+                value={value}
+                onChange={({ value }) => setValue(value)}
+                id="download-button-description"
+                aria-description={c('Label').t`Select Linux package format`}
+            >
                 <Option value={debUrl} title={debText}>
                     {debText}
                 </Option>
@@ -50,22 +55,27 @@ const DownloadDropdown = ({ app }: { app: DesktopVersion }) => {
                     {rpmText}
                 </Option>
             </SelectTwo>
-            <Button color="norm" onClick={handleClick} fullWidth>{c('Action').t`Download`}</Button>
+            <Button color="norm" onClick={handleClick} fullWidth aria-describedby="download-button-description">{c(
+                'Action'
+            ).t`Download`}</Button>
         </div>
     );
 };
 
-const DownloadButton = ({ link }: { link?: string }) => {
+const DownloadButton = ({ link, ariaLabel }: { link?: string; ariaLabel?: string }) => {
     if (isElectronMail && link) {
         const handleClick = () => {
             void invokeInboxDesktopIPC({ type: 'openExternal', payload: link });
         };
 
-        return <Button color="norm" onClick={handleClick} fullWidth>{c('Action').t`Download`}</Button>;
+        return (
+            <Button color="norm" onClick={handleClick} fullWidth aria-label={ariaLabel}>{c('Action')
+                .t`Download`}</Button>
+        );
     }
 
     return (
-        <ButtonLike as="a" color="norm" shape="solid" fullWidth href={link} target="_self">
+        <ButtonLike as="a" color="norm" shape="solid" fullWidth href={link} target="_self" aria-label={ariaLabel}>
             {c('Action').t`Download`}
         </ButtonLike>
     );
@@ -91,7 +101,7 @@ const DownloadCard = ({ version, icon, platform, isBeta, children }: DownloadSec
                 {version.length ? (
                     <div className="flex gap-2 items-baseline">
                         {isBeta && <Pill className="mt-2">{c('Label').t`Beta`}</Pill>}
-                        <span className=" text-center">{version}</span>
+                        <span className="text-center">{version}</span>
                     </div>
                 ) : null}
 
@@ -121,7 +131,7 @@ export const InboxDesktopSettingsSection = () => {
                     platform={DESKTOP_PLATFORMS.WINDOWS}
                     isBeta={windowsApp.CategoryName === 'EarlyAccess'}
                 >
-                    <DownloadButton link={windowsApp.File[0]!.Url} />
+                    <DownloadButton link={windowsApp.File[0]!.Url} ariaLabel={c('Action').t`Download for Windows`} />
                 </DownloadCard>
                 <DownloadCard
                     version={macosApp.Version}
@@ -129,7 +139,7 @@ export const InboxDesktopSettingsSection = () => {
                     platform={DESKTOP_PLATFORMS.MACOS}
                     isBeta={macosApp.CategoryName === 'EarlyAccess'}
                 >
-                    <DownloadButton link={macosApp.File[0]!.Url} />
+                    <DownloadButton link={macosApp.File[0]!.Url} ariaLabel={c('Action').t`Download for macOS`} />
                 </DownloadCard>
                 <DownloadCard version={linuxApp.Version} icon="brand-linux" platform={DESKTOP_PLATFORMS.LINUX}>
                     {linuxApp.Version && <DownloadDropdown app={linuxApp} />}
