@@ -312,6 +312,9 @@
       "Download anyway": [
         "Vseeno prenesi"
       ],
+      "Download logs": [
+        "Prenesite dnevnike"
+      ],
       "Edit": [
         "Uredi"
       ],
@@ -398,6 +401,9 @@
       ],
       "Help and resources": [
         "Pomoč in viri"
+      ],
+      "Hide": [
+        "Skrij"
       ],
       "Hide advanced PGP settings": [
         "Skrij napredne nastavitve PGP"
@@ -2312,11 +2318,6 @@
         "Zapadel račun"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "uporabite pomočnika za uvoz Easy Switch"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vam omogočata varno in šifrirano sodelovanje z drugimi."
@@ -2416,6 +2417,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "uporabite pomočnika za uvoz Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6412,14 +6418,6 @@
         "Srednja hitrost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -6441,6 +6439,14 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Upgrade": [
+        "Nadgradnja"
       ]
     },
     "new_plans: feature": {
@@ -8853,29 +8859,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } shrambe na uporabnika"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vam nudi vse aplikacije, vse funkcije, zgodnji dostop do novih izdaj in vse potrebno za nadzor nad svojimi podatki in njihovo varnostjo."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } e-poštna domena po meri",
-        "${ planNumberOfDomains } e-poštni domeni po meri",
-        "${ planNumberOfDomains } e-poštne domene po meri",
-        "${ planNumberOfDomains } e-poštnih domen po meri"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-poštni naslov",
-        "${ planNumberOfEmails } e-poštna naslova",
-        "${ planNumberOfEmails } e-poštni naslovi",
-        "${ planNumberOfEmails } e-poštnih naslovov"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mape, oznake in filtri po meri"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB prostora za shranjevanje"
@@ -8915,6 +8898,29 @@
       ],
       "Your privacy is our mission": [
         "Vaša zasebnost je naše poslanstvo"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } shrambe na uporabnika"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vam nudi vse aplikacije, vse funkcije, zgodnji dostop do novih izdaj in vse potrebno za nadzor nad svojimi podatki in njihovo varnostjo."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } e-poštna domena po meri",
+        "${ planNumberOfDomains } e-poštni domeni po meri",
+        "${ planNumberOfDomains } e-poštne domene po meri",
+        "${ planNumberOfDomains } e-poštnih domen po meri"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-poštni naslov",
+        "${ planNumberOfEmails } e-poštna naslova",
+        "${ planNumberOfEmails } e-poštni naslovi",
+        "${ planNumberOfEmails } e-poštnih naslovov"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mape, oznake in filtri po meri"
       ]
     },
     "Subscription renewal state": {

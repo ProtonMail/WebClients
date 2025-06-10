@@ -315,6 +315,9 @@
       "Download anyway": [
         "Yine de indir"
       ],
+      "Download logs": [
+        "Günlüğü indir"
+      ],
       "Edit": [
         "Düzenle"
       ],
@@ -401,6 +404,9 @@
       ],
       "Help and resources": [
         "Yardım ve kaynaklar"
+      ],
+      "Hide": [
+        "Gizle"
       ],
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
@@ -2356,11 +2362,6 @@
         "Süresi geçmiş fatura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
-      ]
-    },
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME }, ${ DRIVE_APP_NAME } ile diğer kişilerle güvenli, şifrelenmiş bir ortamda birlikte çalışın."
@@ -2484,6 +2485,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4506,9 +4512,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
       ],
-      "If you cancel, you will lose access to ${ boldPlanTitle } immediately, and you will be downgraded to the ${ boldProtonFree } plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "İptal etmeniz durumunda ${ boldPlanTitle } tarifesine erişimi hemen kaybecek ve ${ boldProtonFree } tarifesine düşürüleceksiniz. Eğer kullanımlarınız ücretsiz tarife sınırlarını aşarsa ürün özelliklerine ve verilerinize erişiminiz kısıtlanabilir."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
       ],
@@ -5307,9 +5310,6 @@
       ],
       "You can now return to the application to continue": [
         "Şimdi uygulamaya dönebilirsiniz"
-      ],
-      "You can still access all your account's data. You can subscribe again at any time to continue enjoying all of our features.": [
-        "Hesabınızın tüm verilerine hâlâ erişebilirsiniz. Tüm özelliklerimizin keyfini çıkarmaya devam etmek için dilediğiniz zaman tekrar abone olabilirsiniz."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
@@ -6540,17 +6540,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus } tutarından başlayan tarifeler"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -6572,6 +6561,17 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus } tutarından başlayan tarifeler"
+      ],
+      "Upgrade": [
+        "Yükselt"
       ]
     },
     "new_plans: feature": {
@@ -9016,25 +9016,6 @@
         "${ totalPrice } için"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } özel e-posta etki alanı",
-        "${ planNumberOfDomains } özel e-posta etki alanı"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-posta adresi",
-        "${ planNumberOfEmails } e-posta adresi"
-      ],
-      "Folders, labels, and custom filters": [
-        "Klasörler, etiketler ve özel süzgeçler"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -9074,6 +9055,25 @@
       ],
       "Your privacy is our mission": [
         "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } özel e-posta etki alanı",
+        "${ planNumberOfDomains } özel e-posta etki alanı"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-posta adresi",
+        "${ planNumberOfEmails } e-posta adresi"
+      ],
+      "Folders, labels, and custom filters": [
+        "Klasörler, etiketler ve özel süzgeçler"
       ]
     },
     "Subscription renewal state": {
