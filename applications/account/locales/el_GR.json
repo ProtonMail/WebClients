@@ -469,11 +469,11 @@
       "Discard": [
         "Απόρριψη"
       ],
-      "Discard Changes": [
-        "Απόρριψη Αλλαγών"
-      ],
       "Discard changes": [
         "Απόρριψη αλλαγών"
+      ],
+      "Discard Changes": [
+        "Απόρριψη Αλλαγών"
       ],
       "Discover ${ planName }": [
         "Ανακαλύψτε το ${ planName }"
@@ -501,6 +501,12 @@
       ],
       "Download CSV sample": [
         "Λήψη δείγματος CSV"
+      ],
+      "Download for macOS": [
+        "Λήψη για MacOS"
+      ],
+      "Download for Windows": [
+        "Λήψη για Windows"
       ],
       "Download ICS": [
         "Λήψη ICS"
@@ -799,11 +805,11 @@
       "Keep": [
         "Διατήρηση"
       ],
-      "Keep Editing": [
-        "Συνεχίστε την Επεξεργασία"
-      ],
       "Keep editing": [
         "Συνέχιση επεξεργασίας"
+      ],
+      "Keep Editing": [
+        "Συνεχίστε την Επεξεργασία"
       ],
       "Keep logo": [
         "Διατηρήστε το λογότυπο"
@@ -994,11 +1000,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "Refresh the page": [
-        "Ανανέωση της σελίδας"
-      ],
       "refresh the page": [
         "ανανέωσε τη σελίδα"
+      ],
+      "Refresh the page": [
+        "Ανανέωση της σελίδας"
       ],
       "Reject": [
         "Απόρριψη"
@@ -1174,11 +1180,11 @@
       "Select country ${ country }": [
         "Επιλογή χώρας ${ country }"
       ],
-      "Select file": [
-        "Επιλέξτε αρχείο"
-      ],
       "select file": [
         "επιλέξτε αρχείο"
+      ],
+      "Select file": [
+        "Επιλέξτε αρχείο"
       ],
       "Select files": [
         "Επιλέξτε αρχεία"
@@ -1590,8 +1596,14 @@
       "Delete address": [
         "Διαγραφή διεύθυνσης"
       ],
+      "Delete address “${ emailAddress }”": [
+        "Διαγραφή διεύθυνσης “${ emailAddress }”"
+      ],
       "Disable": [
         "Απενεργοποίηση"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "Απενεργοποίηση διεύθυνσης “${ emailAddress }”"
       ],
       "Disable E2EE mail": [
         "Απενεργοποίηση E2EE mail"
@@ -1605,8 +1617,14 @@
       "Edit address": [
         "Επεξεργασία διεύθυνσης"
       ],
+      "Edit address “${ emailAddress }”": [
+        "Επεξεργασία διεύθυνσης “${ emailAddress }”"
+      ],
       "Enable": [
         "Ενεργοποίηση"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "Ενεργοποίηση διεύθυνσης “${ emailAddress }”"
       ],
       "Enable E2EE mail": [
         "Ενεργοποίηση E2EE mail"
@@ -1614,11 +1632,17 @@
       "Generate missing keys": [
         "Δημιουργία των κλειδιών που λείπουν"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "Δημιουργία κλειδιών που λείπουν για τη διεύθυνση “${ emailAddress }”"
+      ],
       "Saving": [
         "Αποθήκευση"
       ],
       "Set as default": [
         "Ορισμός ως προεπιλογή"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "Ορισμός “${ emailAddress }” ως προεπιλεγμένης διεύθυνσης"
       ]
     },
     "Address status": {
@@ -4782,11 +4806,11 @@
       "Forward to": [
         "Προώθηση σε"
       ],
-      "or": [
-        "ή"
-      ],
       "Or": [
         "Ή"
+      ],
+      "or": [
+        "ή"
       ],
       "With attachment": [
         "Με συνημμένα"
@@ -7542,11 +7566,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ενεργοποιήστε τουλάχιστον μία μέθοδο ανάκτησης δεδομένων για να βεβαιωθείτε ότι μπορείτε να συνεχίσετε να έχετε πρόσβαση στα περιεχόμενα του λογαριασμού σας ${ BRAND_NAME } εάν χάσετε τον κωδικό πρόσβασής σας."
       ],
-      "Active": [
-        "Ενεργό"
-      ],
       "active": [
         "ενεργό"
+      ],
+      "Active": [
+        "Ενεργό"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Προσθέστε μια @pm.me διεύθυνση ηλεκτρονικού ταχυδρομείου στον λογαριασμό σας. Αυτός ο απλός, συντομότερος τομέας ερμηνεύεται ως \"${ MAIL_APP_NAME } me\" ή \"Private Message me.\" (Στείλε μου Προσωπικό Μήνυμα)"
@@ -7993,11 +8017,11 @@
       "Data recoverable on this device": [
         "Δεδομένα ανακτήσιμα σε αυτήν τη συσκευή"
       ],
-      "dedicated servers": [
-        "αφοσιωμένοι διακομιστές"
-      ],
       "Dedicated servers": [
         "Αποκλειστικοί διακομιστές"
+      ],
+      "dedicated servers": [
+        "αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να επιτρέψουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -9866,11 +9890,11 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "username": [
-        "όνομα χρήστη"
-      ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "username": [
+        "όνομα χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -11085,11 +11109,11 @@
       "Amount due": [
         "Οφειλόμενο ποσό"
       ],
-      "AND": [
-        "ΚΑΙ"
-      ],
       "And": [
         "Και"
+      ],
+      "AND": [
+        "ΚΑΙ"
       ],
       "and": [
         "και"
@@ -11288,6 +11312,9 @@
       ],
       "Copy": [
         "Αντιγραφή"
+      ],
+      "Copy fingerprint": [
+        "Αντιγραφή δακτυλικού αποτυπώματος"
       ],
       "Could you please let us know which provider?": [
         "Θα μπορούσατε να μας γνωστοποιήσετε τον πάροχο;"
@@ -11517,11 +11544,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ΑΝ"
-      ],
       "If": [
         "Αν"
+      ],
+      "IF": [
+        "ΑΝ"
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
@@ -11631,6 +11658,9 @@
       "Message": [
         "Μήνυμα"
       ],
+      "Message (auto-reply)": [
+        "Μήνυμα (αυτόματη απάντηση)"
+      ],
       "Messages per page": [
         "Μηνύματα ανά σελίδα"
       ],
@@ -11730,14 +11760,14 @@
       "Optional": [
         "Προαιρετικό"
       ],
-      "OR": [
-        "'Η"
-      ],
       "or": [
         "ή"
       ],
       "Or": [
         "Ή"
+      ],
+      "OR": [
+        "'Η"
       ],
       "Organization name": [
         "Όνομα οργανισμού"
@@ -11870,6 +11900,9 @@
       ],
       "Second password": [
         "Δεύτερος κωδικός πρόσβασης"
+      ],
+      "Select Linux package format": [
+        "Επιλέξτε μορφή πακέτου Linux"
       ],
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
@@ -13772,14 +13805,6 @@
         "Ξεκλειδώστε όλα τα ${ BRAND_NAME } premium προϊόντα και δυνατότητες με μόλις ${ priceLine }. Ακυρώστε ανά πάσα στιγμή."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -13798,6 +13823,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Ξεκλειδώστε premium δυνατότητες με αναβάθμιση"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -17863,47 +17896,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
@@ -18192,6 +18184,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
@@ -18958,10 +18991,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
