@@ -57,7 +57,7 @@ import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
 import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-state-from-nodes'
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { copyTextToClipboard } from '../Utils/copy-to-clipboard'
-import { useNotifications } from '@proton/components'
+import { ErrorBoundary, useNotifications } from '@proton/components'
 
 type AppProps = {
   documentType: DocumentType
@@ -93,6 +93,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
   const editorRef = useRef<LexicalEditor | null>(null)
   const spreadsheetRef = useRef<SheetRef | null>(null)
+  const latestSpreadsheetStateRef = useRef<object>({})
   const [clonedEditorState, setClonedEditorState] = useState<EditorState>()
 
   useEffect(() => {
@@ -444,12 +445,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
       },
 
       async getSheetsJSON() {
-        const sheet = spreadsheetRef.current
-        if (!sheet) {
-          return
-        }
-
-        return sheet.getSheetState()
+        return latestSpreadsheetStateRef
       },
 
       async getYDocAsJSON() {
@@ -659,17 +655,26 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           </div>
         </>
       ) : (
-        <SpreadsheetProvider>
-          <Spreadsheet
-            ref={spreadsheetRef}
-            docState={docState}
-            hidden={editorHidden}
-            onEditorLoadResult={onEditorLoadResult}
-            editorInitializationConfig={editorConfig.current.editorInitializationConfig}
-            systemMode={systemMode}
-            editingLocked={editingLocked || userMode === EditorUserMode.Preview}
-          />
-        </SpreadsheetProvider>
+        <ErrorBoundary
+          onError={(error) => {
+            reportErrorToSentry(error)
+          }}
+        >
+          <SpreadsheetProvider>
+            <Spreadsheet
+              ref={spreadsheetRef}
+              docState={docState}
+              hidden={editorHidden}
+              onEditorLoadResult={onEditorLoadResult}
+              editorInitializationConfig={editorConfig.current.editorInitializationConfig}
+              systemMode={systemMode}
+              editingLocked={editingLocked || userMode === EditorUserMode.Preview}
+              onStateUpdate={(state) => {
+                latestSpreadsheetStateRef.current = state
+              }}
+            />
+          </SpreadsheetProvider>
+        </ErrorBoundary>
       )}
     </div>
   )

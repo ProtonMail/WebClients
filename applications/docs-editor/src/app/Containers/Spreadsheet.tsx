@@ -1,7 +1,7 @@
 /* eslint-disable monorepo-cop/no-relative-import-outside-package */
 
 import type { ForwardedRef } from 'react'
-import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import type { SheetData } from '@rowsncolumns/spreadsheet-state'
 import {
   ConditionalFormatDialog,
@@ -125,6 +125,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     editorInitializationConfig,
     systemMode,
     editingLocked,
+    onStateUpdate,
   }: {
     docState: DocStateInterface
     hidden: boolean
@@ -132,6 +133,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     editorInitializationConfig: EditorInitializationConfig | undefined
     systemMode: EditorSystemMode
     editingLocked: boolean
+    onStateUpdate: (state: object) => void
   },
   ref: ForwardedRef<SheetRef>,
 ) {
@@ -300,18 +302,36 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     },
   })
 
-  const getSheetState = () => ({
-    activeCell,
-    activeSheetId,
-    sheets,
-    sheetData,
-    conditionalFormats,
-    protectedRanges,
-    charts,
-    embeds,
-    tables,
-    namedRanges,
-  })
+  const getSheetState = useCallback(
+    () => ({
+      activeCell,
+      activeSheetId,
+      sheets,
+      sheetData,
+      conditionalFormats,
+      protectedRanges,
+      charts,
+      embeds,
+      tables,
+      namedRanges,
+    }),
+    [
+      activeCell,
+      activeSheetId,
+      charts,
+      conditionalFormats,
+      embeds,
+      namedRanges,
+      protectedRanges,
+      sheetData,
+      sheets,
+      tables,
+    ],
+  )
+
+  useEffect(() => {
+    onStateUpdate(getSheetState())
+  }, [getSheetState, onStateUpdate])
 
   const exportData = async (format: DataTypesThatDocumentCanBeExportedAs) => {
     if (format === 'yjs') {
