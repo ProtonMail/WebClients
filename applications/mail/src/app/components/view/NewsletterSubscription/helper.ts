@@ -109,7 +109,12 @@ export const getNewsletterCopyForFilterAction = (subscription: NewsletterSubscri
     const count = getReceivedMessagesCount(subscription);
 
     if (filterType === 'MarkAsRead') {
-        return c('Label').ngettext(msgid`Marked ${count} message as read.`, `Marked ${count} messages as read.`, count);
+        const unreadCount = subscription.UnreadMessageCount ?? 0;
+        return c('Label').ngettext(
+            msgid`Marked ${unreadCount} message as read.`,
+            `Marked ${unreadCount} messages as read.`,
+            unreadCount
+        );
     } else if (filterType === 'MoveToArchive') {
         return c('Label').ngettext(
             msgid`Moved ${count} message to Archive.`,

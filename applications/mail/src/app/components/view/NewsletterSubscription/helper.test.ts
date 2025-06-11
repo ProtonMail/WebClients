@@ -251,10 +251,7 @@ describe('Newsletter subscriptions helpers', () => {
     describe('getNewsletterCopyForFilterAction', () => {
         it('Should return copy for mark as read', () => {
             expect(
-                getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Last30Days: 10 } } as NewsletterSubscription,
-                    'MarkAsRead'
-                )
+                getNewsletterCopyForFilterAction({ UnreadMessageCount: 10 } as NewsletterSubscription, 'MarkAsRead')
             ).toBe('Marked 10 messages as read.');
         });
 
@@ -278,11 +275,17 @@ describe('Newsletter subscriptions helpers', () => {
 
         it('Should return singular copy for mark as read', () => {
             expect(
+                getNewsletterCopyForFilterAction({ UnreadMessageCount: 1 } as NewsletterSubscription, 'MarkAsRead')
+            ).toBe('Marked 1 message as read.');
+        });
+
+        it('Should return default copy for mark as read', () => {
+            expect(
                 getNewsletterCopyForFilterAction(
                     { ReceivedMessages: { Last30Days: 1 } } as NewsletterSubscription,
                     'MarkAsRead'
                 )
-            ).toBe('Marked 1 message as read.');
+            ).toBe('Marked 0 messages as read.');
         });
 
         it('Should return singular copy for move to archive', () => {
