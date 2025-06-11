@@ -2,7 +2,7 @@ import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
 import type { ItemRevision } from '@proton/pass/types';
 
-import { BASIC_AUTH_URL_RE, onAuthRequired } from './auth-required';
+import { BASIC_AUTH_URL_RE, resolveCredentials } from './auth-required';
 
 const createMockLoginItem = (username: string, password: string): ItemRevision<'login'> =>
     createTestItem('login', {
@@ -42,12 +42,12 @@ describe('Basic auth listener', () => {
         });
     });
 
-    describe('onAuthRequired', () => {
+    describe('resolveCredentials', () => {
         describe('URL validation', () => {
             it('should cancel when URL already contains embedded credentials', () => {
                 const items = [createMockLoginItem('::username::', '::password::')];
                 const url = 'https://user:pass@example.com';
-                const result = onAuthRequired({ items, url, attempt: 0 });
+                const result = resolveCredentials({ items, url, attempt: 0 });
 
                 expect(result).toEqual({ cancel: false });
             });
@@ -55,7 +55,7 @@ describe('Basic auth listener', () => {
             it('should cancel when URL contains credentials with special characters', () => {
                 const items = [createMockLoginItem('::username::', '::password::')];
                 const url = 'https://::username::23:p@ssw0rd@api.example.com/endpoint';
-                const result = onAuthRequired({ items, url, attempt: 0 });
+                const result = resolveCredentials({ items, url, attempt: 0 });
 
                 expect(result).toEqual({ cancel: false });
             });
@@ -63,7 +63,7 @@ describe('Basic auth listener', () => {
             it('should not cancel for URLs without embedded credentials', () => {
                 const items = [createMockLoginItem('::username::', '::password::')];
                 const url = 'https://example.com';
-                const result = onAuthRequired({ items, url, attempt: 0 });
+                const result = resolveCredentials({ items, url, attempt: 0 });
 
                 expect(result).not.toEqual({ cancel: false });
                 expect(result).toHaveProperty('authCredentials');
@@ -75,7 +75,7 @@ describe('Basic auth listener', () => {
                 const items: ItemRevision<'login'>[] = [];
                 const url = 'https://example.com';
 
-                const result = onAuthRequired({ items, url, attempt: 0 });
+                const result = resolveCredentials({ items, url, attempt: 0 });
                 expect(result).toEqual({ cancel: false });
             });
         });
@@ -89,7 +89,7 @@ describe('Basic auth listener', () => {
                 const url = 'https://example.com';
                 const attempt = 0;
 
-                const result = onAuthRequired({ items, url, attempt });
+                const result = resolveCredentials({ items, url, attempt });
 
                 expect(result).toEqual({
                     authCredentials: {
@@ -105,7 +105,7 @@ describe('Basic auth listener', () => {
                     createMockLoginItem('::username-2::', '::password-2::'),
                 ];
                 const url = 'https://example.com';
-                const result = onAuthRequired({ items, url, attempt: 2 });
+                const result = resolveCredentials({ items, url, attempt: 2 });
 
                 expect(result).toEqual({ cancel: false });
             });
