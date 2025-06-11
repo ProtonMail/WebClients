@@ -38,10 +38,11 @@ export interface SharesState {
     removeShares: (shareIds: string[]) => void;
     getShare: (shareId: string) => Share | ShareWithKey | undefined;
     getLockedShares: () => {
-        defaultShare: Share | ShareWithKey;
+        defaultShares: (Share | ShareWithKey)[];
         devices: (Share | ShareWithKey)[];
         photos: (Share | ShareWithKey)[];
     }[];
+    haveLockedOrRestoredOldPhotosShare: () => boolean;
     getDefaultShareId: () => string | undefined;
     getDefaultPhotosShareId: () => string | undefined;
     getDefaultShareEmail: () => string | undefined;
@@ -49,11 +50,11 @@ export interface SharesState {
     setLockedVolumesForRestore: (volumes: LockedVolumeForRestore[]) => void;
 
     // This set of actions are to ensure we load default shares and photo shares only once
-    loadUserSharesPromise: Promise<Share[]> | null;
+    loadUserSharesPromise: Promise<{ defaultShareId?: string; shares: Share[] }> | null;
     defaultSharePromise: Promise<ShareWithKey> | null;
     defaultPhotosSharePromise: Promise<ShareWithKey | undefined> | null;
     isLoadingShares: boolean;
-    setLoadUserSharesPromise: (promise: Promise<Share[]>) => void;
+    setLoadUserSharesPromise: (promise: Promise<{ defaultShareId?: string; shares: Share[] }>) => void;
     clearLoadUserSharesPromise: () => void;
     setDefaultSharePromise: (promise: Promise<ShareWithKey>) => void;
     clearDefaultSharePromise: () => void;

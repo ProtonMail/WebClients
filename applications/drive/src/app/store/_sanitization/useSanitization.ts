@@ -93,7 +93,7 @@ export const useSanitization = () => {
             (volumes, share) => {
                 if (!volumes[share.volumeId]) {
                     volumes[share.volumeId] = {
-                        defaultShare: {} as ShareWithKey,
+                        defaultShares: [] as ShareWithKey[],
                         photos: [],
                         devices: [],
                     };
@@ -101,7 +101,7 @@ export const useSanitization = () => {
 
                 const volume = volumes[share.volumeId];
                 if (share.type === ShareType.default) {
-                    volume.defaultShare = share;
+                    volume.defaultShares.push(share);
                 } else if (share.type === ShareType.photos) {
                     volume.photos.push(share);
                 } else if (share.type === ShareType.device) {
@@ -113,24 +113,24 @@ export const useSanitization = () => {
             {} as Record<
                 string,
                 {
-                    defaultShare: ShareWithKey;
+                    defaultShares: ShareWithKey[];
                     photos: ShareWithKey[];
                     devices: ShareWithKey[];
                 }
             >
         );
 
-        // We remove all lockedShares groups that doesn't have defaultShare and we report all shareIds of devices and photos related to it
+        // We remove all lockedShares groups that doesn't have defaultShares and we report all shareIds of devices and photos related to it
         const validLockedShares = Object.values(sharesByVolume).filter((volume) => {
-            const hasDefaultShare = Object.keys(volume.defaultShare).length > 0;
-            if (!hasDefaultShare) {
+            const hasDefaultShares = volume.defaultShares.length > 0;
+            if (!hasDefaultShares) {
                 const reason = 'No associated default share';
                 failingShares.push(
                     ...volume.photos.map((share) => ({ ShareID: share.shareId, Reason: reason })),
                     ...volume.devices.map((share) => ({ ShareID: share.shareId, Reason: reason }))
                 );
             }
-            return hasDefaultShare;
+            return hasDefaultShares;
         });
 
         if (!validLockedShares.length) {
@@ -163,7 +163,7 @@ export const useSanitization = () => {
             const reason = e instanceof Error ? e.message : `Unknown error during auto-restore: ${e}`;
             validLockedShares.forEach((volume) => {
                 failingShares.push(
-                    { ShareID: volume.defaultShare.shareId, Reason: reason },
+                    ...volume.defaultShares.map((share) => ({ ShareID: share.shareId, Reason: reason })),
                     ...volume.photos.map((share) => ({ ShareID: share.shareId, Reason: reason })),
                     ...volume.devices.map((share) => ({ ShareID: share.shareId, Reason: reason }))
                 );

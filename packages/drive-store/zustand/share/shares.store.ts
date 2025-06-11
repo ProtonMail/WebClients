@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
+import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
+
 import type { Share, ShareWithKey } from '../../store/_shares';
 import { ShareState, ShareType } from '../../store/_shares';
 import type { SharesState } from './types';
@@ -32,23 +34,30 @@ export const useSharesStore = create<SharesState>()(
         getShare: (shareId) => get().shares[shareId],
         getLockedShares: () => {
             const { shares } = get();
-            return Object.values(shares)
-                .filter((share) => share.isLocked && share.isDefault && !share.forASV)
-                .map((defaultShare) => ({
-                    defaultShare,
-                    devices: Object.values(shares).filter(
-                        (share) =>
-                            share.isLocked &&
-                            share.type === ShareType.device &&
-                            share.volumeId === defaultShare.volumeId
-                    ),
-                    photos: Object.values(shares).filter(
-                        (share) =>
-                            share.isLocked &&
-                            share.type === ShareType.photos &&
-                            share.volumeId === defaultShare.volumeId
-                    ),
-                }));
+            const shareValues = Object.values(shares);
+            const lockedDefaultShares = shareValues.filter(
+                (share) =>
+                    share.isLocked && (share.isDefault || share.volumeType === VolumeType.Photos) && !share.forASV
+            );
+
+            // Group by volume ID
+            const volumeGroups = new Map<string, typeof lockedDefaultShares>();
+            lockedDefaultShares.forEach((share) => {
+                if (!volumeGroups.has(share.volumeId)) {
+                    volumeGroups.set(share.volumeId, []);
+                }
+                volumeGroups.get(share.volumeId)!.push(share);
+            });
+
+            return Array.from(volumeGroups.entries()).map(([volumeId, defaultShares]) => ({
+                defaultShares,
+                devices: shareValues.filter(
+                    (share) => share.isLocked && share.type === ShareType.device && share.volumeId === volumeId
+                ),
+                photos: shareValues.filter(
+                    (share) => share.isLocked && share.type === ShareType.photos && share.volumeId === volumeId
+                ),
+            }));
         },
         getDefaultShareId: () => {
             const { shares } = get();
@@ -57,6 +66,20 @@ export const useSharesStore = create<SharesState>()(
         getDefaultPhotosShareId: () => {
             const { shares } = get();
             return findDefaultPhotosShareId(Object.values(shares));
+        },
+        haveLockedOrRestoredOldPhotosShare: () => {
+            const { shares } = get();
+            const sharesValues = Object.values(shares);
+            return sharesValues
+                .filter((share) => share.isDefault)
+                .some((defaultShare) =>
+                    sharesValues.some(
+                        (share) =>
+                            (share.state === ShareState.restored || share.isLocked) &&
+                            share.type === ShareType.photos &&
+                            share.volumeId === defaultShare.volumeId
+                    )
+                );
         },
         getRestoredPhotosShares: () => {
             const { shares } = get();
