@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktivovať"
-      ],
       "Activate": [
         "Aktivovať"
+      ],
+      "activate": [
+        "aktivovať"
       ],
       "Activate organization key": [
         "Aktivovať kľúč organizácie"
@@ -267,10 +267,10 @@
       "Discard": [
         "Zahodiť"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodiť zmeny"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodiť zmeny"
       ],
       "Discover ${ planName }": [
@@ -459,10 +459,10 @@
       "Invite user": [
         "Pozvať používateľa"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Pokračovať v úpravách"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Pokračovať v úpravách"
       ],
       "Keep logo": [
@@ -708,11 +708,11 @@
       "Select country ${ country }": [
         "Vyberte krajinu ${ country }"
       ],
-      "Select file": [
-        "Vyberte súbor"
-      ],
       "select file": [
         "vybrať súbor"
+      ],
+      "Select file": [
+        "Vyberte súbor"
       ],
       "Send code": [
         "Odoslať kód"
@@ -993,8 +993,14 @@
       "Delete address": [
         "Vymazať adresu"
       ],
+      "Delete address “${ emailAddress }”": [
+        "Vymazať adresu „${ emailAddress }”"
+      ],
       "Disable": [
         "Vypnúť"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "Deaktivovať adresu „${ emailAddress }”"
       ],
       "Disable E2EE mail": [
         "Deaktivovať E2EE poštu"
@@ -1008,8 +1014,14 @@
       "Edit address": [
         "Upraviť adresu"
       ],
+      "Edit address “${ emailAddress }”": [
+        "Upraviť adresu „${ emailAddress }”"
+      ],
       "Enable": [
         "Zapnúť"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "Povoliť adresu „${ emailAddress }“"
       ],
       "Enable E2EE mail": [
         "Aktivovať E2EE poštu"
@@ -1017,11 +1029,17 @@
       "Generate missing keys": [
         "Generovať chýbajúce kľúče"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "Vygenerovať chýbajúce kľúče pre adresu „${ emailAddress }“"
+      ],
       "Saving": [
         "Ukladanie"
       ],
       "Set as default": [
         "Nastaviť ako predvolený"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "Nastaviť „${ emailAddress }” ako predvolenú adresu"
       ]
     },
     "Address status": {
@@ -4494,6 +4512,9 @@
       "At least one application must be active": [
         "Aspoň jedna aplikácia musí byť aktívna"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Na konci vášho skúšobného obdobia ${ boldCancelDate } vás preradíme do ${ boldProtonFree }. Všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
@@ -4641,11 +4662,11 @@
       "Data recoverable on this device": [
         "Údaje obnoviteľné v tomto zariadení"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -4925,6 +4946,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Ak si to rozmyslíte, môžete sa kedykoľvek znova prihlásiť. Je nám ľúto, že odchádzate."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
@@ -5841,11 +5865,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "username": [
-        "používateľské meno"
-      ],
       "Username": [
         "Používateľské meno"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -6153,6 +6177,9 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Počas 10 dní nebude možné tieto servery preradiť do inej krajiny."
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Taktiež stratíte prístup k funkciám ${ boldPlanTitle }:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }.",
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }.",
@@ -6239,6 +6266,12 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Tieto servery budete môcť okamžite pridať do inej brány."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Prístup k ${ boldPlanTitle } stratíte ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
       ],
       "Zoom meeting": [
         "Zoom míting"
@@ -7489,6 +7522,20 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Odstrániť účet"
@@ -7510,20 +7557,6 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
       ]
     },
     "new_plans: feature": {
@@ -8150,14 +8183,6 @@
         "Odomknite všetky prémiové produkty a funkcie ${ BRAND_NAME } len za ${ priceLine }. Zrušiť môžete kedykoľvek."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -8170,6 +8195,14 @@
       ],
       "Switch plans?": [
         "Zmeniť plán?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -8685,6 +8718,23 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Víta vás ${ appName }"
+      ]
+    },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Zrušiť môžete kedykoľvek predtým."
+      ],
+      "Once your full subscription starts...": [
+        "Akonáhle začne vaše plné predplatné..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Vaše plné ${ planTitle } predplatné začína dňa ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Budete môcť používať ${ planTitle } až do konca skúšobného obdobia, bez poplatku."
       ]
     },
     "Option": {
@@ -10732,47 +10782,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
@@ -11073,6 +11082,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -11628,10 +11678,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -12302,6 +12352,9 @@
       ],
       "Your current plan": [
         "Váš aktuálny plán"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní"
       ],
       "Your plan": [
         "Váš plán"

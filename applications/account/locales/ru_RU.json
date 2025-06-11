@@ -277,6 +277,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Подтвердите открытие ссылки ${ linkToShow }"
       ],
+      "Confirm purchase": [
+        "Подтвердите покупку"
+      ],
       "Connect": [
         "Подключить"
       ],
@@ -460,10 +463,10 @@
       "Discard": [
         "Сбросить"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Сбросить изменения"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Сбросить изменения"
       ],
       "Discover ${ planName }": [
@@ -784,10 +787,10 @@
       "Keep": [
         "Оставить"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Продолжить изменение"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Продолжить изменение"
       ],
       "Keep logo": [
@@ -973,11 +976,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
       "refresh the page": [
         "обновить страницу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
       ],
       "Reject": [
         "Отказать"
@@ -1153,11 +1156,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "Select file": [
-        "Выбрать файл"
-      ],
       "select file": [
         "выбрать файл"
+      ],
+      "Select file": [
+        "Выбрать файл"
       ],
       "Select files": [
         "Выбрать файлы"
@@ -2040,6 +2043,9 @@
       ],
       "Two-year": [
         "Каждые 2 года"
+      ],
+      "Yearly": [
+        "Ежегодно"
       ]
     },
     "Blog": {
@@ -4788,11 +4794,11 @@
       "Forward to": [
         "Переслать на"
       ],
-      "or": [
-        "или"
-      ],
       "Or": [
         "Или"
+      ],
+      "or": [
+        "или"
       ],
       "With attachment": [
         "С вложением"
@@ -7655,11 +7661,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Активируйте хотя бы один метод восстановления данных, чтобы убедиться, что вы сможете продолжить доступ к содержимому вашего аккаунта ${ BRAND_NAME } в случае утери пароля."
       ],
-      "Active": [
-        "Активно"
-      ],
       "active": [
         "активный"
+      ],
+      "Active": [
+        "Активно"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"Напиши мне в ${ MAIL_APP_NAME }\" или \"Отправь мне личное сообщение\"."
@@ -8120,11 +8126,11 @@
       "Data recoverable on this device": [
         "Данные, которые можно восстановить на этом устройстве"
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -10010,11 +10016,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "username": [
-        "имя пользователя"
-      ],
       "Username": [
         "Имя пользователя"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -11245,10 +11251,10 @@
       "Amount due": [
         "К оплате"
       ],
-      "AND": [
+      "And": [
         "И"
       ],
-      "And": [
+      "AND": [
         "И"
       ],
       "and": [
@@ -11677,11 +11683,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЕСЛИ"
-      ],
       "If": [
         "Если"
+      ],
+      "IF": [
+        "ЕСЛИ"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -11890,14 +11896,14 @@
       "Optional": [
         "Необязательно"
       ],
-      "OR": [
-        "ИЛИ"
-      ],
       "or": [
         "или"
       ],
       "Or": [
         "Или"
+      ],
+      "OR": [
+        "ИЛИ"
       ],
       "Organization name": [
         "Название организации"
@@ -13995,14 +14001,6 @@
         "Разблокируйте все премиум продукты и возможности ${ BRAND_NAME } всего за ${ priceLine }. Отменить можно в любое время."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -14021,6 +14019,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -14569,6 +14575,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
+      ]
+    },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "Что-то пошло не так при входе в ваш аккаунт Gmail"
       ]
     },
     "Offer": {
@@ -15210,6 +15221,9 @@
       ],
       "/month /user, billed biennially": [
         "в месяц за пользователя раз в два года"
+      ],
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Доступ ко всем приложениям ${ BRAND_NAME } и платным функциям"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Передовая защита, выходящая за рамки отраслевых стандартов"
@@ -15965,6 +15979,26 @@
     "plan customizer, users": {
       "contact": [
         "свяжитесь"
+      ]
+    },
+    "Plan description": {
+      "All ${ BRAND_NAME } premium products included in Duo.": [
+        "Все платные продукты ${ BRAND_NAME } включены в Duo."
+      ],
+      "Best if you need ${ maxSpace } of storage and for couples.": [
+        "Лучше всего подходит, если вам нужно ${ maxSpace } хранилища, а также для пар."
+      ],
+      "Great for everyday use and photo backups.": [
+        "Отлично подходит для повседневного использования и резервных копий фотографий."
+      ],
+      "Perfect for getting started with secure cloud storage.": [
+        "Идеально подходит для начала работы с безопасным облачным хранилищем."
+      ],
+      "Secure cloud storage and collaboration for teams.": [
+        "Безопасное облачное хранилище и совместная работа для команд."
+      ],
+      "The ideal plan for privacy-conscious power users.": [
+        "Идеальный тариф для опытных пользователей, заботящихся о конфиденциальности."
       ]
     },
     "Plans": {
@@ -17092,6 +17126,143 @@
         "Вы включили проверку адреса для ${ boldSenderEmail }. Мы не смогли проверить подлинность этого приглашения календаря. Это может быть связано с изменениями в ключах шифрования этого контакта. Пожалуйста, проверьте его расширенные настройки PGP или попросите ${ boldSenderEmail } отправить новое приглашение."
       ]
     },
+    "Signup": {
+      "${ DRIVE_APP_NAME } for Business": [
+        "${ DRIVE_APP_NAME } для Business"
+      ],
+      "${ value } of secure storage": [
+        "${ value } безопасного хранилища"
+      ],
+      "${ value } of secure storage per user": [
+        "${ value } защищенного хранилища на пользователя"
+      ],
+      "/user": [
+        "/пользователь"
+      ],
+      "30 custom email addresses": [
+        "30 пользовательских адресов электронной почты"
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
+      ],
+      "Billing Cycle": [
+        "Платежный цикл"
+      ],
+      "Compare plans": [
+        "Сравнить тарифы"
+      ],
+      "Confirm payment, access your Drive": [
+        "Подтвердите платёж, получите доступ к своему Drive"
+      ],
+      "Connect all your devices": [
+        "Подключите все свои устройства"
+      ],
+      "Continue with ${ PLAN_NAMES[plan] }": [
+        "Продолжить с ${ PLAN_NAMES[plan] }"
+      ],
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ],
+      "End-to-end encryption": [
+        "Сквозное шифрование"
+      ],
+      "Free": [
+        "Free"
+      ],
+      "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
+        "Получите безопасный адрес ${ MAIL_APP_NAME } или ${ internalButton }"
+      ],
+      "get a secure ${ MAIL_APP_NAME } address.": [
+        "получить безопасный адрес ${ MAIL_APP_NAME }."
+      ],
+      "Manage user access": [
+        "Управляйте доступом пользователей"
+      ],
+      "Monthly": [
+        "Ежемесячно"
+      ],
+      "Most popular": [
+        "Самые популярные"
+      ],
+      "Need more space?": [
+        "Нужно больше места?"
+      ],
+      "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
+        "Нужно больше места для хранения? Вы можете улучшить тариф в любое время, выбрав от 200 ГБ до 3 ТБ. 5 ГБ достаточно для 2500 фотографий с современного телефона (примерно по 2 МБ каждая)."
+      ],
+      "Online documents": [
+        "Онлайн-документы"
+      ],
+      "Pick your perfect plan": [
+        "Выберите свой идеальный тариф"
+      ],
+      "Promo applied – ${ checkout.discountPercent }% off": [
+        "Промокод применён – скидка ${ checkout.discountPercent }%"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Save ${ percentage }%": [
+        "Сэкономьте ${ percentage }%"
+      ],
+      "Save ${ priceDifferenceString }": [
+        "Сэкономьте ${ priceDifferenceString }"
+      ],
+      "Secure file sharing": [
+        "Безопасный обмен файлами"
+      ],
+      "Selected": [
+        "Выбрано"
+      ],
+      "Set display name": [
+        "Задать отображаемое имя"
+      ],
+      "Set organization name": [
+        "Задать название организации"
+      ],
+      "Set your password": [
+        "Задайте пароль"
+      ],
+      "Share and collaborate of files": [
+        "Делитесь файлами и работайте над ними совместно"
+      ],
+      "Sign up, protect your files": [
+        "Зарегистрируйтесь, защитите свои файлы"
+      ],
+      "Sync files across devices and users": [
+        "Синхронизируйте файлы между устройствами и пользователями"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "Название организации будет видно вашим пользователям, пока они находятся в системе."
+      ],
+      "Total": [
+        "Итого"
+      ],
+      "Ultra fast and private VPN": [
+        "Сверхбыстрый и конфиденциальный VPN"
+      ],
+      "Up to 2 users": [
+        "До 2 пользователей"
+      ],
+      "Up to 6 users": [
+        "До 6 пользователей"
+      ],
+      "Upload files of any size": [
+        "Загружайте файлы любого размера"
+      ],
+      "Use your email, or ${ externalButton }": [
+        "Используйте свой адрес электронной почты или ${ externalButton }"
+      ],
+      "use your own email.": [
+        "использовать свой адрес электронной почты."
+      ],
+      "Yearly": [
+        "Ежегодно"
+      ],
+      "Your plan": [
+        "Ваш тариф"
+      ]
+    },
     "Signup label": {
       "Confirm password": [
         "Подтвердите пароль"
@@ -18033,47 +18204,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -18374,6 +18504,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -19124,10 +19295,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [

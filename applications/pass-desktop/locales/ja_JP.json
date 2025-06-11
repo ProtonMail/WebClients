@@ -1844,9 +1844,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
-      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -2710,9 +2707,6 @@
       "Create new vault": [
         "新しい保管庫を作成"
       ],
-      "Created": [
-        "作成日時"
-      ],
       "Created at": [
         "作成日時"
       ],
@@ -3223,10 +3217,10 @@
       "Priority:": [
         "優先度:"
       ],
-      "Private Key": [
+      "Private key": [
         "秘密鍵"
       ],
-      "Private key": [
+      "Private Key": [
         "秘密鍵"
       ],
       "Product": [

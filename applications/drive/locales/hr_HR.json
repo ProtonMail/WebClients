@@ -3979,6 +3979,11 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -3988,11 +3993,6 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
       ]
     },
     "new_plans: feature": {
@@ -4791,17 +4791,6 @@
         "Razumijem"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
-      ]
-    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -4837,6 +4826,17 @@
       ],
       "Version history": [
         "Povijest verzija"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {

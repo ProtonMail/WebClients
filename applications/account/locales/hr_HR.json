@@ -571,11 +571,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
       ],
       "Reject": [
         "Odbiti"
@@ -676,11 +676,11 @@
       "Select country": [
         "Odaberi državu"
       ],
-      "Select file": [
-        "Odaberi datoteku"
-      ],
       "select file": [
         "odaberi datoteku"
+      ],
+      "Select file": [
+        "Odaberi datoteku"
       ],
       "Select files": [
         "Odabir datoteka"
@@ -2700,11 +2700,11 @@
       "And": [
         "I"
       ],
-      "or": [
-        "ili"
-      ],
       "Or": [
         "Ili"
+      ],
+      "or": [
+        "ili"
       ],
       "With attachment": [
         "S privitkom"
@@ -4002,11 +4002,11 @@
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
       ],
-      "Active": [
-        "Aktivno"
-      ],
       "active": [
         "aktivno"
+      ],
+      "Active": [
+        "Aktivno"
       ],
       "Add a recovery phone number": [
         "Dodajte telefonski broj za oporavak"
@@ -5264,10 +5264,10 @@
       "Amount due": [
         "Dospjeli iznos"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
       "and": [
@@ -5540,11 +5540,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "AKO"
-      ],
       "If": [
         "Ako"
+      ],
+      "IF": [
+        "AKO"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5669,14 +5669,14 @@
       "Optional": [
         "Neobavezno"
       ],
-      "OR": [
-        "ILI"
-      ],
       "or": [
         "ili"
       ],
       "Or": [
         "Ili"
+      ],
+      "OR": [
+        "ILI"
       ],
       "Organization name": [
         "Naziv organizacije"
@@ -6584,11 +6584,6 @@
         "Za početak odaberite ime za prikaz. To je ono što će ljudi vidjeti kada pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku."
       ]
     },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "Korištenje računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -6598,6 +6593,11 @@
       ],
       "Unlock premium features by upgrading": [
         "Otključajte vrhunske značajke nadogradnjom"
+      ]
+    },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "Korištenje računa"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7819,17 +7819,6 @@
         "Razumijem"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
-      ]
-    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -7877,6 +7866,17 @@
       ],
       "Version history": [
         "Povijest verzija"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -8277,10 +8277,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [

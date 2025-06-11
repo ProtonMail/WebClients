@@ -230,7 +230,7 @@
         "Slett hvelv"
       ],
       "Deselect": [
-        "Fjern markeringen"
+        "Avbryt valg"
       ],
       "Disable alias": [
         "Deaktiver alias"
@@ -400,10 +400,10 @@
       "Move to another vault": [
         "Flytt til annet hvelv"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flytt til papirkurven"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flytt til papirkurven"
       ],
       "Multiple select": [
@@ -1811,10 +1811,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
-      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2686,9 +2682,6 @@
       "Create new vault": [
         "Opprett nytt hvelv"
       ],
-      "Created": [
-        "Opprettet"
-      ],
       "Created at": [
         "Opprettet den"
       ],
@@ -3301,10 +3294,10 @@
       "Show website favicons": [
         "Vis favorittikon for nettsteder"
       ],
-      "Social Security": [
+      "Social security": [
         "Trygd"
       ],
-      "Social security": [
+      "Social Security": [
         "Trygd"
       ],
       "Social security number": [

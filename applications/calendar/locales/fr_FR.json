@@ -827,11 +827,11 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ],
       "Upgrade Now": [
         "Passer à l'abonnement supérieur"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
       ],
       "Upload and share files": [
         "Importer et partager des fichiers"
@@ -4773,6 +4773,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Au moins ${ BETTER_PASSWORD_LENGTH } caractères"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "À la fin de votre version d'essai, le ${ boldCancelDate }, vous passerez à un abonnement inférieur : ${ boldProtonFree }. Tous les comptes utilisateur seront retirés de votre organisation."
+      ],
       "Attention required": [
         "Attention requise"
       ],
@@ -5031,6 +5034,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si vous annulez, votre abonnement ${ planTitle } ne sera pas renouvelé quand il arrivera à sa date de fin de validité le ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Si vous changez d'avis, vous pouvez vous abonner à nouveau à tout moment. Nous sommes désolés de vous voir partir !"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
@@ -5762,6 +5768,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Vous ne serez pas facturé si vous annulez avant le ${ trialEndsOnFormatted }."
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Vous n'aurez également plus accès aux fonctionnalités de ${ boldPlanTitle } :"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois.",
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
@@ -5815,10 +5824,10 @@
         "Vos fichiers seront chiffrés puis sauvegardés."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Votre période d'essaie a été convertie avec succès en abonnement de ${ cycle } mois. Votre date de renouvellement est le ${ nextBillingDate }."
+        "Votre période d'essai a été convertie en abonnement de ${ cycle } mois. Votre date de renouvellement est le ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Votre période d'essai a été convertie avec succès en abonnement mensuel. Votre date de renouvellement est le ${ nextBillingDate }."
+        "Votre période d'essai a été convertie en abonnement mensuel. Votre date de renouvellement est le ${ nextBillingDate }."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
@@ -5868,6 +5877,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Votre version d'essai se terminera dans ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Vous n'aurez plus accès à ${ boldPlanTitle } le ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
       ]
     },
     "info": {
@@ -8288,6 +8303,23 @@
         "Vous pouvez changer de thème dans vos paramètres quand vous le voulez."
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Annulez à tout moment avant cette date."
+      ],
+      "Once your full subscription starts...": [
+        "Une fois que votre abonnement complet commence..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Vous pouvez toujours annuler dans les 30 jours et obtenir un remboursement proportionnel."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Votre abonnement complet ${ planTitle } commence le ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Vous pourrez utiliser ${ planTitle } jusqu'à la fin de la version d'essai, et ce, gratuitement."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Ajouter à un groupe existant"
@@ -9587,47 +9619,6 @@
         "Pour ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
@@ -9886,6 +9877,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
@@ -10894,6 +10926,9 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Votre essai gratuit se termine dans ${ trialDurationFormatted } jours."
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."

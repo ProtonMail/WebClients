@@ -1177,10 +1177,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
-      "Select all": [
+      "Select All": [
         "Tümünü seç"
       ],
-      "Select All": [
+      "Select all": [
         "Tümünü seç"
       ],
       "Select all messages": [
@@ -1459,10 +1459,10 @@
       "Upgrade": [
         "Yükselt"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Şimdi yükselt"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Şimdi yükselt"
       ],
       "Upload and share files": [
@@ -6936,7 +6936,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8655,11 +8656,11 @@
       "Always move sender's emails": [
         "Göndericinin e-postaları şuraya taşınsın"
       ],
-      "AND": [
-        "VE"
-      ],
       "And": [
         "Ve"
+      ],
+      "AND": [
+        "VE"
       ],
       "and": [
         "ve"
@@ -8886,11 +8887,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "EĞER"
-      ],
       "If": [
         "Eğer"
+      ],
+      "IF": [
+        "EĞER"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -9028,14 +9029,14 @@
       "Optional": [
         "İsteğe bağlı"
       ],
-      "OR": [
-        "VEYA"
-      ],
       "or": [
         "veya"
       ],
       "Or": [
         "Veya"
+      ],
+      "OR": [
+        "VEYA"
       ],
       "Original link": [
         "Özgün bağlantı"
@@ -9927,14 +9928,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } edinin"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -9956,6 +9949,14 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } edinin"
       ]
     },
     "new_plans: feature": {
@@ -11220,6 +11221,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Tüm ${ BRAND_NAME } uygulamalarına ve ücretli özelliklerine erişim"
+      ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
       ],
@@ -12669,47 +12673,6 @@
         "${ totalPrice } için"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -12968,6 +12931,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
