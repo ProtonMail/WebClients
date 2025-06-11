@@ -32,6 +32,20 @@
             "js": ["fork.js"],
             "all_frames": false,
             "run_at": "document_end"
+        },
+        {
+            "matches": ["https://*/*", "http://*/*"],
+            "exclude_matches": [
+                "https://pass.proton.me/*",
+                "https://pass.proton.local/*",
+                "https://pass.proton.black/*",
+                "https://pass.proton.pink/*",
+                "https://pass.protontech.ch/*"
+            ],
+            "js": ["webauthn.js"],
+            "all_frames": false,
+            "run_at": "document_start",
+            "world": "MAIN"
         }
     ],
     "externally_connectable": {
