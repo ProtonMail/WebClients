@@ -3,6 +3,7 @@ import { onContextReady, withContext } from 'proton-pass-extension/app/worker/co
 import { createBasicAuthListener } from 'proton-pass-extension/app/worker/listeners/auth-required';
 import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WEB_REQUEST_PERMISSIONS, hasPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 import type { AutofillCheckFormMessage, WorkerMessageResponse } from 'proton-pass-extension/types/messages';
@@ -208,7 +209,11 @@ export const createAutoFillService = () => {
         })
     );
 
-    if (BUILD_TARGET !== 'safari' && browser.webRequest.onAuthRequired) createBasicAuthListener();
+    if (BUILD_TARGET !== 'safari' && browser.webRequest.onAuthRequired) {
+        hasPermissions(WEB_REQUEST_PERMISSIONS)
+            .then((enabled) => enabled && createBasicAuthListener())
+            .catch(noop);
+    }
 
     return {
         clear,

@@ -2,8 +2,9 @@ import type { ReactNode } from 'react';
 import { type FC, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import type { PermissionHandles } from 'proton-pass-extension/lib/hooks/usePermission';
-import { usePermission } from 'proton-pass-extension/lib/hooks/usePermission';
+import type { PermissionHandles } from 'proton-pass-extension/lib/hooks/usePermissions';
+import { usePermissions } from 'proton-pass-extension/lib/hooks/usePermissions';
+import { WEB_REQUEST_PERMISSIONS } from 'proton-pass-extension/lib/utils/permissions';
 import type { Dispatch } from 'redux';
 import { c } from 'ttag';
 
@@ -37,15 +38,11 @@ type SettingsSection = {
 
 type SettingsSectionsOptions = {
     settings: ProxiedSettings;
-    webRequestAuthProvider: PermissionHandles;
+    webReqPermissions: PermissionHandles;
     dispatch: Dispatch;
 };
 
-const getSettingsSections = ({
-    settings,
-    webRequestAuthProvider,
-    dispatch,
-}: SettingsSectionsOptions): SettingsSection[] => {
+const getSettingsSections = ({ settings, webReqPermissions, dispatch }: SettingsSectionsOptions): SettingsSection[] => {
     const onSettingsUpdate = (update: RecursivePartial<ProxiedSettings>) =>
         dispatch(settingsEditIntent('behaviors', update));
 
@@ -77,8 +74,8 @@ const getSettingsSections = ({
                     description: c('Info').t`Autofill HTTP basic auth dialogs with saved credentials.`,
                     checked: settings.autofill?.basicAuth ?? false,
                     onChange: async (checked) => {
-                        if (checked && !webRequestAuthProvider.enabled) {
-                            const enabled = await webRequestAuthProvider.request();
+                        if (checked && !webReqPermissions.enabled) {
+                            const enabled = await webReqPermissions.request();
                             if (!enabled) return;
                         }
 
@@ -180,11 +177,11 @@ const getSettingsSections = ({
 export const Behaviors: FC = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
-    const webRequestAuthProvider = usePermission('webRequestAuthProvider');
+    const webReqPermissions = usePermissions(WEB_REQUEST_PERMISSIONS);
 
     const sections = useMemo(
-        () => getSettingsSections({ settings, webRequestAuthProvider, dispatch }),
-        [settings, webRequestAuthProvider]
+        () => getSettingsSections({ settings, webReqPermissions, dispatch }),
+        [settings, webReqPermissions]
     );
 
     return (
