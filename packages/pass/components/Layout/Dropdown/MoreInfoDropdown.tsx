@@ -1,4 +1,4 @@
-import { type FC, useRef } from 'react';
+import { type FC, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,10 +9,22 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
 } from '@proton/components';
+import { getOccurrenceString } from '@proton/pass/lib/i18n/helpers';
+import type { SelectedRevision } from '@proton/pass/types';
 
-type Props = { info: { label: string; values: string[] }[] };
+type Props = SelectedRevision & { vaultId: string };
 
-export const MoreInfoDropdown: FC<Props> = ({ info }) => {
+export const MoreInfoDropdown: FC<Props> = ({ revision, itemId, shareId, vaultId }) => {
+    const info = useMemo(
+        () => [
+            { label: c('Label').t`Modified`, values: [getOccurrenceString(revision - 1)] },
+            { label: c('Label').t`Item ID`, values: [itemId] },
+            { label: c('Label').t`Share ID`, values: [shareId] },
+            { label: c('Label').t`Vault ID`, values: [vaultId] },
+        ],
+        [revision, itemId, shareId, vaultId]
+    );
+
     const anchorRef = useRef<HTMLDivElement>(null);
     const handleClick = () => setTimeout(() => anchorRef?.current?.scrollIntoView({ behavior: 'smooth' }), 50);
 
