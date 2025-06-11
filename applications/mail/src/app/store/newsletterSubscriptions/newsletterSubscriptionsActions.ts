@@ -68,9 +68,14 @@ export const filterSubscriptionList = createAsyncThunk<
     MailThunkExtra & { rejectValue: { previousState: NewsletterSubscription; originalIndex: number } }
 >('newsletterSubscriptions/filterList', async (payload, thunkExtra) => {
     try {
-        return await thunkExtra.extra.api<POSTSubscriptionAPIResponse>(
+        const data = await thunkExtra.extra.api<POSTSubscriptionAPIResponse>(
             applyNewsletterSubscriptionFilter(payload.subscription.ID, payload.data)
         );
+
+        // We force the event loop here to update the filters,
+        // can be removed if we use an async thunk in the filters slice
+        void thunkExtra.extra.eventManager.call();
+        return data;
     } catch (error) {
         return thunkExtra.rejectWithValue({
             previousState: payload.subscription,

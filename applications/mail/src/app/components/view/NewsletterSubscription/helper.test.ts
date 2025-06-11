@@ -12,6 +12,7 @@ import {
     getUnsubscribeData,
     getUnsubscribeMethod,
     shouldOpenUpsellOnFilterClick,
+    shouldToggleFilter,
 } from './helper';
 
 const simpleSubscription = {} as NewsletterSubscription;
@@ -502,6 +503,32 @@ describe('Newsletter subscriptions helpers', () => {
                 // @ts-expect-error - we want to test the case where the received messages are undefined
                 getReceivedMessagesCount({ ReceivedMessages: undefined } as NewsletterSubscription)
             ).toBe(0);
+        });
+    });
+
+    describe('isFilterTypeMatchingCurrentAction', () => {
+        const base = { markingAsRead: false, movingToArchive: false, movingToTrash: false };
+
+        it('returns true for MarkAsRead when markingAsRead is true', () => {
+            expect(shouldToggleFilter('MarkAsRead', { ...base, markingAsRead: true })).toBeTruthy();
+        });
+        it('returns false for MarkAsRead when markingAsRead is false', () => {
+            expect(shouldToggleFilter('MarkAsRead', base)).toBeFalsy();
+        });
+        it('returns true for MoveToArchive when movingToArchive is true', () => {
+            expect(shouldToggleFilter('MoveToArchive', { ...base, movingToArchive: true })).toBeTruthy();
+        });
+        it('returns false for MoveToArchive when movingToArchive is false', () => {
+            expect(shouldToggleFilter('MoveToArchive', base)).toBeFalsy();
+        });
+        it('returns true for MoveToTrash when movingToTrash is true', () => {
+            expect(shouldToggleFilter('MoveToTrash', { ...base, movingToTrash: true })).toBeTruthy();
+        });
+        it('returns false for MoveToTrash when movingToTrash is false', () => {
+            expect(shouldToggleFilter('MoveToTrash', base)).toBeFalsy();
+        });
+        it('returns false for unknown filterType', () => {
+            expect(shouldToggleFilter('Unknown' as any, base)).toBeFalsy();
         });
     });
 });

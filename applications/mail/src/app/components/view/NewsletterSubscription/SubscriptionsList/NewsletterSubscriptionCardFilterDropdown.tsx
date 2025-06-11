@@ -21,7 +21,7 @@ import { toggleEnable } from '@proton/shared/lib/api/filters';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { getFilterDropdownData, shouldOpenUpsellOnFilterClick } from '../helper';
+import { getFilterDropdownData, shouldOpenUpsellOnFilterClick, shouldToggleFilter } from '../helper';
 import type { ModalFilterType } from '../interface';
 
 interface Props {
@@ -64,11 +64,14 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
             return;
         }
 
-        // We toggle the filter if the user changes an existing filter
-        if (
-            subscription.FilterID &&
-            (dropdownData.markingAsRead || dropdownData.movingToArchive || dropdownData.movingToTrash)
-        ) {
+        const hasExistingFilter = !!subscription.FilterID && dropdownData.isFilterEnabled;
+        const toggleFilterInsteadOfCreatingOne = shouldToggleFilter(filterType, {
+            markingAsRead: dropdownData.markingAsRead,
+            movingToArchive: dropdownData.movingToArchive,
+            movingToTrash: dropdownData.movingToTrash,
+        });
+
+        if (hasExistingFilter && toggleFilterInsteadOfCreatingOne && subscription.FilterID) {
             void toggleFilter(subscription.FilterID, !dropdownData.isFilterEnabled);
             return;
         }
