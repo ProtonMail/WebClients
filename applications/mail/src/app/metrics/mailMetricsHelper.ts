@@ -1,4 +1,4 @@
-import { isCustomLabelOrFolder, isStringHumanLabelID } from '@proton/mail/labels/helpers';
+import { isCustomLabelOrFolder, isStringHumanLabelID } from '@proton/mail/store/labels/helpers';
 import type { EmailListDisplayTime } from '@proton/metrics/types/web_mail_performance_email_list_display_time_histogram_v1.schema';
 import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

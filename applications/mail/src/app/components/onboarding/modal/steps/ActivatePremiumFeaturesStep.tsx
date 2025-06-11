@@ -16,7 +16,7 @@ import {
     useEventManager,
     useShortDomainAddress,
 } from '@proton/components';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { PLANS } from '@proton/payments';
 import { getIsB2BAudienceFromPlan, getIsB2BAudienceFromSubscription, hasVisionary, isTrial } from '@proton/payments';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';

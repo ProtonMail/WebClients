@@ -15,8 +15,8 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { useContactGroups } from '@proton/mail';
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
     getContactGroupsDelayedSaveChanges,
     hasReachedContactGroupMembersLimit,

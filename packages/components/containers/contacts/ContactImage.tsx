@@ -1,6 +1,6 @@
 import { type CSSProperties, useEffect, useState } from 'react';
 
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { HIDE_SENDER_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';

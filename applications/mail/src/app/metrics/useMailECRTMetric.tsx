@@ -1,4 +1,4 @@
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import metrics from '@proton/metrics';
 import useFlag from '@proton/unleash/useFlag';
 

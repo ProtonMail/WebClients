@@ -21,7 +21,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useModals from '@proton/components/hooks/useModals';
 import type { AlgorithmInfo } from '@proton/crypto';
 import { resignSKLWithPrimaryKey } from '@proton/key-transparency';
-import { useOutgoingAddressForwardings } from '@proton/mail/forwarding/hooks';
+import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { ForwardingType, type KeyGenConfig } from '@proton/shared/lib/interfaces';
 import type { OnKeyImportCallback } from '@proton/shared/lib/keys';

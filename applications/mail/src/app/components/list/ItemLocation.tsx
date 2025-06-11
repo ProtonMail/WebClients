@@ -1,6 +1,6 @@
 import { Tooltip } from '@proton/atoms';
 import { useFolders } from '@proton/mail';
-import { getStandardFolders } from '@proton/mail/labels/helpers';
+import { getStandardFolders } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

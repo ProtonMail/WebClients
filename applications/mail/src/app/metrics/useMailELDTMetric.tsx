@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import { getLabelNameAnonymised } from '@proton/mail/labels/helpers';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { getLabelNameAnonymised } from '@proton/mail/store/labels/helpers';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import metrics from '@proton/metrics';
 import useFlag from '@proton/unleash/useFlag';
 

@@ -8,7 +8,7 @@ import DropdownActions from '@proton/components/components/dropdown/DropdownActi
 import type OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';
 import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
 import TableRow from '@proton/components/components/table/TableRow';
-import { useContact } from '@proton/mail/contacts/contactHooks';
+import { useContact } from '@proton/mail/store/contacts/contactHooks';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 import clsx from '@proton/utils/clsx';
 

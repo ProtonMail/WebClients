@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useLoading } from '@proton/hooks';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 import { getContactImageSource } from '@proton/shared/lib/helpers/contacts';
 import { resizeImage, toImage } from '@proton/shared/lib/helpers/image';
