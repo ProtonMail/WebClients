@@ -4151,6 +4151,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "최소 ${ BETTER_PASSWORD_LENGTH }글자"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "무료 체험 종료일인 ${ boldCancelDate }에 ${ boldProtonFree }(으)로 다운그레이드됩니다. 조직 내의 모든 구성원들이 제거됩니다."
+      ],
       "Attention required": [
         "주의 필요"
       ],
@@ -4462,6 +4465,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "마음이 바뀌신다면 언제든지 다시 구독하실 수 있어요. 떠나시다니 너무 슬프네요!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
@@ -5294,6 +5300,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } 전까지 취소하는 경우 결제되지 않습니다."
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "또한 ${ boldPlanTitle }의 기능을 사용할 수 없게 됩니다:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "${ renewCycle }개월마다 ${ renewAmountStr }의 가격으로 갱신됩니다."
       ],
@@ -5407,6 +5416,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "무료 체험이 ${ timeRemaining }에 종료됩니다."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "${ boldEndDate }에 ${ boldPlanTitle }에 더 이상 접근할 수 없게 됩니다"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
       ]
     },
     "info": {
@@ -6474,6 +6489,17 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "${ priceDrivePlus }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -6495,17 +6521,6 @@
       ],
       "Switch plan": [
         "플랜 변경"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "${ priceDrivePlus }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -7683,6 +7698,23 @@
         "저장 공간"
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "그때까지 언제든지 취소하실 수 있습니다."
+      ],
+      "Once your full subscription starts...": [
+        "전체 구독이 시작되면..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "30일 내에 구독 취소시 사용량에 비례하여 환불을 받으실 수 있습니다."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "회원님의 ${ planTitle } 구독이 ${ boldEndDate }에 시작됩니다."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "무료 체험 기간 종료 전까지 ${ planTitle }을(를) 무료로 계속 사용 가능합니다."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "병합할 그룹 추가"
@@ -8847,6 +8879,23 @@
         "${ totalPrice }용"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "사용자 당 ${ planMaxSpace } 스토리지"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }개 이메일 주소"
+      ],
+      "Folders, labels, and custom filters": [
+        "폴더, 라벨, 커스텀 필터"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "저장공간 15GB"
@@ -8886,23 +8935,6 @@
       ],
       "Your privacy is our mission": [
         "당신의 프라이버시는 저희의 사명입니다"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "사용자 당 ${ planMaxSpace } 스토리지"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails }개 이메일 주소"
-      ],
-      "Folders, labels, and custom filters": [
-        "폴더, 라벨, 커스텀 필터"
       ]
     },
     "Subscription renewal state": {
@@ -9742,6 +9774,9 @@
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "무료 체험이 ${ trialDurationFormatted }일 후 종료됩니다"
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"

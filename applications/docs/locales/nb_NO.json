@@ -4207,6 +4207,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tegn"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Ved slutten av prøvetiden den ${ boldCancelDate }, blir du nedgradert til ${ boldProtonFree }. Alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
       "Attention required": [
         "Oppmerksomhet kreves"
       ],
@@ -4520,6 +4523,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Hvis du ombestemmer deg, kan du abonnere igjen når som helst. Trist at du forlater oss!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke finner e-posten i innboksen, sjekk søppelpostmappen din."
@@ -5359,6 +5365,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
@@ -5474,6 +5483,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Prøveversjonen avsluttes om ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Du mister tilgang til ${ boldPlanTitle } den ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
       ]
     },
     "info": {
@@ -6606,6 +6621,17 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planer starter fra ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -6627,17 +6653,6 @@
       ],
       "Switch plan": [
         "Bytt plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planer starter fra ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
       ]
     },
     "new_plans: feature": {
@@ -7857,6 +7872,23 @@
         "Lagringsplass"
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Avbryt når som helst før da."
+      ],
+      "Once your full subscription starts...": [
+        "Når ditt fulle abonnement starter..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Du vil kunne bruke ${ planTitle } til prøveversjonen avsluttes, gratis."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Legg til eksisterende gruppe"
@@ -8119,10 +8151,10 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } har markert denne nøkkelen som kompromittert. Nøkkelen kan hverken bli brukt for kryptering eller bekreftelse av signatur."
+        "${ emailAddress } har merket denne nøkkelen som kompromittert. Nøkkelen kan hverken bli brukt for kryptering eller bekreftelse av signatur."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } har markert denne nøkkelen som foreldet. Nøkkelen kan kun bli brukt for bekreftelse av signatur."
+        "${ emailAddress } har merket denne nøkkelen som foreldet. Nøkkelen kan kun bli brukt for bekreftelse av signatur."
       ],
       "External key automatically fetched from keys.openpgp.org.": [
         "Ekstern nøkkel hentet automatisk fra keys.openpgp.org."
@@ -9053,6 +9085,25 @@
         "For ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagringsplass per bruker"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } gir deg alle apper, alle funksjoner, tidlig tilgang til nye utgivelser og alt du trenger for å ha kontroll over dataene dine og sikkerheten."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } egendefinert e-postdomene",
+        "${ planNumberOfDomains } egendefinerte e-postdomener"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-postadresse",
+        "${ planNumberOfEmails } e-postadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mapper, etiketter og egendefinerte filtre"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagringsplass"
@@ -9092,25 +9143,6 @@
       ],
       "Your privacy is our mission": [
         "Personvernet ditt er vårt oppdrag"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } lagringsplass per bruker"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } gir deg alle apper, alle funksjoner, tidlig tilgang til nye utgivelser og alt du trenger for å ha kontroll over dataene dine og sikkerheten."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } egendefinert e-postdomene",
-        "${ planNumberOfDomains } egendefinerte e-postdomener"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-postadresse",
-        "${ planNumberOfEmails } e-postadresser"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mapper, etiketter og egendefinerte filtre"
       ]
     },
     "Subscription renewal state": {
@@ -9968,6 +10000,9 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dager"
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
