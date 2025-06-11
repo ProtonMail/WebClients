@@ -100,11 +100,13 @@ export const options: RootSagaOptions = {
     setAppStatus: withContext((ctx, status) => ctx.setStatus(status)),
 
     onBeforeHydrate: async (state) => {
-        /** Initialize basic auth autofill setting based on current permission state.
-         * If not explicitly set by user, default to enabled when permission is already granted.
-         * Done during hydration to keep browser API calls out of core application logic. */
-        const basicAuth = state.settings.autofill.basicAuth;
-        state.settings.autofill.basicAuth = basicAuth ?? (await hasPermissions(WEB_REQUEST_PERMISSIONS));
+        if (BUILD_TARGET !== 'safari') {
+            /** Initialize basic auth autofill setting based on current permission state.
+             * If not explicitly set by user, default to enabled when permission is already granted.
+             * Done during hydration to keep browser API calls out of core application logic. */
+            const basicAuth = state.settings.autofill.basicAuth;
+            state.settings.autofill.basicAuth = basicAuth ?? (await hasPermissions(WEB_REQUEST_PERMISSIONS));
+        }
 
         return state;
     },
