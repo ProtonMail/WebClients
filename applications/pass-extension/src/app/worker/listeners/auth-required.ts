@@ -56,7 +56,7 @@ export const createBasicAuthListener = () => {
             }
         }),
         authFilter,
-        ['blocking']
+        [BUILD_TARGET === 'firefox' ? 'blocking' : 'asyncBlocking']
     );
 
     browser.webRequest.onCompleted.addListener(({ requestId }) => authRequests.delete(requestId), authFilter);

@@ -28,8 +28,19 @@ export const checkExtensionPermissions = async (): Promise<boolean> => {
 export const promptForPermissions = async (): Promise<boolean> =>
     browser.permissions.request(PASS_PERMISSIONS).catch(() => false);
 
-export const hasPermission = (permission: Permission) =>
-    browser.permissions.contains({ permissions: [permission] }).catch(() => false);
+export const hasPermissions = (permissions: Permission[]) =>
+    browser.permissions.contains({ permissions }).catch(() => false);
 
-export const requestPermission = (permission: Permission) =>
-    browser.permissions.request({ permissions: [permission] }).catch(() => false);
+export const requestPermissions = (permissions: Permission[]) =>
+    browser.permissions.request({ permissions }).catch(() => false);
+
+export const WEB_REQUEST_PERMISSIONS = ((): Permission[] => {
+    switch (BUILD_TARGET) {
+        case 'chrome':
+            return ['webRequest', 'webRequestAuthProvider'];
+        case 'firefox':
+            return ['webRequest', 'webRequestAuthProvider', 'webRequestBlocking'];
+        default:
+            return [];
+    }
+})();
