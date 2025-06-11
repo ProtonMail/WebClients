@@ -1,12 +1,16 @@
-import { createAutofillService } from 'proton-pass-extension/app/content/services/form/autofill';
-import { createAutosaveService } from 'proton-pass-extension/app/content/services/form/autosave';
+import type { ClientController } from 'proton-pass-extension/app/content/client.controller';
+import { createAutofillService } from 'proton-pass-extension/app/content/services/autofill/autofill';
+import { createAutosaveRelay } from 'proton-pass-extension/app/content/services/autosave/autosave.relay';
+import { createAutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.service';
 import { createDetectorService } from 'proton-pass-extension/app/content/services/form/detector';
 import { createFormManager } from 'proton-pass-extension/app/content/services/form/manager';
-import { createIFrameService } from 'proton-pass-extension/app/content/services/iframes/service';
+import { createInlineRelay } from 'proton-pass-extension/app/content/services/inline/inline.relay';
+import { createInlineService } from 'proton-pass-extension/app/content/services/inline/inline.service';
 import { createWebAuthNService } from 'proton-pass-extension/app/content/services/webauthn';
 import { IGNORED_TAGS } from 'proton-pass-extension/app/content/utils/nodes';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
+import { FieldType } from '@proton/pass/fathom';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
@@ -19,12 +23,15 @@ import { CSContext } from './context';
 import type { CSContextState, ContentScriptContext } from './types';
 import { hasPauseCriteria } from './utils';
 
-export const createContentScriptContext = (options: {
+export type ContentScriptContextFactoryOptions = {
     scriptId: string;
     mainFrame: boolean;
     elements: PassElementsConfig;
+    controller: ClientController;
     destroy: (options: { reason: string }) => void;
-}): ContentScriptContext => {
+};
+
+export const createContentScriptContext = (options: ContentScriptContextFactoryOptions): ContentScriptContext => {
     const state: CSContextState = {
         authorized: false,
         booted: false,
@@ -47,11 +54,13 @@ export const createContentScriptContext = (options: {
         elements: options.elements,
         mainFrame: options.mainFrame,
         scriptId: options.scriptId,
+        transport: options.controller.transport,
 
         service: {
-            autofill: createAutofillService(),
-            autosave: createAutosaveService(),
+            autofill: createAutofillService(options),
+            autosave: options.mainFrame ? createAutosaveService() : createAutosaveRelay(),
             detector: createDetectorService({
+                ...(options.mainFrame ? {} : { fieldTypes: [FieldType.CREDIT_CARD] }),
                 onBottleneck: ({ detectionTime }) => {
                     logger.info(`[Detector] Prediction bottleneck detected [${detectionTime}ms]`);
                     context.destroy({ reason: 'bottleneck' });
@@ -61,17 +70,21 @@ export const createContentScriptContext = (options: {
                 onDetection: async (forms) => {
                     /* attach or detach dropdown based on the detection results */
                     const didDetect = forms.length > 0;
-                    if (didDetect) context.service.iframe.attachDropdown(document.body);
-                    else context.service.iframe.dropdown?.destroy();
+                    if (!didDetect) context.service.inline.dropdown.destroy();
+                    else {
+                        context.service.inline.dropdown.attach();
+                        await context.service.autofill.sync().catch(noop);
 
-                    /* Always prompt for OTP autofill before autosave. */
-                    await context.service.autofill.sync().catch(noop);
-                    const prompted = await context.service.autofill.promptOTP();
-                    await (!prompted && context.service.autosave.reconciliate());
+                        /** Always prompt for OTP autofill before autosave to support
+                         * OTP -> autosave sequence on SPA websites */
+                        const promptedOTP = await context.service.autofill.evaluateOTP(forms);
+                        await (!promptedOTP && context.service.autosave.reconciliate());
+                    }
                 },
             }),
-            iframe: createIFrameService(options.elements),
-            webauthn: createWebAuthNService(),
+
+            inline: options.mainFrame ? createInlineService(options) : createInlineRelay(options),
+            webauthn: options.mainFrame ? createWebAuthNService() : undefined,
         },
 
         destroy: options.destroy,
@@ -96,6 +109,7 @@ export const createContentScriptContext = (options: {
         },
         getSettings: () => settings,
         getState: () => state,
+
         setFeatureFlags: (update) => {
             (Object.keys(featureFlags) as PassFeature[]).forEach((key) => delete featureFlags[key]);
             return Object.assign(featureFlags, update);

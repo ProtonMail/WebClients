@@ -1,4 +1,4 @@
-import type { FieldHandle } from 'proton-pass-extension/app/content/types';
+import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 
 import { FieldType, IdentityFieldType } from '@proton/pass/fathom';
 import type { ItemContent, Maybe } from '@proton/pass/types';

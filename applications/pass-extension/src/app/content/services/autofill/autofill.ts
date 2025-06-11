@@ -1,10 +1,12 @@
+import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { type FieldHandle, type FormHandle, NotificationAction } from 'proton-pass-extension/app/content/types';
+import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
+import type { FormHandle } from 'proton-pass-extension/app/content/services/form/form';
 import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { FieldType, FormType, isIgnored } from '@proton/pass/fathom';
+import { FieldType, FormType } from '@proton/pass/fathom';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { FormCredentials, ItemContent, MaybeNull } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -53,28 +55,6 @@ export const createAutofillService = () => {
                     (res) => (res.type === 'success' ? res.items.length : 0)
                 )))
     );
-
-    /** Synchronizes login form fields with current credential count.
-     * Resets credential and identity counts if forced or user logged out */
-    const sync = withContext<(options?: { forceSync: boolean }) => Promise<void>>(async (ctx, options) => {
-        const authorized = ctx?.getState().authorized ?? false;
-
-        if (options?.forceSync || !authorized) {
-            state.credentialsCount = null;
-            state.identitiesCount = null;
-        }
-
-        const trackedForms = ctx?.service.formManager.getTrackedForms();
-        const loginForms = trackedForms?.filter((form) => form.formType === FormType.LOGIN) ?? [];
-        const identityFields = trackedForms?.some((form) => form.getFieldsFor(FieldType.IDENTITY).length > 0);
-
-        if (loginForms.length) {
-            const count = authorized ? await getCredentialsCount() : 0;
-            loginForms?.forEach((form) => form.getFields().forEach((field) => field.icon?.setCount(count)));
-        }
-
-        if (identityFields && authorized) await getIdentitiesCount();
-    });
 
     const autofillLogin = async (form: FormHandle, data: FormCredentials) => {
         await first(form.getFieldsFor(FieldType.USERNAME) ?? [])?.autofill(data.userIdentifier);
@@ -152,28 +132,55 @@ export const createAutofillService = () => {
         await autofillIdentityFields(fields, selectedField, data);
     };
 
-    /** Checks for OTP fields in tracked forms and prompts for autofill
-     * if eligible. Queries the service worker for matching items and opens
-     * an `AutofillOTP` notification if appropriate.
-     * Returns true if a prompt was shown, false otherwise. */
-    const promptOTP = withContext<() => Promise<boolean>>(async (ctx) => {
-        const otpFieldDetected = ctx?.service.formManager
-            .getTrackedForms()
-            .some((form) => !isIgnored(form.element) && form.getFieldsFor(FieldType.OTP).length > 0);
+    /** Checks for OTP fields in tracked forms and prompts for autofill if eligible.
+     * Queries the service worker for matching items and opens an `AutofillOTP`
+     * notification if appropriate. Returns true if a prompt was shown, false otherwise. */
+    const evaluateOTP = withContext<(forms: FormHandle[]) => Promise<boolean>>(async (ctx, forms) => {
+        const enabled = Boolean(ctx?.getFeatures().Autofill2FA);
+        const hasOTP = enabled && forms.some((form) => form.otp);
 
-        if (!(otpFieldDetected && ctx?.getFeatures().Autofill2FA)) return false;
+        return (
+            hasOTP &&
+            sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
+                if (res.type === 'success' && res.shouldPrompt) {
+                    ctx?.service.inline.notification.open({
+                        action: NotificationAction.OTP,
+                        item: omit(res, ['type', 'shouldPrompt']),
+                    });
+                    return true;
+                }
 
-        return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
-            if (res.type === 'success' && res.shouldPrompt) {
-                ctx?.service.iframe.attachNotification()?.open({
-                    action: NotificationAction.OTP,
-                    item: omit(res, ['type', 'shouldPrompt']),
-                });
+                return false;
+            })
+        );
+    });
 
-                return true;
-            }
-            return false;
+    /** Synchronizes login form fields with current credential count.
+     * Resets credential and identity counts if forced or user logged out */
+    const sync = withContext<(options?: { forceSync: boolean }) => Promise<void>>(async (ctx, options) => {
+        if (!ctx) return;
+
+        const authorized = ctx.getState().authorized;
+
+        if (options?.forceSync || !authorized) {
+            state.credentialsCount = null;
+            state.identitiesCount = null;
+        }
+
+        const trackedForms = ctx.service.formManager.getTrackedForms();
+        const loginForms = trackedForms?.filter((form) => form.formType === FormType.LOGIN) ?? [];
+        const identityFields = trackedForms?.some((form) => form.getFieldsFor(FieldType.IDENTITY).length > 0);
+
+        const count = loginForms.length && authorized ? await getCredentialsCount() : 0;
+
+        trackedForms.forEach((form) => {
+            form.getFields().forEach((field) => {
+                field.icon?.setStatus(ctx.getState().status);
+                if (form.formType === FormType.LOGIN) field.icon?.setCount(count);
+            });
         });
+
+        if (identityFields && authorized) await getIdentitiesCount();
     });
 
     return {
@@ -181,9 +188,9 @@ export const createAutofillService = () => {
         autofillLogin,
         autofillOTP,
         autofillPassword,
+        evaluateOTP,
         getCredentialsCount,
         getIdentitiesCount,
-        promptOTP,
         sync,
     };
 };

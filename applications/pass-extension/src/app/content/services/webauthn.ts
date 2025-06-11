@@ -1,4 +1,12 @@
-import { NotificationAction } from 'proton-pass-extension/app/content/types';
+import {
+    createBridgeAbortSignal,
+    createBridgeDisconnectSignal,
+    createBridgeResponse,
+    isBridgeAbortSignal,
+    isBridgeRequest,
+} from 'proton-pass-extension/app/content/bridge/message';
+import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
+import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -10,15 +18,6 @@ import type { Predicate } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { objectHandler } from '@proton/pass/utils/object/handler';
-
-import {
-    createBridgeAbortSignal,
-    createBridgeDisconnectSignal,
-    createBridgeResponse,
-    isBridgeAbortSignal,
-    isBridgeRequest,
-} from '../bridge/message';
-import { withContext } from '../context/context';
 
 type WebAuthNServiceState = { requestToken: MaybeNull<string> };
 
@@ -70,7 +69,7 @@ export const createWebAuthNService = () => {
                 if (!ctx) return;
 
                 const token = state.get('requestToken');
-                if (token && isBridgeAbortSignal(token)(data)) ctx?.service.iframe.notification?.close();
+                if (token && isBridgeAbortSignal(token)(data)) ctx.service.inline.notification.close();
 
                 if (isBridgeRequest(data)) {
                     switch (data.request.type) {
@@ -84,7 +83,7 @@ export const createWebAuthNService = () => {
                                 return features.Passkeys && settings.passkeys.create;
                             })
                                 .then(() =>
-                                    ctx?.service.iframe.attachNotification()?.open({
+                                    ctx.service.inline.notification.open({
                                         action: NotificationAction.PASSKEY_CREATE,
                                         domain,
                                         request,
@@ -115,7 +114,7 @@ export const createWebAuthNService = () => {
                                             const passkeys = response.type === 'success' ? response.passkeys : [];
                                             if (!passkeys.length) return abort(true);
 
-                                            return ctx?.service.iframe.attachNotification()?.open({
+                                            return ctx?.service.inline.notification.open({
                                                 action: NotificationAction.PASSKEY_GET,
                                                 domain,
                                                 passkeys,
@@ -148,7 +147,7 @@ export const createWebAuthNService = () => {
 
         /** Attach injected notification early if a webauthn input is detected */
         const webAuthFields = document.querySelectorAll('input[autocomplete*="webauthn"]').length > 0;
-        if (webAuthFields) ctx?.service.iframe.attachNotification();
+        if (webAuthFields) ctx?.service.inline.notification.attach();
     });
 
     const destroy = () => {

@@ -2,30 +2,41 @@ import type { ClientController } from 'proton-pass-extension/app/content/client.
 import { CLIENT_SCRIPT_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { CSContext } from 'proton-pass-extension/app/content/context/context';
 import { createContentScriptContext } from 'proton-pass-extension/app/content/context/factory';
+import type { ContentScriptContext } from 'proton-pass-extension/app/content/context/types';
 import { DOMCleanUp } from 'proton-pass-extension/app/content/injections/cleanup';
-import { getFrameAttributes, getFrameElement } from 'proton-pass-extension/app/content/utils/frame';
+import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
-import { getNodePosition } from 'proton-pass-extension/lib/utils/dom';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
+import { FormType } from '@proton/pass/fathom';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { AppState } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { TopLayerManager } from '@proton/pass/utils/dom/popover';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-type CreateContentScriptOptions = {
+export type ContentScriptClientFactoryOptions = {
+    /** Random uuid to identify current client */
     scriptId: string;
+    /** Wether the content-script is in the top-frame */
     mainFrame: boolean;
     /** Current content-script custom elements unique hashes */
     elements: PassElementsConfig;
+    /** Parent controller orchestrating lifecycle */
     controller: ClientController;
+};
+
+export type ContentScriptClient = {
+    context: ContentScriptContext;
+    start: () => void;
+    destroy: (options: { reason: string }) => void;
 };
 
 export const createContentScriptClient = ({
@@ -33,7 +44,7 @@ export const createContentScriptClient = ({
     mainFrame,
     elements,
     controller,
-}: CreateContentScriptOptions) => {
+}: ContentScriptClientFactoryOptions): ContentScriptClient => {
     const context = createContentScriptContext({
         controller,
         elements,
@@ -53,23 +64,23 @@ export const createContentScriptClient = ({
         },
     });
 
-    const reconciliate = async () => {
+    const reconciliate = safeCall(() => {
         context.service.formManager.sync();
         context.service.autofill.sync().catch(noop);
         context.service.inline.sync();
-    };
+    });
 
     const onFeatureFlagsChange = (features: FeatureFlagState) => context.setFeatureFlags(features);
 
     const onSettingsChange = (settings: ProxiedSettings) => {
         context.setSettings(settings);
         context.service.inline.setTheme(settings.theme);
-        void reconciliate();
+        reconciliate();
     };
 
     const onWorkerStateChange = (workerState: AppState) => {
         context.setState(workerState);
-        void reconciliate();
+        reconciliate();
     };
 
     const onPortMessage = async (message: unknown): Promise<void> => {
@@ -105,12 +116,7 @@ export const createContentScriptClient = ({
                 })
             );
 
-            if (res.type === 'error') throw new Error();
-
-            context.setState({ ...res.state, ready: true, stale: false });
-            context.setSettings(res.settings);
-            context.setFeatureFlags(res.features);
-            context.service.inline.setTheme(res.settings.theme);
+            if (res.type === 'error') throw new Error('Client initialization failure');
 
             /* if the user has disabled every injection setting or added the current
              * domain to the pause list we can safely destroy the content-script context */
@@ -119,31 +125,38 @@ export const createContentScriptClient = ({
             const enable = enableDetector || features.Passkeys;
             if (!enable) return context.destroy({ reason: 'injection settings' });
 
-            /* if we're in an iframe and the initial detection should not
-             * be triggered : destroy this content-script service */
-            // if (!mainFrame) return context.destroy({ reason: 'subframe discarded' });
+            context.setState({ ...res.state, ready: true, stale: false });
+            context.setSettings(res.settings);
+            context.setFeatureFlags(res.features);
+            context.service.inline.setTheme(res.settings.theme);
 
-            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.state.status}"`);
-            window.postMessage({ type: CLIENT_SCRIPT_READY_EVENT });
+            reconciliate();
 
-            await reconciliate();
+            /** Notify the message bridge that the content-script is now ready. This
+             * is required as the webauthn message bridge is injected in the main world.*/
+            if (context.mainFrame) window.postMessage({ type: CLIENT_SCRIPT_READY_EVENT });
             port.onMessage.addListener(onPortMessage);
 
+            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.state.status}"`);
+
             if (enableDetector) {
-                context.service.formManager.observe();
                 await context.service.detector.init();
                 await context.service.formManager.detect({ reason: 'InitialLoad' }).catch(noop);
+
+                /** Start the page observer and hook up any effects
+                 * to the formManager detection triggers */
+                controller.observer.subscribe((reason) => context.service.formManager.detect({ reason }));
             }
         } catch (err) {
             context.destroy({ reason: 'startup failure' });
-            controller.destroy();
         }
     });
 
-    const client = {
+    const client: ContentScriptClient = {
         get context() {
             return context;
         },
+
         /** Connects the content-script service to the extension context.
          * Will automatically try to recycle the extension context if the
          * port is disconnected if the service worker is killed */
@@ -155,6 +168,9 @@ export const createContentScriptClient = ({
                         context.destroy({ reason: 'port disconnected' });
                         return { recycle: true };
                     },
+                    /** if the extension context errors out: destroy the parent
+                     * controller. This will cascade to remove both the extension
+                     * context and the content-script context */
                     onError: controller.destroy,
                     onRecycle: handleStart,
                 });
@@ -172,23 +188,15 @@ export const createContentScriptClient = ({
         },
     };
 
-    controller.frameMessageBroker.register(WorkerMessageType.FRAME_TREE_WALK, ({ payload }, _, sendResponse) => {
-        const target = getFrameElement(payload.frameId, payload.attributes);
-        if (!target) return undefined;
-
-        sendResponse({
-            /** report the top/left coordinates of the target frame relative
-             * to the current document which may be in turn another frame */
-            coords: getNodePosition(target),
-            /** if the current frame is another iframe: report back the frame
-             * attributes to allow identification during tree-walk */
-            attributes: getFrameAttributes(),
-        });
+    const onCheckForm: FrameMessageHandler<WorkerMessageType.AUTOFILL_CHECK_FORM> = (_message, _, sendResponse) => {
+        const trackedForms = context.service.formManager.getTrackedForms();
+        const hasLoginForm = trackedForms?.some(({ formType }) => formType === FormType.LOGIN);
+        sendResponse({ hasLoginForm });
 
         return true;
-    });
+    };
+
+    controller.transport.register(WorkerMessageType.AUTOFILL_CHECK_FORM, onCheckForm);
 
     return client;
 };
-
-export type ContentScriptClient = ReturnType<typeof createContentScriptClient>;

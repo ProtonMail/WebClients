@@ -1,23 +1,12 @@
-import { FORM_TRACKER_CONFIG } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type {
-    FieldHandle,
-    FormHandle,
-    FormTracker,
-    FormTrackerState,
-    FormTrackerSyncOptions,
-} from 'proton-pass-extension/app/content/types';
-import { DropdownAction } from 'proton-pass-extension/app/content/types';
+import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
+import type { FormHandle } from 'proton-pass-extension/app/content/services/form/form';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
-import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
-import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
+import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-import type { Runtime } from 'webextension-polyfill';
 
 import { FieldType, isBtnCandidate, kButtonSubmitSelector } from '@proton/pass/fathom';
-import browser from '@proton/pass/lib/globals/browser';
-import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 import type { AutosaveFormEntry, FormCredentials, MaybeNull } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { parseFormAction } from '@proton/pass/utils/dom/form';
@@ -42,6 +31,37 @@ const SUBMIT_DETACH_TIMEOUT = 250;
  * which might lead to premature stashing */
 const SUBMIT_TIMEOUT = 1_000;
 
+export type FormTrackerState = {
+    detached: boolean;
+    error: boolean;
+    interactionAt?: number;
+    processing: boolean;
+    submitted: boolean;
+    submittedAt?: number;
+    timerIdle?: NodeJS.Timeout;
+    timerSubmit?: NodeJS.Timeout;
+};
+
+export type FormTrackerSyncOptions = {
+    data?: FormCredentials;
+    partial: boolean;
+    reset?: boolean;
+    submit: boolean;
+};
+
+export interface FormTracker {
+    attach: () => void;
+    /** Detaches the tracker from the `FormHandle`. Will try to sync the
+     * form data in case it's a form removal of interest */
+    detach: () => void;
+    getState: () => FormTrackerState;
+    processForm: (options: FormTrackerSyncOptions) => Promise<MaybeNull<AutosaveFormEntry>>;
+    reset: () => void;
+
+    onFormSubmit: () => void;
+    onFieldChange: () => void;
+}
+
 export const createFormTracker = (form: FormHandle): FormTracker => {
     const { tagName } = form.element;
     const listeners = createListenerStore();
@@ -53,7 +73,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         detached: false,
     };
 
-    logger.debug(`[FormTracker] Tracking form [${tagName}:${form.formType}:${form.id}]`);
+    logger.debug(`[FormTracker] Tracking form [${tagName}:${form.formType}:${form.formId}]`);
 
     const clearIdleTimer = () => {
         clearTimeout(state.timerIdle);
@@ -66,7 +86,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     };
 
     const reset = () => {
-        logger.debug(`[FormTracker] Resetting state [formId:${form.id}]`);
+        logger.debug(`[FormTracker] Resetting state [formId:${form.formId}]`);
         clearIdleTimer();
         clearSubmitTimer();
         state.submitted = false;
@@ -74,23 +94,6 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         state.error = false;
         delete state.submittedAt;
     };
-
-    const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, action) => {
-        const features = ctx?.getFeatures();
-        const settings = ctx?.getSettings();
-        const autofillEnabled = settings?.autofill && enableLoginAutofill(settings.autofill);
-
-        switch (action) {
-            case DropdownAction.AUTOFILL_LOGIN:
-                return Boolean(features?.Autofill && (settings?.autofill.login ?? autofillEnabled));
-            case DropdownAction.AUTOFILL_IDENTITY:
-                return Boolean(features?.Autofill && (settings?.autofill.identity ?? autofillEnabled));
-            case DropdownAction.AUTOSUGGEST_ALIAS:
-                return features?.AutosuggestAlias ?? false;
-            case DropdownAction.AUTOSUGGEST_PASSWORD:
-                return features?.AutosuggestPassword ?? false;
-        }
-    });
 
     /** Resolves form data for autosaving purposes, prioritizing usernames over
      * hidden usernames and email fields. Additionally, prioritizes new passwords
@@ -125,7 +128,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         state.timerIdle = setTimeout(() => {
             clearIdleTimer();
             if (state.processing || form.busy || form.detached) return;
-            logger.debug(`[FormTracker] Idle reconciliation [formId:${form.id}]`);
+            logger.debug(`[FormTracker] Idle reconciliation [formId:${form.formId}]`);
             onIdle();
         }, IDLE_TIMEOUT);
     };
@@ -135,7 +138,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
      * first place because the `formType` can change for a particular form
      * (eg. re-rendering in SPAs). We validate the form credentials against
      * partial form data in order to support multi-step form staging. */
-    const sync = asyncQueue(async (options: FormTrackerSyncOptions): Promise<MaybeNull<AutosaveFormEntry>> => {
+    const processForm = asyncQueue(async (options: FormTrackerSyncOptions): Promise<MaybeNull<AutosaveFormEntry>> => {
         if (!form.canAutosave) return null;
 
         const data = options.data ?? getFormData();
@@ -143,7 +146,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         if (options.reset) reset();
 
         if (state.interactionAt && !state.processing && valid) {
-            logger.debug(`[FormTracker] Syncing submission [formId:${form.id}|submit:${options.submit}]`);
+            logger.debug(`[FormTracker] Syncing submission [formId:${form.formId}|submit:${options.submit}]`);
 
             const response = await stage({
                 action: parseFormAction(form.element),
@@ -151,7 +154,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                 reason: `FORM_TRACKER[submit=${options.submit}]`,
                 submit: options.submit,
                 type: form.formType,
-                formId: form.id,
+                formId: form.formId,
             });
 
             if (options.submit && !state.detached) {
@@ -162,12 +165,12 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                 clearSubmitTimer();
 
                 state.timerSubmit = setTimeout(() => {
-                    logger.debug(`[FormTracker] Submit timeout [formId:${form.id}]`);
+                    logger.debug(`[FormTracker] Submit timeout [formId:${form.formId}]`);
                     delete state.timerSubmit;
                     state.processing = false;
                     state.submitted = true;
                     state.error = false;
-                    observeIdle(() => sync({ submit: false, partial: true, reset: true }));
+                    observeIdle(() => processForm({ submit: false, partial: true, reset: true }));
                 }, SUBMIT_TIMEOUT);
             }
 
@@ -180,17 +183,17 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     /** If we detect an interaction while there is an idle timer
      * ongoing: cancel it and sync the form submission to flag
      * it as non-submitted */
-    const onChange = () => {
+    const onFieldChange = () => {
         state.interactionAt = Date.now();
         state.processing = false;
 
         if (state.timerIdle) {
-            logger.debug(`[FormTracker] Detected interaction while idle [formId:${form.id}]`);
-            void sync({ submit: false, partial: true, reset: true });
+            logger.debug(`[FormTracker] Detected interaction while idle [formId:${form.formId}]`);
+            void processForm({ submit: false, partial: true, reset: true });
         }
     };
 
-    const onSubmit = withContext(async (ctx) => {
+    const onFormSubmit = withContext<() => Promise<void>>(async (ctx) => {
         state.submittedAt = Date.now();
         state.interactionAt = Date.now();
 
@@ -198,69 +201,56 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
          * fields on form submit. This could potentially result in
          * dropdown actions being triggered, so we create a trap */
         form.getFields().forEach(({ element }) => actionTrap(element));
+        ctx?.service.inline.dropdown.close();
 
-        const dropdown = ctx?.service.iframe.dropdown;
-        if (dropdown?.getState().visible) dropdown?.close();
-        await sync({ partial: true, submit: true });
+        await processForm({ partial: true, submit: true });
     });
 
-    /** Reconciles form trackers by syncing trackable fields, attaching
-     * listeners, and managing icons. Triggers autofill syncing and
-     * handles auto-focus for empty active fields. Attaches listeners
-     * only if a field is not currently tracked during reconciliation. */
-    const reconciliate = withContext<() => void>((ctx) => {
-        if (!ctx) return;
+    const onFormStatusChange: FrameMessageHandler<WorkerMessageType.FORM_STATUS> = ({ payload }) => {
+        const { formId, status } = payload;
 
-        form.getFields().forEach((field) => {
-            const config = FORM_TRACKER_CONFIG[form.formType].find(({ type }) => type === field.fieldType);
-            if (!config) return field.detach();
+        if (formId === form.formId) {
+            switch (status) {
+                case 'loading':
+                    logger.debug(`[Autosave] Form loading detected [formId:${formId}]`);
+                    state.processing = true;
+                    state.submitted = false;
+                    state.error = false;
+                    clearSubmitTimer();
+                    clearIdleTimer();
+                    break;
+                case 'submitted':
+                    logger.debug(`[Autosave] Form submit detected [formId:${formId}]`);
+                    state.processing = false;
+                    state.submitted = true;
 
-            const { action, filterable } = config;
-            field.setAction(action && canProcessAction(action) ? { type: action, filterable } : null);
-            if (!field.tracked) field.attach({ onChange, onSubmit });
-        });
+                    if (state.error) {
+                        void stash('XMLHTTP_ERROR');
+                        reset();
+                    } else observeIdle(() => processForm({ submit: false, partial: true, reset: true }));
 
-        /* Trigger focus on empty active field to open dropdown :
-         * Handles autofocused simple forms and dynamically added fields.
-         * Note: This doesn't trigger a real DOM focus event. */
-        form.getFields()
-            .find((field) => isActiveElement(field.element) && !field.value)
-            ?.focus();
-    });
-
-    const onTabMessage: Runtime.OnMessageListenerNoResponse = (message) => {
-        if (matchExtensionMessage(message, { sender: 'background', type: WorkerMessageType.FORM_STATUS })) {
-            const { formId, status } = message.payload;
-
-            if (formId === form.id) {
-                switch (status) {
-                    case 'loading':
-                        logger.debug(`[Autosave] Form loading detected [formId:${formId}]`);
-                        state.processing = true;
-                        state.submitted = false;
-                        state.error = false;
-                        clearSubmitTimer();
-                        clearIdleTimer();
-                        break;
-                    case 'submitted':
-                        logger.debug(`[Autosave] Form submit detected [formId:${formId}]`);
-                        state.processing = false;
-                        state.submitted = true;
-
-                        if (state.error) {
-                            void stash('XMLHTTP_ERROR');
-                            reset();
-                        } else observeIdle(() => sync({ submit: false, partial: true, reset: true }));
-
-                        break;
-                    case 'error':
-                        logger.debug(`[Autosave] Form error detected [formId:${formId}]`);
-                        state.error = true;
-                        break;
-                }
+                    break;
+                case 'error':
+                    logger.debug(`[Autosave] Form error detected [formId:${formId}]`);
+                    state.error = true;
+                    break;
             }
         }
     };
+
+    const attach = withContext((ctx) => {
+        /** In certain cases we may only be able to infer submission from a
+         * `beforeunload` event on a busy form. This can happen for websites
+         * not following the HTML Form specification (ie: account.google.com) */
+        listeners.addListener(window, 'beforeunload', () => form.busy && onFormSubmit());
+        listeners.addListener(form.element, 'submit', onFormSubmit);
+
+        ctx?.transport.register(WorkerMessageType.FORM_STATUS, onFormStatusChange);
+
+        Array.from(form.element.querySelectorAll<HTMLButtonElement>(kButtonSubmitSelector))
+            .filter(isBtnCandidate)
+            .forEach((btn) => listeners.addListener(btn, 'click', onFormSubmit));
+    });
 
     /** When detaching the form tracker: remove every listener
      * for both the current tracker and all fields. Try to infer whether
@@ -268,7 +258,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
      * wrapping the submission inference in a `requestAnimationFrame` in order
      * to avoid conflicts with ongoing DOM removal animations, extract the
      * form data before the fields are detached */
-    const detach = () => {
+    const detach = withContext((ctx) => {
         const formEl = form.element;
         const fields = form.getFields();
         const data = getFormData();
@@ -279,11 +269,11 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         listeners.removeAll();
         clearIdleTimer();
         clearSubmitTimer();
-        form.getFields().forEach((field) => field.detach());
-        browser.runtime.onMessage.removeListener(onTabMessage);
+
+        ctx?.transport.unregister(WorkerMessageType.FORM_STATUS, onFormStatusChange);
 
         requestAnimationFrame(() => {
-            /** * If the form was not interacted with, then detaching the tracker
+            /** If the form was not interacted with, then detaching the tracker
              * should have no effect and avoid inferring a submission completely */
             if (!state.interactionAt || state.error) return;
 
@@ -296,20 +286,17 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             const invalidSubmit = !state.submittedAt || Date.now() - state.submittedAt < SUBMIT_DETACH_TIMEOUT;
             const invalidate = !domAttached && invalidSubmit;
 
-            if (!invalidate) sync({ submit: true, partial: true, data }).catch(noop);
+            if (!invalidate) processForm({ submit: true, partial: true, data }).catch(noop);
         });
+    });
+
+    return {
+        attach,
+        detach,
+        getState: () => state,
+        onFieldChange,
+        onFormSubmit,
+        processForm,
+        reset,
     };
-
-    /** In certain cases we may only be able to infer submission from a
-     * `beforeunload` event on a busy form. This can happen for websites
-     * not following the HTML Form specification (ie: account.google.com) */
-    listeners.addListener(window, 'beforeunload', () => form.busy && onSubmit());
-    listeners.addListener(form.element, 'submit', onSubmit);
-    browser.runtime.onMessage.addListener(onTabMessage);
-
-    Array.from(form.element.querySelectorAll<HTMLButtonElement>(kButtonSubmitSelector))
-        .filter(isBtnCandidate)
-        .forEach((btn) => listeners.addListener(btn, 'click', onSubmit));
-
-    return { detach, getState: () => state, reconciliate, reset, sync };
 };

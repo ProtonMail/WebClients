@@ -145,7 +145,7 @@ export const createAutoFillService = () => {
                     await browser.tabs.sendMessage<
                         AutofillCheckFormMessage,
                         WorkerMessageResponse<WorkerMessageType.AUTOFILL_CHECK_FORM>
-                    >(tabID, backgroundMessage({ type: WorkerMessageType.AUTOFILL_CHECK_FORM }))
+                    >(tabID, backgroundMessage({ type: WorkerMessageType.AUTOFILL_CHECK_FORM }), { frameId: 0 })
                 )?.hasLoginForm ?? false
             );
         } catch (err) {

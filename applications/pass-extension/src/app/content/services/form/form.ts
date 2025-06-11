@@ -1,25 +1,23 @@
+import { FORM_TRACKER_CONFIG, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { resolveIdentitySections } from 'proton-pass-extension/app/content/services/form/autofill.identity.sections';
-import { createFormTracker } from 'proton-pass-extension/app/content/services/form/tracker';
-import {
-    type DetectedField,
-    type DetectedForm,
-    type FieldHandle,
-    type FormHandle,
-    NotificationAction,
-} from 'proton-pass-extension/app/content/types';
+import { resolveIdentitySections } from 'proton-pass-extension/app/content/services/autofill/autofill.identity.sections';
+import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/services/form/detector';
+import type { FormTracker } from 'proton-pass-extension/app/content/services/form/form.tracker';
+import { createFormTracker } from 'proton-pass-extension/app/content/services/form/form.tracker';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { canAutosave } from 'proton-pass-extension/app/content/utils/autosave';
-import { hasProcessableFields } from 'proton-pass-extension/app/content/utils/nodes';
+import { hasProcessableFields, isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 
 import {
     FieldType,
     type FormType,
     buttonSelector,
+    isIgnored,
     isVisibleForm,
     removeClassifierFlags,
     shadowPiercingContains,
 } from '@proton/pass/fathom';
+import type { Maybe } from '@proton/pass/types';
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
 import { findScrollableParent } from '@proton/pass/utils/dom/scroll';
 import { getMaxZIndex } from '@proton/pass/utils/dom/zindex';
@@ -29,9 +27,28 @@ import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import debounce from '@proton/utils/debounce';
 
+import type { FieldHandle } from './field';
 import { createFieldHandles } from './field';
 
 export type FormHandlesProps = { zIndex: number };
+
+export interface FormHandle {
+    busy: boolean;
+    canAutosave: boolean;
+    detached: boolean;
+    element: HTMLElement;
+    fields: Map<HTMLInputElement, FieldHandle>;
+    formType: FormType;
+    formId: string;
+    tracker?: FormTracker;
+    detach: () => void;
+    detachField: (field: HTMLInputElement) => void;
+    getFieldById: (fieldId: string) => Maybe<FieldHandle>;
+    getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
+    getFieldsFor: (type: FieldType, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
+    otp: boolean;
+    reconciliate: (type: FormType, fields: DetectedField[]) => void;
+}
 
 export const createFormHandles = (options: DetectedForm): FormHandle => {
     const { form, formType, fields: detectedFields } = options;
@@ -40,7 +57,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
     const scrollRef = findScrollableParent(form);
 
     const formHandle: FormHandle = {
-        id: uniqueId(),
+        formId: uniqueId(8),
         canAutosave: canAutosave(options.form),
         element: form,
         formType: formType,
@@ -67,9 +84,17 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             return !shadowPiercingContains(document.body, form) || !isVisibleForm(form, { skipCache: true });
         },
 
+        get otp() {
+            return !isIgnored(formHandle.element) && formHandle.getFieldsFor(FieldType.OTP).length > 0;
+        },
+
         getFieldsFor: (type, predicate) => {
             const fields = Array.from(formHandle.fields.values());
             return fields.filter((field) => field.fieldType === type && (predicate?.(field) ?? true));
+        },
+
+        getFieldById: (fieldId) => {
+            return formHandle.getFields().find((field) => field.fieldId === fieldId);
         },
 
         getFields: (predicate) => {
@@ -82,18 +107,25 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
          * The page might automatically refocus such a field, but we want to avoid
          * triggering actions on it while it's in an intermediate state. This function
          * blocks actions, removes the field from tracking, and clears its flags. */
-        detachField: withContext<(field: HTMLInputElement) => void>((ctx, field) => {
-            actionTrap(field);
-            formHandle.fields.get(field)?.detach();
-            formHandle.fields.delete(field);
-            removeClassifierFlags(field, { preserveIgnored: false });
+        detachField: withContext((ctx, element) => {
+            const field = formHandle.fields.get(element);
 
-            /* close dropdown if opened & attached to detaching field */
-            const dropdownField = ctx?.service.iframe.dropdown?.getCurrentField()?.element;
-            if (dropdownField === field) ctx?.service.iframe.dropdown?.close();
+            actionTrap(element);
+            field?.detach();
+            formHandle.fields.delete(element);
+            removeClassifierFlags(element, { preserveIgnored: false });
+
+            ctx?.service.inline.dropdown.close(field ? { type: 'field', field } : undefined);
         }),
 
-        reconciliate: (formType: FormType, fields: DetectedField[]) => {
+        reconciliate: withContext((ctx, formType, fields) => {
+            /** Attach the form tracker only to the top frame.
+             * FIXME: supporting cross-frame autosave */
+            if (ctx?.mainFrame && !formHandle.tracker) {
+                formHandle.tracker = createFormTracker(formHandle);
+                formHandle.tracker.attach();
+            }
+
             let didChange = formType !== formHandle.formType;
             let hasIdentityFields: boolean = false;
 
@@ -103,6 +135,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             /* Detach fields that are no longer present */
             formHandle.getFields().forEach((field) => {
                 const shouldDetach = !fields.some((incoming) => field.element === incoming.field);
+
                 if (shouldDetach) {
                     didChange = true;
                     formHandle.detachField(field.element);
@@ -151,32 +184,38 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
              * As such, reset the loading/submitted state everytime a new field
              * appears/disappears (ie: github.com dynamic sign-up page) */
             if (didChange) formHandle.tracker?.reset();
-        },
 
-        /* Form tracker is responsible for setting
-         * up the submission handlers and the input
-         * changes handler */
-        attach() {
-            formHandle.tracker = formHandle.tracker ?? createFormTracker(formHandle);
-            formHandle.tracker.reconciliate();
-        },
+            /** Set up the relevant field actions based on `FORM_TRACKER_CONFIG`.
+             * If no config is found for the detected field: detach as we're most
+             * likely not interested in this specific detected field. */
+            nextFields.forEach((field) => {
+                const config = FORM_TRACKER_CONFIG[formType].find(({ type }) => type === field.fieldType);
+                if (!config) return field.detach();
+
+                const { action, filterable } = config;
+                field.setAction(action ? { type: action, filterable } : null);
+                field.attach(formHandle.tracker);
+
+                /* Trigger focus on empty active field to open dropdown :
+                 * Handles autofocused simple forms and dynamically added fields.
+                 * Note: This doesn't trigger a real DOM focus event. */
+                if (isActiveElement(field.element) && !field.value) field.focus();
+            });
+        }),
 
         detach: withContext((ctx) => {
-            logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
-            const dropdown = ctx?.service.iframe.dropdown;
-            const notification = ctx?.service.iframe.notification;
-            const dField = dropdown?.getCurrentField() ?? null;
-            const nAction = notification?.getState().action;
-
+            logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.formId}]`);
             listeners.removeAll();
+
+            /** If an OTP inline notification had been triggered
+             * because of this form, close it when detaching */
+            if (formHandle.otp) ctx?.service.inline.notification.close(NotificationAction.OTP);
+
             formHandle.tracker?.detach();
 
             formHandle.getFields().forEach((field) => {
-                /** Auto-close dropdown if it was attached to a detaching form */
-                if (field === dField) dropdown?.close();
-                /** Auto-close OTP autofill notification if attached from detaching form */
-                if (field.fieldType === FieldType.OTP && nAction === NotificationAction.OTP) notification?.close();
-
+                /** FIXME(@ecandon) we should probably emit only one close even */
+                ctx?.service.inline.dropdown.close({ type: 'field', field });
                 field.detach();
             });
 
