@@ -1,7 +1,7 @@
 import { type RefObject, useMemo } from 'react';
 
 import { type HotkeyTuple, useHotkeys } from '@proton/components';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isBusy } from '@proton/shared/lib/shortcuts/calendar';
 import useFlag from '@proton/unleash/useFlag';

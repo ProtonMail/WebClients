@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, Tooltip, UserAvatar } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import folderImages from '@proton/styles/assets/img/drive/folder-images.svg';
 import useFlag from '@proton/unleash/useFlag';

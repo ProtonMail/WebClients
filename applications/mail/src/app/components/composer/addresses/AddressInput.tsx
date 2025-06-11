@@ -11,7 +11,7 @@ import {
     useAutocomplete,
     useAutocompleteFilter,
 } from '@proton/components';
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 
 interface Props {
     id: string;

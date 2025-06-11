@@ -20,8 +20,8 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useContactGroups } from '@proton/mail';
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';

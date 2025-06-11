@@ -24,7 +24,7 @@ jest.mock('@proton/components/components/upsell/UpsellModal/UpsellModal', () => 
 
 jest.mock('@proton/account');
 jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/mail/mailSettings/hooks');
+jest.mock('@proton/mail/store/mailSettings/hooks');
 jest.mock('@proton/account/organization/hooks');
 jest.mock('@proton/components/hooks/useApi');
 jest.mock('@proton/redux-shared-store', () => ({ useDispatch: () => jest.fn() }));

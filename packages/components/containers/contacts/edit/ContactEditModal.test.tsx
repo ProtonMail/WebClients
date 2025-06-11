@@ -3,9 +3,9 @@ import userEvent from '@testing-library/user-event';
 
 import * as userHooks from '@proton/account/user/hooks';
 import { CryptoProxy } from '@proton/crypto';
-import * as useContactEmailHooks from '@proton/mail/contactEmails/hooks';
-import * as mailLabelHooks from '@proton/mail/labels/hooks';
-import * as mailSettingsHooks from '@proton/mail/mailSettings/hooks';
+import * as useContactEmailHooks from '@proton/mail/store/contactEmails/hooks';
+import * as mailLabelHooks from '@proton/mail/store/labels/hooks';
+import * as mailSettingsHooks from '@proton/mail/store/mailSettings/hooks';
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import type { MailSettings, UserModel } from '@proton/shared/lib/interfaces';
@@ -25,21 +25,21 @@ jest.mock('../../../hooks/useAuthentication', () => ({
 
 jest.mock('../../../hooks/useConfig', () => () => ({ API_URL: 'api' }));
 
-jest.mock('@proton/mail/contactEmails/hooks', () => ({
+jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/mail/contactEmails/hooks'),
+    ...jest.requireActual('@proton/mail/store/contactEmails/hooks'),
 }));
-jest.mock('@proton/mail/labels/hooks', () => ({
+jest.mock('@proton/mail/store/labels/hooks', () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/mail/labels/hooks'),
+    ...jest.requireActual('@proton/mail/store/labels/hooks'),
 }));
 jest.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
     ...jest.requireActual('@proton/account/user/hooks'),
 }));
-jest.mock('@proton/mail/mailSettings/hooks', () => ({
+jest.mock('@proton/mail/store/mailSettings/hooks', () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/mail/mailSettings/hooks'),
+    ...jest.requireActual('@proton/mail/store/mailSettings/hooks'),
 }));
 
 jest.mock('@proton/shared/lib/helpers/image.ts', () => ({

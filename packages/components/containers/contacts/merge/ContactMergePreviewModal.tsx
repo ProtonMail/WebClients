@@ -6,7 +6,7 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
-import { useGetContact } from '@proton/mail/contacts/contactHooks';
+import { useGetContact } from '@proton/mail/store/contacts/contactHooks';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import { merge } from '@proton/shared/lib/contacts/helpers/merge';

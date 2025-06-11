@@ -1,5 +1,5 @@
 import { getKTActivationValue, getKTFlag } from '@proton/key-transparency';
-import type { MailSettingState } from '@proton/mail/mailSettings';
+import type { MailSettingState } from '@proton/mail/store/mailSettings';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 
 import { bootstrapEvent } from '../bootstrap/action';

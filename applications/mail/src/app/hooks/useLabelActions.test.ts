@@ -5,7 +5,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useLabelActions } from './useLabelActions';
 
-jest.mock('@proton/mail/labels/hooks');
+jest.mock('@proton/mail/store/labels/hooks');
 
 const {
     TRASH,
