@@ -204,7 +204,7 @@ const AccessControlSettingsSection = () => {
                 {lumoInAccessControl && (
                     <AccessControlItem
                         title={LUMO_APP_NAME}
-                        description=""
+                        description={c('Info').t`Private AI assistant`}
                         logo={<Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={8} />}
                         targetProducts={[Product.Lumo]}
                         showSSOBadge={!appSupportsSSO(APPS.PROTONLUMO) && hasSsoConfig}
