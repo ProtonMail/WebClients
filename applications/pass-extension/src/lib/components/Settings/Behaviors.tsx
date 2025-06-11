@@ -73,6 +73,7 @@ const getSettingsSections = ({ settings, webReqPermissions, dispatch }: Settings
                     label: c('Label').t`Basic Auth autofill`,
                     description: c('Info').t`Autofill HTTP basic auth dialogs with saved credentials.`,
                     checked: settings.autofill?.basicAuth ?? false,
+                    hidden: BUILD_TARGET === 'safari',
                     onChange: async (checked) => {
                         if (checked && !webReqPermissions.enabled) {
                             const enabled = await webReqPermissions.request();
