@@ -113,7 +113,7 @@ describe('useSharesStore', () => {
             const result = useSharesStore.getState().getLockedShares();
             expect(result).toEqual([
                 {
-                    defaultShare,
+                    defaultShares: [defaultShare],
                     devices: [deviceShare],
                     photos: [photosShare],
                 },
@@ -310,7 +310,10 @@ describe('Promise cache operations', () => {
 
     describe('loadUserSharesPromise', () => {
         it('should set and clear loadUserSharesPromise', async () => {
-            const mockPromise = Promise.resolve([createTestShare()]);
+            const mockPromise = Promise.resolve({
+                defaultShareId: 'defaultShareId',
+                shares: [createTestShare()],
+            });
 
             useSharesStore.getState().setLoadUserSharesPromise(mockPromise);
             expect(useSharesStore.getState().loadUserSharesPromise).toBe(mockPromise);
@@ -373,7 +376,7 @@ describe('Promise cache operations', () => {
 
     describe('Promise cache coordination', () => {
         it('should maintain separate caches for different promise types', async () => {
-            const sharesPromise = Promise.resolve([createTestShare()]);
+            const sharesPromise = Promise.resolve({ defaultShareId: 'defaultShareId', shares: [createTestShare()] });
             const defaultSharePromise = Promise.resolve(createTestShare({ isDefault: true }) as ShareWithKey);
             const photosSharePromise = Promise.resolve(
                 createTestShare({
