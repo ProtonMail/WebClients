@@ -210,7 +210,7 @@ describe('optimisticUpdates reducer', () => {
     });
 
     describe('mark as read/unread operations', () => {
-        it('should add elements to bypassFilter and adjust total when marking as read with unread filter', () => {
+        it('should add elements to bypassFilter when marking as read with unread filter', () => {
             const state = setupMarkAsTest(1);
             const params = state.params;
             const contextFilter = getElementContextIdentifier({
@@ -238,7 +238,7 @@ describe('optimisticUpdates reducer', () => {
             optimisticUpdates(state, action);
 
             expect(state.bypassFilter).toContain('element1');
-            expect(state.total[contextFilter]).toBe(6); // +1 because marking as read
+            expect(state.total[contextFilter]).toBe(5); // Total remains unchanged
         });
 
         it('should not add elements to bypassFilter when marking as unread with unread filter', () => {
