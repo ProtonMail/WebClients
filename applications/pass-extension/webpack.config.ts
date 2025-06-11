@@ -141,16 +141,10 @@ const config: Configuration = {
         },
         popup: safariPatch('./src/app/popup/index.tsx'),
         settings: './src/app/pages/settings/index.tsx',
-
-        ...(BUILD_TARGET !== 'safari'
-            ? {
-                  webauthn: {
-                      /* Passkey handling not available in Safari */
-                      import: './src/app/content/webauthn.ts',
-                      layer: 'injection',
-                  },
-              }
-            : {}),
+        webauthn: {
+            import: './src/app/content/webauthn.ts',
+            layer: 'injection',
+        },
 
         ...(BUILD_TARGET === 'firefox'
             ? {
