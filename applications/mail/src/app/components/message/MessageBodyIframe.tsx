@@ -6,15 +6,15 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
 import { Icon, useSyncIframeStyles, useTheme } from '@proton/components';
+import getIframeSandboxAttributes from '@proton/mail-renderer/helpers/getIframeSandboxAttributes';
+import useIframeDispatchEvents from '@proton/mail-renderer/hooks/useIframeDispatchEvents';
+import useIframeShowBlockquote from '@proton/mail-renderer/hooks/useIframeShowBlockquote';
+import useObserveIframeHeight from '@proton/mail-renderer/hooks/useObserveIframeHeight';
 import clsx from '@proton/utils/clsx';
 
 import type { MessageState } from '../../store/messages/messagesTypes';
 import MessageBodyImages from './MessageBodyImages';
-import getIframeSandboxAttributes from './helpers/getIframeSandboxAttributes';
-import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
-import useIframeShowBlockquote from './hooks/useIframeShowBlockquote';
 import useInitIframeContent from './hooks/useInitIframeContent';
-import useObserveIframeHeight from './hooks/useObserveIframeHeight';
 import { type OnMessageImageLoadError } from './interface';
 
 interface Props {
