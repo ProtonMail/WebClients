@@ -704,11 +704,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "Refresh the page": [
-        "Smiren asebter"
-      ],
       "refresh the page": [
         "smiren asebter"
+      ],
+      "Refresh the page": [
+        "Smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -827,11 +827,11 @@
       "Select country": [
         "Fren tamurt"
       ],
-      "Select file": [
-        "Fren afaylu"
-      ],
       "select file": [
         "fren afaylu"
+      ],
+      "Select file": [
+        "Fren afaylu"
       ],
       "Select files": [
         "Fren ifuyla"
@@ -3169,11 +3169,11 @@
       "Forward to": [
         "Welleh ɣer"
       ],
-      "or": [
-        "neɣ"
-      ],
       "Or": [
         "Neɣ"
+      ],
+      "or": [
+        "neɣ"
       ],
       "With attachment": [
         "S ufaylu yeddan"
@@ -4920,11 +4920,11 @@
       "Account successfully updated": [
         "Aleqqem n umiḍan yemmed"
       ],
-      "Active": [
-        "Urmid"
-      ],
       "active": [
         "urmid"
+      ],
+      "Active": [
+        "Urmid"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Rnu tansa n yimayl @pm.me ɣer umiḍan-ik·im. Taɣult-a fessusen, meẓẓiyen anamek-is d \"${ MAIL_APP_NAME } me\" neɣ \"Private Message me.\""
@@ -5164,11 +5164,11 @@
       "Data locked": [
         "Isefka sekkṛen"
       ],
-      "dedicated servers": [
-        "iqeddacen yettwagen"
-      ],
       "Dedicated servers": [
         "Iqeddacen yettwagen"
+      ],
+      "dedicated servers": [
+        "iqeddacen yettwagen"
       ],
       "default email address": [
         "tansa yimayl n lexṣas"
@@ -6582,11 +6582,11 @@
       "Amount due": [
         "Tallayt ara txelseḍ"
       ],
-      "AND": [
-        "AKKED"
-      ],
       "And": [
         "Akked"
+      ],
+      "AND": [
+        "AKKED"
       ],
       "and": [
         "akked"
@@ -6921,11 +6921,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "MA"
-      ],
       "If": [
         "Ma"
+      ],
+      "IF": [
+        "MA"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -7071,14 +7071,14 @@
       "Optional": [
         "Afrayan"
       ],
-      "OR": [
-        "NEƔ"
-      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
+      ],
+      "OR": [
+        "NEƔ"
       ],
       "Organization name": [
         "Isem n tuddsa"
@@ -8260,14 +8260,6 @@
         "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Aneɛruḍ n ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Aseqdac-ik n umiḍan"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Kkes amiḍan?"
@@ -8277,6 +8269,14 @@
       ],
       "Switch plans?": [
         "Beddel iɣawasen?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Aneɛruḍ n ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Aseqdac-ik n umiḍan"
       ]
     },
     "new_plans: tooltip": {
@@ -9765,14 +9765,6 @@
         "Imultaɣen"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -9819,6 +9811,14 @@
       ],
       "Version history": [
         "Azray n lqem"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ]
     },
     "Subscription renewal state": {
@@ -10338,10 +10338,10 @@
       "Card verification": [
         "Takerḍa n usenqed"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
       "Change login password": [
