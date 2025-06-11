@@ -102,7 +102,7 @@ export type UpdateSharedURL = WithSRPPayload<{
 
 export interface LockedVolumeForRestore {
     lockedVolumeId: string;
-    defaultShare: LockedShareForRestore;
+    defaultShares: LockedShareForRestore[];
     devices: LockedDeviceForRestore[];
     photos: LockedPhotosForRestore[];
 }

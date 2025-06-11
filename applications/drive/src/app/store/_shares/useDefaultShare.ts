@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { queryUserShares } from '@proton/shared/lib/api/drive/share';
 import { queryGetDriveVolume } from '@proton/shared/lib/api/drive/volume';
 import type { UserShareResult } from '@proton/shared/lib/interfaces/drive/share';
-import { type GetDriveVolumeResult } from '@proton/shared/lib/interfaces/drive/volume';
+import { type GetDriveVolumeResult, VolumeState, VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
 import { findDefaultPhotosShareId, findDefaultShareId, useSharesStore } from '../../zustand/share/shares.store';
 import { shareMetaShortToShare, useDebouncedRequest } from '../_api';
@@ -36,18 +36,17 @@ export function useDefaultShare() {
     }));
 
     const { getShare, getShareWithKey } = useShare();
-    const { createVolume } = useVolume();
+    const { createVolume, listVolumes } = useVolume();
     const volumesState = useVolumesState();
     const { getOwnAddressAndPrimaryKeys } = useDriveCrypto();
 
-    const loadUserShares = useCallback(async (force = false): Promise<Share[]> => {
-        if (sharesState.loadUserSharesPromise && !force) {
-            return sharesState.loadUserSharesPromise;
+    const loadUserShares = useCallback(async (force = false): Promise<{ defaultShareId?: string; shares: Share[] }> => {
+        const existingPromise = useSharesStore.getState().loadUserSharesPromise;
+        if (existingPromise && !force) {
+            return existingPromise;
         }
 
         // Wait if another component is in the process of loading shares
-        // If we go in that condition that means another component is already loading user shares
-        // so we're just waiting for the Zustand to update with the promise
         if (sharesState.isLoadingShares) {
             await new Promise<void>((resolve) => {
                 const unsubscribe = useSharesStore.subscribe((state) => {
@@ -73,19 +72,26 @@ export function useDefaultShare() {
 
         try {
             const sharesPromise = (async () => {
+                let defaultShareId: string | undefined;
+                // In case main volume doesn't exist or if it's locked, we need to create/re-active it
+                const { Volumes } = await listVolumes();
+                const mainVolume = Volumes.find((volume) => volume.Type === VolumeType.Regular);
+                if (!mainVolume || mainVolume.State === VolumeState.Locked) {
+                    const { shareId } = await createVolume();
+                    defaultShareId = shareId;
+                }
                 const { Shares } = await debouncedRequest<UserShareResult>(queryUserShares());
                 const shares = Shares.map(shareMetaShortToShare);
                 shares.forEach(({ volumeId, shareId }) => {
                     volumesState.setVolumeShareIds(volumeId, [shareId]);
                 });
                 sharesState.setShares(shares);
-                return shares;
+                return { defaultShareId, shares };
             })();
 
             sharesState.setLoadUserSharesPromise(sharesPromise);
 
-            const shares = await sharesPromise;
-            return shares;
+            return await sharesPromise;
         } finally {
             sharesState.setIsLoadingShares(false);
         }
@@ -100,21 +106,22 @@ export function useDefaultShare() {
             const promise = debouncedFunction(
                 async (abortSignal: AbortSignal) => {
                     let defaultShareId = sharesState.getDefaultShareId();
+
                     // First try to load fresh list of shares from API to make sure
-                    // we don't create second default share.
+                    // we don't create second default share. loadUserShares() will
+                    // handle volume creation if needed.
                     if (!defaultShareId) {
-                        const shares = await loadUserShares();
+                        const userShares = await loadUserShares();
                         // Do not use sharesState.getDefaultShareId as useState
                         // is not sync operation and thus the new state might
                         // not be set just yet.
-                        defaultShareId = findDefaultShareId(shares);
+                        defaultShareId = userShares.defaultShareId || findDefaultShareId(userShares.shares);
                     }
+
                     if (!defaultShareId) {
-                        const { shareId } = await createVolume();
-                        defaultShareId = shareId;
-                        // Load shares to the cache.
-                        await loadUserShares();
+                        throw new Error('Unable to get or create defaultShare');
                     }
+
                     const share = await getShareWithKey(abortSignal || new AbortController().signal, defaultShareId);
                     return share;
                 },
@@ -140,8 +147,8 @@ export function useDefaultShare() {
 
     const getDefaultPhotosShare = useCallback(
         async (abortSignal?: AbortSignal, force: boolean = false): Promise<ShareWithKey | undefined> => {
-            // The force will be use for recovery mostly
-            // In case the user did not refresh between he created a new photos share and he started the recovery
+            // The force parameter is used for recovery mostly
+            // In case the user did not refresh between creating a new photos share and starting the recovery
             if (sharesState.defaultPhotosSharePromise && !force) {
                 return sharesState.defaultPhotosSharePromise;
             }
@@ -149,18 +156,19 @@ export function useDefaultShare() {
             const promise = debouncedFunction(
                 async (abortSignal: AbortSignal) => {
                     let defaultPhotosShareId = sharesState.getDefaultPhotosShareId();
+
                     // First try to load fresh list of shares from API
                     if (!defaultPhotosShareId) {
-                        const shares = await loadUserShares(force);
+                        const userShares = await loadUserShares(force);
                         // Do not use sharesState.getDefaultPhotosShare as useState
                         // is not sync operation and thus the new state might
                         // not be set just yet.
-                        defaultPhotosShareId = findDefaultPhotosShareId(shares);
-                        const lockedShares = shares.filter(
+                        defaultPhotosShareId = userShares.defaultShareId || findDefaultPhotosShareId(userShares.shares);
+                        const lockedShares = userShares.shares.filter(
                             (share) => share.type === ShareType.photos && share.isLocked
                         );
 
-                        for (let lockedShare of lockedShares) {
+                        for (const lockedShare of lockedShares) {
                             const { Volume } = await debouncedRequest<GetDriveVolumeResult>(
                                 queryGetDriveVolume(lockedShare.volumeId)
                             );
@@ -171,6 +179,7 @@ export function useDefaultShare() {
                             sharesState.setShares([{ ...share, volumeType: Volume.Type }]);
                         }
                     }
+
                     // We currently don't support photos share creation on web
                     const share = defaultPhotosShareId
                         ? await getShareWithKey(abortSignal || new AbortController().signal, defaultPhotosShareId)
