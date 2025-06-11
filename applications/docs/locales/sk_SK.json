@@ -4319,6 +4319,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Na konci vášho skúšobného obdobia ${ boldCancelDate } vás preradíme do ${ boldProtonFree }. Všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
@@ -4636,6 +4639,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Ak si to rozmyslíte, môžete sa kedykoľvek znova prihlásiť. Je nám ľúto, že odchádzate."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
@@ -5489,6 +5495,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nebude sa vám účtovať, ak zrušíte pred ${ trialEndsOnFormatted }."
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Taktiež stratíte prístup k funkciám ${ boldPlanTitle }:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }.",
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }.",
@@ -5608,6 +5617,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše skúšobné obdobie končí ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Prístup k ${ boldPlanTitle } stratíte ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
       ]
     },
     "info": {
@@ -6699,6 +6714,17 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Predplatné začína od ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -6720,17 +6746,6 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Predplatné začína od ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
       ]
     },
     "new_plans: feature": {
@@ -8034,6 +8049,23 @@
         "Úložisko"
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Zrušiť môžete kedykoľvek predtým."
+      ],
+      "Once your full subscription starts...": [
+        "Akonáhle začne vaše plné predplatné..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Vaše plné ${ planTitle } predplatné začína dňa ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Budete môcť používať ${ planTitle } až do konca skúšobného obdobia, bez poplatku."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Pridať do existujúcej skupiny"
@@ -9294,6 +9326,29 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložisko na používateľa"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastná emailová doména",
+        "${ planNumberOfDomains } vlastné emailové domény",
+        "${ planNumberOfDomains } vlastných emailových domén",
+        "${ planNumberOfDomains } vlastných emailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } emailová adresa",
+        "${ planNumberOfEmails } emailové adresy",
+        "${ planNumberOfEmails } emailových adries",
+        "${ planNumberOfEmails } emailových adries"
+      ],
+      "Folders, labels, and custom filters": [
+        "Priečinky, štítky a vlastné filtre"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložného priestoru"
@@ -9333,29 +9388,6 @@
       ],
       "Your privacy is our mission": [
         "Vaše súkromie je naším poslaním"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } úložisko na používateľa"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastná emailová doména",
-        "${ planNumberOfDomains } vlastné emailové domény",
-        "${ planNumberOfDomains } vlastných emailových domén",
-        "${ planNumberOfDomains } vlastných emailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } emailová adresa",
-        "${ planNumberOfEmails } emailové adresy",
-        "${ planNumberOfEmails } emailových adries",
-        "${ planNumberOfEmails } emailových adries"
-      ],
-      "Folders, labels, and custom filters": [
-        "Priečinky, štítky a vlastné filtre"
       ]
     },
     "Subscription renewal state": {
@@ -10249,6 +10281,9 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní"
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"

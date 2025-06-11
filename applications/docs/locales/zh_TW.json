@@ -5919,6 +5919,17 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "方案從${ priceDrivePlus }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -5940,17 +5951,6 @@
       ],
       "Switch plan": [
         "切換方案"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "方案從${ priceDrivePlus }起"
-      ],
-      "Upgrade": [
-        "升級"
       ]
     },
     "new_plans: feature": {
@@ -8159,6 +8159,20 @@
         "${ totalPrice } 版"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } 可用空間 / 每位使用者"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }個電郵網域名稱"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }個電郵位址"
+      ],
+      "Folders, labels, and custom filters": [
+        "資料夾，標籤和自訂過濾規則"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB 儲存空間"
@@ -8198,20 +8212,6 @@
       ],
       "Your privacy is our mission": [
         "您的隱私是我們責任"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } 可用空間 / 每位使用者"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains }個電郵網域名稱"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails }個電郵位址"
-      ],
-      "Folders, labels, and custom filters": [
-        "資料夾，標籤和自訂過濾規則"
       ]
     },
     "Subscription renewal state": {
