@@ -208,6 +208,7 @@ export function shareMetaShortToShare(share: ShareMetaShort): Share {
         isDefault: share.Type === ShareType.default,
         possibleKeyPackets: (share.PossibleKeyPackets || []).map(({ KeyPacket }) => KeyPacket),
         type: share.Type,
+        linkType: share.LinkType,
         state: share.State,
         createTime: share.CreateTime,
     };
