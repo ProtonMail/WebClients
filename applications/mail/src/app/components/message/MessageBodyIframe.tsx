@@ -28,7 +28,6 @@ interface Props {
     onBlockquoteToggle?: () => void;
     onContentLoaded: (iframeRootDivRef: HTMLDivElement) => void;
     isPrint?: boolean;
-    hasDarkStyles?: boolean;
     message: MessageState;
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
     onFocus?: () => void;
@@ -45,7 +44,6 @@ const MessageBodyIframe = ({
     onBlockquoteToggle,
     onContentLoaded,
     isPlainText,
-    hasDarkStyles,
     isPrint = false,
     message,
     onReady,
@@ -79,12 +77,6 @@ const MessageBodyIframe = ({
     useIframeDispatchEvents(initStatus === 'done', iframeRef, onFocus, isPlainText);
 
     useObserveIframeHeight(initStatus === 'done', iframeRef);
-
-    useEffect(() => {
-        if (iframeRootDivRef.current) {
-            iframeRootDivRef.current?.classList[hasDarkStyles ? 'add' : 'remove']('proton-dark-style');
-        }
-    }, [hasDarkStyles]);
 
     useEffect(() => {
         /** Add class in case the user theme is dark. Helps fixing issues with dark themes */
