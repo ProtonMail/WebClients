@@ -21,7 +21,7 @@ import {
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { useFolders } from '@proton/mail';
-import { getFolderName } from '@proton/mail/labels/helpers';
+import { getFolderName } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

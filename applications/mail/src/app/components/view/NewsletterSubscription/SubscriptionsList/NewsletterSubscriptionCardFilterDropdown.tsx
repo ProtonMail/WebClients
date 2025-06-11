@@ -16,7 +16,7 @@ import {
     useNotifications,
     usePopperAnchor,
 } from '@proton/components';
-import { useFilters } from '@proton/mail/filters/hooks';
+import { useFilters } from '@proton/mail/store/filters/hooks';
 import { toggleEnable } from '@proton/shared/lib/api/filters';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';

@@ -7,7 +7,7 @@ import {
     selectConversationCounts,
     selectMessageCounts,
 } from '@proton/mail';
-import { isSystemLabel } from '@proton/mail/labels/helpers';
+import { isSystemLabel } from '@proton/mail/store/labels/helpers';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';

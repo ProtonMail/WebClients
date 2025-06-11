@@ -1,6 +1,6 @@
 import useApi from '@proton/components/hooks/useApi';
 import { useFolders, useLabels } from '@proton/mail';
-import { isCustomFolder, isCustomLabel } from '@proton/mail/labels/helpers';
+import { isCustomFolder, isCustomLabel } from '@proton/mail/store/labels/helpers';
 import { TelemetryMailListEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';

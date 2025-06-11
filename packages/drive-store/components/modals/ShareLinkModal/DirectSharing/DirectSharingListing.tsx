@@ -6,7 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { CircleLoader, UserAvatar } from '@proton/atoms';
 import { useSortedList } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';

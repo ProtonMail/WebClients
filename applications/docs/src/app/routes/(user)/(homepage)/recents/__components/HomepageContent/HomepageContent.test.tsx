@@ -24,7 +24,7 @@ jest.mock('@proton/drive-store', () => ({
   }),
 }))
 
-jest.mock('@proton/mail/contactEmails/hooks', () => ({
+jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
   useContactEmails: () => [[], false],
 }))
 

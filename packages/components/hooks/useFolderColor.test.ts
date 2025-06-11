@@ -1,4 +1,4 @@
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { FOLDER_COLOR, INHERIT_PARENT_FOLDER_COLOR } from '@proton/shared/lib/mail/mailSettings';
 
@@ -6,14 +6,14 @@ import useFolderColor from './useFolderColor';
 
 const mockFolderSetting = FOLDER_COLOR.ENABLED;
 const mockinheritSetting = INHERIT_PARENT_FOLDER_COLOR.ENABLED;
-jest.mock('@proton/mail/mailSettings/hooks', () => ({
+jest.mock('@proton/mail/store/mailSettings/hooks', () => ({
     useMailSettings: jest.fn(() => [
         { EnableFolderColor: mockFolderSetting, InheritParentFolderColor: mockinheritSetting },
         false,
     ]),
 }));
 
-jest.mock('@proton/mail/labels/hooks', () => ({
+jest.mock('@proton/mail/store/labels/hooks', () => ({
     useFolders: () => [
         [
             { ID: 'A', Color: 'red' },
