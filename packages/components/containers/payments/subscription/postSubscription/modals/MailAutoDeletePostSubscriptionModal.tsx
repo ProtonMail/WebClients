@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import useApi from '@proton/components/hooks/useApi';
-import { mailSettingsActions } from '@proton/mail/mailSettings';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

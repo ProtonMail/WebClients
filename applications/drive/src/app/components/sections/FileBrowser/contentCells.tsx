@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Avatar, Button, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms';
 import { FileIcon, Icon, TableCell, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';

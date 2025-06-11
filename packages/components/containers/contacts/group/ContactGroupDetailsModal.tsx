@@ -7,7 +7,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { useContactGroups } from '@proton/mail';
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 

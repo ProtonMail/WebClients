@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { FloatingButton, Icon, PrivateHeader, UserDropdown, useActiveBreakpoint } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
-import { getLabelName } from '@proton/mail/labels/helpers';
+import { getLabelName } from '@proton/mail/store/labels/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';

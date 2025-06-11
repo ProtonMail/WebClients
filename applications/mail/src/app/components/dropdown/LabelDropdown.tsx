@@ -18,7 +18,7 @@ import {
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
-import { getStandardFolders, isCustomLabel } from '@proton/mail/labels/helpers';
+import { getStandardFolders, isCustomLabel } from '@proton/mail/store/labels/helpers';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_IDENTIFIERS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';

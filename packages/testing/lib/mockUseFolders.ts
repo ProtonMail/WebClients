@@ -1,4 +1,4 @@
-import * as useFoldersModule from '@proton/mail/labels/hooks';
+import * as useFoldersModule from '@proton/mail/store/labels/hooks';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 export const mockUseFolders = (params?: [Folder[]?, boolean?]) => {

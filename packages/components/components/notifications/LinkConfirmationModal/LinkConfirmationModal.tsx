@@ -10,7 +10,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
-import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';

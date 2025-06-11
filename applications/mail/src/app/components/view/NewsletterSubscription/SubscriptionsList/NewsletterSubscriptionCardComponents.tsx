@@ -6,7 +6,7 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, Tooltip } from '@proton/atoms';
 import { FiltersUpsellModal, Icon, useModalStateObject } from '@proton/components';
-import { useFilters } from '@proton/mail/filters/hooks';
+import { useFilters } from '@proton/mail/store/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { getReceivedMessagesCount, getUnsubscribeMethod, shouldOpenUpsellOnFilterClick } from '../helper';

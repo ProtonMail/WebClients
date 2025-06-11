@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { useFolders } from '@proton/mail/index';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 
 import { folderReducer } from './helpers';

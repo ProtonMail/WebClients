@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
 import { FeatureCode, useFeatures } from '@proton/features';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { DEFAULT_MAILSETTINGS, IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
