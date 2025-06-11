@@ -137,7 +137,7 @@ describe('useSanitization', () => {
                 preloadedAddressesKeys: mockAddressesKeys,
                 preloadedLockedShares: [
                     {
-                        defaultShare: defaultShare,
+                        defaultShares: [defaultShare],
                         devices: [deviceShare],
                         photos: [],
                     },
@@ -188,7 +188,7 @@ describe('useSanitization', () => {
             });
             expect(mockedRestoreVolumes).toHaveBeenCalledWith(expect.any(AbortSignal), {
                 preloadedAddressesKeys: mockAddressesKeys,
-                preloadedLockedShares: [{ defaultShare: defaultShare, devices: [], photos: [] }],
+                preloadedLockedShares: [{ defaultShares: [defaultShare], devices: [], photos: [] }],
             });
             expect(mockedShowAutoRestoreModal).toHaveBeenCalledTimes(1);
         });
@@ -205,7 +205,7 @@ describe('useSanitization', () => {
             when(mockedRestoreVolumes)
                 .calledWith(expect.any(AbortSignal), {
                     preloadedAddressesKeys: mockAddressesKeys,
-                    preloadedLockedShares: [{ defaultShare, devices: [], photos: [] }],
+                    preloadedLockedShares: [{ defaultShares: [defaultShare], devices: [], photos: [] }],
                 })
                 .mockResolvedValue(false);
 
@@ -374,11 +374,11 @@ describe('useSanitization', () => {
                 preloadedAddressesKeys: mockAddressesKeys,
                 preloadedLockedShares: [
                     {
-                        defaultShare: defaultShare,
+                        defaultShares: [defaultShare],
                         devices: [deviceShare],
                         photos: [photosShare],
                     },
-                    { defaultShare: defaultShare2, devices: [], photos: [] },
+                    { defaultShares: [defaultShare2], devices: [], photos: [] },
                 ],
             });
             expect(mockedQuerySendShareAutoRestoreStatus).toHaveBeenCalledTimes(0);

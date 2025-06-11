@@ -1,5 +1,5 @@
-import { queryCreateDriveVolume } from '@proton/shared/lib/api/drive/volume';
-import type { CreatedDriveVolumeResult } from '@proton/shared/lib/interfaces/drive/volume';
+import { queryCreateDriveVolume, queryUserVolumes } from '@proton/shared/lib/api/drive/volume';
+import type { CreatedDriveVolumeResult, UserDriveVolumesResult } from '@proton/shared/lib/interfaces/drive/volume';
 import { generateDriveBootstrap, generateNodeHashKey } from '@proton/shared/lib/keys/driveKeys';
 
 import { useDebouncedRequest } from '../_api';
@@ -8,6 +8,11 @@ import { useDriveCrypto } from '../_crypto';
 export default function useVolume() {
     const debouncedRequest = useDebouncedRequest();
     const { getPrimaryAddressKey } = useDriveCrypto();
+
+    const listVolumes = async (): Promise<UserDriveVolumesResult> => {
+        const { Volumes } = await debouncedRequest<UserDriveVolumesResult & { Code: number }>(queryUserVolumes());
+        return { Volumes };
+    };
 
     const createVolume = async (): Promise<{ volumeId: string; shareId: string; linkId: string }> => {
         // Volumes should use primary address key, as we only create
@@ -36,5 +41,6 @@ export default function useVolume() {
 
     return {
         createVolume,
+        listVolumes,
     };
 }

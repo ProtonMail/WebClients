@@ -86,6 +86,7 @@ export const useDecryptPublicShareLink = () => {
         const encryptedLink = {
             linkId: sharedUrlInfo.linkId,
             parentLinkId: '',
+            type: sharedUrlInfo.linkType,
             isFile: sharedUrlInfo.linkType === LinkType.FILE,
             name: sharedUrlInfo.name,
             mimeType: sharedUrlInfo.mimeType,
@@ -125,6 +126,7 @@ export const useDecryptPublicShareLink = () => {
             state: ShareState.active,
             memberships: [],
             createTime: 0,
+            linkType: sharedUrlInfo.linkType,
         };
         setShares([share]);
 

@@ -100,13 +100,20 @@ export async function decryptLockedSharePassphrase(
 }
 
 export async function prepareVolumeForRestore(
-    defaultShare: ShareWithKey,
+    defaultShares: ShareWithKey[],
     devices: (ShareWithKey & { deviceName?: string })[],
     photos: ShareWithKey[],
     addressPrivateKeys: PrivateKeyReference[]
 ): Promise<LockedVolumeForRestore | undefined> {
-    const preparedDefaultShare = await prepareShareForRestore(defaultShare, addressPrivateKeys);
-    if (!preparedDefaultShare) {
+    const preparedDefaultShares = await Promise.all(
+        defaultShares.map(async (defaultShare) => {
+            const preparedShare = await prepareShareForRestore(defaultShare, addressPrivateKeys);
+            return preparedShare;
+        })
+    );
+
+    const validPreparedDefaultShares = preparedDefaultShares.filter(isTruthy);
+    if (!validPreparedDefaultShares.length) {
         return undefined;
     }
 
@@ -129,8 +136,8 @@ export async function prepareVolumeForRestore(
         })
     );
     return {
-        lockedVolumeId: defaultShare.volumeId,
-        defaultShare: preparedDefaultShare,
+        lockedVolumeId: defaultShares[0].volumeId,
+        defaultShares: validPreparedDefaultShares,
         devices: preparedDevices.filter(isTruthy),
         photos: preparedPhotos.filter(isTruthy),
     };
