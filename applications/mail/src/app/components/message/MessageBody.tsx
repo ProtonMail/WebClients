@@ -18,7 +18,6 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 import type { MessageState } from '../../store/messages/messagesTypes';
 import MessageBodyIframe from './MessageBodyIframe';
-import useMessageDarkStyles from './hooks/useMessageDarkStyles';
 
 interface Props {
     labelID: string;
@@ -68,11 +67,6 @@ const MessageBody = ({
         localID: message.localID,
         useProxy: !!mailSettings.ImageProxy,
     });
-    const { support: hasDarkStyles, loading: hasDarkStylesLoading } = useMessageDarkStyles(
-        message,
-        isIframeContentSet,
-        iframeRef
-    );
     const [content, blockquote] = useMemo(
         () =>
             plain
@@ -86,11 +80,11 @@ const MessageBody = ({
     const decryptingMode = !encryptedMode && !sourceMode && !bodyLoaded && messageLoaded;
     const loadingMode = !messageLoaded;
     const contentMode = !encryptedMode && !sourceMode && bodyLoaded;
-    const contentModeShow = contentMode && isIframeContentSet && !hasDarkStylesLoading;
+    const contentModeShow = contentMode && isIframeContentSet;
     const placeholderMode = (loadingMode || decryptingMode || !contentModeShow) && !sourceMode;
     const isBlockquote = blockquote !== '';
     const showButton = !forceBlockquote && isBlockquote;
-    const showBlockquote = forceBlockquote || originalMessageMode || hasDarkStylesLoading;
+    const showBlockquote = forceBlockquote || originalMessageMode;
     const highlightedContent = useMemo(
         () => (!!content && highlightBody ? highlightString(content, true) : content),
         [content, highlightBody]
@@ -138,7 +132,7 @@ const MessageBody = ({
                 plain && 'plain',
                 isPrint && 'message-content-print',
                 isPrint || !isIframeContentSet ? '' : 'p-0 md:py-4 px-5',
-                !placeholderMode && !hasDarkStyles && theme.information.dark && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
+                !placeholderMode && theme.information.dark && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
             ])}
             data-testid="message-content:body"
         >
@@ -162,7 +156,6 @@ const MessageBody = ({
                         onBlockquoteToggle={toggleOriginalMessage}
                         onContentLoaded={handleContentLoaded}
                         isPlainText={plain}
-                        hasDarkStyles={hasDarkStyles}
                         isPrint={isPrint}
                         className={isResizing ? 'pointer-events-none' : undefined}
                         message={message}
