@@ -803,13 +803,13 @@
         "Merk som favoritt"
       ],
       "Mark as read": [
-        "Marker som lest"
+        "Merk som lest"
       ],
       "Mark as resolved": [
         "Merk som løst"
       ],
       "Mark as unread": [
-        "Marker som ulest"
+        "Merk som ulest"
       ],
       "mark emails as": [
         "merk e-poster som"
@@ -818,7 +818,7 @@
         "Merk for sletting"
       ],
       "Mark legitimate": [
-        "Marker som legitim"
+        "Merk som legitim"
       ],
       "Maximize composer": [
         "Maksimer skrivevinduet"
@@ -1183,10 +1183,10 @@
       "Select ${ planTitle }": [
         "Velg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Velg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Velg alle"
       ],
       "Select all messages": [
@@ -1465,10 +1465,10 @@
       "Upgrade": [
         "Oppgrader"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Oppgrader nå"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Oppgrader nå"
       ],
       "Upload and share files": [
@@ -6418,6 +6418,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tegn"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Ved slutten av prøvetiden den ${ boldCancelDate }, blir du nedgradert til ${ boldProtonFree }. Alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
       "Attach public key": [
         "Legg ved offentlig nøkkel"
       ],
@@ -6869,6 +6872,9 @@
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
       ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Hvis du ombestemmer deg, kan du abonnere igjen når som helst. Trist at du forlater oss!"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke finner e-posten i innboksen, sjekk søppelpostmappen din."
       ],
@@ -6940,7 +6946,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7600,6 +7607,9 @@
       "Text to display": [
         "Tekst som skal vises"
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Takk for at du valgte ${ BRAND_NAME } for å sikre organisasjonen din."
+      ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Takk for at du abonnerer. Sikker surfing starter nå."
       ],
@@ -7677,8 +7687,8 @@
         "Denne samtalen inneholder meldinger i papirkurven."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Denne samtalen vil bli markert som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
-        "Disse samtalene vil bli markert som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
+        "Denne samtalen vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
+        "Disse samtalene vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Denne e-posten har ikke oppfylt domenets autentiseringskrav. Den kan være forfalsket eller feilaktig videresendt."
@@ -7732,8 +7742,8 @@
         "Denne meldingen slettes automatisk kl. ${ value }."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Denne meldingen vil bli markert som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
-        "Disse meldingene vil bli markert som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
+        "Denne meldingen vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
+        "Disse meldingene vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Denne meldingen flyttes til utkast, slik at du kan redigere den. Du må planlegge på nytt når den skal sendes."
@@ -8214,6 +8224,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev \"${ attachmentsFoundKeyword }\", men ingen vedlegg er lagt til. Ønsker du å sende meldingen uansett?"
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
@@ -8259,6 +8272,12 @@
       ],
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Din gratis prøveversjon ble vellykket konvertert til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Din gratis prøveversjon ble vellykket konvertert til et månedlig abonnement. Fornyelsesdatoen din er ${ nextBillingDate }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Maskinvaren din støtter ikke kjøring av skriveassistenten lokalt. Prøv å kjøre den på tjenere."
@@ -8321,6 +8340,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Prøveversjonen avsluttes om ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Du mister tilgang til ${ boldPlanTitle } den ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
@@ -8487,10 +8512,10 @@
         "Last eksternt innhold"
       ],
       "Mark as read": [
-        "Marker som lest"
+        "Merk som lest"
       ],
       "Mark as unread": [
-        "Marker som ulest"
+        "Merk som ulest"
       ],
       "Minimize / maximize composer": [
         "Minimer / maksimer skrivevindu"
@@ -8662,11 +8687,11 @@
       "Always move sender's emails": [
         "Alltid flytt avsenderens e-poster"
       ],
-      "AND": [
-        "OG"
-      ],
       "And": [
         "Og"
+      ],
+      "AND": [
+        "OG"
       ],
       "and": [
         "og"
@@ -8893,11 +8918,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "HVIS"
-      ],
       "If": [
         "Hvis"
+      ],
+      "IF": [
+        "HVIS"
       ],
       "Import all messages": [
         "Importer alle meldinger"
@@ -8960,7 +8985,7 @@
         "Behandle mine adresser"
       ],
       "Mark as": [
-        "Marker som"
+        "Merk som"
       ],
       "Marked ${ count } message as read.": [
         "${ count } melding merket som lest.",
@@ -9035,14 +9060,14 @@
       "Optional": [
         "Valgfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Original link": [
         "Opprinnelig kobling"
@@ -9934,14 +9959,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Skaff deg ${ planTitle }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -9963,6 +9980,14 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Skaff deg ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -11151,6 +11176,23 @@
         "Du vil kunne endre temaet ditt når som helst i innstillingene dine."
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Avbryt når som helst før da."
+      ],
+      "Once your full subscription starts...": [
+        "Når ditt fulle abonnement starter..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Du vil kunne bruke ${ planTitle } til prøveversjonen avsluttes, gratis."
+      ]
+    },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
         "Har du en konto med noen av disse tjenestene? Bare klikk for å endre e-postadressen til din ${ MAIL_APP_NAME }-adresse."
@@ -11447,10 +11489,10 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } har markert denne nøkkelen som kompromittert. Nøkkelen kan hverken bli brukt for kryptering eller bekreftelse av signatur."
+        "${ emailAddress } har merket denne nøkkelen som kompromittert. Nøkkelen kan hverken bli brukt for kryptering eller bekreftelse av signatur."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } har markert denne nøkkelen som foreldet. Nøkkelen kan kun bli brukt for bekreftelse av signatur."
+        "${ emailAddress } har merket denne nøkkelen som foreldet. Nøkkelen kan kun bli brukt for bekreftelse av signatur."
       ],
       "External key automatically fetched from keys.openpgp.org.": [
         "Ekstern nøkkel hentet automatisk fra keys.openpgp.org."
@@ -12677,47 +12719,6 @@
         "For ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -12978,6 +12979,47 @@
         "Ditt eget korte @pm.me e-postalias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -13031,16 +13073,16 @@
         "${ elementsCount } samtaler lagt til ${ labelName }."
       ],
       "${ elementsCount } conversation marked as read.": [
-        "${ elementsCount } samtale markert som lest.",
-        "${ elementsCount } samtaler markert som lest."
+        "${ elementsCount } samtale merket som lest.",
+        "${ elementsCount } samtaler merket som lest."
       ],
       "${ elementsCount } conversation marked as Starred.": [
         "${ elementsCount } samtale stjernemerket",
         "${ elementsCount } samtaler stjernemerket"
       ],
       "${ elementsCount } conversation marked as unread.": [
-        "${ elementsCount } samtale markert som ulest.",
-        "${ elementsCount } samtaler markert som ulest."
+        "${ elementsCount } samtale merket som ulest.",
+        "${ elementsCount } samtaler merket som ulest."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
         "${ elementsCount } melding flyttet til ${ folderName } og avsender lagt til din ikke-søppelpostliste.",
@@ -13071,16 +13113,16 @@
         "${ elementsCount } meldinger lagt til ${ labelName }."
       ],
       "${ elementsCount } message marked as read.": [
-        "${ elementsCount } melding markert som lest.",
-        "${ elementsCount } meldinger markert som lest."
+        "${ elementsCount } melding merket som lest.",
+        "${ elementsCount } meldinger merket som lest."
       ],
       "${ elementsCount } message marked as Starred.": [
         "${ elementsCount } melding stjernemerket",
         "${ elementsCount } meldinger stjernemerket"
       ],
       "${ elementsCount } message marked as unread.": [
-        "${ elementsCount } melding markert som ulest.",
-        "${ elementsCount } meldinger markert som ulest."
+        "${ elementsCount } melding merket som ulest.",
+        "${ elementsCount } meldinger merket som ulest."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
         "${ elementsCount } melding flyttet til ${ folderName } og avsender lagt til ikke-søppelpostlisten din.",
@@ -13140,13 +13182,13 @@
         "Samtale slettet"
       ],
       "Conversation marked as read.": [
-        "Samtale markert som lest."
+        "Samtale merket som lest."
       ],
       "Conversation marked as Starred.": [
         "Samtalen er stjernemerket"
       ],
       "Conversation marked as unread.": [
-        "Samtale markert som ulest."
+        "Samtale merket som ulest."
       ],
       "Conversation moved to ${ folderName } and sender added to your not spam list.": [
         "Samtalen flyttet til ${ folderName } og avsender lagt til ikke-søppelpostlisten."
@@ -13209,16 +13251,16 @@
         "Meldingsutløp avbrutt"
       ],
       "Message marked as legitimate": [
-        "Melding markert som legitim"
+        "Melding merket som legitim"
       ],
       "Message marked as read.": [
-        "Melding markert som lest."
+        "Melding merket som lest."
       ],
       "Message marked as Starred.": [
         "Meldingen er stjernemerket"
       ],
       "Message marked as unread.": [
-        "Melding markert som ulest."
+        "Melding merket som ulest."
       ],
       "Message moved to ${ folderName } and sender added to your not spam list.": [
         "Meldingen flyttet til ${ folderName } og avsender lagt til ikke-søppelpostlisten."
@@ -13963,25 +14005,25 @@
         "Merk alle meldinger som lest"
       ],
       "Mark as read": [
-        "Marker som lest"
+        "Merk som lest"
       ],
       "Mark as unread": [
-        "Marker som ulest"
+        "Merk som ulest"
       ],
       "Mark conversations as read": [
-        "Marker samtaler som lest"
+        "Merk samtaler som lest"
       ],
       "Mark conversations as unread": [
-        "Marker samtaler som ulest"
+        "Merk samtaler som ulest"
       ],
       "Mark email as legitimate": [
-        "Marker e-post som legitim"
+        "Merk e-post som legitim"
       ],
       "Mark messages as read": [
-        "Marker meldinger som lest"
+        "Merk meldinger som lest"
       ],
       "Mark messages as unread": [
-        "Marker meldinger som ulest"
+        "Merk meldinger som ulest"
       ],
       "Merge contacts": [
         "Slå sammen kontakter"
@@ -14420,6 +14462,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
       ],
+      "Your ${ planName } subscription has started": [
+        "${ planName }-abonnementet ditt er startet"
+      ],
       "Your account is protected": [
         "Kontoen din er beskyttet"
       ],
@@ -14428,6 +14473,9 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dager"
       ],
       "Your free trial has ended": [
         "Din gratis prøveperiode har utløpt"
