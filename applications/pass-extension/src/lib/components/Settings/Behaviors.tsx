@@ -77,6 +77,13 @@ const getSettingsSections = ({
                     onChange: (checked) => onSettingsUpdate({ autofill: { twofa: checked } }),
                 },
                 {
+                    label: c('Label').t`Credit-card autofill`,
+                    description: c('Info').t`Automatically fill in your saved payment information.`,
+                    checked: settings.autofill.cc ?? false,
+                    hidden: !features?.PassCreditCardWebAutofill,
+                    onChange: (checked) => onSettingsUpdate({ autofill: { cc: checked } }),
+                },
+                {
                     label: c('Label').t`Basic Auth autofill`,
                     description: c('Info').t`Autofill HTTP basic auth dialogs with saved credentials.`,
                     checked: settings.autofill?.basicAuth ?? false,
@@ -189,8 +196,8 @@ export const Behaviors: FC = () => {
     const features = useSelector(selectFeatureFlags);
 
     const sections = useMemo(
-        () => getSettingsSections({ settings, features, webReqPermissions, dispatch }),
-        [settings, webReqPermissions, features]
+        () => getSettingsSections({ features, settings, webReqPermissions, dispatch }),
+        [features, settings, webReqPermissions]
     );
 
     return (
