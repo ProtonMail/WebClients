@@ -439,11 +439,11 @@
       "Discard": [
         "放棄"
       ],
-      "Discard Changes": [
-        "放棄修改"
-      ],
       "Discard changes": [
         "放棄變更"
+      ],
+      "Discard Changes": [
+        "放棄修改"
       ],
       "Dismiss": [
         "忽略"
@@ -736,10 +736,10 @@
       "Keep": [
         "保留"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "繼續編輯"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "繼續編輯"
       ],
       "Keep logo": [
@@ -910,10 +910,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
       "Reject": [
@@ -1081,10 +1081,10 @@
       "Select country": [
         "選擇國家"
       ],
-      "Select file": [
+      "select file": [
         "選取檔案"
       ],
-      "select file": [
+      "Select file": [
         "選取檔案"
       ],
       "Select files": [
@@ -4252,10 +4252,10 @@
       "Forward to": [
         "轉寄至"
       ],
-      "or": [
+      "Or": [
         "或"
       ],
-      "Or": [
+      "or": [
         "或"
       ],
       "With attachment": [
@@ -6769,10 +6769,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "選擇至少一種帳號復原方法，以確保一旦忘記密碼時，您仍可存取 ${ BRAND_NAME } 帳號。"
       ],
-      "Active": [
+      "active": [
         "啟用"
       ],
-      "active": [
+      "Active": [
         "啟用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -7180,10 +7180,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -8869,10 +8869,10 @@
       "User activated": [
         "使用者已啟用"
       ],
-      "username": [
+      "Username": [
         "使用者名稱"
       ],
-      "Username": [
+      "username": [
         "使用者名稱"
       ],
       "Users": [
@@ -9961,10 +9961,10 @@
       "Amount due": [
         "應付金額"
       ],
-      "AND": [
+      "And": [
         "且"
       ],
-      "And": [
+      "AND": [
         "且"
       ],
       "and": [
@@ -10378,10 +10378,10 @@
       "IBAN": [
         "國際銀行帳號"
       ],
-      "IF": [
+      "If": [
         "如"
       ],
-      "If": [
+      "IF": [
         "如"
       ],
       "Import all messages": [
@@ -10579,13 +10579,13 @@
       "Optional": [
         "自由列席"
       ],
-      "OR": [
-        "或"
-      ],
       "or": [
         "或"
       ],
       "Or": [
+        "或"
+      ],
+      "OR": [
         "或"
       ],
       "Organization name": [
@@ -12439,14 +12439,6 @@
         "只要${ priceLine }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -12465,6 +12457,14 @@
       ],
       "Unlock premium features by upgrading": [
         "透過升級來解鎖高級功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -15712,47 +15712,6 @@
         "${ totalPrice } 版"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -16011,6 +15970,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -16720,10 +16720,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [

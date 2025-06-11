@@ -469,11 +469,11 @@
       "Discard": [
         "Buang"
       ],
-      "Discard Changes": [
-        "Batalkan Perubahan"
-      ],
       "Discard changes": [
         "Buang perubahan"
+      ],
+      "Discard Changes": [
+        "Batalkan Perubahan"
       ],
       "Discover ${ planName }": [
         "Telusuri ${ planName }"
@@ -501,6 +501,12 @@
       ],
       "Download CSV sample": [
         "Unduh sampel CSV"
+      ],
+      "Download for macOS": [
+        "Unduh untuk macOS"
+      ],
+      "Download for Windows": [
+        "Unduh untuk Windows"
       ],
       "Download ICS": [
         "Unduh ICS"
@@ -799,11 +805,11 @@
       "Keep": [
         "Simpan"
       ],
-      "Keep Editing": [
-        "Lanjut Menyunting"
-      ],
       "Keep editing": [
         "Lanjut menyunting"
+      ],
+      "Keep Editing": [
+        "Lanjut Menyunting"
       ],
       "Keep logo": [
         "Pertahankan logo"
@@ -994,11 +1000,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "Refresh the page": [
-        "Muat ulang halaman"
-      ],
       "refresh the page": [
         "muat ulang halaman"
+      ],
+      "Refresh the page": [
+        "Muat ulang halaman"
       ],
       "Reject": [
         "Tolak"
@@ -1174,11 +1180,11 @@
       "Select country ${ country }": [
         "Pilih negara ${ country }"
       ],
-      "Select file": [
-        "Pilih berkas"
-      ],
       "select file": [
         "pilih berkas"
+      ],
+      "Select file": [
+        "Pilih berkas"
       ],
       "Select files": [
         "Pilih berkas"
@@ -4765,11 +4771,11 @@
       "Forward to": [
         "Teruskan ke"
       ],
-      "or": [
-        "atau"
-      ],
       "Or": [
         "Atau"
+      ],
+      "or": [
+        "atau"
       ],
       "With attachment": [
         "Dengan lampiran"
@@ -7470,11 +7476,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktifkan setidaknya satu metode pemulihan agar Anda dapat tetap mengakses isi akun ${ BRAND_NAME } Anda apabila kata sandi Anda hilang."
       ],
-      "Active": [
-        "Aktif"
-      ],
       "active": [
         "aktif"
+      ],
+      "Active": [
+        "Aktif"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Buat akun Anda lebih hidup dengan alamat email khusus yang berakhiran @pm.me. Alamat yang sederhana dan mudah diingat ini merupakan kependekan dari \"${ MAIL_APP_NAME } me\" atau \"Private Message me.\""
@@ -7911,11 +7917,11 @@
       "Data recoverable on this device": [
         "Data pada perangkat ini dapat dipulihkan"
       ],
-      "dedicated servers": [
-        "server khusus"
-      ],
       "Dedicated servers": [
         "Server khusus"
+      ],
+      "dedicated servers": [
+        "server khusus"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -9354,6 +9360,9 @@
       "Thank you": [
         "Terima kasih"
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Terima kasih telah memilih ${ BRAND_NAME } untuk mengamankan organisasi Anda."
+      ],
       "Thank you for choosing ${ BRAND_NAME }.": [
         "Terima kasih telah memilih ${ BRAND_NAME }."
       ],
@@ -9765,11 +9774,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "username": [
-        "nama pengguna"
-      ],
       "Username": [
         "Nama pengguna"
+      ],
+      "username": [
+        "nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -10256,6 +10265,12 @@
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Masa uji coba gratis Anda berhasil diubah menjadi langganan ${ cycle }-bulanan. Tanggal pembaruan Anda adalah ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Masa uji coba gratis Anda berhasil diubah menjadi langganan bulanan. Tanggal pembaruan Anda adalah ${ nextBillingDate }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Impor Anda dari ${ accounts } ditunda sementara."
@@ -10958,11 +10973,11 @@
       "Amount due": [
         "Jumlah tagihan"
       ],
-      "AND": [
-        "DAN"
-      ],
       "And": [
         "Dan"
+      ],
+      "AND": [
+        "DAN"
       ],
       "and": [
         "dan"
@@ -11390,11 +11405,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "JIKA"
-      ],
       "If": [
         "Jika"
+      ],
+      "IF": [
+        "JIKA"
       ],
       "Import all messages": [
         "Impor seluruh pesan"
@@ -11504,6 +11519,9 @@
       "Message": [
         "Pesan"
       ],
+      "Message (auto-reply)": [
+        "Pesan (balasan otomatis)"
+      ],
       "Messages per page": [
         "Pesan per halaman"
       ],
@@ -11603,14 +11621,14 @@
       "Optional": [
         "Opsional"
       ],
-      "OR": [
-        "ATAU"
-      ],
       "or": [
         "atau"
       ],
       "Or": [
         "Atau"
+      ],
+      "OR": [
+        "ATAU"
       ],
       "Organization name": [
         "Nama organisasi"
@@ -11743,6 +11761,9 @@
       ],
       "Second password": [
         "Kata sandi kedua"
+      ],
+      "Select Linux package format": [
+        "Pilih format paket Linux"
       ],
       "Send auto-reply": [
         "Kirim pesan balasan otomatis"
@@ -13606,14 +13627,6 @@
         "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } seharga hanya ${ priceLine }. Batalkan kapan saja."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -13632,6 +13645,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -17635,47 +17656,6 @@
         "Untuk ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -17958,6 +17938,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -18716,11 +18737,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -19912,6 +19933,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
+      ],
+      "Your ${ planName } subscription has started": [
+        "Langganan ${ planName } Anda telah dimulai"
       ],
       "Your calendar link": [
         "Tautan kalender Anda"

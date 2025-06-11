@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "activate": [
-        "актываваць"
-      ],
       "Activate": [
         "Актываваць"
+      ],
+      "activate": [
+        "актываваць"
       ],
       "Activate organization key": [
         "Актываваць ключ арганізацыі"
@@ -267,10 +267,10 @@
       "Discard": [
         "Скасаваць"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Адхіліць змены"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Адхіліць змены"
       ],
       "Discover ${ planName }": [
@@ -459,10 +459,10 @@
       "Invite user": [
         "Запрасіць карыстальніка"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Працягнуць рэдагаванне"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Працягнуць рэдагаванне"
       ],
       "Keep logo": [
@@ -708,11 +708,11 @@
       "Select country ${ country }": [
         "Выбраць краіну ${ country }"
       ],
-      "Select file": [
-        "Выбраць файл"
-      ],
       "select file": [
         "выбраць файл"
+      ],
+      "Select file": [
+        "Выбраць файл"
       ],
       "Send code": [
         "Адправіць код"
@@ -993,8 +993,14 @@
       "Delete address": [
         "Выдаліць адрас"
       ],
+      "Delete address “${ emailAddress }”": [
+        "Выдаліць адрас “${ emailAddress }”"
+      ],
       "Disable": [
         "Адключыць"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "Адключыць адрас “${ emailAddress }”"
       ],
       "Disable E2EE mail": [
         "Адключыць пошту E2EE"
@@ -1008,8 +1014,14 @@
       "Edit address": [
         "Рэдагаваць адрас"
       ],
+      "Edit address “${ emailAddress }”": [
+        "Рэдагаваць адрас “${ emailAddress }”"
+      ],
       "Enable": [
         "Уключыць"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "Уключыць адрас “${ emailAddress }”"
       ],
       "Enable E2EE mail": [
         "Уключыць пошту E2EE"
@@ -1017,11 +1029,17 @@
       "Generate missing keys": [
         "Згенерыраваць ключы, якія адсутнічаюць"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "Згенерыраваць прапушчаныя ключы для адраса “${ emailAddress }”"
+      ],
       "Saving": [
         "Захаванне"
       ],
       "Set as default": [
         "Зрабіць прадвызначаным"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "Задаць \"${ emailAddress }\" у якасці прадвызначанага адраса"
       ]
     },
     "Address status": {
@@ -4644,11 +4662,11 @@
       "Data recoverable on this device": [
         "Даныя, якія можна аднавіць на гэтай прыладзе"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -5847,11 +5865,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "username": [
-        "імя карыстальніка"
-      ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "username": [
+        "імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -7498,6 +7516,20 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Даследаваць усе тарыфныя планы ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -7519,20 +7551,6 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Даследаваць усе тарыфныя планы ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
       ]
     },
     "new_plans: feature": {
@@ -7834,7 +7852,7 @@
         "Упарадкаванне элементаў з некалькімі сховішчамі"
       ],
       "Passkeys supported": [
-        "Падтрымліваюцца ключы доступу"
+        "Падтрымка ключоў доступу"
       ],
       "Password health": [
         "Якасць пароля"
@@ -8165,14 +8183,6 @@
         "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceLine }. Скасаваць можна ў любы момант."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -8185,6 +8195,14 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -8228,7 +8246,7 @@
         "Выбірайце карыстальніцкі час для атрымання напаміну па электроннай пошце або для атрымання паведамлення"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
-        "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain } для падпіскі на навіны"
+        "Стварайце некалькі розных адрасоў электроннай пошты для сваіх ідэнтычнасцей у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain } для падпіскі на навіны"
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Стварайце да ${ n } календара або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
@@ -10767,47 +10785,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -11108,6 +11085,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -11663,10 +11681,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [

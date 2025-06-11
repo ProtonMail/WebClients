@@ -6635,6 +6635,17 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planes desde ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -6656,17 +6667,6 @@
       ],
       "Switch plan": [
         "Cambiar plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planes desde ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Mejorar"
       ]
     },
     "new_plans: feature": {
@@ -7894,7 +7894,7 @@
         "Una vez que comience tu suscripción completa..."
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
-        "Todavía puedes cancelar en un plazo de 30 días y obtener un reembolso prorrateado."
+        "Todavía puedes cancelar en un plazo de 30 días y obtener un reembolso proporcional."
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Tu suscripción completa a ${ planTitle } comienza el ${ boldEndDate }."
@@ -9134,6 +9134,25 @@
         "Por ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de almacenamiento por usuario"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio de correo electrónico personalizado",
+        "${ planNumberOfDomains } dominios de correo electrónico personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } dirección de correo electrónico",
+        "${ planNumberOfEmails } direcciones de correo electrónico"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetas, etiquetas y filtros personalizados"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
@@ -9173,25 +9192,6 @@
       ],
       "Your privacy is our mission": [
         "Tu privacidad es nuestra misión."
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de almacenamiento por usuario"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } dominio de correo electrónico personalizado",
-        "${ planNumberOfDomains } dominios de correo electrónico personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } dirección de correo electrónico",
-        "${ planNumberOfEmails } direcciones de correo electrónico"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetas, etiquetas y filtros personalizados"
       ]
     },
     "Subscription renewal state": {
@@ -10051,7 +10051,7 @@
         "Tus datos expuestos"
       ],
       "Your free trial ends in ${ trialDurationFormatted } days": [
-        "Tu periodo de prueba gratuita termina en ${ trialDurationFormatted } días"
+        "Tu prueba gratuita termina en ${ trialDurationFormatted } días"
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."

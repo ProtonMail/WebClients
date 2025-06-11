@@ -469,10 +469,10 @@
       "Discard": [
         "Descarta"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Descarta els canvis"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Descarta els canvis"
       ],
       "Discover ${ planName }": [
@@ -501,6 +501,12 @@
       ],
       "Download CSV sample": [
         "Descarrega una mostra de CSV"
+      ],
+      "Download for macOS": [
+        "Descarrega per al macOS"
+      ],
+      "Download for Windows": [
+        "Descarrega per al Windows"
       ],
       "Download ICS": [
         "Descarrega el fitxer ICS"
@@ -799,10 +805,10 @@
       "Keep": [
         "Mantenir"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Continua editant"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Continua editant"
       ],
       "Keep logo": [
@@ -994,11 +1000,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
       "refresh the page": [
         "refresca la pàgina"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
       ],
       "Reject": [
         "Rebutja"
@@ -1174,11 +1180,11 @@
       "Select country ${ country }": [
         "Seleccioneu el país ${ country }"
       ],
-      "Select file": [
-        "Selecciona un fitxer"
-      ],
       "select file": [
         "selecciona un fitxer"
+      ],
+      "Select file": [
+        "Selecciona un fitxer"
       ],
       "Select files": [
         "Selecciona els fitxers"
@@ -1590,8 +1596,14 @@
       "Delete address": [
         "Elimina l'adreça"
       ],
+      "Delete address “${ emailAddress }”": [
+        "Elimina l'adreça «${ emailAddress }»"
+      ],
       "Disable": [
         "Desactiva"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "Desactiva l'adreça «${ emailAddress }»"
       ],
       "Disable E2EE mail": [
         "Desactiva el correu E2EE"
@@ -1605,8 +1617,14 @@
       "Edit address": [
         "Edita l'adreça"
       ],
+      "Edit address “${ emailAddress }”": [
+        "Edita l'adreça «${ emailAddress }»"
+      ],
       "Enable": [
         "Activar"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "Activa l'adreça «${ emailAddress }»"
       ],
       "Enable E2EE mail": [
         "Activa el correu E2EE"
@@ -1614,11 +1632,17 @@
       "Generate missing keys": [
         "Genera les claus que falten"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "Genera les claus que falten per a l'adreça «${ emailAddress }»"
+      ],
       "Saving": [
         "S'està desant"
       ],
       "Set as default": [
         "Estableix com a predeterminat"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "Estableix «${ emailAddress }» com a adreça per defecte"
       ]
     },
     "Address status": {
@@ -4782,11 +4806,11 @@
       "Forward to": [
         "Reenvia a"
       ],
-      "or": [
-        "o"
-      ],
       "Or": [
         "O"
+      ],
+      "or": [
+        "o"
       ],
       "With attachment": [
         "Amb adjunt"
@@ -7542,11 +7566,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeu almenys un mètode de recuperació de dades per assegurar-vos que podeu continuar accedint al contingut del vostre compte ${ BRAND_NAME } si perdeu la contrasenya."
       ],
-      "Active": [
-        "Actiu"
-      ],
       "active": [
         "activa"
+      ],
+      "Active": [
+        "Actiu"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa «${ MAIL_APP_NAME } me» o «Private message me»."
@@ -7993,11 +8017,11 @@
       "Data recoverable on this device": [
         "Dades recuperables en aquest dispositiu"
       ],
-      "dedicated servers": [
-        "servidors dedicats"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Es poden afegir servidors dedicats amb adreces IP dedicades a portes d'enllaç privades per a activar un control d'accés més optimitzat."
@@ -9866,11 +9890,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "username": [
-        "nom d'usuari"
-      ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "username": [
+        "nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -10370,10 +10394,10 @@
         "Es xifraran els fitxers i després es desaran."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "La prova gratuïta se us ha convertit correctament en una subscripció de ${ cycle } mesos. La data de renovació és el ${ nextBillingDate }."
+        "La prova gratuïta s'ha convertit correctament en una subscripció de ${ cycle } mesos. La data de renovació és ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
-        "La prova gratuïta se us ha convertit correctament en una subscripció mensual. La data de renovació és el ${ nextBillingDate }."
+        "La prova gratuïta s'ha convertit correctament en una subscripció mensual. La data de renovació és ${ nextBillingDate }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "La vostra importació de ${ accounts } s'ha retardat temporalment.",
@@ -11085,10 +11109,10 @@
       "Amount due": [
         "Import a deure"
       ],
-      "AND": [
+      "And": [
         "I"
       ],
-      "And": [
+      "AND": [
         "I"
       ],
       "and": [
@@ -11288,6 +11312,9 @@
       ],
       "Copy": [
         "Copia"
+      ],
+      "Copy fingerprint": [
+        "Copiar l'empremta digital"
       ],
       "Could you please let us know which provider?": [
         "Podeu fer-nos saber quin proveïdor?"
@@ -11517,11 +11544,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "SI"
-      ],
       "If": [
         "Si"
+      ],
+      "IF": [
+        "SI"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -11631,6 +11658,9 @@
       "Message": [
         "Missatge"
       ],
+      "Message (auto-reply)": [
+        "Missatge (resposta automàtica)"
+      ],
       "Messages per page": [
         "Missatges per pàgina"
       ],
@@ -11730,13 +11760,13 @@
       "Optional": [
         "Opcional"
       ],
-      "OR": [
-        "O"
-      ],
       "or": [
         "o"
       ],
       "Or": [
+        "O"
+      ],
+      "OR": [
         "O"
       ],
       "Organization name": [
@@ -11870,6 +11900,9 @@
       ],
       "Second password": [
         "Segona contrasenya"
+      ],
+      "Select Linux package format": [
+        "Seleccioneu el format de paquet Linux"
       ],
       "Send auto-reply": [
         "Enviar resposta automàtica"
@@ -13772,14 +13805,6 @@
         "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -13798,6 +13823,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -17866,47 +17899,6 @@
         "Per ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -18195,6 +18187,47 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -18964,10 +18997,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [

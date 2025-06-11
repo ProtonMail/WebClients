@@ -4215,6 +4215,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Almeno ${ BETTER_PASSWORD_LENGTH } caratteri"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Alla fine della tua prova ${ boldCancelDate }, ti verrà eseguito il downgrade a ${ boldProtonFree }. Tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
       "Attention required": [
         "Attenzione"
       ],
@@ -6620,6 +6623,17 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Piani a partire da ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina l'account"
@@ -6641,17 +6655,6 @@
       ],
       "Switch plan": [
         "Cambia piano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Piani a partire da ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
       ]
     },
     "new_plans: feature": {
@@ -7233,11 +7236,6 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -7250,6 +7248,11 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -9124,6 +9127,25 @@
         "Per ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } di spazio di archiviazione per utente"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } ti offre tutte le app, tutte le funzionalità, l'accesso anticipato alle nuove versioni e tutto ciò di cui hai bisogno per avere il controllo dei tuoi dati e della loro sicurezza."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio email personalizzato",
+        "${ planNumberOfDomains } domini email personalizzati"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } indirizzo email",
+        "${ planNumberOfEmails } indirizzi email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Cartelle, etichette, e filtri personalizzati"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB di spazio di archiviazione"
@@ -9163,25 +9185,6 @@
       ],
       "Your privacy is our mission": [
         "La tua privacy è la nostra missione"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } di spazio di archiviazione per utente"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } ti offre tutte le app, tutte le funzionalità, l'accesso anticipato alle nuove versioni e tutto ciò di cui hai bisogno per avere il controllo dei tuoi dati e della loro sicurezza."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } dominio email personalizzato",
-        "${ planNumberOfDomains } domini email personalizzati"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } indirizzo email",
-        "${ planNumberOfEmails } indirizzi email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Cartelle, etichette, e filtri personalizzati"
       ]
     },
     "Subscription renewal state": {
