@@ -43,7 +43,6 @@ export enum FeatureCode {
     ComposerAssistantSpotlight = 'ComposerAssistantSpotlight',
     ComposerAssistantInitialSetup = 'ComposerAssistantInitialSetup',
     ComposerAssistantTrialStartDate = 'ComposerAssistantTrialStartDate',
-    DarkStylesInBody = 'DarkStylesInBody',
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
     DriveSearchSpotlight = 'DriveSearchSpotlight',
     ESAutomaticBackgroundIndexing = 'ESAutomaticBackgroundIndexing',
