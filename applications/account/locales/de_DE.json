@@ -469,10 +469,10 @@
       "Discard": [
         "Verwerfen"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Änderungen verwerfen"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Änderungen verwerfen"
       ],
       "Discover ${ planName }": [
@@ -501,6 +501,12 @@
       ],
       "Download CSV sample": [
         "CSV-Beispiel herunterladen"
+      ],
+      "Download for macOS": [
+        "Für macOS herunterladen"
+      ],
+      "Download for Windows": [
+        "Für Windows herunterladen"
       ],
       "Download ICS": [
         "ICS herunterladen"
@@ -799,10 +805,10 @@
       "Keep": [
         "Behalten"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Bearbeitung fortsetzen"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Bearbeitung fortsetzen"
       ],
       "Keep logo": [
@@ -994,11 +1000,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "Refresh the page": [
-        "Seite aktualisieren"
-      ],
       "refresh the page": [
         "aktualisiere die Seite"
+      ],
+      "Refresh the page": [
+        "Seite aktualisieren"
       ],
       "Reject": [
         "Ablehnen"
@@ -1174,10 +1180,10 @@
       "Select country ${ country }": [
         "Land ${ country } auswählen"
       ],
-      "Select file": [
+      "select file": [
         "Datei auswählen"
       ],
-      "select file": [
+      "Select file": [
         "Datei auswählen"
       ],
       "Select files": [
@@ -1590,8 +1596,14 @@
       "Delete address": [
         "Adresse löschen"
       ],
+      "Delete address “${ emailAddress }”": [
+        "E-Mail-Adresse „${ emailAddress }“ löschen"
+      ],
       "Disable": [
         "Deaktivieren"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "E-Mail-Adresse „${ emailAddress }“ deaktivieren"
       ],
       "Disable E2EE mail": [
         "E2EE-E-Mail deaktivieren"
@@ -1605,8 +1617,14 @@
       "Edit address": [
         "E-Mail-Adresse bearbeiten"
       ],
+      "Edit address “${ emailAddress }”": [
+        "E-Mail-Adresse „${ emailAddress }“ bearbeiten"
+      ],
       "Enable": [
         "Aktivieren"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "E-Mail-Adresse „${ emailAddress }“ aktivieren"
       ],
       "Enable E2EE mail": [
         "E2EE-E-Mail aktivieren"
@@ -1614,11 +1632,17 @@
       "Generate missing keys": [
         "Fehlende Schlüssel erzeugen"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "Fehlende Schlüssel generieren für E-Mail-Adresse “${ emailAddress }”"
+      ],
       "Saving": [
         "Wird gespeichert"
       ],
       "Set as default": [
         "Als Standard festlegen"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "Setze “${ emailAddress }” als Standard E-Mail-Adresse"
       ]
     },
     "Address status": {
@@ -4787,11 +4811,11 @@
       "Forward to": [
         "Weiterleiten an"
       ],
-      "or": [
-        "oder"
-      ],
       "Or": [
         "Oder"
+      ],
+      "or": [
+        "oder"
       ],
       "With attachment": [
         "Mit Anhang"
@@ -7547,11 +7571,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiviere mindestens eine Datenwiederherstellungsmethode, um sicherzustellen, dass du weiterhin auf den Inhalt deines ${ BRAND_NAME }-Kontos zugreifen kannst, wenn du dein Passwort verlierst."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Füge deinem Konto eine @pm.me-E-Mail-Adresse hinzu. Diese einfache, kürzere Domain steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
@@ -7998,11 +8022,11 @@
       "Data recoverable on this device": [
         "Daten, die auf diesem Gerät wiederhergestellt werden können"
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -9871,10 +9895,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
       "Users": [
@@ -11090,11 +11114,11 @@
       "Amount due": [
         "Fälliger Betrag"
       ],
-      "AND": [
-        "UND"
-      ],
       "And": [
         "Und"
+      ],
+      "AND": [
+        "UND"
       ],
       "and": [
         "und"
@@ -11293,6 +11317,9 @@
       ],
       "Copy": [
         "Kopieren"
+      ],
+      "Copy fingerprint": [
+        "Fingerabdruck kopieren"
       ],
       "Could you please let us know which provider?": [
         "Kannst du uns bitte mitteilen, welcher Anbieter das ist?"
@@ -11522,11 +11549,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "WENN"
-      ],
       "If": [
         "Wenn"
+      ],
+      "IF": [
+        "WENN"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -11636,6 +11663,9 @@
       "Message": [
         "Nachricht"
       ],
+      "Message (auto-reply)": [
+        "Nachricht (automatische Antwort)"
+      ],
       "Messages per page": [
         "Nachrichten pro Seite"
       ],
@@ -11735,14 +11765,14 @@
       "Optional": [
         "Optional"
       ],
-      "OR": [
-        "ODER"
-      ],
       "or": [
         "oder"
       ],
       "Or": [
         "Oder"
+      ],
+      "OR": [
+        "ODER"
       ],
       "Organization name": [
         "Name der Organisation"
@@ -11875,6 +11905,9 @@
       ],
       "Second password": [
         "Zusätzliches Passwort"
+      ],
+      "Select Linux package format": [
+        "Linux-Paketformat auswählen"
       ],
       "Send auto-reply": [
         "Automatische Antwort senden"
@@ -13777,14 +13810,6 @@
         "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceLine } frei. Jederzeit kündbar."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -13803,6 +13828,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -17873,47 +17906,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -18202,6 +18194,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -18971,11 +19004,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"

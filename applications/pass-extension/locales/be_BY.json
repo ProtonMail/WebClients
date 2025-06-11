@@ -1322,7 +1322,7 @@
         "${ PASS_APP_NAME } згенерыруе адрас перасылкі (таксама вядомы пад назвай зваротны псеўданім), які вы зможаце скапіяваць у буфер абмену."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
-        "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі, крэдытныя карткі і асабістыя звесткі."
+        "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі, крэдытныя карткі і ідэнтычнасці."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } прапануе вам, як толькі згенерыраваныя паролі будуць запоўнены аўтаматычна."
@@ -2506,7 +2506,7 @@
         "${ months } месяцаў"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
-        "Манітор ${ PASS_SHORT_APP_NAME }"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версія ${ PASS_SHORT_APP_NAME }"
@@ -2747,9 +2747,6 @@
       ],
       "Create new vault": [
         "Стварыць новае сховішча"
-      ],
-      "Created": [
-        "Створана"
       ],
       "Created at": [
         "Створана"
@@ -3296,6 +3293,9 @@
       ],
       "Share": [
         "Абагуліць"
+      ],
+      "Share ID": [
+        "Абагуліць ідэнтыфікатар"
       ],
       "Shared": [
         "Абагулена"

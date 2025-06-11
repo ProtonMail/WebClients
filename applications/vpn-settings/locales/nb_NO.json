@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
-      "activate": [
-        "aktiver"
-      ],
       "Activate": [
         "Aktiver"
+      ],
+      "activate": [
+        "aktiver"
       ],
       "Activate organization key": [
         "Aktiver organisasjonsnøkkel"
@@ -267,10 +267,10 @@
       "Discard": [
         "Forkast"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Forkast endringer"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Forkast endringer"
       ],
       "Discover ${ planName }": [
@@ -459,10 +459,10 @@
       "Invite user": [
         "Inviter bruker"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Fortsett å redigere"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Fortsett å redigere"
       ],
       "Keep logo": [
@@ -708,11 +708,11 @@
       "Select country ${ country }": [
         "Velg land ${ country }"
       ],
-      "Select file": [
-        "Velg fil"
-      ],
       "select file": [
         "velg fil"
+      ],
+      "Select file": [
+        "Velg fil"
       ],
       "Send code": [
         "Send kode"
@@ -985,8 +985,14 @@
       "Delete address": [
         "Slett adresse"
       ],
+      "Delete address “${ emailAddress }”": [
+        "Slett adresse “${ emailAddress }”"
+      ],
       "Disable": [
         "Deaktiver"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "Deaktiver adresse “${ emailAddress }”"
       ],
       "Disable E2EE mail": [
         "Deaktiver E2EE-post"
@@ -1000,8 +1006,14 @@
       "Edit address": [
         "Rediger adresse"
       ],
+      "Edit address “${ emailAddress }”": [
+        "Rediger adresse “${ emailAddress }”"
+      ],
       "Enable": [
         "Aktiver"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "Aktiver adresse \"${ emailAddress }\""
       ],
       "Enable E2EE mail": [
         "Aktiver E2EE-post"
@@ -1009,11 +1021,17 @@
       "Generate missing keys": [
         "Generer manglende nøkler"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "Generer manglende nøkler for adresse “${ emailAddress }”"
+      ],
       "Saving": [
         "Lagrer"
       ],
       "Set as default": [
         "Angi som standard"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "Angi “${ emailAddress }” som standardadresse"
       ]
     },
     "Address status": {
@@ -4396,6 +4414,9 @@
       "At least one application must be active": [
         "Minst én applikasjon må være aktiv"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Ved slutten av prøvetiden den ${ boldCancelDate }, blir du nedgradert til ${ boldProtonFree }. Alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
       "Attention required": [
         "Oppmerksomhet kreves"
       ],
@@ -4539,11 +4560,11 @@
       "Data recoverable on this device": [
         "Data kan gjenopprettes på denne enheten"
       ],
-      "dedicated servers": [
-        "dedikerte tjenere"
-      ],
       "Dedicated servers": [
         "Dedikerte tjenere"
+      ],
+      "dedicated servers": [
+        "dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
@@ -4819,6 +4840,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Hvis du ombestemmer deg, kan du abonnere igjen når som helst. Trist at du forlater oss!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke finner e-posten i innboksen, sjekk søppelpostmappen din."
@@ -5716,11 +5740,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "username": [
-        "brukernavn"
-      ],
       "Username": [
         "Brukernavn"
+      ],
+      "username": [
+        "brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -6012,6 +6036,9 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Du vil ikke kunne tilordne disse tjenerne til et annet land på 10 dager."
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
@@ -6092,6 +6119,12 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Du vil kunne legge til disse tjenerne i en annen porttjener umiddelbart."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Du mister tilgang til ${ boldPlanTitle } den ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
       ],
       "Zoom meeting": [
         "Zoom-møte"
@@ -7335,6 +7368,20 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradere til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -7356,20 +7403,6 @@
       ],
       "Switch plan": [
         "Bytt plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradere til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
       ]
     },
     "new_plans: feature": {
@@ -7952,14 +7985,6 @@
         "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceLine }. Avslutt når som helst."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -7972,6 +7997,14 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -8489,6 +8522,23 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Velkommen til ${ appName }"
+      ]
+    },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Avbryt når som helst før da."
+      ],
+      "Once your full subscription starts...": [
+        "Når ditt fulle abonnement starter..."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Du vil kunne bruke ${ planTitle } til prøveversjonen avsluttes, gratis."
       ]
     },
     "Option": {
@@ -10445,47 +10495,6 @@
         "For ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -10774,6 +10783,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -11316,10 +11366,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -11982,6 +12032,9 @@
       ],
       "Your current plan": [
         "Din gjeldende plan"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } days": [
+        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dager"
       ],
       "Your plan": [
         "Din plan"

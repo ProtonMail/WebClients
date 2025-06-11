@@ -466,11 +466,11 @@
       "Discard": [
         "Sil"
       ],
-      "Discard Changes": [
-        "Değişiklikleri sil"
-      ],
       "Discard changes": [
         "Değişiklileri yok say"
+      ],
+      "Discard Changes": [
+        "Değişiklikleri sil"
       ],
       "Discover ${ planName }": [
         "${ planName } tarifesini keşfedin"
@@ -790,10 +790,10 @@
       "Keep": [
         "Tut"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Düzenlemeyi sürdür"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Düzenlemeyi sürdür"
       ],
       "Keep logo": [
@@ -982,11 +982,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
       "refresh the page": [
         "sayfayı yenile"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
       ],
       "Reject": [
         "Reddet"
@@ -1162,11 +1162,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "Select file": [
-        "Dosya seçin"
-      ],
       "select file": [
         "dosya seçin"
+      ],
+      "Select file": [
+        "Dosya seçin"
       ],
       "Select files": [
         "Dosyaları seçin"
@@ -4769,11 +4769,11 @@
       "Forward to": [
         "Şuraya ilet"
       ],
-      "or": [
-        "veya"
-      ],
       "Or": [
         "Veya"
+      ],
+      "or": [
+        "veya"
       ],
       "With attachment": [
         "Ek dosyası olan"
@@ -7529,11 +7529,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini açın."
       ],
-      "Active": [
-        "Etkin"
-      ],
       "active": [
         "etkin"
+      ],
+      "Active": [
+        "Etkin"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
@@ -7977,11 +7977,11 @@
       "Data recoverable on this device": [
         "Bu aygıttaki veriler kurtarılabilir"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -9844,11 +9844,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "username": [
-        "kullanıcı adı"
-      ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -11045,11 +11045,11 @@
       "Amount due": [
         "Ödenecek tutar"
       ],
-      "AND": [
-        "VE"
-      ],
       "And": [
         "Ve"
+      ],
+      "AND": [
+        "VE"
       ],
       "and": [
         "ve"
@@ -11477,11 +11477,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "EĞER"
-      ],
       "If": [
         "Eğer"
+      ],
+      "IF": [
+        "EĞER"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -11690,14 +11690,14 @@
       "Optional": [
         "İsteğe bağlı"
       ],
-      "OR": [
-        "VEYA"
-      ],
       "or": [
         "veya"
       ],
       "Or": [
         "Veya"
+      ],
+      "OR": [
+        "VEYA"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -13726,14 +13726,6 @@
         "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -13752,6 +13744,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -14286,6 +14286,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "${ BRAND_NAME } uygulamasının nelere erişebileceğini seçin: E-posta iletilerinizi ve ayarlarınızı görüntüleme, kişilerinizi görüntüleme ve indirme, Google Takvim üzerinde eriştiğiniz tüm takvimleri görüntüleme ve indirme."
+      ]
+    },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "Gmail hesabınıza giriş yapılırken bir sorun oluştu"
       ]
     },
     "Offer": {
@@ -14921,6 +14926,9 @@
       ],
       "/month /user, billed biennially": [
         "/ay /kullanıcı, iki yılda bir faturalanır"
+      ],
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Tüm ${ BRAND_NAME } uygulamalarına ve ücretli özelliklerine erişim"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Endüstri standartlarının ötesine geçen gelişmiş koruma"
@@ -15669,8 +15677,20 @@
       ]
     },
     "Plan description": {
+      "All ${ BRAND_NAME } premium products included in Duo.": [
+        "Tüm ${ BRAND_NAME } ücretli ürünleri Duo'ya dahildir."
+      ],
+      "Best if you need ${ maxSpace } of storage and for couples.": [
+        "Çiftler ve ${ maxSpace } depolama alanına ihtiyacı olanlar için en iyisidir."
+      ],
       "Great for everyday use and photo backups.": [
         "Günlük kullanım ve fotoğraf yedekleri için harika"
+      ],
+      "Perfect for getting started with secure cloud storage.": [
+        "Güvenli bulut depolama alanını kullanmaya başlamak için mükemmeldir."
+      ],
+      "Secure cloud storage and collaboration for teams.": [
+        "Ekipler için güvenli bulut depolama alanı ve ortak çalışma."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Gizliliğe önem veren ileri düzey kullanıcılar için uygun tarife."
@@ -16768,6 +16788,15 @@
       ]
     },
     "Signup": {
+      "${ DRIVE_APP_NAME } for Business": [
+        "${ DRIVE_APP_NAME } for Business"
+      ],
+      "${ value } of secure storage": [
+        "${ value } güvenli depolama alanı"
+      ],
+      "${ value } of secure storage per user": [
+        "Her kullanıcı için ${ value } güvenli depolama alanı"
+      ],
       "/user": [
         "/kullanıcı"
       ],
@@ -16801,6 +16830,12 @@
       "Free": [
         "Ücretsiz"
       ],
+      "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
+        "Güvenli bir ${ MAIL_APP_NAME } adresi alın ya da ${ internalButton }"
+      ],
+      "get a secure ${ MAIL_APP_NAME } address.": [
+        "Güvenli bir ${ MAIL_APP_NAME } adresi alın."
+      ],
       "Manage user access": [
         "Kullanıcı erişimini yönet"
       ],
@@ -16812,6 +16847,9 @@
       ],
       "Need more space?": [
         "Daha fazla alan mı gerekiyor?"
+      ],
+      "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
+        "Daha fazla depolama alanına mı ihtiyacınız var? 200 GB ile 3 TB arasında değişen tarifelerle istediğiniz zaman yükseltme yapabilirsiniz. 5 GB, modern bir telefondan çekilmiş (her biri yaklaşık 2 MB olan) 2.500 fotoğraf için yeterlidir."
       ],
       "Online documents": [
         "Çevrim içi belgeler"
@@ -16846,6 +16884,9 @@
       "Set your password": [
         "Parolanızı ayarlayın"
       ],
+      "Share and collaborate of files": [
+        "Dosyaları paylaşın ve ortak çalışın."
+      ],
       "Sign up, protect your files": [
         "Hesap oluşturun ve dosyalarınızı koruyun"
       ],
@@ -16869,6 +16910,12 @@
       ],
       "Upload files of any size": [
         "Her boyuttan dosyalar yükleyin"
+      ],
+      "Use your email, or ${ externalButton }": [
+        "E-posta adresinizi kullanın ya da ${ externalButton }"
+      ],
+      "use your own email.": [
+        "Kendi e-posta adresinizi kullanın."
       ],
       "Yearly": [
         "Yıllık"
@@ -17758,47 +17805,6 @@
         "${ totalPrice } için"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -18087,6 +18093,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -18853,10 +18900,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [

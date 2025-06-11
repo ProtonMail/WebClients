@@ -1916,12 +1916,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
-      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -2845,9 +2839,6 @@
       "Create new vault": [
         "Vytvoriť nový trezor"
       ],
-      "Created": [
-        "Vytvorené"
-      ],
       "Created at": [
         "Vytvorené"
       ],
@@ -3358,10 +3349,10 @@
       "Priority:": [
         "Priorita:"
       ],
-      "Private Key": [
+      "Private key": [
         "Súkromný kľúč"
       ],
-      "Private key": [
+      "Private Key": [
         "Súkromný kľúč"
       ],
       "Product": [
@@ -3471,6 +3462,9 @@
       ],
       "Share": [
         "Zdieľať"
+      ],
+      "Share ID": [
+        "Zdieľať ID"
       ],
       "Shared": [
         "Zdieľané"

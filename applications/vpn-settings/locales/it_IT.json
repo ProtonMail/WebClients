@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
-      "activate": [
-        "attiva"
-      ],
       "Activate": [
         "Attiva"
+      ],
+      "activate": [
+        "attiva"
       ],
       "Activate organization key": [
         "Attiva la chiave dell'organizzazione"
@@ -267,10 +267,10 @@
       "Discard": [
         "Scarta"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Annulla le modifiche"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Annulla le modifiche"
       ],
       "Discover ${ planName }": [
@@ -459,10 +459,10 @@
       "Invite user": [
         "Invita utente"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Continua a modificare"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Continua a modificare"
       ],
       "Keep logo": [
@@ -708,11 +708,11 @@
       "Select country ${ country }": [
         "Seleziona il paese ${ country }"
       ],
-      "Select file": [
-        "Seleziona il file"
-      ],
       "select file": [
         "seleziona il file"
+      ],
+      "Select file": [
+        "Seleziona il file"
       ],
       "Send code": [
         "Invia codice"
@@ -985,8 +985,14 @@
       "Delete address": [
         "Elimina indirizzo"
       ],
+      "Delete address “${ emailAddress }”": [
+        "Elimina l'indirizzo “${ emailAddress }”"
+      ],
       "Disable": [
         "Disabilita"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "Disattiva l'indirizzo “${ emailAddress }”"
       ],
       "Disable E2EE mail": [
         "Disabilita la posta E2EE"
@@ -1000,8 +1006,14 @@
       "Edit address": [
         "Modifica indirizzo"
       ],
+      "Edit address “${ emailAddress }”": [
+        "Modifica l'indirizzo “${ emailAddress }”"
+      ],
       "Enable": [
         "Abilita"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "Attiva l'indirizzo “${ emailAddress }”"
       ],
       "Enable E2EE mail": [
         "Abilita la posta E2EE"
@@ -1009,11 +1021,17 @@
       "Generate missing keys": [
         "Genera le chiavi mancanti"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "Genera le chiavi mancanti per l'indirizzo “${ emailAddress }”"
+      ],
       "Saving": [
         "Salvataggio"
       ],
       "Set as default": [
         "Imposta come predefinito"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "Imposta “${ emailAddress }” come indirizzo predefinito"
       ]
     },
     "Address status": {
@@ -4404,6 +4422,9 @@
       "At least one application must be active": [
         "Almeno una delle applicazioni deve essere attiva."
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Alla fine della tua prova ${ boldCancelDate }, ti verrà eseguito il downgrade a ${ boldProtonFree }. Tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
       "Attention required": [
         "Attenzione"
       ],
@@ -4547,11 +4568,11 @@
       "Data recoverable on this device": [
         "Dati recuperabili su questo dispositivo"
       ],
-      "dedicated servers": [
-        "server dedicati"
-      ],
       "Dedicated servers": [
         "Server dedicati"
+      ],
+      "dedicated servers": [
+        "server dedicati"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -5727,11 +5748,11 @@
       "User activated": [
         "Utente attivato"
       ],
-      "username": [
-        "nome utente"
-      ],
       "Username": [
         "Nome utente"
+      ],
+      "username": [
+        "nome utente"
       ],
       "Users": [
         "Utenti"
@@ -7355,6 +7376,20 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina account"
@@ -7376,20 +7411,6 @@
       ],
       "Switch plan": [
         "Cambia piano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
       ]
     },
     "new_plans: feature": {
@@ -7984,17 +8005,6 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prova"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -8007,6 +8017,17 @@
       ],
       "Switch plans?": [
         "Cambiare piani?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -10509,47 +10530,6 @@
         "Per ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB di spazio di archiviazione"
-      ],
-      "and 15 more premium features": [
-        "e altre 15 funzionalità premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Inoltro automatico delle email ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Avvisi sulle violazioni di dati ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Applicazione desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
-      ],
-      "No ads or tracking": [
-        "Nessun annuncio o tracciamento"
-      ],
-      "Short @pm.me email address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Support our mission": [
-        "Sostieni la nostra missione"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Migliora la tua produttività"
-      ],
-      "We don't sell your data": [
-        "Non vendiamo i tuoi dati"
-      ],
-      "Your privacy is our mission": [
-        "La tua privacy è la nostra missione"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } con funzionalità premium"
@@ -10838,6 +10818,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {
@@ -11383,11 +11404,11 @@
       "Card verification": [
         "Verifica della carta"
       ],
-      "Catch-All address": [
-        "Indirizzi catch-all"
-      ],
       "Catch-all address": [
         "Indirizzi Catch-all"
+      ],
+      "Catch-All address": [
+        "Indirizzi catch-all"
       ],
       "Change login password": [
         "Cambia la password di accesso"
