@@ -34,26 +34,30 @@ export const useSharesStore = create<SharesState>()(
         getShare: (shareId) => get().shares[shareId],
         getLockedShares: () => {
             const { shares } = get();
-            return Object.values(shares)
-                .filter(
-                    (share) =>
-                        share.isLocked && (share.isDefault || share.volumeType === VolumeType.Photos) && !share.forASV
-                )
-                .map((defaultShare) => ({
-                    defaultShare,
-                    devices: Object.values(shares).filter(
-                        (share) =>
-                            share.isLocked &&
-                            share.type === ShareType.device &&
-                            share.volumeId === defaultShare.volumeId
-                    ),
-                    photos: Object.values(shares).filter(
-                        (share) =>
-                            share.isLocked &&
-                            share.type === ShareType.photos &&
-                            share.volumeId === defaultShare.volumeId
-                    ),
-                }));
+            const shareValues = Object.values(shares);
+            const lockedDefaultShares = shareValues.filter(
+                (share) =>
+                    share.isLocked && (share.isDefault || share.volumeType === VolumeType.Photos) && !share.forASV
+            );
+
+            // Group by volume ID
+            const volumeGroups = new Map<string, typeof lockedDefaultShares>();
+            lockedDefaultShares.forEach((share) => {
+                if (!volumeGroups.has(share.volumeId)) {
+                    volumeGroups.set(share.volumeId, []);
+                }
+                volumeGroups.get(share.volumeId)!.push(share);
+            });
+
+            return Array.from(volumeGroups.entries()).map(([volumeId, defaultShares]) => ({
+                defaultShares,
+                devices: shareValues.filter(
+                    (share) => share.isLocked && share.type === ShareType.device && share.volumeId === volumeId
+                ),
+                photos: shareValues.filter(
+                    (share) => share.isLocked && share.type === ShareType.photos && share.volumeId === volumeId
+                ),
+            }));
         },
         getDefaultShareId: () => {
             const { shares } = get();

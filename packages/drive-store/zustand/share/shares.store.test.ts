@@ -1,7 +1,5 @@
-import { beforeEach, describe, expect, it } from '@jest/globals';
-
-import type { LockedVolumeForRestore, Share } from '../../store/_shares';
-import { ShareState, ShareType } from '../../store/_shares';
+import type { LockedVolumeForRestore, Share, ShareWithKey } from '../../store';
+import { ShareState, ShareType } from '../../store';
 import { findDefaultPhotosShareId, findDefaultShareId, useSharesStore } from './shares.store';
 
 const createTestShare = (overrides: Partial<Share> = {}): Share => ({
@@ -15,6 +13,7 @@ const createTestShare = (overrides: Partial<Share> = {}): Share => ({
     creator: 'mock',
     possibleKeyPackets: [],
     createTime: Date.now(),
+    linkType: 1,
     ...overrides,
 });
 
@@ -114,7 +113,7 @@ describe('useSharesStore', () => {
             const result = useSharesStore.getState().getLockedShares();
             expect(result).toEqual([
                 {
-                    defaultShare,
+                    defaultShares: [defaultShare],
                     devices: [deviceShare],
                     photos: [photosShare],
                 },
@@ -294,5 +293,125 @@ describe('findDefaultPhotosShareId', () => {
 
         const result = findDefaultPhotosShareId(shares);
         expect(result).toBeUndefined();
+    });
+});
+
+describe('Promise cache operations', () => {
+    beforeEach(() => {
+        useSharesStore.setState({
+            shares: {},
+            lockedVolumesForRestore: [],
+            loadUserSharesPromise: null,
+            defaultSharePromise: null,
+            defaultPhotosSharePromise: null,
+            isLoadingShares: false,
+        });
+    });
+
+    describe('loadUserSharesPromise', () => {
+        it('should set and clear loadUserSharesPromise', async () => {
+            const mockPromise = Promise.resolve({
+                defaultShareId: 'defaultShareId',
+                shares: [createTestShare()],
+            });
+
+            useSharesStore.getState().setLoadUserSharesPromise(mockPromise);
+            expect(useSharesStore.getState().loadUserSharesPromise).toBe(mockPromise);
+
+            useSharesStore.getState().clearLoadUserSharesPromise();
+            expect(useSharesStore.getState().loadUserSharesPromise).toBeNull();
+        });
+    });
+
+    describe('defaultSharePromise', () => {
+        it('should set and clear defaultSharePromise', async () => {
+            const mockShare = createTestShare({ shareId: 'default-share' }) as ShareWithKey;
+            const mockPromise = Promise.resolve(mockShare);
+
+            useSharesStore.getState().setDefaultSharePromise(mockPromise);
+            expect(useSharesStore.getState().defaultSharePromise).toBe(mockPromise);
+
+            useSharesStore.getState().clearDefaultSharePromise();
+            expect(useSharesStore.getState().defaultSharePromise).toBeNull();
+        });
+    });
+
+    describe('defaultPhotosSharePromise', () => {
+        it('should set and clear defaultPhotosSharePromise', async () => {
+            const mockShare = createTestShare({
+                shareId: 'photos-share',
+                type: ShareType.photos,
+            }) as ShareWithKey;
+            const mockPromise = Promise.resolve(mockShare);
+
+            useSharesStore.getState().setDefaultPhotosSharePromise(mockPromise);
+            expect(useSharesStore.getState().defaultPhotosSharePromise).toBe(mockPromise);
+
+            useSharesStore.getState().clearDefaultPhotosSharePromise();
+            expect(useSharesStore.getState().defaultPhotosSharePromise).toBeNull();
+        });
+
+        it('should handle undefined result in defaultPhotosSharePromise', async () => {
+            const mockPromise = Promise.resolve(undefined);
+
+            useSharesStore.getState().setDefaultPhotosSharePromise(mockPromise);
+            expect(useSharesStore.getState().defaultPhotosSharePromise).toBe(mockPromise);
+
+            const result = await useSharesStore.getState().defaultPhotosSharePromise;
+            expect(result).toBeUndefined();
+        });
+    });
+
+    describe('isLoadingShares flag', () => {
+        it('should set and check isLoadingShares', () => {
+            expect(useSharesStore.getState().isLoadingShares).toBe(false);
+
+            useSharesStore.getState().setIsLoadingShares(true);
+            expect(useSharesStore.getState().isLoadingShares).toBe(true);
+
+            useSharesStore.getState().setIsLoadingShares(false);
+            expect(useSharesStore.getState().isLoadingShares).toBe(false);
+        });
+    });
+
+    describe('Promise cache coordination', () => {
+        it('should maintain separate caches for different promise types', async () => {
+            const sharesPromise = Promise.resolve({ defaultShareId: 'defaultShareId', shares: [createTestShare()] });
+            const defaultSharePromise = Promise.resolve(createTestShare({ isDefault: true }) as ShareWithKey);
+            const photosSharePromise = Promise.resolve(
+                createTestShare({
+                    type: ShareType.photos,
+                }) as ShareWithKey
+            );
+
+            useSharesStore.getState().setLoadUserSharesPromise(sharesPromise);
+            useSharesStore.getState().setDefaultSharePromise(defaultSharePromise);
+            useSharesStore.getState().setDefaultPhotosSharePromise(photosSharePromise);
+
+            expect(useSharesStore.getState().loadUserSharesPromise).toBe(sharesPromise);
+            expect(useSharesStore.getState().defaultSharePromise).toBe(defaultSharePromise);
+            expect(useSharesStore.getState().defaultPhotosSharePromise).toBe(photosSharePromise);
+
+            useSharesStore.getState().clearLoadUserSharesPromise();
+            expect(useSharesStore.getState().loadUserSharesPromise).toBeNull();
+            expect(useSharesStore.getState().defaultSharePromise).toBe(defaultSharePromise);
+            expect(useSharesStore.getState().defaultPhotosSharePromise).toBe(photosSharePromise);
+        });
+    });
+
+    describe('Subscribe to cache changes', () => {
+        it('should notify subscribers when isLoadingShares changes', () => {
+            const mockFn = jest.fn();
+
+            const unsubscribe = useSharesStore.subscribe((state) => {
+                mockFn(state.isLoadingShares);
+            });
+
+            useSharesStore.getState().setIsLoadingShares(true);
+
+            expect(mockFn).toHaveBeenCalledWith(true);
+
+            unsubscribe();
+        });
     });
 });

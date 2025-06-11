@@ -5,6 +5,11 @@ export enum VolumeType {
     Photos = 2,
 }
 
+export enum VolumeState {
+    Active = 1,
+    Locked = 3,
+}
+
 export enum VolumeRestoreStatus {
     Done = 0,
     Progress = 1,
@@ -56,7 +61,7 @@ export interface DriveVolume {
     UsedSpace: number;
     DownloadedBytes: number;
     UploadedBytes: number;
-    State: number;
+    State: VolumeState;
     Share: {
         ShareID: string;
         ID: string;
@@ -64,6 +69,10 @@ export interface DriveVolume {
     };
     Type: VolumeType;
     RestoreStatus: VolumeRestoreStatus | null;
+}
+
+export interface UserDriveVolumesResult {
+    Volumes: DriveVolume[];
 }
 
 export interface GetDriveVolumeResult {
@@ -75,12 +84,15 @@ export interface CreatedDriveVolumeResult {
 }
 
 export interface RestoreDriveVolume {
-    Name?: string;
     SignatureAddress: string;
-    Hash?: string;
-    NodePassphrase?: string;
-    NodePassphraseSignature?: string;
-    TargetVolumeID: string;
+    MainShares?: {
+        LockedShareID: string;
+        Name: string;
+        Hash: string;
+        NodePassphrase: string;
+        NodePassphraseSignature: string;
+        NodeHashKey?: string;
+    }[];
     Devices?: {
         LockedShareID: string;
         ShareKeyPacket: string;
