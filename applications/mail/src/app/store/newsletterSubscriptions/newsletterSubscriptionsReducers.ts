@@ -179,6 +179,7 @@ export const filterSubscriptionListPending = (
 
     state.value.byId[subscriptionId] = {
         ...state.value.byId[subscriptionId],
+        UnreadMessageCount: MarkAsRead ? 0 : state.value.byId[subscriptionId].UnreadMessageCount,
         MarkAsRead,
         MoveToFolder,
     };
