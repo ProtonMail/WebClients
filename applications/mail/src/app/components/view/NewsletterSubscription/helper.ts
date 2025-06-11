@@ -1,4 +1,3 @@
-import type { IconName } from 'packages/icons';
 import { c, msgid } from 'ttag';
 
 import type { Filter } from '@proton/components/containers/filters/interfaces';
@@ -11,14 +10,14 @@ import type {
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import type { ModalFilterType } from './interface';
+import type {
+    FilterDropdownData,
+    GetUnsubscribeDataParams,
+    MenuItem,
+    ModalFilterType,
+    NewsletterSubscriptionFilterState,
+} from './interface';
 import { UnsubscribeMethod } from './interface';
-
-interface GetUnsubscribeDataParams {
-    trash: boolean;
-    archive: boolean;
-    read: boolean;
-}
 
 export const getUnsubscribeData = ({
     trash,
@@ -122,7 +121,7 @@ export const getNewsletterCopyForFilterAction = (subscription: NewsletterSubscri
     return c('Label').ngettext(msgid`Moved ${count} message to Trash.`, `Moved ${count} messages to Trash.`, count);
 };
 
-export const getFilterDropdownData = (subscription: NewsletterSubscription, filters: Filter[]) => {
+export const getFilterDropdownData = (subscription: NewsletterSubscription, filters: Filter[]): FilterDropdownData => {
     const isFilterEnabled =
         filters.find((filter) => filter.ID === subscription.FilterID)?.Status === FILTER_STATUS.ENABLED;
 
@@ -130,11 +129,7 @@ export const getFilterDropdownData = (subscription: NewsletterSubscription, filt
     const movingToArchive = !!(subscription.MoveToFolder === MAILBOX_LABEL_IDS.ARCHIVE);
     const movingToTrash = !!(subscription.MoveToFolder === MAILBOX_LABEL_IDS.TRASH);
 
-    const menuItems: {
-        icon: IconName;
-        label: string;
-        filter: ModalFilterType;
-    }[] = [
+    const menuItems: MenuItem[] = [
         {
             icon: 'envelope-open',
             label: isFilterEnabled && markingAsRead ? c('Action').t`Stop marking as read` : c('Action').t`Mark as read`,
@@ -179,4 +174,27 @@ export const getUnsubscribeMethod = (subscription: NewsletterSubscription): Unsu
         return UnsubscribeMethod.HttpClient;
     }
     return undefined;
+};
+
+/**
+ * Returns true if the filter type is different from the current action,
+ * if true we should toggle the filter instead of creating a new one.
+ * @param filterType - The filter type to check
+ * @param filterState - The current state of the newsletter subscription filter
+ * @returns true if the filter type is already applied to the newsletter subscription
+ */
+export const shouldToggleFilter = (
+    filterType: ModalFilterType,
+    filterState: NewsletterSubscriptionFilterState
+): boolean => {
+    switch (filterType) {
+        case 'MarkAsRead':
+            return filterState.markingAsRead;
+        case 'MoveToArchive':
+            return filterState.movingToArchive;
+        case 'MoveToTrash':
+            return filterState.movingToTrash;
+        default:
+            return false;
+    }
 };
