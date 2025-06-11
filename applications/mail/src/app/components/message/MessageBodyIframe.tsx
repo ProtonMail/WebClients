@@ -8,7 +8,6 @@ import { Tooltip } from '@proton/atoms';
 import { Icon, useSyncIframeStyles, useTheme } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
 import type { MessageState } from '../../store/messages/messagesTypes';
 import MessageBodyImages from './MessageBodyImages';
 import getIframeSandboxAttributes from './helpers/getIframeSandboxAttributes';
@@ -21,6 +20,7 @@ import { type OnMessageImageLoadError } from './interface';
 interface Props {
     iframeRef: RefObject<HTMLIFrameElement>;
     content: string;
+    className?: string;
     showBlockquote: boolean;
     showBlockquoteToggle: boolean;
     blockquoteContent: string;
@@ -38,6 +38,7 @@ interface Props {
 const MessageBodyIframe = ({
     iframeRef,
     content,
+    className,
     blockquoteContent,
     showBlockquote: showBlockquoteProp,
     showBlockquoteToggle,
@@ -54,8 +55,6 @@ const MessageBodyIframe = ({
     const theme = useTheme();
 
     useSyncIframeStyles(iframeRef.current?.contentWindow?.document.documentElement, document.documentElement);
-
-    const { isResizing } = useMailboxContainerContext();
 
     const { initStatus, iframeRootDivRef } = useInitIframeContent({
         messageID: message.data?.ID,
@@ -100,7 +99,7 @@ const MessageBodyIframe = ({
                 scrolling="yes"
                 frameBorder="0"
                 ref={iframeRef}
-                className={clsx([initStatus !== 'start' ? 'w-full' : 'w-0 h-0', isResizing && 'pointer-events-none'])}
+                className={clsx([initStatus !== 'start' ? 'w-full' : 'w-0 h-0', className])}
                 data-testid="content-iframe"
                 data-subject={message.data?.Subject}
                 sandbox={getIframeSandboxAttributes(isPrint)}

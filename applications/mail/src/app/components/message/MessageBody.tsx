@@ -10,6 +10,7 @@ import clsx from '@proton/utils/clsx';
 import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPlaceholder';
 import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
 import useMessageImagesLoadError from 'proton-mail/components/message/hooks/useMessageImagesLoadError';
+import { useMailboxContainerContext } from 'proton-mail/containers/mailbox/MailboxContainerProvider';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnMailTo } from '../../containers/ComposeProvider';
@@ -109,6 +110,7 @@ const MessageBody = ({
         isOutside: false,
         isPhishingAttempt: isAutoFlaggedPhishing(message.data) || isSuspicious(message.data),
     });
+    const { isResizing } = useMailboxContainerContext();
 
     useEffect(() => {
         if (!loadingMode && !decryptingMode && onMessageReady) {
@@ -162,6 +164,7 @@ const MessageBody = ({
                         isPlainText={plain}
                         hasDarkStyles={hasDarkStyles}
                         isPrint={isPrint}
+                        className={isResizing ? 'pointer-events-none' : undefined}
                         message={message}
                         onReady={onIframeReady}
                         onFocus={onFocusIframe}
