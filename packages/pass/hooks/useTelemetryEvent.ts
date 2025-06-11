@@ -48,6 +48,7 @@ const getExtensionCopiedFromLoginBaseDimensions = (
 export const useLoginClipboardTelemetry = EXTENSION_BUILD
     ? (item: Item<'login'>) => {
           const { onTelemetry } = usePassCore();
+          const { urls: itemUrls } = item.content;
 
           return useCallback(
               (extensionField: TelemetryFieldType) => {
@@ -56,10 +57,10 @@ export const useLoginClipboardTelemetry = EXTENSION_BUILD
                       {},
                       getExtensionCopiedFromLoginBaseDimensions(extensionField),
                       undefined,
-                      { extensionField, itemUrls: item.content.urls }
+                      { extensionField, itemUrls }
                   );
               },
-              [onTelemetry]
+              [onTelemetry, itemUrls]
           );
       }
     : noop;
