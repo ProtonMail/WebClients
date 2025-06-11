@@ -1,11 +1,15 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import { VolumeState, VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
+
 import { useSharesStore } from '../../zustand/share/shares.store';
 import { VolumesStateProvider } from '../_volumes/useVolumesState';
+import { ShareType } from './interface';
 import useDefaultShare from './useDefaultShare';
 
 const mockRequest = jest.fn();
 const mockCreateVolume = jest.fn();
+const mockListVolumes = jest.fn();
 const mockGetShare = jest.fn();
 const mockGetShareWithKey = jest.fn();
 
@@ -47,6 +51,7 @@ jest.mock('./useVolume', () => {
     const useVolume = () => {
         return {
             createVolume: mockCreateVolume,
+            listVolumes: mockListVolumes,
         };
     };
     return useVolume;
@@ -66,6 +71,8 @@ describe('useDefaultShare', () => {
 
         // Reset the Zustand store state
         useSharesStore.setState({
+            shares: {},
+            lockedVolumesForRestore: [],
             defaultSharePromise: null,
             loadUserSharesPromise: null,
             defaultPhotosSharePromise: null,
@@ -74,6 +81,10 @@ describe('useDefaultShare', () => {
 
         mockCreateVolume.mockImplementation(async () => {
             return { shareId: defaultShareId };
+        });
+
+        mockListVolumes.mockImplementation(async () => {
+            return { Volumes: [] };
         });
 
         mockRequest.mockImplementation(async () => {
@@ -88,34 +99,26 @@ describe('useDefaultShare', () => {
         hook = result;
     });
 
-    it('creates a volume if existing shares are locked/soft deleted', async () => {
-        await act(async () => {
-            await hook.current.getDefaultShare();
-        });
-
-        expect(mockCreateVolume.mock.calls.length).toBe(1);
-        expect(mockGetShareWithKey).toHaveBeenCalledWith(expect.anything(), defaultShareId);
-    });
-
-    it('creates a volume if no shares exist', async () => {
-        mockRequest.mockImplementation(async () => {
-            return { Shares: [] };
+    it('creates a volume if no main volume exists', async () => {
+        mockListVolumes.mockImplementation(async () => {
+            return { Volumes: [] };
         });
 
         await act(async () => {
             await hook.current.getDefaultShare();
         });
 
-        expect(mockCreateVolume.mock.calls.length).toBe(1);
+        expect(mockCreateVolume).toHaveBeenCalledTimes(1);
         expect(mockGetShareWithKey).toHaveBeenCalledWith(expect.anything(), defaultShareId);
     });
 
-    it("creates a volume if default share doesn't exist", async () => {
-        mockRequest.mockImplementation(async () => {
+    it('creates a volume if main volume is locked', async () => {
+        mockListVolumes.mockImplementation(async () => {
             return {
-                Shares: [
+                Volumes: [
                     {
-                        isDefault: false,
+                        Type: VolumeType.Regular,
+                        State: VolumeState.Locked,
                     },
                 ],
             };
@@ -125,7 +128,61 @@ describe('useDefaultShare', () => {
             await hook.current.getDefaultShare();
         });
 
-        expect(mockCreateVolume.mock.calls.length).toBe(1);
+        expect(mockCreateVolume).toHaveBeenCalledTimes(1);
+        expect(mockGetShareWithKey).toHaveBeenCalledWith(expect.anything(), defaultShareId);
+    });
+
+    it('does not create a volume if main volume exists and is not locked', async () => {
+        mockListVolumes.mockImplementation(async () => {
+            return {
+                Volumes: [
+                    {
+                        Type: VolumeType.Regular,
+                        State: VolumeState.Active,
+                    },
+                ],
+            };
+        });
+
+        mockRequest.mockImplementation(async () => {
+            return {
+                Shares: [
+                    {
+                        Type: ShareType.default,
+                        ShareID: 'existing-share',
+                    },
+                ],
+            };
+        });
+
+        await act(async () => {
+            await hook.current.getDefaultShare();
+        });
+
+        expect(mockCreateVolume).not.toHaveBeenCalled();
+        expect(mockGetShareWithKey).toHaveBeenCalledWith(expect.anything(), 'existing-share');
+    });
+
+    it('prevents concurrent calls from calling createVolume twice', async () => {
+        let createVolumeCallCount = 0;
+        mockCreateVolume.mockImplementation(async () => {
+            createVolumeCallCount++;
+            await new Promise((resolve) => setTimeout(resolve, 100));
+            return { shareId: defaultShareId };
+        });
+
+        mockListVolumes.mockImplementation(async () => {
+            return { Volumes: [] };
+        });
+
+        let promises: Promise<any>[];
+        await act(async () => {
+            promises = [hook.current.getDefaultShare(), hook.current.getDefaultShare()];
+            await Promise.all(promises);
+        });
+
+        expect(createVolumeCallCount).toBe(1);
+        expect(mockGetShareWithKey).toHaveBeenCalledTimes(2);
         expect(mockGetShareWithKey).toHaveBeenCalledWith(expect.anything(), defaultShareId);
     });
 

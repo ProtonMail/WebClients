@@ -4,6 +4,7 @@ import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS, getMatchingSigningKey } from '@proton/crypto';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
@@ -99,13 +100,20 @@ export async function decryptLockedSharePassphrase(
 }
 
 export async function prepareVolumeForRestore(
-    defaultShare: ShareWithKey,
+    defaultShares: ShareWithKey[],
     devices: (ShareWithKey & { deviceName?: string })[],
     photos: ShareWithKey[],
     addressPrivateKeys: PrivateKeyReference[]
 ): Promise<LockedVolumeForRestore | undefined> {
-    const preparedDefaultShare = await prepareShareForRestore(defaultShare, addressPrivateKeys);
-    if (!preparedDefaultShare) {
+    const preparedDefaultShares = await Promise.all(
+        defaultShares.map(async (defaultShare) => {
+            const preparedShare = await prepareShareForRestore(defaultShare, addressPrivateKeys);
+            return preparedShare;
+        })
+    );
+
+    const validPreparedDefaultShares = preparedDefaultShares.filter(isTruthy);
+    if (!validPreparedDefaultShares.length) {
         return undefined;
     }
 
@@ -128,8 +136,8 @@ export async function prepareVolumeForRestore(
         })
     );
     return {
-        lockedVolumeId: defaultShare.volumeId,
-        defaultShare: preparedDefaultShare,
+        lockedVolumeId: defaultShares[0].volumeId,
+        defaultShares: validPreparedDefaultShares,
         devices: preparedDevices.filter(isTruthy),
         photos: preparedPhotos.filter(isTruthy),
     };
@@ -140,6 +148,7 @@ async function prepareShareForRestore(
     addressPrivateKeys: PrivateKeyReference[]
 ): Promise<
     | (LockedShareForRestore & {
+          isPhotosVolume: boolean;
           shareSessionKey: LockedDeviceForRestore['shareSessionKey'];
           shareDecryptedPassphrase: LockedDeviceForRestore['shareDecryptedPassphrase'];
       })
@@ -161,6 +170,7 @@ async function prepareShareForRestore(
         }
 
         return {
+            isPhotosVolume: share.volumeType === VolumeType.Photos,
             shareId: share.shareId,
             shareSessionKey: result.shareSessionKey,
             shareDecryptedPassphrase: result.shareDecryptedPassphrase,
