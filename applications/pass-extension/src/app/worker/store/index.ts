@@ -182,7 +182,14 @@ export const options: RootSagaOptions = {
             : WorkerMessageBroker.buffer.push(message);
     },
 
-    onSettingsUpdated: withContext((ctx, update) => ctx.service.settings.sync(update)),
+    onSettingsUpdated: withContext(async (ctx, update) => {
+        /** Toggle autofill listener based on setting (runs on app boot and when user changes setting)
+         * This ensures we only listen for basic auth opportunities when the feature is enabled */
+        if (update.autofill.basicAuth) ctx.service.autofill.basicAuth.listen();
+        else ctx.service.autofill.basicAuth.destroy();
+
+        await ctx.service.settings.sync(update);
+    }),
 };
 
 /** Redux Saga emits a `@@redux-saga/INIT` action when running the middleware.
