@@ -4,7 +4,6 @@ import type { Draft } from 'immer';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
@@ -278,22 +277,30 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
             unreadFilter
         );
 
-        // Add elements in the bypass array if they are not already present
-        const totalAdjustment = action.payload.markAsStatus === MARK_AS_STATUS.READ ? 1 : -1;
-        let elementsAddedToBypass = 0;
-
         elementsToBypass.forEach((element) => {
             const isMessage = testIsMessage(element);
             const id = (isMessage && conversationMode ? (element as Message).ConversationID : element.ID) || '';
             if (!state.bypassFilter.includes(id)) {
                 state.bypassFilter.push(id);
-                elementsAddedToBypass++;
             }
         });
 
-        // Update total based on the number of elements actually added to bypass
-        if (elementsAddedToBypass > 0) {
-            state.total[contextFilter] = (state.total[contextFilter] || 0) + totalAdjustment * elementsAddedToBypass;
+        // When some element bypass the filter in the current context, we need to update total in the "opposite" context
+        const oppositeFilter = getElementContextIdentifier({
+            labelID: params.labelID,
+            conversationMode: params.conversationMode,
+            filter: { Unread: unreadFilter ? 0 : 1 },
+            sort: params.sort,
+            from: params.search.from,
+            to: params.search.to,
+            address: params.search.address,
+            begin: params.search.begin,
+            end: params.search.end,
+            keyword: params.search.keyword,
+        });
+
+        if (state.total[oppositeFilter]) {
+            state.total[oppositeFilter] = state.total[oppositeFilter] + elementsToBypass.length;
         }
 
         // If we are not in a case where we need to bypass filter,
@@ -449,6 +456,42 @@ export const setParams = (
 ) => {
     const { total, ...params } = action.payload;
 
+    const prevContextFilter = getElementContextIdentifier({
+        labelID: state.params.labelID,
+        conversationMode: state.params.conversationMode,
+        filter: state.params.filter,
+        sort: state.params.sort,
+        from: state.params.search.from,
+        to: state.params.search.to,
+        address: state.params.search.address,
+        begin: state.params.search.begin,
+        end: state.params.search.end,
+        keyword: state.params.search.keyword,
+    });
+
+    const nextContextFilter = getElementContextIdentifier({
+        labelID: params.labelID ?? state.params.labelID,
+        conversationMode: params.conversationMode ?? state.params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search?.from,
+        to: params.search?.to,
+        address: params.search?.address,
+        begin: params.search?.begin,
+        end: params.search?.end,
+        keyword: params.search?.keyword,
+    });
+
+    const bypassFilterLength = state.bypassFilter.length;
+    if (
+        prevContextFilter !== nextContextFilter &&
+        state.total[prevContextFilter] !== undefined &&
+        bypassFilterLength > 0 &&
+        state.total[prevContextFilter] >= bypassFilterLength
+    ) {
+        state.total[prevContextFilter] = state.total[prevContextFilter] - bypassFilterLength;
+    }
+
     // Some items can bypass filter when a filter is active (e.g. Unread filter, and opening emails, we want them to stay in the list)
     // If sort or filter is being updated, we can reset bypass filter value from the state, otherwise it could create
     // false placeholders when switching filters.
@@ -461,20 +504,7 @@ export const setParams = (
         ...params,
     };
     if (total !== undefined) {
-        const params = state.params;
-        const contextFilter = getElementContextIdentifier({
-            labelID: params.labelID,
-            conversationMode: params.conversationMode,
-            filter: params.filter,
-            sort: params.sort,
-            from: params.search?.from,
-            to: params.search?.to,
-            address: params.search?.address,
-            begin: params.search?.begin,
-            end: params.search?.end,
-            keyword: params.search?.keyword,
-        });
-        state.total[contextFilter] = total;
+        state.total[nextContextFilter] = total;
         state.retry = newRetry(state.retry, state.params, undefined);
     }
 };
