@@ -1829,10 +1829,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
-      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -2671,9 +2667,6 @@
       "Create new vault": [
         "Luo uusi holvi"
       ],
-      "Created": [
-        "Luotu"
-      ],
       "Created at": [
         "Luotu"
       ],
@@ -3145,10 +3138,10 @@
       "Priority:": [
         "Prioriteetti:"
       ],
-      "Private Key": [
+      "Private key": [
         "Yksityinen avain"
       ],
-      "Private key": [
+      "Private Key": [
         "Yksityinen avain"
       ],
       "Program Name": [
