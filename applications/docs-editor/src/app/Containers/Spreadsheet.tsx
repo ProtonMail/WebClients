@@ -4,6 +4,8 @@ import type { ForwardedRef } from 'react'
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import type { SheetData } from '@rowsncolumns/spreadsheet-state'
 import {
+  CellFormatEditor,
+  CellFormatEditorDialog,
   ConditionalFormatDialog,
   ConditionalFormatEditor,
   DataValidationEditor,
@@ -258,6 +260,9 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     onUpdateConditionalFormattingRule,
     onDeleteConditionalFormattingRule,
     onPreviewConditionalFormattingRule,
+
+    onRequestFormatCells,
+    getEffectiveValue,
 
     // Create a history stack
     createHistory,
@@ -791,6 +796,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
           licenseKey={process.env.DOCS_SHEETS_KEY}
           onRequestSearch={onRequestSearch}
           onRequestDataValidation={onRequestDataValidation}
+          onRequestFormatCells={onRequestFormatCells}
           users={users}
           userId={userName}
           getChartComponent={(props) => (
@@ -884,6 +890,19 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
             onUpdateRule={onUpdateDataValidationRule}
           />
         </DataValidationEditorDialog>
+        <CellFormatEditorDialog>
+          <CellFormatEditor
+            sheetId={activeSheetId}
+            activeCell={activeCell}
+            selections={selections}
+            onChangeFormatting={onChangeFormatting}
+            cellFormat={currentCellFormat}
+            getEffectiveValue={getEffectiveValue}
+            onMergeCells={onMergeCells}
+            theme={theme}
+            onChangeBorder={onChangeBorder}
+          />
+        </CellFormatEditorDialog>
       </div>
     </>
   )
