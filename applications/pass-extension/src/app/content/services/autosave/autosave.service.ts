@@ -1,5 +1,6 @@
+import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { NotificationAction } from 'proton-pass-extension/app/content/types';
+import type { AutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.abstract';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import {
     commit,
@@ -16,21 +17,19 @@ import { urlEq } from '@proton/pass/utils/url/utils';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
-export const createAutosaveService = () => {
+export const createAutosaveService = (): AutosaveService => {
     /** Checks the user's settings and prompts for autosave accordingly.
      * Returns wether the autosave prompt was shown or not. */
-    const promptAutoSave: (submission: AutosaveFormEntry) => boolean = withContext(
-        (ctx, { autosave, data, submittedAt }) => {
-            if (!autosave.shouldPrompt || !ctx?.getFeatures().Autosave) return false;
+    const prompt: (submission: AutosaveFormEntry) => boolean = withContext((ctx, { autosave, data, submittedAt }) => {
+        if (!autosave.shouldPrompt || !ctx?.getFeatures().Autosave) return false;
 
-            ctx.service.iframe.attachNotification()?.open({
-                action: NotificationAction.AUTOSAVE,
-                data: { ...autosave.data, ...data, submittedAt },
-            });
+        ctx.service.inline.notification.open({
+            action: NotificationAction.AUTOSAVE,
+            data: { ...autosave.data, ...data, submittedAt },
+        });
 
-            return true;
-        }
-    );
+        return true;
+    });
 
     /** Autosave reconciliation is responsible for syncing the service worker state
      * with our local detection in order to take the appropriate action for auto-save. */
@@ -55,7 +54,7 @@ export const createAutosaveService = () => {
              * data for `FORM_TYPE_PRESENT` in case reconciliation happens
              * as a result of a form submission. */
             const forms = ctx?.service.formManager.getTrackedForms() ?? [];
-            const form = forms.find(({ id }) => id === formId);
+            const form = forms.find((form) => form.formId === formId);
             const typedForms = forms.filter(({ formType, detached }) => formType === type && !detached);
             const submissionTypeMatch = typedForms.length > 0;
             const loading = typedForms.some(({ tracker }) => tracker?.getState().processing);
@@ -76,10 +75,10 @@ export const createAutosaveService = () => {
              * case : we may be dealing with a failed login */
             if (shouldCommit) {
                 const res = await commit('AUTOSAVE::FORM_REMOVED');
-                return res.type === 'success' && res.submission ? promptAutoSave(res.submission) : false;
+                return res.type === 'success' && res.submission ? prompt(res.submission) : false;
             }
 
-            if (isFormEntryPromptable(submission) && !submissionTypeMatch) return promptAutoSave(submission);
+            if (isFormEntryPromptable(submission) && !submissionTypeMatch) return prompt(submission);
 
             /* Stash the form submission if it meets the following conditions:
              * - The form type is still detected on the current page.
@@ -90,7 +89,7 @@ export const createAutosaveService = () => {
             if (submissionTypeMatch) {
                 if (valid || !data.userIdentifier) {
                     /** If the exact form is still present : flag it as not submitted */
-                    if (form) form.tracker?.sync({ submit: false, partial: true, reset: true }).catch(noop);
+                    if (form) form.tracker?.processForm({ submit: false, partial: true, reset: true }).catch(noop);
                     else {
                         logger.debug(`[Autosave] Stashing for type match [type:${type}]`);
                         typedForms.forEach(({ tracker }) => tracker?.reset());
@@ -104,7 +103,5 @@ export const createAutosaveService = () => {
         250
     );
 
-    return { promptAutoSave, reconciliate };
+    return { prompt, reconciliate };
 };
-
-export type AutosaveService = ReturnType<typeof createAutosaveService>;

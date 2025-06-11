@@ -12,8 +12,7 @@
  * service worker through periodic pings for long-running tabs. */
 import { createClientController } from 'proton-pass-extension/app/content/client.controller';
 import { registerCustomElements } from 'proton-pass-extension/app/content/injections/custom-elements/register';
-import type { ContentScriptClientService } from 'proton-pass-extension/app/content/services/client';
-import { createContentScriptClient } from 'proton-pass-extension/app/content/services/client';
+import { createContentScriptClient as clientFactory } from 'proton-pass-extension/app/content/services/client';
 import 'proton-pass-extension/lib/polyfills/shim';
 
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
@@ -22,16 +21,9 @@ import noop from '@proton/utils/noop';
 
 (async () => {
     const elements = await registerCustomElements();
+    const mainFrame = isMainFrame();
+    const scriptId = uniqueId(16);
 
-    const controller = createClientController<ContentScriptClientService>({
-        clientFactory: (controller) =>
-            createContentScriptClient({
-                controller,
-                scriptId: uniqueId(16),
-                mainFrame: isMainFrame(),
-                elements,
-            }),
-    });
-
-    controller.init();
+    const controller = createClientController({ elements, mainFrame, scriptId, clientFactory });
+    return controller.init();
 })().catch(noop);
