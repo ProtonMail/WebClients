@@ -107,6 +107,7 @@ export function* hydrate(
             if (autofill.login === undefined) autofill.login = autofillEnabled;
             if (autofill.identity === undefined) autofill.identity = autofillEnabled;
             if (autofill.twofa === undefined) autofill.twofa = autofill.login;
+            if (autofill.cc === undefined) autofill.cc = userState.features.PassCreditCardWebAutofill ?? false;
         }
 
         /** Activate offline mode by default for paid users who
