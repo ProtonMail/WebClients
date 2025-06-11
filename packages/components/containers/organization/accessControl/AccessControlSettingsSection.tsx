@@ -22,6 +22,7 @@ import {
     CONTACTS_APP_NAME,
     DOCS_APP_NAME,
     DRIVE_APP_NAME,
+    LUMO_APP_NAME,
     MAIL_APP_NAME,
     PASS_APP_NAME,
     VPN_APP_NAME,
@@ -195,6 +196,14 @@ const AccessControlSettingsSection = () => {
                     logo={<Logo appName={APPS.PROTONWALLET} variant="glyph-only" size={8} />}
                     targetProducts={[Product.Wallet]}
                     showSSOBadge={!appSupportsSSO(APPS.PROTONWALLET) && hasSsoConfig}
+                />
+
+                <AccessControlItem
+                    title={LUMO_APP_NAME}
+                    description=""
+                    logo={<Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={8} />}
+                    targetProducts={[Product.Lumo]}
+                    showSSOBadge={!appSupportsSSO(APPS.PROTONLUMO) && hasSsoConfig}
                 />
             </div>
         </SettingsSectionWide>
