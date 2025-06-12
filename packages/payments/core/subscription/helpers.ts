@@ -103,6 +103,8 @@ export const getLumoAddonNameByPlan = (planName: PLANS) => {
             return ADDON_NAMES.LUMO_MAIL;
         case PLANS.DRIVE:
             return ADDON_NAMES.LUMO_DRIVE;
+        // case PLANS.DRIVE_1TB:
+        //     return ADDON_NAMES.LUMO_DRIVE_1TB;
         case PLANS.PASS:
             return ADDON_NAMES.LUMO_PASS;
         case PLANS.PASS_FAMILY:
@@ -172,6 +174,7 @@ const {
     MAIL_PRO,
     MAIL_BUSINESS,
     DRIVE,
+    DRIVE_1TB,
     DRIVE_PRO,
     DRIVE_BUSINESS,
     PASS,
@@ -259,6 +262,7 @@ export const hasMail = (subscription: MaybeFreeSubscription) => hasSomePlan(subs
 export const hasMailPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL_PRO);
 export const hasMailBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL_BUSINESS);
 export const hasDrive = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE);
+export const hasDrive1TB = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_1TB);
 export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_PRO);
 export const hasDriveBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_BUSINESS);
 export const hasPass = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS);
@@ -386,6 +390,7 @@ export const getIsConsumerPassPlan = (planName: PLANS | ADDON_NAMES | undefined)
 const getCanAccessDuoPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.MAIL,
     PLANS.DRIVE,
+    PLANS.DRIVE_1TB,
     PLANS.PASS,
     PLANS.PASS_FAMILY,
     PLANS.VPN,
