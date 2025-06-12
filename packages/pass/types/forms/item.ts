@@ -11,8 +11,14 @@ import type { ItemCustomType } from '@proton/pass/types/protobuf';
 import type { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
 import type { CustomSectionGroupValues, ExtraFieldGroupValues, UrlGroupValues } from './fields';
 
-export type BaseItemValues = { name: string; note: string; shareId: string } & FileAttachmentValues;
-export type NoteFormValues = BaseItemValues & ExtraFieldGroupValues;
+export type BaseItemValues = {
+    name: string;
+    note: string;
+    shareId: string;
+} & FileAttachmentValues &
+    ExtraFieldGroupValues;
+
+export type NoteFormValues = BaseItemValues;
 
 export type LoginItemFormValues = BaseItemValues & {
     itemEmail: string;
@@ -23,8 +29,7 @@ export type LoginItemFormValues = BaseItemValues & {
     withAlias: boolean;
     withUsername: boolean;
 } & AliasFormValues &
-    UrlGroupValues &
-    ExtraFieldGroupValues;
+    UrlGroupValues;
 
 export type AliasFormValues = {
     aliasPrefix: string;
@@ -36,12 +41,12 @@ export type DomainFormValues = { domain: string };
 
 export type AliasContactValues = { name: string };
 export type AliasCreateContactValues = { email: string };
-export type NewAliasFormValues = BaseItemValues & AliasFormValues & ExtraFieldGroupValues;
+export type NewAliasFormValues = BaseItemValues & AliasFormValues;
 export type EditAliasFormValues = BaseItemValues &
     Pick<AliasFormValues, 'mailboxes'> & {
         displayName: string;
         slNote: string;
-    } & ExtraFieldGroupValues;
+    };
 
 export type IdentityValues = ItemContent<'identity'>;
 export type IdentityItemFormValues = { shareId: string } & BaseItemValues & IdentityValues;
@@ -58,11 +63,10 @@ export type CreditCardItemFormValues = BaseItemValues & {
     verificationNumber: string;
     pin: string;
     note: string;
-} & ExtraFieldGroupValues;
+};
 
 export type CustomItemFormValues<T extends ItemCustomType = ItemCustomType> = Extract<
     BaseItemValues &
-        ExtraFieldGroupValues &
         CustomSectionGroupValues &
         (
             | { type: 'wifi'; password: string; security: WifiSecurity; ssid: string }
