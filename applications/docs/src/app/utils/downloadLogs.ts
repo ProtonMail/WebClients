@@ -21,9 +21,9 @@ export const getLogsAsJSON = async (
     logs.yDocJSON = yDocJSON
   }
 
-  // Get Sheets JSON if it's a sheet document
+  // Get latest spreadsheet state to log JSON if it's a spreadsheet document
   if (documentType === 'sheet') {
-    const sheetsJSON = await editorController.getSheetsJSON()
+    const sheetsJSON = await editorController.getLatestSpreadsheetStateToLogJSON()
     if (sheetsJSON) {
       logs.sheetsJSON = sheetsJSON
     }
