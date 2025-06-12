@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import type { HotkeyTuple } from '@proton/components';
 import { useEventManager, useHotkeys } from '@proton/components';
 import { useFolders } from '@proton/mail';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { getFolderName } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isVisibleOnScreen } from '@proton/shared/lib/helpers/dom';
@@ -21,7 +22,6 @@ import {
 } from 'proton-mail/components/message/header/constants';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { isStarred } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';

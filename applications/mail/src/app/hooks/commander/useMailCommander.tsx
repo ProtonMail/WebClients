@@ -4,13 +4,13 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { type CommanderItemInterface } from '@proton/components';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
-import { MESSAGE_ACTIONS } from 'proton-mail/constants';
 import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
 
 import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';

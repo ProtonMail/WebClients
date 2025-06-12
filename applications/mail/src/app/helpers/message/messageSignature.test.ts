@@ -1,9 +1,9 @@
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE as PM_SIGNATURE_ENUM } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { message } from '@proton/shared/lib/sanitize';
 
-import { MESSAGE_ACTIONS } from '../../constants';
 import {
     CLASSNAME_SIGNATURE_CONTAINER,
     CLASSNAME_SIGNATURE_EMPTY,
