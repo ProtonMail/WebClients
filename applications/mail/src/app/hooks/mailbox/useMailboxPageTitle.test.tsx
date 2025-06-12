@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { renderHook } from '@testing-library/react';
 
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { DEFAULT_MAILSETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
@@ -13,7 +13,7 @@ const EMAIL = 'testing@example.com';
 const UNREAD_COUNT = 10;
 const LABEL_NAME = 'Inbox';
 
-jest.mock('@proton/mail/labels/hooks', () => ({
+jest.mock('@proton/mail/store/labels/hooks', () => ({
     useLabels: jest.fn().mockReturnValue([]),
     useFolders: jest.fn().mockReturnValue([]),
 }));
@@ -22,15 +22,15 @@ jest.mock('@proton/account/user/hooks', () => ({
     useUser: jest.fn().mockReturnValue([{ Email: EMAIL }]),
 }));
 
-jest.mock('@proton/mail/counts/messageCounts', () => ({
+jest.mock('@proton/mail/store/counts/messageCounts', () => ({
     useMessageCounts: jest.fn().mockReturnValue([[{ LabelID: '0', Unread: UNREAD_COUNT, Total: 11 }]]),
 }));
 
-jest.mock('@proton/mail/counts/conversationCounts', () => ({
+jest.mock('@proton/mail/store/counts/conversationCounts', () => ({
     useConversationCounts: jest.fn().mockReturnValue([[{ LabelID: '0', Unread: UNREAD_COUNT, Total: 11 }]]),
 }));
 
-jest.mock('@proton/mail/mailSettings/hooks');
+jest.mock('@proton/mail/store/mailSettings/hooks');
 const mockUseMailSettings = useMailSettings as jest.Mock;
 
 const wrapper = ({ children }: { children: ReactNode }) => <MemoryRouter>{children}</MemoryRouter>;

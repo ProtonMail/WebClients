@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 const compareContactEmailByName = (a: ContactEmail, b: ContactEmail) => {

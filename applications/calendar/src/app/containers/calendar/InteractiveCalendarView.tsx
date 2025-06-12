@@ -38,8 +38,8 @@ import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMa
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { type SessionKey, serverTime } from '@proton/crypto';
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
-import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
     attendeeDeleteSingleEdit,
     updateAttendeePartstat,

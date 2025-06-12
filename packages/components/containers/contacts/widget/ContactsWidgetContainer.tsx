@@ -10,7 +10,7 @@ import SearchInput from '@proton/components/components/input/SearchInput';
 import type { ContactExportingProps } from '@proton/components/containers/contacts/modals/ContactExportingModal';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import type { Recipient } from '@proton/shared/lib/interfaces';

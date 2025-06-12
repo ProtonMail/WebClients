@@ -7,7 +7,7 @@ import { Banner, Button, Href, InlineLinkButton } from '@proton/atoms';
 import { Icon, useApi, useModalState, useNotifications } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
-import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';

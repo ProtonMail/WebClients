@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKeysVcardHelper';
 import { MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';

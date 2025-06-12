@@ -14,7 +14,7 @@ import UpsellModal from '@proton/components/components/upsell/UpsellModal/Upsell
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { useIncomingAddressForwardings, useOutgoingAddressForwardings } from '@proton/mail/forwarding/hooks';
+import { useIncomingAddressForwardings, useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
