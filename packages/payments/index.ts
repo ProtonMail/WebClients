@@ -342,6 +342,7 @@ export {
     hasCancellablePlan,
     hasDeprecatedVPN,
     hasDrive,
+    hasDrive1TB,
     hasDriveBusiness,
     hasDrivePro,
     hasDuo,
