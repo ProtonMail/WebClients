@@ -152,10 +152,10 @@
       "Create": [
         "Crear"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -1420,7 +1420,7 @@
         "Se desactivó el bloqueo automático."
       ],
       "Autofill HTTP basic auth dialogs with saved credentials.": [
-        "Completar automáticamente diálogos de autenticación básica HTTP con credenciales guardadas."
+        "Complete automáticamente diálogos de autenticación básicos HTTP con credenciales guardadas."
       ],
       "automatically": [
         "automáticamente"
@@ -1793,8 +1793,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2577,7 +2576,7 @@
         "Nombre del banco"
       ],
       "Basic Auth autofill": [
-        "Completado automático de autenticación básico"
+        "Completado automático básico de autenticaciones"
       ],
       "Biometrics": [
         "Datos biométricos"
@@ -3107,10 +3106,10 @@
       "Priority:": [
         "Prioridad:"
       ],
-      "Private Key": [
+      "Private key": [
         "Clave privada"
       ],
-      "Private key": [
+      "Private Key": [
         "Clave privada"
       ],
       "Product": [
@@ -3211,6 +3210,9 @@
       ],
       "Share": [
         "Compartir"
+      ],
+      "Share ID": [
+        "Compartir el ID"
       ],
       "Shared": [
         "Compartido"
