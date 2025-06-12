@@ -12,7 +12,7 @@ import {
     isLabelIDNewsletterSubscription,
     isStringHumanLabelID,
     isValidCustomViewLabel,
-} from '@proton/mail/labels/helpers';
+} from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';

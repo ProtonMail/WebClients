@@ -5,7 +5,7 @@ import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getColorName } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAX_FOLDER_NESTING_LEVEL } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';

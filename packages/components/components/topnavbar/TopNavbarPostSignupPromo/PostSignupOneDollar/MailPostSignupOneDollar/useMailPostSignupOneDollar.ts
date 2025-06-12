@@ -4,7 +4,7 @@ import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscriptionEnd';
 import { FeatureCode, useFeature } from '@proton/features';
-import { useMessageCounts } from '@proton/mail/counts';
+import { useMessageCounts } from '@proton/mail/store/counts';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';

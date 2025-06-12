@@ -1,5 +1,5 @@
 import { useFolders } from '@proton/mail';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 

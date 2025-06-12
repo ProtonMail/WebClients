@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import useApi from '@proton/components/hooks/useApi';
-import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { sendMessageDirect } from '@proton/shared/lib/api/messages';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { MIME_TYPES } from '@proton/shared/lib/constants';

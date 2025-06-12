@@ -36,7 +36,7 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { useLoading } from '@proton/hooks';
 import { useAssistant } from '@proton/llm/lib';
-import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';

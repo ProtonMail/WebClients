@@ -12,7 +12,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useHandler from '@proton/components/hooks/useHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import {
     addVCardProperty,
     getSortedProperties,

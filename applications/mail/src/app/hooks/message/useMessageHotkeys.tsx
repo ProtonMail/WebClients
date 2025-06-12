@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import type { HotkeyTuple } from '@proton/components';
 import { useEventManager, useHotkeys } from '@proton/components';
 import { useFolders } from '@proton/mail';
-import { getFolderName } from '@proton/mail/labels/helpers';
+import { getFolderName } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isVisibleOnScreen } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

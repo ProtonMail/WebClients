@@ -14,7 +14,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useContact } from '@proton/mail/contacts/contactHooks';
+import { useContact } from '@proton/mail/store/contacts/contactHooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerifications';
 import type { Key } from '@proton/shared/lib/interfaces';

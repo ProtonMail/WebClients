@@ -1,5 +1,5 @@
 import { ErrorBoundary, useActiveBreakpoint } from '@proton/components';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import ConversationView from 'proton-mail/components/conversation/ConversationView';
 import MessageOnlyView from 'proton-mail/components/message/MessageOnlyView';

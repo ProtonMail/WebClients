@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import type { Filter } from '@proton/components/containers/filters/interfaces';
-import { getStandardFolders } from '@proton/mail/labels/helpers';
-import { FILTER_STATUS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { getStandardFolders } from '@proton/mail/store/labels/helpers';
+import { MAILBOX_LABEL_IDS, FILTER_STATUS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 import type { Folder, UserModel } from '@proton/shared/lib/interfaces';
 import type {

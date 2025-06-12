@@ -14,8 +14,8 @@ import SettingsSection from '@proton/components/containers/account/SettingsSecti
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { mailSettingsActions } from '@proton/mail/mailSettings';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateAttachPublicKey, updatePGPScheme, updateSign } from '@proton/shared/lib/api/mailSettings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

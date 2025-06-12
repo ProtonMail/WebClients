@@ -17,7 +17,7 @@ import {
     useModalState,
 } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
-import { getFolderName } from '@proton/mail/labels/helpers';
+import { getFolderName } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';

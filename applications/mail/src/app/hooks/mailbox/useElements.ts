@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { useConversationCounts, useGetConversationCounts } from '@proton/mail/counts/conversationCounts';
-import { useGetMessageCounts, useMessageCounts } from '@proton/mail/counts/messageCounts';
-import { getCustomViewFromRoute, isValidCustomViewLabel } from '@proton/mail/labels/helpers';
-import { useFolders, useLabels } from '@proton/mail/labels/hooks';
+import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCounts';
+import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCounts';
+import { getCustomViewFromRoute, isValidCustomViewLabel } from '@proton/mail/store/labels/helpers';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';

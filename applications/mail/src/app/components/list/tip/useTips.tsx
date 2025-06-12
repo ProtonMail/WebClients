@@ -11,7 +11,7 @@ import { Href } from '@proton/atoms';
 import { ErrorBoundary, PassAliasesProvider } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useFolders, useLabels } from '@proton/mail';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import { getIsB2BAudienceFromPlan } from '@proton/payments';

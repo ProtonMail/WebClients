@@ -13,7 +13,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { useContacts } from '@proton/mail/contacts/hooks';
+import { useContacts } from '@proton/mail/store/contacts/hooks';
 import { resignAllContacts } from '@proton/shared/lib/contacts/globalOperations';
 
 const ContactResignExecutionModal = ({ ...rest }: ModalProps) => {

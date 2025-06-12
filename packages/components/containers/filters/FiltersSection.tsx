@@ -11,7 +11,7 @@ import SettingsSection from '@proton/components/containers/account/SettingsSecti
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useFilters } from '@proton/mail/filters/hooks';
+import { useFilters } from '@proton/mail/store/filters/hooks';
 import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

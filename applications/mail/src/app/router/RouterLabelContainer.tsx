@@ -3,7 +3,7 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 
 import { Commander, useActiveBreakpoint, useModalState } from '@proton/components';
 import { useFolders } from '@proton/mail/index';
-import { getFolderName } from '@proton/mail/labels/helpers';
+import { getFolderName } from '@proton/mail/store/labels/helpers';
 import clsx from '@proton/utils/clsx';
 
 import MailboxList from 'proton-mail/components/list/MailboxList';
