@@ -184,6 +184,7 @@ export { default as InboxDesktopLogo } from './components/logo/InboxDesktopLogo'
 export { default as Logo } from './components/logo/Logo';
 export type { LogoProps, LogoVariant } from './components/logo/Logo';
 export { default as MailLogo } from './components/logo/MailLogo';
+export { default as LumoLogo } from './components/logo/LumoLogo';
 export { default as MainLogo } from './components/logo/MainLogo';
 export { default as PassForBusinessLogo } from './components/logo/PassForBusinessLogo';
 export { default as PassLogo } from './components/logo/PassLogo';
