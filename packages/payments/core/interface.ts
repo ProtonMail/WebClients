@@ -178,6 +178,7 @@ export type PaymentMethodCardDetails = {
     Details: SavedCardDetails;
     Autopay: Autopay;
     External?: MethodStorage;
+    IsDefault?: boolean;
 };
 
 export type PaymentMethodCardDetailsInternal = {
@@ -196,6 +197,7 @@ export type PaymentMethodPaypal = {
     Type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
     Details: PayPalDetails;
     External?: MethodStorage;
+    IsDefault?: boolean;
 };
 
 export type PaymentMethodPaypalInternal = {
@@ -221,6 +223,7 @@ export type PaymentMethodSepa = {
     Autopay: Autopay;
     External?: MethodStorage;
     Details: SepaDetails;
+    IsDefault?: boolean;
 };
 
 export type SavedPaymentMethod = PaymentMethodPaypal | PaymentMethodCardDetails | PaymentMethodSepa;
@@ -241,6 +244,7 @@ export interface AvailablePaymentMethod {
     readonly isExpired?: boolean; // defined only for existing credit cards
     readonly value: PaymentMethodType;
     readonly isSaved: boolean;
+    readonly isDefault: boolean;
 }
 
 /**
