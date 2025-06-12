@@ -2,7 +2,8 @@ import type { RefObject } from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { MESSAGE_IFRAME_ROOT_ID } from '@proton/mail-renderer/constants';
+
+import { MESSAGE_IFRAME_ROOT_ID } from '../constants';
 
 const ALLOWED_PX_INTERVAL = 10;
 
