@@ -196,11 +196,10 @@ describe('PaymentMethodsTable', () => {
         expect(container).toHaveTextContent('Visa');
         expect(container).toHaveTextContent('Mastercard');
 
-        // sorted by Order
         expect(TableBodyMock.mock.calls[0][0].children.map((it: any) => it.key)).toEqual([
-            'id-paypal',
             'id-visa',
             'id-mastercard',
+            'id-paypal',
         ]);
     });
 

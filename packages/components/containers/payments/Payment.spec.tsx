@@ -156,6 +156,7 @@ describe('Payment', () => {
                         bankAccount: {} as any,
                     } as any
                 }
+                savedPaymentMethods={[]}
             />
         );
     });
@@ -191,6 +192,7 @@ describe('Payment', () => {
                         bankAccount: {} as any,
                     } as any
                 }
+                savedPaymentMethods={[]}
             />
         );
 
@@ -266,6 +268,7 @@ describe('Payment', () => {
                         bankAccount: {} as any,
                     } as any
                 }
+                savedPaymentMethods={[]}
             />
         );
 
@@ -336,6 +339,7 @@ describe('Payment', () => {
                         bankAccount: {} as any,
                     } as any
                 }
+                savedPaymentMethods={[]}
             />
         );
 
