@@ -81,22 +81,6 @@ export const getPublicTheme = (
         };
     }
 
-    if (toApp === APPS.PROTONLUMO) {
-        return {
-            ...defaultValue,
-            type: ThemeTypes.Storefront,
-            dark: true,
-            background: 'lumo',
-            intent: toApp,
-            card: {
-                className: viewportWidth.xsmall ? 'ui-prominent' : defaultValue.card.className,
-            },
-            layout: {
-                className: 'ui-prominent',
-            },
-        };
-    }
-
     return {
         ...defaultValue,
         intent: toApp,
