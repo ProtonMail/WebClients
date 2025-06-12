@@ -34,6 +34,7 @@ export const getUnreadTitle = (
     if (mailSettings.ViewMode === VIEW_MODE.GROUP) {
         return getNUnreadConversationsText(unreadCount);
     }
+
     return getNUnreadMessagesText(unreadCount);
 };
 
