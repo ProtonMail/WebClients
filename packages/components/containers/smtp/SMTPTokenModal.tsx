@@ -139,6 +139,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         shape="solid"
                         value={emailAddress}
                         className="smtp-token-copy relative shrink-0 ml-2"
+                        tooltipText={c('Action').t`Copy SMTP username`}
                         onCopy={handleCopyEmail}
                     />
                 </div>
@@ -155,6 +156,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         shape="solid"
                         value={token}
                         className="smtp-token-copy relative shrink-0 ml-2"
+                        tooltipText={c('Action').t`Copy SMTP token`}
                         onCopy={handleCopyToken}
                     />
                 </div>
@@ -173,6 +175,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         shape="solid"
                         value={SMTP_SERVER}
                         className="smtp-token-copy relative shrink-0 ml-2"
+                        tooltipText={c('Action').t`Copy SMTP server`}
                         onCopy={handleCopyServer}
                     />
                 </div>
@@ -189,6 +192,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         shape="solid"
                         value={SMTP_PORT}
                         className="smtp-token-copy relative shrink-0 ml-2"
+                        tooltipText={c('Action').t`Copy SMTP port`}
                         onCopy={handleCopyPort}
                     />
                 </div>
