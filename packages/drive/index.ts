@@ -25,7 +25,19 @@ export type {
     MetricEvent,
     Thumbnail,
 } from '@proton/drive-sdk';
-export { DeviceType, NodeType, MemberRole, RevisionState, MetricContext, ThumbnailType } from '@proton/drive-sdk';
+export {
+    DeviceType,
+    NodeType,
+    MemberRole,
+    RevisionState,
+    MetricContext,
+    ThumbnailType,
+    ProtonDriveError,
+    ValidationError,
+    AbortError,
+    RateLimitedError,
+    ConnectionError,
+} from '@proton/drive-sdk';
 
 let driveSingleton: ProtonDriveClient;
 let memoryLogHandlerSingleton: MemoryLogHandler | undefined;
