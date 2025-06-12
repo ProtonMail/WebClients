@@ -20,6 +20,7 @@ import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreate
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
+import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
@@ -217,6 +218,13 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
             const create = getCreateIntent<T>(values);
             onSubmit(create);
         },
+    });
+
+    useItemDraft<CustomItemFormValues>(form, {
+        mode: 'new',
+        type: form.values.type,
+        canSave: showForm,
+        onHydrated: (draft) => setShowForm(draft !== null),
     });
 
     const onSelectTemplate = async (template: CustomTemplate) => {
