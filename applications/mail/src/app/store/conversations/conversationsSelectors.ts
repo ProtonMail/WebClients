@@ -14,3 +14,8 @@ export const conversationByID = createSelector(
 export const allConversations = createSelector([conversations], (conversations) => {
     return Object.values(conversations);
 });
+
+export const conversationsByIDs = createSelector(
+    [conversations, (_, IDs: string[]) => IDs],
+    (conversations, IDs: string[]) => IDs.map((ID) => conversations[ID])
+);

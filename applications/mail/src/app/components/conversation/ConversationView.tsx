@@ -149,6 +149,7 @@ const ConversationView = ({
                 labelID,
                 status: MARK_AS_STATUS.READ,
                 sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
+                silent: true,
             });
         }
     }, [conversation]);

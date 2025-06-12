@@ -19,7 +19,6 @@ import { isUnread, isMessage as testIsMessage } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 import { isElementReminded } from '../../helpers/snooze';
-import useMailModel from '../../hooks/useMailModel';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import {
@@ -33,6 +32,7 @@ import {
 } from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
+import useMailModel from '../useMailModel';
 
 export type MarkAsChanges = { status: MARK_AS_STATUS; displaySnoozedReminder?: boolean };
 

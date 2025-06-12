@@ -147,6 +147,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
                 selectAll,
                 onCheckAll: handleCheckAll,
                 sourceAction,
+                silent: true,
             });
         },
         [selectedIDs, labelID, handleBack, selectAll]

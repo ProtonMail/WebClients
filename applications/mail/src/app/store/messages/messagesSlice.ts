@@ -2,11 +2,23 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { globalReset } from '../actions';
 import { load as loadElements } from '../elements/elementsActions';
+import {
+    markConversationsAsRead,
+    markConversationsAsUnread,
+    markMessagesAsRead,
+    markMessagesAsUnread,
+} from '../mailbox/mailboxActions';
 import * as draftAction from './draft/messagesDraftActions';
 import * as draftReducer from './draft/messagesDraftReducers';
 import * as expireAction from './expire/messagesExpireActions';
 import * as expireReducer from './expire/messagesExpireReducers';
-import { updateFromElements } from './helpers/messagesReducer';
+import {
+    markConversationsAsReadPending,
+    markConversationsAsUnreadPending,
+    markMessagesAsReadPending,
+    markMessagesAsUnreadPending,
+    updateFromElements,
+} from './helpers/messagesReducer';
 import * as msgImageAction from './images/messagesImagesActions';
 import * as msgImageReducer from './images/messagesImagesReducers';
 import type { MessagesState } from './messagesTypes';
@@ -18,7 +30,7 @@ import * as scheduledAction from './scheduled/scheduledActions';
 import * as scheduledReducer from './scheduled/scheduledReducers';
 
 const name = 'messages';
-const messagesSlice = createSlice({
+export const messagesSlice = createSlice({
     name,
     initialState: {} as MessagesState,
     reducers: {},
@@ -78,6 +90,11 @@ const messagesSlice = createSlice({
         builder.addCase(scheduledAction.cancelScheduled, scheduledReducer.cancelScheduled);
 
         builder.addCase(loadElements.fulfilled, updateFromElements);
+
+        builder.addCase(markMessagesAsRead.pending, markMessagesAsReadPending);
+        builder.addCase(markMessagesAsUnread.pending, markMessagesAsUnreadPending);
+        builder.addCase(markConversationsAsRead.pending, markConversationsAsReadPending);
+        builder.addCase(markConversationsAsUnread.pending, markConversationsAsUnreadPending);
     },
 });
 

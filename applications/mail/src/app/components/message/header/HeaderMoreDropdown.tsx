@@ -169,6 +169,7 @@ const HeaderMoreDropdown = ({
             labelID,
             status: MARK_AS_STATUS.UNREAD,
             sourceAction: SOURCE_ACTION.MORE_DROPDOWN,
+            silent: true,
         });
     };
 

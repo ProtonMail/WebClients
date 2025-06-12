@@ -7,6 +7,10 @@ import { createHooks } from '@proton/redux-utilities';
 import { queryMessageCount } from '@proton/shared/lib/api/messages';
 import { type LabelCount } from '@proton/shared/lib/interfaces';
 
+import type { Element } from 'proton-mail/models/element';
+
+import { markMessagesAsRead, markMessagesAsUnread } from './messageCountsReducers';
+
 const name = 'messageCounts' as const;
 
 interface State {
@@ -32,6 +36,30 @@ const slice = createSlice({
     reducers: {
         set: (state, action: PayloadAction<LabelCount[]>) => {
             state.value = action.payload;
+        },
+        markMessagesAsReadPending: (
+            state,
+            action: PayloadAction<{
+                elements: Element[];
+                labelID: string;
+            }>
+        ) => {
+            markMessagesAsRead(state, action);
+        },
+        markMessagesAsUnreadPending: (
+            state,
+            action: PayloadAction<{
+                elements: Element[];
+                labelID: string;
+            }>
+        ) => {
+            markMessagesAsUnread(state, action);
+        },
+        markMessagesAsReadRejected: (state, action) => {
+            markMessagesAsUnread(state, action);
+        },
+        markMessagesAsUnreadRejected: (state, action) => {
+            markMessagesAsRead(state, action);
         },
     },
     extraReducers: (builder) => {
