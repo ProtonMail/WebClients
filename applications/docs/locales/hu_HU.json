@@ -6520,17 +6520,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Csomagok ${ priceDrivePlus } ártól"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -6552,6 +6541,17 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Csomagok ${ priceDrivePlus } ártól"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -8961,25 +8961,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } tárhely felhasználónként"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "A(z) ${ planName } az összes alkalmazás, az összes funkció mellett korai hozzáférést biztosít az új kiadásokhoz, és mindent megad, amire szüksége van ahhoz, hogy kézben tartsa az adatait és azok biztonságát."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } saját e-mail domain név",
-        "${ planNumberOfDomains } saját e-mail domain név"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } email cím",
-        "${ planNumberOfEmails } e-mail cím"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappák, címkék és egyéni szűrők"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB tárhely"
@@ -9019,6 +9000,25 @@
       ],
       "Your privacy is our mission": [
         "Az Ön adatvédelme a mi küldetésünk"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } tárhely felhasználónként"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "A(z) ${ planName } az összes alkalmazás, az összes funkció mellett korai hozzáférést biztosít az új kiadásokhoz, és mindent megad, amire szüksége van ahhoz, hogy kézben tartsa az adatait és azok biztonságát."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } saját e-mail domain név",
+        "${ planNumberOfDomains } saját e-mail domain név"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } email cím",
+        "${ planNumberOfEmails } e-mail cím"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappák, címkék és egyéni szűrők"
       ]
     },
     "Subscription renewal state": {

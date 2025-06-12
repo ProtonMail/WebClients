@@ -469,11 +469,11 @@
       "Discard": [
         "Verwijderen"
       ],
-      "Discard changes": [
-        "Wijzigingen weggooien"
-      ],
       "Discard Changes": [
         "Wijzigingen annuleren"
+      ],
+      "Discard changes": [
+        "Wijzigingen weggooien"
       ],
       "Discover ${ planName }": [
         "Ontdek ${ planName }"
@@ -805,11 +805,11 @@
       "Keep": [
         "Behouden"
       ],
-      "Keep editing": [
-        "Blijf bewerken"
-      ],
       "Keep Editing": [
         "Doorgaan met bewerken"
+      ],
+      "Keep editing": [
+        "Blijf bewerken"
       ],
       "Keep logo": [
         "Logo behouden"
@@ -1000,11 +1000,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Reject": [
         "Afwijzen"
@@ -1180,11 +1180,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "select file": [
-        "selecteer bestand"
-      ],
       "Select file": [
         "Selecteer bestand"
+      ],
+      "select file": [
+        "selecteer bestand"
       ],
       "Select files": [
         "Selecteer bestanden"
@@ -4811,11 +4811,11 @@
       "Forward to": [
         "Doorsturen naar"
       ],
-      "Or": [
-        "Of"
-      ],
       "or": [
         "of"
+      ],
+      "Or": [
+        "Of"
       ],
       "With attachment": [
         "Met bijlage"
@@ -7571,11 +7571,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeer ten minste één methode voor gegevensherstel om ervoor te zorgen dat u toegang kunt blijven krijgen tot de inhoud van uw ${ BRAND_NAME } Account als u uw wachtwoord verliest."
       ],
-      "active": [
-        "actief"
-      ],
       "Active": [
         "Actief"
+      ],
+      "active": [
+        "actief"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige, kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me.\""
@@ -8022,11 +8022,11 @@
       "Data recoverable on this device": [
         "Gegevens herstelbaar op dit apparaat"
       ],
-      "Dedicated servers": [
-        "Dedicated servers"
-      ],
       "dedicated servers": [
         "toegewijde servers"
+      ],
+      "Dedicated servers": [
+        "Dedicated servers"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -9895,11 +9895,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "Username": [
-        "Gebruikersnaam"
-      ],
       "username": [
         "gebruikersnaam"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -11114,11 +11114,11 @@
       "Amount due": [
         "Verschuldigd bedrag"
       ],
-      "And": [
-        "En"
-      ],
       "AND": [
         "EN"
+      ],
+      "And": [
+        "En"
       ],
       "and": [
         "en"
@@ -11549,11 +11549,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Als"
-      ],
       "IF": [
         "ALS"
+      ],
+      "If": [
+        "Als"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -11765,14 +11765,14 @@
       "Optional": [
         "Optioneel"
       ],
+      "OR": [
+        "OF"
+      ],
       "or": [
         "of"
       ],
       "Or": [
         "Of"
-      ],
-      "OR": [
-        "OF"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -13810,6 +13810,14 @@
         "Ontgrendel alle ${ BRAND_NAME } premium producten en functies voor ${ priceLine }. U kunt op ieder moment annuleren."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -13828,14 +13836,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -17906,6 +17906,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -18194,47 +18235,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -19004,11 +19004,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-all address": [
-        "Catch-all adres"
-      ],
       "Catch-All address": [
         "Catch-All adres"
+      ],
+      "Catch-all address": [
+        "Catch-all adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"

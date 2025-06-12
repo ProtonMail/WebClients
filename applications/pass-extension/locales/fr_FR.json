@@ -152,10 +152,10 @@
       "Create": [
         "Créer"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Créer un compte ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Créer un compte ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -393,7 +393,7 @@
         "Déplacer vers un autre coffre-fort"
       ],
       "Move to trash": [
-        "Déplacer dans le dossier Corbeille"
+        "Déplacer dans la corbeille"
       ],
       "Move to Trash": [
         "Déplacer dans la corbeille"
@@ -1420,7 +1420,7 @@
         "Le verrouillage automatique a été désactivé."
       ],
       "Autofill HTTP basic auth dialogs with saved credentials.": [
-        "Saisie automatique dans les fenêtres de connexion HTTP à l'aide des identifiants enregistrés."
+        "Saisissez automatiquement les identifiants enregistrés dans les fenêtres basiques de connexion HTTP."
       ],
       "automatically": [
         "automatiquement"
@@ -1793,8 +1793,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2577,7 +2576,7 @@
         "Nom de la banque"
       ],
       "Basic Auth autofill": [
-        "Saisie automatique des identifiants"
+        "Saisie automatique basique des identifiants"
       ],
       "Biometrics": [
         "Données biométriques"
@@ -3107,10 +3106,10 @@
       "Priority:": [
         "Priorité :"
       ],
-      "Private Key": [
+      "Private key": [
         "Clé privée"
       ],
-      "Private key": [
+      "Private Key": [
         "Clé privée"
       ],
       "Product": [
@@ -3211,6 +3210,9 @@
       ],
       "Share": [
         "Partager"
+      ],
+      "Share ID": [
+        "ID de partage"
       ],
       "Shared": [
         "Partagé"

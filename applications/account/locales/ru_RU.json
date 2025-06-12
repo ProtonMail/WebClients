@@ -463,10 +463,10 @@
       "Discard": [
         "Сбросить"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Сбросить изменения"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Сбросить изменения"
       ],
       "Discover ${ planName }": [
@@ -787,10 +787,10 @@
       "Keep": [
         "Оставить"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Продолжить изменение"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Продолжить изменение"
       ],
       "Keep logo": [
@@ -976,11 +976,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Reject": [
         "Отказать"
@@ -1156,11 +1156,11 @@
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
       ],
-      "select file": [
-        "выбрать файл"
-      ],
       "Select file": [
         "Выбрать файл"
+      ],
+      "select file": [
+        "выбрать файл"
       ],
       "Select files": [
         "Выбрать файлы"
@@ -4794,11 +4794,11 @@
       "Forward to": [
         "Переслать на"
       ],
-      "Or": [
-        "Или"
-      ],
       "or": [
         "или"
+      ],
+      "Or": [
+        "Или"
       ],
       "With attachment": [
         "С вложением"
@@ -7661,11 +7661,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Активируйте хотя бы один метод восстановления данных, чтобы убедиться, что вы сможете продолжить доступ к содержимому вашего аккаунта ${ BRAND_NAME } в случае утери пароля."
       ],
-      "active": [
-        "активный"
-      ],
       "Active": [
         "Активно"
+      ],
+      "active": [
+        "активный"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"Напиши мне в ${ MAIL_APP_NAME }\" или \"Отправь мне личное сообщение\"."
@@ -8126,11 +8126,11 @@
       "Data recoverable on this device": [
         "Данные, которые можно восстановить на этом устройстве"
       ],
-      "Dedicated servers": [
-        "Выделенные серверы"
-      ],
       "dedicated servers": [
         "выделенные серверы"
+      ],
+      "Dedicated servers": [
+        "Выделенные серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -10016,11 +10016,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "Username": [
-        "Имя пользователя"
-      ],
       "username": [
         "имя пользователя"
+      ],
+      "Username": [
+        "Имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -11251,10 +11251,10 @@
       "Amount due": [
         "К оплате"
       ],
-      "And": [
+      "AND": [
         "И"
       ],
-      "AND": [
+      "And": [
         "И"
       ],
       "and": [
@@ -11683,11 +11683,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Если"
-      ],
       "IF": [
         "ЕСЛИ"
+      ],
+      "If": [
+        "Если"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -11896,14 +11896,14 @@
       "Optional": [
         "Необязательно"
       ],
+      "OR": [
+        "ИЛИ"
+      ],
       "or": [
         "или"
       ],
       "Or": [
         "Или"
-      ],
-      "OR": [
-        "ИЛИ"
       ],
       "Organization name": [
         "Название организации"
@@ -14001,6 +14001,14 @@
         "Разблокируйте все премиум продукты и возможности ${ BRAND_NAME } всего за ${ priceLine }. Отменить можно в любое время."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -14019,14 +14027,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -18204,6 +18204,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -18504,47 +18545,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -19295,10 +19295,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
