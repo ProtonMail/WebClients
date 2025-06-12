@@ -1,0 +1,26 @@
+@import '~@proton/styles/scss/lib';
+
+.upload-drag-drop {
+	position: fixed;
+	inset: 0;
+	background: var(--backdrop-norm);
+	z-index: 30;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&-infobox {
+		inline-size: rem(490);
+		min-inline-size: rem(380);
+		background: var(--background-norm);
+		color: var(--text-norm);
+		border-radius: var(--border-radius-md);
+		box-shadow: var(--shadow-lifted);
+		text-align: center;
+		pointer-events: none;
+	}
+
+	&-image {
+		max-inline-size: rem(380);
+	}
+}

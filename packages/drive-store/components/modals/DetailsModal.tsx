@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import { useEffect, useState } from 'react';
 
+import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
@@ -17,17 +17,16 @@ import {
     useModalTwoStatic,
 } from '@proton/components';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
-import { useLoading } from '@proton/hooks';
+import { VERIFICATION_STATUS } from '@proton/crypto';
+import type { Revision } from '@proton/drive';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
-import { type DriveFileRevision, type SignatureIssues, useLinkPath } from '../../store';
+import { type SignatureIssues, useLinkPath } from '../../store';
 import { useLinkDetailsView } from '../../store';
 import { usePublicSession } from '../../store/_api';
 import { useDownload } from '../../store/_downloads';
 import { type DecryptedLink, useLinksListing, usePublicLinksListing } from '../../store/_links';
-import type { ParsedExtendedAttributes } from '../../store/_links/extendedAttributes';
-import useRevisions from '../../store/_revisions/useRevisions';
 import { useLinkPathPublic } from '../../store/_views/useLinkPath';
 import { formatAccessCount } from '../../utils/formatters';
 import { Cells } from '../FileBrowser';
@@ -67,7 +66,7 @@ interface RowProps {
 interface RevisionDetailsModalProps {
     shareId: string;
     linkId: string;
-    revision: DriveFileRevision;
+    revision: Revision;
     name: string;
 }
 
@@ -195,6 +194,7 @@ const DetailsModalContent = ({
                     mimeType={mimeType}
                     isFile={isFile}
                     name={name}
+                    haveParentAccess={!!parentLinkId}
                     className="mb-4"
                 />
             )}
@@ -203,7 +203,9 @@ const DetailsModalContent = ({
             </DetailsRow>
             {isSharedWithMeLink && (
                 <DetailsRow label={c('Title').t`Location`}>
-                    <FileNameDisplay text={`/${c('Info').t`Shared with me`}`} />
+                    <FileNameDisplay
+                        text={mimeType === 'Album' ? `/${c('Info').t`Photos`}` : `/${c('Info').t`Shared with me`}`}
+                    />
                 </DetailsRow>
             )}
             {ownerEmail && !anonymousView && (
@@ -310,70 +312,31 @@ export function RevisionDetailsModal({
     onClose,
     ...modalProps
 }: RevisionDetailsModalProps & ModalStateProps) {
-    const { getRevisionDecryptedXattrs, checkRevisionSignature } = useRevisions(shareId, linkId);
-    const [xattrs, setXattrs] = useState<ParsedExtendedAttributes>();
-    const [signatureIssues, setSignatureIssues] = useState<SignatureIssues>();
-    const [signatureNetworkError, setSignatureNetworkError] = useState<boolean>(false);
-    const [isXattrsLoading, withXattrsLoading] = useLoading();
-    const [isSignatureIssuesLoading, withSignatureIssuesLoading] = useLoading();
-    useEffect(() => {
-        const ac = new AbortController();
-        void withXattrsLoading(
-            getRevisionDecryptedXattrs(ac.signal, revision.xAttr, revision.signatureEmail).then((decryptedXattrs) => {
-                if (!decryptedXattrs) {
-                    return;
-                }
-                setXattrs(decryptedXattrs.xattrs);
-                if (signatureIssues) {
-                    setSignatureIssues({ ...signatureIssues, ...decryptedXattrs.signatureIssues });
-                } else {
-                    setSignatureIssues(decryptedXattrs.signatureIssues);
-                }
-            })
-        );
-        return () => {
-            ac.abort();
-        };
-    }, [revision.xAttr, revision.signatureEmail]);
-
-    useEffect(() => {
-        const ac = new AbortController();
-        void withSignatureIssuesLoading(
-            checkRevisionSignature(ac.signal, revision.id).then((blocksSignatureIssues) => {
-                if (signatureIssues) {
-                    setSignatureIssues({ ...signatureIssues, ...blocksSignatureIssues });
-                } else {
-                    setSignatureIssues(blocksSignatureIssues);
-                }
-            })
-        ).catch(() => {
-            setSignatureNetworkError(true);
-        });
-        return () => {
-            ac.abort();
-        };
-    }, [revision.id]);
+    const signatureEmail =
+        (revision.contentAuthor.ok ? revision.contentAuthor.value : revision.contentAuthor.error.claimedAuthor) || '';
+    const signatureIssues = revision.contentAuthor.ok
+        ? undefined
+        : {
+              xattrs: VERIFICATION_STATUS.SIGNED_AND_INVALID,
+          };
 
     return (
         <ModalTwo onClose={onClose} size="large" {...modalProps}>
             <ModalTwoHeader title={c('Title').t`Version details`} />
             <DetailsModalContent
-                isSignatureIssuesLoading={isSignatureIssuesLoading}
+                isSignatureIssuesLoading={false}
                 signatureIssues={signatureIssues}
-                signatureNetworkError={signatureNetworkError}
-                signatureIssuesEmail={revision.signatureEmail}
+                signatureIssuesEmail={signatureEmail}
                 name={name}
                 isFile
-                isAnonymous={!revision.signatureEmail}
-                createTime={revision.createTime}
-                size={revision.size}
-                fileModifyTime={xattrs?.Common.ModificationTime}
-                originalSize={xattrs?.Common.Size}
-                ownerEmail={revision.signatureEmail}
+                isAnonymous={revision.contentAuthor.ok && revision.contentAuthor.value === null}
+                createTime={getUnixTime(revision.creationTime)}
+                size={revision.storageSize}
+                fileModifyTime={revision.claimedModificationTime && getUnixTime(revision.claimedModificationTime)}
+                originalSize={revision.claimedSize}
+                ownerEmail={signatureEmail}
                 shareId={shareId}
-                photoContentHash={revision.photo?.contentHash}
-                sha1Digest={xattrs?.Common.Digests?.SHA1}
-                isXattrsLoading={isXattrsLoading}
+                sha1Digest={revision.claimedDigests?.sha1}
             />
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Close`}</Button>

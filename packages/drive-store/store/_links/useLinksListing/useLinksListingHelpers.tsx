@@ -5,7 +5,7 @@ import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
-import { useErrorHandler, waitFor } from '../../_utils';
+import { useErrorHandler } from '../../_utils';
 import type { DecryptedLink, EncryptedLink } from '../interface';
 import useLinks from '../useLinks';
 import type { Link } from '../useLinksState';
@@ -13,7 +13,7 @@ import useLinksState, { isLinkDecrypted } from '../useLinksState';
 
 export type FetchMeta = {
     isEverythingFetched?: boolean;
-    isInProgress?: boolean;
+    isInProgress?: Promise<boolean> | Promise<void>;
     lastSorting?: SortParams;
     lastPage?: number;
 };
@@ -148,17 +148,19 @@ export function useLinksListingHelpers() {
         fetchLinks: (sorting: SortParams, page: number) => Promise<FetchResponse>,
         showNotification = true
     ): Promise<boolean> => {
-        await waitFor(() => !fetchMeta.isInProgress, { abortSignal });
+        if (fetchMeta.isInProgress) {
+            await fetchMeta.isInProgress;
+        }
         if (fetchMeta.isEverythingFetched) {
             return false;
         }
-        fetchMeta.isInProgress = true;
         const currentSorting = sorting || fetchMeta.lastSorting || DEFAULT_SORTING;
         const currentPage =
             isSameSorting(fetchMeta.lastSorting, currentSorting) && fetchMeta.lastPage !== undefined
                 ? fetchMeta.lastPage + 1
                 : 0;
-        const hasNextPage = await fetchLinks(currentSorting, currentPage)
+
+        fetchMeta.isInProgress = fetchLinks(currentSorting, currentPage)
             .then(async ({ links, parents }) => {
                 fetchMeta.lastSorting = currentSorting;
                 fetchMeta.lastPage = currentPage;
@@ -193,8 +195,10 @@ export function useLinksListingHelpers() {
             .finally(() => {
                 // Make sure isInProgress is always unset, even during failure,
                 // and that it is the last thing after everything else is set.
-                fetchMeta.isInProgress = false;
+                fetchMeta.isInProgress = undefined;
             });
+
+        const hasNextPage = await fetchMeta.isInProgress;
 
         return hasNextPage;
     };

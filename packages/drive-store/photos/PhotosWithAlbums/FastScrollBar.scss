@@ -1,0 +1,223 @@
+@import '~@proton/styles/scss/lib';
+
+// Attention, this file is complex and rely on a lot of absolute position logic from the photos grid
+// Please touch with extreme caution and a lot of testing
+// Eg: adding some margin or padding somewhere can break everything, a lot of positioning is done with JS
+
+$fast-scroll-bar-width: 48px; // this is how width the fast scroll hoverable area is **ATTENTION** if you change this value you must also change the same constant in FastScrollBar.tsx
+$fast-scroll-pill: 24px;
+$fast-scroll-pill-border: 1px;
+$fast-scroll-year: 16px;
+$fast-scroll-dot-diameter: 2px;
+
+:root {
+	--fast-scroll-bar-width: #{$fast-scroll-bar-width};
+	--fast-scroll-pill: #{$fast-scroll-pill};
+	--fast-scroll-pill-border: #{$fast-scroll-pill-border};
+	--fast-scroll-year: $fast-scroll-year;
+	--fast-scroll-dot-diameter: #{$fast-scroll-dot-diameter};
+}
+
+.fast-scroll-bar {
+	background-color: var(--background-norm); // hides the OS scrollbar / can't be transparent
+	z-index: 1;
+	inline-size: var(--fast-scroll-bar-width);
+	margin-inline-start: calc((var(--fast-scroll-bar-width) * -1));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	overflow: visible;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	transition-delay: 2s;
+
+	&.is-scrolling {
+		opacity: 1;
+		transition-delay: 0s;
+
+		&:hover {
+			+ .scrollbar-thumb {
+				opacity: 0;
+			}
+		}
+
+		+ .scrollbar-thumb {
+			opacity: 1;
+			transition-delay: 0s;
+		}
+	}
+
+	&:hover {
+		opacity: 1;
+		transition-delay: 0s;
+
+		+ .scrollbar-thumb {
+			opacity: 1;
+			transition-delay: 0s;
+			inset-inline-end: 0;
+			z-index: 3;
+			position: absolute;
+			background-color: var(--primary);
+			border-radius: 4px;
+			cursor: pointer;
+			inline-size: var(--fast-scroll-bar-width);
+			block-size: var(--fast-scroll-dot-diameter);
+			min-inline-size: var(--fast-scroll-bar-width);
+			transform: none;
+
+			> span {
+				display: none;
+			}
+		}
+	}
+
+	+ .scrollbar-thumb {
+		opacity: 0;
+		transition:
+			opacity 0.2s ease,
+			inset-block-start 0.2s ease;
+		transition-delay: 2s;
+	}
+}
+
+.fast-scroll-dot {
+	inline-size: var(--fast-scroll-bar-width);
+	block-size: 16px;
+	background: transparent
+		radial-gradient(circle, #e5e4e1 var(--fast-scroll-dot-diameter), transparent var(--fast-scroll-dot-diameter))
+		center/4px 4px no-repeat;
+
+	// this is the large pill that appear on hover or that follows you
+	&::before {
+		z-index: 3;
+		content: attr(data-monthyear);
+		position: absolute;
+		inset-block-start: attr(data-top);
+		inset-inline-end: attr(data-right);
+		transform: translate(calc(-100% + var(--fast-scroll-dot-diameter)), -50%);
+		background: white;
+		color: black;
+		font-size: rem(12);
+		line-height: var(--fast-scroll-pill);
+		border-radius: 16px;
+		border: 1px solid var(--primary);
+		white-space: nowrap;
+		block-size: var(--fast-scroll-pill);
+		display: inline-block;
+		opacity: 0;
+		pointer-events: none;
+		padding-block: 0;
+		padding-inline: rem(8);
+		font-weight: 500;
+		min-block-size: calc(var(--fast-scroll-pill) + (var(--fast-scroll-pill-border) * 2));
+	}
+
+	&:hover {
+		opacity: 1;
+
+		&::before {
+			opacity: 1;
+		}
+	}
+
+	// This is the static year pill
+	&.fast-scroll-last-month {
+		&::before {
+			opacity: 1;
+			content: attr(data-year);
+			position: absolute;
+			inset-block-start: attr(data-top);
+			inset-inline-end: attr(data-right);
+			transform: translate(calc(-100% + var(--fast-scroll-dot-diameter)), -50%);
+			background: white;
+			color: black;
+			font-size: rem(12);
+			border-radius: 16px;
+			border: none;
+			white-space: nowrap;
+			display: inline-block;
+			padding-block: rem(2);
+			padding-inline: rem(8);
+			pointer-events: none;
+			font-weight: 300;
+			z-index: 1;
+			block-size: var(--fast-scroll-year);
+			min-block-size: var(--fast-scroll-year);
+			line-height: normal;
+		}
+
+		&:hover {
+			opacity: 1;
+
+			&::before {
+				opacity: 1;
+				content: attr(data-monthyear);
+				position: absolute;
+				inset-block-start: attr(data-top);
+				inset-inline-end: attr(data-right);
+				transform: translate(calc(-100% + var(--fast-scroll-dot-diameter)), -50%);
+				background: white;
+				color: black;
+				font-size: rem(12);
+				line-height: var(--fast-scroll-pill);
+				border-radius: 16px;
+				border: 1px solid var(--primary);
+				white-space: nowrap;
+				block-size: var(--fast-scroll-pill);
+				display: inline-block;
+				padding-block: 0;
+				padding-inline: rem(8);
+				font-weight: 500;
+				min-block-size: calc(var(--fast-scroll-pill) + (var(--fast-scroll-pill-border) * 2));
+				z-index: 3;
+			}
+		}
+
+		// space out siblings if too many years are next to each other
+		// maybe find a sass function for that and go up to 20 years (not need more)
+		+ .fast-scroll-dot.fast-scroll-last-month {
+			opacity: 0;
+
+			+ .fast-scroll-dot.fast-scroll-last-month {
+				+ .fast-scroll-dot.fast-scroll-last-month {
+					opacity: 0;
+
+					+ .fast-scroll-dot.fast-scroll-last-month {
+						+ .fast-scroll-dot.fast-scroll-last-month {
+							opacity: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.scrollbar-thumb {
+	inset-inline-end: calc((var(--fast-scroll-bar-width) / 2) - var(--fast-scroll-dot-diameter));
+	position: absolute;
+	background: white;
+	color: black;
+	font-size: rem(12);
+	line-height: var(--fast-scroll-pill);
+	border-radius: 16px;
+	border: 1px solid var(--primary);
+	white-space: nowrap;
+	display: inline-block;
+	opacity: 0;
+	pointer-events: none;
+	z-index: 3;
+	padding-block: 0;
+	padding-inline: rem(8);
+	transform: translateY(calc(-1 * ((var(--fast-scroll-pill) / 2) + var(--fast-scroll-pill-border))));
+	font-weight: 500;
+}
+
+.opacity-display {
+	opacity: 1;
+}
+
+.opacity-hidden {
+	opacity: 0;
+}

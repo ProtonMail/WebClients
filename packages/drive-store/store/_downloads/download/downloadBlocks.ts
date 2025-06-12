@@ -94,7 +94,7 @@ export default function initDownloadBlocks(
     // openpgpjs library. The data exchanges are a bit of downside, therefore
     // we want create web workers manually  in the future that will do download
     // and decryption together. See MAX_THREADS_PER_DOWNLOAD for more info.
-    const start = () => {
+    const start = (doNotCheckManifestSignatureOnlyForVideoStreaming?: boolean) => {
         if (abortController.signal.aborted) {
             throw new TransferCancel({ message: `Transfer canceled` });
         }
@@ -396,11 +396,14 @@ export default function initDownloadBlocks(
                 await checkFileHash(abortController.signal, fileHash);
             }
 
-            await checkManifestSignature?.(
-                abortController.signal,
-                mergeUint8Arrays([...thumbnailHashes, ...hashes]),
-                manifestSignature
-            );
+            // For Video Streaming, there is no manifest signature check since we in purpose to not download all the blocks!
+            if (!doNotCheckManifestSignatureOnlyForVideoStreaming) {
+                await checkManifestSignature?.(
+                    abortController.signal,
+                    mergeUint8Arrays([...thumbnailHashes, ...hashes]),
+                    manifestSignature
+                );
+            }
 
             // Wait for stream to be flushed
             await fsWriter.ready;
