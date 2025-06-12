@@ -833,10 +833,10 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Navýšit nyní"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Navýšit nyní"
       ],
       "Upload and share files": [
@@ -5986,7 +5986,7 @@
         "Vaše soubory budou zašifrovány a uloženy"
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Vaše bezplatná zkušební verze byla úspěšně převedena na měsíční ${ cycle }měsíční předplatné. Datum obnovení je ${ nextBillingDate }."
+        "Vaše bezplatná zkušební verze byla úspěšně převedena na ${ cycle }měsíční předplatné. Datum obnovení je ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaše bezplatná zkušební verze byla úspěšně převedena na měsíční předplatné. Datum obnovení je ${ nextBillingDate }."
@@ -9976,6 +9976,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -10246,47 +10287,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -11333,7 +11333,7 @@
         "Vaše uniklé informace"
       ],
       "Your free trial ends in ${ trialDurationFormatted } days": [
-        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny."
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny"
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
