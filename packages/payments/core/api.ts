@@ -24,6 +24,7 @@ import type {
 } from './interface';
 import { getPlanNameFromIDs, isLifetimePlanSelected } from './plan/helpers';
 import type { FreePlanDefault } from './plan/interface';
+import { formatPaymentMethods } from './sepa';
 import type { Renew } from './subscription/constants';
 import { FREE_PLAN } from './subscription/freePlans';
 import type { Subscription } from './subscription/interface';
@@ -313,11 +314,6 @@ export const checkInvoice = (invoiceID: string, version?: PaymentsVersion, GiftC
     data: { GiftCode },
 });
 
-export const queryPaymentMethods = (forceVersion?: PaymentsVersion) => ({
-    url: `payments/${forceVersion ?? paymentsVersion}/methods`,
-    method: 'get',
-});
-
 export type SetPaymentMethodDataV4 = TokenPayment & { Autopay?: Autopay };
 
 export const setPaymentMethodV4 = (data: SetPaymentMethodDataV4) => ({
@@ -588,3 +584,22 @@ export const queryTransactions = (params: QueryTransactionsParams) => ({
     method: 'get',
     params,
 });
+
+// Do not export this function. Use getPaymentMethods instead.
+const queryPaymentMethods = (forceVersion?: PaymentsVersion) => ({
+    url: `payments/${forceVersion ?? paymentsVersion}/methods`,
+    method: 'get',
+});
+
+export async function getPaymentMethods(api: Api, forceVersion?: PaymentsVersion): Promise<SavedPaymentMethod[]> {
+    const response = await api<{ PaymentMethods: SavedPaymentMethod[] }>(queryPaymentMethods(forceVersion));
+    return formatPaymentMethods(response.PaymentMethods ?? []);
+}
+
+export function markPaymentMethodAsDefault(api: Api, methodID: string, methods: SavedPaymentMethod[]): Promise<void> {
+    const IDs = methods.map(({ ID }) => ID);
+    const index = methods.findIndex(({ ID }) => ID === methodID);
+    IDs.splice(index, 1);
+    IDs.unshift(methodID);
+    return api(orderPaymentMethods(IDs, 'v5'));
+}
