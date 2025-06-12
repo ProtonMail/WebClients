@@ -1,4 +1,4 @@
-import * as useMailSettingsModule from '@proton/mail/mailSettings/hooks';
+import * as useMailSettingsModule from '@proton/mail/store/mailSettings/hooks';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
@@ -16,9 +16,9 @@ const defaultMailSettings: MailSettings = {
     AutoDeleteSpamAndTrashDays: 0,
 };
 
-jest.mock('@proton/mail/mailSettings/hooks', () => ({
+jest.mock('@proton/mail/store/mailSettings/hooks', () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/mail/mailSettings/hooks'),
+    ...jest.requireActual('@proton/mail/store/mailSettings/hooks'),
 }));
 
 export const mockUseMailSettings = (params?: [Partial<MailSettings>?, boolean?, (() => void)?]) => {

@@ -12,8 +12,8 @@ import {
     useNotifications,
 } from '@proton/components';
 import { useGetFolders, useGetLabels } from '@proton/mail';
-import { useFilters } from '@proton/mail/filters/hooks';
-import { getFolderName } from '@proton/mail/labels/helpers';
+import { useFilters } from '@proton/mail/store/filters/hooks';
+import { getFolderName } from '@proton/mail/store/labels/helpers';
 import { addTreeFilter, deleteFilter } from '@proton/shared/lib/api/filters';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';

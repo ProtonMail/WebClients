@@ -12,8 +12,8 @@ import {
     useNotifications,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/mailSettings';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
     updateAutoDelete,
     updateNextMessageOnMove,

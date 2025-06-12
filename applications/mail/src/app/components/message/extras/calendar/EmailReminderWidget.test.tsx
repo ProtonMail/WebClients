@@ -84,7 +84,7 @@ jest.mock('@proton/account/user/hooks', () => ({
     ),
 }));
 
-jest.mock('@proton/mail/mailSettings/hooks', () => ({
+jest.mock('@proton/mail/store/mailSettings/hooks', () => ({
     useMailSettings: jest.fn(() => [{}, false]),
 }));
 

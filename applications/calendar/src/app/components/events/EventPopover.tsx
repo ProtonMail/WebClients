@@ -9,7 +9,7 @@ import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { Badge, CalendarEventDateHeader, CalendarInviteButtons, Loader, useActiveBreakpoint } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { useLoading } from '@proton/hooks';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import {
     getIsCalendarDisabled,

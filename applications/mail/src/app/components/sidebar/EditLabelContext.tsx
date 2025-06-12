@@ -3,7 +3,7 @@ import { createContext, useCallback, useContext, useMemo, useReducer } from 'rea
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { DeleteLabelModal, EditLabelModal, useModalState } from '@proton/components';
-import { getStandardFolders } from '@proton/mail/labels/helpers';
+import { getStandardFolders } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 

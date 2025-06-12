@@ -1,4 +1,4 @@
-import { isAutoRead } from '@proton/mail/labels/helpers';
+import { isAutoRead } from '@proton/mail/store/labels/helpers';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
 

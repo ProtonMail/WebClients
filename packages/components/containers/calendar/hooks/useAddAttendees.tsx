@@ -7,7 +7,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarInfo from '@proton/components/hooks/useGetCalendarInfo';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
 import { serverTime } from '@proton/crypto';
-import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
 import { getHasDefaultNotifications, getHasSharedEventContent } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail, withPmAttendees } from '@proton/shared/lib/calendar/attendees';

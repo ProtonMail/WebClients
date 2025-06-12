@@ -16,7 +16,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { useFilters } from '@proton/mail/filters/hooks';
+import { useFilters } from '@proton/mail/store/filters/hooks';
 import { addTreeFilter, checkSieveFilter, updateFilter } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

@@ -6,7 +6,7 @@ import { c, msgid } from 'ttag';
 import { Button, Tooltip } from '@proton/atoms';
 import { AddressesAutocomplete, Icon, useNotifications } from '@proton/components';
 import { useContactGroups } from '@proton/mail';
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { rootFontSize, scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';

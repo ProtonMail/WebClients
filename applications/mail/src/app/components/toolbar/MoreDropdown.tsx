@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { DropdownMenu, DropdownMenuButton, Icon, useModalState } from '@proton/components';
-import { labelIncludes } from '@proton/mail/labels/helpers';
+import { labelIncludes } from '@proton/mail/store/labels/helpers';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

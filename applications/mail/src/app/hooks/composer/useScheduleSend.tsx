@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Prompt, useModalState } from '@proton/components';
-import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
-import { useMessageCounts } from '@proton/mail/counts/messageCounts';
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCounts';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCounts';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { LabelCount } from '@proton/shared/lib/interfaces';

@@ -1,4 +1,4 @@
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import Toolbar from 'proton-mail/components/toolbar/Toolbar';
 import { type ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';

@@ -4,9 +4,9 @@ import { MemoryRouter } from 'react-router-dom';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { useDynamicFavicon } from '@proton/components';
-import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
-import { useMessageCounts } from '@proton/mail/counts/messageCounts';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCounts';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCounts';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { DEFAULT_MAILSETTINGS, UNREAD_FAVICON, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
@@ -16,13 +16,13 @@ jest.mock('@proton/components', () => ({
     useDynamicFavicon: jest.fn(),
 }));
 
-jest.mock('@proton/mail/mailSettings/hooks');
+jest.mock('@proton/mail/store/mailSettings/hooks');
 const mockUseMailSettings = useMailSettings as jest.Mock;
 
-jest.mock('@proton/mail/counts/conversationCounts');
+jest.mock('@proton/mail/store/counts/conversationCounts');
 const mockUseConversationCounts = useConversationCounts as jest.Mock;
 
-jest.mock('@proton/mail/counts/messageCounts');
+jest.mock('@proton/mail/store/counts/messageCounts');
 const mockUseMessageCounts = useMessageCounts as jest.Mock;
 
 const mockBaseFavicon = 'mock-base-favicon';
