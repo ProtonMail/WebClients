@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { ContactImage, useModalStateObject } from '@proton/components';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
@@ -17,15 +17,52 @@ import {
     SubscriptionCardTitle,
 } from './NewsletterSubscriptionCardComponents';
 import { NewsletterSubscriptionCardFilterDropdown } from './NewsletterSubscriptionCardFilterDropdown';
+import { PaperTrashSvg } from './PaperTrash';
 
-export const NewsletterSubscriptionCard = ({ subscription }: PropsWithNewsletterSubscription) => {
+import './NewsletterSubscriptionCard.scss';
+
+const ANIMATION_DURATION = 2000;
+
+interface Props extends PropsWithNewsletterSubscription {
+    isDeleting?: boolean;
+}
+
+export const NewsletterSubscriptionCard = ({ subscription, isDeleting }: Props) => {
     const filterModal = useModalStateObject();
     const [filterType, setFilterType] = useState<ModalFilterType | null>(null);
 
     const dispatch = useMailDispatch();
     const isActive = useMailSelector(isSubscriptionActiveSelector(subscription.ID));
 
+    useEffect(() => {
+        let timeout: ReturnType<typeof setTimeout> | undefined = undefined;
+
+        if (isDeleting) {
+            timeout = setTimeout(() => {
+                // Removes the subscription from the active tab
+                dispatch(newsletterSubscriptionsActions.removeSubscriptionFromActiveTab(subscription.ID));
+                dispatch(newsletterSubscriptionsActions.deleteSubscriptionAnimationEnded());
+            }, ANIMATION_DURATION);
+        }
+
+        return () => {
+            if (timeout) {
+                // We want to remove the subscription if the component is unmounted before the animation is done
+                if (isDeleting) {
+                    dispatch(newsletterSubscriptionsActions.removeSubscriptionFromActiveTab(subscription.ID));
+                    dispatch(newsletterSubscriptionsActions.deleteSubscriptionAnimationEnded());
+                }
+
+                clearTimeout(timeout);
+            }
+        };
+    }, [isDeleting]);
+
     const handleCardClick = (subscription: NewsletterSubscription) => {
+        if (isDeleting) {
+            return;
+        }
+
         dispatch(newsletterSubscriptionsActions.setSelectedSubscription(subscription));
     };
 
@@ -37,46 +74,61 @@ export const NewsletterSubscriptionCard = ({ subscription }: PropsWithNewsletter
     return (
         <>
             <div
-                onClick={() => handleCardClick(subscription)}
                 className={clsx(
-                    'subscription-card rounded-lg p-4 cursor-pointer md:p-5 border border-2',
-                    isActive ? 'border-primary' : 'shadow-norm border-transparent'
+                    'relative subscription-card-container',
+                    isDeleting && 'subscription-card-container--deleted'
                 )}
             >
-                <div className="flex gap-3 md:gap-4">
-                    <div className="subscription-card-image shrink-0">
-                        <ContactImage
-                            email={subscription.SenderAddress}
-                            name={subscription.Name}
-                            variant="large"
-                            className="rounded relative"
-                            displaySenderImage
-                            overrideSize={36}
-                            initialsStyle={{ '--h-custom': '2.25rem' }}
-                            initialsClassName="bg-strong flex h-custom items-center justify-center rounded w-full"
-                        />
-                    </div>
-                    <div className="flex-1">
-                        <div className="flex mb-3">
-                            <div className="flex-1 flex gap-3 md:gap-4">
-                                <div>
-                                    <SubscriptionCardTitle subscription={subscription} />
-                                    <SubscriptionCardButtons
-                                        subscription={subscription}
-                                        handleFilterClick={handleFilterClick}
-                                    />
-                                </div>
-                                <SubscriptionCardStats subscription={subscription} />
-                            </div>
-                            <NewsletterSubscriptionCardFilterDropdown
-                                subscription={subscription}
-                                handleSubscriptionFilter={(filter) => handleFilterClick(filter)}
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                <div
+                    onClick={() => handleCardClick(subscription)}
+                    className={clsx(
+                        'subscription-card rounded-lg p-4 cursor-pointer md:p-5 border border-2 mb-4',
+                        isActive ? 'border-primary' : 'shadow-norm border-transparent',
+                        isDeleting && 'subscription-card--deleted'
+                    )}
+                    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+                    tabIndex={isDeleting ? -1 : 0}
+                    aria-hidden={isDeleting}
+                    aria-labelledby={`subscription-card-title-${subscription.ID}`}
+                >
+                    <div className="flex gap-3 md:gap-4">
+                        <div className="subscription-card-image shrink-0">
+                            <ContactImage
+                                email={subscription.SenderAddress}
+                                name={subscription.Name}
+                                variant="large"
+                                className="rounded relative"
+                                displaySenderImage
+                                overrideSize={36}
+                                initialsStyle={{ '--h-custom': '2.25rem' }}
+                                initialsClassName="bg-strong flex h-custom items-center justify-center rounded w-full"
                             />
                         </div>
-                        <NewsletterSubscriptionCardActiveFilter subscription={subscription} />
+                        <div className="flex-1">
+                            <div className="flex">
+                                <div className="subscription-card-content flex-1 flex flex-nowrap gap-3 md:gap-4">
+                                    <div>
+                                        <SubscriptionCardTitle subscription={subscription} />
+                                        <SubscriptionCardButtons
+                                            subscription={subscription}
+                                            handleFilterClick={handleFilterClick}
+                                        />
+                                    </div>
+                                    <SubscriptionCardStats subscription={subscription} />
+                                </div>
+                                <NewsletterSubscriptionCardFilterDropdown
+                                    subscription={subscription}
+                                    handleSubscriptionFilter={(filter) => handleFilterClick(filter)}
+                                />
+                            </div>
+                            <NewsletterSubscriptionCardActiveFilter subscription={subscription} />
+                        </div>
                     </div>
                 </div>
+                <PaperTrashSvg className="subscription-card-trash absolute inset-0 m-auto" />
             </div>
+
             {filterType && filterModal.render && (
                 <ModalNewsletterSubscriptionFilter
                     subscription={subscription}

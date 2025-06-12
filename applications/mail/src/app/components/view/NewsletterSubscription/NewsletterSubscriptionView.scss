@@ -11,15 +11,34 @@
 		background-color: var(--background-elevated);
 		transition: box-shadow 0.2s easing(ease);
 
-		.subscription-card-image {
+		&-container {
+			container-type: inline-size;
+		}
+
+		&-title {
+			--w-custom: 12.5rem;
+
+			@container (max-width: 30.5rem) {
+				--w-custom: auto;
+			}
+		}
+
+		&-content {
+			@container (max-width: 30.5rem) {
+				flex-direction: column;
+			}
+		}
+
+		&-image {
 			inline-size: 2.25rem;
 		}
 
-		.subscription-card-dropdown {
+		&-dropdown {
 			margin-inline-start: auto;
 		}
 
-		&:hover {
+		&:hover,
+		&:focus-within {
 			box-shadow: var(--shadow-raised);
 		}
 	}

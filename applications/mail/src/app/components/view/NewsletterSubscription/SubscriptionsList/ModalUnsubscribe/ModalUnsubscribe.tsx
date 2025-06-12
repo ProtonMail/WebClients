@@ -30,8 +30,6 @@ import { MAX_LENGTH_SUB_NAME, type PropsWithNewsletterSubscription, UnsubscribeM
 import { ModalUnsubscribeMailToContent } from './ModalUnsubscribeMailToContent';
 import { useSendUnsubscribeEmail } from './useSendUnsubscribeEmail';
 
-import './ModalUnsubscribe.scss';
-
 const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscription & ModalProps) => {
     const dispatch = useMailDispatch();
     const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
@@ -93,7 +91,7 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
             title={
                 <>
                     <div className="flex flex-nowrap gap-3">
-                        <div className="shrink-0 subscription-card-image">
+                        <div className="shrink-0 w-custom" style={{ '--w-custom': '2.25rem' }}>
                             <ContactImage
                                 email={subscription.SenderAddress}
                                 name={subscription.Name}
