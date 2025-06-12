@@ -18,6 +18,7 @@ interface Props {
     bimiSelector?: string;
     displaySenderImage?: boolean;
     variant?: Variant;
+    overrideSize?: number;
 }
 
 const getWidth = (variant: Variant) => {
@@ -50,11 +51,12 @@ const ContactImage = ({
     initialsStyle,
     bimiSelector,
     displaySenderImage,
+    overrideSize,
     variant = 'default',
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const canLoad = !!displaySenderImage && !!email && mailSettings?.HideSenderImages === HIDE_SENDER_IMAGES.SHOW;
-    const url = useSenderImage(canLoad ? email : '', bimiSelector);
+    const url = useSenderImage({ emailAddress: canLoad ? email : '', bimiSelector, overrideSize });
     const [tryToLoad, setTryToLoad] = useState(false);
 
     useEffect(() => {

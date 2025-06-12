@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useElementBreakpoints } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
-import { getLabelName } from '@proton/mail/labels/helpers';
+import { getLabelName, isLabelIDNewsletterSubscription } from '@proton/mail/labels/helpers';
 import clsx from '@proton/utils/clsx';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
@@ -138,16 +138,18 @@ const ToolbarColumnWide = ({
                 <div className="mr-auto">{selectAll}</div>
 
                 <div className="ml-auto">
-                    <ListSettings
-                        sort={sort}
-                        onSort={onSort}
-                        onFilter={onFilter}
-                        filter={filter}
-                        conversationMode={conversationMode}
-                        mailSettings={mailSettings}
-                        labelID={labelID}
-                        filterAsDropdown={localIsTiny}
-                    />
+                    {isLabelIDNewsletterSubscription(labelID) ? null : (
+                        <ListSettings
+                            sort={sort}
+                            onSort={onSort}
+                            onFilter={onFilter}
+                            filter={filter}
+                            conversationMode={conversationMode}
+                            mailSettings={mailSettings}
+                            labelID={labelID}
+                            filterAsDropdown={localIsTiny}
+                        />
+                    )}
                 </div>
             </div>
         </div>

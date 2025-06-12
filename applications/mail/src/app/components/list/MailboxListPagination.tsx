@@ -14,16 +14,23 @@ import useTelemetryPagingControls from 'proton-mail/hooks/useTelemetryPagingCont
 import { contextPages } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-interface Props {
-    onPrevious: () => void;
-    onNext: () => void;
-    onPage: (pageNumber: number) => void;
+interface MailboxListPaginationProps {
+    handlePrevious: () => void;
+    handleNext: () => void;
+    handlePage: (pageNumber: number) => void;
     page: number;
     total: number;
     loading?: boolean;
 }
 
-const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Props) => {
+const MailboxListPagination = ({
+    handlePrevious,
+    handleNext,
+    handlePage,
+    page,
+    loading,
+    total,
+}: MailboxListPaginationProps) => {
     const pagesState = useMailSelector(contextPages);
     const sendPagingTelemetryReport = useTelemetryPagingControls();
 
@@ -54,17 +61,17 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Pr
     }, [page, total]);
 
     const handleClickPrevious = () => {
-        onPrevious();
+        handlePrevious();
         void sendPagingTelemetryReport({ event: TelemetryMailPagingControlsEvents.move_to_previous_page });
     };
 
     const handleClickNext = () => {
-        onNext();
+        handleNext();
         void sendPagingTelemetryReport({ event: TelemetryMailPagingControlsEvents.move_to_previous_page });
     };
 
     const handleClickCustomPage = (page: number) => {
-        onPage(page);
+        handlePage(page);
 
         /* One tricky things that we have to manage with the page is when a user is "creating a gap' in the pages.
          * E.g. the user has loaded page 1 and 2, and goes to page 10
@@ -137,4 +144,4 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Pr
     );
 };
 
-export default memo(ListPagination);
+export default memo(MailboxListPagination);

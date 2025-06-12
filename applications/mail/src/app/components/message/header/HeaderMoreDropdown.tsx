@@ -26,11 +26,12 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
+import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import { formatFileNameDate } from '../../../helpers/date';
 import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';
@@ -66,7 +67,7 @@ import type { DropdownRender } from './HeaderDropdown';
 import HeaderDropdown from './HeaderDropdown';
 import { MESSAGE_FILTER_DROPDOWN_ID, MESSAGE_FOLDER_DROPDOWN_ID, MESSAGE_LABEL_DROPDOWN_ID } from './constants';
 
-const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, SPAM, ARCHIVE, ALMOST_ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
@@ -135,6 +136,15 @@ const HeaderMoreDropdown = ({
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
         const folderName = getFolderName(folderID, folders);
+
+        if (
+            labelID === ALMOST_ALL_MAIL &&
+            folderID === TRASH &&
+            location.pathname === CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route
+        ) {
+            dispatch(newsletterSubscriptionsActions.setSelectedElementId(undefined));
+        }
+
         await moveToFolder({
             elements: [message.data || ({} as Element)],
             sourceLabelID: fromFolderID,

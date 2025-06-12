@@ -12,10 +12,12 @@ interface Props extends PropsWithChildren {
 export const EmptyViewWrapper = ({ imgProps, height, title, description, children }: Props) => {
     return (
         <EmptyViewContainer imageProps={imgProps} height={height}>
-            <h3 className="text-bold" data-testid="empty-view-placeholder--empty-title">
+            <h3 className="h3 text-bold text-lg color-weak" data-testid="empty-view-placeholder--empty-title">
                 {title}
             </h3>
-            <p data-testid="empty-view-placeholder--empty-description">{description}</p>
+            <p className="mt-2 mb-0 text-rg color-weak" data-testid="empty-view-placeholder--empty-description">
+                {description}
+            </p>
             {children}
         </EmptyViewContainer>
     );
