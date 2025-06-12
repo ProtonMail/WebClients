@@ -145,6 +145,7 @@ export const useInitializeMessage = () => {
                     labelID,
                     status: MARK_AS_STATUS.READ,
                     sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
+                    silent: true,
                 });
                 dataChanges = { ...dataChanges, Unread: 0 };
             }
