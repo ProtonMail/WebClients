@@ -17,7 +17,14 @@ export const IdentityEdit: FC<ItemEditViewProps<'identity'>> = ({ share, revisio
     const { metadata, content } = useDeobfuscatedItem(item);
 
     const form = useFormik<IdentityItemFormValues>({
-        initialValues: { ...content, files: filesFormInitializer(), name: metadata.name, note: metadata.note, shareId },
+        initialValues: {
+            ...content,
+            extraFields: [],
+            files: filesFormInitializer(),
+            name: metadata.name,
+            note: metadata.note,
+            shareId,
+        },
         onSubmit: ({ shareId, name, note, files, ...content }) => {
             onSubmit({
                 type: 'identity',
