@@ -65,8 +65,8 @@ export function DebugMenu({ docController, editorController, documentState, docu
     void navigator.clipboard.writeText(stringified)
   }
 
-  const copySheetsJSON = async () => {
-    const json = await editorController.getSheetsJSON()
+  const copyLatestSpreadsheetStateToLogJSON = async () => {
+    const json = await editorController.getLatestSpreadsheetStateToLogJSON()
     if (!json) {
       return
     }
@@ -90,7 +90,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
   }
 
   const isDocument = documentType === 'doc'
-  const isSheet = documentType === 'sheet'
+  const isSpreadsheet = documentType === 'sheet'
 
   if (!isOpen) {
     return (
@@ -98,7 +98,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
         id="debug-menu-button"
         className={clsx(
           'fixed bottom-2 z-20 flex items-center justify-center rounded-full border border-[--border-weak] bg-[--background-weak] p-2 hover:bg-[--background-strong]',
-          isSheet ? 'right-2' : 'left-2',
+          isSpreadsheet ? 'right-2' : 'left-2',
         )}
         onClick={() => setIsOpen(true)}
         data-testid="debug-menu-button"
@@ -114,7 +114,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
       id="debug-menu"
       className={clsx(
         'fixed bottom-2 z-20 flex min-w-[12.5rem] flex-col gap-2 rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1',
-        isSheet ? 'right-2' : 'left-2',
+        isSpreadsheet ? 'right-2' : 'left-2',
       )}
       data-testid="debug-menu"
     >
@@ -149,7 +149,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
         <Button size="small" onClick={copyYDocAsJSON}>
           Copy Y.Doc as JSON
         </Button>
-        {isSheet && (
+        {isSpreadsheet && (
           <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
             Download Logs as JSON
           </Button>
@@ -164,10 +164,10 @@ export function DebugMenu({ docController, editorController, documentState, docu
             </Button>
           </>
         )}
-        {isSheet && (
+        {isSpreadsheet && (
           <>
-            <Button size="small" onClick={copySheetsJSON}>
-              Copy Sheet State
+            <Button size="small" onClick={copyLatestSpreadsheetStateToLogJSON}>
+              Copy Spreadsheet State
             </Button>
           </>
         )}
