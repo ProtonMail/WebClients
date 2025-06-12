@@ -18,7 +18,13 @@ const getFeatures = (): PlanCardFeatureDefinition[] => {
     }));
 };
 
-const LetsTalkGenericSubSection = ({ app }: { app: 'mail' | 'drive' }) => {
+const LetsTalkGenericSubSection = ({
+    app,
+    signupParameters,
+}: {
+    app: 'mail' | 'drive';
+    signupParameters?: { trial?: boolean };
+}) => {
     return (
         <div className="flex flex-column gap-4 w-full">
             <div className="text-left text-sm">
@@ -33,7 +39,7 @@ const LetsTalkGenericSubSection = ({ app }: { app: 'mail' | 'drive' }) => {
                 href={getStaticURL(`/business/contact?pd=${app}&int=enterprise&ref=appdashboard`)}
                 target="_blank"
             >
-                {c('signup: Action').t`Request trial`}
+                {signupParameters?.trial ? c('signup: Action').t`Contact us` : c('signup: Action').t`Request trial`}
             </ButtonLike>
 
             <PlanCardFeatureList

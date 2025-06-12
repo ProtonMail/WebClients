@@ -46,6 +46,7 @@ export const getSignupConfiguration = ({
             isLargeViewport: viewportWidth['>=large'],
             hideFreePlan: signupParameters.hideFreePlan,
             toApp,
+            signupParameters,
         });
     }
     if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
@@ -87,6 +88,7 @@ export const getSignupConfiguration = ({
                 PLANS.PASS_LIFETIME,
             ].some((plan) => planIDs[plan]),
             plan,
+            signupParameters,
         });
     }
     if (toApp === APPS.PROTONWALLET) {
