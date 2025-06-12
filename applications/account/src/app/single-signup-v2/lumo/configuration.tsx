@@ -1,4 +1,6 @@
-import { Logo } from '@proton/components';
+import { c } from 'ttag';
+
+import { Icon, LumoLogo } from '@proton/components';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { CYCLE, PLANS } from '@proton/payments';
 import { APPS, LUMO_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -12,36 +14,125 @@ import { planCardFeatureProps } from '../PlanCardSelector';
 import SignupHeaderV2 from '../SignupHeaderV2';
 import {
     getBenefits,
+    getBuiltInEncryptionBenefit,
     getEncryptedFeature,
     getJoinString,
     getNoLogsFeature,
-    getSwissFeature,
-    getSwissPrivacyLawsBenefit,
 } from '../configuration/helper';
 import type { SignupConfiguration } from '../interface';
 import setupAccount from '../mail/account-setup.svg';
 import CustomStep from './CustomStep';
 
+const getBuiltInEuropeFeature = () => ({
+    key: 'built-in-europe',
+    left: <Icon size={6} className="color-primary" name="map-pin" />,
+    text: c('collider_2025: Feature').t`Built and based in Europe`,
+});
+
+const getNoLogsBenefit = (): BenefitItem => {
+    return {
+        key: `no-logs`,
+        text: c('collider_2025: Info').t`Strict no-logs policy`,
+        icon: {
+            name: 'eye-slash',
+        },
+    };
+};
+
+const getNoModelTrainingBenefit = (): BenefitItem => {
+    return {
+        key: `no-model-training`,
+        text: c('collider_2025: Info').t`Data never used for AI training`,
+        icon: {
+            name: 'alias',
+        },
+    };
+};
+
+const getOpenSourceBenefit = (): BenefitItem => {
+    return {
+        key: 'open-source',
+        text: c('collider_2025: Info').t`Open source`,
+        icon: {
+            name: 'magnifier',
+        },
+    };
+};
+
 const getLumoBenefits = (): BenefitItem[] => {
-    return [getSwissPrivacyLawsBenefit()].filter(isTruthy);
+    return [getBuiltInEncryptionBenefit(), getNoLogsBenefit(), getNoModelTrainingBenefit(), getOpenSourceBenefit()];
 };
 
 const getFreeLumoFeatures = () => {
-    return [];
+    return [
+        {
+            text: c('collider_2025: Info').t`Limited daily chats`,
+            included: true,
+        },
+        {
+            text: c('collider_2025: Info').t`Web search access`,
+            included: true,
+        },
+        {
+            text: c('collider_2025: Info').t`Basic chat history`,
+            included: true,
+        },
+        {
+            text: c('collider_2025: Info').t`Limited favorites`,
+            included: true,
+        },
+
+        {
+            text: c('collider_2025: Info').t`Upload and query small files`,
+            included: true,
+        },
+    ];
 };
 
 const getLumoPlusFeatures = () => {
-    return [];
+    return [
+        {
+            text: c('collider_2025: Info').t`Unlimited daily chats`,
+            included: true,
+        },
+        {
+            text: c('collider_2025: Info').t`Web search access`,
+            included: true,
+        },
+        {
+            text: c('collider_2025: Info').t`Full chat history with search`,
+            included: true,
+        },
+        {
+            text: c('collider_2025: Info').t`Unlimited favorites for quick access`,
+            included: true,
+        },
+
+        {
+            text: c('collider_2025: Info').t`Upload and query multiple large files`,
+            included: true,
+        },
+        {
+            text: c('collider_2025: Info').t`Access to advanced AI models`,
+            included: true,
+        },
+        {
+            text: c('collider_2025: Info').t`Priority user support`,
+            included: true,
+        },
+    ];
 };
 
 export const getLumoConfiguration = ({ defaultPlan }: { defaultPlan?: string }): SignupConfiguration => {
-    const logo = <Logo appName={APPS.PROTONLUMO} />;
+    const logo = <LumoLogo variant="wordmark-only" />;
 
     const appName = LUMO_APP_NAME;
 
-    const title = <SignupHeaderV2></SignupHeaderV2>;
+    const title = (
+        <SignupHeaderV2>{c('collider_2025: Info').t`AI assistant that respects your privacy`}</SignupHeaderV2>
+    );
 
-    const features = [getNoLogsFeature(), getEncryptedFeature({ e2ee: false }), getSwissFeature({ fullText: true })];
+    const features = [getNoLogsFeature(), getEncryptedFeature({ e2ee: false }), getBuiltInEuropeFeature()];
 
     const planCards: SignupConfiguration['planCards'] = {
         [Audience.B2B]: [],
