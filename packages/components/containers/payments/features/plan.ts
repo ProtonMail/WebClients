@@ -201,7 +201,32 @@ export const getDrivePlan = ({
         title: plan.Title,
         label: '',
         description: c('new_plans: info')
-            .t`Secure cloud storage that lets you store, sync, and share files easily and securely.`,
+            .t`200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.`,
+        cta: getCTA(plan.Title),
+        features: [
+            getStorageFeature(plan.MaxSpace, { boldStorageSize, freePlan }),
+            getDocumentEditor(),
+            getVersionHistory('10y'),
+            getBasicFeatures(),
+        ],
+    };
+};
+
+export const getDrive1TBPlan = ({
+    plan,
+    boldStorageSize,
+    freePlan,
+}: {
+    freePlan: FreePlanDefault;
+    plan: Plan;
+    boldStorageSize?: boolean;
+}): ShortPlan => {
+    return {
+        plan: PLANS.DRIVE_1TB,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info')
+            .t`1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.`,
         cta: getCTA(plan.Title),
         features: [
             getStorageFeature(plan.MaxSpace, { boldStorageSize, freePlan }),
@@ -794,6 +819,8 @@ export const getShortPlan = (
             return getVPNPassPlan(planData, vpnServers);
         case PLANS.DRIVE:
             return getDrivePlan({ plan: planData, boldStorageSize, freePlan });
+        case PLANS.DRIVE_1TB:
+            return getDrive1TBPlan({ plan: planData, boldStorageSize, freePlan });
         case PLANS.DRIVE_BUSINESS:
             return getDriveBusinessPlan({ plan: planData, boldStorageSize, freePlan });
         case PLANS.PASS:

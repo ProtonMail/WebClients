@@ -27,6 +27,7 @@ export interface PlanCardFeature {
         [PLANS.MAIL]: PlanCardFeatureDefinition | null;
         [PLANS.VPN]: PlanCardFeatureDefinition | null;
         [PLANS.DRIVE]: PlanCardFeatureDefinition | null;
+        [PLANS.DRIVE_1TB]: PlanCardFeatureDefinition | null;
         [PLANS.DRIVE_BUSINESS]: PlanCardFeatureDefinition | null;
         [PLANS.PASS]: PlanCardFeatureDefinition | null;
         [PLANS.PASS_LIFETIME]: PlanCardFeatureDefinition | null;
@@ -66,6 +67,7 @@ export interface ShortPlan {
         | PLANS.BUNDLE
         | PLANS.MAIL
         | PLANS.DRIVE
+        | PLANS.DRIVE_1TB
         | PLANS.DRIVE_BUSINESS
         | PLANS.PASS
         | PLANS.PASS_LIFETIME
