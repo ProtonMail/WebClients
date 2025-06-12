@@ -14,7 +14,7 @@ import { isIgnoredErrorForReporting, logError } from '../../utils/errorHandling'
 import { UserAvailabilityTypes } from '../../utils/metrics/types/userSuccessMetricsTypes';
 import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
 import { driveEventsResultToDriveEvents } from '../_api';
-import type { VolumeType } from '../_volumes';
+import type { VolumeTypeForEvents } from '../_volumes';
 import { EventsMetrics, countEventsPerType, getErrorCategory } from './driveEventsMetrics';
 import type { DriveCoreEvent, DriveEvent, EventHandler } from './interface';
 
@@ -50,7 +50,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     const eventManagers = useRef(new Map<string, EventManager<DriveEventsResult>>());
     const eventsMetrics = useMemo(() => new EventsMetrics(), [api, generalEventManager]);
 
-    const genericHandler = (volumeId: string, type: VolumeType, driveEvents: DriveEventsResult) => {
+    const genericHandler = (volumeId: string, type: VolumeTypeForEvents, driveEvents: DriveEventsResult) => {
         countEventsPerType(type, driveEvents);
 
         if (!driveEvents.Events?.length) {
@@ -85,7 +85,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         });
     };
 
-    const createVolumeEventManager = async (volumeId: string, volumeType: VolumeType) => {
+    const createVolumeEventManager = async (volumeId: string, volumeType: VolumeTypeForEvents) => {
         try {
             const { EventID } = await api<{ EventID: string }>(queryLatestVolumeEvent(volumeId));
 
@@ -117,7 +117,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     /**
      * Creates event manager for a specified volume and starts interval polling of event.
      */
-    const subscribeToVolume = async (volumeId: string, type: VolumeType) => {
+    const subscribeToVolume = async (volumeId: string, type: VolumeTypeForEvents) => {
         const eventManager = await createVolumeEventManager(volumeId, type);
         eventManager.subscribe((payload: DriveEventsResult) => genericHandler(volumeId, type, payload));
         eventManagers.current.set(volumeId, eventManager);
@@ -136,7 +136,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
      * Creates an event manager for a specified volume if doesn't exist,
      * and starts event polling
      */
-    const startVolumeSubscription = async (volumeId: string, type: VolumeType) => {
+    const startVolumeSubscription = async (volumeId: string, type: VolumeTypeForEvents) => {
         if (!eventManagers.current.get(volumeId)) {
             await subscribeToVolume(volumeId, type);
         }

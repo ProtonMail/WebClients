@@ -15,7 +15,7 @@ import {
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { APPS, BRAND_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { type SHARE_URL_PERMISSIONS, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -77,10 +77,10 @@ export const PublicSharing = ({
                     const planName = PLAN_NAMES[user.isFree ? PLANS.DRIVE : PLANS.BUNDLE];
                     return showDriveUpsellModal({
                         size: 'large',
+                        'data-testid': 'public-sharing',
                         titleModal: c('Title').t`Need to share more files with edit access?`,
                         // translator: We can have two different plan upgrade: "Upgrade to Proton Drive Plus" or "Upgrade to Proton Drive Unlimited"
-                        description: c('Description')
-                            .t`Upgrade to ${BRAND_NAME} ${planName} to keep sharing files with edit access`,
+                        description: c('Description').t`Upgrade to ${planName} to keep sharing files with edit access`,
                         illustration: drivePlusUpgrade,
                         closeButtonColor: 'white',
                         onUpgrade: () => {

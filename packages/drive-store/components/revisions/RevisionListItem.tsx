@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, TimeIntl } from '@proton/components';
+import type { Revision } from '@proton/drive';
 
-import type { DriveFileRevision } from '../../store';
 import { useContextMenuControls } from '../FileBrowser';
 import { RevisionsItemContextMenu } from './RevisionsItemContextMenu';
 
@@ -16,7 +16,7 @@ const RevisionListItem = ({
     formatType = 'date',
     isCurrent = false,
 }: {
-    revision: DriveFileRevision;
+    revision: Revision;
     formatType?: 'date' | 'time';
     isCurrent?: boolean;
 }) => {
@@ -45,9 +45,13 @@ const RevisionListItem = ({
             />
             <li className="revision-list-item mb-4">
                 <TimeIntl className="flex-1" options={options}>
-                    {revision.createTime}
+                    {revision.creationTime}
                 </TimeIntl>
-                <p className="text-ellipsis text-center m-0">{revision.signatureEmail}</p>
+                <p className="text-ellipsis text-center m-0">
+                    {(revision.contentAuthor.ok
+                        ? revision.contentAuthor.value
+                        : revision.contentAuthor.error.claimedAuthor) || c('Info').t`Anonymous`}
+                </p>
                 <Button
                     className="ml-auto"
                     ref={ref}

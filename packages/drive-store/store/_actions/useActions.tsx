@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -15,6 +16,8 @@ import { TransferConflictStrategy } from '../_uploads/interface';
 import { useErrorHandler } from '../_utils';
 import type { LinkInfo } from './interface';
 import useListNotifications from './useListNotifications';
+
+const safeName = (name: string) => <bdi>{name}</bdi>;
 
 /**
  * useActions provides actions over links and its results is reported back
@@ -44,48 +47,53 @@ export default function useActions() {
         abortSignal: AbortSignal,
         shareId: string,
         parentLinkId: string,
-        name: string
+        newName: string
     ): Promise<string> => {
+        const name = safeName(newName);
+
         return link
-            .createFolder(abortSignal, shareId, parentLinkId, name)
+            .createFolder(abortSignal, shareId, parentLinkId, newName)
             .then((id: string) => {
                 createNotification({
-                    text: <span className="text-pre-wrap">{c('Notification').t`"${name}" created successfully`}</span>,
+                    text: <span className="text-pre-wrap">{c('Notification').jt`"${name}" created successfully`}</span>,
                 });
                 return id;
             })
             .catch((e) => {
                 showErrorNotification(
                     e,
-                    <span className="text-pre-wrap">{c('Notification').t`"${name}" failed to be created`}</span>
+                    <span className="text-pre-wrap">{c('Notification').jt`"${name}" failed to be created`}</span>
                 );
                 throw e;
             });
     };
 
-    const createFile = async (shareId: string, parentLinkId: string, name: string) => {
-        const file = new File([], name, { type: 'text/plain' });
+    const createFile = async (shareId: string, parentLinkId: string, newName: string) => {
+        const file = new File([], newName, { type: 'text/plain' });
         const controls = initFileUpload(
             shareId,
             parentLinkId,
             file,
             async () => {
-                throw new ValidationError(c('Error').t`"${name}" already exists`);
+                const sanitizedName = rtlSanitize(newName);
+                throw new ValidationError(c('Error').t`"${sanitizedName}" already exists`);
             },
             // Logging is not useful for single file creation.
             () => {}
         );
+
+        const name = safeName(newName);
         await controls
             .start()
             .then(() => {
                 createNotification({
-                    text: <span className="text-pre-wrap">{c('Notification').t`"${name}" created successfully`}</span>,
+                    text: <span className="text-pre-wrap">{c('Notification').jt`"${name}" created successfully`}</span>,
                 });
             })
             .catch((e) => {
                 showErrorNotification(
                     e,
-                    <span className="text-pre-wrap">{c('Notification').t`"${name}" failed to be created`}</span>
+                    <span className="text-pre-wrap">{c('Notification').jt`"${name}" failed to be created`}</span>
                 );
                 throw e;
             });
@@ -94,7 +102,7 @@ export default function useActions() {
     const saveFile = async (
         shareId: string,
         parentLinkId: string,
-        name: string,
+        newName: string,
         mimeType: string,
         content: Uint8Array[]
     ) => {
@@ -103,7 +111,7 @@ export default function useActions() {
         // and also verify revision ID that file was not touched in meantime
         // by other client. But this is enough for first version to play with
         // the feature and see what all needs to be changed and implemented.
-        const file = new File(content, name, { type: mimeType });
+        const file = new File(content, newName, { type: mimeType });
         const controls = initFileUpload(
             shareId,
             parentLinkId,
@@ -112,30 +120,33 @@ export default function useActions() {
             // Logging is not useful for single file updates.
             () => {}
         );
+
+        const name = safeName(newName);
         await controls
             .start()
             .then(() => {
                 createNotification({
-                    text: <span className="text-pre-wrap">{c('Notification').t`"${name}" saved successfully`}</span>,
+                    text: <span className="text-pre-wrap">{c('Notification').jt`"${name}" saved successfully`}</span>,
                 });
             })
             .catch((e) => {
                 showErrorNotification(
                     e,
-                    <span className="text-pre-wrap">{c('Notification').t`"${name}" failed to be saved`}</span>
+                    <span className="text-pre-wrap">{c('Notification').jt`"${name}" failed to be saved`}</span>
                 );
                 throw e;
             });
     };
 
-    const renameLink = async (abortSignal: AbortSignal, shareId: string, linkId: string, newName: string) => {
-        // translator: ${newName} is for a folder or file name.
-        const successNotificationText = c('Notification').t`"${newName}" renamed successfully`;
-        // translator: ${newName} is for a folder or file name.
-        const failNotificationText = c('Notification').t`"${newName}" failed to be renamed`;
+    const renameLink = async (abortSignal: AbortSignal, shareId: string, linkId: string, name: string) => {
+        const newName = safeName(name);
+        // translator: ${displayText} is for a folder or file name.
+        const successNotificationText = c('Notification').jt`"${newName}" renamed successfully`;
+        // translator: ${displayText} is for a folder or file name.
+        const failNotificationText = c('Notification').jt`"${newName}" failed to be renamed`;
 
         return link
-            .renameLink(abortSignal, shareId, linkId, newName)
+            .renameLink(abortSignal, shareId, linkId, name)
             .then(() => {
                 createNotification({
                     text: <span className="text-pre-wrap">{successNotificationText}</span>,

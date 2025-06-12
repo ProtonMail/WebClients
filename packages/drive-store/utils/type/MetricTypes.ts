@@ -3,6 +3,7 @@ export enum MetricShareType {
     Device = 'device',
     Photo = 'photo',
     Shared = 'shared',
+    SharedPhoto = 'shared_photo',
 }
 
 export enum MetricSharePublicType {

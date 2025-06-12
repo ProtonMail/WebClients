@@ -7,12 +7,12 @@ import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
 import { is4xx, is5xx } from '../../utils/errorHandling/apiErrors';
-import type { VolumeType } from '../_volumes';
+import type { VolumeTypeForEvents } from '../_volumes';
 import type { DriveEvent } from './interface';
 
 const EVENT_METRICS = ['delete', 'create', 'update', 'update_metadata'] as const;
 
-export function countEventsPerType(type: VolumeType, driveEvents: DriveEventsResult) {
+export function countEventsPerType(type: VolumeTypeForEvents, driveEvents: DriveEventsResult) {
     if (!driveEvents.Events) {
         return;
     }
@@ -112,7 +112,7 @@ export class EventsMetrics {
         });
     }
 
-    batchCompleted(volumeId: string, eventId: string, type: VolumeType) {
+    batchCompleted(volumeId: string, eventId: string, type: VolumeTypeForEvents) {
         const key = `${volumeId}-${eventId}`;
         const batch = this.state.get(key) || {};
         const events = this.events.get(key) || {};
@@ -121,7 +121,7 @@ export class EventsMetrics {
         this.events.delete(key);
     }
 
-    private processBatch(batch: StateEvents, events: StateEvents, type: VolumeType) {
+    private processBatch(batch: StateEvents, events: StateEvents, type: VolumeTypeForEvents) {
         EVENT_METRICS.forEach((eventType) => {
             const processed = batch[eventType];
             const total = events[eventType];

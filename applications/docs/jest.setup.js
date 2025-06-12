@@ -51,9 +51,20 @@ jest.mock('@proton/drive-store/store/_uploads/initUploadFileWorker.ts', () => {
 
 jest.mock('@proton/drive-store/utils/metrics/userSuccessMetrics.ts', () => {
   return {
-      userSuccessMetrics: {
-          init: jest.fn(),
-          mark: jest.fn(),
-      },
-  };
-});
+    userSuccessMetrics: {
+      init: jest.fn(),
+      mark: jest.fn(),
+    },
+  }
+})
+
+// Mock VPN flag to prevent those issues
+// TypeError: require.context is not a function
+// > 1 | const flags = require.context('@proton/styles/assets/img/flags', true, /.svg$/);
+jest.mock('@proton/components/containers/vpn/flag', () => ({
+  getFlagSvg: jest.fn().mockImplementation((it) => it),
+}))
+
+jest.mock('@proton/components/components/v2/phone/flagSvgs', () => ({
+  getFlagSvg: jest.fn().mockImplementation((it) => it),
+}))
