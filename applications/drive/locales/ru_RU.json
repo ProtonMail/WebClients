@@ -7639,17 +7639,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Тарифы начиная с ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -7671,6 +7660,17 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Тарифы начиная с ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Улучшить"
       ]
     },
     "new_plans: feature": {
@@ -10413,6 +10413,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -10683,47 +10724,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
