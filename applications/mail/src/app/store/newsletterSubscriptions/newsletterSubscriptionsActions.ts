@@ -4,15 +4,22 @@ import {
     applyNewsletterSubscriptionFilter,
     getNewsletterSubscription,
     unsubscribeNewsletterSubscription,
+    updateNewsletterSubscription,
 } from '@proton/shared/lib/api/newsletterSubscription';
 import type {
-    FilterSubscriptionAPIResponse,
     GetNewsletterSubscriptionsApiResponse,
     NewsletterSubscription,
+    POSTSubscriptionAPIResponse,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { type MailThunkExtra } from '../store';
-import type { FilterSubscriptionPayload, SortSubscriptionsValue, UnsubscribePayload } from './interface';
+import {
+    type FilterSubscriptionPayload,
+    type SortSubscriptionsValue,
+    SubscriptionTabs,
+    type UnsubscribePayload,
+    type UpdateSubscriptionPayload,
+} from './interface';
 import { newsletterSubscriptionName } from './newsletterSubscriptionsSlice';
 
 export const sortSubscriptionList = createAsyncThunk<
@@ -21,9 +28,19 @@ export const sortSubscriptionList = createAsyncThunk<
     MailThunkExtra
 >('newsletterSubscriptions/sortList', async (value, thunkExtra) => {
     try {
-        // We don't give pagination information here since changing the sort order override the store
+        const store = thunkExtra.getState()[newsletterSubscriptionName].value;
+        if (!store) {
+            throw new Error('No newsletter subscription state');
+        }
+
+        // The only pagination data we need is the active which define the tab the user has selected
         return await thunkExtra.extra.api<GetNewsletterSubscriptionsApiResponse>(
-            getNewsletterSubscription({ sort: value })
+            getNewsletterSubscription({
+                sort: value,
+                pagination: {
+                    Active: store.selectedTab === SubscriptionTabs.Active ? '1' : '0',
+                },
+            })
         );
     } catch (error) {
         throw error;
@@ -46,14 +63,19 @@ export const unsubscribeSubscription = createAsyncThunk<
 });
 
 export const filterSubscriptionList = createAsyncThunk<
-    FilterSubscriptionAPIResponse,
+    POSTSubscriptionAPIResponse,
     FilterSubscriptionPayload,
     MailThunkExtra & { rejectValue: { previousState: NewsletterSubscription; originalIndex: number } }
 >('newsletterSubscriptions/filterList', async (payload, thunkExtra) => {
     try {
-        return await thunkExtra.extra.api<FilterSubscriptionAPIResponse>(
+        const data = await thunkExtra.extra.api<POSTSubscriptionAPIResponse>(
             applyNewsletterSubscriptionFilter(payload.subscription.ID, payload.data)
         );
+
+        // We force the event loop here to update the filters,
+        // can be removed if we use an async thunk in the filters slice
+        void thunkExtra.extra.eventManager.call();
+        return data;
     } catch (error) {
         return thunkExtra.rejectWithValue({
             previousState: payload.subscription,
@@ -82,5 +104,22 @@ export const fetchNextNewsletterSubscriptionsPage = createAsyncThunk<
         );
     } catch (error) {
         throw error;
+    }
+});
+
+export const updateSubscription = createAsyncThunk<
+    POSTSubscriptionAPIResponse,
+    UpdateSubscriptionPayload,
+    MailThunkExtra & { rejectValue: { previousState: NewsletterSubscription; originalIndex: number } }
+>('newsletterSubscriptions/update', async (payload, thunkExtra) => {
+    try {
+        return await thunkExtra.extra.api<POSTSubscriptionAPIResponse>(
+            updateNewsletterSubscription(payload.subscription.ID, payload.data)
+        );
+    } catch (error) {
+        return thunkExtra.rejectWithValue({
+            previousState: payload.subscription,
+            originalIndex: payload.subscriptionIndex ?? -1,
+        });
     }
 });

@@ -1,3 +1,4 @@
+import { convertCustomViewLabelsToAlmostAllMail } from '@proton/mail/labels/helpers';
 import { getConversation, queryConversations } from '@proton/shared/lib/api/conversations';
 import type { MailboxItemsQueryParams } from '@proton/shared/lib/api/mailbox';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
@@ -5,6 +6,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import type { Api } from '@proton/shared/lib/interfaces';
 import range from '@proton/utils/range';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
 import type { Element } from '../../../models/element';
 import type { MailState } from '../../store';
@@ -18,28 +20,37 @@ const PAGE_FETCH_COUNT = 2;
 const getQueryElementsParameters = ({
     page,
     pageSize,
-    params: { labelID, sort, search, filter },
-}: Pick<QueryParams, 'page' | 'pageSize'> & { params: ElementsStateParams }): MailboxItemsQueryParams => ({
-    Page: page,
-    PageSize: pageSize,
-    Limit: pageSize,
-    LabelID: labelID,
-    Sort: sort.sort,
-    Desc: sort.desc ? 1 : 0,
-    Begin: search.begin,
-    End: search.end,
-    // BeginID,
-    // EndID,
-    Keyword: search.keyword,
-    To: search.to,
-    From: search.from,
-    // Subject,
-    Attachments: filter.Attachments,
-    Unread: filter.Unread,
-    AddressID: search.address,
-    // ID,
-    AutoWildcard: search.wildcard,
-});
+    params: { labelID, sort, search, filter, newsletterSubscriptionID },
+}: Pick<QueryParams, 'page' | 'pageSize'> & { params: ElementsStateParams }): MailboxItemsQueryParams => {
+    // Use ALMOST_ALL_MAIL as the LabelID when we're viewing a custom view like a newsletter subscription
+    const effectiveLabelID = convertCustomViewLabelsToAlmostAllMail(labelID);
+
+    // Only send NewsletterSubscriptionID when we're actually in the newsletter subscriptions view
+    const shouldIncludeNewsletterSubscriptionID = labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS;
+
+    return {
+        Page: page,
+        PageSize: pageSize,
+        Limit: pageSize,
+        LabelID: effectiveLabelID,
+        Sort: sort.sort,
+        Desc: sort.desc ? 1 : 0,
+        Begin: search.begin,
+        End: search.end,
+        // BeginID,
+        // EndID,
+        Keyword: search.keyword,
+        To: search.to,
+        From: search.from,
+        // Subject,
+        Attachments: filter.Attachments,
+        Unread: filter.Unread,
+        AddressID: search.address,
+        // ID,
+        AutoWildcard: search.wildcard,
+        NewsletterSubscriptionID: shouldIncludeNewsletterSubscriptionID ? (newsletterSubscriptionID ?? null) : null,
+    };
+};
 
 /**
  *
@@ -75,7 +86,6 @@ export const queryElementsInBatch = async (
 
     abortController?.abort();
     const newAbortController = new AbortController();
-
     const initialPromise = Promise.resolve({
         abortController: newAbortController,
         More: true,

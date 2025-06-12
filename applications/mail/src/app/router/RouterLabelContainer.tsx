@@ -1,15 +1,15 @@
-import { type RefObject, useCallback, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
-import { useUserSettings } from '@proton/account';
 import { Commander, useActiveBreakpoint, useModalState } from '@proton/components';
 import { useFolders } from '@proton/mail/index';
 import { getFolderName } from '@proton/mail/labels/helpers';
 import clsx from '@proton/utils/clsx';
 
-import List from 'proton-mail/components/list/List';
-import { type SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
-import useScrollToTop from 'proton-mail/components/list/useScrollToTop';
+import MailboxList from 'proton-mail/components/list/MailboxList';
+import ResizableWrapper from 'proton-mail/components/list/ResizableWrapper';
+import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
+import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import { ROUTE_ELEMENT } from 'proton-mail/constants';
 import MailboxContainerPlaceholder from 'proton-mail/containers/mailbox/MailboxContainerPlaceholder';
 import { useMailCommander } from 'proton-mail/hooks/commander/useMailCommander';
@@ -24,7 +24,6 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import { RouterElementContainer } from './RouterElementContainer';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 import { MailboxToolbar } from './components/MailboxToolbar';
-import { useGetElementParams } from './hooks/useGetElementParams';
 import type { MailboxActions, RouterNavigation } from './interface';
 
 interface Props {
@@ -32,21 +31,19 @@ interface Props {
     navigation: RouterNavigation;
     elementsData: ElementsStructure;
     actions: MailboxActions;
+    hasRowMode?: boolean;
 }
 
-export const RouterLabelContainer = ({ params, navigation, elementsData, actions }: Props) => {
-    const { isSearching, conversationMode, sort, filter, labelID, elementID, messageID } = params;
-    const { handlePage, handleBack, page, handleFilter } = navigation;
-    const { elements, elementIDs, loading, placeholderCount, total } = elementsData;
+export const RouterLabelContainer = ({ params, navigation, elementsData, actions, hasRowMode = false }: Props) => {
+    const { sort, filter, labelID, elementID, messageID } = params;
+    const { handleBack, page, handleFilter } = navigation;
+    const { elements, elementIDs, loading, placeholderCount } = elementsData;
     const {
         handleElement,
-        handleMarkAs,
-        handleDelete,
         isMessageOpening,
         checkedIDs,
         selectedIDs,
         handleCheck,
-        handleCheckOne,
         handleCheckOnlyOne,
         handleCheckRange,
         handleCheckAll,
@@ -62,19 +59,9 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
     const listRef = useRef<HTMLDivElement>(null);
     const location = useLocation();
 
-    const {
-        columnMode,
-        columnLayout,
-        listContainerRef,
-        resizeAreaRef,
-        resize,
-        labelDropdownToggleRef,
-        moveDropdownToggleRef,
-    } = useMailboxLayoutProvider();
-
+    const { columnMode, columnLayout, labelDropdownToggleRef, resizeAreaRef, moveDropdownToggleRef } =
+        useMailboxLayoutProvider();
     const composersCount = useMailSelector(selectComposersCount);
-
-    const [userSettings] = useUserSettings();
     const breakpoints = useActiveBreakpoint();
 
     const [commanderModalProps, showCommander, commanderRender] = useModalState();
@@ -160,67 +147,47 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
                 selectAll,
                 sourceAction: sourceAction,
             });
+            if (selectedIDs.includes(elementID || '')) {
+                handleBack();
+            }
         },
-        [selectedIDs, elementID, labelID, folders, selectAll]
+        [selectedIDs, elementID, labelID, folders, handleBack, selectAll]
     );
-
-    const handleFocus = useCallback(
-        (elementID: string) => {
-            setFocusID(elementID);
-        },
-        [setFocusID]
-    );
-
-    /**
-     * Router label side effects
-     */
-    const elementParams = useGetElementParams({ params, navigation });
-    useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort.desc, sort.sort, elementParams.search]);
 
     return (
-        <div ref={elementRef} tabIndex={-1} className="flex flex-1 flex-nowrap outline-none" data-testid="mailbox">
-            <List
-                ref={listRef}
-                listContainerRef={listContainerRef}
-                show={showList}
-                conversationMode={conversationMode}
-                labelID={labelID}
-                loading={loading}
-                placeholderCount={placeholderCount}
-                columnLayout={columnLayout}
-                elementID={elementID}
-                elements={elements}
-                checkedIDs={checkedIDs}
-                onCheck={handleCheck}
-                onClick={handleElement}
-                isSearch={isSearching}
-                page={page}
-                total={total}
-                onPage={handlePage}
-                onFocus={handleFocus}
-                onCheckOne={handleCheckOne}
-                filter={filter}
-                resizeAreaRef={resizeAreaRef}
-                enableResize={resize.enableResize}
-                resetWidth={resize.resetWidth}
-                showContentPanel={showContentPanel}
-                scrollBarWidth={resize.scrollBarWidth}
-                onMarkAs={handleMarkAs}
-                onDelete={handleDelete}
-                onMove={handleMove}
-                onBack={handleBack}
-                userSettings={userSettings}
-                toolbar={
-                    <MailboxToolbar
-                        params={params}
-                        navigation={navigation}
-                        elementsData={elementsData}
-                        // TODO improve this in the future, we should use the `handleMove` from the actions and not duplicate the code
-                        actions={{ ...actions, handleMove }}
-                    />
-                }
-                onCheckAll={handleCheckAll}
-            />
+        <div
+            ref={elementRef}
+            tabIndex={-1}
+            className="flex flex-1 flex-nowrap outline-none relative"
+            data-testid="mailbox"
+        >
+            <ResizableWrapper
+                resizeHandlePosition={ResizeHandlePosition.RIGHT}
+                containerRef={elementRef}
+                maxRatio={0.5}
+                minWidth={320}
+                defaultRatio={0.4}
+                className="view-column-detail"
+                resizeHandleRef={resizeAreaRef}
+                persistKey="messageListRatio"
+                resizingDisabled={hasRowMode || !showContentPanel}
+            >
+                <MailboxList
+                    actions={actions}
+                    elementsData={elementsData}
+                    toolbar={
+                        <MailboxToolbar
+                            inHeader
+                            params={params}
+                            navigation={navigation}
+                            elementsData={elementsData}
+                            actions={{ ...actions, handleMove }}
+                        />
+                    }
+                    listRef={listRef}
+                    noBorder={hasRowMode || !showContentPanel}
+                />
+            </ResizableWrapper>
 
             <section
                 className={clsx([

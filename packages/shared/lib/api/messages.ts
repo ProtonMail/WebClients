@@ -40,6 +40,7 @@ export const queryMessageMetadata = ({
     AutoWildcard,
     Anchor,
     AnchorID,
+    NewsletterSubscriptionID,
 }: MailboxItemsQueryParams) => ({
     method: 'get',
     url: 'mail/v4/messages',
@@ -67,6 +68,7 @@ export const queryMessageMetadata = ({
         AutoWildcard,
         Anchor,
         AnchorID,
+        ...(!!NewsletterSubscriptionID ? { 'NewsletterSubscriptionID[]': [NewsletterSubscriptionID] } : {}),
     },
 });
 

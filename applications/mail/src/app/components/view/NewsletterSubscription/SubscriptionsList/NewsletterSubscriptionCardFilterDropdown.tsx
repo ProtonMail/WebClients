@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -8,15 +10,18 @@ import {
     DropdownMenuButton,
     FiltersUpsellModal,
     Icon,
-    type IconName,
+    useApi,
+    useEventManager,
     useModalState,
+    useNotifications,
     usePopperAnchor,
 } from '@proton/components';
 import { useFilters } from '@proton/mail/filters/hooks';
+import { toggleEnable } from '@proton/shared/lib/api/filters';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { shouldOpenUpsellOnFilterClick } from '../helper';
+import { getFilterDropdownData, shouldOpenUpsellOnFilterClick, shouldToggleFilter } from '../helper';
 import type { ModalFilterType } from '../interface';
 
 interface Props {
@@ -25,45 +30,54 @@ interface Props {
 }
 
 export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleSubscriptionFilter }: Props) => {
+    const api = useApi();
     const [user, userLoading] = useUser();
     const [filters = [], filterLoading] = useFilters();
+
+    const { call } = useEventManager();
+    const { createNotification } = useNotifications();
 
     const popover = usePopperAnchor<HTMLButtonElement>();
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
+    const dropdownData = useMemo(() => getFilterDropdownData(subscription, filters), [subscription, filters]);
+
+    const toggleFilter = async (filterID: string, enabled: boolean) => {
+        await api(toggleEnable(filterID, enabled));
+        await call();
+
+        createNotification({
+            text: enabled
+                ? c('Success notification').t`The filter has been enabled`
+                : c('Success notification').t`The filter has been disabled`,
+        });
+    };
+
     const handleClick = (filterType: ModalFilterType, event: React.MouseEvent) => {
         event.stopPropagation();
         popover.close();
 
+        // We show an upsell if the user reach the limit of filters.
         if (shouldOpenUpsellOnFilterClick(subscription, user, filters)) {
             handleUpsellModalDisplay(true);
-        } else {
-            handleSubscriptionFilter(filterType);
+            return;
         }
-    };
 
-    const menuItems: {
-        icon: IconName;
-        label: string;
-        filter: ModalFilterType;
-    }[] = [
-        {
-            icon: 'envelope-open',
-            label: c('Action').t`Mark as read`,
-            filter: 'MarkAsRead',
-        },
-        {
-            icon: 'archive-box',
-            label: c('Action').t`Move to archive`,
-            filter: 'MoveToArchive',
-        },
-        {
-            icon: 'trash',
-            label: c('Action').t`Move to trash`,
-            filter: 'MoveToTrash',
-        },
-    ];
+        const hasExistingFilter = !!subscription.FilterID && dropdownData.isFilterEnabled;
+        const toggleFilterInsteadOfCreatingOne = shouldToggleFilter(filterType, {
+            markingAsRead: dropdownData.markingAsRead,
+            movingToArchive: dropdownData.movingToArchive,
+            movingToTrash: dropdownData.movingToTrash,
+        });
+
+        if (hasExistingFilter && toggleFilterInsteadOfCreatingOne && subscription.FilterID) {
+            void toggleFilter(subscription.FilterID, !dropdownData.isFilterEnabled);
+            return;
+        }
+
+        handleSubscriptionFilter(filterType);
+    };
 
     return (
         <>
@@ -84,7 +98,7 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
             </div>
             <Dropdown isOpen={popover.isOpen} anchorRef={popover.anchorRef} onClose={popover.close}>
                 <DropdownMenu>
-                    {menuItems.map((item) => (
+                    {dropdownData.menuItems.map((item) => (
                         <DropdownMenuButton
                             key={item.icon}
                             disabled={userLoading || filterLoading}
