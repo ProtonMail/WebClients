@@ -16,11 +16,11 @@ import {
 import {
     addApiMock,
     clearAll,
-    createDocument,
     decryptMessage,
     decryptSessionKey,
     getCompleteAddress,
     minimalCache,
+    parseDOMStringToBodyElement,
 } from '../../../helpers/test/helper';
 import { ID, clickSend, renderComposer, send } from './Composer.test.helpers';
 
@@ -76,7 +76,7 @@ describe('Composer reply and forward', () => {
                 addresses: getModelState([address]),
             },
             message: {
-                messageDocument: { document: createDocument(content) },
+                messageDocument: { document: parseDOMStringToBodyElement(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             },
         });
@@ -104,7 +104,7 @@ describe('Composer reply and forward', () => {
                 addresses: getModelState([address]),
             },
             message: {
-                messageDocument: { document: createDocument(content) },
+                messageDocument: { document: parseDOMStringToBodyElement(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             },
         });

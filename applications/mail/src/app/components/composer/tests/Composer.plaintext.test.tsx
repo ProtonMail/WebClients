@@ -2,7 +2,7 @@ import { fireEvent, screen } from '@testing-library/react';
 
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
-import { clearAll, createDocument, waitForSpyCall } from '../../../helpers/test/helper';
+import { clearAll, parseDOMStringToBodyElement, waitForSpyCall } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
 import * as useSaveDraft from '../../../hooks/message/useSaveDraft';
 import Composer from '../Composer';
@@ -116,7 +116,7 @@ describe('Composer switch plaintext <-> html', () => {
                             ToList: [],
                         },
                         messageDocument: {
-                            document: createDocument(content),
+                            document: parseDOMStringToBodyElement(content),
                         },
                     },
                     composerID
