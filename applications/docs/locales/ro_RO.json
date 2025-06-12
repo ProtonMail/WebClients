@@ -6639,17 +6639,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planuri începând de la ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -6671,6 +6660,17 @@
       ],
       "Switch plan": [
         "Schimbare plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planuri începând de la ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -9177,27 +9177,6 @@
         "Pentru ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } spațiu per utilizator"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vă oferă toate aplicațiile, toate funcțiile, acces anticipat la versiuni noi și tot ce aveți nevoie pentru a avea controlul asupra datelor și asupra securității acestora."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domeniu personal de e-mail",
-        "${ planNumberOfDomains } domenii personale de e-mail",
-        "${ planNumberOfDomains } de domenii personale de e-mail"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adresă de e-mail",
-        "${ planNumberOfEmails } adrese de e-mail",
-        "${ planNumberOfEmails } adrese de e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Foldere, etichete și filtre personale"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GiB spațiu de stocare"
@@ -9237,6 +9216,27 @@
       ],
       "Your privacy is our mission": [
         "Confidențialitatea este misiunea noastră principală"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } spațiu per utilizator"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vă oferă toate aplicațiile, toate funcțiile, acces anticipat la versiuni noi și tot ce aveți nevoie pentru a avea controlul asupra datelor și asupra securității acestora."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domeniu personal de e-mail",
+        "${ planNumberOfDomains } domenii personale de e-mail",
+        "${ planNumberOfDomains } de domenii personale de e-mail"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adresă de e-mail",
+        "${ planNumberOfEmails } adrese de e-mail",
+        "${ planNumberOfEmails } adrese de e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Foldere, etichete și filtre personale"
       ]
     },
     "Subscription renewal state": {

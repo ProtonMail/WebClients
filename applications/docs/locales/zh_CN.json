@@ -6457,17 +6457,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "以 ${ priceDrivePlus } 价格开始计划"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -6489,6 +6478,17 @@
       ],
       "Switch plan": [
         "切换计划"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "以 ${ priceDrivePlus } 价格开始计划"
+      ],
+      "Upgrade": [
+        "升级账户"
       ]
     },
     "new_plans: feature": {
@@ -8824,23 +8824,6 @@
         "总计 ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "每位用户 ${ planMaxSpace } 存储空间"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } 为您提供所有应用程序、所有功能、新版本的早期访问权限，以及控制数据及其安全性所需的一切。"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } 个自定义邮箱域名"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } 个邮箱地址"
-      ],
-      "Folders, labels, and custom filters": [
-        "文件夹、标签和自定义过滤器"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB 存储空间"
@@ -8880,6 +8863,23 @@
       ],
       "Your privacy is our mission": [
         "保护您的隐私就是我们的使命"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "每位用户 ${ planMaxSpace } 存储空间"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } 为您提供所有应用程序、所有功能、新版本的早期访问权限，以及控制数据及其安全性所需的一切。"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } 个自定义邮箱域名"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } 个邮箱地址"
+      ],
+      "Folders, labels, and custom filters": [
+        "文件夹、标签和自定义过滤器"
       ]
     },
     "Subscription renewal state": {

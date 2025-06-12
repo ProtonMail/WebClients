@@ -469,11 +469,11 @@
       "Discard": [
         "Abandonner"
       ],
-      "Discard changes": [
-        "Abandonner les modifications"
-      ],
       "Discard Changes": [
         "Abandonner les changements"
+      ],
+      "Discard changes": [
+        "Abandonner les modifications"
       ],
       "Discover ${ planName }": [
         "Découvrez ${ planName }"
@@ -805,11 +805,11 @@
       "Keep": [
         "Conserver"
       ],
-      "Keep editing": [
-        "Continuer les modifications"
-      ],
       "Keep Editing": [
         "Poursuivre les modifications"
+      ],
+      "Keep editing": [
+        "Continuer les modifications"
       ],
       "Keep logo": [
         "Conserver le logo"
@@ -1000,11 +1000,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Refresh the page": [
         "Actualiser la page"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Reject": [
         "Refuser"
@@ -1180,11 +1180,11 @@
       "Select country ${ country }": [
         "Sélectionnez le pays ${ country }"
       ],
-      "select file": [
-        "sélectionnez un fichier."
-      ],
       "Select file": [
         "Sélectionner un fichier"
+      ],
+      "select file": [
+        "sélectionnez un fichier."
       ],
       "Select files": [
         "Sélectionner les fichiers"
@@ -4811,11 +4811,11 @@
       "Forward to": [
         "Transférer vers"
       ],
-      "Or": [
-        "Ou"
-      ],
       "or": [
         "ou"
+      ],
+      "Or": [
+        "Ou"
       ],
       "With attachment": [
         "Avec pièce jointe"
@@ -7574,11 +7574,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activez au moins une méthode de récupération des données pour vous assurer que vous pourrez continuer à accéder au contenu de votre compte ${ BRAND_NAME } si vous perdez votre mot de passe."
       ],
-      "active": [
-        "active"
-      ],
       "Active": [
         "Actif"
+      ],
+      "active": [
+        "active"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Ajoutez une adresse e-mail @pm.me à votre compte. Ce domaine simple et court signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
@@ -8025,11 +8025,11 @@
       "Data recoverable on this device": [
         "Données récupérables sur cet appareil"
       ],
-      "Dedicated servers": [
-        "Serveurs dédiés"
-      ],
       "dedicated servers": [
         "serveurs dédiés"
+      ],
+      "Dedicated servers": [
+        "Serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -9898,11 +9898,11 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "Username": [
-        "Nom d'utilisateur"
-      ],
       "username": [
         "nom d'utilisateur"
+      ],
+      "Username": [
+        "Nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -10808,16 +10808,16 @@
         "Déplacer vers la droite/agrandir"
       ],
       "Move to Archive": [
-        "Déplacer dans le dossier Archives"
+        "Déplacer vers les archives"
       ],
       "Move to Inbox": [
-        "Déplacer dans le dossier Boite de réception"
+        "Déplacer vers la boite de réception"
       ],
       "Move to Spam": [
-        "Déplacer dans le dossier Indésirables/spam"
+        "Déplacer vers le dossier Indésirables/spam"
       ],
       "Move to Trash": [
-        "Déplacer dans le dossier Corbeille"
+        "Déplacer vers la corbeille"
       ],
       "Move to...": [
         "Déplacer"
@@ -11117,11 +11117,11 @@
       "Amount due": [
         "Montant à payer"
       ],
-      "And": [
-        "Et"
-      ],
       "AND": [
         "ET"
+      ],
+      "And": [
+        "Et"
       ],
       "and": [
         "et"
@@ -11552,11 +11552,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importer tous les messages"
@@ -11697,10 +11697,10 @@
         "Déplacer"
       ],
       "Move to Archive": [
-        "Déplacer dans le dossier Archives"
+        "Déplacer vers les archives"
       ],
       "Move to Inbox": [
-        "Déplacer dans le dossier Boite de réception"
+        "Déplacer vers la boite de réception"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Il doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractères."
@@ -11768,14 +11768,14 @@
       "Optional": [
         "Facultatif"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Organization name": [
         "Nom de l'organisation"
@@ -11910,7 +11910,7 @@
         "Second mot de passe"
       ],
       "Select Linux package format": [
-        "Choix du format de paquet Linux"
+        "Sélectionner le format du paquet Linux"
       ],
       "Send auto-reply": [
         "Envoyer une réponse automatique"
@@ -13813,6 +13813,14 @@
         "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -13831,14 +13839,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -14737,7 +14737,7 @@
         "Toute l'organisation"
       ],
       "Trash": [
-        "Déplacer dans le dossier Corbeille"
+        "Déplacer vers la corbeille"
       ]
     },
     "option": {
@@ -17912,6 +17912,47 @@
         "Pour ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
@@ -18200,47 +18241,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
@@ -19010,10 +19010,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -20213,7 +20213,7 @@
         "Votre essai gratuit ${ planName } se termine le ${ textDate }."
       ],
       "Your ${ planName } subscription has started": [
-        "Votre abonnement ${ planName } a débuté."
+        "Votre abonnement ${ planName } a commencé."
       ],
       "Your calendar link": [
         "Lien de votre calendrier"
