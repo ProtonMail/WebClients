@@ -152,10 +152,10 @@
       "Create": [
         "Стварыць"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -1459,6 +1459,9 @@
       "Auto-lock successfully disabled.": [
         "Аўтаблакіроўка паспяхова адключана."
       ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Аўтазапаўненне дыялогавых вокнаў базавай аўтэнтыфікацыі HTTP з захаванымі ўліковымі данымі."
+      ],
       "automatically": [
         "аўтаматычна"
       ],
@@ -1836,12 +1839,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2661,6 +2658,9 @@
       "Bank Name": [
         "Назва банка"
       ],
+      "Basic Auth autofill": [
+        "Базавае аўтазапаўненне пры аўтэнтыфікацыі"
+      ],
       "Biometrics": [
         "Біяметрыя"
       ],
@@ -3189,10 +3189,10 @@
       "Priority:": [
         "Прыярытэт:"
       ],
-      "Private Key": [
+      "Private key": [
         "Прыватны ключ"
       ],
-      "Private key": [
+      "Private Key": [
         "Прыватны ключ"
       ],
       "Product": [
