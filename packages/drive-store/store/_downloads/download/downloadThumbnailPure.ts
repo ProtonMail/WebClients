@@ -1,3 +1,4 @@
+// @ts-ignore missing `toStream` TS defs
 import { readToEnd, toStream } from '@openpgp/web-stream-tools';
 
 import { CryptoProxy, type VERIFICATION_STATUS } from '@proton/crypto';
@@ -8,11 +9,33 @@ import { markErrorAsCrypto } from '../markErrorAsCrypto';
 import downloadBlock from './downloadBlock';
 
 type GetKeysCallback = () => Promise<DecryptFileKeys>;
+type GetCache = () => Promise<Uint8Array<ArrayBufferLike> | undefined>;
+type SetCache = (data: Uint8Array<ArrayBufferLike>) => void;
+type StreamOrCache = ReadableStream<Uint8Array> | Uint8Array<ArrayBufferLike>;
 
-export default async function downloadThumbnail(url: string, token: string, getKeys: GetKeysCallback) {
+function assertStream(value: StreamOrCache | undefined): asserts value is StreamOrCache {
+    if (value === undefined) {
+        throw new Error('Stream is undefined');
+    }
+}
+
+export async function downloadThumbnailPure(
+    url: string,
+    token: string,
+    getKeys: GetKeysCallback,
+    getCache: GetCache,
+    setCache: SetCache
+) {
     const abortController = new AbortController();
-    const stream = await downloadBlock(abortController, url, token);
-    const { data: decryptedStream, verificationStatusPromise } = await decryptThumbnail(stream, getKeys);
+    const cache: StreamOrCache | undefined = await getCache();
+    let stream: StreamOrCache | undefined = undefined;
+    if (!cache) {
+        stream = await downloadBlock(abortController, url, token);
+    }
+    const inputStream = cache || stream;
+    assertStream(inputStream);
+    const { data: decryptedStream, verificationStatusPromise } = await decryptThumbnail(inputStream, getKeys, setCache);
+
     const thumbnailData = streamToBuffer(decryptedStream);
     return {
         abortController,
@@ -22,17 +45,26 @@ export default async function downloadThumbnail(url: string, token: string, getK
 }
 
 async function decryptThumbnail(
-    stream: ReadableStream<Uint8Array>,
-    getKeys: GetKeysCallback
+    streamOrCache: StreamOrCache,
+    getKeys: GetKeysCallback,
+    setCache: SetCache
 ): Promise<{ data: ReadableStream<Uint8Array>; verificationStatusPromise: Promise<VERIFICATION_STATUS> }> {
     const { sessionKeys, addressPublicKeys } = await getKeys();
+
+    const binaryMessage =
+        streamOrCache instanceof Uint8Array
+            ? streamOrCache
+            : await readToEnd<Uint8Array<ArrayBufferLike>>(streamOrCache);
+    if (!(streamOrCache instanceof Uint8Array) && binaryMessage instanceof Uint8Array) {
+        setCache(binaryMessage);
+    }
 
     const { data, verificationStatus } = await markErrorAsCrypto<{
         data: Uint8Array;
         verificationStatus: VERIFICATION_STATUS;
     }>(async () => {
         const { data, verificationStatus } = await CryptoProxy.decryptMessage({
-            binaryMessage: await readToEnd(stream),
+            binaryMessage,
             sessionKeys,
             verificationKeys: addressPublicKeys,
             format: 'binary',

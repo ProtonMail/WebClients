@@ -58,7 +58,8 @@ export const ThumbnailsDownloadProvider = ({
         shareId: string,
         linkId: string,
         downloadUrl: string,
-        downloadToken: string
+        downloadToken: string,
+        activeRevisionId?: string
     ) => Promise<{
         contents: Promise<Uint8Array[]>;
         verificationStatusPromise: Promise<VERIFICATION_STATUS>;
@@ -89,14 +90,21 @@ export const ThumbnailsDownloadProvider = ({
         return () => navigation.removeListener(handlerId);
     }, []);
 
-    const handleThumbnailDownload = (shareId: string, linkId: string, downloadId: string) => {
+    const handleThumbnailDownload = (
+        shareId: string,
+        linkId: string,
+        downloadId: string,
+        activeRevisionId?: string
+    ) => {
         const ac = new AbortController();
         controls.current[downloadId] = ac;
 
         return loadLinkThumbnail(ac.signal, shareId, linkId, async (downloadUrl: string, downloadToken: string) => {
-            return downloadThumbnail(ac.signal, shareId, linkId, downloadUrl, downloadToken);
+            return downloadThumbnail(ac.signal, shareId, linkId, downloadUrl, downloadToken, activeRevisionId);
         })
-            .catch(logError)
+            .catch((e) => {
+                logError(e);
+            })
             .finally(() => {
                 delete controls.current[downloadId];
             });
@@ -126,7 +134,7 @@ export const ThumbnailsDownloadProvider = ({
                 queueLinkCache.current.delete(downloadIdString);
                 return Promise.resolve();
             }
-            return handleThumbnailDownload(shareId, linkId, downloadIdString);
+            return handleThumbnailDownload(shareId, linkId, downloadIdString, activeRevisionId);
         });
     };
 

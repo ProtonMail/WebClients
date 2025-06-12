@@ -1,3 +1,5 @@
+import { LRUMap, type VideoStream, getBlockIndices, getChunkFromBlocksData, parseRange } from './streaming';
+
 declare const self: ServiceWorkerGlobalScope;
 
 interface DownloadConfig {
@@ -6,6 +8,20 @@ interface DownloadConfig {
     mimeType: string;
     size?: number;
 }
+
+type SetVideoStreamMessage = {
+    type: 'set_video_stream';
+    blockSizes: number[];
+    id: string;
+    mimeType: string;
+};
+
+type GetBlockDataRequest = {
+    type: 'get_block_data';
+    indices: number[];
+};
+
+type BlockDataResponse = Uint8Array[];
 
 const SECURITY_HEADERS = {
     'Content-Security-Policy': "default-src 'none'; frame-ancestors 'self'",
@@ -18,15 +34,18 @@ const SECURITY_HEADERS = {
     'X-Permitted-Cross-Domain-Policies': 'none',
 };
 
+const VIDEO_STREAMING_BLOCK_TIMEOUT = 30 * 1000;
+const MAXIMUM_BLOCKS_CACHE = 3; // (4MB * 3 = 12MB)
+const MAXIMUM_CONCURRENT_STREAMS = 3;
+
 /**
  * Open a stream of data passed over MessageChannel.
- * Every download has it's own stream from app to SW.
- *
+ * Every download has its own stream from app to SW.
  * @param port MessageChannel port to listen on
  */
 function createDownloadStream(port: MessagePort) {
-    return new ReadableStream({
-        start(controller: ReadableStreamDefaultController) {
+    return new ReadableStream<Uint8Array>({
+        start(controller) {
             port.onmessage = ({ data }) => {
                 switch (data?.action) {
                     case 'end':
@@ -46,10 +65,6 @@ function createDownloadStream(port: MessagePort) {
     });
 }
 
-/**
- * Service worker that listens for client-generated file data
- * and generates a unique link for downloading the data as a file stream.
- */
 class DownloadServiceWorker {
     pendingDownloads = new Map<string, DownloadConfig>();
 
@@ -58,6 +73,10 @@ class DownloadServiceWorker {
      */
     downloadId = 1;
 
+    // Video streaming range-serving
+    // Maximum 3 simultaneous streams
+    private videoStreams: LRUMap<string, VideoStream> = new LRUMap(MAXIMUM_CONCURRENT_STREAMS);
+
     constructor() {
         self.addEventListener('install', this.onInstall);
         self.addEventListener('activate', this.onActivate);
@@ -65,11 +84,10 @@ class DownloadServiceWorker {
         self.addEventListener('fetch', this.onFetch);
     }
 
-    private generateUID = () => {
+    private generateUID = (): number => {
         if (this.downloadId > 9000) {
             this.downloadId = 0;
         }
-
         return this.downloadId++;
     };
 
@@ -82,8 +100,7 @@ class DownloadServiceWorker {
     };
 
     /**
-     * Intercepts requests on the generated download url
-     * and responds with a stream, that client itself controls.
+     * Handle both download links and video range requests
      */
     onFetch = (event: FetchEvent) => {
         const url = new URL(event.request.url);
@@ -99,16 +116,147 @@ class DownloadServiceWorker {
             return event.respondWith(new Response('pong', { headers: new Headers(SECURITY_HEADERS) }));
         }
 
-        // URL format: /sw/ID
-        const chunks = url.pathname.split('/').filter((item) => !!item);
-        const id = chunks[chunks.length - 1];
+        // Video range requests: /sw/video/{id}
+        const videoMatch = url.pathname.startsWith('/sw/video/');
+        // getStream get the video stream from the Map
+        // Consider the ID is sent via postMessage
+        // its technically async so can technically paint the DOM before the message reach the SW (theoritically)
+        // So we're awaiting 5 second maximum if not defined (50 times x 100ms)
+        const getStream = async (id: string, t = 50): Promise<VideoStream | undefined> =>
+            this.videoStreams.get(id) ||
+            (t > 0
+                ? await new Promise<VideoStream | undefined>((r) => setTimeout(() => r(getStream(id, t - 1)), 100))
+                : undefined);
 
-        const pendingDownload = this.pendingDownloads.get(id);
+        if (event.request.method === 'GET' && videoMatch) {
+            event.respondWith(
+                (async () => {
+                    try {
+                        const id = url.pathname.split('/sw/video/')[1];
+                        const videoStream = await getStream(id);
+                        const rangeHeader = event.request.headers.get('Range');
 
-        // Return a 404 if we can't find the download.
-        // In some cases, the download ID is not added to the map on time.
-        // If we were to simply return, this query would get sent to the real network.
-        if (!pendingDownload) {
+                        if (!rangeHeader || !videoStream) {
+                            return new Response(null, {
+                                status: 400,
+                                statusText: 'Bad Request - Missing range header or video stream',
+                                headers: new Headers(SECURITY_HEADERS),
+                            });
+                        }
+
+                        const range = parseRange(rangeHeader, videoStream);
+                        if (!range) {
+                            return new Response(null, {
+                                status: 416,
+                                statusText: 'Range Not Satisfiable',
+                                headers: new Headers({
+                                    'Content-Range': `bytes */${videoStream.totalSize}`,
+                                    ...SECURITY_HEADERS,
+                                }),
+                            });
+                        }
+
+                        const { start, end } = range;
+                        const indices = getBlockIndices(start, end, videoStream);
+
+                        const client = await self.clients.get(event.clientId!);
+                        if (!client) {
+                            return new Response(null, {
+                                status: 500,
+                                statusText: 'Client not found',
+                                headers: new Headers(SECURITY_HEADERS),
+                            });
+                        }
+
+                        const channel = new MessageChannel();
+                        const blockData: Promise<BlockDataResponse> = new Promise((resolve, reject) => {
+                            const timeout = setTimeout(() => {
+                                reject(new Error('Block data request timeout'));
+                            }, VIDEO_STREAMING_BLOCK_TIMEOUT);
+
+                            channel.port1.onmessage = (msg) => {
+                                clearTimeout(timeout);
+                                resolve(msg.data as BlockDataResponse);
+                            };
+                        });
+
+                        // Get blocks from cache and track which indices need to be fetched
+                        const cachedBlocks = new Map<number, Uint8Array>();
+                        const indicesToFetch = [];
+
+                        for (const index of indices) {
+                            const cache = videoStream.cache.get(index);
+                            if (cache) {
+                                cachedBlocks.set(index, cache);
+                            } else {
+                                indicesToFetch.push(index);
+                            }
+                        }
+
+                        // Only fetch blocks that aren't in cache
+                        let fetchedBlocks = new Map<number, Uint8Array>();
+                        if (indicesToFetch.length > 0) {
+                            client.postMessage(
+                                { type: 'get_block_data', indices: indicesToFetch } as GetBlockDataRequest,
+                                [channel.port2]
+                            );
+                            const blocks = await blockData;
+
+                            for (let i = 0; i < indicesToFetch.length; i++) {
+                                const index = indicesToFetch[i];
+                                fetchedBlocks.set(index, blocks[i]);
+                            }
+                        }
+
+                        // Merge cached and fetched blocks in original indices order
+                        const finalBlocks: Uint8Array[] = [];
+                        for (const index of indices) {
+                            const cache = cachedBlocks.get(index);
+                            if (cache) {
+                                finalBlocks.push(cache);
+                                continue;
+                            }
+                            const fetched = fetchedBlocks.get(index);
+                            if (fetched) {
+                                finalBlocks.push(fetched);
+                            }
+                        }
+
+                        // Update cache with newly fetched blocks
+                        for (const [index, block] of fetchedBlocks) {
+                            videoStream.cache.set(index, block);
+                        }
+
+                        const chunk = getChunkFromBlocksData(range, finalBlocks, indices, videoStream.blockSizes);
+
+                        const headers = new Headers({
+                            'Content-Range': `bytes ${start}-${end}/${videoStream.totalSize}`,
+                            'Accept-Ranges': 'bytes',
+                            'Content-Length': chunk.byteLength.toString(),
+                            'Content-Type': videoStream.mimeType,
+                            ...SECURITY_HEADERS,
+                        });
+
+                        return new Response(chunk, { status: 206, statusText: 'Partial Content', headers });
+                    } catch (error) {
+                        console.error('Error handling video range request:', error);
+                        return new Response(null, {
+                            status: 500,
+                            statusText: 'Internal Server Error',
+                            headers: new Headers(SECURITY_HEADERS),
+                        });
+                    }
+                })()
+            );
+            return;
+        }
+
+        // Download link handling
+        const parts = url.pathname.split('/').filter(Boolean);
+        const id = parts[parts.length - 1];
+        const pending = this.pendingDownloads.get(id);
+
+        if (!pending) {
             return event.respondWith(
                 new Response(undefined, {
                     status: 404,
@@ -117,8 +265,7 @@ class DownloadServiceWorker {
             );
         }
 
-        const { stream, filename, size, mimeType } = pendingDownload;
-
+        const { stream, filename, mimeType, size } = pending;
         this.pendingDownloads.delete(id);
 
         const headers = new Headers({
@@ -132,29 +279,39 @@ class DownloadServiceWorker {
     };
 
     /**
-     * Called once before each download, opens a stream for file data
-     * and generates a unique download link for the app to call to download file.
+     * Handle messages for both download and video block config
      */
     onMessage = (event: ExtendableMessageEvent) => {
-        if (event.data?.action !== 'start_download') {
+        const data = event.data;
+
+        // Video stream initializer
+        if (data?.type === 'set_video_stream') {
+            const msg = data as SetVideoStreamMessage;
+            this.videoStreams.set(msg.id, {
+                blockSizes: msg.blockSizes,
+                totalSize: msg.blockSizes.reduce((sum, s) => sum + s, 0),
+                mimeType: msg.mimeType,
+                cache: new LRUMap<number, Uint8Array>(MAXIMUM_BLOCKS_CACHE),
+            });
             return;
         }
 
-        const id = this.generateUID();
+        // Download initiation
+        if (data?.action === 'start_download') {
+            const id = this.generateUID().toString();
+            const { filename, mimeType, size } = data.payload;
+            const port = event.ports[0];
 
-        const { filename, mimeType, size } = event.data.payload;
-        const downloadUrl = new URL(`/sw/${id}`, self.registration.scope);
+            this.pendingDownloads.set(id, {
+                stream: createDownloadStream(port),
+                filename,
+                mimeType,
+                size,
+            });
 
-        const port = event.ports[0];
-
-        this.pendingDownloads.set(`${id}`, {
-            stream: createDownloadStream(port),
-            filename,
-            mimeType,
-            size,
-        });
-
-        port.postMessage({ action: 'download_started', payload: downloadUrl.toString() });
+            const downloadUrl = new URL(`/sw/${id}`, self.registration.scope);
+            port.postMessage({ action: 'download_started', payload: downloadUrl.toString() });
+        }
     };
 }
 

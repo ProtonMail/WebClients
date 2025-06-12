@@ -1,0 +1,159 @@
+@import '~@proton/styles/scss/lib';
+
+@keyframes photos-card-loading {
+	/**
+	 * Animating `opacity` is intended, as animating background-color
+     * will cause Chrome to trigger paint.
+	 *
+	 * See https://web.dev/animations-guide/#triggers
+	 */
+
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.new-photos .photos-card {
+	user-select: none;
+	background-color: var(--background-weak);
+	overflow: hidden;
+
+	&:hover,
+	&:focus-within {
+		background-color: var(--background-weak);
+	}
+
+	// gradient when favorite or hovered
+	&--favorited,
+	&:hover {
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(
+				180deg,
+				rgb(0 0 0 / 0.32) 0%,
+				transparent #{rem(40)},
+				transparent calc(100% - #{rem(40)}),
+				rgb(0 0 0 / 0.32) 100%
+			);
+			animation: photos-card-loading alternate 0.1s ease-in;
+		}
+	}
+
+	// no gradient when selected
+	&--selected,
+	&--selected:hover {
+		&::after {
+			content: none;
+		}
+	}
+
+	&--loading {
+		&::before {
+			inline-size: 100%;
+			block-size: 100%;
+			content: '';
+			display: block;
+			opacity: 0;
+			background-color: var(--background-strong);
+			animation: photos-card-loading alternate 1s ease-in-out infinite both;
+			animation-delay: inherit;
+		}
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		&--hide-checkbox {
+			& > .checkbox-container {
+				display: none;
+				animation-delay: 0.1s;
+				animation-fill-mode: both;
+			}
+
+			&:hover > .checkbox-container {
+				display: block;
+			}
+		}
+	}
+
+	.photos-card-favorite-button {
+		animation-delay: 0.1s;
+		animation-fill-mode: both;
+
+		> svg {
+			filter: drop-shadow(
+				var(--shadow-norm-offset) rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-norm-opacity))
+			);
+
+			// so shadow follows the shape instead of being square
+		}
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		& > .photos-card-favorite-button:not([aria-pressed='true']) {
+			display: none;
+		}
+	}
+
+	&:hover > .photos-card-favorite-button,
+	&:focus-within > .photos-card-favorite-button {
+		display: block;
+	}
+
+	&--selected {
+		border: 0;
+
+		.photos-card-thumbnail-holder {
+			transform: scaleX(0.85) scaleY(0.89); // small trick to get same space around
+		}
+	}
+}
+
+.new-photos .photos-card-thumbnail-holder {
+	transition: transform 0.15s linear;
+}
+
+.new-photos .photos-card-thumbnail {
+	pointer-events: none;
+	object-fit: cover;
+	transition: transform 0.15s linear;
+	border-radius: calc(var(--border-radius-md) - (3 * var(--1px)));
+
+	&--empty {
+		background-color: var(--background-weak);
+	}
+}
+
+.new-photos .photos-card-video-info {
+	background: rgb(112 109 107 / 0.7); // static colors
+	color: white;
+}
+
+.new-photos .photos-card-share-icon,
+.new-photos .photos-card-bottom-icon {
+	background-color: rgb(112 109 107 / 0.8);
+	inline-size: rem(20);
+	block-size: rem(20);
+}
+
+// tiny little effect to emphasize it's clickable
+.color-white-on-hover {
+	color: white;
+	opacity: 0.7;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&[aria-pressed='true'] {
+		opacity: 1;
+	}
+}
+
+.color-white {
+	color: white;
+}

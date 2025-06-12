@@ -21,14 +21,16 @@ export function DownloadsProvider({ children }: { children: React.ReactNode }) {
         shareId: string,
         linkId: string,
         downloadUrl: string,
-        downloadToken: string
+        downloadToken: string,
+        activeRevisionId?: string
     ) => {
         const { contents, abortController, verificationStatusPromise } = await downloadThumbnail(
             signal,
             shareId,
             linkId,
             downloadUrl,
-            downloadToken
+            downloadToken,
+            activeRevisionId
         );
 
         if (signal.aborted) {
@@ -64,14 +66,16 @@ export function PublicDownloadsProvider({ children }: { children: React.ReactNod
         token: string,
         linkId: string,
         downloadUrl: string,
-        downloadToken: string
+        downloadToken: string,
+        activeRevisionId?: string
     ) => {
         const { contents, verificationStatusPromise } = await downloadThumbnail(
             signal,
             token,
             linkId,
             downloadUrl,
-            downloadToken
+            downloadToken,
+            activeRevisionId
         );
 
         return { contents, verificationStatusPromise };

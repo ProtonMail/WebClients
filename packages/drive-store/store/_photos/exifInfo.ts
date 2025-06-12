@@ -5,7 +5,7 @@ import type { ExifTags, ExpandedTags } from 'exifreader';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { encodeBase64 } from '@proton/crypto/lib/utils';
-import { isRAWExtension, isRAWPhoto, isSVG, isVideo } from '@proton/shared/lib/helpers/mimetype';
+import { getFileExtension, isRAWExtension, isRAWPhoto, isSVG, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 import { mimetypeFromExtension } from '../_uploads/mimeTypeParser/helpers';
@@ -118,11 +118,21 @@ export const getPhotoExtendedAttributes = ({ exif, gps }: ExpandedTags) => ({
 });
 
 // TODO: Complete tags assignment
-export const getPhotoTags = async (file: File, exifInfo: ExpandedTags): Promise<PhotoTag[]> => {
+export const getPhotoTags = async (file: File, exifInfo?: ExpandedTags): Promise<PhotoTag[]> => {
     // Enable to debug XMP data:
     // console.log('exifInfo', JSON.stringify(exifInfo.exif));
 
     const tags: PhotoTag[] = [];
+
+    const extension = getFileExtension(file.name);
+    if (isRAWPhoto(file.type) || isRAWExtension(extension)) {
+        tags.push(PhotoTag.Raw);
+    }
+
+    if (isVideo(file.type) || isVideo(await mimetypeFromExtension(file.name))) {
+        tags.push(PhotoTag.Videos);
+    }
+
     if (!exifInfo || !exifInfo.xmp) {
         return tags;
     }
@@ -171,15 +181,6 @@ export const getPhotoTags = async (file: File, exifInfo: ExpandedTags): Promise<
     // Untested: Android Selfies
     if (appleMakerNote && detectSelfieFromMakerNote(appleMakerNote)) {
         tags.push(PhotoTag.Selfies);
-    }
-
-    const extension = file.name.split('.').pop();
-    if (isRAWPhoto(file.type) || isRAWExtension(extension)) {
-        tags.push(PhotoTag.Raw);
-    }
-
-    if (isVideo(file.type) || isVideo(await mimetypeFromExtension(file.name))) {
-        tags.push(PhotoTag.Videos);
     }
 
     return tags;

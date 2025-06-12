@@ -316,6 +316,7 @@ function useBaseUpload(
                         queue.updateWithData(nextFileUpload.id, TransferState.Skipped, { error });
                         if (error instanceof TransferSkipped && error.file && error.duplicateLinkId) {
                             nextFileUpload.callbacks.onFileSkipped?.({
+                                shareId: nextFileUpload.shareId,
                                 fileId: error.duplicateLinkId,
                                 fileName: error.file.name,
                             });

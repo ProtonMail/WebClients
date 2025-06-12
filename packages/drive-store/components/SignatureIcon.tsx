@@ -12,10 +12,21 @@ interface Props {
     mimeType?: string;
     isAnonymous?: boolean;
     className?: string;
+    haveParentAccess: boolean;
 }
 
-export default function SignatureIcon({ isFile, mimeType, isAnonymous = false, signatureIssues, className }: Props) {
-    if (!signatureIssues || (isAnonymous && hasValidAnonymousSignature(signatureIssues, { mimeType, isFile }))) {
+export default function SignatureIcon({
+    isFile,
+    mimeType,
+    isAnonymous = false,
+    signatureIssues,
+    className,
+    haveParentAccess,
+}: Props) {
+    if (
+        !signatureIssues ||
+        (isAnonymous && hasValidAnonymousSignature(signatureIssues, { mimeType, isFile, haveParentAccess }))
+    ) {
         return null;
     }
 

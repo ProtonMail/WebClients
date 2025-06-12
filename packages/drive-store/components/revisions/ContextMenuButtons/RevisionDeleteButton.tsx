@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
-import type { DriveFileRevision } from '../../../store';
+import type { Revision } from '@proton/drive';
+
 import { ContextMenuButton } from '../../sections/ContextMenu';
 import type { RevisionsProviderState } from '../RevisionsProvider';
 
 interface Props {
-    revision: DriveFileRevision;
+    revision: Revision;
     deleteRevision: RevisionsProviderState['deleteRevision'];
     close: () => void;
 }
@@ -16,7 +17,7 @@ const RevisionDeleteButton = ({ revision, deleteRevision, close }: Props) => {
             name={c('Action').t`Delete version`}
             icon="trash-cross"
             testId="context-menu-revision-delete"
-            action={() => deleteRevision(new AbortController().signal, revision)}
+            action={() => deleteRevision(revision)}
             close={close}
         />
     );
