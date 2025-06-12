@@ -1,6 +1,7 @@
 import type { ForwardRefRenderFunction } from 'react';
 import { forwardRef, useMemo } from 'react';
 
+import { type Locale, parse } from 'date-fns';
 import formatISO from 'date-fns/formatISO';
 import { type FieldProps } from 'formik';
 
@@ -34,6 +35,19 @@ const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
         onChange?.(stringValue);
     };
 
+    const handleInput = (value: string, locale: Locale) => {
+        const formats = ['dd/MM/yyyy', 'dd-MM-yyyy', 'MMM dd, yyyy', 'MMM d, yyyy'];
+
+        for (const format of formats) {
+            try {
+                const parsed = parse(value, format, new Date(), { locale });
+                if (!isNaN(parsed.getTime())) return parsed;
+            } catch {}
+        }
+
+        return new Date(NaN);
+    };
+
     return (
         <InputFieldTwo
             as={DateInputTwo}
@@ -51,6 +65,7 @@ const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
             ref={ref}
             value={dateValue}
             toFormatter={formatDate}
+            fromFormatter={handleInput}
         />
     );
 };

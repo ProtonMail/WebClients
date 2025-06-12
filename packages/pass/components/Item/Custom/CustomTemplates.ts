@@ -208,15 +208,11 @@ export const customTemplateToFormFields = (template: CustomTemplate): Deobfuscat
     template.fields.map((field) => {
         const { label: fieldName } = field;
 
-        const value = ((): DeobfuscatedItemExtraField => {
-            switch (field.type) {
-                case 'hidden':
-                case 'text':
-                    return { fieldName, type: field.type, data: { content: '' } };
-                case 'timestamp':
-                    return { fieldName, type: field.type, data: { timestamp: '' } };
-            }
-        })();
-
-        return value;
+        switch (field.type) {
+            case 'hidden':
+            case 'text':
+                return { fieldName, type: field.type, data: { content: '' } };
+            case 'timestamp':
+                return { fieldName, type: field.type, data: { timestamp: '' } };
+        }
     });
