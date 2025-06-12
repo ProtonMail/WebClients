@@ -106,7 +106,6 @@ export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
 
         const count = getReceivedMessagesCount(subscription);
         createNotification({
-            // TODO add undo actions once the API returns a undo token
             text: c('Label').ngettext(
                 msgid`Moved ${count} message to ${selectedFolder.Name}.`,
                 `Moved ${count} messages to ${selectedFolder.Name}.`,
