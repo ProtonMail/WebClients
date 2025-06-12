@@ -6621,17 +6621,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Plans starting from ${ priceDrivePlus }": [
-        "Planer starter fra ${ priceDrivePlus }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -6653,6 +6642,17 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planer starter fra ${ priceDrivePlus }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
       ]
     },
     "new_plans: feature": {
@@ -9085,25 +9085,6 @@
         "For ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } lagringsplass per bruker"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } gir deg alle apper, alle funksjoner, tidlig tilgang til nye utgivelser og alt du trenger for å ha kontroll over dataene dine og sikkerheten."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } egendefinert e-postdomene",
-        "${ planNumberOfDomains } egendefinerte e-postdomener"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-postadresse",
-        "${ planNumberOfEmails } e-postadresser"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mapper, etiketter og egendefinerte filtre"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagringsplass"
@@ -9143,6 +9124,25 @@
       ],
       "Your privacy is our mission": [
         "Personvernet ditt er vårt oppdrag"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagringsplass per bruker"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } gir deg alle apper, alle funksjoner, tidlig tilgang til nye utgivelser og alt du trenger for å ha kontroll over dataene dine og sikkerheten."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } egendefinert e-postdomene",
+        "${ planNumberOfDomains } egendefinerte e-postdomener"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-postadresse",
+        "${ planNumberOfEmails } e-postadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mapper, etiketter og egendefinerte filtre"
       ]
     },
     "Subscription renewal state": {
