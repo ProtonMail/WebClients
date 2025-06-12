@@ -152,11 +152,11 @@
       "Create": [
         "Δημιουργία"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Δημιουργία ενός ${ BRAND_NAME } λογαριασμού"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Δημιουργία ενός ${ BRAND_NAME } λογαριασμού"
       ],
       "Create alias": [
         "Δημιουργία ψευδώνυμου"
@@ -1792,10 +1792,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
-      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -3107,11 +3103,11 @@
       "Priority:": [
         "Προτεραιότητα:"
       ],
-      "Private Key": [
-        "Ιδιωτικό Κλειδί"
-      ],
       "Private key": [
         "Ιδιωτικό κλειδί"
+      ],
+      "Private Key": [
+        "Ιδιωτικό Κλειδί"
       ],
       "Product": [
         "Προϊόν"
@@ -3211,6 +3207,9 @@
       ],
       "Share": [
         "Κοινοποίηση"
+      ],
+      "Share ID": [
+        "ID κοινοποίησης"
       ],
       "Shared": [
         "Διαμοιρασμένα"

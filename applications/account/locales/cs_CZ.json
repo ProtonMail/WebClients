@@ -469,10 +469,10 @@
       "Discard": [
         "Zahodit"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodit změny"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodit změny"
       ],
       "Discover ${ planName }": [
@@ -501,6 +501,12 @@
       ],
       "Download CSV sample": [
         "Stáhnout ukázku CSV"
+      ],
+      "Download for macOS": [
+        "Stáhnout pro macOS"
+      ],
+      "Download for Windows": [
+        "Stáhnout pro Windows"
       ],
       "Download ICS": [
         "Stáhnout ICS"
@@ -799,10 +805,10 @@
       "Keep": [
         "Zachovat"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Pokračovat v úpravách"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Pokračovat v úpravách"
       ],
       "Keep logo": [
@@ -994,11 +1000,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Reject": [
         "Odmítnout"
@@ -1174,11 +1180,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "select file": [
-        "vybrat soubor"
-      ],
       "Select file": [
         "Vybrat soubor"
+      ],
+      "select file": [
+        "vybrat soubor"
       ],
       "Select files": [
         "Vybrat soubory"
@@ -1598,8 +1604,14 @@
       "Delete address": [
         "Smazat adresu"
       ],
+      "Delete address “${ emailAddress }”": [
+        "Smazat adresu “${ emailAddress }”"
+      ],
       "Disable": [
         "Deaktivovat"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "Deaktivovat adresu “${ emailAddress }”"
       ],
       "Disable E2EE mail": [
         "Deaktivovat E2EE poštu"
@@ -1613,8 +1625,14 @@
       "Edit address": [
         "Upravit adresu"
       ],
+      "Edit address “${ emailAddress }”": [
+        "Upravit adresu “${ emailAddress }”"
+      ],
       "Enable": [
         "Zapnout"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "Povolit adresu “${ emailAddress }”"
       ],
       "Enable E2EE mail": [
         "Povolit E2EE poštu"
@@ -1622,11 +1640,17 @@
       "Generate missing keys": [
         "Vygenerovat chybějící klíče"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "Generovat chybějící klíče pro adresu “${ emailAddress }”"
+      ],
       "Saving": [
         "Ukládání"
       ],
       "Set as default": [
         "Nastavit jako výchozí"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "Nastavit “${ emailAddress }” jako výchozí adresu"
       ]
     },
     "Address status": {
@@ -4821,11 +4845,11 @@
       "Forward to": [
         "Přeposlat na"
       ],
-      "Or": [
-        "Nebo"
-      ],
       "or": [
         "nebo"
+      ],
+      "Or": [
+        "Nebo"
       ],
       "With attachment": [
         "S přílohou"
@@ -7691,11 +7715,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte alespoň jednu metodu obnovy dat, abyste měli jistotu, že v případě ztráty hesla budete mít i nadále přístup k obsahu svého účtu ${ BRAND_NAME }."
       ],
-      "active": [
-        "aktivní"
-      ],
       "Active": [
         "Aktivní"
+      ],
+      "active": [
+        "aktivní"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"${ MAIL_APP_NAME } me\" nebo \"Private Message me.\""
@@ -8162,11 +8186,11 @@
       "Data recoverable on this device": [
         "Data obnovitelná v tomto zařízení"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -10070,11 +10094,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "Username": [
-        "Uživatelské jméno"
-      ],
       "username": [
         "uživatelské jméno"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -10596,7 +10620,7 @@
         "Vaše soubory budou zašifrovány a uloženy"
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Vaše bezplatná zkušební verze byla úspěšně převedena na měsíční ${ cycle }měsíční předplatné. Datum obnovení je ${ nextBillingDate }."
+        "Vaše bezplatná zkušební verze byla úspěšně převedena na ${ cycle }měsíční předplatné. Datum obnovení je ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaše bezplatná zkušební verze byla úspěšně převedena na měsíční předplatné. Datum obnovení je ${ nextBillingDate }."
@@ -11329,10 +11353,10 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
-      "And": [
+      "AND": [
         "A"
       ],
-      "AND": [
+      "And": [
         "A"
       ],
       "and": [
@@ -11532,6 +11556,9 @@
       ],
       "Copy": [
         "Kopírovat"
+      ],
+      "Copy fingerprint": [
+        "Kopírovat digitální otisk"
       ],
       "Could you please let us know which provider?": [
         "Můžete prosím sdělit, o jakého poskytovatele se jedná?"
@@ -11761,11 +11788,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Pokud"
-      ],
       "IF": [
         "POKUD"
+      ],
+      "If": [
+        "Pokud"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -11875,6 +11902,9 @@
       "Message": [
         "Zpráva"
       ],
+      "Message (auto-reply)": [
+        "Zpráva (automatická odpověď)"
+      ],
       "Messages per page": [
         "Zprávy na stránku"
       ],
@@ -11974,14 +12004,14 @@
       "Optional": [
         "Volitelné"
       ],
+      "OR": [
+        "NEBO"
+      ],
       "or": [
         "nebo"
       ],
       "Or": [
         "Nebo"
-      ],
-      "OR": [
-        "NEBO"
       ],
       "Organization name": [
         "Název organizace"
@@ -12114,6 +12144,9 @@
       ],
       "Second password": [
         "Druhé heslo"
+      ],
+      "Select Linux package format": [
+        "Vyberte formát balíčku Linux"
       ],
       "Send auto-reply": [
         "Poslat automatickou odpověď"
@@ -14091,6 +14124,14 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -14109,14 +14150,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -18332,6 +18365,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -18632,47 +18706,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -19464,10 +19497,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -20689,7 +20722,7 @@
         "Vaše uniklé informace"
       ],
       "Your free trial ends in ${ trialDurationFormatted } days": [
-        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny."
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny"
       ],
       "Your plan": [
         "Váš tarif"
