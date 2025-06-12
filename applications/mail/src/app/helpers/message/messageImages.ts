@@ -1,4 +1,5 @@
 import type { PrivateAuthenticationStore } from '@proton/components';
+import { MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Api } from '@proton/shared/lib/interfaces';
 import uniqueBy from '@proton/utils/uniqueBy';
@@ -19,15 +20,14 @@ import type {
 } from '../../store/messages/messagesTypes';
 import { getDocumentContent } from './messageContent';
 import { setEmbeddedAttr } from './messageEmbeddeds';
-import { ATTRIBUTES_TO_LOAD } from './messageRemotes';
 
 const REGEXP_FIXER = (() => {
-    const str = ATTRIBUTES_TO_LOAD.map((key) => `proton-${key}`).join('|');
+    const str = MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.map((key) => `proton-${key}`).join('|');
     return `(${str})`;
 })();
 
 export const getRemoteSelector = (hasProtonAttribute = false) => {
-    return ATTRIBUTES_TO_LOAD.map((name) => {
+    return MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.map((name) => {
         // https://stackoverflow.com/questions/23034283/is-it-possible-to-use-htmls-queryselector-to-select-by-xlink-attribute-in-an
         if (name === 'xlink:href') {
             return '[*|href]:not([href])';
@@ -142,7 +142,7 @@ export const removeProxyURLAttributes = (content: string) => {
     const foundElements = document.querySelectorAll(getRemoteSelector());
 
     foundElements.forEach((element) => {
-        ATTRIBUTES_TO_LOAD.forEach((attr) => {
+        MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.forEach((attr) => {
             if (element.hasAttribute(attr)) {
                 const elementProtonURL = element.getAttribute(`proton-${attr}`);
 
