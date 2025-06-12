@@ -7347,6 +7347,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prettier/plugin-xml@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "@prettier/plugin-xml@npm:3.4.1"
+  dependencies:
+    "@xml-tools/parser": "npm:^1.0.11"
+  peerDependencies:
+    prettier: ^3.0.0
+  checksum: 10c0/39bdc3d6e475ed4f804ea4dad8ad66c1e36743935eefde87bf9a68c44434695e74e52c8c6d70239de12dae141153f8979cce0b1c5c8f820693ff1f62bbe66044
+  languageName: node
+  linkType: hard
+
 "@prisma/instrumentation@npm:5.22.0":
   version: 5.22.0
   resolution: "@prisma/instrumentation@npm:5.22.0"
@@ -16050,6 +16061,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@xml-tools/parser@npm:^1.0.11":
+  version: 1.0.11
+  resolution: "@xml-tools/parser@npm:1.0.11"
+  dependencies:
+    chevrotain: "npm:7.1.1"
+  checksum: 10c0/5abc75163d6b2ac8e9006a54576523513535953237463297137c5a3665ce1b9d220b77b6dbb68ab93df3fab40bbc98bbb10e90dd690fd7646fdb021323827971
+  languageName: node
+  linkType: hard
+
 "@xmldom/xmldom@npm:^0.8.3, @xmldom/xmldom@npm:^0.8.8":
   version: 0.8.10
   resolution: "@xmldom/xmldom@npm:0.8.10"
@@ -20235,6 +20255,15 @@ __metadata:
     undici: "npm:^6.19.5"
     whatwg-mimetype: "npm:^4.0.0"
   checksum: 10c0/d0e16925d9c36c879edfaef1c0244c866375a4c7b8d6ccd7ae0ad42da7d26263ea1a3c17b9a1aa5965918deeff2d40ac2e7223824f8e6eca972df3b81316a09f
+  languageName: node
+  linkType: hard
+
+"chevrotain@npm:7.1.1":
+  version: 7.1.1
+  resolution: "chevrotain@npm:7.1.1"
+  dependencies:
+    regexp-to-ast: "npm:0.5.0"
+  checksum: 10c0/3fbbb7a30fb87a4cd141a28bdfa2851f54fde4099aa92071442b47605dfc5974eee0388ec25a517087fcea4dcc1f0ce6b371bc975591346327829aa83b3c843d
   languageName: node
   linkType: hard
 
@@ -38690,6 +38719,7 @@ __metadata:
     "@babel/preset-typescript": "npm:^7.27.1"
     "@lexical/utils": "npm:0.30.0"
     "@lexical/yjs": "npm:0.30.0"
+    "@prettier/plugin-xml": "npm:^3.4.1"
     "@proton/account": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
