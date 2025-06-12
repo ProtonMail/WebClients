@@ -101,11 +101,8 @@ export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number, planIDs:
             return LUMO_APP_NAME;
         }
 
-        // const seats = quantity;
-        // return c('Addon').ngettext(msgid`${seats} ${LUMO_APP_NAME} seat`, `${seats} ${LUMO_APP_NAME} seats`, seats);
-
-        // when it's time then simply uncomment the above code and remove the return '';
-        return '';
+        const seats = quantity;
+        return c('Addon').ngettext(msgid`${seats} ${LUMO_APP_NAME} seat`, `${seats} ${LUMO_APP_NAME} seats`, seats);
     }
 
     return '';
