@@ -7,7 +7,8 @@ import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@
 import { CountLabel } from '@proton/pass/components/Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import type { ItemRevision, ItemTypeFilter } from '@proton/pass/types';
+import { compoundItemFilters } from '@proton/pass/lib/items/item.utils';
+import type { ItemRevision, ItemType, ItemTypeFilter } from '@proton/pass/types';
 
 type Props = {
     items: ItemRevision[];
@@ -17,7 +18,10 @@ type Props = {
 
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '12rem' };
 
-export const getItemTypeOptions = (): Record<ItemTypeFilter, { label: string; icon: IconName }> => ({
+export const getItemTypeOptions = (): Record<
+    ItemTypeFilter,
+    { label: string; icon: IconName; itemFilters?: ItemType[] }
+> => ({
     '*': {
         label: c('Label').t`All`,
         icon: 'grid-2',
@@ -42,17 +46,10 @@ export const getItemTypeOptions = (): Record<ItemTypeFilter, { label: string; ic
         label: c('Label').t`Identities`,
         icon: itemTypeToIconName.identity,
     },
-    sshKey: {
-        label: c('Label').t`SSH Keys`,
-        icon: itemTypeToIconName.sshKey,
-    },
-    wifi: {
-        label: c('Label').t`WiFi Networks`,
-        icon: itemTypeToIconName.wifi,
-    },
     custom: {
         label: c('Label').t`Custom Items`,
         icon: itemTypeToIconName.custom,
+        itemFilters: compoundItemFilters.custom,
     },
 });
 
@@ -61,11 +58,15 @@ export const TypeFilter = memo(({ items, value, onChange }: Props) => {
 
     const options = useMemo(
         () =>
-            Object.entries(getItemTypeOptions()).map(([type, { label, icon }]) => ({
+            Object.entries(getItemTypeOptions()).map(([type, { label, icon, itemFilters }]) => ({
                 type: type as ItemTypeFilter,
                 label,
                 icon,
-                count: type === '*' ? items.length : items.filter((item) => item.data.type === type).length,
+                count:
+                    type === '*'
+                        ? items.length
+                        : items.filter((item) => itemFilters?.includes(item.data.type) ?? item.data.type === type)
+                              .length,
             })),
         [items]
     );
