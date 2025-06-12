@@ -23,6 +23,7 @@ import {
     type PaymentMethodFlows,
     type PaymentMethodStatusExtended,
     type PaymentMethodType,
+    type SavedPaymentMethod,
     type SavedPaymentMethodExternal,
     type SavedPaymentMethodInternal,
     canUseChargebee,
@@ -41,6 +42,7 @@ import {
 } from '../../payments/chargebee/ChargebeeWrapper';
 import Alert3DS from './Alert3ds';
 import Cash from './Cash';
+import DefaultPaymentMethodMessage from './DefaultPaymentMethodMessage';
 import PayPalView from './PayPalView';
 import Bitcoin from './bitcoin/Bitcoin';
 import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
@@ -91,6 +93,7 @@ export interface NoApiProps extends Props {
     billingAddressStatus?: BillingAddressStatus;
     onChargebeeInitialized?: () => void;
     showCardIcons?: boolean;
+    savedPaymentMethods: SavedPaymentMethod[];
 }
 
 export const PaymentsNoApi = ({
@@ -131,6 +134,7 @@ export const PaymentsNoApi = ({
     paymentStatus,
     onChargebeeInitialized,
     showCardIcons,
+    savedPaymentMethods,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -223,6 +227,10 @@ export const PaymentsNoApi = ({
         // CARD must use the Chargebee iframe if we are in migration mode. The migration mode can be detected
         // by having a saved v4 payment method and the chargebeeEnabled flag being set to CHARGEBEE_ALLOWED.
         (savedMethod?.Type === PAYMENT_METHOD_TYPES.CARD && canUseChargebee(isChargebeeEnabled()));
+
+    const defaultPaymentMethodMessage = type === 'subscription' && (
+        <DefaultPaymentMethodMessage savedPaymentMethods={savedPaymentMethods} selectedPaymentMethod={method} />
+    );
 
     return (
         <>
@@ -335,6 +343,7 @@ export const PaymentsNoApi = ({
                         </>
                     )}
                     {children}
+                    {defaultPaymentMethodMessage}
                 </div>
             </div>
         </>

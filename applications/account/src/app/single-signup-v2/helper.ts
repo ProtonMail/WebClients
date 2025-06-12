@@ -2,21 +2,6 @@ import { c } from 'ttag';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
-import {
-    COUPON_CODES,
-    CYCLE,
-    type Cycle,
-    type CycleMapping,
-    type Plan,
-    type PlansMap,
-    type StrictPlan,
-    type Subscription,
-    type SubscriptionPlan,
-    formatPaymentMethods,
-    getSubscription,
-    isLifetimePlanSelected,
-    queryPaymentMethods,
-} from '@proton/payments';
 import type {
     BillingAddress,
     FullPlansMap,
@@ -24,24 +9,35 @@ import type {
     PaymentsApi,
     SavedPaymentMethod,
 } from '@proton/payments';
-import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
 import {
     type ADDON_NAMES,
+    COUPON_CODES,
+    CYCLE,
     type Currency,
+    type Cycle,
+    type CycleMapping,
     DEFAULT_CURRENCY,
+    DEFAULT_TAX_BILLING_ADDRESS,
+    FREE_PLAN,
     FREE_SUBSCRIPTION,
     PLANS,
+    type Plan,
     type PlanIDs,
-    isStringPLAN,
-} from '@proton/payments';
-import {
+    type PlansMap,
+    type StrictPlan,
+    type Subscription,
+    type SubscriptionPlan,
+    getFreeCheckResult,
     getHas2024OfferCoupon,
     getIsB2BAudienceFromPlan,
     getNormalCycleFromCustomCycle,
+    getPaymentMethods,
     getPlan,
     getPlanIDs,
+    getSubscription,
+    isLifetimePlanSelected,
+    isStringPLAN,
 } from '@proton/payments';
-import { FREE_PLAN, getFreeCheckResult } from '@proton/payments';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -497,11 +493,7 @@ export const getUserInfo = async ({
     const forcePaymentsVersion = getMaybeForcePaymentsVersion(user);
 
     const [paymentMethods, subscription, organization] = await Promise.all([
-        state.payable
-            ? api(queryPaymentMethods(forcePaymentsVersion)).then(({ PaymentMethods }) =>
-                  formatPaymentMethods(PaymentMethods)
-              )
-            : [],
+        state.payable ? getPaymentMethods(api, forcePaymentsVersion) : [],
         state.payable && state.admin && state.subscribed
             ? api(getSubscription(forcePaymentsVersion)).then(
                   ({ Subscription, UpcomingSubscription }) => UpcomingSubscription ?? Subscription
