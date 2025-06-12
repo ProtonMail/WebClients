@@ -16,7 +16,7 @@ export const NoteContent: FC<ItemContentProps<'note'>> = ({ revision: { data, it
         <>
             {Boolean(note) && (
                 <FieldsetCluster mode="read" as="div">
-                    <FieldBox>
+                    <FieldBox className="pass-input-group--no-focus">
                         <TextAreaReadonly>{note}</TextAreaReadonly>
                     </FieldBox>
                 </FieldsetCluster>
