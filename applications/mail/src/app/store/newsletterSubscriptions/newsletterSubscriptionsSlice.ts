@@ -18,10 +18,12 @@ import {
     updateSubscription,
 } from './newsletterSubscriptionsActions';
 import {
+    deleteSubscriptionAnimationEndedReducer,
     fetchNextNewsletterSubscriptionsPageFulfilled,
     filterSubscriptionListFulfilled,
     filterSubscriptionListPending,
     filterSubscriptionListRejected,
+    removeSubscriptionFromActiveTabReducer,
     setSelectedElementIdReducer,
     setSelectedSubscriptionReducer,
     setSelectedTabReducer,
@@ -90,6 +92,7 @@ const modelThunk = createAsyncModelThunk<
                 selectedTab: SubscriptionTabs.Active,
                 selectedSubscriptionId,
                 selectedElementId: undefined,
+                deletingSubscriptionId: undefined,
             };
         } catch (error) {
             return {
@@ -113,6 +116,8 @@ const slice = createSlice({
         setSelectedTab: setSelectedTabReducer,
         setSelectedSubscription: setSelectedSubscriptionReducer,
         setSelectedElementId: setSelectedElementIdReducer,
+        removeSubscriptionFromActiveTab: removeSubscriptionFromActiveTabReducer,
+        deleteSubscriptionAnimationEnded: deleteSubscriptionAnimationEndedReducer,
     },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);

@@ -61,6 +61,29 @@ export const setSelectedSubscriptionReducer = (
     state.value.selectedElementId = undefined;
 };
 
+export const removeSubscriptionFromActiveTabReducer = (
+    state: NewsletterSubscriptionsStateType,
+    action: PayloadAction<string>
+) => {
+    if (!state.value) {
+        return;
+    }
+
+    const originalIndex = state.value.tabs.active.ids.indexOf(action.payload);
+
+    if (originalIndex !== -1) {
+        state.value.tabs.active.ids.splice(originalIndex, 1);
+    }
+};
+
+export const deleteSubscriptionAnimationEndedReducer = (state: NewsletterSubscriptionsStateType) => {
+    if (!state.value) {
+        return;
+    }
+
+    state.value.deletingSubscriptionId = undefined;
+};
+
 export const unsubscribeSubscriptionPending = (
     state: NewsletterSubscriptionsStateType,
     action: ReturnType<typeof unsubscribeSubscription.pending>
@@ -77,14 +100,15 @@ export const unsubscribeSubscriptionPending = (
         UnsubscribedTime: Date.now(),
     };
 
-    if (originalIndex !== -1) {
-        state.value.tabs.active.ids.splice(originalIndex, 1);
-        state.value.tabs.active.totalCount = Math.max(0, state.value.tabs.active.totalCount - 1);
-    }
-
     // We unselect the subscription if it's the one currently selected
     if (state.value.selectedSubscriptionId === subscriptionId) {
         state.value.selectedSubscriptionId = undefined;
+    }
+
+    if (originalIndex !== -1) {
+        state.value.tabs.active.totalCount = Math.max(0, state.value.tabs.active.totalCount - 1);
+        // We don't remove the ID of the active tab now, we do this once the animation is done
+        state.value.deletingSubscriptionId = subscriptionId;
     }
 
     state.value.tabs.unsubscribe.ids.unshift(subscriptionId);
@@ -255,8 +279,9 @@ export const updateSubscriptionPending = (
     };
 
     if (originalIndex !== -1) {
-        state.value.tabs.active.ids.splice(originalIndex, 1);
         state.value.tabs.active.totalCount = Math.max(0, state.value.tabs.active.totalCount - 1);
+        // We don't remove the ID of the active tab now, we do this once the animation is done
+        state.value.deletingSubscriptionId = subscriptionId;
     }
 
     state.value.tabs.unsubscribe.ids.unshift(subscriptionId);

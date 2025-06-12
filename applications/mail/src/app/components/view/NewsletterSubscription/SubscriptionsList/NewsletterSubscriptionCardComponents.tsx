@@ -16,17 +16,15 @@ import { ModalMoveToFolder } from './MoveToFolder/ModalMoveToFolder';
 
 export const SubscriptionCardTitle = ({ subscription }: PropsWithNewsletterSubscription) => {
     return (
-        <div
-            className="min-w-custom max-w-custom text-ellipsis mb-2"
-            style={{
-                '--min-w-custom': '12.5rem',
-                '--max-w-custom': '12.5rem',
-            }}
-        >
-            <h3 className="text-rg text-bold mb-1 text-ellipsis" title={subscription.Name}>
+        <div className="subscription-card-title w-custom max-w-full">
+            <h3
+                className="text-rg text-bold mb-1 text-ellipsis"
+                title={subscription.Name}
+                id={`subscription-card-title-${subscription.ID}`}
+            >
                 {subscription.Name}
             </h3>
-            <p className="m-0 color-weak text-sm text-ellipsis" title={subscription.SenderAddress}>
+            <p className="m-0 color-weak text-sm text-ellipsis max-w-full" title={subscription.SenderAddress}>
                 {subscription.SenderAddress}
             </p>
         </div>
@@ -154,7 +152,7 @@ export const SubscriptionCardButtons = ({
     handleFilterClick,
 }: PropsWithNewsletterSubscription & { handleFilterClick: (type: ModalFilterType) => void }) => {
     return (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mt-2">
             {subscription.UnsubscribedTime ? (
                 <InactiveSubscriptionButtons handleFilterClick={handleFilterClick} />
             ) : (
