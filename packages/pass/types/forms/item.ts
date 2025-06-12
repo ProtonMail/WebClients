@@ -11,7 +11,13 @@ import type { ItemCustomType } from '@proton/pass/types/protobuf';
 import type { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
 import type { CustomSectionGroupValues, ExtraFieldGroupValues, UrlGroupValues } from './fields';
 
-export type BaseItemValues = { name: string; note: string; shareId: string } & FileAttachmentValues;
+export type BaseItemValues = {
+    name: string;
+    note: string;
+    shareId: string;
+} & FileAttachmentValues &
+    ExtraFieldGroupValues;
+
 export type NoteFormValues = BaseItemValues;
 
 export type LoginItemFormValues = BaseItemValues & {
@@ -23,8 +29,7 @@ export type LoginItemFormValues = BaseItemValues & {
     withAlias: boolean;
     withUsername: boolean;
 } & AliasFormValues &
-    UrlGroupValues &
-    ExtraFieldGroupValues;
+    UrlGroupValues;
 
 export type AliasFormValues = {
     aliasPrefix: string;
@@ -62,7 +67,6 @@ export type CreditCardItemFormValues = BaseItemValues & {
 
 export type CustomItemFormValues<T extends ItemCustomType = ItemCustomType> = Extract<
     BaseItemValues &
-        ExtraFieldGroupValues &
         CustomSectionGroupValues &
         (
             | { type: 'wifi'; password: string; security: WifiSecurity; ssid: string }

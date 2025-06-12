@@ -1,10 +1,12 @@
 import { c, msgid } from 'ttag';
 
 import PassUI from '@proton/pass/lib/core/ui.proxy';
+import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { Draft } from '@proton/pass/store/reducers';
 import type {
     BulkSelectionDTO,
     DeobfuscatedItem,
+    DeobfuscatedItemExtraField,
     IdentityItemPreview,
     ItemRevision,
     ItemSortFilter,
@@ -183,6 +185,21 @@ export const getSanitizedUserIdentifiers = async ({
     /* If `itemEmail` is valid, keep it; otherwise, move it to username field */
     return validEmail ? { email: itemEmail, username: '' } : { email: '', username: itemEmail };
 };
+
+export const bindOTPSanitizer =
+    (label?: string, issuer?: string) =>
+    (totpUri: string): string =>
+        parseOTPValue(totpUri, {
+            label: label || undefined,
+            issuer: issuer || undefined,
+        });
+
+export const sanitizeExtraField =
+    (otpSanitizer: (totpUri: string) => string) =>
+    (extraField: DeobfuscatedItemExtraField): DeobfuscatedItemExtraField =>
+        extraField.type === 'totp'
+            ? { ...extraField, data: { totpUri: otpSanitizer(extraField.data.totpUri) } }
+            : extraField;
 
 export const intoBulkSelection = (items: UniqueItem[]): BulkSelectionDTO =>
     items.reduce<BulkSelectionDTO>((dto, { shareId, itemId }) => {

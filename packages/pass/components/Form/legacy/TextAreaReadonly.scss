@@ -1,3 +1,9 @@
-.pass-textarea--readonly {
-	caret-color: transparent;
+.pass-textarea {
+	&--readonly {
+		caret-color: transparent;
+	}
+
+	&--animate {
+		transition: block-size 0.3s ease-out;
+	}
 }

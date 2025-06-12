@@ -9,10 +9,13 @@ import { autofocusInput } from '@proton/pass/utils/dom/input';
 
 import { Field } from '../Field';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
-import { AddExtraFieldDropdown } from './AddExtraFieldDropdown';
+import { AddExtraFieldDropdown, type CustomButtonProps } from './AddExtraFieldDropdown';
 import { ExtraFieldComponent } from './ExtraField';
 
-export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = { form: FormikProps<V> };
+export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = {
+    form: FormikProps<V>;
+    customButton?: CustomButtonProps;
+};
 
 export const createExtraField = <T extends ExtraFieldType>(type: T): DeobfuscatedItemExtraField => {
     switch (type) {
@@ -28,7 +31,7 @@ export const createExtraField = <T extends ExtraFieldType>(type: T): Deobfuscate
     }
 };
 
-export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: ExtraFieldGroupProps<T>) => {
+export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form, customButton }: ExtraFieldGroupProps<T>) => {
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     return (
@@ -61,7 +64,7 @@ export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: Extra
                             </FieldsetCluster>
                         )}
 
-                        {!needsUpgrade && <AddExtraFieldDropdown onAdd={addCustomField} />}
+                        {!needsUpgrade && <AddExtraFieldDropdown onAdd={addCustomField} {...customButton} />}
                     </>
                 );
             }}
