@@ -32,6 +32,7 @@ export const initialStateValue: NewsletterSubscriptionsInterface = {
     selectedTab: SubscriptionTabs.Active,
     selectedSubscriptionId: undefined,
     selectedElementId: undefined,
+    deletingSubscriptionId: undefined,
 };
 
 export const DEFAULT_META = {
