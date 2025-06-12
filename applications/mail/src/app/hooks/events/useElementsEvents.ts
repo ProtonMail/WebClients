@@ -42,48 +42,39 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
             return;
         }
 
-        const {
-            toCreate,
-            toUpdate: toUpdateOrLoad,
-            toDelete,
-        } = Elements.reduce<Pick<EventUpdates, 'toCreate' | 'toUpdate' | 'toDelete'>>(
-            ({ toCreate, toUpdate, toDelete }, event) => {
+        // Not the elements ids "in view" but all in the cache
+        const elementIDs = Object.keys(store.getState().elements.elements);
+
+        const { toCreate, toUpdate, toDelete, toLoad } = Elements.reduce<
+            Pick<EventUpdates, 'toCreate' | 'toUpdate' | 'toDelete' | 'toLoad'>
+        >(
+            ({ toCreate, toUpdate, toDelete, toLoad }, event) => {
                 const { ID, Action } = event;
                 const Element = (event as ConversationEvent)?.Conversation || (event as MessageEvent)?.Message;
 
                 if (Action === EVENT_ACTIONS.CREATE) {
                     toCreate.push(Element as Element);
+
+                    // Long tasks trigger too much element update to be able to load them all
+                    if (taskRunning.labelIDs.length === 0) {
+                        toLoad.push(Element as Element);
+                    }
                 } else if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                    toUpdate.push(Element as Element);
+                    const existingElement = elementIDs.includes(ID);
+
+                    if (existingElement) {
+                        toUpdate.push(Element as Element);
+                    } else {
+                        // We do not load since it's an update
+                        toCreate.push(Element as Element);
+                    }
                 } else if (Action === EVENT_ACTIONS.DELETE) {
                     toDelete.push(ID);
                 }
 
-                return { toCreate, toUpdate, toDelete };
+                return { toCreate, toUpdate, toDelete, toLoad };
             },
-            { toCreate: [], toUpdate: [], toDelete: [] }
-        );
-
-        // Not the elements ids "in view" but all in the cache
-        const elementIDs = Object.keys(store.getState().elements.elements);
-
-        const { toUpdate, toLoad } = toUpdateOrLoad.reduce<Pick<EventUpdates, 'toUpdate' | 'toLoad'>>(
-            ({ toUpdate, toLoad }, element) => {
-                const existingElement = elementIDs.includes(element.ID || '');
-
-                if (existingElement) {
-                    toUpdate.push(element);
-                } else if (taskRunning.labelIDs.length === 0) {
-                    // Long tasks trigger too much element update to be able to load them all
-                    toLoad.push(element);
-                } else {
-                    // We can't lose the element, so we create it
-                    toCreate.push(element);
-                }
-
-                return { toUpdate, toLoad };
-            },
-            { toUpdate: [], toLoad: [] }
+            { toCreate: [], toLoad: [], toUpdate: [], toDelete: [] }
         );
 
         void dispatch(eventUpdates({ conversationMode, toCreate, toUpdate, toLoad, toDelete }));
