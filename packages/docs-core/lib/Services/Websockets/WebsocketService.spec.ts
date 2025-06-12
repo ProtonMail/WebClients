@@ -1,5 +1,6 @@
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
-import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
+import type { DocumentKeys } from '@proton/drive-store/lib/_documents/DocumentKeys'
+import type { NodeMeta } from '@proton/drive-store/lib/NodeMeta'
 import type { ServerMessageWithDocumentUpdates, ServerMessageWithEvents } from '@proton/docs-proto'
 import { DecryptedValue, EventTypeEnum } from '@proton/docs-proto'
 import type { LoggerInterface } from '@proton/utils/logs'

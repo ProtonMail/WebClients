@@ -1,0 +1,53 @@
+@import '~@proton/styles/scss/lib';
+
+@keyframes albums-card-loading {
+	/**
+	 * Animating `opacity` is intended, as animating background-color
+     * will cause Chrome to trigger paint.
+	 *
+	 * See https://web.dev/animations-guide/#triggers
+	 */
+
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.albums-card {
+	border: 3px solid var(--border-weak);
+
+	&--loading {
+		&::before {
+			inline-size: 100%;
+			block-size: 100%;
+			content: '';
+			display: block;
+			opacity: 0;
+			border-radius: var(--border-radius-sm);
+			background-color: var(--background-strong);
+			animation: albums-card-loading alternate 1s ease-in-out infinite both;
+			animation-delay: inherit;
+		}
+	}
+
+	&-thumbnail {
+		pointer-events: none;
+		object-fit: cover;
+		transition: transform 0.15s linear;
+		border-radius: calc(var(--border-radius-md) - (3 * var(--1px)));
+
+		&--empty {
+			background-color: var(--background-weak);
+		}
+	}
+
+	&-share-icon {
+		background-color: rgb(112 109 107 / 0.8);
+		inline-size: 20px;
+		block-size: 20px;
+	}
+}

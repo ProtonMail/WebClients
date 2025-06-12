@@ -8,6 +8,8 @@ import '@proton/testing/lib/mockUnleash';
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 
+global.OffscreenCanvas = Object;
+
 // JSDom does not include a full implementation of webcrypto
 const crypto = require('crypto').webcrypto;
 global.crypto.subtle = crypto.subtle;
@@ -57,7 +59,6 @@ jest.mock('./utils/metrics/userSuccessMetrics.ts', () => {
         },
     };
 });
-
 
 // Mock VPN flag to prevent those issues
 // TypeError: require.context is not a function

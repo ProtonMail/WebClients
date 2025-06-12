@@ -28,8 +28,11 @@ import type {
     ShareInvitationDetailsPayload,
     ShareInvitationPayload,
 } from '@proton/shared/lib/interfaces/drive/invitation';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
+import useFlag from '@proton/unleash/useFlag';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -42,6 +45,7 @@ import {
 import { useDriveCrypto } from '../_crypto';
 import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
 import { useLink } from '../_links';
+import { useUserSettings } from '../_settings';
 import {
     type ShareInvitationDetails,
     type ShareInvitationEmailDetails,
@@ -60,12 +64,14 @@ export const useInvitations = () => {
     const debouncedRequest = useDebouncedRequest();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
+    const photosWithAlbumsForNewVolume = useFlag('DriveAlbumsNewVolumes');
     const driveCrypto = useDriveCrypto();
     const { isSharingExternalInviteDisabled } = useDriveSharingFlags();
     const { getShareCreatorKeys, getShareSessionKey } = useShare();
     const { getLink, getLinkPrivateKey } = useLink();
-    const { getDefaultShare } = useDefaultShare();
     const invitationsState = useInvitationsState();
+    const { photosWithAlbumsEnabled } = useUserSettings();
+    const { getDefaultPhotosShare } = useDefaultShare();
 
     const decryptInvitationLinkName = async (
         invitation: ShareInvitationDetails,
@@ -346,6 +352,17 @@ export const useInvitations = () => {
                 Link,
             })
         );
+        // TODO: Remove that after full rollout of photos
+        // We return if customer will NOT have new album experience
+        const volumeType = await getDefaultPhotosShare().then((photosShare) => photosShare?.volumeType);
+
+        const willHaveAlbum =
+            photosWithAlbumsEnabled ||
+            (!photosWithAlbumsEnabled && volumeType === VolumeType.Photos) ||
+            (photosWithAlbumsForNewVolume && volumeType === undefined);
+        if (invitationDetails?.link.type === LinkType.ALBUM && !willHaveAlbum) {
+            return invitationDetails;
+        }
         invitationsState.setInvitations([invitationDetails]);
         return invitationDetails;
     };
@@ -393,9 +410,13 @@ export const useInvitations = () => {
         abortSignal: AbortSignal,
         {
             linkId,
+            contextShareId,
+            volumeId,
             externalInvitationId,
         }: {
             linkId: string;
+            contextShareId: string;
+            volumeId: string;
             externalInvitationId: string;
         }
     ) => {
@@ -406,7 +427,6 @@ export const useInvitations = () => {
             error.name = EXTERNAL_INVITATIONS_ERROR_NAMES.DISABLED;
             throw error;
         }
-        const { shareId: contextShareId, volumeId } = await getDefaultShare();
 
         // TODO: Using default share will not work for invitations to items
         // from other shares (Photos / Devices).
