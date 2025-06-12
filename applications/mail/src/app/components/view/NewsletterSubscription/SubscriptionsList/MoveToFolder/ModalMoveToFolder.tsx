@@ -23,6 +23,8 @@ import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { filterSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
+import { getReceivedMessagesCount } from '../../helper';
+
 import './ModalMoveToFolder.scss';
 
 interface Props extends ModalProps {
@@ -102,7 +104,7 @@ export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
             })
         );
 
-        const count = subscription.ReceivedMessages.Total;
+        const count = getReceivedMessagesCount(subscription);
         createNotification({
             // TODO add undo actions once the API returns a undo token
             text: c('Label').ngettext(

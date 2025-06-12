@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { useElementBreakpoints } from '@proton/components';
+import { isLabelIDNewsletterSubscription } from '@proton/mail/labels/helpers';
 import clsx from '@proton/utils/clsx';
 
 import type { Props as ListSettingsProps } from '../list/ListSettings';
@@ -46,16 +47,18 @@ const ToolbarNarrow = ({
                 <div className="flex items-center toolbar-inner gap-2">{selectAll}</div>
 
                 <div className="flex items-center toolbar-inner gap-2">
-                    <ListSettings
-                        sort={sort}
-                        onSort={onSort}
-                        onFilter={onFilter}
-                        filter={filter}
-                        conversationMode={conversationMode}
-                        mailSettings={mailSettings}
-                        labelID={labelID}
-                        filterAsDropdown={breakpoint === 'tiny'}
-                    />
+                    {isLabelIDNewsletterSubscription(labelID) ? null : (
+                        <ListSettings
+                            sort={sort}
+                            onSort={onSort}
+                            onFilter={onFilter}
+                            filter={filter}
+                            conversationMode={conversationMode}
+                            mailSettings={mailSettings}
+                            labelID={labelID}
+                            filterAsDropdown={breakpoint === 'tiny'}
+                        />
+                    )}
                 </div>
             </nav>
         </div>

@@ -11,13 +11,14 @@ describe('ResizeHandle', () => {
         jest.clearAllMocks();
     });
 
-    it('renders correctly with default right position', () => {
+    it('renders correctly with right position', () => {
         render(
             <ResizeHandle
                 resizeAreaRef={mockResizeAreaRef}
                 enableResize={mockEnableResize}
                 resetWidth={mockResetWidth}
                 scrollBarWidth={10}
+                position={ResizeHandlePosition.RIGHT}
             />
         );
 
@@ -49,6 +50,7 @@ describe('ResizeHandle', () => {
                 enableResize={mockEnableResize}
                 resetWidth={mockResetWidth}
                 scrollBarWidth={10}
+                position={ResizeHandlePosition.RIGHT}
             />
         );
 
@@ -65,6 +67,7 @@ describe('ResizeHandle', () => {
                 enableResize={mockEnableResize}
                 resetWidth={mockResetWidth}
                 scrollBarWidth={10}
+                position={ResizeHandlePosition.RIGHT}
             />
         );
 
@@ -81,6 +84,7 @@ describe('ResizeHandle', () => {
                 enableResize={mockEnableResize}
                 resetWidth={mockResetWidth}
                 scrollBarWidth={10}
+                position={ResizeHandlePosition.RIGHT}
             />
         );
 

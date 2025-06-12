@@ -26,6 +26,7 @@ interface Props {
     onMessageReady: () => void;
     columnLayout: boolean;
     isComposerOpened: boolean;
+    showBackButton?: boolean;
 }
 
 const MessageOnlyView = ({
@@ -37,6 +38,7 @@ const MessageOnlyView = ({
     onMessageReady,
     columnLayout,
     isComposerOpened,
+    showBackButton = false,
 }: Props) => {
     const [labels = []] = useLabels();
 
@@ -129,6 +131,8 @@ const MessageOnlyView = ({
                 className={clsx([hidden && 'hidden'])}
                 loading={!messageLoaded}
                 element={message.data}
+                showBackButton={showBackButton}
+                onBack={onBack}
             />
             <div className="flex-1 px-4 mt-4 max-w-full outline-none" ref={messageContainerRef} tabIndex={-1}>
                 <MessageView

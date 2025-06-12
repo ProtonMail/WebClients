@@ -5,10 +5,14 @@ import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/Newsl
 
 import {
     getFilterData,
+    getFilterDropdownData,
     getNewsletterCopyForFilterAction,
+    getReceivedMessagesCount,
     getSubscriptionMoveToFolderName,
     getUnsubscribeData,
+    getUnsubscribeMethod,
     shouldOpenUpsellOnFilterClick,
+    shouldToggleFilter,
 } from './helper';
 
 const simpleSubscription = {} as NewsletterSubscription;
@@ -247,17 +251,14 @@ describe('Newsletter subscriptions helpers', () => {
     describe('getNewsletterCopyForFilterAction', () => {
         it('Should return copy for mark as read', () => {
             expect(
-                getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Total: 10 } } as NewsletterSubscription,
-                    'MarkAsRead'
-                )
+                getNewsletterCopyForFilterAction({ UnreadMessageCount: 10 } as NewsletterSubscription, 'MarkAsRead')
             ).toBe('Marked 10 messages as read.');
         });
 
         it('Should return copy for move to archive', () => {
             expect(
                 getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Total: 10 } } as NewsletterSubscription,
+                    { ReceivedMessages: { Last30Days: 10 } } as NewsletterSubscription,
                     'MoveToArchive'
                 )
             ).toBe('Moved 10 messages to Archive.');
@@ -266,7 +267,7 @@ describe('Newsletter subscriptions helpers', () => {
         it('Should return copy for move to trash', () => {
             expect(
                 getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Total: 10 } } as NewsletterSubscription,
+                    { ReceivedMessages: { Last30Days: 10 } } as NewsletterSubscription,
                     'MoveToTrash'
                 )
             ).toBe('Moved 10 messages to Trash.');
@@ -274,17 +275,23 @@ describe('Newsletter subscriptions helpers', () => {
 
         it('Should return singular copy for mark as read', () => {
             expect(
+                getNewsletterCopyForFilterAction({ UnreadMessageCount: 1 } as NewsletterSubscription, 'MarkAsRead')
+            ).toBe('Marked 1 message as read.');
+        });
+
+        it('Should return default copy for mark as read', () => {
+            expect(
                 getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Total: 1 } } as NewsletterSubscription,
+                    { ReceivedMessages: { Last30Days: 1 } } as NewsletterSubscription,
                     'MarkAsRead'
                 )
-            ).toBe('Marked 1 message as read.');
+            ).toBe('Marked 0 messages as read.');
         });
 
         it('Should return singular copy for move to archive', () => {
             expect(
                 getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Total: 1 } } as NewsletterSubscription,
+                    { ReceivedMessages: { Last30Days: 1 } } as NewsletterSubscription,
                     'MoveToArchive'
                 )
             ).toBe('Moved 1 message to Archive.');
@@ -293,10 +300,238 @@ describe('Newsletter subscriptions helpers', () => {
         it('Should return singular copy for move to trash', () => {
             expect(
                 getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Total: 1 } } as NewsletterSubscription,
+                    { ReceivedMessages: { Last30Days: 1 } } as NewsletterSubscription,
                     'MoveToTrash'
                 )
             ).toBe('Moved 1 message to Trash.');
+        });
+
+        it('Should return 0 if the Last30Days is 0', () => {
+            expect(
+                getNewsletterCopyForFilterAction(
+                    { ReceivedMessages: { Last30Days: 0 } } as NewsletterSubscription,
+                    'MoveToTrash'
+                )
+            ).toBe('Moved 0 messages to Trash.');
+        });
+
+        it('Should return 0 if the Last30Days is not present', () => {
+            expect(
+                getNewsletterCopyForFilterAction(
+                    { ReceivedMessages: { Total: 0 } } as NewsletterSubscription,
+                    'MoveToTrash'
+                )
+            ).toBe('Moved 0 messages to Trash.');
+        });
+    });
+
+    describe('getFilterDropdownData', () => {
+        it('Should return true if the mark as read filter is enabled', () => {
+            const result = getFilterDropdownData(
+                {
+                    MarkAsRead: true,
+                    FilterID: 'ID',
+                } as NewsletterSubscription,
+                [{ ID: 'ID', Status: FILTER_STATUS.ENABLED } as Filter]
+            );
+
+            expect(result).toEqual({
+                isFilterEnabled: true,
+                markingAsRead: true,
+                movingToArchive: false,
+                movingToTrash: false,
+                menuItems: [
+                    {
+                        icon: 'envelope-open',
+                        label: 'Stop marking as read',
+                        filter: 'MarkAsRead',
+                    },
+                    {
+                        icon: 'archive-box',
+                        label: 'Move to Archive',
+                        filter: 'MoveToArchive',
+                    },
+                    {
+                        icon: 'trash',
+                        label: 'Move to Trash',
+                        filter: 'MoveToTrash',
+                    },
+                ],
+            });
+        });
+
+        it('Should return true if the move to archive filter is enabled', () => {
+            const result = getFilterDropdownData(
+                {
+                    MoveToFolder: MAILBOX_LABEL_IDS.ARCHIVE,
+                    FilterID: 'ID',
+                } as NewsletterSubscription,
+                [{ ID: 'ID', Status: FILTER_STATUS.ENABLED } as Filter]
+            );
+
+            expect(result).toEqual({
+                isFilterEnabled: true,
+                markingAsRead: false,
+                movingToArchive: true,
+                movingToTrash: false,
+                menuItems: [
+                    {
+                        icon: 'envelope-open',
+                        label: 'Mark as read',
+                        filter: 'MarkAsRead',
+                    },
+                    {
+                        icon: 'archive-box',
+                        label: 'Stop moving to Archive',
+                        filter: 'MoveToArchive',
+                    },
+                    {
+                        icon: 'trash',
+                        label: 'Move to Trash',
+                        filter: 'MoveToTrash',
+                    },
+                ],
+            });
+        });
+
+        it('Should return true if the move to trash filter is enabled', () => {
+            const result = getFilterDropdownData(
+                {
+                    MoveToFolder: MAILBOX_LABEL_IDS.TRASH,
+                    FilterID: 'ID',
+                } as NewsletterSubscription,
+                [{ ID: 'ID', Status: FILTER_STATUS.ENABLED } as Filter]
+            );
+
+            expect(result).toEqual({
+                isFilterEnabled: true,
+                markingAsRead: false,
+                movingToArchive: false,
+                movingToTrash: true,
+                menuItems: [
+                    {
+                        icon: 'envelope-open',
+                        label: 'Mark as read',
+                        filter: 'MarkAsRead',
+                    },
+                    {
+                        icon: 'archive-box',
+                        label: 'Move to Archive',
+                        filter: 'MoveToArchive',
+                    },
+                    {
+                        icon: 'trash',
+                        label: 'Stop moving to Trash',
+                        filter: 'MoveToTrash',
+                    },
+                ],
+            });
+        });
+    });
+
+    describe('getUnsubscribeMethod', () => {
+        it('Should return one-click', () => {
+            expect(
+                getUnsubscribeMethod({
+                    UnsubscribeMethods: {
+                        OneClick: 'OneClick',
+                    },
+                } as NewsletterSubscription)
+            ).toBe('one-click');
+        });
+
+        it('Should return http-client', () => {
+            expect(
+                getUnsubscribeMethod({
+                    UnsubscribeMethods: {
+                        HttpClient: 'HttpClient',
+                    },
+                } as NewsletterSubscription)
+            ).toBe('http-client');
+        });
+
+        it('Should return mailto', () => {
+            expect(
+                getUnsubscribeMethod({
+                    UnsubscribeMethods: {
+                        Mailto: {
+                            Subject: 'Subject',
+                            Body: 'Body',
+                        },
+                    },
+                } as NewsletterSubscription)
+            ).toBe('mailto');
+        });
+
+        it('Should return one-click if multiple options', () => {
+            expect(
+                getUnsubscribeMethod({
+                    UnsubscribeMethods: {
+                        Mailto: {
+                            Subject: 'Subject',
+                            Body: 'Body',
+                        },
+                        OneClick: 'OneClick',
+                        HttpClient: 'HttpClient',
+                    },
+                } as NewsletterSubscription)
+            ).toBe('one-click');
+        });
+
+        it('Should return undefined when no unsubscribe methods are available', () => {
+            expect(
+                getUnsubscribeMethod({
+                    UnsubscribeMethods: {},
+                } as NewsletterSubscription)
+            ).toBeUndefined();
+        });
+    });
+
+    describe('getReceivedMessagesCount', () => {
+        it('Should return the number of received messages', () => {
+            expect(getReceivedMessagesCount({ ReceivedMessages: { Last30Days: 10 } } as NewsletterSubscription)).toBe(
+                10
+            );
+        });
+
+        it('Should return 0 if no received messages', () => {
+            expect(
+                // @ts-expect-error - we want to test the case where the received messages are undefined
+                getReceivedMessagesCount({ ReceivedMessages: { Last30Days: undefined } } as NewsletterSubscription)
+            ).toBe(0);
+        });
+
+        it('Should return 0 if no received messages object', () => {
+            expect(
+                // @ts-expect-error - we want to test the case where the received messages are undefined
+                getReceivedMessagesCount({ ReceivedMessages: undefined } as NewsletterSubscription)
+            ).toBe(0);
+        });
+    });
+
+    describe('isFilterTypeMatchingCurrentAction', () => {
+        const base = { markingAsRead: false, movingToArchive: false, movingToTrash: false };
+
+        it('returns true for MarkAsRead when markingAsRead is true', () => {
+            expect(shouldToggleFilter('MarkAsRead', { ...base, markingAsRead: true })).toBeTruthy();
+        });
+        it('returns false for MarkAsRead when markingAsRead is false', () => {
+            expect(shouldToggleFilter('MarkAsRead', base)).toBeFalsy();
+        });
+        it('returns true for MoveToArchive when movingToArchive is true', () => {
+            expect(shouldToggleFilter('MoveToArchive', { ...base, movingToArchive: true })).toBeTruthy();
+        });
+        it('returns false for MoveToArchive when movingToArchive is false', () => {
+            expect(shouldToggleFilter('MoveToArchive', base)).toBeFalsy();
+        });
+        it('returns true for MoveToTrash when movingToTrash is true', () => {
+            expect(shouldToggleFilter('MoveToTrash', { ...base, movingToTrash: true })).toBeTruthy();
+        });
+        it('returns false for MoveToTrash when movingToTrash is false', () => {
+            expect(shouldToggleFilter('MoveToTrash', base)).toBeFalsy();
+        });
+        it('returns false for unknown filterType', () => {
+            expect(shouldToggleFilter('Unknown' as any, base)).toBeFalsy();
         });
     });
 });

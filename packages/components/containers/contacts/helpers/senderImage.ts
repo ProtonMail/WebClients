@@ -3,13 +3,15 @@ import { getLogo } from '@proton/shared/lib/api/images';
 import { createUrl } from '@proton/shared/lib/fetch/helpers';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
-export const getImageSize = () => {
-    if (window.devicePixelRatio >= 4) {
-        return 128;
-    }
+export const getImageSize = (size: number = 32) => {
+    let ratio = 1;
 
     if (window.devicePixelRatio > 1) {
-        return 64;
+        ratio = 2;
+    }
+
+    if (window.devicePixelRatio >= 4) {
+        ratio = 4;
     }
 
     /*
@@ -19,20 +21,27 @@ export const getImageSize = () => {
     */
     const fontSize = rootFontSize();
     if (fontSize > 16) {
-        return 64;
+        ratio = 2;
     }
 
-    return 32;
+    return size * ratio;
 };
 
-export const getSenderImageUrl = (
-    apiUrl: string,
-    UID: string,
-    emailAddress: string,
-    size?: number,
-    bimiSelector?: string,
-    mode?: SenderImageMode
-) => {
+export const getSenderImageUrl = ({
+    apiUrl,
+    UID,
+    emailAddress,
+    size,
+    bimiSelector,
+    mode,
+}: {
+    apiUrl: string;
+    UID: string;
+    emailAddress: string;
+    size?: number;
+    bimiSelector?: string;
+    mode?: SenderImageMode;
+}) => {
     const cleanedEmailAddress = emailAddress.toLowerCase();
     const config = getLogo(cleanedEmailAddress, size, bimiSelector, mode, UID);
     const prefixedUrl = `${apiUrl}/${config.url}`;

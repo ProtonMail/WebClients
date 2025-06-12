@@ -34,7 +34,8 @@ export const getPaginationDataFromNextPage = (
         Active: active,
         PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
         AnchorID: nextPage.Pagination.AnchorID ?? '',
-        AnchorLastReceivedTime: nextPage.Pagination.AnchorLastReceivedTime ?? '',
+        AnchorLastReceivedTime: nextPage.Pagination.AnchorLastReceivedTime ?? null,
+        AnchorUnreadMessageCount: nextPage.Pagination.AnchorUnreadMessageCount ?? null,
     };
 };
 
@@ -53,6 +54,19 @@ export const getTabData = (
     };
 };
 
+/**
+ * Filter out null values from the pagination data
+ * @param paginationData - The pagination data to filter
+ * @returns The filtered pagination data
+ */
+export const getFilteredPaginationData = (paginationData: Record<string, any> | undefined) => {
+    if (!paginationData) {
+        return {};
+    }
+
+    return Object.fromEntries(Object.entries(paginationData).filter(([, value]) => value !== null));
+};
+
 export const getSortParams = (sortOption?: SortSubscriptionsValue) => {
     if (!sortOption) {
         return undefined;
@@ -61,19 +75,19 @@ export const getSortParams = (sortOption?: SortSubscriptionsValue) => {
     switch (sortOption) {
         case 'last-read':
             return {
-                UnreadMessageCount: 'ASC',
+                'Sort[UnreadMessageCount]': 'ASC',
             };
         case 'most-read':
             return {
-                UnreadMessageCount: 'DESC',
+                'Sort[UnreadMessageCount]': 'DESC',
             };
         case 'alphabetical':
             return {
-                Name: 'ASC',
+                'Sort[Name]': 'ASC',
             };
         case 'recently-received':
             return {
-                LastReceivedTime: 'DESC',
+                'Sort[LastReceivedTime]': 'DESC',
             };
         default:
             return undefined;

@@ -1,6 +1,7 @@
 import { useFolders, useLabels } from '@proton/mail';
 import { isCustomFolder, isCustomLabel } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
 const {
     TRASH,
@@ -52,6 +53,9 @@ export const useLabelActions = (labelID: string): [primaryActions: Actions[], se
             break;
         case TRASH:
             primaryActions = ['inbox', 'archive', 'delete'];
+            break;
+        case CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS:
+            primaryActions = ['trash', 'archive', 'spam'];
             break;
     }
 
