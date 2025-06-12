@@ -36,11 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate organization key": [
         "Aktivovat klíč organizace"
@@ -267,10 +267,10 @@
       "Discard": [
         "Zahodit"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodit změny"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodit změny"
       ],
       "Discover ${ planName }": [
@@ -459,10 +459,10 @@
       "Invite user": [
         "Pozvat uživatele"
       ],
-      "Keep editing": [
+      "Keep Editing": [
         "Pokračovat v úpravách"
       ],
-      "Keep Editing": [
+      "Keep editing": [
         "Pokračovat v úpravách"
       ],
       "Keep logo": [
@@ -708,11 +708,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "select file": [
-        "vybrat soubor"
-      ],
       "Select file": [
         "Vybrat soubor"
+      ],
+      "select file": [
+        "vybrat soubor"
       ],
       "Send code": [
         "Odeslat kód"
@@ -993,8 +993,14 @@
       "Delete address": [
         "Smazat adresu"
       ],
+      "Delete address “${ emailAddress }”": [
+        "Smazat adresu “${ emailAddress }”"
+      ],
       "Disable": [
         "Deaktivovat"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "Deaktivovat adresu “${ emailAddress }”"
       ],
       "Disable E2EE mail": [
         "Deaktivovat E2EE poštu"
@@ -1008,8 +1014,14 @@
       "Edit address": [
         "Upravit adresu"
       ],
+      "Edit address “${ emailAddress }”": [
+        "Upravit adresu “${ emailAddress }”"
+      ],
       "Enable": [
         "Zapnout"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "Povolit adresu “${ emailAddress }”"
       ],
       "Enable E2EE mail": [
         "Povolit E2EE poštu"
@@ -1017,11 +1029,17 @@
       "Generate missing keys": [
         "Vygenerovat chybějící klíče"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "Generovat chybějící klíče pro adresu “${ emailAddress }”"
+      ],
       "Saving": [
         "Ukládání"
       ],
       "Set as default": [
         "Nastavit jako výchozí"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "Nastavit “${ emailAddress }” jako výchozí adresu"
       ]
     },
     "Address status": {
@@ -4652,11 +4670,11 @@
       "Data recoverable on this device": [
         "Data obnovitelná v tomto zařízení"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -5858,11 +5876,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "Username": [
-        "Uživatelské jméno"
-      ],
       "username": [
         "uživatelské jméno"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -7518,20 +7536,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -7553,6 +7557,20 @@
       ],
       "Switch plan": [
         "Změnit tarif"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Navýšit"
       ]
     },
     "new_plans: feature": {
@@ -8173,6 +8191,14 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -8185,14 +8211,6 @@
       ],
       "Switch plans?": [
         "Změnit tarif?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -10795,6 +10813,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -11095,47 +11154,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -11691,10 +11709,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -12367,7 +12385,7 @@
         "Váš aktuální tarif"
       ],
       "Your free trial ends in ${ trialDurationFormatted } days": [
-        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny."
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny"
       ],
       "Your plan": [
         "Váš tarif"
