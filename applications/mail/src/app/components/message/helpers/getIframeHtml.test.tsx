@@ -3,14 +3,14 @@ import {
     MESSAGE_IFRAME_PRINT_FOOTER_ID,
     MESSAGE_IFRAME_PRINT_HEADER_ID,
 } from '@proton/mail-renderer/constants';
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 
-import { createDocument } from '../../../helpers/test/message';
 import getIframeHtml from './getIframeHtml';
 
 describe('getIframeHTML', () => {
     describe('rich text', () => {
         it('Should not contain print classes and elements', () => {
-            const document = createDocument('hello buddy');
+            const document = parseDOMStringToBodyElement('hello buddy');
             const htmlString = getIframeHtml({
                 emailContent: 'dude',
                 messageDocument: document,
@@ -25,7 +25,7 @@ describe('getIframeHTML', () => {
         });
 
         it('Should contain print classes and elements', () => {
-            const document = createDocument('hello buddy');
+            const document = parseDOMStringToBodyElement('hello buddy');
             const htmlString = getIframeHtml({
                 emailContent: 'dude',
                 messageDocument: document,
@@ -42,7 +42,7 @@ describe('getIframeHTML', () => {
 
     describe('plain text', () => {
         it('Should not contain print classes and elements', () => {
-            const document = createDocument('hello buddy');
+            const document = parseDOMStringToBodyElement('hello buddy');
             const htmlString = getIframeHtml({
                 emailContent: 'dude',
                 messageDocument: document,
@@ -57,7 +57,7 @@ describe('getIframeHTML', () => {
         });
 
         it('Should not contain print classes and elements', () => {
-            const document = createDocument('hello buddy');
+            const document = parseDOMStringToBodyElement('hello buddy');
             const htmlString = getIframeHtml({
                 emailContent: 'dude',
                 messageDocument: document,

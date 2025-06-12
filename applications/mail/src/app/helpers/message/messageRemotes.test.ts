@@ -1,5 +1,6 @@
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
+
 import type { MessageRemoteImage } from '../../store/messages/messagesTypes';
-import { createDocument } from '../test/message';
 import { loadBackgroundImages, loadImages } from './messageRemotes';
 
 describe('messageRemote', () => {
@@ -71,7 +72,7 @@ describe('messageRemote', () => {
             ${posterContent}     | ${posterExpectedContent}
             ${xlinkhrefContent}  | ${xlinkhrefExpectedContent}
         `('should load elements other than images', async ({ content, expectedContent }) => {
-            const messageDocument = createDocument(content);
+            const messageDocument = parseDOMStringToBodyElement(content);
 
             const remoteImages = [
                 {
@@ -86,13 +87,13 @@ describe('messageRemote', () => {
 
             loadImages(remoteImages, messageDocument);
 
-            const expectedDocument = createDocument(expectedContent);
+            const expectedDocument = parseDOMStringToBodyElement(expectedContent);
 
             expect(messageDocument.innerHTML).toEqual(expectedDocument.innerHTML);
         });
 
         it('should not load srcset attribute', () => {
-            const messageDocument = createDocument(srcsetContent);
+            const messageDocument = parseDOMStringToBodyElement(srcsetContent);
 
             const remoteImages = [
                 {
@@ -107,7 +108,7 @@ describe('messageRemote', () => {
 
             loadImages(remoteImages, messageDocument);
 
-            const expectedDocument = createDocument(srcsetExpectedContent);
+            const expectedDocument = parseDOMStringToBodyElement(srcsetExpectedContent);
 
             expect(messageDocument.innerHTML).toEqual(expectedDocument.innerHTML);
         });
@@ -119,8 +120,8 @@ describe('messageRemote', () => {
         const expectedContent = `<div style="background: url(${imageURL})">Element1</div>`;
 
         it('should load elements other than images', async () => {
-            const messageDocument = createDocument(content);
-            const expectedDocument = createDocument(expectedContent);
+            const messageDocument = parseDOMStringToBodyElement(content);
+            const expectedDocument = parseDOMStringToBodyElement(expectedContent);
 
             const remoteImages = [
                 {
