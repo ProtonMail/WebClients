@@ -72,19 +72,23 @@ function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props
 
     const editAction: DropdownActionProps = {
         text: c('Action').t`Edit`,
+        label: c('Action').t`Edit filter “${Name}”`,
         onClick: handleEdit(),
     };
     const editSieveAction: DropdownActionProps = {
         text: c('Action').t`Edit sieve`,
+        label: c('Action').t`Edit sieve filter “${Name}”`,
         onClick: handleEdit('sieve'),
     };
     const applyFilterAction: DropdownActionProps = {
         text: c('Action').t`Apply to existing messages`,
+        label: c('Action').t`Apply filter “${Name}” to existing messages`,
         onClick: () => setApplyFilterModalOpen(true),
     };
 
     const deleteFilterAction: DropdownActionProps = {
         text: c('Action').t`Delete`,
+        label: c('Action').t`Delete filter “${Name}”`,
         actionType: 'delete',
         onClick: () => setDeleteFilterModalOpen(true),
     };
