@@ -1,5 +1,9 @@
 import { useMemo } from 'react';
 
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -11,9 +15,11 @@ interface Props {
     className?: string;
     loading: boolean;
     element?: Element;
+    showBackButton?: boolean;
+    onBack?: () => void;
 }
 
-const ConversationHeader = ({ className, loading, element }: Props) => {
+const ConversationHeader = ({ className, loading, element, showBackButton = false, onBack }: Props) => {
     const { highlightMetadata, shouldHighlight } = useEncryptedSearchContext();
     const highlightSubject = shouldHighlight();
 
@@ -38,7 +44,14 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
             data-shortcut-target="message-conversation-summary"
             data-testid="conversation-header"
         >
-            <div className="flex flex-nowrap">
+            <div className="flex items-center flex-nowrap">
+                {showBackButton && (
+                    <div className="flex items-center mr-2">
+                        <Button icon shape="ghost" onClick={onBack} data-testid="toolbar:back-button">
+                            <Icon name="arrow-left" alt={c('Action').t`Back`} />
+                        </Button>
+                    </div>
+                )}
                 <h1
                     className={clsx([
                         'message-conversation-summary-header my-0 h3 text-bold text-ellipsis-two-lines lh-rg flex-1',

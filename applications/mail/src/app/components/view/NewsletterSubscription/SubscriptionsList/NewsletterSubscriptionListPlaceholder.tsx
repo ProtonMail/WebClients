@@ -17,7 +17,7 @@ export const NewsletterSubscriptionListPlaceholder = () => {
         <EmptyViewWrapper
             imgProps={{
                 src: getInboxEmptyPlaceholder({
-                    size: tabSelected === SubscriptionTabs.Active ? 0 : 100,
+                    size: 0,
                     theme: theme.information.theme,
                 }),
             }}
@@ -25,12 +25,12 @@ export const NewsletterSubscriptionListPlaceholder = () => {
             title={
                 tabSelected === SubscriptionTabs.Active
                     ? c('Title').t`No mail subscriptions`
-                    : c('Title').t`No unsubscribed mail subscriptions`
+                    : c('Title').t`No unsubscribed newsletters`
             }
             description={
                 tabSelected === SubscriptionTabs.Active
                     ? c('Labels').t`View and manage newsletter and mailing list subscriptions here.`
-                    : c('Labels').t`Newsletters you unsubscribe from will appear here.`
+                    : c('Labels').t`Newsletters you unsubscribe from will show up here.`
             }
         />
     );

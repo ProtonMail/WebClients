@@ -298,7 +298,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                         moveToFolder={moveToFolder}
                     />
 
-                    <MailSidebarCustomView collapsed={collapsed} onClickExpandNav={onClickExpandNav} />
+                    <MailSidebarCustomView collapsed={collapsed} />
 
                     {collapsed ? (
                         <MailSidebarCollapsedButton

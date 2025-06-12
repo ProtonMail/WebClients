@@ -9,6 +9,7 @@ import type { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import {
     getSender,
     getRecipients as messageGetRecipients,
@@ -295,6 +296,7 @@ export const filterElementsInState = ({
     filter,
     conversationMode,
     search,
+    newsletterSubscriptionID,
 }: {
     elements: Element[];
     addresses?: Address[];
@@ -303,6 +305,7 @@ export const filterElementsInState = ({
     filter: Filter;
     conversationMode: boolean;
     search: SearchParameters;
+    newsletterSubscriptionID?: string;
 }) => {
     const bypassFilterSet = new Set(bypassFilter);
     return elements.filter((element) => {
@@ -318,12 +321,22 @@ export const filterElementsInState = ({
             return false;
         }
 
-        if (!hasLabel(element, labelID)) {
+        if (!hasLabel(element, labelID) && labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
             return false;
         }
 
-        // Check element type (cheap operation)
         if (conversationMode ? !isConversation(element) : !isMessage(element)) {
+            return false;
+        }
+
+        if (
+            labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS &&
+            isMessage(element) &&
+            // Note: This only filters messages. We don't expect conversations but if there are Conversations in newsletter context (if any exist)
+            // would not be filtered by subscription ID here.
+            (newsletterSubscriptionID !== (element as Message).NewsletterSubscriptionID ||
+                !hasLabel(element, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL)) //we need to filter out elements that are in newsletter subscriptions but not in almost all mail
+        ) {
             return false;
         }
 
@@ -366,8 +379,23 @@ export const getElementContextIdentifier = (contextFilter: {
     begin?: number;
     end?: number;
     keyword?: string;
+    newsletterSubscriptionID?: string;
 }) => {
-    return JSON.stringify(contextFilter);
+    // For search queries, exclude newsletterSubscriptionID from the context to avoid
+    // creating separate contexts for the same search across different newsletter subscriptions
+    const isSearchQuery =
+        !!contextFilter.keyword ||
+        !!contextFilter.from ||
+        !!contextFilter.to ||
+        !!contextFilter.address ||
+        !!contextFilter.begin ||
+        !!contextFilter.end;
+
+    const contextForIdentifier = isSearchQuery
+        ? { ...contextFilter, newsletterSubscriptionID: undefined }
+        : contextFilter;
+
+    return JSON.stringify(contextForIdentifier);
 };
 
 export const isElementOutsideFolders = (element: Element, labels: Label[]): boolean => {

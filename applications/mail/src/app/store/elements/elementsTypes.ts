@@ -16,6 +16,7 @@ export interface ElementsStateParams {
     search: SearchParameters;
     esEnabled: boolean;
     isSearching: boolean;
+    newsletterSubscriptionID?: string;
 }
 
 export interface RetryData {

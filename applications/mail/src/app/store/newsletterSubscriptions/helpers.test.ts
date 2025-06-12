@@ -6,7 +6,13 @@ import type {
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { DEFAULT_PAGINATION_PAGE_SIZE, DEFAULT_SORTING } from './constants';
-import { getPaginationDataFromNextPage, getSortParams, getTabData, normalizeSubscriptions } from './helpers';
+import {
+    getFilteredPaginationData,
+    getPaginationDataFromNextPage,
+    getSortParams,
+    getTabData,
+    normalizeSubscriptions,
+} from './helpers';
 import { SortSubscriptionsValue } from './interface';
 
 describe('newsletterSubscriptions helpers', () => {
@@ -54,7 +60,8 @@ describe('newsletterSubscriptions helpers', () => {
                 Active: '1',
                 PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
                 AnchorID: '',
-                AnchorLastReceivedTime: '',
+                AnchorLastReceivedTime: null,
+                AnchorUnreadMessageCount: null,
             });
         });
 
@@ -73,6 +80,7 @@ describe('newsletterSubscriptions helpers', () => {
                 PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
                 AnchorID: 'anchor123',
                 AnchorLastReceivedTime: '2023-01-01T12:00:00Z',
+                AnchorUnreadMessageCount: null,
             });
         });
     });
@@ -148,6 +156,7 @@ describe('newsletterSubscriptions helpers', () => {
                     PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
                     AnchorID: 'next-anchor',
                     AnchorLastReceivedTime: '2023-05-01T00:00:00Z',
+                    AnchorUnreadMessageCount: null,
                 },
             });
         });
@@ -162,34 +171,81 @@ describe('newsletterSubscriptions helpers', () => {
         it('should return last-read sort parameters', () => {
             const result = getSortParams(SortSubscriptionsValue.LastRead);
             expect(result).toEqual({
-                UnreadMessageCount: 'ASC',
+                'Sort[UnreadMessageCount]': 'ASC',
             });
         });
 
         it('should return most-read sort parameters', () => {
             const result = getSortParams(SortSubscriptionsValue.MostRead);
             expect(result).toEqual({
-                UnreadMessageCount: 'DESC',
+                'Sort[UnreadMessageCount]': 'DESC',
             });
         });
 
         it('should return alphabetical sort parameters', () => {
             const result = getSortParams(SortSubscriptionsValue.Alphabetical);
             expect(result).toEqual({
-                Name: 'ASC',
+                'Sort[Name]': 'ASC',
             });
         });
 
         it('should return recently-received sort parameters', () => {
             const result = getSortParams(SortSubscriptionsValue.RecentlyReceived);
             expect(result).toEqual({
-                LastReceivedTime: 'DESC',
+                'Sort[LastReceivedTime]': 'DESC',
             });
         });
 
         it('should return undefined for unhandled sort option', () => {
             const result = getSortParams('most-frequent' as any);
             expect(result).toBeUndefined();
+        });
+    });
+
+    describe('getFilteredPaginationData', () => {
+        it('should return empty object when no pagination data is provided', () => {
+            const result = getFilteredPaginationData(undefined);
+            expect(result).toEqual({});
+        });
+
+        it('should return filtered pagination data', () => {
+            const paginationData = {
+                PageSize: 10,
+                AnchorID: '123',
+                AnchorLastReceivedTime: 'some-timestamp',
+            };
+
+            const result = getFilteredPaginationData(paginationData);
+            expect(result).toEqual(paginationData);
+        });
+
+        it('should return filtered pagination data with null values', () => {
+            const paginationData = {
+                PageSize: 10,
+                AnchorID: '123',
+                AnchorLastReceivedTime: null,
+            };
+
+            const result = getFilteredPaginationData(paginationData);
+            expect(result).toEqual({
+                PageSize: 10,
+                AnchorID: '123',
+            });
+        });
+
+        it('should return filtered pagination data with 0 count', () => {
+            const paginationData = {
+                PageSize: 10,
+                AnchorID: '123',
+                AnchorLastReceivedTime: 0,
+            };
+
+            const result = getFilteredPaginationData(paginationData);
+            expect(result).toEqual({
+                PageSize: 10,
+                AnchorID: '123',
+                AnchorLastReceivedTime: 0,
+            });
         });
     });
 });

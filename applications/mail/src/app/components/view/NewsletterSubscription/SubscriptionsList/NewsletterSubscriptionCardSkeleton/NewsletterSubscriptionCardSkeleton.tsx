@@ -2,21 +2,15 @@ import { SkeletonLoader } from '@proton/components';
 
 export const NewsletterSubscriptionCardSkeleton = () => {
     return (
-        <div className="subscription-card rounded-lg p-4 cursor-pointer md:p-5 border border-2 shadow-norm border-transparent">
+        <div className="subscription-card rounded-lg p-4 cursor-pointer md:p-5 border border-2 shadow-norm border-transparent mb-4">
             <div className="flex gap-3 md:gap-4">
                 <div className="subscription-card-image shrink-0">
                     <SkeletonLoader width="2.25rem" height="2.25rem" className="rounded" />
                 </div>
                 <div className="flex-1">
-                    <div className="flex mb-3">
-                        <div className="flex-1 flex gap-3 md:gap-4">
-                            <div
-                                className="min-w-custom max-w-custom"
-                                style={{
-                                    '--min-w-custom': '12.5rem',
-                                    '--max-w-custom': '12.5rem',
-                                }}
-                            >
+                    <div className="flex">
+                        <div className="subscription-card-content flex-1 flex flex-nowrap gap-3 md:gap-4">
+                            <div className="subscription-card-title w-custom max-w-full">
                                 <SkeletonLoader width="10rem" height="1.25rem" className="mb-1" />
                                 <SkeletonLoader width="11.25rem" height="1rem" />
                             </div>

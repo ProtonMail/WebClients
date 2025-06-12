@@ -6,20 +6,25 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getNewsletterSubscription } from '@proton/shared/lib/api/newsletterSubscription';
 import type { GetNewsletterSubscriptionsApiResponse } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
+import { setParams } from '../elements/elementsActions';
 import { DEFAULT_PAGINATION_PAGE_SIZE, initialState, initialStateValue } from './constants';
 import { getTabData, normalizeSubscriptions } from './helpers';
-import { type NewsletterSubscriptionsInterface, SubscriptionTabs } from './interface';
+import { type NewsletterSubscriptionsInterface, SortSubscriptionsValue, SubscriptionTabs } from './interface';
 import {
     fetchNextNewsletterSubscriptionsPage,
     filterSubscriptionList,
     sortSubscriptionList,
     unsubscribeSubscription,
+    updateSubscription,
 } from './newsletterSubscriptionsActions';
 import {
+    deleteSubscriptionAnimationEndedReducer,
     fetchNextNewsletterSubscriptionsPageFulfilled,
     filterSubscriptionListFulfilled,
     filterSubscriptionListPending,
     filterSubscriptionListRejected,
+    removeSubscriptionFromActiveTabReducer,
+    setSelectedElementIdReducer,
     setSelectedSubscriptionReducer,
     setSelectedTabReducer,
     setSortingOrderReducer,
@@ -28,6 +33,9 @@ import {
     sortSubscriptionRejected,
     unsubscribeSubscriptionPending,
     unsubscribeSubscriptionRejected,
+    updateSubscriptionFulfilled,
+    updateSubscriptionPending,
+    updateSubscriptionRejected,
 } from './newsletterSubscriptionsReducers';
 
 export const newsletterSubscriptionName = 'newsletterSubscriptions' as const;
@@ -44,7 +52,7 @@ const modelThunk = createAsyncModelThunk<
     NewsletterSubscriptionsState,
     ProtonThunkArguments
 >(`${newsletterSubscriptionName}/fetch`, {
-    miss: async ({ extraArgument }) => {
+    miss: async ({ extraArgument, dispatch }) => {
         try {
             const [active, unsubscribed] = await Promise.all([
                 extraArgument.api<GetNewsletterSubscriptionsApiResponse>(
@@ -53,6 +61,7 @@ const modelThunk = createAsyncModelThunk<
                             PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
                             Active: '1',
                         },
+                        sort: SortSubscriptionsValue.RecentlyReceived,
                     })
                 ),
                 extraArgument.api<GetNewsletterSubscriptionsApiResponse>(
@@ -61,6 +70,7 @@ const modelThunk = createAsyncModelThunk<
                             PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
                             Active: '0',
                         },
+                        sort: SortSubscriptionsValue.RecentlyReceived,
                     })
                 ),
             ]);
@@ -68,6 +78,8 @@ const modelThunk = createAsyncModelThunk<
             const normalizedActive = normalizeSubscriptions(active.NewsletterSubscriptions);
             const normalizedUnsubscribed = normalizeSubscriptions(unsubscribed.NewsletterSubscriptions);
 
+            const selectedSubscriptionId = normalizedActive.ids[0];
+            dispatch(setParams({ newsletterSubscriptionID: selectedSubscriptionId }));
             return {
                 byId: {
                     ...normalizedActive.byId,
@@ -78,7 +90,9 @@ const modelThunk = createAsyncModelThunk<
                     unsubscribe: getTabData(normalizedUnsubscribed.ids, unsubscribed),
                 },
                 selectedTab: SubscriptionTabs.Active,
-                selectedSubscriptionId: normalizedActive.ids[0],
+                selectedSubscriptionId,
+                selectedElementId: undefined,
+                deletingSubscriptionId: undefined,
             };
         } catch (error) {
             return {
@@ -101,6 +115,9 @@ const slice = createSlice({
         setSortingOrder: setSortingOrderReducer,
         setSelectedTab: setSelectedTabReducer,
         setSelectedSubscription: setSelectedSubscriptionReducer,
+        setSelectedElementId: setSelectedElementIdReducer,
+        removeSubscriptionFromActiveTab: removeSubscriptionFromActiveTabReducer,
+        deleteSubscriptionAnimationEnded: deleteSubscriptionAnimationEndedReducer,
     },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
@@ -115,6 +132,10 @@ const slice = createSlice({
         builder.addCase(filterSubscriptionList.pending, filterSubscriptionListPending);
         builder.addCase(filterSubscriptionList.fulfilled, filterSubscriptionListFulfilled);
         builder.addCase(filterSubscriptionList.rejected, filterSubscriptionListRejected);
+
+        builder.addCase(updateSubscription.pending, updateSubscriptionPending);
+        builder.addCase(updateSubscription.rejected, updateSubscriptionRejected);
+        builder.addCase(updateSubscription.fulfilled, updateSubscriptionFulfilled);
 
         builder.addCase(fetchNextNewsletterSubscriptionsPage.fulfilled, fetchNextNewsletterSubscriptionsPageFulfilled);
     },

@@ -11,7 +11,7 @@ const EmptyViewContainer = ({ imageProps, children, height, ...containerProps }:
         <div className="m-auto p-11" {...containerProps}>
             <figure className="flex-1 text-center p-4">
                 {imageProps && <img className="w-auto" height={height} {...imageProps} alt={imageProps.alt || ''} />}
-                <figcaption className="mt-8">{children}</figcaption>
+                <figcaption className="mt-4">{children}</figcaption>
             </figure>
         </div>
     );

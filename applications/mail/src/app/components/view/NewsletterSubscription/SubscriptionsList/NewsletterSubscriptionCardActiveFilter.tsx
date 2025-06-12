@@ -2,18 +2,18 @@ import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
-import { SettingsLink } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
+import { Button } from '@proton/atoms';
+import { FiltersUpsellModal, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { IcCheckmarkCircleFilled } from '@proton/icons';
 import { useFilters } from '@proton/mail/filters/hooks';
 import { useFolders } from '@proton/mail/index';
-import { APPS, FILTER_STATUS } from '@proton/shared/lib/constants';
-import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import { toggleEnable } from '@proton/shared/lib/api/filters';
+import { FILTER_STATUS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 
 import { getSubscriptionMoveToFolderName } from '../helper';
-
-interface Props {
-    subscription: NewsletterSubscription;
-}
+import type { PropsWithNewsletterSubscription } from '../interface';
 
 interface WrapperProps extends PropsWithChildren {
     iconClassName: string;
@@ -21,9 +21,9 @@ interface WrapperProps extends PropsWithChildren {
 
 const FilterWrapper = ({ children, iconClassName }: WrapperProps) => {
     return (
-        <div className="flex flex-nowrap gap-2 bg-weak color-weak px-3 py-1 rounded-xl mt-3 text-sm">
+        <div className="flex flex-nowrap items-center gap-2 bg-weak color-weak px-3 py-1 rounded-xl mt-3 text-sm">
             <IcCheckmarkCircleFilled className={iconClassName} />
-            <span>{children}</span>
+            <span className="flex gap-0.5">{children}</span>
         </div>
     );
 };
@@ -32,28 +32,59 @@ const ActiveFilter = ({ children }: PropsWithChildren) => {
     return <FilterWrapper iconClassName="color-success shrink-0">{children}</FilterWrapper>;
 };
 
-const DisabledFilter = () => {
-    const settingsLink = (
-        <SettingsLink path="/filters" className="color-weak" app={APPS.PROTONMAIL}>
-            {c('Link').t`here`}
-        </SettingsLink>
+const DisabledFilter = ({ subscription }: PropsWithNewsletterSubscription) => {
+    const [user] = useUser();
+    const [filters = []] = useFilters();
+
+    const api = useApi();
+    const { call } = useEventManager();
+    const { createNotification } = useNotifications();
+
+    const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
+
+    const enableFilter = async () => {
+        if (hasReachedFiltersLimit(user, filters)) {
+            handleUpsellModalDisplay(true);
+            return;
+        }
+
+        await api(toggleEnable(subscription.FilterID!, true));
+        await call();
+        createNotification({
+            text: c('Success notification').t`The filter is active again`,
+        });
+    };
+
+    const enableButton = (
+        <Button className="py-0 color-weak ml-0.5" shape="underline" onClick={enableFilter}>
+            {c('Label').t`Enable filter`}
+        </Button>
     );
 
     return (
-        <FilterWrapper iconClassName="color-weak shrink-0">
-            {c('Label').jt`The filter is disabled. You can enable it ${settingsLink}`}
-        </FilterWrapper>
+        <>
+            <FilterWrapper iconClassName="color-weak shrink-0">
+                {c('Label').jt`The filter is disabled. ${enableButton}`}
+            </FilterWrapper>
+
+            {renderUpsellModal && (
+                <FiltersUpsellModal
+                    modalProps={upsellModalProps}
+                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_MAIL_SUBSCRIPTION}
+                />
+            )}
+        </>
     );
 };
 
-export const NewsletterSubscriptionCardActiveFilter = ({ subscription }: Props) => {
+export const NewsletterSubscriptionCardActiveFilter = ({ subscription }: PropsWithNewsletterSubscription) => {
     const [filters] = useFilters();
     const [folders = []] = useFolders();
 
-    // Users could disable the filter in the settings, we want to make it clear for them when it's the case
+    // Users can enable the filter again right from the UI. This avoid going to the settings to do it.
     const subscriptionFilter = filters?.find((filter) => filter.ID === subscription.FilterID);
-    if (filters?.length && subscriptionFilter?.Status === FILTER_STATUS.DISABLED) {
-        return <DisabledFilter />;
+    if (subscription.FilterID && filters?.length && subscriptionFilter?.Status === FILTER_STATUS.DISABLED) {
+        return <DisabledFilter subscription={subscription} />;
     }
 
     const boldActive = <b className="text-semibold" key="active-filter">{c('Label').t`Active filter:`}</b>;

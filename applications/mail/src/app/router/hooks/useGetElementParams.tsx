@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
+import { convertCustomViewLabelsToAlmostAllMail } from '@proton/mail/labels/helpers';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import { type SearchParameters } from '@proton/shared/lib/mail/search';
@@ -23,7 +24,7 @@ export const useGetElementParams = ({ params, navigation }: Props) => {
 
     return {
         conversationMode: params.conversationMode,
-        labelID: params.labelID,
+        labelID: convertCustomViewLabelsToAlmostAllMail(params.labelID),
         page: pageFromUrl(location),
         pageSize: mailSettings?.PageSize || MAIL_PAGE_SIZE.FIFTY,
         sort: params.sort,

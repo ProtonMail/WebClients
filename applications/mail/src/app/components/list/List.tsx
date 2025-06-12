@@ -32,8 +32,8 @@ import { pageSize as pageSizeSelector, showLabelTaskRunningBanner } from '../../
 import UserOnboardingMessageListPlaceholder from '../onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
-import ListBanners from './ListBanners';
-import ListPagination from './ListPagination';
+import ListBanners from './MailboxListBanners';
+import ListPagination from './MailboxListPagination';
 import { ResizeHandle } from './ResizeHandle';
 import SkeletonItem from './SkeletonItem';
 import useEncryptedSearchList from './useEncryptedSearchList';
@@ -82,6 +82,13 @@ interface Props {
     currentFolder?: string;
 }
 
+/**
+ * @deprecated
+ * Please use MailboxList component instead.
+ * A component that displays a list of messages.
+ *
+ * This component is responsible for rendering the list of messages
+ **/
 const List = (
     {
         show,
@@ -279,7 +286,6 @@ const List = (
                     <ListBanners
                         labelID={labelID}
                         columnLayout={columnLayout}
-                        userSettings={userSettings}
                         esState={{ isESLoading, isSearch, showESSlowToolbar }}
                         canDisplayTaskRunningBanner={canDisplayTaskRunningBanner}
                     />
@@ -353,7 +359,14 @@ const List = (
 
                                 {total > 1 && (
                                     <div className="p-5 flex flex-column items-center shrink-0">
-                                        <ListPagination {...pagingHandlers} loading={loading} />
+                                        <ListPagination
+                                            page={page}
+                                            total={total}
+                                            handlePrevious={pagingHandlers.onPrevious}
+                                            handleNext={pagingHandlers.onNext}
+                                            handlePage={pagingHandlers.onPage}
+                                            loading={loading}
+                                        />
                                     </div>
                                 )}
                             </>

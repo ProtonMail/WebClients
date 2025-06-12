@@ -2,6 +2,7 @@ import type { Location } from 'history';
 
 import { isAlwaysMessageLabels } from '@proton/mail/labels/helpers';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { isSearch } from './elements';
@@ -17,5 +18,10 @@ export const isConversationMode = (
 ) => {
     const searchParams = location ? extractSearchParameters(location) : {};
 
-    return !isAlwaysMessageLabels(labelID) && ViewMode === VIEW_MODE.GROUP && !isSearch(searchParams);
+    return (
+        labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS &&
+        !isAlwaysMessageLabels(labelID) &&
+        ViewMode === VIEW_MODE.GROUP &&
+        !isSearch(searchParams)
+    );
 };

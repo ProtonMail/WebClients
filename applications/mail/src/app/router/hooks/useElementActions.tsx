@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { useItemsSelection } from '@proton/components';
 import { useFolders } from '@proton/mail';
-import { getFolderName } from '@proton/mail/labels/helpers';
+import { convertCustomViewLabelsToAlmostAllMail, getFolderName } from '@proton/mail/labels/helpers';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -32,9 +32,11 @@ interface Params {
 }
 
 export const useElementActions = ({ params, navigation, elementsData }: Params) => {
-    const { elementID, conversationMode, messageID, labelID } = params;
+    const { elementID, conversationMode, messageID, labelID: originalLabelID } = params;
     const { handleBack } = navigation;
     const { elementIDs } = elementsData;
+
+    const labelID = convertCustomViewLabelsToAlmostAllMail(originalLabelID);
 
     const history = useHistory();
     const [isMessageOpening, setIsMessageOpening] = useState(false);
@@ -126,10 +128,15 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
     );
 
     const handleMarkAs = useCallback(
-        async (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION): Promise<void> => {
+        async (
+            status: MARK_AS_STATUS,
+            sourceAction: SOURCE_ACTION,
+            options?: { preventBack?: boolean }
+        ): Promise<void> => {
             const isUnread = status === MARK_AS_STATUS.UNREAD;
             const elements = getElementsFromIDs(selectedIDs);
-            if (isUnread) {
+
+            if (isUnread && !options?.preventBack) {
                 handleBack();
             }
 

@@ -2,8 +2,10 @@ import type { Ref } from 'react';
 import { memo } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
+import { isLabelIDNewsletterSubscription } from '@proton/mail/labels/helpers';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import clsx from '@proton/utils/clsx';
 
 import type { Props as ListSettingsProps } from '../list/ListSettings';
 import type { SOURCE_ACTION } from '../list/useListTelemetry';
@@ -71,11 +73,17 @@ const Toolbar = (props: Props) => {
         columnWide: () => listInView && columnMode && !viewPortIsNarrow,
     }).find(([, value]) => value() === true)?.[0] as Variant;
 
+    const classname = clsx(
+        BASE_TOOLBAR_CLASSNAME,
+        // In the newsletter subscription list, the toolbar must have no background and no border
+        isLabelIDNewsletterSubscription(props.labelID) && 'toolbar--no-bg toolbar--in-container'
+    );
+
     const selectAllProps = pick(props, ['labelID', 'elementIDs', 'checkedIDs', 'onCheck', 'loading']);
     const commonProps = {
         ...props,
         // Base css class
-        classname: BASE_TOOLBAR_CLASSNAME,
+        classname,
         selectAll: <SelectAll {...selectAllProps} />,
     };
 

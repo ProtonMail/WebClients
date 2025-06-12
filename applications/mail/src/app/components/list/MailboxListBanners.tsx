@@ -1,8 +1,7 @@
 import type { ReactNode } from 'react';
-import { memo } from 'react';
 
+import { useUserSettings } from '@proton/account';
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { isAllowedAutoDeleteLabelID } from 'proton-mail/helpers/autoDelete';
@@ -21,7 +20,6 @@ import {
 interface Props {
     labelID: string;
     columnLayout: boolean;
-    userSettings: UserSettings;
     esState: {
         isESLoading: boolean;
         isSearch: boolean;
@@ -39,13 +37,13 @@ interface Banner {
     canWith?: BannerId[];
 }
 
-const ListBanners = ({
+const MailboxListBanners = ({
     labelID,
     columnLayout,
-    userSettings,
     esState: { isESLoading, showESSlowToolbar: canDisplayESSlowToolbar },
     canDisplayTaskRunningBanner,
 }: Props) => {
+    const [userSettings] = useUserSettings();
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     // Override compactness of the list view to accommodate body preview when showing encrypted search results
     const { contentIndexingDone, esEnabled } = esStatus;
@@ -135,4 +133,4 @@ const ListBanners = ({
     );
 };
 
-export default memo(ListBanners);
+export default MailboxListBanners;

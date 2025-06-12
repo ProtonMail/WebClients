@@ -153,6 +153,18 @@ export const isValidCustomViewLabel = (label: string): boolean => {
     return Object.keys(CUSTOM_VIEWS).includes(label);
 };
 
+export const isLabelIDNewsletterSubscription = (labelID: string): boolean => {
+    return labelID === CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].label;
+};
+
+export const convertCustomViewLabelsToAlmostAllMail = (labelID: string) => {
+    if (isLabelIDNewsletterSubscription(labelID)) {
+        return MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL;
+    }
+
+    return labelID;
+};
+
 export const getCustomViewFromRoute = (route: string) => {
     return Object.values(CUSTOM_VIEWS).find(({ route: customRoute }) => customRoute === route);
 };

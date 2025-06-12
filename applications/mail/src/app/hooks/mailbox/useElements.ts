@@ -192,12 +192,21 @@ export const useElements: UseElements = ({
         const isSearching = isSearch(search);
         const conversationMode = isConversationMode(labelID, mailSettings, location);
 
+        const isNavigatingToNewsletterView =
+            stateParams.newsletterSubscriptionID !== undefined && labelID !== undefined;
+
+        // Define the core reset conditions
+        const hasSearchKeywordChange = search.keyword !== stateParams.search.keyword;
+        const hasESEnabledChange = esEnabled !== stateParams.esEnabled && isSearch(search);
+        const hasPageJump = !pageIsConsecutive;
+        const hasSortChange = !isDeepEqual(sort, stateParams.sort);
+
+        // Reset logic:
+        // - Always reset for search keyword changes (even in newsletter view)
+        // - For other changes, only reset if not in newsletter view
         const shouldResetElementsState =
-            search.keyword !== stateParams.search.keyword || // Reset the cache since we do not support client search (filtering)
-            (esEnabled !== stateParams.esEnabled && isSearch(search)) ||
-            !pageIsConsecutive ||
-            // Reset the cache when sort changes to ensure correct ordering
-            !isDeepEqual(sort, stateParams.sort);
+            hasSearchKeywordChange ||
+            (!isNavigatingToNewsletterView && (hasESEnabledChange || hasPageJump || hasSortChange));
 
         if (shouldResetElementsState) {
             dispatch(
@@ -271,7 +280,7 @@ export const useElements: UseElements = ({
         // problem when opening directly the custom views
         const customRoute = getCustomViewFromRoute(location.pathname);
         const initialRender = !!(labelID === MAILBOX_LABEL_IDS.INBOX && customRoute?.label);
-        if (isValidCustomViewLabel(labelID) || initialRender) {
+        if ((isValidCustomViewLabel(labelID) && !stateParams.newsletterSubscriptionID) || initialRender) {
             return;
         }
 
@@ -304,6 +313,7 @@ export const useElements: UseElements = ({
         pageSize,
         labelID,
         tasksRunning,
+        stateParams.newsletterSubscriptionID,
     ]);
 
     // Move to the last page if the current one becomes empty

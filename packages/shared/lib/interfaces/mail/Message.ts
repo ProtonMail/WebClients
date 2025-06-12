@@ -91,6 +91,7 @@ export interface MessageMetadata {
     AttachmentsMetadata?: AttachmentsMetadata[];
     SnoozeTime: number;
     DisplaySnoozedReminder: boolean;
+    NewsletterSubscriptionID: string | null;
 }
 
 export interface Message extends MessageMetadata {
