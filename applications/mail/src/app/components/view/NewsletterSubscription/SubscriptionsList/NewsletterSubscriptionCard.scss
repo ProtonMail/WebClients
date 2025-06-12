@@ -1,0 +1,77 @@
+.subscription-card {
+	/**
+    * Trash animation:
+    * First we reduce the card when it gets the modifier subscription-card--deleted with deletion animation 
+    * Then we show the trash image quickly with a transition (just a bit before the end of the previous animation) 
+    * Then we hide the trash with the animation disappearancePostTrash
+    * Then set height of container to 0 when everything is done, and make it disappear from focusable elements
+    */
+
+	&-trash {
+		opacity: 0;
+		transform: scale(0);
+		transition:
+			opacity 0.2s ease-in-out,
+			transform 0.2s ease-in-out;
+		transition-delay: 0.2s;
+	}
+
+	&--deleted {
+		animation: deletion 0.25s ease-in-out;
+		animation-fill-mode: forwards;
+
+		+ .subscription-card-trash {
+			opacity: 1;
+			transform: scale(1);
+			animation: disappearancePostTrash 0.5s ease-in-out;
+			animation-delay: 0.25s;
+			animation-fill-mode: forwards;
+		}
+	}
+
+	&-container {
+		max-block-size: 18em; // will be replaced by height when it will be really supported everywhere => ATM it's a magic number to say "enough height" in all cases (narrow space, etc.))
+		transition:
+			max-block-size 0.25s ease-in-out,
+			visibility 0s ease; // visibility is needed to avoid the card to be focusable when it has disappeared
+
+		transition-delay: 0.75s;
+
+		&--deleted {
+			// did use first a :has selector first, but better target for wider compatibility
+			max-block-size: 0;
+			overflow: hidden;
+			visibility: hidden;
+			transition-delay:
+				0.75s, 1s; // second delay is for visibility, so it's applied only at the end of the full deletion animation
+		}
+	}
+
+	@keyframes deletion {
+		0% {
+			transform: scale(1);
+		}
+
+		70% {
+			opacity: 1;
+			transform: scaleX(0.2) scaleY(0.2) rotate(0deg);
+		}
+
+		100% {
+			transform: scale(0) rotate(720deg);
+			opacity: 0;
+		}
+	}
+
+	@keyframes disappearancePostTrash {
+		0% {
+			opacity: 1;
+			transform: scale(1);
+		}
+
+		100% {
+			opacity: 0;
+			transform: scale(0) rotate(720deg);
+		}
+	}
+}

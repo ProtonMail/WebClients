@@ -12,7 +12,7 @@ import {
     Prompt,
     useNotifications,
 } from '@proton/components';
-import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import truncate from '@proton/utils/truncate';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -20,22 +20,23 @@ import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/inte
 import {
     filterSubscriptionList,
     unsubscribeSubscription,
+    updateSubscription,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
-import { getUnsubscribeData } from '../helper';
-import { MAX_LENGTH_SUB_NAME } from '../interface';
+import { getUnsubscribeData, getUnsubscribeMethod } from '../../helper';
+import { MAX_LENGTH_SUB_NAME, type PropsWithNewsletterSubscription, UnsubscribeMethod } from '../../interface';
+import { ModalUnsubscribeMailToContent } from './ModalUnsubscribeMailToContent';
+import { useSendUnsubscribeEmail } from './useSendUnsubscribeEmail';
 
-import './ModalUnsubscribe.scss';
-
-interface Props extends ModalProps {
-    subscription: NewsletterSubscription;
-}
-
-const ModalUnsubscribe = ({ subscription, ...props }: Props) => {
+const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscription & ModalProps) => {
     const dispatch = useMailDispatch();
     const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
+
+    const { sendUnsubscribeEmail } = useSendUnsubscribeEmail({ subscription });
+
+    const unsubscribeMethod = getUnsubscribeMethod(subscription);
 
     const [trash, setTrash] = useState(false);
     const [archive, setArchive] = useState(false);
@@ -44,22 +45,33 @@ const ModalUnsubscribe = ({ subscription, ...props }: Props) => {
     const { createNotification } = useNotifications();
 
     const onUnsubscribe = async () => {
-        void dispatch(unsubscribeSubscription({ subscription, subscriptionIndex }));
+        if (unsubscribeMethod === UnsubscribeMethod.OneClick) {
+            void dispatch(unsubscribeSubscription({ subscription, subscriptionIndex }));
 
-        const truncatedName = truncate(subscription.Name.trim(), MAX_LENGTH_SUB_NAME);
-        createNotification({
-            text: (
-                <>
-                    <span>{c('Label').t`Unsubscribed from ${truncatedName}.`}</span>
-                    <NotificationButton
-                        onClick={() => {
-                            // TODO update this to a undo action once API returns undo token
-                            dispatch(newsletterSubscriptionsActions.setSelectedTab(SubscriptionTabs.Unsubscribe));
-                        }}
-                    >{c('Action').t`Undo`}</NotificationButton>
-                </>
-            ),
-        });
+            const truncatedName = truncate(subscription.Name.trim(), MAX_LENGTH_SUB_NAME);
+            createNotification({
+                text: (
+                    <>
+                        <span>{c('Label').t`Unsubscribed from ${truncatedName}.`}</span>
+                        <NotificationButton
+                            onClick={() => {
+                                // TODO update this to a undo action once API returns undo token
+                                dispatch(newsletterSubscriptionsActions.setSelectedTab(SubscriptionTabs.Unsubscribe));
+                            }}
+                        >{c('Action').t`Undo`}</NotificationButton>
+                    </>
+                ),
+            });
+        } else {
+            if (unsubscribeMethod === UnsubscribeMethod.HttpClient) {
+                // We know the http client link is present thanks to the unsubscribeMethod
+                openNewTab(subscription.UnsubscribeMethods.HttpClient!);
+            } else if (unsubscribeMethod === UnsubscribeMethod.Mailto) {
+                void sendUnsubscribeEmail();
+            }
+
+            void dispatch(updateSubscription({ subscription, subscriptionIndex, data: { Unsubscribed: true } }));
+        }
 
         if (trash || archive || read) {
             await dispatch(
@@ -79,13 +91,16 @@ const ModalUnsubscribe = ({ subscription, ...props }: Props) => {
             title={
                 <>
                     <div className="flex flex-nowrap gap-3">
-                        <div className="shrink-0 subscription-card-image">
+                        <div className="shrink-0 w-custom" style={{ '--w-custom': '2.25rem' }}>
                             <ContactImage
                                 email={subscription.SenderAddress}
                                 name={subscription.Name}
                                 variant="large"
                                 className="rounded relative"
                                 displaySenderImage
+                                initialsStyle={{ '--h-custom': '2.25rem' }}
+                                initialsClassName="bg-strong text-no-bold flex h-custom items-center justify-center rounded w-full"
+                                overrideSize={36}
                             />
                         </div>
                         <div>
@@ -99,17 +114,24 @@ const ModalUnsubscribe = ({ subscription, ...props }: Props) => {
                 </>
             }
             buttons={[
-                <Button color="norm" onClick={onUnsubscribe}>{c('Action').t`Unsubscribe`}</Button>,
+                <Button color="norm" onClick={onUnsubscribe}>
+                    {unsubscribeMethod === UnsubscribeMethod.Mailto
+                        ? c('Action').t`Send unsubscribe email`
+                        : c('Action').t`Unsubscribe`}
+                </Button>,
                 <Button onClick={() => props?.onClose?.()}>{c('Action').t`Cancel`}</Button>,
             ]}
         >
+            <ModalUnsubscribeMailToContent subscription={subscription} />
             <p className="m-0 mb-2 text-sm color-weak">{c('Info').t`Optional`}</p>
 
             <div className="flex flex-row items-start align-center mb-2">
                 <Checkbox
                     checked={trash}
-                    disabled={archive}
-                    onChange={() => setTrash((val) => !val)}
+                    onChange={() => {
+                        setTrash((val) => !val);
+                        setArchive(false);
+                    }}
                     className="mr-2"
                     id="trash"
                 />
@@ -119,8 +141,10 @@ const ModalUnsubscribe = ({ subscription, ...props }: Props) => {
             <div className="flex flex-row items-start align-center mb-2">
                 <Checkbox
                     checked={archive}
-                    disabled={trash}
-                    onChange={() => setArchive((val) => !val)}
+                    onChange={() => {
+                        setArchive((val) => !val);
+                        setTrash(false);
+                    }}
                     className="mr-2"
                     id="archive"
                 />
