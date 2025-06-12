@@ -1,9 +1,9 @@
 $use-vertical-align-img-iframe: false;
 
-@import 'lib/index';
-@import 'reset';
-@import 'scrollbar';
-@import 'custom-properties/index';
+@import '~@proton/styles/scss/lib';
+@import '@proton/styles/scss/base/reset';
+@import '@proton/styles/scss/base/scrollbar';
+@import '@proton/styles/scss/base/custom-properties';
 
 /* ----------------------
       EMAIL RESET
@@ -331,9 +331,9 @@ blockquote.protonmail_quote
 	overflow: auto;
 
 	/* stylelint-disable-next-line no-invalid-position-at-import-rule */
-	@import 'flex';
+	@import '~@proton/styles/scss/utilities/flex';
 	/* stylelint-disable-next-line no-invalid-position-at-import-rule */
-	@import 'outline';
+	@import '~@proton/styles/scss/utilities/outline';
 
 	.sr-only {
 		border: 0;
