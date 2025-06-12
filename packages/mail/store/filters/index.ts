@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { type ModelState, getInitialModelState, serverEvent } from '@proton/account/index';
+import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
 import type { Filter } from '@proton/components/containers/filters/interfaces';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
