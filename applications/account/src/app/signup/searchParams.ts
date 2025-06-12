@@ -142,6 +142,7 @@ export const getSignupSearchParams = (
     const orgName = searchParams.get('orgName') || undefined;
     const source = searchParams.get('source') || undefined;
     const noPromo = searchParams.get('noPromo');
+    const trial = searchParams.get('trial') === 'true';
 
     return {
         email,
@@ -162,6 +163,7 @@ export const getSignupSearchParams = (
         hideFreePlan,
         orgName,
         source,
+        trial,
     };
 };
 export type SignupParameters = ReturnType<typeof getSignupSearchParams>;

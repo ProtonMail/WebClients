@@ -17,7 +17,8 @@ export async function getSubscriptionPrices(
     currency: Currency,
     cycle: Cycle,
     billingAddress?: BillingAddress,
-    maybeCoupon?: string
+    maybeCoupon?: string,
+    trial?: boolean
 ) {
     if (!hasPlanIDs(planIDs) || planIDs[PLANS.FREE]) {
         return getFreeCheckResult(currency, cycle);
@@ -37,6 +38,10 @@ export async function getSubscriptionPrices(
             State: billingAddress.State,
             CountryCode: billingAddress.CountryCode,
         };
+    }
+
+    if (trial) {
+        data.IsTrial = true;
     }
 
     return paymentsApi.checkWithAutomaticVersion(data);

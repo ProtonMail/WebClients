@@ -34,6 +34,11 @@ const PaymentMethodSelector = ({
     narrow,
     showCardIcons = false,
 }: Props) => {
+    if (options.length <= 1) {
+        // Not helpful to show this if there's only a single option
+        return null;
+    }
+
     if (options.length <= 2 && !forceDropdown) {
         return (
             <>
