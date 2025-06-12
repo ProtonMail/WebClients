@@ -152,10 +152,10 @@
       "Create": [
         "Erstellen"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
       "Create alias": [
@@ -1419,6 +1419,9 @@
       "Auto-lock successfully disabled.": [
         "Automatische Sperre erfolgreich deaktiviert."
       ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "HTTP-Basisauthentifizierungsdialoge mit gespeicherten Anmeldedaten automatisch ausfüllen."
+      ],
       "automatically": [
         "automatisch"
       ],
@@ -1788,10 +1791,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -2573,6 +2572,9 @@
       "Bank Name": [
         "Bankname"
       ],
+      "Basic Auth autofill": [
+        "Basisauthentifizierung automatisch ausfüllen"
+      ],
       "Biometrics": [
         "Biometrie"
       ],
@@ -3101,10 +3103,10 @@
       "Priority:": [
         "Priorität:"
       ],
-      "Private Key": [
+      "Private key": [
         "Privater Schlüssel"
       ],
-      "Private key": [
+      "Private Key": [
         "Privater Schlüssel"
       ],
       "Product": [
@@ -3205,6 +3207,9 @@
       ],
       "Share": [
         "Teilen"
+      ],
+      "Share ID": [
+        "ID teilen"
       ],
       "Shared": [
         "Geteilt"
