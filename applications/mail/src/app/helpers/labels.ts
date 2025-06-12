@@ -1,5 +1,5 @@
-import type { FolderInfo } from '@proton/mail/labels/helpers';
-import { getStandardFolders, labelIncludes } from '@proton/mail/labels/helpers';
+import type { FolderInfo } from '@proton/mail/store/labels/helpers';
+import { getStandardFolders, labelIncludes } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';

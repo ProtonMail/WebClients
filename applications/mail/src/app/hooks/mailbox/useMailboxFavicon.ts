@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useDynamicFavicon } from '@proton/components';
-import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
-import { useMessageCounts } from '@proton/mail/counts/messageCounts';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCounts';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCounts';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import favicons, { baseFavicon } from '../../../assets/favicons';

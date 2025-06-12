@@ -1,5 +1,5 @@
 import { useFolders, useLabels } from '@proton/mail';
-import { isCustomFolder, isCustomLabel } from '@proton/mail/labels/helpers';
+import { isCustomFolder, isCustomLabel } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 

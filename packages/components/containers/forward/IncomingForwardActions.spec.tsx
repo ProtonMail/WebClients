@@ -5,7 +5,7 @@ import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { rejectForwarding } from '@proton/shared/lib/api/forwardings';
 import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
 import { ForwardingState } from '@proton/shared/lib/interfaces';
@@ -33,7 +33,7 @@ mockUseNotifications.mockReturnValue({
     createNotification: jest.fn(),
 });
 
-jest.mock('@proton/mail/mailSettings/hooks');
+jest.mock('@proton/mail/store/mailSettings/hooks');
 const mockUseMailSettings = useGetMailSettings as jest.MockedFunction<any>;
 mockUseMailSettings.mockReturnValue(jest.fn());
 

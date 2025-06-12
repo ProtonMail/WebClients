@@ -2,7 +2,7 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { isCustomFolder } from '@proton/mail/labels/helpers';
+import { isCustomFolder } from '@proton/mail/store/labels/helpers';
 import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
 import type { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';

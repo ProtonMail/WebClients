@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 
-import { convertCustomViewLabelsToAlmostAllMail } from '@proton/mail/labels/helpers';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { convertCustomViewLabelsToAlmostAllMail } from '@proton/mail/store/labels/helpers';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import { type SearchParameters } from '@proton/shared/lib/mail/search';
 

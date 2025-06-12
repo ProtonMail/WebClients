@@ -14,7 +14,7 @@ import {
 } from '@proton/components';
 import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modals/IncreasePrivacyUpsellModal';
 import { useFolders, useLabels } from '@proton/mail';
-import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';

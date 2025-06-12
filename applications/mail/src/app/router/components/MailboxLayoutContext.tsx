@@ -1,7 +1,7 @@
 import { type PropsWithChildren, type RefObject, createContext, useContext, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { isColumnMode } from 'proton-mail/helpers/mailSettings';

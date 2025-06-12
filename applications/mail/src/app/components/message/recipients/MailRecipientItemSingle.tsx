@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components';
 import type { ContactEditProps } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
-import { getHumanLabelID } from '@proton/mail/labels/helpers';
+import { getHumanLabelID } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';

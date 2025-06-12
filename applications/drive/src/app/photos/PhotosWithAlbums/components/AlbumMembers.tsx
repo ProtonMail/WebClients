@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { Avatar, Tooltip, UserAvatar } from '@proton/atoms';
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 
 import { getContactNameAndEmail } from '../../../components/modals/ShareLinkModal/DirectSharing/DirectSharingListing';
 import { useShareMemberView } from '../../../store';

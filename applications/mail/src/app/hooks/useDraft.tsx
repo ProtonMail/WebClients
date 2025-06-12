@@ -5,7 +5,7 @@ import { useGetUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useCache } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import generateUID from '@proton/utils/generateUID';
 
