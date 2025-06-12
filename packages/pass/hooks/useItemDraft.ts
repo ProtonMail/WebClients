@@ -22,6 +22,7 @@ export const useMatchDraftHash = (): boolean => {
 };
 
 type UseItemDraftOptions<V extends {}> = DraftBase & {
+    canSave?: boolean;
     /** Apply sanitization over the draft values */
     sanitizeHydration?: (formData: Draft<V>['formData']) => Draft<V>['formData'];
     /** Callback called right before saving the draft to state if you
@@ -69,7 +70,7 @@ export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: 
             const { location } = history;
             const { hash } = location;
 
-            if (dirty) {
+            if (dirty && (options.canSave ?? true)) {
                 saveDraft(values);
                 if (hash !== DRAFT_HASH) history.replace({ ...location, hash: 'draft' });
             } else {
@@ -83,7 +84,7 @@ export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: 
         }
 
         return () => saveDraft.cancel();
-    }, [ready, values, dirty]);
+    }, [ready, values, dirty, options.canSave]);
 
     useEffect(() => {
         void (async () => {
