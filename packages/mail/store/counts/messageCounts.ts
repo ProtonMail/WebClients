@@ -1,9 +1,8 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { type ModelState, getInitialModelState, serverEvent } from '@proton/account/index';
+import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-import { createHooks } from '@proton/redux-utilities';
+import { createAsyncModelThunk, createHooks, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryMessageCount } from '@proton/shared/lib/api/messages';
 import { type LabelCount } from '@proton/shared/lib/interfaces';
 
