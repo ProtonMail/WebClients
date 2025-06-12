@@ -15,7 +15,6 @@ import * as storage from './storage';
 jest.mock('proton-pass-web/app/Store/store', () => ({ store: { dispatch: jest.fn() } }));
 jest.mock('proton-pass-web/lib/telemetry', () => ({ telemetry: { stop: jest.fn() } }));
 jest.mock('proton-pass-web/lib/settings', () => ({ settings: { clear: jest.fn() } }));
-jest.mock('otpauth', () => ({ Secret: jest.fn() }));
 
 describe('AuthService', () => {
     let authService: AuthService;

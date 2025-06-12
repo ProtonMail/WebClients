@@ -2,7 +2,6 @@ import { migrate } from 'proton-pass-web/lib/spotlight';
 import { SPOTLIGHT_STORAGE_KEY, getSpotlightStorageKey } from 'proton-pass-web/lib/storage';
 
 jest.mock('proton-pass-web/app/Store/store', () => ({}));
-jest.mock('otpauth', () => ({ Secret: jest.fn() }));
 
 const LEGACY_DATA = JSON.stringify({ legacy: true });
 const ACTIVE_DATA = JSON.stringify({ legacy: false });
