@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useModalState, useTheme } from '@proton/components';
 import { getPlaceholderSrc } from '@proton/mail';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import noSpamSvgDark from '@proton/styles/assets/img/placeholders/auto-delete-cool-dark.svg';
 import noSpamSvgCool from '@proton/styles/assets/img/placeholders/auto-delete-cool-light.svg';
@@ -26,7 +27,6 @@ import noTrashSvgDark from '@proton/styles/assets/img/placeholders/trash-empty-c
 import noTrashSvgCool from '@proton/styles/assets/img/placeholders/trash-empty-cool-light.svg';
 import noTrashSvgWarm from '@proton/styles/assets/img/placeholders/trash-empty-warm-light.svg';
 
-import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';

@@ -4,9 +4,10 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components';
 import type { ContactEditProps } from '@proton/components';
+import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { getHumanLabelID } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
@@ -17,7 +18,6 @@ import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';

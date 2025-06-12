@@ -14,6 +14,7 @@ import {
 } from '@proton/components';
 import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modals/IncreasePrivacyUpsellModal';
 import { useFolders, useLabels } from '@proton/mail';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
@@ -28,7 +29,6 @@ import {
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
-import { MESSAGE_ACTIONS } from 'proton-mail/constants';
 import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
 import { ComposeTypes } from 'proton-mail/hooks/composer/useCompose';
 import { TipActionType } from 'proton-mail/models/tip';

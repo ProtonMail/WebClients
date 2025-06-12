@@ -11,6 +11,7 @@ import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssista
 import { getHasAssistantStatus } from '@proton/llm/lib';
 import type { OpenedAssistant } from '@proton/llm/lib/types';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
@@ -36,7 +37,6 @@ import { messageByID } from 'proton-mail/store/messages/messagesSelectors';
 
 import type { MessageChange } from '../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
-import { MESSAGE_ACTIONS } from '../../constants';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import { getDate } from '../../helpers/elements';
 import {
