@@ -7,7 +7,6 @@ import TableRow from '@proton/components/components/table/TableRow';
 import { formattedSavedSepaDetails } from '@proton/components/payments/client-extensions/useMethods';
 import type { SavedPaymentMethod } from '@proton/payments';
 import { isPaypalDetails, isSavedPaymentMethodSepa } from '@proton/payments';
-import orderBy from '@proton/utils/orderBy';
 
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
@@ -68,8 +67,6 @@ const PaymentMethodsTable = ({ methods, loading }: Props) => {
         return <p data-testid="no-payments">{c('Info').t`You have no saved payment methods.`}</p>;
     }
 
-    const orderedMethods = orderBy(methods, 'Order');
-
     return (
         <Table hasActions responsive="cards">
             <TableHeader
@@ -80,19 +77,14 @@ const PaymentMethodsTable = ({ methods, loading }: Props) => {
                 ]}
             />
             <TableBody loading={loading} colSpan={3}>
-                {orderedMethods.map((method, index) => {
+                {methods.map((method) => {
                     return (
                         <TableRow
                             key={method.ID}
                             cells={[
                                 <MethodCell method={method} />,
-                                <PaymentMethodState key={method.ID} method={method} index={index} />,
-                                <PaymentMethodActions
-                                    key={method.ID}
-                                    index={index}
-                                    methods={orderedMethods}
-                                    method={method}
-                                />,
+                                <PaymentMethodState key={method.ID} method={method} />,
+                                <PaymentMethodActions key={method.ID} method={method} methods={methods} />,
                             ]}
                         />
                     );
