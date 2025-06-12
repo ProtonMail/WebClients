@@ -15,7 +15,14 @@ import { IdentityForm } from './Identity.form';
 
 export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmit, onCancel }) => {
     const initialValues: IdentityItemFormValues = useMemo(
-        () => ({ shareId, name: '', note: '', files: filesFormInitializer(), ...itemBuilder('identity').data.content }),
+        () => ({
+            extraFields: [],
+            files: filesFormInitializer(),
+            name: '',
+            note: '',
+            shareId,
+            ...itemBuilder('identity').data.content,
+        }),
         []
     );
 
