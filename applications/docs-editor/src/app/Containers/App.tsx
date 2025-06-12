@@ -51,8 +51,8 @@ import { useStateRef } from '../Hooks/useStateRef'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 // eslint-disable-next-line monorepo-cop/no-relative-import-outside-package
 import { SpreadsheetProvider } from '@rowsncolumns/spreadsheet'
-import type { SheetRef } from './Spreadsheet'
-import { Spreadsheet } from './Spreadsheet'
+import type { SpreadsheetRef } from './Spreadsheet/Spreadsheet'
+import { Spreadsheet } from './Spreadsheet/Spreadsheet'
 import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
 import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-state-from-nodes'
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
@@ -92,8 +92,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   })
 
   const editorRef = useRef<LexicalEditor | null>(null)
-  const spreadsheetRef = useRef<SheetRef | null>(null)
-  const latestSpreadsheetStateRef = useRef<object>({})
+  const spreadsheetRef = useRef<SpreadsheetRef | null>(null)
+  const latestSpreadsheetStateToLogRef = useRef<unknown>({})
   const [clonedEditorState, setClonedEditorState] = useState<EditorState>()
 
   useEffect(() => {
@@ -444,8 +444,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         }
       },
 
-      async getSheetsJSON() {
-        return latestSpreadsheetStateRef
+      async getLatestSpreadsheetStateToLogJSON() {
+        return latestSpreadsheetStateToLogRef.current
       },
 
       async getYDocAsJSON() {
@@ -669,8 +669,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               editorInitializationConfig={editorConfig.current.editorInitializationConfig}
               systemMode={systemMode}
               editingLocked={editingLocked || userMode === EditorUserMode.Preview}
-              onStateUpdate={(state) => {
-                latestSpreadsheetStateRef.current = state
+              updateLatestStateToLog={(state) => {
+                latestSpreadsheetStateToLogRef.current = state
               }}
             />
           </SpreadsheetProvider>
