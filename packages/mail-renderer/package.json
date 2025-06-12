@@ -8,8 +8,10 @@
     "scripts": {
         "check-types": "tsc",
         "lint": "true",
-        "test": "true",
-        "test:ci": "true"
+        "test": "jest --logHeapUsage --forceExit",
+        "test:ci": "jest --coverage --runInBand --ci --forceExit",
+        "test:coverage": "jest --collectCoverage",
+        "test:watch": "jest --watch --coverage=false"
     },
     "dependencies": {
         "@proton/mail": "workspace:^",
