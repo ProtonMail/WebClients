@@ -55,6 +55,7 @@ export interface NewsletterSubscriptionsInterface {
     selectedTab: SubscriptionTabs;
     selectedSubscriptionId: string | undefined;
     selectedElementId: string | undefined;
+    deletingSubscriptionId: string | undefined;
 }
 
 interface ActionsWithRollback {
