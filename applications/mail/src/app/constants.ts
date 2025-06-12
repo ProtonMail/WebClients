@@ -54,13 +54,6 @@ export enum LINK_TYPES {
     PHONE = 'phone',
 }
 
-export enum MESSAGE_ACTIONS {
-    NEW = -1,
-    REPLY = 0,
-    REPLY_ALL = 1,
-    FORWARD = 2,
-}
-
 export const MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM = `mailto`;
 // Path: /inbox/#mailto=%s
 export const MAILTO_PROTOCOL_HANDLER_PATH = `/${

@@ -1,6 +1,7 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -9,8 +10,8 @@ import type { CREATE_DRAFT_MESSAGE_ACTION } from '@proton/shared/lib/interfaces/
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
-import { MESSAGE_ACTIONS } from '../../constants';
 import type { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import type {
     MessageKeys,
     MessageState,
@@ -22,7 +23,6 @@ import { constructMimeFromSource } from '../send/sendMimeBuilder';
 import { getPlainTextContent } from './messageContent';
 import { insertActualEmbeddedImages } from './messageEmbeddeds';
 import { replaceProxyWithOriginalURLAttributes } from './messageImages';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
     Password: undefined,

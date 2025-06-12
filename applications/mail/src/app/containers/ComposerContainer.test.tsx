@@ -1,13 +1,13 @@
 import { act, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
-import { MESSAGE_ACTIONS } from '../constants';
 import { formatFullDate } from '../helpers/date';
 import { clearAll, getCompleteAddress, minimalCache, render, tick } from '../helpers/test/helper';
 import { preparePlainText } from '../helpers/transforms/transforms';
