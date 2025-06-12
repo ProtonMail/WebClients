@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import Loader from '@proton/components/components/loader/Loader';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import OnboardingDiscoverFeaturesStep from '@proton/components/components/onboarding/b2b/steps/OnboardingDiscoverFeaturesStep';
 import OnboardingSetupOrgStep from '@proton/components/components/onboarding/b2b/steps/OnboardingSetupOrgStep';
+import OnboardingTrialStep from '@proton/components/components/onboarding/b2b/steps/OnboardingTrialStep';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
+import { useIsB2BTrial } from '@proton/payments';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -16,6 +19,7 @@ import './B2BOnboardingModal.scss';
 
 enum B2B_ONBOARDING_STEPS {
     LOADING = 'LOADING',
+    TRIAL = 'TRIAL',
     ORG_SETUP = 'ORG_SETUP',
     DISCOVER_FEATURES = 'DISCOVER_FEATURES',
 }
@@ -31,11 +35,13 @@ const B2BOnboardingModal = (props: Props) => {
     const { APP_NAME } = useConfig();
     const api = useApi();
     const [organization, loadingOrganization] = useOrganization();
+    const [subscription] = useSubscription();
     const [step, setStep] = useState<B2B_ONBOARDING_STEPS>(B2B_ONBOARDING_STEPS.LOADING);
     const orgSetupRef = useRef(false);
     const telemetrySentRef = useRef(false);
     const [forceModalSize, setForceModalSize] = useState(false);
     const { welcomeFlags, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
+    const isB2BTrial = useIsB2BTrial(subscription);
 
     const handleClose = () => {
         props?.onClose?.();
@@ -46,21 +52,34 @@ const B2BOnboardingModal = (props: Props) => {
         }
     };
 
+    const handleNextFromTrial = () => {
+        const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
+        const nextStep = hasOrganizationKey ? B2B_ONBOARDING_STEPS.DISCOVER_FEATURES : B2B_ONBOARDING_STEPS.ORG_SETUP;
+        setStep(nextStep);
+    };
+
     // Show a loader while org is loading, then show the initial step that the user should actually see:
-    // 1- Org set up if not done yet
-    // 2- B2B features list if org set up done
+    // 1- Trial step if user is on B2B trial
+    // 2- Org set up if not done yet
+    // 3- B2B features list if org set up done
     useEffect(() => {
         // Update the initial state when org is loaded. Done once.
         if (!loadingOrganization && !orgSetupRef.current) {
             const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
 
-            const initialStep = hasOrganizationKey
-                ? B2B_ONBOARDING_STEPS.DISCOVER_FEATURES
-                : B2B_ONBOARDING_STEPS.ORG_SETUP;
+            const initialStep = (() => {
+                // Show trial step first for B2B trial users
+                if (isB2BTrial) {
+                    return B2B_ONBOARDING_STEPS.TRIAL;
+                }
+                // Then show org setup or features based on org state
+                return hasOrganizationKey ? B2B_ONBOARDING_STEPS.DISCOVER_FEATURES : B2B_ONBOARDING_STEPS.ORG_SETUP;
+            })();
+
             setStep(initialStep);
             orgSetupRef.current = true;
         }
-    }, [organization, loadingOrganization]);
+    }, [organization, loadingOrganization, isB2BTrial]);
 
     useEffect(() => {
         if (!telemetrySentRef.current) {
@@ -87,6 +106,9 @@ const B2BOnboardingModal = (props: Props) => {
             className="b2b-onboarding-modal"
         >
             {step === B2B_ONBOARDING_STEPS.LOADING && <Loader />}
+            {step === B2B_ONBOARDING_STEPS.TRIAL && !loadingOrganization && (
+                <OnboardingTrialStep onNext={handleNextFromTrial} />
+            )}
             {step === B2B_ONBOARDING_STEPS.ORG_SETUP && !loadingOrganization && (
                 <OnboardingSetupOrgStep
                     onNextStep={() => setStep(B2B_ONBOARDING_STEPS.DISCOVER_FEATURES)}
