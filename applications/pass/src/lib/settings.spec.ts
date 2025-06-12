@@ -4,8 +4,6 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 
 import { resolveSettings, settings } from './settings';
 
-jest.mock('otpauth', () => ({ Secret: jest.fn() }));
-
 const setDesktopBuild = (value: boolean) => ((global as any).DESKTOP_BUILD = value);
 
 describe('settings', () => {
