@@ -223,6 +223,7 @@ const SMTPSubmissionSection = () => {
                                         size="small"
                                         disabled={loadingTokens}
                                         onClick={() => confirmRemoveToken(token.SmtpTokenID)}
+                                        aria-label={c('Action').t`Delete token “${token.Name}”`}
                                     >{c('Action').t`Delete`}</Button>,
                                 ].filter(isTruthy)}
                             />

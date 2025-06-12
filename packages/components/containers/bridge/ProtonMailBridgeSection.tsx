@@ -184,7 +184,17 @@ export const ProtonMailBridgeSection = () => {
                     <span className="bridge-client-version mb-4 text-center">{version}</span>
 
                     {downloads.length > 1 && (
-                        <Select value={linuxLink} options={options} onChange={handleSelect} className="mb-4" />
+                        <>
+                            <label htmlFor="select-linux-platforms" className="sr-only">{c('Label')
+                                .t`Select Linux platform`}</label>
+                            <Select
+                                id="select-linux-platforms"
+                                value={linuxLink}
+                                options={options}
+                                onChange={handleSelect}
+                                className="mb-4"
+                            />
+                        </>
                     )}
 
                     {downloads.length > 0 && (
@@ -195,6 +205,7 @@ export const ProtonMailBridgeSection = () => {
                             className="w-full mt-auto"
                             href={id === 'linux' ? linuxLink : downloads[0]}
                             target="_self"
+                            aria-label={c('Action').t`Download Bridge for ${platform}`}
                         >
                             {c('Action').t`Download`}
                         </ButtonLike>
