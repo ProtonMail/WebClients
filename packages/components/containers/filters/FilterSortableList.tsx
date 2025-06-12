@@ -35,7 +35,7 @@ const FilterSortableList = ({ items, onApplyFilter, ...rest }: Props) => (
         <OrderableTableBody colSpan={0}>
             {items.map((filter, index) => (
                 <FilterItemRow
-                    key={`item-${index}`}
+                    key={`item-${filter.ID}`}
                     index={index}
                     filter={filter}
                     filters={items}
