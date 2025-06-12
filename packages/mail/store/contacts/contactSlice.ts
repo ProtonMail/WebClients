@@ -1,7 +1,7 @@
 import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import { type ModelState, serverEvent } from '@proton/account/index';
+import { type ModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     type CacheType,

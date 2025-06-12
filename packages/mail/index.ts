@@ -1,11 +1,11 @@
 export * from './store/contactEmails';
 export * from './store/contacts';
-export * from '@proton/mail/store/contacts/contactSlice';
+export * from './store/contacts/contactSlice';
 export * from './store/counts';
 export * from './store/filters';
 export * from './store/forwarding';
 export { getPlaceholderSrc } from './helpers/getPlaceholderSrc';
 export * from './store/importerConfig';
 export * from './store/labels';
-export * from '@proton/mail/store/labels/hooks';
+export * from './store/labels/hooks';
 export * from './store/mailSettings';
