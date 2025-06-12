@@ -320,6 +320,7 @@ export const useMailboxHotkeys = (
                         selectAll,
                         onCheckAll: handleCheckAll,
                         sourceAction: SOURCE_ACTION.SHORTCUTS,
+                        silent: true,
                     });
                 }
             },
@@ -340,6 +341,7 @@ export const useMailboxHotkeys = (
                         selectAll,
                         onCheckAll: handleCheckAll,
                         sourceAction: SOURCE_ACTION.SHORTCUTS,
+                        silent: true,
                     });
                 }
             },

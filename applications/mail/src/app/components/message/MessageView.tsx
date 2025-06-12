@@ -289,6 +289,7 @@ const MessageView = (
                 labelID,
                 status: MARK_AS_STATUS.READ,
                 sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
+                silent: true,
             });
         }
 
@@ -300,6 +301,7 @@ const MessageView = (
                 labelID,
                 status: MARK_AS_STATUS.READ,
                 sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
+                silent: true,
             });
         }
     }, [expanded, unread, bodyLoaded]);

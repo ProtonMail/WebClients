@@ -322,6 +322,7 @@ const MailboxContainer = ({ labelID: inputLabelID, mailSettings, userSettings, e
                 selectAll,
                 onCheckAll: handleCheckAll,
                 sourceAction,
+                silent: true,
             });
         },
         [selectedIDs, labelID, handleBack, selectAll]

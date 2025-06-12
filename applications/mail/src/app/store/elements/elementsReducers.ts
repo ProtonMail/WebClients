@@ -4,6 +4,7 @@ import type { Draft } from 'immer';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
@@ -12,6 +13,7 @@ import unique from '@proton/utils/unique';
 import { getElementContextIdentifier, parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
+import { decrementUnread, incrementUnread } from '../mailbox/mailboxHelpers';
 import { newElementsState } from './elementsSlice';
 import type {
     ESResults,
@@ -512,4 +514,312 @@ export const setParams = (
         state.total[nextContextFilter] = total;
         state.retry = newRetry(state.retry, state.params, undefined);
     }
+};
+
+const handleBypassFilter = (
+    state: Draft<ElementsState>,
+    elements: Element[],
+    markAsStatus: MARK_AS_STATUS,
+    unreadFilter: number | undefined
+) => {
+    if (unreadFilter === undefined) {
+        return;
+    }
+
+    const shouldBypass =
+        (unreadFilter === 1 && markAsStatus === MARK_AS_STATUS.READ) ||
+        (unreadFilter === 0 && markAsStatus === MARK_AS_STATUS.UNREAD);
+
+    if (shouldBypass) {
+        const { elementsToBypass, elementsToRemove } = getElementsToBypassFilter(elements, markAsStatus, unreadFilter);
+
+        // Add elements to bypass filter if they are not already present
+        const elementsToBypassIDs = elementsToBypass.map((element) => element.ID || '');
+        const newBypassIDs = elementsToBypassIDs.filter((id) => !state.bypassFilter.includes(id));
+        state.bypassFilter.push(...newBypassIDs);
+
+        // If we are not in a case where we need to bypass filter,
+        // we need to remove elements if they are already in the array
+        const toRemoveIDs = elementsToRemove.map((element) => {
+            const isMessage = testIsMessage(element);
+            return (
+                (isMessage && state.params.conversationMode ? (element as Message).ConversationID : element.ID) || ''
+            );
+        });
+
+        state.bypassFilter = state.bypassFilter.filter((elementID) => {
+            return !toRemoveIDs.includes(elementID);
+        });
+
+        // When some element bypass the filter in the current context, we need to update total in the "opposite" context
+        const oppositeFilter = getElementContextIdentifier({
+            labelID: state.params.labelID,
+            conversationMode: state.params.conversationMode,
+            filter: { Unread: unreadFilter ? 0 : 1 },
+            sort: state.params.sort,
+            from: state.params.search.from,
+            to: state.params.search.to,
+            address: state.params.search.address,
+            begin: state.params.search.begin,
+            end: state.params.search.end,
+            keyword: state.params.search.keyword,
+        });
+
+        if (state.total[oppositeFilter]) {
+            console.log('update total', oppositeFilter, state.total[oppositeFilter], elementsToBypass.length);
+            state.total[oppositeFilter] = state.total[oppositeFilter] + elementsToBypass.length;
+        }
+    }
+};
+
+export const markMessagesAsReadPending = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        {
+            arg: {
+                elements: Element[];
+                conversations: Conversation[];
+                isEncryptedSearch: boolean;
+                labelID: string;
+                showSuccessNotification?: boolean;
+            };
+        }
+    >
+) => {
+    const { elements, labelID, conversations } = action.meta.arg;
+
+    elements.forEach((selectedElement) => {
+        const selectedMessage = selectedElement as Message;
+
+        // Already marked as read, do nothing
+        if (selectedMessage.Unread === 0) {
+            return;
+        }
+
+        const elementState = state.elements[selectedMessage.ID];
+
+        // Update the message selected in element state
+        if (elementState) {
+            (elementState as Message).Unread = 0;
+        }
+
+        const conversationElementState = state.elements[selectedMessage.ConversationID] as Conversation;
+
+        // Update the conversation element state attach to the same message
+        if (conversationElementState) {
+            conversationElementState.ContextNumUnread = decrementUnread(conversationElementState.ContextNumUnread, 1);
+            conversationElementState.NumUnread = decrementUnread(conversationElementState.NumUnread, 1);
+            conversationElementState.Labels?.forEach((label) => {
+                if (label.ID === labelID && selectedMessage.LabelIDs.includes(label.ID)) {
+                    label.ContextNumUnread = decrementUnread(label.ContextNumUnread, 1);
+                }
+            });
+        }
+    });
+
+    // When we open a conversation, an action is triggered to mark a message as read
+    // We need to bypass filter for the conversation and the messages attached to it
+    handleBypassFilter(state, [...elements, ...conversations], MARK_AS_STATUS.READ, state.params.filter.Unread);
+};
+
+export const markMessagesAsUnreadPending = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        {
+            arg: {
+                elements: Element[];
+                conversations: Conversation[];
+                isEncryptedSearch: boolean;
+                labelID: string;
+                showSuccessNotification?: boolean;
+            };
+        }
+    >
+) => {
+    const { elements, labelID, conversations } = action.meta.arg;
+
+    elements.forEach((selectedElement) => {
+        const selectedMessage = selectedElement as Message;
+
+        // Already unread, do nothing
+        if (selectedMessage.Unread === 1) {
+            return;
+        }
+
+        // Update elements state
+        const elementState = state.elements[selectedMessage.ID];
+
+        if (elementState) {
+            (elementState as Message).Unread = 1;
+        }
+
+        const conversationElementState = state.elements[selectedMessage.ConversationID] as Conversation;
+
+        if (conversationElementState) {
+            conversationElementState.ContextNumUnread = incrementUnread(conversationElementState.ContextNumUnread, 1);
+            conversationElementState.NumUnread = incrementUnread(conversationElementState.NumUnread, 1);
+            conversationElementState.Labels?.forEach((label) => {
+                if (label.ID === labelID && selectedMessage.LabelIDs.includes(label.ID)) {
+                    label.ContextNumUnread = incrementUnread(label.ContextNumUnread, 1);
+                }
+            });
+        }
+    });
+
+    // When we open a conversation, an action is triggered to mark a message as unread
+    // We need to bypass filter for the conversation and the messages attached to it
+    handleBypassFilter(state, [...elements, ...conversations], MARK_AS_STATUS.UNREAD, state.params.filter.Unread);
+};
+
+export const markMessagesAsReadRejected = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        unknown,
+        string,
+        {
+            arg: {
+                elements: Element[];
+                conversations: Conversation[];
+                isEncryptedSearch: boolean;
+                labelID: string;
+                showSuccessNotification?: boolean;
+            };
+        }
+    >
+) => {
+    const pendingAction = {
+        ...action,
+        payload: undefined,
+    };
+    return markMessagesAsUnreadPending(state, pendingAction);
+};
+
+export const markMessagesAsUnreadRejected = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        unknown,
+        string,
+        {
+            arg: {
+                elements: Element[];
+                conversations: Conversation[];
+                isEncryptedSearch: boolean;
+                labelID: string;
+                showSuccessNotification?: boolean;
+            };
+        }
+    >
+) => {
+    const pendingAction = {
+        ...action,
+        payload: undefined,
+    };
+    return markMessagesAsReadPending(state, pendingAction);
+};
+
+export const markConversationsAsReadPending = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+) => {
+    const { elements, labelID } = action.meta.arg;
+
+    elements.forEach((selectedElement) => {
+        const selectedConversation = selectedElement as Conversation;
+
+        const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
+        if (conversationLabel?.ContextNumUnread === 0) {
+            return;
+        }
+        const elementState = state.elements[selectedConversation.ID];
+
+        // Update the conversation element state
+        if (elementState) {
+            (elementState as Conversation).ContextNumUnread = 0;
+            (elementState as Conversation).NumUnread = 0;
+            (elementState as Conversation).Labels?.forEach((label) => {
+                label.ContextNumUnread = 0;
+            });
+        }
+
+        const messagesElementState = Object.values(state.elements).filter(
+            (element) => (element as Message).ConversationID === selectedElement.ID
+        );
+
+        // Update all messages attach to the same conversation in element state
+        messagesElementState.forEach((messageElementState) => {
+            (messageElementState as Message).Unread = 0;
+        });
+    });
+
+    handleBypassFilter(state, elements, MARK_AS_STATUS.READ, state.params.filter.Unread);
+};
+
+export const markConversationsAsUnreadPending = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+) => {
+    const { elements, labelID } = action.meta.arg;
+
+    elements.forEach((selectedElement) => {
+        const selectedConversation = selectedElement as Conversation;
+        const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
+
+        if (!!conversationLabel?.ContextNumUnread) {
+            // Conversation is already unread, do nothing
+            return;
+        }
+
+        // Update the conversation element state
+        const elementState = state.elements[selectedConversation.ID];
+
+        if (elementState) {
+            (elementState as Conversation).ContextNumUnread = incrementUnread(
+                (elementState as Conversation).ContextNumUnread,
+                1
+            );
+            (elementState as Conversation).NumUnread = incrementUnread((elementState as Conversation).NumUnread, 1);
+            (elementState as Conversation).Labels?.forEach((label) => {
+                if (label.ID === labelID) {
+                    label.ContextNumUnread = incrementUnread(label.ContextNumUnread, 1);
+                }
+            });
+        }
+
+        // Update all messages attach to the same conversation in element state
+        const messagesElementState = Object.values(state.elements).filter(
+            (element) => (element as Message).ConversationID === selectedElement.ID
+        );
+
+        messagesElementState.forEach((messageElementState) => {
+            (messageElementState as Message).Unread = 1;
+        });
+    });
+
+    handleBypassFilter(state, elements, MARK_AS_STATUS.UNREAD, state.params.filter.Unread);
+};
+
+export const markConversationsAsReadRejected = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<unknown, string, { arg: { elements: Element[]; labelID: string } }>
+) => {
+    const pendingAction = {
+        ...action,
+        payload: undefined,
+    };
+    return markConversationsAsUnreadPending(state, pendingAction);
+};
+
+export const markConversationsAsUnreadRejected = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<unknown, string, { arg: { elements: Element[]; labelID: string } }>
+) => {
+    const pendingAction = {
+        ...action,
+        payload: undefined,
+    };
+    return markConversationsAsReadPending(state, pendingAction);
 };

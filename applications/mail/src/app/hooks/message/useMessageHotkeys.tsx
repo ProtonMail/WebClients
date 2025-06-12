@@ -283,6 +283,7 @@ export const useMessageHotkeys = (
                         labelID,
                         status: MARK_AS_STATUS.UNREAD,
                         sourceAction: SOURCE_ACTION.SHORTCUTS,
+                        silent: true,
                     });
                     await call();
                 }
