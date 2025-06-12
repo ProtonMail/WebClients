@@ -24,6 +24,7 @@ export enum SubscriptionMode {
     CustomBillings = 1,
     ScheduledChargedImmediately = 2,
     ScheduledChargedLater = 3,
+    Trial = 4,
 }
 
 export type Coupon = Nullable<{
