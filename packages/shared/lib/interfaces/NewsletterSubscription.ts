@@ -1,3 +1,5 @@
+import type { UnsubscribeMethods } from './mail/Message';
+
 export interface NewsletterSubscription {
     ID: string;
     UserId: string;
@@ -21,9 +23,10 @@ export interface NewsletterSubscription {
         Last30Days: number;
         Last90Days: number;
     };
+    UnsubscribeMethods: UnsubscribeMethods;
 }
 
-export interface FilterSubscriptionAPIResponse {
+export interface POSTSubscriptionAPIResponse {
     NewsletterSubscription: NewsletterSubscription;
 }
 
@@ -32,6 +35,7 @@ export interface GetNewsletterSubscriptionsNextPage {
         AddressIDs: string[];
         AnchorID: string | null;
         AnchorLastReceivedTime: string | null;
+        AnchorUnreadMessageCount: number | null;
         PageSize: number;
     };
 }
@@ -48,4 +52,8 @@ export interface ApplyNewsletterSubscriptionsFilter {
     ApplyTo: 'All' | 'Existing' | 'New';
     DestinationFolder?: string;
     MarkAsRead?: boolean;
+}
+
+export interface UpdateNewsletterSubscription {
+    Unsubscribed?: boolean;
 }

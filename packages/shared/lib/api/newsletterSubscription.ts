@@ -1,10 +1,13 @@
-import { getSortParams } from 'proton-mail/store/newsletterSubscriptions/helpers';
+import { getFilteredPaginationData, getSortParams } from 'proton-mail/store/newsletterSubscriptions/helpers';
 import type {
     SortSubscriptionsValue,
     SubscriptionPagination,
 } from 'proton-mail/store/newsletterSubscriptions/interface';
 
-import type { ApplyNewsletterSubscriptionsFilter } from '../interfaces/NewsletterSubscription';
+import type {
+    ApplyNewsletterSubscriptionsFilter,
+    UpdateNewsletterSubscription,
+} from '../interfaces/NewsletterSubscription';
 
 interface GetNewslettersProps {
     sort?: SortSubscriptionsValue;
@@ -15,8 +18,10 @@ export const getNewsletterSubscription = ({ pagination, sort }: GetNewslettersPr
     url: 'mail/v4/newsletter-subscriptions',
     method: 'GET',
     params: {
-        ...pagination,
+        ...getFilteredPaginationData(pagination),
         ...getSortParams(sort),
+        // We hardcode this sort because it's used as fallback in case of coliding sorting
+        'Sort[ID]': 'DESC',
         // We hardcode this params for the moment as we don't want to see spam subscription
         Spam: 0,
     },
@@ -34,4 +39,10 @@ export const applyNewsletterSubscriptionFilter = (
 export const unsubscribeNewsletterSubscription = (subscriptionID: string) => ({
     url: `mail/v4/newsletter-subscriptions/${subscriptionID}/unsubscribe`,
     method: 'POST',
+});
+
+export const updateNewsletterSubscription = (subscriptionID: string, data: UpdateNewsletterSubscription) => ({
+    url: `mail/v4/newsletter-subscriptions/${subscriptionID}`,
+    method: 'POST',
+    data,
 });

@@ -132,7 +132,10 @@ const HeaderTab = ({ onClick, copy, count, active }: HeaderTabProps) => {
             {copy}
             {count ? (
                 <span
-                    className={clsx('px-1 ml-2 rounded-sm text-xs align-text-bottom', active ? 'bg-norm' : 'bg-strong')}
+                    className={clsx(
+                        'px-1 py-0.5 ml-2 rounded-sm text-xs align-text-bottom',
+                        active ? 'bg-norm' : 'bg-strong'
+                    )}
                 >
                     {getUnreadCount(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS, count)}
                 </span>
