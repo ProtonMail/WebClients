@@ -25,6 +25,10 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { hasUserIdentifier, isEditItemDraft } from './item.predicates';
 
+export const compoundItemFilters: Partial<Record<ItemType, ItemType[]>> = {
+    custom: ['custom', 'sshKey', 'wifi'],
+};
+
 const SEPERATOR = '::';
 const toKey = (...args: (string | number)[]) => args.join(SEPERATOR);
 
@@ -102,7 +106,8 @@ export const filterItemsByType =
     (itemType?: MaybeNull<ItemType>) =>
     <T extends ItemRevision>(items: T[]) => {
         if (!itemType) return items;
-        return items.filter((item) => !itemType || itemType === item.data.type);
+        const compoundFilters = compoundItemFilters[itemType] ?? [itemType];
+        return items.filter((item) => compoundFilters.includes(item.data.type));
     };
 
 export const filterItemsByUserIdentifier = (email: string) => (items: LoginItem[]) =>
