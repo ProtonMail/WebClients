@@ -7,9 +7,9 @@ import {
 import { locateHead } from '@proton/mail/helpers/locateHead';
 import svg from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
 
-import type { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from 'proton-mail/store/messages/messagesTypes';
 
-import cssStyles from '../MessageIframe.raw.scss';
+import cssStyles from './MessageIframe.raw.scss';
 
 type Options = {
     emailContent: string;
