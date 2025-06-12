@@ -163,7 +163,7 @@ export function useDefaultShare() {
                         // Do not use sharesState.getDefaultPhotosShare as useState
                         // is not sync operation and thus the new state might
                         // not be set just yet.
-                        defaultPhotosShareId = userShares.defaultShareId || findDefaultPhotosShareId(userShares.shares);
+                        defaultPhotosShareId = findDefaultPhotosShareId(userShares.shares);
                         const lockedShares = userShares.shares.filter(
                             (share) => share.type === ShareType.photos && share.isLocked
                         );
