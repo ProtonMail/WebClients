@@ -2,7 +2,7 @@ import type { Ref } from 'react';
 import { memo } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { isLabelIDNewsletterSubscription } from '@proton/mail/labels/helpers';
+import { isLabelIDNewsletterSubscription } from '@proton/mail/store/labels/helpers';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
