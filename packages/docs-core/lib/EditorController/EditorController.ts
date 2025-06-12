@@ -21,7 +21,7 @@ export interface EditorControllerInterface {
   getDocumentClientId(): Promise<number | undefined>
   getDocumentState(): Promise<Uint8Array>
   getEditorJSON(): Promise<SerializedEditorState | undefined>
-  getSheetsJSON(): Promise<unknown>
+  getLatestSpreadsheetStateToLogJSON(): Promise<unknown>
   getYDocAsJSON(): Promise<unknown>
   printAsPDF(): Promise<void>
   receiveEditor(editorInvoker: ClientRequiresEditorMethods): void
@@ -246,12 +246,12 @@ export class EditorController implements EditorControllerInterface {
     return json
   }
 
-  async getSheetsJSON(): Promise<unknown> {
+  async getLatestSpreadsheetStateToLogJSON(): Promise<unknown> {
     if (!this.editorInvoker) {
       throw new Error('Editor invoker not initialized')
     }
 
-    const json = await this.editorInvoker.getSheetsJSON()
+    const json = await this.editorInvoker.getLatestSpreadsheetStateToLogJSON()
     return json
   }
 
