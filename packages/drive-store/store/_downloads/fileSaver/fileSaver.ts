@@ -15,8 +15,20 @@ import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { LogCallback } from '../interface';
 import { initDownloadSW, isServiceWorkersUnsupported, openDownloadStream } from './download';
 
-const isOPFSSupported = () => {
-    return !isSafari() && !isMobile() && !!(navigator.storage && navigator.storage.getDirectory);
+const isOPFSSupported = async () => {
+    // Get the OPFS root directory
+    // Firefox has a bug where sometimes it fails to getDirectoy
+    // DOMException: Security error when calling GetDirectory
+    // Considered we haven't started the download yet, we fallback to SW download
+    // https://webcompat.com/issues/128011
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=1875283
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=1942530
+    try {
+        await navigator.storage.getDirectory();
+        return !isSafari() && !isMobile();
+    } catch {
+        return false;
+    }
 };
 
 const DOWNLOAD_SW_INIT_TIMEOUT = 15 * 1000;
@@ -39,7 +51,7 @@ const getMemoryLimit = () => {
 };
 
 const hasEnoughOPFSStorage = async (size?: number): Promise<boolean> => {
-    if (size) {
+    if (size && typeof navigator.storage !== 'undefined' && typeof navigator.storage.estimate !== 'undefined') {
         // https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate
         const estimate = await navigator.storage.estimate();
         const available = (estimate.quota || 0) - (estimate.usage || 0);
@@ -55,7 +67,8 @@ const getRemovalTimeout = (size?: number): number => {
         // To be really safe, we account for 1 second (1000ms) to each 30MB of file
         // This is extra, extra, extra, extra safe
         // A move should normally takes a very few seconds maximum
-        return (size / (30 * MB)) * 1000;
+        const timeout = (size / (30 * MB)) * 1000;
+        return Math.max(500, timeout); // Ensure minimum timeout of 500ms
     }
     return 4e4; // 40 seconds, same default as the file-saver package we use https://github.com/eligrey/FileSaver.js/blob/master/src/FileSaver.js#L106
 };
@@ -85,7 +98,7 @@ export class FileSaver {
         }
 
         // https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system
-        if (isOPFSSupported() && this.useSWFallback === false && (await hasEnoughOPFSStorage(size))) {
+        if ((await isOPFSSupported()) && this.useSWFallback === false && (await hasEnoughOPFSStorage(size))) {
             return 'opfs';
         }
 
@@ -160,19 +173,11 @@ export class FileSaver {
         }
 
         log('Saving via OPFS');
+        let root: FileSystemDirectoryHandle | undefined;
         try {
-            let root: FileSystemDirectoryHandle;
             let fileHandle: FileSystemFileHandle;
             let writable: FileSystemWritableFileStream;
-
             try {
-                // Get the OPFS root directory
-                // Firefox has a bug where sometimes it fails to getDirectoy
-                // DOMException: Security error when calling GetDirectory
-                // Considered we haven't started the download yet, we fallback to SW download
-                // https://webcompat.com/issues/128011
-                // https://bugzilla.mozilla.org/show_bug.cgi?id=1875283
-                // https://bugzilla.mozilla.org/show_bug.cgi?id=1942530
                 root = await navigator.storage.getDirectory();
                 // Create or open the file in the OPFS
                 fileHandle = await root.getFileHandle(meta.filename, { create: true });
@@ -211,8 +216,10 @@ export class FileSaver {
             const timeout = getRemovalTimeout(meta.size);
             const removeEntry = async () => {
                 try {
-                    await root.removeEntry(meta.filename);
-                    log('File removed from OPFS successfully');
+                    if (root) {
+                        await root.removeEntry(meta.filename);
+                        log('File removed from OPFS successfully');
+                    }
                 } catch (e) {
                     sendErrorReport(e);
                 } finally {
@@ -222,6 +229,9 @@ export class FileSaver {
             window.addEventListener('beforeunload', removeEntry);
             setTimeout(removeEntry, timeout);
         } catch (err: any) {
+            if (root) {
+                await root.removeEntry(meta.filename);
+            }
             log(`Save via OPFS failed. Reason: ${err.message}`);
             throw err;
         }

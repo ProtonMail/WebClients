@@ -1,0 +1,33 @@
+@import '~@proton/styles/scss/lib';
+
+.toolbar-row {
+	flex-direction: column;
+
+	@include media('>medium') {
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+
+	&-toolbar {
+		min-block-size: rem(44);
+		border-block-end: 1px solid var(--border-weak);
+
+		@include media('>medium') {
+			border-block-end: none;
+		}
+	}
+
+	&-titleArea {
+		min-block-size: rem(36);
+	}
+
+	// small adaptation for albums
+	&--no-responsive {
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+
+	&--no-responsive &-toolbar {
+		border-block-end: none;
+	}
+}

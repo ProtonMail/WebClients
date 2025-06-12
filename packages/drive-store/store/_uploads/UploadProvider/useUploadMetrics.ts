@@ -9,6 +9,7 @@ import {
     getIsUnreachableError,
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
@@ -144,7 +145,7 @@ export function getShareType(share?: Share): MetricShareType {
     } else if (share.type === ShareType.device) {
         return MetricShareType.Device;
     }
-    return MetricShareType.Shared;
+    return share.linkType === LinkType.ALBUM ? MetricShareType.SharedPhoto : MetricShareType.Shared;
 }
 
 export function getErrorCategory(error: any): UploadErrorCategoryType {

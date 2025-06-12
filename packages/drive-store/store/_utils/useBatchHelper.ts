@@ -34,9 +34,10 @@ export const useBatchHelper = () => {
      *   @param {number} [options.batchRequestSize] - Maximum number of links per batch
      *   @param {Function} [options.request] - Custom request function to use instead of the default (used for public request)
      *   @param {number[]} [options.allowedCodes] - Array of response codes to consider as successful besides 1000
+     *   @param {number[]} [options.ignoredCodes] - Array of response codes to ignore (not considered neither as error nor success)
      *   @returns {Promise<{responses: Array, successes: string[], failures: Object}>}
      */
-    const batchHelper = useCallback(
+    const batchAPIHelper = useCallback(
         async <T extends { Responses: { LinkID: string; Response: { Code: number; Error?: string } }[] }>(
             abortSignal: AbortSignal,
             {
@@ -46,13 +47,15 @@ export const useBatchHelper = () => {
                 batchRequestSize = BATCH_REQUEST_SIZE,
                 request = debouncedRequest,
                 allowedCodes = [],
+                ignoredCodes = [],
             }: {
                 linkIds: string[];
-                query: (batchLinkIds: string[]) => Promise<object> | object;
+                query: (batchLinkIds: string[]) => Promise<object> | object | undefined;
                 maxParallelRequests?: number;
                 batchRequestSize?: number;
                 request?: <T>(args: object, abortSignal?: AbortSignal) => Promise<T>;
                 allowedCodes?: number[];
+                ignoredCodes?: number[];
             }
         ) => {
             const responses: { batchLinkIds: string[]; response: T }[] = [];
@@ -62,26 +65,33 @@ export const useBatchHelper = () => {
             const batches = chunk(linkIds, batchRequestSize);
 
             const queue = await Promise.all(
-                batches.map(
-                    (batchLinkIds) => async () =>
-                        request<T>(await query(batchLinkIds), abortSignal)
-                            .then((response) => {
-                                responses.push({ batchLinkIds, response });
-                                response.Responses.forEach(({ LinkID, Response }) => {
-                                    if (
-                                        Response.Code === API_CODES.SINGLE_SUCCESS ||
-                                        allowedCodes.includes(Response.Code)
-                                    ) {
-                                        successes.push(LinkID);
-                                    } else {
-                                        failures[LinkID] = Response.Error;
-                                    }
-                                });
-                            })
-                            .catch((error) => {
-                                batchLinkIds.forEach((linkId) => (failures[linkId] = error));
-                            })
-                )
+                batches.map((batchLinkIds) => async () => {
+                    const q = await query(batchLinkIds);
+                    if (!q) {
+                        return;
+                    }
+
+                    await request<T>(q, abortSignal)
+                        .then((response) => {
+                            responses.push({ batchLinkIds, response });
+                            response.Responses.forEach(({ LinkID, Response }) => {
+                                if (ignoredCodes.includes(Response.Code)) {
+                                    return;
+                                }
+                                if (
+                                    Response.Code === API_CODES.SINGLE_SUCCESS ||
+                                    allowedCodes.includes(Response.Code)
+                                ) {
+                                    successes.push(LinkID);
+                                } else {
+                                    failures[LinkID] = Response.Error;
+                                }
+                            });
+                        })
+                        .catch((error) => {
+                            batchLinkIds.forEach((linkId) => (failures[linkId] = error));
+                        });
+                })
             );
             await preventLeave(runInQueue(queue, maxParallelRequests));
 
@@ -94,5 +104,40 @@ export const useBatchHelper = () => {
         [debouncedRequest, preventLeave]
     );
 
-    return batchHelper;
+    /**
+     * Executes an array of promise-returning functions in batches of a specified size
+     * to control concurrency and prevent overwhelming resources.
+     *
+     * @param items - Array of items to process
+     * @param processFn - Function that takes an item and returns a promise with the processed result
+     * @param batchSize - Number of promises to process concurrently (default is 10)
+     * @param abortSignal - Optional AbortSignal to cancel the operation
+     * @returns Promise that resolves with an array of all processed results
+     */
+    async function batchPromiseHelper<T, R>(
+        items: T[],
+        processFn: (item: T, index: number) => Promise<R>,
+        batchSize: number = 10,
+        abortSignal?: AbortSignal
+    ): Promise<R[]> {
+        const results: R[] = [];
+
+        for (let i = 0; i < items.length; i += batchSize) {
+            if (abortSignal?.aborted) {
+                throw new DOMException('The operation was aborted', 'AbortError');
+            }
+
+            const batch = items.slice(i, i + batchSize);
+            const batchResults = await Promise.all(batch.map((item, batchIndex) => processFn(item, i + batchIndex)));
+
+            results.push(...batchResults);
+        }
+
+        return results;
+    }
+
+    return {
+        batchAPIHelper,
+        batchPromiseHelper,
+    };
 };

@@ -7,7 +7,7 @@ import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useActions, useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
-import { useDriveDocsFeatureFlag } from '../../../store/_documents';
+import { useDriveDocsFeatureFlag, useDriveDocsSheetsFF } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';
@@ -17,6 +17,7 @@ import { ShareFileButton, ShareLinkButton } from '../ContextMenu/buttons';
 import useIsEditEnabled from '../useIsEditEnabled';
 import { CreateNewFileButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';
 import CreateNewDocumentButton from './ContextMenuButtons/CreateNewDocumentButton';
+import CreateNewSheetButton from './ContextMenuButtons/CreateNewSheetButton';
 
 export function FolderContextMenu({
     shareId,
@@ -66,6 +67,7 @@ export function FolderContextMenu({
 
     const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
+    const { isSheetsEnabled } = useDriveDocsSheetsFF();
 
     // All actions in this context menu needs editor permissions
     if (!isEditor) {
@@ -98,6 +100,18 @@ export function FolderContextMenu({
                         action={() => {
                             void createDocument({
                                 type: 'doc',
+                                shareId: activeFolder.shareId,
+                                parentLinkId: activeFolder.linkId,
+                            });
+                        }}
+                    />
+                )}
+                {isSheetsEnabled && !isActiveLinkReadOnly && !isActiveLinkInDeviceShare && (
+                    <CreateNewSheetButton
+                        close={close}
+                        action={() => {
+                            void createDocument({
+                                type: 'sheet',
                                 shareId: activeFolder.shareId,
                                 parentLinkId: activeFolder.linkId,
                             });

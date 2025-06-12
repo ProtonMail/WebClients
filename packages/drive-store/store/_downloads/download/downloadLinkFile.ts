@@ -1,3 +1,4 @@
+// @ts-ignore missing `toStream` TS definitions
 import { readToEnd, toStream } from '@openpgp/web-stream-tools';
 
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
@@ -177,11 +178,11 @@ export default function initDownloadLinkFile(
     );
     return {
         ...controls,
-        start: () => {
+        start: (doNotCheckManifestSignatureOnlyForVideoStreaming?: boolean) => {
             const linkSizes = Object.fromEntries([[link.linkId, link.size]]);
             log(`starting ${link.linkId}, size: ${link.size}`);
             callbacks.onInit?.(link.size, linkSizes);
-            return controls.start();
+            return controls.start(doNotCheckManifestSignatureOnlyForVideoStreaming);
         },
     };
 }
