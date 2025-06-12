@@ -39,7 +39,7 @@ const VerifyRecoveryEmailModal = ({ email, onClose, ...rest }: Props) => {
         } catch (error) {
             const { code } = getApiError(error);
 
-            if (code === API_CUSTOM_ERROR_CODES.ACCOUNT_LOCKED) {
+            if (code === API_CUSTOM_ERROR_CODES.BANNED) {
                 onClose?.();
             } else {
                 throw error;
