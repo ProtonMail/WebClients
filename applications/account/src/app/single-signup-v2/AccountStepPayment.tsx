@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Alert3ds, PayPalButton, StyledPayPalButton } from '@proton/components';
+import { changeDefaultPaymentMethodBeforePayment } from '@proton/components/containers/payments/DefaultPaymentMethodMessage';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
@@ -18,11 +19,12 @@ import {
     PAYMENT_METHOD_TYPES,
     type Plan,
     getBillingAddressStatus,
+    getIsB2BAudienceFromPlan,
+    getIsVpnPlan,
     getPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { getIsB2BAudienceFromPlan, getIsVpnPlan } from '@proton/payments';
 import { type OnBillingAddressChange } from '@proton/payments/ui';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
@@ -163,7 +165,7 @@ const AccountStepPayment = ({
         user,
         subscription: model.session?.subscription,
         planIDs: model.subscriptionData.planIDs,
-        onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, paymentProcessorType }) => {
+        onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, paymentProcessorType, source }) => {
             return withLoadingSignup(async () => {
                 const extendedTokenPayment: ExtendedTokenPayment = {
                     paymentsVersion,
@@ -191,6 +193,13 @@ const AccountStepPayment = ({
                     : undefined;
 
                 Object.assign(extendedTokenPayment, legacyTokenPayment);
+
+                await changeDefaultPaymentMethodBeforePayment(
+                    normalApi,
+                    source,
+                    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                    paymentFacade.methods.savedMethods ?? []
+                );
 
                 await onPay(extendedTokenPayment, paymentType);
             });
