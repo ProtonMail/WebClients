@@ -400,11 +400,11 @@
       "Move to another vault": [
         "Déplacer vers un autre coffre-fort"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Déplacer dans la corbeille"
       ],
-      "Move to trash": [
-        "Déplacer dans le dossier Corbeille"
+      "Move to Trash": [
+        "Déplacer dans la corbeille"
       ],
       "Multiple select": [
         "Sélection multiple"
@@ -1810,6 +1810,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -3279,6 +3283,9 @@
       "Share": [
         "Partager"
       ],
+      "Share ID": [
+        "ID de partage"
+      ],
       "Shared": [
         "Partagé"
       ],
@@ -3294,10 +3301,10 @@
       "Show website favicons": [
         "Afficher les favicônes des sites internet"
       ],
-      "Social security": [
+      "Social Security": [
         "Sécurité sociale"
       ],
-      "Social Security": [
+      "Social security": [
         "Sécurité sociale"
       ],
       "Social security number": [

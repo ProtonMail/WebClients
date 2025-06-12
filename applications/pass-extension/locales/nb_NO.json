@@ -152,10 +152,10 @@
       "Create": [
         "Opprett"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -1419,6 +1419,9 @@
       "Auto-lock successfully disabled.": [
         "Auto-lås vellykket deaktivert."
       ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Fyll ut lagrede påloggingsinformasjon automatisk i grunnleggende HTTP-påloggingsvinduer."
+      ],
       "automatically": [
         "automatisk"
       ],
@@ -1788,10 +1791,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2573,6 +2572,9 @@
       "Bank Name": [
         "Banknavn"
       ],
+      "Basic Auth autofill": [
+        "Grunnleggende autoutfylling av legitimasjon"
+      ],
       "Biometrics": [
         "Biometri"
       ],
@@ -3101,10 +3103,10 @@
       "Priority:": [
         "Prioritet:"
       ],
-      "Private Key": [
+      "Private key": [
         "Privat nøkkel"
       ],
-      "Private key": [
+      "Private Key": [
         "Privat nøkkel"
       ],
       "Product": [
@@ -3205,6 +3207,9 @@
       ],
       "Share": [
         "Del"
+      ],
+      "Share ID": [
+        "Del ID"
       ],
       "Shared": [
         "Delt"

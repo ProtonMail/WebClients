@@ -400,11 +400,11 @@
       "Move to another vault": [
         "Mover para outro cofre"
       ],
-      "Move to Trash": [
-        "Mover para o Lixo"
-      ],
       "Move to trash": [
         "Mover para o lixo"
+      ],
+      "Move to Trash": [
+        "Mover para o Lixo"
       ],
       "Multiple select": [
         "Seleção múltipla"
@@ -1810,6 +1810,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -3276,6 +3280,9 @@
       "Share": [
         "Partilhar"
       ],
+      "Share ID": [
+        "Partilhar o ID"
+      ],
       "Shared": [
         "Partilhado"
       ],
@@ -3291,10 +3298,10 @@
       "Show website favicons": [
         "Mostrar os favicons do sítio web"
       ],
-      "Social security": [
+      "Social Security": [
         "Segurança social"
       ],
-      "Social Security": [
+      "Social security": [
         "Segurança social"
       ],
       "Social security number": [

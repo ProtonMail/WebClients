@@ -152,10 +152,10 @@
       "Create": [
         "생성"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
       "Create alias": [
@@ -1765,9 +1765,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
-      ],
       "Moving items": [
         "항목 이동 중"
       ],
@@ -3057,11 +3054,11 @@
       "Priority:": [
         "우선 사항:"
       ],
-      "Private Key": [
-        "비밀 키"
-      ],
       "Private key": [
         "개인 키"
+      ],
+      "Private Key": [
+        "비밀 키"
       ],
       "Product": [
         "제품"

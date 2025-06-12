@@ -133,7 +133,7 @@
         "Appliquer"
       ],
       "Archive": [
-        "Déplacer dans le dossier Archives"
+        "Déplacer vers les archives"
       ],
       "As Scheduled": [
         "Comme prévu"
@@ -884,10 +884,10 @@
         "Déplacer"
       ],
       "Move all to archive": [
-        "Tout déplacer dans le dossier Archives"
+        "Tout déplacer vers les archives"
       ],
       "Move all to trash": [
-        "Tout déplacer dans le dossier Corbeille"
+        "Tout déplacer dans la corbeille"
       ],
       "move emails to": [
         "déplacer les messages vers"
@@ -896,25 +896,25 @@
         "Déplacer"
       ],
       "Move to archive": [
-        "Déplacer dans le dossier Archives"
+        "Déplacer vers les archives"
       ],
       "Move to folder": [
-        "Déplacer dans un dossier"
+        "Déplacer vers un dossier"
       ],
       "Move to inbox": [
-        "Déplacer dans le dossier Boite de réception"
+        "Déplacer vers la boite de réception"
       ],
       "Move to inbox (not spam)": [
-        "Déplacer dans le dossier Boite de réception (non indésirable/spam)"
+        "Déplacer vers la boite de réception (non indésirable/spam)"
       ],
       "Move to spam": [
-        "Déplacer dans le dossier Indésirables/spam"
+        "Déplacer vers le dossier Indésirables/spam"
       ],
       "Move to spam and unsubscribe": [
-        "Déplacer dans le dossier Indésirables/spam et se désabonner"
+        "Déplacer vers le dossier Indésirables/spam et se désabonner"
       ],
       "Move to trash": [
-        "Déplacer dans le dossier Corbeille"
+        "Déplacer dans la corbeille"
       ],
       "Move to...": [
         "Déplacer"
@@ -1183,10 +1183,10 @@
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Tout sélectionner"
       ],
-      "Select all": [
+      "Select All": [
         "Tout sélectionner"
       ],
       "Select all messages": [
@@ -1465,11 +1465,11 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
-      "Upgrade Now": [
-        "Passer à l'abonnement supérieur"
-      ],
       "Upgrade now": [
         "Changer d'abonnement"
+      ],
+      "Upgrade Now": [
+        "Passer à l'abonnement supérieur"
       ],
       "Upload and share files": [
         "Importer et partager des fichiers"
@@ -6954,8 +6954,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8541,16 +8540,16 @@
         "Déplacer vers la droite/agrandir"
       ],
       "Move to Archive": [
-        "Déplacer dans le dossier Archives"
+        "Déplacer vers les archives"
       ],
       "Move to Inbox": [
-        "Déplacer dans le dossier Boite de réception"
+        "Déplacer vers la boite de réception"
       ],
       "Move to Spam": [
-        "Déplacer dans le dossier Indésirables/spam"
+        "Déplacer vers le dossier Indésirables/spam"
       ],
       "Move to Trash": [
-        "Déplacer dans le dossier Corbeille"
+        "Déplacer vers la corbeille"
       ],
       "Move to...": [
         "Déplacer"
@@ -8698,11 +8697,11 @@
       "Always move sender's emails": [
         "Toujours déplacer les messages des expéditeurs"
       ],
-      "And": [
-        "Et"
-      ],
       "AND": [
         "ET"
+      ],
+      "And": [
+        "Et"
       ],
       "and": [
         "et"
@@ -8929,11 +8928,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importer tous les messages"
@@ -9012,10 +9011,10 @@
         "Déplacer"
       ],
       "Move to Archive": [
-        "Déplacer dans le dossier Archives"
+        "Déplacer vers les archives"
       ],
       "Move to Inbox": [
-        "Déplacer dans le dossier Boite de réception"
+        "Déplacer vers la boite de réception"
       ],
       "Moved ${ count } message to ${ selectedFolder.Name }.": [
         "${ count } message a été déplacé vers ${ selectedFolder.Name }.",
@@ -9071,14 +9070,14 @@
       "Optional": [
         "Facultatif"
       ],
+      "OR": [
+        "OU"
+      ],
       "or": [
         "ou"
       ],
       "Or": [
         "Ou"
-      ],
-      "OR": [
-        "OU"
       ],
       "Original link": [
         "Lien d'origine"
@@ -9970,6 +9969,14 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Je choisis ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -9991,14 +9998,6 @@
       ],
       "Switch plan": [
         "Changer d'abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Je choisis ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -12741,6 +12740,47 @@
         "Pour ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
@@ -12999,47 +13039,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
@@ -14087,25 +14086,25 @@
         "Déplacer tous les messages"
       ],
       "Move all messages to archive": [
-        "Déplacer tous les messages dans le dossier Archives"
+        "Déplacer tous les messages vers les archives"
       ],
       "Move all messages to trash": [
-        "Déplacer tous les messages dans le dossier Corbeille"
+        "Déplacer tous les messages vers la corbeille"
       ],
       "Move to": [
         "Déplacer"
       ],
       "Move to inbox": [
-        "Déplacer dans le dossier Boite de réception"
+        "Déplacer vers la boite de réception"
       ],
       "Move to inbox (not spam)": [
-        "Déplacer dans le dossier Boite de réception (non indésirable/spam)"
+        "Déplacer vers la boite de réception (non indésirable/spam)"
       ],
       "Move to spam": [
-        "Déplacer dans le dossier Indésirables/spam"
+        "Déplacer vers le dossier Indésirables/spam"
       ],
       "Move to trash": [
-        "Déplacer dans le dossier Corbeille"
+        "Déplacer vers la corbeille"
       ],
       "Moving a scheduled message": [
         "Déplacement d'un message programmé"
@@ -14485,7 +14484,7 @@
         "Votre essai gratuit ${ planName } se termine le ${ textDate }."
       ],
       "Your ${ planName } subscription has started": [
-        "Votre abonnement ${ planName } a débuté."
+        "Votre abonnement ${ planName } a commencé."
       ],
       "Your account is protected": [
         "Votre compte est protégé."
