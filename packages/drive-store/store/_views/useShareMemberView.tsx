@@ -57,9 +57,10 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     const [sharingShareId, setSharingShareId] = useState<string | undefined>();
 
     // Zustand store hooks - key difference with useShareMemberView.tsx
-    const { members, setShareMembers } = useMembersStore((state) => ({
+    const { members, setShareMembers, getShareMembersState } = useMembersStore((state) => ({
         members: sharingShareId ? state.getShareMembers(sharingShareId) : [],
         setShareMembers: state.setShareMembers,
+        getShareMembersState: state.getShareMembers,
     }));
 
     const {
@@ -72,6 +73,8 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         removeShareExternalInvitations,
         updateShareExternalInvitations,
         addMultipleShareInvitations,
+        getShareInvitationsState,
+        getShareExternalInvitationsState,
     } = useInvitationsStore((state) => ({
         invitations: sharingShareId ? state.getShareInvitations(sharingShareId) : [],
         externalInvitations: sharingShareId ? state.getShareExternalInvitations(sharingShareId) : [],
@@ -82,13 +85,15 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         removeShareExternalInvitations: state.removeShareExternalInvitations,
         updateShareExternalInvitations: state.updateShareExternalInvitations,
         addMultipleShareInvitations: state.addMultipleShareInvitations,
+        getShareInvitationsState: state.getShareInvitations,
+        getShareExternalInvitationsState: state.getShareExternalInvitations,
     }));
 
     const existingEmails = getExistingEmails(members, invitations, externalInvitations);
 
     useEffect(() => {
         const abortController = new AbortController();
-        if (volumeId || isLoading) {
+        if (volumeId || isLoading || !linkId) {
             return;
         }
         void withLoading(async () => {
@@ -130,7 +135,14 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     };
 
     const deleteShareIfEmpty = useCallback(async () => {
-        if (members.length || invitations.length) {
+        if (!sharingShareId) {
+            return;
+        }
+        if (
+            getShareMembersState(sharingShareId).length ||
+            getShareInvitationsState(sharingShareId).length ||
+            getShareExternalInvitationsState(sharingShareId).length
+        ) {
             return;
         }
 
@@ -145,7 +157,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         } catch (e) {
             return;
         }
-    }, [members, invitations, rootShareId]);
+    }, [getShareMembersState, getShareInvitationsState, getShareExternalInvitationsState, rootShareId, sharingShareId]);
 
     const updateStoredMembers = async (member: ShareMember, remove: boolean = false) => {
         if (!sharingShareId) {
@@ -313,7 +325,6 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         await deleteInvitation(abortSignal, { shareId: sharingShareId, invitationId });
         const updatedInvitations = invitations.filter((item) => item.invitationId !== invitationId);
         removeShareInvitations(sharingShareId, updatedInvitations);
-
         if (updatedInvitations.length === 0) {
             await deleteShareIfEmpty();
         }

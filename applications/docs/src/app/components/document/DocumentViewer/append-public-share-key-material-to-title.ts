@@ -1,6 +1,6 @@
 import type { NodeMeta } from '@proton/drive-store/lib'
 import { type ShareURL, useDriveEventManager } from '@proton/drive-store/store'
-import { VolumeType } from '@proton/drive-store/store/_volumes'
+import { VolumeTypeForEvents } from '@proton/drive-store/store/_volumes'
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants'
 import { type DocumentState } from '@proton/docs-core'
 import { useRef, useEffect, useCallback } from 'react'
@@ -147,7 +147,7 @@ export function AppendPublicShareKeyMaterialToTitle({
       }
     })
 
-    driveEventManager.volumes.startSubscription(nodeMeta.volumeId, VolumeType.main).catch(console.error)
+    driveEventManager.volumes.startSubscription(nodeMeta.volumeId, VolumeTypeForEvents.main).catch(console.error)
 
     return () => {
       driveEventManager.eventHandlers.unregister(handlerId)

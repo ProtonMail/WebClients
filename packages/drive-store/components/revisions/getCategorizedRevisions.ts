@@ -1,19 +1,15 @@
-import { fromUnixTime, isThisWeek, isThisYear, isToday, isYesterday } from 'date-fns';
+import { isThisWeek, isThisYear, isToday, isYesterday } from 'date-fns';
 import { c } from 'ttag';
 
+import type { Revision } from '@proton/drive';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import isLastWeek from '@proton/utils/isLastWeek';
 
-import type { DriveFileRevision } from '../../store';
-
-type RevisionCategory = { title: string; list: DriveFileRevision[] };
+type RevisionCategory = { title: string; list: Revision[] };
 export type CategorizedRevisions = Map<string, RevisionCategory>;
-export function getCategorizedRevisions(
-    revisions: DriveFileRevision[],
-    localeCode = dateLocale.code
-): CategorizedRevisions {
+export function getCategorizedRevisions(revisions: Revision[], localeCode = dateLocale.code): CategorizedRevisions {
     return revisions.reduce<CategorizedRevisions>((result, revision) => {
-        const dateStart = fromUnixTime(revision.createTime);
+        const dateStart = revision.creationTime;
 
         switch (true) {
             case isToday(dateStart):
