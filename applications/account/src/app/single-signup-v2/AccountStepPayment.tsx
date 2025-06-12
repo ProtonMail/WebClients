@@ -28,9 +28,10 @@ import {
 import { type OnBillingAddressChange } from '@proton/payments/ui';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
+import { Audience, SubscriptionMode, isBilledUser } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -69,6 +70,7 @@ interface Props {
     terms?: ReactNode;
     signupParameters: SignupParameters2;
     showRenewalNotice: boolean;
+    app: APP_NAMES;
 }
 
 const AccountStepPayment = ({
@@ -91,6 +93,7 @@ const AccountStepPayment = ({
     terms,
     signupParameters,
     showRenewalNotice,
+    app,
 }: Props) => {
     const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
@@ -308,7 +311,9 @@ const AccountStepPayment = ({
         paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
     const showAlert3ds = selectedMethodCard && !isSignupPass;
 
-    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue);
+    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+
+    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue) || isTrial;
     const loadingPaymentsForm = model.loadingDependencies;
 
     const paymentsForm = (
@@ -367,6 +372,7 @@ const AccountStepPayment = ({
                         hideFirstLabel
                         hasSomeVpnPlan={hasSomeVpnPlan}
                         billingAddressStatus={getBillingAddressStatus(billingAddress)}
+                        isTrial={isTrial}
                     />
                 ) : (
                     <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
@@ -469,7 +475,7 @@ const AccountStepPayment = ({
                             </Button>
                             <div className="text-center color-success mt-4">
                                 {subscriptionData.checkResult.AmountDue === 0 ? (
-                                    c('Info').t`Cancel anytime`
+                                    !isTrial && c('Info').t`Cancel anytime`
                                 ) : (
                                     <Guarantee />
                                 )}
@@ -497,6 +503,7 @@ const AccountStepPayment = ({
                 showRenewalNotice={showRenewalNotice}
                 showInclusiveTax={paymentFacade.showInclusiveTax}
                 showTaxCountry={paymentFacade.showTaxCountry}
+                app={app}
             />
         </div>
     );
