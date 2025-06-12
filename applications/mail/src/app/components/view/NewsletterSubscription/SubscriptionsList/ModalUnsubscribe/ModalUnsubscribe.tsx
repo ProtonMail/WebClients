@@ -55,7 +55,6 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
                         <span>{c('Label').t`Unsubscribed from ${truncatedName}.`}</span>
                         <NotificationButton
                             onClick={() => {
-                                // TODO update this to a undo action once API returns undo token
                                 dispatch(newsletterSubscriptionsActions.setSelectedTab(SubscriptionTabs.Unsubscribe));
                             }}
                         >{c('Action').t`Undo`}</NotificationButton>
