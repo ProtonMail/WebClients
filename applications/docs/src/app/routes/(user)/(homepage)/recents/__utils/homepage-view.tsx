@@ -9,8 +9,8 @@ import { useDefaultShare, useDriveEventManager, useTrashView } from '@proton/dri
 import { ServerTime } from '@proton/docs-shared'
 import { useApplication } from '~/utils/application-context'
 import { useEvent, useSubscribe } from '~/utils/misc'
-import { VolumeType } from '@proton/drive-store/store/_volumes'
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
+import { VolumeTypeForEvents } from '@proton/drive-store/store/_volumes'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { getOwnerName } from './get-owner-name'
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
@@ -534,7 +534,7 @@ function useSubscribeToMainVolume() {
     if (!volumeId) {
       return
     }
-    driveEventManager.volumes.startSubscription(volumeId, VolumeType.main).catch(console.error)
+    driveEventManager.volumes.startSubscription(volumeId, VolumeTypeForEvents.main).catch(console.error)
     return () => {
       driveEventManager.volumes.unsubscribe(volumeId)
     }

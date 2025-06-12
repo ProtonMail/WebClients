@@ -5,7 +5,6 @@ export { usePublicAuth } from './_api';
 export { useActivePing, useGetPublicKeysForEmail, usePublicSessionUser } from './_user';
 export { useDriveEventManager } from './_events';
 export { validateLinkNameField, formatLinkName, splitLinkName } from './_links';
-export { useRevisions } from './_revisions';
 export { useUserSettings, UserSettingsProvider } from './_settings';
 export {
     useDefaultShare,
@@ -23,7 +22,6 @@ export * from './_downloads/interface';
 export * from './_links/interface';
 export * from './_shares/interface';
 export * from './_devices/interface';
-export * from './_revisions/interface';
 export * from './_actions/interface';
 export * from './_invitations/interface';
 export * from './_views';

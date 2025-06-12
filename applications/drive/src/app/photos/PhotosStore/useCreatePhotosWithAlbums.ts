@@ -2,9 +2,8 @@ import { queryCreatePhotosWithAlbumsVolume } from '@proton/shared/lib/api/drive/
 import type { CreatedDriveVolumeResult } from '@proton/shared/lib/interfaces/drive/volume';
 import { generateAlbumsBootstrap, generateNodeHashKey } from '@proton/shared/lib/keys/driveKeys';
 
-import { useDefaultShare } from '../../store';
 import { useDebouncedRequest } from '../../store/_api';
-import { useShare } from '../../store/_shares';
+import { useDefaultShare, useShare } from '../../store/_shares';
 
 export function useCreatePhotosWithAlbums() {
     const debouncedRequest = useDebouncedRequest();
