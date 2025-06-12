@@ -11,7 +11,11 @@ import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { hasError, hasErrorType } from '../../helpers/errors';
 import type { Conversation } from '../../models/conversation';
 import { initialize, load as loadAction, retryLoading } from '../../store/conversations/conversationsActions';
-import { allConversations, conversationByID } from '../../store/conversations/conversationsSelectors';
+import {
+    allConversations,
+    conversationByID,
+    conversationsByIDs,
+} from '../../store/conversations/conversationsSelectors';
 import type { ConversationErrors, ConversationState } from '../../store/conversations/conversationsTypes';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
 
@@ -30,6 +34,11 @@ export const useGetConversation = () => {
 export const useGetAllConversations = () => {
     const store = useMailStore();
     return useCallback(() => allConversations(store.getState()), []);
+};
+
+export const useGetConversationsByIDs = () => {
+    const store = useMailStore();
+    return useCallback((IDs: string[]) => conversationsByIDs(store.getState(), IDs), []);
 };
 
 interface ReturnValue {
