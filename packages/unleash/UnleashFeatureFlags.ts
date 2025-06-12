@@ -128,6 +128,8 @@ enum DriveFeatureFlag {
     // Video Streaming
     // TODO: Convert to Kill-Switch once launched and tested
     DriveWebVideoStreaming = 'DriveWebVideoStreaming',
+    // SDK Migration
+    DriveWebSDKRenameModal = 'DriveWebSDKRenameModal',
 }
 
 enum DocsFeatureFlag {
