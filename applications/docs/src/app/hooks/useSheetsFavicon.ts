@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useDynamicFavicon } from '@proton/components'
-import sheetsFavicon from './sheets-favicon.png'
+import sheetsFavicon from './sheets-favicon.svg'
 
 /**
  * Custom hook that automatically sets the sheets favicon when the current route contains '/sheets'
