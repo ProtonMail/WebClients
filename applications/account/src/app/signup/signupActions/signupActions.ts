@@ -41,6 +41,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api, HumanVerificationMethodType, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import {
     generateKeySaltAndPassphrase,
     generatePasswordlessOrganizationKey,
@@ -342,6 +343,8 @@ export const handleSubscribeUser = async (
             paymentsVersion = 'v4';
         }
 
+        const isTrial = subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+
         const { Subscription } = await api<{ Subscription: Subscription }>(
             subscribe(
                 {
@@ -355,6 +358,7 @@ export const handleSubscribeUser = async (
                         ...(subscriptionData.checkResult.Coupon?.Code
                             ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
                             : undefined),
+                        ...(isTrial ? { StartTrial: true } : {}),
                     },
                 },
                 productParam,
