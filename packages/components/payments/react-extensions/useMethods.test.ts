@@ -2,7 +2,7 @@ import { renderHook, waitFor } from '@testing-library/react';
 
 import { componentsHookRenderer, componentsHookWrapper } from '@proton/components/containers/contacts/tests/render';
 import type { PaymentMethodStatusExtended, PaymentsApi, SavedPaymentMethod } from '@proton/payments';
-import { Autopay, MethodStorage, PAYMENT_METHOD_TYPES, queryPaymentMethods } from '@proton/payments';
+import { Autopay, MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { addApiMock, apiMock } from '@proton/testing';
@@ -44,10 +44,11 @@ beforeEach(() => {
                 Brand: 'Visa',
             },
             External: MethodStorage.INTERNAL,
+            IsDefault: true,
         },
     ];
 
-    addApiMock(queryPaymentMethods().url, () => ({
+    addApiMock('payments/v5/methods', () => ({
         PaymentMethods: paymentMethods,
     }));
 
@@ -108,6 +109,7 @@ it('should initialize payment methods (no chargebee)', async () => {
 
     expect(result.current.savedMethods).toEqual(paymentMethods);
     expect(result.current.selectedMethod).toEqual({
+        isDefault: true,
         isExpired: false,
         isSaved: true,
         paymentMethodId: '1',
@@ -130,12 +132,14 @@ it('should initialize payment methods (no chargebee)', async () => {
             Brand: 'Visa',
         },
         External: MethodStorage.INTERNAL,
+        IsDefault: true,
     });
 
     expect(result.current.status).toEqual(paymentMethodStatusExtended);
     expect(result.current.isNewPaypal).toBe(false);
     expect(result.current.usedMethods).toEqual([
         {
+            isDefault: true,
             isExpired: false,
             isSaved: true,
             paymentMethodId: '1',
@@ -145,27 +149,32 @@ it('should initialize payment methods (no chargebee)', async () => {
     ]);
     expect(result.current.newMethods).toEqual([
         {
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.CARD,
             value: PAYMENT_METHOD_TYPES.CARD,
         },
         {
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.PAYPAL,
             value: PAYMENT_METHOD_TYPES.PAYPAL,
         },
         {
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.BITCOIN,
             value: PAYMENT_METHOD_TYPES.BITCOIN,
         },
         {
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.CASH,
             value: PAYMENT_METHOD_TYPES.CASH,
         },
     ]);
     expect(result.current.lastUsedMethod).toEqual({
+        isDefault: true,
         isExpired: false,
         isSaved: true,
         paymentMethodId: '1',
@@ -203,6 +212,7 @@ it('should initialize payment methods (with chargebee)', async () => {
     expect(result.current.savedMethods).toEqual(paymentMethods);
 
     expect(result.current.selectedMethod).toEqual({
+        isDefault: true,
         isExpired: false,
         isSaved: true,
         paymentMethodId: '1',
@@ -231,6 +241,7 @@ it('should initialize payment methods (with chargebee)', async () => {
             Brand: 'Visa',
         },
         External: MethodStorage.INTERNAL,
+        IsDefault: true,
     });
     // this was before on-session migration
     // expect(result.current.savedInternalSelectedMethod).toEqual(undefined);
@@ -239,6 +250,7 @@ it('should initialize payment methods (with chargebee)', async () => {
     expect(result.current.isNewPaypal).toBe(false);
     expect(result.current.usedMethods).toEqual([
         {
+            isDefault: true,
             isExpired: false,
             isSaved: true,
             paymentMethodId: '1',
@@ -248,27 +260,32 @@ it('should initialize payment methods (with chargebee)', async () => {
     ]);
     expect(result.current.newMethods).toEqual([
         {
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             value: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
         },
         {
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             value: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
         },
         {
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
             value: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
         },
         {
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.CASH,
             value: PAYMENT_METHOD_TYPES.CASH,
         },
     ]);
     expect(result.current.lastUsedMethod).toEqual({
+        isDefault: true,
         isExpired: false,
         isSaved: true,
         paymentMethodId: '1',
@@ -339,6 +356,7 @@ it('should filter out external payment methods', async () => {
                 Brand: 'Visa',
             },
             External: MethodStorage.EXTERNAL,
+            IsDefault: true,
         },
         {
             ID: '1',
@@ -355,6 +373,7 @@ it('should filter out external payment methods', async () => {
                 Brand: 'Visa',
             },
             External: MethodStorage.INTERNAL,
+            IsDefault: false,
         },
     ]);
 
@@ -375,6 +394,7 @@ it('should filter out external payment methods', async () => {
                 Brand: 'Visa',
             },
             External: MethodStorage.INTERNAL,
+            IsDefault: false,
         });
     });
 
@@ -446,6 +466,7 @@ it('should consider methods without External property internal', async () => {
                 Brand: 'Visa',
             },
             External: MethodStorage.EXTERNAL,
+            IsDefault: true,
         },
         {
             ID: '1',
@@ -461,6 +482,7 @@ it('should consider methods without External property internal', async () => {
                 Last4: '1234',
                 Brand: 'Visa',
             },
+            IsDefault: false,
         },
     ]);
 
@@ -481,6 +503,7 @@ it('should consider methods without External property internal', async () => {
                 Last4: '1234',
                 Brand: 'Visa',
             },
+            IsDefault: false,
         });
     });
 
@@ -507,6 +530,7 @@ it('should filter out internal payment methods', async () => {
                 Brand: 'Visa',
             },
             External: MethodStorage.EXTERNAL,
+            IsDefault: true,
         },
         ...paymentMethods,
     ];
@@ -550,6 +574,7 @@ it('should filter out internal payment methods', async () => {
                 Brand: 'Visa',
             },
             External: MethodStorage.EXTERNAL,
+            IsDefault: true,
         },
         {
             ID: '1',
@@ -566,6 +591,7 @@ it('should filter out internal payment methods', async () => {
                 Brand: 'Visa',
             },
             External: MethodStorage.INTERNAL,
+            IsDefault: false,
         },
     ]);
 
@@ -586,6 +612,7 @@ it('should filter out internal payment methods', async () => {
                 Brand: 'Visa',
             },
             External: MethodStorage.EXTERNAL,
+            IsDefault: true,
         });
     });
     result.current.selectMethod('1');
@@ -637,11 +664,13 @@ it('should update methods when amount changes', async () => {
                 isSaved: false,
                 type: PAYMENT_METHOD_TYPES.CARD,
                 value: PAYMENT_METHOD_TYPES.CARD,
+                isDefault: false,
             },
             {
                 isSaved: false,
                 type: PAYMENT_METHOD_TYPES.CASH,
                 value: PAYMENT_METHOD_TYPES.CASH,
+                isDefault: false,
             },
         ]);
     });
@@ -684,6 +713,7 @@ it('should get saved method by its ID', async () => {
                 Brand: 'Visa',
             },
             External: MethodStorage.INTERNAL,
+            IsDefault: true,
         });
     });
 });
@@ -711,6 +741,7 @@ it('should set selected method', async () => {
 
     await waitFor(() => {
         expect(result.current.selectedMethod).toEqual({
+            isDefault: true,
             isExpired: false,
             isSaved: true,
             paymentMethodId: '1',
@@ -723,6 +754,7 @@ it('should set selected method', async () => {
 
     await waitFor(() => {
         expect(result.current.selectedMethod).toEqual({
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.CARD,
             value: PAYMENT_METHOD_TYPES.CARD,
@@ -735,6 +767,7 @@ it('should set selected method', async () => {
     result.current.selectMethod('paypal');
     await waitFor(() => {
         expect(result.current.selectedMethod).toEqual({
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.PAYPAL,
             value: PAYMENT_METHOD_TYPES.PAYPAL,
@@ -793,21 +826,25 @@ it('should update amount correctly even if the initialization is slow', async ()
     expect(result.current.newMethods.length).toBe(4);
     expect(result.current.newMethods).toEqual([
         {
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.CARD,
             value: PAYMENT_METHOD_TYPES.CARD,
         },
         {
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.PAYPAL,
             value: PAYMENT_METHOD_TYPES.PAYPAL,
         },
         {
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.BITCOIN,
             value: PAYMENT_METHOD_TYPES.BITCOIN,
         },
         {
+            isDefault: false,
             isSaved: false,
             type: PAYMENT_METHOD_TYPES.CASH,
             value: PAYMENT_METHOD_TYPES.CASH,

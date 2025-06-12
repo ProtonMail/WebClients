@@ -4,8 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import { setUsedBfOffer } from '@proton/components/containers/offers/bfOffer';
@@ -27,6 +26,7 @@ import type {
     CheckWithAutomaticOptions,
     MultiCheckSubscriptionData,
     PaymentMethodStatusExtended,
+    PaymentMethodType,
     PlainPaymentMethodType,
 } from '@proton/payments';
 import {
@@ -97,6 +97,7 @@ import type {
 import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
 import GenericError from '../../error/GenericError';
+import { changeDefaultPaymentMethodBeforePayment } from '../DefaultPaymentMethodMessage';
 import InclusiveVatText from '../InclusiveVatText';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
@@ -421,7 +422,7 @@ const SubscriptionContainerInner = ({
 
     const handleSubscribe = async (
         operations: Operations,
-        { operationsSubscriptionData, paymentProcessorType }: SubscriptionContext
+        { operationsSubscriptionData, paymentProcessorType, paymentMethodValue }: SubscriptionContext
     ) => {
         if (!hasPlanIDs(operationsSubscriptionData.Plans)) {
             const result = await cancelSubscription({});
@@ -449,6 +450,13 @@ const SubscriptionContainerInner = ({
         try {
             setModel((model) => ({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE }));
             try {
+                await changeDefaultPaymentMethodBeforePayment(
+                    api,
+                    paymentMethodValue,
+                    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                    paymentFacade.methods.savedMethods ?? []
+                );
+
                 const codes = getCodesForSubscription();
                 await operations.subscribe({
                     Codes: codes,
@@ -515,6 +523,7 @@ const SubscriptionContainerInner = ({
     type SubscriptionContext = {
         operationsSubscriptionData: OperationsSubscriptionData;
         paymentProcessorType: PaymentProcessorType;
+        paymentMethodValue: PaymentMethodType;
     };
 
     const selectedPlanCurrency = checkResult?.Currency ?? DEFAULT_CURRENCY;
@@ -527,7 +536,7 @@ const SubscriptionContainerInner = ({
         billingPlatform: subscription?.BillingPlatform,
         chargebeeUserExists: user.ChargebeeUserExists,
         paymentMethodStatusExtended: paymentsStatus,
-        onChargeable: (operations, { sourceType, paymentProcessorType }) => {
+        onChargeable: (operations, { sourceType, paymentProcessorType, source }) => {
             const context: SubscriptionContext = {
                 operationsSubscriptionData: {
                     Plans: model.planIDs,
@@ -537,6 +546,7 @@ const SubscriptionContainerInner = ({
                     taxBillingAddress: model.taxBillingAddress,
                 },
                 paymentProcessorType,
+                paymentMethodValue: source,
             };
 
             const promise = withSubscribing(handleSubscribe(operations, context));
