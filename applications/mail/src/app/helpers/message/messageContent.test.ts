@@ -1,3 +1,4 @@
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
@@ -7,7 +8,6 @@ import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { fromFields, protonSignature, recipients } from 'proton-mail/components/composer/tests/Composer.test.data';
 
 import { addressID, messageID, subject } from '../../components/message/tests/Message.test.helpers';
-import { MESSAGE_ACTIONS } from '../../constants';
 import type { MessageDecryption, MessageState } from '../../store/messages/messagesTypes';
 import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';
 import { clearAll, removeLineBreaks } from '../test/helper';

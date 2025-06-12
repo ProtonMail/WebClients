@@ -18,6 +18,7 @@ import {
 } from '@proton/components';
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import {
     COLLAPSE_EVENTS,
@@ -31,7 +32,6 @@ import clsx from '@proton/utils/clsx';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
-import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';

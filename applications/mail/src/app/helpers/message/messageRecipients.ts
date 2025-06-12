@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { canonicalizeEmail, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { isBlockedIncomingDefaultAddress } from '@proton/shared/lib/helpers/incomingDefaults';
 import type { Address, IncomingDefault, Recipient } from '@proton/shared/lib/interfaces';
@@ -8,7 +9,6 @@ import { isSent, isSentAndReceived } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
-import { MESSAGE_ACTIONS } from '../../constants';
 import type { RecipientGroup, RecipientOrGroup } from '../../models/address';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
