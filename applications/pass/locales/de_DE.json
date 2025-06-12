@@ -400,11 +400,11 @@
       "Move to another vault": [
         "In einen anderen Tresor verschieben"
       ],
-      "Move to Trash": [
-        "In Papierkorb verschieben"
-      ],
       "Move to trash": [
         "In den Papierkorb verschieben"
+      ],
+      "Move to Trash": [
+        "In Papierkorb verschieben"
       ],
       "Multiple select": [
         "Mehrfachauswahl"
@@ -1810,6 +1810,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -3279,6 +3283,9 @@
       "Share": [
         "Teilen"
       ],
+      "Share ID": [
+        "ID teilen"
+      ],
       "Shared": [
         "Geteilt"
       ],
@@ -3294,10 +3301,10 @@
       "Show website favicons": [
         "Website-Symbole anzeigen"
       ],
-      "Social security": [
+      "Social Security": [
         "Sozialversicherung"
       ],
-      "Social Security": [
+      "Social security": [
         "Sozialversicherung"
       ],
       "Social security number": [
