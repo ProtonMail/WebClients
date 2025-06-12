@@ -13,6 +13,7 @@ import { COUPON_CODES } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
+import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { SubscriptionMode } from '@proton/shared/lib/interfaces';
@@ -234,9 +235,21 @@ const AccountStepPaymentSummary = ({
                         displayMembersWithDiscount={hideDiscount}
                     />
                 }
-                discount={initialLoading ? 0 : currentCheckout.discountPercent}
+                discount={(() => {
+                    if (initialLoading) {
+                        return 0;
+                    }
+                    if (isTrial) {
+                        // For trials, show the original plan discount instead of the 100% trial discount
+                        const pricing = getPricingFromPlanIDs(options.planIDs, model.plansMap);
+                        const totals = getTotalFromPricing(pricing, options.cycle);
+                        return totals.discountPercentage;
+                    }
+                    return currentCheckout.discountPercent;
+                })()}
                 checkout={currentCheckout}
                 mode={isB2BPlan ? 'addons' : undefined}
+                isTrial={isTrial}
             >
                 {!initialLoading && showTaxCountry && (
                     <WrappedTaxCountrySelector
