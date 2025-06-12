@@ -70,6 +70,8 @@ const ActionsDropdown = ({ shareId, selectedLinks, permissions, trashLinks, rena
                     isFile: selectedLinks[0].isFile,
                     name: selectedLinks[0].name,
                     isDoc: isProtonDocsDocument(selectedLinks[0].mimeType),
+                    volumeId: selectedLinks[0].volumeId,
+                    linkId: selectedLinks[0].linkId,
                     onSubmit: (formattedName) =>
                         renameLink(
                             new AbortController().signal,
