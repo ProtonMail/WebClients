@@ -1,9 +1,11 @@
 import { type ReactElement, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import { type Plan } from '@proton/payments';
-import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_APP_NAME } from '@proton/shared/lib/constants';
 
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
 
@@ -19,9 +21,7 @@ const LumoAddonBanner = ({ onClick }: { onClick: () => void; price: ReactElement
         </div>
         <Button color="norm" shape="outline" className="shrink-0 flex items-center gap-1" pill onClick={onClick}>
             <Icon name="plus" className="shrink-0" />
-            <span data-testid="lumo-addon-banner-add-button">Add</span>
-            {/* When it's time then simply uncomment the below code and remove the add button above; */}
-            {/* <span data-testid="lumo-addon-banner-add-button">{c('Action').t`Add`}</span> */}
+            <span data-testid="lumo-addon-banner-add-button">{c('Action').t`Add`}</span>
         </Button>
     </div>
 );
@@ -53,8 +53,7 @@ const LumoAddon = ({ price, onAddLumo, value, ...rest }: LumoAddonProps) => {
         <NumberCustomiser
             label={LUMO_APP_NAME}
             value={value}
-            // tooltip={c('Info').t`${LUMO_APP_NAME} includes ${BRAND_NAME} Scribe writing assistant`}
-            tooltip={''} // when it's time then simply uncomment the above code and remove the return '';
+            tooltip={c('Info').t`${LUMO_APP_NAME} includes ${BRAND_NAME} Scribe writing assistant`}
             {...rest}
         />
     );
