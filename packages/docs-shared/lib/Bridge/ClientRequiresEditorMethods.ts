@@ -17,7 +17,7 @@ export interface ClientRequiresEditorMethods {
   /** Returns the Lexical state of the editor, unrelated to the Yjs state */
   getCurrentEditorState(): Promise<SerializedEditorState | undefined>
   /** Returns all the state in the current Sheet as JSON */
-  getSheetsJSON(): Promise<unknown>
+  getLatestSpreadsheetStateToLogJSON(): Promise<unknown>
   /** Returns the current Y.Doc as JSON */
   getYDocAsJSON(): Promise<unknown>
   /**
