@@ -121,6 +121,7 @@ export type CheckSubscriptionData = {
      */
     BillingAddress?: BillingAddress;
     ProrationMode?: ProrationMode;
+    IsTrial?: boolean;
 };
 
 type CommonSubscribeData = {
@@ -128,6 +129,7 @@ type CommonSubscribeData = {
     Currency: Currency;
     Cycle: Cycle;
     Codes?: string[];
+    StartTrial?: boolean;
 } & AmountAndCurrency;
 
 type SubscribeDataV4 = CommonSubscribeData & TokenPaymentMethod & BillingAddressProperty;
@@ -166,6 +168,7 @@ function prepareSubscribeDataPayload(data: SubscribeData): SubscribeData {
         'Amount',
         'Currency',
         'BillingAddress',
+        'StartTrial',
     ];
     const payload: any = {};
     Object.keys(data).forEach((key: any) => {

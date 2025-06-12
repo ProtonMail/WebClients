@@ -111,6 +111,7 @@ export const getSubscriptionData = async (
     paymentsApi: PaymentsApi,
     options: Options & {
         info?: boolean;
+        trial?: boolean;
     }
 ): Promise<SubscriptionData> => {
     const { planIDs, checkResult } = await getSubscriptionPrices(
@@ -119,7 +120,8 @@ export const getSubscriptionData = async (
         options.currency,
         options.cycle,
         options.billingAddress,
-        options.coupon
+        options.coupon,
+        options.trial
     )
         .then((checkResult) => {
             return {
