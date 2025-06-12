@@ -469,10 +469,10 @@
       "Discard": [
         "Descartar"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Descartar cambios"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Descartar cambios"
       ],
       "Discover ${ planName }": [
@@ -805,11 +805,11 @@
       "Keep": [
         "Conservar"
       ],
-      "Keep editing": [
-        "Continuar editando"
-      ],
       "Keep Editing": [
         "Seguir editando"
+      ],
+      "Keep editing": [
+        "Continuar editando"
       ],
       "Keep logo": [
         "Conservar logo"
@@ -1000,11 +1000,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "refresh the page": [
-        "refresque la página"
-      ],
       "Refresh the page": [
         "Refrescar la página"
+      ],
+      "refresh the page": [
+        "refresque la página"
       ],
       "Reject": [
         "Rechazar"
@@ -1180,11 +1180,11 @@
       "Select country ${ country }": [
         "Seleccione el país ${ country }"
       ],
-      "select file": [
-        "seleccionar archivo"
-      ],
       "Select file": [
         "Seleccionar archivo"
+      ],
+      "select file": [
+        "seleccionar archivo"
       ],
       "Select files": [
         "Seleccionar archivos"
@@ -4811,11 +4811,11 @@
       "Forward to": [
         "Reenviar a"
       ],
-      "Or": [
-        "O"
-      ],
       "or": [
         "o"
+      ],
+      "Or": [
+        "O"
       ],
       "With attachment": [
         "Con archivo adjunto"
@@ -7574,11 +7574,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Active al menos un método de recuperación de datos para asegurarse de tener acceso a los contenidos de la cuenta de ${ BRAND_NAME } si pierde la contraseña."
       ],
-      "active": [
-        "activa"
-      ],
       "Active": [
         "Activo"
+      ],
+      "active": [
+        "activa"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Agregue una dirección de correo @pm.me a la cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME }\" o \"Mensaje privado\" en inglés."
@@ -8025,11 +8025,11 @@
       "Data recoverable on this device": [
         "Datos recuperables en este dispositivo"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden agregar servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -8466,7 +8466,7 @@
         "Si cancela, la suscripción de ${ planTitle } no se renovará cuando expire el ${ expiryDate }."
       ],
       "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
-        "Si cambia de opinión, puede suscribirse de nuevo en cualquier momento. ¡Lamentamos verlo partir!"
+        "Si cambia de opinión, puede suscribirse de nuevo en cualquier momento. ¡Lamentamos verle partir!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentra el correo electrónico en el buzón, revise en la carpeta de spam."
@@ -9898,11 +9898,11 @@
       "User activated": [
         "El usuario fue activado."
       ],
-      "Username": [
-        "Nombre de usuario"
-      ],
       "username": [
         "nombre de usuario"
+      ],
+      "Username": [
+        "Nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -10470,7 +10470,7 @@
         "Podrá agregar estos servidores a otra puerta de enlace inmediatamente."
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
-        "Usted perderá el acceso a ${ boldPlanTitle } el ${ boldEndDate }."
+        "Perderá el acceso a ${ boldPlanTitle } el ${ boldEndDate }."
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
@@ -11117,10 +11117,10 @@
       "Amount due": [
         "Monto adeudado"
       ],
-      "And": [
+      "AND": [
         "Y"
       ],
-      "AND": [
+      "And": [
         "Y"
       ],
       "and": [
@@ -11552,11 +11552,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Si"
-      ],
       "IF": [
         "SI"
+      ],
+      "If": [
+        "Si"
       ],
       "Import all messages": [
         "Importar todos los mensajes"
@@ -11768,13 +11768,13 @@
       "Optional": [
         "Opcional"
       ],
+      "OR": [
+        "O"
+      ],
       "or": [
         "o"
       ],
       "Or": [
-        "O"
-      ],
-      "OR": [
         "O"
       ],
       "Organization name": [
@@ -13813,6 +13813,14 @@
         "Desbloquee todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceLine }. Cancele en cualquier momento."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -13831,14 +13839,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquee funciones premium al actualizar"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -17016,7 +17016,7 @@
         "Cargar archivos de cualquier tamaño"
       ],
       "Use your email, or ${ externalButton }": [
-        "Use su correo electrónico o ${ externalButton }"
+        "Use su correo electrónico u ${ externalButton }"
       ],
       "use your own email.": [
         "use su propio correo electrónico."
@@ -17909,6 +17909,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoye nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejore su productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos sus datos."
+      ],
+      "Your privacy is our mission": [
+        "Su privacidad es nuestra misión"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con funciones premium"
@@ -18197,47 +18238,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Su alias de correo electrónico @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "App de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoye nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejore su productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos sus datos."
-      ],
-      "Your privacy is our mission": [
-        "Su privacidad es nuestra misión"
       ]
     },
     "Subscription renewal state": {
@@ -19007,10 +19007,10 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
       "Change login password": [
