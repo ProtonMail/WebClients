@@ -66,9 +66,10 @@ describe('PaymentMethodActions', () => {
                 PayerID: 'payer-123',
                 Payer: 'payer-123',
             },
+            IsDefault: true,
         };
 
-        const { container } = render(<PaymentMethodActions method={method} methods={[method]} index={0} />);
+        const { container } = render(<PaymentMethodActions method={method} methods={[method]} />);
 
         expect(container).not.toHaveTextContent('Edit');
         expect(container).not.toHaveTextContent('Mark as default');
@@ -87,7 +88,7 @@ describe('PaymentMethodActions', () => {
             },
         };
 
-        const { container } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
+        const { container } = render(<PaymentMethodActions method={method} methods={[method]} />);
 
         expect(container).not.toHaveTextContent('Edit');
         expect(container).toHaveTextContent('Mark as default');
@@ -111,7 +112,7 @@ describe('PaymentMethodActions', () => {
             Autopay: Autopay.ENABLE,
         };
 
-        const { container } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
+        const { container } = render(<PaymentMethodActions method={method} methods={[method]} />);
 
         expect(container).toHaveTextContent('Edit');
         expect(container).toHaveTextContent('Mark as default');
@@ -133,9 +134,10 @@ describe('PaymentMethodActions', () => {
                 Brand: 'Mastercard',
             },
             Autopay: Autopay.ENABLE,
+            IsDefault: true,
         };
 
-        const { container } = render(<PaymentMethodActions method={method} methods={[method]} index={0} />);
+        const { container } = render(<PaymentMethodActions method={method} methods={[method]} />);
 
         expect(container).toHaveTextContent('Edit');
         expect(container).not.toHaveTextContent('Mark as default');
@@ -173,7 +175,7 @@ describe('PaymentMethodActions', () => {
             const { createModal } = useModals();
             (createModal as jest.Mock).mockReset();
 
-            const { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
+            const { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} />);
 
             fireEvent.click(await findByTestId('actionIndex-0'));
 
@@ -195,6 +197,7 @@ describe('PaymentMethodActions', () => {
                     Brand: 'Visa',
                 },
                 Autopay: Autopay.ENABLE,
+                IsDefault: true,
             };
 
             const method1: SavedPaymentMethod = {
@@ -211,6 +214,7 @@ describe('PaymentMethodActions', () => {
                     Brand: 'Mastercard',
                 },
                 Autopay: Autopay.ENABLE,
+                IsDefault: false,
             };
 
             const api = useApi();
@@ -222,14 +226,12 @@ describe('PaymentMethodActions', () => {
             const { createNotification } = useNotifications();
             (createNotification as jest.Mock).mockReset();
 
-            const { findByTestId } = render(
-                <PaymentMethodActions method={method1} methods={[method0, method1]} index={1} />
-            );
+            const { findByTestId } = render(<PaymentMethodActions method={method1} methods={[method0, method1]} />);
 
             fireEvent.click(await findByTestId('actionIndex-1'));
 
             await waitFor(async () => {
-                expect(api).toHaveBeenCalledWith(orderPaymentMethods(['id-123', 'id-000'], 'v4')); // a request to change the order of the payment methods
+                expect(api).toHaveBeenCalledWith(orderPaymentMethods(['id-123', 'id-000'], 'v5')); // a request to change the order of the payment methods
             });
             await waitFor(async () => {
                 expect(call).toHaveBeenCalled();
@@ -267,7 +269,7 @@ describe('PaymentMethodActions', () => {
             const { createNotification } = useNotifications();
             (createNotification as jest.Mock).mockReset();
 
-            const { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
+            const { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} />);
 
             fireEvent.click(await findByTestId('actionIndex-2'));
 

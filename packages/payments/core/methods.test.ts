@@ -1,8 +1,6 @@
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
-import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, UNPAID_STATE } from '@proton/shared/lib/interfaces';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 
-import { queryPaymentMethods } from './api';
 import {
     Autopay,
     FREE_SUBSCRIPTION,
@@ -528,6 +526,7 @@ describe('getLastUsedMethod()', () => {
             value: '1',
             isSaved: true,
             isExpired: false,
+            isDefault: false,
         });
     });
 });
@@ -683,7 +682,7 @@ describe('initializePaymentMethods()', () => {
         ];
 
         apiMock.mockImplementation(({ url }) => {
-            if (url === queryPaymentMethods().url) {
+            if (url === 'payments/v5/methods') {
                 return {
                     PaymentMethods: paymentMethods,
                 };

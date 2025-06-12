@@ -6,10 +6,9 @@ import { PAYMENT_METHOD_TYPES, isExpired } from '@proton/payments';
 
 interface Props {
     method: SavedPaymentMethod;
-    index?: number;
 }
 
-const PaymentMethodState = ({ method, index }: Props) => {
+const PaymentMethodState = ({ method }: Props) => {
     if (method.Type === PAYMENT_METHOD_TYPES.CARD && isExpired(method.Details)) {
         return (
             <Badge type="error" data-testid="expired">{`${c('Label on payment method').t`Expired`} ${
@@ -18,7 +17,7 @@ const PaymentMethodState = ({ method, index }: Props) => {
         );
     }
 
-    if (!index) {
+    if (method.IsDefault) {
         return <Badge type="primary" data-testid="default-badge">{c('Label on payment method').t`Default`}</Badge>;
     }
 
