@@ -13,18 +13,20 @@ import { type SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing
 import { TransferState } from '../../components/TransferManager/transfer';
 import { logError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
+import { getCacheKey, useThumbnailCacheStore } from '../../zustand/download/thumbnail.store';
 import { usePublicShareStore } from '../../zustand/public/public-share.store';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import type { DecryptedLink, SignatureIssues } from '../_links';
 import { useLink } from '../_links';
+import { decryptExtendedAttributes } from '../_links/extendedAttributes';
 import { ThumbnailType } from '../_uploads/media';
 import { waitFor } from '../_utils';
 import useDownloadDecryptionIssue from './DownloadProvider/useDownloadDecryptionIssue';
 import { useDownloadMetrics } from './DownloadProvider/useDownloadMetrics';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
-import downloadThumbnailPure from './download/downloadThumbnail';
+import { downloadThumbnailPure } from './download/downloadThumbnailPure';
 import type {
     DecryptFileKeys,
     DownloadControls,
@@ -69,6 +71,7 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
     const { getLink, getLinkPrivateKey, getLinkSessionKey, setSignatureIssues } = useLink();
     const { report } = useDownloadMetrics('preview');
     const { handleDecryptionIssue } = useDownloadDecryptionIssue();
+    const { getThumbnail, addThumbnail } = useThumbnailCacheStore();
     const { publicShare, viewOnly } = usePublicShareStore((state) => ({
         publicShare: state.publicShare,
         viewOnly: state.viewOnly,
@@ -277,9 +280,21 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
         shareId: string,
         linkId: string,
         url: string,
-        token: string
+        token: string,
+        activeRevisionId?: string
     ) => {
-        return downloadThumbnailPure(url, token, () => getKeysUnsafe(abortSignal, shareId, linkId));
+        const cacheKey = getCacheKey(linkId, shareId, activeRevisionId);
+        return downloadThumbnailPure(
+            url,
+            token,
+            () => getKeysUnsafe(abortSignal, shareId, linkId),
+            () => {
+                return getThumbnail(cacheKey);
+            },
+            (data: Uint8Array<ArrayBufferLike>) => {
+                void addThumbnail(cacheKey, data);
+            }
+        );
     };
 
     const checkFirstBlockSignature = async (
@@ -384,9 +399,59 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
             shareId,
             linkId,
             res.ThumbnailBareURL,
-            res.ThumbnailToken
+            res.ThumbnailToken,
+            activeRevision.id
         );
         return thumbnail.contents;
+    };
+
+    const getVideoData = async (abortSignal: AbortSignal, shareId: string, linkId: string, pagination: Pagination) => {
+        const { blocks, xAttr, manifestSignature } = await getBlocks(abortSignal, shareId, linkId, pagination);
+        const [keys] = await getKeysWithSignatures(abortSignal, shareId, linkId);
+        const { xattrs } = await decryptExtendedAttributes(xAttr, keys.privateKey, keys.addressPublicKeys || []);
+        return {
+            blocks,
+            xAttr: xattrs,
+            manifestSignature,
+        };
+    };
+
+    // Attention, this ignore signature issues, it's okey since it's just downloading certain blocks and not verifying the entire content
+    // Must be used for Video Streaming (or other type of streaming) only
+    const downloadSlices = (
+        link: LinkDownload,
+        blocks: DriveFileBlock[],
+        manifestSignature: string
+    ): { controls: DownloadStreamControls; stream: ReadableStream<Uint8Array> } => {
+        const controls = initDownloadStream(
+            [link],
+            {
+                getChildren,
+                getBlocks: async () =>
+                    Promise.resolve({
+                        blocks,
+                        thumbnailHashes: [],
+                        manifestSignature: manifestSignature,
+                        xAttr: '',
+                    }),
+                getKeys: getKeysGenerator(),
+                onSignatureIssue: async () => {
+                    // downloadSlices is used for Video Streaming only (so far)
+                    // We do not care of signature issues on random blocks
+                },
+                onError: (error: Error) => {
+                    if (error) {
+                        report(link.shareId, TransferState.Error, link.size, error);
+                    }
+                },
+                onFinish: () => {
+                    report(link.shareId, TransferState.Done, link.size);
+                },
+            },
+            api
+        );
+        const stream = controls.start(true);
+        return { controls, stream };
     };
 
     return {
@@ -395,5 +460,7 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
         downloadThumbnail,
         getPreviewThumbnail,
         checkFirstBlockSignature,
+        getVideoData,
+        downloadSlices,
     };
 }

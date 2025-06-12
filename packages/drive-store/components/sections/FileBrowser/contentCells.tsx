@@ -41,7 +41,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
             )}
             {!item.cachedThumbnailUrl && !item.albumProperties && (
                 <FileIcon
-                    mimeType={item.isFile ? item.mimeType : 'Folder'}
+                    mimeType={item.isFile ? item.mimeType : item.mimeType || 'Folder'}
                     alt={iconText}
                     className="file-browser-list-item--icon mr-2"
                 />
@@ -52,6 +52,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
                 isFile={item.isFile}
                 mimeType={item.mimeType}
                 className="mr-2 shrink-0"
+                haveParentAccess={!!item.parentLinkId}
             />
             <NameCellBase name={item.name} />
         </TableCell>

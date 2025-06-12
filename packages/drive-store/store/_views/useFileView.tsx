@@ -5,15 +5,20 @@ import metrics from '@proton/metrics';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import {
+    getFileExtension,
+    isIWAD,
     isProtonDocsDocument,
     isProtonDocsSpreadsheet,
     isRAWThumbnailExtractionSupported,
     isVideo,
 } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
+import type { VideoData } from '@proton/shared/lib/interfaces/drive/video';
 
+import { useVideoStreaming } from '../../hooks/util/useVideoStreaming';
 import { isIgnoredError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
+import { unleashVanillaStore } from '../../zustand/unleash/unleash.store';
 import { usePublicSession } from '../_api';
 import { useDocumentActions } from '../_documents';
 import { useDownload, useDownloadProvider } from '../_downloads';
@@ -36,12 +41,8 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
     // so even if it's wrong permissions, BE will prevent any unauthorized actions
     const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.OWNER);
     const [isPermissionsLoading, withPermissionsLoading] = useLoading(true);
-    const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile } = useFileViewBase(
-        shareId,
-        linkId,
-        { getCachedChildren, loadChildren },
-        revisionId
-    );
+    const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile, videoStreaming } =
+        useFileViewBase(shareId, linkId, { getCachedChildren, loadChildren }, revisionId);
     const navigation = useFileViewNavigation(useNavigation, shareId, link?.parentLinkId, linkId);
 
     const loadPermissions = useCallback(async (abortSignal: AbortSignal, shareId: string) => {
@@ -86,6 +87,7 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
 
             await downloadFile();
         },
+        videoStreaming,
     };
 }
 
@@ -97,11 +99,8 @@ export function usePublicFileView(
 ) {
     const { getCachedChildren, loadChildren } = usePublicLinksListing();
     const { request } = usePublicSession();
-    const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile } = useFileViewBase(
-        shareId,
-        linkId,
-        { getCachedChildren, loadChildren, customDebouncedRequest: request }
-    );
+    const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile, videoStreaming } =
+        useFileViewBase(shareId, linkId, { getCachedChildren, loadChildren, customDebouncedRequest: request });
     const navigation = usePublicFileViewNavigation(useNavigation, shareId, sortParams, link?.parentLinkId, linkId);
 
     useEffect(() => {
@@ -122,6 +121,7 @@ export function usePublicFileView(
         contents,
         contentsMimeType,
         downloadFile,
+        videoStreaming,
     };
 }
 
@@ -131,7 +131,7 @@ function useFileViewBase(
     { getCachedChildren, loadChildren, customDebouncedRequest }: UseDownloadProps,
     revisionId?: string
 ) {
-    const { downloadStream, getPreviewThumbnail } = useDownload({
+    const { downloadStream, getPreviewThumbnail, getVideoData, downloadSlices } = useDownload({
         getCachedChildren,
         loadChildren,
         customDebouncedRequest,
@@ -139,10 +139,14 @@ function useFileViewBase(
     const { getLink } = useLink();
     const { download } = useDownloadProvider();
     const [isContentLoading, withContentLoading] = useLoading(true);
+    const isVideoStreamingEnabled = unleashVanillaStore.getState().isEnabled('DriveWebVideoStreaming');
 
     const [error, setError] = useState<any>();
     const [link, setLink] = useState<DecryptedLink>();
     const [contents, setContents] = useState<Uint8Array[]>();
+
+    const [videoData, setVideoData] = useState<VideoData>();
+
     const [contentsMimeType, setContentsMimeType] = useState<string>();
     const [isFallbackContents, setIsFallbackContents] = useState<boolean>(false);
 
@@ -157,7 +161,20 @@ function useFileViewBase(
         setLink(link);
         setContentsMimeType(link.mimeType);
 
-        if (isPreviewAvailable(link.mimeType, link.size)) {
+        // These attributes are only used for Video Streaming
+        if (isVideo(link.mimeType) && isVideoStreamingEnabled) {
+            const { xAttr } = await getVideoData(abortSignal, shareId, linkId, {
+                PageSize: 1,
+                FromBlockIndex: 1,
+            });
+            if (xAttr && xAttr.Common.BlockSizes) {
+                setVideoData({
+                    blockSizes: xAttr.Common.BlockSizes,
+                });
+            }
+        }
+
+        if (isPreviewAvailable(link.mimeType, link.size) || isIWAD(link.mimeType)) {
             const { stream, controls } = downloadStream({
                 ...link,
                 shareId,
@@ -184,7 +201,7 @@ function useFileViewBase(
             } catch {
                 setContents(undefined);
             }
-        } else if (isRAWThumbnailExtractionSupported(link.mimeType, link.name.split('.').pop())) {
+        } else if (isRAWThumbnailExtractionSupported(link.mimeType, getFileExtension(link.name))) {
             // it actually does not matter what we set for the preview
             // thumbnail will be either jpg or webp
             // most recent will be webp
@@ -234,6 +251,41 @@ function useFileViewBase(
         ]);
     }, [shareId, link, contents, isFallbackContents]);
 
+    const downloadSlice = useCallback(
+        async (abortSignal: AbortSignal, indices: number[]) => {
+            if (!link) {
+                return;
+            }
+            const { blocks, manifestSignature } = await getVideoData(abortSignal, shareId, linkId, {
+                PageSize: (indices.at(-1) || 0) - (indices.at(0) || 0) + 1,
+                FromBlockIndex: (indices.at(0) || 0) + 1, // BE index starts from 1 and not 0
+            });
+            const { stream, controls } = downloadSlices(
+                {
+                    ...link,
+                    shareId,
+                    revisionId,
+                },
+                blocks,
+                manifestSignature
+            );
+            const onAbort = () => {
+                controls.cancel();
+            };
+            abortSignal.addEventListener('abort', onAbort);
+            const buffer = await streamToBuffer(stream);
+            abortSignal.removeEventListener('abort', onAbort);
+            return buffer;
+        },
+        [shareId, link, revisionId, downloadSlices]
+    );
+
+    const videoStreaming = useVideoStreaming({
+        mimeType: link?.mimeType,
+        videoData,
+        downloadSlice,
+    });
+
     return {
         isLinkLoading: !link && !error,
         isContentLoading,
@@ -242,5 +294,6 @@ function useFileViewBase(
         contents,
         contentsMimeType,
         downloadFile,
+        videoStreaming,
     };
 }

@@ -58,9 +58,20 @@ function useDriveNavigation() {
         pushToHistory('/shared-with-me');
     }, []);
 
-    const navigateToAlbum = useCallback((shareId: string, linkId: string) => {
-        pushToHistory(`/photos/albums/${shareId}/album/${linkId}`);
-    }, []);
+    const navigateToAlbum = useCallback(
+        (shareId: string, linkId: string, options?: { openShare?: boolean; addPhotos?: boolean }) => {
+            const searchParams = new URLSearchParams();
+            if (options?.openShare) {
+                searchParams.set('openShare', 'true');
+            }
+
+            const queryString = searchParams.toString();
+            const url = `/photos/albums/${shareId}/album/${linkId}${options?.addPhotos ? '/add-photos' : ''}${queryString ? `?${queryString}` : ''}`;
+
+            pushToHistory(url);
+        },
+        []
+    );
 
     const navigateToPhotos = useCallback(() => {
         pushToHistory('/photos');

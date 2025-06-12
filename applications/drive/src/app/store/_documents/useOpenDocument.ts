@@ -19,7 +19,7 @@ export type DocumentType = 'doc' | 'sheet';
 
 // TODO: we will rename the values in `DocumentType` to 'document' and 'spreadsheet' soon, but for now
 // we just convert the new names to the old ones to support both naming patterns to keep changes small.
-function tmpConvertNewTypeToOld(type: DocumentType | ProtonDocumentType): DocumentType {
+export function tmpConvertNewDocTypeToOld(type: DocumentType | ProtonDocumentType): DocumentType {
     switch (type) {
         case 'document':
             return 'doc';
@@ -99,7 +99,7 @@ export const useOpenDocument = () => {
      */
     const openDocumentWindow = (action: DocumentAction & { window: Window }) => {
         const { type: originalType, mode, window } = action;
-        const type = tmpConvertNewTypeToOld(originalType);
+        const type = tmpConvertNewDocTypeToOld(originalType);
 
         const href = getAppHref(`/${type}`, APPS.PROTONDOCS, getLocalID());
         const url = new URL(href);

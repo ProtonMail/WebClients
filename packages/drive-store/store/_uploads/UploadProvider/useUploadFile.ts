@@ -613,7 +613,12 @@ export default function useUploadFile() {
                             });
                         }
 
-                        return { fileId: createdFileRevision.fileID, fileName: createdFileRevision.filename, photo };
+                        return {
+                            shareId,
+                            fileId: createdFileRevision.fileID,
+                            fileName: createdFileRevision.filename,
+                            photo,
+                        };
                     },
                     5
                 ),

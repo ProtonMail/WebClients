@@ -21,6 +21,8 @@ interface PortalPreviewProps {
     onRestore?: () => void;
     onShare?: () => void;
     onSelectCover?: () => void;
+    onFavorite?: () => void;
+    isFavorite?: boolean;
     className?: string;
     navigationControls?: ReactNode;
 }
@@ -34,6 +36,8 @@ const PortalPreview = (
         onRestore,
         onShare,
         onSelectCover,
+        onFavorite,
+        isFavorite,
         date,
         className,
         navigationControls,
@@ -41,12 +45,9 @@ const PortalPreview = (
     }: PortalPreviewProps & ModalStateProps,
     ref: Ref<HTMLDivElement>
 ) => {
-    const { contents, contentsMimeType, link, error, isLinkLoading, isContentLoading, downloadFile } = useFileView(
-        shareId,
-        linkId,
-        false,
-        revisionId
-    );
+    const { contents, contentsMimeType, link, error, isLinkLoading, isContentLoading, downloadFile, videoStreaming } =
+        useFileView(shareId, linkId, false, revisionId);
+
     const signatureStatus = useMemo(() => {
         if (!link) {
             return;
@@ -59,6 +60,7 @@ const PortalPreview = (
                 signatureIssues={link.signatureIssues}
                 isAnonymous={link.isAnonymous}
                 className="ml-2 color-danger"
+                haveParentAccess={!!link.parentLinkId}
             />
         );
     }, [link]);
@@ -97,6 +99,7 @@ const PortalPreview = (
                     sharedStatus={getSharedStatus(link)}
                     fileSize={link?.size}
                     contents={contents}
+                    videoStreaming={videoStreaming}
                     onClose={() => {
                         modalProps.onClose();
                         modalProps.onExit();
@@ -107,6 +110,8 @@ const PortalPreview = (
                     onRestore={onRestore}
                     onShare={onShare}
                     onSelectCover={onSelectCover}
+                    onFavorite={onFavorite}
+                    isFavorite={isFavorite}
                     date={date}
                     navigationControls={navigationControls}
                     signatureStatus={signatureStatus}

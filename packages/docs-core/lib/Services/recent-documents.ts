@@ -1,10 +1,10 @@
 import { getErrorString, ServerTime } from '@proton/docs-shared'
-import type { DriveCompat } from '@proton/drive-store'
+import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import type { DocsApi } from './../Api/DocsApi'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { RecentDocumentAPIItem } from './../Api/Types/GetRecentsResponse'
 import type { CacheService } from './CacheService'
-import { nodeMetaUniqueId } from '@proton/drive-store/lib'
+import { nodeMetaUniqueId } from '@proton/drive-store/lib/NodeMeta'
 import { BasePropertiesState } from '@proton/docs-shared'
 import { isProtonDocsDocument, type ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
