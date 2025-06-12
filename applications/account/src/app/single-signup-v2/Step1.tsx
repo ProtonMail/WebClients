@@ -54,7 +54,7 @@ import {
 } from '@proton/shared/lib/helpers/planIDs';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import simpleLoginLogo from '@proton/styles/assets/img/illustrations/simplelogin-logo.svg';
 import { useFlag } from '@proton/unleash';
@@ -217,6 +217,7 @@ const Step1 = ({
         coupon: model.subscriptionData.checkResult.Coupon?.Code || undefined,
         billingAddress: model.subscriptionData.billingAddress,
         checkResult: model.subscriptionData.checkResult,
+        trial: model.subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial || undefined,
     };
     const options: OptimisticOptions = {
         ...subscriptionCheckOptions,
@@ -243,6 +244,7 @@ const Step1 = ({
         cycle: Cycle;
         billingAddress: BillingAddress;
         coupon?: string;
+        trial?: boolean;
     }) => {
         const paymentsApi = await getSilentPaymentApi();
         return getSubscriptionPrices(
@@ -251,7 +253,8 @@ const Step1 = ({
             values.currency,
             values.cycle,
             values.billingAddress,
-            values.coupon
+            values.coupon,
+            values.trial
         );
     };
 
@@ -268,6 +271,7 @@ const Step1 = ({
                         planIDs: optimistic.planIDs,
                         checkResult,
                         billingAddress: optimistic.billingAddress,
+                        trial: optimistic.trial,
                     },
                     optimistic: {},
                 }));
@@ -307,6 +311,7 @@ const Step1 = ({
         const completeCheckOptions = {
             ...subscriptionCheckOptions,
             coupon: subscriptionCheckOptions.coupon || signupParameters.coupon,
+            trial: subscriptionCheckOptions.trial || signupParameters.trial,
             ...mergedCheckOptions,
         };
 
@@ -370,7 +375,7 @@ const Step1 = ({
         if (model.loadingDependencies) {
             return;
         }
-        measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
+        void measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
         return handleOptimistic({ cycle });
     };
 
@@ -378,7 +383,7 @@ const Step1 = ({
         if (model.loadingDependencies) {
             return;
         }
-        measure({ event: TelemetryAccountSignupEvents.planSelect, dimensions: { plan: planName } });
+        void measure({ event: TelemetryAccountSignupEvents.planSelect, dimensions: { plan: planName } });
 
         const currency = currencyOverride ?? getPlanFromPlanIDs(model.plansMap, planIDs)?.Currency;
         const checkOptions: Partial<OptimisticOptions> = {
@@ -434,6 +439,11 @@ const Step1 = ({
     const cta = (() => {
         if (mode === SignupMode.MailReferral && selectedPlan.Name !== PLANS.FREE) {
             return c('Action in trial plan').t`Try free for 30 days`;
+        }
+
+        const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+        if (isTrial) {
+            return c('Action').t`Try for free`;
         }
 
         return c('pass_signup_2023: Action').t`Start using ${appName} now`;
@@ -495,7 +505,8 @@ const Step1 = ({
         checkResult: options.checkResult,
     });
 
-    const showRenewalNotice = !hasSelectedFree;
+    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+    const showRenewalNotice = !hasSelectedFree && !isTrial;
     const renewalNotice = showRenewalNotice && (
         <div className="w-full text-sm color-norm opacity-70">
             *
@@ -950,7 +961,7 @@ const Step1 = ({
                                                 'flex justify-center'
                                             )}
                                         >
-                                            <Guarantee />
+                                            {!signupParameters.trial && <Guarantee />}
                                         </div>
                                     </>
                                 )}
@@ -1377,7 +1388,12 @@ const Step1 = ({
                     <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
                         <BoxHeader
                             step={step++}
-                            title={c('pass_signup_2023: Header').t`Checkout`}
+                            title={(() => {
+                                const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+                                return isTrial
+                                    ? c('b2b_trials_2025: Header').t`Payment details`
+                                    : c('pass_signup_2023: Header').t`Checkout`;
+                            })()}
                             right={!hasPlanSelector ? currencySelector : null}
                         />
                         <BoxContent>
@@ -1399,6 +1415,7 @@ const Step1 = ({
                                 isDarkBg={isDarkBg}
                                 signupParameters={signupParameters}
                                 showRenewalNotice={showRenewalNotice}
+                                app={app}
                                 onPay={async (payment, type) => {
                                     if (payment === 'signup-token') {
                                         await handleCompletion(model.subscriptionData, 'signup-token');

@@ -72,6 +72,7 @@ export interface Props {
     chargebeePaypal: ChargebeePaypalProcessorHook;
     hasSomeVpnPlan: boolean;
     user: User | undefined;
+    isTrial?: boolean;
 }
 
 export interface NoApiProps extends Props {
@@ -135,6 +136,7 @@ export const PaymentsNoApi = ({
     onChargebeeInitialized,
     showCardIcons,
     savedPaymentMethods,
+    isTrial,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -175,7 +177,7 @@ export const PaymentsNoApi = ({
         );
     }
 
-    if (amount <= 0) {
+    if (amount <= 0 && !isTrial) {
         const price = (
             <Price key="price" currency={currency}>
                 {0}

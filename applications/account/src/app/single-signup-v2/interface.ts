@@ -48,6 +48,7 @@ export interface OptimisticOptions {
     billingAddress: BillingAddress;
     checkResult: RequiredCheckResponse;
     coupon?: string;
+    trial?: boolean;
 }
 
 export const enum Steps {
@@ -119,6 +120,7 @@ export interface Options {
     planIDs: PlanIDs | undefined;
     billingAddress: BillingAddress;
     skipUpsell?: boolean;
+    trial?: boolean;
 }
 
 export interface Upsell {
@@ -185,9 +187,10 @@ export interface PlanParameters {
     plan: Plan;
 }
 
-export interface SignupParameters2 extends Omit<ReturnType<typeof getSignupSearchParams>, 'invite'> {
+export interface SignupParameters2 extends Omit<ReturnType<typeof getSignupSearchParams>, 'invite' | 'trial'> {
     localID: number | undefined;
     mode: SignupMode;
     invite?: SignupInviteParameters;
     signIn?: 'standard' | 'redirect';
+    trial?: boolean;
 }

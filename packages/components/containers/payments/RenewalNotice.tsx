@@ -1,11 +1,11 @@
 import { type ReactNode } from 'react';
 
-import { addMonths } from 'date-fns';
+import { addDays, addMonths, getUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { getReadableTime } from '@proton/components/components/time/Time';
+import Time, { getReadableTime } from '@proton/components/components/time/Time';
 import type { CheckoutModifiers } from '@proton/payments';
 import {
     CYCLE,
@@ -29,6 +29,7 @@ import {
 import { getOptimisticRenewCycleAndPrice, isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
 import type { Coupon } from '@proton/shared/lib/interfaces';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces/Subscription';
 
 type RenewalNoticeProps = {
     cycle: CYCLE;
@@ -443,6 +444,21 @@ export const getCheckoutRenewNoticeText = ({
     });
 };
 
+const getTrialRenewalNoticeText = ({ checkResult }: { checkResult: RequiredCheckResponse }) => {
+    // hardcoded 14 days, for now. Need to get from BE
+    const trialEndDate = addDays(new Date(), 14);
+    const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
+    const cycle = checkResult.RenewCycle;
+
+    if (cycle === CYCLE.MONTHLY) {
+        return c('b2b_trials_2025_Info')
+            .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews monthly on ${formattedDate}. You won’t be charged if you cancel before ${formattedDate}.`;
+    }
+
+    return c('b2b_trials_2025_Info')
+        .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews every ${cycle} months on ${formattedDate}. You won’t be charged if you cancel before ${formattedDate}.`;
+};
+
 export const getCheckoutRenewNoticeTextFromCheckResult = ({
     checkResult,
     plansMap,
@@ -458,6 +474,12 @@ export const getCheckoutRenewNoticeTextFromCheckResult = ({
     subscription?: Subscription;
     app: APP_NAMES;
 }) => {
+    const isTrial = checkResult.SubscriptionMode === SubscriptionMode.Trial;
+
+    if (isTrial) {
+        return getTrialRenewalNoticeText({ checkResult });
+    }
+
     return getCheckoutRenewNoticeText({
         plansMap,
         planIDs,
