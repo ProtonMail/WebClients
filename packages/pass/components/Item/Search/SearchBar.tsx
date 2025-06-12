@@ -6,9 +6,9 @@ import { c } from 'ttag';
 import { Button, Input } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { getItemTypeOptions } from '@proton/pass/components/Item/Filters/Type';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
+import { useItemFilters } from '@proton/pass/hooks/items/useItemFilters';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import { useSearchShortcut } from '@proton/pass/hooks/useSearchShortcut';
 import { selectShare } from '@proton/pass/store/selectors';
@@ -30,6 +30,7 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
     const { onTelemetry } = usePassCore();
     const scope = useItemScope();
     const { filters, setFilters } = useNavigationFilters();
+    const itemTypeOptions = useItemFilters();
 
     /** Keep reference for telemetry purposes */
     const initial = useRef<MaybeNull<string>>(filters.search);
@@ -45,8 +46,7 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
     const placeholder = useMemo(() => {
         if (trash) return c('Placeholder').t`Search in Trash`;
 
-        const ITEM_TYPE_TO_LABEL_MAP = getItemTypeOptions();
-        const pluralItemType = ITEM_TYPE_TO_LABEL_MAP[type].label.toLowerCase();
+        const pluralItemType = itemTypeOptions[type]?.label.toLowerCase();
 
         const vaultName = (() => {
             switch (scope) {
