@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
+import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
@@ -26,6 +27,8 @@ import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
+import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import { type MaybeNull, type NewAliasFormValues, SpotlightMessage } from '@proton/pass/types';
@@ -74,6 +77,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
             aliasSuffix: undefined,
             files: filesFormInitializer(),
             mailboxes: [],
+            extraFields: [],
             ...defaults,
         }),
         []
@@ -81,11 +85,13 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
     const form = useFormik<NewAliasFormValues>({
         initialValues,
-        onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes, files }) => {
+        onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes, files, extraFields }) => {
             if (needsUpgrade) return;
 
             if (aliasPrefix !== undefined && aliasSuffix !== undefined) {
                 const optimisticId = uniqueId();
+                const aliasEmail = aliasPrefix + aliasSuffix.value;
+                const sanitizeOTP = bindOTPSanitizer(aliasEmail, name);
 
                 onSubmit({
                     type: 'alias',
@@ -98,12 +104,12 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                     },
                     files,
                     content: {},
-                    extraFields: [],
+                    extraFields: obfuscateExtraFields(extraFields.map(sanitizeExtraField(sanitizeOTP))),
                     extraData: {
                         mailboxes,
                         prefix: aliasPrefix,
                         signedSuffix: aliasSuffix.signature,
-                        aliasEmail: aliasPrefix + aliasSuffix.value,
+                        aliasEmail,
                     },
                 });
             }
@@ -270,6 +276,8 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                     disabled={unverified}
                                 />
                             </FieldsetCluster>
+
+                            <ExtraFieldGroup form={form} />
                         </Form>
                     </FormikProvider>
                 </>

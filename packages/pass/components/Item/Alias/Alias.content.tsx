@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import aliasContactSpotlightImg from '@proton/pass/assets/alias/alias-contact-spotlight.svg';
+import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -16,6 +17,7 @@ import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
+import { deobfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
@@ -33,6 +35,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     const dispatch = useDispatch();
 
     const { data: item, shareId, itemId } = revision;
+    const extraFields = deobfuscateExtraFields(item.extraFields);
 
     const aliasEmail = revision.aliasEmail!;
     const note = useDeobfuscatedValue(item.metadata.note);
@@ -173,6 +176,10 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                             <div>{`${forwardText} • ${replyText} • ${blockedText}`}</div>
                         </FieldBox>
                     </FieldsetCluster>
+
+                    {Boolean(extraFields.length) && (
+                        <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />
+                    )}
                 </>
             )}
         </>
