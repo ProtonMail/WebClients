@@ -2,7 +2,7 @@ import type { Api, ChargebeeUserExists, User } from '@proton/shared/lib/interfac
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { isDelinquent } from '@proton/shared/lib/user/helpers';
 
-import { queryPaymentMethods } from './api';
+import { getPaymentMethods } from './api';
 import { type BillingAddress } from './billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
 import {
@@ -29,7 +29,6 @@ import type {
     SavedPaymentMethodExternal,
 } from './interface';
 import { getIsB2BAudienceFromPlan } from './plan/helpers';
-import { formatPaymentMethods } from './sepa';
 import { type BillingPlatform } from './subscription/constants';
 import { getHas2024OfferCoupon } from './subscription/helpers';
 import { type Subscription } from './subscription/interface';
@@ -261,6 +260,7 @@ export class PaymentMethods {
                     value: paymentMethod.ID,
                     isSaved: true,
                     isExpired,
+                    isDefault: !!paymentMethod.IsDefault,
                 };
 
                 return method;
@@ -314,7 +314,7 @@ export class PaymentMethods {
             },
         ]
             .filter(({ available }) => available)
-            .map(({ type }) => ({ type, value: type, isSaved: false }));
+            .map(({ type }) => ({ type, value: type, isSaved: false, isDefault: false }));
 
         return methods;
     }
@@ -509,11 +509,6 @@ export class PaymentMethods {
     private isBF2024Offer() {
         return getHas2024OfferCoupon(this.coupon) || this.buysPassLifetime();
     }
-}
-
-async function getPaymentMethods(api: Api): Promise<SavedPaymentMethod[]> {
-    const response = await api<{ PaymentMethods: SavedPaymentMethod[] }>(queryPaymentMethods());
-    return formatPaymentMethods(response.PaymentMethods ?? []);
 }
 
 /**

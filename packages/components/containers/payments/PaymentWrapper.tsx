@@ -95,6 +95,7 @@ const PaymentWrapper = ({
             directDebit={directDebit}
             onChargebeeInitialized={onChargebeeInitialized}
             showCardIcons={showCardIcons}
+            savedPaymentMethods={methods.savedMethods ?? []}
         />
     );
 };

@@ -1,11 +1,5 @@
 import type { PayPalDetails, PaymentMethodStatus, SavedCardDetails, SavedPaymentMethod } from '@proton/payments';
-import {
-    Autopay,
-    PAYMENT_METHOD_TYPES,
-    PAYMENT_TOKEN_STATUS,
-    queryPaymentMethods,
-    createTokenV4,
-} from '@proton/payments';
+import { Autopay, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS, createTokenV4 } from '@proton/payments';
 import lastItem from '@proton/utils/lastItem';
 
 import { addApiMock, addApiResolver } from '../api';
@@ -73,7 +67,7 @@ export function mockPaymentMethods(methods = PAYMENT_METHODS_MOCK) {
     };
 
     const applyMock = () => {
-        addApiMock(queryPaymentMethods().url, () => innerMethods);
+        addApiMock('payments/v5/methods', () => innerMethods);
     };
 
     applyMock();

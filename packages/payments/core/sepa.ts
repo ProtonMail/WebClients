@@ -1,5 +1,7 @@
 import { type ExtractIBANResult, extractIBAN as ibantoolsExtractIBAN } from 'ibantools';
 
+import orderBy from '@proton/utils/orderBy';
+
 import { PAYMENT_METHOD_TYPES } from './constants';
 import type { PaymentMethodSepa, SavedPaymentMethod } from './interface';
 
@@ -60,6 +62,22 @@ export function formatPaymentMethod(method: SavedPaymentMethod): SavedPaymentMet
     return method;
 }
 
+export function markDefaultPaymentMethod(paymentMethods: SavedPaymentMethod[]): SavedPaymentMethod[] {
+    if (!paymentMethods || paymentMethods.length === 0) {
+        return paymentMethods;
+    }
+
+    const sortedPaymentMethods = orderBy(paymentMethods, 'Order');
+
+    return sortedPaymentMethods.map(
+        (paymentMethod, index) =>
+            ({
+                ...paymentMethod,
+                IsDefault: index === 0,
+            }) as SavedPaymentMethod
+    );
+}
+
 export function formatPaymentMethods(paymentMethods: SavedPaymentMethod[]): SavedPaymentMethod[] {
-    return paymentMethods.map(formatPaymentMethod);
+    return markDefaultPaymentMethod(paymentMethods.map(formatPaymentMethod));
 }
