@@ -1,15 +1,13 @@
+import { MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { MessageImage, MessageRemoteImage } from '../../store/messages/messagesTypes';
 import { getRemoteSelector } from './messageImages';
 
-export const ATTRIBUTES_TO_FIND = ['url', 'xlink:href', 'src', 'srcset', 'svg', 'background', 'poster'];
-export const ATTRIBUTES_TO_LOAD = ['url', 'xlink:href', 'src', 'svg', 'background', 'poster'];
-
 export const urlCreator = () => window.URL || window.webkitURL;
 
 export const removeProtonPrefix = (match: HTMLElement) => {
-    ATTRIBUTES_TO_LOAD.forEach((attr) => {
+    MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.forEach((attr) => {
         const protonAttr = `proton-${attr}`;
         if (match.hasAttribute(protonAttr)) {
             match.setAttribute(attr, match.getAttribute(protonAttr) as string);
@@ -63,7 +61,7 @@ export const loadImages = (images: MessageRemoteImage[], messageDocument?: Eleme
     const foundElements = messageDocument ? messageDocument.querySelectorAll(selector) : [];
 
     foundElements.forEach((element) => {
-        ATTRIBUTES_TO_LOAD.forEach((attr) => {
+        MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.forEach((attr) => {
             const protonAttr = `proton-${attr}`;
             if (element.hasAttribute(protonAttr)) {
                 const elementValue = element.getAttribute(protonAttr) as string;
