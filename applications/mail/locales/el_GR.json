@@ -1183,11 +1183,11 @@
       "Select ${ planTitle }": [
         "Επιλογή ${ planTitle }"
       ],
-      "Select All": [
-        "Επιλογή Όλων"
-      ],
       "Select all": [
         "Επιλογή όλων"
+      ],
+      "Select All": [
+        "Επιλογή Όλων"
       ],
       "Select all messages": [
         "Επιλογή όλων των μηνυμάτων"
@@ -1465,11 +1465,11 @@
       "Upgrade": [
         "Αναβάθμιση"
       ],
-      "Upgrade Now": [
-        "Αναβαθμίστε Τώρα"
-      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade Now": [
+        "Αναβαθμίστε Τώρα"
       ],
       "Upload and share files": [
         "Μεταφορτώστε και μοιραστείτε αρχεία"
@@ -6946,8 +6946,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8687,11 +8686,11 @@
       "Always move sender's emails": [
         "Μετακινείτε πάντα τα μηνύματα ηλεκτρονικού ταχυδρομείου του αποστολέα"
       ],
-      "And": [
-        "Και"
-      ],
       "AND": [
         "ΚΑΙ"
+      ],
+      "And": [
+        "Και"
       ],
       "and": [
         "και"
@@ -8918,11 +8917,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "If": [
-        "Αν"
-      ],
       "IF": [
         "ΑΝ"
+      ],
+      "If": [
+        "Αν"
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
@@ -9060,14 +9059,14 @@
       "Optional": [
         "Προαιρετικό"
       ],
+      "OR": [
+        "'Η"
+      ],
       "or": [
         "ή"
       ],
       "Or": [
         "Ή"
-      ],
-      "OR": [
-        "'Η"
       ],
       "Original link": [
         "Αρχικός σύνδεσμος"
@@ -9959,6 +9958,14 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Αποκτήστε ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -9980,14 +9987,6 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Αποκτήστε ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -12719,6 +12718,47 @@
         "Για ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
@@ -12977,47 +13017,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
