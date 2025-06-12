@@ -15,7 +15,7 @@ import { useNewsletterSubscriptionSpotlight } from '../view/NewsletterSubscripti
 import SidebarItem from './SidebarItem';
 
 interface SidebarItemProps {
-    hideNotificationDot: boolean;
+    hideNotificationDot?: boolean;
     collapsed: boolean;
 }
 
@@ -93,7 +93,7 @@ export const MailSidebarCustomView = ({ collapsed }: Props) => {
                 id="toggle-views"
                 spaceAbove
             />
-            {displayView && <NewsletterSubscriptionButton collapsed={collapsed} hideNotificationDot />}
+            {displayView && <NewsletterSubscriptionButton collapsed={collapsed} />}
         </>
     );
 };
