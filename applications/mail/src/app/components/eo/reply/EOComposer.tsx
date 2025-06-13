@@ -3,12 +3,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { EditorMetadata } from '@proton/components';
 import { useHandler } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { EO_DEFAULT_MAILSETTINGS, EO_DEFAULT_USER_SETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
-import { MESSAGE_ACTIONS } from '../../../constants';
 import { setContent } from '../../../helpers/message/messageContent';
 import { createNewDraft } from '../../../helpers/message/messageDraft';
 import { mergeMessages } from '../../../helpers/message/messages';

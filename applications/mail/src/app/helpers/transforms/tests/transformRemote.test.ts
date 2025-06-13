@@ -1,10 +1,10 @@
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 import type { MessageState } from '../../../store/messages/messagesTypes';
-import { createDocument } from '../../test/message';
 import { transformRemote } from '../transformRemote';
 
 describe('transformRemote', () => {
@@ -39,7 +39,7 @@ describe('transformRemote', () => {
             data: {
                 ID: 'messageID',
             } as Message,
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
 
         const mailSettings = {
@@ -70,7 +70,7 @@ describe('transformRemote', () => {
             data: {
                 ID: 'messageID',
             } as Message,
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
 
         const mailSettings = {
@@ -110,7 +110,7 @@ describe('transformRemote', () => {
                     IsProton: 1,
                 },
             } as Message,
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
 
         const mailSettings = {
@@ -148,7 +148,7 @@ describe('transformRemote', () => {
                     IsProton: 0,
                 },
             } as Message,
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
 
         const mailSettings = {
@@ -182,7 +182,7 @@ describe('transformRemote', () => {
             data: {
                 ID: 'messageID',
             } as Message,
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
 
         const mailSettings = {
@@ -217,7 +217,7 @@ describe('transformRemote', () => {
             data: {
                 ID: 'messageID',
             } as Message,
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
 
         const mailSettings = {

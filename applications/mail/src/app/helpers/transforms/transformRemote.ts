@@ -1,3 +1,4 @@
+import { MESSAGE_IMAGE_ATTRIBUTES_TO_FIND, MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasShowRemote } from '@proton/shared/lib/mail/images';
@@ -10,16 +11,9 @@ import { removeLineBreaks } from 'proton-mail/helpers/string';
 import type { MessageRemoteImage, MessageState } from '../../store/messages/messagesTypes';
 import { querySelectorAll } from '../message/messageContent';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
-import {
-    ATTRIBUTES_TO_FIND,
-    ATTRIBUTES_TO_LOAD,
-    hasToSkipProxy,
-    loadFakeImages,
-    loadRemoteImages,
-    loadSkipProxyImages,
-} from '../message/messageRemotes';
+import { hasToSkipProxy, loadFakeImages, loadRemoteImages, loadSkipProxyImages } from '../message/messageRemotes';
 
-const SELECTOR = ATTRIBUTES_TO_FIND.map((name) => {
+const SELECTOR = MESSAGE_IMAGE_ATTRIBUTES_TO_FIND.map((name) => {
     if (name === 'src') {
         return '[proton-src]:not([proton-src^="cid"]):not([proton-src^="data"])';
     }
@@ -89,7 +83,7 @@ export const transformRemote = (
 
         let url = '';
 
-        ATTRIBUTES_TO_LOAD.some((attribute) => {
+        MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.some((attribute) => {
             url = match.getAttribute(`proton-${attribute}`) || '';
             return url && url !== '';
         });

@@ -4,12 +4,12 @@ import {
     MESSAGE_IFRAME_PRINT_HEADER_ID,
     MESSAGE_IFRAME_ROOT_ID,
 } from '@proton/mail-renderer/constants';
+import { locateHead } from '@proton/mail/helpers/locateHead';
 import svg from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
 
-import { locateHead } from '../../../helpers/message/messageHead';
-import type { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from 'proton-mail/store/messages/messagesTypes';
 
-import cssStyles from '../MessageIframe.raw.scss';
+import cssStyles from './MessageIframe.raw.scss';
 
 type Options = {
     emailContent: string;

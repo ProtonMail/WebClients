@@ -8169,6 +8169,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/mail-renderer@workspace:packages/mail-renderer"
   dependencies:
+    "@proton/mail": "workspace:^"
     "@proton/styles": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"

@@ -5,3 +5,10 @@ export const MESSAGE_IFRAME_TOGGLE_ID = 'proton-toggle';
 export const MESSAGE_IFRAME_PRINT_CLASS = 'proton-print';
 export const MESSAGE_IFRAME_PRINT_HEADER_ID = 'proton-print-header';
 export const MESSAGE_IFRAME_PRINT_FOOTER_ID = 'proton-print-footer';
+
+export enum MESSAGE_ACTIONS {
+    NEW = -1,
+    REPLY = 0,
+    REPLY_ALL = 1,
+    FORWARD = 2,
+}
