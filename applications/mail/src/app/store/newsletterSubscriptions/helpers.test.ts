@@ -11,6 +11,7 @@ import {
     getPaginationDataFromNextPage,
     getSortParams,
     getTabData,
+    moveIdToTop,
     normalizeSubscriptions,
 } from './helpers';
 import { SortSubscriptionsValue } from './interface';
@@ -246,6 +247,27 @@ describe('newsletterSubscriptions helpers', () => {
                 AnchorID: '123',
                 AnchorLastReceivedTime: 0,
             });
+        });
+    });
+
+    describe('moveIdToTop', () => {
+        it('should move an existing ID to the top', () => {
+            const list = ['a', 'b', 'c', 'd'];
+            expect(moveIdToTop(list, 'c')).toEqual(['c', 'a', 'b', 'd']);
+        });
+
+        it('should add the ID to the top if not present', () => {
+            const list = ['a', 'b', 'c'];
+            expect(moveIdToTop(list, 'z')).toEqual(['z', 'a', 'b', 'c']);
+        });
+
+        it('should keep the list unchanged if the ID is already at the top', () => {
+            const list = ['x', 'y', 'z'];
+            expect(moveIdToTop(list, 'x')).toEqual(['x', 'y', 'z']);
+        });
+
+        it('should work with an empty list', () => {
+            expect(moveIdToTop([], 'foo')).toEqual(['foo']);
         });
     });
 });
