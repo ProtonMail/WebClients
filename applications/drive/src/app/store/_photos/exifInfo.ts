@@ -25,7 +25,11 @@ if (typeof DOMParser !== 'undefined') {
 }
 
 export const getExifInfo = async (file: File, mimeType: string): Promise<ExpandedTags | undefined> => {
-    if (isSVG(mimeType)) {
+    // Skip EXIF extraction for videos to avoid reading large files into memory
+    // Videos don't typically contain useful EXIF data, and reading large video files
+    // can cause NotReadableError in Chromium browsers
+    // SVG doesn't have any EXIF info as well
+    if (isSVG(mimeType) || isVideo(mimeType)) {
         return undefined;
     }
 
