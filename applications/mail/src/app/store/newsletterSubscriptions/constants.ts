@@ -13,6 +13,7 @@ export const DEFAULT_SUBSCRIPTION_COUNTS: SubscriptionCounts = {
 };
 
 export const DEFAULT_PAGINATION_PAGE_SIZE = 100;
+export const MAX_FOLDER_NAME_LENGTH = 100;
 export const DEFAULT_SORTING = SortSubscriptionsValue.RecentlyReceived;
 
 const initialTabState: NewsletterSubscriptionsTabState = {
