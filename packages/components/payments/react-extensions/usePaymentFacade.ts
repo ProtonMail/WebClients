@@ -196,6 +196,7 @@ export const usePaymentFacade = (
         onBeforeSepaPayment,
         planIDs,
         subscription,
+        isTrial,
     }: {
         amount: number;
         currency: Currency;
@@ -237,6 +238,7 @@ export const usePaymentFacade = (
         onBeforeSepaPayment?: () => Promise<boolean>;
         planIDs?: PlanIDs;
         subscription?: Subscription;
+        isTrial?: boolean;
     },
     {
         api,
@@ -445,7 +447,7 @@ export const usePaymentFacade = (
                         paymentProcessorType: chargebeeCard.meta.type,
                     }
                 ),
-            verifyOnly: flow === 'add-card',
+            verifyOnly: flow === 'add-card' || isTrial,
         },
         {
             api,

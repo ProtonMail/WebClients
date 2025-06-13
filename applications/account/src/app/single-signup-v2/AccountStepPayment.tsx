@@ -64,7 +64,6 @@ interface Props {
     withLoadingSignup: WithLoading;
     measure: Measure;
     defaultMethod: PAYMENT_METHOD_TYPES | undefined;
-    takeNullCreditCard?: boolean;
     handleOptimistic: (optimistic: Partial<OptimisticOptions>) => void;
     onBillingAddressChange: OnBillingAddressChange;
     terms?: ReactNode;
@@ -152,6 +151,7 @@ const AccountStepPayment = ({
     const user = model.session?.resumedSessionResult.User;
 
     const billingAddress = model.subscriptionData.billingAddress;
+    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
@@ -175,7 +175,7 @@ const AccountStepPayment = ({
                     paymentProcessorType,
                 };
 
-                const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
+                const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !isTrial;
                 if (isFreeSignup) {
                     await onPay(extendedTokenPayment, undefined);
                     return;
@@ -310,8 +310,6 @@ const AccountStepPayment = ({
         paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CARD ||
         paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
     const showAlert3ds = selectedMethodCard && !isSignupPass;
-
-    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
     const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue) || isTrial;
     const loadingPaymentsForm = model.loadingDependencies;

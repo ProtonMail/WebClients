@@ -138,7 +138,8 @@ type SubscribeDataNoPayment = CommonSubscribeData;
 export type SubscribeData = SubscribeDataV4 | SubscribeDataV5 | SubscribeDataNoPayment;
 
 function isCommonSubscribeData(data: any): data is CommonSubscribeData {
-    return !!data.Plans && !!data.Currency && !!data.Cycle && !!data.Amount && !!data.Currency;
+    const props = ['Plans', 'Currency', 'Cycle', 'Amount'];
+    return data && props.every((prop) => Object.prototype.hasOwnProperty.call(data, prop));
 }
 
 function isSubscribeDataV4(data: any): data is SubscribeDataV4 {
