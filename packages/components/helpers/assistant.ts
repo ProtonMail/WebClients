@@ -25,18 +25,22 @@ export const B2B_PLANS_SUPPORTING_SCRIBE = [
     PLANS.BUNDLE_PRO_2024,
 ];
 
-const PLANS_SUPPORTING_SCRIBE = [
+export const PLANS_SUPPORTING_SCRIBE = [
     ...B2C_PLANS_INCLUDING_SCRIBE,
     ...B2C_PLANS_SUPPORTING_SCRIBE,
     ...B2B_PLANS_SUPPORTING_SCRIBE,
 ];
 
 export const isScribeSupported = (organization?: Organization, user?: UserModel): boolean => {
+    if (user?.isFree) {
+        return true;
+    }
+
     if (!organization) {
         return false;
     }
 
-    return PLANS_SUPPORTING_SCRIBE.includes(organization.PlanName) || (user ? user.isFree : false);
+    return PLANS_SUPPORTING_SCRIBE.includes(organization.PlanName);
 };
 
 export const isB2bPlanSupportingScribe = (organization?: Organization, user?: UserModel): boolean => {
