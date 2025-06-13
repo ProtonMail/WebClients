@@ -243,7 +243,7 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
 
     return (
         <ItemCreatePanel
-            discardable={!form.dirty}
+            discardable={!(form.dirty && showForm)}
             formId={FORM_ID}
             handleCancelClick={handleCancelClick}
             cancelIcon={showForm ? 'arrow-left' : 'cross'}
