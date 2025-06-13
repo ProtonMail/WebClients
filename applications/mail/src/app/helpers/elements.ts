@@ -45,7 +45,7 @@ export interface TypeParams {
 export const getCurrentType = ({ labelID, mailSettings, location }: TypeParams) =>
     isConversationMode(labelID, mailSettings, location) ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
 
-export const isMessage = (element: Element | undefined): boolean =>
+export const isMessage = (element: Element | undefined): element is Message =>
     typeof (element as Message)?.ConversationID === 'string';
 export const isConversation = (element: Element | undefined): boolean => !isMessage(element);
 
