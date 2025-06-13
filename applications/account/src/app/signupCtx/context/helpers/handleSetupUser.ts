@@ -8,11 +8,6 @@ import {
     type PaymentsVersion,
     type PlanIDs,
     type Subscription,
-    type V5PaymentToken,
-    isTokenPayment,
-    isWrappedPaymentsVersion,
-    setPaymentMethodV4,
-    setPaymentMethodV5,
     subscribe,
 } from '@proton/payments';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
@@ -87,22 +82,6 @@ const handleSubscribeUser = async (
         );
 
         onPaymentSuccess?.();
-
-        if (subscriptionData.checkResult.AmountDue === 0 && isTokenPayment(subscriptionData.paymentToken)) {
-            if (
-                isWrappedPaymentsVersion(subscriptionData.paymentToken) &&
-                subscriptionData.paymentToken.paymentsVersion === 'v5'
-            ) {
-                const v5PaymentToken: V5PaymentToken = {
-                    PaymentToken: subscriptionData.paymentToken.Details.Token,
-                    v: 5,
-                };
-
-                await api(setPaymentMethodV5({ ...subscriptionData.paymentToken, ...v5PaymentToken }));
-            } else {
-                await api(setPaymentMethodV4(subscriptionData.paymentToken));
-            }
-        }
 
         return Subscription;
     } catch (error: any) {
