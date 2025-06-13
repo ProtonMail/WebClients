@@ -10,12 +10,12 @@ const selectedSubscriptionID = (state: MailState) => selectNewsletterSubscriptio
 export const deletingSubscriptionIdSelector = (state: MailState) =>
     selectNewsletterSubscriptions(state)?.deletingSubscriptionId;
 
-export const selectAllSubscriptions = createSelector([selectNewsletterSubscriptions], (store) => {
+export const allSubscriptionCount = createSelector([selectNewsletterSubscriptions], (store) => {
     if (!store) {
-        return undefined;
+        return 0;
     }
 
-    return store.byId;
+    return Object.keys(store.byId).length;
 });
 
 export const selectTabSubscriptionsList = createSelector([selectNewsletterSubscriptions], (store) => {
