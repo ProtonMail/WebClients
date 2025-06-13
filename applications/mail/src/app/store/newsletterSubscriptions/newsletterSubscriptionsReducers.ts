@@ -12,12 +12,11 @@ import { getReceivedMessagesCount } from 'proton-mail/components/view/Newsletter
 import {
     decrementCount,
     filterNewsletterSubscriptionList,
-    getPaginationDataFromNextPage,
     incrementCount,
     moveIdToTop,
     normalizeSubscriptions,
 } from './helpers';
-import { SortSubscriptionsValue, SubscriptionTabs } from './interface';
+import { SortSubscriptionsValue, type SubscriptionTabs } from './interface';
 import type {
     fetchNextNewsletterSubscriptionsPage,
     filterSubscriptionList,
@@ -182,10 +181,7 @@ export const sortSubscriptionFulfilled = (
 
     const tab = state.value.selectedTab;
     state.value.tabs[tab].ids = [...normalizedData.ids];
-    state.value.tabs[tab].paginationData = getPaginationDataFromNextPage(
-        tab === 'active' ? '1' : '0',
-        action.payload.PageInfo.NextPage
-    );
+    state.value.tabs[tab].paginationQueryString = action.payload.PageInfo.NextPage?.QueryString ?? null;
 
     state.value.tabs.active.loading = false;
     state.value.tabs.unsubscribe.loading = false;
@@ -269,10 +265,7 @@ export const fetchNextNewsletterSubscriptionsPageFulfilled = (
 
     const tab = state.value.selectedTab;
     state.value.tabs[tab].ids = [...state.value.tabs[tab].ids, ...normalizedData.ids];
-    state.value.tabs[tab].paginationData = getPaginationDataFromNextPage(
-        tab === SubscriptionTabs.Active ? '1' : '0',
-        action.payload.PageInfo.NextPage
-    );
+    state.value.tabs[tab].paginationQueryString = action.payload.PageInfo.NextPage?.QueryString ?? null;
 };
 
 export const updateSubscriptionPending = (
