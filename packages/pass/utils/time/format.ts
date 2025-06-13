@@ -1,6 +1,7 @@
 import { format, formatRelative, intervalToDuration, isThisWeek } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import type { Maybe } from '@proton/pass/types';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import capitalize from '@proton/utils/capitalize';
 import identity from '@proton/utils/identity';
@@ -66,3 +67,11 @@ export const epochToRemainingDuration = (epoch: number, options?: RemainingDurat
     const format = options?.format ?? identity;
     return format(epochToRelativeDuration(epoch));
 };
+
+export const formatTimestamp = (timestamp: string): Maybe<string> => {
+    try {
+        return format(new Date(timestamp), 'PP', { locale: dateLocale });
+    } catch {}
+};
+
+export const formatPlaceholder = () => format(new Date(new Date().getFullYear(), 11, 31), 'P', { locale: dateLocale });
