@@ -4,6 +4,7 @@ import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
     DRIVE_APP_NAME,
+    LUMO_APP_NAME,
     MAIL_APP_NAME,
     PASS_APP_NAME,
     VPN_APP_NAME,
@@ -125,6 +126,12 @@ export const getEmailSubscriptions = (
             id: 'news_product_vpn',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.VPN_NEWS,
             title: getProductUpdatesString(VPN_APP_NAME),
+            frequency: c('news').t`4-6 emails per year`,
+        },
+        {
+            id: 'news_product_lumo',
+            flag: NEWSLETTER_SUBSCRIPTIONS_BITS.LUMO_NEWS,
+            title: getProductUpdatesString(LUMO_APP_NAME),
             frequency: c('news').t`4-6 emails per year`,
         },
     ].filter(filter);
