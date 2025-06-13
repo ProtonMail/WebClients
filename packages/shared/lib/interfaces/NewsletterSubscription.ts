@@ -17,7 +17,7 @@ export interface NewsletterSubscription {
     UnreadMessageCount: number;
     TrackersCount?: number;
     MarkAsRead: boolean;
-    MoveToFolder: string;
+    MoveToFolder: string | null;
     ReceivedMessages: {
         Total: number;
         Last30Days: number;
