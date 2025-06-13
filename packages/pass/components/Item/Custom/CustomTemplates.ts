@@ -172,7 +172,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
                 fields: [
                     { label: c('Label').t`Full Name`, type: 'text' },
                     { label: c('Label').t`Passport Number`, type: 'hidden' },
-                    { label: c('Label').t`Country,`, type: 'text' },
+                    { label: c('Label').t`Country`, type: 'text' },
                     { label: c('Label').t`Expiry Date`, type: 'timestamp' },
                     { label: c('Label').t`Date of Birth`, type: 'timestamp' },
                     { label: c('Label').t`Issuing Authority`, type: 'text' },
