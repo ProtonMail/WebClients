@@ -4,10 +4,11 @@ import type { IconName } from 'packages/icons';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { FiltersUpsellModal, Icon, useModalStateObject } from '@proton/components';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
 import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
@@ -15,6 +16,7 @@ import { selectedTab } from 'proton-mail/store/newsletterSubscriptions/newslette
 
 import { getReceivedMessagesCount, getUnsubscribeMethod, shouldOpenUpsellOnFilterClick } from '../helper';
 import type { ModalFilterType, PropsWithNewsletterSubscription } from '../interface';
+import { ModalBlockSender } from './ModalBlockSender/ModalBlockSender';
 import ModalUnsubscribe from './ModalUnsubscribe/ModalUnsubscribe';
 import { ModalMoveToFolder } from './MoveToFolder/ModalMoveToFolder';
 
@@ -78,6 +80,7 @@ export const SubscriptionCardStats = ({ subscription }: PropsWithNewsletterSubsc
 
 const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscription) => {
     const unsubscribeModal = useModalStateObject();
+    const blockSenderModal = useModalStateObject();
     const moveToFolderModal = useModalStateObject();
     const upsellModal = useModalStateObject();
 
@@ -95,30 +98,23 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
         }
     };
 
+    const handleUnsubscribeClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.stopPropagation();
+        if (unsubscribeMethod) {
+            unsubscribeModal.openModal(true);
+        } else {
+            blockSenderModal.openModal(true);
+        }
+    };
+
     return (
         <>
             <Button
-                disabled={!unsubscribeMethod}
-                onClick={(e) => {
-                    e.stopPropagation();
-                    unsubscribeModal.openModal(true);
-                }}
+                onClick={handleUnsubscribeClick}
+                className={clsx(!unsubscribeMethod && 'text-bold color-primary')}
                 shape="outline"
                 size="tiny"
             >{c('Action').t`Unsubscribe`}</Button>
-
-            {!unsubscribeMethod && (
-                <Tooltip
-                    title={
-                        unsubscribeMethod
-                            ? null
-                            : c('Info')
-                                  .t`We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.`
-                    }
-                >
-                    <Icon name="info-circle" className="color-weak" />
-                </Tooltip>
-            )}
 
             <Button onClick={handleMoveToFolderClick} shape="outline" size="tiny">{c('Action')
                 .t`Move to folder`}</Button>
@@ -128,6 +124,10 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
             )}
             {subscription && moveToFolderModal.render && (
                 <ModalMoveToFolder subscription={subscription} {...moveToFolderModal.modalProps} />
+            )}
+
+            {subscription && blockSenderModal.render && (
+                <ModalBlockSender subscription={subscription} {...blockSenderModal.modalProps} />
             )}
 
             {upsellModal.render && (
