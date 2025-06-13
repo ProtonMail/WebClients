@@ -20,7 +20,7 @@ import clsx from '@proton/utils/clsx';
 type ExtraFieldOption = {
     icon: IconName;
     label: string;
-    placeholder: string;
+    placeholder?: string;
 };
 
 type ExtraFieldError<T extends ExtraFieldType> = FormikErrors<DeobfuscatedItemExtraField<T>>;
@@ -56,7 +56,6 @@ export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption>
     timestamp: {
         icon: 'calendar-grid',
         label: c('Label').t`Date`,
-        placeholder: c('Placeholder').t`Add date`,
     },
 });
 
