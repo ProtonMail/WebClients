@@ -6,9 +6,9 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getNewsletterSubscription } from '@proton/shared/lib/api/newsletterSubscription';
 import type { GetNewsletterSubscriptionsApiResponse } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { DEFAULT_PAGINATION_PAGE_SIZE, initialState, initialStateValue } from './constants';
+import { getPaginationQueryString, initialState, initialStateValue } from './constants';
 import { getTabData, normalizeSubscriptions } from './helpers';
-import { type NewsletterSubscriptionsInterface, SortSubscriptionsValue, SubscriptionTabs } from './interface';
+import { type NewsletterSubscriptionsInterface, SubscriptionTabs } from './interface';
 import {
     fetchNextNewsletterSubscriptionsPage,
     filterSubscriptionList,
@@ -56,22 +56,10 @@ const modelThunk = createAsyncModelThunk<
         try {
             const [active, unsubscribed] = await Promise.all([
                 extraArgument.api<GetNewsletterSubscriptionsApiResponse>(
-                    getNewsletterSubscription({
-                        pagination: {
-                            PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
-                            Active: '1',
-                        },
-                        sort: SortSubscriptionsValue.RecentlyReceived,
-                    })
+                    getNewsletterSubscription({ paginationString: getPaginationQueryString(true) })
                 ),
                 extraArgument.api<GetNewsletterSubscriptionsApiResponse>(
-                    getNewsletterSubscription({
-                        pagination: {
-                            PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
-                            Active: '0',
-                        },
-                        sort: SortSubscriptionsValue.RecentlyReceived,
-                    })
+                    getNewsletterSubscription({ paginationString: getPaginationQueryString(false) })
                 ),
             ]);
 

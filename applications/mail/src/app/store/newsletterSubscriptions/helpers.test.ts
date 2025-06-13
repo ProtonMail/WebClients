@@ -5,15 +5,8 @@ import type {
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { DEFAULT_PAGINATION_PAGE_SIZE, DEFAULT_SORTING } from './constants';
-import {
-    getFilteredPaginationData,
-    getPaginationDataFromNextPage,
-    getSortParams,
-    getTabData,
-    moveIdToTop,
-    normalizeSubscriptions,
-} from './helpers';
+import { DEFAULT_SORTING } from './constants';
+import { getSortParams, getTabData, moveIdToTop, normalizeSubscriptions } from './helpers';
 import { SortSubscriptionsValue } from './interface';
 
 describe('newsletterSubscriptions helpers', () => {
@@ -44,48 +37,6 @@ describe('newsletterSubscriptions helpers', () => {
         });
     });
 
-    describe('getPaginationDataFromNextPage', () => {
-        it('should return undefined when nextPage is null', () => {
-            const result = getPaginationDataFromNextPage('1', null);
-            expect(result).toBeUndefined();
-        });
-
-        it('should return pagination data with defaults when values are missing', () => {
-            const nextPage = {
-                Pagination: {} as any,
-            };
-
-            const result = getPaginationDataFromNextPage('1', nextPage);
-
-            expect(result).toEqual({
-                Active: '1',
-                PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
-                AnchorID: '',
-                AnchorLastReceivedTime: null,
-                AnchorUnreadMessageCount: null,
-            });
-        });
-
-        it('should return correct pagination data with provided values', () => {
-            const nextPage = {
-                Pagination: {
-                    AnchorID: 'anchor123',
-                    AnchorLastReceivedTime: '2023-01-01T12:00:00Z',
-                } as any,
-            };
-
-            const result = getPaginationDataFromNextPage('0', nextPage);
-
-            expect(result).toEqual({
-                Active: '0',
-                PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
-                AnchorID: 'anchor123',
-                AnchorLastReceivedTime: '2023-01-01T12:00:00Z',
-                AnchorUnreadMessageCount: null,
-            });
-        });
-    });
-
     describe('getTabData', () => {
         it('should return default tab data with provided values', () => {
             const ids = ['1', '2', '3'];
@@ -93,7 +44,9 @@ describe('newsletterSubscriptions helpers', () => {
                 NewsletterSubscriptions: [],
                 PageInfo: {
                     Total: 42,
-                    NextPage: null,
+                    NextPage: {
+                        QueryString: null,
+                    },
                 },
             };
 
@@ -104,7 +57,7 @@ describe('newsletterSubscriptions helpers', () => {
                 loading: false,
                 sorting: DEFAULT_SORTING,
                 totalCount: 42,
-                paginationData: undefined,
+                paginationQueryString: null,
             });
         });
 
@@ -114,7 +67,9 @@ describe('newsletterSubscriptions helpers', () => {
                 NewsletterSubscriptions: [],
                 PageInfo: {
                     Total: 5,
-                    NextPage: null,
+                    NextPage: {
+                        QueryString: null,
+                    },
                 },
             };
             const loading = true;
@@ -126,7 +81,7 @@ describe('newsletterSubscriptions helpers', () => {
                 loading: true,
                 sorting: SortSubscriptionsValue.Alphabetical,
                 totalCount: 5,
-                paginationData: undefined,
+                paginationQueryString: null,
             });
         });
 
@@ -137,10 +92,7 @@ describe('newsletterSubscriptions helpers', () => {
                 PageInfo: {
                     Total: 10,
                     NextPage: {
-                        Pagination: {
-                            AnchorID: 'next-anchor',
-                            AnchorLastReceivedTime: '2023-05-01T00:00:00Z',
-                        } as any,
+                        QueryString: 'next-anchor',
                     },
                 },
             };
@@ -152,13 +104,7 @@ describe('newsletterSubscriptions helpers', () => {
                 loading: false,
                 sorting: DEFAULT_SORTING,
                 totalCount: 10,
-                paginationData: {
-                    Active: '1',
-                    PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
-                    AnchorID: 'next-anchor',
-                    AnchorLastReceivedTime: '2023-05-01T00:00:00Z',
-                    AnchorUnreadMessageCount: null,
-                },
+                paginationQueryString: 'next-anchor',
             });
         });
     });
@@ -171,82 +117,27 @@ describe('newsletterSubscriptions helpers', () => {
 
         it('should return last-read sort parameters', () => {
             const result = getSortParams(SortSubscriptionsValue.LastRead);
-            expect(result).toEqual({
-                'Sort[UnreadMessageCount]': 'ASC',
-            });
+            expect(result).toEqual('Sort[UnreadMessageCount]=ASC');
         });
 
         it('should return most-read sort parameters', () => {
             const result = getSortParams(SortSubscriptionsValue.MostRead);
-            expect(result).toEqual({
-                'Sort[UnreadMessageCount]': 'DESC',
-            });
+            expect(result).toEqual('Sort[UnreadMessageCount]=DESC');
         });
 
         it('should return alphabetical sort parameters', () => {
             const result = getSortParams(SortSubscriptionsValue.Alphabetical);
-            expect(result).toEqual({
-                'Sort[Name]': 'ASC',
-            });
+            expect(result).toEqual('Sort[Name]=ASC');
         });
 
         it('should return recently-received sort parameters', () => {
             const result = getSortParams(SortSubscriptionsValue.RecentlyReceived);
-            expect(result).toEqual({
-                'Sort[LastReceivedTime]': 'DESC',
-            });
+            expect(result).toEqual('Sort[LastReceivedTime]=DESC');
         });
 
         it('should return undefined for unhandled sort option', () => {
             const result = getSortParams('most-frequent' as any);
             expect(result).toBeUndefined();
-        });
-    });
-
-    describe('getFilteredPaginationData', () => {
-        it('should return empty object when no pagination data is provided', () => {
-            const result = getFilteredPaginationData(undefined);
-            expect(result).toEqual({});
-        });
-
-        it('should return filtered pagination data', () => {
-            const paginationData = {
-                PageSize: 10,
-                AnchorID: '123',
-                AnchorLastReceivedTime: 'some-timestamp',
-            };
-
-            const result = getFilteredPaginationData(paginationData);
-            expect(result).toEqual(paginationData);
-        });
-
-        it('should return filtered pagination data with null values', () => {
-            const paginationData = {
-                PageSize: 10,
-                AnchorID: '123',
-                AnchorLastReceivedTime: null,
-            };
-
-            const result = getFilteredPaginationData(paginationData);
-            expect(result).toEqual({
-                PageSize: 10,
-                AnchorID: '123',
-            });
-        });
-
-        it('should return filtered pagination data with 0 count', () => {
-            const paginationData = {
-                PageSize: 10,
-                AnchorID: '123',
-                AnchorLastReceivedTime: 0,
-            };
-
-            const result = getFilteredPaginationData(paginationData);
-            expect(result).toEqual({
-                PageSize: 10,
-                AnchorID: '123',
-                AnchorLastReceivedTime: 0,
-            });
         });
     });
 

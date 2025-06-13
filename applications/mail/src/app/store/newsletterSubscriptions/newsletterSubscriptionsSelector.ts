@@ -45,13 +45,13 @@ export const selectTabSortingState = createSelector([selectNewsletterSubscriptio
     return store.tabs[tab].sorting;
 });
 
-export const selectTabSubscriptionPagination = createSelector([selectNewsletterSubscriptions], (store) => {
+export const selectTabSubscriptionPaginationQueryString = createSelector([selectNewsletterSubscriptions], (store) => {
     if (!store) {
         return undefined;
     }
 
     const tab = store.selectedTab;
-    return store.tabs[tab].paginationData;
+    return store.tabs[tab].paginationQueryString;
 });
 
 export const getFilteredSubscriptionIndex = (subscriptionID: string) => {
