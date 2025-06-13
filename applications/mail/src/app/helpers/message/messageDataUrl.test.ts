@@ -1,7 +1,7 @@
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { dataUrlToFile, replaceDataUrl } from 'proton-mail/helpers/message/messageDataUrl';
-import { createDocument } from 'proton-mail/helpers/test/message';
 
 jest.mock('@proton/shared/lib/helpers/encoding', () => ({
     base64StringToUint8Array: jest.fn((str) => new Uint8Array(Buffer.from(str, 'base64'))),
@@ -32,7 +32,7 @@ describe('messageDataUrl', () => {
         test('it should return an empty array when document has no image', () => {
             const message = {
                 messageDocument: {
-                    document: createDocument('Hello'),
+                    document: parseDOMStringToBodyElement('Hello'),
                 },
             };
             expect(replaceDataUrl(message as any)).toEqual([]);
@@ -45,7 +45,7 @@ describe('messageDataUrl', () => {
 
             const message = {
                 messageDocument: {
-                    document: createDocument(htmlContent),
+                    document: parseDOMStringToBodyElement(htmlContent),
                 },
             };
             expect(replaceDataUrl(message as any)).toEqual([]);
@@ -58,7 +58,7 @@ describe('messageDataUrl', () => {
 </div>`;
             const message = {
                 messageDocument: {
-                    document: createDocument(htmlContent),
+                    document: parseDOMStringToBodyElement(htmlContent),
                 },
             };
             expect(replaceDataUrl(message as any)).toHaveLength(2);
@@ -72,7 +72,7 @@ describe('messageDataUrl', () => {
 </div>`;
             const message = {
                 messageDocument: {
-                    document: createDocument(htmlContent),
+                    document: parseDOMStringToBodyElement(htmlContent),
                 },
             };
             expect(replaceDataUrl(message as any)).toHaveLength(2);

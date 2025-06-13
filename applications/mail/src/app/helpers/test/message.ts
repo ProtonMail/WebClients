@@ -1,6 +1,5 @@
 import type { PrivateKeyReference, PublicKeyReference, SessionKey, WorkerDecryptionOptions } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { MessageEmbeddedImage, MessageImage, MessageImages } from '../../store/messages/messagesTypes';
@@ -12,11 +11,6 @@ import { encryptSessionKey, generateSessionKey } from './crypto';
 // Helper to make testing easier
 export const removeLineBreaks = (text: string) => {
     return text.replaceAll(/\n/g, '');
-};
-
-export const createDocument = (content: string): Element => {
-    const document = parseStringToDOM(content);
-    return document.body;
 };
 
 export const readSessionKey = (key: any) => {
@@ -56,7 +50,11 @@ export const decryptMessage = async (pack: any, privateKeys: PrivateKeyReference
  * @return {Promise<{getBody: (function(): Promise<{body, mimetype}>), getAttachments: (function(): Promise<any>), getEncryptedSubject: (function(): Promise<any>), verify: (function(): Promise<any>), errors: (function(): Promise<any>), stop: stop}>}
  */
 export async function decryptMIMEMessage(options: WorkerDecryptionOptions) {
-    const { data: rawData, verificationStatus, signatures } = await CryptoProxy.decryptMessage({ ...options, format: 'utf8' });
+    const {
+        data: rawData,
+        verificationStatus,
+        signatures,
+    } = await CryptoProxy.decryptMessage({ ...options, format: 'utf8' });
 
     const {
         body,
@@ -67,7 +65,8 @@ export async function decryptMIMEMessage(options: WorkerDecryptionOptions) {
         signatures: pgpMimeSignatures,
     } = await CryptoProxy.processMIME({ ...options, data: rawData });
 
-    const combinedVerified = verificationStatus === VERIFICATION_STATUS.NOT_SIGNED ? pgpMimeVerified : verificationStatus;
+    const combinedVerified =
+        verificationStatus === VERIFICATION_STATUS.NOT_SIGNED ? pgpMimeVerified : verificationStatus;
 
     return {
         getBody: () => Promise.resolve(body ? { body, mimeType } : undefined),

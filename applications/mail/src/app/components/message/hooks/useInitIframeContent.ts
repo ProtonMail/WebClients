@@ -8,9 +8,9 @@ import {
     MESSAGE_IFRAME_ROOT_ID,
     MESSAGE_IFRAME_TOGGLE_ID,
 } from '@proton/mail-renderer/constants';
+import getIframeHtml from '@proton/mail-renderer/helpers/getIframeHtml';
 
 import type { MessageState } from '../../../store/messages/messagesTypes';
-import getIframeHtml from '../helpers/getIframeHtml';
 
 interface Props {
     messageID: string | undefined;

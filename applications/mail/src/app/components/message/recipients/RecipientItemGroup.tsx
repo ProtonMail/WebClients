@@ -14,10 +14,10 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import generateUID from '@proton/utils/generateUID';
 
-import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';

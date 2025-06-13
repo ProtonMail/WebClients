@@ -2,12 +2,12 @@ import { useRef } from 'react';
 
 import type { HotkeyTuple } from '@proton/components';
 import { useHotkeys } from '@proton/components';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { ComposeTypes } from '../composer/useCompose';
 

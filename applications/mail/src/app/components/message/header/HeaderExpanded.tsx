@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, Kbd, Tooltip } from '@proton/atoms';
 import { ButtonGroup, Icon, useActiveBreakpoint, useContactModals, useToggle } from '@proton/components';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -16,7 +17,6 @@ import clsx from '@proton/utils/clsx';
 import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { isSelfAddress } from '../../../helpers/addresses';
 import type { MessageViewIcons } from '../../../helpers/message/icon';
