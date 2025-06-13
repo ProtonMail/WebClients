@@ -9,6 +9,10 @@ import { FiltersUpsellModal, Icon, useModalStateObject } from '@proton/component
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
+import { useMailSelector } from 'proton-mail/store/hooks';
+import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
+import { selectedTab } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+
 import { getReceivedMessagesCount, getUnsubscribeMethod, shouldOpenUpsellOnFilterClick } from '../helper';
 import type { ModalFilterType, PropsWithNewsletterSubscription } from '../interface';
 import ModalUnsubscribe from './ModalUnsubscribe/ModalUnsubscribe';
@@ -136,7 +140,11 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
     );
 };
 
-const InactiveSubscriptionButtons = ({ handleFilterClick }: { handleFilterClick: (type: ModalFilterType) => void }) => {
+const UnsubscribedSubscriptionButtons = ({
+    handleFilterClick,
+}: {
+    handleFilterClick: (type: ModalFilterType) => void;
+}) => {
     return (
         <Button
             onClick={() => handleFilterClick('MoveToTrash')}
@@ -151,10 +159,12 @@ export const SubscriptionCardButtons = ({
     subscription,
     handleFilterClick,
 }: PropsWithNewsletterSubscription & { handleFilterClick: (type: ModalFilterType) => void }) => {
+    const currentTab = useMailSelector(selectedTab);
+
     return (
         <div className="flex items-center gap-2 mt-2">
-            {subscription.UnsubscribedTime ? (
-                <InactiveSubscriptionButtons handleFilterClick={handleFilterClick} />
+            {currentTab === SubscriptionTabs.Unsubscribe ? (
+                <UnsubscribedSubscriptionButtons handleFilterClick={handleFilterClick} />
             ) : (
                 <ActiveSubscriptionButtons subscription={subscription} />
             )}
