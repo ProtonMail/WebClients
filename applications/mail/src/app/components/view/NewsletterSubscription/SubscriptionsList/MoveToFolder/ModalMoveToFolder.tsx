@@ -10,16 +10,22 @@ import {
     InputFieldTwo,
     type ModalProps,
     Prompt,
+    useApi,
     useDebounceInput,
+    useEventManager,
     useNotifications,
 } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import useLoading from '@proton/hooks/useLoading';
+import { create } from '@proton/shared/lib/api/labels';
+import { getRandomAccentColor } from '@proton/shared/lib/colors';
+import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { type NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 import { useMailFolderTreeView } from 'proton-mail/hooks/useMailTreeView/useMailFolderTreeView';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { MAX_FOLDER_NAME_LENGTH } from 'proton-mail/store/newsletterSubscriptions/constants';
 import { filterSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
@@ -31,10 +37,19 @@ interface Props extends ModalProps {
     subscription: NewsletterSubscription;
 }
 
+const BoldFolderName = ({ name }: { name: string }) => {
+    return <strong>{name}</strong>;
+};
+
 export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
+    const api = useApi();
+    const { call } = useEventManager();
+
     const { list } = useMailFolderTreeView();
     const dispatch = useMailDispatch();
     const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
+
+    const [loading, withLoading] = useLoading();
 
     const [search, setSearch] = useState('');
     const words = useDebounceInput(search, 200);
@@ -43,6 +58,8 @@ export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
 
     const [applyFuture, setApplyFuture] = useState(false);
     const [selectedFolder, setSelectedFolder] = useState<FolderItem | null>(null);
+
+    const customFolderName = subscription.Name.slice(0, MAX_FOLDER_NAME_LENGTH);
 
     const treeView = list
         .concat([
@@ -87,8 +104,8 @@ export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
         setSearch(changeEvent.target.value);
     };
 
-    const handleMoveToFolder = () => {
-        if (!selectedFolder) {
+    const handleMoveToFolder = (labelId: string, labelName: string) => {
+        if (!labelId) {
             return;
         }
 
@@ -98,7 +115,7 @@ export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
                 subscriptionIndex,
                 data: {
                     ApplyTo: applyFuture ? 'All' : 'Existing',
-                    DestinationFolder: selectedFolder.ID,
+                    DestinationFolder: labelId,
                     MarkAsRead: false,
                 },
             })
@@ -107,8 +124,8 @@ export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
         const count = getReceivedMessagesCount(subscription);
         createNotification({
             text: c('Label').ngettext(
-                msgid`Moved ${count} message to ${selectedFolder.Name}.`,
-                `Moved ${count} messages to ${selectedFolder.Name}.`,
+                msgid`Moved ${count} message to ${labelName}.`,
+                `Moved ${count} messages to ${labelName}.`,
                 count
             ),
         });
@@ -116,16 +133,59 @@ export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
         props?.onClose?.();
     };
 
+    const handleCreateFolder = async () => {
+        const label = await api(
+            create({
+                Name: customFolderName,
+                Color: getRandomAccentColor(),
+                Type: LABEL_TYPE.MESSAGE_FOLDER,
+            })
+        );
+
+        if (label.Label.ID) {
+            void handleMoveToFolder(label.Label.ID, label.Label.Name);
+            void call();
+        } else {
+            createNotification({
+                text: c('Label').t`Failed to create folder ${customFolderName}`,
+                type: 'error',
+            });
+        }
+    };
+
+    const boldFolderName = <BoldFolderName name={customFolderName} />;
+
     return (
         <Prompt
             buttons={[
-                <div>
+                <div className="w-full">
+                    <hr className="mb-0 bg-weak divider-size" />
+                    <div className="my-1">
+                        <Button
+                            fullWidth
+                            onClick={() => withLoading(handleCreateFolder)}
+                            disabled={loading}
+                            shape="ghost"
+                            className="text-left flex items-start"
+                        >
+                            <Icon name="plus" className="mr-2 mt-0.5" />
+                            <span className="flex-1">{c('Action').jt`Create folder ${boldFolderName}`}</span>
+                        </Button>
+                    </div>
+                    <hr className="bg-weak divider-size" />
                     <Checkbox id="applyFuture" checked={applyFuture} className="mb-2" onChange={handleChange}>
                         {c('Label').t`Apply to future messages`}
                     </Checkbox>
                 </div>,
-                <Button disabled={selectedFolder === null} color="norm" onClick={handleMoveToFolder}>{c('Action')
-                    .t`Move`}</Button>,
+                <Button
+                    disabled={selectedFolder === null}
+                    color="norm"
+                    onClick={() => {
+                        if (selectedFolder) {
+                            handleMoveToFolder(selectedFolder.ID, selectedFolder.Name);
+                        }
+                    }}
+                >{c('Action').t`Move`}</Button>,
                 <Button onClick={() => props?.onClose?.()}>{c('Action').t`Cancel`}</Button>,
             ]}
             ModalContentProps={{
@@ -157,14 +217,19 @@ export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
                                     className="text-left"
                                     color={selectedFolder?.ID === folder.ID ? 'weak' : undefined}
                                     onClick={() => handleSelectFolder(folder)}
+                                    aria-pressed={selectedFolder?.ID === folder.ID}
                                 >
                                     <div data-level={folder.level} className="flex">
-                                        <FolderIcon folder={folder} name={folder.icon} className="shrink-0 mr-2" />
+                                        <FolderIcon
+                                            folder={folder}
+                                            name={folder.icon}
+                                            className="shrink-0 mr-2 mt-0.5"
+                                        />
                                         <span className="text-ellipsis flex-1" title={folder.Name}>
                                             {folder.Name}
                                         </span>
                                         {selectedFolder?.ID === folder.ID && (
-                                            <Icon name="checkmark" className="text-success shrink-0" />
+                                            <Icon name="checkmark" className="text-success shrink-0 mt-0.5" />
                                         )}
                                     </div>
                                 </Button>
