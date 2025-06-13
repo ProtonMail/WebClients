@@ -90,7 +90,7 @@ export const MailSidebarCustomView = ({ collapsed }: Props) => {
                 onToggle={(value) => toggleView(value)}
                 text={c('Link').t`Views`}
                 title={c('Link').t`Views`}
-                id="toggle-folders"
+                id="toggle-views"
                 spaceAbove
             />
             {displayView && <NewsletterSubscriptionButton collapsed={collapsed} hideNotificationDot />}
