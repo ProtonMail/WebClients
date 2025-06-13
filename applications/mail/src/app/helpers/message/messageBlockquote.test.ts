@@ -1,8 +1,8 @@
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
-import { MESSAGE_ACTIONS } from 'proton-mail/constants';
 import { formatFullDate } from 'proton-mail/helpers/date';
 import { createNewDraft } from 'proton-mail/helpers/message/messageDraft';
 import type { PartialMessageState } from 'proton-mail/store/messages/messagesTypes';

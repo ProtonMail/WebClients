@@ -11,9 +11,9 @@ import {
     addApiKeys,
     addApiMock,
     clearAll,
-    createDocument,
     generateKeys,
     getCompleteAddress,
+    parseDOMStringToBodyElement,
     waitForSpyCall,
 } from '../../../helpers/test/helper';
 import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Composer.test.helpers';
@@ -79,7 +79,7 @@ describe('Composer autosave', () => {
             },
             message: {
                 data: { ID: undefined, MIMEType: MIME_TYPES.DEFAULT },
-                messageDocument: { document: createDocument('test') },
+                messageDocument: { document: parseDOMStringToBodyElement('test') },
             },
         });
 

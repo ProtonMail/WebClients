@@ -16,12 +16,12 @@ import {
     addApiResolver,
     clearAll,
     createAttachment,
-    createDocument,
     decryptSessionKey,
     generateKeys,
     getCompleteAddress,
     getDropdown,
     minimalCache,
+    parseDOMStringToBodyElement,
     parseFormData,
     render,
     tick,
@@ -87,7 +87,7 @@ const setup = async (MIMEType = MIME_TYPES.PLAINTEXT) => {
             MIMEType,
             Sender: { Address: address1.Email, Name: address1.ID },
         },
-        messageDocument: { plainText: 'test', document: createDocument('hello') },
+        messageDocument: { plainText: 'test', document: parseDOMStringToBodyElement('hello') },
     });
 
     const { container, unmount } = await render(<Composer {...props} composerID={composerID} />, {
@@ -134,6 +134,7 @@ interface VerifyAttachmentProps {
     resolveAttachment: () => void;
     updateSpy: jest.Mock;
 }
+
 const verifyAttachment = async ({ resolveAttachment, updateSpy }: VerifyAttachmentProps) => {
     const attachmentName = await screen.findByRole('button', { name: `Preview ${fileName}` });
     expect(attachmentName).not.toBe(null);

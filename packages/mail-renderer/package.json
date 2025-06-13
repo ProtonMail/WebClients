@@ -8,10 +8,13 @@
     "scripts": {
         "check-types": "tsc",
         "lint": "true",
-        "test": "true",
-        "test:ci": "true"
+        "test": "jest --logHeapUsage --forceExit",
+        "test:ci": "jest --coverage --runInBand --ci --forceExit",
+        "test:coverage": "jest --collectCoverage",
+        "test:watch": "jest --watch --coverage=false"
     },
     "dependencies": {
+        "@proton/mail": "workspace:^",
         "@proton/styles": "workspace:^",
         "react": "^18.3.1",
         "react-redux": "^9.2.0"

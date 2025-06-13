@@ -1,9 +1,9 @@
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 import type { MessageImage, MessageState } from '../../../store/messages/messagesTypes';
-import { createDocument } from '../../test/message';
 import { transformEmbedded } from '../transformEmbedded';
 
 const defaultMailSettings = {
@@ -43,7 +43,7 @@ describe('transformEmbedded', () => {
                     { Headers: { 'content-id': cids[5] } } as Attachment,
                 ],
             } as Message,
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
 
         const { showEmbeddedImages, embeddedImages, hasEmbeddedImages } = await setup(message);
@@ -69,7 +69,7 @@ describe('transformEmbedded', () => {
                 ID: 'messageID',
                 Attachments: [{ Headers: { 'content-location': cloc } } as Attachment],
             } as Message,
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
 
         const { showEmbeddedImages, embeddedImages, hasEmbeddedImages } = await setup(message);
@@ -92,7 +92,7 @@ describe('transformEmbedded', () => {
                 ID: 'messageID',
                 Attachments: [{ Headers: { 'content-id': cid } } as Attachment],
             } as Message,
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
             messageImages: {
                 hasRemoteImages: false,
                 hasEmbeddedImages: true,
@@ -131,7 +131,7 @@ describe('transformEmbedded', () => {
                 Flags: 12, // Flag as draft
                 Attachments: [{ Headers: { 'content-id': cid } } as Attachment],
             } as Message,
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
 
         const { showEmbeddedImages, embeddedImages, hasEmbeddedImages } = await setup(message);
@@ -160,7 +160,7 @@ describe('transformEmbedded', () => {
                     IsProton: 1,
                 },
             } as Message,
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
 
         const mailSettings = {
@@ -191,7 +191,7 @@ describe('transformEmbedded', () => {
                     IsProton: 0,
                 },
             } as Message,
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
 
         const mailSettings = {

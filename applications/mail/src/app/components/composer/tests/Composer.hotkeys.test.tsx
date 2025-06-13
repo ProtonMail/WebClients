@@ -12,10 +12,10 @@ import {
     addApiMock,
     clearAll,
     clearCache,
-    createDocument,
     generateKeys,
     getCompleteAddress,
     minimalCache,
+    parseDOMStringToBodyElement,
     waitForNotification,
 } from '../../../helpers/test/helper';
 import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Composer.test.helpers';
@@ -64,7 +64,7 @@ describe('Composer hotkeys', () => {
                 addresses: getModelState([address]),
             },
             message: {
-                messageDocument: { document: createDocument('test') },
+                messageDocument: { document: parseDOMStringToBodyElement('test') },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             },
         });
