@@ -59,6 +59,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,
+    type APP_NAMES,
     PASS_SHORT_APP_NAME,
     VPN_APP_NAME,
     VPN_CONNECTIONS,
@@ -70,6 +71,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
@@ -186,6 +188,8 @@ const Step1 = ({
     measure,
     className,
     currencyUrlParam,
+    trial,
+    toApp,
 }: {
     activeBreakpoint: Breakpoints;
     defaultEmail?: string;
@@ -209,6 +213,8 @@ const Step1 = ({
     measure: Measure;
     className?: string;
     currencyUrlParam?: Currency;
+    trial?: boolean;
+    toApp: APP_NAMES;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const normalApi = useApi();
@@ -333,7 +339,8 @@ const Step1 = ({
                 newCurrency,
                 newCycle,
                 newBillingAddress,
-                coupon
+                coupon,
+                trial
             );
 
             if (!validateFlow()) {
@@ -453,8 +460,9 @@ const Step1 = ({
         return handleCompletion(subscriptionData);
     };
 
+    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
     const hasGuarantee =
-        [PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan;
+        ([PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan) && !isTrial;
 
     const measurePay = (
         type: TelemetryPayType,
@@ -981,7 +989,7 @@ const Step1 = ({
         />
     );
 
-    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue);
+    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue) || isTrial;
     const loadingPaymentsForm = model.loadingDependencies;
 
     return (
@@ -1049,6 +1057,10 @@ const Step1 = ({
                 )}
                 {(() => {
                     if (!actualCheckout.discountPercent) {
+                        return;
+                    }
+
+                    if (isTrial) {
                         return;
                     }
 
@@ -1295,7 +1307,7 @@ const Step1 = ({
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
                             step={showStepLabel ? step++ : undefined}
-                            title={c('Header').t`Checkout`}
+                            title={isTrial ? c('Header').t`Payment details` : c('Header').t`Checkout`}
                             right={!showCycleAndSelectors ? currencySelector : null}
                         />
                         <BoxContent>
@@ -1345,6 +1357,7 @@ const Step1 = ({
                                                 billingAddressStatus={getBillingAddressStatus(
                                                     model.subscriptionData.billingAddress
                                                 )}
+                                                isTrial={isTrial}
                                             />
                                         ) : (
                                             <div className="mb-4">
@@ -1410,9 +1423,14 @@ const Step1 = ({
                                                         data-testid="pay"
                                                         fullWidth
                                                     >
-                                                        {options.checkResult.AmountDue > 0
-                                                            ? c('Action').jt`Pay ${price}`
-                                                            : c('Action').t`Confirm`}
+                                                        {(() => {
+                                                            if (isTrial) {
+                                                                return c('Action').t`Try for free`;
+                                                            }
+                                                            return options.checkResult.AmountDue > 0
+                                                                ? c('Action').jt`Pay ${price}`
+                                                                : c('Action').t`Confirm`;
+                                                        })()}
                                                     </Button>
                                                     {hasGuarantee && (
                                                         <div className="text-center color-success my-4">
@@ -1470,7 +1488,8 @@ const Step1 = ({
                                                             options.currency,
                                                             options.cycle,
                                                             model.subscriptionData.billingAddress,
-                                                            code
+                                                            code,
+                                                            trial
                                                         );
 
                                                         setModel((old) => ({
@@ -1493,7 +1512,9 @@ const Step1 = ({
                                                             options.planIDs,
                                                             options.currency,
                                                             options.cycle,
-                                                            model.subscriptionData.billingAddress
+                                                            model.subscriptionData.billingAddress,
+                                                            undefined, // don't pass coupon code, it will be removed
+                                                            trial
                                                         );
 
                                                         setModel((old) => ({
@@ -1509,6 +1530,7 @@ const Step1 = ({
                                                 />
                                             }
                                             hasSelectedFree={hasSelectedFree}
+                                            app={toApp}
                                         />
                                     </div>
                                 </div>
