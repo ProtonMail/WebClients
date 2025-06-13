@@ -88,6 +88,7 @@ const MessageBodyImage = ({
     const showPlaceholder =
         error || status !== 'loaded' || (type === 'remote' ? !showRemoteImages : !showEmbeddedImages);
     const showImage = !showPlaceholder;
+    const hasLoadedAfterErrorRef = useRef({ hasLoadedProxy: false, hasLoadedDirect: false });
 
     const attributes =
         original?.getAttributeNames().reduce<SimpleMap<string>>((acc, name) => {
@@ -113,9 +114,16 @@ const MessageBodyImage = ({
     }, [showImage]);
 
     if (showImage) {
-        // attributes are provided by the code just above, coming from an original message source
-        // eslint-disable-next-line jsx-a11y/alt-text
-        return <img ref={imageRef} src={url} loading="lazy" onError={() => onMessageImageLoadError(image)} />;
+        return (
+            // attributes are provided by the code just above, coming from an original message source
+            // eslint-disable-next-line jsx-a11y/alt-text
+            <img
+                ref={imageRef}
+                src={url}
+                loading="lazy"
+                onError={() => onMessageImageLoadError(image, hasLoadedAfterErrorRef)}
+            />
+        );
     }
 
     const showLoader = status === 'loading';
