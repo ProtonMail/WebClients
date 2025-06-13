@@ -103,7 +103,9 @@ export const getNMessagesFeature = (n: number | 'unlimited'): PlanCardFeatureDef
 
 export const getB2BNDomainsFeature = (n: number): PlanCardFeatureDefinition => ({
     icon: 'globe',
-    text: c('new_plans: Upsell attribute').t`Support for ${n} custom email domains`,
+    text: c('new_plans: Upsell attribute').ngettext(msgid`Support for ${n} custom email domain`,
+`Support for ${n} custom email domains`,
+n),
     included: true,
 });
 
