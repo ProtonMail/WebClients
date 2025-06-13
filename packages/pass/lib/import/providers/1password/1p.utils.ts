@@ -153,10 +153,10 @@ export const extract1PasswordLegacyURLs = (item: OnePassLegacyItem): string[] =>
 
 export const extract1PasswordExtraFields = (section: OnePassSection): DeobfuscatedItemExtraField[] => {
     return section.fields
-        .filter((field) => is1PasswordSupportedField(field) && !is1PasswordCCField(field))
         .map<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value }) => {
             const [fieldKey] = objectKeys(value);
             const data = value[fieldKey];
+
             if (!data) return null;
 
             switch (fieldKey) {
@@ -183,7 +183,30 @@ export const extract1PasswordExtraFields = (section: OnePassSection): Deobfuscat
                         data: { content: format1PasswordFieldValue(value, fieldKey) },
                     };
                 default:
-                    return null;
+                    try {
+                        // Totally unsupported since we have another mechanism to import files
+                        if (fieldKey === 'file') return null;
+
+                        let newValue = data;
+
+                        // The pattern for 1P objects, is always the same.
+                        // The "value" property contains an object with 2 keys:
+                        // - One key contains the actual data
+                        // - The other key contains null/undefined values
+                        // Using generic Object.values here prevent us from unexpected changes in the future
+                        if (typeof newValue === 'object') {
+                            [newValue] = Object.values(newValue).filter(truthy);
+                        }
+
+                        // Always treat as "text" since hidden values were already handled
+                        return {
+                            fieldName: title || c('Label').t`Text`,
+                            type: 'text',
+                            data: { content: String(newValue) },
+                        };
+                    } catch {
+                        return null;
+                    }
             }
         })
         .filter(truthy);

@@ -40,6 +40,7 @@ const processNoteItem = (
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
         trashed: item.state === OnePassState.ARCHIVED,
+        extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
     });
 
 const processLoginItem = async (
@@ -92,6 +93,8 @@ const processIdentityItem = (
     });
 
 const processCreditCardItem = (item: Extract<OnePassItem, { categoryUuid: OnePassCategory.CREDIT_CARD }>) => {
+    const extraFields = item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [];
+
     const { cardholder, ccnum, cvv, expiry, pin } = ((): OnePassCreditCardFields => {
         const { sections } = item.details;
         if (!sections || sections.length === 0) return {};
@@ -115,11 +118,12 @@ const processCreditCardItem = (item: Extract<OnePassItem, { categoryUuid: OnePas
         verificationNumber: cvv?.value.concealed,
         expirationDate: format1PasswordMonthYear(expiry?.value.monthYear),
         pin: pin?.value.concealed,
+        extraFields,
     });
 };
 
-const processCustomItem = (item: OnePassItem) => {
-    return importCustomItem({
+const processCustomItem = (item: OnePassItem) =>
+    importCustomItem({
         name: item.overview.title,
         note: item.details.notesPlain,
         createTime: item.createdAt,
@@ -129,8 +133,8 @@ const processCustomItem = (item: OnePassItem) => {
             sectionName: s.title,
             sectionFields: extract1PasswordExtraFields(s),
         })),
+        extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
     });
-};
 
 export const read1Password1PuxData = async (file: File): Promise<ImportReaderResult> => {
     try {
