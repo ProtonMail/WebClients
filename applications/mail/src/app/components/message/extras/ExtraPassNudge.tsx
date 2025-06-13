@@ -187,7 +187,7 @@ const ExtraPassNudge = ({ messageSubject = '' }: Props) => {
                                     <Icon name="cross" size={4} className="flex m-auto" alt={c('Action').t`Dismiss`} />
                                 </Button>
                             </Tooltip>
-                            <Tooltip title={c('Info').t`More infos`}>
+                            <Tooltip title={c('Info').t`More info`}>
                                 <Button
                                     icon
                                     shape="ghost"
@@ -195,7 +195,7 @@ const ExtraPassNudge = ({ messageSubject = '' }: Props) => {
                                     className="mb-1 mt-auto"
                                     onClick={handleClickMoreInfo}
                                 >
-                                    <Icon name="question-circle" className="color-weak" alt={c('Info').t`More infos`} />
+                                    <Icon name="question-circle" className="color-weak" alt={c('Info').t`More info`} />
                                 </Button>
                             </Tooltip>
                         </div>
