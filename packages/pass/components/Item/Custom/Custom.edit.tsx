@@ -12,6 +12,7 @@ import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPane
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
+import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { validateCustomItemForm } from '@proton/pass/lib/validation/custom-item';
@@ -110,6 +111,13 @@ export const CustomEdit = <T extends ItemCustomType>({ revision, share, onSubmit
             const updatedItem = getEditIntent<T>(values, item, itemId, lastRevision);
             onSubmit(updatedItem);
         },
+    });
+
+    useItemDraft<CustomItemFormValues>(form, {
+        mode: 'edit',
+        itemId,
+        revision: lastRevision,
+        shareId: form.values.shareId,
     });
 
     return (

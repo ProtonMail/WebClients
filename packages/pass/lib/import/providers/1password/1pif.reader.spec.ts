@@ -54,7 +54,7 @@ describe('Import 1password 1pif', () => {
         );
         expect(noteItem.content).toEqual({});
         expect(noteItem.trashed).toEqual(false);
-        expect(noteItem.extraFields).toEqual([]);
+        expect(noteItem.extraFields.length).toEqual(14);
 
         /* Password item */
         const passwordItem = items[0] as ItemImportIntent<'login'>;
