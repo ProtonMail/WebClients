@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
 import { differenceInDays, fromUnixTime } from 'date-fns';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
@@ -23,8 +23,8 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
-import { FREE_PLAN, getPlansMap } from '@proton/payments';
 import type { FreePlanDefault, PLANS, Plan } from '@proton/payments';
+import { FREE_PLAN, getPlansMap } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
@@ -147,7 +147,7 @@ const CancelTrialModal = ({ onClose, ...rest }: ModalStateProps) => {
     const trialDurationExists = trialStartedOn && trialEndsOn;
     const trialDurationFormatted = trialDurationExists
         ? differenceInDays(fromUnixTime(trialEndsOn), fromUnixTime(trialStartedOn))
-        : null;
+        : 0;
 
     const trialInfo = useMemo(() => getTrialInfo(planTitle), [planTitle]);
 
@@ -166,7 +166,13 @@ const CancelTrialModal = ({ onClose, ...rest }: ModalStateProps) => {
     if (step === 'info') {
         return (
             <ModalTwo onClose={onClose} {...rest}>
-                <ModalTwoHeader title={c('Title').t`Your free trial ends in ${trialDurationFormatted} days`} />
+                <ModalTwoHeader
+                    title={c('Title').ngettext(
+                        msgid`Your free trial ends in ${trialDurationFormatted} day`,
+                        `Your free trial ends in ${trialDurationFormatted} days`,
+                        trialDurationFormatted
+                    )}
+                />
                 <ModalTwoContent>
                     <p>{c('Onboarding Trial').jt`Your full ${planTitle} subscription starts on ${boldEndDate}.`}</p>
                     <div className="flex flex-column gap-y-4 mt-12">
