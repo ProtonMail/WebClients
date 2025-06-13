@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { ModelState } from '@proton/account';
+import { type ModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getNewsletterSubscription } from '@proton/shared/lib/api/newsletterSubscription';
@@ -22,6 +22,7 @@ import {
     filterSubscriptionListFulfilled,
     filterSubscriptionListPending,
     filterSubscriptionListRejected,
+    handleServerEvent,
     removeSubscriptionFromActiveTabReducer,
     setSelectedElementIdReducer,
     setSelectedSubscriptionReducer,
@@ -136,6 +137,8 @@ const slice = createSlice({
         builder.addCase(updateSubscription.fulfilled, updateSubscriptionFulfilled);
 
         builder.addCase(fetchNextNewsletterSubscriptionsPage.fulfilled, fetchNextNewsletterSubscriptionsPageFulfilled);
+
+        builder.addCase(serverEvent, handleServerEvent);
     },
 });
 
