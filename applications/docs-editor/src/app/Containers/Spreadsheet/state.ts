@@ -16,6 +16,10 @@ import type {
 } from '@rowsncolumns/spreadsheet'
 import { defaultSpreadsheetTheme } from '@rowsncolumns/spreadsheet'
 import { useCharts } from '@rowsncolumns/charts'
+import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
+import type { DocStateInterface } from '@proton/docs-shared';
+import { DocProvider } from '@proton/docs-shared'
+import { useSyncedState } from '../../Hooks/useSyncedState'
 
 // local state
 // -----------
@@ -33,7 +37,8 @@ function useLocalState() {
   const [protectedRanges, onChangeProtectedRanges] = useState<ProtectedRange[]>([])
   const [scale, onChangeScale] = useState(1)
 
-  const values = {
+  return {
+    // values
     sheets,
     sheetData,
     theme,
@@ -45,8 +50,7 @@ function useLocalState() {
     charts,
     protectedRanges,
     scale,
-  }
-  const setters = {
+    // setters
     onChangeSheets,
     onChangeSheetData,
     onChangeTheme,
@@ -59,9 +63,6 @@ function useLocalState() {
     onChangeProtectedRanges,
     onChangeScale,
   }
-  const all = { ...values, ...setters }
-
-  return { values, setters, all }
 }
 
 type LocalState = ReturnType<typeof useLocalState>
@@ -72,261 +73,13 @@ type LocalState = ReturnType<typeof useLocalState>
 type SpreadsheetStateDependencies = {
   localState: LocalState
   locale: UseSpreadsheetProps['locale']
+  // TODO: review this dep
   onChangeHistory: UseSpreadsheetProps['onChangeHistory']
   functions: UseSpreadsheetProps['functions']
 }
 
 function useSpreadsheetState({ localState, ...deps }: SpreadsheetStateDependencies) {
-  const output = useSpreadsheetStateOriginal({ ...localState.all, ...deps })
-
-  // values
-  const {
-    activeCell,
-    activeSheetId,
-    selections,
-    rowCount,
-    columnCount,
-    frozenColumnCount,
-    frozenRowCount,
-    rowMetadata,
-    columnMetadata,
-    merges,
-    bandedRanges,
-    spreadsheetColors,
-    canRedo,
-    canUndo,
-  } = output
-  const values = {
-    activeCell,
-    activeSheetId,
-    selections,
-    rowCount,
-    columnCount,
-    frozenColumnCount,
-    frozenRowCount,
-    rowMetadata,
-    columnMetadata,
-    merges,
-    bandedRanges,
-    spreadsheetColors,
-    canRedo,
-    canUndo,
-  }
-
-  // setters
-  const {
-    onUndo,
-    onRedo,
-    onRequestCalculate,
-    onChangeActiveCell,
-    onChangeActiveSheet,
-    onSelectNextSheet,
-    onSelectPreviousSheet,
-    onChangeSelections,
-    onChange,
-    onChangeBatch,
-    onDelete,
-    onChangeFormatting,
-    onRepeatFormatting,
-    onClearFormatting,
-    onUnMergeCells,
-    onMergeCells,
-    onResize,
-    onChangeBorder,
-    onChangeDecimals,
-    onChangeSheetTabColor,
-    onRenameSheet,
-    onRequestDeleteSheet,
-    onDeleteSheet,
-    onShowSheet,
-    onHideSheet,
-    onProtectSheet,
-    onUnProtectSheet,
-    onMoveSheet,
-    onCreateNewSheet,
-    onDuplicateSheet,
-    onHideColumn,
-    onShowColumn,
-    onHideRow,
-    onShowRow,
-    onFill,
-    onFillRange,
-    onMoveEmbed,
-    onResizeEmbed,
-    onDeleteEmbed,
-    onDeleteRow,
-    onDeleteColumn,
-    onDeleteCellsShiftUp,
-    onDeleteCellsShiftLeft,
-    onInsertCellsShiftRight,
-    onInsertCellsShiftDown,
-    onInsertRow,
-    onInsertColumn,
-    onMoveColumns,
-    onMoveRows,
-    onMoveSelection,
-    onSortColumn,
-    onSortTable,
-    onFilterTable,
-    onResizeTable,
-    onCopy,
-    onPaste,
-    onCreateTable,
-    onRequestEditTable,
-    onUpdateTable,
-    onDragOver,
-    onDrop,
-    onInsertFile,
-    onFreezeColumn,
-    onFreezeRow,
-    onChangeSpreadsheetTheme,
-    onUpdateNote,
-    onSortRange,
-    onProtectRange,
-    onUnProtectRange,
-    onRequestDefineNamedRange,
-    onRequestUpdateNamedRange,
-    onCreateNamedRange,
-    onUpdateNamedRange,
-    onDeleteNamedRange,
-    onRequestConditionalFormat,
-    onCreateConditionalFormattingRule,
-    onUpdateConditionalFormattingRule,
-    onDeleteConditionalFormattingRule,
-    onPreviewConditionalFormattingRule,
-    onRequestFormatCells,
-    onRequestDataValidation,
-    onCreateDataValidationRule,
-    onUpdateDataValidationRule,
-    onDeleteDataValidationRule,
-    onDeleteDataValidationRules,
-  } = output
-  const setters = {
-    onUndo,
-    onRedo,
-    onRequestCalculate,
-    onChangeActiveCell,
-    onChangeActiveSheet,
-    onSelectNextSheet,
-    onSelectPreviousSheet,
-    onChangeSelections,
-    onChange,
-    onChangeBatch,
-    onDelete,
-    onChangeFormatting,
-    onRepeatFormatting,
-    onClearFormatting,
-    onUnMergeCells,
-    onMergeCells,
-    onResize,
-    onChangeBorder,
-    onChangeDecimals,
-    onChangeSheetTabColor,
-    onRenameSheet,
-    onRequestDeleteSheet,
-    onDeleteSheet,
-    onShowSheet,
-    onHideSheet,
-    onProtectSheet,
-    onUnProtectSheet,
-    onMoveSheet,
-    onCreateNewSheet,
-    onDuplicateSheet,
-    onHideColumn,
-    onShowColumn,
-    onHideRow,
-    onShowRow,
-    onFill,
-    onFillRange,
-    onMoveEmbed,
-    onResizeEmbed,
-    onDeleteEmbed,
-    onDeleteRow,
-    onDeleteColumn,
-    onDeleteCellsShiftUp,
-    onDeleteCellsShiftLeft,
-    onInsertCellsShiftRight,
-    onInsertCellsShiftDown,
-    onInsertRow,
-    onInsertColumn,
-    onMoveColumns,
-    onMoveRows,
-    onMoveSelection,
-    onSortColumn,
-    onSortTable,
-    onFilterTable,
-    onResizeTable,
-    onCopy,
-    onPaste,
-    onCreateTable,
-    onRequestEditTable,
-    onUpdateTable,
-    onDragOver,
-    onDrop,
-    onInsertFile,
-    onFreezeColumn,
-    onFreezeRow,
-    onChangeSpreadsheetTheme,
-    onUpdateNote,
-    onSortRange,
-    onProtectRange,
-    onUnProtectRange,
-    onRequestDefineNamedRange,
-    onRequestUpdateNamedRange,
-    onCreateNamedRange,
-    onUpdateNamedRange,
-    onDeleteNamedRange,
-    onRequestConditionalFormat,
-    onCreateConditionalFormattingRule,
-    onUpdateConditionalFormattingRule,
-    onDeleteConditionalFormattingRule,
-    onPreviewConditionalFormattingRule,
-    onRequestFormatCells,
-    onRequestDataValidation,
-    onCreateDataValidationRule,
-    onUpdateDataValidationRule,
-    onDeleteDataValidationRule,
-    onDeleteDataValidationRules,
-  }
-
-  // getters
-  const {
-    getDataRowCount,
-    getCellData,
-    getSheetName,
-    getSheetId,
-    getEffectiveFormat,
-    getEffectiveValue,
-    getNonEmptyColumnCount,
-    getNonEmptyRowCount,
-    getSeriesValuesFromRange,
-    getDomainValuesFromRange,
-  } = output
-  const getters = {
-    getDataRowCount,
-    getCellData,
-    getSheetName,
-    getSheetId,
-    getEffectiveFormat,
-    getEffectiveValue,
-    getNonEmptyColumnCount,
-    getNonEmptyRowCount,
-    getSeriesValuesFromRange,
-    getDomainValuesFromRange,
-  }
-
-  // actions
-  const { createHistory, enqueueCalculation, calculateNow } = output
-  const actions = {
-    createHistory,
-    enqueueCalculation,
-    calculateNow,
-  }
-
-  // all
-  const all = { ...values, ...setters, ...getters, ...actions }
-
-  return { values, setters, getters, actions, all }
+  return useSpreadsheetStateOriginal({ ...localState, ...deps })
 }
 
 type SpreadsheetState = ReturnType<typeof useSpreadsheetState>
@@ -340,20 +93,7 @@ type ChartsStateDependencies = {
 }
 
 function useChartsState({ spreadsheetState, ...deps }: ChartsStateDependencies) {
-  const chartsState = useCharts({ ...spreadsheetState.all, ...deps })
-
-  // values
-  const { selectedChart } = chartsState
-  const values = { selectedChart }
-
-  // setters
-  const { onRequestEditChart, onDeleteChart, onMoveChart, onResizeChart, onUpdateChart, onCreateChart } = chartsState
-  const setters = { onRequestEditChart, onDeleteChart, onMoveChart, onResizeChart, onUpdateChart, onCreateChart }
-
-  // all
-  const all = { ...values, ...setters }
-
-  return { values, setters, all }
+  return useCharts({ ...spreadsheetState, ...deps })
 }
 
 // search state
@@ -365,64 +105,82 @@ type SearchStateDependencies = {
 }
 
 function useSearchState({ localState, spreadsheetState }: SearchStateDependencies) {
-  const searchState = useSearch({
-    ...localState.all,
-    ...spreadsheetState.all,
-    sheetId: spreadsheetState.values.activeSheetId,
+  return useSearch({ ...localState, ...spreadsheetState, sheetId: spreadsheetState.activeSheetId })
+}
+
+// Yjs state
+// ---------
+
+type YjsStateDependencies = {
+  localState: LocalState
+  spreadsheetState: SpreadsheetState
+  docState: DocStateInterface
+}
+
+function useYjsState({ localState, spreadsheetState, docState }: YjsStateDependencies) {
+  const { userName } = useSyncedState()
+  const provider = useMemo(() => {
+    const provider = new DocProvider(docState)
+    // useYSpreadsheet checks for either a "synced" event from the provider
+    // or for a true `synced` property before it starts listening to changes
+    // to the doc
+    provider.synced = true
+    return provider
+  }, [docState])
+  const yDoc = useMemo(() => docState.getDoc(), [docState])
+
+  const yjsState = useYSpreadsheetV2({
+    ...localState,
+    ...spreadsheetState,
+
+    provider,
+    doc: yDoc,
+    sheetId: spreadsheetState.activeSheetId,
+    initialSheets: [],
+
+    userId: userName,
+    title: userName,
   })
-
-  // values
-  const { borderStyles, currentResult, totalResults, searchQuery, hasNextResult, hasPreviousResult, isSearchActive } =
-    searchState
-  const values = {
-    borderStyles,
-    currentResult,
-    totalResults,
-    searchQuery,
-    hasNextResult,
-    hasPreviousResult,
-    isSearchActive,
-  }
-
-  // setters
-  const { onSearch, onResetSearch, onFocusNextResult, onFocusPreviousResult, onRequestSearch } = searchState
-  const setters = { onSearch, onResetSearch, onFocusNextResult, onFocusPreviousResult, onRequestSearch }
-
-  // all
-  const all = { ...values, ...setters }
-
-  return { values, setters, all }
+  return { ...yjsState, userName }
 }
 
 // proton sheets state
 // -------------------
 
-type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, 'localState'>
+type OmitDepsKey = 'localState' | 'spreadsheetState' | 'onChangeHistory'
+type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDepsKey> &
+  Omit<ChartsStateDependencies, OmitDepsKey> &
+  Omit<SearchStateDependencies, OmitDepsKey> &
+  Omit<YjsStateDependencies, OmitDepsKey>
 
 export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
-  const localState = useLocalState()
-  const spreadsheetState = useSpreadsheetState({ localState, ...deps })
-  const chartsState = useChartsState({ spreadsheetState, ...deps })
-  const searchState = useSearchState({ localState, spreadsheetState })
+  const onChangeHistory: UseSpreadsheetProps['onChangeHistory'] = (patches) =>
+    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+    yjsState.onBroadcastPatch(patches)
 
-  // computed values
-  const { getEffectiveFormat } = spreadsheetState.getters
-  const { activeSheetId, activeCell } = spreadsheetState.values
+  const localState = useLocalState()
+  const depsWithLocalState = { localState, onChangeHistory, ...deps }
+  const spreadsheetState = useSpreadsheetState(depsWithLocalState)
+
+  const { getEffectiveFormat } = spreadsheetState
+  const { activeSheetId, activeCell } = spreadsheetState
   const currentCellFormat = useMemo(
     () => getEffectiveFormat(activeSheetId, activeCell.rowIndex, activeCell.columnIndex),
     [activeCell.columnIndex, activeCell.rowIndex, activeSheetId, getEffectiveFormat],
   )
   const computedValues = { currentCellFormat }
 
-  const values = { ...localState.values, ...spreadsheetState.values, ...computedValues }
-  const setters = { ...localState.setters, ...spreadsheetState.setters }
-  const getters = spreadsheetState.getters
-  const actions = spreadsheetState.actions
-  return { ...values, ...setters, ...getters, ...actions, chartsState: chartsState.all, searchState: searchState.all }
+  const depsWithBaseState = { spreadsheetState, ...depsWithLocalState }
+  const chartsState = useChartsState(depsWithBaseState)
+  const searchState = useSearchState(depsWithBaseState)
+  const yjsState = useYjsState(depsWithBaseState)
+
+  const baseState = { ...localState, ...spreadsheetState, ...computedValues }
+  return { ...baseState, chartsState, searchState, yjsState }
 }
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>
 
-export function useLogState(state: ProtonSheetsState, logState: (stateToLog: unknown) => void) {
+export function useLogState(state: ProtonSheetsState, updateLatestStateToLog: (stateToLog: unknown) => void) {
   const getStateToLog = useCallback(
     () => ({
       activeCell: state.activeCell,
@@ -450,8 +208,8 @@ export function useLogState(state: ProtonSheetsState, logState: (stateToLog: unk
     ],
   )
   useEffect(() => {
-    logState(getStateToLog())
-  }, [getStateToLog, logState])
+    updateLatestStateToLog(getStateToLog())
+  }, [getStateToLog, updateLatestStateToLog])
 
   return { getStateToLog }
 }
