@@ -9,7 +9,8 @@ const useAssistantFeatureEnabled = () => {
     const user = baseUseSelector(selectUser)?.value;
 
     const organization = baseUseSelector(selectOrganization)?.value;
-    const organizationScribeEnabled = !!organization?.Settings.ShowScribeWritingAssistant || !!user?.isAdmin;
+    const organizationScribeEnabled =
+        !!organization?.Settings.ShowScribeWritingAssistant || !!user?.isAdmin || !!user?.isFree;
     const planSupportsScribe = isScribeSupported(organization, user);
 
     const paymentsEnabled = accessToAssistant;
