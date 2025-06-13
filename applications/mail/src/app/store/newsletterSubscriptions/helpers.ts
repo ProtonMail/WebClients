@@ -93,3 +93,19 @@ export const getSortParams = (sortOption?: SortSubscriptionsValue) => {
             return undefined;
     }
 };
+
+export const filterNewsletterSubscriptionList = (list: string[], idToRemove?: string) => {
+    return list.filter((id) => id !== idToRemove);
+};
+
+export const moveIdToTop = (list: string[], id: string) => {
+    return [id, ...list.filter((item) => item !== id)];
+};
+
+export const incrementCount = (current: number = 0, increment: number = 1) => {
+    return current + increment;
+};
+
+export const decrementCount = (current: number = 0, decrement: number = 1) => {
+    return Math.max(current - decrement, 0);
+};
