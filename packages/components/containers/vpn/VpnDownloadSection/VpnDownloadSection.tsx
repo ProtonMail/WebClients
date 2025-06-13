@@ -101,7 +101,7 @@ const downloadData = [
                 content: {
                     image: macosPreview,
                     downloadButton: {
-                        title: () => c('Download').t`Download for MacOS`,
+                        title: () => c('Download').t`Download for macOS`,
                         links: [
                             {
                                 title: () => c('Download').t`macOS Ventura or later`,
