@@ -24,11 +24,11 @@ export const CollapsibleSection: FC<CollapsibleSectionProps> = ({
 }) => (
     <Collapsible expandByDefault={expanded} className={className}>
         <CollapsibleHeader className="flex flex-nowrap justify-space-between mb-2 color-weak" suffix={suffix}>
-            <div>
-                <CollapsibleHeaderIconButton className="color-weak">
+            <div className="flex flex-nowrap items-center gap-1">
+                <CollapsibleHeaderIconButton className="color-weak shrink-0" pill size="small">
                     <Icon name="chevron-down" />
                 </CollapsibleHeaderIconButton>
-                {label}
+                <span className="text-ellipsis">{label}</span>
             </div>
         </CollapsibleHeader>
         <CollapsibleContent>{children}</CollapsibleContent>

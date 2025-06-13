@@ -16,6 +16,8 @@ import { useMaxLengthLimiter } from '../../../hooks/useMaxLengthLimiter';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
+import './TextField.scss';
+
 export type BaseTextFieldProps = FieldProps &
     InputFieldProps<typeof Input> & {
         hidden?: boolean;
@@ -53,7 +55,11 @@ const BaseTextFieldRender: ForwardRefRenderFunction<HTMLInputElement, BaseTextFi
             unstyled
             assistContainerClassName="empty:hidden"
             error={error}
-            inputClassName={clsx('p-0 rounded-none', props.disabled ? 'color-disabled' : 'color-norm', inputClassName)}
+            inputClassName={clsx(
+                'pass-text-field--input p-0 rounded-none',
+                props.disabled ? 'color-disabled' : 'color-norm',
+                inputClassName
+            )}
             labelContainerClassName={clsx(
                 'm-0 text-normal text-sm',
                 error ? 'color-danger' : 'color-weak',

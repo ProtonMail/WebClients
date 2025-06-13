@@ -10,6 +10,7 @@ import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/
 import { createExtraField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
+import { BaseTextField } from '@proton/pass/components/Form/Field/TextField';
 import { IdentityAddNewSection } from '@proton/pass/components/Item/Identity/Identity.modal';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
 import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
@@ -63,21 +64,24 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
             render={(extraSectionsHelpers) => (
                 <>
                     {form.values.extraSections.map(({ sectionName, sectionFields }, sectionIndex) => {
-                        const sectionKey = `extraSections[${sectionIndex}].sectionFields`;
+                        const sectionKey = `extraSections[${sectionIndex}]`;
                         return (
                             <CollapsibleSection
                                 key={sectionKey}
-                                label={sectionName}
-                                expanded
-                                suffix={
-                                    <DeleteButton
-                                        size="small"
-                                        onDelete={() => extraSectionsHelpers.remove(sectionIndex)}
+                                label={
+                                    <Field
+                                        name={`${sectionKey}.sectionName`}
+                                        component={BaseTextField}
+                                        inputClassName="color-weak"
+                                        onClick={(evt) => evt.stopPropagation()}
+                                        placeholder={c('Action').t`Section name`}
                                     />
                                 }
+                                expanded
+                                suffix={<DeleteButton onDelete={() => extraSectionsHelpers.remove(sectionIndex)} />}
                             >
                                 <FieldArray
-                                    name={sectionKey}
+                                    name={`${sectionKey}.sectionFields`}
                                     render={(helpers) => (
                                         <>
                                             <FieldsetCluster>
@@ -87,7 +91,7 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                                                         key={`${sectionName}::${index}`}
                                                         component={ExtraFieldComponent}
                                                         type={type}
-                                                        name={`${sectionKey}[${index}]`}
+                                                        name={`${sectionKey}.sectionFields[${index}]`}
                                                         onDelete={() => helpers.remove(index)}
                                                         showIcon={false}
                                                     />
