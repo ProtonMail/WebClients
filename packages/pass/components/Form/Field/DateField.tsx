@@ -1,6 +1,7 @@
 import type { ForwardRefRenderFunction } from 'react';
 import { forwardRef, useMemo } from 'react';
 
+import { type Locale, parse } from 'date-fns';
 import formatISO from 'date-fns/formatISO';
 import { type FieldProps } from 'formik';
 
@@ -9,11 +10,23 @@ import { DateInputTwo, InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
 import { type Maybe } from '@proton/pass/types/utils';
+import { formatPlaceholder } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 
 export type Props = FieldProps<string> & InputFieldProps<typeof Input>;
 
-export const formatDate = (date: Date) => new Intl.DateTimeFormat(navigator.language, { timeZone: 'UTC' }).format(date);
+const DATE_FORMATS = ['PP', 'P'];
+
+const handleInput = (value: string, locale: Locale) => {
+    for (const format of DATE_FORMATS) {
+        try {
+            const parsed = parse(value, format, new Date(), { locale });
+            if (!isNaN(parsed.getTime())) return parsed;
+        } catch {}
+    }
+
+    return new Date();
+};
 
 const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
     { field, form, meta, inputClassName, labelContainerClassName, placeholder, disabled },
@@ -21,6 +34,8 @@ const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
 ) => {
     const { value, onChange } = field;
     const { error } = useFieldControl({ field, form, meta });
+
+    const formattedPlaceholder = useMemo(formatPlaceholder, []);
 
     const dateValue = useMemo<Maybe<Date>>(() => {
         if (value) {
@@ -38,7 +53,7 @@ const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
         <InputFieldTwo
             as={DateInputTwo}
             unstyled
-            placeholder={placeholder}
+            placeholder={placeholder ?? formattedPlaceholder}
             assistContainerClassName="empty:hidden"
             error={error}
             inputClassName={clsx('p-0 rounded-none', disabled ? 'color-disabled' : 'color-norm', inputClassName)}
@@ -50,7 +65,7 @@ const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
             onChange={handleDateChange}
             ref={ref}
             value={dateValue}
-            toFormatter={formatDate}
+            fromFormatter={handleInput}
         />
     );
 };

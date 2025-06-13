@@ -20,7 +20,7 @@ import clsx from '@proton/utils/clsx';
 type ExtraFieldOption = {
     icon: IconName;
     label: string;
-    placeholder: string;
+    placeholder?: string;
 };
 
 type ExtraFieldError<T extends ExtraFieldType> = FormikErrors<DeobfuscatedItemExtraField<T>>;
@@ -56,16 +56,24 @@ export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption>
     timestamp: {
         icon: 'calendar-grid',
         label: c('Label').t`Date`,
-        placeholder: c('Placeholder').t`Add date`,
     },
 });
 
 export const getExtraFieldOption = (type: ExtraFieldType) => getExtraFieldOptions()[type];
 
 type DeleteButtonProps = ButtonProps & { onDelete: () => void };
-export const DeleteButton: FC<DeleteButtonProps> = ({ onDelete, size = 'medium' }) => (
-    <Button icon pill color="weak" onClick={onDelete} shape="solid" size={size} title={c('Action').t`Delete`}>
-        <Icon name="cross" size={5} />
+export const DeleteButton: FC<DeleteButtonProps> = ({ onDelete }) => (
+    <Button
+        icon
+        pill
+        color="weak"
+        className="button-xs"
+        onClick={onDelete}
+        shape="solid"
+        size="small"
+        title={c('Action').t`Delete`}
+    >
+        <Icon name="cross" />
     </Button>
 );
 

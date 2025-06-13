@@ -20,6 +20,7 @@ import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreate
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
+import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
@@ -125,9 +126,9 @@ const extraTypeFieldValues = (template: CustomTemplate, values: CustomItemFormVa
 const FORM_ID = 'new-custom';
 
 const StartFromScratch: FC<{ onClick: () => void }> = ({ onClick }) => (
-    <Button pill color="norm" onClick={onClick} className="ui-violet">
-        <Icon name="pencil" className="mr-2" />
-        <span>{c('Action').t`Start from scratch`}</span>
+    <Button pill color="norm" onClick={onClick} className="ui-violet flex flex-nowrap gap-2">
+        <Icon name="pencil" className="shrink-0" />
+        <span className="text-ellipsis">{c('Action').t`Start from scratch`}</span>
     </Button>
 );
 
@@ -219,6 +220,13 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
         },
     });
 
+    useItemDraft<CustomItemFormValues>(form, {
+        mode: 'new',
+        type: form.values.type,
+        canSave: showForm,
+        onHydrated: (draft) => setShowForm(draft !== null),
+    });
+
     const onSelectTemplate = async (template: CustomTemplate) => {
         const values = extraTypeFieldValues(template, initialValues);
         await form.setValues(values);
@@ -235,7 +243,7 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
 
     return (
         <ItemCreatePanel
-            discardable={!form.dirty}
+            discardable={!(form.dirty && showForm)}
             formId={FORM_ID}
             handleCancelClick={handleCancelClick}
             cancelIcon={showForm ? 'arrow-left' : 'cross'}
@@ -250,7 +258,7 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
                         groups.map(({ label, theme, templates }) => (
                             <div key={label} className={clsx(theme, 'mb-4')}>
                                 <div className="mb-2 color-weak">{label}</div>
-                                <div className="grid gap-3" style={{ gridTemplateColumns: '1fr 1fr' }}>
+                                <div className="grid gap-3 grid-cols-1 md:grid-cols-2">
                                     {templates.map((template) => (
                                         <Button
                                             key={template.label}
@@ -261,7 +269,7 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
                                             onClick={() => onSelectTemplate(template)}
                                         >
                                             <div className="flex items-center w-full text-left flex-nowrap">
-                                                <Icon name={template.icon} className="mr-2" />
+                                                <Icon name={template.icon} className="shrink-0 mr-2" />
                                                 <span className="text-ellipsis">{template.label}</span>
                                             </div>
                                         </Button>
