@@ -59,6 +59,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,
+    type APP_NAMES,
     PASS_SHORT_APP_NAME,
     VPN_APP_NAME,
     VPN_CONNECTIONS,
@@ -70,6 +71,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
@@ -180,6 +182,7 @@ const Step1B = ({
     className,
     currencyUrlParam,
     toAppName,
+    toApp,
 }: {
     activeBreakpoint: Breakpoints;
     defaultEmail?: string;
@@ -204,6 +207,7 @@ const Step1B = ({
     className?: string;
     currencyUrlParam?: Currency;
     toAppName: string;
+    toApp: APP_NAMES;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const normalApi = useApi();
@@ -484,6 +488,7 @@ const Step1B = ({
     };
 
     const chargebeeContext = useChargebeeContext();
+    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
@@ -973,7 +978,7 @@ const Step1B = ({
         />
     );
 
-    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue);
+    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue) || isTrial;
     const loadingPaymentsForm = model.loadingDependencies;
 
     const title = (() => {
@@ -1111,6 +1116,7 @@ const Step1B = ({
                 />
             }
             hasSelectedFree={hasSelectedFree}
+            app={toApp}
         />
     );
 
@@ -1156,6 +1162,10 @@ const Step1B = ({
                 )}
                 {(() => {
                     if (!actualCheckout.discountPercent) {
+                        return;
+                    }
+
+                    if (isTrial) {
                         return;
                     }
 
@@ -1415,6 +1425,7 @@ const Step1B = ({
                                                     model.subscriptionData.billingAddress
                                                 )}
                                                 showCardIcons
+                                                isTrial={isTrial}
                                             />
                                         ) : (
                                             <div className="mb-4">
