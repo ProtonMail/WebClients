@@ -54,7 +54,7 @@ export const getB2BVPNConnectionsText = (n: number) => {
 
 export const getB2BVPNConnectionsDevicesText = (n: number) => {
     return c('Subscription attribute').ngettext(
-        msgid`VPN connection for ${n} devices per user`,
+        msgid`VPN connection for ${n} device per user`,
         `VPN connection for ${n} devices per user`,
         n
     );
