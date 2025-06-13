@@ -3,15 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Checkbox,
-    ContactImage,
-    Label,
-    type ModalProps,
-    NotificationButton,
-    Prompt,
-    useNotifications,
-} from '@proton/components';
+import { ContactImage, type ModalProps, NotificationButton, Prompt, useNotifications } from '@proton/components';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import truncate from '@proton/utils/truncate';
 
@@ -27,8 +19,15 @@ import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubs
 
 import { getUnsubscribeData, getUnsubscribeMethod } from '../../helper';
 import { MAX_LENGTH_SUB_NAME, type PropsWithNewsletterSubscription, UnsubscribeMethod } from '../../interface';
+import { ModalCheckboxWithLabel } from '../ModalBlockSender/ModalSharedComponents';
 import { ModalUnsubscribeMailToContent } from './ModalUnsubscribeMailToContent';
 import { useSendUnsubscribeEmail } from './useSendUnsubscribeEmail';
+
+type CheckboxState = {
+    trash: boolean;
+    archive: boolean;
+    read: boolean;
+};
 
 const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscription & ModalProps) => {
     const dispatch = useMailDispatch();
@@ -38,9 +37,11 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
 
     const unsubscribeMethod = getUnsubscribeMethod(subscription);
 
-    const [trash, setTrash] = useState(false);
-    const [archive, setArchive] = useState(false);
-    const [read, setRead] = useState(false);
+    const [checkboxes, setCheckboxes] = useState<CheckboxState>({
+        trash: false,
+        archive: false,
+        read: false,
+    });
 
     const { createNotification } = useNotifications();
 
@@ -72,12 +73,16 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
             void dispatch(updateSubscription({ subscription, subscriptionIndex, data: { Unsubscribed: true } }));
         }
 
-        if (trash || archive || read) {
+        if (checkboxes.trash || checkboxes.archive || checkboxes.read) {
             await dispatch(
                 filterSubscriptionList({
                     subscription,
                     subscriptionIndex,
-                    data: getUnsubscribeData({ trash, archive, read }),
+                    data: getUnsubscribeData({
+                        trash: checkboxes.trash,
+                        archive: checkboxes.archive,
+                        read: checkboxes.read,
+                    }),
                 })
             );
         }
@@ -124,37 +129,43 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
             <ModalUnsubscribeMailToContent subscription={subscription} />
             <p className="m-0 mb-2 text-sm color-weak">{c('Info').t`Optional`}</p>
 
-            <div className="flex flex-row items-start align-center mb-2">
-                <Checkbox
-                    checked={trash}
-                    onChange={() => {
-                        setTrash((val) => !val);
-                        setArchive(false);
-                    }}
-                    className="mr-2"
-                    id="trash"
-                />
-                <Label htmlFor="trash" className="p-0 flex-1">{c('Info').t`Trash existing messages`}</Label>
-            </div>
+            <ModalCheckboxWithLabel
+                label={c('Info').t`Trash existing messages`}
+                id="trash"
+                checked={checkboxes.trash}
+                onChange={() => {
+                    setCheckboxes((prev) => ({
+                        ...prev,
+                        archive: false,
+                        trash: !prev.trash,
+                    }));
+                }}
+            />
 
-            <div className="flex flex-row items-start align-center mb-2">
-                <Checkbox
-                    checked={archive}
-                    onChange={() => {
-                        setArchive((val) => !val);
-                        setTrash(false);
-                    }}
-                    className="mr-2"
-                    id="archive"
-                />
+            <ModalCheckboxWithLabel
+                label={c('Info').t`Archive existing messages`}
+                id="archive"
+                checked={checkboxes.archive}
+                onChange={() => {
+                    setCheckboxes((prev) => ({
+                        ...prev,
+                        archive: !prev.archive,
+                        trash: false,
+                    }));
+                }}
+            />
 
-                <Label htmlFor="archive" className="p-0 flex-1">{c('Info').t`Archive existing messages`}</Label>
-            </div>
-
-            <div className="flex flex-row items-start align-center mb-2">
-                <Checkbox checked={read} onChange={() => setRead((val) => !val)} className="mr-2" id="read" />
-                <Label htmlFor="read" className="p-0 flex-1">{c('Info').t`Mark all as read`}</Label>
-            </div>
+            <ModalCheckboxWithLabel
+                label={c('Info').t`Mark all as read`}
+                id="read"
+                checked={checkboxes.read}
+                onChange={() => {
+                    setCheckboxes((prev) => ({
+                        ...prev,
+                        read: !prev.read,
+                    }));
+                }}
+            />
         </Prompt>
     );
 };
