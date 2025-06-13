@@ -25,7 +25,7 @@ import { setParams } from 'proton-mail/store/elements/elementsActions';
 import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
-    selectAllSubscriptions,
+    allSubscriptionCount,
     selectTabLoadingState,
     selectedElementId,
     selectedSubscriptionIdSelector,
@@ -77,11 +77,11 @@ export const NewsletterSubscriptionView = ({
     const mailSettings = useMailModel('MailSettings');
     const dispatch = useMailDispatch();
 
-    const subscriptionsObject = useMailSelector(selectAllSubscriptions);
     const loadingSubscriptions = useMailSelector(selectTabLoadingState);
     const activeSubscription = useMailSelector(selectedSubscriptionSelector);
     const selectedElement = useMailSelector(selectedElementId);
     const selectedSubscriptionId = useMailSelector(selectedSubscriptionIdSelector);
+    const subscriptionCount = useMailSelector(allSubscriptionCount);
 
     const onboardingModal = useModalStateObject();
     const subscriptionContainerRef = useRef<HTMLDivElement>(null);
@@ -120,7 +120,7 @@ export const NewsletterSubscriptionView = ({
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
-    if (!loadingSubscriptions && !subscriptionsObject && Object.keys(subscriptionsObject || {}).length === 0) {
+    if (!loadingSubscriptions && subscriptionCount === 0) {
         return <NewsletterSubscriptionListPlaceholder />;
     }
 
