@@ -499,7 +499,7 @@ const Step1B = ({
         paymentMethodStatusExtended: model.paymentMethodStatusExtended,
         onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
-                const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
+                const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !isTrial;
 
                 const extendedParams: ExtendedTokenPayment = {
                     paymentsVersion,
