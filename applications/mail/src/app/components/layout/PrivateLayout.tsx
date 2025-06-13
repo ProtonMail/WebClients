@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { useUser } from '@proton/account/user/hooks';
 import { DrawerApp, FeatureTour, PrivateAppContainer, SmartBanner, TopBanners } from '@proton/components';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import type { Recipient } from '@proton/shared/lib/interfaces';
@@ -11,7 +12,7 @@ import type { Recipient } from '@proton/shared/lib/interfaces';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { selectLayoutIsExpanded } from 'proton-mail/store/layout/layoutSliceSelectors';
 
-import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, MESSAGE_ACTIONS } from '../../constants';
+import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../constants';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../store/layout/layoutSlice';

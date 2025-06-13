@@ -18,6 +18,7 @@ import {
     useSettingsLink,
 } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { forceSend } from '@proton/shared/lib/api/messages';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
@@ -30,7 +31,6 @@ import { composerActions } from 'proton-mail/store/composers/composersSlice';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
-import type { MESSAGE_ACTIONS } from '../../constants';
 import { isDirtyAddress } from '../../helpers/addresses';
 import { openDraft } from '../../store/messages/draft/messagesDraftActions';
 import type { MessageState, PartialMessageState } from '../../store/messages/messagesTypes';

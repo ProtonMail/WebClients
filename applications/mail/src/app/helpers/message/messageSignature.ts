@@ -1,3 +1,4 @@
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
@@ -6,7 +7,6 @@ import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { message } from '@proton/shared/lib/sanitize';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { MESSAGE_ACTIONS } from '../../constants';
 import type { MessageState } from '../../store/messages/messagesTypes';
 import { dedentTpl } from '../dedent';
 import { isHTMLEmpty } from '../dom';

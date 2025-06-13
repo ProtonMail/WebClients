@@ -1,3 +1,5 @@
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
@@ -7,11 +9,9 @@ import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { fromFields, protonSignature, recipients } from 'proton-mail/components/composer/tests/Composer.test.data';
 
 import { addressID, messageID, subject } from '../../components/message/tests/Message.test.helpers';
-import { MESSAGE_ACTIONS } from '../../constants';
 import type { MessageDecryption, MessageState } from '../../store/messages/messagesTypes';
 import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';
 import { clearAll, removeLineBreaks } from '../test/helper';
-import { createDocument } from '../test/message';
 import {
     cleanProxyImagesFromClipboardContent,
     getContentWithBlockquotes,
@@ -39,7 +39,7 @@ const getMessage = (isPlainText: boolean, isReferenceMessage: boolean, content: 
         messageDocument: {
             initialized: true,
             plainText: isPlainText ? content : undefined,
-            document: isPlainText ? undefined : createDocument(content),
+            document: isPlainText ? undefined : parseDOMStringToBodyElement(content),
         },
     } as MessageState;
 };
