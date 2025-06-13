@@ -29,7 +29,13 @@ import {
 import { isTaxInclusive } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
-import type { Api, ChargebeeEnabled, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
+import {
+    type Api,
+    type ChargebeeEnabled,
+    type ChargebeeUserExists,
+    SubscriptionMode,
+    type User,
+} from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
@@ -193,6 +199,8 @@ export const usePaymentFacade = ({
         onPaymentFailure: reportPaymentFailure,
     });
 
+    const isTrial = checkResult?.SubscriptionMode === SubscriptionMode.Trial;
+
     const hook = useInnerPaymentFacade(
         {
             amount,
@@ -229,6 +237,7 @@ export const usePaymentFacade = ({
             enableSepa,
             onBeforeSepaPayment,
             planIDs,
+            isTrial,
         },
         {
             api,

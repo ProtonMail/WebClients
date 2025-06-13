@@ -1,20 +1,12 @@
 import { format } from 'date-fns';
 
 import { MAX_CHARS_API } from '@proton/account';
-import { getInitialStorage, getStorageRange } from '@proton/components';
 import type { VerificationModel } from '@proton/components';
+import { getInitialStorage, getStorageRange } from '@proton/components';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
-import type { Subscription, V5PaymentToken } from '@proton/payments';
-import {
-    type PaymentsVersion,
-    isTokenPayment,
-    isWrappedPaymentsVersion,
-    setPaymentMethodV4,
-    setPaymentMethodV5,
-    subscribe,
-} from '@proton/payments';
-import { getIsPassB2BPlan, getIsVpnB2BPlan } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
+import { type PaymentsVersion, getIsPassB2BPlan, getIsVpnB2BPlan, subscribe } from '@proton/payments';
 import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -367,22 +359,6 @@ export const handleSubscribeUser = async (
         );
 
         reportPaymentSuccess();
-
-        if (subscriptionData.checkResult.AmountDue === 0 && isTokenPayment(subscriptionData.payment)) {
-            if (
-                isWrappedPaymentsVersion(subscriptionData.payment) &&
-                subscriptionData.payment.paymentsVersion === 'v5'
-            ) {
-                const v5PaymentToken: V5PaymentToken = {
-                    PaymentToken: subscriptionData.payment.Details.Token,
-                    v: 5,
-                };
-
-                await api(setPaymentMethodV5({ ...subscriptionData.payment, ...v5PaymentToken }));
-            } else {
-                await api(setPaymentMethodV4(subscriptionData.payment));
-            }
-        }
 
         return Subscription;
     } catch (error: any) {
