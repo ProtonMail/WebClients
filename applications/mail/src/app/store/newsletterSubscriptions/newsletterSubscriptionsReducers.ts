@@ -1,12 +1,23 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 
+import type { serverEvent } from '@proton/account';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type {
     GetNewsletterSubscriptionsApiResponse,
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { getPaginationDataFromNextPage, normalizeSubscriptions } from './helpers';
-import { type SortSubscriptionsValue, SubscriptionTabs } from './interface';
+import { getReceivedMessagesCount } from 'proton-mail/components/view/NewsletterSubscription/helper';
+
+import {
+    decrementCount,
+    filterNewsletterSubscriptionList,
+    getPaginationDataFromNextPage,
+    incrementCount,
+    moveIdToTop,
+    normalizeSubscriptions,
+} from './helpers';
+import { SortSubscriptionsValue, SubscriptionTabs } from './interface';
 import type {
     fetchNextNewsletterSubscriptionsPage,
     filterSubscriptionList,
@@ -108,13 +119,13 @@ export const unsubscribeSubscriptionPending = (
     }
 
     if (originalIndex !== -1) {
-        state.value.tabs.active.totalCount = Math.max(0, state.value.tabs.active.totalCount - 1);
+        state.value.tabs.active.totalCount = decrementCount(state.value.tabs.active.totalCount);
         // We don't remove the ID of the active tab now, we do this once the animation is done
         state.value.deletingSubscriptionId = subscriptionId;
     }
 
     state.value.tabs.unsubscribe.ids.unshift(subscriptionId);
-    state.value.tabs.unsubscribe.totalCount += 1;
+    state.value.tabs.unsubscribe.totalCount = incrementCount(state.value.tabs.unsubscribe.totalCount);
 };
 
 export const unsubscribeSubscriptionRejected = (
@@ -133,7 +144,7 @@ export const unsubscribeSubscriptionRejected = (
     const unsubscribedId = state.value.tabs.unsubscribe.ids.indexOf(subscriptionId);
     if (unsubscribedId !== -1) {
         state.value.tabs.unsubscribe.ids.splice(unsubscribedId, 1);
-        state.value.tabs.unsubscribe.totalCount = Math.max(0, state.value.tabs.unsubscribe.totalCount - 1);
+        state.value.tabs.unsubscribe.totalCount = decrementCount(state.value.tabs.unsubscribe.totalCount);
     }
 
     // We select the previous subscription if we had an error
@@ -142,7 +153,7 @@ export const unsubscribeSubscriptionRejected = (
     }
 
     state.value.tabs.active.ids.splice(originalIndex, 0, subscriptionId);
-    state.value.tabs.active.totalCount += 1;
+    state.value.tabs.active.totalCount = incrementCount(state.value.tabs.active.totalCount);
 };
 
 export const sortSubscriptionPending = (state: NewsletterSubscriptionsStateType) => {
@@ -281,13 +292,13 @@ export const updateSubscriptionPending = (
     };
 
     if (originalIndex !== -1) {
-        state.value.tabs.active.totalCount = Math.max(0, state.value.tabs.active.totalCount - 1);
+        state.value.tabs.active.totalCount = decrementCount(state.value.tabs.active.totalCount);
         // We don't remove the ID of the active tab now, we do this once the animation is done
         state.value.deletingSubscriptionId = subscriptionId;
     }
 
     state.value.tabs.unsubscribe.ids.unshift(subscriptionId);
-    state.value.tabs.unsubscribe.totalCount += 1;
+    state.value.tabs.unsubscribe.totalCount = incrementCount(state.value.tabs.unsubscribe.totalCount);
 };
 
 export const updateSubscriptionRejected = (
@@ -306,7 +317,7 @@ export const updateSubscriptionRejected = (
     const unsubscribedId = state.value.tabs.unsubscribe.ids.indexOf(subscriptionId);
     if (unsubscribedId !== -1) {
         state.value.tabs.unsubscribe.ids.splice(unsubscribedId, 1);
-        state.value.tabs.unsubscribe.totalCount = Math.max(0, state.value.tabs.unsubscribe.totalCount - 1);
+        state.value.tabs.unsubscribe.totalCount = decrementCount(state.value.tabs.unsubscribe.totalCount);
     }
 
     // We select the previous subscription if we had an error
@@ -315,7 +326,7 @@ export const updateSubscriptionRejected = (
     }
 
     state.value.tabs.active.ids.splice(originalIndex, 0, subscriptionId);
-    state.value.tabs.active.totalCount += 1;
+    state.value.tabs.active.totalCount = incrementCount(state.value.tabs.active.totalCount);
 };
 
 export const updateSubscriptionFulfilled = (
@@ -330,4 +341,91 @@ export const updateSubscriptionFulfilled = (
     state.value.byId[subscriptionId] = {
         ...action.payload.NewsletterSubscription,
     };
+};
+
+export const handleServerEvent = (state: NewsletterSubscriptionsStateType, action: ReturnType<typeof serverEvent>) => {
+    if (!state.value) {
+        return;
+    }
+
+    if (action.payload.NewsletterSubscriptions) {
+        for (const update of action.payload.NewsletterSubscriptions) {
+            // The update event must update the subscription object in the store and handle those two cases
+            // 1. The subscription receives a new message, we should move it to the top of the list
+            // 2. The subscription is unsubscribed, we should move it to the unsubscribe tab
+            if (update.Action === EVENT_ACTIONS.UPDATE) {
+                const subscriptionInStore = state.value.byId[update.ID];
+                const nextSubscription = update.NewsletterSubscription;
+
+                const prevCount = getReceivedMessagesCount(subscriptionInStore);
+                const nextCount = getReceivedMessagesCount(nextSubscription);
+
+                const recentlyReceivedSelected =
+                    state.value.tabs[state.value.selectedTab].sorting === SortSubscriptionsValue.RecentlyReceived;
+
+                // We want to move the subscription to the top of the list if the we received a new message
+                // and the selected tab is sorted by recently received
+                if (prevCount < nextCount && recentlyReceivedSelected) {
+                    if (subscriptionInStore.UnsubscribedTime) {
+                        state.value.tabs.unsubscribe.ids = moveIdToTop(state.value.tabs.unsubscribe.ids, update.ID);
+                    } else {
+                        state.value.tabs.active.ids = moveIdToTop(state.value.tabs.active.ids, update.ID);
+                    }
+                }
+
+                // We want to move the subscription to the unsubscribe tab if it is unsubscribed
+                if (!subscriptionInStore.UnsubscribedTime && nextSubscription.UnsubscribedTime) {
+                    state.value.tabs.active.ids = filterNewsletterSubscriptionList(
+                        state.value.tabs.active.ids,
+                        update.NewsletterSubscription.ID
+                    );
+                    state.value.tabs.unsubscribe.ids = moveIdToTop(state.value.tabs.unsubscribe.ids, update.ID);
+                    state.value.tabs.unsubscribe.totalCount = incrementCount(state.value.tabs.unsubscribe.totalCount);
+                    state.value.tabs.active.totalCount = decrementCount(state.value.tabs.active.totalCount);
+                }
+
+                state.value.byId[update.ID] = {
+                    ...state.value.byId[update.ID],
+                    ...update.NewsletterSubscription,
+                };
+            }
+
+            // For the create event we must add the subscription to the appropriate tab and increase it's total count
+            if (update.Action === EVENT_ACTIONS.CREATE) {
+                if (update.NewsletterSubscription.UnsubscribedTime) {
+                    state.value.tabs.unsubscribe.ids = moveIdToTop(state.value.tabs.unsubscribe.ids, update.ID);
+                    state.value.tabs.unsubscribe.totalCount = incrementCount(state.value.tabs.unsubscribe.totalCount);
+                } else {
+                    state.value.tabs.active.ids = moveIdToTop(state.value.tabs.active.ids, update.ID);
+                    state.value.tabs.active.totalCount = incrementCount(state.value.tabs.active.totalCount);
+                }
+
+                state.value.byId[update.ID] = update.NewsletterSubscription;
+            }
+
+            // For the delete event we must remove the subscription from the appropriate tab, unselect it (if it was selected), and decrease it's total count
+            if (update.Action === EVENT_ACTIONS.DELETE) {
+                if (state.value.byId[update.ID].UnsubscribedTime) {
+                    state.value.tabs.unsubscribe.totalCount = decrementCount(state.value.tabs.unsubscribe.totalCount);
+                } else {
+                    state.value.tabs.active.totalCount = decrementCount(state.value.tabs.active.totalCount);
+                }
+
+                if (state.value.selectedSubscriptionId === update.ID) {
+                    state.value.selectedSubscriptionId = undefined;
+                    state.value.selectedElementId = undefined;
+                }
+
+                // Always remove from both tabs
+                state.value.tabs.active.ids = filterNewsletterSubscriptionList(state.value.tabs.active.ids, update.ID);
+
+                state.value.tabs.unsubscribe.ids = filterNewsletterSubscriptionList(
+                    state.value.tabs.unsubscribe.ids,
+                    update.ID
+                );
+
+                delete state.value.byId[update.ID];
+            }
+        }
+    }
 };
