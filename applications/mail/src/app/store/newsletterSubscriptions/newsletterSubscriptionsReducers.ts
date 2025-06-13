@@ -47,6 +47,8 @@ export const setSelectedTabReducer = (
     }
 
     state.value.selectedTab = action.payload;
+    state.value.selectedElementId = undefined;
+    state.value.selectedSubscriptionId = undefined;
 };
 
 export const setSelectedSubscriptionReducer = (
