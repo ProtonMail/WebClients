@@ -49,14 +49,8 @@ describe('newsletterSubscriptions actions', () => {
             await thunk(mockDispatch, mockGetState, mockExtra.extra);
 
             expect(mockApi).toHaveBeenCalledWith({
-                url: 'mail/v4/newsletter-subscriptions',
+                url: 'mail/v4/newsletter-subscriptions?PageSize=100&Active=1&Spam=0&Sort[UnreadMessageCount]=DESC&Sort[ID]=DESC',
                 method: 'GET',
-                params: {
-                    Active: '1',
-                    'Sort[ID]': 'DESC',
-                    'Sort[UnreadMessageCount]': 'DESC',
-                    Spam: 0,
-                },
             });
         });
 
@@ -74,14 +68,8 @@ describe('newsletterSubscriptions actions', () => {
             await thunk(mockDispatch, mockGetState, mockExtra.extra);
 
             expect(mockApi).toHaveBeenCalledWith({
-                url: 'mail/v4/newsletter-subscriptions',
+                url: 'mail/v4/newsletter-subscriptions?PageSize=100&Active=1&Spam=0&Sort[Name]=ASC&Sort[ID]=DESC',
                 method: 'GET',
-                params: {
-                    Active: '1',
-                    'Sort[ID]': 'DESC',
-                    'Sort[Name]': 'ASC',
-                    Spam: 0,
-                },
             });
         });
 
@@ -99,14 +87,8 @@ describe('newsletterSubscriptions actions', () => {
             await thunk(mockDispatch, mockGetState, mockExtra.extra);
 
             expect(mockApi).toHaveBeenCalledWith({
-                url: 'mail/v4/newsletter-subscriptions',
+                url: 'mail/v4/newsletter-subscriptions?PageSize=100&Active=0&Spam=0&Sort[Name]=ASC&Sort[ID]=DESC',
                 method: 'GET',
-                params: {
-                    Active: '0',
-                    'Sort[ID]': 'DESC',
-                    'Sort[Name]': 'ASC',
-                    Spam: 0,
-                },
             });
         });
     });

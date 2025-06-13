@@ -31,13 +31,7 @@ export interface POSTSubscriptionAPIResponse {
 }
 
 export interface GetNewsletterSubscriptionsNextPage {
-    Pagination: {
-        AddressIDs: string[];
-        AnchorID: string | null;
-        AnchorLastReceivedTime: string | null;
-        AnchorUnreadMessageCount: number | null;
-        PageSize: number;
-    };
+    QueryString: string | null;
 }
 
 export interface GetNewsletterSubscriptionsApiResponse {
