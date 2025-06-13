@@ -63,9 +63,18 @@ export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption>
 export const getExtraFieldOption = (type: ExtraFieldType) => getExtraFieldOptions()[type];
 
 type DeleteButtonProps = ButtonProps & { onDelete: () => void };
-export const DeleteButton: FC<DeleteButtonProps> = ({ onDelete, size = 'medium' }) => (
-    <Button icon pill color="weak" onClick={onDelete} shape="solid" size={size} title={c('Action').t`Delete`}>
-        <Icon name="cross" size={5} />
+export const DeleteButton: FC<DeleteButtonProps> = ({ onDelete }) => (
+    <Button
+        icon
+        pill
+        color="weak"
+        className="button-xs"
+        onClick={onDelete}
+        shape="solid"
+        size="small"
+        title={c('Action').t`Delete`}
+    >
+        <Icon name="cross" />
     </Button>
 );
 
