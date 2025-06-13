@@ -26,9 +26,9 @@ import {
     FREE_PLAN,
     PLANS,
     type Plan,
-    getPlanIDs,
     getHas2024OfferCoupon,
     getIsVpnB2BPlan,
+    getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
     isMainCurrency,
@@ -44,6 +44,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces/Subscription';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import isTruthy from '@proton/utils/isTruthy';
@@ -321,6 +322,10 @@ const SingleSignupContainer = ({
         const isVpnPassPromotion = getIsVPNPassPromotion(coupon, selectedPlanCurrency);
         const billingAddress = maybeBillingAddress ?? model.subscriptionData.billingAddress;
 
+        const trial = withModel
+            ? model.subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial
+            : signupParameters.trial;
+
         const getSubscriptionDataCycleMapping = async () => {
             const originalCoupon = coupon;
 
@@ -412,6 +417,7 @@ const SingleSignupContainer = ({
                 cycle,
                 coupon,
                 billingAddress,
+                trial,
             });
         }
 
@@ -685,6 +691,7 @@ const SingleSignupContainer = ({
                             setModel={setModel}
                             measure={measure}
                             currencyUrlParam={signupParameters.currency}
+                            toApp={toApp}
                             onComplete={async (data) => {
                                 const { accountData, subscriptionData } = data;
                                 const accountType =
@@ -757,6 +764,8 @@ const SingleSignupContainer = ({
                             setModel={setModel}
                             measure={measure}
                             currencyUrlParam={signupParameters.currency}
+                            trial={signupParameters.trial}
+                            toApp={toApp}
                             onComplete={async (data) => {
                                 const { accountData, subscriptionData } = data;
                                 const accountType =
