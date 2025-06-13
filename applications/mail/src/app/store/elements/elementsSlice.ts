@@ -12,6 +12,7 @@ import {
 } from '../mailbox/mailboxActions';
 import { deleteDraft } from '../messages/draft/messagesDraftActions';
 import { expireMessages } from '../messages/expire/messagesExpireActions';
+import { filterSubscriptionList } from '../newsletterSubscriptions/newsletterSubscriptionsActions';
 import {
     addESResults,
     backendActionFinished,
@@ -62,6 +63,7 @@ import {
     markMessagesAsReadRejected,
     markMessagesAsUnreadPending,
     markMessagesAsUnreadRejected,
+    markNewsletterElementsAsReadPending,
     optimisticDelete as optimisticDeleteReducer,
     optimisticEmptyLabel as optimisticEmptyLabelReducer,
     optimisticUpdates,
@@ -173,6 +175,8 @@ const elementsSlice = createSlice({
         builder.addCase(markConversationsAsRead.rejected, markConversationsAsReadRejected);
         builder.addCase(markConversationsAsUnread.pending, markConversationsAsUnreadPending);
         builder.addCase(markConversationsAsUnread.rejected, markConversationsAsUnreadRejected);
+
+        builder.addCase(filterSubscriptionList.pending, markNewsletterElementsAsReadPending);
     },
 });
 

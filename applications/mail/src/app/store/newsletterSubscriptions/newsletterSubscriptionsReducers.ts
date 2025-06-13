@@ -212,7 +212,7 @@ export const filterSubscriptionListPending = (
 
     // We show the mark as read status when marking future subscriptions as read.
     const MarkAsRead = !!action.meta.arg.data.MarkAsRead && action.meta.arg.data.ApplyTo === 'All';
-    const MoveToFolder = action.meta.arg.data.DestinationFolder ?? '';
+    const MoveToFolder = action.meta.arg.data.DestinationFolder ?? null;
 
     state.value.byId[subscriptionId] = {
         ...state.value.byId[subscriptionId],

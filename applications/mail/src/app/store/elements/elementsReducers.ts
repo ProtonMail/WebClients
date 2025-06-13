@@ -14,6 +14,7 @@ import { getElementContextIdentifier, parseLabelIDsInEvent, isMessage as testIsM
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import { decrementUnread, incrementUnread } from '../mailbox/mailboxHelpers';
+import type { filterSubscriptionList } from '../newsletterSubscriptions/newsletterSubscriptionsActions';
 import { newElementsState } from './elementsSlice';
 import type {
     ESResults,
@@ -277,7 +278,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
 
         elementsToBypass.forEach((element) => {
             const isMessage = testIsMessage(element);
-            const id = (isMessage && conversationMode ? (element as Message).ConversationID : element.ID) || '';
+            const id = (isMessage && conversationMode ? element.ConversationID : element.ID) || '';
             if (!state.bypassFilter.includes(id)) {
                 state.bypassFilter.push(id);
             }
@@ -305,7 +306,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
         // we need to remove elements if they are already in the array
         const toRemoveIDs = elementsToRemove.map((element) => {
             const isMessage = testIsMessage(element);
-            return (isMessage && conversationMode ? (element as Message).ConversationID : element.ID) || '';
+            return (isMessage && conversationMode ? element.ConversationID : element.ID) || '';
         });
 
         state.bypassFilter = state.bypassFilter.filter((elementID) => {
@@ -534,9 +535,7 @@ const handleBypassFilter = (
         // we need to remove elements if they are already in the array
         const toRemoveIDs = elementsToRemove.map((element) => {
             const isMessage = testIsMessage(element);
-            return (
-                (isMessage && state.params.conversationMode ? (element as Message).ConversationID : element.ID) || ''
-            );
+            return (isMessage && state.params.conversationMode ? element.ConversationID : element.ID) || '';
         });
 
         state.bypassFilter = state.bypassFilter.filter((elementID) => {
@@ -817,4 +816,22 @@ export const markConversationsAsUnreadRejected = (
 
 export const resetRetry = (state: Draft<ElementsState>) => {
     state.retry = newRetry(state.retry, state.params, undefined);
+};
+
+export const markNewsletterElementsAsReadPending = (
+    state: Draft<ElementsState>,
+    action: ReturnType<typeof filterSubscriptionList.pending>
+) => {
+    const payload = action.meta.arg;
+
+    // The only action that have a visual impact is the mark as read
+    if (!payload.data.MarkAsRead) {
+        return;
+    }
+
+    Object.values(state.elements).forEach((element) => {
+        if (testIsMessage(element) && element.NewsletterSubscriptionID === payload.subscription.ID) {
+            element.Unread = 0;
+        }
+    });
 };
