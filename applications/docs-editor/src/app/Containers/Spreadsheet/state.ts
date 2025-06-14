@@ -17,7 +17,7 @@ import type {
 import { defaultSpreadsheetTheme } from '@rowsncolumns/spreadsheet'
 import { useCharts } from '@rowsncolumns/charts'
 import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
-import type { DocStateInterface } from '@proton/docs-shared';
+import type { DocStateInterface } from '@proton/docs-shared'
 import { DocProvider } from '@proton/docs-shared'
 import { useSyncedState } from '../../Hooks/useSyncedState'
 
@@ -88,12 +88,13 @@ type SpreadsheetState = ReturnType<typeof useSpreadsheetState>
 // ------------
 
 type ChartsStateDependencies = {
+  localState: LocalState
   spreadsheetState: SpreadsheetState
   onChangeHistory: UseSpreadsheetProps['onChangeHistory']
 }
 
-function useChartsState({ spreadsheetState, ...deps }: ChartsStateDependencies) {
-  return useCharts({ ...spreadsheetState, ...deps })
+function useChartsState({ localState, spreadsheetState, ...deps }: ChartsStateDependencies) {
+  return useCharts({ ...localState, ...spreadsheetState, ...deps })
 }
 
 // search state
@@ -189,7 +190,7 @@ export function useLogState(state: ProtonSheetsState, updateLatestStateToLog: (s
       sheetData: state.sheetData,
       conditionalFormats: state.conditionalFormats,
       protectedRanges: state.protectedRanges,
-      charts: state.chartsState,
+      charts: state.charts,
       embeds: state.embeds,
       tables: state.tables,
       namedRanges: state.namedRanges,
@@ -197,7 +198,7 @@ export function useLogState(state: ProtonSheetsState, updateLatestStateToLog: (s
     [
       state.activeCell,
       state.activeSheetId,
-      state.chartsState,
+      state.charts,
       state.conditionalFormats,
       state.embeds,
       state.namedRanges,
