@@ -19,7 +19,7 @@ import type { EditorControllerInterface } from '@proton/docs-core'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { splitExtension } from '@proton/shared/lib/helpers/file'
 import { useLogState, useProtonSheetsState } from './state'
-import { Toolbar } from './components/Toolbar'
+import { Toolbar } from './components/Toolbar/Toolbar'
 import { LOCALE } from './constants'
 
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'

@@ -44,8 +44,8 @@ import {
   SimpleTooltip,
 } from '@rowsncolumns/ui'
 import { MagnifyingGlassIcon, DownloadIcon, ImageIcon } from '@rowsncolumns/icons'
-import type { ProtonSheetsState } from '../state'
-import { LOCALE, CURRENCY } from '../constants'
+import type { ProtonSheetsState } from '../../state'
+import { LOCALE, CURRENCY } from '../../constants'
 import { useRef } from 'react'
 import { c } from 'ttag'
 import { functionDescriptions } from '@rowsncolumns/functions'

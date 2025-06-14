@@ -18,6 +18,7 @@
     "test:watch": "jest --watch --coverage=false"
   },
   "dependencies": {
+    "@ariakit/react": "^0.4.17",
     "@lexical/clipboard": "0.30.0",
     "@lexical/code": "0.30.0",
     "@lexical/hashtag": "0.30.0",
