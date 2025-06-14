@@ -24,6 +24,7 @@ import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authenticatio
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import useFlag from '@proton/unleash/useFlag'
+import clsx from '@proton/utils/clsx'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
@@ -151,7 +152,10 @@ function DocsHeaderForDocument({
   )
 
   return (
-    <div className="flex flex-nowrap items-center gap-2 px-3 py-2" data-testid="docs-header">
+    <div
+      className={clsx('flex flex-nowrap items-center gap-2 px-3 py-2', documentType === 'sheet' && 'bg-[#F9FBFC]')}
+      data-testid="docs-header"
+    >
       <div className="flex flex-1 flex-nowrap items-center head-480-749:!flex-none head-max-479:!basis-auto">
         {isHomepageEnabled ? <a href={getAppHref('/', APPS.PROTONDOCS)}>{icon}</a> : icon}
 
