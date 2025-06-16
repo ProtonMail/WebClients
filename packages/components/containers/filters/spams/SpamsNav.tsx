@@ -19,7 +19,7 @@ const getNav = (): [type: SpamNavItem, getName: () => string][] => {
 };
 
 const SpamFiltersNav = ({ selected, onChange }: Props) => (
-    <ul className="unstyled block spam-filters-nav">
+    <ul className="unstyled block spam-filters-nav" role="tablist">
         {getNav().map(([type, getName]) => (
             <li
                 key={type}
@@ -28,8 +28,15 @@ const SpamFiltersNav = ({ selected, onChange }: Props) => (
                     selected !== type && 'color-weak',
                     selected === type && 'border-primary text-bold color-norm',
                 ])}
+                role="presentation"
             >
-                <button type="button" className="expand-click-area" onClick={() => onChange(type)}>
+                <button
+                    type="button"
+                    role="tab"
+                    aria-selected={selected === type}
+                    className="expand-click-area"
+                    onClick={() => onChange(type)}
+                >
                     {getName()}
                 </button>
             </li>
