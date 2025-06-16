@@ -3,6 +3,8 @@ import { startCalendarEventListener, startHolidaysDirectoryListener } from '@pro
 import { startAccountSecurityListener } from '@proton/components';
 import { mailSettingsHeartbeatListener, startSharedListening } from '@proton/redux-shared-store';
 
+import { startElementsListener } from 'proton-mail/store/elements/elementsListener';
+
 import { startIncomingDefaultListener } from './incomingDefaults/incomingDefaultListener';
 import { getMailPersistedState } from './persistReducer';
 import type { AppStartListening } from './store';
@@ -17,4 +19,5 @@ export const start = ({ startListening }: { startListening: AppStartListening })
     startPersistListener(startListening, getMailPersistedState);
     startAccountSessionsListener(startListening);
     startIncomingDefaultListener(startListening);
+    startElementsListener(startListening);
 };
