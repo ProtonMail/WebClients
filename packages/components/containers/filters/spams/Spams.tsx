@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import SearchInput from '@proton/components/components/input/SearchInput';
 import LabelStack from '@proton/components/components/labelStack/LabelStack';
@@ -128,6 +128,8 @@ const Spams = ({ isOrganization }: Props) => {
         dispatch({ type: 'fetchList' });
     }, []);
 
+    const resultsCount = list.length;
+
     return (
         <>
             <div className="mb-8 spam-add-address">
@@ -159,6 +161,13 @@ const Spams = ({ isOrganization }: Props) => {
                             placeholder={c('FilterSettings').t`Search list`}
                         />
                     </div>
+                    <span className="sr-only" aria-atomic aria-live="assertive">
+                        {c('Info').ngettext(
+                            msgid`${resultsCount} result found`,
+                            `${resultsCount} results found`,
+                            resultsCount
+                        )}
+                    </span>
 
                     <SpamsNav
                         selected={display}
