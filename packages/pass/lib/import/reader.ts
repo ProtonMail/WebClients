@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { ExportFormat } from '@proton/pass/lib/export/types';
 import { read1Password1PifArchiveData } from '@proton/pass/lib/import/providers/1password/1pif.archive.reader';
+import { readBitwardenArchiveData } from '@proton/pass/lib/import/providers/bitwarden/bitwarden.archive.reader';
 import { readKasperskyData } from '@proton/pass/lib/import/providers/kaspersky/kaspersky.reader';
 import { readProtonPassCSV } from '@proton/pass/lib/import/providers/protonpass/protonpass.csv.reader';
 import { readProtonPassJSON } from '@proton/pass/lib/import/providers/protonpass/protonpass.json.reader';
@@ -40,7 +41,14 @@ export const importReader = async (payload: ImportReaderPayload): Promise<Import
 
     switch (payload.provider) {
         case ImportProvider.BITWARDEN:
-            return readBitwardenData(file);
+            switch (fileExtension) {
+                case 'json':
+                    return readBitwardenData(file);
+                case 'zip':
+                    return readBitwardenArchiveData(file);
+                default:
+                    throw new Error(c('Error').t`Unsupported Bitwarden file format`);
+            }
 
         case ImportProvider.BRAVE:
         case ImportProvider.CHROME:
