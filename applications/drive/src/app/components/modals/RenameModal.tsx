@@ -23,6 +23,7 @@ import noop from '@proton/utils/noop';
 
 import { RenameModal } from '../../modals/RenameModal';
 import { formatLinkName, splitLinkName, validateLinkNameField } from '../../store';
+import { getIsPublicContext } from '../../utils/getIsPublicContext';
 
 interface Props {
     onClose?: () => void;
@@ -30,6 +31,8 @@ interface Props {
     isFile: boolean;
     isDoc: boolean;
     name: string;
+    volumeId?: string;
+    linkId?: string;
 }
 
 const RenameModalDeprecated = ({
@@ -38,6 +41,8 @@ const RenameModalDeprecated = ({
     name: linkName,
     onClose,
     onSubmit,
+    volumeId, // here so they don't get added to the dom with modalProps
+    linkId, // here so they don't get added to the dom with modalProps
     ...modalProps
 }: Props & ModalStateProps) => {
     const [name, setName] = useState(linkName);
@@ -122,5 +127,6 @@ const RenameModalDeprecated = ({
 
 export const useRenameModal = () => {
     const useSDKModal = useFlag('DriveWebSDKRenameModal');
-    return useModalTwoStatic(useSDKModal ? RenameModal : RenameModalDeprecated);
+    const isPublic = getIsPublicContext();
+    return useModalTwoStatic(useSDKModal && !isPublic ? RenameModal : RenameModalDeprecated);
 };
