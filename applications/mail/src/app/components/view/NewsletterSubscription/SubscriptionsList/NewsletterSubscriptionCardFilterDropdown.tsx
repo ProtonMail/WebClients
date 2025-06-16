@@ -115,7 +115,7 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
             {renderUpsellModal && (
                 <FiltersUpsellModal
                     modalProps={upsellModalProps}
-                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_MAIL_SUBSCRIPTION}
+                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_NEWSLETTER_SUBSCRIPTION}
                 />
             )}
         </>
