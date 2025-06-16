@@ -110,6 +110,10 @@ export const useChargebeeCard = (
         paymentProcessor.onTokenIsChargeable = onChargeable;
     }, [onChargeable]);
 
+    useEffect(() => {
+        paymentProcessor.verifyOnly = !!verifyOnly;
+    }, [verifyOnly]);
+
     const reset = () => paymentProcessor.reset();
 
     const fetchPaymentToken = async () => {

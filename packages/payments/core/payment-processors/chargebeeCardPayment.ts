@@ -62,7 +62,7 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
         amountAndCurrency: AmountAndCurrency,
         private handles: ChargebeeIframeHandles,
         private events: ChargebeeIframeEvents,
-        private verifyOnly: boolean,
+        public verifyOnly: boolean,
         private forceEnableChargebee: ForceEnableChargebee,
         public onTokenIsChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>
     ) {
