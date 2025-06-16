@@ -144,13 +144,18 @@ const HeaderTab = ({ onClick, copy, count, active }: HeaderTabProps) => {
     );
 };
 
-export const NewsletterSubscriptionListHeader = () => {
+interface NewsletterSubscriptionListHeaderProps {
+    tabClickCallback: () => void;
+}
+
+export const NewsletterSubscriptionListHeader = ({ tabClickCallback }: NewsletterSubscriptionListHeaderProps) => {
     const counts = useMailSelector(selectSubscriptionsCount);
     const tab = useMailSelector(selectedTab);
     const dispatch = useMailDispatch();
 
     const handleTabClick = (tab: SubscriptionTabs) => {
         dispatch(newsletterSubscriptionsActions.setSelectedTab(tab));
+        tabClickCallback();
     };
 
     return (
