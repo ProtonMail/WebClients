@@ -1,7 +1,6 @@
 import { createPreAuthKTVerifier } from '@proton/key-transparency/lib';
 import {
     type BillingAddress,
-    COUPON_CODES,
     type Currency,
     type Cycle,
     type ExtendedTokenPayment,
@@ -26,7 +25,7 @@ import { handleSetupKeys } from '@proton/shared/lib/keys';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import { type AccountData, type ReferralData, SignupType } from '../../../signup/interfaces';
+import { type AccountData, SignupType } from '../../../signup/interfaces';
 
 export interface SubscriptionData2 {
     currency: Currency;
@@ -40,7 +39,6 @@ export interface SubscriptionData2 {
 const handleSubscribeUser = async (
     api: Api,
     subscriptionData: SubscriptionData2,
-    referralData: ReferralData | undefined,
     productParam: ProductParam,
     onPaymentSuccess?: () => void,
     onPaymentFailure?: () => void
@@ -53,8 +51,6 @@ const handleSubscribeUser = async (
         let paymentsVersion: PaymentsVersion;
         if (subscriptionData.paymentToken?.paymentsVersion) {
             paymentsVersion = subscriptionData.paymentToken.paymentsVersion;
-        } else if (referralData) {
-            paymentsVersion = 'v5';
         } else {
             paymentsVersion = 'v4';
         }
@@ -66,15 +62,13 @@ const handleSubscribeUser = async (
                     Currency: subscriptionData.currency,
                     Cycle: subscriptionData.cycle,
                     BillingAddress: subscriptionData.billingAddress,
-                    ...(referralData
-                        ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
-                        : {
-                              Payment: subscriptionData.paymentToken,
-                              Amount: subscriptionData.checkResult.AmountDue,
-                              ...(subscriptionData.checkResult.Coupon?.Code
-                                  ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
-                                  : undefined),
-                          }),
+                    ...{
+                        Payment: subscriptionData.paymentToken,
+                        Amount: subscriptionData.checkResult.AmountDue,
+                        ...(subscriptionData.checkResult.Coupon?.Code
+                            ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
+                            : undefined),
+                    },
                 },
                 productParam,
                 paymentsVersion
@@ -137,7 +131,6 @@ export const handleSetupUser = async ({
     trusted,
 
     subscriptionData,
-    referralData,
     productParam,
     keyTransparencyActivation,
 }: {
@@ -147,7 +140,6 @@ export const handleSetupUser = async ({
     trusted: boolean;
 
     subscriptionData: SubscriptionData2 | undefined;
-    referralData: ReferralData | undefined;
     productParam: ProductParam;
     keyTransparencyActivation: KeyTransparencyActivation;
 }) => {
@@ -175,7 +167,7 @@ export const handleSetupUser = async ({
     let subscription: Subscription | undefined;
     if (subscriptionData) {
         // Perform the subscription first to prevent "locked user" while setting up keys.
-        subscription = await handleSubscribeUser(api, subscriptionData, referralData, productParam);
+        subscription = await handleSubscribeUser(api, subscriptionData, productParam);
     }
 
     void api(updateLocale(localeCode)).catch(noop);
