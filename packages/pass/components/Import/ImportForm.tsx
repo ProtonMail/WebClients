@@ -37,7 +37,7 @@ const providerHasUnsupportedItemTypes = (provider: ImportProvider) =>
     ].includes(provider);
 
 const providerHasFileAttachments = (provider: ImportProvider) =>
-    [ImportProvider.ONEPASSWORD, ImportProvider.ENPASS].includes(provider);
+    [ImportProvider.ONEPASSWORD, ImportProvider.ENPASS, ImportProvider.BITWARDEN].includes(provider);
 
 export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'>> = ({ form, dropzone, busy }) => {
     const free = useSelector(selectPassPlan) === UserPassPlan.FREE;
@@ -128,7 +128,12 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
                         </Card>
                     )}
 
-                    <Dropzone onDrop={dropzone.onDrop} disabled={busy} border={false}>
+                    <Dropzone
+                        onDrop={dropzone.onDrop}
+                        disabled={busy}
+                        border={false}
+                        size={form.values.file ? 'small' : 'medium'}
+                    >
                         <Bordered
                             className={clsx([
                                 'flex flex-columns justify-center items-center relative p-4 mb-4 rounded border-weak min-h-custom pass-import-upload',

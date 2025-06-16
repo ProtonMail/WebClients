@@ -33,7 +33,7 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExte
         },
         [ImportProvider.BITWARDEN]: {
             title: 'Bitwarden',
-            fileExtension: 'json',
+            fileExtension: 'json, zip',
             tutorialUrl: 'https://proton.me/support/pass-import-bitwarden',
         },
         [ImportProvider.BRAVE]: {
