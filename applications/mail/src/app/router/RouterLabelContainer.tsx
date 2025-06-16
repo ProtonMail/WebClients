@@ -1,6 +1,8 @@
 import { useCallback, useRef } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
+import { c } from 'ttag';
+
 import { Commander, useActiveBreakpoint, useModalState } from '@proton/components';
 import { useFolders } from '@proton/mail/index';
 import { getFolderName } from '@proton/mail/store/labels/helpers';
@@ -195,6 +197,7 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
                     !showContentPanel && 'hidden',
                     showContentView ? 'overflow-hidden' : 'overflow-auto',
                 ])}
+                aria-label={c('Info').t`Message view`}
             >
                 {showPlaceholder && (
                     <MailboxContainerPlaceholder
