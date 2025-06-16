@@ -38,7 +38,7 @@
     "dependencies": {
         "@proton/shared": "workspace:^",
         "@types/minimist": "^1.2.5",
-        "electron-log": "^5.4.0",
+        "electron-log": "^5.4.1",
         "electron-squirrel-startup": "^1.0.1",
         "electron-store": "^8.2.0",
         "execa": "^8.0.1",
@@ -47,7 +47,7 @@
         "ttag": "^1.8.7",
         "ttag-cli": "^1.10.18",
         "update-electron-app": "^3.1.1",
-        "zod": "^3.25.32"
+        "zod": "^3.25.64"
     },
     "devDependencies": {
         "@doyensec/electronegativity": "^1.10.3",
@@ -66,7 +66,7 @@
         "@sentry/electron": "^5.12.0",
         "@types/jest": "^29.5.14",
         "@types/lodash": "^4.17.17",
-        "@types/node": "^22.15.23",
+        "@types/node": "^22.15.32",
         "@typescript-eslint/eslint-plugin": "^7.18.0",
         "@typescript-eslint/parser": "^7.18.0",
         "@vercel/webpack-asset-relocator-loader": "1.7.3",
@@ -82,7 +82,7 @@
         "node-loader": "^2.1.0",
         "prettier": "3.5.3",
         "style-loader": "^4.0.0",
-        "ts-jest": "^29.3.4",
+        "ts-jest": "^29.4.0",
         "ts-loader": "^9.5.2",
         "ts-node": "^10.9.2",
         "typescript": "^5.8.3"
