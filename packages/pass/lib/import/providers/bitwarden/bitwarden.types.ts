@@ -19,16 +19,15 @@ export type BitwardenCustomField = {
 };
 
 type BitwardenBaseItem = {
-    name: string;
-    notes: MaybeNull<string>;
-    fields?: BitwardenCustomField[];
-
-    /** Always `null` on org exports, see `collectionIds` instead */
-    folderId: MaybeNull<string>;
-
     /** Specific to org exports, has precedence over `folderId`
      * which will be present but always null. */
     collectionIds?: string[];
+    fields?: BitwardenCustomField[];
+    /** Always `null` on org exports, see `collectionIds` instead */
+    folderId: MaybeNull<string>;
+    id: string;
+    name: string;
+    notes: MaybeNull<string>;
 };
 
 type BitwardenFolder = { id: string; name: string };
