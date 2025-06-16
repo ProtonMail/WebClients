@@ -40,7 +40,7 @@ const ProtonPassPlaceholder = () => {
                     .t`They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.`}
             </p>
             <Button onClick={openSecurityCenterInDrawer} color="norm" shape="outline">
-                {appInView === 'security-center' ? c('Action').t`Create alias` : c('Action').t`Hide my email`}
+                {appInView === 'security-center' ? c('Action').t`Create alias` : c('Action').t`Hide-my-email`}
             </Button>
         </>
     );
