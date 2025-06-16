@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import type { EnpassCategory, EnpassItem } from '@proton/pass/lib/import/providers/enpass/enpass.types';
 import type { ImportFileReader } from '@proton/pass/lib/import/types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
@@ -72,20 +74,47 @@ export const extractEnpassLogin = extractEnpassFactory(ENPASS_FIELD_TYPES.login)
 export const extractEnpassCC = extractEnpassFactory(ENPASS_FIELD_TYPES.creditCard);
 export const extractEnpassCustom = extractEnpassFactory(ENPASS_FIELD_TYPES.custom);
 
+const extractEnpassExtraField = ({
+    value,
+    label,
+    sensitive,
+}: Pick<EnpassField, 'value' | 'label' | 'sensitive'>): DeobfuscatedItemExtraField => ({
+    data: { content: value },
+    fieldName: label,
+    type: sensitive ? 'hidden' : 'text',
+});
+
 export const extractEnpassExtraFields = (fields: EnpassField[]): DeobfuscatedItemExtraField[] =>
-    fields.map(({ value, label, sensitive }) => ({
-        data: { content: value },
-        fieldName: label,
-        type: sensitive ? 'hidden' : 'text',
-    }));
+    fields.map(extractEnpassExtraField);
 
 export const extractEnpassIdentity = (importItem: EnpassItem<EnpassCategory.IDENTITY>): ItemContent<'identity'> => {
     const item = itemBuilder('identity');
 
-    importItem.fields?.forEach(({ uid, value }) => {
-        const field = ENPASS_IDENTITY_FIELD_MAP[uid];
-        if (field) item.set('content', (content) => content.set(field, value ?? ''));
+    const extraSection = {
+        sectionName: c('Label').t`Extra fields`,
+        sectionFields: [] as DeobfuscatedItemExtraField[],
+    };
+
+    importItem.fields?.forEach(({ uid, value, label, sensitive }) => {
+        const identityField = ENPASS_IDENTITY_FIELD_MAP[uid];
+        if (identityField) item.set('content', (content) => content.set(identityField, value ?? ''));
+        else {
+            /* Enpass identity items have a lot of fields with
+             * empty value ("Secret question", "Signature" etc).
+             * So we don't import fields with empty value. */
+            if (!value) return;
+            extraSection.sectionFields.push(extractEnpassExtraField({ value, label, sensitive }));
+        }
     });
+
+    if (extraSection.sectionFields.length) {
+        item.set('content', (content) =>
+            content.set('extraSections', (sections) => {
+                sections.push(extraSection);
+                return sections;
+            })
+        );
+    }
 
     return item.data.content;
 };
