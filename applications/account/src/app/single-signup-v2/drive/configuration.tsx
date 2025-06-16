@@ -252,6 +252,7 @@ export const getDriveConfiguration = ({
     freePlan,
     audience,
     toApp,
+    signupParameters,
 }: {
     hideFreePlan: boolean;
     audience: Audience.B2B | Audience.B2C;
@@ -261,6 +262,7 @@ export const getDriveConfiguration = ({
     isLargeViewport: boolean;
     freePlan: FreePlanDefault;
     toApp: typeof APPS.PROTONDRIVE | typeof APPS.PROTONDOCS;
+    signupParameters?: { trial?: boolean };
 }): SignupConfiguration => {
     const logo = <DriveLogo />;
     const title = c('drive_signup_2024: Info').t`Secure cloud storage that gives you control of your data`;
@@ -310,7 +312,7 @@ export const getDriveConfiguration = ({
             },
             {
                 plan: PLANS.ENTERPRISE,
-                subsection: <LetsTalkGenericSubSection app="drive" />,
+                subsection: <LetsTalkGenericSubSection app="drive" signupParameters={signupParameters} />,
                 type: 'standard' as const,
                 guarantee: true,
                 interactive: false,
