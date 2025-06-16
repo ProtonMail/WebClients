@@ -6,7 +6,6 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getNewsletterSubscription } from '@proton/shared/lib/api/newsletterSubscription';
 import type { GetNewsletterSubscriptionsApiResponse } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { setParams } from '../elements/elementsActions';
 import { DEFAULT_PAGINATION_PAGE_SIZE, initialState, initialStateValue } from './constants';
 import { getTabData, normalizeSubscriptions } from './helpers';
 import { type NewsletterSubscriptionsInterface, SortSubscriptionsValue, SubscriptionTabs } from './interface';
@@ -52,7 +51,7 @@ const modelThunk = createAsyncModelThunk<
     NewsletterSubscriptionsState,
     ProtonThunkArguments
 >(`${newsletterSubscriptionName}/fetch`, {
-    miss: async ({ extraArgument, dispatch }) => {
+    miss: async ({ extraArgument }) => {
         try {
             const [active, unsubscribed] = await Promise.all([
                 extraArgument.api<GetNewsletterSubscriptionsApiResponse>(
@@ -77,9 +76,8 @@ const modelThunk = createAsyncModelThunk<
 
             const normalizedActive = normalizeSubscriptions(active.NewsletterSubscriptions);
             const normalizedUnsubscribed = normalizeSubscriptions(unsubscribed.NewsletterSubscriptions);
-
             const selectedSubscriptionId = normalizedActive.ids[0];
-            dispatch(setParams({ newsletterSubscriptionID: selectedSubscriptionId }));
+
             return {
                 byId: {
                     ...normalizedActive.byId,
