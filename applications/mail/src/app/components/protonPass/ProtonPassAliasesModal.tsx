@@ -52,7 +52,7 @@ const ProtonPassAliasesModal = ({ ...rest }: Props) => {
             </ModalTwoContent>
             <ModalTwoFooter>
                 <PrimaryButton onClick={openSecurityCenterInDrawer} className="ml-auto">
-                    {appInView === 'security-center' ? c('Action').t`Create alias` : c('Action').t`Hide my email`}
+                    {appInView === 'security-center' ? c('Action').t`Create alias` : c('Action').t`Hide-my-email`}
                 </PrimaryButton>
             </ModalTwoFooter>
         </ModalTwo>
