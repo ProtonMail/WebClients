@@ -11,6 +11,7 @@ import {
     importLoginItem,
     importNoteItem,
     importSshKeyItem,
+    importWifiItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
@@ -25,6 +26,7 @@ import {
     extract1PasswordLoginField,
     extract1PasswordNote,
     extract1PasswordURLs,
+    extractBaseWifi,
     format1PasswordMonthYear,
     intoFilesFrom1PasswordItem,
     is1PasswordCCField,
@@ -153,6 +155,17 @@ const processSshKeyItem = (item: OnePassItem) => {
     });
 };
 
+const processWifiItem = (item: OnePassItem) =>
+    importWifiItem({
+        name: item.overview.title,
+        note: item.details.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        trashed: item.state === OnePassState.ARCHIVED,
+        extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
+        ...extractBaseWifi(item.details.sections),
+    });
+
 export const read1Password1PuxData = async (file: File): Promise<ImportReaderResult> => {
     try {
         const fileReader = await readZIP(file);
@@ -192,6 +205,8 @@ export const read1Password1PuxData = async (file: File): Promise<ImportReaderRes
                                 return identityItem ? attachFilesToItem(identityItem, files) : identityItem;
                             case OnePassCategory.SSH_KEY:
                                 return attachFilesToItem(processSshKeyItem(item), files);
+                            case OnePassCategory.WIFI:
+                                return attachFilesToItem(processWifiItem(item), files);
 
                             default:
                                 const unknownItem = item as OnePassBaseItem & { details: any };
