@@ -32,6 +32,7 @@ import {
     pollTaskRunning,
     removeExpired,
     reset,
+    resetRetry,
     retry,
     setParams,
     showSerializedElements as showSerializedElementsAction,
@@ -67,6 +68,7 @@ import {
     pollTaskRunningFulfilled,
     removeExpired as removeExpiredReducer,
     reset as resetReducer,
+    resetRetry as resetRetryReducer,
     retry as retryReducer,
     selectAllFulfilled,
     setParams as setParamsReducer,
@@ -130,6 +132,7 @@ const elementsSlice = createSlice({
         builder.addCase(load.pending, loadPending);
         builder.addCase(load.fulfilled, loadFulfilled);
         builder.addCase(retry, retryReducer);
+        builder.addCase(resetRetry, resetRetryReducer);
         builder.addCase(removeExpired, removeExpiredReducer);
         builder.addCase(invalidate, invalidateReducer);
         builder.addCase(eventUpdates.pending, eventUpdatesPending);

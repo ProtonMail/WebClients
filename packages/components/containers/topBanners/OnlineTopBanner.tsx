@@ -56,7 +56,10 @@ const OnlineTopBanner = () => {
     }, [safeOnlineStatus]);
 
     if (safeOnlineStatus && backOnline) {
-        return <TopBanner className="bg-success">{c('Info').t`Internet connection restored.`}</TopBanner>;
+        return (
+            <TopBanner className="bg-success" data-testid="top-banner-connection-restored">{c('Info')
+                .t`Internet connection restored.`}</TopBanner>
+        );
     }
 
     if (safeOnlineStatus) {
@@ -69,8 +72,10 @@ const OnlineTopBanner = () => {
 
     // If the device is known to be offline, the API unreachable is not displayed.
     return (
-        <TopBanner className={clsx(isElectronApp ? 'bg-info' : 'bg-danger')}>{c('Info')
-            .t`Internet connection lost. Please check your device's connectivity.`}</TopBanner>
+        <TopBanner
+            className={clsx(isElectronApp ? 'bg-info' : 'bg-danger')}
+            data-testid="top-banner-connection-lost"
+        >{c('Info').t`Internet connection lost. Please check your device's connectivity.`}</TopBanner>
     );
 };
 
