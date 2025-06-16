@@ -167,17 +167,21 @@ const SubscriptionsSection = () => {
 
     const renewalTextElement = <span data-testid="renewalNotice">{renewalText}</span>;
 
-    const status = isB2BTrial
-        ? {
-              type: 'success' as BadgeType,
-              label: c('Subscription status').t`Free Trial`,
-          }
-        : subscriptionExpiresSoon
-          ? {
+    const status = (() => {
+        if (isB2BTrial) {
+            return {
+                type: 'success' as BadgeType,
+                label: c('Subscription status').t`Free Trial`,
+            };
+        } else if (subscriptionExpiresSoon) {
+            return {
                 type: 'error' as BadgeType,
                 label: c('Subscription status').t`Expiring`,
-            }
-          : { type: 'success' as BadgeType, label: c('Subscription status').t`Active` };
+            };
+        } else {
+            return { type: 'success' as BadgeType, label: c('Subscription status').t`Active` };
+        }
+    })();
 
     return (
         <SettingsSectionWide>
@@ -197,7 +201,9 @@ const SubscriptionsSection = () => {
                                 <span data-testid="planNameId">{planTitle}</span>
                             </TableCell>
                             <TableCell data-testid="subscriptionStatusId">
-                                <Badge type={status.type}>{status.label}</Badge>
+                                <Badge type={status.type} className="text-nowrap">
+                                    {status.label}
+                                </Badge>
                             </TableCell>
                             <TableCell label={c('Title subscription').t`End date`}>
                                 <Time format="PPP" sameDayFormat={false} data-testid="planEndTimeId">
