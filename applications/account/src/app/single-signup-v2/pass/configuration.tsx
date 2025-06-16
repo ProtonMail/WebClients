@@ -472,6 +472,7 @@ export const getPassConfiguration = ({
     isPaidPassVPNBundle,
     plansMap,
     plan,
+    signupParameters,
 }: {
     showPassFamily: boolean;
     mode: SignupMode;
@@ -483,6 +484,7 @@ export const getPassConfiguration = ({
     isPaidPassVPNBundle: boolean;
     plansMap?: PlansMap;
     plan: Plan | undefined;
+    signupParameters?: { trial?: boolean };
 }): SignupConfiguration => {
     const logo = <PassLogo />;
 
@@ -544,7 +546,9 @@ export const getPassConfiguration = ({
             },
             {
                 plan: PLANS.ENTERPRISE,
-                subsection: <LetsTalkSubsection vpnServersCountData={vpnServersCountData} />,
+                subsection: (
+                    <LetsTalkSubsection vpnServersCountData={vpnServersCountData} signupParameters={signupParameters} />
+                ),
                 type: 'standard' as const,
                 guarantee: true,
                 interactive: false,

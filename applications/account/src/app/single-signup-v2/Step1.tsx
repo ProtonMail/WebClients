@@ -878,6 +878,10 @@ const Step1 = ({
                         return;
                     }
 
+                    if (signupParameters.trial) {
+                        return;
+                    }
+
                     if (model.loadingDependencies) {
                         return <SkeletonLoader width="36em" height="2.5rem" index={0} className="mt-4 max-w-full" />;
                     }

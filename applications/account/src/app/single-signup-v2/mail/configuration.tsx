@@ -221,6 +221,7 @@ export const getMailConfiguration = ({
     isLargeViewport,
     plansMap,
     signupParameters: { mode, hideFreePlan, invite },
+    signupParameters,
     canUseBYOE,
 }: {
     freePlan: FreePlanDefault;
@@ -304,7 +305,7 @@ export const getMailConfiguration = ({
             },
             {
                 plan: PLANS.ENTERPRISE,
-                subsection: <LetsTalkGenericSubSection app="mail" />,
+                subsection: <LetsTalkGenericSubSection app="mail" signupParameters={signupParameters} />,
                 type: 'standard' as const,
                 guarantee: true,
                 interactive: false,
