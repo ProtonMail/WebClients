@@ -1496,9 +1496,32 @@
                     "sensitive": 0,
                     "type": "text",
                     "uid": 168,
-                    "updated_at": 1697803540,
-                    "value": "",
-                    "value_updated_at": 1697803540
+                    "updated_at": 1750070533,
+                    "value": "JJ",
+                    "value_updated_at": 1750070533
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1750070533,
+                            "value": "test\n"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1750070543,
+                            "value": "line1\nline2\n"
+                        }
+                    ],
+                    "label": "first custom field",
+                    "order": 48,
+                    "sensitive": 0,
+                    "type": "multiline",
+                    "uid": 7884,
+                    "updated_at": 1750070552,
+                    "value": "line1\nline2",
+                    "value_updated_at": 1750070552
                 }
             ],
             "icon": {
