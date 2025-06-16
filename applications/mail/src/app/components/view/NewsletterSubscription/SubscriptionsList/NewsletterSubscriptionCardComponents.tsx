@@ -90,8 +90,7 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
 
     const unsubscribeMethod = getUnsubscribeMethod(subscription);
 
-    const handleMoveToFolderClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.stopPropagation();
+    const handleMoveToFolderClick = () => {
         if (shouldOpenUpsellOnFilterClick(subscription, user, filters)) {
             filterUpsellModal.openModal(true);
         } else {
@@ -99,8 +98,7 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
         }
     };
 
-    const handleUnsubscribeClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.stopPropagation();
+    const handleUnsubscribeClick = () => {
         if (unsubscribeMethod) {
             unsubscribeModal.openModal(true);
         } else {
