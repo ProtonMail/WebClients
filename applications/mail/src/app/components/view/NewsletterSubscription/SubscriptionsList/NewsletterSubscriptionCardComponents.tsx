@@ -8,7 +8,6 @@ import { Button } from '@proton/atoms';
 import { FiltersUpsellModal, Icon, useModalStateObject } from '@proton/components';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
 import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
@@ -109,12 +108,7 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
 
     return (
         <>
-            <Button
-                onClick={handleUnsubscribeClick}
-                className={clsx(!unsubscribeMethod && 'text-bold color-primary')}
-                shape="outline"
-                size="tiny"
-            >{c('Action').t`Unsubscribe`}</Button>
+            <Button onClick={handleUnsubscribeClick} shape="outline" size="tiny">{c('Action').t`Unsubscribe`}</Button>
 
             <Button onClick={handleMoveToFolderClick} shape="outline" size="tiny">{c('Action')
                 .t`Move to folder`}</Button>
