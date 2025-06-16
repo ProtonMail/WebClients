@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
 import EmptyView from './EmptyView';
 
@@ -57,6 +58,15 @@ describe('Empty view', () => {
             const title = screen.getByTestId('empty-view-placeholder--empty-title');
             expect(title?.innerHTML).toBe('No messages scheduled');
         });
+
+        it('Should show newsletter subscription title when in newsletter subscription folder', () => {
+            render(
+                <EmptyView labelID={CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS} isSearch={false} isUnread={false} />
+            );
+
+            const title = screen.getByTestId('empty-view-placeholder--empty-title');
+            expect(title?.innerHTML).toBe('No messages to show');
+        });
     });
 
     describe('Content test', () => {
@@ -88,6 +98,15 @@ describe('Empty view', () => {
             expect(description?.innerHTML).toContain(
                 'For more search results, try searching for this keyword in the content of your email messages.'
             );
+        });
+
+        it('Should show newsletter subscription description when in newsletter subscription folder', () => {
+            render(
+                <EmptyView labelID={CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS} isSearch={false} isUnread={false} />
+            );
+
+            const description = screen.getByTestId('empty-view-placeholder--empty-description');
+            expect(description?.innerHTML).toBe("You've moved all messages from this sender to Trash or Spam.");
         });
     });
 });
