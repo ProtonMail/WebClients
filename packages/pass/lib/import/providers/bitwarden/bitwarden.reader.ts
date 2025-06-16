@@ -3,6 +3,7 @@ import keyBy from 'lodash/keyBy';
 import { c } from 'ttag';
 
 import { ImportProviderError, ImportReaderError } from '@proton/pass/lib/import/helpers/error';
+import { attachFilesToItem } from '@proton/pass/lib/import/helpers/files';
 import {
     getEmailOrUsername,
     getImportedVaultName,
@@ -39,7 +40,10 @@ const addCustomFieldsWarning = (ignored: string[], item: BitwardenItem) => {
     }
 };
 
-export const readBitwardenData = async (file: File): Promise<ImportReaderResult> => {
+export const readBitwardenData = async (
+    file: File,
+    attachments?: Map<string, string[]>
+): Promise<ImportReaderResult> => {
     try {
         const data = await file.text();
         const parsedData = JSON.parse(data) as BitwardenData;
@@ -106,7 +110,10 @@ export const readBitwardenData = async (file: File): Promise<ImportReaderResult>
                     })();
 
                     if (!value) ignored.push(`[${item.type}] ${item.name}`);
-                    else items.push(value);
+                    else {
+                        const files = attachments?.get(item.id) ?? [];
+                        items.push(attachFilesToItem(value, files));
+                    }
                 } catch (err) {
                     ignored.push(`[${item.type}] ${item.name}`);
                     logger.warn('[Importer::Bitwarden]', err);
