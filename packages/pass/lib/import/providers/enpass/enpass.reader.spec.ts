@@ -27,7 +27,7 @@ describe('Import Enpass json', () => {
 
         const [primary] = payload.vaults;
         expect(primary.name).not.toBeUndefined();
-        expect(primary.items.length).toEqual(16);
+        expect(primary.items.length).toEqual(15);
 
         /* Login */
         const loginItem1 = deobfuscateItem(primary.items[0]) as unknown as ItemImportIntent<'login'>;
@@ -105,35 +105,63 @@ describe('Import Enpass json', () => {
         expect(creditCardItem1.content.expirationDate).toEqual('03/27');
         expect(creditCardItem1.content.verificationNumber).toEqual('1234');
         expect(creditCardItem1.content.pin).toEqual('9874');
-
-        /* Credit card - extracted login item */
-        const creditCardLoginItem1 = deobfuscateItem(primary.items[7]) as unknown as ItemImportIntent<'login'>;
-        expect(creditCardLoginItem1.type).toEqual('login');
-        expect(creditCardLoginItem1.metadata.name).toEqual(creditCardItem1.metadata.name);
-        expect(creditCardLoginItem1.content.itemEmail).toEqual('');
-        expect(creditCardLoginItem1.content.itemUsername).toEqual('Emily_ENP');
-        expect(creditCardLoginItem1.content.password).toEqual(
-            'nnn tug shoot selfish bon liars convent dusty minnow uncheck'
-        );
-        expect(creditCardLoginItem1.content.totpUri).toEqual('');
-        expect(creditCardLoginItem1.content.urls).toEqual(['http://global.americanexpress.com/']);
+        expect(creditCardItem1.extraFields).toEqual([
+            { data: { content: 'Emily_ENP' }, fieldName: 'Username', type: 'text' },
+            {
+                data: { content: 'nnn tug shoot selfish bon liars convent dusty minnow uncheck' },
+                fieldName: 'Login password',
+                type: 'hidden',
+            },
+            { data: { content: 'http://global.americanexpress.com/' }, fieldName: 'Website', type: 'text' },
+            { data: { content: 'American Express' }, fieldName: 'Issuing bank', type: 'text' },
+            { data: { content: '100000' }, fieldName: 'Credit limit', type: 'text' },
+            { data: { content: '50000' }, fieldName: 'Withdrawal limit', type: 'text' },
+        ]);
 
         /* Password */
-        const passwordItem1 = deobfuscateItem(primary.items[8]) as unknown as ItemImportIntent<'login'>;
+        const passwordItem1 = deobfuscateItem(primary.items[7]) as unknown as ItemImportIntent<'login'>;
         expect(passwordItem1.metadata.name).toEqual('Password');
         expect(passwordItem1.content.itemEmail).toEqual('');
         expect(passwordItem1.content.itemUsername).toEqual('username');
         expect(passwordItem1.content.password).toEqual('password');
 
         /* Identity */
-        const identityItem = deobfuscateItem(primary.items[9]) as unknown as ItemImportIntent<'identity'>;
+        const identityItem = deobfuscateItem(primary.items[8]) as unknown as ItemImportIntent<'identity'>;
         expect(identityItem.metadata.name).toEqual('Identity');
         expect(identityItem.content.firstName).toEqual('John');
         expect(identityItem.content.middleName).toEqual('Jay');
         expect(identityItem.content.lastName).toEqual('Doe');
+        expect(identityItem.content.extraSections).toEqual([
+            {
+                sectionName: 'Extra fields',
+                sectionFields: [
+                    {
+                        fieldName: 'Initial',
+                        data: {
+                            content: 'JD',
+                        },
+                        type: 'text',
+                    },
+                    {
+                        fieldName: 'Signature',
+                        data: {
+                            content: 'JJ',
+                        },
+                        type: 'text',
+                    },
+                    {
+                        fieldName: 'first custom field',
+                        data: {
+                            content: 'line1\nline2',
+                        },
+                        type: 'text',
+                    },
+                ],
+            },
+        ]);
 
         /* Login with file attachments */
-        const loginFileAttachments = deobfuscateItem(primary.items[10]) as unknown as ItemImportIntent<'login'>;
+        const loginFileAttachments = deobfuscateItem(primary.items[9]) as unknown as ItemImportIntent<'login'>;
         expect(loginFileAttachments.type).toEqual('login');
         expect(loginFileAttachments.metadata.name).toEqual('login with 2 file attachments');
         expect(loginFileAttachments.content.itemEmail).toEqual('john@example.com');
@@ -147,7 +175,7 @@ describe('Import Enpass json', () => {
         expect(payload.ignored.length).toEqual(0);
 
         const [primary] = payload.vaults;
-        const travelItem1 = deobfuscateItem(primary.items[11]) as unknown as ItemImportIntent<'custom'>;
+        const travelItem1 = deobfuscateItem(primary.items[10]) as unknown as ItemImportIntent<'custom'>;
         expect(travelItem1.type).toEqual('custom');
         expect(travelItem1.metadata.name).toEqual('Passport Sample');
         expect(travelItem1.extraFields.length).toEqual(8);
