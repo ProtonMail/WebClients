@@ -10,6 +10,7 @@ import {
     importIdentityItem,
     importLoginItem,
     importNoteItem,
+    importSshKeyItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
@@ -136,6 +137,22 @@ const processCustomItem = (item: OnePassItem) =>
         extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
     });
 
+const processSshKeyItem = (item: OnePassItem) => {
+    const sshKey = item.details.sections
+        ?.flatMap((section) => section.fields)
+        .find((field) => field.id === 'private_key')?.value?.sshKey;
+
+    return importSshKeyItem({
+        privateKey: sshKey?.privateKey, // OPENSSH Key
+        name: item.overview.title,
+        note: item.details.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        trashed: item.state === OnePassState.ARCHIVED,
+        extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
+    });
+};
+
 export const read1Password1PuxData = async (file: File): Promise<ImportReaderResult> => {
     try {
         const fileReader = await readZIP(file);
@@ -173,6 +190,8 @@ export const read1Password1PuxData = async (file: File): Promise<ImportReaderRes
                             case OnePassCategory.IDENTITY:
                                 const identityItem = processIdentityItem(item);
                                 return identityItem ? attachFilesToItem(identityItem, files) : identityItem;
+                            case OnePassCategory.SSH_KEY:
+                                return attachFilesToItem(processSshKeyItem(item), files);
 
                             default:
                                 const unknownItem = item as OnePassBaseItem & { details: any };
