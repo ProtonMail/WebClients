@@ -224,6 +224,7 @@ export const importSshKeyItem = (options: {
     publicKey?: MaybeNull<string>;
     note?: MaybeNull<string>;
     extraFields?: DeobfuscatedItemExtraField[];
+    sections?: ItemImportIntent<'sshKey'>['content']['sections'];
     trashed?: boolean;
     createTime?: number;
     modifyTime?: number;
@@ -238,7 +239,7 @@ export const importSshKeyItem = (options: {
         content: {
             privateKey: obfuscate(options.privateKey ?? ''),
             publicKey: options.publicKey ?? '',
-            sections: [],
+            sections: options.sections ?? [],
         },
         extraData: [],
         extraFields: obfuscateExtraFields(options.extraFields),

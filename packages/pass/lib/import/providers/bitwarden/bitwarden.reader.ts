@@ -11,6 +11,7 @@ import {
     importIdentityItem,
     importLoginItem,
     importNoteItem,
+    importSshKeyItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
@@ -105,6 +106,34 @@ export const readBitwardenData = async (
                                     name: item.name,
                                     note: item.notes,
                                     ...extractBitwardenIdentity(item),
+                                });
+                            case BitwardenType.SSH_KEY:
+                                const sections = ((): ItemImportIntent<'sshKey'>['content']['sections'] => {
+                                    if (item.sshKey.keyFingerprint) {
+                                        return [
+                                            {
+                                                sectionName: c('Label').t`Additional data`,
+                                                sectionFields: [
+                                                    {
+                                                        fieldName: c('Label').t`Key fingerprint`,
+                                                        type: 'hidden',
+                                                        data: { content: item.sshKey.keyFingerprint },
+                                                    },
+                                                ],
+                                            },
+                                        ];
+                                    }
+
+                                    return [];
+                                })();
+
+                                return importSshKeyItem({
+                                    name: item.name,
+                                    note: item.notes,
+                                    publicKey: item.sshKey.publicKey,
+                                    privateKey: item.sshKey.privateKey,
+                                    extraFields: extractBitwardenExtraFields(item.fields),
+                                    sections,
                                 });
                         }
                     })();
