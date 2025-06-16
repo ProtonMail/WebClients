@@ -1,25 +1,22 @@
 import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
 import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
-import { read1Password1PifData } from '@proton/pass/lib/import/providers/1password/1pif.reader';
+import { readBitwardenData } from '@proton/pass/lib/import/providers/bitwarden/bitwarden.reader';
 import type { ImportReaderResult } from '@proton/pass/lib/import/types';
-import { first } from '@proton/pass/utils/array/first';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 
-/** Process a 1Password 1PIF archive (.zip) :
- * - Expects user to zip the exported folder as-is
- * - Required structure: root/data.1pif and root/attachments/{uuid}/files */
-export const read1Password1PifArchiveData = async (file: File): Promise<ImportReaderResult> => {
+/** Process a Bitwarden archive (.zip). Required structure:
+ * - /data.json
+ * - /attachments/{uuid}/files */
+export const readBitwardenArchiveData = async (file: File): Promise<ImportReaderResult> => {
     try {
         const fileReader = await readZIP(file);
 
         /** Extract directory list and identify root */
         const dirs = Array.from(fileReader.dirs);
-        const root = first(dirs);
-        if (!root) throw new Error('Invalid archive');
 
         /** Map to store attachments by item UUID */
-        const attachmentsDir = `${root}attachments/`;
+        const attachmentsDir = `attachments/`;
         const attachments = new Map<string, string[]>();
 
         dirs.forEach((path) => {
@@ -40,15 +37,15 @@ export const read1Password1PifArchiveData = async (file: File): Promise<ImportRe
         });
 
         /** Extract and process the main data file */
-        const data = await fileReader.getFile(`${root}data.1pif`);
-        if (!data) throw new Error('Missing data.1pif');
+        const data = await fileReader.getFile(`data.json`);
+        if (!data) throw new Error('Missing data.json');
 
         const extracted = new File([data], 'data.json');
-        const result = await read1Password1PifData(extracted, attachments);
+        const result = await readBitwardenData(extracted, attachments);
 
         return { ...result, fileReader };
     } catch (e) {
-        logger.warn('[Importer::1Password::1pif]', e);
-        throw new ImportProviderError('1Password', e);
+        logger.warn('[Importer::Bitwarden::zip]', e);
+        throw new ImportProviderError('Bitwarden', e);
     }
 };
