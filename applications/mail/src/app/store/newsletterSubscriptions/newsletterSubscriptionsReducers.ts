@@ -153,6 +153,7 @@ export const unsubscribeSubscriptionRejected = (
 
     state.value.tabs.active.ids.splice(originalIndex, 0, subscriptionId);
     state.value.tabs.active.totalCount = incrementCount(state.value.tabs.active.totalCount);
+    state.value.deletingSubscriptionId = undefined;
 };
 
 export const sortSubscriptionPending = (state: NewsletterSubscriptionsStateType) => {
