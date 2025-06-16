@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import { FiltersUpsellModal, Icon, useModalStateObject } from '@proton/components';
+import { FiltersUpsellModal, Icon, LabelsUpsellModal, useModalStateObject } from '@proton/components';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
@@ -81,7 +81,9 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
     const unsubscribeModal = useModalStateObject();
     const blockSenderModal = useModalStateObject();
     const moveToFolderModal = useModalStateObject();
-    const upsellModal = useModalStateObject();
+
+    const filterUpsellModal = useModalStateObject();
+    const moveToFolderUpsellModal = useModalStateObject();
 
     const [filters = []] = useFilters();
     const [user] = useUser();
@@ -91,7 +93,7 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
     const handleMoveToFolderClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
         if (shouldOpenUpsellOnFilterClick(subscription, user, filters)) {
-            upsellModal.openModal(true);
+            filterUpsellModal.openModal(true);
         } else {
             moveToFolderModal.openModal(true);
         }
@@ -106,6 +108,10 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
         }
     };
 
+    const handleMoveToFolderUpsell = () => {
+        moveToFolderUpsellModal.openModal(true);
+    };
+
     return (
         <>
             <Button onClick={handleUnsubscribeClick} shape="outline" size="tiny">{c('Action').t`Unsubscribe`}</Button>
@@ -117,17 +123,28 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
                 <ModalUnsubscribe subscription={subscription} {...unsubscribeModal.modalProps} />
             )}
             {subscription && moveToFolderModal.render && (
-                <ModalMoveToFolder subscription={subscription} {...moveToFolderModal.modalProps} />
+                <ModalMoveToFolder
+                    subscription={subscription}
+                    handleUpsellModalDisplay={handleMoveToFolderUpsell}
+                    {...moveToFolderModal.modalProps}
+                />
             )}
 
             {subscription && blockSenderModal.render && (
                 <ModalBlockSender subscription={subscription} {...blockSenderModal.modalProps} />
             )}
 
-            {upsellModal.render && (
+            {filterUpsellModal.render && (
                 <FiltersUpsellModal
-                    modalProps={upsellModal.modalProps}
-                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_MAIL_SUBSCRIPTION}
+                    modalProps={filterUpsellModal.modalProps}
+                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_NEWSLETTER_SUBSCRIPTION}
+                />
+            )}
+
+            {moveToFolderUpsellModal.render && (
+                <LabelsUpsellModal
+                    modalProps={moveToFolderUpsellModal.modalProps}
+                    feature={MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS_NEWSLETTER_SUBSCRIPTION}
                 />
             )}
         </>

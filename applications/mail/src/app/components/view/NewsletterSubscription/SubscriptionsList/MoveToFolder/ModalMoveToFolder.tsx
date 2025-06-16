@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import {
     Checkbox,
@@ -16,9 +17,11 @@ import {
     useNotifications,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { useFolders } from '@proton/mail';
 import { create } from '@proton/shared/lib/api/labels';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { type NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
@@ -35,19 +38,23 @@ import './ModalMoveToFolder.scss';
 
 interface Props extends ModalProps {
     subscription: NewsletterSubscription;
+    handleUpsellModalDisplay: (display: boolean) => void;
 }
 
 const BoldFolderName = ({ name }: { name: string }) => {
     return <strong>{name}</strong>;
 };
 
-export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
+export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...props }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
 
     const { list } = useMailFolderTreeView();
     const dispatch = useMailDispatch();
     const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
+
+    const [user] = useUser();
+    const [folders = []] = useFolders();
 
     const [loading, withLoading] = useLoading();
 
@@ -134,6 +141,13 @@ export const ModalMoveToFolder = ({ subscription, ...props }: Props) => {
     };
 
     const handleCreateFolder = async () => {
+        // Uspell is displayed if the user reach the folders limit
+        if (hasReachedFolderLimit(user, folders)) {
+            handleUpsellModalDisplay(true);
+            props?.onClose?.();
+            return;
+        }
+
         const label = await api(
             create({
                 Name: customFolderName,
