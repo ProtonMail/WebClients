@@ -2,8 +2,23 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
-export const getEmptyViewTitle = (isSearch: boolean, isFolder: boolean, isScheduled: boolean) => {
+export const getEmptyViewTitle = ({
+    isSearch,
+    isFolder,
+    isScheduled,
+    labelID,
+}: {
+    isSearch: boolean;
+    isFolder: boolean;
+    isScheduled: boolean;
+    labelID: string;
+}) => {
+    if (labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
+        return c('Info').t`No messages to show`;
+    }
+
     if (isSearch) {
         return c('Search - no results').t`No results found`;
     }
@@ -19,13 +34,25 @@ export const getEmptyViewTitle = (isSearch: boolean, isFolder: boolean, isSchedu
     return c('Search - no results').t`No messages found`;
 };
 
-export const getEmptyViewDescription = (
-    isSearch: boolean,
-    isEncryptedSearchEnabled: boolean,
-    isFolder: boolean,
-    isScheduled: boolean,
-    scheduleButtonOnClick: () => void
-) => {
+export const getEmptyViewDescription = ({
+    isSearch,
+    isEncryptedSearchEnabled,
+    isFolder,
+    isScheduled,
+    labelID,
+    scheduleButtonOnClick,
+}: {
+    isSearch: boolean;
+    isEncryptedSearchEnabled: boolean;
+    isFolder: boolean;
+    isScheduled: boolean;
+    labelID: string;
+    scheduleButtonOnClick: () => void;
+}) => {
+    if (labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
+        return c('Info').t`You've moved all messages from this sender to Trash or Spam.`;
+    }
+
     if (isSearch) {
         if (isEncryptedSearchEnabled) {
             return c('Info').t`You can either update your search query or clear it`;
