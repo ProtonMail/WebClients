@@ -1,5 +1,7 @@
-import { forwardRef } from 'react';
 import type { ReactNode, Ref } from 'react';
+import { forwardRef } from 'react';
+
+import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
@@ -19,7 +21,8 @@ const MailboxListContainer = (
 ) => {
     const { contextMenu, blockSenderModal, mailboxListLoading } = useMailboxListContext();
     return (
-        <div
+        <section
+            aria-label={c('Info').t`Message list`}
             className={clsx([
                 'relative items-column-list w-full',
                 !show && 'hidden',
@@ -39,7 +42,7 @@ const MailboxListContainer = (
             </div>
             {contextMenu}
             {blockSenderModal}
-        </div>
+        </section>
     );
 };
 
