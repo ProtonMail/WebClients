@@ -25,6 +25,7 @@ interface Props {
     className?: string;
     checkout?: SubscriptionCheckoutData;
     mode?: 'addons';
+    isTrial?: boolean;
 }
 
 const RightPlanSummary = ({
@@ -39,6 +40,7 @@ const RightPlanSummary = ({
     className,
     checkout,
     mode,
+    isTrial,
 }: Props) => {
     const { title, logo, features = [], isLifetime } = summaryPlan ?? {};
 
@@ -90,9 +92,11 @@ const RightPlanSummary = ({
                 return (
                     <>
                         {addons}
-                        <div className="mb-4">
-                            <hr />
-                        </div>
+                        {!isTrial && (
+                            <div className="mb-4">
+                                <hr />
+                            </div>
+                        )}
                     </>
                 );
             })()}
