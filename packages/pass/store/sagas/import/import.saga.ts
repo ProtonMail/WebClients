@@ -172,7 +172,7 @@ function* importWorker(
                                 endpoint,
                                 key: requestID,
                                 type: 'error',
-                                text: c('Error').t`Import failed for vault "${vaultData.name}" : ${errorMessage}`,
+                                text: c('Error').t`Import failed for vault "${vaultData.name}": ${errorMessage}`,
                             })
                         );
                     }
