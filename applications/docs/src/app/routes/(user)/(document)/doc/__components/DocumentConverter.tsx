@@ -1,11 +1,11 @@
 import { CircleLoader } from '@proton/atoms'
-import { useCallback, useEffect, useState } from 'react'
-import { useApplication } from '~/utils/application-context'
 import type { FileToDocConversionResult } from '@proton/docs-core'
-import type { DecryptedNode, NodeMeta } from '@proton/drive-store'
-import { c } from 'ttag'
-import useLoading from '@proton/hooks/useLoading'
 import type { Result } from '@proton/docs-shared'
+import type { DecryptedNode, NodeMeta } from '@proton/drive-store'
+import useLoading from '@proton/hooks/useLoading'
+import { useCallback, useEffect, useState } from 'react'
+import { c } from 'ttag'
+import { useApplication } from '~/utils/application-context'
 
 export type DocumentConverterProps = {
   lookup: NodeMeta
@@ -86,7 +86,7 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Docume
           {isLoading === false &&
             error != null &&
             // translator: the variable is a javascript error message
-            c('Info').jt`Error loading document${errorDetail}`}
+            c('Info').jt`Error loading document: ${errorDetail}`}
         </div>
       </div>
     )
