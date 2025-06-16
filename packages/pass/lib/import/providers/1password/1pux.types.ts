@@ -28,6 +28,7 @@ export enum OnePassCategory {
     IDENTITY = '004',
     PASSWORD = '005',
     OTHER = '006',
+    WIFI = '109',
     SSH_KEY = '114',
 }
 
@@ -116,6 +117,7 @@ export type OnePassCreditCard = OnePassItemDetails;
 export type OnePassIdentity = OnePassItemDetails;
 export type OnePassCustomItem = OnePassItemDetails;
 export type OnePassSshKey = OnePassItemDetails;
+export type OnePassWifi = OnePassItemDetails;
 
 export type OnePassBaseItem = {
     uuid: string;
@@ -141,6 +143,7 @@ export type OnePassItem = OnePassBaseItem &
         | { categoryUuid: OnePassCategory.CREDIT_CARD; details: OnePassCreditCard }
         | { categoryUuid: OnePassCategory.IDENTITY; details: OnePassIdentity }
         | { categoryUuid: OnePassCategory.SSH_KEY; details: OnePassSshKey }
+        | { categoryUuid: OnePassCategory.WIFI; details: OnePassWifi }
         | { categoryUuid: OnePassCategory.OTHER; details: OnePassCustomItem }
     );
 
