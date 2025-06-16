@@ -1,16 +1,16 @@
 import { Avatar, Button, Tooltip } from '@proton/atoms'
-import { c } from 'ttag'
-import { DateFormatter } from '@proton/docs-core'
 import { Icon } from '@proton/components'
+import { DateFormatter } from '@proton/docs-core'
 import { ServerTime } from '@proton/docs-shared'
 import { useDocInvites } from '@proton/drive-store'
-import * as Table from './table'
-import { useState, type ComponentPropsWithoutRef } from 'react'
-import { getInitials } from '@proton/shared/lib/helpers/string'
-import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
-import clsx from '@proton/utils/clsx'
-import { useHomepageView } from '../../__utils/homepage-view'
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype'
+import { getInitials } from '@proton/shared/lib/helpers/string'
+import clsx from '@proton/utils/clsx'
+import { useState, type ComponentPropsWithoutRef } from 'react'
+import { c, msgid } from 'ttag'
+import { useHomepageView } from '../../__utils/homepage-view'
+import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
+import * as Table from './table'
 
 const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
 const MAX_INVITES_WHEN_COLLAPSED = 3
@@ -185,7 +185,13 @@ export function InvitesTable(props: InvitesTableProps) {
           className="flex h-[3.375rem] w-full items-center gap-3 px-6 text-[#0284C7]"
         >
           <Icon name="chevron-down" size={4} className="shrink-0" />
-          <span className="text-[.875rem]">{c('Action').t`View all ${pendingCount} invitations`}</span>
+          <span className="text-[.875rem]">
+            {c('Action').ngettext(
+              msgid`View ${pendingCount} invitation`,
+              `View all ${pendingCount} invitations`,
+              pendingCount,
+            )}
+          </span>
         </button>
       )}
       {confirmModal}
