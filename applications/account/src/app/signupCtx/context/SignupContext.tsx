@@ -426,7 +426,6 @@ export const InnerSignupContextProvider = ({
 
                 subscriptionData: paymentData?.subscriptionData,
                 productParam: app,
-                referralData: undefined,
             });
 
             setupUserResponseRef.current = setupUserResponse;
