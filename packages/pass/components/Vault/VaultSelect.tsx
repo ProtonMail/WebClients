@@ -65,6 +65,7 @@ export const VaultSelect: FC<VaultSelectProps> = ({ downgradeMessage, mode, shar
             <Panel
                 header={
                     <PanelHeader
+                        title={<h3>{c('Vault Select').t`Move items to`}</h3>}
                         actions={[
                             <Button
                                 key="close-modal-button"
