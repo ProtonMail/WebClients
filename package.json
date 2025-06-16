@@ -31,7 +31,7 @@
         "node-gyp": "^11.2.0",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
-        "terser": "^5.40.0",
+        "terser": "^5.42.0",
         "whatwg-url": "^14.2.0"
     },
     "dependencies": {
@@ -51,9 +51,9 @@
         "nyc": "^17.1.0",
         "prettier": "^3.5.3",
         "sort-package-json": "^3.2.1",
-        "turbo": "^2.5.3"
+        "turbo": "^2.5.4"
     },
-    "packageManager": "yarn@4.9.1",
+    "packageManager": "yarn@4.9.2",
     "engines": {
         "node": ">= 22.14.0  <23.6.0"
     },
