@@ -307,3 +307,5 @@ export const labelAll = createAsyncThunk<
         timeoutID: timeoutID as NodeJS.Timeout,
     };
 });
+
+export const resetRetry = createAction<void>('elements/resetRetry');
