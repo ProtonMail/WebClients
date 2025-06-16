@@ -244,12 +244,7 @@ export const getSSOSetupData = async ({
 
     const unprivatizationContextData = await getUnprivatizationContextData({ api }).catch((error) => {
         const { code } = getApiError(error);
-        if (
-            // Fixme (awussler): This should only be UNPRIVATIZATION_NOT_ALLOWED. To be changed in a few months 2025-01-14
-            [API_CUSTOM_ERROR_CODES.UNPRIVATIZATION_NOT_ALLOWED, API_CUSTOM_ERROR_CODES.NOT_FOUND].some(
-                (expectedCode) => expectedCode === code
-            )
-        ) {
+        if (code === API_CUSTOM_ERROR_CODES.UNPRIVATIZATION_NOT_ALLOWED) {
             // Expected error, unprivatization is not yet allowed for this organization.
             // Fall back to vpn sso login.
             return null;
