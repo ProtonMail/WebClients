@@ -132,7 +132,7 @@ export const getCountries = () => [
     { value: 'LT', label: c('Country name').t`Lithuania` },
     { value: 'LU', label: c('Country name').t`Luxembourg` },
     { value: 'MO', label: c('Country name').t`Macao` },
-    { value: 'MK', label: c('Country name').t`Macedonia` },
+    { value: 'MK', label: c('Country name').t`North Macedonia` },
     { value: 'MG', label: c('Country name').t`Madagascar` },
     { value: 'MW', label: c('Country name').t`Malawi` },
     { value: 'MY', label: c('Country name').t`Malaysia` },
