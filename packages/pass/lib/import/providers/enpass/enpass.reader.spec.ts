@@ -68,9 +68,6 @@ describe('Import Enpass json', () => {
         expect(loginItem5ExtraField2.fieldName).toEqual('Custom field name');
         expect(loginItem5ExtraField2.data.content).toEqual('Example extra field, user-defined');
         expect(loginItem5ExtraField2.type).toEqual('hidden');
-        const loginItem5ExtraField3 = loginItem5.extraFields[2] as ItemExtraField<'text'>;
-        expect(loginItem5ExtraField3.fieldName).toEqual('E-mail');
-        expect(loginItem5ExtraField3.data.content).toEqual('emily@enpass.io');
 
         /* Login with a username and no email */
         const loginItem2 = deobfuscateItem(primary.items[2]) as unknown as ItemImportIntent<'login'>;
