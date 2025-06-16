@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { type ItemBuilder, itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, Maybe, MaybeNull } from '@proton/pass/types';
+import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { objectKeys } from '@proton/pass/utils/object/generic';
 import { epochToDate } from '@proton/pass/utils/time/format';
@@ -154,13 +155,17 @@ export const extract1PasswordLegacyURLs = (item: OnePassLegacyItem): string[] =>
     return item.secureContents.URLs.map(({ url }: OnePassLegacyURL) => url);
 };
 
+// Field's ids to filter out and build the Wi-Fi item
+const baseWifiFields = ['network_name', 'wireless_password', 'wireless_security'];
+
 export const extract1PasswordExtraFields = (section: OnePassSection): DeobfuscatedItemExtraField[] => {
     return section.fields
-        .flatMap<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value }) => {
+        .flatMap<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value, id }) => {
             const [fieldKey] = objectKeys(value);
             const data = value[fieldKey];
 
-            if (!data) return null;
+            // Prevent importing duplicated fields
+            if (!data || baseWifiFields.includes(id)) return null;
 
             switch (fieldKey) {
                 case OnePassFieldKey.STRING:
@@ -199,7 +204,7 @@ export const extract1PasswordExtraFields = (section: OnePassSection): Deobfuscat
 
                     return Object.entries(data.metadata ?? {}).map(([key, value]) => ({
                         fieldName: key,
-                        type: keysMap[key as SshKeyMetadata],
+                        type: keysMap[key as SshKeyMetadata] ?? 'text',
                         data: { content: String(value) },
                     }));
                 }
@@ -344,4 +349,38 @@ export const intoFilesFrom1PasswordItem = (sections: Maybe<OnePassSection[]>): s
 
         return acc;
     }, []);
+};
+
+export const extractBaseWifi = (
+    sections: Maybe<OnePassSection[]> = []
+): {
+    ssid?: string;
+    password?: string;
+    security: WifiSecurity;
+} => {
+    const fields = sections.flatMap((section) => section.fields);
+
+    // 1P has different keys to store the value, so we can just use the first one
+    const [ssid, password, wirelessSecurity] = baseWifiFields.map(
+        (key) => Object.values(fields.find(({ id }) => id === key)?.value ?? {})[0] as string
+    );
+
+    const security = (() => {
+        switch (wirelessSecurity) {
+            case 'wpa3p':
+            case 'wpa3e':
+                return WifiSecurity.WPA3;
+            case 'wpa2p':
+            case 'wpa2e':
+                return WifiSecurity.WPA2;
+            case 'wpa':
+                return WifiSecurity.WPA;
+            case 'wep':
+                return WifiSecurity.WEP;
+            default:
+                return WifiSecurity.UnspecifiedWifiSecurity;
+        }
+    })();
+
+    return { ssid, password, security };
 };
