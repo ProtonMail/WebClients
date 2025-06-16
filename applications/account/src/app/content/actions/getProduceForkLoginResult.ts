@@ -5,9 +5,9 @@ import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getClientID, getProduct, isExtension } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import {
+    getProduceForkUrl,
     produceExtensionFork,
     produceFork,
-    produceForkConsumption,
     produceOAuthFork,
 } from '@proton/shared/lib/authentication/fork';
 import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
@@ -103,7 +103,7 @@ export const getProduceForkLoginResult = async ({
             session: session.data,
             forkParameters,
         });
-        const url = new URL(produceForkConsumption(produceForkPayload, searchParameters));
+        const url = getProduceForkUrl(produceForkPayload, forkParameters, searchParameters);
         return {
             type: 'done',
             payload: {
