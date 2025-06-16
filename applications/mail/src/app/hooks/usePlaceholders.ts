@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 
-import generateUID from '@proton/utils/generateUID';
 import range from '@proton/utils/range';
 
 import type { Element } from '../models/element';
@@ -22,8 +21,8 @@ export const usePlaceholders = (
         if (loading) {
             return [
                 ...(inputElements ?? []),
-                ...range(0, expectedLength - (inputElements?.length ?? 0)).map(() => ({
-                    ID: generateUID(PLACEHOLDER_ID_PREFIX),
+                ...range(0, expectedLength - (inputElements?.length ?? 0)).map((_, index) => ({
+                    ID: `${PLACEHOLDER_ID_PREFIX}-${index}`,
                 })),
             ];
         }
