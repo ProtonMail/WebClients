@@ -37,7 +37,7 @@ const providerHasUnsupportedItemTypes = (provider: ImportProvider) =>
     ].includes(provider);
 
 const providerHasFileAttachments = (provider: ImportProvider) =>
-    [ImportProvider.ONEPASSWORD, ImportProvider.ENPASS].includes(provider);
+    [ImportProvider.ONEPASSWORD, ImportProvider.ENPASS, ImportProvider.BITWARDEN].includes(provider);
 
 export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'>> = ({ form, dropzone, busy }) => {
     const free = useSelector(selectPassPlan) === UserPassPlan.FREE;
