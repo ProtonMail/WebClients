@@ -91,7 +91,7 @@ export const extractBitwardenIdentity = ({ fields, identity }: BitwardenIdentity
         if (extraSectionFields.length > 0) {
             content.set('extraSections', (sections) => {
                 sections.push({
-                    sectionName: 'Extra fields',
+                    sectionName: c('Label').t`Extra fields`,
                     sectionFields: extractBitwardenExtraFields(extraSectionFields),
                 });
                 return sections;
