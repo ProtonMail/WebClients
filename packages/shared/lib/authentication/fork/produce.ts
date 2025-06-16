@@ -1,6 +1,8 @@
 import { serverTime } from '@proton/crypto';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import type { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
+import { type ReturnUrlResult, getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
+import { getRedirect } from '@proton/shared/lib/subscription/redirect';
 
 import { pushForkSession } from '../../api/auth';
 import { getAppHref, getClientID } from '../../apps/helper';
@@ -138,6 +140,47 @@ export const produceForkConsumption = (
     return getAppHref(`${SSO_PATHS.FORK}${search}${fragment}`, app);
 };
 
+const getWhitelistedProtocol = (app: APP_NAMES, redirectUrl: string) => {
+    const protocol = redirectUrl.match(/^([^:]+:)\/\//)?.[1];
+    if (!protocol) {
+        return;
+    }
+    if (getRedirect(`${protocol}//`)) {
+        return protocol;
+    }
+    // Special case for internal apps
+    if (`${app}:` === protocol) {
+        return protocol;
+    }
+};
+
+export const getProduceForkUrl = (
+    payload: ProduceForkPayload,
+    produceForkParameters: ProduceForkParametersFull,
+    searchParameters?: URLSearchParams
+) => {
+    const url = new URL(produceForkConsumption(payload, searchParameters));
+
+    const redirectUrl = produceForkParameters.redirectUrl;
+    if (redirectUrl) {
+        const protocol = getWhitelistedProtocol(produceForkParameters.app, redirectUrl);
+        if (protocol) {
+            return new URL(`${protocol}//${url.pathname.slice(1)}${url.search}${url.hash}`);
+        }
+    }
+
+    const returnUrl = produceForkParameters.returnUrl;
+    if (returnUrl && returnUrl.target === 'app') {
+        url.pathname = returnUrl.location.pathname;
+        const returnUrlSearchParams = new URLSearchParams(returnUrl.location.search);
+        returnUrlSearchParams.forEach((value, key) => {
+            url.searchParams.append(key, value);
+        });
+    }
+
+    return url;
+};
+
 export interface ProduceForkParameters {
     state: string;
     app: APP_NAMES;
@@ -151,6 +194,8 @@ export interface ProduceForkParameters {
     payloadType: 'offline' | 'default';
     payloadVersion: 1 | 2;
     unauthenticatedReturnUrl: string;
+    returnUrl: ReturnUrlResult | undefined;
+    redirectUrl: string;
     email?: string;
     partnerId?: string;
 }
@@ -183,6 +228,8 @@ export const getProduceForkParameters = (
         }
         return '';
     })();
+    const returnUrl = getReturnUrl(searchParams);
+    const redirectUrl = searchParams.get('redirectUrl') || '';
     const payloadType = (() => {
         const value = searchParams.get(ForkSearchParameters.PayloadType) || '';
         if (value === 'offline') {
@@ -231,6 +278,8 @@ export const getProduceForkParameters = (
         forkVersion,
         partnerId,
         unauthenticatedReturnUrl,
+        returnUrl,
+        redirectUrl,
     };
 };
 
