@@ -10,7 +10,10 @@ import UpsellModal from '../UpsellModal/UpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;
-    feature: MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS | MAIL_UPSELL_PATHS.UNLIMITED_LABELS;
+    feature:
+        | MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS
+        | MAIL_UPSELL_PATHS.UNLIMITED_LABELS
+        | MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS_NEWSLETTER_SUBSCRIPTION;
     /**
      * Needed in a "Dropdown" scenario because we want to close the dropdown after closing the upsell modal
      */

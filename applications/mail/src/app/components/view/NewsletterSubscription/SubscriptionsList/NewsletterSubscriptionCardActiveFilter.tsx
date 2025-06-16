@@ -6,8 +6,8 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { FiltersUpsellModal, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { IcCheckmarkCircleFilled } from '@proton/icons';
+import { useFolders } from '@proton/mail';
 import { useFilters } from '@proton/mail/store/filters/hooks';
-import { useFolders } from '@proton/mail/index';
 import { toggleEnable } from '@proton/shared/lib/api/filters';
 import { FILTER_STATUS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
@@ -70,7 +70,7 @@ const DisabledFilter = ({ subscription }: PropsWithNewsletterSubscription) => {
             {renderUpsellModal && (
                 <FiltersUpsellModal
                     modalProps={upsellModalProps}
-                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_MAIL_SUBSCRIPTION}
+                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_NEWSLETTER_SUBSCRIPTION}
                 />
             )}
         </>
