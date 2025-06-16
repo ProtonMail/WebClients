@@ -42,11 +42,7 @@ const processLoginItem = (
         trashed: isTrashedEnpassItem(item),
         createTime: item.createdAt,
         modifyTime: item.updated_at,
-        extraFields: extractEnpassExtraFields(remaining).concat(
-            extracted.username && extracted.email
-                ? [{ data: { content: extracted.email }, fieldName: 'E-mail', type: 'text' }]
-                : []
-        ),
+        extraFields: extractEnpassExtraFields(remaining),
         email: extracted.email,
         username: extracted.username,
         password: extracted.password,
