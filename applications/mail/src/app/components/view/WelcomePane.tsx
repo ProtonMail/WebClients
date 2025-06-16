@@ -21,11 +21,11 @@ interface ContainerProps {
 }
 
 const Container = ({ children }: ContainerProps) => (
-    <div className="flex h-full overflow-auto py-4 px-7">
+    <section aria-labelledby="welcome-header" className="flex h-full overflow-auto py-4 px-7">
         <div className="m-auto text-center max-w-custom" style={{ '--max-w-custom': '30em' }}>
             {children}
         </div>
-    </div>
+    </section>
 );
 
 interface Props {
@@ -84,7 +84,9 @@ const WelcomePane = ({ mailSettings, location }: Props) => {
                         alt=""
                     />
                 </div>
-                <h1 className="h3">{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h1>
+                <h1 className="h3" id="welcome-header">
+                    {user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}
+                </h1>
                 {total ? <p className="my-2 p-0 text-keep-space">{counterMessage}</p> : null}
             </Container>
         </>

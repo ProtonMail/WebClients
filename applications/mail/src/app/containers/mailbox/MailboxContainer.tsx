@@ -610,6 +610,7 @@ const MailboxContainer = ({ labelID: inputLabelID, mailSettings, userSettings, e
                                 !showContentPanel && 'hidden',
                                 showContentView ? 'overflow-hidden' : 'overflow-auto',
                             ])}
+                            aria-label={c('Info').t`Message view`}
                         >
                             {showPlaceholder && (
                                 <MailboxContainerPlaceholder

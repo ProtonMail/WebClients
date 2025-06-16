@@ -184,7 +184,11 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
     const showSimpleLoginPlaceholder = checkeds === 0 && labelID === SPAM;
 
     return (
-        <div className="m-auto text-center p-7 max-w-full" data-testid="section-pane--wrapper">
+        <section
+            className="m-auto text-center p-7 max-w-full"
+            data-testid="section-pane--wrapper"
+            aria-label={c('Info').t`Selection pane`}
+        >
             {showSimpleLoginPlaceholder ? (
                 <ProtonPassPlaceholder />
             ) : (
@@ -218,16 +222,16 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
                         />
                     </div>
                     {checkeds === 0 && labelName && (
-                        <h3 className="lh-rg text-ellipsis" title={labelName}>
+                        <h1 className="h3 lh-rg text-ellipsis" title={labelName}>
                             {labelName}
-                        </h3>
+                        </h1>
                     )}
                     <p className="my-2 text-keep-space">{showText ? text : null}</p>
                     {checkeds > 0 && <Button onClick={handleClearSelection}>{c('Action').t`Clear selection`}</Button>}
                 </>
             )}
             {renderEnableESModal && <EnableEncryptedSearchModal openSearchAfterEnabling {...enableESModalProps} />}
-        </div>
+        </section>
     );
 };
 
