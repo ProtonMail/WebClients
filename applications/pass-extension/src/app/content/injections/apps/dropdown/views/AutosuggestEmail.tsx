@@ -157,7 +157,12 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
                 />
             )}
             <ListItem
-                title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Hide my email`}
+                title={
+                    needsUpgrade
+                        ? c('Info').t`Upgrade ${PASS_APP_NAME}`
+                        : // translator: action of hiding my email, in contrast with the previous label "Use my email"
+                          c('Title').t`Hide my email`
+                }
                 autogrow
                 subTitle={(() => {
                     if (loadingText) {
