@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import type { PermissionHandles } from 'proton-pass-extension/lib/hooks/usePermissions';
 import { usePermissions } from 'proton-pass-extension/lib/hooks/usePermissions';
-import { WEB_REQUEST_PERMISSIONS } from 'proton-pass-extension/lib/utils/permissions';
+import { BASIC_AUTH_PERMISSIONS } from 'proton-pass-extension/lib/utils/permissions';
 import type { Dispatch } from 'redux';
 import { c } from 'ttag';
 
@@ -178,7 +178,7 @@ const getSettingsSections = ({ settings, webReqPermissions, dispatch }: Settings
 export const Behaviors: FC = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
-    const webReqPermissions = usePermissions(WEB_REQUEST_PERMISSIONS);
+    const webReqPermissions = usePermissions(BASIC_AUTH_PERMISSIONS);
 
     const sections = useMemo(
         () => getSettingsSections({ settings, webReqPermissions, dispatch }),
