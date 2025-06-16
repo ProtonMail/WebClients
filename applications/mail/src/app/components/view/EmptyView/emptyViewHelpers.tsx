@@ -50,7 +50,7 @@ export const getEmptyViewDescription = ({
     scheduleButtonOnClick: () => void;
 }) => {
     if (labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
-        return c('Info').t`You've moved all messages from this sender to Trash or Spam.`;
+        return c('Info').t`There are no messages from this sender in your inbox.`;
     }
 
     if (isSearch) {
