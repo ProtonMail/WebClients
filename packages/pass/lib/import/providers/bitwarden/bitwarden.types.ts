@@ -5,6 +5,7 @@ export enum BitwardenType {
     NOTE = 2,
     CREDIT_CARD = 3,
     IDENTITY = 4,
+    SSH_KEY = 5,
 }
 
 export enum BitwardenCustomFieldType {
@@ -79,7 +80,21 @@ export type BitwardenIdentityItem = BitwardenBaseItem & {
 
 export type BitwardenNoteItem = BitwardenBaseItem & { type: BitwardenType.NOTE };
 
-export type BitwardenItem = BitwardenLoginItem | BitwardenNoteItem | BitwardenCCItem | BitwardenIdentityItem;
+export type BitwardenSshKeyItem = BitwardenBaseItem & {
+    type: BitwardenType.SSH_KEY;
+    sshKey: {
+        privateKey: MaybeNull<string>;
+        publicKey: MaybeNull<string>;
+        keyFingerprint: MaybeNull<string>;
+    };
+};
+
+export type BitwardenItem =
+    | BitwardenLoginItem
+    | BitwardenNoteItem
+    | BitwardenCCItem
+    | BitwardenIdentityItem
+    | BitwardenSshKeyItem;
 
 export type BitwardenData = {
     encrypted: boolean;
