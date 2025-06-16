@@ -52,6 +52,11 @@ const getFeaturesAndUserIds = (data: Partial<GatewayModel>): [number, readonly s
 };
 
 const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
+    const SERVERS = 'servers';
+    const GATEWAYS = 'gateways';
+    const DASHBOARD = 'dashboard';
+    const UPSELLS = 'upsells';
+
     const api = useApi();
     const [createModal, showCreateModal] = useModalTwoStatic(GatewayModal);
     const [renameModal, showRenameModal] = useModalTwoStatic(GatewayRenameModal);
@@ -108,7 +113,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
 
     const isTrial = useIsB2BTrial(subscription);
-    const [showTrialPrompt, setShowTrialPrompt] = useState<undefined | 'servers' | 'gateways'>(undefined);
+    const [showTrialPrompt, setShowTrialPrompt] = useState<undefined | typeof SERVERS | typeof GATEWAYS>(undefined);
 
     if (!organization || !user || !subscription || !gateways || !locations) {
         return <Loader />;
@@ -138,7 +143,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         return createdGateway;
     };
 
-    const getCustomizeSubscriptionOpener = (source: 'dashboard' | 'upsells') => () =>
+    const getCustomizeSubscriptionOpener = (source: typeof DASHBOARD | typeof UPSELLS) => () =>
         openSubscriptionModal({
             metrics: {
                 source,
@@ -197,7 +202,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                             <Button
                                 color="norm"
                                 fullWidth
-                                onClick={getCustomizeSubscriptionOpener('upsells')}
+                                onClick={getCustomizeSubscriptionOpener(UPSELLS)}
                                 title={c('Title').t`Setup dedicated servers by upgrading to Business`}
                             >
                                 {c('Action').t`Upgrade to Business`}
@@ -420,7 +425,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
                 await refreshList();
             },
-            onUpsell: getCustomizeSubscriptionOpener('dashboard'),
+            onUpsell: getCustomizeSubscriptionOpener(DASHBOARD),
         });
 
     const editGatewayUsers = (gateway: Gateway, logical: GatewayLogical) => () =>
@@ -511,6 +516,9 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         }
     };
 
+    const isDisabled = !isTrial && !canAdd;
+    const handleClick = isTrial && !canAdd ? () => setShowTrialPrompt('gateways') : addGateway;
+
     return (
         <>
             {isAdmin && (
@@ -532,9 +540,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                             color="norm"
                             shape={canAdd ? 'outline' : 'solid'}
                             onClick={
-                                isTrial
-                                    ? () => setShowTrialPrompt('servers')
-                                    : getCustomizeSubscriptionOpener('dashboard')
+                                isTrial ? () => setShowTrialPrompt(SERVERS) : getCustomizeSubscriptionOpener(DASHBOARD)
                             }
                             title={c('Title').t`Customize the number of IP addresses in your plan`}
                         >
@@ -550,8 +556,8 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         <div className="mb-4">
                             <Button
                                 color="norm"
-                                disabled={!isTrial && !canAdd}
-                                onClick={isTrial && !canAdd ? () => setShowTrialPrompt('gateways') : addGateway}
+                                disabled={isDisabled}
+                                onClick={handleClick}
                                 title={c('Title').t`Create a new Gateway`}
                             >
                                 {c('Action').t`Create Gateway`}
@@ -642,7 +648,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                 <Prompt
                     open={!!showTrialPrompt}
                     title={
-                        showTrialPrompt === 'servers'
+                        showTrialPrompt === SERVERS
                             ? c('Title').t`Cannot add servers`
                             : c('Title').t`Cannot add Gateway`
                     }
@@ -659,7 +665,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         setShowTrialPrompt(undefined);
                     }}
                 >
-                    {showTrialPrompt === 'servers'
+                    {showTrialPrompt === SERVERS
                         ? c('Body').ngettext(
                               msgid`Your free trial includes ${ipAddresses} dedicated server. You can add more servers once your full subscription starts.`,
                               `Your free trial includes ${ipAddresses} dedicated servers. You can add more servers once your full subscription starts.`,
