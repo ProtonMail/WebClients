@@ -6,6 +6,7 @@ import {
     getEmailOrUsername,
     getImportedVaultName,
     importCreditCardItem,
+    importCustomItem,
     importIdentityItem,
     importLoginItem,
     importNoteItem,
@@ -90,6 +91,15 @@ export const processIdentityItem = (item: OnePassLegacyItem): ItemImportIntent<'
         ...extract1PasswordLegacyIdentity(item.secureContents.sections),
     });
 
+export const processCustomItem = (item: OnePassLegacyItem): ItemImportIntent<'custom'> =>
+    importCustomItem({
+        name: item.title,
+        note: item.secureContents.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        extraFields: extract1PasswordLegacyExtraFields(item),
+    });
+
 export const parse1PifData = (data: string): OnePassLegacyItem[] =>
     data
         .split('\n')
@@ -126,6 +136,8 @@ export const read1Password1PifData = async (
                             return attachFilesToItem(processCreditCardItem(item), files);
                         case OnePassLegacyItemType.IDENTITY:
                             return attachFilesToItem(processIdentityItem(item), files);
+                        default:
+                            return attachFilesToItem(processCustomItem(item), files);
                     }
                 })();
 
