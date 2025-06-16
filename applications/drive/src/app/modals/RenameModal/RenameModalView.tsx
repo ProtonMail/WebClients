@@ -26,8 +26,8 @@ export type RenameModalViewProps = {
     isFile: boolean;
     onClose?: () => void;
     name: string;
-    isDoc: boolean;
     ignoreExtension: boolean;
+    isDoc?: boolean;
 };
 
 export const RenameModalView = ({
@@ -36,10 +36,9 @@ export const RenameModalView = ({
     name: originalName,
     isFile,
     ignoreExtension,
+    isDoc, // here so they don't get added to the dom with modalProps
     ...modalProps
 }: RenameModalViewProps) => {
-    // ALL this logic is presentational until we actually submit the form,
-    // it's about string formatting and validation, so it belongs in the view
     const [autofocusDone, setAutofocusDone] = useState(false);
     const [tempName, setTempName] = useState(originalName);
     const [loading, withLoading] = useLoading();
