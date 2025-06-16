@@ -14,7 +14,7 @@
         "react": "^18.3.1"
     },
     "devDependencies": {
-        "@babel/core": "^7.27.3",
+        "@babel/core": "^7.27.4",
         "@babel/preset-env": "^7.27.2",
         "@jest/globals": "^29.7.0",
         "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch",
@@ -28,7 +28,7 @@
         "jest-environment-jsdom": "^29.7.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "ts-jest": "^29.3.4",
+        "ts-jest": "^29.4.0",
         "typescript": "^5.8.3"
     }
 }
