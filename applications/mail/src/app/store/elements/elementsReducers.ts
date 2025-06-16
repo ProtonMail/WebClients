@@ -823,3 +823,7 @@ export const markConversationsAsUnreadRejected = (
     };
     return markConversationsAsReadPending(state, pendingAction);
 };
+
+export const resetRetry = (state: Draft<ElementsState>) => {
+    state.retry = newRetry(state.retry, state.params, undefined);
+};
