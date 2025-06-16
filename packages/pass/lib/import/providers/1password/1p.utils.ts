@@ -13,6 +13,7 @@ import type {
     OnePassCategory,
     OnePassCreditCardFieldId,
     OnePassField,
+    OnePassFieldValue,
     OnePassFields,
     OnePassItem,
     OnePassItemDetails,
@@ -20,6 +21,8 @@ import type {
     OnePassSection,
 } from './1pux.types';
 import { OnePassCreditCardFieldIds, OnePassFieldKey, OnePassFieldValueKeys } from './1pux.types';
+
+type SshKeyMetadata = Extract<OnePassFieldValue<OnePassFieldKey.SSH_KEY>, 'metadata'>;
 
 const ONE_PASS_FIXED_SECTIONS = ['name', 'address', 'internet'];
 const ONE_PASS_ADDRESS_KEYS = ['street', 'city', 'country', 'zip', 'state'];
@@ -153,7 +156,7 @@ export const extract1PasswordLegacyURLs = (item: OnePassLegacyItem): string[] =>
 
 export const extract1PasswordExtraFields = (section: OnePassSection): DeobfuscatedItemExtraField[] => {
     return section.fields
-        .map<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value }) => {
+        .flatMap<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value }) => {
             const [fieldKey] = objectKeys(value);
             const data = value[fieldKey];
 
@@ -182,11 +185,31 @@ export const extract1PasswordExtraFields = (section: OnePassSection): Deobfuscat
                         type: 'hidden',
                         data: { content: format1PasswordFieldValue(value, fieldKey) },
                     };
+
+                case OnePassFieldKey.SSH_KEY: {
+                    if (!(typeof data === 'object' && 'metadata' in data)) return null;
+
+                    // Supporting PKCS#8 SSH Key format
+                    const keysMap: Record<SshKeyMetadata, 'text' | 'hidden'> = {
+                        publicKey: 'text',
+                        privateKey: 'hidden',
+                        fingerprint: 'text',
+                        keyType: 'text',
+                    };
+
+                    return Object.entries(data.metadata ?? {}).map(([key, value]) => ({
+                        fieldName: key,
+                        type: keysMap[key as SshKeyMetadata],
+                        data: { content: String(value) },
+                    }));
+                }
+
+                // Return null since we have another mechanism to import files
+                case OnePassFieldKey.FILE:
+                    return null;
+
                 default:
                     try {
-                        // Totally unsupported since we have another mechanism to import files
-                        if (fieldKey === 'file') return null;
-
                         let newValue = data;
 
                         // The pattern for 1P objects, is always the same.
@@ -195,8 +218,12 @@ export const extract1PasswordExtraFields = (section: OnePassSection): Deobfuscat
                         // - The other key contains null/undefined values
                         // Using generic Object.values here prevent us from unexpected changes in the future
                         if (typeof newValue === 'object') {
-                            [newValue] = Object.values(newValue).filter(truthy);
+                            [newValue] = Object.values(newValue).filter(
+                                (value) => truthy(value) && typeof value !== 'object'
+                            );
                         }
+
+                        if (!newValue) return null;
 
                         // Always treat as "text" since hidden values were already handled
                         return {

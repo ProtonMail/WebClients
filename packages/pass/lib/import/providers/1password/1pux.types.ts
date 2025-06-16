@@ -28,6 +28,7 @@ export enum OnePassCategory {
     IDENTITY = '004',
     PASSWORD = '005',
     OTHER = '006',
+    SSH_KEY = '114',
 }
 
 export enum OnePassVaultType {
@@ -46,6 +47,7 @@ export enum OnePassFieldKey {
     TOTP = 'totp',
     URL = 'url',
     FILE = 'file',
+    SSH_KEY = 'sshKey',
 }
 
 export type OnePassFieldValue<K extends OnePassFieldKey> = {
@@ -58,6 +60,10 @@ export type OnePassFieldValue<K extends OnePassFieldKey> = {
     [OnePassFieldKey.TOTP]?: string;
     [OnePassFieldKey.URL]?: string;
     [OnePassFieldKey.FILE]?: { documentId?: string; fileName: string };
+    [OnePassFieldKey.SSH_KEY]?: {
+        privateKey?: string;
+        metadata?: { fingerprint: string; keyType: string; privateKey: string; publicKey: string };
+    };
 }[K];
 
 export type OnePassFields = { [K in OnePassFieldKey]?: OnePassFieldValue<K> };
@@ -108,6 +114,8 @@ export type OnePassLogin = OnePassItemDetails & {
 };
 export type OnePassCreditCard = OnePassItemDetails;
 export type OnePassIdentity = OnePassItemDetails;
+export type OnePassCustomItem = OnePassItemDetails;
+export type OnePassSshKey = OnePassItemDetails;
 
 export type OnePassBaseItem = {
     uuid: string;
@@ -132,6 +140,8 @@ export type OnePassItem = OnePassBaseItem &
         | { categoryUuid: OnePassCategory.PASSWORD; details: OnePassPassword }
         | { categoryUuid: OnePassCategory.CREDIT_CARD; details: OnePassCreditCard }
         | { categoryUuid: OnePassCategory.IDENTITY; details: OnePassIdentity }
+        | { categoryUuid: OnePassCategory.SSH_KEY; details: OnePassSshKey }
+        | { categoryUuid: OnePassCategory.OTHER; details: OnePassCustomItem }
     );
 
 export type OnePass1PuxData = {
