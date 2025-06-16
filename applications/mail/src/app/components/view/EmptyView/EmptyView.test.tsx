@@ -106,7 +106,7 @@ describe('Empty view', () => {
             );
 
             const description = screen.getByTestId('empty-view-placeholder--empty-description');
-            expect(description?.innerHTML).toBe("You've moved all messages from this sender to Trash or Spam.");
+            expect(description?.innerHTML).toBe('There are no messages from this sender in your inbox.');
         });
     });
 });
