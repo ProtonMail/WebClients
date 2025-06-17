@@ -16,13 +16,15 @@ import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { getOrgAuthLogs } from '@proton/shared/lib/api/b2bevents';
-import type { B2BAuthLog } from '@proton/shared/lib/authlog';
+import { queryLogs } from '@proton/shared/lib/api/logs';
+import type { AuthLog, B2BAuthLog } from '@proton/shared/lib/authlog';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
 
 import { getFormattedQueryString } from '../organization/useOrgAuthLogs';
+import { userSettings } from '../payments/subscription/__mocks__/data';
 import B2BAuthLogsTable from './B2BAuthLogsTable';
 import LogsTable from './LogsTable';
 import { getAllAuthenticationLogs } from './helper';
@@ -41,7 +43,8 @@ const LogsSection = () => {
     const [logAuth, setLogAuth] = useState(0);
     const protonSentinel = settings.HighSecurity.Value;
     const api = useApi();
-    const [state, setState] = useState<{ logs: B2BAuthLog[]; total: number }>(INITIAL_STATE);
+    const [b2bState, setB2bState] = useState<{ logs: B2BAuthLog[]; total: number }>(INITIAL_STATE);
+    const [state, setState] = useState<{ logs: AuthLog[]; total: number }>(INITIAL_STATE);
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
     const [loading, withLoading] = useLoading();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
@@ -97,17 +100,27 @@ const LogsSection = () => {
         latestRef.current = latest;
 
         try {
-            const query = {
-                Emails: [user.Email],
-            };
-            const queryString = getFormattedQueryString({ ...query, Page: page - 1, PageSize: 10 });
-            const { Items, Total } = await api<{ Items: B2BAuthLog[]; Total: number }>(getOrgAuthLogs(queryString));
-            if (latestRef.current !== latest) {
-                return;
-            }
-            if (isMounted()) {
-                const data = Items.map((item: any) => item.Data);
-                setState({ logs: data, total: Total });
+            if (userSettings.OrganizationPolicy.Enforced === 1) {
+                const query = {
+                    Emails: [user.Email],
+                };
+                const queryString = getFormattedQueryString({ ...query, Page: page - 1, PageSize: 10 });
+                const { Items, Total } = await api<{ Items: B2BAuthLog[]; Total: number }>(getOrgAuthLogs(queryString));
+                if (latestRef.current !== latest) {
+                    return;
+                }
+                if (isMounted()) {
+                    const data = Items.map((item: any) => item.Data);
+                    setB2bState({ logs: data, total: Total });
+                }
+            } else {
+                const { Logs, Total } = await api<{ Logs: AuthLog[]; Total: number }>(
+                    queryLogs({
+                        Page: page - 1,
+                        PageSize: 10,
+                    })
+                );
+                setState({ logs: Logs, total: Total });
             }
         } catch (e: any) {
             if (latestRef.current !== latest) {
@@ -170,9 +183,9 @@ const LogsSection = () => {
                 </div>
             </div>
 
-            {1 === 1 ? (
+            {userSettings.OrganizationPolicy.Enforced === 1 ? (
                 <B2BAuthLogsTable
-                    logs={state.logs}
+                    logs={b2bState.logs}
                     userSection={true}
                     loading={loading || loadingRefresh}
                     detailedMonitoring={logAuth === SETTINGS_LOG_AUTH_STATE.ADVANCED}
