@@ -14,6 +14,7 @@ import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import { getUnreadCount } from 'proton-mail/components/sidebar/locationAsideHelpers';
+import { getUnreadNewslettersText } from 'proton-mail/helpers/text';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { SortSubscriptionsValue, SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
 import { sortSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
@@ -122,12 +123,17 @@ interface HeaderTabProps {
 }
 
 const HeaderTab = ({ onClick, copy, count, active }: HeaderTabProps) => {
+    const amountNewsletters = getUnreadCount(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS, count);
+    const unreadNewslettersText = getUnreadNewslettersText(count);
+
     return (
         <Button
             onClick={onClick}
             shape={active ? 'solid' : 'ghost'}
             color={active ? 'weak' : undefined}
             className="mr-1"
+            role="tab"
+            aria-selected={active}
         >
             {copy}
             {count ? (
@@ -137,7 +143,8 @@ const HeaderTab = ({ onClick, copy, count, active }: HeaderTabProps) => {
                         active ? 'bg-norm' : 'bg-strong'
                     )}
                 >
-                    {getUnreadCount(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS, count)}
+                    <span aria-hidden="true">{amountNewsletters}</span>
+                    <span className="sr-only">{unreadNewslettersText}</span>
                 </span>
             ) : null}
         </Button>
@@ -159,23 +166,29 @@ export const NewsletterSubscriptionListHeader = ({ tabClickCallback }: Newslette
     };
 
     return (
-        <div className="flex flex-nowrap justify-space-between py-4 px-6 sticky top-0 subscriptions-list-header">
+        <div className="flex flex-row flex-nowrap justify-space-between py-4 px-6 sticky top-0 subscriptions-list-header">
             <div className="flex gap-4 items-center">
                 <h2 className="text-bold text-xl hidden sm:block">{c('Title').t`Newsletters`}</h2>
-                <div>
-                    <HeaderTab
-                        onClick={() => handleTabClick(SubscriptionTabs.Active)}
-                        copy={c('Action').t`Active`}
-                        count={counts.active}
-                        active={tab === SubscriptionTabs.Active}
-                    />
-                    <HeaderTab
-                        onClick={() => handleTabClick(SubscriptionTabs.Unsubscribe)}
-                        copy={c('Action').t`Unsubscribed`}
-                        count={counts.unsubscribe}
-                        active={tab === SubscriptionTabs.Unsubscribe}
-                    />
-                </div>
+                <ul className="unstyled m-0 p-0 flex flex-row flex-wrap" role="tablist">
+                    {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
+                    <li role="presentation">
+                        <HeaderTab
+                            onClick={() => handleTabClick(SubscriptionTabs.Active)}
+                            copy={c('Action').t`Active`}
+                            count={counts.active}
+                            active={tab === SubscriptionTabs.Active}
+                        />
+                    </li>
+                    {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
+                    <li role="presentation">
+                        <HeaderTab
+                            onClick={() => handleTabClick(SubscriptionTabs.Unsubscribe)}
+                            copy={c('Action').t`Unsubscribed`}
+                            count={counts.unsubscribe}
+                            active={tab === SubscriptionTabs.Unsubscribe}
+                        />
+                    </li>
+                </ul>
             </div>
             <SortingDropdownMenu />
         </div>
