@@ -10,9 +10,12 @@ import {
     importIdentityItem,
     importLoginItem,
     importNoteItem,
+    importSshKeyItem,
+    importWifiItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 
 import {
@@ -20,6 +23,8 @@ import {
     extract1PasswordLegacyIdentity,
     extract1PasswordLegacyNote,
     extract1PasswordLegacyURLs,
+    extract1PasswordLegacyUnknownExtraFields,
+    extractLegacyBaseWifi,
 } from './1p.utils';
 import type { OnePassLegacyItem } from './1pif.types';
 import { OnePassLegacyItemType } from './1pif.types';
@@ -100,6 +105,32 @@ export const processCustomItem = (item: OnePassLegacyItem): ItemImportIntent<'cu
         extraFields: extract1PasswordLegacyExtraFields(item),
     });
 
+export const processSshKeyItem = (item: OnePassLegacyItem): ItemImportIntent<'sshKey'> => {
+    const fields = item.secureContents.unknown_details?.sections?.flatMap(prop('fields'));
+    const privateKey = fields?.find((f) => f?.n === 'sshKey-privateKey')?.v as string;
+    const publicKey = fields?.find((f) => f?.n === 'sshKey-publicKey')?.v as string;
+
+    return importSshKeyItem({
+        privateKey,
+        publicKey,
+        name: item.title,
+        note: item.secureContents.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        extraFields: [...extract1PasswordLegacyUnknownExtraFields(item), ...extract1PasswordLegacyExtraFields(item)],
+    });
+};
+
+export const processWifiItem = (item: OnePassLegacyItem): ItemImportIntent<'wifi'> =>
+    importWifiItem({
+        name: item.title,
+        note: item.secureContents.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        extraFields: extract1PasswordLegacyExtraFields(item),
+        ...extractLegacyBaseWifi(item.secureContents.sections),
+    });
+
 export const parse1PifData = (data: string): OnePassLegacyItem[] =>
     data
         .split('\n')
@@ -136,8 +167,13 @@ export const read1Password1PifData = async (
                             return attachFilesToItem(processCreditCardItem(item), files);
                         case OnePassLegacyItemType.IDENTITY:
                             return attachFilesToItem(processIdentityItem(item), files);
-                        default:
+                        case OnePassLegacyItemType.WIFI:
+                            return attachFilesToItem(processWifiItem(item), files);
+                        case OnePassLegacyItemType.SSH_KEY:
+                            return attachFilesToItem(processSshKeyItem(item), files);
+                        default: {
                             return attachFilesToItem(processCustomItem(item), files);
+                        }
                     }
                 })();
 
