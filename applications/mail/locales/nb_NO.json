@@ -504,9 +504,6 @@
       "Expand composer": [
         "Utvid skrivevinduet"
       ],
-      "Expand navigation bar to see custom views": [
-        "Utvid navigasjonslinjen for å se egendefinerte visninger"
-      ],
       "Expand navigation bar to see folders": [
         "Utvid navigasjonsfeltet for å se mapper"
       ],
@@ -641,9 +638,6 @@
       ],
       "Hide more benefits": [
         "Skjul flere fordeler"
-      ],
-      "Hide my email": [
-        "Hide-my-email"
       ],
       "Hide toolbar": [
         "Skjul verktøylinje"
@@ -898,6 +892,9 @@
       "Move to archive": [
         "Flytt til arkiv"
       ],
+      "Move to Archive": [
+        "Flytt til arkiv"
+      ],
       "Move to folder": [
         "Flytt til mappe"
       ],
@@ -914,6 +911,9 @@
         "Flytt til søppelpost og avslutt abonnement"
       ],
       "Move to trash": [
+        "Flytt til papirkurven"
+      ],
+      "Move to Trash": [
         "Flytt til papirkurven"
       ],
       "Move to...": [
@@ -1129,9 +1129,6 @@
       "Restore": [
         "Gjenopprett"
       ],
-      "Resubscribe": [
-        "Abonner på nytt"
-      ],
       "Resume": [
         "Gjenoppta"
       ],
@@ -1183,10 +1180,10 @@
       "Select ${ planTitle }": [
         "Velg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Velg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Velg alle"
       ],
       "Select all messages": [
@@ -1221,6 +1218,9 @@
       ],
       "Send read receipt": [
         "Send lesebekreftelse"
+      ],
+      "Send unsubscribe email": [
+        "Send avmelding-e-post"
       ],
       "Set": [
         "Angi"
@@ -1354,6 +1354,15 @@
       "Stop generating result": [
         "Slutt å generere resultater"
       ],
+      "Stop marking as read": [
+        "Stopp merking som lest"
+      ],
+      "Stop moving to Archive": [
+        "Slutt flytting til arkivet"
+      ],
+      "Stop moving to Trash": [
+        "Stopp flytting til papirkurven"
+      ],
       "Strikethrough": [
         "Gjennomstrek"
       ],
@@ -1465,10 +1474,10 @@
       "Upgrade": [
         "Oppgrader"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Oppgrader nå"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Oppgrader nå"
       ],
       "Upload and share files": [
@@ -3229,9 +3238,6 @@
       ],
       "Macao": [
         "Macao"
-      ],
-      "Macedonia": [
-        "Makedonia"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -6135,6 +6141,10 @@
         "${ pureAttachmentsCount } fil vedlagt",
         "${ pureAttachmentsCount } filer vedlagt"
       ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } e-post forrige måned",
+        "${ receivedMessagesCount } e-poster forrige måned"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendere"
@@ -6153,10 +6163,6 @@
       ],
       "${ storage } storage": [
         "${ storage } lagringsplass"
-      ],
-      "${ subscription.ReceivedMessages.Last30Days } email last month": [
-        "${ subscription.ReceivedMessages.Last30Days } e-post forrige måned",
-        "${ subscription.ReceivedMessages.Last30Days } e-poster forrige måned"
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } ulest",
@@ -6209,9 +6215,9 @@
       "(No Recipient)": [
         "(Ingen mottaker)"
       ],
-      "**${ elementsFoundCount }** result found in ${ labelName }": [
-        "**${ elementsFoundCount }** resultat funnet i ${ labelName }",
-        "**${ elementsFoundCount }** resultater funnet i ${ labelName }"
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** resultat funnet i ${ labelName }",
+        "**${ total }** resultater funnet i ${ labelName }"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Automatisk tilkobling**: åpnes og kobles til VPN så snart du slår på enheten."
@@ -6345,6 +6351,9 @@
       ],
       "An unknown public key has been detected for this recipient.": [
         "Det er oppdaget en ukjent offentlig nøkkel for denne mottakeren."
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "En e-post for å avslutte abonnementet vil bli sendt på dine vegne."
       ],
       "and": [
         "og"
@@ -7110,8 +7119,8 @@
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
-      "More infos": [
-        "Mer informasjon"
+      "More info": [
+        "Mer info"
       ],
       "More refine actions": [
         "Flere finjusteringshandlinger"
@@ -7990,6 +7999,9 @@
       "We could not verify the sender's trusted keys.": [
         "Vi kunne ikke bekrefte avsenderens klarerte nøkler."
       ],
+      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
+        "Vi fant ingen mulighet for å avslutte abonnement for dette nyhetsbrevet. Du kan kanskje avslutte abonnement ved hjelp av en kobling i e-posten eller fra nettstedet deres."
+      ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
       ],
@@ -8689,11 +8701,11 @@
       "AND": [
         "OG"
       ],
-      "And": [
-        "Og"
-      ],
       "and": [
         "og"
+      ],
+      "And": [
+        "Og"
       ],
       "Anderson": [
         "Andersen"
@@ -8875,6 +8887,9 @@
       "Enable desktop notifications": [
         "Aktiver skrivebordsvarsler"
       ],
+      "Enable filter": [
+        "Aktiver filter"
+      ],
       "Encrypt emails": [
         "Krypter e-poster"
       ],
@@ -8917,11 +8932,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "HVIS"
-      ],
       "If": [
         "Hvis"
+      ],
+      "IF": [
+        "HVIS"
       ],
       "Import all messages": [
         "Importer alle meldinger"
@@ -8986,9 +9001,12 @@
       "Mark as": [
         "Merk som"
       ],
-      "Marked ${ count } message as read.": [
-        "${ count } melding merket som lest.",
-        "${ count } meldinger merket som lest."
+      "Marked ${ unreadCount } message as read.": [
+        "Merket ${ unreadCount } melding som lest.",
+        "Merket ${ unreadCount } meldinger som lest."
+      ],
+      "Message:": [
+        "Melding:"
       ],
       "Move ${ sidebarElementName }": [
         "Flytt ${ sidebarElementName }"
@@ -9059,11 +9077,11 @@
       "Optional": [
         "Valgfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Or": [
         "Eller"
@@ -9170,6 +9188,9 @@
       "Strong password": [
         "Sterkt passord"
       ],
+      "Subject:": [
+        "Emne:"
+      ],
       "Subscription options": [
         "Abonnementalternativer"
       ],
@@ -9179,8 +9200,8 @@
       "System information": [
         "Systeminformasjon"
       ],
-      "The filter is disabled. You can enable it ${ settingsLink }": [
-        "Filteret er deaktivert. Du kan aktivere det ${ settingsLink }"
+      "The filter is disabled. ${ enableButton }": [
+        "Filteret er deaktivert. ${ enableButton }"
       ],
       "Theme": [
         "Tema"
@@ -9335,7 +9356,7 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will appear here.": [
+      "Newsletters you unsubscribe from will show up here.": [
         "Nyhetsbrev du avslutter abonnement på vises her."
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
@@ -9420,9 +9441,6 @@
       ],
       "Folders": [
         "Mapper"
-      ],
-      "here": [
-        "her"
       ],
       "How to add users": [
         "Hvordan legge til brukere"
@@ -9958,14 +9976,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Skaff deg ${ planTitle }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -9987,6 +9997,14 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Skaff deg ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10472,6 +10490,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter på ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre porttjenere"
       ],
@@ -10531,9 +10555,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Få sikker tilgang til internett fra hvor som helst med viktig nettverksovervåking"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Sikker skylagring som lar deg lagre, synkronisere og dele filer lett og trygt."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
@@ -10854,7 +10875,8 @@
       "Require 2FA": [
         "Krever 2FA"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "Støtte for ${ n } egendefinert e-postdomene",
         "Støtte for ${ n } egendefinerte e-postdomener"
       ]
     },
@@ -11176,14 +11198,44 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " besøk vårt ${ helpCenterLink } eller ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Avbryt når som helst før ${ cancelDate }."
+      ],
       "Cancel anytime before then.": [
         "Avbryt når som helst før da."
+      ],
+      "contact our support team": [
+        "kontakt vår brukerstøtte"
+      ],
+      "Continue": [
+        "Fortsett"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Nyt gratis funksjoner for forretningssikkerhet frem til ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "hjelpesenter"
+      ],
+      "If you need help,": [
+        "Hvis du trenger hjelp,"
       ],
       "Once your full subscription starts...": [
         "Når ditt fulle abonnement starter..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
+      ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Du kan bruke ${ planTitle } til prøveversjonen avsluttes, og du blir ikke belastet."
+      ],
+      "Your free trial has started": [
+        "Din gratis prøveperiode har startet"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
@@ -11440,6 +11492,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Da vil den automatisk bli fornyet på ${ renewPriceStr } for ${ renewalLength } måned. Du kan si opp når som helst.",
         "Da vil den automatisk bli fornyet på ${ renewPriceStr } for ${ renewalLength } måneder. Du kan si opp når som helst."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
@@ -12675,7 +12730,7 @@
         "${ n } VPN-tilkobling per bruker",
         "${ n } VPN-tilkoblinger per bruker"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "VPN-tilkobling for ${ n } enhet per bruker",
         "VPN-tilkobling for ${ n } enheter per bruker"
       ]
@@ -12716,47 +12771,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "For ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription reminder": {
@@ -13017,6 +13031,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -13354,6 +13409,15 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } fjernet"
+      ],
+      "The filter has been disabled": [
+        "Filteret er deaktivert"
+      ],
+      "The filter has been enabled": [
+        "Filteret er aktivert"
+      ],
+      "The filter is active again": [
+        "Filteret er aktivt igjen"
       ]
     },
     "Suffix": {
@@ -13556,6 +13620,10 @@
       ],
       "${ feature } is now active": [
         "${ feature } er nå aktiv"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } melding",
+        "${ numMessages } meldinger"
       ],
       "${ unreads } unread message": [
         "${ unreads } ulest melding",
@@ -14132,8 +14200,8 @@
       "No trackers found": [
         "Ingen sporere funnet"
       ],
-      "No unsubscribed mail subscriptions": [
-        "Ingen avmeldte e-postabonnementer"
+      "No unsubscribed newsletters": [
+        "Ingen avmeldte nyhetsbrev"
       ],
       "No-reply address detected": [
         "Ingen svaradresse oppdaget"
@@ -14473,7 +14541,8 @@
       "Your exposed information": [
         "Din eksponerte informasjon"
       ],
-      "Your free trial ends in ${ trialDurationFormatted } days": [
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dag",
         "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dager"
       ],
       "Your free trial has ended": [

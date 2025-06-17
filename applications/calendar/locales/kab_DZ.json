@@ -632,11 +632,11 @@
       "Upgrade": [
         "Lqem"
       ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ],
       "Upgrade Now": [
         "Sgerrzet amiḍan tura"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -1275,11 +1275,6 @@
         "tizwal"
       ]
     },
-    "Commander action": {
-      "Today": [
-        "Ass-a"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Ffeɣ seg waggan n uktar?"
@@ -1775,9 +1770,6 @@
       ],
       "Macao": [
         "Makawu"
-      ],
-      "Macedonia": [
-        "Masidunya"
       ],
       "Madagascar": [
         "Madagaskaṛ"
@@ -5432,9 +5424,6 @@
       ],
       "Require 2FA": [
         "Yesra 2FA"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Asefrek i ${ n } tiɣula n yimayl udmawan"
       ]
     },
     "Note": {
@@ -6564,6 +6553,12 @@
         "urti vCard"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } n wass",
+        "${ ceilDays } n wussan"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } n usrag",
@@ -6635,6 +6630,9 @@
       ],
       "Add to ${ groupName }": [
         "Rnu ɣer ${ groupName }"
+      ],
+      "Add user": [
+        "Rnu aseqdac"
       ],
       "Addresses": [
         "Tansiwin"
@@ -6758,6 +6756,9 @@
       "Deleting contacts": [
         "Tukksa n yinermisen"
       ],
+      "Desktop": [
+        "Tanarit"
+      ],
       "Does not repeat": [
         "Ur ttales ara"
       ],
@@ -6802,6 +6803,9 @@
       ],
       "Event is happening on defined time slot": [
         "Tadyant tḍerru ɣef uzilal n wakud yettusbadun"
+      ],
+      "Every day": [
+        "Yal ass"
       ],
       "Every year": [
         "Yal useggas"

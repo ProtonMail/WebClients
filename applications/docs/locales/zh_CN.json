@@ -408,6 +408,9 @@
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
       ],
+      "Hide more benefits": [
+        "隐藏更多优势"
+      ],
       "Image could not be loaded with tracker protection.": [
         "跟踪防护模式下无法加载此图像。"
       ],
@@ -503,6 +506,9 @@
       ],
       "More actions": [
         "更多操作"
+      ],
+      "More benefits": [
+        "更多福利"
       ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
@@ -738,6 +744,9 @@
       "Show more": [
         "显示更多"
       ],
+      "Show more benefits": [
+        "显示更多优势"
+      ],
       "Show options": [
         "显示选项"
       ],
@@ -860,9 +869,6 @@
       ],
       "View": [
         "查看"
-      ],
-      "View all ${ pendingCount } invitations": [
-        "查看所有 ${ pendingCount } 个邀请"
       ],
       "View all reports": [
         "查看所有报告"
@@ -1913,9 +1919,6 @@
       "Macao": [
         "澳门"
       ],
-      "Macedonia": [
-        "北马其顿共和国"
-      ],
       "Madagascar": [
         "马达加斯加"
       ],
@@ -2439,8 +2442,8 @@
       "To start, give your organization a name.": [
         "首先，请为您的组织命名。"
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "升级至 ${ BRAND_NAME } ${ planName } 以继续共享文件并提供编辑访问权限"
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "升级至 ${ planName } 套餐，继续共享文件并保留编辑权限"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
@@ -2653,8 +2656,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "“${ name }”已存在"
+      "\"${ sanitizedName }\" already exists": [
+        "\"${ sanitizedName }\" 已存在"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } 无法连接到您的外部账户"
@@ -2784,6 +2787,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "外部邀请暂时禁用。请稍后重试"
+      ],
+      "Failed to copy photo to album": [
+        "无法将照片复制到相册"
       ],
       "Failed to rename document. Please try again later.": [
         "无法重命名文档。请稍后重试。"
@@ -3575,6 +3581,11 @@
         "服务"
       ]
     },
+    "Header": {
+      "Drawer": [
+        "侧边栏"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "已找到 ${ itemsCount } 个建议，您可使用键盘进行导航浏览。"
@@ -4137,8 +4148,14 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "至少 ${ BETTER_PASSWORD_LENGTH } 个字符"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "在您的试用 ${ boldCancelDate } 结束时，您将被降級到 ${ boldProtonFree }。您组织中的所有用户账户将被移除。"
+      ],
       "Attention required": [
         "需要关注"
+      ],
+      "Available": [
+        "可用"
       ],
       "Awaiting transaction": [
         "等待交易"
@@ -4160,6 +4177,9 @@
       ],
       "Calendar side panel": [
         "日历侧边栏"
+      ],
+      "Cannot load link": [
+        "链接加载失败"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告。"
@@ -4354,16 +4374,13 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入 ${ digit } 位数字的验证码。"
+        "请输入验证码的第 ${ digit } 位数字。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入你的密码（作为组织管理员）。"
       ],
       "Error converting document: ${ errorMessage }": [
         "转换文档时出错：${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "加载文档${ errorDetail } 时出错"
       ],
       "Error Syncing": [
         "同步出错"
@@ -4448,6 +4465,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "如果您改变主意，可以随时重新订阅。很遗憾您离开！"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
@@ -4611,6 +4631,9 @@
       "New": [
         "新"
       ],
+      "No": [
+        "否"
+      ],
       "No contacts added yet": [
         "尚未添加联系人"
       ],
@@ -4712,6 +4735,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME 可使用编辑器中指定的格式发送邮件。"
+      ],
+      "Photos": [
+        "照片"
       ],
       "Please authenticate your card in the verification tab.": [
         "请在验证页面完成银行卡核验。"
@@ -4862,6 +4888,9 @@
       ],
       "Shared on": [
         "共享于"
+      ],
+      "Shared with me": [
+        "与我共享"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "由于网络错误，无法验证签名，请稍后重试。"
@@ -5193,6 +5222,9 @@
       "Writing assistant": [
         "写作助手"
       ],
+      "Yes": [
+        "是"
+      ],
       "you": [
         "您"
       ],
@@ -5279,6 +5311,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
@@ -5393,6 +5428,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "您将在 ${ boldEndDate } 失去对 ${ boldPlanTitle } 的访问权限。"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
       ]
     },
     "info": {
@@ -5502,6 +5543,9 @@
       ],
       "Address": [
         "地址"
+      ],
+      "Alias title": [
+        "别名标题"
       ],
       "Anderson": [
         "Anderson"
@@ -5676,6 +5720,9 @@
       ],
       "First name": [
         "名"
+      ],
+      "Folder": [
+        "文件夹"
       ],
       "Folder location": [
         "文件夹位置"
@@ -6950,6 +6997,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "通过专用安全网关实现先进的网络安全和访问管理"
       ],
@@ -7327,7 +7380,7 @@
       "Require 2FA": [
         "要求启用 2FA"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
         "支持 ${ n } 个自定义域"
       ]
     },
@@ -7421,6 +7474,9 @@
       ],
       "Access for the member removed": [
         "已删除成员的访问权限"
+      ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "在锁定的卷上采取行动，即可访问我们的新相册、过滤器和更多内容。现在就恢复或删除，立即享受这些新功能。"
       ],
       "Access updated": [
         "访问权限已更新"
@@ -7663,6 +7719,53 @@
         "存储"
       ]
     },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        "请访问我们的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "在 ${ cancelDate } 之前随时取消。"
+      ],
+      "Cancel anytime before then.": [
+        "在此之前随时取消。"
+      ],
+      "contact our support team": [
+        "联系我们的客服"
+      ],
+      "Continue": [
+        "继续"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "免费享有商业安全功能，直到 ${ trialEndsOnFormatted }为止。"
+      ],
+      "help center": [
+        "帮助中心"
+      ],
+      "If you need help,": [
+        "如果您需要帮助，"
+      ],
+      "Once your full subscription starts...": [
+        "您的正式订阅一旦开始..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "您可以使用 ${ planTitle } 直到试用期结束，并且不会向您收费。"
+      ],
+      "Your free trial has started": [
+        "您的免费试用已开始"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "您的完整 ${ planTitle } 订阅将于 ${ boldEndDate } 开始。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "您将能够免费使用 ${ planTitle } 直到试用期结束。"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "添加到已有队列"
@@ -7708,6 +7811,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "所有 ${ BRAND_NAME } 应用程序和高级功能"
+      ],
       "Secure vault sharing": [
         "安全保险库共享"
       ],
@@ -7869,6 +7975,9 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "此付款方式将成为您未来所有续订的新默认方式。"
       ],
       "Timeout exceeded": [
         "超时"
@@ -8782,8 +8891,8 @@
       "${ n } VPN connection per user": [
         "每位用户可通过 ${ n } 台设备同时接入 VPN"
       ],
-      "VPN connection for ${ n } devices per user": [
-        "其他 VPN 连接，每个用户可连接 ${ n } 台设备"
+      "VPN connection for ${ n } device per user": [
+        "每位用户 ${ n } 个设备的 VPN 连接"
       ]
     },
     "Subscription change warning": {
@@ -9132,6 +9241,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "下载数"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } 个邮箱地址"
       ],
@@ -9161,6 +9273,9 @@
       ],
       "Addresses": [
         "地址"
+      ],
+      "Album details": [
+        "相册详细信息"
       ],
       "All settings": [
         "所有设置"
@@ -9393,6 +9508,12 @@
       "Exporting contacts": [
         "导出联系人"
       ],
+      "File details": [
+        "文件详细信息"
+      ],
+      "Folder details": [
+        "文件夹详细信息"
+      ],
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
       ],
@@ -9444,11 +9565,20 @@
       "Invalid verification code": [
         "验证码无效"
       ],
+      "Item details": [
+        "详细信息"
+      ],
+      "Last edited by": [
+        "最后编辑者"
+      ],
       "Limited availability": [
         "可用性有限"
       ],
       "Link confirmation": [
         "确认打开链接"
+      ],
+      "Location": [
+        "位置"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "为您的 ${ DRIVE_APP_NAME } 创建副本"
@@ -9465,14 +9595,23 @@
       "Merging contacts": [
         "合并联系人"
       ],
+      "MIME type": [
+        "MIME 类型"
+      ],
       "Minicalendar": [
         "迷你日历"
       ],
       "Mobile": [
         "移动版"
       ],
+      "Modified": [
+        "修改时间"
+      ],
       "My files": [
         "我的文件"
+      ],
+      "Name": [
+        "名称"
       ],
       "Need more aliases?": [
         "需要更多别名？"
@@ -9507,6 +9646,9 @@
       "Organization setup": [
         "组织设置"
       ],
+      "Original size": [
+        "原始尺寸"
+      ],
       "Other information": [
         "其他信息"
       ],
@@ -9536,6 +9678,9 @@
       ],
       "Processing...": [
         "正在处理..."
+      ],
+      "Public shared link status": [
+        "将共享链接状态公开"
       ],
       "Re-sign all contacts": [
         "重新签署所有联系人"
@@ -9603,6 +9748,9 @@
       "Share your calendar with your team": [
         "与团队共享日历"
       ],
+      "Shared": [
+        "共享"
+      ],
       "Sign in and grant access": [
         "登录并授予权限"
       ],
@@ -9614,6 +9762,9 @@
       ],
       "Simplify password management": [
         "简化密码管理"
+      ],
+      "Size": [
+        "大小"
       ],
       "Something went wrong": [
         "出了些问题"
@@ -9648,14 +9799,26 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
       ],
+      "Type": [
+        "类型"
+      ],
       "Untitled document ${ date }": [
         "无标题文档 ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "无标题电子表格 ${ date }"
       ],
       "Upgrade complete!": [
         "升级完成！"
       ],
       "Upload and share files": [
         "上传并分享文件"
+      ],
+      "Uploaded": [
+        "上传时间"
+      ],
+      "Uploaded by": [
+        "上传者"
       ],
       "Uploading a large file or folder": [
         "上传大文件或文件夹"
@@ -9671,6 +9834,9 @@
       ],
       "Verifying your payment...": [
         "正在确认支付..."
+      ],
+      "Version details": [
+        "版本详细信息"
       ],
       "VPN explained": [
         "VPN 原理解析"
@@ -9716,6 +9882,9 @@
       ],
       "Your exposed information": [
         "您的泄露信息"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "您的免费体验期将于 ${ trialDurationFormatted } 结束。"
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"

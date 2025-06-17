@@ -458,6 +458,9 @@
       "Get link": [
         "ბმულის მიღება"
       ],
+      "Get secure storage for ${ simplePriceString }": [
+        "მიიღეთ დაცული საცავი ფასად ${ simplePriceString }"
+      ],
       "Get Started": [
         "დაიწყეთ"
       ],
@@ -2190,9 +2193,6 @@
       ],
       "Macao": [
         "მაკაო"
-      ],
-      "Macedonia": [
-        "მაკედონია"
       ],
       "Madagascar": [
         "მადაგასკარი"
@@ -5929,6 +5929,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "როცა მიუერთდებით VPN-ს, ის იყენებს დაშიფვრის ტექნოლოგიებს, რომ თქვენი IP მისამართი (თქვენი მოწყობილობისთვის მინიჭებული ნიკალური კოდი) დამალოს."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate }-დან ამ ვერსიამდე აღდგება. ყველა დანარჩენი ვერსია ჯერ კიდევ დაგრჩებათ."
       ],
@@ -6054,6 +6057,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }.",
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }."
@@ -6157,6 +6163,12 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "თქვენი გამოწერის ავტომატური განახლების თარიღი: ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "თქვენი გამოსაცდელი პერიოდის დასრულების დროა: ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
       ]
     },
     "info": {
@@ -6244,6 +6256,9 @@
     "Label": {
       "# of downloads": [
         "გადმოწერების #"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } ${ albumProgress.total }-დან"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-ის მომხმარებელი"
@@ -8295,7 +8310,8 @@
       "Require 2FA": [
         "2FA-ის მოთხოვნა"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "${ n } მომხმარებლის დომენის მხარდაჭერა",
         "${ n } მომხმარებლის დომენის მხარდაჭერა"
       ]
     },
@@ -8418,6 +8434,9 @@
       ],
       "An invitation has been sent": [
         "მოსაწვევი გაიგზავნა"
+      ],
+      "Cannot load file or folder info": [
+        "ფაილის ან საქაღალდის ინფორმაციის ჩატვირთვა შეუძლებელია"
       ],
       "Cannot load link": [
         "ბმულის ჩატვირთვის შეცდომა"
@@ -8730,10 +8749,10 @@
       "Invite members": [
         "წევრების მოწვევა"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "მოგვიანებით"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "მოგვიანებით"
       ],
       "Select theme": [
@@ -8856,6 +8875,35 @@
         "იმუშავეთ ერთად"
       ]
     },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " დაუკავშირდით ჩვენს ${ helpCenterLink }-ს, ან ${ contactSupportLink }-ს."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "გააუქმეთ ნებისმიერ დროს ${ cancelDate }-მდე."
+      ],
+      "Cancel anytime before then.": [
+        "გააუქმეთ იქამდე ნებისმიერ დროს."
+      ],
+      "contact our support team": [
+        "დაუკავშირდით ჩვენს მხარდაჭერის გუნდს"
+      ],
+      "Continue": [
+        "გაგრძელება"
+      ],
+      "help center": [
+        "დახმარების ცენტრი"
+      ],
+      "If you need help,": [
+        "თუ დახმარება გჭირდებათ,"
+      ],
+      "Once your full subscription starts...": [
+        "როცა თქვენი სრული გამოწერა დაიწყება..."
+      ],
+      "Your free trial has started": [
+        "თქვენი გამოსაცდელი პერიოდი დაიწყო"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "არსებულ ჯგუფში ჩამატება"
@@ -8887,6 +8935,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "წვდომა ყველა ${ BRAND_NAME }-ის აპთან და ფასიან ფუნქციასთან"
+      ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
       ],
@@ -9954,7 +10005,7 @@
         "${ n } VPN კავშირი თითოეული მომხმარებლისთვის",
         "${ n } VPN კავშირი თითოეული მომხმარებლისთვის"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის",
         "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის"
       ]
@@ -9995,47 +10046,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -10293,6 +10303,47 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -11429,6 +11480,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
       ],
+      "Your ${ planName } subscription has started": [
+        "თქვვენი ${ planName } გამოწერა დაიწყო"
+      ],
       "Your 3 GB bonus": [
         "თქვენი 3 გბ ბონუსი"
       ],
@@ -11443,6 +11497,10 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში",
+        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში"
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"

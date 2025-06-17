@@ -267,11 +267,11 @@
       "Discard": [
         "Sil"
       ],
-      "Discard Changes": [
-        "Değişiklikleri sil"
-      ],
       "Discard changes": [
         "Değişiklileri yok say"
+      ],
+      "Discard Changes": [
+        "Değişiklikleri sil"
       ],
       "Discover ${ planName }": [
         "${ planName } tarifesini keşfedin"
@@ -438,6 +438,9 @@
       "Hide": [
         "Gizle"
       ],
+      "Hide more benefits": [
+        "Diğer faydaları gizle"
+      ],
       "Hide plan features": [
         "Tarife özelliklerini gizle"
       ],
@@ -506,6 +509,9 @@
       ],
       "Mark as favorite": [
         "Beğenilen olarak işaretle"
+      ],
+      "More benefits": [
+        "Diğer faydalar"
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
@@ -771,6 +777,9 @@
       "Show more": [
         "Daha fazla görüntüle"
       ],
+      "Show more benefits": [
+        "Diğer faydaları görüntüle"
+      ],
       "Show preview": [
         "Ön izlemeyi görüntüle"
       ],
@@ -833,6 +842,9 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
+      ],
+      "Try for free": [
+        "Ücretsiz deneyin"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
@@ -976,8 +988,14 @@
       "Delete address": [
         "Adresi sil"
       ],
+      "Delete address “${ emailAddress }”": [
+        "“${ emailAddress }” adresini sil"
+      ],
       "Disable": [
         "Kullanımdan kaldır"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "“${ emailAddress }” adresini kullanımdan kaldır"
       ],
       "Disable E2EE mail": [
         "E2EE e-postayı kapat"
@@ -991,8 +1009,14 @@
       "Edit address": [
         "Adresi düzenle"
       ],
+      "Edit address “${ emailAddress }”": [
+        "“${ emailAddress }” adresini düzenle"
+      ],
       "Enable": [
         "Kullanıma al"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "“${ emailAddress }” adresini kullanıma al"
       ],
       "Enable E2EE mail": [
         "E2EE e-postayı aç"
@@ -1000,11 +1024,17 @@
       "Generate missing keys": [
         "Eksik anahtarları oluştur"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "“${ emailAddress }” adresinin eksik anahtarlarını oluştur"
+      ],
       "Saving": [
         "Kaydediliyor"
       ],
       "Set as default": [
         "Varsayılan olarak ayarla"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "“${ emailAddress }” adresini varsayılan olarak ayarla"
       ]
     },
     "Address status": {
@@ -2077,9 +2107,6 @@
       "Macao": [
         "Makao"
       ],
-      "Macedonia": [
-        "Makedonya"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2792,7 +2819,7 @@
       "Download for Linux": [
         "Linux için indirin"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "macOS için indirin"
       ],
       "Download for Windows": [
@@ -3982,6 +4009,9 @@
       "Organization key fingerprint": [
         "Kuruluş anahtarı parmak izi"
       ],
+      "Payment details": [
+        "Ödeme ayrıntıları"
+      ],
       "Protection": [
         "Koruma"
       ],
@@ -4394,6 +4424,9 @@
       ],
       "At least one application must be active": [
         "En az bir uygulama etkin olmalıdır"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Deneme sürenizin sonunda ${ boldCancelDate }, tarifeniz ${ boldProtonFree } düzeyine düşürülecek. Kuruluşunuzdaki tüm kullanıcı hesapları kaldırılacak."
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
@@ -4818,6 +4851,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Fikrinizi değiştirirseniz, istediğiniz zaman yeniden abone olabilirsiniz. Ayrılmanıza üzüldük!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
@@ -5712,11 +5748,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "username": [
-        "kullanıcı adı"
-      ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -5999,10 +6035,13 @@
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
-        "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Bu sunucuları 10 gün boyunca başka bir ülkeye atayamazsınız."
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "${ boldPlanTitle } özelliklerine erişiminizi de kaybedeceksiniz:"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } tutar ödeyeceksiniz.",
@@ -6080,10 +6119,16 @@
         "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecek."
       ],
       "Your trial will end in ${ timeRemaining }.": [
-        "Deneme süreniz ${ timeRemaining } içinde sona eriyor"
+        "Deneme süreniz ${ timeRemaining } sonra sona erecek."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Bu sunucuları hemen başka bir ağ geçidine ekleyebileceksiniz."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "${ boldEndDate } tarihinde ${ boldPlanTitle } tarifesine erişemeyeceksiniz."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
       ],
       "Zoom meeting": [
         "Zoom toplantısı"
@@ -6985,6 +7030,9 @@
       "Forgot username?": [
         "Kullanıcı adınızı mı unuttunuz?"
       ],
+      "Groups": [
+        "Gruplar"
+      ],
       "Help": [
         "Yardım"
       ],
@@ -7809,6 +7857,12 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } alt kullanıcı hesapları ve e-posta adresleri ekleyerek yönetmenizi sağlar. Aile ve kuruluşlar için idealdir."
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "Dosyalarınızı saklamak, eşitlemek ve paylaşmak için 1 TB bulut depolama alanı. Uçtan uca şifreleme ile korunur."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "Dosyalarınızı saklamak, eşitlemek ve paylaşmak için 200 GB bulut depolama alanı. Uçtan uca şifreleme ile korunur."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Size ayrılmış güvenli ağ geçitleri ile gelişmiş ağ güvenliği ve erişim yönetimi"
       ],
@@ -7931,14 +7985,6 @@
         "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -7951,6 +7997,14 @@
       ],
       "Switch plans?": [
         "Tarifeleri değiştir?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -8233,7 +8287,8 @@
       "Require 2FA": [
         "İki adımlı doğrulama gereksin"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "${ n } özel e-posta etki alanı desteği",
         "${ n } özel e-posta etki alanı desteği"
       ]
     },
@@ -8371,7 +8426,7 @@
     },
     "oc_nightly: BYOE": {
       "Something went wrong while loging into your Gmail account": [
-        "Gmail hesabınıza giriş yapılırken bir sorun oluştu"
+        "Gmail hesabınızda oturum açılırken bir sorun çıktı"
       ]
     },
     "Offer": {
@@ -8468,6 +8523,53 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "${ appName } hoş geldiniz"
+      ]
+    },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " ${ helpCenterLink } veya ${ contactSupportLink } adresine gidin."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "${ cancelDate } tarihinden önce istediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Cancel anytime before then.": [
+        "O tarihe kadar istediğiniz zaman iptal edebilirsiniz."
+      ],
+      "contact our support team": [
+        "destek ekibimizle görüşün"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "${ trialEndsOnFormatted } tarihine kadar kurumsal güvenlik özelliklerinden ücretsiz olarak yararlanın."
+      ],
+      "help center": [
+        "yardım merkezi"
+      ],
+      "If you need help,": [
+        "Yardıma gerek duyarsanız,"
+      ],
+      "Once your full subscription starts...": [
+        "Tam aboneliğiniz başladığında..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
+      ],
+      "Your free trial has started": [
+        "Ücretsiz deneme süreniz başladı"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Tam ${ planTitle } aboneliğiniz ${ boldEndDate } tarihinde başlayacak."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
       ]
     },
     "Option": {
@@ -8910,6 +9012,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenecektir. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
@@ -10357,9 +10462,9 @@
         "${ maxVpn } aygıt için yüksek hızlı VPN",
         "${ maxVpn } aygıt için yüksek hızlı VPN"
       ],
-      "VPN connection for ${ n } devices per user": [
-        "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı",
-        "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı"
+      "VPN connection for ${ n } device per user": [
+        "Kullanıcı başına ${ n } aygıt ile VPN bağlantısı.",
+        "Kullanıcı başına ${ n } aygıt ile VPN bağlantısı."
       ]
     },
     "Subscription change warning": {
@@ -10398,47 +10503,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription reminder": {
@@ -10731,6 +10795,47 @@
         "Kendi kısa @pm.me e-posta takma adınız"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Emin misiniz?"
@@ -10768,6 +10873,9 @@
       ],
       "Expiring": [
         "Sona eriyor"
+      ],
+      "Free Trial": [
+        "Ücretsiz deneme"
       ]
     },
     "Subtitle": {
@@ -11937,6 +12045,10 @@
       ],
       "Your current plan": [
         "Geçerli tarifeniz"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Ücretsiz deneme süreniz ${ trialDurationFormatted } gün sonra bitecek",
+        "Ücretsiz deneme süreniz ${ trialDurationFormatted } gün sonra bitecek"
       ],
       "Your plan": [
         "Tarifeniz"

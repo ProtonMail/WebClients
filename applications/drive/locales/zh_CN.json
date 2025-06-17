@@ -426,6 +426,9 @@
       "Export selection as .vcf": [
         "导出选择为 .vcf"
       ],
+      "Export system log": [
+        "导出系统日志"
+      ],
       "Fit to window": [
         "适应窗口大小"
       ],
@@ -449,6 +452,9 @@
       ],
       "Get link": [
         "生成共享链接"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "获取 ${ simplePriceString } 的安全存储"
       ],
       "Get Started": [
         "立即体验"
@@ -503,6 +509,9 @@
       ],
       "Hide download options": [
         "隐藏下载选项"
+      ],
+      "Hide more benefits": [
+        "隐藏更多优势"
       ],
       "Image could not be loaded with tracker protection.": [
         "跟踪防护模式下无法加载此图像。"
@@ -626,6 +635,9 @@
       ],
       "More actions": [
         "更多操作"
+      ],
+      "More benefits": [
+        "更多福利"
       ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
@@ -933,6 +945,9 @@
       "Show more": [
         "显示更多"
       ],
+      "Show more benefits": [
+        "显示更多优势"
+      ],
       "Show more download options": [
         "显示更多下载选项"
       ],
@@ -1004,6 +1019,9 @@
       ],
       "Try another method": [
         "更换验证方式"
+      ],
+      "Try it now": [
+        "立即试用"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "保存失败，请重试。失败原因：${ saveError }"
@@ -2161,9 +2179,6 @@
       ],
       "Macao": [
         "澳门"
-      ],
-      "Macedonia": [
-        "北马其顿共和国"
       ],
       "Madagascar": [
         "马达加斯加"
@@ -3877,6 +3892,9 @@
       "Create new shared album": [
         "创建新的共享相册"
       ],
+      "Drawer": [
+        "侧边栏"
+      ],
       "Rename album": [
         "重命名相册"
       ],
@@ -4538,6 +4556,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "至少 ${ BETTER_PASSWORD_LENGTH } 个字符"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "在您的试用 ${ boldCancelDate } 结束时，您将被降級到 ${ boldProtonFree }。您组织中的所有用户账户将被移除。"
+      ],
       "Attention required": [
         "需要关注"
       ],
@@ -4809,7 +4830,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入 ${ digit } 位数字的验证码。"
+        "请输入验证码的第 ${ digit } 位数字。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
@@ -4825,6 +4846,9 @@
       ],
       "Expired": [
         "已过期"
+      ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "导出诊断日志以提供技术支持和故障排除"
       ],
       "Failed": [
         "失败"
@@ -4921,6 +4945,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "如果您改变主意，可以随时重新订阅。很遗憾您离开！"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
@@ -5582,6 +5609,9 @@
       "Temporarily unavailable. Please check back later.": [
         "暂时不可用。请稍后再试。"
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "感谢您选择 ${ BRAND_NAME } 来保护您的组织机构安全。"
+      ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "感谢您成为订阅用户，安全浏览即刻开启。"
       ],
@@ -6041,17 +6071,11 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
-      ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "您即将拒绝加入${ invitationName }相册的邀请。继续操作后，除非相册所有者重新邀请您，否则将无法查看该相册内容。确定要执行此操作吗？"
-      ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "您即将拒绝加入${ invitationName }文件夹的邀请。继续操作后，除非文件夹所有者重新邀请您，否则将无法查看该文件夹内容。确定要执行此操作吗？"
-      ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "您即将拒绝加入${ invitationName }项目的邀请。继续操作后，除非项目所有者重新邀请，否则您将无法访问该项目内容。确定要继续此操作吗？"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "以下群组中的邮箱地址数量已达上限："
@@ -6103,6 +6127,12 @@
       ],
       "Your files will be encrypted and then saved.": [
         "文件会加密保存。"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免费试用已成功转换为 ${ cycle } 个月订阅。您的续订日期是 ${ nextBillingDate }。"
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免费试用已成功转换为月度订阅。您的续订日期是 ${ nextBillingDate }。"
       ],
       "Your information was found on ${ displayedDate }": [
         "您的信息在 ${ displayedDate } 找到"
@@ -6157,6 +6187,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "您将在 ${ boldEndDate } 失去对 ${ boldPlanTitle } 的访问权限。"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
       ]
     },
     "info": {
@@ -6281,6 +6317,9 @@
       ],
       "Address": [
         "地址"
+      ],
+      "Alias title": [
+        "别名标题"
       ],
       "All": [
         "全部"
@@ -7884,6 +7923,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "通过专用安全网关实现先进的网络安全和访问管理"
       ],
@@ -8261,7 +8306,7 @@
       "Require 2FA": [
         "要求启用 2FA"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
         "支持 ${ n } 个自定义域"
       ]
     },
@@ -8376,6 +8421,9 @@
       ],
       "An invitation has been sent": [
         "邀请已发送"
+      ],
+      "Cannot load file or folder info": [
+        "无法加载文件或文件夹信息"
       ],
       "Cannot load link": [
         "无法加载链接"
@@ -8681,10 +8729,10 @@
       "Invite members": [
         "邀请成员"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "以后再说"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "以后再说"
       ],
       "Select theme": [
@@ -8807,6 +8855,53 @@
         "携手合作"
       ]
     },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        "请访问我们的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "在 ${ cancelDate } 之前随时取消。"
+      ],
+      "Cancel anytime before then.": [
+        "在此之前随时取消。"
+      ],
+      "contact our support team": [
+        "联系我们的客服"
+      ],
+      "Continue": [
+        "继续"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "免费享有商业安全功能，直到 ${ trialEndsOnFormatted }为止。"
+      ],
+      "help center": [
+        "帮助中心"
+      ],
+      "If you need help,": [
+        "如果您需要帮助，"
+      ],
+      "Once your full subscription starts...": [
+        "您的正式订阅一旦开始..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "您可以使用 ${ planTitle } 直到试用期结束，并且不会向您收费。"
+      ],
+      "Your free trial has started": [
+        "您的免费试用已开始"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "您的完整 ${ planTitle } 订阅将于 ${ boldEndDate } 开始。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "您将能够免费使用 ${ planTitle } 直到试用期结束。"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "添加到已有队列"
@@ -8838,6 +8933,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "所有 ${ BRAND_NAME } 应用程序和高级功能"
+      ],
       "Secure vault sharing": [
         "安全保险库共享"
       ],
@@ -8999,6 +9097,9 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "此付款方式将成为您未来所有续订的新默认方式。"
       ],
       "Timeout exceeded": [
         "超时"
@@ -9884,8 +9985,8 @@
       "${ n } VPN connection per user": [
         "每位用户可通过 ${ n } 台设备同时接入 VPN"
       ],
-      "VPN connection for ${ n } devices per user": [
-        "其他 VPN 连接，每个用户可连接 ${ n } 台设备"
+      "VPN connection for ${ n } device per user": [
+        "每位用户 ${ n } 个设备的 VPN 连接"
       ]
     },
     "Subscription change warning": {
@@ -9924,47 +10025,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "总计 ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription reminder": {
@@ -10221,6 +10281,47 @@
         "您自己的短 @pm.me 邮箱别名"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "确定要这样做吗?"
@@ -10258,6 +10359,9 @@
       ],
       "Albums you've shared will appear here": [
         "您分享的相册将在此处显示"
+      ],
+      "Securely share your favorite moments with friends and family using Albums.": [
+        "使用相册安全地与朋友和家人分享您最喜欢的时刻。"
       ],
       "Your favorited photos will appear here": [
         "您收藏的照片将在此处显示"
@@ -11069,6 +11173,9 @@
       "Phone numbers": [
         "电话号码"
       ],
+      "Photo albums are here!": [
+        "相册在这里！"
+      ],
       "Photos": [
         "照片"
       ],
@@ -11327,6 +11434,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
       ],
+      "Your ${ planName } subscription has started": [
+        "您的 ${ planName } 订阅已启用"
+      ],
       "Your 3 GB bonus": [
         "您的 3 GB 奖金"
       ],
@@ -11341,6 +11451,9 @@
       ],
       "Your exposed information": [
         "您的泄露信息"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "您的免费体验期将于 ${ trialDurationFormatted } 结束。"
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"

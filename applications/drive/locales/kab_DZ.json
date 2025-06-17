@@ -52,6 +52,9 @@
       "Add phone number": [
         "Rnu uṭṭun n usawal"
       ],
+      "Add photos": [
+        "Rnu tiwlafin"
+      ],
       "Add to group": [
         "Rnu ɣer ugraw"
       ],
@@ -333,6 +336,9 @@
       "Get verification code": [
         "Awi tangalt n usentem"
       ],
+      "Go back": [
+        "Uɣal"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Ddu ɣer ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -462,6 +468,9 @@
       "New": [
         "Amynut"
       ],
+      "New document": [
+        "Isemli amaynut"
+      ],
       "New folder": [
         "Akaram amaynut"
       ],
@@ -557,6 +566,9 @@
       ],
       "Remove gift code": [
         "Kkes tangalt n usefk"
+      ],
+      "Remove me": [
+        "Kkes-iyi"
       ],
       "Rename": [
         "Beddel isem"
@@ -1704,9 +1716,6 @@
       ],
       "Macao": [
         "Makawu"
-      ],
-      "Macedonia": [
-        "Masidunya"
       ],
       "Madagascar": [
         "Madagaskaṛ"
@@ -3346,6 +3355,9 @@
       "Anyone with this link can access your folder.": [
         "Kra n win i yesɛan aseɣwen-a yezmer ad yekcem ɣer ukaram-ik•im."
       ],
+      "Apr": [
+        "Yeb"
+      ],
       "Are you sure you want to discard your changes?": [
         "D tidet tebɣiḍ ad tesfesxeḍ ibeddilen-ik m?"
       ],
@@ -3366,6 +3378,9 @@
       ],
       "Attention required": [
         "Yesra leḥdar"
+      ],
+      "Aug": [
+        "Ɣuc"
       ],
       "Billing cycle: ${ text }": [
         "Asellek yal:${ text }"
@@ -3467,6 +3482,9 @@
       "Custom email domains": [
         "Tiɣula n yimayl tudmawanin"
       ],
+      "Dec": [
+        "Duǧ"
+      ],
       "Decrypting files": [
         "Kkes awgelhen i yifuyla"
       ],
@@ -3562,6 +3580,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Tuccḍa deg ulday n useɣwen aɣellsan. Tamentilt d: ${ error }"
       ],
+      "Feb": [
+        "Fuṛ"
+      ],
       "File \"${ name }\" was deleted during download": [
         "Afaylu \"${ name }\" yettwakkes lawan n usader"
       ],
@@ -3641,6 +3662,15 @@
       "It’s easy and secure": [
         "D afessas, d aɣellsan"
       ],
+      "Jan": [
+        "Yen"
+      ],
+      "Jul": [
+        "Yul"
+      ],
+      "Jun": [
+        "Yun"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Sentem kan tafrayt-inek•inem nekni ad neg ayen iqqimen."
       ],
@@ -3689,8 +3719,14 @@
       "Makes your account safer": [
         "Seɣles amiḍan-ik"
       ],
+      "Mar": [
+        "Meɣ"
+      ],
       "Mastercard SecureCode logo": [
         "Alugu n Mastercard SecureCode"
+      ],
+      "May": [
+        "May"
       ],
       "Member": [
         "Aεeggal"
@@ -3739,6 +3775,12 @@
       ],
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
+      ],
+      "Nov": [
+        "Wam"
+      ],
+      "Oct": [
+        "Tub"
       ],
       "of": [
         "si"
@@ -3857,6 +3899,9 @@
       ],
       "Select what you want to import.": [
         "Fren acu i tebɣiḍ ad t-tketreḍ."
+      ],
+      "Sep": [
+        "Cṭe"
       ],
       "Session timed out": [
         "Yemmed wakud n tɣimit"
@@ -4880,6 +4925,9 @@
       "Image": [
         "Tugna"
       ],
+      "JPEG image": [
+        "Tugna JPEG"
+      ],
       "Text": [
         "Aḍris"
       ],
@@ -4888,6 +4936,9 @@
       ],
       "Video file": [
         "Afaylu avidyu"
+      ],
+      "WEBP image": [
+        "Tugna WEBP"
       ]
     },
     "Modal title": {
@@ -5265,9 +5316,6 @@
       ],
       "Require 2FA": [
         "Yesra 2FA"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Asefrek i ${ n } tiɣula n yimayl udmawan"
       ]
     },
     "Notification": {
@@ -5483,10 +5531,10 @@
       "Get started": [
         "Bdu"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Ahat ticki"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Ahat ticki"
       ],
       "Skip": [
@@ -6253,6 +6301,12 @@
         "RAW"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } n wass",
+        "${ ceilDays } n wussan"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } n usrag",
@@ -6322,6 +6376,9 @@
       ],
       "Add to ${ groupName }": [
         "Rnu ɣer ${ groupName }"
+      ],
+      "Add user": [
+        "Rnu aseqdac"
       ],
       "Addresses": [
         "Tansiwin"
@@ -6456,6 +6513,9 @@
       ],
       "Deleting contacts": [
         "Tukksa n yinermisen"
+      ],
+      "Desktop": [
+        "Tanarit"
       ],
       "Discard": [
         "Sefsex"

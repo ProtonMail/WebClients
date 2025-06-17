@@ -46,6 +46,9 @@
       "Add domain": [
         "Domain hozzáadása"
       ],
+      "Add field": [
+        "Mező hozzáadása"
+      ],
       "Add forwarding mailbox": [
         "Továbbító postafiók hozzáadása"
       ],
@@ -367,6 +370,9 @@
       "Make editor": [
         "Átállítás szerkesztőnek"
       ],
+      "Make manager": [
+        "Legyen kezelő"
+      ],
       "Make viewer": [
         "Átállítás megtekintésre jogosultra"
       ],
@@ -400,10 +406,10 @@
       "Move to another vault": [
         "Áthelyezés másik tárolóba"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Áthelyezés a lomtárba"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Áthelyezés a lomtárba"
       ],
       "Multiple select": [
@@ -459,6 +465,9 @@
       ],
       "Reactivate now": [
         "Újraaktiválás most"
+      ],
+      "Read More": [
+        "Bővebben"
       ],
       "Refresh the page": [
         "Oldal frissítése"
@@ -577,6 +586,9 @@
       "Show advanced options": [
         "Speciális beállítások megjelenítése"
       ],
+      "Show Less": [
+        "Kevesebb mutatása"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Bejelentkezés ${ BRAND_NAME }nal"
       ],
@@ -591,6 +603,9 @@
       ],
       "Sort vault items": [
         "Tároló elemeinek rendezése"
+      ],
+      "Start from scratch": [
+        "Kezdjük az elejétől"
       ],
       "Submit": [
         "Küldés"
@@ -1073,9 +1088,6 @@
       "File does not match expected format": [
         "A fájl nem a szükséges formátumú"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "A(z) \"${ vaultData.name }\" tárolóba való importálás nem sikerült: ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Elemek importálása nem sikerült"
       ],
@@ -1339,7 +1351,8 @@
         "${ count } megtekintés",
         "${ count } megtekintés"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } megtekintés",
         "${ count }/${ maxReads } megtekintés"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1836,6 +1849,9 @@
       ],
       "Low Priority": [
         "Alacsony prioritású"
+      ],
+      "Manager": [
+        "Kezelő"
       ],
       "me": [
         "én"
@@ -2577,6 +2593,12 @@
       "Account": [
         "Fiók"
       ],
+      "Account Number": [
+        "Számlaszám"
+      ],
+      "Account Type": [
+        "Számlatípus"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Új e-mail álnév létrehozásakor adjon hozzá egy véletlenszerű előtagot ehhez a domain névhez."
       ],
@@ -2616,6 +2638,12 @@
       "Always show username field": [
         "Mindig megjeleníti a felhasználónév mezőt"
       ],
+      "API Credential": [
+        "API hitelesítő adatok"
+      ],
+      "API Key": [
+        "API kulcs"
+      ],
       "Application logs": [
         "Alkalmazás napló"
       ],
@@ -2624,6 +2652,12 @@
       ],
       "Backup password": [
         "Biztonsági jelszó"
+      ],
+      "Bank Account": [
+        "Bankszámla"
+      ],
+      "Bank Name": [
+        "Bank neve"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "A bejelentkezések tárolása mellett a ${ PASS_APP_NAME } egy integrált e-mail álnév funkcióval védi a személyazonosságát. Amikor új online fiókot regisztrál, a ${ PASS_APP_NAME } automatikusan létrehozhat egy e-mail álnevet, hogy a tényleges e-mail címe védve maradjon. "
@@ -2691,6 +2725,9 @@
       "Copy": [
         "Másolás"
       ],
+      "Country": [
+        "Ország"
+      ],
       "Country or Region": [
         "Ország vagy régió"
       ],
@@ -2699,6 +2736,9 @@
       ],
       "Create a credit card": [
         "Bankkártya létrehozása"
+      ],
+      "Create a custom item": [
+        "Egyéni elem létrehozása"
       ],
       "Create a hide-my-email alias": [
         "Hide-my-email e-mail álnév létrehozása"
@@ -2724,14 +2764,29 @@
       "Credit cards": [
         "Bankkártyák"
       ],
+      "Crypto Wallet": [
+        "Kripto tárca"
+      ],
       "Custom hidden field": [
         "Egyéni rejtett mező"
+      ],
+      "Custom Items": [
+        "Egyéni elemek"
       ],
       "Custom text field": [
         "Egyéni szövegmező"
       ],
+      "Database": [
+        "Adatbázis"
+      ],
+      "Database Type": [
+        "Adatbázis típusa"
+      ],
       "Date": [
         "Dátum"
+      ],
+      "Date of Birth": [
+        "Születési dátum"
       ],
       "Device": [
         "Eszköz"
@@ -2759,6 +2814,9 @@
       ],
       "Download logs": [
         "Naplók letöltése"
+      ],
+      "Driver License": [
+        "Vezetői engedély"
       ],
       "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
         "Könnyedén megoszthatja az érzékeny információkat bárkivel, még akkor is, ha ők nem használják a ${ PASS_APP_NAME } szolgáltatást. Megoszthat egyetlen jelszót, jegyzetet vagy hitelkártyát, de akár több elemet is egy mappában."
@@ -2793,6 +2851,9 @@
       "Expired": [
         "Lejárt"
       ],
+      "Expiry Date": [
+        "Lejárati dátum"
+      ],
       "Export": [
         "Exportálás"
       ],
@@ -2816,6 +2877,9 @@
       ],
       "File format": [
         "Fájlformátum"
+      ],
+      "Finance": [
+        "Pénzügyek"
       ],
       "First name": [
         "Keresztnév"
@@ -2880,6 +2944,15 @@
       "Highest": [
         "Leggyorsabb"
       ],
+      "Holder Name": [
+        "Birtokos neve"
+      ],
+      "Host": [
+        "Gazdagép"
+      ],
+      "Hostname": [
+        "Gazdanév"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "${ PASS_SHORT_APP_NAME } feloldása"
       ],
@@ -2937,6 +3010,15 @@
       "Invitations": [
         "Meghívók"
       ],
+      "IP Address": [
+        "IP cím"
+      ],
+      "Issuing Authority": [
+        "Kibocsátó hatóság"
+      ],
+      "Issuing Country": [
+        "Kibocsátó ország"
+      ],
       "Item ID": [
         "Elem azonosító"
       ],
@@ -2976,6 +3058,9 @@
       "License": [
         "Licenc"
       ],
+      "License Key": [
+        "Licenc kulcs"
+      ],
       "License number": [
         "Engedélyszám"
       ],
@@ -3009,14 +3094,26 @@
       "max views reached": [
         "elérte a maximális megtekintésszámot"
       ],
+      "Medical Record": [
+        "Orvosi leletek"
+      ],
+      "Member ID": [
+        "Tag azonosító"
+      ],
       "Members": [
         "Tagok"
+      ],
+      "Membership": [
+        "Tagság"
       ],
       "Middle name": [
         "Középső név"
       ],
       "Modified": [
         "Módosítva"
+      ],
+      "More": [
+        "Több"
       ],
       "More than a month": [
         "Több mint egy hónapja"
@@ -3027,11 +3124,17 @@
       "Name": [
         "Név"
       ],
+      "Name (SSID)": [
+        "Név (SSID)"
+      ],
       "Name on card": [
         "A kártyán szereplő név"
       ],
       "Need help?": [
         "Segítségre van szüksége?"
+      ],
+      "Network": [
+        "Hálózat"
       ],
       "Never": [
         "Soha"
@@ -3084,8 +3187,14 @@
       "Open-source password manager for effortless protection.": [
         "Nyílt forráskódú jelszókezelő a gondtalan védelemért."
       ],
+      "Operating System": [
+        "Operációs rendszer"
+      ],
       "Organization": [
         "Szervezet"
+      ],
+      "Owner": [
+        "Tulajdonos"
       ],
       "Passkey": [
         "Hozzáférési kulcs"
@@ -3099,6 +3208,9 @@
       "Passport": [
         "Útlevél"
       ],
+      "Passport Number": [
+        "Útlevél száma"
+      ],
       "Passport number": [
         "Útlevélszám"
       ],
@@ -3107,6 +3219,12 @@
       ],
       "Password history": [
         "Jelszó előzmények"
+      ],
+      "Permissions": [
+        "Engedélyek"
+      ],
+      "Personal": [
+        "Személyes"
       ],
       "Personal details": [
         "Személyes adatok"
@@ -3132,6 +3250,9 @@
       "Plus": [
         "Plusz"
       ],
+      "Points Balance": [
+        "Pontok egyenlege"
+      ],
       "Port": [
         "Port"
       ],
@@ -3144,11 +3265,26 @@
       "Priority:": [
         "Prioritás:"
       ],
+      "Private key": [
+        "Privát kulcs"
+      ],
+      "Private Key": [
+        "Privát kulcs"
+      ],
+      "Product": [
+        "Termék"
+      ],
+      "Program Name": [
+        "Program neve"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Védje a ${ PASS_APP_NAME } alkalmazást egy extra jelszóval"
       ],
       "Public domain": [
         "Nyilvános domain név"
+      ],
+      "Public key": [
+        "Nyilvános kulcs"
       ],
       "Rate us": [
         "Küldjön értékelést"
@@ -3174,8 +3310,17 @@
       "Reveal password": [
         "Jelszó felfedése"
       ],
+      "Reward Program": [
+        "Jutalmazási program"
+      ],
+      "Routing Number": [
+        "Útválasztás száma"
+      ],
       "Second password": [
         "Második jelszó"
+      ],
+      "Secret": [
+        "Titok"
       ],
       "Secure links": [
         "Biztonságos hivatkozások"
@@ -3201,6 +3346,9 @@
       "See member and permission overview": [
         "Tagok és engedélyek áttekintése"
       ],
+      "Seed Phrase": [
+        "Magkifejezés"
+      ],
       "Select a domain": [
         "Válasszon egy domain nevet"
       ],
@@ -3225,8 +3373,14 @@
       "Selected": [
         "Kiválasztva"
       ],
+      "Server": [
+        "Szerver"
+      ],
       "Share": [
         "Megosztás"
+      ],
+      "Share ID": [
+        "Megosztás ID"
       ],
       "Shared": [
         "Megosztva"
@@ -3249,11 +3403,23 @@
       "Social security": [
         "Társadalombiztosítás"
       ],
+      "Social Security": [
+        "Társadalombiztosítás"
+      ],
       "Social security number": [
         "Társadalombiztosítási szám"
       ],
+      "Software license": [
+        "Szoftver licenc"
+      ],
       "Special characters (!&*)": [
         "Speciális karakterek (!&*)"
+      ],
+      "SSH key": [
+        "SSH kulcs"
+      ],
+      "SSN": [
+        "TB azonosító"
       ],
       "State or province": [
         "Állam vagy tartomány"
@@ -3279,6 +3445,9 @@
       "Support": [
         "Támogatás"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "E-mail álnevek szinkronizálása a SimpleLoginnal"
       ],
@@ -3287,6 +3456,9 @@
       ],
       "Tax number": [
         "Adószám"
+      ],
+      "Technology": [
+        "Technológia"
       ],
       "Text": [
         "Szöveg"
@@ -3302,6 +3474,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Ez az elem ${ date } napjáig vagy a megtekintési korlát eléréséig érhető el."
+      ],
+      "Tier/Status": [
+        "Szint/Állapot"
       ],
       "Title": [
         "Cím"
@@ -3345,6 +3520,9 @@
       "Unnamed Credit Card": [
         "Névtelen bankkártya"
       ],
+      "Unnamed custom item": [
+        "Névtelen egyéni elem"
+      ],
       "Unnamed identity": [
         "Névtelen személyazonosság"
       ],
@@ -3353,6 +3531,12 @@
       ],
       "Unnamed note": [
         "Névtelen jegyzet"
+      ],
+      "Unnamed SSH key": [
+        "Névtelen SSH kulcs"
+      ],
+      "Unnamed WiFi item": [
+        "Névtelen Wi-Fi elem"
       ],
       "Unspecified": [
         "Nincs megadva"
@@ -3399,6 +3583,9 @@
       "Vulnerable": [
         "Sebezhető"
       ],
+      "Wallet Name": [
+        "Tárca neve"
+      ],
       "Weak": [
         "Gyenge"
       ],
@@ -3410,6 +3597,9 @@
       ],
       "What's included": [
         "Mit tartalmaz?"
+      ],
+      "WiFi network": [
+        "WiFi Hálózat"
       ],
       "Work details": [
         "Munka adatai"
@@ -3703,6 +3893,9 @@
       "my-domain.com": [
         "my-domain.com"
       ],
+      "Name displayed in emails": [
+        "E-mailekben megjelenített név"
+      ],
       "Note from SimpleLogin": [
         "Megjegyzés SimpleLogin-tól"
       ],
@@ -3736,6 +3929,9 @@
       "Select a suffix": [
         "Végződés kiválasztása"
       ],
+      "Select option": [
+        "Opció kiválasztása"
+      ],
       "Unknown origin": [
         "Ismeretlen eredetű"
       ],
@@ -3744,9 +3940,6 @@
       ],
       "Used on ${ url }": [
         "Használva: ${ url }"
-      ],
-      "Write your note": [
-        "Jegyzet megadása"
       ]
     },
     "Security Center - Info": {

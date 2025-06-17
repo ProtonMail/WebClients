@@ -116,10 +116,10 @@
       "Create": [
         "Tạo"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Tạo một tài khoản ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Tạo một tài khoản ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -733,9 +733,6 @@
       "File does not match expected format": [
         "Tệp không khớp với định dạng được mong chờ"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Nhập dữ liệu thất bại cho kho lưu trữ \"${ vaultData.name }\" : ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Nhập nội dung thất bại"
       ],
@@ -944,9 +941,6 @@
       ],
       "${ count } view": [
         "${ count } lượt xem"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } lượt xem"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } đã chuyển tiếp"
@@ -1853,6 +1847,9 @@
       "Copy password": [
         "Sao chép mật khẩu"
       ],
+      "Country": [
+        "Quốc gia"
+      ],
       "Country or Region": [
         "Quốc gia hoặc khu vực"
       ],
@@ -2543,9 +2540,6 @@
       ],
       "Used on ${ url }": [
         "Sử dụng cho ${ url }"
-      ],
-      "Write your note": [
-        "Viết ghi chú của bạn"
       ]
     },
     "sso": {

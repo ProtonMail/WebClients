@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "驗證"
+      ],
       "Cancel": [
         "取消"
       ],
@@ -25,6 +28,9 @@
       ],
       "Edit sign-in details": [
         "編輯登入詳細資訊"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ],
       "Get verification code": [
         "取得驗證碼"
@@ -49,6 +55,12 @@
       ],
       "Try another method": [
         "嘗試其它驗證方式"
+      ],
+      "Use authentication code": [
+        "使用驗證代碼"
+      ],
+      "Use recovery code": [
+        "使用復原碼"
       ],
       "Verify": [
         "驗證"
@@ -909,6 +921,24 @@
         "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
+      ],
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
     "file size format": {
       "byte": [
         "位元組"
@@ -1001,11 +1031,23 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "根據我們的${ termsLink }不允許創建多重免費帳號。"
       ],
+      "Each code can only be used once": [
+        "每組驗證代碼只能使用一次"
+      ],
       "Edit email address": [
         "編輯電子郵件位址"
       ],
+      "Enter the code from your authenticator app": [
+        "輸入驗證應用程式中的驗證代碼"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證代碼。正在按下 ${ digit } 。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "請於${ mailLink }登入以取得更多資訊或移除限制。"
@@ -1049,6 +1091,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "設定兩步驟驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是更換驗證方式？"
       ],
@@ -1072,6 +1117,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "驗證 app"
+      ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
       ],
@@ -1092,6 +1140,9 @@
       ],
       "Verification code": [
         "驗證碼"
+      ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
       ]
     },
     "Link": {
@@ -1412,9 +1463,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "將現有儲存空間加大至 ${ bundleStorage }為總可用量"
-      ],
-      "Support for ${ n } custom email domains": [
-        "支援 ${ n } 組自訂電子郵件網域"
       ]
     },
     "Placeholder": {
@@ -1463,6 +1511,9 @@
       ],
       "Enter 2FA code": [
         "輸入雙重驗證碼"
+      ],
+      "Enter your password": [
+        "輸入您的密碼"
       ],
       "Human verification": [
         "真人身分驗證"

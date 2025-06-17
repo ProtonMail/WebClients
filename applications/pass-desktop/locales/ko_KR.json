@@ -46,6 +46,9 @@
       "Add domain": [
         "도메인 추가"
       ],
+      "Add field": [
+        "필드 추가"
+      ],
       "Add forwarding mailbox": [
         "포워딩 메일함 추가"
       ],
@@ -403,10 +406,10 @@
       "Move to another vault": [
         "다른 금고로 이동"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "휴지통으로 이동"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "휴지통으로 이동"
       ],
       "Multiple select": [
@@ -462,6 +465,9 @@
       ],
       "Reactivate now": [
         "지금 재활성화"
+      ],
+      "Read More": [
+        "자세히 보기"
       ],
       "Refresh the page": [
         "페이지 새로 고침"
@@ -580,6 +586,9 @@
       "Show advanced options": [
         "고급 옵션 표시"
       ],
+      "Show Less": [
+        "간단히 보기"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME }에 로그인"
       ],
@@ -687,6 +696,98 @@
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "특가로 구매"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 GB 암호화된 저장 공간"
+      ],
+      "Add unlimited credit cards": [
+        "무제한 신용 카드 항목 추가"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "${ BRAND_NAME } Mail, Pass, VPN, Drive, Calendar의 모든 프리미엄 기능"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "할인은 표준 월별 요금 기준입니다. 청구 주기가 끝나면 구독은 표준 연간 요금으로 갱신됩니다."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "암호화된 저장 공간을 2배로 확장하세요 - 나의 모든 데이터를 저장할 2 TB 저장 공간을 받아보세요"
+      ],
+      "Encrypted password manager": [
+        "암호화된 비밀번호 관리자"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "저희와 함께 걸어온 여정을 기념하는 특별 선물을 준비했어요."
+      ],
+      "High speed streaming with VPN": [
+        "VPN을 통한 빠른 속도의 스트리밍"
+      ],
+      "Online privacy for up to 2 people": [
+        "최대 두 명까지 온라인 프라이버시 보호"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "우리 가족을 위한 온라인 프라이버시 보호 (최대 6명)"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "기간 한정 할인으로 프리미엄 Drive 기능을 알뜰하게 이용해 보세요."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "기간 한정 할인으로 프리미엄 Mail 기능을 알뜰하게 이용해 보세요."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "기간 한정 할인으로 프리미엄 Pass 기능을 알뜰하게 이용해 보세요."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "기간 한정 할인으로 프리미엄 VPN 기능을 알뜰하게 이용해 보세요."
+      ],
+      "Save time with built-in 2FA": [
+        "내장형 2단계 인증기로 시간 절약하기"
+      ],
+      "Secure email with unlimited aliases": [
+        "무제한 별칭이 포함된 보안 이메일"
+      ],
+      "Share passwords easily": [
+        "간편하게 비밀번호 공유하기"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "암호화된 저장 공간을 3배로 확장하세요 - 나의 모든 데이터를 저장할 3 TB 저장 공간을 받아보세요"
+      ],
+      "years": [
+        "년"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "창립 기념 혜택"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n }개월"
+      ],
+      "/ month": [
+        "/ 월간"
+      ],
+      "12 months": [
+        "12개월"
+      ],
+      "15 months": [
+        "15개월"
+      ],
+      "24 months": [
+        "24개월"
+      ],
+      "30 months": [
+        "30개월"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal }간"
       ]
     },
     "App menu": {
@@ -1074,8 +1175,8 @@
       "File does not match expected format": [
         "파일이 형식과 일치되지 않습니다."
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "\"${ vaultData.name }\" 금고로 불러오기 실패: ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "금고 \"${ vaultData.name }\"(으)로 불러오기 실패: ${ errorMessage }"
       ],
       "Importing items failed": [
         "항목 불러오기 실패"
@@ -1190,6 +1291,9 @@
       ],
       "Unsupported 1Password file format": [
         "지원되지 않는 1Password 파일 포맷"
+      ],
+      "Unsupported Bitwarden file format": [
+        "지원되지 않는 Bitwarden 파일 포맷"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" 금고를 업데이트하는데 실패했습니다."
@@ -1331,7 +1435,7 @@
       "${ count } view": [
         "${ count }명 조회"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
         "조회수 ${ count }건/${ maxReads }건"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -2554,6 +2658,9 @@
       "Add section": [
         "섹션 추가"
       ],
+      "Additional data": [
+        "추가 데이터"
+      ],
       "Additional details": [
         "추가 정보"
       ],
@@ -2674,11 +2781,11 @@
       "Copy": [
         "복사"
       ],
+      "Country": [
+        "국가"
+      ],
       "Country or Region": [
         "국가/지역"
-      ],
-      "Country,": [
-        "국가,"
       ],
       "County": [
         "구/군"
@@ -2808,6 +2915,9 @@
       ],
       "Extra email addresses": [
         "추가 이메일 주소"
+      ],
+      "Extra fields": [
+        "추가 입력란"
       ],
       "Extra password": [
         "추가 비밀번호"
@@ -2976,6 +3086,9 @@
       ],
       "Key": [
         "키"
+      ],
+      "Key fingerprint": [
+        "지문 키"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "키보드 단축키: ${ shortcut }"
@@ -3160,10 +3273,10 @@
       "Passport": [
         "여권"
       ],
-      "Passport number": [
+      "Passport Number": [
         "여권 번호"
       ],
-      "Passport Number": [
+      "Passport number": [
         "여권 번호"
       ],
       "Password": [
@@ -3217,11 +3330,11 @@
       "Priority:": [
         "우선 사항:"
       ],
-      "Private Key": [
-        "비밀 키"
-      ],
       "Private key": [
         "개인 키"
+      ],
+      "Private Key": [
+        "비밀 키"
       ],
       "Product": [
         "제품"
@@ -3331,6 +3444,9 @@
       "Share": [
         "공유"
       ],
+      "Share ID": [
+        "공유 ID"
+      ],
       "Shared": [
         "공유됨"
       ],
@@ -3365,9 +3481,6 @@
         "특수 문자 (!&*)"
       ],
       "SSH key": [
-        "SSH 키"
-      ],
-      "SSH Keys": [
         "SSH 키"
       ],
       "SSN": [
@@ -3551,9 +3664,6 @@
         "포함된 항목"
       ],
       "WiFi network": [
-        "WiFi 네트워크"
-      ],
-      "WiFi Networks": [
         "WiFi 네트워크"
       ],
       "Work details": [
@@ -3797,9 +3907,6 @@
       "Add 2FA secret key": [
         "2단계 인증 비밀 키 추가"
       ],
-      "Add date": [
-        "날짜 추가"
-      ],
       "Add hidden text": [
         "숨겨진 텍스트 추가"
       ],
@@ -3895,9 +4002,6 @@
       ],
       "Used on ${ url }": [
         "${ url }(애)서 사용됨"
-      ],
-      "Write your note": [
-        "메모를 작성하세요"
       ]
     },
     "Security Center - Info": {
@@ -4563,6 +4667,11 @@
       ],
       "URL is invalid": [
         "URL이 올바르지 않습니다."
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "항목을 다음으로 이동"
       ]
     },
     "Warning": {

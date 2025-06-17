@@ -29,6 +29,9 @@
       "Add domain": [
         "도메인 추가"
       ],
+      "Add field": [
+        "필드 추가"
+      ],
       "Add forwarding mailbox": [
         "포워딩 메일함 추가"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "생성"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
       "Create alias": [
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "지금 재활성화"
       ],
+      "Read More": [
+        "자세히 보기"
+      ],
       "Refresh the page": [
         "페이지 새로 고침"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "고급 옵션 표시"
+      ],
+      "Show Less": [
+        "간단히 보기"
       ],
       "Sign back in": [
         "다시 로그인하기"
@@ -1007,8 +1016,8 @@
       "File does not match expected format": [
         "파일이 형식과 일치되지 않습니다."
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "\"${ vaultData.name }\" 금고로 불러오기 실패: ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "금고 \"${ vaultData.name }\"(으)로 불러오기 실패: ${ errorMessage }"
       ],
       "Importing items failed": [
         "항목 불러오기 실패"
@@ -1139,6 +1148,9 @@
       "Unsupported 1Password file format": [
         "지원되지 않는 1Password 파일 포맷"
       ],
+      "Unsupported Bitwarden file format": [
+        "지원되지 않는 Bitwarden 파일 포맷"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" 금고를 업데이트하는데 실패했습니다."
       ],
@@ -1243,7 +1255,7 @@
       "${ count } view": [
         "${ count }명 조회"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
         "조회수 ${ count }건/${ maxReads }건"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1398,6 +1410,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "자동 잠금이 성공적으로 비활성화 되었습니다."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "저장된 자격 증명으로 HTTP 기본 인증 대화상자를 자동 완성합니다."
       ],
       "automatically": [
         "자동"
@@ -1764,6 +1779,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2457,6 +2475,9 @@
       "Add section": [
         "섹션 추가"
       ],
+      "Additional data": [
+        "추가 데이터"
+      ],
       "Additional details": [
         "추가 정보"
       ],
@@ -2526,6 +2547,9 @@
       "Bank Name": [
         "은행명"
       ],
+      "Basic Auth autofill": [
+        "기본 인증 자동 완성"
+      ],
       "Biometrics": [
         "생체 인식"
       ],
@@ -2580,11 +2604,11 @@
       "Copy password": [
         "비밀번호 복사"
       ],
+      "Country": [
+        "국가"
+      ],
       "Country or Region": [
         "국가/지역"
-      ],
-      "Country,": [
-        "국가,"
       ],
       "County": [
         "구/군"
@@ -2702,6 +2726,9 @@
       ],
       "Export": [
         "내보내기"
+      ],
+      "Extra fields": [
+        "추가 입력란"
       ],
       "Extra password": [
         "추가 비밀번호"
@@ -2828,6 +2855,9 @@
       ],
       "Key": [
         "키"
+      ],
+      "Key fingerprint": [
+        "지문 키"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "키보드 단축키: ${ shortcut }"
@@ -2997,10 +3027,10 @@
       "Passport": [
         "여권"
       ],
-      "Passport number": [
+      "Passport Number": [
         "여권 번호"
       ],
-      "Passport Number": [
+      "Passport number": [
         "여권 번호"
       ],
       "Password": [
@@ -3159,6 +3189,9 @@
       "Share": [
         "공유"
       ],
+      "Share ID": [
+        "공유 ID"
+      ],
       "Shared": [
         "공유됨"
       ],
@@ -3174,11 +3207,11 @@
       "Show website favicons": [
         "웹사이트 아이콘 표시"
       ],
-      "Social Security": [
-        "주민등록증"
-      ],
       "Social security": [
         "사회 보장 번호"
+      ],
+      "Social Security": [
+        "주민등록증"
       ],
       "Social security number": [
         "사회 보장 번호"
@@ -3190,9 +3223,6 @@
         "특수 문자 (!&*)"
       ],
       "SSH key": [
-        "SSH 키"
-      ],
-      "SSH Keys": [
         "SSH 키"
       ],
       "SSN": [
@@ -3346,9 +3376,6 @@
         "웹 사이트"
       ],
       "WiFi network": [
-        "WiFi 네트워크"
-      ],
-      "WiFi Networks": [
         "WiFi 네트워크"
       ],
       "Work details": [
@@ -3546,9 +3573,6 @@
       "Add 2FA secret key": [
         "2단계 인증 비밀 키 추가"
       ],
-      "Add date": [
-        "날짜 추가"
-      ],
       "Add hidden text": [
         "숨겨진 텍스트 추가"
       ],
@@ -3644,9 +3668,6 @@
       ],
       "Used on ${ url }": [
         "${ url }(애)서 사용됨"
-      ],
-      "Write your note": [
-        "메모를 작성하세요"
       ]
     },
     "sso": {
@@ -4210,6 +4231,11 @@
       ],
       "URL is invalid": [
         "URL이 올바르지 않습니다."
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "항목을 다음으로 이동"
       ]
     },
     "Warning": {

@@ -431,6 +431,9 @@
       "Export selection as .vcf": [
         "Seçimi .vcf olarak dışa aktar"
       ],
+      "Export system log": [
+        "Sistem günlüğünü dışa aktar"
+      ],
       "Fit to window": [
         "Pencereye sığdır"
       ],
@@ -454,6 +457,9 @@
       ],
       "Get link": [
         "Bağlantıyı al"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "${ simplePriceString } ile güvenli depolama alanı edinin"
       ],
       "Get Started": [
         "Başlayalım"
@@ -508,6 +514,9 @@
       ],
       "Hide download options": [
         "İndirme seçeneklerini gizle"
+      ],
+      "Hide more benefits": [
+        "Diğer faydaları gizle"
       ],
       "Image could not be loaded with tracker protection.": [
         "Görsel izleyici koruması nedeniyle yüklenemedi."
@@ -631,6 +640,9 @@
       ],
       "More actions": [
         "Diğer işlemler"
+      ],
+      "More benefits": [
+        "Diğer faydalar"
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
@@ -938,6 +950,9 @@
       "Show more": [
         "Daha fazla görüntüle"
       ],
+      "Show more benefits": [
+        "Diğer faydaları görüntüle"
+      ],
       "Show more download options": [
         "Diğer indirme seçeneklerini görüntüle"
       ],
@@ -1009,6 +1024,9 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
+      ],
+      "Try it now": [
+        "Şimdi deneyin"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
@@ -2183,9 +2201,6 @@
       ],
       "Macao": [
         "Makao"
-      ],
-      "Macedonia": [
-        "Makedonya"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -3915,6 +3930,9 @@
       "Create new shared album": [
         "Yeni paylaşılan albüm oluştur"
       ],
+      "Drawer": [
+        "Çekmece"
+      ],
       "Rename album": [
         "Albümü yeniden adlandır"
       ],
@@ -4620,6 +4638,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "En az ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Deneme sürenizin sonunda ${ boldCancelDate }, tarifeniz ${ boldProtonFree } düzeyine düşürülecek. Kuruluşunuzdaki tüm kullanıcı hesapları kaldırılacak."
+      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
@@ -4912,6 +4933,9 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "Teknik destek almak ve sorunları gidermek için tanılama günlüklerini dışa aktarın"
+      ],
       "Failed": [
         "Aktarılmayan"
       ],
@@ -5007,6 +5031,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Fikrinizi değiştirirseniz, istediğiniz zaman yeniden abone olabilirsiniz. Ayrılmanıza üzüldük!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
@@ -5673,6 +5700,9 @@
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Kuruluşunuzun güvenliğini sağlamakta ${ BRAND_NAME } hizmetlerinizi seçtiğiniz için teşekkür ederiz."
+      ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Abone olduğunuz için teşekkürler. Artık güvenli gezinebilirsiniz."
       ],
@@ -6136,20 +6166,14 @@
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
-        "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "${ boldPlanTitle } özelliklerine erişiminizi de kaybedeceksiniz:"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } tutar ödeyeceksiniz.",
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } tutar ödeyeceksiniz."
-      ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "${ invitationName } albümüne katılma davetini reddetmek üzeresiniz. Bunu yaparsanız, sahibi sizi yeniden davet etmediği sürece bu albüme erişemezsiniz. İlerlemek istediğinize emin misiniz?"
-      ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "${ invitationName } klasörüne katılma davetini reddetmek üzeresiniz. Bunu yaparsanız, sahibi sizi yeniden davet etmediği sürece klasöre erişemezsiniz. İlerlemek istediğinize emin misiniz?"
-      ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "${ invitationName } ögesine katılma davetini reddetmek üzeresiniz. Bunu yaparsanız, sahibi sizi yeniden davet etmediği sürece bu ögeye erişemezsiniz. İlerlemek istediğinize emin misiniz?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Kişi gruplarında bulunabilecek en fazla adres sayısına ulaştınız:"
@@ -6201,6 +6225,12 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Dosyalarınız şifrelendikten sonra kaydedilecek."
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ücretsiz deneme süreniz ${ cycle } aylık aboneliğe dönüştürüldü. Yenilenme tarihi ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ücretsiz deneme süreniz aylık aboneliğe dönüştürüldü. Yenilenme tarihi ${ nextBillingDate }."
       ],
       "Your information was found on ${ displayedDate }": [
         "Bilgileriniz ${ displayedDate } tarihinde bulundu"
@@ -6255,7 +6285,13 @@
         "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecek."
       ],
       "Your trial will end in ${ timeRemaining }.": [
-        "Deneme süreniz ${ timeRemaining } içinde sona eriyor"
+        "Deneme süreniz ${ timeRemaining } sonra sona erecek."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "${ boldEndDate } tarihinde ${ boldPlanTitle } tarifesine erişemeyeceksiniz."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
       ]
     },
     "info": {
@@ -6385,6 +6421,9 @@
       ],
       "Address": [
         "Adres"
+      ],
+      "Alias title": [
+        "Takma ad başlığı"
       ],
       "All": [
         "Tümü"
@@ -8018,6 +8057,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "Dosyalarınızı saklamak, eşitlemek ve paylaşmak için 1 TB bulut depolama alanı. Uçtan uca şifreleme ile korunur."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "Dosyalarınızı saklamak, eşitlemek ve paylaşmak için 200 GB bulut depolama alanı. Uçtan uca şifreleme ile korunur."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Size ayrılmış güvenli ağ geçitleri ile gelişmiş ağ güvenliği ve erişim yönetimi"
       ],
@@ -8397,7 +8442,8 @@
       "Require 2FA": [
         "İki adımlı doğrulama gereksin"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "${ n } özel e-posta etki alanı desteği",
         "${ n } özel e-posta etki alanı desteği"
       ]
     },
@@ -8523,6 +8569,9 @@
       ],
       "An invitation has been sent": [
         "Bir davet gönderildi"
+      ],
+      "Cannot load file or folder info": [
+        "Dosya veya klasör bilgisi yüklenemedi"
       ],
       "Cannot load link": [
         "Bağlantı yüklenemedi"
@@ -8835,10 +8884,10 @@
       "Invite members": [
         "Üyeleri davet et"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Belki daha sonra"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Belki daha sonra"
       ],
       "Select theme": [
@@ -8959,6 +9008,53 @@
       ],
       "Work together": [
         "Birlikte çalışın"
+      ]
+    },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " ${ helpCenterLink } veya ${ contactSupportLink } adresine gidin."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "${ cancelDate } tarihinden önce istediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Cancel anytime before then.": [
+        "O tarihe kadar istediğiniz zaman iptal edebilirsiniz."
+      ],
+      "contact our support team": [
+        "destek ekibimizle görüşün"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "${ trialEndsOnFormatted } tarihine kadar kurumsal güvenlik özelliklerinden ücretsiz olarak yararlanın."
+      ],
+      "help center": [
+        "yardım merkezi"
+      ],
+      "If you need help,": [
+        "Yardıma gerek duyarsanız,"
+      ],
+      "Once your full subscription starts...": [
+        "Tam aboneliğiniz başladığında..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
+      ],
+      "Your free trial has started": [
+        "Ücretsiz deneme süreniz başladı"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Tam ${ planTitle } aboneliğiniz ${ boldEndDate } tarihinde başlayacak."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
       ]
     },
     "Option": {
@@ -9161,6 +9257,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenecektir. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
@@ -10080,9 +10179,9 @@
         "${ n } VPN bağlantısı / kullanıcı",
         "${ n } VPN bağlantısı / kullanıcı"
       ],
-      "VPN connection for ${ n } devices per user": [
-        "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı",
-        "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı"
+      "VPN connection for ${ n } device per user": [
+        "Kullanıcı başına ${ n } aygıt ile VPN bağlantısı.",
+        "Kullanıcı başına ${ n } aygıt ile VPN bağlantısı."
       ]
     },
     "Subscription change warning": {
@@ -10121,47 +10220,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription reminder": {
@@ -10424,6 +10482,47 @@
         "Kendi kısa @pm.me e-posta takma adınız"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Emin misiniz?"
@@ -10461,6 +10560,9 @@
       ],
       "Albums you've shared will appear here": [
         "Paylaştığınız albümler burada görünecek"
+      ],
+      "Securely share your favorite moments with friends and family using Albums.": [
+        "Albümleri kullanarak beğendiğiniz anlarınızı arkadaşlarınız ve ailenizle güvenle paylaşın."
       ],
       "Your favorited photos will appear here": [
         "Favori fotoğraflarınız burada görünecek"
@@ -11296,6 +11398,9 @@
       "Phone numbers": [
         "Telefon numaraları"
       ],
+      "Photo albums are here!": [
+        "Fotoğraf albümleri burada!"
+      ],
       "Photos": [
         "Fotoğraflar"
       ],
@@ -11555,6 +11660,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
+      "Your ${ planName } subscription has started": [
+        "${ planName } aboneliğiniz başladı"
+      ],
       "Your 3 GB bonus": [
         "3 GB hediyeniz"
       ],
@@ -11569,6 +11677,10 @@
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Ücretsiz deneme süreniz ${ trialDurationFormatted } gün sonra bitecek",
+        "Ücretsiz deneme süreniz ${ trialDurationFormatted } gün sonra bitecek"
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"

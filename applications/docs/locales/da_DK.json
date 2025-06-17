@@ -837,9 +837,6 @@
       "View": [
         "Vis"
       ],
-      "View all ${ pendingCount } invitations": [
-        "Vis alle ${ pendingCount } invitationer"
-      ],
       "View all reports": [
         "Se alle rapporter"
       ],
@@ -1889,9 +1886,6 @@
       "Macao": [
         "Macau"
       ],
-      "Macedonia": [
-        "Makedonien"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2373,9 +2367,6 @@
       "To start, give your organization a name.": [
         "Start med at give deres organisation et navn."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Opgrader til ${ BRAND_NAME } ${ planName } for at fortsætte med at dele filer med redigeringsadgang"
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
       ],
@@ -2584,8 +2575,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "\"${ name }\" findes allerede"
+      "\"${ sanitizedName }\" already exists": [
+        "\"${ sanitizedName }\" findes allerede"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } kan ikke oprette forbindelse til din eksterne konto"
@@ -2717,6 +2708,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Eksterne invitationer er midlertidigt deaktiveret. Prøv igen senere."
+      ],
+      "Failed to copy photo to album": [
+        "Kunne ikke kopiere foto til album"
       ],
       "Failed to rename document. Please try again later.": [
         "Det lykkedes ikke at omdøbe dokumentet. Prøv igen senere."
@@ -4070,6 +4064,9 @@
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
+      "Available": [
+        "Tilgængelig"
+      ],
       "Awaiting transaction": [
         "Afventer transaktion"
       ],
@@ -4090,6 +4087,9 @@
       ],
       "Calendar side panel": [
         "Kalender-sidepanel"
+      ],
+      "Cannot load link": [
+        "Link kan ikke indlæses"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
@@ -4278,9 +4278,6 @@
       ],
       "Error converting document: ${ errorMessage }": [
         "Fejl ved dokumentkonvertering: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Fejl ved indlæsning af dokument${ errorDetail }"
       ],
       "Error Syncing": [
         "Fejlsynkronisering"
@@ -4521,6 +4518,9 @@
       "New": [
         "Ny"
       ],
+      "No": [
+        "Nej"
+      ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
       ],
@@ -4619,6 +4619,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sender automatisk beskeden ved hjælp af den aktuelle komponisttilstand."
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Please authenticate your card in the verification tab.": [
         "Bekræft dit kort i verifikationsfanen."
@@ -4768,6 +4771,9 @@
       ],
       "Shared on": [
         "Delt"
+      ],
+      "Shared with me": [
+        "Delt med mig"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres grundet en netværksfejl, prøv venligst igen senere."
@@ -5073,6 +5079,9 @@
       "Writing assistant": [
         "Skriveassistent"
       ],
+      "Yes": [
+        "Ja"
+      ],
       "you": [
         "dig"
       ],
@@ -5155,6 +5164,10 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }.",
+        "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du har nået det maksimale antal adresser i kontaktgruppen(erne):"
@@ -5239,6 +5252,10 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Din fysiske placering er synlig og kan bruges til at begrænse din adgang til internettet."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Dit planlagte abonnement starter ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
+        "Dit planlagte abonnement starter ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
@@ -5520,6 +5537,9 @@
       ],
       "First name": [
         "Fornavn"
+      ],
+      "Folder": [
+        "Mappe"
       ],
       "Folder location": [
         "Mappeplacering"
@@ -7174,9 +7194,6 @@
       ],
       "Require 2FA": [
         "Kræve 2FA"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
       ]
     },
     "Notification": {
@@ -7693,6 +7710,10 @@
       "terms & conditions": [
         "vilkår og betingelser"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kuponen er gyldig til ${ couponRedemptions } fornyelse",
+        "Kuponen er gyldig til ${ couponRedemptions } fornyelser"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den særlige udsalgspris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måned.",
         "Den særlige udsalgspris på ${ priceWithDiscount } gælder for de første ${ subscriptionLength } måneder."
@@ -7703,6 +7724,10 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den særlige rabatpris på ${ priceWithDiscount } er gyldig i den første måned. Derefter fornys den automatisk til ${ renewPriceStr } hver måned. Du kan annullere når som helst."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måned. Du kan annullere det når som helst.",
+        "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måneder. Du kan annullere det når som helst."
       ],
       "Timeout exceeded": [
         "Timeout overskredet"
@@ -8629,10 +8654,6 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-forbindelse pr. bruger",
         "${ n } VPN-forbindelser pr. bruger"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "VPN-forbindelse til ${ n } enheder per bruger",
-        "VPN-forbindelse til ${ n } enheder per bruger"
       ]
     },
     "Subscription change warning": {
@@ -8949,6 +8970,24 @@
         "vCard-felt"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dage"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } time",
+        "${ ceilHours } timer"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minutter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours }. time",
@@ -8978,6 +9017,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "# af downloads"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailadresse",
         "${ emailsCount } e-mailadresser"
@@ -9009,6 +9051,9 @@
       ],
       "Addresses": [
         "Adresser"
+      ],
+      "Album details": [
+        "Albumdetaljer"
       ],
       "All settings": [
         "Alle indstillinger"
@@ -9243,6 +9288,12 @@
       "Exporting contacts": [
         "Eksporterer kontakter"
       ],
+      "File details": [
+        "Fildetaljer"
+      ],
+      "Folder details": [
+        "Mappedetaljer"
+      ],
       "Get more from your VPN": [
         "Få mere ud af deres VPN"
       ],
@@ -9295,11 +9346,20 @@
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
+      "Item details": [
+        "Elementdetaljer"
+      ],
+      "Last edited by": [
+        "Sidst redigeret af"
+      ],
       "Limited availability": [
         "Begrænset tilgængelighed"
       ],
       "Link confirmation": [
         "Linkbekræftelse"
+      ],
+      "Location": [
+        "Placering"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Lav en kopi til dit ${ DRIVE_APP_NAME }."
@@ -9313,14 +9373,23 @@
       "Merging contacts": [
         "Fletter kontakter"
       ],
+      "MIME type": [
+        "MIME-type"
+      ],
       "Minicalendar": [
         "Minikalender"
       ],
       "Mobile": [
         "Mobil"
       ],
+      "Modified": [
+        "Ændret"
+      ],
       "My files": [
         "Mine filer"
+      ],
+      "Name": [
+        "Navn"
       ],
       "Need more aliases?": [
         "Brug for flere aliasser?"
@@ -9355,6 +9424,9 @@
       "Organization setup": [
         "Opsætning af organisation"
       ],
+      "Original size": [
+        "Original størrelse"
+      ],
       "Other information": [
         "Anden information"
       ],
@@ -9381,6 +9453,9 @@
       ],
       "Processing...": [
         "Behandler..."
+      ],
+      "Public shared link status": [
+        "Status på offentligt delt link"
       ],
       "Re-sign all contacts": [
         "Gensignér alle kontakter"
@@ -9448,6 +9523,9 @@
       "Share your calendar with your team": [
         "Del din kalender med dit team"
       ],
+      "Shared": [
+        "Delt"
+      ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
       ],
@@ -9459,6 +9537,9 @@
       ],
       "Simplify password management": [
         "Forenkle adgangskodehåndtering"
+      ],
+      "Size": [
+        "Størrelse"
       ],
       "Something went wrong": [
         "Et eller andet gik galt"
@@ -9490,6 +9571,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå ${ DARK_WEB_MONITORING_NAME } til"
       ],
+      "Type": [
+        "Type"
+      ],
       "Untitled document ${ date }": [
         "Dokument uden titel ${ date }"
       ],
@@ -9498,6 +9582,12 @@
       ],
       "Upload and share files": [
         "Upload og del filer"
+      ],
+      "Uploaded": [
+        "Uploadet"
+      ],
+      "Uploaded by": [
+        "Uploadet af"
       ],
       "Uploading a large file or folder": [
         "Uploader en stor fil eller mappe"
@@ -9513,6 +9603,9 @@
       ],
       "Verifying your payment...": [
         "Verificerer din betaling..."
+      ],
+      "Version details": [
+        "Versionsdetaljer"
       ],
       "VPN explained": [
         "VPN forklaret"
@@ -9709,6 +9802,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } lande"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Auto-vælger fra ${ numberOfCountries } land",
+        "Auto-vælger fra ${ numberOfCountries } lande"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Servere i ${ numberOfCountries }+ land",

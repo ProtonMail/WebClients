@@ -46,6 +46,9 @@
       "Add domain": [
         "添加域名"
       ],
+      "Add field": [
+        "添加字段"
+      ],
       "Add forwarding mailbox": [
         "添加转发邮箱"
       ],
@@ -403,10 +406,10 @@
       "Move to another vault": [
         "移至另一个保险库"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "移至回收站"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "移至回收站"
       ],
       "Multiple select": [
@@ -462,6 +465,9 @@
       ],
       "Reactivate now": [
         "立即重新激活"
+      ],
+      "Read More": [
+        "了解更多"
       ],
       "Refresh the page": [
         "刷新页面"
@@ -579,6 +585,9 @@
       ],
       "Show advanced options": [
         "显示进阶选项"
+      ],
+      "Show Less": [
+        "收起"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "使用${ BRAND_NAME }登录"
@@ -1074,9 +1083,6 @@
       "File does not match expected format": [
         "文件与预期格式不匹配"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "保险库 “${ vaultData.name }” 导入失败：${ errorMessage }"
-      ],
       "Importing items failed": [
         "导入项目失败"
       ],
@@ -1331,8 +1337,8 @@
       "${ count } view": [
         "${ count } 次查看"
       ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } 浏览"
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } 视图"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } 已转发"
@@ -1644,7 +1650,7 @@
         "输入您要发送电子邮件的地址。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入 ${ digit } 位数字的验证码。"
+        "请输入验证码的第 ${ digit } 位数字。"
       ],
       "Enter your extra password": [
         "输入您的额外密码"
@@ -2674,11 +2680,11 @@
       "Copy": [
         "复制"
       ],
+      "Country": [
+        "国家/地区"
+      ],
       "Country or Region": [
         "国家或地区"
-      ],
-      "Country,": [
-        "国家/地区"
       ],
       "County": [
         "县市"
@@ -3157,10 +3163,10 @@
       "Passport": [
         "护照"
       ],
-      "Passport number": [
+      "Passport Number": [
         "护照号码"
       ],
-      "Passport Number": [
+      "Passport number": [
         "护照号码"
       ],
       "Password": [
@@ -3214,10 +3220,10 @@
       "Priority:": [
         "优先级："
       ],
-      "Private Key": [
+      "Private key": [
         "私钥"
       ],
-      "Private key": [
+      "Private Key": [
         "私钥"
       ],
       "Product": [
@@ -3328,6 +3334,9 @@
       "Share": [
         "分享"
       ],
+      "Share ID": [
+        "共享 ID"
+      ],
       "Shared": [
         "已共享"
       ],
@@ -3362,9 +3371,6 @@
         "特殊字符 (!&*)"
       ],
       "SSH key": [
-        "SSH 密钥"
-      ],
-      "SSH Keys": [
         "SSH 密钥"
       ],
       "SSN": [
@@ -3549,9 +3555,6 @@
       ],
       "WiFi network": [
         "WiFi 网络"
-      ],
-      "WiFi Networks": [
-        "WLAN 网络"
       ],
       "Work details": [
         "工作详情"
@@ -3794,9 +3797,6 @@
       "Add 2FA secret key": [
         "添加 2FA 密钥"
       ],
-      "Add date": [
-        "添加日期"
-      ],
       "Add hidden text": [
         "添加隐藏文本"
       ],
@@ -3892,9 +3892,6 @@
       ],
       "Used on ${ url }": [
         "用于 ${ url }"
-      ],
-      "Write your note": [
-        "撰写您的笔记"
       ]
     },
     "Security Center - Info": {

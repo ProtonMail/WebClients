@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -1195,6 +1195,9 @@
       "Try another method": [
         "Спробувати інший спосіб"
       ],
+      "Try for free": [
+        "Спробуйте безплатно"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Спробуйте зберегти ще раз. Не вдалося зберегти через: ${ saveError }"
       ],
@@ -1671,17 +1674,6 @@
         "Оберіть свою пропозицію Кінця року"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяць.",
-        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяці.",
-        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців.",
-        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ТБ сховища (вдвічі більше, ніж з будь-яким іншим планом)"
@@ -1703,6 +1695,17 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "План ${ plan } доступний знову лише протягом обмеженого часу"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяць.",
+        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяці.",
+        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців.",
+        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців."
       ]
     },
     "bf2023: Offers": {
@@ -3042,9 +3045,6 @@
       ],
       "Macao": [
         "Макао"
-      ],
-      "Macedonia": [
-        "Македонія"
       ],
       "Madagascar": [
         "Мадагаскар"
@@ -8989,11 +8989,11 @@
       "User activated": [
         "Користувач активований"
       ],
-      "username": [
-        "ім'я користувача"
-      ],
       "Username": [
         "Ім’я користувача"
+      ],
+      "username": [
+        "ім'я користувача"
       ],
       "Users": [
         "Користувачі"
@@ -10104,11 +10104,11 @@
       "AND": [
         "ТА"
       ],
-      "And": [
-        "Та"
-      ],
       "and": [
         "та"
+      ],
+      "And": [
+        "Та"
       ],
       "Anderson": [
         "Андерсон"
@@ -10503,11 +10503,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЯКЩО"
-      ],
       "If": [
         "Якщо"
+      ],
+      "IF": [
+        "ЯКЩО"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -10704,11 +10704,11 @@
       "Optional": [
         "Необов'язково"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Or": [
         "Або"
@@ -12674,14 +12674,6 @@
         "Ціна зі знижкою ${ priceCoupon } дійсна протягом першого місяця. Потім вона буде автоматично поновлена до ${ priceLine }. Ви можете скасувати в будь-який час."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробна версія ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -12700,6 +12692,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Передплатіть тарифний план та розблокуйте преміумфункції"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -12988,9 +12988,6 @@
       ],
       "Require 2FA": [
         "Потрібна 2FA"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Підтримка ${ n } власних доменів електронної пошти"
       ]
     },
     "news": {
@@ -16411,12 +16408,6 @@
         "Високошвидкісна VPN на ${ maxVpn } пристроях",
         "Високошвидкісна VPN на ${ maxVpn } пристроях",
         "Високошвидкісна VPN на ${ maxVpn } пристроях"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "VPN з'єднання для ${ n } пристрою на користувача",
-        "VPN з'єднання для ${ n } пристроїв на користувача",
-        "VPN з'єднання для ${ n } пристроїв на користувача",
-        "VPN з'єднання для ${ n } пристроїв на користувача"
       ]
     },
     "Subscription change warning": {
@@ -16455,47 +16446,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "and 15 more premium features": [
-        "та ще 15 преміальних функцій"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматичне пересилання пошти ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Сповіщення про витоки даних ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Програма для комп'ютера"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
-      ],
-      "No ads or tracking": [
-        "Без реклами і стеження"
-      ],
-      "Short @pm.me email address": [
-        "Коротка адреса електронної пошти @pm.me"
-      ],
-      "Support our mission": [
-        "Підтримайте нашу місію"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade your productivity": [
-        "Вдоскональте свою продуктивність"
-      ],
-      "We don't sell your data": [
-        "Ми не продаємо ваші дані"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription reminder": {
@@ -16798,6 +16748,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш власний короткий псевдонім електронної пошти @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription renewal state": {
