@@ -35,6 +35,10 @@ export function showDefaultPaymentMethodMessage(
     methods: SavedPaymentMethod[],
     selectedPaymentMethodTypeOrValue: PaymentMethodType | undefined
 ): boolean {
+    if (methods.length === 0) {
+        return false;
+    }
+
     if (!selectedPaymentMethodTypeOrValue) {
         return false;
     }
