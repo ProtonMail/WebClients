@@ -5,8 +5,6 @@ export enum PassFeature {
     PassWebInternalAlpha = 'PassWebInternalAlpha',
     PassContentScriptPopoverKillSwitch = 'PassContentScriptPopoverKillSwitch',
     PassWebPrfUnlock = 'PassWebPrfUnlock',
-    PassFileAttachments = 'PassFileAttachmentsV1',
-    PassFileAttachmentEncryptionV2 = 'PassFileAttachmentEncryptionV2',
     PassRenameAdminToManager = 'PassRenameAdminToManager',
     PassProtonAnniversaryPromo2025 = 'PassProtonAnniversaryPromo2025',
     PassCustomTypeV1 = 'PassCustomTypeV1',
