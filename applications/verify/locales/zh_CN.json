@@ -1044,7 +1044,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入 ${ digit } 位数字的验证码。"
+        "请输入验证码的第 ${ digit } 位数字。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
@@ -1470,7 +1470,7 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "总存储空间升至 ${ bundleStorage }"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
         "支持 ${ n } 个自定义域"
       ]
     },
