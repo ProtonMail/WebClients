@@ -5,7 +5,11 @@ import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/Newsl
 import clsx from '@proton/utils/clsx';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { isSubscriptionActiveSelector } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
+import {
+    isSubscriptionActiveSelector,
+    selectedTab,
+} from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import type { ModalFilterType, PropsWithNewsletterSubscription } from '../interface';
@@ -33,6 +37,7 @@ export const NewsletterSubscriptionCard = ({ subscription, isDeleting }: Props) 
 
     const dispatch = useMailDispatch();
     const isActive = useMailSelector(isSubscriptionActiveSelector(subscription.ID));
+    const activeTab = useMailSelector(selectedTab);
 
     useEffect(() => {
         let timeout: ReturnType<typeof setTimeout> | undefined = undefined;
@@ -115,7 +120,9 @@ export const NewsletterSubscriptionCard = ({ subscription, isDeleting }: Props) 
                                             handleFilterClick={handleFilterClick}
                                         />
                                     </div>
-                                    <SubscriptionCardStats subscription={subscription} />
+                                    {activeTab === SubscriptionTabs.Active && (
+                                        <SubscriptionCardStats subscription={subscription} />
+                                    )}
                                 </div>
                                 <NewsletterSubscriptionCardFilterDropdown
                                     subscription={subscription}
