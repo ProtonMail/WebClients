@@ -29,6 +29,9 @@
       "Add domain": [
         "Aggiungi dominio"
       ],
+      "Add field": [
+        "Aggiungi un campo"
+      ],
       "Add forwarding mailbox": [
         "Aggiungi casella di posta di inoltro"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "Crea"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Crea un account ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Crea un account ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Riattiva"
       ],
+      "Read More": [
+        "Scopri di più"
+      ],
       "Refresh the page": [
         "Aggiorna la pagina"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Mostra impostazioni avanzate"
+      ],
+      "Show Less": [
+        "Mostra meno"
       ],
       "Sign back in": [
         "Effettua nuovamente l'accesso"
@@ -1012,8 +1021,8 @@
       "File does not match expected format": [
         "Il formato del file non è corretto"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Importazione non riuscita per la cassaforte \"${ vaultData.name }\" : ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Importazione non riuscita per la cassaforte \"${ vaultData.name }\": ${ errorMessage }"
       ],
       "Importing items failed": [
         "Importazione degli elementi non riuscita"
@@ -1144,6 +1153,9 @@
       "Unsupported 1Password file format": [
         "Formato del file 1Password non supportato"
       ],
+      "Unsupported Bitwarden file format": [
+        "Formato del file Bitwarden non supportato"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aggiornamento della cassaforte \"${ payload.content.name }\" non riuscito"
       ],
@@ -1257,7 +1269,8 @@
         "${ count } visualizzazione",
         "${ count } visualizzazioni"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } visualizzazione",
         "${ count }/${ maxReads } visualizzazioni"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1793,7 +1806,8 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2506,6 +2520,9 @@
       "Add section": [
         "Aggiungi sezione"
       ],
+      "Additional data": [
+        "Dati aggiuntivi"
+      ],
       "Additional details": [
         "Ulteriori dettagli"
       ],
@@ -2632,11 +2649,11 @@
       "Copy password": [
         "Copia la password"
       ],
+      "Country": [
+        "Paese"
+      ],
       "Country or Region": [
         "Paese o regione"
-      ],
-      "Country,": [
-        "Paese,"
       ],
       "County": [
         "Paese"
@@ -2754,6 +2771,9 @@
       ],
       "Export": [
         "Esporta"
+      ],
+      "Extra fields": [
+        "Campi aggiuntivi"
       ],
       "Extra password": [
         "Password aggiuntiva"
@@ -2880,6 +2900,9 @@
       ],
       "Key": [
         "Chiave"
+      ],
+      "Key fingerprint": [
+        "Impronta digitale della chiave"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Scorciatoia da tastiera: ${ shortcut }"
@@ -3049,11 +3072,11 @@
       "Passport": [
         "Passaporto"
       ],
-      "Passport number": [
-        "Passaporto"
-      ],
       "Passport Number": [
         "Numero del passaporto"
+      ],
+      "Passport number": [
+        "Passaporto"
       ],
       "Password": [
         "Password"
@@ -3229,11 +3252,11 @@
       "Show website favicons": [
         "Mostra le icone dei siti web"
       ],
-      "Social Security": [
-        "Previdenza sociale"
-      ],
       "Social security": [
         "Codice fiscale"
+      ],
+      "Social Security": [
+        "Previdenza sociale"
       ],
       "Social security number": [
         "Numero di previdenza sociale"
@@ -3246,9 +3269,6 @@
       ],
       "SSH key": [
         "Chiave SSH"
-      ],
-      "SSH Keys": [
-        "Chiavi SSH"
       ],
       "SSN": [
         "Codice fiscale"
@@ -3402,9 +3422,6 @@
       ],
       "WiFi network": [
         "Rete WiFi"
-      ],
-      "WiFi Networks": [
-        "Reti WiFi"
       ],
       "Work details": [
         "Dettagli di lavoro"
@@ -3604,9 +3621,6 @@
       "Add 2FA secret key": [
         "Aggiungi chiave segreta 2FA"
       ],
-      "Add date": [
-        "Aggiungi una data"
-      ],
       "Add hidden text": [
         "Aggiungi testo nascosto"
       ],
@@ -3702,9 +3716,6 @@
       ],
       "Used on ${ url }": [
         "Usato su ${ url }"
-      ],
-      "Write your note": [
-        "Scrivi una nota"
       ]
     },
     "sso": {
@@ -4275,6 +4286,11 @@
       ],
       "URL is invalid": [
         "L'URL non è valido"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Sposta elementi in"
       ]
     },
     "Warning": {

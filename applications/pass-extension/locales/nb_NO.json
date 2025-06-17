@@ -29,6 +29,9 @@
       "Add domain": [
         "Legg til domene"
       ],
+      "Add field": [
+        "Legg til felt"
+      ],
       "Add forwarding mailbox": [
         "Legg til postboks for videresending"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "Opprett"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Aktiver på nytt nå"
       ],
+      "Read More": [
+        "Les mer"
+      ],
       "Refresh the page": [
         "Oppdater siden"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Vis avanserte alternativer"
+      ],
+      "Show Less": [
+        "Vis mindre"
       ],
       "Sign back in": [
         "Logg på igjen"
@@ -1012,9 +1021,6 @@
       "File does not match expected format": [
         "Fil samsvarer ikke med forventet format"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Import mislyktes for hvelv \"${ vaultData.name }\": ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Import av elementer mislyktes"
       ],
@@ -1257,7 +1263,8 @@
         "${ count } visning",
         "${ count } visninger"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } visning",
         "${ count }/${ maxReads } visninger"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1791,6 +1798,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2629,11 +2640,11 @@
       "Copy password": [
         "Kopier passord"
       ],
+      "Country": [
+        "Land"
+      ],
       "Country or Region": [
         "Land eller region"
-      ],
-      "Country,": [
-        "Land,"
       ],
       "County": [
         "Fylke"
@@ -3046,10 +3057,10 @@
       "Passport": [
         "Pass"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Passnummer"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Passnummer"
       ],
       "Password": [
@@ -3226,10 +3237,10 @@
       "Show website favicons": [
         "Vis favorittikon for nettsteder"
       ],
-      "Social Security": [
+      "Social security": [
         "Trygd"
       ],
-      "Social security": [
+      "Social Security": [
         "Trygd"
       ],
       "Social security number": [
@@ -3243,9 +3254,6 @@
       ],
       "SSH key": [
         "SSH-nøkkel"
-      ],
-      "SSH Keys": [
-        "SSH-nøkler"
       ],
       "SSN": [
         "Fødselsnummer"
@@ -3398,9 +3406,6 @@
         "Nettsteder"
       ],
       "WiFi network": [
-        "WiFi-nettverk"
-      ],
-      "WiFi Networks": [
         "WiFi-nettverk"
       ],
       "Work details": [
@@ -3601,9 +3606,6 @@
       "Add 2FA secret key": [
         "Legg til 2FA-hemmelig nøkkel"
       ],
-      "Add date": [
-        "Legg til dato"
-      ],
       "Add hidden text": [
         "Legg til skjult tekst"
       ],
@@ -3699,9 +3701,6 @@
       ],
       "Used on ${ url }": [
         "Brukt på ${ url }"
-      ],
-      "Write your note": [
-        "Skriv notatet ditt"
       ]
     },
     "sso": {
