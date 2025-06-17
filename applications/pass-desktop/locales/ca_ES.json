@@ -46,6 +46,9 @@
       "Add domain": [
         "Afegir domini"
       ],
+      "Add field": [
+        "Afegeix un camp"
+      ],
       "Add forwarding mailbox": [
         "Afegeix una bústia de reenviament"
       ],
@@ -403,10 +406,10 @@
       "Move to another vault": [
         "Mou a una altra caixa forta"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mou a la paperera"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mou a la paperera"
       ],
       "Multiple select": [
@@ -462,6 +465,9 @@
       ],
       "Reactivate now": [
         "Reactiva ara"
+      ],
+      "Read More": [
+        "Per a més informació"
       ],
       "Refresh the page": [
         "Refresca la pàgina"
@@ -580,6 +586,9 @@
       "Show advanced options": [
         "Mostra les opcions avançades"
       ],
+      "Show Less": [
+        "Mostra menys"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Inicia sessió amb ${ BRAND_NAME }"
       ],
@@ -689,6 +698,105 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Aconseguiu l'oferta"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 GB emmagatzematge xifrat"
+      ],
+      "Add unlimited credit cards": [
+        "Afegiu-hi un nombre il·limitat de targetes de crèdit"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Totes les característiques prèmium de ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Els descomptes es basen en els preus mensuals estàndard. Al final del cicle de facturació, la subscripció es renovarà a la tarifa anual estàndard."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Dupliqueu el vostre emmagatzematge xifrat – obtingueu 1 TB per totes les vostres dades"
+      ],
+      "Encrypted password manager": [
+        "Gestor de contrasenyes xifrat"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Heus aquí un regal exclusiu per celebrar el nostre camí plegats."
+      ],
+      "High speed streaming with VPN": [
+        "Reproducció en continu (Streaming) d'alta velocitat amb VPN"
+      ],
+      "of privacy": [
+        "de privacitat"
+      ],
+      "Online privacy for up to 2 people": [
+        "Privacitat en línia fins a 2 persones"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Privacitat en línia per a tota la família (fins a 6 usuaris)"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Estalviiareu molt amb les funcions premium de Drive amb un descompte per temps limitat"
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Estalviiareu molt amb les característiques prèmium de Mail amb un descompte per temps limitat."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Estalviiareu molt amb les característiques prèmium de Pass amb un descompte per temps limitat."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Estalviiareu molt amb les funcions prèmium de VPN amb un descompte per temps limitat."
+      ],
+      "Save time with built-in 2FA": [
+        "Estalvieu temps amb 2FA integrat"
+      ],
+      "Secure email with unlimited aliases": [
+        "Correu electrònic segur amb àlies il·limitats"
+      ],
+      "Share passwords easily": [
+        "Compartiu contrasenyes fàcilment"
+      ],
+      "thanks to you": [
+        "gràcies a vós"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Tripliqueu el vostre emmagatzematge xifrat – obtingueu 3 TB per totes les vostres dades"
+      ],
+      "years": [
+        "anys"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta d'aniversari"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
+      "/ month": [
+        "/ mes"
+      ],
+      "12 months": [
+        "12 mesos"
+      ],
+      "15 months": [
+        "15 mesos"
+      ],
+      "24 months": [
+        "24 mesos"
+      ],
+      "30 months": [
+        "30 mesos"
+      ],
+      "for ${ durationDeal }": [
+        "durant ${ durationDeal }"
       ]
     },
     "App menu": {
@@ -1079,7 +1187,7 @@
       "File does not match expected format": [
         "El fitxer no coincideix amb el format esperat"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "No s'ha pogut importar la caixa forta «${ vaultData.name }»: ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1195,6 +1303,9 @@
       ],
       "Unsupported 1Password file format": [
         "Format de fitxer de 1Password no suportat"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Aquest format de fitxer Bitwarden no és compatible"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "No s'ha pogut actualitzar la caixa forta \"${ payload.content.name }\""
@@ -1345,7 +1456,8 @@
         "${ count } vista",
         "${ count } vistes"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } vista",
         "${ count }/${ maxReads } vistes"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -2598,6 +2710,9 @@
       "Add section": [
         "Afegeix una secció"
       ],
+      "Additional data": [
+        "Dades addicionals"
+      ],
       "Additional details": [
         "Més detalls"
       ],
@@ -2718,11 +2833,11 @@
       "Copy": [
         "Copia"
       ],
+      "Country": [
+        "País"
+      ],
       "Country or Region": [
         "País o regió"
-      ],
-      "Country,": [
-        "País,"
       ],
       "County": [
         "Província"
@@ -2852,6 +2967,9 @@
       ],
       "Extra email addresses": [
         "Adreces de correu electrònic addicionals"
+      ],
+      "Extra fields": [
+        "Camps addicionals"
       ],
       "Extra password": [
         "Contrasenya addicional"
@@ -3020,6 +3138,9 @@
       ],
       "Key": [
         "Clau"
+      ],
+      "Key fingerprint": [
+        "Clau d'empremta digital"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Drecera de teclat: ${ shortcut }"
@@ -3204,10 +3325,10 @@
       "Passport": [
         "Passaport"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Número de passaport"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Número de passaport"
       ],
       "Password": [
@@ -3261,10 +3382,10 @@
       "Priority:": [
         "Prioritat:"
       ],
-      "Private Key": [
+      "Private key": [
         "Clau privada"
       ],
-      "Private key": [
+      "Private Key": [
         "Clau privada"
       ],
       "Product": [
@@ -3413,9 +3534,6 @@
       ],
       "SSH key": [
         "Clau SSH"
-      ],
-      "SSH Keys": [
-        "Claus SSH"
       ],
       "SSN": [
         "Número de la seguretat social"
@@ -3599,9 +3717,6 @@
       ],
       "WiFi network": [
         "Xarxa wifi"
-      ],
-      "WiFi Networks": [
-        "Xarxes wifi"
       ],
       "Work details": [
         "Detalls de la feina"
@@ -3847,9 +3962,6 @@
       "Add 2FA secret key": [
         "Afegeix una clau secreta d'A2F"
       ],
-      "Add date": [
-        "Afegeix una data"
-      ],
       "Add hidden text": [
         "Afegeix text amagat"
       ],
@@ -3945,9 +4057,6 @@
       ],
       "Used on ${ url }": [
         "Utilitzada a ${ url }"
-      ],
-      "Write your note": [
-        "Escriviu la vostra nota"
       ]
     },
     "Security Center - Info": {
@@ -4621,6 +4730,11 @@
       ],
       "URL is invalid": [
         "L'URL no és vàlid."
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Mou elements a"
       ]
     },
     "Warning": {

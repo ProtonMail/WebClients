@@ -376,10 +376,10 @@
       "Move to another vault": [
         "Перемістити в інше сховище"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Перемістити до смітника"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Перемістити до смітника"
       ],
       "Multiple select": [
@@ -1023,9 +1023,6 @@
       "File does not match expected format": [
         "Файл не відповідає очікуваному формату"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Не вдалося імпортувати дані до сховища \"${ vaultData.name }\" : ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Не вдалося імпортувати елементи"
       ],
@@ -1303,9 +1300,6 @@
         "${ count } перегляди",
         "${ count } переглядів",
         "${ count } переглядів"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } переглядів"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } переслано",
@@ -2545,6 +2539,9 @@
       "Copy": [
         "Копіювати"
       ],
+      "Country": [
+        "Країна"
+      ],
       "Country or Region": [
         "Країна або регіон"
       ],
@@ -3479,9 +3476,6 @@
       ],
       "Used on ${ url }": [
         "Використовується на ${ url }"
-      ],
-      "Write your note": [
-        "Напишіть свою нотатку"
       ]
     },
     "Security Center - Info": {

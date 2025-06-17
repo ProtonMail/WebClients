@@ -400,10 +400,10 @@
       "Move to another vault": [
         "Flyt til en anden boks"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flyt til papirkurv"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flyt til papirkurv"
       ],
       "Multiple select": [
@@ -1061,9 +1061,6 @@
       "File does not match expected format": [
         "Fil svarer ikke til det forventede format"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Import mislykkedes for boks \"${ vaultData.name }\" : ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Import af elementer mislykkedes"
       ],
@@ -1326,9 +1323,6 @@
       "${ count } view": [
         "${ count } visning",
         "${ count } visninger"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } visninger"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } videresendt",
@@ -2637,6 +2631,9 @@
       "Copy": [
         "Kopiér"
       ],
+      "Country": [
+        "Land"
+      ],
       "Country or Region": [
         "Land eller region"
       ],
@@ -3633,9 +3630,6 @@
       ],
       "Used on ${ url }": [
         "Brugt på ${ url }"
-      ],
-      "Write your note": [
-        "Skriv din note"
       ]
     },
     "Security Center - Info": {
