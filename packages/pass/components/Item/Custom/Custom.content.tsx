@@ -19,19 +19,13 @@ const WifiContent: FC<{ revision: ItemRevision<'wifi'> }> = ({ revision }) => {
 
     return (
         <FieldsetCluster mode="read" as="div">
-            <ValueControl as={TextAreaReadonly} label={c('Label').t`Name (SSID)`} value={content.ssid} clickToCopy />
+            <ValueControl label={c('Label').t`Name (SSID)`} value={content.ssid} clickToCopy icon="text-align-left" />
+            <ValueControl label={c('Label').t`Password`} value={content.password} clickToCopy hidden icon="key" />
             <ValueControl
-                as={TextAreaReadonly}
-                label={c('Label').t`Password`}
-                value={content.password}
-                clickToCopy
-                hidden
-            />
-            <ValueControl
-                as={TextAreaReadonly}
                 label={c('Label').t`Security`}
                 value={wifiSecurityLabel[content.security]()}
                 clickToCopy
+                icon="wrench"
             />
         </FieldsetCluster>
     );
@@ -42,19 +36,8 @@ const SSHKeyContent: FC<{ revision: ItemRevision<'sshKey'> }> = ({ revision }) =
 
     return (
         <FieldsetCluster mode="read" as="div">
-            <ValueControl
-                as={TextAreaReadonly}
-                label={c('Label').t`Public key`}
-                value={content.publicKey}
-                clickToCopy
-            />
-            <ValueControl
-                as={TextAreaReadonly}
-                label={c('Label').t`Private key`}
-                value={content.privateKey}
-                clickToCopy
-                hidden
-            />
+            <ValueControl label={c('Label').t`Public key`} value={content.publicKey} clickToCopy icon="key" />
+            <ValueControl label={c('Label').t`Private key`} value={content.privateKey} clickToCopy hidden icon="key" />
         </FieldsetCluster>
     );
 };
@@ -66,13 +49,20 @@ export const CustomContent = <T extends ItemCustomType>({ revision }: ItemConten
 
     return (
         <>
-            {Boolean(extraFields.length) && (
-                <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />
-            )}
-
             {revision.data.type === 'wifi' && <WifiContent revision={revision as ItemRevision<'wifi'>} />}
 
             {revision.data.type === 'sshKey' && <SSHKeyContent revision={revision as ItemRevision<'sshKey'>} />}
+
+            {content.sections.map(({ sectionName: name, sectionFields: fields }, sectionIndex) => (
+                <section key={`${name}::${sectionIndex}`}>
+                    <FieldBox className="color-weak my-4" unstyled>
+                        {name}
+                    </FieldBox>
+                    <FieldsetCluster mode="read" as="div">
+                        <ExtraFieldsControl extraFields={fields} itemId={itemId} shareId={shareId} />
+                    </FieldsetCluster>
+                </section>
+            ))}
 
             {note && (
                 <FieldsetCluster mode="read" as="div">
@@ -86,16 +76,7 @@ export const CustomContent = <T extends ItemCustomType>({ revision }: ItemConten
                 </FieldsetCluster>
             )}
 
-            {content.sections.map(({ sectionName: name, sectionFields: fields }, sectionIndex) => (
-                <section key={`${name}::${sectionIndex}`}>
-                    <FieldBox className="color-weak my-4" unstyled>
-                        {name}
-                    </FieldBox>
-                    <FieldsetCluster mode="read" as="div">
-                        <ExtraFieldsControl extraFields={fields} itemId={itemId} shareId={shareId} />
-                    </FieldsetCluster>
-                </section>
-            ))}
+            {extraFields.length && <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />}
         </>
     );
 };

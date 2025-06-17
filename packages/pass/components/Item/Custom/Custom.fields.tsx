@@ -21,6 +21,7 @@ export const CustomTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ t
                         placeholder={c('Placeholder').t`Add hidden text`}
                         component={TextField}
                         hidden
+                        icon="key"
                     />
                     <Field
                         label={c('Label').t`Private key`}
@@ -28,6 +29,7 @@ export const CustomTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ t
                         placeholder={c('Placeholder').t`Add hidden text`}
                         component={TextField}
                         hidden
+                        icon="key"
                     />
                 </FieldsetCluster>
             );
@@ -39,6 +41,7 @@ export const CustomTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ t
                         name="ssid"
                         placeholder={c('Placeholder').t`Add text`}
                         component={TextField}
+                        icon="text-align-left"
                     />
                     <Field
                         label={c('Label').t`Password`}
@@ -46,12 +49,14 @@ export const CustomTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ t
                         placeholder={c('Placeholder').t`Add hidden text`}
                         component={TextField}
                         hidden
+                        icon="key"
                     />
                     <Field
                         label={c('Label').t`Security`}
                         name="security"
                         placeholder={c('Placeholder').t`Select option`}
                         component={SelectField}
+                        icon="wrench"
                     >
                         {WifiSecurities.map((value) => {
                             const label = wifiSecurityLabel[value]();
