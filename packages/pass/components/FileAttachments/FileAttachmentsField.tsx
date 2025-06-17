@@ -9,11 +9,9 @@ import { Button, Tooltip } from '@proton/atoms';
 import { Dropzone, FileInput, Icon, useNotifications } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { useFileEncryptionVersion } from '@proton/pass/hooks/files/useFileEncryptionVersion';
+import { FILE_ENCRYPTION_VERSION, UpsellRef } from '@proton/pass/constants';
 import { resolveMimeTypeForFile, useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { isAbortError } from '@proton/pass/lib/api/errors';
@@ -26,7 +24,6 @@ import {
     selectUserStorageUsed,
 } from '@proton/pass/store/selectors';
 import type { BaseFileDescriptor, FileAttachmentValues, FileID, ShareId } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 import { updateMap } from '@proton/pass/utils/fp/state';
@@ -48,11 +45,10 @@ type Props = FieldProps<{}, FileAttachmentValues> &
 
 type FileUploadDescriptor = Omit<BaseFileDescriptor, 'fileID'> & { uploadID: string; fileID?: FileID };
 
-export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
-    WithPaidUser(({ children, form, filesCount = 0, shareId, onDeleteAllFiles }) => {
+export const FileAttachmentsField: FC<Props> = WithPaidUser(
+    ({ children, form, filesCount = 0, shareId, onDeleteAllFiles }) => {
         const { popup } = usePassCore();
         const dispatch = useAsyncRequestDispatch();
-        const fileEncryptionVersion = useFileEncryptionVersion();
 
         const fileUpload = useFileUpload();
         const usedStorage = useSelector(selectUserStorageUsed);
@@ -69,8 +65,6 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
 
         const uploadFiles = useCallback(
             async (toUpload: File[]) => {
-                const encryptionVersion = fileEncryptionVersion.current;
-
                 const uploads = await seq(toUpload, async (file) => ({
                     file,
                     mimeType: await resolveMimeTypeForFile(file),
@@ -85,7 +79,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                 size: file.size,
                                 mimeType,
                                 uploadID,
-                                encryptionVersion,
+                                encryptionVersion: FILE_ENCRYPTION_VERSION,
                             });
                         });
                     })
@@ -276,6 +270,5 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                 </div>
             </Dropzone>
         );
-    }),
-    PassFeature.PassFileAttachments
+    }
 );
