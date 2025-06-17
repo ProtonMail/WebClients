@@ -142,11 +142,40 @@ describe('NordPass CSV Importer', () => {
             expect(item.content.stateOrProvince).toEqual(':state:');
             expect(item.content.countryOrRegion).toEqual("Côte d'Ivoire");
         });
+
+        test('correctly keeps a reference to ignored items', () => {
+            const { ignored } = getNordPassData('nordpass-legacy.csv');
+            expect(ignored).not.toEqual([]);
+            expect(ignored[0]).toEqual('[folder] company services');
+        });
     });
 
-    test('correctly keeps a reference to ignored items', () => {
-        const { ignored } = getNordPassData('nordpass-legacy.csv');
-        expect(ignored).not.toEqual([]);
-        expect(ignored[0]).toEqual('[folder] company services');
+    describe('Nordpass CSV', () => {
+        test('converts NordPass folders to vaults correctly', () => {
+            const { vaults } = getNordPassData('nordpass.csv');
+            const [primary, secondary] = vaults;
+            expect(vaults.length).toEqual(2);
+            expect(primary.name).toEqual('sub-folder');
+            expect(secondary.name).toEqual('Import - 27 Apr 2023');
+            expect(primary.items.length).toEqual(1);
+            expect(secondary.items.length).toEqual(2);
+        });
+
+        test('should support login items with multiple URLs and custom fields [vault 1]', () => {
+            const item = getNordPassItem<'login'>('nordpass.csv', 0, 0);
+            expect(item.type).toEqual('login');
+            expect(item.metadata.name).toEqual('Test[CustomFields]');
+            expect(item.metadata.note).toEqual('note');
+            expect(item.content.itemEmail).toEqual('');
+            expect(item.content.itemUsername).toEqual('CustomFields');
+            expect(item.content.password).toEqual('CustomFields');
+            expect(item.content.urls).toEqual(['https://hello.com/', 'https://test.me/lol', 'https://test.net/']);
+            expect(item.extraFields).toEqual([
+                { type: 'text', data: { content: 'VALUE' }, fieldName: '[TEXT]' },
+                { type: 'hidden', data: { content: 'VALUE' }, fieldName: '[HIDDEN]' },
+                { type: 'text', data: { content: '14/12/1990' }, fieldName: '[INVALID_DATE]' },
+                { type: 'timestamp', data: { timestamp: '1990-12-14' }, fieldName: '[DATE]' },
+            ]);
+        });
     });
 });

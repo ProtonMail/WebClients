@@ -1,6 +1,9 @@
-import type { NordPassItem } from '@proton/pass/lib/import/providers/nordpass/nordpass.types';
+import type { NordPassExtraField, NordPassItem } from '@proton/pass/lib/import/providers/nordpass/nordpass.types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { IdentityFieldName, ItemContent } from '@proton/pass/types';
+import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, ItemExtraField } from '@proton/pass/types';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
+import { formatISODate } from '@proton/pass/utils/time/format';
 
 export const NORDPASS_EXPECTED_HEADERS: (keyof NordPassItem)[] = [
     'name',
@@ -46,4 +49,26 @@ export const extractNordPassIdentity = (importItem: NordPassItem): ItemContent<'
     });
 
     return item.data.content;
+};
+
+export const extractNordPassExtraFields = (item: NordPassItem): ItemExtraField[] => {
+    if (!item.custom_fields) return [];
+
+    const fields = safeCall((): NordPassExtraField[] => JSON.parse(item.custom_fields!))() ?? [];
+
+    return obfuscateExtraFields(
+        fields.map<DeobfuscatedItemExtraField>(({ type, value: content, label: fieldName }) => {
+            switch (type) {
+                case 'text':
+                    return { type: 'text', data: { content }, fieldName };
+                case 'hidden':
+                    return { type: 'hidden', data: { content }, fieldName };
+                case 'date':
+                    const date = new Date(content);
+                    if (isNaN(+date)) return { type: 'text', data: { content }, fieldName };
+                    const timestamp = formatISODate(date);
+                    return { type: 'timestamp', data: { timestamp }, fieldName };
+            }
+        })
+    );
 };
