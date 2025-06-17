@@ -10,11 +10,9 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import type { ImportFormContext } from '@proton/pass/hooks/import/useImportForm';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos } from '@proton/shared/lib/helpers/browser';
@@ -41,7 +39,6 @@ const providerHasFileAttachments = (provider: ImportProvider) =>
 
 export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'>> = ({ form, dropzone, busy }) => {
     const free = useSelector(selectPassPlan) === UserPassPlan.FREE;
-    const fileAttachmentsEnabled = useFeatureFlag(PassFeature.PassFileAttachments);
 
     const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => {
         if (provider) dropzone.setSupportedFileTypes(PROVIDER_INFO_MAP[provider].fileExtension.split(', '));
@@ -179,7 +176,7 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
                         </Card>
                     )}
 
-                    {fileAttachmentsEnabled && providerHasFileAttachments(form.values.provider) && free && (
+                    {providerHasFileAttachments(form.values.provider) && free && (
                         <Card className="mb-4 text-sm" type="primary">
                             {c('Pass_file_attachments')
                                 .t`If your data contains file attachments, they will not be imported.`}
