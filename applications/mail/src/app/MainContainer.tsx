@@ -2,6 +2,7 @@ import type { FunctionComponent } from 'react';
 import { useEffect, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import { useUser } from '@proton/account/user/hooks';
 import {
     ApiModalsHVUpsell,
     DrawerThemeInjector,
@@ -12,9 +13,11 @@ import {
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useInboxDesktopMetrics } from '@proton/components/hooks/useInboxDesktopMetrics';
+import { useDrive } from '@proton/drive/index';
 import { FeatureCode, useFeatures } from '@proton/features';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 import { useInboxDesktopHeartbeat } from '@proton/shared/lib/desktop/heartbeat';
+import { isPaid } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
@@ -29,7 +32,7 @@ import MailAppShell from './router/MailAppShell';
 import { extraThunkArguments } from './store/thunk';
 
 const MainContainer: FunctionComponent = () => {
-    const { APP_NAME } = useConfig();
+    const { APP_NAME, APP_VERSION } = useConfig();
     const mailContentRef = useRef<HTMLDivElement>(null);
     const { getFeature } = useFeatures([
         FeatureCode.MailServiceWorker,
@@ -41,6 +44,9 @@ const MainContainer: FunctionComponent = () => {
         FeatureCode.ESUserInterface,
     ]);
 
+    const [user] = useUser();
+    const driveSDK = useDrive();
+
     const { feature: featureSw, loading: loadingSw } = getFeature(FeatureCode.MailServiceWorker);
 
     useInboxDesktopHeartbeat();
@@ -48,6 +54,7 @@ const MainContainer: FunctionComponent = () => {
 
     // Used to control the refactoring of the mailbox that breaks `MailboxContainer` in smaller components
     const isRefactoringEnabled = useFlag('MailboxRefactoring');
+    const isSaveAttachmentsToDriveEnabled = useFlag('MailSaveAttachmentsToDrive');
 
     /**
      * @description React has an issue regarding DOM changed by Gtranslate from Chrome
@@ -88,6 +95,18 @@ const MainContainer: FunctionComponent = () => {
             void action();
         }
     }, [featureSw, loadingSw]);
+
+    useEffect(() => {
+        // Calling the init flow twice throws, hence checking if there's a
+        // drive instance already.
+        if (isSaveAttachmentsToDriveEnabled && !driveSDK.drive) {
+            driveSDK.init({
+                appName: APP_NAME,
+                appVersion: APP_VERSION,
+                userPlan: isPaid(user) ? 'paid' : 'free',
+            });
+        }
+    }, [isSaveAttachmentsToDriveEnabled, driveSDK, user]);
 
     return (
         <KeyTransparencyManager>
