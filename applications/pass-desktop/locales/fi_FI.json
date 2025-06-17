@@ -46,6 +46,9 @@
       "Add domain": [
         "Lisää verkkotunnus"
       ],
+      "Add field": [
+        "Lisää kenttä"
+      ],
       "Add forwarding mailbox": [
         "Lisää välittävä postilaatikko"
       ],
@@ -400,10 +403,10 @@
       "Move to another vault": [
         "Siirrä toiseen holviin"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Siirrä roskakoriin"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Siirrä roskakoriin"
       ],
       "Multiple select": [
@@ -459,6 +462,9 @@
       ],
       "Reactivate now": [
         "Uudelleenaktivoi nyt"
+      ],
+      "Read More": [
+        "Lue lisää"
       ],
       "Refresh the page": [
         "Päivitä sivu"
@@ -577,6 +583,9 @@
       "Show advanced options": [
         "Näytä lisävalinnat"
       ],
+      "Show Less": [
+        "Näytä vähemmän"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Kirjaudu ${ BRAND_NAME }illa"
       ],
@@ -686,6 +695,46 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 Gt salattua tallennustilaa"
+      ],
+      "Add unlimited credit cards": [
+        "Lisää rajattomasti maksukortteja"
+      ],
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
+      ],
+      "High speed streaming with VPN": [
+        "Nopea suoratoisto VPN:llä"
+      ],
+      "Share passwords easily": [
+        "Jaa salasanoja helposti"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
+      "12 months": [
+        "12 kuukautta"
+      ],
+      "15 months": [
+        "15 kuukautta"
+      ],
+      "24 months": [
+        "24 kuukautta"
+      ],
+      "30 months": [
+        "30 kuukautta"
       ]
     },
     "App menu": {
@@ -1052,9 +1101,6 @@
       "File does not match expected format": [
         "Tiedosto ei vastaa odotettua muotoa"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Holvin \"${ vaultData.name }\" tuonti epäonnistui: ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Kohteiden tuonti epäonnistui"
       ],
@@ -1317,9 +1363,6 @@
       "${ count } view": [
         "${ count } avaus",
         "${ count } avausta"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } avausta"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } välitetty",
@@ -2562,6 +2605,9 @@
       "Always show username field": [
         "Näytä käyttäjätunnuskenttä aina"
       ],
+      "API Key": [
+        "API-avain"
+      ],
       "Application logs": [
         "Sovelluslokit"
       ],
@@ -2640,6 +2686,9 @@
       "Copy": [
         "Kopioi"
       ],
+      "Country": [
+        "Maa"
+      ],
       "Country or Region": [
         "Maa tai alue"
       ],
@@ -2648,6 +2697,9 @@
       ],
       "Create a credit card": [
         "Luo maksukortti"
+      ],
+      "Create a custom item": [
+        "Luo mukautettu kohde"
       ],
       "Create a hide-my-email alias": [
         "Luo Hide-my-email-alias"
@@ -2679,11 +2731,17 @@
       "Custom hidden field": [
         "Mukautettu piilotettu kenttä"
       ],
+      "Custom Items": [
+        "Mukautetut kohteet"
+      ],
       "Custom text field": [
         "Mukautettu tekstikenttä"
       ],
       "Database": [
         "Tietokanta"
+      ],
+      "Database Type": [
+        "Tietokannan tyyppi"
       ],
       "Date": [
         "Päiväys"
@@ -2847,6 +2905,12 @@
       "Holder Name": [
         "Haltijan nimi"
       ],
+      "Host": [
+        "Isäntä"
+      ],
+      "Hostname": [
+        "Isäntänimi"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Miten ${ PASS_SHORT_APP_NAME }in lukitus avataan"
       ],
@@ -2904,6 +2968,9 @@
       "Invitations": [
         "Kutsut"
       ],
+      "IP Address": [
+        "IP-osoite"
+      ],
       "Issuing Authority": [
         "Myöntävä viranomainen"
       ],
@@ -2918,6 +2985,9 @@
       ],
       "Key": [
         "Avain"
+      ],
+      "Key fingerprint": [
+        "Avaimen sormenjälki"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pikanäppäin: ${ shortcut }"
@@ -2948,6 +3018,9 @@
       ],
       "License": [
         "Ajokortti"
+      ],
+      "License Key": [
+        "Lisenssiavain"
       ],
       "License number": [
         "Ajokortin numero"
@@ -3072,8 +3145,14 @@
       "Open-source password manager for effortless protection.": [
         "Avoimen lähdekoodin salasanahallinta vaivattomaan suojaukseen."
       ],
+      "Operating System": [
+        "Käyttöjärjestelmä"
+      ],
       "Organization": [
         "Organisaatio"
+      ],
+      "Owner": [
+        "Omistaja"
       ],
       "Passkey": [
         "Pääsyavain"
@@ -3087,10 +3166,10 @@
       "Passport": [
         "Passi"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Passin numero"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Passin numero"
       ],
       "Password": [
@@ -3138,11 +3217,14 @@
       "Priority:": [
         "Prioriteetti:"
       ],
+      "Private key": [
+        "Yksityinen avain"
+      ],
       "Private Key": [
         "Yksityinen avain"
       ],
-      "Private key": [
-        "Yksityinen avain"
+      "Product": [
+        "Tuote"
       ],
       "Program Name": [
         "Ohjelman nimi"
@@ -3185,6 +3267,9 @@
       ],
       "Second password": [
         "Toinen salasana"
+      ],
+      "Secret": [
+        "Salaisuus"
       ],
       "Secure links": [
         "Suojatut linkit"
@@ -3243,6 +3328,9 @@
       "Share": [
         "Jaa"
       ],
+      "Share ID": [
+        "Jako-ID"
+      ],
       "Shared": [
         "Jaettu"
       ],
@@ -3278,9 +3366,6 @@
       ],
       "SSH key": [
         "SSH-avain"
-      ],
-      "SSH Keys": [
-        "SSH-avaimet"
       ],
       "SSN": [
         "Hetu"
@@ -3399,6 +3484,9 @@
       "Unnamed WiFi item": [
         "Nimetön Wi-Fi-kohde"
       ],
+      "Unspecified": [
+        "Ei määritetty"
+      ],
       "Untitled": [
         "Nimetön"
       ],
@@ -3452,9 +3540,6 @@
       ],
       "WiFi network": [
         "Wi-Fi-verkko"
-      ],
-      "WiFi Networks": [
-        "Wi-Fi-verkot"
       ],
       "Work details": [
         "Työtiedot"
@@ -3694,9 +3779,6 @@
       "Add 2FA secret key": [
         "Lisää 2FA-salaisuus"
       ],
-      "Add date": [
-        "Lisää päivämäärä"
-      ],
       "Add hidden text": [
         "Lisää piilotettu teksti"
       ],
@@ -3789,9 +3871,6 @@
       ],
       "Used on ${ url }": [
         "Käytetään osoitteessa ${ url }"
-      ],
-      "Write your note": [
-        "Kirjoita muistiinpanosi"
       ]
     },
     "Security Center - Info": {
@@ -3961,6 +4040,9 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME }-osoitteet"
+      ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
