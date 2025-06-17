@@ -5,7 +5,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { VideoConferenceOrganizationSection } from '@proton/calendar';
 import {
-    AuthenticationLogs,
+    ActivityMonitorEvents,
     CatchAllSection,
     DomainsSection,
     GatewaysSection,
@@ -59,6 +59,7 @@ const OrganizationSettingsRouter = ({
             security,
             sso,
             connectionEvents,
+            activityMonitor,
             groups,
             scribe,
             accessControl,
@@ -147,7 +148,6 @@ const OrganizationSettingsRouter = ({
                         <OrganizationPasswordPoliciesSection organization={organization} />
                         <OrganizationTwoFARemindersSection organization={organization} />
                         <OrganizationTwoFAEnforcementSection organization={organization} />
-                        <AuthenticationLogs organization={organization} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
@@ -162,6 +162,13 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, connectionEvents)}>
                     <PrivateMainSettingsArea config={connectionEvents}>
                         <VPNEvents />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(activityMonitor) && (
+                <Route path={getSectionPath(path, activityMonitor)}>
+                    <PrivateMainSettingsArea config={activityMonitor}>
+                        <ActivityMonitorEvents />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
