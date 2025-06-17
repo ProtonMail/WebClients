@@ -8,24 +8,32 @@ export enum NordPassType {
 }
 
 export type NordPassItem = {
-    name: Maybe<string>;
-    url: Maybe<string>;
-    username: Maybe<string>;
-    password: Maybe<string>;
-    note: Maybe<string>;
-    cardholdername: Maybe<string>;
-    cardnumber: Maybe<string>;
-    cvc: Maybe<string>;
-    expirydate: Maybe<string>;
-    zipcode: Maybe<string>;
-    folder: Maybe<string>;
-    full_name: Maybe<string>;
-    phone_number: Maybe<string>;
-    email: Maybe<string>;
+    additional_urls?: string;
     address1: Maybe<string>;
     address2: Maybe<string>;
+    cardholdername: Maybe<string>;
+    cardnumber: Maybe<string>;
     city: Maybe<string>;
     country: Maybe<string>;
+    custom_fields?: string;
+    cvc: Maybe<string>;
+    email: Maybe<string>;
+    expirydate: Maybe<string>;
+    folder: Maybe<string>;
+    full_name: Maybe<string>;
+    name: Maybe<string>;
+    note: Maybe<string>;
+    password: Maybe<string>;
+    phone_number: Maybe<string>;
     state: Maybe<string>;
     type: Maybe<NordPassType>;
+    url: Maybe<string>;
+    username: Maybe<string>;
+    zipcode: Maybe<string>;
+};
+
+export type NordPassExtraField = {
+    label: string;
+    type: 'text' | 'hidden' | 'date';
+    value: string;
 };
