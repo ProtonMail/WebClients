@@ -163,27 +163,17 @@ describe('Import bitwarden json', () => {
 
         test('should support SSH key items', () => {
             const item = getBitwardenItem<'sshKey'>('bitwarden.json', 0, 6);
-            const publicKey = `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEDhJPl60DPy1/EPzGUjh318jz7st9ZHR86Wuj5JpVUm`;
-            const privateKey = `-----BEGIN OPENSSH PRIVATE KEY-----
-b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-QyNTUxOQAAACBA4ST5etAz8tfxD8xlI4d9fI8+7LfWR0fOlro+SaVVJgAAAIitNdjOrTXY
-zgAAAAtzc2gtZWQyNTUxOQAAACBA4ST5etAz8tfxD8xlI4d9fI8+7LfWR0fOlro+SaVVJg
-AAAEAiXDmU+cMB5q9IG6KhaLkD9b2oeE6uNRFEnTEiaV6+GkDhJPl60DPy1/EPzGUjh318
-jz7st9ZHR86Wuj5JpVUmAAAAAAECAwQF
------END OPENSSH PRIVATE KEY-----
-`;
-
             expect(item.type).toBe('sshKey');
             expect(item.metadata.name).toBe('test ssh');
             expect(item.metadata.note).toBe('');
-            expect(item.content.privateKey).toEqual(privateKey);
-            expect(item.content.publicKey).toEqual(publicKey);
+            expect(item.content.privateKey).toEqual('-----BEGIN TEST -----\n00000000000000\n-----END TEST-----\n');
+            expect(item.content.publicKey).toEqual('ssh-ed25519 000000000');
             expect(item.content.sections).toEqual([
                 {
                     sectionName: 'Extra fields',
                     sectionFields: [
                         {
-                            data: { content: 'SHA256:KUCXNPIo4X8eqoqRyX5ca4zmL2TA2lSJRssP7nHl+qs' },
+                            data: { content: 'SHA256:000000000' },
                             fieldName: 'Key fingerprint',
                             type: 'hidden',
                         },
