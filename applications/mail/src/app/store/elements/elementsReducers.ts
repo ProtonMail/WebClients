@@ -566,7 +566,6 @@ const handleBypassFilter = (
         });
 
         if (state.total[oppositeFilter]) {
-            console.log('update total', oppositeFilter, state.total[oppositeFilter], elementsToBypass.length);
             state.total[oppositeFilter] = state.total[oppositeFilter] + elementsToBypass.length;
         }
     }
