@@ -9,17 +9,20 @@ import {
     importIdentityItem,
     importLoginItem,
     importNoteItem,
+    importSshKeyItem,
+    importWifiItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import { formatExpirationDateMMYYYY } from '@proton/pass/lib/validation/credit-card';
-import type { DeobfuscatedItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
+import type { ItemImportIntent, Maybe } from '@proton/pass/types';
+import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import lastItem from '@proton/utils/lastItem';
 
 import type { KeeperData } from './keeper.types';
-import { extractKeeperExtraFields, extractKeeperIdentity } from './keeper.utils';
+import { extractKeeperExtraFields, extractKeeperIdentity, getKeeperBuiltinExtraFields } from './keeper.utils';
 
 export const readKeeperData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
@@ -86,45 +89,35 @@ export const readKeeperData = async (file: File): Promise<ImportReaderResult> =>
                                     note: item.notes,
                                     ...extractKeeperIdentity(item),
                                 });
+
+                            case 'sshKeys':
+                                return importSshKeyItem({
+                                    name: item.title,
+                                    note: item.notes,
+                                    publicKey: item.custom_fields?.['$keyPair::1']?.publicKey,
+                                    privateKey: item.custom_fields?.['$keyPair::1']?.privateKey,
+                                    extraFields: getKeeperBuiltinExtraFields(item)
+                                        .concat(extractKeeperExtraFields(item.custom_fields, ['$keyPair::1']))
+                                        .filter(truthy),
+                                });
+
+                            case 'wifiCredentials':
+                                return importWifiItem({
+                                    name: item.title,
+                                    note: item.notes,
+                                    ssid: item.custom_fields?.['$text:SSID:1'],
+                                    security: WifiSecurity.UnspecifiedWifiSecurity,
+                                    password: item.password,
+                                    extraFields: extractKeeperExtraFields(item.custom_fields, ['$text:SSID:1']),
+                                });
+
                             default:
-                                const builtinExtraFields: DeobfuscatedItemExtraField[] = [
-                                    ...(item.login
-                                        ? ([
-                                              {
-                                                  fieldName: c('Label').t`Username`,
-                                                  type: 'text',
-                                                  data: { content: item.login },
-                                              },
-                                          ] as const)
-                                        : []),
-                                    ...(item.password
-                                        ? ([
-                                              {
-                                                  fieldName: c('Label').t`Password`,
-                                                  type: 'text',
-                                                  data: { content: item.password },
-                                              },
-                                          ] as const)
-                                        : []),
-                                    ...(item.login_url
-                                        ? ([
-                                              {
-                                                  fieldName: c('Label').t`Website`,
-                                                  type: 'text',
-                                                  data: { content: item.login_url },
-                                              },
-                                          ] as const)
-                                        : []),
-                                ];
-
-                                const extraFields: DeobfuscatedItemExtraField[] = builtinExtraFields
-                                    .concat(extractKeeperExtraFields(item.custom_fields))
-                                    .filter(truthy);
-
                                 return importCustomItem({
                                     name: item.title,
                                     note: item.notes,
-                                    extraFields,
+                                    extraFields: getKeeperBuiltinExtraFields(item)
+                                        .concat(extractKeeperExtraFields(item.custom_fields))
+                                        .filter(truthy),
                                 });
                         }
                     })();
