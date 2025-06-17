@@ -30,7 +30,7 @@
 	}
 
 	&-container {
-		max-block-size: 18em; // will be replaced by height when it will be really supported everywhere => ATM it's a magic number to say "enough height" in all cases (narrow space, etc.))
+		max-block-size: 28em; // will be replaced by height when it will be really supported everywhere => ATM it's a magic number to say "enough height" in all cases (narrow space, etc.))
 		transition:
 			max-block-size 0.25s ease-in-out,
 			visibility 0s ease; // visibility is needed to avoid the card to be focusable when it has disappeared
