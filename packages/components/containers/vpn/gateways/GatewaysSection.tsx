@@ -8,6 +8,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Href } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -16,9 +17,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { PLANS } from '@proton/payments';
-import { getCountryOptions } from '@proton/payments';
-import { getVPNDedicatedIPs } from '@proton/payments';
+import { PLANS, getCountryOptions, getVPNDedicatedIPs, useIsB2BTrial } from '@proton/payments';
 import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -53,6 +52,11 @@ const getFeaturesAndUserIds = (data: Partial<GatewayModel>): [number, readonly s
 };
 
 const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
+    const SERVERS = 'servers';
+    const GATEWAYS = 'gateways';
+    const DASHBOARD = 'dashboard';
+    const UPSELLS = 'upsells';
+
     const api = useApi();
     const [createModal, showCreateModal] = useModalTwoStatic(GatewayModal);
     const [renameModal, showRenameModal] = useModalTwoStatic(GatewayRenameModal);
@@ -108,6 +112,9 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const { sortedList } = useSortedList(allGateways as Gateway[], { key: 'Name', direction: SORT_DIRECTION.ASC });
     const [openSubscriptionModal] = useSubscriptionModal();
 
+    const isTrial = useIsB2BTrial(subscription);
+    const [showTrialPrompt, setShowTrialPrompt] = useState<undefined | typeof SERVERS | typeof GATEWAYS>(undefined);
+
     if (!organization || !user || !subscription || !gateways || !locations) {
         return <Loader />;
     }
@@ -136,7 +143,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         return createdGateway;
     };
 
-    const getCustomizeSubscriptionOpener = (source: 'dashboard' | 'upsells') => () =>
+    const getCustomizeSubscriptionOpener = (source: typeof DASHBOARD | typeof UPSELLS) => () =>
         openSubscriptionModal({
             metrics: {
                 source,
@@ -195,7 +202,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                             <Button
                                 color="norm"
                                 fullWidth
-                                onClick={getCustomizeSubscriptionOpener('upsells')}
+                                onClick={getCustomizeSubscriptionOpener(UPSELLS)}
                                 title={c('Title').t`Setup dedicated servers by upgrading to Business`}
                             >
                                 {c('Action').t`Upgrade to Business`}
@@ -418,7 +425,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
                 await refreshList();
             },
-            onUpsell: getCustomizeSubscriptionOpener('dashboard'),
+            onUpsell: getCustomizeSubscriptionOpener(DASHBOARD),
         });
 
     const editGatewayUsers = (gateway: Gateway, logical: GatewayLogical) => () =>
@@ -509,6 +516,9 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         }
     };
 
+    const isDisabled = !isTrial && !canAdd;
+    const handleClick = isTrial && !canAdd ? () => setShowTrialPrompt('gateways') : addGateway;
+
     return (
         <>
             {isAdmin && (
@@ -529,7 +539,9 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                             size="small"
                             color="norm"
                             shape={canAdd ? 'outline' : 'solid'}
-                            onClick={getCustomizeSubscriptionOpener('dashboard')}
+                            onClick={
+                                isTrial ? () => setShowTrialPrompt(SERVERS) : getCustomizeSubscriptionOpener(DASHBOARD)
+                            }
                             title={c('Title').t`Customize the number of IP addresses in your plan`}
                         >
                             {c('Action').t`Get more servers`}
@@ -544,8 +556,8 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         <div className="mb-4">
                             <Button
                                 color="norm"
-                                disabled={!canAdd}
-                                onClick={addGateway}
+                                disabled={isDisabled}
+                                onClick={handleClick}
                                 title={c('Title').t`Create a new Gateway`}
                             >
                                 {c('Action').t`Create Gateway`}
@@ -621,8 +633,8 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         <div>
                             <Button
                                 color="norm"
-                                disabled={!canAdd}
-                                onClick={addGateway}
+                                disabled={!isTrial && !canAdd}
+                                onClick={isTrial && !canAdd ? () => setShowTrialPrompt('gateways') : addGateway}
                                 title={c('Title').t`Create a new gateway`}
                             >
                                 {c('Action').t`Create Gateway`}
@@ -630,6 +642,41 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         </div>
                     )}
                 </EmptyViewContainer>
+            )}
+
+            {!!showTrialPrompt && (
+                <Prompt
+                    open={!!showTrialPrompt}
+                    title={
+                        showTrialPrompt === SERVERS
+                            ? c('Title').t`Cannot add servers`
+                            : c('Title').t`Cannot add Gateway`
+                    }
+                    buttons={[
+                        <Button
+                            color="norm"
+                            onClick={() => {
+                                setShowTrialPrompt(undefined);
+                            }}
+                            type="submit"
+                        >{c('Action').t`Got it`}</Button>,
+                    ]}
+                    onClose={() => {
+                        setShowTrialPrompt(undefined);
+                    }}
+                >
+                    {showTrialPrompt === SERVERS
+                        ? c('Body').ngettext(
+                              msgid`Your free trial includes ${ipAddresses} dedicated server. You can add more servers once your full subscription starts.`,
+                              `Your free trial includes ${ipAddresses} dedicated servers. You can add more servers once your full subscription starts.`,
+                              ipAddresses
+                          )
+                        : c('Body').ngettext(
+                              msgid`Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.`,
+                              `All your dedicated servers are already assigned to Gateways. You’ll be able to buy more servers once your free trial ends.`,
+                              ipAddresses
+                          )}
+                </Prompt>
             )}
         </>
     );
