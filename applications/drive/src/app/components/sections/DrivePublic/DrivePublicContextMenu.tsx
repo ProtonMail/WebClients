@@ -66,6 +66,9 @@ export function DrivePublicContextMenu({
                     />
                 )}
                 {(showPreviewButton || showOpenInDocsButton) && <ContextSeparator />}
+                {showDownloadButton && (
+                    <DownloadButton selectedBrowserItems={selectedLinks} openInDocs={openInDocs} close={close} />
+                )}
                 {/* // Hide button with scan as docs can't be scanned */}
                 {isDownloadScanEnabled && showDownloadButton && !showOpenInDocsButton && (
                     <DownloadButton
@@ -74,9 +77,6 @@ export function DrivePublicContextMenu({
                         close={close}
                         virusScan
                     />
-                )}
-                {showDownloadButton && (
-                    <DownloadButton selectedBrowserItems={selectedLinks} openInDocs={openInDocs} close={close} />
                 )}
                 {!viewOnly && isOnlyOneItem && (
                     <>
