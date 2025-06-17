@@ -2,7 +2,6 @@ import type { ForwardRefRenderFunction } from 'react';
 import { forwardRef, useMemo } from 'react';
 
 import { type Locale, parse } from 'date-fns';
-import formatISO from 'date-fns/formatISO';
 import { type FieldProps } from 'formik';
 
 import { type Input } from '@proton/atoms';
@@ -10,7 +9,7 @@ import { DateInputTwo, InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
 import { type Maybe } from '@proton/pass/types/utils';
-import { formatPlaceholder } from '@proton/pass/utils/time/format';
+import { formatISODate, formatPlaceholder } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 
 export type Props = FieldProps<string> & InputFieldProps<typeof Input>;
@@ -45,7 +44,7 @@ const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
     }, [value]);
 
     const handleDateChange = (date: Maybe<Date>): void => {
-        const stringValue = date ? formatISO(date).split('T')[0] : '';
+        const stringValue = date ? formatISODate(date) : '';
         onChange?.(stringValue);
     };
 
