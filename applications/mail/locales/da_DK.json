@@ -495,9 +495,6 @@
       "Expand composer": [
         "Udvid skrivevinduet"
       ],
-      "Expand navigation bar to see custom views": [
-        "Udvid navigationsbjælken for se tilpassede visninger"
-      ],
       "Expand navigation bar to see folders": [
         "Udvid navigationsbjælke for at se mapper"
       ],
@@ -626,9 +623,6 @@
       ],
       "Hide messages": [
         "Skjul beskeder"
-      ],
-      "Hide my email": [
-        "Skjul min e-mail"
       ],
       "Hide toolbar": [
         "Skjul værktøjslinjen"
@@ -895,6 +889,9 @@
       "Move to trash": [
         "Flyt til papirkurv"
       ],
+      "Move to Trash": [
+        "Flyt til papirkurv"
+      ],
       "Move to...": [
         "Flyt til..."
       ],
@@ -1108,9 +1105,6 @@
       "Restore": [
         "Gendan"
       ],
-      "Resubscribe": [
-        "Abonner igen"
-      ],
       "Resume": [
         "Genoptag"
       ],
@@ -1162,10 +1156,10 @@
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vælg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Vælg alle"
       ],
       "Select all messages": [
@@ -1441,11 +1435,11 @@
       "Upgrade": [
         "Opgradér"
       ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
       "Upgrade Now": [
         "Opgradere nu"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ],
       "Upload and share files": [
         "Upload og del filer"
@@ -3190,9 +3184,6 @@
       ],
       "Macao": [
         "Macau"
-      ],
-      "Macedonia": [
-        "Makedonien"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -6018,6 +6009,10 @@
         "${ pureAttachmentsCount } fil vedhæftet",
         "${ pureAttachmentsCount } filer vedhæftet"
       ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } e-mail i sidste måned",
+        "${ receivedMessagesCount } e-mails i sidste måned"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalendere"
@@ -6037,9 +6032,9 @@
       "${ storage } storage": [
         "${ storage } lagerplads"
       ],
-      "${ subscription.ReceivedMessages.Last30Days } email last month": [
-        "${ subscription.ReceivedMessages.Last30Days } e-mail sidste måned",
-        "${ subscription.ReceivedMessages.Last30Days } e-mails sidste måned"
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } ulæst",
+        "${ subscription.UnreadMessageCount } ulæste"
       ],
       "${ total } conversation": [
         "${ total } samtale",
@@ -6056,6 +6051,10 @@
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } tracker blokeret",
         "${ trackersCount } trackere blokeret"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } ulæst nyhed",
+        "${ unreadCount } ulæste nyheder"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } planlagt besked",
@@ -6081,9 +6080,9 @@
       "(No Recipient)": [
         "(Ingen modtager)"
       ],
-      "**${ elementsFoundCount }** result found in ${ labelName }": [
-        "**${ elementsFoundCount }** resultat fundet i ${ labelName }",
-        "**${ elementsFoundCount }** resultater fundet i ${ labelName }"
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** resultat fundet i ${ labelName }",
+        "**${ total }** resultater fundet i ${ labelName }"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus lagerplads"
@@ -6930,9 +6929,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
-      ],
-      "More infos": [
-        "Mere info"
       ],
       "More refine actions": [
         "Mere præcise handlinger"
@@ -8011,6 +8007,10 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev \"${ attachmentsFoundKeyword }\", men der er ikke tilføjet en vedhæftning. Vil du sende din besked alligevel?"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }.",
+        "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }"
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du har nået det maksimale antal adresser i kontaktgruppen(erne):"
       ],
@@ -8095,6 +8095,10 @@
       ],
       "Your private writing assistant": [
         "Din private skriveassistent"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Dit planlagte abonnement starter ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
+        "Dit planlagte abonnement starter ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
@@ -8434,11 +8438,11 @@
       "AND": [
         "OG"
       ],
-      "And": [
-        "Og"
-      ],
       "and": [
         "og"
+      ],
+      "And": [
+        "Og"
       ],
       "Anderson": [
         "Andersen"
@@ -8659,11 +8663,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "HVIS"
-      ],
       "If": [
         "Hvis"
+      ],
+      "IF": [
+        "HVIS"
       ],
       "Import all messages": [
         "Importer alle beskeder"
@@ -8728,6 +8732,10 @@
       "Mark as": [
         "Markér som"
       ],
+      "Marked ${ unreadCount } message as read.": [
+        "Markerede ${ unreadCount } besked som læst.",
+        "Markerede ${ unreadCount } beskeder som læst."
+      ],
       "Move ${ sidebarElementName }": [
         "Flyt ${ sidebarElementName }"
       ],
@@ -8742,6 +8750,18 @@
       ],
       "Move to Inbox": [
         "Flyt til Indbakke"
+      ],
+      "Moved ${ count } message to ${ selectedFolder.Name }.": [
+        "Flyttede ${ count } besked til ${ selectedFolder.Name }.",
+        "Flyttede ${ count } beskeder til ${ selectedFolder.Name }."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Flyttede ${ count } besked til arkiv",
+        "Flyttede ${ count } beskeder til arkiv"
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Flyttede ${ count } besked til papirkurven.",
+        "Flyttede ${ count } beskeder til papirkurven."
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Skal være mindst ${ MIN_PASSWORD_LENGTH } tegn"
@@ -8785,11 +8805,11 @@
       "Optional": [
         "Valgfrit"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Or": [
         "Eller"
@@ -8904,9 +8924,6 @@
       ],
       "System information": [
         "Systemoplysninger"
-      ],
-      "The filter is disabled. You can enable it ${ settingsLink }": [
-        "Filteret er deaktiveret. Du kan aktivere det her ${ settingsLink }"
       ],
       "Theme": [
         "Tema"
@@ -9132,9 +9149,6 @@
       ],
       "Folders": [
         "Mapper"
-      ],
-      "here": [
-        "her"
       ],
       "How to add users": [
         "Sådan tilføjes brugere"
@@ -9664,14 +9678,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Få ${ planTitle }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -9693,6 +9699,14 @@
       ],
       "Switch plan": [
         "Skift abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Få ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10538,9 +10552,6 @@
       ],
       "Require 2FA": [
         "Kræve 2FA"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
       ]
     },
     "Notification": {
@@ -11042,6 +11053,10 @@
       "terms & conditions": [
         "vilkår og betingelser"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kuponen er gyldig til ${ couponRedemptions } fornyelse",
+        "Kuponen er gyldig til ${ couponRedemptions } fornyelser"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den særlige udsalgspris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måned.",
         "Den særlige udsalgspris på ${ priceWithDiscount } gælder for de første ${ subscriptionLength } måneder."
@@ -11052,6 +11067,10 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den særlige rabatpris på ${ priceWithDiscount } er gyldig i den første måned. Derefter fornys den automatisk til ${ renewPriceStr } hver måned. Du kan annullere når som helst."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måned. Du kan annullere det når som helst.",
+        "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måneder. Du kan annullere det når som helst."
       ],
       "Timeout exceeded": [
         "Timeout overskredet"
@@ -12274,10 +12293,6 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-forbindelse pr. bruger",
         "${ n } VPN-forbindelser pr. bruger"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "VPN-forbindelse til ${ n } enheder per bruger",
-        "VPN-forbindelse til ${ n } enheder per bruger"
       ]
     },
     "Subscription change warning": {
@@ -12316,47 +12331,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Til ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
       ]
     },
     "Subscription reminder": {
@@ -12614,6 +12588,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -13062,6 +13077,24 @@
         "I går"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dage"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } time",
+        "${ ceilHours } timer"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minutter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours }. time",
@@ -13135,6 +13168,10 @@
       ],
       "${ feature } is now active": [
         "${ feature } er nu aktiv"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } besked",
+        "${ numMessages } beskeder"
       ],
       "${ unreads } unread message": [
         "${ unreads } ulæst besked",
@@ -13705,9 +13742,6 @@
       "No trackers found": [
         "Ingen trackere fundet"
       ],
-      "No unsubscribed mail subscriptions": [
-        "ingen afmeldte e-mail abonnementer"
-      ],
       "No-reply address detected": [
         "Ingen svar-adresse fundet"
       ],
@@ -14203,6 +14237,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } lande"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Auto-vælger fra ${ numberOfCountries } land",
+        "Auto-vælger fra ${ numberOfCountries } lande"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Servere i ${ numberOfCountries }+ land",
