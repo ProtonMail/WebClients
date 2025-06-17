@@ -261,9 +261,9 @@
             "notes": null,
             "favorite": false,
             "sshKey": {
-                "privateKey": "-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW\nQyNTUxOQAAACBA4ST5etAz8tfxD8xlI4d9fI8+7LfWR0fOlro+SaVVJgAAAIitNdjOrTXY\nzgAAAAtzc2gtZWQyNTUxOQAAACBA4ST5etAz8tfxD8xlI4d9fI8+7LfWR0fOlro+SaVVJg\nAAAEAiXDmU+cMB5q9IG6KhaLkD9b2oeE6uNRFEnTEiaV6+GkDhJPl60DPy1/EPzGUjh318\njz7st9ZHR86Wuj5JpVUmAAAAAAECAwQF\n-----END OPENSSH PRIVATE KEY-----\n",
-                "publicKey": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEDhJPl60DPy1/EPzGUjh318jz7st9ZHR86Wuj5JpVUm",
-                "keyFingerprint": "SHA256:KUCXNPIo4X8eqoqRyX5ca4zmL2TA2lSJRssP7nHl+qs"
+                "privateKey": "-----BEGIN TEST -----\n00000000000000\n-----END TEST-----\n",
+                "publicKey": "ssh-ed25519 000000000",
+                "keyFingerprint": "SHA256:000000000"
             },
             "collectionIds": null
         }
