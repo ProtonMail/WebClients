@@ -10,11 +10,13 @@ import { createExtraField } from '@proton/pass/components/Form/Field/ExtraFieldG
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { BaseTextField } from '@proton/pass/components/Form/Field/TextField';
-import { IdentityAddNewSection } from '@proton/pass/components/Item/Identity/Identity.modal';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
+import { UpsellRef } from '@proton/pass/constants';
 import type { ExtraSectionsError } from '@proton/pass/lib/validation/identity';
 import type { CustomItemFormValues, DeobfuscatedItemExtraField, ExtraFieldType, Maybe } from '@proton/pass/types';
 import { autofocusInput } from '@proton/pass/utils/dom/input';
+
+import { CustomNewSection } from './Custom.sections.new';
 
 type Props = { form: FormikContextType<CustomItemFormValues> };
 
@@ -89,7 +91,8 @@ export const CustomFormSections: FC<Props> = ({ form }) => {
 
                     <hr className="my-4" />
 
-                    <IdentityAddNewSection
+                    <CustomNewSection
+                        upsellRef={UpsellRef.CUSTOM_ITEMS}
                         onAdd={(sectionName: string) =>
                             extraSectionsHelpers.push({
                                 sectionName,
