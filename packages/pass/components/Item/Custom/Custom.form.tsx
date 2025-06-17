@@ -57,7 +57,7 @@ export const CustomForm = <T extends ItemType>({
 
                 <CustomTypeFields type={form.values.type} />
 
-                <ExtraFieldGroup form={form} />
+                <CustomFormSections form={form} />
 
                 <FieldsetCluster>
                     <Field
@@ -69,6 +69,8 @@ export const CustomForm = <T extends ItemType>({
                         maxLength={MAX_ITEM_NOTE_LENGTH}
                     />
                 </FieldsetCluster>
+
+                <ExtraFieldGroup form={form} />
 
                 <FieldsetCluster>
                     {revision ? (
@@ -83,8 +85,6 @@ export const CustomForm = <T extends ItemType>({
                         <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                     )}
                 </FieldsetCluster>
-
-                <CustomFormSections form={form} />
             </Form>
         </FormikProvider>
     );
