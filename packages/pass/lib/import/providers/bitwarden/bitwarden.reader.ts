@@ -17,29 +17,14 @@ import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/ty
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
-import { type BitwardenData, type BitwardenItem, BitwardenType } from './bitwarden.types';
+import { type BitwardenData, BitwardenType } from './bitwarden.types';
 import {
     extractBitwardenExtraFields,
     extractBitwardenIdentity,
+    extractBitwardenSSHSections,
     extractBitwardenUrls,
     formatBitwardenCCExpirationDate,
 } from './bitwarden.utils';
-
-const BitwardenTypeMap: Record<number, string> = {
-    1: 'Login',
-    2: 'Note',
-    3: 'Credit Card',
-    4: 'Identification',
-};
-
-const addCustomFieldsWarning = (ignored: string[], item: BitwardenItem) => {
-    if (item.fields) {
-        ignored.push(
-            // Translator: The item name and a colon will precede the warning message, e.g. "[My login]: item was imported without custom fields"
-            `[${BitwardenTypeMap[item.type]}] ${item.name}: ${c('Warning').t`item was imported without custom fields`}`
-        );
-    }
-};
 
 export const readBitwardenData = async (
     file: File,
@@ -86,13 +71,12 @@ export const readBitwardenData = async (
                                     ...(await getEmailOrUsername(item.login.username)),
                                 });
                             case BitwardenType.NOTE:
-                                addCustomFieldsWarning(ignored, item);
                                 return importNoteItem({
                                     name: item.name,
                                     note: item.notes,
+                                    extraFields: extractBitwardenExtraFields(item.fields),
                                 });
                             case BitwardenType.CREDIT_CARD:
-                                addCustomFieldsWarning(ignored, item);
                                 return importCreditCardItem({
                                     name: item.name,
                                     note: item.notes,
@@ -100,6 +84,7 @@ export const readBitwardenData = async (
                                     number: item.card.number,
                                     verificationNumber: item.card.code,
                                     expirationDate: formatBitwardenCCExpirationDate(item),
+                                    extraFields: extractBitwardenExtraFields(item.fields),
                                 });
                             case BitwardenType.IDENTITY:
                                 return importIdentityItem({
@@ -108,32 +93,13 @@ export const readBitwardenData = async (
                                     ...extractBitwardenIdentity(item),
                                 });
                             case BitwardenType.SSH_KEY:
-                                const sections = ((): ItemImportIntent<'sshKey'>['content']['sections'] => {
-                                    if (item.sshKey.keyFingerprint) {
-                                        return [
-                                            {
-                                                sectionName: c('Label').t`Additional data`,
-                                                sectionFields: [
-                                                    {
-                                                        fieldName: c('Label').t`Key fingerprint`,
-                                                        type: 'hidden',
-                                                        data: { content: item.sshKey.keyFingerprint },
-                                                    },
-                                                ],
-                                            },
-                                        ];
-                                    }
-
-                                    return [];
-                                })();
-
                                 return importSshKeyItem({
                                     name: item.name,
                                     note: item.notes,
                                     publicKey: item.sshKey.publicKey,
                                     privateKey: item.sshKey.privateKey,
                                     extraFields: extractBitwardenExtraFields(item.fields),
-                                    sections,
+                                    sections: extractBitwardenSSHSections(item),
                                 });
                         }
                     })();

@@ -11,6 +11,8 @@ export enum BitwardenType {
 export enum BitwardenCustomFieldType {
     TEXT = 0,
     HIDDEN = 1,
+    CHECKBOX = 2,
+    LINKED = 3,
 }
 
 export type BitwardenCustomField = {
