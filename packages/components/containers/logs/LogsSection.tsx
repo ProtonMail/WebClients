@@ -39,7 +39,6 @@ const LogsSection = () => {
     const [settings] = useUserSettings();
     const [organization] = useOrganization();
     const [user] = useUser();
-    const [logAuth, setLogAuth] = useState(0);
     const protonSentinel = settings.HighSecurity.Value;
     const api = useApi();
     const [b2bState, setB2bState] = useState<{ logs: B2BAuthLog[]; total: number }>(INITIAL_STATE);
@@ -48,26 +47,16 @@ const LogsSection = () => {
     const [loading, withLoading] = useLoading();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
     const [loadingDownload, withLoadingDownload] = useLoading();
-    const [, withMonitoringInitializing] = useLoading();
     const [error, setError] = useState(false);
 
-    useEffect(() => {
-        void withMonitoringInitializing(
-            new Promise(async (resolve) => {
-                try {
-                    if (organization?.Settings?.LogAuth === 2) {
-                        setLogAuth(SETTINGS_LOG_AUTH_STATE.ADVANCED);
-                    } else if (organization?.Settings?.LogAuth === 1) {
-                        setLogAuth(SETTINGS_LOG_AUTH_STATE.BASIC);
-                    } else if (organization?.Settings?.LogAuth === 0) {
-                        setLogAuth(SETTINGS_LOG_AUTH_STATE.DISABLE);
-                    }
-                } catch (e) {
-                    resolve();
-                }
-            })
-        );
-    }, []);
+    const logAuth = (() => {
+        if (organization?.Settings?.LogAuth === 2) {
+            return SETTINGS_LOG_AUTH_STATE.ADVANCED;
+        } else if (organization?.Settings?.LogAuth === 1) {
+            return SETTINGS_LOG_AUTH_STATE.BASIC;
+        }
+        return SETTINGS_LOG_AUTH_STATE.DISABLE;
+    })();
 
     const handleDownload = async () => {
         const Logs = await getAllAuthenticationLogs(api);
@@ -87,19 +76,16 @@ const LogsSection = () => {
         downloadFile(blob, filename);
     };
 
-    // Handle updates from the event manager
-    useEffect(() => {
-        setLogAuth(settings.LogAuth);
-    }, [settings.LogAuth]);
-
     const latestRef = useRef<any>();
+
+    const hasB2BLogs = Boolean(settings?.OrganizationPolicy?.Enforced);
 
     const fetchAndSetState = async () => {
         const latest = {};
         latestRef.current = latest;
 
         try {
-            if (settings.OrganizationPolicy.Enforced === 1) {
+            if (hasB2BLogs) {
                 const query = {
                     Emails: [user.Email],
                 };
@@ -182,7 +168,7 @@ const LogsSection = () => {
                 </div>
             </div>
 
-            {settings.OrganizationPolicy.Enforced === 1 ? (
+            {hasB2BLogs ? (
                 <B2BAuthLogsTable
                     logs={b2bState.logs}
                     userSection={true}
