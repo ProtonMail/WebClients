@@ -29,6 +29,9 @@
       "Add domain": [
         "Προσθήκη domain"
       ],
+      "Add field": [
+        "Προσθήκη πεδίου"
+      ],
       "Add forwarding mailbox": [
         "Προσθήκη γραμματοκιβωτίου προώθησης"
       ],
@@ -152,11 +155,11 @@
       "Create": [
         "Δημιουργία"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Δημιουργία ενός ${ BRAND_NAME } λογαριασμού"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
       ],
       "Create alias": [
         "Δημιουργία ψευδώνυμου"
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Επανενεργοποίηση τώρα"
       ],
+      "Read More": [
+        "Διαβάστε περισότερα"
+      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Εμφάνιση περισσότερων επιλογών"
+      ],
+      "Show Less": [
+        "Εμφάνιση λιγότερων"
       ],
       "Sign back in": [
         "Συνδεθείτε ξανά"
@@ -1012,8 +1021,8 @@
       "File does not match expected format": [
         "Το αρχείο δεν ταιριάζει με την αναμενόμενη μορφή"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Η εισαγωγή απέτυχε για την κρύπτη \"${ vaultData.name }\" : ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Η εισαγωγή απέτυχε για την κρύπτη \"${ vaultData.name }\": ${ errorMessage }"
       ],
       "Importing items failed": [
         "Η εισαγωγή στοιχείων απέτυχε"
@@ -1144,6 +1153,9 @@
       "Unsupported 1Password file format": [
         "Μη υποστηριζόμενη μορφή αρχείου 1Password"
       ],
+      "Unsupported Bitwarden file format": [
+        "Μη υποστηριζόμενη μορφή αρχείου Bitwarden"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Η ενημέρωση της κρύπτης \"${ payload.content.name }\" απέτυχε"
       ],
@@ -1257,7 +1269,8 @@
         "${ count } προβολή",
         "${ count } προβολές"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } προβολή",
         "${ count }/${ maxReads } προβολές"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1791,6 +1804,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2503,6 +2520,9 @@
       "Add section": [
         "Προσθήκη ενότητας"
       ],
+      "Additional data": [
+        "Πρόσθετα δεδομένα"
+      ],
       "Additional details": [
         "Πρόσθετες Λεπτομέρειες"
       ],
@@ -2629,11 +2649,11 @@
       "Copy password": [
         "Αντιγραφή κωδικού πρόσβασης"
       ],
+      "Country": [
+        "Χώρα"
+      ],
       "Country or Region": [
         "Χώρα ή Περιοχή"
-      ],
-      "Country,": [
-        "Χώρα,"
       ],
       "County": [
         "Νομός"
@@ -2751,6 +2771,9 @@
       ],
       "Export": [
         "Εξαγωγή"
+      ],
+      "Extra fields": [
+        "Έξτρα πεδία"
       ],
       "Extra password": [
         "Επιπλέον κωδικός πρόσβασης"
@@ -2877,6 +2900,9 @@
       ],
       "Key": [
         "Κλειδί"
+      ],
+      "Key fingerprint": [
+        "Δακτυλικό αποτύπωμα κλειδιού"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Συντόμευση πληκτρολογίου: ${ shortcut }"
@@ -3046,11 +3072,11 @@
       "Passport": [
         "Διαβατήριο"
       ],
-      "Passport number": [
-        "Αριθμός διαβατηρίου"
-      ],
       "Passport Number": [
         "Αριθμός Διαβατηρίου"
+      ],
+      "Passport number": [
+        "Αριθμός διαβατηρίου"
       ],
       "Password": [
         "Κωδικός πρόσβασης"
@@ -3226,10 +3252,10 @@
       "Show website favicons": [
         "Εμφάνιση favicons ιστότοπου"
       ],
-      "Social Security": [
+      "Social security": [
         "Α.Φ.Μ."
       ],
-      "Social security": [
+      "Social Security": [
         "Α.Φ.Μ."
       ],
       "Social security number": [
@@ -3243,9 +3269,6 @@
       ],
       "SSH key": [
         "Κλειδί SSH"
-      ],
-      "SSH Keys": [
-        "Κλειδιά SSH"
       ],
       "SSN": [
         "Α.Μ.Κ.Α."
@@ -3399,9 +3422,6 @@
       ],
       "WiFi network": [
         "Δίκτυο WiFi"
-      ],
-      "WiFi Networks": [
-        "Δίκτυα WiFi"
       ],
       "Work details": [
         "Λεπτομέρειες εργασίας"
@@ -3601,9 +3621,6 @@
       "Add 2FA secret key": [
         "Προσθέστε μυστικό κλειδί 2FA"
       ],
-      "Add date": [
-        "Προσθήκη ημερομηνίας"
-      ],
       "Add hidden text": [
         "Προσθήκη κρυφού κειμένου"
       ],
@@ -3699,9 +3716,6 @@
       ],
       "Used on ${ url }": [
         "Χρησιμοποιείται στο ${ url }"
-      ],
-      "Write your note": [
-        "Γράψτε τη σημείωσή σας"
       ]
     },
     "sso": {
@@ -4272,6 +4286,11 @@
       ],
       "URL is invalid": [
         "Η διεύθυνση URL δεν είναι έγκυρη"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Μετακίνηση στοιχείων σε"
       ]
     },
     "Warning": {

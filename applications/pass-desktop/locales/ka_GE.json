@@ -46,6 +46,9 @@
       "Add domain": [
         "დომენის დამატება"
       ],
+      "Add field": [
+        "ველის დამატება"
+      ],
       "Add forwarding mailbox": [
         "გადაგზავნადი საფოსტო ყუთის დამატება"
       ],
@@ -403,10 +406,10 @@
       "Move to another vault": [
         "სხვა საცავში გადატანა"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
       "Multiple select": [
@@ -462,6 +465,9 @@
       ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
+      ],
+      "Read More": [
+        "მეტის წაკითხვა"
       ],
       "Refresh the page": [
         "გვერდის განახლება"
@@ -579,6 +585,9 @@
       ],
       "Show advanced options": [
         "დამატებითი პარამეტრების ჩვენება"
+      ],
+      "Show Less": [
+        "ნაკლების ჩვენება"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME }-ით შესვლა"
@@ -1061,9 +1070,6 @@
       "File does not match expected format": [
         "ფაილი არ ემთხვევა სასურველ ფორმატს"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "შემოტანა ჩავარდა საცავისთვის \"${ vaultData.name }\" : ${ errorMessage }"
-      ],
       "Importing items failed": [
         "ელემენტების შემოტანის შეცდომა"
       ],
@@ -1327,7 +1333,8 @@
         "${ count } ხედი",
         "${ count } ხედი"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } ნახვა",
         "${ count }/${ maxReads } ნახვა"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -2679,11 +2686,11 @@
       "Copy": [
         "კოპირება"
       ],
+      "Country": [
+        "ქვეყანა"
+      ],
       "Country or Region": [
         "ქვეყანა ან რეგიონი"
-      ],
-      "Country,": [
-        "ქვეყანა,"
       ],
       "County": [
         "საგრაფო"
@@ -3159,10 +3166,10 @@
       "Passport": [
         "პასპორტი"
       ],
-      "Passport number": [
+      "Passport Number": [
         "პასპორტის ნომერი"
       ],
-      "Passport Number": [
+      "Passport number": [
         "პასპორტის ნომერი"
       ],
       "Password": [
@@ -3216,10 +3223,10 @@
       "Priority:": [
         "პრიორიტეტი:"
       ],
-      "Private Key": [
+      "Private key": [
         "პირადი გასაღები"
       ],
-      "Private key": [
+      "Private Key": [
         "პირადი გასაღები"
       ],
       "Product": [
@@ -3327,6 +3334,9 @@
       "Share": [
         "გაზიარება"
       ],
+      "Share ID": [
+        "ID-ის გაზიარება"
+      ],
       "Shared": [
         "გაზიარებული"
       ],
@@ -3362,9 +3372,6 @@
       ],
       "SSH key": [
         "SSH გასაღები"
-      ],
-      "SSH Keys": [
-        "SSH გასაღებები"
       ],
       "SSN": [
         "SSN"
@@ -3545,9 +3552,6 @@
       ],
       "WiFi network": [
         "Wi-Fi ქსელი"
-      ],
-      "WiFi Networks": [
-        "Wi-Fi ქსელები"
       ],
       "Work details": [
         "სამსახურის დეტალები"
@@ -3793,9 +3797,6 @@
       "Add 2FA secret key": [
         "2FA საიდუმლო გასაღების დამატება"
       ],
-      "Add date": [
-        "თარიღის დამატება"
-      ],
       "Add hidden text": [
         "ფარული ტექსტის დამატება"
       ],
@@ -3891,9 +3892,6 @@
       ],
       "Used on ${ url }": [
         "გამოიყენება ${ url } -ზე"
-      ],
-      "Write your note": [
-        "დაწერეთ თქვენი შენიშვნა"
       ]
     },
     "Security Center - Info": {

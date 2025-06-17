@@ -510,9 +510,6 @@
       "Expand composer": [
         "Celá obrazovka"
       ],
-      "Expand navigation bar to see custom views": [
-        "Rozbaliť navigačný panel pre zobrazenie vlastných zobrazení"
-      ],
       "Expand navigation bar to see folders": [
         "Rozbaliť navigačný panel pre zobrazenie priečinkov"
       ],
@@ -647,9 +644,6 @@
       ],
       "Hide more benefits": [
         "Skryť viac výhod"
-      ],
-      "Hide my email": [
-        "Hide my email"
       ],
       "Hide toolbar": [
         "Skryť panel nástrojov"
@@ -924,6 +918,9 @@
       "Move to trash": [
         "Presunúť do koša"
       ],
+      "Move to Trash": [
+        "Presunúť do koša"
+      ],
       "Move to...": [
         "Presunúť do…"
       ],
@@ -1137,9 +1134,6 @@
       "Restore": [
         "Obnoviť"
       ],
-      "Resubscribe": [
-        "Obnoviť odber"
-      ],
       "Resume": [
         "Pokračovať"
       ],
@@ -1191,10 +1185,10 @@
       "Select ${ planTitle }": [
         "Vybrať ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrať všetko"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrať všetko"
       ],
       "Select all messages": [
@@ -1473,11 +1467,11 @@
       "Upgrade": [
         "Prejsť na platený plán"
       ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
       "Upgrade Now": [
         "Inovovať teraz"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
       ],
       "Upload and share files": [
         "Nahrávanie a zdieľanie súborov"
@@ -3255,9 +3249,6 @@
       ],
       "Macao": [
         "Macao"
-      ],
-      "Macedonia": [
-        "Severné Macedónsko"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -6322,12 +6313,6 @@
       "${ storage } storage": [
         "${ storage } úložisko"
       ],
-      "${ subscription.ReceivedMessages.Last30Days } email last month": [
-        "${ subscription.ReceivedMessages.Last30Days } email za posledný mesiac",
-        "${ subscription.ReceivedMessages.Last30Days } emaily za posledný mesiac",
-        "${ subscription.ReceivedMessages.Last30Days } emailov za posledný mesiac",
-        "${ subscription.ReceivedMessages.Last30Days } emailov za posledný mesiac"
-      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } neprečítaná",
         "${ subscription.UnreadMessageCount } neprečítané",
@@ -6390,12 +6375,6 @@
       ],
       "(No Recipient)": [
         "(žiaden príjemca)"
-      ],
-      "**${ elementsFoundCount }** result found in ${ labelName }": [
-        "**${ elementsFoundCount }** výsledok nájdený v ${ labelName }",
-        "**${ elementsFoundCount }** výsledky nájdené v ${ labelName }",
-        "**${ elementsFoundCount }** výsledkov nájdených v ${ labelName }",
-        "**${ elementsFoundCount }** výsledkov nájdených v ${ labelName }"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Automatické pripojenie**: Otvorí sa a pripojí k VPN hneď po zapnutí zariadenia."
@@ -7329,9 +7308,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Mesačne ${ onDayString }"
-      ],
-      "More infos": [
-        "Viac informácií"
       ],
       "More refine actions": [
         "Ďalšie spresnenie akcií"
@@ -8969,11 +8945,11 @@
       "AND": [
         "A"
       ],
-      "And": [
-        "A"
-      ],
       "and": [
         "a"
+      ],
+      "And": [
+        "A"
       ],
       "Anderson": [
         "Anderson"
@@ -9197,11 +9173,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "AK"
-      ],
       "If": [
         "Ak"
+      ],
+      "IF": [
+        "AK"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -9265,12 +9241,6 @@
       ],
       "Mark as": [
         "Označiť ako"
-      ],
-      "Marked ${ count } message as read.": [
-        "${ count } správa označená ako prečítaná",
-        "${ count } správy označené ako prečítané",
-        "${ count } správ označených ako prečítané",
-        "${ count } správ označených ako prečítané"
       ],
       "Move ${ sidebarElementName }": [
         "Presunúť ${ sidebarElementName }"
@@ -9344,11 +9314,11 @@
       "Optional": [
         "Voliteľné"
       ],
-      "OR": [
-        "ALEBO"
-      ],
       "or": [
         "alebo"
+      ],
+      "OR": [
+        "ALEBO"
       ],
       "Or": [
         "Alebo"
@@ -9463,9 +9433,6 @@
       ],
       "System information": [
         "Systémové informácie"
-      ],
-      "The filter is disabled. You can enable it ${ settingsLink }": [
-        "Filter je vypnutý. Môžete ho povoliť v ${ settingsLink }"
       ],
       "Theme": [
         "Motív"
@@ -9620,9 +9587,6 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will appear here.": [
-        "Tu sa zobrazia newslettery, u ktorých zrušíte odber."
-      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Tu si môžete zobraziť a spravovať odber noviniek a odber z emailového zoznamu."
       ]
@@ -9705,9 +9669,6 @@
       ],
       "Folders": [
         "Priečinky"
-      ],
-      "here": [
-        "tu"
       ],
       "How to add users": [
         "Ako pridať používateľov"
@@ -10259,14 +10220,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Získať ${ planTitle }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -10288,6 +10241,14 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Získať ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10881,9 +10842,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný prístup k internetu odkiaľkoľvek so základným monitorovaním siete"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpečné cloudové úložisko, ktoré vám umožní ukladať, synchronizovať a zdieľať súbory jednoducho a bezpečne."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
       ],
@@ -11206,9 +11164,6 @@
       ],
       "Require 2FA": [
         "Vyžadovať 2FA"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Podpora pre ${ n } vlastné emailové domény"
       ]
     },
     "Notification": {
@@ -13101,12 +13056,6 @@
         "${ n } VPN pripojenia na používateľa",
         "${ n } VPN pripojení na používateľa",
         "${ n } VPN pripojení na používateľa"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "VPN pripojenie pre ${ n } zariadenie na používateľa",
-        "VPN pripojenie pre ${ n } zariadenia na používateľa",
-        "VPN pripojenie pre ${ n } zariadení na používateľa",
-        "VPN pripojenie pre ${ n } zariadení na používateľa"
       ]
     },
     "Subscription change warning": {
@@ -13145,47 +13094,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription reminder": {
@@ -13458,6 +13366,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -14657,9 +14606,6 @@
       "No trackers found": [
         "Neboli nájdené žiadne trackery."
       ],
-      "No unsubscribed mail subscriptions": [
-        "Žiadne odhlásené mailové predplatné"
-      ],
       "No-reply address detected": [
         "Bola identifikovaná adresa neprijímajúca odpovede"
       ],
@@ -15001,9 +14947,6 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } days": [
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní"
       ],
       "Your free trial has ended": [
         "Vaša bezplatná skúšobná verzia vypršala"

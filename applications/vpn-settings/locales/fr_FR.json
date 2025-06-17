@@ -267,11 +267,11 @@
       "Discard": [
         "Abandonner"
       ],
-      "Discard Changes": [
-        "Abandonner les changements"
-      ],
       "Discard changes": [
         "Abandonner les modifications"
+      ],
+      "Discard Changes": [
+        "Abandonner les changements"
       ],
       "Discover ${ planName }": [
         "Découvrez ${ planName }"
@@ -843,6 +843,9 @@
       "Try another method": [
         "Essayer une autre méthode"
       ],
+      "Try for free": [
+        "Essayer gratuitement"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Réessayez d'enregistrer. L'enregistrement n'a pas abouti pour la raison suivante : ${ saveError }"
       ],
@@ -1090,9 +1093,160 @@
         "Nouveau message"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Profitez de l'offre"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "200 GB storage": [
+        "200 Go d'espace de stockage"
+      ],
+      "500 GB encrypted storage": [
+        "500 Go d'espace de stockage chiffré"
+      ],
+      "Add unlimited credit cards": [
+        "Ajoutez un nombre illimité de cartes de paiement"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Toutes les fonctionnalités premium de ${ BRAND_NAME } Mail, Pass, VPN, Drive et Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquez les pubs, traqueurs et logiciels malveillants"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Les réductions sont basées sur les tarifs mensuels standards. À la fin du cycle de facturation, votre abonnement sera renouvelé au tarif annuel standard."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Doublez votre espace de stockage chiffré et bénéficiez de 1 To pour toutes vos données."
+      ],
+      "Encrypted password manager": [
+        "Gestionnaire de mots de passe chiffré"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Voici un cadeau exclusif pour célébrer notre parcours ensemble."
+      ],
+      "High speed streaming with VPN": [
+        "Streaming ultra rapide avec VPN"
+      ],
+      "of privacy": [
+        "du respect de la vie privée"
+      ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
+      "Online privacy for up to 2 people": [
+        "Confidentialité en ligne pour jusqu’à 2 personnes"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Respect de la vie privée en ligne pour toute votre famille (jusqu'à 6 utilisateurs)"
+      ],
+      "Protect up to 10 devices": [
+        "Protégez jusqu’à 10 appareils."
+      ],
+      "Recover previous file versions": [
+        "Récupérez les versions précédentes de vos fichiers"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Réalisez d'importantes économies sur les fonctionnalités premium de Drive en profitant d'une réduction à durée limitée."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Réalisez d'importantes économies sur les fonctionnalités premium de Mail en profitant d'une réduction à durée limitée."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Réalisez d'importantes économies sur les fonctionnalités premium de Pass en profitant d'une réduction à durée limitée."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Réalisez d'importantes économies sur les fonctionnalités premium de VPN en profitant d'une réduction à durée limitée."
+      ],
+      "Save time with built-in 2FA": [
+        "Gagnez du temps avec l’A2F intégrée"
+      ],
+      "Secure email with unlimited aliases": [
+        "Boîte mail sécurisée avec alias illimités"
+      ],
+      "Select any server": [
+        "Sélectionnez un serveur"
+      ],
+      "Share passwords easily": [
+        "Partagez facilement vos mots de passe"
+      ],
+      "Short @pm.me address": [
+        "Adresse @pm.me courte"
+      ],
+      "Stream your favorite content": [
+        "Accédez à vos services de streaming"
+      ],
+      "thanks to you": [
+        "grâce à vous"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Triplez votre espace de stockage chiffré et bénéficiez de 3 To pour toutes vos données."
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nombre illimité de dossiers, labels et filtres"
+      ],
+      "Use your own email domain": [
+        "Utilisez vos propres domaines de messagerie"
+      ],
+      "years": [
+        "années"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Offre anniversaire"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
+      ],
+      "/ month": [
+        "/mois"
+      ],
+      "12 months": [
+        "12 mois"
+      ],
+      "15 months": [
+        "15 mois"
+      ],
+      "24 months": [
+        "24 mois"
+      ],
+      "30 months": [
+        "30 mois"
+      ],
+      "for ${ durationDeal }": [
+        "pour ${ durationDeal }"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails."
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ cycle } mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      ],
+      "on ${ formattedDate }": [
+        "le ${ formattedDate }"
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Montant dû après la période d'essai"
+      ],
+      "Amount due now": [
+        "Montant dû maintenant"
       ]
     },
     "Badge for domain": {
@@ -2104,9 +2258,6 @@
       "Macao": [
         "Macao"
       ],
-      "Macedonia": [
-        "Macédoine"
-      ],
       "Madagascar": [
         "Madagascar"
       ],
@@ -2819,7 +2970,7 @@
       "Download for Linux": [
         "Télécharger la version pour Linux"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Télécharger la version pour macOS"
       ],
       "Download for Windows": [
@@ -4009,6 +4160,9 @@
       "Organization key fingerprint": [
         "Empreinte de la clé de l'organisation"
       ],
+      "Payment details": [
+        "Informations de paiement"
+      ],
       "Protection": [
         "protection"
       ],
@@ -4229,6 +4383,10 @@
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } adresse de plus",
         "${ remainingAddresses.length } adresses de plus"
+      ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } résultat trouvé",
+        "${ resultsCount } résultats trouvés"
       ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length } sélectionné",
@@ -5440,6 +5598,9 @@
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
       ],
+      "Starts on ${ startsOnTime }": [
+        "Débute le ${ startsOnTime }"
+      ],
       "Step ${ step }": [
         "Étape ${ step }",
         "Étape ${ step }"
@@ -5745,11 +5906,11 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "username": [
-        "nom d'utilisateur"
-      ],
       "Username": [
         "Nom d'utilisateur"
+      ],
+      "username": [
+        "nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -7874,6 +8035,12 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } vous permet de créer des adresses e-mail et de gérer les comptes utilisateurs de votre organisation. Idéal pour les familles et les entreprises."
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 To d'espace de stockage cloud qui vous permet de stocker, synchroniser et partager des fichiers facilement. Sécurisé par un chiffrement de bout en bout."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 Go d'espace de stockage cloud qui vous permet de stocker, synchroniser et partager des fichiers facilement. Sécurisé par un chiffrement de bout en bout."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Bénéficiez d'une sécurité de réseau et d'une gestion d'accès avancées grâce à des passerelles sécurisées dédiées."
       ],
@@ -7933,9 +8100,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Accédez à internet en toute sécurité, où que vous soyez, avec les fonctionnalités essentielles de surveillance du réseau."
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Un stockage cloud sécurisé qui vous permet de stocker, synchroniser et partager des fichiers facilement et en toute sécurité."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "La messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
@@ -7999,17 +8163,6 @@
         "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -8022,6 +8175,17 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -8304,7 +8468,8 @@
       "Require 2FA": [
         "Demande d'authentification A2F"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "Prise en charge pour ${ n } domaine de messagerie personnalisé",
         "Prise en charge pour ${ n } domaines de messagerie personnalisés"
       ]
     },
@@ -8542,14 +8707,44 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " consultez notre ${ helpCenterLink } ou ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Annulez à tout moment avant le ${ cancelDate }."
+      ],
       "Cancel anytime before then.": [
         "Annulez à tout moment avant cette date."
+      ],
+      "contact our support team": [
+        "contactez notre équipe de support"
+      ],
+      "Continue": [
+        "Continuer"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Profitez de fonctionnalités de sécurité professionnelles gratuites jusqu'au ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "Aide & Support"
+      ],
+      "If you need help,": [
+        "Si vous avez besoin d'aide,"
       ],
       "Once your full subscription starts...": [
         "Une fois que votre abonnement complet commence..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Vous pouvez toujours annuler dans les 30 jours et obtenir un remboursement proportionnel."
+      ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "Vous pouvez toujours annuler dans les 30 jours et obtenir un remboursement proportionnel."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Vous pouvez utiliser ${ planTitle } jusqu'à la fin de la version d'essai et vous ne serez pas facturé."
+      ],
+      "Your free trial has started": [
+        "Votre essai gratuit a commencé."
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Votre abonnement complet ${ planTitle } commence le ${ boldEndDate }."
@@ -9001,6 +9196,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment.",
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Ce moyen de paiement deviendra votre nouveau moyen par défaut pour tous les futurs renouvellements."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
@@ -10460,7 +10658,7 @@
         "VPN haut débit sur ${ maxVpn } appareil",
         "VPN haut débit sur ${ maxVpn } appareils"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "Connexion VPN pour ${ n } appareil par utilisateur",
         "Connexion VPN pour ${ n } appareils par utilisateur"
       ]
@@ -10501,47 +10699,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pour ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription reminder": {
@@ -10832,6 +10989,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
@@ -12044,7 +12242,8 @@
       "Your current plan": [
         "Votre abonnement actuel"
       ],
-      "Your free trial ends in ${ trialDurationFormatted } days": [
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Votre essai gratuit se termine dans ${ trialDurationFormatted } jour.",
         "Votre essai gratuit se termine dans ${ trialDurationFormatted } jours."
       ],
       "Your plan": [

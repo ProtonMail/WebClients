@@ -1054,9 +1054,6 @@
       "File does not match expected format": [
         "Файл не соответствует ожидаемому формату"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Не удалось выполнить импорт для хранилища «${ vaultData.name }» : ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Сбой импорта элементов"
       ],
@@ -1312,9 +1309,6 @@
         "${ count } просмотра",
         "${ count } просмотров",
         "${ count } просмотров"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } просмотров"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } переслано",
@@ -2719,6 +2713,9 @@
       "Copy": [
         "Копировать"
       ],
+      "Country": [
+        "Страна"
+      ],
       "Country or Region": [
         "Страна или область"
       ],
@@ -3642,9 +3639,6 @@
       "Add 2FA secret key": [
         "Добавьте секретный ключ 2FA"
       ],
-      "Add date": [
-        "Добавить дату"
-      ],
       "Add hidden text": [
         "Добавить скрытый текст"
       ],
@@ -3734,9 +3728,6 @@
       ],
       "Used on ${ url }": [
         "Использовать на ${ url }"
-      ],
-      "Write your note": [
-        "Напишите свою заметку"
       ]
     },
     "Security Center - Info": {

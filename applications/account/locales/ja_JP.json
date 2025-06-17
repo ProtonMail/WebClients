@@ -70,11 +70,11 @@
       "Accept": [
         "承認する"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -469,10 +469,10 @@
       "Discard": [
         "破棄"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "変更を破棄"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "変更を破棄"
       ],
       "Discover ${ planName }": [
@@ -1360,6 +1360,9 @@
       "Try another method": [
         "別の方法を試してください"
       ],
+      "Try for free": [
+        "無料で試す"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "もう一度保存してみてください。保存に失敗しました: ${ saveError }"
       ],
@@ -1842,14 +1845,6 @@
         "年末オファーを選択してください"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "申し訳ありませんがこれらの要請は現在のあなたのプランでは許可されていません。${ cycle }ヶ月間のサブスクリプションで${ plan.Title }を${ discountPercentage }割引でご利用いただけます。"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB のストレージ (他のプランの 2 倍以上)"
@@ -1871,6 +1866,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } プランが期間限定で復活します"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "申し訳ありませんがこれらの要請は現在のあなたのプランでは許可されていません。${ cycle }ヶ月間のサブスクリプションで${ plan.Title }を${ discountPercentage }割引でご利用いただけます。"
       ]
     },
     "bf2023: Offers": {
@@ -3278,9 +3281,6 @@
       "Macao": [
         "マカオ"
       ],
-      "Macedonia": [
-        "マケドニア"
-      ],
       "Madagascar": [
         "マダカスカル"
       ],
@@ -4185,9 +4185,6 @@
       ],
       "Download for Linux": [
         "Linux版をダウンロード"
-      ],
-      "Download for MacOS": [
-        "macOS 版をダウンロード"
       ],
       "Download for Windows": [
         "Windows版をダウンロード"
@@ -9759,11 +9756,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "username": [
-        "ユーザー名"
-      ],
       "Username": [
         "ユーザーネーム"
+      ],
+      "username": [
+        "ユーザー名"
       ],
       "Users": [
         "ユーザー"
@@ -10943,10 +10940,10 @@
       "AND": [
         "かつ"
       ],
-      "And": [
+      "and": [
         "と"
       ],
-      "and": [
+      "And": [
         "と"
       ],
       "Anderson": [
@@ -11372,10 +11369,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "条件"
       ],
-      "If": [
+      "IF": [
         "条件"
       ],
       "Import all messages": [
@@ -11585,10 +11582,10 @@
       "Optional": [
         "任意"
       ],
-      "OR": [
+      "or": [
         "または"
       ],
-      "or": [
+      "OR": [
         "または"
       ],
       "Or": [
@@ -12278,10 +12275,10 @@
       "perform a password reset from your active session": [
         "アクティブなセッションからパスワードリセットを実行する"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "プライバシーポリシー"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "プライバシーポリシー"
       ],
       "Reactivate now": [
@@ -13496,9 +13493,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "必要不可欠なネットワーク監視で、どこからでも安全にインターネットにアクセス"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "ファイルを簡単かつ安全に保存、同期、共有できる安全なクラウドストレージ。"
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "毎日の会話のための、高度な機能を備えた安全なメールのプランです。"
       ],
@@ -13588,14 +13582,6 @@
         "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceLine }だけでアンロックできます。いつでもキャンセルできます。"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -13614,6 +13600,14 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -13896,9 +13890,6 @@
       ],
       "Require 2FA": [
         "2段階認証が必要"
-      ],
-      "Support for ${ n } custom email domains": [
-        "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
     "news": {
@@ -17557,9 +17548,6 @@
       ],
       "High-speed VPN on ${ maxVpn } device": [
         "${ maxVpn } 台のデバイスでの高速 VPN"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "ユーザーごとに ${ n } 台のデバイスへのVPN接続"
       ]
     },
     "Subscription change warning": {
@@ -17598,47 +17586,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } の場合"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription reminder": {
@@ -17923,6 +17870,47 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {

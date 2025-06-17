@@ -470,6 +470,9 @@
       "Try another method": [
         "روش دیگری بیازمایید"
       ],
+      "Try for free": [
+        "رایگان امتحان کنید"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "دوباره برای ذخیره کردن تلاش کنید. عملیات ذخیره‌سازی به خاطر ${ saveError } با شکست مواجه شد."
       ],
@@ -1281,9 +1284,6 @@
       ],
       "Macao": [
         "ماکائو"
-      ],
-      "Macedonia": [
-        "مقدونیه"
       ],
       "Madagascar": [
         "ماداگاسکار"
@@ -2915,10 +2915,10 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "از اطلاعات ذیل برای اتصال به سرورهای ${ VPN_APP_NAME } بدون برنامه استفاده کنید. مثال های موارد استفاده: Tunnelblick در macOS، OpenVPN در لینوکس/GNU."
       ],
-      "username": [
+      "Username": [
         "نام‌کاربری"
       ],
-      "Username": [
+      "username": [
         "نام‌کاربری"
       ],
       "Users": [
@@ -4120,14 +4120,6 @@
         "شرایط و ضوابط"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "دوره آزمایشی رایگان ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "رکورد استفاده حساب شما"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "حذف کردن حساب؟"
@@ -4140,6 +4132,14 @@
       ],
       "Switch plans?": [
         "تغییر دادن طرح؟"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "دوره آزمایشی رایگان ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "رکورد استفاده حساب شما"
       ]
     },
     "new_plans: tooltip": {
@@ -4281,9 +4281,6 @@
       ],
       "Browser extension": [
         "افزونه مرورگر"
-      ],
-      "Support for ${ n } custom email domains": [
-        "پشتیبانی از ${ n } دامنه ایمیل سفارشی"
       ]
     },
     "news": {

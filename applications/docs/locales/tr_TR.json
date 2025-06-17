@@ -411,6 +411,9 @@
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
       ],
+      "Hide more benefits": [
+        "Diğer faydaları gizle"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Görsel izleyici koruması nedeniyle yüklenemedi."
       ],
@@ -506,6 +509,9 @@
       ],
       "More actions": [
         "Diğer işlemler"
+      ],
+      "More benefits": [
+        "Diğer faydalar"
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
@@ -741,6 +747,9 @@
       "Show more": [
         "Daha fazla görüntüle"
       ],
+      "Show more benefits": [
+        "Diğer faydaları görüntüle"
+      ],
       "Show options": [
         "Seçenekleri görüntüle"
       ],
@@ -863,9 +872,6 @@
       ],
       "View": [
         "Görüntüle"
-      ],
-      "View all ${ pendingCount } invitations": [
-        "Tüm ${ pendingCount } daveti görüntüle"
       ],
       "View all reports": [
         "Tüm raporları görüntüle"
@@ -1933,9 +1939,6 @@
       "Macao": [
         "Makao"
       ],
-      "Macedonia": [
-        "Makedonya"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2459,8 +2462,8 @@
       "To start, give your organization a name.": [
         "Başlamak için, kuruluşunuzun adını yazın."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Dosya paylaşmayı sürdürebilmek ve düzenleme erişimi sağlamak için ${ BRAND_NAME } ${ planName } tarifesine yükseltin"
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Dosya paylaşmayı sürdürebilmek ve düzenleme erişimi sağlamak için ${ planName } tarifesine yükseltin"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
@@ -2673,8 +2676,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "\"${ name }\" zaten var"
+      "\"${ sanitizedName }\" already exists": [
+        "\"${ sanitizedName }\" zaten var"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } dış hesabınızla bağlantı kuramadı"
@@ -2806,6 +2809,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Dış davetler geçici olarak yapılamıyor. Lütfen bir süre sonra yeniden deneyin"
+      ],
+      "Failed to copy photo to album": [
+        "Fotoğraf albüme kopyalanamadı"
       ],
       "Failed to rename document. Please try again later.": [
         "Belge yeniden adlandırılamadı. Lütfen bir süre sonra yeniden deneyin."
@@ -3610,6 +3616,11 @@
         "Hizmetler"
       ]
     },
+    "Header": {
+      "Drawer": [
+        "Çekmece"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "${ itemsCount } öneri bulundu, gezinmek için klavyeyi kullanın.",
@@ -4201,8 +4212,14 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "En az ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Deneme sürenizin sonunda ${ boldCancelDate }, tarifeniz ${ boldProtonFree } düzeyine düşürülecek. Kuruluşunuzdaki tüm kullanıcı hesapları kaldırılacak."
+      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
+      ],
+      "Available": [
+        "Kullanılabilir"
       ],
       "Awaiting transaction": [
         "Ödemenin tamamlanması bekleniyor"
@@ -4224,6 +4241,9 @@
       ],
       "Calendar side panel": [
         "Takvim yan panosu"
+      ],
+      "Cannot load link": [
+        "Bağlantı yüklenemedi"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
@@ -4428,9 +4448,6 @@
       "Error converting document: ${ errorMessage }": [
         "Belge dönüştürülürken sorun çıktı: ${ errorMessage }"
       ],
-      "Error loading document${ errorDetail }": [
-        "Belge yüklenirken sorun çıktı${ errorDetail }"
-      ],
       "Error Syncing": [
         "Eşitleme sorunu"
       ],
@@ -4514,6 +4531,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Fikrinizi değiştirirseniz, istediğiniz zaman yeniden abone olabilirsiniz. Ayrılmanıza üzüldük!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
@@ -4679,6 +4699,9 @@
       "New": [
         "Yeni"
       ],
+      "No": [
+        "Hayır"
+      ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
       ],
@@ -4780,6 +4803,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME geçerli oluşturucu görünümünde iletiyi otomatik olarak gönderir."
+      ],
+      "Photos": [
+        "Fotoğraflar"
       ],
       "Please authenticate your card in the verification tab.": [
         "Lütfen doğrulama sekmesinden kartınızı doğrulayın."
@@ -4933,6 +4959,9 @@
       "Shared on": [
         "Paylaşılma zamanı"
       ],
+      "Shared with me": [
+        "Benimle paylaşılan"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -5022,7 +5051,7 @@
         "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Yazdığınız adres Slack üzerinden yanlış kopyalanmış gibi görünüyor. Slack üzerinden uzun bağlantıları kopyalarken, bağlantıya sağ tıklayın, ardından kesilmiş adres metnini doğrudan kopyalamak yerine \"Bağlantıyı kopyala\" seçeneğini kullanın."
+        "Yazdığınız adres Slack üzerinden yanlış kopyalanmış gibi görünüyor. Slack üzerinden uzun bağlantıları kopyalarken, bağlantıya sağ tıklayın, ardından budanmış adres metnini doğrudan kopyalamak yerine \"Bağlantıyı kopyala\" seçeneğini kullanın."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
@@ -5264,6 +5293,9 @@
       "Writing assistant": [
         "Yazma yardımcısı"
       ],
+      "Yes": [
+        "Evet"
+      ],
       "you": [
         "siz"
       ],
@@ -5351,7 +5383,10 @@
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
-        "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "${ boldPlanTitle } özelliklerine erişiminizi de kaybedeceksiniz:"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } tutar ödeyeceksiniz.",
@@ -5467,7 +5502,13 @@
         "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecek."
       ],
       "Your trial will end in ${ timeRemaining }.": [
-        "Deneme süreniz ${ timeRemaining } içinde sona eriyor"
+        "Deneme süreniz ${ timeRemaining } sonra sona erecek."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "${ boldEndDate } tarihinde ${ boldPlanTitle } tarifesine erişemeyeceksiniz."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
       ]
     },
     "info": {
@@ -5580,6 +5621,9 @@
       ],
       "Address": [
         "Adres"
+      ],
+      "Alias title": [
+        "Takma ad başlığı"
       ],
       "Anderson": [
         "Anderson"
@@ -5754,6 +5798,9 @@
       ],
       "First name": [
         "Ad"
+      ],
+      "Folder": [
+        "Klasör"
       ],
       "Folder location": [
         "Klasör konumu"
@@ -7057,6 +7104,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "Dosyalarınızı saklamak, eşitlemek ve paylaşmak için 1 TB bulut depolama alanı. Uçtan uca şifreleme ile korunur."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "Dosyalarınızı saklamak, eşitlemek ve paylaşmak için 200 GB bulut depolama alanı. Uçtan uca şifreleme ile korunur."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Size ayrılmış güvenli ağ geçitleri ile gelişmiş ağ güvenliği ve erişim yönetimi"
       ],
@@ -7436,7 +7489,8 @@
       "Require 2FA": [
         "İki adımlı doğrulama gereksin"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "${ n } özel e-posta etki alanı desteği",
         "${ n } özel e-posta etki alanı desteği"
       ]
     },
@@ -7541,6 +7595,9 @@
       ],
       "Access for the member removed": [
         "Üyenin erişimi kaldırıldı"
+      ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Kilitli biriminizde işlem yaparak yeni albüm, süzgeç ve diğer özelliklere erişin. Bu yeni özellikleri hemen kullanmak için şimdi geri yükleyin ya da silin."
       ],
       "Access updated": [
         "Erişim güncellendi"
@@ -7788,6 +7845,53 @@
         "Depolama alanı"
       ]
     },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " ${ helpCenterLink } veya ${ contactSupportLink } adresine gidin."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "${ cancelDate } tarihinden önce istediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Cancel anytime before then.": [
+        "O tarihe kadar istediğiniz zaman iptal edebilirsiniz."
+      ],
+      "contact our support team": [
+        "destek ekibimizle görüşün"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "${ trialEndsOnFormatted } tarihine kadar kurumsal güvenlik özelliklerinden ücretsiz olarak yararlanın."
+      ],
+      "help center": [
+        "yardım merkezi"
+      ],
+      "If you need help,": [
+        "Yardıma gerek duyarsanız,"
+      ],
+      "Once your full subscription starts...": [
+        "Tam aboneliğiniz başladığında..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
+      ],
+      "Your free trial has started": [
+        "Ücretsiz deneme süreniz başladı"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Tam ${ planTitle } aboneliğiniz ${ boldEndDate } tarihinde başlayacak."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Var olan gruba ekle"
@@ -8002,6 +8106,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenecektir. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
@@ -8976,9 +9083,9 @@
         "${ n } VPN bağlantısı / kullanıcı",
         "${ n } VPN bağlantısı / kullanıcı"
       ],
-      "VPN connection for ${ n } devices per user": [
-        "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı",
-        "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı"
+      "VPN connection for ${ n } device per user": [
+        "Kullanıcı başına ${ n } aygıt ile VPN bağlantısı.",
+        "Kullanıcı başına ${ n } aygıt ile VPN bağlantısı."
       ]
     },
     "Subscription change warning": {
@@ -9342,6 +9449,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "indirme sayısı"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-posta adresi",
         "${ emailsCount } e-posta adresi"
@@ -9373,6 +9483,9 @@
       ],
       "Addresses": [
         "Adresler"
+      ],
+      "Album details": [
+        "Albüm ayrıntıları"
       ],
       "All settings": [
         "Tüm ayarlar"
@@ -9607,6 +9720,12 @@
       "Exporting contacts": [
         "Kişileri dışa aktarma"
       ],
+      "File details": [
+        "Dosya bilgileri"
+      ],
+      "Folder details": [
+        "Klasör bilgileri"
+      ],
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"
       ],
@@ -9659,11 +9778,20 @@
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
+      "Item details": [
+        "Öge bilgileri"
+      ],
+      "Last edited by": [
+        "Son düzenleyen"
+      ],
       "Limited availability": [
         "Sınırlı kullanılabilirlik"
       ],
       "Link confirmation": [
         "Bağlantı onayı"
+      ],
+      "Location": [
+        "Konum"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamanızda kopyasını oluşturun"
@@ -9680,14 +9808,23 @@
       "Merging contacts": [
         "Kişileri birleştirme"
       ],
+      "MIME type": [
+        "MIME türü"
+      ],
       "Minicalendar": [
         "Mini takvim"
       ],
       "Mobile": [
         "Mobil"
       ],
+      "Modified": [
+        "Değiştirilme"
+      ],
       "My files": [
         "Dosyalarım"
+      ],
+      "Name": [
+        "Ad"
       ],
       "Need more aliases?": [
         "Daha fazla takma ad mı gerekiyor?"
@@ -9722,6 +9859,9 @@
       "Organization setup": [
         "Kuruluş kurulumu"
       ],
+      "Original size": [
+        "Özgün boyut"
+      ],
       "Other information": [
         "Diğer bilgiler"
       ],
@@ -9751,6 +9891,9 @@
       ],
       "Processing...": [
         "İşleniyor..."
+      ],
+      "Public shared link status": [
+        "Herkese açık paylaşılmış bağlantı durumu"
       ],
       "Re-sign all contacts": [
         "Tüm kişileri yeniden imzala"
@@ -9818,6 +9961,9 @@
       "Share your calendar with your team": [
         "Takviminizi ekibinizle paylaşın"
       ],
+      "Shared": [
+        "Paylaşılan"
+      ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
@@ -9829,6 +9975,9 @@
       ],
       "Simplify password management": [
         "Parola yönetimini kolaylaştırın"
+      ],
+      "Size": [
+        "Boyut"
       ],
       "Something went wrong": [
         "Bir sorun çıktı"
@@ -9863,14 +10012,26 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
       ],
+      "Type": [
+        "Tür"
+      ],
       "Untitled document ${ date }": [
         "Adlandırılmamış belge ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Adlandırılmamış hesap tablosu ${ date }"
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"
+      ],
+      "Uploaded": [
+        "Yüklenme"
+      ],
+      "Uploaded by": [
+        "Yükleyen"
       ],
       "Uploading a large file or folder": [
         "Büyük bir dosya ya da klasör yükleniyor"
@@ -9886,6 +10047,9 @@
       ],
       "Verifying your payment...": [
         "Ödemeniz doğrulanıyor..."
+      ],
+      "Version details": [
+        "Sürüm bilgileri"
       ],
       "VPN explained": [
         "VPN nedir"
@@ -9931,6 +10095,10 @@
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Ücretsiz deneme süreniz ${ trialDurationFormatted } gün sonra bitecek",
+        "Ücretsiz deneme süreniz ${ trialDurationFormatted } gün sonra bitecek"
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"

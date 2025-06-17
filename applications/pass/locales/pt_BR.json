@@ -46,6 +46,9 @@
       "Add domain": [
         "Adicionar domínio"
       ],
+      "Add field": [
+        "Adicionar um campo"
+      ],
       "Add forwarding mailbox": [
         "Adicionar uma caixa de correio de encaminhamento"
       ],
@@ -454,6 +457,9 @@
       "Reactivate now": [
         "Reativar agora"
       ],
+      "Read More": [
+        "Ler mais"
+      ],
       "Refresh the page": [
         "Atualizar a página"
       ],
@@ -571,6 +577,9 @@
       "Show advanced options": [
         "Mostrar opções avançadas"
       ],
+      "Show Less": [
+        "Mostrar menos"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sessão com ${ BRAND_NAME }"
       ],
@@ -680,6 +689,105 @@
       ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 GB de armazenamento criptografado"
+      ],
+      "Add unlimited credit cards": [
+        "Adicionar cartões de crédito ilimitados"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Todos os recursos premium do ${ BRAND_NAME } Mail, Pass, VPN, Drive e Calendar"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Os descontos são baseados no preço mensal padrão. Ao final do ciclo de faturamento, sua assinatura será renovada pela taxa anual padrão."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Dobre seu armazenamento criptografado - obtenha 1 TB para todos os seus dados"
+      ],
+      "Encrypted password manager": [
+        "Gerenciador de senhas criptografadas"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Temos um presente exclusivo para celebrar nossa jornada juntos."
+      ],
+      "High speed streaming with VPN": [
+        "Streaming de alta velocidade com VPN"
+      ],
+      "of privacy": [
+        "de privacidade"
+      ],
+      "Online privacy for up to 2 people": [
+        "Privacidade on-line para até 2 pessoas"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Privacidade on-line para toda a sua família (até 6 usuários)"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Economize muito em recursos premium do Drive com um desconto por tempo limitado."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Economize muito em recursos premium do Mail com um desconto por tempo limitado."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Economize muito em recursos premium do Pass com um desconto por tempo limitado."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Economize muito em recursos premium de VPN com um desconto por tempo limitado."
+      ],
+      "Save time with built-in 2FA": [
+        "Economize tempo com A2F integrado"
+      ],
+      "Secure email with unlimited aliases": [
+        "E-mail seguro com aliases ilimitados"
+      ],
+      "Share passwords easily": [
+        "Compartilhar senhas facilmente"
+      ],
+      "thanks to you": [
+        "graças a você"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Triplique seu armazenamento criptografado - obtenha 3 TB para todos os seus dados"
+      ],
+      "years": [
+        "anos"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta de aniversário"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
+      "/ month": [
+        "/ mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "15 months": [
+        "15 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "30 months": [
+        "30 meses"
+      ],
+      "for ${ durationDeal }": [
+        "por ${ durationDeal }"
       ]
     },
     "Browser": {
@@ -1047,7 +1155,7 @@
       "File does not match expected format": [
         "O arquivo não corresponde ao formato esperado"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Falha na importação para o cofre \"${ vaultData.name }\" : ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1163,6 +1271,9 @@
       ],
       "Unsupported 1Password file format": [
         "Formato de arquivo do 1Password não suportado"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Formato de arquivo do Bitwarden não suportado"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Erro ao atualizar o cofre \"${ payload.content.name }\""
@@ -1288,7 +1399,8 @@
         "${ count } vista",
         "${ count } vistas"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } visualização",
         "${ count }/${ maxReads } visualizações"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -2536,6 +2648,9 @@
       "Add section": [
         "Adicionar seção"
       ],
+      "Additional data": [
+        "Dados adicionais"
+      ],
       "Additional details": [
         "Detalhes adicionais"
       ],
@@ -2653,11 +2768,11 @@
       "Copy": [
         "Copiar"
       ],
+      "Country": [
+        "País"
+      ],
       "Country or Region": [
         "País ou região"
-      ],
-      "Country,": [
-        "País,"
       ],
       "County": [
         "Província"
@@ -2784,6 +2899,9 @@
       ],
       "Extra email addresses": [
         "Endereços de e-mail extras"
+      ],
+      "Extra fields": [
+        "Campos extras"
       ],
       "Extra password": [
         "Senha adicional"
@@ -2946,6 +3064,9 @@
       ],
       "Key": [
         "Chave"
+      ],
+      "Key fingerprint": [
+        "Chave de impressão digital"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atalho de teclado: ${ shortcut }"
@@ -3124,11 +3245,11 @@
       "Passport": [
         "Passaporte"
       ],
-      "Passport number": [
-        "Número do passaporte"
-      ],
       "Passport Number": [
         "Número de passaporte"
+      ],
+      "Passport number": [
+        "Número do passaporte"
       ],
       "Password": [
         "Senha"
@@ -3181,10 +3302,10 @@
       "Priority:": [
         "Prioridade:"
       ],
-      "Private Key": [
+      "Private key": [
         "Chave privada"
       ],
-      "Private key": [
+      "Private Key": [
         "Chave privada"
       ],
       "Product": [
@@ -3301,11 +3422,11 @@
       "Show website favicons": [
         "Mostrar favicons do site"
       ],
-      "Social Security": [
-        "Previdência social"
-      ],
       "Social security": [
         "Número de Segurança Social"
+      ],
+      "Social Security": [
+        "Previdência social"
       ],
       "Social security number": [
         "CPF"
@@ -3318,9 +3439,6 @@
       ],
       "SSH key": [
         "Chave SSH"
-      ],
-      "SSH Keys": [
-        "Chaves SSH"
       ],
       "SSN": [
         "SSN"
@@ -3500,9 +3618,6 @@
         "O que está incluído"
       ],
       "WiFi network": [
-        "Rede Wi-Fi"
-      ],
-      "WiFi Networks": [
         "Rede Wi-Fi"
       ],
       "Work details": [
@@ -3735,9 +3850,6 @@
       "Add 2FA secret key": [
         "Adicionar chave secreta A2F"
       ],
-      "Add date": [
-        "Adicionar data"
-      ],
       "Add hidden text": [
         "Adicionar texto oculto"
       ],
@@ -3833,9 +3945,6 @@
       ],
       "Used on ${ url }": [
         "Usado no ${ url }"
-      ],
-      "Write your note": [
-        "Escreva sua nota"
       ]
     },
     "Security Center - Info": {
@@ -4509,6 +4618,11 @@
       ],
       "URL is invalid": [
         "O URL não é válido"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Mover itens para"
       ]
     },
     "Warning": {

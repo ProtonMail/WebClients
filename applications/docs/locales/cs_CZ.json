@@ -879,9 +879,6 @@
       "View": [
         "Zobrazit"
       ],
-      "View all ${ pendingCount } invitations": [
-        "Zobrazit všech ${ pendingCount } pozvánek"
-      ],
       "View all reports": [
         "Zobrazit všechny zprávy"
       ],
@@ -1001,6 +998,14 @@
       ],
       "Unsupported event": [
         "Událost není podporována"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje každých ${ cycle } měsíců, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
       ]
     },
     "bf2023: Deal details": {
@@ -1966,9 +1971,6 @@
       "Macao": [
         "Macao"
       ],
-      "Macedonia": [
-        "Makedonie"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2492,8 +2494,8 @@
       "To start, give your organization a name.": [
         "Nejprve pojmenujte vaši organizaci."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Navyšte na ${ BRAND_NAME } ${ planName } pro zachování sdílení souborů s přístupem k úpravám"
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Navyšte na ${ planName } pro zachování sdílení souborů s přístupem k úpravám"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
@@ -2706,8 +2708,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "\"${ name }\" již existuje"
+      "\"${ sanitizedName }\" already exists": [
+        "\"${ sanitizedName }\" již existuje"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } se nemůže připojit k vašemu externímu účtu"
@@ -2843,6 +2845,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Externí pozvánky jsou dočasně zakázány. Zkuste to prosím později"
+      ],
+      "Failed to copy photo to album": [
+        "Kopírování fotky do alba selhalo"
       ],
       "Failed to rename document. Please try again later.": [
         "Přejmenování dokladu se nezdařilo. Zkuste to prosím znovu později."
@@ -4333,6 +4338,9 @@
       "Attention required": [
         "Vyžadována pozornost"
       ],
+      "Available": [
+        "K dispozici"
+      ],
       "Awaiting transaction": [
         "Čekání na transakci"
       ],
@@ -4353,6 +4361,9 @@
       ],
       "Calendar side panel": [
         "Postranní panel kalendáře"
+      ],
+      "Cannot load link": [
+        "Odkaz se nepodařilo načíst"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
@@ -4560,9 +4571,6 @@
       ],
       "Error converting document: ${ errorMessage }": [
         "Chyba při převodu dokumentu: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Chyba při načítání dokumentu ${ errorDetail }"
       ],
       "Error Syncing": [
         "Chyba při synchronizaci"
@@ -4819,6 +4827,9 @@
       "New": [
         "Nově"
       ],
+      "No": [
+        "Ne"
+      ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
       ],
@@ -4920,6 +4931,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automaticky odešle zprávu pomocí aktuálního režimu psaní zpráv."
+      ],
+      "Photos": [
+        "Fotky"
       ],
       "Please authenticate your card in the verification tab.": [
         "Na kartě ověření ověřte pravost své karty."
@@ -5076,6 +5090,9 @@
       ],
       "Shared on": [
         "Sdíleno na"
+      ],
+      "Shared with me": [
+        "Sdíleno se mnou"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
@@ -5409,6 +5426,9 @@
       ],
       "Writing assistant": [
         "Asistent psaní"
+      ],
+      "Yes": [
+        "Ano"
       ],
       "you": [
         "vámi"
@@ -5926,6 +5946,9 @@
       ],
       "First name": [
         "Křestní jméno"
+      ],
+      "Folder": [
+        "Složka"
       ],
       "Folder location": [
         "Umístění složky"
@@ -7287,6 +7310,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB úložného prostoru v cloudu, který vám umožní snadno ukládat, synchronizovat a sdílet soubory. Zabezpečeno koncovým šifrováním."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB úložného prostoru v cloudu, který vám umožní snadno ukládat, synchronizovat a sdílet soubory. Zabezpečeno koncovým šifrováním."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Pokročilé zabezpečení sítě a správa přístupu s vyhrazenými zabezpečenými bránami"
       ],
@@ -7346,9 +7375,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný přístup k internetu odkudkoli, včetně důležitého monitorování sítě"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpečné cloudové úložiště, které vám umožňuje snadno a bezpečně ukládat, synchronizovat a sdílet soubory."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
@@ -7673,7 +7699,10 @@
       "Require 2FA": [
         "Požadování 2FA"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "Podpora ${ n } vlastní e-mailové domény",
+        "Podpora ${ n } vlastních e-mailových domén",
+        "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén"
       ]
     },
@@ -7800,6 +7829,9 @@
       ],
       "Access for the member removed": [
         "Přístup pro člena odebrán"
+      ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Získejte přístup k Albům, Filtrům a dalším funkcím provedením akce na uzamčené jednotce. Obnovte ji nebo smažte a ihned si užijte tyto nové funkce."
       ],
       "Access updated": [
         "Přístup aktualizován"
@@ -8058,14 +8090,44 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " navštivte naše ${ helpCenterLink } nebo ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Zrušit můžete kdykoli před ${ cancelDate }."
+      ],
       "Cancel anytime before then.": [
         "Zrušit můžete kdykoli před uplynutím této doby."
+      ],
+      "contact our support team": [
+        "kontaktujte náš tým podpory"
+      ],
+      "Continue": [
+        "Pokračovat"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Užívejte si bezplatné funkce podnikového zabezpečení až do ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "centrum podpory"
+      ],
+      "If you need help,": [
+        "Pokud potřebujete pomoci,"
       ],
       "Once your full subscription starts...": [
         "Po zahájení plného předplatného..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Do 30 dnů můžete předplatné zrušit a získat poměrnou část peněz zpět."
+      ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "Do 30 dnů můžete předplatné zrušit a získat poměrnou část peněz zpět."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Můžete používat ${ planTitle } až do skončení zkušební verze a nebudou vám účtovány žádné poplatky."
+      ],
+      "Your free trial has started": [
+        "Vaše bezplatná zkušební verze začala"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Vaše plné předplatné ${ planTitle } začíná ${ boldEndDate }."
@@ -8298,6 +8360,9 @@
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíce. Předplatné můžete kdykoli zrušit.",
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit.",
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Tato platební metoda se stane vaším novým výchozím způsobem pro všechna budoucí obnovení."
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
@@ -8884,8 +8949,20 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Hodnoty oddělené čárkou (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "Nová tabulka"
+      ],
+      "Rename spreadsheet": [
+        "Přejmenovat tabulku"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Hodnoty oddělené tabulátory (.tsv)"
       ]
     },
     "sheets_2025:Info": {
@@ -8897,6 +8974,15 @@
       ],
       "Insert as new sheet": [
         "Vložit jako nový list"
+      ],
+      "Replace current sheet": [
+        "Nahradit aktuální list"
+      ],
+      "Replace data at selected cell": [
+        "Nahradit data ve vybrané buňce"
+      ],
+      "Select a CSV or TSV file to import": [
+        "Vyberte soubor CSV nebo TSV k importu"
       ]
     },
     "sheets_2025:Label": {
@@ -9324,7 +9410,7 @@
         "${ n } VPN připojení na uživatele",
         "${ n } VPN připojení na uživatele"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "VPN připojení pro ${ n } zařízení na uživatele",
         "VPN připojení pro ${ n } zařízení na uživatele",
         "VPN připojení pro ${ n } zařízení na uživatele",
@@ -9722,6 +9808,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "počet stažení"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailová adresa",
         "${ emailsCount } e-mailové adresy",
@@ -9757,6 +9846,9 @@
       ],
       "Addresses": [
         "Adresy"
+      ],
+      "Album details": [
+        "Detaily alba"
       ],
       "All settings": [
         "Všechna nastavení"
@@ -9995,6 +10087,12 @@
       "Exporting contacts": [
         "Exportování kontaktů"
       ],
+      "File details": [
+        "Podrobnosti souboru"
+      ],
+      "Folder details": [
+        "Podrobnosti složky"
+      ],
       "Get more from your VPN": [
         "Získejte více ze své VPN"
       ],
@@ -10049,11 +10147,20 @@
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
+      "Item details": [
+        "Podrobnosti položky"
+      ],
+      "Last edited by": [
+        "Naposledy upravil(a)"
+      ],
       "Limited availability": [
         "Limitovaná dostupnost"
       ],
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
+      ],
+      "Location": [
+        "Umístění"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Vytvořte kopii na svém ${ DRIVE_APP_NAME }"
@@ -10070,14 +10177,23 @@
       "Merging contacts": [
         "Slučování kontaktů"
       ],
+      "MIME type": [
+        "MIME typ"
+      ],
       "Minicalendar": [
         "Minikalendář"
       ],
       "Mobile": [
         "Mobil"
       ],
+      "Modified": [
+        "Upraveno"
+      ],
       "My files": [
         "Moje soubory"
+      ],
+      "Name": [
+        "Jméno"
       ],
       "Need more aliases?": [
         "Potřebujete více aliasů?"
@@ -10112,6 +10228,9 @@
       "Organization setup": [
         "Nastavení organizace"
       ],
+      "Original size": [
+        "Původní velikost"
+      ],
       "Other information": [
         "Další informace"
       ],
@@ -10141,6 +10260,9 @@
       ],
       "Processing...": [
         "Zpracovávání..."
+      ],
+      "Public shared link status": [
+        "Stav veřejně sdíleného odkazu"
       ],
       "Re-sign all contacts": [
         "Znovu podepsat všechny kontakty"
@@ -10208,6 +10330,9 @@
       "Share your calendar with your team": [
         "Sdílet kalendář se svým týmem"
       ],
+      "Shared": [
+        "Sdílené"
+      ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
       ],
@@ -10219,6 +10344,9 @@
       ],
       "Simplify password management": [
         "Zjednodušení správy hesel"
+      ],
+      "Size": [
+        "Velikost"
       ],
       "Something went wrong": [
         "Něco se pokazilo"
@@ -10253,6 +10381,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnout ${ DARK_WEB_MONITORING_NAME }"
       ],
+      "Type": [
+        "Typ"
+      ],
       "Untitled document ${ date }": [
         "Dokument bez názvu ${ date }"
       ],
@@ -10264,6 +10395,12 @@
       ],
       "Upload and share files": [
         "Nahrát a sdílet soubory"
+      ],
+      "Uploaded": [
+        "Nahráno"
+      ],
+      "Uploaded by": [
+        "Nahráno uživatelem"
       ],
       "Uploading a large file or folder": [
         "Nahrávání velkého souboru nebo složky"
@@ -10279,6 +10416,9 @@
       ],
       "Verifying your payment...": [
         "Ověřování vaší platby..."
+      ],
+      "Version details": [
+        "Detaily verze"
       ],
       "VPN explained": [
         "Vysvětlení VPN"
@@ -10325,8 +10465,11 @@
       "Your exposed information": [
         "Vaše uniklé informace"
       ],
-      "Your free trial ends in ${ trialDurationFormatted } days": [
-        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny"
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } den",
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny",
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dnů",
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dnů"
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"

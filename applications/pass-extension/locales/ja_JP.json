@@ -152,11 +152,11 @@
       "Create": [
         "作成"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } アカウントを作成する"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを作成"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを作成する"
       ],
       "Create alias": [
         "エイリアスを作成"
@@ -1007,9 +1007,6 @@
       "File does not match expected format": [
         "予期しないファイル形式です"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "保管庫「${ vaultData.name }」のインポートに失敗しました: ${ errorMessage }"
-      ],
       "Importing items failed": [
         "アイテムのインポートに失敗しました"
       ],
@@ -1242,9 +1239,6 @@
       ],
       "${ count } view": [
         "${ count } 回表示"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } 表示"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount }件の転送済み"
@@ -1764,6 +1758,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2580,11 +2577,11 @@
       "Copy password": [
         "パスワードをコピー"
       ],
+      "Country": [
+        "国"
+      ],
       "Country or Region": [
         "国または地域"
-      ],
-      "Country,": [
-        "国名"
       ],
       "County": [
         "国"
@@ -2997,10 +2994,10 @@
       "Passport": [
         "パスポート"
       ],
-      "Passport number": [
+      "Passport Number": [
         "パスポート番号"
       ],
-      "Passport Number": [
+      "Passport number": [
         "パスポート番号"
       ],
       "Password": [
@@ -3174,10 +3171,10 @@
       "Show website favicons": [
         "ウェブサイトのファビコンを表示する"
       ],
-      "Social Security": [
+      "Social security": [
         "社会保障"
       ],
-      "Social security": [
+      "Social Security": [
         "社会保障"
       ],
       "Social security number": [
@@ -3190,9 +3187,6 @@
         "特殊文字 (!&*)"
       ],
       "SSH key": [
-        "SSHキー"
-      ],
-      "SSH Keys": [
         "SSHキー"
       ],
       "SSN": [
@@ -3346,9 +3340,6 @@
         "ウェブサイト"
       ],
       "WiFi network": [
-        "WiFiネットワーク"
-      ],
-      "WiFi Networks": [
         "WiFiネットワーク"
       ],
       "Work details": [
@@ -3546,9 +3537,6 @@
       "Add 2FA secret key": [
         "2FA 秘密キーを追加する"
       ],
-      "Add date": [
-        "日付を追加"
-      ],
       "Add hidden text": [
         "非表示テキストを追加"
       ],
@@ -3644,9 +3632,6 @@
       ],
       "Used on ${ url }": [
         "${ url } で使用されます"
-      ],
-      "Write your note": [
-        "メモを書く"
       ]
     },
     "sso": {

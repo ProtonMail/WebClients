@@ -46,6 +46,9 @@
       "Add domain": [
         "Tambah domain"
       ],
+      "Add field": [
+        "Tambahkan kolom"
+      ],
       "Add forwarding mailbox": [
         "Tambah kotak surat penerusan"
       ],
@@ -403,11 +406,11 @@
       "Move to another vault": [
         "Pindahkan ke brankas lainnya"
       ],
-      "Move to Trash": [
-        "Pindahkan ke Sampah"
-      ],
       "Move to trash": [
         "Pindahkan ke sampah"
+      ],
+      "Move to Trash": [
+        "Pindahkan ke Sampah"
       ],
       "Multiple select": [
         "Pilih banyak berkas"
@@ -462,6 +465,9 @@
       ],
       "Reactivate now": [
         "Aktifkan ulang sekarang"
+      ],
+      "Read More": [
+        "Membaca Selengkapnya"
       ],
       "Refresh the page": [
         "Muat ulang halaman"
@@ -580,6 +586,9 @@
       "Show advanced options": [
         "Tampilkan opsi lanjutan"
       ],
+      "Show Less": [
+        "Tunjukkan Sedikit Saja"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Masuk dengan ${ BRAND_NAME }"
       ],
@@ -687,6 +696,104 @@
       ],
       "Your password manager is not here? Request it.": [
         "Pengelola kata sandi Anda tidak terdaftar? Mintalah kepada kami."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Dapatkan penawaran ini"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 GB penyimpanan terenkripsi"
+      ],
+      "Add unlimited credit cards": [
+        "Tambahkan Tanpa batasan jumlah kartu kredit"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Semua fitur premium dari ${ BRAND_NAME } Mail, Pass, VPN, Drive, dan Calendar"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Diskon didasarkan pada harga bulanan standar. Pada akhir siklus tagihan, langganan Anda akan diperpanjang dengan tarif tahunan standar."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Lipat gandakan penyimpanan terenkripsi Anda – dapatkan 1 TB untuk semua data Anda"
+      ],
+      "Encrypted password manager": [
+        "Pengelola kata sandi terenkripsi"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Ini adalah hadiah eksklusif untuk merayakan perjalanan kita bersama."
+      ],
+      "High speed streaming with VPN": [
+        "Streaming berkecepatan tinggi dengan VPN"
+      ],
+      "of privacy": [
+        "privasi"
+      ],
+      "Online privacy for up to 2 people": [
+        "Privasi online untuk hingga 2 orang"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Privasi online untuk seluruh keluarga Anda (hingga 6 pengguna)"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Dapatkan potongan harga besar-besaran untuk fitur premium Drive dengan diskon waktu terbatas."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Dapatkan potongan harga besar-besaran untuk berbagai fitur Mail premium dengan diskon waktu terbatas."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Dapatkan potongan harga besar-besaran untuk berbagai fitur Pass premium dengan diskon waktu terbatas."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Dapatkan potongan harga besar-besaran untuk berbagai fitur VPN premium dengan diskon waktu terbatas."
+      ],
+      "Save time with built-in 2FA": [
+        "Hemat waktu dengan 2FA yang tersedia secara bawaan"
+      ],
+      "Secure email with unlimited aliases": [
+        "Email aman dengan alias tidak terbatas"
+      ],
+      "Share passwords easily": [
+        "Bagikan kata sandi dengan mudah"
+      ],
+      "thanks to you": [
+        "berkat Anda"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Lipat tigakan penyimpanan terenkripsi Anda – dapatkan 3 TB untuk semua data Anda"
+      ],
+      "years": [
+        "tahun"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Penawaran Ulang Tahun"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } bulan"
+      ],
+      "/ month": [
+        "/ bulan"
+      ],
+      "12 months": [
+        "12 bulan"
+      ],
+      "15 months": [
+        "15 bulan"
+      ],
+      "24 months": [
+        "24 bulan"
+      ],
+      "30 months": [
+        "30 bulan"
+      ],
+      "for ${ durationDeal }": [
+        "untuk ${ durationDeal }"
       ]
     },
     "App menu": {
@@ -1074,8 +1181,8 @@
       "File does not match expected format": [
         "Berkas tidak cocok dengan format yang diharapkan"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Impor untuk brankas \"${ vaultData.name }\" gagal : ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Impor untuk brankas \"${ vaultData.name }\" gagal: ${ errorMessage }"
       ],
       "Importing items failed": [
         "Item gagal diimpor"
@@ -1190,6 +1297,9 @@
       ],
       "Unsupported 1Password file format": [
         "Format berkas 1Password tidak didukung"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Format berkas Bitwarden tidak didukung"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Brankas \"${ payload.content.name }\" gagal diperbarui"
@@ -1331,7 +1441,7 @@
       "${ count } view": [
         "${ count } kali dilihat"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
         "${ count }/${ maxReads } tampilan"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -2554,6 +2664,9 @@
       "Add section": [
         "Tambahkan bagian"
       ],
+      "Additional data": [
+        "Data tambahan"
+      ],
       "Additional details": [
         "Rincian tambahan"
       ],
@@ -2674,11 +2787,11 @@
       "Copy": [
         "Salin"
       ],
+      "Country": [
+        "Negara"
+      ],
       "Country or Region": [
         "Negara atau Wilayah"
-      ],
-      "Country,": [
-        "Negara,"
       ],
       "County": [
         "Daerah"
@@ -2808,6 +2921,9 @@
       ],
       "Extra email addresses": [
         "Alamat email tambahan"
+      ],
+      "Extra fields": [
+        "Kolom Tambahan"
       ],
       "Extra password": [
         "Kata sandi tambahan"
@@ -2976,6 +3092,9 @@
       ],
       "Key": [
         "Kunci"
+      ],
+      "Key fingerprint": [
+        "Sidik jari kunci"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pintasan keyboard: ${ shortcut }"
@@ -3160,11 +3279,11 @@
       "Passport": [
         "Paspor"
       ],
-      "Passport number": [
-        "Nomor paspor"
-      ],
       "Passport Number": [
         "Nomor Paspor"
+      ],
+      "Passport number": [
+        "Nomor paspor"
       ],
       "Password": [
         "Kata sandi"
@@ -3217,11 +3336,11 @@
       "Priority:": [
         "Prioritas:"
       ],
-      "Private Key": [
-        "Kunci Pribadi"
-      ],
       "Private key": [
         "Kunci pribadi"
+      ],
+      "Private Key": [
+        "Kunci Pribadi"
       ],
       "Product": [
         "Produk"
@@ -3331,6 +3450,9 @@
       "Share": [
         "Bagikan"
       ],
+      "Share ID": [
+        "Bagikan ID"
+      ],
       "Shared": [
         "Dibagikan"
       ],
@@ -3365,9 +3487,6 @@
         "Karakter khusus (!&*)"
       ],
       "SSH key": [
-        "Kunci SSH"
-      ],
-      "SSH Keys": [
         "Kunci SSH"
       ],
       "SSN": [
@@ -3551,9 +3670,6 @@
         "Apa yang termasuk"
       ],
       "WiFi network": [
-        "Jaringan WiFi"
-      ],
-      "WiFi Networks": [
         "Jaringan WiFi"
       ],
       "Work details": [
@@ -3797,9 +3913,6 @@
       "Add 2FA secret key": [
         "Tambah kunci rahasia 2FA"
       ],
-      "Add date": [
-        "Tambah tanggal"
-      ],
       "Add hidden text": [
         "Tambahkan teks tersembunyi"
       ],
@@ -3895,9 +4008,6 @@
       ],
       "Used on ${ url }": [
         "Digunakan pada ${ url }"
-      ],
-      "Write your note": [
-        "Tulis catatan Anda"
       ]
     },
     "Security Center - Info": {
@@ -4563,6 +4673,11 @@
       ],
       "URL is invalid": [
         "URL tidak valid"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Pindahkan item ke"
       ]
     },
     "Warning": {

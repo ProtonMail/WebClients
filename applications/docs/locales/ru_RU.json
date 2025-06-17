@@ -861,9 +861,6 @@
       "View": [
         "Посмотреть"
       ],
-      "View all ${ pendingCount } invitations": [
-        "Посмотреть все приглашения: ${ pendingCount }"
-      ],
       "View all reports": [
         "Просмотреть все отчеты"
       ],
@@ -1948,9 +1945,6 @@
       "Macao": [
         "Макао"
       ],
-      "Macedonia": [
-        "Македония"
-      ],
       "Madagascar": [
         "Мадагаскар"
       ],
@@ -2474,8 +2468,8 @@
       "To start, give your organization a name.": [
         "Чтобы начать, дайте имя вашей организации."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Улучшите до тарифа ${ BRAND_NAME } ${ planName } для продолжения обмена файлами с правом изменения"
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Улучшите до тарифа ${ planName } для продолжения обмена файлами с правом изменения"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Перетаскивайте контакты, чтобы задавать им приоритет при объединении. Снимите галочку с контактов, которые вы не хотите объединять."
@@ -2688,8 +2682,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "\"${ name }\" уже существует"
+      "\"${ sanitizedName }\" already exists": [
+        "\"${ sanitizedName }\" уже существует"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } не может подключиться к вашему внешнему аккаунту"
@@ -2825,6 +2819,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Внешние приглашения временно отключены. Повторите попытку позже"
+      ],
+      "Failed to copy photo to album": [
+        "Не удалось скопировать фото в альбом"
       ],
       "Failed to rename document. Please try again later.": [
         "Не удалось переименовать документ. Повторите попытку позже."
@@ -4307,6 +4304,9 @@
       "Attention required": [
         "Требуется внимание"
       ],
+      "Available": [
+        "Доступно"
+      ],
       "Awaiting transaction": [
         "В ожидании транзакции"
       ],
@@ -4327,6 +4327,9 @@
       ],
       "Calendar side panel": [
         "Боковая панель календаря"
+      ],
+      "Cannot load link": [
+        "Не удалось загрузить ссылку"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
@@ -4528,9 +4531,6 @@
       ],
       "Error converting document: ${ errorMessage }": [
         "Ошибка преобразования документа: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Ошибка загрузки документа ${ errorDetail }"
       ],
       "Error Syncing": [
         "Ошибка синхронизации"
@@ -4784,6 +4784,9 @@
       "New": [
         "Новый"
       ],
+      "No": [
+        "Нет"
+      ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
       ],
@@ -4885,6 +4888,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем."
+      ],
+      "Photos": [
+        "Фото"
       ],
       "Please authenticate your card in the verification tab.": [
         "Пожалуйста, подтвердите данные карты во вкладке проверки."
@@ -5041,6 +5047,9 @@
       ],
       "Shared on": [
         "Совместное использование"
+      ],
+      "Shared with me": [
+        "Поделись со мной"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Подпись не может быть подтверждена из-за сетевой ошибки, повторите попытку позже."
@@ -5371,6 +5380,9 @@
       ],
       "Writing assistant": [
         "Помощник по написанию"
+      ],
+      "Yes": [
+        "Да"
       ],
       "you": [
         "вы"
@@ -5870,6 +5882,9 @@
       ],
       "First name": [
         "Имя"
+      ],
+      "Folder": [
+        "Папка"
       ],
       "Folder location": [
         "Размещение папки"
@@ -7613,9 +7628,6 @@
       ],
       "Require 2FA": [
         "Требуется двухфакторная аутентификация"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Поддержка ${ n } пользовательских доменов электронной почты"
       ]
     },
     "Notification": {
@@ -7741,6 +7753,9 @@
       ],
       "Access for the member removed": [
         "Доступ для участника удален"
+      ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Получите доступ к нашим новым Альбомам, Фильтрам и прочему, выполнив действия с заблокированным томом. Восстановите или удалите его сейчас, чтобы сразу же воспользоваться этими новыми функциями."
       ],
       "Access updated": [
         "Доступ обновлен"
@@ -9247,12 +9262,6 @@
         "${ n } подключения к VPN на пользователя",
         "${ n } подключений к VPN на пользователя",
         "${ n } подключений к VPN на пользователя"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "Подключение к VPN для ${ n } устройства на одного пользователя",
-        "Подключение к VPN для ${ n } устройств на одного пользователя",
-        "Подключение к VPN для ${ n } устройств на одного пользователя",
-        "Подключение к VPN для ${ n } устройств на одного пользователя"
       ]
     },
     "Subscription change warning": {
@@ -9620,6 +9629,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "# скачиваний"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } адрес электронной почты",
         "${ emailsCount } адреса электронной почты",
@@ -9655,6 +9667,9 @@
       ],
       "Addresses": [
         "Адреса"
+      ],
+      "Album details": [
+        "Информация об альбоме"
       ],
       "All settings": [
         "Все настройки"
@@ -9893,6 +9908,12 @@
       "Exporting contacts": [
         "Экспортирование контактов"
       ],
+      "File details": [
+        "Информация о файле"
+      ],
+      "Folder details": [
+        "Информация о папке"
+      ],
       "Get more from your VPN": [
         "Получите больше от VPN"
       ],
@@ -9947,11 +9968,20 @@
       "Invalid verification code": [
         "Неверный проверочный код"
       ],
+      "Item details": [
+        "Информация об элементе"
+      ],
+      "Last edited by": [
+        "Последние изменения внесены"
+      ],
       "Limited availability": [
         "Ограниченная доступность"
       ],
       "Link confirmation": [
         "Подтверждение ссылки"
+      ],
+      "Location": [
+        "Местоположение"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Сделать копию в ${ DRIVE_APP_NAME }"
@@ -9968,14 +9998,23 @@
       "Merging contacts": [
         "Идет объединение контактов"
       ],
+      "MIME type": [
+        "MIME-тип"
+      ],
       "Minicalendar": [
         "Миникалендарь"
       ],
       "Mobile": [
         "Для мобильных устройств"
       ],
+      "Modified": [
+        "Изменено"
+      ],
       "My files": [
         "Мои файлы"
+      ],
+      "Name": [
+        "Имя"
       ],
       "Need more aliases?": [
         "Нужно больше псевдонимов?"
@@ -10010,6 +10049,9 @@
       "Organization setup": [
         "Настройки организации"
       ],
+      "Original size": [
+        "Начальный размер"
+      ],
       "Other information": [
         "Дополнительная информация"
       ],
@@ -10039,6 +10081,9 @@
       ],
       "Processing...": [
         "Обработка…"
+      ],
+      "Public shared link status": [
+        "Состояние общедоступной ссылки на общий ресурс"
       ],
       "Re-sign all contacts": [
         "Переподписать все контакты"
@@ -10106,6 +10151,9 @@
       "Share your calendar with your team": [
         "Делитесь вашим календарем со своей командой"
       ],
+      "Shared": [
+        "В общем доступе"
+      ],
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"
       ],
@@ -10117,6 +10165,9 @@
       ],
       "Simplify password management": [
         "Упростить управление паролями"
+      ],
+      "Size": [
+        "Размер"
       ],
       "Something went wrong": [
         "Что-то пошло не так"
@@ -10148,6 +10199,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Включить ${ DARK_WEB_MONITORING_NAME }"
       ],
+      "Type": [
+        "Тип"
+      ],
       "Untitled document ${ date }": [
         "Документ без названия ${ date }"
       ],
@@ -10156,6 +10210,12 @@
       ],
       "Upload and share files": [
         "Загружайте и делитесь файлами"
+      ],
+      "Uploaded": [
+        "Загружено"
+      ],
+      "Uploaded by": [
+        "Загружено"
       ],
       "Uploading a large file or folder": [
         "Загрузка большого файла или папки"
@@ -10171,6 +10231,9 @@
       ],
       "Verifying your payment...": [
         "Проверяем ваш платёж..."
+      ],
+      "Version details": [
+        "Описание версии"
       ],
       "VPN explained": [
         "Что такое VPN"

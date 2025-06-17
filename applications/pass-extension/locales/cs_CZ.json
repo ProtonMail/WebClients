@@ -29,6 +29,9 @@
       "Add domain": [
         "Přidat doménu"
       ],
+      "Add field": [
+        "Přidat pole"
+      ],
       "Add forwarding mailbox": [
         "Přidat e-mailovou schránku pro přeposílání"
       ],
@@ -152,11 +155,11 @@
       "Create": [
         "Vytvořit"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvořte účet ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvořit účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvořte účet ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Vytvořit alias"
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Znovu aktivovat"
       ],
+      "Read More": [
+        "Zjistit více"
+      ],
       "Refresh the page": [
         "Obnovit stránku"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Zobrazit pokročilé možnosti"
+      ],
+      "Show Less": [
+        "Zobrazit méně"
       ],
       "Sign back in": [
         "Přihlásit se zpět"
@@ -1022,9 +1031,6 @@
       "File does not match expected format": [
         "Soubor neodpovídá očekávanému formátu"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Import pro trezor \"${ vaultData.name }\" selhal : ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Import položek se nezdařil"
       ],
@@ -1285,7 +1291,10 @@
         "${ count } zobrazení",
         "${ count } zobrazení"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } zobrazení",
+        "${ count }/${ maxReads } zobrazení",
+        "${ count }/${ maxReads } zobrazení",
         "${ count }/${ maxReads } zobrazení"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1841,7 +1850,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2718,11 +2730,11 @@
       "Copy password": [
         "Kopírovat heslo"
       ],
+      "Country": [
+        "Země"
+      ],
       "Country or Region": [
         "Země nebo region"
-      ],
-      "Country,": [
-        "Země,"
       ],
       "County": [
         "Kraj"
@@ -3135,10 +3147,10 @@
       "Passport": [
         "Cestovní pas"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Číslo cestovního pasu"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Číslo cestovního pasu"
       ],
       "Password": [
@@ -3315,10 +3327,10 @@
       "Show website favicons": [
         "Zobrazit ikony webových stránek"
       ],
-      "Social Security": [
+      "Social security": [
         "Rodné číslo (číslo sociálního pojištění)"
       ],
-      "Social security": [
+      "Social Security": [
         "Rodné číslo (číslo sociálního pojištění)"
       ],
       "Social security number": [
@@ -3332,9 +3344,6 @@
       ],
       "SSH key": [
         "SSH klíč"
-      ],
-      "SSH Keys": [
-        "SSH klíče"
       ],
       "SSN": [
         "ČSZ"
@@ -3488,9 +3497,6 @@
       ],
       "WiFi network": [
         "Wi-Fi síť"
-      ],
-      "WiFi Networks": [
-        "Wi-Fi sítě"
       ],
       "Work details": [
         "Podrobnosti o práci"
@@ -3696,9 +3702,6 @@
       "Add 2FA secret key": [
         "Přidat klíč 2FA secret"
       ],
-      "Add date": [
-        "Přidat datum"
-      ],
       "Add hidden text": [
         "Přidat skrytý text"
       ],
@@ -3794,9 +3797,6 @@
       ],
       "Used on ${ url }": [
         "Použito na ${ url }"
-      ],
-      "Write your note": [
-        "Napište svoji poznámku"
       ]
     },
     "sso": {

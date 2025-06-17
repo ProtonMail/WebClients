@@ -46,6 +46,9 @@
       "Add domain": [
         "Lägg till domän"
       ],
+      "Add field": [
+        "Lägg till fält"
+      ],
       "Add forwarding mailbox": [
         "Lägg till vidarebefordrad brevlåda"
       ],
@@ -454,6 +457,9 @@
       "Reactivate now": [
         "Återaktivera nu"
       ],
+      "Read More": [
+        "Läs mer"
+      ],
       "Refresh the page": [
         "Uppdatera sidan"
       ],
@@ -571,6 +577,9 @@
       "Show advanced options": [
         "Visa avancerade alternativ"
       ],
+      "Show Less": [
+        "Visa mindre"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Logga in med ${ BRAND_NAME }"
       ],
@@ -680,6 +689,88 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 GB krypterat lagringsutrymme"
+      ],
+      "Add unlimited credit cards": [
+        "Lägg till obegränsat antal kreditkort"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Dubbla ditt krypterade lagringsutrymme – få 1 TB för alla dina data"
+      ],
+      "Encrypted password manager": [
+        "Krypterad lösenordshanterare"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Här är en exklusiv gåva för att fira vår resa tillsammans."
+      ],
+      "High speed streaming with VPN": [
+        "Höghastighetsstreaming med VPN"
+      ],
+      "of privacy": [
+        "av integritet"
+      ],
+      "Online privacy for up to 2 people": [
+        "Integritet online för upp till 2 personer"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Integritet online för hela din familj (upp till 6 användare)"
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Spara stort på premium Mail-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Spara stort på premium VPN-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save time with built-in 2FA": [
+        "Spara tid med inbyggd 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Säker e-post med obegränsade alias"
+      ],
+      "Share passwords easily": [
+        "Dela lösenord enkelt"
+      ],
+      "thanks to you": [
+        "tack vare dig"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Trippla ditt krypterade lagringsutrymme – få 3 TB för alla dina data"
+      ],
+      "years": [
+        "år"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
+      "/ month": [
+        "/månad"
+      ],
+      "12 months": [
+        "12 månader"
+      ],
+      "15 months": [
+        "15 månader"
+      ],
+      "24 months": [
+        "24 månader"
+      ],
+      "30 months": [
+        "30 månader"
+      ],
+      "for ${ durationDeal }": [
+        "för ${ durationDeal }"
       ]
     },
     "Browser": {
@@ -1047,7 +1138,7 @@
       "File does not match expected format": [
         "Fil matchar inte förväntat format"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Import misslyckades för valv “${ vaultData.name }“: ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1288,7 +1379,8 @@
         "${ count } visning",
         "${ count } visningar"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } visning",
         "${ count }/${ maxReads } visningar"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -2536,6 +2628,9 @@
       "Add section": [
         "Lägg till sektion"
       ],
+      "Additional data": [
+        "Ytterligare data"
+      ],
       "Additional details": [
         "Ytterligare detaljer"
       ],
@@ -2650,11 +2745,11 @@
       "Copy": [
         "Kopiera"
       ],
+      "Country": [
+        "Land"
+      ],
       "Country or Region": [
         "Land eller region"
-      ],
-      "Country,": [
-        "Land,"
       ],
       "County": [
         "Län"
@@ -2781,6 +2876,9 @@
       ],
       "Extra email addresses": [
         "Extra e-postadresser"
+      ],
+      "Extra fields": [
+        "Extra fält"
       ],
       "Extra password": [
         "Extralösenord"
@@ -2943,6 +3041,9 @@
       ],
       "Key": [
         "Nyckel"
+      ],
+      "Key fingerprint": [
+        "Nyckelfingeravtryck"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tangentbordsgenväg: ${ shortcut }"
@@ -3121,10 +3222,10 @@
       "Passport": [
         "Pass"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Passnummer"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Passnummer"
       ],
       "Password": [
@@ -3178,10 +3279,10 @@
       "Priority:": [
         "Prioritet:"
       ],
-      "Private Key": [
+      "Private key": [
         "Privat nyckel"
       ],
-      "Private key": [
+      "Private Key": [
         "Privat nyckel"
       ],
       "Product": [
@@ -3295,10 +3396,10 @@
       "Show website favicons": [
         "Visa webbplatsens favicon"
       ],
-      "Social Security": [
+      "Social security": [
         "Social säkerhet"
       ],
-      "Social security": [
+      "Social Security": [
         "Social säkerhet"
       ],
       "Social security number": [
@@ -3312,9 +3413,6 @@
       ],
       "SSH key": [
         "SSH-nyckel"
-      ],
-      "SSH Keys": [
-        "SSH-nycklar"
       ],
       "SSN": [
         "SSN"
@@ -3494,9 +3592,6 @@
         "Vad som är inkluderat"
       ],
       "WiFi network": [
-        "WiFi-nätverk"
-      ],
-      "WiFi Networks": [
         "WiFi-nätverk"
       ],
       "Work details": [
@@ -3726,9 +3821,6 @@
       "Add 2FA secret key": [
         "Lägg till hemlig nyckel för 2FA"
       ],
-      "Add date": [
-        "Lägg till datum"
-      ],
       "Add hidden text": [
         "Lägg till dold text"
       ],
@@ -3824,9 +3916,6 @@
       ],
       "Used on ${ url }": [
         "Används på ${ url }"
-      ],
-      "Write your note": [
-        "Skriv din anteckning"
       ]
     },
     "Security Center - Info": {
@@ -4500,6 +4589,11 @@
       ],
       "URL is invalid": [
         "URL är ogiltig"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Flytta objekt till"
       ]
     },
     "Warning": {

@@ -504,9 +504,6 @@
       "Expand composer": [
         "Раскрыть редактор писем"
       ],
-      "Expand navigation bar to see custom views": [
-        "Разверните панель навигации, чтобы увидеть пользовательские виды."
-      ],
       "Expand navigation bar to see folders": [
         "Развернуть панель навигации, чтобы увидеть папки"
       ],
@@ -638,9 +635,6 @@
       ],
       "Hide messages": [
         "Скрыть сообщения"
-      ],
-      "Hide my email": [
-        "Скрыть мою почту"
       ],
       "Hide toolbar": [
         "Скрыть панель инструментов"
@@ -909,6 +903,9 @@
       "Move to trash": [
         "Переместить в Корзину"
       ],
+      "Move to Trash": [
+        "Переместить в корзину"
+      ],
       "Move to...": [
         "Переместить в..."
       ],
@@ -1122,9 +1119,6 @@
       "Restore": [
         "Восстановить"
       ],
-      "Resubscribe": [
-        "Снова подписаться"
-      ],
       "Resume": [
         "Возобновить"
       ],
@@ -1176,11 +1170,11 @@
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
-      "Select all": [
-        "Выделить все"
-      ],
       "Select All": [
         "Выбрать все"
+      ],
+      "Select all": [
+        "Выделить все"
       ],
       "Select all messages": [
         "Выбрать все сообщения"
@@ -1455,10 +1449,10 @@
       "Upgrade": [
         "Улучшить"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Улучшить сейчас"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Улучшить сейчас"
       ],
       "Upload and share files": [
@@ -3245,9 +3239,6 @@
       ],
       "Macao": [
         "Макао"
-      ],
-      "Macedonia": [
-        "Македония"
       ],
       "Madagascar": [
         "Мадагаскар"
@@ -6309,12 +6300,6 @@
       "${ storage } storage": [
         "${ storage } хранилище"
       ],
-      "${ subscription.ReceivedMessages.Last30Days } email last month": [
-        "${ subscription.ReceivedMessages.Last30Days } электронное письмо в прошлом месяце",
-        "${ subscription.ReceivedMessages.Last30Days } электронных письма в прошлом месяце",
-        "${ subscription.ReceivedMessages.Last30Days } электронных писем в прошлом месяце",
-        "${ subscription.ReceivedMessages.Last30Days } электронных писем в прошлом месяце"
-      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } не прочитано",
         "${ subscription.UnreadMessageCount } не прочитаны",
@@ -6377,12 +6362,6 @@
       ],
       "(No Recipient)": [
         "(Нет получателей)"
-      ],
-      "**${ elementsFoundCount }** result found in ${ labelName }": [
-        "**${ elementsFoundCount }** результат найден в ${ labelName }",
-        "**${ elementsFoundCount }** результата найдено в ${ labelName }",
-        "**${ elementsFoundCount }** результатов найдено в ${ labelName }",
-        "**${ elementsFoundCount }** результата найдено в ${ labelName }"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Автоподключение**: Открывает и подключается к VPN, как только вы включаете устройство."
@@ -7298,9 +7277,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
-      ],
-      "More infos": [
-        "Подробнее"
       ],
       "More refine actions": [
         "Более точные действия"
@@ -8911,11 +8887,11 @@
       "AND": [
         "И"
       ],
-      "And": [
-        "И"
-      ],
       "and": [
         "и"
+      ],
+      "And": [
+        "И"
       ],
       "Anderson": [
         "Андерсон"
@@ -9139,11 +9115,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЕСЛИ"
-      ],
       "If": [
         "Если"
+      ],
+      "IF": [
+        "ЕСЛИ"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -9262,11 +9238,11 @@
       "Optional": [
         "Необязательно"
       ],
-      "OR": [
-        "ИЛИ"
-      ],
       "or": [
         "или"
+      ],
+      "OR": [
+        "ИЛИ"
       ],
       "Or": [
         "Или"
@@ -9381,9 +9357,6 @@
       ],
       "System information": [
         "Сведения о системе"
-      ],
-      "The filter is disabled. You can enable it ${ settingsLink }": [
-        "Фильтр отключен. Вы можете его включить ${ settingsLink }"
       ],
       "Theme": [
         "Тема"
@@ -9535,9 +9508,6 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will appear here.": [
-        "Новости, от которых вы отписываетесь, будут отображаться здесь."
-      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Просматривайте и управляйте подписками на новости и списки рассылки здесь."
       ]
@@ -9620,9 +9590,6 @@
       ],
       "Folders": [
         "Папки"
-      ],
-      "here": [
-        "здесь"
       ],
       "How to add users": [
         "Как добавить пользователей"
@@ -10174,14 +10141,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Перейти на тариф ${ planTitle }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -10203,6 +10162,14 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Перейти на тариф ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -11118,9 +11085,6 @@
       ],
       "Require 2FA": [
         "Требуется двухфакторная аутентификация"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Поддержка ${ n } пользовательских доменов электронной почты"
       ]
     },
     "Notification": {
@@ -13001,12 +12965,6 @@
         "${ n } подключения к VPN на пользователя",
         "${ n } подключений к VPN на пользователя",
         "${ n } подключений к VPN на пользователя"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "Подключение к VPN для ${ n } устройства на одного пользователя",
-        "Подключение к VPN для ${ n } устройств на одного пользователя",
-        "Подключение к VPN для ${ n } устройств на одного пользователя",
-        "Подключение к VPN для ${ n } устройств на одного пользователя"
       ]
     },
     "Subscription change warning": {
@@ -13045,47 +13003,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription reminder": {
@@ -13358,6 +13275,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -14530,9 +14488,6 @@
       ],
       "No trackers found": [
         "Трекеров не обнаружено"
-      ],
-      "No unsubscribed mail subscriptions": [
-        "Нет отмененных почтовых подписок"
       ],
       "No-reply address detected": [
         "Обнаружен адрес, не принимающий ответы"
