@@ -1,4 +1,4 @@
-import { type FC, useEffect, useMemo } from 'react';
+import { type FC, useEffect, useMemo, useRef } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
@@ -42,7 +42,6 @@ export const Autosave: FC<Props> = ({ data }) => {
     const { createNotification } = useNotifications();
 
     const [busy, setBusy] = useMountedState(false);
-
     const prev = usePrevious(data);
 
     const shouldUpdate = useMemo(() => {
@@ -129,11 +128,14 @@ export const Autosave: FC<Props> = ({ data }) => {
         }
     }, [shouldUpdate, data]);
 
+    const vaultPickerAnchor = useRef<HTMLDivElement>(null);
+
     return (
         <FormikProvider value={form}>
             <Form className="ui-violet flex flex-column flex-nowrap *:shrink-0 justify-space-between h-full anime-fadein gap-2">
                 <NotificationHeader
                     discardOnClose={shouldDiscard}
+                    ref={vaultPickerAnchor}
                     onClose={() =>
                         onTelemetry(
                             TelemetryEventName.AutosaveDismissed,
@@ -149,6 +151,7 @@ export const Autosave: FC<Props> = ({ data }) => {
                                         name="shareId"
                                         component={AutosaveVaultPicker}
                                         fallback={c('Info').t`Save login`}
+                                        anchorRef={vaultPickerAnchor}
                                     />
                                 );
                             case AutosaveMode.UPDATE:
