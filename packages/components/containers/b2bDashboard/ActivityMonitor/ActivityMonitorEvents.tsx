@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -11,22 +12,18 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { deleteOrgUsersAuthLogs } from '@proton/shared/lib/api/b2bevents';
 import type { B2BAuthLog } from '@proton/shared/lib/authlog';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
+import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 
 import SettingsParagraph from '../../account/SettingsParagraph';
 import AuthenticationLogs from '../../organization/AuthenticationLogs';
 import TogglingMonitoringModal from './TogglingMonitoringModal';
 import WipeLogsModal from './WipeLogsModal';
 import { updateMonitoringSetting } from './api';
-
-export interface FilterModel {
-    eventType: string;
-    start: Date | undefined;
-    end: Date | undefined;
-}
 
 const ActivityMonitorDescription = () => {
     return (
@@ -47,8 +44,8 @@ const ActivityMonitorEvents = () => {
     const [wipeLogsFlag, setWipeLogsFlag] = useState(false);
     const [loadingDownload, withLoadingDownload] = useLoading();
     const [reloadTrigger, setReloadTrigger] = useState(0);
-    let monitoring = organization?.Settings?.LogAuth === 1;
-    let detailedMonitoring = monitoring || organization?.Settings?.LogAuth === 2;
+    const monitoring = organization?.Settings?.LogAuth === 1 || organization?.Settings?.LogAuth === 2;
+    const dispatch = useDispatch();
 
     const triggerReload = () => {
         setReloadTrigger((prev) => prev + 1);
@@ -57,9 +54,10 @@ const ActivityMonitorEvents = () => {
     const setActivityMonitoring = async () => {
         try {
             const enabling = !monitoring;
-            await api(updateMonitoringSetting(enabling ? 1 : 0));
+            const newValue = enabling ? 1 : 0;
+            await api<OrganizationSettings>(updateMonitoringSetting(newValue));
+            dispatch(organizationActions.updateOrganizationSettings({ value: { LogAuth: newValue } }));
 
-            monitoring = enabling;
             setTogglingMonitoringModalOpen(false);
             setTogglingMonitoringLoading(false);
         } catch (e) {
@@ -158,7 +156,6 @@ const ActivityMonitorEvents = () => {
                         wipeLogs={wipeLogsFlag}
                         reloadTrigger={reloadTrigger}
                         monitoring={monitoring}
-                        detailedMonitoringOption={detailedMonitoring}
                         onLogsLoaded={setLogs}
                     />
                 </div>
