@@ -1,5 +1,7 @@
+import { c } from 'ttag';
+
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { IdentityFieldName, ItemContent, Maybe } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
 import type { LastPassItem } from './lastpass.types';
@@ -85,10 +87,8 @@ const formatLastPassFieldValue = (value: string, field: IdentityFieldName): stri
     }
 };
 
-export const extractLastPassIdentity = (importItem: LastPassItem): ItemContent<'identity'> => {
-    const item = itemBuilder('identity');
-
-    const fields =
+const extractLastPassFields = (importItem: LastPassItem, excludedLabels?: string[]) => {
+    return (
         importItem.extra
             ?.split('\n')
             .slice(1)
@@ -97,10 +97,20 @@ export const extractLastPassIdentity = (importItem: LastPassItem): ItemContent<'
                 if (sepIndex === -1) return null;
 
                 const key = field.slice(0, sepIndex);
+                if (excludedLabels?.includes(key) || key === 'Language') return null;
+
                 const value = field.slice(sepIndex + KEY_SEPARATOR.length);
+
                 return [key, value] as const;
             })
-            .filter(truthy) ?? [];
+            .filter(truthy) ?? []
+    );
+};
+
+export const extractLastPassIdentity = (importItem: LastPassItem): ItemContent<'identity'> => {
+    const item = itemBuilder('identity');
+
+    const fields = extractLastPassFields(importItem);
 
     fields.forEach(([key, value]) => {
         const field = LAST_PASS_IDENTITY_FIELD_MAP[key];
@@ -110,3 +120,13 @@ export const extractLastPassIdentity = (importItem: LastPassItem): ItemContent<'
 
     return item.data.content;
 };
+
+export const extractLastPassExtraFields = (
+    importItem: LastPassItem,
+    excludedLabels?: string[]
+): DeobfuscatedItemExtraField[] =>
+    extractLastPassFields(importItem, excludedLabels).map(([label, value]) => ({
+        fieldName: label || c('Label').t`Text`,
+        type: label.toLowerCase().includes('password') ? 'hidden' : 'text',
+        data: { content: value ?? '' },
+    }));

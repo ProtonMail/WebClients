@@ -6,12 +6,16 @@ import {
     getEmailOrUsername,
     getImportedVaultName,
     importCreditCardItem,
+    importCustomItem,
     importIdentityItem,
     importLoginItem,
     importNoteItem,
+    importSshKeyItem,
+    importWifiItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
+import type { ItemImportIntent } from '@proton/pass/types';
+import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { logger } from '@proton/pass/utils/logger';
 import capitalize from '@proton/utils/capitalize';
@@ -20,6 +24,7 @@ import lastItem from '@proton/utils/lastItem';
 import { type LastPassItem, LastPassNoteType } from './lastpass.types';
 import {
     LASTPASS_EXPECTED_HEADERS,
+    extractLastPassExtraFields,
     extractLastPassFieldValue,
     extractLastPassIdentity,
     formatLastPassCCExpirationDate,
@@ -58,6 +63,31 @@ const processIdentityItem = (item: LastPassItem): ItemImportIntent<'identity'> =
         ...extractLastPassIdentity(item),
     });
 
+const processSshItem = (item: LastPassItem): ItemImportIntent<'sshKey'> =>
+    importSshKeyItem({
+        name: item.name,
+        note: extractLastPassFieldValue(item.extra, 'Notes'),
+        publicKey: extractLastPassFieldValue(item.extra, 'Public Key'),
+        privateKey: extractLastPassFieldValue(item.extra, 'Private Key'),
+        extraFields: extractLastPassExtraFields(item, ['Notes', 'Public Key', 'Private Key']),
+    });
+
+const processWifiItem = (item: LastPassItem): ItemImportIntent<'wifi'> =>
+    importWifiItem({
+        name: item.name,
+        note: extractLastPassFieldValue(item.extra, 'Notes'),
+        ssid: extractLastPassFieldValue(item.extra, 'SSID'),
+        password: extractLastPassFieldValue(item.extra, 'Password'),
+        security: WifiSecurity.UnspecifiedWifiSecurity,
+        extraFields: extractLastPassExtraFields(item, ['Notes', 'SSID', 'Password']),
+    });
+const processCustomItem = (item: LastPassItem): ItemImportIntent<'custom'> =>
+    importCustomItem({
+        name: item.name,
+        note: extractLastPassFieldValue(item.extra, 'Notes'),
+        extraFields: extractLastPassExtraFields(item, ['Notes']),
+    });
+
 export const readLastPassData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
@@ -90,17 +120,20 @@ export const readLastPassData = async (file: File): Promise<ImportReaderResult> 
             const items: ItemImportIntent[] = [];
 
             for (const item of vaultItems) {
-                const noteType = extractLastPassFieldValue(item?.extra, 'NoteType');
-                const type = capitalize(noteType ?? c('Label').t`Unknown`);
+                const itemType = extractLastPassFieldValue(item?.extra, 'NoteType');
+                const type = capitalize(itemType ?? c('Label').t`Unknown`);
                 const title = item?.name ?? '';
 
                 try {
-                    const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
-                        const isNote = item.url === 'http://sn';
-                        if (!isNote) return processLoginItem(item);
-                        if (!noteType) return processNoteItem(item);
+                    const value = await (async (): Promise<ItemImportIntent> => {
+                        const isLoginItem = item.url !== 'http://sn';
+                        if (isLoginItem) return processLoginItem(item);
+                        if (!itemType) return processNoteItem(item);
                         if (type === LastPassNoteType.CREDIT_CARD) return processCreditCardItem(item);
                         if (type === LastPassNoteType.ADDRESS) return processIdentityItem(item);
+                        if (type === LastPassNoteType.SSH_KEY) return processSshItem(item);
+                        if (type === LastPassNoteType.WIFI_PASSWORD) return processWifiItem(item);
+                        return processCustomItem(item);
                     })();
 
                     if (!value) ignored.push(`[${type}] ${title}`);
