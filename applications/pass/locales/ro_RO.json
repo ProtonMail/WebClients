@@ -46,6 +46,9 @@
       "Add domain": [
         "Adăugare domeniu"
       ],
+      "Add field": [
+        "Adăugare câmp"
+      ],
       "Add forwarding mailbox": [
         "Adăugare adresă redirecționare"
       ],
@@ -454,6 +457,9 @@
       "Reactivate now": [
         "Reactivare"
       ],
+      "Read More": [
+        "Detalii"
+      ],
       "Refresh the page": [
         "Împrospătare pagină"
       ],
@@ -571,6 +577,9 @@
       "Show advanced options": [
         "Afișare opțiuni avansate"
       ],
+      "Show Less": [
+        "Arată mai puțin"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Conectare cu ${ BRAND_NAME }"
       ],
@@ -682,6 +691,106 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Luați oferta"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 GiB de stocare criptată"
+      ],
+      "Add unlimited credit cards": [
+        "Adăugați carduri de plată nelimitate"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Toate funcțiile speciale ale ${ BRAND_NAME } Mail, Pass, VPN, Drive și Calendar"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Reducerile se bazează pe prețurile lunare standard. La sfârșitul ciclului de facturare, abonamentul se va reînnoi la tariful anual standard."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Dublați-vă stocarea criptată – obțineți 1 TiB pentru toate datele stocate"
+      ],
+      "Encrypted password manager": [
+        "Manager de parole criptat"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Iată un cadou exclusiv pentru a sărbători călătoria noastră împreună."
+      ],
+      "High speed streaming with VPN": [
+        "Transmisii în flux de mare viteză cu VPN"
+      ],
+      "of privacy": [
+        "de confidențialitate"
+      ],
+      "Online privacy for up to 2 people": [
+        "Confidențialitate online pentru maxim două persoane"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Confidențialitate online pentru întreaga familie (până la 6 utilizatori)"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Economisiți mult la funcțiile speciale Drive cu oferta limitată de reducere."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Economisiți mult la funcțiile speciale Mail cu oferta limitată de reducere."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Economisiți mult la funcțiile speciale PASS cu oferta limitată de reducere."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Economisiți mult la funcțiile speciale VPN cu oferta limitată de reducere."
+      ],
+      "Save time with built-in 2FA": [
+        "Salvați timp cu A2F integrată"
+      ],
+      "Secure email with unlimited aliases": [
+        "E-mail securizat cu aliasuri nelimitate"
+      ],
+      "Share passwords easily": [
+        "Partajați ușor parolele"
+      ],
+      "thanks to you": [
+        "mulțumită dvs."
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Triplați-vă stocarea criptată – obțineți 3 TiB pentru toate datele stocate"
+      ],
+      "years": [
+        "ani"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Ofertă aniversară"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
+      "/ month": [
+        "/lună"
+      ],
+      "12 months": [
+        "12 luni"
+      ],
+      "15 months": [
+        "15 luni"
+      ],
+      "24 months": [
+        "24 de luni"
+      ],
+      "30 months": [
+        "30 de luni"
+      ],
+      "for ${ durationDeal }": [
+        "cu ${ durationDeal }"
       ]
     },
     "Browser": {
@@ -1052,7 +1161,7 @@
       "File does not match expected format": [
         "Fișierul nu are formatul așteptat."
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Importare eșuată pentru seiful „${ vaultData.name }”: ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1168,6 +1277,9 @@
       ],
       "Unsupported 1Password file format": [
         "Format de fișier 1Password neacceptat."
+      ],
+      "Unsupported Bitwarden file format": [
+        "Format de fișier Bitwarden neacceptat."
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Actualizarea seifului „${ payload.content.name }” a eșuat."
@@ -1302,8 +1414,10 @@
         "${ count } vizualizări",
         "${ count } de vizualizări"
       ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } vizualizări"
+      "${ count }/${ maxReads } view": [
+        "Vizualizări: ${ count }/${ maxReads }",
+        "Vizualizări: ${ count }/${ maxReads }",
+        "Vizualizări: ${ count }/${ maxReads }"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "Redirecționate: ${ forwardedEmailsCount }",
@@ -2581,6 +2695,9 @@
       "Add section": [
         "Adăugare secțiune"
       ],
+      "Additional data": [
+        "Date suplimentare"
+      ],
       "Additional details": [
         "Detalii suplimentare"
       ],
@@ -2698,10 +2815,10 @@
       "Copy": [
         "Copiere"
       ],
-      "Country or Region": [
+      "Country": [
         "Țara"
       ],
-      "Country,": [
+      "Country or Region": [
         "Țara"
       ],
       "County": [
@@ -2829,6 +2946,9 @@
       ],
       "Extra email addresses": [
         "Adrese de e-mail suplimentare"
+      ],
+      "Extra fields": [
+        "Câmpuri suplimentare"
       ],
       "Extra password": [
         "Parola suplimentară"
@@ -2991,6 +3111,9 @@
       ],
       "Key": [
         "Cheia"
+      ],
+      "Key fingerprint": [
+        "Amprentă cheie"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Combinații taste: ${ shortcut }"
@@ -3169,10 +3292,10 @@
       "Passport": [
         "Pașaport"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Număr pașaport"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Număr pașaport"
       ],
       "Password": [
@@ -3226,10 +3349,10 @@
       "Priority:": [
         "Prioritate:"
       ],
-      "Private Key": [
+      "Private key": [
         "Cheie privată"
       ],
-      "Private key": [
+      "Private Key": [
         "Cheie privată"
       ],
       "Product": [
@@ -3328,6 +3451,9 @@
       "Share": [
         "Partajare"
       ],
+      "Share ID": [
+        "Partajare ID"
+      ],
       "Shared": [
         "Partajat"
       ],
@@ -3343,10 +3469,10 @@
       "Show website favicons": [
         "Afișare pictogramă site web"
       ],
-      "Social Security": [
+      "Social security": [
         "Card de sănătate"
       ],
-      "Social security": [
+      "Social Security": [
         "Card de sănătate"
       ],
       "Social security number": [
@@ -3360,9 +3486,6 @@
       ],
       "SSH key": [
         "Cheie SSH"
-      ],
-      "SSH Keys": [
-        "Chei SSH"
       ],
       "SSN": [
         "Număr asigurări de sănătate"
@@ -3543,9 +3666,6 @@
       ],
       "WiFi network": [
         "Rețea Wi-Fi"
-      ],
-      "WiFi Networks": [
-        "Rețele Wi-Fi"
       ],
       "Work details": [
         "Detalii loc de muncă"
@@ -3780,9 +3900,6 @@
       "Add 2FA secret key": [
         "Adăugare cheie secretă A2F"
       ],
-      "Add date": [
-        "Adăugare dată"
-      ],
       "Add hidden text": [
         "Adăugare text ascuns"
       ],
@@ -3878,9 +3995,6 @@
       ],
       "Used on ${ url }": [
         "Folosit la ${ url }"
-      ],
-      "Write your note": [
-        "Scrieți-vă notița"
       ]
     },
     "Security Center - Info": {
@@ -4562,6 +4676,11 @@
       ],
       "URL is invalid": [
         "Adresa URL nu este validă."
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Mutare articole în"
       ]
     },
     "Warning": {
