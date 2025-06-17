@@ -129,10 +129,10 @@ export const readLastPassData = async (file: File): Promise<ImportReaderResult> 
                         const isLoginItem = item.url !== 'http://sn';
                         if (isLoginItem) return processLoginItem(item);
                         if (!itemType) return processNoteItem(item);
-                        if (type === LastPassNoteType.CREDIT_CARD) return processCreditCardItem(item);
-                        if (type === LastPassNoteType.ADDRESS) return processIdentityItem(item);
-                        if (type === LastPassNoteType.SSH_KEY) return processSshItem(item);
-                        if (type === LastPassNoteType.WIFI_PASSWORD) return processWifiItem(item);
+                        if (itemType === LastPassNoteType.CREDIT_CARD) return processCreditCardItem(item);
+                        if (itemType === LastPassNoteType.ADDRESS) return processIdentityItem(item);
+                        if (itemType === LastPassNoteType.SSH_KEY) return processSshItem(item);
+                        if (itemType === LastPassNoteType.WIFI_PASSWORD) return processWifiItem(item);
                         return processCustomItem(item);
                     })();
 
