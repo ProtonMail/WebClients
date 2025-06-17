@@ -50,7 +50,7 @@ export type EditAliasFormValues = BaseItemValues &
 
 export type IdentityValues = ItemContent<'identity'>;
 export type IdentityItemFormValues = { shareId: string } & BaseItemValues & IdentityValues;
-export type IdentitySectionFormValues = { sectionName: string };
+export type ItemSectionFormValues = { sectionName: string };
 export type IdentityFieldName = ExtractKeysOfType<IdentityValues, string>;
 export type IdentityExtraFieldsKey = ExtractKeysOfType<IdentityValues, DeobfuscatedItemExtraField[]>;
 

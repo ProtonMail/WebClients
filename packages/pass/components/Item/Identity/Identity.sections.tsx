@@ -11,7 +11,7 @@ import { createExtraField } from '@proton/pass/components/Form/Field/ExtraFieldG
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { BaseTextField } from '@proton/pass/components/Form/Field/TextField';
-import { IdentityAddNewSection } from '@proton/pass/components/Item/Identity/Identity.modal';
+import { CustomNewSection } from '@proton/pass/components/Item/Custom/Custom.sections.new';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
 import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
@@ -115,7 +115,8 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
 
                     <hr className="my-4" />
 
-                    <IdentityAddNewSection
+                    <CustomNewSection
+                        upsellRef={UpsellRef.IDENTITY_CUSTOM_FIELDS}
                         onAdd={(sectionName: string) =>
                             extraSectionsHelpers.push({
                                 sectionName,

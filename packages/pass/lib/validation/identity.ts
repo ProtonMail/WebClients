@@ -2,7 +2,7 @@ import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import { validateItemErrors } from '@proton/pass/lib/validation/item';
-import type { DeobfuscatedItemExtraField, IdentityItemFormValues, IdentitySectionFormValues } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, IdentityItemFormValues } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 import type { ExtraFieldErrors } from './extra-field';
@@ -51,11 +51,3 @@ export const validateIdentityForm = (values: IdentityItemFormValues): FormikErro
     ...validateExtraFields(values),
     ...validateExtraSections(values),
 });
-
-export const validateIdentitySection = ({
-    sectionName,
-}: IdentitySectionFormValues): FormikErrors<IdentitySectionFormValues> => {
-    const errors: FormikErrors<IdentitySectionFormValues> = {};
-    if (isEmptyString(sectionName)) errors.sectionName = c('Validation').t`Section name cannot be empty`;
-    return errors;
-};
