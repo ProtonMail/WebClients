@@ -5,10 +5,14 @@ import type { AuthVersion } from '@proton/srp/lib/interface';
 
 export const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
 
+const removeTrailingSlash = (meetingLinkName: string) => {
+    return meetingLinkName.at(-1) === '/' ? meetingLinkName.slice(0, -1) : meetingLinkName;
+};
+
 export const queryInitSRPHandshake = (meetingLinkName: string) => {
     return {
         method: 'get',
-        url: `meet/v1/meetings/links/${meetingLinkName.at(-1) === '/' ? meetingLinkName.slice(0, -1) : meetingLinkName}/info`,
+        url: `meet/v1/meetings/links/${removeTrailingSlash(meetingLinkName)}/info`,
         silence: true,
     };
 };
@@ -16,7 +20,7 @@ export const queryInitSRPHandshake = (meetingLinkName: string) => {
 export const queryAuth = (meetingLinkName: string) => {
     return {
         method: 'post',
-        url: `meet/v1/meetings/links/${meetingLinkName.at(-1) === '/' ? meetingLinkName.slice(0, -1) : meetingLinkName}/auth`,
+        url: `meet/v1/meetings/links/${removeTrailingSlash(meetingLinkName)}/auth`,
         silence: true,
     };
 };
@@ -24,7 +28,15 @@ export const queryAuth = (meetingLinkName: string) => {
 export const queryMeetingInfo = (meetingLinkName: string) => {
     return {
         method: 'get',
-        url: `meet/v1/meetings/links/${meetingLinkName.at(-1) === '/' ? meetingLinkName.slice(0, -1) : meetingLinkName}`,
+        url: `meet/v1/meetings/links/${removeTrailingSlash(meetingLinkName)}`,
+        silence: true,
+    };
+};
+
+export const queryAccessToken = (meetingLinkName: string) => {
+    return {
+        method: 'post',
+        url: `meet/v1/meetings/links/${removeTrailingSlash(meetingLinkName)}/access-tokens`,
         silence: true,
     };
 };
@@ -77,13 +89,42 @@ export const useMeetSrp = () => {
 
         return response.json();
     };
+
     const getMeetingInfo = async (meetingLinkName: string) => {
-        return api<any>(queryMeetingInfo(meetingLinkName));
+        const response = await api<{ MeetingInfo: { Salt: string; SessionKey: string; MeetingName: string } }>(
+            queryMeetingInfo(meetingLinkName)
+        );
+
+        return response;
+    };
+
+    const getAccessToken = async (meetingLinkName: string, displayName: string) => {
+        const result = {
+            AccessToken: '',
+            WebsocketUrl: '',
+        };
+
+        try {
+            const response = await api({
+                ...queryAccessToken(meetingLinkName),
+                data: {
+                    DisplayName: displayName,
+                },
+            });
+
+            result.AccessToken = response.AccessToken;
+            result.WebsocketUrl = response.WebsocketUrl;
+        } catch (error) {
+            console.error(error);
+        }
+
+        return result;
     };
 
     return {
         initHandshake,
         getSessionToken,
         getMeetingInfo,
+        getAccessToken,
     };
 };

@@ -98,7 +98,7 @@ export const DeviceSettings = ({
                                   )
                                 : IcMeetMicrophoneOff
                         }
-                        variant={isMicrophoneEnabled ? 'lighter-default' : 'danger'}
+                        variant={isMicrophoneEnabled ? 'default' : 'danger'}
                         indicatorContent={noMicrophonePermission ? '!' : undefined}
                         indicatorStatus={noMicrophonePermission ? 'warning' : 'default'}
                     />
@@ -106,7 +106,7 @@ export const DeviceSettings = ({
                     <CircleButton
                         onClick={noCameraPermission ? undefined : onCameraToggle}
                         IconComponent={isCameraEnabled ? IcMeetCamera : IcMeetCameraOff}
-                        variant={isCameraEnabled ? 'lighter-default' : 'danger'}
+                        variant={isCameraEnabled ? 'default' : 'danger'}
                         indicatorContent={noCameraPermission ? '!' : undefined}
                         indicatorStatus={noCameraPermission ? 'warning' : 'default'}
                     />

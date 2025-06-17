@@ -17,12 +17,18 @@ interface PrejoinContainerProps {
     loadingState: LoadingState | null;
     isLoading: boolean;
     guestMode?: boolean;
+    shareLink: string;
+    roomName: string;
 }
 
-const getRoomNameFromSearchParams = (searchParams: URLSearchParams) =>
-    searchParams.get('room_id') || (process.env.LIVEKIT_DEFAULT_ROOM as string);
-
-export const PrejoinContainer = ({ handleJoin, loadingState, isLoading, guestMode = false }: PrejoinContainerProps) => {
+export const PrejoinContainer = ({
+    handleJoin,
+    loadingState,
+    isLoading,
+    guestMode = false,
+    shareLink,
+    roomName,
+}: PrejoinContainerProps) => {
     const [selectedCamera, setSelectedCamera] = useState<MediaDeviceInfo | null>(null);
     const [selectedMicrophone, setSelectedMicrophone] = useState<MediaDeviceInfo | null>(null);
 
@@ -39,10 +45,6 @@ export const PrejoinContainer = ({ handleJoin, loadingState, isLoading, guestMod
 
     const [displayName, setDisplayName] = useState(defaultDisplayName);
 
-    const searchParams = new URLSearchParams(window.location.search);
-
-    const roomId = getRoomNameFromSearchParams(searchParams);
-
     useEffect(() => {
         setSelectedCamera(defaultCamera);
         setSelectedMicrophone(defaultMicrophone);
@@ -51,7 +53,6 @@ export const PrejoinContainer = ({ handleJoin, loadingState, isLoading, guestMod
     const handleJoinMeeting = ({ displayName }: { displayName: string }) => {
         handleJoin({
             displayName,
-            roomName: roomId,
             audioDeviceId: selectedMicrophone?.deviceId as string,
             videoDeviceId: selectedCamera?.deviceId as string,
             isAudioEnabled: isMicrophoneEnabled,
@@ -104,10 +105,11 @@ export const PrejoinContainer = ({ handleJoin, loadingState, isLoading, guestMod
                     <>{loadingState === LoadingState.JoiningInProgress && <JoiningRoomLoader />}</>
                 ) : (
                     <PreJoinDetails
-                        roomId={roomId}
+                        roomName={roomName}
                         displayName={displayName}
                         onDisplayNameChange={setDisplayName}
                         onJoinMeeting={handleJoinMeeting}
+                        shareLink={shareLink}
                     />
                 )}
             </div>

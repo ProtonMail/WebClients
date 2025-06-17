@@ -4,18 +4,23 @@ import { Button } from '@proton/atoms';
 import { InputFieldStacked, InputFieldStackedGroup, InputFieldTwo } from '@proton/components';
 import { IcMeetCopy } from '@proton/icons';
 
-import { getMeetingLink } from '../../utils/getMeetingLink';
-
 import './PreJoinDetails.scss';
 
 interface PreJoinDetailsProps {
-    roomId: string;
+    roomName: string;
     displayName: string;
     onDisplayNameChange: (displayName: string) => void;
     onJoinMeeting: ({ displayName }: { displayName: string }) => void;
+    shareLink: string;
 }
 
-export const PreJoinDetails = ({ roomId, displayName, onDisplayNameChange, onJoinMeeting }: PreJoinDetailsProps) => {
+export const PreJoinDetails = ({
+    roomName,
+    displayName,
+    onDisplayNameChange,
+    onJoinMeeting,
+    shareLink,
+}: PreJoinDetailsProps) => {
     return (
         <div className="flex flex-nowrap flex-column gap-4 w-custom" style={{ '--w-custom': '22.625rem' }}>
             <h1 className="h2 text-center">{c('l10n_nightly Title').t`Talk freely`}</h1>
@@ -26,11 +31,11 @@ export const PreJoinDetails = ({ roomId, displayName, onDisplayNameChange, onJoi
             <InputFieldStackedGroup classname="mb-4 w-full">
                 <InputFieldStacked isGroupElement>
                     <InputFieldTwo
-                        label={c('l10n_nightly Label').t`Meeting ID`}
+                        label={c('l10n_nightly Label').t`Meeting name`}
                         type="text"
                         unstyled
                         inputClassName="rounded-none"
-                        value={roomId}
+                        value={roomName || c('l10n_nightly Placeholder').t`Loading...`}
                         onChange={(e) => e.preventDefault()}
                     />
                     <Button
@@ -43,7 +48,7 @@ export const PreJoinDetails = ({ roomId, displayName, onDisplayNameChange, onJoi
                             transform: 'translateY(-50%)',
                         }}
                         onClick={() => {
-                            void navigator.clipboard.writeText(getMeetingLink(roomId));
+                            void navigator.clipboard.writeText(shareLink);
                         }}
                         aria-label={c('l10n_nightly Alt').t`Copy meeting link`}
                     >
@@ -68,7 +73,7 @@ export const PreJoinDetails = ({ roomId, displayName, onDisplayNameChange, onJoi
                 size="large"
                 fullWidth
                 onClick={() => onJoinMeeting({ displayName })}
-                disabled={!displayName}
+                disabled={!displayName || !roomName}
             >
                 {c('l10n_nightly Action').t`Ask to join`}
             </Button>

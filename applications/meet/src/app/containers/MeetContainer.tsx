@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import type { LocalVideoTrack } from 'livekit-client';
 import { VideoQuality } from 'livekit-client';
@@ -11,30 +11,28 @@ import { useAudioToggle } from '../hooks/useAudioToggle';
 import { useVideoToggle } from '../hooks/useVideoToggle';
 import type { MeetChatMessage, ParticipantEventRecord } from '../types';
 import { MeetingSideBars, type ParticipantSettings, PopUpControls } from '../types';
-import { getMeetingLink } from '../utils/getMeetingLink';
 
 const shouldAllowExperimentalFaceCrop = process.env.EXPERIMENTAL_FACE_CROP === 'true';
 
-export const MeetContainer = ({
-    setParticipantSettings,
-    participantSettings: {
-        audioDeviceId,
-        videoDeviceId,
-        isFaceTrackingEnabled,
-        roomName,
-        isAudioEnabled,
-        isVideoEnabled,
-    },
-    setAudioDeviceId,
-    setVideoDeviceId,
-    handleLeave,
-}: {
+interface MeetContainerProps {
     setParticipantSettings: React.Dispatch<React.SetStateAction<ParticipantSettings | null>>;
     participantSettings: ParticipantSettings;
     setAudioDeviceId: (deviceId: string) => void;
     setVideoDeviceId: (deviceId: string) => void;
     handleLeave: () => void;
-}) => {
+    shareLink: string;
+    roomName: string;
+}
+
+export const MeetContainer = ({
+    setParticipantSettings,
+    participantSettings: { audioDeviceId, videoDeviceId, isFaceTrackingEnabled, isAudioEnabled, isVideoEnabled },
+    setAudioDeviceId,
+    setVideoDeviceId,
+    handleLeave,
+    shareLink,
+    roomName,
+}: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
     const [pageSize, setPageSize] = useState(PAGE_SIZE);
@@ -43,8 +41,6 @@ export const MeetContainer = ({
 
     const [chatMessages, setChatMessages] = useState<MeetChatMessage[]>([]);
     const [participantEvents, setParticipantEvents] = useState<ParticipantEventRecord[]>([]);
-
-    const meetingLink = useMemo(() => getMeetingLink(roomName), [roomName]);
 
     const [sideBarState, setSideBarState] = useState({
         [MeetingSideBars.Participants]: false,
@@ -137,7 +133,7 @@ export const MeetContainer = ({
                     roomName,
                     resolution,
                     setResolution,
-                    meetingLink,
+                    meetingLink: shareLink,
                     sideBarState,
                     toggleSideBarState,
                     popupState,

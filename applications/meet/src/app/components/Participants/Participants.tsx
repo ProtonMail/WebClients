@@ -14,6 +14,7 @@ import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useDebouncedActiveSpeakers } from '../../hooks/useDebouncedActiveSpeakers';
 import { MeetingSideBars } from '../../types';
+import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { SideBarSearch } from '../SideBarSearch';
 
 import './Participants.scss';
@@ -92,7 +93,7 @@ export const Participants = () => {
                                 )}
                                 style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
                             >
-                                <div>{participant.name?.[0].toLocaleUpperCase()}</div>
+                                <div>{getParticipantInitials(participant)}</div>
                             </div>
                             <div className="flex items-center">{participant.name}</div>
                             <div className="flex flex-nowrap items-center ml-auto gap-4 pr-4">

@@ -14,7 +14,7 @@ export const LeaveModal = () => {
     return (
         <div className="text-center">
             <Button
-                className="px-8 py-4 leave-button border-none color-invert"
+                className="px-8 py-4 leave-button border-none"
                 pill={true}
                 size="large"
                 onClick={() => handleSetOpen(true)}
@@ -29,11 +29,7 @@ export const LeaveModal = () => {
                         <p>{c('l10n_nightly Info').t`Are you sure you want to leave the meeting?`}</p>
                     </ModalTwoContent>
                     <ModalTwoFooter className="flex justify-end gap-2">
-                        <Button
-                            className="rounded-full"
-                            color="weak"
-                            onClick={() => handleSetOpen(false)}
-                        >
+                        <Button className="rounded-full" color="weak" onClick={() => handleSetOpen(false)}>
                             {c('l10n_nightly Action').t`Cancel`}
                         </Button>
                         <Button className="rounded-full" shape="outline" color="danger" onClick={handleLeave}>
