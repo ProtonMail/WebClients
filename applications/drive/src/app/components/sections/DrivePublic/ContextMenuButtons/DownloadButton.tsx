@@ -46,9 +46,8 @@ export const DownloadButton = ({ selectedBrowserItems, close, openInDocs, virusS
         );
     };
 
-    const buttonTextWithScan = count > 1 ? c('Action').t`Download (${count})` : c('Action').t`Download`;
-    const buttonTextWithoutScan =
-        count > 1 ? c('Action').t`Download without scanning (${count})` : c('Action').t`Download without scanning`;
+    const buttonTextWithScan = count > 1 ? c('Action').t`Scan & Download (${count})` : c('Action').t`Scan & Download`;
+    const buttonTextWithoutScan = count > 1 ? c('Action').t`Download (${count})` : c('Action').t`Download`;
 
     return (
         <ContextMenuButton
