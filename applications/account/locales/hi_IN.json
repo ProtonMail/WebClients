@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -1243,6 +1243,9 @@
       "Try another method": [
         "दूसरा तरीका आजमाएं"
       ],
+      "Try for free": [
+        "मुफ्त में आजमाएं"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "सेव करने की कोशिश वापस करें। सेव करने में असफल इस वजह से हुए: ${ saveError }"
       ],
@@ -1708,15 +1711,6 @@
         "अपना वर्ष के अंत का ऑफ़र चुनें"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लैन के साथ उपलब्ध नहीं है। लेकिन जब आप ${ cycle } महीने के लिए सब्सक्राइब करते हैं तो आप ${ plan.Title } पर ${ discountPercentage } की छूट प्राप्त कर सकते हैं।",
-        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लैन के साथ उपलब्ध नहीं है। लेकिन जब आप ${ cycle } महीनों के लिए सब्सक्राइब करते हैं तो आप ${ plan.Title } पर ${ discountPercentage } की छूट प्राप्त कर सकते हैं।"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 टीबी स्टोरेज (किसी भी अन्य योजना की तुलना में 2 गुना ज़्यादा)"
@@ -1738,6 +1732,15 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "केवल सीमित समय के लिए ${ plan } योजना वापस आ गई है"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लैन के साथ उपलब्ध नहीं है। लेकिन जब आप ${ cycle } महीने के लिए सब्सक्राइब करते हैं तो आप ${ plan.Title } पर ${ discountPercentage } की छूट प्राप्त कर सकते हैं।",
+        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लैन के साथ उपलब्ध नहीं है। लेकिन जब आप ${ cycle } महीनों के लिए सब्सक्राइब करते हैं तो आप ${ plan.Title } पर ${ discountPercentage } की छूट प्राप्त कर सकते हैं।"
       ]
     },
     "bf2023: Offers": {
@@ -3128,9 +3131,6 @@
       "Macao": [
         "मकाओ"
       ],
-      "Macedonia": [
-        "मैसिडोनिया"
-      ],
       "Madagascar": [
         "मेडागास्कर"
       ],
@@ -3950,9 +3950,6 @@
       ],
       "Download for Linux": [
         "Linux के लिए डाउनलोड करें"
-      ],
-      "Download for MacOS": [
-        "macOS के लिए डाउनलोड करें"
       ],
       "Download for Windows": [
         "Windows के लिए डाउनलोड करें"
@@ -9245,10 +9242,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -10386,10 +10383,10 @@
       "AND": [
         "और"
       ],
-      "And": [
+      "and": [
         "और"
       ],
-      "and": [
+      "And": [
         "और"
       ],
       "Anderson": [
@@ -10800,10 +10797,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "अगर"
       ],
-      "If": [
+      "IF": [
         "अगर"
       ],
       "Import all messages": [
@@ -11007,10 +11004,10 @@
       "Optional": [
         "वैकल्पिक"
       ],
-      "OR": [
+      "or": [
         "या"
       ],
-      "or": [
+      "OR": [
         "या"
       ],
       "Or": [
@@ -11635,11 +11632,11 @@
       "perform a password reset from your active session": [
         "अपने सक्रिय सत्र से पासवर्ड रीसेट करें"
       ],
-      "privacy policy": [
-        "निजता नीति"
-      ],
       "Privacy policy": [
         "गोपनीयता नीति"
+      ],
+      "privacy policy": [
+        "निजता नीति"
       ],
       "Reactivate now": [
         "अब पुनः सक्रिय करें"
@@ -12956,14 +12953,6 @@
         "सिर्फ ${ priceLine } में सभी ${ BRAND_NAME } प्रीमियम उत्पाद और खासियतें अनलॉक करें। किसी भी समय रद्द करें।"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -12982,6 +12971,14 @@
       ],
       "Unlock premium features by upgrading": [
         "अपग्रेड करके प्रीमियम सुविधाओं का लाभ उठाएँ"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -13266,9 +13263,6 @@
       ],
       "Require 2FA": [
         "2-एफए आवश्यक करें"
-      ],
-      "Support for ${ n } custom email domains": [
-        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट"
       ]
     },
     "news": {
@@ -16757,47 +16751,6 @@
         "के लिए ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "and 15 more premium features": [
-        "और 15 अन्य प्रीमियम सुविधाएँ"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "डाटा लीक अलर्ट ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
-      ],
-      "No ads or tracking": [
-        "कोई विज्ञापन या ट्रैकिंग नहीं"
-      ],
-      "Short @pm.me email address": [
-        "छोटा @pm.me ईमेल पता"
-      ],
-      "Support our mission": [
-        "हमारे मिशन का समर्थन करें"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ],
-      "Upgrade your productivity": [
-        "अपनी उत्पादकता बढ़ाएँ"
-      ],
-      "We don't sell your data": [
-        "हम आपका डाटा नहीं बेचते"
-      ],
-      "Your privacy is our mission": [
-        "आपकी निजता हमारा मिशन है"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, और ${ VPN_SHORT_APP_NAME } प्रीमियम सुविधाओं के साथ"
@@ -17086,6 +17039,47 @@
       ],
       "Your own short @pm.me email alias": [
         "आपका अपना छोटा @pm.me ईमेल नकली-नाम"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "and 15 more premium features": [
+        "और 15 अन्य प्रीमियम सुविधाएँ"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "डाटा लीक अलर्ट ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
+      ],
+      "No ads or tracking": [
+        "कोई विज्ञापन या ट्रैकिंग नहीं"
+      ],
+      "Short @pm.me email address": [
+        "छोटा @pm.me ईमेल पता"
+      ],
+      "Support our mission": [
+        "हमारे मिशन का समर्थन करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade your productivity": [
+        "अपनी उत्पादकता बढ़ाएँ"
+      ],
+      "We don't sell your data": [
+        "हम आपका डाटा नहीं बेचते"
+      ],
+      "Your privacy is our mission": [
+        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription renewal state": {
