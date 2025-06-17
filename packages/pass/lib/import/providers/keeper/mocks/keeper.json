@@ -224,6 +224,16 @@
             "title": "general item login",
             "login": "john",
             "password": "password"
+        },
+        {
+            "uid": 19,
+            "title": "wifi",
+            "$type": "wifiCredentials",
+            "custom_fields": {
+                "$text:SSID:1": "my-ssid",
+                "$text:custom field:1": "custom value"
+            },
+            "password": "password123"
         }
     ]
 }
