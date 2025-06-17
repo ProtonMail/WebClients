@@ -7,3 +7,7 @@ export const getNUnreadConversationsText = (n: number) => {
 export const getNUnreadMessagesText = (n: number) => {
     return c('Info').ngettext(msgid`${n} unread conversation`, `${n} unread conversations`, n);
 };
+
+export const getUnreadNewslettersText = (n: number) => {
+    return c('Info').ngettext(msgid`${n} newsletter`, `${n} newsletters`, n);
+};
