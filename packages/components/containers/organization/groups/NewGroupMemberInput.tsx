@@ -36,7 +36,7 @@ export const convertEnhancedMembersToContactEmails = (members: EnhancedMember[])
     );
 };
 
-export const convertGroupMemberToRecipient = (groupMembers: GroupMember[] | ContactEmail[]): Recipient[] => {
+export const convertGroupMemberToRecipient = (groupMembers: GroupMember[]): Recipient[] => {
     return groupMembers.map((member) => {
         return {
             Name: member.Email,

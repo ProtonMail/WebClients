@@ -6,7 +6,7 @@ import { getOrgAuthLogs } from '@proton/shared/lib/api/b2bevents';
 
 import type { AuthLogsQueryParams } from './AuthenticationLogs';
 
-export const getFormattedQueryString = (params: { [key: string]: any }) => {
+const getFormattedQueryString = (params: { [key: string]: any }) => {
     const queryParts: string[] = [];
 
     Object.keys(params).forEach((key) => {
@@ -26,7 +26,7 @@ export const getFormattedQueryString = (params: { [key: string]: any }) => {
     return queryParts.join('&');
 };
 
-const useOrgAuthLogs = (api: any, query: AuthLogsQueryParams, page: number, wipeLogs?: boolean) => {
+const useOrgAuthLogs = (api: any, query: AuthLogsQueryParams, page: number) => {
     const handleError = useErrorHandler();
     const [authLogs, setAuthLogs] = useState([]);
     const [total, setTotal] = useState(0);
@@ -57,7 +57,7 @@ const useOrgAuthLogs = (api: any, query: AuthLogsQueryParams, page: number, wipe
 
     useEffect(() => {
         void withLoading(fetchAuthLogs());
-    }, [page, query, wipeLogs]);
+    }, [page, query]);
 
     return { authLogs, total, loading, error };
 };
