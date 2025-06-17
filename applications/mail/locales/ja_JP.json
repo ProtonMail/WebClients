@@ -501,9 +501,6 @@
       "Expand composer": [
         "広げる"
       ],
-      "Expand navigation bar to see custom views": [
-        "ナビゲーションバーを展開して、カスタムビューを表示"
-      ],
       "Expand navigation bar to see folders": [
         "ナビゲーションバーを展開してフォルダーを表示"
       ],
@@ -638,9 +635,6 @@
       ],
       "Hide more benefits": [
         "その他のメリットを隠す"
-      ],
-      "Hide my email": [
-        "自分のメールを隠す"
       ],
       "Hide toolbar": [
         "ツールバーを非表示"
@@ -912,6 +906,9 @@
       "Move to trash": [
         "ごみ箱に移動"
       ],
+      "Move to Trash": [
+        "ごみ箱に移動"
+      ],
       "Move to...": [
         "移動先"
       ],
@@ -1125,9 +1122,6 @@
       "Restore": [
         "復元"
       ],
-      "Resubscribe": [
-        "再購読"
-      ],
       "Resume": [
         "再開"
       ],
@@ -1179,10 +1173,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } を選択"
       ],
-      "Select all": [
+      "Select All": [
         "すべて選択"
       ],
-      "Select All": [
+      "Select all": [
         "すべて選択"
       ],
       "Select all messages": [
@@ -1461,10 +1455,10 @@
       "Upgrade": [
         "アップグレード"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "今すぐアップグレード"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "今すぐアップグレード"
       ],
       "Upload and share files": [
@@ -3216,9 +3210,6 @@
       ],
       "Macao": [
         "マカオ"
-      ],
-      "Macedonia": [
-        "マケドニア"
       ],
       "Madagascar": [
         "マダカスカル"
@@ -6070,9 +6061,6 @@
       "${ storage } storage": [
         "${ storage } ストレージ"
       ],
-      "${ subscription.ReceivedMessages.Last30Days } email last month": [
-        "先月受信した${ subscription.ReceivedMessages.Last30Days }件のメール"
-      ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } 件が未読"
       ],
@@ -6114,9 +6102,6 @@
       ],
       "(No Recipient)": [
         "(宛先なし)"
-      ],
-      "**${ elementsFoundCount }** result found in ${ labelName }": [
-        "${ labelName } 内で **${ elementsFoundCount }** 件見つかりました"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**自動接続**: デバイスをオンにするとすぐにVPNに接続します。"
@@ -6990,9 +6975,6 @@
       ],
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
-      ],
-      "More infos": [
-        "詳細"
       ],
       "More refine actions": [
         "その他の修正操作"
@@ -8522,10 +8504,10 @@
       "AND": [
         "かつ"
       ],
-      "And": [
+      "and": [
         "と"
       ],
-      "and": [
+      "And": [
         "と"
       ],
       "Anderson": [
@@ -8750,10 +8732,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "条件"
       ],
-      "If": [
+      "IF": [
         "条件"
       ],
       "Import all messages": [
@@ -8818,9 +8800,6 @@
       ],
       "Mark as": [
         "としてマークする"
-      ],
-      "Marked ${ count } message as read.": [
-        "${ count }件のメッセージを既読にしました。"
       ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } へ移動"
@@ -8888,10 +8867,10 @@
       "Optional": [
         "任意"
       ],
-      "OR": [
+      "or": [
         "または"
       ],
-      "or": [
+      "OR": [
         "または"
       ],
       "Or": [
@@ -9007,9 +8986,6 @@
       ],
       "System information": [
         "システム情報"
-      ],
-      "The filter is disabled. You can enable it ${ settingsLink }": [
-        "フィルターは無効になっています。${ settingsLink }で有効にできます"
       ],
       "Theme": [
         "テーマ"
@@ -9164,9 +9140,6 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will appear here.": [
-        "購読解除したニュースレターがここに表示されます。"
-      ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "ニュースレターとメーリングリストのサブスクリプションの表示と管理は、こちらで行います。"
       ]
@@ -9249,9 +9222,6 @@
       ],
       "Folders": [
         "フォルダー"
-      ],
-      "here": [
-        "こちら"
       ],
       "How to add users": [
         "ユーザーを追加する方法"
@@ -9779,14 +9749,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }を獲得"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -9808,6 +9770,14 @@
       ],
       "Switch plan": [
         "プランを変更"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }を獲得"
       ]
     },
     "new_plans: feature": {
@@ -10329,9 +10299,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "必要不可欠なネットワーク監視で、どこからでも安全にインターネットにアクセス"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "ファイルを簡単かつ安全に保存、同期、共有できる安全なクラウドストレージ。"
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "毎日の会話のための、高度な機能を備えた安全なメールのプランです。"
       ],
@@ -10648,9 +10615,6 @@
       ],
       "Require 2FA": [
         "2段階認証が必要"
-      ],
-      "Support for ${ n } custom email domains": [
-        "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
     "Notification": {
@@ -12415,9 +12379,6 @@
       ],
       "${ n } VPN connection per user": [
         "1 ユーザーあたり ${ n } 件の VPN 接続"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "ユーザーごとに ${ n } 台のデバイスへのVPN接続"
       ]
     },
     "Subscription change warning": {
@@ -12456,47 +12417,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } の場合"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription reminder": {
@@ -12751,6 +12671,47 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -13820,9 +13781,6 @@
       ],
       "No trackers found": [
         "トラッカーは見つかりませんでした"
-      ],
-      "No unsubscribed mail subscriptions": [
-        "購読解除されたメールサブスクリプションはありません。"
       ],
       "No-reply address detected": [
         "返信できないアドレスが検知されました"

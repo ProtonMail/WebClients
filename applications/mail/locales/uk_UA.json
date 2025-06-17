@@ -588,9 +588,6 @@
       "Hide messages": [
         "Приховати повідомлення"
       ],
-      "Hide my email": [
-        "Hide-my-email"
-      ],
       "Hide toolbar": [
         "Сховати панель інструментів"
       ],
@@ -834,6 +831,9 @@
       "Move to trash": [
         "Перемістити до смітника"
       ],
+      "Move to Trash": [
+        "Перемістити до смітника"
+      ],
       "Move to...": [
         "Перемістити..."
       ],
@@ -1035,9 +1035,6 @@
       "Restore": [
         "Відновити"
       ],
-      "Resubscribe": [
-        "Відновити передплату"
-      ],
       "Resume": [
         "Продовжити"
       ],
@@ -1089,10 +1086,10 @@
       "Select ${ planTitle }": [
         "Оберіть ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Вибрати все"
       ],
-      "Select All": [
+      "Select all": [
         "Вибрати все"
       ],
       "Select all messages": [
@@ -1344,11 +1341,11 @@
       "Upgrade": [
         "Покращити"
       ],
-      "Upgrade now": [
-        "Покращити"
-      ],
       "Upgrade Now": [
         "Передплатити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -3096,9 +3093,6 @@
       ],
       "Macao": [
         "Макао"
-      ],
-      "Macedonia": [
-        "Македонія"
       ],
       "Madagascar": [
         "Мадагаскар"
@@ -6076,12 +6070,6 @@
       "(No Recipient)": [
         "(Немає отримувача)"
       ],
-      "**${ elementsFoundCount }** result found in ${ labelName }": [
-        "**${ elementsFoundCount }** результат знайдено в ${ labelName }",
-        "**${ elementsFoundCount }** результати знайдено в ${ labelName }",
-        "**${ elementsFoundCount }** результатів знайдено в ${ labelName }",
-        "**${ elementsFoundCount }** результатів знайдено в ${ labelName }"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } додаткового сховища"
       ],
@@ -8313,11 +8301,11 @@
       "AND": [
         "ТА"
       ],
-      "And": [
-        "Та"
-      ],
       "and": [
         "та"
+      ],
+      "And": [
+        "Та"
       ],
       "Anderson": [
         "Андерсон"
@@ -8529,11 +8517,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЯКЩО"
-      ],
       "If": [
         "Якщо"
+      ],
+      "IF": [
+        "ЯКЩО"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -8643,11 +8631,11 @@
       "Optional": [
         "Необов'язково"
       ],
-      "OR": [
-        "АБО"
-      ],
       "or": [
         "або"
+      ],
+      "OR": [
+        "АБО"
       ],
       "Or": [
         "Або"
@@ -8969,9 +8957,6 @@
       ],
       "Folders": [
         "Теки"
-      ],
-      "here": [
-        "тут"
       ],
       "How to pay with Bitcoin?": [
         "Як оплатити за допомогою Bitcoin?"
@@ -9469,14 +9454,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Отримати ${ planTitle }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -9498,6 +9475,14 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "Отримати ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10389,9 +10374,6 @@
       ],
       "Require 2FA": [
         "Потрібна 2FA"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Підтримка ${ n } власних доменів електронної пошти"
       ]
     },
     "Notification": {
@@ -12103,12 +12085,6 @@
         "${ n } VPN-з'єднання на користувача",
         "${ n } VPN-з'єднань на користувача",
         "${ n } VPN-з'єднання на користувача"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "VPN з'єднання для ${ n } пристрою на користувача",
-        "VPN з'єднання для ${ n } пристроїв на користувача",
-        "VPN з'єднання для ${ n } пристроїв на користувача",
-        "VPN з'єднання для ${ n } пристроїв на користувача"
       ]
     },
     "Subscription change warning": {
@@ -12147,47 +12123,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "and 15 more premium features": [
-        "та ще 15 преміальних функцій"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматичне пересилання пошти ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Сповіщення про витоки даних ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Програма для комп'ютера"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
-      ],
-      "No ads or tracking": [
-        "Без реклами і стеження"
-      ],
-      "Short @pm.me email address": [
-        "Коротка адреса електронної пошти @pm.me"
-      ],
-      "Support our mission": [
-        "Підтримайте нашу місію"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade your productivity": [
-        "Вдоскональте свою продуктивність"
-      ],
-      "We don't sell your data": [
-        "Ми не продаємо ваші дані"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription reminder": {
@@ -12460,6 +12395,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш власний короткий псевдонім електронної пошти @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription renewal state": {
