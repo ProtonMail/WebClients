@@ -27,6 +27,7 @@ import {
     extract1PasswordNote,
     extract1PasswordURLs,
     extractBaseWifi,
+    extractSSHSections,
     format1PasswordMonthYear,
     intoFilesFrom1PasswordItem,
     is1PasswordCCField,
@@ -140,18 +141,19 @@ const processCustomItem = (item: OnePassItem) =>
     });
 
 const processSshKeyItem = (item: OnePassItem) => {
-    const sshKey = item.details.sections
-        ?.flatMap((section) => section.fields)
-        .find((field) => field.id === 'private_key')?.value?.sshKey;
+    const sshKey = item.details.sections?.flatMap(prop('fields')).find((field) => field.id === 'private_key')
+        ?.value?.sshKey;
 
     return importSshKeyItem({
-        privateKey: sshKey?.privateKey, // OPENSSH Key
+        privateKey: sshKey?.metadata?.privateKey,
+        publicKey: sshKey?.metadata?.publicKey,
         name: item.overview.title,
         note: item.details.notesPlain,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
         trashed: item.state === OnePassState.ARCHIVED,
         extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
+        sections: extractSSHSections(sshKey),
     });
 };
 
