@@ -4,6 +4,7 @@ import { endOfDay, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { useMembers } from '@proton/account/members/hooks';
+import { organizationActions } from '@proton/account/organization';
 import { Button } from '@proton/atoms';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
 import DateInput from '@proton/components/components/input/DateInput';
@@ -20,9 +21,10 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { B2BAuthLog } from '@proton/shared/lib/authlog';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { OrganizationExtended, Recipient } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended, OrganizationSettings, Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -44,6 +46,7 @@ interface Props {
     detailedMonitoringOption?: boolean;
     onLogsLoaded: (logs: B2BAuthLog[]) => void;
 }
+
 export interface AuthLogsQueryParams {
     Emails: string[];
     StartTime?: string;
@@ -57,7 +60,6 @@ const AuthenticationLogs = ({
     wipeLogs = false,
     reloadTrigger = 0,
     monitoring = false,
-    detailedMonitoringOption = false,
     onLogsLoaded,
 }: Props) => {
     const api = useApi();
@@ -70,9 +72,11 @@ const AuthenticationLogs = ({
     const { filter, handleStartDateChange, handleEndDateChange } = useAuthLogsDateFilter();
     const [recipients, setRecipient] = useState<Recipient[]>([]);
     const addressesAutocompleteRef = useRef<HTMLInputElement>(null);
-    const [detailedMonitoring, setDetailedMonitoring] = useState(detailedMonitoringOption);
     const [detailedMonitoringLoading, withLoadingDetailedMonitoring] = useLoading();
     const [recipientsModalProps, recipientsModalOpen, recipientsModalRender] = useModalState();
+    const dispatch = useDispatch();
+
+    const detailedMonitoring = organization?.Settings?.LogAuth === 2;
 
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -93,26 +97,13 @@ const AuthenticationLogs = ({
         });
     }, [recipients]);
 
-    useEffect(() => {
-        const loadMonitoringSetting = async () => {
-            try {
-                if (organization?.Settings?.LogAuth === 2) {
-                    setDetailedMonitoring(true);
-                } else {
-                    setDetailedMonitoring(false);
-                }
-            } catch (error) {}
-        };
-
-        void loadMonitoringSetting();
-    }, []);
-
     const handleSetDetailedMonitoring = async () => {
         const enabling = !detailedMonitoring;
 
         try {
-            await api(updateMonitoringSetting(enabling ? 2 : 0));
-            setDetailedMonitoring(enabling);
+            const newValue = enabling ? 2 : 1;
+            await api<OrganizationSettings>(updateMonitoringSetting(newValue));
+            dispatch(organizationActions.updateOrganizationSettings({ value: { LogAuth: newValue } }));
         } catch (e) {
             createNotification({ type: 'error', text: c('Error').t`Failed to update detailed monitoring.` });
         }
