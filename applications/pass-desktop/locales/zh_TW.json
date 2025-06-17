@@ -55,6 +55,9 @@
       "Advanced options": [
         "進階選項"
       ],
+      "Authenticate": [
+        "驗證"
+      ],
       "Back": [
         "返回"
       ],
@@ -301,10 +304,10 @@
       "Move to another vault": [
         "移動到另一個保管庫"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "移至垃圾桶"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "移至垃圾桶"
       ],
       "Multiple select": [
@@ -715,9 +718,6 @@
       "File does not match expected format": [
         "檔案不符合預期格式"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "匯入保管庫失敗${ vaultData.name }:${ errorMessage }"
-      ],
       "Importing items failed": [
         "匯入項目失敗"
       ],
@@ -1046,6 +1046,9 @@
       ],
       "Enabling PIN auto-lock": [
         "啟用 PIN 自動鎖定"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證代碼。正在按下 ${ digit } 。"
       ],
       "Enter your extra password": [
         "輸入你的第二密碼"
@@ -1562,6 +1565,9 @@
       "Copy": [
         "複製"
       ],
+      "Country": [
+        "國家"
+      ],
       "Country or Region": [
         "國家或地區"
       ],
@@ -1841,6 +1847,9 @@
       "Need help?": [
         "需要協助嗎？"
       ],
+      "Network": [
+        "網路"
+      ],
       "Never": [
         "永不"
       ],
@@ -1927,6 +1936,9 @@
       ],
       "Priority:": [
         "優先順序:"
+      ],
+      "Product": [
+        "產品"
       ],
       "Rate us": [
         "評分我們"
@@ -2032,6 +2044,9 @@
       ],
       "Support": [
         "支援"
+      ],
+      "Target:": [
+        "目標："
       ],
       "Tax number": [
         "稅務識別碼"
@@ -2339,9 +2354,6 @@
       ],
       "Used on ${ url }": [
         "使用${ url }"
-      ],
-      "Write your note": [
-        "新增備註"
       ]
     },
     "Security Center - Info": {

@@ -46,6 +46,9 @@
       "Add domain": [
         "Domein toevoegen"
       ],
+      "Add field": [
+        "Veld toevoegen"
+      ],
       "Add forwarding mailbox": [
         "Doorstuur mailbox toevoegen"
       ],
@@ -403,11 +406,11 @@
       "Move to another vault": [
         "Verplaatsen naar andere kluis"
       ],
-      "Move to Trash": [
-        "Verplaats naar prullenbak"
-      ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
+      ],
+      "Move to Trash": [
+        "Verplaats naar prullenbak"
       ],
       "Multiple select": [
         "Meervoudige selectie"
@@ -462,6 +465,9 @@
       ],
       "Reactivate now": [
         "Heractiveren"
+      ],
+      "Read More": [
+        "Lees Meer"
       ],
       "Refresh the page": [
         "Pagina vernieuwen"
@@ -580,6 +586,9 @@
       "Show advanced options": [
         "Geavanceerde opties weergeven"
       ],
+      "Show Less": [
+        "Minder Weergeven"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Log in met ${ BRAND_NAME }"
       ],
@@ -689,6 +698,105 @@
       ],
       "Your password manager is not here? Request it.": [
         "Uw wachtwoordbeheerder staat hier niet tussen? Vraag het aan."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Pak deze deal"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 GB versleutelde opslagruimte"
+      ],
+      "Add unlimited credit cards": [
+        "Onbeperkt aantal kredietkaarten toevoegen"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle premium functies van ${ BRAND_NAME } Mail, Pass, VPN, Drive, en Calendar"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijs. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Verdubbel uw versleutelde opslag – krijg 1 TB voor al uw gegevens"
+      ],
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordbeheerder"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Hier is een exclusief geschenk om onze reis samen te vieren."
+      ],
+      "High speed streaming with VPN": [
+        "Streamen aan hoge snelheid met VPN"
+      ],
+      "of privacy": [
+        "van privacy"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online privacy voor maximaal 2 personen"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online privacy voor het hele gezin (tot 6 gebruikers)"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Bespaar veel op premium Drive functies met een tijdelijke korting."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Bespaar veel op premium Mail functies met een tijdelijke korting."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Bespaar veel op premium Pass functies met een tijdelijke korting."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Bespaar veel op premium VPN functies met een tijdelijke korting."
+      ],
+      "Save time with built-in 2FA": [
+        "Bespaar tijd met ingebouwde 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Beveiligde e-mail met onbeperkt aantal aliassen"
+      ],
+      "Share passwords easily": [
+        "Eenvoudig wachtwoorden delen"
+      ],
+      "thanks to you": [
+        "dankzij u"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Verdrievoudig uw versleutelde opslag – krijg 3 TB voor al uw gegevens"
+      ],
+      "years": [
+        "jaren"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumaanbieding"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "/ month": [
+        "/ maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "15 months": [
+        "15 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
+      ],
+      "30 months": [
+        "30 maanden"
+      ],
+      "for ${ durationDeal }": [
+        "voor ${ durationDeal }"
       ]
     },
     "App menu": {
@@ -1079,8 +1187,8 @@
       "File does not match expected format": [
         "Bestand komt niet overeen met verwacht formaat"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Importeren mislukt voor kluis \"${ vaultData.name }\" : ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Importeren mislukt voor kluis \"${ vaultData.name }\": ${ errorMessage }"
       ],
       "Importing items failed": [
         "Items importeren mislukt"
@@ -1195,6 +1303,9 @@
       ],
       "Unsupported 1Password file format": [
         "Niet-ondersteund 1Password-bestandsformaat"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Niet-ondersteund Bitwarden-bestandsformaat"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Bijwerken kluis \"${ payload.content.name }\" mislukt"
@@ -1345,7 +1456,8 @@
         "${ count } weergave",
         "${ count } weergaven"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } keer bekeken",
         "${ count }/${ maxReads } keer bekeken"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -2598,6 +2710,9 @@
       "Add section": [
         "Sectie toevoegen"
       ],
+      "Additional data": [
+        "Aanvullende gegevens"
+      ],
       "Additional details": [
         "Aanvullende details"
       ],
@@ -2718,11 +2833,11 @@
       "Copy": [
         "Kopiëren"
       ],
+      "Country": [
+        "Land"
+      ],
       "Country or Region": [
         "Land of regio"
-      ],
-      "Country,": [
-        "Land,"
       ],
       "County": [
         "Provincie"
@@ -2852,6 +2967,9 @@
       ],
       "Extra email addresses": [
         "Extra e-mailadressen"
+      ],
+      "Extra fields": [
+        "Extra velden"
       ],
       "Extra password": [
         "Extra wachtwoord"
@@ -3020,6 +3138,9 @@
       ],
       "Key": [
         "Sleutel"
+      ],
+      "Key fingerprint": [
+        "Vingerafdruk sleutel"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Toetsenbordsneltoets: ${ shortcut }"
@@ -3204,10 +3325,10 @@
       "Passport": [
         "Paspoort"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Paspoortnummer"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Paspoortnummer"
       ],
       "Password": [
@@ -3261,10 +3382,10 @@
       "Priority:": [
         "Prioriteit:"
       ],
-      "Private Key": [
+      "Private key": [
         "Privé sleutel"
       ],
-      "Private key": [
+      "Private Key": [
         "Privé sleutel"
       ],
       "Product": [
@@ -3413,9 +3534,6 @@
       ],
       "SSH key": [
         "SSH-sleutel"
-      ],
-      "SSH Keys": [
-        "SSH-sleutels"
       ],
       "SSN": [
         "SSN"
@@ -3599,9 +3717,6 @@
       ],
       "WiFi network": [
         "Wifi-netwerk"
-      ],
-      "WiFi Networks": [
-        "Wifi-netwerken"
       ],
       "Work details": [
         "Werk gegevens"
@@ -3847,9 +3962,6 @@
       "Add 2FA secret key": [
         "Voeg een geheime sleutel van 2FA toe"
       ],
-      "Add date": [
-        "Datum toevoegen"
-      ],
       "Add hidden text": [
         "Verborgen tekst toevoegen"
       ],
@@ -3945,9 +4057,6 @@
       ],
       "Used on ${ url }": [
         "Gebruikt op ${ url }"
-      ],
-      "Write your note": [
-        "Schrijf uw notitie"
       ]
     },
     "Security Center - Info": {
@@ -4621,6 +4730,11 @@
       ],
       "URL is invalid": [
         "URL is ongeldig"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Items verplaatsen naar"
       ]
     },
     "Warning": {
