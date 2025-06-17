@@ -211,6 +211,9 @@
       "Copy address": [
         "Cím másolása"
       ],
+      "Copy alias “${ name }”": [
+        "„${ name }” e-mail álnév másolása"
+      ],
       "Copy as markdown": [
         "Másolás markdown formátumban"
       ],
@@ -501,6 +504,9 @@
       "More actions": [
         "További műveletek"
       ],
+      "More benefits": [
+        "Több előny"
+      ],
       "More info: ${ safeTitle }": [
         "További információk: ${ safeTitle }"
       ],
@@ -735,6 +741,9 @@
       "Show more": [
         "Több megjelenítése"
       ],
+      "Show more benefits": [
+        "Több előny megjelenítése"
+      ],
       "Show options": [
         "Beállítások megjelenítése"
       ],
@@ -857,9 +866,6 @@
       ],
       "View": [
         "Megtekintés"
-      ],
-      "View all ${ pendingCount } invitations": [
-        "Összes ${ pendingCount } meghívás megtekintése"
       ],
       "View all reports": [
         "Az összes jelentés megtekintése"
@@ -1919,9 +1925,6 @@
       "Macao": [
         "Makaó"
       ],
-      "Macedonia": [
-        "Macedónia"
-      ],
       "Madagascar": [
         "Madagaszkár"
       ],
@@ -2445,8 +2448,8 @@
       "To start, give your organization a name.": [
         "Kezdésnek adjon nevet a szervezetének."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Frissítsen a ${ BRAND_NAME } ${ planName } verzióra, hogy továbbra is meg tudjon osztani fájlokat szerkesztési hozzáféréssel"
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Frissítsen a(z) ${ planName } verzióra, hogy továbbra is meg tudjon osztani fájlokat szerkesztési hozzáféréssel"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
@@ -2659,8 +2662,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "\"${ name }\" már létezik"
+      "\"${ sanitizedName }\" already exists": [
+        "\"${ sanitizedName }\" már létezik"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } nem tudd kapcsolódni az ön külső fiókjaihoz."
@@ -2792,6 +2795,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "A külső meghívók ideiglenesen le vannak tiltva. Kérjük, próbálja meg később újra"
+      ],
+      "Failed to copy photo to album": [
+        "Nem sikerült a fénykép másolása az albumba"
       ],
       "Failed to rename document. Please try again later.": [
         "Dokumentum átnevezése sikertelen. Próbálja újra később."
@@ -3596,6 +3602,11 @@
         "Szolgáltatások"
       ]
     },
+    "Header": {
+      "Drawer": [
+        "Oldalsó panel"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz",
@@ -4187,8 +4198,14 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Legalább ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "A próbaidőszak végén ${ boldCancelDate }, Önt visszaminősítjük ${ boldProtonFree }-ra. Minden felhasználói fiókot eltávolítunk a szervezetéből."
+      ],
       "Attention required": [
         "Figyelem szükséges"
+      ],
+      "Available": [
+        "Elérhető"
       ],
       "Awaiting transaction": [
         "Tranzakcióra várakozás."
@@ -4210,6 +4227,9 @@
       ],
       "Calendar side panel": [
         "Naptár oldalsó panel"
+      ],
+      "Cannot load link": [
+        "A hivatkozást nem sikerült betölteni"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nem emlékszik a jelszóra? Lehetőség van arra, hogy az összes olyan névjegyadatot törölje, amelyet ezzel a kulccsal titkosított, így megszüntetheti ezt a figyelmeztetést."
@@ -4414,9 +4434,6 @@
       "Error converting document: ${ errorMessage }": [
         "Hiba a dokumentum konvertálásakor: ${ errorMessage }"
       ],
-      "Error loading document${ errorDetail }": [
-        "Hiba történt a dokumentum betöltése során ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Szinkronizálás hiba"
       ],
@@ -4500,6 +4517,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Ha lemondja, ${ planTitle } előfizetése nem újul meg, amikor lejár a következő napon: ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Ha meggondolja magát, bármikor újra feliratkozhat. Sajnáljuk, hogy távozik!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
@@ -4665,6 +4685,9 @@
       "New": [
         "Új"
       ],
+      "No": [
+        "Nem"
+      ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
       ],
@@ -4766,6 +4789,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "A PGP/MIME automatikusan a szerkesztőablak módja szerinti formátumban küldi az üzenetet."
+      ],
+      "Photos": [
+        "Fényképek"
       ],
       "Please authenticate your card in the verification tab.": [
         "Kérjük, hitelesítse a kártyáját az ellenőrző lapon."
@@ -4918,6 +4944,9 @@
       ],
       "Shared on": [
         "Megosztás dátuma"
+      ],
+      "Shared with me": [
+        "Velem megosztva"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Az aláírás hálózati hiba miatt nem ellenőrizhető. Próbája újra később."
@@ -5250,6 +5279,9 @@
       "Writing assistant": [
         "Írási segéd"
       ],
+      "Yes": [
+        "Igen"
+      ],
       "you": [
         "Ön"
       ],
@@ -5335,6 +5367,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Nem kerül felszámításra, ha ${ trialEndsOnFormatted } előtt lemondja."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
@@ -5448,6 +5483,15 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Az előfizetése automatikusan megújul ${ renewalTime } időpontban."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Próbaideje ${ timeRemaining } múlva véget ér."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Hozzáférése a következőhöz: ${ boldPlanTitle } megszűnik ekkor: ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
       ]
     },
     "info": {
@@ -5560,6 +5604,9 @@
       ],
       "Address": [
         "Cím"
+      ],
+      "Alias title": [
+        "E-mail álnév cím"
       ],
       "Anderson": [
         "Kovács"
@@ -5734,6 +5781,9 @@
       ],
       "First name": [
         "Keresztnév"
+      ],
+      "Folder": [
+        "Mappa"
       ],
       "Folder location": [
         "Mappa helye"
@@ -7037,6 +7087,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
       ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB felhőalapú tárhely, amellyel könnyedén tárolhat, szinkronizálhat és oszthat meg fájlokat. Végponttól végpontig tartó titkosítással védett."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Fejlett hálózati biztonság és hozzáférés-kezelés dedikált biztonságos átjárókkal"
       ],
@@ -7416,7 +7469,8 @@
       "Require 2FA": [
         "Kétlépcsős hitelesítés megkövetelése"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "${ n } saját e-mail domain név használata",
         "${ n } saját e-mail domain név használata"
       ]
     },
@@ -7521,6 +7575,9 @@
       ],
       "Access for the member removed": [
         "A tag hozzáférése eltávolítva"
+      ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Hozzáférhet új albumainkhoz, szűrőinkhez és még sok máshoz a zárolt kötetén végrehajtott művelettel. Állítsa helyre vagy törölje azt most, hogy azonnal élvezhesse ezeket az új funkciókat."
       ],
       "Access updated": [
         "Hozzáférés frissítve"
@@ -7768,6 +7825,35 @@
         "Tároló"
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Addig bármikor lemondhatja."
+      ],
+      "contact our support team": [
+        "lépjen kapcsolatba támogatási csapatunkkal"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Élvezze az ingyenes üzleti biztonsági funkciókat ${ trialEndsOnFormatted }-ig."
+      ],
+      "help center": [
+        "súgóközpont"
+      ],
+      "Once your full subscription starts...": [
+        "Miután elindul a teljes előfizetése..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "30 napon belül még mindig lemondhatja a szerződést, és időarányos visszatérítést kaphat."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "30 napon belül még mindig lemondhatja a szerződést, és időarányos visszatérítést kaphat."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Használhatja a ${ planTitle } csomagot, amíg a próbaverzió le nem jár, és nem számítunk fel díjat."
+      ],
+      "Your free trial has started": [
+        "Az ön ingyenes próbaidőszaka elkezdődött"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Hozzáadás meglévő csoporthoz"
@@ -7813,6 +7899,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Minden ${ BRAND_NAME } alkalmazás és prémium funkciók használata"
+      ],
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
       ],
@@ -8918,7 +9007,7 @@
         "${ n } VPN kapcsolat felhasználónként",
         "${ n } VPN kapcsolat felhasználónként"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "VPN kapcsolat felhasználónként ${ n } eszközre",
         "VPN kapcsolat felhasználónként ${ n } eszközre"
       ]
@@ -9237,6 +9326,24 @@
         "vCard mező"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } nap",
+        "${ ceilDays } nap"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } óra",
+        "${ ceilHours } óra"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } perc",
+        "${ ceilMinutes } perc"
+      ],
+      "${ seconds } second": [
+        "${ seconds } másodperc",
+        "${ seconds } másodperc"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } ó",
@@ -9266,6 +9373,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "Letöltések száma"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mail cím",
         "${ emailsCount } e-mail cím"
@@ -9297,6 +9407,9 @@
       ],
       "Addresses": [
         "Címek"
+      ],
+      "Album details": [
+        "Album részletei"
       ],
       "All settings": [
         "Minden beállítás"
@@ -9531,6 +9644,12 @@
       "Exporting contacts": [
         "Névjegyek exportálása"
       ],
+      "File details": [
+        "Fájl adatok"
+      ],
+      "Folder details": [
+        "Mappa adatai"
+      ],
       "Get more from your VPN": [
         "Hozzon ki többet a VPN-ből"
       ],
@@ -9583,11 +9702,20 @@
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
+      "Item details": [
+        "Elem adatai"
+      ],
+      "Last edited by": [
+        "Utoljára szerkesztette:"
+      ],
       "Limited availability": [
         "Korlátozott elérhetőség"
       ],
       "Link confirmation": [
         "Hivatkozás jóváhagyása"
+      ],
+      "Location": [
+        "Hely"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Készítsen egy másolatot a ${ DRIVE_APP_NAME }"
@@ -9604,14 +9732,23 @@
       "Merging contacts": [
         "Névjegyek egyesítése"
       ],
+      "MIME type": [
+        "MIME típus"
+      ],
       "Minicalendar": [
         "Mini naptár"
       ],
       "Mobile": [
         "Mobil"
       ],
+      "Modified": [
+        "Módosítva"
+      ],
       "My files": [
         "Saját fájlok"
+      ],
+      "Name": [
+        "Név"
       ],
       "Need more aliases?": [
         "Több e-mail álnévre van szüksége?"
@@ -9646,6 +9783,9 @@
       "Organization setup": [
         "Szervezet beállítása"
       ],
+      "Original size": [
+        "Eredeti méret"
+      ],
       "Other information": [
         "Egyéb adatok"
       ],
@@ -9675,6 +9815,9 @@
       ],
       "Processing...": [
         "Folyamatban..."
+      ],
+      "Public shared link status": [
+        "Nyilvános megosztási hivatkozás állapota"
       ],
       "Re-sign all contacts": [
         "Az összes névjegy ismételt aláírása"
@@ -9742,6 +9885,9 @@
       "Share your calendar with your team": [
         "Naptárának megosztása a csapatával"
       ],
+      "Shared": [
+        "Megosztott"
+      ],
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
       ],
@@ -9753,6 +9899,9 @@
       ],
       "Simplify password management": [
         "Egyszerűsítse a jelszókezelést"
+      ],
+      "Size": [
+        "Méret"
       ],
       "Something went wrong": [
         "Hiba történt"
@@ -9769,6 +9918,9 @@
       "Stop sharing?": [
         "Megosztás megszüntetése?"
       ],
+      "Subscription canceled": [
+        "Előfizetés lemondva"
+      ],
       "Summary": [
         "Összegzés"
       ],
@@ -9784,6 +9936,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
       ],
+      "Type": [
+        "Típus"
+      ],
       "Untitled document ${ date }": [
         "Névtelen dokumentum: ${ date }"
       ],
@@ -9792,6 +9947,12 @@
       ],
       "Upload and share files": [
         "Fájlok feltöltése és megosztása"
+      ],
+      "Uploaded": [
+        "Feltöltve"
+      ],
+      "Uploaded by": [
+        "Feltöltötte"
       ],
       "Uploading a large file or folder": [
         "Nagy fájl vagy mappa feltöltése"
@@ -9807,6 +9968,9 @@
       ],
       "Verifying your payment...": [
         "Fizetés ellenőrzése..."
+      ],
+      "Version details": [
+        "Változat adatai"
       ],
       "VPN explained": [
         "A VPN működése"
@@ -9852,6 +10016,10 @@
       ],
       "Your exposed information": [
         "Az ön kiszivárgott információi"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Az ingyenes próbaverziója ${ trialDurationFormatted } nap múlva ér véget.",
+        "Az ingyenes próbaverziója ${ trialDurationFormatted } nap múlva ér véget."
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"
