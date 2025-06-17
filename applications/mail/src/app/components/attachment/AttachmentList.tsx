@@ -1,15 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { useDrive } from '@proton/drive/index';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
+import { saveToDrive } from 'proton-mail/helpers/attachment/saveToDrive';
 import { useHasScroll } from 'proton-mail/hooks/useHasScroll';
 
 import { getAttachmentCounts } from '../../helpers/message/messages';
@@ -59,7 +61,7 @@ const AttachmentList = ({
     noPaddingTop = false,
     ...rest
 }: Props) => {
-    const { handleDownload: download, confirmDownloadModal } = useDownload();
+    const { handleDownload: download, confirmDownloadModal, getDownloadStreamInfo } = useDownload();
     const { handleDownloadAll: downloadAll, confirmDownloadModal: confirmDownloadAllModal } = useDownloadAll();
 
     const [showLoader, setShowLoader] = useState(false);
@@ -74,6 +76,8 @@ const AttachmentList = ({
 
     const { size, sizeLabel, pureAttachments, pureAttachmentsCount, embeddedAttachmentsCount, attachmentsCount } =
         getAttachmentCounts(attachments, message.messageImages);
+
+    const { drive } = useDrive();
 
     useEffect(() => {
         const dontCloseAfterUploadsWhenExpandedManually = manuallyExpanded && pendingUploads.length === 0;
@@ -150,6 +154,25 @@ const AttachmentList = ({
             setShowLoader(false);
         }
     };
+
+    const handleSaveToDrive = useCallback(async (attachment?: Attachment) => {
+        if (!attachment) {
+            throw new Error('No attachment provided');
+        }
+
+        const rootFolder = await drive.getMyFilesRootFolder();
+
+        const { stream, size, type } = await getDownloadStreamInfo(message, attachment, outsideKey);
+
+        const nodeUid = await saveToDrive(drive, {
+            name: attachment?.Name || '',
+            type,
+            size,
+            folder: rootFolder,
+            stream: stream,
+        });
+        return nodeUid;
+    }, []);
 
     const noop = () => Promise.resolve();
 
@@ -267,6 +290,7 @@ const AttachmentList = ({
                             secondaryAction={secondaryAction}
                             onPrimary={actions[primaryAction]}
                             onSecondary={actions[secondaryAction]}
+                            saveToDrive={() => handleSaveToDrive(attachment)}
                         />
                     ))}
                     {pendingUploads?.map((pendingUpload) => (
