@@ -150,28 +150,81 @@ describe('Import Keeper JSON', () => {
 
     it('should correctly parse items from 4th vault', () => {
         const fourthVault = payload.vaults[3];
-        expect(fourthVault.items.length).toEqual(12);
+        expect(fourthVault.items.length).toEqual(16);
         const { items } = fourthVault;
 
         /* credit card item */
         const creditCardItem = deobfuscateItem(items[0]) as unknown as ItemImportIntent<'creditCard'>;
-        expect(creditCardItem.type).toBe('creditCard');
-        expect(creditCardItem.metadata.name).toBe('a card');
-        expect(creditCardItem.metadata.note).toBe('');
-        expect(creditCardItem.content.cardholderName).toBe('First last');
-        expect(creditCardItem.content.number).toBe('4242424242424242');
-        expect(creditCardItem.content.verificationNumber).toBe('123');
-        expect(creditCardItem.content.pin).toBe('1234');
-        expect(creditCardItem.content.expirationDate).toBe('032027');
+        expect(creditCardItem.type).toEqual('creditCard');
+        expect(creditCardItem.metadata.name).toEqual('a card');
+        expect(creditCardItem.metadata.note).toEqual('');
+        expect(creditCardItem.content.cardholderName).toEqual('First last');
+        expect(creditCardItem.content.number).toEqual('4242424242424242');
+        expect(creditCardItem.content.verificationNumber).toEqual('123');
+        expect(creditCardItem.content.pin).toEqual('1234');
+        expect(creditCardItem.content.expirationDate).toEqual('032027');
+
+        /* custom file item */
+        const fileItem = deobfuscateItem(items[1]) as unknown as ItemImportIntent<'custom'>;
+        expect(fileItem.type).toEqual('custom');
+        expect(fileItem.metadata.name).toEqual('a file');
 
         /* note with custom field */
-        const noteWithCustomField = deobfuscateItem(items[1]) as unknown as ItemImportIntent<'note'>;
-        expect(noteWithCustomField.type).toBe('note');
-        expect(noteWithCustomField.metadata.name).toBe('a note');
-        expect(noteWithCustomField.metadata.note).toBe('note content\nline 2\ncustom note');
+        const noteWithCustomField = deobfuscateItem(items[2]) as unknown as ItemImportIntent<'note'>;
+        expect(noteWithCustomField.type).toEqual('note');
+        expect(noteWithCustomField.metadata.name).toEqual('a note');
+        expect(noteWithCustomField.metadata.note).toEqual('note content\nline 2\ncustom note');
+
+        const addressItem = deobfuscateItem(items[3]) as unknown as ItemImportIntent<'custom'>;
+        expect(addressItem.type).toEqual('custom');
+        expect(addressItem.metadata.name).toEqual('Address for bank card');
+        expect(addressItem.extraFields).toEqual([
+            {
+                fieldName: 'address: - country',
+                data: {
+                    content: 'US',
+                },
+                type: 'text',
+            },
+            {
+                fieldName: 'address: - street1',
+                data: {
+                    content: 'line 1',
+                },
+                type: 'text',
+            },
+            {
+                fieldName: 'address: - street2',
+                data: {
+                    content: 'line 2',
+                },
+                type: 'text',
+            },
+            {
+                fieldName: 'address: - city',
+                data: {
+                    content: 'City',
+                },
+                type: 'text',
+            },
+            {
+                fieldName: 'address: - state',
+                data: {
+                    content: 'State',
+                },
+                type: 'text',
+            },
+            {
+                fieldName: 'address: - zip',
+                data: {
+                    content: '00000',
+                },
+                type: 'text',
+            },
+        ]);
 
         /* contact item */
-        const contactItem = deobfuscateItem(items[2]) as unknown as ItemImportIntent<'identity'>;
+        const contactItem = deobfuscateItem(items[4]) as unknown as ItemImportIntent<'identity'>;
         expect(contactItem.type).toEqual('identity');
         expect(contactItem.createTime).toBeUndefined();
         expect(contactItem.modifyTime).toBeUndefined();
@@ -248,7 +301,7 @@ describe('Import Keeper JSON', () => {
         expect(contactItem.extraFields).toEqual([]);
 
         /* general item */
-        const generalItem = deobfuscateItem(items[3]) as unknown as ItemImportIntent<'login'>;
+        const generalItem = deobfuscateItem(items[5]) as unknown as ItemImportIntent<'login'>;
         expect(generalItem.type).toEqual('login');
         expect(generalItem.createTime).toBeUndefined();
         expect(generalItem.modifyTime).toBeUndefined();
@@ -259,7 +312,7 @@ describe('Import Keeper JSON', () => {
         expect(generalItem.extraFields).toEqual([]);
 
         /* login with 2FA */
-        const loginItem2FA = deobfuscateItem(items[4]) as unknown as ItemImportIntent<'login'>;
+        const loginItem2FA = deobfuscateItem(items[6]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem2FA.type).toEqual('login');
         expect(loginItem2FA.createTime).toBeUndefined();
         expect(loginItem2FA.modifyTime).toBeUndefined();
@@ -279,7 +332,7 @@ describe('Import Keeper JSON', () => {
         expect(loginItem2FA.extraFields).toEqual([]);
 
         /* login with broken url */
-        const loginItemBrokenUrl = deobfuscateItem(items[5]) as unknown as ItemImportIntent<'login'>;
+        const loginItemBrokenUrl = deobfuscateItem(items[7]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemBrokenUrl.type).toEqual('login');
         expect(loginItemBrokenUrl.createTime).toBeUndefined();
         expect(loginItemBrokenUrl.modifyTime).toBeUndefined();
@@ -298,7 +351,7 @@ describe('Import Keeper JSON', () => {
         expect(loginItemBrokenUrl.extraFields).toEqual([]);
 
         /* login with comma, quotes */
-        const loginItemCommaQuotes = deobfuscateItem(items[6]) as unknown as ItemImportIntent<'login'>;
+        const loginItemCommaQuotes = deobfuscateItem(items[8]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemCommaQuotes.type).toEqual('login');
         expect(loginItemCommaQuotes.createTime).toBeUndefined();
         expect(loginItemCommaQuotes.modifyTime).toBeUndefined();
@@ -317,7 +370,7 @@ describe('Import Keeper JSON', () => {
         expect(loginItemCommaQuotes.extraFields).toEqual([]);
 
         /* login with custom fields */
-        const loginItemCustomFields = deobfuscateItem(items[7]) as unknown as ItemImportIntent<'login'>;
+        const loginItemCustomFields = deobfuscateItem(items[9]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemCustomFields.type).toEqual('login');
         expect(loginItemCustomFields.createTime).toBeUndefined();
         expect(loginItemCustomFields.modifyTime).toBeUndefined();
@@ -407,7 +460,7 @@ describe('Import Keeper JSON', () => {
         ]);
 
         /* login with multiple lines */
-        const loginItemMultipleLines = deobfuscateItem(items[8]) as unknown as ItemImportIntent<'login'>;
+        const loginItemMultipleLines = deobfuscateItem(items[10]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemMultipleLines.type).toEqual('login');
         expect(loginItemMultipleLines.createTime).toBeUndefined();
         expect(loginItemMultipleLines.modifyTime).toBeUndefined();
@@ -426,7 +479,7 @@ describe('Import Keeper JSON', () => {
         expect(loginItemMultipleLines.extraFields).toEqual([]);
 
         /* login with multiple urls */
-        const loginItemMultipleUrls = deobfuscateItem(items[9]) as unknown as ItemImportIntent<'login'>;
+        const loginItemMultipleUrls = deobfuscateItem(items[11]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemMultipleUrls.type).toEqual('login');
         expect(loginItemMultipleUrls.createTime).toBeUndefined();
         expect(loginItemMultipleUrls.modifyTime).toBeUndefined();
@@ -460,7 +513,7 @@ describe('Import Keeper JSON', () => {
         ]);
 
         /* login secure note */
-        const loginItemSecureNote = deobfuscateItem(items[10]) as unknown as ItemImportIntent<'note'>;
+        const loginItemSecureNote = deobfuscateItem(items[12]) as unknown as ItemImportIntent<'note'>;
         expect(loginItemSecureNote.type).toEqual('note');
         expect(loginItemSecureNote.createTime).toBeUndefined();
         expect(loginItemSecureNote.modifyTime).toBeUndefined();
@@ -471,8 +524,21 @@ describe('Import Keeper JSON', () => {
         expect(loginItemSecureNote.trashed).toEqual(false);
         expect(loginItemSecureNote.extraFields).toEqual([]);
 
+        /* SSH key item */
+        const sshItem = deobfuscateItem(items[13]) as unknown as ItemImportIntent<'custom'>;
+        expect(sshItem.type).toEqual('custom');
+        expect(sshItem.metadata.name).toEqual('ssh key item');
+        expect(sshItem.extraFields).toEqual([
+            { data: { content: 'john' }, fieldName: 'Username', type: 'text' },
+            { data: { content: 'abc' }, fieldName: 'Password', type: 'text' },
+            { data: { content: 'pub' }, fieldName: 'keyPair: - publicKey', type: 'text' },
+            { data: { content: 'pri' }, fieldName: 'keyPair: - privateKey', type: 'text' },
+            { data: { content: 'example.com' }, fieldName: 'host: - hostName', type: 'text' },
+            { data: { content: '1111' }, fieldName: 'host: - port', type: 'text' },
+        ]);
+
         /* login as "general" item type */
-        const loginItemGeneral = deobfuscateItem(items[11]) as unknown as ItemImportIntent<'login'>;
+        const loginItemGeneral = deobfuscateItem(items[14]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemGeneral.type).toEqual('login');
         expect(loginItemGeneral.createTime).toBeUndefined();
         expect(loginItemGeneral.modifyTime).toBeUndefined();
@@ -489,13 +555,25 @@ describe('Import Keeper JSON', () => {
         });
         expect(loginItemGeneral.trashed).toEqual(false);
         expect(loginItemGeneral.extraFields).toEqual([]);
+
+        /* wifi item */
+        const wifiItem = deobfuscateItem(items[15]) as unknown as ItemImportIntent<'custom'>;
+        expect(wifiItem.type).toEqual('custom');
+        expect(wifiItem.createTime).toBeUndefined();
+        expect(wifiItem.modifyTime).toBeUndefined();
+        expect(wifiItem.metadata.itemUuid).not.toBeUndefined();
+        expect(wifiItem.metadata.name).toEqual('wifi');
+        expect(wifiItem.metadata.note).toEqual('');
+        expect(wifiItem.trashed).toEqual(false);
+        expect(wifiItem.extraFields).toEqual([
+            { data: { content: 'password123' }, fieldName: 'Password', type: 'text' },
+            { data: { content: 'my-ssid' }, fieldName: 'SSID', type: 'text' },
+            { data: { content: 'custom value' }, fieldName: 'custom field', type: 'text' },
+        ]);
     });
 
     test('should correctly hydrate ignored arrays', () => {
-        expect(payload.ignored.length).toEqual(4);
-        expect(payload.ignored[0]).toEqual('[file] a file');
-        expect(payload.ignored[1]).toEqual('[encryptedNotes] a note: item was imported without custom fields');
-        expect(payload.ignored[2]).toEqual('[address] Address for bank card');
-        expect(payload.ignored[3]).toEqual('[sshKeys] ssh key item');
+        expect(payload.ignored.length).toEqual(1);
+        expect(payload.ignored[0]).toEqual('[encryptedNotes] a note: item was imported without custom fields');
     });
 });

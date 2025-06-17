@@ -5,14 +5,16 @@ import {
     getEmailOrUsername,
     getImportedVaultName,
     importCreditCardItem,
+    importCustomItem,
     importIdentityItem,
     importLoginItem,
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import { formatExpirationDateMMYYYY } from '@proton/pass/lib/validation/credit-card';
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import lastItem from '@proton/utils/lastItem';
 
@@ -102,6 +104,46 @@ export const readKeeperData = async (file: File): Promise<ImportReaderResult> =>
                                     name: item.title,
                                     note: item.notes,
                                     ...extractKeeperIdentity(item),
+                                });
+                            default:
+                                const builtinExtraFields: DeobfuscatedItemExtraField[] = [
+                                    ...(item.login
+                                        ? ([
+                                              {
+                                                  fieldName: c('Label').t`Username`,
+                                                  type: 'text',
+                                                  data: { content: item.login },
+                                              },
+                                          ] as const)
+                                        : []),
+                                    ...(item.password
+                                        ? ([
+                                              {
+                                                  fieldName: c('Label').t`Password`,
+                                                  type: 'text',
+                                                  data: { content: item.password },
+                                              },
+                                          ] as const)
+                                        : []),
+                                    ...(item.login_url
+                                        ? ([
+                                              {
+                                                  fieldName: c('Label').t`Website`,
+                                                  type: 'text',
+                                                  data: { content: item.login_url },
+                                              },
+                                          ] as const)
+                                        : []),
+                                ];
+
+                                const extraFields: DeobfuscatedItemExtraField[] = builtinExtraFields
+                                    .concat(extractKeeperExtraFields(item.custom_fields))
+                                    .filter(truthy);
+
+                                return importCustomItem({
+                                    name: item.title,
+                                    note: item.notes,
+                                    extraFields,
                                 });
                         }
                     })();
