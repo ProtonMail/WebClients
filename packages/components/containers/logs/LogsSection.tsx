@@ -49,13 +49,18 @@ const LogsSection = () => {
     const [loadingDownload, withLoadingDownload] = useLoading();
     const [error, setError] = useState(false);
 
+    const hasB2BLogs = Boolean(settings?.OrganizationPolicy?.Enforced);
+
     const logAuth = (() => {
-        if (organization?.Settings?.LogAuth === 2) {
-            return SETTINGS_LOG_AUTH_STATE.ADVANCED;
-        } else if (organization?.Settings?.LogAuth === 1) {
-            return SETTINGS_LOG_AUTH_STATE.BASIC;
+        if (hasB2BLogs) {
+            if (organization?.Settings?.LogAuth === 2) {
+                return SETTINGS_LOG_AUTH_STATE.ADVANCED;
+            } else if (organization?.Settings?.LogAuth === 1) {
+                return SETTINGS_LOG_AUTH_STATE.BASIC;
+            }
+            return SETTINGS_LOG_AUTH_STATE.DISABLE;
         }
-        return SETTINGS_LOG_AUTH_STATE.DISABLE;
+        return settings.LogAuth;
     })();
 
     const handleDownload = async () => {
@@ -77,8 +82,6 @@ const LogsSection = () => {
     };
 
     const latestRef = useRef<any>();
-
-    const hasB2BLogs = Boolean(settings?.OrganizationPolicy?.Enforced);
 
     const fetchAndSetState = async () => {
         const latest = {};
