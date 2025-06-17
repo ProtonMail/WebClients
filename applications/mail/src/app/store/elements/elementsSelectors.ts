@@ -176,8 +176,13 @@ export const expiringElements = createSelector([params, elements], (params, elem
  * It doesn't rely at all on the optimistic counter logic
  */
 export const needsMoreElements = createSelector(
-    [contextTotal, page, pageSize, elementsLength],
-    (total, page, pageSize, elementsLength) => {
+    [contextTotal, page, pageSize, elementsLength, params],
+    (total, page, pageSize, elementsLength, params) => {
+        // There are no elements for newsletter subscriptions if there is no newsletter subscription ID
+        if (params.labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS && !params.newsletterSubscriptionID) {
+            return false;
+        }
+
         if (!total) {
             return false;
         }
