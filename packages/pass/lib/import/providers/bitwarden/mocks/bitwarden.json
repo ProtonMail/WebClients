@@ -182,20 +182,7 @@
             "name": "LoginItemMultipleWebsites",
             "notes": "login note",
             "favorite": false,
-            "fields": [
-                {
-                    "name": "Text 1",
-                    "value": "Text 1 content",
-                    "type": 0,
-                    "linkedId": null
-                },
-                {
-                    "name": "Hidden 1",
-                    "value": "Hidden 1 content",
-                    "type": 1,
-                    "linkedId": null
-                }
-            ],
+            "fields": [],
             "login": {
                 "uris": [
                     {
@@ -211,6 +198,49 @@
                         "uri": "androidapp://ch.protonmail.android"
                     }
                 ],
+                "username": "username",
+                "password": "password",
+                "totp": "otpauth://totp/test?secret=proton333&issuer=proton"
+            },
+            "collectionIds": null
+        },
+        {
+            "id": "8d4c6b99-431e-4a51-abf5-b020b098555b",
+            "organizationId": null,
+            "folderId": "e3b5ab63-de3f-4cf2-b982-b0c900f950c5",
+            "type": 1,
+            "reprompt": 0,
+            "name": "LoginWithCustomFields",
+            "notes": "login note for custom fields",
+            "favorite": false,
+            "fields": [
+                {
+                    "name": "[TEXT]",
+                    "value": "hello",
+                    "type": 0,
+                    "linkedId": null
+                },
+                {
+                    "name": "[HIDDEN]",
+                    "value": "foobar",
+                    "type": 1,
+                    "linkedId": null
+                },
+                {
+                    "name": "[CHECKBOX]",
+                    "value": "true",
+                    "type": 2,
+                    "linkedId": null
+                },
+                {
+                    "name": "[LINKED]",
+                    "value": "username",
+                    "type": 3,
+                    "linkedId": 100
+                }
+            ],
+            "login": {
+                "uris": [],
                 "username": "username",
                 "password": "password",
                 "totp": "otpauth://totp/test?secret=proton333&issuer=proton"
