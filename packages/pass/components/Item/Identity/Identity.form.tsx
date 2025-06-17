@@ -18,8 +18,8 @@ import { usePortal } from '@proton/pass/hooks/usePortal';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { IdentityItemFormValues, ItemRevision } from '@proton/pass/types';
 
-import { IdentityCustomSections } from './Form/IdentityCustomSections';
-import { IdentitySection } from './Form/IdentitySection';
+import { IdentitySection } from './Identity.section';
+import { IdentityCustomSections } from './Identity.sections';
 
 type IdentityFormType = {
     form: FormikContextType<IdentityItemFormValues>;

@@ -12,33 +12,34 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { validateIdentitySection } from '@proton/pass/lib/validation/identity';
+import type { UpsellRef } from '@proton/pass/constants';
+import { validateItemSection } from '@proton/pass/lib/validation/custom-item';
 import { selectPassPlan } from '@proton/pass/store/selectors';
-import type { IdentitySectionFormValues } from '@proton/pass/types';
+import type { ItemSectionFormValues } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
-const formId = 'identity-new-section-modal';
+const FORM_ID = 'new-section-modal';
+/** : UpsellRef.IDENTITY_CUSTOM_FIELDS */
 
-type Props = { onAdd: (v: string) => void };
+type Props = { onAdd: (value: string) => void; upsellRef: UpsellRef };
 
-export const IdentityAddNewSection: FC<Props> = ({ onAdd }) => {
+export const CustomNewSection: FC<Props> = ({ onAdd, upsellRef }) => {
     const [{ open, onClose }, setModal] = useModalState();
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
     const upsell = useUpselling();
 
-    const closeModal = (resetForm: FormikHelpers<IdentitySectionFormValues>['resetForm']) => {
+    const closeModal = (resetForm: FormikHelpers<ItemSectionFormValues>['resetForm']) => {
         resetForm();
         onClose();
     };
 
-    const form = useFormik<IdentitySectionFormValues>({
+    const form = useFormik<ItemSectionFormValues>({
         initialValues: { sectionName: '' },
         onSubmit: ({ sectionName }, { resetForm }) => {
             onAdd(sectionName);
             closeModal(resetForm);
         },
-        validate: validateIdentitySection,
+        validate: validateItemSection,
         validateOnBlur: true,
     });
 
@@ -48,11 +49,7 @@ export const IdentityAddNewSection: FC<Props> = ({ onAdd }) => {
                 className="rounded-full w-full mb-1"
                 color="weak"
                 shape="solid"
-                onClick={() =>
-                    isFreePlan
-                        ? upsell({ type: 'pass-plus', upsellRef: UpsellRef.IDENTITY_CUSTOM_FIELDS })
-                        : setModal(true)
-                }
+                onClick={() => (isFreePlan ? upsell({ type: 'pass-plus', upsellRef }) : setModal(true))}
             >
                 <div className="flex items-center justify-center">
                     <Icon name="plus" />
@@ -62,7 +59,7 @@ export const IdentityAddNewSection: FC<Props> = ({ onAdd }) => {
             <PassModal size="small" open={open} enableCloseWhenClickOutside onClose={() => closeModal(form.resetForm)}>
                 <ModalTwoHeader title={c('Action').t`Custom section`} />
                 <FormikProvider value={form}>
-                    <Form id={formId}>
+                    <Form id={FORM_ID}>
                         <ModalTwoContent>
                             <FieldsetCluster>
                                 <Field
@@ -81,7 +78,7 @@ export const IdentityAddNewSection: FC<Props> = ({ onAdd }) => {
                 <ModalTwoFooter>
                     <Button
                         className="rounded-full w-full"
-                        form={formId}
+                        form={FORM_ID}
                         disabled={!form.isValid}
                         color="weak"
                         shape="solid"

@@ -1,3 +1,5 @@
+import type { FC } from 'react';
+
 import { c } from 'ttag';
 
 import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
@@ -6,31 +8,24 @@ import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
-import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
+import { useDeobfuscatedItem, usePartialDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import type { ItemRevision } from '@proton/pass/types';
-import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
-import { usePartialDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { type ItemCustomType } from '@proton/pass/types';
-import { type FC } from 'react';
+
+import { wifiSecurityLabel } from './Custom.utils';
 
 const WifiContent: FC<{ revision: ItemRevision<'wifi'> }> = ({ revision }) => {
     const { content } = useDeobfuscatedItem(revision.data);
 
     return (
         <FieldsetCluster mode="read" as="div">
-            <ValueControl as={TextAreaReadonly} label={c('Label').t`Name (SSID)`} value={content.ssid} clickToCopy />
+            <ValueControl label={c('Label').t`Name (SSID)`} value={content.ssid} clickToCopy icon="text-align-left" />
+            <ValueControl label={c('Label').t`Password`} value={content.password} clickToCopy hidden icon="key" />
             <ValueControl
-                as={TextAreaReadonly}
-                label={c('Label').t`Password`}
-                value={content.password}
-                clickToCopy
-                hidden
-            />
-            <ValueControl
-                as={TextAreaReadonly}
                 label={c('Label').t`Security`}
-                value={WifiSecurity[content.security]}
+                value={wifiSecurityLabel[content.security]()}
                 clickToCopy
+                icon="wrench"
             />
         </FieldsetCluster>
     );
@@ -41,19 +36,8 @@ const SSHKeyContent: FC<{ revision: ItemRevision<'sshKey'> }> = ({ revision }) =
 
     return (
         <FieldsetCluster mode="read" as="div">
-            <ValueControl
-                as={TextAreaReadonly}
-                label={c('Label').t`Public key`}
-                value={content.publicKey}
-                clickToCopy
-            />
-            <ValueControl
-                as={TextAreaReadonly}
-                label={c('Label').t`Private key`}
-                value={content.privateKey}
-                clickToCopy
-                hidden
-            />
+            <ValueControl label={c('Label').t`Public key`} value={content.publicKey} clickToCopy icon="key" />
+            <ValueControl label={c('Label').t`Private key`} value={content.privateKey} clickToCopy hidden icon="key" />
         </FieldsetCluster>
     );
 };
@@ -65,13 +49,20 @@ export const CustomContent = <T extends ItemCustomType>({ revision }: ItemConten
 
     return (
         <>
-            {Boolean(extraFields.length) && (
-                <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />
-            )}
-
             {revision.data.type === 'wifi' && <WifiContent revision={revision as ItemRevision<'wifi'>} />}
 
             {revision.data.type === 'sshKey' && <SSHKeyContent revision={revision as ItemRevision<'sshKey'>} />}
+
+            {content.sections.map(({ sectionName: name, sectionFields: fields }, sectionIndex) => (
+                <section key={`${name}::${sectionIndex}`}>
+                    <FieldBox className="color-weak my-4" unstyled>
+                        {name}
+                    </FieldBox>
+                    <FieldsetCluster mode="read" as="div">
+                        <ExtraFieldsControl extraFields={fields} itemId={itemId} shareId={shareId} />
+                    </FieldsetCluster>
+                </section>
+            ))}
 
             {note && (
                 <FieldsetCluster mode="read" as="div">
@@ -85,16 +76,7 @@ export const CustomContent = <T extends ItemCustomType>({ revision }: ItemConten
                 </FieldsetCluster>
             )}
 
-            {content.sections.map(({ sectionName: name, sectionFields: fields }, sectionIndex) => (
-                <section key={`${name}::${sectionIndex}`}>
-                    <FieldBox className="color-weak my-4" unstyled>
-                        {name}
-                    </FieldBox>
-                    <FieldsetCluster mode="read" as="div">
-                        <ExtraFieldsControl extraFields={fields} itemId={itemId} shareId={shareId} />
-                    </FieldsetCluster>
-                </section>
-            ))}
+            {extraFields.length && <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />}
         </>
     );
 };
