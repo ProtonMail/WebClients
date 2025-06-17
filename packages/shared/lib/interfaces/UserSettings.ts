@@ -243,7 +243,4 @@ export interface UserSettings {
         Wallet: number;
     };
     UsedClientFlags: number;
-    OrganizationPolicy: {
-        Enforced: number;
-    };
 }
