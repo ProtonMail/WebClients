@@ -494,7 +494,12 @@ export const getHasVpnB2BPlan = (subscription: MaybeFreeSubscription) => {
 };
 
 export const planSupportsSSO = (planName?: PLANS) => {
-    return planName && [PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS].some((ssoPlanName) => ssoPlanName === planName);
+    return (
+        planName &&
+        [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS].some(
+            (ssoPlanName) => ssoPlanName === planName
+        )
+    );
 };
 
 export const upsellPlanSSO = (planName?: PLANS) => {
