@@ -24,7 +24,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
 
 import { getFormattedQueryString } from '../organization/useOrgAuthLogs';
-import { userSettings } from '../payments/subscription/__mocks__/data';
 import B2BAuthLogsTable from './B2BAuthLogsTable';
 import LogsTable from './LogsTable';
 import { getAllAuthenticationLogs } from './helper';
@@ -100,7 +99,7 @@ const LogsSection = () => {
         latestRef.current = latest;
 
         try {
-            if (userSettings.OrganizationPolicy.Enforced === 1) {
+            if (settings.OrganizationPolicy.Enforced === 1) {
                 const query = {
                     Emails: [user.Email],
                 };
@@ -183,7 +182,7 @@ const LogsSection = () => {
                 </div>
             </div>
 
-            {userSettings.OrganizationPolicy.Enforced === 1 ? (
+            {settings.OrganizationPolicy.Enforced === 1 ? (
                 <B2BAuthLogsTable
                     logs={b2bState.logs}
                     userSection={true}
