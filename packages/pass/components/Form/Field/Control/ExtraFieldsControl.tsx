@@ -53,7 +53,6 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
                     ) : (
                         <ValueControl
                             clickToCopy
-                            as={TextAreaReadonly}
                             key={key}
                             icon={icon}
                             label={fieldName}
