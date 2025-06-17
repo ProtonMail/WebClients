@@ -1,8 +1,16 @@
 import { c } from 'ttag';
 
 import { type ItemBuilder, itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, Maybe, MaybeNull } from '@proton/pass/types';
+import type {
+    DeobfuscatedItemExtraField,
+    IdentityFieldName,
+    ItemContent,
+    ItemImportIntent,
+    Maybe,
+    MaybeNull,
+} from '@proton/pass/types';
 import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { objectKeys } from '@proton/pass/utils/object/generic';
 import { epochToDate } from '@proton/pass/utils/time/format';
@@ -22,8 +30,6 @@ import type {
     OnePassSection,
 } from './1pux.types';
 import { OnePassCreditCardFieldIds, OnePassFieldKey, OnePassFieldValueKeys } from './1pux.types';
-
-type SshKeyMetadata = Extract<OnePassFieldValue<OnePassFieldKey.SSH_KEY>, 'metadata'>;
 
 const ONE_PASS_FIXED_SECTIONS = ['name', 'address', 'internet'];
 const ONE_PASS_ADDRESS_KEYS = ['street', 'city', 'country', 'zip', 'state'];
@@ -191,25 +197,8 @@ export const extract1PasswordExtraFields = (section: OnePassSection): Deobfuscat
                         data: { content: format1PasswordFieldValue(value, fieldKey) },
                     };
 
-                case OnePassFieldKey.SSH_KEY: {
-                    if (!(typeof data === 'object' && 'metadata' in data)) return null;
-
-                    // Supporting PKCS#8 SSH Key format
-                    const keysMap: Record<SshKeyMetadata, 'text' | 'hidden'> = {
-                        publicKey: 'text',
-                        privateKey: 'hidden',
-                        fingerprint: 'text',
-                        keyType: 'text',
-                    };
-
-                    return Object.entries(data.metadata ?? {}).map(([key, value]) => ({
-                        fieldName: key,
-                        type: keysMap[key as SshKeyMetadata] ?? 'text',
-                        data: { content: String(value) },
-                    }));
-                }
-
-                // Return null since we have another mechanism to import files
+                // Return null since we have another mechanism to import files and SSH Keys
+                case OnePassFieldKey.SSH_KEY:
                 case OnePassFieldKey.FILE:
                     return null;
 
@@ -351,6 +340,37 @@ export const intoFilesFrom1PasswordItem = (sections: Maybe<OnePassSection[]>): s
     }, []);
 };
 
+export const extractSSHSections = (
+    sshKey: OnePassFieldValue<OnePassFieldKey.SSH_KEY>
+): ItemImportIntent<'sshKey'>['content']['sections'] => {
+    const sectionFields = [
+        sshKey?.privateKey && {
+            fieldName: c('Label').t`Private Key`,
+            type: 'hidden',
+            data: { content: sshKey.privateKey },
+        },
+        sshKey?.metadata?.fingerprint && {
+            fieldName: c('Label').t`Key fingerprint`,
+            type: 'hidden',
+            data: { content: sshKey.metadata.fingerprint },
+        },
+        sshKey?.metadata?.keyType && {
+            fieldName: c('Label').t`Key type`,
+            type: 'text',
+            data: { content: sshKey.metadata.keyType },
+        },
+    ].filter(truthy) as DeobfuscatedItemExtraField[];
+
+    if (!sectionFields.length) return [];
+
+    return [
+        {
+            sectionName: 'OpenSSH',
+            sectionFields,
+        },
+    ];
+};
+
 export const extractBaseWifi = (
     sections: Maybe<OnePassSection[]> = []
 ): {
@@ -358,7 +378,7 @@ export const extractBaseWifi = (
     password?: string;
     security: WifiSecurity;
 } => {
-    const fields = sections.flatMap((section) => section.fields);
+    const fields = sections.flatMap(prop('fields'));
 
     // 1P has different keys to store the value, so we can just use the first one
     const [ssid, password, wirelessSecurity] = baseWifiFields.map(
