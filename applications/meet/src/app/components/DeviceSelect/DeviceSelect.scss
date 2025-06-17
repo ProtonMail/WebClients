@@ -7,6 +7,11 @@
 		border-color: var(--border-norm) !important;
 		outline: none;
 		box-shadow: none !important;
+
+		&:hover,
+		&:focus-within {
+			background-color: var(--background-strong);
+		}
 	}
 
 	.caret-icon {

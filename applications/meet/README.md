@@ -1,6 +1,5 @@
 The application needs a .env file with the following environment variables:
 
-- LIVEKIT_URL
 - LIVEKIT_API_KEY
 - LIVEKIT_API_SECRET
 - LIVEKIT_ROOM_KEY

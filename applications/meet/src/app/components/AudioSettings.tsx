@@ -21,7 +21,6 @@ export const AudioSettings = () => {
         audioRef.current = audio;
 
         if (audio.sinkId !== undefined) {
-            // @ts-ignore
             setActiveOutputDeviceId(audio.sinkId || 'default');
         } else {
             setActiveOutputDeviceId('default');
@@ -41,12 +40,10 @@ export const AudioSettings = () => {
         try {
             const audioElements = document.querySelectorAll('audio');
             for (const el of audioElements) {
-                // @ts-ignore
                 await el.setSinkId(value);
             }
 
             if (audioRef.current) {
-                // @ts-ignore
                 await audioRef.current.setSinkId(value);
             }
 

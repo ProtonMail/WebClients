@@ -3,6 +3,7 @@ import type { Participant } from 'livekit-client';
 import clsx from '@proton/utils/clsx';
 
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
+import { getParticipantInitials } from '../../utils/getParticipantInitials';
 
 import './ParticipantPlaceholder.scss';
 
@@ -12,8 +13,6 @@ interface ParticipantPlaceholderProps {
 }
 
 export const ParticipantPlaceholder = ({ participant, smallView = false }: ParticipantPlaceholderProps) => {
-    const nameParts = participant.name?.split(' ');
-
     const { backgroundColor, profileColor } = getParticipantDisplayColors(participant);
 
     return (
@@ -36,8 +35,7 @@ export const ParticipantPlaceholder = ({ participant, smallView = false }: Parti
                     '--h-custom': smallView ? '4rem' : '5rem',
                 }}
             >
-                {nameParts?.[0]?.charAt(0)}
-                {nameParts?.[1]?.charAt(0)}
+                {getParticipantInitials(participant)}
             </div>
         </div>
     );

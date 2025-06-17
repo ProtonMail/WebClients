@@ -12,21 +12,29 @@
 }
 
 .circle-button-active {
-	--circle-button-bg: var(--interaction-norm-major-1);
+	--circle-button-bg: var(--interaction-norm);
 
 	color: var(--text-invert) !important;
-}
 
-.circle-button-lighter-default {
-	--circle-button-bg: var(--interaction-weak);
+	&:hover {
+		--circle-button-bg: var(--interaction-norm-major-1);
+	}
 }
 
 .circle-button-default {
 	--circle-button-bg: var(--interaction-weak-minor-1);
+
+	&:hover {
+		--circle-button-bg: var(--interaction-weak);
+	}
 }
 
 .circle-button-danger {
-	--circle-button-bg: var(--signal-danger-major-2) !important;
+	--circle-button-bg: var(--signal-danger-major-3);
+
+	&:hover {
+		--circle-button-bg: var(--signal-danger);
+	}
 }
 
 .indicator-warning {

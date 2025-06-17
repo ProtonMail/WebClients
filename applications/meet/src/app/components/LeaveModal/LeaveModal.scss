@@ -1,6 +1,8 @@
 .leave-button {
-	&,
-	&:hover {
-		background-color: var(--signal-danger-major-2);
+	background-color: var(--signal-danger-major-3);
+
+	&:hover,
+	&:focus-within {
+		background-color: var(--signal-danger);
 	}
 }

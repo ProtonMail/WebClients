@@ -7,7 +7,6 @@ export interface ParticipantSettings {
     isAudioEnabled: boolean;
     isVideoEnabled: boolean;
     isFaceTrackingEnabled: boolean;
-    roomName: string;
 }
 
 export enum LoadingState {

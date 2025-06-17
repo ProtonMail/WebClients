@@ -1,12 +1,12 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { RoomContext } from '@livekit/components-react';
 import { Room } from 'livekit-client';
 
+import { useMeetingSetup } from '../hooks/srp/useMeetingSetup';
 import { useQualityLevel } from '../hooks/useQualityLevel';
 import { qualityConstants } from '../qualityConstants';
 import { LoadingState, type ParticipantSettings, QualityScenarios } from '../types';
-import { createToken } from '../utils/createToken';
 import { getE2EEOptions } from '../utils/getE2EEOptions';
 import { MeetContainer } from './MeetContainer';
 import { PrejoinContainer } from './PrejoinContainer';
@@ -18,12 +18,16 @@ interface ProtonMeetContainerProps {
 }
 
 export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerProps) => {
+    const { getRoomName, getAcccessDetails, token, urlPassword } = useMeetingSetup();
+
     const roomRef = useRef<Room | null>(null);
 
     const [participantSettings, setParticipantSettings] = useState<ParticipantSettings | null>(null);
 
     const [joiningInProgress, setJoiningInProgress] = useState(false);
     const [joinedRoom, setJoinedRoom] = useState(false);
+
+    const [roomName, setRoomName] = useState('');
 
     const defaultQuality = useQualityLevel();
 
@@ -51,13 +55,11 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                     },
                 });
 
-                const token = await createToken({
-                    identity: crypto.randomUUID(),
-                    room: participantSettings?.roomName as string,
-                    displayName: participantSettings?.displayName as string,
-                });
+                const { websocketUrl, accessToken } = await getAcccessDetails(
+                    participantSettings?.displayName as string
+                );
 
-                await room.connect(process.env.LIVEKIT_URL as string, token);
+                await room.connect(websocketUrl.replace('/rtc', ''), accessToken);
 
                 roomRef.current = room;
 
@@ -77,6 +79,17 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         setJoinedRoom(false);
     }, []);
 
+    const handleRoomNameFetch = useCallback(async () => {
+        const roomName = await getRoomName();
+        setRoomName(roomName);
+    }, [getRoomName]);
+
+    const shareLink = `${window.location.origin}/join/${token}#${urlPassword}`;
+
+    useEffect(() => {
+        void handleRoomNameFetch();
+    }, [handleRoomNameFetch]);
+
     return (
         <div className="h-full w-full">
             {joinedRoom && roomRef.current && participantSettings ? (
@@ -91,6 +104,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                         }
                         handleLeave={handleLeave}
                         setParticipantSettings={setParticipantSettings}
+                        shareLink={shareLink}
+                        roomName={roomName}
                     />
                 </RoomContext.Provider>
             ) : (
@@ -99,6 +114,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                     loadingState={LoadingState.JoiningInProgress}
                     isLoading={joiningInProgress}
                     guestMode={guestMode}
+                    shareLink={shareLink}
+                    roomName={roomName}
                 />
             )}
         </div>

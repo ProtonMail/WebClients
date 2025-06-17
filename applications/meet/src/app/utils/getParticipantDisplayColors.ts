@@ -3,7 +3,7 @@ import type { LocalParticipant, Participant, RemoteParticipant } from 'livekit-c
 export const getParticipantDisplayColors = (
     participant: Partial<RemoteParticipant> | Partial<LocalParticipant> | Partial<Participant>
 ) => {
-    const metadata = JSON.parse(participant?.metadata ?? '{}');
+    const metadata = JSON.parse(participant?.metadata || '{}');
 
     return {
         profileColor: metadata?.profileColor ?? `profile-background-1`,
