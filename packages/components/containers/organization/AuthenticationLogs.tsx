@@ -1,156 +1,377 @@
-import { useMemo, useRef, useState } from 'react';
+import { type FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 
-import { endOfDay } from 'date-fns';
+import { endOfDay, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { useMembers } from '@proton/account/members/hooks';
 import { Button } from '@proton/atoms';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
 import DateInput from '@proton/components/components/input/DateInput';
+import Label from '@proton/components/components/label/Label';
+import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
 import InputField from '@proton/components/components/v2/field/InputField';
-import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import useLoading from '@proton/hooks/useLoading';
+import type { B2BAuthLog } from '@proton/shared/lib/authlog';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { Recipient } from '@proton/shared/lib/interfaces';
-import { type Organization } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended, Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
-import { getLocalTimeStringFromDate } from '../b2bDashboard/Pass/helpers';
+import SettingsSectionWide from '../account/SettingsSectionWide';
+import RecipientsLimitationModal from '../b2bDashboard/ActivityMonitor/RecipientsLimitationModal';
+import { updateMonitoringSetting } from '../b2bDashboard/ActivityMonitor/api';
+import { getLocalTimeStringFromDate, getSearchType } from '../b2bDashboard/Pass/helpers';
 import B2BAuthLogsTable from '../logs/B2BAuthLogsTable';
 import { convertEnhancedMembersToContactEmails } from './groups/NewGroupMemberInput';
 import useAuthLogsDateFilter from './useAuthLogsFilter';
 import useOrgAuthLogs from './useOrgAuthLogs';
 
 interface Props {
-    organization?: Organization;
+    organization?: OrganizationExtended;
+    activityMonitorSection?: boolean;
+    wipeLogs?: boolean;
+    reloadTrigger?: number;
+    monitoring?: boolean;
+    detailedMonitoringOption?: boolean;
+    onLogsLoaded: (logs: B2BAuthLog[]) => void;
 }
 export interface AuthLogsQueryParams {
     Emails: string[];
     StartTime?: string;
     EndTime?: string;
+    IP?: string;
 }
 
-const AuthenticationLogs = ({ organization }: Props) => {
+const AuthenticationLogs = ({
+    organization,
+    activityMonitorSection = true,
+    wipeLogs = false,
+    reloadTrigger = 0,
+    monitoring = false,
+    detailedMonitoringOption = false,
+    onLogsLoaded,
+}: Props) => {
     const api = useApi();
     const [members] = useMembers();
+    const [submitting, withSubmitting] = useLoading();
     const { createNotification } = useNotifications();
     const { page, onNext, onPrevious, onSelect, reset } = usePaginationAsync(1);
     const [query, setQuery] = useState<AuthLogsQueryParams>({ Emails: [] });
-    const { authLogs, total, loading, error } = useOrgAuthLogs(api, query, page);
+    const { authLogs, total, loading, error } = useOrgAuthLogs(api, query, page, wipeLogs);
     const { filter, handleStartDateChange, handleEndDateChange } = useAuthLogsDateFilter();
     const [recipients, setRecipient] = useState<Recipient[]>([]);
     const addressesAutocompleteRef = useRef<HTMLInputElement>(null);
+    const [detailedMonitoring, setDetailedMonitoring] = useState(detailedMonitoringOption);
+    const [detailedMonitoringLoading, withLoadingDetailedMonitoring] = useLoading();
+    const [recipientsModalProps, recipientsModalOpen, recipientsModalRender] = useModalState();
+
+    const { viewportWidth } = useActiveBreakpoint();
 
     const items = useMemo(() => {
         return recipients.map((recipient) => {
             return (
-                <AddressesInputItem
-                    key={recipient.Address}
-                    label={recipient.Address}
-                    onClick={(event) => event.stopPropagation()}
-                    onRemove={() => {
-                        setRecipient(recipients.filter((rec) => rec.Address !== recipient.Address));
-                    }}
-                />
+                <span className="flex">
+                    <AddressesInputItem
+                        key={recipient.Address}
+                        label={recipient.Address}
+                        onClick={(event) => event.stopPropagation()}
+                        onRemove={() => {
+                            setRecipient(recipients.filter((rec) => rec.Address !== recipient.Address));
+                        }}
+                    />
+                </span>
             );
         });
     }, [recipients]);
 
+    useEffect(() => {
+        const loadMonitoringSetting = async () => {
+            try {
+                if (organization?.Settings?.LogAuth === 2) {
+                    setDetailedMonitoring(true);
+                } else {
+                    setDetailedMonitoring(false);
+                }
+            } catch (error) {}
+        };
+
+        void loadMonitoringSetting();
+    }, []);
+
+    const handleSetDetailedMonitoring = async () => {
+        const enabling = !detailedMonitoring;
+
+        try {
+            await api(updateMonitoringSetting(enabling ? 2 : 0));
+            setDetailedMonitoring(enabling);
+        } catch (e) {
+            createNotification({ type: 'error', text: c('Error').t`Failed to update detailed monitoring.` });
+        }
+    };
+
+    const getDetailedEventsText = (): string => {
+        if (detailedMonitoringLoading) {
+            return c('Info').t`Loading detailed events current status.`;
+        }
+
+        return detailedMonitoring ? c('Info').t`Disable detailed events` : c('Info').t`Enable detailed events`;
+    };
+
     const today = new Date();
+
+    const handleAddEmail = (newRecipients: Recipient[]) => {
+        if (recipients.length > 50) {
+            recipientsModalOpen(true);
+            return;
+        }
+        setRecipient([...recipients, ...newRecipients]);
+    };
+
+    const handleSearchSubmit = (initialLoad?: boolean): Promise<void> | undefined => {
+        if (members) {
+            if (members.length > 100) {
+                createNotification({ text: c('error').t`Select users to view their activity` });
+                return Promise.resolve();
+            }
+
+            let Emails: string[] = [];
+
+            if (initialLoad) {
+                const membersArray = convertEnhancedMembersToContactEmails(members);
+                Emails = membersArray.map((member) => member.Email);
+            } else {
+                Emails = recipients.map((recipient) => recipient.Address);
+            }
+
+            const StartTime = filter.start ? getLocalTimeStringFromDate(filter.start) : undefined;
+            const EndTime = filter.end ? getLocalTimeStringFromDate(endOfDay(filter.end)) : undefined;
+
+            setQuery({
+                Emails,
+                StartTime,
+                EndTime,
+            });
+            reset();
+        }
+    };
+
+    useEffect(() => {
+        withSubmitting(handleSearchSubmit(true)).catch(noop);
+    }, [reloadTrigger]);
+
+    useEffect(() => {
+        onLogsLoaded(authLogs);
+    }, [authLogs]);
 
     if (!organization || !members) {
         return <Loader />;
     }
 
-    const handleAddEmail = (newRecipients: Recipient[]) => {
-        setRecipient([...recipients, ...newRecipients]);
+    const isFilterEmpty = () => {
+        return filter.start === undefined && filter.end === undefined && recipients.length === 0;
     };
 
-    const handleSearchSubmit = () => {
-        if (!recipients.length) {
-            createNotification({ text: c('error').t`Enter an email address` });
+    const resetFilter = () => {
+        handleStartDateChange(undefined);
+        handleEndDateChange(undefined);
+        setRecipient([]);
+        setQuery({ Emails: [] });
+        reset();
+    };
+
+    const handleClickableTime = (time: string | number) => {
+        const date = new Date(Number(time) * 1000);
+        const start = getLocalTimeStringFromDate(startOfDay(date));
+        const end = getLocalTimeStringFromDate(endOfDay(date));
+
+        handleStartDateChange(date);
+        handleEndDateChange(date);
+
+        setQuery({ ...query, StartTime: start, EndTime: end });
+        reset();
+    };
+
+    const handleClickableEmailOrIP = (keyword: string) => {
+        const searchType = getSearchType(keyword);
+
+        if (searchType !== 'email' && searchType !== 'ip') {
             return;
         }
+
+        const newQuery: AuthLogsQueryParams =
+            searchType === 'email' ? { Emails: [keyword] } : { Emails: [], IP: keyword };
+
+        setQuery(newQuery);
+        setRecipient(recipients.filter((rec) => rec.Address === keyword));
         reset();
-        const Emails = recipients.map((recipient) => recipient.Address);
-        const StartTime = filter.start ? getLocalTimeStringFromDate(filter.start) : undefined;
-        const EndTime = filter.end ? getLocalTimeStringFromDate(endOfDay(filter.end)) : undefined;
-        setQuery({ Emails, StartTime, EndTime });
+    };
+
+    const handleSubmit = (event: FormEvent) => {
+        event.preventDefault();
+        withSubmitting(handleSearchSubmit()).catch(noop);
     };
 
     return (
-        <SettingsSectionExtraWide>
-            <div className="flex flex-column md:flex-row gap-0 md:gap-4 flex-nowrap items-start justify-space-between *:min-size-auto my-6">
-                <InputField
-                    as={AddressesInput}
-                    ref={addressesAutocompleteRef}
-                    rootClassName="flex-1"
-                    inputContainerClassName=""
-                    autocomplete={
-                        <AddressesAutocompleteTwo
-                            id="auth-log-autocomplete"
-                            anchorRef={addressesAutocompleteRef}
-                            recipients={recipients}
-                            onAddRecipients={handleAddEmail}
-                            contactEmails={members && convertEnhancedMembersToContactEmails(members)}
-                            inputClassName={clsx([
-                                !recipients.length && 'my-0.5',
-                                !!recipients.length && 'p-0 rounded-none',
-                            ])}
-                            validate={(email: string) => {
-                                if (!validateEmailAddress(email)) {
-                                    return c('Input Error').t`Not a valid email address`;
-                                }
-                            }}
-                            unstyled
-                            placeholder={recipients.length ? '' : c('Label').t`Search by email`}
-                            limit={10}
-                        />
-                    }
-                    items={items}
-                    className={clsx(['multi-select-container', !!recipients.length && 'px-2 py-0.5'])}
-                />
-                <div className="flex-1 flex flex-column gap-2 *:min-size-auto">
-                    <div className="flex flex-1 flex-row flex-nowrap gap-2">
-                        <DateInput
-                            id="start"
-                            placeholder={c('Placeholder').t`Start date`}
-                            value={filter.start}
-                            onChange={handleStartDateChange}
-                            className="flex-1"
-                            max={today}
-                        />
-                        <DateInput
-                            id="end"
-                            placeholder={c('Placeholder').t`End date`}
-                            value={filter.end}
-                            onChange={handleEndDateChange}
-                            className="flex-1"
-                            max={today}
-                        />
-                        <Button color="norm" onClick={handleSearchSubmit} disabled={loading}>
-                            {c('Action').t`Search`}
-                        </Button>
-                    </div>
-                    <div className="self-end">
-                        <Pagination
-                            page={page}
-                            total={total}
-                            limit={10}
-                            onSelect={onSelect}
-                            onNext={onNext}
-                            onPrevious={onPrevious}
-                        />
+        <SettingsSectionWide customWidth={clsx(activityMonitorSection ? '90rem' : '82rem')} className="grow">
+            {recipientsModalRender && (
+                <RecipientsLimitationModal {...recipientsModalProps} onChange={() => recipientsModalOpen(false)} />
+            )}
+            <div className="flex flex-column">
+                <div className="flex flex-row justify-space-between mt-2">
+                    <div className="w-full flex flex-row justify-space-between">
+                        <div className="flex flex-column">
+                            <form
+                                onSubmit={handleSubmit}
+                                className="flex flex-column md:flex-row gap-2 justify-space-between *:min-size-auto max-w-custom mb-1"
+                                style={{ '--max-w-custom': '50rem' }}
+                            >
+                                <div className="md:flex-1 flex flex-column *:min-size-auto w-full leading-10">
+                                    <Label className="text-semibold p-0 h-6 mb-1" htmlFor="search">
+                                        {c('Label').t`Search`}
+                                    </Label>
+                                    <InputField
+                                        as={AddressesInput}
+                                        ref={addressesAutocompleteRef}
+                                        inputContainerClassName=""
+                                        autocomplete={
+                                            <AddressesAutocompleteTwo
+                                                id="auth-log-autocomplete"
+                                                anchorRef={addressesAutocompleteRef}
+                                                recipients={recipients}
+                                                onAddRecipients={handleAddEmail}
+                                                contactEmails={
+                                                    members && convertEnhancedMembersToContactEmails(members)
+                                                }
+                                                inputClassName={clsx(!!recipients.length && 'p-0 rounded-none')}
+                                                validate={(email: string) => {
+                                                    if (!validateEmailAddress(email)) {
+                                                        return c('Input Error').t`Not a valid email address`;
+                                                    }
+                                                }}
+                                                unstyled
+                                                placeholder={c('Label').t`Search for a name or email`}
+                                                limit={50}
+                                            />
+                                        }
+                                        className={clsx([
+                                            'multi-select-container h-custom content-center',
+                                            !!recipients.length && 'px-2',
+                                        ])}
+                                        assistContainerClassName="empty:hidden"
+                                        rootStyle={{ '--h-custom': '2.25rem' }}
+                                    />
+                                </div>
+                                <div
+                                    className={clsx([
+                                        'md:flex-1 md:max-w-1/2 flex flex-column justify-space-between sm:flex-row gap-2',
+                                        viewportWidth['<=small'] && '*:min-size-auto flex-nowrap',
+                                    ])}
+                                >
+                                    <div className="flex-1 flex flex-column *:min-size-auto leading-10">
+                                        <Label className="text-semibold p-0 h-6 mb-1" htmlFor="begin-date">
+                                            {c('Label (begin date/advanced search)').t`From`}
+                                        </Label>
+                                        <DateInput
+                                            id="start"
+                                            placeholder={c('Placeholder').t`Start date`}
+                                            value={filter.start}
+                                            onChange={handleStartDateChange}
+                                            max={today}
+                                        />
+                                    </div>
+                                    <span
+                                        className="hidden sm:flex text-bold self-end h-custom shrink-0"
+                                        style={{ '--h-custom': '2rem' }}
+                                    >
+                                        -
+                                    </span>
+                                    <div className="flex-1 flex flex-column *:min-size-auto leading-10">
+                                        <Label className="text-semibold p-0 h-6 mb-1" htmlFor="end-date">
+                                            {c('Label (end date/advanced search)').t`To`}
+                                        </Label>
+                                        <DateInput
+                                            id="end"
+                                            placeholder={c('Placeholder').t`End date`}
+                                            value={filter.end}
+                                            onChange={handleEndDateChange}
+                                            max={today}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="flex lg:inline-flex flex-nowrap flex-row gap-2 shrink-0 items-end">
+                                    <div className="flex content-center">
+                                        <Button color="norm" type="submit" loading={submitting} className="self-end">
+                                            {c('Action').t`Search`}
+                                        </Button>
+                                    </div>
+                                    <div className="flex content-center">
+                                        <Button
+                                            color="norm"
+                                            shape="ghost"
+                                            type="submit"
+                                            loading={submitting}
+                                            className="self-end"
+                                            disabled={isFilterEmpty()}
+                                            onClick={resetFilter}
+                                        >
+                                            {c('Action').t`Reset`}
+                                        </Button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div className="flex mb-4">{items.slice(0, 50)}</div>
+                        </div>
+                        <div>
+                            <div className="flex flex-row flex-nowrap items-center gap-2 mt-7">
+                                <Toggle
+                                    id="detailed-monitoring-toggle"
+                                    loading={detailedMonitoringLoading}
+                                    checked={detailedMonitoring}
+                                    disabled={!monitoring}
+                                    onChange={() => withLoadingDetailedMonitoring(handleSetDetailedMonitoring())}
+                                />
+                                <div className="flex items-center">
+                                    {getDetailedEventsText()}
+                                    <Info
+                                        className="ml-2 shrink-0"
+                                        title={c('Info')
+                                            .t`Include user IP address, location, and ISP (Internet Service Provider) in event logs`}
+                                    />
+                                </div>
+                            </div>
+                            <div className="h-custom" style={{ '--h-custom': '2.5rem' }}></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <B2BAuthLogsTable logs={authLogs} loading={loading} error={error} />
-        </SettingsSectionExtraWide>
+            <B2BAuthLogsTable
+                logs={authLogs}
+                loading={loading}
+                error={error}
+                detailedMonitoring={detailedMonitoring}
+                onTimeClick={handleClickableTime}
+                onEmailOrIPClick={handleClickableEmailOrIP}
+            />
+            <div className="flex flex-column items-center justify-space-around">
+                <Pagination
+                    page={page}
+                    total={total}
+                    limit={10}
+                    onSelect={onSelect}
+                    onNext={onNext}
+                    onPrevious={onPrevious}
+                />
+            </div>
+        </SettingsSectionWide>
     );
 };
 
