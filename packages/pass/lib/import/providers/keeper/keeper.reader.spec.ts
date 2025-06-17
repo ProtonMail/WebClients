@@ -163,6 +163,9 @@ describe('Import Keeper JSON', () => {
         expect(creditCardItem.content.verificationNumber).toEqual('123');
         expect(creditCardItem.content.pin).toEqual('1234');
         expect(creditCardItem.content.expirationDate).toEqual('032027');
+        expect(creditCardItem.extraFields).toEqual([
+            { data: { content: 'custom value' }, fieldName: 'Text', type: 'text' },
+        ]);
 
         /* custom file item */
         const fileItem = deobfuscateItem(items[1]) as unknown as ItemImportIntent<'custom'>;
@@ -173,7 +176,11 @@ describe('Import Keeper JSON', () => {
         const noteWithCustomField = deobfuscateItem(items[2]) as unknown as ItemImportIntent<'note'>;
         expect(noteWithCustomField.type).toEqual('note');
         expect(noteWithCustomField.metadata.name).toEqual('a note');
-        expect(noteWithCustomField.metadata.note).toEqual('note content\nline 2\ncustom note');
+        expect(noteWithCustomField.metadata.note).toEqual('custom note');
+        expect(noteWithCustomField.extraFields).toEqual([
+            { data: { content: 'note content\nline 2' }, fieldName: 'note:', type: 'text' },
+            { data: { content: 'custom field name' }, fieldName: 'Text', type: 'text' },
+        ]);
 
         const addressItem = deobfuscateItem(items[3]) as unknown as ItemImportIntent<'custom'>;
         expect(addressItem.type).toEqual('custom');
@@ -519,10 +526,12 @@ describe('Import Keeper JSON', () => {
         expect(loginItemSecureNote.modifyTime).toBeUndefined();
         expect(loginItemSecureNote.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemSecureNote.metadata.name).toEqual('secure note item');
-        expect(loginItemSecureNote.metadata.note).toEqual('secured note\nfoo');
+        expect(loginItemSecureNote.metadata.note).toEqual('foo');
         expect(loginItemSecureNote.content).toEqual({});
         expect(loginItemSecureNote.trashed).toEqual(false);
-        expect(loginItemSecureNote.extraFields).toEqual([]);
+        expect(loginItemSecureNote.extraFields).toEqual([
+            { data: { content: 'secured note' }, fieldName: 'note:', type: 'text' },
+        ]);
 
         /* SSH key item */
         const sshItem = deobfuscateItem(items[13]) as unknown as ItemImportIntent<'custom'>;
@@ -572,8 +581,7 @@ describe('Import Keeper JSON', () => {
         ]);
     });
 
-    test('should correctly hydrate ignored arrays', () => {
-        expect(payload.ignored.length).toEqual(1);
-        expect(payload.ignored[0]).toEqual('[encryptedNotes] a note: item was imported without custom fields');
+    test('should not ignore any item', () => {
+        expect(payload.ignored.length).toEqual(0);
     });
 });

@@ -12,7 +12,8 @@
                     "cardSecurityCode": "123"
                 },
                 "$text:cardholderName:1": "First last",
-                "$pinCode::1": "1234"
+                "$pinCode::1": "1234",
+                "$text::1": "custom value"
             },
             "references": {
                 "$addressRef::1": [4]
