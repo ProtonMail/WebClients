@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -177,6 +177,9 @@
       ],
       "Apply": [
         "Použít"
+      ],
+      "Apply filter “${ Name }” to existing messages": [
+        "Použít filtr “${ Name }” na existující zprávy"
       ],
       "Apply to existing messages": [
         "Použít na existující zprávy"
@@ -343,6 +346,18 @@
       "Copy password": [
         "Kopírovat heslo"
       ],
+      "Copy SMTP port": [
+        "Kopírovat SMTP port"
+      ],
+      "Copy SMTP server": [
+        "Kopírovat SMTP server"
+      ],
+      "Copy SMTP token": [
+        "Kopírovat SMTP token"
+      ],
+      "Copy SMTP username": [
+        "Kopírovat SMTP uživatelské jméno"
+      ],
       "Copy version number to clipboard": [
         "Zkopírovat číslo verze do schránky"
       ],
@@ -412,6 +427,9 @@
       "Delete and confirm": [
         "Smazat a potvrdit"
       ],
+      "Delete filter “${ Name }”": [
+        "Smazat filtr “${ Name }”"
+      ],
       "Delete Gateway": [
         "Smazat bránu"
       ],
@@ -435,6 +453,9 @@
       ],
       "Delete record": [
         "Smazat záznam"
+      ],
+      "Delete token “${ token.Name }”": [
+        "Smazat token “${ token.Name }”"
       ],
       "Delete user": [
         "Smazat uživatele"
@@ -469,10 +490,10 @@
       "Discard": [
         "Zahodit"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodit změny"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodit změny"
       ],
       "Discover ${ planName }": [
@@ -498,6 +519,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stáhnout aplikace ${ DRIVE_APP_NAME }"
+      ],
+      "Download Bridge for ${ platform }": [
+        "Stáhnout Bridge pro ${ platform }"
       ],
       "Download CSV sample": [
         "Stáhnout ukázku CSV"
@@ -541,6 +565,9 @@
       "Edit email address": [
         "Upravit e-mailovou adresu"
       ],
+      "Edit filter “${ Name }”": [
+        "Upravit filtr “${ Name }”"
+      ],
       "Edit Gateway": [
         "Upravit bránu"
       ],
@@ -570,6 +597,9 @@
       ],
       "Edit sieve": [
         "Upravit Sieve"
+      ],
+      "Edit sieve filter “${ Name }”": [
+        "Upravit Sieve filtr “${ Name }”"
       ],
       "Edit sign-in details": [
         "Upravit přihlašovací údaje"
@@ -1366,6 +1396,9 @@
       "Try another method": [
         "Zkuste jinou metodu"
       ],
+      "Try for free": [
+        "Vyzkoušet zdarma"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
       ],
@@ -1811,6 +1844,30 @@
         "Jsem mimo kancelář s omezeným přístupem ke svému e-mailu."
       ]
     },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Platební údaje"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje každých ${ cycle } měsíců, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
+      ],
+      "on ${ formattedDate }": [
+        "dne ${ formattedDate }"
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Částka splatná po zkušebním období"
+      ],
+      "Amount due now": [
+        "Částka splatná nyní"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Vypnuto"
@@ -1878,17 +1935,6 @@
         "Vyberte si nabídku na End of Year"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíc.",
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíce.",
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců.",
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB úložiště (2x více než jakýkoli jiný tarif)"
@@ -1910,6 +1956,17 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Tarif ${ plan } je zpět pouze po omezenou dobu"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíc.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíce.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců."
       ]
     },
     "bf2023: Offers": {
@@ -3346,9 +3403,6 @@
       "Macao": [
         "Macao"
       ],
-      "Macedonia": [
-        "Makedonie"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -4266,7 +4320,7 @@
       "Download for Linux": [
         "Stáhnout pro Linux"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Stáhnout pro macOS"
       ],
       "Download for Windows": [
@@ -6805,6 +6859,9 @@
       ],
       "Organization key fingerprint": [
         "Otisk klíče organizace"
+      ],
+      "Payment details": [
+        "Platební údaje"
       ],
       "Permissions": [
         "Oprávnění"
@@ -10094,11 +10151,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "username": [
-        "uživatelské jméno"
-      ],
       "Username": [
         "Uživatelské jméno"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -11356,11 +11413,11 @@
       "AND": [
         "A"
       ],
-      "And": [
-        "A"
-      ],
       "and": [
         "a"
+      ],
+      "And": [
+        "A"
       ],
       "Anderson": [
         "Anderson"
@@ -11788,11 +11845,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "POKUD"
-      ],
       "If": [
         "Pokud"
+      ],
+      "IF": [
+        "POKUD"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -12004,11 +12061,11 @@
       "Optional": [
         "Volitelné"
       ],
-      "OR": [
-        "NEBO"
-      ],
       "or": [
         "nebo"
+      ],
+      "OR": [
+        "NEBO"
       ],
       "Or": [
         "Nebo"
@@ -12147,6 +12204,9 @@
       ],
       "Select Linux package format": [
         "Vyberte formát balíčku Linux"
+      ],
+      "Select Linux platform": [
+        "Vyberte platformu Linux"
       ],
       "Send auto-reply": [
         "Poslat automatickou odpověď"
@@ -12709,11 +12769,11 @@
       "perform a password reset from your active session": [
         "resetujte heslo z vaší aktuální relace"
       ],
-      "privacy policy": [
-        "zásadami ochrany osobních údajů"
-      ],
       "Privacy policy": [
         "Zásady ochrany osobních údajů"
+      ],
+      "privacy policy": [
+        "zásadami ochrany osobních údajů"
       ],
       "Reactivate now": [
         "Opětovně nyní aktivovat"
@@ -13969,6 +14029,12 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* V případě předplatného na 30 měsíců. Další možnosti předplatného jsou k dispozici u pokladny."
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB úložného prostoru v cloudu, který vám umožní snadno ukládat, synchronizovat a sdílet soubory. Zabezpečeno koncovým šifrováním."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB úložného prostoru v cloudu, který vám umožní snadno ukládat, synchronizovat a sdílet soubory. Zabezpečeno koncovým šifrováním."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Pokročilé zabezpečení sítě a správa přístupu s vyhrazenými zabezpečenými bránami"
       ],
@@ -14031,9 +14097,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný přístup k internetu odkudkoli, včetně důležitého monitorování sítě"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpečné cloudové úložiště, které vám umožňuje snadno a bezpečně ukládat, synchronizovat a sdílet soubory."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
@@ -14124,14 +14187,6 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -14150,6 +14205,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -14439,7 +14502,10 @@
       "Require 2FA": [
         "Požadování 2FA"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "Podpora ${ n } vlastní e-mailové domény",
+        "Podpora ${ n } vlastních e-mailových domén",
+        "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén"
       ]
     },
@@ -14813,14 +14879,44 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " navštivte naše ${ helpCenterLink } nebo ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Zrušit můžete kdykoli před ${ cancelDate }."
+      ],
       "Cancel anytime before then.": [
         "Zrušit můžete kdykoli před uplynutím této doby."
+      ],
+      "contact our support team": [
+        "kontaktujte náš tým podpory"
+      ],
+      "Continue": [
+        "Pokračovat"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Užívejte si bezplatné funkce podnikového zabezpečení až do ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "centrum podpory"
+      ],
+      "If you need help,": [
+        "Pokud potřebujete pomoci,"
       ],
       "Once your full subscription starts...": [
         "Po zahájení plného předplatného..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Do 30 dnů můžete předplatné zrušit a získat poměrnou část peněz zpět."
+      ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "Do 30 dnů můžete předplatné zrušit a získat poměrnou část peněz zpět."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Můžete používat ${ planTitle } až do skončení zkušební verze a nebudou vám účtovány žádné poplatky."
+      ],
+      "Your free trial has started": [
+        "Vaše bezplatná zkušební verze začala"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Vaše plné předplatné ${ planTitle } začíná ${ boldEndDate }."
@@ -15886,6 +15982,9 @@
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíce. Předplatné můžete kdykoli zrušit.",
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit.",
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Tato platební metoda se stane vaším novým výchozím způsobem pro všechna budoucí obnovení."
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
@@ -18320,7 +18419,7 @@
         "Vysokorychlostní VPN na ${ maxVpn } zařízení",
         "Vysokorychlostní VPN na ${ maxVpn } zařízení"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "VPN připojení pro ${ n } zařízení na uživatele",
         "VPN připojení pro ${ n } zařízení na uživatele",
         "VPN připojení pro ${ n } zařízení na uživatele",
@@ -18363,47 +18462,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription reminder": {
@@ -18706,6 +18764,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -20721,8 +20820,11 @@
       "Your exposed information": [
         "Vaše uniklé informace"
       ],
-      "Your free trial ends in ${ trialDurationFormatted } days": [
-        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny"
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } den",
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny",
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dnů",
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dnů"
       ],
       "Your plan": [
         "Váš tarif"

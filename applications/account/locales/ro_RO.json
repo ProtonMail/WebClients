@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -177,6 +177,9 @@
       ],
       "Apply": [
         "Aplicare"
+      ],
+      "Apply filter “${ Name }” to existing messages": [
+        "Aplicare filtru „${ Name }” la mesajele existente"
       ],
       "Apply to existing messages": [
         "Aplicare la mesajele existente"
@@ -343,6 +346,18 @@
       "Copy password": [
         "Copiere parolă"
       ],
+      "Copy SMTP port": [
+        "Copiere port SMTP"
+      ],
+      "Copy SMTP server": [
+        "Copiere server SMTP"
+      ],
+      "Copy SMTP token": [
+        "Copiere cod de acces SMTP"
+      ],
+      "Copy SMTP username": [
+        "Copiere nume utilizator SMTP"
+      ],
       "Copy version number to clipboard": [
         "Copiere număr versiune în memorie"
       ],
@@ -412,6 +427,9 @@
       "Delete and confirm": [
         "Ștergere și confirmare"
       ],
+      "Delete filter “${ Name }”": [
+        "Ștergere filtru „${ Name }”"
+      ],
       "Delete Gateway": [
         "Ștergere poartă de acces"
       ],
@@ -435,6 +453,9 @@
       ],
       "Delete record": [
         "Ștergere înregistrare"
+      ],
+      "Delete token “${ token.Name }”": [
+        "Ștergere cod de acces „${ token.Name }”"
       ],
       "Delete user": [
         "Ștergere utilizator"
@@ -469,11 +490,11 @@
       "Discard": [
         "Renunțare"
       ],
-      "Discard Changes": [
-        "Ignorare modificări"
-      ],
       "Discard changes": [
         "Anulare modificări"
+      ],
+      "Discard Changes": [
+        "Ignorare modificări"
       ],
       "Discover ${ planName }": [
         "Descoperiți ${ planName }"
@@ -499,8 +520,17 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
       ],
+      "Download Bridge for ${ platform }": [
+        "Descărcare Bridge pentru ${ platform }"
+      ],
       "Download CSV sample": [
         "Descărcare exemplu de CSV"
+      ],
+      "Download for macOS": [
+        "Descărcare pentru macOS"
+      ],
+      "Download for Windows": [
+        "Descărcare pentru Windows"
       ],
       "Download ICS": [
         "Descărcare ICS"
@@ -535,6 +565,9 @@
       "Edit email address": [
         "Editare adresa de e-mail"
       ],
+      "Edit filter “${ Name }”": [
+        "Editare filtru „${ Name }”"
+      ],
       "Edit Gateway": [
         "Editare poartă de acces"
       ],
@@ -564,6 +597,9 @@
       ],
       "Edit sieve": [
         "Editare script Sieve"
+      ],
+      "Edit sieve filter “${ Name }”": [
+        "Editare filtru Sieve „${ Name }”"
       ],
       "Edit sign-in details": [
         "Editare detalii de conectare"
@@ -1360,6 +1396,9 @@
       "Try another method": [
         "Încercaţi o altă metodă"
       ],
+      "Try for free": [
+        "Încercați gratis"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
       ],
@@ -1594,8 +1633,14 @@
       "Delete address": [
         "Ștergere adresă"
       ],
+      "Delete address “${ emailAddress }”": [
+        "Șterge adresa „${ emailAddress }”"
+      ],
       "Disable": [
         "Dezactivare"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "Dezactivare adresă „${ emailAddress }”"
       ],
       "Disable E2EE mail": [
         "Dezactivare criptare"
@@ -1609,8 +1654,14 @@
       "Edit address": [
         "Editare adresă"
       ],
+      "Edit address “${ emailAddress }”": [
+        "Editare adresa „${ emailAddress }”"
+      ],
       "Enable": [
         "Activare"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "Activare adresa „${ emailAddress }”"
       ],
       "Enable E2EE mail": [
         "Activare criptare"
@@ -1618,11 +1669,17 @@
       "Generate missing keys": [
         "Generare chei lipsă"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "Generare chei lipsă pentru adresa „${ emailAddress }”"
+      ],
       "Saving": [
         "Se salvează"
       ],
       "Set as default": [
         "Setare ca implicită"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "Setare „${ emailAddress }” ca adresă implicită"
       ]
     },
     "Address status": {
@@ -1701,6 +1758,139 @@
       ],
       "New email": [
         "Mesaj nou"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Luați oferta"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "200 GB storage": [
+        "200 GiB spațiu de stocare"
+      ],
+      "500 GB encrypted storage": [
+        "500 GiB de stocare criptată"
+      ],
+      "Add unlimited credit cards": [
+        "Adăugați carduri de plată nelimitate"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Toate funcțiile speciale ale ${ BRAND_NAME } Mail, Pass, VPN, Drive și Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocare reclame, urmăritori și programe malițioase"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Reducerile se bazează pe prețurile lunare standard. La sfârșitul ciclului de facturare, abonamentul se va reînnoi la tariful anual standard."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Dublați-vă stocarea criptată – obțineți 1 TiB pentru toate datele stocate"
+      ],
+      "Encrypted password manager": [
+        "Manager de parole criptat"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Iată un cadou exclusiv pentru a sărbători călătoria noastră împreună."
+      ],
+      "High speed streaming with VPN": [
+        "Transmisii în flux de mare viteză cu VPN"
+      ],
+      "of privacy": [
+        "de confidențialitate"
+      ],
+      "Online document editor": [
+        "Editor online de documente"
+      ],
+      "Online privacy for up to 2 people": [
+        "Confidențialitate online pentru maxim două persoane"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Confidențialitate online pentru întreaga familie (până la 6 utilizatori)"
+      ],
+      "Protect up to 10 devices": [
+        "Protejați până la 10 dispozitive"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Economisiți mult la funcțiile speciale Drive cu oferta limitată de reducere."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Economisiți mult la funcțiile speciale Mail cu oferta limitată de reducere."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Economisiți mult la funcțiile speciale PASS cu oferta limitată de reducere."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Economisiți mult la funcțiile speciale VPN cu oferta limitată de reducere."
+      ],
+      "Save time with built-in 2FA": [
+        "Salvați timp cu A2F integrată"
+      ],
+      "Secure email with unlimited aliases": [
+        "E-mail securizat cu aliasuri nelimitate"
+      ],
+      "Select any server": [
+        "Selectați orice server"
+      ],
+      "Share passwords easily": [
+        "Partajați ușor parolele"
+      ],
+      "Short @pm.me address": [
+        "Adresă scurtă @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Vizionați conținutul preferat"
+      ],
+      "thanks to you": [
+        "mulțumită dvs."
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Triplați-vă stocarea criptată – obțineți 3 TiB pentru toate datele stocate"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
+      ],
+      "years": [
+        "ani"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Ofertă aniversară"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
+      "/ month": [
+        "/lună"
+      ],
+      "12 months": [
+        "12 luni"
+      ],
+      "15 months": [
+        "15 luni"
+      ],
+      "24 months": [
+        "24 de luni"
+      ],
+      "30 months": [
+        "30 de luni"
+      ],
+      "for ${ durationDeal }": [
+        "cu ${ durationDeal }"
       ]
     },
     "app-switcher": {
@@ -1850,16 +2040,6 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1881,6 +2061,16 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni."
       ]
     },
     "bf2023: Offers": {
@@ -3304,9 +3494,6 @@
       "Macao": [
         "Macao"
       ],
-      "Macedonia": [
-        "Macedonia"
-      ],
       "Madagascar": [
         "Madagascar"
       ],
@@ -4220,7 +4407,7 @@
       "Download for Linux": [
         "Descărcare pentru Linux"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Descărcare pentru macOS"
       ],
       "Download for Windows": [
@@ -6739,6 +6926,9 @@
       "Organization key fingerprint": [
         "Amprentă cheie organizație"
       ],
+      "Payment details": [
+        "Detalii plată"
+      ],
       "Permissions": [
         "Permisiuni"
       ],
@@ -7465,6 +7655,11 @@
         "încă ${ remainingAddresses.length } adresă",
         "încă ${ remainingAddresses.length } adrese",
         "încă ${ remainingAddresses.length } de adrese"
+      ],
+      "${ resultsCount } result found": [
+        "Rezultate găsite: ${ resultsCount }",
+        "Rezultate găsite: ${ resultsCount }",
+        "Rezultate găsite: ${ resultsCount }"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
@@ -9967,11 +10162,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "username": [
-        "utilizator"
-      ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -11209,11 +11404,11 @@
       "AND": [
         "ȘI"
       ],
-      "And": [
-        "Şi"
-      ],
       "and": [
         "și"
+      ],
+      "And": [
+        "Şi"
       ],
       "Anderson": [
         "Anderson"
@@ -11409,6 +11604,9 @@
       ],
       "Copy": [
         "Copiere"
+      ],
+      "Copy fingerprint": [
+        "Copiere amprentă"
       ],
       "Could you please let us know which provider?": [
         "Ați putea să ne spuneți care furnizor?"
@@ -11638,11 +11836,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "DACĂ"
-      ],
       "If": [
         "Dacă"
+      ],
+      "IF": [
+        "DACĂ"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -11752,6 +11950,9 @@
       "Message": [
         "Mesaj"
       ],
+      "Message (auto-reply)": [
+        "Mesaj (autorăspuns)"
+      ],
       "Messages per page": [
         "Mesaje per pagină"
       ],
@@ -11851,11 +12052,11 @@
       "Optional": [
         "Opțional"
       ],
-      "OR": [
-        "SAU"
-      ],
       "or": [
         "sau"
+      ],
+      "OR": [
+        "SAU"
       ],
       "Or": [
         "Sau"
@@ -11991,6 +12192,12 @@
       ],
       "Second password": [
         "Parola secundară"
+      ],
+      "Select Linux package format": [
+        "Selectați formatul de pachet Linux"
+      ],
+      "Select Linux platform": [
+        "Selectați platforma Linux"
       ],
       "Send auto-reply": [
         "Trimitere autorăspuns"
@@ -12552,11 +12759,11 @@
       "perform a password reset from your active session": [
         "efectuați o resetare a parolei din sesiunea activă"
       ],
-      "privacy policy": [
-        "politica de confidențialitate"
-      ],
       "Privacy policy": [
         "Politica de confidențialitate"
+      ],
+      "privacy policy": [
+        "politica de confidențialitate"
       ],
       "Reactivate now": [
         "Reactivare"
@@ -13777,6 +13984,12 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* Cu abonament de 30 de luni. Alte opțiuni de abonament sunt disponibile la finalizare."
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TiB de stocare în cloud care vă permite stocarea, sincronizarea și partajarea ușoară a fișierelor. Securizat prin criptare bilaterală."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GiB de stocare în cloud care vă permite stocarea, sincronizarea și partajarea ușoară a fișierelor. Securizat prin criptare bilaterală."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Securitate avansată a rețelei și management al accesului cu porțile de acces securizate dedicate"
       ],
@@ -13839,9 +14052,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Accesați în siguranță internetul de oriunde cu monitorizarea esențială a rețelei"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Stocare sigură în cloud care permite stocarea, sincronizarea și partajarea ușoară și sigură a fișierelor."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
@@ -13932,14 +14142,6 @@
         "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -13958,6 +14160,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -14245,8 +14455,10 @@
       "Require 2FA": [
         "Necesită A2F"
       ],
-      "Support for ${ n } custom email domains": [
-        "Suport pentru ${ n } domenii de e-mail personale"
+      "Support for ${ n } custom email domain": [
+        "Suport pentru ${ n } domeniu de e-mail personal",
+        "Suport pentru ${ n } domenii de e-mail personale",
+        "Suport pentru ${ n } de domenii de e-mail personale"
       ]
     },
     "news": {
@@ -14614,14 +14826,44 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " vizitați ${ helpCenterLink } sau contactați ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Anulați oricând înainte de ${ cancelDate }."
+      ],
       "Cancel anytime before then.": [
         "Anulați oricând înainte de această dată."
+      ],
+      "contact our support team": [
+        "contactați asistența noastră"
+      ],
+      "Continue": [
+        "Continuare"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Beneficiați de funcționalități de securitate gratuite pentru afacere până la ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "centru de ajutor"
+      ],
+      "If you need help,": [
+        "Dacă aveți nevoie de ajutor,"
       ],
       "Once your full subscription starts...": [
         "După ce începe abonamentul complet..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Puteți încă anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "Puteți încă anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Puteți folosi ${ planTitle } până la terminarea perioadei de probare fără a vi se aplica vreo taxă."
+      ],
+      "Your free trial has started": [
+        "Perioada de probare gratuită a început"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
@@ -15679,6 +15921,9 @@
         "Apoi se va autoreînnoi cu ${ renewPriceStr } pentru ${ renewalLength } lună. Puteți anula oricând.",
         "Apoi se va autoreînnoi cu ${ renewPriceStr } pentru ${ renewalLength } luni. Puteți anula oricând.",
         "Apoi se va autoreînnoi cu ${ renewPriceStr } pentru ${ renewalLength } de luni. Puteți anula oricând."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
@@ -18062,7 +18307,7 @@
         "VPN de mare viteză pe ${ maxVpn } dispozitive",
         "VPN de mare viteză pe ${ maxVpn } de dispozitive"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "Conexiune VPN pentru ${ n } dispozitiv per utilizator",
         "Conexiuni VPN pentru ${ n } dispozitive per utilizator",
         "Conexiuni VPN pentru ${ n } de dispozitive per utilizator"
@@ -18104,47 +18349,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pentru ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription reminder": {
@@ -18441,6 +18645,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -20440,8 +20685,10 @@
       "Your exposed information": [
         "Informații expuse"
       ],
-      "Your free trial ends in ${ trialDurationFormatted } days": [
-        "Perioada de probare gratuită se termină peste ${ trialDurationFormatted } zile"
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Perioada de probare gratuită se termină peste ${ trialDurationFormatted } zi",
+        "Perioada de probare gratuită se termină peste ${ trialDurationFormatted } zile",
+        "Perioada de probare gratuită se termină peste ${ trialDurationFormatted } de zile"
       ],
       "Your plan": [
         "Plan actual"
