@@ -18,31 +18,8 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import lastItem from '@proton/utils/lastItem';
 
-import type { KeeperData, KeeperItem } from './keeper.types';
+import type { KeeperData } from './keeper.types';
 import { extractKeeperExtraFields, extractKeeperIdentity } from './keeper.utils';
-
-const addCustomFieldsWarning = (ignored: string[], item: KeeperItem) => {
-    try {
-        if (item.custom_fields) {
-            const warning = `[${item.$type}] ${item.title}: ${c('Warning').t`item was imported without custom fields`}`;
-            switch (item.$type) {
-                case 'encryptedNotes':
-                    if (Object.keys(item.custom_fields).some((field) => field !== '$note::1')) {
-                        ignored.push(warning);
-                    }
-                    break;
-                case 'bankCard':
-                    const notCustomFields = ['$paymentCard::1', '$text:cardholderName:1', '$pinCode::1'];
-                    if (Object.keys(item.custom_fields).some((field) => !notCustomFields.includes(field))) {
-                        ignored.push(warning);
-                    }
-                    break;
-                default:
-                    return;
-            }
-        }
-    } catch {}
-};
 
 export const readKeeperData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
@@ -80,13 +57,12 @@ export const readKeeperData = async (file: File): Promise<ImportReaderResult> =>
                                     ...(await getEmailOrUsername(item.login)),
                                 });
                             case 'encryptedNotes':
-                                addCustomFieldsWarning(ignored, item);
                                 return importNoteItem({
                                     name: title,
-                                    note: `${item.custom_fields?.['$note::1'] ?? ''}\n${item.notes ?? ''}`.trim(),
+                                    note: item.notes,
+                                    extraFields: extractKeeperExtraFields(item.custom_fields),
                                 });
                             case 'bankCard':
-                                addCustomFieldsWarning(ignored, item);
                                 return importCreditCardItem({
                                     name: title,
                                     note: item.notes,
@@ -97,6 +73,11 @@ export const readKeeperData = async (file: File): Promise<ImportReaderResult> =>
                                     ),
                                     verificationNumber: item.custom_fields?.['$paymentCard::1']?.cardSecurityCode,
                                     pin: item.custom_fields?.['$pinCode::1'],
+                                    extraFields: extractKeeperExtraFields(item.custom_fields, [
+                                        '$text:cardholderName:1',
+                                        '$paymentCard::1',
+                                        '$pinCode::1',
+                                    ]),
                                 });
                             case 'ssnCard':
                             case 'contact':
