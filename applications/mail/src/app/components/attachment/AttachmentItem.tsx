@@ -6,10 +6,12 @@ import { CircleLoader, Tooltip } from '@proton/atoms';
 import { CircularProgress, FileIcon, FileNameDisplay, Icon } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { type PendingUpload, isAttachmentUpload } from '../../hooks/composer/useAttachments';
@@ -52,6 +54,7 @@ interface Props {
 
     onPrimary: AttachmentHandler;
     onSecondary: AttachmentHandler;
+    saveToDrive?: (attachment?: Attachment) => Promise<string>;
 }
 
 const AttachmentItem = ({
@@ -62,10 +65,13 @@ const AttachmentItem = ({
     secondaryAction,
     onPrimary,
     onSecondary,
+    saveToDrive,
 }: Props) => {
     const [loading, withLoading] = useLoading();
     const [progression, setProgression] = useState<number>(0);
     const isMounted = useIsMounted();
+
+    const isSaveAttachmentsToDriveEnabled = useFlag('MailSaveAttachmentsToDrive');
 
     useEffect(() => {
         if (pendingUpload && isAttachmentUpload(pendingUpload)) {
@@ -120,6 +126,23 @@ const AttachmentItem = ({
                     progressionHappening && 'message-attachmentList-item--uploading',
                 ])}
             >
+                {isSaveAttachmentsToDriveEnabled && saveToDrive && (
+                    <button
+                        type="button"
+                        className="inline-flex pr-2 pl-1 *:pointer-events-none rounded relative interactive-pseudo interactive--no-background message-attachmentSecondaryAction"
+                        onClick={() => saveToDrive(attachment)}
+                        title={c('Action').t`Save to ${DRIVE_APP_NAME}`}
+                    >
+                        {/* TODO: missing the loading state to prevent multiple clicks */}
+                        <span className="message-attachmentSecondaryAction-download flex shrink-0">
+                            <Icon
+                                name={'arrow-up-line'}
+                                className="m-auto"
+                                alt={c('Action').t`Save to ${DRIVE_APP_NAME}`}
+                            />
+                        </span>
+                    </button>
+                )}
                 <span className="relative flex flex-1 rounded message-attachmentPrimaryAction interactive-pseudo">
                     <button
                         className="pl-2 py-2 flex shrink-0 message-attachmentTypeIcon"

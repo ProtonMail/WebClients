@@ -4,6 +4,7 @@ import { useApi } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -18,12 +19,11 @@ import {
 } from '../../helpers/attachment/attachmentDownloader';
 import { getAttachmentCounts } from '../../helpers/message/messages';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import type { MessageKeys, MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import { useGetAttachment } from './useAttachment';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
-import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 /**
  * Returns the keys from the sender of the message version in cache
@@ -51,12 +51,11 @@ export const useDownload = () => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
-    const handleDownload = useCallback(
+    const getDownload = useCallback(
         async (message: MessageStateWithData, attachment: Attachment, outsideKey?: MessageKeys) => {
-            let download;
             if (!outsideKey) {
                 const messageKeys = await getMessageKeys(message.localID);
-                download = await formatDownload(
+                return formatDownload(
                     attachment,
                     message.verification,
                     messageKeys,
@@ -66,7 +65,7 @@ export const useDownload = () => {
                     message.data.Flags
                 );
             } else {
-                download = await formatDownload(
+                return formatDownload(
                     attachment,
                     message.verification,
                     outsideKey,
@@ -76,6 +75,13 @@ export const useDownload = () => {
                     message.data.Flags
                 );
             }
+        },
+        [api]
+    );
+
+    const handleDownload = useCallback(
+        async (message: MessageStateWithData, attachment: Attachment, outsideKey?: MessageKeys) => {
+            const download = await getDownload(message, attachment, outsideKey);
 
             if (download.isError || download.verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 await handleShowModal({ downloads: [download] });
@@ -87,7 +93,26 @@ export const useDownload = () => {
         [api]
     );
 
-    return { handleDownload, confirmDownloadModal };
+    const getDownloadStreamInfo = useCallback(
+        async (message: MessageStateWithData, attachment: Attachment, outsideKey?: MessageKeys) => {
+            const download = await getDownload(message, attachment, outsideKey);
+            const blob = new Blob([download.data]);
+            return {
+                // A byte stream of the attachment.
+                stream: blob.stream(),
+                // The unencrypted size of the attachment. The encrypted size is
+                // always a little bigger due to encryption overhead
+                // This value needs to be used when uploading via the Drive SDK
+                // for integrity verification
+                size: blob.size,
+                // The MIME type of the attachment.
+                type: blob.type,
+            };
+        },
+        []
+    );
+
+    return { handleDownload, confirmDownloadModal, getDownloadStreamInfo };
 };
 
 export const useDownloadAll = () => {
