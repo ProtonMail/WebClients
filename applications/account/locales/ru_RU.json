@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -463,10 +463,10 @@
       "Discard": [
         "Сбросить"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Сбросить изменения"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Сбросить изменения"
       ],
       "Discover ${ planName }": [
@@ -1339,6 +1339,9 @@
       "Try another method": [
         "Попробуйте другой способ"
       ],
+      "Try for free": [
+        "Попробовать бесплатно"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Попробуйте сохранить еще раз. Не удалось сохранить из-за: ${ saveError }"
       ],
@@ -1833,17 +1836,6 @@
         "Выберите Новогоднее предложение"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяц.",
-        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяца.",
-        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяцев.",
-        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяца."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1865,6 +1857,17 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяц.",
+        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяца.",
+        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяцев.",
+        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяца."
       ]
     },
     "bf2023: Offers": {
@@ -3301,9 +3304,6 @@
       "Macao": [
         "Макао"
       ],
-      "Macedonia": [
-        "Македония"
-      ],
       "Madagascar": [
         "Мадагаскар"
       ],
@@ -4220,9 +4220,6 @@
       ],
       "Download for Linux": [
         "Скачать для Linux"
-      ],
-      "Download for MacOS": [
-        "Скачать для MacOS"
       ],
       "Download for Windows": [
         "Скачать для Windows"
@@ -10016,11 +10013,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "username": [
-        "имя пользователя"
-      ],
       "Username": [
         "Имя пользователя"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -11254,11 +11251,11 @@
       "AND": [
         "И"
       ],
-      "And": [
-        "И"
-      ],
       "and": [
         "и"
+      ],
+      "And": [
+        "И"
       ],
       "Anderson": [
         "Андерсон"
@@ -11683,11 +11680,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "ЕСЛИ"
-      ],
       "If": [
         "Если"
+      ],
+      "IF": [
+        "ЕСЛИ"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -11896,11 +11893,11 @@
       "Optional": [
         "Необязательно"
       ],
-      "OR": [
-        "ИЛИ"
-      ],
       "or": [
         "или"
+      ],
+      "OR": [
+        "ИЛИ"
       ],
       "Or": [
         "Или"
@@ -12589,11 +12586,11 @@
       "perform a password reset from your active session": [
         "выполнить сброс пароля из вашего активного сеанса"
       ],
-      "privacy policy": [
-        "политика конфиденциальности"
-      ],
       "Privacy policy": [
         "Политика конфиденциальности"
+      ],
+      "privacy policy": [
+        "политика конфиденциальности"
       ],
       "Reactivate now": [
         "Восстановить подписку"
@@ -14001,14 +13998,6 @@
         "Разблокируйте все премиум продукты и возможности ${ BRAND_NAME } всего за ${ priceLine }. Отменить можно в любое время."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -14027,6 +14016,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -14315,9 +14312,6 @@
       ],
       "Require 2FA": [
         "Требуется двухфакторная аутентификация"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Поддержка ${ n } пользовательских доменов электронной почты"
       ]
     },
     "news": {
@@ -18158,12 +18152,6 @@
         "Высокоскоростная VPN на ${ maxVpn } устройствах",
         "Высокоскоростная VPN на ${ maxVpn } устройствах",
         "Высокоскоростная VPN на ${ maxVpn } устройствах"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "Подключение к VPN для ${ n } устройства на одного пользователя",
-        "Подключение к VPN для ${ n } устройств на одного пользователя",
-        "Подключение к VPN для ${ n } устройств на одного пользователя",
-        "Подключение к VPN для ${ n } устройств на одного пользователя"
       ]
     },
     "Subscription change warning": {
@@ -18202,47 +18190,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription reminder": {
@@ -18545,6 +18492,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {

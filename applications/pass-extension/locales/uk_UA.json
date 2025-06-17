@@ -137,10 +137,10 @@
       "Create": [
         "Створити"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Створіть обліковий запис ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Створіть обліковий запис ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -962,9 +962,6 @@
       "File does not match expected format": [
         "Файл не відповідає очікуваному формату"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Не вдалося імпортувати дані до сховища \"${ vaultData.name }\" : ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Не вдалося імпортувати елементи"
       ],
@@ -1221,9 +1218,6 @@
         "${ count } перегляди",
         "${ count } переглядів",
         "${ count } переглядів"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } переглядів"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } переслано",
@@ -2484,6 +2478,9 @@
       "Copy password": [
         "Копіювати пароль"
       ],
+      "Country": [
+        "Країна"
+      ],
       "Country or Region": [
         "Країна або регіон"
       ],
@@ -3302,9 +3299,6 @@
       ],
       "Used on ${ url }": [
         "Використовується на ${ url }"
-      ],
-      "Write your note": [
-        "Напишіть свою нотатку"
       ]
     },
     "sso": {

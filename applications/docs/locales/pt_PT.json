@@ -873,7 +873,8 @@
       "View": [
         "Ver"
       ],
-      "View all ${ pendingCount } invitations": [
+      "View ${ pendingCount } invitation": [
+        "Ver ${ pendingCount } convite",
         "Ver todos os ${ pendingCount } convites"
       ],
       "View all reports": [
@@ -955,6 +956,138 @@
       ],
       "By leaving now, some events may not be imported": [
         "Ao sair agora, alguns eventos podem não ser importados."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Aproveite a promoção"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "200 GB storage": [
+        "200 GB de armazenamento"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB armazenamento encriptado"
+      ],
+      "Add unlimited credit cards": [
+        "Adicione um nome ilimitado de cartões de crédito"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Todas as funcionalidades premium do ${ BRAND_NAME } Mail, Pass, VPN, Drive e Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloqueie anúncios, rastreadores e malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Os descontos são baseados nos preços mensais padrão. No final do ciclo de faturação, a sua subscrição será renovada à tarifa anual padrão."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Duplique o seu armazenamento encriptado e obtenha 1 TB para todos os seus dados."
+      ],
+      "Encrypted password manager": [
+        "Gestor de palavras-passe encriptado"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Aqui está um presente exclusivo para celebrar a nossa viagem juntos."
+      ],
+      "High speed streaming with VPN": [
+        "Streaming de alta velocidade com VPN"
+      ],
+      "of privacy": [
+        "de privacidade"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Online privacy for up to 2 people": [
+        "Privacidade online para até 2 pessoas"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Privacidade online para toda a sua família (até 6 utilizadores)"
+      ],
+      "Protect up to 10 devices": [
+        "Proteja até 10 dispositivos"
+      ],
+      "Recover previous file versions": [
+        "Recupere as versões anteriores do ficheiro"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Poupe muito em funcionalidades premium do Drive com um desconto por tempo limitado."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Poupe muito em funcionalidades premium do Mail com um desconto por tempo limitado."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Poupe muito em funcionalidades premium do Pass com um desconto por tempo limitado."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Poupe muito em funcionalidades premium da VPN com um desconto por tempo limitado."
+      ],
+      "Save time with built-in 2FA": [
+        "Poupe tempo com A2F integrada"
+      ],
+      "Secure email with unlimited aliases": [
+        "E-mail seguro com aliases ilimitados"
+      ],
+      "Select any server": [
+        "Selecione qualquer servidor"
+      ],
+      "Share passwords easily": [
+        "Partilhe palavras-passe facilmente"
+      ],
+      "Short @pm.me address": [
+        "Endereço curto @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Transmita o seu conteúdo favorito"
+      ],
+      "thanks to you": [
+        "graças a você"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Triplique o seu armazenamento encriptado e obtenha 3 TB para todos os seus dados."
+      ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Utilize o seu próprio domínio de e-mail"
+      ],
+      "years": [
+        "anos"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta de aniversário"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
+      "/ month": [
+        "/mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "15 months": [
+        "15 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "30 months": [
+        "30 meses"
+      ],
+      "for ${ durationDeal }": [
+        "por ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -1934,9 +2067,6 @@
       "Macao": [
         "Macau"
       ],
-      "Macedonia": [
-        "Macedónia"
-      ],
       "Madagascar": [
         "Madagáscar"
       ],
@@ -2460,8 +2590,8 @@
       "To start, give your organization a name.": [
         "Para começar, dê um nome à sua organização."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Melhore o seu plano para o ${ BRAND_NAME } ${ planName } para continuar a partilhar ficheiros com acesso de edição."
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Melhore o seu plano para o ${ planName } para continuar a partilhar ficheiros com acesso de edição."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
@@ -2674,8 +2804,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "\"${ name }\" já existe."
+      "\"${ sanitizedName }\" already exists": [
+        "«${ sanitizedName }» já existe."
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } não se consegue conectar à sua conta externa"
@@ -2807,6 +2937,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Os convites externos estão temporariamente desativados. Tente novamente mais tarde."
+      ],
+      "Failed to copy photo to album": [
+        "Erro ao copiar a foto para o álbum"
       ],
       "Failed to rename document. Please try again later.": [
         "Erro ao alterar o nome do documento Tente novamente mais tarde."
@@ -4213,6 +4346,9 @@
       "Attention required": [
         "Atenção Requerida"
       ],
+      "Available": [
+        "Disponível"
+      ],
       "Awaiting transaction": [
         "A aguardar transação"
       ],
@@ -4233,6 +4369,9 @@
       ],
       "Calendar side panel": [
         "Painel lateral de calendário"
+      ],
+      "Cannot load link": [
+        "Não é possível carregar a ligação."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não se lembra da palavra-passe? Podemos ajudá-lo a limpar os dados encriptados de todos os contactos encriptados com esta chave e no processo descartar o alerta."
@@ -4437,7 +4576,7 @@
       "Error converting document: ${ errorMessage }": [
         "Erro ao converter o documento: ${ errorMessage }"
       ],
-      "Error loading document${ errorDetail }": [
+      "Error loading document: ${ errorDetail }": [
         "Erro ao carregar o documento: ${ errorDetail }"
       ],
       "Error Syncing": [
@@ -4691,6 +4830,9 @@
       "New": [
         "Novo"
       ],
+      "No": [
+        "Não"
+      ],
       "No contacts added yet": [
         "Ainda não adicionou contactos"
       ],
@@ -4792,6 +4934,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME envia automaticamente a mensagem usando o modo de composição actual."
+      ],
+      "Photos": [
+        "Fotografias"
       ],
       "Please authenticate your card in the verification tab.": [
         "Autentique o seu cartão no separador de verificação."
@@ -4944,6 +5089,9 @@
       ],
       "Shared on": [
         "Partilhado em"
+      ],
+      "Shared with me": [
+        "Partilhado comigo"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "A assinatura não pode ser validada devido a um erro de rede. Tente novamente mais tarde."
@@ -5275,6 +5423,9 @@
       ],
       "Writing assistant": [
         "Assistente de escrita"
+      ],
+      "Yes": [
+        "Sim"
       ],
       "you": [
         "você"
@@ -5778,6 +5929,9 @@
       ],
       "First name": [
         "Nome próprio"
+      ],
+      "Folder": [
+        "Pasta"
       ],
       "Folder location": [
         "Localização da pasta"
@@ -7081,6 +7235,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina com ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB de armazenamento em nuvem que lhe permite armazenar, sincronizar e partilhar ficheiros facilmente. Protegido por encriptação de ponta a ponta."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB de armazenamento de nuvem que lhe permite armazenar, sincronizar e partilhar ficheiros facilmente. Protegido por encriptação de ponta a ponta."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Segurança de rede avançada e gestão de acesso com portas de entrada seguras dedicadas"
       ],
@@ -7140,9 +7300,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Aceder à internet com segurança a partir de qualquer sítio com monitorização essencial de rede"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com caraterísticas avançadas para as suas comunicações diárias."
@@ -7463,7 +7620,8 @@
       "Require 2FA": [
         "Requer A2F"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "Suporte para ${ n } domínio de e-mail personalizado",
         "Suporte para ${ n } domínios de e-mail personalizados"
       ]
     },
@@ -7568,6 +7726,9 @@
       ],
       "Access for the member removed": [
         "Acesso para o membro retirado"
+      ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Aceda aos nossos novos álbuns, filtros e muito mais, efetuando uma ação no seu volume bloqueado. Restaure ou elimine-o agora para desfrutar destas novas funcionalidades imediatamente."
       ],
       "Access updated": [
         "O acesso foi atualizado."
@@ -7816,14 +7977,44 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " visite o nosso ${ helpCenterLink } ou ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Cancele a qualquer momento antes do ${ cancelDate }."
+      ],
       "Cancel anytime before then.": [
         "Cancele a qualquer momento antes disso."
+      ],
+      "contact our support team": [
+        "contacte a nossa equipa de apoio ao cliente"
+      ],
+      "Continue": [
+        "Continuar"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Desfrute das funcionalidades de segurança empresarial gratuitas até o ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "centro de ajuda"
+      ],
+      "If you need help,": [
+        "Se precisar de ajuda,"
       ],
       "Once your full subscription starts...": [
         "Assim que a sua subscrição completa começar..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Ainda pode cancelar no prazo de 30 dias e obter um reembolso proporcional."
+      ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "Ainda pode cancelar no prazo de 30 dias e obter um reembolso proporcional."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Poderá usar ${ planTitle } até o fim da avaliação e não lhe será cobrado."
+      ],
+      "Your free trial has started": [
+        "A sua avaliação gratuita começou."
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "A sua subscrição completa do ${ planTitle } começa em ${ boldEndDate }."
@@ -8046,6 +8237,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } mês. Pode cancelar a qualquer momento.",
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } meses. Pode cancelar a qualquer momento."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Este tornar-se-á o seu novo método de pagamento predefinido para todas as renovações futuras."
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
@@ -8985,8 +9179,8 @@
         "${ n } ligação VPN por utilizador",
         "${ n } ligações VPN por utilizador"
       ],
-      "VPN connection for ${ n } devices per user": [
-        "Conexão VPN para ${ n } dispositivos por utilizador",
+      "VPN connection for ${ n } device per user": [
+        "Conexão VPN para ${ n } dispositivo por utilizador",
         "Conexão VPN para ${ n } dispositivos por utilizador"
       ]
     },
@@ -9351,6 +9545,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "Número de transferências"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } endereço de e-mail",
         "${ emailsCount } endereços de e-mail"
@@ -9382,6 +9579,9 @@
       ],
       "Addresses": [
         "Endereços"
+      ],
+      "Album details": [
+        "Detalhes do álbum"
       ],
       "All settings": [
         "Todas as definições"
@@ -9616,6 +9816,12 @@
       "Exporting contacts": [
         "A exportar contactos"
       ],
+      "File details": [
+        "Detalhes do ficheiro"
+      ],
+      "Folder details": [
+        "Detalhes da pasta"
+      ],
       "Get more from your VPN": [
         "Obtenha mais da sua VPN"
       ],
@@ -9668,11 +9874,20 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
+      "Item details": [
+        "Detalhes do item"
+      ],
+      "Last edited by": [
+        "Última edição por"
+      ],
       "Limited availability": [
         "Disponibilidade limitada"
       ],
       "Link confirmation": [
         "Confirmação de hiperligação"
+      ],
+      "Location": [
+        "Localização"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "A realizar uma cópia no seu ${ DRIVE_APP_NAME }"
@@ -9689,14 +9904,23 @@
       "Merging contacts": [
         "A unir contactos"
       ],
+      "MIME type": [
+        "Tipo MIME"
+      ],
       "Minicalendar": [
         "Minicalendário"
       ],
       "Mobile": [
         "Móvel"
       ],
+      "Modified": [
+        "Modificado"
+      ],
       "My files": [
         "Os meus ficheiros"
+      ],
+      "Name": [
+        "Nome"
       ],
       "Need more aliases?": [
         "Necessita de mais aliases?"
@@ -9731,6 +9955,9 @@
       "Organization setup": [
         "Configuração da organização"
       ],
+      "Original size": [
+        "Tamanho original"
+      ],
       "Other information": [
         "Outra informação"
       ],
@@ -9760,6 +9987,9 @@
       ],
       "Processing...": [
         "A processar..."
+      ],
+      "Public shared link status": [
+        "Estado da ligação pública partilhada"
       ],
       "Re-sign all contacts": [
         "A re-assinar todos os contactos"
@@ -9827,6 +10057,9 @@
       "Share your calendar with your team": [
         "Partilhe o seu calendário com a sua equipa"
       ],
+      "Shared": [
+        "Partilhado"
+      ],
       "Sign in and grant access": [
         "Faça login e conceda acesso"
       ],
@@ -9838,6 +10071,9 @@
       ],
       "Simplify password management": [
         "Simplificar a gestão de palavras-passe"
+      ],
+      "Size": [
+        "Tamanho"
       ],
       "Something went wrong": [
         "Ocorreu um erro"
@@ -9872,6 +10108,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar o ${ DARK_WEB_MONITORING_NAME }"
       ],
+      "Type": [
+        "Tipo"
+      ],
       "Untitled document ${ date }": [
         "Documento sem título ${ date }"
       ],
@@ -9883,6 +10122,12 @@
       ],
       "Upload and share files": [
         "Enviar e partilhar ficheiros"
+      ],
+      "Uploaded": [
+        "Enviado"
+      ],
+      "Uploaded by": [
+        "Enviado por"
       ],
       "Uploading a large file or folder": [
         "Envio de um ficheiro ou pasta grande"
@@ -9898,6 +10143,9 @@
       ],
       "Verifying your payment...": [
         "Verificação do seu pagamento..."
+      ],
+      "Version details": [
+        "Detalhes da versão"
       ],
       "VPN explained": [
         "Explicações sobre a VPN"
@@ -9944,7 +10192,8 @@
       "Your exposed information": [
         "As suas informações expostas"
       ],
-      "Your free trial ends in ${ trialDurationFormatted } days": [
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "A sua avaliação gratuita termina em ${ trialDurationFormatted } dia.",
         "A sua avaliação gratuita termina em ${ trialDurationFormatted } dias."
       ],
       "Your shorter address is now ready": [

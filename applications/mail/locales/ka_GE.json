@@ -504,9 +504,6 @@
       "Expand composer": [
         "რედაქტორის გადიდება"
       ],
-      "Expand navigation bar to see custom views": [
-        "ნავიგაციის პანელის გაშლა მორგებული ხედების დასანახად"
-      ],
       "Expand navigation bar to see folders": [
         "ნავიგაციის პანელის გაშლა საქაღალდეების დასანახად"
       ],
@@ -641,9 +638,6 @@
       ],
       "Hide more benefits": [
         "მეტი ბონუსის დამალვა"
-      ],
-      "Hide my email": [
-        "Hide my email"
       ],
       "Hide toolbar": [
         "ხელსაწყოების პანელის დამალვა"
@@ -898,6 +892,9 @@
       "Move to archive": [
         "არქივში გადატანა"
       ],
+      "Move to Archive": [
+        "არქივში გადატანა"
+      ],
       "Move to folder": [
         "საქაღალდეში გადატანა"
       ],
@@ -914,6 +911,9 @@
         "სპამში გადატანა და გამოწერის გაუქმება"
       ],
       "Move to trash": [
+        "ნაგვის ყუთში გადატანა"
+      ],
+      "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
       "Move to...": [
@@ -1129,9 +1129,6 @@
       "Restore": [
         "აღდგენა"
       ],
-      "Resubscribe": [
-        "თავიდან გამოწერა"
-      ],
       "Resume": [
         "გაგრძელება"
       ],
@@ -1183,10 +1180,10 @@
       "Select ${ planTitle }": [
         "აირჩიეთ ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "ყველაფრის მონიშვნა"
       ],
-      "Select All": [
+      "Select all": [
         "ყველაფრის მონიშვნა"
       ],
       "Select all messages": [
@@ -1221,6 +1218,9 @@
       ],
       "Send read receipt": [
         "წაკითხულობის ანგარიშის გაგზავნა"
+      ],
+      "Send unsubscribe email": [
+        "გამოწერის გაუქმების ელფოსტის გაგზავნა"
       ],
       "Set": [
         "დაყენება"
@@ -1354,6 +1354,15 @@
       "Stop generating result": [
         "შედეგის გენრაციის გაჩერება"
       ],
+      "Stop marking as read": [
+        "წაკითხულად მონიშვნის შეწყვეტა"
+      ],
+      "Stop moving to Archive": [
+        "არქივში გადატანის შეწყვეტა"
+      ],
+      "Stop moving to Trash": [
+        "ნაგვის ყუთში გადატანის შეწყვეტა"
+      ],
       "Strikethrough": [
         "ხაზგადასმული"
       ],
@@ -1465,11 +1474,11 @@
       "Upgrade": [
         "ტარიფის აწევა"
       ],
-      "Upgrade now": [
-        "ტარიფის განახლება"
-      ],
       "Upgrade Now": [
         "ახლა გაუმჯობესება"
+      ],
+      "Upgrade now": [
+        "ტარიფის განახლება"
       ],
       "Upload and share files": [
         "ფაილების ატვირთვა და გაზიარება"
@@ -3229,9 +3238,6 @@
       ],
       "Macao": [
         "მაკაო"
-      ],
-      "Macedonia": [
-        "მაკედონია"
       ],
       "Madagascar": [
         "მადაგასკარი"
@@ -6111,6 +6117,10 @@
         "მიმაგრებულია ${ pureAttachmentsCount } ფაილი",
         "მიმაგრებულია ${ pureAttachmentsCount } ფაილი"
       ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } ელფოსტა გასულ თვეში",
+        "${ receivedMessagesCount } ელფოსტა გასულ თვეში"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან",
         "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან"
@@ -6129,10 +6139,6 @@
       ],
       "${ storage } storage": [
         "${ storage } საცავი"
-      ],
-      "${ subscription.ReceivedMessages.Last30Days } email last month": [
-        "${ subscription.ReceivedMessages.Last30Days } ელფოსტა გასულ თვეში",
-        "${ subscription.ReceivedMessages.Last30Days } ელფოსტა გასულ თვეში"
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } წაუკითხავი",
@@ -6185,9 +6191,9 @@
       "(No Recipient)": [
         "(მიმღების გარეშე)"
       ],
-      "**${ elementsFoundCount }** result found in ${ labelName }": [
-        "${ labelName }-ში აღმოჩენილია **${ elementsFoundCount }** შედეგი",
-        "${ labelName }-ში აღმოჩენილია **${ elementsFoundCount }** შედეგი"
+      "**${ total }** result found in ${ labelName }": [
+        "${ labelName }-ში აღმოჩენილია **${ total }** შედეგი",
+        "${ labelName }-ში აღმოჩენილია **${ total }** შედეგი"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**ავტოდაკავშირება**: გახსნის და დააკავშირებს VPN-ს მაშინვე, როცა თქვენს მოწყობილობას ჩართავთ."
@@ -6303,6 +6309,9 @@
       ],
       "An unknown public key has been detected for this recipient.": [
         "ამ მიმღებს უცნობი საჯარო გასაღები გააჩნია."
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "გამოწერის გაუქმების ელფოსტა თქვენი სახელით გაიგზავნება."
       ],
       "and": [
         "და"
@@ -7053,7 +7062,7 @@
       "Monthly ${ onDayString }": [
         "ყოველ თვე, ${ onDayString }"
       ],
-      "More infos": [
+      "More info": [
         "მეტი ინფორმაცია"
       ],
       "More refine actions": [
@@ -7954,6 +7963,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "როცა ჩართეთ სანდო გასაღებები ${ senderName }-სთვის, საჯარო გასაღებები კონტაქტის დეტალებში იქნა ჩამატებული."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "როცა გაზეთს გამოიწერთ, გამოიყენეთ ფსევდონიმი თქვენი ელფოსტის მისამართის მაგიერ. თქვენი იდენტიფიკატორი ასევე დარჩება დამალულად და ამ ფსევდონიმის გათიშვა ნებისმიერ დროს შეგიძლიათ."
       ],
@@ -8127,6 +8139,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "თქვენ დაწერეთ \"${ attachmentsFoundKeyword }\", მაგრამ ფაილი არ მიგიმაგრებიათ. მაინც გააგზავნით შეტყობინებას?"
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }.",
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }."
@@ -8228,6 +8243,12 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "თქვენი გამოწერის ავტომატური განახლების თარიღი: ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "თქვენი გამოსაცდელი პერიოდის დასრულების დროა: ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
@@ -8572,10 +8593,10 @@
       "AND": [
         "და"
       ],
-      "And": [
+      "and": [
         "და"
       ],
-      "and": [
+      "And": [
         "და"
       ],
       "Anderson": [
@@ -8758,6 +8779,9 @@
       "Enable desktop notifications": [
         "Სამუშაო მაგიდის გაფრთხილებების ჩართვა"
       ],
+      "Enable filter": [
+        "ფილტრის ჩართვა"
+      ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
@@ -8800,10 +8824,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
       "Import all messages": [
@@ -8869,9 +8893,12 @@
       "Mark as": [
         "დანიშვნა, როგორც"
       ],
-      "Marked ${ count } message as read.": [
-        "${ count } შეტყობინება მოინიშნა წაკითხულად.",
-        "${ count } შეტყობინება მოინიშნა წაკითხულად."
+      "Marked ${ unreadCount } message as read.": [
+        "${ unreadCount } შეტყობინება მოინიშნა წაკითხულად.",
+        "${ unreadCount } შეტყობინება მოინიშნა წაკითხულად."
+      ],
+      "Message:": [
+        "შეტყობინება:"
       ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName }-ის გადატანა"
@@ -8942,10 +8969,10 @@
       "Optional": [
         "არასავალდებულო"
       ],
-      "OR": [
+      "or": [
         "ან"
       ],
-      "or": [
+      "OR": [
         "ან"
       ],
       "Or": [
@@ -9053,6 +9080,9 @@
       "Strong password": [
         "ძლიერი პაროლი"
       ],
+      "Subject:": [
+        "თემა:"
+      ],
       "Subscription options": [
         "გამოწერის პარამეტრები"
       ],
@@ -9062,8 +9092,8 @@
       "System information": [
         "სისტემის ინფორმაცია"
       ],
-      "The filter is disabled. You can enable it ${ settingsLink }": [
-        "ფილტრი გათიშულია. მისი ჩართვა შეგიძლია ბმულზე ${ settingsLink }"
+      "The filter is disabled. ${ enableButton }": [
+        "ფილტრი გათიშულია. ${ enableButton }"
       ],
       "Theme": [
         "თემა"
@@ -9218,7 +9248,7 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will appear here.": [
+      "Newsletters you unsubscribe from will show up here.": [
         "სიახლეები, რომლების გამოწერასაც გააუქმებთ, აქ გამოჩნდება."
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
@@ -9303,9 +9333,6 @@
       ],
       "Folders": [
         "საქაღალდეები"
-      ],
-      "here": [
-        "აქ"
       ],
       "How to add users": [
         "როგორ დავამატო მომხმარებლები"
@@ -9838,14 +9865,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle }-ის მიღება"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -9867,6 +9886,14 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle }-ის მიღება"
       ]
     },
     "new_plans: feature": {
@@ -10731,7 +10758,8 @@
       "Require 2FA": [
         "2FA-ის მოთხოვნა"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "${ n } მომხმარებლის დომენის მხარდაჭერა",
         "${ n } მომხმარებლის დომენის მხარდაჭერა"
       ]
     },
@@ -11049,6 +11077,35 @@
         "თქვენი თემის შეცვლა ნებისმიერ დროს შეგიძლიათ მორგების ფანჯარაში."
       ]
     },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " დაუკავშირდით ჩვენს ${ helpCenterLink }-ს, ან ${ contactSupportLink }-ს."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "გააუქმეთ ნებისმიერ დროს ${ cancelDate }-მდე."
+      ],
+      "Cancel anytime before then.": [
+        "გააუქმეთ იქამდე ნებისმიერ დროს."
+      ],
+      "contact our support team": [
+        "დაუკავშირდით ჩვენს მხარდაჭერის გუნდს"
+      ],
+      "Continue": [
+        "გაგრძელება"
+      ],
+      "help center": [
+        "დახმარების ცენტრი"
+      ],
+      "If you need help,": [
+        "თუ დახმარება გჭირდებათ,"
+      ],
+      "Once your full subscription starts...": [
+        "როცა თქვენი სრული გამოწერა დაიწყება..."
+      ],
+      "Your free trial has started": [
+        "თქვენი გამოსაცდელი პერიოდი დაიწყო"
+      ]
+    },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
         "გაქვთ ამ სერვისებიდან ერთ-ერთის ანგარიში? უბრალოდ, დააწკაპუნეთ, რომ ელფოსტის მისამართი თქვენს ${ MAIL_APP_NAME }-ის მისამართზე შეცვალოთ."
@@ -11128,6 +11185,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "წვდომა ყველა ${ BRAND_NAME }-ის აპთან და ფასიან ფუნქციასთან"
+      ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
       ],
@@ -12519,7 +12579,7 @@
         "${ n } VPN კავშირი თითოეული მომხმარებლისთვის",
         "${ n } VPN კავშირი თითოეული მომხმარებლისთვის"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის",
         "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის"
       ]
@@ -12560,47 +12620,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -12858,6 +12877,47 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -13195,6 +13255,15 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } წაიშალა"
+      ],
+      "The filter has been disabled": [
+        "ფილტრი გაითიშა"
+      ],
+      "The filter has been enabled": [
+        "ფილტრი ჩაირთო"
+      ],
+      "The filter is active again": [
+        "ფილტრი ისევ აქტიურია"
       ]
     },
     "Suffix": {
@@ -13397,6 +13466,10 @@
       ],
       "${ feature } is now active": [
         "${ feature } ახლა აქტიურია"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } შეტყობინება",
+        "${ numMessages } შეტყობინება"
       ],
       "${ unreads } unread message": [
         "${ unreads } წაუკითხავი შეტყობინება",
@@ -13973,8 +14046,8 @@
       "No trackers found": [
         "ტრეკერები ვერ ვიპოვე"
       ],
-      "No unsubscribed mail subscriptions": [
-        "გამოწერაგაუქმებული ელფოსტის გამოწერების გარეშე"
+      "No unsubscribed newsletters": [
+        "გამოწერაგაუქმებული სიახლეების გარეშე"
       ],
       "No-reply address detected": [
         "აღმოჩენილია უპასუხო (no-reply) მისამართი"
@@ -14302,6 +14375,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
       ],
+      "Your ${ planName } subscription has started": [
+        "თქვვენი ${ planName } გამოწერა დაიწყო"
+      ],
       "Your account is protected": [
         "თქვენი ანგარიში დაცულია"
       ],
@@ -14310,6 +14386,10 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში",
+        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში"
       ],
       "Your free trial has ended": [
         "თქვენი გამოსაცდელი პერიოდი დასრულდა"

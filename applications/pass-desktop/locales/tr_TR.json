@@ -46,6 +46,9 @@
       "Add domain": [
         "Etki alanı ekle"
       ],
+      "Add field": [
+        "Alan ekle"
+      ],
       "Add forwarding mailbox": [
         "İletme e-posta kutusu ekle"
       ],
@@ -403,10 +406,10 @@
       "Move to another vault": [
         "Başka bir kasaya taşı"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Çöpe at"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Çöpe at"
       ],
       "Multiple select": [
@@ -462,6 +465,9 @@
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
+      ],
+      "Read More": [
+        "Devamını oku"
       ],
       "Refresh the page": [
         "Sayfayı yenile"
@@ -579,6 +585,9 @@
       ],
       "Show advanced options": [
         "Gelişmiş seçenekleri görüntüle"
+      ],
+      "Show Less": [
+        "Daha az görüntüle"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } ile oturum aç"
@@ -1079,9 +1088,6 @@
       "File does not match expected format": [
         "Dosya beklenen biçimde değil"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "\"${ vaultData.name }\" kasası içine aktarılamadı: ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
       ],
@@ -1345,8 +1351,9 @@
         "${ count } görüntülenme",
         "${ count } görüntülenme"
       ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } görüntüleme"
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } görüntülenme",
+        "${ count }/${ maxReads } görüntülenme"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } iletildi",
@@ -2718,11 +2725,11 @@
       "Copy": [
         "Kopyala"
       ],
+      "Country": [
+        "Ülke"
+      ],
       "Country or Region": [
         "Ülke ya da bölge"
-      ],
-      "Country,": [
-        "Ülke,"
       ],
       "County": [
         "İlçe"
@@ -3204,10 +3211,10 @@
       "Passport": [
         "Pasaport"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Pasaport numarası"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Pasaport numarası"
       ],
       "Password": [
@@ -3261,10 +3268,10 @@
       "Priority:": [
         "Öncelik:"
       ],
-      "Private Key": [
+      "Private key": [
         "Kişisel anahtar"
       ],
-      "Private key": [
+      "Private Key": [
         "Kişisel anahtar"
       ],
       "Product": [
@@ -3375,6 +3382,9 @@
       "Share": [
         "Paylaş"
       ],
+      "Share ID": [
+        "Paylaşım kimliği"
+      ],
       "Shared": [
         "Paylaşılmış"
       ],
@@ -3410,9 +3420,6 @@
       ],
       "SSH key": [
         "SSH anahtarı"
-      ],
-      "SSH Keys": [
-        "SSH anahtarları"
       ],
       "SSN": [
         "SGN"
@@ -3596,9 +3603,6 @@
       ],
       "WiFi network": [
         "Kablosuz ağ"
-      ],
-      "WiFi Networks": [
-        "Kablosuz ağlar"
       ],
       "Work details": [
         "İş bilgileri"
@@ -3844,9 +3848,6 @@
       "Add 2FA secret key": [
         "İki adımlı doğrulama gizli anahtarı ekle"
       ],
-      "Add date": [
-        "Tarih ekle"
-      ],
       "Add hidden text": [
         "Gizli metin ekle"
       ],
@@ -3942,9 +3943,6 @@
       ],
       "Used on ${ url }": [
         "${ url } üzerinde kullanılmış"
-      ],
-      "Write your note": [
-        "Notunuzu yazın"
       ]
     },
     "Security Center - Info": {

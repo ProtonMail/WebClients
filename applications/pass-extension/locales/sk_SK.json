@@ -152,11 +152,11 @@
       "Create": [
         "Vytvoriť"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvoriť ${ BRAND_NAME } účet"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvoriť účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvoriť ${ BRAND_NAME } účet"
       ],
       "Create alias": [
         "Vytvoriť alias"
@@ -1022,9 +1022,6 @@
       "File does not match expected format": [
         "Súbor nezodpovedá očakávanému formátu"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Import trezora \"${ vaultData.name }\" zlyhal : ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Importovanie položiek zlyhalo"
       ],
@@ -1284,9 +1281,6 @@
         "${ count } zobrazení",
         "${ count } zobrazenia",
         "${ count }/ zobrazení"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } zobrazení"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } preposlaný",
@@ -1839,6 +1833,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2715,11 +2715,11 @@
       "Copy password": [
         "Kopírovať heslo"
       ],
+      "Country": [
+        "Krajina"
+      ],
       "Country or Region": [
         "Krajina alebo región"
-      ],
-      "Country,": [
-        "Krajina"
       ],
       "County": [
         "Okres"
@@ -3132,10 +3132,10 @@
       "Passport": [
         "Cestovný pas"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Číslo pasu"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Číslo pasu"
       ],
       "Password": [
@@ -3312,10 +3312,10 @@
       "Show website favicons": [
         "Zobraziť ikony webových stránok"
       ],
-      "Social Security": [
+      "Social security": [
         "Rodné číslo (číslo sociálneho poistenia)"
       ],
-      "Social security": [
+      "Social Security": [
         "Rodné číslo (číslo sociálneho poistenia)"
       ],
       "Social security number": [
@@ -3329,9 +3329,6 @@
       ],
       "SSH key": [
         "SSH kľúč"
-      ],
-      "SSH Keys": [
-        "SSH kľúče"
       ],
       "SSN": [
         "SSN"
@@ -3485,9 +3482,6 @@
       ],
       "WiFi network": [
         "WiFi sieť"
-      ],
-      "WiFi Networks": [
-        "WiFi siete"
       ],
       "Work details": [
         "Podrobnosti o pracovnej činnosti"
@@ -3693,9 +3687,6 @@
       "Add 2FA secret key": [
         "Pridať 2FA tajný kľúč"
       ],
-      "Add date": [
-        "Pridať dátum"
-      ],
       "Add hidden text": [
         "Pridať skrytý text"
       ],
@@ -3791,9 +3782,6 @@
       ],
       "Used on ${ url }": [
         "Používa sa na ${ url }"
-      ],
-      "Write your note": [
-        "Napíšte si poznámku"
       ]
     },
     "sso": {

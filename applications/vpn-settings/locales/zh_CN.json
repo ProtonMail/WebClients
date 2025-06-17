@@ -267,11 +267,11 @@
       "Discard": [
         "放弃"
       ],
-      "Discard Changes": [
-        "放弃更改"
-      ],
       "Discard changes": [
         "放弃修改"
+      ],
+      "Discard Changes": [
+        "放弃更改"
       ],
       "Discover ${ planName }": [
         "探索 ${ planName }"
@@ -438,6 +438,9 @@
       "Hide": [
         "隐藏"
       ],
+      "Hide more benefits": [
+        "隐藏更多优势"
+      ],
       "Hide plan features": [
         "隐藏计划功能"
       ],
@@ -506,6 +509,9 @@
       ],
       "Mark as favorite": [
         "标记为收藏"
+      ],
+      "More benefits": [
+        "更多福利"
       ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
@@ -771,6 +777,9 @@
       "Show more": [
         "显示更多"
       ],
+      "Show more benefits": [
+        "显示更多优势"
+      ],
       "Show preview": [
         "显示预览"
       ],
@@ -833,6 +842,9 @@
       ],
       "Try another method": [
         "更换验证方式"
+      ],
+      "Try for free": [
+        "免费试用"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "保存失败，请重试。失败原因：${ saveError }"
@@ -972,8 +984,14 @@
       "Delete address": [
         "删除地址"
       ],
+      "Delete address “${ emailAddress }”": [
+        "删除地址 “${ emailAddress }”"
+      ],
       "Disable": [
         "禁用"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "停用地址 “${ emailAddress }”"
       ],
       "Disable E2EE mail": [
         "禁用 E2EE 邮件"
@@ -987,8 +1005,14 @@
       "Edit address": [
         "编辑地址"
       ],
+      "Edit address “${ emailAddress }”": [
+        "编辑地址 “${ emailAddress }”"
+      ],
       "Enable": [
         "启用"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "启用地址“${ emailAddress }”"
       ],
       "Enable E2EE mail": [
         "启用 E2EE 邮件"
@@ -996,11 +1020,17 @@
       "Generate missing keys": [
         "生成缺失的密钥"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "为地址“${ emailAddress }”生成缺失的密钥"
+      ],
       "Saving": [
         "正在保存"
       ],
       "Set as default": [
         "设为默认"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "将“${ emailAddress }”设置为默认地址"
       ]
     },
     "Address status": {
@@ -2057,9 +2087,6 @@
       "Macao": [
         "澳门"
       ],
-      "Macedonia": [
-        "北马其顿共和国"
-      ],
       "Madagascar": [
         "马达加斯加"
       ],
@@ -2772,8 +2799,8 @@
       "Download for Linux": [
         "下载 Linux 版"
       ],
-      "Download for MacOS": [
-        "下载 MacOS 版"
+      "Download for macOS": [
+        "下载 macOS 版本"
       ],
       "Download for Windows": [
         "下载 Windows 版"
@@ -3948,6 +3975,9 @@
       "Organization key fingerprint": [
         "机构密钥指纹"
       ],
+      "Payment details": [
+        "付款详情"
+      ],
       "Protection": [
         "保护"
       ],
@@ -4337,6 +4367,9 @@
       ],
       "At least one application must be active": [
         "至少有一个应用程序必须处于活动状态"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "在您的试用 ${ boldCancelDate } 结束时，您将被降級到 ${ boldProtonFree }。您组织中的所有用户账户将被移除。"
       ],
       "Attention required": [
         "需要关注"
@@ -4757,6 +4790,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "如果您改变主意，可以随时重新订阅。很遗憾您离开！"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
@@ -5640,10 +5676,10 @@
       "User activated": [
         "用户已激活"
       ],
-      "username": [
+      "Username": [
         "用户名"
       ],
-      "Username": [
+      "username": [
         "用户名"
       ],
       "Users": [
@@ -5928,6 +5964,9 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "10 天内您将无法将这些服务器重新分配到其他国家/地区。"
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
       ],
@@ -6005,6 +6044,12 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "您将能够立即将这些服务器添加到另一个网关。"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "您将在 ${ boldEndDate } 失去对 ${ boldPlanTitle } 的访问权限。"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
       ],
       "Zoom meeting": [
         "Zoom 会议"
@@ -7719,6 +7764,12 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } 账户可以创建从属用户并分配邮箱地址，适合家庭与组织团体使用。"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "通过专用安全网关实现先进的网络安全和访问管理"
       ],
@@ -7841,14 +7892,6 @@
         "只需 ${ priceLine } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。随时取消。"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -7861,6 +7904,14 @@
       ],
       "Switch plans?": [
         "变更账户等级?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -8141,7 +8192,7 @@
       "Require 2FA": [
         "要求启用 2FA"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
         "支持 ${ n } 个自定义域"
       ]
     },
@@ -8378,6 +8429,53 @@
         "欢迎来到 ${ appName }"
       ]
     },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        "请访问我们的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "在 ${ cancelDate } 之前随时取消。"
+      ],
+      "Cancel anytime before then.": [
+        "在此之前随时取消。"
+      ],
+      "contact our support team": [
+        "联系我们的客服"
+      ],
+      "Continue": [
+        "继续"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "免费享有商业安全功能，直到 ${ trialEndsOnFormatted }为止。"
+      ],
+      "help center": [
+        "帮助中心"
+      ],
+      "If you need help,": [
+        "如果您需要帮助，"
+      ],
+      "Once your full subscription starts...": [
+        "您的正式订阅一旦开始..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "您可以使用 ${ planTitle } 直到试用期结束，并且不会向您收费。"
+      ],
+      "Your free trial has started": [
+        "您的免费试用已开始"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "您的完整 ${ planTitle } 订阅将于 ${ boldEndDate } 开始。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "您将能够免费使用 ${ planTitle } 直到试用期结束。"
+      ]
+    },
     "Option": {
       "Allowed ${ defaultLabel }": [
         "允许 ${ defaultLabel }"
@@ -8563,6 +8661,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "所有 ${ BRAND_NAME } 应用程序和高级功能"
+      ],
       "Secure vault sharing": [
         "安全保险库共享"
       ],
@@ -8807,6 +8908,9 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "此付款方式将成为您未来所有续订的新默认方式。"
       ],
       "Timeout exceeded": [
         "超时"
@@ -10216,8 +10320,8 @@
       "High-speed VPN on ${ maxVpn } device": [
         "${ maxVpn } 台设备可同时接入高速 VPN"
       ],
-      "VPN connection for ${ n } devices per user": [
-        "其他 VPN 连接，每个用户可连接 ${ n } 台设备"
+      "VPN connection for ${ n } device per user": [
+        "每位用户 ${ n } 个设备的 VPN 连接"
       ]
     },
     "Subscription change warning": {
@@ -10256,47 +10360,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "总计 ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription reminder": {
@@ -10581,6 +10644,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 邮箱别名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -11780,6 +11884,9 @@
       ],
       "Your current plan": [
         "您的账户等级"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "您的免费体验期将于 ${ trialDurationFormatted } 结束。"
       ],
       "Your plan": [
         "您的账户等级"

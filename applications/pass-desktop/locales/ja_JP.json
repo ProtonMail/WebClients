@@ -403,10 +403,10 @@
       "Move to another vault": [
         "別の保管庫に移動"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ごみ箱に移動"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ごみ箱に移動"
       ],
       "Multiple select": [
@@ -1074,9 +1074,6 @@
       "File does not match expected format": [
         "予期しないファイル形式です"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "保管庫「${ vaultData.name }」のインポートに失敗しました: ${ errorMessage }"
-      ],
       "Importing items failed": [
         "アイテムのインポートに失敗しました"
       ],
@@ -1330,9 +1327,6 @@
       ],
       "${ count } view": [
         "${ count } 回表示"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } 表示"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount }件の転送済み"
@@ -2674,11 +2668,11 @@
       "Copy": [
         "コピー"
       ],
+      "Country": [
+        "国"
+      ],
       "Country or Region": [
         "国または地域"
-      ],
-      "Country,": [
-        "国名"
       ],
       "County": [
         "国"
@@ -3160,10 +3154,10 @@
       "Passport": [
         "パスポート"
       ],
-      "Passport number": [
+      "Passport Number": [
         "パスポート番号"
       ],
-      "Passport Number": [
+      "Passport number": [
         "パスポート番号"
       ],
       "Password": [
@@ -3217,10 +3211,10 @@
       "Priority:": [
         "優先度:"
       ],
-      "Private Key": [
+      "Private key": [
         "秘密鍵"
       ],
-      "Private key": [
+      "Private Key": [
         "秘密鍵"
       ],
       "Product": [
@@ -3365,9 +3359,6 @@
         "特殊文字 (!&*)"
       ],
       "SSH key": [
-        "SSHキー"
-      ],
-      "SSH Keys": [
         "SSHキー"
       ],
       "SSN": [
@@ -3551,9 +3542,6 @@
         "含まれるもの"
       ],
       "WiFi network": [
-        "WiFiネットワーク"
-      ],
-      "WiFi Networks": [
         "WiFiネットワーク"
       ],
       "Work details": [
@@ -3797,9 +3785,6 @@
       "Add 2FA secret key": [
         "2FA 秘密キーを追加する"
       ],
-      "Add date": [
-        "日付を追加"
-      ],
       "Add hidden text": [
         "非表示テキストを追加"
       ],
@@ -3895,9 +3880,6 @@
       ],
       "Used on ${ url }": [
         "${ url } で使用されます"
-      ],
-      "Write your note": [
-        "メモを書く"
       ]
     },
     "Security Center - Info": {

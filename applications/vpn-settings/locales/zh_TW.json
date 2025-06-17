@@ -105,6 +105,9 @@
       "Back": [
         "返回"
       ],
+      "Back to sign in": [
+        "返回登錄"
+      ],
       "Block": [
         "封鎖"
       ],
@@ -146,6 +149,9 @@
       ],
       "Collaborate on documents": [
         "於文件上合作"
+      ],
+      "Compare all plans": [
+        "比較所有方案"
       ],
       "Compare plans": [
         "比較方案"
@@ -228,6 +234,9 @@
       "Delete member": [
         "刪除成員"
       ],
+      "Delete policy": [
+        "刪除政策"
+      ],
       "Delete user": [
         "刪除使用者"
       ],
@@ -249,11 +258,11 @@
       "Discard": [
         "放棄"
       ],
-      "Discard Changes": [
-        "放棄修改"
-      ],
       "Discard changes": [
         "放棄變更"
+      ],
+      "Discard Changes": [
+        "放棄修改"
       ],
       "Discover ${ planName }": [
         "探索 ${ planName }"
@@ -347,6 +356,9 @@
       ],
       "Fit to window": [
         "貼齊視窗邊沿"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ],
       "Forgot recovery method?": [
         "忘記復原方法?"
@@ -762,6 +774,9 @@
       "Try another method": [
         "嘗試其它驗證方式"
       ],
+      "Try for free": [
+        "免費滿意體驗"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "嘗試再次儲存。儲存失敗原因：${ saveError }"
       ],
@@ -882,6 +897,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "允許未經數位簽章的郵件"
+      ],
       "Delete address": [
         "刪除地址"
       ],
@@ -1907,9 +1925,6 @@
       "Macao": [
         "澳門"
       ],
-      "Macedonia": [
-        "馬其頓"
-      ],
       "Madagascar": [
         "馬達加斯加"
       ],
@@ -2544,6 +2559,15 @@
       ],
       "Desktop": [
         "電腦版應用程式"
+      ],
+      "Download for Linux": [
+        "適用於 Linux 的下載"
+      ],
+      "Download for macOS": [
+        "適用於 macOS 的下載"
+      ],
+      "Download for Windows": [
+        "適用於 Windows 的下載"
       ],
       "Download on the Apple App Store": [
         "於 Apple App Store 下載"
@@ -3608,6 +3632,9 @@
       "Organization key fingerprint": [
         "組織金鑰指紋"
       ],
+      "Payment details": [
+        "繳款詳細資訊"
+      ],
       "Protection": [
         "安全"
       ],
@@ -4252,6 +4279,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "輸入您的 ${ BRAND_NAME } 帳號電郵位址或使用者名稱。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "請輸入您的復原電郵位址，我們將向您發送您的使用者名稱或電郵位址。"
@@ -5051,6 +5081,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "要確認，請輸入您想要刪除的使用者名稱。"
       ],
+      "To continue to ${ product }": [
+        "繼續使用 ${ product }"
+      ],
       "To create your first user group, go to": [
         "若要創建您地一個使用者群組，請至"
       ],
@@ -5150,10 +5183,10 @@
       "User activated": [
         "使用者已啟用"
       ],
-      "username": [
+      "Username": [
         "使用者名稱"
       ],
-      "Username": [
+      "username": [
         "使用者名稱"
       ],
       "Users": [
@@ -5416,6 +5449,9 @@
       ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "您10內無法將此伺服器分配至其他國家。"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "您已在 ${ MAX_SYNC_PAID_USER } 個 Gmail 位址上啟用轉寄功能。若要新增另一個，請先停用其中一個。"
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "您${ boldPlanTitle }的${ boldDiscountPercent }折扣已套用"
@@ -6044,6 +6080,9 @@
       "Please share any feedback to help us improve.": [
         "請提供任何意見回饋以協助我們改進。"
       ],
+      "Policy name": [
+        "政策名稱"
+      ],
       "Postal code": [
         "郵遞區號"
       ],
@@ -6203,6 +6242,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "是的，我要永久刪除此帳號以及當中所有的資料。"
       ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
+      ],
       "ZIP code": [
         "郵遞區號"
       ]
@@ -6308,6 +6350,9 @@
       "Create account": [
         "創建帳號"
       ],
+      "Don't have access to your 2FA?": [
+        "沒有存取您的雙重驗證？"
+      ],
       "Forgot email?": [
         "忘了電子信箱？"
       ],
@@ -6316,6 +6361,9 @@
       ],
       "Forgot username?": [
         "忘記使用者名稱？"
+      ],
+      "Groups": [
+        "群組"
       ],
       "Help": [
         "幫助"
@@ -7173,14 +7221,6 @@
         "只要${ priceLine }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -7193,6 +7233,14 @@
       ],
       "Switch plans?": [
         "切換方案?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -7463,9 +7511,6 @@
       ],
       "Require 2FA": [
         "要求兩階段認證"
-      ],
-      "Support for ${ n } custom email domains": [
-        "支援 ${ n } 組自訂電子郵件網域"
       ]
     },
     "news": {
@@ -7661,6 +7706,11 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "歡迎來到 ${ appName }"
+      ]
+    },
+    "Onboarding Trial": {
+      "Continue": [
+        "繼續"
       ]
     },
     "Option": {
@@ -8028,6 +8078,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
+      ],
       "Street address, postal code, and city": [
         "地址，郵政區碼，及城市"
       ]
@@ -8369,6 +8422,9 @@
       ],
       "Currency conversion": [
         "貨幣轉換"
+      ],
+      "Invoice": [
+        "繳款單"
       ]
     },
     "Select search results": {
@@ -9249,47 +9305,6 @@
         "${ totalPrice } 版"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -9550,6 +9565,47 @@
         "您自己短@pm.me電子郵件別名"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "您確定嗎？"
@@ -9587,6 +9643,9 @@
       ],
       "Expiring": [
         "到期"
+      ],
+      "Free Trial": [
+        "免費試用期"
       ]
     },
     "Success": {
@@ -10276,6 +10335,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "輸入您的 ${ BRAND_NAME } 帳號詳細資訊以加入 ${ app } 體驗版方案"
       ],
+      "Enter your password": [
+        "輸入您的密碼"
+      ],
       "Error": [
         "錯誤"
       ],
@@ -10344,6 +10406,9 @@
       ],
       "Invoices": [
         "繳款單"
+      ],
+      "Limit reached": [
+        "已達上限"
       ],
       "Main password": [
         "主要密碼"
@@ -10854,6 +10919,9 @@
     "unprivatization": {
       "Cancel request": [
         "取消要求"
+      ],
+      "Confirm all": [
+        "確認全部"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "因為他們的加密金鑰同時被更新，無法替${ n }使用者自動啟用管理員權限權"

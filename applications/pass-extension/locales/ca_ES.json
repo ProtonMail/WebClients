@@ -29,6 +29,9 @@
       "Add domain": [
         "Afegir domini"
       ],
+      "Add field": [
+        "Afegeix un camp"
+      ],
       "Add forwarding mailbox": [
         "Afegeix una bústia de reenviament"
       ],
@@ -152,11 +155,11 @@
       "Create": [
         "Crear"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Crea un compte de ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Crear un compte de ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Crea un compte de ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Crea un àlies"
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Reactiva ara"
       ],
+      "Read More": [
+        "Per a més informació"
+      ],
       "Refresh the page": [
         "Refresca la pàgina"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Mostra les opcions avançades"
+      ],
+      "Show Less": [
+        "Mostra menys"
       ],
       "Sign back in": [
         "Torna a entrar"
@@ -1012,7 +1021,7 @@
       "File does not match expected format": [
         "El fitxer no coincideix amb el format esperat"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "No s'ha pogut importar la caixa forta «${ vaultData.name }»: ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1144,6 +1153,9 @@
       "Unsupported 1Password file format": [
         "Format de fitxer de 1Password no suportat"
       ],
+      "Unsupported Bitwarden file format": [
+        "Aquest format de fitxer Bitwarden no és compatible"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "No s'ha pogut actualitzar la caixa forta \"${ payload.content.name }\""
       ],
@@ -1257,7 +1269,8 @@
         "${ count } vista",
         "${ count } vistes"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } vista",
         "${ count }/${ maxReads } vistes"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1420,7 +1433,7 @@
         "S'ha desactivat el bloqueig automàtic."
       ],
       "Autofill HTTP basic auth dialogs with saved credentials.": [
-        "Empleneu automàticament les finestres de diàleg d'autenticació HTTP bàsica amb credencials desades."
+        "Empleneu automàticament les finestres de diàleg bàsiques d'autenticació HTTP amb credencials desades."
       ],
       "automatically": [
         "automàticament"
@@ -1793,7 +1806,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2506,6 +2520,9 @@
       "Add section": [
         "Afegeix una secció"
       ],
+      "Additional data": [
+        "Dades addicionals"
+      ],
       "Additional details": [
         "Més detalls"
       ],
@@ -2632,11 +2649,11 @@
       "Copy password": [
         "Copia la contrasenya"
       ],
+      "Country": [
+        "País"
+      ],
       "Country or Region": [
         "País o regió"
-      ],
-      "Country,": [
-        "País,"
       ],
       "County": [
         "Província"
@@ -2754,6 +2771,9 @@
       ],
       "Export": [
         "Exporta"
+      ],
+      "Extra fields": [
+        "Camps addicionals"
       ],
       "Extra password": [
         "Contrasenya addicional"
@@ -2880,6 +2900,9 @@
       ],
       "Key": [
         "Clau"
+      ],
+      "Key fingerprint": [
+        "Clau d'empremta digital"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Drecera de teclat: ${ shortcut }"
@@ -3049,10 +3072,10 @@
       "Passport": [
         "Passaport"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Número de passaport"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Número de passaport"
       ],
       "Password": [
@@ -3229,11 +3252,11 @@
       "Show website favicons": [
         "Mostra els favicons dels llocs web"
       ],
-      "Social Security": [
-        "Seguretat Social"
-      ],
       "Social security": [
         "Seguretat social"
+      ],
+      "Social Security": [
+        "Seguretat Social"
       ],
       "Social security number": [
         "Número de la Seguretat Social"
@@ -3246,9 +3269,6 @@
       ],
       "SSH key": [
         "Clau SSH"
-      ],
-      "SSH Keys": [
-        "Claus SSH"
       ],
       "SSN": [
         "Número de la seguretat social"
@@ -3402,9 +3422,6 @@
       ],
       "WiFi network": [
         "Xarxa wifi"
-      ],
-      "WiFi Networks": [
-        "Xarxes wifi"
       ],
       "Work details": [
         "Detalls de la feina"
@@ -3604,9 +3621,6 @@
       "Add 2FA secret key": [
         "Afegeix una clau secreta d'A2F"
       ],
-      "Add date": [
-        "Afegeix una data"
-      ],
       "Add hidden text": [
         "Afegeix text amagat"
       ],
@@ -3702,9 +3716,6 @@
       ],
       "Used on ${ url }": [
         "Utilitzada a ${ url }"
-      ],
-      "Write your note": [
-        "Escriviu la vostra nota"
       ]
     },
     "sso": {
@@ -4275,6 +4286,11 @@
       ],
       "URL is invalid": [
         "L'URL no és vàlid."
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Mou elements a"
       ]
     },
     "Warning": {

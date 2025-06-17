@@ -29,6 +29,9 @@
       "Add domain": [
         "Adicionar domínio"
       ],
+      "Add field": [
+        "Adicionar um campo"
+      ],
       "Add forwarding mailbox": [
         "Adicionar uma caixa de correio de reencaminhamento"
       ],
@@ -152,11 +155,11 @@
       "Create": [
         "Criar"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Criar uma conta na ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Criar uma conta do ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Criar uma conta na ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Criar um alias"
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Reativar"
       ],
+      "Read More": [
+        "Ler mais"
+      ],
       "Refresh the page": [
         "Actualizar a página"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Mostrar as opções avançadas"
+      ],
+      "Show Less": [
+        "Mostrar menos"
       ],
       "Sign back in": [
         "Inicie sessão novamente"
@@ -1012,7 +1021,7 @@
       "File does not match expected format": [
         "O ficheiro não corresponde ao formato esperado."
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "A importação não foi possível para o cofre «${ vaultData.name }»: ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1144,6 +1153,9 @@
       "Unsupported 1Password file format": [
         "Formato de ficheiro 1Password não suportado"
       ],
+      "Unsupported Bitwarden file format": [
+        "Formato de ficheiro Bitwarden não suportado"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "A actualização do cofre \"${ payload.content.name }\" falhou"
       ],
@@ -1257,7 +1269,8 @@
         "${ count } visualização",
         "${ count } visualizações"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } vista",
         "${ count }/${ maxReads } vistas"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1793,7 +1806,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -2506,6 +2520,9 @@
       "Add section": [
         "Adicionar uma secção"
       ],
+      "Additional data": [
+        "Dados adicionais"
+      ],
       "Additional details": [
         "Detalhes adicionais"
       ],
@@ -2632,11 +2649,11 @@
       "Copy password": [
         "Copiar a palavra-passe"
       ],
+      "Country": [
+        "País"
+      ],
       "Country or Region": [
         "País ou região"
-      ],
-      "Country,": [
-        "País,"
       ],
       "County": [
         "Província"
@@ -2751,6 +2768,9 @@
       ],
       "Export": [
         "Exportar"
+      ],
+      "Extra fields": [
+        "Campos adicionais"
       ],
       "Extra password": [
         "Palavra-passe adicional"
@@ -2877,6 +2897,9 @@
       ],
       "Key": [
         "Chave"
+      ],
+      "Key fingerprint": [
+        "Impressão digital da chave"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atalhos de teclado: ${ shortcut }"
@@ -3046,11 +3069,11 @@
       "Passport": [
         "Passaporte"
       ],
-      "Passport number": [
-        "Número do passaporte"
-      ],
       "Passport Number": [
         "Número de passaporte"
+      ],
+      "Passport number": [
+        "Número do passaporte"
       ],
       "Password": [
         "Palavra-passe"
@@ -3226,10 +3249,10 @@
       "Show website favicons": [
         "Mostrar os favicons do sítio web"
       ],
-      "Social Security": [
+      "Social security": [
         "Segurança social"
       ],
-      "Social security": [
+      "Social Security": [
         "Segurança social"
       ],
       "Social security number": [
@@ -3243,9 +3266,6 @@
       ],
       "SSH key": [
         "Chave SSH"
-      ],
-      "SSH Keys": [
-        "Chaves SSH"
       ],
       "SSN": [
         "Número de segurança social"
@@ -3399,9 +3419,6 @@
       ],
       "WiFi network": [
         "Rede wifi"
-      ],
-      "WiFi Networks": [
-        "Redes WiFi"
       ],
       "Work details": [
         "Detalhes do trabalho"
@@ -3601,9 +3618,6 @@
       "Add 2FA secret key": [
         "Adicionar uma chave secreta A2F"
       ],
-      "Add date": [
-        "Adicionar uma data"
-      ],
       "Add hidden text": [
         "Adicionar texto oculto"
       ],
@@ -3699,9 +3713,6 @@
       ],
       "Used on ${ url }": [
         "Utilizado no ${ url }"
-      ],
-      "Write your note": [
-        "Escreva a sua nota"
       ]
     },
     "sso": {
@@ -4272,6 +4283,11 @@
       ],
       "URL is invalid": [
         "O URL é inválido."
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Mover itens para"
       ]
     },
     "Warning": {
