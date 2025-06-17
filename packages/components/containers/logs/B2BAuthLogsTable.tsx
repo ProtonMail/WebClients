@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Avatar } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Info from '@proton/components/components/link/Info';
 import Table from '@proton/components/components/table/Table';
@@ -9,20 +10,35 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import Time from '@proton/components/components/time/Time';
 import type { B2BAuthLog } from '@proton/shared/lib/authlog';
+import { getInitials } from '@proton/shared/lib/helpers/string';
 
-import AppVersionCell from './AppVersionCell';
-import DeviceCell from './DeviceCell';
 import EventCell from './EventCell';
-import ProtectionCell from './ProtectionCell';
-import { UserCell } from './UserCell';
 
 interface Props {
     logs: B2BAuthLog[];
     loading: boolean;
-    error?: string;
+    error?: string | null;
+    detailedMonitoring?: boolean;
+    userSection?: boolean;
+    onEmailOrIPClick?: (email: string) => void;
+    onTimeClick?: (time: number) => void;
 }
 
-const B2BAuthLogsTable = ({ logs, loading, error }: Props) => {
+type HeaderCell = {
+    className?: string;
+    header: string;
+    info?: string;
+};
+
+const B2BAuthLogsTable = ({
+    logs,
+    loading,
+    error,
+    detailedMonitoring = false,
+    userSection = false,
+    onEmailOrIPClick,
+    onTimeClick,
+}: Props) => {
     if (!loading && error) {
         return (
             <Alert className="mb-4" type="error">
@@ -35,37 +51,32 @@ const B2BAuthLogsTable = ({ logs, loading, error }: Props) => {
         return <Alert className="mb-4">{c('Info').t`Search by an email address to begin`}</Alert>;
     }
 
-    const headerCells = [
+    const headerCells: HeaderCell[] = [
+        ...(!userSection
+            ? [
+                  {
+                      className: 'w-1/5',
+                      header: c('Header').t`User`,
+                  },
+              ]
+            : []),
         {
-            className: 'w-1/5',
-            header: c('Header').t`User`,
-        },
-        {
-            className: 'w-1/5',
+            className: userSection ? '' : 'w-1/5',
             header: c('Header').t`Event`,
         },
         {
-            header: c('Header').t`App version`,
+            header: c('Header').t`Device`,
+            info: c('Tooltip').t`Device name and app version`,
         },
         {
             className: '',
-            header: 'IP (ISP)',
-            info: c('Tooltip').t`IP address (Internet Service Provider)`,
+            header: 'IP and ISP',
+            info: c('Tooltip').t`Origin IP address and Internet Service Provider (ISP)`,
         },
         {
             className: '',
             header: c('Header').t`Location`,
-            info: c('Tooltip').t`An approximate location of the IP address`,
-        },
-        {
-            className: '',
-            header: c('Header').t`Device`,
-            info: c('Tooltip').t`Device information such as operating system`,
-        },
-        {
-            className: 'w-1/10 text-center',
-            header: c('Header').t`Protection`,
-            info: c('Tooltip').t`Any protection applied to suspicious activity`,
+            info: c('Tooltip').t`User's approximate location (based on their IP address)`,
         },
     ];
 
@@ -86,76 +97,94 @@ const B2BAuthLogsTable = ({ logs, loading, error }: Props) => {
             <TableBody loading={loading} colSpan={headerCells.length}>
                 {logs.map(
                     (
-                        {
-                            Time: time,
-                            AppVersion,
-                            Description,
-                            IP,
-                            InternetProvider,
-                            Location,
-                            Device,
-                            ProtectionDesc,
-                            Protection,
-                            Status,
-                            User,
-                        },
+                        { Time: time, AppVersion, Description, IP, InternetProvider, Location, Device, Status, User },
                         index
                     ) => {
                         const key = `${index}${User.Email}${Description}${IP}${time}`;
-                        const cells = [
-                            {
-                                label: c('Header').t`User`,
-                                content: <UserCell name={User.Name} email={User.Email} />,
-                            },
-                            {
-                                label: c('Header').t`Event`,
-                                content: (
-                                    <div className="flex flex-column">
-                                        <EventCell description={Description} status={Status} isB2B />
-                                        <Time key={key} format="PPp" className="ml-6 tx-sm">
-                                            {time}
-                                        </Time>
-                                    </div>
-                                ),
-                            },
-                            {
-                                label: c('Header').t`App version`,
-                                content: <AppVersionCell appVersion={AppVersion} />,
-                            },
-                            {
-                                label: 'IP',
-                                content: (
-                                    <div className="flex flex-column">
-                                        <span className="">{IP || '-'}</span>
-                                        {InternetProvider && <span className="">({InternetProvider})</span>}
-                                    </div>
-                                ),
-                            },
-                            {
-                                label: c('Header').t`Location`,
-                                content: <span className="flex-1">{Location || '-'}</span>,
-                            },
-                            {
-                                label: c('Header').t`Device`,
-                                content: <DeviceCell device={Device} />,
-                            },
-                            {
-                                label: c('Header').t`Protection`,
-                                className: 'text-center',
-                                content: (
-                                    <ProtectionCell protection={Protection} protectionDesc={ProtectionDesc} isB2B />
-                                ),
-                            },
-                        ];
+                        const initials = getInitials(User.Name);
 
                         return (
-                            <TableRow key={key}>
-                                {cells.map(({ label, className, content }) => (
-                                    <TableCell key={label} label={label} className={className} colSpan={1}>
-                                        {content}
-                                    </TableCell>
-                                ))}
-                            </TableRow>
+                            <TableRow
+                                key={key}
+                                cells={[
+                                    ...(!userSection
+                                        ? [
+                                              <div className="flex flex-row items-center my-2">
+                                                  <Avatar className="mr-2 p-5 content-center" color="weak">
+                                                      {initials}
+                                                  </Avatar>
+                                                  <div
+                                                      className="flex flex-column cursor-pointer w-2/3"
+                                                      onClick={() => onEmailOrIPClick?.(User.Email)}
+                                                  >
+                                                      <span title={User.Name} className="text-ellipsis max-w-full">
+                                                          {User.Name}
+                                                      </span>
+                                                      <span
+                                                          title={User.Email}
+                                                          className="color-weak text-ellipsis max-w-full mt-1"
+                                                      >
+                                                          {User.Email}
+                                                      </span>
+                                                  </div>
+                                              </div>,
+                                          ]
+                                        : []),
+                                    <div className="cursor-pointer">
+                                        <div className="flex flex-column my-1">
+                                            <EventCell description={Description} status={Status} isB2B />
+                                            <Time
+                                                format="PPp"
+                                                className="color-weak mt-1 ml-2"
+                                                onClick={() => onTimeClick?.(time)}
+                                            >
+                                                {time}
+                                            </Time>
+                                        </div>
+                                    </div>,
+                                    <div className="flex flex-column mt-1 text-ellipsis" title={AppVersion || '-'}>
+                                        <span className="color-norm">{Device || '-'}</span>
+                                        <span className="color-weak mt-1">{AppVersion || '-'}</span>
+                                    </div>,
+                                    ...(detailedMonitoring
+                                        ? [
+                                              <div className="flex flex-column">
+                                                  <div title={IP} className="text-ellipsis color-norm">
+                                                      {IP || '-'}
+                                                  </div>
+                                                  {InternetProvider && (
+                                                      <div className="text-ellipsis color-weak mt-1">
+                                                          ({InternetProvider})
+                                                      </div>
+                                                  )}
+                                              </div>,
+                                          ]
+                                        : [
+                                              <div
+                                                  className="color-weak px-2 py-1 cursor-pointer"
+                                                  title={c('Info')
+                                                      .t`To access this information, enable detailed events`}
+                                              >
+                                                  {c('Info').t`N/A`}
+                                              </div>,
+                                          ]),
+                                    ...(detailedMonitoring
+                                        ? [
+                                              <div className="text-ellipsis color-norm" title={Location || '-'}>
+                                                  {Location || '-'}
+                                              </div>,
+                                          ]
+                                        : [
+                                              <div
+                                                  className="color-weak px-2 py-1 cursor-pointer"
+                                                  title={c('Info')
+                                                      .t`To access this information, enable detailed events`}
+                                              >
+                                                  {c('Info').t`N/A`}
+                                              </div>,
+                                          ]),
+                                ]}
+                            />
                         );
                     }
                 )}

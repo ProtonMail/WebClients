@@ -104,6 +104,7 @@ const MainContainer: FunctionComponent = () => {
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const isPasswordPolicyEnabled = useFlag('PasswordPolicy');
+    const isOrganizationPolicyEnforced = Boolean(userSettings?.OrganizationPolicy?.Enforced);
     const [groups, loadingGroups] = useGroups();
     const { showVPNDashboard } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
 
@@ -125,6 +126,7 @@ const MainContainer: FunctionComponent = () => {
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,
         isPasswordPolicyEnabled,
+        isOrganizationPolicyEnforced,
     });
 
     const canEnableChat = useCanEnableChat(user);

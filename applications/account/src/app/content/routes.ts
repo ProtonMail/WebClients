@@ -45,6 +45,7 @@ export const getRoutes = ({
     isCalendarHotkeysEnabled,
     isSharedServerFeatureEnabled,
     isPasswordPolicyEnabled,
+    isOrganizationPolicyEnforced,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -88,6 +89,7 @@ export const getRoutes = ({
             isZoomIntegrationEnabled,
             isSharedServerFeatureEnabled,
             isPasswordPolicyEnabled,
+            isOrganizationPolicyEnforced,
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),

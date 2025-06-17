@@ -430,6 +430,7 @@ export { AutoReplySection } from './containers/autoReply/AutoReplySection';
 export type { PassEvent } from './containers/b2bDashboard/Pass/interface';
 export { PassEvents } from './containers/b2bDashboard/Pass/PassEvents';
 export { VPNEvents } from './containers/b2bDashboard/VPN/VPNEvents';
+export { default as ActivityMonitorEvents } from './containers/b2bDashboard/ActivityMonitor/ActivityMonitorEvents';
 export { PromotionBanner } from './containers/banner/PromotionBanner';
 export { ProtonMailBridgeSection } from './containers/bridge/ProtonMailBridgeSection';
 export { CacheProvider } from './containers/cache/Provider';
