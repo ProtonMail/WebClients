@@ -29,6 +29,9 @@
       "Add domain": [
         "Tambah domain"
       ],
+      "Add field": [
+        "Tambahkan kolom"
+      ],
       "Add forwarding mailbox": [
         "Tambah kotak surat penerusan"
       ],
@@ -152,11 +155,11 @@
       "Create": [
         "Buat"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Buat Akun ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Buat akun ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Buat Akun ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Buat alias"
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Aktifkan ulang sekarang"
       ],
+      "Read More": [
+        "Membaca Selengkapnya"
+      ],
       "Refresh the page": [
         "Muat ulang halaman"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Tampilkan opsi lanjutan"
+      ],
+      "Show Less": [
+        "Tunjukkan Sedikit Saja"
       ],
       "Sign back in": [
         "Masuk kembali"
@@ -1007,8 +1016,8 @@
       "File does not match expected format": [
         "Berkas tidak cocok dengan format yang diharapkan"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Impor untuk brankas \"${ vaultData.name }\" gagal : ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Impor untuk brankas \"${ vaultData.name }\" gagal: ${ errorMessage }"
       ],
       "Importing items failed": [
         "Item gagal diimpor"
@@ -1139,6 +1148,9 @@
       "Unsupported 1Password file format": [
         "Format berkas 1Password tidak didukung"
       ],
+      "Unsupported Bitwarden file format": [
+        "Format berkas Bitwarden tidak didukung"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Brankas \"${ payload.content.name }\" gagal diperbarui"
       ],
@@ -1243,7 +1255,7 @@
       "${ count } view": [
         "${ count } kali dilihat"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
         "${ count }/${ maxReads } tampilan"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1398,6 +1410,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Pengunci otomatis berhasil dinonaktifkan."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Isi otomatis dialog otentikasi dasar HTTP dengan kredensial yang tersimpan."
       ],
       "automatically": [
         "secara otomatis"
@@ -1764,6 +1779,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"
@@ -2457,6 +2475,9 @@
       "Add section": [
         "Tambahkan bagian"
       ],
+      "Additional data": [
+        "Data tambahan"
+      ],
       "Additional details": [
         "Rincian tambahan"
       ],
@@ -2526,6 +2547,9 @@
       "Bank Name": [
         "Nama Bank"
       ],
+      "Basic Auth autofill": [
+        "Pengisian otomatis Basic Auth"
+      ],
       "Biometrics": [
         "Biometrik"
       ],
@@ -2580,11 +2604,11 @@
       "Copy password": [
         "Salin kata sandi"
       ],
+      "Country": [
+        "Negara"
+      ],
       "Country or Region": [
         "Negara atau Wilayah"
-      ],
-      "Country,": [
-        "Negara,"
       ],
       "County": [
         "Daerah"
@@ -2702,6 +2726,9 @@
       ],
       "Export": [
         "Ekspor"
+      ],
+      "Extra fields": [
+        "Kolom Tambahan"
       ],
       "Extra password": [
         "Kata sandi tambahan"
@@ -2828,6 +2855,9 @@
       ],
       "Key": [
         "Kunci"
+      ],
+      "Key fingerprint": [
+        "Sidik jari kunci"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pintasan keyboard: ${ shortcut }"
@@ -2997,11 +3027,11 @@
       "Passport": [
         "Paspor"
       ],
-      "Passport number": [
-        "Nomor paspor"
-      ],
       "Passport Number": [
         "Nomor Paspor"
+      ],
+      "Passport number": [
+        "Nomor paspor"
       ],
       "Password": [
         "Kata sandi"
@@ -3159,6 +3189,9 @@
       "Share": [
         "Bagikan"
       ],
+      "Share ID": [
+        "Bagikan ID"
+      ],
       "Shared": [
         "Dibagikan"
       ],
@@ -3174,11 +3207,11 @@
       "Show website favicons": [
         "Tampilkan favicon situs web"
       ],
-      "Social Security": [
-        "BPJS"
-      ],
       "Social security": [
         "Jaminan sosial"
+      ],
+      "Social Security": [
+        "BPJS"
       ],
       "Social security number": [
         "Nomor jaminan sosial"
@@ -3190,9 +3223,6 @@
         "Karakter khusus (!&*)"
       ],
       "SSH key": [
-        "Kunci SSH"
-      ],
-      "SSH Keys": [
         "Kunci SSH"
       ],
       "SSN": [
@@ -3346,9 +3376,6 @@
         "Situs web"
       ],
       "WiFi network": [
-        "Jaringan WiFi"
-      ],
-      "WiFi Networks": [
         "Jaringan WiFi"
       ],
       "Work details": [
@@ -3546,9 +3573,6 @@
       "Add 2FA secret key": [
         "Tambah kunci rahasia 2FA"
       ],
-      "Add date": [
-        "Tambah tanggal"
-      ],
       "Add hidden text": [
         "Tambahkan teks tersembunyi"
       ],
@@ -3644,9 +3668,6 @@
       ],
       "Used on ${ url }": [
         "Digunakan pada ${ url }"
-      ],
-      "Write your note": [
-        "Tulis catatan Anda"
       ]
     },
     "sso": {
@@ -4210,6 +4231,11 @@
       ],
       "URL is invalid": [
         "URL tidak valid"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Pindahkan item ke"
       ]
     },
     "Warning": {

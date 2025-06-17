@@ -134,11 +134,11 @@
       "Create": [
         "Ustvari"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Ustvarite račun ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Ustvarite račun ${ BRAND_NAME }."
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Ustvarite račun ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Ustvari vzdevek"
@@ -812,9 +812,6 @@
       ],
       "File does not match expected format": [
         "Datoteka se ne ujema s pričakovano obliko"
-      ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Uvoz za trezor \"${ vaultData.name }\" : ${ errorMessage } ni uspel"
       ],
       "Importing items failed": [
         "Uvoz predmetov ni uspel"
@@ -1903,6 +1900,9 @@
       "Copy password": [
         "Kopiraj geslo"
       ],
+      "Country": [
+        "Država"
+      ],
       "Country or Region": [
         "Država ali regija"
       ],
@@ -2686,9 +2686,6 @@
       ],
       "Used on ${ url }": [
         "Uporabljeno na ${ url }"
-      ],
-      "Write your note": [
-        "Napišite svojo opombo"
       ]
     },
     "sso": {

@@ -29,6 +29,9 @@
       "Add domain": [
         "Дадаць дамен"
       ],
+      "Add field": [
+        "Дадаць поле"
+      ],
       "Add forwarding mailbox": [
         "Дадаць паштовую скрыню для перасылкі"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "Стварыць"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Актываваць паўторна"
       ],
+      "Read More": [
+        "Даведацца больш"
+      ],
       "Refresh the page": [
         "Абнавіць старонку"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Паказаць дадатковыя параметры"
+      ],
+      "Show Less": [
+        "Паказаць менш"
       ],
       "Sign back in": [
         "Увайсці яшчэ раз"
@@ -1022,8 +1031,8 @@
       "File does not match expected format": [
         "Файл не адпавядае фармату, які чакаўся"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Збой імпартавання для сховішча \"${ vaultData.name }\" : ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Збой імпартавання для сховішча \"${ vaultData.name }\": ${ errorMessage }"
       ],
       "Importing items failed": [
         "Збой імпартавання элементаў"
@@ -1153,6 +1162,9 @@
       ],
       "Unsupported 1Password file format": [
         "Фармат файла 1Password не падтрымліваецца"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Фармат файла Bitwarden не падтрымліваецца"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Збой абнаўлення сховішча \"${ payload.content.name }\""
@@ -1285,7 +1297,10 @@
         "${ count } праглядаў",
         "${ count } праглядаў"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "Праглядаў: ${ count }/${ maxReads }",
+        "Праглядаў: ${ count }/${ maxReads }",
+        "Праглядаў: ${ count }/${ maxReads }",
         "Праглядаў: ${ count }/${ maxReads }"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1840,6 +1855,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -1916,7 +1937,7 @@
         "Незваротнае выдаленне выбраных элементаў"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Замацаваць ${ PASS_APP_NAME } на панэлі інструментаў"
+        "Замацуйце ${ PASS_APP_NAME } на панэлі інструментаў"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код паспяхова зарэгістраваны. Вы можаце выкарыстоўваць яго, каб разблакіраваць ${ PASS_APP_NAME }"
@@ -2589,6 +2610,9 @@
       "Add section": [
         "Дадаць раздзел"
       ],
+      "Additional data": [
+        "Дадатковыя даныя"
+      ],
       "Additional details": [
         "Дадатковыя падрабязнасці"
       ],
@@ -2715,11 +2739,11 @@
       "Copy password": [
         "Скапіяваць пароль"
       ],
+      "Country": [
+        "Краіна"
+      ],
       "Country or Region": [
         "Краіна або рэгіён"
-      ],
-      "Country,": [
-        "Краіна,"
       ],
       "County": [
         "Акруга"
@@ -2837,6 +2861,9 @@
       ],
       "Export": [
         "Экспартаванне"
+      ],
+      "Extra fields": [
+        "Дадатковыя палі"
       ],
       "Extra password": [
         "Дадатковы пароль"
@@ -2963,6 +2990,9 @@
       ],
       "Key": [
         "Ключ"
+      ],
+      "Key fingerprint": [
+        "Адбітак ключа"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Спалучэнні клавіш: ${ shortcut }"
@@ -3132,10 +3162,10 @@
       "Passport": [
         "Пашпарт"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Нумар пашпарта"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Нумар пашпарта"
       ],
       "Password": [
@@ -3312,11 +3342,11 @@
       "Show website favicons": [
         "Паказваць піктаграмы вэб-сайтаў"
       ],
-      "Social Security": [
-        "Social security"
-      ],
       "Social security": [
         "Сацыяльнае забеспячэнне"
+      ],
+      "Social Security": [
+        "Social security"
       ],
       "Social security number": [
         "Нумар сацыяльнага страхавання"
@@ -3329,9 +3359,6 @@
       ],
       "SSH key": [
         "Ключ SSH"
-      ],
-      "SSH Keys": [
-        "Ключы SSH"
       ],
       "SSN": [
         "Нумар сацыяльнага страхавання"
@@ -3485,9 +3512,6 @@
       ],
       "WiFi network": [
         "Сетка Wi-Fi"
-      ],
-      "WiFi Networks": [
-        "Сеткі Wi-Fi"
       ],
       "Work details": [
         "Звесткі аб працы"
@@ -3693,9 +3717,6 @@
       "Add 2FA secret key": [
         "Дадайце сакрэтны ключ 2ФА"
       ],
-      "Add date": [
-        "Дадаць дату"
-      ],
       "Add hidden text": [
         "Дадаць схаваны тэкст"
       ],
@@ -3791,9 +3812,6 @@
       ],
       "Used on ${ url }": [
         "Выкарыстоўваецца на ${ url }"
-      ],
-      "Write your note": [
-        "Напішыце сваю нататку"
       ]
     },
     "sso": {
@@ -4378,6 +4396,11 @@
       ],
       "URL is invalid": [
         "Памылковы URL-адрас."
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Перамясціць элементы ў"
       ]
     },
     "Warning": {
