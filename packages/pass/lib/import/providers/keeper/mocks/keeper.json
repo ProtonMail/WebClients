@@ -12,7 +12,8 @@
                     "cardSecurityCode": "123"
                 },
                 "$text:cardholderName:1": "First last",
-                "$pinCode::1": "1234"
+                "$pinCode::1": "1234",
+                "$text::1": "custom value"
             },
             "references": {
                 "$addressRef::1": [4]
@@ -224,6 +225,16 @@
             "title": "general item login",
             "login": "john",
             "password": "password"
+        },
+        {
+            "uid": 19,
+            "title": "wifi",
+            "$type": "wifiCredentials",
+            "custom_fields": {
+                "$text:SSID:1": "my-ssid",
+                "$text:custom field:1": "custom value"
+            },
+            "password": "password123"
         }
     ]
 }
