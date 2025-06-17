@@ -233,41 +233,64 @@ export const extract1PasswordExtraFields = (section: OnePassSection): Deobfuscat
         .filter(truthy);
 };
 
+const mapLegacyFieldIntoExtraField = (field: OnePassLegacySectionField): MaybeNull<DeobfuscatedItemExtraField> => {
+    if (baseWifiFields.includes(field.n)) return null;
+
+    switch (field.k) {
+        case OnePassLegacySectionFieldKey.STRING:
+        case OnePassLegacySectionFieldKey.URL:
+            return {
+                fieldName: field.t || c('Label').t`Text`,
+                type: 'text',
+                data: { content: field.v ?? '' },
+            };
+        case OnePassLegacySectionFieldKey.CONCEALED:
+            if (field.n.startsWith('TOTP')) {
+                return {
+                    fieldName: field.t || c('Label').t`TOTP`,
+                    type: 'totp',
+                    data: { totpUri: field.v ?? '' },
+                };
+            }
+            return {
+                // translator: label for a field that is hidden. Singular only.
+                fieldName: field.t || c('Label').t`Hidden`,
+                type: 'hidden',
+                data: { content: field.v ?? '' },
+            };
+        default:
+            return null;
+    }
+};
+
 export const extract1PasswordLegacyExtraFields = (item: OnePassLegacyItem) => {
-    return item.secureContents.sections
-        ?.filter(({ fields }) => Boolean(fields))
-        .flatMap(({ fields }) =>
-            (fields as OnePassLegacySectionField[])
-                .filter(({ k }) => Object.values(OnePassLegacySectionFieldKey).includes(k))
-                .map<MaybeNull<DeobfuscatedItemExtraField>>((field) => {
-                    switch (field.k) {
-                        case OnePassLegacySectionFieldKey.STRING:
-                        case OnePassLegacySectionFieldKey.URL:
-                            return {
-                                fieldName: field.t || c('Label').t`Text`,
-                                type: 'text',
-                                data: { content: field.v ?? '' },
-                            };
-                        case OnePassLegacySectionFieldKey.CONCEALED:
-                            if (field.n.startsWith('TOTP')) {
-                                return {
-                                    fieldName: field.t || c('Label').t`TOTP`,
-                                    type: 'totp',
-                                    data: { totpUri: field.v ?? '' },
-                                };
-                            }
-                            return {
-                                // translator: label for a field that is hidden. Singular only.
-                                fieldName: field.t || c('Label').t`Hidden`,
-                                type: 'hidden',
-                                data: { content: field.v ?? '' },
-                            };
-                        default:
-                            return null;
-                    }
-                })
-                .filter(truthy)
-        );
+    return (
+        item.secureContents.sections
+            ?.filter(({ fields }) => Boolean(fields))
+            .flatMap(({ fields }) =>
+                (fields as OnePassLegacySectionField[])
+                    .filter(({ k }) => Object.values(OnePassLegacySectionFieldKey).includes(k))
+                    .map(mapLegacyFieldIntoExtraField)
+                    .filter(truthy)
+            ) ?? []
+    );
+};
+
+export const extract1PasswordLegacyUnknownExtraFields = (item: OnePassLegacyItem) => {
+    const excludedFields = ['sshKey-privateKey', 'sshKey-publicKey'];
+    return (
+        item.secureContents.unknown_details?.sections
+            ?.filter(({ fields }) => Boolean(fields))
+            .flatMap(({ fields }) =>
+                (fields as OnePassLegacySectionField[])
+                    .filter(
+                        ({ k, n }) =>
+                            Object.values(OnePassLegacySectionFieldKey).includes(k) && !excludedFields.includes(n)
+                    )
+                    .map(mapLegacyFieldIntoExtraField)
+                    .filter(truthy)
+            ) ?? []
+    );
 };
 
 export const extract1PasswordLoginField = (
@@ -371,6 +394,23 @@ export const extractSSHSections = (
     ];
 };
 
+const getWifiSecurity = (wirelessSecurity: string): WifiSecurity => {
+    switch (wirelessSecurity) {
+        case 'wpa3p':
+        case 'wpa3e':
+            return WifiSecurity.WPA3;
+        case 'wpa2p':
+        case 'wpa2e':
+            return WifiSecurity.WPA2;
+        case 'wpa':
+            return WifiSecurity.WPA;
+        case 'wep':
+            return WifiSecurity.WEP;
+        default:
+            return WifiSecurity.UnspecifiedWifiSecurity;
+    }
+};
+
 export const extractBaseWifi = (
     sections: Maybe<OnePassSection[]> = []
 ): {
@@ -385,22 +425,22 @@ export const extractBaseWifi = (
         (key) => Object.values(fields.find(({ id }) => id === key)?.value ?? {})[0] as string
     );
 
-    const security = (() => {
-        switch (wirelessSecurity) {
-            case 'wpa3p':
-            case 'wpa3e':
-                return WifiSecurity.WPA3;
-            case 'wpa2p':
-            case 'wpa2e':
-                return WifiSecurity.WPA2;
-            case 'wpa':
-                return WifiSecurity.WPA;
-            case 'wep':
-                return WifiSecurity.WEP;
-            default:
-                return WifiSecurity.UnspecifiedWifiSecurity;
-        }
-    })();
+    return { ssid, password, security: getWifiSecurity(wirelessSecurity) };
+};
 
-    return { ssid, password, security };
+export const extractLegacyBaseWifi = (
+    sections: Maybe<OnePassLegacySection[]> = []
+): {
+    ssid?: string;
+    password?: string;
+    security: WifiSecurity;
+} => {
+    const fields = sections.flatMap(prop('fields'));
+
+    // 1P has different keys to store the value, so we can just use the first one
+    const [ssid, password, wirelessSecurity] = baseWifiFields.map(
+        (key) => fields.find((f) => f?.n === key)?.v as string
+    );
+
+    return { ssid, password, security: getWifiSecurity(wirelessSecurity) };
 };
