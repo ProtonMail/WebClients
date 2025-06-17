@@ -46,6 +46,9 @@
       "Add domain": [
         "Legg til domene"
       ],
+      "Add field": [
+        "Legg til felt"
+      ],
       "Add forwarding mailbox": [
         "Legg til postboks for videresending"
       ],
@@ -403,10 +406,10 @@
       "Move to another vault": [
         "Flytt til annet hvelv"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flytt til papirkurven"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flytt til papirkurven"
       ],
       "Multiple select": [
@@ -462,6 +465,9 @@
       ],
       "Reactivate now": [
         "Aktiver på nytt nå"
+      ],
+      "Read More": [
+        "Les mer"
       ],
       "Refresh the page": [
         "Oppdater siden"
@@ -579,6 +585,9 @@
       ],
       "Show advanced options": [
         "Vis avanserte alternativer"
+      ],
+      "Show Less": [
+        "Vis mindre"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Logg på med ${ BRAND_NAME }"
@@ -1079,9 +1088,6 @@
       "File does not match expected format": [
         "Fil samsvarer ikke med forventet format"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Import mislyktes for hvelv \"${ vaultData.name }\": ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Import av elementer mislyktes"
       ],
@@ -1345,7 +1351,8 @@
         "${ count } visning",
         "${ count } visninger"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } visning",
         "${ count }/${ maxReads } visninger"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -2718,11 +2725,11 @@
       "Copy": [
         "Kopier"
       ],
+      "Country": [
+        "Land"
+      ],
       "Country or Region": [
         "Land eller region"
-      ],
-      "Country,": [
-        "Land,"
       ],
       "County": [
         "Fylke"
@@ -3204,10 +3211,10 @@
       "Passport": [
         "Pass"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Passnummer"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Passnummer"
       ],
       "Password": [
@@ -3261,10 +3268,10 @@
       "Priority:": [
         "Prioritet:"
       ],
-      "Private Key": [
+      "Private key": [
         "Privat nøkkel"
       ],
-      "Private key": [
+      "Private Key": [
         "Privat nøkkel"
       ],
       "Product": [
@@ -3413,9 +3420,6 @@
       ],
       "SSH key": [
         "SSH-nøkkel"
-      ],
-      "SSH Keys": [
-        "SSH-nøkler"
       ],
       "SSN": [
         "Fødselsnummer"
@@ -3598,9 +3602,6 @@
         "Hva som er inkludert"
       ],
       "WiFi network": [
-        "WiFi-nettverk"
-      ],
-      "WiFi Networks": [
         "WiFi-nettverk"
       ],
       "Work details": [
@@ -3847,9 +3848,6 @@
       "Add 2FA secret key": [
         "Legg til 2FA-hemmelig nøkkel"
       ],
-      "Add date": [
-        "Legg til dato"
-      ],
       "Add hidden text": [
         "Legg til skjult tekst"
       ],
@@ -3945,9 +3943,6 @@
       ],
       "Used on ${ url }": [
         "Brukt på ${ url }"
-      ],
-      "Write your note": [
-        "Skriv notatet ditt"
       ]
     },
     "Security Center - Info": {

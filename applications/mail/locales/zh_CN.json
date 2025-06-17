@@ -501,9 +501,6 @@
       "Expand composer": [
         "展开编辑窗"
       ],
-      "Expand navigation bar to see custom views": [
-        "展开导航栏查看自定义视图"
-      ],
       "Expand navigation bar to see folders": [
         "展开导航栏以查看文件夹"
       ],
@@ -636,8 +633,8 @@
       "Hide messages": [
         "隐藏邮件"
       ],
-      "Hide my email": [
-        "Hide my email"
+      "Hide more benefits": [
+        "隐藏更多优势"
       ],
       "Hide toolbar": [
         "隐藏工具栏"
@@ -852,6 +849,9 @@
       "More actions": [
         "更多操作"
       ],
+      "More benefits": [
+        "更多福利"
+      ],
       "More details about ${ ariaLabelTitle }": [
         "关于 ${ ariaLabelTitle } 的更多细节"
       ],
@@ -888,6 +888,9 @@
       "Move to archive": [
         "移至归档"
       ],
+      "Move to Archive": [
+        "移至归档"
+      ],
       "Move to folder": [
         "移动至文件夹"
       ],
@@ -904,6 +907,9 @@
         "标为垃圾邮件并退订"
       ],
       "Move to trash": [
+        "移至回收站"
+      ],
+      "Move to Trash": [
         "移至回收站"
       ],
       "Move to...": [
@@ -1119,9 +1125,6 @@
       "Restore": [
         "还原"
       ],
-      "Resubscribe": [
-        "重新订阅"
-      ],
       "Resume": [
         "继续"
       ],
@@ -1173,10 +1176,10 @@
       "Select ${ planTitle }": [
         "开通 ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "全选"
       ],
-      "Select All": [
+      "Select all": [
         "全选"
       ],
       "Select all messages": [
@@ -1211,6 +1214,9 @@
       ],
       "Send read receipt": [
         "发送回执"
+      ],
+      "Send unsubscribe email": [
+        "发送取消订阅邮件"
       ],
       "Set": [
         "设置"
@@ -1290,6 +1296,9 @@
       "Show more": [
         "显示更多"
       ],
+      "Show more benefits": [
+        "显示更多优势"
+      ],
       "Show more search options": [
         "显示更多搜索选项"
       ],
@@ -1340,6 +1349,15 @@
       ],
       "Stop generating result": [
         "停止生成结果"
+      ],
+      "Stop marking as read": [
+        "停止标记为已读"
+      ],
+      "Stop moving to Archive": [
+        "停止移至存档"
+      ],
+      "Stop moving to Trash": [
+        "停止移动到废件箱"
       ],
       "Strikethrough": [
         "删除线"
@@ -1455,10 +1473,10 @@
       "Upgrade": [
         "升级账户"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "立即升级账户"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "立即升级账户"
       ],
       "Upload and share files": [
@@ -3210,9 +3228,6 @@
       ],
       "Macao": [
         "澳门"
-      ],
-      "Macedonia": [
-        "北马其顿共和国"
       ],
       "Madagascar": [
         "马达加斯加"
@@ -5524,6 +5539,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Drawer": [
+        "侧边栏"
+      ],
       "Hardware not compatible": [
         "硬件不兼容"
       ],
@@ -6046,6 +6064,9 @@
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } 个文件已添加到附件。"
       ],
+      "${ receivedMessagesCount } email last month": [
+        "上个月已收到 ${ receivedMessagesCount } 封邮件"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "已选择 ${ selectedCalendarsTotal }/${ providerCalendars.length } 份日历"
       ],
@@ -6060,9 +6081,6 @@
       ],
       "${ storage } storage": [
         "${ storage } 存储空间"
-      ],
-      "${ subscription.ReceivedMessages.Last30Days } email last month": [
-        "上个月已收到 ${ subscription.ReceivedMessages.Last30Days } 封邮件"
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } 封未读"
@@ -6106,8 +6124,8 @@
       "(No Recipient)": [
         "(无收件人)"
       ],
-      "**${ elementsFoundCount }** result found in ${ labelName }": [
-        "在 ${ labelName } 中找到了 **${ elementsFoundCount }** 个结果"
+      "**${ total }** result found in ${ labelName }": [
+        "在 ${ labelName } 中找到了 **${ total }** 个结果"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Auto-connect**：在您开启设备后立即启动并连接至 VPN。"
@@ -6238,6 +6256,9 @@
       "An unknown public key has been detected for this recipient.": [
         "检测到此收件人的一枚未知公钥。"
       ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "系统将代表您发送一封取消订阅邮件。"
+      ],
       "and": [
         "并"
       ],
@@ -6306,6 +6327,9 @@
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "至少 ${ BETTER_PASSWORD_LENGTH } 个字符"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "在您的试用 ${ boldCancelDate } 结束时，您将被降級到 ${ boldProtonFree }。您组织中的所有用户账户将被移除。"
       ],
       "Attach public key": [
         "附上公钥"
@@ -6399,6 +6423,9 @@
       ],
       "Close this screen to exit.": [
         "关闭这个窗口以退出"
+      ],
+      "Composer:": [
+        "编写器:"
       ],
       "Confirm phishing report": [
         "确认钓鱼报告"
@@ -6635,7 +6662,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入 ${ digit } 位数字的验证码。"
+        "请输入验证码的第 ${ digit } 位数字。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
@@ -6744,6 +6771,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "如果您改变主意，可以随时重新订阅。很遗憾您离开！"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
@@ -6979,7 +7009,7 @@
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
       ],
-      "More infos": [
+      "More info": [
         "更多信息"
       ],
       "More refine actions": [
@@ -7471,6 +7501,9 @@
       "Text to display": [
         "要显示的文字"
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "感谢您选择 ${ BRAND_NAME } 来保护您的组织机构安全。"
+      ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "感谢您成为订阅用户，安全浏览即刻开启。"
       ],
@@ -7849,6 +7882,9 @@
       "We could not verify the sender's trusted keys.": [
         "我们无法验证发件人的可信密钥。"
       ],
+      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
+        "我们找不到此新闻通讯的取消订阅选项。您或许可以使用他们电子邮件中的链接或从他们的网站取消订阅。"
+      ],
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
       ],
@@ -8068,6 +8104,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您提到了“${ attachmentsFoundKeyword }”，但没有添加附件。是否仍要发送邮件？"
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
       ],
@@ -8112,6 +8151,12 @@
       ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免费试用已成功转换为 ${ cycle } 个月订阅。您的续订日期是 ${ nextBillingDate }。"
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免费试用已成功转换为月度订阅。您的续订日期是 ${ nextBillingDate }。"
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "您的硬件不支持在本地运行写作助手。请尝试在服务器运行。"
@@ -8172,6 +8217,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "您将在 ${ boldEndDate } 失去对 ${ boldPlanTitle } 的访问权限。"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需点击几下，您的收件箱就不会杂乱无章了"
@@ -8489,6 +8540,9 @@
       "Address": [
         "地址"
       ],
+      "Alias title": [
+        "别名标题"
+      ],
       "ALL": [
         "且"
       ],
@@ -8507,11 +8561,11 @@
       "AND": [
         "且"
       ],
-      "And": [
-        "且"
-      ],
       "and": [
         "并"
+      ],
+      "And": [
+        "且"
       ],
       "Anderson": [
         "Anderson"
@@ -8693,6 +8747,9 @@
       "Enable desktop notifications": [
         "开启推送通知"
       ],
+      "Enable filter": [
+        "启用过滤器"
+      ],
       "Encrypt emails": [
         "加密电子邮件"
       ],
@@ -8735,10 +8792,10 @@
       "IBAN": [
         "国际银行账户号码（IBAN）"
       ],
-      "IF": [
+      "If": [
         "如果"
       ],
-      "If": [
+      "IF": [
         "如果"
       ],
       "Import all messages": [
@@ -8804,8 +8861,11 @@
       "Mark as": [
         "标为"
       ],
-      "Marked ${ count } message as read.": [
-        "已将 ${ count } 封邮件标为已读。"
+      "Marked ${ unreadCount } message as read.": [
+        "已将 ${ unreadCount } 封邮件标为已读。"
+      ],
+      "Message:": [
+        "消息:"
       ],
       "Move ${ sidebarElementName }": [
         "移动 ${ sidebarElementName }"
@@ -8873,10 +8933,10 @@
       "Optional": [
         "非必填"
       ],
-      "OR": [
+      "or": [
         "或"
       ],
-      "or": [
+      "OR": [
         "或"
       ],
       "Or": [
@@ -8984,6 +9044,9 @@
       "Strong password": [
         "强密码"
       ],
+      "Subject:": [
+        "主题："
+      ],
       "Subscription options": [
         "计费方式"
       ],
@@ -8993,8 +9056,8 @@
       "System information": [
         "系统信息"
       ],
-      "The filter is disabled. You can enable it ${ settingsLink }": [
-        "过滤器已禁用。您可以启用它 ${ settingsLink }"
+      "The filter is disabled. ${ enableButton }": [
+        "筛选器已禁用。${ enableButton }"
       ],
       "Theme": [
         "主题"
@@ -9149,7 +9212,7 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will appear here.": [
+      "Newsletters you unsubscribe from will show up here.": [
         "您取消订阅的时事通讯将显示在此处。"
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
@@ -9234,9 +9297,6 @@
       ],
       "Folders": [
         "文件夹"
-      ],
-      "here": [
-        "此处"
       ],
       "How to add users": [
         "如何添加用户"
@@ -9764,14 +9824,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "开通 ${ planTitle }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -9793,6 +9845,14 @@
       ],
       "Switch plan": [
         "切换计划"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "开通 ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10254,6 +10314,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "通过专用安全网关实现先进的网络安全和访问管理"
       ],
@@ -10631,7 +10697,7 @@
       "Require 2FA": [
         "要求启用 2FA"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
         "支持 ${ n } 个自定义域"
       ]
     },
@@ -10952,6 +11018,53 @@
         "您可以随时在设置中更换主题。"
       ]
     },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        "请访问我们的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "在 ${ cancelDate } 之前随时取消。"
+      ],
+      "Cancel anytime before then.": [
+        "在此之前随时取消。"
+      ],
+      "contact our support team": [
+        "联系我们的客服"
+      ],
+      "Continue": [
+        "继续"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "免费享有商业安全功能，直到 ${ trialEndsOnFormatted }为止。"
+      ],
+      "help center": [
+        "帮助中心"
+      ],
+      "If you need help,": [
+        "如果您需要帮助，"
+      ],
+      "Once your full subscription starts...": [
+        "您的正式订阅一旦开始..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "您可以使用 ${ planTitle } 直到试用期结束，并且不会向您收费。"
+      ],
+      "Your free trial has started": [
+        "您的免费试用已开始"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "您的完整 ${ planTitle } 订阅将于 ${ boldEndDate } 开始。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "您将能够免费使用 ${ planTitle } 直到试用期结束。"
+      ]
+    },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
         "注册过下列账户？点击右侧按钮即可将注册邮箱更改为 ${ MAIL_APP_NAME }。"
@@ -11031,6 +11144,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "所有 ${ BRAND_NAME } 应用程序和高级功能"
+      ],
       "Secure vault sharing": [
         "安全保险库共享"
       ],
@@ -11192,6 +11308,9 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "此付款方式将成为您未来所有续订的新默认方式。"
       ],
       "Timeout exceeded": [
         "超时"
@@ -12395,8 +12514,8 @@
       "${ n } VPN connection per user": [
         "每位用户可通过 ${ n } 台设备同时接入 VPN"
       ],
-      "VPN connection for ${ n } devices per user": [
-        "其他 VPN 连接，每个用户可连接 ${ n } 台设备"
+      "VPN connection for ${ n } device per user": [
+        "每位用户 ${ n } 个设备的 VPN 连接"
       ]
     },
     "Subscription change warning": {
@@ -12435,47 +12554,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "总计 ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动邮件转发 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "简短的 @pm.me 邮箱地址"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription reminder": {
@@ -12730,6 +12808,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 邮箱别名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动邮件转发 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -13041,6 +13160,15 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } 已删除"
+      ],
+      "The filter has been disabled": [
+        "过滤器已停用"
+      ],
+      "The filter has been enabled": [
+        "过滤器已启用"
+      ],
+      "The filter is active again": [
+        "筛选器再次启用"
       ]
     },
     "Suffix": {
@@ -13232,6 +13360,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } 已激活"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } 封邮件"
       ],
       "${ unreads } unread message": [
         "${ unreads } 封未读邮件"
@@ -13800,8 +13931,8 @@
       "No trackers found": [
         "未发现跟踪器"
       ],
-      "No unsubscribed mail subscriptions": [
-        "无退订邮件订阅"
+      "No unsubscribed newsletters": [
+        "没有退订的邮件列表"
       ],
       "No-reply address detected": [
         "未找到回复地址"
@@ -14127,6 +14258,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
       ],
+      "Your ${ planName } subscription has started": [
+        "您的 ${ planName } 订阅已启用"
+      ],
       "Your account is protected": [
         "您的账户已受保护"
       ],
@@ -14135,6 +14269,9 @@
       ],
       "Your exposed information": [
         "您的泄露信息"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "您的免费体验期将于 ${ trialDurationFormatted } 结束。"
       ],
       "Your free trial has ended": [
         "您的免费试用已结束"

@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "Activate": [
-        "Aktiver"
-      ],
       "activate": [
         "aktiver"
+      ],
+      "Activate": [
+        "Aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -177,6 +177,9 @@
       ],
       "Apply": [
         "Anvend"
+      ],
+      "Apply filter “${ Name }” to existing messages": [
+        "Anvend filter “${ Name }” på eksisterende meldinger"
       ],
       "Apply to existing messages": [
         "Anvend på eksisterende meldinger"
@@ -343,6 +346,18 @@
       "Copy password": [
         "Kopier passord"
       ],
+      "Copy SMTP port": [
+        "Kopier SMTP-port"
+      ],
+      "Copy SMTP server": [
+        "Kopier SMTP-tjener"
+      ],
+      "Copy SMTP token": [
+        "Kopier SMTP-token"
+      ],
+      "Copy SMTP username": [
+        "Kopier SMTP-brukernavn"
+      ],
       "Copy version number to clipboard": [
         "Kopier versjonsnummeret til utklippstavlen"
       ],
@@ -412,6 +427,9 @@
       "Delete and confirm": [
         "Slett og bekreft"
       ],
+      "Delete filter “${ Name }”": [
+        "Slett filter “${ Name }”"
+      ],
       "Delete Gateway": [
         "Slett porttjener"
       ],
@@ -435,6 +453,9 @@
       ],
       "Delete record": [
         "Slett post"
+      ],
+      "Delete token “${ token.Name }”": [
+        "Slett token “${ token.Name }”"
       ],
       "Delete user": [
         "Slett bruker"
@@ -469,10 +490,10 @@
       "Discard": [
         "Forkast"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Forkast endringer"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Forkast endringer"
       ],
       "Discover ${ planName }": [
@@ -498,6 +519,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
+      ],
+      "Download Bridge for ${ platform }": [
+        "Last ned Bridge for ${ platform }"
       ],
       "Download CSV sample": [
         "Last ned CSV-eksempel"
@@ -541,6 +565,9 @@
       "Edit email address": [
         "Rediger e-postadresse"
       ],
+      "Edit filter “${ Name }”": [
+        "Rediger filter “${ Name }”"
+      ],
       "Edit Gateway": [
         "Rediger porttjener"
       ],
@@ -570,6 +597,9 @@
       ],
       "Edit sieve": [
         "Rediger sieve"
+      ],
+      "Edit sieve filter “${ Name }”": [
+        "Rediger sieve-filter “${ Name }”"
       ],
       "Edit sign-in details": [
         "Rediger påloggingsinformasjon"
@@ -1366,6 +1396,9 @@
       "Try another method": [
         "Prøv annen metode"
       ],
+      "Try for free": [
+        "Prøv gratis"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv å lagre igjen. Lagring mislyktes på grunn av: ${ saveError }"
       ],
@@ -1870,15 +1903,6 @@
         "Velg ditt slutten av året-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måned.",
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måneder."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsplass (2x mer enn noe annen plan)"
@@ -1900,6 +1924,15 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planen ${ plan } er bare tilbake i en begrenset periode"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måned.",
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måneder."
       ]
     },
     "bf2023: Offers": {
@@ -3315,9 +3348,6 @@
       "Macao": [
         "Macao"
       ],
-      "Macedonia": [
-        "Makedonia"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -4227,7 +4257,7 @@
       "Download for Linux": [
         "Last ned for Linux"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Last ned for macOS"
       ],
       "Download for Windows": [
@@ -6724,6 +6754,9 @@
       ],
       "Organization key fingerprint": [
         "Organisasjonsnøkkelfingeravtrykk"
+      ],
+      "Payment details": [
+        "Betalingsinformasjon"
       ],
       "Permissions": [
         "Tillatelser"
@@ -9893,11 +9926,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "username": [
-        "brukernavn"
-      ],
       "Username": [
         "Brukernavn"
+      ],
+      "username": [
+        "brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -11115,11 +11148,11 @@
       "AND": [
         "OG"
       ],
-      "And": [
-        "Og"
-      ],
       "and": [
         "og"
+      ],
+      "And": [
+        "Og"
       ],
       "Anderson": [
         "Andersen"
@@ -11547,11 +11580,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "HVIS"
-      ],
       "If": [
         "Hvis"
+      ],
+      "IF": [
+        "HVIS"
       ],
       "Import all messages": [
         "Importer alle meldinger"
@@ -11763,11 +11796,11 @@
       "Optional": [
         "Valgfritt"
       ],
-      "OR": [
-        "ELLER"
-      ],
       "or": [
         "eller"
+      ],
+      "OR": [
+        "ELLER"
       ],
       "Or": [
         "Eller"
@@ -11906,6 +11939,9 @@
       ],
       "Select Linux package format": [
         "Velg Linux-pakkeformat"
+      ],
+      "Select Linux platform": [
+        "Velg Linux-plattform"
       ],
       "Send auto-reply": [
         "Send autosvar"
@@ -12466,11 +12502,11 @@
       "perform a password reset from your active session": [
         "utføre en tilbakestilling av passord fra den aktive økten"
       ],
-      "privacy policy": [
-        "personvernerklæring"
-      ],
       "Privacy policy": [
         "Personvernerklæring"
+      ],
+      "privacy policy": [
+        "personvernerklæring"
       ],
       "Reactivate now": [
         "Aktiver på nytt nå"
@@ -13656,6 +13692,12 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* Med 30 måneders abonnement. Andre abonnementsalternativer tilgjengelig i kassen."
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre porttjenere"
       ],
@@ -13718,9 +13760,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Få sikker tilgang til internett fra hvor som helst med viktig nettverksovervåking"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Sikker skylagring som lar deg lagre, synkronisere og dele filer lett og trygt."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
@@ -13811,14 +13850,6 @@
         "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceLine }. Avslutt når som helst."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -13837,6 +13868,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås opp premiumfunksjoner ved å oppgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -14122,7 +14161,8 @@
       "Require 2FA": [
         "Krever 2FA"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "Støtte for ${ n } egendefinert e-postdomene",
         "Støtte for ${ n } egendefinerte e-postdomener"
       ]
     },
@@ -14486,14 +14526,44 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " besøk vårt ${ helpCenterLink } eller ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Avbryt når som helst før ${ cancelDate }."
+      ],
       "Cancel anytime before then.": [
         "Avbryt når som helst før da."
+      ],
+      "contact our support team": [
+        "kontakt vår brukerstøtte"
+      ],
+      "Continue": [
+        "Fortsett"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Nyt gratis funksjoner for forretningssikkerhet frem til ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "hjelpesenter"
+      ],
+      "If you need help,": [
+        "Hvis du trenger hjelp,"
       ],
       "Once your full subscription starts...": [
         "Når ditt fulle abonnement starter..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
+      ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Du kan bruke ${ planTitle } til prøveversjonen avsluttes, og du blir ikke belastet."
+      ],
+      "Your free trial has started": [
+        "Din gratis prøveperiode har startet"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
@@ -15543,6 +15613,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Da vil den automatisk bli fornyet på ${ renewPriceStr } for ${ renewalLength } måned. Du kan si opp når som helst.",
         "Da vil den automatisk bli fornyet på ${ renewPriceStr } for ${ renewalLength } måneder. Du kan si opp når som helst."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
@@ -17880,7 +17953,7 @@
         "Høyhastighets VPN på ${ maxVpn } enhet",
         "Høyhastighets VPN på ${ maxVpn } enheter"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "VPN-tilkobling for ${ n } enhet per bruker",
         "VPN-tilkobling for ${ n } enheter per bruker"
       ]
@@ -17921,47 +17994,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "For ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription reminder": {
@@ -18252,6 +18284,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -20232,7 +20305,8 @@
       "Your exposed information": [
         "Din eksponerte informasjon"
       ],
-      "Your free trial ends in ${ trialDurationFormatted } days": [
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dag",
         "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dager"
       ],
       "Your plan": [

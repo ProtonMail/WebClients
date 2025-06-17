@@ -46,6 +46,9 @@
       "Add domain": [
         "Přidat doménu"
       ],
+      "Add field": [
+        "Přidat pole"
+      ],
       "Add forwarding mailbox": [
         "Přidat e-mailovou schránku pro přeposílání"
       ],
@@ -403,10 +406,10 @@
       "Move to another vault": [
         "Přesunout do jiného trezoru"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Přesunout do koše"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Přesunout do koše"
       ],
       "Multiple select": [
@@ -462,6 +465,9 @@
       ],
       "Reactivate now": [
         "Znovu aktivovat"
+      ],
+      "Read More": [
+        "Zjistit více"
       ],
       "Refresh the page": [
         "Obnovit stránku"
@@ -579,6 +585,9 @@
       ],
       "Show advanced options": [
         "Zobrazit pokročilé možnosti"
+      ],
+      "Show Less": [
+        "Zobrazit méně"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Přihlaste se pomocí ${ BRAND_NAME }"
@@ -1089,9 +1098,6 @@
       "File does not match expected format": [
         "Soubor neodpovídá očekávanému formátu"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Import pro trezor \"${ vaultData.name }\" selhal : ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Import položek se nezdařil"
       ],
@@ -1373,7 +1379,10 @@
         "${ count } zobrazení",
         "${ count } zobrazení"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } zobrazení",
+        "${ count }/${ maxReads } zobrazení",
+        "${ count }/${ maxReads } zobrazení",
         "${ count }/${ maxReads } zobrazení"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -2809,11 +2818,11 @@
       "Copy": [
         "Kopírovat"
       ],
+      "Country": [
+        "Země"
+      ],
       "Country or Region": [
         "Země nebo region"
-      ],
-      "Country,": [
-        "Země,"
       ],
       "County": [
         "Kraj"
@@ -3295,10 +3304,10 @@
       "Passport": [
         "Cestovní pas"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Číslo cestovního pasu"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Číslo cestovního pasu"
       ],
       "Password": [
@@ -3352,10 +3361,10 @@
       "Priority:": [
         "Priorita:"
       ],
-      "Private Key": [
+      "Private key": [
         "Soukromý klíč"
       ],
-      "Private key": [
+      "Private Key": [
         "Soukromý klíč"
       ],
       "Product": [
@@ -3504,9 +3513,6 @@
       ],
       "SSH key": [
         "SSH klíč"
-      ],
-      "SSH Keys": [
-        "SSH klíče"
       ],
       "SSN": [
         "ČSZ"
@@ -3690,9 +3696,6 @@
       ],
       "WiFi network": [
         "Wi-Fi síť"
-      ],
-      "WiFi Networks": [
-        "Wi-Fi sítě"
       ],
       "Work details": [
         "Podrobnosti o práci"
@@ -3944,9 +3947,6 @@
       "Add 2FA secret key": [
         "Přidat klíč 2FA secret"
       ],
-      "Add date": [
-        "Přidat datum"
-      ],
       "Add hidden text": [
         "Přidat skrytý text"
       ],
@@ -4042,9 +4042,6 @@
       ],
       "Used on ${ url }": [
         "Použito na ${ url }"
-      ],
-      "Write your note": [
-        "Napište svoji poznámku"
       ]
     },
     "Security Center - Info": {

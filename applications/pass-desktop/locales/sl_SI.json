@@ -367,10 +367,10 @@
       "Move to another vault": [
         "Premakni v drug trezor"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Premakni v smetnjak"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Premakni v smetnjak"
       ],
       "Multiple select": [
@@ -876,9 +876,6 @@
       ],
       "File does not match expected format": [
         "Datoteka se ne ujema s pričakovano obliko"
-      ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Uvoz za trezor \"${ vaultData.name }\" : ${ errorMessage } ni uspel"
       ],
       "Importing items failed": [
         "Uvoz predmetov ni uspel"
@@ -1976,6 +1973,9 @@
       "Copy": [
         "Kopiraj"
       ],
+      "Country": [
+        "Država"
+      ],
       "Country or Region": [
         "Država ali regija"
       ],
@@ -2846,9 +2846,6 @@
       ],
       "Used on ${ url }": [
         "Uporabljeno na ${ url }"
-      ],
-      "Write your note": [
-        "Napišite svojo opombo"
       ]
     },
     "Security Center - Info": {
