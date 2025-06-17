@@ -14,25 +14,31 @@ const useAuthLogsFilter = (initialStartDate = undefined, initialEndDate = undefi
     });
 
     const handleStartDateChange = (start: Date | undefined) => {
-        if (!start) {
-            return;
-        }
-        if (!filter.end || isBefore(start, filter.end)) {
-            setFilter({ ...filter, start });
-        } else {
-            setFilter({ ...filter, start, end: start });
-        }
+        setFilter((prev) => {
+            if (!start) {
+                return { ...prev, start: undefined };
+            }
+
+            if (!prev.end || isBefore(start, prev.end)) {
+                return { ...prev, start };
+            } else {
+                return { ...prev, start, end: start };
+            }
+        });
     };
 
     const handleEndDateChange = (end: Date | undefined) => {
-        if (!end) {
-            return;
-        }
-        if (!filter.start || isAfter(end, filter.start)) {
-            setFilter({ ...filter, end });
-        } else {
-            setFilter({ ...filter, start: end, end });
-        }
+        setFilter((prev) => {
+            if (!end) {
+                return { ...prev, end: undefined };
+            }
+
+            if (!prev.start || isAfter(end, prev.start)) {
+                return { ...prev, end };
+            } else {
+                return { ...prev, start: end, end };
+            }
+        });
     };
 
     return { filter, handleStartDateChange, handleEndDateChange };

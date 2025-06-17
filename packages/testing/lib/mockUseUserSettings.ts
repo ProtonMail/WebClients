@@ -32,6 +32,9 @@ const defaultUserSettings: UserSettings = {
     Welcome: 0,
     ProductDisabled: { Mail: 0, VPN: 0, Calendar: 0, Drive: 0, Pass: 0, Wallet: 0 },
     UsedClientFlags: 0,
+    OrganizationPolicy: {
+        Enforced: 0,
+    },
 };
 
 export const mockUseUserSettings = (params?: [Partial<UserSettings>?, boolean?]) => {
