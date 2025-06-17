@@ -429,7 +429,6 @@ export const getAccountAppRoutes = ({
                         id: 'sentinel',
                         available: !isSSOUser,
                     },
-
                     {
                         text: DARK_WEB_MONITORING_NAME,
                         id: 'breaches',
@@ -446,7 +445,7 @@ export const getAccountAppRoutes = ({
                         available: !isSSOUser,
                     },
                     {
-                        text: c('Title').t`Security events`,
+                        text: c('Title').t`Activity monitor`,
                         id: 'logs',
                         available: !isSSOUser,
                     },
