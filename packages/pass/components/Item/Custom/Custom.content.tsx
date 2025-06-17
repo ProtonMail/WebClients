@@ -1,3 +1,5 @@
+import type { FC } from 'react';
+
 import { c } from 'ttag';
 
 import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
@@ -6,12 +8,11 @@ import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
-import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
+import { useDeobfuscatedItem, usePartialDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import type { ItemRevision } from '@proton/pass/types';
-import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
-import { usePartialDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { type ItemCustomType } from '@proton/pass/types';
-import { type FC } from 'react';
+
+import { wifiSecurityLabel } from './Custom.utils';
 
 const WifiContent: FC<{ revision: ItemRevision<'wifi'> }> = ({ revision }) => {
     const { content } = useDeobfuscatedItem(revision.data);
@@ -29,7 +30,7 @@ const WifiContent: FC<{ revision: ItemRevision<'wifi'> }> = ({ revision }) => {
             <ValueControl
                 as={TextAreaReadonly}
                 label={c('Label').t`Security`}
-                value={WifiSecurity[content.security]}
+                value={wifiSecurityLabel[content.security]()}
                 clickToCopy
             />
         </FieldsetCluster>
