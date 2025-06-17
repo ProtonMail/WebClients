@@ -1,4 +1,4 @@
-import { format, formatRelative, intervalToDuration, isThisWeek } from 'date-fns';
+import { format, formatISO, formatRelative, intervalToDuration, isThisWeek } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import type { Maybe } from '@proton/pass/types';
@@ -75,3 +75,5 @@ export const formatTimestamp = (timestamp: string): Maybe<string> => {
 };
 
 export const formatPlaceholder = () => format(new Date(new Date().getFullYear(), 11, 31), 'P', { locale: dateLocale });
+
+export const formatISODate = (date: Date) => formatISO(date).split('T')[0];

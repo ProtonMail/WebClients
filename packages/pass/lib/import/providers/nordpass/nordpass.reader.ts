@@ -13,19 +13,26 @@ import {
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 
 import { type NordPassItem, NordPassType } from './nordpass.types';
-import { NORDPASS_EXPECTED_HEADERS, extractNordPassIdentity } from './nordpass.utils';
+import { NORDPASS_EXPECTED_HEADERS, extractNordPassExtraFields, extractNordPassIdentity } from './nordpass.utils';
 
-const processLoginItem = async (item: NordPassItem): Promise<ItemImportIntent<'login'>> =>
-    importLoginItem({
+const processAdditionalUrls = (additionalUrls?: string) =>
+    safeCall((): string[] => (additionalUrls ? JSON.parse(additionalUrls) : []))() ?? [];
+
+const processLoginItem = async (item: NordPassItem): Promise<ItemImportIntent<'login'>> => {
+    const urls = [item.url].concat(processAdditionalUrls(item.additional_urls));
+
+    return importLoginItem({
         name: item.name,
         note: item.note,
         password: item.password,
-        urls: [item.url],
+        urls,
         ...(await getEmailOrUsername(item.username)),
     });
+};
 
 const processNoteItem = (item: NordPassItem): ItemImportIntent<'note'> =>
     importNoteItem({
@@ -65,6 +72,8 @@ export const readNordPassData = async (file: File): Promise<ImportReaderResult> 
         const data = await file.text();
         const parsed = await readCSV<NordPassItem>({
             data,
+            /** NOTE: `additional_urls` and `custom_fields` are not expected in the legacy
+             * NordPass formats, as such they're excluded from the CSV parsing pass. */
             headers: NORDPASS_EXPECTED_HEADERS,
             throwOnEmpty: true,
             onError: (error) => warnings.push(error),
@@ -73,6 +82,8 @@ export const readNordPassData = async (file: File): Promise<ImportReaderResult> 
         for (const vaultItems of groupByKey(parsed.items, 'folder')) {
             if (vaultItems.length === 0) continue;
 
+            /** FIXME: when supporting folders we should preserve the
+             * NordPass folder structure when importing */
             const name = getImportedVaultName(vaultItems?.[0].folder);
             const items: ItemImportIntent[] = [];
 
@@ -95,7 +106,10 @@ export const readNordPassData = async (file: File): Promise<ImportReaderResult> 
                     })();
 
                     if (!value) ignored.push(`[${type}] ${title}`);
-                    else items.push(value);
+                    else {
+                        value.extraFields = extractNordPassExtraFields(item);
+                        items.push(value);
+                    }
                 } catch (err) {
                     ignored.push(`[${type}] ${title}`);
                     logger.warn('[Importer::NordPass]', err);
