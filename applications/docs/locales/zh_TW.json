@@ -96,6 +96,9 @@
       "Attention required": [
         "需要您的處理"
       ],
+      "Authenticate": [
+        "驗證"
+      ],
       "Back": [
         "返回"
       ],
@@ -738,8 +741,14 @@
       "Use a different payment method": [
         "改用另一個繳款方式"
       ],
+      "Use authentication code": [
+        "使用驗證代碼"
+      ],
       "Use for sending": [
         "用於寄送"
+      ],
+      "Use recovery code": [
+        "使用復原碼"
       ],
       "Verify": [
         "驗證"
@@ -1790,9 +1799,6 @@
       "Macao": [
         "澳門"
       ],
-      "Macedonia": [
-        "馬其頓"
-      ],
       "Madagascar": [
         "馬達加斯加"
       ],
@@ -2262,9 +2268,6 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "升級至${ BRAND_NAME }${ planName }以保持共享有編輯權限的檔案"
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
@@ -2454,9 +2457,6 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "「${ name }」已存在"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME }無法連接外部帳號"
       ],
@@ -3274,6 +3274,24 @@
         "無限制的 hide-my-email 別名"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
+      ],
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
     "file size format": {
       "byte": [
         "位元組"
@@ -3872,6 +3890,9 @@
       "Attention required": [
         "需要您的處理"
       ],
+      "Available": [
+        "可用"
+      ],
       "Awaiting transaction": [
         "等待交易"
       ],
@@ -3889,6 +3910,9 @@
       ],
       "Calendar side panel": [
         "行事曆側面板"
+      ],
+      "Cannot load link": [
+        "無法載入連結"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
@@ -4037,6 +4061,9 @@
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
+      "Each code can only be used once": [
+        "每組驗證代碼只能使用一次"
+      ],
       "Edit email address": [
         "編輯電子郵件位址"
       ],
@@ -4064,20 +4091,23 @@
       "Enter password": [
         "輸入密碼"
       ],
+      "Enter the code from your authenticator app": [
+        "輸入驗證應用程式中的驗證代碼"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "請輸入您想匯入的電郵帳號所使用的憑證。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證代碼。正在按下 ${ digit } 。"
+      ],
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "Error converting document: ${ errorMessage }": [
         "轉換文件時發生錯誤：${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "載入文件時發生錯誤${ errorDetail }"
       ],
       "Error Syncing": [
         "同步失敗"
@@ -4298,6 +4328,9 @@
       "New": [
         "加入"
       ],
+      "No": [
+        "否"
+      ],
       "No contacts added yet": [
         "仍未加入任何通訊錄"
       ],
@@ -4381,6 +4414,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME 使用目前的編輯器模式自動傳送訊息。"
+      ],
+      "Photos": [
+        "相片"
       ],
       "Please authenticate your card in the verification tab.": [
         "請在驗證索引標籤中認證您的信用卡。"
@@ -4513,6 +4549,9 @@
       ],
       "Shared on": [
         "已共享於"
+      ],
+      "Shared with me": [
+        "與我分享"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "因為網路錯誤，所以無法驗證簽章，請稍後再試。"
@@ -4760,6 +4799,9 @@
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "當列印視窗開啟，選擇印表機為「另存新檔為PDF」，然後點擊儲存。"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "設定兩步驟驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
+      ],
       "words": [
         "文字"
       ],
@@ -4771,6 +4813,9 @@
       ],
       "Writing assistant": [
         "撰寫幫手"
+      ],
+      "Yes": [
+        "是"
       ],
       "you": [
         "您"
@@ -5061,6 +5106,9 @@
       "Attach screenshot(s)": [
         "附加螢幕截圖"
       ],
+      "Authenticator app": [
+        "驗證 app"
+      ],
       "Beta Access": [
         "測試版體驗"
       ],
@@ -5204,6 +5252,9 @@
       ],
       "First name": [
         "名"
+      ],
+      "Folder": [
+        "資料夾"
       ],
       "Folder location": [
         "資料夾位置"
@@ -5468,6 +5519,9 @@
       ],
       "Your IP": [
         "您的 IP"
+      ],
+      "Your ISP": [
+        "您的 ISP"
       ],
       "Your location": [
         "您的位置"
@@ -6767,9 +6821,6 @@
       ],
       "Require 2FA": [
         "要求兩階段認證"
-      ],
-      "Support for ${ n } custom email domains": [
-        "支援 ${ n } 組自訂電子郵件網域"
       ]
     },
     "Notification": {
@@ -7089,6 +7140,11 @@
         "雲端儲存"
       ]
     },
+    "Onboarding Trial": {
+      "Continue": [
+        "繼續"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "加入至現有群組"
@@ -7293,6 +7349,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
+      ],
       "Street address, postal code, and city": [
         "地址，郵政區碼，及城市"
       ]
@@ -8450,6 +8509,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "下載#次數"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount }電子郵件位址"
       ],
@@ -8693,6 +8755,12 @@
       "Exporting contacts": [
         "正在匯出聯絡人"
       ],
+      "File details": [
+        "檔案詳細資訊"
+      ],
+      "Folder details": [
+        "資料夾詳細資訊"
+      ],
       "Get more from your VPN": [
         "從您的VPN取得更多"
       ],
@@ -8732,11 +8800,20 @@
       "Invalid verification code": [
         "驗證碼無效"
       ],
+      "Item details": [
+        "項目詳細資訊"
+      ],
+      "Last edited by": [
+        "上次編輯者"
+      ],
       "Limited availability": [
         "有限的可用性"
       ],
       "Link confirmation": [
         "外部連結確認"
+      ],
+      "Location": [
+        "位置"
       ],
       "Manage secure link": [
         "管理安全連結"
@@ -8747,14 +8824,23 @@
       "Merging contacts": [
         "正在合併聯絡人"
       ],
+      "MIME type": [
+        "MIME 類型"
+      ],
       "Minicalendar": [
         "小型行事曆"
       ],
       "Mobile": [
         "手機"
       ],
+      "Modified": [
+        "修改日期"
+      ],
       "My files": [
         "我的檔案"
+      ],
+      "Name": [
+        "名稱"
       ],
       "Need more aliases?": [
         "需要更多別名?"
@@ -8786,6 +8872,9 @@
       "Organization setup": [
         "組織機構設定"
       ],
+      "Original size": [
+        "原始大小"
+      ],
       "Other information": [
         "其它資訊"
       ],
@@ -8812,6 +8901,9 @@
       ],
       "Processing...": [
         "處理中..."
+      ],
+      "Public shared link status": [
+        "公開共享連結狀態"
       ],
       "Re-sign all contacts": [
         "重新簽署所有聯絡人"
@@ -8876,11 +8968,17 @@
       "Share ${ name }": [
         "與 ${ name } 共享"
       ],
+      "Shared": [
+        "已分享"
+      ],
       "Sign in and grant access": [
         "登入並授予存取權"
       ],
       "Sign out": [
         "登出"
+      ],
+      "Size": [
+        "大小"
       ],
       "Something went wrong": [
         "發生錯誤"
@@ -8909,11 +9007,20 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "啟用${ DARK_WEB_MONITORING_NAME }"
       ],
+      "Type": [
+        "類型"
+      ],
       "Untitled document ${ date }": [
         "未命名文件 ${ date }"
       ],
       "Upgrade complete!": [
         "升級完成！"
+      ],
+      "Uploaded": [
+        "已上載"
+      ],
+      "Uploaded by": [
+        "上載者"
       ],
       "Uploading a large file or folder": [
         "上傳大檔案或資料夾"
@@ -8926,6 +9033,9 @@
       ],
       "Verifying your payment...": [
         "正在驗證您的付款..."
+      ],
+      "Version details": [
+        "版本詳細資訊"
       ],
       "Warning": [
         "警告"
