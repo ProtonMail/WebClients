@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -177,6 +177,9 @@
       ],
       "Apply": [
         "Übernehmen"
+      ],
+      "Apply filter “${ Name }” to existing messages": [
+        "Filter „${ Name }“ auf vorhandene Nachrichten anwenden"
       ],
       "Apply to existing messages": [
         "Auf bestehende Nachrichten anwenden"
@@ -343,6 +346,18 @@
       "Copy password": [
         "Passwort kopieren"
       ],
+      "Copy SMTP port": [
+        "SMTP-Port kopieren"
+      ],
+      "Copy SMTP server": [
+        "SMTP-Server kopieren"
+      ],
+      "Copy SMTP token": [
+        "SMTP-Token kopieren"
+      ],
+      "Copy SMTP username": [
+        "SMTP-Benutzername kopieren"
+      ],
       "Copy version number to clipboard": [
         "Versionsnummer in die Zwischenablage kopieren"
       ],
@@ -412,6 +427,9 @@
       "Delete and confirm": [
         "Löschen und bestätigen"
       ],
+      "Delete filter “${ Name }”": [
+        "Filter “${ Name }” löschen"
+      ],
       "Delete Gateway": [
         "Gateway löschen"
       ],
@@ -435,6 +453,9 @@
       ],
       "Delete record": [
         "Eintrag löschen"
+      ],
+      "Delete token “${ token.Name }”": [
+        "Token \"${ token.Name }\" löschen"
       ],
       "Delete user": [
         "Benutzer löschen"
@@ -469,10 +490,10 @@
       "Discard": [
         "Verwerfen"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Änderungen verwerfen"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Änderungen verwerfen"
       ],
       "Discover ${ planName }": [
@@ -498,6 +519,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-Apps herunterladen"
+      ],
+      "Download Bridge for ${ platform }": [
+        "Bridge für ${ platform } herunterladen"
       ],
       "Download CSV sample": [
         "CSV-Beispiel herunterladen"
@@ -541,6 +565,9 @@
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
+      "Edit filter “${ Name }”": [
+        "Filter “${ Name }” bearbeiten"
+      ],
       "Edit Gateway": [
         "Gateway bearbeiten"
       ],
@@ -570,6 +597,9 @@
       ],
       "Edit sieve": [
         "Sieve bearbeiten"
+      ],
+      "Edit sieve filter “${ Name }”": [
+        "Sieve-Filter “${ Name }” bearbeiten"
       ],
       "Edit sign-in details": [
         "Anmeldeinformationen bearbeiten"
@@ -1366,6 +1396,9 @@
       "Try another method": [
         "Eine andere Methode ausprobieren"
       ],
+      "Try for free": [
+        "Kostenlos ausprobieren"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Versuche erneut zu speichern. Das Speichern ist fehlgeschlagen aufgrund von: ${ saveError }"
       ],
@@ -1723,6 +1756,138 @@
         "Neue E-Mail"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Angebot nutzen"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "200 GB storage": [
+        "200 GB Speicherplatz"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB verschlüsselter Speicherplatz"
+      ],
+      "Add unlimited credit cards": [
+        "Unbegrenzte Kreditkarten hinzufügen"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } Mail, Pass, VPN, Drive und Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockiere Werbung, Tracker und Malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Rabatte basieren auf monatlichen Standard-Preisen. Am Ende des Abrechnungszeitraums verlängert sich dein Abonnement zum jährlichen Standard-Tarif."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Verdoppele deinen verschlüsselten Speicher – hol dir 1 TB für all deine Daten"
+      ],
+      "Encrypted password manager": [
+        "Verschlüsselter Passwortmanager"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Hier ist ein exklusives Geschenk, um unsere gemeinsame Reise zu feiern."
+      ],
+      "High speed streaming with VPN": [
+        "Hochgeschwindigkeits-Streaming mit VPN"
+      ],
+      "of privacy": [
+        "der Privatsphäre"
+      ],
+      "Online document editor": [
+        "Editor für Onlinedokumente"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online-Privatsphäre für bis zu 2 Personen"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Benutzer)"
+      ],
+      "Protect up to 10 devices": [
+        "Schütze bis zu 10 Geräte"
+      ],
+      "Recover previous file versions": [
+        "Vorherige Dateiversionen wiederherstellen"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Ordentlich sparen bei Premium-Drive-Funktionen mit einem zeitlich begrenzten Rabatt."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Ordentlich sparen bei Premium-Mail-Funktionen mit einem zeitlich begrenzten Rabatt."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Ordentlich sparen bei Premium-Pass-Funktionen mit einem zeitlich begrenzten Rabatt."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Ordentlich sparen bei Premium-VPN-Funktionen mit einem zeitlich begrenzten Rabatt."
+      ],
+      "Save time with built-in 2FA": [
+        "Spare Zeit mit integriertem 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Sichere E-Mail mit unbegrenzten Aliassen"
+      ],
+      "Select any server": [
+        "Einen beliebigen Server wählen"
+      ],
+      "Share passwords easily": [
+        "Passwörter einfach teilen"
+      ],
+      "Short @pm.me address": [
+        "Kurze @pm.me E-Mail-Adresse"
+      ],
+      "Stream your favorite content": [
+        "Streame deine Lieblingsinhalte"
+      ],
+      "thanks to you": [
+        "Dank dir"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Verdreifache deinen verschlüsselten Speicher – hol dir 3 TB für all deine Daten"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ],
+      "years": [
+        "Jahre"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubiläumsangebot"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
+      "/ month": [
+        "/ Monat"
+      ],
+      "12 months": [
+        "12 Monate"
+      ],
+      "15 months": [
+        "15 Monate"
+      ],
+      "24 months": [
+        "24 Monate"
+      ],
+      "30 months": [
+        "30 Monate"
+      ],
+      "for ${ durationDeal }": [
+        "Für ${ durationDeal }"
+      ]
+    },
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Surfe privat im Internet und blockiere Werbung"
@@ -1870,15 +2035,6 @@
         "Wähle dein Jahresendangebot"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber ${ discountPercentage } auf ${ plan.Title } erhalten, wenn du dich für ${ cycle } Monat anmeldest.",
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber ${ discountPercentage } auf ${ plan.Title } erhalten, wenn du dich für ${ cycle } Monate anmeldest."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
@@ -1900,6 +2056,15 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber ${ discountPercentage } auf ${ plan.Title } erhalten, wenn du dich für ${ cycle } Monat anmeldest.",
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber ${ discountPercentage } auf ${ plan.Title } erhalten, wenn du dich für ${ cycle } Monate anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -3320,9 +3485,6 @@
       "Macao": [
         "Macau"
       ],
-      "Macedonia": [
-        "Mazedonien"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -4232,7 +4394,7 @@
       "Download for Linux": [
         "Für Linux herunterladen"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Für macOS herunterladen"
       ],
       "Download for Windows": [
@@ -6729,6 +6891,9 @@
       ],
       "Organization key fingerprint": [
         "Fingerabdruck des Organisationsschlüssels"
+      ],
+      "Payment details": [
+        "Zahlungsdetails"
       ],
       "Permissions": [
         "Berechtigungen"
@@ -9895,10 +10060,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
       "Users": [
@@ -11117,11 +11282,11 @@
       "AND": [
         "UND"
       ],
-      "And": [
-        "Und"
-      ],
       "and": [
         "und"
+      ],
+      "And": [
+        "Und"
       ],
       "Anderson": [
         "Mustermann"
@@ -11549,11 +11714,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "WENN"
-      ],
       "If": [
         "Wenn"
+      ],
+      "IF": [
+        "WENN"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -11765,11 +11930,11 @@
       "Optional": [
         "Optional"
       ],
-      "OR": [
-        "ODER"
-      ],
       "or": [
         "oder"
+      ],
+      "OR": [
+        "ODER"
       ],
       "Or": [
         "Oder"
@@ -11908,6 +12073,9 @@
       ],
       "Select Linux package format": [
         "Linux-Paketformat auswählen"
+      ],
+      "Select Linux platform": [
+        "Linux-Plattform auswählen"
       ],
       "Send auto-reply": [
         "Automatische Antwort senden"
@@ -12465,10 +12633,10 @@
       "perform a password reset from your active session": [
         "dein Passwort in deiner aktiven Sitzung zurücksetzen"
       ],
-      "privacy policy": [
+      "Privacy policy": [
         "Datenschutzerklärung"
       ],
-      "Privacy policy": [
+      "privacy policy": [
         "Datenschutzerklärung"
       ],
       "Reactivate now": [
@@ -13655,6 +13823,12 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* Mit 30-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Erweiterte Netzwerksicherheit und Zugangsverwaltung mit dedizierten sicheren Gateways"
       ],
@@ -13717,9 +13891,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Sicherer Internetzugang von überall aus mit grundlegender Netzwerküberwachung"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Sicherer Cloud-Speicher, mit dem du Dateien einfach und sicher speichern, synchronisieren und gemeinsam nutzen kannst."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
@@ -13810,14 +13981,6 @@
         "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceLine } frei. Jederzeit kündbar."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -13836,6 +13999,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -14121,8 +14292,9 @@
       "Require 2FA": [
         "2FA erzwingen"
       ],
-      "Support for ${ n } custom email domains": [
-        "Unterstützung für ${ n } benutzerdefinierte E-Mail-Domänen"
+      "Support for ${ n } custom email domain": [
+        "Support für ${ n } benutzerdefinierte E-Mail-Domäne",
+        "Support für ${ n } benutzerdefinierte E-Mail-Domänen"
       ]
     },
     "news": {
@@ -14485,14 +14657,44 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " besuche ${ helpCenterLink } oder ${ contactSupportLink }"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Jederzeit vor dem ${ cancelDate } kündigen."
+      ],
       "Cancel anytime before then.": [
         "Du kannst jederzeit vorher abbrechen."
+      ],
+      "contact our support team": [
+        "Kontaktiere unser Support-Team"
+      ],
+      "Continue": [
+        "Fortfahren"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Genieße kostenlose Unternehmens-Sicherheitsfunktionen bis zum ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "Hilfezentrum"
+      ],
+      "If you need help,": [
+        "Wenn du Hilfe benötigst,"
       ],
       "Once your full subscription starts...": [
         "Sobald dein vollständiges Abonnement beginnt ..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Du kannst immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "Du kannst immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Du kannst ${ planTitle } kostenlos nutzen, bis die Testversion ausläuft."
+      ],
+      "Your free trial has started": [
+        "Deine kostenlose Testversion ist gestartet"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Dein vollständiges ${ planTitle }-Abonnement beginnt am ${ boldEndDate }."
@@ -15521,6 +15723,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Dann wird es automatisch zu ${ renewPriceStr } für ${ renewalLength } Monat verlängert. Du kannst jederzeit kündigen.",
         "Dann wird es automatisch zu ${ renewPriceStr } für ${ renewalLength } Monate verlängert. Du kannst jederzeit kündigen."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Diese Zahlungsmethode wird dein neuer Standard für alle zukünftigen Verlängerungen."
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
@@ -17863,7 +18068,7 @@
         "Hochgeschwindigkeits-VPN auf ${ maxVpn } Gerät",
         "Hochgeschwindigkeits-VPN auf ${ maxVpn } Geräten"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "VPN-Verbindung für ${ n } Gerät pro Benutzer",
         "VPN-Verbindung für ${ n } Geräte pro Benutzer"
       ]
@@ -17904,47 +18109,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Für ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription reminder": {
@@ -18235,6 +18399,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -20218,7 +20423,8 @@
       "Your exposed information": [
         "Deine exponierten Informationen"
       ],
-      "Your free trial ends in ${ trialDurationFormatted } days": [
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Deine kostenlose Testversion endet in ${ trialDurationFormatted } Tag.",
         "Deine kostenlose Testversion endet in ${ trialDurationFormatted } Tagen."
       ],
       "Your plan": [
