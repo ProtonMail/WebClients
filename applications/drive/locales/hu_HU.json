@@ -237,6 +237,9 @@
       "Copy address": [
         "Cím másolása"
       ],
+      "Copy alias “${ name }”": [
+        "„${ name }” e-mail álnév másolása"
+      ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
@@ -428,6 +431,9 @@
       "Export selection as .vcf": [
         "Kiválasztás exportálása .vcf fájlba"
       ],
+      "Export system log": [
+        "Rendszernapló exportálása"
+      ],
       "Fit to window": [
         "Ablakhoz illesztés"
       ],
@@ -451,6 +457,9 @@
       ],
       "Get link": [
         "Hivatkozás készítése"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "Szerezzen biztonságos tárhelyet ${ simplePriceString }ért"
       ],
       "Get Started": [
         "Kezdés"
@@ -625,6 +634,9 @@
       ],
       "More actions": [
         "További műveletek"
+      ],
+      "More benefits": [
+        "Több előny"
       ],
       "More info: ${ safeTitle }": [
         "További információk: ${ safeTitle }"
@@ -932,6 +944,9 @@
       "Show more": [
         "Több megjelenítése"
       ],
+      "Show more benefits": [
+        "Több előny megjelenítése"
+      ],
       "Show more download options": [
         "Több letöltési opció megjelenítése"
       ],
@@ -1003,6 +1018,9 @@
       ],
       "Try another method": [
         "Másik módszer"
+      ],
+      "Try it now": [
+        "Próbálja ki most"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
@@ -2169,9 +2187,6 @@
       ],
       "Macao": [
         "Makaó"
-      ],
-      "Macedonia": [
-        "Macedónia"
       ],
       "Madagascar": [
         "Madagaszkár"
@@ -3901,6 +3916,9 @@
       "Create new shared album": [
         "Új megosztott album létrehozása"
       ],
+      "Drawer": [
+        "Oldalsó panel"
+      ],
       "Rename album": [
         "Album átnevezése"
       ],
@@ -4579,6 +4597,9 @@
       "Anyone with this link can access your folder.": [
         "A hivatkozás birtokában bárki hozzáférhet a mappához."
       ],
+      "Apr": [
+        "Ápr"
+      ],
       "Are you sure you want to discard your changes?": [
         "Biztos abban, hogy elveti a módosításokat?"
       ],
@@ -4603,8 +4624,14 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Legalább ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "A próbaidőszak végén ${ boldCancelDate }, Önt visszaminősítjük ${ boldProtonFree }-ra. Minden felhasználói fiókot eltávolítunk a szervezetéből."
+      ],
       "Attention required": [
         "Figyelem szükséges"
+      ],
+      "Aug": [
+        "Aug"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Automatikus helyreállítás ${ formattedDate }"
@@ -4752,6 +4779,9 @@
       "Custom email domains": [
         "Saját domain nevek"
       ],
+      "Dec": [
+        "Dec"
+      ],
       "Decrypting files": [
         "Fájlok visszafejtése"
       ],
@@ -4889,6 +4919,9 @@
       "Expired": [
         "Lejárt"
       ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "Diagnosztikai naplók exportálása technikai támogatáshoz és hibaelhárításhoz"
+      ],
       "Failed": [
         "Sikertelen"
       ],
@@ -4900,6 +4933,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Biztonságos hivatkozás megnyitása sikertelen. Az oka: ${ error }"
+      ],
+      "Feb": [
+        "Feb"
       ],
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" fájl törölve lett letöltés közben"
@@ -4981,6 +5017,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Ha lemondja, ${ planTitle } előfizetése nem újul meg, amikor lejár a következő napon: ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Ha meggondolja magát, bármikor újra feliratkozhat. Sajnáljuk, hogy távozik!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
@@ -5070,8 +5109,17 @@
       "It’s easy and secure": [
         "Egyszerű és biztonságos"
       ],
+      "Jan": [
+        "Jan"
+      ],
       "JCB logo": [
         "JCB logó"
+      ],
+      "Jul": [
+        "Júl"
+      ],
+      "Jun": [
+        "Jún"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
@@ -5136,12 +5184,18 @@
       "Makes your account safer": [
         "Biztonságosabbá teszi a fiókját"
       ],
+      "Mar": [
+        "Már"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard Biztonsági Kód logó"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Legalább ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "Legalább ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
+      ],
+      "May": [
+        "Máj"
       ],
       "Medium Priority": [
         "Közepes prioritású"
@@ -5218,11 +5272,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Megjegyzés: az adatok még mindig elérhetők lehetnek helyileg olyan eszközökön, ahol telepítette a ${ DRIVE_APP_NAME } alkalmazást."
       ],
+      "Nov": [
+        "Nov"
+      ],
       "Number of dedicated servers in the organization": [
         "A dedikált szerverek száma a szervezeténél"
       ],
       "Numbers": [
         "Számok"
+      ],
+      "Oct": [
+        "Okt"
       ],
       "of": [
         "/"
@@ -5499,6 +5559,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a csomagjában foglalt korlátig."
       ],
+      "Sep": [
+        "Sze"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "A SEPA-fizetések jelenleg nem elérhetők. Kérjük, próbálja meg később újra."
       ],
@@ -5529,11 +5592,23 @@
       "Shared": [
         "Megosztva"
       ],
+      "Shared by ": [
+        "Megosztotta: "
+      ],
+      "Shared by ${ sharedBy }": [
+        "Megosztotta: ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Megosztotta: Ön"
+      ],
       "Shared link not found": [
         "A megosztott hivatkozás nem található"
       ],
       "Shared with me": [
         "Velem megosztva"
+      ],
+      "Shared with you": [
+        "Megosztva önnel"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Az aláírás hálózati hiba miatt nem ellenőrizhető. Próbája újra később."
@@ -6073,18 +6148,12 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Nem kerül felszámításra, ha ${ trialEndsOnFormatted } előtt lemondja."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel."
-      ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Ön most készül visszautasítani a ${ invitationName }albumhoz való csatlakozásra szóló meghívást. Ha folytatja, nem fog tudni hozzáférni, hacsak a tulajdonos nem hívja meg újra. Biztos, hogy folytatni szeretné?"
-      ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "A ${ invitationName } mappához való csatlakozásra vonatkozó meghívást készül elutasítani. Ha folytatja, nem fog tudni hozzáférni, hacsak a tulajdonos nem hívja meg újra. Biztos, hogy folytatni szeretné?"
-      ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "A ${ invitationName } elemhez való csatlakozásra szóló meghívást készül elutasítani. Ha folytatja, nem fog tudni hozzáférni, hacsak a tulajdonos nem hívja meg újra. Biztos benne, hogy folytatni szeretné?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Elérte a névjegy csoport(ok)ban lehetséges címek maximális számát:"
@@ -6137,6 +6206,12 @@
       "Your files will be encrypted and then saved.": [
         "A fájlok titkosításra majd pedig feltöltésre kerülnek."
       ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Az ingyenes próbaidőszaka sikeresen átalakult ${ cycle } hónapos előfizetéssé. A megújítás dátuma: ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Az ingyenes próbaidőszaka sikeresen átalakult havi előfizetéssé. A megújítás dátuma: ${ nextBillingDate }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Az ön információja meg lett találva ezen a napon: ${ displayedDate }"
       ],
@@ -6188,6 +6263,15 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Az előfizetése automatikusan megújul ${ renewalTime } időpontban."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Próbaideje ${ timeRemaining } múlva véget ér."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Hozzáférése a következőhöz: ${ boldPlanTitle } megszűnik ekkor: ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
       ]
     },
     "info": {
@@ -6276,6 +6360,9 @@
       "# of downloads": [
         "Letöltések száma"
       ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } a ${ albumProgress.total } tárhelyből"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } felhasználónév"
       ],
@@ -6314,6 +6401,9 @@
       ],
       "Address": [
         "Cím"
+      ],
+      "Alias title": [
+        "E-mail álnév cím"
       ],
       "All": [
         "Mind"
@@ -6735,6 +6825,9 @@
       ],
       "Set recovery method": [
         "Helyreállítási módszer beállítása"
+      ],
+      "Share a file, folder, or album": [
+        "Fájl, mappa vagy album megosztása"
       ],
       "Shared": [
         "Megosztva"
@@ -7944,6 +8037,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
       ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB felhőalapú tárhely, amellyel könnyedén tárolhat, szinkronizálhat és oszthat meg fájlokat. Végponttól végpontig tartó titkosítással védett."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Fejlett hálózati biztonság és hozzáférés-kezelés dedikált biztonságos átjárókkal"
       ],
@@ -8323,7 +8419,8 @@
       "Require 2FA": [
         "Kétlépcsős hitelesítés megkövetelése"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "${ n } saját e-mail domain név használata",
         "${ n } saját e-mail domain név használata"
       ]
     },
@@ -8429,6 +8526,9 @@
       "Access for the member removed": [
         "A tag hozzáférése eltávolítva"
       ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Hozzáférhet új albumainkhoz, szűrőinkhez és még sok máshoz a zárolt kötetén végrehajtott művelettel. Állítsa helyre vagy törölje azt most, hogy azonnal élvezhesse ezeket az új funkciókat."
+      ],
       "Access updated": [
         "Hozzáférés frissítve"
       ],
@@ -8446,6 +8546,9 @@
       ],
       "An invitation has been sent": [
         "Egy meghívás el küldve"
+      ],
+      "Cannot load file or folder info": [
+        "Nem lehet betölteni a fájl vagy mappa adatait"
       ],
       "Cannot load link": [
         "A hivatkozást betöltése nem sikerült"
@@ -8559,6 +8662,12 @@
       "Share invitation declined": [
         "Megosztási meghívás elutasítva"
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Néhány fényképet nem sikerült hozzáadni a(z) „${ albumName }” albumhoz"
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Néhány fotót nem sikerült eltávolítani innen: ${ albumLink.name }"
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "A mappát nem lehet törölni, mert nem üres",
         "A mappát nem lehet törölni, mert nem üres"
@@ -8606,6 +8715,9 @@
       ],
       "Your photo(s) have been added to \"${ albumName }\"": [
         "A fénykép hozzá lett adva a(z) „${ albumName }” albumhoz"
+      ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "A fénykép el lett távolítva innen: ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Beállításainak mentése nem sikerült"
@@ -8749,10 +8861,10 @@
       "Invite members": [
         "Tagok meghívása"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Talán később"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Talán később"
       ],
       "Select theme": [
@@ -8875,6 +8987,35 @@
         "Együttműködés"
       ]
     },
+    "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Addig bármikor lemondhatja."
+      ],
+      "contact our support team": [
+        "lépjen kapcsolatba támogatási csapatunkkal"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Élvezze az ingyenes üzleti biztonsági funkciókat ${ trialEndsOnFormatted }-ig."
+      ],
+      "help center": [
+        "súgóközpont"
+      ],
+      "Once your full subscription starts...": [
+        "Miután elindul a teljes előfizetése..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "30 napon belül még mindig lemondhatja a szerződést, és időarányos visszatérítést kaphat."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "30 napon belül még mindig lemondhatja a szerződést, és időarányos visszatérítést kaphat."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Használhatja a ${ planTitle } csomagot, amíg a próbaverzió le nem jár, és nem számítunk fel díjat."
+      ],
+      "Your free trial has started": [
+        "Az ön ingyenes próbaidőszaka elkezdődött"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Hozzáadás meglévő csoporthoz"
@@ -8906,6 +9047,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Minden ${ BRAND_NAME } alkalmazás és prémium funkciók használata"
+      ],
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
       ],
@@ -9983,7 +10127,7 @@
         "${ n } VPN kapcsolat felhasználónként",
         "${ n } VPN kapcsolat felhasználónként"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "VPN kapcsolat felhasználónként ${ n } eszközre",
         "VPN kapcsolat felhasználónként ${ n } eszközre"
       ]
@@ -10024,47 +10168,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } áron"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Short @pm.me email address": [
-        "Rövid @pm.me e-mail cím"
-      ],
-      "Support our mission": [
-        "Támogassa küldetésünket"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade your productivity": [
-        "Növelje a termelékenységét"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ],
-      "Your privacy is our mission": [
-        "Az Ön adatvédelme a mi küldetésünk"
       ]
     },
     "Subscription reminder": {
@@ -10327,6 +10430,47 @@
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Segítsen, hogy az internet mindenki számára biztonságos és privát maradhasson. Váltson előfizetéses csomagra."
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Short @pm.me email address": [
+        "Rövid @pm.me e-mail cím"
+      ],
+      "Support our mission": [
+        "Támogassa küldetésünket"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade your productivity": [
+        "Növelje a termelékenységét"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ],
+      "Your privacy is our mission": [
+        "Az Ön adatvédelme a mi küldetésünk"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Biztos benne?"
@@ -10364,6 +10508,9 @@
       ],
       "Albums you've shared will appear here": [
         "Az Ön által megosztott albumok itt fognak megjelenni"
+      ],
+      "Securely share your favorite moments with friends and family using Albums.": [
+        "Az albumok segítségével biztonságosan megoszthatja kedvenc pillanatait barátaival és családjával."
       ],
       "Your favorited photos will appear here": [
         "A kedvenc fényképei itt fognak megjelenni"
@@ -10615,6 +10762,24 @@
       ],
       "Videos": [
         "Videók"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } nap",
+        "${ ceilDays } nap"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } óra",
+        "${ ceilHours } óra"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } perc",
+        "${ ceilMinutes } perc"
+      ],
+      "${ seconds } second": [
+        "${ seconds } másodperc",
+        "${ seconds } másodperc"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -11181,6 +11346,9 @@
       "Phone numbers": [
         "Telefonszámok"
       ],
+      "Photo albums are here!": [
+        "Fotóalbumok már elérhetők!"
+      ],
       "Photos": [
         "Fényképek"
       ],
@@ -11332,6 +11500,9 @@
       "Stop transfers?": [
         "Le- és feltöltések leállítása?"
       ],
+      "Subscription canceled": [
+        "Előfizetés lemondva"
+      ],
       "Summary": [
         "Összegzés"
       ],
@@ -11451,6 +11622,10 @@
       ],
       "Your exposed information": [
         "Az ön kiszivárgott információi"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Az ingyenes próbaverziója ${ trialDurationFormatted } nap múlva ér véget.",
+        "Az ingyenes próbaverziója ${ trialDurationFormatted } nap múlva ér véget."
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"
