@@ -873,9 +873,6 @@
       "View": [
         "ნახვა"
       ],
-      "View all ${ pendingCount } invitations": [
-        "ყველა ${ pendingCount } მოსაწვევის ნახვა"
-      ],
       "View all reports": [
         "ყველა ანგარიშის ნახვა"
       ],
@@ -1934,9 +1931,6 @@
       "Macao": [
         "მაკაო"
       ],
-      "Macedonia": [
-        "მაკედონია"
-      ],
       "Madagascar": [
         "მადაგასკარი"
       ],
@@ -2448,8 +2442,8 @@
       "To start, give your organization a name.": [
         "დასაწყებად, მიანიჭეთ თქვენს ორგანიზაიას სახელი."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } ${ planName }-ზე, რომ შეინარჩუნოთ გაზიარებული ფაილები ჩასწორების წვდომით"
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "ასწიეთ სატარიფო გეგმა ${ planName } -ზე, რომ შეინარჩუნოთ გაზიარებული ფაილები ჩასწორების წვდომით"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "გადაათრიეთ და ისე დაალაგეთ პრიორიტეტები კონტაქტებს შორის. ნუ შემოიტანთ კონტაქტებს, რომლის შერწყმაც არ გსურთ."
@@ -2659,8 +2653,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "\"${ name }\" უკვე არსებობს"
+      "\"${ sanitizedName }\" already exists": [
+        "\"${ sanitizedName }\" უკვე არსებობს"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } თქვენს გარე ანგარიშს ვერ დაუკავშირდა"
@@ -2789,6 +2783,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "გარე მოწვევები დროებით გამორთულია. მოგვიანებით სცადეთ"
+      ],
+      "Failed to copy photo to album": [
+        "სურათის ალბომში კოპირება ჩავარდა"
       ],
       "Failed to rename document. Please try again later.": [
         "დოკუმენტის სახელის გადარქმევა ჩავარდა. მოგვიანებით სცადეთ."
@@ -4171,6 +4168,9 @@
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
+      "Available": [
+        "ხელმისაწვდომია"
+      ],
       "Awaiting transaction": [
         "ტრანზაქციის მოლოდინი"
       ],
@@ -4191,6 +4191,9 @@
       ],
       "Calendar side panel": [
         "კალენდრის გვერდითი პანელი"
+      ],
+      "Cannot load link": [
+        "ბმულის ჩატვირთვის შეცდომა"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "ვერ იხსენებთ პაროლს? ჩვენ შეგვიძლია, მოგაშოროთ ამ გასაღებით დაშიფრული ყველა მონაცემი და, ამავე დროს, გაფრთხილებაც მოგაშოროთ."
@@ -4394,9 +4397,6 @@
       ],
       "Error converting document: ${ errorMessage }": [
         "დოკუმენტის გადაყვანის შეცდომა: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "დოკუმენტის ჩატვირთვის შეცდომა. ${ errorDetail }"
       ],
       "Error Syncing": [
         "სინქრონიზაციის შეცდომა"
@@ -4640,6 +4640,9 @@
       "New": [
         "ახალი"
       ],
+      "No": [
+        "არა"
+      ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
       ],
@@ -4741,6 +4744,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME ავტომატურად აგზავნის შეტყობინებას, რედაქტორის მიმდინარე რეჟიმის გამოყენებით."
+      ],
+      "Photos": [
+        "ფოტოები"
       ],
       "Please authenticate your card in the verification tab.": [
         "გთხოვთ, დაადასტუროთ თქვენი ბარათი გადამოწმების ჩანართში."
@@ -4890,6 +4896,9 @@
       ],
       "Shared on": [
         "გაზიარებულია"
+      ],
+      "Shared with me": [
+        "ჩემთვის გაზიარებული"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "ხელმოწერა ვერ დადასტურდება ქსელის შეცდომის გამო, გთხოვთ, სცადეთ მოგვიანებით."
@@ -5183,6 +5192,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "როცა მიუერთდებით VPN-ს, ის იყენებს დაშიფვრის ტექნოლოგიებს, რომ თქვენი IP მისამართი (თქვენი მოწყობილობისთვის მინიჭებული ნიკალური კოდი) დამალოს."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
+      ],
       "words": [
         "სიტყვა"
       ],
@@ -5194,6 +5206,9 @@
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
+      ],
+      "Yes": [
+        "დიახ"
       ],
       "you": [
         "თქვენ"
@@ -5280,6 +5295,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }.",
@@ -5381,6 +5399,12 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "თქვენი გამოწერის ავტომატური განახლების თარიღი: ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "თქვენი გამოსაცდელი პერიოდის დასრულების დროა: ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
       ]
     },
     "info": {
@@ -5670,6 +5694,9 @@
       ],
       "First name": [
         "სახელი"
+      ],
+      "Folder": [
+        "საქაღალდე"
       ],
       "Folder location": [
         "საქაღალდის მდებარეობა"
@@ -7349,7 +7376,8 @@
       "Require 2FA": [
         "2FA-ის მოთხოვნა"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "${ n } მომხმარებლის დომენის მხარდაჭერა",
         "${ n } მომხმარებლის დომენის მხარდაჭერა"
       ]
     },
@@ -7701,6 +7729,35 @@
         "საცავი"
       ]
     },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " დაუკავშირდით ჩვენს ${ helpCenterLink }-ს, ან ${ contactSupportLink }-ს."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "გააუქმეთ ნებისმიერ დროს ${ cancelDate }-მდე."
+      ],
+      "Cancel anytime before then.": [
+        "გააუქმეთ იქამდე ნებისმიერ დროს."
+      ],
+      "contact our support team": [
+        "დაუკავშირდით ჩვენს მხარდაჭერის გუნდს"
+      ],
+      "Continue": [
+        "გაგრძელება"
+      ],
+      "help center": [
+        "დახმარების ცენტრი"
+      ],
+      "If you need help,": [
+        "თუ დახმარება გჭირდებათ,"
+      ],
+      "Once your full subscription starts...": [
+        "როცა თქვენი სრული გამოწერა დაიწყება..."
+      ],
+      "Your free trial has started": [
+        "თქვენი გამოსაცდელი პერიოდი დაიწყო"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "არსებულ ჯგუფში ჩამატება"
@@ -7746,6 +7803,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "წვდომა ყველა ${ BRAND_NAME }-ის აპთან და ფასიან ფუნქციასთან"
+      ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
       ],
@@ -8841,7 +8901,7 @@
         "${ n } VPN კავშირი თითოეული მომხმარებლისთვის",
         "${ n } VPN კავშირი თითოეული მომხმარებლისთვის"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის",
         "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის"
       ]
@@ -9207,6 +9267,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "გადმოწერების #"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } ელფოსტის მისამართი",
         "${ emailsCount } ელფოსტის მისამართი"
@@ -9238,6 +9301,9 @@
       ],
       "Addresses": [
         "მისამართები"
+      ],
+      "Album details": [
+        "ალბომის დეტალები"
       ],
       "All settings": [
         "ყველა პარამეტრი"
@@ -9472,6 +9538,12 @@
       "Exporting contacts": [
         "კონტაქტების გატანა"
       ],
+      "File details": [
+        "ფაილის დეტალები"
+      ],
+      "Folder details": [
+        "საქაღალდის დეტალები"
+      ],
       "Get more from your VPN": [
         "მიიღეთ მეტი თქვენი VPN-სგან"
       ],
@@ -9524,11 +9596,20 @@
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
       ],
+      "Item details": [
+        "ელემენტის დეტალები"
+      ],
+      "Last edited by": [
+        "ბოლო ჩასწორების ავტორი"
+      ],
       "Limited availability": [
         "შეზღუდული წვდომადობა"
       ],
       "Link confirmation": [
         "ბმულის დადასტურება"
+      ],
+      "Location": [
+        "მდებარეობა"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "ასლის შექმნა თქვენს ${ DRIVE_APP_NAME }-ზე"
@@ -9545,14 +9626,23 @@
       "Merging contacts": [
         "კონტაქტების შერწყმა"
       ],
+      "MIME type": [
+        "MIME ტიპი"
+      ],
       "Minicalendar": [
         "მინიკალენდარი"
       ],
       "Mobile": [
         "მობილური"
       ],
+      "Modified": [
+        "შეცვლილია"
+      ],
       "My files": [
         "ჩემი ფაილები"
+      ],
+      "Name": [
+        "სახელი"
       ],
       "Need more aliases?": [
         "მეტი ფსევდონიმი გჭირდებათ?"
@@ -9587,6 +9677,9 @@
       "Organization setup": [
         "ორგანიზაციის მორგება"
       ],
+      "Original size": [
+        "საწყისი ზომა"
+      ],
       "Other information": [
         "სხვა ინფორმაცია"
       ],
@@ -9616,6 +9709,9 @@
       ],
       "Processing...": [
         "დამუშავება..."
+      ],
+      "Public shared link status": [
+        "საჯარო გაზიარებული ბმულის სტატუსი"
       ],
       "Re-sign all contacts": [
         "ყველა კონტაქტის თავიდან ხელმოწერა"
@@ -9683,6 +9779,9 @@
       "Share your calendar with your team": [
         "გაუზიარეთ თქვენი კალენდარი თქვენს გუნდს"
       ],
+      "Shared": [
+        "გაზიარებული"
+      ],
       "Sign in and grant access": [
         "შესვლა და წვდომის მინიჭება"
       ],
@@ -9694,6 +9793,9 @@
       ],
       "Simplify password management": [
         "პაროლების მართვის გამარტივება"
+      ],
+      "Size": [
+        "ზომა"
       ],
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
@@ -9728,6 +9830,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
       ],
+      "Type": [
+        "ტიპი"
+      ],
       "Untitled document ${ date }": [
         "უსათაურო დოკუმენტი ${ date }"
       ],
@@ -9739,6 +9844,12 @@
       ],
       "Upload and share files": [
         "ფაილების ატვირთვა და გაზიარება"
+      ],
+      "Uploaded": [
+        "ატვირთულია"
+      ],
+      "Uploaded by": [
+        "ატვირთული ფაილის მფლობელი"
       ],
       "Uploading a large file or folder": [
         "დიდი ფაილის ან საქაღალდის ატვირთვა"
@@ -9754,6 +9865,9 @@
       ],
       "Verifying your payment...": [
         "თქვენი გადახდის გადამოწმება..."
+      ],
+      "Version details": [
+        "ვერსიის დეტალები"
       ],
       "VPN explained": [
         "VPN-ის ახსნა"
@@ -9799,6 +9913,10 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში",
+        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში"
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"

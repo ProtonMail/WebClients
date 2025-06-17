@@ -211,6 +211,9 @@
       "Copy address": [
         "Kopioi osoite"
       ],
+      "Copy alias “${ name }”": [
+        "Kopioi alias \"${ name }\""
+      ],
       "Copy email to clipboard": [
         "Kopioi sähköpostiosoite leikepöydälle"
       ],
@@ -423,6 +426,9 @@
       "Import contacts": [
         "Tuo yhteystiedot"
       ],
+      "Import data": [
+        "Tuo tietoja"
+      ],
       "Import emails": [
         "Tuo viestit"
       ],
@@ -443,6 +449,9 @@
       ],
       "Keep my subscription": [
         "Pidä tilaukseni"
+      ],
+      "Keep subscription": [
+        "Pidä tilaus"
       ],
       "Learn more": [
         "Lue lisää"
@@ -606,6 +615,9 @@
       "Remove button": [
         "Poista-painike"
       ],
+      "Remove file": [
+        "Poista tiedosto"
+      ],
       "Remove gift code": [
         "Poista lahjakoodi"
       ],
@@ -725,6 +737,9 @@
       ],
       "Show more": [
         "Näytä lisää"
+      ],
+      "Show more benefits": [
+        "Näytä enemmän etuja"
       ],
       "Show options": [
         "Näytä valinnat"
@@ -849,9 +864,6 @@
       "View": [
         "Tarkastele"
       ],
-      "View all ${ pendingCount } invitations": [
-        "Näytä kaikki ${ pendingCount } kutsua"
-      ],
       "View all reports": [
         "Näytä kaikki raportit"
       ],
@@ -931,6 +943,73 @@
       ],
       "By leaving now, some events may not be imported": [
         "Jos poistut nyt, kaikkia tapahtumia ei välttämättä tuoda"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "200 GB storage": [
+        "200 Gt tallennustilaa"
+      ],
+      "500 GB encrypted storage": [
+        "500 Gt salattua tallennustilaa"
+      ],
+      "Add unlimited credit cards": [
+        "Lisää rajattomasti maksukortteja"
+      ],
+      "Block ads, trackers, and malware": [
+        "Estä mainoksia, seurantoja ja haittaohjelmia"
+      ],
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
+      ],
+      "High speed streaming with VPN": [
+        "Nopea suoratoisto VPN:llä"
+      ],
+      "Protect up to 10 devices": [
+        "Suojaa jopa 10 laitetta"
+      ],
+      "Select any server": [
+        "Valitse mikä tahansa palvelin"
+      ],
+      "Share passwords easily": [
+        "Jaa salasanoja helposti"
+      ],
+      "Short @pm.me address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Stream your favorite content": [
+        "Suoratoista suosikkisisältöäsi"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Use your own email domain": [
+        "Käytä omaa sähköpostiverkkotunnusta"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
+      "12 months": [
+        "12 kuukautta"
+      ],
+      "15 months": [
+        "15 kuukautta"
+      ],
+      "24 months": [
+        "24 kuukautta"
+      ],
+      "30 months": [
+        "30 kuukautta"
       ]
     },
     "Apps dropdown": {
@@ -1910,9 +1989,6 @@
       "Macao": [
         "Macao"
       ],
-      "Macedonia": [
-        "Pohjois-Makedonia"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2635,8 +2711,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "\"${ name }\" on jo olemassa"
+      "\"${ sanitizedName }\" already exists": [
+        "\"${ sanitizedName }\" on jo olemassa"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } ei voi yhdistää ulkoiseen tiliisi"
@@ -2768,6 +2844,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Ulkoiset kutsut on tilapäisesti poistettu käytöstä. Yritä myöhemmin uudelleen."
+      ],
+      "Failed to copy photo to album": [
+        "Kuvan kopiointi albumiin epäonnistui"
       ],
       "Failed to rename document. Please try again later.": [
         "Dokumentin uudelleennimeäminen epäonnistui. Yritä uudelleen."
@@ -4152,6 +4231,9 @@
       "Attention required": [
         "Huomiota vaaditaan"
       ],
+      "Available": [
+        "Käytettävissä"
+      ],
       "Awaiting transaction": [
         "Odotetaan siirtoa"
       ],
@@ -4172,6 +4254,9 @@
       ],
       "Calendar side panel": [
         "Calendar-sivupaneeli"
+      ],
+      "Cannot load link": [
+        "Linkin lataus epäonnistui"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
@@ -4375,9 +4460,6 @@
       ],
       "Error converting document: ${ errorMessage }": [
         "Virhe muunnettaessa dokumenttia: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Virhe ladattaessa dokumenttia: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Synkronointivirhe"
@@ -4624,6 +4706,9 @@
       "New": [
         "Uusi"
       ],
+      "No": [
+        "Ei"
+      ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
       ],
@@ -4722,6 +4807,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME lähettää viestin automaattisesti käyttäen nykyistä kirjoitustilaa."
+      ],
+      "Photos": [
+        "Kuvat"
       ],
       "Please authenticate your card in the verification tab.": [
         "Vahvista korttisi vahvistusvälilehdellä."
@@ -4871,6 +4959,9 @@
       ],
       "Shared on": [
         "Jaettu"
+      ],
+      "Shared with me": [
+        "Jaettu minulle"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Allekirjoitusta ei voida verkkovirheen vuoksi vahvistaa. Yritä myöhemmin uudelleen."
@@ -5193,6 +5284,9 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ],
+      "Yes": [
+        "Kyllä"
       ],
       "you": [
         "sinä"
@@ -5672,6 +5766,9 @@
       ],
       "First name": [
         "Etunimi"
+      ],
+      "Folder": [
+        "Kansio"
       ],
       "Folder location": [
         "Kansion sijainti"
@@ -7353,9 +7450,6 @@
       ],
       "Require 2FA": [
         "2FA-pakotus"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
       ]
     },
     "Notification": {
@@ -7698,6 +7792,11 @@
       ],
       "Storage": [
         "Tallennustila"
+      ]
+    },
+    "Onboarding Trial": {
+      "Continue": [
+        "Jatka"
       ]
     },
     "Option": {
@@ -8837,10 +8936,6 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-yhteys/käyttäjä",
         "${ n } VPN-yhteyttä/käyttäjä"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "VPN-yhteys ${ n } laitteelle samanaikaisesti",
-        "VPN-yhteys ${ n } laitteelle samanaikaisesti"
       ]
     },
     "Subscription change warning": {
@@ -9204,6 +9299,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "Latausmäärä"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } sähköpostiosoite",
         "${ emailsCount } sähköpostiosoitetta"
@@ -9235,6 +9333,9 @@
       ],
       "Addresses": [
         "Osoitteet"
+      ],
+      "Album details": [
+        "Albumin tiedot"
       ],
       "All settings": [
         "Kaikki asetukset"
@@ -9469,6 +9570,12 @@
       "Exporting contacts": [
         "Yhteystietoja viedään"
       ],
+      "File details": [
+        "Tiedoston tiedot"
+      ],
+      "Folder details": [
+        "Kansion tiedot"
+      ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
       ],
@@ -9521,11 +9628,20 @@
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
       ],
+      "Item details": [
+        "Kohteen tiedot"
+      ],
+      "Last edited by": [
+        "Viimeksi muokannut"
+      ],
       "Limited availability": [
         "Rajoitettu saatavuus"
       ],
       "Link confirmation": [
         "Linkin vahvistus"
+      ],
+      "Location": [
+        "Sijainti"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Luo kopio ${ DRIVE_APP_NAME }esi"
@@ -9542,14 +9658,23 @@
       "Merging contacts": [
         "Yhdistetään yhteystietoja"
       ],
+      "MIME type": [
+        "MIME-tyyppi"
+      ],
       "Minicalendar": [
         "Pienoiskalenteri"
       ],
       "Mobile": [
         "Mobiili"
       ],
+      "Modified": [
+        "Muokattu"
+      ],
       "My files": [
         "Omat tiedostot"
+      ],
+      "Name": [
+        "Nimi"
       ],
       "Need more aliases?": [
         "Tarvitsetko lisää aliaksia?"
@@ -9581,6 +9706,9 @@
       "Organization setup": [
         "Organisaation määritys"
       ],
+      "Original size": [
+        "Alkuperäinen koko"
+      ],
       "Other information": [
         "Muut tiedot"
       ],
@@ -9610,6 +9738,9 @@
       ],
       "Processing...": [
         "Käsitellään..."
+      ],
+      "Public shared link status": [
+        "Julkisen jakolinkin tila"
       ],
       "Re-sign all contacts": [
         "Allekirjoita kaikki yhteystiedot uudelleen"
@@ -9677,6 +9808,9 @@
       "Share your calendar with your team": [
         "Jaa kalenterisi tiimillesi"
       ],
+      "Shared": [
+        "Jaettu"
+      ],
       "Sign in and grant access": [
         "Kirjaudu ja myönnä käyttöoikeus"
       ],
@@ -9688,6 +9822,9 @@
       ],
       "Simplify password management": [
         "Yksinkertaista salasanahallintaa"
+      ],
+      "Size": [
+        "Koko"
       ],
       "Something went wrong": [
         "Jotain meni pieleen"
@@ -9719,6 +9856,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
       ],
+      "Type": [
+        "Tyyppi"
+      ],
       "Untitled document ${ date }": [
         "Nimetön dokumentti ${ date }"
       ],
@@ -9727,6 +9867,12 @@
       ],
       "Upload and share files": [
         "Lähetä ja jaa tiedostoja"
+      ],
+      "Uploaded": [
+        "Tallennettu"
+      ],
+      "Uploaded by": [
+        "Tallentanut"
       ],
       "Uploading a large file or folder": [
         "Suuren tiedoston tai kansion tallennus"
@@ -9742,6 +9888,9 @@
       ],
       "Verifying your payment...": [
         "Vahvistetaan maksua..."
+      ],
+      "Version details": [
+        "Versiotiedot"
       ],
       "VPN explained": [
         "VPN selitetty"

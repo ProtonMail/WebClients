@@ -873,8 +873,9 @@
       "View": [
         "Bekijken"
       ],
-      "View all ${ pendingCount } invitations": [
-        "Bekijk alle ${ pendingCount } uitnodigingen"
+      "View ${ pendingCount } invitation": [
+        "Bekijk ${ pendingCount } uitnodiging",
+        "Bekijk ${ pendingCount } uitnodigingen"
       ],
       "View all reports": [
         "Bekijk alle rapporten"
@@ -955,6 +956,138 @@
       ],
       "By leaving now, some events may not be imported": [
         "Door nu te verlaten, worden sommige afspraken mogelijk niet geïmporteerd"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Pak deze deal"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "200 GB storage": [
+        "200 GB opslagruimte"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB versleutelde opslagruimte"
+      ],
+      "Add unlimited credit cards": [
+        "Onbeperkt aantal kredietkaarten toevoegen"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle premium functies van ${ BRAND_NAME } Mail, Pass, VPN, Drive, en Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkeer advertenties, trackers en malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijs. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Verdubbel uw versleutelde opslag – krijg 1 TB voor al uw gegevens"
+      ],
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordbeheerder"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Hier is een exclusief geschenk om onze reis samen te vieren."
+      ],
+      "High speed streaming with VPN": [
+        "Streamen aan hoge snelheid met VPN"
+      ],
+      "of privacy": [
+        "van privacy"
+      ],
+      "Online document editor": [
+        "Online document editor"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online privacy voor maximaal 2 personen"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online privacy voor het hele gezin (tot 6 gebruikers)"
+      ],
+      "Protect up to 10 devices": [
+        "Bescherm tot 10 apparaten"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Bespaar veel op premium Drive functies met een tijdelijke korting."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Bespaar veel op premium Mail functies met een tijdelijke korting."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Bespaar veel op premium Pass functies met een tijdelijke korting."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Bespaar veel op premium VPN functies met een tijdelijke korting."
+      ],
+      "Save time with built-in 2FA": [
+        "Bespaar tijd met ingebouwde 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Beveiligde e-mail met onbeperkt aantal aliassen"
+      ],
+      "Select any server": [
+        "Selecteer een server"
+      ],
+      "Share passwords easily": [
+        "Eenvoudig wachtwoorden delen"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me adres"
+      ],
+      "Stream your favorite content": [
+        "Stream uw favoriete inhoud"
+      ],
+      "thanks to you": [
+        "dankzij u"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Verdrievoudig uw versleutelde opslag – krijg 3 TB voor al uw gegevens"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ],
+      "years": [
+        "jaren"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumaanbieding"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "/ month": [
+        "/ maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "15 months": [
+        "15 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
+      ],
+      "30 months": [
+        "30 maanden"
+      ],
+      "for ${ durationDeal }": [
+        "voor ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -1942,9 +2075,6 @@
       "Macao": [
         "Macau"
       ],
-      "Macedonia": [
-        "Noord-Macedonië"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2468,8 +2598,8 @@
       "To start, give your organization a name.": [
         "Geef uw organisatie een naam om te beginnen."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Upgrade naar ${ BRAND_NAME } ${ planName } om bestanden te blijven delen met bewerkingstoegang"
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Upgrade naar ${ planName } om bestanden te blijven delen met bewerkingsrechten"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wilt samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
@@ -2682,8 +2812,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "\"${ name }\" bestaat reeds"
+      "\"${ sanitizedName }\" already exists": [
+        "\"${ sanitizedName }\" bestaat al"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } kan geen verbinding maken met uw externe account"
@@ -2815,6 +2945,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Externe uitnodigingen zijn tijdelijk uitgeschakeld. Probeer het later opnieuw"
+      ],
+      "Failed to copy photo to album": [
+        "Kopiëren van foto naar album is mislukt."
       ],
       "Failed to rename document. Please try again later.": [
         "Hernoemen van document mislukt. Probeer het later opnieuw."
@@ -4221,6 +4354,9 @@
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Available": [
+        "Beschikbaar"
+      ],
       "Awaiting transaction": [
         "Transactie wordt afgewacht"
       ],
@@ -4241,6 +4377,9 @@
       ],
       "Calendar side panel": [
         "Agenda zijpaneel"
+      ],
+      "Cannot load link": [
+        "Kan koppeling niet laden"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -4445,8 +4584,8 @@
       "Error converting document: ${ errorMessage }": [
         "Fout bij het converteren van document: ${ errorMessage }"
       ],
-      "Error loading document${ errorDetail }": [
-        "Fout bij het laden van document${ errorDetail }"
+      "Error loading document: ${ errorDetail }": [
+        "Fout bij het laden van document: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Synchronisatiefout"
@@ -4699,6 +4838,9 @@
       "New": [
         "Nieuw"
       ],
+      "No": [
+        "Nee"
+      ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
       ],
@@ -4800,6 +4942,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME verzendt automatisch het bericht gebruikmakend van de huidige opstelmodus."
+      ],
+      "Photos": [
+        "Foto's"
       ],
       "Please authenticate your card in the verification tab.": [
         "Authenticeer uw kaart in het verificatietabblad."
@@ -4952,6 +5097,9 @@
       ],
       "Shared on": [
         "Gedeeld op"
+      ],
+      "Shared with me": [
+        "Gedeeld met mij"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
@@ -5283,6 +5431,9 @@
       ],
       "Writing assistant": [
         "Schrijfassistent"
+      ],
+      "Yes": [
+        "Ja"
       ],
       "you": [
         "u"
@@ -5786,6 +5937,9 @@
       ],
       "First name": [
         "Voornaam"
+      ],
+      "Folder": [
+        "Map"
       ],
       "Folder location": [
         "Map locatie"
@@ -7089,6 +7243,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd door end-to-end versleuteling."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
       ],
@@ -7148,9 +7308,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Veilig toegang krijgen tot internet vanaf elke locatie met essentiële netwerkmonitoring."
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
@@ -7471,7 +7628,8 @@
       "Require 2FA": [
         "2FA vereist"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "Ondersteuning voor ${ n } aangepast e-maildomein",
         "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
@@ -7576,6 +7734,9 @@
       ],
       "Access for the member removed": [
         "Toegang voor het lid verwijderd"
+      ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Krijg toegang tot onze nieuwe Albums, Filters en meer door actie te ondernemen op uw vergrendelde volume. Herstel of verwijder deze nu om onmiddellijk van deze nieuwe functies te genieten."
       ],
       "Access updated": [
         "Toegang bijgewerkt."
@@ -7824,14 +7985,44 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "U kunt op elk moment annuleren vóór ${ cancelDate }."
+      ],
       "Cancel anytime before then.": [
         "U kunt op elk moment ervoor annuleren."
+      ],
+      "contact our support team": [
+        "neem contact op met ons support team"
+      ],
+      "Continue": [
+        "Ga verder"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Profiteer tot ${ trialEndsOnFormatted } van gratis beveiligingsfuncties voor bedrijven."
+      ],
+      "help center": [
+        "helpcentrum"
+      ],
+      "If you need help,": [
+        "Als u hulp nodig heeft,"
       ],
       "Once your full subscription starts...": [
         "Zodra uw volledige abonnement ingaat..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Kunt u nog steeds annuleren binnen 30 dagen en evenredig terugbetaald krijgen."
+      ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "U kunt nog steeds annuleren binnen 30 dagen en een pro-rata restitutie krijgen."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "U kunt ${ planTitle } gebruiken totdat de proefversie eindigt en u wordt niets in rekening gebracht."
+      ],
+      "Your free trial has started": [
+        "Uw gratis proefversie is gestart"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Uw volledige ${ planTitle } abonnement begint op ${ boldEndDate }."
@@ -8054,6 +8245,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
         "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Deze betaalmethode wordt uw nieuwe standaard voor alle toekomstige verlengingen."
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
@@ -9028,9 +9222,9 @@
         "${ n } VPN-verbinding per gebruiker",
         "${ n } VPN-verbindingen per gebruiker"
       ],
-      "VPN connection for ${ n } devices per user": [
-        "VPN-verbinding voor ${ n } apparaat per gebruiker",
-        "VPN-verbinding voor ${ n } apparaten per gebruiker"
+      "VPN connection for ${ n } device per user": [
+        "VPN verbinding voor ${ n } apparaat per gebruiker",
+        "VPN verbinding voor ${ n } apparaten per gebruiker"
       ]
     },
     "Subscription change warning": {
@@ -9394,6 +9588,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "# downloads"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailadres",
         "${ emailsCount } e-mailadressen"
@@ -9425,6 +9622,9 @@
       ],
       "Addresses": [
         "Adressen"
+      ],
+      "Album details": [
+        "Album gegevens"
       ],
       "All settings": [
         "Alle instellingen"
@@ -9659,6 +9859,12 @@
       "Exporting contacts": [
         "Contacten worden geëxporteerd"
       ],
+      "File details": [
+        "Bestandsdetails"
+      ],
+      "Folder details": [
+        "Map details"
+      ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
       ],
@@ -9711,11 +9917,20 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "Item details": [
+        "Gegevens van item"
+      ],
+      "Last edited by": [
+        "Laatst bewerkt door"
+      ],
       "Limited availability": [
         "Beperkte beschikbaarheid"
       ],
       "Link confirmation": [
         "Link bevestigen"
+      ],
+      "Location": [
+        "Locatie"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Maak een kopie naar uw ${ DRIVE_APP_NAME }"
@@ -9732,14 +9947,23 @@
       "Merging contacts": [
         "Contacten worden samengevoegd"
       ],
+      "MIME type": [
+        "MIME-type"
+      ],
       "Minicalendar": [
         "Mini-agenda"
       ],
       "Mobile": [
         "Mobiel"
       ],
+      "Modified": [
+        "Gewijzigd"
+      ],
       "My files": [
         "Mijn bestanden"
+      ],
+      "Name": [
+        "Naam"
       ],
       "Need more aliases?": [
         "Meer aliassen nodig?"
@@ -9774,6 +9998,9 @@
       "Organization setup": [
         "Organisatie configuratie"
       ],
+      "Original size": [
+        "Originele grootte"
+      ],
       "Other information": [
         "Andere informatie"
       ],
@@ -9803,6 +10030,9 @@
       ],
       "Processing...": [
         "Wordt verwerkt..."
+      ],
+      "Public shared link status": [
+        "Status van openbare gedeelde link"
       ],
       "Re-sign all contacts": [
         "Alle contacten opnieuw ondertekenen"
@@ -9870,6 +10100,9 @@
       "Share your calendar with your team": [
         "Deel uw agenda met uw team"
       ],
+      "Shared": [
+        "Gedeeld"
+      ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
       ],
@@ -9881,6 +10114,9 @@
       ],
       "Simplify password management": [
         "Vereenvoudig wachtwoordbeheer"
+      ],
+      "Size": [
+        "Grootte"
       ],
       "Something went wrong": [
         "Er is iets fout gegaan."
@@ -9915,6 +10151,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"
       ],
+      "Type": [
+        "Soort"
+      ],
       "Untitled document ${ date }": [
         "Naamloos document ${ date }"
       ],
@@ -9926,6 +10165,12 @@
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"
+      ],
+      "Uploaded": [
+        "Geüpload"
+      ],
+      "Uploaded by": [
+        "Geüpload door"
       ],
       "Uploading a large file or folder": [
         "Groot bestand of map aan het uploaden"
@@ -9941,6 +10186,9 @@
       ],
       "Verifying your payment...": [
         "Uw betaling wordt geverifieerd..."
+      ],
+      "Version details": [
+        "Versiegegevens"
       ],
       "VPN explained": [
         "VPN uitgelegd"
@@ -9987,8 +10235,9 @@
       "Your exposed information": [
         "Uw blootgestelde informatie"
       ],
-      "Your free trial ends in ${ trialDurationFormatted } days": [
-        "Uw gratis proefversie eindigt op ${ trialDurationFormatted }."
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dag",
+        "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dagen"
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
