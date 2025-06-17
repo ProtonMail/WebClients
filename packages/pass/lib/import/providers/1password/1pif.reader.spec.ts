@@ -23,7 +23,7 @@ describe('Import 1password 1pif', () => {
 
     test('should correctly parse items', () => {
         const [vaultData] = payload.vaults;
-        expect(vaultData.items.length).toEqual(8);
+        expect(vaultData.items.length).toEqual(10);
 
         expect(payload.vaults.length).toEqual(1);
         expect(vaultData.name).not.toBeUndefined();
@@ -176,5 +176,56 @@ describe('Import 1password 1pif', () => {
         expect(creditCardItem.content.cardType).toEqual(CardType.Unspecified);
         expect(creditCardItem.content.cardholderName).toEqual('A B');
         expect(creditCardItem.content.expirationDate).toEqual('012025');
+
+        /* Wifi Item */
+        const wifiItem = items[8] as ItemImportIntent<'wifi'>;
+        expect(wifiItem.type).toEqual('wifi');
+        expect(wifiItem.metadata.name).toEqual('Wireless Router');
+        expect(wifiItem.metadata.itemUuid).not.toBeUndefined();
+        expect(deobfuscate(wifiItem.metadata.note)).toEqual('');
+        expect(wifiItem.content.ssid).toEqual('::network-name::');
+        expect(deobfuscate(wifiItem.content.password)).toEqual('::wireless-network-password::');
+        expect(wifiItem.content.security).toEqual(3);
+        expect(wifiItem.trashed).toEqual(false);
+        expect(deobfuscateExtraFields(wifiItem.extraFields)).toEqual([
+            { fieldName: 'base station name', type: 'text', data: { content: '::base-station-name::' } },
+            {
+                fieldName: 'base station password',
+                type: 'hidden',
+                data: { content: '::base-station-password::' },
+            },
+            { fieldName: 'server / IP address', type: 'text', data: { content: '::base-server-address::' } },
+            { fieldName: 'AirPort ID', type: 'text', data: { content: '::airport-id::' } },
+            {
+                fieldName: 'attached storage password',
+                type: 'hidden',
+                data: { content: '::attached-storage-password::' },
+            },
+            { fieldName: '::custom-field::', type: 'text', data: { content: '::custom-field-value::' } },
+        ]);
+
+        /* SSH Item */
+        const sshItem = items[9] as ItemImportIntent<'sshKey'>;
+        expect(sshItem.type).toEqual('sshKey');
+        expect(sshItem.metadata.name).toEqual('SSH Key');
+        expect(sshItem.metadata.itemUuid).not.toBeUndefined();
+        expect(deobfuscate(sshItem.metadata.note)).toEqual('');
+        expect(deobfuscate(sshItem.content.privateKey)).toEqual(
+            '-----BEGIN PRIVATE KEY-----\nMFECAQEwBQYDK2VwBCIEIJK3w0ZBB2SV1cZpcjgeV2TU8ztV8BKDmLRByxeq1bgM\ngSEANXqrXON2nRWHoOkcz+se8KrE0C1WRVSRh\/qr2ykY9i4=\n-----END PRIVATE KEY-----\n'
+        );
+        expect(sshItem.content.publicKey).toEqual(
+            'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDV6q1zjdp0Vh6DpHM/rHvCqxNAtVkVUkYf6q9spGPYu'
+        );
+        expect(sshItem.trashed).toEqual(false);
+        expect(deobfuscateExtraFields(sshItem.extraFields)).toEqual([
+            {
+                fieldName: 'fingerprint',
+                type: 'text',
+                data: { content: 'SHA256:hQ/sYuMApfA4SIP+UlLYVPtsxTBTQsxvAFZddf5QJ+M' },
+            },
+            { fieldName: 'key type', type: 'text', data: { content: 'Ed25519' } },
+            { fieldName: 'url', type: 'text', data: { content: 'asdsad.com' } },
+            { fieldName: 'text-field', type: 'text', data: { content: 'asdasd' } },
+        ]);
     });
 });
