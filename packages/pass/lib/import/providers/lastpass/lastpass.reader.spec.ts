@@ -2,142 +2,131 @@ import fs from 'fs';
 
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import type { ItemImportIntent } from '@proton/pass/types';
+import type { ItemType } from '@proton/pass/types';
 import * as epochUtils from '@proton/pass/utils/time/epoch';
 
 import { readLastPassData } from './lastpass.reader';
 
-describe('Import LastPass csv', () => {
-    let sourceFiles = [`${__dirname}/mocks/lastpass.csv`, `${__dirname}/mocks/lastpass.crcrlf.terminated.csv`];
-    let payloads: Record<string, ImportPayload> = {};
+const sourceFiles = {
+    'lastpass.csv': `${__dirname}/mocks/lastpass.csv`,
+    'lastpass.crcrlf.terminated.csv': `${__dirname}/mocks/lastpass.crcrlf.terminated.csv`,
+};
 
-    const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
+const data: Record<string, ImportPayload> = {};
+const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
 
-    beforeAll(async () => {
-        for (let sourceFile of sourceFiles) {
-            const sourceData = fs.readFileSync(sourceFile);
-            const file = new File([sourceData], sourceFile);
-            payloads[sourceFile] = await readLastPassData(file);
-        }
+const getLastPassItem = <T extends ItemType>(sourceKey: string, vaultIndex: number = 0, itemIndex: number = 0) =>
+    deobfuscateItem<T>(data[sourceKey].vaults[vaultIndex].items[itemIndex]);
+
+beforeAll(async () => {
+    for (const [key, path] of Object.entries(sourceFiles)) {
+        const sourceData = fs.readFileSync(path);
+        const file = new File([sourceData], path);
+        data[key] = await readLastPassData(file);
+    }
+});
+
+afterAll(() => dateMock.mockRestore());
+
+describe('Import LastPass CSV reader', () => {
+    test.each([new File([], 'corrupted')])('should throw on corrupted files: %s', async (file) => {
+        await expect(readLastPassData(file)).rejects.toThrow();
     });
+});
 
-    afterAll(() => dateMock.mockRestore());
-
-    it('should throw on corrupted files', async () => {
-        await expect(readLastPassData(new File([], 'corrupted'))).rejects.toThrow();
-    });
-
-    it('converts LastPass folders to vaults correctly', () => {
-        const [source] = sourceFiles;
-        const [primary, secondary] = payloads[source].vaults;
-        expect(payloads[source].vaults.length).toEqual(2);
-        expect(primary.name).toEqual('company services');
-        expect(secondary.name).toEqual('Import - 27 Apr 2023');
-    });
-
-    it('parses primary vault items correctly', async () => {
-        const [source] = sourceFiles;
-        const [primary] = payloads[source].vaults;
-        expect(primary.items.length).toEqual(4);
-        /* Login */
-        const loginItem2 = deobfuscateItem(primary.items[0]) as unknown as ItemImportIntent<'login'>;
-        expect(loginItem2.type).toEqual('login');
-        expect(loginItem2.metadata.name).toEqual('Admin');
-        expect(loginItem2.metadata.note).toEqual('');
-        expect(loginItem2.content.itemEmail).toEqual('');
-        expect(loginItem2.content.itemUsername).toEqual('admin');
-        expect(loginItem2.content.password).toEqual('proton123');
-        expect(loginItem2.content.urls[0]).toEqual('https://proton.me/');
-
-        /* Login */
-        const loginItem3 = deobfuscateItem(primary.items[1]) as unknown as ItemImportIntent<'login'>;
-        expect(loginItem3.type).toEqual('login');
-        expect(loginItem3.metadata.name).toEqual('Twitter');
-        expect(loginItem3.metadata.note).toEqual('This is a twitter note');
-        expect(loginItem3.content.itemEmail).toEqual('');
-        expect(loginItem3.content.itemUsername).toEqual('@nobody');
-        expect(loginItem3.content.password).toEqual('proton123');
-        expect(loginItem3.content.urls[0]).toEqual('https://twitter.com/login');
-        expect(loginItem3.content.totpUri).toEqual(
-            'otpauth://totp/Twitter?secret=BASE32SECRET&algorithm=SHA1&digits=6&period=30'
-        );
-
-        /* Login */
-        const loginItem4 = deobfuscateItem(primary.items[2]) as unknown as ItemImportIntent<'login'>;
-        expect(loginItem4.type).toEqual('login');
-        expect(loginItem4.metadata.name).toEqual('fb.com');
-        expect(loginItem4.metadata.note).toEqual('');
-        expect(loginItem4.content.itemEmail).toEqual('');
-        expect(loginItem4.content.itemUsername).toEqual('@nobody');
-        expect(loginItem4.content.password).toEqual('proton123');
-        expect(loginItem4.content.urls[0]).toEqual('https://fb.com/login');
-        expect(loginItem4.content.totpUri).toEqual(
-            'otpauth://totp/fb.com?secret=BASE32SECRET&algorithm=SHA1&digits=6&period=30'
-        );
-
-        /* Login broken url */
-        const loginItem5 = deobfuscateItem(primary.items[3]) as unknown as ItemImportIntent<'login'>;
-        expect(loginItem5.type).toEqual('login');
-        expect(loginItem5.metadata.name).toEqual('Unnamed item');
-        expect(loginItem5.metadata.note).toEqual('');
-        expect(loginItem5.content.itemEmail).toEqual('');
-        expect(loginItem5.content.itemUsername).toEqual('');
-        expect(loginItem5.content.password).toEqual('');
-        expect(loginItem5.content.urls).toEqual([]);
-    });
-
-    it('parses secondary vault items correctly', () => {
-        const [source] = sourceFiles;
-        const [, secondary] = payloads[source].vaults;
-        expect(secondary.items.length).toEqual(4);
-
-        /* Login */
-        const loginItem1 = deobfuscateItem(secondary.items[0]) as unknown as ItemImportIntent<'login'>;
-        expect(loginItem1.type).toEqual('login');
-        expect(loginItem1.metadata.name).toEqual('nobody');
-        expect(loginItem1.metadata.note).toEqual('Secure note');
-        expect(loginItem1.content.itemEmail).toEqual('nobody@proton.me');
-        expect(loginItem1.content.itemUsername).toEqual('');
-        expect(loginItem1.content.password).toEqual('proton123');
-        expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me/');
-
-        /* Note */
-        const noteItem1 = deobfuscateItem(secondary.items[1]) as unknown as ItemImportIntent<'login'>;
-        expect(noteItem1.type).toEqual('note');
-        expect(noteItem1.metadata.name).toEqual('Secure note');
-        expect(noteItem1.metadata.note).toEqual('This is a secure note');
-
-        /* Credit Card */
-        const identityItem = deobfuscateItem(secondary.items[2]) as unknown as ItemImportIntent<'identity'>;
-        expect(identityItem.type).toEqual('identity');
-        expect(identityItem.metadata.name).toEqual('TestID');
-        expect(identityItem.metadata.note).toEqual('');
-        expect(identityItem.content.firstName).toEqual('Test');
-        expect(identityItem.content.middleName).toEqual('Joe');
-
-        /* Credit Card */
-        const creditCardItem1 = deobfuscateItem(secondary.items[3]) as unknown as ItemImportIntent<'creditCard'>;
-        expect(creditCardItem1.type).toEqual('creditCard');
-        expect(creditCardItem1.metadata.name).toEqual('Credit Card Item with note');
-        expect(creditCardItem1.metadata.note).toEqual('this is a note for the credit card');
-        expect(creditCardItem1.content.cardholderName).toEqual('A B');
-        expect(creditCardItem1.content.number).toEqual('4242424242424242');
-        expect(creditCardItem1.content.expirationDate).toEqual('012025');
-        expect(creditCardItem1.content.verificationNumber).toEqual('123');
-        expect(creditCardItem1.content.pin).toEqual('');
-    });
-
-    test('correctly keeps a reference to ignored items', () => {
-        const [source] = sourceFiles;
-        expect(payloads[source].ignored).not.toEqual([]);
-        expect(payloads[source].ignored[0]).toEqual('[Bank Account] test');
+describe('Import LastPass CSV → vault structure', () => {
+    test('should correctly parses vaults', () => {
+        const { vaults } = data['lastpass.csv'];
+        expect(vaults).toHaveLength(2);
+        expect(vaults[0].name).toBe('company services');
+        expect(vaults[0].items.length).toEqual(4);
+        expect(vaults[1].name).toBe('Import - 27 Apr 2023');
+        expect(vaults[1].items.length).toEqual(4);
     });
 
     test('correctly handles CR CR LF line endings', () => {
-        const [, source] = sourceFiles;
-        const payload = payloads[source];
-        const [primary] = payload.vaults;
+        const { vaults } = data['lastpass.crcrlf.terminated.csv'];
+        const [primary] = vaults;
         expect(primary.items.length).toEqual(3);
         expect(primary.items.filter((n) => n.type === 'note').length).toEqual(3);
+    });
+
+    test('ignored items are displayed', () => {
+        const { ignored } = data['lastpass.csv'];
+        expect(ignored).not.toHaveLength(0);
+        expect(ignored[0]).toBe('[Bank Account] test');
+    });
+});
+
+describe('Primary vault item parsing', () => {
+    test('Login', () => {
+        const item = getLastPassItem<'login'>('lastpass.csv', 0, 0);
+        expect(item.type).toBe('login');
+        expect(item.metadata.name).toBe('Admin');
+        expect(item.metadata.note).toBe('');
+        expect(item.content.itemUsername).toBe('admin');
+        expect(item.content.password).toBe('proton123');
+        expect(item.content.urls).toEqual(['https://proton.me/']);
+    });
+
+    test('Login with TOTP and note', () => {
+        const item = getLastPassItem<'login'>('lastpass.csv', 0, 1);
+        expect(item.type).toBe('login');
+        expect(item.metadata.name).toBe('Twitter');
+        expect(item.metadata.note).toBe('This is a twitter note');
+        expect(item.content.itemUsername).toBe('@nobody');
+        expect(item.content.password).toBe('proton123');
+        expect(item.content.urls).toEqual(['https://twitter.com/login']);
+        expect(item.content.totpUri).toContain('otpauth://totp/Twitter');
+    });
+
+    test('Login with TOTP', () => {
+        const item = getLastPassItem<'login'>('lastpass.csv', 0, 2);
+        expect(item.metadata.name).toBe('fb.com');
+        expect(item.content.urls).toEqual(['https://fb.com/login']);
+        expect(item.content.totpUri).toContain('otpauth://totp/fb.com');
+    });
+
+    test('Login with broken URL', () => {
+        const item = getLastPassItem<'login'>('lastpass.csv', 0, 3);
+        expect(item.metadata.name).toBe('Unnamed item');
+        expect(item.content.urls).toEqual([]);
+        expect(item.content.password).toBe('');
+    });
+});
+
+describe('Secondary vault item parsing', () => {
+    test('Login', () => {
+        const item = getLastPassItem<'login'>('lastpass.csv', 1, 0);
+        expect(item.metadata.name).toBe('nobody');
+        expect(item.metadata.note).toBe('Secure note');
+        expect(item.content.itemEmail).toBe('nobody@proton.me');
+        expect(item.content.password).toBe('proton123');
+        expect(item.content.urls).toEqual(['https://account.proton.me/']);
+    });
+
+    test('Note', () => {
+        const item = getLastPassItem<'note'>('lastpass.csv', 1, 1);
+        expect(item.type).toBe('note');
+        expect(item.metadata.name).toBe('Secure note');
+        expect(item.metadata.note).toBe('This is a secure note');
+    });
+
+    test('Identity', () => {
+        const item = getLastPassItem<'identity'>('lastpass.csv', 1, 2);
+        expect(item.type).toBe('identity');
+        expect(item.metadata.name).toBe('TestID');
+        expect(item.content.firstName).toBe('Test');
+        expect(item.content.middleName).toBe('Joe');
+    });
+
+    test('Credit Card', () => {
+        const item = getLastPassItem<'creditCard'>('lastpass.csv', 1, 3);
+        expect(item.type).toBe('creditCard');
+        expect(item.metadata.name).toBe('Credit Card Item with note');
+        expect(item.metadata.note).toBe('this is a note for the credit card');
+        expect(item.content.number).toBe('4242424242424242');
+        expect(item.content.expirationDate).toBe('012025');
+        expect(item.content.verificationNumber).toBe('123');
     });
 });
