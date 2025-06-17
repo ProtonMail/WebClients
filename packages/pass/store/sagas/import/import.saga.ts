@@ -19,7 +19,7 @@ import {
 import type { WithSenderAction } from '@proton/pass/store/actions/enhancers/endpoint';
 import { matchCancel } from '@proton/pass/store/request/actions';
 import { createVaultWorker } from '@proton/pass/store/sagas/vaults/vault-creation.saga';
-import { selectFeatureFlag, selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
+import { selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type {
     IndexedByShareIdAndItemId,
@@ -29,7 +29,6 @@ import type {
     MaybeNull,
     PassPlanResponse,
 } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
@@ -94,10 +93,7 @@ function* importWorker(
 
     const passPlan: UserPassPlan = yield select(selectPassPlan);
     const userPlan: MaybeNull<PassPlanResponse> = yield select(selectUserPlan);
-    const fileAttachmentsEnabled: boolean = yield select(selectFeatureFlag(PassFeature.PassFileAttachments));
-
-    const canImportFiles =
-        fileAttachmentsEnabled && isPaidPlan(passPlan) && userPlan?.DisplayName !== 'Pass Essentials';
+    const canImportFiles = isPaidPlan(passPlan) && userPlan?.DisplayName !== 'Pass Essentials';
 
     Object.values(data.vaults).forEach(({ items }) =>
         items.forEach((item) => {

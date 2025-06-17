@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { FILE_CHUNK_SIZE, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pass/constants';
+import { FILE_CHUNK_SIZE, FILE_ENCRYPTION_VERSION, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pass/constants';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { sanitizeFileName } from '@proton/pass/lib/file-attachments/helpers';
@@ -16,8 +16,6 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { abortable, asyncQueue } from '@proton/pass/utils/fp/promises';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
-import { useFileEncryptionVersion } from './useFileEncryptionVersion';
 
 export type OnFileUploadProgress = (uploaded: number, total: number) => void;
 
@@ -80,7 +78,6 @@ const getChunkDTO = async (
 };
 
 export const useFileUpload = () => {
-    const fileEncryptionVersion = useFileEncryptionVersion();
     const tabId = useCurrentTabID();
 
     const { onTelemetry } = usePassCore();
@@ -115,8 +112,7 @@ export const useFileUpload = () => {
                 onProgress?: OnFileUploadProgress
             ): Promise<FileID> => {
                 let fileID: Maybe<string>;
-                const encryptionVersion = fileEncryptionVersion.current;
-                logger.debug(`[File::upload::v${encryptionVersion}] uploading ${logId(uploadID)}`);
+                logger.debug(`[File::upload::v${FILE_ENCRYPTION_VERSION}] uploading ${logId(uploadID)}`);
 
                 try {
                     const ctrl = ctrls.current.get(uploadID);
@@ -133,7 +129,7 @@ export const useFileUpload = () => {
                         totalChunks,
                         uploadID,
                         shareId,
-                        encryptionVersion,
+                        encryptionVersion: FILE_ENCRYPTION_VERSION,
                     };
 
                     const init = await abortable(ctrl.signal)(
@@ -154,7 +150,14 @@ export const useFileUpload = () => {
                         const blob = file.slice(start, end);
 
                         const dto = await getChunkDTO(
-                            { shareId, fileID, chunkIndex, totalChunks, encryptionVersion, blob },
+                            {
+                                shareId,
+                                fileID,
+                                chunkIndex,
+                                totalChunks,
+                                encryptionVersion: FILE_ENCRYPTION_VERSION,
+                                blob,
+                            },
                             init.data.storageType,
                             tabId,
                             ctrl.signal
