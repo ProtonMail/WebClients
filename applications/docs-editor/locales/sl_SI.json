@@ -5,14 +5,14 @@
   },
   "contexts": {
     "Action": {
-      "A) B) C) D)": [
-        "A) B) C)"
-      ],
       "a) b) c) d)": [
         "a) b) c)"
       ],
+      "A) B) C) D)": [
+        "A) B) C)"
+      ],
       "A. B. C. D.": [
-        "ABC"
+        "A. B. C. D."
       ],
       "a. b. c. d.": [
         "abc"
@@ -442,6 +442,9 @@
       "Request timed out": [
         "Zahteva se je iztekla"
       ],
+      "Tried to import Sheet data into Lexical": [
+        "Poskus uvoza podatkov iz lista v Lexical"
+      ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Word dokumenta ni bilo mogoče pretvoriti. Je zaščiten z geslom? Če je tako, vas prosimo, da odstranite geslo in poskusite znova."
       ]
@@ -489,6 +492,9 @@
         "${ usersTranslation } tipkajo ...",
         "${ usersTranslation } tipka ..."
       ],
+      "Alpha only experimental feature": [
+        "Eksperimentalna funkcija samo za Alfa"
+      ],
       "Are you sure you want to delete this comment?": [
         "Ste prepričani, da želite izbrisati ta komentar?"
       ],
@@ -509,6 +515,9 @@
       ],
       "Font size": [
         "Velikost pisave"
+      ],
+      "Headings you add to the document will appear here.": [
+        "Naslovi, ki jih dodate dokumentu, se bodo prikazali tukaj."
       ],
       "Highlight": [
         "Poudarjeno"
@@ -554,6 +563,12 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "${ name } barva ozadja in bela barva besedila"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } barva besedila in označba"
+      ],
       "${ name } text color with no background": [
         "Barva besedila ${ name } brez ozadja"
       ],
