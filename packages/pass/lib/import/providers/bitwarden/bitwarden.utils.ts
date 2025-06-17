@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, MaybeNull } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 
-import type { BitwardenCCItem, BitwardenCustomField, BitwardenLoginItem } from './bitwarden.types';
+import type { BitwardenCCItem, BitwardenCustomField, BitwardenLoginItem, BitwardenSshKeyItem } from './bitwarden.types';
 import { BitwardenCustomFieldType, type BitwardenIdentityItem } from './bitwarden.types';
 
 /** Bitwarden stores android linked apps as :
@@ -29,6 +30,8 @@ const BITWARDEN_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     passportNumber: 'passportNumber',
     licenseNumber: 'licenseNumber',
 };
+
+const BITWARDEN_CUSTOM_FIELD_TYPES = Object.values(BitwardenCustomFieldType);
 
 export const isBitwardenLinkedAndroidAppUrl = (url: string) => {
     try {
@@ -60,32 +63,31 @@ export const formatBitwardenCCExpirationDate = (item: BitwardenCCItem) => {
     return `${String(expMonth).padStart(2, '0')}${expYear}`;
 };
 
-const bitwardenCustomFieldToExtraField = (customField: BitwardenCustomField): DeobfuscatedItemExtraField => {
-    switch (customField.type) {
-        case BitwardenCustomFieldType.TEXT:
-            return {
-                fieldName: customField.name || c('Label').t`Text`,
-                type: 'text',
-                data: { content: customField.value ?? '' },
-            };
+const bitwardenCustomFieldToExtraField = ({
+    type,
+    name,
+    value,
+}: BitwardenCustomField): MaybeNull<DeobfuscatedItemExtraField> => {
+    const content = value ?? '';
 
+    switch (type) {
+        case BitwardenCustomFieldType.TEXT:
+            return { fieldName: name || c('Label').t`Text`, type: 'text', data: { content } };
         case BitwardenCustomFieldType.HIDDEN:
-            return {
-                fieldName: customField.name || c('Label').t`Hidden`,
-                type: 'hidden',
-                data: { content: customField.value ?? '' },
-            };
+            return { fieldName: name || c('Label').t`Hidden`, type: 'hidden', data: { content } };
+        case BitwardenCustomFieldType.CHECKBOX:
+            return { fieldName: name || c('Label').t`Checkbox`, type: 'text', data: { content } };
+        default:
+            return null;
     }
 };
 
 export const extractBitwardenExtraFields = (customFields?: BitwardenCustomField[]) =>
-    customFields
-        ?.filter((field) => Object.values(BitwardenCustomFieldType).includes(field.type))
-        .map(bitwardenCustomFieldToExtraField) ?? [];
+    customFields?.map(bitwardenCustomFieldToExtraField).filter(truthy) ?? [];
 
 export const extractBitwardenIdentity = ({ fields, identity }: BitwardenIdentityItem): ItemContent<'identity'> => {
     const item = itemBuilder('identity');
-    const extraSectionFields = fields?.filter((f) => Object.values(BitwardenCustomFieldType).includes(f.type)) ?? [];
+    const extraSectionFields = fields?.filter((f) => BITWARDEN_CUSTOM_FIELD_TYPES.includes(f.type)) ?? [];
 
     item.set('content', (content) => {
         if (extraSectionFields.length > 0) {
@@ -110,4 +112,23 @@ export const extractBitwardenIdentity = ({ fields, identity }: BitwardenIdentity
     });
 
     return item.data.content;
+};
+
+export const extractBitwardenSSHSections = ({ sshKey }: BitwardenSshKeyItem): ItemContent<'sshKey'>['sections'] => {
+    if (sshKey.keyFingerprint) {
+        return [
+            {
+                sectionName: c('Label').t`Extra fields`,
+                sectionFields: [
+                    {
+                        type: 'hidden',
+                        fieldName: c('Label').t`Key fingerprint`,
+                        data: { content: sshKey.keyFingerprint },
+                    },
+                ],
+            },
+        ];
+    }
+
+    return [];
 };
