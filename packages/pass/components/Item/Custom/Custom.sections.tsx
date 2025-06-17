@@ -89,8 +89,6 @@ export const CustomFormSections: FC<Props> = ({ form }) => {
                         );
                     })}
 
-                    <hr className="my-4" />
-
                     <CustomNewSection
                         upsellRef={UpsellRef.CUSTOM_ITEMS}
                         onAdd={(sectionName: string) =>
@@ -100,6 +98,8 @@ export const CustomFormSections: FC<Props> = ({ form }) => {
                             })
                         }
                     />
+
+                    <hr className="my-4" />
                 </>
             )}
         />
