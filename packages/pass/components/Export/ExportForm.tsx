@@ -7,7 +7,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
-import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { RadioGroupField } from '@proton/pass/components/Form/Field/RadioGroupField';
 import { ToggleField } from '@proton/pass/components/Form/Field/ToggleField';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
@@ -19,7 +18,6 @@ import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { selectNonOwnedVaults, selectUserStorageAllowed, selectUserStorageUsed } from '@proton/pass/store/selectors';
 import { BitField } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
 export type ExporterProps = { form: FormikContextType<ExportRequestOptions>; loading: boolean };
@@ -100,7 +98,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
 
                 {/* Disable memory file attachments export for perf reasons */}
                 {usedStorage > 0 && form.values.format !== ExportFormat.CSV && fileStorage.type === 'OPFS' && (
-                    <FeatureFlag feature={PassFeature.PassFileAttachments}>
+                    <>
                         <Field
                             name="fileAttachments"
                             component={ToggleField}
@@ -133,7 +131,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                                 </div>
                             </Card>
                         )}
-                    </FeatureFlag>
+                    </>
                 )}
 
                 {form.values.format === ExportFormat.PGP && (
