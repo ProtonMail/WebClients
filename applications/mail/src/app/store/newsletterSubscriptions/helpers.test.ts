@@ -6,7 +6,7 @@ import type {
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { DEFAULT_SORTING } from './constants';
-import { getSortParams, getTabData, moveIdToTop, normalizeSubscriptions } from './helpers';
+import { getSortParams, getTabData, normalizeSubscriptions } from './helpers';
 import { SortSubscriptionsValue } from './interface';
 
 describe('newsletterSubscriptions helpers', () => {
@@ -138,27 +138,6 @@ describe('newsletterSubscriptions helpers', () => {
         it('should return undefined for unhandled sort option', () => {
             const result = getSortParams('most-frequent' as any);
             expect(result).toBeUndefined();
-        });
-    });
-
-    describe('moveIdToTop', () => {
-        it('should move an existing ID to the top', () => {
-            const list = ['a', 'b', 'c', 'd'];
-            expect(moveIdToTop(list, 'c')).toEqual(['c', 'a', 'b', 'd']);
-        });
-
-        it('should add the ID to the top if not present', () => {
-            const list = ['a', 'b', 'c'];
-            expect(moveIdToTop(list, 'z')).toEqual(['z', 'a', 'b', 'c']);
-        });
-
-        it('should keep the list unchanged if the ID is already at the top', () => {
-            const list = ['x', 'y', 'z'];
-            expect(moveIdToTop(list, 'x')).toEqual(['x', 'y', 'z']);
-        });
-
-        it('should work with an empty list', () => {
-            expect(moveIdToTop([], 'foo')).toEqual(['foo']);
         });
     });
 });
