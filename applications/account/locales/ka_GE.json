@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -177,6 +177,9 @@
       ],
       "Apply": [
         "გადატარება"
+      ],
+      "Apply filter “${ Name }” to existing messages": [
+        "\"${ Name }\" ფილტრის გადატარება არსებულ შეტყობინებებზე"
       ],
       "Apply to existing messages": [
         "არსებულ შეტყობინებებზე გადატარება"
@@ -343,6 +346,18 @@
       "Copy password": [
         "პაროლის კოპირება"
       ],
+      "Copy SMTP port": [
+        "SMTP პორტის კოპირება"
+      ],
+      "Copy SMTP server": [
+        "SMTP სერვერის კოპირება"
+      ],
+      "Copy SMTP token": [
+        "SMTP კოდის კოპირება"
+      ],
+      "Copy SMTP username": [
+        "SMTP მომხმარებლის სახელის კოპირება"
+      ],
       "Copy version number to clipboard": [
         "ვერსიის ნომრის კოპირება ბუფერში"
       ],
@@ -412,6 +427,9 @@
       "Delete and confirm": [
         "წაშლა და დადასტურება"
       ],
+      "Delete filter “${ Name }”": [
+        "ფილტრის \"${ Name }\" წაშლა"
+      ],
       "Delete Gateway": [
         "რაუტერის წაშლა"
       ],
@@ -435,6 +453,9 @@
       ],
       "Delete record": [
         "ჩანაწერის წაშლა"
+      ],
+      "Delete token “${ token.Name }”": [
+        "კოდის \"${ token.Name }\" წაშლა"
       ],
       "Delete user": [
         "მომხმარებლის წაშლა"
@@ -469,10 +490,10 @@
       "Discard": [
         "მოცილება"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "ცვლილებების გაუქმება"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "ცვლილებების გაუქმება"
       ],
       "Discover ${ planName }": [
@@ -499,8 +520,17 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
       ],
+      "Download Bridge for ${ platform }": [
+        "Bridge-ის გადმოწერა ${ platform }-თვის"
+      ],
       "Download CSV sample": [
         "CSV მაგალითის გადმოწერა"
+      ],
+      "Download for macOS": [
+        "გადმოწერა macOS-სთვის"
+      ],
+      "Download for Windows": [
+        "გადმოწერეთ Windows-სთვის"
       ],
       "Download ICS": [
         "ICS-ის გადმოწერა"
@@ -535,6 +565,9 @@
       "Edit email address": [
         "ელ-ფოსტის მისამართის ჩასწორება"
       ],
+      "Edit filter “${ Name }”": [
+        "ფილტრის \"${ Name }\" ჩასწორება"
+      ],
       "Edit Gateway": [
         "რაუტერის ჩასწორება"
       ],
@@ -564,6 +597,9 @@
       ],
       "Edit sieve": [
         "Sieve-ის ჩასწორება"
+      ],
+      "Edit sieve filter “${ Name }”": [
+        "Sieve-ის ფილტრის \"${ Name }\" ჩასწორება"
       ],
       "Edit sign-in details": [
         "შესვლის დეტალების ჩასწორება"
@@ -1360,6 +1396,9 @@
       "Try another method": [
         "სხვა მეთოდის ცდა"
       ],
+      "Try for free": [
+        "სცადეთ უფასოდ"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "შენახვა კიდევ ერთხელ სცადეთ. შენახვის შეცდომის მიზეზი: ${ saveError }"
       ],
@@ -1590,8 +1629,14 @@
       "Delete address": [
         "მისამართის წაშლა"
       ],
+      "Delete address “${ emailAddress }”": [
+        "მისამართის \"${ emailAddress }\" წაშლა"
+      ],
       "Disable": [
         "გათიშვა"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "მისამართის \"${ emailAddress }\" გამორთვა"
       ],
       "Disable E2EE mail": [
         "E2EE ელფოსტის გამორთვა"
@@ -1605,8 +1650,14 @@
       "Edit address": [
         "მისამართის ჩასწორება"
       ],
+      "Edit address “${ emailAddress }”": [
+        "მისამართის \"${ emailAddress }\" ჩასწორება"
+      ],
       "Enable": [
         "ჩართვა"
+      ],
+      "Enable address “${ emailAddress }”": [
+        "მისამართის \"${ emailAddress }\" ჩართვა"
       ],
       "Enable E2EE mail": [
         "E2EE ელფოსტის ჩართვა"
@@ -1614,11 +1665,17 @@
       "Generate missing keys": [
         "ნაკლული გასაღებების გენერაცია"
       ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "ნაკლული გასაღებების გენერაცია მისამართისთვის \"${ emailAddress }\""
+      ],
       "Saving": [
         "შენახვა"
       ],
       "Set as default": [
         "ნაგულისხმევად დაყენება"
+      ],
+      "Set “${ emailAddress }” as default address": [
+        "\"${ emailAddress }\"-ის დაყენება ნაგულისხმევ მისამართად"
       ]
     },
     "Address status": {
@@ -1846,15 +1903,6 @@
         "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ ${ discountPercentage } ფასდაკლება ${ plan.Title }-დან, თუ გამოწერა ${ cycle } თვე იქნება.",
-        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ ${ discountPercentage } ფასდაკლება ${ plan.Title }-დან, თუ გამოწერა ${ cycle } თვე იქნება."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ტბ საცავი (2-ჯერ მეტი, ვიდრე ნებისმიერი სხვა ტარიფი)"
@@ -1876,6 +1924,15 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "ტარიფი ${ plan } მოკლე დროით დაგვიბრუნდა"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ ${ discountPercentage } ფასდაკლება ${ plan.Title }-დან, თუ გამოწერა ${ cycle } თვე იქნება.",
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ ${ discountPercentage } ფასდაკლება ${ plan.Title }-დან, თუ გამოწერა ${ cycle } თვე იქნება."
       ]
     },
     "bf2023: Offers": {
@@ -3282,9 +3339,6 @@
       "Macao": [
         "მაკაო"
       ],
-      "Macedonia": [
-        "მაკედონია"
-      ],
       "Madagascar": [
         "მადაგასკარი"
       ],
@@ -4179,8 +4233,8 @@
       "Download for Linux": [
         "გადმოწერა Linux-სთვის"
       ],
-      "Download for MacOS": [
-        "გადმოწერა MacOS-სთვის"
+      "Download for macOS": [
+        "გადმოწერა macOS-სთვის"
       ],
       "Download for Windows": [
         "გადმოწერეთ Windows-სთვის"
@@ -4675,6 +4729,9 @@
       ],
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "თავსებადობისთვის ახალი დაშიფვრის გასაღები დაგენერირდება ${ boldForwarderEmail }-სთვის"
+      ],
+      "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
+        "თავსებადობისთვის პოსტ-კვანტური დაშიფვრა გაითიშა ${ boldForwarderEmail }-სთვის."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "თავსებადობისთვის პოსტ-კვანტური დაშიფვრა გაითიშება ${ boldForwarderEmail }-სთვის."
@@ -6638,6 +6695,9 @@
       ],
       "Organization key fingerprint": [
         "ორგანიზაციის გასაღების ანაბეჭდი"
+      ],
+      "Payment details": [
+        "გადახდის დეტალები"
       ],
       "Permissions": [
         "წვდომები"
@@ -9754,10 +9814,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -9916,6 +9976,9 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "თუ გამორთულია, თქვენს მოწყობილობებზე გამოსახულებები თქვენი უფლების გარეშე არ ჩაიტვირთება."
       ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "როცა ჩართულია, შეამოწმებს, არის თუ არა ${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია და გაგაფრთხილებთ, თუ არაა."
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "${ appName }-სთვის თქვენს იდენტიფიკატორის მომწოდებელში SAML-ის ჩართვისას, შეიძლება გკითხონ, გნებავთ თუ არა უკუკავშირის (ACS) ბმული და გამომცემლის ID გამოიყენოთ. უბრალოდ დააკოპირეთ ქვემოთ მოყვანილი მონაცემები და ჩასვით ისინი იდენტიფიკატორის მომწოდებლის შესაბამის ველებში."
       ],
@@ -9933,6 +9996,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "როცა ბმულზე დააწკაპუნებთ, ფიშინგის საწინააღმდეგო ეს ფუნქცია გკითხავთ, მართლა გნებავთ თუ არა ამ ბმულის გახსნა."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "როცა თქვენი გამოწერის განახლების დრო მოვა, ანგარიშიდან თანხის ჩამოჭრამდე ჩვენ ყველა არსებულ კრედიტს გამოვიყენებთ."
@@ -10174,6 +10240,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "თქვენ არ გექნებათ შესაძლებლობა აღადგინოთ დაბლოკილი მონაცემები აღდგენის გადმოწერილი ფაილებით. ეს ასევე გათიშავს მოწყობილობებით აღდგენასაც"
       ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }.",
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }."
@@ -10279,8 +10348,14 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "თქვენი მხარდაჭერის ბილეთი დაიხურა. გმადლობთ, რომ დაუკავშირდით ${ BRAND_NAME } მხარდაჭერას."
       ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "თქვენი გამოსაცდელი პერიოდის დასრულების დროა: ${ timeRemaining }."
+      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "ამ სერვერების სხვა კარიბჭეში ჩამატება დაუყოვნებლივ შეგეძლებათ."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
       ],
       "You’re all set": [
         "ყველაფერი მზადაა"
@@ -10922,10 +10997,10 @@
       "AND": [
         "და"
       ],
-      "And": [
+      "and": [
         "და"
       ],
-      "and": [
+      "And": [
         "და"
       ],
       "Anderson": [
@@ -11122,6 +11197,9 @@
       ],
       "Copy": [
         "კოპირება"
+      ],
+      "Copy fingerprint": [
+        "ანაბეჭდის კოპირება"
       ],
       "Could you please let us know which provider?": [
         "შეგიძლიათ, გვითხრათ, რომელი მომწოდებელი?"
@@ -11348,10 +11426,10 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
+      "If": [
         "თუ"
       ],
-      "If": [
+      "IF": [
         "თუ"
       ],
       "Import all messages": [
@@ -11462,6 +11540,9 @@
       "Message": [
         "შეტყობინება"
       ],
+      "Message (auto-reply)": [
+        "შეტყობინება (ავტოპასუხი)"
+      ],
       "Messages per page": [
         "შეტყობინება გვერდზე"
       ],
@@ -11561,10 +11642,10 @@
       "Optional": [
         "არასავალდებულო"
       ],
-      "OR": [
+      "or": [
         "ან"
       ],
-      "or": [
+      "OR": [
         "ან"
       ],
       "Or": [
@@ -11701,6 +11782,12 @@
       ],
       "Second password": [
         "მეორე პაროლი"
+      ],
+      "Select Linux package format": [
+        "აირჩიეთ Linux-ის პაკეტის ფორმატი"
+      ],
+      "Select Linux platform": [
+        "აირჩიეთ Linux-ის პლატფორმა"
       ],
       "Send auto-reply": [
         "პასუხის ავტომატურად გაცემა"
@@ -12258,11 +12345,11 @@
       "perform a password reset from your active session": [
         "პაროლი ჩამოყრა აქტიური სესიიდან"
       ],
-      "privacy policy": [
-        "კონფიდენციალობის პოლიტიკა"
-      ],
       "Privacy policy": [
         "პირადულობის დაცვა"
+      ],
+      "privacy policy": [
+        "კონფიდენციალობის პოლიტიკა"
       ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
@@ -13597,14 +13684,6 @@
         "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceLine }-ად. გააუქმეთ როცა მოინდომებთ."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -13623,6 +13702,14 @@
       ],
       "Unlock premium features by upgrading": [
         "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -13908,7 +13995,8 @@
       "Require 2FA": [
         "2FA-ის მოთხოვნა"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "${ n } მომხმარებლის დომენის მხარდაჭერა",
         "${ n } მომხმარებლის დომენის მხარდაჭერა"
       ]
     },
@@ -14159,6 +14247,11 @@
         "აირჩიეთ, რასთან აქვს ${ BRAND_NAME }-ს წვდომა: ნახოს თქვენი ელფოსტის შეტყობინებები დ პარამეტრები, ნახოს და გადმოწეროს თქვენი კონტაქტები; გადმოწეროს და ნახოს ყველა გეგმა Google Calendar-დან."
       ]
     },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "რაღაც არასწორად წავიდა თქვენს Gmail-ის ანგარიშში შესვლისას"
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } შეუზღუდავი 12 თვით"
@@ -14264,6 +14357,35 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "დასაწყისისთვის შეიყვანეთ საჩვენებელი სახელი. ეს ის სახელია, რომელსც ხალხი დაინახავს, როცა ელფოსტას გაუგზავნით, მოიწვევთ მოვლენაზე ან ფაილს გაუზიარებთ."
+      ]
+    },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " დაუკავშირდით ჩვენს ${ helpCenterLink }-ს, ან ${ contactSupportLink }-ს."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "გააუქმეთ ნებისმიერ დროს ${ cancelDate }-მდე."
+      ],
+      "Cancel anytime before then.": [
+        "გააუქმეთ იქამდე ნებისმიერ დროს."
+      ],
+      "contact our support team": [
+        "დაუკავშირდით ჩვენს მხარდაჭერის გუნდს"
+      ],
+      "Continue": [
+        "გაგრძელება"
+      ],
+      "help center": [
+        "დახმარების ცენტრი"
+      ],
+      "If you need help,": [
+        "თუ დახმარება გჭირდებათ,"
+      ],
+      "Once your full subscription starts...": [
+        "როცა თქვენი სრული გამოწერა დაიწყება..."
+      ],
+      "Your free trial has started": [
+        "თქვენი გამოსაცდელი პერიოდი დაიწყო"
       ]
     },
     "Option": {
@@ -14789,6 +14911,9 @@
       ],
       "/month /user, billed biennially": [
         "/თვე /მომხმარებელი, გადახდით ორ წელიწადში ერთხელ"
+      ],
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "წვდომა ყველა ${ BRAND_NAME }-ის აპთან და ფასიან ფუნქციასთან"
       ],
       "Advanced protection that goes beyond industry standards": [
         "დამატებითი დაცვა, რომელიც ინდუსტრიის სტანდარტებს მიღმაც კი გადის"
@@ -15524,6 +15649,26 @@
     "plan customizer, users": {
       "contact": [
         "კონტაქტი"
+      ]
+    },
+    "Plan description": {
+      "All ${ BRAND_NAME } premium products included in Duo.": [
+        "ყველა ${ BRAND_NAME }-ის ფასიანი ფუნქცია, რომელსაც Duo შეიცავს."
+      ],
+      "Best if you need ${ maxSpace } of storage and for couples.": [
+        "საუკეთესოა, თუ გჭირდებათ ${ maxSpace } საცავი და წყვილებისთვის."
+      ],
+      "Great for everyday use and photo backups.": [
+        "კარგია ყოველდღიური მოხმარებისთვის და სურათების მარქაფისთვის."
+      ],
+      "Perfect for getting started with secure cloud storage.": [
+        "იდეალურია დაცულ ღრუბლოვან საცავთან მუშაობის დასაწყებად."
+      ],
+      "Secure cloud storage and collaboration for teams.": [
+        "დაცული ღრიბლოვანი საცავი და კოლაბორაცია გუნდებისთვის."
+      ],
+      "The ideal plan for privacy-conscious power users.": [
+        "იდეალური სატარიფო გეგმა მათთვის, ვისაც კონფიდენციალობის მაღალი დონე სჭირდება."
       ]
     },
     "Plans": {
@@ -16676,6 +16821,9 @@
       "Pick your perfect plan": [
         "აირჩიეთ საუკეთესო სატარიფო გეგმა თქვენთვის"
       ],
+      "Promo applied – ${ checkout.discountPercent }% off": [
+        "პრომო გადატარებულია - ფასდაკლება ${ checkout.discountPercent }%"
+      ],
       "Recover previous file versions": [
         "წინა ფაილის ვერსიების აღდგენა"
       ],
@@ -16708,6 +16856,9 @@
       ],
       "Sync files across devices and users": [
         "ფაილების სინქრონიზაცია მოწყობილობებსა და მომხმარებლებს შორის"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "ორგანიზაციის სახელი, რომელიც გამოჩნდება, როცა თქვენი მომხმარებლები სისტემაში შედიან."
       ],
       "Total": [
         "ჯამი"
@@ -17566,7 +17717,7 @@
         "მაღალგამტარუნარიანი VPN ${ maxVpn } მოწყობილობაზე",
         "მაღალგამტარუნარიანი VPN ${ maxVpn } მოწყობილობაზე"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის",
         "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის"
       ]
@@ -17607,47 +17758,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -17935,6 +18045,47 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -19897,6 +20048,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
       ],
+      "Your ${ planName } subscription has started": [
+        "თქვვენი ${ planName } გამოწერა დაიწყო"
+      ],
       "Your calendar link": [
         "თქვენი კალენდრის ბმული"
       ],
@@ -19905,6 +20059,10 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში",
+        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში"
       ],
       "Your plan": [
         "თქვენი გეგმა"
@@ -20097,6 +20255,9 @@
       ],
       "Enable/disable desktop and mobile notifications": [
         "კომპიუტერსა და მობილურზე გაფრთხილებების ჩართ/გამორთ"
+      ],
+      "Enable/disable desktop and mobile notifications for “${ labelName }”": [
+        "კომპიუტერსა და მობილურზე გაფრთხილებების ჩართ/გამორთ ჭდისთვის \"${ labelName }\""
       ],
       "Enabling detailed events records the IP address for each event.": [
         "დეტალური მოვლენების ჩართვა თითოეული მოვლენის IP მისამართს ჩაიწერს"

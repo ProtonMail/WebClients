@@ -70,11 +70,11 @@
       "Accept": [
         "Prijať"
       ],
-      "Activate": [
-        "Aktivovať"
-      ],
       "activate": [
         "aktivovať"
+      ],
+      "Activate": [
+        "Aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -469,10 +469,10 @@
       "Discard": [
         "Zahodiť"
       ],
-      "Discard Changes": [
+      "Discard changes": [
         "Zahodiť zmeny"
       ],
-      "Discard changes": [
+      "Discard Changes": [
         "Zahodiť zmeny"
       ],
       "Discover ${ planName }": [
@@ -1366,6 +1366,9 @@
       "Try another method": [
         "Skúsiť inú metódu"
       ],
+      "Try for free": [
+        "Vyskúšať zdarma"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokúste sa znova uložiť. Uloženie zlyhalo z dôvodu: ${ saveError }"
       ],
@@ -1878,17 +1881,6 @@
         "Vyberte si svoju koncoročnú ponuku"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiac.",
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiace.",
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov.",
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Úložisko s kapacitou 6 TB (2x viac ako akýkoľvek iný plán)"
@@ -1910,6 +1902,17 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plán ${ plan } je späť len na obmedzený čas"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiac.",
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiace.",
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov.",
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov."
       ]
     },
     "bf2023: Offers": {
@@ -3341,9 +3344,6 @@
       "Macao": [
         "Macao"
       ],
-      "Macedonia": [
-        "Severné Macedónsko"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -4260,9 +4260,6 @@
       ],
       "Download for Linux": [
         "Stiahnuť pre Linux"
-      ],
-      "Download for MacOS": [
-        "Stiahnuť pre macOS"
       ],
       "Download for Windows": [
         "Stiahnuť pre Windows"
@@ -10086,11 +10083,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "username": [
-        "používateľské meno"
-      ],
       "Username": [
         "Používateľské meno"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -11348,11 +11345,11 @@
       "AND": [
         "A"
       ],
-      "And": [
-        "A"
-      ],
       "and": [
         "a"
+      ],
+      "And": [
+        "A"
       ],
       "Anderson": [
         "Anderson"
@@ -11780,11 +11777,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "AK"
-      ],
       "If": [
         "Ak"
+      ],
+      "IF": [
+        "AK"
       ],
       "Import all messages": [
         "Importovať všetky správy"
@@ -11996,11 +11993,11 @@
       "Optional": [
         "Voliteľné"
       ],
-      "OR": [
-        "ALEBO"
-      ],
       "or": [
         "alebo"
+      ],
+      "OR": [
+        "ALEBO"
       ],
       "Or": [
         "Alebo"
@@ -12698,11 +12695,11 @@
       "perform a password reset from your active session": [
         "resetovať heslo z Vášho aktuálneho prihlásenia"
       ],
-      "privacy policy": [
-        "zásadami ochrany osobných údajov"
-      ],
       "Privacy policy": [
         "Ochrana osobných údajov"
+      ],
+      "privacy policy": [
+        "zásadami ochrany osobných údajov"
       ],
       "Reactivate now": [
         "Znovu aktivovať teraz"
@@ -14021,9 +14018,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný prístup k internetu odkiaľkoľvek so základným monitorovaním siete"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpečné cloudové úložisko, ktoré vám umožní ukladať, synchronizovať a zdieľať súbory jednoducho a bezpečne."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
       ],
@@ -14113,14 +14107,6 @@
         "Odomknite všetky prémiové produkty a funkcie ${ BRAND_NAME } len za ${ priceLine }. Zrušiť môžete kedykoľvek."
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -14139,6 +14125,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odomknite prémiové funkcie navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -14427,9 +14421,6 @@
       ],
       "Require 2FA": [
         "Vyžadovať 2FA"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Podpora pre ${ n } vlastné emailové domény"
       ]
     },
     "news": {
@@ -18282,12 +18273,6 @@
         "Vysoko rýchlostná sieť VPN na ${ maxVpn } zariadeniach",
         "Vysoko rýchlostná sieť VPN na ${ maxVpn } zariadeniach",
         "Vysoko rýchlostná sieť VPN na ${ maxVpn } zariadeniach"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "VPN pripojenie pre ${ n } zariadenie na používateľa",
-        "VPN pripojenie pre ${ n } zariadenia na používateľa",
-        "VPN pripojenie pre ${ n } zariadení na používateľa",
-        "VPN pripojenie pre ${ n } zariadení na používateľa"
       ]
     },
     "Subscription change warning": {
@@ -18326,47 +18311,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription reminder": {
@@ -18669,6 +18613,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -20683,9 +20668,6 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } days": [
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní"
       ],
       "Your plan": [
         "Váš plán"

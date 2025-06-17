@@ -44,11 +44,11 @@
       "Accept": [
         "Qbel"
       ],
-      "Activate": [
-        "Rmed"
-      ],
       "activate": [
         "rmed"
+      ],
+      "Activate": [
+        "Rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -496,6 +496,9 @@
       ],
       "Get verification code": [
         "Awi tangalt n usentem"
+      ],
+      "Go back": [
+        "Uɣal"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Ddu ɣer ${ DRIVE_APP_NAME }"
@@ -967,6 +970,9 @@
       ],
       "Try another method": [
         "Ɛreḍ tarrayt nniḍen"
+      ],
+      "Try for free": [
+        "Ɛreḍ win n baṭel"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Ɛreḍ ad teskelseḍ tikkelt niḍen. Asekles yecceḍ ssebba n: ${ saveError }"
@@ -2393,9 +2399,6 @@
       ],
       "Macao": [
         "Makawu"
-      ],
-      "Macedonia": [
-        "Masidunya"
       ],
       "Madagascar": [
         "Madagaskaṛ"
@@ -6585,11 +6588,11 @@
       "AND": [
         "AKKED"
       ],
-      "And": [
-        "Akked"
-      ],
       "and": [
         "akked"
+      ],
+      "And": [
+        "Akked"
       ],
       "Anderson": [
         "Anderson"
@@ -6921,11 +6924,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "MA"
-      ],
       "If": [
         "Ma"
+      ],
+      "IF": [
+        "MA"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -7071,11 +7074,11 @@
       "Optional": [
         "Afrayan"
       ],
-      "OR": [
-        "NEƔ"
-      ],
       "or": [
         "neɣ"
+      ],
+      "OR": [
+        "NEƔ"
       ],
       "Or": [
         "Neɣ"
@@ -8260,14 +8263,6 @@
         "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Aneɛruḍ n ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Aseqdac-ik n umiḍan"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Kkes amiḍan?"
@@ -8277,6 +8272,14 @@
       ],
       "Switch plans?": [
         "Beddel iɣawasen?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Aneɛruḍ n ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Aseqdac-ik n umiḍan"
       ]
     },
     "new_plans: tooltip": {
@@ -8336,9 +8339,6 @@
       ],
       "Require 2FA": [
         "Yesra 2FA"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Asefrek i ${ n } tiɣula n yimayl udmawan"
       ]
     },
     "Notification": {
@@ -10157,6 +10157,12 @@
         "urti vCard"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } n wass",
+        "${ ceilDays } n wussan"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } n usrag",
@@ -10268,6 +10274,9 @@
       ],
       "Add to spam list": [
         "Rnu ɣer tebdart n yispamen"
+      ],
+      "Add user": [
+        "Rnu aseqdac"
       ],
       "Add user accounts": [
         "Rnu imiḍanen n useqdac"
@@ -10506,6 +10515,9 @@
       ],
       "Description": [
         "Aglam"
+      ],
+      "Desktop": [
+        "Tanarit"
       ],
       "Device connected!": [
         "Ibenk yeqqnen!"
