@@ -1805,9 +1805,6 @@
       "Macao": [
         "Макао"
       ],
-      "Macedonia": [
-        "Македонія"
-      ],
       "Madagascar": [
         "Мадагаскар"
       ],
@@ -2466,8 +2463,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "\"${ name }\" вже існує"
+      "\"${ sanitizedName }\" already exists": [
+        "\"${ sanitizedName }\" вже існує"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } не може під'єднатися до вашого зовнішнього облікового запису"
@@ -4016,6 +4013,9 @@
       "Attention required": [
         "Потребує уваги"
       ],
+      "Available": [
+        "Доступно"
+      ],
       "Awaiting transaction": [
         "Очікування транзакції"
       ],
@@ -4033,6 +4033,9 @@
       ],
       "Calendar side panel": [
         "Бічна панель календаря"
+      ],
+      "Cannot load link": [
+        "Не вдалося завантажити посилання"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можете згадати свій пароль? Ми можемо допомогти вам стерти зашифровані дані в усіх контактах, які були зашифровані цим ключем, а також в процесі відхилити попередження."
@@ -4213,9 +4216,6 @@
       ],
       "Error converting document: ${ errorMessage }": [
         "Помилка перетворення документа: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Помилка при завантаженні документа ${ errorDetail }"
       ],
       "Error Syncing": [
         "Помилка синхронізації"
@@ -4445,6 +4445,9 @@
       "New": [
         "Нове"
       ],
+      "No": [
+        "Ні"
+      ],
       "No contacts added yet": [
         "Контактів ще не додано"
       ],
@@ -4522,6 +4525,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME автоматично надсилає повідомлення, використовуючи поточний режим написання."
+      ],
+      "Photos": [
+        "Фото"
       ],
       "Please authenticate your card in the verification tab.": [
         "Підтвердьте свою картку у відповідній вкладці."
@@ -4666,6 +4672,9 @@
       ],
       "Shared on": [
         "Поширено"
+      ],
+      "Shared with me": [
+        "Поширено для мене"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Неможливо підтвердити підпис через помилку мережі. Будь ласка, спробуйте знову пізніше."
@@ -4918,6 +4927,9 @@
       ],
       "Writing assistant": [
         "Помічник з написання"
+      ],
+      "Yes": [
+        "Так"
       ],
       "you": [
         "ви"
@@ -5352,6 +5364,9 @@
       ],
       "First name": [
         "Ім'я"
+      ],
+      "Folder": [
+        "Тека"
       ],
       "Folder location": [
         "Розташування теки"
@@ -6996,9 +7011,6 @@
       ],
       "Require 2FA": [
         "Потрібна 2FA"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Підтримка ${ n } власних доменів електронної пошти"
       ]
     },
     "Notification": {
@@ -8412,12 +8424,6 @@
         "${ n } VPN-з'єднання на користувача",
         "${ n } VPN-з'єднань на користувача",
         "${ n } VPN-з'єднання на користувача"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "VPN з'єднання для ${ n } пристрою на користувача",
-        "VPN з'єднання для ${ n } пристроїв на користувача",
-        "VPN з'єднання для ${ n } пристроїв на користувача",
-        "VPN з'єднання для ${ n } пристроїв на користувача"
       ]
     },
     "Subscription change warning": {
@@ -8785,6 +8791,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "# завантажень"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } адреса е-пошти",
         "${ emailsCount } адреси е-пошти",
@@ -9025,6 +9034,12 @@
       "Exporting contacts": [
         "Експортування контактів"
       ],
+      "File details": [
+        "Подробиці про файл"
+      ],
+      "Folder details": [
+        "Подробиці теки"
+      ],
       "Get the apps": [
         "Отримати програми"
       ],
@@ -9064,11 +9079,20 @@
       "Invalid verification code": [
         "Недійсний код підтвердження"
       ],
+      "Item details": [
+        "Подробиці елемента"
+      ],
+      "Last edited by": [
+        "Востаннє редаговано"
+      ],
       "Limited availability": [
         "Обмежена доступність"
       ],
       "Link confirmation": [
         "Підтвердження посилання"
+      ],
+      "Location": [
+        "Розташування"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Зробіть копію у ${ DRIVE_APP_NAME }"
@@ -9082,11 +9106,20 @@
       "Merging contacts": [
         "Об'єднання контактів"
       ],
+      "MIME type": [
+        "Тип MIME"
+      ],
       "Minicalendar": [
         "Мінікалендар"
       ],
+      "Modified": [
+        "Змінено"
+      ],
       "My files": [
         "Мої файли"
+      ],
+      "Name": [
+        "Назва"
       ],
       "Need more aliases?": [
         "Потрібно більше псевдонімів?"
@@ -9111,6 +9144,9 @@
       ],
       "Open actions dropdown": [
         "Випадне меню дій"
+      ],
+      "Original size": [
+        "Оригінальний розмір"
       ],
       "Other information": [
         "Інша інформація"
@@ -9138,6 +9174,9 @@
       ],
       "Processing...": [
         "Триває обробка..."
+      ],
+      "Public shared link status": [
+        "Статус поширення публічного посилання"
       ],
       "Re-sign all contacts": [
         "Повторно підписати всі контакти"
@@ -9196,11 +9235,17 @@
       "Share ${ name }": [
         "Спільний доступ ${ name }"
       ],
+      "Shared": [
+        "Спільний доступ"
+      ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
       ],
       "Sign out": [
         "Вийти"
+      ],
+      "Size": [
+        "Розмір"
       ],
       "Something went wrong": [
         "Виникла проблема"
@@ -9229,11 +9274,20 @@
       "This document is password protected": [
         "Цей документ захищено паролем"
       ],
+      "Type": [
+        "Тип"
+      ],
       "Untitled document ${ date }": [
         "Документ без назви ${ date }"
       ],
       "Upgrade complete!": [
         "Оновлення завершено!"
+      ],
+      "Uploaded": [
+        "Вивантажено"
+      ],
+      "Uploaded by": [
+        "Користувач"
       ],
       "Uploading a large file or folder": [
         "Вивантаження великого файлу або теки"
@@ -9246,6 +9300,9 @@
       ],
       "Verifying your payment...": [
         "Триває перевірка платежу..."
+      ],
+      "Version details": [
+        "Опис версії"
       ],
       "Warning": [
         "Попередження"

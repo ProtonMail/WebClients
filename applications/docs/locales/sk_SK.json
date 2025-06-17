@@ -879,9 +879,6 @@
       "View": [
         "Zobraziť"
       ],
-      "View all ${ pendingCount } invitations": [
-        "Zobraziť všetky ${ pendingCount } pozvánky"
-      ],
       "View all reports": [
         "Zobraziť všetky hlásenia"
       ],
@@ -1958,9 +1955,6 @@
       "Macao": [
         "Macao"
       ],
-      "Macedonia": [
-        "Severné Macedónsko"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2484,8 +2478,8 @@
       "To start, give your organization a name.": [
         "Začnite tým, že zadáte názov svojej organizácie."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Upgradujte na ${ BRAND_NAME } ${ planName } pre zachovanie zdieľania súborov s oprávnením na úpravu"
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Navýšte na ${ planName }, aby ste mohli naďalej zdieľať súbory s prístupom na úpravu"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocou myši ťahajte a pustite pre zmenu priority spojenie kontaktov. Odškrtnite kontakty, ktoré nechcete zlúčiť."
@@ -2698,8 +2692,8 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "„${ name }“ už existuje"
+      "\"${ sanitizedName }\" already exists": [
+        "„${ sanitizedName }“ už existuje"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } sa nedokáže pripojiť k vášmu externému účtu."
@@ -2835,6 +2829,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Externé pozvánky sú dočasne deaktivované. Skúste to znova neskôr, prosím"
+      ],
+      "Failed to copy photo to album": [
+        "Nepodarilo sa skopírovať fotografiu do albumu"
       ],
       "Failed to rename document. Please try again later.": [
         "Pomenovanie dokumentu sa nepodarilo. Skúste to neskôr, prosím."
@@ -4325,6 +4322,9 @@
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
+      "Available": [
+        "Dostupné"
+      ],
       "Awaiting transaction": [
         "Čakanie na transakciu"
       ],
@@ -4345,6 +4345,9 @@
       ],
       "Calendar side panel": [
         "Bočný panel kalendára"
+      ],
+      "Cannot load link": [
+        "Odkaz sa nepodarilo načítať"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nepamätáte si heslo? Môžeme vám pomôcť vymazať zašifrované údaje všetkých kontaktov zašifrovaných týmto kľúčom a počas toho zrušiť upozornenie."
@@ -4552,9 +4555,6 @@
       ],
       "Error converting document: ${ errorMessage }": [
         "Chyba pri konverzii dokumentu: ${ errorMessage }"
-      ],
-      "Error loading document${ errorDetail }": [
-        "Chyba pri načítaní dokumentu ${ errorDetail }"
       ],
       "Error Syncing": [
         "Chyba synchronizácie"
@@ -4811,6 +4811,9 @@
       "New": [
         "Nový"
       ],
+      "No": [
+        "Nie"
+      ],
       "No contacts added yet": [
         "Zatiaľ neboli pridané žiadne kontakty"
       ],
@@ -4912,6 +4915,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automaticky odošle správu pomocou aktuálneho režimu písania správ."
+      ],
+      "Photos": [
+        "Fotografie"
       ],
       "Please authenticate your card in the verification tab.": [
         "Overte svoju kartu v okne overenia."
@@ -5068,6 +5074,9 @@
       ],
       "Shared on": [
         "Zdieľané"
+      ],
+      "Shared with me": [
+        "Zdieľané so mnou"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nemožno overiť kvôli chybe siete, skúste znovu neskôr, prosím."
@@ -5401,6 +5410,9 @@
       ],
       "Writing assistant": [
         "Asistent písania"
+      ],
+      "Yes": [
+        "Áno"
       ],
       "you": [
         "vy"
@@ -5918,6 +5930,9 @@
       ],
       "First name": [
         "Krstné meno"
+      ],
+      "Folder": [
+        "Priečinok"
       ],
       "Folder location": [
         "Umiestnenie priečinka"
@@ -7339,9 +7354,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpečný prístup k internetu odkiaľkoľvek so základným monitorovaním siete"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpečné cloudové úložisko, ktoré vám umožní ukladať, synchronizovať a zdieľať súbory jednoducho a bezpečne."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
       ],
@@ -7664,9 +7676,6 @@
       ],
       "Require 2FA": [
         "Vyžadovať 2FA"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Podpora pre ${ n } vlastné emailové domény"
       ]
     },
     "Notification": {
@@ -7792,6 +7801,9 @@
       ],
       "Access for the member removed": [
         "Prístup pre člena odstránený"
+      ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Získajte prístup k našim novým albumom, filtrom a ďalším funkciám tým, že vykonáte akciu na uzamknutom zväzku. Obnovte alebo vymažte ho teraz, aby ste si mohli okamžite vychutnať tieto nové funkcie."
       ],
       "Access updated": [
         "Prístup aktualizovaný"
@@ -9280,12 +9292,6 @@
         "${ n } VPN pripojenia na používateľa",
         "${ n } VPN pripojení na používateľa",
         "${ n } VPN pripojení na používateľa"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "VPN pripojenie pre ${ n } zariadenie na používateľa",
-        "VPN pripojenie pre ${ n } zariadenia na používateľa",
-        "VPN pripojenie pre ${ n } zariadení na používateľa",
-        "VPN pripojenie pre ${ n } zariadení na používateľa"
       ]
     },
     "Subscription change warning": {
@@ -9679,6 +9685,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "počet stiahnutí"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } emailová adresa",
         "${ emailsCount } emailové adresy",
@@ -9714,6 +9723,9 @@
       ],
       "Addresses": [
         "Adresy"
+      ],
+      "Album details": [
+        "Podrobnosti o albume"
       ],
       "All settings": [
         "Všetky nastavenia"
@@ -9952,6 +9964,12 @@
       "Exporting contacts": [
         "Exportovanie kontaktov"
       ],
+      "File details": [
+        "Podrobnosti súboru"
+      ],
+      "Folder details": [
+        "Podrobnosti priečinka"
+      ],
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
       ],
@@ -10006,11 +10024,20 @@
       "Invalid verification code": [
         "Nesprávny overovací kód"
       ],
+      "Item details": [
+        "Podrobnosti položky"
+      ],
+      "Last edited by": [
+        "Naposledy upravené používateľom"
+      ],
       "Limited availability": [
         "Obmedzená dostupnosť"
       ],
       "Link confirmation": [
         "Potvrdenie pred otvorením odkazu"
+      ],
+      "Location": [
+        "Umiestnenie"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Vytvorte kópiu do svojho ${ DRIVE_APP_NAME }"
@@ -10027,14 +10054,23 @@
       "Merging contacts": [
         "Zlučovanie kontaktov"
       ],
+      "MIME type": [
+        "Typ MIME"
+      ],
       "Minicalendar": [
         "Minikalendár"
       ],
       "Mobile": [
         "Mobil"
       ],
+      "Modified": [
+        "Upravené"
+      ],
       "My files": [
         "Moje súbory"
+      ],
+      "Name": [
+        "Meno"
       ],
       "Need more aliases?": [
         "Potrebujete viac aliasov?"
@@ -10069,6 +10105,9 @@
       "Organization setup": [
         "Nastavenie organizácie"
       ],
+      "Original size": [
+        "Pôvodná veľkosť"
+      ],
       "Other information": [
         "Ďalšie informácie"
       ],
@@ -10098,6 +10137,9 @@
       ],
       "Processing...": [
         "Prebieha spracovanie..."
+      ],
+      "Public shared link status": [
+        "Stav verejného zdieľaného odkazu"
       ],
       "Re-sign all contacts": [
         "Znovu podpísať všetky kontakty"
@@ -10165,6 +10207,9 @@
       "Share your calendar with your team": [
         "Zdieľajte svoj kalendár so svojím tímom"
       ],
+      "Shared": [
+        "Zdieľané"
+      ],
       "Sign in and grant access": [
         "Prihláste sa a povoľte prístup"
       ],
@@ -10176,6 +10221,9 @@
       ],
       "Simplify password management": [
         "Zjednodušte správu hesiel"
+      ],
+      "Size": [
+        "Veľkosť"
       ],
       "Something went wrong": [
         "Niečo sa pokazilo"
@@ -10210,6 +10258,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnúť ${ DARK_WEB_MONITORING_NAME }"
       ],
+      "Type": [
+        "Typ"
+      ],
       "Untitled document ${ date }": [
         "Dokument bez názvu ${ date }"
       ],
@@ -10221,6 +10272,12 @@
       ],
       "Upload and share files": [
         "Nahrávanie a zdieľanie súborov"
+      ],
+      "Uploaded": [
+        "Nahrané"
+      ],
+      "Uploaded by": [
+        "Nahrané používateľom"
       ],
       "Uploading a large file or folder": [
         "Nahrávanie veľkého súboru alebo priečinka"
@@ -10236,6 +10293,9 @@
       ],
       "Verifying your payment...": [
         "Overujeme vašu platbu..."
+      ],
+      "Version details": [
+        "Detaily verzie"
       ],
       "VPN explained": [
         "Vysvetlenie VPN"
@@ -10281,9 +10341,6 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } days": [
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní"
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
