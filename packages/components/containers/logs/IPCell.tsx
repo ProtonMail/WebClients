@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
@@ -10,11 +11,13 @@ interface Props {
 }
 
 const IPCell = ({ ip, isAuthLogAdvanced, isProtonSentinelEnabled, firstRow }: Props) => {
-    const advancedLogsUpsell = c('Description').t`Enable detailed events to access these features`;
+    const [user] = useUser();
+    const advancedLogsUpsell = c('Description')
+        .t`Your organization administrator should enable detailed events in order to access these features`;
     const advancedLogsAndProtonSentinelUpsell = c('Description')
-        .t`Enable detailed events and ${PROTON_SENTINEL_NAME} to access these features`;
+        .t`Your organization administrator should enable detailed events and ${PROTON_SENTINEL_NAME} in order to access these features`;
 
-    if (isAuthLogAdvanced) {
+    if (isAuthLogAdvanced || user.isAdmin) {
         return <code>{ip || '-'}</code>;
     }
 
