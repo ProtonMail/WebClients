@@ -101,6 +101,9 @@
       "Attention required": [
         "需要您的處理"
       ],
+      "Authenticate": [
+        "驗證"
+      ],
       "Back": [
         "返回"
       ],
@@ -313,6 +316,9 @@
       ],
       "Export selection as .vcf": [
         "以.vcf匯出選項"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ],
       "Forward as attachment": [
         "以附件形式轉寄"
@@ -761,11 +767,11 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade now": [
-        "立即升級"
-      ],
       "Upgrade Now": [
         "請升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ],
       "Upload picture": [
         "上載圖像"
@@ -779,8 +785,14 @@
       "Use a different payment method": [
         "改用另一個繳款方式"
       ],
+      "Use authentication code": [
+        "使用驗證代碼"
+      ],
       "Use for sending": [
         "用於寄送"
+      ],
+      "Use recovery code": [
+        "使用復原碼"
       ],
       "Verify": [
         "驗證"
@@ -2105,9 +2117,6 @@
       ],
       "Macao": [
         "澳門"
-      ],
-      "Macedonia": [
-        "馬其頓"
       ],
       "Madagascar": [
         "馬達加斯加"
@@ -3815,6 +3824,24 @@
         "無限制的 hide-my-email 別名"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
+      ],
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
     "file size format": {
       "byte": [
         "位元組"
@@ -4612,6 +4639,9 @@
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
+      "Each code can only be used once": [
+        "每組驗證代碼只能使用一次"
+      ],
       "Edit email address": [
         "編輯電子郵件位址"
       ],
@@ -4630,11 +4660,20 @@
       "Enabling auto-deletion…": [
         "啟用自動刪除…"
       ],
+      "Enter the code from your authenticator app": [
+        "輸入驗證應用程式中的驗證代碼"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "請輸入您想匯入的電郵帳號所使用的憑證。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證代碼。正在按下 ${ digit } 。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "預計尚餘時間：${ estimatedMinutes } 分鐘"
@@ -5188,6 +5227,9 @@
       "Week and month views only apply to desktop.": [
         "週和月檢視僅適用於電腦版。"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "設定兩步驟驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
+      ],
       "Which event would you like to delete?": [
         "您要刪除哪一個事件？"
       ],
@@ -5609,6 +5651,9 @@
       "Attach screenshot(s)": [
         "附加螢幕截圖"
       ],
+      "Authenticator app": [
+        "驗證 app"
+      ],
       "Beta Access": [
         "測試版體驗"
       ],
@@ -6011,8 +6056,14 @@
       "Your IP": [
         "您的 IP"
       ],
+      "Your ISP": [
+        "您的 ISP"
+      ],
       "Your location": [
         "您的位置"
+      ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
       ]
     },
     "Label for contact group color": {
@@ -7353,9 +7404,6 @@
       ],
       "Require 2FA": [
         "要求兩階段認證"
-      ],
-      "Support for ${ n } custom email domains": [
-        "支援 ${ n } 組自訂電子郵件網域"
       ]
     },
     "Note": {
@@ -7648,6 +7696,11 @@
         "您可於設定隨時變更布景主題。"
       ]
     },
+    "Onboarding Trial": {
+      "Continue": [
+        "繼續"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "加入至現有群組"
@@ -7899,6 +7952,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
+      ],
       "Street address, postal code, and city": [
         "地址，郵政區碼，及城市"
       ]
@@ -8826,47 +8882,6 @@
         "${ totalPrice } 版"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -9098,6 +9113,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -9664,6 +9720,9 @@
       ],
       "Enter 2FA code": [
         "輸入雙重驗證碼"
+      ],
+      "Enter your password": [
+        "輸入您的密碼"
       ],
       "Error": [
         "錯誤"
