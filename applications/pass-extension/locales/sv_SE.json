@@ -29,6 +29,9 @@
       "Add domain": [
         "Lägg till domän"
       ],
+      "Add field": [
+        "Lägg till fält"
+      ],
       "Add forwarding mailbox": [
         "Lägg till vidarebefordrad brevlåda"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "Skapa"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Återaktivera nu"
       ],
+      "Read More": [
+        "Läs mer"
+      ],
       "Refresh the page": [
         "Uppdatera sidan"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Visa avancerade alternativ"
+      ],
+      "Show Less": [
+        "Visa mindre"
       ],
       "Sign back in": [
         "Logga in igen"
@@ -1012,7 +1021,7 @@
       "File does not match expected format": [
         "Fil matchar inte förväntat format"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Import misslyckades för valv “${ vaultData.name }“: ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1257,7 +1266,8 @@
         "${ count } visning",
         "${ count } visningar"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } visning",
         "${ count }/${ maxReads } visningar"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1788,6 +1798,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2500,6 +2514,9 @@
       "Add section": [
         "Lägg till sektion"
       ],
+      "Additional data": [
+        "Ytterligare data"
+      ],
       "Additional details": [
         "Ytterligare detaljer"
       ],
@@ -2620,11 +2637,11 @@
       "Copy password": [
         "Kopiera lösenord"
       ],
+      "Country": [
+        "Land"
+      ],
       "Country or Region": [
         "Land eller region"
-      ],
-      "Country,": [
-        "Land,"
       ],
       "County": [
         "Län"
@@ -2742,6 +2759,9 @@
       ],
       "Export": [
         "Exportera"
+      ],
+      "Extra fields": [
+        "Extra fält"
       ],
       "Extra password": [
         "Extralösenord"
@@ -2868,6 +2888,9 @@
       ],
       "Key": [
         "Nyckel"
+      ],
+      "Key fingerprint": [
+        "Nyckelfingeravtryck"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tangentbordsgenväg: ${ shortcut }"
@@ -3037,10 +3060,10 @@
       "Passport": [
         "Pass"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Passnummer"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Passnummer"
       ],
       "Password": [
@@ -3214,10 +3237,10 @@
       "Show website favicons": [
         "Visa webbplatsens favicon"
       ],
-      "Social Security": [
+      "Social security": [
         "Social säkerhet"
       ],
-      "Social security": [
+      "Social Security": [
         "Social säkerhet"
       ],
       "Social security number": [
@@ -3231,9 +3254,6 @@
       ],
       "SSH key": [
         "SSH-nyckel"
-      ],
-      "SSH Keys": [
-        "SSH-nycklar"
       ],
       "SSN": [
         "SSN"
@@ -3386,9 +3406,6 @@
         "Webbplatser"
       ],
       "WiFi network": [
-        "WiFi-nätverk"
-      ],
-      "WiFi Networks": [
         "WiFi-nätverk"
       ],
       "Work details": [
@@ -3589,9 +3606,6 @@
       "Add 2FA secret key": [
         "Lägg till hemlig nyckel för 2FA"
       ],
-      "Add date": [
-        "Lägg till datum"
-      ],
       "Add hidden text": [
         "Lägg till dold text"
       ],
@@ -3687,9 +3701,6 @@
       ],
       "Used on ${ url }": [
         "Används på ${ url }"
-      ],
-      "Write your note": [
-        "Skriv din anteckning"
       ]
     },
     "sso": {
@@ -4260,6 +4271,11 @@
       ],
       "URL is invalid": [
         "URL är ogiltig"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Flytta objekt till"
       ]
     },
     "Warning": {

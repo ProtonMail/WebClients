@@ -149,10 +149,10 @@
       "Create": [
         "Opret"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -997,9 +997,6 @@
       "File does not match expected format": [
         "Fil svarer ikke til det forventede format"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Import mislykkedes for boks \"${ vaultData.name }\" : ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Import af elementer mislykkedes"
       ],
@@ -1241,9 +1238,6 @@
       "${ count } view": [
         "${ count } visning",
         "${ count } visninger"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } visninger"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } videresendt",
@@ -1764,6 +1758,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2553,6 +2551,9 @@
       ],
       "Copy password": [
         "Kopiér adgangskode"
+      ],
+      "Country": [
+        "Land"
       ],
       "Country or Region": [
         "Land eller region"
@@ -3417,9 +3418,6 @@
       ],
       "Used on ${ url }": [
         "Brugt på ${ url }"
-      ],
-      "Write your note": [
-        "Skriv din note"
       ]
     },
     "sso": {

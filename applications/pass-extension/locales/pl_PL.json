@@ -29,6 +29,9 @@
       "Add domain": [
         "Dodaj domenę"
       ],
+      "Add field": [
+        "Dodaj pole"
+      ],
       "Add forwarding mailbox": [
         "Dodaj skrzynkę przekierowania"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Reaktywuj"
       ],
+      "Read More": [
+        "Dowiedz się więcej"
+      ],
       "Refresh the page": [
         "Odśwież stronę"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Pokaż opcje zaawansowane"
+      ],
+      "Show Less": [
+        "Pokaż mniej"
       ],
       "Sign back in": [
         "Zaloguj się ponownie"
@@ -1022,7 +1031,7 @@
       "File does not match expected format": [
         "Format pliku jest nieprawidłowy"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Importowanie sejfu \"${ vaultData.name }\" nie powiodło się: ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1154,6 +1163,9 @@
       "Unsupported 1Password file format": [
         "Format pliku 1Password jest nieobsługiwany"
       ],
+      "Unsupported Bitwarden file format": [
+        "Format pliku Bitwarden jest nieobsługiwany"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aktualizacja sejfu \"${ payload.content.name }\" nie powiodła się"
       ],
@@ -1280,12 +1292,15 @@
         "${ count } razy"
       ],
       "${ count } view": [
-        "otwarto ${ count } raz",
-        "otwarto ${ count } razy",
-        "otwarto ${ count } razy",
-        "otwarto ${ count } razy"
+        "Otwarto ${ count } raz",
+        "Otwarto ${ count } razy",
+        "Otwarto ${ count } razy",
+        "Otwarto ${ count } razy"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "Otwarto ${ count } / ${ maxReads } raz",
+        "Otwarto ${ count } / ${ maxReads } razy",
+        "Otwarto ${ count } / ${ maxReads } razy",
         "Otwarto ${ count } / ${ maxReads } razy"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1458,6 +1473,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Automatyczna blokada została wyłączona."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Uzupełnij poświadczenia HTTP za pomocą danych logowania."
       ],
       "automatically": [
         "automatycznie"
@@ -1838,7 +1856,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2589,6 +2610,9 @@
       "Add section": [
         "Dodaj sekcję"
       ],
+      "Additional data": [
+        "Dodatkowe dane"
+      ],
       "Additional details": [
         "Dodatkowe szczegóły"
       ],
@@ -2658,6 +2682,9 @@
       "Bank Name": [
         "Nazwa banku"
       ],
+      "Basic Auth autofill": [
+        "Autouzupełnianie podstawowych poświadczeń"
+      ],
       "Biometrics": [
         "Biometria"
       ],
@@ -2712,11 +2739,11 @@
       "Copy password": [
         "Kopiuj hasło"
       ],
+      "Country": [
+        "Kraj"
+      ],
       "Country or Region": [
         "Kraj lub region"
-      ],
-      "Country,": [
-        "Kraj"
       ],
       "County": [
         "Powiat"
@@ -2834,6 +2861,9 @@
       ],
       "Export": [
         "Eksportowanie"
+      ],
+      "Extra fields": [
+        "Dodatkowe pola"
       ],
       "Extra password": [
         "Dodatkowe hasło"
@@ -2960,6 +2990,9 @@
       ],
       "Key": [
         "Klucz"
+      ],
+      "Key fingerprint": [
+        "Odcisk klucza"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Skrót klawiszowy: ${ shortcut }"
@@ -3129,10 +3162,10 @@
       "Passport": [
         "Paszport"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Numer paszportu"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Numer paszportu"
       ],
       "Password": [
@@ -3291,6 +3324,9 @@
       "Share": [
         "Udostępnij"
       ],
+      "Share ID": [
+        "Identyfikator udostępnienia"
+      ],
       "Shared": [
         "Udostępnione"
       ],
@@ -3306,10 +3342,10 @@
       "Show website favicons": [
         "Pokaż ikony stron internetowych"
       ],
-      "Social Security": [
+      "Social security": [
         "Numer ubezpieczenia społecznego"
       ],
-      "Social security": [
+      "Social Security": [
         "Numer ubezpieczenia społecznego"
       ],
       "Social security number": [
@@ -3323,9 +3359,6 @@
       ],
       "SSH key": [
         "Klucz SSH"
-      ],
-      "SSH Keys": [
-        "Klucze SSH"
       ],
       "SSN": [
         "SSN"
@@ -3479,9 +3512,6 @@
       ],
       "WiFi network": [
         "Sieć Wi-Fi"
-      ],
-      "WiFi Networks": [
-        "Sieci Wi-Fi"
       ],
       "Work details": [
         "Szczegóły służbowe"
@@ -3687,9 +3717,6 @@
       "Add 2FA secret key": [
         "Dodaj sekret TOTP"
       ],
-      "Add date": [
-        "Dodaj datę"
-      ],
       "Add hidden text": [
         "Dodaj ukryty tekst"
       ],
@@ -3785,9 +3812,6 @@
       ],
       "Used on ${ url }": [
         "Użyty na ${ url }"
-      ],
-      "Write your note": [
-        "Napisz notatkę"
       ]
     },
     "sso": {
@@ -4372,6 +4396,11 @@
       ],
       "URL is invalid": [
         "Adres URL jest nieprawidłowy"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Przenieś elementy do"
       ]
     },
     "Warning": {

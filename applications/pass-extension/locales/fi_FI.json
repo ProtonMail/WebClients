@@ -29,6 +29,9 @@
       "Add domain": [
         "Lisää verkkotunnus"
       ],
+      "Add field": [
+        "Lisää kenttä"
+      ],
       "Add forwarding mailbox": [
         "Lisää välittävä postilaatikko"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "Luo"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
       "Create alias": [
@@ -440,6 +443,9 @@
       "Reactivate now": [
         "Uudelleenaktivoi nyt"
       ],
+      "Read More": [
+        "Lue lisää"
+      ],
       "Refresh the page": [
         "Päivitä sivu"
       ],
@@ -562,6 +568,9 @@
       ],
       "Show advanced options": [
         "Näytä lisävalinnat"
+      ],
+      "Show Less": [
+        "Näytä vähemmän"
       ],
       "Sign back in": [
         "Kirjaudu uudelleen"
@@ -985,9 +994,6 @@
       "File does not match expected format": [
         "Tiedosto ei vastaa odotettua muotoa"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Holvin \"${ vaultData.name }\" tuonti epäonnistui: ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Kohteiden tuonti epäonnistui"
       ],
@@ -1229,9 +1235,6 @@
       "${ count } view": [
         "${ count } avaus",
         "${ count } avausta"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } avausta"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } välitetty",
@@ -1749,6 +1752,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2473,6 +2480,9 @@
       "Always show username field": [
         "Näytä käyttäjätunnuskenttä aina"
       ],
+      "API Key": [
+        "API-avain"
+      ],
       "Application logs": [
         "Sovelluslokit"
       ],
@@ -2557,6 +2567,9 @@
       "Copy password": [
         "Kopioi salasana"
       ],
+      "Country": [
+        "Maa"
+      ],
       "Country or Region": [
         "Maa tai alue"
       ],
@@ -2565,6 +2578,9 @@
       ],
       "Create a credit card": [
         "Luo maksukortti"
+      ],
+      "Create a custom item": [
+        "Luo mukautettu kohde"
       ],
       "Create a hide-my-email alias": [
         "Luo Hide-my-email-alias"
@@ -2593,11 +2609,17 @@
       "Custom hidden field": [
         "Mukautettu piilotettu kenttä"
       ],
+      "Custom Items": [
+        "Mukautetut kohteet"
+      ],
       "Custom text field": [
         "Mukautettu tekstikenttä"
       ],
       "Database": [
         "Tietokanta"
+      ],
+      "Database Type": [
+        "Tietokannan tyyppi"
       ],
       "Date": [
         "Päiväys"
@@ -2722,6 +2744,12 @@
       "Holder Name": [
         "Haltijan nimi"
       ],
+      "Host": [
+        "Isäntä"
+      ],
+      "Hostname": [
+        "Isäntänimi"
+      ],
       "https://example.com": [
         "https://esimerkki.fi"
       ],
@@ -2770,6 +2798,9 @@
       "Invitations": [
         "Kutsut"
       ],
+      "IP Address": [
+        "IP-osoite"
+      ],
       "Issuing Authority": [
         "Myöntävä viranomainen"
       ],
@@ -2784,6 +2815,9 @@
       ],
       "Key": [
         "Avain"
+      ],
+      "Key fingerprint": [
+        "Avaimen sormenjälki"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pikanäppäin: ${ shortcut }"
@@ -2811,6 +2845,9 @@
       ],
       "License": [
         "Ajokortti"
+      ],
+      "License Key": [
+        "Lisenssiavain"
       ],
       "License number": [
         "Ajokortin numero"
@@ -2923,8 +2960,14 @@
       "Oldest to newest": [
         "Vanhimmasta uusimpaan"
       ],
+      "Operating System": [
+        "Käyttöjärjestelmä"
+      ],
       "Organization": [
         "Organisaatio"
+      ],
+      "Owner": [
+        "Omistaja"
       ],
       "Passkey": [
         "Pääsyavain"
@@ -2938,10 +2981,10 @@
       "Passport": [
         "Passi"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Passin numero"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Passin numero"
       ],
       "Password": [
@@ -2995,6 +3038,9 @@
       "Private Key": [
         "Yksityinen avain"
       ],
+      "Product": [
+        "Tuote"
+      ],
       "Program Name": [
         "Ohjelman nimi"
       ],
@@ -3043,6 +3089,9 @@
       "Second password": [
         "Toinen salasana"
       ],
+      "Secret": [
+        "Salaisuus"
+      ],
       "Secure links": [
         "Suojatut linkit"
       ],
@@ -3085,6 +3134,9 @@
       "Share": [
         "Jaa"
       ],
+      "Share ID": [
+        "Jako-ID"
+      ],
       "Shared": [
         "Jaettu"
       ],
@@ -3100,10 +3152,10 @@
       "Show website favicons": [
         "Näytä sivustokuvakkeet"
       ],
-      "Social Security": [
+      "Social security": [
         "Sosialliturva"
       ],
-      "Social security": [
+      "Social Security": [
         "Sosialliturva"
       ],
       "Social security number": [
@@ -3117,9 +3169,6 @@
       ],
       "SSH key": [
         "SSH-avain"
-      ],
-      "SSH Keys": [
-        "SSH-avaimet"
       ],
       "SSN": [
         "Hetu"
@@ -3223,6 +3272,9 @@
       "Unnamed WiFi item": [
         "Nimetön Wi-Fi-kohde"
       ],
+      "Unspecified": [
+        "Ei määritetty"
+      ],
       "Untitled": [
         "Nimetön"
       ],
@@ -3270,9 +3322,6 @@
       ],
       "WiFi network": [
         "Wi-Fi-verkko"
-      ],
-      "WiFi Networks": [
-        "Wi-Fi-verkot"
       ],
       "Work details": [
         "Työtiedot"
@@ -3466,9 +3515,6 @@
       "Add 2FA secret key": [
         "Lisää 2FA-salaisuus"
       ],
-      "Add date": [
-        "Lisää päivämäärä"
-      ],
       "Add hidden text": [
         "Lisää piilotettu teksti"
       ],
@@ -3561,9 +3607,6 @@
       ],
       "Used on ${ url }": [
         "Käytetään osoitteessa ${ url }"
-      ],
-      "Write your note": [
-        "Kirjoita muistiinpanosi"
       ]
     },
     "sso": {
@@ -3870,7 +3913,7 @@
         "Myönnä käyttöoikeudet"
       ],
       "Hide my email": [
-        "Piilota sähköpostiosoitteeni"
+        "Hide-my-email"
       ],
       "History": [
         "Historia"

@@ -29,6 +29,9 @@
       "Add domain": [
         "Etki alanı ekle"
       ],
+      "Add field": [
+        "Alan ekle"
+      ],
       "Add forwarding mailbox": [
         "İletme e-posta kutusu ekle"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "Ekle"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
       "Create alias": [
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Yeniden etkinleştir"
       ],
+      "Read More": [
+        "Devamını oku"
+      ],
       "Refresh the page": [
         "Sayfayı yenile"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Gelişmiş seçenekleri görüntüle"
+      ],
+      "Show Less": [
+        "Daha az görüntüle"
       ],
       "Sign back in": [
         "Yeniden oturum aç"
@@ -1012,9 +1021,6 @@
       "File does not match expected format": [
         "Dosya beklenen biçimde değil"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "\"${ vaultData.name }\" kasası içine aktarılamadı: ${ errorMessage }"
-      ],
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
       ],
@@ -1257,8 +1263,9 @@
         "${ count } görüntülenme",
         "${ count } görüntülenme"
       ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } görüntüleme"
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } görüntülenme",
+        "${ count }/${ maxReads } görüntülenme"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } iletildi",
@@ -1418,6 +1425,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Otomatik kilitleme kapatıldı."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "HTTP temel kimlik doğrulama pencerelerini kaydedilmiş kimlik doğrulama bilgileriyle otomatik olarak doldurun."
       ],
       "automatically": [
         "otomatik olarak"
@@ -1788,6 +1798,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2569,6 +2583,9 @@
       "Bank Name": [
         "Banka adı"
       ],
+      "Basic Auth autofill": [
+        "Temel kimlik doğrulamalarını otomatik doldurma"
+      ],
       "Biometrics": [
         "Biyometri"
       ],
@@ -2623,11 +2640,11 @@
       "Copy password": [
         "Parolayı kopyala"
       ],
+      "Country": [
+        "Ülke"
+      ],
       "Country or Region": [
         "Ülke ya da bölge"
-      ],
-      "Country,": [
-        "Ülke,"
       ],
       "County": [
         "İlçe"
@@ -3040,10 +3057,10 @@
       "Passport": [
         "Pasaport"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Pasaport numarası"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Pasaport numarası"
       ],
       "Password": [
@@ -3202,6 +3219,9 @@
       "Share": [
         "Paylaş"
       ],
+      "Share ID": [
+        "Paylaşım kimliği"
+      ],
       "Shared": [
         "Paylaşılmış"
       ],
@@ -3217,10 +3237,10 @@
       "Show website favicons": [
         "Site simgeleri görüntülensin"
       ],
-      "Social Security": [
+      "Social security": [
         "Sosyal güvenlik"
       ],
-      "Social security": [
+      "Social Security": [
         "Sosyal güvenlik"
       ],
       "Social security number": [
@@ -3234,9 +3254,6 @@
       ],
       "SSH key": [
         "SSH anahtarı"
-      ],
-      "SSH Keys": [
-        "SSH anahtarları"
       ],
       "SSN": [
         "SGN"
@@ -3390,9 +3407,6 @@
       ],
       "WiFi network": [
         "Kablosuz ağ"
-      ],
-      "WiFi Networks": [
-        "Kablosuz ağlar"
       ],
       "Work details": [
         "İş bilgileri"
@@ -3592,9 +3606,6 @@
       "Add 2FA secret key": [
         "İki adımlı doğrulama gizli anahtarı ekle"
       ],
-      "Add date": [
-        "Tarih ekle"
-      ],
       "Add hidden text": [
         "Gizli metin ekle"
       ],
@@ -3690,9 +3701,6 @@
       ],
       "Used on ${ url }": [
         "${ url } üzerinde kullanılmış"
-      ],
-      "Write your note": [
-        "Notunuzu yazın"
       ]
     },
     "sso": {

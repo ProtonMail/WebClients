@@ -29,6 +29,9 @@
       "Add domain": [
         "Domein toevoegen"
       ],
+      "Add field": [
+        "Veld toevoegen"
+      ],
       "Add forwarding mailbox": [
         "Doorstuur mailbox toevoegen"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "Aanmaken"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
       "Create alias": [
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Heractiveren"
       ],
+      "Read More": [
+        "Lees Meer"
+      ],
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Geavanceerde opties weergeven"
+      ],
+      "Show Less": [
+        "Minder Weergeven"
       ],
       "Sign back in": [
         "Opnieuw inloggen"
@@ -1012,8 +1021,8 @@
       "File does not match expected format": [
         "Bestand komt niet overeen met verwacht formaat"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Importeren mislukt voor kluis \"${ vaultData.name }\" : ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Importeren mislukt voor kluis \"${ vaultData.name }\": ${ errorMessage }"
       ],
       "Importing items failed": [
         "Items importeren mislukt"
@@ -1144,6 +1153,9 @@
       "Unsupported 1Password file format": [
         "Niet-ondersteund 1Password-bestandsformaat"
       ],
+      "Unsupported Bitwarden file format": [
+        "Niet-ondersteund Bitwarden-bestandsformaat"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Bijwerken kluis \"${ payload.content.name }\" mislukt"
       ],
@@ -1257,7 +1269,8 @@
         "${ count } weergave",
         "${ count } weergaven"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } keer bekeken",
         "${ count }/${ maxReads } keer bekeken"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1420,7 +1433,7 @@
         "Auto-vergrendelen succesvol ingeschakeld."
       ],
       "Autofill HTTP basic auth dialogs with saved credentials.": [
-        "Automatisch aanvullen van HTTP basis verificatie dialogen met opgeslagen inloggegevens."
+        "Automatisch aanvullen van HTTP-basic verificatie dialogen met opgeslagen inloggegevens."
       ],
       "automatically": [
         "automatisch"
@@ -1793,7 +1806,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2506,6 +2520,9 @@
       "Add section": [
         "Sectie toevoegen"
       ],
+      "Additional data": [
+        "Aanvullende gegevens"
+      ],
       "Additional details": [
         "Aanvullende details"
       ],
@@ -2632,11 +2649,11 @@
       "Copy password": [
         "Wachtwoord kopiëren"
       ],
+      "Country": [
+        "Land"
+      ],
       "Country or Region": [
         "Land of regio"
-      ],
-      "Country,": [
-        "Land,"
       ],
       "County": [
         "Provincie"
@@ -2754,6 +2771,9 @@
       ],
       "Export": [
         "Exporteren"
+      ],
+      "Extra fields": [
+        "Extra velden"
       ],
       "Extra password": [
         "Extra wachtwoord"
@@ -2880,6 +2900,9 @@
       ],
       "Key": [
         "Sleutel"
+      ],
+      "Key fingerprint": [
+        "Vingerafdruk sleutel"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Toetsenbordsneltoets: ${ shortcut }"
@@ -3049,10 +3072,10 @@
       "Passport": [
         "Paspoort"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Paspoortnummer"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Paspoortnummer"
       ],
       "Password": [
@@ -3229,10 +3252,10 @@
       "Show website favicons": [
         "Websitepictogrammen weergeven"
       ],
-      "Social Security": [
+      "Social security": [
         "Burgerservicenummer (rijksregisternummer)"
       ],
-      "Social security": [
+      "Social Security": [
         "Burgerservicenummer (rijksregisternummer)"
       ],
       "Social security number": [
@@ -3246,9 +3269,6 @@
       ],
       "SSH key": [
         "SSH-sleutel"
-      ],
-      "SSH Keys": [
-        "SSH-sleutels"
       ],
       "SSN": [
         "SSN"
@@ -3402,9 +3422,6 @@
       ],
       "WiFi network": [
         "Wifi-netwerk"
-      ],
-      "WiFi Networks": [
-        "Wifi-netwerken"
       ],
       "Work details": [
         "Werk gegevens"
@@ -3604,9 +3621,6 @@
       "Add 2FA secret key": [
         "Voeg een geheime sleutel van 2FA toe"
       ],
-      "Add date": [
-        "Datum toevoegen"
-      ],
       "Add hidden text": [
         "Verborgen tekst toevoegen"
       ],
@@ -3702,9 +3716,6 @@
       ],
       "Used on ${ url }": [
         "Gebruikt op ${ url }"
-      ],
-      "Write your note": [
-        "Schrijf uw notitie"
       ]
     },
     "sso": {
@@ -4275,6 +4286,11 @@
       ],
       "URL is invalid": [
         "URL is ongeldig"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Items verplaatsen naar"
       ]
     },
     "Warning": {

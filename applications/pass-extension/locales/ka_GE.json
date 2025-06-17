@@ -29,6 +29,9 @@
       "Add domain": [
         "დომენის დამატება"
       ],
+      "Add field": [
+        "ველის დამატება"
+      ],
       "Add forwarding mailbox": [
         "გადაგზავნადი საფოსტო ყუთის დამატება"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create alias": [
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
       ],
+      "Read More": [
+        "მეტის წაკითხვა"
+      ],
       "Refresh the page": [
         "გვერდის განახლება"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "დამატებითი პარამეტრების ჩვენება"
+      ],
+      "Show Less": [
+        "ნაკლების ჩვენება"
       ],
       "Sign back in": [
         "თავიდან შესვლა"
@@ -994,9 +1003,6 @@
       "File does not match expected format": [
         "ფაილი არ ემთხვევა სასურველ ფორმატს"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "შემოტანა ჩავარდა საცავისთვის \"${ vaultData.name }\" : ${ errorMessage }"
-      ],
       "Importing items failed": [
         "ელემენტების შემოტანის შეცდომა"
       ],
@@ -1239,7 +1245,8 @@
         "${ count } ხედი",
         "${ count } ხედი"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } ნახვა",
         "${ count }/${ maxReads } ნახვა"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1400,6 +1407,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "ავტომატური დაბლოკვა წარმატებით გამოირთო."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "HTTP საბაზისო ავთენტიკაციის დიალოგების ავტოშევსება შენახული ავტორიზაციის დეტალებით."
       ],
       "automatically": [
         "ავტომატურად"
@@ -1764,6 +1774,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2536,6 +2550,9 @@
       "Bank Name": [
         "ბანკის სახელი"
       ],
+      "Basic Auth autofill": [
+        "საბაზისო ავთენტიკაციის ავტოშევსება"
+      ],
       "Biometrics": [
         "ბიომეტრია"
       ],
@@ -2590,11 +2607,11 @@
       "Copy password": [
         "პაროლის კოპირება"
       ],
+      "Country": [
+        "ქვეყანა"
+      ],
       "Country or Region": [
         "ქვეყანა ან რეგიონი"
-      ],
-      "Country,": [
-        "ქვეყანა,"
       ],
       "County": [
         "საგრაფო"
@@ -3007,10 +3024,10 @@
       "Passport": [
         "პასპორტი"
       ],
-      "Passport number": [
+      "Passport Number": [
         "პასპორტის ნომერი"
       ],
-      "Passport Number": [
+      "Passport number": [
         "პასპორტის ნომერი"
       ],
       "Password": [
@@ -3169,6 +3186,9 @@
       "Share": [
         "გაზიარება"
       ],
+      "Share ID": [
+        "ID-ის გაზიარება"
+      ],
       "Shared": [
         "გაზიარებული"
       ],
@@ -3184,10 +3204,10 @@
       "Show website favicons": [
         "ვებგვერდის favicon-ების ჩვენება"
       ],
-      "Social Security": [
+      "Social security": [
         "სოციალური უსაფრთხოება"
       ],
-      "Social security": [
+      "Social Security": [
         "სოციალური უსაფრთხოება"
       ],
       "Social security number": [
@@ -3201,9 +3221,6 @@
       ],
       "SSH key": [
         "SSH გასაღები"
-      ],
-      "SSH Keys": [
-        "SSH გასაღებები"
       ],
       "SSN": [
         "SSN"
@@ -3357,9 +3374,6 @@
       ],
       "WiFi network": [
         "Wi-Fi ქსელი"
-      ],
-      "WiFi Networks": [
-        "Wi-Fi ქსელები"
       ],
       "Work details": [
         "სამსახურის დეტალები"
@@ -3559,9 +3573,6 @@
       "Add 2FA secret key": [
         "2FA საიდუმლო გასაღების დამატება"
       ],
-      "Add date": [
-        "თარიღის დამატება"
-      ],
       "Add hidden text": [
         "ფარული ტექსტის დამატება"
       ],
@@ -3657,9 +3668,6 @@
       ],
       "Used on ${ url }": [
         "გამოიყენება ${ url } -ზე"
-      ],
-      "Write your note": [
-        "დაწერეთ თქვენი შენიშვნა"
       ]
     },
     "sso": {
