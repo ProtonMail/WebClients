@@ -49,14 +49,7 @@ export const getShareID = (vaultID: string) => ({
 
 export const getOrgAuthLogs = (query: string) => {
     return {
-        url: `account/organization/events/auth?${query}`,
+        url: `account/organization/logs/auth?${query}`,
         method: 'get',
-    };
-};
-
-export const deleteOrgUsersAuthLogs = () => {
-    return {
-        url: `logs/organization/auth`,
-        method: 'delete',
     };
 };
