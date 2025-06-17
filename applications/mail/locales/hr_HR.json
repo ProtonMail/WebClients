@@ -432,9 +432,6 @@
       "Hide messages": [
         "Sakrij poruke"
       ],
-      "Hide my email": [
-        "Hide-my-email"
-      ],
       "hide-my-email aliases": [
         "hide-my-email pseudonimi"
       ],
@@ -620,6 +617,9 @@
       "Move to trash": [
         "Premjesti u otpad"
       ],
+      "Move to Trash": [
+        "Premjesti u otpad"
+      ],
       "Move to...": [
         "Premjesti u..."
       ],
@@ -800,9 +800,6 @@
       "Restore": [
         "Vrati"
       ],
-      "Resubscribe": [
-        "Ponovna pretplata"
-      ],
       "Resume": [
         "Nastavi"
       ],
@@ -830,10 +827,10 @@
       "Select ${ planTitle }": [
         "Odaberite ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Odaberi sve"
       ],
-      "Select All": [
+      "Select all": [
         "Odaberi sve"
       ],
       "Select all messages": [
@@ -1001,10 +998,10 @@
       "Upgrade": [
         "Nadogradnja"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Nadogradi sada"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Nadogradi sada"
       ],
       "Upload picture": [
@@ -2320,9 +2317,6 @@
       ],
       "Macao": [
         "Makao"
-      ],
-      "Macedonia": [
-        "Makedonija"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -4997,11 +4991,11 @@
       "AND": [
         "I"
       ],
-      "And": [
-        "I"
-      ],
       "and": [
         "i"
+      ],
+      "And": [
+        "I"
       ],
       "ANY": [
         "BILO KOJI"
@@ -5156,11 +5150,11 @@
       "IBAN": [
         "IBAN"
       ],
-      "IF": [
-        "AKO"
-      ],
       "If": [
         "Ako"
+      ],
+      "IF": [
+        "AKO"
       ],
       "Import all messages": [
         "Uvoz svih poruka"
@@ -5252,11 +5246,11 @@
       "Optional": [
         "Neobavezno"
       ],
-      "OR": [
-        "ILI"
-      ],
       "or": [
         "ili"
+      ],
+      "OR": [
+        "ILI"
       ],
       "Or": [
         "Ili"
@@ -5508,9 +5502,6 @@
       ],
       "Folders": [
         "Mape"
-      ],
-      "here": [
-        "ovdje"
       ],
       "Inbox": [
         "Pristigla pošta"
@@ -5841,11 +5832,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Get ${ planTitle }": [
-        "Nabavite ${ planTitle }"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -5855,6 +5841,11 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Nabavite ${ planTitle }"
       ]
     },
     "new_plans: feature": {
