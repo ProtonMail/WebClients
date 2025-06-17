@@ -86,7 +86,7 @@ export const extractKeeperIdentity = (keeperItem: KeeperItem): ItemContent<'iden
         if (extraSectionFields.length > 0) {
             content.set('extraSections', (sections) => {
                 sections.push({
-                    sectionName: 'Extra fields',
+                    sectionName: c('Label').t`Extra fields`,
                     sectionFields: extraSectionFields,
                 });
                 return sections;
@@ -98,3 +98,16 @@ export const extractKeeperIdentity = (keeperItem: KeeperItem): ItemContent<'iden
 
     return item.data.content;
 };
+
+const BUILTIN_EXTRA_FIELDS = [
+    ['login', c('Label').t`Username`],
+    ['password', c('Label').t`Password`],
+    ['login_url', c('Label').t`Website`],
+] as const;
+
+export const getKeeperBuiltinExtraFields = (item: KeeperItem) =>
+    BUILTIN_EXTRA_FIELDS.reduce<DeobfuscatedItemExtraField[]>((acc, [key, fieldName]) => {
+        const content = item[key];
+        if (content) acc.push({ fieldName, type: 'text', data: { content } });
+        return acc;
+    }, []);
