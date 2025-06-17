@@ -60,6 +60,8 @@ import useFlag from '@proton/unleash/useFlag'
 import type { ProviderType } from '../../../provider-type'
 import { tmpConvertNewDocTypeToOld, type DocumentType } from '@proton/drive-store/store/_documents'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import { UserSettingsProvider } from '@proton/drive-store/store'
+import { useDocsContext } from '../context'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -421,6 +423,8 @@ export function DocumentViewer({
   const isPrivateModeUserWithInsufficientPermissions =
     isPrivateNodeMeta(nodeMeta) && error && error.code === DocsApiErrorCode.InsufficientPermissions
 
+  const { publicContext, privateContext } = useDocsContext()
+
   if (
     !didAttemptToAutoAcceptInvite &&
     (isSignedInUserInPublicReadonlyMode || isPrivateModeUserWithInsufficientPermissions)
@@ -429,7 +433,25 @@ export function DocumentViewer({
 
     return (
       <>
-        <InviteAutoAccepter nodeMeta={nodeMeta} onResult={onInviteAutoAcceptResult} />
+        <UserSettingsProvider
+          initialUser={publicContext?.user ?? privateContext?.user ?? ({} as any)}
+          initialDriveUserSettings={{
+            Defaults: {
+              RevisionRetentionDays: 0,
+              B2BPhotosEnabled: false,
+              PhotoTags: [],
+            },
+            UserSettings: {
+              Sort: null,
+              Layout: null,
+              RevisionRetentionDays: null,
+              B2BPhotosEnabled: null,
+              PhotoTags: null,
+            },
+          }}
+        >
+          <InviteAutoAccepter nodeMeta={nodeMeta} onResult={onInviteAutoAcceptResult} />
+        </UserSettingsProvider>
         {Loader}
       </>
     )
