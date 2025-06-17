@@ -29,6 +29,9 @@
       "Add domain": [
         "Adăugare domeniu"
       ],
+      "Add field": [
+        "Adăugare câmp"
+      ],
       "Add forwarding mailbox": [
         "Adăugare adresă redirecționare"
       ],
@@ -152,11 +155,11 @@
       "Create": [
         "Creare"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Creați un cont ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Creare cont ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Creați un cont ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Creare alias"
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Reactivare"
       ],
+      "Read More": [
+        "Detalii"
+      ],
       "Refresh the page": [
         "Împrospătare pagină"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Afișare opțiuni avansate"
+      ],
+      "Show Less": [
+        "Arată mai puțin"
       ],
       "Sign back in": [
         "Reconectare"
@@ -1017,7 +1026,7 @@
       "File does not match expected format": [
         "Fișierul nu are formatul așteptat."
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Importare eșuată pentru seiful „${ vaultData.name }”: ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1149,6 +1158,9 @@
       "Unsupported 1Password file format": [
         "Format de fișier 1Password neacceptat."
       ],
+      "Unsupported Bitwarden file format": [
+        "Format de fișier Bitwarden neacceptat."
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Actualizarea seifului „${ payload.content.name }” a eșuat."
       ],
@@ -1271,8 +1283,10 @@
         "${ count } vizualizări",
         "${ count } de vizualizări"
       ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } vizualizări"
+      "${ count }/${ maxReads } view": [
+        "Vizualizări: ${ count }/${ maxReads }",
+        "Vizualizări: ${ count }/${ maxReads }",
+        "Vizualizări: ${ count }/${ maxReads }"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "Redirecționate: ${ forwardedEmailsCount }",
@@ -1438,6 +1452,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Blocarea automată s-a dezactivat."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Autocompletează casetele de dialog de autentificare de bază HTTP cu acreditările salvate."
       ],
       "automatically": [
         "automat"
@@ -1812,6 +1829,11 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2543,6 +2565,9 @@
       "Add section": [
         "Adăugare secțiune"
       ],
+      "Additional data": [
+        "Date suplimentare"
+      ],
       "Additional details": [
         "Detalii suplimentare"
       ],
@@ -2612,6 +2637,9 @@
       "Bank Name": [
         "Nume bancă"
       ],
+      "Basic Auth autofill": [
+        "Autocompletare autorizare de bază"
+      ],
       "Biometrics": [
         "Date biometrice"
       ],
@@ -2666,10 +2694,10 @@
       "Copy password": [
         "Copiere parolă"
       ],
-      "Country or Region": [
+      "Country": [
         "Țara"
       ],
-      "Country,": [
+      "Country or Region": [
         "Țara"
       ],
       "County": [
@@ -2788,6 +2816,9 @@
       ],
       "Export": [
         "Exportare"
+      ],
+      "Extra fields": [
+        "Câmpuri suplimentare"
       ],
       "Extra password": [
         "Parola suplimentară"
@@ -2914,6 +2945,9 @@
       ],
       "Key": [
         "Cheia"
+      ],
+      "Key fingerprint": [
+        "Amprentă cheie"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Combinații taste: ${ shortcut }"
@@ -3083,10 +3117,10 @@
       "Passport": [
         "Pașaport"
       ],
-      "Passport number": [
+      "Passport Number": [
         "Număr pașaport"
       ],
-      "Passport Number": [
+      "Passport number": [
         "Număr pașaport"
       ],
       "Password": [
@@ -3245,6 +3279,9 @@
       "Share": [
         "Partajare"
       ],
+      "Share ID": [
+        "Partajare ID"
+      ],
       "Shared": [
         "Partajat"
       ],
@@ -3260,10 +3297,10 @@
       "Show website favicons": [
         "Afișare pictogramă site web"
       ],
-      "Social Security": [
+      "Social security": [
         "Card de sănătate"
       ],
-      "Social security": [
+      "Social Security": [
         "Card de sănătate"
       ],
       "Social security number": [
@@ -3277,9 +3314,6 @@
       ],
       "SSH key": [
         "Cheie SSH"
-      ],
-      "SSH Keys": [
-        "Chei SSH"
       ],
       "SSN": [
         "Număr asigurări de sănătate"
@@ -3433,9 +3467,6 @@
       ],
       "WiFi network": [
         "Rețea Wi-Fi"
-      ],
-      "WiFi Networks": [
-        "Rețele Wi-Fi"
       ],
       "Work details": [
         "Detalii loc de muncă"
@@ -3638,9 +3669,6 @@
       "Add 2FA secret key": [
         "Adăugare cheie secretă A2F"
       ],
-      "Add date": [
-        "Adăugare dată"
-      ],
       "Add hidden text": [
         "Adăugare text ascuns"
       ],
@@ -3736,9 +3764,6 @@
       ],
       "Used on ${ url }": [
         "Folosit la ${ url }"
-      ],
-      "Write your note": [
-        "Scrieți-vă notița"
       ]
     },
     "sso": {
@@ -4316,6 +4341,11 @@
       ],
       "URL is invalid": [
         "Adresa URL nu este validă."
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Mutare articole în"
       ]
     },
     "Warning": {
