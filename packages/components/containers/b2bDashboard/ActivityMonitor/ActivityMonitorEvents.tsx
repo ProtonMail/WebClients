@@ -17,6 +17,7 @@ import { deleteOrgUsersAuthLogs } from '@proton/shared/lib/api/b2bevents';
 import type { B2BAuthLog } from '@proton/shared/lib/authlog';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
+import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 
 import SettingsParagraph from '../../account/SettingsParagraph';
 import AuthenticationLogs from '../../organization/AuthenticationLogs';
@@ -43,8 +44,7 @@ const ActivityMonitorEvents = () => {
     const [wipeLogsFlag, setWipeLogsFlag] = useState(false);
     const [loadingDownload, withLoadingDownload] = useLoading();
     const [reloadTrigger, setReloadTrigger] = useState(0);
-    const monitoring = organization?.Settings?.LogAuth === 1;
-    const detailedMonitoring = monitoring || organization?.Settings?.LogAuth === 2;
+    const monitoring = organization?.Settings?.LogAuth === 1 || organization?.Settings?.LogAuth === 2;
     const dispatch = useDispatch();
 
     const triggerReload = () => {
@@ -54,8 +54,9 @@ const ActivityMonitorEvents = () => {
     const setActivityMonitoring = async () => {
         try {
             const enabling = !monitoring;
-            await api(updateMonitoringSetting(enabling ? 1 : 0));
-            dispatch(organizationActions.updateOrganizationSettings({ value: { LogAuth: enabling ? 1 : 0 } }));
+            const newValue = enabling ? 1 : 0;
+            await api<OrganizationSettings>(updateMonitoringSetting(newValue));
+            dispatch(organizationActions.updateOrganizationSettings({ value: { LogAuth: newValue } }));
 
             setTogglingMonitoringModalOpen(false);
             setTogglingMonitoringLoading(false);
@@ -155,7 +156,6 @@ const ActivityMonitorEvents = () => {
                         wipeLogs={wipeLogsFlag}
                         reloadTrigger={reloadTrigger}
                         monitoring={monitoring}
-                        detailedMonitoringOption={detailedMonitoring}
                         onLogsLoaded={setLogs}
                     />
                 </div>
