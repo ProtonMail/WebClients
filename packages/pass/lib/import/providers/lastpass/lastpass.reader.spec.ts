@@ -3,6 +3,7 @@ import fs from 'fs';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemType } from '@proton/pass/types';
+import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
 import * as epochUtils from '@proton/pass/utils/time/epoch';
 
 import { readLastPassData } from './lastpass.reader';
@@ -41,7 +42,7 @@ describe('Import LastPass CSV → vault structure', () => {
         expect(vaults[0].name).toBe('company services');
         expect(vaults[0].items.length).toEqual(4);
         expect(vaults[1].name).toBe('Import - 27 Apr 2023');
-        expect(vaults[1].items.length).toEqual(4);
+        expect(vaults[1].items.length).toEqual(8);
     });
 
     test('correctly handles CR CR LF line endings', () => {
@@ -51,10 +52,9 @@ describe('Import LastPass CSV → vault structure', () => {
         expect(primary.items.filter((n) => n.type === 'note').length).toEqual(3);
     });
 
-    test('ignored items are displayed', () => {
+    test('does not ignore any item', () => {
         const { ignored } = data['lastpass.csv'];
-        expect(ignored).not.toHaveLength(0);
-        expect(ignored[0]).toBe('[Bank Account] test');
+        expect(ignored).toEqual([]);
     });
 });
 
@@ -112,8 +112,25 @@ describe('Secondary vault item parsing', () => {
         expect(item.metadata.note).toBe('This is a secure note');
     });
 
+    test('Bank item', () => {
+        const item = getLastPassItem<'custom'>('lastpass.csv', 1, 2);
+        expect(item.type).toBe('custom');
+        expect(item.metadata.name).toBe('test');
+        expect(item.extraFields).toEqual([
+            { data: { content: 'test' }, fieldName: 'Bank Name', type: 'text' },
+            { data: { content: 'test' }, fieldName: 'Account Type', type: 'text' },
+            { data: { content: '' }, fieldName: 'Routing Number', type: 'text' },
+            { data: { content: '333333' }, fieldName: 'Account Number', type: 'text' },
+            { data: { content: '' }, fieldName: 'SWIFT Code', type: 'text' },
+            { data: { content: '' }, fieldName: 'IBAN Number', type: 'text' },
+            { data: { content: '' }, fieldName: 'Pin', type: 'text' },
+            { data: { content: '' }, fieldName: 'Branch Address', type: 'text' },
+            { data: { content: '' }, fieldName: 'Branch Phone', type: 'text' },
+        ]);
+    });
+
     test('Identity', () => {
-        const item = getLastPassItem<'identity'>('lastpass.csv', 1, 2);
+        const item = getLastPassItem<'identity'>('lastpass.csv', 1, 3);
         expect(item.type).toBe('identity');
         expect(item.metadata.name).toBe('TestID');
         expect(item.content.firstName).toBe('Test');
@@ -121,12 +138,60 @@ describe('Secondary vault item parsing', () => {
     });
 
     test('Credit Card', () => {
-        const item = getLastPassItem<'creditCard'>('lastpass.csv', 1, 3);
+        const item = getLastPassItem<'creditCard'>('lastpass.csv', 1, 4);
         expect(item.type).toBe('creditCard');
         expect(item.metadata.name).toBe('Credit Card Item with note');
         expect(item.metadata.note).toBe('this is a note for the credit card');
         expect(item.content.number).toBe('4242424242424242');
         expect(item.content.expirationDate).toBe('012025');
         expect(item.content.verificationNumber).toBe('123');
+    });
+
+    test('SSH item', () => {
+        const item = getLastPassItem<'sshKey'>('lastpass.csv', 1, 5);
+        expect(item.type).toBe('sshKey');
+        expect(item.metadata.name).toBe('ssh');
+        expect(item.content.privateKey).toEqual('ab');
+        expect(item.content.publicKey).toEqual('cd');
+        expect(item.extraFields).toEqual([
+            { data: { content: '1' }, fieldName: 'Bit Strength', type: 'text' },
+            { data: { content: 'format' }, fieldName: 'Format', type: 'text' },
+            { data: { content: 'password123' }, fieldName: 'Passphrase', type: 'text' },
+            { data: { content: 'example.com' }, fieldName: 'Hostname', type: 'text' },
+            { data: { content: 'January,31,2001' }, fieldName: 'Date', type: 'text' },
+        ]);
+    });
+
+    test('custom item with custom fields', () => {
+        const item = getLastPassItem<'custom'>('lastpass.csv', 1, 6);
+        expect(item.type).toBe('custom');
+        expect(item.metadata.name).toBe('new custom item');
+        expect(item.extraFields).toEqual([
+            { data: { content: 'value' }, fieldName: 'text', type: 'text' },
+            { data: { content: 'value' }, fieldName: 'text with copy', type: 'text' },
+            { data: { content: 'January,31,2001' }, fieldName: 'date', type: 'text' },
+            { data: { content: 'January,31' }, fieldName: 'date no day', type: 'text' },
+            { data: { content: 'password123' }, fieldName: 'my password', type: 'hidden' },
+        ]);
+    });
+
+    test('Wifi item', () => {
+        const item = getLastPassItem<'wifi'>('lastpass.csv', 1, 7);
+        expect(item.type).toBe('wifi');
+        expect(item.metadata.name).toBe('wifi');
+        expect(item.content.ssid).toEqual('my-ssid');
+        expect(item.content.password).toEqual('password123');
+        expect(item.content.security).toEqual(WifiSecurity.UnspecifiedWifiSecurity);
+        expect(item.extraFields).toEqual([
+            { data: { content: 'type' }, fieldName: 'Connection Type', type: 'text' },
+            { data: { content: 'mode' }, fieldName: 'Connection Mode', type: 'text' },
+            { data: { content: '' }, fieldName: 'Authentication', type: 'text' },
+            { data: { content: '' }, fieldName: 'Encryption', type: 'text' },
+            { data: { content: '' }, fieldName: 'Use 802.1X', type: 'text' },
+            { data: { content: '' }, fieldName: 'FIPS Mode', type: 'text' },
+            { data: { content: '' }, fieldName: 'Key Type', type: 'text' },
+            { data: { content: 'hope so' }, fieldName: 'Protected', type: 'text' },
+            { data: { content: '' }, fieldName: 'Key Index', type: 'text' },
+        ]);
     });
 });
