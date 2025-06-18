@@ -42,7 +42,12 @@ export const NewsletterSubscriptionList = () => {
                         />
                     ))}
                     {paginationQueryString ? (
-                        <Button className="w-fit-content mx-auto" loading={loading} onClick={handleNextPageClick}>
+                        <Button
+                            data-testid="load-more-button"
+                            className="w-fit-content mx-auto"
+                            loading={loading}
+                            onClick={handleNextPageClick}
+                        >
                             {c('Action').t`Load more`}
                         </Button>
                     ) : null}
