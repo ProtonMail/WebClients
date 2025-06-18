@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -10,9 +10,11 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import type { ImportFormContext } from '@proton/pass/hooks/import/useImportForm';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos } from '@proton/shared/lib/helpers/browser';
@@ -38,6 +40,7 @@ const providerHasFileAttachments = (provider: ImportProvider) =>
     [ImportProvider.ONEPASSWORD, ImportProvider.ENPASS, ImportProvider.BITWARDEN].includes(provider);
 
 export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'>> = ({ form, dropzone, busy }) => {
+    const customItemsEnabled = useFeatureFlag(PassFeature.PassCustomTypeV1);
     const free = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
     const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => {
@@ -170,7 +173,7 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
                         </Bordered>
                     </Dropzone>
 
-                    {providerHasUnsupportedItemTypes(form.values.provider) && (
+                    {!customItemsEnabled && providerHasUnsupportedItemTypes(form.values.provider) && (
                         <Card className="mb-4 text-sm" type="primary">
                             {c('Info').t`${PASS_APP_NAME} will only import logins, notes, credit cards and identities.`}
                         </Card>
