@@ -347,7 +347,6 @@ const AuthenticationLogs = ({
                 logs={authLogs}
                 loading={loading}
                 error={error}
-                detailedMonitoring={detailedMonitoring}
                 onTimeClick={handleClickableTime}
                 onEmailOrIPClick={handleClickableEmailOrIP}
             />
