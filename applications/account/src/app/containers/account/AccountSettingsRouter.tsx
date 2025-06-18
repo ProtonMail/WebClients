@@ -86,6 +86,7 @@ const AccountSettingsRouter = ({
             language,
             appearance,
             groupMembership,
+            sentinel,
         },
     } = accountAppRoutes;
 
@@ -210,13 +211,18 @@ const AccountSettingsRouter = ({
             <Route path={getSectionPath(path, security)}>
                 <AutomaticSubscriptionModal />
                 <PrivateMainSettingsArea config={security}>
-                    <SentinelSection app={app} />
                     <CredentialLeakSection />
                     <AuthDevicesSettings />
                     <SessionsSection />
                     <LogsSection />
                     <ThirdPartySection />
                     <PrivacySection />
+                </PrivateMainSettingsArea>
+            </Route>
+            <Route path={getSectionPath(path, sentinel)}>
+                <AutomaticSubscriptionModal />
+                <PrivateMainSettingsArea config={sentinel}>
+                    <SentinelSection app={app} />
                 </PrivateMainSettingsArea>
             </Route>
             {getIsSectionAvailable(referral) && (
