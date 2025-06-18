@@ -57,3 +57,4 @@ export { UserAvatar, UserAvatarSizeEnum } from './UserAvatar/UserAvatar';
 export { getAccentColorForUsername } from './UserAvatar/getAccentColorForUsername';
 export type { UserAvatarProps } from './UserAvatar/UserAvatar';
 export { default as Tooltip, TooltipTypeEnum } from './Tooltip/Tooltip';
+export { default as PlanIcon } from './PlanIcon/PlanIcon';
