@@ -12,7 +12,7 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { BaseTextField } from '@proton/pass/components/Form/Field/TextField';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
 import { UpsellRef } from '@proton/pass/constants';
-import type { ExtraSectionsError } from '@proton/pass/lib/validation/identity';
+import type { ExtraSectionsError } from '@proton/pass/lib/validation/custom-item';
 import type { CustomItemFormValues, DeobfuscatedItemExtraField, ExtraFieldType, Maybe } from '@proton/pass/types';
 import { autofocusInput } from '@proton/pass/utils/dom/input';
 
@@ -46,6 +46,8 @@ export const CustomFormSections: FC<Props> = ({ form }) => {
                 <>
                     {form.values.sections.map(({ sectionName, sectionFields }, sectionIndex) => {
                         const sectionKey = `sections[${sectionIndex}]`;
+                        const sectionErrors = form.errors?.sections?.[sectionIndex] as Maybe<ExtraSectionsError>;
+
                         return (
                             <CollapsibleSection
                                 key={sectionKey}
@@ -53,9 +55,13 @@ export const CustomFormSections: FC<Props> = ({ form }) => {
                                     <Field
                                         name={`${sectionKey}.sectionName`}
                                         component={BaseTextField}
-                                        inputClassName="color-weak"
                                         onClick={(evt) => evt.stopPropagation()}
                                         placeholder={c('Action').t`Section name`}
+                                        error={sectionErrors?.sectionName}
+                                        dense
+                                        inputClassName={
+                                            sectionErrors?.sectionName ? 'placeholder-danger' : 'color-weak'
+                                        }
                                     />
                                 }
                                 expanded

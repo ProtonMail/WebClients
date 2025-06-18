@@ -19,7 +19,7 @@ import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/C
 import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
-import type { ExtraSectionsError } from '@proton/pass/lib/validation/identity';
+import type { ExtraSectionsError } from '@proton/pass/lib/validation/custom-item';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { DeobfuscatedItemExtraField, ExtraFieldType, IdentityItemFormValues, Maybe } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -65,6 +65,8 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                 <>
                     {form.values.extraSections.map(({ sectionName, sectionFields }, sectionIndex) => {
                         const sectionKey = `extraSections[${sectionIndex}]`;
+                        const sectionErrors = form.errors?.extraSections?.[sectionIndex] as Maybe<ExtraSectionsError>;
+
                         return (
                             <CollapsibleSection
                                 key={sectionKey}
@@ -72,9 +74,13 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                                     <Field
                                         name={`${sectionKey}.sectionName`}
                                         component={BaseTextField}
-                                        inputClassName="color-weak"
                                         onClick={(evt) => evt.stopPropagation()}
                                         placeholder={c('Action').t`Section name`}
+                                        error={sectionErrors?.sectionName}
+                                        dense
+                                        inputClassName={
+                                            sectionErrors?.sectionName ? 'placeholder-danger' : 'color-weak'
+                                        }
                                     />
                                 }
                                 expanded
