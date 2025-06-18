@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { type RefObject, useCallback, useRef } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -12,6 +12,7 @@ import MailboxList from 'proton-mail/components/list/MailboxList';
 import ResizableWrapper from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
 import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import useScrollToTop from 'proton-mail/components/list/useScrollToTop';
 import { ROUTE_ELEMENT } from 'proton-mail/constants';
 import MailboxContainerPlaceholder from 'proton-mail/containers/mailbox/MailboxContainerPlaceholder';
 import { useMailCommander } from 'proton-mail/hooks/commander/useMailCommander';
@@ -26,6 +27,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import { RouterElementContainer } from './RouterElementContainer';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 import { MailboxToolbar } from './components/MailboxToolbar';
+import { useGetElementParams } from './hooks/useGetElementParams';
 import type { MailboxActions, RouterNavigation } from './interface';
 
 interface Props {
@@ -61,7 +63,7 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
     const listRef = useRef<HTMLDivElement>(null);
     const location = useLocation();
 
-    const { columnMode, columnLayout, labelDropdownToggleRef, resizeAreaRef, moveDropdownToggleRef } =
+    const { columnMode, columnLayout, labelDropdownToggleRef, resizeAreaRef, moveDropdownToggleRef, listContainerRef } =
         useMailboxLayoutProvider();
     const composersCount = useMailSelector(selectComposersCount);
     const breakpoints = useActiveBreakpoint();
@@ -79,6 +81,15 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
     const isComposerOpened = composersCount > 0;
     const showPlaceholder =
         !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && columnMode));
+
+    const elementParams = useGetElementParams({ params, navigation });
+    useScrollToTop(listContainerRef as RefObject<HTMLElement>, [
+        page,
+        labelID,
+        sort.desc,
+        sort.sort,
+        elementParams.search,
+    ]);
 
     const { commanderList } = useMailCommander();
 
