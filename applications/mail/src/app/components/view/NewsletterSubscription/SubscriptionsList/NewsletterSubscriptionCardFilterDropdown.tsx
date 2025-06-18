@@ -81,7 +81,7 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
 
     return (
         <>
-            <div className="shrink-0 subscription-card-dropdown">
+            <div className="shrink-0 subscription-card-dropdown" data-testid="subscription-card-dropdown">
                 <DropdownButton
                     ref={popover.anchorRef}
                     isOpen={popover.isOpen}

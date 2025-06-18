@@ -96,6 +96,7 @@ export const NewsletterSubscriptionCard = ({ subscription, isDeleting }: Props) 
                     tabIndex={isDeleting ? -1 : 0}
                     aria-hidden={isDeleting}
                     aria-labelledby={`subscription-card-title-${subscription.ID}`}
+                    data-testid="subscription-card"
                 >
                     <div className="flex gap-3 md:gap-4">
                         <div className="subscription-card-image shrink-0">
