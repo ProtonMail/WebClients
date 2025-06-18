@@ -51,3 +51,36 @@ Security Code:123
 Start Date:,
 Expiration Date:January,2025
 Notes:this is a note for the credit card",Credit Card Item with note,,0
+http://sn,,,,"NoteType:SSH Key
+Language:en-US
+Bit Strength:1
+Format:format
+Passphrase:password123
+Private Key:ab
+Public Key:cd
+Hostname:example.com
+Date:January,31,2001
+Notes:notes",ssh,,0
+http://sn,,,,"NoteType:Custom_657088934083173965
+Language:en-US
+text:value
+text with copy:value
+date:January,31,2001
+date no day:January,31
+my password:password123
+Notes:line1 with quote ""
+line2",new custom item,,0
+http://sn,,,,"NoteType:Wi-Fi Password
+Language:en-US
+SSID:my-ssid
+Password:password123
+Connection Type:type
+Connection Mode:mode
+Authentication:
+Encryption:
+Use 802.1X:
+FIPS Mode:
+Key Type:
+Protected:hope so
+Key Index:
+Notes:",wifi,,0
