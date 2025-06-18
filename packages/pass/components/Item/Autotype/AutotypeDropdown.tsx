@@ -1,8 +1,7 @@
-import { type FC, Fragment, type ReactNode } from 'react';
+import { type FC, Fragment } from 'react';
 
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components';
 import { Badge, Dropdown, DropdownMenu, DropdownSizeUnit, usePopperAnchor } from '@proton/components';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
@@ -11,14 +10,8 @@ import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight
 import { SpotlightMessage } from '@proton/pass/types';
 import type { AutotypeAction } from '@proton/pass/types/desktop/autotype';
 
-export type AutotypeDropdownAction = AutotypeAction & {
-    title: ReactNode;
-    subtitle?: ReactNode;
-    icon?: IconName;
-};
-
 type AutotypeDropdownProps = {
-    actions: AutotypeDropdownAction[];
+    actions: AutotypeAction[];
 };
 
 export const AutotypeDropdown: FC<AutotypeDropdownProps> = ({ actions }) => {
