@@ -388,6 +388,7 @@ export {
     PLANS_WITH_AI_INCLUDED,
     planSupportsSSO,
     regularCycles,
+    getHasProPlan,
     upsellPlanSSO,
     useIsB2BTrial,
     willTrialExpire,

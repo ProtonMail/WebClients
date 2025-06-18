@@ -24,6 +24,8 @@ import AuthenticationLogs from '../../organization/AuthenticationLogs';
 import TogglingMonitoringModal from './TogglingMonitoringModal';
 import WipeLogsModal from './WipeLogsModal';
 import { updateMonitoringSetting } from './api';
+import B2BOrganizationUpsellBanner from './B2BOrganizationUpsellBanner';
+import { getHasProPlan } from '@proton/payments';
 
 const ActivityMonitorDescription = () => {
     return (
@@ -111,60 +113,66 @@ const ActivityMonitorEvents = () => {
     };
 
     return (
-        <>
-            <SettingsSectionWide customWidth="90em">
-                <ActivityMonitorDescription />
-                <div className="flex flex-row justify-space-between items-center mb-4">
-                    <div className="flex *:min-size-auto flex-column gap-2">
-                        <div className="flex flex-row flex-nowrap items-center gap-2">
-                            <Toggle
-                                id="monitoring-toggle"
-                                loading={togglingMonitoringLoading}
-                                checked={monitoring}
-                                onChange={monitoring ? toggleMonitoring : setActivityMonitoring}
-                            />
-                            <span>{c('Info').t`Activity monitor`}</span>
+        getHasProPlan(organization?.PlanName) ? (
+            <B2BOrganizationUpsellBanner organization={organization}/>
+        ) : (
+            <>
+                <SettingsSectionWide customWidth="90em">
+                    <ActivityMonitorDescription />
+                    <div className="flex flex-row justify-space-between items-center mb-4">
+                        <div className="flex *:min-size-auto flex-column gap-2">
+                            <div className="flex flex-row flex-nowrap items-center gap-2">
+                                <Toggle
+                                    id="monitoring-toggle"
+                                    loading={togglingMonitoringLoading}
+                                    checked={monitoring}
+                                    onChange={monitoring ? toggleMonitoring : setActivityMonitoring}
+                                />
+                                <span>
+                                    {c('Info').t`Activity monitor`}
+                                </span>
+                            </div>
+                        </div>
+                        <div className="flex flex-row gap-2">
+                            <Button
+                                shape="outline"
+                                className="self-end"
+                                onClick={triggerReload}
+                                loading={loadingDownload}
+                                title={c('Action').t`Reload`}
+                            >
+                                <Icon name="arrow-rotate-right" className="mr-2" />
+                                {c('Action').t`Reload`}
+                            </Button>
+                            <Button
+                                shape="outline"
+                                className="self-end"
+                                onClick={() => withLoadingDownload(handleDownload())}
+                                loading={loadingDownload}
+                                title={c('Action').t`Export`}
+                            >
+                                <Icon name="arrow-down-line" className="mr-2" />
+                                {c('Action').t`Export`}
+                            </Button>
                         </div>
                     </div>
-                    <div className="flex flex-row gap-2">
-                        <Button
-                            shape="outline"
-                            className="self-end"
-                            onClick={triggerReload}
-                            loading={loadingDownload}
-                            title={c('Action').t`Reload`}
-                        >
-                            <Icon name="arrow-rotate-right" className="mr-2" />
-                            {c('Action').t`Reload`}
-                        </Button>
-                        <Button
-                            shape="outline"
-                            className="self-end"
-                            onClick={() => withLoadingDownload(handleDownload())}
-                            loading={loadingDownload}
-                            title={c('Action').t`Export`}
-                        >
-                            <Icon name="arrow-down-line" className="mr-2" />
-                            {c('Action').t`Export`}
-                        </Button>
+                    <div className="flex justify-center">
+                        <AuthenticationLogs
+                            organization={organization}
+                            activityMonitorSection={true}
+                            wipeLogs={wipeLogsFlag}
+                            reloadTrigger={reloadTrigger}
+                            monitoring={monitoring}
+                            onLogsLoaded={setLogs}
+                        />
                     </div>
-                </div>
-                <div className="flex justify-center">
-                    <AuthenticationLogs
-                        organization={organization}
-                        activityMonitorSection={true}
-                        wipeLogs={wipeLogsFlag}
-                        reloadTrigger={reloadTrigger}
-                        monitoring={monitoring}
-                        onLogsLoaded={setLogs}
-                    />
-                </div>
-            </SettingsSectionWide>
-            {togglingMonitoringModalRender && (
-                <TogglingMonitoringModal {...togglingMonitoringModalProps} onChange={setActivityMonitoring} />
-            )}
-            {wipeLogsModalRender && <WipeLogsModal {...wipeLogsModalProps} onChange={setWipeLogs} />}
-        </>
+                </SettingsSectionWide>
+                {togglingMonitoringModalRender && (
+                    <TogglingMonitoringModal {...togglingMonitoringModalProps} onChange={setActivityMonitoring} />
+                )}
+                {wipeLogsModalRender && <WipeLogsModal {...wipeLogsModalProps} onChange={setWipeLogs} />}
+            </>
+        )
     );
 };
 
