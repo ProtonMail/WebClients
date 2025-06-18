@@ -58,7 +58,7 @@ export const CustomForm = <T extends ItemType>({
 
                 <CustomTypeFields type={form.values.type} />
 
-                <ExtraFieldGroup form={form} />
+                <ExtraFieldGroup form={form} hideIcon />
 
                 <CustomFormSections form={form} />
 

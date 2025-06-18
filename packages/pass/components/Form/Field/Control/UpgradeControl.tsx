@@ -7,7 +7,7 @@ import { type UpsellRef } from '@proton/pass/constants';
 import { ValueControl } from './ValueControl';
 
 type UpgradeControlProps = {
-    icon: IconName;
+    icon?: IconName;
     label: string;
     upsellRef: UpsellRef;
 };

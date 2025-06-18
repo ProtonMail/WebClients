@@ -111,6 +111,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
 
                 {totpUri && totpAllowed && (
                     <OTPValueControl
+                        icon="lock"
                         payload={{ totpUri, type: 'uri' }}
                         onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.totp)}
                     />
