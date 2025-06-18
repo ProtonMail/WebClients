@@ -8,20 +8,22 @@ export interface PermissionHandles {
 }
 
 export const usePermissions = (permissions: Permission[]): PermissionHandles => {
-    const [enabled, setEnabled] = useState(false);
+    const [enabled, setEnabled] = useState(permissions.length === 0);
 
     useEffect(() => {
-        void hasPermissions(permissions).then(setEnabled);
+        if (permissions.length > 0) void hasPermissions(permissions).then(setEnabled);
     }, [permissions]);
 
     return useMemo(
         () => ({
             enabled,
-            request: () =>
-                requestPermissions(permissions).then((result) => {
-                    setEnabled(result);
-                    return result;
-                }),
+            request: async () =>
+                permissions.length > 0
+                    ? requestPermissions(permissions).then((result) => {
+                          setEnabled(result);
+                          return result;
+                      })
+                    : true,
         }),
         [enabled, permissions]
     );
