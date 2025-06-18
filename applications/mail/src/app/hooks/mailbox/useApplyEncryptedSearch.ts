@@ -18,6 +18,7 @@ import {
     load as loadAction,
     manualFulfilled,
     manualPending,
+    setParams,
     updatePage,
 } from '../../store/elements/elementsActions';
 import {
@@ -73,6 +74,7 @@ export const useApplyEncryptedSearch = ({
 
     const executeSearch = async () => {
         dispatch(manualPending());
+        dispatch(setParams({ ...params }));
         try {
             let success = false;
             if (isES) {
