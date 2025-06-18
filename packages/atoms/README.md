@@ -25,6 +25,8 @@ The current solution relies on `Playwright` to run visual tests against the `Sto
 
 **Prerequisite**: Docker installed and running.
 
+Run the following commands inside the current `atoms` folder:
+
 - `yarn storybook:build`
 - `yarn docker:build`
 - `yarn docker:run`
