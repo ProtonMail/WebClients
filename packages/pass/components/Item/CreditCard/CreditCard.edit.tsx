@@ -3,6 +3,7 @@ import { type FC } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
@@ -26,6 +27,7 @@ import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { formatExpirationDateMMYY, validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import type { CreditCardItemFormValues } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
@@ -170,7 +172,9 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, rev
                             />
                         </FieldsetCluster>
 
-                        <ExtraFieldGroup form={form} />
+                        <FeatureFlag feature={PassFeature.PassCustomTypeV1}>
+                            <ExtraFieldGroup form={form} />
+                        </FeatureFlag>
                     </Form>
                 </FormikProvider>
             )}
