@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
@@ -31,6 +32,7 @@ import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/ite
 import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { CreditCardItemFormValues } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -186,7 +188,9 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                             <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                         </FieldsetCluster>
 
-                        <ExtraFieldGroup form={form} />
+                        <FeatureFlag feature={PassFeature.PassCustomTypeV1}>
+                            <ExtraFieldGroup form={form} />
+                        </FeatureFlag>
                     </Form>
                 </FormikProvider>
             )}

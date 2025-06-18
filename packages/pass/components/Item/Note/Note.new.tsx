@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
@@ -22,6 +23,7 @@ import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/ite
 import { validateNoteForm } from '@proton/pass/lib/validation/note';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { NoteFormValues } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -97,10 +99,12 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
                                 minRows={10}
                             />
                         </FieldsetCluster>
-                        <ExtraFieldGroup
-                            form={form}
-                            customButton={{ shape: 'solid', color: 'weak', label: c('Action').t`Add field` }}
-                        />
+                        <FeatureFlag feature={PassFeature.PassCustomTypeV1}>
+                            <ExtraFieldGroup
+                                form={form}
+                                customButton={{ shape: 'solid', color: 'weak', label: c('Action').t`Add field` }}
+                            />
+                        </FeatureFlag>
                         <FieldsetCluster className="mt-4">
                             <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                         </FieldsetCluster>
