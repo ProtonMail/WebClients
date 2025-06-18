@@ -46,7 +46,16 @@ export default function MailboxList({
     const params = useMailSelector(paramsSelector);
     const { filter, labelID, elementID, sort } = params;
     const { total, loading, placeholderCount, elementIDs } = elementsData;
-    const { handleElement, handleMarkAs, handleDelete, handleMove, handleCheck, handleCheckOne, checkedIDs } = actions;
+    const {
+        handleElement,
+        handleMarkAs,
+        handleDelete,
+        handleMove,
+        handleCheck,
+        handleCheckOne,
+        handleCheckAll,
+        checkedIDs,
+    } = actions;
 
     const navigation = useRouterNavigation({ labelID });
 
@@ -105,7 +114,11 @@ export default function MailboxList({
                 className="enhanced-list-container"
             >
                 {toolbar && <div className="shrink-0 sticky top-0 z-up">{toolbar}</div>}
-                <MailboxListBannersWrapper columnLayout={overrideColumnMode || columnLayout} />
+                <MailboxListBannersWrapper
+                    columnLayout={overrideColumnMode || columnLayout}
+                    checkedIDs={checkedIDs}
+                    onCheckAll={handleCheckAll}
+                />
                 <MailboxListItems
                     listRef={listRefToUse}
                     onClick={handleElement}
