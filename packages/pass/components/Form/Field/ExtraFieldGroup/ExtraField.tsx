@@ -4,7 +4,6 @@ import type { FieldInputProps, FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import { Button, type ButtonProps } from '@proton/atoms';
-import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
 import { DateField } from '@proton/pass/components/Form/Field/DateField';
 import type { FieldBoxProps } from '@proton/pass/components/Form/Field/Layout/FieldBox';
@@ -17,11 +16,7 @@ import type { DeobfuscatedItemExtraField, ExtraFieldType } from '@proton/pass/ty
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import clsx from '@proton/utils/clsx';
 
-type ExtraFieldOption = {
-    icon: IconName;
-    label: string;
-    placeholder?: string;
-};
+import { getExtraFieldOption } from './ExtraField.utils';
 
 type ExtraFieldError<T extends ExtraFieldType> = FormikErrors<DeobfuscatedItemExtraField<T>>;
 
@@ -31,35 +26,10 @@ export type ExtraFieldProps = FieldBoxProps &
         field: FieldInputProps<DeobfuscatedItemExtraField>;
         error?: ExtraFieldError<ExtraFieldType>;
         touched?: boolean;
-        showIcon?: boolean;
         autoFocus?: boolean;
+        hideIcon?: boolean;
         onDelete: () => void;
     };
-
-export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption> => ({
-    text: {
-        icon: 'text-align-left',
-        label: c('Label').t`Text`,
-        placeholder: c('Placeholder').t`Add text`,
-    },
-    totp: {
-        icon: 'lock',
-        label: c('Label').t`2FA secret key (TOTP)`,
-        placeholder: c('Placeholder').t`Add 2FA secret key`,
-    },
-    hidden: {
-        icon: 'eye-slash',
-        // translator: label for a field that is hidden. Singular only.
-        label: c('Label').t`Hidden`,
-        placeholder: c('Placeholder').t`Add hidden text`,
-    },
-    timestamp: {
-        icon: 'calendar-grid',
-        label: c('Label').t`Date`,
-    },
-});
-
-export const getExtraFieldOption = (type: ExtraFieldType) => getExtraFieldOptions()[type];
 
 type DeleteButtonProps = ButtonProps & { onDelete: () => void };
 export const DeleteButton: FC<DeleteButtonProps> = ({ onDelete }) => (
@@ -82,13 +52,15 @@ export const ExtraFieldComponent: FC<ExtraFieldProps> = ({
     className,
     error,
     field,
-    onDelete,
-    showIcon = true,
+    hideIcon = false,
     touched,
     type,
+    onDelete,
     ...rest
 }) => {
-    const { icon, placeholder } = getExtraFieldOption(type);
+    const options = getExtraFieldOption(type);
+    const { placeholder } = options;
+    const icon = hideIcon ? undefined : options.icon;
 
     const onChangeHandler =
         (
@@ -98,20 +70,12 @@ export const ExtraFieldComponent: FC<ExtraFieldProps> = ({
             void rest.form.setFieldValue(field.name, merge(evt, field.value));
         };
 
-    const fieldValueEmpty = Object.values(field.value.data).every((value) => !value);
+    const hasError = touched && error?.fieldName;
 
     return (
-        <FieldBox
-            actions={[<DeleteButton onDelete={onDelete} />]}
-            className={className}
-            icon={showIcon ? icon : undefined}
-        >
+        <FieldBox actions={[<DeleteButton onDelete={onDelete} />]} className={className} icon={icon}>
             <BaseTextField
-                inputClassName={clsx(
-                    'text-sm',
-                    !fieldValueEmpty && 'color-weak',
-                    touched && error?.fieldName && 'placeholder-danger'
-                )}
+                inputClassName={clsx('text-sm', hasError ? 'placeholder-danger' : 'color-weak')}
                 placeholder={c('Label').t`Field name`}
                 autoFocus={autoFocus}
                 field={{

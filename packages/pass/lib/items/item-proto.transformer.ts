@@ -1,5 +1,4 @@
 import { parsePasskey } from '@proton/pass/lib/passkeys/utils';
-import { formatExpirationDateYYYYMM } from '@proton/pass/lib/validation/credit-card';
 import type {
     DeobfuscatedItem,
     DeobfuscatedItemExtraField,
@@ -21,6 +20,7 @@ import type {
     ItemWifi,
 } from '@proton/pass/types/protobuf/item-v1';
 import { sanitizeBuffers } from '@proton/pass/utils/buffer/sanitization';
+import { formatExpirationDateYYYYMM } from '@proton/pass/utils/time/expiration-date';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import { deobfuscateItem, obfuscateItem } from './item.obfuscation';
