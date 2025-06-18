@@ -18,7 +18,7 @@ export type IdentityFormField = {
 };
 
 export type IdentityFormSection = {
-    customFieldsKey?: IdentityExtraFieldsKey;
+    customFieldsKey: IdentityExtraFieldsKey;
     expanded: boolean;
     fields: IdentityFormField[];
     name: string;
