@@ -18,10 +18,10 @@ import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaRe
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { usePartialDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { formatExpirationDateMMYY } from '@proton/pass/lib/validation/credit-card';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { deobfuscateCCField } from '@proton/pass/utils/obfuscate/xor';
+import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
 
 export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLinkItem, revision }) => {
     const { data: item, itemId, shareId } = revision;
