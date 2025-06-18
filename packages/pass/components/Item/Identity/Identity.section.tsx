@@ -89,7 +89,6 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
                     <Field
                         key={field.name}
                         component={field.component ?? TextField}
-                        mask={field.mask}
                         hidden={field.hidden}
                         type="text"
                         {...field}
@@ -101,7 +100,6 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
                         name={customFieldsKey}
                         render={(helpers) => {
                             const customFields = form.values[customFieldsKey];
-
                             return (
                                 <>
                                     {customFields?.map(({ type }, index) => (
