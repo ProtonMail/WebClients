@@ -217,21 +217,13 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
         newsletterSubscriptionID: params.newsletterSubscriptionID,
     });
 
-    // Retry is disabled for encrypted search results, to avoid re-triggering the search several times
-    // when there are no results
-    Object.assign(state, {
-        bypassFilter: [],
-        beforeFirstLoad: false,
-        invalidated: false,
-        pendingRequest: false,
-        page: action.payload.page,
-        elements: { ...state.elements, ...toMap(action.payload.elements, 'ID') },
-        retry: { payload: undefined, count: 0, error: undefined },
-        params: {
-            ...state.params,
-            ...params,
-        },
-    });
+    state.bypassFilter = [];
+    state.beforeFirstLoad = false;
+    state.invalidated = false;
+    state.pendingRequest = false;
+    state.page = action.payload.page;
+    state.elements = { ...state.elements, ...toMap(action.payload.elements, 'ID') };
+    state.retry = { payload: undefined, count: 0, error: undefined };
     state.total[contextFilter] = total;
     state.pages[contextFilter] = state.pages[contextFilter]
         ? unique([...state.pages[contextFilter], ...pages]).sort()
