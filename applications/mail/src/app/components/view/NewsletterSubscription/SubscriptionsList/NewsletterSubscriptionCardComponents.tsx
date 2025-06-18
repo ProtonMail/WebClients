@@ -26,10 +26,15 @@ export const SubscriptionCardTitle = ({ subscription }: PropsWithNewsletterSubsc
                 className="text-rg text-bold mb-1 text-ellipsis"
                 title={subscription.Name}
                 id={`subscription-card-title-${subscription.ID}`}
+                data-testid="subscription-card-title"
             >
                 {subscription.Name}
             </h3>
-            <p className="m-0 color-weak text-sm text-ellipsis max-w-full" title={subscription.SenderAddress}>
+            <p
+                className="m-0 color-weak text-sm text-ellipsis max-w-full"
+                title={subscription.SenderAddress}
+                data-testid="subscription-card-sender"
+            >
                 {subscription.SenderAddress}
             </p>
         </div>
@@ -53,7 +58,7 @@ export const SubscriptionCardStats = ({ subscription }: PropsWithNewsletterSubsc
     const receivedMessagesCount = getReceivedMessagesCount(subscription);
 
     return (
-        <div className="flex flex-column gap-2 text-sm color-weak">
+        <div className="flex flex-column gap-2 text-sm color-weak" data-testid="subscription-card-stats">
             {subscription.UnreadMessageCount !== undefined ? (
                 <SubscriptionStat iconName="envelope-dot">
                     {c('Info').ngettext(
