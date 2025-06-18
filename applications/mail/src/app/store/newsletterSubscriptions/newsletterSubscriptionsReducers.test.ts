@@ -2,9 +2,15 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { SortSubscriptionsValue, SubscriptionTabs } from './interface';
-import type { unsubscribeSubscription, updateSubscription } from './newsletterSubscriptionsActions';
+import type {
+    fetchNextNewsletterSubscriptionsPage,
+    filterSubscriptionList,
+    unsubscribeSubscription,
+    updateSubscription,
+} from './newsletterSubscriptionsActions';
 import {
     deleteSubscriptionAnimationEndedReducer,
+    fetchNextNewsletterSubscriptionsPageFulfilled,
     filterSubscriptionListFulfilled,
     filterSubscriptionListPending,
     filterSubscriptionListRejected,
@@ -53,6 +59,7 @@ const activeSubscription: NewsletterSubscription = {
 
 describe('Newsletter subscription reducers', () => {
     let state: NewsletterSubscriptionsStateType;
+    let undefinedValueState: NewsletterSubscriptionsStateType;
 
     beforeEach(() => {
         state = {
@@ -85,6 +92,11 @@ describe('Newsletter subscription reducers', () => {
                 fetchedEphemeral: false,
             },
         };
+
+        undefinedValueState = {
+            ...state,
+            value: undefined,
+        };
     });
 
     describe('setSelectedElementIdReducer', () => {
@@ -96,6 +108,15 @@ describe('Newsletter subscription reducers', () => {
 
             expect(state.value?.selectedElementId).toEqual('1');
         });
+
+        it('should return if the state is not initialized', () => {
+            setSelectedElementIdReducer(undefinedValueState, {
+                type: 'newsletterSubscriptions/setSelectedElementId',
+                payload: '1',
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
+        });
     });
 
     describe('setSortingOrderReducer', () => {
@@ -106,6 +127,15 @@ describe('Newsletter subscription reducers', () => {
             });
 
             expect(state.value?.tabs.active.sorting).toEqual(SortSubscriptionsValue.MostRead);
+        });
+
+        it('should return undefined if the state is not initialized', () => {
+            setSortingOrderReducer(undefinedValueState, {
+                type: 'newsletterSubscriptions/setSortingOrder',
+                payload: SortSubscriptionsValue.MostRead,
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
         });
     });
 
@@ -121,6 +151,15 @@ describe('Newsletter subscription reducers', () => {
 
             expect(state.value?.selectedElementId).toBeUndefined();
             expect(state.value?.selectedSubscriptionId).toBeUndefined();
+        });
+
+        it('should return undefined if the state is not initialized', () => {
+            setSelectedTabReducer(undefinedValueState, {
+                type: 'newsletterSubscriptions/setSelectedTab',
+                payload: SubscriptionTabs.Unsubscribe,
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
         });
     });
 
@@ -139,6 +178,18 @@ describe('Newsletter subscription reducers', () => {
 
             expect(state.value?.selectedSubscriptionId).toBe('1');
             expect(state.value?.selectedElementId).toBeUndefined();
+        });
+
+        it('should return undefined if the state is not initialized', () => {
+            setSelectedSubscriptionReducer(undefinedValueState, {
+                type: 'newsletterSubscriptions/setSelectedSubscription',
+                payload: {
+                    ID: '1',
+                    Name: 'Test',
+                } as NewsletterSubscription,
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
         });
     });
 
@@ -166,6 +217,15 @@ describe('Newsletter subscription reducers', () => {
 
             expect(state.value?.tabs.active.ids).toEqual(['1', '2', '3']);
         });
+
+        it('should return undefined if the state is not initialized', () => {
+            removeSubscriptionFromActiveTabReducer(undefinedValueState, {
+                type: 'newsletterSubscriptions/removeSubscriptionFromActiveTab',
+                payload: '4',
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
+        });
     });
 
     describe('deleteSubscriptionAnimationEndedReducer', () => {
@@ -176,10 +236,25 @@ describe('Newsletter subscription reducers', () => {
 
             expect(state.value?.deletingSubscriptionId).toBeUndefined();
         });
+
+        it('should return undefined if the state is not initialized', () => {
+            deleteSubscriptionAnimationEndedReducer(undefinedValueState);
+
+            expect(undefinedValueState.value).toBeUndefined();
+        });
     });
 
     describe('unsubscribeSubscriptionPending', () => {
         let testState: NewsletterSubscriptionsStateType;
+
+        const meta: ReturnType<typeof unsubscribeSubscription.pending>['meta'] = {
+            arg: {
+                subscription: activeSubscription,
+                subscriptionIndex: 0,
+            },
+            requestId: 'test-request-id',
+            requestStatus: 'pending',
+        };
 
         beforeEach(() => {
             testState = {
@@ -205,14 +280,7 @@ describe('Newsletter subscription reducers', () => {
             unsubscribeSubscriptionPending(testState, {
                 type: 'newsletterSubscriptions/unsubscribeSubscription',
                 payload: undefined,
-                meta: {
-                    arg: {
-                        subscription: activeSubscription,
-                        subscriptionIndex: 0,
-                    },
-                    requestId: 'test-request-id',
-                    requestStatus: 'pending',
-                },
+                meta,
             });
 
             expect(testState.value?.byId[activeSubscription.ID].UnsubscribedTime).not.toBe(0);
@@ -232,19 +300,22 @@ describe('Newsletter subscription reducers', () => {
             unsubscribeSubscriptionPending(testState, {
                 type: 'newsletterSubscriptions/unsubscribeSubscription',
                 payload: undefined,
-                meta: {
-                    arg: {
-                        subscription: activeSubscription,
-                        subscriptionIndex: 0,
-                    },
-                    requestId: 'test-request-id',
-                    requestStatus: 'pending',
-                },
+                meta,
             });
 
             expect(testState.value?.byId[activeSubscription.ID].UnsubscribedTime).not.toBe(0);
 
             expect(testState.value?.selectedSubscriptionId).toBeUndefined();
+        });
+
+        it('should return undefined if the state is not initialized', () => {
+            unsubscribeSubscriptionPending(undefinedValueState, {
+                type: 'newsletterSubscriptions/unsubscribeSubscription',
+                payload: undefined,
+                meta,
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
         });
     });
 
@@ -327,17 +398,7 @@ describe('Newsletter subscription reducers', () => {
             unsubscribeSubscriptionRejected(state, {
                 type: 'newsletterSubscriptions/unsubscribeSubscription',
                 payload: { previousState, originalIndex: 0 },
-                meta: {
-                    arg: {
-                        subscription: activeSubscription,
-                        subscriptionIndex: 0,
-                    },
-                    requestId: 'test-request-id',
-                    requestStatus: 'rejected',
-                    aborted: false,
-                    condition: false,
-                    rejectedWithValue: true,
-                },
+                meta,
                 error: {},
             });
 
@@ -365,6 +426,12 @@ describe('Newsletter subscription reducers', () => {
 
             expect(state.value?.tabs.active.loading).toBeTruthy();
             expect(state.value?.tabs.unsubscribe.loading).toBe(true);
+        });
+
+        it('should return undefined if the state is not initialized', () => {
+            sortSubscriptionPending(undefinedValueState);
+
+            expect(undefinedValueState.value).toBeUndefined();
         });
     });
 
@@ -403,6 +470,23 @@ describe('Newsletter subscription reducers', () => {
                 ID: 'active-2',
                 Name: 'Active Subscription 2',
             });
+
+            expect(state.value?.tabs.active.paginationQueryString).toEqual('?page=2');
+        });
+
+        it('should save null if there is no next page', () => {
+            sortSubscriptionFulfilled(state, {
+                type: 'newsletterSubscriptions/sortSubscription',
+                payload: {
+                    ...payload,
+                    PageInfo: {
+                        ...payload.PageInfo,
+                        NextPage: null,
+                    },
+                },
+            });
+
+            expect(state.value?.tabs.active.paginationQueryString).toBeNull();
         });
 
         it('should reset the loading state of the tabs', () => {
@@ -427,6 +511,15 @@ describe('Newsletter subscription reducers', () => {
             expect(state.value?.tabs.active.paginationQueryString).toEqual('?page=2');
             expect(state.value?.tabs.active.ids).toEqual(['active-1', 'active-2']);
         });
+
+        it('should return undefined if the state is not initialized', () => {
+            sortSubscriptionFulfilled(undefinedValueState, {
+                type: 'newsletterSubscriptions/sortSubscription',
+                payload,
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
+        });
     });
 
     describe('sortSubscriptionRejected', () => {
@@ -446,9 +539,29 @@ describe('Newsletter subscription reducers', () => {
             expect(state.value?.tabs.active.loading).toBeFalsy();
             expect(state.value?.tabs.unsubscribe.loading).toBeFalsy();
         });
+
+        it('should return undefined if the state is not initialized', () => {
+            sortSubscriptionRejected(undefinedValueState);
+
+            expect(undefinedValueState.value).toBeUndefined();
+        });
     });
 
     describe('filterSubscriptionListPending', () => {
+        const meta: ReturnType<typeof filterSubscriptionList.pending>['meta'] = {
+            arg: {
+                subscription: activeSubscription,
+                subscriptionIndex: 0,
+                data: {
+                    ApplyTo: 'All',
+                    MarkAsRead: true,
+                    DestinationFolder: 'folder-1',
+                },
+            },
+            requestId: 'test-request-id',
+            requestStatus: 'pending',
+        };
+
         it('should update the subscription with filter data', () => {
             state.value!.byId = {
                 [activeSubscription.ID]: activeSubscription,
@@ -457,27 +570,39 @@ describe('Newsletter subscription reducers', () => {
             filterSubscriptionListPending(state, {
                 type: 'newsletterSubscriptions/filterSubscriptionList',
                 payload: undefined,
-                meta: {
-                    arg: {
-                        subscription: activeSubscription,
-                        subscriptionIndex: 0,
-                        data: {
-                            ApplyTo: 'All',
-                            MarkAsRead: true,
-                            DestinationFolder: 'folder-1',
-                        },
-                    },
-                    requestId: 'test-request-id',
-                    requestStatus: 'pending',
-                },
+                meta,
             });
 
             expect(state.value?.byId[activeSubscription.ID].MarkAsRead).toEqual(true);
             expect(state.value?.byId[activeSubscription.ID].MoveToFolder).toEqual('folder-1');
         });
+
+        it('should return undefined if the state is not initialized', () => {
+            filterSubscriptionListPending(undefinedValueState, {
+                type: 'newsletterSubscriptions/filterSubscriptionList',
+                payload: undefined,
+                meta,
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
+        });
     });
 
     describe('filterSubscriptionListFulfilled', () => {
+        const meta: ReturnType<typeof filterSubscriptionList.fulfilled>['meta'] = {
+            arg: {
+                subscription: activeSubscription,
+                subscriptionIndex: 0,
+                data: {
+                    ApplyTo: 'All',
+                    MarkAsRead: true,
+                    DestinationFolder: 'folder-1',
+                },
+            },
+            requestId: 'test-request-id',
+            requestStatus: 'fulfilled',
+        };
+
         it('should update the subscription in the state', () => {
             state.value!.byId = {
                 [activeSubscription.ID]: activeSubscription,
@@ -490,17 +615,7 @@ describe('Newsletter subscription reducers', () => {
                 payload: {
                     NewsletterSubscription: { ...activeSubscription, UnsubscribedTime: 100 },
                 },
-                meta: {
-                    arg: {
-                        subscription: activeSubscription,
-                        subscriptionIndex: 0,
-                        data: {
-                            ApplyTo: 'All',
-                        },
-                    },
-                    requestId: 'test-request-id',
-                    requestStatus: 'fulfilled',
-                },
+                meta,
             });
 
             expect(state.value?.byId[activeSubscription.ID].UnsubscribedTime).toEqual(100);
@@ -517,24 +632,46 @@ describe('Newsletter subscription reducers', () => {
                 payload: {
                     NewsletterSubscription: newSubscription,
                 },
-                meta: {
-                    arg: {
-                        subscription: activeSubscription,
-                        subscriptionIndex: 0,
-                        data: {
-                            ApplyTo: 'All',
-                        },
-                    },
-                    requestId: 'test-request-id',
-                    requestStatus: 'fulfilled',
-                },
+                meta,
             });
 
             expect(state.value?.byId[activeSubscription.ID]).toEqual(newSubscription);
         });
+
+        it('should return undefined if the state is not initialized', () => {
+            const newSubscription: NewsletterSubscription = {
+                ...activeSubscription,
+                UnsubscribedTime: 100,
+            };
+
+            filterSubscriptionListFulfilled(undefinedValueState, {
+                type: 'newsletterSubscriptions/filterSubscriptionList',
+                payload: {
+                    NewsletterSubscription: newSubscription,
+                },
+                meta,
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
+        });
     });
 
     describe('filterSubscriptionListRejected', () => {
+        const meta: ReturnType<typeof filterSubscriptionList.rejected>['meta'] = {
+            arg: {
+                subscription: activeSubscription,
+                subscriptionIndex: 0,
+                data: {
+                    ApplyTo: 'All',
+                },
+            },
+            requestId: 'test-request-id',
+            requestStatus: 'rejected',
+            aborted: false,
+            condition: false,
+            rejectedWithValue: true,
+        };
+
         it('should rollback the subscription to the previous state', () => {
             const previousState = activeSubscription;
 
@@ -550,20 +687,7 @@ describe('Newsletter subscription reducers', () => {
             filterSubscriptionListRejected(state, {
                 type: 'newsletterSubscriptions/filterSubscriptionList',
                 payload: { previousState, originalIndex: 0 },
-                meta: {
-                    arg: {
-                        subscription: activeSubscription,
-                        subscriptionIndex: 0,
-                        data: {
-                            ApplyTo: 'All',
-                        },
-                    },
-                    requestId: 'test-request-id',
-                    requestStatus: 'rejected',
-                    aborted: false,
-                    condition: false,
-                    rejectedWithValue: true,
-                },
+                meta,
                 error: {},
             });
 
@@ -573,10 +697,76 @@ describe('Newsletter subscription reducers', () => {
                 previousState.ReceivedMessageCount
             );
         });
+
+        it('should return undefined if the state is not initialized', () => {
+            const previousState = activeSubscription;
+
+            filterSubscriptionListRejected(undefinedValueState, {
+                type: 'newsletterSubscriptions/filterSubscriptionList',
+                payload: { previousState, originalIndex: 0 },
+                meta,
+                error: {},
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
+        });
     });
-    describe('fetchNextNewsletterSubscriptionsPageFulfilled', () => {});
+    describe('fetchNextNewsletterSubscriptionsPageFulfilled', () => {
+        const payload = {
+            NewsletterSubscriptions: [{ ...activeSubscription, ID: 'active-2' }],
+            PageInfo: {
+                Total: 1,
+                NextPage: {
+                    QueryString: '?page=2',
+                },
+            },
+        };
+
+        const meta: ReturnType<typeof fetchNextNewsletterSubscriptionsPage.fulfilled>['meta'] = {
+            arg: undefined,
+            requestId: 'test-request-id',
+            requestStatus: 'fulfilled',
+        };
+
+        it('should update the state with the new subscriptions', () => {
+            state.value!.tabs.active.ids = [activeSubscription.ID];
+            state.value!.byId = {
+                [activeSubscription.ID]: activeSubscription,
+            };
+
+            fetchNextNewsletterSubscriptionsPageFulfilled(state, {
+                type: 'newsletterSubscriptions/fetchNextNewsletterSubscriptionsPage',
+                payload,
+                meta,
+            });
+
+            expect(state.value?.tabs.active.ids).toEqual([activeSubscription.ID, 'active-2']);
+        });
+
+        it('should return undefined if the state is not initialized', () => {
+            fetchNextNewsletterSubscriptionsPageFulfilled(undefinedValueState, {
+                type: 'newsletterSubscriptions/fetchNextNewsletterSubscriptionsPage',
+                payload,
+                meta,
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
+        });
+    });
 
     describe('updateSubscriptionPending', () => {
+        const meta: ReturnType<typeof updateSubscription.pending>['meta'] = {
+            arg: {
+                subscription: activeSubscription,
+                subscriptionIndex: 0,
+                data: {
+                    Unsubscribed: true,
+                },
+            },
+            requestId: 'test-request-id',
+            requestStatus: 'pending',
+        };
+
         it('should update the subscription with the new data', () => {
             state.value!.byId = {
                 [activeSubscription.ID]: activeSubscription,
@@ -587,16 +777,7 @@ describe('Newsletter subscription reducers', () => {
             updateSubscriptionPending(state, {
                 type: 'newsletterSubscriptions/updateSubscription',
                 payload: undefined,
-                meta: {
-                    arg: {
-                        subscription: activeSubscription,
-                        data: {
-                            Unsubscribed: true,
-                        },
-                    },
-                    requestId: 'test-request-id',
-                    requestStatus: 'pending',
-                },
+                meta,
             });
 
             expect(state.value?.byId[activeSubscription.ID].UnsubscribedTime).not.toBe(0);
@@ -605,6 +786,16 @@ describe('Newsletter subscription reducers', () => {
             expect(state.value?.tabs.unsubscribe.ids).toEqual([activeSubscription.ID]);
             expect(state.value?.tabs.unsubscribe.totalCount).toEqual(1);
             expect(state.value?.deletingSubscriptionId).toEqual(activeSubscription.ID);
+        });
+
+        it('should return undefined if the state is not initialized', () => {
+            updateSubscriptionPending(undefinedValueState, {
+                type: 'newsletterSubscriptions/updateSubscription',
+                payload: undefined,
+                meta,
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
         });
     });
 
@@ -690,20 +881,7 @@ describe('Newsletter subscription reducers', () => {
             updateSubscriptionRejected(state, {
                 type: 'newsletterSubscriptions/unsubscribeSubscription',
                 payload: { previousState, originalIndex: 0 },
-                meta: {
-                    arg: {
-                        subscription: activeSubscription,
-                        subscriptionIndex: 0,
-                        data: {
-                            Unsubscribed: true,
-                        },
-                    },
-                    requestId: 'test-request-id',
-                    requestStatus: 'rejected',
-                    aborted: false,
-                    condition: false,
-                    rejectedWithValue: true,
-                },
+                meta,
                 error: {},
             });
 
@@ -713,9 +891,42 @@ describe('Newsletter subscription reducers', () => {
             expect(state.value?.tabs.unsubscribe.ids).toEqual([]);
             expect(state.value?.tabs.unsubscribe.totalCount).toEqual(0);
         });
+
+        it('should return undefined if the state is not initialized', () => {
+            const previousState = activeSubscription;
+
+            updateSubscriptionRejected(undefinedValueState, {
+                type: 'newsletterSubscriptions/unsubscribeSubscription',
+                payload: { previousState, originalIndex: 0 },
+                meta,
+                error: {},
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
+        });
     });
 
     describe('updateSubscriptionFulfilled', () => {
+        const payload = {
+            NewsletterSubscription: {
+                ...activeSubscription,
+                UnsubscribedTime: 100,
+                ReceivedMessageCount: 10,
+            },
+        };
+
+        const meta: ReturnType<typeof updateSubscription.fulfilled>['meta'] = {
+            arg: {
+                subscription: activeSubscription,
+                subscriptionIndex: 0,
+                data: {
+                    Unsubscribed: true,
+                },
+            },
+            requestId: 'test-request-id',
+            requestStatus: 'fulfilled',
+        };
+
         it('should update the subscription with the new data', () => {
             state.value!.byId = {
                 [activeSubscription.ID]: activeSubscription,
@@ -723,28 +934,22 @@ describe('Newsletter subscription reducers', () => {
 
             updateSubscriptionFulfilled(state, {
                 type: 'newsletterSubscriptions/updateSubscription',
-                payload: {
-                    NewsletterSubscription: {
-                        ...activeSubscription,
-                        UnsubscribedTime: 100,
-                        ReceivedMessageCount: 10,
-                    },
-                },
-                meta: {
-                    arg: {
-                        subscription: activeSubscription,
-                        subscriptionIndex: 0,
-                        data: {
-                            Unsubscribed: true,
-                        },
-                    },
-                    requestId: 'test-request-id',
-                    requestStatus: 'fulfilled',
-                },
+                payload,
+                meta,
             });
 
             expect(state.value?.byId[activeSubscription.ID].UnsubscribedTime).toEqual(100);
             expect(state.value?.byId[activeSubscription.ID].ReceivedMessageCount).toEqual(10);
+        });
+
+        it('should return undefined if the state is not initialized', () => {
+            updateSubscriptionFulfilled(undefinedValueState, {
+                type: 'newsletterSubscriptions/updateSubscription',
+                payload,
+                meta,
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
         });
     });
 
@@ -996,6 +1201,19 @@ describe('Newsletter subscription reducers', () => {
                 expect(state.value?.tabs.unsubscribe.totalCount).toEqual(0);
                 expect(state.value?.byId[activeSubscription.ID]).toBeUndefined();
             });
+        });
+
+        it('should return undefined if the state is not initialized', () => {
+            handleServerEvent(undefinedValueState, {
+                type: 'server event',
+                payload: {
+                    NewsletterSubscriptions: [],
+                    More: 0,
+                    EventID: 'test-event-id',
+                },
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
         });
     });
 });
