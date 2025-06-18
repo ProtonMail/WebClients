@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { AddExtraFieldDropdown } from '@proton/pass/components/Form/Field/ExtraFieldGroup/AddExtraFieldDropdown';
 import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
-import { createExtraField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
+import { createExtraField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { BaseTextField } from '@proton/pass/components/Form/Field/TextField';
@@ -74,7 +74,7 @@ export const CustomFormSections: FC<Props> = ({ form }) => {
                                                         type={type}
                                                         name={`${sectionKey}.sectionFields[${index}]`}
                                                         onDelete={() => helpers.remove(index)}
-                                                        showIcon={false}
+                                                        hideIcon
                                                     />
                                                 ))}
                                             </FieldsetCluster>
