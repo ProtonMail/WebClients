@@ -43,6 +43,7 @@ export const CustomForm = <T extends ItemType>({
                     {!revision &&
                         vaultTotalCount > 1 &&
                         panelPortal?.(<Field component={VaultPickerField} name="shareId" dense />)}
+
                     <Field
                         lengthLimiters
                         name="name"
@@ -57,6 +58,8 @@ export const CustomForm = <T extends ItemType>({
 
                 <CustomTypeFields type={form.values.type} />
 
+                <ExtraFieldGroup form={form} />
+
                 <CustomFormSections form={form} />
 
                 <FieldsetCluster>
@@ -69,8 +72,6 @@ export const CustomForm = <T extends ItemType>({
                         maxLength={MAX_ITEM_NOTE_LENGTH}
                     />
                 </FieldsetCluster>
-
-                <ExtraFieldGroup form={form} />
 
                 <FieldsetCluster>
                     {revision ? (

@@ -53,6 +53,8 @@ export const CustomContent = <T extends ItemCustomType>({ revision }: ItemConten
 
             {revision.data.type === 'sshKey' && <SSHKeyContent revision={revision as ItemRevision<'sshKey'>} />}
 
+            {extraFields.length && <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />}
+
             {content.sections.map(({ sectionName: name, sectionFields: fields }, sectionIndex) => (
                 <section key={`${name}::${sectionIndex}`}>
                     <FieldBox className="color-weak my-4" unstyled>
@@ -75,8 +77,6 @@ export const CustomContent = <T extends ItemCustomType>({ revision }: ItemConten
                     />
                 </FieldsetCluster>
             )}
-
-            {extraFields.length && <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />}
         </>
     );
 };
