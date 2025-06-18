@@ -113,8 +113,6 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                         );
                     })}
 
-                    <hr className="my-4" />
-
                     <CustomNewSection
                         upsellRef={UpsellRef.IDENTITY_CUSTOM_FIELDS}
                         onAdd={(sectionName: string) =>
@@ -124,6 +122,8 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                             })
                         }
                     />
+
+                    <hr className="my-4" />
                 </>
             )}
         />
