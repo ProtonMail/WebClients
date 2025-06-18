@@ -33,6 +33,8 @@ import { filterSubscriptionList } from 'proton-mail/store/newsletterSubscription
 import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { getReceivedMessagesCount } from '../../helper';
+import { NewsletterSubscriptionAction } from '../../interface';
+import { useNewsletterSubscriptionTelemetry } from '../../useNewsletterSubscriptionTelemetry';
 
 import './ModalMoveToFolder.scss';
 
@@ -49,6 +51,8 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
     const api = useApi();
     const { call } = useEventManager();
 
+    const { sendNewsletterAction } = useNewsletterSubscriptionTelemetry();
+
     const { list } = useMailFolderTreeView();
     const dispatch = useMailDispatch();
     const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
@@ -63,7 +67,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
 
     const { createNotification } = useNotifications();
 
-    const [applyFuture, setApplyFuture] = useState(false);
+    const [applyToFuture, setApplyToFuture] = useState(false);
     const [selectedFolder, setSelectedFolder] = useState<FolderItem | null>(null);
 
     const customFolderName = subscription.Name.slice(0, MAX_FOLDER_NAME_LENGTH);
@@ -100,7 +104,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
         });
 
     const handleChange = () => {
-        setApplyFuture((val) => !val);
+        setApplyToFuture((val) => !val);
     };
 
     const handleSelectFolder = (folder: FolderItem) => {
@@ -111,7 +115,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
         setSearch(changeEvent.target.value);
     };
 
-    const handleMoveToFolder = (labelId: string, labelName: string) => {
+    const handleMoveToFolder = (labelId: string, labelName: string, isNewFolder = false) => {
         if (!labelId) {
             return;
         }
@@ -121,7 +125,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
                 subscription,
                 subscriptionIndex,
                 data: {
-                    ApplyTo: applyFuture ? 'All' : 'Existing',
+                    ApplyTo: applyToFuture ? 'All' : 'Existing',
                     DestinationFolder: labelId,
                     MarkAsRead: false,
                 },
@@ -135,6 +139,16 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
                 `Moved ${count} messages to ${labelName}.`,
                 count
             ),
+        });
+
+        sendNewsletterAction({
+            newsletterAction: isNewFolder
+                ? NewsletterSubscriptionAction.createAndMoveToFolder
+                : NewsletterSubscriptionAction.moveToFolder,
+            applyToFuture: applyToFuture,
+            moveToArchive: labelId === MAILBOX_LABEL_IDS.ARCHIVE,
+            moveToTrash: labelId === MAILBOX_LABEL_IDS.TRASH,
+            labelId,
         });
 
         props?.onClose?.();
@@ -157,7 +171,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
         );
 
         if (label.Label.ID) {
-            void handleMoveToFolder(label.Label.ID, label.Label.Name);
+            void handleMoveToFolder(label.Label.ID, label.Label.Name, true);
             void call();
         } else {
             createNotification({
@@ -187,7 +201,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
                         </Button>
                     </div>
                     <hr className="bg-weak divider-size" />
-                    <Checkbox id="applyFuture" checked={applyFuture} className="mb-2" onChange={handleChange}>
+                    <Checkbox id="applyFuture" checked={applyToFuture} className="mb-2" onChange={handleChange}>
                         {c('Label').t`Apply to future messages`}
                     </Checkbox>
                 </div>,
@@ -228,8 +242,8 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
                                 <Button
                                     fullWidth
                                     shape={selectedFolder?.ID === folder.ID ? 'solid' : 'ghost'}
-                                    className="text-left"
                                     color={selectedFolder?.ID === folder.ID ? 'weak' : undefined}
+                                    className="text-left"
                                     onClick={() => handleSelectFolder(folder)}
                                     aria-pressed={selectedFolder?.ID === folder.ID}
                                 >
