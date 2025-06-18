@@ -16,7 +16,8 @@ import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { getOrgAuthLogs } from '@proton/shared/lib/api/b2bevents';
-import type { B2BAuthLog } from '@proton/shared/lib/authlog';
+import { queryLogs } from '@proton/shared/lib/api/logs';
+import type { AuthLog, B2BAuthLog } from '@proton/shared/lib/authlog';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -38,34 +39,29 @@ const LogsSection = () => {
     const [settings] = useUserSettings();
     const [organization] = useOrganization();
     const [user] = useUser();
-    const [logAuth, setLogAuth] = useState(0);
     const protonSentinel = settings.HighSecurity.Value;
     const api = useApi();
-    const [state, setState] = useState<{ logs: B2BAuthLog[]; total: number }>(INITIAL_STATE);
+    const [b2bState, setB2bState] = useState<{ logs: B2BAuthLog[]; total: number }>(INITIAL_STATE);
+    const [state, setState] = useState<{ logs: AuthLog[]; total: number }>(INITIAL_STATE);
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
     const [loading, withLoading] = useLoading();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
     const [loadingDownload, withLoadingDownload] = useLoading();
-    const [, withMonitoringInitializing] = useLoading();
     const [error, setError] = useState(false);
 
-    useEffect(() => {
-        void withMonitoringInitializing(
-            new Promise(async (resolve) => {
-                try {
-                    if (organization?.Settings?.LogAuth === 2) {
-                        setLogAuth(SETTINGS_LOG_AUTH_STATE.ADVANCED);
-                    } else if (organization?.Settings?.LogAuth === 1) {
-                        setLogAuth(SETTINGS_LOG_AUTH_STATE.BASIC);
-                    } else if (organization?.Settings?.LogAuth === 0) {
-                        setLogAuth(SETTINGS_LOG_AUTH_STATE.DISABLE);
-                    }
-                } catch (e) {
-                    resolve();
-                }
-            })
-        );
-    }, []);
+    const hasB2BLogs = Boolean(settings?.OrganizationPolicy?.Enforced);
+
+    const logAuth = (() => {
+        if (hasB2BLogs) {
+            if (organization?.Settings?.LogAuth === 2) {
+                return SETTINGS_LOG_AUTH_STATE.ADVANCED;
+            } else if (organization?.Settings?.LogAuth === 1) {
+                return SETTINGS_LOG_AUTH_STATE.BASIC;
+            }
+            return SETTINGS_LOG_AUTH_STATE.DISABLE;
+        }
+        return settings.LogAuth;
+    })();
 
     const handleDownload = async () => {
         const Logs = await getAllAuthenticationLogs(api);
@@ -85,11 +81,6 @@ const LogsSection = () => {
         downloadFile(blob, filename);
     };
 
-    // Handle updates from the event manager
-    useEffect(() => {
-        setLogAuth(settings.LogAuth);
-    }, [settings.LogAuth]);
-
     const latestRef = useRef<any>();
 
     const fetchAndSetState = async () => {
@@ -97,17 +88,27 @@ const LogsSection = () => {
         latestRef.current = latest;
 
         try {
-            const query = {
-                Emails: [user.Email],
-            };
-            const queryString = getFormattedQueryString({ ...query, Page: page - 1, PageSize: 10 });
-            const { Items, Total } = await api<{ Items: B2BAuthLog[]; Total: number }>(getOrgAuthLogs(queryString));
-            if (latestRef.current !== latest) {
-                return;
-            }
-            if (isMounted()) {
-                const data = Items.map((item: any) => item.Data);
-                setState({ logs: data, total: Total });
+            if (hasB2BLogs) {
+                const query = {
+                    Emails: [user.Email],
+                };
+                const queryString = getFormattedQueryString({ ...query, Page: page - 1, PageSize: 10 });
+                const { Items, Total } = await api<{ Items: B2BAuthLog[]; Total: number }>(getOrgAuthLogs(queryString));
+                if (latestRef.current !== latest) {
+                    return;
+                }
+                if (isMounted()) {
+                    const data = Items.map((item: any) => item.Data);
+                    setB2bState({ logs: data, total: Total });
+                }
+            } else {
+                const { Logs, Total } = await api<{ Logs: AuthLog[]; Total: number }>(
+                    queryLogs({
+                        Page: page - 1,
+                        PageSize: 10,
+                    })
+                );
+                setState({ logs: Logs, total: Total });
             }
         } catch (e: any) {
             if (latestRef.current !== latest) {
@@ -170,13 +171,8 @@ const LogsSection = () => {
                 </div>
             </div>
 
-            {1 === 1 ? (
-                <B2BAuthLogsTable
-                    logs={state.logs}
-                    userSection={true}
-                    loading={loading || loadingRefresh}
-                    detailedMonitoring={logAuth === SETTINGS_LOG_AUTH_STATE.ADVANCED}
-                />
+            {hasB2BLogs ? (
+                <B2BAuthLogsTable logs={b2bState.logs} userSection={true} loading={loading || loadingRefresh} />
             ) : (
                 <LogsTable
                     logs={state.logs}

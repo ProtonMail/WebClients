@@ -30,25 +30,13 @@ type HeaderCell = {
     info?: string;
 };
 
-const B2BAuthLogsTable = ({
-    logs,
-    loading,
-    error,
-    detailedMonitoring = false,
-    userSection = false,
-    onEmailOrIPClick,
-    onTimeClick,
-}: Props) => {
+const B2BAuthLogsTable = ({ logs, loading, error, userSection = false, onEmailOrIPClick, onTimeClick }: Props) => {
     if (!loading && error) {
         return (
             <Alert className="mb-4" type="error">
                 {error}
             </Alert>
         );
-    }
-
-    if (!loading && !logs.length) {
-        return <Alert className="mb-4">{c('Info').t`Search by an email address to begin`}</Alert>;
     }
 
     const headerCells: HeaderCell[] = [
@@ -146,43 +134,17 @@ const B2BAuthLogsTable = ({
                                         <span className="color-norm">{Device || '-'}</span>
                                         <span className="color-weak mt-1">{AppVersion || '-'}</span>
                                     </div>,
-                                    ...(detailedMonitoring
-                                        ? [
-                                              <div className="flex flex-column">
-                                                  <div title={IP} className="text-ellipsis color-norm">
-                                                      {IP || '-'}
-                                                  </div>
-                                                  {InternetProvider && (
-                                                      <div className="text-ellipsis color-weak mt-1">
-                                                          ({InternetProvider})
-                                                      </div>
-                                                  )}
-                                              </div>,
-                                          ]
-                                        : [
-                                              <div
-                                                  className="color-weak px-2 py-1 cursor-pointer"
-                                                  title={c('Info')
-                                                      .t`To access this information, enable detailed events`}
-                                              >
-                                                  {c('Info').t`N/A`}
-                                              </div>,
-                                          ]),
-                                    ...(detailedMonitoring
-                                        ? [
-                                              <div className="text-ellipsis color-norm" title={Location || '-'}>
-                                                  {Location || '-'}
-                                              </div>,
-                                          ]
-                                        : [
-                                              <div
-                                                  className="color-weak px-2 py-1 cursor-pointer"
-                                                  title={c('Info')
-                                                      .t`To access this information, enable detailed events`}
-                                              >
-                                                  {c('Info').t`N/A`}
-                                              </div>,
-                                          ]),
+                                    <div className="flex flex-column">
+                                        <div title={IP} className="text-ellipsis color-norm">
+                                            {IP || '-'}
+                                        </div>
+                                        {InternetProvider && (
+                                            <div className="text-ellipsis color-weak mt-1">({InternetProvider})</div>
+                                        )}
+                                    </div>,
+                                    <div className="text-ellipsis color-norm" title={Location || '-'}>
+                                        {Location || '-'}
+                                    </div>,
                                 ]}
                             />
                         );
