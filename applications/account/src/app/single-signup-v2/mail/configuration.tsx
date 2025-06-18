@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { MailLogo } from '@proton/components';
+import { AppsLogos, MailLogo } from '@proton/components';
 import { getManageUserPermissionsAndAccessFeature } from '@proton/components/containers/payments/features/b2b';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getSecurePersonalAndSharedCalendarFeature } from '@proton/components/containers/payments/features/calendar';
@@ -46,7 +46,6 @@ import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import SignupHeaderV2 from '../SignupHeaderV2';
-import AppsLogos from '../components/AppsLogos';
 import {
     getAdvancedSecurityBenefit,
     getAppsIncludedBenefit,
