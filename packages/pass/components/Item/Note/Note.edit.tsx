@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
@@ -19,6 +20,7 @@ import { deobfuscateExtraFields, obfuscateExtraFields } from '@proton/pass/lib/i
 import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { validateNoteForm } from '@proton/pass/lib/validation/note';
 import type { NoteFormValues } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 const FORM_ID = 'edit-note';
@@ -93,10 +95,12 @@ export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ share, revision, onSub
                                 minRows={10}
                             />
                         </FieldsetCluster>
-                        <ExtraFieldGroup
-                            form={form}
-                            customButton={{ shape: 'solid', color: 'weak', label: c('Action').t`Add field` }}
-                        />
+                        <FeatureFlag feature={PassFeature.PassCustomTypeV1}>
+                            <ExtraFieldGroup
+                                form={form}
+                                customButton={{ shape: 'solid', color: 'weak', label: c('Action').t`Add field` }}
+                            />
+                        </FeatureFlag>
                         <FieldsetCluster className="bg-weak mt-4" mode="read">
                             <Field
                                 name="files"
