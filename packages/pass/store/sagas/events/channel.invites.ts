@@ -15,7 +15,7 @@ import { type Api, ShareType } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
-import { logId, logger } from '@proton/pass/utils/logger';
+import { logger } from '@proton/pass/utils/logger';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { eventChannelFactory } from './channel.factory';
@@ -92,7 +92,7 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
                         : null,
                 };
             } catch (err: unknown) {
-                logger.warn(`[${NAMESPACE}] Could not decrypt invite "${logId(invite.InviteToken)}"`, err);
+                logger.warn(`[${NAMESPACE}] Could not decrypt invite`, err);
                 return null;
             }
         })

@@ -27,7 +27,7 @@ const formatOtpAuthUriFromLegacyTotpDefinition = (item: KeePassItem): Maybe<stri
 
         return `otpauth://totp/${item.name}:none?secret=${item.totpSeed}&period=${period}&digits=${digits}`;
     } catch (e) {
-        logger.warn(`[Importer::KeePass] legacy TOTP settings for item "${item.name}" are not in the expected format`);
+        logger.warn(`[Importer::KeePass] legacy TOTP settings are not in the expected format`);
     }
 };
 
