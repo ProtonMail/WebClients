@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { DriveLogo } from '@proton/components';
+import { AppsLogos, DriveLogo } from '@proton/components';
 import { getNCalendarsFeature } from '@proton/components/containers/payments/features/calendar';
 import {
     getDocumentEditor,
@@ -34,7 +34,6 @@ import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import SignupHeaderV2 from '../SignupHeaderV2';
-import AppsLogos from '../components/AppsLogos';
 import {
     getBenefits,
     getBuiltInEncryptionBenefit,

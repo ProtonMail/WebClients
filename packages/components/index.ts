@@ -5,6 +5,7 @@ export { default as ActionCard } from './components/actionCard/ActionCard';
 export { default as AddressesAutocomplete } from './components/addressesAutocomplete/AddressesAutocomplete';
 export * from './components/addressesAutocomplete/helper';
 export { default as AddressesInput, AddressesInputItem } from './components/addressesInput/AddressesInput';
+export { default as AppsLogos } from './components/appsLogos/AppsLogos';
 export { default as Alert } from './components/alert/Alert';
 export type { AlertType } from './components/alert/Alert';
 export { default as AttachedFile } from './components/attachedFile/AttachedFile';
