@@ -8,10 +8,8 @@ import type {
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { getReceivedMessagesCount } from 'proton-mail/components/view/NewsletterSubscription/helper';
-
 import { normalizeSubscriptions } from './helpers';
-import { SortSubscriptionsValue, type SubscriptionTabs } from './interface';
+import type { SortSubscriptionsValue, SubscriptionTabs } from './interface';
 import type {
     fetchNextNewsletterSubscriptionsPage,
     filterSubscriptionList,
@@ -19,11 +17,12 @@ import type {
     updateSubscription,
 } from './newsletterSubscriptionsActions';
 import {
-    filterNewsletterSubscriptionList,
     getSelectedTabStateValue,
     getStoreValue,
+    handleCreateServerEvent,
+    handleDeleteServerEvent,
     handleUpdateRejection,
-    moveIdToTop,
+    handleUpdateServerEvent,
     updateSubscriptionState,
 } from './newsletterSubscriptionsReducers.helpers';
 import type { NewsletterSubscriptionsStateType } from './newsletterSubscriptionsSlice';
@@ -313,74 +312,17 @@ export const handleServerEvent = (state: NewsletterSubscriptionsStateType, actio
             // 1. The subscription receives a new message, we should move it to the top of the list
             // 2. The subscription is unsubscribed, we should move it to the unsubscribe tab
             if (update.Action === EVENT_ACTIONS.UPDATE) {
-                const subscriptionInStore = stateValue.byId[update.ID];
-                const nextSubscription = update.NewsletterSubscription;
-
-                const prevCount = getReceivedMessagesCount(subscriptionInStore);
-                const nextCount = getReceivedMessagesCount(nextSubscription);
-
-                const recentlyReceivedSelected =
-                    stateValue.tabs[stateValue.selectedTab].sorting === SortSubscriptionsValue.RecentlyReceived;
-
-                // We want to move the subscription to the top of the list if the we received a new message
-                // and the selected tab is sorted by recently received
-                if (prevCount < nextCount && recentlyReceivedSelected) {
-                    if (subscriptionInStore.UnsubscribedTime) {
-                        stateValue.tabs.unsubscribe.ids = moveIdToTop(stateValue.tabs.unsubscribe.ids, update.ID);
-                    } else {
-                        stateValue.tabs.active.ids = moveIdToTop(stateValue.tabs.active.ids, update.ID);
-                    }
-                }
-
-                // We want to move the subscription to the unsubscribe tab if it is unsubscribed
-                if (!subscriptionInStore.UnsubscribedTime && nextSubscription.UnsubscribedTime) {
-                    stateValue.tabs.active.ids = filterNewsletterSubscriptionList(
-                        stateValue.tabs.active.ids,
-                        update.NewsletterSubscription.ID
-                    );
-                    stateValue.tabs.unsubscribe.ids = moveIdToTop(stateValue.tabs.unsubscribe.ids, update.ID);
-                    stateValue.tabs.unsubscribe.totalCount = safeIncreaseCount(stateValue.tabs.unsubscribe.totalCount);
-                    stateValue.tabs.active.totalCount = safeDecreaseCount(stateValue.tabs.active.totalCount);
-                }
-
-                updateSubscriptionState(stateValue.byId, update.ID, update.NewsletterSubscription);
+                handleUpdateServerEvent(state, update);
             }
 
             // For the create event we must add the subscription to the appropriate tab and increase it's total count
             if (update.Action === EVENT_ACTIONS.CREATE) {
-                if (update.NewsletterSubscription.UnsubscribedTime) {
-                    stateValue.tabs.unsubscribe.ids = moveIdToTop(stateValue.tabs.unsubscribe.ids, update.ID);
-                    stateValue.tabs.unsubscribe.totalCount = safeIncreaseCount(stateValue.tabs.unsubscribe.totalCount);
-                } else {
-                    stateValue.tabs.active.ids = moveIdToTop(stateValue.tabs.active.ids, update.ID);
-                    stateValue.tabs.active.totalCount = safeIncreaseCount(stateValue.tabs.active.totalCount);
-                }
-
-                stateValue.byId[update.ID] = update.NewsletterSubscription;
+                handleCreateServerEvent(state, update);
             }
 
             // For the delete event we must remove the subscription from the appropriate tab, unselect it (if it was selected), and decrease it's total count
             if (update.Action === EVENT_ACTIONS.DELETE) {
-                if (stateValue.byId[update.ID].UnsubscribedTime) {
-                    stateValue.tabs.unsubscribe.totalCount = safeDecreaseCount(stateValue.tabs.unsubscribe.totalCount);
-                } else {
-                    stateValue.tabs.active.totalCount = safeDecreaseCount(stateValue.tabs.active.totalCount);
-                }
-
-                if (stateValue.selectedSubscriptionId === update.ID) {
-                    stateValue.selectedSubscriptionId = undefined;
-                    stateValue.selectedElementId = undefined;
-                }
-
-                // Always remove from both tabs
-                stateValue.tabs.active.ids = filterNewsletterSubscriptionList(stateValue.tabs.active.ids, update.ID);
-
-                stateValue.tabs.unsubscribe.ids = filterNewsletterSubscriptionList(
-                    stateValue.tabs.unsubscribe.ids,
-                    update.ID
-                );
-
-                delete stateValue.byId[update.ID];
+                handleDeleteServerEvent(state, update);
             }
         }
     }

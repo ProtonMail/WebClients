@@ -1,3 +1,4 @@
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { SortSubscriptionsValue, SubscriptionTabs } from './interface';
@@ -7,6 +8,7 @@ import {
     filterSubscriptionListFulfilled,
     filterSubscriptionListPending,
     filterSubscriptionListRejected,
+    handleServerEvent,
     removeSubscriptionFromActiveTabReducer,
     setSelectedElementIdReducer,
     setSelectedSubscriptionReducer,
@@ -746,5 +748,254 @@ describe('Newsletter subscription reducers', () => {
         });
     });
 
-    describe('handleServerEvent', () => {});
+    describe('handleServerEvent', () => {
+        describe('Update event', () => {
+            it('should update the subscription in the store', () => {
+                state.value!.byId = {
+                    [activeSubscription.ID]: {
+                        ...activeSubscription,
+                    },
+                };
+
+                handleServerEvent(state, {
+                    type: 'server event',
+                    payload: {
+                        NewsletterSubscriptions: [
+                            {
+                                Action: EVENT_ACTIONS.UPDATE,
+                                NewsletterSubscription: {
+                                    ...activeSubscription,
+                                    ReceivedMessageCount: 12,
+                                },
+                                ID: activeSubscription.ID,
+                            },
+                        ],
+                        More: 0,
+                        EventID: 'test-event-id',
+                    },
+                });
+
+                expect(state.value?.byId[activeSubscription.ID].ReceivedMessageCount).toEqual(12);
+            });
+
+            it('should move the subscription to the top of the list if the selected tab is sorted by recently received', () => {
+                state.value!.tabs.active.sorting = SortSubscriptionsValue.RecentlyReceived;
+                state.value!.tabs.active.ids = ['some-ID-1', 'some-ID-2', activeSubscription.ID];
+                state.value!.tabs.active.totalCount = 1;
+                state.value!.byId = {
+                    [activeSubscription.ID]: {
+                        ...activeSubscription,
+                    },
+                };
+
+                handleServerEvent(state, {
+                    type: 'server event',
+                    payload: {
+                        NewsletterSubscriptions: [
+                            {
+                                Action: EVENT_ACTIONS.UPDATE,
+                                NewsletterSubscription: {
+                                    ...activeSubscription,
+                                    ReceivedMessages: {
+                                        Last90Days: 12,
+                                        Last30Days: 12,
+                                        Total: 12,
+                                    },
+                                },
+                                ID: activeSubscription.ID,
+                            },
+                        ],
+                        More: 0,
+                        EventID: 'test-event-id',
+                    },
+                });
+
+                expect(state.value?.tabs.active.ids).toEqual([activeSubscription.ID, 'some-ID-1', 'some-ID-2']);
+            });
+
+            it('should not move the subscription to the top of the list if the selected tab is sorted by most read', () => {
+                state.value!.tabs.active.sorting = SortSubscriptionsValue.MostRead;
+                state.value!.tabs.active.ids = ['some-ID-1', 'some-ID-2', activeSubscription.ID];
+                state.value!.tabs.active.totalCount = 1;
+                state.value!.byId = {
+                    [activeSubscription.ID]: {
+                        ...activeSubscription,
+                    },
+                };
+
+                handleServerEvent(state, {
+                    type: 'server event',
+                    payload: {
+                        NewsletterSubscriptions: [
+                            {
+                                Action: EVENT_ACTIONS.UPDATE,
+                                NewsletterSubscription: {
+                                    ...activeSubscription,
+                                    ReceivedMessages: {
+                                        Last90Days: 12,
+                                        Last30Days: 12,
+                                        Total: 12,
+                                    },
+                                },
+                                ID: activeSubscription.ID,
+                            },
+                        ],
+                        More: 0,
+                        EventID: 'test-event-id',
+                    },
+                });
+
+                expect(state.value?.tabs.active.ids).toEqual(['some-ID-1', 'some-ID-2', activeSubscription.ID]);
+            });
+
+            it('should move the subscription to the unsubscribe tab if it is unsubscribed', () => {
+                state.value!.tabs.active.ids = [activeSubscription.ID];
+                state.value!.tabs.unsubscribe.ids = ['some-ID-1', 'some-ID-2'];
+                state.value!.tabs.active.totalCount = 1;
+                state.value!.byId = {
+                    [activeSubscription.ID]: {
+                        ...activeSubscription,
+                    },
+                };
+
+                handleServerEvent(state, {
+                    type: 'server event',
+                    payload: {
+                        NewsletterSubscriptions: [
+                            {
+                                Action: EVENT_ACTIONS.UPDATE,
+                                NewsletterSubscription: {
+                                    ...activeSubscription,
+                                    UnsubscribedTime: 100,
+                                },
+                                ID: activeSubscription.ID,
+                            },
+                        ],
+                        More: 0,
+                        EventID: 'test-event-id',
+                    },
+                });
+
+                expect(state.value?.tabs.active.ids).toEqual([]);
+                expect(state.value?.tabs.active.totalCount).toEqual(0);
+
+                expect(state.value?.tabs.unsubscribe.ids).toEqual([activeSubscription.ID, 'some-ID-1', 'some-ID-2']);
+                expect(state.value?.tabs.unsubscribe.totalCount).toEqual(1);
+            });
+        });
+
+        describe('Create event', () => {
+            it('should add the subscription to the top of the active tab if it is active', () => {
+                state.value!.tabs.active.ids = ['some-ID-1', 'some-ID-2'];
+                state.value!.tabs.active.totalCount = 2;
+
+                handleServerEvent(state, {
+                    type: 'server event',
+                    payload: {
+                        NewsletterSubscriptions: [
+                            {
+                                Action: EVENT_ACTIONS.CREATE,
+                                NewsletterSubscription: {
+                                    ...activeSubscription,
+                                    Name: 'New name',
+                                },
+                                ID: activeSubscription.ID,
+                            },
+                        ],
+                        More: 0,
+                        EventID: 'test-event-id',
+                    },
+                });
+
+                expect(state.value?.tabs.active.ids).toEqual([activeSubscription.ID, 'some-ID-1', 'some-ID-2']);
+                expect(state.value?.tabs.active.totalCount).toEqual(3);
+                expect(state.value?.byId[activeSubscription.ID].Name).toEqual('New name');
+            });
+            it('should add the subscription to the top of the unsubscribe tab if it is unsubscribe', () => {
+                state.value!.tabs.unsubscribe.ids = ['some-ID-1', 'some-ID-2'];
+                state.value!.tabs.unsubscribe.totalCount = 2;
+
+                handleServerEvent(state, {
+                    type: 'server event',
+                    payload: {
+                        NewsletterSubscriptions: [
+                            {
+                                Action: EVENT_ACTIONS.CREATE,
+                                NewsletterSubscription: {
+                                    ...activeSubscription,
+                                    UnsubscribedTime: 100,
+                                },
+                                ID: activeSubscription.ID,
+                            },
+                        ],
+                        More: 0,
+                        EventID: 'test-event-id',
+                    },
+                });
+
+                expect(state.value?.tabs.unsubscribe.ids).toEqual([activeSubscription.ID, 'some-ID-1', 'some-ID-2']);
+                expect(state.value?.tabs.unsubscribe.totalCount).toEqual(3);
+                expect(state.value?.byId[activeSubscription.ID].UnsubscribedTime).toEqual(100);
+            });
+        });
+
+        describe('Delete event', () => {
+            it('should remove the subscription from the active tab if it is active', () => {
+                state.value!.tabs.active.ids = [activeSubscription.ID];
+                state.value!.tabs.active.totalCount = 1;
+                state.value!.byId = {
+                    [activeSubscription.ID]: {
+                        ...activeSubscription,
+                    },
+                };
+
+                handleServerEvent(state, {
+                    type: 'server event',
+                    payload: {
+                        NewsletterSubscriptions: [
+                            {
+                                Action: EVENT_ACTIONS.DELETE,
+                                ID: activeSubscription.ID,
+                            },
+                        ],
+                        More: 0,
+                        EventID: 'test-event-id',
+                    },
+                });
+
+                expect(state.value?.tabs.active.ids).toEqual([]);
+                expect(state.value?.tabs.active.totalCount).toEqual(0);
+                expect(state.value?.byId[activeSubscription.ID]).toBeUndefined();
+            });
+
+            it('should remove the subscription from the unsubscribe tab if it is unsubscribe', () => {
+                state.value!.tabs.unsubscribe.ids = [activeSubscription.ID];
+                state.value!.tabs.unsubscribe.totalCount = 1;
+                state.value!.byId = {
+                    [activeSubscription.ID]: {
+                        ...activeSubscription,
+                        UnsubscribedTime: 100,
+                    },
+                };
+
+                handleServerEvent(state, {
+                    type: 'server event',
+                    payload: {
+                        NewsletterSubscriptions: [
+                            {
+                                Action: EVENT_ACTIONS.DELETE,
+                                ID: activeSubscription.ID,
+                            },
+                        ],
+                        More: 0,
+                        EventID: 'test-event-id',
+                    },
+                });
+
+                expect(state.value?.tabs.unsubscribe.ids).toEqual([]);
+                expect(state.value?.tabs.unsubscribe.totalCount).toEqual(0);
+                expect(state.value?.byId[activeSubscription.ID]).toBeUndefined();
+            });
+        });
+    });
 });
