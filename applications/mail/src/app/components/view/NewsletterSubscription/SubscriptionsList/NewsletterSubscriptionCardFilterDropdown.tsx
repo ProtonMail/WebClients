@@ -104,6 +104,7 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
                             disabled={userLoading || filterLoading}
                             onClick={(e) => handleClick(item.filter, e)}
                             className="text-left flex flex-nowrap"
+                            data-testid={`dropdown-item-${item.filter}`}
                         >
                             <Icon name={item.icon} className="mr-2 mt-0.5" />
                             {item.label}
