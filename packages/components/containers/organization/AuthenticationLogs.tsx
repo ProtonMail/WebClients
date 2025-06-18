@@ -43,7 +43,6 @@ interface Props {
     wipeLogs?: boolean;
     reloadTrigger?: number;
     monitoring?: boolean;
-    detailedMonitoringOption?: boolean;
     onLogsLoaded: (logs: B2BAuthLog[]) => void;
 }
 
