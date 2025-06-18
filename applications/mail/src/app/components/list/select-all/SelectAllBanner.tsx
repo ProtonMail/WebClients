@@ -25,7 +25,7 @@ const SelectAllBanner = ({ labelID, onCheckAll }: Props) => {
     }, [selectAll, setSelectAll, onCheckAll]);
 
     return (
-        <div className="flex shrink-0 text-center bg-norm">
+        <div className="flex shrink-0 text-center bg-norm" data-testid="select-all:banner">
             <div className="mx-auto m-2 px-2">
                 <span className="m-0 mr-2 text-center text-ellipsis max-w-full inline-block align-middle">
                     {getBannerText()}
