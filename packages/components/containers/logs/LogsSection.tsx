@@ -172,12 +172,7 @@ const LogsSection = () => {
             </div>
 
             {hasB2BLogs ? (
-                <B2BAuthLogsTable
-                    logs={b2bState.logs}
-                    userSection={true}
-                    loading={loading || loadingRefresh}
-                    detailedMonitoring={logAuth === SETTINGS_LOG_AUTH_STATE.ADVANCED}
-                />
+                <B2BAuthLogsTable logs={b2bState.logs} userSection={true} loading={loading || loadingRefresh} />
             ) : (
                 <LogsTable
                     logs={state.logs}
