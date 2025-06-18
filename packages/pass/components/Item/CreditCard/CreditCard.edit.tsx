@@ -25,11 +25,12 @@ import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
-import { formatExpirationDateMMYY, validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
+import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import type { CreditCardItemFormValues } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
 
 const FORM_ID = 'edit-creditCard';
 
