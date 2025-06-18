@@ -42,6 +42,7 @@ import {
     NewsletterSubscriptionMailListHeader,
     NewsletterSubscriptionMailListToolbar,
 } from './SubscriptionsList/NewsletterSubscriptionMailComponents';
+import { useNewsletterSubscriptionTelemetry } from './useNewsletterSubscriptionTelemetry';
 
 import './NewsletterSubscriptionView.scss';
 
@@ -86,6 +87,9 @@ export const NewsletterSubscriptionView = ({
     const onboardingModal = useModalStateObject();
     const subscriptionContainerRef = useRef<HTMLDivElement>(null);
 
+    const { sendNewslettersViewVisit } = useNewsletterSubscriptionTelemetry();
+    const hasSentPageView = useRef(false);
+
     const isDomBusy = domIsBusy();
 
     const overrideActions = {
@@ -102,6 +106,11 @@ export const NewsletterSubscriptionView = ({
     useEffect(() => {
         if (feature && !feature?.Value && !isDomBusy) {
             onboardingModal.openModal(true);
+        }
+
+        if (!hasSentPageView.current) {
+            sendNewslettersViewVisit(!!(feature && !feature?.Value));
+            hasSentPageView.current = true;
         }
     }, [feature?.Value, isDomBusy]);
 

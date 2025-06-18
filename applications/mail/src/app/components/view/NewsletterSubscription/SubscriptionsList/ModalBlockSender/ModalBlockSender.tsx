@@ -15,7 +15,8 @@ import {
 import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { getUnsubscribeData } from '../../helper';
-import type { PropsWithNewsletterSubscription } from '../../interface';
+import { NewsletterSubscriptionAction, type PropsWithNewsletterSubscription } from '../../interface';
+import { useNewsletterSubscriptionTelemetry } from '../../useNewsletterSubscriptionTelemetry';
 import { ModalCheckboxWithLabel } from './ModalSharedComponents';
 
 type CheckboxState = {
@@ -30,6 +31,8 @@ export const ModalBlockSender = ({ subscription, ...props }: PropsWithNewsletter
     const dispatch = useMailDispatch();
     const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
 
+    const { sendNewsletterAction } = useNewsletterSubscriptionTelemetry();
+
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
@@ -43,6 +46,14 @@ export const ModalBlockSender = ({ subscription, ...props }: PropsWithNewsletter
 
     const onBlockSender = async () => {
         if (checkboxes.block) {
+            sendNewsletterAction({
+                newsletterAction: NewsletterSubscriptionAction.blockSender,
+                applyToFuture: checkboxes.applyToFuture,
+                markAsRead: checkboxes.read,
+                moveToTrash: checkboxes.trash,
+                moveToArchive: checkboxes.archive,
+            });
+
             await dispatch(addBlockAddresses({ addresses: [subscription.SenderAddress], overwrite: true }));
             createNotification({
                 text: c('Info').t`Preferences updated`,

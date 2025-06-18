@@ -25,16 +25,20 @@ import {
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
+import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
+
 const SortingDropdownMenu = () => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const selectedSort = useMailSelector(selectTabSortingState);
+    const { sendNewslettersListSorting } = useNewsletterSubscriptionTelemetry();
 
     const dispatch = useMailDispatch();
 
     const handleSortChange = (value: SortSubscriptionsValue) => {
         void dispatch(newsletterSubscriptionsActions.setSortingOrder(value));
         void dispatch(sortSubscriptionList(value));
+        sendNewslettersListSorting(value);
     };
 
     const items: {
