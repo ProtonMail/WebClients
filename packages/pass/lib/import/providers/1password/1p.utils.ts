@@ -1,9 +1,19 @@
 import { c } from 'ttag';
 
 import { type ItemBuilder, itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, Maybe, MaybeNull } from '@proton/pass/types';
+import type {
+    DeobfuscatedItemExtraField,
+    IdentityFieldName,
+    ItemContent,
+    ItemImportIntent,
+    Maybe,
+    MaybeNull,
+} from '@proton/pass/types';
+import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { objectKeys } from '@proton/pass/utils/object/generic';
+import { isObject } from '@proton/pass/utils/object/is-object';
 import { epochToDate } from '@proton/pass/utils/time/format';
 import lastItem from '@proton/utils/lastItem';
 
@@ -13,6 +23,7 @@ import type {
     OnePassCategory,
     OnePassCreditCardFieldId,
     OnePassField,
+    OnePassFieldValue,
     OnePassFields,
     OnePassItem,
     OnePassItemDetails,
@@ -60,6 +71,23 @@ export const format1PasswordMonthYear = (monthYear: Maybe<number>): string => {
     return `${monthYearString.slice(4, 6)}${monthYearString.slice(0, 4)}`;
 };
 
+/** 1P field values can be nested objects of type :
+ * `{ value: { [string | menu | concealed]: string } }` */
+const sanitize1PasswordFieldValue = (data: unknown): string => {
+    if (isObject(data)) {
+        const value = Object.values(data)?.[0];
+        if (typeof value === 'string') return value;
+        else return '';
+    }
+
+    return String(data);
+};
+
+const sanitize1PasswordLegacyFieldValue = (data: unknown): string => {
+    if (isObject(data)) return '';
+    return String(data);
+};
+
 export const format1PasswordFieldValue = (field: OnePassFields, key: OnePassFieldKey): string => {
     const value = field[key];
     if (!value) return '';
@@ -70,7 +98,7 @@ export const format1PasswordFieldValue = (field: OnePassFields, key: OnePassFiel
         case OnePassFieldKey.MONTH_YEAR:
             return format1PasswordMonthYear(field[key]!);
         default:
-            return String(value);
+            return sanitize1PasswordFieldValue(value);
     }
 };
 
@@ -82,7 +110,7 @@ export const format1PasswordLegacyFieldValue = (field: OnePassLegacySectionField
         case OnePassLegacySectionFieldKey.DATE:
             return epochToDate(field.v!);
         default:
-            return String(value);
+            return sanitize1PasswordLegacyFieldValue(value);
     }
 };
 
@@ -151,13 +179,17 @@ export const extract1PasswordLegacyURLs = (item: OnePassLegacyItem): string[] =>
     return item.secureContents.URLs.map(({ url }: OnePassLegacyURL) => url);
 };
 
+// Field's ids to filter out and build the Wi-Fi item
+const baseWifiFields = ['network_name', 'wireless_password', 'wireless_security'];
+
 export const extract1PasswordExtraFields = (section: OnePassSection): DeobfuscatedItemExtraField[] => {
     return section.fields
-        .map<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value }) => {
+        .flatMap<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value, id }) => {
             const [fieldKey] = objectKeys(value);
             const data = value[fieldKey];
 
-            if (!data) return null;
+            // Prevent importing duplicated fields
+            if (!data || baseWifiFields.includes(id)) return null;
 
             switch (fieldKey) {
                 case OnePassFieldKey.STRING:
@@ -182,20 +214,29 @@ export const extract1PasswordExtraFields = (section: OnePassSection): Deobfuscat
                         type: 'hidden',
                         data: { content: format1PasswordFieldValue(value, fieldKey) },
                     };
+
+                // Return null since we have another mechanism to import files and SSH Keys
+                case OnePassFieldKey.SSH_KEY:
+                case OnePassFieldKey.FILE:
+                    return null;
+
                 default:
                     try {
-                        // Totally unsupported since we have another mechanism to import files
-                        if (fieldKey === 'file') return null;
-
                         let newValue = data;
+                        if (!newValue || Array.isArray(newValue)) return null;
 
                         // The pattern for 1P objects, is always the same.
                         // The "value" property contains an object with 2 keys:
                         // - One key contains the actual data
                         // - The other key contains null/undefined values
-                        // Using generic Object.values here prevent us from unexpected changes in the future
-                        if (typeof newValue === 'object') {
-                            [newValue] = Object.values(newValue).filter(truthy);
+                        if (isObject(newValue)) {
+                            return Object.entries(newValue)
+                                .filter(([, val]) => truthy(val) && !isObject(val))
+                                .map(([key, value]) => ({
+                                    fieldName: key,
+                                    type: 'text',
+                                    data: { content: String(value) },
+                                }));
                         }
 
                         // Always treat as "text" since hidden values were already handled
@@ -212,41 +253,63 @@ export const extract1PasswordExtraFields = (section: OnePassSection): Deobfuscat
         .filter(truthy);
 };
 
-export const extract1PasswordLegacyExtraFields = (item: OnePassLegacyItem) => {
-    return item.secureContents.sections
-        ?.filter(({ fields }) => Boolean(fields))
-        .flatMap(({ fields }) =>
-            (fields as OnePassLegacySectionField[])
-                .filter(({ k }) => Object.values(OnePassLegacySectionFieldKey).includes(k))
-                .map<MaybeNull<DeobfuscatedItemExtraField>>((field) => {
-                    switch (field.k) {
-                        case OnePassLegacySectionFieldKey.STRING:
-                        case OnePassLegacySectionFieldKey.URL:
-                            return {
-                                fieldName: field.t || c('Label').t`Text`,
-                                type: 'text',
-                                data: { content: field.v ?? '' },
-                            };
-                        case OnePassLegacySectionFieldKey.CONCEALED:
-                            if (field.n.startsWith('TOTP')) {
-                                return {
-                                    fieldName: field.t || c('Label').t`TOTP`,
-                                    type: 'totp',
-                                    data: { totpUri: field.v ?? '' },
-                                };
-                            }
-                            return {
-                                // translator: label for a field that is hidden. Singular only.
-                                fieldName: field.t || c('Label').t`Hidden`,
-                                type: 'hidden',
-                                data: { content: field.v ?? '' },
-                            };
-                        default:
-                            return null;
-                    }
-                })
-                .filter(truthy)
-        );
+const mapLegacyFieldIntoExtraField = (field: OnePassLegacySectionField): MaybeNull<DeobfuscatedItemExtraField> => {
+    if (baseWifiFields.includes(field.n)) return null;
+
+    switch (field.k) {
+        case OnePassLegacySectionFieldKey.STRING:
+        case OnePassLegacySectionFieldKey.URL:
+            return {
+                fieldName: field.t || c('Label').t`Text`,
+                type: 'text',
+                data: { content: field.v ?? '' },
+            };
+        case OnePassLegacySectionFieldKey.CONCEALED:
+            if (field.n.startsWith('TOTP')) {
+                return {
+                    fieldName: field.t || c('Label').t`TOTP`,
+                    type: 'totp',
+                    data: { totpUri: field.v ?? '' },
+                };
+            }
+            return {
+                // translator: label for a field that is hidden. Singular only.
+                fieldName: field.t || c('Label').t`Hidden`,
+                type: 'hidden',
+                data: { content: field.v ?? '' },
+            };
+        default:
+            return null;
+    }
+};
+
+export const extract1PasswordLegacyExtraFields = (item: OnePassLegacyItem): DeobfuscatedItemExtraField[] => {
+    const fieldKeys = Object.values(OnePassLegacySectionFieldKey);
+
+    return (
+        item.secureContents.sections?.flatMap(
+            ({ fields }) =>
+                fields
+                    ?.filter(({ k }) => fieldKeys.includes(k))
+                    .map(mapLegacyFieldIntoExtraField)
+                    .filter(truthy) ?? []
+        ) ?? []
+    );
+};
+
+export const extract1PasswordLegacyUnknownExtraFields = (item: OnePassLegacyItem): DeobfuscatedItemExtraField[] => {
+    const excludedFields = ['sshKey-privateKey', 'sshKey-publicKey'];
+    const fieldKeys = Object.values(OnePassLegacySectionFieldKey);
+
+    return (
+        item.secureContents.unknown_details?.sections?.flatMap(
+            ({ fields }) =>
+                fields
+                    ?.filter(({ k, n }) => fieldKeys.includes(k) && !excludedFields.includes(n))
+                    .map(mapLegacyFieldIntoExtraField)
+                    .filter(truthy) ?? []
+        ) ?? []
+    );
 };
 
 export const extract1PasswordLoginField = (
@@ -317,4 +380,83 @@ export const intoFilesFrom1PasswordItem = (sections: Maybe<OnePassSection[]>): s
 
         return acc;
     }, []);
+};
+
+export const extractSSHSections = (
+    sshKey: OnePassFieldValue<OnePassFieldKey.SSH_KEY>
+): ItemImportIntent<'sshKey'>['content']['sections'] => {
+    const sectionFields: DeobfuscatedItemExtraField[] = [];
+
+    if (sshKey?.privateKey) {
+        sectionFields.push({
+            fieldName: c('Label').t`Private Key`,
+            type: 'hidden',
+            data: { content: sshKey.privateKey },
+        });
+    }
+
+    if (sshKey?.metadata?.fingerprint) {
+        sectionFields.push({
+            fieldName: c('Label').t`Key fingerprint`,
+            type: 'hidden',
+            data: { content: sshKey.metadata.fingerprint },
+        });
+    }
+
+    if (sshKey?.metadata?.keyType) {
+        sectionFields.push({
+            fieldName: c('Label').t`Key type`,
+            type: 'text',
+            data: { content: sshKey.metadata.keyType },
+        });
+    }
+
+    if (!sectionFields.length) return [];
+
+    return [{ sectionName: 'OpenSSH', sectionFields }];
+};
+
+const getWifiSecurity = (wirelessSecurity: string): WifiSecurity => {
+    switch (wirelessSecurity) {
+        case 'wpa3p':
+        case 'wpa3e':
+            return WifiSecurity.WPA3;
+        case 'wpa2p':
+        case 'wpa2e':
+            return WifiSecurity.WPA2;
+        case 'wpa':
+            return WifiSecurity.WPA;
+        case 'wep':
+            return WifiSecurity.WEP;
+        default:
+            return WifiSecurity.UnspecifiedWifiSecurity;
+    }
+};
+
+type OnePasswordWifiFields = {
+    ssid?: string;
+    password?: string;
+    security: WifiSecurity;
+};
+
+export const extractBaseWifi = (sections: Maybe<OnePassSection[]> = []): OnePasswordWifiFields => {
+    const fields = sections.flatMap(prop('fields'));
+
+    const [ssid, password, wirelessSecurity] = baseWifiFields.map((key) => {
+        const match = fields.find(({ id }) => id === key)?.value;
+        if (match) return sanitize1PasswordFieldValue(match);
+    });
+
+    return { ssid, password, security: getWifiSecurity(wirelessSecurity ?? '') };
+};
+
+export const extractLegacyBaseWifi = (sections: Maybe<OnePassLegacySection[]> = []): OnePasswordWifiFields => {
+    const fields = sections.flatMap(prop('fields'));
+
+    const [ssid, password, wirelessSecurity] = baseWifiFields.map((key) => {
+        const value = fields.find((f) => f?.n === key)?.v;
+        if (value) return sanitize1PasswordLegacyFieldValue(value);
+    });
+
+    return { ssid, password, security: getWifiSecurity(wirelessSecurity ?? '') };
 };
