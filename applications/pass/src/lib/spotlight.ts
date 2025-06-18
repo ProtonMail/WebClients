@@ -60,7 +60,7 @@ export const spotlight = createSpotlightService({
         ...createAliasDiscoveryRules(store),
         createFileAttachmentsDiscoveryRule(store),
         createProtonAnniversary2025Rule(),
-        ...createAutotypeRules(),
+        ...(DESKTOP_BUILD ? createAutotypeRules() : []),
     ],
 });
 
