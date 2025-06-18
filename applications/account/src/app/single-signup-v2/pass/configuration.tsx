@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/components';
-import { PassLogo } from '@proton/components';
+import { AppsLogos, PassLogo } from '@proton/components';
 import { getPassKeys, getPassMonitor } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
@@ -60,7 +60,6 @@ import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkSubsection from '../LetsTalkSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import SignupHeaderV2 from '../SignupHeaderV2';
-import AppsLogos from '../components/AppsLogos';
 import {
     getAliasesEmailProtectionBenefit,
     getBasedInSwitzerlandGDPRBenefit,
