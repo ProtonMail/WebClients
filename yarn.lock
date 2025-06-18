@@ -8369,7 +8369,7 @@ __metadata:
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.0"
     "@proton/collect-metrics": "workspace:^"
     "@sentry/webpack-plugin": "npm:^1.21.0"
-    "@swc/core": "npm:^1.12.1"
+    "@swc/core": "npm:^1.12.0"
     "@types/webpack": "npm:^5.28.5"
     autoprefixer: "npm:^10.4.21"
     babel-loader: "npm:^10.0.0"
@@ -12842,7 +12842,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core@npm:^1.11.31, @swc/core@npm:^1.12.1":
+"@swc/core@npm:^1.11.31, @swc/core@npm:^1.12.0":
   version: 1.12.1
   resolution: "@swc/core@npm:1.12.1"
   dependencies:
