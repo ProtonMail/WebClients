@@ -71,10 +71,8 @@ const processLoginItem = async (
 
 const processPasswordItem = (
     item: Extract<OnePassItem, { categoryUuid: OnePassCategory.PASSWORD }>
-): Maybe<ItemImportIntent<'login'>> => {
-    if (item.details.password === undefined) return undefined;
-
-    return importLoginItem({
+): ItemImportIntent<'login'> =>
+    importLoginItem({
         name: item.overview.title,
         note: item.details.notesPlain,
         password: item.details.password,
@@ -82,8 +80,8 @@ const processPasswordItem = (
         trashed: item.state === OnePassState.ARCHIVED,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
+        extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
     });
-};
 
 const processIdentityItem = (
     item: Extract<OnePassItem, { categoryUuid: OnePassCategory.IDENTITY }>

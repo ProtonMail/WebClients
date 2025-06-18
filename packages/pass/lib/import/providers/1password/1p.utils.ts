@@ -13,6 +13,7 @@ import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { objectKeys } from '@proton/pass/utils/object/generic';
+import { isObject } from '@proton/pass/utils/object/is-object';
 import { epochToDate } from '@proton/pass/utils/time/format';
 import lastItem from '@proton/utils/lastItem';
 
@@ -70,6 +71,23 @@ export const format1PasswordMonthYear = (monthYear: Maybe<number>): string => {
     return `${monthYearString.slice(4, 6)}${monthYearString.slice(0, 4)}`;
 };
 
+/** 1P field values can be nested objects of type :
+ * `{ value: { [string | menu | concealed]: string } }` */
+const sanitize1PasswordFieldValue = (data: unknown): string => {
+    if (isObject(data)) {
+        const value = Object.values(data)?.[0];
+        if (typeof value === 'string') return value;
+        else return '';
+    }
+
+    return String(data);
+};
+
+const sanitize1PasswordLegacyFieldValue = (data: unknown): string => {
+    if (isObject(data)) return '';
+    return String(data);
+};
+
 export const format1PasswordFieldValue = (field: OnePassFields, key: OnePassFieldKey): string => {
     const value = field[key];
     if (!value) return '';
@@ -80,7 +98,7 @@ export const format1PasswordFieldValue = (field: OnePassFields, key: OnePassFiel
         case OnePassFieldKey.MONTH_YEAR:
             return format1PasswordMonthYear(field[key]!);
         default:
-            return String(value);
+            return sanitize1PasswordFieldValue(value);
     }
 };
 
@@ -92,7 +110,7 @@ export const format1PasswordLegacyFieldValue = (field: OnePassLegacySectionField
         case OnePassLegacySectionFieldKey.DATE:
             return epochToDate(field.v!);
         default:
-            return String(value);
+            return sanitize1PasswordLegacyFieldValue(value);
     }
 };
 
@@ -205,19 +223,21 @@ export const extract1PasswordExtraFields = (section: OnePassSection): Deobfuscat
                 default:
                     try {
                         let newValue = data;
+                        if (!newValue || Array.isArray(newValue)) return null;
 
                         // The pattern for 1P objects, is always the same.
                         // The "value" property contains an object with 2 keys:
                         // - One key contains the actual data
                         // - The other key contains null/undefined values
-                        // Using generic Object.values here prevent us from unexpected changes in the future
-                        if (typeof newValue === 'object') {
-                            [newValue] = Object.values(newValue).filter(
-                                (value) => truthy(value) && typeof value !== 'object'
-                            );
+                        if (isObject(newValue)) {
+                            return Object.entries(newValue)
+                                .filter(([, val]) => truthy(val) && !isObject(val))
+                                .map(([key, value]) => ({
+                                    fieldName: key,
+                                    type: 'text',
+                                    data: { content: String(value) },
+                                }));
                         }
-
-                        if (!newValue) return null;
 
                         // Always treat as "text" since hidden values were already handled
                         return {
@@ -263,33 +283,32 @@ const mapLegacyFieldIntoExtraField = (field: OnePassLegacySectionField): MaybeNu
     }
 };
 
-export const extract1PasswordLegacyExtraFields = (item: OnePassLegacyItem) => {
+export const extract1PasswordLegacyExtraFields = (item: OnePassLegacyItem): DeobfuscatedItemExtraField[] => {
+    const fieldKeys = Object.values(OnePassLegacySectionFieldKey);
+
     return (
-        item.secureContents.sections
-            ?.filter(({ fields }) => Boolean(fields))
-            .flatMap(({ fields }) =>
-                (fields as OnePassLegacySectionField[])
-                    .filter(({ k }) => Object.values(OnePassLegacySectionFieldKey).includes(k))
+        item.secureContents.sections?.flatMap(
+            ({ fields }) =>
+                fields
+                    ?.filter(({ k }) => fieldKeys.includes(k))
                     .map(mapLegacyFieldIntoExtraField)
-                    .filter(truthy)
-            ) ?? []
+                    .filter(truthy) ?? []
+        ) ?? []
     );
 };
 
-export const extract1PasswordLegacyUnknownExtraFields = (item: OnePassLegacyItem) => {
+export const extract1PasswordLegacyUnknownExtraFields = (item: OnePassLegacyItem): DeobfuscatedItemExtraField[] => {
     const excludedFields = ['sshKey-privateKey', 'sshKey-publicKey'];
+    const fieldKeys = Object.values(OnePassLegacySectionFieldKey);
+
     return (
-        item.secureContents.unknown_details?.sections
-            ?.filter(({ fields }) => Boolean(fields))
-            .flatMap(({ fields }) =>
-                (fields as OnePassLegacySectionField[])
-                    .filter(
-                        ({ k, n }) =>
-                            Object.values(OnePassLegacySectionFieldKey).includes(k) && !excludedFields.includes(n)
-                    )
+        item.secureContents.unknown_details?.sections?.flatMap(
+            ({ fields }) =>
+                fields
+                    ?.filter(({ k, n }) => fieldKeys.includes(k) && !excludedFields.includes(n))
                     .map(mapLegacyFieldIntoExtraField)
-                    .filter(truthy)
-            ) ?? []
+                    .filter(truthy) ?? []
+        ) ?? []
     );
 };
 
@@ -366,32 +385,35 @@ export const intoFilesFrom1PasswordItem = (sections: Maybe<OnePassSection[]>): s
 export const extractSSHSections = (
     sshKey: OnePassFieldValue<OnePassFieldKey.SSH_KEY>
 ): ItemImportIntent<'sshKey'>['content']['sections'] => {
-    const sectionFields = [
-        sshKey?.privateKey && {
+    const sectionFields: DeobfuscatedItemExtraField[] = [];
+
+    if (sshKey?.privateKey) {
+        sectionFields.push({
             fieldName: c('Label').t`Private Key`,
             type: 'hidden',
             data: { content: sshKey.privateKey },
-        },
-        sshKey?.metadata?.fingerprint && {
+        });
+    }
+
+    if (sshKey?.metadata?.fingerprint) {
+        sectionFields.push({
             fieldName: c('Label').t`Key fingerprint`,
             type: 'hidden',
             data: { content: sshKey.metadata.fingerprint },
-        },
-        sshKey?.metadata?.keyType && {
+        });
+    }
+
+    if (sshKey?.metadata?.keyType) {
+        sectionFields.push({
             fieldName: c('Label').t`Key type`,
             type: 'text',
             data: { content: sshKey.metadata.keyType },
-        },
-    ].filter(truthy) as DeobfuscatedItemExtraField[];
+        });
+    }
 
     if (!sectionFields.length) return [];
 
-    return [
-        {
-            sectionName: 'OpenSSH',
-            sectionFields,
-        },
-    ];
+    return [{ sectionName: 'OpenSSH', sectionFields }];
 };
 
 const getWifiSecurity = (wirelessSecurity: string): WifiSecurity => {
@@ -411,36 +433,30 @@ const getWifiSecurity = (wirelessSecurity: string): WifiSecurity => {
     }
 };
 
-export const extractBaseWifi = (
-    sections: Maybe<OnePassSection[]> = []
-): {
+type OnePasswordWifiFields = {
     ssid?: string;
     password?: string;
     security: WifiSecurity;
-} => {
-    const fields = sections.flatMap(prop('fields'));
-
-    // 1P has different keys to store the value, so we can just use the first one
-    const [ssid, password, wirelessSecurity] = baseWifiFields.map(
-        (key) => Object.values(fields.find(({ id }) => id === key)?.value ?? {})[0] as string
-    );
-
-    return { ssid, password, security: getWifiSecurity(wirelessSecurity) };
 };
 
-export const extractLegacyBaseWifi = (
-    sections: Maybe<OnePassLegacySection[]> = []
-): {
-    ssid?: string;
-    password?: string;
-    security: WifiSecurity;
-} => {
+export const extractBaseWifi = (sections: Maybe<OnePassSection[]> = []): OnePasswordWifiFields => {
     const fields = sections.flatMap(prop('fields'));
 
-    // 1P has different keys to store the value, so we can just use the first one
-    const [ssid, password, wirelessSecurity] = baseWifiFields.map(
-        (key) => fields.find((f) => f?.n === key)?.v as string
-    );
+    const [ssid, password, wirelessSecurity] = baseWifiFields.map((key) => {
+        const match = fields.find(({ id }) => id === key)?.value;
+        if (match) return sanitize1PasswordFieldValue(match);
+    });
 
-    return { ssid, password, security: getWifiSecurity(wirelessSecurity) };
+    return { ssid, password, security: getWifiSecurity(wirelessSecurity ?? '') };
+};
+
+export const extractLegacyBaseWifi = (sections: Maybe<OnePassLegacySection[]> = []): OnePasswordWifiFields => {
+    const fields = sections.flatMap(prop('fields'));
+
+    const [ssid, password, wirelessSecurity] = baseWifiFields.map((key) => {
+        const value = fields.find((f) => f?.n === key)?.v;
+        if (value) return sanitize1PasswordLegacyFieldValue(value);
+    });
+
+    return { ssid, password, security: getWifiSecurity(wirelessSecurity ?? '') };
 };

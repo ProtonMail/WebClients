@@ -14,7 +14,8 @@ import {
     importWifiItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
+import { extractFirst } from '@proton/pass/utils/array/extract-first';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -35,15 +36,23 @@ const ENTRY_SEPARATOR_1PIF = '***';
 export const processLoginItem = async (item: OnePassLegacyItem): Promise<ItemImportIntent<'login'>> => {
     const fields = item.secureContents.fields;
 
+    const [totp, extraFields] = extractFirst(
+        extract1PasswordLegacyExtraFields(item),
+        (extraField): extraField is DeobfuscatedItemExtraField<'totp'> => extraField.type === 'totp'
+    );
+
+    const userIdentifiers = await getEmailOrUsername(
+        fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value
+    );
+
     return importLoginItem({
+        ...userIdentifiers,
         name: item.title,
         note: item.secureContents?.notesPlain,
-        ...(await getEmailOrUsername(
-            fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value
-        )),
         password: fields?.find(({ designation }) => designation === OnePassLoginDesignation.PASSWORD)?.value,
         urls: extract1PasswordLegacyURLs(item),
-        extraFields: extract1PasswordLegacyExtraFields(item),
+        totp: totp?.data.totpUri,
+        extraFields,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
     });
