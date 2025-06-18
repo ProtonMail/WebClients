@@ -5,6 +5,7 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Icon, Option } from '@proton/components';
+import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
@@ -28,6 +29,7 @@ import { createEditAliasFormValidator } from '@proton/pass/lib/validation/alias'
 import { selectAliasDetails } from '@proton/pass/store/selectors';
 import type { AliasMailbox, EditAliasFormValues } from '@proton/pass/types';
 import { type MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
@@ -260,7 +262,9 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                                         .jt`When sending an email from this alias, the email will display ${emailSender} as sender.`}</span>
                                 )}
 
-                                <ExtraFieldGroup form={form} />
+                                <FeatureFlag feature={PassFeature.PassCustomTypeV1}>
+                                    <ExtraFieldGroup form={form} />
+                                </FeatureFlag>
                             </>
                         )}
                     </Form>
