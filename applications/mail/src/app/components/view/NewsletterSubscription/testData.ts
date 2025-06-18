@@ -23,10 +23,19 @@ export const activeSubscription: NewsletterSubscription = {
     },
     UnsubscribeMethods: {
         HttpClient: '',
+        OneClick: 'OneClick',
     },
 };
 
 export const unsubscribedSubscription: NewsletterSubscription = {
     ...activeSubscription,
     UnsubscribedTime: 1718745600,
+};
+
+export const generateSubscriptionList = (count: number, override: Partial<NewsletterSubscription> = {}) => {
+    return Array.from({ length: count }, (_, index) => ({
+        ...activeSubscription,
+        ...override,
+        ID: `active-${index + 1}`,
+    }));
 };
