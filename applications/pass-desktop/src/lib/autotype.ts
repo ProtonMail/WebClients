@@ -3,7 +3,7 @@ import type { BrowserWindow } from 'electron';
 import type { AutotypeProperties, MaybeNull } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { autotype } from '../../native';
+import { Autotype } from '../../native';
 import { setupIpcHandler } from './ipc';
 import { hideWindow } from './window-management';
 
@@ -21,14 +21,16 @@ export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
         hideWindow(mainWindow);
         await wait(1000);
 
+        const autotype = new Autotype();
+
         for (let i = 0; i < fields.length; i++) {
             const field = fields[i];
-            await autotype.text(field);
+            autotype.text(field);
 
             if (i < fields.length - 1) {
-                await autotype.tab();
+                autotype.tab();
             } else if (enterAtTheEnd) {
-                await autotype.enter();
+                autotype.enter();
             }
         }
     });
