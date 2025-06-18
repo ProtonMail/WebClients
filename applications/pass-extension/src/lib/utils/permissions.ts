@@ -34,7 +34,7 @@ export const hasPermissions = (permissions: Permission[]) =>
 export const requestPermissions = (permissions: Permission[]) =>
     browser.permissions.request({ permissions }).catch(() => false);
 
-export const BASIC_AUTH_PERMISSIONS: Permission[] = ['webRequestAuthProvider'];
+export const BASIC_AUTH_PERMISSIONS: Permission[] = BUILD_TARGET === 'safari' ? [] : ['webRequestAuthProvider'];
 
 export const WEB_REQUEST_PERMISSIONS = ((): Permission[] => {
     switch (BUILD_TARGET) {
