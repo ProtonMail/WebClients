@@ -7,7 +7,10 @@ import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
 import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
-import { createExtraField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
+import {
+    createExtraField,
+    getExtraFieldOptions,
+} from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { BaseTextField } from '@proton/pass/components/Form/Field/TextField';
@@ -52,10 +55,7 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
             autofocusInput(`${helpers.name}[${focusIndex}]`);
         };
 
-        return [
-            { value: 'text', label: c('Label').t`Custom text field`, onClick: () => createCustomField('text') },
-            { value: 'hidden', label: c('Label').t`Custom hidden field`, onClick: () => createCustomField('hidden') },
-        ];
+        return getExtraFieldOptions(createCustomField);
     };
 
     return (
@@ -93,7 +93,7 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                                                         type={type}
                                                         name={`${sectionKey}.sectionFields[${index}]`}
                                                         onDelete={() => helpers.remove(index)}
-                                                        showIcon={false}
+                                                        hideIcon
                                                     />
                                                 ))}
                                             </FieldsetCluster>

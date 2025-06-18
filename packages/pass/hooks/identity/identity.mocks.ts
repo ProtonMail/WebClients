@@ -14,6 +14,7 @@ export const MOCK_SECTIONS: IdentityFormSection[] = [
         name: 'Personal',
         expanded: true,
         fields: [MOCK_FIELDS.fullName, MOCK_FIELDS.firstName, MOCK_FIELDS.lastName],
+        customFieldsKey: 'extraPersonalDetails',
     },
     {
         name: 'Contact',
