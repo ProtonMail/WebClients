@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
@@ -32,6 +33,7 @@ import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/ite
 import { reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import { type MaybeNull, type NewAliasFormValues, SpotlightMessage } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
@@ -277,7 +279,9 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                 />
                             </FieldsetCluster>
 
-                            <ExtraFieldGroup form={form} />
+                            <FeatureFlag feature={PassFeature.PassCustomTypeV1}>
+                                <ExtraFieldGroup form={form} />
+                            </FeatureFlag>
                         </Form>
                     </FormikProvider>
                 </>
