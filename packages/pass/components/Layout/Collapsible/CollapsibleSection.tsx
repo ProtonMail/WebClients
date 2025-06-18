@@ -28,7 +28,7 @@ export const CollapsibleSection: FC<CollapsibleSectionProps> = ({
                 <CollapsibleHeaderIconButton className="color-weak shrink-0" pill size="small">
                     <Icon name="chevron-down" />
                 </CollapsibleHeaderIconButton>
-                <span className="text-ellipsis">{label}</span>
+                <span className="flex-1 text-ellipsis">{label}</span>
             </div>
         </CollapsibleHeader>
         <CollapsibleContent>{children}</CollapsibleContent>
