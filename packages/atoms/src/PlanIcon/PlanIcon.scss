@@ -1,0 +1,8 @@
+.PlanIcon {
+	&#{&} {
+		// border radius percentage to scale with size if no rounded class is present
+		&:not([class*='rounded']) {
+			border-radius: 27%;
+		}
+	}
+}
