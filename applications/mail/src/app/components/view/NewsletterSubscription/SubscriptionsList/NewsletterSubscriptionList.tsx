@@ -11,6 +11,7 @@ import {
     selectTabSubscriptionsList,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
+import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 import { NewsletterSubscriptionCard } from './NewsletterSubscriptionCard';
 import { NewsletterSubscriptionListPlaceholder } from './NewsletterSubscriptionListPlaceholder';
 import { NewsletterSubscriptionListWrapper } from './NewsletterSubscriptionListWrapper';
@@ -22,10 +23,13 @@ export const NewsletterSubscriptionList = () => {
     const paginationQueryString = useMailSelector(selectTabSubscriptionPaginationQueryString);
     const deletingSubscriptionId = useMailSelector(deletingSubscriptionIdSelector);
 
+    const { sendNewslettersListPagination } = useNewsletterSubscriptionTelemetry();
+
     const [loading, withLoading] = useLoading();
 
     const handleNextPageClick = () => {
         void withLoading(dispatch(fetchNextNewsletterSubscriptionsPage()));
+        sendNewslettersListPagination();
     };
 
     return (

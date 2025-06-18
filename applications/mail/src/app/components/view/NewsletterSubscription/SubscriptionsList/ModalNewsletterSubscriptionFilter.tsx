@@ -12,6 +12,7 @@ import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscr
 
 import { getFilterData, getNewsletterCopyForFilterAction } from '../helper';
 import type { ModalFilterType } from '../interface';
+import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 
 interface Props extends ModalProps {
     subscription: NewsletterSubscription;
@@ -56,10 +57,14 @@ const ModalNewsletterSubscriptionFilter = ({ subscription, filterType, ...props 
 
     const { createNotification } = useNotifications();
 
+    const { sendNewsletterMessagesAction } = useNewsletterSubscriptionTelemetry();
+
     const dispatch = useMailDispatch();
     const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
 
     const handleApplyFilter = () => {
+        sendNewsletterMessagesAction(filterType, applyToFuture);
+
         void dispatch(
             filterSubscriptionList({
                 subscription,

@@ -14,7 +14,8 @@ import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/inte
 import { selectedTab } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { getReceivedMessagesCount, getUnsubscribeMethod, shouldOpenUpsellOnFilterClick } from '../helper';
-import type { ModalFilterType, PropsWithNewsletterSubscription } from '../interface';
+import { type ModalFilterType, NewsletterSubscriptionAction, type PropsWithNewsletterSubscription } from '../interface';
+import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 import { ModalBlockSender } from './ModalBlockSender/ModalBlockSender';
 import ModalUnsubscribe from './ModalUnsubscribe/ModalUnsubscribe';
 import { ModalMoveToFolder } from './MoveToFolder/ModalMoveToFolder';
@@ -93,6 +94,8 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
     const [filters = []] = useFilters();
     const [user] = useUser();
 
+    const { sendNewsletterAction } = useNewsletterSubscriptionTelemetry();
+
     const unsubscribeMethod = getUnsubscribeMethod(subscription);
 
     const handleMoveToFolderClick = () => {
@@ -113,6 +116,9 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
 
     const handleMoveToFolderUpsell = () => {
         moveToFolderUpsellModal.openModal(true);
+        sendNewsletterAction({
+            newsletterAction: NewsletterSubscriptionAction.createFolderUpsell,
+        });
     };
 
     return (
@@ -125,6 +131,7 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
             {subscription && unsubscribeModal.render && (
                 <ModalUnsubscribe subscription={subscription} {...unsubscribeModal.modalProps} />
             )}
+
             {subscription && moveToFolderModal.render && (
                 <ModalMoveToFolder
                     subscription={subscription}

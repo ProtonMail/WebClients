@@ -18,7 +18,13 @@ import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscr
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import { getUnsubscribeData, getUnsubscribeMethod } from '../../helper';
-import { MAX_LENGTH_SUB_NAME, type PropsWithNewsletterSubscription, UnsubscribeMethod } from '../../interface';
+import {
+    MAX_LENGTH_SUB_NAME,
+    NewsletterSubscriptionAction,
+    type PropsWithNewsletterSubscription,
+    UnsubscribeMethod,
+} from '../../interface';
+import { useNewsletterSubscriptionTelemetry } from '../../useNewsletterSubscriptionTelemetry';
 import { ModalCheckboxWithLabel } from '../ModalBlockSender/ModalSharedComponents';
 import { ModalUnsubscribeMailToContent } from './ModalUnsubscribeMailToContent';
 import { useSendUnsubscribeEmail } from './useSendUnsubscribeEmail';
@@ -36,6 +42,7 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
     const { sendUnsubscribeEmail } = useSendUnsubscribeEmail({ subscription });
 
     const unsubscribeMethod = getUnsubscribeMethod(subscription);
+    const { sendNewsletterAction } = useNewsletterSubscriptionTelemetry();
 
     const [checkboxes, setCheckboxes] = useState<CheckboxState>({
         trash: false,
@@ -46,6 +53,13 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
     const { createNotification } = useNotifications();
 
     const onUnsubscribe = async () => {
+        sendNewsletterAction({
+            newsletterAction: NewsletterSubscriptionAction.unsubscribe,
+            markAsRead: checkboxes.read,
+            moveToTrash: checkboxes.trash,
+            moveToArchive: checkboxes.archive,
+        });
+
         if (unsubscribeMethod === UnsubscribeMethod.OneClick) {
             void dispatch(unsubscribeSubscription({ subscription, subscriptionIndex }));
 

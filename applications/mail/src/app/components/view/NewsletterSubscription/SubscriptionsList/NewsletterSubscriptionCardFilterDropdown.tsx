@@ -22,7 +22,8 @@ import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { getFilterDropdownData, shouldOpenUpsellOnFilterClick, shouldToggleFilter } from '../helper';
-import type { ModalFilterType } from '../interface';
+import { type ModalFilterType } from '../interface';
+import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 
 interface Props {
     subscription: NewsletterSubscription;
@@ -38,6 +39,8 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
     const { createNotification } = useNotifications();
 
     const popover = usePopperAnchor<HTMLButtonElement>();
+
+    const { sendNewsletterMessageFilterUpsell } = useNewsletterSubscriptionTelemetry();
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
@@ -60,6 +63,7 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
 
         // We show an upsell if the user reach the limit of filters.
         if (shouldOpenUpsellOnFilterClick(subscription, user, filters)) {
+            sendNewsletterMessageFilterUpsell();
             handleUpsellModalDisplay(true);
             return;
         }

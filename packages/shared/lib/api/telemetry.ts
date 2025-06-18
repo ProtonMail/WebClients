@@ -33,6 +33,7 @@ export enum TelemetryMeasurementGroups {
     mailPostSignupOneDollar = 'mail.web.post_signup_one_dollar',
     mailPagingControls = 'mail.web.paging_controls',
     passNudge = 'mail.web.pass_nudge',
+    mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     vpnDrawer = 'any.web.vpn_drawer',
@@ -101,6 +102,14 @@ export enum TelemetryCalendarVideoConferencing {
     video_conference_widget = 'video_conference_widget',
     video_conference_settings_toggle = 'video_conference_settings_toggle',
     video_conference_zoom_integration = 'video_conference_zoom_integration',
+}
+
+export enum TelemetryMailNewsletterSubscriptions {
+    newsletters_view_visit = 'newsletters_view_visit',
+    newsletter_action = 'newsletter_action',
+    newsletter_messages_action = 'newsletter_messages_action',
+    newsletters_list_sorting = 'newsletters_list_sorting',
+    newsletters_list_pagination = 'newsletters_list_pagination',
 }
 
 export enum TelemetryIcsSurgeryEvents {
@@ -375,7 +384,8 @@ export type TelemetryEvents =
     | TelemetryPostSubscriptionTourEvents
     | TelemetryMailDrivePostSignupOneDollarEvents
     | TelemetryPaidUsersNudge
-    | TelemetryPassNudgeEvents;
+    | TelemetryPassNudgeEvents
+    | TelemetryMailNewsletterSubscriptions;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
