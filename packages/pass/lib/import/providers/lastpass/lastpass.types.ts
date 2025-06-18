@@ -3,6 +3,8 @@ import type { Maybe } from '@proton/pass/types';
 export enum LastPassNoteType {
     CREDIT_CARD = 'Credit Card',
     ADDRESS = 'Address',
+    SSH_KEY = 'SSH Key',
+    WIFI_PASSWORD = 'Wi-Fi Password',
 }
 
 export type LastPassItem = {
