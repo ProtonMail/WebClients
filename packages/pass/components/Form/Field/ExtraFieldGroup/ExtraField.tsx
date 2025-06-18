@@ -70,16 +70,12 @@ export const ExtraFieldComponent: FC<ExtraFieldProps> = ({
             void rest.form.setFieldValue(field.name, merge(evt, field.value));
         };
 
-    const fieldValueEmpty = Object.values(field.value.data).every((value) => !value);
+    const hasError = touched && error?.fieldName;
 
     return (
         <FieldBox actions={[<DeleteButton onDelete={onDelete} />]} className={className} icon={icon}>
             <BaseTextField
-                inputClassName={clsx(
-                    'text-sm',
-                    !fieldValueEmpty && 'color-weak',
-                    touched && error?.fieldName && 'placeholder-danger'
-                )}
+                inputClassName={clsx('text-sm', hasError ? 'placeholder-danger' : 'color-weak')}
                 placeholder={c('Label').t`Field name`}
                 autoFocus={autoFocus}
                 field={{
