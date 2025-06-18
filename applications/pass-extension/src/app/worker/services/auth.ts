@@ -121,6 +121,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             ctx.service.autofill.clear();
             ctx.service.apiProxy.clear?.().catch(noop);
             ctx.service.settings.broadcast(getInitialSettings());
+            ctx.service.logger.clear().catch(noop);
 
             void ctx.service.storage.session.clear();
             void ctx.service.storage.local.clear();
