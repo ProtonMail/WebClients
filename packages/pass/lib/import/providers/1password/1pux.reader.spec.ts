@@ -207,7 +207,7 @@ describe('Import 1password 1pux', () => {
 
     test('should parse `secondary` vault items correctly', () => {
         const [, secondary] = payload.vaults;
-        expect(secondary.items.length).toEqual(2); /* deleted items not included */
+        expect(secondary.items.length).toEqual(4); /* deleted items not included */
 
         const archivedItemName = 'Login item archived';
         const archivedItem = secondary.items.find(
@@ -242,6 +242,64 @@ describe('Import 1password 1pux', () => {
         expect(loginItem.content.urls).toEqual([]);
         expect(loginItem.trashed).toEqual(false);
         expect(loginItem.extraFields).toEqual([]);
+
+        const wifiItemName = 'Wireless Router';
+        const wifiItem = secondary.items.find(
+            (item) => item.metadata.name === wifiItemName
+        ) as ItemImportIntent<'wifi'>;
+        expect(wifiItem.type).toEqual('wifi');
+        expect(wifiItem.createTime).toEqual(1750229157);
+        expect(wifiItem.modifyTime).toEqual(1750229686);
+        expect(wifiItem.metadata.itemUuid).not.toBeUndefined();
+        expect(deobfuscate(wifiItem.metadata.note)).toEqual('');
+        expect(wifiItem.content.ssid).toEqual('::network-name::');
+        expect(deobfuscate(wifiItem.content.password)).toEqual('::wireless-password::');
+        expect(wifiItem.content.security).toEqual(3);
+        expect(wifiItem.trashed).toEqual(false);
+        expect(deobfuscateExtraFields(wifiItem.extraFields)).toEqual([
+            {
+                fieldName: 'base station name',
+                type: 'text',
+                data: { content: '::base-station-name::' },
+            },
+            {
+                fieldName: 'base station password',
+                type: 'hidden',
+                data: { content: '::base-station-password::' },
+            },
+            {
+                fieldName: 'server / IP address',
+                type: 'text',
+                data: { content: '::server-address::' },
+            },
+            {
+                fieldName: 'AirPort ID',
+                type: 'text',
+                data: { content: '::airport-id::' },
+            },
+            {
+                fieldName: 'attached storage password',
+                type: 'hidden',
+                data: { content: '::wireless-storage-password::' },
+            },
+        ]);
+
+        const sshItemName = 'SSH Key';
+        const sshItem = secondary.items.find(
+            (item) => item.metadata.name === sshItemName
+        ) as ItemImportIntent<'sshKey'>;
+        expect(sshItem.type).toEqual('sshKey');
+        expect(sshItem.createTime).toEqual(1750229079);
+        expect(sshItem.modifyTime).toEqual(1750229079);
+        expect(sshItem.metadata.itemUuid).not.toBeUndefined();
+        expect(deobfuscate(sshItem.metadata.note)).toEqual('');
+        expect(deobfuscate(sshItem.content.privateKey)).toContain('-----BEGIN PRIVATE KEY-----');
+        expect(sshItem.content.publicKey).toContain('ssh-rsa');
+        expect(sshItem.content.sections.length).toEqual(1);
+        expect(sshItem.content.sections[0].sectionName).toEqual('OpenSSH');
+        expect(sshItem.content.sections[0].sectionFields.length).toEqual(3);
+        expect(sshItem.trashed).toEqual(false);
+        expect(sshItem.extraFields).toEqual([]);
     });
 
     test('should parse `shared` vault items correctly', () => {
