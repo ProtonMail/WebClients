@@ -7,14 +7,14 @@ import { withPayloadLens } from '@proton/pass/utils/fp/lens';
 import { registerLoggerEffect } from '@proton/pass/utils/logger';
 
 export const createLoggerService = (storage: ExtensionStorage<LogStorageData>) => {
-    const { push, read } = createLogStore(storage);
+    const { push, read, clear } = createLogStore(storage);
 
     registerLoggerEffect(push);
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.LOG_EVENT, withPayloadLens('log', push));
     WorkerMessageBroker.registerMessage(WorkerMessageType.LOG_REQUEST, async () => ({ logs: await read() }));
 
-    return { push, read };
+    return { push, read, clear };
 };
 
 export type LoggerService = ReturnType<typeof createLoggerService>;

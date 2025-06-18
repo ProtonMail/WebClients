@@ -8,6 +8,11 @@ export type LogStorageData = { logs: string };
 export const createLogStore = <T extends LogStorageData>(storage: AnyStorage<T>) => {
     const buffer: string[] = [];
 
+    const clear = async () => {
+        buffer.length = 0;
+        void storage.clear();
+    };
+
     /** Reads the logs from storage. If parsing the
      * logs fails, clears the log storage key */
     const read = async (): Promise<string[]> => {
@@ -38,7 +43,7 @@ export const createLogStore = <T extends LogStorageData>(storage: AnyStorage<T>)
         return true;
     };
 
-    return { push, read, flush: write.flush };
+    return { push, read, flush: write.flush, clear };
 };
 
 export type LogStore = ReturnType<typeof createLogStore>;
