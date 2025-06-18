@@ -33,8 +33,6 @@ const ConfirmAutotypeCore: FC<ConfirmAutotypePropsCore> = ({ onConfirm, onClose,
         },
     });
 
-    const keyboardShortcut = <AutotypeKeyboardShortcut key="autotype-keyboard-shortcut-keys" />;
-
     return (
         <PassModal onClose={onClose} open size="medium">
             <ModalTwoHeader title={c('Title').t`Perform autotype?`} />
@@ -56,7 +54,7 @@ const ConfirmAutotypeCore: FC<ConfirmAutotypePropsCore> = ({ onConfirm, onClose,
                                         // translator: full sentence is "Do not show again when I press Ctrl Shift V"
                                         c('Action').t`Do not show again when I press`
                                     }
-                                    {keyboardShortcut}
+                                    <AutotypeKeyboardShortcut />
                                 </span>
                             ) : (
                                 c('Action').t`Do not show again`

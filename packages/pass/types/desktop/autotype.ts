@@ -1,3 +1,6 @@
+import { type IconName } from '@proton/components/components/icon/Icon';
+import type { ReactNode } from 'react';
+
 export type AutotypeProperties = { fields: string[]; enterAtTheEnd?: boolean };
 
 export type AutotypeConfirmFromShortcutProps = {
@@ -18,4 +21,7 @@ export enum AutotypeKey {
 export type AutotypeAction = {
     getAutotypeProps: () => AutotypeProperties;
     key: AutotypeKey;
+    title: ReactNode;
+    subtitle?: ReactNode;
+    icon?: IconName;
 };
