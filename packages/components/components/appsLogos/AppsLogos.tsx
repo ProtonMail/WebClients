@@ -1,24 +1,27 @@
 import React from 'react';
 
-import type { IconSize } from '@proton/components';
-import { CalendarLogo, DriveLogo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components';
+import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import { type LogoProps } from '@proton/components/components/logo/LogoBase';
+import MailLogo from '@proton/components/components/logo/MailLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import WalletLogo from '@proton/components/components/logo/WalletLogo';
+import type { IconSize } from '@proton/icons';
 import {
     APPS,
+    CALENDAR_APP_NAME,
     CALENDAR_SHORT_APP_NAME,
+    DRIVE_APP_NAME,
     DRIVE_SHORT_APP_NAME,
+    MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
+    PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
+    VPN_APP_NAME,
     VPN_SHORT_APP_NAME,
     WALLET_APP_NAME,
     WALLET_SHORT_APP_NAME,
-} from '@proton/shared/lib/constants';
-import {
-    CALENDAR_APP_NAME,
-    DRIVE_APP_NAME,
-    MAIL_APP_NAME,
-    PASS_APP_NAME,
-    VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -73,27 +76,41 @@ const supportedAppLogosMap: Record<SupportedApp, AppLogo> = {
 interface AppsLogosProps {
     /** Array of apps to display. If not provided, shows all supported apps */
     apps?: SupportedApp[];
-    hideAppNames?: boolean;
+    appNames?: boolean;
     logoSize?: IconSize;
     className?: string;
+    /** When true, shows all supported apps but greys out the ones not in the apps array */
+    showDisabledApps?: boolean;
 }
 
-const AppsLogos = ({ apps, hideAppNames = false, logoSize = 6, className }: AppsLogosProps) => {
-    const appsToShow = apps
-        ? apps.map((appName) => supportedAppLogosMap[appName]).filter(isTruthy)
-        : Object.values(supportedAppLogosMap);
+const AppsLogos = ({ apps, appNames = true, logoSize = 6, className, showDisabledApps = false }: AppsLogosProps) => {
+    let appsToShow;
+    if (showDisabledApps) {
+        appsToShow = Object.entries(supportedAppLogosMap).map(([appKey, appLogo]) => ({
+            ...appLogo,
+            isDisabled: apps ? !apps.includes(appKey as SupportedApp) : false,
+        }));
+    } else if (apps) {
+        appsToShow = apps.map((appName) => ({ ...supportedAppLogosMap[appName], isDisabled: false })).filter(isTruthy);
+    } else {
+        appsToShow = Object.values(supportedAppLogosMap).map((appLogo) => ({ ...appLogo, isDisabled: false }));
+    }
 
     return (
-        <div className={clsx('flex justify-start flex-nowrap gap-2', className)}>
-            {appsToShow.map(({ title, Logo, shortTitle }) => {
+        <ul className={clsx('unstyled m-0 flex justify-start flex-nowrap gap-2', className)}>
+            {appsToShow.map(({ title, Logo, shortTitle, isDisabled }) => {
                 return (
-                    <div key={title} title={title} className="flex flex-column items-center gap-0.5">
+                    <li
+                        key={title}
+                        title={title}
+                        className={clsx('flex flex-column items-center gap-0.5', isDisabled && 'opacity-40')}
+                    >
                         <Logo size={logoSize} variant="glyph-only" />
-                        {!hideAppNames && <span className="text-xs color-weak">{shortTitle}</span>}
-                    </div>
+                        {appNames && <span className="text-xs color-weak">{shortTitle}</span>}
+                    </li>
                 );
             })}
-        </div>
+        </ul>
     );
 };
 
