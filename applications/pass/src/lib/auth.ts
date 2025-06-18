@@ -5,6 +5,7 @@ import type { ServiceWorkerClient } from 'proton-pass-web/app/ServiceWorker/clie
 import { store } from 'proton-pass-web/app/Store/store';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB } from 'proton-pass-web/lib/database';
+import { logStore } from 'proton-pass-web/lib/logger';
 import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { clearUserLocalData, localGarbageCollect } from 'proton-pass-web/lib/storage';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
@@ -273,6 +274,7 @@ export const createAuthService = ({
             if (localID !== undefined) clearUserLocalData(localID);
 
             await authSwitch.sync({ revalidate: false });
+            await logStore.clear().catch(noop);
 
             setSentryUID(undefined);
 
