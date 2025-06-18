@@ -1,3 +1,4 @@
+import type { PropsWithChildren } from 'react';
 import { type FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -22,11 +23,12 @@ type ExtraFieldsControlProps = {
     onCopy?: () => void;
 };
 
-export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({
+export const ExtraFieldsControl: FC<PropsWithChildren<ExtraFieldsControlProps>> = ({
+    children,
     extraFields,
+    hideIcons = false,
     itemId,
     shareId,
-    hideIcons = false,
     onCopy,
 }) => {
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
@@ -91,6 +93,7 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({
 
     return (
         <FieldsetCluster mode="read" as="div">
+            {children}
             {extraFields.map((extraField, index) => getControlByType(extraField, index))}
         </FieldsetCluster>
     );
