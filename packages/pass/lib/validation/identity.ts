@@ -1,28 +1,22 @@
 import type { FormikErrors } from 'formik';
-import { c } from 'ttag';
 
+import type { ExtraSectionsError } from '@proton/pass/lib/validation/custom-item';
+import { validateCustomSectionName } from '@proton/pass/lib/validation/custom-item';
 import { validateItemErrors } from '@proton/pass/lib/validation/item';
-import type { DeobfuscatedItemExtraField, IdentityItemFormValues } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import type { IdentityItemFormValues } from '@proton/pass/types';
 
-import type { ExtraFieldErrors } from './extra-field';
+import { validateExtraFieldName } from './extra-field';
 
-const EXTRA_FIELD_KEYS = [
+const EXTRA_SECTION_KEYS = [
     'extraPersonalDetails',
     'extraAddressDetails',
     'extraContactDetails',
     'extraWorkDetails',
 ] as const;
 
-const validateExtraField = ({ fieldName }: DeobfuscatedItemExtraField): ExtraFieldErrors => {
-    const errors: ExtraFieldErrors = {};
-    if (isEmptyString(fieldName)) errors.fieldName = c('Validation').t`Field name is required`;
-    return errors;
-};
-
-const validateExtraFields = (values: IdentityItemFormValues): FormikErrors<IdentityItemFormValues> => {
-    const errors = EXTRA_FIELD_KEYS.reduce<FormikErrors<IdentityItemFormValues>>((acc, key) => {
-        const fieldErrors = values[key].map(validateExtraField);
+const validateExtraSectionFields = (values: IdentityItemFormValues): FormikErrors<IdentityItemFormValues> => {
+    const errors = EXTRA_SECTION_KEYS.reduce<FormikErrors<IdentityItemFormValues>>((acc, key) => {
+        const fieldErrors = values[key].map(validateExtraFieldName);
         if (fieldErrors.some((err) => Object.keys(err).length)) acc[key] = fieldErrors;
         return acc;
     }, {});
@@ -30,13 +24,11 @@ const validateExtraFields = (values: IdentityItemFormValues): FormikErrors<Ident
     return Object.keys(errors).length ? errors : {};
 };
 
-/** Formik union error type narrowing */
-export type ExtraSectionsError = { sectionFields?: ExtraFieldErrors[] };
-
 const validateExtraSections = ({ extraSections }: IdentityItemFormValues): FormikErrors<IdentityItemFormValues> => {
-    const errors = extraSections.reduce<ExtraSectionsError[]>((acc, { sectionFields }, index) => {
-        const sectionErrors: ExtraSectionsError = {};
-        const fieldErrors = sectionFields.map(validateExtraField);
+    const errors = extraSections.reduce<ExtraSectionsError[]>((acc, section, index) => {
+        const sectionErrors: ExtraSectionsError = validateCustomSectionName(section);
+
+        const fieldErrors = section.sectionFields.map(validateExtraFieldName);
         if (fieldErrors.some((error) => Object.keys(error).length)) sectionErrors.sectionFields = fieldErrors;
         if (Object.keys(sectionErrors).length) acc[index] = sectionErrors;
 
@@ -48,6 +40,6 @@ const validateExtraSections = ({ extraSections }: IdentityItemFormValues): Formi
 
 export const validateIdentityForm = (values: IdentityItemFormValues): FormikErrors<IdentityItemFormValues> => ({
     ...validateItemErrors(values),
-    ...validateExtraFields(values),
+    ...validateExtraSectionFields(values),
     ...validateExtraSections(values),
 });

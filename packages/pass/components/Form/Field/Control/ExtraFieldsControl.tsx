@@ -1,7 +1,7 @@
 import { type FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
-import { getExtraFieldOption } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
+import { getExtraFieldOption } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import { UpsellRef } from '@proton/pass/constants';
@@ -18,15 +18,22 @@ type ExtraFieldsControlProps = {
     extraFields: DeobfuscatedItemExtraField[];
     itemId: string;
     shareId: string;
+    hideIcons?: boolean;
     onCopy?: () => void;
 };
 
-export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, itemId, shareId, onCopy }) => {
+export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({
+    extraFields,
+    itemId,
+    shareId,
+    hideIcons = false,
+    onCopy,
+}) => {
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     const getControlByType = useCallback(
         ({ fieldName, type, data }: DeobfuscatedItemExtraField, index: number) => {
-            const { icon } = getExtraFieldOption(type);
+            const icon = hideIcons ? undefined : getExtraFieldOption(type).icon;
             const key = `${index}-${fieldName}`;
 
             if (needsUpgrade) {
@@ -41,6 +48,7 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
                         <ValueControl icon={icon} key={key} label={fieldName} />
                     ) : (
                         <OTPValueControl
+                            icon={icon}
                             key={key}
                             label={fieldName}
                             payload={{ totpUri: data.totpUri, type: 'uri' }}
