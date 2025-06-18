@@ -6,6 +6,8 @@ export enum OnePassLegacyItemType {
     LOGIN = 'webforms.WebForm',
     NOTE = 'securenotes.SecureNote',
     PASSWORD = 'passwords.Password',
+    WIFI = 'wallet.computer.Router',
+    SSH_KEY = '114',
 }
 
 export enum OnePassLegacySectionFieldKey {
@@ -65,6 +67,7 @@ export type OnePassLegacyItem = {
         expiry_yy?: string;
         password?: string;
         notesPlain?: string;
+        unknown_details?: { sections?: OnePassLegacySection[] };
         sections?: OnePassLegacySection[];
         fields?: OnePassLegacyField[];
         URLs?: OnePassLegacyURL[];
