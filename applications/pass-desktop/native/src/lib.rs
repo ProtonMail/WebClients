@@ -5,6 +5,8 @@ mod clipboards;
 #[macro_use]
 extern crate napi_derive;
 
+use crate::autotypes::Autotype as AutotypeCore;
+
 #[napi]
 pub mod biometric {
     use napi::bindgen_prelude::{Buffer, Uint8Array};
@@ -54,21 +56,38 @@ pub mod clipboard {
 }
 
 #[napi]
-pub mod autotype {
-    use super::autotypes::*;
+pub struct Autotype {
+    autotype: AutotypeCore,
+}
 
-    #[napi]
-    pub async fn text(text: String) -> napi::Result<()> {
-        Autotype::text(&text).map_err(|e| napi::Error::from_reason(e.to_string()))
+#[napi]
+// If you have the rust-analyzer error "Did not find struct `Autotype` parsed before expand #[napi] for impl"
+// then add this line to your settings.json:
+// "rust-analyzer.procMacro.ignored": { "napi-derive": ["napi"] }
+// (See https://github.com/napi-rs/napi-rs/issues/2390)
+impl Autotype {
+    #[napi(constructor)]
+    pub fn new() -> napi::Result<Self> {
+        let autotype = AutotypeCore::new().map_err(|e| napi::Error::from_reason(e.to_string()))?;
+        Ok(Autotype { autotype })
     }
 
     #[napi]
-    pub async fn tab() -> napi::Result<()> {
-        Autotype::tab().map_err(|e| napi::Error::from_reason(e.to_string()))
+    pub fn text(&mut self, text: String) -> napi::Result<()> {
+        self.autotype
+            .text(&text)
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     #[napi]
-    pub async fn enter() -> napi::Result<()> {
-        Autotype::enter().map_err(|e| napi::Error::from_reason(e.to_string()))
+    pub fn tab(&mut self) -> napi::Result<()> {
+        self.autotype.tab().map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
+    #[napi]
+    pub fn enter(&mut self) -> napi::Result<()> {
+        self.autotype
+            .enter()
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 }
