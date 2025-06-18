@@ -246,6 +246,14 @@ export const MAX_IPS_ADDON = 100;
 export const MIN_MEMBER_PASS_B2B_ADDON = 3;
 export const MAX_MEMBER_PASS_PRO_ADDON = 30;
 
+// Trial limits, currently only used for B2B Trials
+// Hardcoded FE side. Protections will (as of 2025-06-18) be added on the BE side too.
+export const TRIAL_MAX_USERS = 10;
+export const TRIAL_MAX_SCRIBE_SEATS = 10;
+export const TRIAL_MAX_LUMO_SEATS = 10;
+export const TRIAL_MAX_DEDICATED_IPS = 1;
+export const TRIAL_MAX_EXTRA_CUSTOM_DOMAINS = 0;
+
 export const AddonLimit: { [key in ADDON_NAMES]: number } = {
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: MAX_DOMAIN_PRO_ADDON,
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: MAX_DOMAIN_PRO_ADDON,
