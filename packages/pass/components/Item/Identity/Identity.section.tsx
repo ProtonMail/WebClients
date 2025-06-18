@@ -7,12 +7,16 @@ import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
 import { ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
-import { createExtraField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
+import {
+    createExtraField,
+    getExtraFieldOptions,
+} from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
-import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
+import type { DropdownMenuOption } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
+import { DROPDOWN_SEPARATOR, DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import type { IdentityFormSection } from '@proton/pass/hooks/identity/useIdentityForm';
@@ -48,7 +52,7 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
     const upsell = useUpselling();
     const canCreateField = Boolean(optionalFields || customFieldsKey);
 
-    const getDropdownOptions = (helpers: FieldArrayRenderProps, focusIndex: number) => {
+    const getDropdownOptions = (helpers: FieldArrayRenderProps, focusIndex: number): DropdownMenuOption[] => {
         const createCustomField = (type: ExtraFieldType) => {
             if (isFreePlan) {
                 return upsell({
@@ -61,31 +65,21 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
             autofocusInput(`${helpers.name}[${focusIndex}]`);
         };
 
-        const newFieldOptions = (optionalFields ?? []).map((field) => ({
+        const newFieldOptions = (optionalFields ?? []).map<DropdownMenuOption>((field) => ({
             value: field.name,
             label: field.label,
+            icon: 'card-identity',
             onClick: () => {
                 onAddOptionalField(field.name);
                 autofocusInput(field.name);
             },
         }));
 
-        const customFieldOptions = customFieldsKey
-            ? [
-                  {
-                      value: `${customFieldsKey}-text`,
-                      label: c('Label').t`Custom text field`,
-                      onClick: () => createCustomField('text'),
-                  },
-                  {
-                      value: `${customFieldsKey}-hidden`,
-                      label: c('Label').t`Custom hidden field`,
-                      onClick: () => createCustomField('hidden'),
-                  },
-              ]
-            : [];
-
-        return [...newFieldOptions, ...customFieldOptions];
+        return [
+            ...newFieldOptions,
+            ...(newFieldOptions.length > 0 ? [DROPDOWN_SEPARATOR] : []),
+            ...getExtraFieldOptions(createCustomField),
+        ];
     };
 
     return (
@@ -119,7 +113,7 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
                                             onDelete={() => helpers.remove(index)}
                                             touched={Boolean(form.touched?.[customFieldsKey]?.[index])}
                                             error={form.errors?.[customFieldsKey]?.[index] as Maybe<ExtraFieldErrors>}
-                                            showIcon={false}
+                                            hideIcon
                                         />
                                     ))}
 

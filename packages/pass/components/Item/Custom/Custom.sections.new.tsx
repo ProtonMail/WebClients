@@ -13,7 +13,7 @@ import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import type { UpsellRef } from '@proton/pass/constants';
-import { validateItemSection } from '@proton/pass/lib/validation/custom-item';
+import { validateCustomSectionName } from '@proton/pass/lib/validation/custom-item';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { ItemSectionFormValues } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -39,7 +39,7 @@ export const CustomNewSection: FC<Props> = ({ onAdd, upsellRef }) => {
             onAdd(sectionName);
             closeModal(resetForm);
         },
-        validate: validateItemSection,
+        validate: validateCustomSectionName,
         validateOnBlur: true,
     });
 

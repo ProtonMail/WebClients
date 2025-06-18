@@ -1,16 +1,20 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
+import type { IconName } from '@proton/components';
+import { Dropdown, DropdownButton, DropdownMenu, usePopperAnchor } from '@proton/components';
 import clsx from '@proton/utils/clsx';
+
+import { DropdownMenuButton } from './DropdownMenuButton';
+
+export const DROPDOWN_SEPARATOR = '__SEPARATOR__' as const;
+export type DropdownMenuOption =
+    | { label: string; value: string; icon?: IconName; onClick: () => void }
+    | typeof DROPDOWN_SEPARATOR;
 
 type DropdownMenuBaseProps = PropsWithChildren & {
     className?: string;
     dropdownMenuButtonClassname?: string;
-    dropdownOptions: {
-        label: string;
-        value: string;
-        onClick: () => void;
-    }[];
+    dropdownOptions: DropdownMenuOption[];
     hasCaret?: boolean;
 };
 
@@ -39,15 +43,20 @@ export const DropdownMenuBase: FC<DropdownMenuBaseProps> = ({
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="top">
                 <DropdownMenu>
-                    {dropdownOptions.map((option, index) => (
-                        <DropdownMenuButton
-                            key={`${option.value}${index}`}
-                            className={clsx('text-left', dropdownMenuButtonClassname)}
-                            onClick={option.onClick}
-                        >
-                            {option.label}
-                        </DropdownMenuButton>
-                    ))}
+                    {dropdownOptions.map((option, index) =>
+                        option === DROPDOWN_SEPARATOR ? (
+                            <hr key={`sep-${index}`} className="my-0" />
+                        ) : (
+                            <DropdownMenuButton
+                                key={`${option.value}${index}`}
+                                className={clsx('text-left', dropdownMenuButtonClassname)}
+                                onClick={option.onClick}
+                                label={option.label}
+                                icon={option.icon}
+                                size="small"
+                            />
+                        )
+                    )}
                 </DropdownMenu>
             </Dropdown>
         </>

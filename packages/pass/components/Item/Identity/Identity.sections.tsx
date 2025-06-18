@@ -7,7 +7,10 @@ import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
 import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
-import { createExtraField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
+import {
+    createExtraField,
+    getExtraFieldOptions,
+} from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { BaseTextField } from '@proton/pass/components/Form/Field/TextField';
@@ -16,7 +19,7 @@ import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/C
 import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
-import type { ExtraSectionsError } from '@proton/pass/lib/validation/identity';
+import type { ExtraSectionsError } from '@proton/pass/lib/validation/custom-item';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { DeobfuscatedItemExtraField, ExtraFieldType, IdentityItemFormValues, Maybe } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -52,10 +55,7 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
             autofocusInput(`${helpers.name}[${focusIndex}]`);
         };
 
-        return [
-            { value: 'text', label: c('Label').t`Custom text field`, onClick: () => createCustomField('text') },
-            { value: 'hidden', label: c('Label').t`Custom hidden field`, onClick: () => createCustomField('hidden') },
-        ];
+        return getExtraFieldOptions(createCustomField);
     };
 
     return (
@@ -65,6 +65,8 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                 <>
                     {form.values.extraSections.map(({ sectionName, sectionFields }, sectionIndex) => {
                         const sectionKey = `extraSections[${sectionIndex}]`;
+                        const sectionErrors = form.errors?.extraSections?.[sectionIndex] as Maybe<ExtraSectionsError>;
+
                         return (
                             <CollapsibleSection
                                 key={sectionKey}
@@ -72,9 +74,13 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                                     <Field
                                         name={`${sectionKey}.sectionName`}
                                         component={BaseTextField}
-                                        inputClassName="color-weak"
                                         onClick={(evt) => evt.stopPropagation()}
                                         placeholder={c('Action').t`Section name`}
+                                        error={sectionErrors?.sectionName}
+                                        dense
+                                        inputClassName={
+                                            sectionErrors?.sectionName ? 'placeholder-danger' : 'color-weak'
+                                        }
                                     />
                                 }
                                 expanded
@@ -93,7 +99,7 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                                                         type={type}
                                                         name={`${sectionKey}.sectionFields[${index}]`}
                                                         onDelete={() => helpers.remove(index)}
-                                                        showIcon={false}
+                                                        hideIcon
                                                     />
                                                 ))}
                                             </FieldsetCluster>
@@ -113,8 +119,6 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                         );
                     })}
 
-                    <hr className="my-4" />
-
                     <CustomNewSection
                         upsellRef={UpsellRef.IDENTITY_CUSTOM_FIELDS}
                         onAdd={(sectionName: string) =>
@@ -124,6 +128,8 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                             })
                         }
                     />
+
+                    <hr className="my-4" />
                 </>
             )}
         />

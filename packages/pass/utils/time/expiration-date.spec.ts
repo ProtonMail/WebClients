@@ -1,8 +1,4 @@
-import {
-    formatExpirationDateMMYY,
-    formatExpirationDateMMYYYY,
-    formatExpirationDateYYYYMM,
-} from '@proton/pass/lib/validation/credit-card';
+import { formatExpirationDateMMYY, formatExpirationDateMMYYYY, formatExpirationDateYYYYMM } from './expiration-date';
 
 describe('expiration date', () => {
     describe('formatExpirationDateMMYY', () => {

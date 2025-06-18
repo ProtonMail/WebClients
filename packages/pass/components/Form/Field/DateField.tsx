@@ -7,7 +7,6 @@ import { type FieldProps } from 'formik';
 import { type Input } from '@proton/atoms';
 import { DateInputTwo, InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
-import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
 import { type Maybe } from '@proton/pass/types/utils';
 import { formatISODate, formatPlaceholder } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
@@ -28,11 +27,10 @@ const handleInput = (value: string, locale: Locale) => {
 };
 
 const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
-    { field, form, meta, inputClassName, labelContainerClassName, placeholder, disabled },
+    { field, inputClassName, labelContainerClassName, placeholder, disabled, error },
     ref
 ) => {
     const { value, onChange } = field;
-    const { error } = useFieldControl({ field, form, meta });
 
     const formattedPlaceholder = useMemo(formatPlaceholder, []);
 
