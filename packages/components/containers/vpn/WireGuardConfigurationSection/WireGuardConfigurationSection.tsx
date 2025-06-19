@@ -59,7 +59,7 @@ import {
 import { normalize } from './normalize';
 import useCertificates from './useCertificates';
 
-enum PLATFORM {
+export enum PLATFORM {
     MACOS = 'macOS',
     LINUX = 'Linux',
     WINDOWS = 'Windows',
@@ -68,14 +68,14 @@ enum PLATFORM {
     ROUTER = 'Router',
 }
 
-interface Peer {
+export interface Peer {
     name: string;
     publicKey: string;
     ip: string;
     label: string;
 }
 
-interface ExtraCertificateFeatures {
+export interface ExtraCertificateFeatures {
     peerName: Peer['name'];
     peerPublicKey: Peer['publicKey'];
     peerIp: Peer['ip'];
@@ -133,7 +133,7 @@ const getFeatureLink = (feature: FeatureOption<any>) =>
         ''
     );
 
-const getConfigTemplate = (
+export const getConfigTemplate = (
     interfacePrivateKey: string,
     name: string | undefined,
     features: Partial<FeaturesValues & ExtraCertificateFeatures> | undefined,
@@ -150,7 +150,7 @@ DNS = 10.2.0.1
 [Peer]
 # ${features?.peerName || peer.name}
 PublicKey = ${features?.peerPublicKey || peer.publicKey}
-AllowedIPs = ${features?.platform === PLATFORM.WINDOWS ? '0.0.0.0/1, 128.0.0.0/1' : '0.0.0.0/0'}
+AllowedIPs = 0.0.0.0/0
 Endpoint = ${features?.peerIp || peer.ip}:51820`;
 
 const privateKeyPlaceholder = '*****';
