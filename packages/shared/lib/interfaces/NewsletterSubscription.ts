@@ -17,7 +17,7 @@ export interface NewsletterSubscription {
     UnreadMessageCount: number;
     TrackersCount?: number;
     MarkAsRead: boolean;
-    MoveToFolder: string;
+    MoveToFolder: string | null;
     ReceivedMessages: {
         Total: number;
         Last30Days: number;
@@ -31,13 +31,7 @@ export interface POSTSubscriptionAPIResponse {
 }
 
 export interface GetNewsletterSubscriptionsNextPage {
-    Pagination: {
-        AddressIDs: string[];
-        AnchorID: string | null;
-        AnchorLastReceivedTime: string | null;
-        AnchorUnreadMessageCount: number | null;
-        PageSize: number;
-    };
+    QueryString: string | null;
 }
 
 export interface GetNewsletterSubscriptionsApiResponse {

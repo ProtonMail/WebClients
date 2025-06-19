@@ -15,3 +15,8 @@
 		}
 	}
 }
+
+.divider-size {
+	inline-size: calc(100% + 3rem);
+	margin-inline: -1.5rem;
+}

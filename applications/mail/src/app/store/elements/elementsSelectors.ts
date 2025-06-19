@@ -308,11 +308,11 @@ export const dynamicTotal = createSelector([params, currentCounts, bypassFilter]
  * Modify this selector to add other custom views only if we have the expected length of elements to load.
  */
 export const customViewDynamicPageLength = createSelector(
-    [params, selectedSubscriptionSelector],
-    (params, selectedSubscription) => {
+    [params, pageSize, selectedSubscriptionSelector],
+    (params, pageSize, selectedSubscription) => {
         switch (params.labelID) {
             case CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS:
-                return selectedSubscription?.ReceivedMessageCount;
+                return Math.min(selectedSubscription?.ReceivedMessageCount ?? 0, pageSize);
             default:
                 return undefined;
         }

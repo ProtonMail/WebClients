@@ -254,7 +254,7 @@
 
 .button-tiny {
 	--padding-block: #{em(5, 12)}; // 28px height
-	--padding-inline: #{em(5, 12)};
+	--padding-inline: #{em(8, 12)};
 
 	font-size: em(12);
 	line-height: #{math.div(16, 12)};

@@ -6,8 +6,8 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { FiltersUpsellModal, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { IcCheckmarkCircleFilled } from '@proton/icons';
+import { useFolders } from '@proton/mail';
 import { useFilters } from '@proton/mail/store/filters/hooks';
-import { useFolders } from '@proton/mail/index';
 import { toggleEnable } from '@proton/shared/lib/api/filters';
 import { FILTER_STATUS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
@@ -21,7 +21,10 @@ interface WrapperProps extends PropsWithChildren {
 
 const FilterWrapper = ({ children, iconClassName }: WrapperProps) => {
     return (
-        <div className="flex flex-nowrap items-center gap-2 bg-weak color-weak px-3 py-1 rounded-xl mt-3 text-sm">
+        <div
+            className="flex flex-nowrap items-center gap-2 bg-weak color-weak px-3 py-1 rounded-xl mt-3 text-sm"
+            data-testid="subscription-filter-wrapper"
+        >
             <IcCheckmarkCircleFilled className={iconClassName} />
             <span className="flex gap-0.5">{children}</span>
         </div>
@@ -56,7 +59,7 @@ const DisabledFilter = ({ subscription }: PropsWithNewsletterSubscription) => {
     };
 
     const enableButton = (
-        <Button className="py-0 color-weak ml-0.5" shape="underline" onClick={enableFilter}>
+        <Button key="enable-button" className="py-0 color-weak ml-0.5" shape="underline" onClick={enableFilter}>
             {c('Label').t`Enable filter`}
         </Button>
     );
@@ -70,7 +73,7 @@ const DisabledFilter = ({ subscription }: PropsWithNewsletterSubscription) => {
             {renderUpsellModal && (
                 <FiltersUpsellModal
                     modalProps={upsellModalProps}
-                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_MAIL_SUBSCRIPTION}
+                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_NEWSLETTER_SUBSCRIPTION}
                 />
             )}
         </>
@@ -92,7 +95,11 @@ export const NewsletterSubscriptionCardActiveFilter = ({ subscription }: PropsWi
     if (subscription.MoveToFolder) {
         const folderName = getSubscriptionMoveToFolderName(folders, subscription.MoveToFolder);
         if (folderName) {
-            const boldFolderName = <b className="text-semibold">{folderName}</b>;
+            const boldFolderName = (
+                <b className="text-semibold" key="bold-folder-name">
+                    {folderName}
+                </b>
+            );
             return <ActiveFilter>{c('Label').jt`${boldActive} Move all messages to ${boldFolderName}`}</ActiveFilter>;
         }
     }

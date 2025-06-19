@@ -1,13 +1,12 @@
 import { type Draft, type PayloadAction } from '@reduxjs/toolkit';
 
 import { type ModelState } from '@proton/account';
+import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { type LabelCount } from '@proton/shared/lib/interfaces';
 import { type Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { type Conversation } from 'proton-mail/models/conversation';
 import { type Element } from 'proton-mail/models/element';
-
-import { decrementUnread, incrementUnread } from './helpers';
 
 export const markConversationsAsUnread = (
     state: Draft<ModelState<LabelCount[]>>,
@@ -32,7 +31,7 @@ export const markConversationsAsUnread = (
             const conversationCounter = state.value?.find((counter) => counter.LabelID === labelID);
 
             if (conversationCounter) {
-                conversationCounter.Unread = incrementUnread(conversationCounter.Unread, 1);
+                conversationCounter.Unread = safeIncreaseCount(conversationCounter.Unread, 1);
             }
         }
     });
@@ -54,7 +53,7 @@ export const markConversationsAsRead = (
             const conversationCounter = state.value?.find((counter) => counter.LabelID === conversationLabel.ID);
 
             if (conversationCounter) {
-                conversationCounter.Unread = decrementUnread(conversationCounter.Unread, 1);
+                conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
             }
         });
     });
@@ -79,7 +78,7 @@ export const markMessagesAsUnread = (
             const conversationCounter = state.value?.find((counter) => counter.LabelID === labelID);
 
             if (conversationCounter) {
-                conversationCounter.Unread = incrementUnread(conversationCounter.Unread, 1);
+                conversationCounter.Unread = safeIncreaseCount(conversationCounter.Unread, 1);
             }
         }
     });
@@ -106,7 +105,7 @@ export const markMessagesAsRead = (
             const conversationCounter = state.value?.find((counter) => counter.LabelID === labelID);
 
             if (conversationCounter) {
-                conversationCounter.Unread = decrementUnread(conversationCounter.Unread, 1);
+                conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
             }
         }
     });
