@@ -8,6 +8,7 @@ import type {
 } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { utf8ArrayToString } from '@proton/crypto/lib/utils';
+import type { MessageErrors } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -18,7 +19,6 @@ import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 
-import type { MessageErrors } from '../../store/messages/messagesTypes';
 import { convert } from '../attachment/attachmentConverter';
 
 const { NOT_VERIFIED, NOT_SIGNED } = MAIL_VERIFICATION_STATUS;

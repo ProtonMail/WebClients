@@ -5,9 +5,8 @@ import {
     MESSAGE_IFRAME_ROOT_ID,
 } from '@proton/mail-renderer/constants';
 import { locateHead } from '@proton/mail/helpers/locateHead';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import svg from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
-
-import type { MessageState } from 'proton-mail/store/messages/messagesTypes';
 
 import cssStyles from './MessageIframe.raw.scss';
 

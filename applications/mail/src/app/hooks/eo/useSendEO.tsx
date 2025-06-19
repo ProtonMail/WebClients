@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useApi, useNotifications } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
+import type { MessageKeys, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { EOReply } from '@proton/shared/lib/api/eo';
 import { blobURLtoBlob } from '@proton/shared/lib/helpers/file';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -22,7 +23,6 @@ import { createBlob, readContentIDandLocation } from '../../helpers/message/mess
 import { prepareExport } from '../../helpers/message/messageExport';
 import { EOAddReply } from '../../store/eo/eoActions';
 import type { EOMessageReply } from '../../store/eo/eoType';
-import type { MessageKeys, MessageState } from '../../store/messages/messagesTypes';
 
 interface EOAttachment {
     Filename: string[];

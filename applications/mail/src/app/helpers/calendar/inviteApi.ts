@@ -1,5 +1,6 @@
 import { getUnixTime } from 'date-fns';
 
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { syncMultipleEvents, updateAttendeePartstat, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { getPaginatedEventsByUID } from '@proton/shared/lib/calendar/api';
@@ -95,7 +96,6 @@ import { getPrimaryKey } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import type { MessageStateWithData } from '../../store/messages/messagesTypes';
 import type { EventInvitation } from './invite';
 import {
     UPDATE_ACTION,

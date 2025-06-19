@@ -8,6 +8,7 @@ import { Icon, useApi, useModalState, useNotifications } from '@proton/component
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
@@ -22,7 +23,6 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import type { MessageVerification, MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 
 const { NOT_VERIFIED, SIGNED_AND_INVALID } = MAIL_VERIFICATION_STATUS;

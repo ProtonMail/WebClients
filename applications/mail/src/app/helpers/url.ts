@@ -1,10 +1,10 @@
+import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { protonizer, sanitizeString } from '@proton/shared/lib/sanitize';
 import { unescapeFromString } from '@proton/shared/lib/sanitize/escape';
 
 import { MAILTO_PROTOCOL_HANDLER_PATH } from '../constants';
-import type { PartialMessageState } from '../store/messages/messagesTypes';
 
 /**
  * Split an addresses string to a list of recipients

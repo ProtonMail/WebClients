@@ -1,7 +1,7 @@
+import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import type { Conversation } from '../models/conversation';
-import type { MessageWithOptionalBody } from '../store/messages/messagesTypes';
 import {
     applyLabelChangesOnConversation,
     applyLabelChangesOnMessage,

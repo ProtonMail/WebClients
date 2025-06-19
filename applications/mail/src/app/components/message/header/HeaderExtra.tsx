@@ -1,10 +1,10 @@
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { isReceived, isScheduled, isSnoozed } from '@proton/shared/lib/mail/messages';
 
 import ExtraPassNudge from 'proton-mail/components/message/extras/ExtraPassNudge';
 
 import { getMessageHasData } from '../../../helpers/message/messages';
 import useMailModel from '../../../hooks/useMailModel';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import useScheduleSendFeature from '../../composer/actions/scheduleSend/useScheduleSendFeature';
 import ExtraAskResign from '../extras/ExtraAskResign';
 import ExtraAutoReply from '../extras/ExtraAutoReply';

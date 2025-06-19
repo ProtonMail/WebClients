@@ -13,13 +13,13 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import trackersImg from '@proton/styles/assets/img/illustrations/trackers-found.svg';
 import clsx from '@proton/utils/clsx';
 
 import { emailTrackerProtectionURL } from '../../../constants';
 import type { Tracker } from '../../../hooks/message/useMessageTrackers';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import NumberOfElementsBubble from './NumberOfElementsBubble';
 
 interface Props extends ModalProps {

@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import { Alert, Checkbox, useLocalState } from '@proton/components';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
@@ -10,7 +11,6 @@ import useFlag from '@proton/unleash/useFlag';
 
 import { NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../../constants';
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import type { MessageChange } from '../Composer';
 import ComposerAssistantSettingModal from './ComposerAssistantSettingModal';
 import ComposerExpirationModal from './ComposerExpirationModal';

@@ -1,8 +1,8 @@
+import type { MessageImage, MessageImages } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients, getSender } from '@proton/shared/lib/mail/messages';
 
-import type { MessageImage, MessageImages } from '../../store/messages/messagesTypes';
 import { getAttachmentCounts, getMessagesAuthorizedToMove } from './messages';
 
 const { INBOX, SENT, DRAFTS, TRASH, SPAM } = MAILBOX_LABEL_IDS;

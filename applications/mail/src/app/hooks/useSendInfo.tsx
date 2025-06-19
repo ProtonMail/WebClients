@@ -7,6 +7,7 @@ import { useGetEncryptionPreferences, useKeyTransparencyContext } from '@proton/
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import type { PublicKeyReference } from '@proton/crypto';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -26,7 +27,6 @@ import { getSendStatusIcon } from '../helpers/message/icon';
 import type { MapSendInfo } from '../models/crypto';
 import { STATUS_ICONS_FILLS } from '../models/crypto';
 import type { ContactsMap } from '../store/contacts/contactsTypes';
-import type { MessageState } from '../store/messages/messagesTypes';
 import { useContactsMap } from './contact/useContacts';
 
 const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = ENCRYPTION_PREFERENCES_ERROR_TYPES;

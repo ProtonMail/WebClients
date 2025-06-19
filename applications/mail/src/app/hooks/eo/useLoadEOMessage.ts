@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo } from 'react';
 
 import { useApi } from '@proton/components';
+import type { OutsideKey } from '@proton/mail/store/messages/messagesTypes';
 
 import { useEOMailDispatch, useEOMailSelector, useEOMailStore } from 'proton-mail/store/eo/hooks';
 
@@ -14,7 +15,6 @@ import {
     isStoreInitializedSelector,
     passwordSelector,
 } from '../../store/eo/eoSelectors';
-import type { OutsideKey } from '../../store/messages/messagesTypes';
 
 export const useGetEOMessage = () => {
     const store = useEOMailStore();

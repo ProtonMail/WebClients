@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
 import { getExpiresOnMessage } from '../../helpers/message/messageExpirationTime';
-import type { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     onEditExpiration: () => void;

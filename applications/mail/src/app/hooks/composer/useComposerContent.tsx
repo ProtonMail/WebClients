@@ -12,6 +12,7 @@ import { getHasAssistantStatus } from '@proton/llm/lib';
 import type { OpenedAssistant } from '@proton/llm/lib/types';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
@@ -50,7 +51,6 @@ import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbedde
 import { mergeMessages } from '../../helpers/message/messages';
 import type { ComposerID } from '../../store/composers/composerTypes';
 import { removeInitialAttachments, updateDraftContent } from '../../store/messages/draft/messagesDraftActions';
-import type { MessageState } from '../../store/messages/messagesTypes';
 import { useInitializeMessage } from '../message/useInitializeMessage';
 import { useGetMessage, useMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';

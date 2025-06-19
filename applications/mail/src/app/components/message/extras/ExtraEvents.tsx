@@ -13,6 +13,7 @@ import { arrayToBinaryString, arrayToHexString, decodeUtf8 } from '@proton/crypt
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import type { MessageErrors, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import {
     getCanCreateCalendar,
     getDefaultCalendar,
@@ -57,10 +58,9 @@ import { getMessageHasData } from '../../../helpers/message/messages';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { updateAttachment } from '../../../store/attachments/attachmentsActions';
-import type { MessageErrors, MessageStateWithData } from '../../../store/messages/messagesTypes';
+import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import { errors as errorsAction } from '../../../store/messages/read/messagesReadActions';
 import ExtraEvent from './calendar/ExtraEvent';
-import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 
 interface Props {
     message: MessageStateWithData;

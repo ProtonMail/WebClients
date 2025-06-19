@@ -2,10 +2,9 @@ import { c } from 'ttag';
 
 import { Banner, Href } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isAutoReply } from '@proton/shared/lib/mail/messages';
-
-import type { MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageWithOptionalBody;

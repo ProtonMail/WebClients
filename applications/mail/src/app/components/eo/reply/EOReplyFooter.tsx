@@ -5,11 +5,11 @@ import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
 import type { PublicKeyReference } from '@proton/crypto';
+import type { MessageKeys, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 
 import { EO_MAX_REPLIES_NUMBER, EO_MESSAGE_REDIRECT_PATH } from '../../../constants';
 import { useSendEO } from '../../../hooks/eo/useSendEO';
-import type { MessageKeys, MessageState } from '../../../store/messages/messagesTypes';
 import AttachmentsButton from '../../attachment/AttachmentsButton';
 
 interface Props {

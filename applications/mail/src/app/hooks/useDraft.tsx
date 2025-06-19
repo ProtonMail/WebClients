@@ -7,6 +7,11 @@ import { useCache } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import type {
+    MessageState,
+    MessageStateWithData,
+    PartialMessageState,
+} from '@proton/mail/store/messages/messagesTypes';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import generateUID from '@proton/utils/generateUID';
 
@@ -17,7 +22,6 @@ import SendingFromDefaultAddressModal from '../components/composer/modals/Sendin
 import { cloneDraft, createNewDraft } from '../helpers/message/messageDraft';
 import { findSender } from '../helpers/message/messageRecipients';
 import { createDraft as createDraftAction } from '../store/messages/draft/messagesDraftActions';
-import type { MessageState, MessageStateWithData, PartialMessageState } from '../store/messages/messagesTypes';
 import { useGetAttachment } from './attachments/useAttachment';
 
 const CACHE_KEY = 'Draft';

@@ -4,6 +4,7 @@ import { act, findByTestId, fireEvent, waitFor } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { MESSAGE_IFRAME_ROOT_ID } from '@proton/mail-renderer/constants';
+import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
@@ -13,7 +14,6 @@ import type { MailStore } from 'proton-mail/store/store';
 import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { render, tick } from '../../../helpers/test/render';
-import type { MessageState, PartialMessageState } from '../../../store/messages/messagesTypes';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import type { MessageViewRef } from '../MessageView';
 import MessageView from '../MessageView';
