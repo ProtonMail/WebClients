@@ -11,10 +11,10 @@ import clsx from '@proton/utils/clsx';
 import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
 export type SelectFieldProps = FieldProps &
-    InputFieldProps<typeof SelectTwo> &
+    Omit<InputFieldProps<typeof SelectTwo>, 'anchorRef'> &
     Omit<FieldBoxProps, 'actions' | 'actionsContainerClassName' | 'anchorRef'> & {
         selectClassName?: string;
-        anchorRef: ForwardedRef<HTMLElement>;
+        anchorRef?: ForwardedRef<HTMLElement>;
     };
 
 const Loader: FC = () => <div className="pass-skeleton pass-skeleton--select" />;
