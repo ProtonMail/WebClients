@@ -591,6 +591,9 @@
       "refresh the page": [
         "obnovit stránku"
       ],
+      "Reload": [
+        "Znovu načíst"
+      ],
       "Remove": [
         "Odstranit"
       ],
@@ -1101,6 +1104,140 @@
         "Nový e-mail"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB prostoru"
+      ],
+      "200 GB storage": [
+        "200 GB prostoru"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB šifrovaného úložiště"
+      ],
+      "Add unlimited credit cards": [
+        "Přidejte neomezený počet platebních karet"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Všechny prémiové funkce ${ BRAND_NAME } Mail, Pass, VPN, Drive a Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokování reklam, sledovacích prvků a malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Slevy jsou založeny na standardních měsíčních cenách. Na konci fakturačního cyklu se vaše předplatné obnoví za standardní roční sazbu."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Zdvojnásobte své šifrované úložiště – získejte 1 TB pro všechna svá data"
+      ],
+      "Encrypted password manager": [
+        "Šifrovaný správce hesel"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Zde je exkluzivní dárek na oslavu naší společné cesty."
+      ],
+      "High speed streaming with VPN": [
+        "Vysokorychlostní streamování pomocí VPN"
+      ],
+      "of privacy": [
+        "soukromí"
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online soukromí až pro 2 osoby"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online soukromí pro celou rodinu (až 6 uživatelů)"
+      ],
+      "Protect up to 10 devices": [
+        "Chraňte až 10 zařízení"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Drive."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Mail."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Pass."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích VPN."
+      ],
+      "Save time with built-in 2FA": [
+        "Úspora času díky integrovanému 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Zabezpečený e-mail s neomezeným počtem aliasů"
+      ],
+      "Select any server": [
+        "Vyberte libovolný server"
+      ],
+      "Share passwords easily": [
+        "Snadné sdílení hesel"
+      ],
+      "Short @pm.me address": [
+        "Zkrácená adresa @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Streamujte svůj oblíbený obsah"
+      ],
+      "thanks to you": [
+        "díky vám"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Ztrojnásobte své šifrované úložiště – získejte 3 TB pro všechna svá data"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Use your own email domain": [
+        "Použijte svou vlastní e-mailovou doménu"
+      ],
+      "years": [
+        "let"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Výroční nabídka"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "/ month": [
+        "/ měsíc"
+      ],
+      "12 months": [
+        "12 měsíců"
+      ],
+      "15 months": [
+        "15 měsíců"
+      ],
+      "24 months": [
+        "24 měsíců"
+      ],
+      "30 months": [
+        "30 měsíců"
+      ],
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Pozvedněte e-mailovou produktivitu na novou úroveň. Dovolte ${ BRAND_NAME } Scribe pomoci vám se psaním, odpovídáním a korekturami vašich e-mailů."
@@ -1430,6 +1567,26 @@
       ],
       "Working with sensitive data?": [
         "Pracujete s citlivými údaji?"
+      ]
+    },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "Váš dedikovaný server je již přiřazen k bráně. Po skončení bezplatné zkušební verze si budete moci zakoupit další servery.",
+        "Všechny vaše dedikované servery jsou již přiřazeny k bráně. Po skončení bezplatné zkušební verze si budete moci zakoupit další servery.",
+        "Všechny vaše dedikované servery jsou již přiřazeny k bráně. Po skončení bezplatné zkušební verze si budete moci zakoupit další servery.",
+        "Všechny vaše dedikované servery jsou již přiřazeny k bráně. Po skončení bezplatné zkušební verze si budete moci zakoupit další servery."
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "Vaše bezplatná zkušební verze obsahuje ${ ipAddresses } dedikovaný server. Po spuštění plného předplatného můžete přidat další servery.",
+        "Vaše bezplatná zkušební verze obsahuje ${ ipAddresses } dedikované servery. Po spuštění plného předplatného můžete přidat další servery.",
+        "Vaše bezplatná zkušební verze obsahuje ${ ipAddresses } dedikovaných serverů. Po spuštění plného předplatného můžete přidat další servery.",
+        "Vaše bezplatná zkušební verze obsahuje ${ ipAddresses } dedikovaných serverů. Po spuštění plného předplatného můžete přidat další servery."
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "Vaše bezplatná zkušební verze obsahuje ${ maxMembers } licenci. Po spuštění plného předplatného můžete přidat další licence.",
+        "Vaše bezplatná zkušební verze obsahuje ${ maxMembers } licence. Po spuštění plného předplatného můžete přidat další licence.",
+        "Vaše bezplatná zkušební verze obsahuje ${ maxMembers } licencí. Po spuštění plného předplatného můžete přidat další licence.",
+        "Vaše bezplatná zkušební verze obsahuje ${ maxMembers } licencí. Po spuštění plného předplatného můžete přidat další licence."
       ]
     },
     "Browser": {
@@ -3101,6 +3258,9 @@
       "Failed to process the logo": [
         "Logo se nepodařilo zpracovat"
       ],
+      "Failed to update detailed monitoring.": [
+        "Aktualizace podrobného sledování selhala."
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Soubor je příliš velký. Vaše logo musí mít 30 KB nebo méně."
       ],
@@ -3367,8 +3527,8 @@
       ]
     },
     "error": {
-      "Enter an email address": [
-        "Zadejte e-mailovou adresu"
+      "Select users to view their activity": [
+        "Vyberte uživatele k zobrazení jejich aktivity"
       ]
     },
     "Error importing users": {
@@ -4041,9 +4201,6 @@
       ]
     },
     "Header": {
-      "App version": [
-        "Verze aplikace"
-      ],
       "Best deal": [
         "Nejlepší nabídka"
       ],
@@ -4082,9 +4239,6 @@
       ],
       "Payment details": [
         "Platební údaje"
-      ],
-      "Protection": [
-        "Ochrana"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Využijte velké slevy na ${ VPN_APP_NAME }"
@@ -4332,6 +4486,12 @@
         "${ remainingAddresses.length } dalších adres",
         "${ remainingAddresses.length } dalších adres"
       ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } výsledek nalezen",
+        "${ resultsCount } výsledky nalezeny",
+        "${ resultsCount } výsledků nalezeno",
+        "${ resultsCount } výsledků nalezeno"
+      ],
       "${ selectedEntities.length } selected": [
         "Vybráno: ${ selectedEntities.length }",
         "Vybráno: ${ selectedEntities.length }",
@@ -4427,6 +4587,9 @@
       ],
       "active": [
         "aktivní"
+      ],
+      "Activity monitor": [
+        "Monitor aktivity"
       ],
       "add a recovery method": [
         "přidali metodu obnovení"
@@ -4716,6 +4879,9 @@
       "Did you know?": [
         "Věděli jste?"
       ],
+      "Disable detailed events": [
+        "Deaktivovat podrobné události"
+      ],
       "Disabled countries": [
         "Zakázané země"
       ],
@@ -4826,6 +4992,9 @@
       ],
       "Enable auto-renew to keep access to your premium features.": [
         "Povolte automatické obnovení pro zachování přístupu k prémiovým funkcím."
+      ],
+      "Enable detailed events": [
+        "Povolit podrobné události"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivujte jednotné přihlášení (SSO), aby byla vaše organizace v bezpečí"
@@ -5022,6 +5191,9 @@
       "inactive": [
         "neaktivní"
       ],
+      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
+        "Včetně IP adresy uživatele, polohy a poskytovatele internetových služeb (ISP) do logů událostí"
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Včetně ${ formattedTaxRate } % ${ taxName }: ${ price }"
       ],
@@ -5160,6 +5332,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Načítání kalendáře, prosím čekejte. Budete přesměrováni na naši plánovací platformu Calendly v nové záložce."
       ],
+      "Loading detailed events current status.": [
+        "Načítání podrobného aktuálního stavu událostí."
+      ],
       "Loading eduGAIN data...": [
         "Načítání dat eduGAIN..."
       ],
@@ -5222,6 +5397,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Data o nových aktivitách se přestanou shromažďovat a zobrazovat."
       ],
       "New user invited to organization": [
         "Nový uživatel byl pozván do organizace"
@@ -5499,9 +5677,6 @@
       "SCIM token active": [
         "Token SCIM aktivní"
       ],
-      "Search by an email address to begin": [
-        "Začněte hledat podle e-mailové adresy"
-      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Zabezpečte svůj účet ${ BRAND_NAME }"
       ],
@@ -5582,6 +5757,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začněte ji sdílet s kontakty a používejte ji pro online služby."
+      ],
+      "Starts on ${ startsOnTime }": [
+        "Začíná ${ startsOnTime }"
       ],
       "Step ${ step }": [
         "Krok ${ step }",
@@ -5771,6 +5949,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tímto se odhlásíte ze všech aktivních relací a zakážete dvoufázové ověřování."
+      ],
+      "This will wipe all logs for your organization members.": [
+        "Tím se smažou všechny logy členů vaší organizace."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem ${ BRAND_NAME } účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější ${ BRAND_NAME_TWO } účet."
@@ -6225,6 +6406,9 @@
         "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adres. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
         "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adres. Chcete-li přidat další, nejprve jednu z nich deaktivujte."
       ],
+      "You've reached the limit of 50 users for this filter. Remove one to add another.": [
+        "Dosáhli jste limitu počtu 50 uživatelů pro tento filtr. Odeberte jednoho a přidejte dalšího."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Vaše ${ boldDiscountPercent } na ${ boldPlanTitle } byla použita"
       ],
@@ -6260,6 +6444,12 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaný server.",
+        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikované servery.",
+        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaných serverů.",
+        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaných serverů."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informace jsou u nás v bezpečí. Budeme vás kontaktovat pouze v případě, že to bude nutné pro poskytování našich služeb."
@@ -6962,8 +7152,8 @@
       "Search": [
         "Hledat"
       ],
-      "Search by email": [
-        "Hledat podle e-mailu"
+      "Search for a name or email": [
+        "Vyhledat jméno nebo e-mail"
       ],
       "Second password": [
         "Druhé heslo"
@@ -7374,6 +7564,74 @@
         "Vaše předplatné skončilo. ${ cta } pro předejití ztrátě dat."
       ]
     },
+    "Log event": {
+      "Account password change": [
+        "Změna hesla účtu"
+      ],
+      "Authentication failure (second factor failed)": [
+        "Selhání ověření (druhý faktor selhal)"
+      ],
+      "Authentication failure (wrong password)": [
+        "Selhání ověření (nesprávné heslo)"
+      ],
+      "Authentication success": [
+        "Ověření bylo úspěšné"
+      ],
+      "Mailbox password change": [
+        "Změna hesla poštovní schránky"
+      ],
+      "Password reset": [
+        "Reset hesla"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "Druhý faktor deaktivován (ověřovací aplikace)"
+      ],
+      "Second factor disabled (security key)": [
+        "Druhá fáze deaktivována (bezpečnostní klíč)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "Druhý faktor povolen (ověřovací aplikace)"
+      ],
+      "Second factor enabled (security key)": [
+        "Druhý faktor povolen (bezpečnostní klíč)"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "Přihlášení zablokováno (z důvodu zneužití)"
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "Přihlášení selhalo (seed fáze selhala)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "Přihlášení selhalo (druhý faktor selhal)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Přihlášení selhalo (nesprávné heslo)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Přihlášení zakázáno (z důvodu zneužití)"
+      ],
+      "Sign in success": [
+        "Přihlášení úspěšné"
+      ],
+      "Sign in success (awaiting mnemonic)": [
+        "Přihlášení úspěšné (čeká se na seed frázi)"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Přihlášení úspěšné (čeká se na druhý faktor)"
+      ],
+      "Sign in success (awaiting verify)": [
+        "Přihlášení úspěšné (čeká se na ověření)"
+      ],
+      "Sign out": [
+        "Odhlásit se"
+      ],
+      "Two password mode disabled": [
+        "Režim dvou hesel deaktivován"
+      ],
+      "Two password mode enabled": [
+        "Režim dvou hesel povolen"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Povolit ${ reason }"
@@ -7463,6 +7721,9 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Připojte vlastní doménu k ${ BRAND_NAME } a nastavte vlastní e-mailové adresy (např. vy@vasefirma.cz). Náš průvodce vás provede celým procesem."
+      ],
+      "View account-related events across your organization.": [
+        "Zobrazit události související s účtem v celé organizaci."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše bezplatná zkušební verze skončila. Přístup k vašemu účtu bude brzy deaktivován. ${ action }"
@@ -9519,6 +9780,26 @@
     "Price": {
       "Free": [
         "Bezplatné"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "Blokováno"
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Device verification": [
+        "Ověřování zařízení"
+      ],
+      "Ok": [
+        "Ok"
+      ],
+      "Ownership verification": [
+        "Ověření vlastnictví"
+      ],
+      "Unknown": [
+        "Neznámý"
       ]
     },
     "Recovery Email": {
@@ -11668,6 +11949,9 @@
       "Activate user": [
         "Aktivovat uživatele"
       ],
+      "Activity monitor": [
+        "Monitor aktivity"
+      ],
       "Add ${ totalServerCount } server?": [
         "Přidat ${ totalServerCount } server?",
         "Přidat ${ totalServerCount } servery?",
@@ -11766,6 +12050,18 @@
       ],
       "Cancel subscription?": [
         "Zrušit předplatné?"
+      ],
+      "Cannot add Gateway": [
+        "Nelze přidat bránu"
+      ],
+      "Cannot add licenses": [
+        "Nelze přidat licence"
+      ],
+      "Cannot add more users": [
+        "Nelze přidat další uživatele"
+      ],
+      "Cannot add servers": [
+        "Nelze přidat servery"
       ],
       "Card verification": [
         "Ověření karty"
@@ -11934,6 +12230,9 @@
       ],
       "Device name": [
         "Název zařízení"
+      ],
+      "Disable activity monitor?": [
+        "Deaktivovat monitor aktivity?"
       ],
       "Disable two-factor authentication": [
         "Zakázat dvoufázové ověření"
@@ -12430,6 +12729,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vítejte v ${ BRAND_NAME } for Business"
       ],
+      "Wipe all logs?": [
+        "Smazat všechny logy?"
+      ],
       "WireGuard configuration": [
         "Konfigurace WireGuard"
       ],
@@ -12531,12 +12833,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Umožňuje snadno přidávat odkazy na videokonference do vašich pozvánek kalendáře."
       ],
-      "An approximate location of the IP address": [
-        "Přibližné umístění IP adresy"
-      ],
-      "Any protection applied to suspicious activity": [
-        "Jakákoli ochrana uplatňovaná na podezřelou aktivitu"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatické přepínání mezi preferovanými denními a nočními motivy v synchronizaci s denním a nočním režimem systému."
       ],
@@ -12546,8 +12842,8 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Zkopírujte a vložte tuto URL adresu do pole ID subjektu u svého poskytovatele identity"
       ],
-      "Device information such as operating system": [
-        "Informace o zařízení, jako je operační systém"
+      "Device name and app version": [
+        "Název zařízení a verze aplikace"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Zobrazované jméno subjektu v databázi eduGAIN"
@@ -12573,11 +12869,11 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Pokud jste zakoupil dárkový kód nebo jste je obdržel od naší podpory, můžete ho vložit sem."
       ],
-      "IP address (Internet Service Provider)": [
-        "IP adresa (poskytovatel internetových služeb)"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Členové, kteří 2FA nepoužívají, dostanou e-mail s výzvou, aby si ho co nejdříve aktivovali. Uživatelé s jednotným přihlášením nebudou dostávat e-mailové připomenutí."
+      ],
+      "Origin IP address and Internet Service Provider (ISP)": [
+        "Původní IP adresa a poskytovatel internetových služeb (ISP)"
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Zásady sdílených serverů lze použít pro samostatné uživatele nebo skupiny"
@@ -12602,6 +12898,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Tato e-mailová adresa se zobrazí všem členům organizace při provádění operací správy účtu."
+      ],
+      "User's approximate location (based on their IP address)": [
+        "Přibližná poloha uživatele (na základě jeho IP adresy)"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Po přihlášení do našich webových aplikací uvidí uživatelé vaše logo místo ikony ${ BRAND_NAME }."
