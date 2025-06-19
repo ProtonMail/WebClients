@@ -25,7 +25,7 @@ import {
     extract1PasswordLegacyNote,
     extract1PasswordLegacyURLs,
     extract1PasswordLegacyUnknownExtraFields,
-    extractLegacyBaseWifi,
+    extractLegacy1PasswordWifiFields,
 } from './1p.utils';
 import type { OnePassLegacyItem } from './1pif.types';
 import { OnePassLegacyItemType } from './1pif.types';
@@ -137,7 +137,7 @@ export const processWifiItem = (item: OnePassLegacyItem): ItemImportIntent<'wifi
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
         extraFields: [...extract1PasswordLegacyUnknownExtraFields(item), ...extract1PasswordLegacyExtraFields(item)],
-        ...extractLegacyBaseWifi(item.secureContents.sections),
+        ...extractLegacy1PasswordWifiFields(item.secureContents.sections),
     });
 
 export const parse1PifData = (data: string): OnePassLegacyItem[] =>
