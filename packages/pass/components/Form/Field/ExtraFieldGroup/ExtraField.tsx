@@ -95,7 +95,7 @@ export const ExtraFieldComponent: FC<ExtraFieldProps> = ({
                         const fieldError = error as ExtraFieldError<'text' | 'hidden'>;
                         return (
                             <FieldComponent
-                                placeholder={placeholder}
+                                placeholder={field.value.fieldName || placeholder}
                                 error={touched && (error?.fieldName || fieldError?.data?.content)}
                                 field={{
                                     ...field,

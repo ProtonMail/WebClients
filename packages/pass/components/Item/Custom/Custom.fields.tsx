@@ -18,14 +18,13 @@ export const CustomTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ t
                     <Field
                         label={c('Label').t`Public key`}
                         name="publicKey"
-                        placeholder={c('Placeholder').t`Add hidden text`}
+                        placeholder={c('Placeholder').t`Add public key`}
                         component={TextField}
-                        hidden
                     />
                     <Field
                         label={c('Label').t`Private key`}
                         name="privateKey"
-                        placeholder={c('Placeholder').t`Add hidden text`}
+                        placeholder={c('Placeholder').t`Add private key`}
                         component={TextField}
                         hidden
                     />
@@ -37,13 +36,13 @@ export const CustomTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ t
                     <Field
                         label={c('Label').t`Name (SSID)`}
                         name="ssid"
-                        placeholder={c('Placeholder').t`Add text`}
+                        placeholder={c('Placeholder').t`Add SSID`}
                         component={TextField}
                     />
                     <Field
                         label={c('Label').t`Password`}
                         name="password"
-                        placeholder={c('Placeholder').t`Add hidden text`}
+                        placeholder={c('Placeholder').t`Add password`}
                         component={TextField}
                         hidden
                     />
