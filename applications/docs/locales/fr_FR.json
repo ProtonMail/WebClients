@@ -878,7 +878,7 @@
       ],
       "View ${ pendingCount } invitation": [
         "Nombre d'invitations : ${ pendingCount }",
-        "Afficher toutes les invitations : ${ pendingCount }"
+        "Afficher toutes les ${ pendingCount } invitations"
       ],
       "View all reports": [
         "Afficher tous les rapports"
@@ -1046,7 +1046,7 @@
         "Adresse @pm.me courte"
       ],
       "Stream your favorite content": [
-        "Accédez à vos services de streaming"
+        "Accédez à vos services de streaming préférés"
       ],
       "thanks to you": [
         "grâce à vous"
@@ -5201,7 +5201,7 @@
         "Le propriétaire de cette adresse a désactivé le chiffrement de bout en bout. Il doit réactiver le chiffrement de bout en bout pour pouvoir envoyer des messages chiffrés à cette adresse."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Le lien que vous avez saisi semble avoir été mal copiée depuis Slack. Lorsque vous copiez des liens longs depuis Slack, faites un clic droit sur le lien, puis choisissez « Copier le lien » plutôt que de copier directement le texte tronqué du lien."
+        "L'URL que vous avez saisie semble avoir été mal copiée depuis Slack. Lorsque vous copiez des liens longs depuis Slack, faites un clic droit sur le lien, puis choisissez « Copier le lien » plutôt que de copier directement le texte tronqué de l’URL."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
@@ -8894,9 +8894,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Création d'une nouvelle feuille de calcul..."
-      ],
       "Detect automatically": [
         "Détecter automatiquement"
       ],
@@ -10581,9 +10578,6 @@
       ],
       "Contacts could not be merged": [
         "Les contacts n'ont pas pu être fusionnés."
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "La date d'expiration n'est pas au format MM/AA."
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si vous ne vous souvenez plus de votre mot de passe, il est impossible de réactiver votre clé. Nous pouvons vous aider à supprimer la bannière d'alerte, mais vous perdrez alors définitivement l'accès à toutes les données chiffrées avec cette clé."
