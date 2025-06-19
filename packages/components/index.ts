@@ -5,9 +5,9 @@ export { default as ActionCard } from './components/actionCard/ActionCard';
 export { default as AddressesAutocomplete } from './components/addressesAutocomplete/AddressesAutocomplete';
 export * from './components/addressesAutocomplete/helper';
 export { default as AddressesInput, AddressesInputItem } from './components/addressesInput/AddressesInput';
-export { default as AppsLogos } from './components/appsLogos/AppsLogos';
 export { default as Alert } from './components/alert/Alert';
 export type { AlertType } from './components/alert/Alert';
+export { default as AppsLogos } from './components/appsLogos/AppsLogos';
 export { default as AttachedFile } from './components/attachedFile/AttachedFile';
 export { default as Autocomplete } from './components/autocomplete/Autocomplete';
 export {
@@ -23,7 +23,6 @@ export { default as BetaBadge } from './components/badge/BetaBadge';
 export { default as Breadcrumb } from './components/breadcrumb/Breadcrumb';
 export { default as ButtonGroup } from './components/button/ButtonGroup';
 export { default as Copy } from './components/button/Copy';
-export { default as ErrorButton } from './components/button/ErrorButton';
 export { default as FileButton } from './components/button/FileButton';
 export { default as FloatingButton } from './components/button/FloatingButton';
 export { default as PrimaryButton } from './components/button/PrimaryButton';
@@ -85,8 +84,8 @@ export { default as DefaultQuickSettings } from './components/drawer/views/quick
 export { default as DrawerAllSettingsView } from './components/drawer/views/quickSettings/DrawerAllSettingsView';
 export { default as DrawerDownloadApps } from './components/drawer/views/quickSettings/DrawerDownloadApps';
 export { default as QuickSettingsButton } from './components/drawer/views/quickSettings/QuickSettingsButton';
-export { QuickSettingsRequestNotifications } from './components/drawer/views/quickSettings/QuickSettingsRequestNotifications';
 export { default as QuickSettingsButtonSection } from './components/drawer/views/quickSettings/QuickSettingsButtonSection';
+export { QuickSettingsRequestNotifications } from './components/drawer/views/quickSettings/QuickSettingsRequestNotifications';
 export { default as QuickSettingsSectionRow } from './components/drawer/views/quickSettings/QuickSettingsSectionRow';
 export { startAccountSecurityListener } from './components/drawer/views/SecurityCenter/AccountSecurity/slice/accountSecurityListener';
 export { securityCenterReducer } from './components/drawer/views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
@@ -178,8 +177,8 @@ export { default as useSettingsLink } from './components/link/useSettingsLink';
 export { default as EllipsisLoader } from './components/loader/EllipsisLoader';
 export { default as Loader } from './components/loader/Loader';
 export { default as LoaderIcon } from './components/loader/LoaderIcon';
-export { default as TextLoader } from './components/loader/TextLoader';
 export { default as LoadingTextStepper } from './components/loader/LoadingTextStepper';
+export { default as TextLoader } from './components/loader/TextLoader';
 export { default as CalendarLogo } from './components/logo/CalendarLogo';
 export { default as CustomLogo } from './components/logo/CustomLogo';
 export { default as DriveLogo } from './components/logo/DriveLogo';
@@ -283,18 +282,18 @@ export { default as SimpleSidebarListItemLink } from './components/sidebar/Simpl
 export { default as SkeletonLoader } from './components/skeletonLoader/SkeletonLoader';
 export { default as SmartBanner } from './components/smartBanner/SmartBanner';
 export { default as ReloadSpinner } from './components/spinner/ReloadSpinner';
-export type { StartupModal } from './components/startupModals/types';
-export { default as StartupModals } from './components/startupModals/StartupModals';
+export { default as SpotlightProvider } from './components/spotlight/Provider';
+export { default as Spotlight } from './components/spotlight/Spotlight';
+export type { SpotlightProps } from './components/spotlight/Spotlight';
+export { default as useSpotlightShow } from './components/spotlight/useSpotlightShow';
 export {
     useCancellationReminderModal,
     useLightLabellingFeatureModal,
     useReferralModal,
     useTrialEndedModal,
 } from './components/startupModals/startupModalHooks';
-export { default as SpotlightProvider } from './components/spotlight/Provider';
-export { default as Spotlight } from './components/spotlight/Spotlight';
-export type { SpotlightProps } from './components/spotlight/Spotlight';
-export { default as useSpotlightShow } from './components/spotlight/useSpotlightShow';
+export { default as StartupModals } from './components/startupModals/StartupModals';
+export type { StartupModal } from './components/startupModals/types';
 export { default as StepDot } from './components/stepDot/StepDot';
 export { default as StepDots } from './components/stepDots/StepDots';
 export { default as StripedItem } from './components/stripedList/StripedItem';
@@ -332,8 +331,8 @@ export { default as TopNavbarListItemSearchButton } from './components/topnavbar
 export { default as TopNavbarUpsell } from './components/topnavbar/TopNavbarUpsell';
 export { default as TreeViewContainer } from './components/treeview/TreeViewContainer';
 export { default as TreeViewItem } from './components/treeview/TreeViewItem';
+export { default as useUpsellConfig } from './components/upsell/config/useUpsellConfig';
 export type { UpsellFeature as UpsellFeatures } from './components/upsell/interface';
-export { default as UpsellModal } from './components/upsell/UpsellModal/UpsellModal';
 export { default as AutoDeleteUpsellModal } from './components/upsell/modals/AutoDeleteUpsellModal';
 export { default as ComposerAssistantB2BUpsellModal } from './components/upsell/modals/ComposerAssistantB2BUpsellModal';
 export { default as DWMUpsellModal } from './components/upsell/modals/DWMUpsellModal';
@@ -341,7 +340,7 @@ export { default as FiltersUpsellModal } from './components/upsell/modals/Filter
 export { default as LabelsUpsellModal } from './components/upsell/modals/LabelsUpsellModal';
 export { default as PmMeUpsellModal } from './components/upsell/modals/PmMeUpsellModal';
 export { default as ZoomUpsellModal } from './components/upsell/modals/ZoomUpsellModal';
-export { default as useUpsellConfig } from './components/upsell/config/useUpsellConfig';
+export { default as UpsellModal } from './components/upsell/UpsellModal/UpsellModal';
 export { default as AddressesAutocompleteTwo } from './components/v2/addressesAutocomplete/AddressesAutocomplete';
 export { default as InputFieldTwo } from './components/v2/field/InputField';
 export { default as DateInputTwo } from './components/v2/input/DateInputTwo';
@@ -428,10 +427,10 @@ export { default as StandardPublicApp } from './containers/app/StandardPublicApp
 export { default as AuthenticationProvider } from './containers/authentication/Provider';
 export { default as UnAuthenticated } from './containers/authentication/UnAuthenticated';
 export { AutoReplySection } from './containers/autoReply/AutoReplySection';
+export { default as ActivityMonitorEvents } from './containers/b2bDashboard/ActivityMonitor/ActivityMonitorEvents';
 export type { PassEvent } from './containers/b2bDashboard/Pass/interface';
 export { PassEvents } from './containers/b2bDashboard/Pass/PassEvents';
 export { VPNEvents } from './containers/b2bDashboard/VPN/VPNEvents';
-export { default as ActivityMonitorEvents } from './containers/b2bDashboard/ActivityMonitor/ActivityMonitorEvents';
 export { PromotionBanner } from './containers/banner/PromotionBanner';
 export { ProtonMailBridgeSection } from './containers/bridge/ProtonMailBridgeSection';
 export { CacheProvider } from './containers/cache/Provider';
@@ -449,8 +448,8 @@ export { default as NotificationsInDrawer } from './containers/calendar/notifica
 export { default as CalendarExportSection } from './containers/calendar/settings/CalendarExportSection';
 export { default as CalendarImportSection } from './containers/calendar/settings/CalendarImportSection';
 export { default as CalendarInvitationsSection } from './containers/calendar/settings/CalendarInvitationsSection';
-export { default as CalendarOtherPreferencesSection } from './containers/calendar/settings/CalendarOtherPreferencesSection';
 export { default as CalendarLayoutSection } from './containers/calendar/settings/CalendarLayoutSection';
+export { default as CalendarOtherPreferencesSection } from './containers/calendar/settings/CalendarOtherPreferencesSection';
 export { default as CalendarsSettingsSection } from './containers/calendar/settings/CalendarsSettingsSection';
 export { default as CalendarSubpage } from './containers/calendar/settings/CalendarSubpage';
 export { default as CalendarTimeSection } from './containers/calendar/settings/CalendarTimeSection';
@@ -460,6 +459,7 @@ export { default as ShowSecondaryTimezoneToggle } from './containers/calendar/se
 export { default as ViewPreferenceSelector } from './containers/calendar/settings/ViewPreferenceSelector';
 export { default as WeekStartSelector } from './containers/calendar/settings/WeekStartSelector';
 export { default as ShareCalendarWithSignatureVerificationErrorModal } from './containers/calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
+export { default as CalendarShortcutsModal } from './containers/calendar/shortcutsModal/CalendarShortcutsModal';
 export { default as Challenge } from './containers/challenge/Challenge';
 export { default as ChallengeError } from './containers/challenge/ChallengeError';
 export { default as ChallengeFrame } from './containers/challenge/ChallengeFrame';
@@ -505,13 +505,13 @@ export { default as ContactView } from './containers/contacts/view/ContactView';
 export { default as ContactViewErrors } from './containers/contacts/view/ContactViewErrors';
 export { default as CredentialLeakSection } from './containers/credentialLeak/CredentialLeakSection';
 export type { FetchedBreaches, SampleBreach } from './containers/credentialLeak/models';
+export { InboxDesktopDefaultAppTopBanner } from './containers/desktop/defaultApp/InboxDesktopDefaultAppTopBanner';
+export { useElectronDefaultApp } from './containers/desktop/defaultApp/useElectronDefaultApp';
 export { InboxDesktopFreeTrialOnboardingModal } from './containers/desktop/freeTrial/InboxDesktopFreeTrialOnboardingModal';
 export { InboxDesktopFreeTrialTopBanner } from './containers/desktop/freeTrial/InboxDesktopFreeTrialTopBanner';
 export { InboxDesktopAppSwitcher } from './containers/desktop/InboxDesktopAppSwitcher';
 export { InboxDesktopOutdatedAppTopBanner } from './containers/desktop/InboxDesktopOutdatedAppTopBanner';
 export { InboxDesktopSettingsSection } from './containers/desktop/InboxDesktopSettingsSection';
-export { InboxDesktopDefaultAppTopBanner } from './containers/desktop/defaultApp/InboxDesktopDefaultAppTopBanner';
-export { useElectronDefaultApp } from './containers/desktop/defaultApp/useElectronDefaultApp';
 export { CommentEmailSection } from './containers/docs/settings/CommentEmailSection';
 export { default as CatchAllSection } from './containers/domains/CatchAllSection';
 export { default as DomainModal } from './containers/domains/DomainModal';
@@ -643,7 +643,6 @@ export { default as WipeLogsButton } from './containers/logs/WipeLogsButton';
 export { default as MailComposerModeModal } from './containers/mail/MailComposerModeModal';
 export { default as MailDensityModal } from './containers/mail/MailDensityModal';
 export { default as MailShortcutsModal } from './containers/mail/MailShortcutsModal';
-export { default as CalendarShortcutsModal } from './containers/calendar/shortcutsModal/CalendarShortcutsModal';
 export { default as MailViewLayoutModal } from './containers/mail/MailViewLayoutModal';
 export { default as MemberActions } from './containers/members/MemberActions';
 export { default as MemberAddresses } from './containers/members/MemberAddresses';
@@ -731,6 +730,7 @@ export { default as OrganizationGroupsManagementSection } from './containers/org
 export { default as LightLabellingFeatureModal } from './containers/organization/logoUpload/LightLabellingFeatureModal';
 export { useOrganizationTheme } from './containers/organization/logoUpload/useOrganizationTheme';
 export { useShowLightLabellingFeatureModal } from './containers/organization/logoUpload/useShowLightLabellingFeatureModal';
+export { default as OrganizationPasswordPoliciesSection } from './containers/organization/OrganizationPasswordPoliciesSection';
 export { default as OrganizationPasswordSection } from './containers/organization/OrganizationPasswordSection';
 export { default as OrganizationScheduleCallSection } from './containers/organization/OrganizationScheduleCallSection';
 export { default as OrganizationSection } from './containers/organization/OrganizationSection';
@@ -738,7 +738,6 @@ export { default as OrganizationSpamFiltersSection } from './containers/organiza
 export { default as OrganizationTwoFAEnforcementSection } from './containers/organization/OrganizationTwoFAEnforcementSection';
 export { default as OrganizationTwoFAHeader } from './containers/organization/OrganizationTwoFAHeader';
 export { default as OrganizationTwoFARemindersSection } from './containers/organization/OrganizationTwoFARemindersSection';
-export { default as OrganizationPasswordPoliciesSection } from './containers/organization/OrganizationPasswordPoliciesSection';
 export { default as PassPolicies } from './containers/organization/PassPolicies';
 export { default as SsoPage } from './containers/organization/sso/SsoPage';
 export { OtherMailPreferencesSection } from './containers/otherMailPreferences/OtherMailPreferencesSection';
@@ -780,10 +779,10 @@ export type {
     OpenSubscriptionModalCallback,
 } from './containers/payments/subscription/SubscriptionModalProvider';
 export { default as UpgradeVpnSection } from './containers/payments/subscription/UpgradeVpnSection';
+export { default as VPNDashboardTelemetry } from './containers/payments/subscription/VPNDashboardTelemetry';
 export { default as YourPlanSection } from './containers/payments/subscription/YourPlanSection';
 export { default as YourPlanSectionV2 } from './containers/payments/subscription/YourPlanSectionV2/YourPlanSectionV2';
 export { default as YourPlanUpsellsSectionV2 } from './containers/payments/subscription/YourPlanSectionV2/YourPlanUpsellsSectionV2';
-export { default as VPNDashboardTelemetry } from './containers/payments/subscription/VPNDashboardTelemetry';
 export { default as YourStorageSection } from './containers/payments/subscription/YourStorageSection';
 export { default as SubscriptionsSection } from './containers/payments/SubscriptionsSection';
 export { default as CrashReportsToggle } from './containers/privacy/CrashReportsToggle';
@@ -813,6 +812,7 @@ export { SentinelSection } from './containers/sentinel/SentinelSection';
 export { default as SessionAction } from './containers/sessions/SessionAction';
 export { default as SessionsSection } from './containers/sessions/SessionsSection';
 export { default as SMTPSubmissionSection } from './containers/smtp/SMTPSubmissionSection';
+export { default as TrialEndedModal } from './containers/subscription/TrialEndedModal';
 export { default as AuthenticatedBugModal } from './containers/support/AuthenticatedBugModal';
 export { default as BugModal, type BugModalMode } from './containers/support/BugModal';
 export { default as FreeUserLiveChatModal } from './containers/support/FreeUserLiveChatModal';
@@ -842,15 +842,15 @@ export { default as GatewaysSection } from './containers/vpn/gateways/GatewaysSe
 export { default as OpenVPNConfigurationSection } from './containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 export { default as OpenVPNCredentialsSection } from './containers/vpn/OpenVPNCredentialsSection';
 export { default as ProtonVPNClientsSection } from './containers/vpn/ProtonVPNClientsSection/ProtonVPNClientsSection';
-export { default as VpnDownloadSection } from './containers/vpn/VpnDownloadSection/VpnDownloadSection';
-export { default as VpnBlogSection } from './containers/vpn/VpnBlogSection/VpnBlogSection';
-export { default as VpnGetMoreSection } from './containers/vpn/VpnGetMoreSection/VpnGetMoreSection';
-export { default as VpnDownloadAndInfoSection } from './containers/vpn/VpnDownloadAndInfoSection/VpnDownloadAndInfoSection';
-export { default as VpnAlsoInYourPlanSection } from './containers/vpn/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection';
 export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonVPNCredentialsSection/ProtonVPNCredentialsSection';
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as SharedServersSection } from './containers/vpn/sharedServers/SharedServersSection';
 export { default as TVContainer } from './containers/vpn/tv/TVContainer';
+export { default as VpnAlsoInYourPlanSection } from './containers/vpn/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection';
+export { default as VpnBlogSection } from './containers/vpn/VpnBlogSection/VpnBlogSection';
+export { default as VpnDownloadAndInfoSection } from './containers/vpn/VpnDownloadAndInfoSection/VpnDownloadAndInfoSection';
+export { default as VpnDownloadSection } from './containers/vpn/VpnDownloadSection/VpnDownloadSection';
+export { default as VpnGetMoreSection } from './containers/vpn/VpnGetMoreSection/VpnGetMoreSection';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
 export { getAppVersion } from './helpers/appVersion';
 export { getCustomSizingClasses } from './helpers/getCustomSizingClasses';
@@ -943,4 +943,3 @@ export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendar
 export { default as useToggle } from './hooks/useToggle';
 export { default as useVPNServersCount } from './hooks/useVPNServersCount';
 export { default as useWindowSize } from './hooks/useWindowSize';
-export { default as TrialEndedModal } from './containers/subscription/TrialEndedModal';
