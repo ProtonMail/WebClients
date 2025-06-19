@@ -1,5 +1,14 @@
 import type { PrivateAuthenticationStore } from '@proton/components';
 import { MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
+import type {
+    LoadRemoteResults,
+    MessageEmbeddedImage,
+    MessageImage,
+    MessageImages,
+    MessageRemoteImage,
+    MessageState,
+    PartialMessageState,
+} from '@proton/mail/store/messages/messagesTypes';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Api } from '@proton/shared/lib/interfaces';
 import uniqueBy from '@proton/utils/uniqueBy';
@@ -9,15 +18,6 @@ import {
     loadRemoteDirectFromURL,
     loadRemoteProxyFromURL,
 } from '../../store/messages/images/messagesImagesActions';
-import type {
-    LoadRemoteResults,
-    MessageEmbeddedImage,
-    MessageImage,
-    MessageImages,
-    MessageRemoteImage,
-    MessageState,
-    PartialMessageState,
-} from '../../store/messages/messagesTypes';
 import { getDocumentContent } from './messageContent';
 import { setEmbeddedAttr } from './messageEmbeddeds';
 

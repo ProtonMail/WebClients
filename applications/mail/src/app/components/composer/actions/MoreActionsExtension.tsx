@@ -8,6 +8,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { EditorMetadata } from '@proton/components';
 import { DropdownMenuButton, Icon } from '@proton/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {
@@ -19,7 +20,6 @@ import clsx from '@proton/utils/clsx';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { exportPlainText, plainTextToHTML, setDocumentContent } from '../../../helpers/message/messageContent';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import type { MessageChange, MessageChangeFlag } from '../Composer';
 import type { ExternalEditorActions } from '../editor/EditorWrapper';
 

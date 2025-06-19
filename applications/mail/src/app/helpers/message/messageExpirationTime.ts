@@ -1,9 +1,9 @@
 import { format, fromUnixTime, isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import type { MessageState } from '../../store/messages/messagesTypes';
 import { formatFullDate } from '../date';
 
 export const getMessageExpirationDate = (message: MessageState) => {

@@ -1,7 +1,8 @@
 import { c, msgid } from 'ttag';
 
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+
 import type { Tracker } from '../../hooks/message/useMessageTrackers';
-import type { MessageState } from '../../store/messages/messagesTypes';
 
 export const getImageTrackersFromMessage = (message: MessageState) => {
     const trackersImages = message.messageImages?.images.filter((image) => {

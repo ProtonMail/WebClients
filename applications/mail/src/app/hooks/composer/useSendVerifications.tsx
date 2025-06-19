@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { useGetEncryptionPreferences, useModals, useNotifications } from '@proton/components';
 import { serverTime } from '@proton/crypto';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { HOUR } from '@proton/shared/lib/constants';
 import { isNoReplyEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { mentionAttachment } from '@proton/shared/lib/helpers/emailAttachment';
@@ -26,7 +27,6 @@ import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
 import { locateBlockquote, locatePlaintextInternalBlockquotes } from '../../helpers/message/messageBlockquote';
 import type { MapSendInfo } from '../../models/crypto';
-import type { MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useContactsMap } from '../contact/useContacts';
 import { useGetMessage } from '../message/useMessage';
 

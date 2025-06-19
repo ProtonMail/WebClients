@@ -3,11 +3,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import type { ContactEditProps } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
 import type { RecipientOrGroup } from '../../../models/address';
 import type { MapStatusIcons } from '../../../models/crypto';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import RecipientSimple from './RecipientSimple';
 import RecipientsDetails from './RecipientsDetails';
 

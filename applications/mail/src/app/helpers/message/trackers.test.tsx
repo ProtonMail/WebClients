@@ -1,8 +1,8 @@
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
+import type { MessageImage, MessageImages, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import type { Tracker } from '../../hooks/message/useMessageTrackers';
-import type { MessageImage, MessageImages, MessageState } from '../../store/messages/messagesTypes';
 import { getImageTrackersFromMessage, getUTMTrackersFromMessage } from './trackers';
 
 const tracker1Url = 'http://tracker.com';

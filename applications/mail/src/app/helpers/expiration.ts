@@ -1,10 +1,10 @@
 import { addMinutes, differenceInMinutes, fromUnixTime, getUnixTime, isToday } from 'date-fns';
 
 import { serverTime } from '@proton/crypto';
+import type { MessageState, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { isFrozenExpiration } from '@proton/shared/lib/mail/messages';
 
-import type { MessageState, MessageWithOptionalBody } from '../store/messages/messagesTypes';
 import { isAllowedAutoDeleteLabelID } from './autoDelete';
 
 export const canSetExpiration = (featureFlagValue: boolean, user: UserModel, messageState?: MessageState) => {

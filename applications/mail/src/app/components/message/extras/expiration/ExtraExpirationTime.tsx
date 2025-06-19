@@ -4,6 +4,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button, Tooltip } from '@proton/atoms';
 import { Icon, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -11,7 +12,6 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 import { canSetExpiration } from '../../../../helpers/expiration';
 import useExpiration from '../../../../hooks/useExpiration';
 import { expireMessages } from '../../../../store/messages/expire/messagesExpireActions';
-import type { MessageState } from '../../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

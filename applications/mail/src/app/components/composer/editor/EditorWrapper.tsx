@@ -8,6 +8,7 @@ import { Editor, useHandler } from '@proton/components';
 import type { EditorProps } from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -25,7 +26,6 @@ import {
     removeEmbeddedHTML,
 } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages } from '../../../helpers/message/messageImages';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import type { MessageChange } from '../Composer';
 
 export interface ExternalEditorActions

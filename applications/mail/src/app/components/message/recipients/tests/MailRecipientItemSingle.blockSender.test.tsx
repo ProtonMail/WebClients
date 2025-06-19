@@ -2,6 +2,7 @@ import { act, fireEvent, screen } from '@testing-library/react';
 import type { RenderResult } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
 import type { IncomingDefault, MailSettings, Recipient } from '@proton/shared/lib/interfaces';
@@ -17,7 +18,6 @@ import {
     waitForNotification,
 } from '../../../../helpers/test/helper';
 import { loadIncomingDefaults } from '../../../../store/incomingDefaults/incomingDefaultsActions';
-import type { MessageState } from '../../../../store/messages/messagesTypes';
 import MailRecipientItemSingle from '../MailRecipientItemSingle';
 
 const meAddress = 'me@protonmail.com';

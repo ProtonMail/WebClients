@@ -1,7 +1,7 @@
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import { getPureAttachments, updateKeyPackets } from '../attachment';
 
 describe('updateKeyPackets', () => {

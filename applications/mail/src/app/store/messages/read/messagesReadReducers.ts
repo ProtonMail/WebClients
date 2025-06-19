@@ -1,6 +1,14 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import type {
+    DocumentInitializeParams,
+    LoadParams,
+    MessageErrors,
+    MessageState,
+    MessagesState,
+    VerificationParams,
+} from '@proton/mail/store/messages/messagesTypes';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -10,14 +18,6 @@ import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTracker
 import { parseLabelIDsInEvent } from '../../../helpers/elements';
 import type { LabelIDsChanges, MessageEvent } from '../../../models/event';
 import { getLocalID, getMessage } from '../helpers/messagesReducer';
-import type {
-    DocumentInitializeParams,
-    LoadParams,
-    MessageErrors,
-    MessageState,
-    MessagesState,
-    VerificationParams,
-} from '../messagesTypes';
 
 export const reset = (state: Draft<MessagesState>) => {
     Object.keys(state).forEach((ID) => {

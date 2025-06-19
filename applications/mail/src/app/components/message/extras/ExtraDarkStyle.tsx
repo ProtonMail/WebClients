@@ -4,12 +4,12 @@ import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
 import { Icon, useApi } from '@proton/components';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { METRICS_LOG } from '@proton/shared/lib/constants';
 import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import { removeDarkStyle } from '../../../store/messages/read/messagesReadActions';
 
 interface Props {

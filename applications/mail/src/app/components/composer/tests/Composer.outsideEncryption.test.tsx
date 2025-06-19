@@ -3,9 +3,8 @@ import { addHours } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
+import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
-
-import type { PartialMessageState } from 'proton-mail/store/messages/messagesTypes';
 
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {

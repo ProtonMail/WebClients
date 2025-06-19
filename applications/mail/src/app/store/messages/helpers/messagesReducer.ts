@@ -1,6 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
@@ -11,7 +12,6 @@ import { isMessage } from '../../../helpers/elements';
 import type { QueryParams, QueryResults, TaskRunningInfo } from '../../elements/elementsTypes';
 import type { MailState } from '../../store';
 import { localID as localIDSelector, messageByID, messagesByConversationID } from '../messagesSelectors';
-import type { MessagesState } from '../messagesTypes';
 
 /**
  * Only takes technical stuff from the updated message

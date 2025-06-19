@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { Banner, Button, ButtonLike } from '@proton/atoms';
 import { ButtonGroup, Icon, SettingsLink } from '@proton/components';
+import type { MessageErrors, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { useReloadMessage } from '../../../hooks/message/useLoadMessage';
-import type { MessageErrors, MessageState } from '../../../store/messages/messagesTypes';
 
 const getTranslations = (key: keyof MessageErrors, alreadyTried: boolean) => {
     switch (key) {
