@@ -22,6 +22,11 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { useFolders } from '@proton/mail';
 import { getFolderName } from '@proton/mail/store/labels/helpers';
+import type {
+    MessageState,
+    MessageStateWithData,
+    MessageWithOptionalBody,
+} from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -49,11 +54,6 @@ import type { Element } from '../../../models/element';
 import { updateAttachment } from '../../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import { expireMessages } from '../../../store/messages/expire/messagesExpireActions';
-import type {
-    MessageState,
-    MessageStateWithData,
-    MessageWithOptionalBody,
-} from '../../../store/messages/messagesTypes';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';

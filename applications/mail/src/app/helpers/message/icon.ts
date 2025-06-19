@@ -1,17 +1,21 @@
 import { c, msgid } from 'ttag';
 
+import type {
+    MessageState,
+    MessageVerification,
+    MessageWithOptionalBody,
+} from '@proton/mail/store/messages/messagesTypes';
 import { KEY_VERIFICATION_ERROR_MESSAGE } from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import { SIGNATURE_START, MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS, SIGNATURE_START } from '@proton/shared/lib/mail/constants';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { getParsedHeadersFirstValue, hasProtonSender, inSigningPeriod } from '@proton/shared/lib/mail/messages';
 
 import type { MapStatusIcons, StatusIcon } from '../../models/crypto';
 import { STATUS_ICONS_FILLS, X_PM_HEADERS } from '../../models/crypto';
-import type { MessageState, MessageVerification, MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 
 // The logic for determining the status icons can be found in Confluence under the title
 // Encryption status for outgoing and incoming email

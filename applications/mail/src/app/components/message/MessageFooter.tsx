@@ -1,6 +1,6 @@
+import type { MessageState, MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
-import type { MessageState, MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
 
 interface Props {

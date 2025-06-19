@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { useApi, useDrawer } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { EventInvitationError } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurgery/errors/icsSurgeryErrorTypes';
 import { APPS } from '@proton/shared/lib/constants';
@@ -32,7 +33,6 @@ import {
     getIsReinvite,
 } from '../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
-import type { MessageStateWithData } from '../../../../store/messages/messagesTypes';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';

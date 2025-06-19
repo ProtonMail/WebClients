@@ -2,9 +2,9 @@ import { useRef, useState } from 'react';
 
 import type { Cancellable } from '@proton/components';
 import { useHandler } from '@proton/components';
+import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 
 import { isDecryptionError, isNetworkError } from '../../helpers/errors';
-import type { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useDeleteDraft, useSaveDraft } from '../message/useSaveDraft';
 import { usePromise } from '../usePromise';
 

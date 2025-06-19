@@ -3,12 +3,12 @@ import { c } from 'ttag';
 import { Button, Kbd, Tooltip } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import LoadRemoteImageBanner from '@proton/components/containers/banner/LoadRemoteImageBanner';
+import type { MessageImages } from '@proton/mail/store/messages/messagesTypes';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasShowEmbedded, hasShowRemote } from '@proton/shared/lib/mail/images';
 
 import { hasToSkipProxy } from '../../../helpers/message/messageRemotes';
-import type { MessageImages } from '../../../store/messages/messagesTypes';
 
 interface Props {
     messageImages?: MessageImages;

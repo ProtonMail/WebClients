@@ -1,5 +1,6 @@
 import JSZip from 'jszip';
 
+import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
@@ -8,7 +9,6 @@ import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Mes
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
-import type { MessageKeys, MessageVerification } from '../../store/messages/messagesTypes';
 import { getAndVerifyAttachment } from './attachmentLoader';
 
 export interface Download {

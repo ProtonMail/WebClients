@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -10,7 +11,6 @@ import {
     getUTMTrackerText,
     getUTMTrackersFromMessage,
 } from '../../helpers/message/trackers';
-import type { MessageState } from '../../store/messages/messagesTypes';
 
 export interface Tracker {
     name: string;

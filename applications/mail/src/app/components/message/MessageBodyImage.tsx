@@ -6,13 +6,13 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import type { MessageImage } from '@proton/mail/store/messages/messagesTypes';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import type { OnMessageImageLoadError } from 'proton-mail/components/message/interface';
 
 import { getAnchor } from '../../helpers/message/messageImages';
-import type { MessageImage } from '../../store/messages/messagesTypes';
 
 const sizeProps: ['width', 'height'] = ['width', 'height'];
 /** Styles we should not clone on the anchor */

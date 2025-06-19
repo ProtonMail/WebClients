@@ -9,6 +9,11 @@ import { useHandler, useLocalState, useSubscribeEventManager } from '@proton/com
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import type {
+    MessageState,
+    MessageStateWithData,
+    PartialMessageState,
+} from '@proton/mail/store/messages/messagesTypes';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
@@ -27,7 +32,6 @@ import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerM
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import type { Event } from '../../models/event';
-import type { MessageState, MessageStateWithData, PartialMessageState } from '../../store/messages/messagesTypes';
 import ComposerContent from './ComposerContent';
 import ComposerMeta from './ComposerMeta';
 import ComposerActions from './actions/ComposerActions/ComposerActions';

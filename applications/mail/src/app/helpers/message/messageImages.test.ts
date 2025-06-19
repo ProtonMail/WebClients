@@ -1,5 +1,6 @@
+import type { MessageImage, MessageImages, MessageState } from '@proton/mail/store/messages/messagesTypes';
+
 import { parseDOMStringToBodyElement } from 'proton-mail/helpers/test/helper';
-import type { MessageImage, MessageImages, MessageState } from 'proton-mail/store/messages/messagesTypes';
 
 import { removeProxyURLAttributes, replaceProxyWithOriginalURLAttributes } from './messageImages';
 

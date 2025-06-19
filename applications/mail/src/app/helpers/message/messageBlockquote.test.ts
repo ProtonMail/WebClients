@@ -1,11 +1,11 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
 import { formatFullDate } from 'proton-mail/helpers/date';
 import { createNewDraft } from 'proton-mail/helpers/message/messageDraft';
-import type { PartialMessageState } from 'proton-mail/store/messages/messagesTypes';
 
 import mails from './__fixtures__/messageBlockquote.fixtures';
 import { locateBlockquote, locatePlaintextInternalBlockquotes } from './messageBlockquote';

@@ -1,10 +1,10 @@
 import { CryptoProxy } from '@proton/crypto';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import type { EOMessage } from '../../store/eo/eoType';
-import type { MessageState } from '../../store/messages/messagesTypes';
 
 export const eoDecrypt = async (encryptedValue: string, password: string) => {
     const { data } = await CryptoProxy.decryptMessage({ armoredMessage: encryptedValue, passwords: [password] });

@@ -1,6 +1,7 @@
 import type { PublicKeyReference, SessionKey, WorkerDecryptionResult } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
+import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import { getAttachment } from '@proton/shared/lib/api/attachments';
 import { getEOAttachment } from '@proton/shared/lib/api/eo';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
@@ -12,7 +13,6 @@ import { getMailVerificationStatus } from '@proton/shared/lib/mail/signature';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
-import type { MessageKeys, MessageVerification } from '../../store/messages/messagesTypes';
 
 export const getVerificationStatusFromKeys = (
     decryptedAttachment: WorkerDecryptionResult<Uint8Array>,
