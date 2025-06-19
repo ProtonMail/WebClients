@@ -93,9 +93,6 @@
       "Apply": [
         "Aplicare"
       ],
-      "Ask me next time": [
-        "Întreabă-mă data viitoare"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Este permis cel mult ${ maxContacts } contact per grup de contact.",
         "Sunt permise cel mult ${ maxContacts } contacte per grup de contact.",
@@ -686,9 +683,6 @@
       ],
       "Save changes": [
         "Salvare modificări"
-      ],
-      "Save preferences": [
-        "Salvare preferințe"
       ],
       "Search": [
         "Căutare"
@@ -4464,9 +4458,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Contactul a fost eliminat din grupul ${ contactGroupName }."
       ],
-      "Converting document...": [
-        "Se convertește documentul..."
-      ],
       "Copy the link to clipboard": [
         "Copiați legătura în memorie"
       ],
@@ -4512,9 +4503,6 @@
       ],
       "Creating link to folder": [
         "Se creează legătura către folder"
-      ],
-      "Creating new document...": [
-        "Se creează un document..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Credit pentru porțiunea neutilizată din abonamentul planului anterior"
@@ -4633,12 +4621,6 @@
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Eroare la conversia documentului: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Eroare la încărcarea documentului: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Eroare la sincronizare."
       ],
@@ -4698,12 +4680,6 @@
       ],
       "Geoblocking": [
         "Blocare geografică"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Primiți actualizări prin e-mail pentru comentariile și sugestiile adăugate la documentele personale."
-      ],
-      "Get Notified About Comments": [
-        "Primiți notificări despre comentarii"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Accesare ${ DRIVE_APP_NAME }"
@@ -4854,9 +4830,6 @@
       "Low Priority": [
         "Prioritate scăzută"
       ],
-      "Making a copy...": [
-        "Se creează o copie..."
-      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -4897,9 +4870,6 @@
       ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Nu s-a furnizat un document la URL. Reveniți în ${ DRIVE_APP_NAME } și selectați un document."
       ],
       "No email address": [
         "Lipsă adresă de e-mail"
@@ -5245,9 +5215,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Proprietarul acestei adrese a dezactivat criptarea bilaterală. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea bilaterală."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Se pare că adresa URL pe care ați introdus-o a fost copiată incorect din Slack. Când copiați legături web lungi din Slack, faceți clic dreapta pe legătura web, apoi alegeți „Copiere legătură” în loc să copiați direct textul URL trunchiat."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Procesul de verificare va deschide o nouă filă. Dezactivați orice modul de blocare ferestre flotante."
@@ -5981,9 +5948,6 @@
       "Emails (last month)": [
         "Mesaje (ultima lună)"
       ],
-      "Enable email notifications": [
-        "Activare notificări pe e-mail"
-      ],
       "Encrypt emails": [
         "Criptare mesaje"
       ],
@@ -6040,9 +6004,6 @@
       ],
       "Import to:": [
         "Importare în:"
-      ],
-      "Include document name in notification": [
-        "Includere nume document în notificări"
       ],
       "Include message and file name in invite email": [
         "Includere mesaj și nume fișier în e-mailul de invitație"
@@ -10286,9 +10247,6 @@
       "Untitled document ${ date }": [
         "Document nedenumit ${ date }"
       ],
-      "Untitled spreadsheet ${ date }": [
-        "Foaie de calcul nedenumită ${ date }"
-      ],
       "Upgrade complete!": [
         "Modificare finalizată!"
       ],
@@ -10636,9 +10594,6 @@
       ],
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Data de expirare nu este în format LL/AA."
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."

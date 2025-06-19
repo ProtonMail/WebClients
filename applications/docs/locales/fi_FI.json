@@ -93,9 +93,6 @@
       "Apply": [
         "Toteuta"
       ],
-      "Ask me next time": [
-        "Kysy seuraavalla kerralla"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
@@ -674,9 +671,6 @@
       ],
       "Save changes": [
         "Tallenna muutokset"
-      ],
-      "Save preferences": [
-        "Tallenna asetukset"
       ],
       "Search": [
         "Hae"
@@ -4291,9 +4285,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Yhteystieto poistettiin ryhmästä ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Muunnetaan dokumenttia..."
-      ],
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
       ],
@@ -4337,9 +4328,6 @@
       ],
       "Creating link to folder": [
         "Luodaan linkkiä kansioon"
-      ],
-      "Creating new document...": [
-        "Luodaan uutta dokumenttia..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Hyvitys edellisen tilausjaksosi käyttämättömästä osuudesta"
@@ -4458,9 +4446,6 @@
       "Enter your own password (as organization admin).": [
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Virhe muunnettaessa dokumenttia: ${ errorMessage }"
-      ],
       "Error Syncing": [
         "Synkronointivirhe"
       ],
@@ -4520,12 +4505,6 @@
       ],
       "Geoblocking": [
         "Geoblokkaus"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Saat sähköpostipäivityksiä dokumentteihisi lisätyistä kommenteista ja ehdotuksista."
-      ],
-      "Get Notified About Comments": [
-        "Saat ilmoituksia kommenteista"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Avaa ${ DRIVE_APP_NAME }"
@@ -4669,9 +4648,6 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
-      "Making a copy...": [
-        "Luodaan kopiota..."
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
       ],
@@ -4711,9 +4687,6 @@
       ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Annetusta URL-osoitteesta ei löytynyt dokumenttia. Palaa ${ DRIVE_APP_NAME }en ja valitse dokumentti."
       ],
       "No email address": [
         "Ei sähköpostiosoitetta"
@@ -5746,9 +5719,6 @@
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
       ],
-      "Enable email notifications": [
-        "Ota sähköposti-ilmoitukset käyttöön"
-      ],
       "Encrypt emails": [
         "Salaa viestit"
       ],
@@ -5805,9 +5775,6 @@
       ],
       "Import to:": [
         "Tuo kohteeseen:"
-      ],
-      "Include document name in notification": [
-        "Sisällytä dokumentin nimi ilmoitukseen"
       ],
       "Include message and file name in invite email": [
         "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
@@ -10187,9 +10154,6 @@
       ],
       "Contacts could not be merged": [
         "Yhteystietoja ei voitu yhdistää"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Erääntymisaika ei ole muodossa KK/VV"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Jos et muista salasanaasi, avaimesi uudelleenaktivointi on mahdotonta. Voimme auttaa hälytysilmoituksen kuittauksessa, mutta samalla menetät pääsyn kaikkeen kyseisellä avaimella salattuun tietoon."
