@@ -4,15 +4,21 @@ import type { IconName } from 'packages/icons';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, Tooltip } from '@proton/atoms';
-import { FiltersUpsellModal, Icon, useModalStateObject } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { FiltersUpsellModal, Icon, LabelsUpsellModal, useModalStateObject } from '@proton/components';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
+import { useMailSelector } from 'proton-mail/store/hooks';
+import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
+import { selectedTab } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+
 import { getReceivedMessagesCount, getUnsubscribeMethod, shouldOpenUpsellOnFilterClick } from '../helper';
-import type { ModalFilterType, PropsWithNewsletterSubscription } from '../interface';
+import { type ModalFilterType, NewsletterSubscriptionAction, type PropsWithNewsletterSubscription } from '../interface';
+import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
+import { ModalBlockSender } from './ModalBlockSender/ModalBlockSender';
+import { ModalMoveToFolder } from './ModalMoveToFolder/ModalMoveToFolder';
 import ModalUnsubscribe from './ModalUnsubscribe/ModalUnsubscribe';
-import { ModalMoveToFolder } from './MoveToFolder/ModalMoveToFolder';
 
 export const SubscriptionCardTitle = ({ subscription }: PropsWithNewsletterSubscription) => {
     return (
@@ -21,10 +27,15 @@ export const SubscriptionCardTitle = ({ subscription }: PropsWithNewsletterSubsc
                 className="text-rg text-bold mb-1 text-ellipsis"
                 title={subscription.Name}
                 id={`subscription-card-title-${subscription.ID}`}
+                data-testid="subscription-card-title"
             >
                 {subscription.Name}
             </h3>
-            <p className="m-0 color-weak text-sm text-ellipsis max-w-full" title={subscription.SenderAddress}>
+            <p
+                className="m-0 color-weak text-sm text-ellipsis max-w-full"
+                title={subscription.SenderAddress}
+                data-testid="subscription-card-sender"
+            >
                 {subscription.SenderAddress}
             </p>
         </div>
@@ -48,7 +59,7 @@ export const SubscriptionCardStats = ({ subscription }: PropsWithNewsletterSubsc
     const receivedMessagesCount = getReceivedMessagesCount(subscription);
 
     return (
-        <div className="flex flex-column gap-2 text-sm color-weak">
+        <div className="flex flex-column gap-2 text-sm color-weak" data-testid="subscription-card-stats">
             {subscription.UnreadMessageCount !== undefined ? (
                 <SubscriptionStat iconName="envelope-dot">
                     {c('Info').ngettext(
@@ -74,47 +85,45 @@ export const SubscriptionCardStats = ({ subscription }: PropsWithNewsletterSubsc
 
 const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscription) => {
     const unsubscribeModal = useModalStateObject();
+    const blockSenderModal = useModalStateObject();
     const moveToFolderModal = useModalStateObject();
-    const upsellModal = useModalStateObject();
+
+    const filterUpsellModal = useModalStateObject();
+    const moveToFolderUpsellModal = useModalStateObject();
 
     const [filters = []] = useFilters();
     const [user] = useUser();
 
+    const { sendNewsletterAction } = useNewsletterSubscriptionTelemetry();
+
     const unsubscribeMethod = getUnsubscribeMethod(subscription);
 
-    const handleMoveToFolderClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.stopPropagation();
+    const handleMoveToFolderClick = () => {
         if (shouldOpenUpsellOnFilterClick(subscription, user, filters)) {
-            upsellModal.openModal(true);
+            filterUpsellModal.openModal(true);
         } else {
             moveToFolderModal.openModal(true);
         }
     };
 
+    const handleUnsubscribeClick = () => {
+        if (unsubscribeMethod) {
+            unsubscribeModal.openModal(true);
+        } else {
+            blockSenderModal.openModal(true);
+        }
+    };
+
+    const handleMoveToFolderUpsell = () => {
+        moveToFolderUpsellModal.openModal(true);
+        sendNewsletterAction({
+            newsletterAction: NewsletterSubscriptionAction.createFolderUpsell,
+        });
+    };
+
     return (
         <>
-            <Button
-                disabled={!unsubscribeMethod}
-                onClick={(e) => {
-                    e.stopPropagation();
-                    unsubscribeModal.openModal(true);
-                }}
-                shape="outline"
-                size="tiny"
-            >{c('Action').t`Unsubscribe`}</Button>
-
-            {!unsubscribeMethod && (
-                <Tooltip
-                    title={
-                        unsubscribeMethod
-                            ? null
-                            : c('Info')
-                                  .t`We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.`
-                    }
-                >
-                    <Icon name="info-circle" className="color-weak" />
-                </Tooltip>
-            )}
+            <Button onClick={handleUnsubscribeClick} shape="outline" size="tiny">{c('Action').t`Unsubscribe`}</Button>
 
             <Button onClick={handleMoveToFolderClick} shape="outline" size="tiny">{c('Action')
                 .t`Move to folder`}</Button>
@@ -122,21 +131,41 @@ const ActiveSubscriptionButtons = ({ subscription }: PropsWithNewsletterSubscrip
             {subscription && unsubscribeModal.render && (
                 <ModalUnsubscribe subscription={subscription} {...unsubscribeModal.modalProps} />
             )}
+
             {subscription && moveToFolderModal.render && (
-                <ModalMoveToFolder subscription={subscription} {...moveToFolderModal.modalProps} />
+                <ModalMoveToFolder
+                    subscription={subscription}
+                    handleUpsellModalDisplay={handleMoveToFolderUpsell}
+                    {...moveToFolderModal.modalProps}
+                />
             )}
 
-            {upsellModal.render && (
+            {subscription && blockSenderModal.render && (
+                <ModalBlockSender subscription={subscription} {...blockSenderModal.modalProps} />
+            )}
+
+            {filterUpsellModal.render && (
                 <FiltersUpsellModal
-                    modalProps={upsellModal.modalProps}
-                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_MAIL_SUBSCRIPTION}
+                    modalProps={filterUpsellModal.modalProps}
+                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_NEWSLETTER_SUBSCRIPTION}
+                />
+            )}
+
+            {moveToFolderUpsellModal.render && (
+                <LabelsUpsellModal
+                    modalProps={moveToFolderUpsellModal.modalProps}
+                    feature={MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS_NEWSLETTER_SUBSCRIPTION}
                 />
             )}
         </>
     );
 };
 
-const InactiveSubscriptionButtons = ({ handleFilterClick }: { handleFilterClick: (type: ModalFilterType) => void }) => {
+const UnsubscribedSubscriptionButtons = ({
+    handleFilterClick,
+}: {
+    handleFilterClick: (type: ModalFilterType) => void;
+}) => {
     return (
         <Button
             onClick={() => handleFilterClick('MoveToTrash')}
@@ -151,10 +180,12 @@ export const SubscriptionCardButtons = ({
     subscription,
     handleFilterClick,
 }: PropsWithNewsletterSubscription & { handleFilterClick: (type: ModalFilterType) => void }) => {
+    const currentTab = useMailSelector(selectedTab);
+
     return (
         <div className="flex items-center gap-2 mt-2">
-            {subscription.UnsubscribedTime ? (
-                <InactiveSubscriptionButtons handleFilterClick={handleFilterClick} />
+            {currentTab === SubscriptionTabs.Unsubscribe ? (
+                <UnsubscribedSubscriptionButtons handleFilterClick={handleFilterClick} />
             ) : (
                 <ActiveSubscriptionButtons subscription={subscription} />
             )}

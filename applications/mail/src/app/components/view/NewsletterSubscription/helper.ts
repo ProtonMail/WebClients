@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import type { Filter } from '@proton/components/containers/filters/interfaces';
 import { getStandardFolders } from '@proton/mail/store/labels/helpers';
-import { MAILBOX_LABEL_IDS, FILTER_STATUS } from '@proton/shared/lib/constants';
+import { FILTER_STATUS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 import type { Folder, UserModel } from '@proton/shared/lib/interfaces';
 import type {
@@ -101,7 +101,7 @@ export const shouldOpenUpsellOnFilterClick = (
     return !filters.some((filter) => filter.ID === subscription.FilterID);
 };
 
-export const getReceivedMessagesCount = (subscription: NewsletterSubscription): number => {
+export const getReceivedMessagesCount = (subscription: Partial<NewsletterSubscription>): number => {
     return subscription.ReceivedMessages?.Last30Days ?? 0;
 };
 

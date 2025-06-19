@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { ModelState } from '@proton/account';
+import { type ModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getNewsletterSubscription } from '@proton/shared/lib/api/newsletterSubscription';
 import type { GetNewsletterSubscriptionsApiResponse } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { DEFAULT_PAGINATION_PAGE_SIZE, initialState, initialStateValue } from './constants';
+import { getPaginationQueryString, initialState, initialStateValue } from './constants';
 import { getTabData, normalizeSubscriptions } from './helpers';
-import { type NewsletterSubscriptionsInterface, SortSubscriptionsValue, SubscriptionTabs } from './interface';
+import { type NewsletterSubscriptionsInterface, SubscriptionTabs } from './interface';
 import {
     fetchNextNewsletterSubscriptionsPage,
     filterSubscriptionList,
@@ -22,6 +22,7 @@ import {
     filterSubscriptionListFulfilled,
     filterSubscriptionListPending,
     filterSubscriptionListRejected,
+    handleServerEvent,
     removeSubscriptionFromActiveTabReducer,
     setSelectedElementIdReducer,
     setSelectedSubscriptionReducer,
@@ -55,22 +56,10 @@ const modelThunk = createAsyncModelThunk<
         try {
             const [active, unsubscribed] = await Promise.all([
                 extraArgument.api<GetNewsletterSubscriptionsApiResponse>(
-                    getNewsletterSubscription({
-                        pagination: {
-                            PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
-                            Active: '1',
-                        },
-                        sort: SortSubscriptionsValue.RecentlyReceived,
-                    })
+                    getNewsletterSubscription({ paginationString: getPaginationQueryString(true) })
                 ),
                 extraArgument.api<GetNewsletterSubscriptionsApiResponse>(
-                    getNewsletterSubscription({
-                        pagination: {
-                            PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
-                            Active: '0',
-                        },
-                        sort: SortSubscriptionsValue.RecentlyReceived,
-                    })
+                    getNewsletterSubscription({ paginationString: getPaginationQueryString(false) })
                 ),
             ]);
 
@@ -136,6 +125,8 @@ const slice = createSlice({
         builder.addCase(updateSubscription.fulfilled, updateSubscriptionFulfilled);
 
         builder.addCase(fetchNextNewsletterSubscriptionsPage.fulfilled, fetchNextNewsletterSubscriptionsPageFulfilled);
+
+        builder.addCase(serverEvent, handleServerEvent);
     },
 });
 

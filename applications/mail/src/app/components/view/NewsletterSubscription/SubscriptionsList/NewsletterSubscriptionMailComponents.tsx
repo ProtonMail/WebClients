@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { SkeletonLoader } from '@proton/components';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
@@ -14,16 +15,21 @@ import './NewsletterSubscriptionListTitle.scss';
 
 interface HeaderProps extends PropsWithNewsletterSubscription {
     numMessages: number;
+    loading: boolean;
 }
 
-export const NewsletterSubscriptionMailListHeader = ({ subscription, numMessages }: HeaderProps) => {
+export const NewsletterSubscriptionMailListHeader = ({ subscription, numMessages, loading }: HeaderProps) => {
     return (
         <div className="newsletter-subscription-list-title py-4 px-4">
-            <section className="h-custom flex items-center" style={{ '--h-custom': '2.25rem' }}>
+            <section className="h-custom flex items-baseline" style={{ '--h-custom': '2.25rem' }}>
                 <h1 className="h3 inline m-0 text-bold text-xl mr-2">{subscription.Name}</h1>
-                <span className="text-sm color-weak">
-                    {c('Title').ngettext(msgid`${numMessages} message`, `${numMessages} messages`, numMessages)}
-                </span>
+                {loading ? (
+                    <SkeletonLoader width="4rem" height="1.25rem" />
+                ) : (
+                    <span className="text-sm color-weak">
+                        {c('Title').ngettext(msgid`${numMessages} message`, `${numMessages} messages`, numMessages)}
+                    </span>
+                )}
             </section>
         </div>
     );

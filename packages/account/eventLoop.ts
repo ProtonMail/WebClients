@@ -1,8 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import type { Filter } from '@proton/components/containers/filters/interfaces';
-import { type Subscription } from '@proton/payments';
 import type { SavedPaymentMethod } from '@proton/payments';
+import { type Subscription } from '@proton/payments';
 import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import type {
@@ -26,6 +26,7 @@ import type {
     UserSettings,
 } from '@proton/shared/lib/interfaces';
 import type { Category } from '@proton/shared/lib/interfaces/Category';
+import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import type {
     CalendarEventManager,
@@ -71,6 +72,7 @@ export interface EventLoop {
     Groups?: EventItemUpdate<Group, 'Group'>[];
     GroupMembers?: EventItemUpdate<GroupMember, 'GroupMember'>[];
     GroupMemberships?: EventItemUpdate<GroupMembership, 'GroupMembership'>[];
+    NewsletterSubscriptions?: EventItemUpdate<NewsletterSubscription, 'NewsletterSubscription'>[];
     DriveShareRefresh?: {
         Action: EVENT_ACTIONS;
     };
