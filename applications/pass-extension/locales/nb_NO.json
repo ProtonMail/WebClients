@@ -1021,6 +1021,9 @@
       "File does not match expected format": [
         "Fil samsvarer ikke med forventet format"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Import mislyktes for hvelv \"${ vaultData.name }\": ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Import av elementer mislyktes"
       ],
@@ -1149,6 +1152,9 @@
       ],
       "Unsupported 1Password file format": [
         "Ikke støttet 1Password-filformat"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Ikke støttet Bitwarden filformat"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Oppdatering av hvelv \"${ payload.content.name }\" mislyktes."
@@ -1798,10 +1804,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2613,6 +2615,9 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Avmerkingsboks"
+      ],
       "City": [
         "Poststed"
       ],
@@ -2679,14 +2684,8 @@
       "Crypto Wallet": [
         "Krypto-wallet"
       ],
-      "Custom hidden field": [
-        "Tilpasset skjult felt"
-      ],
       "Custom Items": [
         "Tilpassede elementer"
-      ],
-      "Custom text field": [
-        "Tilpasset tekstfelt"
       ],
       "Database": [
         "Database"
@@ -2762,6 +2761,9 @@
       ],
       "Export": [
         "Eksporter"
+      ],
+      "Extra fields": [
+        "Ekstra felt"
       ],
       "Extra password": [
         "Ekstra passord"
@@ -2888,6 +2890,9 @@
       ],
       "Key": [
         "Nøkkel"
+      ],
+      "Key fingerprint": [
+        "Nøkkelfingeravtrykk"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastatursnarvei: ${ shortcut }"
@@ -4257,9 +4262,6 @@
       "OTP secret or URI is invalid": [
         "OTP-hemmelighet eller URI er ugyldig"
       ],
-      "OTP secret or URI required": [
-        "OTP-hemmelighet eller URI kreves"
-      ],
       "Section name cannot be empty": [
         "Seksjonsnavn kan ikke være tomt"
       ],
@@ -4271,6 +4273,11 @@
       ],
       "URL is invalid": [
         "Nettadressen er ugyldig"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Flytt elementer til"
       ]
     },
     "Warning": {
@@ -4380,9 +4387,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Det er ikke tillatt å invitere e-postadresser utenfor organisasjonen."
-      ],
-      "item was imported without custom fields": [
-        "elementet ble importert uten egendefinerte felt"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksimal lengde er ${ maxLength } tegn",

@@ -1856,10 +1856,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2610,9 +2607,6 @@
       "Add section": [
         "Dodaj sekcję"
       ],
-      "Additional data": [
-        "Dodatkowe dane"
-      ],
       "Additional details": [
         "Dodatkowe szczegóły"
       ],
@@ -2712,6 +2706,9 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Pole wyboru"
+      ],
       "City": [
         "Miasto"
       ],
@@ -2778,14 +2775,8 @@
       "Crypto Wallet": [
         "Portfel kryptowalut"
       ],
-      "Custom hidden field": [
-        "Ukryte tekstowe pole niestandardowe"
-      ],
       "Custom Items": [
         "Niestandardowe elementy"
-      ],
-      "Custom text field": [
-        "Tekstowe pole niestandardowe"
       ],
       "Database": [
         "Baza danych"
@@ -4382,9 +4373,6 @@
       "OTP secret or URI is invalid": [
         "Sekret TOTP lub adres URL jest wymagany"
       ],
-      "OTP secret or URI required": [
-        "Sekret TOTP lub adres URL jest wymagany"
-      ],
       "Section name cannot be empty": [
         "Nazwa sekcji nie może być pusta"
       ],
@@ -4514,9 +4502,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Zapraszanie adresów e-mail spoza organizacji nie jest dozwolone."
-      ],
-      "item was imported without custom fields": [
-        "element został zaimportowany bez pól niestandardowych"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksymalna długość to ${ maxLength } znak",

@@ -1830,11 +1830,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
-      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2565,9 +2560,6 @@
       "Add section": [
         "Adăugare secțiune"
       ],
-      "Additional data": [
-        "Date suplimentare"
-      ],
       "Additional details": [
         "Detalii suplimentare"
       ],
@@ -2667,6 +2659,9 @@
       "Catch-All": [
         "Adresă de agregare"
       ],
+      "Checkbox": [
+        "Casetă de validare"
+      ],
       "City": [
         "Oraş"
       ],
@@ -2733,14 +2728,8 @@
       "Crypto Wallet": [
         "Portofel cripto"
       ],
-      "Custom hidden field": [
-        "Câmp ascuns personal"
-      ],
       "Custom Items": [
         "Articole personale"
-      ],
-      "Custom text field": [
-        "Câmp text personal"
       ],
       "Database": [
         "Baza de date"
@@ -4327,9 +4316,6 @@
       "OTP secret or URI is invalid": [
         "Secretul OTP sau URI nu este valid."
       ],
-      "OTP secret or URI required": [
-        "Este necesar secretul OTP sau URI."
-      ],
       "Section name cannot be empty": [
         "Numele secțiunii nu poate fi gol"
       ],
@@ -4457,9 +4443,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Invitarea adreselor de e-mail din afara organizației nu este permisă."
-      ],
-      "item was imported without custom fields": [
-        "articol importat fără câmpurile personale"
       ],
       "Maximum length is ${ maxLength } character": [
         "Lungimea maximă este de ${ maxLength } caracter.",

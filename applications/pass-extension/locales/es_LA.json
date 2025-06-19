@@ -1806,8 +1806,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2520,9 +2519,6 @@
       "Add section": [
         "Agregar sección"
       ],
-      "Additional data": [
-        "Datos adicionales"
-      ],
       "Additional details": [
         "Detalles adicionales"
       ],
@@ -2622,6 +2618,9 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Casilla de verificación"
+      ],
       "City": [
         "Ciudad"
       ],
@@ -2688,14 +2687,8 @@
       "Crypto Wallet": [
         "Cartera de criptomonedas"
       ],
-      "Custom hidden field": [
-        "Campo oculto personalizado"
-      ],
       "Custom Items": [
         "Elementos personalizados"
-      ],
-      "Custom text field": [
-        "Campo de texto personalizado"
       ],
       "Database": [
         "Base de datos"
@@ -2903,6 +2896,9 @@
       ],
       "Key fingerprint": [
         "Huella digital de la clave"
+      ],
+      "Key type": [
+        "Tipo de clave"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atajo de teclado: ${ shortcut }"
@@ -4272,9 +4268,6 @@
       "OTP secret or URI is invalid": [
         "Clave secreta OTP o URI inválido"
       ],
-      "OTP secret or URI required": [
-        "Se requiere una clave secreta OTP o un URI."
-      ],
       "Section name cannot be empty": [
         "El nombre de la sección no puede estar vacío"
       ],
@@ -4400,9 +4393,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "No se permiten invitar direcciones de correo fuera de la organización."
-      ],
-      "item was imported without custom fields": [
-        "el elemento fue importado sin campos personalizados"
       ],
       "Maximum length is ${ maxLength } character": [
         "El número máximo de caracteres es ${ maxLength }.",
