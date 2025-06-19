@@ -156,7 +156,7 @@ const LogsSection = () => {
                             <Icon name="arrow-rotate-right" className="mr-2" />
                             <span>{c('Action').t`Reload`}</span>
                         </Button>
-                        {state.logs.length ? (
+                        {state.logs.length && !hasB2BLogs ? (
                             <WipeLogsButton className="mr-4" onWipe={handleWipeWithReload} loading={loadingWipe} />
                         ) : null}
                         {state.logs.length && !hasB2BLogs ? (
