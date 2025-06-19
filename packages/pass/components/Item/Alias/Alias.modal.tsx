@@ -15,7 +15,6 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';
-import { validateAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits } from '@proton/pass/store/selectors';
 import type { AliasFormValues, MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -59,6 +58,8 @@ export const AliasModal = <T extends AliasFormValues>({
         }
     }, [open, aliasOptions]);
 
+    const canSubmit = !(form.errors.aliasPrefix || form.errors.aliasSuffix || form.errors.mailboxes);
+
     return (
         <SidebarModal {...modalProps} open={open}>
             <Panel
@@ -88,7 +89,7 @@ export const AliasModal = <T extends AliasFormValues>({
                                     onClick={handleSubmitClick}
                                     color="norm"
                                     pill
-                                    disabled={!(ready && Object.keys(validateAliasForm(form.values)).length === 0)}
+                                    disabled={!(ready && canSubmit)}
                                 >
                                     {c('Action').t`Confirm`}
                                 </Button>
