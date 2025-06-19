@@ -9,10 +9,9 @@ interface Props {
     onWipe: () => Promise<void>;
     className?: string;
     loading?: boolean;
-    disabled?: boolean;
 }
 
-const WipeLogsButton = ({ onWipe, className, loading, disabled }: Props) => {
+const WipeLogsButton = ({ onWipe, className, loading }: Props) => {
     const { createModal } = useModals();
 
     const handleOpenModal = () => {
@@ -29,9 +28,8 @@ const WipeLogsButton = ({ onWipe, className, loading, disabled }: Props) => {
     };
 
     return (
-        <Button shape="outline" className={className} loading={loading} onClick={handleOpenModal} disabled={disabled}>
-            {c('Action').t`Wipe`}
-        </Button>
+        <Button shape="outline" className={className} loading={loading} onClick={handleOpenModal}>{c('Action')
+            .t`Wipe`}</Button>
     );
 };
 
