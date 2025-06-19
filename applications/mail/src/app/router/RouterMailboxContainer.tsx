@@ -26,8 +26,6 @@ import { useGetElementParams } from './hooks/useGetElementParams';
 import { useRouterNavigation } from './hooks/useRouterNavigation';
 import { useMailboxContainerSideEffects } from './sideEffects/useMailboxContainerSideEffects';
 
-// Force deployment
-
 export const RouterMailboxContainer = () => {
     // We get most of the data here to avoid unnecessary re-renders
     const params = useMailSelector(paramsSelector);
