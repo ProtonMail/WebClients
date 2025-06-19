@@ -1954,6 +1954,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
+      ],
       "Moving items": [
         "Memindahkan item"
       ],
@@ -2664,9 +2667,6 @@
       "Add section": [
         "Tambahkan bagian"
       ],
-      "Additional data": [
-        "Data tambahan"
-      ],
       "Additional details": [
         "Rincian tambahan"
       ],
@@ -2829,14 +2829,8 @@
       "Crypto Wallet": [
         "Dompet Kripto"
       ],
-      "Custom hidden field": [
-        "Kolom khusus tersembunyi"
-      ],
       "Custom Items": [
         "Item khusus"
-      ],
-      "Custom text field": [
-        "Kolom teks khusus"
       ],
       "Database": [
         "Database"
@@ -4659,9 +4653,6 @@
       "OTP secret or URI is invalid": [
         "Secret OTP atau URI tidak valid"
       ],
-      "OTP secret or URI required": [
-        "Secret OTP atau URI wajib diisi"
-      ],
       "Section name cannot be empty": [
         "Nama bagian tidak dapat dikosongkan"
       ],
@@ -4791,9 +4782,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Mengundang alamat email di luar organisasi tidak diperkenankan"
-      ],
-      "item was imported without custom fields": [
-        "item diimpor tanpa kolom khusus"
       ],
       "Maximum length is ${ maxLength } character": [
         "Panjang maksimum adalah ${ maxLength } karakter"

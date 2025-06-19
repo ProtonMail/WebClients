@@ -712,6 +712,9 @@
       "Add unlimited credit cards": [
         "Lägg till obegränsat antal kreditkort"
       ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alla premiumfunktioner i ${ BRAND_NAME } Mail, Pass, VPN, Drive och Calendar"
+      ],
       "Double your encrypted storage – get 1 TB for all your data": [
         "Dubbla ditt krypterade lagringsutrymme – få 1 TB för alla dina data"
       ],
@@ -756,6 +759,11 @@
       ],
       "years": [
         "år"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumserbjudande"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1960,6 +1968,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2690,9 +2702,6 @@
       "Add section": [
         "Lägg till sektion"
       ],
-      "Additional data": [
-        "Ytterligare data"
-      ],
       "Additional details": [
         "Ytterligare detaljer"
       ],
@@ -2777,6 +2786,9 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Kryssruta"
+      ],
       "Choose unlock method": [
         "Välj upplåsningsmetod"
       ],
@@ -2852,14 +2864,8 @@
       "Crypto Wallet": [
         "Kryptoplånbok"
       ],
-      "Custom hidden field": [
-        "Anpassat dolt fält"
-      ],
       "Custom Items": [
         "Anpassade objekt"
-      ],
-      "Custom text field": [
-        "Anpassat textfält"
       ],
       "Database": [
         "Databas"
@@ -3118,6 +3124,9 @@
       ],
       "Key fingerprint": [
         "Nyckelfingeravtryck"
+      ],
+      "Key type": [
+        "Nyckeltyp"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tangentbordsgenväg: ${ shortcut }"
@@ -4687,9 +4696,6 @@
       "OTP secret or URI is invalid": [
         "OTP-hemlighet eller URI är ogiltig"
       ],
-      "OTP secret or URI required": [
-        "OTP-hemlighet eller URI krävs"
-      ],
       "Section name cannot be empty": [
         "Namn på sektion kan inte vara tom"
       ],
@@ -4821,9 +4827,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Det är inte tillåtet att bjuda in e-postadresser utanför organisation."
-      ],
-      "item was imported without custom fields": [
-        "objekt importerades utan anpassade fält"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximal längd är ${ maxLength } tecken",

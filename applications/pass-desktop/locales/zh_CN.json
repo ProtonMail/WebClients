@@ -698,6 +698,104 @@
         "您的密码管理器不在这里？请求添加它。"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "获取优惠"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 GB 加密存储"
+      ],
+      "Add unlimited credit cards": [
+        "添加无限信用卡"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "包含 ${ BRAND_NAME } Mail、Pass、VPN、Drive 以及 Calendar 的所有高级功能"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "折扣基于标准月费。在账单周期结束时，您的订购将按标准年费率续订。"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "双倍加密存储容量 -- 为您的所有数据提供 1 TB 容量"
+      ],
+      "Encrypted password manager": [
+        "加密的密码管理器"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "这是庆祝我们共同前行的一份专属献礼。"
+      ],
+      "High speed streaming with VPN": [
+        "使用 VPN 流畅地观看视频"
+      ],
+      "of privacy": [
+        "隐私守护"
+      ],
+      "Online privacy for up to 2 people": [
+        "最多可容纳 2 人的在线隐私保护"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "与全家人共同守护网络隐私 (最多支持 6 位用户)"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 Drive 高级功能。"
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 Mail 高级功能。"
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 Pass 高级功能。"
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 VPN 高级功能。"
+      ],
+      "Save time with built-in 2FA": [
+        "使用内置 2FA 来节省时间"
+      ],
+      "Secure email with unlimited aliases": [
+        "不限量的安全邮箱别名"
+      ],
+      "Share passwords easily": [
+        "轻松共享密码"
+      ],
+      "thanks to you": [
+        "感谢你们"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "三倍加密存储容量 -- 为您的所有数据提供 3 TB 容量"
+      ],
+      "years": [
+        " 11 年以来的"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "周年庆优惠"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } 个月"
+      ],
+      "/ month": [
+        "/月"
+      ],
+      "12 months": [
+        "12 个月"
+      ],
+      "15 months": [
+        "15 个月"
+      ],
+      "24 months": [
+        "24 个月"
+      ],
+      "30 months": [
+        "30 个月"
+      ],
+      "for ${ durationDeal }": [
+        "仅限 ${ durationDeal }"
+      ]
+    },
     "App menu": {
       "Force Reload": [
         "全部重新加载"
@@ -1083,6 +1181,9 @@
       "File does not match expected format": [
         "文件与预期格式不匹配"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "保险库 “${ vaultData.name }” 导入失败：${ errorMessage }"
+      ],
       "Importing items failed": [
         "导入项目失败"
       ],
@@ -1196,6 +1297,9 @@
       ],
       "Unsupported 1Password file format": [
         "不支持的 1Password 文件格式"
+      ],
+      "Unsupported Bitwarden file format": [
+        "不支持的 Bitwarden 文件格式"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "更新保险库 “${ payload.content.name }” 失败"
@@ -1849,6 +1953,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2647,6 +2754,9 @@
       "Catch-All": [
         "通配邮箱"
       ],
+      "Checkbox": [
+        "复选框"
+      ],
       "Choose unlock method": [
         "选择解锁方式"
       ],
@@ -2722,14 +2832,8 @@
       "Crypto Wallet": [
         "加密钱包"
       ],
-      "Custom hidden field": [
-        "自定义隐藏字段"
-      ],
       "Custom Items": [
         "自定义项目"
-      ],
-      "Custom text field": [
-        "自定义文本字段"
       ],
       "Database": [
         "数据库"
@@ -2811,6 +2915,9 @@
       ],
       "Extra email addresses": [
         "额外的邮箱地址"
+      ],
+      "Extra fields": [
+        "附加字段"
       ],
       "Extra password": [
         "额外密码"
@@ -2979,6 +3086,9 @@
       ],
       "Key": [
         "密钥"
+      ],
+      "Key fingerprint": [
+        "指纹识别"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "快捷键：${ shortcut }"
@@ -4543,9 +4653,6 @@
       "OTP secret or URI is invalid": [
         "动态密码或网址无效"
       ],
-      "OTP secret or URI required": [
-        "需要动态密码或网址"
-      ],
       "Section name cannot be empty": [
         "分组名称不能为空"
       ],
@@ -4557,6 +4664,11 @@
       ],
       "URL is invalid": [
         "网址无效"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "将项目移至"
       ]
     },
     "Warning": {
@@ -4670,9 +4782,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "不允许邀请组织外的电子邮件地址。"
-      ],
-      "item was imported without custom fields": [
-        "项目导入时没有自定义字段"
       ],
       "Maximum length is ${ maxLength } character": [
         "最大长度为 ${ maxLength } 个字符"

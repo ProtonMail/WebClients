@@ -1980,6 +1980,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+      ],
       "Moving items": [
         "S'estan movent elements"
       ],
@@ -2710,9 +2714,6 @@
       "Add section": [
         "Afegeix una secció"
       ],
-      "Additional data": [
-        "Dades addicionals"
-      ],
       "Additional details": [
         "Més detalls"
       ],
@@ -2800,6 +2801,9 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Casella de selecció"
+      ],
       "Choose unlock method": [
         "Trieu el mètode de desbloqueig"
       ],
@@ -2875,14 +2879,8 @@
       "Crypto Wallet": [
         "Cartera de criptomonedes"
       ],
-      "Custom hidden field": [
-        "Camp amagat personalitzat"
-      ],
       "Custom Items": [
         "Elements personalitzats"
-      ],
-      "Custom text field": [
-        "Camp de text personalitzat"
       ],
       "Database": [
         "Base de dades"
@@ -3141,6 +3139,9 @@
       ],
       "Key fingerprint": [
         "Clau d'empremta digital"
+      ],
+      "Key type": [
+        "Tipus de clau"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Drecera de teclat: ${ shortcut }"
@@ -4716,9 +4717,6 @@
       "OTP secret or URI is invalid": [
         "La clau secreta OTP o l'URL no són vàlids."
       ],
-      "OTP secret or URI required": [
-        "Heu d'introduir una clau secreta OTP o un URL."
-      ],
       "Section name cannot be empty": [
         "El nom de la selecció no pot estar buit."
       ],
@@ -4850,9 +4848,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "No es permet convidar adreces de correu electrònic de fora de l'organització."
-      ],
-      "item was imported without custom fields": [
-        "L'element s'ha importat sense camps personalitzats"
       ],
       "Maximum length is ${ maxLength } character": [
         "La longitud màxima és d'${ maxLength } caràcter.",
