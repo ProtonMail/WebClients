@@ -15,7 +15,7 @@ import useObserveIframeHeight from '@proton/mail-renderer/hooks/useObserveIframe
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
-import { type OnMessageImageLoadError } from './interface';
+import { type OnMessageImageLoadError } from 'proton-mail/components/message/interface';
 
 interface Props {
     iframeRef: RefObject<HTMLIFrameElement>;
