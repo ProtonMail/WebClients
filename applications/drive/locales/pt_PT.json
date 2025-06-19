@@ -377,12 +377,6 @@
       "Download logs": [
         "Transferir os registos"
       ],
-      "Download without scanning": [
-        "Transferir sem analisar"
-      ],
-      "Download without scanning (${ count })": [
-        "Transferir sem verificar (${ count })"
-      ],
       "Drive Locked": [
         "Unidade bloqueada"
       ],
@@ -868,6 +862,12 @@
       ],
       "Save photos and remove": [
         "Guardar as fotos e remover"
+      ],
+      "Scan & Download": [
+        "Analisar e transferir"
+      ],
+      "Scan & Download (${ count })": [
+        "Analisar e transferir (${ count })"
       ],
       "Search": [
         "Pesquisar"
@@ -12069,9 +12069,6 @@
       ],
       "Contacts could not be merged": [
         "Não foi possível unir os contactos."
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "A data de expiração não está no formato MM/AA."
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se não se lembra da palavra-passe, é impossível reativar a chave. Podemos ajudar a descartar o alerta, mas no processo perderá permanentemente o acesso a todos os dados encriptados com esta chave."

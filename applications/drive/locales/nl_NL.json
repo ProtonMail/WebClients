@@ -377,12 +377,6 @@
       "Download logs": [
         "Logboeken downloaden"
       ],
-      "Download without scanning": [
-        "Downloaden zonder scannen"
-      ],
-      "Download without scanning (${ count })": [
-        "Download zonder scannen (${ count })"
-      ],
       "Drive Locked": [
         "Drive versleuteld"
       ],
@@ -868,6 +862,12 @@
       ],
       "Save photos and remove": [
         "Sla foto's op en verwijder ze"
+      ],
+      "Scan & Download": [
+        "Scan & download"
+      ],
+      "Scan & Download (${ count })": [
+        "Scan & download (${ count })"
       ],
       "Search": [
         "Zoeken"
@@ -1361,6 +1361,14 @@
       ],
       "Unsupported event": [
         "Niet-ondersteunde afspraak"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ cycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
       ]
     },
     "Badge": {
@@ -12085,9 +12093,6 @@
       ],
       "Contacts could not be merged": [
         "Contactpersonen konden niet samengevoegd worden"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Vervaldatum is niet in het formaat MM/JJ"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
