@@ -20,7 +20,7 @@ import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreate
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
-import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
+import { useAliasForLogin } from '@proton/pass/hooks/useAliasForLogin';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
@@ -154,7 +154,8 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
         validateOnMount: true,
     });
 
-    const { aliasOptions } = useAliasForLoginModal(form);
+    const alias = useAliasForLogin(form);
+    const { aliasOptions } = alias;
 
     const draft = useItemDraft<LoginItemFormValues>(form, {
         type: 'login',
@@ -203,7 +204,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                             </FieldsetCluster>
 
                             <FieldsetCluster>
-                                <LoginEditCredentials form={form} />
+                                <LoginEditCredentials form={form} alias={alias} />
 
                                 {
                                     /* only allow adding a new TOTP code if user
