@@ -1,11 +1,10 @@
 import type { RefObject } from 'react';
 import { useEffect, useRef } from 'react';
 
+import MessageBodyImage from '@proton/mail-renderer/components/MessageBodyImage';
 import type { MessageImages } from '@proton/mail/store/messages/messagesTypes';
 
 import type { OnMessageImageLoadError } from 'proton-mail/components/message/interface';
-
-import MessageBodyImage from './MessageBodyImage';
 
 interface Props {
     messageImages: MessageImages | undefined;
