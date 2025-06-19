@@ -18,7 +18,7 @@ export const AutotypeDropdown: FC<AutotypeDropdownProps> = ({ actions }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLDivElement>();
     const { autotypeConfirm } = useItemsActions();
     const autotypeDiscoverySpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_DISCOVERY);
-    const showConfirmation = useSpotlightFor(SpotlightMessage.AUTOTYPE_CONFIRM).open;
+    const confirmationSpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_CONFIRM);
 
     return (
         <>
@@ -54,8 +54,11 @@ export const AutotypeDropdown: FC<AutotypeDropdownProps> = ({ actions }) => {
                                 onClick={() => {
                                     const autotypeProps = action.getAutotypeProps();
 
-                                    if (showConfirmation) {
-                                        return autotypeConfirm(autotypeProps);
+                                    if (confirmationSpotlight.open) {
+                                        return autotypeConfirm({
+                                            autotypeProps,
+                                            spotlightToClose: confirmationSpotlight,
+                                        });
                                     }
                                     void window.ctxBridge?.autotype(autotypeProps);
                                 }}
