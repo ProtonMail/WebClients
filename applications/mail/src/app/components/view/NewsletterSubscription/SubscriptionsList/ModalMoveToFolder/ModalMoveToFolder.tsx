@@ -181,7 +181,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
         }
     };
 
-    const boldFolderName = <BoldFolderName name={customFolderName} />;
+    const boldFolderName = <BoldFolderName name={customFolderName} key="bold-folder-name" />;
 
     return (
         <Prompt
@@ -195,6 +195,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
                             disabled={loading}
                             shape="ghost"
                             className="text-left flex items-start"
+                            data-testid="create-folder-button"
                         >
                             <Icon name="plus" className="mr-2 mt-0.5" />
                             <span className="flex-1">{c('Action').jt`Create folder ${boldFolderName}`}</span>
@@ -213,6 +214,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
                             handleMoveToFolder(selectedFolder.ID, selectedFolder.Name);
                         }
                     }}
+                    data-testid="move-button"
                 >{c('Action').t`Move`}</Button>,
                 <Button onClick={() => props?.onClose?.()}>{c('Action').t`Cancel`}</Button>,
             ]}
@@ -246,6 +248,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
                                     className="text-left"
                                     onClick={() => handleSelectFolder(folder)}
                                     aria-pressed={selectedFolder?.ID === folder.ID}
+                                    data-testid={`button-folder-${folder.ID}`}
                                 >
                                     <div data-level={folder.level} className="flex">
                                         <FolderIcon
