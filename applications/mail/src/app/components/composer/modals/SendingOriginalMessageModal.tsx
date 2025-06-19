@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ErrorButton, Prompt } from '@proton/components';
+import { Prompt } from '@proton/components';
 
 interface Props {
     onResolve: () => void;
@@ -13,8 +13,8 @@ const SendingOriginalMessageModal = ({ onResolve, onReject, ...rest }: Props) =>
         <Prompt
             title={c('Title').t`Sending original message`}
             buttons={[
-                <ErrorButton onClick={onResolve} data-testid="send-original-message:confirm">{c('Action')
-                    .t`OK`}</ErrorButton>,
+                <Button color="danger" onClick={onResolve} data-testid="send-original-message:confirm">{c('Action')
+                    .t`OK`}</Button>,
                 <Button onClick={onReject}>{c('Action').t`Close`}</Button>,
             ]}
             {...rest}
