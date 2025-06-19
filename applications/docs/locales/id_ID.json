@@ -93,9 +93,6 @@
       "Apply": [
         "Terapkan"
       ],
-      "Ask me next time": [
-        "Tanyakan saya lain kali"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Hanya ${ maxContacts } kontak yang dapat disisipkan dalam satu grup kontak"
       ],
@@ -4348,9 +4345,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kaitan kontak dihilangkan dari grup ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Mengonversi dokumen..."
-      ],
       "Copy the link to clipboard": [
         "Salin tautan ke papan klip"
       ],
@@ -4392,9 +4386,6 @@
       ],
       "Creating link to folder": [
         "Menghasilkan tautan folder"
-      ],
-      "Creating new document...": [
-        "Membuat dokumen baru..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
@@ -4513,12 +4504,6 @@
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Terjadi kesalahan dalam mengonversi dokumen: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Terjadi kesalahan dalam memuat dokumen: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Terjadi Kesalahan Menyinkronkan"
       ],
@@ -4581,9 +4566,6 @@
       ],
       "Get email updates for comments and suggestions added to your documents.": [
         "Dapatkan pembaruan via email untuk komentar dan saran yang ditambahkan ke dokumen Anda."
-      ],
-      "Get Notified About Comments": [
-        "Dapatkan Notifikasi Seputar Komentar"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Tuju ${ DRIVE_APP_NAME }"
@@ -4732,9 +4714,6 @@
       "Low Priority": [
         "Prioritas Rendah"
       ],
-      "Making a copy...": [
-        "Membuat salinan..."
-      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -4775,7 +4754,7 @@
         "Belum ada kontak yang ditambahkan"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Tidak ada dokumen yang disertakan pada URL. Kembali ke ${ DRIVE_APP_NAME } dan pilih dokumen."
+        "Tidak ada dokumen yang diterakan pada URL. Kembali ke ${ DRIVE_APP_NAME } dan pilih dokumen."
       ],
       "No email address": [
         "Tidak ada alamat email"
@@ -5117,7 +5096,7 @@
         "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim email terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "URL yang Anda masukkan sepertinya tidak disalin dari Slack dengan benar. Pada saat menyalin tautan yang panjang dari Slack, klik kanan tautan tersebut, lalu pilih \"Salin tautan\" daripada menyalin teks URL yang terpotong secara langsung."
+        "URL yang Anda masukkan sepertinya tidak disalin dari Slack dengan benar. Pada saat menyalin tautan yang panjang dari Slack, klik kanan tautan ini, lalu pilih \"Salin tautan\" alih-alih menyalin teks URL yang terpotong secara langsung."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proses verifikasi akan membuka tab browser baru. Mohon nonaktifkan segala pemblokir pop-up yang aktif."
@@ -5836,9 +5815,6 @@
       ],
       "Emails (last month)": [
         "Email (sebulan terakhir)"
-      ],
-      "Enable email notifications": [
-        "Aktifkan notifikasi email"
       ],
       "Encrypt emails": [
         "Enkripsi email"
@@ -9999,9 +9975,6 @@
       "Untitled document ${ date }": [
         "Dokumen tak berjudul ${ date }"
       ],
-      "Untitled spreadsheet ${ date }": [
-        "Lembar bentang tak berjudul ${ date }"
-      ],
       "Upgrade complete!": [
         "Peningkatan selesai!"
       ],
@@ -10313,9 +10286,6 @@
       ],
       "Contacts could not be merged": [
         "Kontak tidak dapat digabung"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Tanggal Kedaluwarsa bukan dalam format BB/TT"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Apabila Anda tidak ingat kata sandi Anda, kunci Anda tidak akan dapat diaktifkan ulang. Kami dapat membantu Anda untuk mengabaikan peringatan ini, namun dalam prosesnya Anda akan kehilangan akses menuju data yang terenkripsi dengan kunci ini secara permanen."

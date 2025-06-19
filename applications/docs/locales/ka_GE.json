@@ -93,9 +93,6 @@
       "Apply": [
         "გადატარება"
       ],
-      "Ask me next time": [
-        "მკითხე შემდეგ ჯერზე"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
@@ -683,9 +680,6 @@
       ],
       "Save changes": [
         "ცვლილებების შენახვა"
-      ],
-      "Save preferences": [
-        "პარამეტრების შენახვა"
       ],
       "Search": [
         "ძებნა"
@@ -4228,9 +4222,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "კონტაქტი მოხსნილია ჯგუფიდან ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "დოკუმენტის გადაყვანა..."
-      ],
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
       ],
@@ -4274,9 +4265,6 @@
       ],
       "Creating link to folder": [
         "საქაღალდემდე ბმულის შექმნა"
-      ],
-      "Creating new document...": [
-        "ახალი დოკუმენტის შექმნა..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
@@ -4395,9 +4383,6 @@
       "Enter your own password (as organization admin).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "დოკუმენტის გადაყვანის შეცდომა: ${ errorMessage }"
-      ],
       "Error Syncing": [
         "სინქრონიზაციის შეცდომა"
       ],
@@ -4457,12 +4442,6 @@
       ],
       "Geoblocking": [
         "გეოდაბლოკვა"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "მიიღეთ ელფოსტის განახლებები კომენტარებისა და მინიშნებებისთვის, რომლებიც თქვენ დოკუმენტებს დაემატება."
-      ],
-      "Get Notified About Comments": [
-        "გაფრთხილებების მიღება კომენტარების შესახებ"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }-ზე გადასვლა"
@@ -4606,9 +4585,6 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
-      "Making a copy...": [
-        "ასლის შექმნა..."
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
       ],
@@ -4645,9 +4621,6 @@
       ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "URL-ში დოკუმენტი მითითებული არაა. დაბრუნდით ${ DRIVE_APP_NAME }-ზე და აირჩიეთ დოკუმენტი."
       ],
       "No email address": [
         "ელ-ფოსტის მისამართის გარეშე"
@@ -5674,9 +5647,6 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
-      "Enable email notifications": [
-        "ელფოსტის გაფრთხილებების ჩართვა"
-      ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
@@ -5733,9 +5703,6 @@
       ],
       "Import to:": [
         "შემოტანა:"
-      ],
-      "Include document name in notification": [
-        "დოკუმენტის სახელის ჩასმა გაფრთხილებებში"
       ],
       "Include message and file name in invite email": [
         "მოსაწვევის ფაილში შეტყობინებისა და ფაილის სახელის დართვა"
@@ -9836,9 +9803,6 @@
       "Untitled document ${ date }": [
         "უსათაურო დოკუმენტი ${ date }"
       ],
-      "Untitled spreadsheet ${ date }": [
-        "უსათაურო ელცხრილი ${ date }"
-      ],
       "Upgrade complete!": [
         "განახლება დასრულებულია!"
       ],
@@ -10168,9 +10132,6 @@
       ],
       "Contacts could not be merged": [
         "კონტაქტების შერწყმის შეცდომა"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "ვადის ამოწურვის თარიღი თთ/წწ ფორმატში არაა"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "თუ პაროლი დაგავიწყდათ, თქვენი გასაღების ხელახალი აქტივაცია შეუძლებელია. ჩვენ შეგვიძლია, დაგეხმაროთ გაფრთხილების ბანერის მოხსნით, მაგრამ ამ პროცესში მოცემული გასაღებით დაშიფრულ მონაცემებთან წვდომსას სამუდამოდ დაკარგავთ."
