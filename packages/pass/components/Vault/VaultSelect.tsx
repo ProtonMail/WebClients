@@ -65,7 +65,7 @@ export const VaultSelect: FC<VaultSelectProps> = ({ downgradeMessage, mode, shar
             <Panel
                 header={
                     <PanelHeader
-                        title={<h3>{c('Vault Select').t`Move items to`}</h3>}
+                        title={title && <h3>{title}</h3>}
                         actions={[
                             <Button
                                 key="close-modal-button"
@@ -84,7 +84,6 @@ export const VaultSelect: FC<VaultSelectProps> = ({ downgradeMessage, mode, shar
                     />
                 }
             >
-                {title && <div className="mb-2 text-bold text-xl">{title}</div>}
                 {didDowngrade && downgradeMessage && (
                     <Card type="primary" className="text-sm">
                         {downgradeMessage}
@@ -118,7 +117,7 @@ export const VaultSelect: FC<VaultSelectProps> = ({ downgradeMessage, mode, shar
     );
 };
 
-type VaultSelectState = Pick<VaultSelectProps, 'shareId' | 'open' | 'mode' | 'onSubmit'>;
+type VaultSelectState = Pick<VaultSelectProps, 'shareId' | 'open' | 'mode' | 'onSubmit' | 'title'>;
 
 export const useVaultSelectModalHandles = () => {
     const [modalState, setModalState] = useState<VaultSelectState>({
@@ -126,6 +125,7 @@ export const useVaultSelectModalHandles = () => {
         open: false,
         shareId: '',
         onSubmit: noop,
+        title: undefined,
     });
 
     return {
@@ -138,6 +138,7 @@ export const useVaultSelectModalHandles = () => {
                         mode: null,
                         open: false,
                         onSubmit: noop,
+                        title: undefined,
                     })),
                 openVaultSelect: (options: Omit<VaultSelectState, 'open'>) => setModalState({ ...options, open: true }),
             }),
