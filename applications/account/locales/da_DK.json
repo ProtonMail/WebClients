@@ -1453,9 +1453,6 @@
       "What do I get?": [
         "Hvad får jeg?"
       ],
-      "Wipe": [
-        "Ryd"
-      ],
       "Yes": [
         "Ja"
       ],
@@ -3793,15 +3790,6 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Opret så mange etiketter eller mapper, som du har brug for, for at holde din indbakke ryddelig."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktiver ${ PROTON_SENTINEL_NAME } for at få adgang til disse funktioner"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktiver detaljerede begivenheder og ${ PROTON_SENTINEL_NAME }for at tilgå disse funktioner"
-      ],
-      "Enable detailed events to access these features": [
-        "Aktiver detaljerede begivenheder for at tilgå disse funktioner"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
@@ -5205,11 +5193,6 @@
         "Postnummer er påkrævet"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "Indtast e-mailadresse"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Forkert filformat."
@@ -6320,9 +6303,6 @@
       "Actions": [
         "Handlinger"
       ],
-      "App version": [
-        "App-version"
-      ],
       "Best deal": [
         "Bedste tilbud"
       ],
@@ -6368,9 +6348,6 @@
       "Permissions": [
         "Tilladelser"
       ],
-      "Protection": [
-        "Beskyttelse"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Spar stort på de bedste ${ VPN_APP_NAME }-tilbud"
       ],
@@ -6394,9 +6371,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Time": [
-        "Tid"
       ],
       "User": [
         "Bruger"
@@ -7338,9 +7312,6 @@
       "Are you sure you want to give administrative privileges to this user?": [
         "Er du sikker på, at du vil give administrative rettigheder til denne bruger?"
       ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Er du sikker på, at du vil slette alle dine logger permanent?"
-      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Er du sikker på, at du vil fjerne administrative privilegier fra denne bruger?"
       ],
@@ -7814,9 +7785,6 @@
       "Enter your recovery phrase to change your password now.": [
         "Indtast din gendannelsessætning for at ændre din adgangskode nu."
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Begivenheder omfatter godkendelsesforsøg for alle ${ BRAND_NAME }-tjenester, der bruger dine ${ BRAND_NAME_TWO }-legitimationsoplysninger."
-      ],
       "Example: ${ spfExample }": [
         "Eksempel: ${ spfExample }"
       ],
@@ -7825,9 +7793,6 @@
       ],
       "expires ${ expirationDate }": [
         "udløber ${ expirationDate }"
-      ],
-      "Failed to fetch logs.": [
-        "Kunne ikke hente logger."
       ],
       "Featured in Clubic": [
         "Fremhævet i Clubic"
@@ -8361,9 +8326,6 @@
       ],
       "No label selected": [
         "Ingen etiket valgt"
-      ],
-      "No logs yet.": [
-        "Ingen logger endnu."
       ],
       "No payment is required at this time.": [
         "Betaling er ikke påkrævet på nuværende tidspunkt."
@@ -11179,9 +11141,6 @@
       "Search": [
         "Søg"
       ],
-      "Search by email": [
-        "Søg via e-mail"
-      ],
       "Second password": [
         "Anden adgangskode"
       ],
@@ -11824,12 +11783,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
-      ],
-      "Enable detailed events": [
-        "Aktiver detaljerede begivenheder"
-      ],
-      "Enable security events": [
-        "Aktiver sikkerhedsbegivenheder"
       ]
     },
     "Mail import summary": {
@@ -17845,9 +17798,6 @@
       "Choose an account": [
         "Vælg en konto"
       ],
-      "Clear": [
-        "Ryd"
-      ],
       "Click a value in the table to use it as filter": [
         "Klik på en værdi i tabellen for at bruge den som filter"
       ],
@@ -18022,9 +17972,6 @@
       ],
       "Delete label?": [
         "Slet etikette?"
-      ],
-      "Delete logs": [
-        "Slet logs"
       ],
       "Delete organization logo?": [
         "Slet organisationens logo?"
@@ -19122,12 +19069,6 @@
       "Account is disconnected": [
         "Kontoforbindelse er afbrudt"
       ],
-      "An approximate location of the IP address": [
-        "En omtrentlig placering af IP-adressen"
-      ],
-      "Any protection applied to suspicious activity": [
-        "Enhver form for beskyttelse mod mistænkelig aktivitet"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Skift automatisk mellem dine foretrukne temaer for dag og nat synkront med dit systems dag- og nattilstande"
       ],
@@ -19146,9 +19087,6 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Slet papirkurven og spam-beskeder efter 30 dage. Hvis du slår automatisk sletning til, får beskeder, der allerede er i papirkurven/spam, en sletningsdato baseret på den dato, de blev flyttet dertil."
       ],
-      "Device information such as operating system": [
-        "Enhedsoplysninger, som f.eks. operativsystem"
-      ],
       "Display name for the entity in the eduGAIN database": [
         "Visningsnavn for enheden i eduGAIN-databasen"
       ],
@@ -19163,9 +19101,6 @@
       ],
       "Enable/disable desktop and mobile notifications": [
         "Aktiver/deaktiver notifikationer på desktop og mobil"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "Når detaljerede begivenheder aktiveres, registreres IP-adressen for hver begivenhed."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-adresse til slutpunkt fra identitetsudbyder (f.eks. https://idp.example.com/sso/saml)"
@@ -19190,9 +19125,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP Adresse (Internetudbyder)"
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Beskeder i Sendt eller Kladder vil fortsætte med at blive vist i de mapper, selvom du flytter dem til en anden mappe."
@@ -19235,9 +19167,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "IP-adressens Internetudbyder"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementscyklus starter ${ formattedTime }"
@@ -19977,12 +19906,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ved at slette dette telefonnummer vil du ikke længere være i stand til at gendanne din konto."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Ved at slå overvågning af sikkerhedsbegivenheder fra, slettes også hele din historik. Er du sikker på, at du vil deaktivere dette?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Udløbsdatoen er ikke i formatet MM/ÅÅ"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Hvis du annullerer denne import, vil du ikke kunne genoptage den. ${ BRAND_NAME } gemte alle fremskridt på din konto. Annuller alligevel?"
