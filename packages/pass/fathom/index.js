@@ -1,39 +1,47 @@
-import { clusters as clusters$1, dom, out, rule, ruleset, score, type, utils } from './fathom.js';
+import { clusters as clusters$1, dom, domQuery, out, rule, ruleset, score, type, utils } from './fathom.js';
 import * as fathomWeb from './fathom.js';
 
 export { fathomWeb as fathom };
 
-const MAX_FORM_FIELD_WALK_UP = 3;
+var FormType;
 
-const MAX_FORM_HEADING_WALK_UP = 3;
+(function (FormType) {
+    FormType['LOGIN'] = 'login';
+    FormType['NOOP'] = 'noop';
+    FormType['PASSWORD_CHANGE'] = 'password-change';
+    FormType['RECOVERY'] = 'recovery';
+    FormType['REGISTER'] = 'register';
+})(FormType || (FormType = {}));
 
-const MAX_HEADING_HORIZONTAL_DIST = 75;
+var FieldType;
 
-const MAX_HEADING_VERTICAL_DIST = 150;
+(function (FieldType) {
+    FieldType['EMAIL'] = 'email';
+    FieldType['IDENTITY'] = 'identity';
+    FieldType['OTP'] = 'otp';
+    FieldType['PASSWORD_CURRENT'] = 'password';
+    FieldType['PASSWORD_NEW'] = 'new-password';
+    FieldType['USERNAME'] = 'username';
+    FieldType['USERNAME_HIDDEN'] = 'username-hidden';
+})(FieldType || (FieldType = {}));
 
-const MIN_AREA_SUBMIT_BTN = 3500;
+const formTypes = Object.values(FormType);
 
-const MIN_FIELD_HEIGHT = 15;
+const fieldTypes = Object.values(FieldType);
 
-const MIN_FIELD_WIDTH = 30;
+const and =
+    (...predicates) =>
+    (value) =>
+        predicates.every((pred) => pred(value));
 
-const MAX_INPUTS_PER_FORM = 40;
+const or =
+    (...predicates) =>
+    (value) =>
+        predicates.some((pred) => pred(value));
 
-const MAX_FIELDS_PER_FORM = 60;
+const not = (predicate) => (value) => !predicate(value);
 
-const MAX_HIDDEN_FIELD_VALUE_LENGTH = 320;
-
-const HIDDEN_FIELD_IGNORE_VALUES = ['0', '1', 'true', 'false'];
-
-const OTP_PATTERNS = [
-    [1, 'd*'],
-    [6, 'd{6}'],
-    [1, '[0-9]*'],
-    [6, '[0-9]{6}'],
-    [5, '([0-9a-fA-F]{5}-?[0-9a-fA-F]{5})'],
-];
-
-const VALID_INPUT_TYPES = ['text', 'email', 'number', 'tel', 'password', 'hidden', 'search'];
+const any = (predicate) => (values) => values.some(predicate);
 
 const FORM_CLUSTER_ATTR = 'data-protonpass-form';
 
@@ -105,20 +113,6 @@ const inputCandidateSelector =
 const buttonSelector = `button:not([type]), a[role="button"], ${kButtonSubmitSelector}`;
 
 const otpSelector = '[type="tel"], [type="number"], [type="text"], input:not([type])';
-
-const and =
-    (...predicates) =>
-    (value) =>
-        predicates.every((pred) => pred(value));
-
-const or =
-    (...predicates) =>
-    (value) =>
-        predicates.some((pred) => pred(value));
-
-const not = (predicate) => (value) => !predicate(value);
-
-const any = (predicate) => (values) => values.some(predicate);
 
 const closestParent = (start, match) => {
     const parent = start.parentElement;
@@ -277,6 +271,11 @@ const TYPE_SEPARATOR = ',';
 
 const SCORE_SEPARATOR = ':';
 
+const matchPredictedType = (type) => (str) => {
+    var _a;
+    return ((_a = str.split(SCORE_SEPARATOR)) === null || _a === void 0 ? void 0 : _a[0]) === type;
+};
+
 const setCachedPredictionScore = (_el, type, score) => {
     const el = _el;
     const currentType = el.__PP_TYPE__;
@@ -286,7 +285,7 @@ const setCachedPredictionScore = (_el, type, score) => {
         return;
     }
     const types = currentType.split(TYPE_SEPARATOR);
-    const existingIndex = types.findIndex((pred) => pred.startsWith(type));
+    const existingIndex = types.findIndex(matchPredictedType(type));
     if (existingIndex !== -1) types[existingIndex] = flag;
     else types.push(flag);
     el.__PP_TYPE__ = types.join(TYPE_SEPARATOR);
@@ -295,7 +294,7 @@ const setCachedPredictionScore = (_el, type, score) => {
 const getCachedPredictionScore = (type) => (fnode) => {
     const types = fnode.element.__PP_TYPE__;
     if (!types) return -1;
-    const predForType = types.split(TYPE_SEPARATOR).find((pred) => pred.startsWith(type));
+    const predForType = types.split(TYPE_SEPARATOR).find(matchPredictedType(type));
     if (!predForType) return -1;
     const [, scoreStr] = predForType.split(SCORE_SEPARATOR);
     const score = parseFloat(scoreStr);
@@ -304,14 +303,117 @@ const getCachedPredictionScore = (type) => (fnode) => {
 
 const isPredictedType = (type) => (fnode) => getCachedPredictionScore(type)(fnode) !== -1;
 
+const isPredictedForm = or(...Object.values(FormType).map((type) => isPredictedType(type)));
+
+const isPredictedField = or(...Object.values(FieldType).map((type) => isPredictedType(type)));
+
 const isClassifiable = (el) => !(isPrediction(el) || isIgnored(el) || attrIgnored(el));
 
-const removeClassifierFlags = (el, options) => {
-    removeProcessedFlag(el);
-    removePredictionFlag(el);
-    if (!options.preserveIgnored) removeIgnoredFlag(el);
-    el.querySelectorAll(kFieldSelector).forEach((el) => removeClassifierFlags(el, options));
+const removeClassifierFlags = (target, options) => {
+    var _a;
+    const clean = (el) => {
+        removeProcessedFlag(el);
+        removePredictionFlag(el);
+        if (!options.preserveIgnored) removeIgnoredFlag(el);
+    };
+    clean(target);
+    target.querySelectorAll(kFieldSelector).forEach(clean);
+    (_a = options.fields) === null || _a === void 0 ? void 0 : _a.forEach(clean);
 };
+
+const isShadowRoot = (el) => el instanceof ShadowRoot;
+
+const isShadowElement = (el) => isShadowRoot(el.getRootNode());
+
+const isCustomElementWithShadowRoot = (el) => Boolean(el.tagName.includes('-') && el.shadowRoot);
+
+const shadowPiercingAncestors = function* (element) {
+    yield element;
+    let current = element;
+    let parent;
+    while (
+        (parent = getShadowPiercingParent(current)) &&
+        (parent === null || parent === void 0 ? void 0 : parent.nodeType) === Node.ELEMENT_NODE
+    ) {
+        yield parent;
+        current = parent;
+    }
+};
+
+const getShadowPiercingParent = (node) => {
+    const parent = node.parentNode;
+    if (!parent) return null;
+    if (isShadowRoot(parent)) return parent.host;
+    else return parent;
+};
+
+const shadowPiercingContains = (container, el) => {
+    let current = el;
+    if (container.contains(el)) return true;
+    if (!isShadowElement(el)) return false;
+    const containerShadowRoot = 'shadowRoot' in container ? container.shadowRoot : null;
+    if (containerShadowRoot === null || containerShadowRoot === void 0 ? void 0 : containerShadowRoot.contains(el))
+        return true;
+    while (current) {
+        const rootNode = current.getRootNode();
+        if (rootNode === document) return false;
+        if (!isShadowRoot(rootNode)) return false;
+        const host = rootNode.host;
+        if (host === container) return true;
+        if (container.contains(host)) return true;
+        if (
+            containerShadowRoot === null || containerShadowRoot === void 0 ? void 0 : containerShadowRoot.contains(host)
+        )
+            return true;
+        current = host;
+    }
+    return false;
+};
+
+const shallowShadowQuerySelector = (el, selector) => {
+    var _a, _b, _c;
+    if (!(el instanceof HTMLElement)) return el.querySelector(selector);
+    return (_c =
+        (_a = el.querySelector(selector)) !== null && _a !== void 0
+            ? _a
+            : (_b = el.shadowRoot) === null || _b === void 0
+              ? void 0
+              : _b.querySelector(selector)) !== null && _c !== void 0
+        ? _c
+        : null;
+};
+
+const MAX_FORM_FIELD_WALK_UP = 3;
+
+const MAX_FORM_HEADING_WALK_UP = 3;
+
+const MAX_HEADING_HORIZONTAL_DIST = 75;
+
+const MAX_HEADING_VERTICAL_DIST = 150;
+
+const MIN_AREA_SUBMIT_BTN = 3500;
+
+const MIN_FIELD_HEIGHT = 15;
+
+const MIN_FIELD_WIDTH = 30;
+
+const MAX_INPUTS_PER_FORM = 40;
+
+const MAX_FIELDS_PER_FORM = 60;
+
+const MAX_HIDDEN_FIELD_VALUE_LENGTH = 320;
+
+const HIDDEN_FIELD_IGNORE_VALUES = ['0', '1', 'true', 'false'];
+
+const OTP_PATTERNS = [
+    [1, 'd*'],
+    [6, 'd{6}'],
+    [1, '[0-9]*'],
+    [6, '[0-9]{6}'],
+    [5, '([0-9a-fA-F]{5}-?[0-9a-fA-F]{5})'],
+];
+
+const VALID_INPUT_TYPES = ['text', 'email', 'number', 'tel', 'password', 'hidden', 'search'];
 
 const LOGIN_RE =
     /(?:(?:n(?:ouvelleses|uevase|ewses)s|iniciarses|connex)io|anmeldedate|sign[io])n|in(?:iciarsessao|troduce)|a(?:uthenticate|nmeld(?:ung|en))|authentifier|s(?:econnect|identifi)er|novasessao|(?:introduci|conecta|entr[ae])r|prihlasit|connect|acceder|login/i;
@@ -614,7 +716,7 @@ const isVisible = (fnodeOrElement, options) => {
     const check = () => {
         var _a;
         let prevRef = null;
-        for (const ancestor of utils.ancestors(element)) {
+        for (const ancestor of shadowPiercingAncestors(element)) {
             let rect = null;
             const getRect = () => (rect = rect !== null && rect !== void 0 ? rect : ancestor.getBoundingClientRect());
             if (ancestor === doc.body)
@@ -625,7 +727,6 @@ const isVisible = (fnodeOrElement, options) => {
             if (useCache && cachedVisibility !== undefined) return cachedVisibility;
             const { opacity, display, position, overflow, visibility } = win.getComputedStyle(ancestor);
             seen.push(ancestor);
-            /** Anything below <0.1 opacity is considered hidden */
             const opacityValue = Math.floor(parseFloat(opacity) * 10);
             if (opacityValue === 0 && options.opacity) {
                 transparent = true;
@@ -644,6 +745,7 @@ const isVisible = (fnodeOrElement, options) => {
                 seen.pop();
                 continue;
             }
+            if (position === 'absolute' && !isOnScreen(getRect())) return false;
             if (position === 'fixed')
                 return isOnScreen(
                     (_a = prevRef === null || prevRef === void 0 ? void 0 : prevRef.rect) !== null && _a !== void 0
@@ -667,7 +769,6 @@ const isVisible = (fnodeOrElement, options) => {
         return true;
     };
     const visible = check();
-
     if (useCache) {
         if (options.opacity) {
             if (visible || !transparent) setCachedVisibility(getVisibilityCache('visibility'))(seen, visible);
@@ -675,7 +776,6 @@ const isVisible = (fnodeOrElement, options) => {
         }
         setCachedVisibility(cache)(seen, visible);
     }
-
     return visible;
 };
 
@@ -704,21 +804,34 @@ const isVisibleEl = (el) =>
         minWidth: 0,
     });
 
-const isVisibleForm = (form) => {
+const isVisibleForm = (form, options = {}) => {
     const visible = (() => {
         if (
-            !isVisible(form, {
-                opacity: true,
-            })
+            !isVisible(
+                form,
+                Object.assign(
+                    {
+                        opacity: true,
+                    },
+                    options
+                )
+            )
         )
             return false;
+        if (isCustomElementWithShadowRoot(form) || isShadowElement(form)) return true;
         const inputs = Array.from(form.querySelectorAll(inputCandidateSelector)).filter((field) => !field.disabled);
         return (
             inputs.length > 0 &&
             inputs.some((input) =>
-                isVisible(input, {
-                    opacity: false,
-                })
+                isVisible(
+                    input,
+                    Object.assign(
+                        {
+                            opacity: false,
+                        },
+                        options
+                    )
+                )
             )
         );
     })();
@@ -735,6 +848,52 @@ const isVisibleField = (field) => {
         minHeight: MIN_FIELD_HEIGHT,
         minWidth: MIN_FIELD_WIDTH,
     });
+};
+
+const OVERRIDE_FORMS = new Set();
+
+const OVERRIDE_FIELDS = new Set();
+
+const addFormOverride = (el) => OVERRIDE_FORMS.add(el);
+
+const addFieldOverride = (el) => OVERRIDE_FIELDS.add(el);
+
+const clearOverrides = () => {
+    OVERRIDE_FORMS.clear();
+    OVERRIDE_FORMS.clear();
+};
+
+const getOverridableForms = () => Array.from(OVERRIDE_FORMS);
+
+const getOverridableFields = () => Array.from(OVERRIDE_FIELDS);
+
+const matchFormOverrides = () => domQuery(getOverridableForms);
+
+const matchFieldOverrides = () => domQuery(getOverridableFields);
+
+const acceptFormOverride = (fnode) => isPredictedForm(fnode) && isVisibleForm(fnode.element);
+
+const acceptFieldOverride = (fnode) => isPredictedField(fnode) && isVisibleField(fnode.element);
+
+const overrides = [
+    rule(matchFormOverrides(), type('override-form'), {}),
+    rule(matchFieldOverrides(), type('override-field'), {}),
+    rule(type('override-form').when(acceptFormOverride), type('form-candidate'), {}),
+    rule(type('override-field').when(acceptFieldOverride), type('field-candidate'), {}),
+];
+
+const flagOverride = ({ form, formType, fields }) => {
+    if (isVisibleForm(form)) {
+        removePredictionFlag(form);
+        setCachedPredictionScore(form, formType, 1);
+        if (isShadowElement(form)) addFormOverride(form);
+        else if (form.tagName !== 'FORM') flagCluster(form);
+        fields.forEach(({ field, fieldType }) => {
+            removePredictionFlag(field);
+            setCachedPredictionScore(field, fieldType, 1);
+            if (isShadowElement(field)) addFieldOverride(field);
+        });
+    }
 };
 
 const TEXT_ATTRIBUTES = [
@@ -863,32 +1022,6 @@ const getNearestHeadingsText = (el) => {
             : '';
     return sanitizeString(textAbove + headings.map((el) => el.innerText).join(''));
 };
-
-var FormType;
-
-(function (FormType) {
-    FormType['LOGIN'] = 'login';
-    FormType['NOOP'] = 'noop';
-    FormType['PASSWORD_CHANGE'] = 'password-change';
-    FormType['RECOVERY'] = 'recovery';
-    FormType['REGISTER'] = 'register';
-})(FormType || (FormType = {}));
-
-var FieldType;
-
-(function (FieldType) {
-    FieldType['EMAIL'] = 'email';
-    FieldType['IDENTITY'] = 'identity';
-    FieldType['OTP'] = 'otp';
-    FieldType['PASSWORD_CURRENT'] = 'password';
-    FieldType['PASSWORD_NEW'] = 'new-password';
-    FieldType['USERNAME'] = 'username';
-    FieldType['USERNAME_HIDDEN'] = 'username-hidden';
-})(FieldType || (FieldType = {}));
-
-const formTypes = Object.values(FormType);
-
-const fieldTypes = Object.values(FieldType);
 
 const TOLERANCE_LEVEL = 0.5;
 
@@ -2938,7 +3071,8 @@ const prepass = (doc = document) => {
 };
 
 const shouldRunClassifier = () => {
-    const runForForms = selectFormCandidates().reduce((runDetection, form) => {
+    const formCandidates = getOverridableForms().concat(selectFormCandidates());
+    const shouldRunForForms = formCandidates.reduce((runDetection, form) => {
         if (isProcessed(form)) {
             const unprocessedFields = selectInputCandidates(form).some(isProcessableField);
             if (unprocessedFields)
@@ -2953,9 +3087,9 @@ const shouldRunClassifier = () => {
         }
         return runDetection;
     }, false);
-    if (runForForms) return true;
-    const runForFields = selectInputCandidates().some(isProcessableField);
-    return runForFields;
+    if (shouldRunForForms) return true;
+    const fieldCandidates = getOverridableFields().concat(selectInputCandidates());
+    return fieldCandidates.some(isProcessableField);
 };
 
 const noop = [
@@ -3004,6 +3138,7 @@ const rulesetMaker = () => {
             rules: [
                 rule(dom(formCandidateSelector), type('form-candidate'), {}),
                 rule(dom('input'), type('field-candidate'), {}),
+                ...overrides,
                 rule(type('form-candidate').when(withFnodeEl(isClassifiable)), type('form-element'), {}),
                 rule(type('form-element').when(withFnodeEl(isVisibleForm)), type('form').note(getFormFeatures), {}),
                 rule(type('form-element'), out('form').through(processFormEffect), {}),
@@ -3029,7 +3164,10 @@ const rulesetMaker = () => {
     return rules;
 };
 
-const clearDetectionCache = () => clearVisibilityCache();
+const clearDetectionCache = () => {
+    clearVisibilityCache();
+    clearOverrides();
+};
 
 export {
     EL_ATTRIBUTES,
@@ -3039,11 +3177,16 @@ export {
     FieldType,
     FormType,
     IdentityFieldType,
+    OVERRIDE_FIELDS,
+    OVERRIDE_FORMS,
     TEXT_ATTRIBUTES,
+    addFieldOverride,
+    addFormOverride,
     attrIgnored,
     buttonSelector,
     cacheContext,
     clearDetectionCache,
+    clearOverrides,
     clearVisibilityCache,
     createInputIterator,
     fieldTypes,
@@ -3051,6 +3194,7 @@ export {
     flagAsIgnored,
     flagAsProcessed,
     flagCluster,
+    flagOverride,
     flagSubtreeAsIgnored,
     formCandidateSelector,
     formTypes,
@@ -3063,6 +3207,8 @@ export {
     getIdentityFieldType,
     getIdentityHaystack,
     getIgnoredParent,
+    getOverridableFields,
+    getOverridableForms,
     getParentFormPrediction,
     getTextAttributes,
     getTypeScore,
@@ -3072,14 +3218,19 @@ export {
     isClassifiable,
     isClassifiableField,
     isCluster,
+    isCustomElementWithShadowRoot,
     isEmailCandidate,
     isHidden,
     isIgnored,
     isOAuthCandidate,
+    isPredictedField,
+    isPredictedForm,
     isPredictedType,
     isPrediction,
     isProcessableField,
     isProcessed,
+    isShadowElement,
+    isShadowRoot,
     isUsernameCandidate,
     isVisible,
     isVisibleEl,
@@ -3098,6 +3249,7 @@ export {
     kPasswordSelector,
     kSocialSelector,
     kUsernameSelector,
+    matchPredictedType,
     maybeEmail,
     maybeHiddenUsername,
     maybeIdentity,
@@ -3105,6 +3257,7 @@ export {
     maybePassword,
     maybeUsername,
     otpSelector,
+    overrides,
     prepass,
     removeClassifierFlags,
     removeHiddenFlag,
@@ -3115,6 +3268,9 @@ export {
     selectFormCandidates,
     selectInputCandidates,
     setCachedPredictionScore,
+    shadowPiercingAncestors,
+    shadowPiercingContains,
+    shallowShadowQuerySelector,
     shouldRunClassifier,
     splitFieldsByVisibility,
     trainees,

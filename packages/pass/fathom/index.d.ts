@@ -91,7 +91,7 @@ declare const isUsernameCandidate: (el: HTMLElement) => boolean;
 declare const isEmailCandidate: (el: HTMLElement) => boolean;
 declare const isOAuthCandidate: (el: HTMLElement) => boolean;
 declare const isBtnCandidate: (btn: HTMLElement) => boolean;
-declare const isProcessableField: (input: HTMLInputElement) => boolean;
+declare const isProcessableField: (input: HTMLElement) => boolean;
 declare const isClassifiableField: (fnode: Fnode) => boolean;
 declare const selectInputCandidates: (target?: Document | HTMLElement) => HTMLInputElement[];
 
@@ -112,14 +112,18 @@ declare const removeProcessedFlag: (el: HTMLElement) => boolean;
 declare const isPrediction: (el: HTMLElement) => boolean;
 declare const removePredictionFlag: (el: HTMLElement) => boolean;
 declare const getParentFormPrediction: (el?: HTMLElement) => HTMLElement | null;
+declare const matchPredictedType: (type: string) => (str: string) => boolean;
 declare const setCachedPredictionScore: (_el: HTMLElement, type: string, score: number) => void;
 declare const getCachedPredictionScore: (type: string) => (fnode: Fnode) => number;
 declare const isPredictedType: (type: string) => (fnode: Fnode) => boolean;
+declare const isPredictedForm: (value: Fnode) => boolean;
+declare const isPredictedField: (value: Fnode) => boolean;
 declare const isClassifiable: (el: HTMLElement) => boolean;
 declare const removeClassifierFlags: (
-    el: HTMLElement,
+    target: HTMLElement,
     options: {
         preserveIgnored: boolean;
+        fields?: HTMLElement[];
     }
 ) => void;
 
@@ -149,8 +153,35 @@ declare const getIdentityHaystack: (input: HTMLInputElement) => string;
 declare const getIdentityFieldType: (input: HTMLInputElement) => IdentityFieldType | undefined;
 declare const maybeIdentity: (fnode: Fnode) => boolean;
 
+type Override = {
+    form: HTMLElement;
+    formType: string;
+    fields: {
+        field: HTMLElement;
+        fieldType: string;
+    }[];
+};
+declare const OVERRIDE_FORMS: Set<HTMLElement>;
+declare const OVERRIDE_FIELDS: Set<HTMLElement>;
+declare const addFormOverride: (el: HTMLElement) => Set<HTMLElement>;
+declare const addFieldOverride: (el: HTMLElement) => Set<HTMLElement>;
+declare const clearOverrides: () => void;
+declare const getOverridableForms: () => HTMLElement[];
+declare const getOverridableFields: () => HTMLElement[];
+declare const overrides: AnyRule[];
+declare const flagOverride: ({ form, formType, fields }: Override) => void;
+
 declare const prepass: (doc?: Document) => void;
 declare const shouldRunClassifier: () => boolean;
+
+declare const isShadowRoot: (el: Node) => el is ShadowRoot;
+declare const isShadowElement: (el: Node) => boolean;
+declare const isCustomElementWithShadowRoot: (el: Element) => el is HTMLElement & {
+    shadowRoot: ShadowRoot;
+};
+declare const shadowPiercingAncestors: (element: Node) => Generator<Node, void, unknown>;
+declare const shadowPiercingContains: (container: HTMLElement | Document, el: HTMLElement) => boolean;
+declare const shallowShadowQuerySelector: (el: HTMLElement | Document, selector: string) => HTMLElement | null;
 
 type VisibilityCache = WeakMap<HTMLElement, boolean>;
 type IsVisibleOptions = {
@@ -162,7 +193,7 @@ declare const getVisibilityCache: (key: string) => VisibilityCache;
 declare const clearVisibilityCache: () => void;
 declare const isVisible: (fnodeOrElement: Fnode | HTMLElement, options: IsVisibleOptions) => boolean;
 declare const isVisibleEl: (el: HTMLElement) => boolean;
-declare const isVisibleForm: (form: HTMLElement) => boolean;
+declare const isVisibleForm: (form: HTMLElement, options?: Partial<Pick<IsVisibleOptions, 'skipCache'>>) => boolean;
 declare const isVisibleField: (field: HTMLElement) => boolean;
 
 declare const clearDetectionCache: () => void;
@@ -180,15 +211,20 @@ export {
     type FormInputIterator,
     FormType,
     IdentityFieldType,
+    OVERRIDE_FIELDS,
+    OVERRIDE_FORMS,
     type Ruleset,
     type RulesetAggregation,
     TEXT_ATTRIBUTES,
     type Trainee,
     type TrainingResults,
+    addFieldOverride,
+    addFormOverride,
     attrIgnored,
     buttonSelector,
     cacheContext,
     clearDetectionCache,
+    clearOverrides,
     clearVisibilityCache,
     createInputIterator,
     fieldTypes,
@@ -196,6 +232,7 @@ export {
     flagAsIgnored,
     flagAsProcessed,
     flagCluster,
+    flagOverride,
     flagSubtreeAsIgnored,
     formCandidateSelector,
     formTypes,
@@ -208,6 +245,8 @@ export {
     getIdentityFieldType,
     getIdentityHaystack,
     getIgnoredParent,
+    getOverridableFields,
+    getOverridableForms,
     getParentFormPrediction,
     getTextAttributes,
     getTypeScore,
@@ -217,14 +256,19 @@ export {
     isClassifiable,
     isClassifiableField,
     isCluster,
+    isCustomElementWithShadowRoot,
     isEmailCandidate,
     isHidden,
     isIgnored,
     isOAuthCandidate,
+    isPredictedField,
+    isPredictedForm,
     isPredictedType,
     isPrediction,
     isProcessableField,
     isProcessed,
+    isShadowElement,
+    isShadowRoot,
     isUsernameCandidate,
     isVisible,
     isVisibleEl,
@@ -243,6 +287,7 @@ export {
     kPasswordSelector,
     kSocialSelector,
     kUsernameSelector,
+    matchPredictedType,
     maybeEmail,
     maybeHiddenUsername,
     maybeIdentity,
@@ -250,6 +295,7 @@ export {
     maybePassword,
     maybeUsername,
     otpSelector,
+    overrides,
     prepass,
     removeClassifierFlags,
     removeHiddenFlag,
@@ -260,6 +306,9 @@ export {
     selectFormCandidates,
     selectInputCandidates,
     setCachedPredictionScore,
+    shadowPiercingAncestors,
+    shadowPiercingContains,
+    shallowShadowQuerySelector,
     shouldRunClassifier,
     splitFieldsByVisibility,
     trainees,
