@@ -164,7 +164,7 @@ const LogsSection = () => {
                         onNext={onNext}
                         onPrevious={onPrevious}
                         onSelect={onSelect}
-                        total={state.total}
+                        total={hasB2BLogs ? b2bState.total : state.total}
                         page={page}
                         limit={PAGE_SIZE}
                     />
