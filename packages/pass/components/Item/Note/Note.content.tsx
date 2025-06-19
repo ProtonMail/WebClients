@@ -8,7 +8,7 @@ import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { deobfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 
-export const NoteContent: FC<ItemContentProps<'note'>> = ({ revision: { data, itemId, shareId } }) => {
+export const NoteContent: FC<ItemContentProps<'note'>> = ({ revision: { data, itemId, shareId, revision } }) => {
     const note = useDeobfuscatedValue(data.metadata.note);
     const extraFields = deobfuscateExtraFields(data.extraFields);
 
@@ -17,7 +17,10 @@ export const NoteContent: FC<ItemContentProps<'note'>> = ({ revision: { data, it
             {Boolean(note) && (
                 <FieldsetCluster mode="read" as="div">
                     <FieldBox className="pass-input-group--no-focus">
-                        <TextAreaReadonly>{note}</TextAreaReadonly>
+                        {/** `revision` is used as key here to trigger in an internal
+                         * state reset of `TextAreaReadonly` when toggling between
+                         * note revisions when comparing history (resets expansion) */}
+                        <TextAreaReadonly key={revision}>{note}</TextAreaReadonly>
                     </FieldBox>
                 </FieldsetCluster>
             )}
