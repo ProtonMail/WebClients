@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import { ErrorButton, Prompt } from '@proton/components';
+import { Prompt } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 interface Props extends ModalProps {
@@ -47,9 +47,9 @@ const MoveAllModal = ({ onResolve, onReject, destinationLabelID, ...rest }: Prop
         <Prompt
             title={getTitle(destinationLabelID)}
             buttons={[
-                <ErrorButton data-testid="confirm-empty-folder" onClick={handleSubmit}>
+                <Button color="danger" data-testid="confirm-empty-folder" onClick={handleSubmit}>
                     {c('Action').t`Move`}
-                </ErrorButton>,
+                </Button>,
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
