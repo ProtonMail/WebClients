@@ -4,17 +4,16 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Checkbox, Label, type ModalProps, Prompt, useNotifications } from '@proton/components';
-import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { filterSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { getFilterData, getNewsletterCopyForFilterAction } from '../helper';
-import type { ModalFilterType } from '../interface';
+import type { ModalFilterType, PropsWithNewsletterSubscription } from '../interface';
+import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 
-interface Props extends ModalProps {
-    subscription: NewsletterSubscription;
+interface Props extends PropsWithNewsletterSubscription, ModalProps {
     filterType: ModalFilterType;
 }
 
@@ -56,10 +55,14 @@ const ModalNewsletterSubscriptionFilter = ({ subscription, filterType, ...props 
 
     const { createNotification } = useNotifications();
 
+    const { sendNewsletterMessagesAction } = useNewsletterSubscriptionTelemetry();
+
     const dispatch = useMailDispatch();
     const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));
 
     const handleApplyFilter = () => {
+        sendNewsletterMessagesAction(filterType, applyToFuture);
+
         void dispatch(
             filterSubscriptionList({
                 subscription,

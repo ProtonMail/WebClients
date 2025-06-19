@@ -1,6 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -17,7 +18,6 @@ import { applyMarkAsChangesOnConversation } from '../../hooks/optimistic/useOpti
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import type { EventUpdates, QueryParams, QueryResults, TaskRunningInfo } from '../elements/elementsTypes';
-import { decrementUnread, incrementUnread } from '../mailbox/mailboxHelpers';
 import type { MailState } from '../store';
 import { allConversations, conversationByID } from './conversationsSelectors';
 import type {
@@ -354,12 +354,12 @@ export const markMessagesAsReadPending = (
         const conversationState = getConversation(state, selectedMessage.ConversationID);
 
         if (conversationState) {
-            conversationState.Conversation.ContextNumUnread = decrementUnread(
+            conversationState.Conversation.ContextNumUnread = safeDecreaseCount(
                 conversationState.Conversation.ContextNumUnread,
                 1
             );
 
-            conversationState.Conversation.NumUnread = decrementUnread(conversationState.Conversation.NumUnread, 1);
+            conversationState.Conversation.NumUnread = safeDecreaseCount(conversationState.Conversation.NumUnread, 1);
 
             selectedMessage.LabelIDs.forEach((messageLabelID) => {
                 const conversationLabel = conversationState.Conversation.Labels?.find(
@@ -367,7 +367,7 @@ export const markMessagesAsReadPending = (
                 );
 
                 if (conversationLabel) {
-                    conversationLabel.ContextNumUnread = decrementUnread(conversationLabel.ContextNumUnread, 1);
+                    conversationLabel.ContextNumUnread = safeDecreaseCount(conversationLabel.ContextNumUnread, 1);
                 }
             });
 
@@ -396,11 +396,11 @@ export const markMessagesAsUnreadPending = (
         const conversationState = getConversation(state, selectedMessage.ConversationID);
 
         if (conversationState) {
-            conversationState.Conversation.ContextNumUnread = incrementUnread(
+            conversationState.Conversation.ContextNumUnread = safeIncreaseCount(
                 conversationState.Conversation.ContextNumUnread,
                 1
             );
-            conversationState.Conversation.NumUnread = incrementUnread(conversationState.Conversation.NumUnread, 1);
+            conversationState.Conversation.NumUnread = safeIncreaseCount(conversationState.Conversation.NumUnread, 1);
 
             selectedMessage.LabelIDs.forEach((messageLabelID) => {
                 const conversationLabel = conversationState.Conversation.Labels?.find(
@@ -408,7 +408,7 @@ export const markMessagesAsUnreadPending = (
                 );
 
                 if (conversationLabel) {
-                    conversationLabel.ContextNumUnread = incrementUnread(conversationLabel.ContextNumUnread, 1);
+                    conversationLabel.ContextNumUnread = safeIncreaseCount(conversationLabel.ContextNumUnread, 1);
                 }
             });
 
@@ -468,14 +468,14 @@ export const markConversationsAsUnreadPending = (
         const conversationState = getConversation(state, selectedConversation.ID);
 
         if (conversationState) {
-            conversationState.Conversation.ContextNumUnread = incrementUnread(
+            conversationState.Conversation.ContextNumUnread = safeIncreaseCount(
                 conversationState.Conversation.ContextNumUnread,
                 1
             );
-            conversationState.Conversation.NumUnread = incrementUnread(conversationState.Conversation.NumUnread, 1);
+            conversationState.Conversation.NumUnread = safeIncreaseCount(conversationState.Conversation.NumUnread, 1);
             conversationState.Conversation.Labels?.forEach((label) => {
                 if (label.ID === labelID) {
-                    label.ContextNumUnread = incrementUnread(label.ContextNumUnread, 1);
+                    label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
                 }
             });
 

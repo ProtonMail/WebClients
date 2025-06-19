@@ -101,7 +101,7 @@ export const shouldOpenUpsellOnFilterClick = (
     return !filters.some((filter) => filter.ID === subscription.FilterID);
 };
 
-export const getReceivedMessagesCount = (subscription: NewsletterSubscription): number => {
+export const getReceivedMessagesCount = (subscription: Partial<NewsletterSubscription>): number => {
     return subscription.ReceivedMessages?.Last30Days ?? 0;
 };
 

@@ -24,14 +24,6 @@ export enum SortSubscriptionsValue {
     RecentlyReceived = 'recently-received',
 }
 
-export interface SubscriptionPagination {
-    PageSize?: number;
-    AnchorID?: string;
-    AnchorLastReceivedTime?: string | null;
-    AnchorUnreadMessageCount?: number | null;
-    Active?: ActiveValues;
-}
-
 export interface UpdateSubscriptionParams {
     idToUpdate: string;
     subscription: NewsletterSubscription;
@@ -41,9 +33,9 @@ export interface UpdateSubscriptionParams {
 export interface NewsletterSubscriptionsTabState {
     ids: string[];
     totalCount: number;
-    paginationData: SubscriptionPagination | undefined;
     loading: boolean;
     sorting: SortSubscriptionsValue;
+    paginationQueryString: string | null;
 }
 
 export interface NewsletterSubscriptionsInterface {
