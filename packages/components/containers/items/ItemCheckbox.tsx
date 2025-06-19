@@ -5,6 +5,7 @@ import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import ContactImage from '@proton/components/containers/contacts/ContactImage';
 import { DENSITY } from '@proton/shared/lib/constants';
+import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
 import clsx from '@proton/utils/clsx';
 
 import './ItemCheckbox.scss';
@@ -56,10 +57,11 @@ const ItemCheckbox = ({
             onChange={onChange}
             labelOnClick={handleClick}
             data-item-id={ID}
-            aria-describedby={ID}
+            aria-describedby={toValidHtmlId(`message-subject-${ID}`)}
             data-testid="item-checkbox"
         />
     ) : (
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/label-has-associated-control, jsx-a11y/click-events-have-key-events
         <label
             className={clsx(['item-checkbox-label relative', normalClassName])}
             onClick={handleClick}
@@ -71,6 +73,7 @@ const ItemCheckbox = ({
                 checked={checked}
                 onChange={onChange}
                 data-item-id={ID}
+                aria-describedby={toValidHtmlId(`message-subject-${ID}`)}
                 data-testid="item-checkbox"
             />
             <span

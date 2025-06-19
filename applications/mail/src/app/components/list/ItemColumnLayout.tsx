@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
+import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
@@ -165,12 +166,14 @@ const ItemColumnLayout = ({
                                 </span>
                             )}
                             {conversationMode && <NumMessages className="mr-1 shrink-0" conversation={element} />}
+                            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
                             <span
                                 role="heading"
                                 aria-level={2}
                                 className="inline-block max-w-full mr-1 text-ellipsis"
                                 title={Subject}
                                 data-testid="message-column:subject"
+                                id={toValidHtmlId(`message-subject-${element.ID}`)}
                             >
                                 {subjectContent}
                             </span>
