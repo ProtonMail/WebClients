@@ -46,6 +46,9 @@
       "Add domain": [
         "Pridať doménu"
       ],
+      "Add field": [
+        "Pridať pole"
+      ],
       "Add forwarding mailbox": [
         "Pridať schránku na presmerovanie"
       ],
@@ -454,6 +457,9 @@
       "Reactivate now": [
         "Znovu aktivovať"
       ],
+      "Read More": [
+        "Čítať ďalej"
+      ],
       "Refresh the page": [
         "Obnoviť stránku"
       ],
@@ -571,6 +577,9 @@
       "Show advanced options": [
         "Zobraziť pokročilé možnosti"
       ],
+      "Show Less": [
+        "Zobraziť menej"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Prihlásiť sa pomocou ${ BRAND_NAME }"
       ],
@@ -684,6 +693,107 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Využite ponuku"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 GB zašifrovaného úložiska"
+      ],
+      "Add unlimited credit cards": [
+        "Pridajte neobmedzený počet platobných kariet"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Všetky prémiové funkcie ${ BRAND_NAME } Mail, Pass, VPN, Drive a Calendar"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Zľavy sú založené na štandardných mesačných cenách. Na konci fakturačného cyklu sa vaše predplatné obnoví za štandardnú ročnú sadzbu."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Zdvojnásobte svoje zašifrované úložisko – získajte 1 TB pre všetky svoje dáta"
+      ],
+      "Encrypted password manager": [
+        "Šifrovaný správca hesiel"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Tu je exkluzívny darček na oslavu našej spoločnej cesty."
+      ],
+      "High speed streaming with VPN": [
+        "Vysokorýchlostné streamovanie s VPN"
+      ],
+      "of privacy": [
+        "súkromia"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online súkromie až pre 2 osoby"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online súkromie pre celú vašu rodinu (až pre 6 používateľov)"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Ušetrite veľa na prémiových Drive funkciách s časovo obmedzenou zľavou."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Ušetrite veľa na prémiových Mail funkciách s časovo obmedzenou zľavou."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Ušetrite veľa na prémiových Pass funkciách s časovo obmedzenou zľavou."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Ušetrite veľa na prémiových funkciách VPN s časovo obmedzenou zľavou."
+      ],
+      "Save time with built-in 2FA": [
+        "Ušetrite čas pomocou vstavanej 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Zabezpečený email s neobmedzenými aliasmi"
+      ],
+      "Share passwords easily": [
+        "Zdieľajte heslá s ľahkosťou"
+      ],
+      "thanks to you": [
+        "vďaka vám"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Strojnásobte svoje zašifrované úložisko – získajte 3 TB pre všetky svoje dáta"
+      ],
+      "years": [
+        "roky"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Výročná ponuka"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiace",
+        "${ n } mesiace"
+      ],
+      "/ month": [
+        "/ mesiac"
+      ],
+      "12 months": [
+        "12 mesiacov"
+      ],
+      "15 months": [
+        "15 mesiacov"
+      ],
+      "24 months": [
+        "24 mesiacov"
+      ],
+      "30 months": [
+        "30 mesiacov"
+      ],
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
       ]
     },
     "Browser": {
@@ -1057,6 +1167,9 @@
       "File does not match expected format": [
         "Súbor nezodpovedá očakávanému formátu"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Import trezora „${ vaultData.name }\" zlyhal: ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Importovanie položiek zlyhalo"
       ],
@@ -1170,6 +1283,9 @@
       ],
       "Unsupported 1Password file format": [
         "Nepodporovaný formát súboru 1Password"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Nepodporovaný formát súboru Bitwarden"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aktualizácia trezoru \"${ payload.content.name }\" zlyhala"
@@ -1312,6 +1428,12 @@
         "${ count } zobrazení",
         "${ count } zobrazenia",
         "${ count }/ zobrazení"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } zobrazenie",
+        "${ count }/${ maxReads } zobrazenia",
+        "${ count }/${ maxReads } zobrazení",
+        "${ count }/${ maxReads } zobrazení"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } preposlaný",
@@ -2707,6 +2829,9 @@
       "Catch-All": [
         "Doménový kôš"
       ],
+      "Checkbox": [
+        "Začiarkavacie políčko"
+      ],
       "Choose unlock method": [
         "Vyberte spôsob odomknutia"
       ],
@@ -2779,14 +2904,8 @@
       "Crypto Wallet": [
         "Krypto peňaženka"
       ],
-      "Custom hidden field": [
-        "Vlastné ukryté pole"
-      ],
       "Custom Items": [
         "Vlastné položky"
-      ],
-      "Custom text field": [
-        "Vlastné textové pole"
       ],
       "Database": [
         "Databáza"
@@ -2868,6 +2987,9 @@
       ],
       "Extra email addresses": [
         "Ďalších emailových adries"
+      ],
+      "Extra fields": [
+        "Vlastné polia"
       ],
       "Extra password": [
         "Dodatočné heslo"
@@ -3030,6 +3152,9 @@
       ],
       "Key": [
         "Kľúč"
+      ],
+      "Key fingerprint": [
+        "Identifikátor kľúča"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klávesová skratka: ${ shortcut }"
@@ -4589,9 +4714,6 @@
       "OTP secret or URI is invalid": [
         "Neplatný OTP tajný kľúč alebo URI"
       ],
-      "OTP secret or URI required": [
-        "Vyžaduje sa OTP tajný kľúč alebo URI"
-      ],
       "Section name cannot be empty": [
         "Názov sekcie nemôže byť prázdny"
       ],
@@ -4603,6 +4725,11 @@
       ],
       "URL is invalid": [
         "URL je neplatná"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Presunúť položky do"
       ]
     },
     "Warning": {
@@ -4722,9 +4849,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Pozývanie emailových adries nepatriacich do organizácie nie je povolené."
-      ],
-      "item was imported without custom fields": [
-        "Položka bola importovaná bez vlastných polí"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximálna dĺžka je ${ maxLength } znak",

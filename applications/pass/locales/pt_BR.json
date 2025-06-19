@@ -2648,9 +2648,6 @@
       "Add section": [
         "Adicionar seção"
       ],
-      "Additional data": [
-        "Dados adicionais"
-      ],
       "Additional details": [
         "Detalhes adicionais"
       ],
@@ -2738,6 +2735,9 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Caixa de seleção"
+      ],
       "Choose unlock method": [
         "Escolha o método de desbloqueio"
       ],
@@ -2810,14 +2810,8 @@
       "Crypto Wallet": [
         "Carteira de criptomoedas"
       ],
-      "Custom hidden field": [
-        "Campo oculto personalizado"
-      ],
       "Custom Items": [
         "Itens personalizados"
-      ],
-      "Custom text field": [
-        "Campo de texto personalizado"
       ],
       "Database": [
         "Base de dados"
@@ -3067,6 +3061,9 @@
       ],
       "Key fingerprint": [
         "Chave de impressão digital"
+      ],
+      "Key type": [
+        "Tipo de chave"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atalho de teclado: ${ shortcut }"
@@ -4604,9 +4601,6 @@
       "OTP secret or URI is invalid": [
         "A chave secreta OTP ou o URL não funciona."
       ],
-      "OTP secret or URI required": [
-        "É necessário introduzir uma chave secreta OTP ou um URI."
-      ],
       "Section name cannot be empty": [
         "O nome da seção não pode estar vazio"
       ],
@@ -4738,9 +4732,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Convidar endereços de e-mail de fora da organização não é permitido."
-      ],
-      "item was imported without custom fields": [
-        "itens foram importados sem os campos personalizados"
       ],
       "Maximum length is ${ maxLength } character": [
         "O comprimento máximo é ${ maxLength } carácter",

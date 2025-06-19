@@ -93,9 +93,6 @@
       "Apply": [
         "应用"
       ],
-      "Ask me next time": [
-        "下次询问我"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "每个群组最多只能有 ${ maxContacts } 位联系人"
       ],
@@ -681,9 +678,6 @@
       "Save changes": [
         "保存更改"
       ],
-      "Save preferences": [
-        "保存首选项"
-      ],
       "Search": [
         "搜索"
       ],
@@ -870,6 +864,9 @@
       "View": [
         "查看"
       ],
+      "View ${ pendingCount } invitation": [
+        "查看所有 ${ pendingCount } 个邀请"
+      ],
       "View all reports": [
         "查看所有报告"
       ],
@@ -944,6 +941,137 @@
       ],
       "By leaving now, some events may not be imported": [
         "如果现在退出，某些日程可能无法导入"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "获取优惠"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "200 GB storage": [
+        "200 GB 存储空间"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB 加密存储"
+      ],
+      "Add unlimited credit cards": [
+        "添加无限信用卡"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "包含 ${ BRAND_NAME } Mail、Pass、VPN、Drive 以及 Calendar 的所有高级功能"
+      ],
+      "Block ads, trackers, and malware": [
+        "屏蔽广告、跟踪器和恶意软件"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "折扣基于标准月费。在账单周期结束时，您的订购将按标准年费率续订。"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "双倍加密存储容量 -- 为您的所有数据提供 1 TB 容量"
+      ],
+      "Encrypted password manager": [
+        "加密的密码管理器"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "这是庆祝我们共同前行的一份专属献礼。"
+      ],
+      "High speed streaming with VPN": [
+        "使用 VPN 流畅地观看视频"
+      ],
+      "of privacy": [
+        "隐私守护"
+      ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
+      "Online privacy for up to 2 people": [
+        "最多可容纳 2 人的在线隐私保护"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "与全家人共同守护网络隐私 (最多支持 6 位用户)"
+      ],
+      "Protect up to 10 devices": [
+        "最多可保护 10 台设备"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 Drive 高级功能。"
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 Mail 高级功能。"
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 Pass 高级功能。"
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 VPN 高级功能。"
+      ],
+      "Save time with built-in 2FA": [
+        "使用内置 2FA 来节省时间"
+      ],
+      "Secure email with unlimited aliases": [
+        "不限量的安全邮箱别名"
+      ],
+      "Select any server": [
+        "选择任何服务器"
+      ],
+      "Share passwords easily": [
+        "轻松共享密码"
+      ],
+      "Short @pm.me address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Stream your favorite content": [
+        "播放您最喜欢的视频内容"
+      ],
+      "thanks to you": [
+        "感谢你们"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "三倍加密存储容量 -- 为您的所有数据提供 3 TB 容量"
+      ],
+      "Unlimited folders, labels and filters": [
+        "不限量文件夹、标签和筛选规则"
+      ],
+      "Use your own email domain": [
+        "个性化邮箱域名"
+      ],
+      "years": [
+        " 11 年以来的"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "周年庆优惠"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } 个月"
+      ],
+      "/ month": [
+        "/月"
+      ],
+      "12 months": [
+        "12 个月"
+      ],
+      "15 months": [
+        "15 个月"
+      ],
+      "24 months": [
+        "24 个月"
+      ],
+      "30 months": [
+        "30 个月"
+      ],
+      "for ${ durationDeal }": [
+        "仅限 ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -4214,9 +4342,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "未从 ${ contactGroupName } 组分配的联系人"
       ],
-      "Converting document...": [
-        "正在转换文档..."
-      ],
       "Copy the link to clipboard": [
         "复制链接到剪贴板"
       ],
@@ -4258,9 +4383,6 @@
       ],
       "Creating link to folder": [
         "正在创建文件夹链接"
-      ],
-      "Creating new document...": [
-        "创建新文档..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "根据当前账户等级的剩余有效时间折算返还的余额"
@@ -4379,9 +4501,6 @@
       "Enter your own password (as organization admin).": [
         "请输入你的密码（作为组织管理员）。"
       ],
-      "Error converting document: ${ errorMessage }": [
-        "转换文档时出错：${ errorMessage }"
-      ],
       "Error Syncing": [
         "同步出错"
       ],
@@ -4441,12 +4560,6 @@
       ],
       "Geoblocking": [
         "地理限制"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "通过电子邮件获取添加到您的文档的评论和建议的更新。"
-      ],
-      "Get Notified About Comments": [
-        "获得评论通知"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "前往 ${ DRIVE_APP_NAME }"
@@ -4595,9 +4708,6 @@
       "Low Priority": [
         "较低优先顺序"
       ],
-      "Making a copy...": [
-        "正在复制..."
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 图标"
       ],
@@ -4636,9 +4746,6 @@
       ],
       "No contacts added yet": [
         "尚未添加联系人"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "URL 中未提供文档。返回 ${ DRIVE_APP_NAME } 并选择一个文档。"
       ],
       "No email address": [
         "无邮箱地址"
@@ -4978,9 +5085,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "此收件人已停用端到端加密。要能够向此收件人发送加密电子邮件，该收件人必须重新启用端到端加密。"
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "您输入的 URL 似乎从 Slack 复制错误。从 Slack 复制长链接时，请右键单击链接，然后选择“复制链接”，而不是直接复制截断的 URL 文本。"
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "验证过程将在新页面进行，请先关闭弹出窗口屏蔽插件。"
@@ -5700,9 +5804,6 @@
       "Emails (last month)": [
         "邮件（上个月）"
       ],
-      "Enable email notifications": [
-        "启用电子邮件通知"
-      ],
       "Encrypt emails": [
         "加密电子邮件"
       ],
@@ -5759,9 +5860,6 @@
       ],
       "Import to:": [
         "导入到："
-      ],
-      "Include document name in notification": [
-        "在通知中包含文档名称"
       ],
       "Include message and file name in invite email": [
         "在邀请电子邮件中包含邮件和文件名"
@@ -9805,9 +9903,6 @@
       "Untitled document ${ date }": [
         "无标题文档 ${ date }"
       ],
-      "Untitled spreadsheet ${ date }": [
-        "无标题电子表格 ${ date }"
-      ],
       "Upgrade complete!": [
         "升级完成！"
       ],
@@ -10119,9 +10214,6 @@
       ],
       "Contacts could not be merged": [
         "无法合并联系人"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "过期日期格式不是 MM/YY"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"

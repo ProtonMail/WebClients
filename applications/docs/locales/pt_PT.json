@@ -93,9 +93,6 @@
       "Apply": [
         "Aplicar"
       ],
-      "Ask me next time": [
-        "Pergunte-me da próxima vez"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "É permitido no máximo ${ maxContacts } contacto por grupo de contactos",
         "São permitidos no máximo ${ maxContacts } contactos por grupo de contactos"
@@ -683,9 +680,6 @@
       ],
       "Save changes": [
         "Guardar as alterações"
-      ],
-      "Save preferences": [
-        "Guardar preferências"
       ],
       "Search": [
         "Pesquisar"
@@ -4406,9 +4400,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "O contacto foi desvinculado do grupo ${ contactGroupName }."
       ],
-      "Converting document...": [
-        "A converter o documento..."
-      ],
       "Copy the link to clipboard": [
         "Copiar a ligação para a área de transferência"
       ],
@@ -4452,9 +4443,6 @@
       ],
       "Creating link to folder": [
         "A criar uma ligação para a pasta"
-      ],
-      "Creating new document...": [
-        "A criar um documento novo..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não utilizada no plano anterior da sua subscrição"
@@ -4573,12 +4561,6 @@
       "Enter your own password (as organization admin).": [
         "Introduza a sua palavra-passe (como administrador da organização)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Erro ao converter o documento: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Erro ao carregar o documento: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Erro ao sincronizar"
       ],
@@ -4638,12 +4620,6 @@
       ],
       "Geoblocking": [
         "Bloqueio geográfico"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Receba atualizações por e-mail sobre comentários e sugestões adicionados aos seus documentos."
-      ],
-      "Get Notified About Comments": [
-        "Receber notificações sobre comentários"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Ir para ${ DRIVE_APP_NAME }"
@@ -4793,9 +4769,6 @@
       "Low Priority": [
         "Prioridade baixa"
       ],
-      "Making a copy...": [
-        "A criar uma cópia..."
-      ],
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
       ],
@@ -4835,9 +4808,6 @@
       ],
       "No contacts added yet": [
         "Ainda não adicionou contactos"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Nenhum documento fornecido no URL. Regresse a ${ DRIVE_APP_NAME } e selecione um documento."
       ],
       "No email address": [
         "Sem endereço de e-mail"
@@ -5180,9 +5150,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "O proprietário deste endereço desativou a encriptação ponta-a-ponta. Para poder enviar e-mails encriptados para este endereço, o proprietário deve reativar a encriptação ponta-a-ponta."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "O URL que introduziu parece ter sido copiado incorretamente do Slack. Ao copiar ligações compridas do Slack, clique com o botão direito do rato na ligação, e escolha «Copiar a ligação» em vez de copiar diretamente o texto truncado do URL."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "O processo de verificação abrirá um novo separador do navegador. Desative quaisquer bloqueadores de pop-ups ativos."
@@ -5909,9 +5876,6 @@
       "Emails (last month)": [
         "Emails (mês passado)"
       ],
-      "Enable email notifications": [
-        "Ativar as notificações por e-mail"
-      ],
       "Encrypt emails": [
         "Encriptar os e-mails"
       ],
@@ -5968,9 +5932,6 @@
       ],
       "Import to:": [
         "Importar para:"
-      ],
-      "Include document name in notification": [
-        "Incluir o nome do documento na notificação"
       ],
       "Include message and file name in invite email": [
         "Incluir uma mensagem e o nome do ficheiro no e-mail de convite"
@@ -10114,9 +10075,6 @@
       "Untitled document ${ date }": [
         "Documento sem título ${ date }"
       ],
-      "Untitled spreadsheet ${ date }": [
-        "Folha de cálculo sem título ${ date }"
-      ],
       "Upgrade complete!": [
         "A subscrição foi atualizada."
       ],
@@ -10446,9 +10404,6 @@
       ],
       "Contacts could not be merged": [
         "Não foi possível unir os contactos."
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "A data de expiração não está no formato MM/AA."
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se não se lembra da palavra-passe, é impossível reativar a chave. Podemos ajudar a descartar o alerta, mas no processo perderá permanentemente o acesso a todos os dados encriptados com esta chave."

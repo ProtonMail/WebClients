@@ -1759,9 +1759,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
-      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -2616,14 +2613,8 @@
       "Crypto Wallet": [
         "暗号通貨ウォレット"
       ],
-      "Custom hidden field": [
-        "カスタム非表示フィールド"
-      ],
       "Custom Items": [
         "カスタムアイテム"
-      ],
-      "Custom text field": [
-        "カスタムテキストフィールド"
       ],
       "Database": [
         "データベース"
@@ -4181,9 +4172,6 @@
       "OTP secret or URI is invalid": [
         "OTP シークレットまたは URI が無効です"
       ],
-      "OTP secret or URI required": [
-        "OTP シークレットまたは URI が必要です"
-      ],
       "Section name cannot be empty": [
         "セクション名は空欄にできません"
       ],
@@ -4302,9 +4290,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "組織外のメール アドレスを招待することはできません。"
-      ],
-      "item was imported without custom fields": [
-        "アイテムはカスタムフィールドなしでインポートされました"
       ],
       "Maximum length is ${ maxLength } character": [
         "最大長は ${ maxLength } 文字です"

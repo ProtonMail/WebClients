@@ -1543,9 +1543,6 @@
       "What do I get?": [
         "Ce primesc?"
       ],
-      "Wipe": [
-        "Golire"
-      ],
       "Yes": [
         "Da"
       ],
@@ -2308,6 +2305,23 @@
       ],
       "Working with sensitive data?": [
         "Lucrați cu date confidențiale?"
+      ]
+    },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "Serverul dedicat este deja alocat unei porți de acces. Veți putea achiziționa mai multe servere după ce se termină perioada de probare gratuită.",
+        "Serverele dedicate sunt deja alocate unor porți de acces. Veți putea achiziționa mai multe servere după ce se termină perioada de probare gratuită.",
+        "Serverele dedicate sunt deja alocate unor porți de acces. Veți putea achiziționa mai multe servere după ce se termină perioada de probare gratuită."
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "Perioada de probare gratuită include ${ ipAddresses } server dedicat. Puteți adăuga mai multe servere după ce începe abonamentul complet.",
+        "Perioada de probare gratuită include ${ ipAddresses } servere dedicate. Puteți adăuga mai multe servere după ce începe abonamentul complet.",
+        "Perioada de probare gratuită include ${ ipAddresses } de servere dedicate. Puteți adăuga mai multe servere după ce începe abonamentul complet."
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "Perioada de probare gratuită include ${ maxMembers } licență. Puteți adăuga mai multe licențe după ce începe abonamentul complet.",
+        "Perioada de probare gratuită include ${ maxMembers } licențe. Puteți adăuga mai multe licențe după ce începe abonamentul complet.",
+        "Perioada de probare gratuită include ${ maxMembers } de licențe. Puteți adăuga mai multe licențe după ce începe abonamentul complet."
       ]
     },
     "breadcrumb": {
@@ -4133,15 +4147,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronizați ușor fișierele în cloud de pe desktop și accesați-le de pe dispozitivul mobil."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Activați ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Activați evenimente detaliate și ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
-      ],
-      "Enable detailed events to access these features": [
-        "Activați evenimente detaliate pentru a accesa aceste funcții."
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Încurajați utilizarea autentificării cu doi factori în organizație pentru un plus de securitate."
       ],
@@ -5261,6 +5266,9 @@
       "Failed to process the logo": [
         "Procesarea fișierului pentru logo a eșuat."
       ],
+      "Failed to update detailed monitoring.": [
+        "Actualizarea monitorizării detaliate a eșuat."
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Fișier prea mare. Fișierul trebuie să aibă maxim 30 KiB."
       ],
@@ -5710,8 +5718,8 @@
       ]
     },
     "error": {
-      "Enter an email address": [
-        "Introduceți o adresă de e-mail"
+      "Select users to view their activity": [
+        "Selectare utilizatori pentru a le vedea activitatea."
       ]
     },
     "Error importing calendar": {
@@ -6878,9 +6886,6 @@
       "Actions": [
         "Acțiuni"
       ],
-      "App version": [
-        "Versiune aplicație"
-      ],
       "Best deal": [
         "Cea mai rentabilă"
       ],
@@ -6932,9 +6937,6 @@
       "Permissions": [
         "Permisiuni"
       ],
-      "Protection": [
-        "Protecție"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Economisiți mult la cele mai bune oferte de ${ VPN_APP_NAME }"
       ],
@@ -6958,9 +6960,6 @@
       ],
       "Status": [
         "Stare"
-      ],
-      "Time": [
-        "Timp"
       ],
       "User": [
         "Utilizator"
@@ -7815,6 +7814,9 @@
       "active": [
         "activă"
       ],
+      "Activity monitor": [
+        "Monitorizare activitate"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"${ MAIL_APP_NAME } me\" sau \"Private Message me\"."
       ],
@@ -7999,9 +8001,6 @@
       ],
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Sigur părăsiți acest grup? Dacă îl părăsiți, va trebui să primiți o reinvitare de la administratorul grupului pentru a vă realătura grupului."
-      ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Sigur doriți să ștergeți definitiv toate jurnalele?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Sigur doriți să eliminați drepturile administrative ale acestui utilizator?"
@@ -8299,6 +8298,9 @@
       "Did you know?": [
         "Știați că?"
       ],
+      "Disable detailed events": [
+        "Dezactivare evenimente detaliate."
+      ],
       "Disable recovery by email address": [
         "Dezactivare recuperare cu adresă de e-mail"
       ],
@@ -8445,6 +8447,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Activați reînnoirea automată pentru a vă păstra accesul funcțiile premium."
       ],
+      "Enable detailed events": [
+        "Activare evenimente detaliate"
+      ],
       "Enable email notifications": [
         "Activare notificări pe e-mail"
       ],
@@ -8550,9 +8555,6 @@
       "Event invitations and responses will be sent in this language.": [
         "Invitațiile la evenimente și răspunsurile vor fi trimise în această limbă."
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Evenimentele conțin încercările de autentificare pentru toate serviciile ${ BRAND_NAME } care vă folosesc informațiile de autentificare ${ BRAND_NAME_TWO }."
-      ],
       "Example: ${ spfExample }": [
         "Exemplu: ${ spfExample }"
       ],
@@ -8561,9 +8563,6 @@
       ],
       "expires ${ expirationDate }": [
         "expiră ${ expirationDate }"
-      ],
-      "Failed to fetch logs.": [
-        "Eșuare prelucrare jurnale."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Rapid și eficient. E-mail și calendar chiar de desktop."
@@ -8795,6 +8794,9 @@
       "inactive": [
         "inactivă"
       ],
+      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
+        "Includere adresă IP utilizator, loc și ISP (furnizorul de internet) în jurnalul de evenimente."
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inclusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
@@ -9010,6 +9012,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de programări Calendly într-o filă nouă."
       ],
+      "Loading detailed events current status.": [
+        "Se încarcă starea actuală detaliată a evenimentelor."
+      ],
       "Loading eduGAIN data...": [
         "Se încarcă datele eduGain..."
       ],
@@ -9064,6 +9069,9 @@
       "Monitor accounts": [
         "Monitorizare conturi"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Monitorizați și auditați încercările de autentificare pentru toate serviciile ${ BRAND_NAME } care folosesc informațiile de autentificare ${ BRAND_NAME }."
+      ],
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
       ],
@@ -9090,6 +9098,9 @@
       ],
       "New": [
         "Nou"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Noile date de activitate vor înceta să fie colectate și afișate."
       ],
       "New user invited to organization": [
         "Utilizator nou invitat în organizație."
@@ -9132,9 +9143,6 @@
       ],
       "No label selected": [
         "Nicio etichetă selectată"
-      ],
-      "No logs yet.": [
-        "Încă nu sunt jurnale."
       ],
       "No payment is required at this time.": [
         "Momentan nu este necesară nicio plată."
@@ -9520,9 +9528,6 @@
       "SCIM token active": [
         "Cod SCIM activ"
       ],
-      "Search by an email address to begin": [
-        "Căutați după o adresă de e-mail pentru a începe"
-      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asigurați-vă contul ${ BRAND_NAME }"
       ],
@@ -9665,6 +9670,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Începeți să utilizați versiunea mai scurtă și mai atractivă a adresei de e-mail."
+      ],
+      "Starts on ${ startsOnTime }": [
+        "Începe ${ startsOnTime }"
       ],
       "Stay tuned for future promotions.": [
         "Rămâneți pe fază pentru viitoarele promoții."
@@ -9966,6 +9974,9 @@
       ],
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "Aceasta va deconecta dispozitivul **${ name } (creat la ${ date })** de la contul personal ${ BRAND_NAME }."
+      ],
+      "This will wipe all logs for your organization members.": [
+        "Aceasta va șterge toate jurnalele pentru membrii organizației."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Acest asistent va activa „autentificarea cu doi factori” (A2F) pentru acest cont ${ BRAND_NAME }. A2F va face contul ${ BRAND_NAME_TWO } mai sigur astfel încât vă recomandăm s-o activați."
@@ -10452,9 +10463,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
       ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Puteți activa înregistrarea conectărilor pentru a vedea când a fost accesat contul și de la care IP. Se va înregistra adresa IP care accesează contul, ora și încercările eșuate de accesare."
-      ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Puteți activa secțiunea „Fotografii” din interfață folosind comutatorul de mai jos."
       ],
@@ -10622,6 +10630,9 @@
         "Ați activat redirecționarea pentru ${ MAX_SYNC_PAID_USER } adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
         "Ați activat redirecționarea pentru ${ MAX_SYNC_PAID_USER } de adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una."
       ],
+      "You've reached the limit of 50 users for this filter. Remove one to add another.": [
+        "Ați atins limita de 50 de utilizatori pentru acest filtru. Eliminați unul pentru a adăuga altul."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Reducerea de ${ boldDiscountPercent } pentru ${ boldPlanTitle } a fost aplicată."
       ],
@@ -10675,6 +10686,11 @@
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Perioada de probare gratuită include ${ ownedCount } server dedicat.",
+        "Perioada de probare gratuită include ${ ownedCount } servere dedicate.",
+        "Perioada de probare gratuită include ${ ownedCount } de servere dedicate."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Probarea gratuită a fost convertită cu un abonament pe ${ cycle } luni. Data lui de reînnoire este ${ nextBillingDate }."
@@ -12187,8 +12203,8 @@
       "Search": [
         "Căutare"
       ],
-      "Search by email": [
-        "Caută după e-mail"
+      "Search for a name or email": [
+        "Căutare după nume sau e-mail"
       ],
       "Second password": [
         "Parola secundară"
@@ -12870,15 +12886,77 @@
         "Abonamentul s-a încheiat. ${ cta } și pentru a evita pierderea datelor."
       ]
     },
+    "Log event": {
+      "Account password change": [
+        "Modificare parolă cont."
+      ],
+      "Authentication failure (second factor failed)": [
+        "Autentificare eșuată (al doilea factor a eșuat)."
+      ],
+      "Authentication failure (wrong password)": [
+        "Autentificare eșuată (parolă greșită)."
+      ],
+      "Authentication success": [
+        "Autentificare reușită."
+      ],
+      "Mailbox password change": [
+        "Modificare parolă mesaje."
+      ],
+      "Password reset": [
+        "Resetare parolă"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "Al doilea factor dezactivat (aplicație de autentificare)."
+      ],
+      "Second factor disabled (security key)": [
+        "Al doilea factor dezactivat (cheie de securitate)."
+      ],
+      "Second factor enabled (authenticator app)": [
+        "Al doilea factor activat (aplicație de autentificare)."
+      ],
+      "Second factor enabled (security key)": [
+        "Al doilea factor activat (cheie de securitate)."
+      ],
+      "Sign in blocked (due to abuse)": [
+        "Conectare blocată (datorită abuzurilor)."
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "Conectare eșuată (frază de bază eronată)."
+      ],
+      "Sign in failure (second factor failed)": [
+        "Conectare eșuată (al doilea factor a eșuat)."
+      ],
+      "Sign in failure (wrong password)": [
+        "Conectare eșuată (parolă greșită)."
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Conectare interzisă (datorită abuzurilor)."
+      ],
+      "Sign in success": [
+        "Conectare reușită."
+      ],
+      "Sign in success (awaiting mnemonic)": [
+        "Conectare reușită (se așteaptă fraza de bază)."
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Conectare reușită (se așteaptă al doilea factor)."
+      ],
+      "Sign in success (awaiting verify)": [
+        "Conectare reușită (se așteaptă verificarea)."
+      ],
+      "Sign out": [
+        "Deconectare"
+      ],
+      "Two password mode disabled": [
+        "Mod cu două parole dezactivat."
+      ],
+      "Two password mode enabled": [
+        "Mod cu două parole activat."
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Activare ${ reason }"
-      ],
-      "Enable detailed events": [
-        "Activare evenimente detaliate"
-      ],
-      "Enable security events": [
-        "Activare evenimente de securitate"
       ]
     },
     "Mail import summary": {
@@ -13055,6 +13133,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conectați domeniul personal la ${ BRAND_NAME } pentru a configura adrese de e-mail personale (de ex. eu@companiamea.com). Asistentul nostru automat vă va ghida în acest proces."
+      ],
+      "View account-related events across your organization.": [
+        "Vizualizați evenimentele legate de cont din cadrul organizației."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
@@ -15318,6 +15399,9 @@
       "Buy now": [
         "Cumpărare"
       ],
+      "Contact us": [
+        "Contactați-ne"
+      ],
       "Continue": [
         "Continuare"
       ],
@@ -16258,6 +16342,26 @@
       ],
       "Work": [
         "Serviciu"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "Blocat"
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Device verification": [
+        "Verificare dispozitiv"
+      ],
+      "Ok": [
+        "OK"
+      ],
+      "Ownership verification": [
+        "Verificare proprietar"
+      ],
+      "Unknown": [
+        "Necunoscută."
       ]
     },
     "Recovery Email": {
@@ -17475,6 +17579,9 @@
       ]
     },
     "signup: Action": {
+      "Contact us": [
+        "Contactați-ne"
+      ],
       "Request trial": [
         "Solicitați o încercare"
       ]
@@ -19314,6 +19421,9 @@
       "Activate user": [
         "Activare utilizator"
       ],
+      "Activity monitor": [
+        "Monitorizare activitate"
+      ],
       "Add ${ totalServerCount } server?": [
         "Adăugați ${ totalServerCount } server?",
         "Adăugați ${ totalServerCount } servere?",
@@ -19463,6 +19573,18 @@
       "Cancel subscription?": [
         "Anulare abonament?"
       ],
+      "Cannot add Gateway": [
+        "Nu se pot adăuga porți de acces"
+      ],
+      "Cannot add licenses": [
+        "Nu se mai pot adăuga licențe"
+      ],
+      "Cannot add more users": [
+        "Nu se mai pot adăuga utilizatori"
+      ],
+      "Cannot add servers": [
+        "Nu se pot adăuga servere"
+      ],
       "Card verification": [
         "Verificare card"
       ],
@@ -19501,9 +19623,6 @@
       ],
       "Choose user affiliations": [
         "Alegeți afilierea utilizatorilor"
-      ],
-      "Clear": [
-        "Golire"
       ],
       "Click a value in the table to use it as filter": [
         "Faceți clic pe o valoare din tabel pentru a o folosi ca filtru"
@@ -19687,9 +19806,6 @@
       "Delete label?": [
         "Ștergere etichetă?"
       ],
-      "Delete logs": [
-        "Ştergere jurnale"
-      ],
       "Delete organization logo?": [
         "Ștergeți logoul organizației?"
       ],
@@ -19721,6 +19837,9 @@
       ],
       "Device name": [
         "Nume dispozitiv"
+      ],
+      "Disable activity monitor?": [
+        "Dezactivați monitorizarea activității?"
       ],
       "Disable two-factor authentication": [
         "Dezactivare autentificare cu doi factori"
@@ -20658,6 +20777,9 @@
       "What would you like to import?": [
         "Ce ați dori să importați?"
       ],
+      "Wipe all logs?": [
+        "Goliți jurnalul?"
+      ],
       "WireGuard configuration": [
         "Configurare WireGuard"
       ],
@@ -20837,12 +20959,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Permite adăugarea de legături web spre conferințe video la invitațiile din calendar."
       ],
-      "An approximate location of the IP address": [
-        "Un loc aproximativ al adresei IP."
-      ],
-      "Any protection applied to suspicious activity": [
-        "Tipul de protecție aplicat activităților suspecte."
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."
       ],
@@ -20864,8 +20980,8 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Ștergeți mesajele din gunoi și nedorite după 30 de zile. Activând ștergerea automată, mesajele aflate deja în folderul «Gunoi»/«Nedorite» vor avea o dată de ștergere în funcție de data mutării lor acolo."
       ],
-      "Device information such as operating system": [
-        "Informații despre dispozitiv cum ar fi sistemul de operare."
+      "Device name and app version": [
+        "Nume dispozitiv și versiune aplicație"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Numele afișat pentru entitatea din baza de date eduGAIN"
@@ -20884,9 +21000,6 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Activare/Dezactivare notificări pe desktop și pe mobil pentru „${ labelName }”"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "Activarea evenimentelor detaliate înregistrează adresa IP pentru fiecare eveniment."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adresa URL a punctului final de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)"
@@ -20918,9 +21031,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de asistență, îl puteți folosi aici."
       ],
-      "IP address (Internet Service Provider)": [
-        "Adresa IP (Furnizor de servicii de internet)"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Membrii care nu folosesc A2F vor primi un e-mail prin care li se va cere să îl activeze cât mai curând posibil. Utilizatorii cu autentificare unică nu vor primi acest mesajul."
       ],
@@ -20929,6 +21039,9 @@
       ],
       "Not all information listed here was exposed for all users.": [
         "Nu toate informațiile afișate aici au fost expuse pentru toți utilizatorii."
+      ],
+      "Origin IP address and Internet Service Provider (ISP)": [
+        "Adresa IP de origine și furnizorul de servicii de internet (ISP)."
       ],
       "Remove metadata from images to protect your privacy.": [
         "Eliminați metadatele din imagini pentru a vă proteja confidențialitatea."
@@ -20968,9 +21081,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Furnizorul de internet al adresei IP."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Noul ciclu de abonament începe la ${ formattedTime }."
@@ -21025,6 +21135,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Folosire bare de derulare implicite din navigator. De obicei sunt mai mari și mai ușor de folosit."
+      ],
+      "User's approximate location (based on their IP address)": [
+        "Un loc aproximativ al utilizatorului (bazat pe adresa sa IP)."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Utilizatorii vor vedea logoul dvs. în loc de pictograma ${ BRAND_NAME } atunci când sunt conectați în aplicațiile noastre web."
@@ -21818,12 +21931,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ștergând acest număr de telefon, nu veți mai putea să vă recuperați contul."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Prin dezactivarea monitorizării evenimentelor de securitate, vă veți șterge și întregul istoric. Sigur doriți să o dezactivați?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Data de expirare nu este în format LL/AA."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Dacă anulați această importare, nu o veți putea relua. ${ BRAND_NAME } a salvat tot progresul în cont. Continuați anularea?"

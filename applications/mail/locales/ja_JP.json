@@ -1344,6 +1344,9 @@
       "Stop generating result": [
         "結果の生成を停止"
       ],
+      "Stop marking as read": [
+        "既読としてマークしない"
+      ],
       "Strikethrough": [
         "取り消し線"
       ],
@@ -1694,6 +1697,48 @@
       ],
       "New email": [
         "新しいメール"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "Add unlimited credit cards": [
+        "無制限のクレジットカードを追加する"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "割引は標準の月額料金に基づいています。支払いサイクルの終わりに、お客様のサブスクリプションは標準の年間料金で更新されます。"
+      ],
+      "Online document editor": [
+        "オンライン文書エディタ"
+      ],
+      "Online privacy for up to 2 people": [
+        "最大2人までのオンラインプライバシー"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムDrive機能をお得にご利用いただけます。"
+      ],
+      "Save time with built-in 2FA": [
+        "内蔵の2要素認証で時間を節約"
+      ],
+      "Share passwords easily": [
+        "パスワードを簡単に共有"
+      ],
+      "thanks to you": [
+        "ありがとうございます"
+      ],
+      "years": [
+        "年"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "記念セール"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } ヶ月"
+      ],
+      "15 months": [
+        "15 か月"
       ]
     },
     "Apps dropdown": {
@@ -6046,6 +6091,9 @@
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } 件の添付ファイル"
       ],
+      "${ receivedMessagesCount } email last month": [
+        "先月受信した${ receivedMessagesCount }件のメール"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
       ],
@@ -6102,6 +6150,9 @@
       ],
       "(No Recipient)": [
         "(宛先なし)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "${ labelName } 内で **${ total }** 件見つかりました"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**自動接続**: デバイスをオンにするとすぐにVPNに接続します。"
@@ -6231,6 +6282,9 @@
       ],
       "An unknown public key has been detected for this recipient.": [
         "この受信者の不明な公開鍵が検出されました。"
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "お客様に代わって、登録解除メールが送信されます。"
       ],
       "and": [
         "と"
@@ -6741,6 +6795,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "キャンセルすると、${ planTitle } サブスクリプションは ${ expiryDate } に期限切れになっても更新されません。"
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "もし気持ちが変わったとしても、いつでも再び登録することができます。お別れするのは残念ですが！"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
@@ -8107,6 +8164,9 @@
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "お客様の無料トライアルは月額サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
+      ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "あなたのハードウェアはローカルでの執筆アシスタントの実行をサポートしていません。サーバーでの実行をお試しください。"
       ],
@@ -8690,6 +8750,9 @@
       "Enable desktop notifications": [
         "デスクトップ通知を有効にする"
       ],
+      "Enable filter": [
+        "フィルターを有効にする"
+      ],
       "Encrypt emails": [
         "メールを暗号化"
       ],
@@ -8800,6 +8863,12 @@
       ],
       "Mark as": [
         "としてマークする"
+      ],
+      "Marked ${ unreadCount } message as read.": [
+        "${ unreadCount }件のメッセージを既読にしました。"
+      ],
+      "Message:": [
+        "メッセージ:"
       ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } へ移動"
@@ -8986,6 +9055,9 @@
       ],
       "System information": [
         "システム情報"
+      ],
+      "The filter is disabled. ${ enableButton }": [
+        "フィルターが無効です: ${ enableButton }"
       ],
       "Theme": [
         "テーマ"
@@ -10239,6 +10311,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
       ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "ファイルの保存、同期、共有を簡単に行える 200 GB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "専用セキュアゲートウェイによる高度なネットワークセキュリティとアクセス管理"
       ],
@@ -10615,6 +10690,9 @@
       ],
       "Require 2FA": [
         "2段階認証が必要"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
     "Notification": {
@@ -10932,6 +11010,26 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "設定でいつでもテーマを変更できます"
+      ]
+    },
+    "Onboarding Trial": {
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "${ trialEndsOnFormatted } まで無料のビジネスセキュリティ機能をお楽しみいただけます。"
+      ],
+      "help center": [
+        "ヘルプセンター"
+      ],
+      "Once your full subscription starts...": [
+        "有料サブスクリプションが開始されると…"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ]
     },
     "Online accounts": {
@@ -12379,6 +12477,9 @@
       ],
       "${ n } VPN connection per user": [
         "1 ユーザーあたり ${ n } 件の VPN 接続"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "ユーザーごとに ${ n } 台のデバイスでのVPN接続"
       ]
     },
     "Subscription change warning": {
@@ -13023,6 +13124,9 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } が削除されました"
+      ],
+      "The filter is active again": [
+        "フィルターが再度有効になりました"
       ]
     },
     "Suffix": {
@@ -13214,6 +13318,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } は現在アクティブです"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } 件のメッセージ"
       ],
       "${ unreads } unread message": [
         "${ unreads } 件の未読メッセージ"
@@ -14115,6 +14222,9 @@
       "Your exposed information": [
         "あなたの公開情報"
       ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "無料トライアルは${ trialDurationFormatted }日後に終了します"
+      ],
       "Your free trial has ended": [
         "無料トライアルが終了しました"
       ],
@@ -14371,9 +14481,6 @@
       ],
       "Contacts could not be merged": [
         "連絡先を統合できませんでした"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "有効期限が MM/YY の形式ではありません"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "パスワードを覚えていない場合は、鍵を再度有効にすることはできません。 わたしたちはアラートバナーを解除するお手伝いはできますが、その鍵で暗号化されたすべてのデータへのアクセスを永久に失うことになります。"

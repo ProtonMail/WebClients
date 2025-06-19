@@ -93,9 +93,6 @@
       "Apply": [
         "적용"
       ],
-      "Ask me next time": [
-        "다음에 내게 묻기"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "연락처 그룹 당 최대 ${ maxContacts }개 연락처가 허용됩니다"
       ],
@@ -680,9 +677,6 @@
       ],
       "Save changes": [
         "변경 사항 저장"
-      ],
-      "Save preferences": [
-        "환경 설정 저장"
       ],
       "Search": [
         "검색"
@@ -4342,9 +4336,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "연락처가 ${ contactGroupName } 그룹에 할당 취소되었습니다"
       ],
-      "Converting document...": [
-        "문서 변환 중..."
-      ],
       "Copy the link to clipboard": [
         "복사한 링크 붙이기"
       ],
@@ -4386,9 +4377,6 @@
       ],
       "Creating link to folder": [
         "폴더 링크를 만드는 중"
-      ],
-      "Creating new document...": [
-        "새로운 문서를 생성하는 중..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -4507,12 +4495,6 @@
       "Enter your own password (as organization admin).": [
         "자신의 비밀번호 입력 (조직 관리자와 같음)"
       ],
-      "Error converting document: ${ errorMessage }": [
-        "문서 변환 오류: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "문서 불러오기 오류: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "동기화 오류"
       ],
@@ -4572,12 +4554,6 @@
       ],
       "Geoblocking": [
         "차단된 콘텐츠"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "문서에 추가된 댓글 및 제안 사항에 대한 이메일 업데이트를 받아보세요."
-      ],
-      "Get Notified About Comments": [
-        "댓글 알림 받기"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }로 이동"
@@ -4726,9 +4702,6 @@
       "Low Priority": [
         "중요도 낮음"
       ],
-      "Making a copy...": [
-        "복사본 만드는 중..."
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
       ],
@@ -4767,9 +4740,6 @@
       ],
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "URL에 제공된 문서가 없습니다. ${ DRIVE_APP_NAME }로 돌아가서 문서를 선택하세요."
       ],
       "No email address": [
         "이메일 주소 없음"
@@ -5109,9 +5079,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "입력된 URL이 Slack에서 잘못 복사된 것으로 추정됩니다. Slack에서 긴 링크를 복사할 때 링크를 마우스 오른쪽 버튼으로 클릭한 다음 잘린 URL 텍스트를 직접 복사하는 대신 \"링크 복사\"를 선택하세요."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
@@ -5831,9 +5798,6 @@
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
-      "Enable email notifications": [
-        "이메일 알림 활성화"
-      ],
       "Encrypt emails": [
         "이메일 암호화"
       ],
@@ -5890,9 +5854,6 @@
       ],
       "Import to:": [
         "가져오기:"
-      ],
-      "Include document name in notification": [
-        "알림에 문서 이름 포함"
       ],
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
@@ -9936,9 +9897,6 @@
       "Untitled document ${ date }": [
         "무제 문서 ${ date }"
       ],
-      "Untitled spreadsheet ${ date }": [
-        "무제 스프레드시트 ${ date }"
-      ],
       "Upgrade complete!": [
         "업그레이드 완료!"
       ],
@@ -10250,9 +10208,6 @@
       ],
       "Contacts could not be merged": [
         "연락처를 병합할 수 없습니다"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "만료 일자가 MM/YY(월/년) 포맷으로 되어 있지 않습니다."
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "비밀번호가 기억나지 않으시다면, 키를 재활성화 하는것이 불가능 합니다. 당사에서 경고 배너를 무시할 수 있도록 도와드릴 수 있으나, 처리 중 해당 키의 암호화된 모든 데이터를 잃게 됩니다."

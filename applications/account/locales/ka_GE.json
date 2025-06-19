@@ -1543,9 +1543,6 @@
       "What do I get?": [
         "რას მივიღებ?"
       ],
-      "Wipe": [
-        "წაშლა"
-      ],
       "Yes": [
         "დიახ"
       ],
@@ -3971,15 +3968,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "ადვილად დაასინქრონიზეთ ფაილები ღრუბლიდან სახლის კომპიუტერამდე და იქონიეთ მათზე წვდომა თქვენი მობილურიდან."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "ამ ფუნქციებთან წვდომისთვის ჩართეთ ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "ამ ფუნქციებთან წვდომისთვის ჩართეთ ${ PROTON_SENTINEL_NAME } და დეტალური მოვლენები"
-      ],
-      "Enable detailed events to access these features": [
-        "ამ ფუნქციებთან წვდომისთვის ჩართეთ დეტალური მოვლენები"
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "წაახალისეთ 2FA-ის გამოყენება თქვენს ორგანიზაციაში დამატებითი უსაფრთხოებისთვის."
       ],
@@ -5495,11 +5483,6 @@
         "საფოსტო კოდი აუცილებელია"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "შეიყვანეთ ელფოსტის მისამართი"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "თქვენი ფაილის ${ formattedFilename } წაკითხვისას მოხდა შეცდომა. არასწორი ფაილის ფორმატი."
@@ -6648,9 +6631,6 @@
       "Actions": [
         "ქმედებები"
       ],
-      "App version": [
-        "აპის ვერსია"
-      ],
       "Best deal": [
         "საუკეთესო შემოთავაზება"
       ],
@@ -6702,9 +6682,6 @@
       "Permissions": [
         "წვდომები"
       ],
-      "Protection": [
-        "დაცვა"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "დაზოგეთ კარგად ${ VPN_APP_NAME }-ის სატარიფო გეგმებით"
       ],
@@ -6728,9 +6705,6 @@
       ],
       "Status": [
         "სტატუსი"
-      ],
-      "Time": [
-        "დრო"
       ],
       "User": [
         "მომხმარებელი"
@@ -7704,9 +7678,6 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, გახვიდეთ ჯგუფიდან? თუ გახვალთ, თავიდან შესასვლელად ჯგუფის ადმინისტრატორის მოსაწვევი დაგჭირდებათ."
       ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "დარწმუნებული ბრძანდებით, რომ ჟურნალის სამუდამოდ წაშლა გნებავთ?"
-      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, ამ მომხმარებელს ადმინისტრირების პრივილეგიები წაართვათ?"
       ],
@@ -8246,9 +8217,6 @@
       "Event invitations and responses will be sent in this language.": [
         "მოვლენების მოსაწვევებისა და პასუხები გაგზავნილი იქნება ამ ენით."
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "მოვლენები შეიცავს ავთენტიკაციის მცდელობებს ${ BRAND_NAME }-ის სერვისებთან, სადაც ${ BRAND_NAME_TWO }-ის მომხმარებელს და პაროლს იყენებთ."
-      ],
       "Example: ${ spfExample }": [
         "მაგ: ${ spfExample }"
       ],
@@ -8257,9 +8225,6 @@
       ],
       "expires ${ expirationDate }": [
         "ვადა ${ expirationDate }"
-      ],
-      "Failed to fetch logs.": [
-        "ჟურნალის მოთხოვნის შეცდომა."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "სწრაფი და ფოკუსის მქონე. ელფოსტა და კალენდარი პირდაპირ თქვენს სამუშაო მაგიდაზე."
@@ -8818,9 +8783,6 @@
       "No label selected": [
         "ჭდე მონიშნული არაა"
       ],
-      "No logs yet.": [
-        "ჟურნალში ჩანაწერები ჯერ არაა."
-      ],
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
       ],
@@ -9195,9 +9157,6 @@
       ],
       "SCIM token active": [
         "SCIM კოდი აქტიურია"
-      ],
-      "Search by an email address to begin": [
-        "დასაწყებად მოძებნეთ ელფოსტის მისამართი"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "დაიცავით თქვენი ${ BRAND_NAME }-ის ანგარიში"
@@ -10093,9 +10052,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "იმისათვის, რომ დარწმუნდეთ, რომ ეს გადასამოწმებლად სწორი ელფოსტის მისამართია, ის, შეგიძლიათ, ერთხელ ჩაასწოროთ."
-      ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "თქვენ შეგიძლიათ, ჩართოთ ავტორიზაციის ჟურნალი, რომ ნახოთ, როდის შედიან თქვენს ანგარიშში და რომელი IP-დან. ჩვენ ჩავიწერთ IP მისამართს, რომლიდანაც წვდომა განხორციელდა და დროს, ისევე, როგორც წარუმატებელ მცდელობებს."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "ფოტოების სექციის ჩართვა ინტერფეისიდან შეგიძლიათ, ქვემო მხარეს არსებული გადასართველით."
@@ -11777,9 +11733,6 @@
       "Search": [
         "ძებნა"
       ],
-      "Search by email": [
-        "ძებნა ელფოსტით"
-      ],
       "Second password": [
         "მეორე პაროლი"
       ],
@@ -12455,12 +12408,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason }-ის ჩართვა"
-      ],
-      "Enable detailed events": [
-        "დეტალური მოვლენების ჩართვა"
-      ],
-      "Enable security events": [
-        "უსაფრთხოების მოვლენების ჩართვა"
       ]
     },
     "Mail import summary": {
@@ -18882,9 +18829,6 @@
       "Choose user affiliations": [
         "აირჩიეთ მომხმარებლის წევრობა"
       ],
-      "Clear": [
-        "გასუფთავება"
-      ],
       "Click a value in the table to use it as filter": [
         "დააწკაპუნეთ მნიშვნელობაზე ცხრილში, მისი ფილტრის სახით გამოსაყენებლად"
       ],
@@ -19065,9 +19009,6 @@
       ],
       "Delete label?": [
         "წავშალო ჭდე?"
-      ],
-      "Delete logs": [
-        "ჟურნალის წაშლა"
       ],
       "Delete organization logo?": [
         "წავშალო ორგანიზაციის ლოგო?"
@@ -20211,12 +20152,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "საშუალებას გაძლევთ, თქვენი კალენდრის მოსაწვევებში ვიდეოკონფერენციების ბმულები უპრობლემოდ ჩაამატოთ."
       ],
-      "An approximate location of the IP address": [
-        "IP მისამართის დაახლოებითი მდებარეობა"
-      ],
-      "Any protection applied to suspicious activity": [
-        "ნებისმიერი დაცვა, რომელიც საეჭვო აქტივობაზე გადატარდება"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "ავტომატურად გადაერთეთ რჩეულ თემებს შორის დღისა და ღამისთვის თქვენი სისტემის დღისა და ღამის რეჟიმებთან ერთად"
       ],
@@ -20238,9 +20173,6 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "წაშალეთ შეტყობინებები ნაგვის ყუთიდან და სპამიდან 30 დღეში. ავტომატური ჩართვის წაშლა შეტყობინებებს, რომლებიც უკვე სპამში/ნაგვის ყუთშია, წაშლის ვადას მათთვის შესაბამის საქაღალდეში გადატანის თარიღს დაუსვამს."
       ],
-      "Device information such as operating system": [
-        "მოწყობილობის ინფორმაცია, როგორიცაა ოპერაციული სისტემა"
-      ],
       "Display name for the entity in the eduGAIN database": [
         "სახელის ჩვენება ობექტისთვის eduGAIN მონაცემთა ბაზაში"
       ],
@@ -20258,9 +20190,6 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "კომპიუტერსა და მობილურზე გაფრთხილებების ჩართ/გამორთ ჭდისთვის \"${ labelName }\""
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "დეტალური მოვლენების ჩართვა თითოეული მოვლენის IP მისამართს ჩაიწერს"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ბოლოწერტილის ბმული იდენტიფიკატორის მომწოდებლისგან (მაგ: https://idp.example.com/sso/saml)"
@@ -20291,9 +20220,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "თუ შეიძინეთ სასაჩუქრე ბარათი ან ის ჩვენი მხარდაჭერის გუნდისგან მიიღეთ, ის აქ შეგიძლიათ, შეიყვანოთ."
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP მისამართი (ინტერნეტპროვაიდერი)"
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "შეტყობინებები მონახაზებისა და გაგზავნილი ელფოსტების საქაღალდიდან მაინც გამოჩნდებიან თავის ადგილას, მიუხედავად იმისა, გადაიტანთ თუ არა მათ სხვა საქაღალდეში."
@@ -20339,9 +20265,6 @@
       ],
       "The import will start with the most recent messages.": [
         "შემოტანა უახლესი შეყობინებებიდან დაიწყება."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "ამ IP მისამართის ინტერნეტ-პროვაიდერი"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "გამოწერის ახალი ციკლის დაწყების დრო: ${ formattedTime }"
@@ -21141,12 +21064,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "ამ ტელეფონის ნომრის წაშლის შემთხვევაში თქვენს ანგარიშს ვეღარ აღადგენთ."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "უსაფრთხოების მოვლენების გათიშვა თქვენს ისტორიას სრულად გაასუფთავებს. მართლა გნებავთ ამის გათიშვა?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "ვადის ამოწურვის თარიღი თთ/წწ ფორმატში არაა"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "შემოტანას თუ გააუქმებთ, მისი გაგრძელება შეუძლებელი იქნება. ${ BRAND_NAME }-მა ყველაფერი, რაც უკვე გააკეთა, თქვენს ანგარიშში შეინახა. მაინც გნებავთ გაუქმება?"

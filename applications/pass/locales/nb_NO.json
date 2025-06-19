@@ -691,6 +691,105 @@
         "Passordbehandleren din er ikke her? Be om den."
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Skaff deg tilbudet"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 GB kryptert lagring"
+      ],
+      "Add unlimited credit cards": [
+        "Legg til ubegrenset antall kredittkort"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle premium funksjoner i ${ BRAND_NAME } Mail, Pass, VPN, Drive og Calendar"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Rabatter er basert på standard månedlig pris. Ved slutten av faktureringssyklusen vil abonnementet ditt fornyes til standard årlig sats."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Doble den krypterte lagringen din – få 1 TB for alle dataene dine"
+      ],
+      "Encrypted password manager": [
+        "Kryptert passordbehandler"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Her er en eksklusiv gave for å feire reisen vår sammen."
+      ],
+      "High speed streaming with VPN": [
+        "Strømming med høy hastighet med VPN"
+      ],
+      "of privacy": [
+        "respekt for privatlivet"
+      ],
+      "Online privacy for up to 2 people": [
+        "Personvern på nett for opptil 2 personer"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Personvern på nett for hele familien din (opptil 6 brukere)"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Spar stort på premium Drive-funksjoner med en tidsbegrenset rabatt."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Spar stort på premium Mail-funksjoner med tidsbegrenset rabatt."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Spar mye på premium Pass-funksjoner med en tidsbegrenset rabatt."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Spar mye på premium VPN-funksjoner med en tidsbegrenset rabatt."
+      ],
+      "Save time with built-in 2FA": [
+        "Spar tid med innebygd 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Sikker e-post med ubegrenset antall alias"
+      ],
+      "Share passwords easily": [
+        "Enkel passorddeling"
+      ],
+      "thanks to you": [
+        "takket være deg"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Tredoble den krypterte lagringsplassen og få 3 TB for all dataene dine."
+      ],
+      "years": [
+        "år"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumstilbud"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "/ month": [
+        "/måned"
+      ],
+      "12 months": [
+        "12 måneder"
+      ],
+      "15 months": [
+        "15 måneder"
+      ],
+      "24 months": [
+        "24 måneder"
+      ],
+      "30 months": [
+        "30 måneder"
+      ],
+      "for ${ durationDeal }": [
+        "for ${ durationDeal }"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME }-skrivebordsapplikasjon"
@@ -1056,6 +1155,9 @@
       "File does not match expected format": [
         "Fil samsvarer ikke med forventet format"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Import mislyktes for hvelv \"${ vaultData.name }\": ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Import av elementer mislyktes"
       ],
@@ -1169,6 +1271,9 @@
       ],
       "Unsupported 1Password file format": [
         "Ikke støttet 1Password-filformat"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Ikke støttet Bitwarden filformat"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Oppdatering av hvelv \"${ payload.content.name }\" mislyktes."
@@ -2630,6 +2735,9 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Avmerkingsboks"
+      ],
       "Choose unlock method": [
         "Velg opplåsingsmetode"
       ],
@@ -2702,14 +2810,8 @@
       "Crypto Wallet": [
         "Krypto-wallet"
       ],
-      "Custom hidden field": [
-        "Tilpasset skjult felt"
-      ],
       "Custom Items": [
         "Tilpassede elementer"
-      ],
-      "Custom text field": [
-        "Tilpasset tekstfelt"
       ],
       "Database": [
         "Database"
@@ -2791,6 +2893,9 @@
       ],
       "Extra email addresses": [
         "Ekstra e-postadresser"
+      ],
+      "Extra fields": [
+        "Ekstra felt"
       ],
       "Extra password": [
         "Ekstra passord"
@@ -2953,6 +3058,9 @@
       ],
       "Key": [
         "Nøkkel"
+      ],
+      "Key fingerprint": [
+        "Nøkkelfingeravtrykk"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastatursnarvei: ${ shortcut }"
@@ -4490,9 +4598,6 @@
       "OTP secret or URI is invalid": [
         "OTP-hemmelighet eller URI er ugyldig"
       ],
-      "OTP secret or URI required": [
-        "OTP-hemmelighet eller URI kreves"
-      ],
       "Section name cannot be empty": [
         "Seksjonsnavn kan ikke være tomt"
       ],
@@ -4504,6 +4609,11 @@
       ],
       "URL is invalid": [
         "Nettadressen er ugyldig"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Flytt elementer til"
       ]
     },
     "Warning": {
@@ -4619,9 +4729,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Det er ikke tillatt å invitere e-postadresser utenfor organisasjonen."
-      ],
-      "item was imported without custom fields": [
-        "elementet ble importert uten egendefinerte felt"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksimal lengde er ${ maxLength } tegn",

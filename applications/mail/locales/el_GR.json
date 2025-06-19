@@ -1150,6 +1150,9 @@
       "Save": [
         "Αποθήκευση"
       ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Αποθήκευση στο ${ DRIVE_APP_NAME }"
+      ],
       "Saving${ ellipsis }": [
         "Γίνεται αποθήκευση${ ellipsis }"
       ],
@@ -4898,14 +4901,14 @@
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονός.",
-        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονότα."
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερη από ${ MAX_IMPORT_EVENTS } εκδήλωση.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερες από ${ MAX_IMPORT_EVENTS } εκδηλώσεις."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Το αρχείο σας ${ formattedFilename } έχει μια μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "Το αρχείο σας ${ formattedFilename } δεν έχει περιέχει κανένα συμβάν για εισαγωγή."
+        "Το αρχείο σας ${ formattedFilename } δεν έχει περιέχει καμία εκδήλωση για εισαγωγή."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Το αρχείο σας ${ formattedFilename } είναι άδειο."
@@ -11826,7 +11829,7 @@
         "Θέμα"
       ],
       "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Πείτε στον βοηθό γραφής τι να γράψει. Παράδειγμα: \"Ανακοίνωσε προσεχείς εκδηλώσεις σε ενημερωτικό δελτίο\""
+        "Πείτε στον βοηθό γραφής τι να γράψει. Παράδειγμα: \"Ανακοίνωσε προσεχή συμβάντα σε ενημερωτικό δελτίο\""
       ],
       "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
         "Πείτε στον βοηθό γραφής τι να γράψει. Παράδειγμα: \"Ακύρωσε τη συνδρομή μου στο γυμναστήριο\""
@@ -12075,7 +12078,7 @@
     },
     "Security Center - Action": {
       "View events": [
-        "Προβολή εκδηλώσεων"
+        "Προβολή συμβάντων"
       ]
     },
     "Security Center - Info": {
@@ -12968,7 +12971,7 @@
         "Το ${ planName } προσφέρει χώρο αποθήκευσης ${ planMaxSpace } ανά χρήστη για μηνύματα ηλεκτρονικού ταχυδρομείου, συνημμένα, εκδηλώσεις και αρχεία. Δικαιούστε επίσης ετήσια μπόνους αποθήκευσης."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
-        "Το ${ planName } προσφέρει χώρο αποθήκευσης ${ planMaxSpace } ανά χρήστη για μηνύματα ηλεκτρονικού ταχυδρομείου, συνημμένα, συμβάντα, αρχεία και κωδικούς πρόσβασης. Δικαιούστε επίσης ετήσια μπόνους αποθήκευσης."
+        "Το ${ planName } προσφέρει χώρο αποθήκευσης ${ planMaxSpace } ανά χρήστη για μηνύματα ηλεκτρονικού ταχυδρομείου, συνημμένα, εκδηλώσεις, αρχεία και κωδικούς πρόσβασης. Δικαιούστε επίσης ετήσια μπόνους αποθήκευσης."
       ],
       "${ planNumberOfCalendars } calendar per user": [
         "${ planNumberOfCalendars } ημερολόγιο ανά χρήστη",
@@ -14961,9 +14964,6 @@
       ],
       "Contacts could not be merged": [
         "Δεν ήταν δυνατή η συγχώνευση των επαφών"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Η ημερομηνία λήξης δεν έχει τη μορφή ΜΜ/ΕΕ"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."

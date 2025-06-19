@@ -93,9 +93,6 @@
       "Apply": [
         "Anvend"
       ],
-      "Ask me next time": [
-        "Spør meg neste gang"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "På det meste ${ maxContacts } kontakt er tillatt per kontaktgruppe.",
         "På det meste ${ maxContacts } kontakter er tillatt per kontaktgruppe."
@@ -684,9 +681,6 @@
       "Save changes": [
         "Lagre endringer"
       ],
-      "Save preferences": [
-        "Lagre preferanser"
-      ],
       "Search": [
         "Søk"
       ],
@@ -873,6 +867,10 @@
       "View": [
         "Vis"
       ],
+      "View ${ pendingCount } invitation": [
+        "Vis ${ pendingCount } invitasjon",
+        "Vis alle ${ pendingCount } invitasjoner"
+      ],
       "View all reports": [
         "Vis alle rapporter"
       ],
@@ -952,6 +950,138 @@
       ],
       "By leaving now, some events may not be imported": [
         "Ved å forlate nå kan det hende at enkelte hendelser ikke blir importert."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Skaff deg tilbudet"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "200 GB storage": [
+        "200 GB lagringsplass"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB kryptert lagring"
+      ],
+      "Add unlimited credit cards": [
+        "Legg til ubegrenset antall kredittkort"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle premium funksjoner i ${ BRAND_NAME } Mail, Pass, VPN, Drive og Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkér annonser, sporere og skadelig programvare"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Rabatter er basert på standard månedlig pris. Ved slutten av faktureringssyklusen vil abonnementet ditt fornyes til standard årlig sats."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Doble den krypterte lagringen din – få 1 TB for alle dataene dine"
+      ],
+      "Encrypted password manager": [
+        "Kryptert passordbehandler"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Her er en eksklusiv gave for å feire reisen vår sammen."
+      ],
+      "High speed streaming with VPN": [
+        "Strømming med høy hastighet med VPN"
+      ],
+      "of privacy": [
+        "respekt for privatlivet"
+      ],
+      "Online document editor": [
+        "Dokumentredigering på nett"
+      ],
+      "Online privacy for up to 2 people": [
+        "Personvern på nett for opptil 2 personer"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Personvern på nett for hele familien din (opptil 6 brukere)"
+      ],
+      "Protect up to 10 devices": [
+        "Beskytt opptil 10 enheter"
+      ],
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Spar stort på premium Drive-funksjoner med en tidsbegrenset rabatt."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Spar stort på premium Mail-funksjoner med tidsbegrenset rabatt."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Spar mye på premium Pass-funksjoner med en tidsbegrenset rabatt."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Spar mye på premium VPN-funksjoner med en tidsbegrenset rabatt."
+      ],
+      "Save time with built-in 2FA": [
+        "Spar tid med innebygd 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Sikker e-post med ubegrenset antall alias"
+      ],
+      "Select any server": [
+        "Velg hvilken som helst tjener"
+      ],
+      "Share passwords easily": [
+        "Enkel passorddeling"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me adresse"
+      ],
+      "Stream your favorite content": [
+        "Strøm favorittinnholdet ditt"
+      ],
+      "thanks to you": [
+        "takket være deg"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Tredoble den krypterte lagringsplassen og få 3 TB for all dataene dine."
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrenset antall mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Bruk ditt eget e-postdomene"
+      ],
+      "years": [
+        "år"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumstilbud"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "/ month": [
+        "/måned"
+      ],
+      "12 months": [
+        "12 måneder"
+      ],
+      "15 months": [
+        "15 måneder"
+      ],
+      "24 months": [
+        "24 måneder"
+      ],
+      "30 months": [
+        "30 måneder"
+      ],
+      "for ${ durationDeal }": [
+        "for ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -4270,9 +4400,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt fjernet fra gruppe ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Konverterer dokument..."
-      ],
       "Copy the link to clipboard": [
         "Kopier koblingen til utklippstavlen"
       ],
@@ -4316,9 +4443,6 @@
       ],
       "Creating link to folder": [
         "Oppretter kobling til mappe"
-      ],
-      "Creating new document...": [
-        "Oppretter nytt dokument ..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kreditt for den ubrukte delen av ditt forrige planabonnement"
@@ -4437,9 +4561,6 @@
       "Enter your own password (as organization admin).": [
         "Skriv inn ditt eget passord (som organisasjonsadministrator)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Feil ved konvertering av dokument: ${ errorMessage }"
-      ],
       "Error Syncing": [
         "Feil ved synkronisering"
       ],
@@ -4499,12 +4620,6 @@
       ],
       "Geoblocking": [
         "Geoblokkering"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Få e-postoppdateringer for kommentarer og forslag som er lagt til i dokumentene dine."
-      ],
-      "Get Notified About Comments": [
-        "Bli varslet om kommentarer"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Gå til ${ DRIVE_APP_NAME }"
@@ -4654,9 +4769,6 @@
       "Low Priority": [
         "Lav prioritet"
       ],
-      "Making a copy...": [
-        "Lager en kopi …"
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
@@ -4696,9 +4808,6 @@
       ],
       "No contacts added yet": [
         "Ingen kontakter er lagt til enda"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Ingen dokument oppgitt i URL. Gå tilbake til ${ DRIVE_APP_NAME } og velg et dokument."
       ],
       "No email address": [
         "Ingen e-postadresse"
@@ -5041,9 +5150,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Nettadressen du skrev inn, ser ut til å være kopiert feil fra Slack. Når du kopierer lange koblinger fra Slack, høyreklikker du på koblingen og velger \"Kopier kobling\" i stedet for å kopiere den avkortede URL-teksten direkte."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifiseringsprosessen vil åpne en ny nettleserfane. Deaktiver alle aktive blokkeringer av sprettoppvinduer."
@@ -5770,9 +5876,6 @@
       "Emails (last month)": [
         "E-poster (siste måned)"
       ],
-      "Enable email notifications": [
-        "Aktiver e-postvarsler"
-      ],
       "Encrypt emails": [
         "Krypter e-poster"
       ],
@@ -5829,9 +5932,6 @@
       ],
       "Import to:": [
         "Importer til:"
-      ],
-      "Include document name in notification": [
-        "Inkluder dokumentnavn i varsel"
       ],
       "Include message and file name in invite email": [
         "Inkluder melding og filnavn i invitasjons-e-post"
@@ -10032,9 +10132,6 @@
       "Untitled document ${ date }": [
         "Dokument uten tittel ${ date }"
       ],
-      "Untitled spreadsheet ${ date }": [
-        "Regneark uten tittel ${ date }"
-      ],
       "Upgrade complete!": [
         "Oppgradering fullført!"
       ],
@@ -10364,9 +10461,6 @@
       ],
       "Contacts could not be merged": [
         "Kontakene kunne ikke slås sammen"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Utløpsdato er ikke i formatet MM/ÅÅ"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Hvis du ikke husker passordet ditt, er det umulig å aktivere nøkkelen på nytt. Vi kan hjelpe deg med å avvise varselbanneret, men i prosessen vil du permanent miste tilgangen til alle dataene som er kryptert med den nøkkelen."

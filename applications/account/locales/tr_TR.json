@@ -1543,9 +1543,6 @@
       "What do I get?": [
         "Ne alacağım?"
       ],
-      "Wipe": [
-        "Yok et"
-      ],
       "Yes": [
         "Evet"
       ],
@@ -1834,6 +1831,30 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Ofis dışındayım ve e-postama erişimim kısıtlı."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Ödeme ayrıntıları"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde her ${ cycle } ayda bir otomatik olarak yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate } tarihinde"
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Deneme süresinden sonra ödenecek tutar"
+      ],
+      "Amount due now": [
+        "Şimdi ödenecek tutar"
       ]
     },
     "Badge for domain": {
@@ -3988,15 +4009,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Bilgisayarınızdaki dosyaları bulutla kolayca eşitleyin ve mobil aygıtınızdan erişin."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Bu özelliklere erişmek için ${ PROTON_SENTINEL_NAME } özelliğini açın"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Bu özelliklere erişmek için ayrıntılı etkinlikler ve ${ PROTON_SENTINEL_NAME } özelliklerini açın"
-      ],
-      "Enable detailed events to access these features": [
-        "Bu özelliklere erişmek için ayrıntılı etkinlikler özelliğini açın"
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Ek güvenlik için kuruluşunuzda iki adımlı doğrulamanın kullanılmasını sağlayın."
       ],
@@ -5559,11 +5571,6 @@
         "Posta kodunun yazılması zorunludur"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "Bir e-posta adresi yazın"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
@@ -6712,9 +6719,6 @@
       "Actions": [
         "İşlemler"
       ],
-      "App version": [
-        "Uygulama sürümü"
-      ],
       "Best deal": [
         "En iyi teklif"
       ],
@@ -6766,9 +6770,6 @@
       "Permissions": [
         "İzinler"
       ],
-      "Protection": [
-        "Koruma"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "En iyi ${ VPN_APP_NAME } fırsatlarıyla büyük indirim kazanın"
       ],
@@ -6792,9 +6793,6 @@
       ],
       "Status": [
         "Durum"
-      ],
-      "Time": [
-        "Zaman"
       ],
       "User": [
         "Kullanıcı"
@@ -7788,9 +7786,6 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Bu gruptan ayrılmak istediğinize emin misiniz? Ayrılırsanız, yeniden katılmanız için grup yöneticisi tarafından yeniden davet edilmeniz gerekir."
       ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Tüm günlük kayıtlarınızı silmek istediğinize emin misiniz?"
-      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Bu kullanıcının yönetici yetkilerini kaldırmak istediğinize emin misiniz?"
       ],
@@ -8333,9 +8328,6 @@
       "Event invitations and responses will be sent in this language.": [
         "Etkinlik davetleri ve yanıtları bu dilde gönderilir."
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Olay kayıtlarında, ${ BRAND_NAME_TWO } kimlik doğrulama bilgilerinizi kullanan tüm ${ BRAND_NAME } hizmetlerinin kimlik doğrulama girişimleri bulunur."
-      ],
       "Example: ${ spfExample }": [
         "Örnek: ${ spfExample }"
       ],
@@ -8344,9 +8336,6 @@
       ],
       "expires ${ expirationDate }": [
         "${ expirationDate } tarihinde geçersiz olacak"
-      ],
-      "Failed to fetch logs.": [
-        "Günlük kayıtları alınamadı."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Hızlı ve odaklanmış. E-posta ve takvim, doğrudan bilgisayarınızda."
@@ -8914,9 +8903,6 @@
       "No label selected": [
         "Herhangi bir etiket seçilmemiş"
       ],
-      "No logs yet.": [
-        "Henüz bir günlük kaydı yok."
-      ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
       ],
@@ -9291,9 +9277,6 @@
       ],
       "SCIM token active": [
         "SCIM kodu etkin"
-      ],
-      "Search by an email address to begin": [
-        "Başlamak için bir e-posta adresi ile arayın"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabınızın güvenliğini sağlayın"
@@ -10213,9 +10196,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
-      ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Hesabınıza ne zaman ve hangi IP adresinden erişildiğini görmek için kimlik doğrulama günlüğünü açabilirsiniz. Başarısız oturum açma girişimlerinin yanında hesaba erişen IP adresini ve saatini de kaydedeceğiz."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Arayüzde aşağıdaki anahtarı kullanarak Fotoğraflar bölümünü açabilirsiniz."
@@ -11933,9 +11913,6 @@
       "Search": [
         "Ara"
       ],
-      "Search by email": [
-        "E-posta ile ara"
-      ],
       "Second password": [
         "İkinci parola"
       ],
@@ -12614,12 +12591,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } özelliğini aç"
-      ],
-      "Enable detailed events": [
-        "Ayrıntılı etkinlikler özelliğini aç"
-      ],
-      "Enable security events": [
-        "Güvenlik etkinlikleri özelliğini aç"
       ]
     },
     "Mail import summary": {
@@ -19113,9 +19084,6 @@
       "Choose user affiliations": [
         "Kullanıcı ilişkilerini seçin"
       ],
-      "Clear": [
-        "Temizle"
-      ],
       "Click a value in the table to use it as filter": [
         "Tablodan süzmek istediğiniz değere tıklayın"
       ],
@@ -19296,9 +19264,6 @@
       ],
       "Delete label?": [
         "Etiket silinsin mi?"
-      ],
-      "Delete logs": [
-        "Günlük kayıtlarını sil"
       ],
       "Delete organization logo?": [
         "Kuruluş logosu silinsin mi?"
@@ -20442,12 +20407,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Takvim davetlerinize kolayca görüntülü görüşme bağlantıları eklemenizi sağlar."
       ],
-      "An approximate location of the IP address": [
-        "IP adresinin yaklaşık konumu"
-      ],
-      "Any protection applied to suspicious activity": [
-        "Şüpheli etkinliğe uygulanan herhangi bir koruma"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sisteminizin gündüz ve gece durumuna uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
       ],
@@ -20469,9 +20428,6 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Çöp ve istenmeyen kutularındaki iletileri 30 gün durduktan sonra silebilirsiniz. Otomatik silmeyi açtığınızda, çöp ya da istenmeyen kutusundaki iletiler için, o kutuya kondukları tarihe göre bir silme tarihi belirlenir."
       ],
-      "Device information such as operating system": [
-        "İşletim sistemi gibi aygıt bilgileri"
-      ],
       "Display name for the entity in the eduGAIN database": [
         "Varlığın eduGAIN veri tabanında görüntülenecek adı"
       ],
@@ -20489,9 +20445,6 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "\"${ labelName }\" için bilgisayar ve mobil bildirimlerini aç/kapat"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "Ayrıntılı etkinlikler özelliği açıldığında, her etkinliğin IP adresi kaydedilir."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)"
@@ -20522,9 +20475,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP adresi (internet hizmeti sağlayıcı)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "İki adımlı doğrulama kullanmayan üyelere, bunu en kısa sürede açmaları için bir e-posta gönderilecek. Bu bildirim e-postası, tek oturum açma kullanıcılarına gönderilmeyecek."
@@ -20573,9 +20523,6 @@
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "IP adresinin internet hizmeti sağlayıcısı"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
@@ -21381,12 +21328,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Bu telefon numarasını silerseniz, hesabınızı kurtaramazsınız."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Güvenlik etkinliklerini izleme özelliğini kapattığınızda, tüm geçmişinizi de temizlemiş olursunuz. Bu özelliği kapatmak istediğinize emin misiniz?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Geçerlilik süresi AA/YY biçiminde değil"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Bu içe aktarma işlemini iptal ederseniz, daha sonra sürdüremezsiniz. ${ BRAND_NAME }, tüm ilerlemeyi hesabınıza kaydetti. Yine de işlemi iptal etmek istiyor musunuz?"
