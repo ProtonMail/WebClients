@@ -4,23 +4,24 @@ import { getLocalStorageQuota } from '@proton/pass/utils/dom/storage';
 import debounce from '@proton/utils/debounce';
 
 export type LogStorageData = { logs: string };
+const LOG_STORAGE_KEY = 'logs';
 
 export const createLogStore = <T extends LogStorageData>(storage: AnyStorage<T>) => {
     const buffer: string[] = [];
 
     const clear = async () => {
         buffer.length = 0;
-        void storage.clear();
+        void storage.removeItem(LOG_STORAGE_KEY);
     };
 
     /** Reads the logs from storage. If parsing the
      * logs fails, clears the log storage key */
     const read = async (): Promise<string[]> => {
         try {
-            const logs = await storage.getItem('logs');
+            const logs = await storage.getItem(LOG_STORAGE_KEY);
             return typeof logs === 'string' ? [...buffer, ...JSON.parse(logs)] : buffer;
         } catch {
-            void storage.removeItem('logs');
+            void storage.removeItem(LOG_STORAGE_KEY);
             return buffer;
         }
     };
@@ -33,7 +34,7 @@ export const createLogStore = <T extends LogStorageData>(storage: AnyStorage<T>)
         const max = Math.min(maxLogLinesLength, MAX_LOG_STORAGE_LINES);
 
         const logs = (await read()).slice(0, max);
-        void storage.setItem('logs', JSON.stringify(logs));
+        void storage.setItem(LOG_STORAGE_KEY, JSON.stringify(logs));
         buffer.length = 0;
     }, 5_000);
 
