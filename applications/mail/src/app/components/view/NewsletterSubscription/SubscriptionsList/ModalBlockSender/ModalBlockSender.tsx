@@ -17,15 +17,7 @@ import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscr
 import { getUnsubscribeData } from '../../helper';
 import { NewsletterSubscriptionAction, type PropsWithNewsletterSubscription } from '../../interface';
 import { useNewsletterSubscriptionTelemetry } from '../../useNewsletterSubscriptionTelemetry';
-import { ModalCheckboxWithLabel } from './ModalSharedComponents';
-
-type CheckboxState = {
-    trash: boolean;
-    archive: boolean;
-    read: boolean;
-    block: boolean;
-    applyToFuture: boolean;
-};
+import { ModalCheckboxWithLabel, ModalSharedCheckboxes } from './ModalSharedComponents';
 
 export const ModalBlockSender = ({ subscription, ...props }: PropsWithNewsletterSubscription & ModalProps) => {
     const dispatch = useMailDispatch();
@@ -36,7 +28,7 @@ export const ModalBlockSender = ({ subscription, ...props }: PropsWithNewsletter
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
-    const [checkboxes, setCheckboxes] = useState<CheckboxState>({
+    const [checkboxes, setCheckboxes] = useState<Record<string, boolean>>({
         trash: false,
         archive: false,
         read: false,
@@ -79,19 +71,6 @@ export const ModalBlockSender = ({ subscription, ...props }: PropsWithNewsletter
         props?.onClose?.();
     };
 
-    const handleCheckboxChange = (name: keyof CheckboxState) => {
-        setCheckboxes((prev) => ({
-            ...prev,
-            [name]: !prev[name],
-        }));
-    };
-
-    const actionCheckboxes = [
-        { key: 'trash' as const, label: c('Info').t`Trash messages` },
-        { key: 'archive' as const, label: c('Info').t`Archive messages` },
-        { key: 'read' as const, label: c('Info').t`Mark all as read` },
-    ];
-
     return (
         <Prompt
             {...props}
@@ -107,15 +86,7 @@ export const ModalBlockSender = ({ subscription, ...props }: PropsWithNewsletter
             <hr className="bg-weak" />
             <p className="m-0 mb-4 text-sm color-weak">{c('Label').t`Choose what to do instead`}</p>
 
-            {actionCheckboxes.map(({ key, label }) => (
-                <ModalCheckboxWithLabel
-                    key={key}
-                    label={label}
-                    id={key}
-                    checked={checkboxes[key]}
-                    onChange={() => handleCheckboxChange(key)}
-                />
-            ))}
+            <ModalSharedCheckboxes checkboxes={checkboxes} setCheckboxes={setCheckboxes} />
 
             <hr className="bg-weak" />
 
@@ -123,14 +94,24 @@ export const ModalBlockSender = ({ subscription, ...props }: PropsWithNewsletter
                 label={c('Info').t`Block sender`}
                 id="block"
                 checked={checkboxes.block}
-                onChange={() => handleCheckboxChange('block')}
+                onChange={() => {
+                    setCheckboxes((prev) => ({
+                        ...prev,
+                        block: !prev.block,
+                    }));
+                }}
             />
 
             <ModalCheckboxWithLabel
                 label={c('Info').t`Apply to future messages`}
                 id="applyFuture"
                 checked={checkboxes.applyToFuture}
-                onChange={() => handleCheckboxChange('applyToFuture')}
+                onChange={() => {
+                    setCheckboxes((prev) => ({
+                        ...prev,
+                        applyToFuture: !prev.applyToFuture,
+                    }));
+                }}
                 disabled={checkboxes.block}
                 labelClassName={checkboxes.block ? 'color-weak' : ''}
             />
