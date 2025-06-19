@@ -1507,9 +1507,6 @@
       "What do I get?": [
         "何が入手できますか？"
       ],
-      "Wipe": [
-        "すべて削除"
-      ],
       "Yes": [
         "はい"
       ],
@@ -1696,6 +1693,48 @@
       ],
       "New email": [
         "新しいメール"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "Add unlimited credit cards": [
+        "無制限のクレジットカードを追加する"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "割引は標準の月額料金に基づいています。支払いサイクルの終わりに、お客様のサブスクリプションは標準の年間料金で更新されます。"
+      ],
+      "Online document editor": [
+        "オンライン文書エディタ"
+      ],
+      "Online privacy for up to 2 people": [
+        "最大2人までのオンラインプライバシー"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムDrive機能をお得にご利用いただけます。"
+      ],
+      "Save time with built-in 2FA": [
+        "内蔵の2要素認証で時間を節約"
+      ],
+      "Share passwords easily": [
+        "パスワードを簡単に共有"
+      ],
+      "thanks to you": [
+        "ありがとうございます"
+      ],
+      "years": [
+        "年"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "記念セール"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } ヶ月"
+      ],
+      "15 months": [
+        "15 か月"
       ]
     },
     "app-switcher": {
@@ -3912,15 +3951,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "デスクトップからクラウドにファイルを簡単に同期し、モバイルデバイスからアクセスできます。"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "これらの機能にアクセスするには ${ PROTON_SENTINEL_NAME } を有効にしてください"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "これらの機能にアクセスするには、詳細イベントと ${ PROTON_SENTINEL_NAME } を有効にしてください"
-      ],
-      "Enable detailed events to access these features": [
-        "それらの機能にアクセスするためにイベントの詳細を有効にする"
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "セキュリティを強化するために、組織内で2要素認証の使用を推奨します。"
       ],
@@ -5475,11 +5505,6 @@
         "郵便番号は必須です"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "メールアドレスを入力してください"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。不正なファイル形式です。"
@@ -6612,9 +6637,6 @@
       "Actions": [
         "操作"
       ],
-      "App version": [
-        "アプリのバージョン"
-      ],
       "Best deal": [
         "最高の取引"
       ],
@@ -6663,9 +6685,6 @@
       "Permissions": [
         "権限"
       ],
-      "Protection": [
-        "保護"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "大幅に節約して最高の${ VPN_APP_NAME }の取引を手に入れよう"
       ],
@@ -6689,9 +6708,6 @@
       ],
       "Status": [
         "状態"
-      ],
-      "Time": [
-        "日時"
       ],
       "User": [
         "ユーザー"
@@ -7644,9 +7660,6 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "本当にこのグループから離れますか？もし離れた場合、再度参加するためにはグループ管理者から再度招待を受ける必要があります。"
       ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "すべてのログを完全に削除してよろしいですか?"
-      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "このユーザーから管理者権限を削除してもよろしいですか？"
       ],
@@ -8181,9 +8194,6 @@
       "Event invitations and responses will be sent in this language.": [
         "予定への招待と返信はこの言語で送信されます"
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "イベントには、${ BRAND_NAME_TWO } 認証情報を使用するすべての ${ BRAND_NAME } サービスの認証試行が含まれます。"
-      ],
       "Example: ${ spfExample }": [
         "例: ${ spfExample }"
       ],
@@ -8192,9 +8202,6 @@
       ],
       "expires ${ expirationDate }": [
         "有効期限 ${ expirationDate }"
-      ],
-      "Failed to fetch logs.": [
-        "ログの読み込みに失敗しました。"
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "速くて集中力できる。メールとカレンダーをデスクトップ上で。"
@@ -8342,6 +8349,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "キャンセルすると、${ planTitle } サブスクリプションは ${ expiryDate } に期限切れになっても更新されません。"
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "もし気持ちが変わったとしても、いつでも再び登録することができます。お別れするのは残念ですが！"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
@@ -8757,9 +8767,6 @@
       "No label selected": [
         "ラベルが選択されていません"
       ],
-      "No logs yet.": [
-        "ログがありません。"
-      ],
       "No payment is required at this time.": [
         "現時点での支払いは必要ありません。"
       ],
@@ -9128,9 +9135,6 @@
       ],
       "SCIM token active": [
         "SCIMトークンが有効"
-      ],
-      "Search by an email address to begin": [
-        "始める前にメールアドレスで検索"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを保護する"
@@ -10038,9 +10042,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "確認のための正しいメールアドレスを確認するために、一度編集することができます。"
       ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "いつアカウントにアクセスされたか、どのIPからアクセスされたかを見る認証ログを有効にできます。アカウントにアクセスするIPアドレスとその時刻、ならびに失敗した試行を記録します。"
-      ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "写真セクションを有効にするには、以下のトグルを使用してインターフェースから設定できます。"
       ],
@@ -10244,6 +10245,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "お客様の無料トライアルは月額サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts } からのインポートが一時的に遅延しています。"
@@ -11717,9 +11721,6 @@
       "Search": [
         "検索"
       ],
-      "Search by email": [
-        "メールアドレスで検索"
-      ],
       "Second password": [
         "セカンドパスワード"
       ],
@@ -12387,12 +12388,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } を有効にする"
-      ],
-      "Enable detailed events": [
-        "詳細イベントを有効にする"
-      ],
-      "Enable security events": [
-        "セキュリティイベントを有効にする"
       ]
     },
     "Mail import summary": {
@@ -13430,6 +13425,9 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* 30 か月のサブスクリプション その他のサブスクリプションのオプションはチェックアウト時に選択できます。"
       ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "ファイルの保存、同期、共有を簡単に行える 200 GB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "専用セキュアゲートウェイによる高度なネットワークセキュリティとアクセス管理"
       ],
@@ -13890,6 +13888,9 @@
       ],
       "Require 2FA": [
         "2段階認証が必要"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
     "news": {
@@ -14244,6 +14245,26 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "利用開始の前に、表示名を設定してください。あなたがメール送信した人や予定に招待した人、ファイルを共有した人に表示されます。"
+      ]
+    },
+    "Onboarding Trial": {
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "${ trialEndsOnFormatted } まで無料のビジネスセキュリティ機能をお楽しみいただけます。"
+      ],
+      "help center": [
+        "ヘルプセンター"
+      ],
+      "Once your full subscription starts...": [
+        "有料サブスクリプションが開始されると…"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ]
     },
     "Option": {
@@ -17548,6 +17569,9 @@
       ],
       "High-speed VPN on ${ maxVpn } device": [
         "${ maxVpn } 台のデバイスでの高速 VPN"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "ユーザーごとに ${ n } 台のデバイスでのVPN接続"
       ]
     },
     "Subscription change warning": {
@@ -18705,9 +18729,6 @@
       "Choose user affiliations": [
         "ユーザーの所属を選ぶ"
       ],
-      "Clear": [
-        "消去"
-      ],
       "Click a value in the table to use it as filter": [
         "フィルターとして使うにはテーブル内の値をクリックしてください"
       ],
@@ -18887,9 +18908,6 @@
       ],
       "Delete label?": [
         "ラベルを削除しますか？"
-      ],
-      "Delete logs": [
-        "ログの削除"
       ],
       "Delete organization logo?": [
         "組織のロゴを削除しますか?"
@@ -19875,6 +19893,9 @@
       "Your exposed information": [
         "あなたの公開情報"
       ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "無料トライアルは${ trialDurationFormatted }日後に終了します"
+      ],
       "Your plan": [
         "現在のプラン"
       ],
@@ -20022,12 +20043,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "カレンダーの招待状にシームレスにビデオ会議のリンクを追加できるようにします。"
       ],
-      "An approximate location of the IP address": [
-        "IPアドレスのおおよその位置"
-      ],
-      "Any protection applied to suspicious activity": [
-        "疑わしいアクティビティに適用される保護"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "システムの昼夜モードに同期して、昼と夜の好みのテーマを自動的に切り替えます"
       ],
@@ -20049,9 +20064,6 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "30 日後にごみ箱とスパム メッセージを削除します。 自動削除をオンにすると、すでにごみ箱/スパムに入っているメッセージには、そこに移動された日付に基づいて削除日が設定されます。"
       ],
-      "Device information such as operating system": [
-        "オペレーティングシステムなどのデバイス情報"
-      ],
       "Display name for the entity in the eduGAIN database": [
         "EduGAINデータベース内のエンティティの表示名"
       ],
@@ -20069,9 +20081,6 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "「${ labelName }」のデスクトップおよびモバイル通知を有効/無効にする"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "詳細イベントを有効にすると、各イベントの IP アドレスが記録されます。"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ユーザー情報プロバイダーからのエンドポイントURL(例：https://idp.example.com/sso/saml)"
@@ -20102,9 +20111,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "ギフトコードを購入もしくはサポートチームから受け取った場合、こちらに入力してください。"
-      ],
-      "IP address (Internet Service Provider)": [
-        "IPアドレス(インターネットサービスプロバイダー)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "2要素認証を使用しないメンバーには、できるだけ早く有効にするように求めるメールが届きます。 シングルサインオンユーザーはメール通知を受信しません。"
@@ -20153,9 +20159,6 @@
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
-      ],
-      "The Internet Service Provider of the IP address": [
-        "IPアドレスのインターネットサービスプロバイダ"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新しいサブスクリプション サイクルは ${ formattedTime } に始まります"
@@ -20939,12 +20942,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "この電話番号を削除すると、今後あなたのアカウントを回復することができなくなります。"
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "セキュリティイベントのモニタリングを無効にすると、すべての履歴が消去されます。無効にしてよろしいですか？"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "有効期限が MM/YY の形式ではありません"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "このインポートをキャンセルすると、後で再開することはできません。${ BRAND_NAME } は進行状況をすべてアカウントに保存しました。それでもキャンセルしますか？"

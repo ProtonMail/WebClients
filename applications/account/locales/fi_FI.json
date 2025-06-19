@@ -1516,9 +1516,6 @@
       "What do I get?": [
         "Mitä saan?"
       ],
-      "Wipe": [
-        "Tyhjennä"
-      ],
       "Yes": [
         "Kyllä"
       ],
@@ -3987,15 +3984,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronoi tiedostot helposti pilveen työpöydältäsi ja käytä niitä mobiililaitteellasi."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Käytä näitä ominaisuuksia ottamalla ${ PROTON_SENTINEL_NAME } käyttöön"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Käytä näitä ominaisuuksia ottamalla yksityiskohtaiset tapahtumat ja ${ PROTON_SENTINEL_NAME } käyttöön"
-      ],
-      "Enable detailed events to access these features": [
-        "Käytä näitä ominaisuuksia ottamalla yksityiskohtaiset tapahtumat käyttöön"
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Kannusta kaksivaiheisen tunnistautumisen käyttöä organisaatiossasi turvallisuuden parantamiseksi."
       ],
@@ -5484,11 +5472,6 @@
         "Postinumero vaaditaan"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "Syötä sähköpostiosoite"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Virhe luettaessa tiedostoa \"${ formattedFilename }\". Väärä tiedostomuoto."
@@ -6625,9 +6608,6 @@
       "Actions": [
         "Toiminnot"
       ],
-      "App version": [
-        "Sovellusversio"
-      ],
       "Best deal": [
         "Paras tarjous"
       ],
@@ -6679,9 +6659,6 @@
       "Permissions": [
         "Käyttöoikeudet"
       ],
-      "Protection": [
-        "Suojaus"
-      ],
       "Select your deal": [
         "Valitse tarjouksesi"
       ],
@@ -6702,9 +6679,6 @@
       ],
       "Status": [
         "Tila"
-      ],
-      "Time": [
-        "Aika"
       ],
       "User": [
         "Käyttäjä"
@@ -7686,9 +7660,6 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Haluatko varmasti poistua ryhmästä? Jos poistut ja haluat myöhemmin palata, on ryhmän ylläpitäjän kutsuttava sinut uudelleen."
       ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Haluatko varmasti poistaa kaikki lokitiedot pysyvästi?"
-      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Haluatko varmasti poistaa ylläpito-oikeudet käyttäjältä?"
       ],
@@ -8222,9 +8193,6 @@
       "Event invitations and responses will be sent in this language.": [
         "Tapahtumakutsut ja -vastaukset lähetetään tällä kielellä."
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Tapahtumiin sisältyvät tunnistautumisyritykset kaikkiin ${ BRAND_NAME }-tunnuksiasi käyttäviin ${ BRAND_NAME_TWO }-palveluihin."
-      ],
       "Example: ${ spfExample }": [
         "Esimerkki: ${ spfExample }"
       ],
@@ -8233,9 +8201,6 @@
       ],
       "expires ${ expirationDate }": [
         "erääntyy ${ expirationDate }"
-      ],
-      "Failed to fetch logs.": [
-        "Lokien nouto epäonnistui."
       ],
       "Featured in": [
         "Esittelyssä"
@@ -8794,9 +8759,6 @@
       "No label selected": [
         "Tunnistetta ei valittu"
       ],
-      "No logs yet.": [
-        "Lokeja ei vielä ole."
-      ],
       "No payment is required at this time.": [
         "Maksua ei nyt vaadita."
       ],
@@ -9162,9 +9124,6 @@
       ],
       "SCIM token active": [
         "SCIM-tunniste käytössä"
-      ],
-      "Search by an email address to begin": [
-        "Etsi sähköpostiosoitteella aloittaaksesi"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Suojaa ${ BRAND_NAME }-tilisi"
@@ -10063,9 +10022,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Voit muokata tätä kerran varmistaaksesi sähköpostiosoitteen olevan vahvistusta varten oikea."
-      ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Voit ottaa todennuksen lokituksen käyttöön nähdäksesi, milloin tiliäsi käytetään, ja mistä IP-osoitteista. Tallennamme tilin käytön IP-osoitteen ja kellonajan, sekä epäonnistuneet yritykset."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Voit ottaa Kuvat-osion käyttöön käyttöliittymän alla olevalla painikkeella."
@@ -11741,9 +11697,6 @@
       "Search": [
         "Haku"
       ],
-      "Search by email": [
-        "Hae sähköpostilla"
-      ],
       "Second password": [
         "Toinen salasana"
       ],
@@ -12416,12 +12369,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ota ${ reason } käyttöön"
-      ],
-      "Enable detailed events": [
-        "Käytä yksityiskohtaisia tapahtumatietoja"
-      ],
-      "Enable security events": [
-        "Käytä suojaustapahtumia"
       ]
     },
     "Mail import summary": {
@@ -18718,9 +18665,6 @@
       "Choose user affiliations": [
         "Valitse käyttäjäyhteydet"
       ],
-      "Clear": [
-        "Tyhjennä"
-      ],
       "Click a value in the table to use it as filter": [
         "Klikkaa taulukon arvoa käyttääksesi sitä suodattimena."
       ],
@@ -18898,9 +18842,6 @@
       ],
       "Delete label?": [
         "Poistetaanko tunniste?"
-      ],
-      "Delete logs": [
-        "Poista lokitiedot"
       ],
       "Delete organization logo?": [
         "Poistetaanko organisaation logo?"
@@ -20031,12 +19972,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Sallii videoneuvottelulinkkien saumattoman lisäämisen kalenterikutsuihin."
       ],
-      "An approximate location of the IP address": [
-        "IP-osoitteen arvioitu sijainti"
-      ],
-      "Any protection applied to suspicious activity": [
-        "Epäilyttävään toimintaan kohdistetut suojaustoimenpiteet"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
@@ -20058,9 +19993,6 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Poista roskakorin ja roskapostin viestit 30 päivän kuluttua. Automaattisen poiston käyttöönotto asettaa roskakorissa/roskapostissa jo olevien viestien poistopäivän niiden siirtopäivän perusteella."
       ],
-      "Device information such as operating system": [
-        "Muun muassa käyttöjärjestelmän kaltaisia tietoja käytetystä laitteesta"
-      ],
       "Display name for the entity in the eduGAIN database": [
         "Entiteetin näyttönimi eduGAIN-tietokannassa"
       ],
@@ -20075,9 +20007,6 @@
       ],
       "Enable/disable desktop and mobile notifications": [
         "Ota työpöytä- ja mobiili-ilmoitukset käyttöön/poista ne käytöstä"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "Yksityiskohtaisten tapahtumatietojen käyttöönotto tallentaa kunkin tapahtuman IP-osoitteen."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Identiteetintarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
@@ -20108,9 +20037,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP-osoite (Internet-palveluntarjoaja)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Jäsenet, jotka eivät käytä 2FA:ta, saavat sähköpostin, jossa heitä pyydetään ottamaan se käyttöön mahdollisimman pian. Kertakirjautumisen käyttäjät eivät saa sähköpostimuistutusta."
@@ -20159,9 +20085,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Tuonti alkaa viimeisimmistä viesteistä."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "IP-osoitteen Internet-palveluntarjoaja"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Uusi tilausjakso alkaa ${ formattedTime }"
@@ -20946,12 +20869,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Jos poistat tämän puhelinnumeron, et voi enää palauttaa tiliäsi."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Turvallisuustapahtumien seurannan käytöstäpoiston yhteydessä tyhjennetään myös koko historiasi. Haluatko varmasti poistaa sen käytöstä?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Erääntymisaika ei ole muodossa KK/VV"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Jos perut tuonnin, et voi jatkaa sitä. ${ BRAND_NAME } tallensi tilanteen tilillesi. Perutaanko tuonti silti?"

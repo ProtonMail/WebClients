@@ -1486,9 +1486,6 @@
       "What do I get?": [
         "Что я получу?"
       ],
-      "Wipe": [
-        "Стереть"
-      ],
       "Yes": [
         "Да"
       ],
@@ -1767,6 +1764,27 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Я отсутствую на рабочем месте и не имею полного доступа к почте."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Платёжные данные"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается раз в ${ cycle } мес. ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Сумма к оплате после пробного периода"
+      ],
+      "Amount due now": [
+        "Сумма к оплате сейчас"
       ]
     },
     "Badge for domain": {
@@ -3947,15 +3965,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Легко синхронизируйте файлы с облаком с настольного компьютера и получайте к ним доступ с мобильного устройства."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Включите ${ PROTON_SENTINEL_NAME } для доступа к этим функциям"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Включите подробные события и ${ PROTON_SENTINEL_NAME }, чтобы получить доступ к этим функциям."
-      ],
-      "Enable detailed events to access these features": [
-        "Включите подробные события, чтобы получить доступ к этим функциям"
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Поощряйте использование двухфакторной аутентификации в вашей организации для обеспечения дополнительной безопасности."
       ],
@@ -5516,11 +5525,6 @@
         "Необходимо указать почтовый индекс"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "Введите адрес электронной почты"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
@@ -6701,9 +6705,6 @@
       "Actions": [
         "Действия"
       ],
-      "App version": [
-        "Версия приложения"
-      ],
       "Best deal": [
         "Лучшее предложение"
       ],
@@ -6752,9 +6753,6 @@
       "Permissions": [
         "Разрешения"
       ],
-      "Protection": [
-        "Защита"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Экономьте много на лучших предложениях ${ VPN_APP_NAME }"
       ],
@@ -6778,9 +6776,6 @@
       ],
       "Status": [
         "Состояние"
-      ],
-      "Time": [
-        "Время"
       ],
       "User": [
         "Пользователь"
@@ -7856,9 +7851,6 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Вы уверены, что хотите покинуть эту группу? Чтобы вы могли присоединиться обратно, администратор должен будет пригласить вас."
       ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Вы уверены, что хотите безвозвратно удалить все журналы доступа?"
-      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы уверены, что хотите удалить административные полномочия у этого пользователя?"
       ],
@@ -8399,9 +8391,6 @@
       "Event invitations and responses will be sent in this language.": [
         "Приглашения и ответы на события будут отправлены на этом языке."
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "События включают попытки аутентификации для всех служб ${ BRAND_NAME }, которые используют ваши учетные данные ${ BRAND_NAME_TWO }."
-      ],
       "Example: ${ spfExample }": [
         "Пример: ${ spfExample }"
       ],
@@ -8410,9 +8399,6 @@
       ],
       "expires ${ expirationDate }": [
         "истекает ${ expirationDate }"
-      ],
-      "Failed to fetch logs.": [
-        "Не удалось загрузить журналы."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Быстро и целенаправленно. Электронная почта и календарь прямо на вашем компьютере."
@@ -8981,9 +8967,6 @@
       "No label selected": [
         "Ярлык не выбран"
       ],
-      "No logs yet.": [
-        "Журналов доступа ещё нет."
-      ],
       "No payment is required at this time.": [
         "В данный момент оплата не требуется."
       ],
@@ -9370,9 +9353,6 @@
       ],
       "SCIM token active": [
         "Токен SCIM активен"
-      ],
-      "Search by an email address to begin": [
-        "Для начала выполните поиск по адресу электронной почты"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Защитите свой аккаунт ${ BRAND_NAME }"
@@ -10306,9 +10286,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можете изменить это один раз, чтобы обеспечить правильную проверку адреса электронной почты."
-      ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Вы можете включить журнал аутентификации, чтобы видеть, в какое время и с какого IP-адреса производился доступ к учётной записи. Мы будем записывать IP-адреса, с которых был получен доступ к учётной записи, его время и неудачные попытки входа."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Вы можете включить раздел Фотографии в интерфейсе с помощью расположенного ниже переключателя."
@@ -12028,9 +12005,6 @@
       "Search": [
         "Поиск"
       ],
-      "Search by email": [
-        "Выполните поиск по адресу электронной почты"
-      ],
       "Second password": [
         "Второй пароль"
       ],
@@ -12701,12 +12675,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Включите ${ reason }"
-      ],
-      "Enable detailed events": [
-        "Включить подробные события"
-      ],
-      "Enable security events": [
-        "Включить события безопасности"
       ]
     },
     "Mail import summary": {
@@ -19319,9 +19287,6 @@
       "Choose user affiliations": [
         "Выберите принадлежности пользователей"
       ],
-      "Clear": [
-        "Очистить"
-      ],
       "Click a value in the table to use it as filter": [
         "Нажмите значение в таблице, чтобы использовать его в качестве фильтра"
       ],
@@ -19504,9 +19469,6 @@
       ],
       "Delete label?": [
         "Удалить ярлык?"
-      ],
-      "Delete logs": [
-        "Удалить записи журнала"
       ],
       "Delete organization logo?": [
         "Удалить логотип организации?"
@@ -20648,12 +20610,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Позволяет бесшовно добавлять ссылки на видеоконференции в приглашения календаря."
       ],
-      "An approximate location of the IP address": [
-        "Примерное местонахождение IP-адреса"
-      ],
-      "Any protection applied to suspicious activity": [
-        "Любая защита, применяемая в отношении подозрительных действий"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматически переключаться между вашими предпочтительными темами для дня и ночи синхронно с системными дневным и ночным режимами."
       ],
@@ -20675,9 +20631,6 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Удалять мусор и спам через 30 дней. При включении функции автоматического удаления сообщения, уже находящиеся в корзине/спаме, получают дату удаления, основанную на дате их перемещения туда."
       ],
-      "Device information such as operating system": [
-        "Информация об устройстве, например операционная система"
-      ],
       "Display name for the entity in the eduGAIN database": [
         "Отображаемое имя в базе данных eduGAIN"
       ],
@@ -20692,9 +20645,6 @@
       ],
       "Enable/disable desktop and mobile notifications": [
         "Включить/отключить уведомления на рабочем столе, а также мобильные"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "При включении подробных событий записывается адрес IP для каждого события."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL конечной точки поставщика личных данных (например, https://idp.primer.com/sso/saml)."
@@ -20725,9 +20675,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP-адрес (поставщик услуг Интернета)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Пользователи, которые не используют двухфакторную идентификацию, получат электронное письмо с просьбой включить ее как можно скорее. Пользователи единого входа не получат напоминание по электронной почте."
@@ -20776,9 +20723,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнётся с самых последних сообщений."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Поставщик услуг Интернета для IP-адреса"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новый цикл подписки начинается ${ formattedTime }"
@@ -21622,12 +21566,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Удалив этот номер телефона, вы больше не сможете восстановить свою учётную запись."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Отключив мониторинг событий безопасности, вы также очистите всю свою историю. Вы уверены, что хотите отключить это?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Срок действия не в формате ММ/ГГ"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Если вы отмените этот импорт, вы не сможете его возобновить. ${ BRAND_NAME } сохранил весь прогресс в вашем аккаунте. Все равно отменить?"

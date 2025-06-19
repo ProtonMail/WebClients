@@ -1372,9 +1372,6 @@
       "What do I get?": [
         "मुझे क्या मिलेगा?"
       ],
-      "Wipe": [
-        "मिटाएं"
-      ],
       "Yes": [
         "हां"
       ],
@@ -3716,15 +3713,6 @@
       "Create policies to decide who can connect to shared servers in each country.": [
         "हर देश में साझा सर्वर से कौन कनेक्ट कर सकता है, यह तय करने के लिए नीतियाँ बनाएं।"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "इन सुविधाओं तक पहुँचने के लिए ${ PROTON_SENTINEL_NAME } को सक्षम करें"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "विस्तृत घटनाएँ और ${ PROTON_SENTINEL_NAME } को इन सुविधाओं तक पहुँचने के लिए सक्षम करें"
-      ],
-      "Enable detailed events to access these features": [
-        "विस्तृत घटनाएँको इन सुविधाओं तक पहुँचने के लिए सक्षम करें"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
@@ -5090,11 +5078,6 @@
         "ज़िप कोड आवश्यक है"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "एक ईमेल पता दर्ज करें"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "आपके फाइल ${ formattedFilename } को पढ़ते समय एक गड़बड़ हो गई। गलत फाइल फॉर्मेट।"
@@ -6223,9 +6206,6 @@
       "Actions": [
         "एक्शन"
       ],
-      "App version": [
-        "ऐप संस्करण"
-      ],
       "Best deal": [
         "सबसे अच्छा सौदा"
       ],
@@ -6274,9 +6254,6 @@
       "Permissions": [
         "इजाज़त"
       ],
-      "Protection": [
-        "सुरक्षा"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "${ VPN_APP_NAME } पर बेहतरीन डील के साथ बड़ी बचत करें"
       ],
@@ -6300,9 +6277,6 @@
       ],
       "Status": [
         "स्थिति"
-      ],
-      "Time": [
-        "समय"
       ],
       "User": [
         "यूज़र"
@@ -7244,9 +7218,6 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "क्या आप वाकई इस ग्रुप को छोड़ना चाहते हैं? यदि आप छोड़ते हैं, तो आपको पुनः शामिल होने के लिए ग्रुप एडमिन द्वारा पुनः आमंत्रण भेजा जाना पड़ेगा।"
       ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "क्या आप वाकई अपने सभी लॉग को स्थायी रूप से हटाना चाहते हैं?"
-      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "क्या आप वाकई इस उपयोगकर्ता से प्रशासनिक विशेषाधिकार हटाना चाहते हैं?"
       ],
@@ -7750,9 +7721,6 @@
       "Event invitations and responses will be sent in this language.": [
         "कार्यक्रम के निमंत्रण और प्रतिक्रियाएँ इस भाषा में भेजी जाएँगी।"
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "घटनाओं में आपके ${ BRAND_NAME } प्रमाण का उपयोग करने वाली सभी ${ BRAND_NAME_TWO } सेवाओं पर सत्यापन की कोशिशें शामिल हैं।"
-      ],
       "Example: ${ spfExample }": [
         "उदाहरण: ${ spfExample }"
       ],
@@ -7761,9 +7729,6 @@
       ],
       "expires ${ expirationDate }": [
         "एक्सपायर होगा ${ expirationDate }"
-      ],
-      "Failed to fetch logs.": [
-        "लॉग लाने में विफल।"
       ],
       "Fill in user details": [
         "उपयोगकर्ता जानकारी भरें"
@@ -8292,9 +8257,6 @@
       "No label selected": [
         "कोई लेबल चयनित नहीं है"
       ],
-      "No logs yet.": [
-        "अभी तक कोई लॉग नहीं।"
-      ],
       "No payment is required at this time.": [
         "इस समय कोई भुगतान आवश्यक नहीं है।"
       ],
@@ -8648,9 +8610,6 @@
       ],
       "SCIM token active": [
         "SCIM टोकन सक्रिय है"
-      ],
-      "Search by an email address to begin": [
-        "शुरू करने के लिए एक ईमेल पता द्वारा खोजें"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "अपने ${ BRAND_NAME } खाते को सुरक्षित करें"
@@ -9515,9 +9474,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "सत्यापन के लिए सही ईमेल पता सुनिश्चित करने के लिए आप इसे एक बार संपादित कर सकते हैं।"
-      ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "आप सत्यापन लॉग सक्षम कर सकते हैं ताकि आप देख सकें कि आपका खाता कब एक्सेस किया गया और किस IP से। हम खाते को एक्सेस करने वाले IP पता, समय और असफल प्रयासों को रिकॉर्ड करेंगे।"
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "आप इंटरफ़ेस में नीचे दिए गए टॉगल का उपयोग करके Photos सेक्शन सक्षम कर सकते हैं।"
@@ -11136,9 +11092,6 @@
       "Search": [
         "खोजें"
       ],
-      "Search by email": [
-        "ईमेल द्वारा खोजें"
-      ],
       "Second password": [
         "दूसरा पासवर्ड"
       ],
@@ -11739,12 +11692,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "`${ reason } को सक्षम करें`"
-      ],
-      "Enable detailed events": [
-        "विस्तृत घटनाएँ सक्षम करें"
-      ],
-      "Enable security events": [
-        "सुरक्षा घटनाएं सक्षम करें"
       ]
     },
     "Mail import summary": {
@@ -17831,9 +17778,6 @@
       "Choose user affiliations": [
         "उपयोगकर्ता संबद्धताएँ चुनें"
       ],
-      "Clear": [
-        "साफ करें"
-      ],
       "Click a value in the table to use it as filter": [
         "टेबल में किसी मान पर क्लिक करें ताकि उसे फिल्टर के रूप में उपयोग किया जा सके"
       ],
@@ -18002,9 +17946,6 @@
       ],
       "Delete label?": [
         "लेबल मिटाएं?"
-      ],
-      "Delete logs": [
-        "लॉग हटाएं"
       ],
       "Delete organization logo?": [
         "संगठन-चिन्ह हटाएं?"
@@ -19051,12 +18992,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "आपकी कैलेंडर निमंत्रणों में वीडियो कॉन्फ्रेंसिंग लिंक सहजता से जोड़ने की अनुमति देता है।"
       ],
-      "An approximate location of the IP address": [
-        "IP ​​पते का अनुमानित स्थान"
-      ],
-      "Any protection applied to suspicious activity": [
-        "संदिग्ध गतिविधि पर लागू कोई भी सुरक्षा"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "अपने पसंदीदा दिन और रात के विषयों के बीच स्वचालित रूप से स्विच करें, जो आपके सिस्टम के दिन और रात मोड के साथ सिंक में हो।"
       ],
@@ -19078,9 +19013,6 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "कचरे और स्पैम संदेश को 30 दिन बाद मिटाएं। अपनेआप-मिटाएं चालू करने से कचरे और स्पैम संदेश को उनके उस फोल्डर में आने के तारीख के हिसाब से मिटने का तारीख मिलता है।"
       ],
-      "Device information such as operating system": [
-        "डिवाइस की जानकारी जैसे ऑपरेटिंग सिस्टम"
-      ],
       "Display name for the entity in the eduGAIN database": [
         "eduGAIN डेटाबेस में एंटिटी के लिए डिस्प्ले नाम"
       ],
@@ -19095,9 +19027,6 @@
       ],
       "Enable/disable desktop and mobile notifications": [
         "डेस्कटॉप और मोबाइल सूचनाएं सक्षम/अक्षम करें"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "विस्तृत कार्यक्रम सक्षम करने से प्रत्येक कार्यक्रम के लिए IP पता रिकॉर्ड किया जाता है।"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "पहचान प्रदाता से एंडपॉइंट URL (उदा. https://idp.udaaharan.in/sso/saml)"
@@ -19122,9 +19051,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "यदि आपने एक उपहार कोड खरीदा है या हमारी सहायता टीम से एक प्राप्त किया है, तो आप इसे यहां दर्ज कर सकते हैं।"
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP पता (Internet Service Provider)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "जो सदस्य 2-एफए का उपयोग नहीं करते हैं, उन्हें एक ईमेल प्राप्त होगा जिसमें उनसे इसे यथाशीघ्र सक्षम करने के लिए कहा जाएगा। सिंगल साइन-ऑन उपयोगकर्ताओं को ईमेल रिमाइंडर नहीं मिलेगा"
@@ -19170,9 +19096,6 @@
       ],
       "The import will start with the most recent messages.": [
         "आयात सबसे हाल के संदेशों से शुरू होगा।"
-      ],
-      "The Internet Service Provider of the IP address": [
-        "IP ​​पते का इंटरनेट सेवा प्रदाता"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "नई सदस्यता साइकिल ${ formattedTime } को शुरू होगी"
@@ -19955,12 +19878,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "इस फ़ोन नंबर को हटाने से, आप अपने खाते को पुनर्प्राप्त नहीं कर पाएंगे।"
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "सुरक्षा घटनाओं की निगरानी को अक्षम करने से, आपका संपूर्ण इतिहास भी साफ हो जाएगा। क्या आप वाकई इसे अक्षम करना चाहते हैं?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "समाप्ति तिथि MM/YY प्रारूप में नहीं है"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "अगर आप इस आयात को रद्द करते हैं, तो आप इसे जारी नहीं रख पाएंगे। ${ BRAND_NAME } ने आपके खाते में सारी प्रगति सेव कर ली है। फिर भी रद्द करें?"
