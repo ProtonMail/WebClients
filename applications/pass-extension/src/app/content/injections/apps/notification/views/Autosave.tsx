@@ -1,7 +1,7 @@
 import { type FC, useEffect, useMemo, useRef } from 'react';
 
 import type { FormikErrors } from 'formik';
-import { Field, Form, FormikProvider, useFormik } from 'formik';
+import { Form, FormikProvider, useFormik } from 'formik';
 import { AutosaveVaultPicker } from 'proton-pass-extension/app/content/injections/apps/components/AutosaveVaultPicker';
 import {
     useIFrameAppController,
@@ -19,6 +19,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { Field } from '@proton/pass/components/Form/Field/Field';
 import { MODEL_VERSION } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';

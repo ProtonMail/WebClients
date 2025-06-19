@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { DropdownSizeUnit, Icon, Option } from '@proton/components';
+import { Icon, Option } from '@proton/components';
 import type { VaultIconName } from '@proton/pass/components/Vault/VaultIcon';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import type { ShareItem } from '@proton/pass/store/reducers';
@@ -43,7 +43,6 @@ export const VaultPicker: FC<VaultPickerProps> = ({ legacy, vaults, ...props }) 
                 unstyled={!legacy}
                 className={clsx('pass-vault-picker', legacy && 'pass-vault-picker--legacy', props.className)}
                 selectClassName={clsx(!legacy && 'button button-pill button-medium button-solid-norm')}
-                size={{ width: DropdownSizeUnit.Dynamic }}
                 renderSelected={() => (
                     <div className="flex flex-nowrap gap-2 justify-items-center items-center">
                         <VaultIcon
