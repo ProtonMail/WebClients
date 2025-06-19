@@ -2,6 +2,7 @@ import { useKeyPress } from '@proton/components';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { useAutotypeActions } from '@proton/pass/hooks/autotype/useAutotypeActions';
+import { useAutotypeExecute } from '@proton/pass/hooks/autotype/useAutotypeExecute';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { type Item, SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -11,6 +12,7 @@ export const useAutotypeShortcut = DESKTOP_BUILD
     ? (data: Item<'login'>) => {
           const autotypeEnabled = useFeatureFlag(PassFeature.PassDesktopAutotype);
           const { actions } = useAutotypeActions(data);
+          const executeAutotype = useAutotypeExecute();
           const { autotypeConfirmShortcut } = useItemsActions();
           const confirmationSpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_CONFIRM_SHORTCUT);
           const action = actions[0];
@@ -27,7 +29,7 @@ export const useAutotypeShortcut = DESKTOP_BUILD
                               spotlightToClose: confirmationSpotlight,
                           });
                       }
-                      void window.ctxBridge?.autotype(autotypeProps);
+                      void executeAutotype?.(autotypeProps);
                   }
               },
               [action, confirmationSpotlight, autotypeEnabled]

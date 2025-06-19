@@ -7,6 +7,7 @@ import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvide
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { DropdownMenuLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuLabel';
 import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
+import { useAutotypeExecute } from '@proton/pass/hooks/autotype/useAutotypeExecute';
 import { SpotlightMessage } from '@proton/pass/types';
 import type { AutotypeAction } from '@proton/pass/types/desktop/autotype';
 
@@ -17,6 +18,7 @@ type AutotypeDropdownProps = {
 export const AutotypeDropdown: FC<AutotypeDropdownProps> = ({ actions }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLDivElement>();
     const { autotypeConfirm } = useItemsActions();
+    const executeAutotype = useAutotypeExecute();
     const autotypeDiscoverySpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_DISCOVERY);
     const confirmationSpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_CONFIRM);
 
@@ -60,7 +62,7 @@ export const AutotypeDropdown: FC<AutotypeDropdownProps> = ({ actions }) => {
                                             spotlightToClose: confirmationSpotlight,
                                         });
                                     }
-                                    void window.ctxBridge?.autotype(autotypeProps);
+                                    void executeAutotype?.(autotypeProps);
                                 }}
                                 label={<DropdownMenuLabel title={action.title} subtitle={action.subtitle} />}
                                 icon={action.icon}
