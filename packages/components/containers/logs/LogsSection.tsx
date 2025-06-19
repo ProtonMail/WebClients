@@ -16,7 +16,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { getOrgAuthLogs } from '@proton/shared/lib/api/b2bevents';
-import { queryLogs } from '@proton/shared/lib/api/logs';
+import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
 import type { AuthLog, B2BAuthLog } from '@proton/shared/lib/authlog';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -26,6 +26,7 @@ import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
 import { getFormattedQueryString } from '../organization/useOrgAuthLogs';
 import B2BAuthLogsTable from './B2BAuthLogsTable';
 import LogsTable from './LogsTable';
+import WipeLogsButton from './WipeLogsButton';
 import { getAllAuthenticationLogs } from './helper';
 
 const INITIAL_STATE = {
@@ -48,6 +49,7 @@ const LogsSection = () => {
     const [loadingRefresh, withLoadingRefresh] = useLoading();
     const [loadingDownload, withLoadingDownload] = useLoading();
     const [error, setError] = useState(false);
+    const [loadingWipe, withLoadingWipe] = useLoading();
 
     const hasB2BLogs = Boolean(settings?.OrganizationPolicy?.Enforced);
 
@@ -120,6 +122,16 @@ const LogsSection = () => {
         }
     };
 
+    const handleWipe = async () => {
+        await withLoadingWipe(api(clearLogs()));
+        setState(INITIAL_STATE);
+    };
+
+    const handleWipeWithReload = async () => {
+        await withLoadingWipe(handleWipe());
+        await withLoadingRefresh(fetchAndSetState);
+    };
+
     useEffect(() => {
         withLoading(fetchAndSetState());
     }, [page, protonSentinel]);
@@ -144,7 +156,10 @@ const LogsSection = () => {
                             <Icon name="arrow-rotate-right" className="mr-2" />
                             <span>{c('Action').t`Reload`}</span>
                         </Button>
-                        {state.logs.length ? (
+                        {state.logs.length && !hasB2BLogs ? (
+                            <WipeLogsButton className="mr-4" onWipe={handleWipeWithReload} loading={loadingWipe} />
+                        ) : null}
+                        {state.logs.length && !hasB2BLogs ? (
                             <Button
                                 shape="outline"
                                 className="self-end"
@@ -164,7 +179,7 @@ const LogsSection = () => {
                         onNext={onNext}
                         onPrevious={onPrevious}
                         onSelect={onSelect}
-                        total={state.total}
+                        total={hasB2BLogs ? b2bState.total : state.total}
                         page={page}
                         limit={PAGE_SIZE}
                     />
