@@ -1,4 +1,5 @@
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { type RefObject, useMemo } from 'react';
+import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import {
     DrawerSidebar,
@@ -6,13 +7,17 @@ import {
     InboxQuickSettingsAppButton,
     PrivateMainArea,
 } from '@proton/components';
+import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
+import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 import clsx from '@proton/utils/clsx';
 
 import MailHeader from 'proton-mail/components/header/MailHeader';
+import useScrollToTop from 'proton-mail/components/list/useScrollToTop';
 import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
 import { ROUTE_LABEL } from 'proton-mail/constants';
 import { MailboxContainerContextProvider } from 'proton-mail/containers/mailbox/MailboxContainerProvider';
+import { filterFromUrl, pageFromUrl, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
 import { useElements } from 'proton-mail/hooks/mailbox/useElements';
 import { paramsSelector } from 'proton-mail/store/elements/elementsSelectors';
@@ -26,8 +31,6 @@ import { useGetElementParams } from './hooks/useGetElementParams';
 import { useRouterNavigation } from './hooks/useRouterNavigation';
 import { useMailboxContainerSideEffects } from './sideEffects/useMailboxContainerSideEffects';
 
-// Force deployment
-
 export const RouterMailboxContainer = () => {
     // We get most of the data here to avoid unnecessary re-renders
     const params = useMailSelector(paramsSelector);
@@ -36,7 +39,7 @@ export const RouterMailboxContainer = () => {
     const elementsData = useElements(elementsParams);
     const actions = useElementActions({ params, navigation, elementsData });
 
-    const { messageContainerRef, mainAreaRef, resize } = useMailboxLayoutProvider();
+    const { messageContainerRef, mainAreaRef, resize, listContainerRef } = useMailboxLayoutProvider();
 
     const { labelID, elementID } = params;
     const { selectedIDs } = actions;
@@ -58,6 +61,14 @@ export const RouterMailboxContainer = () => {
         loading: elementsData.loading,
         labelID,
     });
+
+    // TODO this will need to be improved to avoid depending on the URL, fix the test for the moment
+    const location = useLocation();
+    const urlPage = pageFromUrl(location);
+    const searchParams = getSearchParams(location.hash);
+    const sort = useMemo<Sort>(() => sortFromUrl(location, labelID), [searchParams.sort, labelID]);
+    const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
+    useScrollToTop(listContainerRef as RefObject<HTMLElement>, [urlPage, labelID, sort, filter, elementsParams.search]);
 
     if (!labelID) {
         return <Redirect to="/inbox" />;

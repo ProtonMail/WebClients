@@ -3,15 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Checkbox,
-    ContactImage,
-    Label,
-    type ModalProps,
-    NotificationButton,
-    Prompt,
-    useNotifications,
-} from '@proton/components';
+import { ContactImage, type ModalProps, NotificationButton, Prompt, useNotifications } from '@proton/components';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import truncate from '@proton/utils/truncate';
 
@@ -26,7 +18,14 @@ import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscr
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import { getUnsubscribeData, getUnsubscribeMethod } from '../../helper';
-import { MAX_LENGTH_SUB_NAME, type PropsWithNewsletterSubscription, UnsubscribeMethod } from '../../interface';
+import {
+    MAX_LENGTH_SUB_NAME,
+    NewsletterSubscriptionAction,
+    type PropsWithNewsletterSubscription,
+    UnsubscribeMethod,
+} from '../../interface';
+import { useNewsletterSubscriptionTelemetry } from '../../useNewsletterSubscriptionTelemetry';
+import { ModalSharedCheckboxes } from '../ModalBlockSender/ModalSharedComponents';
 import { ModalUnsubscribeMailToContent } from './ModalUnsubscribeMailToContent';
 import { useSendUnsubscribeEmail } from './useSendUnsubscribeEmail';
 
@@ -37,14 +36,24 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
     const { sendUnsubscribeEmail } = useSendUnsubscribeEmail({ subscription });
 
     const unsubscribeMethod = getUnsubscribeMethod(subscription);
+    const { sendNewsletterAction } = useNewsletterSubscriptionTelemetry();
 
-    const [trash, setTrash] = useState(false);
-    const [archive, setArchive] = useState(false);
-    const [read, setRead] = useState(false);
+    const [checkboxes, setCheckboxes] = useState<Record<string, boolean>>({
+        trash: false,
+        archive: false,
+        read: false,
+    });
 
     const { createNotification } = useNotifications();
 
     const onUnsubscribe = async () => {
+        sendNewsletterAction({
+            newsletterAction: NewsletterSubscriptionAction.unsubscribe,
+            markAsRead: checkboxes.read,
+            moveToTrash: checkboxes.trash,
+            moveToArchive: checkboxes.archive,
+        });
+
         if (unsubscribeMethod === UnsubscribeMethod.OneClick) {
             void dispatch(unsubscribeSubscription({ subscription, subscriptionIndex }));
 
@@ -55,7 +64,6 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
                         <span>{c('Label').t`Unsubscribed from ${truncatedName}.`}</span>
                         <NotificationButton
                             onClick={() => {
-                                // TODO update this to a undo action once API returns undo token
                                 dispatch(newsletterSubscriptionsActions.setSelectedTab(SubscriptionTabs.Unsubscribe));
                             }}
                         >{c('Action').t`Undo`}</NotificationButton>
@@ -73,12 +81,16 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
             void dispatch(updateSubscription({ subscription, subscriptionIndex, data: { Unsubscribed: true } }));
         }
 
-        if (trash || archive || read) {
+        if (checkboxes.trash || checkboxes.archive || checkboxes.read) {
             await dispatch(
                 filterSubscriptionList({
                     subscription,
                     subscriptionIndex,
-                    data: getUnsubscribeData({ trash, archive, read }),
+                    data: getUnsubscribeData({
+                        trash: checkboxes.trash,
+                        archive: checkboxes.archive,
+                        read: checkboxes.read,
+                    }),
                 })
             );
         }
@@ -114,7 +126,7 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
                 </>
             }
             buttons={[
-                <Button color="norm" onClick={onUnsubscribe}>
+                <Button color="norm" onClick={onUnsubscribe} data-testid="unsubscribe-button">
                     {unsubscribeMethod === UnsubscribeMethod.Mailto
                         ? c('Action').t`Send unsubscribe email`
                         : c('Action').t`Unsubscribe`}
@@ -125,37 +137,7 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
             <ModalUnsubscribeMailToContent subscription={subscription} />
             <p className="m-0 mb-2 text-sm color-weak">{c('Info').t`Optional`}</p>
 
-            <div className="flex flex-row items-start align-center mb-2">
-                <Checkbox
-                    checked={trash}
-                    onChange={() => {
-                        setTrash((val) => !val);
-                        setArchive(false);
-                    }}
-                    className="mr-2"
-                    id="trash"
-                />
-                <Label htmlFor="trash" className="p-0 flex-1">{c('Info').t`Trash existing messages`}</Label>
-            </div>
-
-            <div className="flex flex-row items-start align-center mb-2">
-                <Checkbox
-                    checked={archive}
-                    onChange={() => {
-                        setArchive((val) => !val);
-                        setTrash(false);
-                    }}
-                    className="mr-2"
-                    id="archive"
-                />
-
-                <Label htmlFor="archive" className="p-0 flex-1">{c('Info').t`Archive existing messages`}</Label>
-            </div>
-
-            <div className="flex flex-row items-start align-center mb-2">
-                <Checkbox checked={read} onChange={() => setRead((val) => !val)} className="mr-2" id="read" />
-                <Label htmlFor="read" className="p-0 flex-1">{c('Info').t`Mark all as read`}</Label>
-            </div>
+            <ModalSharedCheckboxes checkboxes={checkboxes} setCheckboxes={setCheckboxes} />
         </Prompt>
     );
 };

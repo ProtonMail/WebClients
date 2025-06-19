@@ -22,7 +22,8 @@ import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { getFilterDropdownData, shouldOpenUpsellOnFilterClick, shouldToggleFilter } from '../helper';
-import type { ModalFilterType } from '../interface';
+import { type ModalFilterType } from '../interface';
+import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 
 interface Props {
     subscription: NewsletterSubscription;
@@ -38,6 +39,8 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
     const { createNotification } = useNotifications();
 
     const popover = usePopperAnchor<HTMLButtonElement>();
+
+    const { sendNewsletterMessageFilterUpsell } = useNewsletterSubscriptionTelemetry();
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
@@ -60,6 +63,7 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
 
         // We show an upsell if the user reach the limit of filters.
         if (shouldOpenUpsellOnFilterClick(subscription, user, filters)) {
+            sendNewsletterMessageFilterUpsell();
             handleUpsellModalDisplay(true);
             return;
         }
@@ -81,7 +85,7 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
 
     return (
         <>
-            <div className="shrink-0 subscription-card-dropdown">
+            <div className="shrink-0 subscription-card-dropdown" data-testid="subscription-card-dropdown">
                 <DropdownButton
                     ref={popover.anchorRef}
                     isOpen={popover.isOpen}
@@ -97,13 +101,14 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
                 </DropdownButton>
             </div>
             <Dropdown isOpen={popover.isOpen} anchorRef={popover.anchorRef} onClose={popover.close}>
-                <DropdownMenu>
+                <DropdownMenu className="my-3 w-custom" style={{ '--w-custom': '16rem' }}>
                     {dropdownData.menuItems.map((item) => (
                         <DropdownMenuButton
                             key={item.icon}
                             disabled={userLoading || filterLoading}
                             onClick={(e) => handleClick(item.filter, e)}
-                            className="text-left flex flex-nowrap"
+                            className="text-left flex flex-nowrap pl-6"
+                            data-testid={`dropdown-item-${item.filter}`}
                         >
                             <Icon name={item.icon} className="mr-2 mt-0.5" />
                             {item.label}
@@ -115,7 +120,7 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
             {renderUpsellModal && (
                 <FiltersUpsellModal
                     modalProps={upsellModalProps}
-                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_MAIL_SUBSCRIPTION}
+                    overrideFeature={MAIL_UPSELL_PATHS.UNLIMITED_FILTERS_NEWSLETTER_SUBSCRIPTION}
                 />
             )}
         </>
