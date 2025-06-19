@@ -25,15 +25,9 @@ import {
     UnsubscribeMethod,
 } from '../../interface';
 import { useNewsletterSubscriptionTelemetry } from '../../useNewsletterSubscriptionTelemetry';
-import { ModalCheckboxWithLabel } from '../ModalBlockSender/ModalSharedComponents';
+import { ModalSharedCheckboxes } from '../ModalBlockSender/ModalSharedComponents';
 import { ModalUnsubscribeMailToContent } from './ModalUnsubscribeMailToContent';
 import { useSendUnsubscribeEmail } from './useSendUnsubscribeEmail';
-
-type CheckboxState = {
-    trash: boolean;
-    archive: boolean;
-    read: boolean;
-};
 
 const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscription & ModalProps) => {
     const dispatch = useMailDispatch();
@@ -44,7 +38,7 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
     const unsubscribeMethod = getUnsubscribeMethod(subscription);
     const { sendNewsletterAction } = useNewsletterSubscriptionTelemetry();
 
-    const [checkboxes, setCheckboxes] = useState<CheckboxState>({
+    const [checkboxes, setCheckboxes] = useState<Record<string, boolean>>({
         trash: false,
         archive: false,
         read: false,
@@ -132,7 +126,7 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
                 </>
             }
             buttons={[
-                <Button color="norm" onClick={onUnsubscribe}>
+                <Button color="norm" onClick={onUnsubscribe} data-testid="unsubscribe-button">
                     {unsubscribeMethod === UnsubscribeMethod.Mailto
                         ? c('Action').t`Send unsubscribe email`
                         : c('Action').t`Unsubscribe`}
@@ -143,43 +137,7 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
             <ModalUnsubscribeMailToContent subscription={subscription} />
             <p className="m-0 mb-2 text-sm color-weak">{c('Info').t`Optional`}</p>
 
-            <ModalCheckboxWithLabel
-                label={c('Info').t`Trash existing messages`}
-                id="trash"
-                checked={checkboxes.trash}
-                onChange={() => {
-                    setCheckboxes((prev) => ({
-                        ...prev,
-                        archive: false,
-                        trash: !prev.trash,
-                    }));
-                }}
-            />
-
-            <ModalCheckboxWithLabel
-                label={c('Info').t`Archive existing messages`}
-                id="archive"
-                checked={checkboxes.archive}
-                onChange={() => {
-                    setCheckboxes((prev) => ({
-                        ...prev,
-                        archive: !prev.archive,
-                        trash: false,
-                    }));
-                }}
-            />
-
-            <ModalCheckboxWithLabel
-                label={c('Info').t`Mark all as read`}
-                id="read"
-                checked={checkboxes.read}
-                onChange={() => {
-                    setCheckboxes((prev) => ({
-                        ...prev,
-                        read: !prev.read,
-                    }));
-                }}
-            />
+            <ModalSharedCheckboxes checkboxes={checkboxes} setCheckboxes={setCheckboxes} />
         </Prompt>
     );
 };
