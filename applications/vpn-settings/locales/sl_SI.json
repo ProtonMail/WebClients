@@ -567,6 +567,9 @@
       "refresh the page": [
         "Osvežite stran"
       ],
+      "Reload": [
+        "Osveži"
+      ],
       "Remove": [
         "Odstrani"
       ],
@@ -3079,11 +3082,6 @@
         "Vaš račun ali organizacija ima neporavnan račun. Prosimo, poravnajte vse neplačane račune."
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "Vnesite e-poštni naslov"
-      ]
-    },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
         "Pri branju datoteke ${ formattedFilename } je prišlo do napake. Neveljavna oblika datoteke."
@@ -3727,9 +3725,6 @@
       ]
     },
     "Header": {
-      "App version": [
-        "Različica aplikacije"
-      ],
       "Best deal": [
         "Najboljša ponudba"
       ],
@@ -3765,9 +3760,6 @@
       ],
       "Organization key fingerprint": [
         "Prstni odtis organizacijskega ključa"
-      ],
-      "Protection": [
-        "Zaščita"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Izkoristite najboljše ponudbe ${ VPN_APP_NAME } in prihranite"
@@ -6163,9 +6155,6 @@
       ],
       "Search": [
         "Išči"
-      ],
-      "Search by email": [
-        "Iskanje po e-pošti"
       ],
       "Second password": [
         "Drugo geslo"
@@ -11177,20 +11166,11 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Omogoča nemoteno dodajanje povezav za videokonference v vaša povabila v koledar."
       ],
-      "An approximate location of the IP address": [
-        "Približna lokacija IP naslova"
-      ],
-      "Any protection applied to suspicious activity": [
-        "Katera koli zaščita, ki je uporabljena za sumljive aktivnosti"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Samodejno preklapljajte med svojimi prednostnimi temami za dan in noč v skladu z dnevnim in nočnim načinom vašega sistema"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopirajte in prilepite ta URL v polje URL ACS (Assertion Consumer Service) vašega ponudnika identitete"
-      ],
-      "Device information such as operating system": [
-        "Informacije o napravi, kot je operacijski sistem"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL končne točke ponudnika identitete (npr. https://idp.example.com/sso/saml)"

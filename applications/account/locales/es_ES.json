@@ -1543,9 +1543,6 @@
       "What do I get?": [
         "¿Qué obtengo?"
       ],
-      "Wipe": [
-        "Borrar"
-      ],
       "Yes": [
         "Sí"
       ],
@@ -2323,6 +2320,20 @@
       ],
       "Working with sensitive data?": [
         "¿Trabajas con datos sensibles?"
+      ]
+    },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "Tu servidor dedicado ya está asignado a una puerta de enlace. Podrás comprar más servidores una vez que termine tu prueba gratuita.",
+        "Todos tus servidores dedicados ya están asignados a puertas de enlace. Podrás comprar más servidores una vez que termine tu prueba gratuita."
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "Tu prueba gratuita incluye ${ ipAddresses } servidor dedicado. Puedes añadir más servidores una vez que comience tu suscripción completa.",
+        "Tu prueba gratuita incluye ${ ipAddresses } servidores dedicados. Puedes añadir más servidores una vez que comience tu suscripción completa."
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "Tu prueba gratuita incluye ${ maxMembers } licencia. Puedes añadir más servidores una vez que comience tu suscripción completa.",
+        "Tu prueba gratuita incluye un máximo de ${ maxMembers } licencias. Puedes añadir más licencias una vez que comience tu suscripción completa."
       ]
     },
     "breadcrumb": {
@@ -4144,15 +4155,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincroniza fácilmente archivos a la nube desde tu escritorio y accede a ellos desde tu dispositivo móvil."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Activa ${ PROTON_SENTINEL_NAME } para acceder a estas funciones."
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Activa los eventos detallados y ${ PROTON_SENTINEL_NAME } para acceder a estas funciones."
-      ],
-      "Enable detailed events to access these features": [
-        "Activa los eventos detallados para acceder a estas funciones."
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Recomienda el uso de la autenticación de dos factores en tu organización para mayor seguridad."
       ],
@@ -5270,6 +5272,9 @@
       "Failed to process the logo": [
         "Error al procesar el logo"
       ],
+      "Failed to update detailed monitoring.": [
+        "Error al actualizar la monitorización detallada."
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "El archivo es demasiado grande. El logo debe ser 30 KB o menos."
       ],
@@ -5716,8 +5721,8 @@
       ]
     },
     "error": {
-      "Enter an email address": [
-        "Ingresa una dirección de correo electrónico"
+      "Select users to view their activity": [
+        "Selecciona usuarios para ver sus actividades."
       ]
     },
     "Error importing calendar": {
@@ -6871,9 +6876,6 @@
       "Actions": [
         "Acciones"
       ],
-      "App version": [
-        "Versión de la aplicación"
-      ],
       "Best deal": [
         "Mejor oferta"
       ],
@@ -6925,9 +6927,6 @@
       "Permissions": [
         "Permisos"
       ],
-      "Protection": [
-        "Protección"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Ahorra en grande con las mejores ofertas de ${ VPN_APP_NAME }"
       ],
@@ -6951,9 +6950,6 @@
       ],
       "Status": [
         "Estado"
-      ],
-      "Time": [
-        "Hora"
       ],
       "User": [
         "Usuario"
@@ -7773,6 +7769,9 @@
       "active": [
         "activa"
       ],
+      "Activity monitor": [
+        "Monitor de actividades"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Añade una dirección de correo electrónico @pm.me a tu cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME } me\" o \"Mensaje privado\"."
       ],
@@ -7950,9 +7949,6 @@
       ],
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "¿Estás seguro de que deseas abandonar este grupo? Si lo haces, el administrador del grupo deberá volver a invitarte para que te unas de nuevo."
-      ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "¿Estás seguro de que quieres eliminar permanentemente todos tus registros?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "¿Estás seguro de que quieres eliminar los privilegios administrativos de este usuario?"
@@ -8246,6 +8242,9 @@
       "Did you know?": [
         "¿Lo sabías?"
       ],
+      "Disable detailed events": [
+        "Desactivar los eventos detallados"
+      ],
       "Disable recovery by email address": [
         "Desactivar la recuperación por dirección de correo electrónico"
       ],
@@ -8391,6 +8390,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Activa la renovación automática para mantener tu acceso a servidores y funciones premium."
       ],
+      "Enable detailed events": [
+        "Activar los eventos detallados"
+      ],
       "Enable email notifications": [
         "Activar las notificaciones de correo electrónico"
       ],
@@ -8496,9 +8498,6 @@
       "Event invitations and responses will be sent in this language.": [
         "Las invitaciones a eventos y las confirmaciones de asistencia se enviarán en este idioma."
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Los eventos incluyen los intentos de autenticación para todos los servicios de ${ BRAND_NAME } que usan las credenciales de ${ BRAND_NAME_TWO }."
-      ],
       "Example: ${ spfExample }": [
         "Ejemplo: ${ spfExample }"
       ],
@@ -8507,9 +8506,6 @@
       ],
       "expires ${ expirationDate }": [
         "expira el ${ expirationDate }"
-      ],
-      "Failed to fetch logs.": [
-        "Error al obtener los registros"
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Rápido y enfocado: tu correo electrónico y calendario directamente en tu escritorio."
@@ -8740,6 +8736,9 @@
       "inactive": [
         "inactiva"
       ],
+      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
+        "Inclue dirección IP del usuario, ubicación y proveedor de servicios de internet (proveedor de servicios de internet) en los registros de eventos."
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incluyendo ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
@@ -8954,6 +8953,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Espera ya que se está cargando el calendario. Se te redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
       ],
+      "Loading detailed events current status.": [
+        "Cargando el estado actual de los eventos detallados."
+      ],
       "Loading eduGAIN data...": [
         "Cargando los datos de eduGAIN..."
       ],
@@ -9008,6 +9010,9 @@
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Supervisa y audita los intentos de autenticación para todos los servicios de ${ BRAND_NAME } que usan tus credenciales de ${ BRAND_NAME }."
+      ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
       ],
@@ -9034,6 +9039,9 @@
       ],
       "New": [
         "Nuevo"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Los nuevos datos de actividad dejarán de recopilarse y mostrarse."
       ],
       "New user invited to organization": [
         "Se ha invitado el nuevo usuario a la organización."
@@ -9076,9 +9084,6 @@
       ],
       "No label selected": [
         "Ninguna etiqueta seleccionada"
-      ],
-      "No logs yet.": [
-        "Todavía no hay registros."
       ],
       "No payment is required at this time.": [
         "En este momento no se requiere ningún pago."
@@ -9454,9 +9459,6 @@
       ],
       "SCIM token active": [
         "Token SCIM activo"
-      ],
-      "Search by an email address to begin": [
-        "Busca por dirección de correo electrónico para empezar."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asegura tu cuenta de ${ BRAND_NAME }"
@@ -9898,6 +9900,9 @@
       ],
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "Esto desvinculará el dispositivo **${ name } (creado en ${ date })** de tu cuenta ${ BRAND_NAME }."
+      ],
+      "This will wipe all logs for your organization members.": [
+        "Esto borrará todos los registros de los miembros de tu organización."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Este asistente activará la autenticación de dos factores (2FA) en tu cuenta de ${ BRAND_NAME }. La autenticación de dos factores hará que tu cuenta de ${ BRAND_NAME_TWO } sea más segura, por lo que te recomendamos activarla."
@@ -10380,9 +10385,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Puedes editar esto una vez para asegurarte de la dirección de correo correcta para verificar."
       ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Puedes activar el registro de autenticación para ver cuándo se accede a tu cuenta y desde qué IP. Registraremos la dirección IP y la hora a la que se accede a la cuenta, así como los intentos que no han funcionado."
-      ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Puedes activar la sección Fotos desde la interfaz usando el selector inferior."
       ],
@@ -10543,6 +10545,9 @@
         "Has activado el reenvío en ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para añadir otra, primero desactívala.",
         "Has activado el reenvío en ${ MAX_SYNC_PAID_USER } direcciones de Gmail. Para añadir otra, primero desactiva alguna de ellas."
       ],
+      "You've reached the limit of 50 users for this filter. Remove one to add another.": [
+        "Has alcanzado el límite de 50 usuarios para este filtro. Elimina uno para añadir otro."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Se ha aplicado tu ${ boldDiscountPercent } a ${ boldPlanTitle }."
       ],
@@ -10596,6 +10601,10 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tus archivos serán cifrados y después guardados."
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Tu prueba gratuita incluye ${ ownedCount } servidor dedicado.",
+        "Tu prueba gratuita incluye ${ ownedCount } servidores dedicados."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Tu prueba gratuita se convirtió correctamente en una suscripción ${ cycle }-mensual. Tu fecha de renovación es ${ nextBillingDate }."
@@ -12099,8 +12108,8 @@
       "Search": [
         "Buscar"
       ],
-      "Search by email": [
-        "Buscar por correo electrónico"
+      "Search for a name or email": [
+        "Buscar por nombre o correo electrónico"
       ],
       "Second password": [
         "Segunda contraseña"
@@ -12777,15 +12786,77 @@
         "Tu suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
       ]
     },
+    "Log event": {
+      "Account password change": [
+        "Cambio de la contraseña de la cuenta"
+      ],
+      "Authentication failure (second factor failed)": [
+        "Error de autenticación (segundo factor incorrecto)"
+      ],
+      "Authentication failure (wrong password)": [
+        "Error de autenticación (contraseña incorrecta)"
+      ],
+      "Authentication success": [
+        "Autenticación correcta"
+      ],
+      "Mailbox password change": [
+        "Cambio de la contraseña del buzón"
+      ],
+      "Password reset": [
+        "Restablecimiento de contraseña"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "Se ha desactivado el segundo factor (aplicación de autenticación)."
+      ],
+      "Second factor disabled (security key)": [
+        "El segundo factor (clave de seguridad) ha sido desactivado."
+      ],
+      "Second factor enabled (authenticator app)": [
+        "El segundo factor (aplicación de autenticación) ha sido activado."
+      ],
+      "Second factor enabled (security key)": [
+        "Segundo factor activado (clave de seguridad)"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "Se ha bloqueado el inicio de sesión (debido a un abuso)."
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "Error al iniciar sesión (frase de recuperación errónea)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "Error al iniciar sesión (dos factores erróneo)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Error al iniciar sesión (contraseña incorrecta)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Se ha prohibido el inicio de sesión (debido a abuso)."
+      ],
+      "Sign in success": [
+        "Se ha Iniciado la sesión."
+      ],
+      "Sign in success (awaiting mnemonic)": [
+        "Se ha iniciado la sesión (esperando frase de recuperación)."
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Se ha iniciado la sesión (esperando el segundo factor)."
+      ],
+      "Sign in success (awaiting verify)": [
+        "Se ha iniciado la sesión (esperando verificación)."
+      ],
+      "Sign out": [
+        "Cerrar sesión"
+      ],
+      "Two password mode disabled": [
+        "Se ha desactivado el modo de doble contraseña."
+      ],
+      "Two password mode enabled": [
+        "Se ha activado el modo de doble contraseña."
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Activar ${ reason }"
-      ],
-      "Enable detailed events": [
-        "Activar los eventos detallados"
-      ],
-      "Enable security events": [
-        "Activar los eventos de seguridad"
       ]
     },
     "Mail import summary": {
@@ -12956,6 +13027,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conecta tu dominio personalizado a ${ BRAND_NAME } para configurar direcciones de correo personalizadas (p. ej., tu@tuempresa.com). Nuestro asistente te guiará a través del proceso."
+      ],
+      "View account-related events across your organization.": [
+        "Consulta los eventos relacionados con la cuenta en toda tu organización."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Tu periodo de prueba gratuito ha terminado. El acceso a tu cuenta será desactivado pronto. ${ action }"
@@ -15322,7 +15396,7 @@
         "Ingresa un nombre a mostrar para **${ username }**. Esto es lo que verán tus usuarios cuando cambies sus permisos o compartas información con ellos."
       ],
       "Essential protection and secure collaboration for unlimited users": [
-        "Protección esencial y colaboración segura para usuarios ilimitados"
+        "Lo esencial para la protección y la colaboración segura con usuarios ilimitados"
       ],
       "Everything from ${ planTitle }, plus...": [
         "Todo en el plan ${ planTitle } además de..."
@@ -16095,6 +16169,26 @@
       ],
       "Work": [
         "Trabajo"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "Bloqueado"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Device verification": [
+        "Verificación del dispositivo"
+      ],
+      "Ok": [
+        "OK"
+      ],
+      "Ownership verification": [
+        "Verificación de propiedad"
+      ],
+      "Unknown": [
+        "Desconocido"
       ]
     },
     "Recovery Email": {
@@ -19101,6 +19195,9 @@
       "Activate user": [
         "Activar el usuario"
       ],
+      "Activity monitor": [
+        "Monitor de actividades"
+      ],
       "Add ${ totalServerCount } server?": [
         "¿Añadir ${ totalServerCount } servidor?",
         "¿Añadir ${ totalServerCount } servidores?"
@@ -19249,6 +19346,18 @@
       "Cancel subscription?": [
         "¿Cancelar suscripción?"
       ],
+      "Cannot add Gateway": [
+        "No se puede añadir una puerta de enlace."
+      ],
+      "Cannot add licenses": [
+        "No se pueden añadir licencias."
+      ],
+      "Cannot add more users": [
+        "No se pueden añadir más usuarios."
+      ],
+      "Cannot add servers": [
+        "No se pueden añadir servidores."
+      ],
       "Card verification": [
         "Verificación de la tarjeta"
       ],
@@ -19287,9 +19396,6 @@
       ],
       "Choose user affiliations": [
         "Elegir las afiliaciones del usuario"
-      ],
-      "Clear": [
-        "Borrar"
       ],
       "Click a value in the table to use it as filter": [
         "Haz clic en un valor de la tabla para usarlo como filtro."
@@ -19472,9 +19578,6 @@
       "Delete label?": [
         "¿Eliminar la etiqueta?"
       ],
-      "Delete logs": [
-        "Eliminar registros"
-      ],
       "Delete organization logo?": [
         "¿Eliminar el logo de la organización?"
       ],
@@ -19505,6 +19608,9 @@
       ],
       "Device name": [
         "Nombre del dispositivo"
+      ],
+      "Disable activity monitor?": [
+        "¿Desactivar el monitor de actividades?"
       ],
       "Disable two-factor authentication": [
         "Desactivar la autenticación de dos factores"
@@ -20439,6 +20545,9 @@
       "What would you like to import?": [
         "¿Qué te gustaría importar?"
       ],
+      "Wipe all logs?": [
+        "¿Borrar todos los registros?"
+      ],
       "WireGuard configuration": [
         "Configuración de WireGuard"
       ],
@@ -20617,12 +20726,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Permite fácilmente añadir enlaces a videoconferencias a tus invitaciones de calendario."
       ],
-      "An approximate location of the IP address": [
-        "Una ubicación aproximada de la dirección IP"
-      ],
-      "Any protection applied to suspicious activity": [
-        "Cualquier protección aplicada a una actividad sospechosa"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambia automáticamente entre tus temas preferidos para el día y la noche en sincronía con los modos de día y noche de tu sistema."
       ],
@@ -20644,8 +20747,8 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Elimina la papelera y el spam luego de 30 días. Al activar esta opción, los mensajes que ya están en las carpetas Papelera o Spam tienen una fecha de eliminación según la fecha en que se han movido allí."
       ],
-      "Device information such as operating system": [
-        "Información del dispositivo como el sistema operativo"
+      "Device name and app version": [
+        "Nombre del dispositivo y versión de la aplicación"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Nombre a mostrar para la entidad en la base de datos de eduGAIN"
@@ -20665,14 +20768,11 @@
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Activar/desactivar las notificaciones de escritorio y de teléfono para «${ labelName }»"
       ],
-      "Enabling detailed events records the IP address for each event.": [
-        "Al activar los eventos detallados se registrará la dirección IP para cada evento."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL de punto final de tu proveedor de identidad (por ejemplo, https://idp.ejemplo.es/sso/saml)"
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
-        "Excluyendo usuarios con inicio de sesión con 2FA administrado por tu proveedor de identidad"
+        "Exclusión de los usuarios con autenticación única cuyo segundo factor de autenticación es gestionado por el proveedor de identidad."
       ],
       "Feature in early access": [
         "Funcionalidad en acceso anticipado"
@@ -20698,9 +20798,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si has comprado un código de regalo o recibido uno de nuestro equipo de soporte, puedes introducirlo aquí."
       ],
-      "IP address (Internet Service Provider)": [
-        "Dirección IP (proveedor de servicios de internet)"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Los miembros que no usen 2FA recibirán un correo electrónico pidiendo que lo activen tan pronto como sea posible. Los usuarios con inicio de sesión único no recibirán el recordatorio por correo electrónico."
       ],
@@ -20709,6 +20806,9 @@
       ],
       "Not all information listed here was exposed for all users.": [
         "No toda la información aquí mencionada fue expuesta para todos los usuarios."
+      ],
+      "Origin IP address and Internet Service Provider (ISP)": [
+        "Dirección IP de origen y proveedor de servicios de internet (ISP)"
       ],
       "Remove metadata from images to protect your privacy.": [
         "Elimina los metadatos de las imágenes para proteger tu privacidad."
@@ -20748,9 +20848,6 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "El Proveedor de Servicios de Internet de la dirección IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
@@ -20805,6 +20902,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Utiliza las barras de desplazamiento del navegador por defecto. Son más grandes y fáciles de utilizar en general."
+      ],
+      "User's approximate location (based on their IP address)": [
+        "Ubicación aproximada del usuario (basada en su dirección IP)"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Los usuarios verán tu logo en lugar del ícono de ${ BRAND_NAME } cuando inicien sesión en las aplicaciones web."
@@ -21556,12 +21656,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Al eliminar este número de teléfono, ya no podrás recuperar tu cuenta."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Al desactivar el monitoreo de eventos de seguridad, también borrarás todo tu historial. ¿Estás seguro de que quieres desactivar esta opción?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "La fecha de expiración no está en formato MM/AA."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Si cancelas esta importación, no podrás reanudarla. ${ BRAND_NAME } ha guardado todo el progreso en tu cuenta. ¿Quieres cancelarla de todos modos?"

@@ -531,6 +531,9 @@
       "refresh the page": [
         "पृष्ठ रिफ्रेश करें"
       ],
+      "Reload": [
+        "रिलोड"
+      ],
       "Remove": [
         "हटाएं"
       ],
@@ -3052,11 +3055,6 @@
         "ज़िप कोड आवश्यक है"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "एक ईमेल पता दर्ज करें"
-      ]
-    },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
         "आपके फाइल \"${ formattedFilename }\" को पढ़ते समय एक गड़बड़ हो गई। गलत फाइल फॉर्मेट।"
@@ -3699,9 +3697,6 @@
       ]
     },
     "Header": {
-      "App version": [
-        "ऐप वर्शन"
-      ],
       "Best deal": [
         "सबसे अच्छा सौदा"
       ],
@@ -3737,9 +3732,6 @@
       ],
       "Organization key fingerprint": [
         "संगठन कुंजी फिंगरप्रिंट"
-      ],
-      "Protection": [
-        "सुरक्षा"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "${ VPN_APP_NAME } पर बेहतरीन डील के साथ बड़ी बचत करें"
@@ -5016,9 +5008,6 @@
       ],
       "SCIM token active": [
         "SCIM टोकन सक्रिय है"
-      ],
-      "Search by an email address to begin": [
-        "शुरू करने के लिए एक ईमेल पता द्वारा खोजें"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "अपने ${ BRAND_NAME } खाते को सुरक्षित करें"
@@ -6351,9 +6340,6 @@
       ],
       "Search": [
         "खोजें"
-      ],
-      "Search by email": [
-        "ईमेल द्वारा खोजें"
       ],
       "Second password": [
         "दूसरा पासवर्ड"
@@ -11387,12 +11373,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "आपकी कैलेंडर निमंत्रणों में वीडियो कॉन्फ्रेंसिंग लिंक सहजता से जोड़ने की अनुमति देता है।"
       ],
-      "An approximate location of the IP address": [
-        "IP ​​पते का अनुमानित स्थान"
-      ],
-      "Any protection applied to suspicious activity": [
-        "संदिग्ध गतिविधि पर लागू कोई भी सुरक्षा"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "अपने पसंदीदा दिन और रात के विषयों के बीच स्वचालित रूप से स्विच करें, जो आपके सिस्टम के दिन और रात मोड के साथ सिंक में हो।"
       ],
@@ -11401,9 +11381,6 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "इस यूआरएल को कॉपी करके अपने पहचान प्रदाता के इकाई आईडी फील्ड में पेस्ट करें"
-      ],
-      "Device information such as operating system": [
-        "डिवाइस की जानकारी जैसे ऑपरेटिंग सिस्टम"
       ],
       "Display name for the entity in the eduGAIN database": [
         "eduGAIN डेटाबेस में एंटिटी के लिए डिस्प्ले नाम"
@@ -11422,9 +11399,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "यदि आपने एक उपहार कोड खरीदा है या हमारी सहायता टीम से एक प्राप्त किया है, तो आप इसे यहां दर्ज कर सकते हैं।"
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP पता (Internet Service Provider)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "जो सदस्य 2-एफए का उपयोग नहीं करते हैं, उन्हें एक ईमेल प्राप्त होगा जिसमें उनसे इसे यथाशीघ्र सक्षम करने के लिए कहा जाएगा। सिंगल साइन-ऑन उपयोगकर्ताओं को ईमेल रिमाइंडर नहीं मिलेगा"

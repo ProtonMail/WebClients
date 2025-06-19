@@ -1031,6 +1031,9 @@
       "File does not match expected format": [
         "Soubor neodpovídá očekávanému formátu"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Import pro trezor \"${ vaultData.name }\" selhal: ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Import položek se nezdařil"
       ],
@@ -1159,6 +1162,9 @@
       ],
       "Unsupported 1Password file format": [
         "Nepodporovaný formát souboru 1Password"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Nepodporovaný formát souboru Bitwarden"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aktualizace trezoru \"${ payload.content.name }\" selhala"
@@ -1850,10 +1856,7 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2703,6 +2706,9 @@
       "Catch-All": [
         "Doménový koš"
       ],
+      "Checkbox": [
+        "Zaškrtávací pole"
+      ],
       "City": [
         "Město"
       ],
@@ -2769,14 +2775,8 @@
       "Crypto Wallet": [
         "Peněženka kryptoměny"
       ],
-      "Custom hidden field": [
-        "Vlastní skryté pole"
-      ],
       "Custom Items": [
         "Vlastní položky"
-      ],
-      "Custom text field": [
-        "Vlastní textové pole"
       ],
       "Database": [
         "Databáze"
@@ -2852,6 +2852,9 @@
       ],
       "Export": [
         "Export"
+      ],
+      "Extra fields": [
+        "Dodatečná pole"
       ],
       "Extra password": [
         "Dodatečné heslo"
@@ -2978,6 +2981,12 @@
       ],
       "Key": [
         "Klíč"
+      ],
+      "Key fingerprint": [
+        "Otisk klíče"
+      ],
+      "Key type": [
+        "Typ klíče"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klávesová zkratka: ${ shortcut }"
@@ -4367,9 +4376,6 @@
       "OTP secret or URI is invalid": [
         "OTP secret nebo URI jsou neplatné"
       ],
-      "OTP secret or URI required": [
-        "Vyžadováno OTP secret nebo URI"
-      ],
       "Section name cannot be empty": [
         "Název sekce nemůže být prázdný"
       ],
@@ -4381,6 +4387,11 @@
       ],
       "URL is invalid": [
         "URL adresa je neplatná"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Přesunout položky do"
       ]
     },
     "Warning": {
@@ -4494,9 +4505,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Odeslání pozvánky na e-mailovou adresu mimo organizaci není povoleno."
-      ],
-      "item was imported without custom fields": [
-        "položka byla importována bez vlastních polí"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximální délka je ${ maxLength } znak",

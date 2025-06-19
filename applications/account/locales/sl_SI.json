@@ -1435,9 +1435,6 @@
       "What do I get?": [
         "Kaj dobim?"
       ],
-      "Wipe": [
-        "Počisti"
-      ],
       "Yes": [
         "Da"
       ],
@@ -3766,15 +3763,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Preprosto sinhronizirajte datoteke v oblak iz namizja in do njih dostopajte iz mobilne naprave."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Omogoči ${ PROTON_SENTINEL_NAME } za dostop do teh funkcij."
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Za dostop do teh funkcij omogočite podrobne dogodke in ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Enable detailed events to access these features": [
-        "Za dostop do teh funkcij omogočite podrobne dogodke"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje in uvažanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
       ],
@@ -5113,11 +5101,6 @@
         "Nič ključev ponovno aktiviranih"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "Vnesite e-poštni naslov"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Pri branju datoteke ${ formattedFilename } je prišlo do napake. Neveljavna oblika datoteke."
@@ -6223,9 +6206,6 @@
       "Actions": [
         "Dejanja"
       ],
-      "App version": [
-        "Različica aplikacije"
-      ],
       "Best deal": [
         "Najboljša ponudba"
       ],
@@ -6274,9 +6254,6 @@
       "Permissions": [
         "Dovoljenja"
       ],
-      "Protection": [
-        "Zaščita"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Izkoristite najboljše ponudbe ${ VPN_APP_NAME } in prihranite"
       ],
@@ -6297,9 +6274,6 @@
       ],
       "Status": [
         "Stanje"
-      ],
-      "Time": [
-        "Ura"
       ],
       "User": [
         "Uporabnik"
@@ -7268,9 +7242,6 @@
       "Are you sure you want to give administrative privileges to this user?": [
         "Ali ste prepričani, da želite temu uporabniku dati skrbniške pravice?"
       ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Ali ste prepričani, da želite trajno izbrisati vse dnevnike?"
-      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Ali ste prepričani, da želite odstraniti skrbniške pravice temu uporabniku?"
       ],
@@ -7730,9 +7701,6 @@
       "expires ${ expirationDate }": [
         "poteče ${ expirationDate }"
       ],
-      "Failed to fetch logs.": [
-        "Pridobivanje dnevniških zapisov ni uspelo."
-      ],
       "Featured in": [
         "Predstavljeno v"
       ],
@@ -8176,9 +8144,6 @@
       ],
       "No label selected": [
         "Izbrana ni nobena oznaka"
-      ],
-      "No logs yet.": [
-        "Še ni dnevnikov."
       ],
       "No payment is required at this time.": [
         "Plačilo ni potrebno."
@@ -10902,9 +10867,6 @@
       "Search": [
         "Išči"
       ],
-      "Search by email": [
-        "Iskanje po e-pošti"
-      ],
       "Second password": [
         "Drugo geslo"
       ],
@@ -11545,12 +11507,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Omogoči ${ reason }"
-      ],
-      "Enable detailed events": [
-        "Omogoči podrobne dogodke"
-      ],
-      "Enable security events": [
-        "Omogoči varnostne dogodke"
       ]
     },
     "Mail import summary": {
@@ -17415,9 +17371,6 @@
       "Choose an account": [
         "Izberite račun"
       ],
-      "Clear": [
-        "Počisti"
-      ],
       "Close": [
         "Zapri"
       ],
@@ -17588,9 +17541,6 @@
       ],
       "Delete label?": [
         "Izbriši oznako?"
-      ],
-      "Delete logs": [
-        "Izbriši dnevnike"
       ],
       "Delete organization logo?": [
         "Izbrišem logotip organizacije?"
@@ -18687,12 +18637,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Omogoča nemoteno dodajanje povezav za videokonference v vaša povabila v koledar."
       ],
-      "An approximate location of the IP address": [
-        "Približna lokacija IP naslova"
-      ],
-      "Any protection applied to suspicious activity": [
-        "Katera koli zaščita, ki je uporabljena za sumljive aktivnosti"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Samodejno preklapljajte med svojimi prednostnimi temami za dan in noč v skladu z dnevnim in nočnim načinom vašega sistema"
       ],
@@ -18707,9 +18651,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Izbriši smeti in neželena sporočila po 30 dneh. Vključitev samodejnega brisanja daje sporočilom, ki so že v smeteh/neželeni pošti, datum izbrisa glede na datum, ko so bila premaknjena tja."
-      ],
-      "Device information such as operating system": [
-        "Informacije o napravi, kot je operacijski sistem"
       ],
       "Each imported email will have this label": [
         "Vsako uvoženo e-poštno sporočilo bo imelo to oznako"
@@ -18788,9 +18729,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Najprej se bodo uvozila najnovejša sporočila."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Ponudnik internetnih storitev naslova IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Novo obdobje naročnine se začne ${ formattedTime }."
@@ -19426,12 +19364,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Če izbrišete to telefonsko številko, ne boste več mogli obnoviti svojega računa."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Če onemogočite spremljanje varnostnih dogodkov, boste izbrisali vašo celotno zgodovino. Ste prepričani, da to onemogočite?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Datum poteka ni v obliki MM/LL"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Če prekličete ta uvoz, ga ne boste mogli nadaljevati. ${ BRAND_NAME } je shranil ves napredek v vašem računu. Želite vseeno preklicati?"

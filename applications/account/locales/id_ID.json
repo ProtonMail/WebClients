@@ -350,7 +350,7 @@
         "Salin port SMTP"
       ],
       "Copy SMTP server": [
-        "Salin Server SMTP"
+        "Salin server SMTP"
       ],
       "Copy SMTP token": [
         "Salin token SMTP"
@@ -1542,9 +1542,6 @@
       ],
       "What do I get?": [
         "Apa yang akan saya dapatkan?"
-      ],
-      "Wipe": [
-        "Hapus"
       ],
       "Yes": [
         "Ya"
@@ -4097,15 +4094,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sinkronkan berkas ke layanan cloud dari desktop Anda dengan mudah dan akses berkas ini dari perangkat seluler Anda."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktifkan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktifkan rekaman peristiwa terperinci dan ${ PROTON_SENTINEL_NAME } untuk mengakses rangkaian fitur ini"
-      ],
-      "Enable detailed events to access these features": [
-        "Aktifkan rekaman peristiwa terperinci untuk mengakses rangkaian fitur ini"
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Anjurkan penggunaan autentikasi dua faktor di dalam organisasi Anda untuk keamanan yang lebih."
       ],
@@ -5663,11 +5651,6 @@
         "Kode pos diperlukan"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "Masukkan alamat email"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
@@ -6800,9 +6783,6 @@
       "Actions": [
         "Tindakan"
       ],
-      "App version": [
-        "Versi aplikasi"
-      ],
       "Best deal": [
         "Penawaran terbaik"
       ],
@@ -6854,9 +6834,6 @@
       "Permissions": [
         "Perizinan"
       ],
-      "Protection": [
-        "Perlindungan"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Dapatkan potongan harga besar-besaran untuk berbagai penawaran ${ VPN_APP_NAME } terbaik"
       ],
@@ -6880,9 +6857,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Time": [
-        "Waktu"
       ],
       "User": [
         "Pengguna"
@@ -7382,6 +7356,9 @@
       ]
     },
     "Info": {
+      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
+        " - pusat kendali Anda untuk melacak aktivitas pengguna, mendeteksi ancaman, dan memastikan ketaatan peraturan pada seluruh organisasi Anda."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } pengguna saat ini memiliki akses ke server bersama."
       ],
@@ -7837,9 +7814,6 @@
       ],
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Apakah Anda yakin ingin meninggalkan grup ini? Apabila Anda keluar dari grup, Anda akan perlu untuk diundang ulang oleh administrator grup untuk dapat kembali bergabung."
-      ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Apakah Anda yakin untuk menghapus seluruh log Anda secara permanen?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Apakah Anda yakin untuk menghapus hak administratif pengguna ini?"
@@ -8377,9 +8351,6 @@
       ],
       "Event invitations and responses will be sent in this language.": [
         "Undangan dan jawaban acara akan dikirim dalam bahasa ini."
-      ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Peristiwa keamanan mencatat berbagai percobaan autentikasi untuk seluruh layanan ${ BRAND_NAME } yang menggunakan kredensial ${ BRAND_NAME_TWO } Anda."
       ],
       "Example: ${ spfExample }": [
         "Contoh: ${ spfExample }"
@@ -8957,9 +8928,6 @@
       "No label selected": [
         "Tidak ada label yang dipilih"
       ],
-      "No logs yet.": [
-        "Belum ada log."
-      ],
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang dibutuhkan untuk saat ini."
       ],
@@ -9328,9 +9296,6 @@
       ],
       "SCIM token active": [
         "Token SCIM aktif"
-      ],
-      "Search by an email address to begin": [
-        "Cari berdasarkan alamat email untuk memulai"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Amankan akun ${ BRAND_NAME } Anda"
@@ -10243,9 +10208,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Anda dapat menyunting alamat ini satu kali untuk memastikan bahwa alamat email yang akan digunakan untuk verifikasi ini telah sesuai."
-      ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Anda dapat mengaktifkan log autentikasi untuk melihat kapan saja dan oleh alamat IP mana saja akun Anda diakses. Kami akan mencatat alamat IP yang mengakses akun Anda dan waktunya, beserta dengan seluruh upaya akses yang gagal."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Anda dapat mengaktifkan bagian Foto dari antarmuka menggunakan saklar di bawah."
@@ -11947,9 +11909,6 @@
       "Search": [
         "Cari"
       ],
-      "Search by email": [
-        "Cari melalui email"
-      ],
       "Second password": [
         "Kata sandi kedua"
       ],
@@ -12620,15 +12579,23 @@
         "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
       ]
     },
+    "Log event": {
+      "Authentication failure (wrong password)": [
+        "Autentikasi gagal (kata sandi salah)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "Faktor kedua diaktifkan (aplikasi autentikator)"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "Upaya masuk diblokir (akibat penyalahgunaan)"
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "Upaya masuk gagal (mnemonik gagal)"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Aktifkan ${ reason }"
-      ],
-      "Enable detailed events": [
-        "Aktifkan rekaman peristiwa terperinci"
-      ],
-      "Enable security events": [
-        "Aktifkan peristiwa keamanan"
       ]
     },
     "Mail import summary": {
@@ -18823,6 +18790,9 @@
       "Activate user": [
         "Aktifkan pengguna"
       ],
+      "Activity monitor": [
+        "Monitor aktivitas"
+      ],
       "Add ${ totalServerCount } server?": [
         "Tambah ${ totalServerCount } server?"
       ],
@@ -19009,9 +18979,6 @@
       "Choose user affiliations": [
         "Pilih afiliasi pengguna"
       ],
-      "Clear": [
-        "Bersihkan"
-      ],
       "Click a value in the table to use it as filter": [
         "Klik nilai di tabel untuk menggunakannya sebagai penyaring"
       ],
@@ -19191,9 +19158,6 @@
       ],
       "Delete label?": [
         "Hapus label?"
-      ],
-      "Delete logs": [
-        "Hapus log"
       ],
       "Delete organization logo?": [
         "Hapus logo organisasi?"
@@ -20155,6 +20119,9 @@
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
       ],
+      "Wipe all logs?": [
+        "Hapus seluruh log?"
+      ],
       "WireGuard configuration": [
         "Konfigurasi WireGuard"
       ],
@@ -20332,12 +20299,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Memungkinkan tautan konferensi video untuk ditambahkan secara terpadu ke undangan kalender Anda."
       ],
-      "An approximate location of the IP address": [
-        "Estimasi lokasi alamat IP"
-      ],
-      "Any protection applied to suspicious activity": [
-        "Segala bentuk perlindungan terhadap aktivitas yang mencurigakan"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sesuaikan tema aplikasi dengan mode terang dan gelap pada sistem Anda secara otomatis"
       ],
@@ -20359,9 +20320,6 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Hapus pesan sampah dan spam setelah 30 hari. Dengan mengaktifkan penghapusan otomatis, pesan yang telah ada di sampah/spam akan memiliki tenggat waktu penghapusan berdasarkan tanggal masing-masing pesan."
       ],
-      "Device information such as operating system": [
-        "Informasi seputar perangkat, seperti sistem operasi yang digunakan"
-      ],
       "Display name for the entity in the eduGAIN database": [
         "Nama tampilan untuk entitas dalam basis data eduGAIN"
       ],
@@ -20379,9 +20337,6 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Aktifkan/nonaktifkan notifikasi desktop dan seluler untuk “${ labelName }”"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "Mengaktifkan rekaman peristiwa terperinci yang merekam alamat IP untuk masing-masing peristiwa."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL endpoint dari penyedia identitas (mis. https://idp.contoh.com/sso/saml)"
@@ -20412,9 +20367,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
-      ],
-      "IP address (Internet Service Provider)": [
-        "Alamat IP (Penyedia Layanan Internet)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Anggota yang tidak menggunakan 2FA akan mendapatkan email untuk meminta mereka mengaktifkan sesegera mungkin. Pengguna sistem masuk tunggal tidak akan menerima pengingat email."
@@ -21252,12 +21204,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Dengan menghapus nomor telepon ini, Anda tidak akan lagi dapat memulihkan akun Anda."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Dengan menonaktifkan pemantauan peristiwa keamanan, Anda juga akan menghapus seluruh riwayat Anda. Apakah Anda yakin ingin menonaktifkan fitur ini?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Tanggal Kedaluwarsa bukan dalam format BB/TT"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Apabila Anda membatalkan impor ini, Anda tidak akan dapat melanjutkannya kembali. ${ BRAND_NAME } menyimpan seluruh proses yang telah berlangsung pada akun Anda. Tetap batalkan?"

@@ -377,12 +377,6 @@
       "Download logs": [
         "Registros de downloads"
       ],
-      "Download without scanning": [
-        "Baixar sem verificar"
-      ],
-      "Download without scanning (${ count })": [
-        "Baixar sem verificar (${ count })"
-      ],
       "Drive Locked": [
         "Unidade bloqueada"
       ],
@@ -868,6 +862,12 @@
       ],
       "Save photos and remove": [
         "Salvar fotos e remover"
+      ],
+      "Scan & Download": [
+        "Escanear e Baixar"
+      ],
+      "Scan & Download (${ count })": [
+        "Escanear e Baixar (${ count })"
       ],
       "Search": [
         "Pesquisar"
@@ -1361,6 +1361,14 @@
       ],
       "Unsupported event": [
         "Evento não suportado"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ cycle } meses em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ]
     },
     "Badge": {
@@ -12153,9 +12161,6 @@
       ],
       "Contacts could not be merged": [
         "Não foi possível mesclar os contatos."
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "A data de expiração não está no formato MM/AA"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se você não se lembra de sua senha, é impossível reativar sua chave. Nós podemos ajudá-lo a descartar o banner de alerta, mas no processo você perderá o acesso permanente a todos os dados criptografados com essa chave."

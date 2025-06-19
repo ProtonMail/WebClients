@@ -2648,9 +2648,6 @@
       "Add section": [
         "Ajouter une section"
       ],
-      "Additional data": [
-        "Informations supplémentaires"
-      ],
       "Additional details": [
         "Informations supplémentaires"
       ],
@@ -2738,6 +2735,9 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Case à cocher"
+      ],
       "Choose unlock method": [
         "Choisissez la méthode de déverrouillage"
       ],
@@ -2810,14 +2810,8 @@
       "Crypto Wallet": [
         "Portefeuille de cryptomonnaies"
       ],
-      "Custom hidden field": [
-        "Champ masqué personnalisé"
-      ],
       "Custom Items": [
         "Éléments personnalisés"
-      ],
-      "Custom text field": [
-        "Champ personnalisé"
       ],
       "Database": [
         "Base de données"
@@ -3067,6 +3061,9 @@
       ],
       "Key fingerprint": [
         "Empreinte de la clé"
+      ],
+      "Key type": [
+        "Type de clé"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Raccourci clavier : ${ shortcut }"
@@ -4604,9 +4601,6 @@
       "OTP secret or URI is invalid": [
         "La clé secrète du mot de passe à usage unique (OTP) ou l'URI (Uniform Resource Identifier) n'est pas valide."
       ],
-      "OTP secret or URI required": [
-        "La clé secrète du mot de passe à usage unique (OTP) ou l'URI (Uniform Resource Identifier) est nécessaire."
-      ],
       "Section name cannot be empty": [
         "Le nom de la section ne peut pas être vide."
       ],
@@ -4738,9 +4732,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Les invitations d'adresses e-mail en dehors de l'organisation ne sont pas autorisées."
-      ],
-      "item was imported without custom fields": [
-        "L'élément a été importé sans les champs personnalisés."
       ],
       "Maximum length is ${ maxLength } character": [
         "${ maxLength } caractère maximum",

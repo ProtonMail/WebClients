@@ -1423,9 +1423,6 @@
       "What do I get?": [
         "我的專屬服務方案："
       ],
-      "Wipe": [
-        "清除"
-      ],
       "Yes": [
         "是"
       ],
@@ -3697,15 +3694,6 @@
       "Create policies to decide who can connect to shared servers in each country.": [
         "創建政策以決定誰可連接至於各國的共享伺服器"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "啟用${ PROTON_SENTINEL_NAME }以存取此功能"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "啟用詳細記錄${ PROTON_SENTINEL_NAME }以存取此功能"
-      ],
-      "Enable detailed events to access these features": [
-        "啟用行程記錄以存取此功能"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
@@ -4998,11 +4986,6 @@
         "郵遞區號為必要項目"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "輸入電子郵件地址"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式不正確。"
@@ -6073,9 +6056,6 @@
       "Actions": [
         "動作"
       ],
-      "App version": [
-        "應用程式版本"
-      ],
       "Best deal": [
         "最划算"
       ],
@@ -6127,9 +6107,6 @@
       "Permissions": [
         "權限"
       ],
-      "Protection": [
-        "安全"
-      ],
       "Select your deal": [
         "請選擇您的優惠"
       ],
@@ -6147,9 +6124,6 @@
       ],
       "Status": [
         "狀態"
-      ],
-      "Time": [
-        "時間"
       ],
       "User": [
         "使用者"
@@ -7052,9 +7026,6 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "您確認要退出此群組?若要繼續，您將需要此群組管理員重新邀請以再次加入。"
       ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "您確定要永久刪除您的所有記錄嗎？"
-      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "您確定要移除這位使用者的管理權限？"
       ],
@@ -7538,9 +7509,6 @@
       "Event invitations and responses will be sent in this language.": [
         "行程邀請與回應將會以此語言傳送。"
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "事件包含所有使用 ${ BRAND_NAME_TWO } 憑證的 ${ BRAND_NAME } 服務的驗證嘗試。"
-      ],
       "Example: ${ spfExample }": [
         "範例: ${ spfExample }"
       ],
@@ -7549,9 +7517,6 @@
       ],
       "expires ${ expirationDate }": [
         "於 ${ expirationDate } 過期"
-      ],
-      "Failed to fetch logs.": [
-        "擷取紀錄檔失敗。"
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "快速和專注。電子郵件及行事曆，直接於桌面。"
@@ -8072,9 +8037,6 @@
       "No label selected": [
         "未選取任何標籤"
       ],
-      "No logs yet.": [
-        "未有任何記錄。"
-      ],
       "No payment is required at this time.": [
         "此時毋須付款。"
       ],
@@ -8413,9 +8375,6 @@
       ],
       "SCIM token active": [
         "SCIM 憑證啟用"
-      ],
-      "Search by an email address to begin": [
-        "透過電子郵件地址以開始"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "保護您的 ${ BRAND_NAME } 帳號"
@@ -9256,9 +9215,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "您可以編輯這個一次以確保用於驗證的電子郵件位址正確。"
-      ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "您可以啟用認證記錄，以查看您的帳號何時被存取以及來自哪個 IP。我們將記錄存取帳號所使用的 IP 位址及時間，以及失敗的登入嘗試。"
       ],
       "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "您可於一個組合取得我們全部的頂級隱私服務—且只要**${ priceString }/每月**。"
@@ -10840,9 +10796,6 @@
       ],
       "Search": [
         "搜尋"
-      ],
-      "Search by email": [
-        "透過電子郵件搜尋"
       ],
       "Second password": [
         "第二密碼"
@@ -14324,6 +14277,11 @@
         "工作"
       ]
     },
+    "Protection type": {
+      "Ok": [
+        "確定"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "回到 ${ signIn }。"
@@ -16997,9 +16955,6 @@
       "Choose an account": [
         "選擇一個帳號"
       ],
-      "Clear": [
-        "清除"
-      ],
       "Click a value in the table to use it as filter": [
         "點及於表格中的任何值以當作過濾器"
       ],
@@ -17167,9 +17122,6 @@
       ],
       "Delete label?": [
         "刪除標籤?"
-      ],
-      "Delete logs": [
-        "刪除記錄檔"
       ],
       "Delete organization logo?": [
         "刪除組織標誌？"
@@ -18233,12 +18185,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "允許無痕添加會議連結至您的行事曆邀請函。"
       ],
-      "An approximate location of the IP address": [
-        "IP 位址的大概位置"
-      ],
-      "Any protection applied to suspicious activity": [
-        "針對可疑活動所採取的保護措施"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "與系統的日夜模式同步，在白天和晚上的偏好布景主題之間自動切換"
       ],
@@ -18260,9 +18206,6 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "在 30天後刪除垃圾桶與垃圾郵件夾中的郵件。 自動刪除功能可以將移到這些資料夾超過30天的郵件清光。"
       ],
-      "Device information such as operating system": [
-        "裝置資訊如作業系統"
-      ],
       "Each imported email will have this label": [
         "每一封匯入的電郵將加上此標籤"
       ],
@@ -18274,9 +18217,6 @@
       ],
       "Enable/disable desktop and mobile notifications": [
         "啟用／停用桌面與行動裝置通知"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "替每項行程詳啟用細行程以記錄IP地址"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "來自身分提供商(例如 e.g. https://idp.example.com/sso/saml)端點網址"
@@ -18298,9 +18238,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已購買或從我們的支援團隊收到禮品代碼，您可在此輸入。"
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP地址(網際網路服務提供商)"
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "在 [已傳送] 或 [草稿] 資料夾中的郵件將繼續保留原處，即使您將郵件移動至另一個資料夾。"
@@ -18334,9 +18271,6 @@
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
-      ],
-      "The Internet Service Provider of the IP address": [
-        "網路服務提供商的IP位址"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新的訂購授權週期開始在${ formattedTime }"

@@ -2742,9 +2742,6 @@
       "Add section": [
         "Дадаць раздзел"
       ],
-      "Additional data": [
-        "Дадатковыя даныя"
-      ],
       "Additional details": [
         "Дадатковыя падрабязнасці"
       ],
@@ -2832,6 +2829,9 @@
       "Catch-All": [
         "Уся пошта дамена"
       ],
+      "Checkbox": [
+        "Сцяжок"
+      ],
       "Choose unlock method": [
         "Выберыце спосаб разблакіроўкі"
       ],
@@ -2904,14 +2904,8 @@
       "Crypto Wallet": [
         "Крыпта-кашалёк"
       ],
-      "Custom hidden field": [
-        "Карыстальніцкія схаваныя палі"
-      ],
       "Custom Items": [
         "Карыстальніцкія элементы"
-      ],
-      "Custom text field": [
-        "Карыстальніцкія тэкставыя палі"
       ],
       "Database": [
         "База даных"
@@ -3161,6 +3155,9 @@
       ],
       "Key fingerprint": [
         "Адбітак ключа"
+      ],
+      "Key type": [
+        "Тып ключа"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Спалучэнні клавіш: ${ shortcut }"
@@ -4720,9 +4717,6 @@
       "OTP secret or URI is invalid": [
         "Памылковы сакрэт OTP або URL-адрас"
       ],
-      "OTP secret or URI required": [
-        "Патрабуецца сакрэтны ключ OTP або URL-адрас"
-      ],
       "Section name cannot be empty": [
         "Назва раздзела не можа быць пустой"
       ],
@@ -4858,9 +4852,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Запрашэнне адрасоў электроннай пошты па-за межамі арганізацыі забаронена."
-      ],
-      "item was imported without custom fields": [
-        "элемент быў імпартаваны без карыстальніцкіх палёў"
       ],
       "Maximum length is ${ maxLength } character": [
         "Максімальная даўжыня ${ maxLength } сімвал",

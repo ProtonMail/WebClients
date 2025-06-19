@@ -1835,6 +1835,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2666,12 +2670,6 @@
       ],
       "Credit cards": [
         "Betalingskort"
-      ],
-      "Custom hidden field": [
-        "Tilpasset skjult felt"
-      ],
-      "Custom text field": [
-        "Tilpasset tekstfelt"
       ],
       "Date": [
         "Dato"
@@ -4265,9 +4263,6 @@
       "OTP secret or URI is invalid": [
         "OTP-hemmelighed eller URI er ugyldig"
       ],
-      "OTP secret or URI required": [
-        "OTP-hemmelighed eller URI påkrævet"
-      ],
       "Section name cannot be empty": [
         "Sektionsnavn kan ikke være tomt"
       ],
@@ -4391,9 +4386,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Det er ikke tilladt at invitere e-mailadresser uden for organisationen."
-      ],
-      "item was imported without custom fields": [
-        "element blev importeret uden brugerdefinerede felter"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksimal længde er ${ maxLength } tegn",

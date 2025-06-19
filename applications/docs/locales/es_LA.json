@@ -1123,6 +1123,14 @@
         "Evento no compatible"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada ${ cycle } meses el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente mensualmente el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 usuario"
@@ -4418,7 +4426,7 @@
         "Se eliminó el contacto del grupo ${ contactGroupName }."
       ],
       "Converting document...": [
-        "Convirtiendo el documento..."
+        "Convirtiendo documento..."
       ],
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
@@ -4465,7 +4473,7 @@
         "Creando enlace a la carpeta"
       ],
       "Creating new document...": [
-        "Creando el documento..."
+        "Creando nuevo documento..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no usada de la suscripción al plan anterior"
@@ -4585,7 +4593,7 @@
         "Ingrese su propia contraseña (como administrador de la organización)."
       ],
       "Error converting document: ${ errorMessage }": [
-        "Error al convertir el documento: ${ errorMessage }"
+        "Error al convertir documento: ${ errorMessage }"
       ],
       "Error loading document: ${ errorDetail }": [
         "Error al cargar el documento: ${ errorDetail }"
@@ -8869,19 +8877,37 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Valores separados por comas (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "Nueva hoja de cálculo"
+      ],
+      "Rename spreadsheet": [
+        "Renombrar hoja de cálculo"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Valores separados por tabulaciones (.tsv)"
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Creando nueva hoja de cálculo..."
-      ],
       "Detect automatically": [
         "Detectar automáticamente"
       ],
       "Insert as new sheet": [
         "Insertar como hoja nueva"
+      ],
+      "Replace current sheet": [
+        "Reemplazar hoja actual"
+      ],
+      "Replace data at selected cell": [
+        "Reemplazar datos en la celda seleccionada"
+      ],
+      "Select a CSV or TSV file to import": [
+        "Seleccione un archivo CSV o TSV para importar"
       ]
     },
     "sheets_2025:Label": {
@@ -10552,9 +10578,6 @@
       ],
       "Contacts could not be merged": [
         "No se pudieron combinar los contactos"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "La fecha de expiración no está en formato MM/AA"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si no recuerda la contraseña, es imposible volver a activar la clave. Podemos ayudarle a descartar la alerta pero en el proceso perderá permanentemente el acceso a todos los datos cifrados con esa clave."
