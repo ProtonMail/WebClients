@@ -2,7 +2,8 @@ import { c, msgid } from 'ttag';
 
 import { updateCalendarData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
-import { Icon, UnderlineButton, useModalState } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, useModalState } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 
 import CustomizeCalendarImportModal from './CustomizeCalendarImportModal/CustomizeCalendarImportModal';
@@ -74,10 +75,12 @@ const StepPrepareCalendarSummary = ({ isSelected }: Props) => {
                     {summary}
                 </div>
             )}
-            <UnderlineButton
+            <Button
+                shape="underline"
+                color="norm"
                 onClick={() => handleDisplayCustomizeModal(true)}
                 className="self-start pb-0"
-            >{c('Action').t`Customize`}</UnderlineButton>
+            >{c('Action').t`Customize`}</Button>
             {renderCustomizeModal && (
                 <CustomizeCalendarImportModal
                     handleSubmit={handleSubmit}
