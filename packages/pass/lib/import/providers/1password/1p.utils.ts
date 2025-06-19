@@ -179,6 +179,33 @@ export const extract1PasswordLegacyURLs = (item: OnePassLegacyItem): string[] =>
 // Field's ids to filter out and build the Wi-Fi item
 const baseWifiFields = ['network_name', 'wireless_password', 'wireless_security'];
 
+const sanitizeGenericField = (
+    value: unknown,
+    fieldName: MaybeNull<string> = null
+): MaybeNull<DeobfuscatedItemExtraField | DeobfuscatedItemExtraField[]> => {
+    try {
+        if (!value || Array.isArray(value)) return null;
+
+        if (isObject(value)) {
+            return Object.entries(value)
+                .filter(([, val]) => truthy(val) && !isObject(val))
+                .map(([key, val]) => ({
+                    fieldName: key,
+                    type: 'text',
+                    data: { content: String(val) },
+                }));
+        }
+
+        return {
+            fieldName: fieldName || c('Label').t`Text`,
+            type: 'text',
+            data: { content: String(value) },
+        };
+    } catch {
+        return null;
+    }
+};
+
 export const extract1PasswordExtraFields = (section: OnePassSection): DeobfuscatedItemExtraField[] => {
     return section.fields
         .flatMap<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value, id }) => {
@@ -218,33 +245,7 @@ export const extract1PasswordExtraFields = (section: OnePassSection): Deobfuscat
                     return null;
 
                 default:
-                    try {
-                        let newValue = data;
-                        if (!newValue || Array.isArray(newValue)) return null;
-
-                        // The pattern for 1P objects, is always the same.
-                        // The "value" property contains an object with 2 keys:
-                        // - One key contains the actual data
-                        // - The other key contains null/undefined values
-                        if (isObject(newValue)) {
-                            return Object.entries(newValue)
-                                .filter(([, val]) => truthy(val) && !isObject(val))
-                                .map(([key, value]) => ({
-                                    fieldName: key,
-                                    type: 'text',
-                                    data: { content: String(value) },
-                                }));
-                        }
-
-                        // Always treat as "text" since hidden values were already handled
-                        return {
-                            fieldName: title || c('Label').t`Text`,
-                            type: 'text',
-                            data: { content: String(newValue) },
-                        };
-                    } catch {
-                        return null;
-                    }
+                    return sanitizeGenericField(data, title);
             }
         })
         .filter(truthy);
@@ -278,27 +279,7 @@ const mapLegacyFieldIntoExtraField = (
                 data: { content: field.v ?? '' },
             };
         default: {
-            try {
-                if (!field.v || Array.isArray(field.v)) return null;
-
-                if (isObject(field.v)) {
-                    return Object.entries(field.v)
-                        .filter(([, val]) => truthy(val) && !isObject(val))
-                        .map(([key, value]) => ({
-                            fieldName: key,
-                            type: 'text',
-                            data: { content: String(value) },
-                        }));
-                }
-
-                return {
-                    fieldName: field.t || c('Label').t`Text`,
-                    type: 'text',
-                    data: { content: String(field.v) },
-                };
-            } catch {
-                return null;
-            }
+            return sanitizeGenericField(field.v, field.t);
         }
     }
 };
