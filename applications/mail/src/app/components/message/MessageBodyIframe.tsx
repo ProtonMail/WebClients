@@ -9,12 +9,12 @@ import { Icon, useSyncIframeStyles, useTheme } from '@proton/components';
 import getIframeSandboxAttributes from '@proton/mail-renderer/helpers/getIframeSandboxAttributes';
 import useIframeDispatchEvents from '@proton/mail-renderer/hooks/useIframeDispatchEvents';
 import useIframeShowBlockquote from '@proton/mail-renderer/hooks/useIframeShowBlockquote';
+import useInitIframeContent from '@proton/mail-renderer/hooks/useInitIframeContent';
 import useObserveIframeHeight from '@proton/mail-renderer/hooks/useObserveIframeHeight';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
 import MessageBodyImages from './MessageBodyImages';
-import useInitIframeContent from './hooks/useInitIframeContent';
 import { type OnMessageImageLoadError } from './interface';
 
 interface Props {
