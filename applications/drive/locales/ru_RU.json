@@ -384,12 +384,6 @@
       "Download logs": [
         "Скачать журналы"
       ],
-      "Download without scanning": [
-        "Скачать без сканирования"
-      ],
-      "Download without scanning (${ count })": [
-        "Скачать без сканирования (${ count })"
-      ],
       "Drive Locked": [
         "Хранилище заблокировано"
       ],
@@ -1225,6 +1219,14 @@
       ],
       "Unsupported event": [
         "Событие не поддерживается"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается раз в ${ cycle } мес. ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
       ]
     },
     "Badge": {
@@ -12165,9 +12167,6 @@
       ],
       "Contacts could not be merged": [
         "Контакты не могут быть объединены"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Срок действия не в формате ММ/ГГ"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Если вы не помните свой пароль, повторно активировать ключ невозможно. Мы можем помочь вам отключить предупреждение, но тогда вы навсегда потеряете доступ ко всем данным, зашифрованным с помощью этого ключа."

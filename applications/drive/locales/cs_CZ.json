@@ -387,12 +387,6 @@
       "Download logs": [
         "Stáhnout logy"
       ],
-      "Download without scanning": [
-        "Stáhnout bez skenování"
-      ],
-      "Download without scanning (${ count })": [
-        "Stáhnout bez skenování (${ count })"
-      ],
       "Drive Locked": [
         "Disk uzamčen"
       ],
@@ -879,6 +873,12 @@
       "Save photos and remove": [
         "Uložit fotky a odebrat"
       ],
+      "Scan & Download": [
+        "Skenovat a stáhnout"
+      ],
+      "Scan & Download (${ count })": [
+        "Skenovat a stáhnout (${ count })"
+      ],
       "Search": [
         "Vyhledat"
       ],
@@ -1219,6 +1219,140 @@
       ],
       "By leaving now, some events may not be imported": [
         "Pokud teď odejdete, některé události nebudou importovány"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB prostoru"
+      ],
+      "200 GB storage": [
+        "200 GB prostoru"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB šifrovaného úložiště"
+      ],
+      "Add unlimited credit cards": [
+        "Přidejte neomezený počet platebních karet"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Všechny prémiové funkce ${ BRAND_NAME } Mail, Pass, VPN, Drive a Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokování reklam, sledovacích prvků a malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Slevy jsou založeny na standardních měsíčních cenách. Na konci fakturačního cyklu se vaše předplatné obnoví za standardní roční sazbu."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Zdvojnásobte své šifrované úložiště – získejte 1 TB pro všechna svá data"
+      ],
+      "Encrypted password manager": [
+        "Šifrovaný správce hesel"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Zde je exkluzivní dárek na oslavu naší společné cesty."
+      ],
+      "High speed streaming with VPN": [
+        "Vysokorychlostní streamování pomocí VPN"
+      ],
+      "of privacy": [
+        "soukromí"
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online soukromí až pro 2 osoby"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online soukromí pro celou rodinu (až 6 uživatelů)"
+      ],
+      "Protect up to 10 devices": [
+        "Chraňte až 10 zařízení"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Drive."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Mail."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Pass."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích VPN."
+      ],
+      "Save time with built-in 2FA": [
+        "Úspora času díky integrovanému 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Zabezpečený e-mail s neomezeným počtem aliasů"
+      ],
+      "Select any server": [
+        "Vyberte libovolný server"
+      ],
+      "Share passwords easily": [
+        "Snadné sdílení hesel"
+      ],
+      "Short @pm.me address": [
+        "Zkrácená adresa @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Streamujte svůj oblíbený obsah"
+      ],
+      "thanks to you": [
+        "díky vám"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Ztrojnásobte své šifrované úložiště – získejte 3 TB pro všechna svá data"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Use your own email domain": [
+        "Použijte svou vlastní e-mailovou doménu"
+      ],
+      "years": [
+        "let"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Výroční nabídka"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "/ month": [
+        "/ měsíc"
+      ],
+      "12 months": [
+        "12 měsíců"
+      ],
+      "15 months": [
+        "15 měsíců"
+      ],
+      "24 months": [
+        "24 měsíců"
+      ],
+      "30 months": [
+        "30 měsíců"
+      ],
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -6362,6 +6496,15 @@
         "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
         "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }.",
         "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Chystáte se odmítnout pozvánku k připojení do alba ${ invitationName }. Pokud budete pokračovat, nebudete k němu mít přístup, dokud vás vlastník znovu nepozve. Jste si jisti, že chcete pokračovat?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Chystáte se odmítnout pozvánku k připojení do složky ${ invitationName }. Pokud budete pokračovat, nebudete k ní mít přístup, dokud vás vlastník znovu nepozve. Jste si jisti, že chcete pokračovat?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Chystáte se odmítnout pozvánku k připojení k položce ${ invitationName }. Pokud budete pokračovat, nebudete k ní mít přístup, dokud vás vlastník znovu nepozve. Jste si jisti, že chcete pokračovat?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Dosáhli jste maximálního počtu adres ve skupině (skupinách) kontaktů:"
@@ -12408,9 +12551,6 @@
       ],
       "Contacts could not be merged": [
         "Kontakty nebylo možné sloučit"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Datum konce platnosti není ve formátu MM/RR"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Jestliže si nepamatujete heslo, není možné znovu aktivovat váš klíč. Můžeme zrušit výstražnou zprávu, ale tím trvale ztratíte přístup ke všem datům šifrovaným tímto klíčem."
