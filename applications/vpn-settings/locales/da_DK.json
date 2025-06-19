@@ -573,6 +573,9 @@
       "refresh the page": [
         "opdater siden"
       ],
+      "Reload": [
+        "Genindlæs"
+      ],
       "Remove": [
         "Fjern"
       ],
@@ -3119,11 +3122,6 @@
         "Postnummer er påkrævet"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "Indtast e-mailadresse"
-      ]
-    },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
         "Der opstod en fejl ved læsning af din fil \"${ formattedFilename }\". Forkert filformat."
@@ -3754,9 +3752,6 @@
       ]
     },
     "Header": {
-      "App version": [
-        "App-version"
-      ],
       "Best deal": [
         "Bedste tilbud"
       ],
@@ -3789,9 +3784,6 @@
       ],
       "Organization key fingerprint": [
         "Organisationsnøgle-fingeraftryk"
-      ],
-      "Protection": [
-        "Beskyttelse"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Spar stort på de bedste ${ VPN_APP_NAME }-tilbud"
@@ -6333,9 +6325,6 @@
       ],
       "Search": [
         "Søg"
-      ],
-      "Search by email": [
-        "Søg via e-mail"
       ],
       "Second password": [
         "Anden adgangskode"
@@ -11372,20 +11361,11 @@
       ]
     },
     "Tooltip": {
-      "An approximate location of the IP address": [
-        "En omtrentlig placering af IP-adressen"
-      ],
-      "Any protection applied to suspicious activity": [
-        "Enhver form for beskyttelse mod mistænkelig aktivitet"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Skift automatisk mellem dine foretrukne temaer for dag og nat synkront med dit systems dag- og nattilstande"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiér og indsæt denne URL i ACS-URL-feltet (Assertion Consumer Service) hos din identitetsudbyder"
-      ],
-      "Device information such as operating system": [
-        "Enhedsoplysninger, som f.eks. operativsystem"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Visningsnavn for enheden i eduGAIN-databasen"
@@ -11404,9 +11384,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP Adresse (Internetudbyder)"
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Delte serverpolitikker kan anvendes på individuelle brugere eller grupper"
