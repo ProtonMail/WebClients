@@ -1,12 +1,11 @@
 import { type Draft, type PayloadAction } from '@reduxjs/toolkit';
 
 import { type ModelState } from '@proton/account';
+import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { type LabelCount } from '@proton/shared/lib/interfaces';
 import { type Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { type Element } from 'proton-mail/models/element';
-
-import { decrementUnread, incrementUnread } from './helpers';
 
 export const markMessagesAsRead = (
     state: Draft<ModelState<LabelCount[]>>,
@@ -28,7 +27,7 @@ export const markMessagesAsRead = (
             const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === selectedLabelID);
 
             if (updatedMessageCounter) {
-                updatedMessageCounter.Unread = decrementUnread(updatedMessageCounter.Unread, 1);
+                updatedMessageCounter.Unread = safeDecreaseCount(updatedMessageCounter.Unread, 1);
             }
         });
     });
@@ -54,7 +53,7 @@ export const markMessagesAsUnread = (
             const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === selectedLabelID);
 
             if (updatedMessageCounter) {
-                updatedMessageCounter.Unread = incrementUnread(updatedMessageCounter.Unread, 1);
+                updatedMessageCounter.Unread = safeIncreaseCount(updatedMessageCounter.Unread, 1);
             }
         });
     });

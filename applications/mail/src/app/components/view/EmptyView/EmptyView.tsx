@@ -148,10 +148,15 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
         <EmptyViewWrapper
             imgProps={imageProps()}
             height={128}
-            title={getEmptyViewTitle(isSearch, isFolder, isScheduled)}
-            description={getEmptyViewDescription(isSearch, isEncryptedSearchEnabled, isFolder, isScheduled, () =>
-                onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW })
-            )}
+            title={getEmptyViewTitle({ isSearch, isFolder, isScheduled, labelID })}
+            description={getEmptyViewDescription({
+                isSearch,
+                isEncryptedSearchEnabled,
+                isFolder,
+                labelID,
+                isScheduled,
+                scheduleButtonOnClick: () => onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW }),
+            })}
         >
             {isSearch && !isEncryptedSearchEnabled && (
                 <Button onClick={() => setEnableESModalOpen(true)} data-testid="encrypted-search:activate">

@@ -13,6 +13,7 @@ import type {
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { type MailThunkExtra } from '../store';
+import { getPaginationQueryString } from './constants';
 import {
     type FilterSubscriptionPayload,
     type SortSubscriptionsValue,
@@ -26,20 +27,19 @@ export const sortSubscriptionList = createAsyncThunk<
     GetNewsletterSubscriptionsApiResponse,
     SortSubscriptionsValue,
     MailThunkExtra
->('newsletterSubscriptions/sortList', async (value, thunkExtra) => {
+>('newsletterSubscriptions/sortList', async (payload, thunkExtra) => {
     try {
         const store = thunkExtra.getState()[newsletterSubscriptionName].value;
         if (!store) {
             throw new Error('No newsletter subscription state');
         }
 
+        const tab = store.selectedTab;
+
         // The only pagination data we need is the active which define the tab the user has selected
         return await thunkExtra.extra.api<GetNewsletterSubscriptionsApiResponse>(
             getNewsletterSubscription({
-                sort: value,
-                pagination: {
-                    Active: store.selectedTab === SubscriptionTabs.Active ? '1' : '0',
-                },
+                paginationString: getPaginationQueryString(tab === SubscriptionTabs.Active, payload),
             })
         );
     } catch (error) {
@@ -91,7 +91,7 @@ export const fetchNextNewsletterSubscriptionsPage = createAsyncThunk<
     GetNewsletterSubscriptionsApiResponse,
     void,
     MailThunkExtra
->('newsletterSubscriptions/fetchNextPage', async (payload, thunkExtra) => {
+>('newsletterSubscriptions/fetchNextPage', async (_payload, thunkExtra) => {
     try {
         const store = thunkExtra.getState()[newsletterSubscriptionName].value;
         if (!store) {
@@ -100,7 +100,7 @@ export const fetchNextNewsletterSubscriptionsPage = createAsyncThunk<
 
         const tab = store.selectedTab;
         return await thunkExtra.extra.api<GetNewsletterSubscriptionsApiResponse>(
-            getNewsletterSubscription({ pagination: store.tabs[tab].paginationData, sort: store.tabs[tab].sorting })
+            getNewsletterSubscription({ paginationString: store.tabs[tab].paginationQueryString })
         );
     } catch (error) {
         throw error;

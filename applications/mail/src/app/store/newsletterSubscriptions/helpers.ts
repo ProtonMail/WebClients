@@ -1,16 +1,10 @@
 import type {
     GetNewsletterSubscriptionsApiResponse,
-    GetNewsletterSubscriptionsNextPage,
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { DEFAULT_PAGINATION_PAGE_SIZE, DEFAULT_SORTING } from './constants';
-import type {
-    ActiveValues,
-    NewsletterSubscriptionsTabState,
-    SortSubscriptionsValue,
-    SubscriptionPagination,
-} from './interface';
+import { DEFAULT_SORTING } from './constants';
+import type { NewsletterSubscriptionsTabState, SortSubscriptionsValue } from './interface';
 
 export const normalizeSubscriptions = (subscriptions: NewsletterSubscription[]) => {
     const byId: Record<string, NewsletterSubscription> = {};
@@ -20,23 +14,6 @@ export const normalizeSubscriptions = (subscriptions: NewsletterSubscription[]) 
         ids.push(sub.ID);
     }
     return { byId, ids };
-};
-
-export const getPaginationDataFromNextPage = (
-    active: ActiveValues,
-    nextPage: GetNewsletterSubscriptionsNextPage | null
-): SubscriptionPagination | undefined => {
-    if (nextPage === null || !nextPage) {
-        return undefined;
-    }
-
-    return {
-        Active: active,
-        PageSize: DEFAULT_PAGINATION_PAGE_SIZE,
-        AnchorID: nextPage.Pagination.AnchorID ?? '',
-        AnchorLastReceivedTime: nextPage.Pagination.AnchorLastReceivedTime ?? null,
-        AnchorUnreadMessageCount: nextPage.Pagination.AnchorUnreadMessageCount ?? null,
-    };
 };
 
 export const getTabData = (
@@ -50,21 +27,8 @@ export const getTabData = (
         loading,
         sorting: sorting ?? DEFAULT_SORTING,
         totalCount: apiData.PageInfo.Total ?? 0,
-        paginationData: getPaginationDataFromNextPage('1', apiData.PageInfo.NextPage),
+        paginationQueryString: apiData.PageInfo.NextPage?.QueryString ?? null,
     };
-};
-
-/**
- * Filter out null values from the pagination data
- * @param paginationData - The pagination data to filter
- * @returns The filtered pagination data
- */
-export const getFilteredPaginationData = (paginationData: Record<string, any> | undefined) => {
-    if (!paginationData) {
-        return {};
-    }
-
-    return Object.fromEntries(Object.entries(paginationData).filter(([, value]) => value !== null));
 };
 
 export const getSortParams = (sortOption?: SortSubscriptionsValue) => {
@@ -74,21 +38,13 @@ export const getSortParams = (sortOption?: SortSubscriptionsValue) => {
 
     switch (sortOption) {
         case 'last-read':
-            return {
-                'Sort[UnreadMessageCount]': 'ASC',
-            };
+            return 'Sort[UnreadMessageCount]=ASC';
         case 'most-read':
-            return {
-                'Sort[UnreadMessageCount]': 'DESC',
-            };
+            return 'Sort[UnreadMessageCount]=DESC';
         case 'alphabetical':
-            return {
-                'Sort[Name]': 'ASC',
-            };
+            return 'Sort[Name]=ASC';
         case 'recently-received':
-            return {
-                'Sort[LastReceivedTime]': 'DESC',
-            };
+            return 'Sort[LastReceivedTime]=DESC';
         default:
             return undefined;
     }
