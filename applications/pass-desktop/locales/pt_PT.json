@@ -1980,6 +1980,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
+      ],
       "Moving items": [
         "A mover itens"
       ],
@@ -2710,9 +2714,6 @@
       "Add section": [
         "Adicionar uma secção"
       ],
-      "Additional data": [
-        "Dados adicionais"
-      ],
       "Additional details": [
         "Detalhes adicionais"
       ],
@@ -2800,6 +2801,9 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Caixa de verificação"
+      ],
       "Choose unlock method": [
         "Escolha o método de desbloqueio"
       ],
@@ -2875,14 +2879,8 @@
       "Crypto Wallet": [
         "Carteira de criptomoedas"
       ],
-      "Custom hidden field": [
-        "Campo oculto personalizado"
-      ],
       "Custom Items": [
         "Itens personalizados"
-      ],
-      "Custom text field": [
-        "Campo de texto personalizado"
       ],
       "Database": [
         "Base de dados"
@@ -3138,6 +3136,9 @@
       ],
       "Key fingerprint": [
         "Impressão digital da chave"
+      ],
+      "Key type": [
+        "Tipo de chave"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atalhos de teclado: ${ shortcut }"
@@ -4713,9 +4714,6 @@
       "OTP secret or URI is invalid": [
         "A chave secreta OTP ou o URI não funciona."
       ],
-      "OTP secret or URI required": [
-        "É necessário introduzir uma chave secreta OTP ou um URI."
-      ],
       "Section name cannot be empty": [
         "O nome da secção não pode estar vazio."
       ],
@@ -4847,9 +4845,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Não é permitido convidar endereços de e-mail fora da organização."
-      ],
-      "item was imported without custom fields": [
-        "O item foi importado sem campos personalizados."
       ],
       "Maximum length is ${ maxLength } character": [
         "O tamanho máximo é de ${ maxLength } caráter.",

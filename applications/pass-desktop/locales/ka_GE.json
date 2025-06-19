@@ -1851,6 +1851,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -2728,14 +2732,8 @@
       "Crypto Wallet": [
         "კრიპტო საფულე"
       ],
-      "Custom hidden field": [
-        "მორგებული დამალული ველი"
-      ],
       "Custom Items": [
         "მომხმარებლის ელემენტები"
-      ],
-      "Custom text field": [
-        "მორგებული ტექსტური ველი"
       ],
       "Database": [
         "მონაცემთა ბაზა"
@@ -4551,9 +4549,6 @@
       "OTP secret or URI is invalid": [
         "OTP საიდუმლო ან URI არასწორია"
       ],
-      "OTP secret or URI required": [
-        "აუცილებელია OTP საიდუმლო ან URI"
-      ],
       "Section name cannot be empty": [
         "განყოფლების სახელი ცარიელი ვერ იქნება"
       ],
@@ -4680,9 +4675,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "ორგანიზაციის გარედან ელფოსტის მისამართების მოწვევა დაშვებული არაა."
-      ],
-      "item was imported without custom fields": [
-        "ელემენტის შემოტანა მომხმარებლის ველების გარეშე მოხდა"
       ],
       "Maximum length is ${ maxLength } character": [
         "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო",
