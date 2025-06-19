@@ -4,6 +4,7 @@ import { memo, useMemo, useRef } from 'react';
 import { ItemCheckbox } from '@proton/components';
 import { isCustomLabel } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
 import type { Label, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
@@ -145,7 +146,7 @@ const Item = ({
 
     return (
         <div className="item-container-wrapper relative" data-shortcut-target="item-container-wrapper">
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/prefer-tag-over-role */}
             <div
                 onContextMenu={(event) => onContextMenu(event, element)}
                 onClick={handleClick}
@@ -172,6 +173,8 @@ const Item = ({
                 data-shortcut-target-selected={isSelected}
                 data-testid={`message-item:${element.Subject}`}
                 data-testorder={element.Order}
+                role="region"
+                aria-labelledby={toValidHtmlId(`message-subject-${element.ID}`)}
             >
                 <ItemCheckbox
                     ID={element.ID}
