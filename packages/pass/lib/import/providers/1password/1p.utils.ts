@@ -30,7 +30,7 @@ import type {
     OnePassLoginDesignation,
     OnePassSection,
 } from './1pux.types';
-import { OnePassCreditCardFieldIds, OnePassFieldKey, OnePassFieldValueKeys } from './1pux.types';
+import { OnePassCreditCardFieldIds, OnePassFieldKey } from './1pux.types';
 
 const ONE_PASS_FIXED_SECTIONS = ['name', 'address', 'internet'];
 const ONE_PASS_ADDRESS_KEYS = ['street', 'city', 'country', 'zip', 'state'];
@@ -58,9 +58,6 @@ const ONE_PASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
 export const is1PasswordNoteField = ({ value }: OnePassField) => 'string' in value || 'url' in value;
 export const is1PasswordLegacyNoteField = ({ k: key }: OnePassLegacySectionField) =>
     key === OnePassLegacySectionFieldKey.STRING || key === OnePassLegacySectionFieldKey.URL;
-
-export const is1PasswordSupportedField = ({ value }: OnePassField) =>
-    OnePassFieldValueKeys.some((key) => key === Object.keys(value)[0]);
 
 export const is1PasswordCCField = (field: OnePassField): field is OnePassField & { id: OnePassCreditCardFieldId } =>
     OnePassCreditCardFieldIds.some((id) => id === field.id);
@@ -253,7 +250,9 @@ export const extract1PasswordExtraFields = (section: OnePassSection): Deobfuscat
         .filter(truthy);
 };
 
-const mapLegacyFieldIntoExtraField = (field: OnePassLegacySectionField): MaybeNull<DeobfuscatedItemExtraField> => {
+const mapLegacyFieldIntoExtraField = (
+    field: OnePassLegacySectionField
+): MaybeNull<DeobfuscatedItemExtraField | DeobfuscatedItemExtraField[]> => {
     if (baseWifiFields.includes(field.n)) return null;
 
     switch (field.k) {
@@ -278,35 +277,46 @@ const mapLegacyFieldIntoExtraField = (field: OnePassLegacySectionField): MaybeNu
                 type: 'hidden',
                 data: { content: field.v ?? '' },
             };
-        default:
-            return null;
+        default: {
+            try {
+                if (!field.v || Array.isArray(field.v)) return null;
+
+                if (isObject(field.v)) {
+                    return Object.entries(field.v)
+                        .filter(([, val]) => truthy(val) && !isObject(val))
+                        .map(([key, value]) => ({
+                            fieldName: key,
+                            type: 'text',
+                            data: { content: String(value) },
+                        }));
+                }
+
+                return {
+                    fieldName: field.t || c('Label').t`Text`,
+                    type: 'text',
+                    data: { content: String(field.v) },
+                };
+            } catch {
+                return null;
+            }
+        }
     }
 };
 
-export const extract1PasswordLegacyExtraFields = (item: OnePassLegacyItem): DeobfuscatedItemExtraField[] => {
-    const fieldKeys = Object.values(OnePassLegacySectionFieldKey);
-
-    return (
-        item.secureContents.sections?.flatMap(
-            ({ fields }) =>
-                fields
-                    ?.filter(({ k }) => fieldKeys.includes(k))
-                    .map(mapLegacyFieldIntoExtraField)
-                    .filter(truthy) ?? []
-        ) ?? []
-    );
-};
+export const extract1PasswordLegacyExtraFields = (item: OnePassLegacyItem): DeobfuscatedItemExtraField[] =>
+    item.secureContents.sections?.flatMap(
+        ({ fields }) => fields?.flatMap(mapLegacyFieldIntoExtraField).filter(truthy) ?? []
+    ) ?? [];
 
 export const extract1PasswordLegacyUnknownExtraFields = (item: OnePassLegacyItem): DeobfuscatedItemExtraField[] => {
     const excludedFields = ['sshKey-privateKey', 'sshKey-publicKey'];
-    const fieldKeys = Object.values(OnePassLegacySectionFieldKey);
 
     return (
         item.secureContents.unknown_details?.sections?.flatMap(
             ({ fields }) =>
                 fields
-                    ?.filter(({ k, n }) => fieldKeys.includes(k) && !excludedFields.includes(n))
-                    .map(mapLegacyFieldIntoExtraField)
+                    ?.filter(({ n }) => !excludedFields.includes(n))
+                    .flatMap(mapLegacyFieldIntoExtraField)
                     .filter(truthy) ?? []
         ) ?? []
     );
