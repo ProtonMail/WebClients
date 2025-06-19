@@ -81,7 +81,6 @@ export enum OnePassCreditCardFieldId {
 
 export type OnePassCreditCardFields = { [K in OnePassCreditCardFieldId]?: OnePassField };
 
-export const OnePassFieldValueKeys = Object.values(OnePassFieldKey);
 export const OnePassCreditCardFieldIds = Object.values(OnePassCreditCardFieldId);
 
 export type OnePassField = {
