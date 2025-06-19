@@ -1,7 +1,7 @@
 import { type FC, type PropsWithChildren, createContext, useCallback, useContext, useMemo } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useBulkActions } from '@proton/pass/components/Bulk/BulkSelectionActions';
 import { ConfirmTrashAlias } from '@proton/pass/components/Item/Actions/ConfirmAliasActions';
@@ -18,6 +18,7 @@ import {
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { isAliasItem, isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
+import { getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
 import {
     itemBulkDeleteIntent,
     itemBulkMoveIntent,
@@ -106,6 +107,9 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         }, [])
     );
 
+    const moveTitle = (numberOfItems: number) =>
+        c('Vault Select').ngettext(msgid`Move item to`, `Move items to`, numberOfItems);
+
     const context = useMemo<ItemActionsContextType>(() => {
         return {
             move: (item, mode) =>
@@ -116,6 +120,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                         moveItem.prompt({ itemId: item.itemId, shareId: item.shareId, targetShareId });
                         closeVaultSelect();
                     },
+                    title: moveTitle(1),
                 }),
 
             moveMany: (selected, shareId) =>
@@ -128,6 +133,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                               moveManyItems.prompt({ selected, shareId });
                               closeVaultSelect();
                           },
+                          title: moveTitle(getBulkSelectionCount(selected)),
                       }),
 
             trash: (item) => {
