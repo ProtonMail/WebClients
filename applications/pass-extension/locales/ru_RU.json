@@ -1825,12 +1825,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
-      ],
       "Moving items": [
         "Перемещение элементов"
       ],
@@ -2717,12 +2711,6 @@
       ],
       "Created at": [
         "Создано"
-      ],
-      "Custom hidden field": [
-        "Настраиваемое скрытое поле"
-      ],
-      "Custom text field": [
-        "Пользовательское текстовое поле"
       ],
       "Date": [
         "Дата"
@@ -4160,9 +4148,6 @@
       "OTP secret or URI is invalid": [
         "Секрет OTP или URI недействительны"
       ],
-      "OTP secret or URI required": [
-        "Требуется секрет OTP или URI"
-      ],
       "Section name cannot be empty": [
         "Название раздела не может быть пустым"
       ],
@@ -4287,9 +4272,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Приглашение адресов электронной почты из вне организации запрещено."
-      ],
-      "item was imported without custom fields": [
-        "элемент был импортирован без настраиваемых полей"
       ],
       "Maximum length is ${ maxLength } character": [
         "Максимальная длина ${ maxLength } символ",
