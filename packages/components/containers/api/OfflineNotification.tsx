@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import UnderlineButton from '@proton/components/components/button/UnderlineButton';
+import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 
 interface Props {
@@ -10,9 +10,15 @@ interface Props {
 const OfflineNotification = ({ onRetry, message }: Props) => {
     const [loading, withLoading] = useLoading();
     const retryNow = (
-        <UnderlineButton className="align-baseline p-0" disabled={loading} onClick={() => withLoading(onRetry())}>
+        <Button
+            shape="underline"
+            color="norm"
+            className="align-baseline p-0"
+            disabled={loading}
+            onClick={() => withLoading(onRetry())}
+        >
             {c('Action').t`Retry now`}
-        </UnderlineButton>
+        </Button>
     );
     return (
         <>

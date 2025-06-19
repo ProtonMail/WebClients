@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import UnderlineButton from '@proton/components/components/button/UnderlineButton';
+import { Button } from '@proton/atoms';
 import Radio from '@proton/components/components/input/Radio';
 import clsx from '@proton/utils/clsx';
 
@@ -73,9 +73,9 @@ const FilterConditionsForm = ({ isEdit, model, onChange }: Props) => {
                 ))}
             </div>
             {conditions.every((c) => !c.error) && (
-                <UnderlineButton onClick={onAddCondition} className="my-2">
+                <Button shape="underline" color="norm" onClick={onAddCondition} className="my-2">
                     <strong>{c('Action').t`Add condition`}</strong>
-                </UnderlineButton>
+                </Button>
             )}
         </>
     );
