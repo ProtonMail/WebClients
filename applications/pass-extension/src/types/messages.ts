@@ -3,6 +3,7 @@ import type { Action } from 'redux';
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
 import type { PassCoreMethod, PassCoreRPC, PassCoreResult } from '@proton/pass/lib/core/core.types';
+import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
 import type {
     PasskeyCreatePayload,
     PasskeyCreateResponse,
@@ -22,7 +23,6 @@ import type {
     AutosaveFormEntry,
     AutosaveRequest,
     ClientEndpoint,
-    ExclusionRules,
     FileTransferErrorDTO,
     FileTransferWriteDTO,
     FormCredentials,
@@ -320,7 +320,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.SPOTLIGHT_REQUEST]: { message: MaybeNull<SpotlightMessage> };
     [WorkerMessageType.TABS_QUERY]: TabInfo;
     [WorkerMessageType.VAULTS_QUERY]: { vaults: VaultShareItem[]; defaultShareId: ShareId };
-    [WorkerMessageType.WEBSITE_RULES_REQUEST]: { rules: MaybeNull<ExclusionRules> };
+    [WorkerMessageType.WEBSITE_RULES_REQUEST]: { rules: MaybeNull<DetectionRulesMatch> };
 };
 
 export type WorkerMessageResponse<MessageType> = MessageType extends keyof WorkerMessageResponseMap
