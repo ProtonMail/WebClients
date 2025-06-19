@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import type { MessageStateWithData, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
@@ -25,7 +26,6 @@ import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
 
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
-import type { MessageStateWithData, PartialMessageState } from '../../store/messages/messagesTypes';
 import { getFromAddress } from '../addresses';
 import { convertToFile } from '../attachment/attachmentConverter';
 import { formatFullDate } from '../date';

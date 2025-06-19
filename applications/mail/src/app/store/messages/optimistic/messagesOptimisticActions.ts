@@ -1,8 +1,9 @@
 import { createAction } from '@reduxjs/toolkit';
 
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+
 import type { LabelChanges } from '../../../helpers/labels';
 import type { MarkAsChanges } from '../../../hooks/optimistic/useOptimisticMarkAs';
-import type { MessageState } from '../messagesTypes';
 
 export const optimisticApplyLabels = createAction<{
     ID: string;

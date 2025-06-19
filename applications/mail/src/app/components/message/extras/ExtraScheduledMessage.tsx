@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { Banner, Button } from '@proton/atoms';
 import { Icon, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -20,7 +21,6 @@ import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { formatDateToHuman } from '../../../helpers/date';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
-import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import { cancelScheduled } from '../../../store/messages/scheduled/scheduledActions';
 import { isScheduledSendTodayMorning } from '../../composer/actions/scheduleSend/helpers';
 

@@ -7,9 +7,9 @@ import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } fro
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import type { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
-import type { Preparation } from '../../helpers/transforms/transforms';
-import type { DecryptedAttachment } from '../attachments/attachmentsTypes';
+import type { DecryptMessageResult } from 'proton-mail/helpers/message/messageDecrypt';
+import type { Preparation } from 'proton-mail/helpers/transforms/transforms';
+import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 
 export interface OutsideKey {
     type: 'outside';

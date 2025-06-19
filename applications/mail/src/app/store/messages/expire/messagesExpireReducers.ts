@@ -1,7 +1,8 @@
 import type { Draft, PayloadAction } from '@reduxjs/toolkit';
 
+import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
+
 import { getLocalID, getMessage } from '../helpers/messagesReducer';
-import type { MessagesState } from '../messagesTypes';
 
 const previousExpiration: Record<string, number | undefined> = {};
 const previousDraftFlagsExpiresIn: Record<string, Date | undefined> = {};

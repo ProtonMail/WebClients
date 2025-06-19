@@ -1,6 +1,6 @@
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
+import type { MessageRemoteImage } from '@proton/mail/store/messages/messagesTypes';
 
-import type { MessageRemoteImage } from '../../store/messages/messagesTypes';
 import { loadBackgroundImages, loadImages } from './messageRemotes';
 
 describe('messageRemote', () => {

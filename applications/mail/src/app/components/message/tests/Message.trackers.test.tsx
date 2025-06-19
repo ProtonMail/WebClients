@@ -1,6 +1,7 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -19,7 +20,6 @@ import {
 } from '../../../helpers/test/crypto';
 import { encryptMessage } from '../../../helpers/test/message';
 import { render } from '../../../helpers/test/render';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import MessageView from '../MessageView';
 import { addressID, labelID, messageID } from './Message.test.helpers';

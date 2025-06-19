@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms';
 import { Prompt, useModalState } from '@proton/components';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCounts';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCounts';
+import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
@@ -17,7 +18,6 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
 import { SCHEDULED_MESSAGES_LIMIT } from '../../constants';
 import { isConversationMode } from '../../helpers/mailSettings';
-import type { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { updateScheduled } from '../../store/messages/scheduled/scheduledActions';
 import { useSendVerifications } from './useSendVerifications';
 

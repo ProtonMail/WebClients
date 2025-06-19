@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/test';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import {
@@ -41,7 +42,6 @@ import {
     minimalCache,
     render,
 } from '../../../helpers/test/helper';
-import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import ExtraEvents from './ExtraEvents';
 
 jest.setTimeout(20000);

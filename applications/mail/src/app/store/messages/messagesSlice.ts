@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
+
 import { globalReset } from '../actions';
 import { load as loadElements } from '../elements/elementsActions';
 import {
@@ -21,7 +23,6 @@ import {
 } from './helpers/messagesReducer';
 import * as msgImageAction from './images/messagesImagesActions';
 import * as msgImageReducer from './images/messagesImagesReducers';
-import type { MessagesState } from './messagesTypes';
 import * as msgOptimisticAction from './optimistic/messagesOptimisticActions';
 import * as msgOptimisticReducer from './optimistic/messagesOptimisticReducers';
 import * as msgReadAction from './read/messagesReadActions';

@@ -1,6 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { addHours, set } from 'date-fns';
 
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
@@ -8,7 +9,6 @@ import { formatDateToHuman } from '../../../helpers/date';
 import { clearAll } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
 import useSnooze from '../../../hooks/actions/useSnooze';
-import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import ExtraSnoozedMessage from './ExtraSnoozedMessage';
 
 const mockUseGetElementsFromIDs = jest.fn();

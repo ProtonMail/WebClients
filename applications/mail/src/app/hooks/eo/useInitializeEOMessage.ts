@@ -4,6 +4,14 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { useApi } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
+import type {
+    LoadEmbeddedResults,
+    MessageErrors,
+    MessageImages,
+    MessageRemoteImage,
+    MessageState,
+    MessageStateWithDataFull,
+} from '@proton/mail/store/messages/messagesTypes';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
@@ -24,14 +32,6 @@ import {
     EOLoadRemote,
 } from '../../store/eo/eoActions';
 import type { EOLoadEmbeddedParams, EOLoadRemoteResults } from '../../store/eo/eoType';
-import type {
-    LoadEmbeddedResults,
-    MessageErrors,
-    MessageImages,
-    MessageRemoteImage,
-    MessageState,
-    MessageStateWithDataFull,
-} from '../../store/messages/messagesTypes';
 import { useBase64Cache } from '../useBase64Cache';
 import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 

@@ -4,6 +4,16 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { useApi, useAuthentication } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
+import type {
+    LoadEmbeddedParams,
+    LoadEmbeddedResults,
+    LoadRemoteResults,
+    MessageErrors,
+    MessageImages,
+    MessageRemoteImage,
+    MessageState,
+    MessageStateWithDataFull,
+} from '@proton/mail/store/messages/messagesTypes';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -31,16 +41,6 @@ import { prepareHtml, preparePlainText } from '../../helpers/transforms/transfor
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
-import type {
-    LoadEmbeddedParams,
-    LoadEmbeddedResults,
-    LoadRemoteResults,
-    MessageErrors,
-    MessageImages,
-    MessageRemoteImage,
-    MessageState,
-    MessageStateWithDataFull,
-} from '../../store/messages/messagesTypes';
 import {
     cleanUTMTrackers,
     documentInitializeFulfilled,

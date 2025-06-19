@@ -1,3 +1,4 @@
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
@@ -11,8 +12,6 @@ import type { Attendee, CalendarEvent, Participant } from '@proton/shared/lib/in
 import type { VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
-
-import type { MessageStateWithData } from 'proton-mail/store/messages/messagesTypes';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';
 import type { EventInvitation } from './invite';

@@ -3,6 +3,7 @@ import { forwardRef, memo, useEffect, useImperativeHandle, useMemo, useRef, useS
 
 import { useKeyTransparencyContext } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
+import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
@@ -28,7 +29,6 @@ import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { useMailECRTMetric } from '../../metrics/useMailECRTMetric';
 import type { Element } from '../../models/element';
-import type { MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 import { SOURCE_ACTION } from '../list/useListTelemetry';
 import MessageBody from './MessageBody';
 import MessageFooter from './MessageFooter';

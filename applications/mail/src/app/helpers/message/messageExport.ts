@@ -2,6 +2,12 @@ import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import type {
+    MessageKeys,
+    MessageState,
+    MessageStateWithData,
+    PublicPrivateKey,
+} from '@proton/mail/store/messages/messagesTypes';
 import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -12,12 +18,6 @@ import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
 import type { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
-import type {
-    MessageKeys,
-    MessageState,
-    MessageStateWithData,
-    PublicPrivateKey,
-} from '../../store/messages/messagesTypes';
 import { combineHeaders, splitMail } from '../mail';
 import { constructMimeFromSource } from '../send/sendMimeBuilder';
 import { getPlainTextContent } from './messageContent';

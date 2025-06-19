@@ -21,6 +21,11 @@ import {
     useNotifications,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import type {
+    MessageStateWithData,
+    MessageWithOptionalBody,
+    PartialMessageState,
+} from '@proton/mail/store/messages/messagesTypes';
 import { markAsUnsubscribed, oneClickUnsubscribe } from '@proton/shared/lib/api/messages';
 import { MIME_TYPES, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
@@ -37,11 +42,6 @@ import { useSendMessage } from '../../../hooks/composer/useSendMessage';
 import { useSendVerifications } from '../../../hooks/composer/useSendVerifications';
 import { useGetMessage } from '../../../hooks/message/useMessage';
 import { useSaveDraft } from '../../../hooks/message/useSaveDraft';
-import type {
-    MessageStateWithData,
-    MessageWithOptionalBody,
-    PartialMessageState,
-} from '../../../store/messages/messagesTypes';
 import ProtonPassAliasesModal from '../../protonPass/ProtonPassAliasesModal';
 
 interface Props {

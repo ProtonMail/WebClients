@@ -3,12 +3,12 @@ import { c } from 'ttag';
 import { Button, Href, Tooltip } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import cleanLinkImg from '@proton/styles/assets/img/illustrations/clean-utm-trackers.svg';
 
 import { emailTrackerProtectionURL } from '../../../constants';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 
 interface Props extends ModalProps {
     message: MessageState;

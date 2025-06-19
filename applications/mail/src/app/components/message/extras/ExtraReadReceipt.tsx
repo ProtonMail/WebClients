@@ -3,10 +3,9 @@ import { c } from 'ttag';
 import { Button, Tooltip } from '@proton/atoms';
 import { Icon, useApi, useEventManager, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { readReceipt } from '@proton/shared/lib/api/messages';
 import { isReadReceiptSent, requireReadReceipt } from '@proton/shared/lib/mail/messages';
-
-import type { MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageWithOptionalBody;

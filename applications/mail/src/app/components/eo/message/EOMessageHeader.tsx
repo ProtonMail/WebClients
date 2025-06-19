@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
 import { Icon, Loader } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
 import { EO_MAX_REPLIES_NUMBER, EO_REPLY_REDIRECT_PATH } from '../../../constants';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

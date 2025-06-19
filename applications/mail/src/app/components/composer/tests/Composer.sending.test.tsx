@@ -3,11 +3,11 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey, MailSettings } from '@proton/shared/lib/interfaces';
 import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
-import type { MessageStateWithData } from 'proton-mail/store/messages/messagesTypes';
 import type { MailState } from 'proton-mail/store/store';
 
 import { arrayToBase64 } from '../../../helpers/base64';
