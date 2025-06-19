@@ -951,6 +951,7 @@ const Step1 = ({
                                                 }
                                             }}
                                             loading={model.loadingDependencies}
+                                            signupParameters={signupParameters}
                                         />
                                     ) : null;
                                 })()}

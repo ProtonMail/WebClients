@@ -35,6 +35,7 @@ import BundlePlanSubSection from './BundlePlanSubSection';
 import SaveLabel from './SaveLabel';
 import type { SubscriptionDataCycleMapping } from './helper';
 import { getHasAnyPlusPlan, getSubscriptionMapping } from './helper';
+import type { SignupParameters2 } from './interface';
 
 import './PlanCardSelector.scss';
 
@@ -316,6 +317,7 @@ export const PlanCardSelector = ({
     planCards,
     dark,
     loading,
+    signupParameters,
 }: {
     subscriptionDataCycleMapping: SubscriptionDataCycleMapping;
     audience?: Audience;
@@ -328,6 +330,7 @@ export const PlanCardSelector = ({
     onSelect: (planIDs: PlanIDs, plan: PLANS) => void;
     onSelectedClick?: () => void;
     loading?: boolean;
+    signupParameters?: SignupParameters2;
 }) => {
     const planCount = planCards.length;
 
@@ -355,6 +358,20 @@ export const PlanCardSelector = ({
                 const offer = getPlanOffer(planFromCard);
                 const highlight = planCard.type === 'best' || offer.valid;
 
+                const shouldDisplayTrialText =
+                    audience === Audience.B2B && signupParameters?.trial && planCard.plan !== PLANS.ENTERPRISE;
+
+                const subsection = !shouldDisplayTrialText ? (
+                    planCard.subsection
+                ) : (
+                    <>
+                        <span className="color-success text-left text-sm text-bold mb-3">
+                            {c('b2b_trials_2025_Info').t`Try it free for 14 days`}
+                        </span>
+                        {planCard.subsection}
+                    </>
+                );
+
                 if (planCard.interactive === false) {
                     return (
                         <PlanCardViewSlot
@@ -365,7 +382,7 @@ export const PlanCardSelector = ({
                             subline={planCard.subline}
                             key={planCard.plan}
                             dark={dark}
-                            subsection={planCard.subsection}
+                            subsection={subsection}
                             interactive={planCard.interactive}
                             maxWidth={planCount > 2}
                         />
@@ -427,7 +444,7 @@ export const PlanCardSelector = ({
                         billedText={billedText}
                         key={planCard.plan}
                         dark={dark}
-                        subsection={planCard.subsection}
+                        subsection={subsection}
                         maxWidth={planCount > 2}
                         loading={loading}
                     />
