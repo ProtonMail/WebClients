@@ -186,6 +186,7 @@ export const NewsletterSubscriptionView = ({
                                                 <NewsletterSubscriptionMailListHeader
                                                     subscription={activeSubscription}
                                                     numMessages={elementsData.elementIDs.length}
+                                                    loading={elementsData.loading}
                                                 />
                                             )
                                         )
