@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import ErrorButton from '@proton/components/components/button/ErrorButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
@@ -170,7 +169,9 @@ const CalendarDeleteSection = ({ calendars, calendar, defaultCalendar, isShared 
                 <div className="h2 mb-1 text-bold">{c('Remove calendar section title').t`Remove calendar`}</div>
                 <SettingsParagraph large>{description}</SettingsParagraph>
                 {deleteDefaultAlertText && <Alert className="mb-4">{deleteDefaultAlertText}</Alert>}
-                <ErrorButton onClick={() => setIsDeleteModalOpen(true)}>{deleteText}</ErrorButton>
+                <Button color="danger" onClick={() => setIsDeleteModalOpen(true)}>
+                    {deleteText}
+                </Button>
             </SettingsSection>
         </>
     );

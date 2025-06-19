@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import ErrorButton from '@proton/components/components/button/ErrorButton';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import ConfirmModal from '@proton/components/components/modal/Confirm';
@@ -86,7 +86,7 @@ const PaymentMethodActions = ({ method, methods }: Props) => {
                 <ConfirmModal
                     onConfirm={deleteMethod}
                     title={c('Confirmation title').t`Delete payment method`}
-                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    confirm={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
                 >
                     <Alert className="mb-4" data-testid="valid-payment-alert">{c('Info when deleting payment method')
                         .t`To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.`}</Alert>
