@@ -20,7 +20,7 @@ import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPane
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
-import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
+import { useAliasForLogin } from '@proton/pass/hooks/useAliasForLogin';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
@@ -160,7 +160,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
             .concat(form.values.url)
             .some((url) => url.includes(domain));
 
-    const { aliasOptions } = useAliasForLoginModal(form);
+    const alias = useAliasForLogin(form);
+    const { aliasOptions } = alias;
 
     const draft = useItemDraft<LoginItemFormValues>(form, {
         mode: 'edit',
@@ -238,7 +239,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                             ))}
 
                             <FieldsetCluster>
-                                <LoginEditCredentials form={form} />
+                                <LoginEditCredentials form={form} alias={alias} />
 
                                 {
                                     /* only allow adding a new TOTP code if user
