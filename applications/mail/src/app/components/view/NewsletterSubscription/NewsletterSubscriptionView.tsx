@@ -25,7 +25,7 @@ import { setParams } from 'proton-mail/store/elements/elementsActions';
 import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
-    selectAllSubscriptions,
+    allSubscriptionCount,
     selectTabLoadingState,
     selectedElementId,
     selectedSubscriptionIdSelector,
@@ -42,6 +42,7 @@ import {
     NewsletterSubscriptionMailListHeader,
     NewsletterSubscriptionMailListToolbar,
 } from './SubscriptionsList/NewsletterSubscriptionMailComponents';
+import { useNewsletterSubscriptionTelemetry } from './useNewsletterSubscriptionTelemetry';
 
 import './NewsletterSubscriptionView.scss';
 
@@ -77,14 +78,17 @@ export const NewsletterSubscriptionView = ({
     const mailSettings = useMailModel('MailSettings');
     const dispatch = useMailDispatch();
 
-    const subscriptionsObject = useMailSelector(selectAllSubscriptions);
     const loadingSubscriptions = useMailSelector(selectTabLoadingState);
     const activeSubscription = useMailSelector(selectedSubscriptionSelector);
     const selectedElement = useMailSelector(selectedElementId);
     const selectedSubscriptionId = useMailSelector(selectedSubscriptionIdSelector);
+    const subscriptionCount = useMailSelector(allSubscriptionCount);
 
     const onboardingModal = useModalStateObject();
     const subscriptionContainerRef = useRef<HTMLDivElement>(null);
+
+    const { sendNewslettersViewVisit } = useNewsletterSubscriptionTelemetry();
+    const hasSentPageView = useRef(false);
 
     const isDomBusy = domIsBusy();
 
@@ -103,6 +107,11 @@ export const NewsletterSubscriptionView = ({
         if (feature && !feature?.Value && !isDomBusy) {
             onboardingModal.openModal(true);
         }
+
+        if (!hasSentPageView.current) {
+            sendNewslettersViewVisit(!!(feature && !feature?.Value));
+            hasSentPageView.current = true;
+        }
     }, [feature?.Value, isDomBusy]);
 
     useEffect(() => {
@@ -120,7 +129,7 @@ export const NewsletterSubscriptionView = ({
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
-    if (!loadingSubscriptions && !subscriptionsObject && Object.keys(subscriptionsObject || {}).length === 0) {
+    if (!loadingSubscriptions && subscriptionCount === 0) {
         return <NewsletterSubscriptionListPlaceholder />;
     }
 
@@ -177,6 +186,7 @@ export const NewsletterSubscriptionView = ({
                                                 <NewsletterSubscriptionMailListHeader
                                                     subscription={activeSubscription}
                                                     numMessages={elementsData.elementIDs.length}
+                                                    loading={elementsData.loading}
                                                 />
                                             )
                                         )

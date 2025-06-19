@@ -7,10 +7,11 @@ import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { fetchNextNewsletterSubscriptionsPage } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import {
     deletingSubscriptionIdSelector,
-    selectTabSubscriptionPagination,
+    selectTabSubscriptionPaginationQueryString,
     selectTabSubscriptionsList,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
+import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 import { NewsletterSubscriptionCard } from './NewsletterSubscriptionCard';
 import { NewsletterSubscriptionListPlaceholder } from './NewsletterSubscriptionListPlaceholder';
 import { NewsletterSubscriptionListWrapper } from './NewsletterSubscriptionListWrapper';
@@ -19,13 +20,16 @@ export const NewsletterSubscriptionList = () => {
     const dispatch = useMailDispatch();
 
     const subscriptionList = useMailSelector(selectTabSubscriptionsList);
-    const pagination = useMailSelector(selectTabSubscriptionPagination);
+    const paginationQueryString = useMailSelector(selectTabSubscriptionPaginationQueryString);
     const deletingSubscriptionId = useMailSelector(deletingSubscriptionIdSelector);
+
+    const { sendNewslettersListPagination } = useNewsletterSubscriptionTelemetry();
 
     const [loading, withLoading] = useLoading();
 
     const handleNextPageClick = () => {
         void withLoading(dispatch(fetchNextNewsletterSubscriptionsPage()));
+        sendNewslettersListPagination();
     };
 
     return (
@@ -41,8 +45,13 @@ export const NewsletterSubscriptionList = () => {
                             isDeleting={deletingSubscriptionId === sub.ID}
                         />
                     ))}
-                    {pagination ? (
-                        <Button className="w-fit-content mx-auto" loading={loading} onClick={handleNextPageClick}>
+                    {paginationQueryString ? (
+                        <Button
+                            data-testid="load-more-button"
+                            className="w-fit-content mx-auto"
+                            loading={loading}
+                            onClick={handleNextPageClick}
+                        >
                             {c('Action').t`Load more`}
                         </Button>
                     ) : null}
