@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import UnderlineButton from '@proton/components/components/button/UnderlineButton';
+import { Button } from '@proton/atoms';
 
 import type { Condition, FilterStatement } from '../filters/interfaces';
 import useFilterConditions from '../filters/modal/useFilterConditions';
@@ -44,8 +44,8 @@ const ForwardConditions = ({
                 ))}
             </div>
             {conditions.every((c) => !c.error) && (
-                <UnderlineButton onClick={onAddCondition}>{c('email_forwarding_2023: Action')
-                    .t`Add condition`}</UnderlineButton>
+                <Button shape="underline" color="norm" onClick={onAddCondition}>{c('email_forwarding_2023: Action')
+                    .t`Add condition`}</Button>
             )}
         </>
     );
