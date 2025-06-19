@@ -1,5 +1,5 @@
-import { Fragment } from 'react';
 import type { ChangeEvent, RefObject } from 'react';
+import { Fragment } from 'react';
 
 import { useUserSettings } from '@proton/account';
 import { DENSITY } from '@proton/shared/lib/constants';
