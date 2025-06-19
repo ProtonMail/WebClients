@@ -1,4 +1,12 @@
-import { isHidden, isIgnored, isProcessed, selectFormCandidates, selectInputCandidates } from '@proton/pass/fathom';
+import {
+    isHidden,
+    isIgnored,
+    isProcessed,
+    selectFormCandidates,
+    selectInputCandidates,
+    shallowShadowQuerySelector,
+} from '@proton/pass/fathom';
+import type { MaybeNull } from '@proton/pass/types';
 import { isFormElement, isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';
 import { not, or } from '@proton/pass/utils/fp/predicates';
 
@@ -53,3 +61,29 @@ const isNodeOfInterestFactory =
 export const isNodeOfInterest = isNodeOfInterestFactory(isParentOfInterest);
 export const isAddedNodeOfInterest = isNodeOfInterestFactory(hasProcessableFields);
 export const isRemovedNodeOfInterest = isNodeOfInterestFactory((el) => el.querySelector('form, input') !== null);
+
+export const selectNodeFromPath = (root: HTMLElement | Document, [head, ...tail]: string[]): MaybeNull<HTMLElement> => {
+    const start = shallowShadowQuerySelector(root, head);
+    if (!start) return null;
+
+    return tail.reduce<MaybeNull<HTMLElement>>((parent, next) => {
+        if (parent === null) return null;
+        return shallowShadowQuerySelector(parent, next);
+    }, start);
+};
+
+export const getActiveElement = (start: Document | ShadowRoot = document): MaybeNull<Element> => {
+    const traverse = (root: Document | ShadowRoot): MaybeNull<Element> => {
+        const active = root.activeElement;
+        if (!active) return null;
+        if (active.shadowRoot) return traverse(active.shadowRoot);
+        return active;
+    };
+
+    return traverse(start);
+};
+
+export const isActiveElement = (target?: HTMLElement): boolean => {
+    if (!target) return false;
+    return target === getActiveElement();
+};
