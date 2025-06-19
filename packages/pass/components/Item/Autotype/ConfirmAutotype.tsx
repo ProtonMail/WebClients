@@ -8,26 +8,29 @@ import { Checkbox, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@prot
 import type { ConfirmationModalProps } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { AutotypeKeyboardShortcut } from '@proton/pass/components/Item/Autotype/AutotypeKeyboardShortcut';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
-import { SpotlightMessage } from '@proton/pass/types';
+import { type WithSpotlightRenderProps } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type ConfirmAutotypeValues = { dontShowAgain: boolean };
-type ConfirmAutotypeProps = { onConfirm: () => void } & Pick<ConfirmationModalProps, 'onClose'>;
+type ConfirmAutotypeProps = { onConfirm: () => void; spotlightToClose: WithSpotlightRenderProps } & Pick<
+    ConfirmationModalProps,
+    'onClose'
+>;
 type ConfirmAutotypePropsCore = ConfirmAutotypeProps & { isFromKeyboardShortcut?: boolean };
 
-const ConfirmAutotypeCore: FC<ConfirmAutotypePropsCore> = ({ onConfirm, onClose, isFromKeyboardShortcut }) => {
-    const autotypeConfirmSpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_CONFIRM);
-    const autotypeShortcutConfirmSpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_CONFIRM_SHORTCUT);
-
+const ConfirmAutotypeCore: FC<ConfirmAutotypePropsCore> = ({
+    onConfirm,
+    onClose,
+    isFromKeyboardShortcut,
+    spotlightToClose,
+}) => {
     const FORM_ID = isFromKeyboardShortcut ? 'autotype-confirm-shortcut' : 'autotype-confirm-click';
 
     const form = useFormik<ConfirmAutotypeValues>({
         initialValues: { dontShowAgain: !isFromKeyboardShortcut },
         onSubmit: ({ dontShowAgain }) => {
             if (dontShowAgain) {
-                const spotlight = isFromKeyboardShortcut ? autotypeShortcutConfirmSpotlight : autotypeConfirmSpotlight;
-                spotlight.close();
+                spotlightToClose.close();
             }
             void onConfirm();
         },
@@ -75,9 +78,8 @@ const ConfirmAutotypeCore: FC<ConfirmAutotypePropsCore> = ({ onConfirm, onClose,
     );
 };
 
-export const ConfirmAutotype: FC<ConfirmAutotypeProps> = ({ onConfirm, onClose }) => (
-    <ConfirmAutotypeCore onConfirm={onConfirm} onClose={onClose} />
-);
-export const ConfirmAutotypeShortcut: FC<ConfirmAutotypeProps> = ({ onConfirm, onClose }) => (
-    <ConfirmAutotypeCore onConfirm={onConfirm} onClose={onClose} isFromKeyboardShortcut />
+export const ConfirmAutotype: FC<ConfirmAutotypeProps> = (props) => <ConfirmAutotypeCore {...props} />;
+
+export const ConfirmAutotypeShortcut: FC<ConfirmAutotypeProps> = (props) => (
+    <ConfirmAutotypeCore {...props} isFromKeyboardShortcut />
 );
