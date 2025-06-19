@@ -2,6 +2,7 @@ import { act, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -13,7 +14,6 @@ import { clearAll, getCompleteAddress, minimalCache, render, tick } from '../hel
 import { preparePlainText } from '../helpers/transforms/transforms';
 import type { OnCompose } from '../hooks/composer/useCompose';
 import { ComposeTypes } from '../hooks/composer/useCompose';
-import type { MessageState } from '../store/messages/messagesTypes';
 import { useOnCompose } from './ComposeProvider';
 import ComposerContainer from './ComposerContainer';
 

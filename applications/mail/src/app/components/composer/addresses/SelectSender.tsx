@@ -7,6 +7,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { DropdownSizeUnit, Icon, Option, SelectTwo, SettingsLink } from '@proton/components';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { APPS } from '@proton/shared/lib/constants';
 import generateUID from '@proton/utils/generateUID';
 
@@ -16,7 +17,6 @@ import { getFromAddresses } from '../../../helpers/addresses';
 import { selectComposer } from '../../../store/composers/composerSelectors';
 import type { ComposerID } from '../../../store/composers/composerTypes';
 import { composerActions } from '../../../store/composers/composersSlice';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 
 interface Props {
     composerID: ComposerID;

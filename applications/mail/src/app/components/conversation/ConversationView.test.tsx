@@ -1,5 +1,6 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
+import type { MessageState, PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -8,7 +9,6 @@ import range from '@proton/utils/range';
 
 // mock useGetMessageKeys on-the-fly when needed
 import { useGetMessageKeys } from 'proton-mail/hooks/message/useGetMessageKeys';
-import type { MessageState, PublicPrivateKey } from 'proton-mail/store/messages/messagesTypes';
 
 import {
     addApiKeys,

@@ -13,6 +13,7 @@ import loudRejection from 'loud-rejection';
 import { getModelState } from '@proton/account/test';
 import { mockPlansApi } from '@proton/components/hooks/helpers/test';
 import { FeatureCode } from '@proton/features';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
@@ -20,7 +21,6 @@ import type { MailSettings, Recipient, UserModel } from '@proton/shared/lib/inte
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getFeatureFlagsState } from '@proton/testing/lib/features';
 
-import type { MessageStateWithData } from 'proton-mail/store/messages/messagesTypes';
 import type { MailState } from 'proton-mail/store/store';
 
 import { getMinScheduleTime } from '../../../helpers/schedule';

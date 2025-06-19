@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Banner, Button, Href } from '@proton/atoms';
 import { Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { markAsHam } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getBlogURL, getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -12,8 +13,6 @@ import {
     isManualFlaggedHam,
     isSuspicious,
 } from '@proton/shared/lib/mail/messages';
-
-import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageStateWithData;

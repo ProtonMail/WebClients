@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import { c } from 'ttag';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
+import type { MessageStateWithData, MessageStateWithDataFull } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -27,7 +28,6 @@ import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { cancelSendMessage, endUndo, sent, updateExpires } from '../../store/messages/draft/messagesDraftActions';
-import type { MessageStateWithData, MessageStateWithDataFull } from '../../store/messages/messagesTypes';
 import { cancelScheduled } from '../../store/messages/scheduled/scheduledActions';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';

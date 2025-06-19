@@ -5,6 +5,7 @@ import {
     selectConversationCounts,
     selectMessageCounts,
 } from '@proton/mail';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -23,7 +24,6 @@ import {
     optimisticDelete as optimisticDeleteElementAction,
     optimisticRestoreDelete as optimisticRestoreDeleteElementAction,
 } from '../../store/elements/elementsActions';
-import type { MessageState } from '../../store/messages/messagesTypes';
 import {
     optimisticDelete as optimisticDeleteMessageAction,
     optimisticRestore as optimisticRestoreMessageAction,

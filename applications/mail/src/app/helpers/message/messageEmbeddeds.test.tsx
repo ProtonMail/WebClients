@@ -1,8 +1,12 @@
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
+import type {
+    MessageEmbeddedImage,
+    MessageImage,
+    PartialMessageState,
+} from '@proton/mail/store/messages/messagesTypes';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { MessageEmbeddedImage, MessageImage, PartialMessageState } from '../../store/messages/messagesTypes';
 import {
     createBlob,
     createEmbeddedImageFromUpload,

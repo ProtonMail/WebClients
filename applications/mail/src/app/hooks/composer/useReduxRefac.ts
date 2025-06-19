@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailSelector } from 'proton-mail/store/hooks';
@@ -13,7 +14,6 @@ import { changeSignature } from '../../helpers/message/messageSignature';
 import type { RecipientType } from '../../models/address';
 import { selectComposer } from '../../store/composers/composerSelectors';
 import type { ComposerID } from '../../store/composers/composerTypes';
-import type { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     composerID?: ComposerID;

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { MessageState, MessageStateWithData, PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
 import { uploadAttachment } from '@proton/shared/lib/api/attachments';
 import removeExifMetadata from '@proton/shared/lib/helpers/exif';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
@@ -18,7 +19,6 @@ import {
     STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
     UPLOAD_ATTACHMENT_ERROR_CODES,
 } from '../../constants';
-import type { MessageState, MessageStateWithData, PublicPrivateKey } from '../../store/messages/messagesTypes';
 import { generateCid, isEmbeddable } from '../message/messageEmbeddeds';
 import type { RequestParams, Upload } from '../upload';
 import { upload as uploadHelper } from '../upload';

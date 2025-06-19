@@ -20,6 +20,7 @@ import {
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import type { MessageErrors } from '@proton/mail/store/messages/messagesTypes';
 import { getEvent } from '@proton/shared/lib/api/calendars';
 import { getPaginatedEventsByUID } from '@proton/shared/lib/calendar/api';
 import {
@@ -46,7 +47,6 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getEventLocalStartEndDates } from '../../../../helpers/calendar/emailReminder';
 import { getParticipantsList } from '../../../../helpers/calendar/invite';
-import type { MessageErrors } from '../../../../store/messages/messagesTypes';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import EventReminderBanner from './EventReminderBanner';
 import ExtraEventParticipants from './ExtraEventParticipants';

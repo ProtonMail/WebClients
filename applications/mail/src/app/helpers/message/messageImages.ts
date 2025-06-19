@@ -1,5 +1,14 @@
 import type { PrivateAuthenticationStore } from '@proton/components';
 import { MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
+import { getAnchor } from '@proton/mail/helpers/message/messageImages/getAnchor';
+import type {
+    LoadRemoteResults,
+    MessageEmbeddedImage,
+    MessageImages,
+    MessageRemoteImage,
+    MessageState,
+    PartialMessageState,
+} from '@proton/mail/store/messages/messagesTypes';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Api } from '@proton/shared/lib/interfaces';
 import uniqueBy from '@proton/utils/uniqueBy';
@@ -9,15 +18,6 @@ import {
     loadRemoteDirectFromURL,
     loadRemoteProxyFromURL,
 } from '../../store/messages/images/messagesImagesActions';
-import type {
-    LoadRemoteResults,
-    MessageEmbeddedImage,
-    MessageImage,
-    MessageImages,
-    MessageRemoteImage,
-    MessageState,
-    PartialMessageState,
-} from '../../store/messages/messagesTypes';
 import { getDocumentContent } from './messageContent';
 import { setEmbeddedAttr } from './messageEmbeddeds';
 
@@ -35,16 +35,6 @@ export const getRemoteSelector = (hasProtonAttribute = false) => {
 
         return `[${hasProtonAttribute ? 'proton-' : ''}${name}]`;
     }).join(',');
-};
-
-export const getAnchor = (document: Element | null | undefined, image: MessageImage) => {
-    if (!document) {
-        return null;
-    }
-
-    return document.querySelector(
-        `.proton-image-anchor[data-proton-${image.type}="${image.id}"]`
-    ) as HTMLElement | null;
 };
 
 export const getRemoteImages = ({ messageImages }: PartialMessageState) =>

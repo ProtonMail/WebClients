@@ -22,6 +22,7 @@ import {
     SpotlightProvider,
 } from '@proton/components';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -48,7 +49,6 @@ import type { ConversationsState } from 'proton-mail/store/conversations/convers
 import { newElementsState } from 'proton-mail/store/elements/elementsSlice';
 import { incomingDefaultsInitialState } from 'proton-mail/store/incomingDefaults/incomingDefaultsSlice';
 import { layoutInitialState } from 'proton-mail/store/layout/layoutSlice';
-import type { MessagesState } from 'proton-mail/store/messages/messagesTypes';
 import { snoozeInitialState } from 'proton-mail/store/snooze/snoozeSlice';
 
 import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';

@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { Banner, Tooltip } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageStateWithData;

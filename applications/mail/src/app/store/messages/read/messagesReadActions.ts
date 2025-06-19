@@ -1,5 +1,12 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
+import type {
+    DocumentInitializeParams,
+    LoadParams,
+    MessageErrors,
+    MessageState,
+    VerificationParams,
+} from '@proton/mail/store/messages/messagesTypes';
 import { getMessage } from '@proton/shared/lib/api/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -9,13 +16,6 @@ import { LOAD_RETRY_DELAY } from '../../../constants';
 import type { MessageEvent } from '../../../models/event';
 import type { MailState, MailThunkExtra } from '../../store';
 import { messageByID } from '../messagesSelectors';
-import type {
-    DocumentInitializeParams,
-    LoadParams,
-    MessageErrors,
-    MessageState,
-    VerificationParams,
-} from '../messagesTypes';
 
 export const initialize = createAction<MessageState>('messages/initialize');
 

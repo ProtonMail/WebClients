@@ -1,12 +1,13 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import type { MessageRemoteImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
+
 import type { EOStoreState } from 'proton-mail/store/eo/eoStore';
 
 import { markEmbeddedImagesAsLoaded } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../helpers/message/messageImages';
 import { loadBackgroundImages, loadImages } from '../../helpers/message/messageRemotes';
-import type { MessageRemoteImage, MessageState } from '../messages/messagesTypes';
 import { eoMessageSelector, eoMessageStateSelector } from './eoSelectors';
 import { initialState } from './eoSlice';
 import type {

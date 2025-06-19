@@ -2,9 +2,10 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
-import type { Cancellable} from '@proton/components';
+import type { Cancellable } from '@proton/components';
 import { getOnlineStatus } from '@proton/components';
 import { useEventManager, useHandler, useNotifications } from '@proton/components';
+import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -21,7 +22,6 @@ import {
 import { useOnCompose } from '../../containers/ComposeProvider';
 import type { MapSendInfo } from '../../models/crypto';
 import { endSending, startSending } from '../../store/messages/draft/messagesDraftActions';
-import type { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { cancelScheduled } from '../../store/messages/scheduled/scheduledActions';
 import { useGetMessage } from '../message/useMessage';
 import type { PromiseHandlers } from '../usePromise';
