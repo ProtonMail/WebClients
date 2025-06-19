@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { ImportProvider } from '@proton/activation/src/interface';
 import { selectOauthDraftProvider } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { UnderlineButton, useModalState } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { useModalState } from '@proton/components';
 
 import CustomizeMailImportModal from '../../CustomizeMailImportModal/CustomizeMailImportModal';
 import StepPrepareEmailsSummaryText from './StepPrepareOAuthEmailsSummaryText';
@@ -28,10 +29,12 @@ const StepPrepareEmailsSummary = ({ isSelected }: Props) => {
     return (
         <>
             <StepPrepareEmailsSummaryText label={fields.importLabel} errors={errors} summary={summary} />
-            <UnderlineButton
+            <Button
+                shape="underline"
+                color="norm"
                 className="self-start pb-0"
                 onClick={() => handleDisplayCustomizeModal(true)}
-            >{c('Action').t`Customize`}</UnderlineButton>
+            >{c('Action').t`Customize`}</Button>
             {renderCustomizeModal && (
                 <CustomizeMailImportModal
                     displayCategories={provider === ImportProvider.GOOGLE}
