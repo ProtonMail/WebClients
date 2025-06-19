@@ -543,6 +543,9 @@
       "refresh the page": [
         "重新整理此頁面"
       ],
+      "Reload": [
+        "重新載入"
+      ],
       "Remove": [
         "移除"
       ],
@@ -2987,11 +2990,6 @@
         "郵遞區號為必要項目"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "輸入電子郵件地址"
-      ]
-    },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
         "讀取您的檔案「${ formattedFilename }」時發生錯誤。檔案格式不正確。"
@@ -3593,9 +3591,6 @@
       ]
     },
     "Header": {
-      "App version": [
-        "應用程式版本"
-      ],
       "Best deal": [
         "最划算"
       ],
@@ -3634,9 +3629,6 @@
       ],
       "Payment details": [
         "繳款詳細資訊"
-      ],
-      "Protection": [
-        "安全"
       ],
       "Select your deal": [
         "請選擇您的優惠"
@@ -4840,9 +4832,6 @@
       ],
       "SCIM token active": [
         "SCIM 憑證啟用"
-      ],
-      "Search by an email address to begin": [
-        "透過電子郵件地址以開始"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "保護您的 ${ BRAND_NAME } 帳號"
@@ -6127,9 +6116,6 @@
       ],
       "Search": [
         "搜尋"
-      ],
-      "Search by email": [
-        "透過電子郵件搜尋"
       ],
       "Second password": [
         "第二密碼"
@@ -8238,6 +8224,11 @@
     "Price": {
       "Free": [
         "免費"
+      ]
+    },
+    "Protection type": {
+      "Ok": [
+        "確定"
       ]
     },
     "Recovery Email": {
@@ -10781,12 +10772,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "允許無痕添加會議連結至您的行事曆邀請函。"
       ],
-      "An approximate location of the IP address": [
-        "IP 位址的大概位置"
-      ],
-      "Any protection applied to suspicious activity": [
-        "針對可疑活動所採取的保護措施"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "與系統的日夜模式同步，在白天和晚上的偏好布景主題之間自動切換"
       ],
@@ -10795,9 +10780,6 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "請複製此 URL 並到您的身分提供者提示的實體 ID 欄位中貼上"
-      ],
-      "Device information such as operating system": [
-        "裝置資訊如作業系統"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "來自身分提供商(例如 e.g. https://idp.example.com/sso/saml)端點網址"
@@ -10810,9 +10792,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已購買或從我們的支援團隊收到禮品代碼，您可在此輸入。"
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP地址(網際網路服務提供商)"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "指定允許以 SAML SSO 驗證的網域"
