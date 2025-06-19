@@ -20,7 +20,7 @@ class ProtonTelemetry {
      * This queue is pushed to if telemetry has not been initialised. Then processed once initialisation has begun.
      * This is to avoid events being dropped before initialisation
      */
-    private eventQueue: EventArgs[] = [];
+    private preInitialisationEventQueue: EventArgs[] = [];
 
     public init({ config, uid }: { config: ProtonConfig; uid: string }) {
         this.UID = uid;
@@ -42,27 +42,27 @@ class ProtonTelemetry {
     public sendCustomEvent(...args: EventArgs): ReturnType<ReturnType<typeof createTelemetry>['sendCustomEvent']> {
         if (!this.telemetry || !this.UID) {
             captureMessage('Attempted to send a custom event when @protontech/telemetry has not been initialised.');
-            this.addToEventQueue(args);
+            this.queuePreInitialisationEvent(args);
             return;
         }
 
         this.telemetry.sendCustomEvent(...args);
     }
 
-    private addToEventQueue(args: EventArgs) {
+    private queuePreInitialisationEvent(args: EventArgs) {
         /**
          * Ensure queue never exceeds max length
          */
-        if (this.eventQueue.length >= this.maxQueueLength) {
-            this.eventQueue.shift();
+        if (this.preInitialisationEventQueue.length >= this.maxQueueLength) {
+            this.preInitialisationEventQueue.shift();
         }
 
-        this.eventQueue.push(args);
+        this.preInitialisationEventQueue.push(args);
     }
 
     private processQueue() {
-        for (let i = 0; i < this.eventQueue.length; i++) {
-            const args = this.eventQueue[i];
+        for (let i = 0; i < this.preInitialisationEventQueue.length; i++) {
+            const args = this.preInitialisationEventQueue[i];
             this.sendCustomEvent(...args);
         }
     }
