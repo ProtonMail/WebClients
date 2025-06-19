@@ -1780,9 +1780,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
-      ],
       "Moving items": [
         "항목 이동 중"
       ],
@@ -2475,9 +2472,6 @@
       "Add section": [
         "섹션 추가"
       ],
-      "Additional data": [
-        "추가 데이터"
-      ],
       "Additional details": [
         "추가 정보"
       ],
@@ -2643,14 +2637,8 @@
       "Crypto Wallet": [
         "암호화폐 지갑"
       ],
-      "Custom hidden field": [
-        "사용자 지정 숨겨진 필드"
-      ],
       "Custom Items": [
         "사용자 지정 항목"
-      ],
-      "Custom text field": [
-        "사용자 정의 필드"
       ],
       "Database": [
         "데이터 베이스"
@@ -4217,9 +4205,6 @@
       "OTP secret or URI is invalid": [
         "OTP 시크릿 및 URI가 잘못되었습니다."
       ],
-      "OTP secret or URI required": [
-        "OTP 시크릿 및 URI가 필요합니다."
-      ],
       "Section name cannot be empty": [
         "섹션 이름은 비워둘 수 없습니다"
       ],
@@ -4343,9 +4328,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "조직 외부의 이메일 주소로는 초대할 수 없습니다."
-      ],
-      "item was imported without custom fields": [
-        "항목이 커스텀 입력란 없이 불러와졌습니다."
       ],
       "Maximum length is ${ maxLength } character": [
         "최대 길이는 ${ maxLength }자 입니다."
