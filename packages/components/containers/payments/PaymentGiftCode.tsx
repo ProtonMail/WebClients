@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
-import UnderlineButton from '@proton/components/components/button/UnderlineButton';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import useToggle from '@proton/components/hooks/useToggle';
@@ -97,8 +96,9 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
 
     return (
         <>
-            <UnderlineButton className="mr-2" onClick={toggle} data-testid="add-gift-code">{c('Link')
-                .t`Add a gift code`}</UnderlineButton>
+            <Button shape="underline" color="norm" className="mr-2" onClick={toggle} data-testid="add-gift-code">{c(
+                'Link'
+            ).t`Add a gift code`}</Button>
             <Info
                 title={c('Tooltip')
                     .t`If you purchased a gift code or received one from our support team, you can enter it here.`}
