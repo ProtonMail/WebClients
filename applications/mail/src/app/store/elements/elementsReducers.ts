@@ -1,6 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -13,7 +14,7 @@ import unique from '@proton/utils/unique';
 import { getElementContextIdentifier, parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
-import { decrementUnread, incrementUnread } from '../mailbox/mailboxHelpers';
+import type { filterSubscriptionList } from '../newsletterSubscriptions/newsletterSubscriptionsActions';
 import { newElementsState } from './elementsSlice';
 import type {
     ESResults,
@@ -277,7 +278,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
 
         elementsToBypass.forEach((element) => {
             const isMessage = testIsMessage(element);
-            const id = (isMessage && conversationMode ? (element as Message).ConversationID : element.ID) || '';
+            const id = (isMessage && conversationMode ? element.ConversationID : element.ID) || '';
             if (!state.bypassFilter.includes(id)) {
                 state.bypassFilter.push(id);
             }
@@ -305,7 +306,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
         // we need to remove elements if they are already in the array
         const toRemoveIDs = elementsToRemove.map((element) => {
             const isMessage = testIsMessage(element);
-            return (isMessage && conversationMode ? (element as Message).ConversationID : element.ID) || '';
+            return (isMessage && conversationMode ? element.ConversationID : element.ID) || '';
         });
 
         state.bypassFilter = state.bypassFilter.filter((elementID) => {
@@ -534,9 +535,7 @@ const handleBypassFilter = (
         // we need to remove elements if they are already in the array
         const toRemoveIDs = elementsToRemove.map((element) => {
             const isMessage = testIsMessage(element);
-            return (
-                (isMessage && state.params.conversationMode ? (element as Message).ConversationID : element.ID) || ''
-            );
+            return (isMessage && state.params.conversationMode ? element.ConversationID : element.ID) || '';
         });
 
         state.bypassFilter = state.bypassFilter.filter((elementID) => {
@@ -600,11 +599,11 @@ export const markMessagesAsReadPending = (
 
         // Update the conversation element state attach to the same message
         if (conversationElementState) {
-            conversationElementState.ContextNumUnread = decrementUnread(conversationElementState.ContextNumUnread, 1);
-            conversationElementState.NumUnread = decrementUnread(conversationElementState.NumUnread, 1);
+            conversationElementState.ContextNumUnread = safeDecreaseCount(conversationElementState.ContextNumUnread, 1);
+            conversationElementState.NumUnread = safeDecreaseCount(conversationElementState.NumUnread, 1);
             conversationElementState.Labels?.forEach((label) => {
                 if (label.ID === labelID && selectedMessage.LabelIDs.includes(label.ID)) {
-                    label.ContextNumUnread = decrementUnread(label.ContextNumUnread, 1);
+                    label.ContextNumUnread = safeDecreaseCount(label.ContextNumUnread, 1);
                 }
             });
         }
@@ -651,11 +650,11 @@ export const markMessagesAsUnreadPending = (
         const conversationElementState = state.elements[selectedMessage.ConversationID] as Conversation;
 
         if (conversationElementState) {
-            conversationElementState.ContextNumUnread = incrementUnread(conversationElementState.ContextNumUnread, 1);
-            conversationElementState.NumUnread = incrementUnread(conversationElementState.NumUnread, 1);
+            conversationElementState.ContextNumUnread = safeIncreaseCount(conversationElementState.ContextNumUnread, 1);
+            conversationElementState.NumUnread = safeIncreaseCount(conversationElementState.NumUnread, 1);
             conversationElementState.Labels?.forEach((label) => {
                 if (label.ID === labelID && selectedMessage.LabelIDs.includes(label.ID)) {
-                    label.ContextNumUnread = incrementUnread(label.ContextNumUnread, 1);
+                    label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
                 }
             });
         }
@@ -768,14 +767,14 @@ export const markConversationsAsUnreadPending = (
         const elementState = state.elements[selectedConversation.ID];
 
         if (elementState) {
-            (elementState as Conversation).ContextNumUnread = incrementUnread(
+            (elementState as Conversation).ContextNumUnread = safeIncreaseCount(
                 (elementState as Conversation).ContextNumUnread,
                 1
             );
-            (elementState as Conversation).NumUnread = incrementUnread((elementState as Conversation).NumUnread, 1);
+            (elementState as Conversation).NumUnread = safeIncreaseCount((elementState as Conversation).NumUnread, 1);
             (elementState as Conversation).Labels?.forEach((label) => {
                 if (label.ID === labelID) {
-                    label.ContextNumUnread = incrementUnread(label.ContextNumUnread, 1);
+                    label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
                 }
             });
         }
@@ -817,4 +816,22 @@ export const markConversationsAsUnreadRejected = (
 
 export const resetRetry = (state: Draft<ElementsState>) => {
     state.retry = newRetry(state.retry, state.params, undefined);
+};
+
+export const markNewsletterElementsAsReadPending = (
+    state: Draft<ElementsState>,
+    action: ReturnType<typeof filterSubscriptionList.pending>
+) => {
+    const payload = action.meta.arg;
+
+    // The only action that have a visual impact is the mark as read
+    if (!payload.data.MarkAsRead) {
+        return;
+    }
+
+    Object.values(state.elements).forEach((element) => {
+        if (testIsMessage(element) && element.NewsletterSubscriptionID === payload.subscription.ID) {
+            element.Unread = 0;
+        }
+    });
 };
