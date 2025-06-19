@@ -1,14 +1,14 @@
+import type {
+    LoadEmbeddedResults,
+    MessageEmbeddedImage,
+    PartialMessageState,
+} from '@proton/mail/store/messages/messagesTypes';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
 
 import { ENCRYPTED_STATUS } from '../../constants';
-import type {
-    LoadEmbeddedResults,
-    MessageEmbeddedImage,
-    PartialMessageState,
-} from '../../store/messages/messagesTypes';
 import { hash, removeLineBreaks, toUnsignedString } from '../string';
 import { querySelectorAll } from './messageContent';
 import { getEmbeddedImages, updateImages } from './messageImages';

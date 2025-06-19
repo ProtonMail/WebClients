@@ -1,6 +1,7 @@
 import { act, fireEvent, getByTestId as getByTestIdDefault, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -9,7 +10,6 @@ import type { Label } from '@proton/shared/lib/interfaces';
 import { addApiMock } from '../../../helpers/test/api';
 import { minimalCache } from '../../../helpers/test/cache';
 import { render } from '../../../helpers/test/render';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import MoveDropdown from '../MoveDropdown';

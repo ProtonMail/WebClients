@@ -1,12 +1,12 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import type { MessageState, MessagesState } from '@proton/mail/store/messages/messagesTypes';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
 
-import type { MessageState, MessagesState } from '../messagesTypes';
 import {
     markConversationsAsReadPending,
     markConversationsAsUnreadPending,

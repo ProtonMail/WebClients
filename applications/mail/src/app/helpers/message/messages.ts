@@ -1,3 +1,10 @@
+import type {
+    MessageImages,
+    MessageState,
+    MessageStateWithData,
+    MessageWithOptionalBody,
+    PartialMessageState,
+} from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -6,13 +13,6 @@ import { attachmentsSize, isDraft, isReceived, isSent, isSentAndReceived } from 
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import type { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
-import type {
-    MessageImages,
-    MessageState,
-    MessageStateWithData,
-    MessageWithOptionalBody,
-    PartialMessageState,
-} from '../../store/messages/messagesTypes';
 import { getContent, setContent } from './messageContent';
 import { getEmbeddedImages } from './messageImages';
 

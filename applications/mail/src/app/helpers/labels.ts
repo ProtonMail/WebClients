@@ -1,5 +1,6 @@
 import type { FolderInfo } from '@proton/mail/store/labels/helpers';
 import { getStandardFolders, labelIncludes } from '@proton/mail/store/labels/helpers';
+import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -9,7 +10,6 @@ import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
-import type { MessageWithOptionalBody } from '../store/messages/messagesTypes';
 import { getLabelIDs } from './elements';
 
 const {

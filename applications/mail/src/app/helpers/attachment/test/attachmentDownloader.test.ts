@@ -1,11 +1,11 @@
 import { encodeBase64 } from '@proton/crypto/lib/utils';
+import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import * as browser from '@proton/shared/lib/helpers/browser';
 import * as downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import type { MessageKeys, MessageVerification } from '../../../store/messages/messagesTypes';
 import { api } from '../../test/api';
 import type { GeneratedKey } from '../../test/crypto';
 import {

@@ -1,7 +1,8 @@
 import { screen } from '@testing-library/react';
 
+import type { MessageErrors, MessageState } from '@proton/mail/store/messages/messagesTypes';
+
 import { render } from '../../../helpers/test/helper';
-import type { MessageErrors, MessageState } from '../../../store/messages/messagesTypes';
 import ExtraErrors from './ExtraErrors';
 
 describe('Errors banner', () => {

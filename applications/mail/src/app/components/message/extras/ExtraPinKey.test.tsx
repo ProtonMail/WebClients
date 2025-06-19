@@ -2,6 +2,7 @@ import { fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import type { PublicKeyReference } from '@proton/crypto';
+import type { MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -18,7 +19,6 @@ import {
     tick,
 } from '../../../helpers/test/helper';
 import { message } from '../../../helpers/test/pinKeys';
-import type { MessageVerification } from '../../../store/messages/messagesTypes';
 import ExtraPinKey from './ExtraPinKey';
 
 const { SIGNED_AND_VALID, SIGNED_AND_INVALID, NOT_SIGNED, NOT_VERIFIED } = MAIL_VERIFICATION_STATUS;

@@ -1,11 +1,5 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { getImage } from '@proton/shared/lib/api/images';
-import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
-import { encodeImageUri } from '@proton/shared/lib/helpers/image';
-
-import { getAndVerifyAttachment } from '../../../helpers/attachment/attachmentLoader';
-import { createBlob } from '../../../helpers/message/messageEmbeddeds';
 import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
@@ -14,7 +8,13 @@ import type {
     LoadRemoteParams,
     LoadRemoteResults,
     MessageRemoteImage,
-} from '../messagesTypes';
+} from '@proton/mail/store/messages/messagesTypes';
+import { getImage } from '@proton/shared/lib/api/images';
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { encodeImageUri } from '@proton/shared/lib/helpers/image';
+
+import { getAndVerifyAttachment } from '../../../helpers/attachment/attachmentLoader';
+import { createBlob } from '../../../helpers/message/messageEmbeddeds';
 
 export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedParams>(
     'messages/embeddeds/load',

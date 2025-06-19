@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import type { ContactEditProps } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
 import type { MapStatusIcons } from '../../../models/crypto';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import EORecipientsList from '../../eo/message/recipients/EORecipientsList';
 import MailRecipientList from './MailRecipientList';
 import RecipientItem from './RecipientItem';

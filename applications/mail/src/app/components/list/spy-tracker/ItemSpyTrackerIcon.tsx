@@ -3,10 +3,10 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { isPlainText, isSent } from '@proton/shared/lib/mail/messages';
 
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import LoadContentSpotlight from '../../message/LoadContentSpotlight';
 import PrivacyDropdown from './PrivacyDropdown';
 

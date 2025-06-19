@@ -1,5 +1,6 @@
 import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
 import { arrayToBinaryString } from '@proton/crypto/lib/utils';
+import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -8,7 +9,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { LARGE_KEY_SIZE } from '../../constants';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
-import type { MessageKeys } from '../../store/messages/messagesTypes';
 import { getAndVerifyAttachment } from '../attachment/attachmentLoader';
 
 /**

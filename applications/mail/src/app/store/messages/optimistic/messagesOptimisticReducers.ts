@@ -1,13 +1,14 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import type { MessageState, MessagesState } from '@proton/mail/store/messages/messagesTypes';
+
 import { hasLabel } from '../../../helpers/elements';
 import type { LabelChanges } from '../../../helpers/labels';
 import { applyLabelChangesOnMessage } from '../../../helpers/labels';
 import { applyMarkAsChangesOnMessage } from '../../../helpers/message/messages';
 import type { MarkAsChanges } from '../../../hooks/optimistic/useOptimisticMarkAs';
 import { getLocalID, getMessage } from '../helpers/messagesReducer';
-import type { MessageState, MessagesState } from '../messagesTypes';
 
 export const optimisticApplyLabels = (
     state: Draft<MessagesState>,
