@@ -1,9 +1,9 @@
 import type { PrivateAuthenticationStore } from '@proton/components';
 import { MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
+import { getAnchor } from '@proton/mail/helpers/message/messageImages/getAnchor';
 import type {
     LoadRemoteResults,
     MessageEmbeddedImage,
-    MessageImage,
     MessageImages,
     MessageRemoteImage,
     MessageState,
@@ -35,16 +35,6 @@ export const getRemoteSelector = (hasProtonAttribute = false) => {
 
         return `[${hasProtonAttribute ? 'proton-' : ''}${name}]`;
     }).join(',');
-};
-
-export const getAnchor = (document: Element | null | undefined, image: MessageImage) => {
-    if (!document) {
-        return null;
-    }
-
-    return document.querySelector(
-        `.proton-image-anchor[data-proton-${image.type}="${image.id}"]`
-    ) as HTMLElement | null;
 };
 
 export const getRemoteImages = ({ messageImages }: PartialMessageState) =>
