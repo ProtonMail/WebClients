@@ -3,14 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Alert,
-    ErrorButton,
-    type ModalSize,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '@proton/components';
+import { Alert, type ModalSize, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 
 export type ConfirmationModalProps = {
@@ -61,9 +54,9 @@ export const ConfirmationModal = ({
                 <Button type="reset" onClick={onClose} pill>
                     {cancelText}
                 </Button>
-                <ErrorButton type="button" disabled={disabled} onClick={handleSubmit} pill>
+                <Button color="danger" type="button" disabled={disabled} onClick={handleSubmit} pill>
                     {submitText}
-                </ErrorButton>
+                </Button>
             </ModalTwoFooter>
         </PassModal>
     );
