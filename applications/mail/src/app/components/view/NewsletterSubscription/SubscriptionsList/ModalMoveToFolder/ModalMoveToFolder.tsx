@@ -254,7 +254,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
                                         <FolderIcon
                                             folder={folder}
                                             name={folder.icon}
-                                            className="shrink-0 mr-2 mt-0.5"
+                                            className="shrink-0 mr-2 mt-0.5 color-primary"
                                         />
                                         <span className="text-ellipsis flex-1" title={folder.Name}>
                                             {folder.Name}
