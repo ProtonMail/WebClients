@@ -37,3 +37,24 @@ export interface FilterDropdownData extends NewsletterSubscriptionFilterState {
     isFilterEnabled: boolean;
     menuItems: MenuItem[];
 }
+
+export enum NewsletterSubscriptionAction {
+    unsubscribe = 'unsubscribe',
+    moveToFolder = 'moveToFolder',
+    blockSender = 'blockSender',
+    createAndMoveToFolder = 'createAndMoveToFolder',
+    createFolderUpsell = 'createFolderUpsell',
+}
+
+export enum NewsletterMessagesAction {
+    markAsRead = 'markAsRead',
+    moveToArchive = 'moveToArchive',
+    moveToTrash = 'moveToTrash',
+    filterUpsell = 'filterUpsell',
+}
+
+export enum NewsletterFolderDestination {
+    trash = 'trash',
+    archive = 'archive',
+    customFolder = 'customFolder',
+}
