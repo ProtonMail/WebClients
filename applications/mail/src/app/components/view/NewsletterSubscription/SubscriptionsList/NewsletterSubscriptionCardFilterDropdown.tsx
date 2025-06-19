@@ -101,13 +101,13 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
                 </DropdownButton>
             </div>
             <Dropdown isOpen={popover.isOpen} anchorRef={popover.anchorRef} onClose={popover.close}>
-                <DropdownMenu>
+                <DropdownMenu className="my-3 w-custom" style={{ '--w-custom': '16rem' }}>
                     {dropdownData.menuItems.map((item) => (
                         <DropdownMenuButton
                             key={item.icon}
                             disabled={userLoading || filterLoading}
                             onClick={(e) => handleClick(item.filter, e)}
-                            className="text-left flex flex-nowrap"
+                            className="text-left flex flex-nowrap pl-6"
                             data-testid={`dropdown-item-${item.filter}`}
                         >
                             <Icon name={item.icon} className="mr-2 mt-0.5" />
