@@ -17,8 +17,8 @@ import { getReceivedMessagesCount, getUnsubscribeMethod, shouldOpenUpsellOnFilte
 import { type ModalFilterType, NewsletterSubscriptionAction, type PropsWithNewsletterSubscription } from '../interface';
 import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 import { ModalBlockSender } from './ModalBlockSender/ModalBlockSender';
+import { ModalMoveToFolder } from './ModalMoveToFolder/ModalMoveToFolder';
 import ModalUnsubscribe from './ModalUnsubscribe/ModalUnsubscribe';
-import { ModalMoveToFolder } from './MoveToFolder/ModalMoveToFolder';
 
 export const SubscriptionCardTitle = ({ subscription }: PropsWithNewsletterSubscription) => {
     return (
