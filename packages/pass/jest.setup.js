@@ -4,6 +4,8 @@ import { ReadableStream, WritableStream } from 'stream/web';
 import { TextDecoder, TextEncoder } from 'util';
 import 'whatwg-fetch';
 
+import noop from '@proton/utils/noop';
+
 // Getting ReferenceError: TextDecoder is not defined without
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
@@ -63,3 +65,5 @@ expect.extend({
         return { message, pass };
     },
 });
+
+window.matchMedia = noop;
