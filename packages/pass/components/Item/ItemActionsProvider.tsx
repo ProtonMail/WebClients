@@ -20,6 +20,7 @@ import { useNavigate } from '@proton/pass/components/Navigation/NavigationAction
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
+import { useAutotypeExecute } from '@proton/pass/hooks/autotype/useAutotypeExecute';
 import type { ItemCloneLocationState } from '@proton/pass/hooks/items/useInitialValues';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
@@ -74,6 +75,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     const navigate = useNavigate();
     const store = useStore<State>();
     const scope = useStatefulRef(useItemScope());
+    const executeAutotype = useAutotypeExecute();
 
     const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
 
@@ -130,7 +132,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         c('Vault Select').ngettext(msgid`Move item to`, `Move items to`, numberOfItems);
 
     const confirmAutotype = useCallback(({ autotypeProps: { fields, enterAtTheEnd } }: AutotypeConfirmProps) => {
-        void window.ctxBridge?.autotype({
+        void executeAutotype?.({
             fields,
             enterAtTheEnd,
         });
