@@ -38,6 +38,31 @@ type VaultActionState =
 export const VaultActionsContext = createContext<MaybeNull<VaultActionsContextValue>>(null);
 export const useVaultActions = createUseContext(VaultActionsContext);
 
+export const handleSelect = (navigate: ReturnType<typeof useNavigate>, selected: string) => {
+    switch (selected) {
+        case 'all':
+            return navigate(getLocalPath(), {
+                filters: {
+                    selectedShareId: null,
+                },
+            });
+        case 'trash':
+            return navigate(getTrashRoute(), {
+                filters: {
+                    selectedShareId: null,
+                    type: '*',
+                },
+            });
+        default: {
+            return navigate(getLocalPath(`share/${selected}`), {
+                filters: {
+                    selectedShareId: selected,
+                },
+            });
+        }
+    }
+};
+
 export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     const navigate = useNavigate();
     const { filters, setFilters } = useNavigationFilters();
@@ -67,33 +92,7 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             edit: (vault) => setState({ view: 'edit', vault }),
             leave: (vault) => setState({ view: 'leave', vault }),
             moveItems: (vault) => setState({ view: 'move', vault }),
-            select: (selected) => {
-                switch (selected) {
-                    case 'all':
-                        return navigate(getLocalPath(), {
-                            filters: {
-                                selectedShareId: null,
-                                search: '',
-                            },
-                        });
-                    case 'trash':
-                        return navigate(getTrashRoute(), {
-                            filters: {
-                                selectedShareId: null,
-                                search: '',
-                                type: '*',
-                            },
-                        });
-                    default: {
-                        return navigate(getLocalPath(`share/${selected}`), {
-                            filters: {
-                                selectedShareId: selected,
-                                search: '',
-                            },
-                        });
-                    }
-                }
-            },
+            select: (selected) => handleSelect(navigate, selected),
             trashEmpty: () => setState({ view: 'trash-empty' }),
             trashRestore: () => dispatch(restoreTrashIntent()),
         }),
