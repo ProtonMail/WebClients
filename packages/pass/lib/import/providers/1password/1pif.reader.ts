@@ -111,7 +111,7 @@ export const processCustomItem = (item: OnePassLegacyItem): ItemImportIntent<'cu
         note: item.secureContents.notesPlain,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
-        extraFields: extract1PasswordLegacyExtraFields(item),
+        extraFields: [...extract1PasswordLegacyUnknownExtraFields(item), ...extract1PasswordLegacyExtraFields(item)],
     });
 
 export const processSshKeyItem = (item: OnePassLegacyItem): ItemImportIntent<'sshKey'> => {
@@ -136,7 +136,7 @@ export const processWifiItem = (item: OnePassLegacyItem): ItemImportIntent<'wifi
         note: item.secureContents.notesPlain,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
-        extraFields: extract1PasswordLegacyExtraFields(item),
+        extraFields: [...extract1PasswordLegacyUnknownExtraFields(item), ...extract1PasswordLegacyExtraFields(item)],
         ...extractLegacyBaseWifi(item.secureContents.sections),
     });
 
