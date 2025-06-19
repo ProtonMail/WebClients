@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import ErrorButton from '@proton/components/components/button/ErrorButton';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
@@ -63,7 +62,8 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
                 label.Type === LABEL_TYPE.MESSAGE_FOLDER ? c('Title').t`Delete folder?` : c('Title').t`Delete label?`
             }
             buttons={[
-                <ErrorButton
+                <Button
+                    color="danger"
                     disabled={isDeleting}
                     onClick={async () => {
                         try {
@@ -73,7 +73,7 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
                             setIsDeleting(false);
                         }
                     }}
-                >{c('Action').t`Delete`}</ErrorButton>,
+                >{c('Action').t`Delete`}</Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}

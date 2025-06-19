@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import { ErrorButton, Prompt, useApi, useNotifications } from '@proton/components';
+import { Prompt, useApi, useNotifications } from '@proton/components';
 import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -55,7 +55,7 @@ const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
         <Prompt
             title={c('Info').t`Confirm phishing report`}
             buttons={[
-                <ErrorButton onClick={handleConfirmPhishing}>{c('Action').t`Confirm`}</ErrorButton>,
+                <Button color="danger" onClick={handleConfirmPhishing}>{c('Action').t`Confirm`}</Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
