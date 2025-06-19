@@ -1,4 +1,4 @@
-import { type FC, useEffect, useMemo } from 'react';
+import { type FC, useEffect, useMemo, useRef } from 'react';
 
 import type { FormikContextType, FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -247,19 +247,23 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
         },
     });
 
+    const vaultPickerAnchor = useRef<HTMLDivElement>(null);
+
     return (
         <div className="ui-violet flex flex-column flex-nowrap justify-space-between h-full gap-2 anime-fade-in">
             <FormikProvider value={form}>
                 <Form id={formId} className="max-w-full flex flex-auto flex-column flex-nowrap *:shrink-0 gap-2">
                     <NotificationHeader
+                        ref={vaultPickerAnchor}
                         title={(() => {
                             switch (form.values.step) {
                                 case 'passkey':
                                     return (
                                         <Field
+                                            name="shareId"
                                             component={AutosaveVaultPicker}
                                             fallback={c('Info').t`Save passkey`}
-                                            name="shareId"
+                                            anchorRef={vaultPickerAnchor}
                                         />
                                     );
                                 case 'select':
