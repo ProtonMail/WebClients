@@ -1,6 +1,7 @@
 import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
 import type { CSFeatures } from 'proton-pass-extension/app/content/context/types';
 import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/types';
+import { selectNodeFromPath } from 'proton-pass-extension/app/content/utils/nodes';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -9,18 +10,21 @@ import {
     FormType,
     clearDetectionCache,
     fieldTypes,
+    flagOverride,
     flagSubtreeAsIgnored,
     formTypes,
     getTypeScore,
     prepass,
     rulesetMaker,
+    shadowPiercingContains,
     shouldRunClassifier,
 } from '@proton/pass/fathom';
 import type { Fnode } from '@proton/pass/fathom/fathom';
-import { type ExclusionRules, type MaybeNull } from '@proton/pass/types';
+import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
+import { type MaybeNull } from '@proton/pass/types';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { liftSort } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
 import { withMaxExecutionTime } from '@proton/pass/utils/time/performance';
@@ -31,7 +35,7 @@ const ruleset = rulesetMaker();
 const NOOP_EL = document.createElement('form');
 const DETECTION_TIE_TRESHOLD = 0.01;
 
-type DetectorState = { rules: MaybeNull<ExclusionRules> };
+type DetectorState = { rules: MaybeNull<DetectionRulesMatch> };
 type BoundRuleset = ReturnType<typeof ruleset.against>;
 type PredictionResult<T extends string> = { fnode: Fnode; type: T; score: number };
 type PredictionBestSelector<T extends string> = (
@@ -104,7 +108,7 @@ const groupFields = (
         const parent: HTMLElement =
             formPredictions.find(({ fnode: formFNode }) => {
                 const form = formFNode.element;
-                return form.contains(field);
+                return shadowPiercingContains(form, field);
             })?.fnode.element ?? NOOP_EL;
 
         const entry = grouping?.get(parent) ?? [];
@@ -226,12 +230,29 @@ export const createDetectorService = () => {
         },
 
         applyRules: () => {
-            state.rules?.forEach(
-                safeCall((selector) => {
-                    const match = document.querySelector<HTMLElement>(selector);
-                    if (match) flagSubtreeAsIgnored(match);
-                })
-            );
+            state.rules?.exclude?.forEach((selector) => {
+                const match = document.querySelector<HTMLElement>(selector);
+                if (match) flagSubtreeAsIgnored(match);
+            });
+
+            if (state.rules?.version === '2') {
+                state.rules?.include?.forEach((rule) => {
+                    const { selector, formType, fields } = rule;
+                    const form = selectNodeFromPath(document, selector);
+                    if (!form) return;
+
+                    flagOverride({
+                        form,
+                        formType,
+                        fields: (fields ?? [])
+                            ?.map(({ selector, fieldType }) => {
+                                const field = selectNodeFromPath(form, selector);
+                                if (field) return { field, fieldType };
+                            })
+                            .filter(truthy),
+                    });
+                });
+            }
         },
 
         isEnabled,
