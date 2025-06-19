@@ -1543,9 +1543,6 @@
       "What do I get?": [
         "Hva får jeg?"
       ],
-      "Wipe": [
-        "Slett"
-      ],
       "Yes": [
         "Ja"
       ],
@@ -1754,6 +1751,138 @@
       ],
       "New email": [
         "Ny e-post"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Skaff deg tilbudet"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "200 GB storage": [
+        "200 GB lagringsplass"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB kryptert lagring"
+      ],
+      "Add unlimited credit cards": [
+        "Legg til ubegrenset antall kredittkort"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle premium funksjoner i ${ BRAND_NAME } Mail, Pass, VPN, Drive og Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkér annonser, sporere og skadelig programvare"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Rabatter er basert på standard månedlig pris. Ved slutten av faktureringssyklusen vil abonnementet ditt fornyes til standard årlig sats."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Doble den krypterte lagringen din – få 1 TB for alle dataene dine"
+      ],
+      "Encrypted password manager": [
+        "Kryptert passordbehandler"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Her er en eksklusiv gave for å feire reisen vår sammen."
+      ],
+      "High speed streaming with VPN": [
+        "Strømming med høy hastighet med VPN"
+      ],
+      "of privacy": [
+        "respekt for privatlivet"
+      ],
+      "Online document editor": [
+        "Dokumentredigering på nett"
+      ],
+      "Online privacy for up to 2 people": [
+        "Personvern på nett for opptil 2 personer"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Personvern på nett for hele familien din (opptil 6 brukere)"
+      ],
+      "Protect up to 10 devices": [
+        "Beskytt opptil 10 enheter"
+      ],
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Spar stort på premium Drive-funksjoner med en tidsbegrenset rabatt."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Spar stort på premium Mail-funksjoner med tidsbegrenset rabatt."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Spar mye på premium Pass-funksjoner med en tidsbegrenset rabatt."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Spar mye på premium VPN-funksjoner med en tidsbegrenset rabatt."
+      ],
+      "Save time with built-in 2FA": [
+        "Spar tid med innebygd 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Sikker e-post med ubegrenset antall alias"
+      ],
+      "Select any server": [
+        "Velg hvilken som helst tjener"
+      ],
+      "Share passwords easily": [
+        "Enkel passorddeling"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me adresse"
+      ],
+      "Stream your favorite content": [
+        "Strøm favorittinnholdet ditt"
+      ],
+      "thanks to you": [
+        "takket være deg"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Tredoble den krypterte lagringsplassen og få 3 TB for all dataene dine."
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrenset antall mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Bruk ditt eget e-postdomene"
+      ],
+      "years": [
+        "år"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumstilbud"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "/ month": [
+        "/måned"
+      ],
+      "12 months": [
+        "12 måneder"
+      ],
+      "15 months": [
+        "15 måneder"
+      ],
+      "24 months": [
+        "24 måneder"
+      ],
+      "30 months": [
+        "30 måneder"
+      ],
+      "for ${ durationDeal }": [
+        "for ${ durationDeal }"
       ]
     },
     "app-switcher": {
@@ -2167,6 +2296,20 @@
       ],
       "Working with sensitive data?": [
         "Jobber du med sensitive data?"
+      ]
+    },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "Din dedikerte tjener er allerede tilordnet en porttjener. Du vil kunne kjøpe flere tjenere når din gratis prøveversjon er avsluttet.",
+        "Alle dine dedikerte tjenere er allerede tildelt til porttjenere. Du vil kunne kjøpe flere tjenere når din gratis prøveversjonen avsluttes."
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "Din gratis prøveversjon inkluderer ${ ipAddresses } dedikert tjener. Du kan legge til flere tjenere når hele abonnement ditt starter.",
+        "Din gratis prøveversjon inkluderer ${ ipAddresses } dedikerte tjenere. Du kan legge til flere tjenere når hele abonnement ditt starter."
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "Din gratis prøveversjon inkluderer ${ maxMembers } lisens. Du kan legge til flere lisenser når hele abonnementet ditt starter.",
+        "Din gratis prøveversjon inkluderer maksimalt ${ maxMembers } lisenser. Du kan legge til flere lisenser når hele abonnementet ditt starter."
       ]
     },
     "breadcrumb": {
@@ -3986,12 +4129,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiver ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene"
       ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktiver detaljerte hendelser og ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene"
-      ],
-      "Enable detailed events to access these features": [
-        "Aktiver detaljerte hendelser for å få tilgang til disse funksjonene"
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Oppmuntre bruken av tofaktorautentisering i organisasjonen din for ekstra sikkerhet."
       ],
@@ -4081,6 +4218,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
+      ],
+      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Organisasjonsadministratoren din må aktivere detaljerte hendelser og ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene."
+      ],
+      "Your organization administrator should enable detailed events in order to access these features": [
+        "Organisasjonsadministratoren din må aktivere detaljerte hendelser for å få tilgang til disse funksjonene."
       ]
     },
     "description": {
@@ -5109,6 +5252,9 @@
       "Failed to process the logo": [
         "Kunne ikke behandle logoen"
       ],
+      "Failed to update detailed monitoring.": [
+        "Kunne ikke oppdatere detaljert overvåking."
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Filen er for stor. Logoen må være 30 kB eller mindre."
       ],
@@ -5555,8 +5701,8 @@
       ]
     },
     "error": {
-      "Enter an email address": [
-        "Skriv inn en e-postadresse"
+      "Select users to view their activity": [
+        "Velg brukere for å se aktiviteten deres"
       ]
     },
     "Error importing calendar": {
@@ -5705,6 +5851,9 @@
     "Error message": {
       "App currently unavailable": [
         "App er for øyeblikket utilgjengelig"
+      ],
+      "Ask your administrator to enable Account monitor.": [
+        "Be administratoren din om å aktivere kontoovervåking."
       ],
       "Error: ${ errorMessage }": [
         "Feil: ${ errorMessage }"
@@ -6707,9 +6856,6 @@
       "Actions": [
         "Handlinger"
       ],
-      "App version": [
-        "App-versjon"
-      ],
       "Best deal": [
         "Beste avtale"
       ],
@@ -6787,9 +6933,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Time": [
-        "Tidspunkt"
       ],
       "User": [
         "Bruker"
@@ -7297,6 +7440,9 @@
       ]
     },
     "Info": {
+      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
+        " – ditt kommandosenter for sporing av brukeraktivitet, oppdage trusler og sikre etterlevelse i hele organisasjonen."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } bruker har for øyeblikket tilgang til delte tjenere.",
         "${ amountUsers }/${ totalUsers } brukere har for øyeblikket tilgang til delte tjenere."
@@ -7459,6 +7605,10 @@
         "${ remainingAddresses.length } adresse til",
         "${ remainingAddresses.length } adresser til"
       ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } resultat funnet",
+        "${ resultsCount } resultater funnet"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendere"
@@ -7604,6 +7754,9 @@
       ],
       "active": [
         "aktiv"
+      ],
+      "Activity monitor": [
+        "Overvåking av aktivitet"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Legg til en @pm.me e-postadresse til kontoen din. Dette enkle, kortere domene står for \"${ MAIL_APP_NAME } meg\" eller \"send meg privat melding.\""
@@ -7782,9 +7935,6 @@
       ],
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Er du sikker på at du vil forlate denne gruppen? Hvis du slutter, må du bli invitert på nytt av gruppeadministratoren for å bli med igjen."
-      ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Er du sikker på at du vil slette alle loggene dine permanent?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Er du sikker du ønsker å fjerne administrative privilegier fra denne brukeren?"
@@ -8078,6 +8228,9 @@
       "Did you know?": [
         "Visste du at?"
       ],
+      "Disable detailed events": [
+        "Deaktiver detaljerte hendelser"
+      ],
       "Disable recovery by email address": [
         "Deaktiver gjenoppretting via e-postadresse"
       ],
@@ -8223,6 +8376,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Aktiver automatisk fornyelse for å beholde tilgangen til dine premiumfunksjoner."
       ],
+      "Enable detailed events": [
+        "Aktiver detaljerte hendelser"
+      ],
       "Enable email notifications": [
         "Aktiver e-postvarsler"
       ],
@@ -8327,9 +8483,6 @@
       ],
       "Event invitations and responses will be sent in this language.": [
         "Hendelseinvitasjoner og responser vil bli sendt på dette språket."
-      ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Hendelser inkluderer autentiseringsforsøk for alle ${ BRAND_NAME }-tjenester som bruker ${ BRAND_NAME_TWO }-legitimasjonen din."
       ],
       "Example: ${ spfExample }": [
         "Eksempel: ${ spfExample }"
@@ -8572,6 +8725,9 @@
       "inactive": [
         "inaktiv"
       ],
+      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
+        "Inkluder brukerens IP-adresse, plassering og ISP (internett-leverandør) i hendelseslogger"
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inkludert ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
@@ -8735,6 +8891,9 @@
       "Learn more": [
         "Lær mer"
       ],
+      "Learn more about Activity Monitor": [
+        "Lær mer om overvåking av aktivitet"
+      ],
       "Learn more about Gateways": [
         "Lær mer om porttjenere"
       ],
@@ -8785,6 +8944,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laster inn kalender, vent litt. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
+      ],
+      "Loading detailed events current status.": [
+        "Laster gjeldende status for detaljerte hendelser."
       ],
       "Loading eduGAIN data...": [
         "Laster eduGAIN-data..."
@@ -8840,6 +9002,9 @@
       "Monitor accounts": [
         "Overvåk kontoer"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Overvåk og gransk autentiseringsforsøk for alle ${ BRAND_NAME }-tjenester som bruker ${ BRAND_NAME }-legitimasjonen din."
+      ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
@@ -8866,6 +9031,9 @@
       ],
       "New": [
         "Ny"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Nye aktivitetsdata vil slutte å bli samlet inn og vist."
       ],
       "New user invited to organization": [
         "Ny bruker invitert til organisasjon"
@@ -9290,9 +9458,6 @@
       "SCIM token active": [
         "SCIM-token aktiv"
       ],
-      "Search by an email address to begin": [
-        "Søk etter en e-postadresse for å begynne"
-      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Sikre din ${ BRAND_NAME }-konto"
       ],
@@ -9434,6 +9599,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Begynn å bruke den kortere, mer fengende versjonen av e-postadressen din."
+      ],
+      "Starts on ${ startsOnTime }": [
+        "Starter den ${ startsOnTime }"
       ],
       "Stay tuned for future promotions.": [
         "Følg med for fremtidige kampanjer."
@@ -9730,6 +9898,9 @@
       ],
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "Dette vil koble fra enheten **${ name } (opprettet den ${ date })** fra ${ BRAND_NAME }-kontoen din."
+      ],
+      "This will wipe all logs for your organization members.": [
+        "Dette vil slette alle logger for organisasjonens medlemmer."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Denne veiviseren vil aktivere tofaktorautentisering (2FA) på din ${ BRAND_NAME }-konto. Tofaktorautentisering vil gjøre din ${ BRAND_NAME_TWO }-konto sikrere, så vi anbefaler å aktivere den."
@@ -10212,9 +10383,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere den en gang for å sikre riktig e-postadresse for bekreftelse."
       ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Du kan aktivere autentiseringslogger for å se når kontoen din er åpnet, og fra hvilken IP. Vi vil registrere IP-adressen som får tilgang til kontoen og klokkeslettet, samt mislykkede forsøk."
-      ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Du kan aktivere fotoseksjonen fra grensesnittet ved å bruke bryteren nedenfor."
       ],
@@ -10375,6 +10543,9 @@
         "Du har aktivert videresending på ${ MAX_SYNC_PAID_USER } Gmail-adresse. For å legge til en til, må du først deaktivere en av dem.",
         "Du har aktivert videresending på ${ MAX_SYNC_PAID_USER } Gmail-adresser. Hvis du vil legge til en til, må du først deaktivere en av dem."
       ],
+      "You've reached the limit of 50 users for this filter. Remove one to add another.": [
+        "Du har nådd grensen på 50 brukere for dette filteret. Fjern én for å legge til en annen."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Din ${ boldDiscountPercent } på ${ boldPlanTitle } er brukt"
       ],
@@ -10428,6 +10599,10 @@
       ],
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Din gratis prøveversjon inkluderer ${ ownedCount } dedikert tjener.",
+        "Din gratis prøveversjon inkluderer ${ ownedCount } dedikerte tjenere."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis prøveversjon ble vellykket konvertert til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
@@ -11931,8 +12106,8 @@
       "Search": [
         "Søk"
       ],
-      "Search by email": [
-        "Søk etter e-post"
+      "Search for a name or email": [
+        "Søk etter navn eller e-post"
       ],
       "Second password": [
         "Andre passord"
@@ -12612,15 +12787,77 @@
         "Abonnementet ditt er avsluttet. ${ cta } og unngå tap av data."
       ]
     },
+    "Log event": {
+      "Account password change": [
+        "Kontopassordendring"
+      ],
+      "Authentication failure (second factor failed)": [
+        "Autentiseringsfeil (tofaktor mislyktes)"
+      ],
+      "Authentication failure (wrong password)": [
+        "Autentiseringsfeil (feil passord)"
+      ],
+      "Authentication success": [
+        "Vellykket autentisering"
+      ],
+      "Mailbox password change": [
+        "Postbokspassordendring"
+      ],
+      "Password reset": [
+        "Tilbakestilling av passord"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "Tofaktor deaktivert (autentiseringsapp)"
+      ],
+      "Second factor disabled (security key)": [
+        "Tofaktor deaktivert (sikkerhetsnøkkel)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "Tofaktor aktivert (autentiseringsapp)"
+      ],
+      "Second factor enabled (security key)": [
+        "Tofaktor aktivert (sikkerhetsnøkkel)"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "Pålogging blokkert (på grunn av misbruk)"
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "Påloggingsfeil (mnemonikk mislyktes)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "Påloggingsfeil (tofaktor mislyktes)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Mislykket pålogging (feil passord)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Pålogging forbudt (på grunn av misbruk)"
+      ],
+      "Sign in success": [
+        "Vellykket pålogging"
+      ],
+      "Sign in success (awaiting mnemonic)": [
+        "Vellykket pålogging (avventer mnemonikk)"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Vellykket pålogging (avventer tofaktor)"
+      ],
+      "Sign in success (awaiting verify)": [
+        "Vellykket pålogging (avventer verifisering)"
+      ],
+      "Sign out": [
+        "Logg av"
+      ],
+      "Two password mode disabled": [
+        "Topassordmodus deaktivert"
+      ],
+      "Two password mode enabled": [
+        "Topassordmodus aktivert"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
-      ],
-      "Enable detailed events": [
-        "Aktiver detaljerte hendelser"
-      ],
-      "Enable security events": [
-        "Aktiver sikkerhetshendelser"
       ]
     },
     "Mail import summary": {
@@ -12791,6 +13028,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Koble ditt egendefinerte domene til ${ BRAND_NAME } for å sette opp tilpassede e-postadresser (eks., du@dittfirma.no). Vår veileder vil rettlede deg gjennom prosessen."
+      ],
+      "View account-related events across your organization.": [
+        "Se kontorelaterte hendelser på tvers av organisasjonen."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Prøveperioden er avsluttet. Tilgang til kontoen din vil snart bli deaktivert. ${ action }"
@@ -15015,6 +15255,9 @@
       "Buy now": [
         "Kjøp nå"
       ],
+      "Contact us": [
+        "Kontakt oss"
+      ],
       "Continue": [
         "Fortsett"
       ],
@@ -15948,6 +16191,26 @@
       ],
       "Work": [
         "Arbeid"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "Blokkert"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Device verification": [
+        "Enhetsverifisering"
+      ],
+      "Ok": [
+        "OK"
+      ],
+      "Ownership verification": [
+        "Bekreftelse av eierskap"
+      ],
+      "Unknown": [
+        "Ukjent"
       ]
     },
     "Recovery Email": {
@@ -17150,6 +17413,9 @@
       ]
     },
     "signup: Action": {
+      "Contact us": [
+        "Kontakt oss"
+      ],
       "Request trial": [
         "Be om prøveversjon"
       ]
@@ -18940,6 +19206,9 @@
       "Activate user": [
         "Aktiver bruker"
       ],
+      "Activity monitor": [
+        "Aktivitetsovervåking"
+      ],
       "Add ${ totalServerCount } server?": [
         "Legge til ${ totalServerCount } tjener?",
         "Legge til ${ totalServerCount } tjenere?"
@@ -19088,6 +19357,18 @@
       "Cancel subscription?": [
         "Avbryte abonnement?"
       ],
+      "Cannot add Gateway": [
+        "Kan ikke legge til porttjener"
+      ],
+      "Cannot add licenses": [
+        "Kan ikke legge til lisenser"
+      ],
+      "Cannot add more users": [
+        "Kan ikke legge til flere brukere"
+      ],
+      "Cannot add servers": [
+        "Kan ikke legge til tjenere"
+      ],
       "Card verification": [
         "Verifisering av kort"
       ],
@@ -19126,9 +19407,6 @@
       ],
       "Choose user affiliations": [
         "Velg brukertilknytninger"
-      ],
-      "Clear": [
-        "Tøm"
       ],
       "Click a value in the table to use it as filter": [
         "Klikk på en verdi i tabellen for å bruke den som filter"
@@ -19311,9 +19589,6 @@
       "Delete label?": [
         "Slett etikett?"
       ],
-      "Delete logs": [
-        "Slett logger"
-      ],
       "Delete organization logo?": [
         "Slette organisasjonens logo?"
       ],
@@ -19344,6 +19619,9 @@
       ],
       "Device name": [
         "Enhetsnavn"
+      ],
+      "Disable activity monitor?": [
+        "Deaktivere overvåking av aktivitet?"
       ],
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
@@ -20149,6 +20427,9 @@
       "Theme": [
         "Tema"
       ],
+      "There are no events for your account": [
+        "Det er ingen hendelser for kontoen din"
+      ],
       "There are no groups": [
         "Det er ingen grupper"
       ],
@@ -20251,6 +20532,9 @@
       "Video conferencing": [
         "Videokonferanse"
       ],
+      "View organization events by upgrading to Business": [
+        "Vis organisasjonshendelser ved å oppgradere til Business"
+      ],
       "VPN apps": [
         "VPN-apper"
       ],
@@ -20277,6 +20561,9 @@
       ],
       "What would you like to import?": [
         "Hva ønsker du å importere?"
+      ],
+      "Wipe all logs?": [
+        "Slette alle logger?"
       ],
       "WireGuard configuration": [
         "WireGuard-konfigurering"
@@ -20483,8 +20770,8 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Sletter papirkurvinnhold og søppelpostmeldinger etter 30 dager. Hvis du slår på automatisk sletting, får meldinger som allerede er i papirkurven/søppelposten, en slettedato basert på datoen de ble flyttet dit."
       ],
-      "Device information such as operating system": [
-        "Enhetsinformasjon slik som operativsystem"
+      "Device name and app version": [
+        "Enhetsnavn og appversjon"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Visningsnavn for enheten i eduGAIN-databasen"
@@ -20503,9 +20790,6 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Aktiver/deaktiver skrivebord- og mobilvarslinger for “${ labelName }”"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "Aktivering av detaljerte hendelser registrerer IP-adressen for hver hendelse."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-adresse for endepunkt fra identitetsleverandøren (f.eks. https://idp.eksempel.com/sso/saml)."
@@ -20537,9 +20821,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du kjøpte en gavekode eller mottok en fra vår kundestøtte, kan du angi den her."
       ],
-      "IP address (Internet Service Provider)": [
-        "IP-adresse (Internett-leverandør)"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Medlemmer som ikke bruker 2FA vil motta en e-post som ber dem om å aktivere det så snart som mulig. Brukere med enkel pålogging vil ikke motta e-postpåminnelsen."
       ],
@@ -20548,6 +20829,9 @@
       ],
       "Not all information listed here was exposed for all users.": [
         "Ikke all informasjon som er oppført her, ble eksponert for alle brukere."
+      ],
+      "Origin IP address and Internet Service Provider (ISP)": [
+        "Opprinnelse IP-adresse og Internett-leverandør (ISP)"
       ],
       "Remove metadata from images to protect your privacy.": [
         "Fjern metadata fra bilder for å beskytte personvernet ditt."
@@ -20644,6 +20928,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Bruk nettleserens standard rullefelt. Disse er vanligvis større og enklere å bruke"
+      ],
+      "User's approximate location (based on their IP address)": [
+        "Brukerens omtrentlige plassering (basert på deres IP-adresse)"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Brukere vil se logoen din i stedet for ${ BRAND_NAME }-ikonet når de er logget på nettappene våre."
@@ -21418,12 +21705,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ved å slette dette telefonnummeret vil du ikke lenger kunne gjenopprette kontoen din."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Ved å deaktivere overvåking av sikkerhetshendelser vil du også slette hele historikken. Er du sikker på at du vil deaktivere dette?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Utløpsdato er ikke i formatet MM/ÅÅ"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Dersom du avbryter denne importen, vil du ikke kunne gjenoppta den. ${ BRAND_NAME } lagret all fremgangen på kontoen din. Avbryte likevel?"

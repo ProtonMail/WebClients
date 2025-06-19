@@ -1543,9 +1543,6 @@
       "What do I get?": [
         "Wat krijg ik?"
       ],
-      "Wipe": [
-        "Wissen"
-      ],
       "Yes": [
         "Ja"
       ],
@@ -1968,6 +1965,30 @@
         "Ik ben afwezig en heb beperkte toegang tot mijn e-mail."
       ]
     },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Betalingsgegevens"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ cycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ],
+      "on ${ formattedDate }": [
+        "op ${ formattedDate }"
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Verschuldigd bedrag na proefperiode"
+      ],
+      "Amount due now": [
+        "Nu verschuldigd bedrag"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Uitgeschakeld"
@@ -2299,6 +2320,20 @@
       ],
       "Working with sensitive data?": [
         "Werkt u met gevoelige gegevens?"
+      ]
+    },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "Uw toegewijde server is al toegewezen aan een gateway. U kunt meer servers kopen zodra uw gratis proefversie eindigt.",
+        "Al uw toegewijde servers zijn al toegewezen aan een gateway. U kunt meer servers kopen zodra uw gratis proefversie eindigt."
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "Uw gratis proefversie bevat ${ ipAddresses } toegewijde server. U kunt meer servers toevoegen zodra uw volledige abonnement start.",
+        "Uw gratis proefversie bevat ${ ipAddresses } toegewijde servers. U kunt meer servers toevoegen zodra uw volledige abonnement start."
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "Uw gratis proefversie bevat ${ maxMembers } licentie. U kunt meer licenties toevoegen zodra uw volledige abonnement start.",
+        "Uw gratis proefversie bevat maximaal ${ maxMembers } licenties. U kunt meer licenties toevoegen zodra uw volledige abonnement start."
       ]
     },
     "breadcrumb": {
@@ -4120,15 +4155,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Schakel ${ PROTON_SENTINEL_NAME } in om toegang te krijgen tot deze functies"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Schakel geavanceerde logs en ${ PROTON_SENTINEL_NAME } in om toegang te krijgen tot deze functies"
-      ],
-      "Enable detailed events to access these features": [
-        "Schakel gedetailleerde gebeurtenissen in om toegang te krijgen tot deze functies"
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Moedig het gebruik van tweestapsverificatie in uw organisatie aan voor extra beveiliging."
       ],
@@ -5246,6 +5272,9 @@
       "Failed to process the logo": [
         "Het logo kon niet worden verwerkt"
       ],
+      "Failed to update detailed monitoring.": [
+        "Gedetailleerde monitoring kon niet worden bijgewerkt."
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Bestand is te groot. Uw logo moet 30 KB of kleiner zijn."
       ],
@@ -5692,8 +5721,8 @@
       ]
     },
     "error": {
-      "Enter an email address": [
-        "Voer een e-mailadres in"
+      "Select users to view their activity": [
+        "Selecteer gebruikers om hun activiteit te bekijken."
       ]
     },
     "Error importing calendar": {
@@ -6844,9 +6873,6 @@
       "Actions": [
         "Acties"
       ],
-      "App version": [
-        "App versie"
-      ],
       "Best deal": [
         "Beste deal"
       ],
@@ -6898,9 +6924,6 @@
       "Permissions": [
         "Machtigingen"
       ],
-      "Protection": [
-        "Bescherming"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Bespaar fors op de beste ${ VPN_APP_NAME } deals"
       ],
@@ -6924,9 +6947,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Time": [
-        "Tijd"
       ],
       "User": [
         "Gebruiker"
@@ -7746,6 +7766,9 @@
       "active": [
         "actief"
       ],
+      "Activity monitor": [
+        "Activiteitenmonitor"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige, kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me.\""
       ],
@@ -7923,9 +7946,6 @@
       ],
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Weet u zeker dat u deze groep wilt verlaten? Als u dit verlaat, moet u opnieuw worden uitgenodigd door de groepsbeheerder om opnieuw lid te worden."
-      ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Weet u zeker dat u alle logs permanent wilt verwijderen?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Weet u zeker dat u beheerdersbevoegdheden van deze gebruiker wilt wegnemen?"
@@ -8219,6 +8239,9 @@
       "Did you know?": [
         "Wist u dat?"
       ],
+      "Disable detailed events": [
+        "Gedetailleerde gebeurtenissen uitschakelen"
+      ],
       "Disable recovery by email address": [
         "Herstel via e-mailadres uitschakelen"
       ],
@@ -8364,6 +8387,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Schakel automatisch vernieuwen in om toegang tot premium functies te behouden."
       ],
+      "Enable detailed events": [
+        "Activeer gedetailleerde gebeurtenissen"
+      ],
       "Enable email notifications": [
         "E-mailmelding inschakelen"
       ],
@@ -8469,9 +8495,6 @@
       "Event invitations and responses will be sent in this language.": [
         "Evenementuitnodigingen en antwoorden worden in deze taal verzonden."
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Afspraken bevatten authenticatiepogingen voor alle ${ BRAND_NAME }-diensten die uw ${ BRAND_NAME_TWO }-inloggegevens gebruiken."
-      ],
       "Example: ${ spfExample }": [
         "Voorbeeld: ${ spfExample }"
       ],
@@ -8480,9 +8503,6 @@
       ],
       "expires ${ expirationDate }": [
         "verloopt op ${ expirationDate }"
-      ],
-      "Failed to fetch logs.": [
-        "Fout bij het ophalen van logs."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Snel en toegespitst. E-mail en agenda, direct op uw bureaublad."
@@ -8713,6 +8733,9 @@
       "inactive": [
         "inactief"
       ],
+      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
+        "Neem IP-adres, locatie en ISP (Internet Service Provider) van de gebruiker op in afspraaklogboeken"
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
@@ -8927,6 +8950,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
       ],
+      "Loading detailed events current status.": [
+        "Huidige status van gedetailleerde afspraken worden geladen."
+      ],
       "Loading eduGAIN data...": [
         "eduGAIN gegevens laden..."
       ],
@@ -8981,6 +9007,9 @@
       "Monitor accounts": [
         "Accounts monitoren"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Monitor en audit verificatiepogingen voor alle ${ BRAND_NAME }-diensten die uw ${ BRAND_NAME }-inloggegevens gebruiken."
+      ],
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
       ],
@@ -9007,6 +9036,9 @@
       ],
       "New": [
         "Nieuw"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Nieuwe activiteitsgegevens zullen niet langer worden verzameld en getoond."
       ],
       "New user invited to organization": [
         "Nieuwe gebruiker uitgenodigd voor de organisatie"
@@ -9049,9 +9081,6 @@
       ],
       "No label selected": [
         "Geen label geselecteerd"
-      ],
-      "No logs yet.": [
-        "Nog geen logbestanden."
       ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
@@ -9427,9 +9456,6 @@
       ],
       "SCIM token active": [
         "SCIM-token actief"
-      ],
-      "Search by an email address to begin": [
-        "Zoek op een e-mailadres om te beginnen"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Beveilig uw ${ BRAND_NAME }-account"
@@ -9871,6 +9897,9 @@
       ],
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "Dit zal het koppelen van het apparaat **${ name } (aangemaakt op ${ date })** loskoppelen van uw ${ BRAND_NAME }-account."
+      ],
+      "This will wipe all logs for your organization members.": [
+        "Hiermee worden alle logboeken gewist voor de leden van uw organisatie."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw ${ BRAND_NAME }-account. Tweestapsverificatie zal uw ${ BRAND_NAME_TWO }-account veiliger maken en daarom raden we aan om het in te schakelen."
@@ -10353,9 +10382,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "U kunt dit eenmaal bewerken om ervoor te zorgen dat het juiste e-mailadres voor verificatie is ingevoerd."
       ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "U kunt inschakelen dat bijgehouden wordt wanneer uw account benaderd wordt, en vanaf welk IP-adres. We zullen dan het IP-adres bijhouden vanaf waar uw account benaderd wordt, de tijd wanneer dit gebeurt, evenals mislukte inlogpogingen."
-      ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "U kunt het gedeelte Foto's inschakelen vanuit de interface met de onderstaande schakelaar."
       ],
@@ -10516,6 +10542,9 @@
         "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmail adres. Om een ander toe te voegen, schakel eerst een van deze uit.",
         "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmail adressen. Schakel een van deze eerst uit om een ander adres toe te voegen."
       ],
+      "You've reached the limit of 50 users for this filter. Remove one to add another.": [
+        "U heeft de limiet van 50 gebruikers voor dit filter bereikt. Verwijder er één om een ander toe te voegen."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Uw ${ boldDiscountPercent } naar ${ boldPlanTitle } is toegepast"
       ],
@@ -10569,6 +10598,10 @@
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Uw gratis proefversie bevat ${ ownedCount } toegewijde server.",
+        "Uw gratis proefversie bevat ${ ownedCount } toegewijde servers."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Uw gratis proefversie werd succesvol omgezet naar een ${ cycle }-maands abonnement. Uw verlengingsdatum is ${ nextBillingDate }."
@@ -12072,8 +12105,8 @@
       "Search": [
         "Zoeken"
       ],
-      "Search by email": [
-        "Zoeken via e-mail"
+      "Search for a name or email": [
+        "Naam of e-mailadres zoeken"
       ],
       "Second password": [
         "Tweede wachtwoord"
@@ -12750,15 +12783,77 @@
         "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
       ]
     },
+    "Log event": {
+      "Account password change": [
+        "Account wachtwoord wijzigen"
+      ],
+      "Authentication failure (second factor failed)": [
+        "Authenticatie mislukt (tweestapsverificatie mislukt)"
+      ],
+      "Authentication failure (wrong password)": [
+        "Authenticatie mislukt (verkeerd wachtwoord)"
+      ],
+      "Authentication success": [
+        "Authenticatie gelukt"
+      ],
+      "Mailbox password change": [
+        "Mailbox-wachtwoord gewijzigd"
+      ],
+      "Password reset": [
+        "Wachtwoordreset"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "Tweestapsverificatie uitgeschakeld (authenticator app)"
+      ],
+      "Second factor disabled (security key)": [
+        "Tweestapsverificatie uitgeschakeld (fysieke beveiligingssleutel)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "Tweestapsverificatie ingeschakeld (authenticator app)"
+      ],
+      "Second factor enabled (security key)": [
+        "Tweestapsverificatie ingeschakeld (fysieke beveiligingssleutel)"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "Inloggen geblokkeerd (vanwege misbruik)"
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "Inloggen mislukt (seed phrase mislukt)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "Inloggen mislukt (tweestapsverificatie mislukt)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Inloggen mislukt (verkeerd wachtwoord)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Inloggen verboden (vanwege misbruik)"
+      ],
+      "Sign in success": [
+        "Inloggen gelukt"
+      ],
+      "Sign in success (awaiting mnemonic)": [
+        "Inloggen gelukt (in afwachting van seed phrase)"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Inloggen gelukt (afwachtend op tweestapsverificatie)"
+      ],
+      "Sign in success (awaiting verify)": [
+        "Inloggen gelukt (in afwachting van verificatie)"
+      ],
+      "Sign out": [
+        "Uitloggen"
+      ],
+      "Two password mode disabled": [
+        "Twee wachtwoorden-modus uitgeschakeld"
+      ],
+      "Two password mode enabled": [
+        "Twee wachtwoorden-modus ingeschakeld"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } inschakelen"
-      ],
-      "Enable detailed events": [
-        "Activeer gedetailleerde gebeurtenissen"
-      ],
-      "Enable security events": [
-        "Veiligheidsgebeurtenissen inschakelen"
       ]
     },
     "Mail import summary": {
@@ -12929,6 +13024,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Verbind uw aangepaste domein met ${ BRAND_NAME } om aangepaste e-mailadressen in te stellen (bijv. u@uwbedrijf.com). Onze wizard leidt u door het proces."
+      ],
+      "View account-related events across your organization.": [
+        "Bekijk account-gerelateerde gebeurtenissen binnen uw organisatie."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
@@ -16070,6 +16168,26 @@
         "Werk"
       ]
     },
+    "Protection type": {
+      "Blocked": [
+        "Geblokkerd"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Device verification": [
+        "Apparaat verificatie"
+      ],
+      "Ok": [
+        "Ok"
+      ],
+      "Ownership verification": [
+        "Eigendomsverificatie"
+      ],
+      "Unknown": [
+        "Onbekend"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Terug naar ${ signIn }."
@@ -19071,6 +19189,9 @@
       "Activate user": [
         "Activeer gebruiker"
       ],
+      "Activity monitor": [
+        "Activiteitenmonitor"
+      ],
       "Add ${ totalServerCount } server?": [
         "${ totalServerCount } server toevoegen?",
         "${ totalServerCount } servers toevoegen?"
@@ -19219,6 +19340,18 @@
       "Cancel subscription?": [
         "Abonnement opzeggen?"
       ],
+      "Cannot add Gateway": [
+        "Kan geen gateway toevoegen"
+      ],
+      "Cannot add licenses": [
+        "Kan geen licenties toevoegen"
+      ],
+      "Cannot add more users": [
+        "Kan niet meer gebruikers toevoegen"
+      ],
+      "Cannot add servers": [
+        "Kan geen servers toevoegen"
+      ],
       "Card verification": [
         "Kaartverificatie"
       ],
@@ -19257,9 +19390,6 @@
       ],
       "Choose user affiliations": [
         "Gebruikersaffiliaties kiezen"
-      ],
-      "Clear": [
-        "Wissen"
       ],
       "Click a value in the table to use it as filter": [
         "Klik op een waarde in de tabel om deze als filter te gebruiken"
@@ -19442,9 +19572,6 @@
       "Delete label?": [
         "Wis label"
       ],
-      "Delete logs": [
-        "Logs wissen"
-      ],
       "Delete organization logo?": [
         "Logo van organisatie verwijderen?"
       ],
@@ -19475,6 +19602,9 @@
       ],
       "Device name": [
         "Apparaatnaam"
+      ],
+      "Disable activity monitor?": [
+        "Activiteitenmonitor uitschakelen?"
       ],
       "Disable two-factor authentication": [
         "Tweestapsverificatie uitschakelen"
@@ -20409,6 +20539,9 @@
       "What would you like to import?": [
         "Wat zou u willen importeren?"
       ],
+      "Wipe all logs?": [
+        "Alle logboeken wissen?"
+      ],
       "WireGuard configuration": [
         "WireGuard configuratie"
       ],
@@ -20587,12 +20720,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Maakt het mogelijk om naadloos koppelingen voor videoconferenties toe te voegen aan uw agenda-uitnodigingen."
       ],
-      "An approximate location of the IP address": [
-        "Een geschatte locatie van het IP-adres"
-      ],
-      "Any protection applied to suspicious activity": [
-        "Enige verdediging toegepast tot verdachte activiteit"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisch wisselen tussen uw favoriete thema's voor dag en nacht met de dag- en nachtmodus van uw systeem"
       ],
@@ -20614,8 +20741,8 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Verwijder prullenbak- en spamberichten na 30 dagen. Door automatisch verwijderen in te schakelen, krijgen berichten die al in de prullenbak/spam staan een verwijderingsdatum op basis van de datum waarop ze daarheen zijn verplaatst."
       ],
-      "Device information such as operating system": [
-        "Toestelinformatie zoals operating system"
+      "Device name and app version": [
+        "Naam van apparaat en app-versie"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Weergavenaam voor de entiteit in de eduGAIN database"
@@ -20634,9 +20761,6 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Desktop en mobiele notificaties inschakelen/uitschakelen voor \"${ labelName }\""
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "Het inschakelen van gedetailleerde gebeurtenissenrecords van het IP-adres voor elk evenement."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Eindpunt URL van identiteitsprovider (bv. https://idp.example.com/sso/saml)"
@@ -20668,9 +20792,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
-      "IP address (Internet Service Provider)": [
-        "IP-adres (Internet Service Provider)"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Leden die geen 2FA gebruiken krijgen een e-mail met het verzoek om deze zo snel mogelijk in te schakelen. Single sign-on gebruikers zullen de e-mail herinnering niet ontvangen."
       ],
@@ -20679,6 +20800,9 @@
       ],
       "Not all information listed here was exposed for all users.": [
         "Niet alle hier vermelde informatie werd voor alle gebruikers blootgesteld."
+      ],
+      "Origin IP address and Internet Service Provider (ISP)": [
+        "Oorspronkelijk IP-adres en Internet Service Provider (ISP)"
       ],
       "Remove metadata from images to protect your privacy.": [
         "Verwijder metadata van afbeeldingen om uw privacy te beschermen"
@@ -20718,9 +20842,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "De Internet Service Provider van het IP-adres"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "De nieuwe abonnementscyclus start op ${ formattedTime }"
@@ -20775,6 +20896,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Gebruik de standaard schuifbalken van uw browser. Deze zijn meestal groter en gemakkelijker te gebruiken"
+      ],
+      "User's approximate location (based on their IP address)": [
+        "Geschatte locatie van de gebruiker (gebaseerd op hun IP-adres)"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME }-pictogram wanneer ze inlogt zijn op onze webapps."
@@ -21526,12 +21650,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Door dit telefoonnummer te verwijderen, kunt u uw account niet meer herstellen."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Door het uitschakelen van beveiligingsgebeurtenissen wist u ook uw hele geschiedenis wissen. Weet u zeker dat u dit wilt uitschakelen?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Vervaldatum is niet in het formaat MM/JJ"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Als u deze import annuleert, zult u niet in staat zijn om deze te hervatten. ${ BRAND_NAME } heeft alle voortgang in uw account opgeslagen. Toch annuleren?"
