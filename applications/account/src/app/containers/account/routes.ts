@@ -425,6 +425,11 @@ export const getAccountAppRoutes = ({
                 icon: 'shield',
                 subsections: [
                     {
+                        text: PROTON_SENTINEL_NAME,
+                        id: 'sentinel',
+                        available: !isSSOUser,
+                    },
+                    {
                         text: DARK_WEB_MONITORING_NAME,
                         id: 'breaches',
                         available: isBreachesAccountDashboardEnabled && !isSSOUser,
@@ -454,13 +459,6 @@ export const getAccountAppRoutes = ({
                         id: 'privacy',
                     },
                 ],
-            },
-            sentinel: <SectionConfig>{
-                text: PROTON_SENTINEL_NAME,
-                to: '/sentinel',
-                icon: 'shield',
-                available: !isSSOUser,
-                subsections: [{ id: 'sentinel' }],
             },
             referral: <SectionConfig>{
                 text: c('Title').t`Refer a friend`,
