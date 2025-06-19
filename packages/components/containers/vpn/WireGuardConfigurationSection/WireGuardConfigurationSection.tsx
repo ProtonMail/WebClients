@@ -9,7 +9,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, CircleLoader, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import ErrorButton from '@proton/components/components/button/ErrorButton';
 import Details from '@proton/components/components/container/Details';
 import Row from '@proton/components/components/container/Row';
 import Summary from '@proton/components/components/container/Summary';
@@ -534,7 +533,7 @@ const WireGuardConfigurationSection = () => {
                     small={false}
                     title={c('Title').t`Revoke certificate`}
                     onConfirm={resolve}
-                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    confirm={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
                     onClose={reject}
                 >
                     <Alert className="mb-4" type="info">

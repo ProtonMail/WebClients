@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import { ErrorButton, Prompt } from '@proton/components';
+import { Prompt } from '@proton/components';
 
 interface Props extends ModalProps {
     onResolve: () => void;
@@ -23,9 +23,9 @@ const SelectAllDeleteModal = ({ onResolve, onReject, isLabel, ...rest }: Props) 
         <Prompt
             title={c('Title').t`Delete all messages`}
             buttons={[
-                <ErrorButton data-testid="confirm-empty-folder" onClick={handleSubmit}>
+                <Button color="danger" data-testid="confirm-empty-folder" onClick={handleSubmit}>
                     {c('Action').t`Delete`}
-                </ErrorButton>,
+                </Button>,
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}

@@ -2,7 +2,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import ErrorButton from '@proton/components/components/button/ErrorButton';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
@@ -82,11 +81,12 @@ const ContactDeleteModal = ({ contactIDs = [], deleteAll, onDelete, ...rest }: P
                 </div>
             }
             buttons={[
-                <ErrorButton
+                <Button
+                    color="danger"
                     data-testid="delete-button"
                     onClick={() => withLoadingDelete(handleDelete())}
                     loading={loadingDelete}
-                >{c('Action').t`Delete`}</ErrorButton>,
+                >{c('Action').t`Delete`}</Button>,
                 <Button onClick={rest.onClose} autoFocus>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}

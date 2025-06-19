@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
-import { Alert, Checkbox, ErrorButton, useLocalState } from '@proton/components';
+import { Button, Href } from '@proton/atoms';
+import { Alert, Checkbox, useLocalState } from '@proton/components';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
@@ -89,7 +89,7 @@ const ComposerInnerModals = ({
                     title={c('Title').t`Delete draft`}
                     onCancel={handleCloseInnerModal}
                     onSubmit={handleDelete}
-                    submitActions={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    submitActions={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
                 >
                     <Alert className="mb-4" type="error">{c('Info')
                         .t`Are you sure you want to permanently delete this draft?`}</Alert>
