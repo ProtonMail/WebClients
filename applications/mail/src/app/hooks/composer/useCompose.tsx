@@ -8,7 +8,6 @@ import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import {
-    ErrorButton,
     Prompt,
     useApi,
     useEventManager,
@@ -161,13 +160,14 @@ export const useCompose = ({
         <Prompt
             title={c('Title').t`Storage capacity warning`}
             buttons={[
-                <ErrorButton
+                <Button
+                    color="danger"
                     onClick={async () => {
                         const user = await getUser();
                         const subscription = await getSubscription();
                         goToSettings(addUpsellPath(getUpgradePath({ user, subscription }), upsellRef));
                     }}
-                >{c('Action').t`Upgrade`}</ErrorButton>,
+                >{c('Action').t`Upgrade`}</Button>,
                 <Button onClick={storageCapacityModalProps.onClose}>{c('Action').t`Close`}</Button>,
             ]}
             {...storageCapacityModalProps}
