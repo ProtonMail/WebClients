@@ -591,6 +591,9 @@
       "refresh the page": [
         "페이지 새로고침"
       ],
+      "Reload": [
+        "새로고침"
+      ],
       "Remove": [
         "삭제"
       ],
@@ -3428,11 +3431,6 @@
         "우편번호가 필요합니다"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "이메일 주소를 입력하세요."
-      ]
-    },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
         "\"${ formattedFilename }\"파일을 읽는데 문제가 발생했습니다. 올바르지 않은 파일 포맷."
@@ -4061,9 +4059,6 @@
       ]
     },
     "Header": {
-      "App version": [
-        "앱 버전"
-      ],
       "Best deal": [
         "초특가"
       ],
@@ -4102,9 +4097,6 @@
       ],
       "Payment details": [
         "결제 수단 상세 정보"
-      ],
-      "Protection": [
-        "보호"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "최고의 ${ VPN_APP_NAME } 특가로 크게 절약하세요"
@@ -5425,9 +5417,6 @@
       ],
       "SCIM token active": [
         "SCIM 토큰 활성화"
-      ],
-      "Search by an email address to begin": [
-        "시작하려면 이메일 주소로 검색하세요."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 보호하기"
@@ -6825,9 +6814,6 @@
       ],
       "Search": [
         "검색"
-      ],
-      "Search by email": [
-        "이메일로 검색"
       ],
       "Second password": [
         "2차 비밀번호"
@@ -12123,12 +12109,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "캘린더 초대장에 화상 회의 링크를 원활하게 추가할 수 있습니다."
       ],
-      "An approximate location of the IP address": [
-        "IP 주소의 대략적인 위치"
-      ],
-      "Any protection applied to suspicious activity": [
-        "의심스러운 활동에 적용되는 모든 보호"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "시스템의 주/야간 모드와 동기화하여 선호하는 테마를 주/야간에 맞춰 자동으로 전환합니다"
       ],
@@ -12137,9 +12117,6 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "사용자의 인증 제공자의 Entity ID 입력란에 URL 값을 복사해서 붙여넣어 주세요."
-      ],
-      "Device information such as operating system": [
-        "운영체제와 같은 디바이스 정보"
       ],
       "Display name for the entity in the eduGAIN database": [
         "eduGAIN 데이터베이스에 있는 객체의 표시 이름"
@@ -12164,9 +12141,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP 주소 (인터넷 서비스 제공자)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "2단계 인증을 사용하지 않는 회원은 가능 한 빠른 시일 내로 활성화해 달라는 이메일을 받게 됩니다. 싱글 사인 온(SSO)사용자는 이메일 알림을 받지 않습니다."
