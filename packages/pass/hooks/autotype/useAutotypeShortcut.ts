@@ -24,10 +24,7 @@ export const useAutotypeShortcut = DESKTOP_BUILD
                       if (confirmationSpotlight.open) {
                           return autotypeConfirmShortcut({
                               autotypeProps,
-                              /* Required to fix edge case where confirmation is always shown
-                               * unless user exits the current login view (due to `useSpotlightFor`
-                               * not updating in real-time but only on component mount) */
-                              onConfirm: confirmationSpotlight.close,
+                              spotlightToClose: confirmationSpotlight,
                           });
                       }
                       void window.ctxBridge?.autotype(autotypeProps);

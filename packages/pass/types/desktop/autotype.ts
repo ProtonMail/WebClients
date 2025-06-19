@@ -1,12 +1,10 @@
 import { type IconName } from '@proton/components/components/icon/Icon';
+import type { WithSpotlightRenderProps } from '@proton/pass/components/Spotlight/WithSpotlight';
 import type { ReactNode } from 'react';
 
 export type AutotypeProperties = { fields: string[]; enterAtTheEnd?: boolean };
 
-export type AutotypeConfirmFromShortcutProps = {
-    autotypeProps: AutotypeProperties;
-    onConfirm?: () => void;
-};
+export type AutotypeConfirmProps = { autotypeProps: AutotypeProperties; spotlightToClose: WithSpotlightRenderProps };
 
 export enum AutotypeKey {
     USERNAME_TAB_PASSWORD_ENTER = 'autotype-username-tab-password-enter',
