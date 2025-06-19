@@ -7,13 +7,19 @@ export const MOCK_FIELDS = {
     lastName: { name: 'lastName', label: 'lastName', placeholder: '' },
     email: { name: 'email', label: 'email', placeholder: 'Enter email' },
     phoneNumber: { name: 'phoneNumber', label: 'phoneNumber', placeholder: 'Enter phone' },
+    socialSecurityNumber: {
+        name: 'socialSecurityNumber',
+        label: 'socialsecurity',
+        placeholder: 'socialsecurity',
+        hidden: true,
+    },
 } as IdentityFormFields;
 
 export const MOCK_SECTIONS: IdentityFormSection[] = [
     {
         name: 'Personal',
         expanded: true,
-        fields: [MOCK_FIELDS.fullName, MOCK_FIELDS.firstName, MOCK_FIELDS.lastName],
+        fields: [MOCK_FIELDS.fullName, MOCK_FIELDS.firstName, MOCK_FIELDS.lastName, MOCK_FIELDS.socialSecurityNumber],
         customFieldsKey: 'extraPersonalDetails',
     },
     {
