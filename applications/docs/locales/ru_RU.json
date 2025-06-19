@@ -93,9 +93,6 @@
       "Apply": [
         "Применить"
       ],
-      "Ask me next time": [
-        "Спросить в следующий раз"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "В группе может быть не больше ${ maxContacts } контакта",
         "В группе может быть не больше ${ maxContacts } контактов",
@@ -675,9 +672,6 @@
       "Save changes": [
         "Сохранить изменения"
       ],
-      "Save preferences": [
-        "Сохранить настройки"
-      ],
       "Search": [
         "Поиск"
       ],
@@ -980,6 +974,14 @@
       ],
       "Unsupported event": [
         "Событие не поддерживается"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается раз в ${ cycle } мес. ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
       ]
     },
     "bf2023: Deal details": {
@@ -4364,9 +4366,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Контакт откреплен от группы ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Преобразование документа..."
-      ],
       "Copy the link to clipboard": [
         "Скопировать ссылку в буфер обмена"
       ],
@@ -4414,9 +4413,6 @@
       ],
       "Creating link to folder": [
         "Создание ссылки на папку"
-      ],
-      "Creating new document...": [
-        "Создание нового документа..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
@@ -4529,9 +4525,6 @@
       "Enter your own password (as organization admin).": [
         "Введите собственный пароль (как администратор организации)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Ошибка преобразования документа: ${ errorMessage }"
-      ],
       "Error Syncing": [
         "Ошибка синхронизации"
       ],
@@ -4591,12 +4584,6 @@
       ],
       "Geoblocking": [
         "Геоблокировка"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Получайте по электронной почте уведомления о комментариях и предложениях, добавленных к вашим документам."
-      ],
-      "Get Notified About Comments": [
-        "Получать уведомления о комментариях"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Перейти на ${ DRIVE_APP_NAME }"
@@ -4745,9 +4732,6 @@
       "Low Priority": [
         "Низкий приоритет"
       ],
-      "Making a copy...": [
-        "Создание копии..."
-      ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
       ],
@@ -4789,9 +4773,6 @@
       ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "В URL не указан документ. Вернитесь в ${ DRIVE_APP_NAME } и выберите документ."
       ],
       "No email address": [
         "Нет адреса электронной почты"
@@ -5862,9 +5843,6 @@
       "Emails (last month)": [
         "Письма (последний месяц)"
       ],
-      "Enable email notifications": [
-        "Включить уведомления по электронной почте"
-      ],
       "Encrypt emails": [
         "Шифровать письма"
       ],
@@ -5921,9 +5899,6 @@
       ],
       "Import to:": [
         "Импортировать в:"
-      ],
-      "Include document name in notification": [
-        "Включить в уведомление название документа"
       ],
       "Include message and file name in invite email": [
         "Включите сообщение и имя файла в приглашение по электронной почте"
@@ -8823,19 +8798,37 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Значения, разделенные запятыми (CSV)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "Новая таблица"
+      ],
+      "Rename spreadsheet": [
+        "Переименовать электронную таблицу"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Значения, разделенные табуляцией (TSV)"
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Создание новой таблицы..."
-      ],
       "Detect automatically": [
         "Определить автоматически"
       ],
       "Insert as new sheet": [
         "Вставить как новый лист"
+      ],
+      "Replace current sheet": [
+        "Заменить текущий лист"
+      ],
+      "Replace data at selected cell": [
+        "Заменить данные в выбранной ячейке"
+      ],
+      "Select a CSV or TSV file to import": [
+        "Выберите файл CSV или TSV для импорта"
       ]
     },
     "sheets_2025:Label": {
@@ -10564,9 +10557,6 @@
       ],
       "Contacts could not be merged": [
         "Контакты не могут быть объединены"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Срок действия не в формате ММ/ГГ"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Если вы не помните свой пароль, повторно активировать ключ невозможно. Мы можем помочь вам отключить предупреждение, но тогда вы навсегда потеряете доступ ко всем данным, зашифрованным с помощью этого ключа."

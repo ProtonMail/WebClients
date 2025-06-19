@@ -1980,6 +1980,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -2710,9 +2714,6 @@
       "Add section": [
         "Προσθήκη ενότητας"
       ],
-      "Additional data": [
-        "Πρόσθετα δεδομένα"
-      ],
       "Additional details": [
         "Πρόσθετες Λεπτομέρειες"
       ],
@@ -2800,6 +2801,9 @@
       "Catch-All": [
         "Catch-All"
       ],
+      "Checkbox": [
+        "Checkbox"
+      ],
       "Choose unlock method": [
         "Επιλέξτε μέθοδο ξεκλειδώματος"
       ],
@@ -2875,14 +2879,8 @@
       "Crypto Wallet": [
         "Crypto Wallet"
       ],
-      "Custom hidden field": [
-        "Προσαρμοσμένο κρυφό πεδίο"
-      ],
       "Custom Items": [
         "Προσαρμοσμένα Στοιχεία"
-      ],
-      "Custom text field": [
-        "Προσαρμοσμένο πεδίο κειμένου"
       ],
       "Database": [
         "Βάση δεδομένων"
@@ -3141,6 +3139,9 @@
       ],
       "Key fingerprint": [
         "Δακτυλικό αποτύπωμα κλειδιού"
+      ],
+      "Key type": [
+        "Τύπος κλειδιού"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Συντόμευση πληκτρολογίου: ${ shortcut }"
@@ -4716,9 +4717,6 @@
       "OTP secret or URI is invalid": [
         "Το OTP μυστικό ή το URI δεν είναι έγκυρο"
       ],
-      "OTP secret or URI required": [
-        "Απαιτείται OTP μυστικό ή URI"
-      ],
       "Section name cannot be empty": [
         "Το όνομα ενότητας δεν μπορεί να είναι κενό"
       ],
@@ -4850,9 +4848,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Δεν επιτρέπεται η πρόσκληση διευθύνσεων ηλεκτρονικού ταχυδρομείου εκτός οργανισμού."
-      ],
-      "item was imported without custom fields": [
-        "στοιχείο εισήχθη χωρίς προσαρμοσμένα πεδία"
       ],
       "Maximum length is ${ maxLength } character": [
         "Το μέγιστο μήκος είναι ${ maxLength } χαρακτήρας",

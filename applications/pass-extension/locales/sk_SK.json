@@ -29,6 +29,9 @@
       "Add domain": [
         "Pridať doménu"
       ],
+      "Add field": [
+        "Pridať pole"
+      ],
       "Add forwarding mailbox": [
         "Pridať schránku na presmerovanie"
       ],
@@ -443,6 +446,9 @@
       "Reactivate now": [
         "Znovu aktivovať"
       ],
+      "Read More": [
+        "Čítať ďalej"
+      ],
       "Refresh the page": [
         "Obnoviť stránku"
       ],
@@ -565,6 +571,9 @@
       ],
       "Show advanced options": [
         "Zobraziť pokročilé možnosti"
+      ],
+      "Show Less": [
+        "Zobraziť menej"
       ],
       "Sign back in": [
         "Prihláste sa späť"
@@ -1022,6 +1031,9 @@
       "File does not match expected format": [
         "Súbor nezodpovedá očakávanému formátu"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Import trezora „${ vaultData.name }\" zlyhal: ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Importovanie položiek zlyhalo"
       ],
@@ -1150,6 +1162,9 @@
       ],
       "Unsupported 1Password file format": [
         "Nepodporovaný formát súboru 1Password"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Nepodporovaný formát súboru Bitwarden"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aktualizácia trezoru \"${ payload.content.name }\" zlyhala"
@@ -1281,6 +1296,12 @@
         "${ count } zobrazení",
         "${ count } zobrazenia",
         "${ count }/ zobrazení"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } zobrazenie",
+        "${ count }/${ maxReads } zobrazenia",
+        "${ count }/${ maxReads } zobrazení",
+        "${ count }/${ maxReads } zobrazení"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } preposlaný",
@@ -1833,12 +1854,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2688,6 +2703,9 @@
       "Catch-All": [
         "Doménový kôš"
       ],
+      "Checkbox": [
+        "Začiarkavacie políčko"
+      ],
       "City": [
         "Mesto"
       ],
@@ -2754,14 +2772,8 @@
       "Crypto Wallet": [
         "Krypto peňaženka"
       ],
-      "Custom hidden field": [
-        "Vlastné ukryté pole"
-      ],
       "Custom Items": [
         "Vlastné položky"
-      ],
-      "Custom text field": [
-        "Vlastné textové pole"
       ],
       "Database": [
         "Databáza"
@@ -2837,6 +2849,9 @@
       ],
       "Export": [
         "Export"
+      ],
+      "Extra fields": [
+        "Vlastné polia"
       ],
       "Extra password": [
         "Dodatočné heslo"
@@ -2963,6 +2978,9 @@
       ],
       "Key": [
         "Kľúč"
+      ],
+      "Key fingerprint": [
+        "Identifikátor kľúča"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klávesová skratka: ${ shortcut }"
@@ -4352,9 +4370,6 @@
       "OTP secret or URI is invalid": [
         "Neplatný OTP tajný kľúč alebo URI"
       ],
-      "OTP secret or URI required": [
-        "Vyžaduje sa OTP tajný kľúč alebo URI"
-      ],
       "Section name cannot be empty": [
         "Názov sekcie nemôže byť prázdny"
       ],
@@ -4366,6 +4381,11 @@
       ],
       "URL is invalid": [
         "URL je neplatná"
+      ]
+    },
+    "Vault Select": {
+      "Move items to": [
+        "Presunúť položky do"
       ]
     },
     "Warning": {
@@ -4479,9 +4499,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Pozývanie emailových adries nepatriacich do organizácie nie je povolené."
-      ],
-      "item was imported without custom fields": [
-        "Položka bola importovaná bez vlastných polí"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximálna dĺžka je ${ maxLength } znak",

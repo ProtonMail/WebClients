@@ -93,9 +93,6 @@
       "Apply": [
         "Uygula"
       ],
-      "Ask me next time": [
-        "Gelecek sefer yeniden sor"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir",
         "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir"
@@ -684,9 +681,6 @@
       "Save changes": [
         "Değişiklikleri kaydet"
       ],
-      "Save preferences": [
-        "Ayarları kaydet"
-      ],
       "Search": [
         "Arama"
       ],
@@ -982,6 +976,14 @@
       ],
       "Unsupported event": [
         "Etkinlik desteklenmiyor"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde her ${ cycle } ayda bir otomatik olarak yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
       ]
     },
     "bf2023: Deal details": {
@@ -4278,9 +4280,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kişi ${ contactGroupName } grubundan çıkarıldı"
       ],
-      "Converting document...": [
-        "Belge dönüştürülüyor..."
-      ],
       "Copy the link to clipboard": [
         "Bağlantıyı panoya kopyala"
       ],
@@ -4324,9 +4323,6 @@
       ],
       "Creating link to folder": [
         "Klasör bağlantısı oluşturuluyor"
-      ],
-      "Creating new document...": [
-        "Yeni belge oluşturuluyor..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
@@ -4445,9 +4441,6 @@
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Belge dönüştürülürken sorun çıktı: ${ errorMessage }"
-      ],
       "Error Syncing": [
         "Eşitleme sorunu"
       ],
@@ -4507,12 +4500,6 @@
       ],
       "Geoblocking": [
         "Coğrafi engelleme"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Belgelerinize eklenen yorumlar ve öneriler için e-posta bildirimleri alın."
-      ],
-      "Get Notified About Comments": [
-        "Yorumlar bildirilsin"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasına git"
@@ -4662,9 +4649,6 @@
       "Low Priority": [
         "Düşük Öncelik"
       ],
-      "Making a copy...": [
-        "Bir kopya oluşturuluyor..."
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
       ],
@@ -4704,9 +4688,6 @@
       ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Adreste bir belge belirtilmemiş. ${ DRIVE_APP_NAME } uygulamasına dönün ve bir belge seçin."
       ],
       "No email address": [
         "E-posta adresi yok"
@@ -5049,9 +5030,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Yazdığınız adres Slack üzerinden yanlış kopyalanmış gibi görünüyor. Slack üzerinden uzun bağlantıları kopyalarken, bağlantıya sağ tıklayın, ardından budanmış adres metnini doğrudan kopyalamak yerine \"Bağlantıyı kopyala\" seçeneğini kullanın."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
@@ -5778,9 +5756,6 @@
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
       ],
-      "Enable email notifications": [
-        "E-posta bildirimlerini aç"
-      ],
       "Encrypt emails": [
         "E-postaları şifrele"
       ],
@@ -5837,9 +5812,6 @@
       ],
       "Import to:": [
         "Şunun içine aktar:"
-      ],
-      "Include document name in notification": [
-        "Bildirime belge adı eklensin"
       ],
       "Include message and file name in invite email": [
         "Davet e-postasına bir ileti ve dosya adı eklensin"
@@ -8667,19 +8639,37 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Virgül ile Ayrılmış Değerler (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "Yeni e-tablo"
+      ],
+      "Rename spreadsheet": [
+        "Hesap tablosunu yeniden adlandırın"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Sekme ile Ayrılmış Değerler (.tsv)"
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Yeni e-tablo oluşturuluyor..."
-      ],
       "Detect automatically": [
         "Otomatik olarak algıla"
       ],
       "Insert as new sheet": [
         "Yeni sayfa olarak ekle"
+      ],
+      "Replace current sheet": [
+        "Mevcut sayfayı değiştirin"
+      ],
+      "Replace data at selected cell": [
+        "Seçili hücredeki verileri değiştirin"
+      ],
+      "Select a CSV or TSV file to import": [
+        "İçe aktarmak için bir CSV veya TSV dosyası seçin"
       ]
     },
     "sheets_2025:Label": {
@@ -10018,9 +10008,6 @@
       "Untitled document ${ date }": [
         "Adlandırılmamış belge ${ date }"
       ],
-      "Untitled spreadsheet ${ date }": [
-        "Adlandırılmamış hesap tablosu ${ date }"
-      ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"
       ],
@@ -10350,9 +10337,6 @@
       ],
       "Contacts could not be merged": [
         "Kişiler birleştirilemedi"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Geçerlilik süresi AA/YY biçiminde değil"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Parolanızı hatırlamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."

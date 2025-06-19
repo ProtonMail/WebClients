@@ -1872,6 +1872,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -2728,14 +2732,8 @@
       "Crypto Wallet": [
         "Kryptolompakko"
       ],
-      "Custom hidden field": [
-        "Mukautettu piilotettu kenttä"
-      ],
       "Custom Items": [
         "Mukautetut kohteet"
-      ],
-      "Custom text field": [
-        "Mukautettu tekstikenttä"
       ],
       "Database": [
         "Tietokanta"
@@ -4524,9 +4522,6 @@
       "OTP secret or URI is invalid": [
         "OTP-salaisuus tai URI on virheellinen"
       ],
-      "OTP secret or URI required": [
-        "OTP-salaisuus tai URI vaaditaan"
-      ],
       "Section name cannot be empty": [
         "Osion nimi ei voi olla tyhjä"
       ],
@@ -4653,9 +4648,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Organisaation ulkopuolisten sähköpostiosoitteiden kutsumista ei ole sallittu."
-      ],
-      "item was imported without custom fields": [
-        "kohde tuotiin ilman mukautettuja kenttiä"
       ],
       "Maximum length is ${ maxLength } character": [
         "Enimmäispituus on ${ maxLength } merkki",
