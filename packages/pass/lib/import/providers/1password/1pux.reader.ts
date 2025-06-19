@@ -25,11 +25,11 @@ import {
     extract1PasswordIdentity,
     extract1PasswordLoginField,
     extract1PasswordNote,
+    extract1PasswordSSHSections,
     extract1PasswordURLs,
-    extractBaseWifi,
-    extractSSHSections,
+    extract1PasswordWifiFields,
     format1PasswordMonthYear,
-    intoFilesFrom1PasswordItem,
+    into1PasswordItemFiles,
     is1PasswordCCField,
 } from './1p.utils';
 import type { OnePass1PuxData, OnePassBaseItem, OnePassCreditCardFields, OnePassItem } from './1pux.types';
@@ -151,7 +151,7 @@ const processSshKeyItem = (item: OnePassItem) => {
         modifyTime: item.updatedAt,
         trashed: item.state === OnePassState.ARCHIVED,
         extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
-        sections: extractSSHSections(sshKey),
+        sections: extract1PasswordSSHSections(sshKey),
     });
 };
 
@@ -163,7 +163,7 @@ const processWifiItem = (item: OnePassItem) =>
         modifyTime: item.updatedAt,
         trashed: item.state === OnePassState.ARCHIVED,
         extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
-        ...extractBaseWifi(item.details.sections),
+        ...extract1PasswordWifiFields(item.details.sections),
     });
 
 export const read1Password1PuxData = async (file: File): Promise<ImportReaderResult> => {
@@ -186,7 +186,7 @@ export const read1Password1PuxData = async (file: File): Promise<ImportReaderRes
                 const category = item?.categoryUuid;
                 const type = (category ? OnePasswordTypeMap[category] : null) ?? c('Label').t`Unknown`;
                 const title = item?.overview?.title ?? item?.overview?.subtitle ?? '';
-                const files = intoFilesFrom1PasswordItem(item.details.sections);
+                const files = into1PasswordItemFiles(item.details.sections);
 
                 try {
                     const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
