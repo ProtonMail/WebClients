@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { useHandler, useNotifications } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
+import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
@@ -18,7 +19,6 @@ import {
     readContentIDandLocation,
 } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
-import type { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

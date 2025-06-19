@@ -4,12 +4,12 @@ import { c } from 'ttag';
 
 import { Banner, Button, Href } from '@proton/atoms';
 import { Icon, useModalState } from '@proton/components';
+import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import type { MessageVerification, MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 import ContactResignModal from '../modals/ContactResignModal';
 
 interface Props {

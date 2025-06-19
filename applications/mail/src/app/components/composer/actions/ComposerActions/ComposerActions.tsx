@@ -12,6 +12,7 @@ import ComposerAssistantUpsellModal from '@proton/components/components/upsell/m
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { FeatureCode, useFeature } from '@proton/features';
 import { getIsAssistantOpened, useAssistant } from '@proton/llm/lib';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
@@ -25,7 +26,6 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 import { updateExpires } from 'proton-mail/store/messages/draft/messagesDraftActions';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
-import type { MessageState } from '../../../../store/messages/messagesTypes';
 import AttachmentsButton from '../../../attachment/AttachmentsButton';
 import type { MessageChange, MessageChangeFlag } from '../../Composer';
 import type { ExternalEditorActions } from '../../editor/EditorWrapper';

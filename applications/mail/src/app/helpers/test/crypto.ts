@@ -1,12 +1,11 @@
 import { getModelState } from '@proton/account/test';
 import type { PrivateKeyReference, PrivateKeyReferenceV4, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
+import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';
 import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, KEY_FLAG } from '@proton/shared/lib/constants';
 import type { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
-
-import type { MessageKeys } from 'proton-mail/store/messages/messagesTypes';
 
 import { base64ToArray } from '../base64';
 import { addApiMock } from './api';

@@ -1,6 +1,7 @@
 import { findByText, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
+import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -26,7 +27,6 @@ import {
     getCompleteAddress,
 } from '../../../helpers/test/helper';
 import { X_PM_HEADERS } from '../../../models/crypto';
-import type { MessageKeys } from '../../../store/messages/messagesTypes';
 import { addressID, body, getIframeRootDiv, localID, messageID, setup, subject } from './Message.test.helpers';
 
 jest.setTimeout(20000);

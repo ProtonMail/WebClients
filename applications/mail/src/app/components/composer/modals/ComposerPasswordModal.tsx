@@ -3,6 +3,7 @@ import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -13,7 +14,6 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 import { DEFAULT_EO_EXPIRATION_DAYS } from '../../../constants';
 import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
 import { updateExpires } from '../../../store/messages/draft/messagesDraftActions';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import type { MessageChange } from '../Composer';
 import ComposerInnerModal from './ComposerInnerModal';
 import PasswordInnerModalForm from './PasswordInnerModalForm';

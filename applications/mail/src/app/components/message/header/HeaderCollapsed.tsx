@@ -3,6 +3,7 @@ import type { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import {
@@ -17,7 +18,6 @@ import noop from '@proton/utils/noop';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 
 import { Loader, useApi } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -10,7 +11,6 @@ import { EO_REDIRECT_PATH, LOAD_RETRY_COUNT } from '../../constants';
 import { useInitializeEOMessage } from '../../hooks/eo/useInitializeEOMessage';
 import { useGetEODecryptedToken, useGetEOPassword } from '../../hooks/eo/useLoadEOMessage';
 import { loadEOMessage } from '../../store/eo/eoActions';
-import type { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     id?: string;

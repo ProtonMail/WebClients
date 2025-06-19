@@ -1,5 +1,6 @@
 import type { PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
+import type { MessageState, PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
 import { AES256, MIME_TYPES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -9,7 +10,6 @@ import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { MessageState, PublicPrivateKey } from '../../store/messages/messagesTypes';
 import { arrayToBase64 } from '../base64';
 
 const MEGABYTE = 1024 * 1024;

@@ -1,8 +1,8 @@
 import { Banner } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
 import useExpiration from '../../../../hooks/useExpiration';
-import type { MessageState } from '../../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

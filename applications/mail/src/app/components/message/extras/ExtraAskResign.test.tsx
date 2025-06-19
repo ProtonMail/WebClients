@@ -3,12 +3,12 @@ import { act } from 'react';
 import { fireEvent, screen } from '@testing-library/react';
 
 import type { PublicKeyReference } from '@proton/crypto';
+import type { MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { addApiMock, clearAll, generateKeys, render, tick } from '../../../helpers/test/helper';
 import { contactEmails, message, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
 import { refresh } from '../../../store/contacts/contactsActions';
-import type { MessageVerification } from '../../../store/messages/messagesTypes';
 import ExtraAskResign from './ExtraAskResign';
 
 const getMessageVerification = (pinnedKeysVerified: boolean, pinnedKeys?: PublicKeyReference[]) => {

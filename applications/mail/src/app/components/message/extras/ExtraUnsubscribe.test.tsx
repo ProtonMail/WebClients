@@ -2,6 +2,7 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 
 import { mergeMessages } from '../../../helpers/message/messages';
@@ -16,7 +17,6 @@ import {
     waitForEventManagerCall,
     waitForNotification,
 } from '../../../helpers/test/helper';
-import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import ExtraUnsubscribe from './ExtraUnsubscribe';
 
 loudRejection();

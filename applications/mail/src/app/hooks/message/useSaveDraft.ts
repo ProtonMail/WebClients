@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
+import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -15,7 +16,6 @@ import { isDecryptionError, isNetworkError, pickMessageInfosForSentry } from '..
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
 import { deleteConversation } from '../../store/conversations/conversationsActions';
 import { deleteDraft, draftSaved } from '../../store/messages/draft/messagesDraftActions';
-import type { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';

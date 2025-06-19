@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Banner, Button } from '@proton/atoms';
 import { Icon, useNotifications } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getBlockedIncomingDefaultByAddress } from '@proton/shared/lib/helpers/incomingDefaults';
 import { getSender } from '@proton/shared/lib/mail/messages';
 
@@ -12,7 +13,6 @@ import {
     useIncomingDefaultsStatus,
 } from '../../../hooks/incomingDefaults/useIncomingDefaults';
 import { remove } from '../../../store/incomingDefaults/incomingDefaultsActions';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;
