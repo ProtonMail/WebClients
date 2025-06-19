@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useTheme } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { isAutoFlaggedPhishing, isPlainText, isSuspicious } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
@@ -16,7 +17,6 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useOnMailTo } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
-import type { MessageState } from '../../store/messages/messagesTypes';
 import MessageBodyIframe from './MessageBodyIframe';
 
 interface Props {

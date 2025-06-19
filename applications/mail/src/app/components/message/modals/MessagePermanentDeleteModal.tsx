@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { Prompt, useApi, useEventManager, useNotifications } from '@proton/components';
+import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 
 import {
@@ -10,7 +11,6 @@ import {
     getModalText,
     getNotificationText,
 } from '../../../hooks/actions/delete/usePermanentDeleteSelection';
-import type { MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 
 interface Props extends ModalProps {
     message: MessageWithOptionalBody;

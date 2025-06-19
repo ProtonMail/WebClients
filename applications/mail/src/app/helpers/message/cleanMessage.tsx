@@ -1,6 +1,5 @@
+import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
-
-import type { MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 
 /**
  * Remove duplicate recipients from a recipient list

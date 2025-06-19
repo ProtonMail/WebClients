@@ -1,11 +1,11 @@
 import type { Dispatch, SetStateAction } from 'react';
 
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import type { InvitationModel } from '../../../../helpers/calendar/invite';
 import { getDoNotDisplayButtons } from '../../../../helpers/calendar/invite';
 import { getCalendarEventLink } from '../../../../helpers/calendar/inviteLink';
-import type { MessageState } from '../../../../store/messages/messagesTypes';
 import ExtraEventAlert from './ExtraEventAlert';
 import ExtraEventAttendeeButtons from './ExtraEventAttendeeButtons';
 import ExtraEventImportButton from './ExtraEventImportButton';

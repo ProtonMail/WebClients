@@ -5,11 +5,11 @@ import { c } from 'ttag';
 
 import type { EditorMetadata } from '@proton/components';
 import { DropdownMenuButton, Icon, useActiveBreakpoint } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
 import { useMailDispatch } from '../../../store/hooks';
 import { updateExpires } from '../../../store/messages/draft/messagesDraftActions';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import type { MessageChange, MessageChangeFlag } from '../Composer';
 import type { ExternalEditorActions } from '../editor/EditorWrapper';
 import ComposerMoreOptionsDropdown from './ComposerMoreOptionsDropdown';

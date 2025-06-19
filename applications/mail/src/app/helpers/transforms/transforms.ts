@@ -1,3 +1,9 @@
+import type {
+    LoadEmbeddedResults,
+    MessageImage,
+    MessageRemoteImage,
+    MessageState,
+} from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
@@ -7,12 +13,6 @@ import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTracker
 import { transformAnchors } from 'proton-mail/helpers/transforms/transforAnchors';
 
 import type { Base64Cache } from '../../hooks/useBase64Cache';
-import type {
-    LoadEmbeddedResults,
-    MessageImage,
-    MessageRemoteImage,
-    MessageState,
-} from '../../store/messages/messagesTypes';
 import { transformBase } from './transformBase';
 import { transformEmbedded } from './transformEmbedded';
 import { attachBase64, transformEscape } from './transformEscape';

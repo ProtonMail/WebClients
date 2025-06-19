@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Banner, Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { isSnoozed } from '@proton/shared/lib/mail/messages';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
@@ -14,7 +15,6 @@ import { formatDateToHuman } from '../../../helpers/date';
 import { getSnoozeTimeFromElement } from '../../../helpers/snooze';
 import useSnooze from '../../../hooks/actions/useSnooze';
 import { useGetElementsFromIDs } from '../../../hooks/mailbox/useElements';
-import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageStateWithData;

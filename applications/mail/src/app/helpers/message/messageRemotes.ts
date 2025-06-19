@@ -1,7 +1,7 @@
 import { MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
+import type { MessageImage, MessageRemoteImage } from '@proton/mail/store/messages/messagesTypes';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import type { MessageImage, MessageRemoteImage } from '../../store/messages/messagesTypes';
 import { getRemoteSelector } from './messageImages';
 
 export const urlCreator = () => window.URL || window.webkitURL;

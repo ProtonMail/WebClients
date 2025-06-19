@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
 import { useFormErrors } from '@proton/components';
-
-import type { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
 export const useExternalExpiration = (message?: MessageState) => {
     const [password, setPassword] = useState(message?.data?.Password || '');

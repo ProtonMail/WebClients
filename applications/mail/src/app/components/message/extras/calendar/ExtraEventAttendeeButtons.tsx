@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Banner, Button } from '@proton/atoms';
 import { CalendarInviteButtons, Loader, useDrawer, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
@@ -27,7 +28,6 @@ import { RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';
 import type { InvitationModel } from '../../../../helpers/calendar/invite';
 import { UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../hooks/useInviteButtons';
-import type { MessageState } from '../../../../store/messages/messagesTypes';
 
 const { EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR } = INVITATION_ERROR_TYPE;
 

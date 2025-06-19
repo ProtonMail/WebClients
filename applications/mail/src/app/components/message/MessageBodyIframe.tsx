@@ -10,9 +10,9 @@ import getIframeSandboxAttributes from '@proton/mail-renderer/helpers/getIframeS
 import useIframeDispatchEvents from '@proton/mail-renderer/hooks/useIframeDispatchEvents';
 import useIframeShowBlockquote from '@proton/mail-renderer/hooks/useIframeShowBlockquote';
 import useObserveIframeHeight from '@proton/mail-renderer/hooks/useObserveIframeHeight';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
-import type { MessageState } from '../../store/messages/messagesTypes';
 import MessageBodyImages from './MessageBodyImages';
 import useInitIframeContent from './hooks/useInitIframeContent';
 import { type OnMessageImageLoadError } from './interface';

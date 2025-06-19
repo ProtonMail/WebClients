@@ -1,8 +1,9 @@
 import type { PublicKeyReference } from '@proton/crypto';
+import type { MessageState, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { SIGNATURE_START, MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS, SIGNATURE_START } from '@proton/shared/lib/mail/constants';
 import {
     ENCRYPTION_PREFERENCES_ERROR_TYPES,
     EncryptionPreferencesError,
@@ -11,7 +12,6 @@ import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 
 import type { StatusIcon } from '../../models/crypto';
 import { STATUS_ICONS_FILLS, X_PM_HEADERS } from '../../models/crypto';
-import type { MessageState, MessageVerification } from '../../store/messages/messagesTypes';
 import {
     getReceivedStatusIcon,
     getSendStatusIcon,

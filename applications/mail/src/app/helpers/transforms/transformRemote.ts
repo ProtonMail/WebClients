@@ -1,4 +1,5 @@
 import { MESSAGE_IMAGE_ATTRIBUTES_TO_FIND, MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
+import type { MessageRemoteImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasShowRemote } from '@proton/shared/lib/mail/images';
@@ -8,7 +9,6 @@ import generateUID from '@proton/utils/generateUID';
 
 import { removeLineBreaks } from 'proton-mail/helpers/string';
 
-import type { MessageRemoteImage, MessageState } from '../../store/messages/messagesTypes';
 import { querySelectorAll } from '../message/messageContent';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
 import { hasToSkipProxy, loadFakeImages, loadRemoteImages, loadSkipProxyImages } from '../message/messageRemotes';
