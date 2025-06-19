@@ -1543,9 +1543,6 @@
       "What do I get?": [
         "Vad får jag?"
       ],
-      "Wipe": [
-        "Rensa"
-      ],
       "Yes": [
         "Ja"
       ],
@@ -1774,6 +1771,9 @@
       "Add unlimited credit cards": [
         "Lägg till obegränsat antal kreditkort"
       ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alla premiumfunktioner i ${ BRAND_NAME } Mail, Pass, VPN, Drive och Calendar"
+      ],
       "Block ads, trackers, and malware": [
         "Blockera annonser, spårare och skadlig kod"
       ],
@@ -1842,6 +1842,11 @@
       ],
       "years": [
         "år"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumserbjudande"
       ]
     },
     "anniversary_2025: Offers": {
@@ -4095,15 +4100,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronisera enkelt filer till molnet från din stationära dator och kom åt dem från din mobila enhet."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktivera ${ PROTON_SENTINEL_NAME } för att komma åt dessa funktioner"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktivera detaljerade händelser och ${ PROTON_SENTINEL_NAME } för att komma åt dessa funktioner"
-      ],
-      "Enable detailed events to access these features": [
-        "Aktivera detaljerade händelser för att komma åt dessa funktioner"
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Uppmuntra användningen av tvåfaktorsautentisering i din organisation för extra säkerhet."
       ],
@@ -5209,6 +5205,9 @@
       "Failed to process the logo": [
         "Misslyckades att bearbeta loggan"
       ],
+      "Failed to update detailed monitoring.": [
+        "Misslyckades att uppdatera detaljerad övervakning."
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Fil för stor. Din logga måste vara 30 KB eller mindre."
       ],
@@ -5655,8 +5654,8 @@
       ]
     },
     "error": {
-      "Enter an email address": [
-        "Ange en e-postadress"
+      "Select users to view their activity": [
+        "Välj användare för att visa deras aktivitet"
       ]
     },
     "Error importing calendar": {
@@ -6810,9 +6809,6 @@
       "Actions": [
         "Åtgärder"
       ],
-      "App version": [
-        "Appversion"
-      ],
       "Best deal": [
         "Bästa erbjudandet"
       ],
@@ -6890,9 +6886,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Time": [
-        "Tid"
       ],
       "User": [
         "Användare"
@@ -7709,6 +7702,9 @@
       "active": [
         "aktiv"
       ],
+      "Activity monitor": [
+        "Aktivitetsövervakare"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
       ],
@@ -7887,9 +7883,6 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Är du säker på att du vill lämna denna grupp? Om du lämnar måste du bjudas in igen av gruppadministratören för att gå med igen."
       ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Är du säker på att du vill ta bort alla dina loggar permanent?"
-      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Är du säker på att du vill ta bort administrativa behörigheter från denna användare?"
       ],
@@ -7907,6 +7900,9 @@
       ],
       "At least one application must be active": [
         "Minst en applikation måste vara aktiv"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Vid slutet av din provperiod ${ boldCancelDate }, kommer du att nedgraderas till ${ boldProtonFree }. Alla användarkonton kommer att tas bort från din organisation."
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
@@ -8179,6 +8175,9 @@
       "Did you know?": [
         "Visste du att?"
       ],
+      "Disable detailed events": [
+        "Inaktivera detaljerade händelser"
+      ],
       "Disable recovery by email address": [
         "Inaktivera e-postadress för återställning"
       ],
@@ -8324,6 +8323,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Aktivera automatisk förnyelse för att behålla åtkomst till dina premiumfunktioner."
       ],
+      "Enable detailed events": [
+        "Aktivera detaljerade händelser"
+      ],
       "Enable email notifications": [
         "Aktivera e-postaviseringar"
       ],
@@ -8428,9 +8430,6 @@
       ],
       "Event invitations and responses will be sent in this language.": [
         "Händelseinbjudningar och svar kommer att skickas på detta språk."
-      ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Händelser inkluderar autentiseringsförsök för alla ${ BRAND_NAME }-tjänster som använder dina ${ BRAND_NAME_TWO }-inloggningsuppgifter."
       ],
       "Example: ${ spfExample }": [
         "Exempel: ${ spfExample }"
@@ -8657,6 +8656,9 @@
       ],
       "inactive": [
         "inaktiv"
+      ],
+      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
+        "Inkludera användarens IP-adress, plats och internetleverantör (ISP) i händelseloggar"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
@@ -8925,6 +8927,9 @@
       ],
       "Monitor accounts": [
         "Övervaka konton"
+      ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Övervaka och granska autentiseringsförsök för alla ${ BRAND_NAME }-tjänster som använder dina ${ BRAND_NAME }-inloggningsuppgifter."
       ],
       "Monthly ${ onDayString }": [
         "En gång i månaden ${ onDayString }"
@@ -9376,9 +9381,6 @@
       "SCIM token active": [
         "SCIM-token aktiv"
       ],
-      "Search by an email address to begin": [
-        "Sök efter en e-postadress för att börja"
-      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Skydda ditt ${ BRAND_NAME }-konto"
       ],
@@ -9820,6 +9822,9 @@
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "Detta kommer att avlänka enheten **${ name } (skapad ${ date })** från ditt ${ BRAND_NAME }-konto"
       ],
+      "This will wipe all logs for your organization members.": [
+        "Detta kommer rensa bort alla loggar för dina organisationsmedlemmar."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Den här guiden aktiverar tvåfaktorsautentisering (2FA) på ditt ${ BRAND_NAME }-konto. Tvåfaktorsautentisering gör ditt ${ BRAND_NAME_TWO }-konto säkrare så vi rekommenderar att du aktiverar det."
       ],
@@ -10216,6 +10221,9 @@
       "Why?": [
         "Varför?"
       ],
+      "With a Business or Enterprise plan, unlock": [
+        "Med ett Business- eller Enterprise-paket, lås upp"
+      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med ett Business- eller Enterprise-paket kan du köpa ${ boldDedicatedServers } för din organisation och ställa in ${ boldGateways } för att kontrollera vilka användare som kan komma åt dem."
       ],
@@ -10300,9 +10308,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigera detta en gång för att säkerställa korrekt e-postadress för verifiering."
-      ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Du kan aktivera autentiseringsloggar för att se när ditt konto används och från vilken IP-adress. Vi kommer att registrera IP-adressen som ansluter till kontot och tidpunkten, såväl som misslyckade försök."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Du kan aktivera fotosektionen från användargränssnittet med växlaren nedan."
@@ -10457,6 +10462,9 @@
         "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
         "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
       ],
+      "You've reached the limit of 50 users for this filter. Remove one to add another.": [
+        "Du har nått gränsen på 50 användare för detta filter. Ta bort ett för att lägga till ett annat."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Din ${ boldDiscountPercent } på ${ boldPlanTitle } har tillämpats"
       ],
@@ -10510,6 +10518,10 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Din gratis provperiod inkluderar ${ ownedCount } dedikerad server.",
+        "Din gratis provperiod inkluderar ${ ownedCount } dedikerade servrar."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis provperiod har konverterats till en månadsprenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
@@ -10578,6 +10590,9 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du kommer förlora åtkomst till ${ boldPlanTitle } den ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
       ],
       "You’re all set": [
         "Nu är det klart!"
@@ -12004,8 +12019,8 @@
       "Search": [
         "Sök"
       ],
-      "Search by email": [
-        "Sök efter e-post"
+      "Search for a name or email": [
+        "Sök efter ett namn eller e-post"
       ],
       "Second password": [
         "Andra lösenord"
@@ -12682,15 +12697,59 @@
         "Din prenumeration har upphört. ${ cta } och för att undvika dataförlust."
       ]
     },
+    "Log event": {
+      "Authentication failure (second factor failed)": [
+        "Autentisering misslyckades (andra faktor misslyckades)"
+      ],
+      "Authentication failure (wrong password)": [
+        "Autentisering misslyckades (fel lösenord)"
+      ],
+      "Authentication success": [
+        "Autentisering lyckades"
+      ],
+      "Password reset": [
+        "Lösenordsåterställning"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "Andra faktor inaktiverad (autentiseringsapp)"
+      ],
+      "Second factor disabled (security key)": [
+        "Andra faktor inaktiverad (säkerhetsnyckel)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "Andra faktor aktiverad (autentiseringsapp)"
+      ],
+      "Second factor enabled (security key)": [
+        "Andra faktor aktiverad (säkerhetsnyckel)"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "Inloggning blockerad (på grund av missbruk)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "Inloggning misslyckades (andra faktor misslyckades)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Inloggning misslyckades (fel lösenord)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Inloggning förbjuden (på grund av missbruk)"
+      ],
+      "Sign in success": [
+        "Inloggning lyckades"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Inloggning lyckades (inväntar andra faktor)"
+      ],
+      "Sign in success (awaiting verify)": [
+        "Inloggning lyckades (väntar på verifiering)"
+      ],
+      "Sign out": [
+        "Logga ut"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Aktivera ${ reason }"
-      ],
-      "Enable detailed events": [
-        "Aktivera detaljerade händelser"
-      ],
-      "Enable security events": [
-        "Aktivera säkerhetshändelser"
       ]
     },
     "Mail import summary": {
@@ -12861,6 +12920,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex. du@dittföretag.se). Vår guide kommer guida dig genom processen."
+      ],
+      "View account-related events across your organization.": [
+        "Visa kontorelaterade händelser i hela din organisation."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
@@ -14489,6 +14551,11 @@
         "Välj vad ${ BRAND_NAME } kan komma åt: visa dina e-postmeddelanden och inställningar, visa och ladda ner dina kontakter, visa och ladda ner alla agendor du kommer åt från Google Kalender."
       ]
     },
+    "oc_nightly: BYOE": {
+      "Something went wrong while loging into your Gmail account": [
+        "Något gick fel vid inloggning på ditt Gmail-konto"
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Obegränsat i 12 månader"
@@ -14621,11 +14688,20 @@
       "Once your full subscription starts...": [
         "När din fullständiga prenumeration startar …"
       ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Du kan använda ${ planTitle } tills provperioden är slut, och du kommer inte att debiteras."
+      ],
       "Your free trial has started": [
         "Din gratis provperiod har startat"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Du kommer att kunna använda ${ planTitle } tills provperioden slutar, utan kostnad."
       ]
     },
     "Option": {
@@ -16007,6 +16083,23 @@
       ],
       "Work": [
         "Arbete"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "Blockerad"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Device verification": [
+        "Enhetsverifiering"
+      ],
+      "Ok": [
+        "Ok"
+      ],
+      "Unknown": [
+        "Okänd"
       ]
     },
     "Recovery Email": {
@@ -19005,6 +19098,9 @@
       "Activate user": [
         "Aktivera användare"
       ],
+      "Activity monitor": [
+        "Aktivitetsövervakare"
+      ],
       "Add ${ totalServerCount } server?": [
         "Lägg till ${ totalServerCount } server?",
         "Lägga till ${ totalServerCount } servrar?"
@@ -19153,6 +19249,18 @@
       "Cancel subscription?": [
         "Avsluta prenumeration?"
       ],
+      "Cannot add Gateway": [
+        "Kan inte lägga till gateway"
+      ],
+      "Cannot add licenses": [
+        "Kan inte lägga till licenser"
+      ],
+      "Cannot add more users": [
+        "Kan inte lägga till fler användare"
+      ],
+      "Cannot add servers": [
+        "Kan inte lägga till servrar"
+      ],
       "Card verification": [
         "Kortverifiering"
       ],
@@ -19191,9 +19299,6 @@
       ],
       "Choose user affiliations": [
         "Välj användartillhörighet"
-      ],
-      "Clear": [
-        "Rensa"
       ],
       "Click a value in the table to use it as filter": [
         "Klicka ett värde i tabellen för att använda det som filter"
@@ -19376,9 +19481,6 @@
       "Delete label?": [
         "Ta bort etikett?"
       ],
-      "Delete logs": [
-        "Ta bort loggar"
-      ],
       "Delete organization logo?": [
         "Ta bort organisationslogga?"
       ],
@@ -19409,6 +19511,9 @@
       ],
       "Device name": [
         "Enhetsnamn"
+      ],
+      "Disable activity monitor?": [
+        "Inaktivera aktivitetsövervakare?"
       ],
       "Disable two-factor authentication": [
         "Inaktivera tvåfaktorsautentisering"
@@ -20220,6 +20325,9 @@
       "Theme": [
         "Tema"
       ],
+      "There are no events for your account": [
+        "Det finns inga händelser för ditt konto"
+      ],
       "There are no groups": [
         "Det finns inga grupper"
       ],
@@ -20322,6 +20430,9 @@
       "Video conferencing": [
         "Videokonferenser"
       ],
+      "View organization events by upgrading to Business": [
+        "Visa organisationens händelser genom att uppgradera till Business"
+      ],
       "VPN apps": [
         "VPN-appar"
       ],
@@ -20378,6 +20489,10 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Din gratis provperiod slutar om ${ trialDurationFormatted } dag",
+        "Din gratis provperiod slutar om ${ trialDurationFormatted } dagar"
       ],
       "Your plan": [
         "Ditt paket"
@@ -20556,6 +20671,9 @@
       "Device information such as operating system": [
         "Enhetsinformation såsom operativsystem"
       ],
+      "Device name and app version": [
+        "Enhetsnamn och appversion"
+      ],
       "Display name for the entity in the eduGAIN database": [
         "Visningsnamn för entiteten i eduGAIN-databasen"
       ],
@@ -20573,9 +20691,6 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Aktivera/inaktivera aviseringar för stationär dator och mobil “${ labelName }“"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "Vid aktivering av detaljerade händelser registreras IP-adressen för varje händelse."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Ändpunkts-URL från identitetsleverantör (t.ex. https://idp.exempel.se/sso/saml)"
@@ -20604,14 +20719,14 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."
       ],
-      "IP address (Internet Service Provider)": [
-        "IP-adress (internetleverantör)"
-      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Meddelanden i mappen “Skickat“ eller “Utkast“ kommer att fortsätta att visas i den mappen även om du flyttar dem till en annan mapp."
       ],
       "Not all information listed here was exposed for all users.": [
         "All information som anges här har inte exponerats för alla användare."
+      ],
+      "Origin IP address and Internet Service Provider (ISP)": [
+        "Ursprunglig IP-adress och Internetleverantör (ISP)"
       ],
       "Remove metadata from images to protect your privacy.": [
         "Ta bort metadata från bilder för att skydda din integritet."
@@ -20708,6 +20823,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Använd din webbläsares standardrullningslister. Dessa är vanligtvis större och enklare att använda"
+      ],
+      "User's approximate location (based on their IP address)": [
+        "Användares ungefärliga plats (baserat på deras IP-adress)"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Användare kommer att se din logga istället för ${ BRAND_NAME }-ikonen när de är inloggade på våra webbappar."
@@ -21192,6 +21310,9 @@
       "Communicate and schedule with end-to-end encryption.": [
         "Kommunicera och schemalägg med end-to-end-kryptering."
       ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Få ut mer av din ${ planTitle }-prenumeration."
+      ],
       "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
         "Håll dina filer, foton och dokument säkra med ${ maxDriveSpace } gratis molnlagring."
       ],
@@ -21473,12 +21594,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Genom att ta bort detta telefonnummer kommer du inte längre att kunna återställa ditt konto."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Genom att inaktivera övervakning av säkerhetshändelser kommer du också att rensa hela din historik. Är du säker på att du vill inaktivera detta?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Utgångsdatum är inte i formatet MM/ÅÅ"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Om du avbryter denna import kommer du inte att kunna återuppta den. ${ BRAND_NAME } sparade alla framsteg på ditt konto. Avbryt ändå?"

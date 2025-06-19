@@ -1543,9 +1543,6 @@
       "What do I get?": [
         "我可获得什么？"
       ],
-      "Wipe": [
-        "清除"
-      ],
       "Yes": [
         "是"
       ],
@@ -1750,6 +1747,137 @@
       ],
       "New email": [
         "新邮件"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "获取优惠"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "200 GB storage": [
+        "200 GB 存储空间"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB 加密存储"
+      ],
+      "Add unlimited credit cards": [
+        "添加无限信用卡"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "包含 ${ BRAND_NAME } Mail、Pass、VPN、Drive 以及 Calendar 的所有高级功能"
+      ],
+      "Block ads, trackers, and malware": [
+        "屏蔽广告、跟踪器和恶意软件"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "折扣基于标准月费。在账单周期结束时，您的订购将按标准年费率续订。"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "双倍加密存储容量 -- 为您的所有数据提供 1 TB 容量"
+      ],
+      "Encrypted password manager": [
+        "加密的密码管理器"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "这是庆祝我们共同前行的一份专属献礼。"
+      ],
+      "High speed streaming with VPN": [
+        "使用 VPN 流畅地观看视频"
+      ],
+      "of privacy": [
+        "隐私守护"
+      ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
+      "Online privacy for up to 2 people": [
+        "最多可容纳 2 人的在线隐私保护"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "与全家人共同守护网络隐私 (最多支持 6 位用户)"
+      ],
+      "Protect up to 10 devices": [
+        "最多可保护 10 台设备"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 Drive 高级功能。"
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 Mail 高级功能。"
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 Pass 高级功能。"
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 VPN 高级功能。"
+      ],
+      "Save time with built-in 2FA": [
+        "使用内置 2FA 来节省时间"
+      ],
+      "Secure email with unlimited aliases": [
+        "不限量的安全邮箱别名"
+      ],
+      "Select any server": [
+        "选择任何服务器"
+      ],
+      "Share passwords easily": [
+        "轻松共享密码"
+      ],
+      "Short @pm.me address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Stream your favorite content": [
+        "播放您最喜欢的视频内容"
+      ],
+      "thanks to you": [
+        "感谢你们"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "三倍加密存储容量 -- 为您的所有数据提供 3 TB 容量"
+      ],
+      "Unlimited folders, labels and filters": [
+        "不限量文件夹、标签和筛选规则"
+      ],
+      "Use your own email domain": [
+        "个性化邮箱域名"
+      ],
+      "years": [
+        " 11 年以来的"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "周年庆优惠"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } 个月"
+      ],
+      "/ month": [
+        "/月"
+      ],
+      "12 months": [
+        "12 个月"
+      ],
+      "15 months": [
+        "15 个月"
+      ],
+      "24 months": [
+        "24 个月"
+      ],
+      "30 months": [
+        "30 个月"
+      ],
+      "for ${ durationDeal }": [
+        "仅限 ${ durationDeal }"
       ]
     },
     "app-switcher": {
@@ -2159,6 +2287,17 @@
       ],
       "Working with sensitive data?": [
         "正在处理敏感数据？"
+      ]
+    },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "您的所有专用服务器都已分配给网关。免费试用结束后，您可以购买更多服务器。"
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "免费试用版包含 ${ ipAddresses } 个专用服务器。正式订购开始后，您可以添加更多服务器。"
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "免费试用版包含最多 ${ maxMembers } 个许可证。正式订购开始后，您可以添加更多许可证。"
       ]
     },
     "breadcrumb": {
@@ -3966,15 +4105,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "轻松地将文件从桌面同步到云端，并从移动设备访问它们。"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "开启 ${ PROTON_SENTINEL_NAME } 即可使用这些功能"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "启用详细事件和 ${ PROTON_SENTINEL_NAME } 访问这些功能"
-      ],
-      "Enable detailed events to access these features": [
-        "启用详细事件以访问这些功能"
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "建议在组织内使用双因素身份验证以提高安全性。"
       ],
@@ -5090,6 +5220,9 @@
       "Failed to process the logo": [
         "无法处理图标"
       ],
+      "Failed to update detailed monitoring.": [
+        "更新详细监控失败。"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "文件过大。您的 Logo 必须是 30 KB 以内。"
       ],
@@ -5533,8 +5666,8 @@
       ]
     },
     "error": {
-      "Enter an email address": [
-        "请输入邮箱地址"
+      "Select users to view their activity": [
+        "选择用户以查看其活动"
       ]
     },
     "Error importing calendar": {
@@ -6669,9 +6802,6 @@
       "Actions": [
         "操作"
       ],
-      "App version": [
-        "程序版本"
-      ],
       "Best deal": [
         "超值特惠"
       ],
@@ -6723,9 +6853,6 @@
       "Permissions": [
         "权限"
       ],
-      "Protection": [
-        "防护措施"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "在最优惠的 ${ VPN_APP_NAME } 交易中节省大笔开支"
       ],
@@ -6749,9 +6876,6 @@
       ],
       "Status": [
         "状态"
-      ],
-      "Time": [
-        "时间"
       ],
       "User": [
         "用户"
@@ -7395,6 +7519,9 @@
       "${ remainingAddresses.length } more address": [
         "另有 ${ remainingAddresses.length } 个地址"
       ],
+      "${ resultsCount } result found": [
+        "已找到 ${ resultsCount } 个结果"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "已选择 ${ selectedCalendarsTotal }/${ providerCalendars.length } 份日历"
       ],
@@ -7532,6 +7659,9 @@
       ],
       "active": [
         "启用"
+      ],
+      "Activity monitor": [
+        "活动监视器"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -7703,9 +7833,6 @@
       ],
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "您确定要离开该群组吗？如果您离开，则需要群组管理员重新邀请你才能再次加入。"
-      ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "确定要永久删除所有日志吗？"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "您确定要移除此用户的管理权限吗？"
@@ -7995,6 +8122,9 @@
       "Did you know?": [
         "您知道吗？"
       ],
+      "Disable detailed events": [
+        "禁用详细活动"
+      ],
       "Disable recovery by email address": [
         "禁用通过密保邮箱恢复"
       ],
@@ -8139,6 +8269,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "启用自动续订功能，即可继续使用高级功能。"
       ],
+      "Enable detailed events": [
+        "启用详细活动"
+      ],
       "Enable email notifications": [
         "启用电子邮件通知"
       ],
@@ -8244,9 +8377,6 @@
       "Event invitations and responses will be sent in this language.": [
         "活动邀请和回复将以此语言发送。"
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "事件包括使用您的 ${ BRAND_NAME_TWO } 凭据的所有 ${ BRAND_NAME } 服务的验证尝试。"
-      ],
       "Example: ${ spfExample }": [
         "示例：${ spfExample }"
       ],
@@ -8255,9 +8385,6 @@
       ],
       "expires ${ expirationDate }": [
         "于 ${ expirationDate } 过期"
-      ],
-      "Failed to fetch logs.": [
-        "获取日志失败。"
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
@@ -8487,6 +8614,9 @@
       "inactive": [
         "未启用"
       ],
+      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
+        "在事件日志中包含用户 IP 地址、位置以及 ISP（互联网服务提供商）"
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
@@ -8700,6 +8830,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "正在加载日历，请稍候。您将在新选项卡中重定向到我们的日程安排平台 Calendly。"
       ],
+      "Loading detailed events current status.": [
+        "加载详细事件的当前状态。"
+      ],
       "Loading eduGAIN data...": [
         "正在加载 eduGAIN 数据..."
       ],
@@ -8754,6 +8887,9 @@
       "Monitor accounts": [
         "监控账户"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "监控和审计使用您的 ${ BRAND_NAME } 凭据的所有 ${ BRAND_NAME } 服务的身份验证尝试。"
+      ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
       ],
@@ -8780,6 +8916,9 @@
       ],
       "New": [
         "新"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "将停止收集和显示新的活动数据。"
       ],
       "New user invited to organization": [
         "新用户被邀请加入组织"
@@ -8822,9 +8961,6 @@
       ],
       "No label selected": [
         "未选择标签"
-      ],
-      "No logs yet.": [
-        "暂无记录。"
       ],
       "No payment is required at this time.": [
         "目前不需要支付。"
@@ -9195,9 +9331,6 @@
       "SCIM token active": [
         "SCIM 令牌处于激活状态"
       ],
-      "Search by an email address to begin": [
-        "通过电子邮件地址搜索开始"
-      ],
       "Secure your ${ BRAND_NAME } Account": [
         "保护您的 ${ BRAND_NAME } 账户"
       ],
@@ -9338,6 +9471,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "开始使用更简短且更朗朗上口的邮箱地址。"
+      ],
+      "Starts on ${ startsOnTime }": [
+        "将在 ${ startsOnTime } 开始"
       ],
       "Stay tuned for future promotions.": [
         "敬请关注后续其他促销活动。"
@@ -9629,6 +9765,9 @@
       ],
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "这将取消设备 **${ name }（创建于 ${ date }）** 与您的 ${ BRAND_NAME } 账户的链接。"
+      ],
+      "This will wipe all logs for your organization members.": [
+        "这将清除您组织所有成员的日志。"
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "此向导将为您的 ${ BRAND_NAME } 账户启用双因素身份验证 (2FA)。双因素身份验证将使您的 ${ BRAND_NAME_TWO } 账户更加安全，因此我们建议启用它。"
@@ -10107,9 +10246,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "您可以修改一次地址，以确保使用正确的邮箱验证。"
       ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "您可以开启登录记录功能查看每次登录的时间和 IP 地址，登录失败也会被记录下来。"
-      ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "您可以使用下面的切换键在界面上启用照片部分。"
       ],
@@ -10263,6 +10399,9 @@
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "您已经在 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址上启用了转发功能。若要添加另一个，请先禁用其中一个。"
       ],
+      "You've reached the limit of 50 users for this filter. Remove one to add another.": [
+        "您已达到该过滤器 50 个用户的上限。删除一个即可添加另一个。"
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "您的 ${ boldDiscountPercent } 到 ${ boldPlanTitle } 已被应用"
       ],
@@ -10316,6 +10455,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "免费试用版包含 ${ ownedCount } 个专用服务器。"
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "您的免费试用已成功转换为 ${ cycle } 个月订阅。您的续订日期是 ${ nextBillingDate }。"
@@ -11810,8 +11952,8 @@
       "Search": [
         "搜索"
       ],
-      "Search by email": [
-        "通过电子邮件搜索"
+      "Search for a name or email": [
+        "搜索名称或邮箱地址"
       ],
       "Second password": [
         "副密码"
@@ -12486,15 +12628,77 @@
         "您的订阅已经结束。 ${ cta } 以避免数据丢失。"
       ]
     },
+    "Log event": {
+      "Account password change": [
+        "修改账户密码"
+      ],
+      "Authentication failure (second factor failed)": [
+        "验证失败（未通过 2FA）"
+      ],
+      "Authentication failure (wrong password)": [
+        "验证失败（密码错误）"
+      ],
+      "Authentication success": [
+        "认证成功"
+      ],
+      "Mailbox password change": [
+        "修改邮箱密码"
+      ],
+      "Password reset": [
+        "密码重置"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "已禁用 2FA (身份验证应用)"
+      ],
+      "Second factor disabled (security key)": [
+        "已禁用 2FA（安全密钥）"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "已开启 2FA（身份验证应用）"
+      ],
+      "Second factor enabled (security key)": [
+        "已启用 2FA（安全密钥）"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "登录被拒绝（因滥用账户）"
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "登录失败（无效助记词）"
+      ],
+      "Sign in failure (second factor failed)": [
+        "登录失败（未通过 2FA）"
+      ],
+      "Sign in failure (wrong password)": [
+        "登录失败 (密码错误)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "登录被禁止（因滥用账户）"
+      ],
+      "Sign in success": [
+        "登录成功"
+      ],
+      "Sign in success (awaiting mnemonic)": [
+        "登录成功（等待助记词）"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "登录成功（等待 2FA）"
+      ],
+      "Sign in success (awaiting verify)": [
+        "登录成功（待验证）"
+      ],
+      "Sign out": [
+        "登出"
+      ],
+      "Two password mode disabled": [
+        "已禁用双密码模式"
+      ],
+      "Two password mode enabled": [
+        "已开启双密码模式"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "启用 ${ reason }"
-      ],
-      "Enable detailed events": [
-        "启用详细活动"
-      ],
-      "Enable security events": [
-        "启用安全事件"
       ]
     },
     "Mail import summary": {
@@ -12659,6 +12863,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "将域名与 ${ BRAND_NAME } 关联即可使用您自己的域名设立邮箱地址（如 you@yourcompany.com）。我们将全程指导您完成设置。"
+      ],
+      "View account-related events across your organization.": [
+        "查看您组织中的账户相关事件。"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免费体验期已结束，账户即将停用。${ action }"
@@ -14823,6 +15030,9 @@
       "Buy now": [
         "立即购买"
       ],
+      "Contact us": [
+        "联系我们"
+      ],
       "Continue": [
         "继续"
       ],
@@ -15749,6 +15959,26 @@
       ],
       "Work": [
         "工作"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "已拦截"
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Device verification": [
+        "设备验证"
+      ],
+      "Ok": [
+        "确定"
+      ],
+      "Ownership verification": [
+        "所有权验证"
+      ],
+      "Unknown": [
+        "未知"
       ]
     },
     "Recovery Email": {
@@ -16936,6 +17166,9 @@
       ]
     },
     "signup: Action": {
+      "Contact us": [
+        "联系我们"
+      ],
       "Request trial": [
         "申请试用"
       ]
@@ -18680,6 +18913,9 @@
       "Activate user": [
         "激活用户"
       ],
+      "Activity monitor": [
+        "活动监视器"
+      ],
       "Add ${ totalServerCount } server?": [
         "添加 ${ totalServerCount } 台服务器？"
       ],
@@ -18827,6 +19063,18 @@
       "Cancel subscription?": [
         "取消订阅?"
       ],
+      "Cannot add Gateway": [
+        "无法添加网关"
+      ],
+      "Cannot add licenses": [
+        "无法添加许可证"
+      ],
+      "Cannot add more users": [
+        "无法添加更多用户"
+      ],
+      "Cannot add servers": [
+        "无法添加服务器"
+      ],
       "Card verification": [
         "银行卡验证"
       ],
@@ -18865,9 +19113,6 @@
       ],
       "Choose user affiliations": [
         "选择用户从属关系"
-      ],
-      "Clear": [
-        "清除"
       ],
       "Click a value in the table to use it as filter": [
         "单击表格中的一个值以将其用作筛选条件。"
@@ -19049,9 +19294,6 @@
       "Delete label?": [
         "删除标签？"
       ],
-      "Delete logs": [
-        "删除日志"
-      ],
       "Delete organization logo?": [
         "是否删除组织徽标？"
       ],
@@ -19081,6 +19323,9 @@
       ],
       "Device name": [
         "设备名称"
+      ],
+      "Disable activity monitor?": [
+        "禁用活动监视器？"
       ],
       "Disable two-factor authentication": [
         "禁用双因素身份验证"
@@ -20012,6 +20257,9 @@
       "What would you like to import?": [
         "您需要导入哪些信息？"
       ],
+      "Wipe all logs?": [
+        "清除所有日志？"
+      ],
       "WireGuard configuration": [
         "WireGuard 配置"
       ],
@@ -20189,12 +20437,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "允许在日历邀请中无缝添加视频会议链接。"
       ],
-      "An approximate location of the IP address": [
-        "IP 地址所处的大致地理位置"
-      ],
-      "Any protection applied to suspicious activity": [
-        "对于可疑操作所采取的所有防护措施"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "根据系统设置自动调整日间或夜间模式。"
       ],
@@ -20216,8 +20458,8 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "垃圾邮件与回收站中的邮件 30 天后自动删除。开启此选项时，现有的无用邮件按其存在于对应文件夹中的时长推算删除时间。"
       ],
-      "Device information such as operating system": [
-        "操作系统等设备信息"
+      "Device name and app version": [
+        "设备名称和应用版本"
       ],
       "Display name for the entity in the eduGAIN database": [
         "实体在 eduGAIN 数据库中的显示名称"
@@ -20236,9 +20478,6 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "启用/禁用“${ labelName }”的桌面和移动通知"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "启用详细事件会记录每个事件的 IP 地址。"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "来自身份供应商的端点（如 https://idp.example.com/sso/saml）"
@@ -20270,9 +20509,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
       ],
-      "IP address (Internet Service Provider)": [
-        "IP 地址（互联网服务提供商）"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "未启用 2FA 的成员将收到一封电子邮件，要求他们尽快启用 2FA。单点登录 (SSO) 用户不会收到电子邮件提醒。"
       ],
@@ -20281,6 +20517,9 @@
       ],
       "Not all information listed here was exposed for all users.": [
         "并非所有用户都能查看此处列出的全部信息。"
+      ],
+      "Origin IP address and Internet Service Provider (ISP)": [
+        "来源 IP 地址和互联网服务提供商 (ISP)"
       ],
       "Remove metadata from images to protect your privacy.": [
         "从图像中移除元数据以保护您的隐私。"
@@ -20320,9 +20559,6 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
-      ],
-      "The Internet Service Provider of the IP address": [
-        "IP 地址所属的运营商"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新的计费周期将从 ${ formattedTime } 开始"
@@ -20377,6 +20613,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "滚动条还原为浏览器预置的样式，通常更宽且更易用"
+      ],
+      "User's approximate location (based on their IP address)": [
+        "用户大致位置（基于 IP 地址）"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "用户在我们的网络应用程序上登录时，看到的将是您的徽标，而不是 ${ BRAND_NAME } 图标。"
@@ -21106,12 +21345,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "删除此号码后，您将无法再重置账户密码。"
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "禁用安全事件监控后，您还将清除所有的历史记录。您确定要禁用吗？"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "过期日期格式不是 MM/YY"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "取消导入后您将无法恢复当前进度，但已导入的内容 ${ BRAND_NAME } 会正常保存。确定要取消吗？"

@@ -1324,9 +1324,6 @@
       "What do I get?": [
         "Що я отримую?"
       ],
-      "Wipe": [
-        "Стерти"
-      ],
       "Yes": [
         "Так"
       ],
@@ -3656,15 +3653,6 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Створюйте стільки міток або тек, скільки вам потрібно щоб зберігати вхідну скриньку охайною."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Увімкніть ${ PROTON_SENTINEL_NAME }, щоб отримати доступ до цих функцій"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Увімкніть детальні події та ${ PROTON_SENTINEL_NAME }, щоб отримати доступ до цих функцій"
-      ],
-      "Enable detailed events to access these features": [
-        "Увімкніть детальні події, щоб отримати доступ до цих функцій"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
@@ -4925,11 +4913,6 @@
         "Нуль ключів повторно активовано"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "Введіть адресу електронної пошти"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Сталася помилка під час читання вашого файлу ${ formattedFilename }. Неправильний формат файлу."
@@ -6060,9 +6043,6 @@
       "Actions": [
         "Дії"
       ],
-      "App version": [
-        "Версія програми"
-      ],
       "Best deal": [
         "Найкраща пропозиція"
       ],
@@ -6105,9 +6085,6 @@
       "Permissions": [
         "Дозволи"
       ],
-      "Protection": [
-        "Захист"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Заощаджуйте на найкращих пропозиціях ${ VPN_APP_NAME }"
       ],
@@ -6128,9 +6105,6 @@
       ],
       "Status": [
         "Стан"
-      ],
-      "Time": [
-        "Час"
       ],
       "User": [
         "Користувач"
@@ -7087,9 +7061,6 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Ви впевнені, що хочете покинути цю групу? Якщо ви вийдете, вам потрібно буде отримати повторне запрошення від адміністратора групи, щоб приєднатися до неї знову."
       ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Ви дійсно хочете остаточно видалити усі ваші журнали?"
-      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Ви впевнені, що хочете забрати права адміністратора у цього користувача?"
       ],
@@ -7564,9 +7535,6 @@
       "Event invitations and responses will be sent in this language.": [
         "Запрошення на заходи та відповіді на них будуть надіслані цією мовою."
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Події включають спроби автентифікації для всіх сервісів ${ BRAND_NAME }, які використовують ваші облікові дані ${ BRAND_NAME_TWO }."
-      ],
       "Example: ${ spfExample }": [
         "Наприклад: ${ spfExample }"
       ],
@@ -7575,9 +7543,6 @@
       ],
       "expires ${ expirationDate }": [
         "чинний до ${ expirationDate }"
-      ],
-      "Failed to fetch logs.": [
-        "Помилка отримання журналів."
       ],
       "Fill in user details": [
         "Заповніть дані користувача"
@@ -8080,9 +8045,6 @@
       "No label selected": [
         "Жодної мітки не вибрано"
       ],
-      "No logs yet.": [
-        "Наразі немає журналів."
-      ],
       "No payment is required at this time.": [
         "Наразі платіж не вимагається."
       ],
@@ -8427,9 +8389,6 @@
       ],
       "SCIM token active": [
         "Токен SCIM активний"
-      ],
-      "Search by an email address to begin": [
-        "Пошук за адресою електронної пошти, щоб почати"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Захистіть свій обліковий запис ${ BRAND_NAME }"
@@ -9264,9 +9223,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Ви можете змінити це один раз щоб переконатися у правильності адреси електронної пошти для підтвердження."
-      ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Ви можете увімкнути журнали автентифікації, щоб бачити, коли до вашого облікового запису отримують доступ і з якої IP-адреси. Ми будемо записувати IP-адресу, з якої здійснюється доступ до облікового запису, час, а також невдалі спроби."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Ви можете увімкнути розділ Фотографії з інтерфейсу за допомогою перемикача нижче."
@@ -10833,9 +10789,6 @@
       "Search": [
         "Пошук"
       ],
-      "Search by email": [
-        "Пошук за електронною поштою"
-      ],
       "Second password": [
         "Другий пароль"
       ],
@@ -11416,12 +11369,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Увімкнути ${ reason }"
-      ],
-      "Enable detailed events": [
-        "Увімкнути детальні події"
-      ],
-      "Enable security events": [
-        "Увімкнути події безпеки"
       ]
     },
     "Mail import summary": {
@@ -17524,9 +17471,6 @@
       "Choose user affiliations": [
         "Виберіть приналежність користувачів"
       ],
-      "Clear": [
-        "Очистити"
-      ],
       "Click a value in the table to use it as filter": [
         "Клацніть на значення в таблиці, щоб використовувати його як фільтр"
       ],
@@ -17688,9 +17632,6 @@
       ],
       "Delete label?": [
         "Видалити мітку?"
-      ],
-      "Delete logs": [
-        "Вилучити записи журналу"
       ],
       "Delete organization logo?": [
         "Видалити логотип організації?"
@@ -18679,12 +18620,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Дозволяє легко додавати посилання на відеоконференції до запрошень календаря."
       ],
-      "An approximate location of the IP address": [
-        "Приблизне розташування IP-адреси"
-      ],
-      "Any protection applied to suspicious activity": [
-        "Будь-який захист, застосований до підозрілої активності"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматичне перемикання між вашими улюбленими темами дня і ночі синхронізовано з денним і нічним режимами вашої системи"
       ],
@@ -18706,9 +18641,6 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Видаляти повідомлення зі спаму через 30 днів. Якщо ввімкнути автоматичне видалення, повідомлення, які вже знаходяться в смітнику/спамі, будуть видалені за датою їх переміщення туди."
       ],
-      "Device information such as operating system": [
-        "Інформація про пристрій, наприклад, операційна система"
-      ],
       "Display name for the entity in the eduGAIN database": [
         "Показувати назву об'єкту в базі даних eduGAIN"
       ],
@@ -18723,9 +18655,6 @@
       ],
       "Enable/disable desktop and mobile notifications": [
         "Увімкнути/вимкнути сповіщення на комп'ютері й мобільному пристрої"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "Увімкнення докладних подій записує IP-адресу для кожного заходу."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-адреса кінцевої точки провайдера ідентифікації (наприклад, https://idp.example.com/sso/saml)"
@@ -18747,9 +18676,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP адреса (інтернет-провайдер)"
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Повідомлення в теці Надіслані або Чернетки й надалі з'являтимуться в тій теці, навіть якщо ви перемістите їх до іншої теки."
@@ -18789,9 +18715,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Інтернет-провайдер цієї IP-адреси"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новий цикл передплати розпочинається з ${ formattedTime }"
@@ -19548,12 +19471,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Видаливши цей номер телефону, ви більше не зможете відновити свій обліковий запис."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Вимкнувши моніторинг подій безпеки, ви також очистите всю історію. Ви впевнені, що хочете це вимкнути?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Дата закінчення терміну придатності не у форматі ММ/РР"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Якщо ви скасуєте це імпортування, ви не зможете його продовжити. ${ BRAND_NAME } зберіг перебіг процесу до вашого облікового запису. Усе одно скасувати?"
