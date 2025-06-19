@@ -1543,9 +1543,6 @@
       "What do I get?": [
         "Què n'obtinc?"
       ],
-      "Wipe": [
-        "Esborra"
-      ],
       "Yes": [
         "Sí"
       ],
@@ -2299,6 +2296,20 @@
       ],
       "Working with sensitive data?": [
         "Treballeu amb dades sensibles?"
+      ]
+    },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "El servidor dedicat ja està assignat a una passarel·la. Podreu comprar-ne més un cop se us acabi la prova gratuïta.",
+        "Tots els servidors dedicats ja estan assignats a passarel·les. Podreu comprar-ne més un cop se us acabi la prova gratuïta."
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "La prova gratuïta inclou el servidor dedicat ${ ipAddresses }. Podreu afegir més servidors un cop comenci la subscripció completa.",
+        "La prova gratuïta inclou els servidors dedicats ${ ipAddresses }. Podreu afegir més servidors un cop comenci la subscripció completa."
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "La prova gratuïta inclou ${ maxMembers } llicència. Podreu afegir més llicències un cop comenci la subscripció completa.",
+        "La prova gratuïta inclou un màxim de ${ maxMembers } llicències. Podreu afegir-ne més un cop comenci la subscripció completa."
       ]
     },
     "breadcrumb": {
@@ -4116,13 +4127,7 @@
         "Sincronitzeu fàcilment els fitxers al núvol des de l'ordinador i accediu-hi des del dispositiu mòbil."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Activa ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Activeu els esdeveniments detallats i ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions."
-      ],
-      "Enable detailed events to access these features": [
-        "Activeu els esdeveniments detallats per accedir a aquestes funcions."
+        "Activeu ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Fomenteu l'ús de l'autenticació de doble factor a la vostra organització per obtenir més seguretat."
@@ -4213,6 +4218,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
+      ],
+      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "L'administrador de la vostra organització hauria d'habilitar els esdeveniments detallats i ${ PROTON_SENTINEL_NAME } per accedir a aquestes característiques."
+      ],
+      "Your organization administrator should enable detailed events in order to access these features": [
+        "L'administrador de la vostra organització hauria d'habilitar els esdeveniments detallats per accedir a aquestes característiques"
       ]
     },
     "description": {
@@ -5241,6 +5252,9 @@
       "Failed to process the logo": [
         "No s'ha pogut processar el logo"
       ],
+      "Failed to update detailed monitoring.": [
+        "No s'ha pogut actualitzar el monitoratge detallat."
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "El fitxer és massa gran. El logo ha de tenir 30 KB o menys."
       ],
@@ -5687,8 +5701,8 @@
       ]
     },
     "error": {
-      "Enter an email address": [
-        "Introduïu una adreça de correu electrònic."
+      "Select users to view their activity": [
+        "Seleccioneu usuaris per veure'n l'activitat"
       ]
     },
     "Error importing calendar": {
@@ -5837,6 +5851,9 @@
     "Error message": {
       "App currently unavailable": [
         "L'aplicació no està disponible actualment."
+      ],
+      "Ask your administrator to enable Account monitor.": [
+        "Demaneu al vostre administrador que habiliti el monitor del compte."
       ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
@@ -6839,9 +6856,6 @@
       "Actions": [
         "Accions"
       ],
-      "App version": [
-        "Versió de l'aplicació"
-      ],
       "Best deal": [
         "Millor oferta"
       ],
@@ -6919,9 +6933,6 @@
       ],
       "Status": [
         "Estat"
-      ],
-      "Time": [
-        "Temps"
       ],
       "User": [
         "Usuari"
@@ -7429,6 +7440,9 @@
       ]
     },
     "Info": {
+      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
+        " - el vostre centre de comandament per fer un seguiment de l'activitat dels usuaris, detectar amenaces i garantir l'acatament a tota la vostra organització."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } usuari ten actualment accés als servidors compartits.",
         "${ amountUsers }/${ totalUsers } usuaris tenen actualment accés als servidors compartits."
@@ -7741,6 +7755,12 @@
       "active": [
         "activa"
       ],
+      "Activity monitor": [
+        "Monitor d'activitats"
+      ],
+      "Activity Monitor": [
+        "Monitor d'activitats"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa «${ MAIL_APP_NAME } me» o «Private message me»."
       ],
@@ -7918,9 +7938,6 @@
       ],
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Segur que voleu abandonar aquest grup? Si marxeu, l'administrador del grup us haurà de convidar de nou per unir-vos-hi."
-      ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Estàs segur que vols eliminar tots els teus registres de forma permanent?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Esteu segur que voleu esborrar els privilegis d'administració d'aquest usuari?"
@@ -8214,6 +8231,9 @@
       "Did you know?": [
         "Ho sabíeu?"
       ],
+      "Disable detailed events": [
+        "Desactiveu els esdeveniments detallats"
+      ],
       "Disable recovery by email address": [
         "Desactiva la recuperació per adreça de correu electrònic"
       ],
@@ -8359,6 +8379,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Activeu la renovació automàtica per mantenir l'accés a les característiques prèmium."
       ],
+      "Enable detailed events": [
+        "Activeu els esdeveniments detallats"
+      ],
       "Enable email notifications": [
         "Activa les notificacions per correu electrònic"
       ],
@@ -8464,9 +8487,6 @@
       "Event invitations and responses will be sent in this language.": [
         "Les invitacions als esdeveniments i les respostes s'enviaran en aquest idioma."
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Els esdeveniments inclouen els intents d'autentificació per a tots els serveis de ${ BRAND_NAME } que empren les vostres credencials de ${ BRAND_NAME_TWO }."
-      ],
       "Example: ${ spfExample }": [
         "Exemple: ${ spfExample }"
       ],
@@ -8529,6 +8549,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "allibereu espai suprimint missatges antics o altres dades"
+      ],
+      "Gain visibility across your organization": [
+        "Guanyeu visibilitat a tota la vostra organització"
       ],
       "Gateways": [
         "Passarel·les"
@@ -8708,6 +8731,9 @@
       "inactive": [
         "inactiva"
       ],
+      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
+        "Incloeu l'adreça IP de l'usuari, la ubicació i l'ISP (proveïdor de serveis d'internet) als registres d'esdeveniments."
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incloent ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
@@ -8871,6 +8897,9 @@
       "Learn more": [
         "Més informació"
       ],
+      "Learn more about Activity Monitor": [
+        "Més informació sobre Activity Monitor"
+      ],
       "Learn more about Gateways": [
         "Més informació sobre les passarel·les"
       ],
@@ -8921,6 +8950,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "S'està carregant el calendari, espereu. Se us redirigirà a la nostra plataforma de planificació Calendly en una pestanya nova."
+      ],
+      "Loading detailed events current status.": [
+        "S'està carregant l'estat actual dels esdeveniments detallats."
       ],
       "Loading eduGAIN data...": [
         "S'estan carregant les dades d'eduGAIN..."
@@ -8976,6 +9008,9 @@
       "Monitor accounts": [
         "Supervisar els comptes"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Monitoreu i auditeu els intents d'autentificació per a tots els serveis de ${ BRAND_NAME } que fan servir les vostres credencials de ${ BRAND_NAME }."
+      ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
       ],
@@ -9002,6 +9037,9 @@
       ],
       "New": [
         "Nova"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Les noves dades d'activitat deixaran de ser recopilades i mostrades."
       ],
       "New user invited to organization": [
         "S'ha convidat el nou usuari a l'organització."
@@ -9422,9 +9460,6 @@
       ],
       "SCIM token active": [
         "Testimoni SCIM actiu"
-      ],
-      "Search by an email address to begin": [
-        "Cerqueu per adreça de correu electrònic per començar."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Protegiu el vostre compte de ${ BRAND_NAME }"
@@ -9867,6 +9902,9 @@
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "Això desenllaçarà el dispositiu **${ name } (creat el ${ date })** del vostre compte ${ BRAND_NAME }."
       ],
+      "This will wipe all logs for your organization members.": [
+        "Això esborrarà tots els registres dels membres de la vostra organització."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Aquest assistent activarà l'autenticació de doble factor (2FA) al vostre compte de ${ BRAND_NAME }. L’autenticació de doble factor farà que el compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
       ],
@@ -10263,6 +10301,9 @@
       "Why?": [
         "Per què?"
       ],
+      "With a Business or Enterprise plan, unlock": [
+        "Amb un pla Business o Enterprise, desbloquegeu"
+      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Amb un pla Business o Enterprise, podeu comprar ${ boldDedicatedServers } per a la vostra organització i configurar ${ boldGateways } per a controlar quins usuaris poden accedir-hi."
       ],
@@ -10347,9 +10388,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Podeu editar-ho una vegada per a assegurar-vos que l'adreça de correu electrònic utilitzada per a la verificació és correcta."
-      ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Podeu activar els registres d'autenticació per veure quan s'accedeix al vostre compte i des de quina IP. Enregistrarem l'adreça IP que accedeix al compte, l'hora i els intents que no han funcionat."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Podeu activar la secció Fotos des de la interfície utilitzant el commutador següent."
@@ -10511,6 +10549,9 @@
         "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreça del Gmail. Per afegir-ne una altra, primer desactiveu-ne una.",
         "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreces del Gmail. Per afegir-ne una altra, primer desactiveu-ne una."
       ],
+      "You've reached the limit of 50 users for this filter. Remove one to add another.": [
+        "Heu arribat al límit de 50 usuaris per a aquest filtre. Esborreu-ne un per afegir-ne un altre."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "S'ha aplicat el vostre ${ boldDiscountPercent } a ${ boldPlanTitle }."
       ],
@@ -10564,6 +10605,10 @@
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "La prova gratuïta inclou el servidor dedicat ${ ownedCount }.",
+        "La prova gratuïta inclou els servidors dedicats ${ ownedCount }."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "La prova gratuïta s'ha convertit correctament en una subscripció de ${ cycle } mesos. La data de renovació és ${ nextBillingDate }."
@@ -12067,8 +12112,8 @@
       "Search": [
         "Cerca"
       ],
-      "Search by email": [
-        "Cerca per correu electrònic"
+      "Search for a name or email": [
+        "Cerqueu per nom o correu electrònic"
       ],
       "Second password": [
         "Segona contrasenya"
@@ -12745,15 +12790,77 @@
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
       ]
     },
+    "Log event": {
+      "Account password change": [
+        "Canvi de contrasenya de compte"
+      ],
+      "Authentication failure (second factor failed)": [
+        "Autenticació incorrecta (error amb el segon factor)"
+      ],
+      "Authentication failure (wrong password)": [
+        "Error d'autenticació (contrasenya incorrecta)"
+      ],
+      "Authentication success": [
+        "Autenticació correcta"
+      ],
+      "Mailbox password change": [
+        "Canvi de contrasenya de la bústia de correu"
+      ],
+      "Password reset": [
+        "Restabliment de contrasenya"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "S'ha desactivat el segon factor (aplicació d'autenticació)."
+      ],
+      "Second factor disabled (security key)": [
+        "S'ha desactivat el segon factor (clau de seguretat)."
+      ],
+      "Second factor enabled (authenticator app)": [
+        "S'ha activat el segon factor (aplicació d'autenticació)."
+      ],
+      "Second factor enabled (security key)": [
+        "S'ha activat el segon factor (clau de seguretat)."
+      ],
+      "Sign in blocked (due to abuse)": [
+        "S'ha bloquejat l'inici de sessió (a causa d'un abús)."
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "Error d'inici de sessió (ha fallat la frase de recuperació)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "Error d'inici de sessió (error amb el doble factor)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Error d'inici de sessió (contrasenya incorrecta)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Inici de sessió prohibit (a causa d'un abús)"
+      ],
+      "Sign in success": [
+        "S'ha iniciat la sessió."
+      ],
+      "Sign in success (awaiting mnemonic)": [
+        "Inici de sessió correcte (esperant la frase de recuperació)"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Inici de sessió correcte (a l'espera del segon factor)"
+      ],
+      "Sign in success (awaiting verify)": [
+        "Inici de sessió correcte (esperant la verificació)"
+      ],
+      "Sign out": [
+        "Tanqueu la sessió"
+      ],
+      "Two password mode disabled": [
+        "S'ha desactivat el mode de dues contrasenyes."
+      ],
+      "Two password mode enabled": [
+        "S'ha activat el mode de dues contrasenyes."
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Activa ${ reason }"
-      ],
-      "Enable detailed events": [
-        "Activa els esdeveniments detallats"
-      ],
-      "Enable security events": [
-        "Activa els esdeveniments de seguretat"
       ]
     },
     "Mail import summary": {
@@ -12924,6 +13031,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Connecteu el vostre domini personalitzat a ${ BRAND_NAME } per a configurar adreces de correu electrònic personalitzades (p. ex., vos@lavostraempresa.com). El nostre assistent us guiarà a través del procés."
+      ],
+      "View account-related events across your organization.": [
+        "Consulteu els esdeveniments relacionats amb el compte a tota la vostra organització."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
@@ -16065,6 +16175,26 @@
         "Feina"
       ]
     },
+    "Protection type": {
+      "Blocked": [
+        "Bloquejat"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Device verification": [
+        "Verificació del dispositiu"
+      ],
+      "Ok": [
+        "D'acord"
+      ],
+      "Ownership verification": [
+        "Verificació de la propietat"
+      ],
+      "Unknown": [
+        "Desconegut"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Tornar a ${ signIn }."
@@ -19064,6 +19194,9 @@
       "Activate user": [
         "Activa l'usuari"
       ],
+      "Activity monitor": [
+        "Monitor d'activitats"
+      ],
       "Add ${ totalServerCount } server?": [
         "Voleu afegir ${ totalServerCount } servidor?",
         "Voleu afegir ${ totalServerCount } servidors?"
@@ -19212,6 +19345,18 @@
       "Cancel subscription?": [
         "Voleu cancel·lar la subscripció?"
       ],
+      "Cannot add Gateway": [
+        "No es pot afegir una passarel·la."
+      ],
+      "Cannot add licenses": [
+        "No es poden afegir llicències."
+      ],
+      "Cannot add more users": [
+        "No es poden afegir més usuaris."
+      ],
+      "Cannot add servers": [
+        "No es poden afegir servidors."
+      ],
       "Card verification": [
         "Verificació de la targeta"
       ],
@@ -19250,9 +19395,6 @@
       ],
       "Choose user affiliations": [
         "Trieu les afiliacions de l'usuari"
-      ],
-      "Clear": [
-        "Neteja"
       ],
       "Click a value in the table to use it as filter": [
         "Feu clic a un valor de la taula per utilitzar-lo com a filtre."
@@ -19435,9 +19577,6 @@
       "Delete label?": [
         "Voleu eliminar l'etiqueta?"
       ],
-      "Delete logs": [
-        "Eliminar registres"
-      ],
       "Delete organization logo?": [
         "Voleu eliminar el logo de l'organització?"
       ],
@@ -19468,6 +19607,9 @@
       ],
       "Device name": [
         "Nom del dispositiu"
+      ],
+      "Disable activity monitor?": [
+        "Voleu desactivar el monitor d'activitats?"
       ],
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
@@ -20273,6 +20415,9 @@
       "Theme": [
         "Tema"
       ],
+      "There are no events for your account": [
+        "No hi ha esdeveniments per al vostre compte"
+      ],
       "There are no groups": [
         "No hi ha grups."
       ],
@@ -20375,6 +20520,9 @@
       "Video conferencing": [
         "Videoconferència"
       ],
+      "View organization events by upgrading to Business": [
+        "Veureu els esdeveniments de l'organització tot millorant al pla Business"
+      ],
       "VPN apps": [
         "Aplicacions VPN"
       ],
@@ -20401,6 +20549,9 @@
       ],
       "What would you like to import?": [
         "Què li agradaria importar?"
+      ],
+      "Wipe all logs?": [
+        "Voleu esborrar tots els registres?"
       ],
       "WireGuard configuration": [
         "Configuració del WireGuard"
@@ -20608,7 +20759,10 @@
         "Elimina els missatges de la paperera i el correu brossa després de 30 dies. Activant l'eliminació automàtica es dona als missatges que ja estan a la paperera o al correu brossa una data d'eliminació basada en la data en què s'hi han mogut."
       ],
       "Device information such as operating system": [
-        "Informació del dispositiu com ara el sistema operatiu"
+        "Informació de dispositius com ara el sistema operatiu"
+      ],
+      "Device name and app version": [
+        "Nom del dispositiu i versió de l'aplicació"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Nom per a mostrar de l'entitat a la base de dades d'eduGAIN"
@@ -20627,9 +20781,6 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Activa/desactiva les notificacions a l'escriptori i al mòbil per a «${ labelName }»"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "En activar els esdeveniments detallats, es registrarà l'adreça IP per a cada esdeveniment."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.cat/sso/saml)"
@@ -20661,9 +20812,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
       ],
-      "IP address (Internet Service Provider)": [
-        "Adreça IP (proveïdor de serveis d'Internet)"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Els membres que no utilitzin l'autenticació 2FA rebran un correu-e demanant que ho habilitin com més aviat millor. Això exclou als usuaris amb inici d'un sol cop."
       ],
@@ -20672,6 +20820,9 @@
       ],
       "Not all information listed here was exposed for all users.": [
         "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
+      ],
+      "Origin IP address and Internet Service Provider (ISP)": [
+        "Adreça IP d'origen i proveïdor de serveis d'internet (ISP)"
       ],
       "Remove metadata from images to protect your privacy.": [
         "Elimineu les metadades de les imatges per protegir la vostra privadesa."
@@ -20768,6 +20919,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Utilitzeu les barres de desplaçament predeterminades del navegador. Normalment són més grans i més fàcils d'utilitzar"
+      ],
+      "User's approximate location (based on their IP address)": [
+        "Ubicació aproximada d'usuari (basada en la vostra adreça IP)"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Els usuaris veuran el vostre logo en comptes de la icona de ${ BRAND_NAME } quan iniciïn la sessió a les nostres aplicacions web."
@@ -21519,12 +21673,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Si suprimiu aquest número de telèfon, ja no podreu recuperar el vostre compte."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "En desactivar la supervisió d'esdeveniments de seguretat, també esborrareu tot l'historial. Segur que voleu desactivar-la?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "La data de caducitat no té el format MM/AA"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Si cancel·leu aquesta importació, no la podreu reprendre. ${ BRAND_NAME } ha desat tot el progrés al vostre compte. Voleu cancel·lar-la de totes maneres?"

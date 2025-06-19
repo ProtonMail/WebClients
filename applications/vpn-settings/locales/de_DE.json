@@ -591,6 +591,9 @@
       "refresh the page": [
         "aktualisiere die Seite"
       ],
+      "Reload": [
+        "Neu laden"
+      ],
       "Remove": [
         "Entfernen"
       ],
@@ -1228,6 +1231,19 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ BRAND_NAME } Scribe dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "on ${ formattedDate }": [
+        "am ${ formattedDate }"
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Fälliger Betrag nach der Testphase"
+      ],
+      "Amount due now": [
+        "Jetzt fälliger Betrag"
       ]
     },
     "Badge for domain": {
@@ -3455,11 +3471,6 @@
         "Eine Postleitzahl ist erforderlich"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "E-Mail-Adresse eingeben"
-      ]
-    },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
         "Beim Lesen der Datei ${ formattedFilename } ist ein Fehler aufgetreten. Ungültiges Dateiformat."
@@ -4102,9 +4113,6 @@
       ]
     },
     "Header": {
-      "App version": [
-        "App-Version"
-      ],
       "Best deal": [
         "Bestes Angebot"
       ],
@@ -4143,9 +4151,6 @@
       ],
       "Payment details": [
         "Zahlungsdetails"
-      ],
-      "Protection": [
-        "Schutz"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Spare mit den besten ${ VPN_APP_NAME }-Angeboten"
@@ -5492,9 +5497,6 @@
       ],
       "SCIM token active": [
         "SCIM-Token aktiv"
-      ],
-      "Search by an email address to begin": [
-        "Suche nach einer E-Mail Adresse um zu beginnen"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Schütze dein ${ BRAND_NAME }-Konto"
@@ -6913,9 +6915,6 @@
       ],
       "Search": [
         "Suche"
-      ],
-      "Search by email": [
-        "Suche per E-Mail-Adresse"
       ],
       "Second password": [
         "Zusätzliches Passwort"
@@ -12278,12 +12277,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Ermöglicht das nahtlose Hinzufügen von Links zu Videokonferenzen zu deinen Kalendereinladungen."
       ],
-      "An approximate location of the IP address": [
-        "Eine ungefähre Lage der IP-Adresse."
-      ],
-      "Any protection applied to suspicious activity": [
-        "Jeder angewendeter Schutz vor verdächtigen Aktivitäten"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."
       ],
@@ -12292,9 +12285,6 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
-      ],
-      "Device information such as operating system": [
-        "Geräteinformationen wie das Betriebssystem"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Anzeigename für die Entität in der eduGAIN-Datenbank"
@@ -12319,9 +12309,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn Sie einen Geschenkgutschein erworben oder von unserem Support-Team erhalten haben, können Sie ihn hier eingeben."
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP-Adresse (Internetdienstanbieter)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail, in der sie aufgefordert werden, diese so bald wie möglich zu aktivieren. Single Sign-On-Benutzer, erhalten diese Aufforderung nicht."

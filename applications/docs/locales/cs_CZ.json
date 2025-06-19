@@ -93,9 +93,6 @@
       "Apply": [
         "Použít"
       ],
-      "Ask me next time": [
-        "Zeptat se příště"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
         "Na jednu skupinu kontaktů jsou povoleny maximálně ${ maxContacts } kontakty",
@@ -690,9 +687,6 @@
       "Save changes": [
         "Uložit změny"
       ],
-      "Save preferences": [
-        "Uložit předvolby"
-      ],
       "Search": [
         "Vyhledat"
       ],
@@ -879,6 +873,12 @@
       "View": [
         "Zobrazit"
       ],
+      "View ${ pendingCount } invitation": [
+        "Zobrazit ${ pendingCount } pozvánku",
+        "Zobrazit ${ pendingCount } poznámky",
+        "Zobrazit všech ${ pendingCount } pozvánek",
+        "Zobrazit všech ${ pendingCount } pozvánek"
+      ],
       "View all reports": [
         "Zobrazit všechny zprávy"
       ],
@@ -968,6 +968,140 @@
       ],
       "By leaving now, some events may not be imported": [
         "Pokud teď odejdete, některé události nebudou importovány"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB prostoru"
+      ],
+      "200 GB storage": [
+        "200 GB prostoru"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB šifrovaného úložiště"
+      ],
+      "Add unlimited credit cards": [
+        "Přidejte neomezený počet platebních karet"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Všechny prémiové funkce ${ BRAND_NAME } Mail, Pass, VPN, Drive a Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokování reklam, sledovacích prvků a malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Slevy jsou založeny na standardních měsíčních cenách. Na konci fakturačního cyklu se vaše předplatné obnoví za standardní roční sazbu."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Zdvojnásobte své šifrované úložiště – získejte 1 TB pro všechna svá data"
+      ],
+      "Encrypted password manager": [
+        "Šifrovaný správce hesel"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Zde je exkluzivní dárek na oslavu naší společné cesty."
+      ],
+      "High speed streaming with VPN": [
+        "Vysokorychlostní streamování pomocí VPN"
+      ],
+      "of privacy": [
+        "soukromí"
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online soukromí až pro 2 osoby"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online soukromí pro celou rodinu (až 6 uživatelů)"
+      ],
+      "Protect up to 10 devices": [
+        "Chraňte až 10 zařízení"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Drive."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Mail."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Pass."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích VPN."
+      ],
+      "Save time with built-in 2FA": [
+        "Úspora času díky integrovanému 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Zabezpečený e-mail s neomezeným počtem aliasů"
+      ],
+      "Select any server": [
+        "Vyberte libovolný server"
+      ],
+      "Share passwords easily": [
+        "Snadné sdílení hesel"
+      ],
+      "Short @pm.me address": [
+        "Zkrácená adresa @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Streamujte svůj oblíbený obsah"
+      ],
+      "thanks to you": [
+        "díky vám"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Ztrojnásobte své šifrované úložiště – získejte 3 TB pro všechna svá data"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Use your own email domain": [
+        "Použijte svou vlastní e-mailovou doménu"
+      ],
+      "years": [
+        "let"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Výroční nabídka"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "/ month": [
+        "/ měsíc"
+      ],
+      "12 months": [
+        "12 měsíců"
+      ],
+      "15 months": [
+        "15 měsíců"
+      ],
+      "24 months": [
+        "24 měsíců"
+      ],
+      "30 months": [
+        "30 měsíců"
+      ],
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -4398,9 +4532,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt byl odebrán ze skupiny ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Převádění dokumentu..."
-      ],
       "Copy the link to clipboard": [
         "Kopírovat odkaz do schránky"
       ],
@@ -4448,9 +4579,6 @@
       ],
       "Creating link to folder": [
         "Vytváření odkazu na složku"
-      ],
-      "Creating new document...": [
-        "Vytváření nového dokumentu..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
@@ -4569,9 +4697,6 @@
       "Enter your own password (as organization admin).": [
         "Zadejte vlastní heslo (jako správce organizace)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Chyba při převodu dokumentu: ${ errorMessage }"
-      ],
       "Error Syncing": [
         "Chyba při synchronizaci"
       ],
@@ -4631,12 +4756,6 @@
       ],
       "Geoblocking": [
         "Zeměpisné blokování"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Získejte e-mailem upozornění na nové komentáře a návrhy přidané k vašim dokumentům."
-      ],
-      "Get Notified About Comments": [
-        "Buďte upozorněni na komentáře"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Jít do ${ DRIVE_APP_NAME }"
@@ -4788,9 +4907,6 @@
       "Low Priority": [
         "Nízká priorita"
       ],
-      "Making a copy...": [
-        "Vytváření kopie..."
-      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -4832,9 +4948,6 @@
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "V adrese URL nebyl zadán žádný dokument. Vraťte se do ${ DRIVE_APP_NAME } a vyberte dokument."
       ],
       "No email address": [
         "Žádná e-mailová adresa"
@@ -5183,9 +5296,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Zadaná URL adresa byla zřejmě nesprávně zkopírována ze služby Slack. Při kopírování dlouhých odkazů ze služby Slack klikněte na odkaz pravým tlačítkem myši a vyberte možnost \"Kopírovat odkaz\", místo přímého kopírování zkráceného textu URL adresy."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces ověření otevře novou kartu prohlížeče. Vypněte prosím blokování vyskakovacích oken."
@@ -5926,9 +6036,6 @@
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
       ],
-      "Enable email notifications": [
-        "Povolit e-mailová upozornění"
-      ],
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
@@ -5985,9 +6092,6 @@
       ],
       "Import to:": [
         "Importovat do:"
-      ],
-      "Include document name in notification": [
-        "Zahrnout název dokumentu do upozornění"
       ],
       "Include message and file name in invite email": [
         "Zahrnout zprávu a název souboru v e-mailu s pozvánkou"
@@ -8966,9 +9070,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Vytváření nové tabulky…"
-      ],
       "Detect automatically": [
         "Zjistit automaticky"
       ],
@@ -10387,9 +10488,6 @@
       "Untitled document ${ date }": [
         "Dokument bez názvu ${ date }"
       ],
-      "Untitled spreadsheet ${ date }": [
-        "Tabulka bez názvu ${ date }"
-      ],
       "Upgrade complete!": [
         "Navýšení dokončeno!"
       ],
@@ -10755,9 +10853,6 @@
       ],
       "Contacts could not be merged": [
         "Kontakty nebylo možné sloučit"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Datum konce platnosti není ve formátu MM/RR"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Jestliže si nepamatujete heslo, není možné znovu aktivovat váš klíč. Můžeme zrušit výstražnou zprávu, ale tím trvale ztratíte přístup ke všem datům šifrovaným tímto klíčem."

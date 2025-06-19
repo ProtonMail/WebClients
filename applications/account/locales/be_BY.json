@@ -1543,9 +1543,6 @@
       "What do I get?": [
         "Што я атрымаю?"
       ],
-      "Wipe": [
-        "Сцерці"
-      ],
       "Yes": [
         "Так"
       ],
@@ -2317,6 +2314,26 @@
       ],
       "Working with sensitive data?": [
         "Працуеце з канфідэнцыяльнымі данымі?"
+      ]
+    },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "Ваш вылучаны сервер ужо прызначаны шлюзу. У вас будзе магчымасць купіць больш сервераў, як толькі завершыцца ваш бясплатны пробны перыяд.",
+        "Усе вашы вылучаныя серверы ўжо прызначаны шлюзам. У вас будзе магчымасць купіць больш сервераў, як толькі завершыцца ваш бясплатны пробны перыяд.",
+        "Усе вашы вылучаныя серверы ўжо прызначаны шлюзам. У вас будзе магчымасць купіць больш сервераў, як толькі завершыцца ваш бясплатны пробны перыяд.",
+        "Усе вашы вылучаныя серверы ўжо прызначаны шлюзам. У вас будзе магчымасць купіць больш сервераў, як толькі завершыцца ваш бясплатны пробны перыяд."
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "Ваш бясплатны пробны перыяд уключае ${ ipAddresses } вылучаны сервер. Вы можаце дадаць больш сервераў, як толькі пачне дзейнічаць ваша поўная падпіска.",
+        "Ваш бясплатны пробны перыяд уключае ${ ipAddresses } вылучаныя серверы. Вы можаце дадаць больш сервераў, як толькі пачне дзейнічаць ваша поўная падпіска.",
+        "Ваш бясплатны пробны перыяд уключае ${ ipAddresses } вылучаных сервераў. Вы можаце дадаць больш сервераў, як толькі пачне дзейнічаць ваша поўная падпіска.",
+        "Ваш бясплатны пробны перыяд уключае ${ ipAddresses } вылучаны сервер. Вы можаце дадаць больш сервераў, як толькі пачне дзейнічаць ваша поўная падпіска."
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "Ваш бясплатны пробны перыяд уключае ${ maxMembers } ліцэнзію. Вы можаце дадаць больш ліцэнзій, як толькі пачне дзейнічаць ваша поўная падпіска.",
+        "Ваш бясплатны пробны перыяд уключае максімум ${ maxMembers } ліцэнзіі. Вы можаце дадаць больш ліцэнзій, як толькі пачне дзейнічаць ваша поўная падпіска.",
+        "Ваш бясплатны пробны перыяд уключае максімум ${ maxMembers } ліцэнзій. Вы можаце дадаць больш ліцэнзій, як толькі пачне дзейнічаць ваша поўная падпіска.",
+        "Ваш бясплатны пробны перыяд уключае максімум ${ maxMembers } ліцэнзій. Вы можаце дадаць больш ліцэнзій, як толькі пачне дзейнічаць ваша поўная падпіска."
       ]
     },
     "breadcrumb": {
@@ -4154,12 +4171,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Уключыце ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
       ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Уключыць падрабязныя падзеі і ${ PROTON_SENTINEL_NAME } для доступу да гэтых функцый"
-      ],
-      "Enable detailed events to access these features": [
-        "Уключыць падрабязныя падзеі для доступу да гэтых функцый"
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Заахвочвайце выкарыстанне двухфактарнай аўтэнтыфікацыі ў сваёй арганізацыі для дадатковай бяспекі."
       ],
@@ -4249,6 +4260,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
+      ],
+      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Адміністратар вашай арганізацыі павінен уключыць падрабязныя падзеі і ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
+      ],
+      "Your organization administrator should enable detailed events in order to access these features": [
+        "Адміністратар вашай арганізацыі павінен уключыць падрабязныя падзеі, каб атрымаць доступ да гэтых функцый"
       ]
     },
     "description": {
@@ -5281,6 +5298,9 @@
       "Failed to process the logo": [
         "Не ўдалося апрацаваць лагатып"
       ],
+      "Failed to update detailed monitoring.": [
+        "Не ўдалося абнавіць падрабязны маніторынг."
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Занадта вялікі файл. Ваш лагатып павінен быць 30 КБ або менш."
       ],
@@ -5733,8 +5753,8 @@
       ]
     },
     "error": {
-      "Enter an email address": [
-        "Увядзіце адрас электроннай пошты"
+      "Select users to view their activity": [
+        "Выбраць карыстальнікаў, каб паглядзець іх актыўнасць"
       ]
     },
     "Error importing calendar": {
@@ -5885,6 +5905,9 @@
     "Error message": {
       "App currently unavailable": [
         "Праграма часова недаступна"
+      ],
+      "Ask your administrator to enable Account monitor.": [
+        "Папрасіце свайго адміністратара ўключыць манітор уліковага запісу."
       ],
       "Error: ${ errorMessage }": [
         "Памылка: ${ errorMessage }"
@@ -6917,9 +6940,6 @@
       "Actions": [
         "Дзеянні"
       ],
-      "App version": [
-        "Версія праграмы"
-      ],
       "Best deal": [
         "Лепшая прапанова"
       ],
@@ -6997,9 +7017,6 @@
       ],
       "Status": [
         "Статус"
-      ],
-      "Time": [
-        "Час"
       ],
       "User": [
         "Карыстальнік"
@@ -7523,6 +7540,9 @@
       ]
     },
     "Info": {
+      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
+        " - ваш камандны цэнтр для адсочвання актыўнасці карыстальнікаў, выяўлення пагроз і забеспячэння адпаведнасці ў вашай арганізацыі."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers } карыстальнік з ${ totalUsers } у цяперашні час мае доступ да абагуленых сервераў.",
         "${ amountUsers } карыстальнікі з ${ totalUsers } у цяперашні час маюць доступ да абагуленых сервераў.",
@@ -7889,6 +7909,12 @@
       "active": [
         "актыўна"
       ],
+      "Activity monitor": [
+        "Манітор актыўнасці"
+      ],
+      "Activity Monitor": [
+        "Манітор актыўнасці"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Дадайце да вашага ўліковага запісу адрас электроннай пошты @pm.me. Гэта просты і кароткі дамен, які азначае \"${ MAIL_APP_NAME } me\" або \"Private Message me.\""
       ],
@@ -8080,9 +8106,6 @@
       ],
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Вы сапраўды хочаце выйсці з групы? Вам неабходна будзе паўторна атрымаць запрашэнне адміністратара групы, калі вы выйдзеце з яе, а потым перадумаеце і захочаце вярнуцца."
-      ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Вы сапраўды хочаце незваротна выдаліць усе вашы журналы?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы сапраўды хочаце пазбавіць гэтага карыстальніка правоў адміністратара?"
@@ -8384,6 +8407,9 @@
       "Did you know?": [
         "Ці ведалі вы што?"
       ],
+      "Disable detailed events": [
+        "Адключыць падрабязныя падзеі"
+      ],
       "Disable recovery by email address": [
         "Адключыць аднаўленне доступу па адрасе электроннай пошты"
       ],
@@ -8531,6 +8557,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Уключыце аўтаматычнае падаўжэнне для захавання доступу да вашых прэміяльных функцый."
       ],
+      "Enable detailed events": [
+        "Уключыць падрабязныя падзеі"
+      ],
       "Enable email notifications": [
         "Уключыць апавяшчэнні па электроннай пошце"
       ],
@@ -8636,9 +8665,6 @@
       "Event invitations and responses will be sent in this language.": [
         "Запрашэнні на падзею і адказы будуць адпраўляцца на гэтай мове."
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "У падзеях пералічаны спробы аўтарызацыі ва ўсіх сэрвісах ${ BRAND_NAME }, якія выкарыстоўваюць вашы ўліковыя даныя ${ BRAND_NAME_TWO }."
-      ],
       "Example: ${ spfExample }": [
         "Прыклад: ${ spfExample }"
       ],
@@ -8701,6 +8727,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "вызваліць месца шляхам выдалення старых паведамленняў або іншых даных"
+      ],
+      "Gain visibility across your organization": [
+        "Станьце больш заўважным у сваёй арганізацыі"
       ],
       "Gateways": [
         "Шлюзы"
@@ -8882,6 +8911,9 @@
       "inactive": [
         "неактыўна"
       ],
+      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
+        "Уключыць IP-адрас карыстальніка, месцазнаходжанне і ISP (пастаўшчыка паслуг інтэрнэту) у журналы падзей"
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Уключае ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
@@ -9047,6 +9079,9 @@
       "Learn more": [
         "Даведацца больш"
       ],
+      "Learn more about Activity Monitor": [
+        "Даведацца больш аб маніторы актыўнасці"
+      ],
       "Learn more about Gateways": [
         "Даведацца больш аб шлюзах"
       ],
@@ -9097,6 +9132,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
+      ],
+      "Loading detailed events current status.": [
+        "Бягучы статус загрузкі падрабязных падзей."
       ],
       "Loading eduGAIN data...": [
         "Загрузка даных eduGAIN..."
@@ -9152,6 +9190,9 @@
       "Monitor accounts": [
         "Назіранне за ўліковымі запісамі"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Маніторынг і аўдыт спроб аўтэнтыфікацыі для ўсіх сэрвісаў ${ BRAND_NAME }, якія выкарыстоўваюць вашы ўліковыя даныя ${ BRAND_NAME }."
+      ],
       "Monthly ${ onDayString }": [
         "Штомесяц ${ onDayString }"
       ],
@@ -9178,6 +9219,9 @@
       ],
       "New": [
         "Новае"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Новыя даныя актыўнасці больш не будуць збірацца і паказвацца."
       ],
       "New user invited to organization": [
         "Новы карыстальнік запрошаны ў арганізацыю"
@@ -9610,9 +9654,6 @@
       ],
       "SCIM token active": [
         "Токен SCIM актыўны"
-      ],
-      "Search by an email address to begin": [
-        "Пачніце пошук па адрасе электроннай пошты"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Абараніце свой уліковы запіс ${ BRAND_NAME }"
@@ -10067,6 +10108,9 @@
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "Гэта прывядзе да адвязкі прылады з назвай **${ name } (створана ${ date })** ад вашага ўліковага запісу ${ BRAND_NAME }"
       ],
+      "This will wipe all logs for your organization members.": [
+        "Гэта прывядзе да сцірання ўсіх журналаў для ўдзельнікаў вашай арганізацыі."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Гэты майстар дапаможа ўключыць двухфактарную аўтэнтыфікацыю (2ФА) для вашага ўліковага запісу ${ BRAND_NAME }. Мы рэкамендуем уключыць яе для таго, каб павялічыць бяспеку вашага ўліковага запісу ${ BRAND_NAME_TWO }."
       ],
@@ -10463,6 +10507,9 @@
       "Why?": [
         "Чаму?"
       ],
+      "With a Business or Enterprise plan, unlock": [
+        "З тарыфным планам Business або Enterprise у вас будзе магчымасць"
+      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "З тарыфнымі планамі Business або Enterprise, вы можаце купіць ${ boldDedicatedServers } для вашай арганізацыі і наладзіць ${ boldGateways } правы доступу карыстальнікаў да яго."
       ],
@@ -10555,9 +10602,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можаце адрэдагаваць адрас адзін раз, каб пераканацца ў правільнасці адраса электроннай пошты для праверкі."
-      ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Вы можаце ўключыць журналы аўтэнтыфікацыі, каб бачыць у які час і з якога IP-адраса ажыццяўляўся доступ да ўліковага запісу. Мы будзем запісваць IP-адрасы, якія мелі доступ да ўліковага запісу, а таксама час наведвання і няўдалыя спробы ўваходу."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Вы можаце ўключыць раздзел Фатаграфіі ў інтэрфейсе з дапамогай пераключальніка, які размяшчаецца ніжэй."
@@ -10733,6 +10777,9 @@
         "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін.",
         "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін."
       ],
+      "You've reached the limit of 50 users for this filter. Remove one to add another.": [
+        "Дасягнута абмежаванне ў 50 карыстальнікаў для гэтага фільтра. Выдаліце якую-небудзь пазіцыю, каб дадаць іншую."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Ваша ${ boldDiscountPercent } на ${ boldPlanTitle } была ўжыта"
       ],
@@ -10786,6 +10833,12 @@
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Ваш бясплатны пробны перыяд уключае ${ ownedCount } вылучаны сервер.",
+        "Ваш бясплатны пробны перыяд уключае ${ ownedCount } вылучаныя серверы.",
+        "Ваш бясплатны пробны перыяд уключае ${ ownedCount } вылучаных сервераў.",
+        "Ваш бясплатны пробны перыяд уключае ${ ownedCount } вылучаных сервераў."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Ваша дата падаўжэння: ${ nextBillingDate }."
@@ -12307,8 +12360,8 @@
       "Search": [
         "Пошук"
       ],
-      "Search by email": [
-        "Пошук па электроннай пошце"
+      "Search for a name or email": [
+        "Шукаць імя або электронную пошту"
       ],
       "Second password": [
         "Другі пароль"
@@ -12989,15 +13042,77 @@
         "Ваша падпіска завяршылася. ${ cta } і пазбегнуць страты даных."
       ]
     },
+    "Log event": {
+      "Account password change": [
+        "Змена пароля ўліковага запісу"
+      ],
+      "Authentication failure (second factor failed)": [
+        "Збой аўтэнтыфікацыі (другі фактар ​​не пройдзены)"
+      ],
+      "Authentication failure (wrong password)": [
+        "Збой аўтэнтыфікацыі (няправільны пароль)"
+      ],
+      "Authentication success": [
+        "Паспяховая аўтэнтыфікацыя"
+      ],
+      "Mailbox password change": [
+        "Змена пароля паштовай скрыні"
+      ],
+      "Password reset": [
+        "Скіданне пароля"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "Другі фактар ​​адключаны (праграма для аўтэнтыфікацыі)"
+      ],
+      "Second factor disabled (security key)": [
+        "Другі фактар ​​адключаны (ключ бяспекі)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "Другі фактар ​​уключаны (праграма для аўтэнтыфікацыі)"
+      ],
+      "Second factor enabled (security key)": [
+        "Другі фактар уключаны (ключ бяспекі)"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "Уваход заблакіраваны (прычына: парушэнне)"
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "Збой уваходу (Seed-фраза ​​не пройдзена)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "Збой уваходу (другі фактар ​​не пройдзены)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Збой уваходу (няправільны пароль)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Уваход забаронены (прычына: парушэнне)"
+      ],
+      "Sign in success": [
+        "Паспяховы ўваход"
+      ],
+      "Sign in success (awaiting mnemonic)": [
+        "Паспяховы ўваход (чаканне Seed-фразы)"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Паспяховы ўваход (чаканне другога фактару)"
+      ],
+      "Sign in success (awaiting verify)": [
+        "Паспяховы ўваход (чаканне праверкі)"
+      ],
+      "Sign out": [
+        "Выхад з уліковага запісу"
+      ],
+      "Two password mode disabled": [
+        "Рэжым двух пароляў адключаны"
+      ],
+      "Two password mode enabled": [
+        "Рэжым двух пароляў уключаны"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Уключыць ${ reason }"
-      ],
-      "Enable detailed events": [
-        "Уключыць падрабязныя падзеі"
-      ],
-      "Enable security events": [
-        "Уключыць падзеі бяспекі"
       ]
     },
     "Mail import summary": {
@@ -13180,6 +13295,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashacampaniya.by). Наш майстар дапаможа вам з працэсам наладжвання."
+      ],
+      "View account-related events across your organization.": [
+        "Паглядзець падзеі, якія звязаны з уліковым запісам ва ўсё арганізацыі."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
@@ -16413,6 +16531,26 @@
         "Працоўны"
       ]
     },
+    "Protection type": {
+      "Blocked": [
+        "Заблакіраваныя"
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Device verification": [
+        "Праверка прылады"
+      ],
+      "Ok": [
+        "OK"
+      ],
+      "Ownership verification": [
+        "Праверка ўладальніка"
+      ],
+      "Unknown": [
+        "Невядома"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Вярнуцца да ${ signIn }."
@@ -19531,6 +19669,9 @@
       "Activate user": [
         "Актываваць карыстальніка"
       ],
+      "Activity monitor": [
+        "Манітор актыўнасці"
+      ],
       "Add ${ totalServerCount } server?": [
         "Дадаць ${ totalServerCount } сервер?",
         "Дадаць ${ totalServerCount } серверы?",
@@ -19681,6 +19822,18 @@
       "Cancel subscription?": [
         "Скасаваць падпіску?"
       ],
+      "Cannot add Gateway": [
+        "Немагчыма дадаць шлюз"
+      ],
+      "Cannot add licenses": [
+        "Немагчыма дадаць ліцэнзіі"
+      ],
+      "Cannot add more users": [
+        "Немагчыма дадаць больш карыстальнікаў"
+      ],
+      "Cannot add servers": [
+        "Немагчыма дадаць серверы"
+      ],
       "Card verification": [
         "Праверка карткі"
       ],
@@ -19719,9 +19872,6 @@
       ],
       "Choose user affiliations": [
         "Выбар прыналежнасцей карыстальніка"
-      ],
-      "Clear": [
-        "Ачысціць"
       ],
       "Click a value in the table to use it as filter": [
         "Націсніце значэнне ў табліцы, каб выкарыстоўваць яго ў якасці фільтра."
@@ -19906,9 +20056,6 @@
       "Delete label?": [
         "Выдаліць метку?"
       ],
-      "Delete logs": [
-        "Выдаліць журналы"
-      ],
       "Delete organization logo?": [
         "Выдаліць лагатып арганізацыі?"
       ],
@@ -19941,6 +20088,9 @@
       ],
       "Device name": [
         "Назва прылады"
+      ],
+      "Disable activity monitor?": [
+        "Адключыць манітор актыўнасці?"
       ],
       "Disable two-factor authentication": [
         "Адключыць двухфактарную аўтэнтыфікацыю"
@@ -20752,6 +20902,9 @@
       "Theme": [
         "Тэма"
       ],
+      "There are no events for your account": [
+        "Няма падзей для вашага ўліковага запісу"
+      ],
       "There are no groups": [
         "Няма ніводнай групы"
       ],
@@ -20854,6 +21007,9 @@
       "Video conferencing": [
         "Відэаканферэнцыя"
       ],
+      "View organization events by upgrading to Business": [
+        "Палепшыце да тарыфнага плана Business, каб паглядзець падзеі арганізацыі"
+      ],
       "VPN apps": [
         "Праграмы VPN"
       ],
@@ -20880,6 +21036,9 @@
       ],
       "What would you like to import?": [
         "Што вы хочаце імпартаваць?"
+      ],
+      "Wipe all logs?": [
+        "Выцерці ўсе журналы?"
       ],
       "WireGuard configuration": [
         "Канфігурацыя WireGuard"
@@ -21091,6 +21250,9 @@
       "Device information such as operating system": [
         "Звесткі аб прыладзе, такія як аперацыйная сістэма"
       ],
+      "Device name and app version": [
+        "Назва прылады і версія праграмы"
+      ],
       "Display name for the entity in the eduGAIN database": [
         "Бачнае імя для аб'екта ў базе даных eduGAIN"
       ],
@@ -21108,9 +21270,6 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Уключыць/адключыць апавяшчэнні на камп'ютары і мабільнай прыладзе для “${ labelName }”"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "Уключыце падрабязныя запісы падзей IP-адраса для кожнай падзеі."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-адрас канцавога пункта ад пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)"
@@ -21142,9 +21301,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай каманды падтрымкі, то яго можна ўвесці тут."
       ],
-      "IP address (Internet Service Provider)": [
-        "IP-адрас (пастаўшчык паслуг інтэрнэту)"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Удзельнікі, якія не выкарыстоўваюць 2ФА, атрымаюць ліст з просьбай уключыць яе як мага хутчэй. Карыстальнікі з адзіным уваходам напамін на сваю электронную пошту не атрымаюць."
       ],
@@ -21153,6 +21309,9 @@
       ],
       "Not all information listed here was exposed for all users.": [
         "Не ўсе пералічаныя тут звесткі былі скампраметаваныя для ўсіх карыстальнікаў."
+      ],
+      "Origin IP address and Internet Service Provider (ISP)": [
+        "Зыходны IP-адрас і пастаўшчык паслуг інтэрнэту (ISP)"
       ],
       "Remove metadata from images to protect your privacy.": [
         "Выдаліць метаданыя з відарысаў, каб абараніць вашу прыватнасць."
@@ -21249,6 +21408,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Выкарыстоўвайце стандартную паласу прагорткі свайго браўзера. Звычайна яна больш і ёй прасцей карыстацца."
+      ],
+      "User's approximate location (based on their IP address)": [
+        "Прыблізнае месцазнаходжанне карыстальніка (на падставе IP-адраса)"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Карыстальнікі будуць бачыць ваш лагатып замест значка ${ BRAND_NAME } пры ўваходзе ў нашу вэб-праграму."
@@ -22035,12 +22197,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Выдаліўшы гэты нумар тэлефона, вы больш не зможаце аднавіць свой уліковы запіс."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Вы таксама ачысціце ўсю сваю гісторыю, калі адключыце назіранне за падзеямі бяспекі. Вы сапраўды хочаце зрабіць гэта?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Дата завяршэння тэрміну не адпавядае фармату ММ/ГГ"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Калі вы скасуеце гэта імпартаванне, вы не зможаце яго ўзнавіць. ${ BRAND_NAME } захаваў увесь ход выканання ў вашым уліковым запісе. Усё роўна скасаваць?"

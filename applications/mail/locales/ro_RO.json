@@ -1154,6 +1154,9 @@
       "Save": [
         "Salvare"
       ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Salvare în ${ DRIVE_APP_NAME }"
+      ],
       "Saving${ ellipsis }": [
         "Se salvează${ ellipsis }"
       ],
@@ -7338,11 +7341,17 @@
       "Message headers": [
         "Antete mesaj"
       ],
+      "Message list": [
+        "Listă mesaje"
+      ],
       "Message sent": [
         "Mesaj trimis"
       ],
       "Message sent.": [
         "Mesajul a fost trimis."
+      ],
+      "Message view": [
+        "Vizualizare mesaj"
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
         "Mesajul va fi trimis dimineață la ora ${ formattedTime }"
@@ -7712,6 +7721,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
+      ],
+      "Selection pane": [
+        "Panou de selecție"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Trimitere mesaj criptat, protejat cu parolă, la o adresă de e-mail ${ boldText }."
@@ -15244,9 +15256,6 @@
       ],
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Data de expirare nu este în format LL/AA."
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."

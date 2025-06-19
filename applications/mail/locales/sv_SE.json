@@ -1150,6 +1150,9 @@
       "Save": [
         "Spara"
       ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Spara till ${ DRIVE_APP_NAME }"
+      ],
       "Saving${ ellipsis }": [
         "Sparar${ ellipsis }"
       ],
@@ -1741,6 +1744,9 @@
       "Add unlimited credit cards": [
         "Lägg till obegränsat antal kreditkort"
       ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alla premiumfunktioner i ${ BRAND_NAME } Mail, Pass, VPN, Drive och Calendar"
+      ],
       "Block ads, trackers, and malware": [
         "Blockera annonser, spårare och skadlig kod"
       ],
@@ -1809,6 +1815,11 @@
       ],
       "years": [
         "år"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumserbjudande"
       ]
     },
     "anniversary_2025: Offers": {
@@ -6532,6 +6543,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Vid slutet av din provperiod ${ boldCancelDate }, kommer du att nedgraderas till ${ boldProtonFree }. Alla användarkonton kommer att tas bort från din organisation."
+      ],
       "Attach public key": [
         "Bifoga offentlig nyckel"
       ],
@@ -7196,6 +7210,9 @@
       ],
       "Message sent.": [
         "Meddelande skickat."
+      ],
+      "Message view": [
+        "Meddelandevy"
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
         "Meddelandet kommer att skickas på morgonen kl. ${ formattedTime }."
@@ -8450,6 +8467,9 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du kommer förlora åtkomst till ${ boldPlanTitle } den ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
@@ -11323,11 +11343,20 @@
       "Once your full subscription starts...": [
         "När din fullständiga prenumeration startar …"
       ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Du kan använda ${ planTitle } tills provperioden är slut, och du kommer inte att debiteras."
+      ],
       "Your free trial has started": [
         "Din gratis provperiod har startat"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Du kommer att kunna använda ${ planTitle } tills provperioden slutar, utan kostnad."
       ]
     },
     "Online accounts": {
@@ -14625,6 +14654,10 @@
       "Your exposed information": [
         "Din exponerade information"
       ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Din gratis provperiod slutar om ${ trialDurationFormatted } dag",
+        "Din gratis provperiod slutar om ${ trialDurationFormatted } dagar"
+      ],
       "Your free trial has ended": [
         "Din gratis provperiod har avslutats"
       ],
@@ -14897,9 +14930,6 @@
       ],
       "Contacts could not be merged": [
         "Kontakter kunde inte slås samman"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Utgångsdatum är inte i formatet MM/ÅÅ"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Om du inte kommer ihåg ditt lösenord är det omöjligt att återaktivera din nyckel. Vi kan hjälpa dig att avvisa varningsbannern men i processen kommer du permanent att förlora åtkomst till all data krypterad med den nyckeln."

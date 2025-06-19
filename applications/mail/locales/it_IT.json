@@ -1150,6 +1150,9 @@
       "Save": [
         "Salva"
       ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Salva in ${ DRIVE_APP_NAME }"
+      ],
       "Saving${ ellipsis }": [
         "Salvataggio${ ellipsis }"
       ],
@@ -1922,6 +1925,14 @@
       ],
       "Sender verification passed": [
         "Verifica del mittente avvenuta con successo"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ cycle } mesi il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ]
     },
     "bf2023: Deal details": {
@@ -14982,9 +14993,6 @@
       ],
       "Contacts could not be merged": [
         "Impossibile unire i contatti"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "La data di scadenza non è nel formato MM/AA"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se non ricordi la password, è impossibile riattivare la chiave. Possiamo aiutarti a chiudere il banner di avviso, ma nel processo perderai definitivamente l'accesso a tutti i dati crittografati con quella chiave."

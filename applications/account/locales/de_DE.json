@@ -1543,9 +1543,6 @@
       "What do I get?": [
         "Was bekomme ich dafür?"
       ],
-      "Wipe": [
-        "Löschen"
-      ],
       "Yes": [
         "Ja"
       ],
@@ -1966,6 +1963,24 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Ich bin nicht im Büro und habe nur begrenzten Zugriff auf mein Postfach."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Zahlungsdetails"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "on ${ formattedDate }": [
+        "am ${ formattedDate }"
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Fälliger Betrag nach der Testphase"
+      ],
+      "Amount due now": [
+        "Jetzt fälliger Betrag"
       ]
     },
     "Badge for domain": {
@@ -4120,15 +4135,6 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synchronisiere Dateien einfach von deinem Desktop mit der Cloud und greife von deinem Mobilgerät darauf zu."
       ],
-      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktiviere ${ PROTON_SENTINEL_NAME }, um auf diese Funktionen zuzugreifen."
-      ],
-      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktiviere \"Erweiterte Protokolle\" und ${ PROTON_SENTINEL_NAME }, um auf diese Funktionen zuzugreifen."
-      ],
-      "Enable detailed events to access these features": [
-        "Aktiviere \"Erweiterte Protokolle\", um auf diese Funktionen zuzugreifen."
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Ermutige die Verwendung der Zwei-Faktor-Authentifizierung in deiner Organisation für zusätzliche Sicherheit."
       ],
@@ -5691,11 +5697,6 @@
         "Eine Postleitzahl ist erforderlich"
       ]
     },
-    "error": {
-      "Enter an email address": [
-        "E-Mail-Adresse eingeben"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Beim Lesen der Datei ${ formattedFilename } ist ein Fehler aufgetreten. Ungültiges Dateiformat."
@@ -6844,9 +6845,6 @@
       "Actions": [
         "Aktionen"
       ],
-      "App version": [
-        "App-Version"
-      ],
       "Best deal": [
         "Bestes Angebot"
       ],
@@ -6898,9 +6896,6 @@
       "Permissions": [
         "Berechtigungen"
       ],
-      "Protection": [
-        "Schutz"
-      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Spare mit den besten ${ VPN_APP_NAME }-Angeboten"
       ],
@@ -6924,9 +6919,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Time": [
-        "Zeit"
       ],
       "User": [
         "Benutzer"
@@ -7920,9 +7912,6 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Bist du dir sicher, dass du diese Gruppe verlassen möchtest? Um erneut teilzunehmen, muss der Gruppen-Administrator dich wieder einladen."
       ],
-      "Are you sure you want to permanently delete all your logs?": [
-        "Möchtest du alle deine Protokolle wirklich dauerhaft löschen?"
-      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Möchtest du diesem Benutzer wirklich die Administratorrechte entziehen?"
       ],
@@ -8465,9 +8454,6 @@
       "Event invitations and responses will be sent in this language.": [
         "Termin-Einladungen und Antworten darauf werden in dieser Sprache versendet."
       ],
-      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Ereignisse enthalten Authentifizierungsversuche aller ${ BRAND_NAME }-Dienste die deine ${ BRAND_NAME_TWO }-Anmeldedaten verwenden."
-      ],
       "Example: ${ spfExample }": [
         "Beispiel: ${ spfExample }"
       ],
@@ -8476,9 +8462,6 @@
       ],
       "expires ${ expirationDate }": [
         "verfällt am ${ expirationDate }"
-      ],
-      "Failed to fetch logs.": [
-        "Abrufen der Protokolle fehlgeschlagen."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Schnell und konzentriert. E-Mail und Kalender, direkt auf deinem Desktop."
@@ -9046,9 +9029,6 @@
       "No label selected": [
         "Keine Kategorie ausgewählt"
       ],
-      "No logs yet.": [
-        "Noch keine Protokolle."
-      ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
       ],
@@ -9423,9 +9403,6 @@
       ],
       "SCIM token active": [
         "SCIM-Token aktiv"
-      ],
-      "Search by an email address to begin": [
-        "Suche nach einer E-Mail Adresse um zu beginnen"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Schütze dein ${ BRAND_NAME }-Konto"
@@ -10345,9 +10322,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kannst dies einmal bearbeiten, um sicherzustellen, dass die richtige E-Mail-Adresse für die Verifizierung verwendet wird."
-      ],
-      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Sie können die Protokollierung von Authentifizierungen aktivieren um zu sehen wann auf Ihr Account von welcher IP-Adresse zugegriffen wurde. Wir werden die IP-Adresse und den Zeitpunkt, auch von fehlgeschlagenen Anmeldeversuchen, aufzeichnen."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Du kannst den Bereich Fotos über das Interface aktivieren, indem du den Schalter unten betätigst."
@@ -12065,9 +12039,6 @@
       "Search": [
         "Suche"
       ],
-      "Search by email": [
-        "Suche per E-Mail-Adresse"
-      ],
       "Second password": [
         "Zusätzliches Passwort"
       ],
@@ -12746,12 +12717,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } aktivieren"
-      ],
-      "Enable detailed events": [
-        "Aktiviere detaillierte Ereignisse"
-      ],
-      "Enable security events": [
-        "Aktiviere Sicherheitsereignisse"
       ]
     },
     "Mail import summary": {
@@ -19245,9 +19210,6 @@
       "Choose user affiliations": [
         "Benutzerzugehörigkeit wählen"
       ],
-      "Clear": [
-        "Leeren"
-      ],
       "Click a value in the table to use it as filter": [
         "Klicke auf einen Wert in der Tabelle, um diesen als Filter zu verwenden."
       ],
@@ -19428,9 +19390,6 @@
       ],
       "Delete label?": [
         "Kategorie löschen?"
-      ],
-      "Delete logs": [
-        "Protokolle löschen"
       ],
       "Delete organization logo?": [
         "Organisationslogo löschen?"
@@ -20574,12 +20533,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Ermöglicht das nahtlose Hinzufügen von Links zu Videokonferenzen zu deinen Kalendereinladungen."
       ],
-      "An approximate location of the IP address": [
-        "Eine ungefähre Lage der IP-Adresse."
-      ],
-      "Any protection applied to suspicious activity": [
-        "Jeder angewendeter Schutz vor verdächtigen Aktivitäten"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."
       ],
@@ -20601,9 +20554,6 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Nachrichten im Papierkorb oder Spam nach 30 Tagen löschen. Bei aktivierter automatischer Löschung erhalten Nachrichten, die sich bereits im Papierkorb/Spam befinden, ein Löschdatum, das auf dem Datum basiert, an dem sie dorthin verschoben wurden."
       ],
-      "Device information such as operating system": [
-        "Geräteinformationen wie das Betriebssystem"
-      ],
       "Display name for the entity in the eduGAIN database": [
         "Anzeigename für die Entität in der eduGAIN-Datenbank"
       ],
@@ -20621,9 +20571,6 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Benachrichtigungen auf Desktop- und Mobilgeräten aktivieren/deaktivieren für „${ labelName }“"
-      ],
-      "Enabling detailed events records the IP address for each event.": [
-        "Durch Aktivieren von detaillierten Ereignissen wird die IP-Adresse für jedes Ereignis gespeichert."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Endpunkt-URL des Identitätsanbieters (z.B. https://idp.beispiel.com/sso/saml)"
@@ -20654,9 +20601,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP-Adresse (Internetdienstanbieter)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail, in der sie aufgefordert werden, diese so bald wie möglich zu aktivieren. Single Sign-On-Benutzer, erhalten diese Aufforderung nicht."
@@ -20705,9 +20649,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Der Import beginnt mit den neuesten Nachrichten."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Der Internetdienstanbieter der IP-Adresse."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
@@ -21513,12 +21454,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Wenn du diese Telefonnummer löschst, kannst du dein Konto nicht mehr wiederherstellen."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Wenn du die Überwachung von Sicherheitsereignissen deaktivierst, wird auch dein gesamter Verlauf gelöscht. Bist du sicher, dass du diese Funktion deaktivieren möchtest?"
-      ],
-      "Expiration Date is not in the format MM/YY": [
-        "Ablaufdatum ist nicht im Format MM/JJ."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Wenn du diesen Import abbrichst, wirst du ihn nicht mehr fortsetzen können. ${ BRAND_NAME } hat jeglichen Fortschritt in deinem Konto gespeichert. Trotzdem abbrechen?"
