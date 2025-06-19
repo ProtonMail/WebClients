@@ -2,12 +2,12 @@ import { type ReactNode, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     DateInput,
     MemoizedIconRow as IconRow,
     TimeInput,
     TimeZoneSelector,
-    UnderlineButton,
     useActiveBreakpoint,
 } from '@proton/components';
 import { DATE_INPUT_ID, MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
@@ -78,23 +78,27 @@ export const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn,
                 {!isAllDay &&
                     canToggleTzSelector &&
                     (showTzSelector ? (
-                        <UnderlineButton
+                        <Button
+                            shape="underline"
+                            color="norm"
                             className="p-0 mb-2"
                             data-testid="hide-tz"
                             onClick={() => setShowTzSelector(false)}
                             title={c('Title').t`Hide time zones for event start and end times`}
                         >
                             {c('Action').t`Hide time zones`}
-                        </UnderlineButton>
+                        </Button>
                     ) : (
-                        <UnderlineButton
+                        <Button
+                            shape="underline"
+                            color="norm"
                             className="p-0 mb-2"
                             data-testid="show-tz"
                             onClick={() => setShowTzSelector(true)}
                             title={c('Title').t`Show time zones for event start and end times`}
                         >
                             {c('Action').t`Show time zones`}
-                        </UnderlineButton>
+                        </Button>
                     ))}
             </div>
             <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Date and time`}>

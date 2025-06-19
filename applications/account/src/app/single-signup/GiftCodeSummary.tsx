@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader, Input } from '@proton/atoms';
-import { Icon, Info, Price, UnderlineButton, useNotifications } from '@proton/components';
+import { Icon, Info, Price, useNotifications } from '@proton/components';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { type Currency, type PlanIDs, type PlansMap } from '@proton/payments';
 import { type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
@@ -113,9 +113,9 @@ const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode, planIDs, plansMap,
 
     return (
         <div>
-            <UnderlineButton className="mr-2" size="small" onClick={() => setShowInput(true)}>
+            <Button shape="underline" color="norm" className="mr-2" size="small" onClick={() => setShowInput(true)}>
                 {c('Link').t`Add gift code`}
-            </UnderlineButton>
+            </Button>
             <Info
                 title={c('Tooltip')
                     .t`If you purchased a gift code or received one from our support team, you can enter it here.`}
