@@ -13,6 +13,7 @@ const parseEnvVar = (envVar, fallback, mapTo = (x) => x) => {
 
 const parseBool = (x) => x === 'true' || x === '1' || x === 1;
 
+const BETA = parseEnvVar('BETA', false, Boolean);
 const BUILD_TARGET = parseEnvVar('BUILD_TARGET', 'chrome', String);
 const BUILD_STORE_TARGET = parseEnvVar('BUILD_STORE_TARGET', '', String);
 const CLEAN_MANIFEST = parseEnvVar('CLEAN_MANIFEST', false, parseBool);
@@ -31,6 +32,7 @@ const WEBPACK_DEV_PORT = parseEnvVar('WEBPACK_DEV_PORT', 8090, Number);
 const HOT_MANIFEST_UPDATE = RUNTIME_RELOAD && parseEnvVar('HOT_MANIFEST_UPDATE', false, parseBool);
 
 module.exports = {
+    BETA,
     BUILD_TARGET,
     BUILD_STORE_TARGET,
     CLEAN_MANIFEST,

@@ -1,6 +1,7 @@
 import type { ContextBridgeApi } from './types/desktop';
 
 declare global {
+    declare const BETA: boolean;
     declare const BUILD_TARGET: string;
     declare const BUILD_STORE_TARGET: string;
     declare const DESKTOP_BUILD: boolean;
