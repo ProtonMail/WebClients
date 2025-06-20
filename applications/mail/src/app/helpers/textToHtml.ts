@@ -1,10 +1,10 @@
 import markdownit from 'markdown-it';
 
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import { toText } from '@proton/mail/helpers/parserHtml';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { templateBuilder } from './message/messageSignature';
-import { toText } from './parserHtml';
 
 export const SIGNATURE_PLACEHOLDER = '--protonSignature--';
 
