@@ -4,9 +4,12 @@ import { c } from 'ttag';
 
 import { ModalTwo, useActiveBreakpoint, useModalTwoStatic } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import useFlag from '@proton/unleash/useFlag';
 
+import { MoveItemsModal } from '../../../modals/MoveItemsModal';
 import type { DecryptedLink } from '../../../store';
 import { useActions, useTreeForModals } from '../../../store';
+import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { getMovedFiles } from '../../../utils/moveTexts';
 import { selectMessageForItemList } from '../../sections/helpers';
 import CreateFolderModal from '../CreateFolderModal';
@@ -19,7 +22,7 @@ interface Props {
     onClose?: () => void;
 }
 
-const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: Props) => {
+const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modalProps }: Props) => {
     const { moveLinks, createFolder } = useActions();
     const {
         rootItems,
@@ -130,15 +133,19 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: P
     );
 };
 
-export default MoveToFolderModal;
 export const useMoveToFolderModal = () => {
-    const [moveToFolderModal, showMoveToFolderModal] = useModalTwoStatic(MoveToFolderModal);
+    const useSDKModal = useFlag('DriveWebSDKMoveItemsModal');
+    const isPublic = getIsPublicContext();
 
-    const handleShowMoveToFolderModal = ({ shareId, selectedItems }: Props) => {
+    const [moveToFolderModal, showMoveToFolderModal] = useModalTwoStatic(
+        useSDKModal && !isPublic ? MoveItemsModal : MoveToFolderModalDeprecated
+    );
+
+    const handleShowMoveToFolderModal = ({ shareId, selectedItems, ...rest }: Props) => {
         if (!shareId || !selectedItems.length) {
             return;
         }
-        void showMoveToFolderModal({ shareId, selectedItems });
+        void showMoveToFolderModal({ shareId, selectedItems, ...rest });
     };
 
     return [moveToFolderModal, handleShowMoveToFolderModal] as const;
