@@ -569,10 +569,10 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         <thead>
                             <tr>
                                 <TableCell key="name" type="header" className="w-1/5">{c('Header').t`Name`}</TableCell>
-                                <TableCell key="status" type="header" className="w-1/10">
+                                <TableCell key="status" type="header" className="w-1/6">
                                     {c('Header').t`Status`}
                                 </TableCell>
-                                <TableCell key="servers" type="header" className="w-1/5">{c('Header')
+                                <TableCell key="servers" type="header" className="w-1/5OUPAS">{c('Header')
                                     .t`Servers`}</TableCell>
                                 {isAdmin && (
                                     <>
@@ -619,9 +619,9 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         key: 'no-gateways-image',
                     }}
                 >
-                    <h3 className="text-bold">
+                    <h2 className="h3 text-bold">
                         {isAdmin ? c('Info').t`Create your first Gateway` : c('Info').t`No Gateways yet`}
-                    </h3>
+                    </h2>
                     <p className="color-weak">
                         {isAdmin
                             ? c('Info')
