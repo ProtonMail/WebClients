@@ -5,7 +5,9 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
-import { Icon, useSyncIframeStyles, useTheme } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import MessageBodyImages from '@proton/mail-renderer/components/MessageBodyImages';
 import getIframeSandboxAttributes from '@proton/mail-renderer/helpers/getIframeSandboxAttributes';
 import useIframeDispatchEvents from '@proton/mail-renderer/hooks/useIframeDispatchEvents';
