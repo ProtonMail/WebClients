@@ -1,9 +1,8 @@
 import type { RefObject } from 'react';
 import { useCallback, useEffect } from 'react';
 
+import { cleanProxyImagesFromClipboardContent } from '@proton/mail/helpers/message/cleanProxyImagesFromClipboardContent';
 import { cloneEvent, isKeyboardEvent } from '@proton/shared/lib/helpers/events';
-
-import { cleanProxyImagesFromClipboardContent } from 'proton-mail/helpers/message/messageContent';
 
 const IFRAME_EVENTS_LIST: Event['type'][] = ['focus', 'keydown', 'click', 'copy', 'dragstart'];
 
