@@ -1,21 +1,15 @@
-import {
-  NewSheetButton,
-  BottomBar as RncBottomBar,
-  SheetStatus,
-  SheetSwitcher,
-  SheetTabs,
-} from '@rowsncolumns/spreadsheet'
-import type { ProtonSheetsState } from '../state'
+import { NewSheetButton, BottomBar, SheetStatus, SheetSwitcher, SheetTabs } from '@rowsncolumns/spreadsheet'
+import type { ProtonSheetsState } from '../../state'
 
-export type BottomBarProps = {
+export type LegacyBottomBarProps = {
   state: ProtonSheetsState
   isReadonly: boolean
   isRevisionMode: boolean
 }
 
-export function BottomBar({ state, isReadonly, isRevisionMode }: BottomBarProps) {
+export function LegacyBottomBar({ state, isReadonly, isRevisionMode }: LegacyBottomBarProps) {
   return (
-    <RncBottomBar>
+    <BottomBar>
       {!isRevisionMode && <NewSheetButton onClick={state.onCreateNewSheet} disabled={isReadonly} />}
       <SheetSwitcher
         sheets={state.sheets}
@@ -48,6 +42,6 @@ export function BottomBar({ state, isReadonly, isRevisionMode }: BottomBarProps)
         columnCount={state.columnCount}
         merges={state.merges}
       />
-    </RncBottomBar>
+    </BottomBar>
   )
 }
