@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import Price from '@proton/components/components/price/Price';
 import {
     ADDON_NAMES,
+    ADDON_PREFIXES,
     type AddonGuard,
     AddonKey,
     AddonLimit,
@@ -20,6 +21,12 @@ import {
     SelectedPlan,
     type Subscription,
     type SupportedAddons,
+    TRIAL_MAX_DEDICATED_IPS,
+    TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
+    TRIAL_MAX_LUMO_SEATS,
+    TRIAL_MAX_SCRIBE_SEATS,
+    TRIAL_MAX_USERS,
+    getAddonType,
     getSupportedAddons,
     isDomainAddon,
     isDriveOrgSizeAddon,
@@ -50,7 +57,7 @@ import ScribeAddon from '../ScribeAddon';
 import { IPsNumberCustomiser } from './IPsNumberCustomiser';
 import LumoAddon from './LumoAddon';
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
-import type { DecreaseBlockedReason } from './helpers';
+import type { DecreaseBlockedReason, IncreaseBlockedReason } from './helpers';
 
 import './ProtonPlanCustomizer.scss';
 
@@ -83,7 +90,49 @@ interface AddonCustomizerProps {
     lumoAddonEnabled: boolean;
     audience?: Audience;
     mode: CustomiserMode;
+    isTrialMode: boolean;
 }
+
+const getTrialProps = (
+    isTrialMode: boolean,
+    addonNameKey: ADDON_NAMES
+): {} | Pick<NumberCustomiserProps, 'max' | 'increaseBlockedReasons' | 'increaseBlockedReasonText'> => {
+    if (!isTrialMode) {
+        return {};
+    }
+
+    let addonType: ADDON_PREFIXES | null = getAddonType(addonNameKey);
+
+    if (!addonType) {
+        return {};
+    }
+
+    const max = {
+        [ADDON_PREFIXES.MEMBER]: TRIAL_MAX_USERS,
+        [ADDON_PREFIXES.SCRIBE]: TRIAL_MAX_SCRIBE_SEATS,
+        [ADDON_PREFIXES.LUMO]: TRIAL_MAX_LUMO_SEATS,
+        [ADDON_PREFIXES.IP]: TRIAL_MAX_DEDICATED_IPS,
+        [ADDON_PREFIXES.DOMAIN]: TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
+    }[addonType];
+
+    const increaseBlockedReasonText = {
+        [ADDON_PREFIXES.MEMBER]: c('b2b_trials_2025_Info')
+            .t`You can have up to ${TRIAL_MAX_USERS} users during the trial period.`,
+        [ADDON_PREFIXES.SCRIBE]: c('b2b_trials_2025_Info')
+            .t`You can have up to ${TRIAL_MAX_SCRIBE_SEATS} Scribe seats during the trial period.`,
+        [ADDON_PREFIXES.LUMO]: c('b2b_trials_2025_Info')
+            .t`You can have up to ${TRIAL_MAX_LUMO_SEATS} Lumo seats during the trial period.`,
+        [ADDON_PREFIXES.IP]: c('b2b_trials_2025_Info')
+            .t`You can have up to ${TRIAL_MAX_DEDICATED_IPS} dedicated server during the trial period.`,
+        [ADDON_PREFIXES.DOMAIN]: c('b2b_trials_2025_Info').t`You cannot add custom domains during the trial period.`,
+    }[addonType];
+
+    return {
+        max,
+        increaseBlockedReasons: ['trial-limit'],
+        increaseBlockedReasonText,
+    };
+};
 
 const AddonCustomizer = ({
     addonName,
@@ -101,6 +150,7 @@ const AddonCustomizer = ({
     lumoAddonEnabled,
     audience,
     mode,
+    isTrialMode,
 }: AddonCustomizerProps) => {
     const ipAddonDowngrade = useFlag('IpAddonDowngrade');
     const passOrgSizeLimitFlag = useFlag('PassOrgSizeLimit');
@@ -143,6 +193,7 @@ const AddonCustomizer = ({
             }));
 
     const decreaseBlockedReasons: DecreaseBlockedReason[] = [];
+    const increaseBlockedReasons: IncreaseBlockedReason[] = [];
 
     const applyForbiddenModificationLimitation = (value: number) => {
         // The check for the free subscription here is just a type guard. In practice,
@@ -193,9 +244,19 @@ const AddonCustomizer = ({
             ? planTotalMembers
             : AddonLimit[addonNameKey] * addonMultiplier;
 
+    const trialProps = getTrialProps(isTrialMode, addonNameKey);
+
     const sharedNumberCustomizerProps: Pick<
         NumberCustomiserProps,
-        'addon' | 'value' | 'min' | 'max' | 'disabled' | 'onChange' | 'step' | 'decreaseBlockedReasons'
+        | 'addon'
+        | 'value'
+        | 'min'
+        | 'max'
+        | 'disabled'
+        | 'onChange'
+        | 'step'
+        | 'decreaseBlockedReasons'
+        | 'increaseBlockedReasons'
     > = {
         addon,
         value,
@@ -243,6 +304,7 @@ const AddonCustomizer = ({
         },
         step: addonMultiplier,
         decreaseBlockedReasons,
+        increaseBlockedReasons,
     };
 
     useEffect(() => {
@@ -271,6 +333,7 @@ const AddonCustomizer = ({
                         value
                     )}
                     {...sharedNumberCustomizerProps}
+                    {...trialProps}
                 />
             );
         }
@@ -282,6 +345,7 @@ const AddonCustomizer = ({
                     label={c('Info').t`Organization size`}
                     {...sharedNumberCustomizerProps}
                     {...(enforcePassOrgSizeLimit && isPassProOrgSizeAddon ? { max: MAX_MEMBER_PASS_PRO_ADDON } : {})}
+                    {...trialProps}
                 />
             );
         }
@@ -296,6 +360,7 @@ const AddonCustomizer = ({
                         : undefined
                 }
                 {...sharedNumberCustomizerProps}
+                {...trialProps}
             />
         );
     }
@@ -308,12 +373,13 @@ const AddonCustomizer = ({
                 tooltip={c('Info')
                     .t`Email hosting is only available for domains you already own. Domain registration is not currently available through ${BRAND_NAME}. You can host email for domains registered on any domain registrar.`}
                 {...sharedNumberCustomizerProps}
+                {...trialProps}
             />
         );
     }
 
     if (isIpAddon(addonNameKey)) {
-        return <IPsNumberCustomiser key={`${addon.Name}-ips`} {...sharedNumberCustomizerProps} />;
+        return <IPsNumberCustomiser key={`${addon.Name}-ips`} {...sharedNumberCustomizerProps} {...trialProps} />;
     }
 
     const addonPricePerCycle = addon.Pricing[cycle] || 0;
@@ -344,6 +410,7 @@ const AddonCustomizer = ({
                 showTooltip={showUsersTooltip}
                 audience={audience}
                 {...sharedNumberCustomizerProps}
+                {...trialProps}
             />
         );
     }
@@ -357,6 +424,7 @@ const AddonCustomizer = ({
                     onChangePlanIDs(setQuantity(planIDs, addon.Name, max));
                 }}
                 {...sharedNumberCustomizerProps}
+                {...trialProps}
             />
         );
     }
@@ -380,6 +448,7 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
     scribeAddonEnabled?: boolean;
     lumoAddonEnabled?: boolean;
     separator?: boolean;
+    isTrialMode?: boolean;
 }
 
 export const ProtonPlanCustomizer = ({
@@ -399,6 +468,7 @@ export const ProtonPlanCustomizer = ({
     scribeAddonEnabled = false,
     lumoAddonEnabled = false,
     separator = false,
+    isTrialMode = false,
     ...rest
 }: Props) => {
     const normalizePlanIds = SelectedPlan.createNormalized(planIDs, plansMap, cycle, currency).planIDs;
@@ -452,6 +522,7 @@ export const ProtonPlanCustomizer = ({
                         supportedAddons={supportedAddons}
                         audience={audience}
                         mode={mode}
+                        isTrialMode={isTrialMode}
                     />
                 );
             })}

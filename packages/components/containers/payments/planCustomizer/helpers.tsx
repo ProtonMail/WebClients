@@ -27,3 +27,5 @@ export const contactHref = (
 );
 
 export type DecreaseBlockedReason = 'forbidden-modification';
+
+export type IncreaseBlockedReason = 'trial-limit';
