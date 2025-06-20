@@ -75,7 +75,7 @@ export const ExtraFieldComponent: FC<ExtraFieldProps> = ({
     return (
         <FieldBox actions={[<DeleteButton onDelete={onDelete} />]} className={className} icon={icon}>
             <BaseTextField
-                inputClassName={clsx('text-sm', hasError ? 'placeholder-danger' : 'color-weak')}
+                inputClassName={clsx('text-sm', hasError ? 'placeholder-danger' : 'color-white')}
                 placeholder={c('Label').t`Field name`}
                 autoFocus={autoFocus}
                 field={{

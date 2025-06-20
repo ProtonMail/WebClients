@@ -14,6 +14,8 @@ import { useMaxLengthLimiter } from '../../../hooks/useMaxLengthLimiter';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
+import './TextareaField.scss';
+
 export type BaseTextAreaFieldProps = FieldProps & InputFieldProps<typeof TextAreaTwo>;
 
 const DEFAULT_MIN_ROWS = 1;
@@ -45,7 +47,7 @@ const BaseTextAreaFieldRender: ForwardRefRenderFunction<HTMLTextAreaElement, Bas
             unstyled
             assistContainerClassName="empty:hidden"
             className={clsx(
-                'border-none flex p-0 resize-none',
+                'pass--textarea-field border-none flex p-0 resize-none',
                 props.disabled ? 'color-disabled' : 'color-norm',
                 className
             )}
