@@ -8,8 +8,9 @@ type CryptoProxyCompatibility = typeof CryptoProxy & {
     encryptSessionKey: (options: WorkerEncryptSessionKeyOptions & { format?: 'binary' }) => Promise<Uint8Array>;
 };
 
+// TODO: remove `as any` when the type is fixed in the sdk
 export function initOpenPGPCryptoModule() {
-    const cryptoProxy = new OpenPGPCryptoWithCryptoProxy(CryptoProxy as CryptoProxyCompatibility);
+    const cryptoProxy = new OpenPGPCryptoWithCryptoProxy(CryptoProxy as CryptoProxyCompatibility as any);
 
     return cryptoProxy;
 }
