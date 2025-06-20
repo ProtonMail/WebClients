@@ -21,6 +21,7 @@
 
 import Factory
 import Foundation
+import os.log
 import ProtonCoreNetworking
 import ProtonCoreServices
 import Shared
@@ -33,18 +34,25 @@ struct UserAndPlan: Sendable, Equatable {
 @MainActor
 final class LoggedInViewModel: ObservableObject {
     @Published private(set) var userAndPlanObject: FetchableObject<UserAndPlan> = .fetching
+    @Published var error: (any Error)?
 
     private let apiManager: ApiManager
     private let environment: PassEnvironment
     private let credentials: Credentials
+    private let logger: Logger
 
-    private var paymentsManager: PaymentsManager?
+    private lazy var paymentsManager = PaymentsManager(appVersion: appVersion,
+                                                       sessionID: credentials.sessionID,
+                                                       authToken: credentials.accessToken,
+                                                       doh: PassDoH(environment: environment),
+                                                       createLogger: createLogger)
 
     private let setCoreLoggerEnvironment = resolve(\SharedUseCaseContainer.setCoreLoggerEnvironment)
     private let createApiManager = resolve(\SharedUseCaseContainer.createApiManager)
+    private let createLogger = resolve(\SharedUseCaseContainer.createLogger)
     private let getAccess = resolve(\SharedUseCaseContainer.getAccess)
     private let getUser = resolve(\SharedUseCaseContainer.getUser)
-    private let createPaymentsManager = resolve(\SharedUseCaseContainer.createPaymentsManager)
+    private let appVersion = resolve(\SharedToolingContainer.appVersion)
 
     private var apiService: any APIService { apiManager.apiService }
     private let onLogOut: () -> Void
@@ -57,6 +65,7 @@ final class LoggedInViewModel: ObservableObject {
         self.environment = environment
         self.credentials = credentials
         self.onLogOut = onLogOut
+        logger = createLogger(category: String(describing: Self.self))
         setCoreLoggerEnvironment(environment)
     }
 }
@@ -69,7 +78,10 @@ extension LoggedInViewModel {
             }
             async let accessRequest = getAccess(apiService)
             async let userRequest = getUser(apiService)
-            let (access, user) = try await (accessRequest, userRequest)
+            async let paymentSetUp = paymentsManager.setUp
+            let (access, user, _) = try await (accessRequest, userRequest, paymentSetUp)
+
+            await paymentsManager.setUp()
             userAndPlanObject = .fetched(.init(plan: access.plan, user: user))
         } catch {
             if let responseError = error as? ResponseError,
@@ -81,48 +93,27 @@ extension LoggedInViewModel {
         }
     }
 
-    func upgrade() {
-        let paymentsManager = makePaymentsManagerIfNotExist()
-        paymentsManager.upgradeSubscription { [weak self] result in
+    func beginPaymentFlow(isUpgrading: Bool) {
+        paymentsManager.manageSubscription(isUpgrading: isUpgrading) { [weak self] result in
             guard let self else { return }
             switch result {
-            case .success:
-                printIfDebug("Success")
+            case let .success(successful):
+                if successful {
+                    Task { [weak self] in
+                        guard let self else { return }
+                        await fetchUserAndPlan()
+                    }
+                }
             case let .failure(error):
-                printIfDebug(error.localizedDescription)
-            }
-        }
-    }
-
-    func manageSubscription() {
-        let paymentsManager = makePaymentsManagerIfNotExist()
-        paymentsManager.manageSubscription { [weak self] result in
-            guard let self else { return }
-            switch result {
-            case .success:
-                printIfDebug("Success")
-            case let .failure(error):
-                printIfDebug(error.localizedDescription)
+                handle(error)
             }
         }
     }
 }
 
 private extension LoggedInViewModel {
-    func makePaymentsManagerIfNotExist() -> PaymentsManager {
-        if let paymentsManager {
-            return paymentsManager
-        }
-        let paymentsManager = createPaymentsManager(environment: environment,
-                                                    credentials: credentials,
-                                                    apiService: apiService)
-        self.paymentsManager = paymentsManager
-        return paymentsManager
-    }
-
-    func printIfDebug(_ message: String) {
-        #if DEBUG
-        print(message)
-        #endif
+    func handle(_ error: any Error) {
+        self.error = error
+        logger.error("\(error.localizedDescription, privacy: .public)")
     }
 }
