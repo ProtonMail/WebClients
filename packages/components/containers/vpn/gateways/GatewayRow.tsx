@@ -14,6 +14,8 @@ import type { GatewayServer } from './GatewayServer';
 import type { GatewayUser } from './GatewayUser';
 import { getFormattedLoad, getMembers } from './helpers';
 
+import './GatewayRow.scss';
+
 interface Props {
     isAdmin: boolean;
     showDeleted?: boolean;
@@ -97,31 +99,40 @@ export const GatewayRow = ({
         <TableRow
             className={deleted ? 'opacity-50' : undefined}
             cells={[
-                gateway.Name,
+                <span className="block max-w-full text-ellipsis" title={gateway.Name}>
+                    {gateway.Name}
+                </span>,
                 <span className={clsx(['py-1 px-2 rounded text-uppercase', statusClasses])}>{statusText}</span>,
                 <div>
                     {provisionedLogicals.length < 1 && !hasPendingServers && '0'}
                     {provisionedLogicals.map((logical) => {
                         const title = getLocalizedCountryByAbbr(logical.ExitCountry, countryOptions);
                         return (
-                            <div key={'logical-' + logical.ID}>
-                                <span className="text-nowrap bg-weak py-1 px-2 rounded">
-                                    <CountryFlagAndName
-                                        countryCode={logical.ExitCountry}
-                                        countryName={title}
-                                        className="mb-1"
-                                    />
-                                    <span className="color-weak">&nbsp; • &nbsp;</span>
-                                    {getIpsCell(logical.Servers)}
-                                    <Copy
-                                        value={logical.Servers[0].ExitIPv4}
-                                        shape="ghost"
-                                        onCopy={() => {
-                                            createNotification({
-                                                text: c('Notification').t`IP Address copied to clipboard`,
-                                            });
-                                        }}
-                                    />
+                            <div key={'logical-' + logical.ID} className="gateway-row-server-container">
+                                <span className="gateway-row-server-infos inline-flex flex-row flex-wrap items-center bg-weak py-0 px-2 rounded">
+                                    <span className="gateway-row-server-infos-country inline-flex flex-row flex-nowrap items-center">
+                                        <CountryFlagAndName
+                                            countryCode={logical.ExitCountry}
+                                            countryName={title}
+                                            className="gateway-row-server-infos-img"
+                                        />
+                                    </span>
+                                    <span className="color-weak gateway-row-server-infos-separator">
+                                        &nbsp; • &nbsp;
+                                    </span>
+                                    <span className="flex flex-norap items-center gateway-row-server-infos-ips">
+                                        <span className="user-select">{getIpsCell(logical.Servers)}</span>
+                                        <Copy
+                                            value={logical.Servers[0].ExitIPv4}
+                                            shape="ghost"
+                                            onCopy={() => {
+                                                createNotification({
+                                                    text: c('Notification').t`IP Address copied to clipboard`,
+                                                });
+                                            }}
+                                            tooltipText={c('Label').t`Copy IP address to clipboard`}
+                                        />
+                                    </span>
                                 </span>
                             </div>
                         );
