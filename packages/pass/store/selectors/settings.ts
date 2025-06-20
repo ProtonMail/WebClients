@@ -33,6 +33,7 @@ export const selectTheme = ({ settings }: State): Maybe<PassThemeOption> => sett
 export const selectClipboardTTL = ({ settings }: State) => settings.clipboard?.timeoutMs;
 export const selectAliasTrashAcknowledged = ({ settings }: State) => settings.aliasTrashAcknowledged;
 export const selectAutofillSettings = ({ settings }: State) => settings.autofill;
+export const selectPendingBrowserAutofill = ({ settings }: State) => settings.pendingBrowserAutofill;
 
 export const selectLockSetupRequired = createSelector(
     [selectLockMode, selectOrganizationSettings],
