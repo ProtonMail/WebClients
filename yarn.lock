@@ -8302,8 +8302,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/mail-renderer@workspace:packages/mail-renderer"
   dependencies:
+    "@proton/atoms": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/hooks": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/styles": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
     eslint: "npm:^8.57.1"
@@ -39382,6 +39386,7 @@ __metadata:
     "@proton/atoms": "workspace:^"
     "@proton/colors": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/mail-renderer": "workspace:^"
     "@proton/styles": "workspace:^"
     "@types/react": "npm:^18.3.23"
     "@types/react-dom": "npm:^18.3.7"
