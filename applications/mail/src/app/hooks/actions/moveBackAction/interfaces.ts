@@ -1,3 +1,5 @@
+import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+
 import type { Element } from 'proton-mail/models/element';
 
 export enum MOVE_BACK_ACTION_TYPES {
@@ -29,6 +31,7 @@ export interface PermanentDeleteActionProps {
 
 export interface MarkAsActionProps {
     type: MOVE_BACK_ACTION_TYPES.MARK_AS;
+    status: MARK_AS_STATUS;
 }
 
 export type ActionProps = (
