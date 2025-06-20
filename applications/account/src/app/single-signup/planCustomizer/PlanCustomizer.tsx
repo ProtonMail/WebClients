@@ -3,11 +3,22 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
 
 import { Icon, Info } from '@proton/components';
-import { ADDON_NAMES, type Currency, type Cycle, type Plan, type PlanIDs } from '@proton/payments';
+import type { PLANS } from '@proton/payments';
+import {
+    ADDON_NAMES,
+    ADDON_PREFIXES,
+    type Currency,
+    type Cycle,
+    type Plan,
+    type PlanIDs,
+    TRIAL_MAX_DEDICATED_IPS,
+    TRIAL_MAX_USERS,
+    getAddonType,
+} from '@proton/payments';
 import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
 import clsx from '@proton/utils/clsx';
 
-import ButtonNumberInput from './ButtonNumberInput';
+import ButtonNumberInput, { type ButtonNumberInputProps } from './ButtonNumberInput';
 import getAddonsPricing from './getAddonsPricing';
 
 interface AddonFieldProps extends ComponentPropsWithoutRef<'div'> {
@@ -39,7 +50,41 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     planIDs: PlanIDs;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     plansMap: { [key: string]: Plan };
+    isTrialMode?: boolean;
 }
+
+const getTrialProps = (
+    isTrialMode: boolean,
+    addonName: PLANS | ADDON_NAMES
+): {} | Pick<ButtonNumberInputProps, 'max' | 'increaseBlockedReasons' | 'increaseBlockedReasonText'> => {
+    if (!isTrialMode) {
+        return {};
+    }
+
+    const addonType: ADDON_PREFIXES | null = getAddonType(addonName);
+
+    if (!addonType || (addonType !== ADDON_PREFIXES.MEMBER && addonType !== ADDON_PREFIXES.IP)) {
+        return {};
+    }
+
+    const max = {
+        [ADDON_PREFIXES.MEMBER]: TRIAL_MAX_USERS,
+        [ADDON_PREFIXES.IP]: TRIAL_MAX_DEDICATED_IPS,
+    }[addonType];
+
+    const increaseBlockedReasonText = {
+        [ADDON_PREFIXES.MEMBER]: c('b2b_trials_2025_Info')
+            .t`You can have up to ${TRIAL_MAX_USERS} users during the trial period.`,
+        [ADDON_PREFIXES.IP]: c('b2b_trials_2025_Info')
+            .t`You can have up to ${TRIAL_MAX_DEDICATED_IPS} dedicated server during the trial period.`,
+    }[addonType];
+
+    return {
+        max,
+        increaseBlockedReasons: ['trial-limit'],
+        increaseBlockedReasonText,
+    };
+};
 
 const PlanCustomizer = ({
     cycle,
@@ -48,6 +93,7 @@ const PlanCustomizer = ({
     planIDs,
     plansMap,
     currentPlan,
+    isTrialMode = false,
     className,
     ...rest
 }: Props) => {
@@ -66,20 +112,31 @@ const PlanCustomizer = ({
         <div className={clsx(['flex flex-column gap-8', className])} {...rest}>
             {addonsPricing.map(({ value, min, max, addon, isSupported, addonMultiplier }) => {
                 const id = addon.Name;
+                const trialProps = getTrialProps(isTrialMode, addon.Name);
 
-                const buttonNumberInput = (
-                    <ButtonNumberInput
-                        id={id}
-                        min={min}
-                        max={max}
-                        step={addonMultiplier}
-                        value={value}
-                        onValue={(newQuantity) => {
-                            onChangePlanIDs(setQuantity(planIDs, addon.Name, (newQuantity - min) / addonMultiplier));
-                        }}
-                        disabled={!isSupported}
-                    />
-                );
+                const buttonProps = {
+                    id,
+                    min,
+                    max,
+                    step: addonMultiplier,
+                    value,
+                    onValue: (newQuantity: number) => {
+                        onChangePlanIDs(setQuantity(planIDs, addon.Name, (newQuantity - min) / addonMultiplier));
+                    },
+                    disabled: !isSupported,
+                    ...trialProps,
+                };
+
+                // If nothing can be done with this (max <= min), don't show it
+                if (
+                    buttonProps.max !== undefined &&
+                    buttonProps.min !== undefined &&
+                    buttonProps.max <= buttonProps.min
+                ) {
+                    return null;
+                }
+
+                const buttonNumberInput = <ButtonNumberInput {...buttonProps} />;
 
                 if ([ADDON_NAMES.MEMBER_VPN_PRO, ADDON_NAMES.MEMBER_VPN_BUSINESS].includes(addon.Name as ADDON_NAMES)) {
                     return (
