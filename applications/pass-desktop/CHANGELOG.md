@@ -1,3 +1,14 @@
+### Version 1.32.0
+
+- Add support for custom item types
+- Improve note item screen
+- Preserve custom item types when importing
+- Minor UX improvements
+- Support extra fields on alias, credit-cards & note items
+- Fix "attached-to-login" alias form validation
+- Fix auto-scroll when creating extra-field
+- Fix item auto-select conflict with filters after item creation
+
 ### Version 1.31.5
 
 - Set default pass theme to system preference
