@@ -1,15 +1,18 @@
-import { useEffect, useRef, useState } from 'react';
+import { type ChangeEvent, useEffect, useRef, useState } from 'react';
 
 import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
+import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useApi from '@proton/components/hooks/useApi';
@@ -17,12 +20,17 @@ import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { getOrgAuthLogs } from '@proton/shared/lib/api/b2bevents';
 import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
+import { updateLogAuth } from '@proton/shared/lib/api/settings';
 import type { AuthLog, B2BAuthLog } from '@proton/shared/lib/authlog';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import { getFormattedQueryString } from '../organization/useOrgAuthLogs';
 import B2BAuthLogsTable from './B2BAuthLogsTable';
 import LogsTable from './LogsTable';
@@ -38,11 +46,11 @@ const PAGE_SIZE = 10;
 const LogsSection = () => {
     const isMounted = useIsMounted();
     const [settings] = useUserSettings();
-    const [organization] = useOrganization();
     const [user] = useUser();
     const protonSentinel = settings.HighSecurity.Value;
     const api = useApi();
     const [b2bState, setB2bState] = useState<{ logs: B2BAuthLog[]; total: number }>(INITIAL_STATE);
+    const [basicLogAuth, setBasicLogAuth] = useState(settings.LogAuth);
     const [state, setState] = useState<{ logs: AuthLog[]; total: number }>(INITIAL_STATE);
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
     const [loading, withLoading] = useLoading();
@@ -50,20 +58,10 @@ const LogsSection = () => {
     const [loadingDownload, withLoadingDownload] = useLoading();
     const [error, setError] = useState(false);
     const [loadingWipe, withLoadingWipe] = useLoading();
+    const [confirmModal, showConfirmModal] = useModalTwoPromise();
 
     const hasB2BLogs = Boolean(settings?.OrganizationPolicy?.Enforced);
-
-    const logAuth = (() => {
-        if (hasB2BLogs) {
-            if (organization?.Settings?.LogAuth === 2) {
-                return SETTINGS_LOG_AUTH_STATE.ADVANCED;
-            } else if (organization?.Settings?.LogAuth === 1) {
-                return SETTINGS_LOG_AUTH_STATE.BASIC;
-            }
-            return SETTINGS_LOG_AUTH_STATE.DISABLE;
-        }
-        return settings.LogAuth;
-    })();
+    const { ADVANCED, BASIC, DISABLE } = SETTINGS_LOG_AUTH_STATE;
 
     const handleDownload = async () => {
         const Logs = await getAllAuthenticationLogs(api);
@@ -132,72 +130,179 @@ const LogsSection = () => {
         await withLoadingRefresh(fetchAndSetState);
     };
 
+    const handleLogAuth = async (newLogAuthState: SETTINGS_LOG_AUTH_STATE) => {
+        if (state.total > 0 && newLogAuthState === DISABLE) {
+            await showConfirmModal();
+        }
+        await api(updateLogAuth(newLogAuthState));
+        setBasicLogAuth(newLogAuthState);
+        if (newLogAuthState === DISABLE) {
+            setState(INITIAL_STATE);
+        }
+    };
+
+    const handleLogsChange = ({ target: { checked } }: ChangeEvent<HTMLInputElement>) => {
+        handleLogAuth(checked ? BASIC : DISABLE).catch(noop);
+    };
+
+    const handleAdvancedLogsChange = ({ target: { checked } }: ChangeEvent<HTMLInputElement>) => {
+        handleLogAuth(checked ? ADVANCED : BASIC).catch(noop);
+    };
+
     useEffect(() => {
         withLoading(fetchAndSetState());
     }, [page, protonSentinel]);
 
     return (
-        <SettingsSectionWide>
-            <SettingsParagraph>
-                {c('Info')
-                    .t`Monitor and audit authentication attempts for all ${BRAND_NAME} services that use your ${BRAND_NAME} credentials.`}
-            </SettingsParagraph>
+        <>
+            {confirmModal((props) => {
+                return (
+                    <Prompt
+                        {...props}
+                        onClose={() => props.onReject()}
+                        title={c('Action').t`Disable security events`}
+                        buttons={[
+                            <Button color="norm" onClick={() => props.onResolve()}>
+                                {c('Action').t`Disable security events`}
+                            </Button>,
+                            <Button onClick={props.onClose}>{c('Action').t`Cancel`}</Button>,
+                        ]}
+                    >
+                        {c('Info')
+                            .t`By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?`}
+                    </Prompt>
+                );
+            })}
+            <SettingsSectionWide>
+                <SettingsParagraph>
+                    {c('Info')
+                        .t`Monitor and audit authentication attempts for all ${BRAND_NAME} services that use your ${BRAND_NAME} credentials.`}
+                </SettingsParagraph>
 
-            <div className="flex justify-space-between items-start mt-8 mb-4">
-                {logAuth !== SETTINGS_LOG_AUTH_STATE.DISABLE && (
-                    <div className="mb-2">
-                        <Button
-                            shape="outline"
-                            className="mr-4 inline-flex items-center"
-                            loading={loadingRefresh}
-                            onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
-                            title={c('Action').t`Reload`}
-                        >
-                            <Icon name="arrow-rotate-right" className="mr-2" />
-                            <span>{c('Action').t`Reload`}</span>
-                        </Button>
-                        {state.logs.length && !hasB2BLogs ? (
-                            <WipeLogsButton className="mr-4" onWipe={handleWipeWithReload} loading={loadingWipe} />
-                        ) : null}
-                        {state.logs.length && !hasB2BLogs ? (
-                            <Button
-                                shape="outline"
-                                className="self-end"
-                                onClick={() => withLoadingDownload(handleDownload())}
-                                loading={loadingDownload}
-                                title={c('Action').t`Export`}
-                            >
-                                <Icon name="arrow-down-line" className="mr-2" />
-                                {c('Action').t`Export`}
-                            </Button>
-                        ) : null}
-                    </div>
+                {hasB2BLogs ? (
+                    <>
+                        <div className="flex justify-space-between items-start mt-8 mb-4">
+                            <div className="mb-2">
+                                <Button
+                                    shape="outline"
+                                    className="mr-4 inline-flex items-center"
+                                    loading={loadingRefresh}
+                                    onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
+                                    title={c('Action').t`Reload`}
+                                >
+                                    <Icon name="arrow-rotate-right" className="mr-2" />
+                                    <span>{c('Action').t`Reload`}</span>
+                                </Button>
+                            </div>
+                            <div className="mb-2">
+                                <Pagination
+                                    onNext={onNext}
+                                    onPrevious={onPrevious}
+                                    onSelect={onSelect}
+                                    total={b2bState.total}
+                                    page={page}
+                                    limit={PAGE_SIZE}
+                                />
+                            </div>
+                        </div>
+                        <B2BAuthLogsTable logs={b2bState.logs} userSection={true} loading={loading || loadingRefresh} />
+                    </>
+                ) : (
+                    <>
+                        <SettingsLayout>
+                            <SettingsLayoutLeft>
+                                <label className="text-semibold" htmlFor="logs-toggle">
+                                    {c('Log preference').t`Enable security events`}
+                                </label>
+                            </SettingsLayoutLeft>
+                            <SettingsLayoutRight isToggleContainer>
+                                <Toggle
+                                    id="logs-toggle"
+                                    checked={basicLogAuth === BASIC || basicLogAuth === ADVANCED}
+                                    onChange={handleLogsChange}
+                                />
+                            </SettingsLayoutRight>
+                        </SettingsLayout>
+
+                        {basicLogAuth !== DISABLE && (
+                            <SettingsLayout>
+                                <SettingsLayoutLeft>
+                                    <label className="text-semibold" htmlFor="advanced-logs-toggle">
+                                        <span className="mr-2">{c('Log preference').t`Enable detailed events`}</span>
+                                        <Info
+                                            title={c('Tooltip')
+                                                .t`Enabling detailed events records the IP address for each event.`}
+                                        />
+                                    </label>
+                                </SettingsLayoutLeft>
+                                <SettingsLayoutRight isToggleContainer>
+                                    <Toggle
+                                        id="advanced-logs-toggle"
+                                        checked={basicLogAuth === ADVANCED}
+                                        onChange={handleAdvancedLogsChange}
+                                    />
+                                </SettingsLayoutRight>
+                            </SettingsLayout>
+                        )}
+
+                        <div className="flex justify-space-between items-start mt-8 mb-4">
+                            {basicLogAuth !== SETTINGS_LOG_AUTH_STATE.DISABLE && (
+                                <div className="mb-2">
+                                    <Button
+                                        shape="outline"
+                                        className="mr-4 inline-flex items-center"
+                                        loading={loadingRefresh}
+                                        onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
+                                        title={c('Action').t`Reload`}
+                                    >
+                                        <Icon name="arrow-rotate-right" className="mr-2" />
+                                        <span>{c('Action').t`Reload`}</span>
+                                    </Button>
+                                    {state.logs.length > 0 && (
+                                        <>
+                                            <WipeLogsButton
+                                                className="mr-4"
+                                                onWipe={handleWipeWithReload}
+                                                loading={loadingWipe}
+                                            />
+                                            <Button
+                                                shape="outline"
+                                                className="self-end"
+                                                onClick={() => withLoadingDownload(handleDownload())}
+                                                loading={loadingDownload}
+                                                title={c('Action').t`Export`}
+                                            >
+                                                <Icon name="arrow-down-line" className="mr-2" />
+                                                {c('Action').t`Export`}
+                                            </Button>
+                                        </>
+                                    )}
+                                </div>
+                            )}
+
+                            <div className="mb-2">
+                                <Pagination
+                                    onNext={onNext}
+                                    onPrevious={onPrevious}
+                                    onSelect={onSelect}
+                                    total={state.total}
+                                    page={page}
+                                    limit={PAGE_SIZE}
+                                />
+                            </div>
+                        </div>
+
+                        <LogsTable
+                            logs={state.logs}
+                            logAuth={basicLogAuth}
+                            protonSentinel={protonSentinel}
+                            loading={loading || loadingRefresh}
+                            error={error}
+                        />
+                    </>
                 )}
-
-                <div className="mb-2">
-                    <Pagination
-                        onNext={onNext}
-                        onPrevious={onPrevious}
-                        onSelect={onSelect}
-                        total={hasB2BLogs ? b2bState.total : state.total}
-                        page={page}
-                        limit={PAGE_SIZE}
-                    />
-                </div>
-            </div>
-
-            {hasB2BLogs ? (
-                <B2BAuthLogsTable logs={b2bState.logs} userSection={true} loading={loading || loadingRefresh} />
-            ) : (
-                <LogsTable
-                    logs={state.logs}
-                    logAuth={logAuth}
-                    protonSentinel={protonSentinel}
-                    loading={loading || loadingRefresh}
-                    error={error}
-                />
-            )}
-        </SettingsSectionWide>
+            </SettingsSectionWide>
+        </>
     );
 };
 
