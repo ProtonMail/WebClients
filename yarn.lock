@@ -7554,7 +7554,7 @@ __metadata:
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
     "@types/deep-freeze": "npm:^0.1.5"
@@ -7585,7 +7585,7 @@ __metadata:
     "@proton/styles": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
@@ -7704,7 +7704,7 @@ __metadata:
   dependencies:
     "@proton/account": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
     eslint: "npm:^8.57.1"
@@ -8178,7 +8178,7 @@ __metadata:
     "@proton/redux-shared-store": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     ts-jest: "npm:^29.4.0"
@@ -8323,7 +8323,7 @@ __metadata:
     "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/styles": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
     eslint: "npm:^8.57.1"
@@ -8433,7 +8433,7 @@ __metadata:
     "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@protontech/pass-rust-core": "npm:0.20.0"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -8484,7 +8484,7 @@ __metadata:
     "@proton/jest-env": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/testing": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     "@swc/jest": "npm:^0.2.38"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
@@ -8559,7 +8559,7 @@ __metadata:
   dependencies:
     "@proton/shared": "workspace:^"
     "@proton/unleash": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     react: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
   languageName: unknown
@@ -8576,7 +8576,7 @@ __metadata:
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     react: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
   languageName: unknown
@@ -8587,7 +8587,7 @@ __metadata:
   resolution: "@proton/redux-utilities@workspace:packages/redux-utilities"
   dependencies:
     "@proton/react-redux-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
     eslint: "npm:^8.57.1"
@@ -8820,7 +8820,7 @@ __metadata:
     "@proton/account": "workspace:^"
     "@proton/andromeda": "workspace:packages/wasm/andromeda"
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^14.3.1"
     "@vitest/coverage-v8": "npm:^1.6.1"
@@ -9846,10 +9846,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reduxjs/toolkit@npm:^2.6.1":
-  version: 2.6.1
-  resolution: "@reduxjs/toolkit@npm:2.6.1"
+"@reduxjs/toolkit@npm:^2.8.2":
+  version: 2.8.2
+  resolution: "@reduxjs/toolkit@npm:2.8.2"
   dependencies:
+    "@standard-schema/spec": "npm:^1.0.0"
+    "@standard-schema/utils": "npm:^0.3.0"
     immer: "npm:^10.0.3"
     redux: "npm:^5.0.1"
     redux-thunk: "npm:^3.1.0"
@@ -9862,7 +9864,7 @@ __metadata:
       optional: true
     react-redux:
       optional: true
-  checksum: 10c0/6ae5db267f2b0a9da8b59080797c5adb1b92b50c0f2bdd933470206285d684b79ed2b1c4e2d7a0fb4aa9e3772d0e215fdcd3a8e4a4a2aac81400fcd790dbd6cd
+  checksum: 10c0/6a7a33bad5f1100340757151ff86ca0c4c248f030ae56ce0e6f1d98b39fa87c8f193e9faa2ebd6d5a4c0416921e9f9f7a2bbdd81156c39f08f6bf5ce70c2b927
   languageName: node
   linkType: hard
 
@@ -10965,6 +10967,20 @@ __metadata:
   version: 3.1.2
   resolution: "@socket.io/component-emitter@npm:3.1.2"
   checksum: 10c0/c4242bad66f67e6f7b712733d25b43cbb9e19a595c8701c3ad99cbeb5901555f78b095e24852f862fffb43e96f1d8552e62def885ca82ae1bb05da3668fd87d7
+  languageName: node
+  linkType: hard
+
+"@standard-schema/spec@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@standard-schema/spec@npm:1.0.0"
+  checksum: 10c0/a1ab9a8bdc09b5b47aa8365d0e0ec40cc2df6437be02853696a0e377321653b0d3ac6f079a8c67d5ddbe9821025584b1fb71d9cc041a6666a96f1fadf2ece15f
+  languageName: node
+  linkType: hard
+
+"@standard-schema/utils@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@standard-schema/utils@npm:0.3.0"
+  checksum: 10c0/6eb74cd13e52d5fc74054df51e37d947ef53f3ab9e02c085665dcca3c38c60ece8d735cebbdf18fbb13c775fbcb9becb3f53109b0e092a63f0f7389ce0993fd0
   languageName: node
   linkType: hard
 
@@ -39109,7 +39125,7 @@ __metadata:
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.3.0"
     "@testing-library/user-event": "npm:^14.6.1"
@@ -39393,7 +39409,7 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/tidy-url": "npm:^1.18.3"
-    "@reduxjs/toolkit": "npm:^2.6.1"
+    "@reduxjs/toolkit": "npm:^2.8.2"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
