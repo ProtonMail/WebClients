@@ -46,6 +46,10 @@ export type SettingsState = {
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
     showUsernameField?: boolean;
     theme?: PassThemeOption;
+    /* Using browser privacy capabilities requires permissions and a reload to be effective:
+     * This flag is used during the reload after getting the permission to trigger browser
+     * privacy. We store a timestamp here to validate the pending request. */
+    pendingBrowserAutofill?: number;
 };
 
 export const EXCLUDED_SETTINGS_KEYS = ['createdItemsCount', 'lockMode', 'extraPassword'] as const;
