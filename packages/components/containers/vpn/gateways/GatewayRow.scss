@@ -1,0 +1,29 @@
+.gateway-row-server-container {
+	container-type: inline-size;
+
+	@container (max-width: 28em) {
+		.gateway-row-server-infos {
+			flex-direction: column;
+			padding-inline-start: var(--space-1);
+			padding-block: var(--space-1);
+			align-items: flex-start;
+		}
+
+		.gateway-row-server-infos-separator {
+			display: none;
+		}
+
+		.gateway-row-server-infos-ips {
+			margin-inline-start: var(--space-2);
+			inline-size: 100%;
+		}
+
+		.gateway-row-server-infos-img {
+			margin-inline-start: var(--space-2);
+		}
+
+		.gateway-row-server-infos-country {
+			margin-block-start: var(--space-1);
+		}
+	}
+}
