@@ -1,5 +1,7 @@
 import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
 
+import noop from '@proton/utils/noop';
+
 import * as privacy from './privacy';
 
 const setBuildTarget = (value: string) => ((global as any).BUILD_TARGET = value);
@@ -61,14 +63,14 @@ describe('Privacy', () => {
 
         test('should return `false` when if `BROWSER_AUTOFILL_SETTINGS` is empty', async () => {
             privacy.BROWSER_AUTOFILL_SETTINGS.length = 0;
-            expect(await privacy.checkBrowserAutofillCapabilities()).toBe(false);
+            expect(await privacy.checkBrowserAutofillCapabilities(false)).toBe(false);
         });
 
         test('should return `false` if "privacy" permission not granted', async () => {
             privacy.BROWSER_AUTOFILL_SETTINGS.push(...privacy.getBrowserAutofillSettings());
             browser.permissions.contains.mockResolvedValueOnce(false);
 
-            expect(await privacy.checkBrowserAutofillCapabilities()).toBe(false);
+            expect(await privacy.checkBrowserAutofillCapabilities(false)).toBe(false);
         });
 
         test('should return `true` when all settings are controlled and disabled', async () => {
@@ -78,7 +80,7 @@ describe('Privacy', () => {
             browser.privacy.services.autofillAddressEnabled.get.mockResolvedValue(details);
             browser.privacy.services.passwordSavingEnabled.get.mockResolvedValue(details);
 
-            expect(await privacy.checkBrowserAutofillCapabilities()).toBe(true);
+            expect(await privacy.checkBrowserAutofillCapabilities(false)).toBe(true);
         });
 
         test('should return `false` when any setting is not controlled or enabled', async () => {
@@ -89,7 +91,15 @@ describe('Privacy', () => {
             browser.privacy.services.autofillAddressEnabled.get.mockResolvedValue(detailsActive);
             browser.privacy.services.passwordSavingEnabled.get.mockResolvedValue(detailsInactive);
 
-            expect(await privacy.checkBrowserAutofillCapabilities()).toBe(false);
+            expect(await privacy.checkBrowserAutofillCapabilities(false)).toBe(false);
+        });
+
+        test('shoud set browser settings if pending value is `true`', async () => {
+            privacy.BROWSER_AUTOFILL_SETTINGS.push(...privacy.getBrowserAutofillSettings());
+            await privacy.checkBrowserAutofillCapabilities(true);
+
+            expect(browser.privacy.services.autofillAddressEnabled.set).toHaveBeenCalledWith({ value: false });
+            expect(browser.privacy.services.passwordSavingEnabled.set).toHaveBeenCalledWith({ value: false });
         });
     });
 
@@ -110,7 +120,7 @@ describe('Privacy', () => {
         test('should set all settings and return the input value', async () => {
             privacy.BROWSER_AUTOFILL_SETTINGS.push(...privacy.getBrowserAutofillSettings());
 
-            const result = await privacy.setBrowserAutofillCapabilities(true);
+            const result = await privacy.setBrowserAutofillCapabilities(true, noop);
             expect(browser.privacy.services.autofillAddressEnabled.set).toHaveBeenCalledWith({ value: false });
             expect(browser.privacy.services.passwordSavingEnabled.set).toHaveBeenCalledWith({ value: false });
             expect(result).toBe(true);
@@ -119,7 +129,7 @@ describe('Privacy', () => {
         test('should set settings after granting permission', async () => {
             privacy.BROWSER_AUTOFILL_SETTINGS.push(...privacy.getBrowserAutofillSettings());
 
-            const result = await privacy.setBrowserAutofillCapabilities(true);
+            const result = await privacy.setBrowserAutofillCapabilities(true, noop);
             expect(browser.privacy.services.autofillAddressEnabled.set).toHaveBeenCalledWith({ value: false });
             expect(browser.privacy.services.passwordSavingEnabled.set).toHaveBeenCalledWith({ value: false });
             expect(result).toBe(true);
@@ -128,7 +138,8 @@ describe('Privacy', () => {
         test('should early return if "privacy" permission not granted and user rejects', async () => {
             privacy.BROWSER_AUTOFILL_SETTINGS.push(...privacy.getBrowserAutofillSettings());
             browser.permissions.request.mockResolvedValueOnce(false);
-            const result = await privacy.setBrowserAutofillCapabilities(true);
+
+            const result = await privacy.setBrowserAutofillCapabilities(true, noop);
 
             expect(browser.privacy.services.autofillAddressEnabled.set).not.toHaveBeenCalled();
             expect(browser.privacy.services.passwordSavingEnabled.set).not.toHaveBeenCalledWith();
@@ -141,10 +152,12 @@ describe('Privacy', () => {
             privacy.BROWSER_AUTOFILL_SETTINGS.push(...privacy.getBrowserAutofillSettings());
             browser.permissions.contains.mockResolvedValueOnce(false);
             browser.permissions.request.mockResolvedValueOnce(true);
-            const result = await privacy.setBrowserAutofillCapabilities(true);
+            const setPending = jest.fn();
+            const result = await privacy.setBrowserAutofillCapabilities(true, setPending);
 
             expect(result).toBe(false);
             expect(reload).toHaveBeenCalled();
+            expect(setPending).toHaveBeenCalledWith(true);
 
             browser.privacy = privacyAPI;
         });
@@ -153,7 +166,7 @@ describe('Privacy', () => {
             privacy.BROWSER_AUTOFILL_SETTINGS.push(...privacy.getBrowserAutofillSettings());
             browser.privacy.services.autofillAddressEnabled.set.mockRejectedValue(new Error());
 
-            const result = await privacy.setBrowserAutofillCapabilities(false);
+            const result = await privacy.setBrowserAutofillCapabilities(false, noop);
             expect(browser.privacy.services.autofillAddressEnabled.set).toHaveBeenCalledWith({ value: true });
             expect(browser.privacy.services.passwordSavingEnabled.set).toHaveBeenCalledWith({ value: true });
             expect(result).toBe(true);
