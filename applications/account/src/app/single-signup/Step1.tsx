@@ -1297,6 +1297,8 @@ const Step1 = ({
                                                 ? getBundleTitle(VPN_SHORT_APP_NAME, PASS_SHORT_APP_NAME)
                                                 : getPlanTitle(planInformation.title)
                                         }
+                                        trial={trial}
+                                        isB2bPlan={isB2bPlan}
                                     />
                                 </div>
                             </div>
