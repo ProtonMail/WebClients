@@ -61,6 +61,7 @@ export function usePublicActions() {
         const date = getPlatformFriendlyDateForFileName();
         // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
         const docName = c('Title').t`Untitled document ${date}`;
+        // translator: Default title for a new Proton Spreadsheet (example: Untitled spreadsheet 2024-04-23)
         const sheetName = c('Title').t`Untitled spreadsheet ${date}`;
         const name = documentType === 'sheet' ? sheetName : docName;
 
