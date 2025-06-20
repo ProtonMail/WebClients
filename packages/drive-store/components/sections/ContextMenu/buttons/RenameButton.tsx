@@ -24,6 +24,8 @@ const RenameButton = ({ link, showRenameModal, close }: Props) => {
                     isFile: link.isFile,
                     isDoc: isProtonDocsDocument(link.mimeType),
                     name: link.name,
+                    volumeId: link.volumeId,
+                    linkId: link.linkId,
                     onSubmit: (formattedName) =>
                         renameLink(new AbortController().signal, link.rootShareId, link.linkId, formattedName),
                 })

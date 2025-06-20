@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import type { ModalStateProps } from '@proton/components';
 import {
     Field,
     InputFieldTwo,
@@ -15,78 +14,70 @@ import {
     ModalTwoHeader,
     PrimaryButton,
     Row,
-    useModalTwoStatic,
 } from '@proton/components';
-import { useLoading } from '@proton/hooks';
-import useFlag from '@proton/unleash/useFlag';
+import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 
-import { RenameModal } from '../../modals/RenameModal';
-import { formatLinkName, splitLinkName, validateLinkNameField } from '../../store';
-import { getIsPublicContext } from '../../utils/getIsPublicContext';
+import { validateLinkNameField } from '../../store';
 
-interface Props {
-    onClose?: () => void;
-    onSubmit: (formattedName: string) => Promise<void>;
+// Props need to be exported with a proper unique name, we can't call them "Props" anymore
+export type RenameModalViewProps = {
+    handleSubmit: (newName: string) => Promise<void>;
     isFile: boolean;
-    isDoc: boolean;
+    onClose?: () => void;
     name: string;
-    volumeId?: string;
-    linkId?: string;
-}
+    ignoreExtension: boolean;
+    isDoc?: boolean;
+};
 
-const RenameModalDeprecated = ({
-    isFile,
-    isDoc,
-    name: linkName,
+export const RenameModalView = ({
+    handleSubmit,
     onClose,
-    onSubmit,
-    volumeId, // here so they don't get added to the dom with modalProps
-    linkId, // here so they don't get added to the dom with modalProps
+    name: originalName,
+    isFile,
+    ignoreExtension,
+    isDoc, // here so they don't get added to the dom with modalProps
     ...modalProps
-}: Props & ModalStateProps) => {
-    const [name, setName] = useState(linkName);
-    const [loading, withLoading] = useLoading();
+}: RenameModalViewProps) => {
     const [autofocusDone, setAutofocusDone] = useState(false);
+    const [tempName, setTempName] = useState(originalName);
+    const [loading, withLoading] = useLoading();
 
     const selectNamePart = (e: FocusEvent<HTMLInputElement>) => {
         if (autofocusDone) {
             return;
         }
         setAutofocusDone(true);
-        const [namePart] = splitLinkName(linkName);
-        if (!namePart || !isFile || isDoc) {
+        if (ignoreExtension) {
             return e.target.select();
         }
-        e.target.setSelectionRange(0, namePart.length);
+        e.target.setSelectionRange(0, originalName.length);
     };
 
-    const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
-        setName(formatLinkName(target.value));
+    const onBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
+        setTempName(target.value.trim());
     };
 
-    const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
-        setName(target.value);
+    const onChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
+        setTempName(target.value);
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const onSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        const formattedName = formatLinkName(name);
-        setName(formattedName);
-
-        await onSubmit(formattedName);
+        const formattedName = tempName.trim();
+        setTempName(formattedName);
         onClose?.();
+        return handleSubmit(formattedName);
     };
 
-    const validationError = validateLinkNameField(name);
+    const validationError = validateLinkNameField(tempName);
 
     return (
         <ModalTwo
             as="form"
             disableCloseOnEscape={loading}
             onClose={onClose}
-            onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e)).catch(noop)}
+            onSubmit={(e: React.FormEvent) => withLoading(onSubmit(e)).catch(noop)}
             size="large"
             {...modalProps}
         >
@@ -100,11 +91,11 @@ const RenameModalDeprecated = ({
                     <Field>
                         <InputFieldTwo
                             id="link-name"
-                            value={name}
+                            value={tempName}
                             autoFocus
                             placeholder={c('Placeholder').t`New name`}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
+                            onChange={onChange}
+                            onBlur={onBlur}
                             onFocus={selectNamePart}
                             error={validationError}
                             required
@@ -123,10 +114,4 @@ const RenameModalDeprecated = ({
             </ModalTwoFooter>
         </ModalTwo>
     );
-};
-
-export const useRenameModal = () => {
-    const useSDKModal = useFlag('DriveWebSDKRenameModal');
-    const isPublic = getIsPublicContext();
-    return useModalTwoStatic(useSDKModal && !isPublic ? RenameModal : RenameModalDeprecated);
 };
