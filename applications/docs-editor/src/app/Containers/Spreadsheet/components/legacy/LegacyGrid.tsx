@@ -1,9 +1,9 @@
 import { CanvasGrid } from '@rowsncolumns/spreadsheet'
-import type { ProtonSheetsState } from '../state'
+import type { ProtonSheetsState } from '../../state'
 import { functionDescriptions } from '@rowsncolumns/functions'
 import { ChartComponent } from '@rowsncolumns/charts'
 
-export type GridProps = {
+export type LegacyGridProps = {
   state: ProtonSheetsState
   isReadonly: boolean
   // TODO: move this into state object
@@ -11,7 +11,7 @@ export type GridProps = {
   userName: string
 }
 
-export function Grid({ state, isReadonly, users, userName }: GridProps) {
+export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridProps) {
   return (
     <CanvasGrid
       {...state.spreadsheetColors}

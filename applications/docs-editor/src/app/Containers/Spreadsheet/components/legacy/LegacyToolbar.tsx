@@ -50,13 +50,13 @@ import { useRef } from 'react'
 import { c } from 'ttag'
 import { functionDescriptions } from '@rowsncolumns/functions'
 
-export type OldToolbarProps = {
+export type LegacyToolbarProps = {
   state: ProtonSheetsState
   downloadLogs: () => void
   isReadonly: boolean
 }
 
-export function OldToolbar({ state, downloadLogs, isReadonly }: OldToolbarProps) {
+export function LegacyToolbar({ state, downloadLogs, isReadonly }: LegacyToolbarProps) {
   return (
     <>
       <Toolbar>
@@ -237,7 +237,7 @@ export function OldToolbar({ state, downloadLogs, isReadonly }: OldToolbarProps)
           </IconButton>
         </SimpleTooltip>
       </Toolbar>
-      <OldFormulaBar state={state} isReadonly={isReadonly} />
+      <LegacyFormulaBar state={state} isReadonly={isReadonly} />
     </>
   )
 }
@@ -287,12 +287,12 @@ function InsertImageMenu({ onInsertFile }: { onInsertFile: ReturnType<typeof use
   )
 }
 
-type FormulaBarProps = {
+type LegacyFormulaBarProps = {
   state: ProtonSheetsState
   isReadonly: boolean
 }
 
-function OldFormulaBar({ state, isReadonly }: FormulaBarProps) {
+function LegacyFormulaBar({ state, isReadonly }: LegacyFormulaBarProps) {
   return (
     <FormulaBar>
       <RangeSelector
