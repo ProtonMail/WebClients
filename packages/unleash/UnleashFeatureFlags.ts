@@ -130,6 +130,7 @@ enum DriveFeatureFlag {
     DriveWebVideoStreaming = 'DriveWebVideoStreaming',
     // SDK Migration
     DriveWebSDKRenameModal = 'DriveWebSDKRenameModal',
+    DriveWebSDKMoveItemsModal = 'DriveWebSDKMoveItemsModal',
 }
 
 enum DocsFeatureFlag {
