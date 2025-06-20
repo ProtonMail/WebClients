@@ -17,6 +17,13 @@ export type CustomTemplateGroup = {
     templates: CustomTemplate[];
 };
 
+export const EMPTY_CUSTOM_ITEM: CustomTemplate = {
+    label: '',
+    icon: 'wrench',
+    type: 'custom',
+    fields: [],
+};
+
 export const getGroupedTemplates = (): CustomTemplateGroup[] => [
     {
         label: c('Label').t`Technology`,
