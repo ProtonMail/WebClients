@@ -9,9 +9,7 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import { useDriveEventManager } from '../../store';
-import { sendErrorReport } from '../../utils/errorHandling';
-import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { shouldTrackError } from '../../utils/errorHandling/sdkErrorHandler';
+import { useSdkErrorHandler } from '../../utils/errorHandling/sdkErrorHandler';
 
 export type UseRenameModalProps = ModalStateProps & {
     onClose?: () => void;
@@ -55,7 +53,7 @@ export const useRenameModalState = ({
     const [node, setNode] = useState<null | NodeEntity>(null);
     const isFile = node?.type === 'file';
     const ignoreExtension = getIgnoreExtension(node, name);
-
+    const { handleError } = useSdkErrorHandler();
     useEffect(() => {
         const fetchNode = async () => {
             const tmpNode = await drive.getNode(internal.generateNodeUid(volumeId, linkId));
@@ -71,8 +69,8 @@ export const useRenameModalState = ({
 
     const handleSubmit = async (newName: string) => {
         const nodeUid = internal.generateNodeUid(volumeId, linkId);
-        const successNotificationText = c('Notification').jt`"${newName}" renamed successfully`;
-        const unhandledErrorNotificationText = c('Notification').jt`"${newName}" failed to be renamed`;
+        const successNotificationText = c('Notification').t`"${newName}" renamed successfully`;
+        const unhandledErrorNotificationText = c('Notification').t`"${newName}" failed to be renamed`;
 
         await drive
             .renameNode(nodeUid, newName)
@@ -80,11 +78,7 @@ export const useRenameModalState = ({
                 createNotification({ text: successNotificationText, preWrap: true });
             })
             .catch((e) => {
-                const message = e.message || unhandledErrorNotificationText;
-                createNotification({ type: 'error', text: message, preWrap: true });
-                if (shouldTrackError(e)) {
-                    sendErrorReport(new EnrichedError(e, { tags: { component: 'drive-sdk' }, extra: { nodeUid } }));
-                }
+                handleError(e, unhandledErrorNotificationText, { nodeUid, newName });
             });
         await events.pollEvents.volumes(volumeId);
     };

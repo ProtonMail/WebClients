@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { useLocalState } from '@proton/components';
 import { MemoryCache, ProtonDriveClient, generateNodeUid } from '@proton/drive-sdk';
-import { splitNodeRevisionUid } from '@proton/drive-sdk/dist/internal/uids';
+import { splitNodeRevisionUid, splitNodeUid } from '@proton/drive-sdk/dist/internal/uids';
 import type { MemoryLogHandler } from '@proton/drive-sdk/dist/telemetry';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -123,6 +123,7 @@ export function useDrive() {
             () => ({
                 generateNodeUid,
                 splitNodeRevisionUid,
+                splitNodeUid,
             }),
             []
         ),
