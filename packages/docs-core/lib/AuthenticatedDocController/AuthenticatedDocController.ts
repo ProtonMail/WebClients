@@ -284,7 +284,9 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   public async createNewDocument(documentType: DocumentType): Promise<void> {
     const date = getPlatformFriendlyDateForFileName()
     // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
-    const baseTitle = c('Title').t`Untitled document ${date}`
+    const docTitle = c('Title').t`Untitled document ${date}`
+    const sheetTitle = c('Title').t`Untitled spreadsheet ${date}`
+    const baseTitle = documentType === 'sheet' ? sheetTitle : docTitle
     const newName = `${baseTitle}`
 
     const result = await this._createNewDocument.execute(
@@ -306,7 +308,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
     const shell = result.getValue()
 
-    void this.driveCompat.openDocument(shell)
+    void this.driveCompat.openDocument(shell, documentType)
   }
 
   public async renameDocument(newName: string): Promise<TranslatedResult<void>> {
