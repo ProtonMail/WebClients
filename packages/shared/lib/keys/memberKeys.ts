@@ -143,11 +143,22 @@ export const setupMemberKeyV2 = async ({
 };
 
 export const getCanGenerateMemberKeys = (member: tsMember | undefined) => {
-    return member?.Private === MEMBER_PRIVATE.READABLE && !member.SSO;
+    const isReadable = member?.Private === MEMBER_PRIVATE.READABLE;
+    return (
+        isReadable &&
+        (!member.SSO ||
+            /* Keys should be generated for SSO members in case they already have keys setup */
+            (member.SSO && member.Keys.length > 0))
+    );
 };
 
 export const getShouldSetupMemberKeys = (member: tsMember | undefined) => {
-    return !member?.Self && member?.Keys.length === 0 && getCanGenerateMemberKeys(member);
+    return (
+        !member?.Self &&
+        member?.Keys.length === 0 &&
+        getCanGenerateMemberKeys(member) &&
+        !member.SSO /* Keys should never be setup for SSO members since they set it up through the backup password screen*/
+    );
 };
 
 export const getCanGenerateMemberKeysPermissions = (
