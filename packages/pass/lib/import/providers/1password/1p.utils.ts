@@ -26,7 +26,6 @@ import type {
     OnePassFieldValue,
     OnePassFields,
     OnePassItem,
-    OnePassItemDetails,
     OnePassLoginDesignation,
     OnePassSection,
 } from './1pux.types';
@@ -56,10 +55,6 @@ const ONE_PASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     yahoo: 'yahoo',
     zip: 'zipOrPostalCode',
 };
-
-export const is1PasswordNoteField = ({ value }: OnePassField) => 'string' in value || 'url' in value;
-export const is1PasswordLegacyNoteField = ({ k: key }: OnePassLegacySectionField) =>
-    key === OnePassLegacySectionFieldKey.STRING || key === OnePassLegacySectionFieldKey.URL;
 
 export const is1PasswordCCField = (field: OnePassField): field is OnePassField & { id: OnePassCreditCardFieldId } =>
     OnePassCreditCardFieldIds.some((id) => id === field.id);
@@ -135,65 +130,6 @@ export const format1PasswordLegacyFieldValue = (field: OnePassLegacySectionField
             return sanitizeFieldValue(value);
     }
 };
-
-const buildNoteFromSections = <T, F>(options: {
-    base: Maybe<string>;
-    sections: T[] | undefined;
-    getFields: (section: T) => F[];
-    getFieldTitle: (field: F) => Maybe<string>;
-    getFieldValue: (field: F) => string;
-    getTitle: (section: T) => Maybe<string>;
-    hasNoteFields: (section: T) => boolean;
-    isNoteField: (field: F) => boolean;
-}): string => {
-    return (options.sections ?? [])
-        .reduce<string>(
-            (fullNote, section) => {
-                if (!section || !options.hasNoteFields(section)) return fullNote;
-
-                const title = options.getTitle(section);
-                if (title) fullNote += `${title}\n`;
-
-                const fields = options.getFields(section);
-                fields.forEach((field, idx) => {
-                    if (!options.isNoteField(field)) return;
-
-                    const subTitle = options.getFieldTitle(field);
-                    const value = options.getFieldValue(field);
-                    if (subTitle) fullNote += `${subTitle}\n`;
-                    if (value) fullNote += `${value}\n${idx === fields.length - 1 ? '\n' : ''}`;
-                });
-
-                return fullNote;
-            },
-            options.base ? `${options.base}\n\n` : ''
-        )
-        .trim();
-};
-
-export const extract1PasswordNote = (details: OnePassItemDetails): string =>
-    buildNoteFromSections({
-        base: details.notesPlain,
-        sections: details.sections,
-        getFields: (section) => section.fields ?? [],
-        getFieldTitle: (field) => field.title,
-        getFieldValue: (field) => field.value.string ?? field.value.url ?? '',
-        getTitle: (section) => section.title,
-        hasNoteFields: (section) => section.fields.some(is1PasswordNoteField),
-        isNoteField: is1PasswordNoteField,
-    });
-
-export const extract1PasswordLegacyNote = (item: OnePassLegacyItem): string =>
-    buildNoteFromSections({
-        base: item.secureContents?.notesPlain,
-        sections: item.secureContents.sections,
-        getFields: (section) => section.fields ?? [],
-        getFieldTitle: (field) => field.t,
-        getFieldValue: (field) => sanitizeFieldValue(field.v),
-        getTitle: (section) => section.title,
-        hasNoteFields: (section) => section.fields?.some(is1PasswordLegacyNoteField) ?? false,
-        isNoteField: is1PasswordLegacyNoteField,
-    });
 
 const extractURLsFromItem = <T>(options: {
     item: T;
