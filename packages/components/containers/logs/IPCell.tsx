@@ -12,10 +12,15 @@ interface Props {
 
 const IPCell = ({ ip, isAuthLogAdvanced, isProtonSentinelEnabled, firstRow }: Props) => {
     const [user] = useUser();
-    const advancedLogsUpsell = c('Description')
-        .t`Your organization administrator should enable detailed events in order to access these features`;
-    const advancedLogsAndProtonSentinelUpsell = c('Description')
-        .t`Your organization administrator should enable detailed events and ${PROTON_SENTINEL_NAME} in order to access these features`;
+    const advancedLogsUpsell = user.isFree || user.isAdmin
+        ? c('Description').t`You should enable detailed events in order to access these features`
+        : c('Description')
+              .t`Your organization administrator should enable detailed events in order to access these features`;
+    const advancedLogsAndProtonSentinelUpsell = user.isFree || user.isAdmin
+        ? c('Description')
+              .t`You should enable detailed events and ${PROTON_SENTINEL_NAME} in order to access these features`
+        : c('Description')
+              .t`Your organization administrator should enable detailed events and ${PROTON_SENTINEL_NAME} in order to access these features`;
 
     if (isAuthLogAdvanced || user.isAdmin) {
         return <code>{ip || '-'}</code>;
