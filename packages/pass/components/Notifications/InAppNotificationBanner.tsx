@@ -59,7 +59,7 @@ export const InAppNotificationBanner = WithInAppNotification(
 
                         {content.cta && (
                             <Button
-                                className="color-white text-ellipsis mt-1"
+                                className="text-ellipsis mt-1"
                                 color="norm"
                                 shape="solid"
                                 size={dense ? 'small' : 'medium'}
