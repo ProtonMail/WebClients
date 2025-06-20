@@ -83,12 +83,9 @@ extension SharedUseCaseContainer {
     }
 
     var createApiManager: Factory<any CreateApiManagerUseCase> {
-        self { CreateApiManager(credentialProvider: self.credentialProvider(),
+        self { CreateApiManager(appVersion: SharedToolingContainer.shared.appVersion(),
+                                credentialProvider: self.credentialProvider(),
                                 setCredentials: self.setCredentials()) }
-    }
-
-    var createPaymentsManager: Factory<any CreatePaymentsManagerUseCase> {
-        self { CreatePaymentsManager() }
     }
 
     var getAccess: Factory<any GetAccessUseCase> {
