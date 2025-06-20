@@ -6,7 +6,11 @@ import { c } from 'ttag';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-interface Props extends ComponentPropsWithoutRef<'div'> {
+import { IncreaseBlockedTooltip } from './IncreaseBlockedTooltip';
+
+export type IncreaseBlockedReason = 'trial-limit';
+
+export interface ButtonNumberInputProps extends ComponentPropsWithoutRef<'div'> {
     id: string;
     min: number;
     max: number;
@@ -14,9 +18,23 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     value: number;
     onValue: (newValue: number) => void;
     disabled?: boolean;
+    increaseBlockedReasons?: IncreaseBlockedReason[];
+    increaseBlockedReasonText?: string;
 }
 
-const ButtonNumberInput = ({ id, min, max, step, value, onValue, disabled = false, className, ...rest }: Props) => {
+const ButtonNumberInput = ({
+    id,
+    min,
+    max,
+    step,
+    value,
+    onValue,
+    disabled = false,
+    increaseBlockedReasons = [],
+    increaseBlockedReasonText,
+    className,
+    ...rest
+}: ButtonNumberInputProps) => {
     const [tmpValue, setTmpValue] = useState<number | undefined>(value);
 
     const getIsValidValue = (newValue?: number) => {
@@ -87,15 +105,21 @@ const ButtonNumberInput = ({ id, min, max, step, value, onValue, disabled = fals
                     onChange={({ target: { value: newValue } }) => handleInputChange(newValue)}
                 />
             </label>
-            <button
-                type="button"
-                title={c('Action').t`Increase`}
-                className={clsx(['p-2 flex', isIncDisabled && 'color-disabled'])}
-                disabled={isIncDisabled}
-                onClick={handleIncrease}
+            <IncreaseBlockedTooltip
+                increaseBlockedReasons={increaseBlockedReasons}
+                increaseBlockedReasonText={increaseBlockedReasonText}
+                isIncDisabled={isIncDisabled}
             >
-                <Icon name="plus" alt={c('Action').t`Increase`} className="m-auto" />
-            </button>
+                <button
+                    type="button"
+                    title={c('Action').t`Increase`}
+                    className={clsx(['p-2 flex', isIncDisabled && 'color-disabled'])}
+                    disabled={isIncDisabled}
+                    onClick={handleIncrease}
+                >
+                    <Icon name="plus" alt={c('Action').t`Increase`} className="m-auto" />
+                </button>
+            </IncreaseBlockedTooltip>
         </div>
     );
 };
