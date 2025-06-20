@@ -32,17 +32,21 @@ public extension CreateApiManagerUseCase {
 }
 
 public final class CreateApiManager: Sendable, CreateApiManagerUseCase {
+    private let appVersion: String
     private let credentialProvider: any CredentialProvider
     private let setCredentials: any SetCredentialsUseCase
 
-    public init(credentialProvider: any CredentialProvider,
+    public init(appVersion: String,
+                credentialProvider: any CredentialProvider,
                 setCredentials: any SetCredentialsUseCase) {
+        self.appVersion = appVersion
         self.credentialProvider = credentialProvider
         self.setCredentials = setCredentials
     }
 
     public func execute(environment: PassEnvironment, credentials: Credentials) -> ApiManager {
-        ApiManager(doh: PassDoH(environment: environment),
+        ApiManager(appVersion: appVersion,
+                   doh: PassDoH(environment: environment),
                    credentials: credentials,
                    credentialProvider: credentialProvider,
                    setCredentials: setCredentials)
