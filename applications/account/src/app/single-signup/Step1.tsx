@@ -1345,6 +1345,7 @@ const Step1 = ({
                                                             noop
                                                         )
                                                     }
+                                                    isTrialMode={trial}
                                                 />
                                                 <div className="border-bottom border-weak my-6" />
                                             </>
