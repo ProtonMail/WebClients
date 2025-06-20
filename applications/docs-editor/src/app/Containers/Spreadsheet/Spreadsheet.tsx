@@ -19,13 +19,17 @@ import type { EditorControllerInterface } from '@proton/docs-core'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { splitExtension } from '@proton/shared/lib/helpers/file'
 import { useLogState, useProtonSheetsState } from './state'
-import { Toolbar } from './components/Toolbar/Toolbar'
 import { LOCALE } from './constants'
 
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
-import { Grid } from './components/Grid'
-import { Dialogs } from './components/Dialogs'
-import { BottomBar } from './components/BottomBar'
+import { LegacyGrid } from './components/legacy/LegacyGrid'
+import { LegacyDialogs } from './components/legacy/LegacyDialogs'
+import { LegacyBottomBar } from './components/legacy/LegacyBottomBar'
+import { useProtonSheetsUIState } from './ui-state'
+import { useSetupWithFallback, WithFallback } from './components/WithFallback'
+import { LegacyToolbar } from './components/legacy/LegacyToolbar'
+import { Toolbar } from './components/Toolbar/Toolbar'
+import { Menubar } from './components/Menubar/Menubar'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array>
@@ -61,6 +65,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const isReadonly = editingLocked || isRevisionMode
 
   const state = useProtonSheetsState({ docState, locale: LOCALE, functions })
+  const uiState = useProtonSheetsUIState(state)
   const { getStateToLog } = useLogState(state, updateLatestStateToLog)
 
   const exportData = async (format: DataTypesThatDocumentCanBeExportedAs) => {
@@ -135,7 +140,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     [application.eventBus, calculateNow, onCreateNewSheet, onInsertFile, onRenameSheet],
   )
 
-  // TODO: doesn't seem to be used anywhere
+  // TODO: is there a better way to handle this?
   const createdInitialSheetRef = useRef(false)
   useEffect(() => {
     if (
@@ -161,19 +166,52 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     downloadLogsAsJSON(editorAdapter as EditorControllerInterface, 'sheet').catch(console.error)
   }
 
+  useSetupWithFallback()
+
   return (
     <>
       {hidden && (
         <div
           className="bg-norm absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4"
           data-testid="editor-curtain"
-        ></div>
+        />
       )}
       <div className="flex h-full w-full flex-1 flex-col [grid-column:1/3] [grid-row:1/3]">
-        {!isRevisionMode && <Toolbar state={state} downloadLogs={downloadLogs} isReadonly={isReadonly} />}
-        <Grid state={state} isReadonly={isReadonly} users={state.yjsState.users} userName={state.yjsState.userName} />
-        <BottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
-        <Dialogs state={state} />
+        {!isRevisionMode && (
+          <WithFallback fallback={<LegacyToolbar state={state} downloadLogs={downloadLogs} isReadonly={isReadonly} />}>
+            <Menubar ui={uiState} className="mb-2" />
+            <Toolbar ui={uiState} />
+          </WithFallback>
+        )}
+        <WithFallback
+          fallback={
+            <LegacyGrid
+              state={state}
+              isReadonly={isReadonly}
+              users={state.yjsState.users}
+              userName={state.yjsState.userName}
+            />
+          }
+        >
+          {/* TODO: replace with new UI */}
+          <LegacyGrid
+            state={state}
+            isReadonly={isReadonly}
+            users={state.yjsState.users}
+            userName={state.yjsState.userName}
+          />
+        </WithFallback>
+
+        <WithFallback
+          fallback={<LegacyBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />}
+        >
+          {/* TODO: replace with new UI */}
+          <LegacyBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
+        </WithFallback>
+        <WithFallback fallback={<LegacyDialogs state={state} />}>
+          {/* TODO: replace with new UI */}
+          <LegacyDialogs state={state} />
+        </WithFallback>
       </div>
     </>
   )
