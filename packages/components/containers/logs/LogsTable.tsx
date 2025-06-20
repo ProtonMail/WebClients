@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import Alert from '@proton/components/components/alert/Alert';
 import Info from '@proton/components/components/link/Info';
 import Table from '@proton/components/components/table/Table';
@@ -33,7 +32,6 @@ interface Props {
 }
 
 const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => {
-    const [user] = useUser();
     const isAuthLogAdvanced = logAuth === ADVANCED;
     const isProtonSentinelEnabled = protonSentinel === ENABLED;
 
@@ -148,7 +146,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                 label: 'IP',
                                 className: isAuthLogAdvanced ? '' : 'bg-weak hidden lg:table-cell text-center',
                                 colSpan: (() => {
-                                    if (!isAuthLogAdvanced || !user.isAdmin) {
+                                    if (!isAuthLogAdvanced) {
                                         if (isProtonSentinelEnabled) {
                                             return 3;
                                         }
