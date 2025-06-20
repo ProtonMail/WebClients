@@ -69,7 +69,7 @@ export const useVideoToggle = () => {
             });
             return toggleQueue.current;
         },
-        [participantResolution]
+        [participantResolution, setIsVideoEnabled]
     );
 
     return toggleVideo;

@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useLocalParticipant, useParticipants } from '@livekit/components-react';
 import { type Track as LiveKitTrack, LocalVideoTrack, Track } from 'livekit-client';
@@ -11,6 +11,8 @@ export function useCurrentScreenShare() {
     const participants = useParticipants();
     const { localParticipant } = useLocalParticipant();
     const screenshareResolution = useScreenshareResolution();
+
+    const screenShareVideoRef = useRef<HTMLVideoElement>(null);
 
     const result = useMemo(() => {
         for (const participant of participants) {
@@ -71,5 +73,14 @@ export function useCurrentScreenShare() {
         }
     };
 
-    return { ...result, stopScreenShare, startScreenShare };
+    useEffect(() => {
+        if (result.videoTrack && screenShareVideoRef.current) {
+            result.videoTrack.attach(screenShareVideoRef.current);
+            return () => {
+                result.videoTrack.detach(screenShareVideoRef.current!);
+            };
+        }
+    }, [result.videoTrack]);
+
+    return { ...result, stopScreenShare, startScreenShare, screenShareVideoRef };
 }

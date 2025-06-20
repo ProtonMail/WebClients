@@ -5,7 +5,7 @@ import type { ParticipantEventRecord } from '../types';
 
 type ToastMessage = ParticipantEventRecord & { expiresAt: number; exitingStatus?: 'exiting' | 'exited' };
 
-const participantEventTimeoutMs = 6000;
+const PARTICIPANT_EVENT_TIMEOUT_MS = 6000;
 
 const getEventKey = (evt: ParticipantEventRecord) => `${evt.identity}-${evt.timestamp}`;
 
@@ -32,12 +32,12 @@ export const useToastMessages = () => {
             const filtered = prev.filter((m) => m.expiresAt > now);
 
             participantEvents
-                .filter((event) => event.timestamp > now - participantEventTimeoutMs)
+                .filter((event) => event.timestamp > now - PARTICIPANT_EVENT_TIMEOUT_MS)
                 .sort((a, b) => b.timestamp - a.timestamp)
                 .forEach((evt) => {
                     const key = getEventKey(evt);
                     if (!filtered.find((m) => getEventKey(m) === key)) {
-                        filtered.push({ ...evt, expiresAt: evt.timestamp + participantEventTimeoutMs });
+                        filtered.push({ ...evt, expiresAt: evt.timestamp + PARTICIPANT_EVENT_TIMEOUT_MS });
                     }
                 });
 

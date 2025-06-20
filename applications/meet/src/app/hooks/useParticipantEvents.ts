@@ -1,14 +1,35 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
+import type { ParticipantEventRecord } from '../types';
 import { ParticipantEvent } from '../types';
 
 export const useParticipantEvents = () => {
     const room = useRoomContext();
-    const { participantEvents, setParticipantEvents } = useMeetContext();
+    const { participantEvents, setParticipantEvents, participantNameMap } = useMeetContext();
+
+    // The participant names are not available immediately, so we need to store the events and add them as the names become available
+    const [pendingEvents, setPendingEvents] = useState<ParticipantEventRecord[]>([]);
+
+    useEffect(() => {
+        const filteredEvents = pendingEvents.filter((event) => {
+            return participantNameMap[event.identity] !== undefined;
+        });
+
+        if (filteredEvents.length === 0) {
+            return;
+        }
+
+        setParticipantEvents((prev) => [
+            ...prev,
+            ...filteredEvents.map((event) => ({ ...event, name: participantNameMap[event.identity] })),
+        ]);
+
+        setPendingEvents((prev) => prev.filter((event) => !participantNameMap[event.identity]));
+    }, [pendingEvents, participantNameMap, setParticipantEvents]);
 
     useEffect(() => {
         if (!room) {
@@ -16,11 +37,11 @@ export const useParticipantEvents = () => {
         }
 
         const handleParticipantConnected = (participant: Participant) => {
-            setParticipantEvents((prev) => [
+            setPendingEvents((prev) => [
                 ...prev,
                 {
                     identity: participant.identity,
-                    name: participant.name || participant.identity,
+                    name: '',
                     eventType: ParticipantEvent.Join,
                     timestamp: Date.now(),
                     type: 'event',
@@ -29,11 +50,11 @@ export const useParticipantEvents = () => {
         };
 
         const handleParticipantDisconnected = (participant: Participant) => {
-            setParticipantEvents((prev) => [
+            setPendingEvents((prev) => [
                 ...prev,
                 {
                     identity: participant.identity,
-                    name: participant.name || participant.identity,
+                    name: '',
                     eventType: ParticipantEvent.Leave,
                     timestamp: Date.now(),
                     type: 'event',
@@ -48,7 +69,7 @@ export const useParticipantEvents = () => {
             room.off('participantConnected', handleParticipantConnected);
             room.off('participantDisconnected', handleParticipantDisconnected);
         };
-    }, [room]);
+    }, [room, participantNameMap]);
 
     return participantEvents;
 };

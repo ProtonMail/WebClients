@@ -1,7 +1,9 @@
 import type { Participant } from 'livekit-client';
 
+import { CircleLoader } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
+import { useMeetContext } from '../../contexts/MeetContext';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 
@@ -14,6 +16,8 @@ interface ParticipantPlaceholderProps {
 
 export const ParticipantPlaceholder = ({ participant, smallView = false }: ParticipantPlaceholderProps) => {
     const { backgroundColor, profileColor } = getParticipantDisplayColors(participant);
+
+    const { participantNameMap } = useMeetContext();
 
     return (
         <div
@@ -35,7 +39,15 @@ export const ParticipantPlaceholder = ({ participant, smallView = false }: Parti
                     '--h-custom': smallView ? '4rem' : '5rem',
                 }}
             >
-                {getParticipantInitials(participant)}
+                {participantNameMap[participant.identity] ? (
+                    getParticipantInitials(participantNameMap[participant.identity])
+                ) : (
+                    <CircleLoader
+                        className="color-primary w-custom h-custom"
+                        style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
+                    />
+                )}
+                {}
             </div>
         </div>
     );

@@ -1,15 +1,15 @@
 import type { Track, TrackProcessor, VideoProcessorOptions } from 'livekit-client';
 
-const frameRate = 30;
-const detectionIntervalInMilliseconds = 50;
-const drawIntervalInMilliseconds = 1000 / frameRate;
-const padding = 0.65;
-const smoothingFactor = 0.9;
-const detectionWidth = 160;
-const detectionHeight = 120;
+const FRAME_RATE = 30;
+const DETECTION_INTERVAL_IN_MILLISECONDS = 50;
+const DRAW_INTERVAL_IN_MILLISECONDS = 1000 / FRAME_RATE;
+const PADDING = 0.65;
+const SMOOTHING_FACTOR = 0.9;
+const DETECTION_WIDTH = 160;
+const DETECTION_HEIGHT = 120;
 
 const handleSmoothing = (current: number, previous: number) =>
-    previous * smoothingFactor + current * (1 - smoothingFactor);
+    previous * SMOOTHING_FACTOR + current * (1 - SMOOTHING_FACTOR);
 
 export class FaceTrackingProcessor implements TrackProcessor<Track.Kind.Video, VideoProcessorOptions> {
     name = 'face-tracking-processor';
@@ -58,8 +58,8 @@ export class FaceTrackingProcessor implements TrackProcessor<Track.Kind.Video, V
         this.ctx = ctx;
 
         this.detectionCanvas = document.createElement('canvas');
-        this.detectionCanvas.width = detectionWidth;
-        this.detectionCanvas.height = detectionHeight;
+        this.detectionCanvas.width = DETECTION_WIDTH;
+        this.detectionCanvas.height = DETECTION_HEIGHT;
         const detectionCtx = this.detectionCanvas.getContext('2d');
         if (!detectionCtx) {
             throw new Error('Could not get detection 2D context');
@@ -93,16 +93,16 @@ export class FaceTrackingProcessor implements TrackProcessor<Track.Kind.Video, V
                         const bottomRight = face.bottomRight as number[];
 
                         // Scale up to original video size
-                        const scaleX = this.video.videoWidth / detectionWidth;
-                        const scaleY = this.video.videoHeight / detectionHeight;
+                        const scaleX = this.video.videoWidth / DETECTION_WIDTH;
+                        const scaleY = this.video.videoHeight / DETECTION_HEIGHT;
 
                         const faceWidth = (bottomRight[0] - topLeft[0]) * scaleX;
                         const faceHeight = (bottomRight[1] - topLeft[1]) * scaleY;
 
-                        let cropStartX = Math.max(0, topLeft[0] * scaleX - faceWidth * padding);
-                        let cropStartY = Math.max(0, topLeft[1] * scaleY - faceHeight * padding);
-                        let cropWidth = Math.min(this.video.videoWidth - cropStartX, faceWidth * (1 + padding * 2));
-                        let cropHeight = Math.min(this.video.videoHeight - cropStartY, faceHeight * (1 + padding * 2));
+                        let cropStartX = Math.max(0, topLeft[0] * scaleX - faceWidth * PADDING);
+                        let cropStartY = Math.max(0, topLeft[1] * scaleY - faceHeight * PADDING);
+                        let cropWidth = Math.min(this.video.videoWidth - cropStartX, faceWidth * (1 + PADDING * 2));
+                        let cropHeight = Math.min(this.video.videoHeight - cropStartY, faceHeight * (1 + PADDING * 2));
 
                         if (this.lastFace) {
                             cropStartX = handleSmoothing(cropStartX, this.lastFace.x);
@@ -118,7 +118,7 @@ export class FaceTrackingProcessor implements TrackProcessor<Track.Kind.Video, V
             };
             this.worker.postMessage({ type: 'init' });
 
-            this.processedTrack = this.canvas.captureStream(frameRate).getVideoTracks()[0];
+            this.processedTrack = this.canvas.captureStream(FRAME_RATE).getVideoTracks()[0];
 
             this.start();
         } catch (err) {
@@ -142,13 +142,13 @@ export class FaceTrackingProcessor implements TrackProcessor<Track.Kind.Video, V
                 this.video.videoHeight,
                 0,
                 0,
-                detectionWidth,
-                detectionHeight
+                DETECTION_WIDTH,
+                DETECTION_HEIGHT
             );
             void createImageBitmap(this.detectionCanvas).then((imageBitmap) => {
                 this.worker!.postMessage({ type: 'frame', imageBitmap }, [imageBitmap]);
             });
-        }, detectionIntervalInMilliseconds);
+        }, DETECTION_INTERVAL_IN_MILLISECONDS);
 
         // Using setInterval as requestAnimationFrame is stopped in background tabs
         this.drawTimer = window.setInterval(() => {
@@ -174,7 +174,7 @@ export class FaceTrackingProcessor implements TrackProcessor<Track.Kind.Video, V
             }
 
             this.ctx.restore();
-        }, drawIntervalInMilliseconds);
+        }, DRAW_INTERVAL_IN_MILLISECONDS);
     }
 
     async restart(opts: VideoProcessorOptions) {

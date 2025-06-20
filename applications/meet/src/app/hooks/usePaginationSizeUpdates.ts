@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { PAGE_SIZE, screenShareDoublePageSize, screenSharePageSize } from '../constants';
+import { PAGE_SIZE, SCREEN_SHARE_DOUBLE_PAGE_SIZE, SCREEN_SHARE_PAGE_SIZE } from '../constants';
 import { useMeetContext } from '../contexts/MeetContext';
 import { useCurrentScreenShare } from './useCurrentScreenShare';
 import { useSortedParticipants } from './useSortedParticipants';
@@ -29,7 +29,7 @@ export const usePaginationSizeUpdates = () => {
 
     useEffect(() => {
         const screenShareSize =
-            sortedParticipants.length > 5 && !isSideBarOpen ? screenShareDoublePageSize : screenSharePageSize;
+            sortedParticipants.length > 5 && !isSideBarOpen ? SCREEN_SHARE_DOUBLE_PAGE_SIZE : SCREEN_SHARE_PAGE_SIZE;
 
         const newPageSize = hasScreenShare ? screenShareSize : PAGE_SIZE;
 

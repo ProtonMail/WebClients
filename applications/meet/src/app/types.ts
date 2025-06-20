@@ -18,7 +18,7 @@ export interface MeetChatMessage extends Pick<ChatMessage, 'id' | 'message' | 't
     identity: string;
     name: string;
     seen?: boolean;
-    type: 'message';
+    type?: 'message';
 }
 
 export enum ParticipantEvent {
@@ -31,7 +31,7 @@ export interface ParticipantEventRecord {
     name: string;
     eventType: ParticipantEvent;
     timestamp: number;
-    type: 'event';
+    type?: 'event';
 }
 
 export type MeetingRoomUpdate = ParticipantEventRecord | MeetChatMessage;
@@ -58,4 +58,19 @@ export enum Quality {
     Decreased = 'Decreased',
     Default = 'Default',
     Increased = 'Increased',
+}
+
+export enum ParticipantCapabilityPermission {
+    NotAllowed = 0,
+    Allowed = 1,
+}
+
+export interface ParticipantEntity {
+    ParticipantUuid: string;
+    DisplayName: string;
+    CanSubscribe: ParticipantCapabilityPermission;
+    CanPublish: ParticipantCapabilityPermission;
+    CanPublishData: ParticipantCapabilityPermission;
+    IsAdmin: ParticipantCapabilityPermission;
+    IsHost: ParticipantCapabilityPermission;
 }

@@ -4,6 +4,7 @@ import { RoomContext } from '@livekit/components-react';
 import { Room } from 'livekit-client';
 
 import { useMeetingSetup } from '../hooks/srp/useMeetingSetup';
+import { useParticipantNameMap } from '../hooks/useParticipantNameMap';
 import { useQualityLevel } from '../hooks/useQualityLevel';
 import { qualityConstants } from '../qualityConstants';
 import { LoadingState, type ParticipantSettings, QualityScenarios } from '../types';
@@ -33,6 +34,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const defaultResolution = qualityConstants[QualityScenarios.Default][defaultQuality];
 
+    const { getParticipants, participantNameMap } = useParticipantNameMap(token);
+
     const handleJoin = useCallback(
         async (participantSettings: ParticipantSettings) => {
             if (joiningInProgress) {
@@ -61,12 +64,18 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
                 await room.connect(websocketUrl.replace('/rtc', ''), accessToken);
 
+                await getParticipants();
+
                 roomRef.current = room;
 
                 setJoiningInProgress(false);
                 setJoinedRoom(true);
             } catch (error) {
-                window.alert(error);
+                if (error instanceof Error) {
+                    window.alert(error.message);
+                } else {
+                    window.alert('An unknown error occurred');
+                }
             } finally {
                 setJoiningInProgress(false);
             }
@@ -106,6 +115,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                         setParticipantSettings={setParticipantSettings}
                         shareLink={shareLink}
                         roomName={roomName}
+                        participantNameMap={participantNameMap}
+                        getParticipants={getParticipants}
                     />
                 </RoomContext.Provider>
             ) : (

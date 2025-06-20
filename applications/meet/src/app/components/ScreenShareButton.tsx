@@ -5,7 +5,7 @@ import { IcMeetScreenShare } from '@proton/icons';
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 
-export function ScreenShareButton() {
+export const ScreenShareButton = () => {
     const { videoTrack, stopScreenShare, startScreenShare, isLocal } = useCurrentScreenShare();
     const isSharing = !!videoTrack && isLocal;
 
@@ -25,4 +25,4 @@ export function ScreenShareButton() {
             ariaLabel={c('l10n_nightly Alt').t`Toggle screen share`}
         />
     );
-}
+};

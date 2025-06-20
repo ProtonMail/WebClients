@@ -11,7 +11,7 @@ import {
 } from '@proton/icons';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
-import { Pagination } from '../../atoms/Pagination';
+import { Pagination } from '../../atoms/Pagination/Pagination';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useAudioToggle } from '../../hooks/useAudioToggle';
 import { useVideoToggle } from '../../hooks/useVideoToggle';

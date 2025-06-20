@@ -1,23 +1,13 @@
-import { useEffect, useRef } from 'react';
-
 import { RoomAudioRenderer, useParticipants } from '@livekit/components-react';
 import type { LocalVideoTrack } from 'livekit-client';
 
 import clsx from '@proton/utils/clsx';
 
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useChat } from '../../hooks/useChat';
 import { useCurrentScreenShare } from '../../hooks/useCurrentScreenShare';
-import { useE2EE } from '../../hooks/useE2EE';
-import { useFaceTrackingPublisher } from '../../hooks/useFaceTrackingPublisher';
-import { useLocalParticipantQualityControl } from '../../hooks/useLocalParticipantQualityControl';
-import { usePaginationSizeUpdates } from '../../hooks/usePaginationSizeUpdates';
-import { useParticipantEvents } from '../../hooks/useParticipantEvents';
-import { usePublicationQualityControls } from '../../hooks/usePublicationQualityControls';
-import { useResolutionInitialisation } from '../../hooks/useResolutionInitialisation';
-import { useScreenShareUpdates } from '../../hooks/useScreenShareUpdates';
+import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { Chat } from '../Chat/Chat';
-import { MeetingDetails } from '../MeetingDetails';
+import { MeetingDetails } from '../MeetingDetails/MeetingDetails';
 import { ParticipantControls } from '../ParticipantControls/ParticipantControls';
 import { ParticipantGrid } from '../ParticipantGrid';
 import { ParticipantSidebar } from '../ParticipantSidebar/ParticipantSidebar';
@@ -34,32 +24,13 @@ interface MeetingBodyProps {
 }
 
 export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyProps) => {
-    useE2EE();
-    useFaceTrackingPublisher({ faceTrack, isFaceTrackingEnabled });
-    usePublicationQualityControls();
-    useResolutionInitialisation();
-    useParticipantEvents();
-    useChat();
-    usePaginationSizeUpdates();
-    useScreenShareUpdates();
-    useLocalParticipantQualityControl();
+    useMeetingInitialisation({ faceTrack, isFaceTrackingEnabled });
 
     const participants = useParticipants();
 
-    const { videoTrack, participant, isLocal, stopScreenShare } = useCurrentScreenShare();
+    const { videoTrack, participant, isLocal, stopScreenShare, screenShareVideoRef } = useCurrentScreenShare();
 
-    const { sideBarState } = useMeetContext();
-
-    const screenShareVideoRef = useRef<HTMLVideoElement>(null);
-
-    useEffect(() => {
-        if (videoTrack && screenShareVideoRef.current) {
-            videoTrack.attach(screenShareVideoRef.current);
-            return () => {
-                videoTrack.detach(screenShareVideoRef.current!);
-            };
-        }
-    }, [videoTrack]);
+    const { sideBarState, participantNameMap } = useMeetContext();
 
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
@@ -75,7 +46,7 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
         >
             {videoTrack && (
                 <ScreenShareHeading
-                    name={participant?.name ?? ''}
+                    name={participantNameMap[participant?.identity ?? ''] ?? ''}
                     isLocalUser={isLocal}
                     onStopScreenShare={stopScreenShare}
                 />

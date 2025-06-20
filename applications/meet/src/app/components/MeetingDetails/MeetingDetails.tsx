@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { IcMeetCopy } from '@proton/icons';
 
-import { SideBar } from '../atoms/SideBar/SideBar';
-import { useMeetContext } from '../contexts/MeetContext';
-import { MeetingSideBars } from '../types';
+import { SideBar } from '../../atoms/SideBar/SideBar';
+import { useMeetContext } from '../../contexts/MeetContext';
+import { MeetingSideBars } from '../../types';
 
 export const MeetingDetails = () => {
     const { meetingLink, roomName, sideBarState } = useMeetContext();

@@ -24,7 +24,7 @@ export const ScreenShareHeading = ({ name, isLocalUser, onStopScreenShare }: Scr
                         {name} {c('l10n_nightly Info').t`is presenting`}
                     </div>
                 )}
-                {isLocalUser && <div>{c('l10n_nightly Info').t`You presenting`}</div>}
+                {isLocalUser && <div>{c('l10n_nightly Info').t`You are presenting`}</div>}
             </div>
             {isLocalUser && (
                 <div>

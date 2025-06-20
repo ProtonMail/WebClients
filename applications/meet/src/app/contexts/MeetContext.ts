@@ -10,7 +10,7 @@ import { MeetingSideBars } from '../types';
 interface MeetContextValues {
     page: number;
     quality: VideoQuality;
-    setPage: (nextPage: (currentPage: number) => number) => void;
+    setPage: React.Dispatch<React.SetStateAction<number>>;
     setQuality: (quality: VideoQuality) => void;
     audioDeviceId: string;
     videoDeviceId: string;
@@ -37,6 +37,10 @@ interface MeetContextValues {
     handleLeave: () => void;
     isVideoEnabled: boolean;
     setIsVideoEnabled: (isVideoEnabled: boolean) => void;
+    isAudioEnabled: boolean;
+    isFaceTrackingEnabled: boolean;
+    participantNameMap: Record<string, string>;
+    getParticipants: () => Promise<void>;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -77,6 +81,10 @@ export const MeetContext = createContext<MeetContextValues>({
     handleLeave: () => {},
     isVideoEnabled: false,
     setIsVideoEnabled: () => {},
+    isAudioEnabled: false,
+    isFaceTrackingEnabled: false,
+    participantNameMap: {},
+    getParticipants: () => Promise.resolve(),
 });
 
 export const useMeetContext = () => {
