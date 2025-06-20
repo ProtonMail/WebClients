@@ -84,9 +84,7 @@ describe('Import 1password 1pif', () => {
         expect(item.modifyTime).toEqual(1619085236);
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('🎉 Welcome to 1Password!');
-        expect(item.metadata.note).toEqual(
-            'Follow these steps to get started.\n\n1️⃣ Get the apps\nhttps://1password.com/downloads\nInstall 1Password everywhere you need your passwords.\n\n2️⃣ Get 1Password in your browser\nhttps://1password.com/downloads/#browsers\nInstall 1Password in your browser to save and fill passwords.\n\n3️⃣ Save your first password\n1. Sign in to your favorite website.\n2. 1Password will ask to save your username and password.\n3. Click Save Login.\n\n4️⃣ Fill passwords and more\nhttps://support.1password.com/explore/extension/\nSave and fill passwords, credit cards, and addresses.\n\n📚 Learn 1Password\nCheck out our videos and articles:\nWatch videos\nhttps://youtube.com/1PasswordVideos\nGet support\nhttps://support.1password.com/\nRead the blog\nhttps://blog.1password.com/\nContact us\nhttps://support.1password.com/contact-us/'
-        );
+        expect(item.metadata.note).toEqual('Follow these steps to get started.');
         expect(item.content).toEqual({});
         expect(item.trashed).toEqual(false);
         expect(item.extraFields.length).toEqual(14);

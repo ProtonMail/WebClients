@@ -24,7 +24,6 @@ import {
     extract1PasswordExtraFields,
     extract1PasswordIdentity,
     extract1PasswordLoginField,
-    extract1PasswordNote,
     extract1PasswordSSHSections,
     extract1PasswordURLs,
     extract1PasswordWifiFields,
@@ -40,7 +39,7 @@ const processNoteItem = (
 ): ItemImportIntent<'note'> =>
     importNoteItem({
         name: item.overview.title,
-        note: extract1PasswordNote(item.details),
+        note: item.details?.notesPlain,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
         trashed: item.state === OnePassState.ARCHIVED,
