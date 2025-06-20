@@ -10,6 +10,8 @@ import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry
 import useListTelemetry, { ACTION_TYPE, numberSelectionElements } from 'proton-mail/components/list/useListTelemetry';
 import { useMarkAllAs } from 'proton-mail/hooks/actions/markAs/useMarkAllAs';
 import { useMarkSelectionAs } from 'proton-mail/hooks/actions/markAs/useMarkSelectionAs';
+import { MOVE_BACK_ACTION_TYPES } from 'proton-mail/hooks/actions/moveBackAction/interfaces';
+import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useMoveBackAction';
 import { useGetConversationsByIDs } from 'proton-mail/hooks/conversation/useConversation';
 import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -36,6 +38,7 @@ export const useMarkAs = () => {
     const isEncryptedSearch = useIsEncryptedSearch();
     const { sendSimpleActionReport } = useListTelemetry();
     const getConversationsByIDs = useGetConversationsByIDs();
+    const handleOnBackMoveAction = useMoveBackAction();
 
     const markAs = useCallback(
         async ({ elements, labelID = '', status, silent, selectAll, onCheckAll, sourceAction }: MarkAsParams) => {
@@ -49,6 +52,8 @@ export const useMarkAs = () => {
             if (selectAll) {
                 await markAllAs({ isMessage, labelID, status, onCheckAll, sourceAction });
             } else {
+                handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.MARK_AS, elements, status });
+
                 if (mailboxOptimisticRefactoringEnabled) {
                     if (isMessage) {
                         const conversations = uniqueBy(
