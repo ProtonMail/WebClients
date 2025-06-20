@@ -1,0 +1,1 @@
+export { withHoc } from './withHoc';
