@@ -9,16 +9,16 @@ import {
   NamedRangeEditor,
   TableEditor,
 } from '@rowsncolumns/spreadsheet-state'
-import type { ProtonSheetsState } from '../state'
+import type { ProtonSheetsState } from '../../state'
 import { functionDescriptions } from '@rowsncolumns/functions'
 import { SheetSearch } from '@rowsncolumns/spreadsheet'
 import { ChartEditor, ChartEditorDialog } from '@rowsncolumns/charts'
 
-export type DialogsProps = {
+export type LegacyDialogsProps = {
   state: ProtonSheetsState
 }
 
-export function Dialogs({ state }: DialogsProps) {
+export function LegacyDialogs({ state }: LegacyDialogsProps) {
   return (
     <>
       <ChartEditorDialog>
