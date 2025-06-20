@@ -3946,14 +3946,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fullhuman/postcss-purgecss@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "@fullhuman/postcss-purgecss@npm:6.0.0"
+"@fullhuman/postcss-purgecss@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "@fullhuman/postcss-purgecss@npm:7.0.2"
   dependencies:
-    purgecss: "npm:^6.0.0"
+    purgecss: "npm:^7.0.2"
   peerDependencies:
     postcss: ^8.0.0
-  checksum: 10c0/817c1103c400249841cc86257fbdb1da90c75dc412ff3b63b156f72055fe43347281749432f680f7e13673473a7daebf496bd1d2f7b17370f6dafb011cbf83f7
+  checksum: 10c0/4b31c89f2c873b260f12efe92ee1b40634919f3a81f18461d8ec3499aa36e91e61f9b3d6f401bd7e67af942456b9b7f456d6307e7114321ea84e3e63bf90e12c
   languageName: node
   linkType: hard
 
@@ -7723,7 +7723,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/chargebee@workspace:packages/chargebee"
   dependencies:
-    "@fullhuman/postcss-purgecss": "npm:^6.0.0"
+    "@fullhuman/postcss-purgecss": "npm:^7.0.2"
     "@proton/jest-env": "workspace:^"
     "@proton/styles": "workspace:^"
     eslint: "npm:^8.57.1"
@@ -21283,7 +21283,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^12.0.0, commander@npm:^12.1.0":
+"commander@npm:^12.1.0":
   version: 12.1.0
   resolution: "commander@npm:12.1.0"
   checksum: 10c0/6e1996680c083b3b897bfc1cfe1c58dfbcd9842fd43e1aaf8a795fbc237f65efcc860a3ef457b318e73f29a4f4a28f6403c3d653d021d960e4632dd45bde54a9
@@ -38242,7 +38242,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.0.0, postcss-selector-parser@npm:^6.0.13, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4, postcss-selector-parser@npm:^6.0.7, postcss-selector-parser@npm:^6.1.1, postcss-selector-parser@npm:^6.1.2":
+"postcss-selector-parser@npm:^6.0.0, postcss-selector-parser@npm:^6.0.13, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4, postcss-selector-parser@npm:^6.1.1, postcss-selector-parser@npm:^6.1.2":
   version: 6.1.2
   resolution: "postcss-selector-parser@npm:6.1.2"
   dependencies:
@@ -38305,7 +38305,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.14, postcss@npm:^8.2.15, postcss@npm:^8.4.23, postcss@npm:^8.4.28, postcss@npm:^8.4.33, postcss@npm:^8.4.4, postcss@npm:^8.4.40, postcss@npm:^8.4.43, postcss@npm:^8.4.47, postcss@npm:^8.5.3, postcss@npm:^8.5.5":
+"postcss@npm:^8.2.14, postcss@npm:^8.2.15, postcss@npm:^8.4.23, postcss@npm:^8.4.28, postcss@npm:^8.4.33, postcss@npm:^8.4.40, postcss@npm:^8.4.43, postcss@npm:^8.4.47, postcss@npm:^8.5.3, postcss@npm:^8.5.5":
   version: 8.5.5
   resolution: "postcss@npm:8.5.5"
   dependencies:
@@ -39881,17 +39881,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"purgecss@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "purgecss@npm:6.0.0"
+"purgecss@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "purgecss@npm:7.0.2"
   dependencies:
-    commander: "npm:^12.0.0"
-    glob: "npm:^10.3.10"
-    postcss: "npm:^8.4.4"
-    postcss-selector-parser: "npm:^6.0.7"
+    commander: "npm:^12.1.0"
+    glob: "npm:^11.0.0"
+    postcss: "npm:^8.4.47"
+    postcss-selector-parser: "npm:^6.1.2"
   bin:
     purgecss: bin/purgecss.js
-  checksum: 10c0/24f01c1f46e7908964e0d99d48b3ed701d0b878abe111e8706ba26206bcd3747d7ae8c9c01173e5e79ae2d565c6bfc06dc683bfb999f2d00f204243edf603281
+  checksum: 10c0/d6e1df75bc98a14180db67e1de9fa61637680d75e06e8ec5ac492c07e6208f85add16da904d9f9d0e94d17fe052d5f4c152e3874c9c955baa7775782ac31ee38
   languageName: node
   linkType: hard
 
