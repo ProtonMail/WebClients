@@ -89,7 +89,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
             { label: c('Label').t`Card`, type: 'creditCard', locked: isFreePlan },
             { label: c('Label').t`Note`, type: 'note' },
             { label: c('Label').t`Identity`, type: 'identity' },
-            { label: c('Label').t`More`, type: 'custom', locked: isFreePlan, hidden: !showCustomItem },
+            { label: c('Label').t`Other`, type: 'custom', locked: isFreePlan, hidden: !showCustomItem },
         ];
 
         return actions.filter(({ hidden }) => !hidden);
