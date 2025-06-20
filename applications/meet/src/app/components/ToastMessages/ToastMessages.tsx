@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { Toast } from '../../atoms/Toast/Toast';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useToastMessages } from '../../hooks/useToastMessages';
 import { MeetingSideBars, ParticipantEvent, type ParticipantEventRecord } from '../../types';
-import { Toast } from '../Toast/Toast';
 
 export const ToastMessages = () => {
     const { participantEventsToastMessages } = useToastMessages();

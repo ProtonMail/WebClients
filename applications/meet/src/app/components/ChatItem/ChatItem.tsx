@@ -51,7 +51,7 @@ export const ChatItem = ({ roomName, item, colorClassName, displayDate = true, s
 
             <div className="flex flex-column flex-nowrap gap-1 justify-start">
                 <div className="flex items-start text-semibold">
-                    {name}
+                    <span>{name}</span>
                     {displayDate && (
                         <div className="ml-1 color-weak">
                             {new Date(timestamp).toLocaleTimeString([], {

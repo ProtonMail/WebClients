@@ -1,18 +1,13 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
-import type { LocalVideoTrack } from 'livekit-client';
 import { VideoQuality } from 'livekit-client';
-import { createLocalTracks } from 'livekit-client';
 
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { PAGE_SIZE } from '../constants';
 import { MeetContext } from '../contexts/MeetContext';
-import { useAudioToggle } from '../hooks/useAudioToggle';
-import { useVideoToggle } from '../hooks/useVideoToggle';
+import { useFaceTrackingSetup } from '../hooks/useFaceTrackingSetup';
 import type { MeetChatMessage, ParticipantEventRecord } from '../types';
 import { MeetingSideBars, type ParticipantSettings, PopUpControls } from '../types';
-
-const shouldAllowExperimentalFaceCrop = process.env.EXPERIMENTAL_FACE_CROP === 'true';
 
 interface MeetContainerProps {
     setParticipantSettings: React.Dispatch<React.SetStateAction<ParticipantSettings | null>>;
@@ -22,6 +17,8 @@ interface MeetContainerProps {
     handleLeave: () => void;
     shareLink: string;
     roomName: string;
+    participantNameMap: Record<string, string>;
+    getParticipants: () => Promise<void>;
 }
 
 export const MeetContainer = ({
@@ -32,12 +29,13 @@ export const MeetContainer = ({
     handleLeave,
     shareLink,
     roomName,
+    participantNameMap,
+    getParticipants,
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
     const [pageSize, setPageSize] = useState(PAGE_SIZE);
     const [resolution, setResolution] = useState<string | null>(null);
-    const [faceTrack, setFaceTrack] = useState<LocalVideoTrack | null>(null);
 
     const [chatMessages, setChatMessages] = useState<MeetChatMessage[]>([]);
     const [participantEvents, setParticipantEvents] = useState<ParticipantEventRecord[]>([]);
@@ -57,66 +55,43 @@ export const MeetContainer = ({
     const [selfView, setSelfView] = useState(true);
     const [shouldShowConnectionIndicator, setShouldShowConnectionIndicator] = useState(false);
 
-    const toggleVideo = useVideoToggle();
-    const toggleAudio = useAudioToggle();
+    const faceTrack = useFaceTrackingSetup({ isFaceTrackingEnabled, videoDeviceId });
 
-    const toggleSideBarState = (sidebar: MeetingSideBars) => {
-        setSideBarState((prev) => {
-            const newSidebards = Object.fromEntries(
-                Object.entries(prev).map(([key, value]) => [key, key === sidebar ? !value : false])
-            ) as Record<MeetingSideBars, boolean>;
+    const toggleSideBarState = useCallback(
+        (sidebar: MeetingSideBars) => {
+            setSideBarState((prev) => {
+                const newSidebards = Object.fromEntries(
+                    Object.entries(prev).map(([key, value]) => [key, key === sidebar ? !value : false])
+                ) as Record<MeetingSideBars, boolean>;
 
-            return newSidebards;
-        });
-    };
+                return newSidebards;
+            });
+        },
+        [setSideBarState]
+    );
 
-    const togglePopupState = (popup: PopUpControls) => {
-        setPopupState((prev) => {
-            const newPopupState = Object.fromEntries(
-                Object.entries(prev).map(([key, value]) => [key, key === popup ? !value : false])
-            ) as Record<PopUpControls, boolean>;
+    const togglePopupState = useCallback(
+        (popup: PopUpControls) => {
+            setPopupState((prev) => {
+                const newPopupState = Object.fromEntries(
+                    Object.entries(prev).map(([key, value]) => [key, key === popup ? !value : false])
+                ) as Record<PopUpControls, boolean>;
 
-            return newPopupState;
-        });
-    };
+                return newPopupState;
+            });
+        },
+        [setPopupState]
+    );
 
-    const setupFaceTracking = useCallback(async () => {
-        if (!isFaceTrackingEnabled || !shouldAllowExperimentalFaceCrop) {
-            return;
-        }
-
-        // Dynamic import to avoid bundling the face tracking processor in the main bundle, as it is an experimental feature
-        const FaceTrackingProcessor = (
-            await import(
-                /* webpackChunkName: "face-tracking-processor" */ '../utils/custom-processors/FaceTrackingProcessor'
-            )
-        ).FaceTrackingProcessor;
-
-        const [videoTrack] = await createLocalTracks({
-            video: {
-                deviceId: { exact: videoDeviceId },
-            },
-        });
-
-        const processor = new FaceTrackingProcessor();
-
-        await (videoTrack as LocalVideoTrack).setProcessor(processor);
-
-        setFaceTrack(videoTrack as LocalVideoTrack);
-    }, [isFaceTrackingEnabled, videoDeviceId]);
-
-    const setupMediaDevices = useCallback(async () => {
-        void toggleVideo({ isEnabled: isVideoEnabled, videoDeviceId, isFaceTrackingEnabled });
-        void toggleAudio({ isEnabled: isAudioEnabled, audioDeviceId });
-    }, []);
-
-    useEffect(() => {
-        void setupMediaDevices();
-    }, [setupMediaDevices]);
-
-    useEffect(() => {
-        void setupFaceTracking();
-    }, [setupFaceTracking]);
+    const setIsVideoEnabled = useCallback(
+        (isEnabled: boolean) => {
+            setParticipantSettings(
+                (prevParticipantSettings) =>
+                    ({ ...prevParticipantSettings, isVideoEnabled: isEnabled }) as ParticipantSettings
+            );
+        },
+        [setParticipantSettings]
+    );
 
     return (
         <div className="w-full h-full flex flex-col flex-nowrap items-center justify-center">
@@ -149,12 +124,12 @@ export const MeetContainer = ({
                     pageSize,
                     setPageSize,
                     handleLeave,
+                    isAudioEnabled,
                     isVideoEnabled,
-                    setIsVideoEnabled: (isEnabled) =>
-                        setParticipantSettings(
-                            (prevParticipantSettings) =>
-                                ({ ...prevParticipantSettings, isVideoEnabled: isEnabled }) as ParticipantSettings
-                        ),
+                    isFaceTrackingEnabled,
+                    setIsVideoEnabled,
+                    participantNameMap,
+                    getParticipants,
                 }}
             >
                 <MeetingBody isFaceTrackingEnabled={isFaceTrackingEnabled} faceTrack={faceTrack} />

@@ -6,9 +6,9 @@ import { IcMeetMicrophone } from '@proton/icons';
 
 import { useMicrophoneVolume } from '../hooks/useMicrophoneVolume';
 
-const normalSpeakingMinThreshold = 0.04;
-const normalSpeakingThreshold = 0.1;
-const volumeUpdateThrottleMs = 100;
+const NORMAL_SPEAKING_MIN_THRESHOLD = 0.04;
+const NORMAL_SPEAKING_THRESHOLD = 0.1;
+const VOLUME_UPDATE_THROTTLE_MS = 100;
 
 interface MicrophoneWithVolumeProps {
     isMicrophoneEnabled: boolean;
@@ -18,11 +18,11 @@ interface MicrophoneWithVolumeProps {
 const clipPathYValues = [3.5, 4.5, 5.5, 7, 8, 10];
 
 export const MicrophoneWithVolume = ({ isMicrophoneEnabled, size }: MicrophoneWithVolumeProps) => {
-    const volume = useMicrophoneVolume(isMicrophoneEnabled, volumeUpdateThrottleMs);
+    const volume = useMicrophoneVolume(isMicrophoneEnabled, VOLUME_UPDATE_THROTTLE_MS);
 
-    const updatedVolume = volume < normalSpeakingMinThreshold ? 0 : volume;
+    const updatedVolume = volume < NORMAL_SPEAKING_MIN_THRESHOLD ? 0 : volume;
 
-    const volumeIndicatorTop = updatedVolume / normalSpeakingThreshold;
+    const volumeIndicatorTop = updatedVolume / NORMAL_SPEAKING_THRESHOLD;
 
     if (volumeIndicatorTop === 0) {
         return <IcMeetMicrophone size={size} />;

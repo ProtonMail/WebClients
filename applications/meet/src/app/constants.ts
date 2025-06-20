@@ -3,9 +3,9 @@ import { c } from 'ttag';
 
 export const PAGE_SIZE = 6;
 
-export const screenSharePageSize = 3;
+export const SCREEN_SHARE_PAGE_SIZE = 3;
 
-export const screenShareDoublePageSize = 6;
+export const SCREEN_SHARE_DOUBLE_PAGE_SIZE = 6;
 
 export const heightToVideoQuality: Record<number, VideoQuality> = {
     180: VideoQuality.LOW,

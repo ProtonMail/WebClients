@@ -13,7 +13,7 @@ import { MeetingSideBars } from '../types';
 import { getParticipantDisplayColors } from '../utils/getParticipantDisplayColors';
 import { ChatItem } from './ChatItem/ChatItem';
 
-const chatMessageTimeout = 8000;
+const CHAT_MESSAGE_TIMEOUT = 8000;
 
 export const ChatPreview = () => {
     const { sideBarState, chatMessages, setChatMessages } = useMeetContext();
@@ -60,7 +60,7 @@ export const ChatPreview = () => {
                           }
                 )
             );
-        }, chatMessageTimeout);
+        }, CHAT_MESSAGE_TIMEOUT);
 
         return () => {
             if (timeoutRef.current) {

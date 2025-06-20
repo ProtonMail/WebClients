@@ -1,5 +1,6 @@
 import { useLocalParticipant } from '@livekit/components-react';
 import { type Participant, Track } from 'livekit-client';
+import { c } from 'ttag';
 
 import { IcMeetMicrophoneOff } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
@@ -26,7 +27,7 @@ const getCameraVideoPublication = (participant: Participant) => {
 
 export const ParticipantTile = ({ participant, smallView = false }: ParticipantTileProps) => {
     const { localParticipant } = useLocalParticipant();
-    const { shouldShowConnectionIndicator } = useMeetContext();
+    const { shouldShowConnectionIndicator, participantNameMap } = useMeetContext();
     const cameraVideoPublication = getCameraVideoPublication(participant);
     const audioPublication = Array.from(participant.trackPublications.values()).find(
         (pub) => pub.kind === Track.Kind.Audio && pub.track
@@ -47,6 +48,8 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
 
     // @ts-ignore
     const connectionQuality = participant._connectionQuality;
+
+    const participantName = participantNameMap[participant.identity] ?? c('l10n_nightly Info').t`Loading...`;
 
     return (
         <div
@@ -114,7 +117,7 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                     gap: '0.625rem',
                 }}
             >
-                {participant.name}
+                {participantName}
             </div>
         </div>
     );

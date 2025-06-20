@@ -9,7 +9,7 @@ import { type MeetChatMessage, MeetingSideBars } from '../types';
 export const useChat = () => {
     const room = useRoomContext();
 
-    const { sideBarState, setChatMessages } = useMeetContext();
+    const { sideBarState, setChatMessages, participantNameMap } = useMeetContext();
 
     const isChatOpen = sideBarState[MeetingSideBars.Chat];
 
@@ -24,7 +24,7 @@ export const useChat = () => {
                 const newMessage: MeetChatMessage = {
                     ...decodedMessage,
                     identity: participant.identity,
-                    name: participant.name || participant.identity,
+                    name: participantNameMap[participant.identity] || participant.identity,
                     seen: isChatOpen,
                 };
 
@@ -33,7 +33,7 @@ export const useChat = () => {
                 console.error('Error handling chat message:', error);
             }
         },
-        [isChatOpen]
+        [isChatOpen, participantNameMap]
     );
 
     useEffect(() => {

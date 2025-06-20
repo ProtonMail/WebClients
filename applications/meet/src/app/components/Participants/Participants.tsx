@@ -5,7 +5,7 @@ import type { Participant } from 'livekit-client';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
 import { IcMagnifier, IcMeetCamera, IcMeetCameraOff, IcMeetMicrophone, IcMeetMicrophoneOff } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
@@ -29,13 +29,15 @@ export const Participants = () => {
 
     const { sideBarState } = useMeetContext();
 
+    const { participantNameMap } = useMeetContext();
+
     const filteredParticipants = useMemo(() => {
         if (!isSearchOn || !searchExpression) {
             return participants;
         }
 
         return participants.filter((participant) => {
-            return participant.name?.toLowerCase().includes(searchExpression.toLowerCase());
+            return participantNameMap[participant.identity]?.toLowerCase().includes(searchExpression.toLowerCase());
         });
     }, [isSearchOn, searchExpression, participants]);
 
@@ -93,9 +95,20 @@ export const Participants = () => {
                                 )}
                                 style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
                             >
-                                <div>{getParticipantInitials(participant)}</div>
+                                <div>
+                                    {participantNameMap[participant.identity] ? (
+                                        getParticipantInitials(participantNameMap[participant.identity])
+                                    ) : (
+                                        <CircleLoader
+                                            className="color-primary w-custom h-custom"
+                                            style={{ '--w-custom': '1rem', '--h-custom': '1rem' }}
+                                        />
+                                    )}
+                                </div>
                             </div>
-                            <div className="flex items-center">{participant.name}</div>
+                            <div className="flex items-center">
+                                {participantNameMap[participant.identity] ?? c('l10n_nightly Info').t`Loading...`}
+                            </div>
                             <div className="flex flex-nowrap items-center ml-auto gap-4 pr-4">
                                 {!!activeSpeakers.find((p) => p.identity === participant.identity) ? (
                                     <SpeakingIndicator participant={participant} size={32} />
