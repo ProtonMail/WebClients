@@ -170,7 +170,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                 className: `${isUnavailableClass()} ${
                                     !isAuthLogAdvanced || !isProtonSentinelEnabled ? 'text-left lg:text-center' : ''
                                 }`,
-                                colSpan: isProtonSentinelEnabled ? 1 : 4,
+                                colSpan: isProtonSentinelEnabled ? 1 : 3,
                                 content: (
                                     <LocationCell
                                         isProtonSentinelEnabled={isProtonSentinelEnabled}
