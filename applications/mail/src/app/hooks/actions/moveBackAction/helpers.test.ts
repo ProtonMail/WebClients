@@ -7,6 +7,7 @@ import type { ConversationState } from 'proton-mail/store/conversations/conversa
 
 import {
     getOpenedElementUpdated,
+    hasReadItemsAfterAction,
     hasRemainingItemAfterAction,
     moveOutApplyLabelAction,
     moveOutMoveAction,
@@ -546,6 +547,32 @@ describe('Move back action helpers tests', () => {
                     undefined
                 )
             ).toBeFalsy();
+        });
+    });
+
+    describe('hasReadItemsAfterAction', () => {
+        it('should return true if more than 1 elements remain read after the action in the conversation', () => {
+            expect(
+                hasReadItemsAfterAction({
+                    Messages: [{ Unread: 0 } as Message, { Unread: 0 } as Message, { Unread: 1 } as Message],
+                } as ConversationState)
+            ).toBeTruthy();
+        });
+
+        it('should return false all messages from conversation will be unread', () => {
+            expect(
+                hasReadItemsAfterAction({
+                    Messages: [{ Unread: 0 } as Message, { Unread: 1 } as Message, { Unread: 1 } as Message],
+                } as ConversationState)
+            ).toBeFalsy();
+        });
+
+        it('should return false if no conversation state', () => {
+            expect(hasReadItemsAfterAction(undefined)).toBeFalsy();
+        });
+
+        it('should return false if no messages in conversation state', () => {
+            expect(hasReadItemsAfterAction({ Messages: undefined } as ConversationState)).toBeFalsy();
         });
     });
 });
