@@ -19,11 +19,6 @@ export const AddExtraFieldDropdown: FC<CustomFieldsDropdownProps> = ({
 }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
-    const handleAddClick = (type: ExtraFieldType) => {
-        onAdd(type);
-        setTimeout(() => anchorRef?.current?.scrollIntoView({ behavior: 'smooth' }), 50);
-    };
-
     return (
         <>
             <Button
@@ -39,7 +34,7 @@ export const AddExtraFieldDropdown: FC<CustomFieldsDropdownProps> = ({
             </Button>
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close} originalPlacement="top-start">
                 <DropdownMenu>
-                    {getExtraFieldOptions(handleAddClick).map(({ value, icon, label, onClick }) => (
+                    {getExtraFieldOptions(onAdd).map(({ value, icon, label, onClick }) => (
                         <DropdownMenuButton key={value} onClick={onClick} size="small" icon={icon} label={label} />
                     ))}
                 </DropdownMenu>

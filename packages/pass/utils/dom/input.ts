@@ -146,4 +146,10 @@ export const findBoundingInputElement = (
 };
 
 export const autofocusInput = (name: string) =>
-    setTimeout(() => document.querySelector<HTMLInputElement>(`input[name="${name}"]`)?.focus(), 15);
+    setTimeout(() => {
+        document.querySelector<HTMLInputElement>(`input[name="${name}"]`)?.focus({
+            /** explicitly setting it although it's the default value.
+             * To properly account for sticky headers, use `scroll-margin-top` */
+            preventScroll: false,
+        });
+    }, 15);
