@@ -1,5 +1,6 @@
 import type { AesGcmCiphertext } from '@proton/encrypted-search';
 import { apiHelper } from '@proton/encrypted-search';
+import { toText } from '@proton/mail/helpers/parserHtml';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -8,7 +9,6 @@ import type { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import type { ESBaseMessage, ESMessage, ESMessageContent } from '../../models/encryptedSearch';
 import { locateBlockquote } from '../message/messageBlockquote';
 import { decryptMessage } from '../message/messageDecrypt';
-import { toText } from '../parserHtml';
 import { queryMessage } from './esAPI';
 
 /**
