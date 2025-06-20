@@ -16,7 +16,7 @@ const IPCell = ({ ip, isAuthLogAdvanced, isProtonSentinelEnabled, firstRow }: Pr
         ? c('Description').t`You should enable detailed events in order to access these features`
         : c('Description')
               .t`Your organization administrator should enable detailed events in order to access these features`;
-    const advancedLogsAndProtonSentinelUpsell = user.isFree
+    const advancedLogsAndProtonSentinelUpsell = user.isFree || user.isAdmin
         ? c('Description')
               .t`You should enable detailed events and ${PROTON_SENTINEL_NAME} in order to access these features`
         : c('Description')
