@@ -132,6 +132,10 @@ export const moveOutPermanentDeleteAction = (onBack: () => void) => {
     onBack();
 };
 
+export const moveOutMarkAsAction = (onBack: () => void) => {
+    onBack();
+};
+
 export const moveOutApplyLabelAction = (
     sourceLabelID: string,
     changes: { [labelID: string]: boolean },
@@ -179,4 +183,14 @@ export const hasRemainingItemAfterAction = (
 
     // If the message we're acting on does not have the current label ID, the conversation stays in the current label
     return matchingLabelNumMessage > 1 || !hasLabel(element, sourceLabelID);
+};
+
+export const hasReadItemsAfterAction = (conversationFromState: ConversationState | undefined) => {
+    if (!conversationFromState || !conversationFromState.Messages) {
+        return;
+    }
+
+    const unreadMessages = conversationFromState?.Messages?.filter((message) => message.Unread);
+
+    return conversationFromState.Messages?.length - unreadMessages.length > 1;
 };
