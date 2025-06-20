@@ -42,7 +42,15 @@ const getUsersList = (userIds: readonly string[], users: readonly GatewayUser[],
         ? userIds.map((id) => {
               const user = users?.find((user) => user.ID === id);
 
-              return <div key={'logical-users-' + key + '-' + id}>{user?.Name || user?.Email}</div>;
+              return (
+                  <div
+                      key={'logical-users-' + key + '-' + id}
+                      className="text-ellipsis inline-block max-w-full"
+                      title={user?.Name || user?.Email}
+                  >
+                      {user?.Name || user?.Email}
+                  </div>
+              );
           })
         : '0';
 
