@@ -20,7 +20,7 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 import { CustomForm } from './Custom.form';
 import { CustomSelect } from './Custom.select';
-import { type CustomTemplate } from './Custom.templates';
+import { type CustomTemplate, EMPTY_CUSTOM_ITEM } from './Custom.templates';
 import { extraTypeFieldValues, getCreateIntent, getNewCustomInitialValues } from './Custom.utils';
 
 const FORM_ID = 'new-custom';
@@ -68,7 +68,7 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
     const handleCancelClick = () => (showForm ? setShowForm(false) : onCancel());
 
     const SubmitButton = (() => {
-        if (!showForm) return <StartFromScratch onClick={() => setShowForm(true)} />;
+        if (!showForm) return <StartFromScratch onClick={() => onSelectTemplate(EMPTY_CUSTOM_ITEM)} />;
         if (isFreePlan) return <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.CUSTOM_ITEMS} />;
     })();
 
