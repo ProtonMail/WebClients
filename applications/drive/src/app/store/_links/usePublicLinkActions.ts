@@ -166,7 +166,12 @@ export function usePublicLinkActions() {
 
     const createDocument = async (
         abortSignal: AbortSignal,
-        { token, parentLinkId, name }: { token: string; parentLinkId: string; name: string }
+        {
+            token,
+            parentLinkId,
+            name,
+            documentType = 'doc',
+        }: { token: string; parentLinkId: string; name: string; documentType?: 'doc' | 'sheet' }
     ) => {
         const { hash, addressKeyInfo, nodeKeys, signingKeys, encryptedName } = await getCreationData(abortSignal, {
             name,
@@ -193,7 +198,7 @@ export function usePublicLinkActions() {
                     ManifestSignature,
                     SignatureEmail: addressKeyInfo?.address.Email,
                     ParentLinkID: parentLinkId,
-                    DocumentType: 1,
+                    DocumentType: documentType === 'doc' ? 1 : 2,
                 }),
             })
         );

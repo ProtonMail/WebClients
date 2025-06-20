@@ -52,21 +52,30 @@ export function usePublicActions() {
             });
     };
 
-    const createDocument = async (abortSignal: AbortSignal, token: string, parentLinkId: string): Promise<string> => {
+    const createDocument = async (
+        abortSignal: AbortSignal,
+        token: string,
+        parentLinkId: string,
+        documentType: 'doc' | 'sheet' = 'doc'
+    ): Promise<string> => {
         const date = getPlatformFriendlyDateForFileName();
         // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
-        const name = c('Title').t`Untitled document ${date}`;
+        const docName = c('Title').t`Untitled document ${date}`;
+        const sheetName = c('Title').t`Untitled spreadsheet ${date}`;
+        const name = documentType === 'sheet' ? sheetName : docName;
+
         return publicLink
-            .createDocument(abortSignal, { token, parentLinkId, name })
+            .createDocument(abortSignal, { token, parentLinkId, name, documentType })
             .then(async (id: string) => {
                 await publicLinksListing.loadChildren(abortSignal, token, parentLinkId, false);
                 return id;
             })
             .catch((e) => {
-                showErrorNotification(
-                    e,
-                    <span className="text-pre-wrap">{c('Notification').t`The document failed to be created`}</span>
-                );
+                const errorMessage =
+                    documentType === 'sheet'
+                        ? c('Notification').t`The spreadsheet failed to be created`
+                        : c('Notification').t`The document failed to be created`;
+                showErrorNotification(e, <span className="text-pre-wrap">{errorMessage}</span>);
                 throw e;
             });
     };
