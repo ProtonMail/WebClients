@@ -357,6 +357,7 @@ const AccountStepPayment = ({
                             audience={isB2BPlan ? Audience.B2B : Audience.B2C}
                             scribeAddonEnabled
                             showUsersTooltip
+                            isTrialMode={signupParameters.trial}
                         />
                     );
                 })()}
