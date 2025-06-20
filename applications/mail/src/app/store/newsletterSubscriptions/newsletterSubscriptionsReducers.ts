@@ -308,16 +308,17 @@ export const handleServerEvent = (state: NewsletterSubscriptionsStateType, actio
 
     if (action.payload.NewsletterSubscriptions) {
         for (const update of action.payload.NewsletterSubscriptions) {
+            // For the create event we must add the subscription to the appropriate tab and increase it's total count
+            // Create event must be handled first, before the update event
+            if (update.Action === EVENT_ACTIONS.CREATE) {
+                handleCreateServerEvent(state, update);
+            }
+
             // The update event must update the subscription object in the store and handle those two cases
             // 1. The subscription receives a new message, we should move it to the top of the list
             // 2. The subscription is unsubscribed, we should move it to the unsubscribe tab
             if (update.Action === EVENT_ACTIONS.UPDATE) {
                 handleUpdateServerEvent(state, update);
-            }
-
-            // For the create event we must add the subscription to the appropriate tab and increase it's total count
-            if (update.Action === EVENT_ACTIONS.CREATE) {
-                handleCreateServerEvent(state, update);
             }
 
             // For the delete event we must remove the subscription from the appropriate tab, unselect it (if it was selected), and decrease it's total count

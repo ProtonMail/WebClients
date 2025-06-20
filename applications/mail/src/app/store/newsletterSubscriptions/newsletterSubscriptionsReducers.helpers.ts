@@ -1,4 +1,5 @@
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type {
     CreateEventItemUpdate,
     DeleteEventItemUpdate,
@@ -70,16 +71,49 @@ export const handleUpdateRejection = (
     stateValue.deletingSubscriptionId = undefined;
 };
 
+export const handleCreateServerEvent = (
+    state: NewsletterSubscriptionsStateType,
+    update: CreateEventItemUpdate<NewsletterSubscription, 'NewsletterSubscription'>
+) => {
+    const stateValue = getStoreValue(state);
+
+    if (!stateValue) {
+        return;
+    }
+
+    if (update.NewsletterSubscription.UnsubscribedTime) {
+        stateValue.tabs.unsubscribe.ids = moveIdToTop(stateValue.tabs.unsubscribe.ids, update.ID);
+        stateValue.tabs.unsubscribe.totalCount = safeIncreaseCount(stateValue.tabs.unsubscribe.totalCount);
+    } else {
+        stateValue.tabs.active.ids = moveIdToTop(stateValue.tabs.active.ids, update.ID);
+        stateValue.tabs.active.totalCount = safeIncreaseCount(stateValue.tabs.active.totalCount);
+    }
+
+    stateValue.byId[update.ID] = update.NewsletterSubscription;
+};
+
 export const handleUpdateServerEvent = (
     state: NewsletterSubscriptionsStateType,
     update: UpdateEventItemUpdate<NewsletterSubscription, 'NewsletterSubscription'>
 ) => {
     const stateValue = getStoreValue(state);
+
     if (!stateValue) {
         return;
     }
 
     const subscriptionInStore = stateValue.byId[update.ID];
+
+    if (!subscriptionInStore) {
+        // If the NewsletterSubscription item is not present in the store, we create it
+        handleCreateServerEvent(state, {
+            ID: update.ID,
+            Action: EVENT_ACTIONS.CREATE,
+            NewsletterSubscription: update.NewsletterSubscription as NewsletterSubscription,
+        });
+        return;
+    }
+
     const nextSubscription = update.NewsletterSubscription;
 
     const prevCount = getReceivedMessagesCount(subscriptionInStore);
@@ -110,26 +144,6 @@ export const handleUpdateServerEvent = (
     }
 
     updateSubscriptionState(stateValue.byId, update.ID, update.NewsletterSubscription);
-};
-
-export const handleCreateServerEvent = (
-    state: NewsletterSubscriptionsStateType,
-    update: CreateEventItemUpdate<NewsletterSubscription, 'NewsletterSubscription'>
-) => {
-    const stateValue = getStoreValue(state);
-    if (!stateValue) {
-        return;
-    }
-
-    if (update.NewsletterSubscription.UnsubscribedTime) {
-        stateValue.tabs.unsubscribe.ids = moveIdToTop(stateValue.tabs.unsubscribe.ids, update.ID);
-        stateValue.tabs.unsubscribe.totalCount = safeIncreaseCount(stateValue.tabs.unsubscribe.totalCount);
-    } else {
-        stateValue.tabs.active.ids = moveIdToTop(stateValue.tabs.active.ids, update.ID);
-        stateValue.tabs.active.totalCount = safeIncreaseCount(stateValue.tabs.active.totalCount);
-    }
-
-    stateValue.byId[update.ID] = update.NewsletterSubscription;
 };
 
 export const handleDeleteServerEvent = (state: NewsletterSubscriptionsStateType, update: DeleteEventItemUpdate) => {
