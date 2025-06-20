@@ -1,8 +1,7 @@
+import { toText } from '@proton/mail/helpers/parserHtml';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { removeProxyUrlsFromContent } from '@proton/shared/lib/mail/images';
-
-import { toText } from 'proton-mail/helpers/parserHtml';
 
 /**
  * When the user has the setting "Block email tracking" enabled, we are loading images through the Proton proxy.
