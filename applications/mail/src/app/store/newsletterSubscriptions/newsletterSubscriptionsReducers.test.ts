@@ -954,6 +954,60 @@ describe('Newsletter subscription reducers', () => {
     });
 
     describe('handleServerEvent', () => {
+        it('should treat the create event before the update event', () => {
+            const subscriptionId = 'new-subscription-id';
+            const newSubscription = {
+                ID: subscriptionId,
+                Name: 'New Newsletter',
+                UnsubscribedTime: 0,
+                ReceivedMessages: {
+                    Last90Days: 5,
+                    Last30Days: 5,
+                    Total: 5,
+                },
+            } as NewsletterSubscription;
+
+            // Initially the subscription doesn't exist in the store
+            state.value!.byId = {};
+            state.value!.tabs.active.ids = [];
+            state.value!.tabs.active.totalCount = 0;
+
+            handleServerEvent(state, {
+                type: 'server event',
+                payload: {
+                    NewsletterSubscriptions: [
+                        {
+                            Action: EVENT_ACTIONS.CREATE,
+                            NewsletterSubscription: newSubscription,
+                            ID: subscriptionId,
+                        },
+                        {
+                            Action: EVENT_ACTIONS.UPDATE,
+                            NewsletterSubscription: {
+                                ID: subscriptionId,
+                                Name: 'Updated Newsletter Name',
+                                ReceivedMessages: {
+                                    Last30Days: 10,
+                                    Last90Days: 10,
+                                    Total: 10,
+                                },
+                            },
+                            ID: subscriptionId,
+                        },
+                    ],
+                    More: 0,
+                    EventID: 'test-event-id',
+                },
+            });
+
+            // Verify the subscription was created and then updated
+            expect(state.value?.byId[subscriptionId]).toBeDefined();
+            expect(state.value?.byId[subscriptionId].Name).toEqual('Updated Newsletter Name');
+            expect(state.value?.byId[subscriptionId].ReceivedMessages?.Last90Days).toEqual(10);
+            expect(state.value?.tabs.active.ids).toContain(subscriptionId);
+            expect(state.value?.tabs.active.totalCount).toBe(1);
+        });
+
         describe('Update event', () => {
             it('should update the subscription in the store', () => {
                 state.value!.byId = {
