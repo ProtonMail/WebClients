@@ -42,7 +42,7 @@ const files = [
     'components/containers/payments/subscription/PlanSelection.tsx',
     'components/containers/payments/subscription/subscriptionEligbility.ts',
     'components/containers/referral/rewards/RewardsProgress.tsx',
-    'components/containers/topBanners/ReferralTopBanner.tsx',
+    'components/containers/topBanners/TrialTopBanner.tsx',
     'components/hooks/assistant/assistantUpsellConfig.ts',
     'core/checkout-modifiers.test.ts',
     'core/subscription/selected-plan.test.ts',
