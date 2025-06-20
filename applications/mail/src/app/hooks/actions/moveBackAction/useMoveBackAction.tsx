@@ -1,6 +1,7 @@
 import { useFolders, useLabels } from '@proton/mail/index';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { type Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { isMessage } from 'proton-mail/helpers/elements';
@@ -12,8 +13,10 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import {
     getOpenedElementUpdated,
+    hasReadItemsAfterAction,
     hasRemainingItemAfterAction,
     moveOutApplyLabelAction,
+    moveOutMarkAsAction,
     moveOutMoveAction,
     moveOutPermanentDeleteAction,
     moveOutStarAction,
@@ -41,6 +44,9 @@ const executeCallback = ({ sourceLabelID, props, handleBack, labels, folders }: 
             break;
         case MOVE_BACK_ACTION_TYPES.PERMANENT_DELETE:
             moveOutPermanentDeleteAction(handleBack);
+            break;
+        case MOVE_BACK_ACTION_TYPES.MARK_AS:
+            moveOutMarkAsAction(handleBack);
             break;
     }
 };
@@ -74,17 +80,33 @@ export const useMoveBackAction = () => {
             if (!conversationMode) {
                 executeCallback({ sourceLabelID, props, handleBack: navigation.handleBack, labels, folders });
             } else {
-                // Else, if we are in conversation mode, it means we need to check that no item will remain in the current location after moving the current one. If there are items remaining, do not move out
+                /* If we are in conversation mode
+                 * - If doing a mark as action, if all items will be unread after the action, we need to move out
+                 * - Else we need to check that no item will remain in the current location after moving the current one. If there are items remaining, do not move out.
+                 */
                 const conversationID = (openedElementMoved as Message).ConversationID;
                 const conversationFromState = getConversation(conversationID);
-                const hasRemainingItem = hasRemainingItemAfterAction(
-                    props.elements[0] as Message,
-                    sourceLabelID,
-                    conversationFromState
-                );
 
-                if (hasRemainingItem) {
-                    return;
+                if (props.type === MOVE_BACK_ACTION_TYPES.MARK_AS) {
+                    if (props.status === MARK_AS_STATUS.READ) {
+                        return;
+                    }
+
+                    const hasReadItems = hasReadItemsAfterAction(conversationFromState);
+
+                    if (hasReadItems) {
+                        return;
+                    }
+                } else {
+                    const hasRemainingItem = hasRemainingItemAfterAction(
+                        props.elements[0] as Message,
+                        sourceLabelID,
+                        conversationFromState
+                    );
+
+                    if (hasRemainingItem) {
+                        return;
+                    }
                 }
 
                 executeCallback({ sourceLabelID, props, handleBack: navigation.handleBack, labels, folders });
