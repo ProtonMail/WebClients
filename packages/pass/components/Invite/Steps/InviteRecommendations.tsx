@@ -133,7 +133,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
                                     >
                                         <div className="flex flex-nowrap items-center flex-1">
                                             <ShareMemberAvatar value={email.toUpperCase().slice(0, 2) ?? ''} />
-                                            <div className="flex-1 text-ellipsis color-white mr-2">{email}</div>
+                                            <div className="flex-1 text-ellipsis mr-2">{email}</div>
                                         </div>
                                     </Checkbox>
                                 </div>
