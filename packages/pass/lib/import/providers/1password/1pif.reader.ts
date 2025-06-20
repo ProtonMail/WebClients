@@ -22,7 +22,6 @@ import { logger } from '@proton/pass/utils/logger';
 import {
     extract1PasswordLegacyExtraFields,
     extract1PasswordLegacyIdentity,
-    extract1PasswordLegacyNote,
     extract1PasswordLegacyURLs,
     extract1PasswordLegacyUnknownExtraFields,
     extractLegacy1PasswordWifiFields,
@@ -61,7 +60,7 @@ export const processLoginItem = async (item: OnePassLegacyItem): Promise<ItemImp
 export const processNoteItem = (item: OnePassLegacyItem): ItemImportIntent<'note'> =>
     importNoteItem({
         name: item.title,
-        note: extract1PasswordLegacyNote(item),
+        note: item.secureContents?.notesPlain,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
         extraFields: extract1PasswordLegacyExtraFields(item),
@@ -133,7 +132,7 @@ export const processSshKeyItem = (item: OnePassLegacyItem): ItemImportIntent<'ss
 export const processWifiItem = (item: OnePassLegacyItem): ItemImportIntent<'wifi'> =>
     importWifiItem({
         name: item.title,
-        note: item.secureContents.notesPlain,
+        note: item.secureContents?.notesPlain,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
         extraFields: [...extract1PasswordLegacyUnknownExtraFields(item), ...extract1PasswordLegacyExtraFields(item)],
@@ -180,9 +179,8 @@ export const read1Password1PifData = async (
                             return attachFilesToItem(processWifiItem(item), files);
                         case OnePassLegacyItemType.SSH_KEY:
                             return attachFilesToItem(processSshKeyItem(item), files);
-                        default: {
+                        default:
                             return attachFilesToItem(processCustomItem(item), files);
-                        }
                     }
                 })();
 
