@@ -12,6 +12,8 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useIsB2BTrial } from '@proton/payments';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { APPS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 
@@ -53,6 +55,14 @@ const B2BOnboardingModal = (props: Props) => {
     };
 
     const handleNextFromTrial = () => {
+        // For now (as of 2025-06-19), if we have shown the trial onboarding step, and we're not in mail/calendar,
+        // don't show any other steps and close the onboarding immediately
+        const parentApp = getAppFromPathnameSafe(window.location.pathname);
+        if (APP_NAME === APPS.PROTONACCOUNT && parentApp !== APPS.PROTONMAIL && parentApp !== APPS.PROTONCALENDAR) {
+            handleClose();
+            return;
+        }
+
         const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
         const nextStep = hasOrganizationKey ? B2B_ONBOARDING_STEPS.DISCOVER_FEATURES : B2B_ONBOARDING_STEPS.ORG_SETUP;
         setStep(nextStep);
