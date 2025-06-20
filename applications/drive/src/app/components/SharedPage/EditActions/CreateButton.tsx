@@ -7,7 +7,7 @@ import { getNewWindow } from '@proton/shared/lib/helpers/window';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
 import { usePublicActions } from '../../../store';
-import { useDriveDocsPublicSharingFF, useOpenDocument } from '../../../store/_documents';
+import { useDriveDocsPublicSharingFF, useDriveDocsSheetsFF, useOpenDocument } from '../../../store/_documents';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';
 
 interface Props {
@@ -22,6 +22,7 @@ export const CreateButton = ({ token, linkId }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { openDocumentWindow } = useOpenDocument();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
+    const { isSheetsEnabled } = useDriveDocsSheetsFF();
 
     const [isLoading, withLoading] = useLoading();
 
@@ -62,7 +63,8 @@ export const CreateButton = ({ token, linkId }: Props) => {
                                     const documentLinkId = await createDocument(
                                         new AbortController().signal,
                                         token,
-                                        linkId
+                                        linkId,
+                                        'doc'
                                     );
                                     openDocumentWindow({
                                         type: 'doc',
@@ -77,6 +79,32 @@ export const CreateButton = ({ token, linkId }: Props) => {
                         >
                             <Icon name="brand-proton-docs" />
                             {c('Action').t`New document`}
+                        </DropdownMenuButton>
+                    )}
+                    {isDocsPublicSharingEnabled && isSheetsEnabled && (
+                        <DropdownMenuButton
+                            className="flex items-center gap-2"
+                            onClick={() =>
+                                withLoading(async () => {
+                                    const sheetLinkId = await createDocument(
+                                        new AbortController().signal,
+                                        token,
+                                        linkId,
+                                        'sheet'
+                                    );
+                                    openDocumentWindow({
+                                        type: 'sheet',
+                                        mode: 'open-url',
+                                        token,
+                                        urlPassword,
+                                        linkId: sheetLinkId,
+                                        window: getNewWindow().handle,
+                                    });
+                                })
+                            }
+                        >
+                            <Icon name="brand-proton-sheets" />
+                            {c('Action').t`New spreadsheet`}
                         </DropdownMenuButton>
                     )}
                 </DropdownMenu>
