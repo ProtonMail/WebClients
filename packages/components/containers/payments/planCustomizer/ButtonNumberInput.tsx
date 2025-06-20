@@ -6,7 +6,8 @@ import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import clsx from '@proton/utils/clsx';
 
-import type { DecreaseBlockedReason } from './helpers';
+import { IncreaseBlockedTooltip } from './IncreaseBlockedTooltip';
+import type { DecreaseBlockedReason, IncreaseBlockedReason } from './helpers';
 
 export const getIsValidValue = (min: number, max: number, step: number, newValue?: number) => {
     return newValue !== undefined && newValue >= min && newValue <= max && newValue % step === 0;
@@ -21,6 +22,8 @@ export const ButtonNumberInput = ({
     step = 1,
     disabled = false,
     decreaseBlockedReasons,
+    increaseBlockedReasons,
+    increaseBlockedReasonText,
     ...rest
 }: {
     step?: number;
@@ -31,6 +34,8 @@ export const ButtonNumberInput = ({
     disabled?: boolean;
     onChange?: (newValue: number) => void;
     decreaseBlockedReasons: DecreaseBlockedReason[];
+    increaseBlockedReasons: IncreaseBlockedReason[];
+    increaseBlockedReasonText?: string;
 } & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'>) => {
     const [tmpValue, setTmpValue] = useState<number | null | undefined>(undefined);
 
@@ -53,7 +58,7 @@ export const ButtonNumberInput = ({
     const isIncDisabled = disabled || !getIsValidValue(min, max, step, currentValue + step);
 
     const decreaseBlockedReason = decreaseBlockedReasons[0] ?? null;
-    const reasonText =
+    const decreaseReasonText =
         decreaseBlockedReason === 'forbidden-modification'
             ? c('Payments').t`Please reactivate your subscription first to decrease the number of add-ons.`
             : null;
@@ -80,7 +85,7 @@ export const ButtonNumberInput = ({
                     }}
                     data-testid="decrease-blocked-reason"
                 >
-                    <Info title={reasonText} className="mt-1" />
+                    <Info title={decreaseReasonText} className="mt-1" />
                 </span>
             )}
             <input
@@ -107,18 +112,24 @@ export const ButtonNumberInput = ({
                 }}
                 {...rest}
             />
-            <button
-                type="button"
-                title={c('Action').t`Increase`}
-                className={clsx(['p-2 flex', isIncDisabled && 'color-disabled'])}
-                disabled={isIncDisabled}
-                onClick={() => {
-                    handleAddition(1);
-                }}
-                data-testid={`increase-addon-${id}`}
+            <IncreaseBlockedTooltip
+                increaseBlockedReasons={increaseBlockedReasons}
+                increaseBlockedReasonText={increaseBlockedReasonText}
+                isIncDisabled={isIncDisabled}
             >
-                <Icon name="plus" alt={c('Action').t`Increase`} className="m-auto" />
-            </button>
+                <button
+                    type="button"
+                    title={c('Action').t`Increase`}
+                    className={clsx(['p-2 flex', isIncDisabled && 'color-disabled'])}
+                    disabled={isIncDisabled}
+                    onClick={() => {
+                        handleAddition(1);
+                    }}
+                    data-testid={`increase-addon-${id}`}
+                >
+                    <Icon name="plus" alt={c('Action').t`Increase`} className="m-auto" />
+                </button>
+            </IncreaseBlockedTooltip>
         </div>
     );
 };
