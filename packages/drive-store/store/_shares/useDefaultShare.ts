@@ -75,11 +75,16 @@ export function useDefaultShare() {
                 let defaultShareId: string | undefined;
                 // In case main volume doesn't exist or if it's locked, we need to create/re-active it
                 const { Volumes } = await listVolumes();
-                const mainVolume = Volumes.find((volume) => volume.Type === VolumeType.Regular);
-                if (!mainVolume || mainVolume.State === VolumeState.Locked) {
+
+                const hasActiveRegularVolume = Volumes.some(
+                    (volume) => volume.Type === VolumeType.Regular && volume.State === VolumeState.Active
+                );
+
+                if (!hasActiveRegularVolume) {
                     const { shareId } = await createVolume();
                     defaultShareId = shareId;
                 }
+
                 const { Shares } = await debouncedRequest<UserShareResult>(queryUserShares());
                 const shares = Shares.map(shareMetaShortToShare);
                 shares.forEach(({ volumeId, shareId }) => {
@@ -163,7 +168,7 @@ export function useDefaultShare() {
                         // Do not use sharesState.getDefaultPhotosShare as useState
                         // is not sync operation and thus the new state might
                         // not be set just yet.
-                        defaultPhotosShareId = userShares.defaultShareId || findDefaultPhotosShareId(userShares.shares);
+                        defaultPhotosShareId = findDefaultPhotosShareId(userShares.shares);
                         const lockedShares = userShares.shares.filter(
                             (share) => share.type === ShareType.photos && share.isLocked
                         );
