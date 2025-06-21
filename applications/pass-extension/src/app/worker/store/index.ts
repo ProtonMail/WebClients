@@ -16,6 +16,7 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
+import { sagaEvents } from '@proton/pass/store/events';
 import { cacheGuard } from '@proton/pass/store/migrate';
 import reducer from '@proton/pass/store/reducers';
 import { requestMiddlewareFactory } from '@proton/pass/store/request/middleware';
@@ -33,7 +34,7 @@ import noop from '@proton/utils/noop';
 
 import { broadcastMiddleware } from './broadcast.middleware';
 
-const sagaMiddleware = createSagaMiddleware();
+export const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
     reducer,
@@ -61,6 +62,8 @@ const store = configureStore({
 
 export const options: RootSagaOptions = {
     endpoint: 'background',
+    publish: sagaEvents.publish,
+
     getAuthStore: withContext((ctx) => ctx.authStore),
     getAuthService: withContext((ctx) => ctx.service.auth),
     getCache: withContext(async (ctx) => {
