@@ -9,12 +9,14 @@ import type { AutofillCheckFormMessage, WorkerMessageResponse } from 'proton-pas
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientReady } from '@proton/pass/lib/client';
-import { getRulesForURL, parseRules } from '@proton/pass/lib/extension/utils/website-rules';
+import { matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
+import type { DetectionRules } from '@proton/pass/lib/extension/rules/types';
 import browser from '@proton/pass/lib/globals/browser';
 import { intoIdentityItemPreview, intoLoginItemPreview, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
 import { itemAutofilled } from '@proton/pass/store/actions';
+import { sagaEvents } from '@proton/pass/store/events';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import {
     selectAutofillIdentityCandidates,
@@ -26,12 +28,24 @@ import {
     selectPasswordOptions,
     selectVaultLimits,
 } from '@proton/pass/store/selectors';
-import type { FormCredentials, ItemContent, ItemRevision, Maybe, SelectedItem, TabId } from '@proton/pass/types';
+import type {
+    FormCredentials,
+    ItemContent,
+    ItemRevision,
+    Maybe,
+    MaybeNull,
+    SelectedItem,
+    TabId,
+} from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
+type AutofillServiceState = { rules: MaybeNull<DetectionRules> };
+
 export const createAutoFillService = () => {
+    const state: AutofillServiceState = { rules: null };
+
     const getLoginCandidates = withContext<(options: SelectAutofillCandidatesOptions) => ItemRevision<'login'>[]>(
         (ctx, options) => selectAutofillLoginCandidates(options)(ctx.service.store.getState())
     );
@@ -186,10 +200,8 @@ export const createAutoFillService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.WEBSITE_RULES_REQUEST,
         withContext<MessageHandlerCallback<WorkerMessageType.WEBSITE_RULES_REQUEST>>(async (ctx, _, sender) => {
-            const rules = parseRules(await ctx.service.storage.local.getItem('websiteRules'));
-            if (!(rules && sender.url)) return { rules: null };
-
-            return { rules: getRulesForURL(rules, new URL(sender.url)) };
+            state.rules = state.rules ?? parseRules(await ctx.service.storage.local.getItem('websiteRules'));
+            return { rules: state.rules && sender.url ? matchRules(state.rules, new URL(sender.url)) : null };
         })
     );
 
@@ -205,6 +217,17 @@ export const createAutoFillService = () => {
                     await setPopupIconBadge(tabId, items.length);
                 }
             } catch {}
+        })
+    );
+
+    sagaEvents.subscribe(
+        withContext(async (ctx, evt) => {
+            switch (evt.type) {
+                case 'website-rules::resolved': {
+                    void ctx.service.storage.local.setItem('websiteRules', JSON.stringify(evt.data));
+                    state.rules = evt.data;
+                }
+            }
         })
     );
 
