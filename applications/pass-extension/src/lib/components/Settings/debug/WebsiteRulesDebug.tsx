@@ -51,7 +51,12 @@ export const WebsiteRulesDebug: FC = () => {
                     color="norm"
                     disabled={error}
                     className="mt-5 w-full"
-                    onClick={() => browser.storage.local.set({ websiteRules: value })}
+                    onClick={() => {
+                        browser.storage.local
+                            .set({ websiteRules: value })
+                            .then(() => browser.runtime.reload())
+                            .catch(noop);
+                    }}
                 >
                     Update
                 </Button>
