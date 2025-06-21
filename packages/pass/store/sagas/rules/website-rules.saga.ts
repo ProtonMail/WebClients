@@ -1,40 +1,30 @@
 import { select } from 'redux-saga/effects';
 
-import { WEBSITE_RULES_EXPERIMENTAL_URL, WEBSITE_RULES_URL } from '@proton/pass/constants';
-import { validateRules } from '@proton/pass/lib/extension/rules/rules';
+import type { DetectionRules } from '@proton/pass/lib/extension/rules/types';
+import { getDetectionRules } from '@proton/pass/lib/extension/rules/utils';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import type { RequestEntry, RequestStatus } from '@proton/pass/store/request/types';
 import { selectFeatureFlag, selectRequest } from '@proton/pass/store/selectors';
 import type { Maybe } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { msToEpoch } from '@proton/pass/utils/time/epoch';
 
-/* Don't fetch if the rules were not modified since our last fetch */
-const revalidateWebsiteRules = async (lastRequestedAt: number): Promise<boolean> => {
-    if (lastRequestedAt === 0) return true;
-    const header = (await fetch(WEBSITE_RULES_URL, { method: 'HEAD' })).headers.get('Last-Modified');
-    const lastModified = header ? msToEpoch(new Date(header).getTime()) : 0;
-    if (lastRequestedAt >= lastModified) return false;
-
-    return true;
-};
+declare module '@proton/pass/store/events' {
+    interface SagaEvents {
+        'website-rules::resolved': DetectionRules;
+    }
+}
 
 export default createRequestSaga({
     actions: resolveWebsiteRules,
-    call: function* (_, { getStorage }) {
+    call: function* (_, options) {
         const requestId = resolveWebsiteRules.requestID();
         const lastRequest: Maybe<RequestEntry<RequestStatus>> = yield select(selectRequest(requestId));
         const lastRequestedAt = lastRequest?.status === 'success' ? lastRequest.requestedAt : 0;
+        const experimental: boolean = yield select(selectFeatureFlag(PassFeature.PassExperimentalWebsiteRules));
 
-        if (yield revalidateWebsiteRules(lastRequestedAt)) {
-            const experimental: boolean = yield select(selectFeatureFlag(PassFeature.PassExperimentalWebsiteRules));
-            const url = experimental ? WEBSITE_RULES_EXPERIMENTAL_URL : WEBSITE_RULES_URL;
-            const response: Response = yield fetch(url);
-            const rules: unknown = yield response.json();
-
-            if (validateRules(rules)) yield getStorage?.().setItem('websiteRules', JSON.stringify(rules));
-        }
+        const rules = yield getDetectionRules({ experimental, lastRequestedAt });
+        if (rules) options.publish?.({ type: 'website-rules::resolved', data: rules });
 
         return true;
     },
