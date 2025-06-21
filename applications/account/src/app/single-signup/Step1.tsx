@@ -1061,7 +1061,7 @@ const Step1 = ({
                         return;
                     }
 
-                    if (isTrial) {
+                    if (trial) {
                         return;
                     }
 
@@ -1284,7 +1284,7 @@ const Step1 = ({
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
                             step={showStepLabel ? step++ : undefined}
-                            title={isTrial ? c('Header').t`Payment details` : c('Header').t`Checkout`}
+                            title={trial ? c('Header').t`Payment details` : c('Header').t`Checkout`}
                             right={!showCycleAndSelectors ? currencySelector : null}
                         />
                         <BoxContent>
