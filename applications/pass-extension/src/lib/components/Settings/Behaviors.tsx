@@ -11,9 +11,10 @@ import { c } from 'ttag';
 import { Checkbox } from '@proton/components';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { settingsEditIntent } from '@proton/pass/store/actions';
+import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { selectProxiedSettings } from '@proton/pass/store/selectors';
-import type { RecursivePartial } from '@proton/pass/types';
+import { selectFeatureFlags, selectProxiedSettings } from '@proton/pass/store/selectors';
+import type { MaybeNull, RecursivePartial } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -37,12 +38,18 @@ type SettingsSection = {
 };
 
 type SettingsSectionsOptions = {
+    features: MaybeNull<FeatureFlagState>;
     settings: ProxiedSettings;
     webReqPermissions: PermissionHandles;
     dispatch: Dispatch;
 };
 
-const getSettingsSections = ({ settings, webReqPermissions, dispatch }: SettingsSectionsOptions): SettingsSection[] => {
+const getSettingsSections = ({
+    features,
+    settings,
+    webReqPermissions,
+    dispatch,
+}: SettingsSectionsOptions): SettingsSection[] => {
     const onSettingsUpdate = (update: RecursivePartial<ProxiedSettings>) =>
         dispatch(settingsEditIntent('behaviors', update));
 
@@ -73,7 +80,7 @@ const getSettingsSections = ({ settings, webReqPermissions, dispatch }: Settings
                     label: c('Label').t`Basic Auth autofill`,
                     description: c('Info').t`Autofill HTTP basic auth dialogs with saved credentials.`,
                     checked: settings.autofill?.basicAuth ?? false,
-                    hidden: BUILD_TARGET === 'safari',
+                    hidden: BUILD_TARGET === 'safari' || !features?.PassBasicAuthAutofill,
                     onChange: async (checked) => {
                         if (checked && !webReqPermissions.enabled) {
                             const enabled = await webReqPermissions.request();
@@ -179,10 +186,11 @@ export const Behaviors: FC = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
     const webReqPermissions = usePermissions(BASIC_AUTH_PERMISSIONS);
+    const features = useSelector(selectFeatureFlags);
 
     const sections = useMemo(
-        () => getSettingsSections({ settings, webReqPermissions, dispatch }),
-        [settings, webReqPermissions]
+        () => getSettingsSections({ settings, features, webReqPermissions, dispatch }),
+        [settings, webReqPermissions, features]
     );
 
     return (
