@@ -21,8 +21,9 @@ import reducer from '@proton/pass/store/reducers';
 import { requestMiddlewareFactory } from '@proton/pass/store/request/middleware';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { EXTENSION_SAGAS } from '@proton/pass/store/sagas/extension';
-import { selectLocale } from '@proton/pass/store/selectors';
+import { selectFeatureFlag, selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { first } from '@proton/pass/utils/array/first';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -185,7 +186,8 @@ export const options: RootSagaOptions = {
     onSettingsUpdated: withContext(async (ctx, update) => {
         /** Toggle autofill listener based on setting (runs on app boot and when user changes setting)
          * This ensures we only listen for basic auth opportunities when the feature is enabled */
-        if (update.autofill.basicAuth) ctx.service.autofill.basicAuth.listen();
+        const basicAuthEnabled = selectFeatureFlag(PassFeature.PassBasicAuthAutofill)(ctx.service.store.getState());
+        if (update.autofill.basicAuth && basicAuthEnabled) ctx.service.autofill.basicAuth.listen();
         else ctx.service.autofill.basicAuth.destroy();
 
         await ctx.service.settings.sync(update);
