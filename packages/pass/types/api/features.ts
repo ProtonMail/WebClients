@@ -1,14 +1,15 @@
 import type { MaybeNull } from '@proton/pass/types/utils';
 
 export enum PassFeature {
-    PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
-    PassWebInternalAlpha = 'PassWebInternalAlpha',
-    PassContentScriptPopoverKillSwitch = 'PassContentScriptPopoverKillSwitch',
-    PassWebPrfUnlock = 'PassWebPrfUnlock',
-    PassRenameAdminToManager = 'PassRenameAdminToManager',
-    PassProtonAnniversaryPromo2025 = 'PassProtonAnniversaryPromo2025',
-    PassCustomTypeV1 = 'PassCustomTypeV1',
     LoginAutofillTelemetry = 'LoginAutofillTelemetry',
+    PassBasicAuthAutofill = 'PassBasicAuthAutofill',
+    PassContentScriptPopoverKillSwitch = 'PassContentScriptPopoverKillSwitch',
+    PassCustomTypeV1 = 'PassCustomTypeV1',
+    PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
+    PassProtonAnniversaryPromo2025 = 'PassProtonAnniversaryPromo2025',
+    PassRenameAdminToManager = 'PassRenameAdminToManager',
+    PassWebInternalAlpha = 'PassWebInternalAlpha',
+    PassWebPrfUnlock = 'PassWebPrfUnlock',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);
