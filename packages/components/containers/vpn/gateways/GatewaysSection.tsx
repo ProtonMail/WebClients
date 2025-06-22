@@ -572,8 +572,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                                 <TableCell key="status" type="header" className="w-1/6">
                                     {c('Header').t`Status`}
                                 </TableCell>
-                                <TableCell key="servers" type="header" className="w-1/5OUPAS">{c('Header')
-                                    .t`Servers`}</TableCell>
+                                <TableCell key="servers" type="header">{c('Header').t`Servers`}</TableCell>
                                 {isAdmin && (
                                     <>
                                         <TableCell key="members" type="header" className="w-1/5">{c('Header')
