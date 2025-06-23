@@ -52,6 +52,7 @@ export interface Organization {
     BonusVPN: number;
     Permissions: number;
     State: ORGANIZATION_STATE;
+    IsBusiness: boolean;
 }
 
 export interface OrganizationIdentityOutput {
