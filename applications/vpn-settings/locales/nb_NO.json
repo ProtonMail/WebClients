@@ -1187,7 +1187,7 @@
         "takket være deg"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Tredoble den krypterte lagringsplassen og få 3 TB for all dataene dine."
+        "Tredoble den krypterte lagringsplassen og få 3 TB for alle dataene dine."
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
@@ -4467,6 +4467,9 @@
       "Activity monitor": [
         "Overvåking av aktivitet"
       ],
+      "Activity Monitor": [
+        "Overvåking av aktivitet"
+      ],
       "add a recovery method": [
         "legger til en gjenoppretingsmetode"
       ],
@@ -4954,6 +4957,9 @@
       ],
       "Free forever": [
         "Gratis for alltid"
+      ],
+      "Gain visibility across your organization": [
+        "Få synlighet på tvers av organisasjonen"
       ],
       "Gateways": [
         "Porttjenere"
@@ -6064,6 +6070,9 @@
       "Why?": [
         "Hvorfor?"
       ],
+      "With a Business or Enterprise plan, unlock": [
+        "Med en Business- eller Enterprise-plan, lås opp"
+      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med en Business- eller Enterprise-plan kan du kjøpe ${ boldDedicatedServers } for organisasjonen din, og konfigurere ${ boldGateways } for å kontrollere hvilke brukere som har tilgang til dem."
       ],
@@ -6624,6 +6633,9 @@
       ],
       "Copy": [
         "Kopier"
+      ],
+      "Copy IP address to clipboard": [
+        "Kopier IP-adresse til utklippstavlen"
       ],
       "Could you please let us know which provider?": [
         "Kan du fortelle oss hvilken leverandør?"
@@ -7406,7 +7418,7 @@
         "Pålogging blokkert (på grunn av misbruk)"
       ],
       "Sign in failure (mnemonic failed)": [
-        "Påloggingsfeil (mnemonikk mislyktes)"
+        "Tilkoblingen var ikke vellykket (feil med gjenopprettingsfrasen)."
       ],
       "Sign in failure (second factor failed)": [
         "Påloggingsfeil (tofaktor mislyktes)"
@@ -7421,7 +7433,7 @@
         "Vellykket pålogging"
       ],
       "Sign in success (awaiting mnemonic)": [
-        "Vellykket pålogging (avventer mnemonikk)"
+        "Vellykket pålogging (avventer gjenopprettingsfrase)"
       ],
       "Sign in success (awaiting second factor)": [
         "Vellykket pålogging (avventer tofaktor)"
@@ -11858,7 +11870,7 @@
         "Enhetsnavn"
       ],
       "Disable activity monitor?": [
-        "Deaktivere overvåking av aktivitet?"
+        "Deaktivere aktivitetsovervåking?"
       ],
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
