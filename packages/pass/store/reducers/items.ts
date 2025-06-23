@@ -305,7 +305,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                         ? { [shareId]: objectFilter(state[shareId], notIn(batch.map(prop('itemId')))) }
                         : {}),
                 },
-                targetShareId in state ? { [targetShareId]: toMap(movedItems, 'itemId') } : {}
+                { [targetShareId]: toMap(movedItems, 'itemId') }
             );
         }
 
