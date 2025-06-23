@@ -8,6 +8,7 @@
 - Fix "attached-to-login" alias form validation
 - Fix auto-scroll when creating extra-field
 - Fix item auto-select conflict with filters after item creation
+- Fix destination vault change during item creation with file attachment
 
 ### Version 1.31.5
 
