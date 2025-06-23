@@ -141,6 +141,7 @@ export const FILE_MIME_TYPE_DETECTION_CHUNK_SIZE = 1.5 * 1024 * 1024; // 1.5MB
 export const FILE_UPLOAD_TIMEOUT = 90_000;
 export const FILE_DOWNLOAD_TIMEOUT = 90_000;
 export const FILE_PUBLIC_SHARE = 'secure-link';
+export const FILE_PENDING_SHARE = 'pending-share';
 export const FILE_ENCRYPTION_VERSION = 2;
 
 export const PASS_PROTON_ANNIVERSARY_END_DATE = new Date('2025-05-28T12:00:00+01:00').getTime();
