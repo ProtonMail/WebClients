@@ -124,6 +124,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassRenameAdminToManager]: false,
     [PassFeature.PassProtonAnniversaryPromo2025]: false,
     [PassFeature.LoginAutofillTelemetry]: false,
+    [PassFeature.PassBasicAuthAutofill]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
