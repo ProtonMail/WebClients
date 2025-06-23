@@ -40,7 +40,6 @@ type Overrides = {
 };
 
 export type ChargebeePaypalProcessorHook = Omit<PaymentProcessorHook, keyof Overrides> & {
-    reset: () => void;
     initialize: (abortSignal: AbortSignal) => Promise<void>;
     initializing: boolean;
     paypalIframeLoadedRef: React.MutableRefObject<boolean>;

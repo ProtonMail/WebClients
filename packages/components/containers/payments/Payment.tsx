@@ -95,6 +95,7 @@ export interface NoApiProps extends Props {
     onChargebeeInitialized?: () => void;
     showCardIcons?: boolean;
     savedPaymentMethods: SavedPaymentMethod[];
+    isCurrencyOverriden: boolean;
 }
 
 export const PaymentsNoApi = ({
@@ -137,6 +138,7 @@ export const PaymentsNoApi = ({
     showCardIcons,
     savedPaymentMethods,
     isTrial,
+    isCurrencyOverriden,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -231,7 +233,11 @@ export const PaymentsNoApi = ({
         (savedMethod?.Type === PAYMENT_METHOD_TYPES.CARD && canUseChargebee(isChargebeeEnabled()));
 
     const defaultPaymentMethodMessage = type === 'subscription' && (
-        <DefaultPaymentMethodMessage savedPaymentMethods={savedPaymentMethods} selectedPaymentMethod={method} />
+        <DefaultPaymentMethodMessage
+            className="mt-4"
+            savedPaymentMethods={savedPaymentMethods}
+            selectedPaymentMethod={method}
+        />
     );
 
     return (
@@ -268,7 +274,7 @@ export const PaymentsNoApi = ({
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
                     {method === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
-                        <SepaDirectDebit {...sharedCbProps} />
+                        <SepaDirectDebit {...sharedCbProps} isCurrencyOverriden={isCurrencyOverriden} />
                     )}
                     {(() => {
                         if (!showBitcoinMethod) {

@@ -64,15 +64,16 @@ export async function changeDefaultPaymentMethodBeforePayment(
 interface Props {
     savedPaymentMethods: SavedPaymentMethod[];
     selectedPaymentMethod?: PaymentMethodType;
+    className?: string;
 }
 
-const DefaultPaymentMethodMessage = ({ savedPaymentMethods, selectedPaymentMethod }: Props) => {
+const DefaultPaymentMethodMessage = ({ savedPaymentMethods, selectedPaymentMethod, className }: Props) => {
     if (!showDefaultPaymentMethodMessage(savedPaymentMethods, selectedPaymentMethod)) {
         return null;
     }
 
     return (
-        <Banner variant={BannerVariants.INFO}>{c('Payments')
+        <Banner variant={BannerVariants.INFO} className={className}>{c('Payments')
             .t`This payment method will become your new default for all future renewals.`}</Banner>
     );
 };

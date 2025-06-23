@@ -20,6 +20,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     onChargebeeInitialized?: () => void;
     showCardIcons?: boolean;
     isTrial?: boolean;
+    isCurrencyOverriden?: boolean;
 };
 
 const PaymentWrapper = ({
@@ -53,6 +54,7 @@ const PaymentWrapper = ({
     onChargebeeInitialized,
     showCardIcons,
     isTrial,
+    isCurrencyOverriden,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID || !!isAuthenticatedProp;
@@ -99,6 +101,7 @@ const PaymentWrapper = ({
             showCardIcons={showCardIcons}
             savedPaymentMethods={methods.savedMethods ?? []}
             isTrial={isTrial}
+            isCurrencyOverriden={!!isCurrencyOverriden}
         />
     );
 };
