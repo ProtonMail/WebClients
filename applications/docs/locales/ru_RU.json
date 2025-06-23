@@ -5461,15 +5461,6 @@
         "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }.",
         "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }."
       ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Вы собираетесь отклонить приглашение присоединиться к альбому ${ invitationName }. Если вы продолжите, вы не сможете получить доступ к нему, пока владелец не пригласит вас снова. Вы уверены, что хотите продолжить?"
-      ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Вы собираетесь отклонить приглашение присоединиться к папке ${ invitationName }. Если вы продолжите, вы не сможете получить доступ к нему, пока владелец не пригласит вас снова. Вы уверены, что хотите продолжить?"
-      ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Вы собираетесь отклонить приглашение присоединиться к элементу ${ invitationName }. Если вы продолжите, вы не сможете получить доступ к нему, пока владелец не пригласит вас снова. Вы уверены, что хотите продолжить?"
-      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Вы достигли лимита количества адресов в группе(-ах) контактов:"
       ],
@@ -8815,6 +8806,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Создание новой таблицы..."
+      ],
       "Detect automatically": [
         "Определить автоматически"
       ],

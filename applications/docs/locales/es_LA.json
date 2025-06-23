@@ -4473,7 +4473,7 @@
         "Creando enlace a la carpeta"
       ],
       "Creating new document...": [
-        "Creando nuevo documento..."
+        "Creando el documento..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no usada de la suscripción al plan anterior"
@@ -5542,13 +5542,13 @@
         "Después se le facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
         "Después se le facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
       ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Está a punto de rechazar la invitación para unirse al álbum ${ invitationName }. Si continúa, no podrá acceder a él a menos que el propietario le vuelva a invitar. ¿Realmente quiere continuar?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Está a punto de rechazar la invitación para unirse a la carpeta ${ invitationName }. Si continúa, no podrá acceder a él a menos que el propietario le vuelva a invitar. ¿Realmente quiere continuar?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Está a punto de rechazar la invitación para unirse al elemento ${ invitationName }. Si continúa, no podrá acceder a él a menos que el propietario le vuelva a invitar. ¿Realmente quiere continuar?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
@@ -7931,6 +7931,9 @@
       "The link to your item was deleted": [
         "El enlace al elemento fue eliminado"
       ],
+      "The spreadsheet failed to be created": [
+        "Error al crear la hoja de cálculo"
+      ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
       ],
@@ -8894,6 +8897,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Creando una nueva hoja de cálculo..."
+      ],
       "Detect automatically": [
         "Detectar automáticamente"
       ],

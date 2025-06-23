@@ -339,6 +339,9 @@
       "Create folder": [
         "Vytvořit složku"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Vytvořit složku ${ boldFolderName }"
+      ],
       "Create label": [
         "Vytvořit štítek"
       ],
@@ -1826,7 +1829,7 @@
         "Snadné sdílení hesel"
       ],
       "Short @pm.me address": [
-        "Zkrácená adresa @pm.me"
+        "Krátká adresa @pm.me"
       ],
       "Stream your favorite content": [
         "Streamujte svůj oblíbený obsah"
@@ -6391,6 +6394,12 @@
         "${ messagesNotAuthorizedToMove } zpráv nemohlo být přesunuto.",
         "${ messagesNotAuthorizedToMove } zpráv nemohlo být přesunuto."
       ],
+      "${ n } newsletter": [
+        "${ n } e-mailový zpravodaj",
+        "${ n } e-mailové zpravodaje",
+        "${ n } e-mailových zpravodajů",
+        "${ n } e-mailových zpravodajů"
+      ],
       "${ n } unread conversation": [
         "${ n } nepřečtená konverzace",
         "${ n } nepřečtené konverzace",
@@ -6819,6 +6828,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
+      ],
+      "Block sender": [
+        "Blokovat odesílatele"
       ],
       "Body: ": [
         "Tělo: "
@@ -7337,7 +7349,10 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7481,7 +7496,7 @@
         "Zpráva odeslána."
       ],
       "Message view": [
-        "Přehled zpráv"
+        "Zobrazení zpráv"
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
         "Zpráva bude odeslána ráno v ${ formattedTime }"
@@ -7548,6 +7563,9 @@
       ],
       "No links cleaned": [
         "Nebyl vyčištěn žádný odkaz"
+      ],
+      "No messages to show": [
+        "Žádné zprávy k zobrazení"
       ],
       "No more results found": [
         "Nebylo nalezeno více výsledků"
@@ -7725,6 +7743,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, vyčkejte dokud nenajdeme kontakty, které jsou šifrované neaktivním klíčem."
+      ],
+      "Preferences updated": [
+        "Předvolby aktualizovány"
       ],
       "Preview failed to be loaded": [
         "Náhled se nepodařilo načíst"
@@ -8071,6 +8092,9 @@
       "Themes can give your inbox a new look.": [
         "Motivy změní podobu vaší e-mailové schránky."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "V doručené poště nejsou žádné zprávy od tohoto odesílatele."
+      ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Byla zjištěna chyba podpisu, použitém k ověření detailů kontaktu, což může být důsledkem resetu hesla."
       ],
@@ -8403,9 +8427,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nemohli jsme ověřit důvěrné klíče odesílatele."
-      ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "U tohoto e-mailového zpravodaje jsme nenašli možnost odhlášení odběru. Odhlásit se můžete pomocí odkazu v e-mailu nebo na webových stránkách zpravodaje."
       ],
       "We couldn’t process your payment.": [
         "Vaši platbu jsme nemohli zpracovat."
@@ -9230,6 +9251,9 @@
       "CC": [
         "Kopie"
       ],
+      "Choose what to do instead": [
+        "Zvolte, co místo toho udělat"
+      ],
       "City": [
         "Město"
       ],
@@ -9349,6 +9373,9 @@
       ],
       "Extended address": [
         "Rozšířená adresa"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Vytvoření složky ${ customFolderName } selhalo"
       ],
       "Filter Name": [
         "Název filtru"
@@ -9476,11 +9503,11 @@
       "Move to Inbox": [
         "Přesunout do Doručené pošty"
       ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "${ count } zpráva přesunuta do ${ selectedFolder.Name }.",
-        "${ count } zprávy přesunuty do ${ selectedFolder.Name }.",
-        "${ count } zpráv přesunuto do ${ selectedFolder.Name }.",
-        "${ count } zpráv přesunuto do ${ selectedFolder.Name }."
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } zpráva přesunuta do ${ labelName }.",
+        "${ count } zprávy přesunuty do ${ labelName }.",
+        "${ count } zpráv přesunuto do ${ labelName }.",
+        "${ count } zpráv přesunuto do ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } zpráva přesunuta do archivu.",
@@ -15180,6 +15207,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Odhlásit odběr z ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Odhlášení není pro tohoto odesílatele dostupné"
       ],
       "Unsubscribe request sent": [
         "Žádost o odhlášení odeslána"

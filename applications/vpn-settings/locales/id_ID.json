@@ -1523,6 +1523,17 @@
         "Bekerja dengan data yang sensitif?"
       ]
     },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "Semua server khusus Anda sudah ditetapkan ke Gateway. Anda akan dapat membeli lebih banyak server setelah uji coba gratis Anda berakhir."
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "Uji coba gratis Anda meliputi ${ ipAddresses } server khusus. Anda akan dapat menambahkan lebih banyak server setelah langganan penuh Anda dimulai."
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "Uji coba gratis Anda meliputi ${ maxMembers } lisensi. Anda akan dapat menambahkan lebih banyak lisensi setelah langganan penuh Anda dimulai."
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplikasi Desktop ${ MAIL_APP_NAME }"
@@ -3172,6 +3183,9 @@
       "Failed to process the logo": [
         "Logo gagal diproses"
       ],
+      "Failed to update detailed monitoring.": [
+        "Pemantauan terperinci gagal diperbarui"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Ukuran berkas terlalu besar. Logo Anda harus berukuran 30 KB atau lebih kecil."
       ],
@@ -3435,6 +3449,11 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
+      ]
+    },
+    "error": {
+      "Select users to view their activity": [
+        "Pilih pengguna yang aktivitasnya ingin ditampilkan"
       ]
     },
     "Error importing users": {
@@ -4395,6 +4414,12 @@
       "active": [
         "aktif"
       ],
+      "Activity monitor": [
+        "Monitor aktivitas"
+      ],
+      "Activity Monitor": [
+        "Monitor Aktivitas"
+      ],
       "add a recovery method": [
         "tambah metode pemulihan"
       ],
@@ -4662,6 +4687,9 @@
       "Did you know?": [
         "Tahukah Anda?"
       ],
+      "Disable detailed events": [
+        "Nonaktifkan rekaman peristiwa terperinci"
+      ],
       "Disabled countries": [
         "Negara yang dinonaktifkan"
       ],
@@ -4770,6 +4798,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Aktifkan pembaruan otomatis untuk mempertahankan akses ke fitur premium Anda."
       ],
+      "Enable detailed events": [
+        "Aktifkan rekaman peristiwa terperinci"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktifkan single sign-on untuk menjaga organisasi Anda tetap aman"
       ],
@@ -4869,6 +4900,9 @@
       "Free forever": [
         "Gratis untuk selamanya"
       ],
+      "Gain visibility across your organization": [
+        "Buat organisasi Anda lebih terlihat"
+      ],
       "Gateways": [
         "Gateway"
       ],
@@ -4964,6 +4998,9 @@
       ],
       "inactive": [
         "tidak aktif"
+      ],
+      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
+        "Sertakan alamat IP pengguna, lokasi, dan ISP (Internet Service Provider) dalam log peristiwa"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Meliputi ${ taxName } ${ formattedTaxRate }%: ${ price }"
@@ -5079,6 +5116,9 @@
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
+      "Learn more about Activity Monitor": [
+        "Pelajari lebih lanjut mengenai Monitor Aktivitas"
+      ],
       "Learn more about Gateways": [
         "Pelajari lebih lanjut tentang Gateway"
       ],
@@ -5102,6 +5142,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Memuat kalender, mohon tunggu. Anda akan diarahkan menuju platform penjadwalan Calendly kami pada tab baru."
+      ],
+      "Loading detailed events current status.": [
+        "Memuat status peristiwa terperinci saat ini."
       ],
       "Loading eduGAIN data...": [
         "Memuat data eduGAIN..."
@@ -5165,6 +5208,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Data aktivitas baru tidak akan lagi dikumpulkan dan ditampilkan."
       ],
       "New user invited to organization": [
         "Pengguna baru diundang ke organisasi"
@@ -5679,6 +5725,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tindakan ini akan mengeluarkan Anda dari seluruh sesi yang aktif dan menonaktifkan autentikasi dua faktor."
       ],
+      "This will wipe all logs for your organization members.": [
+        "Tindakan ini akan menghapus seluruh log untuk anggota organisasi Anda."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Wisaya ini akan mengaktifkan Autentikasi Dua Faktor (2FA) di akun ${ BRAND_NAME } Anda. Autentikasi dua faktor akan membuat akun ${ BRAND_NAME_TWO } Anda lebih aman, jadi kami menyarankan untuk mengaktifkannya."
       ],
@@ -5949,6 +5998,9 @@
       "Why?": [
         "Mengapa?"
       ],
+      "With a Business or Enterprise plan, unlock": [
+        "Dengan paket Business atau Enterprise, dapatkan"
+      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Dengan paket Business atau Enterprise, Anda dapat membeli ${ boldDedicatedServers } untuk organisasi Anda dan mengatur ${ boldGateways } untuk mengendalikan pengguna mana saja yang dapat mengakses gateway ini."
       ],
@@ -6102,6 +6154,9 @@
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Anda telah mengaktifkan penerusan di ${ MAX_SYNC_PAID_USER } alamat Gmail. Untuk menambahkan yang lain, nonaktifkan salah satunya terlebih dahulu."
       ],
+      "You've reached the limit of 50 users for this filter. Remove one to add another.": [
+        "Anda telah mencapai batas 50 pengguna yang diperkenankan untuk filter ini. Silakan hapus pengguna yang telah ada untuk menambahkan pengguna lain."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "${ boldDiscountPercent } Anda untuk ${ boldPlanTitle } telah diterapkan"
       ],
@@ -6137,6 +6192,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Uji coba gratis Anda meliputi ${ ownedCount } server khusus."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informasi Anda aman di tangan kami. Kami hanya akan menghubungi Anda pada saat tindak lanjut Anda dibutuhkan untuk menghadirkan layanan kami."
@@ -6488,6 +6546,9 @@
       "Copy": [
         "Salin"
       ],
+      "Copy IP address to clipboard": [
+        "Salin alamat IP ke papan klip"
+      ],
       "Could you please let us know which provider?": [
         "Dapatkah Anda memberitahu kami layanan penyedia email mana yang Anda maksud?"
       ],
@@ -6823,6 +6884,9 @@
       ],
       "Search": [
         "Cari"
+      ],
+      "Search for a name or email": [
+        "Cari nama atau email"
       ],
       "Second password": [
         "Kata sandi kedua"
@@ -7225,17 +7289,71 @@
       ]
     },
     "Log event": {
+      "Account password change": [
+        "Perubahan kata sandi akun"
+      ],
+      "Authentication failure (second factor failed)": [
+        "Autentikasi gagal (faktor kedua gagal)"
+      ],
       "Authentication failure (wrong password)": [
         "Autentikasi gagal (kata sandi salah)"
       ],
+      "Authentication success": [
+        "Autentikasi berhasil"
+      ],
+      "Mailbox password change": [
+        "Perubahan kata sandi kotak surat"
+      ],
+      "Password reset": [
+        "Pengaturan ulang kata sandi"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "Faktor kedua dinonaktifkan (aplikasi autentikator)"
+      ],
+      "Second factor disabled (security key)": [
+        "Faktor kedua dinonaktifkan (kunci keamanan)"
+      ],
       "Second factor enabled (authenticator app)": [
         "Faktor kedua diaktifkan (aplikasi autentikator)"
+      ],
+      "Second factor enabled (security key)": [
+        "Faktor kedua diaktifkan (kunci keamanan)"
       ],
       "Sign in blocked (due to abuse)": [
         "Upaya masuk diblokir (akibat penyalahgunaan)"
       ],
       "Sign in failure (mnemonic failed)": [
         "Upaya masuk gagal (mnemonik gagal)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "Upaya masuk gagal (faktor kedua gagal)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Upaya masuk gagal (kata sandi salah)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Upaya masuk tidak diperkenankan (akibat penyalahgunaan)"
+      ],
+      "Sign in success": [
+        "Upaya masuk berhasil"
+      ],
+      "Sign in success (awaiting mnemonic)": [
+        "Upaya masuk berhasil (menunggu mnemonik)"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Upaya masuk berhasil (menunggu faktor kedua)"
+      ],
+      "Sign in success (awaiting verify)": [
+        "Upaya masuk berhasil (menunggu verifikasi)"
+      ],
+      "Sign out": [
+        "Keluar"
+      ],
+      "Two password mode disabled": [
+        "Mode kata sandi ganda dinonaktifkan"
+      ],
+      "Two password mode enabled": [
+        "Mode kata sandi ganda diaktifkan"
       ]
     },
     "Log preference": {
@@ -7327,6 +7445,9 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Hubungkan domain khusus Anda ke ${ BRAND_NAME } untuk mengatur alamat email khusus (cth. anda@perusahaananda.com). Wisaya kami akan memandu Anda dalam prosesnya."
+      ],
+      "View account-related events across your organization.": [
+        "Lihat aktivitas terkait akun dari seluruh organisasi Anda."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
@@ -9281,6 +9402,26 @@
     "Price": {
       "Free": [
         "Free"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "Diblokir"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Device verification": [
+        "Verifikasi perangkat"
+      ],
+      "Ok": [
+        "OK"
+      ],
+      "Ownership verification": [
+        "Verifikasi kepemilikan"
+      ],
+      "Unknown": [
+        "Tidak diketahui"
       ]
     },
     "Recovery Email": {
@@ -11368,6 +11509,18 @@
       "Cancel subscription?": [
         "Batalkan langganan?"
       ],
+      "Cannot add Gateway": [
+        "Gateway tidak dapat ditambahkan"
+      ],
+      "Cannot add licenses": [
+        "Lisensi tidak dapat ditambahkan"
+      ],
+      "Cannot add more users": [
+        "Tidak dapat menambahkan lebih banyak pengguna"
+      ],
+      "Cannot add servers": [
+        "Server tidak dapat ditambahkan"
+      ],
       "Card verification": [
         "Verifikasi kartu"
       ],
@@ -11529,6 +11682,9 @@
       ],
       "Device name": [
         "Nama perangkat"
+      ],
+      "Disable activity monitor?": [
+        "Nonaktifkan monitor aktivitas?"
       ],
       "Disable two-factor authentication": [
         "Nonaktifkan autentikasi dua faktor"
@@ -12010,6 +12166,9 @@
       "Video conferencing": [
         "Konferensi video"
       ],
+      "View organization events by upgrading to Business": [
+        "Lihat acara organisasi dengan meningkatkan ke Business"
+      ],
       "Warning": [
         "Peringatan"
       ],
@@ -12129,6 +12288,9 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Salin dan tempel tautan ini ke kolom ID Entitas penyedia identitas Anda."
       ],
+      "Device name and app version": [
+        "Nama perangkat dan versi aplikasi"
+      ],
       "Display name for the entity in the eduGAIN database": [
         "Nama tampilan untuk entitas dalam basis data eduGAIN"
       ],
@@ -12156,6 +12318,9 @@
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Anggota yang tidak menggunakan 2FA akan mendapatkan email untuk meminta mereka mengaktifkan sesegera mungkin. Pengguna sistem masuk tunggal tidak akan menerima pengingat email."
       ],
+      "Origin IP address and Internet Service Provider (ISP)": [
+        "Alamat IP dan penyedia layanan internet (ISP) sumber"
+      ],
       "Shared server policies can be applied to individual users or groups": [
         "Kebijakan server terbagi dapat diterapkan ke pengguna atau grup individu"
       ],
@@ -12179,6 +12344,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Alamat email ini akan ditampilkan kepada seluruh anggota organisasi pada saat melangsungkan tindakan manajemen akun."
+      ],
+      "User's approximate location (based on their IP address)": [
+        "Perkiraan lokasi pengguna (berdasarkan alamat IP mereka)"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Para pengguna Anda akan melihat logo ini alih-alih ikon ${ BRAND_NAME } pada saat mereka terhubung masuk ke aplikasi web kami."

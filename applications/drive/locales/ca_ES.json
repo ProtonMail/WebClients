@@ -677,6 +677,9 @@
       "New shared album": [
         "Nou àlbum compartit"
       ],
+      "New spreadsheet": [
+        "Nou full de càlcul"
+      ],
       "Next": [
         "Següent"
       ],
@@ -3211,8 +3214,14 @@
       "Failed to copy photo to album": [
         "No s'ha pogut copiar la foto a l'àlbum."
       ],
+      "Failed to create folder": [
+        "No s'ha pogut crear la carpeta"
+      ],
       "Failed to load the STL preview": [
         "No s'ha pogut carregar la previsualització STL."
+      ],
+      "Failed to move items": [
+        "No s'ha pogut moure els elements."
       ],
       "Failed to save some photos to your Drive": [
         "No s'han pogut desar algunes fotos al vostre Drive"
@@ -8915,6 +8924,9 @@
       "The link to your item was deleted": [
         "S'ha eliminat l'enllaç a l'element"
       ],
+      "The spreadsheet failed to be created": [
+        "No s'ha pogut crear el full de càlcul."
+      ],
       "This item was not removed from your list": [
         "Aquest element no s'ha eliminat de la llista.",
         "Alguns elements no s'han eliminat de la llista."
@@ -11775,6 +11787,9 @@
       ],
       "Untitled document ${ date }": [
         "Document sense títol ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Aquest full de càlcul de ${ date } no té nom"
       ],
       "Upgrade complete!": [
         "S'ha millorat el pla."

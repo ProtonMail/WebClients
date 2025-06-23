@@ -1146,6 +1146,9 @@
       "Save": [
         "저장"
       ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }에 저장"
+      ],
       "Saving${ ellipsis }": [
         "저장 중${ ellipsis }"
       ],
@@ -8016,9 +8019,6 @@
       "We could not verify the sender's trusted keys.": [
         "보낸 사람의 인증 키를 인증할 수 없습니다."
       ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "이 뉴스레터의 구독 해지 옵션을 찾을 수 없습니다. 해당 이메일 내 링크 또는 해당 웹 사이트에서 직접 구독을 해지할 수 있습니다."
-      ],
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
       ],
@@ -9015,9 +9015,6 @@
       ],
       "Move to Inbox": [
         "받은 편지함으로 이동"
-      ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "${ selectedFolder.Name }(으)로 ${ count }개 메시지가 이동되었습니다."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count }개의 메시지를 보관함으로 이동했습니다."

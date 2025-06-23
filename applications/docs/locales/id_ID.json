@@ -93,6 +93,9 @@
       "Apply": [
         "Terapkan"
       ],
+      "Ask me next time": [
+        "Tanyakan saya lain kali"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Hanya ${ maxContacts } kontak yang dapat disisipkan dalam satu grup kontak"
       ],
@@ -4345,6 +4348,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kaitan kontak dihilangkan dari grup ${ contactGroupName }"
       ],
+      "Converting document...": [
+        "Mengonversi dokumen..."
+      ],
       "Copy the link to clipboard": [
         "Salin tautan ke papan klip"
       ],
@@ -4386,6 +4392,9 @@
       ],
       "Creating link to folder": [
         "Menghasilkan tautan folder"
+      ],
+      "Creating new document...": [
+        "Membuat dokumen baru..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
@@ -4430,7 +4439,7 @@
         "Dokumen dipindahkan ke sampah"
       ],
       "Document owner has the password": [
-        "Pemilik dokumen memiliki kata sandinya"
+        "Kata sandi dimiliki oleh pemilik dokumen"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Tidak melihat layar apapun? Jangan lupa untuk menonaktifkan pemblokir pop-up Anda."
@@ -4504,6 +4513,12 @@
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Terjadi kesalahan dalam mengonversi dokumen: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Terjadi kesalahan dalam memuat dokumen: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Terjadi Kesalahan Menyinkronkan"
       ],
@@ -4566,6 +4581,9 @@
       ],
       "Get email updates for comments and suggestions added to your documents.": [
         "Dapatkan pembaruan via email untuk komentar dan saran yang ditambahkan ke dokumen Anda."
+      ],
+      "Get Notified About Comments": [
+        "Dapatkan Notifikasi Seputar Komentar"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Tuju ${ DRIVE_APP_NAME }"
@@ -4713,6 +4731,9 @@
       ],
       "Low Priority": [
         "Prioritas Rendah"
+      ],
+      "Making a copy...": [
+        "Membuat salinan..."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -5434,13 +5455,13 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
       ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Anda akan menolak undangan untuk bergabung ke album ${ invitationName }. Jika Anda melanjutkan, Anda tidak akan dapat mengaksesnya kecuali pemiliknya mengundang Anda lagi. Apakah Anda yakin ingin melanjutkan?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Anda akan menolak undangan untuk bergabung ke folder ${ invitationName }. Jika Anda melanjutkan, Anda tidak akan dapat mengaksesnya kecuali pemiliknya mengundang Anda lagi. Apakah Anda yakin ingin melanjutkan?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Anda akan menolak undangan untuk bergabung ke item ${ invitationName }. Jika Anda melanjutkan, Anda tidak akan dapat mengaksesnya kecuali pemiliknya mengundang Anda lagi. Apakah Anda yakin ingin melanjutkan?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
@@ -5815,6 +5836,9 @@
       ],
       "Emails (last month)": [
         "Email (sebulan terakhir)"
+      ],
+      "Enable email notifications": [
+        "Aktifkan notifikasi email"
       ],
       "Encrypt emails": [
         "Enkripsi email"
@@ -6317,10 +6341,10 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Impor semua pesan dari ${ itemsToImportCount } folder dan berikan label sebagai"
+        "Impor seluruh pesan dari ${ itemsToImportCount } folder dan labeli sebagai"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Impor semua pesan dari ${ itemsToImportCount } label dan berikan label sebagai"
+        "Impor seluruh pesan dari ${ itemsToImportCount } label dan labeli sebagai"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
         "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan labeli sebagai"
@@ -7765,6 +7789,9 @@
       "The link to your item was deleted": [
         "Tautan ke item Anda telah dihapus"
       ],
+      "The spreadsheet failed to be created": [
+        "Lembar kerja gagal dibuat"
+      ],
       "Trash failed to be emptied": [
         "Gagal mengosongkan sampah"
       ],
@@ -9039,10 +9066,10 @@
         "Ditagihkan setiap 2 tahun"
       ],
       "Billed monthly": [
-        "Ditagih bulanan"
+        "Ditagihkan bulanan"
       ],
       "Billed yearly": [
-        "Ditagih setiap tahun"
+        "Ditagihkan tahunan"
       ]
     },
     "Subscription attribute": {
@@ -9974,6 +10001,9 @@
       ],
       "Untitled document ${ date }": [
         "Dokumen tak berjudul ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Lembar kerja tak berjudul ${ date }"
       ],
       "Upgrade complete!": [
         "Peningkatan selesai!"

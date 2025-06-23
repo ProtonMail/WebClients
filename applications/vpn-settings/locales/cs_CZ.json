@@ -1186,7 +1186,7 @@
         "Snadné sdílení hesel"
       ],
       "Short @pm.me address": [
-        "Zkrácená adresa @pm.me"
+        "Krátká adresa @pm.me"
       ],
       "Stream your favorite content": [
         "Streamujte svůj oblíbený obsah"
@@ -4357,6 +4357,9 @@
       ]
     },
     "Info": {
+      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
+        " - vaše řídicí centrum pro sledování aktivity uživatelů, odhalování hrozeb a zajišťování shody s předpisy v celé organizaci."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
         "${ amountUsers }/${ totalUsers } uživatelů mají aktuálně přístup ke sdíleným serverům.",
@@ -4589,6 +4592,9 @@
         "aktivní"
       ],
       "Activity monitor": [
+        "Monitor aktivity"
+      ],
+      "Activity Monitor": [
         "Monitor aktivity"
       ],
       "add a recovery method": [
@@ -5095,6 +5101,9 @@
       "Free forever": [
         "Navždy zdarma"
       ],
+      "Gain visibility across your organization": [
+        "Získejte přehled o celé organizaci"
+      ],
       "Gateways": [
         "Brány"
       ],
@@ -5192,7 +5201,7 @@
         "neaktivní"
       ],
       "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Včetně IP adresy uživatele, polohy a poskytovatele internetových služeb (ISP) do logů událostí"
+        "Zahrnout do logů událostí IP adresu uživatele, polohu a poskytovatele internetových služeb (ISP)"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Včetně ${ formattedTaxRate } % ${ taxName }: ${ price }"
@@ -5307,6 +5316,9 @@
       ],
       "Learn more": [
         "Zjistěte více"
+      ],
+      "Learn more about Activity Monitor": [
+        "Více informací o monitoru aktivity"
       ],
       "Learn more about Gateways": [
         "Další informace o branách"
@@ -6223,6 +6235,9 @@
       "Why?": [
         "Proč?"
       ],
+      "With a Business or Enterprise plan, unlock": [
+        "S tarifem Business nebo Enterprise odemknete"
+      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "S plánem Business nebo Enterprise můžete pro svou organizaci zakoupit ${ boldDedicatedServers } a nastavit ${ boldGateways }, abyste mohli řídit, kteří uživatelé k nim mohou přistupovat."
       ],
@@ -6816,6 +6831,9 @@
       "Copy": [
         "Kopírovat"
       ],
+      "Copy IP address to clipboard": [
+        "Kopírovat IP adresu do schránky"
+      ],
       "Could you please let us know which provider?": [
         "Můžete prosím sdělit, o jakého poskytovatele se jedná?"
       ],
@@ -7153,7 +7171,7 @@
         "Hledat"
       ],
       "Search for a name or email": [
-        "Vyhledat jméno nebo e-mail"
+        "Vyhledat název nebo e-mail"
       ],
       "Second password": [
         "Druhé heslo"
@@ -7587,7 +7605,7 @@
         "Druhý faktor deaktivován (ověřovací aplikace)"
       ],
       "Second factor disabled (security key)": [
-        "Druhá fáze deaktivována (bezpečnostní klíč)"
+        "Druhý faktor deaktivován (bezpečnostní klíč)"
       ],
       "Second factor enabled (authenticator app)": [
         "Druhý faktor povolen (ověřovací aplikace)"
@@ -7599,7 +7617,7 @@
         "Přihlášení zablokováno (z důvodu zneužití)"
       ],
       "Sign in failure (mnemonic failed)": [
-        "Přihlášení selhalo (seed fáze selhala)"
+        "Přihlášení selhalo (seed fráze selhala)"
       ],
       "Sign in failure (second factor failed)": [
         "Přihlášení selhalo (druhý faktor selhal)"
@@ -7723,7 +7741,7 @@
         "Připojte vlastní doménu k ${ BRAND_NAME } a nastavte vlastní e-mailové adresy (např. vy@vasefirma.cz). Náš průvodce vás provede celým procesem."
       ],
       "View account-related events across your organization.": [
-        "Zobrazit události související s účtem v celé organizaci."
+        "Zobrazte události související s účty ve vaší organizaci."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše bezplatná zkušební verze skončila. Přístup k vašemu účtu bude brzy deaktivován. ${ action }"
@@ -9799,7 +9817,7 @@
         "Ověření vlastnictví"
       ],
       "Unknown": [
-        "Neznámý"
+        "Neznámá"
       ]
     },
     "Recovery Email": {
@@ -12720,6 +12738,9 @@
       "Video conferencing": [
         "Videokonference"
       ],
+      "View organization events by upgrading to Business": [
+        "Zobrazení událostí organizace po navýšení na Business"
+      ],
       "Warning": [
         "Varování"
       ],
@@ -12873,7 +12894,7 @@
         "Členové, kteří 2FA nepoužívají, dostanou e-mail s výzvou, aby si ho co nejdříve aktivovali. Uživatelé s jednotným přihlášením nebudou dostávat e-mailové připomenutí."
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
-        "Původní IP adresa a poskytovatel internetových služeb (ISP)"
+        "IP adresa původu a poskytovatel internetových služeb (ISP)"
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Zásady sdílených serverů lze použít pro samostatné uživatele nebo skupiny"

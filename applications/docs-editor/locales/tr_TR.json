@@ -689,54 +689,135 @@
         "Hücrelerin üzerine resim ekle"
       ]
     },
-    "sheets_2025:Spreadsheet editor toolbar": {
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Virgülle Ayrılmış Değerler (.csv)"
+      ],
+      "Download": [
+        "İndirme"
+      ],
+      "Download logs": [
+        "Günlüğü indir"
+      ],
+      "Help": [
+        "Yardım"
+      ],
+      "Import": [
+        "İçe aktar"
+      ],
+      "Make a copy": [
+        "Kopya oluştur"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Klasöre taşı"
+      ],
+      "Move to trash": [
+        "Çöpe at"
+      ],
+      "New spreadsheet": [
+        "Yeni elektronik tablo"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } uygulamasını aç"
+      ],
+      "Print": [
+        "Yazdır"
+      ],
+      "See version history": [
+        "Sürüm geçmişini görüntüle"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Sekmeyle Ayrılmış Değerler (.tsv)"
+      ],
+      "View recent spreadsheets": [
+        "Son elektronik tabloları görüntüle"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
       "Cells": [
         "Hücreler"
       ],
       "Chart": [
         "Grafik"
       ],
-      "Clear formatting": [
-        "Biçimlendirmeyi temizle"
-      ],
       "Columns": [
         "Sütunlar"
       ],
-      "Insert": [
-        "Ekle"
+      "Insert 1 column left": [
+        "Sola 1 sütun ekle"
+      ],
+      "Insert 1 column right": [
+        "Sağa 1 sütun ekle"
+      ],
+      "Insert 1 row above": [
+        "Yukarıya 1 satır ekle"
+      ],
+      "Insert 1 row below": [
+        "Aşağıya 1 satır ekle"
       ],
       "Insert cells and shift down": [
-        "Hücre ekle ve aşağı kaydır"
+        "Hücreleri ekle ve aşağı kaydır"
       ],
       "Insert cells and shift right": [
-        "Hücre ekle ve sağa kaydır"
-      ],
-      "Insert one column left": [
-        "Sola bir sütun ekle"
-      ],
-      "Insert one column right": [
-        "Sağa bir sütun ekle"
-      ],
-      "Insert one row above": [
-        "Yukarıya bir satır ekle"
-      ],
-      "Insert one row below": [
-        "Aşağıya bir satır ekle"
+        "Hücreleri ekle ve sağa kaydır"
       ],
       "Note": [
         "Not"
       ],
-      "Redo": [
-        "Yinele"
-      ],
       "Rows": [
         "Satırlar"
+      ],
+      "Sheet": [
+        "Sayfa"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "File": [
+        "Dosya"
+      ],
+      "Insert": [
+        "Ekle"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Koyu"
+      ],
+      "Clear formatting": [
+        "Biçimlendirmeyi temizle"
+      ],
+      "Decrease decimal places": [
+        "Ondalık basamak sayısını azalt"
+      ],
+      "Default (${ defaultFont })": [
+        "Varsayılan (${ defaultFont })"
+      ],
+      "Format as currency": [
+        "Para birimi olarak biçimlendir"
+      ],
+      "Format as percent": [
+        "Yüzde olarak biçimlendir"
+      ],
+      "Increase decimal places": [
+        "Ondalık basamak sayısını artır"
+      ],
+      "Italic": [
+        "Yatık"
+      ],
+      "Redo": [
+        "Yinele"
       ],
       "Search": [
         "Ara"
       ],
-      "Sheet": [
-        "Sayfa"
+      "Strikethrough": [
+        "Üstü çizili"
+      ],
+      "Underline": [
+        "Altı çizili"
       ],
       "Undo": [
         "Geri Al"

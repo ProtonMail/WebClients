@@ -1923,10 +1923,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras.",
-        "Mover itens para outro cofre apagará as suas ligações seguras."
-      ],
       "Moving items": [
         "A mover itens"
       ],
@@ -2747,6 +2743,9 @@
       "City": [
         "Cidade"
       ],
+      "Class": [
+        "Classe"
+      ],
       "Code": [
         "Código"
       ],
@@ -2833,6 +2832,9 @@
       ],
       "Display name": [
         "Nome a mostrar"
+      ],
+      "Doctor": [
+        "Doctor"
       ],
       "Domain": [
         "Domínio"
@@ -2978,6 +2980,9 @@
       "Holder Name": [
         "Nome do titular"
       ],
+      "Hospital": [
+        "Hospital"
+      ],
       "Host": [
         "Anfitrião"
       ],
@@ -3047,6 +3052,9 @@
       "Issuing Country": [
         "País emissor"
       ],
+      "Issuing State/Country": [
+        "Estado/País emissor"
+      ],
       "Item ID": [
         "ID do item"
       ],
@@ -3098,6 +3106,9 @@
       "License number": [
         "Número da carta de condução/licença"
       ],
+      "License Number": [
+        "Número da carta de condução/licença"
+      ],
       "Limited time": [
         "Por tempo limitado"
       ],
@@ -3131,11 +3142,20 @@
       "max views reached": [
         "visualizações máximas alcançadas"
       ],
+      "Medical Conditions": [
+        "Condições médicas"
+      ],
       "Medical Record": [
         "Registo médico"
       ],
+      "Medications": [
+        "Medicamentos"
+      ],
       "Member ID": [
         "ID de membro"
+      ],
+      "Member Name": [
+        "Nome do membro"
       ],
       "Members": [
         "Membros"
@@ -3143,14 +3163,14 @@
       "Membership": [
         "Subscrição"
       ],
+      "Membership ID": [
+        "ID da subscrição"
+      ],
       "Middle name": [
         "Segundo nome"
       ],
       "Modified": [
         "Modificado"
-      ],
-      "More": [
-        "Mais"
       ],
       "More than a month": [
         "Mais de um mês"
@@ -3227,6 +3247,12 @@
       "Organization": [
         "Organização"
       ],
+      "Organization Name": [
+        "Nome da organização"
+      ],
+      "Other": [
+        "Outro"
+      ],
       "Owner": [
         "Proprietário"
       ],
@@ -3250,6 +3276,9 @@
       ],
       "Password history": [
         "Histórico de palavras-passe"
+      ],
+      "Patient Name": [
+        "Nome do paciente"
       ],
       "Permissions": [
         "Permissões"
@@ -3322,6 +3351,9 @@
       ],
       "Recent": [
         "Recente"
+      ],
+      "Record Number": [
+        "Número de registo"
       ],
       "Reddit handle": [
         "Nome de utilizador do Reddit"
@@ -3490,6 +3522,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Este item está disponível até ${ date } ou até que o limite de visualizações seja atingido."
+      ],
+      "Tier/Level": [
+        "Nível"
       ],
       "Tier/Status": [
         "Nível/Estado"
@@ -3849,6 +3884,18 @@
       ],
       "Add note": [
         "Adicionar uma nota"
+      ],
+      "Add password": [
+        "Adicionar uma palavra-passe"
+      ],
+      "Add private key": [
+        "Adicionar uma chave privada"
+      ],
+      "Add public key": [
+        "Adicionar uma chave pública"
+      ],
+      "Add SSID": [
+        "Adicionar SSID"
       ],
       "Add text": [
         "Adicionar texto"
@@ -4612,8 +4659,9 @@
       ]
     },
     "Vault Select": {
-      "Move items to": [
-        "Mover itens para"
+      "Move item to": [
+        "Mover o item para",
+        "Mover os itens para"
       ]
     },
     "Warning": {
