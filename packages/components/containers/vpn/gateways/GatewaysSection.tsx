@@ -17,7 +17,8 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { PLANS, getCountryOptions, getVPNDedicatedIPs, useIsB2BTrial } from '@proton/payments';
+import { PLANS, getCountryOptions, getVPNDedicatedIPs } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -112,7 +113,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const { sortedList } = useSortedList(allGateways as Gateway[], { key: 'Name', direction: SORT_DIRECTION.ASC });
     const [openSubscriptionModal] = useSubscriptionModal();
 
-    const isTrial = useIsB2BTrial(subscription);
+    const isTrial = useIsB2BTrial(subscription, organization);
     const [showTrialPrompt, setShowTrialPrompt] = useState<undefined | typeof SERVERS | typeof GATEWAYS>(undefined);
 
     if (!organization || !user || !subscription || !gateways || !locations) {

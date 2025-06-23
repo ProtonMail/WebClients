@@ -12,7 +12,6 @@ import {
     TaxInclusive,
     type UserModel,
 } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/index';
 
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '../constants';
 import { isRegionalCurrency } from '../helpers';
@@ -551,11 +550,6 @@ export const isTrial = (subscription: Subscription | FreeSubscription | undefine
     }
 
     return trial && getPlanName(subscription) === plan;
-};
-
-export const useIsB2BTrial = (subscription: Subscription | undefined) => {
-    const isB2BTrialEnabled = useFlag('ManualTrialsFE');
-    return isB2BTrialEnabled && isTrial(subscription);
 };
 
 export const isTrialExpired = (subscription: Subscription | undefined) => {

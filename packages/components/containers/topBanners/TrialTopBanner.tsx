@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { format, fromUnixTime, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { InlineLinkButton } from '@proton/atoms';
@@ -17,7 +18,8 @@ import SubscriptionModalProvider, {
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
-import { getPlanIDs, getPlanTitle, isTrial, isTrialExpired, useIsB2BTrial, willTrialExpire } from '@proton/payments';
+import { getPlanIDs, getPlanTitle, isTrial, isTrialExpired, willTrialExpire } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -225,10 +227,11 @@ const B2BTrialTopBanner = () => {
 
 const TrialTopBanner = ({ app }: { app?: APP_NAMES }) => {
     const [subscription] = useSubscription();
+    const [organization] = useOrganization();
     const { APP_NAME } = useConfig();
     const isVpn = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const trial = isTrial(subscription);
-    const isB2BTrial = useIsB2BTrial(subscription);
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
 
     if (isB2BTrial) {
         return <B2BTrialTopBanner />;

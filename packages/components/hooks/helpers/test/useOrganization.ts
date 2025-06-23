@@ -41,6 +41,7 @@ export const organizationDefaultResponse = {
         HasKeys: 0,
         ToMigrate: 0,
         BrokenSKL: 0,
+        IsBusiness: false,
     },
 };
 
