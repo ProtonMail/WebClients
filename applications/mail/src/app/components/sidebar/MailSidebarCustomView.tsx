@@ -93,7 +93,17 @@ export const MailSidebarCustomView = ({ collapsed }: Props) => {
                 id="toggle-views"
                 spaceAbove
             />
-            {displayView && <NewsletterSubscriptionButton collapsed={collapsed} />}
+            {displayView && (
+                <NewsletterSubscriptionButton
+                    collapsed={collapsed}
+                    // The counter currently shows the number of active subscription
+                    // We decided to hide it as there's no way to clear that counter
+                    // as users will want to keep active subscriptions.
+                    // We can undo this once we bring the counter and clearing method
+                    // closer to how the other locations work.
+                    hideNotificationDot
+                />
+            )}
         </>
     );
 };
