@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "Dezactivați fraza de recuperare?"
       ],
+      "Disable security events": [
+        "Dezactivare evenimente de securitate"
+      ],
       "Discard": [
         "Renunțare"
       ],
@@ -1542,6 +1545,9 @@
       ],
       "What do I get?": [
         "Ce primesc?"
+      ],
+      "Wipe": [
+        "Golire"
       ],
       "Yes": [
         "Da"
@@ -4147,6 +4153,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronizați ușor fișierele în cloud de pe desktop și accesați-le de pe dispozitivul mobil."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Activați ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Încurajați utilizarea autentificării cu doi factori în organizație pentru un plus de securitate."
       ],
@@ -4236,6 +4245,18 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
+      ],
+      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Ar trebui să activați evenimente detaliate și ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
+      ],
+      "You should enable detailed events in order to access these features": [
+        "Ar trebui să activați evenimente detaliate pentru a accesa aceste funcții."
+      ],
+      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Administratorul organizației ar trebui să activeze evenimentele detaliate și ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
+      ],
+      "Your organization administrator should enable detailed events in order to access these features": [
+        "Administratorul organizației ar trebui să activeze evenimentele detaliate pentru a accesa aceste funcții."
       ]
     },
     "description": {
@@ -5870,6 +5891,9 @@
       "App currently unavailable": [
         "Aplicație momentan indisponibilă"
       ],
+      "Ask your administrator to enable Account monitor.": [
+        "Rugați administratorul să vă activeze monitorizarea contului."
+      ],
       "Error: ${ errorMessage }": [
         "Eroare: ${ errorMessage }"
       ],
@@ -6937,6 +6961,9 @@
       "Permissions": [
         "Permisiuni"
       ],
+      "Protection": [
+        "Protecție"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Economisiți mult la cele mai bune oferte de ${ VPN_APP_NAME }"
       ],
@@ -7475,6 +7502,9 @@
       ]
     },
     "Info": {
+      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
+        " - centrul de comandă pentru urmărirea activității utilizatorilor, detectarea amenințărilor și asigurarea conformării în cadrul organizației."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "Utilizatori care au acces la serverele partajate: ${ amountUsers }/${ totalUsers }",
         "Utilizatori care au acces la serverele partajate: ${ amountUsers }/${ totalUsers }",
@@ -7817,6 +7847,9 @@
       "Activity monitor": [
         "Monitorizare activitate"
       ],
+      "Activity Monitor": [
+        "Monitorizare activitate"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"${ MAIL_APP_NAME } me\" sau \"Private Message me\"."
       ],
@@ -8002,6 +8035,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Sigur părăsiți acest grup? Dacă îl părăsiți, va trebui să primiți o reinvitare de la administratorul grupului pentru a vă realătura grupului."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Sigur doriți să ștergeți definitiv toate jurnalele?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Sigur doriți să eliminați drepturile administrative ale acestui utilizator?"
       ],
@@ -8100,6 +8136,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Prin crearea unui cont ${ PASS_APP_NAME } cu adresa de e-mail SimpleLogin, vă puteți gestiona aliasurile direct din ${ PASS_APP_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Prin dezactivarea monitorizării evenimentelor de securitate, vă veți șterge și întregul istoric. Sigur doriți dezactivarea?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
@@ -8564,6 +8603,9 @@
       "expires ${ expirationDate }": [
         "expiră ${ expirationDate }"
       ],
+      "Failed to fetch logs.": [
+        "Eșuare preluare jurnale."
+      ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Rapid și eficient. E-mail și calendar chiar de desktop."
       ],
@@ -8614,6 +8656,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "eliberați spațiu prin ștergerea mesajelor mai vechi sau a altor date"
+      ],
+      "Gain visibility across your organization": [
+        "Câștigați vizibilitate în întreaga organizație"
       ],
       "Gateways": [
         "Porți de acces"
@@ -8961,6 +9006,9 @@
       "Learn more": [
         "Detalii"
       ],
+      "Learn more about Activity Monitor": [
+        "Aflați mai multe despre monitorizarea activității"
+      ],
       "Learn more about Gateways": [
         "Aflați mai multe despre porțile de acces"
       ],
@@ -9143,6 +9191,9 @@
       ],
       "No label selected": [
         "Nicio etichetă selectată"
+      ],
+      "No logs yet.": [
+        "Încă nu există jurnale."
       ],
       "No payment is required at this time.": [
         "Momentan nu este necesară nicio plată."
@@ -10373,6 +10424,9 @@
       ],
       "Why?": [
         "De ce?"
+      ],
+      "With a Business or Enterprise plan, unlock": [
+        "Cu un plan Business sau Enterprise, deblocați"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Cu un plan Business sau Enterprise, puteți achiziționa ${ boldDedicatedServers } pentru organizația proprie și puteți configura ${ boldGateways } pentru a controla ce utilizatori le pot accesa."
@@ -11623,6 +11677,9 @@
       ],
       "Copy fingerprint": [
         "Copiere amprentă"
+      ],
+      "Copy IP address to clipboard": [
+        "Copiere adresă IP în memorie"
       ],
       "Could you please let us know which provider?": [
         "Ați putea să ne spuneți care furnizor?"
@@ -12957,6 +13014,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activare ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Activare evenimente detaliate"
+      ],
+      "Enable security events": [
+        "Activare evenimente de securitate"
       ]
     },
     "Mail import summary": {
@@ -19806,6 +19869,9 @@
       "Delete label?": [
         "Ștergere etichetă?"
       ],
+      "Delete logs": [
+        "Ștergere jurnale"
+      ],
       "Delete organization logo?": [
         "Ștergeți logoul organizației?"
       ],
@@ -20648,6 +20714,9 @@
       "Theme": [
         "Tema"
       ],
+      "There are no events for your account": [
+        "Nu există evenimente pentru acest cont"
+      ],
       "There are no groups": [
         "Nu există grupuri"
       ],
@@ -20749,6 +20818,9 @@
       ],
       "Video conferencing": [
         "Conferință video"
+      ],
+      "View organization events by upgrading to Business": [
+        "Vizualizați evenimentele organizației trecând la planul Business"
       ],
       "VPN apps": [
         "Aplicații VPN"
@@ -20959,6 +21031,12 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Permite adăugarea de legături web spre conferințe video la invitațiile din calendar."
       ],
+      "An approximate location of the IP address": [
+        "Un loc aproximativ al adresei IP."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Tipul de protecție aplicat activităților suspecte."
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."
       ],
@@ -20980,6 +21058,9 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Ștergeți mesajele din gunoi și nedorite după 30 de zile. Activând ștergerea automată, mesajele aflate deja în folderul «Gunoi»/«Nedorite» vor avea o dată de ștergere în funcție de data mutării lor acolo."
       ],
+      "Device information such as operating system": [
+        "Informații despre dispozitiv cum ar fi sistemul de operare."
+      ],
       "Device name and app version": [
         "Nume dispozitiv și versiune aplicație"
       ],
@@ -21000,6 +21081,9 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Activare/Dezactivare notificări pe desktop și pe mobil pentru „${ labelName }”"
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Activarea evenimentelor detaliate înregistrează adresa IP pentru fiecare eveniment."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adresa URL a punctului final de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)"
@@ -21081,6 +21165,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "Furnizorul de internet al adresei IP."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Noul ciclu de abonament începe la ${ formattedTime }."

@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "Deaktiver gjenopprettingsfrase?"
       ],
+      "Disable security events": [
+        "Deaktiver sikkerhetshendelser"
+      ],
       "Discard": [
         "Forkast"
       ],
@@ -1543,6 +1546,9 @@
       "What do I get?": [
         "Hva får jeg?"
       ],
+      "Wipe": [
+        "Slett"
+      ],
       "Yes": [
         "Ja"
       ],
@@ -1844,7 +1850,7 @@
         "takket være deg"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Tredoble den krypterte lagringsplassen og få 3 TB for all dataene dine."
+        "Tredoble den krypterte lagringsplassen og få 3 TB for alle dataene dine."
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
@@ -4218,6 +4224,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
+      ],
+      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Du bør aktivere detaljerte hendelser og ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene"
+      ],
+      "You should enable detailed events in order to access these features": [
+        "Du bør aktivere detaljerte hendelser for å få tilgang til disse funksjonene"
       ],
       "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
         "Organisasjonsadministratoren din må aktivere detaljerte hendelser og ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene."
@@ -7758,6 +7770,9 @@
       "Activity monitor": [
         "Overvåking av aktivitet"
       ],
+      "Activity Monitor": [
+        "Overvåking av aktivitet"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Legg til en @pm.me e-postadresse til kontoen din. Dette enkle, kortere domene står for \"${ MAIL_APP_NAME } meg\" eller \"send meg privat melding.\""
       ],
@@ -7936,6 +7951,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Er du sikker på at du vil forlate denne gruppen? Hvis du slutter, må du bli invitert på nytt av gruppeadministratoren for å bli med igjen."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Er du sikker på at du vil slette alle loggene dine permanent?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Er du sikker du ønsker å fjerne administrative privilegier fra denne brukeren?"
       ],
@@ -8034,6 +8052,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ved å opprette en ${ PASS_APP_NAME }-konto med SimpleLogin-e-posten din, kan du administrere aliasene dine direkte fra ${ PASS_APP_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Ved å deaktivere overvåking av sikkerhetshendelser vil du også slette hele historikken. Er du sikker på at du vil deaktivere dette?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
@@ -8546,6 +8567,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "frigjøre plass ved å slette eldre meldinger eller annen data"
+      ],
+      "Gain visibility across your organization": [
+        "Få synlighet på tvers av organisasjonen"
       ],
       "Gateways": [
         "Porttjenere"
@@ -10298,6 +10322,9 @@
       "Why?": [
         "Hvorfor?"
       ],
+      "With a Business or Enterprise plan, unlock": [
+        "Med en Business- eller Enterprise-plan, lås opp"
+      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med en Business- eller Enterprise-plan kan du kjøpe ${ boldDedicatedServers } for organisasjonen din, og konfigurere ${ boldGateways } for å kontrollere hvilke brukere som har tilgang til dem."
       ],
@@ -11526,6 +11553,9 @@
       ],
       "Copy fingerprint": [
         "Kopier fingeravtrykk"
+      ],
+      "Copy IP address to clipboard": [
+        "Kopier IP-adresse til utklippstavlen"
       ],
       "Could you please let us know which provider?": [
         "Kan du fortelle oss hvilken leverandør?"
@@ -12822,7 +12852,7 @@
         "Pålogging blokkert (på grunn av misbruk)"
       ],
       "Sign in failure (mnemonic failed)": [
-        "Påloggingsfeil (mnemonikk mislyktes)"
+        "Tilkoblingen var ikke vellykket (feil med gjenopprettingsfrasen)."
       ],
       "Sign in failure (second factor failed)": [
         "Påloggingsfeil (tofaktor mislyktes)"
@@ -12837,7 +12867,7 @@
         "Vellykket pålogging"
       ],
       "Sign in success (awaiting mnemonic)": [
-        "Vellykket pålogging (avventer mnemonikk)"
+        "Vellykket pålogging (avventer gjenopprettingsfrase)"
       ],
       "Sign in success (awaiting second factor)": [
         "Vellykket pålogging (avventer tofaktor)"
@@ -12858,6 +12888,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Aktiver detaljerte hendelser"
+      ],
+      "Enable security events": [
+        "Aktiver sikkerhetshendelser"
       ]
     },
     "Mail import summary": {
@@ -19589,6 +19625,9 @@
       "Delete label?": [
         "Slett etikett?"
       ],
+      "Delete logs": [
+        "Slett logger"
+      ],
       "Delete organization logo?": [
         "Slette organisasjonens logo?"
       ],
@@ -19621,7 +19660,7 @@
         "Enhetsnavn"
       ],
       "Disable activity monitor?": [
-        "Deaktivere overvåking av aktivitet?"
+        "Deaktivere aktivitetsovervåking?"
       ],
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
@@ -20770,6 +20809,9 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Sletter papirkurvinnhold og søppelpostmeldinger etter 30 dager. Hvis du slår på automatisk sletting, får meldinger som allerede er i papirkurven/søppelposten, en slettedato basert på datoen de ble flyttet dit."
       ],
+      "Device information such as operating system": [
+        "Enhetsinformasjon slik som operativsystem"
+      ],
       "Device name and app version": [
         "Enhetsnavn og appversjon"
       ],
@@ -20790,6 +20832,9 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Aktiver/deaktiver skrivebord- og mobilvarslinger for “${ labelName }”"
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Aktivering av detaljerte hendelser registrerer IP-adressen for hver hendelse."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-adresse for endepunkt fra identitetsleverandøren (f.eks. https://idp.eksempel.com/sso/saml)."
