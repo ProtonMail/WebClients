@@ -299,6 +299,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                                 />
                             </FieldsetCluster>
 
+                            <ExtraFieldGroup form={form} />
+
                             <FieldsetCluster>
                                 <Field
                                     name="files"
@@ -308,8 +310,6 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                                     revision={lastRevision}
                                 />
                             </FieldsetCluster>
-
-                            <ExtraFieldGroup form={form} />
                         </Form>
                     </FormikProvider>
                 )}

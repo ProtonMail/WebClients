@@ -241,11 +241,11 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                                 />
                             </FieldsetCluster>
 
+                            <ExtraFieldGroup form={form} />
+
                             <FieldsetCluster>
                                 <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                             </FieldsetCluster>
-
-                            <ExtraFieldGroup form={form} />
                         </Form>
                     </FormikProvider>
                 )}
