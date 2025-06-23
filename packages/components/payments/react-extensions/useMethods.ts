@@ -47,12 +47,6 @@ export interface Props {
     billingPlatform?: BillingPlatform;
     chargebeeUserExists?: ChargebeeUserExists;
     disableNewPaymentMethods?: boolean;
-    onCurrencyChange?: (
-        currency: Currency,
-        context: {
-            paymentMethodType: PlainPaymentMethodType;
-        }
-    ) => void;
     enableSepa?: boolean;
     user?: User;
     planIDs?: PlanIDs;
@@ -180,7 +174,6 @@ export const useMethods = (
         billingPlatform,
         chargebeeUserExists,
         disableNewPaymentMethods,
-        onCurrencyChange,
         enableSepa,
         user,
         planIDs,
@@ -491,10 +484,6 @@ export const useMethods = (
         if (method) {
             if (selectedMethod?.value !== method.value) {
                 onMethodChanged?.(method);
-
-                if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
-                    onCurrencyChange?.('EUR', { paymentMethodType: method.type });
-                }
             }
             setSelectedMethod(method);
             return method;

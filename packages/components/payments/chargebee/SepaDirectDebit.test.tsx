@@ -58,7 +58,7 @@ const TestComponent = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <SepaDirectDebit directDebit={directDebit} iframeHandles={{} as any} />
+            <SepaDirectDebit directDebit={directDebit} iframeHandles={{} as any} isCurrencyOverriden={false} />
             <button type="submit">Submit</button>
         </form>
     );
@@ -200,5 +200,66 @@ describe('SepaDirectDebit', () => {
             const addressErrorMessage = screen.getByTestId('error-sepa-address');
             expect(addressErrorMessage).toHaveTextContent('This field is required');
         });
+    });
+
+    it('displays currency override banner when isCurrencyOverriden is true', () => {
+        const TestComponentWithCurrencyOverride = () => {
+            const directDebit = useSepaDirectDebit(
+                {
+                    amountAndCurrency: {
+                        Amount: 999,
+                        Currency: 'EUR',
+                    },
+                    onChargeable: jest.fn(),
+                    selectedPlanName: PLANS.VPN2024,
+                    onBeforeSepaPayment: jest.fn(),
+                },
+                {
+                    api: apiMock,
+                    events: {
+                        onPaypalAuthorized: jest.fn(),
+                        onPaypalFailure: jest.fn(),
+                        onPaypalClicked: jest.fn(),
+                        onPaypalCancelled: jest.fn(),
+                        onThreeDsChallenge: jest.fn(),
+                        onThreeDsSuccess: jest.fn(),
+                        onThreeDsFailure: jest.fn(),
+                        onCardVeririfcation3dsChallenge: jest.fn(),
+                        onCardVeririfcationSuccess: jest.fn(),
+                        onCardVeririfcationFailure: jest.fn(),
+                        onUnhandledError: jest.fn(),
+                    },
+                    handles: {
+                        submitDirectDebit: jest.fn(),
+                    } as any,
+                    forceEnableChargebee: () => true,
+                    verifyPayment: jest.fn(),
+                }
+            );
+
+            return (
+                <form>
+                    <SepaDirectDebit directDebit={directDebit} iframeHandles={{} as any} isCurrencyOverriden={true} />
+                </form>
+            );
+        };
+
+        render(<TestComponentWithCurrencyOverride />);
+
+        expect(
+            screen.getByText(
+                'Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.'
+            )
+        ).toBeInTheDocument();
+    });
+
+    it('does not display currency override banner when isCurrencyOverriden is false', () => {
+        render(<TestComponent />);
+
+        expect(
+            screen.queryByText(
+                'Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.'
+            )
+        ).not.toBeInTheDocument();
     });
 });

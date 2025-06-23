@@ -46,7 +46,6 @@ export type ChargebeeCardProcessorHook = Omit<PaymentProcessorHook, keyof Overri
     setPostalCode: (postalCode: string) => void;
     errors: Record<string, string>;
     submitted: boolean;
-    reset: () => void;
 } & Overrides;
 
 export const useChargebeeCard = (
