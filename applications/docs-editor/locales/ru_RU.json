@@ -691,54 +691,135 @@
         "Вставить изображение поверх ячеек"
       ]
     },
-    "sheets_2025:Spreadsheet editor toolbar": {
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Значения, разделённые запятыми (.csv)"
+      ],
+      "Download": [
+        "Скачать"
+      ],
+      "Download logs": [
+        "Скачать журналы"
+      ],
+      "Help": [
+        "Помощь"
+      ],
+      "Import": [
+        "Импортировать"
+      ],
+      "Make a copy": [
+        "Сделать копию"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Переместить в папку"
+      ],
+      "Move to trash": [
+        "Переместить в корзину"
+      ],
+      "New spreadsheet": [
+        "Новая электронная таблица"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Открыть ${ DRIVE_APP_NAME }"
+      ],
+      "Print": [
+        "Печать"
+      ],
+      "See version history": [
+        "Просмотреть историю версий"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Значения, разделённые табуляцией (.tsv)"
+      ],
+      "View recent spreadsheets": [
+        "Просмотреть недавние электронные таблицы"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
       "Cells": [
         "Ячейки"
       ],
       "Chart": [
         "Диаграмма"
       ],
-      "Clear formatting": [
-        "Очистить форматирование"
-      ],
       "Columns": [
         "Столбцы"
       ],
-      "Insert": [
-        "Вставить"
+      "Insert 1 column left": [
+        "Вставить 1 столбец слева"
+      ],
+      "Insert 1 column right": [
+        "Вставить 1 столбец справа"
+      ],
+      "Insert 1 row above": [
+        "Вставить 1 строку выше"
+      ],
+      "Insert 1 row below": [
+        "Вставить 1 строку ниже"
       ],
       "Insert cells and shift down": [
-        "Вставить ячейки со сдвигом вниз"
+        "Вставить ячейки и сдвинуть вниз"
       ],
       "Insert cells and shift right": [
-        "Вставить ячейки со сдвигом вправо"
-      ],
-      "Insert one column left": [
-        "Вставить столбец слева"
-      ],
-      "Insert one column right": [
-        "Вставить столбец справа"
-      ],
-      "Insert one row above": [
-        "Вставить строку выше"
-      ],
-      "Insert one row below": [
-        "Вставить строку ниже"
+        "Вставить ячейки и сдвинуть вправо"
       ],
       "Note": [
-        "Примечание"
-      ],
-      "Redo": [
-        "Повторить"
+        "Заметка"
       ],
       "Rows": [
         "Строки"
       ],
+      "Sheet": [
+        "Лист"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "File": [
+        "Файл"
+      ],
+      "Insert": [
+        "Вставить"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Полужирный"
+      ],
+      "Clear formatting": [
+        "Очистить форматирование"
+      ],
+      "Decrease decimal places": [
+        "Уменьшить количество знаков после запятой"
+      ],
+      "Default (${ defaultFont })": [
+        "По умолчанию (${ defaultFont })"
+      ],
+      "Format as currency": [
+        "Форматировать как валюту"
+      ],
+      "Format as percent": [
+        "Форматировать как процент"
+      ],
+      "Increase decimal places": [
+        "Увеличить количество знаков после запятой"
+      ],
+      "Italic": [
+        "Курсив"
+      ],
+      "Redo": [
+        "Повторить"
+      ],
       "Search": [
         "Поиск"
       ],
-      "Sheet": [
-        "Лист"
+      "Strikethrough": [
+        "Зачеркивание"
+      ],
+      "Underline": [
+        "Подчёркнутый"
       ],
       "Undo": [
         "Отменить"
