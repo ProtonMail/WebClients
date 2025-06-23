@@ -337,6 +337,9 @@
       "Create folder": [
         "Crear carpeta"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Crea una carpeta \"${ boldFolderName }"
+      ],
       "Create label": [
         "Crear etiqueta"
       ],
@@ -6229,6 +6232,10 @@
         "${ messagesNotAuthorizedToMove } missatge no s'ha pogut moure.",
         "${ messagesNotAuthorizedToMove } missatges no s'han pogut moure."
       ],
+      "${ n } newsletter": [
+        "Butlletí de ${ n }",
+        "Butlletins de ${ n }"
+      ],
       "${ n } unread conversation": [
         "${ n } conversació sense llegir",
         "${ n } conversacions sense llegir"
@@ -6597,6 +6604,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
+      ],
+      "Block sender": [
+        "Bloqueja el remitent"
       ],
       "Body: ": [
         "Cos: "
@@ -7093,7 +7103,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7305,6 +7316,9 @@
       "No links cleaned": [
         "No s'ha netejat cap enllaç"
       ],
+      "No messages to show": [
+        "Cap missatge a mostrar"
+      ],
       "No more results found": [
         "No s'han trobat més resultats"
       ],
@@ -7477,6 +7491,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
+      ],
+      "Preferences updated": [
+        "S'han actualitzat les preferències."
       ],
       "Preview failed to be loaded": [
         "La previsualització no s'ha pogut carregar."
@@ -7817,6 +7834,9 @@
       "Themes can give your inbox a new look.": [
         "Els temes poden donar a la vostra safata d'entrada un nou estil."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "No teniu missatges d'aquest remitent a la safata d'entrada."
+      ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "S'ha produït un error amb la firma utilitzada per verificar les dades de contacte, que poden ser el resultat d'un restabliment de contrasenya."
       ],
@@ -8145,9 +8165,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "No hem pogut verificar les claus de confiança de l’emissor."
-      ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "No hem pogut trobar una opció per anul·lar la subscripció a aquest butlletí. És possible que pugueu anul·lar-la utilitzant un enllaç en el correu electrònic o des del lloc web."
       ],
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
@@ -8929,6 +8946,9 @@
       "CC": [
         "CC"
       ],
+      "Choose what to do instead": [
+        "Trieu què fer en el seu lloc"
+      ],
       "City": [
         "Ciutat"
       ],
@@ -9048,6 +9068,9 @@
       ],
       "Extended address": [
         "Adreça completa"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "No s'ha pogut crear la carpeta ${ customFolderName }"
       ],
       "Filter Name": [
         "Nom del filtre"
@@ -9173,9 +9196,9 @@
       "Move to Inbox": [
         "Mou a la safata d'entrada"
       ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "S'ha mogut ${ count } missatge a ${ selectedFolder.Name }.",
-        "S'han mogut ${ count } missatges a ${ selectedFolder.Name }."
+      "Moved ${ count } message to ${ labelName }.": [
+        "S'ha mogut ${ count } missatge a ${ labelName }.",
+        "S'han mogut ${ count } missatges a ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "S'ha mogut ${ count } missatge a l'arxiu.",
@@ -14620,6 +14643,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Voleu anul·lar la subscripció a ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Anul·lar la subscripció no està disponible per a aquest remitent"
       ],
       "Unsubscribe request sent": [
         "Sol·licitud per a cancel·lar la subscripció enviada"
