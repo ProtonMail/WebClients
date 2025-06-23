@@ -858,6 +858,12 @@
       "Save photos and remove": [
         "사진 저장 및 삭제"
       ],
+      "Scan & Download": [
+        "스캔 및 다운로드"
+      ],
+      "Scan & Download (${ count })": [
+        "스캔 및 다운로드 (${ count }개)"
+      ],
       "Search": [
         "검색"
       ],
@@ -3184,6 +3190,9 @@
       ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
+      ],
+      "Failed to move items": [
+        "항목 이동 실패"
       ],
       "Failed to save some photos to your Drive": [
         "일부 사진을 Drive에 저장할 수 없습니다"
@@ -11489,6 +11498,9 @@
       ],
       "Untitled document ${ date }": [
         "무제 문서 ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "무제 스프레드시트 ${ date }"
       ],
       "Upgrade complete!": [
         "업그레이드 완료!"

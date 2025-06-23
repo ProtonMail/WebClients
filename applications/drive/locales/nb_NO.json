@@ -677,6 +677,9 @@
       "New shared album": [
         "Nytt delt album"
       ],
+      "New spreadsheet": [
+        "Nytt regneark"
+      ],
       "Next": [
         "Neste"
       ],
@@ -1292,7 +1295,7 @@
         "takket være deg"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Tredoble den krypterte lagringsplassen og få 3 TB for all dataene dine."
+        "Tredoble den krypterte lagringsplassen og få 3 TB for alle dataene dine."
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
@@ -3211,8 +3214,14 @@
       "Failed to copy photo to album": [
         "Kunne ikke kopiere bildet til albumet"
       ],
+      "Failed to create folder": [
+        "Kunne ikke opprette mappe"
+      ],
       "Failed to load the STL preview": [
         "Kan ikke laste inn STL-forhåndsvisningen"
+      ],
+      "Failed to move items": [
+        "Kunne ikke flytte elementer"
       ],
       "Failed to save some photos to your Drive": [
         "Kunne ikke lagre noen bilder på din Drive"
@@ -8909,6 +8918,9 @@
       "The link to your item was deleted": [
         "Koblingen til elementet ditt ble slettet"
       ],
+      "The spreadsheet failed to be created": [
+        "Regnearket kunne ikke opprettes"
+      ],
       "This item was not removed from your list": [
         "Dette elementet ble ikke fjernet fra listen din",
         "Noen elementer kunne ikke fjernes fra listen din"
@@ -11769,6 +11781,9 @@
       ],
       "Untitled document ${ date }": [
         "Dokument uten tittel ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Regneark uten tittel ${ date }"
       ],
       "Upgrade complete!": [
         "Oppgradering fullført!"
