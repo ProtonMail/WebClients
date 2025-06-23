@@ -24,6 +24,7 @@ import ModalsProvider from '@proton/components/containers/modals/Provider';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import Icons from '@proton/icons/Icons';
+import { ContextMenuProvider } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
@@ -173,39 +174,41 @@ export const App = () => (
                         <ErrorBoundary
                             component={<StandardErrorPageDisplay big errorComponent={GenericErrorDisplay} />}
                         >
-                            <NotificationsProvider>
-                                <ModalsProvider>
-                                    <PassExtensionLink>
-                                        <ConnectivityProvider
-                                            subscribe={api.subscribe}
-                                            onPing={() => api({ ...ping(), unauthenticated: true })}
-                                        >
-                                            <Router history={history}>
-                                                <NavigationProvider>
-                                                    <AuthStoreProvider store={authStore}>
-                                                        <AuthSwitchProvider>
-                                                            <AuthServiceProvider>
-                                                                <StoreProvider>
-                                                                    <ThemeConnect />
-                                                                    <Localized>
-                                                                        <ClipboardProvider>
-                                                                            <AppGuard />
-                                                                        </ClipboardProvider>
-                                                                    </Localized>
-                                                                    <Portal>
-                                                                        <ModalsChildren />
-                                                                        <NotificationsChildren />
-                                                                    </Portal>
-                                                                </StoreProvider>
-                                                            </AuthServiceProvider>
-                                                        </AuthSwitchProvider>
-                                                    </AuthStoreProvider>
-                                                </NavigationProvider>
-                                            </Router>
-                                        </ConnectivityProvider>
-                                    </PassExtensionLink>
-                                </ModalsProvider>
-                            </NotificationsProvider>
+                            <ContextMenuProvider>
+                                <NotificationsProvider>
+                                    <ModalsProvider>
+                                        <PassExtensionLink>
+                                            <ConnectivityProvider
+                                                subscribe={api.subscribe}
+                                                onPing={() => api({ ...ping(), unauthenticated: true })}
+                                            >
+                                                <Router history={history}>
+                                                    <NavigationProvider>
+                                                        <AuthStoreProvider store={authStore}>
+                                                            <AuthSwitchProvider>
+                                                                <AuthServiceProvider>
+                                                                    <StoreProvider>
+                                                                        <ThemeConnect />
+                                                                        <Localized>
+                                                                            <ClipboardProvider>
+                                                                                <AppGuard />
+                                                                            </ClipboardProvider>
+                                                                        </Localized>
+                                                                        <Portal>
+                                                                            <ModalsChildren />
+                                                                            <NotificationsChildren />
+                                                                        </Portal>
+                                                                    </StoreProvider>
+                                                                </AuthServiceProvider>
+                                                            </AuthSwitchProvider>
+                                                        </AuthStoreProvider>
+                                                    </NavigationProvider>
+                                                </Router>
+                                            </ConnectivityProvider>
+                                        </PassExtensionLink>
+                                    </ModalsProvider>
+                                </NotificationsProvider>
+                            </ContextMenuProvider>
                         </ErrorBoundary>
                     </CompatibilityCheck>
                 </PassCoreProvider>

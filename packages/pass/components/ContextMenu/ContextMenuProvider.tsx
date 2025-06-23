@@ -19,6 +19,7 @@ const ContextMenuContext = createContext<ClientContextValue>({
 
 export const useContextMenu = () => useContext(ContextMenuContext);
 export const useContextMenuOpen = (id: string) => useContextMenu().open(id);
+export const useContextMenuClose = () => useContextMenu().close;
 
 export const ContextMenuProvider: FC<PropsWithChildren> = ({ children }) => {
     const [idOpen, setIdOpen] = useState<string | undefined>(undefined);
@@ -53,9 +54,11 @@ export const ContextMenuProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const isOpen = (id: string) => idOpen === id;
 
-    const open = (id: string) => (e: MouseEvent) => {
+    const open = (id: string) => (event: MouseEvent) => {
+        event.stopPropagation();
+        event.preventDefault();
         setIdOpen(id);
-        setPosition({ top: e.clientY, left: e.clientX });
+        setPosition({ top: event.clientY, left: event.clientX });
     };
 
     const close = () => {
