@@ -337,6 +337,9 @@
       "Create folder": [
         "Opprett mappe"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Opprett mappe ${ boldFolderName }"
+      ],
       "Create label": [
         "Opprett etikett"
       ],
@@ -1817,7 +1820,7 @@
         "takket være deg"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Tredoble den krypterte lagringsplassen og få 3 TB for all dataene dine."
+        "Tredoble den krypterte lagringsplassen og få 3 TB for alle dataene dine."
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
@@ -6229,6 +6232,10 @@
         "${ messagesNotAuthorizedToMove } melding kunne ikke flyttes.",
         "${ messagesNotAuthorizedToMove } meldinger kunne ikke flyttes."
       ],
+      "${ n } newsletter": [
+        "${ n } nyhetsbrev",
+        "${ n } nyhetsbrev"
+      ],
       "${ n } unread conversation": [
         "${ n } ulest samtale",
         "${ n } uleste samtaler"
@@ -6597,6 +6604,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Faktureringssyklus: ${ text }"
+      ],
+      "Block sender": [
+        "Blokkér avsender"
       ],
       "Body: ": [
         "Innhold: "
@@ -7093,7 +7103,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7305,6 +7316,9 @@
       "No links cleaned": [
         "Ingen koblinger renset"
       ],
+      "No messages to show": [
+        "Ingen meldinger å vise"
+      ],
       "No more results found": [
         "Ingen flere resultater funnet"
       ],
@@ -7477,6 +7491,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent mens vi ser etter kontakter som inneholder data kryptert med den inaktive nøkkelen."
+      ],
+      "Preferences updated": [
+        "Preferanser oppdatert"
       ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke lastes"
@@ -7817,6 +7834,9 @@
       "Themes can give your inbox a new look.": [
         "Temaer kan gi innboksen din et nytt utseende."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "Det er ingen meldinger fra denne avsenderen i innboksen din."
+      ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Det har oppstått en feil med signaturen som brukes til å bekrefte kontaktinformasjonen, som kan være et resultat av tilbakestilling av passord."
       ],
@@ -8145,9 +8165,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Vi kunne ikke bekrefte avsenderens klarerte nøkler."
-      ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "Vi fant ingen mulighet for å avslutte abonnement for dette nyhetsbrevet. Du kan kanskje avslutte abonnement ved hjelp av en kobling i e-posten eller fra nettstedet deres."
       ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
@@ -8926,6 +8943,9 @@
       "CC": [
         "Kopi"
       ],
+      "Choose what to do instead": [
+        "Velg hva du vil gjøre i stedet"
+      ],
       "City": [
         "Poststed"
       ],
@@ -9045,6 +9065,9 @@
       ],
       "Extended address": [
         "Utvidet adresse"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Klarte ikke å opprette mappe ${ customFolderName }"
       ],
       "Filter Name": [
         "Filternavn"
@@ -9170,9 +9193,9 @@
       "Move to Inbox": [
         "Flytt til innboks"
       ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "${ count } melding flyttet til ${ selectedFolder.Name }.",
-        "${ count } meldinger flyttet til ${ selectedFolder.Name }."
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } melding flyttet til ${ labelName }.",
+        "${ count } meldinger flyttet til ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } melding flyttet til arkivet.",
@@ -14611,6 +14634,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Avslutte abonnementet på ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Avslutt abonnementet er ikke tilgjengelig for denne avsenderen"
       ],
       "Unsubscribe request sent": [
         "Avmeldingsforespørsel sendt"

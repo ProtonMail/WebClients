@@ -337,6 +337,9 @@
       "Create folder": [
         "Skapa mapp"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Skapa mapp ${ boldFolderName }"
+      ],
       "Create label": [
         "Skapa etikett"
       ],
@@ -1765,6 +1768,9 @@
       "of privacy": [
         "av integritet"
       ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
       "Online privacy for up to 2 people": [
         "Integritet online för upp till 2 personer"
       ],
@@ -1777,8 +1783,14 @@
       "Recover previous file versions": [
         "Återställ tidigare filversioner"
       ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Spara stort på premium Drive-funktioner med en tidsbegränsad rabatt."
+      ],
       "Save big on premium Mail features with a limited-time discount.": [
         "Spara stort på premium Mail-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Spara stort på premium Pass-funktioner med en tidsbegränsad rabatt."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
         "Spara stort på premium VPN-funktioner med en tidsbegränsad rabatt."
@@ -6214,6 +6226,10 @@
         "${ messagesNotAuthorizedToMove } meddelande kunde inte flyttas.",
         "${ messagesNotAuthorizedToMove } meddelanden kunde inte flyttas."
       ],
+      "${ n } newsletter": [
+        "${ n } nyhetsbrev",
+        "${ n } nyhetsbrev"
+      ],
       "${ n } unread conversation": [
         "${ n } oläst konversation",
         "${ n } olästa konversationer"
@@ -6575,6 +6591,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
+      ],
+      "Block sender": [
+        "Blockera avsändare"
       ],
       "Body: ": [
         "Innehåll: "
@@ -7068,7 +7087,8 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -7280,6 +7300,9 @@
       "No links cleaned": [
         "Inga länkar rensade"
       ],
+      "No messages to show": [
+        "Inga meddelanden att visa"
+      ],
       "No more results found": [
         "Inga fler resultat hittades"
       ],
@@ -7452,6 +7475,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vänta medan vi letar efter kontakter som innehåller data krypterad med den inaktiva nyckeln."
+      ],
+      "Preferences updated": [
+        "Preferenser uppdaterade"
       ],
       "Preview failed to be loaded": [
         "Förhandsgranskning misslyckades att laddas"
@@ -7788,6 +7814,9 @@
       ],
       "Themes can give your inbox a new look.": [
         "Teman kan ge din inkorg ett nytt utseende."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Det finns inga meddelanden från denna avsändare i din inkorg."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Det har uppstått ett fel med signaturen som används för att verifiera kontaktuppgifterna, vilket kan vara resultatet av en lösenordsåterställning."
@@ -8895,6 +8924,9 @@
       "CC": [
         "Kopia"
       ],
+      "Choose what to do instead": [
+        "Välj vad du ska göra istället"
+      ],
       "City": [
         "Ort"
       ],
@@ -9014,6 +9046,9 @@
       ],
       "Extended address": [
         "Utökad adress"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Misslyckades att skapa mapp ${ customFolderName }"
       ],
       "Filter Name": [
         "Filternamn"
@@ -9139,9 +9174,9 @@
       "Move to Inbox": [
         "Flytta till Inkorg"
       ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "Flyttade ${ count } meddelande till ${ selectedFolder.Name }.",
-        "Flyttade ${ count } meddelanden till ${ selectedFolder.Name }."
+      "Moved ${ count } message to ${ labelName }.": [
+        "Flyttade ${ count } meddelande till ${ labelName }.",
+        "Flyttade ${ count } meddelanden till ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "Flyttade ${ count } meddelande till arkiv.",
