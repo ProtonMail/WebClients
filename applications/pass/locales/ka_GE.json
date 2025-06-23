@@ -691,6 +691,75 @@
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 გბ დაშიფრული საცავი"
+      ],
+      "Add unlimited credit cards": [
+        "დაამატეთ განუსაზღვრელი რაოდენობის საკრედიტო ბარათი"
+      ],
+      "Encrypted password manager": [
+        "დაშიფრული პაროლების მმართველი"
+      ],
+      "High speed streaming with VPN": [
+        "ჩქაროსნული სტრიმინგი VPN-ით"
+      ],
+      "of privacy": [
+        "კონფიდენციალობა"
+      ],
+      "Online privacy for up to 2 people": [
+        "ინტერნეტკონფიდენციალობა ორამდე ადამიანისთვის"
+      ],
+      "Save time with built-in 2FA": [
+        "დაზოგეთ დრო ჩაშენებული 2FA-ით"
+      ],
+      "Secure email with unlimited aliases": [
+        "დაცული ელფოსტა შეუზღუდავი ფსევდონიმების რაოდენობით"
+      ],
+      "Share passwords easily": [
+        "გააზიარეთ პაროლები ადვილად"
+      ],
+      "thanks to you": [
+        "მადლობა"
+      ],
+      "years": [
+        "წელი"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "საიუბილეო შეთავაზება"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "/ month": [
+        "/ თვეში"
+      ],
+      "12 months": [
+        "12 თვე"
+      ],
+      "15 months": [
+        "15 თვე"
+      ],
+      "24 months": [
+        "24 თვე"
+      ],
+      "30 months": [
+        "30 თვე"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal }-სთვის"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
@@ -1151,6 +1220,9 @@
       ],
       "Unsupported 1Password file format": [
         "მხარდაუჭერელი 1Password-ის ფაილის ფორმატი"
+      ],
+      "Unsupported Bitwarden file format": [
+        "მხარდაუჭერელი Bitwarden-ის ფაილის ფორმატი"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "საცავის \"${ payload.content.name }\" განახლების შეცდომა"
@@ -1793,10 +1865,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2597,6 +2665,9 @@
       "Catch-All": [
         "ყველას დაჭერა"
       ],
+      "Checkbox": [
+        "თოლია"
+      ],
       "Choose unlock method": [
         "აირჩიეთ განბლოკვის მეთოდი"
       ],
@@ -2605,6 +2676,9 @@
       ],
       "City": [
         "ქალაქი"
+      ],
+      "Class": [
+        "კლასი"
       ],
       "Code": [
         "კოდი"
@@ -2696,6 +2770,9 @@
       "DNS": [
         "DNS"
       ],
+      "Doctor": [
+        "ექიმი"
+      ],
       "Domain": [
         "დომენი"
       ],
@@ -2752,6 +2829,9 @@
       ],
       "Extra email addresses": [
         "დამატებითი ელფოსტის მისამართები"
+      ],
+      "Extra fields": [
+        "დამატებითი ველები"
       ],
       "Extra password": [
         "დამატებითი პაროლი"
@@ -2837,6 +2917,9 @@
       "Holder Name": [
         "მფლობელის სახელი"
       ],
+      "Hospital": [
+        "საავადმყოფო"
+      ],
       "Host": [
         "ჰოსტი"
       ],
@@ -2906,6 +2989,9 @@
       "Issuing Country": [
         "გამომცემელი ქვეყანა"
       ],
+      "Issuing State/Country": [
+        "გამომცენელი შტატი/ქვეყანა"
+      ],
       "Item ID": [
         "ელემენტის ID"
       ],
@@ -2914,6 +3000,12 @@
       ],
       "Key": [
         "გასაღები"
+      ],
+      "Key fingerprint": [
+        "გასაღებს ანაბეჭდი"
+      ],
+      "Key type": [
+        "გასაღების ტიპი"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "კლავიატურის მალსახმობი: ${ shortcut }"
@@ -2951,6 +3043,9 @@
       "License number": [
         "ლიცენზიის ნომერი"
       ],
+      "License Number": [
+        "ლიცენზიის ნომერი"
+      ],
       "Limited time": [
         "შეზღუდული დრო"
       ],
@@ -2984,11 +3079,20 @@
       "max views reached": [
         "მიღწეულია მაქს. ნახვები"
       ],
+      "Medical Conditions": [
+        "სამედიცინო პირობები"
+      ],
       "Medical Record": [
         "სამედიცინო ჩანაწერი"
       ],
+      "Medications": [
+        "მედიკამენტები"
+      ],
       "Member ID": [
         "წევრის ID"
+      ],
+      "Member Name": [
+        "წევრის სახელი"
       ],
       "Members": [
         "წევრები"
@@ -2996,14 +3100,14 @@
       "Membership": [
         "წევრობა"
       ],
+      "Membership ID": [
+        "წევრობის ID"
+      ],
       "Middle name": [
         "მამის / მეორე სახელი"
       ],
       "Modified": [
         "შეცვლილია"
-      ],
-      "More": [
-        "მეტი"
       ],
       "More than a month": [
         "თვეზე მეტი"
@@ -3080,6 +3184,12 @@
       "Organization": [
         "ორგანიზაცია"
       ],
+      "Organization Name": [
+        "ორგანიზაციის სახელი"
+      ],
+      "Other": [
+        "სხვა"
+      ],
       "Owner": [
         "მფლობელი"
       ],
@@ -3103,6 +3213,9 @@
       ],
       "Password history": [
         "პაროლების ისტორია"
+      ],
+      "Patient Name": [
+        "პაციენტის სახელი"
       ],
       "Permissions": [
         "წვდომები"
@@ -3175,6 +3288,9 @@
       ],
       "Recent": [
         "უახლესი"
+      ],
+      "Record Number": [
+        "ჩანაწერის ნომერი"
       ],
       "Reddit handle": [
         "Reddit-ის პროფილი"
@@ -3343,6 +3459,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "ეს ელემენტი ხელმისაწვდომია ${ date }-მდე, ან, სანამ, ნახვების ლიმიტი არ მიიღწევა."
+      ],
+      "Tier/Level": [
+        "დონე"
       ],
       "Tier/Status": [
         "დონე/სტატუსი"
@@ -3702,6 +3821,18 @@
       ],
       "Add note": [
         "შენიშვნის დამატება"
+      ],
+      "Add password": [
+        "პაროლის დამატება"
+      ],
+      "Add private key": [
+        "პირადი გასაღების დამატება"
+      ],
+      "Add public key": [
+        "საჯარო გასაღების დამატება"
+      ],
+      "Add SSID": [
+        "SSID-ის დამატება"
       ],
       "Add text": [
         "ტექსტის დამატება"
@@ -4462,6 +4593,12 @@
       ],
       "URL is invalid": [
         "URL არასწორია"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "ელემენტების გადატანა",
+        "ელემენტების გადატანა"
       ]
     },
     "Warning": {

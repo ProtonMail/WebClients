@@ -1155,6 +1155,9 @@
       "File does not match expected format": [
         "A fájl nem a szükséges formátumú"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "A(z) \"${ vaultData.name }\" tárolóba való importálás nem sikerült: ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Elemek importálása nem sikerült"
       ],
@@ -1268,6 +1271,9 @@
       ],
       "Unsupported 1Password file format": [
         "Nem támogatott 1Password fájlformátum"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Nem támogatott Bitwarden fájlformátum"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "A(z) \"${ payload.content.name }\" tároló frissítése nem sikerült"
@@ -1916,10 +1922,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
-        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
       ],
       "Moving items": [
         "Elemek áthelyezése"
@@ -2729,6 +2731,9 @@
       "Catch-All": [
         "Gyűjtő e-mail"
       ],
+      "Checkbox": [
+        "Jelölőnégyzet"
+      ],
       "Choose unlock method": [
         "Válassza ki a feloldási módot"
       ],
@@ -2737,6 +2742,9 @@
       ],
       "City": [
         "Település"
+      ],
+      "Class": [
+        "Kategória"
       ],
       "Code": [
         "Kód"
@@ -2828,6 +2836,9 @@
       "DNS": [
         "DNS"
       ],
+      "Doctor": [
+        "Orvos"
+      ],
       "Domain": [
         "Domain név"
       ],
@@ -2884,6 +2895,9 @@
       ],
       "Extra email addresses": [
         "Extra email címet"
+      ],
+      "Extra fields": [
+        "Extra mezők"
       ],
       "Extra password": [
         "Extra jelszó"
@@ -2969,6 +2983,9 @@
       "Holder Name": [
         "Birtokos neve"
       ],
+      "Hospital": [
+        "Kórház"
+      ],
       "Host": [
         "Gazdagép"
       ],
@@ -3038,6 +3055,9 @@
       "Issuing Country": [
         "Kibocsátó ország"
       ],
+      "Issuing State/Country": [
+        "Kibocsátó ország"
+      ],
       "Item ID": [
         "Elem azonosító"
       ],
@@ -3046,6 +3066,12 @@
       ],
       "Key": [
         "Kulcs"
+      ],
+      "Key fingerprint": [
+        "Kulcs ujjlenyomat"
+      ],
+      "Key type": [
+        "Kulcs típusa"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Gyorsbillentyű: ${ shortcut }"
@@ -3083,6 +3109,9 @@
       "License number": [
         "Engedélyszám"
       ],
+      "License Number": [
+        "Jogosítvány száma"
+      ],
       "Limited time": [
         "Korlátozott ideig"
       ],
@@ -3104,6 +3133,9 @@
       "Make all editors": [
         "Mindenkit szerkesztésre jogosulttá tesz"
       ],
+      "Make all managers": [
+        "Tegyen mindenkit kezelővé"
+      ],
       "Make all viewers": [
         "Mindenkit megtekintésre jogosulttá tesz"
       ],
@@ -3113,11 +3145,20 @@
       "max views reached": [
         "elérte a maximális megtekintésszámot"
       ],
+      "Medical Conditions": [
+        "Orvosi állapot"
+      ],
       "Medical Record": [
         "Orvosi leletek"
       ],
+      "Medications": [
+        "Gyógyszerek"
+      ],
       "Member ID": [
         "Tag azonosító"
+      ],
+      "Member Name": [
+        "Tag neve"
       ],
       "Members": [
         "Tagok"
@@ -3125,14 +3166,14 @@
       "Membership": [
         "Tagság"
       ],
+      "Membership ID": [
+        "Tagsági azonosító"
+      ],
       "Middle name": [
         "Középső név"
       ],
       "Modified": [
         "Módosítva"
-      ],
-      "More": [
-        "Több"
       ],
       "More than a month": [
         "Több mint egy hónapja"
@@ -3209,6 +3250,12 @@
       "Organization": [
         "Szervezet"
       ],
+      "Organization Name": [
+        "Szervezet neve"
+      ],
+      "Other": [
+        "Egyéb"
+      ],
       "Owner": [
         "Tulajdonos"
       ],
@@ -3232,6 +3279,9 @@
       ],
       "Password history": [
         "Jelszó előzmények"
+      ],
+      "Patient Name": [
+        "Páciens neve"
       ],
       "Permissions": [
         "Engedélyek"
@@ -3304,6 +3354,9 @@
       ],
       "Recent": [
         "Friss"
+      ],
+      "Record Number": [
+        "Rekordszám"
       ],
       "Reddit handle": [
         "Reddit név"
@@ -3472,6 +3525,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Ez az elem ${ date } napjáig vagy a megtekintési korlát eléréséig érhető el."
+      ],
+      "Tier/Level": [
+        "Szint"
       ],
       "Tier/Status": [
         "Szint/Állapot"
@@ -3831,6 +3887,18 @@
       ],
       "Add note": [
         "Jegyzet hozzáadása"
+      ],
+      "Add password": [
+        "Jelszó hozzáadása"
+      ],
+      "Add private key": [
+        "Privát kulcs hozzáadása"
+      ],
+      "Add public key": [
+        "Nyilvános kulcs hozzáadása"
+      ],
+      "Add SSID": [
+        "SSID hozzáadása"
       ],
       "Add text": [
         "Szöveg hozzáadása"
@@ -4591,6 +4659,12 @@
       ],
       "URL is invalid": [
         "Az URL érvénytelen"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Elem áthelyezése",
+        "Elemek áthelyezése ide"
       ]
     },
     "Warning": {

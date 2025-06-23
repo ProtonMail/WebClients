@@ -1949,11 +1949,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
-      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2794,6 +2789,9 @@
       "City": [
         "Oraş"
       ],
+      "Class": [
+        "Clasa"
+      ],
       "Code": [
         "Cod"
       ],
@@ -2883,6 +2881,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Doctor"
       ],
       "Domain": [
         "Domeniu"
@@ -3028,6 +3029,9 @@
       "Holder Name": [
         "Nume titular"
       ],
+      "Hospital": [
+        "Spital"
+      ],
       "Host": [
         "Gazdă"
       ],
@@ -3097,6 +3101,9 @@
       "Issuing Country": [
         "Țara emitentă"
       ],
+      "Issuing State/Country": [
+        "Stat/Țară emitentă"
+      ],
       "Item ID": [
         "ID articol"
       ],
@@ -3108,6 +3115,9 @@
       ],
       "Key fingerprint": [
         "Amprentă cheie"
+      ],
+      "Key type": [
+        "Tip cheie"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Combinații taste: ${ shortcut }"
@@ -3145,6 +3155,9 @@
       "License number": [
         "Permis de conducere"
       ],
+      "License Number": [
+        "Număr licență"
+      ],
       "Limited time": [
         "Timp limitat"
       ],
@@ -3178,11 +3191,20 @@
       "max views reached": [
         "vizualizări maxime depășite"
       ],
+      "Medical Conditions": [
+        "Afecțiuni medicale"
+      ],
       "Medical Record": [
         "Fișă medicală"
       ],
+      "Medications": [
+        "Tratamente"
+      ],
       "Member ID": [
         "ID membru"
+      ],
+      "Member Name": [
+        "Nume membru"
       ],
       "Members": [
         "Membri"
@@ -3190,14 +3212,14 @@
       "Membership": [
         "Apartenență"
       ],
+      "Membership ID": [
+        "ID de membru"
+      ],
       "Middle name": [
         "Nume mijlociu"
       ],
       "Modified": [
         "Modificat"
-      ],
-      "More": [
-        "Detalii"
       ],
       "More than a month": [
         "Mai mult de o lună"
@@ -3274,6 +3296,12 @@
       "Organization": [
         "Organizația"
       ],
+      "Organization Name": [
+        "Nume organizație"
+      ],
+      "Other": [
+        "Alt motiv"
+      ],
       "Owner": [
         "Proprietar"
       ],
@@ -3297,6 +3325,9 @@
       ],
       "Password history": [
         "Istoric parole"
+      ],
+      "Patient Name": [
+        "Nume pacient"
       ],
       "Permissions": [
         "Permisiuni"
@@ -3369,6 +3400,9 @@
       ],
       "Recent": [
         "Recente"
+      ],
+      "Record Number": [
+        "Număr de înregistrare"
       ],
       "Reddit handle": [
         "Cont Reddit"
@@ -3537,6 +3571,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Acest articol este disponibil până la ${ date } sau până când este atinsă limita de vizualizări."
+      ],
+      "Tier/Level": [
+        "Rang/Nivel"
       ],
       "Tier/Status": [
         "Rang/Stare"
@@ -3899,6 +3936,18 @@
       ],
       "Add note": [
         "Adăugare notiță"
+      ],
+      "Add password": [
+        "Adăugare parolă"
+      ],
+      "Add private key": [
+        "Adăugare cheie privată"
+      ],
+      "Add public key": [
+        "Adăugare cheie publică"
+      ],
+      "Add SSID": [
+        "Adăugare SSID"
       ],
       "Add text": [
         "Adăugare text"
@@ -4670,7 +4719,9 @@
       ]
     },
     "Vault Select": {
-      "Move items to": [
+      "Move item to": [
+        "Mutare articol în",
+        "Mutare articole în",
         "Mutare articole în"
       ]
     },
