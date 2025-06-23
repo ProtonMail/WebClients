@@ -1872,10 +1872,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
-      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -3068,9 +3064,6 @@
       "Modified": [
         "Muokattu"
       ],
-      "More": [
-        "Lisää"
-      ],
       "More than a month": [
         "Yli kuukausi sitten"
       ],
@@ -3148,6 +3141,9 @@
       ],
       "Organization": [
         "Organisaatio"
+      ],
+      "Other": [
+        "Muu"
       ],
       "Owner": [
         "Omistaja"
