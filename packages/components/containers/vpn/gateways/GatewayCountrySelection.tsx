@@ -3,6 +3,7 @@ import { useRef } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
@@ -14,7 +15,8 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { useNow } from '@proton/components/hooks/useNow';
-import { type CountryOptions, getLocalizedCountryByAbbr, useIsB2BTrial } from '@proton/payments';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { ButtonNumberInput } from './ButtonNumberInput';
@@ -52,7 +54,8 @@ export const GatewayCountrySelection = ({
     changeModel,
 }: Props) => {
     const [subscription] = useSubscription();
-    const isTrial = useIsB2BTrial(subscription);
+    const [organization] = useOrganization();
+    const isTrial = useIsB2BTrial(subscription, organization);
 
     const recentlyUsedServersRef = useRef<GatewayLocation[]>([]);
     const remainingCount = ownedCount - usedCount;

@@ -28,8 +28,8 @@ import {
     hasWallet,
     isManagedExternally,
     isTrial,
-    useIsB2BTrial,
 } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -92,7 +92,7 @@ interface Props {
 const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, addresses, upsells }: Props) => {
     const { planTitle, planName } = getSubscriptionPlanTitleAndName(user, subscription);
     const isPassB2bPlan = getIsPassB2BPlan(planName);
-    const isB2BTrial = useIsB2BTrial(subscription);
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [cancelTrialModalProps, setCancelTrialModal, renderCancelTrialModal] = useModalState();
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
