@@ -396,7 +396,6 @@ export {
     regularCycles,
     getHasProPlan,
     upsellPlanSSO,
-    useIsB2BTrial,
     willTrialExpire,
     type AggregatedPricing,
     type PricingForCycles,
