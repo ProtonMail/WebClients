@@ -2283,6 +2283,17 @@
         "민감한 데이터를 다루고 계신가요?"
       ]
     },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "모든 전용 서버가 이미 게이트웨이에 할당되었습니다. 무료 체험 기간 종료 후 더 많은 서버를 구매할 수 있습니다."
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "무료 체험에 ${ ipAddresses }개의 전용 서버가 포함되어 있습니다. 전체 구독이 시작되면 서버를 더 추가할 수 있습니다."
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "무료 체험에 최대 ${ maxMembers }개의 라이선스가 포함됩니다. 전체 구독이 시작되면 라이선스를 더 추가할 수 있습니다."
+      ]
+    },
     "breadcrumb": {
       "Calendars": [
         "캘린더"
@@ -2489,7 +2500,7 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "달력에 대한 링크를 만들어 ${ BRAND_NAME }을 사용하지 않는 분들과 공유하세요. 사용자만 이벤트를 추가하거나 제거할 수 있습니다."
+        "캘린더의 링크를 생성하여 ${ BRAND_NAME }을 사용하지 않는 사람들과 공유해 보세요. 사용자만 이벤트를 추가하거나 제거할 수 있습니다."
       ]
     },
     "Calendar settings private share description": {
@@ -4088,6 +4099,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "데스크톱에서 클라우드에 파일을 쉽게 동기화하고 휴대 기기에서 접근할 수 있습니다."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "이 기능에 접근하려면 ${ PROTON_SENTINEL_NAME }을 활성화해 주세요."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "보한 강화를 위해 조직에서 2단계 인증 사용을 권장하도록 설정해 보세요."
       ],
@@ -4177,6 +4191,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 포맷 (ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING } 이벤트를 가지고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주십시오."
+      ],
+      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "조직 관리자가 이러한 기능에 접근하려면 자세한 이벤트 및 ${ PROTON_SENTINEL_NAME }를 활성화해야 합니다."
+      ],
+      "Your organization administrator should enable detailed events in order to access these features": [
+        "조직 관리자가 이러한 기능에 접근하려면 자세한 이벤트를 활성화해야 합니다."
       ]
     },
     "description": {
@@ -5203,6 +5223,9 @@
       "Failed to process the logo": [
         "로고를 처리하지 못했습니다"
       ],
+      "Failed to update detailed monitoring.": [
+        "자세한 모니터링 업데이트에 오류가 발생했습니다."
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "파일이 너무 큽니다. 로고는 30KB 이하여야 합니다."
       ],
@@ -5645,6 +5668,11 @@
         "우편번호가 필요합니다"
       ]
     },
+    "error": {
+      "Select users to view their activity": [
+        "활동을 확인할 사용자를 선택하세요"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "${ formattedFilename } 파일을 읽는데 문제가 발생했습니다. 올바르지 않은 파일 포맷."
@@ -5790,6 +5818,9 @@
     "Error message": {
       "App currently unavailable": [
         "앱에서는 현재 사용 불가합니다."
+      ],
+      "Ask your administrator to enable Account monitor.": [
+        "관리자에게 계정 모니터링 사용 설정을 요청하세요."
       ],
       "Error: ${ errorMessage }": [
         "오류: ${ errorMessage }"
@@ -6574,7 +6605,7 @@
         "받은 편지함에 도착하는 메일을 제어하기 위해 다음 목록을 생성하여 사용하세요:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
-        "조직 멤버의 받은 편지함에 도착하는 메일을 제어하기 위해 다음 목록을 생성하여 사용하세요:"
+        "조직 구성원의 받은 편지함에 도착하는 메일을 제어하기 위해 다음 목록을 생성하여 사용하세요:"
       ],
       "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
         "이 목록은 조직의 모든 계정에 적용됩니다. 개개인이 자신만의 개별 필터를 만들 수 있지만, 차단한 주소나 도메인을 재정의할 수 없습니다."
@@ -6583,16 +6614,16 @@
         "중요한 메시지들이 스팸으로 분류되어 놓쳐버리지 않도록 하기 위해"
       ],
       "To prevent junk mail from clogging up inboxes": [
-        "받은 편지함을 메우는 광고 메일을 방지하기 위해서"
+        "받은 편지함을 메우는 광고 메일을 방지하기 위해"
       ],
       "To prevent junk mail from clogging up your inbox": [
-        "받은 편지함을 메우는 광고 메일을 방지하기 위해서"
+        "받은 편지함을 메우는 광고 메일을 방지하기 위해"
       ],
       "To stop phishing or suspicious emails from entering your email system": [
-        "피싱 또는 의심스러운 이메일이 이메일 시스템에 진입하는 것을 막으려면"
+        "피싱 또는 의심스러운 이메일의 이메일 시스템 진입을 방지하기 위해"
       ],
       "To stop phishing or suspicious emails from entering your organization's email system": [
-        "피싱 또는 의심스러운 이메일이 조직의 이메일 시스템에 진입하는 것을 막으려면"
+        "피싱 또는 의심스러운 이메일의 조직의 이메일 시스템 진입을 방지하기 위해"
       ]
     },
     "Font Face Default": {
@@ -6827,6 +6858,9 @@
       ],
       "Permissions": [
         "권한"
+      ],
+      "Protection": [
+        "보호"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "최고의 ${ VPN_APP_NAME } 특가로 크게 절약하세요"
@@ -7350,6 +7384,9 @@
       ]
     },
     "Info": {
+      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
+        " - 조직 전체에 걸쳐 사용자 활동을 추적하고, 위협을 탐지하며, 규정 준수를 보장하는 커맨드 센터."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }명/${ totalUsers }명이 현재 공유된 서버 접근 권한을 소유하고 있습니다."
       ],
@@ -7634,6 +7671,12 @@
       ],
       "active": [
         "활성화"
+      ],
+      "Activity monitor": [
+        "활동 모니터링"
+      ],
+      "Activity Monitor": [
+        "활동 모니터링"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "계정에 @pm.me 이메일 주소를 추가해 보세요. 더 간단하고 짧은 이 도메인은 \"${ MAIL_APP_NAME } me\" 또는 \"Private Message me\"를 의미합니다."
@@ -8094,6 +8137,9 @@
       "Did you know?": [
         "알고 계셨나요?"
       ],
+      "Disable detailed events": [
+        "상세 이벤트 비활성화"
+      ],
       "Disable recovery by email address": [
         "이메일 주소로 복구 비활성화"
       ],
@@ -8237,6 +8283,9 @@
       ],
       "Enable auto-renew to keep access to your premium features.": [
         "Plus 서버와 기능에 계속 접근하기 위해 자동 갱신을 활성화하세요"
+      ],
+      "Enable detailed events": [
+        "보안 상세 이벤트 활성화"
       ],
       "Enable email notifications": [
         "이메일 알림 활성화"
@@ -8402,6 +8451,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "오래된 메시지 및 타 데이터를 삭제하여 공간을 비우세요"
+      ],
+      "Gain visibility across your organization": [
+        "회원님의 조직 전체에 걸쳐 가시성을 확보하세요"
       ],
       "Gateways": [
         "게이트웨이"
@@ -8579,6 +8631,9 @@
       ],
       "inactive": [
         "비활성화"
+      ],
+      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
+        "사용자 IP 주소, 위치 및 ISP(인터넷 서비스 제공업체)를 이벤트 로그에 포함"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "${ formattedTaxRate }% ${ taxName } 포함: ${ price }"
@@ -8793,6 +8848,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "캘린더를 불러오는 중, 새로운 탭에서 일정 플랫폼 Calendly로 리디렉션됩니다."
       ],
+      "Loading detailed events current status.": [
+        "상세한 이벤트의 현재 상태 불러오는 중"
+      ],
       "Loading eduGAIN data...": [
         "EduGAIN 데이터 로드 중..."
       ],
@@ -8847,6 +8905,9 @@
       "Monitor accounts": [
         "계정 모니터링"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "${ BRAND_NAME } 자격 증명을 사용하는 모든 ${ BRAND_NAME } 서비스에 대한 인증 시도를 감시 및 감사하십시오."
+      ],
       "Monthly ${ onDayString }": [
         "매월 ${ onDayString }"
       ],
@@ -8873,6 +8934,9 @@
       ],
       "New": [
         "신규"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "신규 활동 데이터 수집이 중단되며 보여지지 않습니다."
       ],
       "New user invited to organization": [
         "새 사용자가 조직에 초대되었습니다."
@@ -8915,6 +8979,9 @@
       ],
       "No label selected": [
         "선택한 라벨 없음"
+      ],
+      "No logs yet.": [
+        "아직 로그가 없습니다."
       ],
       "No payment is required at this time.": [
         "현재는 결제가 필요없습니다."
@@ -9316,7 +9383,7 @@
         "개인 관리형 암호화폐 지갑"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "회원들이 2단계 인증으로 계정을 보호하도록 이메일을 보내세요."
+        "구성원들이 2단계 인증으로 계정을 보호하도록 요청하는 이메일을 전송하세요."
       ],
       "Send messages at just the right now": [
         "지금 바로 메시지를 전송하세요"
@@ -9428,6 +9495,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "더 짧고 매력있는 이메일 주소를 사용하세요."
+      ],
+      "Starts on ${ startsOnTime }": [
+        "${ startsOnTime }에 시작"
       ],
       "Stay tuned for future promotions.": [
         "향후 프로모션을 계속 지켜봐 주시기 바랍니다."
@@ -9719,6 +9789,9 @@
       ],
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "이 작업은 **(${ date }에 생성된) 기기 ${ name }**을(를) 내 ${ BRAND_NAME } 계정에서 연결 해제합니다."
+      ],
+      "This will wipe all logs for your organization members.": [
+        "사용자의 조직 구성원에 대한 모든 로그가 삭제됩니다."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "이 마법사는 ${ BRAND_NAME } 계정의 2단계 인증 (2FA)을 활성화 시킵니다. 2단계 인증은 ${ BRAND_NAME_TWO } 계정을 더욱 안전하게 할 수 있으므로 사용하는 것을 권장합니다."
@@ -10027,7 +10100,7 @@
         "2단계 인증 강제를 설정하기 전에 가족 구성원에게 알리고 계정에 2단계 인증을 설정하도록 요청하는 것이 좋습니다."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "2단계 인증 사용을 시작하기 전에 조직 구성원에게 알리고 계정에 2단계 인증을 설정하도록 요청하는 것이 좋습니다."
+        "2단계 인증 요구 시작 전에 조직 구성원에게 알린 다음 계정에 2단계 인증을 설정하도록 요청하는 것이 권장됩니다."
       ],
       "We recommend using your recovery phrase instead.": [
         "복구 방법을 사용하는 것을 권장합니다."
@@ -10115,6 +10188,9 @@
       ],
       "Why?": [
         "왜 그럴까요?"
+      ],
+      "With a Business or Enterprise plan, unlock": [
+        "Business 또는 Enterprise 플랜 구매시 잠금 해제됩니다"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Business 및 Enterprise 요금제에서는 조직을 위한 ${ boldDedicatedServers }를 구매 및 ${ boldGateways } 설정으로 조직의 사용자가 접근을 관리하도록 할 수 있습니다."
@@ -10350,6 +10426,9 @@
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "${ MAX_SYNC_PAID_USER } Gmail 주소에 대한 전달이 활성화됨. 다른 전달을 추가하려면 먼저 그 중 하나를 비활성화하십시오."
       ],
+      "You've reached the limit of 50 users for this filter. Remove one to add another.": [
+        "이 필터의 사용자 50명 제한에 도달했습니다. 다른 사용자를 추가하려면 하나를 삭제하세요."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "${ boldPlanTitle }에 대한 ${ boldDiscountPercent }이(가) 적용되었습니다."
       ],
@@ -10403,6 +10482,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "무료 체험에 ${ ownedCount }개의 전용 서버가 포함됩니다."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "무료 체험이 성공적으로 ${ cycle }개월 구독으로 전환되었습니다. 회원님의 구독 갱신일은 ${ nextBillingDate }입니다."
@@ -11897,6 +11979,9 @@
       "Search": [
         "검색"
       ],
+      "Search for a name or email": [
+        "이름 및 이메일 검색"
+      ],
       "Second password": [
         "2차 비밀번호"
       ],
@@ -12573,6 +12658,74 @@
         "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
       ]
     },
+    "Log event": {
+      "Account password change": [
+        "계정 비밀번호 변경"
+      ],
+      "Authentication failure (second factor failed)": [
+        "인증 실패 (2단계 인증 실패)"
+      ],
+      "Authentication failure (wrong password)": [
+        "인증 실패 (비밀번호 불일치)"
+      ],
+      "Authentication success": [
+        "인증 성공"
+      ],
+      "Mailbox password change": [
+        "메일함 비밀번호 변경"
+      ],
+      "Password reset": [
+        "비밀번호 재설정"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "2단계 인증 비활성화됨 (인증 앱)"
+      ],
+      "Second factor disabled (security key)": [
+        "이중 인증 비활성화됨 (보안 키)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "이중 요소 활성화됨 (인증 앱)"
+      ],
+      "Second factor enabled (security key)": [
+        "이중 인증 활성화됨 (보안 키)"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "로그인이 차단됨 (남용 사유)"
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "로그인 실패 (니모닉 실패)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "로그인 실패 (이중 인증 실패)"
+      ],
+      "Sign in failure (wrong password)": [
+        "로그인 실패 (잘못된 비밀번호)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "로그인 차단 (남용 사유)"
+      ],
+      "Sign in success": [
+        "로그인 성공"
+      ],
+      "Sign in success (awaiting mnemonic)": [
+        "로그인 성공 (니모닉 대기)"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "로그인 성공 (이중 인증 대기)"
+      ],
+      "Sign in success (awaiting verify)": [
+        "로그인 성공 (인증 대기)"
+      ],
+      "Sign out": [
+        "로그아웃"
+      ],
+      "Two password mode disabled": [
+        "이중 인증 모드가 비활성화됨"
+      ],
+      "Two password mode enabled": [
+        "이중 비밀번호 모드 활성화됨"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } 활성화"
@@ -12740,6 +12893,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "커스텀 이메일 주소 (예: you@yourcompany.com)을 설정하려면 ${ BRAND_NAME }에 사용자의 지정 도메인을 연결하세요. 마법사가 이 과정을 가이드해 드립니다."
+      ],
+      "View account-related events across your organization.": [
+        "조직 전반 걸친 계정 관련 이벤트를 확인해 보세요."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "무료 체험이 종료되었습니다. 계정 접근이 곧 비활성화 됩니다. ${ action }"
@@ -14925,6 +15081,9 @@
       "Buy now": [
         "지금 구매"
       ],
+      "Contact us": [
+        "문의하기"
+      ],
       "Continue": [
         "계속하기"
       ],
@@ -15851,6 +16010,26 @@
       ],
       "Work": [
         "직장"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "차단됨"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Device verification": [
+        "기기 인증"
+      ],
+      "Ok": [
+        "확인"
+      ],
+      "Ownership verification": [
+        "소유권 인증"
+      ],
+      "Unknown": [
+        "알 수 없음"
       ]
     },
     "Recovery Email": {
@@ -16835,7 +17014,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "${ calendarName } 을 공유하고 싶은 ${ BRAND_NAME } 계정을 추가하세요. 초대장이 전송됩니다."
+        "${ calendarName }을(를) 공유하고자 하는 사용자의 ${ BRAND_NAME } 계정을 추가하세요. 초대장이 전송됩니다."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -17032,6 +17211,9 @@
       ]
     },
     "signup: Action": {
+      "Contact us": [
+        "문의하기"
+      ],
       "Request trial": [
         "무료 체험 신청"
       ]
@@ -18773,6 +18955,9 @@
       "Activate user": [
         "사용자 활성화"
       ],
+      "Activity monitor": [
+        "활동 모니터링"
+      ],
       "Add ${ totalServerCount } server?": [
         "${ totalServerCount }개 서버를 추가할까요?"
       ],
@@ -18919,6 +19104,18 @@
       ],
       "Cancel subscription?": [
         "구독을 취소하시겠어요?"
+      ],
+      "Cannot add Gateway": [
+        "게이트웨이 추가 불가능"
+      ],
+      "Cannot add licenses": [
+        "라이선스를 더 추가할 수 없음"
+      ],
+      "Cannot add more users": [
+        "사용자를 더 추가할 수 없음"
+      ],
+      "Cannot add servers": [
+        "서버 추가 불가"
       ],
       "Card verification": [
         "카드 확인"
@@ -19168,6 +19365,9 @@
       ],
       "Device name": [
         "장치명"
+      ],
+      "Disable activity monitor?": [
+        "활동 모니터링을 비활성화하시겠습니까?"
       ],
       "Disable two-factor authentication": [
         "2단계 인증 비활성화"
@@ -19970,6 +20170,9 @@
       "Theme": [
         "테마"
       ],
+      "There are no events for your account": [
+        "사용자의 계정에 이벤트가 없습니다."
+      ],
       "There are no groups": [
         "그룹이 존재하지 않습니다."
       ],
@@ -20072,6 +20275,9 @@
       "Video conferencing": [
         "화상 회의"
       ],
+      "View organization events by upgrading to Business": [
+        "Business로 업그레이드하여 조직 이벤트를 확인하기"
+      ],
       "VPN apps": [
         "VPN 앱"
       ],
@@ -20098,6 +20304,9 @@
       ],
       "What would you like to import?": [
         "무엇을 가져오시겠어요?"
+      ],
+      "Wipe all logs?": [
+        "모든 로그를 삭제하시겠습니까?"
       ],
       "WireGuard configuration": [
         "WireGuard 설정"
@@ -20276,6 +20485,12 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "캘린더 초대장에 화상 회의 링크를 원활하게 추가할 수 있습니다."
       ],
+      "An approximate location of the IP address": [
+        "IP 주소의 대략적인 위치"
+      ],
+      "Any protection applied to suspicious activity": [
+        "의심스러운 활동에 적용되는 모든 보호"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "시스템의 주/야간 모드와 동기화하여 선호하는 테마를 주/야간에 맞춰 자동으로 전환합니다"
       ],
@@ -20296,6 +20511,12 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "휴지통 및 스팸의 메시지를 30일 뒤 지웁니다. 자동 삭제를 켜면 이미 휴지통/스팸에 있는 메시지가 이동된 날짜를 기준으로 삭제 날짜를 알 수 있습니다."
+      ],
+      "Device information such as operating system": [
+        "운영체제와 같은 디바이스 정보"
+      ],
+      "Device name and app version": [
+        "기기 이름 및 앱 버전"
       ],
       "Display name for the entity in the eduGAIN database": [
         "eduGAIN 데이터베이스에 있는 객체의 표시 이름"
@@ -20354,6 +20575,9 @@
       "Not all information listed here was exposed for all users.": [
         "여기에 나열된 모든 정보가 모든 사용자에게 공개된 것은 아닙니다."
       ],
+      "Origin IP address and Internet Service Provider (ISP)": [
+        "출처 IP 주소 및 인터넷 서비스 제공자(ISP)"
+      ],
       "Remove metadata from images to protect your privacy.": [
         "프라이버시를 위해 사진에서 메타데이터를 지우세요."
       ],
@@ -20392,6 +20616,9 @@
       ],
       "The import will start with the most recent messages.": [
         "최근의 주된 메시지 불러오기가 곧 시작됩니다."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "인터넷 서비스 제공자의 IP 주소"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "새로운 구독 결제 주기가 ${ formattedTime } 부터 시작합니다"
@@ -20446,6 +20673,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "브라우저 기본 스크롤바를 사용하세요. 더 크며 사용하기 쉽습니다."
+      ],
+      "User's approximate location (based on their IP address)": [
+        "사용자의 대략적인 위치 (IP 주소 기반)"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "다른 사용자가 웹 앱에 로그인했을 때 사용자의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."

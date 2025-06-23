@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "Désactiver la phrase de récupération ?"
       ],
+      "Disable security events": [
+        "Désactiver les évènements de sécurité"
+      ],
       "Discard": [
         "Abandonner"
       ],
@@ -1543,6 +1546,9 @@
       "What do I get?": [
         "Votre abonnement comprend :"
       ],
+      "Wipe": [
+        "Effacer"
+      ],
       "Yes": [
         "Oui"
       ],
@@ -1979,6 +1985,9 @@
       ],
       "on ${ formattedDate }": [
         "le ${ formattedDate }"
+      ],
+      "Try it free for 14 days": [
+        "Essayez gratuitement pendant 14 jours"
       ]
     },
     "b2b_trials_2025_Label": {
@@ -4247,6 +4256,18 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
+      ],
+      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Vous devez activez les évènements détaillés et ${ PROTON_SENTINEL_NAME } pour accéder à ces fonctionnalités"
+      ],
+      "You should enable detailed events in order to access these features": [
+        "Vous devez activer les évènements détaillés pour pouvoir accéder à ces fonctionnalités"
+      ],
+      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Votre administrateur d'organisation devrait activer les événements détaillés et ${ PROTON_SENTINEL_NAME } afin d'accéder à ces fonctionnalités."
+      ],
+      "Your organization administrator should enable detailed events in order to access these features": [
+        "Votre administrateur d'organisation devrait activer les événements détaillés afin d'accéder à ces fonctionnalités."
       ]
     },
     "description": {
@@ -5874,6 +5895,9 @@
     "Error message": {
       "App currently unavailable": [
         "L'application n'est pas disponible actuellement."
+      ],
+      "Ask your administrator to enable Account monitor.": [
+        "Demandez à votre administrateur d'activer la surveillance du compte."
       ],
       "Error: ${ errorMessage }": [
         "Erreur : ${ errorMessage }"
@@ -7962,6 +7986,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Êtes-vous sûr de vouloir quitter ce groupe ? Si vous le quittez, l'administrateur du groupe doit vous réinviter pour le rejoindre à nouveau."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Êtes-vous sûr de vouloir supprimer définitivement tous vos journaux ?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Voulez-vous vraiment retirer les droits administrateur de cet utilisateur ?"
       ],
@@ -8060,6 +8087,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "En créant un compte ${ PASS_APP_NAME } avec votre e-mail SimpleLogin, vous pouvez gérer vos alias directement depuis ${ PASS_APP_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "En désactivant les événements de sécurité, vous effacerez aussi l'ensemble de votre historique. Voulez-vous vraiment les désactiver ?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
@@ -11556,6 +11586,9 @@
       "Copy fingerprint": [
         "Copier l'empreinte digitale"
       ],
+      "Copy IP address to clipboard": [
+        "Copier l'adresse IP dans le presse-papiers"
+      ],
       "Could you please let us know which provider?": [
         "Pouvez-vous nous préciser quel fournisseur ?"
       ],
@@ -12884,6 +12917,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activer ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Activer les évènements détaillés"
+      ],
+      "Enable security events": [
+        "Activer les évènements de sécurité"
       ]
     },
     "Mail import summary": {
@@ -19605,6 +19644,9 @@
       "Delete label?": [
         "Supprimer le label ?"
       ],
+      "Delete logs": [
+        "Supprimer les journaux"
+      ],
       "Delete organization logo?": [
         "Supprimer le logo de l’organisation ?"
       ],
@@ -20809,6 +20851,9 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Activer/désactiver les notifications mobiles et de bureau pour « ${ labelName } »"
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "L'activation des événements détaillés permet d'enregistrer l'adresse IP de chaque événement."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "L'URL du point de terminaison de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)"
