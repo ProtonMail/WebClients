@@ -10,7 +10,8 @@ import { Button } from '@proton/atoms';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { getHasExternalMemberCapableB2BPlan, getHasInboxB2BPlan, useIsB2BTrial } from '@proton/payments';
+import { getHasExternalMemberCapableB2BPlan, getHasInboxB2BPlan } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import { MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
@@ -20,7 +21,7 @@ const UserAndAddressesSectionIntro = () => {
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
 
-    const isTrial = useIsB2BTrial(subscription);
+    const isTrial = useIsB2BTrial(subscription, organization);
     const [showTrialPrompt, setShowTrialPrompt] = useState(false);
 
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();

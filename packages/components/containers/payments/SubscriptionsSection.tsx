@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -21,7 +22,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { useLoading } from '@proton/hooks';
-import { PLANS, Renew, changeRenewState, onSessionMigrationPaymentsVersion, useIsB2BTrial } from '@proton/payments';
+import { PLANS, Renew, changeRenewState, onSessionMigrationPaymentsVersion } from '@proton/payments';
 import {
     getHas2023OfferCoupon,
     getIsUpcomingSubscriptionUnpaid,
@@ -31,6 +32,7 @@ import {
     getRenewalTime,
     isManagedExternally,
 } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { getOptimisticRenewCycleAndPrice } from '@proton/shared/lib/helpers/renew';
 import isTruthy from '@proton/utils/isTruthy';
@@ -45,6 +47,7 @@ const SubscriptionsSection = () => {
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
+    const [organization] = useOrganization();
     const upcoming = subscription?.UpcomingSubscription ?? undefined;
     const api = useApi();
     const eventManager = useEventManager();
@@ -58,7 +61,7 @@ const SubscriptionsSection = () => {
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
     // Check if we're in a B2B trial
-    const isB2BTrial = useIsB2BTrial(subscription);
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
 
     if (!subscription || !plans || loadingSubscription || loadingPlans || plansMapLoading) {
         return <Loader />;

@@ -14,6 +14,7 @@ export {
     type PlanToCheck,
     type PreloadedPaymentsContextType,
 } from './context/PaymentContext';
+export { default as useIsB2BTrial } from './hooks/useIsB2BTrial';
 export {
     PaymentsContextOptimisticProvider,
     usePaymentOptimistic,
