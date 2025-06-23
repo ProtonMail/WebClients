@@ -118,12 +118,6 @@ type PaymentFacadeProps = {
     subscription?: Subscription;
     forceInhouseSavedMethodProcessors?: boolean;
     disableNewPaymentMethods?: boolean;
-    onCurrencyChange?: (
-        currency: Currency,
-        context: {
-            paymentMethodType: PlainPaymentMethodType;
-        }
-    ) => void;
     onBeforeSepaPayment?: () => Promise<boolean>;
     planIDs?: PlanIDs;
 };
@@ -158,7 +152,6 @@ export const usePaymentFacade = ({
     subscription,
     forceInhouseSavedMethodProcessors,
     disableNewPaymentMethods,
-    onCurrencyChange,
     onBeforeSepaPayment,
     planIDs,
 }: PaymentFacadeProps) => {
@@ -224,6 +217,7 @@ export const usePaymentFacade = ({
                     return await onChargeable(operations, data);
                 } catch (error) {
                     reportPaymentFailure(data.paymentProcessorType);
+                    hook.reset();
                     throw error;
                 }
             },
@@ -231,7 +225,6 @@ export const usePaymentFacade = ({
             chargebeeUserExists,
             forceInhouseSavedMethodProcessors,
             disableNewPaymentMethods,
-            onCurrencyChange,
             user,
             subscription,
             enableSepa,

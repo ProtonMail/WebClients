@@ -31,10 +31,10 @@ import {
     PAYMENT_METHOD_TYPES,
     type PaymentMethodStatusExtended,
     type PlainPaymentMethodType,
+    getHasSomeVpnPlan,
     getPaymentsVersion,
     isFreeSubscription,
 } from '@proton/payments';
-import { getHasSomeVpnPlan } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

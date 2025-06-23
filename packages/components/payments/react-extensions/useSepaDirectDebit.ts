@@ -76,7 +76,6 @@ export type ChargebeeDirectDebitProcessorHook = Omit<PaymentProcessorHook, keyof
     setEmail: (email: string) => void;
     setCountryCode: (countryCode: string) => void;
     setAddressLine1: (addressLine1: string) => void;
-    reset: () => void;
     getFetchedPaymentToken: () => ChargebeeFetchedPaymentToken | null;
     errors: {
         companyError?: string;
