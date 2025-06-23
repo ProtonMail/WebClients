@@ -1,5 +1,10 @@
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
-import type { DateTimeModel, EventModel, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
+import type {
+    AttendeeModel,
+    DateTimeModel,
+    EventModel,
+    NotificationModel,
+} from '@proton/shared/lib/interfaces/calendar';
 
 const keys = [
     'title',
@@ -40,6 +45,21 @@ const getHasEditedNotification = (notification: NotificationModel, otherNotifica
     );
 };
 
+const getHasEditedAttendees = (attendees: AttendeeModel[], otherAttendees: AttendeeModel[]) => {
+    // If the number of attendees is different, it means they have been edited
+    if (attendees.length !== otherAttendees.length) {
+        return true;
+    }
+
+    // Compare each attendee's email to check if they have been modified
+    return attendees.some((attendee, index) => {
+        const otherAttendee = otherAttendees[index];
+
+        // Compare only email addresses
+        return attendee.email !== otherAttendee.email;
+    });
+};
+
 export const getHasEditedNotifications = (
     notifications: NotificationModel[],
     otherNotifications: NotificationModel[]
@@ -61,6 +81,7 @@ export const getHasDoneChanges = (model: EventModel, otherModel: EventModel, isE
     const hasEditedEndTimezone = getHasEditedTimezone(model.end, otherModel.end);
     const hasEditedStartDateTime = isEditMode && getHasEditedDateTime(model.start, otherModel.start);
     const hasEditedEndDateTime = isEditMode && getHasEditedDateTime(model.end, otherModel.end);
+    const hasEditedAttendees = getHasEditedAttendees(model.attendees, otherModel.attendees);
 
     return (
         hasEditedKeys ||
@@ -68,6 +89,7 @@ export const getHasDoneChanges = (model: EventModel, otherModel: EventModel, isE
         hasEditedStartTimezone ||
         hasEditedEndTimezone ||
         hasEditedStartDateTime ||
-        hasEditedEndDateTime
+        hasEditedEndDateTime ||
+        hasEditedAttendees
     );
 };
