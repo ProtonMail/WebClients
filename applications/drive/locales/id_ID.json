@@ -672,6 +672,9 @@
       "New shared album": [
         "Album terbagi baru"
       ],
+      "New spreadsheet": [
+        "Lembar kerja baru"
+      ],
       "Next": [
         "Selanjutnya"
       ],
@@ -857,6 +860,12 @@
       ],
       "Save photos and remove": [
         "Simpan foto dan hapus"
+      ],
+      "Scan & Download": [
+        "Pindai & Unduh"
+      ],
+      "Scan & Download (${ count })": [
+        "Pindai & Unduh (${ count })"
       ],
       "Search": [
         "Cari"
@@ -3188,8 +3197,14 @@
       "Failed to copy photo to album": [
         "Gagal menyalin foto ke album"
       ],
+      "Failed to create folder": [
+        "Folder gagal dibuat"
+      ],
       "Failed to load the STL preview": [
         "Pratinjau STL gagal dimuat"
+      ],
+      "Failed to move items": [
+        "Item gagal dipindahkan"
       ],
       "Failed to save some photos to your Drive": [
         "Sebagian foto gagal disimpan ke Drive Anda"
@@ -7264,10 +7279,10 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Impor semua pesan dari ${ itemsToImportCount } folder dan berikan label sebagai"
+        "Impor seluruh pesan dari ${ itemsToImportCount } folder dan labeli sebagai"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Impor semua pesan dari ${ itemsToImportCount } label dan berikan label sebagai"
+        "Impor seluruh pesan dari ${ itemsToImportCount } label dan labeli sebagai"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
         "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan labeli sebagai"
@@ -8757,6 +8772,9 @@
       "The link to your item was deleted": [
         "Tautan ke item Anda telah dihapus"
       ],
+      "The spreadsheet failed to be created": [
+        "Lembar kerja gagal dibuat"
+      ],
       "This item was not removed from your list": [
         "Beberapa item gagal dihapus dari daftar Anda"
       ],
@@ -10154,10 +10172,10 @@
         "Ditagihkan setiap 2 tahun"
       ],
       "Billed monthly": [
-        "Ditagih bulanan"
+        "Ditagihkan bulanan"
       ],
       "Billed yearly": [
-        "Ditagih setiap tahun"
+        "Ditagihkan tahunan"
       ]
     },
     "Subscription attribute": {
@@ -11552,6 +11570,9 @@
       ],
       "Untitled document ${ date }": [
         "Dokumen tak berjudul ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Lembar kerja tak berjudul ${ date }"
       ],
       "Upgrade complete!": [
         "Peningkatan selesai!"
