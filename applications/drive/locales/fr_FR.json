@@ -677,6 +677,9 @@
       "New shared album": [
         "Nouvel album partagé"
       ],
+      "New spreadsheet": [
+        "Nouvelle feuille de calcul"
+      ],
       "Next": [
         "Suivant"
       ],
@@ -3227,8 +3230,14 @@
       "Failed to copy photo to album": [
         "La copie de la photo dans l’album n'a pas abouti."
       ],
+      "Failed to create folder": [
+        "La création du dossier n'a pas abouti."
+      ],
       "Failed to load the STL preview": [
         "Le chargement de l’aperçu STL n'a pas abouti."
+      ],
+      "Failed to move items": [
+        "Les éléments n'ont pas été déplacés."
       ],
       "Failed to save some photos to your Drive": [
         "L'enregistrement de certaines photos dans votre Drive n'a pas abouti."
@@ -8931,6 +8940,9 @@
       "The link to your item was deleted": [
         "Le lien vers votre élément a été supprimé."
       ],
+      "The spreadsheet failed to be created": [
+        "La feuille de calcul n'a pas pu être créée."
+      ],
       "This item was not removed from your list": [
         "Cet élément n'a pas été retiré de votre liste.",
         "Certains éléments n'ont pas été retirés de votre liste."
@@ -11799,6 +11811,9 @@
       ],
       "Untitled document ${ date }": [
         "Document sans titre ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Feuille de calcul sans titre ${ date }"
       ],
       "Upgrade complete!": [
         "L'abonnement a été mis à jour."
