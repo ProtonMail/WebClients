@@ -5526,14 +5526,14 @@
         "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
         "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
       ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Esteu a punt de rebutjar la invitació per unir-vos a l'àlbum ${ invitationName }. Si continueu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Esteu a punt de rebutjar la invitació per unir-vos a l'àlbum ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Esteu a punt de rebutjar la invitació per unir-vos a la carpeta ${ invitationName }. Si continueu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Esteu a punt de rebutjar la invitació per unir-vos a la carpeta ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Esteu a punt de rebutjar la invitació per unir-vos a l'element ${ invitationName }. Si continueu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Esteu a punt de rebutjar la invitació per unir-vos a l'element ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Heu assolit el nombre màxim d'adreces en el grup o els grups de contactes:"
@@ -7914,6 +7914,9 @@
       ],
       "The link to your item was deleted": [
         "S'ha eliminat l'enllaç a l'element"
+      ],
+      "The spreadsheet failed to be created": [
+        "No s'ha pogut crear el full de càlcul."
       ],
       "Trash failed to be emptied": [
         "No s'ha pogut buidar la paperera."
