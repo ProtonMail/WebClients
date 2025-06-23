@@ -1,7 +1,11 @@
+import type { DesktopContextMenuItem } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
+
 import type { AutotypeProperties } from './autotype';
 
 export * from './autotype';
+
+export type ContextMenuItem = Omit<DesktopContextMenuItem, 'onSelected'>;
 
 export type ContextBridgeApi = {
     writeToClipboard: (text: string) => Promise<void>;
@@ -17,6 +21,7 @@ export type ContextBridgeApi = {
     getTheme: () => Promise<Maybe<DesktopTheme>>;
     setTheme: (theme: DesktopTheme) => Promise<void>;
     autotype: ({ fields, enterAtTheEnd }: AutotypeProperties) => Promise<void>;
+    openContextMenu: (items: ContextMenuItem[]) => Promise<number>;
 };
 
 export type DesktopTheme = 'dark' | 'light' | 'system';

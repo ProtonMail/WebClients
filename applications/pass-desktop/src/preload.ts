@@ -1,7 +1,7 @@
 import type { IPCChannelResult, IPCChannels } from 'applications/pass-desktop/src/lib/ipc';
 import { contextBridge, ipcRenderer } from 'electron';
 
-import type { ContextBridgeApi } from '@proton/pass/types';
+import type { ContextBridgeApi, ContextMenuItem } from '@proton/pass/types';
 import { disableMouseNavigation } from '@proton/shared/lib/desktop/disableMouseNavigation';
 
 const invoke = <T extends keyof IPCChannels, P extends IPCChannels[T]['args'], R extends IPCChannels[T]['result']>(
@@ -38,6 +38,9 @@ const contextBridgeApi: ContextBridgeApi = {
 
     /* autotype fields */
     autotype: (props) => invoke('autotype:execute', props),
+
+    /* context menus */
+    openContextMenu: (items: ContextMenuItem[]) => ipcRenderer.invoke('contextMenu:open', { items }),
 };
 
 contextBridge.exposeInMainWorld('ctxBridge', contextBridgeApi);

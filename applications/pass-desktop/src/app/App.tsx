@@ -23,7 +23,10 @@ import ModalsProvider from '@proton/components/containers/modals/Provider';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import InlineIcons from '@proton/icons/InlineIcons';
-import { ContextMenuProvider } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
+import {
+    ContextMenuProvider,
+    type DesktopContextMenuItem,
+} from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
@@ -125,13 +128,21 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     isFirstLaunch,
 });
 
+const openDesktopContextMenu = async (items: DesktopContextMenuItem[]) => {
+    // Make sure not to serialize onSelected
+    const electronMenuItems = items.map(({ label, type, role }) => ({ label, type, role }));
+    const selection = await window.ctxBridge?.openContextMenu(electronMenuItems);
+    if (selection === undefined || selection === -1) return;
+    await items[selection].onSelected?.();
+};
+
 export const App = () => {
     return (
         <PassCoreProvider {...getPassCoreProps()} wasm>
             <InlineIcons /> {/* Remove when enabling SRI in desktop */}
             <ErrorBoundary component={<StandardErrorPage big />}>
-                <ContextMenuProvider>
-                    <NotificationsProvider>
+                <NotificationsProvider>
+                    <ContextMenuProvider openDesktopContextMenu={openDesktopContextMenu}>
                         <ModalsProvider>
                             <PassExtensionLink>
                                 <ConnectivityProvider
@@ -162,8 +173,8 @@ export const App = () => {
                                 </ConnectivityProvider>
                             </PassExtensionLink>
                         </ModalsProvider>
-                    </NotificationsProvider>
-                </ContextMenuProvider>
+                    </ContextMenuProvider>
+                </NotificationsProvider>
             </ErrorBoundary>
         </PassCoreProvider>
     );
