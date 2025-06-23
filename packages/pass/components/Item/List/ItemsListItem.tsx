@@ -57,7 +57,7 @@ export const ItemsListItem = memo(
         const { heading, subheading } = presentListItem(item);
 
         const ref = useRef<HTMLAnchorElement>(null);
-        const contextMenuId = `item-${id}`;
+        const contextMenuId = `item-${itemId}`;
         const openContextMenu = useContextMenuOpen(contextMenuId);
 
         const share = useSelector(selectShare(shareId));
@@ -173,7 +173,7 @@ export const ItemsListItem = memo(
                         </div>
                     </div>
                 </ButtonLike>
-                <ItemsListContextMenu id={contextMenuId} anchorRef={ref} />
+                <ItemsListContextMenu id={contextMenuId} shareId={shareId} itemId={itemId} anchorRef={ref} />
             </div>
         );
     }
