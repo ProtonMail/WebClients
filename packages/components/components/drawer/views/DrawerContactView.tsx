@@ -115,7 +115,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                 id={`content-tab-${tab}`}
                 role="tabpanel"
                 aria-labelledby={`header-tab-${tab}`}
-                className="flex flex-1 h-full w-full mt-3"
+                className="flex flex-1 h-full w-full pt-3"
             >
                 {tabContent()}
             </div>
