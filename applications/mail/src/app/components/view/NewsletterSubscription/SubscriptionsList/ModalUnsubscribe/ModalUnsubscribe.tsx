@@ -3,19 +3,17 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ContactImage, type ModalProps, NotificationButton, Prompt, useNotifications } from '@proton/components';
+import { ContactImage, type ModalProps, Prompt, useNotifications } from '@proton/components';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import truncate from '@proton/utils/truncate';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
 import {
     filterSubscriptionList,
     unsubscribeSubscription,
     updateSubscription,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
-import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import { getUnsubscribeData, getUnsubscribeMethod } from '../../helper';
 import {
@@ -59,16 +57,7 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
 
             const truncatedName = truncate(subscription.Name.trim(), MAX_LENGTH_SUB_NAME);
             createNotification({
-                text: (
-                    <>
-                        <span>{c('Label').t`Unsubscribed from ${truncatedName}.`}</span>
-                        <NotificationButton
-                            onClick={() => {
-                                dispatch(newsletterSubscriptionsActions.setSelectedTab(SubscriptionTabs.Unsubscribe));
-                            }}
-                        >{c('Action').t`Undo`}</NotificationButton>
-                    </>
-                ),
+                text: c('Label').t`Unsubscribed from ${truncatedName}.`,
             });
         } else {
             if (unsubscribeMethod === UnsubscribeMethod.HttpClient) {
