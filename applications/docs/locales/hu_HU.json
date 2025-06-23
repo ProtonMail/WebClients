@@ -93,6 +93,9 @@
       "Apply": [
         "Alkalmazás"
       ],
+      "Ask me next time": [
+        "Kérdezze meg legközelebb"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Legfeljebb ${ maxContacts } névjegy lehet egy névjegy csoportban",
         "Legfeljebb ${ maxContacts } névjegy lehet egy névjegy csoportban"
@@ -680,6 +683,9 @@
       ],
       "Save changes": [
         "Módosítások mentése"
+      ],
+      "Save preferences": [
+        "Beállítások mentése"
       ],
       "Search": [
         "Keresés"
@@ -4400,6 +4406,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Névjegy a csoportból eltávolítva: ${ contactGroupName }"
       ],
+      "Converting document...": [
+        "Dokumentum konvertálása..."
+      ],
       "Copy the link to clipboard": [
         "Hivatkozás másolása a vágólapra"
       ],
@@ -4443,6 +4452,9 @@
       ],
       "Creating link to folder": [
         "Mappa hivatkozásának előkészítése"
+      ],
+      "Creating new document...": [
+        "Új dokumentum létrehozása..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit az előző csomag-feliratkozásának fel nem használt részéért"
@@ -4561,6 +4573,12 @@
       "Enter your own password (as organization admin).": [
         "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Hiba a dokumentum konvertálásakor: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Hiba történt a dokumentum betöltése során: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Szinkronizálás hiba"
       ],
@@ -4620,6 +4638,12 @@
       ],
       "Geoblocking": [
         "Földrajzi tiltás"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Kapjon e-mailben frissítéseket a dokumentumaihoz hozzáadott megjegyzésekről és javaslatokról."
+      ],
+      "Get Notified About Comments": [
+        "Értesítés megjegyzésekről"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Nyissa meg a ${ DRIVE_APP_NAME } alkalmazást"
@@ -4769,6 +4793,9 @@
       "Low Priority": [
         "Alacsony prioritású"
       ],
+      "Making a copy...": [
+        "Másolat készítése..."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard Biztonsági Kód logó"
       ],
@@ -4808,6 +4835,9 @@
       ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Nincs dokumentum a megadott URL-en. Térjen vissza a ${ DRIVE_APP_NAME } szolgáltatáshoz, és válasszon ki egy dokumentumot."
       ],
       "No email address": [
         "Nincs e-mail cím"
@@ -5151,6 +5181,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "A cím tulajdonosa letiltotta a végpontok közötti titkosítást. Ahhoz, hogy titkosított e-maileket tudjon küldeni erre a címre, a tulajdonosnak újra engedélyeznie kell a végpontok közti titkosítást."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Úgy tűnik, hogy a megadott URL-címet helytelenül másolta át a Slackből. Ha hosszú hivatkozásokat másol a Slackből, kattintson a jobb gombbal a hivatkozásra, majd válassza a „Hivatkozás másolása” lehetőséget, ahelyett, hogy közvetlenül a rövidített URL-címet másolná."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Az ellenőrzés egy új böngészőlapot nyit meg. Kérjük, kapcsolja ki a felugró ablakok letiltását."
       ],
@@ -5490,14 +5523,14 @@
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel."
       ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Ön most készül visszautasítani a ${ invitationName }albumhoz való csatlakozásra szóló meghívást. Ha folytatja, nem fog tudni hozzáférni, hacsak a tulajdonos nem hívja meg újra. Biztos, hogy folytatni szeretné?"
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Ön készül visszautasítani a ${ invitationName } albumhoz való csatlakozásra szóló meghívást. Ha folytatja, nem fog tudni hozzáférni, hacsak a tulajdonos nem hívja meg újra. Biztos, hogy folytatni szeretné?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "A ${ invitationName } mappához való csatlakozásra vonatkozó meghívást készül elutasítani. Ha folytatja, nem fog tudni hozzáférni, hacsak a tulajdonos nem hívja meg újra. Biztos, hogy folytatni szeretné?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "A ${ invitationName } elemhez való csatlakozásra szóló meghívást készül elutasítani. Ha folytatja, nem fog tudni hozzáférni, hacsak a tulajdonos nem hívja meg újra. Biztos benne, hogy folytatni szeretné?"
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "A(z) ${ invitationName } elemhez való csatlakozásra szóló meghívást készül elutasítani. Ha folytatja, nem fog tudni hozzáférni, hacsak a tulajdonos nem hívja meg újra. Biztos benne, hogy folytatni szeretné?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Elérte a névjegy csoport(ok)ban lehetséges címek maximális számát:"
@@ -5876,6 +5909,9 @@
       "Emails (last month)": [
         "E-mailek (utolsó hónap)"
       ],
+      "Enable email notifications": [
+        "E-mail értesítések engedélyezése"
+      ],
       "Encrypt emails": [
         "Üzenetek titkosítása"
       ],
@@ -5932,6 +5968,9 @@
       ],
       "Import to:": [
         "Importálás ide:"
+      ],
+      "Include document name in notification": [
+        "Dokumentum nevének feltüntetése az értesítésben"
       ],
       "Include message and file name in invite email": [
         "Üzenet és fájl név beleírása a meghívó e-mailbe"
@@ -7812,6 +7851,9 @@
       ],
       "The link to your item was deleted": [
         "A fájlra vonatkozó hivatkozás törölve"
+      ],
+      "The spreadsheet failed to be created": [
+        "A táblázat létrehozása nem sikerült"
       ],
       "Trash failed to be emptied": [
         "A lomtár ürítése nem sikerült"
@@ -10074,6 +10116,9 @@
       ],
       "Untitled document ${ date }": [
         "Névtelen dokumentum: ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Névtelen táblázat ${ date }"
       ],
       "Upgrade complete!": [
         "A verzió frissítése befejeződött!"
