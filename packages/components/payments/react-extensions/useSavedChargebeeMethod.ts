@@ -137,6 +137,7 @@ export const useSavedChargebeeMethod = (
         processPaymentToken,
         processingToken,
         paymentProcessor,
+        reset,
         meta: {
             type: 'saved-chargebee',
             data: savedMethod,

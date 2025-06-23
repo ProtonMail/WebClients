@@ -28,7 +28,6 @@ interface Dependencies {
 }
 
 export type PaypalProcessorHook = PaymentProcessorHook & {
-    reset: () => void;
     tokenFetched: boolean;
     verificationError: any;
     disabled: boolean;

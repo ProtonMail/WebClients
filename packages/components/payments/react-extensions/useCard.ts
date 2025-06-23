@@ -166,6 +166,7 @@ export const useCard = (
         paymentProcessor,
         processPaymentToken,
         processingToken,
+        reset,
         meta: {
             type: 'card',
         },

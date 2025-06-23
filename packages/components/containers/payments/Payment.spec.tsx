@@ -157,6 +157,7 @@ describe('Payment', () => {
                     } as any
                 }
                 savedPaymentMethods={[]}
+                isCurrencyOverriden={false}
             />
         );
     });
@@ -193,6 +194,7 @@ describe('Payment', () => {
                     } as any
                 }
                 savedPaymentMethods={[]}
+                isCurrencyOverriden={false}
             />
         );
 
@@ -269,6 +271,7 @@ describe('Payment', () => {
                     } as any
                 }
                 savedPaymentMethods={[]}
+                isCurrencyOverriden={false}
             />
         );
 
@@ -340,6 +343,7 @@ describe('Payment', () => {
                     } as any
                 }
                 savedPaymentMethods={[]}
+                isCurrencyOverriden={false}
             />
         );
 
