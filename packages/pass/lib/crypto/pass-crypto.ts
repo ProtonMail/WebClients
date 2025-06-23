@@ -1,11 +1,11 @@
 import { CryptoProxy } from '@proton/crypto';
-import { FILE_PUBLIC_SHARE } from '@proton/pass/constants';
+import { FILE_PENDING_SHARE, FILE_PUBLIC_SHARE } from '@proton/pass/constants';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { serializeShareManagers } from '@proton/pass/lib/crypto/utils/seralize';
 import type {
-    FileID,
+    FileIdentifier,
     PassCryptoManagerContext,
     PassCryptoWorker,
     SerializedCryptoContext,
@@ -48,8 +48,15 @@ function assertHydrated(ctx: PassCryptoManagerContext): asserts ctx is Required<
     }
 }
 
-export const intoFileUniqueID = (shareId: string, fileID: FileID, pending?: boolean) =>
-    `${shareId}::${fileID}` + (pending ? '::pending' : '');
+/** Generate a unique identifier for file keys in the crypto context.
+ * For pending files, we use a mock share ID (`FILE_PENDING_SHARE`) instead of
+ * the actual target share ID. This prevents coupling pending files to specific
+ * shares, allowing users to change the destination share during the upload
+ * process before the item is created. */
+export const intoFileUniqueID = (fileIdentifier: FileIdentifier) => {
+    const shareId = fileIdentifier.pending ? FILE_PENDING_SHARE : fileIdentifier.shareId;
+    return `${shareId}::${fileIdentifier.fileID}` + (fileIdentifier.pending ? '::pending' : '');
+};
 
 export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
     const context: PassCryptoManagerContext = {
@@ -442,32 +449,34 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
             });
         },
 
-        registerFileKey: ({ fileKey, fileID, shareId, pending }) => {
+        registerFileKey: ({ fileKey, ...fileIdentifier }) => {
             /** Do not assert context here, so it can be used in Secure Links */
+            const { fileID, pending = false } = fileIdentifier;
             logger.debug(`[PassCrypto] Registering file key ${logId(fileID)} [pending=${pending}]`);
-            context.fileKeys.set(intoFileUniqueID(shareId, fileID, pending), fileKey);
+            context.fileKeys.set(intoFileUniqueID(fileIdentifier), fileKey);
         },
 
-        unregisterFileKey: ({ fileID, shareId, pending }) => {
+        unregisterFileKey: (fileIdentifier) => {
+            const { fileID, pending = false } = fileIdentifier;
             logger.debug(`[PassCrypto] Unregistering file key ${logId(fileID)} [pending=${pending}]`);
-            context.fileKeys.delete(intoFileUniqueID(shareId, fileID, pending));
+            context.fileKeys.delete(intoFileUniqueID(fileIdentifier));
         },
 
-        getFileKey: ({ shareId, fileID, pending }) => {
-            const fileKey = context.fileKeys.get(intoFileUniqueID(shareId, fileID, pending));
-            if (!fileKey) throw new PassCryptoFileError(`Could not resolve file key for ${fileID}`);
+        getFileKey: (fileIdentifier) => {
+            const fileKey = context.fileKeys.get(intoFileUniqueID(fileIdentifier));
+            if (!fileKey) throw new PassCryptoFileError(`Could not resolve file key for ${fileIdentifier.fileID}`);
             return fileKey;
         },
 
-        async encryptFileKey({ itemKey, fileID, shareId, pending }) {
-            const fileKey = worker.getFileKey({ shareId, fileID, pending });
+        async encryptFileKey({ itemKey, ...fileIdentifier }) {
+            const fileKey = worker.getFileKey(fileIdentifier);
             return encryptData(itemKey.key, fileKey, PassEncryptionTag.FileKey);
         },
 
-        async createFileDescriptor({ metadata, fileID, shareId, encryptionVersion, pending }) {
+        async createFileDescriptor({ metadata, encryptionVersion, ...fileIdentifier }) {
             assertHydrated(context);
 
-            const fileKey = fileID ? worker.getFileKey({ shareId, fileID, pending }) : undefined;
+            const fileKey = fileIdentifier.fileID ? worker.getFileKey(fileIdentifier) : undefined;
             return processes.createFileDescriptor(metadata, encryptionVersion, fileKey);
         },
 
@@ -481,16 +490,16 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
                 file.EncryptionVersion ?? 1
             );
 
-            worker.registerFileKey({ fileKey, fileID: file.FileID, shareId, pending: false });
+            worker.registerFileKey({ fileKey, fileID: file.FileID, shareId });
             return metadata;
         },
 
-        async createFileChunk({ chunk, chunkIndex, encryptionVersion, totalChunks, fileID, shareId }) {
+        async createFileChunk({ chunk, chunkIndex, encryptionVersion, totalChunks, fileID }) {
             assertHydrated(context);
 
             if (chunk.size === 0) throw new PassCryptoFileError('File cannot be empty');
 
-            const fileKey = worker.getFileKey({ shareId, fileID, pending: true });
+            const fileKey = worker.getFileKey({ fileID, pending: true });
             return processes.createFileChunk(chunk, chunkIndex, totalChunks, fileKey, encryptionVersion);
         },
 
@@ -498,7 +507,7 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
             /** Do not assert context here, so it can be used in Secure Links */
             if (chunk.byteLength === 0) throw new PassCryptoFileError('Encrypted chunk cannot be empty');
 
-            const fileKey = worker.getFileKey({ shareId, fileID, pending: false });
+            const fileKey = worker.getFileKey({ shareId, fileID });
             return processes.openFileChunk(chunk, chunkIndex, totalChunks, fileKey, encryptionVersion);
         },
 
@@ -535,7 +544,7 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
                 linkKey,
             });
 
-            worker.registerFileKey({ fileKey, fileID, shareId: FILE_PUBLIC_SHARE, pending: false });
+            worker.registerFileKey({ fileKey, fileID, shareId: FILE_PUBLIC_SHARE });
 
             return metadata;
         },

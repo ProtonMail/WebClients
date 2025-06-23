@@ -45,8 +45,7 @@ const initiateUpload = createRequestSaga({
         const fileDescriptor = await PassCrypto.createFileDescriptor({
             encryptionVersion,
             metadata: encodedMetadata,
-            fileID: undefined,
-            shareId,
+            fileID: '', // empty `fileID` will force create/register the `fileKey`
             pending: true,
         });
 
@@ -57,7 +56,6 @@ const initiateUpload = createRequestSaga({
         );
 
         PassCrypto.registerFileKey({
-            shareId,
             fileID,
             fileKey: fileDescriptor.fileKey,
             pending: true,
@@ -102,14 +100,14 @@ const uploadChunk = createRequestSaga({
 
             return true;
         } catch (err) {
-            PassCrypto.unregisterFileKey({ fileID, shareId, pending: true });
+            PassCrypto.unregisterFileKey({ fileID, pending: true });
             throw err;
         } finally {
             /** Delete chunk whenever we exit from this generator */
             if (payload.type === 'storage') fileStorage.deleteFile(payload.ref).catch(noop);
             if (yield cancelled()) {
                 ctrl.abort('Operation cancelled');
-                PassCrypto.unregisterFileKey({ fileID, shareId, pending: true });
+                PassCrypto.unregisterFileKey({ fileID, pending: true });
             }
         }
     },
@@ -181,10 +179,8 @@ const updateMetadata = createRequestSaga({
 
         const fileDescriptor = await PassCrypto.createFileDescriptor({
             encryptionVersion,
-            fileID,
             metadata: encodedMetadata,
-            shareId,
-            pending,
+            ...(pending ? { pending, fileID } : { pending: false, shareId, fileID }),
         });
 
         const metadata = uint8ArrayToBase64String(fileDescriptor.metadata);

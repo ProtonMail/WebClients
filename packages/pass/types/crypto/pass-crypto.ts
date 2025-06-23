@@ -21,7 +21,7 @@ import type { ShareRole, ShareType } from '@proton/pass/types/data/shares';
 import type { MaybeNull } from '@proton/pass/types/utils';
 import type { Address, DecryptedAddressKey, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 
-import type { FileID } from '@proton/pass/types/data';
+import type { FileID, FileIdentifier } from '@proton/pass/types/data';
 import type {
     InviteTargetKey,
     ItemId,
@@ -103,14 +103,9 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         inviteKey: KeyRotationKeyPair;
         inviterPublicKeys: string[];
     }) => Promise<Uint8Array>;
-
-    createFileDescriptor: (data: {
-        encryptionVersion: number;
-        fileID?: FileID;
-        metadata: Uint8Array;
-        pending: boolean;
-        shareId: ShareId;
-    }) => Promise<FileDescriptorProcessResult>;
+    createFileDescriptor: (
+        data: FileIdentifier & { encryptionVersion: number; metadata: Uint8Array }
+    ) => Promise<FileDescriptorProcessResult>;
     openFileDescriptor: (data: { file: ItemFileOutput; itemKey: ItemKey; shareId: ShareId }) => Promise<Uint8Array>;
     createFileChunk: (data: {
         chunk: Blob;
@@ -128,16 +123,10 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         shareId: ShareId;
         totalChunks: number;
     }) => Promise<Uint8Array>;
-    registerFileKey: (data: { fileKey: Uint8Array; fileID: FileID; shareId: ShareId; pending: boolean }) => void;
-    unregisterFileKey: (data: { fileID: FileID; shareId: ShareId; pending: boolean }) => void;
-    getFileKey: (data: { shareId: ShareId; fileID: FileID; pending: boolean }) => Uint8Array;
-    encryptFileKey: (data: {
-        fileID: FileID;
-        itemKey: ItemKey;
-        shareId: ShareId;
-        pending: boolean;
-    }) => Promise<Uint8Array>;
-
+    registerFileKey: (data: FileIdentifier & { fileKey: Uint8Array }) => void;
+    unregisterFileKey: (data: FileIdentifier) => void;
+    getFileKey: (data: FileIdentifier) => Uint8Array;
+    encryptFileKey: (data: FileIdentifier & { itemKey: ItemKey }) => Promise<Uint8Array>;
     createSecureLink: (data: { itemKey: ItemKey }) => Promise<CreateSecureLinkData>;
     openSecureLink: (data: { linkKey: string; publicLinkContent: PublicLinkGetContentResponse }) => Promise<Uint8Array>;
     openLinkKey: (data: {

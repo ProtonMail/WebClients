@@ -94,7 +94,7 @@ export const restoreSingleFile = async (
             method: 'post',
             data: {
                 FileKey: uint8ArrayToBase64String(
-                    await PassCrypto.encryptFileKey({ fileID: fileId, itemKey, shareId, pending: false })
+                    await PassCrypto.encryptFileKey({ fileID: fileId, itemKey, shareId })
                 ),
                 ItemKeyRotation: itemKey.rotation,
             },
@@ -112,9 +112,7 @@ export const restoreRevisionFiles = async (
                 FilesToRestore: await Promise.all(
                     dto.toRestore.map(async (fileID) => ({
                         FileID: fileID,
-                        FileKey: uint8ArrayToBase64String(
-                            await PassCrypto.encryptFileKey({ ...dto, fileID, pending: false })
-                        ),
+                        FileKey: uint8ArrayToBase64String(await PassCrypto.encryptFileKey({ ...dto, fileID })),
                     }))
                 ),
                 ItemKeyRotation: dto.itemKey.rotation,
@@ -136,7 +134,6 @@ export const linkPendingFiles = async <T extends ItemType>(dto: ItemRevisionLink
                             await PassCrypto.encryptFileKey({
                                 fileID: FileID,
                                 itemKey,
-                                shareId,
                                 pending: true,
                             })
                         ),
@@ -188,7 +185,7 @@ export const linkPendingFiles = async <T extends ItemType>(dto: ItemRevisionLink
         return await parseItemRevision<T>(dto.shareId, encryptedItem);
     } finally {
         /** Unregister pending file keys when linking completes */
-        files.toAdd.forEach((fileID) => PassCrypto.unregisterFileKey({ fileID, shareId, pending: true }));
+        files.toAdd.forEach((fileID) => PassCrypto.unregisterFileKey({ fileID, pending: true }));
     }
 };
 

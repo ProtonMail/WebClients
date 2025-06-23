@@ -76,3 +76,5 @@ export type FilesMetadataEditSuccess = BaseFileDescriptor & Partial<SelectedItem
 
 export type FileTransferWriteDTO = { fileRef: string; b64: string };
 export type FileTransferErrorDTO = { fileRef: string };
+
+export type FileIdentifier = { fileID: FileID } & ({ pending?: false; shareId: ShareId } | { pending: true });
