@@ -1,6 +1,5 @@
 import type { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
@@ -70,7 +69,6 @@ import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helper
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
@@ -101,6 +99,7 @@ import type { Background } from './Layout';
 import Layout from './Layout';
 import PaymentSummary from './PaymentSummary';
 import RightPlanSummary from './RightPlanSummaryB';
+import SignIntoLink from './SignIntoLink';
 import UpsellModal from './UpsellModal';
 import VPNPassUpsellToggle from './VPNPassUpsellButton';
 import swissFlag from './flag.svg';
@@ -1003,37 +1002,7 @@ const Step1B = ({
         return;
     })();
 
-    const signInTo = {
-        pathname: `/dashboard${stringifySearchParams(
-            {
-                plan: options.plan.Name,
-                cycle: `${options.cycle}`,
-                currency: options.currency,
-                coupon: options.checkResult.Coupon?.Code,
-                type: 'offer',
-                ref: 'signup',
-            },
-            '?'
-        )}`,
-    } as const;
-
-    const signIn = (
-        <Link
-            key="signin"
-            className="link link-focus text-nowrap"
-            to={signInTo}
-            onClick={() =>
-                measure({
-                    event: TelemetryAccountSignupEvents.userSignIn,
-                    dimensions: {
-                        location: 'step2',
-                    },
-                })
-            }
-        >
-            {c('Link').t`Sign in`}
-        </Link>
-    );
+    const signIn = <SignIntoLink key="sign-in" options={options} measure={measure} details={undefined} />;
 
     const signInText = (
         <div className="text-center color-norm">
