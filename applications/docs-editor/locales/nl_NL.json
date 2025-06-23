@@ -689,54 +689,135 @@
         "Afbeelding invoegen over cellen"
       ]
     },
-    "sheets_2025:Spreadsheet editor toolbar": {
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Door komma's gescheiden waarden (.csv)"
+      ],
+      "Download": [
+        "Download"
+      ],
+      "Download logs": [
+        "Logboeken downloaden"
+      ],
+      "Help": [
+        "Hulp"
+      ],
+      "Import": [
+        "Importeer"
+      ],
+      "Make a copy": [
+        "Een kopie maken"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Naar map verplaatsen"
+      ],
+      "Move to trash": [
+        "Verplaats naar prullenbak"
+      ],
+      "New spreadsheet": [
+        "Nieuwe spreadsheet"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Open ${ DRIVE_APP_NAME }"
+      ],
+      "Print": [
+        "Afdrukken"
+      ],
+      "See version history": [
+        "Versiegeschiedenis bekijken"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Door tabs gescheiden waarden (.tsv)"
+      ],
+      "View recent spreadsheets": [
+        "Recente spreadsheets weergeven"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
       "Cells": [
         "Cellen"
       ],
       "Chart": [
         "Grafiek"
       ],
-      "Clear formatting": [
-        "Opmaak wissen"
-      ],
       "Columns": [
         "Kolommen"
       ],
-      "Insert": [
-        "Invoegen"
+      "Insert 1 column left": [
+        "1 kolom links invoegen"
+      ],
+      "Insert 1 column right": [
+        "1 kolom rechts invoegen"
+      ],
+      "Insert 1 row above": [
+        "1 rij erboven invoegen"
+      ],
+      "Insert 1 row below": [
+        "1 rij eronder invoegen"
       ],
       "Insert cells and shift down": [
-        "Cellen invoegen en naar beneden verschuiven"
+        "Cellen invoegen en omlaag verschuiven"
       ],
       "Insert cells and shift right": [
         "Cellen invoegen en naar rechts verschuiven"
       ],
-      "Insert one column left": [
-        "Eén kolom links invoegen"
-      ],
-      "Insert one column right": [
-        "Eén kolom rechts invoegen"
-      ],
-      "Insert one row above": [
-        "Eén rij boven invoegen"
-      ],
-      "Insert one row below": [
-        "Eén rij onder invoegen"
-      ],
       "Note": [
         "Notitie"
-      ],
-      "Redo": [
-        "Opnieuw uitvoeren"
       ],
       "Rows": [
         "Rijen"
       ],
+      "Sheet": [
+        "Blad"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "File": [
+        "Bestand"
+      ],
+      "Insert": [
+        "Invoegen"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Vet"
+      ],
+      "Clear formatting": [
+        "Opmaak wissen"
+      ],
+      "Decrease decimal places": [
+        "Aantal decimalen verkleinen"
+      ],
+      "Default (${ defaultFont })": [
+        "Standaard (${ defaultFont })"
+      ],
+      "Format as currency": [
+        "Opmaak als valuta"
+      ],
+      "Format as percent": [
+        "Opmaak als percentage"
+      ],
+      "Increase decimal places": [
+        "Aantal decimalen vergroten"
+      ],
+      "Italic": [
+        "Schuin"
+      ],
+      "Redo": [
+        "Opnieuw uitvoeren"
+      ],
       "Search": [
         "Zoeken"
       ],
-      "Sheet": [
-        "Blad"
+      "Strikethrough": [
+        "Doorstrepen"
+      ],
+      "Underline": [
+        "Onderstreept"
       ],
       "Undo": [
         "Ongedaan maken"
