@@ -5542,14 +5542,14 @@
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois.",
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
       ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Vous êtes sur le point de refuser l'invitation à rejoindre l'album ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite de nouveau. Voulez-vous vraiment continuer ?"
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Vous êtes sur le point de refuser l'invitation à rejoindre l'album ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite de nouveau. Voulez-vous vraiment continuer ?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Vous êtes sur le point de refuser l'invitation à rejoindre le dossier ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite de nouveau. Voulez-vous vraiment continuer ?"
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Vous êtes sur le point de refuser l'invitation à rejoindre le dossier ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite de nouveau. Voulez-vous vraiment continuer ?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Vous êtes sur le point de refuser l'invitation à rejoindre l'élément ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite de nouveau. Voulez-vous vraiment continuer ?"
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Vous êtes sur le point de refuser l'invitation à rejoindre l'élément ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite de nouveau. Voulez-vous vraiment continuer ?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Vous avez atteint le nombre maximum d'adresses dans le ou les groupes de contacts :"
@@ -7931,6 +7931,9 @@
       "The link to your item was deleted": [
         "Le lien vers votre élément a été supprimé."
       ],
+      "The spreadsheet failed to be created": [
+        "La feuille de calcul n'a pas pu être créée."
+      ],
       "Trash failed to be emptied": [
         "Le dossier Corbeille n'a pas pu être vidé."
       ],
@@ -8894,6 +8897,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Création de la nouvelle feuille de calcul..."
+      ],
       "Detect automatically": [
         "Détecter automatiquement"
       ],

@@ -93,6 +93,9 @@
       "Apply": [
         "გადატარება"
       ],
+      "Ask me next time": [
+        "მკითხე შემდეგ ჯერზე"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
@@ -681,6 +684,9 @@
       "Save changes": [
         "ცვლილებების შენახვა"
       ],
+      "Save preferences": [
+        "პარამეტრების შენახვა"
+      ],
       "Search": [
         "ძებნა"
       ],
@@ -867,6 +873,10 @@
       "View": [
         "ნახვა"
       ],
+      "View ${ pendingCount } invitation": [
+        "${ pendingCount } მოსაწვევის ნახვა",
+        "${ pendingCount } მოსაწვევის ნახვა"
+      ],
       "View all reports": [
         "ყველა ანგარიშის ნახვა"
       ],
@@ -946,6 +956,105 @@
       ],
       "By leaving now, some events may not be imported": [
         "თუ ახლა გახვალთ, ზოგი მოვლენა შეიძლება შემოტანილი არ იყოს"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "200 GB storage": [
+        "200 გბ საცავი"
+      ],
+      "500 GB encrypted storage": [
+        "500 გბ დაშიფრული საცავი"
+      ],
+      "Add unlimited credit cards": [
+        "დაამატეთ განუსაზღვრელი რაოდენობის საკრედიტო ბარათი"
+      ],
+      "Block ads, trackers, and malware": [
+        "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+      ],
+      "Encrypted password manager": [
+        "დაშიფრული პაროლების მმართველი"
+      ],
+      "High speed streaming with VPN": [
+        "ჩქაროსნული სტრიმინგი VPN-ით"
+      ],
+      "of privacy": [
+        "კონფიდენციალობა"
+      ],
+      "Online document editor": [
+        "დოკუმენტების რედაქტორი ინტერნეტში"
+      ],
+      "Online privacy for up to 2 people": [
+        "ინტერნეტკონფიდენციალობა ორამდე ადამიანისთვის"
+      ],
+      "Protect up to 10 devices": [
+        "დაიცავით 10-მდე მოწყობილობა"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
+      "Save time with built-in 2FA": [
+        "დაზოგეთ დრო ჩაშენებული 2FA-ით"
+      ],
+      "Secure email with unlimited aliases": [
+        "დაცული ელფოსტა შეუზღუდავი ფსევდონიმების რაოდენობით"
+      ],
+      "Select any server": [
+        "აირჩიეთ ნებისმიერი სერვერი"
+      ],
+      "Share passwords easily": [
+        "გააზიარეთ პაროლები ადვილად"
+      ],
+      "Short @pm.me address": [
+        "მოკლე @pm.me მისამართი"
+      ],
+      "Stream your favorite content": [
+        "დასტრიმეთ თქვენი რჩეული შემცველობა"
+      ],
+      "thanks to you": [
+        "მადლობა"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
+      ],
+      "years": [
+        "წელი"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "საიუბილეო შეთავაზება"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "/ month": [
+        "/ თვეში"
+      ],
+      "12 months": [
+        "12 თვე"
+      ],
+      "15 months": [
+        "15 თვე"
+      ],
+      "24 months": [
+        "24 თვე"
+      ],
+      "30 months": [
+        "30 თვე"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal }-სთვის"
       ]
     },
     "Apps dropdown": {
@@ -4222,6 +4331,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "კონტაქტი მოხსნილია ჯგუფიდან ${ contactGroupName }"
       ],
+      "Converting document...": [
+        "დოკუმენტის გადაყვანა..."
+      ],
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
       ],
@@ -4265,6 +4377,9 @@
       ],
       "Creating link to folder": [
         "საქაღალდემდე ბმულის შექმნა"
+      ],
+      "Creating new document...": [
+        "ახალი დოკუმენტის შექმნა..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
@@ -4443,6 +4558,9 @@
       "Geoblocking": [
         "გეოდაბლოკვა"
       ],
+      "Get Notified About Comments": [
+        "გაფრთხილებების მიღება კომენტარების შესახებ"
+      ],
       "Go to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }-ზე გადასვლა"
       ],
@@ -4584,6 +4702,9 @@
       ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
+      ],
+      "Making a copy...": [
+        "ასლის შექმნა..."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
@@ -5646,6 +5767,9 @@
       ],
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
+      ],
+      "Enable email notifications": [
+        "ელფოსტის გაფრთხილებების ჩართვა"
       ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
@@ -9802,6 +9926,9 @@
       ],
       "Untitled document ${ date }": [
         "უსათაურო დოკუმენტი ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "უსათაურო ელცხრილი ${ date }"
       ],
       "Upgrade complete!": [
         "განახლება დასრულებულია!"
