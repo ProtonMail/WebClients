@@ -2,6 +2,7 @@ import { type ReactNode, useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button, Href } from '@proton/atoms';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -9,7 +10,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Time from '@proton/components/components/time/Time';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { useIsB2BTrial } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
 import helpSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-help.svg';
 import hourglassSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-hourglass.svg';
@@ -93,8 +94,9 @@ const TrialFeature = ({ description, imgSrc }: { description: ReactNode; imgSrc:
 
 const OnboardingTrialStep = ({ onNext }: Props) => {
     const [subscription] = useSubscription();
+    const [organization] = useOrganization();
 
-    const isB2BTrial = useIsB2BTrial(subscription);
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
 
     const trialEndsOn = subscription?.PeriodEnd;
     const planTitle = subscription?.Plans?.[0]?.Title;

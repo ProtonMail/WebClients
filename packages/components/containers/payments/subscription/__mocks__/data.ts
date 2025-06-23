@@ -605,6 +605,7 @@ export const organization = {
     MaxMembers: 5,
     Settings: {},
     State: ORGANIZATION_STATE.ACTIVE,
+    IsBusiness: false,
 } as OrganizationExtended;
 
 export const vpnServersCount = {
