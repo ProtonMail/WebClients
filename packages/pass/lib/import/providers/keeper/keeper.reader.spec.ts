@@ -3,7 +3,7 @@ import fs from 'fs';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent, ItemType } from '@proton/pass/types';
-import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
+import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
 import * as epochUtils from '@proton/pass/utils/time/epoch';
 
 import { readKeeperData } from './keeper.reader';

@@ -12,8 +12,7 @@ import type {
     Maybe,
     MaybeNull,
 } from '@proton/pass/types';
-import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
-import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
+import { CardType, WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';

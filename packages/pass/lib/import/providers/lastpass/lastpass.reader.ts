@@ -15,7 +15,7 @@ import {
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent } from '@proton/pass/types';
-import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
+import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { logger } from '@proton/pass/utils/logger';
 import capitalize from '@proton/utils/capitalize';

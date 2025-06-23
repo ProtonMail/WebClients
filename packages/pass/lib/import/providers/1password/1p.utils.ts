@@ -9,7 +9,7 @@ import type {
     Maybe,
     MaybeNull,
 } from '@proton/pass/types';
-import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
+import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { objectKeys } from '@proton/pass/utils/object/generic';
