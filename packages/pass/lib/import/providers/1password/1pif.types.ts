@@ -1,4 +1,4 @@
-import type { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
+import type { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
 
 import type { OnePassFieldType, OnePassLoginDesignation } from './1pux.types';
 

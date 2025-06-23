@@ -8,7 +8,7 @@ import type {
 import type { ExtractKeysOfType } from '@proton/pass/types/utils';
 
 import type { ItemCustomType } from '@proton/pass/types/protobuf';
-import type { WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
+import type { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
 import type { CustomSectionGroupValues, ExtraFieldGroupValues, UrlGroupValues } from './fields';
 
 export type BaseItemValues = {
