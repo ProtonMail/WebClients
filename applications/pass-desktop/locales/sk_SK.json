@@ -2032,12 +2032,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
-      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -3321,9 +3315,6 @@
       "Modified": [
         "Upravené"
       ],
-      "More": [
-        "Viac"
-      ],
       "More than a month": [
         "Viac než mesiac"
       ],
@@ -3401,6 +3392,9 @@
       ],
       "Organization": [
         "Organizácia"
+      ],
+      "Other": [
+        "Iné"
       ],
       "Owner": [
         "Vlastník"
@@ -4841,11 +4835,6 @@
       ],
       "URL is invalid": [
         "URL je neplatná"
-      ]
-    },
-    "Vault Select": {
-      "Move items to": [
-        "Presunúť položky do"
       ]
     },
     "Warning": {

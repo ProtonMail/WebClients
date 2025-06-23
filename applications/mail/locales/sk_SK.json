@@ -7312,7 +7312,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9447,12 +9450,6 @@
       ],
       "Move to Inbox": [
         "Presunúť do Doručených"
-      ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "${ count } správa presunutá do ${ selectedFolder.Name }",
-        "${ count } správy presunuté do ${ selectedFolder.Name }",
-        "${ count } správ presunutých do ${ selectedFolder.Name }",
-        "${ count } správ presunutých do ${ selectedFolder.Name }"
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } správa presunutá do Archívu",

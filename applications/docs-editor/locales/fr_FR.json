@@ -689,21 +689,74 @@
         "Insérer une image sur les cellules"
       ]
     },
-    "sheets_2025:Spreadsheet editor toolbar": {
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Valeurs séparées par des virgules (.csv)"
+      ],
+      "Download": [
+        "Téléchargez"
+      ],
+      "Download logs": [
+        "Télécharger les journaux"
+      ],
+      "Help": [
+        "Aide"
+      ],
+      "Import": [
+        "Importer"
+      ],
+      "Make a copy": [
+        "Faire une copie"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Déplacer vers un dossier"
+      ],
+      "Move to trash": [
+        "Déplacer vers la corbeille"
+      ],
+      "New spreadsheet": [
+        "Nouveau classeur"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Ouvrir ${ DRIVE_APP_NAME }"
+      ],
+      "Print": [
+        "Imprimer"
+      ],
+      "See version history": [
+        "Afficher l'historique des versions"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Valeurs séparées par des tabulations (.tsv)"
+      ],
+      "View recent spreadsheets": [
+        "Afficher les classeurs récents"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
       "Cells": [
         "Cellules"
       ],
       "Chart": [
         "Graphique"
       ],
-      "Clear formatting": [
-        "Effacer la mise en forme"
-      ],
       "Columns": [
         "Colonnes"
       ],
-      "Insert": [
-        "Insérer"
+      "Insert 1 column left": [
+        "Insérer 1 colonne à gauche"
+      ],
+      "Insert 1 column right": [
+        "Insérer 1 colonne à droite"
+      ],
+      "Insert 1 row above": [
+        "Insérer 1 ligne au-dessus"
+      ],
+      "Insert 1 row below": [
+        "Insérer 1 ligne en dessous"
       ],
       "Insert cells and shift down": [
         "Insérer des cellules et décaler vers le bas"
@@ -711,32 +764,60 @@
       "Insert cells and shift right": [
         "Insérer des cellules et décaler vers la droite"
       ],
-      "Insert one column left": [
-        "Insérer une colonne à gauche"
-      ],
-      "Insert one column right": [
-        "Insérer une colonne à droite"
-      ],
-      "Insert one row above": [
-        "Insérer une ligne au-dessus"
-      ],
-      "Insert one row below": [
-        "Insérer une ligne en dessous"
-      ],
       "Note": [
         "Note"
-      ],
-      "Redo": [
-        "Rétablir"
       ],
       "Rows": [
         "Lignes"
       ],
+      "Sheet": [
+        "Feuille"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "File": [
+        "Fichier"
+      ],
+      "Insert": [
+        "Insérer"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Gras"
+      ],
+      "Clear formatting": [
+        "Effacer la mise en forme"
+      ],
+      "Decrease decimal places": [
+        "Diminuer les décimales"
+      ],
+      "Default (${ defaultFont })": [
+        "Par défaut (${ defaultFont })"
+      ],
+      "Format as currency": [
+        "Mettre au format monétaire"
+      ],
+      "Format as percent": [
+        "Mettre au format pourcentage"
+      ],
+      "Increase decimal places": [
+        "Augmenter les décimales"
+      ],
+      "Italic": [
+        "Italique"
+      ],
+      "Redo": [
+        "Rétablir"
+      ],
       "Search": [
         "Rechercher"
       ],
-      "Sheet": [
-        "Feuille"
+      "Strikethrough": [
+        "Barré"
+      ],
+      "Underline": [
+        "Souligner"
       ],
       "Undo": [
         "Annuler"

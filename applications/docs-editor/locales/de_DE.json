@@ -689,21 +689,74 @@
         "Bild über Zellen einfügen"
       ]
     },
-    "sheets_2025:Spreadsheet editor toolbar": {
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Kommagetrennte Werte (.csv)"
+      ],
+      "Download": [
+        "Herunterladen"
+      ],
+      "Download logs": [
+        "Protokolle herunterladen"
+      ],
+      "Help": [
+        "Hilfe"
+      ],
+      "Import": [
+        "Importieren"
+      ],
+      "Make a copy": [
+        "Erstelle eine Kopie"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "In Ordner verschieben"
+      ],
+      "Move to trash": [
+        "In Papierkorb verschieben"
+      ],
+      "New spreadsheet": [
+        "Neue Tabelle"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } öffnen"
+      ],
+      "Print": [
+        "Drucken"
+      ],
+      "See version history": [
+        "Versionsverlauf anzeigen"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tabulatorgetrennte Werte (.tsv)"
+      ],
+      "View recent spreadsheets": [
+        "Kürzlich geöffnete Tabellen anzeigen"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
       "Cells": [
         "Zellen"
       ],
       "Chart": [
         "Diagramm"
       ],
-      "Clear formatting": [
-        "Formatierung löschen"
-      ],
       "Columns": [
         "Spalten"
       ],
-      "Insert": [
-        "Einfügen"
+      "Insert 1 column left": [
+        "1 Spalte links einfügen"
+      ],
+      "Insert 1 column right": [
+        "1 Spalte rechts einfügen"
+      ],
+      "Insert 1 row above": [
+        "1 Zeile darüber einfügen"
+      ],
+      "Insert 1 row below": [
+        "1 Zeile darunter einfügen"
       ],
       "Insert cells and shift down": [
         "Zellen einfügen und nach unten verschieben"
@@ -711,32 +764,60 @@
       "Insert cells and shift right": [
         "Zellen einfügen und nach rechts verschieben"
       ],
-      "Insert one column left": [
-        "Eine Spalte links einfügen"
-      ],
-      "Insert one column right": [
-        "Eine Spalte rechts einfügen"
-      ],
-      "Insert one row above": [
-        "Eine Zeile darüber einfügen"
-      ],
-      "Insert one row below": [
-        "Eine Zeile darunter einfügen"
-      ],
       "Note": [
-        "Notiz"
-      ],
-      "Redo": [
-        "Wiederherstellen"
+        "Hinweis"
       ],
       "Rows": [
         "Zeilen"
       ],
+      "Sheet": [
+        "Arbeitsblatt"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "File": [
+        "Datei"
+      ],
+      "Insert": [
+        "Einfügen"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Fett"
+      ],
+      "Clear formatting": [
+        "Formatierung löschen"
+      ],
+      "Decrease decimal places": [
+        "Dezimalstellen verringern"
+      ],
+      "Default (${ defaultFont })": [
+        "Standard (${ defaultFont })"
+      ],
+      "Format as currency": [
+        "Als Währung formatieren"
+      ],
+      "Format as percent": [
+        "Als Prozent formatieren"
+      ],
+      "Increase decimal places": [
+        "Dezimalstellen erhöhen"
+      ],
+      "Italic": [
+        "Kursiv"
+      ],
+      "Redo": [
+        "Wiederherstellen"
+      ],
       "Search": [
         "Suchen"
       ],
-      "Sheet": [
-        "Tabellenblatt"
+      "Strikethrough": [
+        "Durchstreichen"
+      ],
+      "Underline": [
+        "Unterstreichen"
       ],
       "Undo": [
         "Rückgängig machen"

@@ -6510,7 +6510,7 @@
         "Er is een onbekende openbare sleutel gevonden voor deze ontvanger."
       ],
       "An unsubscribe email will be sent on your behalf.": [
-        "Er wordt namens u een afmeld e-mail verzonden."
+        "Er wordt namens u een afmeld-e-mail verzonden."
       ],
       "and": [
         "en"
@@ -7112,7 +7112,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -8165,9 +8166,6 @@
       "We could not verify the sender's trusted keys.": [
         "We kunnen de vertrouwde sleutels van de afzender niet controleren."
       ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "We konden geen afmeldoptie vinden voor deze nieuwsbrief. U kunt zich mogelijk afmelden via een koppeling in hun e-mail of vanaf hun website."
-      ],
       "We couldn’t process your payment.": [
         "We konden uw betaling niet verwerken."
       ],
@@ -9188,10 +9186,6 @@
       ],
       "Move to Inbox": [
         "Verplaats naar inbox"
-      ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "${ count } bericht verplaatst naar ${ selectedFolder.Name }.",
-        "${ count } berichten verplaatst naar ${ selectedFolder.Name }."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } bericht verplaatst naar Archief.",

@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "აღდგენის ფრაზის გამორთვა?"
       ],
+      "Disable security events": [
+        "უსაფრთხოების მოვლენების გამორთვა"
+      ],
       "Discard": [
         "მოცილება"
       ],
@@ -1543,6 +1546,9 @@
       "What do I get?": [
         "რას მივიღებ?"
       ],
+      "Wipe": [
+        "წაშლა"
+      ],
       "Yes": [
         "დიახ"
       ],
@@ -1751,6 +1757,105 @@
       ],
       "New email": [
         "ახალი ელფოსტა"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "200 GB storage": [
+        "200 გბ საცავი"
+      ],
+      "500 GB encrypted storage": [
+        "500 გბ დაშიფრული საცავი"
+      ],
+      "Add unlimited credit cards": [
+        "დაამატეთ განუსაზღვრელი რაოდენობის საკრედიტო ბარათი"
+      ],
+      "Block ads, trackers, and malware": [
+        "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+      ],
+      "Encrypted password manager": [
+        "დაშიფრული პაროლების მმართველი"
+      ],
+      "High speed streaming with VPN": [
+        "ჩქაროსნული სტრიმინგი VPN-ით"
+      ],
+      "of privacy": [
+        "კონფიდენციალობა"
+      ],
+      "Online document editor": [
+        "დოკუმენტების რედაქტორი ინტერნეტში"
+      ],
+      "Online privacy for up to 2 people": [
+        "ინტერნეტკონფიდენციალობა ორამდე ადამიანისთვის"
+      ],
+      "Protect up to 10 devices": [
+        "დაიცავით 10-მდე მოწყობილობა"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
+      "Save time with built-in 2FA": [
+        "დაზოგეთ დრო ჩაშენებული 2FA-ით"
+      ],
+      "Secure email with unlimited aliases": [
+        "დაცული ელფოსტა შეუზღუდავი ფსევდონიმების რაოდენობით"
+      ],
+      "Select any server": [
+        "აირჩიეთ ნებისმიერი სერვერი"
+      ],
+      "Share passwords easily": [
+        "გააზიარეთ პაროლები ადვილად"
+      ],
+      "Short @pm.me address": [
+        "მოკლე @pm.me მისამართი"
+      ],
+      "Stream your favorite content": [
+        "დასტრიმეთ თქვენი რჩეული შემცველობა"
+      ],
+      "thanks to you": [
+        "მადლობა"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
+      ],
+      "years": [
+        "წელი"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "საიუბილეო შეთავაზება"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "/ month": [
+        "/ თვეში"
+      ],
+      "12 months": [
+        "12 თვე"
+      ],
+      "15 months": [
+        "15 თვე"
+      ],
+      "24 months": [
+        "24 თვე"
+      ],
+      "30 months": [
+        "30 თვე"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal }-სთვის"
       ]
     },
     "app-switcher": {
@@ -5483,6 +5588,11 @@
         "საფოსტო კოდი აუცილებელია"
       ]
     },
+    "error": {
+      "Select users to view their activity": [
+        "აირჩიეთ მომხმარებლები მატი აქტივობების სანახავად"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "თქვენი ფაილის ${ formattedFilename } წაკითხვისას მოხდა შეცდომა. არასწორი ფაილის ფორმატი."
@@ -6682,6 +6792,9 @@
       "Permissions": [
         "წვდომები"
       ],
+      "Protection": [
+        "დაცვა"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "დაზოგეთ კარგად ${ VPN_APP_NAME }-ის სატარიფო გეგმებით"
       ],
@@ -7357,6 +7470,10 @@
         "კიდევ ${ remainingAddresses.length } მისამართი",
         "კიდევ ${ remainingAddresses.length } მისამართი"
       ],
+      "${ resultsCount } result found": [
+        "აღმოჩენილია ${ resultsCount } შედეგი",
+        "აღმოჩენილია ${ resultsCount } შედეგი"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან",
         "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან"
@@ -7499,6 +7616,12 @@
       ],
       "active": [
         "აქტიური"
+      ],
+      "Activity monitor": [
+        "აქტივობების მონიტორი"
+      ],
+      "Activity Monitor": [
+        "აქტივობების მონიტორი"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "დაამატეთ @pm.me ელ. ფოსტის მისამართი თქვენს ანგარიშზე. ეს მარტივი, მოკლე დომენი ნიშნავს \"${ MAIL_APP_NAME } me \" ან \" პირადად მომწერე.\""
@@ -7967,6 +8090,9 @@
       "Did you know?": [
         "იცოდით?"
       ],
+      "Disable detailed events": [
+        "დეტალური მოვლენების გამორთვა"
+      ],
       "Disable recovery by email address": [
         "ელფოსტის მისამართით აღდგენის გამორთვა"
       ],
@@ -8112,6 +8238,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "ჩართეთ ავტომატური განახლება, რომ შეინარჩუნოთ წვდომა თქვენს ფასიან ფუნქციებთან."
       ],
+      "Enable detailed events": [
+        "დეტალური მოვლენების ჩართვა"
+      ],
       "Enable email notifications": [
         "ელფოსტის გაფრთხილებების ჩართვა"
       ],
@@ -8225,6 +8354,9 @@
       ],
       "expires ${ expirationDate }": [
         "ვადა ${ expirationDate }"
+      ],
+      "Failed to fetch logs.": [
+        "ჟურნალის მოთხოვნის შეცდომა."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "სწრაფი და ფოკუსის მქონე. ელფოსტა და კალენდარი პირდაპირ თქვენს სამუშაო მაგიდაზე."
@@ -8612,6 +8744,9 @@
       "Learn more": [
         "მეტის ნახვა"
       ],
+      "Learn more about Activity Monitor": [
+        "გაიგეთ მეტი აქტივობების მონიტორის შესახებ"
+      ],
       "Learn more about Gateways": [
         "შეიტყვეთ მეტი კარიბჭეების შესახებ"
       ],
@@ -8782,6 +8917,9 @@
       ],
       "No label selected": [
         "ჭდე მონიშნული არაა"
+      ],
+      "No logs yet.": [
+        "ჟურნალში ჩანაწერები ჯერ არაა."
       ],
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
@@ -9296,6 +9434,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "დაიწყეთ თქვენი ელფოსტის უფრო მოკლე და გასაგები ვერსიის გამოყენება."
+      ],
+      "Starts on ${ startsOnTime }": [
+        "დაწყების დროა ${ startsOnTime }"
       ],
       "Stay tuned for future promotions.": [
         "გამოგვიწერეთ ჩვენი მომავალი სარეკლამო აქციებისთვის."
@@ -11157,6 +11298,9 @@
       "Copy fingerprint": [
         "ანაბეჭდის კოპირება"
       ],
+      "Copy IP address to clipboard": [
+        "IP მისამართის კოპირება ბუფერში"
+      ],
       "Could you please let us know which provider?": [
         "შეგიძლიათ, გვითხრათ, რომელი მომწოდებელი?"
       ],
@@ -11732,6 +11876,9 @@
       ],
       "Search": [
         "ძებნა"
+      ],
+      "Search for a name or email": [
+        "სახელის ან ელფოსტის ძებნა"
       ],
       "Second password": [
         "მეორე პაროლი"
@@ -12405,9 +12552,59 @@
         "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
       ]
     },
+    "Log event": {
+      "Account password change": [
+        "ანგარიშის პაროლის შეცვლა"
+      ],
+      "Authentication success": [
+        "ავთენტიკაცია წარმატებულია"
+      ],
+      "Mailbox password change": [
+        "საფოსტო ყუთის პაროლის შეცვლა"
+      ],
+      "Password reset": [
+        "პაროლის ჩამოყრა"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "შესვლა დაბლოკილია (დარღვევების გამო)"
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "შესვლის შეცდომა (მნემონიკა ჩავარდა)"
+      ],
+      "Sign in failure (wrong password)": [
+        "შესვლის შეცდომა (არასწორი პაროლი)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "შესვლა აკრძალულია (დარღვევის გამო)"
+      ],
+      "Sign in success": [
+        "წარმატებული შესვლა"
+      ],
+      "Sign in success (awaiting mnemonic)": [
+        "შესვლა წარმატებულია (მნემონიკის მოლოდინი)"
+      ],
+      "Sign in success (awaiting verify)": [
+        "შესვლა წარმატებულია (შემოწმების მოლოდინი)"
+      ],
+      "Sign out": [
+        "გასვლა"
+      ],
+      "Two password mode disabled": [
+        "ორპაროლიანი რეჟიმი გათიშულია"
+      ],
+      "Two password mode enabled": [
+        "ორპაროლიანი რეჟიმი ჩართულია"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason }-ის ჩართვა"
+      ],
+      "Enable detailed events": [
+        "დეტალური მოვლენების ჩართვა"
+      ],
+      "Enable security events": [
+        "უსაფრთხოების მოვლენების ჩართვა"
       ]
     },
     "Mail import summary": {
@@ -14754,6 +14951,9 @@
       "Buy now": [
         "შეიძინეთ ახლა"
       ],
+      "Contact us": [
+        "დაგვიკავშირდით"
+      ],
       "Continue": [
         "გაგრძელება"
       ],
@@ -15674,6 +15874,26 @@
       ],
       "Work": [
         "სამსახურის"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "დაბლოკილია"
+      ],
+      "Captcha": [
+        "კაფჩა"
+      ],
+      "Device verification": [
+        "მოწყობილობის შემოწმება"
+      ],
+      "Ok": [
+        "დიახ"
+      ],
+      "Ownership verification": [
+        "მფლობელობის გადამოწმება"
+      ],
+      "Unknown": [
+        "უცნობი"
       ]
     },
     "Recovery Email": {
@@ -16870,6 +17090,9 @@
       ]
     },
     "signup: Action": {
+      "Contact us": [
+        "დაგვიკავშირდით"
+      ],
       "Request trial": [
         "დროებითი ვერსიის გამოთხოვა"
       ]
@@ -18642,6 +18865,9 @@
       "Activate user": [
         "მომხმარებლის გააქტიურება"
       ],
+      "Activity monitor": [
+        "აქტივობების მონიტორი"
+      ],
       "Add ${ totalServerCount } server?": [
         "დავამატო ${ totalServerCount } სერვერი?",
         "დავამატო ${ totalServerCount } სერვერი?"
@@ -18789,6 +19015,18 @@
       ],
       "Cancel subscription?": [
         "გავაუქმო ხელმოწერა?"
+      ],
+      "Cannot add Gateway": [
+        "კვანძის დამატება შეუძლებელია"
+      ],
+      "Cannot add licenses": [
+        "ლიცენზიების დამატება შეუძლებელია"
+      ],
+      "Cannot add more users": [
+        "მეტ მომხმარებელს ვერ დაამატებთ"
+      ],
+      "Cannot add servers": [
+        "სერვერების დამატება შეუძლებელია"
       ],
       "Card verification": [
         "ბარათის გადამოწმება"
@@ -19010,6 +19248,9 @@
       "Delete label?": [
         "წავშალო ჭდე?"
       ],
+      "Delete logs": [
+        "ჟურნალის წაშლა"
+      ],
       "Delete organization logo?": [
         "წავშალო ორგანიზაციის ლოგო?"
       ],
@@ -19040,6 +19281,9 @@
       ],
       "Device name": [
         "მოწყობილობის სახელი"
+      ],
+      "Disable activity monitor?": [
+        "გამოვრთო აქტივობების მაყურებელი?"
       ],
       "Disable two-factor authentication": [
         "2FA-ის გამორთვა"
@@ -19974,6 +20218,9 @@
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"
       ],
+      "Wipe all logs?": [
+        "წავშალო ჟურნალიდან ყველაფერი?"
+      ],
       "WireGuard configuration": [
         "WireGuard-ის მორგება"
       ],
@@ -20172,6 +20419,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "წაშალეთ შეტყობინებები ნაგვის ყუთიდან და სპამიდან 30 დღეში. ავტომატური ჩართვის წაშლა შეტყობინებებს, რომლებიც უკვე სპამში/ნაგვის ყუთშია, წაშლის ვადას მათთვის შესაბამის საქაღალდეში გადატანის თარიღს დაუსვამს."
+      ],
+      "Device name and app version": [
+        "მოწყობილობის სახელი და აპის ვერსია"
       ],
       "Display name for the entity in the eduGAIN database": [
         "სახელის ჩვენება ობექტისთვის eduGAIN მონაცემთა ბაზაში"

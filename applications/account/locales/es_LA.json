@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "¿Desactivar frase de recuperación?"
       ],
+      "Disable security events": [
+        "Desactivar eventos de seguridad"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -1543,6 +1546,9 @@
       "What do I get?": [
         "¿Qué obtengo?"
       ],
+      "Wipe": [
+        "Borrar"
+      ],
       "Yes": [
         "Sí"
       ],
@@ -1979,6 +1985,9 @@
       ],
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
+      ],
+      "Try it free for 14 days": [
+        "Pruébelo gratis durante 14 días"
       ]
     },
     "b2b_trials_2025_Label": {
@@ -4248,8 +4257,14 @@
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi el archivo es más grande, debe dividirlo en archivos más pequeños."
       ],
+      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Active los eventos detallados y ${ PROTON_SENTINEL_NAME } para acceder a estas funciones"
+      ],
+      "You should enable detailed events in order to access these features": [
+        "Active los eventos detallados para acceder a estas funciones"
+      ],
       "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "Su administrador de la organización debería activar los eventos detallados y ${ PROTON_SENTINEL_NAME } para acceder a estas funciones"
+        "El administrador de tu organización debería activar los eventos detallados y ${ PROTON_SENTINEL_NAME } para poder acceder a estas funciones"
       ],
       "Your organization administrator should enable detailed events in order to access these features": [
         "El administrador de su organización debería activar eventos detallados para acceder a estas funciones."
@@ -5882,7 +5897,7 @@
         "La aplicación no está disponible actualmente."
       ],
       "Ask your administrator to enable Account monitor.": [
-        "Pida a su administrador que active el Monitor de cuenta."
+        "Pida a su administrador que active el monitor de cuenta."
       ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
@@ -7791,7 +7806,7 @@
         "Monitor de actividades"
       ],
       "Activity Monitor": [
-        "Monitor de actividad"
+        "Monitor de actividades"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Agregue una dirección de correo @pm.me a la cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME }\" o \"Mensaje privado\" en inglés."
@@ -7971,6 +7986,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "¿En verdad desea abandonar este grupo? Si lo hace el administrador del grupo deberá volver a invitarle para que se una de nuevo."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "¿En verdad desea eliminar permanentemente todos sus registros?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "¿En verdad desea eliminar los privilegios administrativos de este usuario?"
       ],
@@ -8069,6 +8087,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Al crear una cuenta ${ PASS_APP_NAME } con su correo electrónico de SimpleLogin, puede administrar sus alias directamente desde ${ PASS_APP_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Al desactivar el monitoreo de eventos de seguridad, también borrará todo su historial. ¿Está seguro de que quiere desactivar esta opción?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo el plan en el futuro."
@@ -8930,7 +8951,7 @@
         "Más información"
       ],
       "Learn more about Activity Monitor": [
-        "Más información acerca de Monitor de actividades"
+        "Más información sobre el monitor de actividades"
       ],
       "Learn more about Gateways": [
         "Más información sobre la puertas de enlace"
@@ -9116,7 +9137,7 @@
         "Ninguna etiqueta seleccionada"
       ],
       "No logs yet.": [
-        "Sin registros."
+        "Todavía no hay registros."
       ],
       "No payment is required at this time.": [
         "No se requiere ningún pago en este momento."
@@ -11565,6 +11586,9 @@
       "Copy fingerprint": [
         "Copiar huella digital"
       ],
+      "Copy IP address to clipboard": [
+        "Copiar dirección IP al portapapeles"
+      ],
       "Could you please let us know which provider?": [
         "¿Podría indicarnos cuál proveedor?"
       ],
@@ -12893,6 +12917,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activar ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Activar eventos detallados"
+      ],
+      "Enable security events": [
+        "Activar eventos de seguridad"
       ]
     },
     "Mail import summary": {
@@ -19611,6 +19641,9 @@
       "Delete label?": [
         "¿Eliminar la etiqueta?"
       ],
+      "Delete logs": [
+        "Eliminar registros"
+      ],
       "Delete organization logo?": [
         "¿Eliminar logo de la organización?"
       ],
@@ -20555,7 +20588,7 @@
         "Videoconferencia"
       ],
       "View organization events by upgrading to Business": [
-        "Ver eventos de la organización al actualizar a Business"
+        "Consulte los eventos de la organización al mejorar a Business"
       ],
       "VPN apps": [
         "Aplicaciones VPN"
@@ -20816,6 +20849,9 @@
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Activar/desactivar las notificaciones de escritorio y de teléfono para «${ labelName }»"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Al activar los eventos detallados se registrará la dirección IP para cada evento."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL de punto final del proveedor de identidad (por ejemplo, https://idp.ejemplo.com/sso/saml)"
       ],
@@ -20898,7 +20934,7 @@
         "La importación comenzará con los mensajes más recientes."
       ],
       "The Internet Service Provider of the IP address": [
-        "El Proveedor de Servicios de Internet de la dirección IP"
+        "El proveedor de servicios de internet de la dirección IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"

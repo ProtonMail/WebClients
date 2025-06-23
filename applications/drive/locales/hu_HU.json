@@ -677,6 +677,9 @@
       "New shared album": [
         "Új megosztott album"
       ],
+      "New spreadsheet": [
+        "Új munkafüzet"
+      ],
       "Next": [
         "Következő"
       ],
@@ -862,6 +865,12 @@
       ],
       "Save photos and remove": [
         "Fényképek mentése és eltávolítás"
+      ],
+      "Scan & Download": [
+        "Beolvasás & letöltés"
+      ],
+      "Scan & Download (${ count })": [
+        "Beolvasás és letöltés (${ count })"
       ],
       "Search": [
         "Keresés"
@@ -3205,8 +3214,14 @@
       "Failed to copy photo to album": [
         "Nem sikerült a fénykép másolása az albumba"
       ],
+      "Failed to create folder": [
+        "Nem sikerült létrehozni a mappát"
+      ],
       "Failed to load the STL preview": [
         "Nem sikerült betölteni az STL előnézetet"
+      ],
+      "Failed to move items": [
+        "Az elemek áthelyezése nem sikerült"
       ],
       "Failed to save some photos to your Drive": [
         "Nem sikerült menteni néhány fényképet az Ön Drive-jába"
@@ -8846,6 +8861,9 @@
       "The link to your item was deleted": [
         "A fájlra vonatkozó hivatkozás törölve"
       ],
+      "The spreadsheet failed to be created": [
+        "A táblázat létrehozása nem sikerült"
+      ],
       "This item was not removed from your list": [
         "Ez az elem nem lett eltávolítva a listájáról",
         "Egyes elemek nem lettek eltávolítva a listájáról"
@@ -11706,6 +11724,9 @@
       ],
       "Untitled document ${ date }": [
         "Névtelen dokumentum: ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Névtelen táblázat ${ date }"
       ],
       "Upgrade complete!": [
         "A verzió frissítése befejeződött!"

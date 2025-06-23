@@ -691,54 +691,75 @@
         "Wstaw obraz nad komórkami"
       ]
     },
-    "sheets_2025:Spreadsheet editor toolbar": {
-      "Cells": [
-        "Komórki"
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Wartości rozdzielone przecinkami (.csv)"
       ],
-      "Chart": [
-        "Wykres"
+      "Download": [
+        "Pobierz"
+      ],
+      "Download logs": [
+        "Pobierz logi"
+      ],
+      "Help": [
+        "Pomoc"
+      ],
+      "Import": [
+        "Importuj"
+      ],
+      "Make a copy": [
+        "Utwórz kopię"
+      ],
+      "Move to folder": [
+        "Przenieś do folderu"
+      ],
+      "Move to trash": [
+        "Przenieś do kosza"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Otwórz ${ DRIVE_APP_NAME }"
+      ],
+      "Print": [
+        "Drukuj"
+      ],
+      "See version history": [
+        "Zobacz historię wersji"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Note": [
+        "Notatka"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "File": [
+        "plik"
+      ],
+      "Insert": [
+        "Wstaw"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Pogrubienie"
       ],
       "Clear formatting": [
         "Wyczyść formatowanie"
       ],
-      "Columns": [
-        "Kolumny"
-      ],
-      "Insert": [
-        "Wstaw"
-      ],
-      "Insert cells and shift down": [
-        "Wstaw komórki i przesuń w dół"
-      ],
-      "Insert cells and shift right": [
-        "Wstaw komórki i przesuń w prawo"
-      ],
-      "Insert one column left": [
-        "Wstaw jedną kolumnę z lewej"
-      ],
-      "Insert one column right": [
-        "Wstaw jedną kolumnę z prawej"
-      ],
-      "Insert one row above": [
-        "Wstaw jeden wiersz powyżej"
-      ],
-      "Insert one row below": [
-        "Wstaw jeden wiersz poniżej"
-      ],
-      "Note": [
-        "Notatka"
+      "Italic": [
+        "Kursywa"
       ],
       "Redo": [
         "Ponów"
       ],
-      "Rows": [
-        "Wiersze"
-      ],
       "Search": [
         "Szukaj"
       ],
-      "Sheet": [
-        "Arkusz"
+      "Strikethrough": [
+        "Przekreślenie"
+      ],
+      "Underline": [
+        "Podkreślenie"
       ],
       "Undo": [
         "Cofnij"
