@@ -19,6 +19,7 @@ import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
+import { useItemLoading } from '@proton/pass/hooks/useItemLoading';
 import { isItemShared, isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
@@ -75,6 +76,8 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const vaults = useSelector(selectAllVaults);
     const plan = useSelector(selectPassPlan);
     const monitored = isMonitored(revision);
+    const loading = useItemLoading(revision);
+    const actionsDisabled = loading || optimistic;
 
     const org = useOrganization();
     const orgItemSharingDisabled = org?.settings.ItemShareMode === BitField.DISABLED;
@@ -120,7 +123,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
     const monitorActions = canMonitor && (
         <DropdownMenuButton
-            disabled={optimistic}
+            disabled={actionsDisabled}
             onClick={handleToggleFlagsClick}
             icon={monitored ? 'eye-slash' : 'eye'}
             label={monitored ? c('Action').t`Exclude from monitoring` : c('Action').t`Include in monitoring`}
@@ -177,7 +180,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     key="item-quick-actions-dropdown"
                                     color="weak"
                                     shape="ghost"
-                                    disabled={optimistic}
+                                    disabled={actionsDisabled}
                                 >
                                     <DropdownMenuButton
                                         onClick={handleRestoreClick}
@@ -214,7 +217,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                 shape="solid"
                                 color="weak"
                                 onClick={handleEditClick}
-                                disabled={optimistic || readOnly}
+                                disabled={actionsDisabled || readOnly}
                             >
                                 <Icon name="pencil" className="mr-1" />
                                 <span>{c('Action').t`Edit`}</span>
@@ -231,7 +234,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     icon="users-plus"
                                     menuClassName="flex flex-column"
                                     dropdownHeader={c('Label').t`Share`}
-                                    disabled={!online || optimistic || disabledSharing}
+                                    disabled={!online || actionsDisabled || disabledSharing}
                                     badge={accessCount > 1 ? accessCount : undefined}
                                     signaled={isOwnerOrManager && signalItemSharing}
                                     dropdownSize={{
@@ -291,7 +294,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                             <QuickActionsDropdown
                                 key="item-quick-actions-dropdown"
                                 color="norm"
-                                disabled={optimistic}
+                                disabled={actionsDisabled}
                                 shape="ghost"
                             >
                                 {canMove && (
@@ -308,7 +311,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     onClick={handlePinClick}
                                     label={pinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`}
                                     icon={pinned ? 'pin-angled-slash' : 'pin-angled'}
-                                    disabled={optimistic || !canTogglePinned}
+                                    disabled={!canTogglePinned}
                                     loading={!canTogglePinned}
                                 />
 
