@@ -339,6 +339,9 @@
       "Create folder": [
         "Стварыць папку"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Стварыць папку ${ boldFolderName }"
+      ],
       "Create label": [
         "Стварыць метку"
       ],
@@ -6375,6 +6378,12 @@
         "Не ўдалося перамясціць ${ messagesNotAuthorizedToMove } паведамленняў.",
         "Не ўдалося перамясціць ${ messagesNotAuthorizedToMove } паведамленняў."
       ],
+      "${ n } newsletter": [
+        "${ n } рассылка",
+        "${ n } рассылкі",
+        "${ n } рассылак",
+        "${ n } рассылак"
+      ],
       "${ n } unread conversation": [
         "${ n } непрачытаная размова",
         "${ n } непрачытаныя размовы",
@@ -6803,6 +6812,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
+      ],
+      "Block sender": [
+        "Заблакіраваць адпраўніка"
       ],
       "Body: ": [
         "Цела: "
@@ -7321,7 +7333,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7533,6 +7548,9 @@
       "No links cleaned": [
         "Спасылкі не ачышчаны"
       ],
+      "No messages to show": [
+        "Няма паведамленняў для паказу"
+      ],
       "No more results found": [
         "Больш нічога не знойдзена"
       ],
@@ -7709,6 +7727,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пачакайце, пакуль мы шукаем кантакты, якія змяшчаюць даныя, зашыфраваныя з дапамогай неактыўнага ключа."
+      ],
+      "Preferences updated": [
+        "Параметры абноўлены"
       ],
       "Preview failed to be loaded": [
         "Не ўдалося загрузіць папярэдні прагляд"
@@ -8055,6 +8076,9 @@
       "Themes can give your inbox a new look.": [
         "Тэмы могуць змяніць выгляд вашай паштовай скрыні."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "Няма паведамленняў ад гэтага адпраўніка ў вашай паштовай скрыні."
+      ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Адбылася памылка подпісу, якая выкарыстоўваецца для праверкі кантактных звестак, што можа быць выклікана скіданнем пароля."
       ],
@@ -8387,9 +8411,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Мы не змаглі праверыць давераныя ключы адпраўніка."
-      ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "Мы не змаглі знайсці параметр для скасавання падпіскі на гэту рассылку. Магчыма, што вы зможаце гэта зрабіць з дапамогай спасылкі ў лісце або на іх вэб-сайце."
       ],
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
@@ -9214,6 +9235,9 @@
       "CC": [
         "Копія"
       ],
+      "Choose what to do instead": [
+        "Выберыце, што зрабіць замест гэтага"
+      ],
       "City": [
         "Горад"
       ],
@@ -9333,6 +9357,9 @@
       ],
       "Extended address": [
         "Пашыраны адрас"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Не ўдалося стварыць папку ${ customFolderName }"
       ],
       "Filter Name": [
         "Назва фільтра"
@@ -9460,11 +9487,11 @@
       "Move to Inbox": [
         "Перамясціць ва Уваходныя"
       ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "Перамешчана ${ count } паведамленне ў папку ${ selectedFolder.Name }.",
-        "Перамешчаны ${ count } паведамленні ў папку ${ selectedFolder.Name }.",
-        "Перамешчаны ${ count } паведамленняў у папку ${ selectedFolder.Name }.",
-        "Перамешчаны ${ count } паведамленняў у папку ${ selectedFolder.Name }."
+      "Moved ${ count } message to ${ labelName }.": [
+        "Перамешчана ${ count } паведамленне ў папку ${ labelName }.",
+        "Перамешчана ${ count } паведамленні ў папку ${ labelName }.",
+        "Перамешчана ${ count } паведамленняў у папку ${ labelName }.",
+        "Перамешчана ${ count } паведамленняў у папку ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "Перамешчана ${ count } паведамленне ў архіў.",
@@ -15159,6 +15186,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Адпісацца ад ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Скасаванне падпіскі недаступна для гэтага адпраўніка"
       ],
       "Unsubscribe request sent": [
         "Запыт на скасаванне падпіскі адпраўлены"

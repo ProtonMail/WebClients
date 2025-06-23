@@ -338,6 +338,9 @@
       "Create folder": [
         "Creare folder"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Creare folder „${ boldFolderName }”"
+      ],
       "Create label": [
         "Creare etichetă"
       ],
@@ -6302,6 +6305,11 @@
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } mesaje.",
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } de mesaje."
       ],
+      "${ n } newsletter": [
+        "${ n } buletin informativ",
+        "${ n } buletine informative",
+        "${ n } de buletine informative"
+      ],
       "${ n } unread conversation": [
         "${ n } conversație necitită",
         "${ n } conversații necitite",
@@ -6700,6 +6708,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclu facturare: ${ text }"
+      ],
+      "Block sender": [
+        "Blocare expeditor"
       ],
       "Body: ": [
         "Conținut: "
@@ -7207,7 +7218,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -7419,6 +7432,9 @@
       "No links cleaned": [
         "Nu au fost curățate legături web"
       ],
+      "No messages to show": [
+        "Nu sunt mesaje de afișat"
+      ],
       "No more results found": [
         "Nu s-au mai găsit rezultate"
       ],
@@ -7593,6 +7609,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
+      ],
+      "Preferences updated": [
+        "Preferințe actualizate"
       ],
       "Preview failed to be loaded": [
         "Examinarea nu a putut fi încărcată."
@@ -7936,6 +7955,9 @@
       "Themes can give your inbox a new look.": [
         "Temele vă oferă un aspect diferit al interfeței."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "Nu există mesaje de la acest expeditor în mesaje primite."
+      ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "A apărut o eroare la semnătura folosită pentru a verifica datele de contact, care poate fi rezultatul resetării parolei."
       ],
@@ -8266,9 +8288,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nu s-au putut verifica cheile de încredere ale expeditorului."
-      ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "Nu am putut găsi o opțiune de dezabonare pentru acest buletin informativ. V-ați putea dezabona folosind o legătură web din mesajele primite sau de pe site-ul lor web."
       ],
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
@@ -9070,6 +9089,9 @@
       "CC": [
         "C"
       ],
+      "Choose what to do instead": [
+        "Alegeți ce să faceți în schimb"
+      ],
       "City": [
         "Oraş"
       ],
@@ -9189,6 +9211,9 @@
       ],
       "Extended address": [
         "Adresa extinsă"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Crearea folderului ${ customFolderName } a eșuat"
       ],
       "Filter Name": [
         "Nume filtru"
@@ -9315,10 +9340,10 @@
       "Move to Inbox": [
         "Mutare în «Primite»"
       ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "Mesaje mutate în ${ selectedFolder.Name }: ${ count }",
-        "Mesaje mutate în ${ selectedFolder.Name }: ${ count }",
-        "Mesaje mutate în ${ selectedFolder.Name }: ${ count }"
+      "Moved ${ count } message to ${ labelName }.": [
+        "Mesaje mutate în ${ labelName }: ${ count }",
+        "Mesaje mutate în ${ labelName }: ${ count }",
+        "Mesaje mutate în ${ labelName }: ${ count }"
       ],
       "Moved ${ count } message to Archive.": [
         "Mesaje mutate în arhivă: ${ count }",
@@ -14885,6 +14910,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Vă dezabonați de la ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Dezabonarea nu este disponibilă pentru acest expeditor"
       ],
       "Unsubscribe request sent": [
         "Solicitare de dezabonare trimisă"

@@ -337,6 +337,9 @@
       "Create folder": [
         "Mappa létrehozása"
       ],
+      "Create folder ${ boldFolderName }": [
+        "${ boldFolderName } mappa létrehozása"
+      ],
       "Create label": [
         "Címke létrehozása"
       ],
@@ -1149,6 +1152,9 @@
       ],
       "Save": [
         "Mentés"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Mentés a ${ DRIVE_APP_NAME } alkalmazásba"
       ],
       "Saving${ ellipsis }": [
         "Mentés${ ellipsis }"
@@ -6229,6 +6235,10 @@
         "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át.",
         "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át."
       ],
+      "${ n } newsletter": [
+        "${ n } hírlevél",
+        "${ n } hírlevél"
+      ],
       "${ n } unread conversation": [
         "${ n } olvasatlan beszélgetés",
         "${ n } olvasatlan beszélgetés"
@@ -6597,6 +6607,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Számlázási ciklus: ${ text }"
+      ],
+      "Block sender": [
+        "Feladó tiltása"
       ],
       "Body: ": [
         "Szöveg: "
@@ -7093,6 +7106,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -7305,6 +7319,9 @@
       "No links cleaned": [
         "Nincs megtisztítandó hivatkozás"
       ],
+      "No messages to show": [
+        "Nincs megjeleníthető üzenet"
+      ],
       "No more results found": [
         "Nincs több találat"
       ],
@@ -7477,6 +7494,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Kérjük várjon amíg megkeressük a névjegyeket amik az inaktív kulccsal titkosított adatokat tárolnak."
+      ],
+      "Preferences updated": [
+        "Beállítások frissítve"
       ],
       "Preview failed to be loaded": [
         "Az előnézet betöltése nem sikerült"
@@ -7817,6 +7837,9 @@
       "Themes can give your inbox a new look.": [
         "A témák egy új kinézetet adnak a levelezésének."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "Nincsenek üzenetek ettől a feladótól a beérkezett üzenetek között."
+      ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Hiba történt a névjegy aláírásnak ellenőrzésekor. Ezt jelszó visszaállítás is okozhatja."
       ],
@@ -8145,9 +8168,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nem sikerült a feladó megbízható kulcsainak ellenőrzése."
-      ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "Nem találtunk leiratkozási lehetőséget ehhez a hírlevélhez. Lehetséges, hogy leiratkozhat az e-mailben vagy a weboldalukon található link segítségével."
       ],
       "We couldn’t process your payment.": [
         "Nem tudjuk feldolgozni az Ön befizetését."
@@ -8926,6 +8946,9 @@
       "CC": [
         "Másolat"
       ],
+      "Choose what to do instead": [
+        "Válassza ki, mit tegyen helyette"
+      ],
       "City": [
         "Település"
       ],
@@ -9045,6 +9068,9 @@
       ],
       "Extended address": [
         "Bővebb cím"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Nem sikerült létrehozni a(z) ${ customFolderName } mappát"
       ],
       "Filter Name": [
         "Szűrő neve"
@@ -9170,9 +9196,9 @@
       "Move to Inbox": [
         "Áthelyezés a beérkezett üzenetekhez"
       ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "${ count } üzenet áthelyezve a ${ selectedFolder.Name } mappába.",
-        "${ count } üzenet áthelyezve a ${ selectedFolder.Name } mappába."
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } üzenetet áthelyeztünk ide: ${ labelName }.",
+        "${ count } üzenetet áthelyeztünk ide: ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } üzenet áthelyezve az archívumba.",
@@ -12424,6 +12450,11 @@
         "Megjelenített név"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "Csatlakozás Slack-megbeszéléshez"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Gyorsabb az alkalmazásban"
@@ -14606,6 +14637,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Leiratkozás erről: ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "A leiratkozás nem elérhető ennél a feladónál."
       ],
       "Unsubscribe request sent": [
         "Leiratkozási kérés elküldve"

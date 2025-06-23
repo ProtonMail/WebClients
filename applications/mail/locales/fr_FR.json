@@ -337,6 +337,9 @@
       "Create folder": [
         "Créer un dossier"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Créer un dossier « ${ boldFolderName } »"
+      ],
       "Create label": [
         "Créer un label"
       ],
@@ -6245,6 +6248,10 @@
         "${ messagesNotAuthorizedToMove } message n’a pas pu être déplacé.",
         "${ messagesNotAuthorizedToMove } messages n’ont pas pu être déplacés."
       ],
+      "${ n } newsletter": [
+        "${ n } newsletter",
+        "${ n } newsletters"
+      ],
       "${ n } unread conversation": [
         "${ n } conversation non lue",
         "${ n } conversations non lues"
@@ -6613,6 +6620,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
+      ],
+      "Block sender": [
+        "Bloquer l'expéditeur"
       ],
       "Body: ": [
         "Corps : "
@@ -7109,7 +7119,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -7321,6 +7332,9 @@
       "No links cleaned": [
         "Aucun lien n'a été nettoyé."
       ],
+      "No messages to show": [
+        "Aucun message à afficher"
+      ],
       "No more results found": [
         "Aucun autre résultat n'a été trouvé."
       ],
@@ -7493,6 +7507,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Veuillez patienter pendant que nous cherchons les contacts qui contiennent des données chiffrées avec la clé inactive."
+      ],
+      "Preferences updated": [
+        "Les préférences ont été mises à jour."
       ],
       "Preview failed to be loaded": [
         "L'aperçu n'a pas pu être chargé."
@@ -7833,6 +7850,9 @@
       "Themes can give your inbox a new look.": [
         "Les thèmes donnent un nouveau look à votre boite de réception."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "Il n'y a pas de messages de cet expéditeur dans votre boite de réception."
+      ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Il y a eu une erreur dans la signature utilisée pour vérifier les coordonnées. Cette erreur peut être due à une réinitialisation du mot de passe.\n"
       ],
@@ -8161,9 +8181,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nous n'avons pas pu vérifier les clés approuvées de l'expéditeur."
-      ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "Nous n'avons pas pu trouver d'option de désabonnement pour cette newsletter. Vous pourriez peut-être vous désabonner en utilisant un lien dans leur message ou depuis leur site internet."
       ],
       "We couldn’t process your payment.": [
         "Nous n'avons pas pu traiter votre paiement."
@@ -8945,6 +8962,9 @@
       "CC": [
         "Cc"
       ],
+      "Choose what to do instead": [
+        "Choisissez l'action à réaliser à la place"
+      ],
       "City": [
         "Ville"
       ],
@@ -9064,6 +9084,9 @@
       ],
       "Extended address": [
         "Complément d’adresse"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Impossible de créer le dossier ${ customFolderName }"
       ],
       "Filter Name": [
         "Nom du filtre"
@@ -9189,9 +9212,9 @@
       "Move to Inbox": [
         "Déplacer vers la boite de réception"
       ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "${ count } message a été déplacé vers ${ selectedFolder.Name }.",
-        "${ count } message ont été déplacés vers ${ selectedFolder.Name }."
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } message a été déplacé vers ${ labelName }.",
+        "${ count } message ont été déplacés vers ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } message a été déplacé vers les archives.",
@@ -14641,6 +14664,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Se désabonner de ${ subscription.Name } ?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Le désabonnement n'est pas disponible pour cet expéditeur."
       ],
       "Unsubscribe request sent": [
         "La demande de désabonnement a été envoyée."
