@@ -266,6 +266,7 @@ const SingleSignupContainerV2 = ({
     });
 
     const theme = getPublicTheme(toApp, audience, viewportWidth, signupParameters);
+    const trial = !!(signupParameters.trial && audience === Audience.B2B);
 
     const [model, setModel] = useState<SignupModelV2>(() => {
         // Add free plan
@@ -626,7 +627,7 @@ const SingleSignupContainerV2 = ({
                             CountryCode: paymentMethodStatus.CountryCode,
                             State: paymentMethodStatus.State,
                         },
-                        trial: signupParameters.trial,
+                        trial,
                     },
                     toApp: product,
                     availableCycles: signupConfiguration.cycles,
@@ -806,7 +807,7 @@ const SingleSignupContainerV2 = ({
                     planIDs,
                     coupon: signupParameters.coupon,
                     billingAddress: model.subscriptionData.billingAddress,
-                    trial: signupParameters.trial,
+                    trial,
                 },
                 planParameters: model.planParameters!,
                 signupParameters,
@@ -921,7 +922,7 @@ const SingleSignupContainerV2 = ({
                     planIDs,
                     coupon: model.subscriptionData.checkResult?.Coupon?.Code,
                     billingAddress: model.subscriptionData.billingAddress,
-                    trial: signupParameters.trial,
+                    trial,
                 },
                 toApp: product,
                 availableCycles: signupConfiguration.cycles,
@@ -1489,6 +1490,7 @@ const SingleSignupContainerV2 = ({
                             }
                         }}
                         mode={signupParameters.mode}
+                        trial={trial}
                     />
                 )}
                 {model.step === Steps.Loading && (
