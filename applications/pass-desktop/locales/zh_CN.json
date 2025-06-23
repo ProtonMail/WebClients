@@ -1954,9 +1954,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
-      ],
       "Moving items": [
         "正在移动"
       ],
@@ -3177,9 +3174,6 @@
       "Modified": [
         "修改时间"
       ],
-      "More": [
-        "更多"
-      ],
       "More than a month": [
         "一个多月"
       ],
@@ -3257,6 +3251,9 @@
       ],
       "Organization": [
         "机构"
+      ],
+      "Other": [
+        "其他"
       ],
       "Owner": [
         "所有者"
@@ -4664,11 +4661,6 @@
       ],
       "URL is invalid": [
         "网址无效"
-      ]
-    },
-    "Vault Select": {
-      "Move items to": [
-        "将项目移至"
       ]
     },
     "Warning": {

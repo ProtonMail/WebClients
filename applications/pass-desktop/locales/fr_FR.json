@@ -645,8 +645,8 @@
         "Débloquer le contact"
       ],
       "Understood, I will never need it": [
-        "J'ai compris et je n'en aurai jamais besoin.",
-        "J'ai compris et je n'en aurai jamais besoin."
+        "J'ai compris et n'en aurai jamais besoin.",
+        "J'ai compris et n'en aurai jamais besoin."
       ],
       "Unlock": [
         "Déverrouiller"
@@ -1980,10 +1980,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
-      ],
       "Moving items": [
         "Déplacement des éléments"
       ],
@@ -2813,6 +2809,9 @@
       "City": [
         "Ville"
       ],
+      "Class": [
+        "Classe"
+      ],
       "Clear clipboard after": [
         "Effacer le presse-papiers après"
       ],
@@ -2905,6 +2904,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Médecin"
       ],
       "Domain": [
         "Domaine"
@@ -3056,6 +3058,9 @@
       "Holder Name": [
         "Nom du titulaire"
       ],
+      "Hospital": [
+        "Hôpital"
+      ],
       "Host": [
         "Hôte"
       ],
@@ -3128,6 +3133,9 @@
       "Issuing Country": [
         "Pays émetteur"
       ],
+      "Issuing State/Country": [
+        "Pays ou état de délivrance"
+      ],
       "Item ID": [
         "ID de l'élément"
       ],
@@ -3179,6 +3187,9 @@
       "License number": [
         "Numéro de permis"
       ],
+      "License Number": [
+        "Numéro de permis"
+      ],
       "Limited time": [
         "Offre à durée limitée"
       ],
@@ -3212,11 +3223,20 @@
       "max views reached": [
         "le nombre maximum de vues a été atteint."
       ],
+      "Medical Conditions": [
+        "Conditions médicales"
+      ],
       "Medical Record": [
         "Dossier médical"
       ],
+      "Medications": [
+        "Traitements médicamenteux"
+      ],
       "Member ID": [
         "ID de membre"
+      ],
+      "Member Name": [
+        "Nom de membre"
       ],
       "Members": [
         "Membres"
@@ -3224,14 +3244,14 @@
       "Membership": [
         "Abonnement"
       ],
+      "Membership ID": [
+        "ID de membre"
+      ],
       "Middle name": [
         "Deuxième prénom"
       ],
       "Modified": [
         "Modifié"
-      ],
-      "More": [
-        "Plus"
       ],
       "More than a month": [
         "Plus d'un mois"
@@ -3311,6 +3331,12 @@
       "Organization": [
         "Organisation"
       ],
+      "Organization Name": [
+        "Nom de l'organisation"
+      ],
+      "Other": [
+        "Autre"
+      ],
       "Owner": [
         "Propriétaire"
       ],
@@ -3337,6 +3363,9 @@
       ],
       "Password history": [
         "Historique des mots de passe"
+      ],
+      "Patient Name": [
+        "Nom du patient"
       ],
       "Permissions": [
         "Autorisations"
@@ -3412,6 +3441,9 @@
       ],
       "Recent": [
         "Le plus récent"
+      ],
+      "Record Number": [
+        "Numéro d'enregistrement"
       ],
       "Reddit handle": [
         "Compte Reddit"
@@ -3592,6 +3624,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Cet élément est accessible jusqu'au ${ date } ou jusqu'à ce que la limite de visualisation soit atteinte."
+      ],
+      "Tier/Level": [
+        "Niveau"
       ],
       "Tier/Status": [
         "Niveau/Statut"
@@ -3968,6 +4003,18 @@
       ],
       "Add note": [
         "Ajoutez une note."
+      ],
+      "Add password": [
+        "Ajouter un mot de passe"
+      ],
+      "Add private key": [
+        "Ajouter une clé privée"
+      ],
+      "Add public key": [
+        "Ajouter une clé publique"
+      ],
+      "Add SSID": [
+        "Ajouter un SSID"
       ],
       "Add text": [
         "Ajoutez du texte."
@@ -4731,7 +4778,8 @@
       ]
     },
     "Vault Select": {
-      "Move items to": [
+      "Move item to": [
+        "Déplacer l'élément vers",
         "Déplacer les éléments vers"
       ]
     },

@@ -736,8 +736,14 @@
       "Online privacy for your whole family (up to 6 users)": [
         "Integritet online för hela din familj (upp till 6 användare)"
       ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Spara stort på premium Drive-funktioner med en tidsbegränsad rabatt."
+      ],
       "Save big on premium Mail features with a limited-time discount.": [
         "Spara stort på premium Mail-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Spara stort på premium Pass-funktioner med en tidsbegränsad rabatt."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
         "Spara stort på premium VPN-funktioner med en tidsbegränsad rabatt."
@@ -1968,10 +1974,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
-      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2798,6 +2800,9 @@
       "City": [
         "Ort"
       ],
+      "Class": [
+        "Klass"
+      ],
       "Clear clipboard after": [
         "Rensa urklipp efter"
       ],
@@ -2890,6 +2895,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Läkare"
       ],
       "Domain": [
         "Domän"
@@ -3041,6 +3049,9 @@
       "Holder Name": [
         "Innehavarens namn"
       ],
+      "Hospital": [
+        "Sjukhus"
+      ],
       "Host": [
         "Värd"
       ],
@@ -3113,6 +3124,9 @@
       "Issuing Country": [
         "Utfärdande land"
       ],
+      "Issuing State/Country": [
+        "Utfärdande delstat/land"
+      ],
       "Item ID": [
         "Objekt-ID"
       ],
@@ -3164,6 +3178,9 @@
       "License number": [
         "Körkortsnummer"
       ],
+      "License Number": [
+        "Licensnummer"
+      ],
       "Limited time": [
         "Begränsad tid"
       ],
@@ -3197,11 +3214,20 @@
       "max views reached": [
         "maximalt antal visningar uppnått"
       ],
+      "Medical Conditions": [
+        "Medicinska tillstånd"
+      ],
       "Medical Record": [
         "Medicinsk journal"
       ],
+      "Medications": [
+        "Mediciner"
+      ],
       "Member ID": [
         "Medlems-ID"
+      ],
+      "Member Name": [
+        "Medlemsnamn"
       ],
       "Members": [
         "Medlemmar"
@@ -3209,14 +3235,14 @@
       "Membership": [
         "Medlemskap"
       ],
+      "Membership ID": [
+        "Medlemskaps-ID"
+      ],
       "Middle name": [
         "Mellannamn"
       ],
       "Modified": [
         "Ändrad"
-      ],
-      "More": [
-        "Mer"
       ],
       "More than a month": [
         "Mer än en månad"
@@ -3296,6 +3322,12 @@
       "Organization": [
         "Organisation"
       ],
+      "Organization Name": [
+        "Organisationsnamn"
+      ],
+      "Other": [
+        "Annat"
+      ],
       "Owner": [
         "Ägare"
       ],
@@ -3322,6 +3354,9 @@
       ],
       "Password history": [
         "Lösenordshistorik"
+      ],
+      "Patient Name": [
+        "Patientnamn"
       ],
       "Permissions": [
         "Behörigheter"
@@ -3574,6 +3609,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Detta objekt är tillgängligt fram till ${ date } eller tills visningsgränsen nås."
+      ],
+      "Tier/Level": [
+        "Nivå"
       ],
       "Tier/Status": [
         "Nivå/status"
@@ -3947,6 +3985,18 @@
       ],
       "Add note": [
         "Lägg till anteckning"
+      ],
+      "Add password": [
+        "Lägg till lösenord"
+      ],
+      "Add private key": [
+        "Lägg till privat nyckel"
+      ],
+      "Add public key": [
+        "Lägg till offentlig nyckel"
+      ],
+      "Add SSID": [
+        "Lägg till SSID"
       ],
       "Add text": [
         "Lägga till text"
@@ -4710,8 +4760,9 @@
       ]
     },
     "Vault Select": {
-      "Move items to": [
-        "Flytta objekt till"
+      "Move item to": [
+        "Flytta objekt till",
+        "Flytta objekten till"
       ]
     },
     "Warning": {
