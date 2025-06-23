@@ -1780,6 +1780,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+      ],
       "Moving items": [
         "항목 이동 중"
       ],
@@ -2571,6 +2574,9 @@
       "Catch-All": [
         "Catch-All"
       ],
+      "Checkbox": [
+        "체크박스"
+      ],
       "City": [
         "시/군/구"
       ],
@@ -2847,6 +2853,9 @@
       "Key fingerprint": [
         "지문 키"
       ],
+      "Key type": [
+        "키 유형"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "키보드 단축키: ${ shortcut }"
       ],
@@ -2928,9 +2937,6 @@
       "Modified": [
         "수정됨"
       ],
-      "More": [
-        "더 보기"
-      ],
       "More than a month": [
         "1개월 이상"
       ],
@@ -2999,6 +3005,9 @@
       ],
       "Organization": [
         "조직"
+      ],
+      "Other": [
+        "기타"
       ],
       "Owner": [
         "소유자"
@@ -4216,11 +4225,6 @@
       ],
       "URL is invalid": [
         "URL이 올바르지 않습니다."
-      ]
-    },
-    "Vault Select": {
-      "Move items to": [
-        "항목을 다음으로 이동"
       ]
     },
     "Warning": {
