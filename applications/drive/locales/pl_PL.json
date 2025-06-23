@@ -1385,6 +1385,14 @@
         "Wydarzenie jest nieobsługiwane"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } miesiące w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ]
+    },
     "Badge": {
       "Invited": [
         "Zaproszony"
@@ -3255,6 +3263,9 @@
       ],
       "Failed to load the STL preview": [
         "Nie udało się załadować podglądu STL"
+      ],
+      "Failed to move items": [
+        "Nie udało się przenieść elementów"
       ],
       "Failed to save some photos to your Drive": [
         "Nie udało się zapisać niektórych zdjęć na dysku"

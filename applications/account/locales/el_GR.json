@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "Απενεργοποίηση φράσης ανάκτησης;"
       ],
+      "Disable security events": [
+        "Απενεργοποίηση συμβάντων ασφαλείας"
+      ],
       "Discard": [
         "Απόρριψη"
       ],
@@ -1542,6 +1545,9 @@
       ],
       "What do I get?": [
         "Τι θα αποκτήσω;"
+      ],
+      "Wipe": [
+        "Εκκαθάριση"
       ],
       "Yes": [
         "Ναι"
@@ -4218,6 +4224,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
+      ],
+      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Πρέπει να ενεργοποιήσετε λεπτομερή γεγονότα και το ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
+      ],
+      "You should enable detailed events in order to access these features": [
+        "Πρέπει να ενεργοποιήσετε λεπτομερή γεγονότα για πρόσβαση σε αυτές τις δυνατότητες"
       ],
       "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
         "Ο διαχειριστής του οργανισμού σας θα πρέπει να ενεργοποιήσει λεπτομερή γεγονότα και ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
@@ -7939,6 +7951,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Θέλετε σίγουρα να αποχωρήσετε από αυτήν την ομάδα; Εάν αποχωρήσετε, θα πρέπει να προσκληθείτε ξανά από τον διαχειριστή της ομάδας για να συμμετάσχετε ξανά."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Θέλετε σίγουρα να διαγράψετε οριστικά όλα τα αρχεία σας καταγραφής;"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Θέλετε σίγουρα να αφαιρέσετε τα προνόμια διαχειριστή από αυτόν τον χρήστη;"
       ],
@@ -8037,6 +8052,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Δημιουργώντας έναν λογαριασμό ${ PASS_APP_NAME } με το SimpleLogin email σας, μπορείτε να διαχειρίζεστε τα ψευδώνυμά σας απευθείας μέσα από το ${ PASS_APP_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Απενεργοποιώντας την παρακολούθηση συμβάντων ασφαλείας, θα διαγράψετε επίσης ολόκληρο το ιστορικό σας. Είστε βέβαιοι ότι θέλετε να την απενεργοποιήσετε;"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
@@ -12861,6 +12879,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ενεργοποίηση ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Ενεργοποίηση λεπτομερών συμβάντων"
+      ],
+      "Enable security events": [
+        "Ενεργοποίηση συμβάντων ασφαλείας"
       ]
     },
     "Mail import summary": {
@@ -19571,6 +19595,9 @@
       "Delete label?": [
         "Διαγραφή ετικέτας;"
       ],
+      "Delete logs": [
+        "Διαγραφή αρχείων καταγραφής"
+      ],
       "Delete organization logo?": [
         "Διαγραφή λογότυπου οργανισμού;"
       ],
@@ -20775,6 +20802,9 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Ενεργοποίηση/απενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας και κινητού για “${ labelName }”"
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Η ενεργοποίηση λεπτομερών συμβάντων καταγράφει τη διεύθυνση IP για κάθε συμβάν."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL τελικού σημείου από πάροχο ταυτότητας (π.χ. https://idp.example.com/sso/saml)"

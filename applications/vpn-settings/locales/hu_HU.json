@@ -1532,6 +1532,20 @@
         "Érzékeny adatokkal dolgozik?"
       ]
     },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "Dedikált szervere már hozzá van rendelve egy átjáróhoz. Több szervert vásárolhat majd, ha az ingyenes próbaidőszak lejár.",
+        "Minden dedikált szervere már hozzá van rendelve egy átjáróhoz. Több szervert vásárolhat majd, ha az ingyenes próbaidőszak lejár."
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "Az ingyenes próbaidőszak ${ ipAddresses } dedikált szervert tartalmaz. Több szervert adhat hozzá, miután elkezdődik a teljes előfizetése.",
+        "Az ingyenes próbaidőszak ${ ipAddresses } dedikált szervert tartalmaz. Több szervert adhat hozzá, miután elkezdődik a teljes előfizetése."
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "Az ingyenes próbaidőszak ${ maxMembers } licencet tartalmaz. Több licencet is hozzáadhat, amint elindul a teljes előfizetése.",
+        "Az ingyenes próbaidőszak ${ maxMembers } licencet tartalmaz. Több licencet is hozzáadhat, amint elindul a teljes előfizetése."
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
@@ -4254,6 +4268,9 @@
       ]
     },
     "Info": {
+      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
+        " - az Ön parancsnoki központja a felhasználói tevékenység nyomon követéséhez, a fenyegetések észleléséhez és a megfelelőség biztosításához a szervezetében."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } felhasználó rendelkezik jelenleg hozzáféréssel a megosztott szerverekhez.",
         "${ amountUsers }/${ totalUsers } felhasználó rendelkezik jelenleg hozzáféréssel a megosztott szerverekhez."
@@ -4448,6 +4465,9 @@
         "aktív"
       ],
       "Activity monitor": [
+        "Tevékenység figyelő"
+      ],
+      "Activity Monitor": [
         "Tevékenység figyelő"
       ],
       "add a recovery method": [
@@ -4938,6 +4958,9 @@
       "Free forever": [
         "Örökre ingyenes"
       ],
+      "Gain visibility across your organization": [
+        "Nyerjen rálátást a szervezete egészére"
+      ],
       "Gateways": [
         "Átjárók"
       ],
@@ -5150,6 +5173,9 @@
       ],
       "Learn more": [
         "További információk"
+      ],
+      "Learn more about Activity Monitor": [
+        "További információk az Aktivitásfigyelőről"
       ],
       "Learn more about Gateways": [
         "További információ az átjárókról"
@@ -6041,6 +6067,9 @@
       "Why?": [
         "Miért?"
       ],
+      "With a Business or Enterprise plan, unlock": [
+        "Egy Business vagy Enterprise csomaggal feloldhatja"
+      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Egy Business vagy Enterprise csomaggal ${ boldDedicatedServers } szervert vásárolhat a szervezete számára, és ${ boldGateways } átjárót állíthat be annak szabályozására, hogy mely felhasználók férhetnek hozzájuk."
       ],
@@ -6242,6 +6271,10 @@
       ],
       "Your files will be encrypted and then saved": [
         "A fájlok titkosításra majd pedig mentésre kerülnek"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Az ingyenes próbaidőszaka ${ ownedCount } dedikált szervert tartalmaz.",
+        "Az ingyenes próbaidőszaka ${ ownedCount } dedikált szervert tartalmaz."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Adatai velünk biztonságban vannak. Csak akkor lépünk önnel kapcsolatba, ha ez a szolgáltatásunk biztosításához szükséges."
@@ -6597,6 +6630,9 @@
       ],
       "Copy": [
         "Másolás"
+      ],
+      "Copy IP address to clipboard": [
+        "IP cím másolása a vágólapra"
       ],
       "Could you please let us know which provider?": [
         "Meg tudná mondani melyik szolgáltató?"
@@ -11634,8 +11670,17 @@
       "Cancel subscription?": [
         "Előfizetés lemondása?"
       ],
+      "Cannot add Gateway": [
+        "Nem adhat hozzá átjárót"
+      ],
+      "Cannot add licenses": [
+        "Nem adhat hozzá licenceket"
+      ],
       "Cannot add more users": [
         "Nem adhat hozzá több felhasználót"
+      ],
+      "Cannot add servers": [
+        "Nem adhat hozzá szervereket"
       ],
       "Card verification": [
         "Bankkártya ellenőrzése"
@@ -12285,6 +12330,9 @@
       ],
       "Video conferencing": [
         "Videokonferencia"
+      ],
+      "View organization events by upgrading to Business": [
+        "A szervezeti események megtekintése a Business verzióra való verzió frissítéssel"
       ],
       "Warning": [
         "Figyelem"

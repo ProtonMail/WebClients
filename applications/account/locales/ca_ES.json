@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "Voleu desactivar la frase de recuperació?"
       ],
+      "Disable security events": [
+        "Desactiveu els esdeveniments de seguretat"
+      ],
       "Discard": [
         "Descarta"
       ],
@@ -1542,6 +1545,9 @@
       ],
       "What do I get?": [
         "Què n'obtinc?"
+      ],
+      "Wipe": [
+        "Esborra"
       ],
       "Yes": [
         "Sí"
@@ -4218,6 +4224,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
+      ],
+      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Hauríeu d'habilitar els esdeveniments detallats i el ${ PROTON_SENTINEL_NAME } per accedir a aquestes característiques."
+      ],
+      "You should enable detailed events in order to access these features": [
+        "Hauríeu d'habilitar els esdeveniments detallats per accedir a aquestes característiques."
       ],
       "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
         "L'administrador de la vostra organització hauria d'habilitar els esdeveniments detallats i ${ PROTON_SENTINEL_NAME } per accedir a aquestes característiques."
@@ -7939,6 +7951,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Segur que voleu abandonar aquest grup? Si marxeu, l'administrador del grup us haurà de convidar de nou per unir-vos-hi."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Esteu segur que voleu eliminar permanentment tots els registres?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Esteu segur que voleu esborrar els privilegis d'administració d'aquest usuari?"
       ],
@@ -8037,6 +8052,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "En crear un compte ${ PASS_APP_NAME } amb el vostre correu electrònic de SimpleLogin, podeu gestionar els vostres àlies directament des de ${ PASS_APP_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "En desactivar la supervisió d'esdeveniments de seguretat, també esborrareu tot l'historial. Segur que voleu desactivar-la?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
@@ -11533,6 +11551,9 @@
       "Copy fingerprint": [
         "Copiar l'empremta digital"
       ],
+      "Copy IP address to clipboard": [
+        "Copia l'adreça IP al porta-retalls"
+      ],
       "Could you please let us know which provider?": [
         "Podeu fer-nos saber quin proveïdor?"
       ],
@@ -12861,6 +12882,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activa ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Activeu els esdeveniments detallats"
+      ],
+      "Enable security events": [
+        "Habiliteu els esdeveniments de seguretat"
       ]
     },
     "Mail import summary": {
@@ -19577,6 +19604,9 @@
       "Delete label?": [
         "Voleu eliminar l'etiqueta?"
       ],
+      "Delete logs": [
+        "Elimineu els registres"
+      ],
       "Delete organization logo?": [
         "Voleu eliminar el logo de l'organització?"
       ],
@@ -20781,6 +20811,9 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Activa/desactiva les notificacions a l'escriptori i al mòbil per a «${ labelName }»"
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "En activar els esdeveniments detallats, se'n registrarà l'adreça IP per a cada un d'ells."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.cat/sso/saml)"

@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "Адключыць фразу аднаўлення?"
       ],
+      "Disable security events": [
+        "Адключыць падзеі бяспекі"
+      ],
       "Discard": [
         "Скасаваць"
       ],
@@ -1542,6 +1545,9 @@
       ],
       "What do I get?": [
         "Што я атрымаю?"
+      ],
+      "Wipe": [
+        "Сцерці"
       ],
       "Yes": [
         "Так"
@@ -4260,6 +4266,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
+      ],
+      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Вам неабходна ўключыць падрабязныя падзеі і ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый."
+      ],
+      "You should enable detailed events in order to access these features": [
+        "Вам неабходна ўключыць падрабязныя падзеі, каб атрымаць доступ да гэтых функцый."
       ],
       "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
         "Адміністратар вашай арганізацыі павінен уключыць падрабязныя падзеі і ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
@@ -7928,7 +7940,7 @@
         "Дадаць нумар тэлефона для аднаўлення"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Дадайце яшчэ адзін слой абароны ў ваш уліковы запіс. Вам неабходна будзе пацвярджаць сваю асобу з дапамогай 2ФА пры кожным уваходзе."
+        "Дадайце яшчэ адзін слой абароны ў свой уліковы запіс. Вам неабходна будзе пацвярджаць сваю асобу з дапамогай 2ФА пры кожным уваходзе."
       ],
       "Add domain": [
         "Дадаць дамен"
@@ -7944,9 +7956,9 @@
       ],
       "Add server (${ availableAddedCount } available)": [
         "Дадаць сервер (${ availableAddedCount } даступны)",
-        "Дадаць сервер (${ availableAddedCount } даступна)",
-        "Дадаць сервер (${ availableAddedCount } даступна)",
-        "Дадаць сервер (${ availableAddedCount } даступна)"
+        "Дадаць сервер (${ availableAddedCount } даступны)",
+        "Дадаць сервер (${ availableAddedCount } даступны)",
+        "Дадаць сервер (${ availableAddedCount } даступны)"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Дадайце свае назву і лагатып, каб стварыць больш персаналізаванае ўражанне для сваёй арганізацыі."
@@ -8107,6 +8119,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Вы сапраўды хочаце выйсці з групы? Вам неабходна будзе паўторна атрымаць запрашэнне адміністратара групы, калі вы выйдзеце з яе, а потым перадумаеце і захочаце вярнуцца."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Вы сапраўды хочаце незваротна выдаліць усе вашы журналы?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы сапраўды хочаце пазбавіць гэтага карыстальніка правоў адміністратара?"
       ],
@@ -8205,6 +8220,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ствараючы ўліковы запіс ${ PASS_APP_NAME } з дапамогай вашай электроннай пошты SimpleLogin, вы можаце кіраваць сваімі псеўданімамі наўпрост з ${ PASS_APP_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Адключыўшы ўвесь свой маніторынг падзеяў, вы таксама ачысціце ўсю сваю гісторыю. Вы сапраўды хочаце яго адключыць?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
@@ -11781,6 +11799,9 @@
       "Copy fingerprint": [
         "Скапіяваць адбітак пальца"
       ],
+      "Copy IP address to clipboard": [
+        "Скапіяваць IP-адрас у буфер абмену"
+      ],
       "Could you please let us know which provider?": [
         "Не маглі б вы ўдакладніць, які пастаўшчык паслуг?"
       ],
@@ -13113,6 +13134,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Уключыць ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Уключыць падрабязныя падзеі"
+      ],
+      "Enable security events": [
+        "Уключыць падзеі бяспекі"
       ]
     },
     "Mail import summary": {
@@ -17578,7 +17605,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Дадаць уліковыя запісы ${ BRAND_NAME } для ўдзельнікаў, з якімі вы хочаце абагуліць ${ calendarName }. Мы адправім ім запрашэнне."
+        "Дадаць уліковыя запісы ${ BRAND_NAME } для ўдзельнікаў, з якімі вы хочаце абагуліць ${ calendarName }. Ім будзе адпраўлена запрашэнне."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -19607,7 +19634,7 @@
         "(актыўна)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. Назавіце згенерыраваную канфігурацыю"
+        "1. Выберыце назву для згенерыраванай канфігурацыі"
       ],
       "1. Select platform": [
         "1. Выберыце платформу"
@@ -19724,7 +19751,7 @@
         "Дадаць у спіс дазволеных"
       ],
       "Add to block list": [
-        "Дадаць у спіс заблакіраваных адрасоў"
+        "Дадаць у спіс заблакіраваных"
       ],
       "Add to spam list": [
         "Дадаць у спіс са спамам"
@@ -20055,6 +20082,9 @@
       ],
       "Delete label?": [
         "Выдаліць метку?"
+      ],
+      "Delete logs": [
+        "Выдаліць журналы"
       ],
       "Delete organization logo?": [
         "Выдаліць лагатып арганізацыі?"
@@ -21270,6 +21300,9 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Уключыць/адключыць апавяшчэнні на камп'ютары і мабільнай прыладзе для “${ labelName }”"
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Уключыце падрабязныя запісы падзей IP-адраса для кожнай падзеі."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-адрас канцавога пункта ад пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)"

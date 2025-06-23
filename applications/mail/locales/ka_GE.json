@@ -337,6 +337,9 @@
       "Create folder": [
         "საქაღალდის შექმნა"
       ],
+      "Create folder ${ boldFolderName }": [
+        "${ boldFolderName } საქაღალდის შექმნა"
+      ],
       "Create label": [
         "ჭდის შექმნა"
       ],
@@ -641,6 +644,9 @@
       ],
       "Hide toolbar": [
         "ხელსაწყოების პანელის დამალვა"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
       ],
       "hide-my-email aliases": [
         "hide-my-email-ის ფსევდონიმები"
@@ -1146,6 +1152,9 @@
       ],
       "Save": [
         "შენახვა"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }-ზე შენახვა"
       ],
       "Saving${ ellipsis }": [
         "შენახვა${ ellipsis }"
@@ -1718,6 +1727,105 @@
       ],
       "New email": [
         "ახალი ელფოსტა"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "200 GB storage": [
+        "200 გბ საცავი"
+      ],
+      "500 GB encrypted storage": [
+        "500 გბ დაშიფრული საცავი"
+      ],
+      "Add unlimited credit cards": [
+        "დაამატეთ განუსაზღვრელი რაოდენობის საკრედიტო ბარათი"
+      ],
+      "Block ads, trackers, and malware": [
+        "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+      ],
+      "Encrypted password manager": [
+        "დაშიფრული პაროლების მმართველი"
+      ],
+      "High speed streaming with VPN": [
+        "ჩქაროსნული სტრიმინგი VPN-ით"
+      ],
+      "of privacy": [
+        "კონფიდენციალობა"
+      ],
+      "Online document editor": [
+        "დოკუმენტების რედაქტორი ინტერნეტში"
+      ],
+      "Online privacy for up to 2 people": [
+        "ინტერნეტკონფიდენციალობა ორამდე ადამიანისთვის"
+      ],
+      "Protect up to 10 devices": [
+        "დაიცავით 10-მდე მოწყობილობა"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
+      "Save time with built-in 2FA": [
+        "დაზოგეთ დრო ჩაშენებული 2FA-ით"
+      ],
+      "Secure email with unlimited aliases": [
+        "დაცული ელფოსტა შეუზღუდავი ფსევდონიმების რაოდენობით"
+      ],
+      "Select any server": [
+        "აირჩიეთ ნებისმიერი სერვერი"
+      ],
+      "Share passwords easily": [
+        "გააზიარეთ პაროლები ადვილად"
+      ],
+      "Short @pm.me address": [
+        "მოკლე @pm.me მისამართი"
+      ],
+      "Stream your favorite content": [
+        "დასტრიმეთ თქვენი რჩეული შემცველობა"
+      ],
+      "thanks to you": [
+        "მადლობა"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
+      ],
+      "years": [
+        "წელი"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "საიუბილეო შეთავაზება"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "/ month": [
+        "/ თვეში"
+      ],
+      "12 months": [
+        "12 თვე"
+      ],
+      "15 months": [
+        "15 თვე"
+      ],
+      "24 months": [
+        "24 თვე"
+      ],
+      "30 months": [
+        "30 თვე"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal }-სთვის"
       ]
     },
     "Apps dropdown": {
@@ -6073,6 +6181,10 @@
         "${ messagesNotAuthorizedToMove } შეტყობინების გადატანა შეუძლებელია.",
         "${ messagesNotAuthorizedToMove } შეტყობინების გადატანა შეუძლებელია."
       ],
+      "${ n } newsletter": [
+        "${ n } სიახლე",
+        "${ n } სიახლე"
+      ],
       "${ n } unread conversation": [
         "${ n } წაუკითხავი საუბარი",
         "${ n } წაუკითხავი საუბარი"
@@ -6414,6 +6526,9 @@
       ],
       "Billing cycle: ${ text }": [
         "გადახდის ციკლი: ${ text }"
+      ],
+      "Block sender": [
+        "გამომგზავნის დაბლოკვა"
       ],
       "Body: ": [
         "ტანი: "
@@ -6898,6 +7013,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
+        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -7032,11 +7148,17 @@
       "Message headers": [
         "შეტყობინების თავსართები"
       ],
+      "Message list": [
+        "შეტყობინებების სია"
+      ],
       "Message sent": [
         "შეტყობინება გაიგზავნა"
       ],
       "Message sent.": [
         "შეტყობინება გაიგზავნა."
+      ],
+      "Message view": [
+        "შეტყობინებების ნახვა"
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
         "შეტყობინება დილით, ${ formattedTime }-ზე გაიგზავნება"
@@ -7100,6 +7222,9 @@
       ],
       "No links cleaned": [
         "ბმულები არ გასუფთავებულა"
+      ],
+      "No messages to show": [
+        "საჩვენებელი შეტყობინებების გარეშე"
       ],
       "No more results found": [
         "მეტი ვერაფერი ვიპოვე"
@@ -7274,6 +7399,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "მოითმინეთ, მიმდინარეობს არააქტიური გასაღებით დაშიფრული მონაცემების ძებნა."
       ],
+      "Preferences updated": [
+        "პარამეტრები განახლდა"
+      ],
       "Preview failed to be loaded": [
         "მინიატურის ჩატვირთვის შეცდომა"
       ],
@@ -7397,6 +7525,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "აირჩიეთ რომელი კალენდრები შემოტანა. ყოველი შემოტანილი კალენდრისთვის შეიქმნება ახალი კალენდარი თქვენს გეგმაში არსებული კალენდრების რაოდენობის მიხედვით."
+      ],
+      "Selection pane": [
+        "მონიშნულის პანელი"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "ელფოსტაზე ${ boldText } დაშიფრული, პაროლით დაცული შეტყობინების გაგზავნა."
@@ -8671,6 +8802,9 @@
       "CC": [
         "ასლი"
       ],
+      "Choose what to do instead": [
+        "აირჩიეთ, რა გნებავთ, გააკეთოთ ამის მაგიერ"
+      ],
       "City": [
         "ქალაქი"
       ],
@@ -8914,10 +9048,6 @@
       ],
       "Move to Inbox": [
         "შემომავლებში გადატანა"
-      ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "${ count } შეტყობინება გადატანა საქაღალდეში ${ selectedFolder.Name }.",
-        "${ count } შეტყობინება გადატანა საქაღალდეში ${ selectedFolder.Name }."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } შეტყობინება გადატანილია არქივში.",

@@ -1805,6 +1805,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2621,6 +2625,9 @@
       "City": [
         "Poststed"
       ],
+      "Class": [
+        "Klasse"
+      ],
       "Code": [
         "Kode"
       ],
@@ -2710,6 +2717,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Doktor"
       ],
       "Domain": [
         "Domene"
@@ -2819,6 +2829,9 @@
       "Holder Name": [
         "Navn på innehaveren"
       ],
+      "Hospital": [
+        "Sykehus"
+      ],
       "Host": [
         "Vert"
       ],
@@ -2882,6 +2895,9 @@
       "Issuing Country": [
         "Utstedende land"
       ],
+      "Issuing State/Country": [
+        "Utstedende stat/land"
+      ],
       "Item ID": [
         "Element ID"
       ],
@@ -2893,6 +2909,9 @@
       ],
       "Key fingerprint": [
         "Nøkkelfingeravtrykk"
+      ],
+      "Key type": [
+        "Nøkkeltype"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastatursnarvei: ${ shortcut }"
@@ -2927,6 +2946,9 @@
       "License number": [
         "Førerkortnummer"
       ],
+      "License Number": [
+        "Førerkortnummer"
+      ],
       "LinkedIn account": [
         "LinkedIn-konto"
       ],
@@ -2957,11 +2979,20 @@
       "max views reached": [
         "maks antall visninger nådd"
       ],
+      "Medical Conditions": [
+        "Medisinske tilstander"
+      ],
       "Medical Record": [
         "Medisinsk journal"
       ],
+      "Medications": [
+        "Medisiner"
+      ],
       "Member ID": [
         "Medlems-ID"
+      ],
+      "Member Name": [
+        "Medlemsnavn"
       ],
       "Members": [
         "Medlemmer"
@@ -2969,14 +3000,14 @@
       "Membership": [
         "Medlemskap"
       ],
+      "Membership ID": [
+        "Medlemskaps-ID"
+      ],
       "Middle name": [
         "Mellomnavn"
       ],
       "Modified": [
         "Endret"
-      ],
-      "More": [
-        "Mer"
       ],
       "More than a month": [
         "Mer enn én måned"
@@ -3047,6 +3078,12 @@
       "Organization": [
         "Organisasjon"
       ],
+      "Organization Name": [
+        "Organisasjonsnavn"
+      ],
+      "Other": [
+        "Annet"
+      ],
       "Owner": [
         "Eier"
       ],
@@ -3076,6 +3113,9 @@
       ],
       "Passwords": [
         "Passord"
+      ],
+      "Patient Name": [
+        "Pasientnavn"
       ],
       "Pause list": [
         "Pauseliste"
@@ -3151,6 +3191,9 @@
       ],
       "Recent": [
         "Nylig"
+      ],
+      "Record Number": [
+        "Registreringsnummer"
       ],
       "Reddit handle": [
         "Reddit-brukernavn"
@@ -3304,6 +3347,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Tier/Level": [
+        "Nivå"
       ],
       "Tier/Status": [
         "Nivå/status"
@@ -3616,6 +3662,18 @@
       ],
       "Add note": [
         "Legg til notat"
+      ],
+      "Add password": [
+        "Legg til passord"
+      ],
+      "Add private key": [
+        "Legg til privat nøkkel"
+      ],
+      "Add public key": [
+        "Legg til offentlig nøkkel"
+      ],
+      "Add SSID": [
+        "Legg til SSID"
       ],
       "Add text": [
         "Legg til tekst"
@@ -4276,7 +4334,8 @@
       ]
     },
     "Vault Select": {
-      "Move items to": [
+      "Move item to": [
+        "Flytt element til",
         "Flytt elementer til"
       ]
     },

@@ -93,6 +93,9 @@
       "Apply": [
         "Použít"
       ],
+      "Ask me next time": [
+        "Zeptat se příště"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
         "Na jednu skupinu kontaktů jsou povoleny maximálně ${ maxContacts } kontakty",
@@ -687,6 +690,9 @@
       "Save changes": [
         "Uložit změny"
       ],
+      "Save preferences": [
+        "Uložit předvolby"
+      ],
       "Search": [
         "Vyhledat"
       ],
@@ -875,7 +881,7 @@
       ],
       "View ${ pendingCount } invitation": [
         "Zobrazit ${ pendingCount } pozvánku",
-        "Zobrazit ${ pendingCount } poznámky",
+        "Zobrazit všechny ${ pendingCount } pozvánky",
         "Zobrazit všech ${ pendingCount } pozvánek",
         "Zobrazit všech ${ pendingCount } pozvánek"
       ],
@@ -1052,7 +1058,7 @@
         "Snadné sdílení hesel"
       ],
       "Short @pm.me address": [
-        "Zkrácená adresa @pm.me"
+        "Krátká adresa @pm.me"
       ],
       "Stream your favorite content": [
         "Streamujte svůj oblíbený obsah"
@@ -4532,6 +4538,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt byl odebrán ze skupiny ${ contactGroupName }"
       ],
+      "Converting document...": [
+        "Převádění dokumentu..."
+      ],
       "Copy the link to clipboard": [
         "Kopírovat odkaz do schránky"
       ],
@@ -4579,6 +4588,9 @@
       ],
       "Creating link to folder": [
         "Vytváření odkazu na složku"
+      ],
+      "Creating new document...": [
+        "Vytváření nového dokumentu..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
@@ -4697,6 +4709,12 @@
       "Enter your own password (as organization admin).": [
         "Zadejte vlastní heslo (jako správce organizace)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Chyba při převodu dokumentu: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Chyba při načítání dokumentu: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Chyba při synchronizaci"
       ],
@@ -4756,6 +4774,12 @@
       ],
       "Geoblocking": [
         "Zeměpisné blokování"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Získejte e-mailem upozornění na nové komentáře a návrhy přidané k vašim dokumentům."
+      ],
+      "Get Notified About Comments": [
+        "Buďte upozorněni na komentáře"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Jít do ${ DRIVE_APP_NAME }"
@@ -4907,6 +4931,9 @@
       "Low Priority": [
         "Nízká priorita"
       ],
+      "Making a copy...": [
+        "Vytváření kopie..."
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -4948,6 +4975,9 @@
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Adresa URL nevede k žádnému dokumentu. Vraťte se na ${ DRIVE_APP_NAME } a vyberte dokument."
       ],
       "No email address": [
         "Žádná e-mailová adresa"
@@ -5297,6 +5327,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Zadaná URL adresa byla zřejmě nesprávně zkopírována ze služby Slack. Při kopírování dlouhých odkazů ze služby Slack klikněte na odkaz pravým tlačítkem myši a vyberte možnost \"Kopírovat odkaz\", místo přímého kopírování zkráceného textu URL adresy."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces ověření otevře novou kartu prohlížeče. Vypněte prosím blokování vyskakovacích oken."
       ],
@@ -5642,13 +5675,13 @@
         "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }.",
         "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }."
       ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Chystáte se odmítnout pozvánku k připojení do alba ${ invitationName }. Pokud budete pokračovat, nebudete k němu mít přístup, dokud vás vlastník znovu nepozve. Jste si jisti, že chcete pokračovat?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Chystáte se odmítnout pozvánku k připojení do složky ${ invitationName }. Pokud budete pokračovat, nebudete k ní mít přístup, dokud vás vlastník znovu nepozve. Jste si jisti, že chcete pokračovat?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Chystáte se odmítnout pozvánku k připojení k položce ${ invitationName }. Pokud budete pokračovat, nebudete k ní mít přístup, dokud vás vlastník znovu nepozve. Jste si jisti, že chcete pokračovat?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
@@ -6036,6 +6069,9 @@
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
       ],
+      "Enable email notifications": [
+        "Povolit e-mailová upozornění"
+      ],
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
@@ -6092,6 +6128,9 @@
       ],
       "Import to:": [
         "Importovat do:"
+      ],
+      "Include document name in notification": [
+        "Zahrnout název dokumentu do upozornění"
       ],
       "Include message and file name in invite email": [
         "Zahrnout zprávu a název souboru v e-mailu s pozvánkou"
@@ -8069,6 +8108,9 @@
       "The link to your item was deleted": [
         "Odkaz na položku byl odstraněn"
       ],
+      "The spreadsheet failed to be created": [
+        "Vytvoření tabulky selhalo"
+      ],
       "Trash failed to be emptied": [
         "Koš se nepodařilo vyprázdnit"
       ],
@@ -9070,6 +9112,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Vytváření nové tabulky..."
+      ],
       "Detect automatically": [
         "Zjistit automaticky"
       ],
@@ -10487,6 +10532,9 @@
       ],
       "Untitled document ${ date }": [
         "Dokument bez názvu ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Tabulka bez názvu ${ date }"
       ],
       "Upgrade complete!": [
         "Navýšení dokončeno!"

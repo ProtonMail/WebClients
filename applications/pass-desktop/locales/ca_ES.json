@@ -1980,10 +1980,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
-      ],
       "Moving items": [
         "S'estan movent elements"
       ],
@@ -2813,6 +2809,9 @@
       "City": [
         "Ciutat"
       ],
+      "Class": [
+        "Classe"
+      ],
       "Clear clipboard after": [
         "Neteja el porta-retalls després"
       ],
@@ -2905,6 +2904,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Doctor"
       ],
       "Domain": [
         "Domini"
@@ -3056,6 +3058,9 @@
       "Holder Name": [
         "Nom del titular"
       ],
+      "Hospital": [
+        "Hospital"
+      ],
       "Host": [
         "Amfitrió"
       ],
@@ -3128,6 +3133,9 @@
       "Issuing Country": [
         "País emissor"
       ],
+      "Issuing State/Country": [
+        "País o estat emissor"
+      ],
       "Item ID": [
         "ID de l'element"
       ],
@@ -3179,6 +3187,9 @@
       "License number": [
         "Número de llicència"
       ],
+      "License Number": [
+        "Número de llicència"
+      ],
       "Limited time": [
         "Oferta per temps limitat"
       ],
@@ -3212,11 +3223,20 @@
       "max views reached": [
         "s'ha assolit el nombre màxim de visualitzacions."
       ],
+      "Medical Conditions": [
+        "Estat de salut"
+      ],
       "Medical Record": [
         "Registre mèdic"
       ],
+      "Medications": [
+        "Medicaments"
+      ],
       "Member ID": [
         "ID del membre"
+      ],
+      "Member Name": [
+        "Nom del membre"
       ],
       "Members": [
         "Membres"
@@ -3224,14 +3244,14 @@
       "Membership": [
         "Subscripció"
       ],
+      "Membership ID": [
+        "ID de subscripció"
+      ],
       "Middle name": [
         "Segon nom"
       ],
       "Modified": [
         "Modificació"
-      ],
-      "More": [
-        "Més"
       ],
       "More than a month": [
         "Més de un mes"
@@ -3311,6 +3331,12 @@
       "Organization": [
         "Organització"
       ],
+      "Organization Name": [
+        "Nom de l'organització"
+      ],
+      "Other": [
+        "Altres"
+      ],
       "Owner": [
         "Propietari"
       ],
@@ -3337,6 +3363,9 @@
       ],
       "Password history": [
         "Historial de les contrasenyes"
+      ],
+      "Patient Name": [
+        "Nom del pacient"
       ],
       "Permissions": [
         "Permisos"
@@ -3412,6 +3441,9 @@
       ],
       "Recent": [
         "Recents"
+      ],
+      "Record Number": [
+        "Número de registre"
       ],
       "Reddit handle": [
         "Nom d'usuari del Reddit"
@@ -3592,6 +3624,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Aquest element és accessible fins a ${ date } o fins que s'arribi al límit de visualitzacions."
+      ],
+      "Tier/Level": [
+        "Nivell"
       ],
       "Tier/Status": [
         "Nivell/Estat"
@@ -3968,6 +4003,18 @@
       ],
       "Add note": [
         "Afegeix una nota"
+      ],
+      "Add password": [
+        "Afegeix una contrasenya"
+      ],
+      "Add private key": [
+        "Afegeix una clau privada"
+      ],
+      "Add public key": [
+        "Afegeix una clau pública"
+      ],
+      "Add SSID": [
+        "Afegeix un SSID"
       ],
       "Add text": [
         "Afegiu text"
@@ -4731,7 +4778,8 @@
       ]
     },
     "Vault Select": {
-      "Move items to": [
+      "Move item to": [
+        "Mou l'element a",
         "Mou elements a"
       ]
     },

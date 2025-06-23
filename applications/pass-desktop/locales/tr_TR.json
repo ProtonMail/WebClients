@@ -700,6 +700,105 @@
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "500 GB encrypted storage": [
+        "500 GB şifrelenmiş depolama alanı"
+      ],
+      "Add unlimited credit cards": [
+        "Sınırsız sayıda kredi kartı ekleyin"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Tüm ücretli ${ BRAND_NAME } Mail, Pass, VPN, Drive ve Calendar özellikleri"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "İndirimler standart aylık fiyatlandırmaya göre belirlenir. Aboneliğiniz fatura döneminin sonunda standart yıllık fiyattan yenilenir."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Şifrelenmiş depolama alanınızı iki katına çıkarın. Tüm verileriniz için 1 TB edinin."
+      ],
+      "Encrypted password manager": [
+        "Şifrelenmiş parola yöneticisi"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Birlikte çıktığımız bu yolculuğu kutlamak için size özel bir hediye."
+      ],
+      "High speed streaming with VPN": [
+        "VPN ile yüksek hızda yayın akışı izleme"
+      ],
+      "of privacy": [
+        "ile gizlilik"
+      ],
+      "Online privacy for up to 2 people": [
+        "2 kişiye kadar çevrim içi gizlilik"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Tüm aileniz için çevrim içi gizlilik (6 kullanıcıya kadar)"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Sınırlı süreli indirimle ücretli Drive özelliklerinde büyük indirim kazanın."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Sınırlı süreli indirimle ücretli Mail özelliklerinde büyük indirim kazanın."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Sınırlı süreli indirimle ücretli Pass özelliklerinde büyük indirim kazanın."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Sınırlı süreli indirimle ücretli VPN özelliklerinde büyük indirim kazanın."
+      ],
+      "Save time with built-in 2FA": [
+        "İç 2 adımlı doğrulama ile zaman kazanın"
+      ],
+      "Secure email with unlimited aliases": [
+        "Sınırsız takma ad ile güvenli e-posta"
+      ],
+      "Share passwords easily": [
+        "Parolaları kolayca paylaşın"
+      ],
+      "thanks to you": [
+        "sayenizde"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Şifrelenmiş depolama alanınızı üç katına çıkarın. Tüm verileriniz için 3 TB edinin."
+      ],
+      "years": [
+        "yıl"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Yıl dönümü teklifi"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "/ month": [
+        "/ ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "15 months": [
+        "15 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ],
+      "30 months": [
+        "30 ay"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal } için"
+      ]
+    },
     "App menu": {
       "Force Reload": [
         "Yeniden yüklemeye zorla"
@@ -1088,6 +1187,9 @@
       "File does not match expected format": [
         "Dosya beklenen biçimde değil"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "\"${ vaultData.name }\" kasası içe aktarılamadı: ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
       ],
@@ -1201,6 +1303,9 @@
       ],
       "Unsupported 1Password file format": [
         "Desteklenmeyen 1Password dosya biçimi"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Desteklenmeyen Bitwarden dosya biçimi"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası güncellenemedi"
@@ -1874,10 +1979,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2696,6 +2797,9 @@
       "Catch-All": [
         "Tümünü toplama"
       ],
+      "Checkbox": [
+        "İşaret kutusu"
+      ],
       "Choose unlock method": [
         "Kilit açma yöntemini seçin"
       ],
@@ -2704,6 +2808,9 @@
       ],
       "City": [
         "İl"
+      ],
+      "Class": [
+        "Sınıf"
       ],
       "Clear clipboard after": [
         "Pano şu süre sonunda temizlensin"
@@ -2798,6 +2905,9 @@
       "DNS": [
         "DNS"
       ],
+      "Doctor": [
+        "Doktor"
+      ],
       "Domain": [
         "Etki alanı"
       ],
@@ -2857,6 +2967,9 @@
       ],
       "Extra email addresses": [
         "Ek e-posta adresleri"
+      ],
+      "Extra fields": [
+        "Ek alanlar"
       ],
       "Extra password": [
         "Ek parola"
@@ -2945,6 +3058,9 @@
       "Holder Name": [
         "Kart üzerindeki ad"
       ],
+      "Hospital": [
+        "Hastane"
+      ],
       "Host": [
         "Sunucu"
       ],
@@ -3017,6 +3133,9 @@
       "Issuing Country": [
         "Veren ülke"
       ],
+      "Issuing State/Country": [
+        "Verildiği il/ülke"
+      ],
       "Item ID": [
         "Öge kimliği"
       ],
@@ -3025,6 +3144,12 @@
       ],
       "Key": [
         "Anahtar"
+      ],
+      "Key fingerprint": [
+        "Anahtar parmak izi"
+      ],
+      "Key type": [
+        "Anahtar türü"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klavye kısayolu: ${ shortcut }"
@@ -3062,6 +3187,9 @@
       "License number": [
         "Ehliyet numarası"
       ],
+      "License Number": [
+        "Ehliyet numarası"
+      ],
       "Limited time": [
         "Sınırlı süreli"
       ],
@@ -3095,11 +3223,20 @@
       "max views reached": [
         "en fazla görüntülenme sayısına ulaşılmış"
       ],
+      "Medical Conditions": [
+        "Tıbbi durumlar"
+      ],
       "Medical Record": [
         "Sağlık kaydı"
       ],
+      "Medications": [
+        "İlaçlar"
+      ],
       "Member ID": [
         "Üye kimliği"
+      ],
+      "Member Name": [
+        "Üye adı"
       ],
       "Members": [
         "Üyeler"
@@ -3107,14 +3244,14 @@
       "Membership": [
         "Üyelik"
       ],
+      "Membership ID": [
+        "Üyelik kimliği"
+      ],
       "Middle name": [
         "İkinci ad"
       ],
       "Modified": [
         "Değiştirilme"
-      ],
-      "More": [
-        "Diğer"
       ],
       "More than a month": [
         "Bir aydan fazla"
@@ -3194,6 +3331,12 @@
       "Organization": [
         "Kuruluş"
       ],
+      "Organization Name": [
+        "Kuruluş adı"
+      ],
+      "Other": [
+        "Diğer"
+      ],
       "Owner": [
         "Sahibi"
       ],
@@ -3220,6 +3363,9 @@
       ],
       "Password history": [
         "Parola geçmişi"
+      ],
+      "Patient Name": [
+        "Hasta adı"
       ],
       "Permissions": [
         "İzinler"
@@ -3295,6 +3441,9 @@
       ],
       "Recent": [
         "Son"
+      ],
+      "Record Number": [
+        "Kayıt numarası"
       ],
       "Reddit handle": [
         "Reddit takma adı"
@@ -3475,6 +3624,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Bu ögeye ${ date } tarihine kadar veya görüntüleme sayısı sınırına ulaşılana kadar erişilebilir."
+      ],
+      "Tier/Level": [
+        "Sınıf/Düzey"
       ],
       "Tier/Status": [
         "Kademe/Durum"
@@ -3851,6 +4003,18 @@
       ],
       "Add note": [
         "Not ekle"
+      ],
+      "Add password": [
+        "Parola ekle"
+      ],
+      "Add private key": [
+        "Kişisel anahtar ekle"
+      ],
+      "Add public key": [
+        "Herkese açık anahtar ekle"
+      ],
+      "Add SSID": [
+        "SSID ekle"
       ],
       "Add text": [
         "Metin ekle"
@@ -4611,6 +4775,12 @@
       ],
       "URL is invalid": [
         "Adres geçersiz"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Ögeyi şuraya taşı",
+        "Ögeleri şuraya taşı"
       ]
     },
     "Warning": {
