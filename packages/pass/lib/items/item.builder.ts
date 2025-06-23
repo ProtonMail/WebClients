@@ -7,8 +7,8 @@ import type {
     MaybeNull,
     Metadata,
 } from '@proton/pass/types';
-import { type PlatformSpecific, WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
-import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
+import type { PlatformSpecific } from '@proton/pass/types/protobuf/item-v1';
+import { CardType, WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
 import { type ObjectHandler, objectHandler } from '@proton/pass/utils/object/handler';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
