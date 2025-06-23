@@ -1950,6 +1950,14 @@
         "Weryfikacja nadawcy powiodła się"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } miesiące w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 użytkownik"
@@ -7332,7 +7340,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8398,9 +8409,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nie możemy zweryfikować zaufanych kluczy nadawcy."
-      ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "Nie mogliśmy znaleźć opcji anulowania subskrypcji. Możesz zrezygnować z subskrypcji za pomocą linku w wiadomości lub na stronie internetowej."
       ],
       "We couldn’t process your payment.": [
         "Nie mogliśmy przetworzyć płatności."
@@ -9470,12 +9478,6 @@
       ],
       "Move to Inbox": [
         "Przenieś do Odebranych"
-      ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "Przeniesiono ${ count } wiadomość do folderu ${ selectedFolder.Name }.",
-        "Przeniesiono ${ count } wiadomości do folderu ${ selectedFolder.Name }.",
-        "Przeniesiono ${ count } wiadomości do folderu ${ selectedFolder.Name }.",
-        "Przeniesiono ${ count } wiadomości do folderu ${ selectedFolder.Name }."
       ],
       "Moved ${ count } message to Archive.": [
         "Przeniesiono ${ count } wiadomość do archiwum.",

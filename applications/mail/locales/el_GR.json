@@ -337,6 +337,9 @@
       "Create folder": [
         "Δημιουργία φακέλου"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Δημιουργία φακέλου ${ boldFolderName }"
+      ],
       "Create label": [
         "Δημιουργία ετικέτας"
       ],
@@ -6229,6 +6232,10 @@
         "${ messagesNotAuthorizedToMove } μήνυμα δεν μπόρεσε να μετακινηθεί.",
         "${ messagesNotAuthorizedToMove } μηνύματα δεν μπόρεσαν να μετακινηθούν."
       ],
+      "${ n } newsletter": [
+        "${ n } ενημερωτικό δελτίο",
+        "${ n } ενημερωτικά δελτία"
+      ],
       "${ n } unread conversation": [
         "${ n } μη διαβασμένη συνομιλία",
         "${ n } μη διαβασμένες συνομιλίες"
@@ -6597,6 +6604,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
+      ],
+      "Block sender": [
+        "Αποκλεισμός αποστολέα"
       ],
       "Body: ": [
         "Σώμα: "
@@ -7093,7 +7103,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -7305,6 +7316,9 @@
       "No links cleaned": [
         "Κανένας σύνδεσμος δεν καθαρίστηκε"
       ],
+      "No messages to show": [
+        "Δεν υπάρχουν μηνύματα"
+      ],
       "No more results found": [
         "Δεν βρέθηκαν άλλα αποτελέσματα"
       ],
@@ -7477,6 +7491,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
+      ],
+      "Preferences updated": [
+        "Οι προτιμήσεις ενημερώθηκαν"
       ],
       "Preview failed to be loaded": [
         "Η φόρτωση της προεπισκόπησης απέτυχε"
@@ -7817,6 +7834,9 @@
       "Themes can give your inbox a new look.": [
         "Τα θέματα μπορούν να δώσουν στα εισερχόμενά σας μια νέα εμφάνιση."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "Δεν υπάρχουν μηνύματα από αυτόν τον αποστολέα στα εισερχόμενά σας."
+      ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Υπήρξε ένα σφάλμα με την υπογραφή που χρησιμοποιήθηκε για την επαλήθευση των στοιχείων επαφής, το οποίο μπορεί να είναι το αποτέλεσμα επαναφοράς κωδικού πρόσβασης."
       ],
@@ -8145,9 +8165,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Δεν μπορούμε να επαληθεύσουμε τα έμπιστα κλειδιά του αποστολέα."
-      ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "Δεν μπορέσαμε να βρούμε μια επιλογή κατάργησης εγγραφής για αυτό το ενημερωτικό δελτίο. Ίσως μπορείτε να καταργήσετε την εγγραφή χρησιμοποιώντας έναν σύνδεσμο στο μήνυμα ηλεκτρονικού ταχυδρομείου τους ή από την ιστοσελίδα τους."
       ],
       "We couldn’t process your payment.": [
         "Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας."
@@ -8926,6 +8943,9 @@
       "CC": [
         "Κοιν."
       ],
+      "Choose what to do instead": [
+        "Επιλέξτε τι να κάνετε αντ' αυτού"
+      ],
       "City": [
         "Πόλη"
       ],
@@ -9045,6 +9065,9 @@
       ],
       "Extended address": [
         "Εκτεταμένη διεύθυνση"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Αποτυχία δημιουργίας φακέλου ${ customFolderName }"
       ],
       "Filter Name": [
         "Όνομα φίλτρου"
@@ -9170,9 +9193,9 @@
       "Move to Inbox": [
         "Μετακίνηση στα Εισερχόμενα"
       ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "Μετακινήθηκε ${ count } μήνυμα στο ${ selectedFolder.Name }.",
-        "Μετακινήθηκαν ${ count } μηνύματα στο ${ selectedFolder.Name }."
+      "Moved ${ count } message to ${ labelName }.": [
+        "Μετακινήθηκε ${ count } μήνυμα στο ${ labelName }.",
+        "Μετακινήθηκαν ${ count } μηνύματα στο ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "Μετακινήθηκε ${ count } μήνυμα στα Αρχειοθετημένα.",
@@ -14611,6 +14634,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Κατάργηση εγγραφής από ${ subscription.Name };"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Η απεγγραφή δεν είναι δυνατή για αυτόν τον αποστολέα."
       ],
       "Unsubscribe request sent": [
         "Απεστάλη το αίτημα κατάργησης εγγραφής"

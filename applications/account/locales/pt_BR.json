@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "Desativar a frase de recuperação?"
       ],
+      "Disable security events": [
+        "Desativar eventos de segurança"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -1543,6 +1546,9 @@
       "What do I get?": [
         "O que eu recebo?"
       ],
+      "Wipe": [
+        "Limpar"
+      ],
       "Yes": [
         "Sim"
       ],
@@ -1979,6 +1985,9 @@
       ],
       "on ${ formattedDate }": [
         "em ${ formattedDate }"
+      ],
+      "Try it free for 14 days": [
+        "Experimente grátis por 14 dias"
       ]
     },
     "b2b_trials_2025_Label": {
@@ -4155,6 +4164,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronize facilmente arquivos com a nuvem a partir do seu computador e acesse-os no seu dispositivo móvel."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Ative ${ PROTON_SENTINEL_NAME } para acessar esses recursos"
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Promova a adoção da autenticação de dois fatores em sua organização para garantir uma segurança adicional."
       ],
@@ -4244,6 +4256,18 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
+      ],
+      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Ative eventos detalhados e ${ PROTON_SENTINEL_NAME } para acessar esses recursos"
+      ],
+      "You should enable detailed events in order to access these features": [
+        "Você deve ativar eventos detalhados para acessar esses recursos"
+      ],
+      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "O administrador da sua organização deve ativar eventos detalhados e ${ PROTON_SENTINEL_NAME } para acessar esses recursos."
+      ],
+      "Your organization administrator should enable detailed events in order to access these features": [
+        "O administrador da sua organização deve ativar eventos detalhados para acessar estes recursos."
       ]
     },
     "description": {
@@ -5872,6 +5896,9 @@
       "App currently unavailable": [
         "Aplicativo atualmente indisponível"
       ],
+      "Ask your administrator to enable Account monitor.": [
+        "Peça ao seu administrador para ativar o monitor de conta."
+      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
@@ -6927,6 +6954,9 @@
       "Permissions": [
         "Permissões"
       ],
+      "Protection": [
+        "Protecção"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Economize muito nas melhores ofertas do ${ VPN_APP_NAME }"
       ],
@@ -7457,6 +7487,9 @@
       ]
     },
     "Info": {
+      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
+        " - seu centro de comando para rastrear a atividade do usuário, detectar ameaças e garantir a conformidade em toda a sua organização."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } usuário atualmente tem acesso a servidores compartilhados.",
         "${ amountUsers }/${ totalUsers } usuários atualmente têm acesso a servidores compartilhados."
@@ -7772,6 +7805,9 @@
       "Activity monitor": [
         "Monitor de atividade"
       ],
+      "Activity Monitor": [
+        "Monitor de atividades"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me na sua conta. Este domínio simples e curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privado\""
       ],
@@ -7950,6 +7986,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Você tem certeza de que deseja sair deste grupo? Se você sair, precisará ser convidado novamente pelo administrador do grupo para entrar de novo."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Você tem certeza que deseja excluir permanentemente todos os seus registros?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Tem certeza de que deseja remover os privilégios administrativos deste usuário?"
       ],
@@ -8048,6 +8087,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ao criar uma conta ${ PASS_APP_NAME } com seu e-mail do SimpleLogin, você pode gerenciar seus aliases diretamente do ${ PASS_APP_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Ao desativar o monitoramento de eventos de segurança, você também limpará todo o seu histórico. Tem certeza de que deseja desativar isso?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
@@ -8507,6 +8549,9 @@
       "expires ${ expirationDate }": [
         "expira em ${ expirationDate }"
       ],
+      "Failed to fetch logs.": [
+        "Erro ao buscar os registros."
+      ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Veloz e poderoso. E-mail e calendário, direto no seu desktop."
       ],
@@ -8557,6 +8602,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "liberar espaço, apagando mensagens antigas ou outros dados"
+      ],
+      "Gain visibility across your organization": [
+        "Obtenha visibilidade em toda a sua organização"
       ],
       "Gateways": [
         "Gateways"
@@ -8902,6 +8950,9 @@
       "Learn more": [
         "Saiba mais"
       ],
+      "Learn more about Activity Monitor": [
+        "Saiba mais sobre o monitor de atividades"
+      ],
       "Learn more about Gateways": [
         "Saiba mais sobre Gateways"
       ],
@@ -9084,6 +9135,9 @@
       ],
       "No label selected": [
         "Nenhuma marcador selecionado"
+      ],
+      "No logs yet.": [
+        "Ainda não há registros."
       ],
       "No payment is required at this time.": [
         "Neste momento, não é necessário pagamento."
@@ -10302,6 +10356,9 @@
       ],
       "Why?": [
         "Por quê?"
+      ],
+      "With a Business or Enterprise plan, unlock": [
+        "Com um plano Business ou Enterprise, desbloqueie"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Com um plano Business ou Enterprise, você pode comprar ${ boldDedicatedServers } para sua organização e configurar ${ boldGateways } para controlar quais usuários podem acessá-los."
@@ -11531,6 +11588,9 @@
       ],
       "Copy fingerprint": [
         "Copiar impressão digital"
+      ],
+      "Copy IP address to clipboard": [
+        "Copiar o endereço de IP para área de transferência"
       ],
       "Could you please let us know which provider?": [
         "Você poderia nos informar qual provedor?"
@@ -12863,6 +12923,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ativar ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Ativar evento detalhados"
+      ],
+      "Enable security events": [
+        "Ativar eventos de segurança"
       ]
     },
     "Mail import summary": {
@@ -19605,6 +19671,9 @@
       "Delete label?": [
         "Excluir marcador?"
       ],
+      "Delete logs": [
+        "Excluir registros"
+      ],
       "Delete organization logo?": [
         "Excluir logotipo da organização?"
       ],
@@ -20449,6 +20518,9 @@
       "Theme": [
         "Tema"
       ],
+      "There are no events for your account": [
+        "Não há eventos para sua conta."
+      ],
       "There are no groups": [
         "Não há grupos"
       ],
@@ -20550,6 +20622,9 @@
       ],
       "Video conferencing": [
         "Videoconferência"
+      ],
+      "View organization events by upgrading to Business": [
+        "Consulta os eventos da organização ao atualizar para Business."
       ],
       "VPN apps": [
         "Aplicativos de VPN"
@@ -20762,6 +20837,12 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Permite adicionar links de videoconferência de forma simples aos seus convites de calendário."
       ],
+      "An approximate location of the IP address": [
+        "Uma localização aproximada do endereço de IP"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Qualquer proteção aplicada a uma atividade suspeita"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Troque automaticamente entre seus temas preferidos para dia e noite em sincronia com os modos dia e noite do seu sistema"
       ],
@@ -20783,6 +20864,9 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Exclua as mensagens da lixeira e spam após 30 dias. Ativar a exclusão automática dá às mensagens que já estão na lixeira/spam uma data de exclusão com base na data em que foram movidas para lá"
       ],
+      "Device information such as operating system": [
+        "Informações do dispositivo, como sistema operacional"
+      ],
       "Device name and app version": [
         "Nome do dispositivo e versão do aplicativo"
       ],
@@ -20803,6 +20887,9 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Ativar/desativar as notificações na área de trabalho e dispositivos móveis para «${ labelName }»"
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "A ativação de eventos detalhados registra o endereço IP de cada evento."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL do endpoint do provedor de identidade (por exemplo, https://idp.exemplo.com/sso/saml)"
@@ -20884,6 +20971,9 @@
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "O provedor de serviços de internet do endereço de IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de assinatura começa em ${ formattedTime }"

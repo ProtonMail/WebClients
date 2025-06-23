@@ -37,7 +37,7 @@
         "Toko ${ BRAND_NAME }"
       ],
       "A to Z": [
-        "A sampai Z"
+        "A ke Z"
       ],
       "Activate": [
         "Aktifkan"
@@ -335,6 +335,9 @@
       ],
       "Create folder": [
         "Buat folder"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Buat folder ${ boldFolderName }"
       ],
       "Create label": [
         "Buat label"
@@ -1033,7 +1036,7 @@
         "Bukti baca telah terkirim"
       ],
       "Recently received": [
-        "Baru dihapus"
+        "Baru diterima"
       ],
       "Reconnect": [
         "Sambungkan kembali"
@@ -1145,6 +1148,9 @@
       ],
       "Save": [
         "Simpan"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Simpan ke ${ DRIVE_APP_NAME }"
       ],
       "Saving${ ellipsis }": [
         "Menyimpan${ ellipsis }"
@@ -1357,7 +1363,7 @@
         "Berhenti menandai sebagai telah dibaca"
       ],
       "Stop moving to Archive": [
-        "Hentikan memindahkan ke Arsip"
+        "Berhenti memindahkan ke Arsip"
       ],
       "Stop moving to Trash": [
         "Berhenti memindahkan ke Sampah"
@@ -6058,10 +6064,10 @@
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
       "${ boldBulkDelete }, archive, or move old emails to a folder.": [
-        "${ boldBulkDelete }, arsip, atau pindah email lama ke folder."
+        "${ boldBulkDelete }, arsipkan, atau pindahkan email lama Anda ke satu folder."
       ],
       "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
-        "${ boldQuicklySpot } langganan yang tidak ada relevan lagi."
+        "${ boldQuicklySpot } langganan mana saja yang sudah tidak lagi relevan."
       ],
       "${ boldUnsubscribe } from them with one click.": [
         "${ boldUnsubscribe } dari mereka dengan satu klik."
@@ -6152,6 +6158,9 @@
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } pesan tidak dapat dipindahkan."
+      ],
+      "${ n } newsletter": [
+        "${ n } buletin"
       ],
       "${ n } unread conversation": [
         "${ n } percakapan yang belum dibaca"
@@ -6343,10 +6352,10 @@
         "Semua (${ totalFoldersCount } label)"
       ],
       "All messages from this mailing list will be marked as read.": [
-        "Semua pesan dari milis ini akan ditandai sebagai telah dibaca."
+        "Seluruh pesan dari milis ini akan ditandai sebagai telah dibaca."
       ],
       "All messages from this mailing list will be moved to Archive.": [
-        "Semua pesan dari milis ini akan dipindahkan ke Arsip."
+        "Seluruh pesan dari milis ini akan dipindahkan ke Arsip."
       ],
       "All messages from this mailing list will be moved to Trash.": [
         "Semua pesan dari milis ini akan dipindahkan ke Sampah."
@@ -6412,7 +6421,7 @@
         "Menerapkan tindakan pada pesan"
       ],
       "Archive existing messages": [
-        "Sampah pesan yang sudah ada"
+        "Arsipkan pesan yang telah ada"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Apakah Anda yakin ingin menghapus semua pesan yang ada di folder ini?"
@@ -6491,6 +6500,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
+      ],
+      "Block sender": [
+        "Blokir pengirim"
       ],
       "Body: ": [
         "Isi: "
@@ -6730,7 +6742,7 @@
         "Masing-masing kode hanya dapat digunakan satu kali"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
-        "Mudah kelola dan berhenti berlangganan dari buletin dan milis."
+        "Kelola dan hentikan langganan buletin dan milis dengan mudah."
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -7081,7 +7093,7 @@
         "Kelola label Anda"
       ],
       "Mark all as read": [
-        "Tandai semua sebagai terbaca"
+        "Tandai semua sebagai telah dibaca"
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -7187,6 +7199,9 @@
       ],
       "No links cleaned": [
         "Tidak ada tautan yang dibersihkan"
+      ],
+      "No messages to show": [
+        "Tidak ada pesan untuk ditampilkan"
       ],
       "No more results found": [
         "Tidak ada hasil lainnya yang ditemukan"
@@ -7359,6 +7374,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Silakan tunggu selagi kami mencari kontak yang mengandung data yang terenkripsi dengan kunci yang tidak aktif."
       ],
+      "Preferences updated": [
+        "Preferensi diperbarui"
+      ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
       ],
@@ -7396,7 +7414,7 @@
         "Pembagian dokumen secara publik belum didukung."
       ],
       "Quickly spot": [
-        "Cepat melihat"
+        "Temukan dengan cepat"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Hubungi kami untuk bantuan seputar segala sesuatunya yang berhubungan dengan ${ BRAND_NAME }."
@@ -7684,7 +7702,7 @@
         "Pengirim pesan meminta bukti yang membenarkan bahwa Anda telah membaca pesan ini."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "Verifikasi ${ contactNames } gagal: kontak tidak ditandatangani dengan benar.\nHal ini kemungkinan disebabkan oleh pengaturan ulang kata sandi.\nAnda harus terlebih dahulu menandatangani ulang kontak agar Anda dapat mengirim pesan ke ${ contactAddresses } atau menyunting kontak yang bersangkutan."
+        "Verifikasi ${ contactNames } gagal: kontak tidak ditandatangani dengan benar.\nHal ini kemungkinan disebabkan oleh pengaturan ulang kata sandi.\nAnda harus terlebih dahulu menandatangani ulang kontak agar Anda dapat mengirim pesan ke ${ contactAddresses } atau menyunting kontak ini."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proses verifikasi akan membuka tab browser baru. Mohon nonaktifkan segala pemblokir pop-up yang aktif."
@@ -7694,6 +7712,9 @@
       ],
       "Themes can give your inbox a new look.": [
         "Berbagai tema dapat menyegarkan tampilan kotak surat Anda."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Tidak ada pesan dari pengirim ini pada kotak masuk Anda."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Ada kesalahan pada tanda tangan yang dipakai untuk memverifikasi rincian kontak, yang mungkin disebabkan oleh atur ulang kata sandi."
@@ -7882,7 +7903,7 @@
         "Pelacakan"
       ],
       "Trash existing messages": [
-        "Sampah pesan yang sudah ada"
+        "Buang pesan yang telah ada"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
@@ -8021,9 +8042,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Kami tidak dapat memverifikasi kunci yang dipercaya pengirim."
-      ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "Kami tidak dapat menemukan opsi berhenti berlangganan untuk buletin ini. Anda mungkin dapat berhenti berlangganan menggunakan tautan di email mereka atau dari situs web mereka."
       ],
       "We couldn’t process your payment.": [
         "Kami tidak dapat memproses pembayaran Anda."
@@ -8365,7 +8383,7 @@
         "Anda akan tetap dapat melihat data milik akun Anda, namun seluruh akun pengguna akan dihapus dari organisasi Anda."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
-        "Anda hanya tinggal beberapa klik lagi untuk memiliki kotak masuk yang rapi"
+        "Anda hanya perlu beberapa klik lagi untuk memperoleh kotak masuk yang rapi"
       ]
     },
     "info": {
@@ -8779,6 +8797,9 @@
       "CC": [
         "CC"
       ],
+      "Choose what to do instead": [
+        "Pilih tindakan lain"
+      ],
       "City": [
         "Kota"
       ],
@@ -8898,6 +8919,9 @@
       ],
       "Extended address": [
         "Alamat lengkap"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Folder ${ customFolderName } gagal dibuat"
       ],
       "Filter Name": [
         "Nama Filter"
@@ -9022,8 +9046,8 @@
       "Move to Inbox": [
         "Pindahkan ke Kotak masuk"
       ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "${ count } pesan dipindahkan ke ${ selectedFolder.Name }."
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } pesan dipindahkan ke ${ labelName }"
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } pesan dipindahkan ke Arsip."
@@ -9197,7 +9221,7 @@
         "Informasi sistem"
       ],
       "The filter is disabled. ${ enableButton }": [
-        "Filter telah dinonaktifkan. ${ enableButton }"
+        "Filter ini dinonaktifkan. ${ enableButton }"
       ],
       "Theme": [
         "Tema"
@@ -9353,7 +9377,7 @@
     },
     "Labels": {
       "Newsletters you unsubscribe from will show up here.": [
-        "Milis yang langganannya telah Anda hentikan akan muncul di sini."
+        "Buletin yang langganannya telah Anda hentikan akan muncul di sini."
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Lihat dan kelola langganan buletin dan milis di sini."
@@ -9673,10 +9697,10 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Impor semua pesan dari ${ itemsToImportCount } folder dan berikan label sebagai"
+        "Impor seluruh pesan dari ${ itemsToImportCount } folder dan labeli sebagai"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Impor semua pesan dari ${ itemsToImportCount } label dan berikan label sebagai"
+        "Impor seluruh pesan dari ${ itemsToImportCount } label dan labeli sebagai"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
         "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan labeli sebagai"
@@ -11934,7 +11958,7 @@
         "Apakah Anda tetap ingin mengirim email ini?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Kami telah mendeteksi adanya kesalahan. Email Anda tidak akan dapat terkirim ke alamat yang Anda tuju atas alasan-alasan berikut:"
+        "Kami telah mendeteksi adanya kesalahan. Email Anda tidak akan dapat dikirim ke alamat email mana pun yang Anda tuju atas alasan berikut:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Kami telah mendeteksi terdapatnya beberapa kesalahan. Email Anda tidak akan dapat dikirim kepada satu atau lebih alamat yang dituju atas rangkaian alasan berikut:"
@@ -12632,10 +12656,10 @@
         "Ditagihkan setiap 2 tahun"
       ],
       "Billed monthly": [
-        "Ditagih bulanan"
+        "Ditagihkan bulanan"
       ],
       "Billed yearly": [
-        "Ditagih setiap tahun"
+        "Ditagihkan tahunan"
       ]
     },
     "Subscription attribute": {
@@ -13308,7 +13332,7 @@
         "Filter telah diaktifkan"
       ],
       "The filter is active again": [
-        "Filter aktif kembali"
+        "Filter ini kembali aktif"
       ]
     },
     "Suffix": {
@@ -13571,7 +13595,7 @@
         "Arsip"
       ],
       "Archive all messages?": [
-        "Arsip seluruh pesan?"
+        "Arsipkan seluruh pesan?"
       ],
       "Are you sure you want to close the preview?": [
         "Apakah Anda yakin untuk menutup pratinjau?"
@@ -14318,7 +14342,7 @@
         "Buang seluruh pesan?"
       ],
       "Trust new key?": [
-        "Percaya kunci baru?"
+        "Percayai kunci baru?"
       ],
       "Trust pinned keys?": [
         "Percayai kunci yang tersemat?"
@@ -14334,6 +14358,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Berhenti berlangganan dari ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Penghentian langganan tidak tersedia untuk pengirim ini"
       ],
       "Unsubscribe request sent": [
         "Permintaan berhenti berlangganan dikirim"

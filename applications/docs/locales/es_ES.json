@@ -93,6 +93,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "Ask me next time": [
+        "Preguntarme la próxima vez"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Se permite como máximo ${ maxContacts } contacto por grupo de contactos.",
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
@@ -683,6 +686,9 @@
       ],
       "Save changes": [
         "Guardar los cambios"
+      ],
+      "Save preferences": [
+        "Guardar las preferencias"
       ],
       "Search": [
         "Buscar"
@@ -4419,6 +4425,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Se ha eliminado el contacto del grupo ${ contactGroupName }."
       ],
+      "Converting document...": [
+        "Convirtiendo el documento..."
+      ],
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
       ],
@@ -4462,6 +4471,9 @@
       ],
       "Creating link to folder": [
         "Creando enlace a la carpeta"
+      ],
+      "Creating new document...": [
+        "Creando el documento..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu suscripción al plan anterior"
@@ -4580,6 +4592,12 @@
       "Enter your own password (as organization admin).": [
         "Introduce tu propia contraseña (como administrador de la organización)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Error al convertir el documento: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Error al cargar el documento: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Error al sincronizar"
       ],
@@ -4639,6 +4657,12 @@
       ],
       "Geoblocking": [
         "Bloqueo geográfico"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Reciba actualizaciones por correo electrónico sobre comentarios y sugerencias añadidos a sus documentos."
+      ],
+      "Get Notified About Comments": [
+        "Recibir notificaciones sobre los comentarios"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Ir a ${ DRIVE_APP_NAME }"
@@ -4788,6 +4812,9 @@
       "Low Priority": [
         "Prioridad baja"
       ],
+      "Making a copy...": [
+        "Haciendo una copia..."
+      ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
       ],
@@ -4827,6 +4854,9 @@
       ],
       "No contacts added yet": [
         "Todavía no se han añadido contactos."
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "No se ha proporcionado ningún documento en la URL. Regresa a ${ DRIVE_APP_NAME } y selecciona un documento."
       ],
       "No email address": [
         "No hay dirección de correo electrónico."
@@ -5170,6 +5200,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario deberá volver a activar el cifrado de extremo a extremo."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "La URL introducida parece haber sido copiada de Slack incorrectamente. Al copiar enlaces largos de Slack, haz clic derecho en el enlace, luego selecciona «Copiar el enlace» en lugar de copiar directamente el texto de URL truncado."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una nueva pestaña en el navegador. Desactiva cualquier bloqueador de ventanas emergentes activo."
       ],
@@ -5509,13 +5542,13 @@
         "Después se te facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
         "Después se te facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
       ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Estás a punto de rechazar la invitación para unirte al álbum ${ invitationName }. Si sigues, no podrás acceder a él a menos que el propietario te vuelva a invitar. ¿Estás seguro de que quieres continuar?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Estás a punto de rechazar la invitación para unirte a la carpeta ${ invitationName }. Si sigues, no podrás acceder a él a menos que el propietario te vuelva a invitar. ¿Estás seguro de que quieres continuar?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Estás a punto de rechazar la invitación para unirte al elemento ${ invitationName }. Si sigues, no podrás acceder a él a menos que el propietario te vuelva a invitar. ¿Estás seguro de que quieres continuar?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
@@ -5898,6 +5931,9 @@
       "Emails (last month)": [
         "Correos electrónicos (último mes)"
       ],
+      "Enable email notifications": [
+        "Activar las notificaciones de correo electrónico"
+      ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
       ],
@@ -5954,6 +5990,9 @@
       ],
       "Import to:": [
         "Importar a:"
+      ],
+      "Include document name in notification": [
+        "Incluir el nombre del documento en las notificaciones"
       ],
       "Include message and file name in invite email": [
         "Incluir el mensaje y nombre del archivo en el correo de invitación"
@@ -7892,6 +7931,9 @@
       "The link to your item was deleted": [
         "Se ha eliminado el enlace a tu elemento."
       ],
+      "The spreadsheet failed to be created": [
+        "Error al crear la hoja de cálculo"
+      ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
       ],
@@ -8855,6 +8897,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Creando una nueva hoja de cálculo..."
+      ],
       "Detect automatically": [
         "Detectar automáticamente"
       ],
@@ -10206,6 +10251,9 @@
       ],
       "Untitled document ${ date }": [
         "Documento sin título ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Hoja de cálculo sin título ${ date }"
       ],
       "Upgrade complete!": [
         "Se ha mejorado tu plan."

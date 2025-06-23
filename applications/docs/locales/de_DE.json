@@ -1114,6 +1114,14 @@
         "Nicht unterstützter Termin"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ cycle } Monate am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 Benutzer"
@@ -5498,14 +5506,14 @@
         "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
         "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
       ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Du bist dabei, die Beitrittseinladung für das Album ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Album nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du bist dabei, die Einladung zum Album ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Album nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Du bist dabei, die Beitrittseinladung für den Ordner ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Ordner nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du bist dabei, die Einladung zum Ordner ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Ordner nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Du bist dabei, die Beitrittseinladung für den Eintrag ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Eintrag nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du bist dabei, die Einladung zum Eintrag ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Eintrag nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du hast die maximale Anzahl von Adressen in der/den Kontaktgruppe(n) erreicht:"
@@ -8841,6 +8849,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Neue Tabelle wird erstellt..."
+      ],
       "Detect automatically": [
         "Automatisch erkennen"
       ],

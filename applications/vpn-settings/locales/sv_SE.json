@@ -1135,6 +1135,9 @@
       "of privacy": [
         "av integritet"
       ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
       "Online privacy for up to 2 people": [
         "Integritet online för upp till 2 personer"
       ],
@@ -1147,8 +1150,14 @@
       "Recover previous file versions": [
         "Återställ tidigare filversioner"
       ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Spara stort på premium Drive-funktioner med en tidsbegränsad rabatt."
+      ],
       "Save big on premium Mail features with a limited-time discount.": [
         "Spara stort på premium Mail-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Spara stort på premium Pass-funktioner med en tidsbegränsad rabatt."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
         "Spara stort på premium VPN-funktioner med en tidsbegränsad rabatt."
@@ -1518,6 +1527,20 @@
       ],
       "Working with sensitive data?": [
         "Arbetar du med känslig data?"
+      ]
+    },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "Din dedikerade server är redan tilldelad till en gateway. Du kommer att kunna köpa fler servrar när din gratis provperiod slutar.",
+        "Alla dina dedikerade servrar är redan tilldelad till en gateway. Du kommer att kunna köpa fler servrar när din gratis provperiod slutar."
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "Din gratis provperiod inkluderar ${ ipAddresses } dedikerad server. Du kan lägga till fler servrar när din fullständiga prenumeration startar.",
+        "Din gratis provperiod inkluderar ${ ipAddresses } dedikerade servrar. Du kan lägga till fler servrar när din fullständiga prenumeration startar."
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "Din gratis provperiod inkluderar ${ maxMembers } licens. Du kan lägga till fler licenser när din fullständiga prenumeration startar.",
+        "Din gratis provperiod inkluderar maximalt ${ maxMembers } licenser. Du kan lägga till fler licenser när din fullständiga prenumeration startar."
       ]
     },
     "Browser": {
@@ -6579,6 +6602,9 @@
       ],
       "Copy": [
         "Kopiera"
+      ],
+      "Copy IP address to clipboard": [
+        "Kopiera IP-adress till urklipp"
       ],
       "Could you please let us know which provider?": [
         "Kan du berätta vilken leverantör?"
@@ -12302,6 +12328,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
+      ],
+      "Wipe all logs?": [
+        "Rensa alla loggar?"
       ],
       "WireGuard configuration": [
         "WireGuard-konfiguration"

@@ -337,6 +337,9 @@
       "Create folder": [
         "Criar pasta"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Criar uma pasta ${ boldFolderName }"
+      ],
       "Create label": [
         "Criar marcador"
       ],
@@ -6248,6 +6251,10 @@
         "Não foi possível mover ${ messagesNotAuthorizedToMove } mensagem.",
         "Não foi possível mover ${ messagesNotAuthorizedToMove } mensagens."
       ],
+      "${ n } newsletter": [
+        "${ n } boletim",
+        "${ n } boletins"
+      ],
       "${ n } unread conversation": [
         "${ n } conversa não lida",
         "${ n } conversas não lidas"
@@ -6616,6 +6623,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
+      ],
+      "Block sender": [
+        "Bloquear remetente"
       ],
       "Body: ": [
         "Corpo: "
@@ -7112,7 +7122,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -7324,6 +7335,9 @@
       "No links cleaned": [
         "Nenhum link limpo"
       ],
+      "No messages to show": [
+        "Nenhuma mensagem para mostrar"
+      ],
       "No more results found": [
         "Não foram encontrados mais resultados"
       ],
@@ -7496,6 +7510,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
+      ],
+      "Preferences updated": [
+        "Preferências atualizadas"
       ],
       "Preview failed to be loaded": [
         "Não foi possível carregar a pré-visualização."
@@ -7836,6 +7853,9 @@
       "Themes can give your inbox a new look.": [
         "Os temas podem dar uma nova aparência à sua caixa de entrada."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "Não há mensagens deste remetente na sua caixa de entrada."
+      ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Houve um erro com a assinatura usada para verificar os detalhes do contato, o que pode ser o resultado de uma redefinição da senha."
       ],
@@ -8164,9 +8184,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Não pudemos verificar as chaves de confiança do remetente."
-      ],
-      "We couldn't find an unsubscribe option for this newsletter. You may be able to unsubscribe using a link in their email or from their website.": [
-        "Não conseguimos encontrar uma opção para cancelar a assinatura para este boletim. Você pode conseguir cancelar a assinatura usando um link no e-mail deles ou no site deles."
       ],
       "We couldn’t process your payment.": [
         "Não foi possível realizar o pagamento."
@@ -8948,6 +8965,9 @@
       "CC": [
         "CC"
       ],
+      "Choose what to do instead": [
+        "Escolha o que fazer em vez disso"
+      ],
       "City": [
         "Cidade"
       ],
@@ -9067,6 +9087,9 @@
       ],
       "Extended address": [
         "Endereço completo"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Erro ao criar a pasta ${ customFolderName }"
       ],
       "Filter Name": [
         "Nome do filtro"
@@ -9192,9 +9215,9 @@
       "Move to Inbox": [
         "Mover para Caixa de Entrada"
       ],
-      "Moved ${ count } message to ${ selectedFolder.Name }.": [
-        "${ count } mensagem foi movida para ${ selectedFolder.Name }.",
-        "${ count } mensagens foram movidas para ${ selectedFolder.Name }."
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } mensagem foi movida para ${ labelName }.",
+        "${ count } mensagens foram movidas para ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } mensagem foi movida para o Arquivo.",
@@ -14655,6 +14678,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Cancelar assinatura de ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Não é possível cancelar a sua subscrição para este remetente."
       ],
       "Unsubscribe request sent": [
         "Pedido de cancelamento da assinatura enviado"

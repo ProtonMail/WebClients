@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "Vuoi disabilitare la frase di recupero?"
       ],
+      "Disable security events": [
+        "Disattiva eventi di sicurezza"
+      ],
       "Discard": [
         "Scarta"
       ],
@@ -1543,6 +1546,9 @@
       "What do I get?": [
         "Cosa ottengo?"
       ],
+      "Wipe": [
+        "Cancella"
+      ],
       "Yes": [
         "Sì"
       ],
@@ -1979,6 +1985,9 @@
       ],
       "on ${ formattedDate }": [
         "il ${ formattedDate }"
+      ],
+      "Try it free for 14 days": [
+        "Provalo gratis per 14 giorni"
       ]
     },
     "b2b_trials_2025_Label": {
@@ -4247,6 +4256,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puoi importare eventi con il formato iCal (file ICS). Il file deve avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } o fino a ${ MAX_IMPORT_EVENTS_STRING } eventi. Se il tuo file è più grande, dividilo in file più piccoli."
+      ],
+      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Dovresti abilitare gli eventi dettagliati e ${ PROTON_SENTINEL_NAME } per accedere a queste funzionalità"
+      ],
+      "You should enable detailed events in order to access these features": [
+        "Dovresti abilitare gli eventi dettagliati per accedere a queste funzionalità."
       ],
       "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
         "L'amministratore della tua organizzazione dovrebbe attivare gli eventi dettagliati e ${ PROTON_SENTINEL_NAME } per poter accedere a queste funzionalità"
@@ -7968,6 +7983,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Sei sicuro di voler lasciare questo gruppo? Se esci, dovrai essere invitato nuovamente dall'amministratore del gruppo per unirti nuovamente."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Sei sicuro di voler cancellare definitivamente tutti i tuoi log?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Sei sicuro di voler rimuovere i privilegi amministrativi a questo utente?"
       ],
@@ -8066,6 +8084,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Creando un account ${ PASS_APP_NAME } con la tua email SimpleLogin, potrai gestire i tuoi alias direttamente da ${ PASS_APP_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Disabilitando il monitoraggio degli eventi di sicurezza, cancellerai anche l'intera cronologia. Sei sicuro di volerlo disabilitare?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
@@ -11565,6 +11586,9 @@
       "Copy fingerprint": [
         "Copia impronta digitale"
       ],
+      "Copy IP address to clipboard": [
+        "Copia l'indirizzo IP negli appunti"
+      ],
       "Could you please let us know which provider?": [
         "Potresti indicarci quale fornitore?"
       ],
@@ -12896,6 +12920,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Abilita ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Abilita gli eventi dettagliati"
+      ],
+      "Enable security events": [
+        "Abilita gli eventi di sicurezza"
       ]
     },
     "Mail import summary": {
@@ -19638,6 +19668,9 @@
       "Delete label?": [
         "Vuoi eliminare l'etichetta?"
       ],
+      "Delete logs": [
+        "Cancella i registi"
+      ],
       "Delete organization logo?": [
         "Vuoi eliminare il logo dell'organizzazione?"
       ],
@@ -20842,6 +20875,9 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Abilita/disabilita le notifiche desktop e mobili per \"${ labelName }\""
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "L'abilitazione degli eventi dettagliati registra l'indirizzo IP per ciascun evento."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Endpoint URL dal fornitore d'identità (es. https://idp.esempio.it/sso/saml)"
