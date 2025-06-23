@@ -190,7 +190,6 @@ export const usePaymentFacade = (
         chargebeeUserExists,
         forceInhouseSavedMethodProcessors,
         disableNewPaymentMethods,
-        onCurrencyChange,
         user,
         enableSepa,
         onBeforeSepaPayment,
@@ -227,12 +226,6 @@ export const usePaymentFacade = (
         chargebeeUserExists?: ChargebeeUserExists;
         forceInhouseSavedMethodProcessors?: boolean;
         disableNewPaymentMethods?: boolean;
-        onCurrencyChange?: (
-            currency: Currency,
-            context: {
-                paymentMethodType: PlainPaymentMethodType;
-            }
-        ) => void;
         user: User | undefined;
         enableSepa?: boolean;
         onBeforeSepaPayment?: () => Promise<boolean>;
@@ -287,7 +280,6 @@ export const usePaymentFacade = (
             billingPlatform,
             chargebeeUserExists,
             disableNewPaymentMethods,
-            onCurrencyChange,
             enableSepa,
             user,
             planIDs,
@@ -629,6 +621,21 @@ export const usePaymentFacade = (
 
     const initialized = !methods.loading;
 
+    const reset = () => {
+        [
+            savedMethod,
+            savedChargebeeMethod,
+            card,
+            paypal,
+            paypalCredit,
+            chargebeeCard,
+            chargebeePaypal,
+            bitcoinInhouse,
+            bitcoinChargebee,
+            directDebit,
+        ].forEach((paymentProcessor) => paymentProcessor.reset());
+    };
+
     return {
         methods,
         savedMethod,
@@ -646,5 +653,6 @@ export const usePaymentFacade = (
         paymentContext,
         directDebit,
         initialized,
+        reset,
     };
 };

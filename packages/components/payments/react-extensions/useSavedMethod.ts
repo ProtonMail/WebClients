@@ -115,6 +115,7 @@ export const useSavedMethod = (
         processPaymentToken,
         processingToken,
         paymentProcessor,
+        reset,
         meta: {
             type: 'saved',
             data: savedMethod,

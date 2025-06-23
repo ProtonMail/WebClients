@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Banner, BannerVariants, Button } from '@proton/atoms';
 import Label from '@proton/components/components/label/Label';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { CountriesDropdown } from '@proton/payments/ui';
@@ -14,9 +14,10 @@ import { SepaAuthorizationText } from './SepaAuthorizationText';
 
 export interface DirectDebitProps extends ChargebeeWrapperProps {
     directDebit: ChargebeeDirectDebitProcessorHook;
+    isCurrencyOverriden: boolean;
 }
 
-export const SepaDirectDebit = ({ directDebit, ...rest }: DirectDebitProps) => {
+export const SepaDirectDebit = ({ directDebit, isCurrencyOverriden, ...rest }: DirectDebitProps) => {
     const [showCountryCode, setShowCountryCode] = useState(false);
     const { valid, requiresAddress, countryCode } = directDebit.ibanStatus;
 
@@ -167,6 +168,11 @@ export const SepaDirectDebit = ({ directDebit, ...rest }: DirectDebitProps) => {
             <div className="mt-2">
                 <SepaAuthorizationText />
             </div>
+
+            {isCurrencyOverriden && (
+                <Banner className="mt-4" variant={BannerVariants.INFO}>{c('Payments')
+                    .t`Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.`}</Banner>
+            )}
 
             <ChargebeeIframe type="direct-debit" {...rest} />
         </div>
