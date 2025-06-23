@@ -1799,6 +1799,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2609,6 +2613,9 @@
       "City": [
         "Ort"
       ],
+      "Class": [
+        "Klass"
+      ],
       "Code": [
         "Kod"
       ],
@@ -2698,6 +2705,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Läkare"
       ],
       "Domain": [
         "Domän"
@@ -2807,6 +2817,9 @@
       "Holder Name": [
         "Innehavarens namn"
       ],
+      "Hospital": [
+        "Sjukhus"
+      ],
       "Host": [
         "Värd"
       ],
@@ -2870,6 +2883,9 @@
       "Issuing Country": [
         "Utfärdande land"
       ],
+      "Issuing State/Country": [
+        "Utfärdande delstat/land"
+      ],
       "Item ID": [
         "Objekt-ID"
       ],
@@ -2918,6 +2934,9 @@
       "License number": [
         "Körkortsnummer"
       ],
+      "License Number": [
+        "Licensnummer"
+      ],
       "LinkedIn account": [
         "LinkedIn-konto"
       ],
@@ -2948,11 +2967,20 @@
       "max views reached": [
         "maximalt antal visningar uppnått"
       ],
+      "Medical Conditions": [
+        "Medicinska tillstånd"
+      ],
       "Medical Record": [
         "Medicinsk journal"
       ],
+      "Medications": [
+        "Mediciner"
+      ],
       "Member ID": [
         "Medlems-ID"
+      ],
+      "Member Name": [
+        "Medlemsnamn"
       ],
       "Members": [
         "Medlemmar"
@@ -2960,14 +2988,14 @@
       "Membership": [
         "Medlemskap"
       ],
+      "Membership ID": [
+        "Medlemskaps-ID"
+      ],
       "Middle name": [
         "Mellannamn"
       ],
       "Modified": [
         "Ändrad"
-      ],
-      "More": [
-        "Mer"
       ],
       "More than a month": [
         "Mer än en månad"
@@ -3038,6 +3066,12 @@
       "Organization": [
         "Organisation"
       ],
+      "Organization Name": [
+        "Organisationsnamn"
+      ],
+      "Other": [
+        "Annat"
+      ],
       "Owner": [
         "Ägare"
       ],
@@ -3067,6 +3101,9 @@
       ],
       "Passwords": [
         "Lösenord"
+      ],
+      "Patient Name": [
+        "Patientnamn"
       ],
       "Pause list": [
         "Pauslista"
@@ -3292,6 +3329,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Tier/Level": [
+        "Nivå"
       ],
       "Tier/Status": [
         "Nivå/status"
@@ -3604,6 +3644,18 @@
       ],
       "Add note": [
         "Lägg till anteckning"
+      ],
+      "Add password": [
+        "Lägg till lösenord"
+      ],
+      "Add private key": [
+        "Lägg till privat nyckel"
+      ],
+      "Add public key": [
+        "Lägg till offentlig nyckel"
+      ],
+      "Add SSID": [
+        "Lägg till SSID"
       ],
       "Add text": [
         "Lägga till text"
@@ -4264,8 +4316,9 @@
       ]
     },
     "Vault Select": {
-      "Move items to": [
-        "Flytta objekt till"
+      "Move item to": [
+        "Flytta objekt till",
+        "Flytta objekten till"
       ]
     },
     "Warning": {

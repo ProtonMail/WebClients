@@ -1132,6 +1132,9 @@
       "Unsupported 1Password file format": [
         "მხარდაუჭერელი 1Password-ის ფაილის ფორმატი"
       ],
+      "Unsupported Bitwarden file format": [
+        "მხარდაუჭერელი Bitwarden-ის ფაილის ფორმატი"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "საცავის \"${ payload.content.name }\" განახლების შეცდომა"
       ],
@@ -1774,6 +1777,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2576,8 +2583,14 @@
       "Catch-All": [
         "ყველას დაჭერა"
       ],
+      "Checkbox": [
+        "თოლია"
+      ],
       "City": [
         "ქალაქი"
+      ],
+      "Class": [
+        "კლასი"
       ],
       "Code": [
         "კოდი"
@@ -2669,6 +2682,9 @@
       "DNS": [
         "DNS"
       ],
+      "Doctor": [
+        "ექიმი"
+      ],
       "Domain": [
         "დომენი"
       ],
@@ -2719,6 +2735,9 @@
       ],
       "Export": [
         "გატანა"
+      ],
+      "Extra fields": [
+        "დამატებითი ველები"
       ],
       "Extra password": [
         "დამატებითი პაროლი"
@@ -2773,6 +2792,9 @@
       ],
       "Holder Name": [
         "მფლობელის სახელი"
+      ],
+      "Hospital": [
+        "საავადმყოფო"
       ],
       "Host": [
         "ჰოსტი"
@@ -2837,6 +2859,9 @@
       "Issuing Country": [
         "გამომცემელი ქვეყანა"
       ],
+      "Issuing State/Country": [
+        "გამომცენელი შტატი/ქვეყანა"
+      ],
       "Item ID": [
         "ელემენტის ID"
       ],
@@ -2845,6 +2870,12 @@
       ],
       "Key": [
         "გასაღები"
+      ],
+      "Key fingerprint": [
+        "გასაღებს ანაბეჭდი"
+      ],
+      "Key type": [
+        "გასაღების ტიპი"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "კლავიატურის მალსახმობი: ${ shortcut }"
@@ -2879,6 +2910,9 @@
       "License number": [
         "ლიცენზიის ნომერი"
       ],
+      "License Number": [
+        "ლიცენზიის ნომერი"
+      ],
       "LinkedIn account": [
         "LinkedIn-ის ანგარიში"
       ],
@@ -2909,11 +2943,20 @@
       "max views reached": [
         "მიღწეულია მაქს. ნახვები"
       ],
+      "Medical Conditions": [
+        "სამედიცინო პირობები"
+      ],
       "Medical Record": [
         "სამედიცინო ჩანაწერი"
       ],
+      "Medications": [
+        "მედიკამენტები"
+      ],
       "Member ID": [
         "წევრის ID"
+      ],
+      "Member Name": [
+        "წევრის სახელი"
       ],
       "Members": [
         "წევრები"
@@ -2921,14 +2964,14 @@
       "Membership": [
         "წევრობა"
       ],
+      "Membership ID": [
+        "წევრობის ID"
+      ],
       "Middle name": [
         "მამის / მეორე სახელი"
       ],
       "Modified": [
         "შეცვლილია"
-      ],
-      "More": [
-        "მეტი"
       ],
       "More than a month": [
         "თვეზე მეტი"
@@ -2999,6 +3042,12 @@
       "Organization": [
         "ორგანიზაცია"
       ],
+      "Organization Name": [
+        "ორგანიზაციის სახელი"
+      ],
+      "Other": [
+        "სხვა"
+      ],
       "Owner": [
         "მფლობელი"
       ],
@@ -3028,6 +3077,9 @@
       ],
       "Passwords": [
         "პაროლები"
+      ],
+      "Patient Name": [
+        "პაციენტის სახელი"
       ],
       "Pause list": [
         "შეჩერებულების სია"
@@ -3103,6 +3155,9 @@
       ],
       "Recent": [
         "უახლესი"
+      ],
+      "Record Number": [
+        "ჩანაწერის ნომერი"
       ],
       "Reddit handle": [
         "Reddit-ის პროფილი"
@@ -3256,6 +3311,9 @@
       ],
       "Theme": [
         "თემა"
+      ],
+      "Tier/Level": [
+        "დონე"
       ],
       "Tier/Status": [
         "დონე/სტატუსი"
@@ -3568,6 +3626,18 @@
       ],
       "Add note": [
         "შენიშვნის დამატება"
+      ],
+      "Add password": [
+        "პაროლის დამატება"
+      ],
+      "Add private key": [
+        "პირადი გასაღების დამატება"
+      ],
+      "Add public key": [
+        "საჯარო გასაღების დამატება"
+      ],
+      "Add SSID": [
+        "SSID-ის დამატება"
       ],
       "Add text": [
         "ტექსტის დამატება"
@@ -4225,6 +4295,12 @@
       ],
       "URL is invalid": [
         "URL არასწორია"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "ელემენტების გადატანა",
+        "ელემენტების გადატანა"
       ]
     },
     "Warning": {

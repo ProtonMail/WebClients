@@ -1780,6 +1780,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
+      ],
       "Moving items": [
         "Memindahkan item"
       ],
@@ -2571,8 +2574,14 @@
       "Catch-All": [
         "Catch-All"
       ],
+      "Checkbox": [
+        "Kotak centang"
+      ],
       "City": [
         "Kota"
+      ],
+      "Class": [
+        "Kelas"
       ],
       "Code": [
         "Kode"
@@ -2663,6 +2672,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Dokter"
       ],
       "Domain": [
         "Domain"
@@ -2772,6 +2784,9 @@
       "Holder Name": [
         "Nama Pemegang Akun"
       ],
+      "Hospital": [
+        "Rumah Sakit"
+      ],
       "Host": [
         "Host"
       ],
@@ -2835,6 +2850,9 @@
       "Issuing Country": [
         "Negara Penerbit"
       ],
+      "Issuing State/Country": [
+        "Negara/Negara Bagian Penerbit"
+      ],
       "Item ID": [
         "ID Item"
       ],
@@ -2846,6 +2864,9 @@
       ],
       "Key fingerprint": [
         "Sidik jari kunci"
+      ],
+      "Key type": [
+        "Jenis kunci"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pintasan keyboard: ${ shortcut }"
@@ -2880,6 +2901,9 @@
       "License number": [
         "Nomor lisensi"
       ],
+      "License Number": [
+        "Nomor Lisensi"
+      ],
       "LinkedIn account": [
         "Akun LinkedIn"
       ],
@@ -2910,11 +2934,20 @@
       "max views reached": [
         "tampilan maksimum tercapai"
       ],
+      "Medical Conditions": [
+        "Kondisi Kesehatan"
+      ],
       "Medical Record": [
         "Rekaman Medis"
       ],
+      "Medications": [
+        "Pengobatan"
+      ],
       "Member ID": [
         "ID Anggota"
+      ],
+      "Member Name": [
+        "Nama Anggota"
       ],
       "Members": [
         "Anggota"
@@ -2922,14 +2955,14 @@
       "Membership": [
         "Keanggotaan"
       ],
+      "Membership ID": [
+        "ID Keanggotaan"
+      ],
       "Middle name": [
         "Nama tengah"
       ],
       "Modified": [
         "Dimodifikasi"
-      ],
-      "More": [
-        "Selebihnya"
       ],
       "More than a month": [
         "Lebih dari sebulan yang lalu"
@@ -3000,6 +3033,12 @@
       "Organization": [
         "Organisasi"
       ],
+      "Organization Name": [
+        "Nama Organisasi"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
       "Owner": [
         "Pemilik"
       ],
@@ -3029,6 +3068,9 @@
       ],
       "Passwords": [
         "Kata sandi"
+      ],
+      "Patient Name": [
+        "Nama Pasien"
       ],
       "Pause list": [
         "Domain yang dikecualikan"
@@ -3104,6 +3146,9 @@
       ],
       "Recent": [
         "Baru digunakan"
+      ],
+      "Record Number": [
+        "Nomor Rekaman"
       ],
       "Reddit handle": [
         "Akun Reddit"
@@ -3257,6 +3302,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Tier/Level": [
+        "Tingkat/Level Keanggotaan"
       ],
       "Tier/Status": [
         "Tingkatan/Status"
@@ -3566,6 +3614,18 @@
       ],
       "Add note": [
         "Tambah catatan"
+      ],
+      "Add password": [
+        "Tambah kata sandi"
+      ],
+      "Add private key": [
+        "Tambah kunci pribadi"
+      ],
+      "Add public key": [
+        "Tambah kunci publik"
+      ],
+      "Add SSID": [
+        "Tambah SSID"
       ],
       "Add text": [
         "Tambahkan teks"
@@ -4219,7 +4279,7 @@
       ]
     },
     "Vault Select": {
-      "Move items to": [
+      "Move item to": [
         "Pindahkan item ke"
       ]
     },

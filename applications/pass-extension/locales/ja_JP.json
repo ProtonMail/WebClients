@@ -1759,6 +1759,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
+      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -2898,9 +2901,6 @@
       "Modified": [
         "更新日時"
       ],
-      "More": [
-        "もっと見る"
-      ],
       "More than a month": [
         "1ヶ月以上"
       ],
@@ -2969,6 +2969,9 @@
       ],
       "Organization": [
         "組織"
+      ],
+      "Other": [
+        "その他"
       ],
       "Owner": [
         "所有者"

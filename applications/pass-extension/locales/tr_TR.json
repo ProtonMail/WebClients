@@ -1021,6 +1021,9 @@
       "File does not match expected format": [
         "Dosya beklenen biçimde değil"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "\"${ vaultData.name }\" kasası içe aktarılamadı: ${ errorMessage }"
+      ],
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
       ],
@@ -1149,6 +1152,9 @@
       ],
       "Unsupported 1Password file format": [
         "Desteklenmeyen 1Password dosya biçimi"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Desteklenmeyen Bitwarden dosya biçimi"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası güncellenemedi"
@@ -1798,6 +1804,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2609,8 +2619,14 @@
       "Catch-All": [
         "Tümünü toplama"
       ],
+      "Checkbox": [
+        "İşaret kutusu"
+      ],
       "City": [
         "İl"
+      ],
+      "Class": [
+        "Sınıf"
       ],
       "Code": [
         "Kod"
@@ -2702,6 +2718,9 @@
       "DNS": [
         "DNS"
       ],
+      "Doctor": [
+        "Doktor"
+      ],
       "Domain": [
         "Etki alanı"
       ],
@@ -2752,6 +2771,9 @@
       ],
       "Export": [
         "Dışa aktar"
+      ],
+      "Extra fields": [
+        "Ek alanlar"
       ],
       "Extra password": [
         "Ek parola"
@@ -2806,6 +2828,9 @@
       ],
       "Holder Name": [
         "Kart üzerindeki ad"
+      ],
+      "Hospital": [
+        "Hastane"
       ],
       "Host": [
         "Sunucu"
@@ -2870,6 +2895,9 @@
       "Issuing Country": [
         "Veren ülke"
       ],
+      "Issuing State/Country": [
+        "Verildiği il/ülke"
+      ],
       "Item ID": [
         "Öge kimliği"
       ],
@@ -2878,6 +2906,12 @@
       ],
       "Key": [
         "Anahtar"
+      ],
+      "Key fingerprint": [
+        "Anahtar parmak izi"
+      ],
+      "Key type": [
+        "Anahtar türü"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klavye kısayolu: ${ shortcut }"
@@ -2912,6 +2946,9 @@
       "License number": [
         "Ehliyet numarası"
       ],
+      "License Number": [
+        "Ehliyet numarası"
+      ],
       "LinkedIn account": [
         "LinkedIn hesabı"
       ],
@@ -2942,11 +2979,20 @@
       "max views reached": [
         "en fazla görüntülenme sayısına ulaşılmış"
       ],
+      "Medical Conditions": [
+        "Tıbbi durumlar"
+      ],
       "Medical Record": [
         "Sağlık kaydı"
       ],
+      "Medications": [
+        "İlaçlar"
+      ],
       "Member ID": [
         "Üye kimliği"
+      ],
+      "Member Name": [
+        "Üye adı"
       ],
       "Members": [
         "Üyeler"
@@ -2954,14 +3000,14 @@
       "Membership": [
         "Üyelik"
       ],
+      "Membership ID": [
+        "Üyelik kimliği"
+      ],
       "Middle name": [
         "İkinci ad"
       ],
       "Modified": [
         "Değiştirilme"
-      ],
-      "More": [
-        "Diğer"
       ],
       "More than a month": [
         "Bir aydan fazla"
@@ -3032,6 +3078,12 @@
       "Organization": [
         "Kuruluş"
       ],
+      "Organization Name": [
+        "Kuruluş adı"
+      ],
+      "Other": [
+        "Diğer"
+      ],
       "Owner": [
         "Sahibi"
       ],
@@ -3061,6 +3113,9 @@
       ],
       "Passwords": [
         "Parolalar"
+      ],
+      "Patient Name": [
+        "Hasta adı"
       ],
       "Pause list": [
         "Duraklatma listesi"
@@ -3136,6 +3191,9 @@
       ],
       "Recent": [
         "Son"
+      ],
+      "Record Number": [
+        "Kayıt numarası"
       ],
       "Reddit handle": [
         "Reddit takma adı"
@@ -3289,6 +3347,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Tier/Level": [
+        "Sınıf/Düzey"
       ],
       "Tier/Status": [
         "Kademe/Durum"
@@ -3601,6 +3662,18 @@
       ],
       "Add note": [
         "Not ekle"
+      ],
+      "Add password": [
+        "Parola ekle"
+      ],
+      "Add private key": [
+        "Kişisel anahtar ekle"
+      ],
+      "Add public key": [
+        "Herkese açık anahtar ekle"
+      ],
+      "Add SSID": [
+        "SSID ekle"
       ],
       "Add text": [
         "Metin ekle"
@@ -4258,6 +4331,12 @@
       ],
       "URL is invalid": [
         "Adres geçersiz"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Ögeyi şuraya taşı",
+        "Ögeleri şuraya taşı"
       ]
     },
     "Warning": {

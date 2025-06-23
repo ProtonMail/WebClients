@@ -1856,7 +1856,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2712,6 +2715,9 @@
       "City": [
         "Město"
       ],
+      "Class": [
+        "Třída"
+      ],
       "Code": [
         "Kód"
       ],
@@ -2801,6 +2807,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Lékař"
       ],
       "Domain": [
         "Doména"
@@ -2910,6 +2919,9 @@
       "Holder Name": [
         "Jméno držitele"
       ],
+      "Hospital": [
+        "Nemocnice"
+      ],
       "Host": [
         "Hostitel"
       ],
@@ -2973,6 +2985,9 @@
       "Issuing Country": [
         "Země vydání průkazu"
       ],
+      "Issuing State/Country": [
+        "Stát/země vydání průkazu"
+      ],
       "Item ID": [
         "ID položky"
       ],
@@ -3021,6 +3036,9 @@
       "License number": [
         "Licenční číslo"
       ],
+      "License Number": [
+        "Licenční číslo"
+      ],
       "LinkedIn account": [
         "Účet LinkedIn"
       ],
@@ -3051,11 +3069,20 @@
       "max views reached": [
         "max. zobrazení dosaženo"
       ],
+      "Medical Conditions": [
+        "Zdravotní obtíže"
+      ],
       "Medical Record": [
         "Zdravotní záznam"
       ],
+      "Medications": [
+        "Přehled léků"
+      ],
       "Member ID": [
         "ID člena"
+      ],
+      "Member Name": [
+        "Jméno člena"
       ],
       "Members": [
         "Členové"
@@ -3063,14 +3090,14 @@
       "Membership": [
         "Členství"
       ],
+      "Membership ID": [
+        "ID členství"
+      ],
       "Middle name": [
         "Prostřední jméno"
       ],
       "Modified": [
         "Upraveno"
-      ],
-      "More": [
-        "Více"
       ],
       "More than a month": [
         "Více než měsíc"
@@ -3141,6 +3168,12 @@
       "Organization": [
         "Organizace"
       ],
+      "Organization Name": [
+        "Název organizace"
+      ],
+      "Other": [
+        "Ostatní"
+      ],
       "Owner": [
         "Vlastník"
       ],
@@ -3170,6 +3203,9 @@
       ],
       "Passwords": [
         "Hesla"
+      ],
+      "Patient Name": [
+        "Jméno pacienta"
       ],
       "Pause list": [
         "Seznam pozastavených"
@@ -3245,6 +3281,9 @@
       ],
       "Recent": [
         "Nedávné"
+      ],
+      "Record Number": [
+        "Číslo záznamu"
       ],
       "Reddit handle": [
         "Uživatelské jméno Reddit"
@@ -3398,6 +3437,9 @@
       ],
       "Theme": [
         "Motiv"
+      ],
+      "Tier/Level": [
+        "Úroveň"
       ],
       "Tier/Status": [
         "Úroveň/stav"
@@ -3716,6 +3758,18 @@
       ],
       "Add note": [
         "Přidat poznámku"
+      ],
+      "Add password": [
+        "Přidat heslo"
+      ],
+      "Add private key": [
+        "Přidat soukromý klíč"
+      ],
+      "Add public key": [
+        "Přidat veřejný klíč"
+      ],
+      "Add SSID": [
+        "Přidat SSID"
       ],
       "Add text": [
         "Přidat text"
@@ -4390,7 +4444,10 @@
       ]
     },
     "Vault Select": {
-      "Move items to": [
+      "Move item to": [
+        "Přesunout položku do",
+        "Přesunout položky do",
+        "Přesunout položky do",
         "Přesunout položky do"
       ]
     },
