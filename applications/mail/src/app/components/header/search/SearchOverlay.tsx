@@ -11,13 +11,7 @@ import { useLayoutEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import type { HotkeyTuple } from '@proton/components';
-import {
-    getCustomSizingClasses,
-    useDropdownArrowNavigation,
-    useFocusTrap,
-    useHotkeys,
-    useIsClosing,
-} from '@proton/components';
+import { getCustomSizingClasses, useFocusTrap, useHotkeys, useIsClosing } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -40,8 +34,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     offset?: number;
     autoClose?: boolean;
     contentProps?: ContentProps;
-    disableDefaultArrowNavigation?: boolean;
-    updatePositionOnDOMChange?: boolean;
 }
 
 const SearchOverlay = ({
@@ -56,7 +48,6 @@ const SearchOverlay = ({
     disableFocusTrap = false,
     sameAnchorWidth = false,
     contentProps,
-    disableDefaultArrowNavigation = false,
     ...rest
 }: Props) => {
     const boundingRect = anchorRef.current?.getBoundingClientRect();
@@ -69,10 +60,6 @@ const SearchOverlay = ({
 
     const focusTrapProps = useFocusTrap({ rootRef, active: isOpen && !disableFocusTrap, enableInitialFocus: false });
 
-    const { shortcutHandlers: arrowNavigationShortcutHandlers } = useDropdownArrowNavigation({
-        rootRef,
-    });
-
     const defaultShortcutHandlers: HotkeyTuple = [
         'Escape',
         (e) => {
@@ -81,12 +68,8 @@ const SearchOverlay = ({
         },
     ];
 
-    const hotkeyTuples = disableDefaultArrowNavigation
-        ? [defaultShortcutHandlers]
-        : [...arrowNavigationShortcutHandlers, defaultShortcutHandlers];
-
-    useHotkeys(rootRef, hotkeyTuples, {
-        dependencies: [isOpen, !disableDefaultArrowNavigation],
+    useHotkeys(rootRef, [defaultShortcutHandlers], {
+        dependencies: [isOpen],
     });
 
     useLayoutEffect(() => {
