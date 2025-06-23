@@ -23,7 +23,6 @@ import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/we
 import type {
     AddonGuard,
     BillingAddress,
-    CheckWithAutomaticOptions,
     MultiCheckSubscriptionData,
     PaymentMethodStatusExtended,
     PaymentMethodType,
@@ -51,6 +50,7 @@ import {
     getHasSomeVpnPlan,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
+    getIsCurrencyOverriden,
     getIsVpnPlan,
     getMaximumCycleForApp,
     getPaymentsVersion,
@@ -60,7 +60,7 @@ import {
     hasDeprecatedVPN,
     isCheckForbidden,
     isFreeSubscription,
-    isOnSessionMigration,
+    updateCurrencyOverride,
 } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -133,6 +133,7 @@ export interface Model {
     step: SUBSCRIPTION_STEPS;
     planIDs: PlanIDs;
     currency: Currency;
+    currencyBeforeOverride?: Currency;
     cycle: Cycle;
     coupon?: string;
     gift?: string;
@@ -485,6 +486,10 @@ const SubscriptionContainerInner = ({
             } catch (error) {
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.telemetry.reportPaymentFailure(paymentProcessorType);
+
+                // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                paymentFacade.reset();
+
                 throw error;
             }
             await call();
@@ -559,8 +564,6 @@ const SubscriptionContainerInner = ({
 
             return promise.catch(noop);
         },
-        // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        onCurrencyChange: (currency, context) => handleChangeCurrency(currency, context),
         flow: 'subscription',
         telemetryFlow,
         user,
@@ -611,7 +614,6 @@ const SubscriptionContainerInner = ({
     const runAdditionalChecks = async (
         newModel: Model,
         checkPayload: CheckSubscriptionData,
-        options: CheckWithAutomaticOptions | undefined,
         checkResult: EnrichedCheckResponse,
         signal: AbortSignal
     ) => {
@@ -624,7 +626,7 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        paymentsApi.cacheMultiCheck(checkPayload, options, checkResult);
+        paymentsApi.cacheMultiCheck(checkPayload, undefined, checkResult);
 
         const additionalCycles = computeAllowedCycles(newModel.planIDs)
             // skip the cycle that was just checked
@@ -637,7 +639,6 @@ const SubscriptionContainerInner = ({
             (Cycle) =>
                 ({
                     ...checkPayload,
-                    ...options,
                     Cycle,
                 }) as MultiCheckSubscriptionData
         );
@@ -653,15 +654,23 @@ const SubscriptionContainerInner = ({
     const check = async (
         newModel: Model = model,
         wantToApplyNewGiftCode: boolean = false,
-        selectedMethod?: string
+        selectedMethod?: PlainPaymentMethodType
     ): Promise<SubscriptionCheckResponse | undefined> => {
+        const overrideCurrency = updateCurrencyOverride({
+            currentCurrency: newModel.currency,
+            currencyBeforeOverride: newModel.currencyBeforeOverride,
+            currentSelectedMethod: paymentFacade.selectedMethodType,
+            newSelectedMethod: selectedMethod,
+        });
+
         const copyNewModel = {
             ...newModel,
+            ...overrideCurrency,
             initialCheckComplete: true,
             noPaymentNeeded: false,
         };
 
-        if (!hasPlanIDs(newModel.planIDs)) {
+        if (!hasPlanIDs(copyNewModel.planIDs)) {
             setCheckResult(getFreeCheckResult(model.currency, model.cycle));
             setModel(copyNewModel);
             return;
@@ -709,64 +718,52 @@ const SubscriptionContainerInner = ({
                 abortControllerRef.current = new AbortController();
 
                 const coupon = getAutoCoupon({
-                    coupon: newModel.coupon,
-                    planIDs: newModel.planIDs,
-                    cycle: newModel.cycle,
+                    coupon: copyNewModel.coupon,
+                    planIDs: copyNewModel.planIDs,
+                    cycle: copyNewModel.cycle,
                 });
-
-                let options: CheckWithAutomaticOptions | undefined;
-                if (
-                    // the first check handle the onMethod callback because the
-                    // component is not rerendered and didn't update paymentFacade by that time yet.
-                    // the second check handles the case when the component was already rerendered
-                    (selectedMethod === PAYMENT_METHOD_TYPES.BITCOIN ||
-                        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN) &&
-                    isOnSessionMigration(user.ChargebeeUser, subscription.BillingPlatform)
-                ) {
-                    options = {
-                        forcedVersion: 'v4',
-                        reason: 'bitcoin-on-session',
-                    };
-                }
 
                 // PAY-1822. To put it simply, this code removes all the previously applied coupons or gift codes
                 // if user re-enters the same coupon code as in the currently active subscription.
                 // We must do it because of backend limitations. The backend won't recognize the currently active
                 // subscription coupon if there is any other valid coupon in the request payload.
                 const codesArgument =
-                    !!subscriptionCouponCode && newModel.gift === subscriptionCouponCode
+                    !!subscriptionCouponCode && copyNewModel.gift === subscriptionCouponCode
                         ? { coupon: subscriptionCouponCode }
-                        : { gift: newModel.gift, coupon };
+                        : { gift: copyNewModel.gift, coupon };
 
                 const Codes = getCodes(codesArgument);
 
+                // selectedMethod variable prevails over paymentFacade.selectedMethodType because it's passed in the
+                // onMethod change handler. So this variable changes before the paymentFacade.selectedMethodType is
+                // updated. We must take into account the case when user unselects SEPA, making selectedMethod not SEPA,
+                // while paymentFacade.selectedMethodType is still SEPA. In this case we want to call /check without
+                // ProrationMode == Exact.
+                const currentlySelectedMethod = selectedMethod ?? paymentFacade.selectedMethodType;
+
                 const checkPayload: CheckSubscriptionData = {
                     Codes,
-                    Plans: newModel.planIDs,
-                    Currency: newModel.currency,
-                    Cycle: newModel.cycle,
+                    Plans: copyNewModel.planIDs,
+                    Currency: copyNewModel.currency,
+                    Cycle: copyNewModel.cycle,
                     BillingAddress: {
-                        CountryCode: newModel.taxBillingAddress.CountryCode,
-                        State: newModel.taxBillingAddress.State,
+                        CountryCode: copyNewModel.taxBillingAddress.CountryCode,
+                        State: copyNewModel.taxBillingAddress.State,
                     },
-                    ProrationMode: [selectedMethod, paymentFacade.selectedMethodType].includes(
-                        PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-                    )
-                        ? ProrationMode.Exact
-                        : undefined,
+                    ProrationMode:
+                        currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+                            ? ProrationMode.Exact
+                            : undefined,
                 };
 
-                const checkResult = await paymentsApi.checkWithAutomaticVersion(
-                    checkPayload,
-                    { signal: abortControllerRef.current.signal },
-                    options
-                );
+                const checkResult = await paymentsApi.checkWithAutomaticVersion(checkPayload, {
+                    signal: abortControllerRef.current.signal,
+                });
 
                 try {
                     await runAdditionalChecks(
-                        newModel,
+                        copyNewModel,
                         checkPayload,
-                        options,
                         checkResult,
                         abortControllerRef.current.signal
                     );
@@ -780,7 +777,7 @@ const SubscriptionContainerInner = ({
                 const { Gift = 0 } = checkResult;
                 const { Code = '' } = checkResult.Coupon || {}; // Coupon can equal null
 
-                if (wantToApplyNewGiftCode && newModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
+                if (wantToApplyNewGiftCode && copyNewModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
                     createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
                     giftCodeRef.current?.focus();
                 }
@@ -796,7 +793,7 @@ const SubscriptionContainerInner = ({
 
                 setCheckResult(checkResult);
                 setModel(copyNewModel);
-                onCheck?.({ model, newModel, type: 'success', result: checkResult });
+                onCheck?.({ model, newModel: copyNewModel, type: 'success', result: checkResult });
             } catch (error: any) {
                 if (error?.name === 'AbortError') {
                     return;
@@ -805,7 +802,7 @@ const SubscriptionContainerInner = ({
                 if (error.name === 'OfflineError') {
                     setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
                 }
-                onCheck?.({ model, newModel, type: 'error', error });
+                onCheck?.({ model, newModel: copyNewModel, type: 'error', error });
             }
 
             return checkResult;
@@ -1178,12 +1175,29 @@ const SubscriptionContainerInner = ({
                                     hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                     hasSomeVpnPlan={hasSomeVpnPlan}
                                     billingAddressStatus={billingAddressStatus}
-                                    onMethod={(value) => {
-                                        if (
-                                            value === PAYMENT_METHOD_TYPES.BITCOIN &&
-                                            isOnSessionMigration(user.ChargebeeUser, subscription.BillingPlatform)
-                                        ) {
-                                            void check(model, false, value);
+                                    isCurrencyOverriden={getIsCurrencyOverriden({
+                                        currentCurrency: model.currency,
+                                        currencyBeforeOverride: model.currencyBeforeOverride,
+                                    })}
+                                    onMethod={(newPaymentMethodValue) => {
+                                        const newPaymentType = paymentFacade.methods.allMethods.find(
+                                            (method) => method.value === newPaymentMethodValue
+                                        )?.type;
+                                        const userSelectedSEPA =
+                                            newPaymentType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+
+                                        // current type is SEPA and the selected type is not SEPA.
+                                        const userUnselectedSEPA =
+                                            paymentFacade.selectedMethodType ===
+                                                PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT &&
+                                            newPaymentType !== PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+
+                                        // If user selects SEPA payment method then we need to do additional
+                                        // subscription/check call with the ProrationMode == Exact. Same thing if user
+                                        // unselects SEPA payment method, but in this case we need to call /check
+                                        // without ProrationMode == Exact.
+                                        if (userSelectedSEPA || userUnselectedSEPA) {
+                                            void check(model, false, newPaymentType);
                                         }
                                     }}
                                 />

@@ -273,6 +273,8 @@ const useBitcoin = ({
         fetchingToken: false,
         verifyingToken: false,
         processingToken: processingBitcoinToken,
+        // since useBitcoin is old payment processor, I'm going to remove it soon. Implementing reset is useless.
+        reset: () => {},
     };
 
     return {
