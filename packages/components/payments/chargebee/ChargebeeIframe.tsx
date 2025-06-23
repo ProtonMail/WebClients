@@ -38,11 +38,11 @@ import { type ChargebeePaypalProcessorHook } from '@proton/components/payments/r
 import {
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
+    type GetChargebeeConfigurationResponse,
     type InitializeCreditCardOptions,
     type RemoveEventListener,
-    getPaymentsVersion,
-    type GetChargebeeConfigurationResponse,
     getChargebeeConfiguration,
+    getPaymentsVersion,
 } from '@proton/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
@@ -613,12 +613,16 @@ function getInitialHeight(type: ChargebeeIframeProps['type']): number {
     const initialPaypalHeight = 52;
     const initialSavedCardHeight = 0;
     const initialCardHeight = 300;
+    const initialSepaDirectDebitHeight = 0;
 
     if (type === 'paypal') {
         return initialPaypalHeight;
     }
     if (type === 'saved-card') {
         return initialSavedCardHeight;
+    }
+    if (type === 'direct-debit') {
+        return initialSepaDirectDebitHeight;
     }
     return initialCardHeight;
 }
@@ -743,15 +747,16 @@ export const ChargebeeIframe = ({
         return () => clearTimeout(loadingTimeoutRef.current);
     }, []);
 
-    // The iframe document body has a margin of 8px by default. We don't remove it from within, because this
-    // additional space is used to display the borders and other elements.
-    // The negative margin is used to compensate for the extra space and for the iframe to fit perfectly.
-    const margin = -8;
-
     const initialHeight = getInitialHeight(type);
 
+    // The iframe document body has a margin of 8px by default. We don't remove it from within, because this additional
+    // space is used to display the borders and other elements. The negative margin is used to compensate for the extra
+    // space and for the iframe to fit perfectly. However if the iframe has height 0, we don't need to compensate for
+    // the extra space, and rather hide it completely.
+    const divStyle = initialHeight > 0 ? { margin: -8 } : { display: 'none' };
+
     return (
-        <div style={{ margin }}>
+        <div style={divStyle}>
             <iframe
                 src={iframeHandles.iframeSrc}
                 ref={iframeRef}

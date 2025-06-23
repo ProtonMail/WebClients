@@ -168,6 +168,8 @@ export class PaymentMethods {
 
     public subscription: Subscription | FreeSubscription | undefined;
 
+    public readonly directDebitEnabledFlows: readonly PaymentMethodFlows[] = ['subscription'];
+
     constructor({
         paymentMethodStatus,
         paymentMethods,
@@ -238,7 +240,8 @@ export class PaymentMethods {
 
                 const isExistingChargebeeSepaDirectDebit =
                     paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT &&
-                    this.statusExtended.VendorStates.Card;
+                    this.statusExtended.VendorStates.Card &&
+                    this.paymentFlowSupportsSEPADirectDebit();
 
                 // Only Paypal and Card can be saved/used payment methods.
                 // E.g. it's not possible to make Bitcoin/Cash a saved payment method.
@@ -355,14 +358,16 @@ export class PaymentMethods {
         );
     }
 
+    private paymentFlowSupportsSEPADirectDebit(): boolean {
+        return this.directDebitEnabledFlows.includes(this.flow);
+    }
+
     private isSEPADirectDebitAvailable(): boolean {
         if (!this.enableSepa) {
             return false;
         }
 
-        const directDebitEnabledFlows: PaymentMethodFlows[] = ['subscription'];
-
-        const flowSupportsDirectDebit = directDebitEnabledFlows.includes(this.flow);
+        const flowSupportsDirectDebit = this.paymentFlowSupportsSEPADirectDebit();
 
         const billingCountrySupportsSEPA = this.billingAddress?.CountryCode
             ? sepaCountries.has(this.billingAddress.CountryCode)
