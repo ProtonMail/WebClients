@@ -137,6 +137,7 @@ const Step1 = ({
     measure,
     mode,
     onChangeCurrency,
+    trial,
 }: {
     initialSessionsLength: boolean;
     signupConfiguration: SignupConfiguration;
@@ -169,6 +170,7 @@ const Step1 = ({
     step1Ref: MutableRefObject<Step1Rref | undefined>;
     activeSessions?: ActiveSession[];
     onChangeCurrency: (newCurrency: Currency) => Promise<FullPlansMap>;
+    trial: boolean;
 }) => {
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
@@ -311,7 +313,7 @@ const Step1 = ({
         const completeCheckOptions = {
             ...subscriptionCheckOptions,
             coupon: subscriptionCheckOptions.coupon || signupParameters.coupon,
-            trial: subscriptionCheckOptions.trial || signupParameters.trial,
+            trial: subscriptionCheckOptions.trial || trial,
             ...mergedCheckOptions,
         };
 
@@ -379,7 +381,7 @@ const Step1 = ({
         return handleOptimistic({ cycle });
     };
 
-    const handleChangePlan = (planIDs: PlanIDs, planName: PLANS, currencyOverride?: Currency) => {
+    const handleChangePlan = (planIDs: PlanIDs, planName: PLANS, currencyOverride?: Currency, audience?: Audience) => {
         if (model.loadingDependencies) {
             return;
         }
@@ -404,6 +406,12 @@ const Step1 = ({
             });
 
             checkOptions.planIDs = switchedPlanIds;
+        }
+
+        // TODO(plavarin): hack until we have a proper way to optimistically determine whether
+        // a plan supports trials. Currently, only B2B plans support trials.
+        if (audience === Audience.B2B) {
+            checkOptions.trial = true;
         }
 
         return handleOptimistic(checkOptions);
@@ -580,7 +588,12 @@ const Step1 = ({
                     audiences={audiences}
                     onChangeAudience={async (newAudience) => {
                         const newCurrency = await handleCurrencyChangeOnAudienceChange(newAudience.value);
-                        handleChangePlan({ [newAudience.defaultPlan]: 1 }, newAudience.defaultPlan, newCurrency);
+                        handleChangePlan(
+                            { [newAudience.defaultPlan]: 1 },
+                            newAudience.defaultPlan,
+                            newCurrency,
+                            newAudience.value
+                        );
                         history.push(newAudience.locationDescriptor);
                     }}
                 />
