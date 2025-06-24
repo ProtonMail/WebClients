@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { type Subscription } from '@proton/payments';
+import { type Subscription, isManagedExternally } from '@proton/payments';
 import {
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
@@ -72,7 +72,8 @@ export const ActionButtons = ({
         !hasPassB2B &&
         !getIsCustomCycle(subscription) &&
         !hasVPNPassBundle(subscription) &&
-        !showCustomizePlan;
+        !showCustomizePlan &&
+        !isManagedExternally(subscription);
 
     const showExploreOtherPlans = user.canPay;
 

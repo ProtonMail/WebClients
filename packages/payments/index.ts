@@ -17,6 +17,7 @@ export {
     getPaymentMethodStatus,
     getPaymentsVersion,
     getSubscription,
+    getSubscriptionV5DynamicPlans,
     getTokenStatus,
     getTokenStatusV4,
     getTokenStatusV5,
@@ -282,15 +283,17 @@ export {
 } from './core/price-helpers';
 export { getRenewCycle } from './core/renewals';
 export { extractIBAN, formatPaymentMethod, formatPaymentMethods, type ExtendedExtractIBANResult } from './core/sepa';
-export { BillingPlatform, External, Renew } from './core/subscription/constants';
+export { BillingPlatform, Renew, SubscriptionPlatform } from './core/subscription/constants';
 export { FREE_PLAN, getFreeCheckResult } from './core/subscription/freePlans';
 export {
     allCycles,
     canCheckItemGetStarted,
     canCheckItemPaidChecklist,
+    canModify,
     customCycles,
     getAddonMultiplier,
     getAddons,
+    getAvailableSubscriptionActions,
     getBaseAmount,
     getCanSubscriptionAccessDuoPlan,
     getCanSubscriptionAccessPassFamilyPlan,
@@ -332,6 +335,7 @@ export {
     getRenewalTime,
     getScribeAddonNameByPlan,
     getSubscriptionPlanTitle as getSubscriptionPlanTitleAndName,
+    getSubscriptionsArray,
     getUpgradedPlan,
     getValidAudience,
     getValidCycle,
@@ -382,6 +386,7 @@ export {
     hasVpnPro,
     hasWallet,
     hasYearly,
+    isAnyManagedExternally,
     isCancellableOnlyViaSupport,
     isCheckForbidden,
     isLifetimePlan,
@@ -400,8 +405,7 @@ export {
     type AggregatedPricing,
     type PricingForCycles,
 } from './core/subscription/helpers';
-export { type Subscription } from './core/subscription/interface';
-export type { FullPlansMap } from './core/subscription/interface';
+export { type FullPlansMap, type Subscription } from './core/subscription/interface';
 export {
     getAvailableCycles,
     getPlanByName,

@@ -1,10 +1,11 @@
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getProductHeaders } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces';
+import formatSubscription from '@proton/shared/lib/subscription/format';
 
 import { DEFAULT_TAX_BILLING_ADDRESS } from './billing-address';
 import type { BillingAddress, BillingAddressProperty } from './billing-address';
-import { PAYMENT_METHOD_TYPES, PLANS } from './constants';
+import { PAYMENT_METHOD_TYPES, PLANS, PLAN_TYPES } from './constants';
 import type { Autopay, INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE, PAYMENT_TOKEN_STATUS } from './constants';
 import type {
     AmountAndCurrency,
@@ -22,8 +23,9 @@ import type {
     WrappedCryptoPayment,
     WrappedPaypalPayment,
 } from './interface';
+import { PlanState } from './plan/constants';
 import { getPlanNameFromIDs, isLifetimePlanSelected } from './plan/helpers';
-import type { FreePlanDefault } from './plan/interface';
+import type { FreePlanDefault, SubscriptionPlan } from './plan/interface';
 import { formatPaymentMethods } from './sepa';
 import type { Renew } from './subscription/constants';
 import { FREE_PLAN } from './subscription/freePlans';
@@ -607,3 +609,63 @@ export function markPaymentMethodAsDefault(api: Api, methodID: string, methods: 
     IDs.unshift(methodID);
     return api(orderPaymentMethods(IDs, 'v5'));
 }
+const addSubscriptionPlan = (subscription: Subscription): Subscription => {
+    if (!subscription) {
+        return subscription;
+    }
+
+    const subscriptionPlan: SubscriptionPlan = {
+        Amount: subscription.Amount,
+        Currency: subscription.Currency,
+        Cycle: subscription.Cycle,
+        Features: 0,
+        ID: `dummy-id-${subscription.ID}`,
+        Name: (subscription as any).Name,
+        Type: PLAN_TYPES.PLAN,
+        State: PlanState.Available,
+        Services: 0,
+        Title: (subscription as any).Title,
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxSpace: 0,
+        MaxCalendars: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Quantity: 1,
+    };
+
+    return {
+        ...subscription,
+        Plans: [subscriptionPlan],
+    };
+};
+
+export const querySubscriptionV5DynamicPlans = () => ({
+    url: `payments/v5/subscription?no-redirect=1`,
+    method: 'get',
+});
+
+export const getSubscriptionV5DynamicPlans = async (api: Api) => {
+    // Please note that this api actually DOES NOT return the proper Subscription objects.
+    // The response is very close to Subscription type, but not completely. The most significant problems:
+    // - Upcoming subscriptions must be manually linked to their parents
+    // - The Plans array doesn't exists and addons are not supported. Because of this, the new v5 response
+    // can be used only in limited capacity.
+    const { Subscriptions, UpcomingSubscriptions } = await api<{
+        Subscriptions: Subscription[];
+        UpcomingSubscriptions: Subscription[];
+    }>(querySubscriptionV5DynamicPlans());
+
+    return Subscriptions.map((subscription) => {
+        const upcomingSubscription = UpcomingSubscriptions.find(
+            (it: any) => it.ParentSubscriptionID === subscription.ID
+        );
+
+        return formatSubscription(
+            addSubscriptionPlan(subscription),
+            addSubscriptionPlan(upcomingSubscription as Subscription),
+            undefined
+        );
+    });
+};

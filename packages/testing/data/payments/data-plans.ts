@@ -3541,16 +3541,40 @@ const plans: Plan[] = deepFreeze([
         Offers: [],
         Cycle: 1,
         Amount: 999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_fiJUck5F5weUwp48wGRo',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
+    },
+    {
+        ID: 'zxjpD7cbQkxa-LT26f_1WyeLTk0eBGkrYgA3Fmj5poVjKBUav0puffFtRfySjVBSMJMTYsZaR8tpBQsT4CI_Cg==',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'lumo2024',
+        Title: 'Lumo Plus',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 64,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 1299,
+            '12': 11988,
         },
+        DefaultPricing: {
+            '1': 1299,
+            '12': 11988,
+        },
+        PeriodEnd: {
+            '1': 1749885345,
+            '12': 1778742945,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 1299,
     },
 ]);
 
