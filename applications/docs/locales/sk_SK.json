@@ -93,6 +93,9 @@
       "Apply": [
         "Použiť"
       ],
+      "Ask me next time": [
+        "Opýtať sa nabudúce"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktov je povolený najviac ${ maxContacts } kontakt",
         "Na jednu skupinu kontaktov sú povolené najviac ${ maxContacts } kontakty",
@@ -686,6 +689,9 @@
       ],
       "Save changes": [
         "Uložiť zmeny"
+      ],
+      "Save preferences": [
+        "Uložiť preferencie"
       ],
       "Search": [
         "Hľadať"
@@ -4516,6 +4522,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt bol odobraný zo skupiny ${ contactGroupName }"
       ],
+      "Converting document...": [
+        "Konverzia dokumentu..."
+      ],
       "Copy the link to clipboard": [
         "Skopírovať odkaz do schránky"
       ],
@@ -4563,6 +4572,9 @@
       ],
       "Creating link to folder": [
         "Vytváranie odkazu na priečinok"
+      ],
+      "Creating new document...": [
+        "Vytváranie nového dokumentu..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
@@ -4681,6 +4693,12 @@
       "Enter your own password (as organization admin).": [
         "Zadajte vlastné heslo (ako správca organizácie)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Chyba pri konverzii dokumentu: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Chyba pri načítaní dokumentu: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Chyba synchronizácie"
       ],
@@ -4740,6 +4758,12 @@
       ],
       "Geoblocking": [
         "Geoblokácia"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Dostávajte emailové aktualizácie o komentároch a návrhoch pridaných k vašim dokumentom."
+      ],
+      "Get Notified About Comments": [
+        "Dostávajte notifikácie o komentároch"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Prejsť do ${ DRIVE_APP_NAME }"
@@ -4891,6 +4915,9 @@
       "Low Priority": [
         "Nízka priorita"
       ],
+      "Making a copy...": [
+        "Vytváranie kópie..."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
@@ -4932,6 +4959,9 @@
       ],
       "No contacts added yet": [
         "Zatiaľ neboli pridané žiadne kontakty"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "V adrese URL nie je uvedený žiadny dokument. Vráťte sa na ${ DRIVE_APP_NAME } a vyberte dokument."
       ],
       "No email address": [
         "Žiadna emailová adresa"
@@ -5280,6 +5310,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník tejto adresy vypol end-to-end šifrovanie. Ak chcete na túto adresu odosielať šifrované emaily, vlastník musí opäť povoliť end-to-end šifrovanie."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Vami zadaná adresa URL bola zrejme nesprávne skopírovaná zo služby Slack. Pri kopírovaní dlhých odkazov zo služby Slack kliknite pravým tlačidlom myši na odkaz a vyberte možnosť „Kopírovať odkaz“, namiesto priameho kopírovania skráteného textu adresy URL."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces overenia otvorí novú kartu prehliadača. Vypnite všetky aktívne blokovania automaticky otváraných okien."
@@ -6020,6 +6053,9 @@
       "Emails (last month)": [
         "Emaily (posledný mesiac)"
       ],
+      "Enable email notifications": [
+        "Povoliť emailové notifikácie"
+      ],
       "Encrypt emails": [
         "Šifrovať emaily"
       ],
@@ -6076,6 +6112,9 @@
       ],
       "Import to:": [
         "Importovať do:"
+      ],
+      "Include document name in notification": [
+        "Zahrnúť názov dokumentu do notifikácie"
       ],
       "Include message and file name in invite email": [
         "Zahrnúť správu a názov súboru do emailovej pozvánky"
@@ -8053,6 +8092,9 @@
       "The link to your item was deleted": [
         "Odkaz na vašu položku bol zmazaný"
       ],
+      "The spreadsheet failed to be created": [
+        "Tabuľku sa nepodarilo vytvoriť"
+      ],
       "Trash failed to be emptied": [
         "Kôš sa nepodarilo vysypať"
       ],
@@ -8210,6 +8252,9 @@
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Môžete používať ${ planTitle } až do konca skúšobného obdobia bez spoplatnenia."
       ],
       "Your free trial has started": [
         "Vaša bezplatná skúšobná verzia sa začala"
@@ -10415,6 +10460,9 @@
       ],
       "Untitled document ${ date }": [
         "Dokument bez názvu ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Tabuľka bez názvu ${ date }"
       ],
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
