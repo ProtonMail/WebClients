@@ -93,6 +93,9 @@
       "Apply": [
         "Übernehmen"
       ],
+      "Ask me next time": [
+        "Frage mich das nächste Mal"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Pro Kontaktgruppe ist maximal ${ maxContacts } Kontakt erlaubt.",
         "Pro Kontaktgruppe sind maximal ${ maxContacts } Kontakte erlaubt."
@@ -680,6 +683,9 @@
       ],
       "Save changes": [
         "Änderungen speichern"
+      ],
+      "Save preferences": [
+        "Einstellungen speichern"
       ],
       "Search": [
         "Suchen"
@@ -4416,6 +4422,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt von Gruppe ${ contactGroupName } entfernt"
       ],
+      "Converting document...": [
+        "Dokument wird umgewandelt…"
+      ],
       "Copy the link to clipboard": [
         "Link in die Zwischenablage kopieren"
       ],
@@ -4459,6 +4468,9 @@
       ],
       "Creating link to folder": [
         "Link zum Ordner wird erstellt"
+      ],
+      "Creating new document...": [
+        "Neues Dokument wird erstellt..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
@@ -4577,6 +4589,12 @@
       "Enter your own password (as organization admin).": [
         "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Fehler beim Umwandeln des Dokuments: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fehler beim Laden des Dokuments: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Fehler beim Synchronisieren"
       ],
@@ -4636,6 +4654,12 @@
       ],
       "Geoblocking": [
         "Geoblockierung"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Erhalte E-Mail-Updates für Kommentare und Vorschläge, die zu deinen Dokumenten hinzugefügt wurden."
+      ],
+      "Get Notified About Comments": [
+        "Über Kommentare benachrichtigt werden"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Gehe zu ${ DRIVE_APP_NAME }"
@@ -4785,6 +4809,9 @@
       "Low Priority": [
         "Niedrige Priorität"
       ],
+      "Making a copy...": [
+        "Kopie wird erstellt..."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
       ],
@@ -4824,6 +4851,9 @@
       ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Kein Dokument in der URL angegeben. Kehre zu ${ DRIVE_APP_NAME } zurück und wähle ein Dokument aus."
       ],
       "No email address": [
         "Keine E-Mail-Adresse"
@@ -5166,6 +5196,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Der Inhaber dieser E-Mail-Adresse hat die Ende-zu-Ende-Verschlüsselung deaktiviert. Um verschlüsselte E-Mails an diese Adresse senden zu können, muss der Besitzer die Ende-zu-Ende-Verschlüsselung wieder aktivieren."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Die von dir eingegebene URL scheint fehlerhaft von Slack kopiert worden zu sein. Wenn du lange Links von Slack kopierst, klicke mit der rechten Maustaste auf den Link und wähle dann \"Link kopieren\" anstatt den abgeschnittenen URL-Text direkt zu kopieren."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Der Verifikationsvorgang wird einen neuen Browser-Tab öffnen. Bitte deaktiviere jegliche Pop-up-Blocker."
@@ -5892,6 +5925,9 @@
       "Emails (last month)": [
         "E-Mails (letzter Monat)"
       ],
+      "Enable email notifications": [
+        "E-Mail-Benachrichtigungen aktivieren"
+      ],
       "Encrypt emails": [
         "E-Mails verschlüsseln"
       ],
@@ -5948,6 +5984,9 @@
       ],
       "Import to:": [
         "Importieren nach:"
+      ],
+      "Include document name in notification": [
+        "Dokumentname in der Benachrichtigung einbeziehen"
       ],
       "Include message and file name in invite email": [
         "Nachricht und Dateiname in die Einladungs-E-Mail einfügen"
@@ -7886,6 +7925,9 @@
       "The link to your item was deleted": [
         "Der Link zu deinem Element wurde gelöscht"
       ],
+      "The spreadsheet failed to be created": [
+        "Fehler beim Erstellen der Tabellenkalkulation"
+      ],
       "Trash failed to be emptied": [
         "Der Papierkorb konnte nicht geleert werden"
       ],
@@ -8225,6 +8267,9 @@
       ],
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Für SEPA wird nur der Euro akzeptiert. Deine Währung wurde geändert. Bitte verwende die Auswahl, um deine Wahl rückgängig zu machen."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
@@ -10203,6 +10248,9 @@
       ],
       "Untitled document ${ date }": [
         "Unbenanntes Dokument ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Unbenannte Tabellenkalkulation ${ date }"
       ],
       "Upgrade complete!": [
         "Upgrade abgeschlossen!"
