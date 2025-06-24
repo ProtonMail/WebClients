@@ -451,9 +451,7 @@ export const upsellPlanSSO = (planName?: PLANS) => {
 export const getHasProPlan = (planName?: PLANS) => {
     return (
         planName &&
-        [PLANS.VPN_PRO, PLANS.PASS_PRO, PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.BUNDLE_PRO_2024].some(
-            (ssoPlanName) => ssoPlanName === planName
-        )
+        [PLANS.VPN_PRO, PLANS.PASS_PRO, PLANS.MAIL_PRO, PLANS.DRIVE_PRO].some((ssoPlanName) => ssoPlanName === planName)
     );
 };
 
