@@ -70,7 +70,10 @@ export const useMoveBackAction = () => {
         // If the element that is currently opened is part of the selection to update, we need to move out. Else we don't need to
         const openedElementMoved = getOpenedElementUpdated(props.elements, conversationMode, elementID);
 
-        if (!openedElementMoved) {
+        if (
+            !openedElementMoved ||
+            (props.type === MOVE_BACK_ACTION_TYPES.MARK_AS && props.status === MARK_AS_STATUS.READ)
+        ) {
             return;
         }
 
@@ -88,10 +91,6 @@ export const useMoveBackAction = () => {
                 const conversationFromState = getConversation(conversationID);
 
                 if (props.type === MOVE_BACK_ACTION_TYPES.MARK_AS) {
-                    if (props.status === MARK_AS_STATUS.READ) {
-                        return;
-                    }
-
                     const hasReadItems = hasReadItemsAfterAction(conversationFromState);
 
                     if (hasReadItems) {
