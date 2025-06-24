@@ -1,5 +1,4 @@
-import { PLANS, type Subscription } from '@proton/payments';
-import { isManagedExternally } from '@proton/payments';
+import { PLANS, type Subscription, canModify } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
@@ -16,8 +15,8 @@ export const getIsEligible = ({ subscription, user, protonConfig }: Props): bool
 
     const { canPay, isDelinquent, isFree } = user;
     const notDelinquent = !isDelinquent;
-    const isNotExternal = !isManagedExternally(subscription);
+    const canModifySubscription = canModify(subscription);
     const cohortPass2023 = subscription?.Plans?.some((plan) => plan.Name === PLANS.PASS) ?? false;
 
-    return hasValidApp && canPay && notDelinquent && isNotExternal && (isFree || cohortPass2023);
+    return hasValidApp && canPay && notDelinquent && canModifySubscription && (isFree || cohortPass2023);
 };

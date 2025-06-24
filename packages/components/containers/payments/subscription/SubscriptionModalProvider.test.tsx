@@ -2,7 +2,7 @@ import { act, screen, waitFor } from '@testing-library/react';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { getModelState } from '@proton/account/test';
-import { External, PLANS } from '@proton/payments';
+import { PLANS, SubscriptionPlatform } from '@proton/payments';
 import { Audience } from '@proton/shared/lib/interfaces';
 import format from '@proton/shared/lib/subscription/format';
 import { renderWithProviders } from '@proton/testing';
@@ -212,7 +212,7 @@ it('should render <SubscriptionContainer> with FAMILY default audience if it is 
 
 it('should render <InAppPurchaseModal> if subscription is managed externally', async () => {
     const subscription = cloneDeep(subscriptionDefaultResponse);
-    subscription.Subscription.External = External.Android;
+    subscription.Subscription.External = SubscriptionPlatform.Android;
 
     let openSubscriptionModal!: OpenSubscriptionModalCallback;
     const ContextReaderComponent = () => {
@@ -229,7 +229,7 @@ it('should render <InAppPurchaseModal> if subscription is managed externally', a
         {
             preloadedState: {
                 subscription: getSubscriptionState(
-                    format(subscription.Subscription, subscription.UpcomingSubscription)
+                    format(subscription.Subscription, subscription.UpcomingSubscription, undefined)
                 ),
             },
         }

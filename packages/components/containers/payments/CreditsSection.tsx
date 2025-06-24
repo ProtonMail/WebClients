@@ -13,8 +13,7 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import Price from '@proton/components/components/price/Price';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import { BillingPlatform, isFreeSubscription, isSplittedUser } from '@proton/payments';
-import { isManagedExternally } from '@proton/payments';
+import { BillingPlatform, getAvailableSubscriptionActions, isFreeSubscription, isSplittedUser } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -84,7 +83,8 @@ const CreditsSection = () => {
                     <Button
                         shape="outline"
                         onClick={() => {
-                            if (isManagedExternally(subscription)) {
+                            const subscriptionActions = getAvailableSubscriptionActions(subscription);
+                            if (!subscriptionActions.canModify) {
                                 showExternalSubscriptionModal({
                                     subscription,
                                 });

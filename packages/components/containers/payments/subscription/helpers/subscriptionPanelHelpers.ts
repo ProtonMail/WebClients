@@ -1,7 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { type Subscription } from '@proton/payments';
-import { getVPNDedicatedIPs } from '@proton/payments';
+import { type Subscription, getVPNDedicatedIPs } from '@proton/payments';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME, ORGANIZATION_STATE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';

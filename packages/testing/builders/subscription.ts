@@ -1,14 +1,16 @@
 import {
     CYCLE,
-    External,
+    type Currency,
     PLANS,
     type Plan,
     type PlanIDs,
     Renew,
-    type SelectedPlan,
+    SelectedPlan,
     type Subscription,
+    SubscriptionPlatform,
 } from '@proton/payments';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
+import type { EitherOr } from '@proton/shared/lib/interfaces';
 
 import { getTestPlans } from '../data';
 
@@ -41,12 +43,36 @@ export const buildSubscription = (
         RenewAmount: 11988,
         RenewDiscount: 0,
         Renew: Renew.Enabled,
-        External: External.Default,
+        External: SubscriptionPlatform.Default,
         ...value,
     };
 };
 
-export const smartBuildSubscription = (selectedPlan: SelectedPlan, override?: Partial<Subscription>) => {
+type SelectedPlanParam =
+    | SelectedPlan
+    | EitherOr<
+          {
+              planIDs: PlanIDs;
+              planName: PLANS;
+              currency: Currency;
+              cycle: CYCLE;
+          },
+          'planIDs' | 'planName'
+      >;
+
+const getSelectedPlan = (plan: SelectedPlanParam): SelectedPlan => {
+    if (plan instanceof SelectedPlan) {
+        return plan;
+    }
+
+    const planIDs: PlanIDs = plan.planIDs ?? { [plan.planName]: 1 };
+
+    return new SelectedPlan(planIDs, getTestPlans(plan.currency), plan.cycle, plan.currency);
+};
+
+export const smartBuildSubscription = (plan: SelectedPlanParam, override?: Partial<Subscription>) => {
+    const selectedPlan = getSelectedPlan(plan);
+
     const plans = getTestPlans(selectedPlan.currency);
 
     const plansAndQuantities = Object.entries(selectedPlan.planIDs).map(([planName, quantity]) => ({

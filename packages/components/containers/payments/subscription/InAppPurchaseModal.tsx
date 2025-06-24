@@ -8,17 +8,17 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { External, type FreeSubscription, type Subscription, isFreeSubscription } from '@proton/payments';
+import { type FreeSubscription, type Subscription, SubscriptionPlatform, isFreeSubscription } from '@proton/payments';
 
 interface InAppPurchaseModalProps extends ModalProps {
     subscription: Subscription | FreeSubscription;
     onClose: NonNullable<ModalProps['onClose']>;
 }
 
-export function getSubscriptionManagerName(externalCode: External): string {
-    if (externalCode === External.Android) {
+export function getSubscriptionManagerName(externalCode: SubscriptionPlatform): string {
+    if (externalCode === SubscriptionPlatform.Android) {
         return 'Google Play';
-    } else if (externalCode === External.iOS) {
+    } else if (externalCode === SubscriptionPlatform.iOS) {
         return 'Apple App Store';
     }
 
@@ -30,7 +30,7 @@ export const InAppText = ({ subscription }: { subscription: Subscription | undef
 
     let firstLine: string;
     let secondLine: string | string[];
-    if (subscription?.External === External.Android) {
+    if (subscription?.External === SubscriptionPlatform.Android) {
         firstLine = c('Subscription change warning')
             .t`Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.`;
         secondLine = c('Subscription change warning')
@@ -54,7 +54,7 @@ export const InAppText = ({ subscription }: { subscription: Subscription | undef
 const InAppPurchaseModal = ({ subscription, ...rest }: InAppPurchaseModalProps) => {
     const shouldClose =
         isFreeSubscription(subscription) ||
-        (subscription.External !== External.iOS && subscription.External !== External.Android);
+        (subscription.External !== SubscriptionPlatform.iOS && subscription.External !== SubscriptionPlatform.Android);
 
     useEffect(() => {
         if (shouldClose) {

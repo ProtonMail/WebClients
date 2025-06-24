@@ -4,7 +4,7 @@ import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Price from '@proton/components/components/price/Price';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { CYCLE, type Subscription, getSubscriptionPlanTitleAndName } from '@proton/payments';
+import { CYCLE, type Subscription, canModify, getSubscriptionPlanTitleAndName } from '@proton/payments';
 import {
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
@@ -120,11 +120,14 @@ export const CurrentPlanInfoSection = ({
         !getIsCustomCycle(subscription) &&
         !hasVPNPassBundle(subscription) &&
         !showCustomizePlan &&
-        editBillingCycle;
+        editBillingCycle &&
+        !isManagedExternally(subscription);
 
-    const handleEditPayment = () =>
+    const showExploreOtherPlans = user.isPaid && user.canPay && canModify(subscription);
+
+    const handleEditPayment = (step = SUBSCRIPTION_STEPS.CHECKOUT) =>
         openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.CHECKOUT,
+            step,
             disablePlanSelection: true,
             metrics: {
                 source: 'plans',
@@ -135,7 +138,7 @@ export const CurrentPlanInfoSection = ({
     const cta = (() => {
         if (showEditBillingDetails && editBillingCycle) {
             return (
-                <Button onClick={handleEditPayment} data-testid="edit-billing-details">{c('Action')
+                <Button onClick={() => handleEditPayment()} data-testid="edit-billing-details">{c('Action')
                     .t`Edit billing cycle`}</Button>
             );
         }
@@ -145,6 +148,17 @@ export const CurrentPlanInfoSection = ({
                 <ButtonLike as={SettingsLink} shape="outline" path="/subscription">
                     {c('Action').t`Manage subscription`}
                 </ButtonLike>
+            );
+        }
+
+        if (showExploreOtherPlans) {
+            return (
+                <Button
+                    onClick={() => handleEditPayment(SUBSCRIPTION_STEPS.PLAN_SELECTION)}
+                    data-testid="explore-other-plans"
+                >
+                    {c('Action').t`Explore other plans`}
+                </Button>
             );
         }
 

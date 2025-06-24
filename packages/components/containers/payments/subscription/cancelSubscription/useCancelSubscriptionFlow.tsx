@@ -21,17 +21,15 @@ import {
     type Subscription,
     changeRenewState,
     deleteSubscription,
+    getAvailableSubscriptionActions,
     getPlan,
-    isFreeSubscription,
-    isSplittedUser,
-    onSessionMigrationPaymentsVersion,
-} from '@proton/payments';
-import {
     getPlanName,
     hasCancellablePlan,
     hasMigrationDiscount,
     hasPassLaunchOffer,
-    isManagedExternally,
+    isFreeSubscription,
+    isSplittedUser,
+    onSessionMigrationPaymentsVersion,
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
@@ -440,7 +438,8 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             return SUBSCRIPTION_KEPT;
         }
 
-        if (isManagedExternally(subscription)) {
+        const subscriptionActions = getAvailableSubscriptionActions(subscription);
+        if (!subscriptionActions.canCancel) {
             await showInAppPurchaseModal();
             return SUBSCRIPTION_KEPT;
         }

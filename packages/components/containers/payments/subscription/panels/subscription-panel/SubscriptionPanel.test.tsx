@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { CYCLE, External, PLANS, PLAN_TYPES, type Plan } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_TYPES, type Plan, SubscriptionPlatform } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
@@ -117,7 +117,10 @@ describe('SubscriptionPanel', () => {
 
     it('should not render price if subscription is managed externally', () => {
         renderWithProviders(
-            <SubscriptionPanel {...defaultProps} subscription={buildSubscription({ External: External.Android })} />
+            <SubscriptionPanel
+                {...defaultProps}
+                subscription={buildSubscription({ External: SubscriptionPlatform.Android })}
+            />
         );
         expect(screen.queryByTestId('plan-price')).not.toBeInTheDocument();
     });

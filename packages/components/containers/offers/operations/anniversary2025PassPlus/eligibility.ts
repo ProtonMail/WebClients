@@ -1,6 +1,6 @@
 import { fromUnixTime, isBefore } from 'date-fns';
 
-import { type Subscription } from '@proton/payments';
+import { type Subscription, canModify } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
@@ -34,14 +34,14 @@ export const getIsEligible = ({ user, subscription, protonConfig, lastSubscripti
 
     if (user.isPaid) {
         const offerSubscription = new OfferSubscription(subscription);
-        const isNotExternal = !offerSubscription.isManagedExternally();
+        const canModifySubscription = canModify(subscription);
         const hasPassMonthly = offerSubscription.hasPass() && offerSubscription.isMonthly();
 
         return (
             hasValidApp &&
             checkAllowed &&
             hasPassMonthly &&
-            isNotExternal &&
+            canModifySubscription &&
             noPassLifetime &&
             noPassViaSimpleLogin &&
             user.canPay &&

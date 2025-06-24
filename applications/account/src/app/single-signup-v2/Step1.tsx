@@ -31,16 +31,17 @@ import {
     CYCLE,
     type Currency,
     type Cycle,
+    FREE_PLAN,
     type FullPlansMap,
     PLANS,
     type PlanIDs,
     type SubscriptionPlan,
     getFallbackCurrency,
+    getHas2024OfferCoupon,
+    getPlanOffer,
     getPlansMap,
     isRegionalCurrency,
 } from '@proton/payments';
-import { getHas2024OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/payments';
-import { FREE_PLAN } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -398,7 +399,7 @@ const Step1 = ({
 
         if (model.session?.subscription && model.session.organization && model.plansMap[planName]) {
             const switchedPlanIds = switchPlan({
-                currentPlanIDs: getPlanIDs(model.session.subscription),
+                subscription: model.session.subscription,
                 newPlan: planName,
                 organization: model.session.organization,
                 plans: model.plans,
