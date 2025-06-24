@@ -14,7 +14,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { deleteOrgUsersAuthLogs } from '@proton/shared/lib/api/b2bevents';
-import type { B2BAuthLog } from '@proton/shared/lib/authlog';
+import { getAuthLogEventsI18N, type B2BAuthLog } from '@proton/shared/lib/authlog';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
@@ -26,6 +26,7 @@ import WipeLogsModal from './WipeLogsModal';
 import { updateMonitoringSetting } from './api';
 import B2BOrganizationUpsellBanner from './B2BOrganizationUpsellBanner';
 import { getHasProPlan } from '@proton/payments';
+import { escapeCsvValue } from '@proton/components/helpers/escapeCsvValue';
 
 const ActivityMonitorDescription = () => {
     return (
@@ -95,15 +96,54 @@ const ActivityMonitorEvents = () => {
     };
 
     const handleDownload = async () => {
-        const data = logs.reduce(
-            (acc, { User, Description, Time, IP, Device }) => {
-                acc.push(
-                    `${User.Name || ''},${User.Email || ''},${Description || ''},${fromUnixTime(Time).toISOString()},${IP},${Device || ''}`
-                );
-                return acc;
-            },
-            [['User Name', 'User Email', 'Event', 'Time', 'IP', 'Device'].join(',')]
-        );
+        const data = logs.reduce((acc, log) => {
+            const {
+                Time,
+                Event,
+                Status,
+                User,
+                IP,
+                Location,
+                InternetProvider,
+                AppVersion,
+                Device,
+                ProtectionDesc,
+            } = log;
+
+            const row = [
+                fromUnixTime(Time).toISOString(),
+                getAuthLogEventsI18N(Event),
+                Status || '',
+                User?.Name || '',
+                User?.Email || '',
+                IP || '',
+                Location || '',
+                InternetProvider || '',
+                AppVersion || '',
+                Device || '',
+            ];
+
+            if (organization?.Settings?.HighSecurity === 1) {
+                row.push(ProtectionDesc || '');
+            }
+
+            acc.push(row.map(escapeCsvValue).join(','));
+            return acc;
+        }, [
+            [
+                'Time',
+                'Event',
+                'Status',
+                'User Name',
+                'User Email',
+                'IP',
+                'Location',
+                'InternetProvider',
+                'AppVersion',
+                'Device',
+                'Protection',
+            ].map(escapeCsvValue).join(','),
+        ]);
 
         const filename = 'events.csv';
         const csvString = data.join('\r\n');

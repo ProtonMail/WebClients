@@ -158,6 +158,6 @@ export const getAuthLogEventsI18N = (type: AUTH_LOG_EVENTS): string => {
         case AUTH_LOG_EVENTS.REMOVE_U2F:
             return c('Log event').t`Second factor disabled (security key)`;
         default:
-            return c('Protection type').t`Unknown`;
+            return c('Log event').t`Unknown`;
     }
 };
