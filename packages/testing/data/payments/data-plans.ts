@@ -3588,6 +3588,6 @@ export function getTestPlans(currency?: Currency): Plan[] {
     });
 }
 
-export function getLongTestPlans(): Plan[] {
-    return [...getTestPlans('USD'), ...getTestPlans('CHF'), ...getTestPlans('EUR'), ...getTestPlans('BRL')];
+export function getLongTestPlans(currency: Currency = 'BRL'): Plan[] {
+    return [...getTestPlans('USD'), ...getTestPlans('CHF'), ...getTestPlans('EUR'), ...getTestPlans(currency)];
 }
