@@ -55,6 +55,7 @@ const user: User = {
     ChargebeeUserExists: 0,
     DriveEarlyAccess: 0,
     Idle: 0,
+    HasMultipleSubscriptions: false,
 };
 
 const userMock: UserModel = formatUser(user);

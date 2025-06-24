@@ -1,7 +1,6 @@
 import { fromUnixTime, isBefore, subDays } from 'date-fns';
 
-import { CYCLE, PLANS, type Subscription, getPlan } from '@proton/payments';
-import { isManagedExternally, isTrial } from '@proton/payments';
+import { CYCLE, PLANS, type Subscription, canModify, getPlan, isTrial } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
@@ -22,7 +21,7 @@ export const getIsEligible = ({ user, subscription, protonConfig }: Props) => {
         user.canPay &&
         isValidApp &&
         !user.isDelinquent &&
-        !isManagedExternally(subscription);
+        canModify(subscription);
 
     if (plan?.Name === PLANS.MAIL) {
         const isMonthly = subscription?.Cycle === CYCLE.MONTHLY;

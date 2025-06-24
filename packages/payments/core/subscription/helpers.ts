@@ -22,7 +22,7 @@ import type { Plan, PlansMap, SubscriptionPlan } from '../plan/interface';
 import { getPricePerCycle, getPricePerMember, isMultiUserPersonalPlan } from '../price-helpers';
 import { isFreeSubscription } from '../type-guards';
 import { isSplittedUser, onSessionMigrationChargebeeStatus } from '../utils';
-import { External } from './constants';
+import { SubscriptionPlatform } from './constants';
 import { FREE_PLAN } from './freePlans';
 import { type Subscription } from './interface';
 
@@ -249,8 +249,33 @@ export const isManagedExternally = (
         return false;
     }
 
-    return subscription.External === External.Android || subscription.External === External.iOS;
+    return subscription.External === SubscriptionPlatform.Android || subscription.External === SubscriptionPlatform.iOS;
 };
+
+/**
+ * If user has multisubs, then this function will transform the nested secondary subscriptions into a flat array.
+ * This is useful for functions that need to iterate over all subscriptions.
+ */
+export const getSubscriptionsArray = (subscription: Subscription): Subscription[] => {
+    return [subscription, ...(subscription.SecondarySubscriptions ?? [])];
+};
+
+/**
+ * returns true if any of the multisubs is managed externally
+ */
+export function isAnyManagedExternally(
+    subscriptions: Subscription[] | Subscription | FreeSubscription | undefined | null
+): boolean {
+    if (!subscriptions || isFreeSubscription(subscriptions)) {
+        return false;
+    }
+
+    if (Array.isArray(subscriptions)) {
+        return subscriptions.some(isManagedExternally);
+    }
+
+    return getSubscriptionsArray(subscriptions).some(isManagedExternally);
+}
 
 export const hasVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VISIONARY);
 export const hasDeprecatedVPN = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
@@ -1012,8 +1037,8 @@ export function isSubscriptionUnchanged(
 
 export function isCheckForbidden(
     subscription: Subscription | FreeSubscription | null | undefined,
-    planIds: PlanIDs,
-    cycle?: CYCLE
+    planIDs: PlanIDs,
+    cycle: CYCLE
 ): boolean {
     if (!subscription) {
         return false;
@@ -1021,17 +1046,22 @@ export function isCheckForbidden(
 
     const selectedSameAsCurrent =
         !!subscription && !isFreeSubscription(subscription)
-            ? isSubscriptionUnchanged(subscription, planIds, cycle)
+            ? isSubscriptionUnchanged(subscription, planIDs, cycle)
             : false;
 
     const upcoming = subscription.UpcomingSubscription;
     const hasUpcomingSubscription = !!upcoming;
-    const selectedSameAsUpcoming = hasUpcomingSubscription ? isSubscriptionUnchanged(upcoming, planIds, cycle) : false;
+    const selectedSameAsUpcoming = hasUpcomingSubscription ? isSubscriptionUnchanged(upcoming, planIDs, cycle) : false;
 
     const variableCycleOffer = isVariableCycleOffer(subscription);
 
     const isScheduledUnpaidModification =
         hasUpcomingSubscription && !variableCycleOffer && !isSubscriptionPrepaid(upcoming);
+
+    const selectedSameAsCurrentIgnorringCycle =
+        !!subscription && !isFreeSubscription(subscription) ? isSubscriptionUnchanged(subscription, planIDs) : false;
+
+    const managedExternally = isManagedExternally(subscription);
 
     return (
         /**
@@ -1060,8 +1090,70 @@ export function isCheckForbidden(
          * If user has a B2B plan with scribe addons and they want to decrease the number of scribes
          * then it creates a scheduled subscription with lower number of scribes.
          *
+         * The four cases described above are handled by the first two disjunctions.
+         *
+         * The third disjunction is a special case for multi-subs. If user has a mobile subscription (for example, Lumo)
+         * and selects the same plan on web (any cycle) then the check is forbidden. Users must not be able to modify
+         * the subscription that's managed externally. In some cases, they should be allowed to create a new one, and
+         * we call it multi-subs.
+         *
          * P2-634 is the relevant ticket.
          */
-        (selectedSameAsCurrent && !isScheduledUnpaidModification) || selectedSameAsUpcoming
+        (selectedSameAsCurrent && !isScheduledUnpaidModification) ||
+        selectedSameAsUpcoming ||
+        (selectedSameAsCurrentIgnorringCycle && managedExternally)
     );
+}
+
+export function isMobileMultiSubSupported(subscription: Subscription) {
+    return hasLumo(subscription);
+}
+
+export function canModify(subscription: Subscription | FreeSubscription | null | undefined) {
+    return (
+        !subscription ||
+        isFreeSubscription(subscription) ||
+        !isManagedExternally(subscription) ||
+        isMobileMultiSubSupported(subscription)
+    );
+}
+
+type SubscriptionActions = (
+    | {
+          canModify: true;
+          cantModifyReason: undefined;
+      }
+    | {
+          canModify: false;
+          cantModifyReason: 'subscription_managed_externally';
+      }
+) &
+    (
+        | {
+              canCancel: true;
+              cantCancelReason: undefined;
+          }
+        | {
+              canCancel: false;
+              cantCancelReason: 'subscription_managed_externally';
+          }
+    );
+
+/**
+ * Returns the available subscription actions for the given subscription. Sometimes it's possible to modify the
+ * subscription, while it's not possible to cancel it.
+ *
+ * For example, if user has mobile Lumo subscription then it's possible to add a web subscription (canModify == true
+ * allows using the subscription modal). However it's not possible to cancel the mobile subscription on web.
+ */
+export function getAvailableSubscriptionActions(subscription: Subscription): SubscriptionActions {
+    const modificationAllowed = canModify(subscription);
+    const managedExternally = isManagedExternally(subscription);
+
+    return {
+        canModify: modificationAllowed,
+        cantModifyReason: !modificationAllowed ? ('subscription_managed_externally' as const) : undefined,
+        canCancel: !managedExternally,
+        cantCancelReason: managedExternally ? ('subscription_managed_externally' as const) : undefined,
+    } as SubscriptionActions;
 }

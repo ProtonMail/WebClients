@@ -115,6 +115,7 @@ export interface User {
     LockedFlags?: number;
     Billed?: boolean;
     ChargebeeUserExists?: ChargebeeUserExists;
+    HasMultipleSubscriptions: boolean;
 }
 
 export function isBilledUser(user: User | undefined): boolean {

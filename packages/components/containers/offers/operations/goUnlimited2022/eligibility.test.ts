@@ -1,6 +1,6 @@
 import { subDays } from 'date-fns';
 
-import { COUPON_CODES, CYCLE, External, PLANS, PLAN_TYPES, type Subscription } from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_TYPES, type Subscription, SubscriptionPlatform } from '@proton/payments';
 import { type ProtonConfig, type UserModel } from '@proton/shared/lib/interfaces';
 
 import { getIsEligible } from './eligibility';
@@ -206,7 +206,7 @@ describe('go unlimites 2022 tests', () => {
                     user: defaultUser,
                     protonConfig,
                     subscription: {
-                        External: External.Android,
+                        External: SubscriptionPlatform.Android,
                         Cycle: CYCLE.MONTHLY,
                         CreateTime: subDays(Date.now(), 7).getTime() / 1000,
                         Plans: [
@@ -224,7 +224,7 @@ describe('go unlimites 2022 tests', () => {
                     user: defaultUser,
                     protonConfig,
                     subscription: {
-                        External: External.iOS,
+                        External: SubscriptionPlatform.iOS,
                         Cycle: CYCLE.MONTHLY,
                         CreateTime: subDays(Date.now(), 7).getTime() / 1000,
                         Plans: [
