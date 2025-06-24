@@ -5088,7 +5088,7 @@
         "inactiva"
       ],
       "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Inclua dirección IP del usuario, ubicación y proveedor de servicios de internet (proveedor de servicios de internet) en los registros de eventos."
+        "Incluir la dirección IP del usuario, ubicación y proveedor de servicios de internet (proveedor de servicios de internet) en los registros de eventos."
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incluyendo ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -7466,7 +7466,7 @@
         "La sesión fue iniciada (esperando verificación)."
       ],
       "Sign out": [
-        "Cerrar cuenta"
+        "Cerrar sesión"
       ],
       "Two password mode disabled": [
         "El modo de doble contraseña fue desactivado."
@@ -9272,6 +9272,9 @@
       ],
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Solo se acepta el euro para SEPA. Su moneda ha sido cambiada. Por favor, use el selector para revertir su elección."
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Agregue un método de pago en el panel de control para continuar."
