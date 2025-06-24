@@ -8709,7 +8709,7 @@
         "Наладзьце сваю арганізацыю"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Скарыстайцеся выбарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }."
+        "Скарыстайцеся селектарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
         "Вы зможаце змяніць тэму ў любы час праз налады."
@@ -9051,6 +9051,9 @@
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Для SEPA прымаюцца толькі еўра. Ваша валюта зменена. Выкарыстоўвайце селектар, каб скінуць свой выбар."
       ]
     },
     "Payments.Error": {
@@ -9646,7 +9649,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Дадаць уліковыя запісы ${ BRAND_NAME } для ўдзельнікаў, з якімі вы хочаце абагуліць ${ calendarName }. Мы адправім ім запрашэнне."
+        "Дадаць уліковыя запісы ${ BRAND_NAME } для ўдзельнікаў, з якімі вы хочаце абагуліць ${ calendarName }. Ім будзе адпраўлена запрашэнне."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -10877,7 +10880,7 @@
         "Дадаць крэдытную/плацежную картку"
       ],
       "Add event location": [
-        "Дадаць месца падзеі"
+        "Дадаць месцазнаходжанне падзеі"
       ],
       "Add event title": [
         "Дадаць загаловак падзеі"
