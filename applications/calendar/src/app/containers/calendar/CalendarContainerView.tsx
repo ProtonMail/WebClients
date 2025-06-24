@@ -21,7 +21,6 @@ import {
     InboxDesktopFreeTrialTopBanner,
     InboxDesktopOutdatedAppTopBanner,
     LocalizedMiniCalendar,
-    PrimaryButton,
     PrivateAppContainer,
     PrivateHeader,
     PrivateMainArea,
@@ -551,14 +550,15 @@ const CalendarContainerView = ({
     );
 
     const footerButtons = [
-        <PrimaryButton
+        <Button
+            color="norm"
             key="footer-button-1"
             onClick={() => onCreateEvent?.()}
             disabled={!onCreateEvent}
             data-testid="calendar-drawer:create-event-button"
         >
             {createEventText}
-        </PrimaryButton>,
+        </Button>,
         <ButtonLike
             as={AppLink}
             key="footer-button-2"

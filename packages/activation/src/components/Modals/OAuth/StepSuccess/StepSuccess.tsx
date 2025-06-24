@@ -7,14 +7,7 @@ import { resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/o
 import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms';
-import {
-    ModalTwo,
-    ModalTwoContent,
-    PrimaryButton,
-    SettingsLink,
-    useModalState,
-    useSettingsLink,
-} from '@proton/components';
+import { ModalTwo, ModalTwoContent, SettingsLink, useModalState, useSettingsLink } from '@proton/components';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import importStartedSvg from '@proton/styles/assets/img/onboarding/import-assistant.svg';
 
@@ -51,7 +44,7 @@ const StepSuccessFooterAction = ({ handleModalDisplay, isCurrentLocationImportPa
             <Button shape="outline" onClick={() => handleClose(false)} data-testid="StepSuccess:RedirectFooterSubmit">
                 {c('Action').t`Close`}
             </Button>
-            <PrimaryButton onClick={() => handleClose(true)}>{c('Action').t`Check import progress`}</PrimaryButton>
+            <Button color="norm" onClick={() => handleClose(true)}>{c('Action').t`Check import progress`}</Button>
         </ModalFooter>
     );
 };

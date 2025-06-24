@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, PrimaryButton } from '@proton/components';
+import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
 import type { DecryptedLink, TreeItem } from '../../../store';
 import FolderTree from '../../FolderTree/FolderTree';
@@ -52,7 +52,8 @@ export const ModalContent = ({
                 <Button type="reset" className="w-custom" style={{ '--w-custom': '8em' }} disabled={isLoading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton
+                <Button
+                    color="norm"
                     className="ml-4 w-custom"
                     style={{ '--w-custom': '8em' }}
                     loading={isLoading}
@@ -60,7 +61,7 @@ export const ModalContent = ({
                     disabled={isSharingDisabled}
                 >
                     {actionText}
-                </PrimaryButton>
+                </Button>
             </ModalTwoFooter>
         </>
     );
