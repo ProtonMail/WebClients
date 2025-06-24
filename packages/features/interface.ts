@@ -127,4 +127,8 @@ export enum FeatureCode {
     PostSubscriptionShortDomainSpotlight = 'PostSubscriptionShortDomainSpotlight',
     FeatureTourExpirationDate = 'FeatureTourExpirationDate',
     FeatureTourDrawerSpotlightDisplayDate = 'FeatureTourDrawerSpotlightDisplayDate',
+
+    // Go unlimited 2025
+    OfferGoUnlimited2025 = 'OfferGoUnlimited2025',
+    OfferUnlimitedRotationState = 'OfferUnlimitedRotationState',
 }
