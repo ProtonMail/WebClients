@@ -852,6 +852,7 @@ export { default as VpnGetMoreSection } from './containers/vpn/VpnGetMoreSection
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
 export { getAppVersion } from './helpers/appVersion';
 export { getCustomSizingClasses } from './helpers/getCustomSizingClasses';
+export { escapeCsvValue } from './helpers/escapeCsvValue';
 export { getObjectKeys } from './helpers/getObjectKeys';
 export { DrawerProvider, default as useDrawer } from './hooks/drawer/useDrawer';
 export { default as useDrawerLocalStorage } from './hooks/drawer/useDrawerLocalStorage';
