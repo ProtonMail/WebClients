@@ -107,4 +107,17 @@
 			border-color: var(--primary);
 		}
 	}
+
+	// Unlimited permanent offer 2025
+	&--go-unlimited-2025 {
+		&#{&} {
+			// --button-hover-background-color: --interaction-default-hover;
+			// --button-active-background-color: --interaction-default-hover;
+			--button-default-text-color: var(--primary);
+			--button-hover-text-color: var(--primary);
+			--button-active-text-color: var(--primary);
+
+			border-color: var(--interaction-weak-major-1);
+		}
+	}
 }
