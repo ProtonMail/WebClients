@@ -1002,7 +1002,15 @@ const Step1B = ({
         return;
     })();
 
-    const signIn = <SignIntoLink key="sign-in" options={options} measure={measure} details={undefined} />;
+    const signIn = (
+        <SignIntoLink
+            key="sign-in"
+            options={options}
+            measure={measure}
+            details={undefined}
+            disabled={model.loadingDependencies}
+        />
+    );
 
     const signInText = (
         <div className="text-center color-norm">
