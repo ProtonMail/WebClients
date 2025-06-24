@@ -6,7 +6,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import { isCheckForbidden } from '@proton/payments';
 import {
     type CheckSubscriptionData,
     type CheckWithAutomaticOptions,
@@ -18,18 +17,19 @@ import {
     type PaymentMethodStatus,
     type PaymentMethodStatusExtended,
     type PaymentsApi,
+    type PaymentsVersion,
     type RequestOptions,
     captureWrongPlanIDs,
     extendStatus,
     getLifetimeProductType,
     getPaymentsVersion,
+    getPlanName,
+    isCheckForbidden,
     isCheckWithAutomaticOptions,
     isLifetimePlanSelected,
     isPaymentMethodStatusExtended,
     queryPaymentMethodStatus,
 } from '@proton/payments';
-import { type PaymentsVersion } from '@proton/payments';
-import { getPlanName } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';

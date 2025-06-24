@@ -3,7 +3,7 @@ import { subDays } from 'date-fns';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import useFeature from '@proton/features/useFeature';
-import { CYCLE, External, PLANS, type Subscription } from '@proton/payments';
+import { CYCLE, PLANS, type Subscription, SubscriptionPlatform } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -235,7 +235,7 @@ describe('Mail Paid user nudge', () => {
                     Cycle: CYCLE.MONTHLY,
                     Plans: [{ Name: PLANS.MAIL }],
                     UpcomingSubscription: { Cycle: CYCLE.MONTHLY },
-                    External: External.Android,
+                    External: SubscriptionPlatform.Android,
                 } as unknown as Subscription,
             ]);
 

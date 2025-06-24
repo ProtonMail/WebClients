@@ -56,5 +56,6 @@ export function mockSubscriptionApi(subscription: typeof subscriptionDefaultResp
 
 export const defaultSubscriptionCache = formatSubscription(
     subscriptionDefaultResponse.Subscription,
-    subscriptionDefaultResponse.UpcomingSubscription
+    subscriptionDefaultResponse.UpcomingSubscription,
+    undefined
 );
