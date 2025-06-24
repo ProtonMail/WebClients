@@ -12,7 +12,7 @@ import { useActions, useTreeForModals } from '../../../store';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { getMovedFiles } from '../../../utils/moveTexts';
 import { selectMessageForItemList } from '../../sections/helpers';
-import CreateFolderModal from '../CreateFolderModal';
+import { useCreateFolderModal } from '../CreateFolderModal';
 import ModalContentLoader from '../ModalContentLoader';
 import { ModalContent } from './ModalContent';
 
@@ -30,11 +30,10 @@ const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modal
         toggleExpand,
         isLoaded: isTreeLoaded,
     } = useTreeForModals(shareId, { rootExpanded: true, foldersOnly: true });
-
     const [loading, withLoading] = useLoading();
     const [selectedFolder, setSelectedFolder] = useState<string>();
     const { viewportWidth } = useActiveBreakpoint();
-    const [createFolderModal, showCreateFolderModal] = useModalTwoStatic(CreateFolderModal);
+    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
 
     const moveLinksToFolder = async (parentFolderId: string) => {
         await moveLinks(new AbortController().signal, {
