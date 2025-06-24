@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PrimaryButton, useActiveBreakpoint, useBusySlotsAvailable } from '@proton/components';
+import { useActiveBreakpoint, useBusySlotsAvailable } from '@proton/components';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
@@ -220,7 +220,8 @@ const CreateEventPopover = ({
                         className="w-full sm:w-auto"
                         onClick={handleMore}
                     >{c('Action').t`More options`}</Button>
-                    <PrimaryButton
+                    <Button
+                        color="norm"
                         data-testid="create-event-popover:save"
                         type="submit"
                         className={isDrawerApp ? 'w-full' : undefined}
@@ -228,7 +229,7 @@ const CreateEventPopover = ({
                         disabled={loadingAction || cannotSave}
                     >
                         {c('Action').t`Save`}
-                    </PrimaryButton>
+                    </Button>
                 </PopoverFooter>
             </form>
         </PopoverContainer>

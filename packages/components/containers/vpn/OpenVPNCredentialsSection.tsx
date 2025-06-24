@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
@@ -126,11 +125,12 @@ const OpenVPNCredentialsSection = (props: Props) => {
                     </div>
                 </SettingsLayoutRight>
             </SettingsLayout>
-            <PrimaryButton
+            <Button
+                color="norm"
                 disabled={!Name || !Password}
                 loading={updating}
                 onClick={() => withUpdating(handleResetCredentials())}
-            >{c('Action').t`Reset credentials`}</PrimaryButton>
+            >{c('Action').t`Reset credentials`}</Button>
         </SettingsSectionWide>
     );
 };

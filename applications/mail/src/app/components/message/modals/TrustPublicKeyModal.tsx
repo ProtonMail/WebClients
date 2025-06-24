@@ -9,7 +9,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    PrimaryButton,
     useApi,
     useEventManager,
     useNotifications,
@@ -162,9 +161,9 @@ const TrustPublicKeyModal = ({ contact, ...rest }: Props) => {
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                <PrimaryButton loading={loading} type="submit" data-testid="trust-key-modal:submit">
+                <Button color="norm" loading={loading} type="submit" data-testid="trust-key-modal:submit">
                     {c('Action').t`Trust key`}
-                </PrimaryButton>
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
