@@ -12,7 +12,7 @@ import { Children, cloneElement, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import Icon from '@proton/components/components/icon/Icon';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import usePopper from '@proton/components/components/popper/usePopper';
 import usePopperState from '@proton/components/components/popper/usePopperState';
@@ -36,6 +36,7 @@ export interface SpotlightProps {
     onClose?: MouseEventHandler;
     originalPlacement?: PopperPlacement;
     hasClose?: boolean;
+    closeIcon?: IconName;
     /**
      * Setting the anchor is optional, it will default on the root child
      */
@@ -76,6 +77,7 @@ const Spotlight = ({
     isAboveModal,
     availablePlacements,
     borderRadius = 'md',
+    closeIcon = 'cross',
 }: PropsWithChildren<SpotlightProps>) => {
     const [uid] = useState(generateUID('spotlight'));
 
@@ -186,7 +188,7 @@ const Spotlight = ({
                             title={closeText}
                             onClick={handleClose}
                         >
-                            <Icon name="cross" alt={closeText} />
+                            <Icon name={closeIcon} alt={closeText} />
                         </Button>
                     )}
                 </div>

@@ -45,6 +45,7 @@ export const SpotlightWithPromo = ({
             borderRadius={spotlightBorderRadius}
             innerClassName={spotlightInnerClassName}
             onClose={spotlightOnClose}
+            closeIcon="cross-big"
         >
             <div ref={buttonRef}>
                 <PromotionButton
