@@ -211,8 +211,11 @@ build_firefox_prod
 build_chromium_prod
 build_chromium_black
 
-build_chromium_beta_prod
-build_chromium_beta_black
+# skip Chrome beta and Edge builds during QA
+if [[ "${1-}" != "--qa" ]]; then
+    build_chromium_beta_prod
+    build_chromium_beta_black
 
-build_edge_prod
-build_edge_black
+    build_edge_prod
+    build_edge_black
+fi
