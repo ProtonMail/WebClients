@@ -339,6 +339,9 @@
       "Create folder": [
         "Vytvoriť priečinok"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Vytvoriť priečinok ${ boldFolderName }"
+      ],
       "Create label": [
         "Vytvoriť štítok"
       ],
@@ -6795,6 +6798,9 @@
       "Billing cycle: ${ text }": [
         "Fakturačné obdobie: ${ text }"
       ],
+      "Block sender": [
+        "Blokovať odosielateľa"
+      ],
       "Body: ": [
         "Telo: "
       ],
@@ -7704,6 +7710,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, počkajte kým zistíme kontakty, ktoré zahŕňajú šifrované dáta s neaktívnym kľúčom."
       ],
+      "Preferences updated": [
+        "Preferencie boli aktualizované"
+      ],
       "Preview failed to be loaded": [
         "Náhľad sa nepodarilo načítať"
       ],
@@ -8048,6 +8057,9 @@
       ],
       "Themes can give your inbox a new look.": [
         "Motívy môžu dať vašej doručenej pošte nový vzhľad."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Vo vašej doručenej pošte nie sú žiadne správy od tohto odosielateľa."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Je tam chyba v podpise používania na overenie detailu kontaktu, kedy je to možno dôvod na resetovanie hesla."
@@ -9205,6 +9217,9 @@
       "CC": [
         "Kópia (CC)"
       ],
+      "Choose what to do instead": [
+        "Vyberte, čo urobiť namiesto toho"
+      ],
       "City": [
         "Mesto"
       ],
@@ -9324,6 +9339,9 @@
       ],
       "Extended address": [
         "Rozšírená adresa"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Nepodarilo sa vytvoriť priečinok ${ customFolderName }"
       ],
       "Filter Name": [
         "Názov filtru"
@@ -9450,6 +9468,12 @@
       ],
       "Move to Inbox": [
         "Presunúť do Doručených"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } správa presunutá do ${ labelName }.",
+        "${ count } správy presunuté do ${ labelName }.",
+        "${ count } správ presunutých do ${ labelName }.",
+        "${ count } správ presunutých do ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } správa presunutá do Archívu",
@@ -11722,6 +11746,9 @@
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Môžete používať ${ planTitle } až do konca skúšobného obdobia bez spoplatnenia."
       ],
       "Your free trial has started": [
         "Vaša bezplatná skúšobná verzia sa začala"
@@ -15126,6 +15153,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Odhlásiť odber z ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Odhlásenie z odberu nie je u tohto odosielateľa dostupné."
       ],
       "Unsubscribe request sent": [
         "Žiadosť o odhlásenie odoslaná"
