@@ -1,16 +1,24 @@
-import { type BrowserWindow, Menu, MenuItem, ipcMain } from 'electron';
+import { type BrowserWindow, Menu, MenuItem } from 'electron';
 
-import type { ContextMenuItem } from '@proton/pass/types/desktop';
+import type { ContextMenuItemSerializable } from '@proton/pass/types/desktop/context-menu';
 import type { MaybeNull } from '@proton/pass/types/utils';
 
+import { setupIpcHandler } from './ipc';
+
+declare module 'proton-pass-desktop/lib/ipc' {
+    interface IPCChannels {
+        'contextMenu:open': IPCChannel<[items: ContextMenuItemSerializable[]], number>;
+    }
+}
+
 export default (getWindow: () => MaybeNull<BrowserWindow>) => {
-    ipcMain.handle('contextMenu:open', (_, options: { items: ContextMenuItem[] }) => {
+    setupIpcHandler('contextMenu:open', (_, items) => {
         const window = getWindow() || undefined;
 
-        return new Promise((resolve) => {
+        return new Promise<number>((resolve) => {
             const menu = new Menu();
 
-            options.items.forEach(({ label, type, role }, index) => {
+            items.forEach(({ label, type, role }, index) => {
                 menu.append(
                     new MenuItem({
                         label,

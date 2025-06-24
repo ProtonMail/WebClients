@@ -23,10 +23,7 @@ import ModalsProvider from '@proton/components/containers/modals/Provider';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import InlineIcons from '@proton/icons/InlineIcons';
-import {
-    ContextMenuProvider,
-    type DesktopContextMenuItem,
-} from '@proton/pass/components/ContextMenu/ContextMenuProvider';
+import { ContextMenuProvider } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
@@ -54,6 +51,7 @@ import sentry from '@proton/shared/lib/helpers/sentry';
 
 import { clipboard } from '../lib/clipboard';
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
+import { useDesktopContextMenu } from '../lib/hooks/useDesktopContextMenu';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
 import { isFirstLaunch } from './firstLaunch';
 import locales from './locales';
@@ -128,21 +126,15 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     isFirstLaunch,
 });
 
-const openDesktopContextMenu = async (items: DesktopContextMenuItem[]) => {
-    // Make sure not to serialize onSelected
-    const electronMenuItems = items.map(({ label, type, role }) => ({ label, type, role }));
-    const selection = await window.ctxBridge?.openContextMenu(electronMenuItems);
-    if (selection === undefined || selection === -1) return;
-    await items[selection].onSelected?.();
-};
-
 export const App = () => {
+    useDesktopContextMenu();
+
     return (
         <PassCoreProvider {...getPassCoreProps()} wasm>
             <InlineIcons /> {/* Remove when enabling SRI in desktop */}
             <ErrorBoundary component={<StandardErrorPage big />}>
                 <NotificationsProvider>
-                    <ContextMenuProvider openDesktopContextMenu={openDesktopContextMenu}>
+                    <ContextMenuProvider>
                         <ModalsProvider>
                             <PassExtensionLink>
                                 <ConnectivityProvider
