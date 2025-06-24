@@ -1003,6 +1003,9 @@
       "File does not match expected format": [
         "ფაილი არ ემთხვევა სასურველ ფორმატს"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "შემოტანა ჩავარდა საცავისთვის \"${ vaultData.name }\": ${ errorMessage }"
+      ],
       "Importing items failed": [
         "ელემენტების შემოტანის შეცდომა"
       ],
