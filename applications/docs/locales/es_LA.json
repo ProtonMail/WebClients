@@ -5543,13 +5543,13 @@
         "Después se le facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Está a punto de rechazar la invitación para unirse al álbum ${ invitationName }. Si continúa, no podrá acceder a él a menos que el propietario le vuelva a invitar. ¿Realmente quiere continuar?"
+        "Está a punto de rechazar la invitación para unirse al álbum ${ invitationName }. Si continúa, no podrá acceder a él a menos que el propietario le vuelva a invitar. ¿Realmente desea continuar?"
       ],
       "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Está a punto de rechazar la invitación para unirse a la carpeta ${ invitationName }. Si continúa, no podrá acceder a él a menos que el propietario le vuelva a invitar. ¿Realmente quiere continuar?"
+        "Está a punto de rechazar la invitación para unirse a la carpeta ${ invitationName }. Si continúa, no podrá acceder a él a menos que el propietario le vuelva a invitar. ¿Realmente desea continuar?"
       ],
       "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Está a punto de rechazar la invitación para unirse al elemento ${ invitationName }. Si continúa, no podrá acceder a él a menos que el propietario le vuelva a invitar. ¿Realmente quiere continuar?"
+        "Está a punto de rechazar la invitación para unirse al elemento ${ invitationName }. Si continúa, no podrá acceder a él a menos que el propietario le vuelva a invitar. ¿Realmente desea continuar?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Ha alcanzado el número máximo de direcciones en el grupo o grupos de contactos:"
@@ -8273,6 +8273,9 @@
       ],
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Solo se acepta el euro para SEPA. Su moneda ha sido cambiada. Por favor, use el selector para revertir su elección."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
