@@ -1,14 +1,16 @@
 import {
     ADDON_NAMES,
+    type AggregatedPricing,
     CYCLE,
     PLANS,
     type PlanIDs,
     type PlansMap,
     SelectedPlan,
+    SubscriptionPlatform,
     getPlanNameFromIDs,
 } from '@proton/payments';
-import { type AggregatedPricing } from '@proton/payments';
 import { pick } from '@proton/shared/lib/helpers/object';
+import { buildSubscription } from '@proton/testing/builders';
 import { PLANS_MAP, getLongTestPlans } from '@proton/testing/data';
 
 import {
@@ -413,6 +415,258 @@ describe('switchPlan', () => {
             })
         ).toEqual({
             [PLANS.VISIONARY]: 1,
+        });
+    });
+
+    it('should not transfer lumo addons if the user already has lumo on mobile (multi-subs)', () => {
+        const subscription = buildSubscription(
+            {
+                External: SubscriptionPlatform.iOS,
+            },
+            {
+                [PLANS.LUMO]: 1,
+            }
+        );
+
+        expect(
+            switchPlan({
+                subscription,
+                newPlan: PLANS.MAIL,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+            })
+        ).toEqual({
+            [PLANS.MAIL]: 1,
+        });
+    });
+
+    it('should not transfer addons if they are excluded', () => {
+        const currentPlanIDs = {
+            [PLANS.BUNDLE_PRO]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 5,
+            [ADDON_NAMES.IP_BUNDLE_PRO]: 4,
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 3,
+            [ADDON_NAMES.LUMO_BUNDLE_PRO]: 2,
+            [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO]: 1,
+        };
+
+        const newPlan = PLANS.BUNDLE_PRO_2024;
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: new Set(['member']),
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            // [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5, //member addons are excluded
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 4,
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 3,
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+            [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 1,
+        });
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: 'member',
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            // [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5, //member addons are excluded
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 4,
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 3,
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+            [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 1,
+        });
+
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: new Set(['ip']),
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5,
+            // [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 4, // IP addon is excluded
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 3,
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+            [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 1,
+        });
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: 'ip',
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5,
+            // [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 4, // IP addon is excluded
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 3,
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+            [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 1,
+        });
+
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: new Set(['domain']),
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5,
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 4,
+            // [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 3, // domain addon is excluded
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+            [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 1,
+        });
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: 'domain',
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5,
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 4,
+            // [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 3, // domain addon is excluded
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+            [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 1,
+        });
+
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: new Set(['lumo']),
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5,
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 4,
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 3,
+            // [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2, // lumo addon is excluded
+            [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 1,
+        });
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: 'lumo',
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5,
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 4,
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 3,
+            // [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2, // lumo addon is excluded
+            [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 1,
+        });
+
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: new Set(['scribe']),
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5,
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 4,
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 3,
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+            // [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 1, // scribe addon is excluded
+        });
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: 'scribe',
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5,
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 4,
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 3,
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+            // [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 1, // scribe addon is excluded
+        });
+
+        // exclude all addons
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: new Set(['member', 'ip', 'domain', 'lumo', 'scribe']),
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+        });
+
+        // exclude all addons
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: true,
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+        });
+
+        // exclude all addons
+        expect(
+            switchPlan({
+                currentPlanIDs: currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                dontTransferAddons: ['member', 'ip', 'domain', 'lumo', 'scribe'],
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
         });
     });
 });

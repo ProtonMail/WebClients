@@ -1,4 +1,4 @@
-import { type Subscription } from '@proton/payments';
+import { type Subscription, canModify } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
@@ -23,7 +23,7 @@ export const getIsEligible = ({ user, subscription, protonConfig, offerConfig }:
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const offerSubscription = new OfferSubscription(subscription);
     const isBundle = offerSubscription.hasBundle();
-    const isNotExternal = !offerSubscription.isManagedExternally();
+    const canModifySubscription = canModify(subscription);
     const noAnniversary2025Coupon = !offerSubscription.hasAnniversary2025Coupon();
     const checkAllowed = isCheckAllowed(subscription, offerConfig);
     const hasValidApp =
@@ -33,7 +33,7 @@ export const getIsEligible = ({ user, subscription, protonConfig, offerConfig }:
     return (
         hasValidApp &&
         checkAllowed &&
-        isNotExternal &&
+        canModifySubscription &&
         noAnniversary2025Coupon &&
         user.canPay &&
         !user.isDelinquent &&

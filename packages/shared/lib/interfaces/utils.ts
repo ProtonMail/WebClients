@@ -49,3 +49,28 @@ export type DeepPartial<T> = T extends (infer E)[]
 export type StrictRequired<T> = {
     [P in keyof T]-?: NonNullable<T[P]>;
 };
+
+/**
+ * Generic type for mutually exclusive properties
+ * T = base type
+ * K1, K2 = keys that must be mutually exclusive
+ *
+ * For example, the object that corresponds to this type can have either `planIDs` or `planName`, but not both:
+ *
+ *  EitherOr<
+ *      {
+ *          planIDs: PlanIDs;
+ *          planName: PLANS;
+ *          currency: Currency;
+ *          cycle: CYCLE;
+ *      },
+ *      'planIDs' | 'planName'
+ *  >;
+ */
+export type EitherOr<T, K extends keyof T> = {
+    [P in K]: {
+        [Q in P]: Required<Pick<T, P>>[P];
+    } & {
+        [Q in Exclude<K, P>]?: never;
+    } & Omit<T, K>;
+}[K];

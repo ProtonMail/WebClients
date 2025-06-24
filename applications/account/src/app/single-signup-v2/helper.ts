@@ -2,15 +2,9 @@ import { c } from 'ttag';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
-import type {
-    BillingAddress,
-    FullPlansMap,
-    PAYMENT_METHOD_TYPES,
-    PaymentsApi,
-    SavedPaymentMethod,
-} from '@proton/payments';
 import {
     type ADDON_NAMES,
+    type BillingAddress,
     COUPON_CODES,
     CYCLE,
     type Currency,
@@ -20,10 +14,14 @@ import {
     DEFAULT_TAX_BILLING_ADDRESS,
     FREE_PLAN,
     FREE_SUBSCRIPTION,
+    type FullPlansMap,
+    type PAYMENT_METHOD_TYPES,
     PLANS,
+    type PaymentsApi,
     type Plan,
     type PlanIDs,
     type PlansMap,
+    type SavedPaymentMethod,
     type StrictPlan,
     type Subscription,
     type SubscriptionPlan,
@@ -33,7 +31,6 @@ import {
     getNormalCycleFromCustomCycle,
     getPaymentMethods,
     getPlan,
-    getPlanIDs,
     getSubscription,
     isLifetimePlanSelected,
     isStringPLAN,
@@ -562,7 +559,7 @@ export const getUserInfo = async ({
                 ...optionsWithSubscriptionDefaults,
                 ...upsell.subscriptionOptions,
                 planIDs: switchPlan({
-                    currentPlanIDs: getPlanIDs(subscription),
+                    subscription,
                     newPlan: upsell.plan.Name,
                     organization,
                     plans,
