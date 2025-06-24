@@ -3,6 +3,8 @@ import { type ComponentType } from 'react';
 import { PLANS } from '@proton/payments';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
 
+import { GoUnlimited2025 } from './GoUnlimitedOffer/GoUnlimited2025';
+import { useGoUnlimited2025 } from './GoUnlimitedOffer/hooks/useGoUnlimited2025';
 import { MailSubscriptionReminder } from './MailSubscriptionReminder/MailSubscriptionReminder';
 import { useMailSubscriptionReminder } from './MailSubscriptionReminder/useMailSubscriptionReminder';
 import { MonthylPaidUsersNudge } from './PaidUsersNudge/MonthylPaidUsersNudge';
@@ -31,6 +33,8 @@ export const usePostSignupOffers = ({ app }: Props) => {
     const mailPaidUser = usePaidUsersNudge({ plan: PLANS.MAIL });
     const drivePaidUser = usePaidUsersNudge({ plan: PLANS.DRIVE });
     const bundlePaidUser = usePaidUsersNudge({ plan: PLANS.BUNDLE });
+
+    const goUnlimited2025 = useGoUnlimited2025();
 
     // Define offers in order of priority
     const offers: Offer[] = [
@@ -67,6 +71,11 @@ export const usePostSignupOffers = ({ app }: Props) => {
             isLoading: bundlePaidUser.isLoading,
             Component: MonthylPaidUsersNudge,
             props: { plan: PLANS.BUNDLE },
+        },
+        {
+            isEligible: goUnlimited2025.isEligible,
+            isLoading: goUnlimited2025.isLoading,
+            Component: GoUnlimited2025,
         },
     ];
 

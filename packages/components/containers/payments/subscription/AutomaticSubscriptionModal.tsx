@@ -53,6 +53,8 @@ const getParameters = (
     const planName = fixPlanName(params.get('plan'), 'AutomaticSubscriptionModal') || '';
     const coupon = params.get('coupon') || undefined;
     const cycleParam = parseInt(params.get('cycle') as any, 10);
+    const minimumCycleParam = parseInt(params.get('minimumCycle') as any, 10);
+    const maximumCycleParam = parseInt(params.get('maximumCycle') as any, 10);
     const currencyParam = params.get('currency')?.toUpperCase();
     const target = params.get('target');
     const edit = params.get('edit');
@@ -70,6 +72,8 @@ const getParameters = (
     })();
 
     const parsedCycle = cycleParam && getValidCycle(cycleParam);
+    const parsedMinimumCycle = getValidCycle(minimumCycleParam);
+    const parsedMaximumCycle = getValidCycle(maximumCycleParam);
 
     const parsedCurrency =
         currencyParam && CURRENCIES.includes(currencyParam as any) ? (currencyParam as Currency) : undefined;
@@ -108,6 +112,8 @@ const getParameters = (
         plan,
         coupon,
         cycle,
+        minimumCycle: parsedMinimumCycle,
+        maximumCycle: parsedMaximumCycle,
         currency: parsedCurrency,
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
         disablePlanSelection: type === 'offer' || edit === 'disable' || addon === 'lumo',
@@ -218,8 +224,19 @@ const AutomaticSubscriptionModal = () => {
             return;
         }
 
-        const { plan, currency, cycle, coupon, step, disablePlanSelection, disableCycleSelector, plansMap, addon } =
-            getParameters(location.search, plans, subscription, user, getPreferredCurrency, paymentStatus);
+        const {
+            plan,
+            currency,
+            cycle,
+            minimumCycle,
+            maximumCycle,
+            coupon,
+            step,
+            disablePlanSelection,
+            disableCycleSelector,
+            plansMap,
+            addon,
+        } = getParameters(location.search, plans, subscription, user, getPreferredCurrency, paymentStatus);
 
         if (!plan) {
             return;
@@ -252,6 +269,8 @@ const AutomaticSubscriptionModal = () => {
             plan: plan.Name as PLANS,
             currency,
             cycle,
+            minimumCycle,
+            maximumCycle,
             coupon,
             step,
             disablePlanSelection,
