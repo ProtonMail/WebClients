@@ -1602,6 +1602,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Creare folder „${ boldFolderName }”"
       ]
     },
     "action": {
@@ -7207,7 +7210,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8645,6 +8650,23 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate"
+      ],
+      "${ n } newsletter": [
+        "${ n } buletin informativ",
+        "${ n } buletine informative",
+        "${ n } de buletine informative"
+      ],
+      "Block sender": [
+        "Blocare expeditor"
+      ],
+      "No messages to show": [
+        "Nu sunt mesaje de afișat"
+      ],
+      "Preferences updated": [
+        "Preferințe actualizate"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Nu există mesaje de la acest expeditor în mesaje primite."
       ]
     },
     "info": {
@@ -9578,6 +9600,17 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Choose what to do instead": [
+        "Alegeți ce să faceți în schimb"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Crearea folderului ${ customFolderName } a eșuat"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "Mesaje mutate în ${ labelName }: ${ count }",
+        "Mesaje mutate în ${ labelName }: ${ count }",
+        "Mesaje mutate în ${ labelName }: ${ count }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14976,6 +15009,9 @@
       ],
       "Your subscriptions in one place": [
         "Abonamentele personale într-un singur loc"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Dezabonarea nu este disponibilă pentru acest expeditor"
       ]
     },
     "Today icon tooltip in mini calendar": {

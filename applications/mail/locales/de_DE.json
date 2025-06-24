@@ -1594,6 +1594,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Ordner „${ boldFolderName }“ erstellen"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "In ${ DRIVE_APP_NAME } speichern"
       ]
     },
     "action": {
@@ -7098,7 +7104,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8503,6 +8510,31 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "${ n } newsletter": [
+        "${ n } Newsletter",
+        "${ n } Newsletter"
+      ],
+      "Block sender": [
+        "Absender sperren"
+      ],
+      "Message list": [
+        "Nachrichtenliste"
+      ],
+      "Message view": [
+        "Nachrichtenansicht"
+      ],
+      "No messages to show": [
+        "Keine Nachrichten zum Anzeigen"
+      ],
+      "Preferences updated": [
+        "Einstellungen aktualisiert"
+      ],
+      "Selection pane": [
+        "Auswahlbereich"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Es befinden sich keine Nachrichten von diesem Absender in deinem Posteingang."
       ]
     },
     "info": {
@@ -9426,6 +9458,16 @@
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
+      ],
+      "Choose what to do instead": [
+        "Wählen, was stattdessen zu tun ist"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Ordner ${ customFolderName } konnte nicht erstellt werden"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } Nachricht nach ${ labelName } verschoben",
+        "${ count } Nachrichten nach ${ labelName } verschoben"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11644,6 +11686,9 @@
       ],
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Für SEPA wird nur der Euro akzeptiert. Deine Währung wurde geändert. Bitte verwende die Auswahl, um deine Wahl rückgängig zu machen."
       ]
     },
     "Payments.Error": {
@@ -14701,6 +14746,9 @@
       ],
       "Your subscriptions in one place": [
         "Deine Abonnemente an einem Ort"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Abmeldung für diesen Absender nicht möglich"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15283,6 +15331,14 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ cycle } Monate am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ]
     }
   }

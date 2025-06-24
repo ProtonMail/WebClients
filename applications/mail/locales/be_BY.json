@@ -1607,6 +1607,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Стварыць папку ${ boldFolderName }"
       ]
     },
     "action": {
@@ -5116,7 +5119,7 @@
         "Кіраванне псеўданімамі можа быць завершана толькі ў ${ PASS_APP_NAME }, калі дадатковы пароль уключаны."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
-        "У вас пакуль няма кантактаў. Пачніце са стварэння новага"
+        "У вас пакуль няма кантактаў. Пачніце са стварэння новага кантакта"
       ]
     },
     "Error notification": {
@@ -7321,7 +7324,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8783,6 +8789,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "${ n } newsletter": [
+        "${ n } рассылка",
+        "${ n } рассылкі",
+        "${ n } рассылак",
+        "${ n } рассылак"
+      ],
+      "Block sender": [
+        "Заблакіраваць адпраўніка"
+      ],
+      "No messages to show": [
+        "Няма паведамленняў для паказу"
+      ],
+      "Preferences updated": [
+        "Параметры абноўлены"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Няма паведамленняў ад гэтага адпраўніка ў вашай паштовай скрыні."
       ]
     },
     "info": {
@@ -9726,6 +9750,18 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Choose what to do instead": [
+        "Выберыце, што зрабіць замест гэтага"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Не ўдалося стварыць папку ${ customFolderName }"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "Перамешчана ${ count } паведамленне ў папку ${ labelName }.",
+        "Перамешчана ${ count } паведамленні ў папку ${ labelName }.",
+        "Перамешчана ${ count } паведамленняў у папку ${ labelName }.",
+        "Перамешчана ${ count } паведамленняў у папку ${ labelName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11704,7 +11740,7 @@
         "Наладзьце сваю арганізацыю"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Скарыстайцеся выбарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }."
+        "Скарыстайцеся селектарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
         "Вы зможаце змяніць тэму ў любы час праз налады."
@@ -12024,6 +12060,9 @@
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Для SEPA прымаюцца толькі еўра. Ваша валюта зменена. Выкарыстоўвайце селектар, каб скінуць свой выбар."
       ]
     },
     "Payments.Error": {
@@ -15252,6 +15291,9 @@
       ],
       "Your subscriptions in one place": [
         "Вашы падпіскі ў адным месцы"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Скасаванне падпіскі недаступна для гэтага адпраўніка"
       ]
     },
     "Today icon tooltip in mini calendar": {

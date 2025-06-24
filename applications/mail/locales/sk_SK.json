@@ -1604,6 +1604,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Vytvoriť priečinok ${ boldFolderName }"
       ]
     },
     "action": {
@@ -7312,7 +7315,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8771,6 +8777,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Block sender": [
+        "Blokovať odosielateľa"
+      ],
+      "Preferences updated": [
+        "Preferencie boli aktualizované"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Vo vašej doručenej pošte nie sú žiadne správy od tohto odosielateľa."
       ]
     },
     "info": {
@@ -9711,6 +9726,18 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správca)"
+      ],
+      "Choose what to do instead": [
+        "Vyberte, čo urobiť namiesto toho"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Nepodarilo sa vytvoriť priečinok ${ customFolderName }"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } správa presunutá do ${ labelName }.",
+        "${ count } správy presunuté do ${ labelName }.",
+        "${ count } správ presunutých do ${ labelName }.",
+        "${ count } správ presunutých do ${ labelName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11734,6 +11761,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Budete môcť používať ${ planTitle } až do konca skúšobného obdobia, bez poplatku."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Môžete používať ${ planTitle } až do konca skúšobného obdobia bez spoplatnenia."
       ]
     },
     "Online accounts": {
@@ -15222,6 +15252,9 @@
       ],
       "Your subscriptions in one place": [
         "Vaše emailové odbery na jednom mieste"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Odhlásenie z odberu nie je u tohto odosielateľa dostupné."
       ]
     },
     "Today icon tooltip in mini calendar": {
