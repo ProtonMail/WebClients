@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { getAnchor } from '@proton/mail/helpers/message/messageImages/getAnchor';
 import type { MessageImage } from '@proton/mail/store/messages/messagesTypes';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
