@@ -4,16 +4,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Checkbox,
-    Form,
-    Label,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    PrimaryButton,
-} from '@proton/components';
+import { Checkbox, Form, Label, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
@@ -115,7 +106,7 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                <PrimaryButton type="submit" disabled={!allIconsLoaded}>{c('Action').t`Save`}</PrimaryButton>
+                <Button color="norm" type="submit" disabled={!allIconsLoaded}>{c('Action').t`Save`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

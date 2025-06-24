@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import {
     DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID,
@@ -7,7 +8,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    PrimaryButton,
     useDrawer,
 } from '@proton/components';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -51,9 +51,9 @@ const ProtonPassAliasesModal = ({ ...rest }: Props) => {
                 </ul>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <PrimaryButton onClick={openSecurityCenterInDrawer} className="ml-auto">
+                <Button color="norm" onClick={openSecurityCenterInDrawer} className="ml-auto">
                     {appInView === 'security-center' ? c('Action').t`Create alias` : c('Action').t`Hide-my-email`}
-                </PrimaryButton>
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

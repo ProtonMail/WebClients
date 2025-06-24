@@ -1,17 +1,16 @@
 import { c } from 'ttag'
 
-import type { ModalStateProps } from '@proton/components'
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, PrimaryButton, useModalTwoStatic } from '@proton/components'
-import { useState } from 'react'
-import { DOCS_APP_NAME, DOCS_SHORT_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
-import { useDocsContext } from '../context'
 import { Button } from '@proton/atoms'
-import EncryptedBanner from '@proton/styles/assets/img/docs/encrypted-bg.png'
-import type { PublicDocumentState } from '@proton/docs-core'
-import type { EditorControllerInterface } from '@proton/docs-core'
-import { usePublicDocumentCopying } from './utils'
+import type { ModalStateProps } from '@proton/components'
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, useModalTwoStatic } from '@proton/components'
+import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { DOCS_APP_NAME, DOCS_SHORT_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import EncryptedBanner from '@proton/styles/assets/img/docs/encrypted-bg.png'
+import { useState } from 'react'
+import { useDocsContext } from '../context'
+import { usePublicDocumentCopying } from './utils'
 
 export interface WelcomeSplashModalProps extends ModalStateProps {
   editorController: EditorControllerInterface
@@ -78,7 +77,7 @@ export function WelcomeSplashModal({
 
       <ModalTwoFooter>
         <Button onClick={handleClose}>{c('Action').t`No, thanks`}</Button>
-        <PrimaryButton onClick={createCopy}>{c('Action').t`Create a copy`}</PrimaryButton>
+        <Button color="norm" onClick={createCopy}>{c('Action').t`Create a copy`}</Button>
       </ModalTwoFooter>
     </ModalTwo>
   )

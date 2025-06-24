@@ -13,7 +13,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    PrimaryButton,
     Row,
     useModalTwoStatic,
 } from '@proton/components';
@@ -117,9 +116,9 @@ const RenameModalDeprecated = ({
                 <Button type="button" onClick={onClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton type="submit" loading={loading}>
+                <Button color="norm" type="submit" loading={loading}>
                     {c('Action').t`Rename`}
-                </PrimaryButton>
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
