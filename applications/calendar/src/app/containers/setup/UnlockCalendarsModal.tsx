@@ -13,7 +13,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    PrimaryButton,
     Prompt,
     SettingsLink,
     useApi,
@@ -145,7 +144,7 @@ const UnlockCalendarsModal = ({
                         <GenericError />
                     </ModalContent>
                     <ModalFooter>
-                        <PrimaryButton type="submit" onClick={handleError}>{c('Action').t`Close`}</PrimaryButton>
+                        <Button color="norm" type="submit" onClick={handleError}>{c('Action').t`Close`}</Button>
                     </ModalFooter>
                 </Modal>
             )}
@@ -169,9 +168,9 @@ const UnlockCalendarsModal = ({
                         <ButtonLike as={SettingsLink} path={'/recovery'} onClick={closeDrawer}>
                             {c('Action').t`Recover data`}
                         </ButtonLike>
-                        <PrimaryButton type="submit" loading={isLoading} onClick={handleReset}>
+                        <Button color="norm" type="submit" loading={isLoading} onClick={handleReset}>
                             {c('Action').t`Continue to ${calendarAppBareName}`}
-                        </PrimaryButton>
+                        </Button>
                     </ModalFooter>
                 </Modal>
             )}
@@ -207,9 +206,9 @@ const UnlockCalendarsModal = ({
                     </ModalContent>
                     <ModalFooter>
                         <Button onClick={onDone}>{c('Action').t`Cancel`}</Button>
-                        <PrimaryButton type="submit" loading={isLoading} onClick={handleReactivate}>
+                        <Button color="norm" type="submit" loading={isLoading} onClick={handleReactivate}>
                             {c('Action').t`Got it`}
-                        </PrimaryButton>
+                        </Button>
                     </ModalFooter>
                 </Modal>
             )}

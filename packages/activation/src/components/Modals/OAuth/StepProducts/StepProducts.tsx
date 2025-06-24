@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, PrimaryButton } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components';
 
 import StepProductsHeader from './StepProductsHeader';
 import StepProductsRowItem from './StepProductsRowItem';
@@ -61,9 +61,12 @@ const StepProducts = ({ triggerOAuth }: Props) => {
                 <Button shape="outline" onClick={handleCancel}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton disabled={nextDisabled} onClick={handleSubmit} data-testid="StepProducts:submit">{c(
-                    'Action'
-                ).t`Start import`}</PrimaryButton>
+                <Button
+                    color="norm"
+                    disabled={nextDisabled}
+                    onClick={handleSubmit}
+                    data-testid="StepProducts:submit"
+                >{c('Action').t`Start import`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

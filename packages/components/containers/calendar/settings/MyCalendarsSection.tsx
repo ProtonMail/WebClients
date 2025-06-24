@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Card, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
@@ -162,13 +161,14 @@ const MyCalendarsSection = ({
 
     const createCalendarButton = (
         <div className="mb-4">
-            <PrimaryButton
+            <Button
+                color="norm"
                 data-testid="calendar-setting-page:add-calendar"
                 disabled={!canAdd}
                 onClick={handleCreateCalendar}
             >
                 {c('Action').t`Create calendar`}
-            </PrimaryButton>
+            </Button>
         </div>
     );
     const isCalendarsLimitReachedNode = isFreeUser ? (

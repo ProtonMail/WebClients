@@ -1,12 +1,12 @@
 import { c } from 'ttag'
 
-import type { ModalStateProps } from '@proton/components'
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, PrimaryButton, useModalTwoStatic, Toggle } from '@proton/components'
-import { useEffect, useState } from 'react'
 import { Button } from '@proton/atoms'
-import Hero from './hero.svg'
+import type { ModalStateProps } from '@proton/components'
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, Toggle, useModalTwoStatic } from '@proton/components'
 import useLoading from '@proton/hooks/useLoading'
+import { useEffect, useState } from 'react'
 import { useDocsNotifications } from '../../../../__utils/notifications-context'
+import Hero from './hero.svg'
 
 export function EmailOptInModal({ onClose, open, ...modalProps }: ModalStateProps) {
   const { updateNotificationSettings, emailTitleEnabled, emailNotificationsEnabled } = useDocsNotifications()
@@ -86,13 +86,14 @@ export function EmailOptInModal({ onClose, open, ...modalProps }: ModalStateProp
 
       <ModalTwoFooter>
         <div className="flex w-full flex-col gap-2">
-          <PrimaryButton
+          <Button
+            color="norm"
             loading={isLoading}
             onClick={() => withLoading(handleSavePreferences())}
             data-testid="close-email-opt-in-modal"
           >
             {c('Action').t`Save preferences`}
-          </PrimaryButton>
+          </Button>
           <Button shape="ghost" color="norm" onClick={close}>
             {c('Action').t`Ask me next time`}
           </Button>

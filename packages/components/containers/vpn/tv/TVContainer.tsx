@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { Href } from '@proton/atoms';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Icon from '@proton/components/components/icon/Icon';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import useApi from '@proton/components/hooks/useApi';
@@ -79,7 +79,8 @@ const TVContainer = ({ background = true }: Props) => {
                         </>
                     ) : null}
                     <div className="flex">
-                        <PrimaryButton
+                        <Button
+                            color="norm"
                             loading={loading}
                             type="submit"
                             pill
@@ -88,7 +89,7 @@ const TVContainer = ({ background = true }: Props) => {
                             <span className="p-2 inline-flex">
                                 {error ? c('Action').t`Verify code again` : c('Action').t`Verify code`}
                             </span>
-                        </PrimaryButton>
+                        </Button>
                     </div>
                 </form>
             );

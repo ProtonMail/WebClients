@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { PrimaryButton } from '@proton/components';
+import { Button } from '@proton/atoms';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 
@@ -44,7 +44,8 @@ export const NoSearchResultsView: FC<Props> = () => {
         <DriveEmptyView image={noResultSearchSvg} title={getTitle(isReady)} subtitle={getSubtitles(isReady)}>
             {!isReady && (
                 <div className="flex justify-center">
-                    <PrimaryButton
+                    <Button
+                        color="norm"
                         size="large"
                         className="text-bold"
                         onClick={() => prepareSearchData()}
@@ -52,7 +53,7 @@ export const NoSearchResultsView: FC<Props> = () => {
                         disabled={isEnablingEncryptedSearch || hasData}
                     >
                         {c('Action').t`Enable drive search`}
-                    </PrimaryButton>
+                    </Button>
                 </div>
             )}
         </DriveEmptyView>

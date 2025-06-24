@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, PrimaryButton } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -79,7 +79,7 @@ const CustomizeCalendarImportModal = ({
 
             <ModalTwoFooter>
                 <Button shape="outline" onClick={() => modalProps.onClose()}>{c('Action').t`Cancel`}</Button>
-                <PrimaryButton disabled={disabled} onClick={handleSubmit}>{c('Action').t`Save`}</PrimaryButton>
+                <Button color="norm" disabled={disabled} onClick={handleSubmit}>{c('Action').t`Save`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

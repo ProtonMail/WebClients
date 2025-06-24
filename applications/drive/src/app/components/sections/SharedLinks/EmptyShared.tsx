@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { PrimaryButton } from '@proton/components';
+import { Button } from '@proton/atoms';
 import noLinksSvg from '@proton/styles/assets/img/illustrations/empty-shared.svg';
 
 import { DriveEmptyView } from '../../layout/DriveEmptyView';
@@ -37,14 +37,15 @@ const EmptyShared: FC<Props> = ({ shareId }) => {
             dataTestId="shared-links-empty-placeholder"
         >
             <div className="flex justify-center">
-                <PrimaryButton
+                <Button
+                    color="norm"
                     size="large"
                     className="text-bold w-custom"
                     style={{ '--w-custom': '13em' }}
                     onClick={onShareFile}
                 >
                     {c('Action').t`Share file`}
-                </PrimaryButton>
+                </Button>
             </div>
             {fileSharingModal}
             {linkSharingModal}

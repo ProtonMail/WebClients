@@ -13,7 +13,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    PrimaryButton,
     useApi,
     useGetEncryptionPreferences,
     useNotifications,
@@ -195,14 +194,15 @@ const ContactResignModal = ({
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                <PrimaryButton
+                <Button
+                    color="norm"
                     disabled={loadingContacts}
                     loading={loadingResign}
                     type="submit"
                     data-testid="resign-contact"
                 >
                     {submit}
-                </PrimaryButton>
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

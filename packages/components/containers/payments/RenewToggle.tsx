@@ -5,12 +5,10 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { Autopay } from '@proton/payments';
-import { getHasConsumerVpnPlan } from '@proton/payments';
+import { Autopay, getHasConsumerVpnPlan } from '@proton/payments';
 
 import { useModalTwo } from '../../components/modalTwo/useModalTwo';
 
@@ -27,9 +25,9 @@ export const DisableRenewModal = ({ isVPNPlan, onResolve, onReject, ...rest }: D
                 <Button data-testid="action-disable-autopay" onClick={() => onResolve(true)}>{c(
                     'Subscription renewal state'
                 ).t`Disable`}</Button>,
-                <PrimaryButton data-testid="action-keep-autopay" onClick={() => onResolve(false)}>{c(
+                <Button color="norm" data-testid="action-keep-autopay" onClick={() => onResolve(false)}>{c(
                     'Subscription renewal state'
-                ).t`Keep auto-pay`}</PrimaryButton>,
+                ).t`Keep auto-pay`}</Button>,
             ]}
             {...rest}
         >

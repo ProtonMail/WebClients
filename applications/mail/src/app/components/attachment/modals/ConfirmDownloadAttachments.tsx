@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import { PrimaryButton, Prompt } from '@proton/components';
+import { Prompt } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
@@ -46,7 +46,7 @@ const ConfirmDownloadAttachments = ({ downloads, onResolve, onReject, ...rest }:
         <Prompt
             title={title}
             buttons={[
-                <PrimaryButton onClick={onResolve}>{c('Action').t`Download`}</PrimaryButton>,
+                <Button color="norm" onClick={onResolve}>{c('Action').t`Download`}</Button>,
                 <Button onClick={onReject}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
