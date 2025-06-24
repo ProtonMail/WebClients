@@ -58,8 +58,10 @@ import {
     getPlanNameFromIDs,
     getPlansMap,
     hasDeprecatedVPN,
+    hasLumo,
     isCheckForbidden,
     isFreeSubscription,
+    isManagedExternally,
     updateCurrencyOverride,
 } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
@@ -200,6 +202,16 @@ export interface SubscriptionContainerProps {
     paymentsStatus: PaymentMethodStatusExtended;
 }
 
+/**
+ * If user already has mobile lumo subscription then they can't buy lumo addon.
+ */
+const canAddLumoAddon = (subscription: Subscription): boolean => {
+    // Check if the current subscription or any of the secondary subscriptions has a mobile lumo subscription.
+    return ![subscription, ...(subscription.SecondarySubscriptions ?? [])].some(
+        (sub) => hasLumo(sub) && isManagedExternally(sub)
+    );
+};
+
 const SubscriptionContainerInner = ({
     topRef: customTopRef,
     upsellRef,
@@ -234,7 +246,7 @@ const SubscriptionContainerInner = ({
     paymentsStatus,
 }: SubscriptionContainerProps) => {
     const scheduledDowncycling = useFlag('ScheduledDowncycling');
-    const isLumoAddonAvailable = useFlag('LumoAddonAvailable');
+    const isLumoAddonAvailable = useFlag('LumoAddonAvailable') && canAddLumoAddon(subscription);
 
     const defaultMaximumCycle = getMaximumCycleForApp(app);
     const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
@@ -314,7 +326,7 @@ const SubscriptionContainerInner = ({
 
         if (newPlan) {
             return switchPlan({
-                currentPlanIDs: subscriptionPlanIDs,
+                subscription: latestSubscription,
                 newPlan,
                 organization,
                 plans,
