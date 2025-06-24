@@ -677,6 +677,9 @@
       "New shared album": [
         "Neues geteiltes Album"
       ],
+      "New spreadsheet": [
+        "Neue Tabellenkalkulation"
+      ],
       "Next": [
         "Weiter"
       ],
@@ -862,6 +865,12 @@
       ],
       "Save photos and remove": [
         "Fotos speichern und entfernen"
+      ],
+      "Scan & Download": [
+        "Scannen & herunterladen"
+      ],
+      "Scan & Download (${ count })": [
+        "Scannen und herunterladen (${ count })"
       ],
       "Search": [
         "Suchen"
@@ -3220,6 +3229,9 @@
       ],
       "Failed to copy photo to album": [
         "Das Kopieren des Fotos in das Album ist fehlgeschlagen"
+      ],
+      "Failed to create folder": [
+        "Ordner konnte nicht erstellt werden."
       ],
       "Failed to load the STL preview": [
         "Das Laden der STL-Vorschau ist fehlgeschlagen"
@@ -8922,6 +8934,9 @@
       "The link to your item was deleted": [
         "Der Link zu deinem Element wurde gelöscht"
       ],
+      "The spreadsheet failed to be created": [
+        "Fehler beim Erstellen der Tabellenkalkulation"
+      ],
       "This item was not removed from your list": [
         "Dieser Eintrag wurde nicht aus deiner Liste entfernt",
         "Einige Einträge konnten nicht von deiner Liste entfernt werden"
@@ -9414,6 +9429,9 @@
       ],
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Für SEPA wird nur der Euro akzeptiert. Deine Währung wurde geändert. Bitte verwende die Auswahl, um deine Wahl rückgängig zu machen."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
@@ -11790,6 +11808,9 @@
       ],
       "Untitled document ${ date }": [
         "Unbenanntes Dokument ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Unbenannte Tabellenkalkulation ${ date }"
       ],
       "Upgrade complete!": [
         "Upgrade abgeschlossen!"
