@@ -8,10 +8,9 @@ import {
     type PlansMap,
     type Subscription,
     hasCycle,
-    isMainCurrency,
-    isRegionalCurrency,
+    isRegularCycle,
+    isTrial,
 } from '@proton/payments';
-import { isRegularCycle, isTrial } from '@proton/payments';
 import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
 
@@ -32,18 +31,7 @@ export type PlanCapRule = {
 };
 
 const defaultRules: PlanCapRule[] = [
-    // We want to show Mail Plus 2 years when possible. Regional currencies don't have 2-year plans, so
-    // so we add a restrictions for them
-    {
-        plan: PLANS.MAIL,
-        cycle: CYCLE.TWO_YEARS,
-        currencyPredicate: isMainCurrency,
-    },
-    {
-        plan: PLANS.MAIL,
-        cycle: CYCLE.YEARLY,
-        currencyPredicate: isRegionalCurrency,
-    },
+    { plan: PLANS.MAIL, cycle: CYCLE.TWO_YEARS },
     { plan: PLANS.VPN, cycle: CYCLE.YEARLY },
     { plan: PLANS.VPN2024, cycle: CYCLE.TWO_YEARS },
     { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY },
@@ -57,11 +45,8 @@ const defaultRules: PlanCapRule[] = [
     // The only exception is BRL which technically supports 2-year bundle2022 but has a placeholder
     // price: 2 * 12m price.
     { plan: PLANS.BUNDLE, cycle: CYCLE.TWO_YEARS },
-    // Duo and Family 24m don't support regional currencies, so we disable them.
-    { plan: PLANS.DUO, cycle: CYCLE.TWO_YEARS, currencyPredicate: isMainCurrency },
-    { plan: PLANS.DUO, cycle: CYCLE.YEARLY, currencyPredicate: isRegionalCurrency },
-    { plan: PLANS.FAMILY, cycle: CYCLE.TWO_YEARS, currencyPredicate: isMainCurrency },
-    { plan: PLANS.FAMILY, cycle: CYCLE.YEARLY, currencyPredicate: isRegionalCurrency },
+    { plan: PLANS.DUO, cycle: CYCLE.TWO_YEARS },
+    { plan: PLANS.FAMILY, cycle: CYCLE.TWO_YEARS },
     // And Visionary doesn't have regional currencies at all, for none of the cycles, so we don't need any additional
     // predicates here. It will filtered out by different components.
     { plan: PLANS.VISIONARY, cycle: CYCLE.TWO_YEARS },
