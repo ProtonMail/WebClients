@@ -39,7 +39,7 @@ export const promptForPermissions = async (): Promise<boolean> => {
     }
 };
 
-export const hasPermissions = async (permissions: Permission[]) => {
+export const hasPermissions = async (permissions: Permission[]): Promise<boolean> => {
     try {
         return await browser.permissions.contains({ permissions });
     } catch {
@@ -47,7 +47,7 @@ export const hasPermissions = async (permissions: Permission[]) => {
     }
 };
 
-export const requestPermissions = async (permissions: Permission[]) => {
+export const requestPermissions = async (permissions: Permission[]): Promise<boolean> => {
     try {
         return await browser.permissions.request({ permissions });
     } catch {
