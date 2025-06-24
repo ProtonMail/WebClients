@@ -135,7 +135,7 @@ const AuthenticationLogs = ({
 
             let Emails: string[] = [];
 
-            if (initialLoad || members.length !== 0) {
+            if (initialLoad || recipients.length === 0) {
                 const membersArray = convertEnhancedMembersToContactEmails(members);
                 Emails = membersArray.map((member) => member.Email);
             } else {
