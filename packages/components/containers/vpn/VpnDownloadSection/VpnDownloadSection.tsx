@@ -105,7 +105,7 @@ const downloadData = [
                         links: [
                             {
                                 title: () => c('Download').t`macOS Ventura or later`,
-                                link: 'https://vpn.protondownload.com/download/macos/4.8.0/ProtonVPN_mac_v4.8.0.dmg',
+                                link: 'https://vpn.protondownload.com/download/macos/5.0.0/ProtonVPN_mac_v5.0.0.dmg',
                             },
                             {
                                 title: () => c('Download').t`macOS Monterey`,
