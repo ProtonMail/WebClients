@@ -1564,6 +1564,27 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Copy alias “${ name }”": [
+        "Kopioi alias \"${ name }\""
+      ],
+      "Download all attachments": [
+        "Lataa kaikki liitteet"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "Keep subscription": [
+        "Pidä tilaus"
+      ],
+      "Move to Archive": [
+        "Siirrä arkistoon"
+      ],
+      "Move to Trash": [
+        "Siirrä roskakoriin"
+      ],
+      "Show more benefits": [
+        "Näytä enemmän etuja"
       ]
     },
     "action": {
@@ -6887,7 +6908,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8262,6 +8284,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } sähköposti viime kuussa",
+        "${ receivedMessagesCount } sähköpostia viime kuussa"
       ]
     },
     "info": {
@@ -9173,6 +9199,22 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "Enable filter": [
+        "Ota suodatin käyttöön"
+      ],
+      "Marked ${ unreadCount } message as read.": [
+        "${ unreadCount } viesti merkitty luetuksi.",
+        "${ unreadCount } viestiä merkitty luetuiksi."
+      ],
+      "Message:": [
+        "Viesti:"
+      ],
+      "Subject:": [
+        "Aihe:"
+      ],
+      "The filter is disabled. ${ enableButton }": [
+        "Suodatin on poistettu käytöstä. ${ enableButton }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9251,6 +9293,9 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Näytä ja hallitse uutiskirjeiden ja postituslistojen tilauksia täällä."
+      ],
+      "Newsletters you unsubscribe from will show up here.": [
+        "Uutiskirjeet, joiden tilauksen peruutat, näkyvät täällä."
       ]
     },
     "Landmarks": {
@@ -13239,6 +13284,9 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } poistettiin"
+      ],
+      "The filter has been enabled": [
+        "Suodatin on otettu käyttöön"
       ]
     },
     "Suffix": {
@@ -14360,6 +14408,10 @@
       ],
       "Your subscriptions in one place": [
         "Tilauksesi yhdessä paikassa"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } viesti",
+        "${ numMessages } viestiä"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14945,6 +14997,78 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "200 GB storage": [
+        "200 Gt tallennustilaa"
+      ],
+      "500 GB encrypted storage": [
+        "500 Gt salattua tallennustilaa"
+      ],
+      "Add unlimited credit cards": [
+        "Lisää rajattomasti maksukortteja"
+      ],
+      "Block ads, trackers, and malware": [
+        "Estä mainoksia, seurantoja ja haittaohjelmia"
+      ],
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
+      ],
+      "High speed streaming with VPN": [
+        "Nopea suoratoisto VPN:llä"
+      ],
+      "Protect up to 10 devices": [
+        "Suojaa jopa 10 laitetta"
+      ],
+      "Select any server": [
+        "Valitse mikä tahansa palvelin"
+      ],
+      "Share passwords easily": [
+        "Jaa salasanoja helposti"
+      ],
+      "Short @pm.me address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Stream your favorite content": [
+        "Suoratoista suosikkisisältöäsi"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Use your own email domain": [
+        "Käytä omaa sähköpostiverkkotunnusta"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
+      "12 months": [
+        "12 kuukautta"
+      ],
+      "15 months": [
+        "15 kuukautta"
+      ],
+      "24 months": [
+        "24 kuukautta"
+      ],
+      "30 months": [
+        "30 kuukautta"
+      ]
+    },
+    "Onboarding Trial": {
+      "Continue": [
+        "Jatka"
       ]
     }
   }

@@ -1200,6 +1200,15 @@
       ],
       "Zoom out": [
         "Semẓi"
+      ],
+      "Disabling alias": [
+        "Asensi n mefferismawen"
+      ],
+      "Move to Trash": [
+        "Awi ɣer tqecwalt n yiḍumman"
+      ],
+      "Show toolbar": [
+        "Sken-d tafeggagt n ifecka"
       ]
     },
     "action": {
@@ -5020,7 +5029,8 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna"
+        "Ger tugna",
+        "Ger tugniwn"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -7747,6 +7757,9 @@
       ],
       "Type text or keyword": [
         "Aru aḍris neɣ awal ufrin"
+      ],
+      "Select state": [
+        "Fren addad"
       ]
     },
     "Placeholder for contact group name": {
@@ -9397,6 +9410,12 @@
       ],
       "Your changes are not synced yet": [
         "Isenfal-ik mazal ur mtawan ara"
+      ],
+      "Add user": [
+        "Rnu aseqdac"
+      ],
+      "Desktop": [
+        "Tanarit"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9874,6 +9893,17 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Kkes asenqes"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } n wass",
+        "${ ceilDays } n wussan"
       ]
     }
   }
