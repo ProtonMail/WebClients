@@ -7,14 +7,7 @@ import { resetImapDraft } from '@proton/activation/src/logic/draft/imapDraft/ima
 import { selectImapDraftMailImport } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms';
-import {
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    PrimaryButton,
-    useSettingsLink,
-} from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useSettingsLink } from '@proton/components';
 
 import StepImportingContent from './StepImportingContent';
 
@@ -45,7 +38,8 @@ const StepImporting = () => {
 
             <ModalTwoFooter className="justify-end">
                 {!isCurrentLocationImportPage ? (
-                    <PrimaryButton
+                    <Button
+                        color="norm"
                         onClick={() => {
                             dispatch(resetImapDraft());
                             settingsLink(`/easy-switch`);
@@ -53,7 +47,7 @@ const StepImporting = () => {
                         data-testid="StepImport:redirectButton"
                     >
                         {c('Action').t`Check import progress`}
-                    </PrimaryButton>
+                    </Button>
                 ) : null}
                 <Button shape="outline" onClick={handleClose} data-testid="StepImport:closeButton">
                     {c('Action').t`Close`}

@@ -3,15 +3,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { MailImportPayloadError } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms';
-import {
-    Form,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    PrimaryButton,
-    useModalState,
-} from '@proton/components';
+import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 
@@ -105,8 +97,8 @@ const StepPrepare = () => {
                 <Button shape="outline" onClick={handleCancel}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton type="submit" disabled={hasErrors} loading={isConnectingToProvider}>{c('Action')
-                    .t`Start import`}</PrimaryButton>
+                <Button color="norm" type="submit" disabled={hasErrors} loading={isConnectingToProvider}>{c('Action')
+                    .t`Start import`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
