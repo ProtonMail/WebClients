@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -23,6 +23,9 @@ export const useVideoStreaming = ({ mimeType, videoData, downloadSlice }: UseVid
     const swTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const blockTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const firstBlockRequestedRef = useRef<boolean>(false);
+    const [isBrokenVideo, setIsBrokenVideo] = useState(false);
+
+    const isServiceWorkerAvailable = useMemo(() => 'serviceWorker' in navigator, []);
 
     const handleBrokenVideo = useCallback((error?: unknown) => {
         sendErrorReport(error);
@@ -34,20 +37,24 @@ export const useVideoStreaming = ({ mimeType, videoData, downloadSlice }: UseVid
             clearTimeout(blockTimeoutRef.current);
             blockTimeoutRef.current = null;
         }
+        setIsBrokenVideo(true);
     }, []);
 
     useEffect(() => {
-        if (mimeType && isVideo(mimeType)) {
+        if (mimeType && isVideo(mimeType) && isServiceWorkerAvailable) {
             void initDownloadSW();
         }
-    }, [mimeType]);
+    }, [mimeType, isServiceWorkerAvailable]);
 
     useEffect(() => {
-        if (!videoData || !downloadSlice || !mimeType || !isVideo(mimeType)) {
-            return;
-        }
-        if (!('serviceWorker' in navigator)) {
-            handleBrokenVideo(new Error('Service Worker not supported'));
+        if (
+            !videoData ||
+            !downloadSlice ||
+            !mimeType ||
+            !isVideo(mimeType) ||
+            !isServiceWorkerAvailable ||
+            isBrokenVideo
+        ) {
             return;
         }
 
@@ -131,9 +138,9 @@ export const useVideoStreaming = ({ mimeType, videoData, downloadSlice }: UseVid
                 clearTimeout(blockTimeoutRef.current);
             }
         };
-    }, [handleBrokenVideo, videoData, streamId, mimeType, downloadSlice]);
+    }, [handleBrokenVideo, videoData, streamId, mimeType, downloadSlice, isServiceWorkerAvailable, isBrokenVideo]);
 
-    return videoData
+    return videoData && !isBrokenVideo && isServiceWorkerAvailable
         ? {
               url: `/sw/video/${streamId}`,
               onVideoPlaybackError: handleBrokenVideo,
