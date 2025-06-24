@@ -4257,6 +4257,12 @@
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
       ],
+      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Activa los eventos detallados y ${ PROTON_SENTINEL_NAME } para acceder a estas funciones."
+      ],
+      "You should enable detailed events in order to access these features": [
+        "Activa los eventos detallados para acceder a estas funciones."
+      ],
       "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
         "El administrador de tu organización debería activar los eventos detallados y ${ PROTON_SENTINEL_NAME } para poder acceder a estas funciones"
       ],
@@ -15839,6 +15845,9 @@
       ],
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Solo se acepta el euro para SEPA. Tu moneda ha sido cambiada. Por favor, usa el selector para revertir tu elección."
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Añade un método de pago en el panel de control para continuar."
