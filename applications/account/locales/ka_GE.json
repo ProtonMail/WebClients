@@ -1780,8 +1780,14 @@
       "Block ads, trackers, and malware": [
         "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
       ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "გააორმაგეთ თქვენი დაშიფრული საცავი – მიიღეთ 1 ტბ ყველა თქვენი მონაცემისთვის"
+      ],
       "Encrypted password manager": [
         "დაშიფრული პაროლების მმართველი"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "ეს ექსკლუზიური საჩუქარია ჩვენი ერთობლივი მოგზაურობის აღსანიშნავად."
       ],
       "High speed streaming with VPN": [
         "ჩქაროსნული სტრიმინგი VPN-ით"
@@ -1794,6 +1800,9 @@
       ],
       "Online privacy for up to 2 people": [
         "ინტერნეტკონფიდენციალობა ორამდე ადამიანისთვის"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის (6-მდე მომხმარებელი)"
       ],
       "Protect up to 10 devices": [
         "დაიცავით 10-მდე მოწყობილობა"
@@ -1821,6 +1830,12 @@
       ],
       "thanks to you": [
         "მადლობა"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "გაასამმაგეთ თქვენი დაშიფრული საცავი – მიიღეთ 3 ტბ ყველა თქვენი მონაცემისთვის"
+      ],
+      "Unlimited folders, labels and filters": [
+        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ],
       "Use your own email domain": [
         "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
@@ -4073,6 +4088,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "ადვილად დაასინქრონიზეთ ფაილები ღრუბლიდან სახლის კომპიუტერამდე და იქონიეთ მათზე წვდომა თქვენი მობილურიდან."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "ამ ფუნქციებთან წვდომისთვის ჩართეთ ${ PROTON_SENTINEL_NAME }"
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "წაახალისეთ 2FA-ის გამოყენება თქვენს ორგანიზაციაში დამატებითი უსაფრთხოებისთვის."
       ],
@@ -5143,6 +5161,9 @@
       "Failed to process the logo": [
         "ლოგოს დამუშავება ჩავარდა"
       ],
+      "Failed to update detailed monitoring.": [
+        "დეტალური მონიტორინგის განახლება ჩავარდა."
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "ფაილი მეტისმეტად დიდია. ლოგო 30 კბ ან უფრო მცირე ზომის უნდა იყოს."
       ],
@@ -5739,6 +5760,9 @@
     "Error message": {
       "App currently unavailable": [
         "აპი ამჟამად ხელმიუწვდომელია"
+      ],
+      "Ask your administrator to enable Account monitor.": [
+        "სთხოვთ თქვენს ადმინისტრატორს, ჩართოს ანგარიშის მონიტორი."
       ],
       "Error: ${ errorMessage }": [
         "შეცდომა: ${ errorMessage }"
@@ -7801,6 +7825,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, გახვიდეთ ჯგუფიდან? თუ გახვალთ, თავიდან შესასვლელად ჯგუფის ადმინისტრატორის მოსაწვევი დაგჭირდებათ."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "დარწმუნებული ბრძანდებით, რომ ჟურნალის სამუდამოდ წაშლა გნებავთ?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, ამ მომხმარებელს ადმინისტრირების პრივილეგიები წაართვათ?"
       ],
@@ -8409,6 +8436,9 @@
       "free up space by deleting older messages or other data": [
         "გაათავისუფლეთ ადგილი ძველი შეტყობინებებისა და სხვა მონაცემების წაშლით"
       ],
+      "Gain visibility across your organization": [
+        "აიმაღლეთ ხილვადობა თქვენს ორიგანიზაციაში"
+      ],
       "Gateways": [
         "რაუტერები"
       ],
@@ -8798,6 +8828,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "მიმდინარეობს კალენდრის ჩატვირთვა. მოითმინეთ. გადაგამისამართებთ ჩვენს დაგეგმვის პლატფორმაზე Calendly ახალ ჩანართში."
       ],
+      "Loading detailed events current status.": [
+        "იტვირთება დეტალური მოვლენების მიმდინარე სტატუსი."
+      ],
       "Loading eduGAIN data...": [
         "მიმდინარეობს eduGAIN-ის მონაცემების ჩატვირთვა..."
       ],
@@ -8875,6 +8908,9 @@
       ],
       "New": [
         "ახალი"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "ახალი აქტივობის მონაცემების შეგროვებას და ჩვენებას შევწყვეტთ."
       ],
       "New user invited to organization": [
         "ახალი მომხმარებელი მოწვეულია მორგანიზაციაში"
@@ -9722,6 +9758,9 @@
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "ეს მოხსნის მოწყობილობას **${ name } (შექმნის თარიღია ${ date })** თქვენი ${ BRAND_NAME }-ის ანგარიშიდან."
       ],
+      "This will wipe all logs for your organization members.": [
+        "ეს წაშლის ყველა ჟურნალს თქვენი ორგანიზაციის წევრებისთვის."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "დაგეხმარებათ ${ BRAND_NAME }-ის თქვენს ანგარიშზე 2FA-ის ჩართვაში. 2FA-ი ${ BRAND_NAME_TWO }-ის თქვენს ანგარიშს უფრო დაცულს ხდის, ამიტომ რეკომენდებულია, ჩართოთ ის."
       ],
@@ -10109,6 +10148,9 @@
       "Why?": [
         "რატომ?"
       ],
+      "With a Business or Enterprise plan, unlock": [
+        "სატარიფო გეგმებთან Business ან Enterprise - განბლოკეთ"
+      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Business ან Enterprise ტარიფით შეგიძლიათ, თქვენი ორგანიზაციისთვის ${ boldDedicatedServers } შეიძინოთ და ააწყოთ ${ boldGateways }, რათა აკონტროლოთ, რომელ მომხმარებელს აქვს წვდომა."
       ],
@@ -10391,6 +10433,10 @@
       ],
       "Your files will be encrypted and then saved": [
         "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "თქვენი უფასო საცდელი პერიოდი მოიცავს ${ ownedCount } გამოყოფილ სერვერს.",
+        "თქვენი უფასო საცდელი პერიოდი მოიცავს ${ ownedCount } გამოყოფილ სერვერს."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts }-დან შემოტანა შეყოვნდება.",
@@ -12556,6 +12602,12 @@
       "Account password change": [
         "ანგარიშის პაროლის შეცვლა"
       ],
+      "Authentication failure (second factor failed)": [
+        "ავთენტიკაციის შეცდომა (მეორე ფაქტორის შეცდომა)"
+      ],
+      "Authentication failure (wrong password)": [
+        "შესვლის შეცდომა (არასწორი პაროლი)"
+      ],
       "Authentication success": [
         "ავთენტიკაცია წარმატებულია"
       ],
@@ -12565,11 +12617,26 @@
       "Password reset": [
         "პაროლის ჩამოყრა"
       ],
+      "Second factor disabled (authenticator app)": [
+        "მეორე ფაქტორი გამორთულია (ავთენტიკაციის აპი)"
+      ],
+      "Second factor disabled (security key)": [
+        "მეორე ფაქტორი გამორთულია (უსაფრთხოების გასაღები)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "მეორე ფაქტორი ჩართულია (ავთენტიკაციის აპი)"
+      ],
+      "Second factor enabled (security key)": [
+        "მეორე ფაქტორი ჩართულია (უსაფრთხოების გასაღები)"
+      ],
       "Sign in blocked (due to abuse)": [
         "შესვლა დაბლოკილია (დარღვევების გამო)"
       ],
       "Sign in failure (mnemonic failed)": [
         "შესვლის შეცდომა (მნემონიკა ჩავარდა)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "შესვლის შეცდომა (მეორე ფაქტორის შეცდომა)"
       ],
       "Sign in failure (wrong password)": [
         "შესვლის შეცდომა (არასწორი პაროლი)"
@@ -12582,6 +12649,9 @@
       ],
       "Sign in success (awaiting mnemonic)": [
         "შესვლა წარმატებულია (მნემონიკის მოლოდინი)"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "შესვლა წარმატებულია (მეორე ფაქტორის მოლოდინი)"
       ],
       "Sign in success (awaiting verify)": [
         "შესვლა წარმატებულია (შემოწმების მოლოდინი)"
@@ -12775,6 +12845,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "მიუერთეთ თქვენი დომენი ${ BRAND_NAME }-ს და იქონიეთ ელფოსტის თქვენი მისამართები (მაგ: you@yourcompany.com). ჩვენი დამხმარე მთელს პროცესს გაგატარებთ."
+      ],
+      "View account-related events across your organization.": [
+        "ნახეთ ანგარიშთან დაკავშირებული მოვლენები თქვენს ორგანიზაციაში."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "თქვენს უფასო სატესტო ვერსიას ვადა გაუვიდა. მალე ანგარიშთან წვდომა გაგეთიშებათ. ${ action }"
@@ -20089,6 +20162,9 @@
       "Theme": [
         "თემა"
       ],
+      "There are no events for your account": [
+        "თქვენს ანგარიშზე მოვლენები არაა"
+      ],
       "There are no groups": [
         "ჯგუფები არ არსებობს"
       ],
@@ -20190,6 +20266,9 @@
       ],
       "Video conferencing": [
         "ვიდეოკონფერენცია"
+      ],
+      "View organization events by upgrading to Business": [
+        "დაათვალიერეთ ორგანიზაციის მოვლენები სატარიფო გეგმის Business-მდე აწევით"
       ],
       "VPN apps": [
         "VPN აპები"
@@ -20399,6 +20478,12 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "საშუალებას გაძლევთ, თქვენი კალენდრის მოსაწვევებში ვიდეოკონფერენციების ბმულები უპრობლემოდ ჩაამატოთ."
       ],
+      "An approximate location of the IP address": [
+        "IP მისამართის დაახლოებითი მდებარეობა"
+      ],
+      "Any protection applied to suspicious activity": [
+        "ნებისმიერი დაცვა, რომელიც საეჭვო აქტივობაზე გადატარდება"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "ავტომატურად გადაერთეთ რჩეულ თემებს შორის დღისა და ღამისთვის თქვენი სისტემის დღისა და ღამის რეჟიმებთან ერთად"
       ],
@@ -20420,6 +20505,9 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "წაშალეთ შეტყობინებები ნაგვის ყუთიდან და სპამიდან 30 დღეში. ავტომატური ჩართვის წაშლა შეტყობინებებს, რომლებიც უკვე სპამში/ნაგვის ყუთშია, წაშლის ვადას მათთვის შესაბამის საქაღალდეში გადატანის თარიღს დაუსვამს."
       ],
+      "Device information such as operating system": [
+        "მოწყობილობის ინფორმაცია, როგორიცაა ოპერაციული სისტემა"
+      ],
       "Device name and app version": [
         "მოწყობილობის სახელი და აპის ვერსია"
       ],
@@ -20440,6 +20528,9 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "კომპიუტერსა და მობილურზე გაფრთხილებების ჩართ/გამორთ ჭდისთვის \"${ labelName }\""
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "დეტალური მოვლენების ჩართვა თითოეული მოვლენის IP მისამართს ჩაიწერს"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ბოლოწერტილის ბმული იდენტიფიკატორის მომწოდებლისგან (მაგ: https://idp.example.com/sso/saml)"
@@ -20476,6 +20567,9 @@
       ],
       "Not all information listed here was exposed for all users.": [
         "აქ ჩამოთვლილი ინფორმაცია ყველა მომხმარებლისთვის ხელმისაწვდომი არ იქნება."
+      ],
+      "Origin IP address and Internet Service Provider (ISP)": [
+        "წყარო IP მისამართი და ინტერნეტ პროვაიდერი (ISP)"
       ],
       "Remove metadata from images to protect your privacy.": [
         "მეტამონაცემების წაშლა გამოსახულებებიდან თქვენი კონფიდენციალობის დასაცავად."
@@ -20515,6 +20609,9 @@
       ],
       "The import will start with the most recent messages.": [
         "შემოტანა უახლესი შეყობინებებიდან დაიწყება."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "ამ IP მისამართის ინტერნეტ-პროვაიდერი"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "გამოწერის ახალი ციკლის დაწყების დრო: ${ formattedTime }"
@@ -20569,6 +20666,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "გამოიყენეთ თქვენი ბრაუზერის ნაგულისხმევი პანელები. ჩვეულებრივი, ისინი უფრო დიდი და ადვილად გამოსაყენებელია"
+      ],
+      "User's approximate location (based on their IP address)": [
+        "მომხმარებლის დაახოებითი მდებარეობა (მათ IP მისამართზე დაყრდნობით)"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "მომხმარებლები ჩვენს ვებ-აპებში შესვლისას ${ BRAND_NAME }-ის ხატულას მაგიერ თქვენს ლოგოს დაინახავენ."
