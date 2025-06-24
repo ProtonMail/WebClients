@@ -36,6 +36,9 @@ export interface Plan {
     Vendors?: any;
 }
 
+/**
+ * The same as Plan but it can't be an addon.
+ */
 export interface StrictPlan extends Plan {
     Type: PLAN_TYPES.PLAN;
     Name: PLANS;

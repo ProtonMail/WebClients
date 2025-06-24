@@ -1,4 +1,4 @@
-import { type Subscription } from '@proton/payments';
+import { type Subscription, canModify } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
@@ -28,7 +28,7 @@ export const getIsEligible = ({ user, subscription, protonConfig, offerConfig }:
     const isYearlyPassPlus = offerSubscription.hasPass() && isYearly;
     const isYearlyVPNPlus = (offerSubscription.hasVPN2022() || offerSubscription.hasVPN2024()) && isYearly;
     const isDrivePlus = offerSubscription.hasDrive(); // For Drive Plus, we don't need to check the cycle
-    const isNotExternal = !offerSubscription.isManagedExternally();
+    const canModifySubscription = canModify(subscription);
     const noAnniversary2025Coupon = !offerSubscription.hasAnniversary2025Coupon();
     const hasValidApp =
         isValidStandaloneApp(protonConfig.APP_NAME) ||
@@ -37,7 +37,7 @@ export const getIsEligible = ({ user, subscription, protonConfig, offerConfig }:
     return (
         hasValidApp &&
         checkAllowed &&
-        isNotExternal &&
+        canModifySubscription &&
         noAnniversary2025Coupon &&
         user.isPaid &&
         user.canPay &&

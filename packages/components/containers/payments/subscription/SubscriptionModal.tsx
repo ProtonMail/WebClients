@@ -19,8 +19,8 @@ import {
     PLANS,
     fixPlanIDs,
     fixPlanName,
+    getAvailableSubscriptionActions,
     getHas2024OfferCoupon,
-    isManagedExternally,
 } from '@proton/payments';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -96,7 +96,8 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
             return null;
         }
 
-        if (isManagedExternally(subscription)) {
+        const subscriptionActions = getAvailableSubscriptionActions(subscription);
+        if (!subscriptionActions.canModify) {
             return <InAppPurchaseModal subscription={subscription} {...modalState} />;
         } else if (isBilledUser(user)) {
             return <BilledUserModal user={user} {...modalState} />;
