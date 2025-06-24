@@ -78,7 +78,11 @@ const ConversationView = ({
     const wrapperRef = useRef<HTMLDivElement>(null);
 
     const { Conversation: conversation, Messages: inputMessages = [] } = conversationState || {};
-    const messages = usePlaceholders(inputMessages, loadingMessages, conversation?.NumMessages || 1) as Message[];
+    const messages = usePlaceholders({
+        inputElements: inputMessages,
+        loading: loadingMessages,
+        expectedLength: conversation?.NumMessages || 1,
+    }) as Message[];
 
     const inTrash = labelID === TRASH;
     const inAllMail = labelID === ALL_MAIL;
