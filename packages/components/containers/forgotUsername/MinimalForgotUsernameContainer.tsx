@@ -3,8 +3,8 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import EmailInput from '@proton/components/components/input/EmailInput';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -51,7 +51,7 @@ const MinimalForgotUsernameContainer = () => {
             </div>
             <div className="flex flex-nowrap justify-space-between mb-4">
                 <Link to="/login">{c('Link').t`Back to login`}</Link>
-                <PrimaryButton loading={loading} type="submit">{c('Action').t`Email me my username(s)`}</PrimaryButton>
+                <Button color="norm" loading={loading} type="submit">{c('Action').t`Email me my username(s)`}</Button>
             </div>
         </form>
     );

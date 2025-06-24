@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Loader from '@proton/components/components/loader/Loader';
 import FormModal from '@proton/components/components/modal/FormModal';
 import PaymentVerificationImage from '@proton/components/containers/payments/PaymentVerificationImage';
@@ -117,7 +116,7 @@ const PaymentVerificationModal = ({
                 step === STEPS.REDIRECT ? (
                     <>
                         <Button type="reset">{c('Action').t`Cancel`}</Button>
-                        <PrimaryButton type="submit">{c('Action').t`Verify`}</PrimaryButton>
+                        <Button color="norm" type="submit">{c('Action').t`Verify`}</Button>
                     </>
                 ) : null
             }
@@ -186,11 +185,11 @@ const PaymentVerificationModal = ({
                             </p>
                         ) : null}
                         <p>
-                            <PrimaryButton onClick={handleCancel}>
+                            <Button color="norm" onClick={handleCancel}>
                                 {isAddCard
                                     ? c('Action').t`Use a different card`
                                     : c('Action').t`Use a different payment method`}
-                            </PrimaryButton>
+                            </Button>
                         </p>
                     </div>
                 ),

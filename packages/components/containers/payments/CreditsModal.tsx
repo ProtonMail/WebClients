@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike, Href } from '@proton/atoms';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Form from '@proton/components/components/form/Form';
 import useDebounceInput from '@proton/components/components/input/useDebounceInput';
 import Loader from '@proton/components/components/loader/Loader';
@@ -176,7 +175,8 @@ const CreditsModal = ({ status, ...props }: Props) => {
         const topUpText = c('Action').t`Top up`;
         if (methodValue === PAYMENT_METHOD_TYPES.BITCOIN || methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
             return (
-                <PrimaryButton
+                <Button
+                    color="norm"
                     loading={
                         paymentFacade.bitcoinInhouse.bitcoinLoading || paymentFacade.bitcoinChargebee.bitcoinLoading
                     }
@@ -187,19 +187,20 @@ const CreditsModal = ({ status, ...props }: Props) => {
                     paymentFacade.bitcoinChargebee.awaitingBitcoinPayment
                         ? c('Info').t`Awaiting transaction`
                         : topUpText}
-                </PrimaryButton>
+                </Button>
             );
         }
 
         return (
-            <PrimaryButton
+            <Button
+                color="norm"
                 loading={loading}
                 disabled={paymentFacade.methods.loading || !paymentFacade.userCanTriggerSelected || amountLoading}
                 type="submit"
                 data-testid="top-up-button"
             >
                 {topUpText}
-            </PrimaryButton>
+            </Button>
         );
     })();
 

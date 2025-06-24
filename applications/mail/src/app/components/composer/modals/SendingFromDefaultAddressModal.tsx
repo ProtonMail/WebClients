@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import { PrimaryButton, Prompt } from '@proton/components';
+import { Prompt } from '@proton/components';
 
 interface Props extends ModalProps {
     email: string;
@@ -15,7 +15,7 @@ const SendingFromDefaultAddressModal = ({ email, onResolve, onReject, ...rest }:
         <Prompt
             title={c('Title').t`Sending notice`}
             buttons={[
-                <PrimaryButton onClick={onResolve}>{c('Action').t`OK`}</PrimaryButton>,
+                <Button color="norm" onClick={onResolve}>{c('Action').t`OK`}</Button>,
                 <Button onClick={onReject}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
