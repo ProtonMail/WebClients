@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { DEFAULT_CURRENCY } from '@proton/payments';
+import { DEFAULT_CURRENCY, isManagedExternally } from '@proton/payments';
 import { Renew, type Subscription } from '@proton/payments';
 import {
     getHasExternalMemberCapableB2BPlan,
@@ -84,6 +84,8 @@ export const getAccountAppRoutes = ({
     const cancellablePlan = hasCancellablePlan(subscription, user);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
 
+    const planIsManagedExternally = isManagedExternally(subscription);
+
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
     const isExternalUser = getIsExternalAccount(user);
 
@@ -119,7 +121,7 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Upgrade your privacy`,
                         invisibleTitle: true,
                         id: 'YourPlanUpsellsSectionV2',
-                        available: canPay,
+                        available: canPay && !planIsManagedExternally,
                     },
                     {
                         text: c('Title').t`Downloads`,

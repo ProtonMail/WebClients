@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
-import { Renew, type Subscription } from '@proton/payments';
+import { Renew, type Subscription, isManagedExternally } from '@proton/payments';
 import { getHasVpnB2BPlan, hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
@@ -18,6 +18,7 @@ export const getRoutes = ({ user, subscription, showVPNDashboard }: Arguments) =
     const cancellablePlan = hasCancellablePlan(subscription, user);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
+    const planIsManagedExternally = isManagedExternally(subscription);
 
     return {
         dashboardV2: <SectionConfig>{
@@ -37,7 +38,7 @@ export const getRoutes = ({ user, subscription, showVPNDashboard }: Arguments) =
                     text: c('Title').t`Upgrade your privacy`,
                     invisibleTitle: true,
                     id: 'YourPlanUpsellsSectionV2',
-                    available: user.canPay,
+                    available: user.canPay && !planIsManagedExternally,
                 },
                 {
                     text: c('Title').t`Downloads`,
