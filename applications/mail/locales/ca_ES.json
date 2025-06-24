@@ -1597,6 +1597,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Crea una carpeta \"${ boldFolderName }"
       ]
     },
     "action": {
@@ -7093,7 +7096,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8507,6 +8511,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Només sou a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "${ n } newsletter": [
+        "Butlletí de ${ n }",
+        "Butlletins de ${ n }"
+      ],
+      "Block sender": [
+        "Bloqueja el remitent"
+      ],
+      "No messages to show": [
+        "Cap missatge a mostrar"
+      ],
+      "Preferences updated": [
+        "S'han actualitzat les preferències."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "No teniu missatges d'aquest remitent a la safata d'entrada."
       ]
     },
     "info": {
@@ -9433,6 +9453,16 @@
       ],
       "Your password (admin)": [
         "La vostra contrasenya (administrador)"
+      ],
+      "Choose what to do instead": [
+        "Trieu què fer en el seu lloc"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "No s'ha pogut crear la carpeta ${ customFolderName }"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "S'ha mogut ${ count } missatge a ${ labelName }.",
+        "S'han mogut ${ count } missatges a ${ labelName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11657,6 +11687,9 @@
       ],
       "Your payment is still being processed": [
         "El vostre pagament encara s'està processant."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "El SEPA només s'accepta l'euro. La moneda ha estat canviada. Utilitzeu el selector per revertir la vostra elecció."
       ]
     },
     "Payments.Error": {
@@ -14709,6 +14742,9 @@
       ],
       "Your subscriptions in one place": [
         "Les vostres subscripcions en un sol lloc"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Anul·lar la subscripció no està disponible per a aquest remitent"
       ]
     },
     "Today icon tooltip in mini calendar": {

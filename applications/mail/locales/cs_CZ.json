@@ -1607,6 +1607,9 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Vytvořit složku ${ boldFolderName }"
       ]
     },
     "action": {
@@ -1826,7 +1829,7 @@
         "Snadné sdílení hesel"
       ],
       "Short @pm.me address": [
-        "Zkrácená adresa @pm.me"
+        "Krátká adresa @pm.me"
       ],
       "Stream your favorite content": [
         "Streamujte svůj oblíbený obsah"
@@ -7337,7 +7340,10 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7481,7 +7487,7 @@
         "Zpráva odeslána."
       ],
       "Message view": [
-        "Přehled zpráv"
+        "Zobrazení zpráv"
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
         "Zpráva bude odeslána ráno v ${ formattedTime }"
@@ -8799,6 +8805,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "${ n } newsletter": [
+        "${ n } e-mailový zpravodaj",
+        "${ n } e-mailové zpravodaje",
+        "${ n } e-mailových zpravodajů",
+        "${ n } e-mailových zpravodajů"
+      ],
+      "Block sender": [
+        "Blokovat odesílatele"
+      ],
+      "No messages to show": [
+        "Žádné zprávy k zobrazení"
+      ],
+      "Preferences updated": [
+        "Předvolby aktualizovány"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "V doručené poště nejsou žádné zprávy od tohoto odesílatele."
       ]
     },
     "info": {
@@ -9742,6 +9766,18 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správce)"
+      ],
+      "Choose what to do instead": [
+        "Zvolte, co místo toho udělat"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Vytvoření složky ${ customFolderName } selhalo"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } zpráva přesunuta do ${ labelName }.",
+        "${ count } zprávy přesunuty do ${ labelName }.",
+        "${ count } zpráv přesunuto do ${ labelName }.",
+        "${ count } zpráv přesunuto do ${ labelName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12040,6 +12076,9 @@
       ],
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "V rámci SEPA je přijímáno pouze euro. Vaše měna byla změněna. Výběr můžete vrátit pomocí voliče."
       ]
     },
     "Payments.Error": {
@@ -15273,6 +15312,9 @@
       ],
       "Your subscriptions in one place": [
         "Vaše e-mailové odběry na jednom místě"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Odhlášení není pro tohoto odesílatele dostupné"
       ]
     },
     "Today icon tooltip in mini calendar": {

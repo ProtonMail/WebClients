@@ -1600,6 +1600,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Crear una carpeta ${ boldFolderName }"
       ]
     },
     "action": {
@@ -7112,7 +7115,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8526,6 +8530,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ n } newsletter": [
+        "${ n } boletín",
+        "${ n } boletines"
+      ],
+      "Block sender": [
+        "Bloquear el remitente"
+      ],
+      "No messages to show": [
+        "No hay mensajes para mostrar"
+      ],
+      "Preferences updated": [
+        "Se han actualizado las preferencias."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "No hay mensajes de este remitente en tu bandeja de entrada."
       ]
     },
     "info": {
@@ -9452,6 +9472,16 @@
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
+      ],
+      "Choose what to do instead": [
+        "Elige qué hacer en su lugar"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Error al crear carpeta ${ customFolderName }"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "Se ha movido ${ count } mensaje a ${ labelName }.",
+        "Se han movido ${ count } mensajes a ${ labelName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11676,6 +11706,9 @@
       ],
       "Your payment is still being processed": [
         "Tu pago aún está siendo procesado."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Solo se acepta el euro para SEPA. Tu moneda ha sido cambiada. Por favor, usa el selector para revertir tu elección."
       ]
     },
     "Payments.Error": {
@@ -14733,6 +14766,9 @@
       ],
       "Your subscriptions in one place": [
         "Tus suscripciones en un solo lugar"
+      ],
+      "Unsubscribe not available for this sender": [
+        "La cancelación de la suscripción no está disponible para este remitente."
       ]
     },
     "Today icon tooltip in mini calendar": {
