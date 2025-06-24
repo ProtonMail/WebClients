@@ -43,8 +43,7 @@ const getVPNFeatures = (vpnServers: VPNServersCountData): PlanCardFeatureDefinit
         },
         {
             text: c('Features').t`NetShield Ad-blocker`,
-            tooltip: c('Features: Tooltip')
-                .t`Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.`,
+            tooltip: c('Features: Tooltip').t`Protects you from ads, trackers, and malware on websites and apps`,
             included: true,
             highResIcon: shieldIcon,
         },
@@ -56,14 +55,14 @@ const getVPNFeatures = (vpnServers: VPNServersCountData): PlanCardFeatureDefinit
         {
             text: c('Features').t`Secure streaming`,
             tooltip: c('Features: Tooltip')
-                .t`Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.`,
+                .t`Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere`,
             included: true,
             highResIcon: streamingIcon,
         },
         {
             text: c('Features').t`Double VPN`,
             tooltip: c('Features: Tooltip')
-                .t`Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.`,
+                .t`Secure Core servers route your traffic through 2 VPN servers for extra security`,
             included: true,
             highResIcon: doubleIcon,
         },
