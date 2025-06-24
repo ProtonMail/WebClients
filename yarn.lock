@@ -8303,6 +8303,7 @@ __metadata:
   resolution: "@proton/mail-renderer@workspace:packages/mail-renderer"
   dependencies:
     "@proton/atoms": "workspace:^"
+    "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/hooks": "workspace:^"
     "@proton/mail": "workspace:^"

@@ -1,7 +1,7 @@
 import type { RefObject } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import { useTheme } from '@proton/components';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import {
     MESSAGE_IFRAME_BLOCKQUOTE_ID,
