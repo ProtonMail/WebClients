@@ -1200,6 +1200,7 @@ const Step1 = ({
                                                 const signIn = (
                                                     <SignIntoLink
                                                         key="sign-in"
+                                                        disabled={model.loadingDependencies}
                                                         options={options}
                                                         measure={measure}
                                                         details={details}

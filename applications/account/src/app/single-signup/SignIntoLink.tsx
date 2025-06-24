@@ -13,12 +13,14 @@ import type { Measure } from './interface';
 
 const SignInToLink = ({
     options,
+    disabled,
     details,
     measure,
 }: {
     options: OptimisticOptions & { plan: Plan };
     details: { email: string } | undefined;
     measure: Measure;
+    disabled?: boolean;
 }) => {
     const { APP_NAME } = useConfig();
 
@@ -35,7 +37,12 @@ const SignInToLink = ({
         // On account we simply refresh the page with a direct local link
         const pathname = `/vpn/dashboard${stringifySearchParams({ ...planOptions, email: details?.email }, '?')}`;
         return (
-            <a key="signin" className="link link-focus text-nowrap" href={pathname} target="_self">
+            <a
+                key="signin"
+                className="link link-focus text-nowrap"
+                href={disabled ? undefined : pathname}
+                target="_self"
+            >
                 {c('Link').t`Sign in`}
             </a>
         );
@@ -57,14 +64,20 @@ const SignInToLink = ({
             key="signin"
             className="link link-focus text-nowrap"
             to={signInTo}
-            onClick={() =>
+            onClick={(e) => {
+                if (disabled) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return false;
+                }
+
                 measure({
                     event: TelemetryAccountSignupEvents.userSignIn,
                     dimensions: {
                         location: 'step2',
                     },
-                })
-            }
+                });
+            }}
         >
             {c('Link').t`Sign in`}
         </Link>
