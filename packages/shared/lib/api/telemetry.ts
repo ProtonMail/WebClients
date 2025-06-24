@@ -34,6 +34,7 @@ export enum TelemetryMeasurementGroups {
     mailPagingControls = 'mail.web.paging_controls',
     passNudge = 'mail.web.pass_nudge',
     mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
+    mailUnlimitedOffer2025 = 'mail.web.unlimited_offer_2025',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     vpnDrawer = 'any.web.vpn_drawer',
@@ -42,6 +43,7 @@ export enum TelemetryMeasurementGroups {
     driveWebFeaturePerformance = 'drive.web.feature_performance_unauth',
     driveWebActions = 'drive.web.actions_unauth',
     drivePostSignupOneDollar = 'drive.web.post_signup_one_dollar',
+    driveUnlimitedOffer2025 = 'mail.web.unlimited_offer_2025',
     /** Shared */
     collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
     smartBanner = 'any.web.smart_banner',
@@ -346,6 +348,14 @@ export enum TelemetryPassNudgeEvents {
     pass_cta_click = 'pass_cta_click',
 }
 
+export enum TelemetryUnlimitedOffer2025 {
+    clickTopNavbar = 'click_top_navbar',
+    clickUpsellButton = 'click_upsell_button',
+    closeOffer = 'close_offer',
+    userSubscribed = 'user_subscribed',
+    clickHideOffer = 'click_hide_offer',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
@@ -385,7 +395,8 @@ export type TelemetryEvents =
     | TelemetryMailDrivePostSignupOneDollarEvents
     | TelemetryPaidUsersNudge
     | TelemetryPassNudgeEvents
-    | TelemetryMailNewsletterSubscriptions;
+    | TelemetryMailNewsletterSubscriptions
+    | TelemetryUnlimitedOffer2025;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
