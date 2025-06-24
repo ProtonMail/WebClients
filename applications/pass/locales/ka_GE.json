@@ -691,75 +691,6 @@
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "ფასდაკლების მიღება"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "500 GB encrypted storage": [
-        "500 გბ დაშიფრული საცავი"
-      ],
-      "Add unlimited credit cards": [
-        "დაამატეთ განუსაზღვრელი რაოდენობის საკრედიტო ბარათი"
-      ],
-      "Encrypted password manager": [
-        "დაშიფრული პაროლების მმართველი"
-      ],
-      "High speed streaming with VPN": [
-        "ჩქაროსნული სტრიმინგი VPN-ით"
-      ],
-      "of privacy": [
-        "კონფიდენციალობა"
-      ],
-      "Online privacy for up to 2 people": [
-        "ინტერნეტკონფიდენციალობა ორამდე ადამიანისთვის"
-      ],
-      "Save time with built-in 2FA": [
-        "დაზოგეთ დრო ჩაშენებული 2FA-ით"
-      ],
-      "Secure email with unlimited aliases": [
-        "დაცული ელფოსტა შეუზღუდავი ფსევდონიმების რაოდენობით"
-      ],
-      "Share passwords easily": [
-        "გააზიარეთ პაროლები ადვილად"
-      ],
-      "thanks to you": [
-        "მადლობა"
-      ],
-      "years": [
-        "წელი"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "საიუბილეო შეთავაზება"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } თვე",
-        "${ n } თვე"
-      ],
-      "/ month": [
-        "/ თვეში"
-      ],
-      "12 months": [
-        "12 თვე"
-      ],
-      "15 months": [
-        "15 თვე"
-      ],
-      "24 months": [
-        "24 თვე"
-      ],
-      "30 months": [
-        "30 თვე"
-      ],
-      "for ${ durationDeal }": [
-        "${ durationDeal }-სთვის"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
@@ -1106,6 +1037,9 @@
       ],
       "File does not match expected format": [
         "ფაილი არ ემთხვევა სასურველ ფორმატს"
+      ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "შემოტანა ჩავარდა საცავისთვის \"${ vaultData.name }\": ${ errorMessage }"
       ],
       "Importing items failed": [
         "ელემენტების შემოტანის შეცდომა"
@@ -3937,14 +3871,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "დახურვა"
-      ],
-      "Don't show this offer again": [
-        "მეტჯერ აღარ მაჩვენო"
       ]
     },
     "sso": {

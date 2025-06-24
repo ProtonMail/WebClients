@@ -691,105 +691,6 @@
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Angebot nutzen"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "500 GB encrypted storage": [
-        "500 GB verschlüsselter Speicherplatz"
-      ],
-      "Add unlimited credit cards": [
-        "Unbegrenzte Kreditkarten hinzufügen"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alle Premium-Funktionen von ${ BRAND_NAME } Mail, Pass, VPN, Drive und Calendar"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Rabatte basieren auf monatlichen Standard-Preisen. Am Ende des Abrechnungszeitraums verlängert sich dein Abonnement zum jährlichen Standard-Tarif."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Verdoppele deinen verschlüsselten Speicher – hol dir 1 TB für all deine Daten"
-      ],
-      "Encrypted password manager": [
-        "Verschlüsselter Passwortmanager"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Hier ist ein exklusives Geschenk, um unsere gemeinsame Reise zu feiern."
-      ],
-      "High speed streaming with VPN": [
-        "Hochgeschwindigkeits-Streaming mit VPN"
-      ],
-      "of privacy": [
-        "der Privatsphäre"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online-Privatsphäre für bis zu 2 Personen"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Benutzer)"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Ordentlich sparen bei Premium-Drive-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Ordentlich sparen bei Premium-Mail-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Ordentlich sparen bei Premium-Pass-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Ordentlich sparen bei Premium-VPN-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save time with built-in 2FA": [
-        "Spare Zeit mit integriertem 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Sichere E-Mail mit unbegrenzten Aliassen"
-      ],
-      "Share passwords easily": [
-        "Passwörter einfach teilen"
-      ],
-      "thanks to you": [
-        "Dank dir"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Verdreifache deinen verschlüsselten Speicher – hol dir 3 TB für all deine Daten"
-      ],
-      "years": [
-        "Jahre"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubiläumsangebot"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } Monat",
-        "${ n } Monate"
-      ],
-      "/ month": [
-        "/ Monat"
-      ],
-      "12 months": [
-        "12 Monate"
-      ],
-      "15 months": [
-        "15 Monate"
-      ],
-      "24 months": [
-        "24 Monate"
-      ],
-      "30 months": [
-        "30 Monate"
-      ],
-      "for ${ durationDeal }": [
-        "Für ${ durationDeal }"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Desktopanwendung"
@@ -2731,6 +2632,9 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Kontrollkästchen"
+      ],
       "Choose unlock method": [
         "Entsperrmethode auswählen"
       ],
@@ -2739,6 +2643,9 @@
       ],
       "City": [
         "Stadt"
+      ],
+      "Class": [
+        "Klasse"
       ],
       "Code": [
         "Code"
@@ -2829,6 +2736,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Arzt"
       ],
       "Domain": [
         "Domain"
@@ -2974,6 +2884,9 @@
       "Holder Name": [
         "Name des Kontoinhabers"
       ],
+      "Hospital": [
+        "Krankenhaus"
+      ],
       "Host": [
         "Host"
       ],
@@ -3043,6 +2956,9 @@
       "Issuing Country": [
         "Ausstellendes Land"
       ],
+      "Issuing State/Country": [
+        "Ausstellender Staat/Land"
+      ],
       "Item ID": [
         "Eintrag-ID"
       ],
@@ -3054,6 +2970,9 @@
       ],
       "Key fingerprint": [
         "Schlüssel-Fingerabdruck"
+      ],
+      "Key type": [
+        "Schlüsseltyp"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastaturkürzel: ${ shortcut }"
@@ -3091,6 +3010,9 @@
       "License number": [
         "Autokennzeichen"
       ],
+      "License Number": [
+        "Autokennzeichen"
+      ],
       "Limited time": [
         "Beschränkte Zeit"
       ],
@@ -3124,17 +3046,29 @@
       "max views reached": [
         "maximale Ansichten erreicht"
       ],
+      "Medical Conditions": [
+        "Gesundheitszustand"
+      ],
       "Medical Record": [
         "Patientenakte"
       ],
+      "Medications": [
+        "Medikamente"
+      ],
       "Member ID": [
         "Mitgliedsnummer"
+      ],
+      "Member Name": [
+        "Name des Mitglieds"
       ],
       "Members": [
         "Mitglieder"
       ],
       "Membership": [
         "Mitgliedschaft"
+      ],
+      "Membership ID": [
+        "Mitgliedschaftsnummer"
       ],
       "Middle name": [
         "Zweiter Vorname"
@@ -3217,6 +3151,9 @@
       "Organization": [
         "Organisation"
       ],
+      "Organization Name": [
+        "Name der Organisation"
+      ],
       "Other": [
         "Anderer Grund"
       ],
@@ -3243,6 +3180,9 @@
       ],
       "Password history": [
         "Passwortverlauf"
+      ],
+      "Patient Name": [
+        "Patientenname"
       ],
       "Permissions": [
         "Berechtigungen"
@@ -3315,6 +3255,9 @@
       ],
       "Recent": [
         "Kürzlich"
+      ],
+      "Record Number": [
+        "Aktenzeichen"
       ],
       "Reddit handle": [
         "Reddit-Benutzername"
@@ -3483,6 +3426,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Dieser Eintrag ist bis ${ date } oder bis zum Erreichen der Anzeigegrenze zugänglich."
+      ],
+      "Tier/Level": [
+        "Stufe/Ebene"
       ],
       "Tier/Status": [
         "Stufe/Status"
@@ -3843,6 +3789,18 @@
       "Add note": [
         "Notiz hinzufügen"
       ],
+      "Add password": [
+        "Passwort hinzufügen"
+      ],
+      "Add private key": [
+        "Privater Schlüssel hinzufügen"
+      ],
+      "Add public key": [
+        "Öffentlicher Schlüssel hinzufügen"
+      ],
+      "Add SSID": [
+        "SSID hinzufügen"
+      ],
       "Add text": [
         "Text hinzufügen"
       ],
@@ -3946,14 +3904,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Schließen"
-      ],
-      "Don't show this offer again": [
-        "Angebot nicht erneut anzeigen"
       ]
     },
     "sso": {
@@ -4602,6 +4552,12 @@
       ],
       "URL is invalid": [
         "URL ist ungültig."
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Einträge verschieben nach",
+        "Einträge verschieben nach"
       ]
     },
     "Warning": {

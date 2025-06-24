@@ -695,107 +695,6 @@
         "Chýba tu váš správca hesiel? Požiadajte oň."
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Využite ponuku"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "500 GB encrypted storage": [
-        "500 GB zašifrovaného úložiska"
-      ],
-      "Add unlimited credit cards": [
-        "Pridajte neobmedzený počet platobných kariet"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Všetky prémiové funkcie ${ BRAND_NAME } Mail, Pass, VPN, Drive a Calendar"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Zľavy sú založené na štandardných mesačných cenách. Na konci fakturačného cyklu sa vaše predplatné obnoví za štandardnú ročnú sadzbu."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Zdvojnásobte svoje zašifrované úložisko – získajte 1 TB pre všetky svoje dáta"
-      ],
-      "Encrypted password manager": [
-        "Šifrovaný správca hesiel"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Tu je exkluzívny darček na oslavu našej spoločnej cesty."
-      ],
-      "High speed streaming with VPN": [
-        "Vysokorýchlostné streamovanie s VPN"
-      ],
-      "of privacy": [
-        "súkromia"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online súkromie až pre 2 osoby"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online súkromie pre celú vašu rodinu (až pre 6 používateľov)"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Ušetrite veľa na prémiových Drive funkciách s časovo obmedzenou zľavou."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Ušetrite veľa na prémiových Mail funkciách s časovo obmedzenou zľavou."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Ušetrite veľa na prémiových Pass funkciách s časovo obmedzenou zľavou."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Ušetrite veľa na prémiových funkciách VPN s časovo obmedzenou zľavou."
-      ],
-      "Save time with built-in 2FA": [
-        "Ušetrite čas pomocou vstavanej 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Zabezpečený email s neobmedzenými aliasmi"
-      ],
-      "Share passwords easily": [
-        "Zdieľajte heslá s ľahkosťou"
-      ],
-      "thanks to you": [
-        "vďaka vám"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Strojnásobte svoje zašifrované úložisko – získajte 3 TB pre všetky svoje dáta"
-      ],
-      "years": [
-        "roky"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Výročná ponuka"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mesiac",
-        "${ n } mesiace",
-        "${ n } mesiace",
-        "${ n } mesiace"
-      ],
-      "/ month": [
-        "/ mesiac"
-      ],
-      "12 months": [
-        "12 mesiacov"
-      ],
-      "15 months": [
-        "15 mesiacov"
-      ],
-      "24 months": [
-        "24 mesiacov"
-      ],
-      "30 months": [
-        "30 mesiacov"
-      ],
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } desktopová aplikácia"
@@ -2835,6 +2734,9 @@
       "City": [
         "Mesto"
       ],
+      "Class": [
+        "Trieda"
+      ],
       "Code": [
         "Kód"
       ],
@@ -2924,6 +2826,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Lekár"
       ],
       "Domain": [
         "Doména"
@@ -3069,6 +2974,9 @@
       "Holder Name": [
         "Meno vlastníka"
       ],
+      "Hospital": [
+        "Nemocnica"
+      ],
       "Host": [
         "Hostiteľ"
       ],
@@ -3138,6 +3046,9 @@
       "Issuing Country": [
         "Vydávajúca krajina"
       ],
+      "Issuing State/Country": [
+        "Štát/Krajina vydania"
+      ],
       "Item ID": [
         "ID položky"
       ],
@@ -3149,6 +3060,9 @@
       ],
       "Key fingerprint": [
         "Identifikátor kľúča"
+      ],
+      "Key type": [
+        "Typ kľúča"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klávesová skratka: ${ shortcut }"
@@ -3186,6 +3100,9 @@
       "License number": [
         "Licenčné číslo"
       ],
+      "License Number": [
+        "Licenčné číslo"
+      ],
       "Limited time": [
         "Časovo obmedzené"
       ],
@@ -3219,17 +3136,29 @@
       "max views reached": [
         "dosiahnutý max. počet zobrazení"
       ],
+      "Medical Conditions": [
+        "Zdravotný stav"
+      ],
       "Medical Record": [
         "Zdravotný záznam"
       ],
+      "Medications": [
+        "Lieky"
+      ],
       "Member ID": [
         "ID člena"
+      ],
+      "Member Name": [
+        "Meno člena"
       ],
       "Members": [
         "Členovia"
       ],
       "Membership": [
         "Členstvo"
+      ],
+      "Membership ID": [
+        "ID členstva"
       ],
       "Middle name": [
         "Stredné meno"
@@ -3312,6 +3241,9 @@
       "Organization": [
         "Organizácia"
       ],
+      "Organization Name": [
+        "Názov organizácie"
+      ],
       "Other": [
         "Iné"
       ],
@@ -3338,6 +3270,9 @@
       ],
       "Password history": [
         "História hesla"
+      ],
+      "Patient Name": [
+        "Meno pacienta"
       ],
       "Permissions": [
         "Oprávnenia"
@@ -3410,6 +3345,9 @@
       ],
       "Recent": [
         "Nedávne"
+      ],
+      "Record Number": [
+        "Číslo záznamu"
       ],
       "Reddit handle": [
         "Používateľské meno Reddit"
@@ -3578,6 +3516,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Táto položka je prístupná do ${ date } alebo do dosiahnutia limitu zobrazení."
+      ],
+      "Tier/Level": [
+        "Úroveň členstva"
       ],
       "Tier/Status": [
         "Úroveň/Stav"
@@ -3944,6 +3885,18 @@
       "Add note": [
         "Pridať poznámku"
       ],
+      "Add password": [
+        "Pridať heslo"
+      ],
+      "Add private key": [
+        "Pridať súkromný kľúč"
+      ],
+      "Add public key": [
+        "Pridať verejný kľúč"
+      ],
+      "Add SSID": [
+        "Pridať SSID"
+      ],
       "Add text": [
         "Pridať text"
       ],
@@ -4047,14 +4000,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Vaše informácie sa našli v najmenej jednom úniku údajov. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Zavrieť"
-      ],
-      "Don't show this offer again": [
-        "Nabudúce to už nezobrazovať"
       ]
     },
     "sso": {
@@ -4719,6 +4664,14 @@
       ],
       "URL is invalid": [
         "URL je neplatná"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Presunúť položku do",
+        "Presunúť položky do",
+        "Presunúť položky do",
+        "Presunúť položky do"
       ]
     },
     "Warning": {
