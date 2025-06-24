@@ -42,7 +42,7 @@ import noop from '@proton/utils/noop';
 
 import { classNames, styles } from './properties';
 
-interface ThemeContextInterface {
+export interface ThemeContextInterface {
     setTheme: (theme: ThemeTypes, mode?: ThemeModeSetting) => void;
     setThemeSetting: (theme?: ThemeSetting) => void;
     setAutoTheme: (enabled: boolean) => void;
