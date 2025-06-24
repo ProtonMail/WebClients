@@ -15,13 +15,14 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { escapeCsvValue } from '@proton/components/helpers/escapeCsvValue';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { getOrgAuthLogs } from '@proton/shared/lib/api/b2bevents';
 import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
 import { updateLogAuth } from '@proton/shared/lib/api/settings';
-import type { AuthLog, B2BAuthLog } from '@proton/shared/lib/authlog';
+import { type AuthLog, type B2BAuthLog, getAuthLogEventsI18N } from '@proton/shared/lib/authlog';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -67,11 +68,32 @@ const LogsSection = () => {
         const Logs = await getAllAuthenticationLogs(api);
 
         const data = Logs.reduce(
-            (acc, { Description, Time, IP }) => {
-                acc.push(`${Description},${fromUnixTime(Time).toISOString()},${IP}`);
+            (acc, log) => {
+                const { Time, IP, AppVersion, Device, Event, Location, Status, ProtectionDesc, InternetProvider } = log;
+
+                const row = [
+                    fromUnixTime(Time).toISOString(),
+                    getAuthLogEventsI18N(Event),
+                    Status,
+                    IP,
+                    Location,
+                    InternetProvider,
+                    AppVersion,
+                    Device,
+                ];
+
+                if (protonSentinel === 1) {
+                    row.push(ProtectionDesc);
+                }
+
+                acc.push(row.map(escapeCsvValue).join(','));
                 return acc;
             },
-            [['Event', 'Time', 'IP'].join(',')]
+            [
+                ['Time', 'Event', 'Status', 'IP', 'Location', 'InternetProvider', 'AppVersion', 'Device', 'Protection']
+                    .map(escapeCsvValue)
+                    .join(','),
+            ]
         );
 
         const filename = 'events.csv';
@@ -88,7 +110,7 @@ const LogsSection = () => {
         latestRef.current = latest;
 
         try {
-            if (hasB2BLogs) {
+            if (hasB2BLogs && user.isAdmin) {
                 const query = {
                     Emails: [user.Email],
                 };
@@ -199,20 +221,37 @@ const LogsSection = () => {
                                     onNext={onNext}
                                     onPrevious={onPrevious}
                                     onSelect={onSelect}
-                                    total={b2bState.total}
+                                    total={b2bState.total > 0 ? b2bState.total : state.total}
                                     page={page}
                                     limit={PAGE_SIZE}
                                 />
                             </div>
                         </div>
-                        <B2BAuthLogsTable logs={b2bState.logs} userSection={true} loading={loading || loadingRefresh} />
+
+                        {b2bState.total > 0 && (
+                            <B2BAuthLogsTable
+                                logs={b2bState.logs}
+                                userSection={true}
+                                loading={loading || loadingRefresh}
+                            />
+                        )}
+
+                        {state.total > 0 && (
+                            <LogsTable
+                                logs={state.logs}
+                                logAuth={basicLogAuth}
+                                protonSentinel={protonSentinel}
+                                loading={loading || loadingRefresh}
+                                error={error}
+                            />
+                        )}
                     </>
                 ) : (
                     <>
                         <SettingsLayout>
                             <SettingsLayoutLeft>
                                 <label className="text-semibold" htmlFor="logs-toggle">
-                                    {c('Log preference').t`Enable security events`}
+                                    {c('Log preference').t`Activity monitor`}
                                 </label>
                             </SettingsLayoutLeft>
                             <SettingsLayoutRight isToggleContainer>
