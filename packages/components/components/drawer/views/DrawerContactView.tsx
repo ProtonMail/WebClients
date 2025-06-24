@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { EasySwitchProvider } from '@proton/activation';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import { Button } from '@proton/atoms';
 import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 import DrawerView from '@proton/components/components/drawer/views/DrawerView';
 import { CONTACT_TAB } from '@proton/components/components/drawer/views/interface';
@@ -126,20 +126,22 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
         switch (tab) {
             case CONTACT_TAB.CONTACT:
                 return [
-                    <PrimaryButton
+                    <Button
+                        color="norm"
                         data-testid="contacts:add-contact"
                         key="contact-footer-button-1"
                         onClick={() => onEdit({})}
-                    >{c('Action').t`Add contact`}</PrimaryButton>,
+                    >{c('Action').t`Add contact`}</Button>,
                     <ContactsTabImportDropdown onImport={onOpenImportModal} />,
                 ];
             case CONTACT_TAB.CONTACT_GROUP:
                 return [
-                    <PrimaryButton
+                    <Button
+                        color="norm"
                         data-testid="groups:add-group"
                         key="contact-footer-button-3"
                         onClick={() => handleAddContactGroup()}
-                    >{c('Action').t`Add new group`}</PrimaryButton>,
+                    >{c('Action').t`Add new group`}</Button>,
                 ];
         }
     };

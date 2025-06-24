@@ -11,7 +11,6 @@ import {
     Icon,
     LabelsUpsellModal,
     Mark,
-    PrimaryButton,
     SearchInput,
     useActiveBreakpoint,
     useModalState,
@@ -462,7 +461,8 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
                 </Checkbox>
             </div>
             <div className="m-4 shrink-0">
-                <PrimaryButton
+                <Button
+                    color="norm"
                     className="w-full"
                     loading={loading}
                     disabled={applyDisabled}
@@ -471,7 +471,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
                     type="submit"
                 >
                     {c('Action').t`Apply`}
-                </PrimaryButton>
+                </Button>
             </div>
             {moveScheduledModal}
             {moveSnoozedModal}

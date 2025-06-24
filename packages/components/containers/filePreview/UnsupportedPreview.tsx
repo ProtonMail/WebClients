@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import { Button } from '@proton/atoms';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import corruptedPreviewSvg from '@proton/styles/assets/img/errors/broken-image.svg';
 import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';
@@ -45,11 +45,12 @@ const UnsupportedPreview = ({ onDownload, type = 'file', browser = false, tooLar
             {subtext && <h3 className="pb-1">{subtext}</h3>}
 
             {onDownload && (
-                <PrimaryButton
+                <Button
+                    color="norm"
                     size={!viewportWidth['<=small'] ? 'large' : undefined}
                     className="text-bold mt-8"
                     onClick={onDownload}
-                >{c('Action').t`Download`}</PrimaryButton>
+                >{c('Action').t`Download`}</Button>
             )}
         </div>
     );

@@ -10,7 +10,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    PrimaryButton,
     useApi,
     useNotifications,
 } from '@proton/components';
@@ -132,9 +131,9 @@ const AskForKeyPinningModal = ({ contacts, onNotTrust, onError, onResolve, onRej
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={handleClose}>{c('Action').t`Close`}</Button>
-                <PrimaryButton type="submit" loading={loading || loadingUserKeys}>
+                <Button color="norm" type="submit" loading={loading || loadingUserKeys}>
                     {c('Action').ngettext(msgid`Trust key`, `Trust keys`, totalContacts)}
-                </PrimaryButton>
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

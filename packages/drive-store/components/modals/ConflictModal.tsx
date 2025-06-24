@@ -11,7 +11,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    PrimaryButton,
     Radio,
     Row,
     useModalTwoStatic,
@@ -192,7 +191,7 @@ export default function ConflictModal({
                 <Button type="button" onClick={closeAndCancel}>
                     {c('Action').t`Cancel all uploads`}
                 </Button>
-                <PrimaryButton type="submit">{c('Action').t`Continue`}</PrimaryButton>
+                <Button color="norm" type="submit">{c('Action').t`Continue`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

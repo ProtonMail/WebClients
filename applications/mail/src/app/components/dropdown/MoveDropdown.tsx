@@ -12,7 +12,6 @@ import {
     Icon,
     LabelsUpsellModal,
     Mark,
-    PrimaryButton,
     Radio,
     SearchInput,
     useActiveBreakpoint,
@@ -293,7 +292,8 @@ const MoveDropdown = ({
                 </Checkbox>
             </div>
             <div className="m-4 shrink-0">
-                <PrimaryButton
+                <Button
+                    color="norm"
                     className="w-full"
                     loading={loading}
                     disabled={applyDisabled}
@@ -302,7 +302,7 @@ const MoveDropdown = ({
                     type="submit"
                 >
                     {c('Action').t`Apply`}
-                </PrimaryButton>
+                </Button>
             </div>
             {moveScheduledModal}
             {moveSnoozedModal}

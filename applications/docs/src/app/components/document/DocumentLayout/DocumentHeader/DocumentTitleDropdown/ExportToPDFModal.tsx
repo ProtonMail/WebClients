@@ -1,9 +1,10 @@
+import { Button } from '@proton/atoms'
 import { c } from 'ttag'
 
 import type { ModalStateProps } from '@proton/components'
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, PrimaryButton, useModalTwoStatic } from '@proton/components'
-import { useState } from 'react'
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, useModalTwoStatic } from '@proton/components'
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser'
+import { useState } from 'react'
 
 export function ExportToPDFModal({ onClose, open, ...modalProps }: ModalStateProps) {
   const [isOpen, setIsOpen] = useState(open)
@@ -47,7 +48,7 @@ export function ExportToPDFModal({ onClose, open, ...modalProps }: ModalStatePro
 
       <ModalTwoFooter>
         <div className="flex w-full flex-col">
-          <PrimaryButton onClick={close}>{c('Action').t`Got it`}</PrimaryButton>
+          <Button color="norm" onClick={close}>{c('Action').t`Got it`}</Button>
         </div>
       </ModalTwoFooter>
     </ModalTwo>

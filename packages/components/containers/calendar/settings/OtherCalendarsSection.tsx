@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Card, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
@@ -127,21 +126,23 @@ const OtherCalendarsSection = ({
     const addCalendarButtons = (
         <div className="mb-4">
             <>
-                <PrimaryButton
+                <Button
+                    color="norm"
                     data-testid="calendar-setting-page:add-holidays-calendar"
                     disabled={!canAdd}
                     onClick={handleCreateHolidaysCalendar}
                     className="mr-4"
                 >
                     {addHolidaysCalendarText}
-                </PrimaryButton>
-                <PrimaryButton
+                </Button>
+                <Button
+                    color="norm"
                     data-test-id="calendar-setting-page:add-calendar"
                     disabled={!canAdd}
                     onClick={handleCreate}
                 >
                     {addCalendarText}
-                </PrimaryButton>
+                </Button>
             </>
         </div>
     );

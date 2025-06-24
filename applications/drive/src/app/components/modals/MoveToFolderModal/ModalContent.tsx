@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Alert, Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, PrimaryButton } from '@proton/components';
+import { Alert, Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
 import type { DecryptedLink, TreeItem } from '../../../store';
 import FolderTree from '../../FolderTree/FolderTree';
@@ -76,9 +76,15 @@ export const ModalContent = ({
                         <Button type="reset" disabled={isLoading} autoFocus>
                             {c('Action').t`Close`}
                         </Button>
-                        <PrimaryButton className="ml-4" loading={isLoading} type="submit" disabled={isMoveDisabled}>
+                        <Button
+                            color="norm"
+                            className="ml-4"
+                            loading={isLoading}
+                            type="submit"
+                            disabled={isMoveDisabled}
+                        >
                             {c('Action').t`Move`}
-                        </PrimaryButton>
+                        </Button>
                     </div>
                 </div>
             </ModalTwoFooter>

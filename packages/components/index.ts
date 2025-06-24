@@ -25,7 +25,6 @@ export { default as ButtonGroup } from './components/button/ButtonGroup';
 export { default as Copy } from './components/button/Copy';
 export { default as FileButton } from './components/button/FileButton';
 export { default as FloatingButton } from './components/button/FloatingButton';
-export { default as PrimaryButton } from './components/button/PrimaryButton';
 export { default as SidebarExpandButton } from './components/button/SidebarExpandButton';
 export { default as TwitterButton } from './components/button/TwitterButton';
 export { default as CalendarEventDateHeader } from './components/calendarEventDateHeader/CalendarEventDateHeader';

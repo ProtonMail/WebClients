@@ -1,7 +1,8 @@
+import { Button } from '@proton/atoms'
 import { c } from 'ttag'
 
 import type { ModalStateProps } from '@proton/components'
-import { BasicModal, PrimaryButton, useModalTwoStatic } from '@proton/components'
+import { BasicModal, useModalTwoStatic } from '@proton/components'
 import { useState } from 'react'
 
 type Props = {
@@ -32,7 +33,7 @@ export default function GenericAlertModal({
       onClose={handleClose}
       footer={
         <>
-          <PrimaryButton onClick={handleClose}>{c('Action').t`OK`}</PrimaryButton>
+          <Button color="norm" onClick={handleClose}>{c('Action').t`OK`}</Button>
         </>
       }
       {...modalProps}

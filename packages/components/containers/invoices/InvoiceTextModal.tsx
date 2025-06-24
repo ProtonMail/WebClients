@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -55,12 +54,13 @@ const InvoiceTextModal = (props: ModalProps) => {
 
             <ModalTwoFooter>
                 <Button onClick={props.onClose}>{c('Action').t`Cancel`}</Button>
-                <PrimaryButton
+                <Button
+                    color="norm"
                     onClick={() => {
                         void withLoading(handleSubmit());
                     }}
                     loading={loading}
-                >{c('Action').t`Save`}</PrimaryButton>
+                >{c('Action').t`Save`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

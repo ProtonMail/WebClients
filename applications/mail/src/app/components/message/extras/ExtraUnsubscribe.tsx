@@ -12,7 +12,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    PrimaryButton,
     Prompt,
     Row,
     useApi,
@@ -264,10 +263,11 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                     <ModalTwoContent>{modalContent}</ModalTwoContent>
                     <ModalTwoFooter>
                         <Button onClick={unsubscribeModalProps.onClose}>{c('Action').t`Cancel`}</Button>
-                        <PrimaryButton
+                        <Button
+                            color="norm"
                             onClick={() => withLoading(handleSubmit())}
                             data-testid="unsubscribe-banner:submit"
-                        >{c('Action').t`Unsubscribe`}</PrimaryButton>
+                        >{c('Action').t`Unsubscribe`}</Button>
                     </ModalTwoFooter>
                 </ModalTwo>
             )}

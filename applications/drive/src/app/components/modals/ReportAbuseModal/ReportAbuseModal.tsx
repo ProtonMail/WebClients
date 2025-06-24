@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,7 +12,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     Option,
-    PrimaryButton,
     SelectTwo,
     TextAreaTwo,
     useFormErrors,
@@ -177,9 +176,9 @@ const ReportAbuseModal = ({
                 <Button color="weak" type="reset" disabled={submitting} onClick={onClose}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton type="submit" loading={submitting}>
+                <Button color="norm" type="submit" loading={submitting}>
                     {c('Action').t`Submit`}
-                </PrimaryButton>
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

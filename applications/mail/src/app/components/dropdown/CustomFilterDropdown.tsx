@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { Button } from '@proton/atoms';
 import {
     Checkbox,
     ConditionComparator,
@@ -11,7 +12,6 @@ import {
     FilterModal,
     FiltersUpsellModal,
     OPERATORS,
-    PrimaryButton,
     computeTree,
     newFilter,
     useModalState,
@@ -192,7 +192,8 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                     ))}
                 </ul>
                 <div className="m-4">
-                    <PrimaryButton
+                    <Button
+                        color="norm"
                         className="w-full"
                         disabled={buttonDisabled}
                         data-prevent-arrow-navigation
@@ -200,7 +201,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                         data-testid="filter-dropdown:next-button"
                     >
                         {c('CustomFilter').t`Next`}
-                    </PrimaryButton>
+                    </Button>
                 </div>
             </form>
             {renderFilterModal && (

@@ -4,14 +4,7 @@ import { displayConfirmLeaveModal } from '@proton/activation/src/logic/draft/ima
 import { changeOAuthStep, resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms';
-import {
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    PrimaryButton,
-    VideoInstructions,
-} from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, VideoInstructions } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import oauthInstructionsMp4 from '@proton/styles/assets/videos/easySwitch/oauth-instructions.mp4';
 import oauthInstructionsWebm from '@proton/styles/assets/videos/easySwitch/oauth-instructions.webm';
@@ -61,8 +54,8 @@ const StepInstructionsGoogle = ({ triggerOAuth }: Props) => {
                 <Button shape="outline" onClick={handleBack} data-testid="StepInstruction:back">
                     {c('Action').t`Back`}
                 </Button>
-                <PrimaryButton onClick={triggerOAuth} data-testid="StepInstruction:submit">{c('Action')
-                    .t`Continue`}</PrimaryButton>
+                <Button color="norm" onClick={triggerOAuth} data-testid="StepInstruction:submit">{c('Action')
+                    .t`Continue`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

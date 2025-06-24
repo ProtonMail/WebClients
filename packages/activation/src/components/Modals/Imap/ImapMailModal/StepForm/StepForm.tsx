@@ -18,7 +18,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     PasswordInputTwo,
-    PrimaryButton,
     Row,
 } from '@proton/components';
 
@@ -144,7 +143,8 @@ function StepForm() {
                 <Button shape="outline" onClick={handleCancel} data-testid="StepForm:cancelButton">
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton
+                <Button
+                    color="norm"
                     type="submit"
                     disabled={hasErrors}
                     loading={isConnectingToProvider}
@@ -159,7 +159,7 @@ function StepForm() {
                         }
                         return c('Action').t`Next`;
                     })()}
-                </PrimaryButton>
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

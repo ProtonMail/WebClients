@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PrimaryButton, useFocusTrap, useHotkeys } from '@proton/components';
+import { useFocusTrap, useHotkeys } from '@proton/components';
 
 import InnerModalContent from './InnerModal/InnerModalContent';
 import InnerModalFooter from './InnerModal/InnerModalFooter';
@@ -68,14 +68,15 @@ const ComposerInnerModal = ({
                     <InnerModalFooter className="flex flex-nowrap flex-column">
                         {submitActions}
                         {!submitActions && (
-                            <PrimaryButton
+                            <Button
+                                color="norm"
                                 type="submit"
                                 disabled={disabled}
                                 data-testid="modal-footer:set-button"
                                 className="w-full"
                             >
                                 {submit || c('Action').t`Set`}
-                            </PrimaryButton>
+                            </Button>
                         )}
                         {displayCancel && (
                             <Button type="reset" data-testid="modal-footer:cancel-button">
