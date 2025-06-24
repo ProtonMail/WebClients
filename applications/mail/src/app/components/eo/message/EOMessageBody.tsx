@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import MessageBodyIframe from '@proton/mail-renderer/components/MessageBodyIframe';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
@@ -36,7 +37,7 @@ const EOMessageBody = ({
     const [isIframeContentSet, setIsIframeContentSet] = useState(false);
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const iframeRootDivRef = useRef<HTMLDivElement>();
-
+    const theme = useTheme();
     const plain = isPlainText(message.data);
 
     const [content, blockquote] = useMemo(
@@ -94,6 +95,7 @@ const EOMessageBody = ({
                         isPlainText={plain}
                         message={message}
                         onMessageImageLoadError={handleMessageImageLoadError}
+                        theme={theme}
                     />
                     {linkModal}
                     <MessageBodyPrint isPrint={false} iframeRef={iframeRef} message={message} labelID="" />
