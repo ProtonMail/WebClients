@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
-import { BasicModal, PrimaryButton, useModalTwoStatic } from '@proton/components';
+import { BasicModal, useModalTwoStatic } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 type Props = {
@@ -36,14 +36,15 @@ export default function DownloadIsTooBigModal({
             footer={
                 <>
                     <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
-                    <PrimaryButton
+                    <Button
+                        color="norm"
                         onClick={() => {
                             onSubmit?.();
                             onClose();
                         }}
                     >
                         {c('Action').t`Download anyway`}
-                    </PrimaryButton>
+                    </Button>
                 </>
             }
             {...modalProps}

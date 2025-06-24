@@ -12,7 +12,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    PrimaryButton,
     Row,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
@@ -108,9 +107,9 @@ export const RenameModalView = ({
                 <Button type="button" onClick={onClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton type="submit" loading={loading}>
+                <Button color="norm" type="submit" loading={loading}>
                     {c('Action').t`Rename`}
-                </PrimaryButton>
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

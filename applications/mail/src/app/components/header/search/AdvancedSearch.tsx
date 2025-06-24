@@ -9,7 +9,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import { DateInput, Label, Option, PrimaryButton, SelectTwo, useActiveBreakpoint } from '@proton/components';
+import { DateInput, Label, Option, SelectTwo, useActiveBreakpoint } from '@proton/components';
 import type { ESIndexingState } from '@proton/encrypted-search';
 import { contentIndexingProgress } from '@proton/encrypted-search';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
@@ -365,11 +365,12 @@ const AdvancedSearch = ({
                             title={c('Action').t`Reset search form`}
                         >{c('Action').t`Reset`}</Button>
                     ) : null}
-                    <PrimaryButton
+                    <Button
+                        color="norm"
                         data-testid="advanced-search:submit"
                         type="submit"
                         className="mb-2 w-full md:w-auto"
-                    >{c('Action').t`Search`}</PrimaryButton>
+                    >{c('Action').t`Search`}</Button>
                 </div>
             </div>
         </form>
