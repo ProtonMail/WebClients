@@ -1,3 +1,7 @@
+### Version 1.32.1
+
+- Fix Firefox ESR 115 support
+
 ### Version 1.32.0
 
 - Add support for custom item types
