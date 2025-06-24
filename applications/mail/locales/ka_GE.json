@@ -1750,8 +1750,14 @@
       "Block ads, trackers, and malware": [
         "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
       ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "გააორმაგეთ თქვენი დაშიფრული საცავი – მიიღეთ 1 ტბ ყველა თქვენი მონაცემისთვის"
+      ],
       "Encrypted password manager": [
         "დაშიფრული პაროლების მმართველი"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "ეს ექსკლუზიური საჩუქარია ჩვენი ერთობლივი მოგზაურობის აღსანიშნავად."
       ],
       "High speed streaming with VPN": [
         "ჩქაროსნული სტრიმინგი VPN-ით"
@@ -1764,6 +1770,9 @@
       ],
       "Online privacy for up to 2 people": [
         "ინტერნეტკონფიდენციალობა ორამდე ადამიანისთვის"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის (6-მდე მომხმარებელი)"
       ],
       "Protect up to 10 devices": [
         "დაიცავით 10-მდე მოწყობილობა"
@@ -1791,6 +1800,12 @@
       ],
       "thanks to you": [
         "მადლობა"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "გაასამმაგეთ თქვენი დაშიფრული საცავი – მიიღეთ 3 ტბ ყველა თქვენი მონაცემისთვის"
+      ],
+      "Unlimited folders, labels and filters": [
+        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ],
       "Use your own email domain": [
         "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
@@ -7723,6 +7738,9 @@
       "Themes can give your inbox a new look.": [
         "თემებს შეუძლიათ თქვენს საფოსტო ყუთს ახალი იერი შესძინონ."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "ამ გამომგზავნისგან მიღებულ წერილებში შეტყობინება არ გაქვთ."
+      ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "კონტაქტის დეტალების შემოწმებისას ხელმოწერის შეცდომა. ეს, როგორც წესი, პაროლის შეცვლის ბრალია."
       ],
@@ -8925,6 +8943,9 @@
       "Extended address": [
         "გაფართოებული მისამართი"
       ],
+      "Failed to create folder ${ customFolderName }": [
+        "შექმნის შეცდომა საქაღალდისთვის ${ customFolderName }"
+      ],
       "Filter Name": [
         "ფილტრის სახელი"
       ],
@@ -9048,6 +9069,10 @@
       ],
       "Move to Inbox": [
         "შემომავლებში გადატანა"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } შეტყობინება გადატანა საქაღალდეში ${ labelName }.",
+        "${ count } შეტყობინება გადატანა საქაღალდეში ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } შეტყობინება გადატანილია არქივში.",
@@ -14440,6 +14465,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "გავაუქმო ${ subscription.Name }-ის გამოწერა?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "გამოწერის გაუქმება ამ გამომგზავნისთვის ხელმისაწვდომი არაა"
       ],
       "Unsubscribe request sent": [
         "გამოწერის გაუქმების ელფოსტა გაგზავნილია"

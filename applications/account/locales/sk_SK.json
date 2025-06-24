@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "Zakázať obnovovaciu frázu?"
       ],
+      "Disable security events": [
+        "Deaktivovať bezpečnostné udalosti"
+      ],
       "Discard": [
         "Zahodiť"
       ],
@@ -1542,6 +1545,9 @@
       ],
       "What do I get?": [
         "Čo získam?"
+      ],
+      "Wipe": [
+        "Vyčistiť"
       ],
       "Yes": [
         "Áno"
@@ -4168,6 +4174,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Jednoducho synchronizujte súbory do cloudu z počítača a pristupujte k nim z mobilného zariadenia."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Povoľte ${ PROTON_SENTINEL_NAME } pre prístup k týmto funkciám"
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Podporujte používanie dvojstupňového overenia vo vašej organizácii pre vyššiu bezpečnosť."
       ],
@@ -4257,6 +4266,18 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Môžete importovať udalosti vo formáte iCal (ICS súbor). Tento súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálne ${ MAX_IMPORT_EVENTS_STRING } udalostí. Ak je váš súbor väčší, prosím rozdeľte ho na menšie súbory."
+      ],
+      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Pre prístup k týmto funkciám povoľte podrobné udalosti a ${ PROTON_SENTINEL_NAME }"
+      ],
+      "You should enable detailed events in order to access these features": [
+        "Mali by ste povoliť podrobné udalosti pre prístup k týmto funkciám."
+      ],
+      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Váš administrátor organizácie by mal povoliť podrobné udalosti a ${ PROTON_SENTINEL_NAME } pre prístup k týmto funkciám"
+      ],
+      "Your organization administrator should enable detailed events in order to access these features": [
+        "Váš administrátor organizácie by mal povoliť podrobné udalosti, aby ste mali prístup k týmto funkciám."
       ]
     },
     "description": {
@@ -5897,6 +5918,9 @@
       "App currently unavailable": [
         "Aplikácia momentálne nie je k dispozícii"
       ],
+      "Ask your administrator to enable Account monitor.": [
+        "Požiadajte svojho administrátora, aby povolil monitor účtu."
+      ],
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
       ],
@@ -6979,6 +7003,9 @@
       "Permissions": [
         "Oprávnenia"
       ],
+      "Protection": [
+        "Ochrana"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Ušetrite množstvo peňazí na najlepších ponukách ${ VPN_APP_NAME }"
       ],
@@ -7525,6 +7552,9 @@
       ]
     },
     "Info": {
+      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
+        " – vaše riadiace centrum na sledovanie používateľskej aktivity, odhaľovanie hrozieb a zabezpečenie súladu v celej vašej organizácii."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } používateľov má v súčasnosti prístup k zdieľaným serverom.",
         "${ amountUsers }/${ totalUsers } používateľov má v súčasnosti prístup k zdieľaným serverom.",
@@ -7894,6 +7924,9 @@
       "Activity monitor": [
         "Monitor aktivity"
       ],
+      "Activity Monitor": [
+        "Monitor aktivity"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Pridajte do svojho konta emailovú adresu @pm.me. Táto jednoduchá, kratšia doména znamená \"${ MAIL_APP_NAME } me\" alebo \"Private Message me.\""
       ],
@@ -8086,6 +8119,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Ste si istí, že chcete opustiť túto skupinu? Ak skupinu opustíte, budete musieť byť znovu pozvaní správcom skupiny, aby ste sa do nej mohli znova pripojiť."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Naozaj chcete natrvalo vymazať všetky vaše záznamy?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Naozaj chcete tomuto používateľovi odobrať oprávnenie správcu?"
       ],
@@ -8184,6 +8220,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Vytvorením ${ PASS_APP_NAME } účtu so svojím SimpleLogin emailom môžete spravovať svoje aliasy priamo z ${ PASS_APP_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Deaktiváciou sledovania bezpečnostných udalostí vymažete aj celú históriu. Naozaj chcete záznamy deaktivovať?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ak prejdete na bezplatnú verziu, natrvalo stratíte súčasné výhody a to i v budúcnosti, ak opäť upgradujte svoj účet na platenú verziu."
@@ -8653,6 +8692,9 @@
       "expires ${ expirationDate }": [
         "vyprší ${ expirationDate }"
       ],
+      "Failed to fetch logs.": [
+        "Načítanie záznamov zlyhalo."
+      ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Rýchle a cielené. Email a kalendár, priamo na vašej pracovnej ploche."
       ],
@@ -8703,6 +8745,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "uvolniť miesto zmazaním starších správ alebo iných dát"
+      ],
+      "Gain visibility across your organization": [
+        "Získajte prehľad o celej vašej organizácii"
       ],
       "Gateways": [
         "Brány"
@@ -9052,6 +9097,9 @@
       "Learn more": [
         "Zistiť viac"
       ],
+      "Learn more about Activity Monitor": [
+        "Zistiť viac o Monitore aktivity"
+      ],
       "Learn more about Gateways": [
         "Zistiť viac o bránach"
       ],
@@ -9234,6 +9282,9 @@
       ],
       "No label selected": [
         "Nie je vybratý žiadny štítok"
+      ],
+      "No logs yet.": [
+        "Zatiaľ žiadne záznamy."
       ],
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
@@ -10473,6 +10524,9 @@
       ],
       "Why?": [
         "Prečo?"
+      ],
+      "With a Business or Enterprise plan, unlock": [
+        "S Business alebo Enterprise plánom odomknite"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "S balíkom Business alebo Enterprise si môžete zakúpiť ${ boldDedicatedServers } pre vašu organizáciu a nastaviť ${ boldGateways }, aby ste mohli kontrolovať, ktorí používatelia k nim majú prístup."
@@ -11744,6 +11798,9 @@
       ],
       "Copy fingerprint": [
         "Kopírovať odtlačok prsta"
+      ],
+      "Copy IP address to clipboard": [
+        "Skopírovať IP adresu do schránky"
       ],
       "Could you please let us know which provider?": [
         "Mohli by ste nás informovať, o ktorého poskytovateľa ide?"
@@ -13077,6 +13134,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Povoliť ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Povoliť podrobné udalosti"
+      ],
+      "Enable security events": [
+        "Povoliť bezpečnostné udalosti"
       ]
     },
     "Mail import summary": {
@@ -15101,6 +15164,9 @@
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Môžete používať ${ planTitle } až do konca skúšobného obdobia bez spoplatnenia."
       ],
       "Your free trial has started": [
         "Vaša bezplatná skúšobná verzia sa začala"
@@ -20017,6 +20083,9 @@
       "Delete label?": [
         "Odstrániť štítok?"
       ],
+      "Delete logs": [
+        "Vymazať záznamy"
+      ],
       "Delete organization logo?": [
         "Vymazať logo organizácie?"
       ],
@@ -20863,6 +20932,9 @@
       "Theme": [
         "Motív"
       ],
+      "There are no events for your account": [
+        "Na vašom účte nie sú žiadne udalosti"
+      ],
       "There are no groups": [
         "Nie sú tu žiadne skupiny"
       ],
@@ -20964,6 +21036,9 @@
       ],
       "Video conferencing": [
         "Videokonferencie"
+      ],
+      "View organization events by upgrading to Business": [
+        "Zobraziť udalosti organizácie prechodom na Business plán"
       ],
       "VPN apps": [
         "VPN aplikácie"
@@ -21175,6 +21250,12 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Umožňuje bezproblémové pridávanie odkazov na videokonferencie do pozvánok v kalendári."
       ],
+      "An approximate location of the IP address": [
+        "Približná poloha IP adresy"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Akákoľvek ochrana použitá proti podozrivej činnosti"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automaticky prepínať medzi preferovanými motívmi počas dňa a noci, synchronizovane s motívmi vášho systému"
       ],
@@ -21196,6 +21277,9 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Po 30 dňoch sa vymaže kôš a spamové správy. Zapnutím automatického odstraňovania sa správam, ktoré sa už nachádzajú v koši/spame, pridelí dátum odstránenia na základe dátumu, kedy tam boli presunuté."
       ],
+      "Device information such as operating system": [
+        "Informácie o zariadení, ako je operačný systém"
+      ],
       "Device name and app version": [
         "Názov zariadenia a verzia aplikácie"
       ],
@@ -21216,6 +21300,9 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Povoliť/zakázať hlásenia pre počítače a mobilné zariadenia pre „${ labelName }“"
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Povolením podrobných udalostí sa zaznamenáva IP adresa pre každú udalosť."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adresa URL koncového bodu od poskytovateľa identity (napr. https://idp.example.com/sso/saml)"
@@ -21297,6 +21384,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Import začne najnovšími správami."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "Poskytovateľ internetových služieb IP adresy"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nový cyklus predplatného začína ${ formattedTime }"

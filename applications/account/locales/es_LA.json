@@ -4261,10 +4261,10 @@
         "Active los eventos detallados y ${ PROTON_SENTINEL_NAME } para acceder a estas funciones"
       ],
       "You should enable detailed events in order to access these features": [
-        "Active los eventos detallados para acceder a estas funciones"
+        "Active los eventos detallados para acceder a estas funciones."
       ],
       "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "El administrador de tu organización debería activar los eventos detallados y ${ PROTON_SENTINEL_NAME } para poder acceder a estas funciones"
+        "El administrador de su organización debería activar los eventos detallados y ${ PROTON_SENTINEL_NAME } para poder acceder a estas funciones"
       ],
       "Your organization administrator should enable detailed events in order to access these features": [
         "El administrador de su organización debería activar eventos detallados para acceder a estas funciones."
@@ -5897,7 +5897,7 @@
         "La aplicación no está disponible actualmente."
       ],
       "Ask your administrator to enable Account monitor.": [
-        "Pida a su administrador que active el monitor de cuenta."
+        "Pida a su administrador que active el monitor de la cuenta."
       ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
@@ -8089,7 +8089,7 @@
         "Al crear una cuenta ${ PASS_APP_NAME } con su correo electrónico de SimpleLogin, puede administrar sus alias directamente desde ${ PASS_APP_NAME }."
       ],
       "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Al desactivar el monitoreo de eventos de seguridad, también borrará todo su historial. ¿Está seguro de que quiere desactivar esta opción?"
+        "Al desactivar el monitoreo de eventos de seguridad, también borrará todo su historial. ¿En verdad desea desactivar esta opción?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo el plan en el futuro."
@@ -8785,7 +8785,7 @@
         "inactiva"
       ],
       "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Inclua dirección IP del usuario, ubicación y proveedor de servicios de internet (proveedor de servicios de internet) en los registros de eventos."
+        "Incluir la dirección IP del usuario, ubicación y proveedor de servicios de internet (proveedor de servicios de internet) en los registros de eventos."
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incluyendo ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -12905,7 +12905,7 @@
         "La sesión fue iniciada (esperando verificación)."
       ],
       "Sign out": [
-        "Cerrar cuenta"
+        "Cerrar sesión"
       ],
       "Two password mode disabled": [
         "El modo de doble contraseña fue desactivado."
@@ -15462,7 +15462,7 @@
         "Ingrese un nombre a mostrar para **${ username }**. Esto es lo que verán sus usuarios cuando cambie sus permisos o comparta información con ellos."
       ],
       "Essential protection and secure collaboration for unlimited users": [
-        "Lo esencial para la protección y la colaboración segura con usuarios ilimitados"
+        "Protección esencial y colaboración segura para usuarios ilimitados"
       ],
       "Everything from ${ planTitle }, plus...": [
         "Todo en el plan ${ planTitle } además de..."
@@ -15845,6 +15845,9 @@
       ],
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Solo se acepta el euro para SEPA. Su moneda ha sido cambiada. Por favor, use el selector para revertir su elección."
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Agregue un método de pago en el panel de control para continuar."
