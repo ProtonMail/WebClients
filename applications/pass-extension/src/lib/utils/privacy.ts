@@ -25,11 +25,21 @@ export const AUTOFILL_CONTROLLABLE = BROWSER_AUTOFILL_SETTINGS.length > 0;
 export const settingControlledAndDisabled = ({ levelOfControl, value }: Types.SettingGetCallbackDetailsType) =>
     levelOfControl === 'controlled_by_this_extension' && !value;
 
-const checkPrivacyPermission = async (): Promise<boolean> =>
-    browser.permissions.contains({ permissions: ['privacy'] }).catch(() => false);
+const checkPrivacyPermission = async (): Promise<boolean> => {
+    try {
+        return await browser.permissions.contains({ permissions: ['privacy'] });
+    } catch {
+        return false;
+    }
+};
 
-const requestPrivacyPermission = (): Promise<boolean> =>
-    browser.permissions.request({ permissions: ['privacy'] }).catch(() => false);
+const requestPrivacyPermission = async (): Promise<boolean> => {
+    try {
+        return await browser.permissions.request({ permissions: ['privacy'] });
+    } catch {
+        return false;
+    }
+};
 
 export const checkBrowserAutofillCapabilities = async (pendingBrowserAutofill: boolean): Promise<boolean> => {
     if (!BROWSER_AUTOFILL_SETTINGS.length) return false;
