@@ -1,17 +1,18 @@
 import type { FC, MouseEvent as ReactMouseEvent, ReactNode } from 'react';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { Maybe } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-const COPY_PASTE_NODE_WHITELIST = ['input', 'textarea'];
+const COPY_PASTE_NODE_WHITELIST = ['INPUT', 'TEXTAREA'];
 
 const matchNodeWhiteList = (target: EventTarget | null) => {
     if (!target || !(target instanceof Node)) {
         return false;
     }
-    return COPY_PASTE_NODE_WHITELIST.includes(target.nodeName.toLowerCase());
+    return COPY_PASTE_NODE_WHITELIST.includes(target.nodeName);
 };
 
 export type DesktopContextMenuItem = {
@@ -67,21 +68,23 @@ export type DesktopContextMenuItem = {
 };
 
 type ClientContextValue = {
-    isOpen: (id: string) => boolean;
-    open: (id: string) => (e: ReactMouseEvent) => void;
+    isOpen: (id: Maybe<string>) => boolean;
+    open: (e: ReactMouseEvent, id: string) => void;
     close: () => void;
     position: { top: number; left: number } | undefined;
 };
 
-const ContextMenuContext = createContext<ClientContextValue>({
-    isOpen: () => false,
-    open: () => noop,
-    close: noop,
-    position: undefined,
-});
+const ContextMenuContext = createContext<Maybe<ClientContextValue>>(undefined);
 
-export const useContextMenu = () => useContext(ContextMenuContext);
-export const useContextMenuOpen = (id: string) => useContextMenu().open(id);
+export const useContextMenu = () => {
+    const context = useContext(ContextMenuContext);
+    if (!context) {
+        throw new Error('useContextMenu must be used within a ContextMenuProvider');
+    }
+    return context;
+};
+
+export const useContextMenuOpen = () => useContextMenu().open;
 export const useContextMenuClose = () => useContextMenu().close;
 
 type Props = {
@@ -90,8 +93,12 @@ type Props = {
 };
 
 export const ContextMenuProvider: FC<Props> = ({ children, openDesktopContextMenu }) => {
-    const [idOpen, setIdOpen] = useState<string | undefined>(undefined);
-    const [position, setPosition] = useState<{ top: number; left: number }>();
+    const [contextMenu, setContextMenu] = useState<
+        Maybe<{
+            id: string;
+            position: { top: number; left: number };
+        }>
+    >(undefined);
 
     useEffect(() => {
         if (!openDesktopContextMenu) {
@@ -123,20 +130,21 @@ export const ContextMenuProvider: FC<Props> = ({ children, openDesktopContextMen
         return () => document.removeEventListener('contextmenu', genericDesktopContextMenuListener);
     }, []);
 
-    const isOpen = (id: string) => idOpen === id;
+    const isOpen = useCallback((id: Maybe<string>) => contextMenu?.id === id, [contextMenu?.id]);
 
-    const open = (id: string) => (event: ReactMouseEvent) => {
+    const open = useCallback((event: ReactMouseEvent, id: string) => {
         event.stopPropagation();
         event.preventDefault();
-        setIdOpen(id);
-        setPosition({ top: event.clientY, left: event.clientX });
-    };
+        setContextMenu({ id, position: { top: event.clientY, left: event.clientX } });
+    }, []);
 
-    const close = () => {
-        setIdOpen(undefined);
-    };
+    const close = useCallback(() => {
+        setContextMenu(undefined);
+    }, []);
 
     return (
-        <ContextMenuContext.Provider value={{ isOpen, open, close, position }}>{children}</ContextMenuContext.Provider>
+        <ContextMenuContext.Provider value={{ isOpen, open, close, position: contextMenu?.position }}>
+            {children}
+        </ContextMenuContext.Provider>
     );
 };

@@ -19,10 +19,11 @@ type Props = {
     onScrollEnd?: () => void;
     rowHeight: (index: number) => number;
     rowRenderer: ListRowRenderer;
+    containerRef?: RefObject<HTMLDivElement>;
 };
 
 const VirtualListRender: ForwardRefRenderFunction<List, Props> = (
-    { interpolationIndexes = [], rowCount, rowHeight, onScrollEnd, rowRenderer },
+    { interpolationIndexes = [], rowCount, rowHeight, onScrollEnd, rowRenderer, containerRef },
     virtualListRef
 ) => {
     const [shadows, setShadows] = useState({ top: false, bottom: false });
@@ -50,7 +51,7 @@ const VirtualListRender: ForwardRefRenderFunction<List, Props> = (
     }, [interpolationIndexes, rowCount]);
 
     return (
-        <div className="h-full scroll-outer-vertical">
+        <div ref={containerRef} className="h-full scroll-outer-vertical">
             <div
                 className={clsx(
                     'scroll-start-shadow pointer-events-none',

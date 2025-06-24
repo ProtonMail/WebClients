@@ -1,12 +1,10 @@
-import type { DragEvent, DragEventHandler } from 'react';
-import { memo, useRef } from 'react';
+import type { DragEvent, DragEventHandler, MouseEvent } from 'react';
+import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 import Marks from '@proton/components/components/text/Marks';
-import { useContextMenuOpen } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
-import { ItemsListContextMenu } from '@proton/pass/components/Item/List/ItemsListContextMenu';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { ItemIcon, ItemIconIndicators, SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
@@ -38,6 +36,7 @@ type Props = {
     onDragEnd?: DragEventHandler;
     onDragStart?: (event: DragEvent, item: DraggableItem) => void;
     onSelect: (item: ItemRevision, metaKey: boolean) => void;
+    onContextMenu?: (event: MouseEvent, item: ItemRevision) => void;
 };
 
 export const ItemsListItem = memo(
@@ -52,13 +51,10 @@ export const ItemsListItem = memo(
         onDragStart,
         onDragEnd,
         onSelect,
+        onContextMenu,
     }: Props) => {
         const { data, shareId, itemId } = item;
         const { heading, subheading } = presentListItem(item);
-
-        const ref = useRef<HTMLAnchorElement>(null);
-        const contextMenuId = `item-${itemId}`;
-        const openContextMenu = useContextMenuOpen(contextMenuId);
 
         const share = useSelector(selectShare(shareId));
         const { failed, optimistic } = useItemOptimisticState(shareId, itemId);
@@ -74,7 +70,6 @@ export const ItemsListItem = memo(
         return (
             <div className={clsx(bulk && 'px-1 py-0.5')}>
                 <ButtonLike
-                    ref={ref}
                     as="a"
                     href="#"
                     id={id}
@@ -95,7 +90,7 @@ export const ItemsListItem = memo(
                     }}
                     onDragStart={(evt: DragEvent) => canDrag && onDragStart?.(evt, { ID: id })}
                     onDragEnd={onDragEnd}
-                    onContextMenu={openContextMenu}
+                    onContextMenu={(evt: MouseEvent) => onContextMenu?.(evt, item)}
                 >
                     <div className={clsx('flex-nowrap flex w-full items-center', bulk ? 'px-2 py-1.5' : 'px-3 py-2')}>
                         <SafeItemIcon
@@ -173,7 +168,6 @@ export const ItemsListItem = memo(
                         </div>
                     </div>
                 </ButtonLike>
-                <ItemsListContextMenu id={contextMenuId} shareId={shareId} itemId={itemId} anchorRef={ref} />
             </div>
         );
     }

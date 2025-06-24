@@ -4,6 +4,7 @@ import type { List } from 'react-virtualized';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { useBulkEnabled, useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
+import { ItemsListContextMenu, useItemContextMenu } from '@proton/pass/components/Item/List/ItemsListContextMenu';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useItemDrag } from '@proton/pass/hooks/useItemDrag';
@@ -41,6 +42,10 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
     const bulkEnabled = useBulkEnabled();
     const { draggable, handleDragStart, handleDragEnd } = useItemDrag();
 
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
+
     useEffect(() => listRef.current?.scrollToRow(0), [filters.type, filters.sort, filters.selectedShareId]);
 
     const { interpolation, interpolationIndexes } = useMemo(
@@ -60,6 +65,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                 <VirtualList
                     interpolationIndexes={interpolationIndexes}
                     ref={listRef}
+                    containerRef={containerRef}
                     rowCount={interpolation.length}
                     rowHeight={(idx) => (interpolationIndexes.includes(idx) ? 28 : 54)}
                     rowRenderer={({ style, index, key }) => {
@@ -86,6 +92,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                                             onDragStart={handleDragStart}
                                             onDragEnd={handleDragEnd}
                                             onSelect={onSelect}
+                                            onContextMenu={onContextMenu}
                                         />
                                     </div>
                                 );
@@ -101,6 +108,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                     }}
                 />
             )}
+            {contextMenuItem !== undefined && <ItemsListContextMenu item={contextMenuItem} anchorRef={containerRef} />}
         </>
     );
 };
