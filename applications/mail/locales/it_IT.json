@@ -1582,6 +1582,33 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Crea cartella \"${ boldFolderName }"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "Move to Archive": [
+        "Sposta nell'archivio"
+      ],
+      "Move to Trash": [
+        "Sposta nel cestino"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Salva in ${ DRIVE_APP_NAME }"
+      ],
+      "Send unsubscribe email": [
+        "Invia un'email di annullamento dell'iscrizione"
+      ],
+      "Stop marking as read": [
+        "Smetti di segnare come letto"
+      ],
+      "Stop moving to Archive": [
+        "Smetti di spostare nell'archivio"
+      ],
+      "Stop moving to Trash": [
+        "Smetti di spostare nel cestino"
       ]
     },
     "action": {
@@ -6954,7 +6981,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8356,6 +8384,45 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "${ n } newsletter": [
+        "${ n } newsletter",
+        "${ n } newsletter"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } email il mese scorso",
+        "${ receivedMessagesCount } email il mese scorso"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** risultato trovato in ${ labelName }",
+        "**${ total }** risultati trovati in ${ labelName }"
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "Un'email di cancellazione verrà inviata a tuo nome."
+      ],
+      "Block sender": [
+        "Blocca mittente"
+      ],
+      "Message list": [
+        "Elenco dei messaggi"
+      ],
+      "Message view": [
+        "Visualizzazione del messaggio"
+      ],
+      "More info": [
+        "Altre informazioni"
+      ],
+      "No messages to show": [
+        "Nessun messaggio da mostrare"
+      ],
+      "Preferences updated": [
+        "Preferenze aggiornate"
+      ],
+      "Selection pane": [
+        "Riquadro di selezione"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Non ci sono messaggi da questo mittente nella tua posta in arrivo."
       ]
     },
     "info": {
@@ -9273,6 +9340,32 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ],
+      "Choose what to do instead": [
+        "Scegli che altro fare"
+      ],
+      "Enable filter": [
+        "Attiva il filtro"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Creazione della cartella ${ customFolderName } non riuscita"
+      ],
+      "Marked ${ unreadCount } message as read.": [
+        "${ unreadCount } messaggio é segnato come letto.",
+        "${ unreadCount } messaggi sono segnati come letti."
+      ],
+      "Message:": [
+        "Messaggio:"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } messaggio è spostato a ${ labelName }.",
+        "${ count } messaggi sono stati spostati in ${ labelName }."
+      ],
+      "Subject:": [
+        "Oggetto:"
+      ],
+      "The filter is disabled. ${ enableButton }": [
+        "Il filtro è disattivato. ${ enableButton }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9351,6 +9444,9 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Visualizza e gestisci qui gli abbonamenti alla newsletter e alla mailing list."
+      ],
+      "Newsletters you unsubscribe from will show up here.": [
+        "Le newsletter a cui annulli l'iscrizione appariranno qui."
       ]
     },
     "Landmarks": {
@@ -10566,6 +10662,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB di archiviazione cloud che ti consente di archiviare, sincronizzare e condividere i file facilmente. Protetto da crittografia end-to-end."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB di archiviazione cloud che ti consente di archiviare, sincronizzare e condividere i file facilmente. Protetto da crittografia end-to-end."
       ]
     },
     "new_plans: Subtext": {
@@ -10871,6 +10973,10 @@
         "Richiedi 2FA"
       ],
       "Support for ${ n } custom email domains": [
+        "Supporto per ${ n } domini email personalizzati"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Supporto per ${ n } dominio email personalizzato",
         "Supporto per ${ n } domini email personalizzati"
       ]
     },
@@ -11206,6 +11312,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Potrai utilizzare ${ planTitle } gratuitamente fino al termine del periodo di prova."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " visita il nostro ${ helpCenterLink } o ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Annulla in qualsiasi momento prima del ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "contatta il nostro team di supporto."
+      ],
+      "Continue": [
+        "Continua"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Approfitta delle funzionalità di sicurezza aziendali gratuite fino al ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "centro assistenza"
+      ],
+      "If you need help,": [
+        "Se hai bisogno di aiuto,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Puoi ancora annullare entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Puoi usare ${ planTitle } fino al termine del periodo di prova e non ti verrà addebitato nulla."
+      ],
+      "Your free trial has started": [
+        "La tua prova gratuita è iniziata."
       ]
     },
     "Online accounts": {
@@ -11462,6 +11598,12 @@
       ],
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Per i pagamenti SEPA è accettato solo l’euro. La tua valuta è stata modificata. Usa il selettore per ripristinare la tua scelta."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
       ]
     },
     "Payments.Error": {
@@ -12699,6 +12841,10 @@
       "VPN connection for ${ n } devices per user": [
         "Connessione VPN per ${ n } dispositivo per ogni utente",
         "Connessione VPN per ${ n } dispositivi per ogni utente"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "Connessione VPN per ${ n } dispositivo per ogni utente",
+        "Connessione VPN per ${ n } dispositivi per ogni utente"
       ]
     },
     "Subscription change warning": {
@@ -13375,6 +13521,15 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } rimosso"
+      ],
+      "The filter has been disabled": [
+        "Il filtro è stato disattivato."
+      ],
+      "The filter has been enabled": [
+        "Il filtro è stato attivato."
+      ],
+      "The filter is active again": [
+        "Il filtro è di nuovo attivo."
       ]
     },
     "Suffix": {
@@ -14505,6 +14660,20 @@
       ],
       "Your subscriptions in one place": [
         "I tuoi abbonamenti in un unico posto"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } messaggio",
+        "${ numMessages } messaggi"
+      ],
+      "No unsubscribed newsletters": [
+        "Nessuna newsletter annullata"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Non è possibile annullare l'iscrizione per questo mittente"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "La tua prova gratuita termina tra ${ trialDurationFormatted } giorno.",
+        "La tua prova gratuita termina tra ${ trialDurationFormatted } giorni."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15090,6 +15259,146 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Approfitta dell'offerta"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB di archiviazione"
+      ],
+      "200 GB storage": [
+        "200 GB di spazio di archiviazione"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB di spazio di archiviazione crittografato"
+      ],
+      "Add unlimited credit cards": [
+        "Aggiungi un numero illimitato di carte di credito"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Tutte le funzionalità premium di ${ BRAND_NAME } Mail, Pass, VPN, Drive e Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocca annunci, tracker e malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Gli sconti si basano sui prezzi mensili standard. Alla fine del ciclo di fatturazione, il tuo abbonamento si rinnoverà alla tariffa annuale standard."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Raddoppia la tua archiviazione crittografata e ottieni 1 TB per tutti i tuoi dati."
+      ],
+      "Encrypted password manager": [
+        "Gestore di password crittografato"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Ecco un regalo esclusivo per celebrare il nostro percorso insieme."
+      ],
+      "High speed streaming with VPN": [
+        "Streaming ad alta velocità con VPN"
+      ],
+      "of privacy": [
+        "di privacy"
+      ],
+      "Online document editor": [
+        "Editor di documenti online"
+      ],
+      "Online privacy for up to 2 people": [
+        "Privacy online per fino a 2 persone"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Privacy online per tutta la famiglia (fino a 6 utenti)"
+      ],
+      "Protect up to 10 devices": [
+        "Proteggi fino a 10 dispositivi"
+      ],
+      "Recover previous file versions": [
+        "Recupera versioni precedenti del file"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Risparmia alla grande sulle funzionalità premium di Drive con uno sconto a tempo limitato."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Risparmia alla grande sulle funzionalità premium di Mail con uno sconto a tempo limitato."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Risparmia alla grande sulle funzionalità premium di Pass con uno sconto a tempo limitato."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Risparmia alla grande sulle funzionalità premium di VPN con uno sconto a tempo limitato."
+      ],
+      "Save time with built-in 2FA": [
+        "Risparmia tempo con 2FA integrato"
+      ],
+      "Secure email with unlimited aliases": [
+        "Posta elettronica sicura con alias illimitati"
+      ],
+      "Select any server": [
+        "Seleziona qualsiasi server"
+      ],
+      "Share passwords easily": [
+        "Condividi password facilmente"
+      ],
+      "Short @pm.me address": [
+        "Indirizzo breve @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Guarda i tuoi contenuti preferiti"
+      ],
+      "thanks to you": [
+        "grazie a te"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Triplica la tua archiviazione crittografata e ottieni 3 TB per tutti i tuoi dati."
+      ],
+      "Unlimited folders, labels and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Use your own email domain": [
+        "Usa il tuo dominio di posta personalizzato"
+      ],
+      "years": [
+        "anni"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Offerta per l'anniversario"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mese",
+        "${ n } mesi"
+      ],
+      "/ month": [
+        "/mese"
+      ],
+      "12 months": [
+        "12 mesi"
+      ],
+      "15 months": [
+        "15 mesi"
+      ],
+      "24 months": [
+        "24 mesi"
+      ],
+      "30 months": [
+        "30 mesi"
+      ],
+      "for ${ durationDeal }": [
+        "per ${ durationDeal }"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ cycle } mesi il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ]
     }
   }

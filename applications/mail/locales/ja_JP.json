@@ -1577,6 +1577,12 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Move to Trash": [
+        "ごみ箱に移動"
+      ],
+      "Stop marking as read": [
+        "既読としてマークしない"
       ]
     },
     "action": {
@@ -6827,7 +6833,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8187,6 +8193,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "先月受信した${ receivedMessagesCount }件のメール"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "${ labelName } 内で **${ total }** 件見つかりました"
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "お客様に代わって、登録解除メールが送信されます。"
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "もし気持ちが変わったとしても、いつでも再び登録することができます。お別れするのは残念ですが！"
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "お客様の無料トライアルは月額サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
       ]
     },
     "info": {
@@ -9091,6 +9112,18 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ],
+      "Enable filter": [
+        "フィルターを有効にする"
+      ],
+      "Marked ${ unreadCount } message as read.": [
+        "${ unreadCount }件のメッセージを既読にしました。"
+      ],
+      "Message:": [
+        "メッセージ:"
+      ],
+      "The filter is disabled. ${ enableButton }": [
+        "フィルターが無効です: ${ enableButton }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10352,6 +10385,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "ファイルの保存、同期、共有を簡単に行える 200 GB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
       ]
     },
     "new_plans: Subtext": {
@@ -10650,6 +10686,9 @@
         "2段階認証が必要"
       ],
       "Support for ${ n } custom email domains": [
+        "${ n } 個のカスタムドメインメールアドレスのサポート"
+      ],
+      "Support for ${ n } custom email domain": [
         "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
@@ -12418,6 +12457,9 @@
       ],
       "VPN connection for ${ n } devices per user": [
         "ユーザーごとに ${ n } 台のデバイスへのVPN接続"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "ユーザーごとに ${ n } 台のデバイスでのVPN接続"
       ]
     },
     "Subscription change warning": {
@@ -13062,6 +13104,9 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } が削除されました"
+      ],
+      "The filter is active again": [
+        "フィルターが再度有効になりました"
       ]
     },
     "Suffix": {
@@ -14165,6 +14210,12 @@
       ],
       "Your subscriptions in one place": [
         "サブスクリプションを一元管理"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } 件のメッセージ"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "無料トライアルは${ trialDurationFormatted }日後に終了します"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14703,6 +14754,68 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "Add unlimited credit cards": [
+        "無制限のクレジットカードを追加する"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "割引は標準の月額料金に基づいています。支払いサイクルの終わりに、お客様のサブスクリプションは標準の年間料金で更新されます。"
+      ],
+      "Online document editor": [
+        "オンライン文書エディタ"
+      ],
+      "Online privacy for up to 2 people": [
+        "最大2人までのオンラインプライバシー"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムDrive機能をお得にご利用いただけます。"
+      ],
+      "Save time with built-in 2FA": [
+        "内蔵の2要素認証で時間を節約"
+      ],
+      "Share passwords easily": [
+        "パスワードを簡単に共有"
+      ],
+      "thanks to you": [
+        "ありがとうございます"
+      ],
+      "years": [
+        "年"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "記念セール"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } ヶ月"
+      ],
+      "15 months": [
+        "15 か月"
+      ]
+    },
+    "Onboarding Trial": {
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "${ trialEndsOnFormatted } まで無料のビジネスセキュリティ機能をお楽しみいただけます。"
+      ],
+      "help center": [
+        "ヘルプセンター"
+      ],
+      "Once your full subscription starts...": [
+        "有料サブスクリプションが開始されると…"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ]
     }
   }

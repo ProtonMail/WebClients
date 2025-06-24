@@ -1592,6 +1592,33 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Vytvořit složku ${ boldFolderName }"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "Move to Archive": [
+        "Přesunout do archivu"
+      ],
+      "Move to Trash": [
+        "Přesunout do koše"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Uložit na ${ DRIVE_APP_NAME }"
+      ],
+      "Send unsubscribe email": [
+        "Odeslat e-mail pro odhlášení"
+      ],
+      "Stop marking as read": [
+        "Ukončit označování jako přečtené"
+      ],
+      "Stop moving to Archive": [
+        "Ukončit přesouvání do archivu"
+      ],
+      "Stop moving to Trash": [
+        "Ukončit přesouvání do koše"
       ]
     },
     "action": {
@@ -7180,7 +7207,10 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8630,6 +8660,51 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "${ n } newsletter": [
+        "${ n } e-mailový zpravodaj",
+        "${ n } e-mailové zpravodaje",
+        "${ n } e-mailových zpravodajů",
+        "${ n } e-mailových zpravodajů"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } e-mail za poslední měsíc",
+        "${ receivedMessagesCount } e-maily za poslední měsíc",
+        "${ receivedMessagesCount } e-mailů za poslední měsíc",
+        "${ receivedMessagesCount } e-mailů za poslední měsíc"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** výsledek nalezen v ${ labelName }",
+        "**${ total }** výsledky nalezeny v ${ labelName }",
+        "**${ total }** výsledků nalezeno v ${ labelName }",
+        "**${ total }** výsledků nalezeno v ${ labelName }"
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "Vaším jménem bude odeslán e-mail o odhlášení odběru."
+      ],
+      "Block sender": [
+        "Blokovat odesílatele"
+      ],
+      "Message list": [
+        "Seznam zpráv"
+      ],
+      "Message view": [
+        "Zobrazení zpráv"
+      ],
+      "More info": [
+        "Více informací"
+      ],
+      "No messages to show": [
+        "Žádné zprávy k zobrazení"
+      ],
+      "Preferences updated": [
+        "Předvolby aktualizovány"
+      ],
+      "Selection pane": [
+        "Podokno výběru"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "V doručené poště nejsou žádné zprávy od tohoto odesílatele."
       ]
     },
     "info": {
@@ -9564,6 +9639,36 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správce)"
+      ],
+      "Choose what to do instead": [
+        "Zvolte, co místo toho udělat"
+      ],
+      "Enable filter": [
+        "Povolit filtr"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Vytvoření složky ${ customFolderName } selhalo"
+      ],
+      "Marked ${ unreadCount } message as read.": [
+        "${ unreadCount } zpráva označena jako přečtená.",
+        "${ unreadCount } zprávy označeny jako přečtené.",
+        "${ unreadCount } zpráv označeno jako přečtené.",
+        "${ unreadCount } zpráv označeno jako přečtené."
+      ],
+      "Message:": [
+        "Zpráva:"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } zpráva přesunuta do ${ labelName }.",
+        "${ count } zprávy přesunuty do ${ labelName }.",
+        "${ count } zpráv přesunuto do ${ labelName }.",
+        "${ count } zpráv přesunuto do ${ labelName }."
+      ],
+      "Subject:": [
+        "Předmět:"
+      ],
+      "The filter is disabled. ${ enableButton }": [
+        "Filtr je deaktivován. ${ enableButton }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9642,6 +9747,9 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Zde můžete zobrazit a spravovat přihlášení k odběru e-mailových zpravodajů a e-mailových seznamů."
+      ],
+      "Newsletters you unsubscribe from will show up here.": [
+        "E-mailové zpravodaje, z jejichž odběru se odhlásíte, se zobrazí zde."
       ]
     },
     "Landmarks": {
@@ -10921,6 +11029,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB úložného prostoru v cloudu, který vám umožní snadno ukládat, synchronizovat a sdílet soubory. Zabezpečeno koncovým šifrováním."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB úložného prostoru v cloudu, který vám umožní snadno ukládat, synchronizovat a sdílet soubory. Zabezpečeno koncovým šifrováním."
       ]
     },
     "new_plans: Subtext": {
@@ -11225,6 +11339,12 @@
         "Požadování 2FA"
       ],
       "Support for ${ n } custom email domains": [
+        "Podpora ${ n } vlastních e-mailových domén"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Podpora ${ n } vlastní e-mailové domény",
+        "Podpora ${ n } vlastních e-mailových domén",
+        "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén"
       ]
     },
@@ -11560,6 +11680,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "${ planTitle } budete moci bezplatně používat až do vypršení zkušební verze."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " navštivte naše ${ helpCenterLink } nebo ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Zrušit můžete kdykoli před ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "kontaktujte náš tým podpory"
+      ],
+      "Continue": [
+        "Pokračovat"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Užívejte si bezplatné funkce podnikového zabezpečení až do ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "centrum podpory"
+      ],
+      "If you need help,": [
+        "Pokud potřebujete pomoci,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Do 30 dnů můžete předplatné zrušit a získat poměrnou část peněz zpět."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Můžete používat ${ planTitle } až do skončení zkušební verze a nebudou vám účtovány žádné poplatky."
+      ],
+      "Your free trial has started": [
+        "Vaše bezplatná zkušební verze začala"
       ]
     },
     "Online accounts": {
@@ -11826,6 +11976,12 @@
       ],
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "V rámci SEPA je přijímáno pouze euro. Vaše měna byla změněna. Výběr můžete vrátit pomocí voliče."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Tato platební metoda se stane vaším novým výchozím způsobem pro všechna budoucí obnovení."
       ]
     },
     "Payments.Error": {
@@ -13129,6 +13285,12 @@
         "VPN připojení pro ${ n } zařízení na uživatele",
         "VPN připojení pro ${ n } zařízení na uživatele",
         "VPN připojení pro ${ n } zařízení na uživatele"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN připojení pro ${ n } zařízení na uživatele",
+        "VPN připojení pro ${ n } zařízení na uživatele",
+        "VPN připojení pro ${ n } zařízení na uživatele",
+        "VPN připojení pro ${ n } zařízení na uživatele"
       ]
     },
     "Subscription change warning": {
@@ -13869,6 +14031,15 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } byl odstraněn"
+      ],
+      "The filter has been disabled": [
+        "Filtr byl deaktivován"
+      ],
+      "The filter has been enabled": [
+        "Filtr byl povolen"
+      ],
+      "The filter is active again": [
+        "Filtr je opět aktivní"
       ]
     },
     "Suffix": {
@@ -15041,6 +15212,24 @@
       ],
       "Your subscriptions in one place": [
         "Vaše e-mailové odběry na jednom místě"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } zpráva",
+        "${ numMessages } zprávy",
+        "${ numMessages } zpráv",
+        "${ numMessages } zpráv"
+      ],
+      "No unsubscribed newsletters": [
+        "Žádné odhlášené e-mailové zpravodaje"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Odhlášení není pro tohoto odesílatele dostupné"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } den",
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny",
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dnů",
+        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dnů"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15720,6 +15909,148 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB prostoru"
+      ],
+      "200 GB storage": [
+        "200 GB prostoru"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB šifrovaného úložiště"
+      ],
+      "Add unlimited credit cards": [
+        "Přidejte neomezený počet platebních karet"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Všechny prémiové funkce ${ BRAND_NAME } Mail, Pass, VPN, Drive a Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokování reklam, sledovacích prvků a malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Slevy jsou založeny na standardních měsíčních cenách. Na konci fakturačního cyklu se vaše předplatné obnoví za standardní roční sazbu."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Zdvojnásobte své šifrované úložiště – získejte 1 TB pro všechna svá data"
+      ],
+      "Encrypted password manager": [
+        "Šifrovaný správce hesel"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Zde je exkluzivní dárek na oslavu naší společné cesty."
+      ],
+      "High speed streaming with VPN": [
+        "Vysokorychlostní streamování pomocí VPN"
+      ],
+      "of privacy": [
+        "soukromí"
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online soukromí až pro 2 osoby"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online soukromí pro celou rodinu (až 6 uživatelů)"
+      ],
+      "Protect up to 10 devices": [
+        "Chraňte až 10 zařízení"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Drive."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Mail."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Pass."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích VPN."
+      ],
+      "Save time with built-in 2FA": [
+        "Úspora času díky integrovanému 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Zabezpečený e-mail s neomezeným počtem aliasů"
+      ],
+      "Select any server": [
+        "Vyberte libovolný server"
+      ],
+      "Share passwords easily": [
+        "Snadné sdílení hesel"
+      ],
+      "Short @pm.me address": [
+        "Krátká adresa @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Streamujte svůj oblíbený obsah"
+      ],
+      "thanks to you": [
+        "díky vám"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Ztrojnásobte své šifrované úložiště – získejte 3 TB pro všechna svá data"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Use your own email domain": [
+        "Použijte svou vlastní e-mailovou doménu"
+      ],
+      "years": [
+        "let"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Výroční nabídka"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "/ month": [
+        "/ měsíc"
+      ],
+      "12 months": [
+        "12 měsíců"
+      ],
+      "15 months": [
+        "15 měsíců"
+      ],
+      "24 months": [
+        "24 měsíců"
+      ],
+      "30 months": [
+        "30 měsíců"
+      ],
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje každých ${ cycle } měsíců, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
       ]
     }
   }

@@ -1552,6 +1552,9 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Move to Trash": [
+        "Flyt til papirkurv"
       ]
     },
     "action": {
@@ -6767,7 +6770,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8104,6 +8108,30 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } e-mail i sidste måned",
+        "${ receivedMessagesCount } e-mails i sidste måned"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } ulæst",
+        "${ subscription.UnreadMessageCount } ulæste"
+      ],
+      "${ unreadCount } newsletter subscription": [
+        "${ unreadCount } ulæst nyhed",
+        "${ unreadCount } ulæste nyheder"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** resultat fundet i ${ labelName }",
+        "**${ total }** resultater fundet i ${ labelName }"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }.",
+        "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Dit planlagte abonnement starter ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
+        "Dit planlagte abonnement starter ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
       ]
     },
     "info": {
@@ -8985,6 +9013,18 @@
       ],
       "Your location": [
         "Din placering"
+      ],
+      "Marked ${ unreadCount } message as read.": [
+        "Markerede ${ unreadCount } besked som læst.",
+        "Markerede ${ unreadCount } beskeder som læst."
+      ],
+      "Moved ${ count } message to Archive.": [
+        "Flyttede ${ count } besked til arkiv",
+        "Flyttede ${ count } beskeder til arkiv"
+      ],
+      "Moved ${ count } message to Trash.": [
+        "Flyttede ${ count } besked til papirkurven.",
+        "Flyttede ${ count } beskeder til papirkurven."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11058,6 +11098,14 @@
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kuponen er gyldig til ${ couponRedemptions } fornyelse",
+        "Kuponen er gyldig til ${ couponRedemptions } fornyelser"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måned. Du kan annullere det når som helst.",
+        "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måneder. Du kan annullere det når som helst."
       ]
     },
     "Payments.Error": {
@@ -14042,6 +14090,10 @@
       ],
       "Your subscriptions in one place": [
         "Dine abonnementer ét sted"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } besked",
+        "${ numMessages } beskeder"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14207,6 +14259,10 @@
       "Servers in ${ numberOfCountries }+ country": [
         "Servere i ${ numberOfCountries }+ land",
         "Servere i ${ numberOfCountries }+ lande"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Auto-vælger fra ${ numberOfCountries } land",
+        "Auto-vælger fra ${ numberOfCountries } lande"
       ]
     },
     "vpn_2024: renew": {
@@ -14614,6 +14670,24 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dage"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } time",
+        "${ ceilHours } timer"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minutter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
       ]
     }
   }
