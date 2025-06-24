@@ -27,7 +27,7 @@ export const useListElements = ({
     page?: number;
     total?: number;
 }) => {
-    const elements = usePlaceholders(inputElements, loading, placeholderCount);
+    const elements = usePlaceholders({ inputElements, loading, expectedLength: placeholderCount });
     const isEmpty = elements.length === 0;
 
     const { stopELDTMetric } = useMailELDTMetric();
