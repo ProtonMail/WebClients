@@ -4,15 +4,14 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Dropdown, DropdownButton, Icon, useApi, useModalState, usePopperAnchor } from '@proton/components'
 import { Tooltip } from '@proton/atoms';
+import { Dropdown, DropdownButton, Icon, useApi, useModalState, usePopperAnchor } from '@proton/components';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { selectSnoozeDropdownState, selectSnoozeElement } from 'proton-mail/store/snooze/snoozeSliceSelectors';
 
-import type { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import type { Element } from '../../../../models/element';
 import { snoozeActions } from '../../../../store/snooze/snoozeSlice';
@@ -20,6 +19,7 @@ import { SOURCE_ACTION } from '../../useListTelemetry';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
+import { type SNOOZE_DURATION } from '../constant';
 import { sendSnoozeReport } from '../helpers/snoozeTelemetry';
 
 interface Props {
