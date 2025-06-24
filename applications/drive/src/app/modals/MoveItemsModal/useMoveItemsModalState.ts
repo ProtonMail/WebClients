@@ -2,14 +2,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { ModalStateProps } from '@proton/components';
-import type { NodeEntity } from '@proton/drive';
+import { type ModalStateProps, useModalTwoStatic } from '@proton/components';
 import { useDrive } from '@proton/drive';
 
 import { type DecryptedLink, useDriveEventManager, useTreeForModals } from '../../store';
 import useListNotifications from '../../store/_actions/useListNotifications';
 import { useSdkErrorHandler } from '../../utils/errorHandling/sdkErrorHandler';
-import { useCreateFolderModal } from '../CreateFolderModal';
+import { CreateFolderModal } from '../CreateFolderModal';
 
 export type UseMoveItemsModalStateProps = ModalStateProps & {
     shareId: string;
@@ -31,7 +30,7 @@ export const useMoveItemsModalState = ({
     const { drive, internal } = useDrive();
     const events = useDriveEventManager();
     const { createMovedItemsNotifications } = useListNotifications();
-    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
+    const [createFolderModal, showCreateFolderModal] = useModalTwoStatic(CreateFolderModal);
     const { handleError } = useSdkErrorHandler();
     const [targetFolderUid, setTargetFolderUid] = useState<string>();
 
@@ -61,12 +60,13 @@ export const useMoveItemsModalState = ({
                     } else {
                         failedIds.push(nodeId);
                     }
-                    createMovedItemsNotifications(selectedItems, successIds, failedIds);
                 }
             } catch (e) {
                 handleError(e as Error, c('Error').t`Failed to move items`, { itemsUId, targetId });
             }
         }
+
+        createMovedItemsNotifications(selectedItems, successIds, failedIds);
         volumeIdSet.forEach(async (volumeId) => {
             await events.pollEvents.volumes(volumeId);
         });
@@ -106,8 +106,8 @@ export const useMoveItemsModalState = ({
 
     const onTreeSelect = async (link: DecryptedLink) => {
         // TODO: change on FolderTree sdk migration
-        const folderNodeId = internal.generateNodeUid(link.volumeId, link.linkId);
-        setTargetFolderUid(folderNodeId);
+        const folderNodeUid = internal.generateNodeUid(link.volumeId, link.linkId);
+        setTargetFolderUid(folderNodeUid);
     };
 
     const handleSubmit = async () => {
@@ -115,7 +115,7 @@ export const useMoveItemsModalState = ({
         onClose?.();
     };
 
-    const createFolder = async (selectedItemParentLinkId?: string) => {
+    const createNewFolder = async (selectedItemParentLinkId?: string) => {
         if (rootItems.length > 1 && selectedItemParentLinkId === undefined) {
             return;
         }
@@ -128,12 +128,12 @@ export const useMoveItemsModalState = ({
 
         showCreateFolderModal({
             parentFolderUid: targetLinkId,
-            onCreateDone: async (newFolder: NodeEntity) => {
-                setTargetFolderUid(newFolder.uid);
+            onCreateDone: async (newFolderUid: string) => {
+                setTargetFolderUid(newFolderUid);
 
                 // After creating the folder we want to expand its parent so it shows in the tree
-                const { nodeId: parentFooderNodeId } = internal.splitNodeUid(newFolder.parentUid || newFolder.uid);
-                expand(parentFooderNodeId);
+                const { nodeId } = internal.splitNodeUid(targetLinkId);
+                expand(nodeId);
             },
         });
     };
@@ -144,12 +144,12 @@ export const useMoveItemsModalState = ({
         treeSelectedFolder,
         onTreeSelect,
         handleSubmit,
-        createFolder,
         toggleExpand,
         createFolderModal,
         targetFolderUid,
         selectedItems,
         onClose,
+        createFolder: createNewFolder,
         ...modalProps,
     };
 };

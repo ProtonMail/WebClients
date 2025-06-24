@@ -14,19 +14,33 @@ import {
     useFormErrors,
     useModalTwoStatic,
 } from '@proton/components';
+import { useDrive } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
+import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import { formatLinkName, validateLinkNameField } from '../../store';
+import { CreateFolderModal } from '../../modals/CreateFolderModal';
+import { getIsPublicContext } from '../../utils/getIsPublicContext';
+import { validateLinkNameField } from '../../utils/validation/validation';
+
+const formatLinkName = (str: string) => str.trim();
 
 interface Props {
     onClose?: () => void;
     onCreateDone?: (folderId: string) => void;
-    folder: { shareId: string; linkId: string };
-    createFolder: (abortSignal: AbortSignal, shareId: string, parentLinkId: string, name: string) => Promise<string>;
+    folder?: { shareId: string; linkId: string };
+    createFolder?: (abortSignal: AbortSignal, shareId: string, parentLinkId: string, name: string) => Promise<string>;
+    parentFolderUid?: string;
 }
 
-const CreateFolderModal = ({ createFolder, onClose, folder, onCreateDone, ...modalProps }: Props & ModalStateProps) => {
+const CreateFolderModalDeprecated = ({
+    createFolder,
+    onClose,
+    folder,
+    onCreateDone,
+    parentFolderUid,
+    ...modalProps
+}: Props & ModalStateProps) => {
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
@@ -54,13 +68,15 @@ const CreateFolderModal = ({ createFolder, onClose, folder, onCreateDone, ...mod
             return;
         }
 
-        const folderId = await createFolder(
-            new AbortController().signal,
-            parentFolder.shareId,
-            parentFolder.linkId,
-            formattedName
-        );
-        onCreateDone?.(folderId);
+        if (createFolder) {
+            const folderId = await createFolder(
+                new AbortController().signal,
+                parentFolder.shareId,
+                parentFolder.linkId,
+                formattedName
+            );
+            onCreateDone?.(folderId);
+        }
         onClose?.();
     };
 
@@ -100,7 +116,17 @@ const CreateFolderModal = ({ createFolder, onClose, folder, onCreateDone, ...mod
     );
 };
 
-export default CreateFolderModal;
 export const useCreateFolderModal = () => {
-    return useModalTwoStatic(CreateFolderModal);
+    const useSDKModal = useFlag('DriveWebSDKCreateFolderModal');
+    const isPublic = getIsPublicContext();
+    const { drive } = useDrive();
+    const shouldUseSDK = useSDKModal && !isPublic;
+
+    const [modal, showModal] = useModalTwoStatic(shouldUseSDK ? CreateFolderModal : CreateFolderModalDeprecated);
+    const handleShowModal = async ({ folder, ...rest }: Props) => {
+        let parentFolderUid = folder ? await drive.getNodeUid(folder.shareId, folder.linkId) : undefined;
+        return showModal({ folder, parentFolderUid, ...rest });
+    };
+
+    return [modal, handleShowModal] as const;
 };
