@@ -5,21 +5,27 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
-import { type NodeEntity, useDrive } from '@proton/drive';
+import { useDrive } from '@proton/drive';
 
 import { formatLinkName, useDriveEventManager, validateLinkNameField } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/sdkErrorHandler';
 
 export type UseCreateFolderModalStateProps = ModalStateProps & {
-    parentFolderUid: string;
-    onCreateDone?: (folder: NodeEntity) => void;
-    onClose?: () => void;
+    parentFolderUid?: string;
+    onCreateDone?: (folderUid: string) => void;
+
+    // Here only for retro compatibility, should be removed once the SDK migration is done
+    folder?: { shareId: string; linkId: string };
+    createFolder?: (abortSignal: AbortSignal, shareId: string, parentLinkId: string, name: string) => Promise<string>;
 };
 
 export const useCreateFolderModalState = ({
     parentFolderUid,
     onCreateDone,
     onClose,
+    // Here only for retro compatibility, should be removed once the SDK migration is done
+    createFolder,
+    folder,
     ...modalProps
 }: UseCreateFolderModalStateProps) => {
     const [folderName, setFolderName] = useState('');
@@ -64,7 +70,8 @@ export const useCreateFolderModalState = ({
                 type: 'success',
                 text: c('Notification').jt`"${name}" created successfully`,
             });
-            onCreateDone?.(newFolder.value);
+
+            onCreateDone?.(newFolder.value.uid);
         } else {
             // TODO: handle the DegradedNode case, we might still have the data we need to rename
             // In theory we want to show error.message to the user but the .catch case will not always fire if !newFolder?.ok
