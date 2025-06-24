@@ -162,6 +162,7 @@ const MessageBody = ({
                         onReady={onIframeReady}
                         onFocus={onFocusIframe}
                         onMessageImageLoadError={handleMessageImageLoadError}
+                        theme={theme}
                     />
                     <MessageBodyPrint isPrint={isPrint} iframeRef={iframeRef} message={message} labelID={labelID} />
                     {linkModal}

@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
 import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import MessageBodyImages from '@proton/mail-renderer/components/MessageBodyImages';
 import getIframeSandboxAttributes from '@proton/mail-renderer/helpers/getIframeSandboxAttributes';
@@ -34,6 +34,7 @@ interface Props {
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
     onFocus?: () => void;
     onMessageImageLoadError: OnMessageImageLoadError;
+    theme: ThemeContextInterface;
 }
 
 const MessageBodyIframe = ({
@@ -51,9 +52,8 @@ const MessageBodyIframe = ({
     onReady,
     onMessageImageLoadError,
     onFocus,
+    theme,
 }: Props) => {
-    const theme = useTheme();
-
     useSyncIframeStyles(iframeRef.current?.contentWindow?.document.documentElement, document.documentElement);
 
     const { initStatus, iframeRootDivRef } = useInitIframeContent({
@@ -65,6 +65,7 @@ const MessageBodyIframe = ({
         isPlainText,
         onReady,
         isPrint,
+        theme,
     });
 
     const { showToggle, iframeToggleDiv, showBlockquote, setShowBlockquote } = useIframeShowBlockquote({
