@@ -2715,6 +2715,9 @@
       "City": [
         "Mesto"
       ],
+      "Class": [
+        "Trieda"
+      ],
       "Code": [
         "Kód"
       ],
@@ -2804,6 +2807,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Lekár"
       ],
       "Domain": [
         "Doména"
@@ -2913,6 +2919,9 @@
       "Holder Name": [
         "Meno vlastníka"
       ],
+      "Hospital": [
+        "Nemocnica"
+      ],
       "Host": [
         "Hostiteľ"
       ],
@@ -2976,6 +2985,9 @@
       "Issuing Country": [
         "Vydávajúca krajina"
       ],
+      "Issuing State/Country": [
+        "Štát/Krajina vydania"
+      ],
       "Item ID": [
         "ID položky"
       ],
@@ -2987,6 +2999,9 @@
       ],
       "Key fingerprint": [
         "Identifikátor kľúča"
+      ],
+      "Key type": [
+        "Typ kľúča"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klávesová skratka: ${ shortcut }"
@@ -3021,6 +3036,9 @@
       "License number": [
         "Licenčné číslo"
       ],
+      "License Number": [
+        "Licenčné číslo"
+      ],
       "LinkedIn account": [
         "Účet LinkedIn"
       ],
@@ -3051,17 +3069,29 @@
       "max views reached": [
         "dosiahnutý max. počet zobrazení"
       ],
+      "Medical Conditions": [
+        "Zdravotný stav"
+      ],
       "Medical Record": [
         "Zdravotný záznam"
       ],
+      "Medications": [
+        "Lieky"
+      ],
       "Member ID": [
         "ID člena"
+      ],
+      "Member Name": [
+        "Meno člena"
       ],
       "Members": [
         "Členovia"
       ],
       "Membership": [
         "Členstvo"
+      ],
+      "Membership ID": [
+        "ID členstva"
       ],
       "Middle name": [
         "Stredné meno"
@@ -3138,6 +3168,9 @@
       "Organization": [
         "Organizácia"
       ],
+      "Organization Name": [
+        "Názov organizácie"
+      ],
       "Other": [
         "Iné"
       ],
@@ -3170,6 +3203,9 @@
       ],
       "Passwords": [
         "Heslá"
+      ],
+      "Patient Name": [
+        "Meno pacienta"
       ],
       "Pause list": [
         "Zoznam pozastavených"
@@ -3245,6 +3281,9 @@
       ],
       "Recent": [
         "Nedávne"
+      ],
+      "Record Number": [
+        "Číslo záznamu"
       ],
       "Reddit handle": [
         "Používateľské meno Reddit"
@@ -3398,6 +3437,9 @@
       ],
       "Theme": [
         "Motív"
+      ],
+      "Tier/Level": [
+        "Úroveň členstva"
       ],
       "Tier/Status": [
         "Úroveň/Stav"
@@ -3716,6 +3758,18 @@
       ],
       "Add note": [
         "Pridať poznámku"
+      ],
+      "Add password": [
+        "Pridať heslo"
+      ],
+      "Add private key": [
+        "Pridať súkromný kľúč"
+      ],
+      "Add public key": [
+        "Pridať verejný kľúč"
+      ],
+      "Add SSID": [
+        "Pridať SSID"
       ],
       "Add text": [
         "Pridať text"
@@ -4387,6 +4441,14 @@
       ],
       "URL is invalid": [
         "URL je neplatná"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Presunúť položku do",
+        "Presunúť položky do",
+        "Presunúť položky do",
+        "Presunúť položky do"
       ]
     },
     "Warning": {
