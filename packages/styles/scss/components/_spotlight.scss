@@ -60,6 +60,10 @@
 		border-radius: var(--border-radius-md);
 		color: var(--text-norm);
 		background-color: var(--background-norm);
+
+		&--center {
+			padding-inline: 1.5em;
+		}
 	}
 
 	&-footer {
