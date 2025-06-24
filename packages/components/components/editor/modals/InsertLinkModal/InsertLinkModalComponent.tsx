@@ -4,7 +4,6 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href, Input } from '@proton/atoms';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Form from '@proton/components/components/form/Form';
@@ -169,9 +168,9 @@ const InsertLinkModalComponent = ({
                     <Button onClick={modalStateProps.onClose} data-testid="insert-link:cancel">
                         {c('Action').t`Cancel`}
                     </Button>
-                    <PrimaryButton type="submit" disabled={!canSubmit}>
+                    <Button color="norm" type="submit" disabled={!canSubmit}>
                         {c('Action').t`Insert`}
-                    </PrimaryButton>
+                    </Button>
                 </ModalTwoFooter>
             </ModalTwo>
             {linkModal}

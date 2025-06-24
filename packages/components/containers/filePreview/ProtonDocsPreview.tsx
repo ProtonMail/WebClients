@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import { Button } from '@proton/atoms';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';
@@ -47,13 +47,14 @@ export const ProtonDocsPreview: FC<Props> = ({ isPublic, isPublicDocsAvailable, 
             {subtext && <h3 className="pb-1">{subtext}</h3>}
 
             {isPublic && onOpenInDocs && (
-                <PrimaryButton
+                <Button
+                    color="norm"
                     size={!viewportWidth['<=small'] ? 'large' : undefined}
                     className="text-bold mt-8"
                     onClick={onOpenInDocs}
                 >
                     {getOpenInDocsString({ type: 'document', isNative: false })}
-                </PrimaryButton>
+                </Button>
             )}
         </div>
     );

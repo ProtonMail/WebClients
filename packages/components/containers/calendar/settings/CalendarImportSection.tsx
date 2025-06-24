@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { EasySwitchOauthImportButton, EasySwitchProvider } from '@proton/activation';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
+import { Button } from '@proton/atoms';
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
@@ -71,13 +71,14 @@ const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
                 </EasySwitchProvider>
             )}
 
-            <PrimaryButton
+            <Button
+                color="norm"
                 className="mb-2"
                 onClick={handleManualImport}
                 disabled={!hasNonDelinquentScope || !hasActiveCalendars}
             >
                 {c('Action').t`Import from ICS`}
-            </PrimaryButton>
+            </Button>
         </SettingsSection>
     );
 };

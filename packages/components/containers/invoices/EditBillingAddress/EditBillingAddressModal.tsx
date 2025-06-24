@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { changeBillingAddress } from '@proton/account';
 import { Button } from '@proton/atoms';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -180,7 +179,8 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
 
             <ModalTwoFooter>
                 <Button onClick={props.onClose}>{c('Action').t`Cancel`}</Button>
-                <PrimaryButton
+                <Button
+                    color="norm"
                     type="submit"
                     form="billing-address-form"
                     onClick={() => {
@@ -191,7 +191,7 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
                         void withLoading(handleSubmit());
                     }}
                     loading={loading}
-                >{c('Action').t`Save`}</PrimaryButton>
+                >{c('Action').t`Save`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

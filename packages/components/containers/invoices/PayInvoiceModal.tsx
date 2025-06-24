@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import { Button } from '@proton/atoms';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Input from '@proton/components/components/input/Input';
@@ -19,9 +19,13 @@ import { useChargebeeContext } from '@proton/components/payments/client-extensio
 import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import type { Invoice } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, checkInvoice, getPaymentsVersion } from '@proton/payments';
-import { type Currency } from '@proton/payments';
-import { getHasSomeVpnPlan } from '@proton/payments';
+import {
+    type Currency,
+    PAYMENT_METHOD_TYPES,
+    checkInvoice,
+    getHasSomeVpnPlan,
+    getPaymentsVersion,
+} from '@proton/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -185,9 +189,15 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             paymentFacade.methods.loading || (!paymentFacade.userCanTriggerSelected && amountDue > 0);
 
         return (
-            <PrimaryButton loading={loading} disabled={disablePayButton} type="submit" data-testid="pay-invoice-button">
+            <Button
+                color="norm"
+                loading={loading}
+                disabled={disablePayButton}
+                type="submit"
+                data-testid="pay-invoice-button"
+            >
                 {c('Action').t`Pay`}
-            </PrimaryButton>
+            </Button>
         );
     })();
 

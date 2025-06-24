@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import FileButton from '@proton/components/components/button/FileButton';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
@@ -123,14 +122,15 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
             <ModalTwoFooter>
                 <Button type="reset" data-testid="insert-image:cancel" onClick={onClose}>{c('Action')
                     .t`Cancel`}</Button>
-                <PrimaryButton
+                <Button
+                    color="norm"
                     type="submit"
                     disabled={imageState !== ImageState.Ok}
                     data-testid="insert-image:save"
                     loading={isImageLoading}
                 >
                     {c('Action').t`Save`}
-                </PrimaryButton>
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

@@ -10,7 +10,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    PrimaryButton,
     useActiveBreakpoint,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
@@ -136,14 +135,15 @@ export const MoveItemsModalView = ({
                                     <Button type="reset" disabled={loading} autoFocus>
                                         {c('Action').t`Close`}
                                     </Button>
-                                    <PrimaryButton
+                                    <Button
+                                        color="norm"
                                         className="ml-4"
                                         loading={loading}
                                         type="submit"
                                         disabled={isMoveDisabled}
                                     >
                                         {c('Action').t`Move`}
-                                    </PrimaryButton>
+                                    </Button>
                                 </div>
                             </div>
                         </ModalTwoFooter>

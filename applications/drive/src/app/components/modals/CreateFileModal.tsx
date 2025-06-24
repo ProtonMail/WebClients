@@ -11,7 +11,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    PrimaryButton,
     useFormErrors,
     useModalTwoStatic,
 } from '@proton/components';
@@ -89,9 +88,9 @@ const CreateFileModal = ({ onClose, folder, ...modalProps }: Props & ModalStateP
                 <Button type="button" onClick={onClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton type="submit" loading={loading}>
+                <Button color="norm" type="submit" loading={loading}>
                     {c('Action').t`Create`}
-                </PrimaryButton>
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
