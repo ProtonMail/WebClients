@@ -24,6 +24,8 @@ export const getUpgradePath = ({
     target,
     coupon,
     cycle,
+    minimumCycle,
+    maximumCycle,
 }: {
     user?: UserModel;
     plan?: PLANS;
@@ -33,6 +35,8 @@ export const getUpgradePath = ({
     target?: 'compare' | 'checkout';
     coupon?: COUPON_CODES;
     cycle?: CYCLE;
+    minimumCycle?: CYCLE;
+    maximumCycle?: CYCLE;
 }) => {
     const params = new URLSearchParams();
     if (plan) {
@@ -46,6 +50,12 @@ export const getUpgradePath = ({
     }
     if (cycle) {
         params.set('cycle', cycle.toString());
+    }
+    if (minimumCycle) {
+        params.set('minimumCycle', minimumCycle.toString());
+    }
+    if (maximumCycle) {
+        params.set('maximumCycle', maximumCycle.toString());
     }
 
     if (!user || user.isFree) {
