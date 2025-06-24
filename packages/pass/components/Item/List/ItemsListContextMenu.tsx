@@ -1,186 +1,168 @@
-import type { RefObject } from 'react';
-import { type FC } from 'react';
+import type { MouseEvent } from 'react';
+import { type FC, type RefObject, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
-import ContextMenuButton from '@proton/components/components/contextMenu/ContextMenuButton';
-import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import { ContextMenu } from '@proton/pass/components/ContextMenu/ContextMenu';
-import { useContextMenuClose } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
+import type { ContextMenuElement, ContextMenuItem } from '@proton/pass/components/ContextMenu/ContextMenuItems';
+import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
-import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
-import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { useOptimisticItem } from '@proton/pass/hooks/useItem';
 import { itemPinIntent, itemUnpinIntent } from '@proton/pass/store/actions';
-import type { Item } from '@proton/pass/types';
+import type { Item, ItemRevision, Maybe } from '@proton/pass/types';
+import type { ObfuscatedItemProperty } from '@proton/pass/types/data/obfuscation';
 
-type LoginProps = { login: Item<'login'> };
+const getItemId = (item: ItemRevision) => `item-${item.itemId}`;
 
-const LoginContextMenu: FC<LoginProps> = ({ login }) => {
-    const close = useContextMenuClose();
-    const copyToClipboard = useCopyToClipboard();
-    const {
-        content: { itemUsername, itemEmail, password },
-    } = useDeobfuscatedItem(login);
-
-    const handleCopy = async (value: string) => {
-        await copyToClipboard(value);
-        close();
-    };
-
-    // Prevent adding an empty separator if nothing to copy
-    if (!itemUsername && !itemEmail && !password) {
-        return null;
+const isEmpty = (value: Maybe<string | ObfuscatedItemProperty>) => {
+    if (value === undefined) {
+        return true;
     }
 
-    return (
-        <>
-            {!!itemUsername && (
-                <ContextMenuButton
-                    icon="user"
-                    name={c('Action').t`Copy username`}
-                    action={() => handleCopy(itemUsername)}
-                />
-            )}
-            {!!itemEmail && (
-                <ContextMenuButton
-                    icon="envelope"
-                    name={c('Action').t`Copy email`}
-                    action={() => handleCopy(itemEmail)}
-                />
-            )}
-            {!!password && (
-                <ContextMenuButton icon="key" name={c('Action').t`Copy password`} action={() => handleCopy(password)} />
-            )}
-            <ContextSeparator />
-        </>
-    );
-};
-
-type NoteProps = { note: Item<'note'> };
-
-const NoteContextMenu: FC<NoteProps> = ({ note: noteItem }) => {
-    const close = useContextMenuClose();
-    const copyToClipboard = useCopyToClipboard();
-    const {
-        metadata: { note },
-    } = useDeobfuscatedItem(noteItem);
-
-    if (!note) {
-        return null;
+    if (typeof value === 'string') {
+        return value.length === 0;
     }
 
-    const handleCopy = async (value: string) => {
-        await copyToClipboard(value);
-        close();
-    };
-
-    return (
-        <>
-            <ContextMenuButton icon="key" name={c('Action').t`Copy note content`} action={() => handleCopy(note)} />
-            <ContextSeparator />
-        </>
-    );
+    return value.m.length === 0 && value.v.length === 0;
 };
 
-type CreditCardProps = { creditCard: Item<'creditCard'> };
-
-const CreditCardContextMenu: FC<CreditCardProps> = ({ creditCard }) => {
-    const close = useContextMenuClose();
-    const copyToClipboard = useCopyToClipboard();
-    const {
-        content: { cardholderName, number, expirationDate, verificationNumber },
-    } = useDeobfuscatedItem(creditCard);
-
-    const handleCopy = async (value: string) => {
-        await copyToClipboard(value);
-        close();
-    };
-
-    // Prevent adding an empty separator if nothing to copy
-    if (!cardholderName && !number && !expirationDate && !verificationNumber) {
-        return null;
+const getItemCopyButtons = (item: Item): ContextMenuItem[] => {
+    switch (item.type) {
+        case 'login':
+            return [
+                {
+                    type: 'button',
+                    icon: 'user',
+                    name: c('Action').t`Copy username`,
+                    copy: item.content.itemUsername,
+                },
+                { type: 'button', icon: 'envelope', name: c('Action').t`Copy email`, copy: item.content.itemEmail },
+                { type: 'button', icon: 'key', name: c('Action').t`Copy password`, copy: item.content.password },
+            ];
+        case 'creditCard':
+            return [
+                {
+                    type: 'button',
+                    icon: 'user',
+                    name: c('Action').t`Copy name on card`,
+                    copy: item.content.cardholderName,
+                },
+                {
+                    type: 'button',
+                    icon: 'credit-card',
+                    name: c('Action').t`Copy card number`,
+                    copy: item.content.number,
+                },
+                {
+                    type: 'button',
+                    icon: 'calendar-today',
+                    name: c('Action').t`Copy expiration date`,
+                    copy: item.content.expirationDate,
+                },
+                {
+                    type: 'button',
+                    icon: 'shield',
+                    name: c('Action').t`Copy security code`,
+                    copy: item.content.verificationNumber,
+                },
+            ];
+        case 'note':
+            return [{ type: 'button', icon: 'key', name: c('Action').t`Copy note content`, copy: item.metadata.note }];
+        default:
+            return [];
     }
-
-    return (
-        <>
-            {!!cardholderName && (
-                <ContextMenuButton
-                    icon="user"
-                    name={c('Action').t`Copy name on card`}
-                    action={() => handleCopy(cardholderName)}
-                />
-            )}
-            {!!number && (
-                <ContextMenuButton
-                    icon="credit-card"
-                    name={c('Action').t`Copy card number`}
-                    action={() => handleCopy(number)}
-                />
-            )}
-            {!!expirationDate && (
-                <ContextMenuButton
-                    icon="calendar-today"
-                    name={c('Action').t`Copy expiration date`}
-                    action={() => handleCopy(expirationDate)}
-                />
-            )}
-            {!!verificationNumber && (
-                <ContextMenuButton
-                    icon="shield"
-                    name={c('Action').t`Copy security code`}
-                    action={() => handleCopy(verificationNumber)}
-                />
-            )}
-            <ContextSeparator />
-        </>
-    );
 };
 
-type Props = { id: string; shareId: string; itemId: string; anchorRef: RefObject<HTMLElement> };
+const getItemActionButtons = (
+    handleEdit: () => void,
+    handleMove: () => void,
+    handlePinClick: () => void,
+    handleTrash: () => void
+): ContextMenuItem[] => {
+    return [
+        {
+            type: 'button',
+            icon: 'pen',
+            name: c('Action').t`Edit`,
+            action: handleEdit,
+        },
+        {
+            type: 'button',
+            icon: 'folder-arrow-in',
+            name: c('Action').t`Move to another vault`,
+            action: handleMove,
+        },
+        {
+            type: 'button',
+            icon: 'pin-angled',
+            name: c('Action').t`Pin`,
+            action: handlePinClick,
+        },
+        {
+            type: 'button',
+            icon: 'pass-trash',
+            name: c('Action').t`Move to trash`,
+            action: handleTrash,
+        },
+    ];
+};
 
-export const ItemsListContextMenu: FC<Props> = ({ id, shareId, itemId, anchorRef }) => {
+type Props = { item: ItemRevision; anchorRef: RefObject<HTMLElement> };
+
+export const ItemsListContextMenu: FC<Props> = ({ item, anchorRef }) => {
     const scope = useItemScope();
     const { selectItem } = useNavigationActions();
     const itemActions = useItemsActions();
-    const close = useContextMenuClose();
-    const item = useOptimisticItem(shareId, itemId);
     const dispatch = useDispatch();
+
+    const { itemId, shareId } = item;
+    const id = getItemId(item);
 
     if (!item) {
         return null;
     }
 
-    const withClose = (fn: () => void) => () => {
-        fn();
-        close();
-    };
+    const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', scope });
+    const handleMove = () => itemActions.move(item, VaultSelectMode.Writable);
+    const handlePinClick = () => dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }));
+    const handleTrash = () => itemActions.trash(item);
 
-    const handleEdit = withClose(() => selectItem(shareId, itemId, { view: 'edit', scope }));
-    const handleMove = withClose(() => itemActions.move(item, VaultSelectMode.Writable));
-    const handlePinClick = withClose(() =>
-        dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }))
-    );
-    const handleTrash = withClose(() => itemActions.trash(item));
+    const elements: ContextMenuElement[] = getItemCopyButtons(item.data).filter(({ copy }) => !isEmpty(copy));
+
+    if (elements.length > 0) {
+        elements.push({ type: 'separator' });
+    }
+
+    elements.push(...getItemActionButtons(handleEdit, handleMove, handlePinClick, handleTrash));
 
     return (
-        <ContextMenu id={id} anchorRef={anchorRef}>
-            {item.data.type === 'login' && <LoginContextMenu login={item.data} />}
-            {item.data.type === 'note' && <NoteContextMenu note={item.data} />}
-            {item.data.type === 'creditCard' && <CreditCardContextMenu creditCard={item.data} />}
-
-            <ContextMenuButton icon="pen" name={c('Action').t`Edit`} action={handleEdit} />
-            <ContextMenuButton icon="folder-arrow-in" name={c('Action').t`Move to another vault`} action={handleMove} />
-            <ContextMenuButton
-                icon="pin-angled"
-                name={item.pinned ? c('Action').t`Unpin` : c('Action').t`Pin`}
-                action={handlePinClick}
-            />
-            <ContextMenuButton icon="pass-trash" name={c('Action').t`Move to trash`} action={handleTrash} />
-        </ContextMenu>
+        <ContextMenu
+            key={id} // Force recreate on item change to recompute size
+            id={id}
+            anchorRef={anchorRef}
+            elements={elements}
+        />
     );
+};
+
+export const useItemContextMenu = () => {
+    const [item, setItem] = useState<Maybe<ItemRevision>>(undefined);
+    const { open, isOpen } = useContextMenu();
+
+    useEffect(() => {
+        // isOpen(undefined) means it's closed
+        if (isOpen(undefined)) {
+            setItem(undefined);
+        }
+    }, [isOpen]);
+
+    const onContextMenu = (event: MouseEvent, item: ItemRevision) => {
+        setItem(item);
+        open(event, getItemId(item));
+    };
+
+    return { item, onContextMenu };
 };
