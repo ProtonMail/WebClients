@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ImportType } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, PrimaryButton } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
 import StepProductsRowItem from '../StepProducts/StepProductsRowItem';
 import StepPrepareCalendarSummary from './StepPrepareOAuthCalendarSummary';
@@ -85,8 +85,8 @@ const StepPrepare = () => {
                 <Button shape="outline" onClick={handleCancel}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton onClick={handleSubmit} disabled={hasErrors || allCheckboxUnselected}>{c('Action')
-                    .t`Start import`}</PrimaryButton>
+                <Button color="norm" onClick={handleSubmit} disabled={hasErrors || allCheckboxUnselected}>{c('Action')
+                    .t`Start import`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

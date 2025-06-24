@@ -2,7 +2,7 @@ import type { ReactElement, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Price, { type Props as PriceProps } from '@proton/components/components/price/Price';
 import { PLANS } from '@proton/payments';
@@ -78,7 +78,8 @@ const PlanCard = ({
         }
         if (onSelect && action) {
             return (
-                <PrimaryButton
+                <Button
+                    color="norm"
                     onClick={() => onSelect(planName)}
                     disabled={disabled}
                     className="w-full"
@@ -86,7 +87,7 @@ const PlanCard = ({
                     data-testid={`select-${planName}`}
                 >
                     {action}
-                </PrimaryButton>
+                </Button>
             );
         }
         return null;

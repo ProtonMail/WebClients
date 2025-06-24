@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 
@@ -28,13 +28,14 @@ const SignatureIssue = ({
                     <div className="mt-4 mb-8">{signatureConfirmation}</div>
                 </div>
                 <div className="text-center">
-                    <PrimaryButton
+                    <Button
+                        color="norm"
                         size={!viewportWidth['<=small'] ? 'large' : undefined}
                         className="text-bold"
                         onClick={onClick}
                     >
                         {c('Action').t`Show preview`}
-                    </PrimaryButton>
+                    </Button>
                 </div>
             </div>
         </div>
