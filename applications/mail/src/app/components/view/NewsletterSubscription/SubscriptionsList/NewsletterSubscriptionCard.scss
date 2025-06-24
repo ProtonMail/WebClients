@@ -2,18 +2,16 @@
 	/**
     * Trash animation:
     * First we reduce the card when it gets the modifier subscription-card--deleted with deletion animation 
-    * Then we show the trash image quickly with a transition (just a bit before the end of the previous animation) 
-    * Then we hide the trash with the animation disappearancePostTrash
+    * Then we launch an animation on the trash image (just a bit before the end of the previous animation): it appears and then disappears (was a transition/animation before, but Safari was not supporting it properly)	
     * Then set height of container to 0 when everything is done, and make it disappear from focusable elements
     */
 
 	&-trash {
 		opacity: 0;
-		transform: scale(0);
-		transition:
-			opacity 0.2s ease-in-out,
-			transform 0.2s ease-in-out;
-		transition-delay: 0.2s;
+		transform: scale(0.25);
+		will-change: transform, opacity;
+		backface-visibility: hidden;
+		transform-style: preserve-3d;
 	}
 
 	&--deleted {
@@ -21,10 +19,8 @@
 		animation-fill-mode: forwards;
 
 		+ .subscription-card-trash {
-			opacity: 1;
-			transform: scale(1);
 			animation: disappearancePostTrash 0.5s ease-in-out;
-			animation-delay: 0.25s;
+			animation-delay: 0.2s;
 			animation-fill-mode: forwards;
 		}
 	}
@@ -35,7 +31,7 @@
 			max-block-size 0.25s ease-in-out,
 			visibility 0s ease; // visibility is needed to avoid the card to be focusable when it has disappeared
 
-		transition-delay: 0.75s;
+		transition-delay: 0.25s;
 
 		&--deleted {
 			// did use first a :has selector first, but better target for wider compatibility
@@ -43,7 +39,7 @@
 			overflow: hidden;
 			visibility: hidden;
 			transition-delay:
-				0.75s, 1s; // second delay is for visibility, so it's applied only at the end of the full deletion animation
+				1s, 1.25s; // second delay is for visibility, so it's applied only at the end of the full deletion animation
 		}
 	}
 
@@ -65,6 +61,11 @@
 
 	@keyframes disappearancePostTrash {
 		0% {
+			opacity: 0;
+			transform: scale(0.25);
+		}
+
+		50% {
 			opacity: 1;
 			transform: scale(1);
 		}
