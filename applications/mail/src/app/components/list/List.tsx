@@ -162,7 +162,7 @@ const List = (
 
     const { displayState, changeChecklistDisplay, canDisplayChecklist } = useGetStartedChecklist();
 
-    const elements = usePlaceholders(inputElements, loading, placeholderCount);
+    const elements = usePlaceholders({ inputElements, loading, expectedLength: placeholderCount });
 
     const { stopELDTMetric } = useMailELDTMetric();
     const { stopPTTMetric } = useMailPTTMetric();
