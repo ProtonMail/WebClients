@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "Desativar a frase de recuperação?"
       ],
+      "Disable security events": [
+        "Desativar os eventos de segurança"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -4221,6 +4224,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pode importar eventos em formato iCal (ficheiro ICS). O ficheiro deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu ficheiro for maior, divida-o."
+      ],
+      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
+        "Deveria ativar os eventos detalhados e o ${ PROTON_SENTINEL_NAME } para aceder a estas funcionalidades."
+      ],
+      "You should enable detailed events in order to access these features": [
+        "Deve ativar eventos detalhados para aceder a estas funcionalidades."
       ],
       "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
         "O administrador da sua organização deve ativar os eventos detalhados e o ${ PROTON_SENTINEL_NAME } para aceder a estas funcionalidades."
@@ -8044,6 +8053,9 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ao criar uma conta da ${ PASS_APP_NAME } com o seu e-mail SimpleLogin, pode gerir os seus aliases diretamente do ${ PASS_APP_NAME }."
       ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Ao desativar a monitorização de eventos de segurança, também irá limpar todo o seu histórico. Tem a certeza de que deseja desativar isto?"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
       ],
@@ -11542,6 +11554,9 @@
       "Copy fingerprint": [
         "Copiar a impressão digital"
       ],
+      "Copy IP address to clipboard": [
+        "Copiar o endereço IP para a área de transferência"
+      ],
       "Could you please let us know which provider?": [
         "Pode indicar-nos qual é o fornecedor?"
       ],
@@ -12870,6 +12885,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ativar ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Ativar os eventos detalhados"
+      ],
+      "Enable security events": [
+        "Ativar os eventos de segurança"
       ]
     },
     "Mail import summary": {
@@ -15801,6 +15822,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis noutras moedas."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Apenas o euro é aceite para os pagos SEPA. A sua moeda foi alterada. Utilize o seletor para reverter a sua escolha."
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Adicione um método de pagamento no painel de controle para continuar."
@@ -20796,6 +20820,9 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "Ativar/desativar notificações no computador e dispositivo móvel para «${ labelName }»"
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Ao ativar os eventos detalhados, o endereço IP de cada evento é registado."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL do endpoint do fornecedor de identidade (por exemplo, https://idp.exemplo.pt/sso/saml)"
