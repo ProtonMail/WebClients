@@ -1,6 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
 
-import { CYCLE, External, PLANS, PLAN_TYPES, Renew, type Subscription } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_TYPES, Renew, type Subscription, SubscriptionPlatform } from '@proton/payments';
 
 export const subscriptionMock: Subscription = {
     ID: 'subscriptionId123',
@@ -16,7 +16,7 @@ export const subscriptionMock: Subscription = {
     RenewAmount: 11988,
     RenewDiscount: 0,
     Renew: Renew.Enabled,
-    External: External.Default,
+    External: SubscriptionPlatform.Default,
     Plans: [
         {
             ID: 'planId123',
@@ -60,7 +60,7 @@ export const upcomingSubscriptionMock: Subscription = {
     RenewAmount: 19176,
     RenewDiscount: 0,
     Renew: Renew.Enabled,
-    External: External.Default,
+    External: SubscriptionPlatform.Default,
     Plans: [
         {
             ID: 'planId123',

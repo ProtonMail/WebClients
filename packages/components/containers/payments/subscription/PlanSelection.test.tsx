@@ -395,7 +395,7 @@ describe('useAccessiblePlans', () => {
         expect(result.current).toMatchObject({
             enabledProductB2CPlans: [
                 getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
+                // vpn2024 USD should not be rendered either because all /check calls are forbidden in this case.
                 getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
             ],

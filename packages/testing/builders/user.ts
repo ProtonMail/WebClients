@@ -78,6 +78,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         canPay: true,
         AccountRecovery: null,
         ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED,
+        HasMultipleSubscriptions: false,
         ...value,
     };
 };

@@ -29,6 +29,7 @@ import {
     type PaymentsApi,
     type Plan,
     type PlanIDs,
+    type PlansMap,
     Renew,
     type Subscription,
     type SubscriptionPlan,
@@ -43,6 +44,9 @@ import {
     hasPass,
     hasPassFamily,
     hasSomeAddonOrPlan,
+    isAnyManagedExternally,
+    isCheckForbidden,
+    isFreeSubscription,
     isRegionalCurrency,
     mainCurrencies,
 } from '@proton/payments';
@@ -65,6 +69,7 @@ import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
 import PlanCard, { type HocPrice } from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
+import { getAllowedCycles } from './helpers';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
 import {
     getAutoCoupon,
@@ -158,6 +163,30 @@ function excludingTheOnlyFreePlan(plan: Plan | ShortPlanLike, _: number, allPlan
     return !(plan === FREE_PLAN && allPlans.length === 1);
 }
 
+/**
+ * There might be cases when all the possible cycles are forbidden for a plan.
+ * This can happen if there is a subscription with a selected plan managed externally, by Google or Apple.
+ * In this case we don't want to display this plan to the user - they can't change anything anyways.
+ */
+function excludingPlansWithAllChecksFordidden(
+    subscription: Subscription | FreeSubscription | null | undefined,
+    plansMap: PlansMap
+) {
+    return (plan: Plan | ShortPlanLike | PLANS) => {
+        if (isShortPlanLike(plan) || !subscription || isFreeSubscription(subscription)) {
+            return true;
+        }
+
+        const planName = typeof plan === 'string' ? plan : plan.Name;
+
+        const planIDs = { [planName]: 1 };
+        const allowedCycles = getAllowedCycles({ subscription, planIDs, currency: subscription.Currency, plansMap });
+
+        const allChecksForbidden = allowedCycles.every((cycle) => isCheckForbidden(subscription, planIDs, cycle));
+        return !allChecksForbidden;
+    };
+}
+
 export type AccessiblePlansHookProps = {
     user: UserModel;
 } & Pick<
@@ -206,9 +235,11 @@ export function useAccessiblePlans({
         PLANS.DRIVE,
         !user.hasPassLifetime && PLANS.PASS,
         lumoPlusEnabled && PLANS.LUMO,
-    ].filter(isTruthy);
+    ]
+        .filter(isTruthy)
+        .filter(excludingPlansWithAllChecksFordidden(subscription, plansMap));
 
-    let enabledProductB2CPlans = enabledProductB2CPlanNames.map((planName) => plansMap[planName]).filter(isTruthy);
+    const enabledProductB2CPlans = enabledProductB2CPlanNames.map((planName) => plansMap[planName]).filter(isTruthy);
 
     const alreadyHasMaxCycle = hasMaximumCycle(subscription);
 
@@ -220,7 +251,8 @@ export function useAccessiblePlans({
         return plans
             .filter(isTruthy)
             .filter(excludingCurrentPlanWithMaxCycle(currentPlan, alreadyHasMaxCycle))
-            .filter(excludingTheOnlyFreePlan);
+            .filter(excludingTheOnlyFreePlan)
+            .filter(excludingPlansWithAllChecksFordidden(subscription, plansMap));
     }
 
     let IndividualPlans: (Plan | ShortPlanLike)[] = [];
@@ -255,7 +287,7 @@ export function useAccessiblePlans({
 
     const canAccessPassFamilyPlan =
         (isFree(user) && app === APPS.PROTONPASS) || hasPass(subscription) || hasPassFamily(subscription);
-    let FamilyPlans = filterPlans([
+    const FamilyPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
         canAccessDuoPlan && !canAccessPassFamilyPlan ? plansMap[PLANS.DUO] : null,
         canAccessPassFamilyPlan ? plansMap[PLANS.PASS_FAMILY] : null,
@@ -293,21 +325,31 @@ export function useAccessiblePlans({
     const isDriveB2bPlans = isDriveSettingsApp && driveB2BPlans.length !== 0;
     const isWalletB2BPlans = isWalletSettingsApp && walletB2BPlans.length !== 0;
 
-    let B2BPlans: (Plan | ShortPlanLike)[] = [];
-    if (isVpnB2bPlans) {
-        B2BPlans = vpnB2BPlans;
-    } else if (isPassB2bPlans) {
-        // Lifetime users shouldn't see Pass B2B plans
-        if (!user.hasPassLifetime) {
-            B2BPlans = passB2BPlans;
+    const B2BPlans: (Plan | ShortPlanLike)[] = (() => {
+        // In the realm of multi-subs, if user has any subscription managed exteranlly, we don't display the B2B plans
+        // It can cause any sort of problems at the moment: with addons transfering, with subscriptions,
+        // with organizations.
+        if (isAnyManagedExternally(subscription)) {
+            return [];
         }
-    } else if (isDriveB2bPlans) {
-        B2BPlans = driveB2BPlans;
-    } else if (isWalletB2BPlans) {
-        B2BPlans = walletB2BPlans;
-    } else {
-        B2BPlans = filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
-    }
+
+        if (isVpnB2bPlans) {
+            return vpnB2BPlans;
+        } else if (isPassB2bPlans) {
+            // Lifetime users shouldn't see Pass B2B plans
+            if (!user.hasPassLifetime) {
+                return passB2BPlans;
+            }
+        } else if (isDriveB2bPlans) {
+            return driveB2BPlans;
+        } else if (isWalletB2BPlans) {
+            return walletB2BPlans;
+        } else {
+            return filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
+        }
+
+        return [];
+    })();
 
     const isPassLifetimeEligible =
         passLifetimeFeatureFlag &&
@@ -376,7 +418,6 @@ const PlanSelection = (props: Props) => {
     const {
         app,
         mode,
-        planIDs,
         plans,
         freePlan,
         vpnServers,
@@ -605,7 +646,7 @@ const PlanSelection = (props: Props) => {
 
                     onChangePlanIDs(
                         switchPlan({
-                            currentPlanIDs: planIDs,
+                            subscription,
                             newPlan: isFree ? undefined : planName,
                             organization,
                             plans,

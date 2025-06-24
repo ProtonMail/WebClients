@@ -1,6 +1,6 @@
 import type { Currency, Cycle } from '../interface';
 import type { BasePlansMap, Plan, SubscriptionPlan } from '../plan/interface';
-import type { BillingPlatform, External, Renew } from './constants';
+import type { BillingPlatform, Renew, SubscriptionPlatform } from './constants';
 
 export type FullPlansMap = BasePlansMap<Plan>;
 
@@ -8,6 +8,9 @@ export interface Subscription {
     ID: string;
     InvoiceID: string;
     Cycle: Cycle;
+    /**
+     * When the current subscription started.
+     */
     PeriodStart: number;
     /**
      * Be careful with using PeriodEnd property. Depending on the presense of UpcomingSubscription and depending
@@ -15,6 +18,10 @@ export interface Subscription {
      * to free. Use helper {@link subscriptionExpires} to get the actual expiration date.
      */
     PeriodEnd: number;
+    /**
+     * When the initial subscription was created. Unlike PeriodStart, this property doesn't change when subscription is
+     * renewed.
+     */
     CreateTime: number;
     CouponCode: null | string;
     Currency: Currency;
@@ -24,14 +31,12 @@ export interface Subscription {
     Renew: Renew;
     Discount: number;
     Plans: SubscriptionPlan[];
-    External: External;
+    External: SubscriptionPlatform;
     UpcomingSubscription?: Subscription | null;
-    /**
-     * That's a V5 property. It's not available for V4.
-     */
     IsTrial?: boolean;
-    /**
-     * V5 property. Potentially isn't available in V4.
-     */
     BillingPlatform?: BillingPlatform;
+    /**
+     * Contains additional subscriptions if user has multiple subscriptions.
+     */
+    SecondarySubscriptions?: Subscription[];
 }

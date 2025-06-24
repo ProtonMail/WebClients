@@ -3,7 +3,7 @@ export enum Renew {
     Enabled = 1,
 }
 
-export enum External {
+export enum SubscriptionPlatform {
     Default = 0,
     iOS = 1,
     Android = 2,

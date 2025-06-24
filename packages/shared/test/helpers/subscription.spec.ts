@@ -5,13 +5,13 @@ import {
     BillingPlatform,
     COUPON_CODES,
     CYCLE,
-    External,
     PLANS,
     type Plan,
     PlanState,
     Renew,
     type Subscription,
     type SubscriptionPlan,
+    SubscriptionPlatform,
     allCycles,
     customCycles,
     getNormalCycleFromCustomCycle,
@@ -47,7 +47,7 @@ beforeEach(() => {
         Discount: 123,
         RenewDiscount: 123,
         Plans: [],
-        External: External.Default,
+        External: SubscriptionPlatform.Default,
         Renew: Renew.Enabled,
     };
 
@@ -172,7 +172,7 @@ describe('isManagedExternally', () => {
             RenewAmount: 1199,
             Discount: 0,
             Plans: [],
-            External: External.Android,
+            External: SubscriptionPlatform.Android,
         });
 
         expect(result).toEqual(true);
@@ -192,7 +192,7 @@ describe('isManagedExternally', () => {
             RenewAmount: 1199,
             Discount: 0,
             Plans: [],
-            External: External.iOS,
+            External: SubscriptionPlatform.iOS,
         });
 
         expect(result).toEqual(true);
@@ -212,7 +212,7 @@ describe('isManagedExternally', () => {
             RenewAmount: 1199,
             Discount: 0,
             Plans: [],
-            External: External.Default,
+            External: SubscriptionPlatform.Default,
         });
 
         expect(result).toEqual(false);
