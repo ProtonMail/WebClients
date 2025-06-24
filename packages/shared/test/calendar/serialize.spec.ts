@@ -4,7 +4,6 @@ import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
 import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
-import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
 
 import {
     ATTENDEE_MORE_ATTENDEES,
@@ -16,6 +15,7 @@ import { readCalendarEvent, readSessionKeys } from '../../lib/calendar/deseriali
 import { unwrap, wrap } from '../../lib/calendar/helper';
 import { createCalendarEvent } from '../../lib/calendar/serialize';
 import { setVcalProdId } from '../../lib/calendar/vcalConfig';
+import { base64StringToUint8Array } from '../../lib/helpers/encoding';
 import { toCRLF } from '../../lib/helpers/string';
 import type { RequireSome } from '../../lib/interfaces';
 import type {
@@ -172,10 +172,22 @@ const transformToExternal = (
 };
 
 describe('calendar encryption', () => {
-    beforeAll(() => initRandomMock());
-    afterAll(() => disableRandomMock());
-
     it('should encrypt and sign calendar events', async () => {
+        /**
+         * Ensure the OpenPGP base64Message content is encrypted to each one of `expectedEncryptionKeys`.
+         * If not keys are given, ensure that the message does not include ESK packets.
+         */
+        const checkEncryptionKeyIDs = async (base64Message: string, expectedEncryptionKeys: PublicKeyReference[]) => {
+            const { encryptionKeyIDs } = await CryptoProxy.getMessageInfo({
+                binaryMessage: base64StringToUint8Array(base64Message),
+            });
+            expect(encryptionKeyIDs.length).toBe(expectedEncryptionKeys.length);
+            const isEncryptedToEachKey = expectedEncryptionKeys.every((encryptionKey) =>
+                encryptionKey.getKeyIDs().some((keyID) => encryptionKeyIDs.includes(keyID))
+            );
+            expect(isEncryptedToEachKey).toBeTrue();
+        };
+
         const dummyProdId = 'Proton Calendar';
         setVcalProdId(dummyProdId);
         const calendarKey = await CryptoProxy.importPrivateKey({
@@ -185,18 +197,17 @@ describe('calendar encryption', () => {
         const addressKey = await CryptoProxy.importPrivateKey({ armoredKey: DecryptableKey2, passphrase: '123' });
 
         // without default notifications
-        expect(
-            await createCalendarEvent({
-                eventComponent: getVevent(true),
-                privateKey: addressKey,
-                publicKey: calendarKey,
-                isCreateEvent: true,
-                isSwitchCalendar: false,
-                hasDefaultNotifications: false,
-            })
-        ).toEqual({
-            SharedKeyPacket:
-                'wV4DatuD4HBmK9ESAQdAj0DFrbaPJWJK5bIU6nZ6bslNgp09e14a0bpvPiE4KF8wdqsR0TEq277tzM/3EFZt1WA+Ilhvxxmb1sGmMolw+GKQchfX/QwQfOPETEFk+flr',
+        const eventWithoutDefaultNotifications = await createCalendarEvent({
+            eventComponent: getVevent(true),
+            privateKey: addressKey,
+            publicKey: calendarKey,
+            isCreateEvent: true,
+            isSwitchCalendar: false,
+            hasDefaultNotifications: false,
+        });
+
+        expect(eventWithoutDefaultNotifications).toEqual({
+            SharedKeyPacket: jasmine.any(String),
             SharedEventContent: [
                 {
                     Type: 2,
@@ -208,20 +219,15 @@ describe('calendar encryption', () => {
                 },
                 {
                     Type: 3,
-                    // the following check is just to ensure some stability in the process generating the signatures
-                    // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sADAfKRArUuTJnXofqQYdEjeY\+U6lg.*/g),
+                    Data: jasmine.any(String),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
-            CalendarKeyPacket:
-                'wV4DatuD4HBmK9ESAQdAj0DFrbaPJWJK5bIU6nZ6bslNgp09e14a0bpvPiE4KF8wdqsR0TEq277tzM/3EFZt1WA+Ilhvxxmb1sGmMolw+GKQchfX/QwQfOPETEFk+flr',
+            CalendarKeyPacket: jasmine.any(String),
             CalendarEventContent: [
                 {
                     Type: 3,
-                    // the following check is just to ensure some stability in the process generating the signatures
-                    // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sABAfKRArUuTJnXofqQYdEjeY\+U6lg.*/g),
+                    Data: jasmine.any(String),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
@@ -229,9 +235,7 @@ describe('calendar encryption', () => {
             AttendeesEventContent: [
                 {
                     Type: 3,
-                    // the following check is just to ensure some stability in the process generating the signatures
-                    // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sE8AfKRArUuTJnXofqQYdEjeY\+U6lh.*/g),
+                    Data: jasmine.any(String),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
@@ -243,19 +247,25 @@ describe('calendar encryption', () => {
             Color: ACCENT_COLORS_MAP.enzian.color,
         });
 
+        checkEncryptionKeyIDs(eventWithoutDefaultNotifications.SharedKeyPacket!, [calendarKey]);
+        checkEncryptionKeyIDs(eventWithoutDefaultNotifications.CalendarKeyPacket!, [calendarKey]);
+        // the following data should not include encrypted session key data
+        checkEncryptionKeyIDs(eventWithoutDefaultNotifications.SharedEventContent![1].Data, []);
+        checkEncryptionKeyIDs(eventWithoutDefaultNotifications.CalendarEventContent![0].Data, []);
+        checkEncryptionKeyIDs(eventWithoutDefaultNotifications.AttendeesEventContent![0].Data, []);
+
         // with default notifications
-        expect(
-            await createCalendarEvent({
-                eventComponent: getVevent(false),
-                privateKey: addressKey,
-                publicKey: calendarKey,
-                isCreateEvent: true,
-                isSwitchCalendar: false,
-                hasDefaultNotifications: true,
-            })
-        ).toEqual({
-            SharedKeyPacket:
-                'wV4DatuD4HBmK9ESAQdAj0DFrbaPJWJK5bIU6nZ6bslNgp09e14a0bpvPiE4KF8wdqsR0TEq277tzM/3EFZt1WA+Ilhvxxmb1sGmMolw+GKQchfX/QwQfOPETEFk+flr',
+        const eventWithDefaultNotifications = await createCalendarEvent({
+            eventComponent: getVevent(false),
+            privateKey: addressKey,
+            publicKey: calendarKey,
+            isCreateEvent: true,
+            isSwitchCalendar: false,
+            hasDefaultNotifications: true,
+        });
+
+        expect(eventWithDefaultNotifications).toEqual({
+            SharedKeyPacket: jasmine.any(String),
             SharedEventContent: [
                 {
                     Type: 2,
@@ -267,20 +277,15 @@ describe('calendar encryption', () => {
                 },
                 {
                     Type: 3,
-                    // the following check is just to ensure some stability in the process generating the signatures
-                    // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sADAfKRArUuTJnXofqQYdEjeY\+U6lg.*/g),
+                    Data: jasmine.any(String),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
-            CalendarKeyPacket:
-                'wV4DatuD4HBmK9ESAQdAj0DFrbaPJWJK5bIU6nZ6bslNgp09e14a0bpvPiE4KF8wdqsR0TEq277tzM/3EFZt1WA+Ilhvxxmb1sGmMolw+GKQchfX/QwQfOPETEFk+flr',
+            CalendarKeyPacket: jasmine.any(String),
             CalendarEventContent: [
                 {
                     Type: 3,
-                    // the following check is just to ensure some stability in the process generating the signatures
-                    // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sABAfKRArUuTJnXofqQYdEjeY\+U6lg.*/g),
+                    Data: jasmine.any(String),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
@@ -288,9 +293,7 @@ describe('calendar encryption', () => {
             AttendeesEventContent: [
                 {
                     Type: 3,
-                    // the following check is just to ensure some stability in the process generating the signatures
-                    // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sE8AfKRArUuTJnXofqQYdEjeY\+U6lh.*/g),
+                    Data: jasmine.any(String),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
@@ -301,6 +304,13 @@ describe('calendar encryption', () => {
             ],
             Color: null,
         });
+
+        checkEncryptionKeyIDs(eventWithDefaultNotifications.SharedKeyPacket!, [calendarKey]);
+        checkEncryptionKeyIDs(eventWithDefaultNotifications.CalendarKeyPacket!, [calendarKey]);
+        // the following data should not include encrypted session key data
+        checkEncryptionKeyIDs(eventWithDefaultNotifications.SharedEventContent![1].Data, []);
+        checkEncryptionKeyIDs(eventWithDefaultNotifications.CalendarEventContent![0].Data, []);
+        checkEncryptionKeyIDs(eventWithDefaultNotifications.AttendeesEventContent![0].Data, []);
 
         setVcalProdId('');
     });
