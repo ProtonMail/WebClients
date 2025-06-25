@@ -4,6 +4,7 @@ import type { IconName } from 'packages/icons';
 
 import ContextMenuButton from '@proton/components/components/contextMenu/ContextMenuButton';
 import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
+import Icon from '@proton/components/components/icon/Icon';
 import { useContextMenuClose } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import type { ObfuscatedItemProperty } from '@proton/pass/types/data/obfuscation';
@@ -15,6 +16,7 @@ export type ContextMenuItem = {
     name: string;
     copy?: ObfuscatedItemProperty | string;
     action?: () => void;
+    lock?: boolean;
 };
 
 export type ContextMenuSeparator = { type: 'separator' };
@@ -43,9 +45,16 @@ export const ContextMenuContent: FC<Props> = ({ elements }) => {
         ) : (
             <ContextMenuButton
                 key={index}
+                id={element.name}
                 icon={element.icon}
-                name={element.name}
+                name={
+                    <>
+                        {element.name}
+                        {element.lock === true && <Icon name="pass-lock" size={3.5} className="ml-1.5" />}
+                    </>
+                }
                 action={() => handleAction(element)}
+                disabled={element.lock === true}
             />
         )
     );

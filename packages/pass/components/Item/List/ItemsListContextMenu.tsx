@@ -1,5 +1,5 @@
-import type { MouseEvent } from 'react';
-import { type FC, type RefObject, useCallback, useEffect, useMemo, useState } from 'react';
+import type { FC, MouseEvent, RefObject } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -19,7 +19,9 @@ import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { itemPinIntent, itemUnpinIntent } from '@proton/pass/store/actions';
 import { selectItemWithOptimistic } from '@proton/pass/store/selectors';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { Item, ItemRevision, Maybe, MaybeNull, UniqueItem } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import type { ObfuscatedItemProperty } from '@proton/pass/types/data/obfuscation';
 
 const isEmpty = (value: Maybe<string | ObfuscatedItemProperty>) => {
@@ -72,10 +74,12 @@ const getItemCopyButtons = (item: Item): ContextMenuItem[] => {
 
 const getItemActionButtons = (
     item: ItemRevision,
+    isFreePlan: boolean,
     actions: {
         handleEdit: () => void;
         handleMove: () => void;
-        handlePinClick: () => void;
+        handlePin: () => void;
+        handleHistory: () => void;
         handleTrash: () => void;
     }
 ): ContextMenuItem[] => {
@@ -97,7 +101,14 @@ const getItemActionButtons = (
                   type: 'button',
                   icon: 'pin-angled',
                   name: c('Action').t`Pin`,
-                  action: actions.handlePinClick,
+                  action: actions.handlePin,
+              },
+              {
+                  type: 'button',
+                  icon: 'clock-rotate-left',
+                  name: c('Action').t`View history`,
+                  action: actions.handleHistory,
+                  lock: isFreePlan,
               },
               {
                   type: 'button',
@@ -118,6 +129,7 @@ const ConnectedItemsListContextMenu: FC<ConnectedProps> = ({ item, anchorRef }) 
     const { selectItem } = useNavigationActions();
     const itemActions = useItemsActions();
     const dispatch = useDispatch();
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
     const id = getItemKey(item);
 
@@ -126,11 +138,18 @@ const ConnectedItemsListContextMenu: FC<ConnectedProps> = ({ item, anchorRef }) 
 
         const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', scope });
         const handleMove = () => itemActions.move(item, VaultSelectMode.Writable);
-        const handlePinClick = () => dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }));
+        const handlePin = () => dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }));
+        const handleHistory = () => selectItem(shareId, itemId, { view: 'history', scope });
         const handleTrash = () => itemActions.trash(item);
 
         const copyBtns: ContextMenuElement[] = getItemCopyButtons(item.data).filter(({ copy }) => !isEmpty(copy));
-        const actionBtns = getItemActionButtons(item, { handleEdit, handleMove, handlePinClick, handleTrash });
+        const actionBtns = getItemActionButtons(item, isFreePlan, {
+            handleEdit,
+            handleMove,
+            handlePin,
+            handleHistory,
+            handleTrash,
+        });
         const separator = copyBtns.length > 0 && actionBtns.length > 0 ? [CONTEXT_MENU_SEPARATOR] : [];
 
         return copyBtns.concat(separator, actionBtns);
