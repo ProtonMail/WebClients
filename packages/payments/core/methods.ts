@@ -1,12 +1,15 @@
+import { isSafari } from '@proton/shared/lib/helpers/browser';
 import type { Api, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { isDelinquent } from '@proton/shared/lib/user/helpers';
+import orderBy from '@proton/utils/orderBy';
 
 import { getPaymentMethods } from './api';
 import { type BillingAddress } from './billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
 import {
     type ADDON_NAMES,
+    MIN_APPLE_PAY_AMOUNT,
     MIN_BITCOIN_AMOUNT,
     MIN_PAYPAL_AMOUNT_CHARGEBEE,
     MIN_PAYPAL_AMOUNT_INHOUSE,
@@ -19,6 +22,7 @@ import type {
     AvailablePaymentMethod,
     Currency,
     FreeSubscription,
+    PaymentMethodApplePay,
     PaymentMethodFlows,
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
@@ -28,12 +32,64 @@ import type {
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
 } from './interface';
+import type { PaymentMethodSepa } from './interface';
 import { getIsB2BAudienceFromPlan } from './plan/helpers';
 import { type BillingPlatform } from './subscription/constants';
 import { getHas2024OfferCoupon } from './subscription/helpers';
 import { type Subscription } from './subscription/interface';
 import { isFreeSubscription } from './type-guards';
 import { isOnSessionMigration, isSplittedUser } from './utils';
+
+// SEPA helper. Can be removed if the API consistently returns the type of save SEPA in both cases: GET events and GET methods
+
+function isSavedPaymentMethodSepa(obj: any): obj is PaymentMethodSepa {
+    return (
+        obj.Type === 'sepa-direct-debit' ||
+        obj.Type === 'sepadirectdebit' ||
+        (obj.Type === 'sepa_direct_debit' && !!obj.Details)
+    );
+}
+
+function isSavedPaymentMethodApplePay(obj: any): obj is PaymentMethodApplePay {
+    return (obj.Type === 'applepay' || obj.Type === PAYMENT_METHOD_TYPES.APPLE_PAY) && !!obj.Details;
+}
+
+export function formatPaymentMethod(method: SavedPaymentMethod): SavedPaymentMethod {
+    if (isSavedPaymentMethodSepa(method)) {
+        return {
+            ...method,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+        } as PaymentMethodSepa;
+    }
+
+    if (isSavedPaymentMethodApplePay(method)) {
+        return {
+            ...method,
+            Type: PAYMENT_METHOD_TYPES.APPLE_PAY,
+        } as PaymentMethodApplePay;
+    }
+
+    return method;
+}
+export function markDefaultPaymentMethod(paymentMethods: SavedPaymentMethod[]): SavedPaymentMethod[] {
+    if (!paymentMethods || paymentMethods.length === 0) {
+        return paymentMethods;
+    }
+
+    const sortedPaymentMethods = orderBy(paymentMethods, 'Order');
+
+    return sortedPaymentMethods.map(
+        (paymentMethod, index) =>
+            ({
+                ...paymentMethod,
+                IsDefault: index === 0,
+            }) as SavedPaymentMethod
+    );
+}
+
+export function formatPaymentMethods(paymentMethods: SavedPaymentMethod[]): SavedPaymentMethod[] {
+    return markDefaultPaymentMethod(paymentMethods.map(formatPaymentMethod));
+}
 
 export interface PaymentMethodsParameters {
     paymentMethodStatus: PaymentMethodStatusExtended | PaymentMethodStatus;
@@ -46,12 +102,13 @@ export interface PaymentMethodsParameters {
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
     billingPlatform?: BillingPlatform;
     chargebeeUserExists?: ChargebeeUserExists;
-    disableNewPaymentMethods?: boolean;
     billingAddress?: BillingAddress;
     enableSepa?: boolean;
     user?: User;
     planIDs?: PlanIDs;
     subscription?: Subscription | FreeSubscription;
+    canUseApplePay?: boolean;
+    enableApplePay?: boolean;
 }
 
 const sepaCountries = new Set([
@@ -156,8 +213,6 @@ export class PaymentMethods {
 
     public chargebeeUserExists: ChargebeeUserExists | undefined;
 
-    public disableNewPaymentMethods: boolean;
-
     public billingAddress: BillingAddress | undefined;
 
     public enableSepa: boolean;
@@ -170,6 +225,10 @@ export class PaymentMethods {
 
     public readonly directDebitEnabledFlows: readonly PaymentMethodFlows[] = ['subscription'];
 
+    public canUseApplePay: boolean;
+
+    public enableApplePay: boolean;
+
     constructor({
         paymentMethodStatus,
         paymentMethods,
@@ -181,12 +240,13 @@ export class PaymentMethods {
         selectedPlanName,
         billingPlatform,
         chargebeeUserExists,
-        disableNewPaymentMethods,
         billingAddress,
         enableSepa,
         user,
         planIDs,
         subscription,
+        canUseApplePay,
+        enableApplePay,
     }: PaymentMethodsParameters) {
         this._statusExtended = extendStatus(paymentMethodStatus);
 
@@ -199,12 +259,13 @@ export class PaymentMethods {
         this._selectedPlanName = selectedPlanName;
         this.billingPlatform = billingPlatform;
         this.chargebeeUserExists = chargebeeUserExists;
-        this.disableNewPaymentMethods = !!disableNewPaymentMethods;
         this.billingAddress = billingAddress;
         this.enableSepa = !!enableSepa;
         this.user = user;
         this.planIDs = planIDs;
         this.subscription = subscription;
+        this.canUseApplePay = !!canUseApplePay;
+        this.enableApplePay = !!enableApplePay;
     }
 
     getAvailablePaymentMethods(): { usedMethods: AvailablePaymentMethod[]; methods: AvailablePaymentMethod[] } {
@@ -243,6 +304,9 @@ export class PaymentMethods {
                     this.statusExtended.VendorStates.Card &&
                     this.paymentFlowSupportsSEPADirectDebit();
 
+                const isExistingApplePay =
+                    paymentMethod.Type === PAYMENT_METHOD_TYPES.APPLE_PAY && this.statusExtended.VendorStates.Apple;
+
                 // Only Paypal and Card can be saved/used payment methods.
                 // E.g. it's not possible to make Bitcoin/Cash a saved payment method.
                 return (
@@ -250,7 +314,8 @@ export class PaymentMethods {
                     isExistingPaypal ||
                     isExistingChargebeeCard ||
                     isExistingChargebeePaypal ||
-                    isExistingChargebeeSepaDirectDebit
+                    isExistingChargebeeSepaDirectDebit ||
+                    isExistingApplePay
                 );
             })
             .map((paymentMethod) => {
@@ -278,10 +343,6 @@ export class PaymentMethods {
      * payment flow.
      */
     getNewMethods(): AvailablePaymentMethod[] {
-        if (this.disableNewPaymentMethods) {
-            return [];
-        }
-
         const methods: AvailablePaymentMethod[] = [
             {
                 available: this.isCardAvailable(),
@@ -315,6 +376,10 @@ export class PaymentMethods {
                 available: this.isCashAvailable(),
                 type: PAYMENT_METHOD_TYPES.CASH,
             },
+            {
+                available: this.isApplePayAvailable(),
+                type: PAYMENT_METHOD_TYPES.APPLE_PAY,
+            },
         ]
             .filter(({ available }) => available)
             .map(({ type }) => ({ type, value: type, isSaved: false, isDefault: false }));
@@ -347,6 +412,8 @@ export class PaymentMethods {
                 return this.isChargebeeCardAvailable();
             case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
                 return this.isChargebeePaypalAvailable();
+            case PAYMENT_METHOD_TYPES.APPLE_PAY:
+                return this.isApplePayAvailable();
             default:
                 return false;
         }
@@ -489,6 +556,31 @@ export class PaymentMethods {
         return paypalAvailable && isAllowedFlow;
     }
 
+    private isApplePayAvailable(): boolean {
+        const flows = [
+            'signup',
+            'signup-pass',
+            'signup-pass-upgrade',
+            'signup-wallet',
+            'signup-v2',
+            'signup-v2-upgrade',
+            'signup-vpn',
+            'subscription',
+        ] as PaymentMethodFlows[];
+        const isAllowedFlow = flows.includes(this.flow);
+
+        const isApplePayAmountValid = this.amount >= MIN_APPLE_PAY_AMOUNT;
+
+        return (
+            this.statusExtended.VendorStates.Apple &&
+            this.enableApplePay &&
+            isApplePayAmountValid &&
+            isAllowedFlow &&
+            this.canUseApplePay &&
+            isSafari()
+        );
+    }
+
     private isB2BPlan(): boolean {
         return this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
     }
@@ -520,25 +612,12 @@ export class PaymentMethods {
  * Initialize payment methods object. If user is authenticated, fetches saved payment methods.
  **/
 export async function initializePaymentMethods({
-    api,
     maybePaymentMethodStatus,
+    paymentsApi,
     maybePaymentMethods,
     isAuthenticated,
-    amount,
-    currency,
-    coupon,
-    flow,
-    chargebeeEnabled,
-    paymentsApi,
-    selectedPlanName,
-    billingPlatform,
-    chargebeeUserExists,
-    disableNewPaymentMethods,
-    billingAddress,
-    enableSepa,
-    user,
-    planIDs,
-    subscription,
+    api,
+    ...props
 }: {
     api: Api;
     maybePaymentMethodStatus: PaymentMethodStatusExtended | undefined;
@@ -553,12 +632,13 @@ export async function initializePaymentMethods({
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
     billingPlatform?: BillingPlatform;
     chargebeeUserExists?: ChargebeeUserExists;
-    disableNewPaymentMethods?: boolean;
     billingAddress?: BillingAddress;
     enableSepa?: boolean;
     user?: User;
     planIDs?: PlanIDs;
     subscription?: Subscription;
+    canUseApplePay?: boolean;
+    enableApplePay?: boolean;
 }) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.statusExtendedAutomatic();
     const paymentMethodsPromise = (() => {
@@ -578,7 +658,7 @@ export async function initializePaymentMethods({
         paymentMethodsPromise,
     ]);
 
-    const mappedMethods = paymentMethods.map((it: SavedPaymentMethod) => {
+    const mappedMethods = paymentMethods.map(formatPaymentMethod).map((it: SavedPaymentMethod) => {
         if (it.External !== MethodStorage.EXTERNAL) {
             return it;
         }
@@ -599,19 +679,6 @@ export async function initializePaymentMethods({
     return new PaymentMethods({
         paymentMethodStatus,
         paymentMethods: mappedMethods,
-        chargebeeEnabled,
-        amount,
-        currency,
-        coupon,
-        flow,
-        selectedPlanName,
-        billingPlatform,
-        chargebeeUserExists,
-        disableNewPaymentMethods,
-        billingAddress,
-        enableSepa,
-        user,
-        planIDs,
-        subscription,
+        ...props,
     });
 }

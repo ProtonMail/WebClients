@@ -20,7 +20,6 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAutomaticCurrency, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
-import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import {
     type Currency,
@@ -29,6 +28,7 @@ import {
     MIN_CREDIT_AMOUNT,
     PAYMENT_METHOD_TYPES,
     type PaymentMethodStatusExtended,
+    type PaymentProcessorHook,
     type PlainPaymentMethodType,
     getHasSomeVpnPlan,
     getPaymentsVersion,
