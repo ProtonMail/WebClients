@@ -1,5 +1,4 @@
-import type { PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReferenceV4, PrivateKeyReferenceV6, PublicKeyReference } from '@proton/crypto';
 
 import { KEY_FLAG } from '../constants';
 import { clearBit } from '../helpers/bitset';
@@ -30,11 +29,9 @@ export const getActiveKeyObject = async <
     PrivateKeyReferenceWithVersion extends PrivateKeyReferenceV4 | PrivateKeyReferenceV6,
 >(
     privateKey: PrivateKeyReferenceWithVersion,
+    publicKey: PublicKeyReference,
     partial: Partial<ActiveKey> & { ID: string } & Pick<ActiveKey, 'flags'>
 ): Promise<ActiveKey<PrivateKeyReferenceWithVersion>> => {
-    const publicKey = await CryptoProxy.importPublicKey({
-        binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
-    });
     return {
         privateKey,
         publicKey,
@@ -82,11 +79,12 @@ export const getActiveAddressKeys = async (
     const decryptedKeyToActiveKey = async <KeyVersion extends PrivateKeyReferenceV4 | PrivateKeyReferenceV6>({
         ID,
         privateKey,
+        publicKey,
         Primary,
         Flags,
     }: DecryptedAddressKey<KeyVersion>): Promise<ActiveKey<KeyVersion>> => {
         const signedKeyListItem = keyIDsToSKLItemsMap[ID];
-        return getActiveKeyObject(privateKey, {
+        return getActiveKeyObject(privateKey, publicKey, {
             ID,
             primary: signedKeyListItem?.Primary ?? Primary,
             // SKL may not exist for non-migrated users, fall back to the flag value of the key.
@@ -112,10 +110,10 @@ export const getActiveUserKeys = async (keys: Key[], decryptedKeys: DecryptedKey
         return acc;
     }, {});
 
-    const decryptedKeyToActiveKey = async ({ ID, privateKey }: DecryptedKey, index: number) => {
+    const decryptedKeyToActiveKey = async ({ ID, privateKey, publicKey }: DecryptedKey, index: number) => {
         const Key = keysMap[ID];
         const defaultPrimaryValue = index === 0 ? 1 : 0;
-        return getActiveKeyObject(privateKey as PrivateKeyReferenceV4 | PrivateKeyReferenceV6, {
+        return getActiveKeyObject(privateKey as PrivateKeyReferenceV4 | PrivateKeyReferenceV6, publicKey, {
             ID,
             primary: Key?.Primary ?? defaultPrimaryValue,
             flags: Key?.Flags ?? getDefaultKeyFlags(undefined),

@@ -83,8 +83,12 @@ export const reactivateUserKeys = async ({
                 privateKey: reactivatedKey,
                 passphrase: keyPassword,
             });
+            // see we already have the armored private key, we avoid calling the
+            // `toPublicKeyReference` helper which internally re-exports the key
+            const reactivatedPublicKey = await CryptoProxy.importPublicKey({ armoredKey: privateKeyArmored });
             const newActiveKey = await getActiveKeyObject(
                 reactivatedKey as PrivateKeyReferenceV4 | PrivateKeyReferenceV6,
+                reactivatedPublicKey,
                 {
                     ID,
                     primary: getPrimaryFlag(mutableActiveKeys),
@@ -206,8 +210,12 @@ export const reactivateAddressKeysV2 = async ({
                 privateKey: reactivatedKey,
                 passphrase: token,
             });
+            // see we already have the armored private key, we avoid calling the
+            // `toPublicKeyReference` helper which internally re-exports the key
+            const reactivatedPublicKey = await CryptoProxy.importPublicKey({ armoredKey: privateKeyArmored });
             const newActiveKey = (await getActiveKeyObject(
                 reactivatedKey as PrivateKeyReferenceV4 | PrivateKeyReferenceV6,
+                reactivatedPublicKey,
                 {
                     ID,
                     // We do not automatically set a v6 key as primary, because it will fail if forwarding is enabled for the address

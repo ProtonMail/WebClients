@@ -1,4 +1,4 @@
-import type { PrivateKeyReference } from '@proton/crypto';
+import { type PrivateKeyReference, toPublicKeyReference } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
 import noop from '@proton/utils/noop';
 
@@ -46,7 +46,8 @@ export const createGroupAddressKey = async ({
         passphrase: token,
         keyGenConfig,
     });
-    const newActiveKey = await getActiveKeyObject(privateKey, {
+    const publicKey = await toPublicKeyReference(privateKey);
+    const newActiveKey = await getActiveKeyObject(privateKey, publicKey, {
         ID: 'tmp',
         primary: 1,
         flags: getDefaultKeyFlags(address),
