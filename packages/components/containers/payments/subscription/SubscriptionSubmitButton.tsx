@@ -5,8 +5,8 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Price from '@proton/components/components/price/Price';
 import useConfig from '@proton/components/hooks/useConfig';
 import { isChargebeePaymentProcessor } from '@proton/components/payments/react-extensions/helpers';
-import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import type { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
+import type { ApplePayProcessorHook, PaymentProcessorType } from '@proton/payments';
 import type { PaymentMethodType, PlainPaymentMethodType } from '@proton/payments';
 import {
     type BillingAddressStatus,
@@ -21,7 +21,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import type { ChargebeePaypalWrapperProps } from '../../../payments/chargebee/ChargebeeWrapper';
-import { ChargebeePaypalWrapper } from '../../../payments/chargebee/ChargebeeWrapper';
+import { ApplePayButton, ChargebeePaypalWrapper } from '../../../payments/chargebee/ChargebeeWrapper';
 import StyledPayPalButton from '../StyledPayPalButton';
 import type { SUBSCRIPTION_STEPS } from './constants';
 
@@ -41,6 +41,7 @@ type Props = {
     hasPaymentMethod: boolean;
     billingAddressStatus: BillingAddressStatus;
     paymentProcessorType: PaymentProcessorType | undefined;
+    applePay: ApplePayProcessorHook;
 } & Pick<ChargebeePaypalWrapperProps, 'chargebeePaypal' | 'iframeHandles'>;
 
 const SubscriptionSubmitButton = ({
@@ -60,6 +61,7 @@ const SubscriptionSubmitButton = ({
     subscription,
     billingAddressStatus,
     paymentProcessorType,
+    applePay,
 }: Props) => {
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
     const { APP_NAME } = useConfig();
@@ -145,6 +147,10 @@ const SubscriptionSubmitButton = ({
         }
 
         return <ChargebeePaypalWrapper chargebeePaypal={chargebeePaypal} iframeHandles={iframeHandles} />;
+    }
+
+    if (paymentMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY) {
+        return <ApplePayButton applePay={applePay} iframeHandles={iframeHandles} />;
     }
 
     if (!loading && paymentMethodValue === PAYMENT_METHOD_TYPES.CASH) {

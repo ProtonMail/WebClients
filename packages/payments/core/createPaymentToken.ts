@@ -129,7 +129,11 @@ export function convertPaymentIntentData(paymentIntentData: BackendPaymentIntent
 
 export const createPaymentTokenForExistingPayment = async (
     PaymentMethodID: ExistingPaymentMethod,
-    type: PAYMENT_METHOD_TYPES.CARD | PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+    type:
+        | PAYMENT_METHOD_TYPES.CARD
+        | PAYMENT_METHOD_TYPES.PAYPAL
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+        | PAYMENT_METHOD_TYPES.APPLE_PAY,
     api: Api,
     amountAndCurrency: AmountAndCurrency
 ): Promise<ChargeablePaymentToken | NonChargeablePaymentToken> => {
@@ -421,7 +425,8 @@ export const createPaymentTokenForExistingChargebeePayment = async (
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         | PAYMENT_METHOD_TYPES.CARD
         | PAYMENT_METHOD_TYPES.PAYPAL
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+        | PAYMENT_METHOD_TYPES.APPLE_PAY,
     api: Api,
     handles: ChargebeeIframeHandles,
     events: ChargebeeIframeEvents,
@@ -469,7 +474,8 @@ export const createPaymentTokenForExistingChargebeePayment = async (
     let convertedType:
         | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+        | PAYMENT_METHOD_TYPES.APPLE_PAY;
 
     if (type === PAYMENT_METHOD_TYPES.CARD) {
         convertedType = PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
