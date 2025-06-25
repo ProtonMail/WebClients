@@ -1,9 +1,10 @@
+import { PROTON_LOCAL_DOMAIN } from "@proton/shared/lib/localDev";
 import Store from "electron-store";
 import { z } from "zod";
-import { updateSettings } from "./settingsStore";
 import { mainLogger } from "../utils/log";
+import { updateSettings } from "./settingsStore";
 
-const BASE_LOCAL_URL = process.env.BASE_LOCAL_URL || "proton.local";
+const BASE_LOCAL_URL = process.env.BASE_LOCAL_URL || PROTON_LOCAL_DOMAIN;
 const localUrls = {
     account: `https://account.${BASE_LOCAL_URL}`,
     mail: `https://mail.${BASE_LOCAL_URL}`,
