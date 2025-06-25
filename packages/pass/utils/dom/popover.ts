@@ -6,16 +6,22 @@ import lastItem from '@proton/utils/lastItem';
 
 export const POPOVER_SUPPORTED = 'popover' in HTMLElement.prototype;
 
-const safeMatch = (target: HTMLElement, selector: string) => safeCall(() => target.matches(selector))() ?? false;
-const safeQuery = (selector: string) =>
+export const safeMatch = (target: HTMLElement, selector: string): boolean =>
+    safeCall(() => target.matches(selector))() ?? false;
+
+export const safeQuery = (selector: string): HTMLElement[] =>
     safeCall(() => Array.from(document.querySelectorAll<HTMLElement>(selector)))() ?? [];
 
 /** Keeps track of elements in the top-layer via the `toggle` event. Uses
  * a Set internally to preserve insertion order. Remove once there is a
  * proper DOM API to get an ordered list of top-layer elements. */
 export const TopLayerManager = (() => {
+    /** Firefox ESR 115 regression: `:popover-open` selectors throw
+     * errors in content script contexts due to incomplete CSS support.
+     * Using `safeQuery` to gracefully handle these failures. */
     const popovers = safeQuery(':popover-open');
     const modals = safeQuery(':modal');
+
     const TOP_LAYER_ELS = new Set<HTMLElement>(popovers.concat(modals));
     const listeners = createListenerStore();
 
@@ -23,9 +29,9 @@ export const TopLayerManager = (() => {
         if (!target || !isHTMLElement(target)) return;
         if (!(target instanceof HTMLDialogElement || target.hasAttribute('popover'))) return;
 
-        if ((safeMatch(target, ':modal') || safeMatch(target, ':popover-open')) && document.contains(target)) {
-            TOP_LAYER_ELS.add(target);
-        } else TOP_LAYER_ELS.delete(target);
+        const matchTopLayer = safeMatch(target, ':modal') || safeMatch(target, ':popover-open');
+        if (matchTopLayer && document.contains(target)) TOP_LAYER_ELS.add(target);
+        else TOP_LAYER_ELS.delete(target);
     };
 
     const onMutation: MutationCallback = (mutations) => {
