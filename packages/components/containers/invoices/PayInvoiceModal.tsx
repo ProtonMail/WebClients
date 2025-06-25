@@ -16,9 +16,8 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
-import type { Invoice } from '@proton/payments';
+import type { Invoice, PaymentProcessorHook } from '@proton/payments';
 import {
     type Currency,
     PAYMENT_METHOD_TYPES,
@@ -27,7 +26,6 @@ import {
     getPaymentsVersion,
 } from '@proton/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
 import useApiResult from '../../hooks/useApiResult';
@@ -71,17 +69,11 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
 
     const chargebeeContext = useChargebeeContext();
 
-    const forceInhouseSavedMethodProcessors = !invoice.IsExternal;
-    const disableNewPaymentMethods =
-        forceInhouseSavedMethodProcessors && user.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED;
-
     const paymentFacade = usePaymentFacade({
         amount: amountDue,
         currency,
         billingPlatform: subscription?.BillingPlatform,
         chargebeeUserExists: user.ChargebeeUserExists,
-        forceInhouseSavedMethodProcessors,
-        disableNewPaymentMethods,
         onChargeable: (operations) => {
             return withLoading(async () => {
                 await operations.payInvoice(invoice.ID, invoicePaymentsVersion);
@@ -162,12 +154,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             );
         }
 
-        if (
-            paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL &&
-            // if the invoice is internal, then we don't render the CB paypal button and fallback to the regular pay
-            // button
-            !forceInhouseSavedMethodProcessors
-        ) {
+        if (paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
             return (
                 <div className="flex justify-end">
                     <div className="w-1/2 mr-1">
@@ -200,9 +187,6 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             </Button>
         );
     })();
-
-    const userMustAddMethod =
-        disableNewPaymentMethods && paymentFacade.methods.allMethods.length === 0 && amountDue > 0;
 
     return (
         <FormModal
@@ -248,14 +232,11 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                             />
                         </Field>
                     </Row>
-                    {userMustAddMethod && (
-                        <p>{c('Payments').t`Please add a payment method in the dashboard to continue.`}</p>
-                    )}
                     {/* "Duplicated amountDue > 0 condition isn't a mistake. Even if we don't show the message above,
                      we still will hide the PaymentWrapper if the amount is 0. This handles the case when user has 
                      enough credits to pay for the invoice without adding a new payment method. So the amount to pay 
                      will remain 0." */}
-                    {amountDue > 0 && !userMustAddMethod ? (
+                    {amountDue > 0 ? (
                         <PaymentWrapper
                             {...paymentFacade}
                             onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}

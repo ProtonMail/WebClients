@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import type { DirectDebitBankAccount, DirectDebitCustomer, DirectDebitCustomerNameType } from '@proton/chargebee/lib';
 import { useLoading } from '@proton/hooks';
+import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments';
 import {
     type ADDON_NAMES,
     type AmountAndCurrency,
@@ -29,8 +30,6 @@ import {
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
-
-import type { PaymentProcessorHook, PaymentProcessorType } from './interface';
 
 export class SepaEmailNotProvidedError extends DisplayablePaymentError {
     constructor() {
@@ -94,6 +93,11 @@ export const useSepaDirectDebit = (
     { api, forceEnableChargebee, handles, verifyPayment, events }: Dependencies
 ): ChargebeeDirectDebitProcessorHook => {
     const fetchedPaymentTokenRef = useRef<ChargebeeFetchedPaymentToken | null>(null);
+    const onChargeableRef = useRef(onChargeable);
+
+    // Keep the ref up to date with the latest onChargeable callback
+    onChargeableRef.current = onChargeable;
+
     const [bankAccount, setBankAccount] = useState<DirectDebitBankAccount>({ iban: '' });
 
     const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlanName);
@@ -220,7 +224,7 @@ export const useSepaDirectDebit = (
             v: 5,
         };
 
-        void onChargeable?.(result);
+        void onChargeableRef.current?.(result);
 
         return result;
     };
