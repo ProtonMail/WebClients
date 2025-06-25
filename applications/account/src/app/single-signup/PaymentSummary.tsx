@@ -8,12 +8,10 @@ import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
-import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { ADDON_NAMES, type Plan } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { SubscriptionMode } from '@proton/shared/lib/interfaces';
@@ -40,7 +38,6 @@ interface Props {
     planInformation: ReturnType<typeof getPlanInformation>;
     upsellToggle: ReactNode;
     hasSelectedFree: boolean;
-    app: APP_NAMES;
 }
 
 const PaymentSummary = ({
@@ -56,7 +53,6 @@ const PaymentSummary = ({
     planInformation,
     upsellToggle,
     hasSelectedFree,
-    app,
 }: Props) => {
     const initialLoading = model.loadingDependencies;
     const loading = loadingPaymentDetails || initialLoading;
@@ -201,23 +197,22 @@ const PaymentSummary = ({
                 </>
             ) : null}
 
-            {isB2bPlan && (
-                <>
-                    <div className="mx-3 text-bold flex justify-space-between text-rg gap-2">
-                        <span>{getTotalBillingText(options.cycle, options.planIDs)}</span>
-                        <span>
-                            {initialLoading ? (
-                                loaderNode
-                            ) : (
-                                <Price currency={options.currency}>{options.checkResult.Amount}</Price>
-                            )}
-                        </span>
-                    </div>
-                    <div className="mx-3 border-bottom border-weak" />
-                </>
+            {isB2bPlan && !isTrial && (
+                <div className="mx-3 text-bold flex justify-space-between text-rg gap-2">
+                    <span>{getTotalBillingText(options.cycle, options.planIDs)}</span>
+                    <span>
+                        {initialLoading ? (
+                            loaderNode
+                        ) : (
+                            <Price currency={options.currency}>{options.checkResult.Amount}</Price>
+                        )}
+                    </span>
+                </div>
             )}
 
-            {isB2bPlan && (
+            {isB2bPlan && <div className="mx-3 border-bottom border-weak" />}
+
+            {isB2bPlan && !isTrial && (
                 <>
                     <div className="mx-3">{giftCode}</div>
                     <div className="mx-3 border-bottom border-weak" />
@@ -266,14 +261,6 @@ const PaymentSummary = ({
                 const trialEndDate = addDays(new Date(), 14);
                 const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
 
-                const disclaimer = getCheckoutRenewNoticeTextFromCheckResult({
-                    checkResult: options.checkResult,
-                    plansMap: model.plansMap,
-                    planIDs: options.planIDs,
-                    subscription: model.session?.subscription,
-                    app,
-                });
-
                 return (
                     <>
                         <div className="mx-3 flex flex-column gap-2">
@@ -292,10 +279,6 @@ const PaymentSummary = ({
                             <div className="text-sm color-weak">
                                 {c('b2b_trials_2025_Info').jt`on ${formattedDate}`}
                             </div>
-                        </div>
-                        <div className="mx-3 border-bottom border-weak" />
-                        <div className="mx-3">
-                            <div className="text-sm color-weak">{disclaimer}</div>
                         </div>
                     </>
                 );
