@@ -9,7 +9,7 @@ import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import Time from '@proton/components/components/time/Time';
 import CancelTrialModal from '@proton/components/containers/topBanners/CancelTrialModal';
-import type { Subscription } from '@proton/payments';
+import { Renew, type Subscription } from '@proton/payments';
 import {
     CYCLE,
     getHasVpnB2BPlan,
@@ -436,7 +436,8 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     );
 
     const b2bTrialLearnMore = (() => {
-        if (!isB2BTrial) {
+        const trialCancelled = subscription?.Renew === Renew.Disabled;
+        if (!isB2BTrial || trialCancelled) {
             return null;
         }
 

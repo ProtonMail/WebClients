@@ -11,9 +11,10 @@ interface Arguments {
     user: UserModel;
     subscription?: Subscription;
     showVPNDashboard: boolean;
+    isB2BTrial: boolean;
 }
 
-export const getRoutes = ({ user, subscription, showVPNDashboard }: Arguments) => {
+export const getRoutes = ({ user, subscription, showVPNDashboard, isB2BTrial }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const cancellablePlan = hasCancellablePlan(subscription, user);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
@@ -95,6 +96,7 @@ export const getRoutes = ({ user, subscription, showVPNDashboard }: Arguments) =
                     text: c('Title').t`Invoices`,
                     id: 'invoices',
                     variant: 'card',
+                    available: !isB2BTrial,
                 },
                 {
                     text: c('Title').t`Cancel subscription`,
@@ -170,6 +172,7 @@ export const getRoutes = ({ user, subscription, showVPNDashboard }: Arguments) =
                 {
                     text: c('Title').t`Invoices`,
                     id: 'invoices',
+                    available: !isB2BTrial,
                 },
                 {
                     text: c('Title').t`Cancel subscription`,

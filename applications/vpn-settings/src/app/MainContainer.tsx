@@ -76,6 +76,7 @@ import LiveChatZendesk, {
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -107,11 +108,13 @@ const MainContainer: FunctionComponent = () => {
     const isOrganizationPolicyEnforced = Boolean(userSettings?.OrganizationPolicy?.Enforced);
     const [groups, loadingGroups] = useGroups();
     const { showVPNDashboard } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
 
     const vpnRoutes = getRoutes({
         user,
         subscription,
         showVPNDashboard,
+        isB2BTrial,
     });
 
     const organizationAppRoutes = getOrganizationAppRoutes({
