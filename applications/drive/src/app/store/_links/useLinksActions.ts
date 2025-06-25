@@ -574,8 +574,7 @@ export function useLinksActions({
 
         try {
             const [
-                link,
-                { passphrase, passphraseSessionKey },
+                mainPhotoLink,
                 newParentPrivateKey,
                 newParentHashKey,
                 { privateKey: addressKey, address },
@@ -583,7 +582,6 @@ export function useLinksActions({
                 oldShare,
             ] = await Promise.all([
                 getLink(abortSignal, shareId, linkId),
-                getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
                 getLinkPrivateKey(abortSignal, newShareId, newParentLinkId),
                 getLinkHashKey(abortSignal, newShareId, newParentLinkId),
                 getShareCreatorKeys(abortSignal, newShareId),
@@ -591,7 +589,7 @@ export function useLinksActions({
                 getShare(abortSignal, shareId),
             ]);
 
-            if (link.corruptedLink) {
+            if (mainPhotoLink.corruptedLink) {
                 throw new Error('Cannot move corrupted file');
             }
 
@@ -601,40 +599,45 @@ export function useLinksActions({
                 throw new Error('You can only favorite photos');
             }
             // PhotoData in body is included in the case the photo needs to be copied to the photo gallery
-            const includePhotoData = link.parentLinkId !== newShare.rootLinkId;
+            const includePhotoData = mainPhotoLink.parentLinkId !== newShare.rootLinkId;
 
             let body: FavoriteData = {};
             if (includePhotoData) {
-                numberOfPhotos = (link.activeRevision?.photo?.relatedPhotosLinkIds?.length || 0) + 1;
+                numberOfPhotos = (mainPhotoLink.activeRevision?.photo?.relatedPhotosLinkIds?.length || 0) + 1;
 
-                const getLinkMovedParameters = async (link: DecryptedLink) => {
+                const getLinkMovedParameters = async (linkToMove: DecryptedLink) => {
+                    const { passphrase, passphraseSessionKey } = await getLinkPassphraseAndSessionKey(
+                        abortSignal,
+                        shareId,
+                        linkToMove.linkId
+                    );
                     const [currentParentPrivateKey, Hash, ContentHash, { NodePassphrase, NodePassphraseSignature }] =
                         await Promise.all([
-                            link.parentLinkId
-                                ? getLinkPrivateKey(abortSignal, shareId, link.parentLinkId)
+                            linkToMove.parentLinkId
+                                ? getLinkPrivateKey(abortSignal, shareId, linkToMove.parentLinkId)
                                 : getSharePrivateKey(abortSignal, shareId),
-                            generateLookupHash(link.name, newParentHashKey).catch((e) =>
+                            generateLookupHash(linkToMove.name, newParentHashKey).catch((e) =>
                                 Promise.reject(
                                     new EnrichedError('Failed to generate lookup hash during move', {
                                         tags: {
                                             shareId,
                                             newParentLinkId,
                                             newShareId: newShareId === shareId ? undefined : newShareId,
-                                            linkId,
+                                            linkId: linkToMove.linkId,
                                         },
                                         extra: { e, errorType: 'decryption' },
                                     })
                                 )
                             ),
-                            link.digests?.sha1
-                                ? generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
+                            linkToMove.digests?.sha1
+                                ? generateLookupHash(linkToMove.digests.sha1, newParentHashKey).catch((e) =>
                                       Promise.reject(
                                           new EnrichedError('Failed to generate content hash during move', {
                                               tags: {
                                                   shareId,
                                                   newParentLinkId,
                                                   newShareId: newShareId === shareId ? undefined : newShareId,
-                                                  linkId,
+                                                  linkId: linkToMove.linkId,
                                               },
                                               extra: { e, errorType: 'decryption' },
                                           })
@@ -649,7 +652,7 @@ export function useLinksActions({
                                                 shareId,
                                                 newParentLinkId,
                                                 newShareId: newShareId === shareId ? undefined : newShareId,
-                                                linkId,
+                                                linkId: linkToMove.linkId,
                                             },
                                             extra: { e, errorType: 'encryption' },
                                         })
@@ -658,8 +661,8 @@ export function useLinksActions({
                         ]);
 
                     let privateKey: PrivateKeyReference = currentParentPrivateKey;
-                    if (link.photoProperties?.albums.length && !link.parentLinkId) {
-                        for (const album of link.photoProperties.albums) {
+                    if (linkToMove.photoProperties?.albums.length && !linkToMove.parentLinkId) {
+                        for (const album of linkToMove.photoProperties.albums) {
                             try {
                                 const albumPrivateKey = await getLinkPrivateKey(
                                     abortSignal,
@@ -681,7 +684,7 @@ export function useLinksActions({
                     }
 
                     const sessionKeyName = await getDecryptedSessionKey({
-                        data: link.encryptedName,
+                        data: linkToMove.encryptedName,
                         privateKeys: privateKey,
                     }).catch((e) =>
                         Promise.reject(
@@ -690,7 +693,7 @@ export function useLinksActions({
                                     shareId,
                                     newParentLinkId,
                                     newShareId: newShareId === shareId ? undefined : newShareId,
-                                    linkId,
+                                    linkId: linkToMove.linkId,
                                 },
                                 extra: { e, errorType: 'decryption' },
                             })
@@ -698,7 +701,7 @@ export function useLinksActions({
                     );
 
                     const { message: encryptedName } = await CryptoProxy.encryptMessage({
-                        textData: link.name,
+                        textData: linkToMove.name,
                         stripTrailingSpaces: true,
                         sessionKey: sessionKeyName,
                         encryptionKeys: newParentPrivateKey,
@@ -710,7 +713,7 @@ export function useLinksActions({
                                     shareId,
                                     newParentLinkId,
                                     newShareId: newShareId === shareId ? undefined : newShareId,
-                                    linkId,
+                                    linkId: linkToMove.linkId,
                                 },
                                 extra: { e, errorType: 'encryption' },
                             })
@@ -720,16 +723,16 @@ export function useLinksActions({
                     return {
                         Name: encryptedName,
                         Hash,
-                        ContentHash: ContentHash || link.activeRevision?.photo?.contentHash, // we fallback to current ContentHash if available
+                        ContentHash: ContentHash || linkToMove.activeRevision?.photo?.contentHash, // we fallback to current ContentHash if available
                         NameSignatureEmail: address.Email,
                         NodePassphrase,
-                        ...(!!link.nameSignatureEmail &&
-                            !link.signatureEmail && {
+                        ...(!!linkToMove.nameSignatureEmail &&
+                            !linkToMove.signatureEmail && {
                                 NodePassphraseSignature,
                                 SignatureEmail: address.Email,
                             }),
-                        ...(!link.nameSignatureEmail &&
-                            !link.signatureEmail && {
+                        ...(!linkToMove.nameSignatureEmail &&
+                            !linkToMove.signatureEmail && {
                                 NodePassphraseSignature,
                                 SignatureEmail: address.Email,
                                 NameSignatureEmail: address.Email,
@@ -737,7 +740,7 @@ export function useLinksActions({
                     };
                 };
 
-                const data = await getLinkMovedParameters(link);
+                const data = await getLinkMovedParameters(mainPhotoLink);
                 // TODO [DRVWEB-4651]:
                 /*
                     New content hash is computed from sha1 located in extended attributes. This digest is set by clients and cannot be trusted. It can be wrong, set by malicious user, or missing entirely.
@@ -752,13 +755,13 @@ export function useLinksActions({
 
                 let RelatedPhotosData: RelatedPhotos[] = [];
 
-                if (link.activeRevision?.photo?.relatedPhotosLinkIds) {
+                if (mainPhotoLink.activeRevision?.photo?.relatedPhotosLinkIds) {
                     const processRelatedPhotos = async (
-                        link: DecryptedLink,
+                        linkToProcess: DecryptedLink,
                         abortSignal: AbortSignal,
                         shareId: string
                     ): Promise<RelatedPhotos[]> => {
-                        const relatedIds = link.activeRevision?.photo?.relatedPhotosLinkIds;
+                        const relatedIds = linkToProcess.activeRevision?.photo?.relatedPhotosLinkIds;
 
                         if (!relatedIds) {
                             return [];
@@ -767,8 +770,8 @@ export function useLinksActions({
                         return batchPromiseHelper(
                             relatedIds,
                             async (id: string) => {
-                                const link = await getLink(abortSignal, shareId, id);
-                                const data = await getLinkMovedParameters(link);
+                                const relatedPhotoLink = await getLink(abortSignal, shareId, id);
+                                const data = await getLinkMovedParameters(relatedPhotoLink);
 
                                 if (!data.ContentHash) {
                                     throw new Error('ContentHash could not be computed');
@@ -785,7 +788,7 @@ export function useLinksActions({
                         );
                     };
 
-                    RelatedPhotosData = await processRelatedPhotos(link, abortSignal, shareId);
+                    RelatedPhotosData = await processRelatedPhotos(mainPhotoLink, abortSignal, shareId);
                 }
 
                 body = {
