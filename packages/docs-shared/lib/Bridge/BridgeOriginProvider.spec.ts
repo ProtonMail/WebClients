@@ -15,10 +15,10 @@ describe('BridgeOriginProvider', () => {
 
   describe('GetSafeOrigin', () => {
     it('should return root origin', () => {
-      setLocation('docs.proton.local')
+      setLocation('docs.proton.dev')
 
-      expect(BridgeOriginProvider.GetEditorOrigin()).toEqual('https://docs-editor.proton.local')
-      expect(BridgeOriginProvider.GetClientOrigin()).toEqual('https://docs.proton.local')
+      expect(BridgeOriginProvider.GetEditorOrigin()).toEqual('https://docs-editor.proton.dev')
+      expect(BridgeOriginProvider.GetClientOrigin()).toEqual('https://docs.proton.dev')
     })
 
     it('should return safe origin with remote domain', () => {
