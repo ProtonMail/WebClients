@@ -8,6 +8,7 @@ import type { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/teleme
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import { getItem } from '@proton/shared/lib/helpers/storage';
 import type { Api, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -15,6 +16,7 @@ import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { HIDE_SNOOZE_CONFIRMATION_LS_KEY } from '../components/list/snooze/constant';
 import type { MoveScheduledModalProps } from '../components/message/modals/MoveScheduledModal';
 import type { MoveToSpamModalProps, MoveToSpamModalResolveProps } from '../components/message/modals/MoveToSpamModal';
 import type { Conversation } from '../models/conversation';
@@ -209,6 +211,11 @@ export const searchForSnoozed = async (
     setContainFocus?: (contains: boolean) => void,
     folders: Folder[] = []
 ) => {
+    const hideSnoozeConfirmation = getItem(HIDE_SNOOZE_CONFIRMATION_LS_KEY);
+    if (hideSnoozeConfirmation === 'true') {
+        return;
+    }
+
     await searchForLabelsAndOpenModal(
         [TRASH, ARCHIVE, INBOX],
         SNOOZED,
