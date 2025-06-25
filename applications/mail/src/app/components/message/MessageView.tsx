@@ -31,9 +31,9 @@ import { useMailECRTMetric } from '../../metrics/useMailECRTMetric';
 import type { Element } from '../../models/element';
 import { SOURCE_ACTION } from '../list/useListTelemetry';
 import MessageBody from './MessageBody';
-import MessageFooter from './MessageFooter';
-import HeaderCollapsed from './header/HeaderCollapsed';
-import HeaderExpanded from './header/HeaderExpanded';
+import MessageFooter from './extrasFooter/MessageFooter';
+import HeaderCollapsed from './extrasHeader/HeaderCollapsed';
+import HeaderExpanded from './extrasHeader/HeaderExpanded';
 
 import './MessageView.scss';
 
