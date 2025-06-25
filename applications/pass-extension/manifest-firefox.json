@@ -21,7 +21,7 @@
                 "https://*.proton.me/*",
                 "https://*.proton.black/*",
                 "https://*.proton.pink/*",
-                "https://*.proton.local/*",
+                "https://*.proton.dev/*",
                 "https://*.protontech.ch/*"
             ],
             "js": ["external.js"],
@@ -32,7 +32,7 @@
             "matches": ["https://*/*", "http://*/*"],
             "exclude_matches": [
                 "https://pass.proton.me/*",
-                "https://pass.proton.local/*",
+                "https://pass.proton.dev/*",
                 "https://pass.proton.black/*",
                 "https://pass.proton.pink/*",
                 "https://pass.protontech.ch/*"

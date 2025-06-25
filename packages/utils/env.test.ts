@@ -9,21 +9,21 @@ describe('Env', () => {
     });
 
     describe('isLocalEnvironment', () => {
-        test('should return true when host includes proton.local', () => {
+        test('should return true when host includes proton.dev', () => {
             Object.defineProperty(window, 'location', {
-                value: { host: 'app.proton.local' },
+                value: { host: 'app.proton.dev' },
             });
             expect(isLocalEnvironment()).toBe(true);
         });
 
-        test('should return true when host is exactly proton.local', () => {
+        test('should return true when host is exactly proton.dev', () => {
             Object.defineProperty(window, 'location', {
-                value: { host: 'proton.local' },
+                value: { host: 'proton.dev' },
             });
             expect(isLocalEnvironment()).toBe(true);
         });
 
-        test('should return false when host does not include proton.local', () => {
+        test('should return false when host does not include proton.dev', () => {
             Object.defineProperty(window, 'location', {
                 value: { host: 'mail.proton.me' },
             });
@@ -32,8 +32,8 @@ describe('Env', () => {
     });
 
     describe('isDevOrBlack', () => {
-        test('should return true when host includes proton.local', () => {
-            window.location.host = 'app.proton.local';
+        test('should return true when host includes proton.dev', () => {
+            window.location.host = 'app.proton.dev';
             expect(isDevOrBlack()).toBe(true);
         });
 
