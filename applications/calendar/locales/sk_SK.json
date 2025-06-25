@@ -7909,6 +7909,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB cloudového úložiska, ktoré vám umožní jednoducho ukladať, synchronizovať a zdieľať súbory. Zabezpečené end-to-end šifrovaním."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB cloudového úložiska, ktoré vám umožní jednoducho ukladať, synchronizovať a zdieľať súbory. Zabezpečené end-to-end šifrovaním."
       ]
     },
     "new_plans: Subtext": {
@@ -8214,6 +8220,12 @@
       ],
       "Support for ${ n } custom email domains": [
         "Podpora pre ${ n } vlastné emailové domény"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Podpora pre ${ n } vlastnú emailovú doménu",
+        "Podpora pre ${ n } vlastné emailové domény",
+        "Podpora pre ${ n } vlastných emailových domén",
+        "Podpora pre ${ n } vlastných emailových domén"
       ]
     },
     "Note": {
@@ -8514,6 +8526,12 @@
       ],
       "Your subscription renews soon": [
         "Vaše predplatné sa čoskoro obnoví"
+      ],
+      "Don’t show this again": [
+        "Nabudúce nezobrazovať"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Získajte ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8540,6 +8558,18 @@
       ],
       "Storage": [
         "Úložisko"
+      ],
+      "500 GB secure storage": [
+        "500 GB bezpečného úložiska"
+      ],
+      "Advanced threat protection": [
+        "Pokročilá ochrana pred hrozbami"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultra rýchle VPN servery v 110+ krajinách"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Neobmedzené aliasy na ochranu vašej identity"
       ]
     },
     "Onboarding": {
@@ -8593,6 +8623,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Budete môcť používať ${ planTitle } až do konca skúšobného obdobia, bez poplatku."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " navštívte naše ${ helpCenterLink } alebo ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Zrušiť môžete kedykoľvek pred ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "kontaktujte náš tím podpory"
+      ],
+      "Continue": [
+        "Pokračovať"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Užite si bezplatné funkcie firemného zabezpečenia do ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "centrum pomoci"
+      ],
+      "If you need help,": [
+        "Ak potrebujete pomoc,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Môžete používať ${ planTitle } až do konca skúšobného obdobia bez spoplatnenia."
+      ],
+      "Your free trial has started": [
+        "Vaša bezplatná skúšobná verzia sa začala"
       ]
     },
     "Option": {
@@ -8881,6 +8941,12 @@
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Pre SEPA sa akceptuje len euro. Vaša mena bola zmenená. Na vrátenie pôvodnej voľby použite výber."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Tento spôsob platby sa stane vaším novým predvoleným pre všetky budúce obnovenia."
       ]
     },
     "Payments.Error": {
@@ -9636,6 +9702,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Upgradujte na ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Prehliadajte bezpečne"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Urobte viac pomocou ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Získajte neobmedzené aliasy"
+      ],
+      "Guard against threats": [
+        "Ochrana pred hrozbami"
+      ],
+      "Increase your storage": [
+        "Zväčšite svoje úložisko"
+      ],
+      "Keep passwords safe": [
+        "Uchovávajte heslá v bezpečí"
+      ],
+      "Unblock streaming content": [
+        "Odblokujte streamovaný obsah"
       ]
     },
     "specialoffer: Offers": {
@@ -9712,6 +9799,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Inovujte a ušetrite viac s 2 rokmi ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Pristupujte k obsahu na streamovacích služieb na celom svete"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Získajte 500 GB na bezpečné uloženie všetkých vašich súborov a fotografií"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Získajte prístup k ultra rýchlym VPN serverom vo viac než 110 krajinách"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Získajte jeden plán, ktorý zahŕňa všetko, získajte ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Získajte neobmedzené aliasy na ochranu svojej identity a zníženie spamu"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Udržujte si svoje heslá v bezpečí a usporiadané vo viacerých trezoroch "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Chráňte svoj účet pred hrozbami so Sentinelom"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9924,6 +10032,12 @@
         "${ n } VPN pripojení na používateľa"
       ],
       "VPN connection for ${ n } devices per user": [
+        "VPN pripojenie pre ${ n } zariadenie na používateľa",
+        "VPN pripojenie pre ${ n } zariadenia na používateľa",
+        "VPN pripojenie pre ${ n } zariadení na používateľa",
+        "VPN pripojenie pre ${ n } zariadení na používateľa"
+      ],
+      "VPN connection for ${ n } device per user": [
         "VPN pripojenie pre ${ n } zariadenie na používateľa",
         "VPN pripojenie pre ${ n } zariadenia na používateľa",
         "VPN pripojenie pre ${ n } zariadení na používateľa",
@@ -11326,6 +11440,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } deň",
+        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dni",
+        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní",
+        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12010,6 +12130,153 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Využite ponuku"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB úložisko"
+      ],
+      "200 GB storage": [
+        "200 GB úložisko"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB zašifrovaného úložiska"
+      ],
+      "Add unlimited credit cards": [
+        "Pridajte neobmedzený počet platobných kariet"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Všetky prémiové funkcie ${ BRAND_NAME } Mail, Pass, VPN, Drive a Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokujte reklamy, sledovače a malvér"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Zľavy sú založené na štandardných mesačných cenách. Na konci fakturačného cyklu sa vaše predplatné obnoví za štandardnú ročnú sadzbu."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Zdvojnásobte svoje zašifrované úložisko – získajte 1 TB pre všetky svoje dáta"
+      ],
+      "Encrypted password manager": [
+        "Šifrovaný správca hesiel"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Tu je exkluzívny darček na oslavu našej spoločnej cesty."
+      ],
+      "High speed streaming with VPN": [
+        "Vysokorýchlostné streamovanie s VPN"
+      ],
+      "of privacy": [
+        "súkromia"
+      ],
+      "Online document editor": [
+        "Online editor dokumentov"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online súkromie až pre 2 osoby"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online súkromie pre celú vašu rodinu (až pre 6 používateľov)"
+      ],
+      "Protect up to 10 devices": [
+        "Ochráňte až 10 zariadení"
+      ],
+      "Recover previous file versions": [
+        "Obnova predchádzajúcich verzií súborov"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Ušetrite veľa na prémiových Drive funkciách s časovo obmedzenou zľavou."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Ušetrite veľa na prémiových Mail funkciách s časovo obmedzenou zľavou."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Ušetrite veľa na prémiových Pass funkciách s časovo obmedzenou zľavou."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Ušetrite veľa na prémiových funkciách VPN s časovo obmedzenou zľavou."
+      ],
+      "Save time with built-in 2FA": [
+        "Ušetrite čas pomocou vstavanej 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Zabezpečený email s neobmedzenými aliasmi"
+      ],
+      "Select any server": [
+        "Vyberte ľubovoľný server"
+      ],
+      "Share passwords easily": [
+        "Zdieľajte heslá s ľahkosťou"
+      ],
+      "Short @pm.me address": [
+        "Skrátená adresa @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Streamujte svoj obľúbený obsah"
+      ],
+      "thanks to you": [
+        "vďaka vám"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Strojnásobte svoje zašifrované úložisko – získajte 3 TB pre všetky svoje dáta"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Use your own email domain": [
+        "Používajte vlastnú emailovú doménu"
+      ],
+      "years": [
+        "roky"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Výročná ponuka"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiace",
+        "${ n } mesiace"
+      ],
+      "/ month": [
+        "/ mesiac"
+      ],
+      "12 months": [
+        "12 mesiacov"
+      ],
+      "15 months": [
+        "15 mesiacov"
+      ],
+      "24 months": [
+        "24 mesiacov"
+      ],
+      "30 months": [
+        "30 mesiacov"
+      ],
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Šifrovaný správca hesiel"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mesiac"
+      ],
+      "Only": [
+        "Iba"
       ]
     }
   }

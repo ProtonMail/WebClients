@@ -7789,6 +7789,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TiB de stocare în cloud care vă permite stocarea, sincronizarea și partajarea ușoară a fișierelor. Securizat prin criptare bilaterală."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GiB de stocare în cloud care vă permite stocarea, sincronizarea și partajarea ușoară a fișierelor. Securizat prin criptare bilaterală."
       ]
     },
     "new_plans: Subtext": {
@@ -8092,6 +8098,11 @@
       ],
       "Support for ${ n } custom email domains": [
         "Suport pentru ${ n } domenii de e-mail personale"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Suport pentru ${ n } domeniu de e-mail personal",
+        "Suport pentru ${ n } domenii de e-mail personale",
+        "Suport pentru ${ n } de domenii de e-mail personale"
       ]
     },
     "Note": {
@@ -8371,6 +8382,12 @@
       ],
       "Your subscription renews soon": [
         "Abonamentul se va reînnoi în curând"
+      ],
+      "Don’t show this again": [
+        "Nu mai arăta asta"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Obțineți ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8397,6 +8414,18 @@
       ],
       "Storage": [
         "Spațiu de stocare"
+      ],
+      "500 GB secure storage": [
+        "500 GiB de stocare securizată"
+      ],
+      "Advanced threat protection": [
+        "Protecție avansată împotriva amenințărilor"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Servere VPN ultrarapide în peste 110 țări"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Aliasuri nelimitate pentru a vă proteja identitatea"
       ]
     },
     "Onboarding": {
@@ -8450,6 +8479,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de probă."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " vizitați ${ helpCenterLink } sau contactați ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Anulați oricând înainte de ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "contactați asistența noastră"
+      ],
+      "Continue": [
+        "Continuare"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Beneficiați de funcționalități de securitate gratuite pentru afacere până la ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "centru de ajutor"
+      ],
+      "If you need help,": [
+        "Dacă aveți nevoie de ajutor,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Puteți încă anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Puteți folosi ${ planTitle } până la terminarea perioadei de probare fără a vi se aplica vreo taxă."
+      ],
+      "Your free trial has started": [
+        "Perioada de probare gratuită a început"
       ]
     },
     "Option": {
@@ -8729,6 +8788,12 @@
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Se acceptă doar euro pentru zona SEPA. Moneda a fost schimbată. Utilizați selectorul dacă doriți să remodificați."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
       ]
     },
     "Payments.Error": {
@@ -9464,6 +9529,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Îmbunătățiți planul cu ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Navigați în siguranță"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Faceți mai multe cu ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Obțineți aliasuri nelimitate"
+      ],
+      "Guard against threats": [
+        "Protejați-vă împotriva amenințărilor"
+      ],
+      "Increase your storage": [
+        "Măriți-vă spațiul de stocare"
+      ],
+      "Keep passwords safe": [
+        "Păstrați parolele în siguranță"
+      ],
+      "Unblock streaming content": [
+        "Deblocați transmisiile în flux de conținut"
       ]
     },
     "specialoffer: Offers": {
@@ -9539,6 +9625,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Modernizați contul și salvați mai mult cu doi ani la ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Acces la conținut de pe servicii de transmisie în flux la nivel global"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Obțineți 500 GiB pentru a vă stoca în siguranță toate fișierele și fotografiile"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Obțineți acces la servere VPN ultrarapide în peste 110 de țări"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Obțineți un plan care include totul, luați ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Obțineți aliasuri nelimitate pentru a vă proteja identitatea și a reduce mesajele nedorite"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Păstrați-vă parolele în siguranță și organizate în mai multe seifuri"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Protejați-vă contul de amenințări cu Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9745,6 +9852,11 @@
         "${ n } de conexiuni VPN per utilizator"
       ],
       "VPN connection for ${ n } devices per user": [
+        "Conexiune VPN pentru ${ n } dispozitiv per utilizator",
+        "Conexiuni VPN pentru ${ n } dispozitive per utilizator",
+        "Conexiuni VPN pentru ${ n } de dispozitive per utilizator"
+      ],
+      "VPN connection for ${ n } device per user": [
         "Conexiune VPN pentru ${ n } dispozitiv per utilizator",
         "Conexiuni VPN pentru ${ n } dispozitive per utilizator",
         "Conexiuni VPN pentru ${ n } de dispozitive per utilizator"
@@ -11125,6 +11237,11 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Perioada de probare gratuită se termină peste ${ trialDurationFormatted } zi",
+        "Perioada de probare gratuită se termină peste ${ trialDurationFormatted } zile",
+        "Perioada de probare gratuită se termină peste ${ trialDurationFormatted } de zile"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11763,6 +11880,152 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Luați oferta"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "200 GB storage": [
+        "200 GiB spațiu de stocare"
+      ],
+      "500 GB encrypted storage": [
+        "500 GiB de stocare criptată"
+      ],
+      "Add unlimited credit cards": [
+        "Adăugați carduri de plată nelimitate"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Toate funcțiile speciale ale ${ BRAND_NAME } Mail, Pass, VPN, Drive și Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocare reclame, urmăritori și programe malițioase"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Reducerile se bazează pe prețurile lunare standard. La sfârșitul ciclului de facturare, abonamentul se va reînnoi la tariful anual standard."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Dublați-vă stocarea criptată – obțineți 1 TiB pentru toate datele stocate"
+      ],
+      "Encrypted password manager": [
+        "Manager de parole criptat"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Iată un cadou exclusiv pentru a sărbători călătoria noastră împreună."
+      ],
+      "High speed streaming with VPN": [
+        "Transmisii în flux de mare viteză cu VPN"
+      ],
+      "of privacy": [
+        "de confidențialitate"
+      ],
+      "Online document editor": [
+        "Editor online de documente"
+      ],
+      "Online privacy for up to 2 people": [
+        "Confidențialitate online pentru maxim două persoane"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Confidențialitate online pentru întreaga familie (până la 6 utilizatori)"
+      ],
+      "Protect up to 10 devices": [
+        "Protejați până la 10 dispozitive"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Economisiți mult la funcțiile speciale Drive cu oferta limitată de reducere."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Economisiți mult la funcțiile speciale Mail cu oferta limitată de reducere."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Economisiți mult la funcțiile speciale PASS cu oferta limitată de reducere."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Economisiți mult la funcțiile speciale VPN cu oferta limitată de reducere."
+      ],
+      "Save time with built-in 2FA": [
+        "Salvați timp cu A2F integrată"
+      ],
+      "Secure email with unlimited aliases": [
+        "E-mail securizat cu aliasuri nelimitate"
+      ],
+      "Select any server": [
+        "Selectați orice server"
+      ],
+      "Share passwords easily": [
+        "Partajați ușor parolele"
+      ],
+      "Short @pm.me address": [
+        "Adresă scurtă @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Vizionați conținutul preferat"
+      ],
+      "thanks to you": [
+        "mulțumită dvs."
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Triplați-vă stocarea criptată – obțineți 3 TiB pentru toate datele stocate"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
+      ],
+      "years": [
+        "ani"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Ofertă aniversară"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
+      "/ month": [
+        "/lună"
+      ],
+      "12 months": [
+        "12 luni"
+      ],
+      "15 months": [
+        "15 luni"
+      ],
+      "24 months": [
+        "24 de luni"
+      ],
+      "30 months": [
+        "30 de luni"
+      ],
+      "for ${ durationDeal }": [
+        "cu ${ durationDeal }"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Manager de parole criptat"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/lună"
+      ],
+      "Only": [
+        "Doar"
       ]
     }
   }

@@ -4736,7 +4736,7 @@
         "Panel samping kalender"
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
-        "Tidak dapat menemukan acara yang Anda cari? Sebagian acara dalam kalender tersembunyi Anda sesuai dengan kueri pencarian Anda. Untuk melihat hasil ini, atur agar ${ hiddenWithItemsCalendarList } dapat terlihat."
+        "Tidak menemukan acara yang Anda cari? Sebagian acara dalam kalender tersembunyi Anda sesuai dengan kueri pencarian Anda. Untuk melihat hasil ini, atur agar ${ hiddenWithItemsCalendarList } dapat terlihat."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi milik seluruh kontak yang dienkripsi dengan kunci ini terlepas dari peringatan yang ada."
@@ -4958,7 +4958,7 @@
         "Apabila Anda berubah pikiran, Anda dapat berlangganan kembali kapan saja. Kami sungguh menyayangkan kepergian Anda!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
+        "Apabila Anda tidak menemukan email ini pada kotak masuk, silakan periksa folder spam Anda."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
@@ -6680,10 +6680,10 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Impor semua pesan dari ${ itemsToImportCount } folder dan berikan label sebagai"
+        "Impor seluruh pesan dari ${ itemsToImportCount } folder dan labeli sebagai"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Impor semua pesan dari ${ itemsToImportCount } label dan berikan label sebagai"
+        "Impor seluruh pesan dari ${ itemsToImportCount } label dan labeli sebagai"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
         "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan labeli sebagai"
@@ -7549,6 +7549,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "Ruang penyimpanan 1 TB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas dengan mudah. Terlindung oleh enkripsi end-to-end."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "Ruang penyimpanan 200 GB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas dengan mudah. Terlindung oleh enkripsi end-to-end."
       ]
     },
     "new_plans: Subtext": {
@@ -7848,6 +7854,9 @@
       ],
       "Support for ${ n } custom email domains": [
         "Dukungan untuk ${ n } domain email khusus"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Dukungan untuk ${ n } domain email khusus"
       ]
     },
     "Note": {
@@ -8085,6 +8094,12 @@
       ],
       "Your subscription renews soon": [
         "Langganan Anda akan segera diperbarui"
+      ],
+      "Don’t show this again": [
+        "Jangan tampilkan ini lagi"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Dapatkan ${ BRAND_NAME } Tanpa Batas"
       ]
     },
     "Offer feature": {
@@ -8111,6 +8126,18 @@
       ],
       "Storage": [
         "Ruang penyimpanan"
+      ],
+      "500 GB secure storage": [
+        "Penyimpanan aman 500 GB"
+      ],
+      "Advanced threat protection": [
+        "Perlindungan ancaman tingkat lanjut"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Server VPN sangat cepat di 110+ negara"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Alias tak terbatas untuk melindungi identitas Anda"
       ]
     },
     "Onboarding": {
@@ -8164,6 +8191,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Anda akan dapat menggunakan ${ planTitle } secara cuma-cuma hingga masa uji coba Anda berakhir."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " kunjungi ${ helpCenterLink } kami atau ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Batalkan kapan saja sebelum ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "hubungi layanan pelanggan kami"
+      ],
+      "Continue": [
+        "Lanjutkan"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Nikmati berbagai fitur keamanan bisnis gratis hingga ${ trialEndsOnFormatted }"
+      ],
+      "help center": [
+        "pusat bantuan"
+      ],
+      "If you need help,": [
+        "Jika Anda butuh bantuan,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Anda masih bisa membatalkan dalam 30 hari dan mendapatkan refund pro-rata."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Anda dapat menggunakan ${ planTitle } hingga masa uji coba Anda berakhir tanpa dikenai biaya sepeser pun."
+      ],
+      "Your free trial has started": [
+        "Masa uji coba gratis Anda telah dimulai"
       ]
     },
     "Option": {
@@ -8425,6 +8482,12 @@
       ],
       "Your payment is still being processed": [
         "Pembayaran Anda masih diproses"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Hanya Euro yang diterima untuk SEPA. Mata uang Anda telah diubah. Harap gunakan pemilih untuk mengembalikan pilihan Anda."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Metode pembayaran ini akan menjadi bawaan baru Anda untuk semua perpanjangan mendatang."
       ]
     },
     "Payments.Error": {
@@ -9120,6 +9183,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Tingkatkan dengan harga ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Jelajahi dengan aman"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Lakukan lebih banyak dengan ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Dapatkan alias tak terbatas"
+      ],
+      "Guard against threats": [
+        "Lindungi dari ancaman"
+      ],
+      "Increase your storage": [
+        "Tingkatkan penyimpanan Anda"
+      ],
+      "Keep passwords safe": [
+        "Jaga sandi tetap aman"
+      ],
+      "Unblock streaming content": [
+        "Buka blokir konten streaming"
       ]
     },
     "specialoffer: Offers": {
@@ -9193,6 +9277,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Tingkatkan dan hemat lebih banyak dengan ${ planName } selama 2 tahun"
+      ],
+      "Access content on streaming services worldwide": [
+        "Akses konten di layanan streaming di seluruh dunia"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Dapatkan 500 GB untuk menyimpan semua file dan foto Anda dengan aman"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Dapatkan akses ke server VPN sangat cepat di 110+ negara"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Dapatkan satu paket yang mencakup semuanya, dapatkan ${ BRAND_NAME } Tanpa Batas"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Dapatkan alias tak terbatas untuk melindungi identitas Anda dan mengurangi spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Simpan sandi Anda dengan aman dan terorganisasi di beberapa brankas"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Lindungi akun Anda dari ancaman dengan Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9364,10 +9469,10 @@
         "Ditagihkan setiap 2 tahun"
       ],
       "Billed monthly": [
-        "Ditagih bulanan"
+        "Ditagihkan bulanan"
       ],
       "Billed yearly": [
-        "Ditagih setiap tahun"
+        "Ditagihkan tahunan"
       ]
     },
     "Subscription attribute": {
@@ -9387,6 +9492,9 @@
         "${ n } koneksi VPN per pengguna"
       ],
       "VPN connection for ${ n } devices per user": [
+        "Koneksi VPN untuk ${ n } perangkat per pengguna"
+      ],
+      "VPN connection for ${ n } device per user": [
         "Koneksi VPN untuk ${ n } perangkat per pengguna"
       ]
     },
@@ -10717,6 +10825,9 @@
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Masa uji coba gratis Anda akan berakhir dalam ${ trialDurationFormatted } hari"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11263,6 +11374,150 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Dapatkan penawaran ini"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "Penyimpanan 15 GB"
+      ],
+      "200 GB storage": [
+        "Penyimpanan 200 GB"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB penyimpanan terenkripsi"
+      ],
+      "Add unlimited credit cards": [
+        "Tambahkan Tanpa batasan jumlah kartu kredit"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Semua fitur premium dari ${ BRAND_NAME } Mail, Pass, VPN, Drive, dan Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokir iklan, pelacak, dan malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Diskon didasarkan pada harga bulanan standar. Pada akhir siklus tagihan, langganan Anda akan diperpanjang dengan tarif tahunan standar."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Lipat gandakan penyimpanan terenkripsi Anda – dapatkan 1 TB untuk semua data Anda"
+      ],
+      "Encrypted password manager": [
+        "Pengelola kata sandi terenkripsi"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Ini adalah hadiah eksklusif untuk merayakan perjalanan kita bersama."
+      ],
+      "High speed streaming with VPN": [
+        "Streaming berkecepatan tinggi dengan VPN"
+      ],
+      "of privacy": [
+        "privasi"
+      ],
+      "Online document editor": [
+        "Penyunting dokumen online"
+      ],
+      "Online privacy for up to 2 people": [
+        "Privasi online untuk hingga 2 orang"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Privasi online untuk seluruh keluarga Anda (hingga 6 pengguna)"
+      ],
+      "Protect up to 10 devices": [
+        "Lindungi hingga 10 perangkat"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi berkas sebelumnya"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Dapatkan potongan harga besar-besaran untuk fitur premium Drive dengan diskon waktu terbatas."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Dapatkan potongan harga besar-besaran untuk berbagai fitur Mail premium dengan diskon waktu terbatas."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Dapatkan potongan harga besar-besaran untuk berbagai fitur Pass premium dengan diskon waktu terbatas."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Dapatkan potongan harga besar-besaran untuk berbagai fitur VPN premium dengan diskon waktu terbatas."
+      ],
+      "Save time with built-in 2FA": [
+        "Hemat waktu dengan 2FA yang tersedia secara bawaan"
+      ],
+      "Secure email with unlimited aliases": [
+        "Email aman dengan alias tidak terbatas"
+      ],
+      "Select any server": [
+        "Pilih server mana saja"
+      ],
+      "Share passwords easily": [
+        "Bagikan kata sandi dengan mudah"
+      ],
+      "Short @pm.me address": [
+        "Alamat pendek @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Tonton konten streaming favorit Anda"
+      ],
+      "thanks to you": [
+        "berkat Anda"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Lipat tigakan penyimpanan terenkripsi Anda – dapatkan 3 TB untuk semua data Anda"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Tanpa batasan jumlah folder, label, dan filter"
+      ],
+      "Use your own email domain": [
+        "Gunakan domain email milik Anda sendiri"
+      ],
+      "years": [
+        "tahun"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Penawaran Ulang Tahun"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } bulan"
+      ],
+      "/ month": [
+        "/ bulan"
+      ],
+      "12 months": [
+        "12 bulan"
+      ],
+      "15 months": [
+        "15 bulan"
+      ],
+      "24 months": [
+        "24 bulan"
+      ],
+      "30 months": [
+        "30 bulan"
+      ],
+      "for ${ durationDeal }": [
+        "untuk ${ durationDeal }"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Pengelola sandi terenkripsi"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/bulan"
+      ],
+      "Only": [
+        "Hanya"
       ]
     }
   }

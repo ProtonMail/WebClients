@@ -6342,7 +6342,7 @@
         "As notificações estão desativadas. Para ativá-las, altere as definições do navegador."
       ],
       "On": [
-        "Ativado"
+        "Na"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -7669,6 +7669,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB de armazenamento em nuvem que lhe permite armazenar, sincronizar e partilhar ficheiros facilmente. Protegido por encriptação de ponta a ponta."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB de armazenamento de nuvem que lhe permite armazenar, sincronizar e partilhar ficheiros facilmente. Protegido por encriptação de ponta a ponta."
       ]
     },
     "new_plans: Subtext": {
@@ -7970,6 +7976,10 @@
       ],
       "Support for ${ n } custom email domains": [
         "Suporte para ${ n } domínios de e-mail personalizados"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Suporte para ${ n } domínio de e-mail personalizado",
+        "Suporte para ${ n } domínios de e-mail personalizados"
       ]
     },
     "Note": {
@@ -8228,6 +8238,12 @@
       ],
       "Your subscription renews soon": [
         "A sua subscrição renova em breve."
+      ],
+      "Don’t show this again": [
+        "Não mostrar novamente"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Obtenha o ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8254,6 +8270,18 @@
       ],
       "Storage": [
         "Armazenamento"
+      ],
+      "500 GB secure storage": [
+        "500 GB de armazenamento seguro"
+      ],
+      "Advanced threat protection": [
+        "Proteção avançada contra ameaças"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Servidores VPN ultra-rápidos em mais de 110 países"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Aliases ilimitados para proteger a sua identidade"
       ]
     },
     "Onboarding": {
@@ -8307,6 +8335,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Poderá usar gratuitamente ${ planTitle } até o fim da avaliação."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " visite o nosso ${ helpCenterLink } ou ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Cancele a qualquer momento antes do ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "contacte a nossa equipa de apoio ao cliente"
+      ],
+      "Continue": [
+        "Continuar"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Desfrute das funcionalidades de segurança empresarial gratuitas até o ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "centro de ajuda"
+      ],
+      "If you need help,": [
+        "Se precisar de ajuda,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Ainda pode cancelar no prazo de 30 dias e obter um reembolso proporcional."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Poderá usar ${ planTitle } até o fim da avaliação e não lhe será cobrado."
+      ],
+      "Your free trial has started": [
+        "A sua avaliação gratuita começou."
       ]
     },
     "Option": {
@@ -8577,6 +8635,12 @@
       ],
       "Your payment is still being processed": [
         "O seu pagamento ainda está a ser processado."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Apenas o euro é aceite para os pagos SEPA. A sua moeda foi alterada. Utilize o seletor para reverter a sua escolha."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Este tornar-se-á o seu novo método de pagamento predefinido para todas as renovações futuras."
       ]
     },
     "Payments.Error": {
@@ -9292,6 +9356,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Melhore por ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Navega em segurança"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Supere os seus limites com a ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Obtenha aliases ilimitados"
+      ],
+      "Guard against threats": [
+        "Proteja-se contra ameaças"
+      ],
+      "Increase your storage": [
+        "Aumente o seu armazenamento"
+      ],
+      "Keep passwords safe": [
+        "Mantenha as suas palavras-passe seguras"
+      ],
+      "Unblock streaming content": [
+        "Desfrute do streaming sem limites"
       ]
     },
     "specialoffer: Offers": {
@@ -9366,6 +9451,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Actualize e poupe mais com 2 anos de ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Disfruta de contenidos de servicios de streaming en todo el mundo"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Obtenha 500 GB para armazenar com segurança todos os seus ficheiros e fotos"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Aceda a servidores VPN ultra-rápidos em mais de 110 países"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Obtenha um plano que inclui tudo: o ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Obtenha aliases ilimitados para proteger sua identidade e reduzir spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Mantenha as suas palavras-passe seguras e organizadas em vários cofres "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Proteja a sua conta de ameaças com o Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9567,6 +9673,10 @@
       ],
       "VPN connection for ${ n } devices per user": [
         "Conexão VPN para ${ n } dispositivos por utilizador",
+        "Conexão VPN para ${ n } dispositivos por utilizador"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "Conexão VPN para ${ n } dispositivo por utilizador",
         "Conexão VPN para ${ n } dispositivos por utilizador"
       ]
     },
@@ -10921,6 +11031,10 @@
       ],
       "Your shorter address is now ready": [
         "O seu endereço mais curto já está pronto"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "A sua avaliação gratuita termina em ${ trialDurationFormatted } dia.",
+        "A sua avaliação gratuita termina em ${ trialDurationFormatted } dias."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11513,6 +11627,151 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Aproveite a promoção"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "200 GB storage": [
+        "200 GB de armazenamento"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB armazenamento encriptado"
+      ],
+      "Add unlimited credit cards": [
+        "Adicione um nome ilimitado de cartões de crédito"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Todas as funcionalidades premium do ${ BRAND_NAME } Mail, Pass, VPN, Drive e Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloqueie anúncios, rastreadores e malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Os descontos são baseados nos preços mensais padrão. No final do ciclo de faturação, a sua subscrição será renovada à tarifa anual padrão."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Duplique o seu armazenamento encriptado e obtenha 1 TB para todos os seus dados."
+      ],
+      "Encrypted password manager": [
+        "Gestor de palavras-passe encriptado"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Aqui está um presente exclusivo para celebrar a nossa viagem juntos."
+      ],
+      "High speed streaming with VPN": [
+        "Streaming de alta velocidade com VPN"
+      ],
+      "of privacy": [
+        "de privacidade"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Online privacy for up to 2 people": [
+        "Privacidade online para até 2 pessoas"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Privacidade online para toda a sua família (até 6 utilizadores)"
+      ],
+      "Protect up to 10 devices": [
+        "Proteja até 10 dispositivos"
+      ],
+      "Recover previous file versions": [
+        "Recupere as versões anteriores do ficheiro"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Poupe muito em funcionalidades premium do Drive com um desconto por tempo limitado."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Poupe muito em funcionalidades premium do Mail com um desconto por tempo limitado."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Poupe muito em funcionalidades premium do Pass com um desconto por tempo limitado."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Poupe muito em funcionalidades premium da VPN com um desconto por tempo limitado."
+      ],
+      "Save time with built-in 2FA": [
+        "Poupe tempo com A2F integrada"
+      ],
+      "Secure email with unlimited aliases": [
+        "E-mail seguro com aliases ilimitados"
+      ],
+      "Select any server": [
+        "Selecione qualquer servidor"
+      ],
+      "Share passwords easily": [
+        "Partilhe palavras-passe facilmente"
+      ],
+      "Short @pm.me address": [
+        "Endereço curto @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Transmita o seu conteúdo favorito"
+      ],
+      "thanks to you": [
+        "graças a você"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Triplique o seu armazenamento encriptado e obtenha 3 TB para todos os seus dados."
+      ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Utilize o seu próprio domínio de e-mail"
+      ],
+      "years": [
+        "anos"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta de aniversário"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
+      "/ month": [
+        "/mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "15 months": [
+        "15 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "30 months": [
+        "30 meses"
+      ],
+      "for ${ durationDeal }": [
+        "por ${ durationDeal }"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Gestor de palavras-passe encriptado"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mês"
+      ],
+      "Only": [
+        "Apenas"
       ]
     }
   }

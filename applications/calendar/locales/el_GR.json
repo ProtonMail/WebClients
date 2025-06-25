@@ -2765,7 +2765,7 @@
         "'Άγνωστη διαθεσιμότητα"
       ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
-        "Χρωματική κωδικοποίηση συμβάντων για ευκολότερη οργάνωση της ημέρας σας, παρακολούθηση του χρόνου σας και ιεράρχηση των εργασιών."
+        "Χρωματική κωδικοποίηση εκδηλώσεων για ευκολότερη οργάνωση της ημέρας σας, παρακολούθηση του χρόνου σας και ιεράρχηση των εργασιών."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Ρυθμίστε πρώτα αυτό για να ενεργοποιήσετε τον οργανισμό σας και να προσαρμόσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -3629,14 +3629,14 @@
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονός.",
-        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονότα."
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερη από ${ MAX_IMPORT_EVENTS } εκδήλωση.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερες από ${ MAX_IMPORT_EVENTS } εκδηλώσεις."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Το αρχείο σας ${ formattedFilename } έχει μια μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "Το αρχείο σας ${ formattedFilename } δεν έχει περιέχει κανένα συμβάν για εισαγωγή."
+        "Το αρχείο σας ${ formattedFilename } δεν έχει περιέχει καμία εκδήλωση για εισαγωγή."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Το αρχείο σας ${ formattedFilename } είναι άδειο."
@@ -5810,7 +5810,7 @@
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
       "Your events will be encrypted and then saved.": [
-        "Τα συμβάντα σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν."
+        "Οι εκδηλώσεις σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν."
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
@@ -7669,6 +7669,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
       ]
     },
     "new_plans: Subtext": {
@@ -7970,6 +7976,10 @@
       ],
       "Support for ${ n } custom email domains": [
         "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Υποστήριξη για ${ n } παραμετροποιημένο τομέα ηλεκτρονικού ταχυδρομείου",
+        "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Note": {
@@ -8228,6 +8238,12 @@
       ],
       "Your subscription renews soon": [
         "Η συνδρομή σας ανανεωθεί σύντομα"
+      ],
+      "Don’t show this again": [
+        "Να μην εμφανιστεί ξανά"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Αποκτήστε ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8254,6 +8270,18 @@
       ],
       "Storage": [
         "Αποθηκευτικός χώρος"
+      ],
+      "500 GB secure storage": [
+        "500 GB ασφαλής χώρος αποθήκευσης"
+      ],
+      "Advanced threat protection": [
+        "Προηγμένη προστασία απειλών"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ταχύτατοι διακομιστές VPN σε 110+ χώρες"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Απεριόριστα ψευδώνυμα για να προστατεύσετε την ταυτότητά σας"
       ]
     },
     "Onboarding": {
@@ -8307,6 +8335,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Θα μπορείτε να χρησιμοποιήσετε ${ planTitle } δωρεάν μέχρι το τέλος της δοκιμαστικής περιόδου."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " επισκεφθείτε το ${ helpCenterLink } ή ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Ακυρώστε οποιαδήποτε στιγμή πριν από τις ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "επικοινωνήστε με την ομάδα υποστήριξής μας"
+      ],
+      "Continue": [
+        "Συνέχεια"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Απολαύστε δωρεάν δυνατότητες ασφάλειας για επιχειρήσεις μέχρι ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "κέντρο βοήθειας"
+      ],
+      "If you need help,": [
+        "Εάν χρειάζεστε βοήθεια,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Μπορείτε ακόμα να ακυρώσετε εντός 30 ημερών και να λάβετε αναλογική επιστροφή χρημάτων."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Μπορείτε να χρησιμοποιήσετε το ${ planTitle } μέχρι να λήξει η δοκιμαστική περίοδος, και δε θα χρεωθείτε."
+      ],
+      "Your free trial has started": [
+        "Η δωρεάν δοκιμαστική περίοδός σας έχει ξεκινήσει"
       ]
     },
     "Option": {
@@ -8491,6 +8549,9 @@
       ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8577,6 +8638,12 @@
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Μόνο το ευρώ γίνεται δεκτό για SEPA. Το νόμισμά σας έχει αλλάξει. Χρησιμοποιήστε τον επιλογέα για να αναιρέσετε την επιλογή σας."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Αυτή η μέθοδος πληρωμής θα γίνει η νέα σας προεπιλογή για όλες τις μελλοντικές ανανεώσεις."
       ]
     },
     "Payments.Error": {
@@ -8899,7 +8966,7 @@
     },
     "Security Center - Action": {
       "View events": [
-        "Προβολή εκδηλώσεων"
+        "Προβολή συμβάντων"
       ]
     },
     "Security Center - Info": {
@@ -9292,6 +9359,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Αναβάθμιση για ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Περιηγηθείτε με ασφάλεια"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Κάντε περισσότερα με ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Αποκτήστε απεριόριστα ψευδώνυμα"
+      ],
+      "Guard against threats": [
+        "Προστασία από απειλές"
+      ],
+      "Increase your storage": [
+        "Αυξήστε τον αποθηκευτικό σας χώρο"
+      ],
+      "Keep passwords safe": [
+        "Διατηρήστε τους κωδικούς πρόσβασης ασφαλείς"
+      ],
+      "Unblock streaming content": [
+        "Αφαίρεση φραγής περιεχομένου ροής"
       ]
     },
     "specialoffer: Offers": {
@@ -9366,6 +9454,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Αναβαθμίστε και εξοικονομήστε περισσότερα με 2 χρόνια ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής παγκοσμίως"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Λάβετε 500 GB για ασφαλή αποθήκευση όλων των αρχείων και των φωτογραφιών σας"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Αποκτήστε πρόσβαση σε ταχύτατους διακομιστές VPN σε 110+ χώρες"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Αποκτήστε ένα πλάνο που τα περιλαμβάνει όλα, αποκτήστε ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Αποκτήστε απεριόριστα ψευδώνυμα για να προστατεύσετε την ταυτότητά σας και να μειώσετε τα ενοχλητικά"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Διατηρήστε τους κωδικούς σας ασφαλείς και οργανωμένους σε πολλαπλές κρύπτες "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Προστατέψτε τον λογαριασμό σας από απειλές με το Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9568,6 +9677,10 @@
       "VPN connection for ${ n } devices per user": [
         "Σύνδεση VPN για ${ n } συσκευή ανά χρήστη",
         "Σύνδεση VPN για ${ n } συσκευές ανά χρήστη"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "Σύνδεση VPN για ${ n } συσκευή ανά χρήστη",
+        "Σύνδεση VPN για ${ n } συσκευές ανά χρήστη"
       ]
     },
     "Subscription change warning": {
@@ -9700,7 +9813,7 @@
         "Το ${ planName } προσφέρει χώρο αποθήκευσης ${ planMaxSpace } ανά χρήστη για μηνύματα ηλεκτρονικού ταχυδρομείου, συνημμένα, εκδηλώσεις και αρχεία. Δικαιούστε επίσης ετήσια μπόνους αποθήκευσης."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
-        "Το ${ planName } προσφέρει χώρο αποθήκευσης ${ planMaxSpace } ανά χρήστη για μηνύματα ηλεκτρονικού ταχυδρομείου, συνημμένα, συμβάντα, αρχεία και κωδικούς πρόσβασης. Δικαιούστε επίσης ετήσια μπόνους αποθήκευσης."
+        "Το ${ planName } προσφέρει χώρο αποθήκευσης ${ planMaxSpace } ανά χρήστη για μηνύματα ηλεκτρονικού ταχυδρομείου, συνημμένα, εκδηλώσεις, αρχεία και κωδικούς πρόσβασης. Δικαιούστε επίσης ετήσια μπόνους αποθήκευσης."
       ],
       "${ planNumberOfCalendars } calendar per user": [
         "${ planNumberOfCalendars } ημερολόγιο ανά χρήστη",
@@ -10921,6 +11034,10 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Η δωρεάν δοκιμή σας λήγει σε ${ trialDurationFormatted } ημέρα",
+        "Η δωρεάν δοκιμή σας λήγει σε ${ trialDurationFormatted } ημέρες"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11513,6 +11630,159 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικού χώρου"
+      ],
+      "200 GB storage": [
+        "200 GB αποθηκευτικός χώρος"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB κρυπτογραφημένο χώρο αποθήκευσης"
+      ],
+      "Add unlimited credit cards": [
+        "Προσθήκη απεριόριστων πιστωτικών καρτών"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Όλα τα premium χαρακτηριστικά των ${ BRAND_NAME } Mail, Pass, VPN, Drive και Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Αποκλείστε διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Στο τέλος του κύκλου χρέωσης, η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια τιμή."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Διπλασιάστε τον κρυπτογραφημένο αποθηκευτικό χώρο σας – αποκτήστε 1 TB για όλα τα δεδομένα σας"
+      ],
+      "Encrypted password manager": [
+        "Κρυπτογραφημένος διαχειριστής κωδικών πρόσβασης"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Αυτό είναι ένα αποκλειστικό δώρο για να γιορτάσουμε το ταξίδι μας μαζί."
+      ],
+      "High speed streaming with VPN": [
+        "Ροή υψηλής ταχύτητας με VPN"
+      ],
+      "of privacy": [
+        "της ιδιωτικότητας"
+      ],
+      "Online document editor": [
+        "Online επεξεργαστής εγγράφου"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online ιδιωτικότητα για έως και 2 άτομα"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online ιδιωτικότητα για όλη την οικογένειά σας (μέχρι 6 χρήστες)"
+      ],
+      "Protect up to 10 devices": [
+        "Προστατέψτε έως και 10 συσκευές"
+      ],
+      "Recover previous file versions": [
+        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Εξοικονομήστε πολλά σε premium λειτουργίες του Drive με έκπτωση περιορισμένης διάρκειας."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Εξοικονομήστε πολλά σε premium λειτουργίες του Mail με έκπτωση περιορισμένης διάρκειας."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Εξοικονομήστε πολλά σε premium λειτουργίες του Pass με έκπτωση περιορισμένης διάρκειας."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Εξοικονομήστε πολλά σε premium VPN λειτουργίες με έκπτωση περιορισμένης διάρκειας."
+      ],
+      "Save time with built-in 2FA": [
+        "Εξοικονομήστε χρόνο με ενσωματωμένη πιστοποίηση δύο παραγόντων (2FA)"
+      ],
+      "Secure email with unlimited aliases": [
+        "Ασφαλής ηλεκτρονική διεύθυνση με απεριόριστα ψευδώνυμα"
+      ],
+      "Select any server": [
+        "Επιλέξτε οποιονδήποτε διακομιστή"
+      ],
+      "Share passwords easily": [
+        "Εύκολη κοινοποίηση κωδικών πρόσβασης"
+      ],
+      "Short @pm.me address": [
+        "Σύντομη διεύθυνση @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Ροήστε το αγαπημένο σας περιεχόμενο"
+      ],
+      "thanks to you": [
+        "χάρη σε εσάς"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Τριπλασιάστε τον κρυπτογραφημένο αποθηκευτικό χώρο σας – αποκτήστε 3 TB για όλα τα δεδομένα σας"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ],
+      "Use your own email domain": [
+        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
+      ],
+      "years": [
+        "έτη"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Επετειακή προσφορά"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
+      "/ month": [
+        "/ μήνα"
+      ],
+      "12 months": [
+        "12 μήνες"
+      ],
+      "15 months": [
+        "15 μήνες"
+      ],
+      "24 months": [
+        "24 μήνες"
+      ],
+      "30 months": [
+        "30 μήνες"
+      ],
+      "for ${ durationDeal }": [
+        "για ${ durationDeal }"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Κρυπτογραφημένος διαχειριστής κωδικών πρόσβασης"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Τραπεζική μεταφορά - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/μήνα"
+      ],
+      "Only": [
+        "Μόνο"
       ]
     }
   }

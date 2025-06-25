@@ -7677,6 +7677,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd door end-to-end versleuteling."
       ]
     },
     "new_plans: Subtext": {
@@ -7977,6 +7983,10 @@
         "2FA vereist"
       ],
       "Support for ${ n } custom email domains": [
+        "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Ondersteuning voor ${ n } aangepast e-maildomein",
         "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
@@ -8315,6 +8325,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "U kunt kosteloos gebruikmaken van ${ planTitle } totdat de proefversie eindigt."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "U kunt op elk moment annuleren vóór ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "neem contact op met ons support team"
+      ],
+      "Continue": [
+        "Ga verder"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Profiteer tot ${ trialEndsOnFormatted } van gratis beveiligingsfuncties voor bedrijven."
+      ],
+      "help center": [
+        "helpcentrum"
+      ],
+      "If you need help,": [
+        "Als u hulp nodig heeft,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Kunt u nog steeds annuleren binnen 30 dagen en evenredig terugbetaald krijgen."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "U kunt ${ planTitle } gebruiken totdat de proefversie eindigt en u wordt niets in rekening gebracht."
+      ],
+      "Your free trial has started": [
+        "Uw gratis proefversie is gestart"
       ]
     },
     "Option": {
@@ -8585,6 +8625,12 @@
       ],
       "Your payment is still being processed": [
         "Uw betaling wordt nog verwerkt"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Alleen Euro wordt geaccepteerd voor SEPA. Uw valuta is gewijzigd. Gebruik de selector om uw keuze ongedaan te maken."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Deze betaalmethode wordt uw nieuwe standaard voor alle toekomstige verlengingen."
       ]
     },
     "Payments.Error": {
@@ -9576,6 +9622,10 @@
       "VPN connection for ${ n } devices per user": [
         "VPN-verbinding voor ${ n } apparaat per gebruiker",
         "VPN-verbinding voor ${ n } apparaten per gebruiker"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN verbinding voor ${ n } apparaat per gebruiker",
+        "VPN verbinding voor ${ n } apparaten per gebruiker"
       ]
     },
     "Subscription change warning": {
@@ -10929,6 +10979,10 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dag",
+        "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dagen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11521,6 +11575,146 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Pak deze deal"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "200 GB storage": [
+        "200 GB opslagruimte"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB versleutelde opslagruimte"
+      ],
+      "Add unlimited credit cards": [
+        "Onbeperkt aantal kredietkaarten toevoegen"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle premium functies van ${ BRAND_NAME } Mail, Pass, VPN, Drive, en Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkeer advertenties, trackers en malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijs. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Verdubbel uw versleutelde opslag – krijg 1 TB voor al uw gegevens"
+      ],
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordbeheerder"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Hier is een exclusief geschenk om onze reis samen te vieren."
+      ],
+      "High speed streaming with VPN": [
+        "Streamen aan hoge snelheid met VPN"
+      ],
+      "of privacy": [
+        "van privacy"
+      ],
+      "Online document editor": [
+        "Online document editor"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online privacy voor maximaal 2 personen"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online privacy voor het hele gezin (tot 6 gebruikers)"
+      ],
+      "Protect up to 10 devices": [
+        "Bescherm tot 10 apparaten"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Bespaar veel op premium Drive functies met een tijdelijke korting."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Bespaar veel op premium Mail functies met een tijdelijke korting."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Bespaar veel op premium Pass functies met een tijdelijke korting."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Bespaar veel op premium VPN functies met een tijdelijke korting."
+      ],
+      "Save time with built-in 2FA": [
+        "Bespaar tijd met ingebouwde 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Beveiligde e-mail met onbeperkt aantal aliassen"
+      ],
+      "Select any server": [
+        "Selecteer een server"
+      ],
+      "Share passwords easily": [
+        "Eenvoudig wachtwoorden delen"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me adres"
+      ],
+      "Stream your favorite content": [
+        "Stream uw favoriete inhoud"
+      ],
+      "thanks to you": [
+        "dankzij u"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Verdrievoudig uw versleutelde opslag – krijg 3 TB voor al uw gegevens"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ],
+      "years": [
+        "jaren"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumaanbieding"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "/ month": [
+        "/ maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "15 months": [
+        "15 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
+      ],
+      "30 months": [
+        "30 maanden"
+      ],
+      "for ${ durationDeal }": [
+        "voor ${ durationDeal }"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ cycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
       ]
     }
   }

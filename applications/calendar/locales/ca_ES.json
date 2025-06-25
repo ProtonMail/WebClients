@@ -2950,7 +2950,7 @@
         "Canvio a un proveïdor diferent"
       ],
       "Temporary need, may come back in the future": [
-        "Necessitat temporal, potser torni més endavant"
+        "És una necessitat puntual que podria tornar més endavant."
       ],
       "The VPN is too slow": [
         "La VPN és massa lenta"
@@ -7672,6 +7672,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB d'emmagatzematge al núvol que us permeten emmagatzemar, sincronitzar i compartir fitxers fàcilment. Protegit amb xifratge d'extrem a extrem."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB d'emmagatzematge al núvol que us permeten emmagatzemar, sincronitzar i compartir fitxers fàcilment. Protegit amb xifratge d'extrem a extrem."
       ]
     },
     "new_plans: Subtext": {
@@ -7973,6 +7979,10 @@
       ],
       "Support for ${ n } custom email domains": [
         "Suport per a ${ n } dominis de correu personalitzats"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Suport per a ${ n } domini de correu personalitzat",
+        "Suport per a ${ n } dominis de correu personalitzat"
       ]
     },
     "Note": {
@@ -8231,6 +8241,12 @@
       ],
       "Your subscription renews soon": [
         "La subscripció es renovarà aviat."
+      ],
+      "Don’t show this again": [
+        "No ho tornis a mostrar"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Obtingueu ${ BRAND_NAME } sense límits"
       ]
     },
     "Offer feature": {
@@ -8257,6 +8273,18 @@
       ],
       "Storage": [
         "Emmagatzematge"
+      ],
+      "500 GB secure storage": [
+        "500 GB d'emmagatzematge segur"
+      ],
+      "Advanced threat protection": [
+        "Protecció avançada contra amenaces"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Servidors VPN ultraràpids en més de 110 països"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Un nombre il·limitat d'àlies per protegir la vostra identitat"
       ]
     },
     "Onboarding": {
@@ -8310,6 +8338,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Podreu utilitzar el ${ planTitle } de manera gratuita fins que finalitzi el període de prova."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " visiteu el nostre ${ helpCenterLink } o ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Cancel·leu en qualsevol moment abans del ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "contacteu amb el nostre equip de suport"
+      ],
+      "Continue": [
+        "Continuï"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Gaudiu de les característiques de seguretat gratuïtes per a empreses fins al ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "centre d'ajuda"
+      ],
+      "If you need help,": [
+        "Si necessiteu ajuda,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Encara podeu cancel·lar-la en un termini de 30 dies i obtenir un reemborsament prorratejat."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Podreu utilitzar el ${ planTitle } fins que finalitzi el període de prova i no se us cobrarà."
+      ],
+      "Your free trial has started": [
+        "La prova gratuïta ha començat."
       ]
     },
     "Option": {
@@ -8494,6 +8552,9 @@
       ],
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8580,6 +8641,12 @@
       ],
       "Your payment is still being processed": [
         "El vostre pagament encara s'està processant."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "El SEPA només s'accepta l'euro. La moneda ha estat canviada. Utilitzeu el selector per revertir la vostra elecció."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Aquest mètode de pagament esdevindrà el vostre nou mètode per defecte per a totes les renovacions futures."
       ]
     },
     "Payments.Error": {
@@ -9295,6 +9362,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Milloreu el pla per ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Navegueu amb seguretat"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Supereu els vostres límits amb ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Obtingueu un nombre il·limitat d'àlies"
+      ],
+      "Guard against threats": [
+        "Protegiu-vos d'amenaces"
+      ],
+      "Increase your storage": [
+        "Augmenteu el vostre emmagatzematge"
+      ],
+      "Keep passwords safe": [
+        "Mantingueu les vostres contrasenyes segures"
+      ],
+      "Unblock streaming content": [
+        "Tingui accés il·limitat a continguts en estríming"
       ]
     },
     "specialoffer: Offers": {
@@ -9369,6 +9457,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Milloreu i estalvieu més amb 2 anys de ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Accediu a contingut en serveis d'estríming a tot el món"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Obtingueu 500 GB per emmagatzemar de manera segura tots els vostres fitxers i fotos"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Obtingueu accés a servidors VPN ultraràpids en més de 110 països"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Obtingueu un pla que ho inclou tot: ${ BRAND_NAME } sense límits"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Obtingueu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Guardeu les vostres contrasenyes de manera segura i organitzada en diverses caixes fortes. "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Protegiu el vostre compte d'amenaces amb Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9569,6 +9678,10 @@
         "${ n } connexions VPN per usuari"
       ],
       "VPN connection for ${ n } devices per user": [
+        "Connexió VPN per a ${ n } dispositiu per usuari",
+        "Connexió VPN per a ${ n } dispositius per usuari"
+      ],
+      "VPN connection for ${ n } device per user": [
         "Connexió VPN per a ${ n } dispositiu per usuari",
         "Connexió VPN per a ${ n } dispositius per usuari"
       ]
@@ -10924,6 +11037,10 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dia",
+        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dies"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11516,6 +11633,159 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Aconseguiu l'oferta"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB d'emmagatzemament"
+      ],
+      "200 GB storage": [
+        "200 GB d'emmagatzematge"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB emmagatzematge xifrat"
+      ],
+      "Add unlimited credit cards": [
+        "Afegiu-hi un nombre il·limitat de targetes de crèdit"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Totes les característiques prèmium de ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquegeu anuncis, rastrejadors i programari maliciós"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Els descomptes es basen en els preus mensuals estàndard. Al final del cicle de facturació, la subscripció es renovarà a la tarifa anual estàndard."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Dupliqueu el vostre emmagatzematge xifrat – obtingueu 1 TB per totes les vostres dades"
+      ],
+      "Encrypted password manager": [
+        "Gestor de contrasenyes xifrat"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Heus aquí un regal exclusiu per celebrar el nostre camí plegats."
+      ],
+      "High speed streaming with VPN": [
+        "Reproducció en continu (Streaming) d'alta velocitat amb VPN"
+      ],
+      "of privacy": [
+        "de privacitat"
+      ],
+      "Online document editor": [
+        "Editor de documents en línia"
+      ],
+      "Online privacy for up to 2 people": [
+        "Privacitat en línia fins a 2 persones"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Privacitat en línia per a tota la família (fins a 6 usuaris)"
+      ],
+      "Protect up to 10 devices": [
+        "Protegiu fins a 10 dispositius"
+      ],
+      "Recover previous file versions": [
+        "Recupereu versions anteriors del fitxer"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Estalviiareu molt amb les funcions premium de Drive amb un descompte per temps limitat"
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Estalviiareu molt amb les característiques prèmium de Mail amb un descompte per temps limitat."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Estalviiareu molt amb les característiques prèmium de Pass amb un descompte per temps limitat."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Estalviiareu molt amb les funcions prèmium de VPN amb un descompte per temps limitat."
+      ],
+      "Save time with built-in 2FA": [
+        "Estalvieu temps amb 2FA integrat"
+      ],
+      "Secure email with unlimited aliases": [
+        "Correu electrònic segur amb àlies il·limitats"
+      ],
+      "Select any server": [
+        "Seleccioneu qualsevol servidor"
+      ],
+      "Share passwords easily": [
+        "Compartiu contrasenyes fàcilment"
+      ],
+      "Short @pm.me address": [
+        "Adreça curta de @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Reproduïu en continu el vostre contingut favorit"
+      ],
+      "thanks to you": [
+        "gràcies a vós"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Tripliqueu el vostre emmagatzematge xifrat – obtingueu 3 TB per totes les vostres dades"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nombre il·limitat de carpetes, etiquetes i filtres"
+      ],
+      "Use your own email domain": [
+        "Utilitzeu el vostre propi domini de correu electrònic"
+      ],
+      "years": [
+        "anys"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta d'aniversari"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
+      "/ month": [
+        "/ mes"
+      ],
+      "12 months": [
+        "12 mesos"
+      ],
+      "15 months": [
+        "15 mesos"
+      ],
+      "24 months": [
+        "24 mesos"
+      ],
+      "30 months": [
+        "30 mesos"
+      ],
+      "for ${ durationDeal }": [
+        "durant ${ durationDeal }"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Gestor de contrasenyes xifrat"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - targeta que acaba en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferència bancària - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mes"
+      ],
+      "Only": [
+        "Només"
       ]
     }
   }

@@ -820,6 +820,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Authenticate": [
+        "驗證"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
+      "Use authentication code": [
+        "使用驗證代碼"
+      ],
+      "Use recovery code": [
+        "使用復原碼"
       ]
     },
     "action": {
@@ -5406,6 +5418,21 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
+      ],
+      "Each code can only be used once": [
+        "每組驗證代碼只能使用一次"
+      ],
+      "Enter the code from your authenticator app": [
+        "輸入驗證應用程式中的驗證代碼"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證代碼。正在按下 ${ digit } 。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "設定兩步驟驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
       ]
     },
     "info": {
@@ -6013,6 +6040,15 @@
       ],
       "Your location": [
         "您的位置"
+      ],
+      "Authenticator app": [
+        "驗證 app"
+      ],
+      "Your ISP": [
+        "您的 ISP"
+      ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
       ]
     },
     "Label for contact group color": {
@@ -7901,6 +7937,9 @@
     "Payments.Sepa": {
       "Street address, postal code, and city": [
         "地址，郵政區碼，及城市"
+      ],
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
       ]
     },
     "PGP key encryption warning": {
@@ -9988,6 +10027,9 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Enter your password": [
+        "輸入您的密碼"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10517,6 +10559,29 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
+      ],
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
+    "Onboarding Trial": {
+      "Continue": [
+        "繼續"
       ]
     }
   }
