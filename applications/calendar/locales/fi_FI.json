@@ -887,6 +887,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Copy alias “${ name }”": [
+        "Kopioi alias \"${ name }\""
+      ],
+      "Keep subscription": [
+        "Pidä tilaus"
+      ],
+      "Show more benefits": [
+        "Näytä enemmän etuja"
       ]
     },
     "action": {
@@ -11369,6 +11378,78 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "200 GB storage": [
+        "200 Gt tallennustilaa"
+      ],
+      "500 GB encrypted storage": [
+        "500 Gt salattua tallennustilaa"
+      ],
+      "Add unlimited credit cards": [
+        "Lisää rajattomasti maksukortteja"
+      ],
+      "Block ads, trackers, and malware": [
+        "Estä mainoksia, seurantoja ja haittaohjelmia"
+      ],
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
+      ],
+      "High speed streaming with VPN": [
+        "Nopea suoratoisto VPN:llä"
+      ],
+      "Protect up to 10 devices": [
+        "Suojaa jopa 10 laitetta"
+      ],
+      "Select any server": [
+        "Valitse mikä tahansa palvelin"
+      ],
+      "Share passwords easily": [
+        "Jaa salasanoja helposti"
+      ],
+      "Short @pm.me address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Stream your favorite content": [
+        "Suoratoista suosikkisisältöäsi"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Use your own email domain": [
+        "Käytä omaa sähköpostiverkkotunnusta"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
+      "12 months": [
+        "12 kuukautta"
+      ],
+      "15 months": [
+        "15 kuukautta"
+      ],
+      "24 months": [
+        "24 kuukautta"
+      ],
+      "30 months": [
+        "30 kuukautta"
+      ]
+    },
+    "Onboarding Trial": {
+      "Continue": [
+        "Jatka"
       ]
     }
   }

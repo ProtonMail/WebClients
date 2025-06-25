@@ -893,6 +893,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Hide more benefits": [
+        "Diğer faydaları gizle"
+      ],
+      "More benefits": [
+        "Diğer faydalar"
+      ],
+      "Show more benefits": [
+        "Diğer faydaları görüntüle"
       ]
     },
     "action": {
@@ -4181,6 +4190,9 @@
       ],
       "Security Center": [
         "Güvenlik merkezi"
+      ],
+      "Drawer": [
+        "Çekmece"
       ]
     },
     "Hint": {
@@ -5745,7 +5757,7 @@
         "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler kaldırılan katılımcılara bildirilecek."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
-        "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } tutar ödeyeceksiniz.",
@@ -5846,7 +5858,31 @@
         "Sistem saat diliminiz ${ timezone } olarak değişmiş gibi görünüyor. Saat dilimi ayarınızı güncellemek ister misiniz?"
       ],
       "Your trial will end in ${ timeRemaining }.": [
-        "Deneme süreniz ${ timeRemaining } içinde sona eriyor"
+        "Deneme süreniz ${ timeRemaining } sonra sona erecek."
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Deneme sürenizin sonunda ${ boldCancelDate }, tarifeniz ${ boldProtonFree } düzeyine düşürülecek. Kuruluşunuzdaki tüm kullanıcı hesapları kaldırılacak."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Fikrinizi değiştirirseniz, istediğiniz zaman yeniden abone olabilirsiniz. Ayrılmanıza üzüldük!"
+      ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Kuruluşunuzun güvenliğini sağlamakta ${ BRAND_NAME } hizmetlerinizi seçtiğiniz için teşekkür ederiz."
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "${ boldPlanTitle } özelliklerine erişiminizi de kaybedeceksiniz:"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ücretsiz deneme süreniz ${ cycle } aylık aboneliğe dönüştürüldü. Yenilenme tarihi ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ücretsiz deneme süreniz aylık aboneliğe dönüştürüldü. Yenilenme tarihi ${ nextBillingDate }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "${ boldEndDate } tarihinde ${ boldPlanTitle } tarifesine erişemeyeceksiniz."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
       ]
     },
     "info": {
@@ -6484,6 +6520,9 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
+      ],
+      "Alias title": [
+        "Takma ad başlığı"
       ]
     },
     "Label for contact group color": {
@@ -7635,6 +7674,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "Dosyalarınızı saklamak, eşitlemek ve paylaşmak için 1 TB bulut depolama alanı. Uçtan uca şifreleme ile korunur."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "Dosyalarınızı saklamak, eşitlemek ve paylaşmak için 200 GB bulut depolama alanı. Uçtan uca şifreleme ile korunur."
       ]
     },
     "new_plans: Subtext": {
@@ -7935,6 +7980,10 @@
         "İki adımlı doğrulama gereksin"
       ],
       "Support for ${ n } custom email domains": [
+        "${ n } özel e-posta etki alanı desteği"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } özel e-posta etki alanı desteği",
         "${ n } özel e-posta etki alanı desteği"
       ]
     },
@@ -8526,6 +8575,9 @@
       ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ]
     },
     "Payments.Error": {
@@ -9517,6 +9569,10 @@
       "VPN connection for ${ n } devices per user": [
         "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı",
         "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "Kullanıcı başına ${ n } aygıt ile VPN bağlantısı.",
+        "Kullanıcı başına ${ n } aygıt ile VPN bağlantısı."
       ]
     },
     "Subscription change warning": {
@@ -10864,6 +10920,13 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Your ${ planName } subscription has started": [
+        "${ planName } aboneliğiniz başladı"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Ücretsiz deneme süreniz ${ trialDurationFormatted } gün sonra bitecek",
+        "Ücretsiz deneme süreniz ${ trialDurationFormatted } gün sonra bitecek"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11456,6 +11519,193 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "200 GB storage": [
+        "200 GB depolama alanı"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB şifrelenmiş depolama alanı"
+      ],
+      "Add unlimited credit cards": [
+        "Sınırsız sayıda kredi kartı ekleyin"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Tüm ücretli ${ BRAND_NAME } Mail, Pass, VPN, Drive ve Calendar özellikleri"
+      ],
+      "Block ads, trackers, and malware": [
+        "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "İndirimler standart aylık fiyatlandırmaya göre belirlenir. Aboneliğiniz fatura döneminin sonunda standart yıllık fiyattan yenilenir."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Şifrelenmiş depolama alanınızı iki katına çıkarın. Tüm verileriniz için 1 TB edinin."
+      ],
+      "Encrypted password manager": [
+        "Şifrelenmiş parola yöneticisi"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Birlikte çıktığımız bu yolculuğu kutlamak için size özel bir hediye."
+      ],
+      "High speed streaming with VPN": [
+        "VPN ile yüksek hızda yayın akışı izleme"
+      ],
+      "of privacy": [
+        "ile gizlilik"
+      ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
+      "Online privacy for up to 2 people": [
+        "2 kişiye kadar çevrim içi gizlilik"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Tüm aileniz için çevrim içi gizlilik (6 kullanıcıya kadar)"
+      ],
+      "Protect up to 10 devices": [
+        "10 aygıta kadar koruyun"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerini geri yükle"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Sınırlı süreli indirimle ücretli Drive özelliklerinde büyük indirim kazanın."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Sınırlı süreli indirimle ücretli Mail özelliklerinde büyük indirim kazanın."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Sınırlı süreli indirimle ücretli Pass özelliklerinde büyük indirim kazanın."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Sınırlı süreli indirimle ücretli VPN özelliklerinde büyük indirim kazanın."
+      ],
+      "Save time with built-in 2FA": [
+        "İç 2 adımlı doğrulama ile zaman kazanın"
+      ],
+      "Secure email with unlimited aliases": [
+        "Sınırsız takma ad ile güvenli e-posta"
+      ],
+      "Select any server": [
+        "Herhangi bir sunucu seçin"
+      ],
+      "Share passwords easily": [
+        "Parolaları kolayca paylaşın"
+      ],
+      "Short @pm.me address": [
+        "Kısa @pm.me adresi"
+      ],
+      "Stream your favorite content": [
+        "Beğendiğiniz yayın akışı içeriklerini izleyin"
+      ],
+      "thanks to you": [
+        "sayenizde"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Şifrelenmiş depolama alanınızı üç katına çıkarın. Tüm verileriniz için 3 TB edinin."
+      ],
+      "Unlimited folders, labels and filters": [
+        "Sınırsız sayıda klasör, etiket ve süzgeç"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
+      ],
+      "years": [
+        "yıl"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Yıl dönümü teklifi"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "/ month": [
+        "/ ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "15 months": [
+        "15 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ],
+      "30 months": [
+        "30 ay"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal } için"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde her ${ cycle } ayda bir otomatik olarak yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+      ]
+    },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " ${ helpCenterLink } veya ${ contactSupportLink } adresine gidin."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "${ cancelDate } tarihinden önce istediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Cancel anytime before then.": [
+        "O tarihe kadar istediğiniz zaman iptal edebilirsiniz."
+      ],
+      "contact our support team": [
+        "destek ekibimizle görüşün"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "${ trialEndsOnFormatted } tarihine kadar kurumsal güvenlik özelliklerinden ücretsiz olarak yararlanın."
+      ],
+      "help center": [
+        "yardım merkezi"
+      ],
+      "If you need help,": [
+        "Yardıma gerek duyarsanız,"
+      ],
+      "Once your full subscription starts...": [
+        "Tam aboneliğiniz başladığında..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
+      ],
+      "Your free trial has started": [
+        "Ücretsiz deneme süreniz başladı"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Tam ${ planTitle } aboneliğiniz ${ boldEndDate } tarihinde başlayacak."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
       ]
     }
   }

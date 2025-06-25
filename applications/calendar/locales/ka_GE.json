@@ -5779,6 +5779,18 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "თქვენი სისტემის დროის სარტყელი, როგორც ჩანს, შეიცვალა ${ timezone }-ზე. გსურთ, განაახლოთ თქვენი დროის სარტყელის პარამეტრი?"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "თქვენი გამოსაცდელი პერიოდის დასრულების დროა: ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
       ]
     },
     "info": {
@@ -7868,6 +7880,10 @@
       ],
       "Support for ${ n } custom email domains": [
         "${ n } მომხმარებლის დომენის მხარდაჭერა"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } მომხმარებლის დომენის მხარდაჭერა",
+        "${ n } მომხმარებლის დომენის მხარდაჭერა"
       ]
     },
     "Note": {
@@ -8126,6 +8142,12 @@
       ],
       "Your subscription renews soon": [
         "თქვენი გამოწერა მალე განახლდება"
+      ],
+      "Don’t show this again": [
+        "აღარ მაჩვენოთ ეს"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "მიიღეთ ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8152,6 +8174,18 @@
       ],
       "Storage": [
         "საცავი"
+      ],
+      "500 GB secure storage": [
+        "500 გბ დაცული საცავი"
+      ],
+      "Advanced threat protection": [
+        "დამატებითი დაცვა საშიშროებებისგან"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "უსწრაფესი VPN სერვერები 110+ ქვეყანაში"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "განუსაზღვრელი ფსევდონიმები თქვენს დასაცავად"
       ]
     },
     "Onboarding": {
@@ -8291,6 +8325,9 @@
       ],
       "Unlimited logins, notes, credit cards and more": [
         "შეუზღუდავი შესვლის დეტალები, შენიშვნები, საკრედიტო ბარათები და სხვა"
+      ],
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "წვდომა ყველა ${ BRAND_NAME }-ის აპთან და ფასიან ფუნქციასთან"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9160,6 +9197,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "სატარიფო გეგმის განახლება: ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "იმუშავეთ ინტერნეტში დაცულად"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "გააკეთეთ მეტი ${ BRAND_NAME }-სთან ერთად"
+      ],
+      "Get unlimited aliases": [
+        "მიიღეთ უსაზღვრო ფსევდონიმი"
+      ],
+      "Guard against threats": [
+        "დაცვა საშიშროებების წინააღმდეგ"
+      ],
+      "Increase your storage": [
+        "გაზარდეთ თქვენი საცავი"
+      ],
+      "Keep passwords safe": [
+        "იქონიეთ პაროლები უსაფრთხოდ"
+      ],
+      "Unblock streaming content": [
+        "განბლოკეთ შემცველობის დასტრიმვა"
       ]
     },
     "specialoffer: Offers": {
@@ -9434,6 +9492,10 @@
         "${ n } VPN კავშირი თითოეული მომხმარებლისთვის"
       ],
       "VPN connection for ${ n } devices per user": [
+        "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის",
+        "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის"
+      ],
+      "VPN connection for ${ n } device per user": [
         "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის",
         "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის"
       ]
@@ -10780,6 +10842,13 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Your ${ planName } subscription has started": [
+        "თქვვენი ${ planName } გამოწერა დაიწყო"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში",
+        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11372,6 +11441,162 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "200 GB storage": [
+        "200 გბ საცავი"
+      ],
+      "500 GB encrypted storage": [
+        "500 გბ დაშიფრული საცავი"
+      ],
+      "Add unlimited credit cards": [
+        "დაამატეთ განუსაზღვრელი რაოდენობის საკრედიტო ბარათი"
+      ],
+      "Block ads, trackers, and malware": [
+        "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "გააორმაგეთ თქვენი დაშიფრული საცავი – მიიღეთ 1 ტბ ყველა თქვენი მონაცემისთვის"
+      ],
+      "Encrypted password manager": [
+        "დაშიფრული პაროლების მმართველი"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "ეს ექსკლუზიური საჩუქარია ჩვენი ერთობლივი მოგზაურობის აღსანიშნავად."
+      ],
+      "High speed streaming with VPN": [
+        "ჩქაროსნული სტრიმინგი VPN-ით"
+      ],
+      "of privacy": [
+        "კონფიდენციალობა"
+      ],
+      "Online document editor": [
+        "დოკუმენტების რედაქტორი ინტერნეტში"
+      ],
+      "Online privacy for up to 2 people": [
+        "ინტერნეტკონფიდენციალობა ორამდე ადამიანისთვის"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის (6-მდე მომხმარებელი)"
+      ],
+      "Protect up to 10 devices": [
+        "დაიცავით 10-მდე მოწყობილობა"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
+      "Save time with built-in 2FA": [
+        "დაზოგეთ დრო ჩაშენებული 2FA-ით"
+      ],
+      "Secure email with unlimited aliases": [
+        "დაცული ელფოსტა შეუზღუდავი ფსევდონიმების რაოდენობით"
+      ],
+      "Select any server": [
+        "აირჩიეთ ნებისმიერი სერვერი"
+      ],
+      "Share passwords easily": [
+        "გააზიარეთ პაროლები ადვილად"
+      ],
+      "Short @pm.me address": [
+        "მოკლე @pm.me მისამართი"
+      ],
+      "Stream your favorite content": [
+        "დასტრიმეთ თქვენი რჩეული შემცველობა"
+      ],
+      "thanks to you": [
+        "მადლობა"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "გაასამმაგეთ თქვენი დაშიფრული საცავი – მიიღეთ 3 ტბ ყველა თქვენი მონაცემისთვის"
+      ],
+      "Unlimited folders, labels and filters": [
+        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
+      ],
+      "years": [
+        "წელი"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "საიუბილეო შეთავაზება"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "/ month": [
+        "/ თვეში"
+      ],
+      "12 months": [
+        "12 თვე"
+      ],
+      "15 months": [
+        "15 თვე"
+      ],
+      "24 months": [
+        "24 თვე"
+      ],
+      "30 months": [
+        "30 თვე"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal }-სთვის"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "დაშიფრული პაროლების მმართველი"
+      ]
+    },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " დაუკავშირდით ჩვენს ${ helpCenterLink }-ს, ან ${ contactSupportLink }-ს."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "გააუქმეთ ნებისმიერ დროს ${ cancelDate }-მდე."
+      ],
+      "Cancel anytime before then.": [
+        "გააუქმეთ იქამდე ნებისმიერ დროს."
+      ],
+      "contact our support team": [
+        "დაუკავშირდით ჩვენს მხარდაჭერის გუნდს"
+      ],
+      "Continue": [
+        "გაგრძელება"
+      ],
+      "help center": [
+        "დახმარების ცენტრი"
+      ],
+      "If you need help,": [
+        "თუ დახმარება გჭირდებათ,"
+      ],
+      "Once your full subscription starts...": [
+        "როცა თქვენი სრული გამოწერა დაიწყება..."
+      ],
+      "Your free trial has started": [
+        "თქვენი გამოსაცდელი პერიოდი დაიწყო"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/თვეში"
+      ],
+      "Only": [
+        "მხოლოდ"
       ]
     }
   }

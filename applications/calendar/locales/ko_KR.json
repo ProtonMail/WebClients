@@ -7549,6 +7549,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "종단간 암호화로 보호되는 1 TB의 클라우드 저장공간을 통해 파일을 쉽게 저장, 동기화 및 공유할 수 있어요."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "종단간 암호화로 보호되는 200 GB의 클라우드 저장공간을 통해 파일을 쉽게 저장, 동기화 및 공유할 수 있어요."
       ]
     },
     "new_plans: Subtext": {
@@ -7848,6 +7854,9 @@
       ],
       "Support for ${ n } custom email domains": [
         "${ n }개의 지정 이메일 도메인 지원"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n }개 커스텀 이메일 도메인 지원"
       ]
     },
     "Note": {
@@ -8085,6 +8094,9 @@
       ],
       "Your subscription renews soon": [
         "구독이 곧 끝나게 됩니다"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited 구매"
       ]
     },
     "Offer feature": {
@@ -8111,6 +8123,9 @@
       ],
       "Storage": [
         "저장 공간"
+      ],
+      "Advanced threat protection": [
+        "향상된 위협 보호 기능"
       ]
     },
     "Onboarding": {
@@ -8164,6 +8179,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "무료 체험 기간 종료 전까지 ${ planTitle }을(를) 무료로 계속 사용 가능합니다."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " ${ helpCenterLink } 또는 ${ contactSupportLink }에 방문하세요."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "${ cancelDate }전까지 언제든지 취소하세요."
+      ],
+      "contact our support team": [
+        "자사 고객 지원팀에 문의"
+      ],
+      "Continue": [
+        "계속"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "${ trialEndsOnFormatted }까지 무료 비즈니스 보안 기능을 즐겨보세요."
+      ],
+      "help center": [
+        "지원 센터"
+      ],
+      "If you need help,": [
+        "도움이 필요하시다면,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "30일 내에 구독 취소시 사용량이 비례하여 환불을 받으실 수 있습니다."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "무료 체험 종료일까지 계속 ${ planTitle }을(를) 사용하실 수 있어요. 구독료는 청구되지 않습니다."
+      ],
+      "Your free trial has started": [
+        "무료 체험 기간이 시작되었습니다"
       ]
     },
     "Option": {
@@ -8343,6 +8388,9 @@
       ],
       "New credit/debit card": [
         "신용/체크카드 추가"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8406,7 +8454,7 @@
         "이용 약관"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "쿠폰이 ${ couponRedemptions } 갱신에 유효합니다."
+        "쿠폰이 ${ couponRedemptions }회 갱신까지 유효합니다."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "특별 할인 가격인 ${ priceWithDiscount }은(는) 최초 ${ subscriptionLength }개월에 한해 유효합니다."
@@ -8425,6 +8473,12 @@
       ],
       "Your payment is still being processed": [
         "회원님의 결제가 아직 처리 중입니다"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "유로화는 SEPA로만 결제 가능합니다. 사용자의 결제 수단이 변경되었습니다. 선택기를 사용하여 선택을 다시 확인하세요."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "이 결제 수단이 향후 모든 갱신에 대한 새로운 결제 기본값으로 설정됩니다."
       ]
     },
     "Payments.Error": {
@@ -8975,7 +9029,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "${ calendarName } 을 공유하고 싶은 ${ BRAND_NAME } 계정을 추가하세요. 초대장이 전송됩니다."
+        "${ calendarName }을(를) 공유하고자 하는 사용자의 ${ BRAND_NAME } 계정을 추가하세요. 초대장이 전송됩니다."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -9120,6 +9174,12 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "${ pricingTitle }(으)로 업그레이드"
+      ],
+      "Guard against threats": [
+        "위협으로부터 보호"
+      ],
+      "Unblock streaming content": [
+        "스트리밍 콘텐츠 잠금 해제"
       ]
     },
     "specialoffer: Offers": {
@@ -9193,6 +9253,18 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "업그레이드로 2년 동안 더 저렴하게 ${ planName } 사용하기"
+      ],
+      "Access content on streaming services worldwide": [
+        "전세계의 스트리밍 서비스 상의 콘텐츠에 접근"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "모든 것을 포함하는 하나의 플랜, ${ BRAND_NAME } Unlimited를 경험하세요"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "회원님의 모든 비밀번호를 여러 보관함에 안전하고 체계적으로 보관하세요. "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Sentinel로 계정을 위협으로부터 보호하세요"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9387,6 +9459,9 @@
         "사용자 당 ${ n }개 VPN 연결"
       ],
       "VPN connection for ${ n } devices per user": [
+        "사용자 당 ${ n }개 기기에 대한 VPN 연결"
+      ],
+      "VPN connection for ${ n } device per user": [
         "사용자 당 ${ n }개 기기에 대한 VPN 연결"
       ]
     },
@@ -10717,6 +10792,9 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "무료 체험이 ${ trialDurationFormatted }일 후 종료됩니다"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11263,6 +11341,146 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "특가로 구매"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB 저장 공간"
+      ],
+      "200 GB storage": [
+        "200 GB 저장 공간"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB 암호화된 저장 공간"
+      ],
+      "Add unlimited credit cards": [
+        "무제한 신용 카드 항목 추가"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "${ BRAND_NAME } Mail, Pass, VPN, Drive, Calendar의 모든 프리미엄 기능"
+      ],
+      "Block ads, trackers, and malware": [
+        "광고, 트래커 및 멀웨어 차단"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "할인은 표준 월별 요금 기준입니다. 청구 주기가 끝나면 구독은 표준 연간 요금으로 갱신됩니다."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "암호화된 저장 공간을 2배로 확장하세요 - 나의 모든 데이터를 저장할 2 TB 저장 공간을 받아보세요"
+      ],
+      "Encrypted password manager": [
+        "암호화된 비밀번호 관리자"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "저희와 함께 걸어온 여정을 기념하는 특별 선물을 준비했어요."
+      ],
+      "High speed streaming with VPN": [
+        "VPN을 통한 빠른 속도의 스트리밍"
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Online privacy for up to 2 people": [
+        "최대 두 명까지 온라인 프라이버시 보호"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "우리 가족을 위한 온라인 프라이버시 보호 (최대 6명)"
+      ],
+      "Protect up to 10 devices": [
+        "최대 10대 기기 보호"
+      ],
+      "Recover previous file versions": [
+        "기존 파일 버전 복원"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "기간 한정 할인으로 프리미엄 Drive 기능을 알뜰하게 이용해 보세요."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "기간 한정 할인으로 프리미엄 Mail 기능을 알뜰하게 이용해 보세요."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "기간 한정 할인으로 프리미엄 Pass 기능을 알뜰하게 이용해 보세요."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "기간 한정 할인으로 프리미엄 VPN 기능을 알뜰하게 이용해 보세요."
+      ],
+      "Save time with built-in 2FA": [
+        "내장형 2단계 인증기로 시간 절약하기"
+      ],
+      "Secure email with unlimited aliases": [
+        "무제한 별칭이 포함된 보안 이메일"
+      ],
+      "Select any server": [
+        "아무 서버 선택"
+      ],
+      "Share passwords easily": [
+        "간편하게 비밀번호 공유하기"
+      ],
+      "Short @pm.me address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Stream your favorite content": [
+        "좋아하는 비디오 콘텐츠 스트리밍"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "암호화된 저장 공간을 3배로 확장하세요 - 나의 모든 데이터를 저장할 3 TB 저장 공간을 받아보세요"
+      ],
+      "Unlimited folders, labels and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Use your own email domain": [
+        "나만의 이메일 주소 사용"
+      ],
+      "years": [
+        "년"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "창립 기념 혜택"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n }개월"
+      ],
+      "/ month": [
+        "/ 월간"
+      ],
+      "12 months": [
+        "12개월"
+      ],
+      "15 months": [
+        "15개월"
+      ],
+      "24 months": [
+        "24개월"
+      ],
+      "30 months": [
+        "30개월"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal }간"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "암호화된 비밀번호 관리자"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/월간"
       ]
     }
   }

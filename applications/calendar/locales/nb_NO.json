@@ -7669,6 +7669,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
       ]
     },
     "new_plans: Subtext": {
@@ -7970,6 +7976,10 @@
       ],
       "Support for ${ n } custom email domains": [
         "Støtte for ${ n } egendefinerte e-postdomener"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Støtte for ${ n } egendefinert e-postdomene",
+        "Støtte for ${ n } egendefinerte e-postdomener"
       ]
     },
     "Note": {
@@ -8228,6 +8238,12 @@
       ],
       "Your subscription renews soon": [
         "Abonnementet ditt fornyes snart"
+      ],
+      "Don’t show this again": [
+        "Ikke vis dette igjen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Skaff deg ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8254,6 +8270,18 @@
       ],
       "Storage": [
         "Lagringsplass"
+      ],
+      "500 GB secure storage": [
+        "500 GB sikker lagring"
+      ],
+      "Advanced threat protection": [
+        "Avansert trusselbeskyttelse"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultraraske VPN-tjenere i 110+ land"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Ubegrenset med alias for å beskytte din identitet"
       ]
     },
     "Onboarding": {
@@ -8307,6 +8335,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du vil kunne bruke ${ planTitle } til prøveversjonen avsluttes, gratis."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " besøk vårt ${ helpCenterLink } eller ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Avbryt når som helst før ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "kontakt vår brukerstøtte"
+      ],
+      "Continue": [
+        "Fortsett"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Nyt gratis funksjoner for forretningssikkerhet frem til ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "hjelpesenter"
+      ],
+      "If you need help,": [
+        "Hvis du trenger hjelp,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Du kan bruke ${ planTitle } til prøveversjonen avsluttes, og du blir ikke belastet."
+      ],
+      "Your free trial has started": [
+        "Din gratis prøveperiode har startet"
       ]
     },
     "Option": {
@@ -8491,6 +8549,9 @@
       ],
       "New credit/debit card": [
         "Nytt kreditt-/debetkort"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8577,6 +8638,12 @@
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Kun Euro aksepteres for SEPA. Valutaen din er endret. Bruk velgeren for å angre valget ditt."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
       ]
     },
     "Payments.Error": {
@@ -9292,6 +9359,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Oppgrader for ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Surf sikkert"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Gjør mer med ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Skaff deg ubegrenset antall aliaser"
+      ],
+      "Guard against threats": [
+        "Beskytt mot trusler"
+      ],
+      "Increase your storage": [
+        "Øk lagringsplassen din"
+      ],
+      "Keep passwords safe": [
+        "Hold passord trygge"
+      ],
+      "Unblock streaming content": [
+        "Opphev blokkering av strømmingsinnhold"
       ]
     },
     "specialoffer: Offers": {
@@ -9366,6 +9454,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Oppgrader og spar mer med 2 år med ${ planName }."
+      ],
+      "Access content on streaming services worldwide": [
+        "Tilgang til innhold på strømmetjenester globalt"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Skaff deg 500 GB til å lagre alle filene og bildene dine sikkert"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Få tilgang til ultra-raske VPN-tjenere i 110+ land"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Få én plan som inkluderer alt, skaff deg ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Skaff deg ubegrenset med alias for å beskytte din identitet og redusere søppelpost"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Hold passordene dine trygge og organiserte i flere hvelv "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Beskytt din konto mot trusler med Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9566,6 +9675,10 @@
         "${ n } VPN-tilkoblinger per bruker"
       ],
       "VPN connection for ${ n } devices per user": [
+        "VPN-tilkobling for ${ n } enhet per bruker",
+        "VPN-tilkobling for ${ n } enheter per bruker"
+      ],
+      "VPN connection for ${ n } device per user": [
         "VPN-tilkobling for ${ n } enhet per bruker",
         "VPN-tilkobling for ${ n } enheter per bruker"
       ]
@@ -10921,6 +11034,10 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dag",
+        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dager"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11513,6 +11630,159 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Skaff deg tilbudet"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "200 GB storage": [
+        "200 GB lagringsplass"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB kryptert lagring"
+      ],
+      "Add unlimited credit cards": [
+        "Legg til ubegrenset antall kredittkort"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle premium funksjoner i ${ BRAND_NAME } Mail, Pass, VPN, Drive og Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkér annonser, sporere og skadelig programvare"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Rabatter er basert på standard månedlig pris. Ved slutten av faktureringssyklusen vil abonnementet ditt fornyes til standard årlig sats."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Doble den krypterte lagringen din – få 1 TB for alle dataene dine"
+      ],
+      "Encrypted password manager": [
+        "Kryptert passordbehandler"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Her er en eksklusiv gave for å feire reisen vår sammen."
+      ],
+      "High speed streaming with VPN": [
+        "Strømming med høy hastighet med VPN"
+      ],
+      "of privacy": [
+        "respekt for privatlivet"
+      ],
+      "Online document editor": [
+        "Dokumentredigering på nett"
+      ],
+      "Online privacy for up to 2 people": [
+        "Personvern på nett for opptil 2 personer"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Personvern på nett for hele familien din (opptil 6 brukere)"
+      ],
+      "Protect up to 10 devices": [
+        "Beskytt opptil 10 enheter"
+      ],
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Spar stort på premium Drive-funksjoner med en tidsbegrenset rabatt."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Spar stort på premium Mail-funksjoner med tidsbegrenset rabatt."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Spar mye på premium Pass-funksjoner med en tidsbegrenset rabatt."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Spar mye på premium VPN-funksjoner med en tidsbegrenset rabatt."
+      ],
+      "Save time with built-in 2FA": [
+        "Spar tid med innebygd 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Sikker e-post med ubegrenset antall alias"
+      ],
+      "Select any server": [
+        "Velg hvilken som helst tjener"
+      ],
+      "Share passwords easily": [
+        "Enkel passorddeling"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me adresse"
+      ],
+      "Stream your favorite content": [
+        "Strøm favorittinnholdet ditt"
+      ],
+      "thanks to you": [
+        "takket være deg"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Tredoble den krypterte lagringsplassen og få 3 TB for alle dataene dine."
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrenset antall mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Bruk ditt eget e-postdomene"
+      ],
+      "years": [
+        "år"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumstilbud"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "/ month": [
+        "/måned"
+      ],
+      "12 months": [
+        "12 måneder"
+      ],
+      "15 months": [
+        "15 måneder"
+      ],
+      "24 months": [
+        "24 måneder"
+      ],
+      "30 months": [
+        "30 måneder"
+      ],
+      "for ${ durationDeal }": [
+        "for ${ durationDeal }"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Kryptert passordbehandler"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort som slutter på ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankoverføring - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/måned"
+      ],
+      "Only": [
+        "Kun"
       ]
     }
   }

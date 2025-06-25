@@ -889,6 +889,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Hide more benefits": [
+        "隐藏更多优势"
+      ],
+      "More benefits": [
+        "更多福利"
+      ],
+      "Show more benefits": [
+        "显示更多优势"
       ]
     },
     "action": {
@@ -4132,6 +4141,9 @@
       ],
       "Security Center": [
         "安全中心"
+      ],
+      "Drawer": [
+        "侧边栏"
       ]
     },
     "Hint": {
@@ -4886,7 +4898,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入 ${ digit } 位数字的验证码。"
+        "请输入验证码的第 ${ digit } 位数字。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
@@ -5757,6 +5769,30 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "在您的试用 ${ boldCancelDate } 结束时，您将被降級到 ${ boldProtonFree }。您组织中的所有用户账户将被移除。"
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "如果您改变主意，可以随时重新订阅。很遗憾您离开！"
+      ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "感谢您选择 ${ BRAND_NAME } 来保护您的组织机构安全。"
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免费试用已成功转换为 ${ cycle } 个月订阅。您的续订日期是 ${ nextBillingDate }。"
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免费试用已成功转换为月度订阅。您的续订日期是 ${ nextBillingDate }。"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "您将在 ${ boldEndDate } 失去对 ${ boldPlanTitle } 的访问权限。"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
       ]
     },
     "info": {
@@ -6388,6 +6424,9 @@
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
+      ],
+      "Alias title": [
+        "别名标题"
       ]
     },
     "Label for contact group color": {
@@ -7507,6 +7546,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
       ]
     },
     "new_plans: Subtext": {
@@ -7805,6 +7850,9 @@
         "要求启用 2FA"
       ],
       "Support for ${ n } custom email domains": [
+        "支持 ${ n } 个自定义域"
+      ],
+      "Support for ${ n } custom email domain": [
         "支持 ${ n } 个自定义域"
       ]
     },
@@ -8204,6 +8252,9 @@
       ],
       "Unlimited logins, notes, credit cards and more": [
         "无限制登录、备注、信用卡等功能"
+      ],
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "所有 ${ BRAND_NAME } 应用程序和高级功能"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8363,6 +8414,9 @@
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "此付款方式将成为您未来所有续订的新默认方式。"
       ]
     },
     "Payments.Error": {
@@ -9326,6 +9380,9 @@
       ],
       "VPN connection for ${ n } devices per user": [
         "其他 VPN 连接，每个用户可连接 ${ n } 台设备"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "每位用户 ${ n } 个设备的 VPN 连接"
       ]
     },
     "Subscription change warning": {
@@ -10649,6 +10706,12 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Your ${ planName } subscription has started": [
+        "您的 ${ planName } 订阅已启用"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "您的免费体验期将于 ${ trialDurationFormatted } 结束。"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11195,6 +11258,184 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "获取优惠"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "200 GB storage": [
+        "200 GB 存储空间"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB 加密存储"
+      ],
+      "Add unlimited credit cards": [
+        "添加无限信用卡"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "包含 ${ BRAND_NAME } Mail、Pass、VPN、Drive 以及 Calendar 的所有高级功能"
+      ],
+      "Block ads, trackers, and malware": [
+        "屏蔽广告、跟踪器和恶意软件"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "折扣基于标准月费。在账单周期结束时，您的订购将按标准年费率续订。"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "双倍加密存储容量 -- 为您的所有数据提供 1 TB 容量"
+      ],
+      "Encrypted password manager": [
+        "加密的密码管理器"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "这是庆祝我们共同前行的一份专属献礼。"
+      ],
+      "High speed streaming with VPN": [
+        "使用 VPN 流畅地观看视频"
+      ],
+      "of privacy": [
+        "隐私守护"
+      ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
+      "Online privacy for up to 2 people": [
+        "最多可容纳 2 人的在线隐私保护"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "与全家人共同守护网络隐私 (最多支持 6 位用户)"
+      ],
+      "Protect up to 10 devices": [
+        "最多可保护 10 台设备"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 Drive 高级功能。"
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 Mail 高级功能。"
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 Pass 高级功能。"
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "限时折扣，让您以超划算的价格订购 VPN 高级功能。"
+      ],
+      "Save time with built-in 2FA": [
+        "使用内置 2FA 来节省时间"
+      ],
+      "Secure email with unlimited aliases": [
+        "不限量的安全邮箱别名"
+      ],
+      "Select any server": [
+        "选择任何服务器"
+      ],
+      "Share passwords easily": [
+        "轻松共享密码"
+      ],
+      "Short @pm.me address": [
+        "简短的 @pm.me 邮箱地址"
+      ],
+      "Stream your favorite content": [
+        "播放您最喜欢的视频内容"
+      ],
+      "thanks to you": [
+        "感谢你们"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "三倍加密存储容量 -- 为您的所有数据提供 3 TB 容量"
+      ],
+      "Unlimited folders, labels and filters": [
+        "不限量文件夹、标签和筛选规则"
+      ],
+      "Use your own email domain": [
+        "个性化邮箱域名"
+      ],
+      "years": [
+        " 11 年以来的"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "周年庆优惠"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } 个月"
+      ],
+      "/ month": [
+        "/月"
+      ],
+      "12 months": [
+        "12 个月"
+      ],
+      "15 months": [
+        "15 个月"
+      ],
+      "24 months": [
+        "24 个月"
+      ],
+      "30 months": [
+        "30 个月"
+      ],
+      "for ${ durationDeal }": [
+        "仅限 ${ durationDeal }"
+      ]
+    },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        "请访问我们的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "在 ${ cancelDate } 之前随时取消。"
+      ],
+      "Cancel anytime before then.": [
+        "在此之前随时取消。"
+      ],
+      "contact our support team": [
+        "联系我们的客服"
+      ],
+      "Continue": [
+        "继续"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "免费享有商业安全功能，直到 ${ trialEndsOnFormatted }为止。"
+      ],
+      "help center": [
+        "帮助中心"
+      ],
+      "If you need help,": [
+        "如果您需要帮助，"
+      ],
+      "Once your full subscription starts...": [
+        "您的正式订阅一旦开始..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "您可以使用 ${ planTitle } 直到试用期结束，并且不会向您收费。"
+      ],
+      "Your free trial has started": [
+        "您的免费试用已开始"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "您的完整 ${ planTitle } 订阅将于 ${ boldEndDate } 开始。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "您将能够免费使用 ${ planTitle } 直到试用期结束。"
       ]
     }
   }

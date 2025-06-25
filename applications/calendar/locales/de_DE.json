@@ -7677,6 +7677,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
       ]
     },
     "new_plans: Subtext": {
@@ -7978,6 +7984,10 @@
       ],
       "Support for ${ n } custom email domains": [
         "Unterstützung für ${ n } benutzerdefinierte E-Mail-Domänen"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Support für ${ n } benutzerdefinierte E-Mail-Domäne",
+        "Support für ${ n } benutzerdefinierte E-Mail-Domänen"
       ]
     },
     "Note": {
@@ -8236,6 +8246,12 @@
       ],
       "Your subscription renews soon": [
         "Dein Abonnement verlängert sich bald"
+      ],
+      "Don’t show this again": [
+        "Nicht erneut anzeigen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Hol dir ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8262,6 +8278,18 @@
       ],
       "Storage": [
         "Speicherplatz"
+      ],
+      "500 GB secure storage": [
+        "500 GB sicherer Speicher"
+      ],
+      "Advanced threat protection": [
+        "Erweiterter Bedrohungsschutz"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultraschnelle VPN-Server in über 110 Ländern"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Unbegrenzte Aliase, um deine Identität zu schützen"
       ]
     },
     "Onboarding": {
@@ -8315,6 +8343,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du kannst ${ planTitle } kostenlos nutzen, bis die Testversion ausläuft."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " besuche ${ helpCenterLink } oder ${ contactSupportLink }"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Jederzeit vor dem ${ cancelDate } kündigen."
+      ],
+      "contact our support team": [
+        "Kontaktiere unser Support-Team"
+      ],
+      "Continue": [
+        "Fortfahren"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Genieße kostenlose Unternehmens-Sicherheitsfunktionen bis zum ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "Hilfezentrum"
+      ],
+      "If you need help,": [
+        "Wenn du Hilfe benötigst,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Du kannst immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Du kannst ${ planTitle } kostenlos nutzen, bis die Testversion ausläuft."
+      ],
+      "Your free trial has started": [
+        "Deine kostenlose Testversion ist gestartet"
       ]
     },
     "Option": {
@@ -8499,6 +8557,9 @@
       ],
       "New credit/debit card": [
         "Neue Kredit-/Debitkarte"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8585,6 +8646,12 @@
       ],
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Für SEPA wird nur der Euro akzeptiert. Deine Währung wurde geändert. Bitte verwende die Auswahl, um deine Wahl rückgängig zu machen."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Diese Zahlungsmethode wird dein neuer Standard für alle zukünftigen Verlängerungen."
       ]
     },
     "Payments.Error": {
@@ -9300,6 +9367,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Upgraden für ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Sicher surfen"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Mehr mit ${ BRAND_NAME } machen"
+      ],
+      "Get unlimited aliases": [
+        "Erhalte unbegrenzte Aliasse"
+      ],
+      "Guard against threats": [
+        "Schütze dich vor Bedrohungen"
+      ],
+      "Increase your storage": [
+        "Erhöhe deinen Speicherplatz"
+      ],
+      "Keep passwords safe": [
+        "Passwörter sicher aufbewahren"
+      ],
+      "Unblock streaming content": [
+        "Streaming-Inhalte entsperren"
       ]
     },
     "specialoffer: Offers": {
@@ -9374,6 +9462,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Führe ein Upgrade durch und spare noch mehr mit 2 Jahren ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Greife weltweit auf Inhalte von Streaming-Diensten zu"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Hol dir 500 GB, um all deine Dateien und Fotos sicher zu speichern"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Erhalte Zugang zu ultraschnellen VPN-Servern in über 110 Ländern"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Hol dir ein Abonnement, das alles beinhaltet, hol dir ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Hol dir unbegrenzt Aliase, um deine Identität zu schützen und Spam zu reduzieren"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Halte deine Passwörter sicher und organisiere sie in mehreren Tresoren "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Schütze dein Konto vor Bedrohungen mit Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9574,6 +9683,10 @@
         "${ n } VPN-Verbindungen pro Benutzer"
       ],
       "VPN connection for ${ n } devices per user": [
+        "VPN-Verbindung für ${ n } Gerät pro Benutzer",
+        "VPN-Verbindung für ${ n } Geräte pro Benutzer"
+      ],
+      "VPN connection for ${ n } device per user": [
         "VPN-Verbindung für ${ n } Gerät pro Benutzer",
         "VPN-Verbindung für ${ n } Geräte pro Benutzer"
       ]
@@ -10929,6 +11042,10 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Deine kostenlose Testversion endet in ${ trialDurationFormatted } Tag.",
+        "Deine kostenlose Testversion endet in ${ trialDurationFormatted } Tagen."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11521,6 +11638,167 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Angebot nutzen"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "200 GB storage": [
+        "200 GB Speicherplatz"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB verschlüsselter Speicherplatz"
+      ],
+      "Add unlimited credit cards": [
+        "Unbegrenzte Kreditkarten hinzufügen"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } Mail, Pass, VPN, Drive und Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockiere Werbung, Tracker und Malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Rabatte basieren auf monatlichen Standard-Preisen. Am Ende des Abrechnungszeitraums verlängert sich dein Abonnement zum jährlichen Standard-Tarif."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Verdoppele deinen verschlüsselten Speicher – hol dir 1 TB für all deine Daten"
+      ],
+      "Encrypted password manager": [
+        "Verschlüsselter Passwortmanager"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Hier ist ein exklusives Geschenk, um unsere gemeinsame Reise zu feiern."
+      ],
+      "High speed streaming with VPN": [
+        "Hochgeschwindigkeits-Streaming mit VPN"
+      ],
+      "of privacy": [
+        "der Privatsphäre"
+      ],
+      "Online document editor": [
+        "Editor für Onlinedokumente"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online-Privatsphäre für bis zu 2 Personen"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Benutzer)"
+      ],
+      "Protect up to 10 devices": [
+        "Schütze bis zu 10 Geräte"
+      ],
+      "Recover previous file versions": [
+        "Vorherige Dateiversionen wiederherstellen"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Ordentlich sparen bei Premium-Drive-Funktionen mit einem zeitlich begrenzten Rabatt."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Ordentlich sparen bei Premium-Mail-Funktionen mit einem zeitlich begrenzten Rabatt."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Ordentlich sparen bei Premium-Pass-Funktionen mit einem zeitlich begrenzten Rabatt."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Ordentlich sparen bei Premium-VPN-Funktionen mit einem zeitlich begrenzten Rabatt."
+      ],
+      "Save time with built-in 2FA": [
+        "Spare Zeit mit integriertem 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Sichere E-Mail mit unbegrenzten Aliassen"
+      ],
+      "Select any server": [
+        "Einen beliebigen Server wählen"
+      ],
+      "Share passwords easily": [
+        "Passwörter einfach teilen"
+      ],
+      "Short @pm.me address": [
+        "Kurze @pm.me E-Mail-Adresse"
+      ],
+      "Stream your favorite content": [
+        "Streame deine Lieblingsinhalte"
+      ],
+      "thanks to you": [
+        "Dank dir"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Verdreifache deinen verschlüsselten Speicher – hol dir 3 TB für all deine Daten"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ],
+      "years": [
+        "Jahre"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubiläumsangebot"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
+      "/ month": [
+        "/ Monat"
+      ],
+      "12 months": [
+        "12 Monate"
+      ],
+      "15 months": [
+        "15 Monate"
+      ],
+      "24 months": [
+        "24 Monate"
+      ],
+      "30 months": [
+        "30 Monate"
+      ],
+      "for ${ durationDeal }": [
+        "Für ${ durationDeal }"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ cycle } Monate am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Verschlüsselter Passwortmanager"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - Karte endet mit ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Banküberweisung - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ Monat"
+      ],
+      "Only": [
+        "Nur"
       ]
     }
   }

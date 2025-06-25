@@ -5857,6 +5857,18 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Din provperiod slutar om ${ timeRemaining }."
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Vid slutet av din provperiod ${ boldCancelDate }, kommer du att nedgraderas till ${ boldProtonFree }. Alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Du kommer förlora åtkomst till ${ boldPlanTitle } den ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
       ]
     },
     "info": {
@@ -7654,6 +7666,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
       ]
     },
     "new_plans: Subtext": {
@@ -7960,6 +7978,10 @@
       ],
       "Support for ${ n } custom email domains": [
         "Stöd för ${ n } anpassade e-postdomäner"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Stöd för ${ n } anpassad e-postdomän",
+        "Stöd för ${ n } anpassade e-postdomäner"
       ]
     },
     "Note": {
@@ -8218,6 +8240,12 @@
       ],
       "Your subscription renews soon": [
         "Din prenumeration förnyas snart"
+      ],
+      "Don’t show this again": [
+        "Visa inte detta igen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Skaffa ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8244,6 +8272,18 @@
       ],
       "Storage": [
         "Lagringsutrymme"
+      ],
+      "500 GB secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "Advanced threat protection": [
+        "Avancerat hotskydd"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultrasnabba VPN-servrar i 110+ länder"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Obegränsat antal alias för att skydda din identitet"
       ]
     },
     "Onboarding": {
@@ -8288,6 +8328,39 @@
       ],
       "Once your full subscription starts...": [
         "När din fullständiga prenumeration startar …"
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " besök vårt ${ helpCenterLink } eller ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Avbryt när som helst före ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "kontakta vårt supportteam"
+      ],
+      "Continue": [
+        "Fortsätt"
+      ],
+      "help center": [
+        "hjälpcenter"
+      ],
+      "If you need help,": [
+        "Om du behöver hjälp,"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Du kan använda ${ planTitle } tills provperioden är slut, och du kommer inte att debiteras."
+      ],
+      "Your free trial has started": [
+        "Din gratis provperiod har startat"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Du kommer att kunna använda ${ planTitle } tills provperioden slutar, utan kostnad."
       ]
     },
     "Option": {
@@ -8478,6 +8551,9 @@
       ],
       "PayPal": [
         "PayPal"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8564,6 +8640,9 @@
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Denna betalningsmetod kommer bli din nya standard för alla framtida förnyelser."
       ]
     },
     "Payments.Error": {
@@ -9274,6 +9353,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Uppgradera för ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Surfa säkert"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Gör mer med ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Skaffa obegränsat antal alias"
+      ],
+      "Guard against threats": [
+        "Skydd mot hot"
+      ],
+      "Increase your storage": [
+        "Öka ditt lagringsutrymme"
+      ],
+      "Keep passwords safe": [
+        "Håll lösenord säkra"
+      ],
+      "Unblock streaming content": [
+        "Avblockera streaminginnehåll"
       ]
     },
     "specialoffer: Offers": {
@@ -9348,6 +9448,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Uppgradera och spara mer med 2 års ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Kom åt innehåll på streamingtjänster globalt"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Skaffa 500 GB för att säkert lagra alla dina filer och foton"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Få åtkomst till ultrasnabba VPN-servrar i 110+ länder"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Skaffa ett paket som inkluderar allt, skaffa ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Skaffa obegränsat antal alias för att skydda din identitet och minska skräppost"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Håll dina lösenord säkra och organiserade i flera valv "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Skydda ditt konto från hot med Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9548,6 +9669,10 @@
         "${ n } VPN-anslutningar per användare"
       ],
       "VPN connection for ${ n } devices per user": [
+        "VPN-anslutning för ${ n } enhet per användare",
+        "VPN-anslutning för ${ n } enheter per användare"
+      ],
+      "VPN connection for ${ n } device per user": [
         "VPN-anslutning för ${ n } enhet per användare",
         "VPN-anslutning för ${ n } enheter per användare"
       ]
@@ -10903,6 +11028,10 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Din gratis provperiod slutar om ${ trialDurationFormatted } dag",
+        "Din gratis provperiod slutar om ${ trialDurationFormatted } dagar"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11495,6 +11624,153 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "200 GB storage": [
+        "200 GB lagringsutrymme"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB krypterat lagringsutrymme"
+      ],
+      "Add unlimited credit cards": [
+        "Lägg till obegränsat antal kreditkort"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alla premiumfunktioner i ${ BRAND_NAME } Mail, Pass, VPN, Drive och Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockera annonser, spårare och skadlig kod"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Dubbla ditt krypterade lagringsutrymme – få 1 TB för alla dina data"
+      ],
+      "Encrypted password manager": [
+        "Krypterad lösenordshanterare"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Här är en exklusiv gåva för att fira vår resa tillsammans."
+      ],
+      "High speed streaming with VPN": [
+        "Höghastighetsstreaming med VPN"
+      ],
+      "of privacy": [
+        "av integritet"
+      ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
+      "Online privacy for up to 2 people": [
+        "Integritet online för upp till 2 personer"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Integritet online för hela din familj (upp till 6 användare)"
+      ],
+      "Protect up to 10 devices": [
+        "Skydda upp till 10 enheter"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Spara stort på premium Drive-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Spara stort på premium Mail-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Spara stort på premium Pass-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Spara stort på premium VPN-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save time with built-in 2FA": [
+        "Spara tid med inbyggd 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Säker e-post med obegränsade alias"
+      ],
+      "Select any server": [
+        "Välj vilken server som helst"
+      ],
+      "Share passwords easily": [
+        "Dela lösenord enkelt"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Stream your favorite content": [
+        "Streama ditt favoritinnehåll"
+      ],
+      "thanks to you": [
+        "tack vare dig"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Trippla ditt krypterade lagringsutrymme – få 3 TB för alla dina data"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Obegränsat antal mappar, etiketter och filter"
+      ],
+      "Use your own email domain": [
+        "Använd din egen e-postdomän"
+      ],
+      "years": [
+        "år"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumserbjudande"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
+      "/ month": [
+        "/månad"
+      ],
+      "12 months": [
+        "12 månader"
+      ],
+      "15 months": [
+        "15 månader"
+      ],
+      "24 months": [
+        "24 månader"
+      ],
+      "30 months": [
+        "30 månader"
+      ],
+      "for ${ durationDeal }": [
+        "för ${ durationDeal }"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Krypterad lösenordshanterare"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Bank transfer - ${ details }": [
+        "Banköverföring - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/månad"
+      ],
+      "Only": [
+        "Endast"
       ]
     }
   }

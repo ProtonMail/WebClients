@@ -5858,6 +5858,9 @@
       ],
       "Start typing an email address": [
         "Bdu tira n tansa n yimayl"
+      ],
+      "Select state": [
+        "Fren addad"
       ]
     },
     "Placeholder for contact group name": {
@@ -7031,6 +7034,15 @@
       ],
       "Your calendar link": [
         "Aseɣwen n uwitayen-ik"
+      ],
+      "Add user": [
+        "Rnu aseqdac"
+      ],
+      "Desktop": [
+        "Tanarit"
+      ],
+      "Every day": [
+        "Yal ass"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -7510,6 +7522,17 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Kkes asenqes"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } n wass",
+        "${ ceilDays } n wussan"
       ]
     }
   }

@@ -7914,6 +7914,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
       ]
     },
     "new_plans: Subtext": {
@@ -8218,6 +8224,12 @@
         "Wymaganie uwierzytelniania dwustopniowego"
       ],
       "Support for ${ n } custom email domains": [
+        "Wsparcie dla ${ n } niestandardowych domen"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Wsparcie dla ${ n } niestandardowej domeny",
+        "Wsparcie dla ${ n } niestandardowych domen",
+        "Wsparcie dla ${ n } niestandardowych domen",
         "Wsparcie dla ${ n } niestandardowych domen"
       ]
     },
@@ -8598,6 +8610,36 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Będziesz mógł korzystać z planu ${ planTitle } do końca wersji próbnej, za darmo."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " odwiedź nasze ${ helpCenterLink } lub ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Możesz anulować w dowolnym momencie przed ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "skontaktuj się z naszym zespołem wsparcia"
+      ],
+      "Continue": [
+        "Kontynuuj"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Korzystaj z darmowych funkcji bezpieczeństwa dla firm do ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "centrum pomocy"
+      ],
+      "If you need help,": [
+        "Jeśli potrzebujesz pomocy,"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Możesz anulować subskrypcję w ciągu 30 dni i otrzymać proporcjonalny zwrot kosztów."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Możesz korzystać z planu ${ planTitle } do końca wersji próbnej. Opłata nie zostanie naliczona."
+      ],
+      "Your free trial has started": [
+        "Darmowa wersja próbna rozpoczęła się"
       ]
     },
     "Option": {
@@ -8886,6 +8928,9 @@
       ],
       "Your payment is still being processed": [
         "Twoja płatność jest wciąż przetwarzana"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Metoda płatności stanie się domyślna dla przyszłych odnowień."
       ]
     },
     "Payments.Error": {
@@ -9929,6 +9974,12 @@
         "${ n } połączeń VPN na użytkownika"
       ],
       "VPN connection for ${ n } devices per user": [
+        "Połączenie VPN na ${ n } urządzenie na użytkownika",
+        "Połączenie VPN na ${ n } urządzenia na użytkownika",
+        "Połączenie VPN na ${ n } urządzeń na użytkownika",
+        "Połączenie VPN na ${ n } urządzeń na użytkownika"
+      ],
+      "VPN connection for ${ n } device per user": [
         "Połączenie VPN na ${ n } urządzenie na użytkownika",
         "Połączenie VPN na ${ n } urządzenia na użytkownika",
         "Połączenie VPN na ${ n } urządzeń na użytkownika",
@@ -11045,7 +11096,7 @@
         "Minikalendarz"
       ],
       "Mobile": [
-        "Aplikacja mobilna"
+        "Telefon"
       ],
       "Need more aliases?": [
         "Potrzebujesz więcej aliasów?"
@@ -11334,6 +11385,12 @@
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dzień",
+        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dni",
+        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dni",
+        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dnia"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12012,6 +12069,148 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "200 GB storage": [
+        "200 GB przestrzeni dyskowej"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB szyfrowanej przestrzeni dyskowej"
+      ],
+      "Add unlimited credit cards": [
+        "Dodaj nieograniczoną liczbę kart płatniczych"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Wszystkie funkcje premium usług ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar."
+      ],
+      "Block ads, trackers, and malware": [
+        "Zablokuj reklamy, elementy śledzące i złośliwe oprogramowanie"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Rabaty są obliczane na podstawie standardowych cen miesięcznych. Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie odnowiona w standardowej cenie."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Podwójna szyfrowana przestrzeń dyskowa – 1 TB na wszystkie dane"
+      ],
+      "Encrypted password manager": [
+        "Szyfrowany menadżer haseł"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Oto ekskluzywny prezent, aby uczcić naszą wspólną podróż."
+      ],
+      "High speed streaming with VPN": [
+        "Szybki streaming z VPN"
+      ],
+      "of privacy": [
+        "prywatności"
+      ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
+      "Online privacy for up to 2 people": [
+        "Prywatność w sieci dla maksymalnie 2 użytkowników"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Prywatność online dla całej rodziny (do 6 użytkowników)"
+      ],
+      "Protect up to 10 devices": [
+        "Ochrona do 10 urządzeń"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Zaoszczędź dużo na funkcjach premium dysku dzięki ofercie ograniczonej czasowo."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Zaoszczędź dużo na funkcjach premium poczty dzięki ofercie ograniczonej czasowo."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Zaoszczędź dużo na funkcjach premium Proton Pass dzięki ofercie ograniczonej czasowo."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Zaoszczędź dużo na funkcjach premium VPN dzięki ofercie ograniczonej czasowo."
+      ],
+      "Save time with built-in 2FA": [
+        "Zaoszczędź czas dzięki wbudowanemu uwierzytelnianiu dwustopniowemu"
+      ],
+      "Secure email with unlimited aliases": [
+        "Bezpieczna poczta e-mail z nieograniczoną liczbą aliasów"
+      ],
+      "Select any server": [
+        "Wybierz serwer"
+      ],
+      "Share passwords easily": [
+        "Łatwe udostępnianie haseł"
+      ],
+      "Short @pm.me address": [
+        "Krótki adres @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Streamuj ulubione filmy"
+      ],
+      "thanks to you": [
+        "dzięki Tobie"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Potrójna szyfrowana przestrzeń dyskowa – 3 TB na wszystkie dane"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Use your own email domain": [
+        "Użyj własnej domeny"
+      ],
+      "years": [
+        "lat"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Oferta jubileuszowa"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } miesiąc",
+        "${ n } miesiące",
+        "${ n } miesięcy",
+        "${ n } miesiąca"
+      ],
+      "/ month": [
+        "/ miesiąc"
+      ],
+      "12 months": [
+        "12 miesięcy"
+      ],
+      "15 months": [
+        "15 miesięcy"
+      ],
+      "24 months": [
+        "24 miesiące"
+      ],
+      "30 months": [
+        "30 miesięcy"
+      ],
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } miesiące w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
       ]
     }
   }
