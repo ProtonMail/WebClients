@@ -1,0 +1,36 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Global Rule: Always Check for Nested Package Rules
+
+## Core Requirement
+**ALWAYS** check for nested `.cursor/rules` directories when working with files in any package or app subdirectory.
+
+## Workflow
+When working with any file that exists within a package or app directory (e.g., `packages/payments/`, `applications/mail/`, etc.), you MUST:
+
+1. **Identify the package/app directory** the file belongs to
+2. **Search for `.cursor/rules`** directory within that package/app
+3. **Read and follow** any rules found in that package-specific rules directory
+4. **Apply package rules** before applying any global rules
+
+## Examples
+- Working with `packages/payments/core/methods.test.ts`
+  - ✅ Check `packages/payments/.cursor/rules/` for testing workflows
+  - ✅ Follow [packages/payments/.cursor/rules/testing-workflow.mdc](mdc:packages/payments/.cursor/rules/testing-workflow.mdc)
+  
+- Working with `applications/mail/src/components/Header.tsx`
+  - ✅ Check `applications/mail/.cursor/rules/` for app-specific guidelines
+  
+- Working with `packages/shared/lib/utils.ts`
+  - ✅ Check `packages/shared/.cursor/rules/` for shared library conventions
+
+## Rule Priority
+1. **Package/App-specific rules** (highest priority)
+2. **Global rules** (this directory)
+3. **Default assumptions** (lowest priority)
+
+## Implementation
+Before starting ANY work on files within `packages/*` or `applications/*`, use file search or directory listing to discover nested rule directories and read their contents first.

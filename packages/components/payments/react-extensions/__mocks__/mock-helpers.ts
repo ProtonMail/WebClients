@@ -1,8 +1,4 @@
-import {
-    type ChargebeeIframeHandles,
-    PAYMENT_TOKEN_STATUS,
-    type BackendPaymentIntent,
-} from '@proton/payments';
+import { type BackendPaymentIntent, type ChargebeeIframeHandles, PAYMENT_TOKEN_STATUS } from '@proton/payments';
 import { addApiMock } from '@proton/testing/index';
 
 export function mockPostV5Token({
@@ -55,5 +51,8 @@ export function getMockedIframeHandles(): ChargebeeIframeHandles {
         updateFields: jest.fn(),
         initializeDirectDebit: jest.fn(),
         submitDirectDebit: jest.fn(),
+        initializeApplePay: jest.fn(),
+        setApplePayPaymentIntent: jest.fn(),
+        getCanMakePaymentsWithActiveCard: jest.fn(),
     };
 }

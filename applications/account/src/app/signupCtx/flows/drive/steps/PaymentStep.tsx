@@ -6,14 +6,14 @@ import { Button } from '@proton/atoms';
 import { Alert3ds, PayPalButton, StyledPayPalButton } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
-import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
+import { ApplePayButton, ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import { type PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft, IcShield } from '@proton/icons';
 import {
     PAYMENT_METHOD_TYPES,
+    type PaymentProcessorHook,
     getBillingAddressStatus,
     getIsB2BAudienceFromPlan,
     getIsVpnPlan,
@@ -218,6 +218,15 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                         return (
                             <ChargebeePaypalWrapper
                                 chargebeePaypal={paymentFacade.chargebeePaypal}
+                                iframeHandles={paymentFacade.iframeHandles}
+                            />
+                        );
+                    }
+
+                    if (paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY) {
+                        return (
+                            <ApplePayButton
+                                applePay={paymentFacade.applePay}
                                 iframeHandles={paymentFacade.iframeHandles}
                             />
                         );
