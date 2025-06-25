@@ -22,11 +22,11 @@ import clsx from '@proton/utils/clsx';
 
 import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import ComposerAssistantSpotlight from 'proton-mail/components/assistant/spotlights/ComposerAssistantSpotlight';
+import AttachmentsButton from 'proton-mail/components/message/extrasFooter/attachment/AttachmentsButton';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { updateExpires } from 'proton-mail/store/messages/draft/messagesDraftActions';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
-import AttachmentsButton from '../../../attachment/AttachmentsButton';
 import type { MessageChange, MessageChangeFlag } from '../../Composer';
 import type { ExternalEditorActions } from '../../editor/EditorWrapper';
 import ComposerMoreActions from '../ComposerMoreActions';
