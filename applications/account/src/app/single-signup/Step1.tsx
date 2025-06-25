@@ -58,7 +58,6 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,
-    type APP_NAMES,
     PASS_SHORT_APP_NAME,
     VPN_APP_NAME,
     VPN_CONNECTIONS,
@@ -131,7 +130,12 @@ export const getBilledText = (cycle: CYCLE): string | null => {
 const getBundleTitle = (a: string, b: string) => {
     return c('vpn_2step: info').t`Your ${a} and ${b} bundle`;
 };
-const getPlanTitle = (selected: string) => {
+const getPlanTitle = (selected: string, trial?: boolean) => {
+    if (trial) {
+        const freeFor14Days = <span className="color-success">{c('b2b_trials_2025_Info').t`free for 14 days`}</span>;
+        // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
+        return c('b2b_trials_2025_Info').jt`Try ${selected} ${freeFor14Days}`;
+    }
     return c('vpn_2step: info').t`Your ${selected} plan`;
 };
 const FeatureItem = ({ left, text }: { left: ReactNode; text: ReactNode }) => {
@@ -188,7 +192,6 @@ const Step1 = ({
     className,
     currencyUrlParam,
     trial,
-    toApp,
 }: {
     activeBreakpoint: Breakpoints;
     defaultEmail?: string;
@@ -213,7 +216,6 @@ const Step1 = ({
     className?: string;
     currencyUrlParam?: Currency;
     trial?: boolean;
-    toApp: APP_NAMES;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const normalApi = useApi();
@@ -1270,10 +1272,8 @@ const Step1 = ({
                                         title={
                                             options.planIDs[PLANS.VPN_PASS_BUNDLE]
                                                 ? getBundleTitle(VPN_SHORT_APP_NAME, PASS_SHORT_APP_NAME)
-                                                : getPlanTitle(planInformation.title)
+                                                : getPlanTitle(planInformation.title, trial)
                                         }
-                                        trial={trial}
-                                        isB2bPlan={isB2bPlan}
                                     />
                                 </div>
                             </div>
@@ -1288,6 +1288,11 @@ const Step1 = ({
                             right={!showCycleAndSelectors ? currencySelector : null}
                         />
                         <BoxContent>
+                            {trial && (
+                                <div className="mb-4 text-sm color-weak">
+                                    {c('b2b_trials_2025_Info').t`During the trial period, you can have up to 10 users.`}
+                                </div>
+                            )}
                             <div className="flex justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
                                 <div className="lg:flex-1 md:pr-1 order-1 lg:order-0">
                                     <form
@@ -1429,11 +1434,13 @@ const Step1 = ({
                                                     )}
                                                     <Alert3ds />
                                                     <div className="mt-4 text-sm color-weak text-center">
-                                                        {
-                                                            // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
-                                                            c('new_plans: signup')
-                                                                .jt`By clicking on "Pay", you agree to our ${termsAndConditions}.`
-                                                        }
+                                                        {isTrial
+                                                            ? // translator: Full sentence "By clicking on "Try", you agree to our terms and conditions."
+                                                              c('b2b_trials_2025_Info')
+                                                                  .jt`By clicking on "Try", you agree to our ${termsAndConditions}.`
+                                                            : // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
+                                                              c('new_plans: signup')
+                                                                  .jt`By clicking on "Pay", you agree to our ${termsAndConditions}.`}
                                                     </div>
                                                 </>
                                             );
@@ -1520,7 +1527,6 @@ const Step1 = ({
                                                 />
                                             }
                                             hasSelectedFree={hasSelectedFree}
-                                            app={toApp}
                                         />
                                     </div>
                                 </div>
