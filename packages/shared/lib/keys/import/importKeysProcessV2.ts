@@ -70,8 +70,12 @@ const importKeysProcessV2 = async ({
                 passphrase: token,
             });
 
+            // see we already have the armored private key, we avoid calling the
+            // `toPublicKeyReference` helper which internally re-exports the key
+            const publicKey = await CryptoProxy.importPublicKey({ armoredKey: privateKeyArmored });
             const newActiveKey = (await getActiveKeyObject(
                 privateKey as PrivateKeyReferenceV4 | PrivateKeyReferenceV6,
+                publicKey,
                 {
                     ID: 'tmp',
                     // Do not set v6 as primary automatically (doing so would fail if forwarding is setup)
