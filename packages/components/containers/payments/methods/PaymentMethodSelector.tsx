@@ -7,7 +7,7 @@ import Radio from '@proton/components/components/input/Radio';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
-import type { PaymentMethodType } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, type PaymentMethodType } from '@proton/payments';
 import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex-safekey-colored.svg';
 import discoverProtectBuySvg from '@proton/styles/assets/img/bank-icons/discover-protectbuy-colored.svg';
 import jcbLogoSvg from '@proton/styles/assets/img/bank-icons/jcb-logo.png';
@@ -39,7 +39,10 @@ const PaymentMethodSelector = ({
         return null;
     }
 
-    if (options.length <= 2 && !forceDropdown) {
+    const hasApplePay = options.some(({ type }) => type === PAYMENT_METHOD_TYPES.APPLE_PAY);
+    const showRadioButtons = (options.length <= 2 && !forceDropdown) || hasApplePay;
+
+    if (showRadioButtons) {
         return (
             <>
                 {options.map(({ text, value, icon }) => {
