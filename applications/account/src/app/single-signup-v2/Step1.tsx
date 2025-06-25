@@ -1407,12 +1407,11 @@ const Step1 = ({
                     <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
                         <BoxHeader
                             step={step++}
-                            title={(() => {
-                                const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
-                                return isTrial
+                            title={
+                                signupParameters.trial
                                     ? c('b2b_trials_2025: Header').t`Payment details`
-                                    : c('pass_signup_2023: Header').t`Checkout`;
-                            })()}
+                                    : c('pass_signup_2023: Header').t`Checkout`
+                            }
                             right={!hasPlanSelector ? currencySelector : null}
                         />
                         <BoxContent>
