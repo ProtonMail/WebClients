@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { getCanMakePaymentsWithActiveCard } from '@proton/chargebee/lib';
 import Loader from '@proton/components/components/loader/Loader';
 import FormModal from '@proton/components/components/modal/FormModal';
 import useModals from '@proton/components/hooks/useModals';
@@ -17,6 +18,7 @@ import {
     ensureTokenChargeableV5,
     toV5PaymentToken,
 } from '@proton/payments';
+import { type ApplePayModalHandles, type ChargebeeIframeHandles } from '@proton/payments';
 import { type Api } from '@proton/shared/lib/interfaces';
 
 import { getChargebeeErrorMessage } from '../../chargebee/ChargebeeIframe';
@@ -231,3 +233,55 @@ export function useChargebeePaypalHandles({
         onClick,
     };
 }
+
+export const useApplePayDependencies = (
+    chargebeeHandles: ChargebeeIframeHandles,
+    {
+        onPaymentAttempt,
+        onPaymentFailure,
+    }: {
+        onPaymentAttempt: (method: PAYMENT_METHOD_TYPES.APPLE_PAY) => void;
+        onPaymentFailure: (method: PAYMENT_METHOD_TYPES.APPLE_PAY) => void;
+    }
+) => {
+    const [canUseApplePay, setCanUseApplePay] = useState(false);
+    const { createNotification } = useNotifications();
+
+    const checkApplePay = async (): Promise<boolean> => {
+        try {
+            const [canUseApplePayFromCurrentDomain, canUseApplePayFromChargebeeIframe] = await Promise.all([
+                getCanMakePaymentsWithActiveCard(),
+                chargebeeHandles.getCanMakePaymentsWithActiveCard(),
+            ]);
+
+            return canUseApplePayFromCurrentDomain && canUseApplePayFromChargebeeIframe;
+        } catch {
+            return false;
+        }
+    };
+
+    useEffect(() => {
+        async function run() {
+            const result = await checkApplePay();
+            setCanUseApplePay(result);
+        }
+
+        void run();
+    }, []);
+
+    const applePayModalHandles: ApplePayModalHandles = {
+        onAuthorize: () => {},
+        onClick: () => {
+            onPaymentAttempt(PAYMENT_METHOD_TYPES.APPLE_PAY);
+        },
+        onFailure: (error?: any) => {
+            onPaymentFailure(PAYMENT_METHOD_TYPES.APPLE_PAY);
+            if (error) {
+                createNotification({ text: getChargebeeErrorMessage(error), type: 'error' });
+            }
+        },
+        onCancel: () => {},
+    };
+
+    return { canUseApplePay, applePayModalHandles };
+};

@@ -50,6 +50,10 @@ const getIcon = (paymentMethod: SavedPaymentMethod): IconName | undefined => {
     if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
         return 'bank';
     }
+
+    if (paymentMethod.Type === PAYMENT_METHOD_TYPES.APPLE_PAY) {
+        return 'brand-apple';
+    }
 };
 
 const NBSP_HTML = '\u00A0';
@@ -77,7 +81,16 @@ const getMethod = (paymentMethod: SavedPaymentMethod): string => {
         case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
             return `PayPal - ${paymentMethod.Details.PayerID}`;
         case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
-            return `Bank transfer - ${formattedSavedSepaDetails(paymentMethod.Details)}`;
+            const details = formattedSavedSepaDetails(paymentMethod.Details);
+
+            return (
+                // translator: for example "Bank transfer - IBAN •••• 0000"
+                c('Payments.Saved payment method details').t`Bank transfer - ${details}`
+            );
+        case PAYMENT_METHOD_TYPES.APPLE_PAY:
+            // translator: example "Apple Pay - card ending in 1234". Please do not translate brand "Apple Pay".
+            return c('Payments.Saved payment method details')
+                .t`Apple Pay - card ending in ${paymentMethod.Details.Last4}`;
         default:
             return '';
     }
@@ -93,6 +106,7 @@ export function convertMethod(
 ): ViewPaymentMethod {
     if (method.paymentMethodId) {
         const savedMethod = getSavedMethodById(method.paymentMethodId) as SavedPaymentMethod;
+
         return {
             icon: getIcon(savedMethod),
             text: [getMethod(savedMethod), method.isExpired && `(${c('Info').t`Expired`})`].filter(Boolean).join(' '),
@@ -134,6 +148,12 @@ export function convertMethod(
         return {
             icon: 'bank' as const,
             text: c('Payment method option').t`Bank transfer`,
+            ...method,
+        };
+    } else if (method.type === PAYMENT_METHOD_TYPES.APPLE_PAY) {
+        return {
+            icon: 'brand-apple' as const,
+            text: c('Payment method option').t`Apple Pay`,
             ...method,
         };
     }
