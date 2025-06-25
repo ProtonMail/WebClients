@@ -1,5 +1,5 @@
 import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
 import { getDecryptedAddressKeys } from '@proton/shared/lib/keys/getDecryptedAddressKeys';
 import { getDecryptedUserKeys } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
@@ -90,8 +90,8 @@ export const setupMemberKeyV2 = async ({
                     passphrase: token,
                     keyGenConfig,
                 });
-
-            const newActiveKey = await getActiveKeyObject(addressPrivateKey, {
+            const addressPublicKey = await toPublicKeyReference(addressPrivateKey);
+            const newActiveKey = await getActiveKeyObject(addressPrivateKey, addressPublicKey, {
                 ID: 'tmp',
                 primary: 1,
                 flags: getDefaultKeyFlags(address),
@@ -217,7 +217,8 @@ export const createMemberAddressKeysLegacy = async ({
         });
 
     const activeKeys = await getActiveAddressKeys(memberAddress.SignedKeyList, memberAddressKeys);
-    const newActiveKey = await getActiveKeyObject(privateKey, {
+    const publicKey = await toPublicKeyReference(privateKey);
+    const newActiveKey = await getActiveKeyObject(privateKey, publicKey, {
         ID: 'tmp',
         primary: getPrimaryFlag(activeKeys.v4),
         flags: getDefaultKeyFlags(memberAddress),
@@ -287,7 +288,8 @@ export const createMemberAddressKeysV2 = async ({
     });
 
     const activeKeys = await getActiveAddressKeys(memberAddress.SignedKeyList, memberAddressKeys);
-    const newActiveKey = await getActiveKeyObject(addressPrivateKey, {
+    const addressPublicKey = await toPublicKeyReference(addressPrivateKey);
+    const newActiveKey = await getActiveKeyObject(addressPrivateKey, addressPublicKey, {
         ID: 'tmp',
         primary: getPrimaryFlag(activeKeys.v4),
         flags: getDefaultKeyFlags(memberAddress),
