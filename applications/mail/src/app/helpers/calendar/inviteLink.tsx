@@ -8,7 +8,8 @@ import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import type { RequireSome } from '@proton/shared/lib/interfaces';
 
-import OpenInCalendarButton from '../../components/message/extras/calendar/OpenInCalendarButton';
+import OpenInCalendarButton from 'proton-mail/components/message/extrasHeader/components/calendar/OpenInCalendarButton';
+
 import type { InvitationModel } from './invite';
 
 export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
