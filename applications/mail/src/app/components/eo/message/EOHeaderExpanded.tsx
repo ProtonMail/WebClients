@@ -13,7 +13,7 @@ import noop from '@proton/utils/noop';
 import { recipientsToRecipientOrGroup } from '../../../helpers/message/messageRecipients';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
-import ExtraImages from '../../message/extras/ExtraImages';
+import ExtraImages from '../../message/extrasHeader/components/ExtraImages';
 import MailRecipients from '../../message/recipients/MailRecipients';
 import RecipientItem from '../../message/recipients/RecipientItem';
 import RecipientType from '../../message/recipients/RecipientType';
