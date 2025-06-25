@@ -4,6 +4,7 @@ import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { snoozeConversations, unsnoozeConversations } from '@proton/shared/lib/api/conversations';
 import { MAILBOX_IDENTIFIERS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import type { SNOOZE_DURATION, SnoozeState } from 'proton-mail/components/list/snooze/constant';
 import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import useListTelemetry, { ACTION_TYPE, numberSelectionElements } from 'proton-mail/components/list/useListTelemetry';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -13,9 +14,6 @@ import type { Element } from '../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../store/elements/elementsActions';
 import { params } from '../../store/elements/elementsSelectors';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
-
-export type SNOOZE_DURATION = 'tomorrow' | 'later' | 'weekend' | 'nextweek' | 'custom';
-type SnoozeState = 'snooze-selection' | 'custom-snooze';
 
 type SnoozeProps = {
     elements: Element[];

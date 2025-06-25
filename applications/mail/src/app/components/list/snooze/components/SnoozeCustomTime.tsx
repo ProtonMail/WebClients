@@ -14,8 +14,8 @@ import { getSnoozeTimeFromSnoozeLabel } from 'proton-mail/helpers/snooze';
 import type { Element } from 'proton-mail/models/element';
 
 import { getMinScheduleTime } from '../../../../helpers/schedule';
-import type { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
 import useFutureTimeDate from '../../../../hooks/message/useFutureTimeDate';
+import { type SNOOZE_DURATION } from '../constant';
 import SnoozeHeader from './SnoozeHeader';
 
 interface Props {
