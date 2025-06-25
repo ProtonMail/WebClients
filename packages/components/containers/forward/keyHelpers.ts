@@ -1,6 +1,5 @@
-import type { PrivateKeyReferenceV4 } from 'packages/crypto';
-
 import { getKTActivation } from '@proton/account';
+import { type PrivateKeyReferenceV4, toPublicKeyReference } from '@proton/crypto';
 import { type KTVerifier, resignSKLWithPrimaryKey } from '@proton/key-transparency';
 import { createAddressKeyRouteV2 } from '@proton/shared/lib/api/keys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';
@@ -53,7 +52,8 @@ export const generateForwardingAddressKey = async ({
     groupMemberID,
     keyTransparencyVerify,
 }: ForwardingAddressKeyParameters) => {
-    const newActiveKey = await getActiveKeyObject(privateKey, {
+    const publicKey = await toPublicKeyReference(privateKey);
+    const newActiveKey = await getActiveKeyObject(privateKey, publicKey, {
         ID: 'tmp',
         primary: 0,
         flags: getDefaultKeyFlags(address),
