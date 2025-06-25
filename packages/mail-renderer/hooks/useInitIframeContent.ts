@@ -21,6 +21,7 @@ interface Props {
     onReady?: (iframe: RefObject<HTMLIFrameElement>) => void;
     isPrint: boolean;
     theme: ThemeContextInterface;
+    iframeCSSStyles: string;
 }
 
 const useInitIframeContent = ({
@@ -33,6 +34,7 @@ const useInitIframeContent = ({
     onReady,
     isPrint,
     theme,
+    iframeCSSStyles,
 }: Props) => {
     const [initStatus, setInitStatus] = useState<'start' | 'done'>('start');
     const hasBeenDone = useRef<boolean>(false);
@@ -58,6 +60,7 @@ const useInitIframeContent = ({
                 isPlainText,
                 themeCSSVariables,
                 isPrint,
+                iframeCSSStyles,
             });
             doc?.open();
             doc?.write(iframeContent);

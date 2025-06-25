@@ -8,17 +8,23 @@ import { locateHead } from '@proton/mail/helpers/locateHead';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import svg from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
 
-import cssStyles from './MessageIframe.raw.scss';
-
 type Options = {
     emailContent: string;
     messageDocument: Required<MessageState>['messageDocument']['document'];
     isPlainText: boolean;
     themeCSSVariables: string;
     isPrint: boolean;
+    iframeCSSStyles: string;
 };
 
-const getIframeHtml = ({ emailContent, messageDocument, isPlainText, themeCSSVariables, isPrint }: Options) => {
+const getIframeHtml = ({
+    emailContent,
+    messageDocument,
+    isPlainText,
+    themeCSSVariables,
+    isPrint,
+    iframeCSSStyles,
+}: Options) => {
     const messageHead = locateHead(messageDocument) || '';
     const bodyStyles = messageDocument?.querySelector('body')?.getAttribute('style');
     const bodyClasses = messageDocument?.querySelector('body')?.getAttribute('class');
@@ -30,7 +36,7 @@ const getIframeHtml = ({ emailContent, messageDocument, isPlainText, themeCSSVar
      */
     // Plain text needs content needs to have no spaces in order to be correctly displayed
     if (isPlainText) {
-        const emailHead = `<head><style>${themeCSSVariables}</style><style>${cssStyles}</style>${messageHead}</head>`;
+        const emailHead = `<head><style>${themeCSSVariables}</style><style>${iframeCSSStyles}</style>${messageHead}</head>`;
         const emailBody = `<body><div id="${MESSAGE_IFRAME_ROOT_ID}" class="proton-plain-text ${
             isPrint ? MESSAGE_IFRAME_PRINT_CLASS : ''
         }">${
@@ -57,7 +63,7 @@ const getIframeHtml = ({ emailContent, messageDocument, isPlainText, themeCSSVar
         <head>
           <style>${themeCSSVariables}</style>
           <meta name="viewport" content="width=device-width">
-          <style>${cssStyles}</style>
+          <style>${iframeCSSStyles}</style>
           ${messageHead}
         </head>
         ${svg}
