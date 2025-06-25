@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, type IconName, SidebarListItem } from '@proton/components'
 import { Tooltip } from '@proton/atoms';
+import { Icon, type IconName, SidebarListItem } from '@proton/components';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
