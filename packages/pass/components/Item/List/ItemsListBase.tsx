@@ -108,7 +108,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                     }}
                 />
             )}
-            {contextMenuItem !== undefined && <ItemsListContextMenu item={contextMenuItem} anchorRef={containerRef} />}
+            {contextMenuItem && <ItemsListContextMenu anchorRef={containerRef} {...contextMenuItem} />}
         </>
     );
 };

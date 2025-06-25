@@ -1,44 +1,38 @@
 import type { MouseEvent } from 'react';
-import { type FC, type RefObject, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { type FC, type RefObject, useCallback, useEffect, useMemo, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { ContextMenu } from '@proton/pass/components/ContextMenu/ContextMenu';
-import type { ContextMenuElement, ContextMenuItem } from '@proton/pass/components/ContextMenu/ContextMenuItems';
+import {
+    CONTEXT_MENU_SEPARATOR,
+    type ContextMenuElement,
+    type ContextMenuItem,
+} from '@proton/pass/components/ContextMenu/ContextMenuItems';
 import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
+import { isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { getItemKey, getItemRevisionKey } from '@proton/pass/lib/items/item.utils';
 import { itemPinIntent, itemUnpinIntent } from '@proton/pass/store/actions';
-import type { Item, ItemRevision, Maybe } from '@proton/pass/types';
+import { selectItemWithOptimistic } from '@proton/pass/store/selectors';
+import type { Item, ItemRevision, Maybe, MaybeNull, UniqueItem } from '@proton/pass/types';
 import type { ObfuscatedItemProperty } from '@proton/pass/types/data/obfuscation';
 
-const getItemId = (item: ItemRevision) => `item-${item.itemId}`;
-
 const isEmpty = (value: Maybe<string | ObfuscatedItemProperty>) => {
-    if (value === undefined) {
-        return true;
-    }
-
-    if (typeof value === 'string') {
-        return value.length === 0;
-    }
-
-    return value.m.length === 0 && value.v.length === 0;
+    if (!value) return true;
+    if (typeof value === 'string') return value.length === 0;
+    return value.v.length === 0;
 };
 
 const getItemCopyButtons = (item: Item): ContextMenuItem[] => {
     switch (item.type) {
         case 'login':
             return [
-                {
-                    type: 'button',
-                    icon: 'user',
-                    name: c('Action').t`Copy username`,
-                    copy: item.content.itemUsername,
-                },
+                { type: 'button', icon: 'user', name: c('Action').t`Copy username`, copy: item.content.itemUsername },
                 { type: 'button', icon: 'envelope', name: c('Action').t`Copy email`, copy: item.content.itemEmail },
                 { type: 'button', icon: 'key', name: c('Action').t`Copy password`, copy: item.content.password },
             ];
@@ -77,66 +71,70 @@ const getItemCopyButtons = (item: Item): ContextMenuItem[] => {
 };
 
 const getItemActionButtons = (
-    handleEdit: () => void,
-    handleMove: () => void,
-    handlePinClick: () => void,
-    handleTrash: () => void
+    item: ItemRevision,
+    actions: {
+        handleEdit: () => void;
+        handleMove: () => void;
+        handlePinClick: () => void;
+        handleTrash: () => void;
+    }
 ): ContextMenuItem[] => {
-    return [
-        {
-            type: 'button',
-            icon: 'pen',
-            name: c('Action').t`Edit`,
-            action: handleEdit,
-        },
-        {
-            type: 'button',
-            icon: 'folder-arrow-in',
-            name: c('Action').t`Move to another vault`,
-            action: handleMove,
-        },
-        {
-            type: 'button',
-            icon: 'pin-angled',
-            name: c('Action').t`Pin`,
-            action: handlePinClick,
-        },
-        {
-            type: 'button',
-            icon: 'pass-trash',
-            name: c('Action').t`Move to trash`,
-            action: handleTrash,
-        },
-    ];
+    return !isTrashed(item)
+        ? [
+              {
+                  type: 'button',
+                  icon: 'pen',
+                  name: c('Action').t`Edit`,
+                  action: actions.handleEdit,
+              },
+              {
+                  type: 'button',
+                  icon: 'folder-arrow-in',
+                  name: c('Action').t`Move to another vault`,
+                  action: actions.handleMove,
+              },
+              {
+                  type: 'button',
+                  icon: 'pin-angled',
+                  name: c('Action').t`Pin`,
+                  action: actions.handlePinClick,
+              },
+              {
+                  type: 'button',
+                  icon: 'pass-trash',
+                  name: c('Action').t`Move to trash`,
+                  action: actions.handleTrash,
+              },
+          ]
+        : [
+              /** FIXME: we should be able to restore/delete permanently */
+          ];
 };
 
-type Props = { item: ItemRevision; anchorRef: RefObject<HTMLElement> };
+type ConnectedProps = { item: ItemRevision; anchorRef: RefObject<HTMLElement> };
 
-export const ItemsListContextMenu: FC<Props> = ({ item, anchorRef }) => {
+const ConnectedItemsListContextMenu: FC<ConnectedProps> = ({ item, anchorRef }) => {
     const scope = useItemScope();
     const { selectItem } = useNavigationActions();
     const itemActions = useItemsActions();
     const dispatch = useDispatch();
 
-    const { itemId, shareId } = item;
-    const id = getItemId(item);
+    const id = getItemRevisionKey(item);
 
-    if (!item) {
-        return null;
-    }
+    const elements: ContextMenuElement[] = useMemo(() => {
+        const { itemId, shareId } = item;
 
-    const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', scope });
-    const handleMove = () => itemActions.move(item, VaultSelectMode.Writable);
-    const handlePinClick = () => dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }));
-    const handleTrash = () => itemActions.trash(item);
+        const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', scope });
+        const handleMove = () => itemActions.move(item, VaultSelectMode.Writable);
+        const handlePinClick = () => dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }));
+        const handleTrash = () => itemActions.trash(item);
 
-    const elements: ContextMenuElement[] = getItemCopyButtons(item.data).filter(({ copy }) => !isEmpty(copy));
+        const copyBtns: ContextMenuElement[] = getItemCopyButtons(item.data).filter(({ copy }) => !isEmpty(copy));
+        const actionBtns = getItemActionButtons(item, { handleEdit, handleMove, handlePinClick, handleTrash });
+        const separator = copyBtns.length > 0 && actionBtns.length > 0 ? [CONTEXT_MENU_SEPARATOR] : [];
 
-    if (elements.length > 0) {
-        elements.push({ type: 'separator' });
-    }
-
-    elements.push(...getItemActionButtons(handleEdit, handleMove, handlePinClick, handleTrash));
+        return copyBtns.concat(separator, actionBtns);
+    }, [item, scope]);
 
     return (
         <ContextMenu
@@ -148,21 +146,41 @@ export const ItemsListContextMenu: FC<Props> = ({ item, anchorRef }) => {
     );
 };
 
-export const useItemContextMenu = () => {
-    const [item, setItem] = useState<Maybe<ItemRevision>>(undefined);
-    const { open, isOpen } = useContextMenu();
+type Props = UniqueItem & { anchorRef: RefObject<HTMLElement> };
+
+/** NOTE: A context menu can remain open after its item is removed or updated.
+ * This component handles graceful failures while keeping fresh data available. */
+export const ItemsListContextMenu: FC<Props> = ({ anchorRef, ...selectedItem }) => {
+    const { isOpen, close } = useContextMenu();
+    const { shareId, itemId } = selectedItem;
+
+    const item = useSelector(selectItemWithOptimistic(shareId, itemId));
+    const itemOpened = isOpen(getItemKey(selectedItem));
+    const autoClose = !item && itemOpened;
 
     useEffect(() => {
-        // isOpen(undefined) means it's closed
-        if (isOpen(undefined)) {
-            setItem(undefined);
-        }
-    }, [isOpen]);
+        if (autoClose) close();
+    }, [autoClose]);
 
-    const onContextMenu = (event: MouseEvent, item: ItemRevision) => {
+    return item && <ConnectedItemsListContextMenu item={item} anchorRef={anchorRef} />;
+};
+
+export const useItemContextMenu = () => {
+    const [item, setItem] = useState<MaybeNull<UniqueItem>>(null);
+    const { open, isOpen } = useContextMenu();
+
+    /** FIXME: Should check for "item list" context menu type specifically
+     * to avoid stale `UniqueItem` state when other menu types are added. */
+    const closed = !isOpen();
+
+    useEffect(() => {
+        if (closed) setItem(null);
+    }, [closed]);
+
+    const onContextMenu = useCallback((event: MouseEvent, item: UniqueItem) => {
+        open(event, getItemKey(item));
         setItem(item);
-        open(event, getItemId(item));
-    };
+    }, []);
 
     return { item, onContextMenu };
 };
