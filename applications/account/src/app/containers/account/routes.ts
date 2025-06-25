@@ -46,6 +46,7 @@ export const getAccountAppRoutes = ({
     isUserGroupsMembershipFeatureEnabled,
     memberships,
     isZoomIntegrationEnabled,
+    isB2BTrial,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -63,6 +64,7 @@ export const getAccountAppRoutes = ({
     isUserGroupsMembershipFeatureEnabled: boolean;
     memberships: GroupMembershipReturn[] | undefined;
     isZoomIntegrationEnabled: boolean;
+    isB2BTrial: boolean;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
     const credits = getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
@@ -184,7 +186,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Invoices`,
                         id: 'invoices',
-                        available: canPay,
+                        available: canPay && !isB2BTrial,
                         variant: 'card',
                     },
                     {
@@ -267,7 +269,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Invoices`,
                         id: 'invoices',
-                        available: canPay,
+                        available: canPay && !isB2BTrial,
                     },
                     {
                         text: c('Title').t`Notifications`,

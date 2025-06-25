@@ -17,7 +17,7 @@ import SubscriptionModalProvider, {
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES, Renew } from '@proton/payments';
 import { getPlanIDs, getPlanTitle, isTrial, isTrialExpired, willTrialExpire } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -196,8 +196,9 @@ const B2BTrialTopBanner = () => {
     }, [location.search, setModal]);
 
     const trialEndsOn = subscription?.PeriodEnd;
+    const trialCancelled = subscription?.Renew === Renew.Disabled;
 
-    if (!trialEndsOn || closed) {
+    if (!trialEndsOn || closed || trialCancelled) {
         return null;
     }
 
