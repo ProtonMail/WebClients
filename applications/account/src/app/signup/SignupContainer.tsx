@@ -17,11 +17,11 @@ import {
 } from '@proton/components';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
+import type { PaymentProcessorType } from '@proton/payments';
 import {
     type BillingAddress,
     type Currency,
@@ -29,11 +29,11 @@ import {
     DEFAULT_CYCLE,
     PLANS,
     type PlanIDs,
+    getIsB2BAudienceFromPlan,
     getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
 } from '@proton/payments';
-import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';

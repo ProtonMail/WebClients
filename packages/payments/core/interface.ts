@@ -1,4 +1,5 @@
 import type {
+    ApplePayAuthorizedPayload,
     BinData,
     CardFormRenderMode,
     ChargebeeSavedCardAuthorizationSuccess,
@@ -12,10 +13,10 @@ import type {
     MessageBusResponseSuccess,
     PaymentIntent,
     PaypalAuthorizedPayload,
+    SetApplePayPaymentIntentPayload,
     SetPaypalPaymentIntentPayload,
     ThreeDsChallengePayload,
 } from '@proton/chargebee/lib';
-import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
 
 import type { PaymentsVersion } from './api';
@@ -36,6 +37,7 @@ import type {
     TransactionState,
     TransactionType,
 } from './constants';
+import type { PaymentProcessorType } from './payment-processors/interface';
 
 export interface CreateCardDetailsBackend {
     Number: string;
@@ -114,7 +116,8 @@ export type ChargeablePaymentParameters = Partial<V5PaymentToken> &
             | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
             | PAYMENT_METHOD_TYPES.BITCOIN
             | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+            | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+            | PAYMENT_METHOD_TYPES.APPLE_PAY;
         chargeable: true;
     };
 
@@ -126,7 +129,8 @@ export type ChargeablePaymentToken = V5PaymentToken &
             | PAYMENT_METHOD_TYPES.CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+            | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+            | PAYMENT_METHOD_TYPES.APPLE_PAY;
         chargeable: true;
     };
 
@@ -226,7 +230,21 @@ export type PaymentMethodSepa = {
     IsDefault?: boolean;
 };
 
-export type SavedPaymentMethod = PaymentMethodPaypal | PaymentMethodCardDetails | PaymentMethodSepa;
+export type PaymentMethodApplePay = {
+    ID: string;
+    Type: PAYMENT_METHOD_TYPES.APPLE_PAY;
+    Order: number;
+    Autopay: Autopay;
+    External?: MethodStorage;
+    Details: SavedCardDetails;
+    IsDefault?: boolean;
+};
+
+export type SavedPaymentMethod =
+    | PaymentMethodPaypal
+    | PaymentMethodCardDetails
+    | PaymentMethodSepa
+    | PaymentMethodApplePay;
 export type SavedPaymentMethodInternal = PaymentMethodPaypalInternal | PaymentMethodCardDetailsInternal;
 export type SavedPaymentMethodExternal = PaymentMethodPaypalExternal | PaymentMethodCardDetailsExternal;
 
@@ -277,7 +295,8 @@ export type ChargeableV5PaymentToken = ChargeablePaymentToken & {
     type:
         | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+        | PAYMENT_METHOD_TYPES.APPLE_PAY;
 };
 
 export type NonChargeableV5PaymentToken = Omit<ChargeableV5PaymentToken, 'chargeable'> & {
@@ -298,7 +317,8 @@ export type ChargeableV5PaymentParameters = ChargeablePaymentParameters & {
         | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+        | PAYMENT_METHOD_TYPES.APPLE_PAY;
 };
 
 export type ChargebeeFetchedPaymentToken = (ChargeableV5PaymentToken | NonChargeableV5PaymentToken) &
@@ -384,6 +404,9 @@ export type ChargebeeIframeHandles = {
     updateFields: () => Promise<any>;
     initializeDirectDebit: () => Promise<any>;
     submitDirectDebit: (payload: ChargebeeSubmitDirectDebitEventPayload) => Promise<MessageBusResponseSuccess<unknown>>;
+    setApplePayPaymentIntent: (payload: SetApplePayPaymentIntentPayload, abortSignal: AbortSignal) => Promise<any>;
+    initializeApplePay: () => Promise<any>;
+    getCanMakePaymentsWithActiveCard: () => Promise<boolean>;
 };
 
 export type ChargebeeIframeEvents = {
@@ -402,6 +425,11 @@ export type ChargebeeIframeEvents = {
     onUnhandledError: (
         callback: (error: any, rawError: any, messagePayload: any, checkpoints: any[]) => any
     ) => RemoveEventListener;
+
+    onApplePayAuthorized: (callback: (payload: ApplePayAuthorizedPayload) => any) => RemoveEventListener;
+    onApplePayFailure: (callback: (error: any) => any) => RemoveEventListener;
+    onApplePayClicked: (callback: () => any) => RemoveEventListener;
+    onApplePayCancelled: (callback: () => any) => RemoveEventListener;
 };
 
 export type CryptocurrencyType = 'bitcoin';
