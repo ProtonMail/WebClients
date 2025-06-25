@@ -1,37 +1,26 @@
 import { useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
 
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import type { Element } from '../../models/element';
 import type { ConversationEvent, ElementEvent, Event, MessageEvent } from '../../models/event';
 import { eventUpdates, invalidate } from '../../store/elements/elementsActions';
 import {
-    isES as isESSelector,
     shouldInvalidateElementsState as shouldInvalidateElementsStateSelector,
     taskRunning as taskRunningSelector,
 } from '../../store/elements/elementsSelectors';
 import type { EventUpdates } from '../../store/elements/elementsTypes';
 
-export const useElementsEvents = (conversationMode: boolean, search: SearchParameters) => {
-    const { esStatus } = useEncryptedSearchContext();
-
+export const useElementsEvents = (conversationMode: boolean) => {
     const store = useMailStore();
     const dispatch = useMailDispatch();
     const shouldInvalidateElementsState = useMailSelector(shouldInvalidateElementsStateSelector);
-    const isES = useMailSelector((state) => isESSelector(state, { search, esStatus }));
     const taskRunning = useMailSelector(taskRunningSelector);
 
     // Listen to event manager and update the cache
     useSubscribeEventManager(async ({ Conversations = [], Messages = [] }: Event) => {
         const Elements: ElementEvent[] = [...Conversations, ...Messages];
-
-        // If it's an encrypted search, its event manager will deal with the change
-        if (isES) {
-            return;
-        }
 
         if (!Elements.length) {
             return;
