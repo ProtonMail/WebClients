@@ -1600,6 +1600,9 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Map ${ boldFolderName } aanmaken"
       ]
     },
     "action": {
@@ -8527,6 +8530,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "${ n } newsletter": [
+        "${ n } nieuwsbrief",
+        "${ n } nieuwsbrieven"
+      ],
+      "Block sender": [
+        "Blokkeer afzender"
+      ],
+      "No messages to show": [
+        "Geen berichten om weer te geven"
+      ],
+      "Preferences updated": [
+        "Voorkeuren bijgewerkt"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Er zijn geen berichten van deze afzender in uw inbox."
       ]
     },
     "info": {
@@ -9450,6 +9469,16 @@
       ],
       "Your password (admin)": [
         "Uw wachtwoord (beheerder)"
+      ],
+      "Choose what to do instead": [
+        "Kies wat u in plaats daarvan wilt doen"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Mislukt om map ${ customFolderName } aan te maken"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } bericht verplaatst naar ${ labelName }.",
+        "${ count } berichten verplaatst naar ${ labelName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11668,6 +11697,9 @@
       ],
       "Your payment is still being processed": [
         "Uw betaling wordt nog verwerkt"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Alleen Euro wordt geaccepteerd voor SEPA. Uw valuta is gewijzigd. Gebruik de selector om uw keuze ongedaan te maken."
       ]
     },
     "Payments.Error": {
@@ -14725,6 +14757,9 @@
       ],
       "Your subscriptions in one place": [
         "Uw abonnementen op één plek"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Afmelden niet beschikbaar voor deze afzender"
       ]
     },
     "Today icon tooltip in mini calendar": {
