@@ -64,6 +64,7 @@ import {
     isManagedExternally,
     updateCurrencyOverride,
 } from '@proton/payments';
+import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
@@ -92,10 +93,6 @@ import { usePaymentFacade } from '../../../../components/payments/client-extensi
 import { useChargebeeContext } from '../../../../components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '../../../../components/payments/client-extensions/usePollEvents';
 import type { Operations, OperationsSubscriptionData } from '../../../../components/payments/react-extensions';
-import type {
-    PaymentProcessorHook,
-    PaymentProcessorType,
-} from '../../../../components/payments/react-extensions/interface';
 import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
 import GenericError from '../../error/GenericError';
@@ -1009,6 +1006,7 @@ const SubscriptionContainerInner = ({
                 hasPaymentMethod={hasPaymentMethod}
                 billingAddressStatus={billingAddressStatus}
                 paymentProcessorType={paymentFacade.selectedProcessor?.meta.type}
+                applePay={paymentFacade.applePay}
             />
             {paymentFacade.showInclusiveTax && (
                 <InclusiveVatText

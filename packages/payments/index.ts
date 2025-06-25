@@ -94,11 +94,6 @@ export {
     MIN_BITCOIN_AMOUNT,
     MIN_CREDIT_AMOUNT,
     MIN_MEMBER_PASS_B2B_ADDON,
-    TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
-    TRIAL_MAX_DEDICATED_IPS,
-    TRIAL_MAX_LUMO_SEATS,
-    TRIAL_MAX_SCRIBE_SEATS,
-    TRIAL_MAX_USERS,
     MIN_PAYPAL_AMOUNT_CHARGEBEE,
     MIN_PAYPAL_AMOUNT_INHOUSE,
     PAYMENT_METHOD_TYPES,
@@ -109,6 +104,11 @@ export {
     PLANS,
     TransactionState,
     TransactionType,
+    TRIAL_MAX_DEDICATED_IPS,
+    TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
+    TRIAL_MAX_LUMO_SEATS,
+    TRIAL_MAX_SCRIBE_SEATS,
+    TRIAL_MAX_USERS,
     VPN_PASS_PROMOTION_COUPONS,
 } from './core/constants';
 export {
@@ -214,7 +214,7 @@ export type {
     WrappedCryptoPayment,
     WrappedPaypalPayment,
 } from './core/interface';
-export { initializePaymentMethods, PaymentMethods } from './core/methods';
+export { formatPaymentMethod, formatPaymentMethods, initializePaymentMethods, PaymentMethods } from './core/methods';
 export { isSavablePaymentMethod } from './core/payment-methods/helpers';
 export { getIsCurrencyOverriden, updateCurrencyOverride } from './core/payment-methods/sepa-currency-override';
 export {
@@ -230,10 +230,20 @@ export {
     ChargebeePaypalPaymentProcessor,
     type ChargebeePaypalModalHandles,
 } from './core/payment-processors/chargebeePaypalPayment';
+export {
+    getSystemByHookType,
+    type PaymentProcessorHook,
+    type PaymentProcessorType,
+} from './core/payment-processors/interface';
 export { PaymentProcessor } from './core/payment-processors/paymentProcessor';
 export { PaypalPaymentProcessor } from './core/payment-processors/paypalPayment';
 export { SavedChargebeePaymentProcessor } from './core/payment-processors/savedChargebeePayment';
 export { SavedPaymentProcessor } from './core/payment-processors/savedPayment';
+export {
+    useApplePay,
+    type ApplePayModalHandles,
+    type ApplePayProcessorHook,
+} from './core/payment-processors/useApplePay';
 export {
     countAddonsByType,
     getAddonType,
@@ -282,7 +292,7 @@ export {
     isMultiUserPersonalPlan,
 } from './core/price-helpers';
 export { getRenewCycle } from './core/renewals';
-export { extractIBAN, formatPaymentMethod, formatPaymentMethods, type ExtendedExtractIBANResult } from './core/sepa';
+export { extractIBAN, type ExtendedExtractIBANResult } from './core/sepa';
 export { BillingPlatform, Renew, SubscriptionPlatform } from './core/subscription/constants';
 export { FREE_PLAN, getFreeCheckResult } from './core/subscription/freePlans';
 export {
@@ -306,6 +316,7 @@ export {
     getHasMailB2BPlan,
     getHasMemberCapablePlan,
     getHasPassB2BPlan,
+    getHasProPlan,
     getHasSomeVpnPlan,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
@@ -399,7 +410,6 @@ export {
     PLANS_WITH_AI_INCLUDED,
     planSupportsSSO,
     regularCycles,
-    getHasProPlan,
     upsellPlanSSO,
     willTrialExpire,
     type AggregatedPricing,
@@ -429,6 +439,7 @@ export {
     isPaypalDetails,
     isPaypalPayment,
     isSavedCardDetails,
+    isSavedPaymentMethodApplePay,
     isSavedPaymentMethodExternal,
     isSavedPaymentMethodInternal,
     isSavedPaymentMethodSepa,

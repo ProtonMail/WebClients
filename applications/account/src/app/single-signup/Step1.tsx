@@ -27,16 +27,15 @@ import {
     getProtectDevices,
     getStreaming,
 } from '@proton/components/containers/payments/features/vpn';
-import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
+import { ApplePayButton, ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
-import type { BillingAddress, ExtendedTokenPayment, TokenPayment } from '@proton/payments';
+import type { BillingAddress, ExtendedTokenPayment, PaymentProcessorHook, TokenPayment } from '@proton/payments';
 import {
     CYCLE,
     type Currency,
@@ -49,11 +48,12 @@ import {
     type PlanIDs,
     type StrictPlan,
     getBillingAddressStatus,
+    getHas2024OfferCoupon,
+    getIsVpnPlan,
     getPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { getHas2024OfferCoupon, getIsVpnPlan } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
@@ -1385,6 +1385,18 @@ const Step1 = ({
                                                 return (
                                                     <ChargebeePaypalWrapper
                                                         chargebeePaypal={paymentFacade.chargebeePaypal}
+                                                        iframeHandles={paymentFacade.iframeHandles}
+                                                    />
+                                                );
+                                            }
+
+                                            if (
+                                                paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY &&
+                                                options.checkResult.AmountDue > 0
+                                            ) {
+                                                return (
+                                                    <ApplePayButton
+                                                        applePay={paymentFacade.applePay}
                                                         iframeHandles={paymentFacade.iframeHandles}
                                                     />
                                                 );

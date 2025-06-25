@@ -1,4 +1,4 @@
-import type { PaymentProcessorType } from './interface';
+import type { PaymentProcessorType } from '@proton/payments';
 
 export function isChargebeePaymentProcessor(type?: PaymentProcessorType): boolean {
     if (!type) {
