@@ -85,6 +85,7 @@ enum PaymentsFlag {
     EditInvoiceDetails = 'EditInvoiceDetails',
     PassLifetimeFrontend = 'PassLifetimeFrontend',
     PassOrgSizeLimit = 'PassOrgSizeLimit',
+    ApplePayWeb = 'ApplePayWeb',
 }
 
 enum CalendarFeatureFlag {

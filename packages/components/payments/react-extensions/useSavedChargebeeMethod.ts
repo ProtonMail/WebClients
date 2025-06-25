@@ -14,10 +14,9 @@ import {
     type SavedPaymentMethodExternal,
     type SavedPaymentMethodInternal,
 } from '@proton/payments';
+import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
-
-import type { PaymentProcessorHook, PaymentProcessorType } from './interface';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;

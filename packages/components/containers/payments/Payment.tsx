@@ -41,6 +41,7 @@ import {
     ChargebeeSavedCardWrapper,
 } from '../../payments/chargebee/ChargebeeWrapper';
 import Alert3DS from './Alert3ds';
+import { ApplePayView } from './ApplePayView';
 import Cash from './Cash';
 import DefaultPaymentMethodMessage from './DefaultPaymentMethodMessage';
 import PayPalView from './PayPalView';
@@ -273,6 +274,7 @@ export const PaymentsNoApi = ({
                         </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
+                    {method === PAYMENT_METHOD_TYPES.APPLE_PAY && <ApplePayView />}
                     {method === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
                         <SepaDirectDebit {...sharedCbProps} isCurrencyOverriden={isCurrencyOverriden} />
                     )}

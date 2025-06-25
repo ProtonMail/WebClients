@@ -15,9 +15,9 @@ import {
 import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
+import type { PaymentProcessorType } from '@proton/payments';
 import {
     type BillingAddress,
     CURRENCIES,

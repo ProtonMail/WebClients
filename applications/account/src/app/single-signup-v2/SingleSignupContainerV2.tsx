@@ -21,10 +21,9 @@ import type { AuthSession } from '@proton/components/containers/login/interface'
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
-import type { FullPlansMap, PaymentMethodFlows } from '@proton/payments';
+import type { FullPlansMap, PaymentMethodFlows, PaymentProcessorType } from '@proton/payments';
 import {
     type Currency,
     DEFAULT_CYCLE,

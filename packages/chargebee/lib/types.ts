@@ -82,7 +82,11 @@ export type CbDirectDebitConfig = {
     paymentMethodType: 'direct-debit';
 } & ChargebeeInstanceConfiguration;
 
-export type CbIframeConfig = CbCardConfig | CbPaypalConfig | CbSavedCardConfig | CbDirectDebitConfig;
+export type CbApplePayConfig = {
+    paymentMethodType: 'apple-pay';
+} & ChargebeeInstanceConfiguration;
+
+export type CbIframeConfig = CbCardConfig | CbPaypalConfig | CbSavedCardConfig | CbDirectDebitConfig | CbApplePayConfig;
 
 export type PaymentIntent = {
     id: string;
@@ -97,10 +101,11 @@ export type PaymentIntent = {
     resource_version: number;
     object: 'payment_intent';
     gateway: string;
-    customer_id: string;
-    payment_method_type: 'card' | 'paypal';
+    customer_id: string | null;
+    // todo: add SEPA
+    payment_method_type: 'card' | 'paypal' | 'apple_pay';
     // Present only for saved payment methods
-    reference_id?: string;
+    reference_id?: string | null;
     email?: string;
 };
 
@@ -109,7 +114,8 @@ export interface AuthorizedPaymentIntent extends PaymentIntent {
     active_payment_attempt: {
         id: string;
         status: 'authorized';
-        payment_method_type: 'card' | 'paypal';
+        // todo: add SEPA
+        payment_method_type: 'card' | 'paypal' | 'apple_pay';
         id_at_gateway: string;
         created_at: number;
         modified_at: number;
@@ -317,3 +323,51 @@ export interface ChargebeeSubmitDirectDebitEventPayload {
     customer: DirectDebitCustomer;
     bankAccount: DirectDebitBankAccount;
 }
+
+export const applePayAuthorizedMessageType = 'apple-pay-authorized';
+export type ApplePayAuthorizedPayload = {
+    paymentIntent: AuthorizedPaymentIntent;
+};
+
+export type ApplePayAuthorizedMessage = {
+    type: typeof applePayAuthorizedMessageType;
+} & MessageBusResponseSuccess<ApplePayAuthorizedPayload>;
+
+export function isApplePayAuthorizedMessage(obj: any): obj is ApplePayAuthorizedMessage {
+    return obj && obj.type === applePayAuthorizedMessageType;
+}
+
+export const applePayFailedMessageType = 'apple-pay-failed';
+export type ApplePayFailedMessage = MessageBusResponseFailure & {
+    type: typeof applePayFailedMessageType;
+};
+export function isApplePayFailedMessage(obj: any): obj is ApplePayFailedMessage {
+    return obj && obj.type === applePayFailedMessageType;
+}
+
+export type SetApplePayPaymentIntentPayload = {
+    paymentIntent: PaymentIntent;
+};
+
+export const applePayClickedMessageType = 'apple-pay-clicked';
+export type ApplePayClickedMessage = MessageBusResponseSuccess<{}> & {
+    type: typeof applePayClickedMessageType;
+};
+export function isApplePayClickedMessage(obj: any): obj is ApplePayClickedMessage {
+    return obj && obj.type === applePayClickedMessageType;
+}
+
+export const applePayCancelledMessageType = 'apple-pay-cancelled';
+export type ApplePayCancelledMessage = MessageBusResponseSuccess<{}> & {
+    type: typeof applePayCancelledMessageType;
+};
+export function isApplePayCancelledMessage(obj: any): obj is ApplePayCancelledMessage {
+    return obj && obj.type === applePayCancelledMessageType;
+}
+
+export type GetCanMakePaymentsWithActiveCardResponsePayload = {
+    canMakePaymentsWithActiveCard: boolean;
+};
+
+export type GetCanMakePaymentsWithActiveCardResponse =
+    MessageBusResponseSuccess<GetCanMakePaymentsWithActiveCardResponsePayload>;

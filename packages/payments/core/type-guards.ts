@@ -8,6 +8,7 @@ import type {
     ExtendedTokenPayment,
     FreeSubscription,
     PayPalDetails,
+    PaymentMethodApplePay,
     PaymentMethodSepa,
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
@@ -86,6 +87,10 @@ export function isSavedCardDetails(
 
 export function isSavedPaymentMethodSepa(obj: SavedPaymentMethod | undefined): obj is PaymentMethodSepa {
     return Boolean(obj && obj.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && !!obj.Details);
+}
+
+export function isSavedPaymentMethodApplePay(obj: SavedPaymentMethod | undefined): obj is PaymentMethodApplePay {
+    return !!obj && obj.Type === PAYMENT_METHOD_TYPES.APPLE_PAY && !!obj.Details;
 }
 
 export function isSavedPaymentMethodInternal(
