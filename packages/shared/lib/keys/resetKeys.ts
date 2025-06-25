@@ -1,9 +1,12 @@
-import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
+import {
+    type PrivateKeyReference,
+    type PrivateKeyReferenceV4,
+    type PrivateKeyReferenceV6,
+    toPublicKeyReference,
+} from '@proton/crypto';
 
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
-import type {
-    ActiveAddressKeysByVersion,
-    ActiveKey} from '../interfaces';
+import type { ActiveAddressKeysByVersion, ActiveKey } from '../interfaces';
 import {
     type Address,
     type AddressKeyPayloadV2,
@@ -70,8 +73,8 @@ export const getResetAddressesKeysV2 = async ({
                     passphrase: token,
                     keyGenConfig: v6Key ? KEYGEN_CONFIGS[KEYGEN_TYPES.PQC] : keyGenConfigForV4Keys,
                 });
-
-                const newPrimaryKey = (await getActiveKeyObject(privateKey, {
+                const publicKey = await toPublicKeyReference(privateKey);
+                const newPrimaryKey = (await getActiveKeyObject(privateKey, publicKey, {
                     ID: 'tmp',
                     primary: 1,
                     flags: getDefaultKeyFlags(address),
