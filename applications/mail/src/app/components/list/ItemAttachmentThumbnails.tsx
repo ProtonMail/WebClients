@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 
-import { FilePreview, NavigationControl } from '@proton/components'
 import { Tooltip } from '@proton/atoms';
+import { FilePreview, NavigationControl } from '@proton/components';
 import Portal from '@proton/components/components/portal/Portal';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';

@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 @use 'sass:math';
 @import '~@proton/styles/scss/lib';
 
@@ -101,7 +101,8 @@
 		overflow: auto;
 		border-radius: var(--border-radius-md);
 		background-color: var(--background-norm);
-		background-image: radial-gradient(farthest-side at 50% 0, var(--backdrop-norm), transparent),
+		background-image:
+			radial-gradient(farthest-side at 50% 0, var(--backdrop-norm), transparent),
 			radial-gradient(farthest-side at 50% 100%, var(--backdrop-norm), transparent);
 		background-position:
 			50% 0,
