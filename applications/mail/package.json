@@ -16,7 +16,7 @@
         "i18n:validate:context:web": "proton-i18n validate",
         "postinstall": "proton-pack config",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
-        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "pretty:fix": "prettier --write  ./src/app",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --webpackOnCaffeine --appMode=standalone --logical",
         "test": "jest --logHeapUsage --forceExit",
         "test:ci": "jest --coverage --runInBand --ci --forceExit",
