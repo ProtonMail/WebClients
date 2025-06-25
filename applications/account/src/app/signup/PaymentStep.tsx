@@ -20,13 +20,17 @@ import InclusiveVatText from '@proton/components/containers/payments/InclusiveVa
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers';
-import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
+import { ApplePayButton, ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { useCurrencies, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
-import type { ExtendedTokenPayment, PaymentMethodStatusExtended, TokenPayment } from '@proton/payments';
+import type {
+    ExtendedTokenPayment,
+    PaymentMethodStatusExtended,
+    PaymentProcessorHook,
+    TokenPayment,
+} from '@proton/payments';
 import {
     CYCLE,
     type Currency,
@@ -35,13 +39,15 @@ import {
     type Plan,
     type PlanIDs,
     getBillingAddressStatus,
+    getIsB2BAudienceFromPlan,
+    getIsConsumerVpnPlan,
+    getIsVpnPlan,
     getPaymentsVersion,
     getPlanNameFromIDs,
     getPlansMap,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { getIsB2BAudienceFromPlan, getIsConsumerVpnPlan, getIsVpnPlan } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -188,6 +194,7 @@ const PaymentStep = ({
     const isCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CARD;
     const isChargebeeCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
     const isChargebeePaypal = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+    const isApplePay = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY;
 
     const isB2bAudience = getIsB2BAudienceFromPlan(getPlanNameFromIDs(subscriptionData.planIDs));
     const defaultCycles = isB2bAudience ? [CYCLE.YEARLY, CYCLE.MONTHLY] : undefined;
@@ -393,6 +400,12 @@ const PaymentStep = ({
                                     />
                                 )}
                             </>
+                        )}
+                        {isApplePay && (
+                            <ApplePayButton
+                                applePay={paymentFacade.applePay}
+                                iframeHandles={paymentFacade.iframeHandles}
+                            />
                         )}
                     </form>
                 </Content>

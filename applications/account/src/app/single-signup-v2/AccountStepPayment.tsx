@@ -8,13 +8,12 @@ import { Alert3ds, PayPalButton, StyledPayPalButton } from '@proton/components';
 import { changeDefaultPaymentMethodBeforePayment } from '@proton/components/containers/payments/DefaultPaymentMethodMessage';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
-import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
+import { ApplePayButton, ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import type { WithLoading } from '@proton/hooks/useLoading';
-import type { ExtendedTokenPayment, PaymentMethodFlows, TokenPayment } from '@proton/payments';
+import type { ExtendedTokenPayment, PaymentMethodFlows, PaymentProcessorHook, TokenPayment } from '@proton/payments';
 import {
     PAYMENT_METHOD_TYPES,
     type Plan,
@@ -420,6 +419,18 @@ const AccountStepPayment = ({
                         return (
                             <ChargebeePaypalWrapper
                                 chargebeePaypal={paymentFacade.chargebeePaypal}
+                                iframeHandles={paymentFacade.iframeHandles}
+                            />
+                        );
+                    }
+
+                    if (
+                        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY &&
+                        options.checkResult.AmountDue > 0
+                    ) {
+                        return (
+                            <ApplePayButton
+                                applePay={paymentFacade.applePay}
                                 iframeHandles={paymentFacade.iframeHandles}
                             />
                         );

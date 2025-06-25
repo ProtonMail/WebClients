@@ -6,7 +6,7 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import { formattedSavedSepaDetails } from '@proton/components/payments/client-extensions/useMethods';
 import type { SavedPaymentMethod } from '@proton/payments';
-import { isPaypalDetails, isSavedPaymentMethodSepa } from '@proton/payments';
+import { isPaypalDetails, isSavedPaymentMethodApplePay, isSavedPaymentMethodSepa } from '@proton/payments';
 
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
@@ -52,6 +52,11 @@ const MethodCell = ({ method }: { method: SavedPaymentMethod }) => {
                 </span>
             </>
         );
+    }
+
+    if (isSavedPaymentMethodApplePay(method)) {
+        const applePayDetails = `Apple Pay (${hiddenDigitsPlaceholder}${NBSP_HTML}${method.Details.Last4})`;
+        return <span data-testid="apple-pay-details">{applePayDetails}</span>;
     }
 
     if (method.Details && method.Details.Brand && method.Details.Last4) {

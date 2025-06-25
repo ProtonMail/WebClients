@@ -3,6 +3,7 @@ import { type RefObject, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import {
+    type ApplePayAuthorizedPayload,
     type CardFormRenderMode,
     type CbCardConfig,
     type CbIframeConfig,
@@ -11,12 +12,18 @@ import {
     type ChargebeeSubmitDirectDebitEventPayload,
     type ChargebeeSubmitEventPayload,
     type ChargebeeVerifySavedCardEventPayload,
+    type GetCanMakePaymentsWithActiveCardResponse,
     type PaymentIntent,
     type PaypalAuthorizedPayload,
+    type SetApplePayPaymentIntentPayload,
     type SetPaypalPaymentIntentPayload,
     type ThreeDsChallengePayload,
     type UpdateFieldsPayload,
     chargebeeCssVariables,
+    isApplePayAuthorizedMessage,
+    isApplePayCancelledMessage,
+    isApplePayClickedMessage,
+    isApplePayFailedMessage,
     isPaypalCancelledMessage,
     isPaypalClickedMessage,
     isPaypalFailedMessage,
@@ -36,6 +43,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { type ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import { type ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import {
+    type ApplePayProcessorHook,
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
     type GetChargebeeConfigurationResponse,
@@ -220,24 +228,43 @@ export function getChargebeeErrorMessage(error: any) {
 
     const defaultError = c('Payments.Error').t`Something went wrong. Please try again later.`;
 
-    // We are using || instead of ?? because the error might be an empty string, and we want to skip it in this case
-    // It's better to show some error than an empty string
     return (
-        errorMessage ||
-        error?.displayMessage ||
-        error?.error?.displayMessage ||
-        error?.message ||
-        error?.error?.message ||
-        defaultError
+        [
+            errorMessage,
+            error?.displayMessage,
+            error?.error?.displayMessage,
+            error?.message,
+            error?.error?.message,
+            defaultError,
+        ]
+            // handling possible Array values
+            .map((message) => {
+                if (!message || !Array.isArray(message)) {
+                    return message;
+                }
+
+                return message.join(' ');
+            })
+            .map((message) => message?.trim?.() ?? message)
+            .find((message) => {
+                // avoiding empty strings, null, and undefined values
+                const isTruthy = !!message;
+
+                // avoiding [object Object] strings
+                const isObjectString = message?.toString?.().includes?.({}.toString());
+
+                return isTruthy && !isObjectString;
+            })
     );
 }
 
 type ChargebeeIframeProps = React.IframeHTMLAttributes<HTMLIFrameElement> & {
-    type: 'card' | 'paypal' | 'saved-card' | 'direct-debit';
+    type: 'card' | 'paypal' | 'saved-card' | 'direct-debit' | 'apple-pay';
     iframeHandles: CbIframeHandles;
     chargebeeCard?: ChargebeeCardProcessorHook;
     chargebeePaypal?: ChargebeePaypalProcessorHook;
     directDebit?: ChargebeeDirectDebitProcessorHook;
+    applePay?: ApplePayProcessorHook;
     onInitialized?: () => void;
     isNarrow?: boolean;
     themeCode?: ThemeCode;
@@ -252,13 +279,35 @@ interface ChargebeeConfiguration {
 export function useChargebeeHandles(
     iframeRef: RefObject<HTMLIFrameElement>,
     targetOrigin: string
-): ChargebeeIframeHandles {
+): ChargebeeIframeHandles & {
+    notifyIframeLoaded: () => void;
+    notifyIframeUnloaded: () => void;
+    iframeLoadedRef: RefObject<boolean>;
+} {
     const chargebeeConfigurationRef = useRef<ChargebeeConfiguration | null>(null);
     const api = useApi();
     const { createNotification } = useNotifications();
 
     const chargebeeConfigurationAbortControllerRef = useRef<AbortController>(new AbortController());
     const abortedRef = useRef(false);
+
+    // Ref to store pending resolve functions waiting for iframe to load
+    const pendingIframeLoadResolversRef = useRef<(() => void)[]>([]);
+
+    const iframeLoadedRef = useRef(false);
+
+    // Function to notify that iframe has loaded
+    const notifyIframeLoaded = () => {
+        iframeLoadedRef.current = true;
+
+        // Resolve all pending promises
+        const resolvers = pendingIframeLoadResolversRef.current.splice(0); // Clear and get all resolvers
+        resolvers.forEach((resolve) => resolve());
+    };
+
+    const notifyIframeUnloaded = () => {
+        iframeLoadedRef.current = false;
+    };
 
     const signal = chargebeeConfigurationAbortControllerRef.current.signal;
 
@@ -307,7 +356,28 @@ export function useChargebeeHandles(
         return chargebeeConfigurationRef.current;
     };
 
-    return {
+    const waitForIframeLoaded = (): Promise<void> => {
+        // If iframe is already loaded, resolve immediately
+        if (iframeLoadedRef.current) {
+            return Promise.resolve();
+        }
+
+        // Create a promise and store its resolver. The promise will be resolved when iframe is loaded.
+        return new Promise<void>((resolve, reject) => {
+            pendingIframeLoadResolversRef.current.push(resolve);
+
+            signal?.addEventListener('abort', () => {
+                // Remove this resolver from pending list and reject
+                const index = pendingIframeLoadResolversRef.current.indexOf(resolve);
+                if (index > -1) {
+                    pendingIframeLoadResolversRef.current.splice(index, 1);
+                }
+                reject(new Error('Operation aborted'));
+            });
+        });
+    };
+
+    const handles: ChargebeeIframeHandles = {
         submitCreditCard: async (payload: ChargebeeSubmitEventPayload) => {
             try {
                 return await iframeAction('chargebee-submit', payload, iframeRef, targetOrigin, signal, {
@@ -430,6 +500,61 @@ export function useChargebeeHandles(
                 throw error;
             }
         },
+        setApplePayPaymentIntent: async (payload: SetApplePayPaymentIntentPayload, abortSignal: AbortSignal) => {
+            const setApplePayPaymentIntentActionType = 'set-apple-pay-payment-intent';
+            try {
+                return await iframeAction(
+                    setApplePayPaymentIntentActionType,
+                    payload,
+                    iframeRef,
+                    targetOrigin,
+                    abortSignal
+                );
+            } catch (error: any) {
+                // make sure that only the latest error is handled, and all others are ignored
+                if (error.correlationId === getLatestCorrelationIdByType(setApplePayPaymentIntentActionType)) {
+                    const errorMessage = getChargebeeErrorMessage(error);
+                    createNotification({
+                        type: 'error',
+                        text: errorMessage,
+                    });
+                }
+                throw error;
+            }
+        },
+        initializeApplePay: async () => {
+            const chargebeeInstanceConfig = await getConfig();
+
+            const config: CbIframeConfig = {
+                paymentMethodType: 'apple-pay',
+                ...chargebeeInstanceConfig,
+            };
+
+            return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
+        },
+        getCanMakePaymentsWithActiveCard: async () => {
+            try {
+                await waitForIframeLoaded();
+            } catch {
+                return false;
+            }
+            // internally it calls getCanMakePaymentsWithActiveCard(), but from Chargebee's iframe domain
+            const result = await iframeAction<GetCanMakePaymentsWithActiveCardResponse>(
+                'get-can-make-payments-with-active-card',
+                {},
+                iframeRef,
+                targetOrigin,
+                signal
+            );
+            return result.data.canMakePaymentsWithActiveCard;
+        },
+    };
+
+    return {
+        ...handles,
+        notifyIframeLoaded,
+        notifyIframeUnloaded,
+        iframeLoadedRef,
     };
 }
 
@@ -437,41 +562,27 @@ export type CbIframeHandles = {
     handles: ChargebeeIframeHandles;
     events: ChargebeeIframeEvents;
     iframeRef: RefObject<HTMLIFrameElement>;
-    iframeConfigured: boolean;
     iframeSrc: string;
+    iframeLoadedRef: RefObject<boolean>;
+    notifyIframeLoaded: () => void;
+    notifyIframeUnloaded: () => void;
 };
 
 export function getIframeUrl() {
     return getApiSubdomainUrl('/payments/v5/forms/cards', window.location.origin);
-    // return new URL('https://localhost:5173');
 }
 
 export const useCbIframe = (): CbIframeHandles => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
-    const [iframeConfigured, setIframeConfigured] = useState(false);
-
     const chargebeeContext = useChargebeeContext();
-
-    const markConfigured = <T,>(promise: Promise<T>) =>
-        promise.then((result) => {
-            setIframeConfigured(true);
-            return result;
-        });
 
     const iframeUrl = getIframeUrl();
     const iframeSrc = iframeUrl.toString();
     const targetOrigin = iframeUrl.origin;
 
-    const handlesBase: ChargebeeIframeHandles = useChargebeeHandles(iframeRef, targetOrigin);
-
-    const handles = {
-        ...handlesBase,
-        initializeCreditCard: (options: InitializeCreditCardOptions) =>
-            markConfigured(handlesBase.initializeCreditCard(options)),
-        initializePaypal: () => markConfigured(handlesBase.initializePaypal()),
-        initializeSavedCreditCard: () => markConfigured(handlesBase.initializeSavedCreditCard()),
-    };
+    const handlesWithNotify = useChargebeeHandles(iframeRef, targetOrigin);
+    const { notifyIframeLoaded, notifyIframeUnloaded, iframeLoadedRef, ...handles } = handlesWithNotify;
 
     const events: ChargebeeIframeEvents = {
         onPaypalAuthorized: (callback: (payload: PaypalAuthorizedPayload) => any) =>
@@ -555,6 +666,34 @@ export const useCbIframe = (): CbIframeHandles => {
                     callback(reconstructedError, error, payload, error?.checkpoints);
                 }
             }),
+        onApplePayAuthorized: (callback: (payload: ApplePayAuthorizedPayload) => any) =>
+            listenToIframeEvents(iframeRef, (e) => {
+                const payload = parseEvent(e.data);
+                if (isApplePayAuthorizedMessage(payload)) {
+                    callback(payload.data);
+                }
+            }),
+        onApplePayFailure: (callback: (error: any) => any) =>
+            listenToIframeEvents(iframeRef, (e) => {
+                const payload = parseEvent(e.data);
+                if (isApplePayFailedMessage(payload)) {
+                    callback(payload.error);
+                }
+            }),
+        onApplePayClicked: (callback: () => any) =>
+            listenToIframeEvents(iframeRef, (e) => {
+                const payload = parseEvent(e.data);
+                if (isApplePayClickedMessage(payload)) {
+                    callback();
+                }
+            }),
+        onApplePayCancelled: (callback: () => any) =>
+            listenToIframeEvents(iframeRef, (e) => {
+                const payload = parseEvent(e.data);
+                if (isApplePayCancelledMessage(payload)) {
+                    callback();
+                }
+            }),
     };
 
     useEffect(() => {
@@ -574,7 +713,15 @@ export const useCbIframe = (): CbIframeHandles => {
         });
     }, []);
 
-    return { iframeRef, handles, iframeConfigured, events, iframeSrc };
+    return {
+        iframeRef,
+        handles,
+        events,
+        iframeSrc,
+        iframeLoadedRef,
+        notifyIframeLoaded,
+        notifyIframeUnloaded,
+    };
 };
 
 const ThreeDsModal = ({ url, ...rest }: any) => {
@@ -610,21 +757,15 @@ const useThreeDsChallenge = (iframe = false) => {
 };
 
 function getInitialHeight(type: ChargebeeIframeProps['type']): number {
-    const initialPaypalHeight = 52;
-    const initialSavedCardHeight = 0;
-    const initialCardHeight = 300;
-    const initialSepaDirectDebitHeight = 0;
+    const initialHeight: Record<ChargebeeIframeProps['type'], number> = {
+        paypal: 52,
+        'saved-card': 0,
+        card: 300,
+        'apple-pay': 52,
+        'direct-debit': 0,
+    };
 
-    if (type === 'paypal') {
-        return initialPaypalHeight;
-    }
-    if (type === 'saved-card') {
-        return initialSavedCardHeight;
-    }
-    if (type === 'direct-debit') {
-        return initialSepaDirectDebitHeight;
-    }
-    return initialCardHeight;
+    return initialHeight[type] ?? initialHeight.card;
 }
 
 export const ChargebeeIframe = ({
@@ -633,19 +774,23 @@ export const ChargebeeIframe = ({
     chargebeeCard,
     chargebeePaypal,
     directDebit,
+    applePay,
     onInitialized,
     isNarrow,
     themeCode,
     ...rest
 }: ChargebeeIframeProps) => {
     const [initialized, setInitialized] = useState(false);
-    const abortRef = useRef<AbortController | null>(null);
+    const paypalAbortRef = useRef<AbortController | null>(null);
+    const applePayAbortRef = useRef<AbortController | null>(null);
     const loadingTimeoutRef = useRef<any>(null);
 
     useEffect(() => {
         return () => {
             if (type === 'paypal' && chargebeePaypal) {
                 chargebeePaypal.paypalIframeLoadedRef.current = false;
+            } else if (type === 'apple-pay' && applePay) {
+                applePay.applePayIframeLoadedRef.current = false;
             }
         };
     }, []);
@@ -683,6 +828,8 @@ export const ChargebeeIframe = ({
     const threeDs = useThreeDsChallenge(false);
 
     const onLoad = async () => {
+        iframeHandles.notifyIframeLoaded();
+
         clearTimeout(loadingTimeoutRef.current);
 
         // initialization of paypal is called in the facade, and others are called here, at least for now
@@ -692,10 +839,14 @@ export const ChargebeeIframe = ({
             await iframeHandles.handles.initializeSavedCreditCard();
         } else if (type === 'paypal' && chargebeePaypal) {
             chargebeePaypal.paypalIframeLoadedRef.current = true;
-            abortRef.current = new AbortController();
-            await chargebeePaypal.initialize(abortRef.current.signal);
+            paypalAbortRef.current = new AbortController();
+            await chargebeePaypal.initialize(paypalAbortRef.current.signal);
         } else if (type === 'direct-debit') {
             await iframeHandles.handles.initializeDirectDebit();
+        } else if (type === 'apple-pay' && applePay) {
+            applePay.applePayIframeLoadedRef.current = true;
+            applePayAbortRef.current = new AbortController();
+            await applePay.initialize(applePayAbortRef.current.signal);
         }
 
         if (!iframeRef.current) {
@@ -725,11 +876,13 @@ export const ChargebeeIframe = ({
 
     useEffect(
         () => () => {
-            abortRef.current?.abort();
-            abortRef.current = null;
+            paypalAbortRef.current?.abort();
+            paypalAbortRef.current = null;
             chargebeeCard?.reset();
             chargebeePaypal?.reset();
             directDebit?.reset();
+            applePay?.reset();
+            iframeHandles.notifyIframeUnloaded();
         },
         []
     );
@@ -766,6 +919,7 @@ export const ChargebeeIframe = ({
                 frameBorder="0"
                 onLoad={onLoad}
                 data-testid="chargebee-iframe"
+                allow="payment"
                 {...rest}
             ></iframe>
             {threeDs.showModal && <ThreeDsModal {...threeDs.modalProps} />}
