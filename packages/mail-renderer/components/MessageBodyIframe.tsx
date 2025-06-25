@@ -35,6 +35,7 @@ interface Props {
     onFocus?: () => void;
     onMessageImageLoadError: OnMessageImageLoadError;
     theme: ThemeContextInterface;
+    iframeCSSStyles: string;
 }
 
 const MessageBodyIframe = ({
@@ -53,6 +54,7 @@ const MessageBodyIframe = ({
     onMessageImageLoadError,
     onFocus,
     theme,
+    iframeCSSStyles,
 }: Props) => {
     useSyncIframeStyles(iframeRef.current?.contentWindow?.document.documentElement, document.documentElement);
 
@@ -66,6 +68,7 @@ const MessageBodyIframe = ({
         onReady,
         isPrint,
         theme,
+        iframeCSSStyles,
     });
 
     const { showToggle, iframeToggleDiv, showBlockquote, setShowBlockquote } = useIframeShowBlockquote({

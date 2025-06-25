@@ -19,6 +19,8 @@ import { useOnMailTo } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 
+import iframeCSSStyles from '@proton/mail-renderer/helpers/MessageIframe.raw.scss';
+
 interface Props {
     labelID: string;
     messageLoaded: boolean;
@@ -163,6 +165,7 @@ const MessageBody = ({
                         onFocus={onFocusIframe}
                         onMessageImageLoadError={handleMessageImageLoadError}
                         theme={theme}
+                        iframeCSSStyles={iframeCSSStyles}
                     />
                     <MessageBodyPrint isPrint={isPrint} iframeRef={iframeRef} message={message} labelID={labelID} />
                     {linkModal}

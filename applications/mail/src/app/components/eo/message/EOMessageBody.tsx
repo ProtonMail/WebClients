@@ -16,6 +16,8 @@ import useMessageImagesLoadError from 'proton-mail/components/message/hooks/useM
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 
+import iframeCSSStyles from '@proton/mail-renderer/helpers/MessageIframe.raw.scss';
+
 interface Props {
     message: MessageState;
     messageLoaded: boolean;
@@ -96,6 +98,7 @@ const EOMessageBody = ({
                         message={message}
                         onMessageImageLoadError={handleMessageImageLoadError}
                         theme={theme}
+                        iframeCSSStyles={iframeCSSStyles}
                     />
                     {linkModal}
                     <MessageBodyPrint isPrint={false} iframeRef={iframeRef} message={message} labelID="" />
