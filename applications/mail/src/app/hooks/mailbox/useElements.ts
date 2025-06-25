@@ -197,7 +197,7 @@ export const useElements: UseElements = ({
 
         // Define the core reset conditions
         const hasSearchKeywordChange = search.keyword !== stateParams.search.keyword;
-        const hasESEnabledChange = esEnabled !== stateParams.esEnabled && isSearch(search);
+        const hasESEnabledChange = !esEnabled && isSearch(search);
         const hasPageJump = !pageIsConsecutive;
         const hasSortChange = !isDeepEqual(sort, stateParams.sort);
 
@@ -370,7 +370,7 @@ export const useElements: UseElements = ({
         }
     }, [stateInconsistency]);
 
-    useElementsEvents(conversationMode, search);
+    useElementsEvents(conversationMode);
 
     return {
         labelID: stateParams.labelID,
