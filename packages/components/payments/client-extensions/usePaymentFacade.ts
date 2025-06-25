@@ -14,6 +14,7 @@ import type {
     PaymentMethodFlows,
     PaymentMethodStatusExtended,
     PaymentMethodType,
+    PaymentProcessorType,
     PaymentsVersion,
     PlainPaymentMethodType,
     PlanIDs,
@@ -25,8 +26,8 @@ import {
     PAYMENT_METHOD_TYPES,
     type Subscription,
     canUseChargebee,
+    isTaxInclusive,
 } from '@proton/payments';
-import { isTaxInclusive } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import {
@@ -42,7 +43,6 @@ import noop from '@proton/utils/noop';
 import { useCbIframe } from '../chargebee/ChargebeeIframe';
 import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
 import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
-import type { PaymentProcessorType } from '../react-extensions/interface';
 import type { ThemeCode, ThemeLike } from './helpers';
 import { getThemeCode } from './helpers';
 import { useChargebeeEnabledCache } from './useChargebeeContext';
@@ -52,6 +52,7 @@ import { type TelemetryPaymentFlow, usePaymentsTelemetry } from './usePaymentsTe
 import {
     getDefaultVerifyPayment,
     getDefaultVerifyPaypal,
+    useApplePayDependencies,
     useChargebeeCardVerifyPayment,
     useChargebeePaypalHandles,
 } from './validators/validators';
@@ -116,8 +117,6 @@ type PaymentFacadeProps = {
     chargebeeUserExists?: ChargebeeUserExists;
     user?: User;
     subscription?: Subscription;
-    forceInhouseSavedMethodProcessors?: boolean;
-    disableNewPaymentMethods?: boolean;
     onBeforeSepaPayment?: () => Promise<boolean>;
     planIDs?: PlanIDs;
 };
@@ -150,12 +149,11 @@ export const usePaymentFacade = ({
     chargebeeUserExists,
     user,
     subscription,
-    forceInhouseSavedMethodProcessors,
-    disableNewPaymentMethods,
     onBeforeSepaPayment,
     planIDs,
 }: PaymentFacadeProps) => {
     const enableSepa = useFlag('SepaPayments');
+    const enableApplePay = useFlag('ApplePayWeb');
 
     const { APP_NAME } = useConfig();
     const defaultApi = useApi();
@@ -193,6 +191,10 @@ export const usePaymentFacade = ({
     });
 
     const isTrial = checkResult?.SubscriptionMode === SubscriptionMode.Trial;
+    const { canUseApplePay, applePayModalHandles } = useApplePayDependencies(chargebeeHandles, {
+        onPaymentAttempt: reportPaymentAttempt,
+        onPaymentFailure: reportPaymentFailure,
+    });
 
     const hook = useInnerPaymentFacade(
         {
@@ -223,14 +225,14 @@ export const usePaymentFacade = ({
             },
             billingPlatform,
             chargebeeUserExists,
-            forceInhouseSavedMethodProcessors,
-            disableNewPaymentMethods,
             user,
             subscription,
             enableSepa,
             onBeforeSepaPayment,
             planIDs,
             isTrial,
+            canUseApplePay,
+            enableApplePay,
         },
         {
             api,
@@ -241,11 +243,13 @@ export const usePaymentFacade = ({
             chargebeeHandles,
             chargebeeEvents,
             chargebeePaypalModalHandles,
+            applePayModalHandles,
         }
     );
 
     const methods = wrapMethods(hook.methods, flow);
 
+    // todo: remove it
     const userCanTrigger = {
         [PAYMENT_METHOD_TYPES.CARD]: true,
         [PAYMENT_METHOD_TYPES.CASH]: false,
@@ -257,6 +261,7 @@ export const usePaymentFacade = ({
         [PAYMENT_METHOD_TYPES.BITCOIN]: false,
         [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: false,
         [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: true,
+        [PAYMENT_METHOD_TYPES.APPLE_PAY]: true,
     };
 
     const userCanTriggerSelected = methods.selectedMethod?.type ? userCanTrigger[methods.selectedMethod.type] : false;
@@ -324,6 +329,33 @@ export const usePaymentFacade = ({
         return abort;
     }, [hook.methods.selectedMethod?.type, amount, currency]);
 
+    const applePayAbortRef = useRef<AbortController | null>(null);
+    useEffect(() => {
+        const abort = () => {
+            applePayAbortRef.current?.abort();
+            applePayAbortRef.current = null;
+        };
+
+        async function run() {
+            if (!hook.methods.isNewApplePay) {
+                return;
+            }
+
+            applePayAbortRef.current = new AbortController();
+            hook.applePay.reset();
+
+            try {
+                await hook.applePay.initialize(applePayAbortRef.current.signal);
+            } catch {
+                abort();
+            }
+        }
+
+        void run();
+
+        return abort;
+    }, [hook.methods.isNewApplePay, amount, currency]);
+
     const taxCountryLoading = methods.loading;
     const getShowTaxCountry = (): boolean => {
         if (taxCountryLoading) {
@@ -335,6 +367,7 @@ export const usePaymentFacade = ({
             PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
             PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+            PAYMENT_METHOD_TYPES.APPLE_PAY,
         ];
 
         const isNewMethod = methodsWithTaxCountry.includes(methods.selectedMethod?.type);
