@@ -46,6 +46,7 @@ export const getRoutes = ({
     isSharedServerFeatureEnabled,
     isPasswordPolicyEnabled,
     isOrganizationPolicyEnforced,
+    isB2BTrial,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -65,6 +66,7 @@ export const getRoutes = ({
             isUserGroupsMembershipFeatureEnabled,
             memberships,
             isZoomIntegrationEnabled,
+            isB2BTrial,
         }),
         mail: getMailAppRoutes({
             app,
