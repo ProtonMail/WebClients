@@ -74,11 +74,29 @@ describe('active keys', () => {
         const signedKeyList = await getSignedKeyList(
             {
                 v4: await Promise.all([
-                    getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', flags: 3 }),
-                    getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', primary: 1, flags: 3 }),
-                    getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', flags: 2 }),
-                    getActiveKeyObject(addressKeysFull[3].key.privateKey, { ID: 'd', primary: 0, flags: 3 }),
-                    getActiveKeyObject(addressKeysFull[4].key.privateKey, { ID: 'e', primary: 0, flags: 0 }),
+                    getActiveKeyObject(addressKeysFull[0].key.privateKey, addressKeysFull[0].key.publicKey, {
+                        ID: 'a',
+                        flags: 3,
+                    }),
+                    getActiveKeyObject(addressKeysFull[1].key.privateKey, addressKeysFull[1].key.publicKey, {
+                        ID: 'b',
+                        primary: 1,
+                        flags: 3,
+                    }),
+                    getActiveKeyObject(addressKeysFull[2].key.privateKey, addressKeysFull[2].key.publicKey, {
+                        ID: 'c',
+                        flags: 2,
+                    }),
+                    getActiveKeyObject(addressKeysFull[3].key.privateKey, addressKeysFull[3].key.publicKey, {
+                        ID: 'd',
+                        primary: 0,
+                        flags: 3,
+                    }),
+                    getActiveKeyObject(addressKeysFull[4].key.privateKey, addressKeysFull[4].key.publicKey, {
+                        ID: 'e',
+                        primary: 0,
+                        flags: 0,
+                    }),
                 ]),
                 v6: [],
             },
@@ -156,9 +174,19 @@ describe('active keys', () => {
         const signedKeyList = await getSignedKeyList(
             {
                 v4: await Promise.all([
-                    getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', flags: 7 }),
-                    getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', primary: 1, flags: 7 }),
-                    getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', flags: 6 }),
+                    getActiveKeyObject(addressKeysFull[0].key.privateKey, addressKeysFull[0].key.publicKey, {
+                        ID: 'a',
+                        flags: 7,
+                    }),
+                    getActiveKeyObject(addressKeysFull[1].key.privateKey, addressKeysFull[1].key.publicKey, {
+                        ID: 'b',
+                        primary: 1,
+                        flags: 7,
+                    }),
+                    getActiveKeyObject(addressKeysFull[2].key.privateKey, addressKeysFull[2].key.publicKey, {
+                        ID: 'c',
+                        flags: 6,
+                    }),
                 ]),
                 v6: [],
             },
@@ -265,9 +293,19 @@ describe('active keys', () => {
         const signedKeyList = await getSignedKeyList(
             {
                 v4: await Promise.all([
-                    getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', primary: 1, flags: 3 }),
-                    getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', flags: 3 }),
-                    getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', flags: 3 }),
+                    getActiveKeyObject(addressKeysFull[0].key.privateKey, addressKeysFull[0].key.publicKey, {
+                        ID: 'a',
+                        primary: 1,
+                        flags: 3,
+                    }),
+                    getActiveKeyObject(addressKeysFull[1].key.privateKey, addressKeysFull[1].key.publicKey, {
+                        ID: 'b',
+                        flags: 3,
+                    }),
+                    getActiveKeyObject(addressKeysFull[2].key.privateKey, addressKeysFull[2].key.publicKey, {
+                        ID: 'c',
+                        flags: 3,
+                    }),
                 ]),
                 v6: [],
             },
@@ -334,11 +372,22 @@ describe('active keys', () => {
             getSignedKeyList(
                 {
                     v4: await Promise.all([
-                        getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', primary: 1, flags: 3 }),
-                        getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', primary: 1, flags: 3 }),
+                        getActiveKeyObject(addressKeysFull[0].key.privateKey, addressKeysFull[0].key.publicKey, {
+                            ID: 'a',
+                            primary: 1,
+                            flags: 3,
+                        }),
+                        getActiveKeyObject(addressKeysFull[2].key.privateKey, addressKeysFull[2].key.publicKey, {
+                            ID: 'c',
+                            primary: 1,
+                            flags: 3,
+                        }),
                     ]),
                     v6: await Promise.all([
-                        getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', flags: 3 }),
+                        getActiveKeyObject(addressKeysFull[1].key.privateKey, addressKeysFull[1].key.publicKey, {
+                            ID: 'b',
+                            flags: 3,
+                        }),
                     ]),
                 },
                 address,
@@ -351,12 +400,23 @@ describe('active keys', () => {
             getSignedKeyList(
                 {
                     v4: await Promise.all([
-                        getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', primary: 1, flags: 3 }),
+                        getActiveKeyObject(addressKeysFull[0].key.privateKey, addressKeysFull[0].key.publicKey, {
+                            ID: 'a',
+                            primary: 1,
+                            flags: 3,
+                        }),
 
-                        getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', primary: 1, flags: 3 }),
+                        getActiveKeyObject(addressKeysFull[2].key.privateKey, addressKeysFull[2].key.publicKey, {
+                            ID: 'c',
+                            primary: 1,
+                            flags: 3,
+                        }),
                     ]),
                     v6: await Promise.all([
-                        getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', flags: 3 }),
+                        getActiveKeyObject(addressKeysFull[1].key.privateKey, addressKeysFull[1].key.publicKey, {
+                            ID: 'b',
+                            flags: 3,
+                        }),
                     ]),
                 },
                 address,
@@ -369,11 +429,21 @@ describe('active keys', () => {
             getSignedKeyList(
                 {
                     v4: await Promise.all([
-                        getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', flags: 3 }),
-                        getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', flags: 3 }),
+                        getActiveKeyObject(addressKeysFull[0].key.privateKey, addressKeysFull[0].key.publicKey, {
+                            ID: 'a',
+                            flags: 3,
+                        }),
+                        getActiveKeyObject(addressKeysFull[2].key.privateKey, addressKeysFull[2].key.publicKey, {
+                            ID: 'c',
+                            flags: 3,
+                        }),
                     ]),
                     v6: await Promise.all([
-                        getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', primary: 1, flags: 3 }),
+                        getActiveKeyObject(addressKeysFull[1].key.privateKey, addressKeysFull[1].key.publicKey, {
+                            ID: 'b',
+                            primary: 1,
+                            flags: 3,
+                        }),
                     ]),
                 },
                 address,
@@ -385,11 +455,22 @@ describe('active keys', () => {
         const signedKeyList = await getSignedKeyList(
             {
                 v4: await Promise.all([
-                    getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', primary: 1, flags: 3 }),
-                    getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', flags: 3 }),
+                    getActiveKeyObject(addressKeysFull[0].key.privateKey, addressKeysFull[0].key.publicKey, {
+                        ID: 'a',
+                        primary: 1,
+                        flags: 3,
+                    }),
+                    getActiveKeyObject(addressKeysFull[2].key.privateKey, addressKeysFull[2].key.publicKey, {
+                        ID: 'c',
+                        flags: 3,
+                    }),
                 ]),
                 v6: await Promise.all([
-                    getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', primary: 1, flags: 3 }),
+                    getActiveKeyObject(addressKeysFull[1].key.privateKey, addressKeysFull[1].key.publicKey, {
+                        ID: 'b',
+                        primary: 1,
+                        flags: 3,
+                    }),
                 ]),
             },
             address,
