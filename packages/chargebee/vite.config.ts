@@ -12,6 +12,10 @@ export default defineConfig({
             },
         ],
     },
+    build: {
+        // Disable minification when NODE_ENV is development
+        minify: process.env.NODE_ENV === 'development' ? false : 'esbuild',
+    },
     plugins: [
         mkcert(),
         viteSingleFile(),

@@ -1,45 +1,44 @@
 import { useMemo, useRef } from 'react';
 
 import type {
+    ADDON_NAMES,
     AmountAndCurrency,
+    ApplePayModalHandles,
     BillingAddress,
+    BillingPlatform,
     ChargeablePaymentParameters,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
     ChargebeeKillSwitch,
     ChargebeePaypalModalHandles,
+    Currency,
+    Cycle,
     ForceEnableChargebee,
+    PLANS,
     PaymentMethodFlows,
     PaymentMethodStatusExtended,
     PaymentMethodType,
+    PaymentProcessorType,
     PaymentVerificator,
     PaymentVerificatorV5,
     PaymentsVersion,
     PlainPaymentMethodType,
+    PlanIDs,
     SavedPaymentMethod,
+    Subscription,
 } from '@proton/payments';
 import {
-    type ADDON_NAMES,
-    type BillingPlatform,
-    type Currency,
-    type Cycle,
     PAYMENT_METHOD_TYPES,
-    type PLANS,
-    type PlanIDs,
-    type Subscription,
     buyCredit,
-    canUseChargebee,
     isExistingPaymentMethod,
-    isOnSessionMigration,
-    isSplittedUser,
     payInvoice,
     setPaymentMethodV5,
     subscribe,
+    useApplePay,
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, ChargebeeEnabled, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
 
-import type { PaymentProcessorType } from './interface';
 import useBitcoin from './useBitcoin';
 import { useCard } from './useCard';
 import { useChargebeeCard } from './useChargebeeCard';
@@ -188,14 +187,14 @@ export const usePaymentFacade = (
         billingAddress,
         billingPlatform,
         chargebeeUserExists,
-        forceInhouseSavedMethodProcessors,
-        disableNewPaymentMethods,
         user,
         enableSepa,
         onBeforeSepaPayment,
         planIDs,
         subscription,
         isTrial,
+        canUseApplePay,
+        enableApplePay,
     }: {
         amount: number;
         currency: Currency;
@@ -224,14 +223,14 @@ export const usePaymentFacade = (
         billingAddress?: BillingAddress;
         billingPlatform?: BillingPlatform;
         chargebeeUserExists?: ChargebeeUserExists;
-        forceInhouseSavedMethodProcessors?: boolean;
-        disableNewPaymentMethods?: boolean;
         user: User | undefined;
         enableSepa?: boolean;
         onBeforeSepaPayment?: () => Promise<boolean>;
         planIDs?: PlanIDs;
         subscription?: Subscription;
         isTrial?: boolean;
+        canUseApplePay?: boolean;
+        enableApplePay?: boolean;
     },
     {
         api,
@@ -242,6 +241,7 @@ export const usePaymentFacade = (
         chargebeeHandles,
         chargebeeEvents,
         chargebeePaypalModalHandles,
+        applePayModalHandles,
     }: {
         api: Api;
         isAuthenticated: boolean;
@@ -251,6 +251,7 @@ export const usePaymentFacade = (
         chargebeeHandles: ChargebeeIframeHandles;
         chargebeeEvents: ChargebeeIframeEvents;
         chargebeePaypalModalHandles?: ChargebeePaypalModalHandles;
+        applePayModalHandles?: ApplePayModalHandles;
     }
 ) => {
     const amountAndCurrency: AmountAndCurrency = useMemo(
@@ -279,11 +280,12 @@ export const usePaymentFacade = (
             billingAddress,
             billingPlatform,
             chargebeeUserExists,
-            disableNewPaymentMethods,
             enableSepa,
             user,
             planIDs,
             subscription,
+            canUseApplePay,
+            enableApplePay,
         },
         {
             api,
@@ -549,30 +551,41 @@ export const usePaymentFacade = (
         }
     );
 
-    const onSessionMigration = isOnSessionMigration(isChargebeeEnabled(), billingPlatform);
-    const splittedUser = isSplittedUser(isChargebeeEnabled(), chargebeeUserExists, billingPlatform);
-    const creditFlowBeforeMigration = flow === 'credit' && onSessionMigration && !splittedUser;
+    const applePay = useApplePay(
+        {
+            amountAndCurrency,
+            onChargeable: (params) =>
+                onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData(), 'v5', forceEnableChargebee),
+                    {
+                        chargeablePaymentParameters: params,
+                        source: PAYMENT_METHOD_TYPES.APPLE_PAY,
+                        sourceType: params.type,
+                        context: paymentContext.getOperationsData(),
+                        paymentsVersion: 'v5',
+                        paymentProcessorType: applePay.meta.type,
+                    }
+                ),
+        },
+        {
+            api,
+            handles: chargebeeHandles,
+            events: chargebeeEvents,
+            applePayModalHandles,
+            forceEnableChargebee,
+        }
+    );
 
     const paymentMethodType: PlainPaymentMethodType | undefined = methods.selectedMethod?.type;
     const selectedProcessor = useMemo(() => {
         if (isExistingPaymentMethod(paymentMethodValue)) {
-            if (forceInhouseSavedMethodProcessors) {
-                return savedMethod;
-            }
-
             if (
-                // If Chargebee is allowed and the saved method is internal (migration mode), then we use the
-                // saved Chargebee method processor.
-                (canUseChargebee(isChargebeeEnabled()) && !creditFlowBeforeMigration) ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
-                paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+                paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL ||
+                paymentMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY ||
+                paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
             ) {
                 return savedChargebeeMethod;
-            } else if (
-                paymentMethodType === PAYMENT_METHOD_TYPES.CARD ||
-                paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL
-            ) {
-                return savedMethod;
             }
         }
 
@@ -607,6 +620,10 @@ export const usePaymentFacade = (
         if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
             return directDebit;
         }
+
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY) {
+            return applePay;
+        }
     }, [
         paymentMethodValue,
         paymentMethodType,
@@ -617,6 +634,7 @@ export const usePaymentFacade = (
         savedChargebeeMethod,
         chargebeeCard,
         chargebeePaypal,
+        applePay,
     ]);
 
     const initialized = !methods.loading;
@@ -644,6 +662,7 @@ export const usePaymentFacade = (
         paypalCredit,
         chargebeeCard,
         chargebeePaypal,
+        applePay,
         bitcoinInhouse,
         bitcoinChargebee,
         selectedProcessor,

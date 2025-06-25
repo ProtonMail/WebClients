@@ -11,6 +11,7 @@ import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoint
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import type { ChargeableV5PaymentToken, NonChargeableV5PaymentToken, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { type ApplePayProcessorHook } from '@proton/payments';
 // Circular dependency. Can get rid of it by moving ChargebeeWrapper to payments/ui
 // eslint-disable-next-line
 import { CountriesDropdown } from '@proton/payments/ui/components/CountriesDropdown';
@@ -192,6 +193,28 @@ export const ChargebeeSavedCardWrapper = (props: ChargebeeWrapperProps) => {
     return (
         <div>
             <ChargebeeIframe type="saved-card" {...props} />
+        </div>
+    );
+};
+
+export interface ApplePayButtonProps extends ChargebeeWrapperProps {
+    applePay: ApplePayProcessorHook;
+}
+
+export const ApplePayButton = (props: ApplePayButtonProps) => {
+    const initializing = props.applePay.initializing;
+
+    return (
+        <div className="relative">
+            {initializing && (
+                <div className="absolute centered-loader">
+                    <CircleLoader size="small" />
+                </div>
+            )}
+
+            <div className={clsx('flex flex-column', initializing && 'visibility-hidden')}>
+                <ChargebeeIframe type="apple-pay" {...props} />
+            </div>
         </div>
     );
 };

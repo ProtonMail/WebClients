@@ -8,6 +8,7 @@ import type {
     MessageBusResponse,
     PaymentIntent,
 } from '../lib';
+import { getCanMakePaymentsWithActiveCard } from '../lib/getCanMakePaymentsWithActiveCard';
 import { createChargebee, getChargebeeInstance, pollUntilLoaded } from './chargebee';
 import { addCheckpoint } from './checkpoints';
 import { getConfiguration, setConfiguration } from './configuration';
@@ -18,13 +19,17 @@ import type {
     OnChangeRenderModeHandler,
     OnDirectDebitSubmitHandler,
     OnGetBinHandler,
+    OnSetApplePayPaymentIntentHandler,
     OnSetPaypalPaymentIntentHandler,
     OnUpdateFieldsHandler,
     OnValidateFormHandler,
     OnVerifySavedCardHandler,
+    SetApplePayPaymentIntentEvent,
     SetPaypalPaymentIntentEvent,
 } from './message-bus';
 import { createMessageBus, getMessageBus } from './message-bus';
+// eslint-disable-next-line import/no-unresolved
+import applePayTemplateString from './templates/apple-pay.html?raw';
 // eslint-disable-next-line import/no-unresolved
 import cardTemplateString from './templates/card.html?raw';
 // eslint-disable-next-line import/no-unresolved
@@ -606,6 +611,80 @@ async function renderDirectDebit() {
     messageBus.onDirectDebitSubmit = onSubmitDirectDebit;
 }
 
+async function renderApplePay() {
+    setTemplate(applePayTemplateString);
+
+    const applePayHandler = await getChargebeeInstance().load('apple-pay');
+    addCheckpoint('apple_pay_loaded');
+
+    const handleApplePayPayment = () => {
+        applePayHandler
+            .handlePayment({
+                success: (result: AuthorizedPaymentIntent) => {
+                    addCheckpoint('apple_pay_payment_success');
+                    getMessageBus().sendApplePayAuthorizedMessage({
+                        paymentIntent: result,
+                    });
+                },
+                error: (_: PaymentIntent, error: any) => {
+                    addCheckpoint('apple_pay_payment_failed');
+                    getMessageBus().sendApplePayFailedMessage(error);
+                },
+                click: () => {
+                    addCheckpoint('apple_pay_clicked');
+                    getMessageBus().sendApplePayClickedMessage();
+                },
+                cancel: () => {
+                    addCheckpoint('apple_pay_cancelled');
+                    getMessageBus().sendApplePayCancelledMessage();
+                },
+            })
+            .catch(() => {});
+    };
+
+    const handleSetApplePayPaymentIntent = async (
+        event: SetApplePayPaymentIntentEvent
+    ): Promise<MessageBusResponse<void>> => {
+        try {
+            const { paymentIntent } = event;
+            applePayHandler.setPaymentIntent(paymentIntent);
+            addCheckpoint('apple_pay_set_payment_intent');
+
+            /**
+             * default options are:
+             * {
+             *   locale: 'en_US',
+             *   buttonColor: ApplePayButtonColor.BLACK,
+             *   buttonType: ApplePayButtonType.PLAIN,
+             * }
+             *
+             * See ApplePayMountOptions in the attached *.md file for details.
+             */
+            const options = {};
+            await applePayHandler.mountPaymentButton('#apple-pay-button', options);
+
+            void handleApplePayPayment();
+
+            return {
+                status: 'success',
+                data: undefined,
+            };
+        } catch (error) {
+            return {
+                status: 'failure',
+                error,
+            };
+        }
+    };
+
+    const onSetApplePayPaymentIntent: OnSetApplePayPaymentIntentHandler = async (event, sendResponseToParent) => {
+        const response = await handleSetApplePayPaymentIntent(event);
+        sendResponseToParent(response);
+    };
+
+    getMessageBus().onSetApplePayPaymentIntent = onSetApplePayPaymentIntent;
+}
+
 async function cbInit() {
     if (getConfiguration().paymentMethodType === 'card') {
         addCheckpoint('rendering_card');
@@ -619,6 +698,9 @@ async function cbInit() {
     } else if (getConfiguration().paymentMethodType === 'direct-debit') {
         addCheckpoint('rendering_direct_debit');
         await renderDirectDebit();
+    } else if (getConfiguration().paymentMethodType === 'apple-pay') {
+        addCheckpoint('rendering_apple_pay');
+        await renderApplePay();
     }
 
     addCheckpoint('rendered');
@@ -682,6 +764,13 @@ export async function initialize() {
                         height: document.body.scrollHeight + extraBottom,
                         extraBottom,
                     },
+                });
+            },
+            onGetCanMakePaymentsWithActiveCard: async (_, sendResponseToParent) => {
+                const canMakePaymentsWithActiveCard = await getCanMakePaymentsWithActiveCard();
+                sendResponseToParent({
+                    status: 'success',
+                    data: { canMakePaymentsWithActiveCard },
                 });
             },
         });
