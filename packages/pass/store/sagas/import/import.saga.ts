@@ -99,6 +99,7 @@ function* importWorker(
      * files to their parent items after import completes */
     const pendingFiles: string[] = [];
     const filesForImport: IndexedByShareIdAndItemId<string[]> = {};
+    const ignored = [...data.ignored];
 
     const passPlan: UserPassPlan = yield select(selectPassPlan);
     const userPlan: MaybeNull<PassPlanResponse> = yield select(selectUserPlan);
@@ -107,9 +108,10 @@ function* importWorker(
 
     const sanitized = (() => {
         if (canImportCustomItems) return data.vaults;
+
         return data.vaults.map((vault) => {
             const [items, ignore] = partition(vault.items, isSupportedItemType);
-            data.ignored.push(...ignore.map(({ metadata, type }) => `[${type}] ${metadata.name}`));
+            ignored.push(...ignore.map(({ metadata, type }) => `[${type}] ${metadata.name}`));
             return { ...vault, items };
         });
     })();
@@ -131,11 +133,10 @@ function* importWorker(
     const getImportReport = (err?: unknown): ImportReport => {
         const error = err instanceof Error ? err.name : undefined;
         const pendingIgnored = Array.from(pendingItems.values().map(formatIgnoredItem));
-        const ignored = data.ignored.concat(...pendingIgnored);
 
         return {
             error,
-            ignored,
+            ignored: ignored.concat(...pendingIgnored),
             ignoredFiles: pendingFiles,
             importedAt: getEpoch(),
             provider,
