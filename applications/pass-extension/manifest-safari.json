@@ -26,7 +26,7 @@
                 "https://account.proton.me/*",
                 "https://account.proton.black/*",
                 "https://account.proton.pink/*",
-                "https://account.proton.local/*",
+                "https://account.proton.dev/*",
                 "https://account.protontech.ch/*"
             ],
             "js": ["fork.js"],
@@ -37,7 +37,7 @@
     "externally_connectable": {
         "matches": [
             "https://*.proton.me/*",
-            "https://*.proton.local/*",
+            "https://*.proton.dev/*",
             "https://*.proton.black/*",
             "https://*.proton.pink/*",
             "https://*.protontech.ch/*"
