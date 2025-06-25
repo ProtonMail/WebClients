@@ -16,21 +16,23 @@ import { updateElectronThemeModeClassnames } from '@proton/shared/lib/helpers/in
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import type { ThemeInformation, ThemeSetting } from '@proton/shared/lib/themes/themes';
 import {
     ColorScheme,
     MotionModeSetting,
+    ThemeFeatureSetting,
+    ThemeFontFaceSetting,
+    ThemeFontSizeSetting,
+    ThemeModeSetting,
+    ThemeTypes,
+} from '@proton/shared/lib/themes/constants';
+import type { ThemeInformation, ThemeSetting } from '@proton/shared/lib/themes/themes';
+import {
     PROTON_DEFAULT_THEME,
     PROTON_DEFAULT_THEME_INFORMATION,
     PROTON_DEFAULT_THEME_SETTINGS,
     PROTON_THEMES_MAP,
-    ThemeFeatureSetting,
-    ThemeFontFaceSetting,
     ThemeFontFaceSettingMap,
-    ThemeFontSizeSetting,
     ThemeFontSizeSettingMap,
-    ThemeModeSetting,
-    ThemeTypes,
     getDarkThemes,
     getDefaultThemeSetting,
     getParsedThemeSetting,

@@ -33,7 +33,8 @@ import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { MenuBarMonitor } from "./MenuBarMonitor";
 import telemetry from "./../telemetry";
-import { PROTON_THEMES_MAP, ThemeTypes } from "@proton/shared/lib/themes/themes";
+import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
+import { ThemeTypes } from "@proton/shared/lib/themes/constants";
 
 type ViewID = keyof URLConfig;
 
