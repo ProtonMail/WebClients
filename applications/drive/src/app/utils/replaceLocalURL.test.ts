@@ -46,16 +46,16 @@ describe('replaceLocalURL', () => {
         });
     });
 
-    describe('proton.local', () => {
+    describe('proton.dev', () => {
         beforeEach(() => {
-            replaceLocation('https://drive.proton.local/u/0');
+            replaceLocation('https://drive.proton.dev/u/0');
         });
 
         [
-            ['https://drive.proton.black/test', 'https://drive.proton.local/test'],
-            ['https://drive.env.proton.black/test', 'https://drive.proton.local/test'],
-            ['https://drive-api.proton.black/test', 'https://drive-api.proton.local/test'],
-            ['https://drive-api.env.proton.black/test', 'https://drive-api.proton.local/test'],
+            ['https://drive.proton.black/test', 'https://drive.proton.dev/test'],
+            ['https://drive.env.proton.black/test', 'https://drive.proton.dev/test'],
+            ['https://drive-api.proton.black/test', 'https://drive-api.proton.dev/test'],
+            ['https://drive-api.env.proton.black/test', 'https://drive-api.proton.dev/test'],
         ].forEach((item) => {
             const input = item[0];
             const output = item[1];
@@ -66,16 +66,16 @@ describe('replaceLocalURL', () => {
         });
     });
 
-    describe('proton.local:8888', () => {
+    describe('proton.dev:8888', () => {
         beforeEach(() => {
-            replaceLocation('https://drive.proton.local:8888/u/0');
+            replaceLocation('https://drive.proton.dev:8888/u/0');
         });
 
         [
-            ['https://drive.proton.black/test', 'https://drive.proton.local:8888/test'],
-            ['https://drive.env.proton.black/test', 'https://drive.proton.local:8888/test'],
-            ['https://drive-api.proton.black/test', 'https://drive-api.proton.local:8888/test'],
-            ['https://drive-api.env.proton.black/test', 'https://drive-api.proton.local:8888/test'],
+            ['https://drive.proton.black/test', 'https://drive.proton.dev:8888/test'],
+            ['https://drive.env.proton.black/test', 'https://drive.proton.dev:8888/test'],
+            ['https://drive-api.proton.black/test', 'https://drive-api.proton.dev:8888/test'],
+            ['https://drive-api.env.proton.black/test', 'https://drive-api.proton.dev:8888/test'],
         ].forEach((item) => {
             const input = item[0];
             const output = item[1];
