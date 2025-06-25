@@ -213,7 +213,7 @@ export const isURLProtonInternal = (url: string, hostname: string) => {
     const currentDomain = getSecondLevelDomain(hostname);
     const targetOriginHostname = getHostname(url);
 
-    // Still need to check the current domain otherwise it would not work on proton.local, localhost, etc...
+    // Still need to check the current domain otherwise it would not work on proton.dev, localhost, etc...
     return [
         currentDomain,
         'proton.me',

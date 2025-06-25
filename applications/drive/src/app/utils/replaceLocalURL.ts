@@ -1,10 +1,11 @@
+import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
+
 /**
  * Replaces the origin to match the current origin, if running using `local-sso`.
  */
-
 export const replaceLocalURL = (href: string) => {
     // Ignore if not in local-sso
-    if (!window.location.hostname.endsWith('proton.local')) {
+    if (!window.location.hostname.endsWith(PROTON_LOCAL_DOMAIN)) {
         return href;
     }
 

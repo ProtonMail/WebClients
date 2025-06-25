@@ -1,8 +1,7 @@
+import postcss from 'postcss';
 import logical from 'postcss-logical';
 import type { Compiler } from 'webpack';
 import { sources } from 'webpack';
-
-import postcss from 'postcss';
 
 export default class PostCssLogicalWebpackPlugin {
     apply(compiler: Compiler) {
@@ -19,10 +18,29 @@ export default class PostCssLogicalWebpackPlugin {
                     await Promise.all(
                         Object.entries(assets)
                             .filter(([path]) => {
-                                const targetOrigin = 'https://proton.local';
+                                /*
+                                 * URL Origin Detection Technique:
+                                 *
+                                 * We use a dummy origin to detect whether a CSS file path is relative or absolute.
+                                 * When we construct new URL(path, targetOrigin):
+                                 *
+                                 * - If `path` is relative (e.g., "styles/main.css"):
+                                 *   → Results in "https://same-origin-test.com/styles/main.css"
+                                 *   → url.origin === targetOrigin (same origin) ✅
+                                 *
+                                 * - If `path` is absolute (e.g., "https://cdn.example.com/external.css"):
+                                 *   → Results in "https://cdn.example.com/external.css" (base URL ignored)
+                                 *   → url.origin !== targetOrigin (different origin) ❌
+                                 *
+                                 * This approach is more robust than simple string checking and handles
+                                 * edge cases properly using the browser's URL parsing logic.
+                                 */
+                                const targetOrigin = `https://same-origin-test.com`;
                                 const url = new URL(path, targetOrigin);
+                                const isRelativePath = url.origin === targetOrigin;
+
                                 return (
-                                    url.origin === targetOrigin &&
+                                    isRelativePath &&
                                     url.pathname.endsWith('.css') &&
                                     !url.pathname.endsWith('.ltr.css')
                                 );
