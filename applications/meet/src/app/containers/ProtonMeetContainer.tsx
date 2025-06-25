@@ -3,10 +3,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { RoomContext } from '@livekit/components-react';
 import { Room } from 'livekit-client';
 
+import { PasswordPrompt } from '../components/PasswordPrompt/PasswordPrompt';
 import { useMeetingSetup } from '../hooks/srp/useMeetingSetup';
 import { useParticipantNameMap } from '../hooks/useParticipantNameMap';
 import { useQualityLevel } from '../hooks/useQualityLevel';
 import { qualityConstants } from '../qualityConstants';
+import { CustomPasswordState } from '../response-types';
 import { LoadingState, type ParticipantSettings, QualityScenarios } from '../types';
 import { getE2EEOptions } from '../utils/getE2EEOptions';
 import { MeetContainer } from './MeetContainer';
@@ -14,12 +16,23 @@ import { PrejoinContainer } from './PrejoinContainer';
 
 const ROOM_KEY = process.env.LIVEKIT_ROOM_KEY as string;
 
+enum MeetingDecryptionReadinessStatus {
+    UNINITIALIZED = 'uninitialized',
+    INITIALIZED = 'initialized',
+    READY_TO_DECRYPT = 'readyToDecrypt',
+}
+
 interface ProtonMeetContainerProps {
     guestMode?: boolean;
 }
 
 export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerProps) => {
-    const { getRoomName, getAcccessDetails, token, urlPassword } = useMeetingSetup();
+    const [customPassword, setCustomPassword] = useState('');
+
+    const [decryptionReadinessStatus, setDecryptionReadinessStatus] = useState(
+        MeetingDecryptionReadinessStatus.UNINITIALIZED
+    );
+    const { getRoomName, getAcccessDetails, getHandshakeInfo, token, urlPassword } = useMeetingSetup();
 
     const roomRef = useRef<Room | null>(null);
 
@@ -62,7 +75,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                     participantSettings?.displayName as string
                 );
 
-                await room.connect(websocketUrl.replace('/rtc', ''), accessToken);
+                await room.connect(websocketUrl, accessToken);
 
                 await getParticipants();
 
@@ -89,18 +102,49 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     }, []);
 
     const handleRoomNameFetch = useCallback(async () => {
-        const roomName = await getRoomName();
+        const roomName = await getRoomName(customPassword);
+
         setRoomName(roomName);
-    }, [getRoomName]);
+    }, [getRoomName, customPassword]);
 
     const shareLink = `${window.location.origin}/join/${token}#${urlPassword}`;
 
+    const handleHandsakeInfoFetch = useCallback(async () => {
+        const customPasswordConfig = await getHandshakeInfo();
+
+        if (customPasswordConfig === CustomPasswordState.PASSWORD_SET) {
+            setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.INITIALIZED);
+
+            return;
+        }
+
+        setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
+    }, [getHandshakeInfo]);
+
     useEffect(() => {
-        void handleRoomNameFetch();
-    }, [handleRoomNameFetch]);
+        void handleHandsakeInfoFetch();
+    }, []);
+
+    useEffect(() => {
+        if (decryptionReadinessStatus === MeetingDecryptionReadinessStatus.READY_TO_DECRYPT) {
+            void handleRoomNameFetch();
+        }
+    }, [handleRoomNameFetch, decryptionReadinessStatus]);
+
+    if (decryptionReadinessStatus === MeetingDecryptionReadinessStatus.UNINITIALIZED) {
+        return null;
+    }
 
     return (
         <div className="h-full w-full">
+            {decryptionReadinessStatus === MeetingDecryptionReadinessStatus.INITIALIZED && (
+                <PasswordPrompt
+                    onPasswordSubmit={(password) => {
+                        setCustomPassword(password);
+                        setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
+                    }}
+                />
+            )}
             {joinedRoom && roomRef.current && participantSettings ? (
                 <RoomContext.Provider value={roomRef.current}>
                     <MeetContainer

@@ -60,7 +60,6 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
 
             timeoutRef.current = setTimeout(handleFetch, timeout);
         } else {
-            isFetchingRef.current = true;
             await handleFetch();
         }
     }, [handleFetch]);
