@@ -6,7 +6,7 @@ import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import type { EOUrlParams } from '../../../helpers/eo/eoUrl';
 import { useLoadEOEmbeddedImages, useLoadEORemoteImages } from '../../../hooks/eo/useLoadEOImages';
 import { useLoadEOMessage } from '../../../hooks/eo/useLoadEOMessage';
-import MessageFooter from '../../message/MessageFooter';
+import MessageFooter from '../../message/extrasFooter/MessageFooter';
 import EORedirect from '../EORedirect';
 import EOHeaderExpanded from './EOHeaderExpanded';
 import EOMessageBody from './EOMessageBody';
