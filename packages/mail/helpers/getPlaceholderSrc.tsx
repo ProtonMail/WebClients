@@ -1,4 +1,4 @@
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import conversationFullSvgDark from '@proton/styles/assets/img/placeholders/inbox-cool-dark.svg';
 import conversationFullSvgLight from '@proton/styles/assets/img/placeholders/inbox-cool-light.svg';
 import conversationEmptySvgDark from '@proton/styles/assets/img/placeholders/inbox-empty-cool-dark.svg';

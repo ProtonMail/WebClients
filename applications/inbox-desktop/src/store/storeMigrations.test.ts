@@ -1,4 +1,4 @@
-import { ThemeModeSetting, ThemeSetting, ThemeTypes } from "@proton/shared/lib/themes/themes";
+import { ThemeModeSetting, ThemeSetting } from "@proton/shared/lib/themes/themes";
 import { getSettings, updateSettings } from "../store/settingsStore";
 import { performStoreMigrations } from "./storeMigrations";
 

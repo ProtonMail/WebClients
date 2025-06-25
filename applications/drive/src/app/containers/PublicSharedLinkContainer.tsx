@@ -11,7 +11,7 @@ import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';

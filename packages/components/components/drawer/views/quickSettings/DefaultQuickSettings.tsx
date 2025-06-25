@@ -11,7 +11,8 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
+import { ThemeModeSetting } from '@proton/shared/lib/themes/constants';
+import { PROTON_THEMES_MAP, getThemes } from '@proton/shared/lib/themes/themes';
 
 import ThemeCards from '../../../../containers/themes/ThemeCards';
 import { useTheme } from '../../../../containers/themes/ThemeProvider';

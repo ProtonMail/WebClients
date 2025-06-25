@@ -1,6 +1,15 @@
 import { c } from 'ttag';
 
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
+import {
+    ColorScheme,
+    MotionModeSetting,
+    ThemeFeatureSetting,
+    ThemeFontFaceSetting,
+    ThemeFontSizeSetting,
+    ThemeModeSetting,
+    ThemeTypes,
+} from '@proton/shared/lib/themes/constants';
 
 import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
 import { isElectronApp } from '../helpers/desktop';
@@ -34,24 +43,6 @@ import storefrontTheme from '@proton/colors/themes/dist/storefront.theme.css';
 import walletDarkTheme from '@proton/colors/themes/dist/wallet-dark.theme.css';
 // @ts-ignore
 import walletLightTheme from '@proton/colors/themes/dist/wallet-light.theme.css';
-
-// Update the allowed values in the settings heartbeat
-export enum ThemeTypes {
-    Duotone = 0,
-    Carbon = 1,
-    Snow = 2,
-    Monokai = 3,
-    ContrastLight = 4,
-    Legacy = 5,
-    Classic = 6,
-    ContrastDark = 7,
-    PassDark = 8,
-    Storefront = 9,
-    WalletLight = 10,
-    StorefrontWallet = 11,
-    PassLight = 12,
-    WalletDark = 13,
-}
 
 export const DESKTOP_THEME_TYPES = {
     Carbon: ThemeTypes.Carbon,
@@ -292,30 +283,6 @@ export const getPassThemes = () => {
     return [ThemeTypes.PassDark, ThemeTypes.PassLight].map((id) => PROTON_THEMES_MAP[id]);
 };
 
-export enum ThemeModeSetting {
-    Auto,
-    Dark,
-    Light,
-}
-
-export enum ColorScheme {
-    Dark,
-    Light,
-}
-
-export enum MotionModeSetting {
-    No_preference,
-    Reduce,
-}
-
-export enum ThemeFontSizeSetting {
-    DEFAULT = 0,
-    X_SMALL,
-    SMALL,
-    LARGE,
-    X_LARGE,
-}
-
 interface ThemeFontSizeSettingValue {
     label: () => string;
     value: number;
@@ -351,14 +318,6 @@ export const getThemeFontSizeEntries = () => {
         })
         .sort((a, b) => a[1].value - b[1].value);
 };
-
-export enum ThemeFontFaceSetting {
-    DEFAULT,
-    SYSTEM,
-    ARIAL,
-    TIMES,
-    DYSLEXIC,
-}
 
 interface ThemeFontFaceSettingValue {
     label: () => string;
@@ -409,12 +368,6 @@ export const getThemeFontFaceEntries = () => {
         }
     );
 };
-
-export enum ThemeFeatureSetting {
-    DEFAULT,
-    SCROLLBARS_OFF,
-    ANIMATIONS_OFF,
-}
 
 export interface ThemeSetting {
     Mode: ThemeModeSetting;

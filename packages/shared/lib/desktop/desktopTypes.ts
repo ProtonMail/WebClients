@@ -2,8 +2,9 @@ import { z } from 'zod';
 
 import type { HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson } from '@proton/metrics/types/desktop_inbox_heartbeat_total_v1.schema';
 import type { Environment } from '@proton/shared/lib/interfaces';
+import type { ColorScheme } from '@proton/shared/lib/themes/constants';
 
-import type { ColorScheme, ThemeSetting } from '../themes/themes';
+import type { ThemeSetting } from '../themes/themes';
 import { type DailyStatsStored, zDailyStatsReport } from './DailyStats';
 import { type DefaultProtocol, zDefaultProtocol } from './DefaultProtocol';
 import type { AppVersion, DesktopVersion } from './DesktopVersion';
