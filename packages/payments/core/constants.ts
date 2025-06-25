@@ -19,6 +19,7 @@ export enum PAYMENT_METHOD_TYPES {
     CHARGEBEE_CARD = 'chargebee-card',
     CHARGEBEE_PAYPAL = 'chargebee-paypal',
     CHARGEBEE_SEPA_DIRECT_DEBIT = 'sepa-direct-debit',
+    APPLE_PAY = 'apple-pay',
 }
 export const signupFlows: readonly PaymentMethodFlows[] = Object.freeze([
     'signup',
@@ -366,6 +367,7 @@ export const MAX_BITCOIN_AMOUNT = MAX_CREDIT_AMOUNT;
 export const MIN_PAYPAL_AMOUNT_INHOUSE = 499;
 export const MIN_PAYPAL_AMOUNT_CHARGEBEE = 100;
 export const MAX_PAYPAL_AMOUNT = 99999900;
+export const MIN_APPLE_PAY_AMOUNT = 100;
 
 export const FREE_SUBSCRIPTION = {
     isFreeSubscription: true,
