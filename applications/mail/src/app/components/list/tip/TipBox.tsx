@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import type { CustomNotificationProps } from '@proton/components';
-import { Icon, NotificationButton, useNotifications } from '@proton/components'
 import { Tooltip } from '@proton/atoms';
+import type { CustomNotificationProps } from '@proton/components';
+import { Icon, NotificationButton, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 
 import useGetRandomTip from 'proton-mail/components/list/tip/useGetRandomTip';
