@@ -1416,6 +1416,11 @@ const Step1 = ({
                             right={!hasPlanSelector ? currencySelector : null}
                         />
                         <BoxContent>
+                            {signupParameters.trial && (
+                                <div className="mb-4 text-sm color-weak">
+                                    {c('b2b_trials_2025_Info').t`During the trial period, you can have up to 10 users.`}
+                                </div>
+                            )}
                             <AccountStepPayment
                                 selectedPlan={selectedPlan}
                                 measure={measure}

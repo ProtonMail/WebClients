@@ -691,7 +691,6 @@ const SingleSignupContainer = ({
                             setModel={setModel}
                             measure={measure}
                             currencyUrlParam={signupParameters.currency}
-                            toApp={toApp}
                             onComplete={async (data) => {
                                 const { accountData, subscriptionData } = data;
                                 const accountType =
@@ -747,6 +746,7 @@ const SingleSignupContainer = ({
                             onCurrencyChange={updatePlans}
                             hideFreePlan={signupParameters.hideFreePlan}
                             upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
+                            trial={signupParameters.trial}
                             toAppName={toAppName}
                         />
                     ) : (
@@ -765,7 +765,6 @@ const SingleSignupContainer = ({
                             measure={measure}
                             currencyUrlParam={signupParameters.currency}
                             trial={signupParameters.trial}
-                            toApp={toApp}
                             onComplete={async (data) => {
                                 const { accountData, subscriptionData } = data;
                                 const accountType =
