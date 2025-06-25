@@ -1,3 +1,5 @@
+import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
+
 export const INPUT_BASE_STYLES_ATTR = `data-protonpass-base-css`;
 
 export const ICON_MAX_HEIGHT = 28;
@@ -34,5 +36,5 @@ export const EMAIL_PROVIDERS = [
     'protonvpn.com',
     'proton.black',
     'proton.pink',
-    'proton.local',
+    PROTON_LOCAL_DOMAIN,
 ];

@@ -15,7 +15,7 @@ describe('SquashingConstants', () => {
   }
 
   it('should return 100 if local or black', () => {
-    setHost('docs.proton.local')
+    setHost('docs.proton.dev')
 
     expect(GetCommitDULimit()).toBe(100)
 

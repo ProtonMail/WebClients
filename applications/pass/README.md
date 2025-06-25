@@ -15,11 +15,11 @@
 3. Host configuration: The first run should add these entries to your `/etc/hosts` file:
 
     ```
-    127.0.0.1 pass.proton.local
-    127.0.0.1 pass-api.proton.local
+    127.0.0.1 pass.proton.dev
+    127.0.0.1 pass-api.proton.dev
     ```
 
-4. You can now access the web app at https://pass.proton.local using local SSO
+4. You can now access the web app at https://pass.proton.dev using local SSO
 
 ### Troubleshooting
 
@@ -35,7 +35,7 @@ rm -rf applications/pass/node_modules/.cache
 
 If still not seeing your changes, check if haproxy is serving staging instead of local:
 
-1. Visit https://pass.proton.local/assets/version.json to verify it points to your branch/commit
+1. Visit https://pass.proton.dev/assets/version.json to verify it points to your branch/commit
 2. If not showing your local version:
     - Clean-up your `/etc/hosts` file
     - Remove all .pem files in `utilities/local-sso`
