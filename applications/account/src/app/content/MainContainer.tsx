@@ -46,6 +46,7 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -183,6 +184,8 @@ const MainContainer = () => {
 
     const { isB2B: isB2BDrive } = useDrivePlan();
 
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
+
     const routes = getRoutes({
         app,
         user,
@@ -213,6 +216,7 @@ const MainContainer = () => {
         isSharedServerFeatureEnabled,
         isCalendarHotkeysEnabled,
         isPasswordPolicyEnabled,
+        isB2BTrial,
     });
 
     useEffect(() => {

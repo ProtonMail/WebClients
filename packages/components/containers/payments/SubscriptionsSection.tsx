@@ -70,17 +70,17 @@ const SubscriptionRow = ({ subscription, plansMap }: SubscriptionRowProps) => {
     const isB2BTrial = useIsB2BTrial(subscription, organization);
 
     const status = useMemo(() => {
-        if (isB2BTrial) {
-            return {
-                type: 'success' as BadgeType,
-                label: c('Subscription status').t`Free Trial`,
-            };
-        }
-
         if (subscriptionExpiresSoon) {
             return {
                 type: 'error' as BadgeType,
                 label: c('Subscription status').t`Expiring`,
+            };
+        }
+
+        if (isB2BTrial) {
+            return {
+                type: 'success' as BadgeType,
+                label: c('Subscription status').t`Free Trial`,
             };
         }
 
