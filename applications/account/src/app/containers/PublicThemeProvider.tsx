@@ -5,7 +5,7 @@ import type { Breakpoints } from '@proton/components';
 import { getHas2024OfferCoupon } from '@proton/payments';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import type { SignupParameters2 } from '../single-signup-v2/interface';
 

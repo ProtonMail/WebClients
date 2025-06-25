@@ -1,7 +1,7 @@
 import { differenceInDays } from 'date-fns';
 
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { ThemeModeSetting } from '@proton/shared/lib/themes/themes';
+import { ThemeModeSetting } from '@proton/shared/lib/themes/constants';
 
 export const formatBooleanForHeartbeat = (setting: boolean | number | undefined) => {
     if (setting === undefined) {

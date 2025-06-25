@@ -5,7 +5,7 @@ import { ONBOARDING_THEMES } from '@proton/components/containers/onboarding/cons
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import { Container } from '../Container';
 import { ThemePicker } from '../ThemePicker';

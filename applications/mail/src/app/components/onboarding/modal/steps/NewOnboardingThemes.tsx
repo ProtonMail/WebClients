@@ -11,7 +11,7 @@ import {
 import { getThemeCardSize } from '@proton/components/containers/themes/ThemeCards';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import clsx from '@proton/utils/clsx';
 
 import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
