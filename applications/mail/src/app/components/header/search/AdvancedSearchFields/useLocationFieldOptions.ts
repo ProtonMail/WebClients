@@ -120,9 +120,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
         buildFolderOption(folderMap, INBOX),
         buildFolderOption(folderMap, SNOOZED),
         buildFolderOption(folderMap, DRAFT_TYPE),
-        ...(canScheduleSend
-            ? [buildFolderOption(folderMap, SCHEDULED)]
-            : []),
+        ...(canScheduleSend ? [buildFolderOption(folderMap, SCHEDULED)] : []),
         buildFolderOption(folderMap, SENT_TYPE),
         buildFolderOption(folderMap, STARRED),
         buildFolderOption(folderMap, ARCHIVE),

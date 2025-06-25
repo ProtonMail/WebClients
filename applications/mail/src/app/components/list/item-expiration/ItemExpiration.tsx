@@ -1,6 +1,6 @@
-import type { IconName } from '@proton/components';
-import { Icon } from '@proton/components'
 import { Tooltip } from '@proton/atoms';
+import type { IconName } from '@proton/components';
+import { Icon } from '@proton/components';
 import { isFrozenExpiration } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
