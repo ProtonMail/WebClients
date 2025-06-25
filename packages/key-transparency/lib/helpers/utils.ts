@@ -144,8 +144,8 @@ export const getBaseDomain = (sendReport: boolean = true) => {
                     // {env}.proton.black -> {env} + DEV_POSTFIX
                     return domainParts[domainParts.length - 3] + KT_DOMAINS.DEV_POSTFIX;
                 }
-            case 'local':
-                // proton.local -> ATLAS_DEV
+            case 'dev':
+                // proton.dev -> ATLAS_DEV
                 return KT_DOMAINS.ATLAS_DEV;
         }
     }
