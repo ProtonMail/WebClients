@@ -17,28 +17,23 @@ export type ContextMenuItem = {
     action?: () => void;
 };
 
-export type ContextMenuSeparator = {
-    type: 'separator';
-};
-
+export type ContextMenuSeparator = { type: 'separator' };
 export type ContextMenuElement = ContextMenuItem | ContextMenuSeparator;
 
-type Props = {
-    elements: ContextMenuElement[];
-};
+type Props = { elements: ContextMenuElement[] };
 
 export const ContextMenuContent: FC<Props> = ({ elements }) => {
     const close = useContextMenuClose();
     const copyToClipboard = useCopyToClipboard();
 
-    const handleAction = async (element: ContextMenuItem) => {
-        if (element.action) {
-            element.action();
-        }
+    const handleAction = (element: ContextMenuItem) => {
+        element.action?.();
+
         if (element.copy) {
             const value = typeof element.copy === 'string' ? element.copy : deobfuscate(element.copy);
-            await copyToClipboard(value);
+            void copyToClipboard(value);
         }
+
         close();
     };
 
@@ -55,3 +50,5 @@ export const ContextMenuContent: FC<Props> = ({ elements }) => {
         )
     );
 };
+
+export const CONTEXT_MENU_SEPARATOR: ContextMenuElement = { type: 'separator' };
