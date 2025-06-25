@@ -41,6 +41,10 @@ const TestComponent = () => {
                 onCardVeririfcationSuccess: jest.fn(),
                 onCardVeririfcationFailure: jest.fn(),
                 onUnhandledError: jest.fn(),
+                onApplePayAuthorized: jest.fn(),
+                onApplePayFailure: jest.fn(),
+                onApplePayClicked: jest.fn(),
+                onApplePayCancelled: jest.fn(),
             },
             handles: {
                 submitDirectDebit: jest.fn(),
@@ -228,6 +232,10 @@ describe('SepaDirectDebit', () => {
                         onCardVeririfcationSuccess: jest.fn(),
                         onCardVeririfcationFailure: jest.fn(),
                         onUnhandledError: jest.fn(),
+                        onApplePayAuthorized: jest.fn(),
+                        onApplePayFailure: jest.fn(),
+                        onApplePayClicked: jest.fn(),
+                        onApplePayCancelled: jest.fn(),
                     },
                     handles: {
                         submitDirectDebit: jest.fn(),

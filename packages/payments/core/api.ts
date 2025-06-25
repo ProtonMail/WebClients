@@ -2,10 +2,10 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getProductHeaders } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import { DEFAULT_TAX_BILLING_ADDRESS } from './billing-address';
 import type { BillingAddress, BillingAddressProperty } from './billing-address';
-import { PAYMENT_METHOD_TYPES, PLANS } from './constants';
+import { DEFAULT_TAX_BILLING_ADDRESS } from './billing-address';
 import type { Autopay, INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE, PAYMENT_TOKEN_STATUS } from './constants';
+import { PAYMENT_METHOD_TYPES, PLANS } from './constants';
 import type {
     AmountAndCurrency,
     ChargeablePaymentParameters,
@@ -22,9 +22,9 @@ import type {
     WrappedCryptoPayment,
     WrappedPaypalPayment,
 } from './interface';
+import { formatPaymentMethods } from './methods';
 import { getPlanNameFromIDs, isLifetimePlanSelected } from './plan/helpers';
 import type { FreePlanDefault } from './plan/interface';
-import { formatPaymentMethods } from './sepa';
 import type { Renew } from './subscription/constants';
 import { FREE_PLAN } from './subscription/freePlans';
 import type { Subscription } from './subscription/interface';
@@ -470,11 +470,18 @@ export type CreatePaymentIntentDirectDebitData = AmountAndCurrency & {
     };
 };
 
+export type CreatePaymentIntentApplePayData = AmountAndCurrency & {
+    Payment: {
+        Type: PAYMENT_METHOD_TYPES.APPLE_PAY;
+    };
+};
+
 export type CreatePaymentIntentData =
     | CreatePaymentIntentPaypalData
     | CreatePaymentIntentCardData
     | CreatePaymentIntentSavedCardData
-    | CreatePaymentIntentDirectDebitData;
+    | CreatePaymentIntentDirectDebitData
+    | CreatePaymentIntentApplePayData;
 
 export const createPaymentIntentV5 = (data: CreatePaymentIntentData) => ({
     url: `payments/v5/tokens`,
@@ -488,16 +495,16 @@ export type BackendPaymentIntent = {
     Amount: number;
     GatewayAccountID: string;
     ExpiresAt: number;
-    PaymentMethodType: 'card' | 'paypal';
+    PaymentMethodType: 'card' | 'paypal' | 'apple_pay';
     CreatedAt: number;
     ModifiedAt: number;
     UpdatedAt: number;
     ResourceVersion: number;
     Object: 'payment_intent';
-    CustomerID: string;
+    CustomerID: string | null;
     CurrencyCode: Currency;
     Gateway: string;
-    ReferenceID: string;
+    ReferenceID: string | null;
     Email?: string;
 };
 
