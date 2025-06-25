@@ -9,6 +9,7 @@ import type {
 import { AbortError } from '@proton/drive-sdk';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 
 import { withTimeout } from './withTimeout';
 
@@ -144,10 +145,10 @@ async function postXmlHttpRequest(options: ProtonDriveHTTPClientBlobOptions) {
  * Replaces the origin to match the current origin if running using `local-sso`.
  *
  * This is a workaround as API returns `drive-api.ENV.proton.black` URLs, while
- * the app running locally with SSO requires `drive-api.proton.local` URLs.
+ * the app running locally with SSO requires `drive-api.proton.dev` URLs.
  */
 function replaceLocalURL(href: string) {
-    if (!window.location.hostname.endsWith('proton.local')) {
+    if (!window.location.hostname.endsWith(PROTON_LOCAL_DOMAIN)) {
         return href;
     }
 
