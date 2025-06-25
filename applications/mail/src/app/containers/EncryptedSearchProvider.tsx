@@ -1,5 +1,4 @@
-import type { ReactNode } from 'react';
-import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { type ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
