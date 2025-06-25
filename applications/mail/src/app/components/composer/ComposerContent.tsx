@@ -12,8 +12,8 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import AttachmentList, { AttachmentAction } from '../../components/message/extrasFooter/attachment/AttachmentList';
 import type { PendingUpload } from '../../hooks/composer/useAttachments';
-import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
 import type { MessageChange } from './Composer';
 import type { ExternalEditorActions } from './editor/EditorWrapper';
 import EditorWrapper from './editor/EditorWrapper';

@@ -8,9 +8,10 @@ import type { PublicKeyReference } from '@proton/crypto';
 import type { MessageKeys, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 
+import AttachmentsButton from 'proton-mail/components/message/extrasFooter/attachment/AttachmentsButton';
+
 import { EO_MAX_REPLIES_NUMBER, EO_MESSAGE_REDIRECT_PATH } from '../../../constants';
 import { useSendEO } from '../../../hooks/eo/useSendEO';
-import AttachmentsButton from '../../attachment/AttachmentsButton';
 
 interface Props {
     id: string;
