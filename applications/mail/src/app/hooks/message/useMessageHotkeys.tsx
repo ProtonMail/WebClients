@@ -20,7 +20,7 @@ import {
     MESSAGE_FILTER_DROPDOWN_ID,
     MESSAGE_FOLDER_DROPDOWN_ID,
     MESSAGE_LABEL_DROPDOWN_ID,
-} from 'proton-mail/components/message/header/constants';
+} from 'proton-mail/components/message/extrasHeader/constants';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
