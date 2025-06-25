@@ -7,7 +7,7 @@ import type { MeetChatMessage, ParticipantEventRecord } from '../types';
 import { PopUpControls } from '../types';
 import { MeetingSideBars } from '../types';
 
-interface MeetContextValues {
+export interface MeetContextValues {
     page: number;
     quality: VideoQuality;
     setPage: React.Dispatch<React.SetStateAction<number>>;

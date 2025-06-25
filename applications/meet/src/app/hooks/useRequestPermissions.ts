@@ -1,5 +1,7 @@
 import { useCallback } from 'react';
 
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
+
 export const useRequestPermissions = () => {
     const requestPermissions = useCallback(async () => {
         // Helper to check permission state
@@ -16,13 +18,14 @@ export const useRequestPermissions = () => {
         };
 
         const cameraState = await checkPermission('camera' as PermissionName);
-        if (cameraState !== 'granted') {
+
+        if (cameraState !== 'granted' || isFirefox()) {
             const videoStream = await navigator.mediaDevices.getUserMedia({ video: true });
             videoStream.getTracks().forEach((track) => track.stop());
         }
 
         const micState = await checkPermission('microphone' as PermissionName);
-        if (micState !== 'granted') {
+        if (micState !== 'granted' || isFirefox()) {
             const audioStream = await navigator.mediaDevices.getUserMedia({ audio: true });
             audioStream.getTracks().forEach((track) => track.stop());
         }

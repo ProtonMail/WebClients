@@ -66,3 +66,39 @@ vi.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
 vi.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
+
+vi.mock('@proton/components/components/input/TelInput', () => ({
+    __esModule: true,
+    default: () => null,
+}));
+
+vi.mock('@proton/components/components/modal/PreviewPDFModal', () => ({
+    __esModule: true,
+    default: () => null,
+}));
+
+vi.mock('@proton/components/components/v2/phone/flagSvgs', () => ({
+    __esModule: true,
+    getFlagSvg: () => null,
+}));
+
+vi.mock('@proton/components/containers/vpn/flag', () => ({
+    __esModule: true,
+    flags: {},
+    flagsMap: {},
+}));
+
+vi.mock('@proton/components/containers/vpn/OpenVPNConfigurationSection/LoadIndicator', () => ({
+    __esModule: true,
+    default: () => null,
+}));
+
+vi.mock('@proton/components/containers/vpn/ProtonVPNCredentialsSection/ProtonVPNCredentialsSection', () => ({
+    __esModule: true,
+    default: () => null,
+}));
+
+vi.mock('@proton/components/containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection', () => ({
+    __esModule: true,
+    default: () => null,
+}));

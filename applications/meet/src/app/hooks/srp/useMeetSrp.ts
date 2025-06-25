@@ -1,13 +1,12 @@
+import { c } from 'ttag';
+
 import { useApi, useAuthentication } from '@proton/components';
 import { getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { srpAuth } from '@proton/shared/lib/srp';
 import type { AuthVersion } from '@proton/srp/lib/interface';
 
-export const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
-
-const removeTrailingSlash = (meetingLinkName: string) => {
-    return meetingLinkName.at(-1) === '/' ? meetingLinkName.slice(0, -1) : meetingLinkName;
-};
+import type { AccessTokenResponse, MeetingInfoResponse } from '../../response-types';
+import { removeTrailingSlash } from '../../utils/remove-trailing-slash';
 
 export const queryInitSRPHandshake = (meetingLinkName: string) => {
     return {
@@ -48,6 +47,7 @@ export interface SRPHandshakeInfo {
     Salt: string;
     SRPSession: string;
     Version: AuthVersion;
+    CustomPassword: MeetingInfoResponse['MeetingInfo']['CustomPassword'];
 }
 
 export const useMeetSrp = () => {
@@ -55,11 +55,13 @@ export const useMeetSrp = () => {
     const auth = useAuthentication();
 
     const initHandshake = async (token: string) => {
-        return api<SRPHandshakeInfo>(queryInitSRPHandshake(token)).then((handshakeInfo) => {
-            return {
-                handshakeInfo,
-            };
-        });
+        try {
+            const response = await api<SRPHandshakeInfo>(queryInitSRPHandshake(token));
+
+            return response;
+        } catch (error) {
+            throw new Error(c('l10n_nightly Error').t`Failed to initialize handshake`);
+        }
     };
 
     const getSessionToken = async (
@@ -91,11 +93,13 @@ export const useMeetSrp = () => {
     };
 
     const getMeetingInfo = async (meetingLinkName: string) => {
-        const response = await api<{ MeetingInfo: { Salt: string; SessionKey: string; MeetingName: string } }>(
-            queryMeetingInfo(meetingLinkName)
-        );
+        try {
+            const response = await api<MeetingInfoResponse>(queryMeetingInfo(meetingLinkName));
 
-        return response;
+            return response;
+        } catch (error) {
+            throw new Error(c('l10n_nightly Error').t`Failed to get meeting info`);
+        }
     };
 
     const getAccessToken = async (meetingLinkName: string, displayName: string) => {
@@ -105,15 +109,15 @@ export const useMeetSrp = () => {
         };
 
         try {
-            const response = await api({
+            const { AccessToken, WebsocketUrl } = await api<AccessTokenResponse>({
                 ...queryAccessToken(meetingLinkName),
                 data: {
                     DisplayName: displayName,
                 },
             });
 
-            result.AccessToken = response.AccessToken;
-            result.WebsocketUrl = response.WebsocketUrl;
+            result.AccessToken = AccessToken;
+            result.WebsocketUrl = WebsocketUrl;
         } catch (error) {
             console.error(error);
         }

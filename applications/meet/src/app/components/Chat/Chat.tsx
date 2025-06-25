@@ -24,8 +24,6 @@ export const Chat = () => {
     const [isSearchOn, setIsSearchOn] = useState(false);
     const [searchExpression, setSearchExpression] = useState('');
 
-    const [message, setMessage] = useState('');
-
     const { sideBarState, roomName, setChatMessages } = useMeetContext();
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
@@ -138,7 +136,7 @@ export const Chat = () => {
                     />
                 ))}
             </div>
-            <ChatMessage message={message} onMessageChange={setMessage} onMessageSend={sendMessage} />
+            <ChatMessage onMessageSend={sendMessage} />
         </SideBar>
     );
 };

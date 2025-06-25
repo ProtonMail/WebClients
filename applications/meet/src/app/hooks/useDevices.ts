@@ -20,12 +20,13 @@ export const useDevices = () => {
         setSpeakers(await getDevices('audiooutput'));
     };
 
-    useEffect(() => {
-        void requestPermissions();
-    }, []);
+    const setup = async () => {
+        await requestPermissions();
+        await updateAllDevices();
+    };
 
     useEffect(() => {
-        void updateAllDevices();
+        void setup();
     }, []);
 
     useEffect(() => {

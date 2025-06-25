@@ -74,3 +74,12 @@ export interface ParticipantEntity {
     IsAdmin: ParticipantCapabilityPermission;
     IsHost: ParticipantCapabilityPermission;
 }
+
+export interface MeetingDetails {
+    meetingId: string;
+    meetingName: string;
+    date: string;
+    time: string;
+    meetingLink: string;
+    duration: string;
+}

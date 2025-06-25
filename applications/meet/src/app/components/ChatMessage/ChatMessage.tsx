@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,12 +10,12 @@ import clsx from '@proton/utils/clsx';
 import './ChatMessage.scss';
 
 interface ChatMessageProps {
-    message: string;
-    onMessageChange: (message: string) => void;
     onMessageSend: (message: string) => void;
 }
 
-export const ChatMessage = ({ message, onMessageChange, onMessageSend }: ChatMessageProps) => {
+export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
+    const [message, setMessage] = useState('');
+
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
     useLayoutEffect(() => {
@@ -38,10 +38,10 @@ export const ChatMessage = ({ message, onMessageChange, onMessageSend }: ChatMes
             [
                 'Enter',
                 (e) => {
-                    if (!e.shiftKey) {
+                    if (!e.shiftKey && message.trim() !== '') {
                         e.preventDefault();
                         onMessageSend(message);
-                        onMessageChange('');
+                        setMessage('');
                         textareaRef.current?.focus();
                     }
                 },
@@ -62,7 +62,7 @@ export const ChatMessage = ({ message, onMessageChange, onMessageSend }: ChatMes
                 <InputFieldTwo
                     ref={textareaRef}
                     value={message}
-                    onChange={(e) => onMessageChange(e.target.value)}
+                    onChange={(e) => setMessage(e.target.value)}
                     placeholder={c('l10n_nightly Placeholder').t`Type a message...`}
                     unstyled={true}
                     className={clsx('border-none resize-none relative top-custom px-0', 'hide-scrollbar')}
@@ -82,13 +82,14 @@ export const ChatMessage = ({ message, onMessageChange, onMessageSend }: ChatMes
                     )}
                     onClick={() => {
                         onMessageSend(message);
-                        onMessageChange('');
+                        setMessage('');
                     }}
                     style={{
                         '--w-custom': '2.25rem',
                         '--h-custom': '2.25rem',
                     }}
                     aria-label={c('l10n_nightly Alt').t`Send message`}
+                    disabled={message.trim() === ''}
                 >
                     <IcArrowUp size={5} className="color-invert" />
                 </Button>
