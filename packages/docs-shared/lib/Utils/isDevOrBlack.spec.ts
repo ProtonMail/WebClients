@@ -7,10 +7,10 @@ describe('isDevOrBlack', () => {
   window.location = { host: '' }
 
   it('isDev() should return true for local', () => {
-    window.location.host = 'proton.local'
+    window.location.host = 'proton.dev'
     expect(isLocalEnvironment()).toBe(true)
 
-    window.location.host = 'proton.local:3000'
+    window.location.host = 'proton.dev:3000'
     expect(isLocalEnvironment()).toBe(true)
 
     window.location.host = 'proton.me'
@@ -18,10 +18,10 @@ describe('isDevOrBlack', () => {
   })
 
   it('isDevOrBlack() should return true for local and proton.black', () => {
-    window.location.host = 'proton.local'
+    window.location.host = 'proton.dev'
     expect(isDevOrBlack()).toBe(true)
 
-    window.location.host = 'proton.local:3000'
+    window.location.host = 'proton.dev:3000'
     expect(isDevOrBlack()).toBe(true)
 
     window.location.host = 'proton.black'
