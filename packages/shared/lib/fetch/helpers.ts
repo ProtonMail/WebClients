@@ -4,7 +4,14 @@ const appendQueryParams = (url: URL, params: { [key: string]: any }) => {
         if (typeof value === 'undefined') {
             return;
         }
-        url.searchParams.append(key, value);
+
+        if (Array.isArray(value)) {
+            value.forEach((item) => {
+                url.searchParams.append(`${key}[]`, item);
+            });
+        } else {
+            url.searchParams.append(key, value);
+        }
     });
 };
 

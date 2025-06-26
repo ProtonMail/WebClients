@@ -31,15 +31,16 @@ describe('useAvailableAddresses', () => {
         });
     });
 
-    it('Should return available addresses and filter external addresses', () => {
+    it('Should return available addresses, filter external addresses and keep BYOE addresses', () => {
         const activeAddresses = generateMockAddressArray(2, true);
         const externalAddress = generateMockAddress(3, true, ADDRESS_TYPE.TYPE_EXTERNAL);
-        mockUseAddresses.mockReturnValue([[...activeAddresses, externalAddress], false]);
+        const byoeAddress = generateMockAddress(4, true, ADDRESS_TYPE.TYPE_EXTERNAL, true);
+        mockUseAddresses.mockReturnValue([[...activeAddresses, externalAddress, byoeAddress], false]);
 
         const { result } = renderHook(() => useAvailableAddresses());
-        expect(result.current.availableAddresses).toHaveLength(2);
+        expect(result.current.availableAddresses).toHaveLength(3);
         expect(result.current).toStrictEqual({
-            availableAddresses: activeAddresses,
+            availableAddresses: [...activeAddresses, byoeAddress],
             defaultAddress: activeAddresses[0],
             loading: false,
         });

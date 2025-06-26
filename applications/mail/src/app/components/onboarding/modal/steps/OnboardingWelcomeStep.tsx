@@ -1,26 +1,39 @@
-import { type ReactNode, useMemo } from 'react';
+import { type ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { OnboardingStep, type OnboardingStepRenderCallback, useActiveBreakpoint } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import type { User } from '@proton/shared/lib/interfaces';
+import { getIsBYOEAccount } from '@proton/shared/lib/keys';
 import blockTrackersSvg from '@proton/styles/assets/img/onboarding/mail_onboarding_block_trackers_new.svg';
 import encryptionSvg from '@proton/styles/assets/img/onboarding/mail_onboarding_encryption_new.svg';
+import noAdsSvg from '@proton/styles/assets/img/onboarding/mail_onboarding_no_ads.svg';
 import spamProtectionSvg from '@proton/styles/assets/img/onboarding/mail_onboarding_spam_protection.svg';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
-const getPrivacyFeatures = () => {
+const getPrivacyFeatures = (user: User) => {
+    const isBYOE = getIsBYOEAccount(user);
+
     // translator: full sentence "Advanced encryption ensures only you and intended recipients can access your emails."
     const advancedEncryptionTitle = <b key="advancedEncryptionTitle">{c('Onboarding modal').t`Advanced encryption`}</b>;
     // translator: full sentence "Advanced encryption ensures only you and intended recipients can access your emails."
     const advancedEncryptionRule = c('Onboarding modal')
         .jt`${advancedEncryptionTitle} ensures only you and intended recipients can access your emails.`;
+
+    // translator: full sentence "Add free promise means you'll never see sponsored ads in our apps."
+    const addFreePromiseTitle = <b key="addFreePromiseTitle">{c('Onboarding modal').t`Ad-free promise`}</b>;
+    // translator: full sentence "Add free promise means you'll never see sponsored ads in our apps."
+    const addFreePromiseRule = c('Onboarding modal')
+        .jt`${addFreePromiseTitle} means you'll never see sponsored ads in our apps.`;
 
     // translator: full sentence "Industry-leading spam protection keeps scam emails from ever reaching your inbox."
     const industryLeadingSpamProtectionTitle = (
@@ -39,10 +52,15 @@ const getPrivacyFeatures = () => {
         .jt`${protectionFromTrackersTitle} means no more being followed across the internet.`;
 
     return [
-        {
+        !isBYOE && {
             id: 'advancedEncryption',
             description: advancedEncryptionRule,
             img: encryptionSvg,
+        },
+        isBYOE && {
+            id: 'addFreePromise',
+            description: addFreePromiseRule,
+            img: noAdsSvg,
         },
         {
             id: 'industryLeadingSpamProtection',
@@ -54,7 +72,7 @@ const getPrivacyFeatures = () => {
             description: protectionFromTrackersRule,
             img: blockTrackersSvg,
         },
-    ];
+    ].filter(isTruthy);
 };
 
 export const isOnboardingWelcomeStepEligible: OnboardingStepEligibleCallback = async () => ({
@@ -72,6 +90,8 @@ const PrivacyFeature = ({ description, imgSrc }: { imgSrc: string; description: 
                 style={{ '--w-custom': isSmallViewPort ? '3rem' : '5rem' }}
                 src={imgSrc}
                 alt=""
+                width="80"
+                height="80"
             />
             <div className="flex-1 flex gap-0">
                 <p className="m-0 text-weak">{description}</p>
@@ -82,7 +102,8 @@ const PrivacyFeature = ({ description, imgSrc }: { imgSrc: string; description: 
 
 const OnboardingWelcomeStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const { markItemsAsDone } = useGetStartedChecklist();
-    const privacyFeature = useMemo(getPrivacyFeatures, []);
+    const [user] = useUser();
+    const privacyFeature = getPrivacyFeatures(user);
 
     const handleNext = () => {
         markItemsAsDone('ProtectInbox');

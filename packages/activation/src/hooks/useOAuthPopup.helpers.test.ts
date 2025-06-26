@@ -1,6 +1,17 @@
+import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
+
 import { getScopeFromProvider } from '../components/Modals/OAuth/StepProducts/useStepProducts.helpers';
-import { ImportProvider, ImportType, OAUTH_PROVIDER } from '../interface';
-import { getOAuthAuthorizationUrl, getOAuthRedirectURL, getProviderNumber } from './useOAuthPopup.helpers';
+import { EASY_SWITCH_FEATURES, ImportProvider, ImportType, OAUTH_PROVIDER } from '../interface';
+import {
+    generateGoogleOAuthUrl,
+    getEasySwitchFeaturesFromProducts,
+    getOAuthAuthorizationUrl,
+    getOAuthRedirectURL,
+    getProviderNumber,
+} from './useOAuthPopup.helpers';
+
+const windowHostname = 'https://mail.proton.me';
+const redirectUri = 'https://redirect-uri.com';
 
 describe('OAuth url generation', () => {
     it('Should throw an error when unsupported provider (getProviderNumber)', () => {
@@ -107,7 +118,6 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesContact.join(' '),
             config,
-            loginHint: 'login hint',
             consentExperiment: false,
         });
         expect(outlookHintRedirect).toStrictEqual(
@@ -137,67 +147,87 @@ describe('OAuth url generation', () => {
         );
     });
 
-    it('Should return appropriate Google OAuth URL', () => {
-        const provider = ImportProvider.GOOGLE;
-        const scopesMail = getScopeFromProvider(provider, [ImportType.MAIL]);
-        const config = {
-            'oauth.google.client_id': 'string',
-            'oauth.outlook.client_id': 'string',
-            'oauth.zoom.client_id': 'string',
-        };
-
-        const googleMailsRedirect = getOAuthAuthorizationUrl({
-            provider,
-            scope: scopesMail.join(' '),
-            config,
-            consentExperiment: false,
+    describe('generateGoogleOAuthUrl', () => {
+        beforeEach(() => {
+            mockWindowLocation(windowHostname);
         });
-        expect(googleMailsRedirect).toStrictEqual(
-            'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.readonly&prompt=consent&access_type=offline&client_id=string'
-        );
 
-        const scopesContact = getScopeFromProvider(provider, [ImportType.CONTACTS]);
-        const googleContactsRedirect = getOAuthAuthorizationUrl({
-            provider,
-            scope: scopesContact.join(' '),
-            config,
-            consentExperiment: false,
+        afterEach(() => {
+            resetWindowLocation();
         });
-        expect(googleContactsRedirect).toStrictEqual(
-            'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcontacts.readonly&prompt=consent&access_type=offline&client_id=string'
-        );
 
-        const googleHintRedirect = getOAuthAuthorizationUrl({
-            provider,
-            scope: scopesContact.join(' '),
-            config,
-            loginHint: 'login hint',
-            consentExperiment: false,
-        });
-        expect(googleHintRedirect).toStrictEqual(
-            'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcontacts.readonly&prompt=consent&access_type=offline&client_id=string&login_hint=login+hint'
-        );
+        it('Should return appropriate Google OAuth URL', () => {
+            const googleMailsAuthorizationURL = generateGoogleOAuthUrl({
+                features: [EASY_SWITCH_FEATURES.IMPORT_MAIL],
+                redirectUri,
+            });
+            expect(googleMailsAuthorizationURL).toStrictEqual(
+                `https://mail.proton.me/api/oauth-token/v1/authorization/google?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_MAIL}&redirect_uri=${encodeURIComponent(redirectUri)}`
+            );
 
-        const scopesCalendars = getScopeFromProvider(provider, [ImportType.CALENDAR]);
-        const googleCalendarsRedirect = getOAuthAuthorizationUrl({
-            provider,
-            scope: scopesCalendars.join(' '),
-            config,
-            consentExperiment: false,
-        });
-        expect(googleCalendarsRedirect).toStrictEqual(
-            'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar.readonly&prompt=consent&access_type=offline&client_id=string'
-        );
+            const googleContactsAuthorizationURL = generateGoogleOAuthUrl({
+                features: [EASY_SWITCH_FEATURES.IMPORT_CONTACTS],
+                redirectUri,
+            });
+            expect(googleContactsAuthorizationURL).toStrictEqual(
+                `https://mail.proton.me/api/oauth-token/v1/authorization/google?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CONTACTS}&redirect_uri=${encodeURIComponent(redirectUri)}`
+            );
 
-        const scopesAll = getScopeFromProvider(provider, [ImportType.CALENDAR, ImportType.CONTACTS, ImportType.MAIL]);
-        const googleAllScopes = getOAuthAuthorizationUrl({
-            provider,
-            scope: scopesAll.join(' '),
-            config,
-            consentExperiment: false,
+            const loginHint = 'login hint';
+            const googleHintAuthorizationURL = generateGoogleOAuthUrl({
+                features: [EASY_SWITCH_FEATURES.IMPORT_CONTACTS],
+                redirectUri,
+                loginHint,
+            });
+            expect(googleHintAuthorizationURL).toStrictEqual(
+                `https://mail.proton.me/api/oauth-token/v1/authorization/google?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CONTACTS}&redirect_uri=${encodeURIComponent(redirectUri)}&loginHint=login+hint`
+            );
+
+            const googleCalendarsAuthorizationURL = generateGoogleOAuthUrl({
+                features: [EASY_SWITCH_FEATURES.IMPORT_CALENDAR],
+                redirectUri,
+            });
+            expect(googleCalendarsAuthorizationURL).toStrictEqual(
+                `https://mail.proton.me/api/oauth-token/v1/authorization/google?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CALENDAR}&redirect_uri=${encodeURIComponent(redirectUri)}`
+            );
+
+            const googleAllScopesAuthorizationURL = generateGoogleOAuthUrl({
+                features: [
+                    EASY_SWITCH_FEATURES.IMPORT_MAIL,
+                    EASY_SWITCH_FEATURES.IMPORT_CALENDAR,
+                    EASY_SWITCH_FEATURES.IMPORT_CONTACTS,
+                ],
+                redirectUri,
+            });
+            expect(googleAllScopesAuthorizationURL).toStrictEqual(
+                `https://mail.proton.me/api/oauth-token/v1/authorization/google?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_MAIL}&proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CALENDAR}&proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CONTACTS}&redirect_uri=${encodeURIComponent(redirectUri)}`
+            );
+
+            const BYOESAuthorizationURL = generateGoogleOAuthUrl({
+                features: [EASY_SWITCH_FEATURES.BYOE],
+                redirectUri,
+            });
+            expect(BYOESAuthorizationURL).toStrictEqual(
+                `https://mail.proton.me/api/oauth-token/v1/authorization/google?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.BYOE}&redirect_uri=${encodeURIComponent(redirectUri)}`
+            );
         });
-        expect(googleAllScopes).toStrictEqual(
-            'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.readonly+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar.readonly+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcontacts.readonly&prompt=consent&access_type=offline&client_id=string'
-        );
+    });
+
+    describe('getEasySwitchFeaturesFromProducts', () => {
+        it('should return the expected features from import import types', () => {
+            const productsMail = [ImportType.MAIL];
+            const productsCalendar = [ImportType.CALENDAR];
+            const productsContacts = [ImportType.CONTACTS];
+            const productsAll = [...productsMail, ...productsCalendar, ...productsContacts];
+
+            expect(getEasySwitchFeaturesFromProducts(productsMail)).toEqual([EASY_SWITCH_FEATURES.IMPORT_MAIL]);
+            expect(getEasySwitchFeaturesFromProducts(productsCalendar)).toEqual([EASY_SWITCH_FEATURES.IMPORT_CALENDAR]);
+            expect(getEasySwitchFeaturesFromProducts(productsContacts)).toEqual([EASY_SWITCH_FEATURES.IMPORT_CONTACTS]);
+            expect(getEasySwitchFeaturesFromProducts(productsAll)).toEqual([
+                EASY_SWITCH_FEATURES.IMPORT_MAIL,
+                EASY_SWITCH_FEATURES.IMPORT_CALENDAR,
+                EASY_SWITCH_FEATURES.IMPORT_CONTACTS,
+            ]);
+        });
     });
 });
