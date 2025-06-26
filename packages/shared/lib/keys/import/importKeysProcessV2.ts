@@ -70,7 +70,7 @@ const importKeysProcessV2 = async ({
                 passphrase: token,
             });
 
-            // see we already have the armored private key, we avoid calling the
+            // since we already have the armored private key, we avoid calling the
             // `toPublicKeyReference` helper which internally re-exports the key
             const publicKey = await CryptoProxy.importPublicKey({ armoredKey: privateKeyArmored });
             const newActiveKey = (await getActiveKeyObject(
