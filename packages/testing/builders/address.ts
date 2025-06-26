@@ -1,4 +1,4 @@
-import { Address, AddressKey } from '@proton/shared/lib/interfaces';
+import type { Address, AddressKey } from '@proton/shared/lib/interfaces';
 
 export const buildAddress = (value?: Partial<Address>): Address => {
     return {
@@ -22,8 +22,6 @@ export const buildAddress = (value?: Partial<Address>): Address => {
                 Flags: 3,
                 Fingerprint: '6afee2a00d36edbf42f7f28c332d35bb9d2fce91',
                 Fingerprints: ['6afee2a00d36edbf42f7f28c332d35bb9d2fce91', 'a28a3964196a4fe0a0dcb7f10ffa6f0097158327'],
-                PublicKey:
-                    '-----BEGIN PGP PUBLIC KEY BLOCK-----\nVersion: ProtonMail\n\nxsBNBFrPQ8MBCACI3P2NU+79ShFa9pmdXHHvjR9pMa7p/PzGBqb8psH5ZTbA\ntPUECvBNsdGvH6/WwhijwphZuNufe6h3t1fPfnE01oM9i3DLZaOgIC9/Iose\nOkhA0OkHGScpuI4YqtFu6hYyVqxV5X5DruJhrC2dkp2M8eEhn/ZuWFa5VxaZ\nA3XJYbM8NLqr5fR1nlFnAug3FGfqQweTDvVvOKDUSkvi6pbRGdaB5LlaB5gX\npBdCVaGdoHEE/c3pnXgJLKtOClufEpyzTIc4CwoKizwXjHUxD9DM2S9Tt5Ce\nBcyZ9zqnmuey6d2sE2/Dh+KtF0HQkHHVGWiuya3dmeD2GXBftG3c07UfABEB\nAAHNM2p2bnRzdDEyMEBwcm90b25tYWlsLmNvbSA8anZudHN0MTIwQHByb3Rv\nbm1haWwuY29tPsLAjQQQAQgAIAUCYTDKywYLCQcIAwIEFQgKAgQWAgEAAhkB\nAhsDAh4BACEJEDMtNbudL86RFiEEav7ioA027b9C9/KMMy01u50vzpFHXwf/\nYOq9dDaTAhJSIafSIENqHKtUsq2ZnT8t48835GEo36Wpyt42j9z9iC4BuIG8\nt1FWrZmS5DqqZ6/Ksq6pUjd1JlrOE/ROcjF08fdmaLO5n3VJrAmLMi+rXWpS\nNK2K7WE004Ky5aa1R556A9wpcbrazMd/Uc64GqsSofEjoL4xI3HEoi/6QwGJ\n69jIUYc2oUTjEhwv56QnaDz8hGHIcLJe6l8dmELtsr6xDV5iyjwvpyMqDjVS\nOGIriksA3F97tLaF4jqLenUPiPB82V5Bt0MgBkDLEWZRx8SLw87ze0/ZyB10\ncPQQJlw9Sood09r/yRdVykOmVBJvsZziQJGKquXKi87ATQRaz0PDAQgAu7lm\npkaXp2jEZLodI/XyZPaOq52PnR6ww6tBDukGZR+59EYzZ3cDtK+Y4cmlbqBg\nHmuVVAwxWNrrvvy2/19Vm9mIJW76qggJNEf+GMwzPuc6KA2DveioDUIy4p0Y\nSETyjmRcploBEfe1TtDRCH+29Dva7XNeX24i7OVMetXqMiB55T7HplfernqE\nPjd1rYVG1/dWWaQi0NlZUaUZUvVqETlusTG5wLprEhDhpn3cyaKavJazaciZ\nkoetjzYvpkLtmak/dN68PPLcZ0ubircV1X+DVgLtQGMf3v3eLGY2Jkdna5VJ\nncEOa4/O+mpLedKlFkHg2GixYRWNf4PYLwpIaQARAQABwsB2BBgBCAAJBQJh\nMMrLAhsMACEJEDMtNbudL86RFiEEav7ioA027b9C9/KMMy01u50vzpElNAf+\nMcUpuiSnz6REc5WOEow3Ti9OF1kBgN5wvGGlZmOj+XkDnQZqpPdLn+wMyhU7\n0hXHE0z9qkPSWRNqzJdIMeQ+kX/ML5dw368SXX1v/udviqPEvu9nhoMsQw7S\naSt/vPjPjwVMIn8s4BTzYYtBzDnzqFF5xgzPIKZQtheLxcQqS8BA2oUkviNy\nsoSHnW63fIgV48GDGP7XMBi3MtSSngLRQUjVmbhAP3mbyrGxMyWwrxaOj1wg\nCJu2HCNVKwIy7EgKdT2D+jBfa0scDVPTkQAxAVw2JnMYeoqWAebqJXSKDAZ5\nU+5l/+i8l586tFJmg6sfC8pJYoSQsvQ4JManm5YjgA==\n=Gxhi\n-----END PGP PUBLIC KEY BLOCK-----\n',
                 Active: 1,
                 Version: 3,
                 PrivateKey:
