@@ -1,7 +1,10 @@
 import { type ComponentPropsWithoutRef, Suspense, lazy } from 'react';
 
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
@@ -19,9 +22,14 @@ const LazyTopNavbarUpsellInner = lazy(
 );
 
 const TopNavbarUpsell = ({ app, offerProps }: Props) => {
+    const [subscription] = useSubscription();
+    const [organization] = useOrganization();
     const [userSettings, loadingUserSettings] = useUserSettings();
 
-    if (loadingUserSettings) {
+    // don't upsell during B2B trial
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
+
+    if (isB2BTrial || loadingUserSettings) {
         return null;
     }
 
