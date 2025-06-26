@@ -13,6 +13,7 @@ describe('AppsLogos', () => {
         expect(screen.getByRole('listitem', { name: 'Proton VPN' })).toBeInTheDocument();
         expect(screen.getByRole('listitem', { name: 'Proton Pass' })).toBeInTheDocument();
         expect(screen.getByRole('listitem', { name: 'Proton Wallet' })).toBeInTheDocument();
+        expect(screen.getByRole('listitem', { name: 'Proton Docs' })).toBeInTheDocument();
     });
 
     it('renders only the specified apps', () => {
@@ -23,6 +24,7 @@ describe('AppsLogos', () => {
         expect(screen.queryByRole('listitem', { name: 'Proton VPN' })).not.toBeInTheDocument();
         expect(screen.queryByRole('listitem', { name: 'Proton Pass' })).not.toBeInTheDocument();
         expect(screen.queryByRole('listitem', { name: 'Proton Wallet' })).not.toBeInTheDocument();
+        expect(screen.queryByRole('listitem', { name: 'Proton Docs' })).not.toBeInTheDocument();
     });
 
     it('does not render app names when appNames is false', () => {
@@ -34,6 +36,7 @@ describe('AppsLogos', () => {
         expect(screen.queryByText('VPN')).not.toBeInTheDocument();
         expect(screen.queryByText('Pass')).not.toBeInTheDocument();
         expect(screen.queryByText('Wallet')).not.toBeInTheDocument();
+        expect(screen.queryByText('Docs')).not.toBeInTheDocument();
     });
 
     it('renders all apps and greys out the ones not in the apps array when showDisabledApps is true', () => {
@@ -50,6 +53,7 @@ describe('AppsLogos', () => {
         expect(pass).toHaveClass('opacity-40');
         const wallet = screen.getByRole('listitem', { name: 'Proton Wallet' });
         expect(wallet).toHaveClass('opacity-40');
+        expect(screen.queryByRole('listitem', { name: 'Proton Docs' })).toHaveClass('opacity-40');
     });
 
     it('renders all apps as enabled when showDisabledApps is true but no apps prop is provided', () => {
@@ -60,5 +64,6 @@ describe('AppsLogos', () => {
         expect(screen.getByRole('listitem', { name: 'Proton VPN' })).not.toHaveClass('opacity-40');
         expect(screen.getByRole('listitem', { name: 'Proton Pass' })).not.toHaveClass('opacity-40');
         expect(screen.getByRole('listitem', { name: 'Proton Wallet' })).not.toHaveClass('opacity-40');
+        expect(screen.getByRole('listitem', { name: 'Proton Docs' })).not.toHaveClass('opacity-40');
     });
 });
