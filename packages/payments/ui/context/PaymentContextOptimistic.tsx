@@ -2,6 +2,8 @@ import { type ReactNode, createContext, useContext, useRef, useState } from 'rea
 
 import useHandler from '@proton/components/hooks/useHandler';
 import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -22,6 +24,7 @@ import {
 interface InitializationStatus {
     cacheInitialized: boolean;
     pricingInitialized: boolean;
+    vpnServersInitialized: boolean;
 }
 
 type OptimisticOptions = PlanToCheck & { billingAddress: BillingAddress; checkResult: RequiredCheckResponse };
@@ -33,6 +36,7 @@ export type PaymentsContextOptimisticType = PaymentsContextType & {
     selectPlan: (options: Parameters<PaymentsContextTypeInner['selectNewPlan']>[0]) => void;
     uiData: PaymentsContextTypeInner['uiData'];
     options: OptimisticOptions;
+    vpnServersCountData: VPNServersCountData;
 };
 
 export const PaymentsContextOptimistic = createContext<PaymentsContextOptimisticType | null>(null);
@@ -53,9 +57,11 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
     const latestOptimisticRef = useRef<any>();
     const [optimistic, setOptimistic] = useState<Partial<OptimisticOptions>>({});
     const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
+    const [vpnServersCountData, setVpnServersCountData] = useState<VPNServersCountData>(defaultVPNServersCountData);
     const [initializationStatus, setInitializationStatus] = useState<InitializationStatus>({
         cacheInitialized: false,
         pricingInitialized: false,
+        vpnServersInitialized: false,
     });
 
     const initialize: PaymentsContextOptimisticType['initialize'] = async ({
@@ -81,14 +87,25 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         setOptimistic({ ...optimistic, checkResult });
         setLoadingPaymentDetails(true);
 
-        await paymentsContext.initialize({
-            api,
-            paymentFlow,
-            onChargeable: async () => {},
-            planToCheck: planToCheckParam,
-            availablePlans,
-            paramCurrency,
-        });
+        // Fetch VPN servers count data in parallel with payments initialization
+        const fetchVpnServersCount = getVPNServersCountData(api)
+            .then((data) => {
+                setVpnServersCountData(data);
+                setInitializationStatus((prev) => ({ ...prev, vpnServersInitialized: true }));
+            })
+            .catch(noop);
+
+        await Promise.all([
+            paymentsContext.initialize({
+                api,
+                paymentFlow,
+                onChargeable: async () => {},
+                planToCheck: planToCheckParam,
+                availablePlans,
+                paramCurrency,
+            }),
+            fetchVpnServersCount,
+        ]);
 
         setOptimistic({});
         setLoadingPaymentDetails(false);
@@ -98,6 +115,7 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         setInitializationStatus({
             cacheInitialized: true,
             pricingInitialized: true,
+            vpnServersInitialized: true,
         });
     };
 
@@ -249,6 +267,7 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
                 loadingPaymentDetails,
                 initializationStatus,
                 options,
+                vpnServersCountData,
                 uiData: {
                     checkout: getCheckout({
                         planIDs: options.planIDs,
