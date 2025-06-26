@@ -379,7 +379,14 @@ const AddonCustomizer = ({
     }
 
     if (isIpAddon(addonNameKey)) {
-        return <IPsNumberCustomiser key={`${addon.Name}-ips`} {...sharedNumberCustomizerProps} {...trialProps} />;
+        return (
+            <IPsNumberCustomiser
+                key={`${addon.Name}-ips`}
+                {...sharedNumberCustomizerProps}
+                {...trialProps}
+                selectedPlan={selectedPlan}
+            />
+        );
     }
 
     const addonPricePerCycle = addon.Pricing[cycle] || 0;
