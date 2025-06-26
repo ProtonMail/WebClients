@@ -593,7 +593,17 @@ export const getPassConfiguration = ({
                             <br />
                             {c('pass_signup_2023: Info').t`One easy subscription.`}
                         </div>
-                        <AppsLogos />
+                        <AppsLogos
+                            fullWidth
+                            apps={[
+                                APPS.PROTONMAIL,
+                                APPS.PROTONCALENDAR,
+                                APPS.PROTONDRIVE,
+                                APPS.PROTONVPN_SETTINGS,
+                                APPS.PROTONPASS,
+                                APPS.PROTONDOCS,
+                            ]}
+                        />
                     </>
                 ),
                 type: 'standard' as const,
