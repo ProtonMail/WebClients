@@ -13,7 +13,6 @@ describe('recoveryFile', () => {
                     Active: 1,
                     Fingerprint: 'Fingerprint',
                     Fingerprints: [],
-                    PublicKey: 'PublicKey',
                     Version: 1,
                     PrivateKey: 'PrivateKey',
                     Signature: 'Signature',
@@ -38,7 +37,6 @@ describe('recoveryFile', () => {
                     Active: 1,
                     Fingerprint: 'b50e775fdd67a73e85b3e8dd10ec81b36975d982',
                     Fingerprints: [],
-                    PublicKey: '',
                     Version: 3,
                     PrivateKey:
                         '-----BEGIN PGP PRIVATE KEY BLOCK-----\nVersion: ProtonMail\n\nxYYEYtARORYJKwYBBAHaRw8BAQdAUq67LdtCJ0/BZWiLUQ+yDf4H5d5J11LX\nr0Vo6DmGSq/+CQMIFuUKHWx/RkZg7tTbHb5HD31PLT9+OrKl2wQKPrsSkv54\nya9a1+CWAB+Hn9iu+6HTca3rj3WSqy/gbp5P+JB/TuhHFsangxLfYFqvkyFe\ncc07bm90X2Zvcl9lbWFpbF91c2VAZG9tYWluLnRsZCA8bm90X2Zvcl9lbWFp\nbF91c2VAZG9tYWluLnRsZD7CjwQQFgoAIAUCYtAROQYLCQcIAwIEFQgKAgQW\nAgEAAhkBAhsDAh4BACEJEBDsgbNpddmCFiEEtQ53X91npz6Fs+jdEOyBs2l1\n2YIP8gEAjjFVIlPIl7DYx5iopxTlzZCuYXiPYu6FkJT2lQLNcnYBAM/GEb2v\n2GocnGXvVztd2L9LafKoiZ/NUn2mx3+aqRANx4sEYtARORIKKwYBBAGXVQEF\nAQEHQLdzFWS+gMPQ+Ve7AFsV6h7F8Wp0e8npXTXplioPSWJpAwEIB/4JAwhQ\nIBWPXSobzmD0D6BynuyDvgnKRKNIkcn+877QQ/0KB52TyxYj76bl7bLEqItN\nr5c6z8rBAXu2MIaMO8uzbbIVxyluvwYmHu6x8l7ExSsGwngEGBYIAAkFAmLQ\nETkCGwwAIQkQEOyBs2l12YIWIQS1Dndf3WenPoWz6N0Q7IGzaXXZghH1AP4r\n0h1efEeP3ZoW3WmS7alxTgp0B/baYzYczxRLcZp7nQD7BLERoW7ENaszG6JA\nojZaWBqq3SDwb505wwCxZ/kMnA8=\n=AAX0\n-----END PGP PRIVATE KEY BLOCK-----\n',
