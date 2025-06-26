@@ -1,6 +1,6 @@
 import { type ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
 
-import { StandardErrorPage, useApi } from '@proton/components';
+import { type OnLoginCallback, StandardErrorPage, useApi } from '@proton/components';
 import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import type { OnChargeable } from '@proton/components/payments/client-extensions';
 import metrics, { observeError } from '@proton/metrics/index';
@@ -101,14 +101,15 @@ const SignupContext = createContext<SignupContextType | null>(null);
 export interface BaseSignupContextProps {
     onPreSubmit?: () => Promise<void>;
     onStartAuth: () => Promise<void>;
+    onLogin: OnLoginCallback;
     loginUrl: string;
     productParam: ProductParam;
 }
 
-interface SignupContextProviderProps extends BaseSignupContextProps {
+interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLogin'> {
     children: ReactNode;
 
-    app: APP_NAMES;
+    app: APP_NAMES | 'generic';
 
     /**
      * Unique id for each flow.
