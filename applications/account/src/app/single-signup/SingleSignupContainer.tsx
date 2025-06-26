@@ -28,6 +28,7 @@ import {
     type Plan,
     getHas2024OfferCoupon,
     getIsVpnB2BPlan,
+    getPlanFromPlanIDs,
     getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
@@ -41,7 +42,7 @@ import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { SubscriptionMode } from '@proton/shared/lib/interfaces/Subscription';
