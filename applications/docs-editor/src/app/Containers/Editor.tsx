@@ -4,7 +4,6 @@ import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin
 import { BuildInitialEditorConfig, ShouldBootstrap } from '../Lib/InitialEditorConfig'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import type { Provider } from '@lexical/yjs'
-import { CollaborationContext } from '@lexical/react/LexicalCollaborationContext'
 import type {
   EditorRequiresClientMethods,
   YDocMap,
@@ -55,6 +54,7 @@ import { YjsReadonlyPlugin } from '../Plugins/YjsReadonly/YjsReadonlyPlugin'
 import { useSyncedState } from '../Hooks/useSyncedState'
 import { FixBrokenListItemPlugin } from '../Plugins/FixBrokenListItemPlugin'
 import { getAccentColorForUsername } from '@proton/atoms'
+import { CustomCollaborationContextProvider } from '../Plugins/Collaboration/CustomCollaborationContext'
 
 const TypingBotEnabled = false
 
@@ -168,13 +168,14 @@ export function Editor({
   }, [letterForAnonymousUser, userName])
 
   return (
-    <CollaborationContext.Provider
+    <CustomCollaborationContextProvider
       value={{
         yjsDocMap: docMap,
         name: letterForAnonymousUser ? `Anonymous ${letterForAnonymousUser.name}` : userName,
         color,
         clientID: 0,
         isCollabActive: false,
+        undoManager: null,
       }}
     >
       {hidden && (
@@ -290,6 +291,6 @@ export function Editor({
           )}
         </MarkNodesProvider>
       </SafeLexicalComposer>
-    </CollaborationContext.Provider>
+    </CustomCollaborationContextProvider>
   )
 }
