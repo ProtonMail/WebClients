@@ -1,4 +1,4 @@
-import type { ADDRESS_TYPE } from '@proton/shared/lib/constants';
+import { ADDRESS_FLAGS, type ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address, AddressKey } from '@proton/shared/lib/interfaces';
 
 const activeKey: AddressKey = {
@@ -22,7 +22,12 @@ const disabledKey: AddressKey = {
     Active: 0,
 };
 
-export const generateMockAddress = (n: number, keyActive: boolean, type?: ADDRESS_TYPE): Address => {
+export const generateMockAddress = (
+    n: number,
+    keyActive: boolean,
+    type?: ADDRESS_TYPE,
+    isBYOEAddress?: boolean
+): Address => {
     return {
         DisplayName: `Testing ${n}`,
         DomainID: 'proton.ch',
@@ -42,6 +47,7 @@ export const generateMockAddress = (n: number, keyActive: boolean, type?: ADDRES
         ProtonMX: true,
         ConfirmationState: 1,
         CatchAll: false,
+        Flags: isBYOEAddress ? ADDRESS_FLAGS.BYOE : undefined,
     };
 };
 

@@ -3,6 +3,7 @@ import type {
     EASY_SWITCH_FEATURES,
     EASY_SWITCH_SOURCES,
     LaunchImportPayload,
+    OAUTH_PROVIDER,
     OAuthProps,
 } from '../interface';
 import { ImportType } from '../interface';
@@ -65,6 +66,20 @@ export const startImportTask = (data: LaunchImportPayload) => ({
     url: 'importer/v1/importers/start',
     method: 'POST',
     data,
+});
+
+export const startEasySwitchSignupImportTask = ({
+    Source,
+    AddressId,
+    Provider,
+}: {
+    Source: string;
+    AddressId: string;
+    Provider: OAUTH_PROVIDER;
+}) => ({
+    url: 'importer/v1/mail/importers/start/all',
+    method: 'POST',
+    data: { Source, AddressId, Provider },
 });
 
 export const getImportsList = () => ({

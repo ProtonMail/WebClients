@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
-import { getForwardingScope } from '@proton/activation/src/helpers/scope';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { EasySwitchFeatureFlag, OAuthProps } from '@proton/activation/src/interface';
-import { EASY_SWITCH_SOURCES, ImportProvider } from '@proton/activation/src/interface';
+import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { deleteSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors';
@@ -34,8 +33,9 @@ const SyncRowActions = ({ syncId }: Props) => {
 
     const handleReconnectClick = () => {
         void triggerOAuthPopup({
-            provider: ImportProvider.GOOGLE,
-            scope: getForwardingScope(),
+            provider: OAUTH_PROVIDER.GOOGLE,
+            // We don't know if the sync is a forwarding or a BYOE, so we want to reconnect the user using the full scope for now
+            features: [EASY_SWITCH_FEATURES.BYOE],
             callback: async (oAuthProps: OAuthProps) => {
                 const { Code, Provider, RedirectUri } = oAuthProps;
 
@@ -46,7 +46,7 @@ const SyncRowActions = ({ syncId }: Props) => {
                             Provider,
                             RedirectUri,
                             Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_SYNC,
-                            notification: { text: c('action').t`Resuming forward` },
+                            successNotification: { text: c('action').t`Resuming forward` },
                             syncId,
                             importerId: syncItem.importerID,
                         })
