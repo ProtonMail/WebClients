@@ -336,6 +336,9 @@
       "Create folder": [
         "폴더 생성"
       ],
+      "Create folder ${ boldFolderName }": [
+        "${ boldFolderName } 폴더 생성"
+      ],
       "Create label": [
         "라벨 만들기"
       ],
@@ -6150,6 +6153,9 @@
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 메시지가 이동되지 않을 수 있습니다."
       ],
+      "${ n } newsletter": [
+        "${ n }개 뉴스레터"
+      ],
       "${ n } unread conversation": [
         "읽지 않은 대화 ${ n }개"
       ],
@@ -7185,6 +7191,9 @@
       "No links cleaned": [
         "정리된 링크가 없습니다"
       ],
+      "No messages to show": [
+        "표시할 매시지 없음"
+      ],
       "No more results found": [
         "결과를 찾을 수 없음"
       ],
@@ -7355,6 +7364,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "비활성 키로 암호화된 데이터가 포함된 연락처를 찾는 동안 기다려 주세요."
+      ],
+      "Preferences updated": [
+        "설정 업데이트 완료"
       ],
       "Preview failed to be loaded": [
         "미리보기 불러오는 중 문제 발생"
@@ -7691,6 +7703,9 @@
       ],
       "Themes can give your inbox a new look.": [
         "테마가 받은 편지함을 더 멋지게 보여줄거에요."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "받은 편지함에 해당 보낸 사람의 메시지가 없습니다."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "연락처 상세 정보를 인증하는데 쓰인 서명에 오류가 발생했습니다. 이는 비밀번호 변경으로 발생했을 수 있습니다."
@@ -8773,6 +8788,9 @@
       "CC": [
         "참조"
       ],
+      "Choose what to do instead": [
+        "대신 수행할 작업을 선택하세요."
+      ],
       "City": [
         "시/군/구"
       ],
@@ -9015,6 +9033,9 @@
       ],
       "Move to Inbox": [
         "받은 편지함으로 이동"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ labelName }(으)로 ${ count }개 메시지가 이동되었습니다."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count }개의 메시지를 보관함으로 이동했습니다."
@@ -10912,6 +10933,9 @@
       "Don’t show this offer again": [
         "이 제안을 다시 보지 않기"
       ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited 구매"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "단 ${ pricingTitle }(으)로 Drive Plus 구매"
       ],
@@ -10964,9 +10988,17 @@
         "구독이 곧 끝나게 됩니다"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "암호화된 비밀번호 관리자"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "그 외 10개 더 많은 프리미엄 기능들"
+      ],
+      "Advanced threat protection": [
+        "향상된 위협 보호 기능"
       ],
       "Custom email domain": [
         "사용자 지정 이메일 도메인"
@@ -11355,6 +11387,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "계좌 이체"
       ],
@@ -11397,6 +11432,9 @@
       ],
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "유로화는 SEPA로만 결제 가능합니다. 사용자의 결제 수단이 변경되었습니다. 선택기를 사용하여 선택을 다시 확인하세요."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
@@ -11473,6 +11511,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
       ]
     },
     "Payments.Sepa": {
@@ -12327,6 +12370,12 @@
       "Go to subscription plans": [
         "구독 요금제 보러가기"
       ],
+      "Guard against threats": [
+        "위협으로부터 보호"
+      ],
+      "Unblock streaming content": [
+        "스트리밍 콘텐츠 잠금 해제"
+      ],
       "Upgrade": [
         "업그레이드"
       ],
@@ -12403,6 +12452,18 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "전세계의 스트리밍 서비스 상의 콘텐츠에 접근"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "모든 것을 포함하는 하나의 플랜, ${ BRAND_NAME } Unlimited를 경험하세요"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "회원님의 모든 비밀번호를 여러 보관함에 안전하고 체계적으로 보관하세요. "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Sentinel로 계정을 위협으로부터 보호하세요"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "업그레이드로 2년 동안 더 저렴하게 ${ planName } 사용하기"
       ]
@@ -14519,6 +14580,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "이 버전의 Tor 브라우저가 지원되지 않습니다. 최신 ${ stableRelease }(으)로 업데이트 해주세요"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/월간"
       ]
     },
     "unprivatization": {
