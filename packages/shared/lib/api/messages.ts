@@ -68,7 +68,7 @@ export const queryMessageMetadata = ({
         AutoWildcard,
         Anchor,
         AnchorID,
-        ...(!!NewsletterSubscriptionID ? { 'NewsletterSubscriptionID[]': [NewsletterSubscriptionID] } : {}),
+        NewsletterSubscriptionID: !!NewsletterSubscriptionID ? [NewsletterSubscriptionID] : [],
     },
 });
 
