@@ -1242,9 +1242,6 @@
       ],
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
-      ],
-      "Try it free for 14 days": [
-        "Pruébalo gratis durante 14 días"
       ]
     },
     "b2b_trials_2025_Label": {
@@ -3891,8 +3888,14 @@
       ]
     },
     "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video, entre otros."
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Accede desde cualquier lugar al contenido de servicios de streaming como Netflix, Disney+ o Prime Video, entre otros"
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "Te protege de los anuncios, rastreadores y malware en sitios web y aplicaciones"
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Los servidores Secure Core enrutan tu tráfico a través de 2 servidores VPN para mayor seguridad."
       ]
     },
     "fido2: Action": {
@@ -7473,6 +7476,9 @@
       ],
       "Two password mode enabled": [
         "Se ha activado el modo de doble contraseña."
+      ],
+      "Unknown": [
+        "Desconocido"
       ]
     },
     "Log preference": {
@@ -8751,8 +8757,14 @@
       "${ pricingTitle } offer expires today!": [
         "¡La oferta de ${ pricingTitle } vence hoy!"
       ],
+      "Don’t show this again": [
+        "No mostrar esto de nuevo"
+      ],
       "Don’t show this offer again": [
         "No volver a mostrar esta oferta"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Obtén ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obtén Drive Plus por solo ${ pricingTitle }"
@@ -8806,9 +8818,20 @@
         "Tu suscripción se renueva pronto."
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Gestor de contraseñas cifrado"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 funciones premium más"
+      ],
+      "500 GB secure storage": [
+        "500 GB de almacenamiento seguro"
+      ],
+      "Advanced threat protection": [
+        "Protección avanzada contra amenazas"
       ],
       "Custom email domain": [
         "Dominio de correo electrónico personalizado"
@@ -8830,6 +8853,12 @@
       ],
       "Storage": [
         "Almacenamiento"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Servidores VPN ultrarápidos en más de 110 países"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Alias ilimitados para proteger tu identidad"
       ]
     },
     "Onboarding": {
@@ -9275,9 +9304,6 @@
       ],
       "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
         "Solo se acepta el euro para SEPA. Tu moneda ha sido cambiada. Por favor, usa el selector para revertir tu elección."
-      ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Añade un método de pago en el panel de control para continuar."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
@@ -10285,8 +10311,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Navega de forma segura"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Supera tus límites con ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Obtén alias ilimitados"
+      ],
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
+      ],
+      "Guard against threats": [
+        "Protégete contra las amenazas"
+      ],
+      "Increase your storage": [
+        "Mejora tu almacenamiento"
+      ],
+      "Keep passwords safe": [
+        "Mantén tus contraseñas a salvo"
+      ],
+      "Unblock streaming content": [
+        "Disfruta del streaming sin límites"
       ],
       "Upgrade": [
         "Mejorar"
@@ -10365,6 +10412,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Accede a contenidos de servicios de streaming en todo el mundo"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Obtén 500 GB para almacenar de forma segura todos tus archivos y fotos"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Obtén acceso a servidores VPN ultrarápidos en más de 110 países"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Consigue un plan que lo incluye todo: ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Obtén alias ilimitados para proteger tu identidad y reducir el spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Protege tus contraseñas y organízalas en varias cajas fuertes "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Protege tu cuenta de amenazas con Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Cambia de plan y ahorra más dinero contratando ${ planName } durante 2 años"
       ]
@@ -12688,6 +12756,14 @@
       ],
       "Refund": [
         "Reembolso"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mes"
+      ],
+      "Only": [
+        "Solo"
       ]
     },
     "unprivatization": {
