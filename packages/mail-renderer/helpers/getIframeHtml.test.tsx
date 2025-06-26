@@ -18,6 +18,7 @@ describe('getIframeHTML', () => {
                 isPrint: false,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                iframeSVG: '',
             });
 
             expect(htmlString).not.toContain(MESSAGE_IFRAME_PRINT_CLASS);
@@ -34,6 +35,7 @@ describe('getIframeHTML', () => {
                 isPrint: true,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                iframeSVG: '',
             });
 
             expect(htmlString).toContain(MESSAGE_IFRAME_PRINT_CLASS);
@@ -52,6 +54,7 @@ describe('getIframeHTML', () => {
                 isPrint: false,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                iframeSVG: '',
             });
 
             expect(htmlString).not.toContain(MESSAGE_IFRAME_PRINT_CLASS);
@@ -68,6 +71,7 @@ describe('getIframeHTML', () => {
                 isPrint: true,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                iframeSVG: '',
             });
 
             expect(htmlString).toContain(MESSAGE_IFRAME_PRINT_CLASS);
