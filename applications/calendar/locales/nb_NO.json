@@ -8672,6 +8672,9 @@
       ],
       "New credit/debit card": [
         "Nytt kreditt-/debetkort"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11753,6 +11756,14 @@
       ],
       "Only": [
         "Kun"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort som slutter på ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankoverføring - ${ details }"
       ]
     }
   }
