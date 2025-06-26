@@ -5775,6 +5775,18 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "お客様の無料トライアルは月額サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "お客様のトライアル期間が${ boldCancelDate }に終了すると、${ boldProtonFree }にダウングレードされます。お客様の組織からすべてのユーザーアカウントが削除されます。"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "お客様の無料トライアルは、${ cycle }ヶ月サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "${ boldEndDate }に${ boldPlanTitle }へアクセスできなくなります。"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
       ]
     },
     "info": {
@@ -8073,6 +8085,12 @@
       ],
       "Your subscription renews soon": [
         "サブスクリプションはまもなく更新されます"
+      ],
+      "Don’t show this again": [
+        "次回から表示しない"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimitedを入手"
       ]
     },
     "Offer feature": {
@@ -8099,6 +8117,9 @@
       ],
       "Storage": [
         "ストレージ"
+      ],
+      "Advanced threat protection": [
+        "高度な脅威保護"
       ]
     },
     "Onboarding": {
@@ -8314,6 +8335,9 @@
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8396,6 +8420,12 @@
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "SEPAではユーロのみご利用いただけます。お客様の通貨が変更されました。選択を元に戻すには、セレクターをご利用ください。"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
       ]
     },
     "Payments.Error": {
@@ -9091,6 +9121,15 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "${ pricingTitle } へアップグレード"
+      ],
+      "Guard against threats": [
+        "脅威から保護する"
+      ],
+      "Increase your storage": [
+        "ストレージを増やす"
+      ],
+      "Unblock streaming content": [
+        "ストリーミングコンテンツのブロックを解除"
       ]
     },
     "specialoffer: Offers": {
@@ -9164,6 +9203,24 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "アップグレードして${ planName }の2年契約でもっとお得に"
+      ],
+      "Access content on streaming services worldwide": [
+        "世界中のストリーミングサービスでコンテンツにアクセス"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "すべてのファイルや写真を安全に保管する500 GBを入手"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "全てを含む1つのプラン、${ BRAND_NAME } Unlimitedをご利用ください。"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "無制限のエイリアスで、お客様のユーザー情報を保護し、迷惑メールを削減します。"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "パスワードを複数の保管庫に安全に整理して保管する "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Sentinelでアカウントを脅威から保護する"
       ]
     },
     "specialoffer: Tooltip": {
@@ -10688,6 +10745,9 @@
       ],
       "Your free trial ends in ${ trialDurationFormatted } day": [
         "無料トライアルは${ trialDurationFormatted }日後に終了します"
+      ],
+      "Your ${ planName } subscription has started": [
+        "${ planName }サブスクリプションが開始されました"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11263,6 +11323,33 @@
       ],
       "years": [
         "年"
+      ],
+      "200 GB storage": [
+        "200GBストレージ"
+      ],
+      "500 GB encrypted storage": [
+        "500 GBの暗号化されたストレージ"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "${ BRAND_NAME } Mail、Pass、VPN、Drive、カレンダーの全てのプレミアム機能"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "お客様の暗号化済みストレージを2倍に — お客様のすべてのデータに1 TBを提供します"
+      ],
+      "Encrypted password manager": [
+        "暗号化されたパスワードマネージャー"
+      ],
+      "Recover previous file versions": [
+        "以前のファイルを復元"
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムPass機能をお得にご利用いただけます。"
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムVPN機能をお得にご利用いただけます。"
+      ],
+      "Use your own email domain": [
+        "独自メールドメインを使用する"
       ]
     },
     "anniversary_2025: offer": {
@@ -11276,6 +11363,9 @@
       ],
       "15 months": [
         "15 か月"
+      ],
+      "/ month": [
+        "/ 月"
       ]
     },
     "Onboarding Trial": {
@@ -11296,6 +11386,41 @@
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
+      ],
+      "Cancel anytime before then.": [
+        "それまでにいつでもキャンセルできます。"
+      ],
+      "contact our support team": [
+        "サポートチームにお問い合わせください"
+      ],
+      "Your free trial has started": [
+        "無料トライアルが開始されました"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "割引を入手"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "暗号化されたパスワードマネージャー"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ 月"
+      ],
+      "Only": [
+        "のみ"
       ]
     }
   }

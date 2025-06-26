@@ -1664,7 +1664,7 @@
         "월간 보기"
       ],
       "New event": [
-        "새 이벤트"
+        "신규 이벤트"
       ],
       "Next period": [
         "다음 기간"
@@ -8097,6 +8097,9 @@
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited 구매"
+      ],
+      "Don’t show this again": [
+        "다시 보지 않기"
       ]
     },
     "Offer feature": {
@@ -8126,6 +8129,15 @@
       ],
       "Advanced threat protection": [
         "향상된 위협 보호 기능"
+      ],
+      "500 GB secure storage": [
+        "500 GB 보안 저장공간"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가 내의 초고속 VPN 서버"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "신원 보호를 위한 무제한 별칭"
       ]
     },
     "Onboarding": {
@@ -9180,6 +9192,21 @@
       ],
       "Unblock streaming content": [
         "스트리밍 콘텐츠 잠금 해제"
+      ],
+      "Browse securely": [
+        "안전하게 탐색"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "${ BRAND_NAME }으로 더 많은 것을 시작해 보세요"
+      ],
+      "Get unlimited aliases": [
+        "무제한 별칭 받기"
+      ],
+      "Increase your storage": [
+        "저장공간 늘리기"
+      ],
+      "Keep passwords safe": [
+        "안전하게 비밀번호 유지"
       ]
     },
     "specialoffer: Offers": {
@@ -9265,6 +9292,15 @@
       ],
       "Protect your account from threats with Sentinel": [
         "Sentinel로 계정을 위협으로부터 보호하세요"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "모든 파일과 사진을 안전하게 저장할 수 있는 500 GB 스토리지를 받아보세요"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가의 초고속 VPN 서버에 접근"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "신원을 보호하고 스팸을 줄이기 위해 무제한 별칭을 받아보세요"
       ]
     },
     "specialoffer: Tooltip": {
@@ -11476,11 +11512,17 @@
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ details }": [
+        "은행 송금 - ${ details }"
       ]
     },
     "Unlimited offer": {
       "/month": [
         "/월간"
+      ],
+      "Only": [
+        "단"
       ]
     }
   }
