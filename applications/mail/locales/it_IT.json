@@ -1600,6 +1600,12 @@
       ],
       "Create folder ${ boldFolderName }": [
         "Crea cartella \"${ boldFolderName }"
+      ],
+      "Deleting folder": [
+        "Eliminazione cartella"
+      ],
+      "Deleting label": [
+        "Eliminazione dell'etichetta"
       ]
     },
     "action": {
@@ -7112,8 +7118,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -11631,6 +11636,9 @@
       ],
       "New credit/debit card": [
         "Nuova carta di credito/debito"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -15420,6 +15428,14 @@
       ],
       "Only": [
         "Solo"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - carta che termina con ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bonifico bancario - ${ details }"
       ]
     }
   }
