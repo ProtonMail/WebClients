@@ -1,15 +1,48 @@
+import { createUrl } from '@proton/shared/lib/fetch/helpers';
 import type { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces';
 
-import { ImportProvider, OAUTH_PROVIDER } from '../interface';
+import { EASY_SWITCH_FEATURES, ImportProvider, ImportType, OAUTH_PROVIDER } from '../interface';
 import { G_OAUTH_REDIRECT_PATH, O_OAUTH_REDIRECT_PATH, Z_OAUTH_REDIRECT_PATH } from '../path';
 
-const generateGoogleOAuthUrl = (params: URLSearchParams, config: ApiEnvironmentConfig, loginHint?: string) => {
-    params.append('access_type', 'offline');
-    params.append('client_id', config['oauth.google.client_id']);
-    if (loginHint) {
-        params.append('login_hint', loginHint);
-    }
-    return `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
+export const getEasySwitchFeaturesFromProducts = (importTypes: ImportType[]) => {
+    const features: EASY_SWITCH_FEATURES[] = [];
+    importTypes.forEach((importType) => {
+        switch (importType) {
+            case ImportType.MAIL:
+                features.push(EASY_SWITCH_FEATURES.IMPORT_MAIL);
+                break;
+            case ImportType.CALENDAR:
+                features.push(EASY_SWITCH_FEATURES.IMPORT_CALENDAR);
+                break;
+            case ImportType.CONTACTS:
+                features.push(EASY_SWITCH_FEATURES.IMPORT_CONTACTS);
+                break;
+            default:
+                break;
+        }
+    });
+
+    return features;
+};
+
+export const generateGoogleOAuthUrl = ({
+    redirectUri,
+    loginHint,
+    features,
+}: {
+    redirectUri: string;
+    features: EASY_SWITCH_FEATURES[];
+    loginHint?: string;
+}) => {
+    return createUrl(
+        '/api/oauth-token/v1/authorization/google',
+        {
+            proton_feature: features,
+            redirect_uri: redirectUri,
+            loginHint: loginHint ? loginHint : undefined,
+        },
+        window.location.origin
+    ).toString();
 };
 
 const generateOutlookOAuthUrl = (params: URLSearchParams, config: ApiEnvironmentConfig) => {
@@ -44,13 +77,11 @@ export const getOAuthAuthorizationUrl = ({
     provider,
     scope,
     config,
-    loginHint,
     consentExperiment,
 }: {
     provider: ImportProvider | OAUTH_PROVIDER;
     scope: string;
     config: ApiEnvironmentConfig;
-    loginHint?: string;
     consentExperiment: boolean;
 }) => {
     const params = new URLSearchParams();
@@ -59,15 +90,9 @@ export const getOAuthAuthorizationUrl = ({
     params.append('response_type', 'code');
     params.append('scope', scope);
 
-    if (provider === ImportProvider.GOOGLE || provider === OAUTH_PROVIDER.GOOGLE) {
-        // force user to consent again so that we can always get a refresh token
-        params.append('prompt', 'consent');
-        return generateGoogleOAuthUrl(params, config, loginHint);
-    }
-
     if (provider === ImportProvider.OUTLOOK || provider === OAUTH_PROVIDER.OUTLOOK) {
         // The flag is present to control if we add the prompt params
-        // The flag mustbe off to add the consent params
+        // The flag must be off to add the consent params
         if (!consentExperiment) {
             params.append('prompt', 'consent');
         }

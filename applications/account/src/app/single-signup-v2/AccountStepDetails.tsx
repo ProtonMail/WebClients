@@ -131,6 +131,17 @@ const AccountStepDetails = ({
     const disableChangeForChallenge = disableChange || loadingChallenge;
     const domainOptions = state.domains.map((DomainName) => ({ text: DomainName, value: DomainName }));
 
+    const byoePasswordLabel = (
+        <span>
+            {c('Signup label').t`${BRAND_NAME} password`}
+            <Info
+                className="ml-1"
+                buttonClass="align-text-bottom"
+                title={c('loc_nightly: BYOE').t`This password is used to login to your ${BRAND_NAME} account`}
+            />
+        </span>
+    );
+
     return (
         <>
             <form
@@ -393,7 +404,11 @@ const AccountStepDetails = ({
                                         inputStates.password.focus &&
                                         getMinPasswordLengthMessage()
                                     }
-                                    label={c('Signup label').t`Password`}
+                                    label={
+                                        state.signupType === SignupType.BringYourOwnEmail
+                                            ? byoePasswordLabel
+                                            : c('Signup label').t`Password`
+                                    }
                                     error={errors.password}
                                     dense={!errors.password}
                                     rootClassName={clsx(

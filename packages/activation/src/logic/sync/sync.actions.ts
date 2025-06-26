@@ -67,7 +67,8 @@ interface CreateSyncProps {
     Provider: OAUTH_PROVIDER;
     RedirectUri: string;
     Source: EASY_SWITCH_SOURCES;
-    notification: CreateNotificationOptions;
+    successNotification?: CreateNotificationOptions;
+    errorNotification?: CreateNotificationOptions;
 }
 
 export const createSyncItem = createAsyncThunk<
@@ -78,9 +79,9 @@ export const createSyncItem = createAsyncThunk<
         fulfillValue: Sync;
     }
 >('sync/create', async (props, thunkApi) => {
-    try {
-        const { Code, Provider, RedirectUri, Source, notification } = props;
+    const { Code, Provider, RedirectUri, Source, successNotification, errorNotification } = props;
 
+    try {
         const { Token, DisplayName }: { Token: ImportToken; DisplayName: string } = await thunkApi.extra.api(
             createToken({
                 Provider,
@@ -117,9 +118,14 @@ export const createSyncItem = createAsyncThunk<
             sync = formatApiSync(Sync);
         }
 
-        thunkApi.extra.notificationManager.createNotification(notification);
+        if (successNotification) {
+            thunkApi.extra.notificationManager.createNotification(successNotification);
+        }
         return thunkApi.fulfillWithValue({ sync, displayName: DisplayName });
     } catch (error: any) {
+        if (errorNotification) {
+            thunkApi.extra.notificationManager.createNotification(errorNotification);
+        }
         return thunkApi.rejectWithValue(error.data as SubmitError);
     }
 });
@@ -137,7 +143,7 @@ export const resumeSyncItem = createAsyncThunk<
     }
 >('sync/resume', async (props, thunkApi) => {
     try {
-        const { Code, Provider, RedirectUri, Source, notification, syncId, importerId } = props;
+        const { Code, Provider, RedirectUri, Source, successNotification, syncId, importerId } = props;
 
         const { Token }: { Token: ImportToken } = await thunkApi.extra.api(
             createToken({
@@ -153,7 +159,9 @@ export const resumeSyncItem = createAsyncThunk<
         await thunkApi.extra.api(resumeSync(syncId));
         await thunkApi.extra.eventManager.call();
 
-        thunkApi.extra.notificationManager.createNotification(notification);
+        if (successNotification) {
+            thunkApi.extra.notificationManager.createNotification(successNotification);
+        }
         return;
     } catch (error: any) {
         return thunkApi.rejectWithValue(error.data as SubmitError);

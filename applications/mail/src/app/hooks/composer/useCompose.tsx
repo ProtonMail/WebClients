@@ -126,6 +126,10 @@ export const useCompose = ({
                 );
             } else {
                 if (!message?.data?.Sender.Address) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`No address with sending permissions`,
+                    });
                     throw new Error('No address');
                 }
 

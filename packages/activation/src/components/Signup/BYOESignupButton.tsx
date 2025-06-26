@@ -7,7 +7,7 @@ import { createSignupOAuthToken } from '@proton/activation/src/api';
 import { type CreateSignupOAuthTokenResponse } from '@proton/activation/src/api/api.interface';
 import AddBYOEModal from '@proton/activation/src/components/Modals/AddBYOEModal/AddBYOEModal';
 import { openOAuthPopup } from '@proton/activation/src/helpers/oAuthPopup';
-import { getOAuthRedirectURL } from '@proton/activation/src/hooks/useOAuthPopup.helpers';
+import { generateGoogleOAuthUrl, getOAuthRedirectURL } from '@proton/activation/src/hooks/useOAuthPopup.helpers';
 import {
     EASY_SWITCH_FEATURES,
     EASY_SWITCH_SOURCES,
@@ -22,8 +22,6 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks/index';
 import { useVariant } from '@proton/unleash/index';
-
-import { getSignupAuthorizationURL } from '../../helpers/signup';
 
 interface Props {
     provider?: ImportProvider | OAUTH_PROVIDER;
@@ -54,7 +52,7 @@ const BYOESignupButton = ({
                 api(
                     createSignupOAuthToken({
                         ...oauthProps,
-                        Source: EASY_SWITCH_SOURCES.SIGNUP_EXTERNAL_GMAIL,
+                        Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SIGNUP,
                         Features: [EASY_SWITCH_FEATURES.BYOE],
                     })
                 )
@@ -68,7 +66,7 @@ const BYOESignupButton = ({
             // TODO update string
             createNotification({
                 type: 'error',
-                text: c('oc_nightly: BYOE').t`Something went wrong while loging into your Gmail account`,
+                text: c('loc_nightly: BYOE').t`Something went wrong while logging into your Gmail account`,
             });
         }
 
@@ -79,7 +77,10 @@ const BYOESignupButton = ({
 
     const handleShowOauthPopup = async () => {
         const redirectUri = getOAuthRedirectURL(provider);
-        const authorizationUrl = getSignupAuthorizationURL(redirectUri);
+        const authorizationUrl = generateGoogleOAuthUrl({
+            redirectUri,
+            features: [EASY_SWITCH_FEATURES.BYOE],
+        });
 
         const errorMessage = c('loc_nightly: BYOE').t`Something went wrong while connecting your Gmail address`;
 
