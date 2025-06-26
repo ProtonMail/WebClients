@@ -152,12 +152,6 @@ export const handleDeleteServerEvent = (state: NewsletterSubscriptionsStateType,
         return;
     }
 
-    if (stateValue.byId[update.ID].UnsubscribedTime) {
-        stateValue.tabs.unsubscribe.totalCount = safeDecreaseCount(stateValue.tabs.unsubscribe.totalCount);
-    } else {
-        stateValue.tabs.active.totalCount = safeDecreaseCount(stateValue.tabs.active.totalCount);
-    }
-
     if (stateValue.selectedSubscriptionId === update.ID) {
         stateValue.selectedSubscriptionId = undefined;
         stateValue.selectedElementId = undefined;
@@ -166,6 +160,15 @@ export const handleDeleteServerEvent = (state: NewsletterSubscriptionsStateType,
     // Always remove from both tabs
     stateValue.tabs.active.ids = filterNewsletterSubscriptionList(stateValue.tabs.active.ids, update.ID);
     stateValue.tabs.unsubscribe.ids = filterNewsletterSubscriptionList(stateValue.tabs.unsubscribe.ids, update.ID);
+
+    // We want to make sure the subscription is in the store before changing the counts and deleting it
+    if (stateValue.byId[update.ID]) {
+        if (stateValue.byId[update.ID].UnsubscribedTime) {
+            stateValue.tabs.unsubscribe.totalCount = safeDecreaseCount(stateValue.tabs.unsubscribe.totalCount);
+        } else {
+            stateValue.tabs.active.totalCount = safeDecreaseCount(stateValue.tabs.active.totalCount);
+        }
+    }
 
     delete stateValue.byId[update.ID];
 };
