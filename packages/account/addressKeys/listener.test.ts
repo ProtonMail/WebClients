@@ -55,7 +55,6 @@ const getTestAddressKey = (id: string, token: string): AddressKey => {
         Flags: 7,
         Fingerprint: id + 'FP',
         Fingerprints: [id + 'FP1', id + 'FP2'],
-        PublicKey: id + 'pk',
         Version: 6,
         Activation: id + 'activation',
         PrivateKey: id + 'secret',

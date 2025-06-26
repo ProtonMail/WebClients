@@ -98,16 +98,16 @@ const getReformattedAddressKeysV2 = (
                 email,
                 token
             );
-            const publicKey = await CryptoProxy.importPublicKey({
-                binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
-            });
+            // since we already have the armored private key, we avoid calling the
+            // `toPublicKeyReference` helper which internally re-exports the key
+            const publicKey = await CryptoProxy.importPublicKey({ armoredKey: privateKeyArmored });
             return {
                 decryptedKey: {
                     ID,
                     privateKey,
                     publicKey,
                     Flags,
-                    Primary
+                    Primary,
                 },
                 Key: {
                     ID,

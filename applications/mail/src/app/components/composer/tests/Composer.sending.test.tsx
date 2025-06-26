@@ -133,7 +133,6 @@ describe('Composer sending', () => {
                     {
                         Primary: 1,
                         PrivateKey: fromKeys.privateKeyArmored,
-                        PublicKey: fromKeys.publicKeyArmored,
                     } as AddressKey,
                 ],
             });
