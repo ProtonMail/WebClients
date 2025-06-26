@@ -617,6 +617,7 @@ const BasePublicApp = () => {
                                                 <Route
                                                     path={[
                                                         SSO_PATHS.SIGNUP,
+                                                        SSO_PATHS.START,
                                                         SSO_PATHS.REFER,
                                                         SSO_PATHS.BUSINESS_SIGNUP,
                                                         SSO_PATHS.CALENDAR_SIGNUP,

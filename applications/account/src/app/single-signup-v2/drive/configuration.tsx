@@ -345,7 +345,18 @@ export const getDriveConfiguration = ({
                 plan: PLANS.BUNDLE,
                 subsection: (
                     <>
-                        <AppsLogos className="mb-1 md:mb-3" />
+                        <AppsLogos
+                            className="mb-1 md:mb-3"
+                            fullWidth
+                            apps={[
+                                APPS.PROTONMAIL,
+                                APPS.PROTONCALENDAR,
+                                APPS.PROTONDRIVE,
+                                APPS.PROTONVPN_SETTINGS,
+                                APPS.PROTONPASS,
+                                APPS.PROTONDOCS,
+                            ]}
+                        />
                         <PlanCardFeatureList
                             {...planCardFeatureProps}
                             features={getBundleFeatures({ plan: plansMap?.[PLANS.BUNDLE], freePlan })}
@@ -360,7 +371,18 @@ export const getDriveConfiguration = ({
                 plan: PLANS.FAMILY,
                 subsection: (
                     <>
-                        <AppsLogos className="mb-1 md:mb-3" />
+                        <AppsLogos
+                            className="mb-1 md:mb-3"
+                            fullWidth
+                            apps={[
+                                APPS.PROTONMAIL,
+                                APPS.PROTONCALENDAR,
+                                APPS.PROTONDRIVE,
+                                APPS.PROTONVPN_SETTINGS,
+                                APPS.PROTONPASS,
+                                APPS.PROTONDOCS,
+                            ]}
+                        />
                         <PlanCardFeatureList
                             {...planCardFeatureProps}
                             features={getFamilyFeatures({ plan: plansMap?.[PLANS.FAMILY], freePlan })}

@@ -16,7 +16,7 @@ import Layout from './components/Layout/Layout';
 import PlanSelector from './components/PlanSelector/PlanSelector';
 import { getSignupHrefFromPlanIDs } from './helpers/path';
 
-import './styles/arizona.scss';
+import '../../shared/styles/arizona.scss';
 
 const DrivePricing = () => {
     const payments = usePaymentOptimistic();
