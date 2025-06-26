@@ -6,6 +6,7 @@ import MessageBodyIframe from '@proton/mail-renderer/components/MessageBodyIfram
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { isAutoFlaggedPhishing, isPlainText, isSuspicious } from '@proton/shared/lib/mail/messages';
+import iframeSVG from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -99,6 +100,7 @@ const EOMessageBody = ({
                         onMessageImageLoadError={handleMessageImageLoadError}
                         theme={theme}
                         iframeCSSStyles={iframeCSSStyles}
+                        iframeSVG={iframeSVG}
                     />
                     {linkModal}
                     <MessageBodyPrint isPrint={false} iframeRef={iframeRef} message={message} labelID="" />
