@@ -8,7 +8,7 @@ import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import Time from '@proton/components/components/time/Time';
-import CancelTrialModal from '@proton/components/containers/topBanners/CancelTrialModal';
+import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
 import { Renew, type Subscription } from '@proton/payments';
 import {
     CYCLE,
@@ -93,7 +93,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     const { planTitle, planName } = getSubscriptionPlanTitleAndName(user, subscription);
     const isPassB2bPlan = getIsPassB2BPlan(planName);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
-    const [cancelTrialModalProps, setCancelTrialModal, renderCancelTrialModal] = useModalState();
+    const [learnMoreModalProps, setLearnMoreModal, renderLearnMoreModal] = useModalState();
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
     const amount = (subscription?.Amount ?? 0) / cycle;
@@ -447,7 +447,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         return (
             <>
                 {startsOnTime && <div className="color-weak">{c('Info').jt`Starts on ${startsOnTime}`}</div>}
-                <InlineLinkButton className="color-weak" onClick={() => setCancelTrialModal(true)}>
+                <InlineLinkButton className="color-weak" onClick={() => setLearnMoreModal(true)}>
                     {c('Link').t`Learn more`}
                 </InlineLinkButton>
             </>
@@ -464,7 +464,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
 
     return (
         <>
-            {renderCancelTrialModal && <CancelTrialModal {...cancelTrialModalProps} />}
+            {renderLearnMoreModal && <LearnMoreModal {...learnMoreModalProps} />}
             <Panel
                 data-testid="current-plan"
                 titleDataTestId="plan-name"
