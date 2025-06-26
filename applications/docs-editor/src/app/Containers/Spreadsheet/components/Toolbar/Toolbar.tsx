@@ -4,6 +4,9 @@ import * as T from './primitives'
 import { FontSelect } from './FontSelect'
 import { useStringifier } from '../../stringifier'
 import type { ProtonSheetsUIState } from '../../ui-state'
+import * as Icons from '../icons'
+import { MoreFormatsMenu } from './MoreFormatsMenu'
+import { FontSizeInput } from './FontSizeInput'
 
 export interface ToolbarProps extends ComponentPropsWithRef<'div'> {
   ui: ProtonSheetsUIState
@@ -13,59 +16,67 @@ export function Toolbar({ ui, ...props }: ToolbarProps) {
   const s = useStrings()
   return (
     <T.Container {...props}>
-      <T.Button icon="arrow-up-and-left" onClick={ui.history.undo} disabled={ui.history.undoDisabled}>
+      <T.Item legacyIconName="arrow-up-and-left" onClick={ui.history.undo} disabled={ui.history.undoDisabled}>
         {s('Undo')}
-      </T.Button>
-      <T.Button
-        icon="arrow-up-and-left"
+      </T.Item>
+      <T.Item
+        legacyIconName="arrow-up-and-left"
         // Hack to flip the icon horizontally.
         className="[&_svg]:-scale-x-100"
         onClick={ui.history.redo}
         disabled={ui.history.redoDisabled}
       >
         {s('Redo')}
-      </T.Button>
+      </T.Item>
       {/* TODO: zoom */}
-      <T.Button icon="magnifier" onClick={ui.search.open}>
+      <T.Item legacyIconName="magnifier" onClick={ui.search.open}>
         {s('Search')}
-      </T.Button>
-      <T.Button icon="eraser" onClick={ui.format.clear}>
+      </T.Item>
+      <T.Item legacyIconName="eraser" onClick={ui.format.clear}>
         {s('Clear formatting')}
-      </T.Button>
+      </T.Item>
       <T.Separator />
-      {/* TODO: missing icon 'currency-dollar' */}
-      <T.Button icon="question-circle" onClick={ui.format.asCurrency}>
+      <T.Item icon={Icons.currencyDollar} onClick={ui.format.pattern.currency.default.set}>
         {s('Format as currency')}
-      </T.Button>
-      {/* TODO: missing icon 'percentage-semibold' */}
-      <T.Button icon="question-circle" onClick={ui.format.asPercent}>
+      </T.Item>
+      <T.Item legacyIconName="percent" onClick={ui.format.pattern.percent.set}>
         {s('Format as percent')}
-      </T.Button>
-      {/* TODO: missing icon 'decrease-decimal-places' */}
-      <T.Button icon="question-circle" onClick={ui.format.decreaseDecimalPlaces}>
+      </T.Item>
+      <T.Item icon={Icons.decreaseDecimalPlaces} onClick={ui.format.decreaseDecimalPlaces}>
         {s('Decrease decimal places')}
-      </T.Button>
-      {/* TODO: missing icon 'increase-decimal-places' */}
-      <T.Button icon="question-circle" onClick={ui.format.increaseDecimalPlaces}>
+      </T.Item>
+      <T.Item icon={Icons.increaseDecimalPlaces} onClick={ui.format.increaseDecimalPlaces}>
         {s('Increase decimal places')}
-      </T.Button>
-      {/* TODO: more formats */}
+      </T.Item>
+      <MoreFormatsMenu ui={ui} renderMenuButton={<T.Item icon={Icons.numbers}>{s('More formats')}</T.Item>} />
       <T.Separator />
-      <FontSelect ui={ui} render={<T.Trigger />} />
-      {/* TODO: font size */}
+      <FontSelect ui={ui} renderSelect={<T.Item variant="label" dropdownIndicator className="w-[8rem]" />} />
+      <FontSizeInput ui={ui} />
       <T.Separator />
-      <T.Button icon="text-bold" isActive={ui.format.isBold} onClick={ui.format.toggleBold}>
+      <T.Item legacyIconName="text-bold" pressed={ui.format.text.bold.active} onClick={ui.format.text.bold.toggle}>
         {s('Bold')}
-      </T.Button>
-      <T.Button icon="text-italic" isActive={ui.format.isItalic} onClick={ui.format.toggleItalic}>
+      </T.Item>
+      <T.Item
+        legacyIconName="text-italic"
+        pressed={ui.format.text.italic.active}
+        onClick={ui.format.text.italic.toggle}
+      >
         {s('Italic')}
-      </T.Button>
-      <T.Button icon="text-underline" isActive={ui.format.isUnderline} onClick={ui.format.toggleUnderline}>
+      </T.Item>
+      <T.Item
+        legacyIconName="text-underline"
+        pressed={ui.format.text.underline.active}
+        onClick={ui.format.text.underline.toggle}
+      >
         {s('Underline')}
-      </T.Button>
-      <T.Button icon="text-strikethrough" isActive={ui.format.isStrikethrough} onClick={ui.format.toggleStrikethrough}>
+      </T.Item>
+      <T.Item
+        legacyIconName="text-strikethrough"
+        pressed={ui.format.text.strikethrough.active}
+        onClick={ui.format.text.strikethrough.toggle}
+      >
         {s('Strikethrough')}
-      </T.Button>
+      </T.Item>
       {/* TODO: text color */}
       <T.Separator />
       {/* TODO: fill color */}
@@ -100,5 +111,6 @@ function useStrings() {
     'Format as percent': c('sheets_2025:Spreadsheet editor toolbar').t`Format as percent`,
     'Decrease decimal places': c('sheets_2025:Spreadsheet editor toolbar').t`Decrease decimal places`,
     'Increase decimal places': c('sheets_2025:Spreadsheet editor toolbar').t`Increase decimal places`,
+    'More formats': c('sheets_2025:Spreadsheet editor toolbar').t`More formats`,
   }))
 }

@@ -18,33 +18,35 @@ export function FileMenu({ ui, renderMenuButton, ...props }: FileMenuProps) {
       <UI.Menu>
         {/* TODO: basically all actions */}
         {/* TODO: which icon do we want here? */}
-        <UI.MenuItem icon="question-circle">{s('New spreadsheet')}</UI.MenuItem>
-        <UI.MenuItem icon="file-arrow-in-up">{s('Import')}</UI.MenuItem>
-        <UI.MenuItem icon="squares">{s('Make a copy')}</UI.MenuItem>
-        <UI.MenuItem icon="arrows-cross">{s('Move to folder')}</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="file" />}>{s('New spreadsheet')}</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="file-arrow-in-up" />}>{s('Import')}</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="squares" />}>{s('Make a copy')}</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="arrows-cross" />}>{s('Move to folder')}</UI.MenuItem>
         <UI.MenuSeparator />
-        <UI.MenuItem icon="clock-rotate-left">{s('See version history')}</UI.MenuItem>
-        <UI.MenuItem icon="trash">{s('Move to trash')}</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="clock-rotate-left" />}>
+          {s('See version history')}
+        </UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="trash" />}>{s('Move to trash')}</UI.MenuItem>
         <UI.MenuSeparator />
-        <UI.MenuItem icon="printer">{s('Print')}</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="printer" />}>{s('Print')}</UI.MenuItem>
         <UI.MenuProvider>
-          <UI.MenuButton
-            render={
-              <UI.MenuItem isSubmenuTrigger icon="arrow-down-to-square">
-                {s('Download')}
-              </UI.MenuItem>
-            }
-          />
-          <UI.Menu>
+          <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="arrow-down-to-square" />}>
+            {s('Download')}
+          </UI.SubMenuButton>
+          <UI.SubMenu>
             <UI.MenuItem>{s('Microsoft Excel (.xlsx)')}</UI.MenuItem>
             <UI.MenuItem>{s('Comma Separated Values (.csv)')}</UI.MenuItem>
             <UI.MenuItem>{s('Tab Separated Values (.tsv)')}</UI.MenuItem>
-          </UI.Menu>
+          </UI.SubMenu>
         </UI.MenuProvider>
         <UI.MenuSeparator />
-        <UI.MenuItem icon="info-circle">{s('Help')}</UI.MenuItem>
-        <UI.MenuItem icon="brand-proton-sheets">{s('View recent spreadsheets')}</UI.MenuItem>
-        <UI.MenuItem icon="brand-proton-drive">{s('Open Proton Drive')}</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="info-circle" />}>{s('Help')}</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="brand-proton-sheets" />}>
+          {s('View recent spreadsheets')}
+        </UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="brand-proton-drive" />}>
+          {s('Open Proton Drive')}
+        </UI.MenuItem>
         {/* TODO: add download logs option */}
       </UI.Menu>
     </UI.MenuProvider>
