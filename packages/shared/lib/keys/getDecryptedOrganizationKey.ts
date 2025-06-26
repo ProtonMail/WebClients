@@ -10,9 +10,9 @@ export const getDecryptedOrganizationKey = async (armoredKey: string, passphrase
         armoredKey,
         passphrase,
     });
-    const publicKey = await CryptoProxy.importPublicKey({
-        binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
-    });
+    // since we already have the armored private key, we avoid calling the
+    // `toPublicKeyReference` helper which internally re-exports the key
+    const publicKey = await CryptoProxy.importPublicKey({ armoredKey });
     return {
         privateKey,
         publicKey,

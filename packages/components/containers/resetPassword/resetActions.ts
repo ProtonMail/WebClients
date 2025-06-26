@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
 import { createPreAuthKTVerifier, resetSelfAudit } from '@proton/key-transparency';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
@@ -237,9 +237,7 @@ const handleMnemonic = async ({
                 if (!privateKey) {
                     return;
                 }
-                const publicKey = await CryptoProxy.importPublicKey({
-                    binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
-                });
+                const publicKey = await toPublicKeyReference(privateKey);
                 return {
                     ID,
                     privateKey,

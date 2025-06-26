@@ -17,9 +17,9 @@ const getDecryptedUserKey = async (Key: tsKey, keyPassword: string, organization
     const { ID, PrivateKey } = Key;
     const userKeyPassword = await getUserKeyPassword(Key, keyPassword, organizationKey);
     const privateKey = await CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: userKeyPassword });
-    const publicKey = await CryptoProxy.importPublicKey({
-        binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
-    });
+    // since we already have the armored private key, we avoid calling the
+    // `toPublicKeyReference` helper which internally re-exports the key
+    const publicKey = await CryptoProxy.importPublicKey({ armoredKey: PrivateKey });
 
     return {
         ID,

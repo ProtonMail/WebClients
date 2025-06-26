@@ -138,9 +138,9 @@ export const addUserKeysProcess = async ({
 
     // Store a new device recovery immediately to avoid having the storing trigger asynchronously which would cause red notification flashes
     if (isDeviceRecoveryAvailable && isDeviceRecoveryEnabled) {
-        const publicKey = await CryptoProxy.importPublicKey({
-            binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
-        });
+        // since we already have the armored private key, we avoid calling the
+        // `toPublicKeyReference` helper which internally re-exports the key
+        const publicKey = await CryptoProxy.importPublicKey({ armoredKey: privateKeyArmored });
         await storeDeviceRecovery({
             api,
             user,

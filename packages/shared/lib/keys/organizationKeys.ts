@@ -154,9 +154,9 @@ export const getReEncryptedPublicMemberTokensPayloadV2 = async ({
                     armoredKey: PrivateKey,
                     passphrase: memberKeyToken,
                 });
-                const publicKey = await CryptoProxy.importPublicKey({
-                    armoredKey: await CryptoProxy.exportPublicKey({ key: privateKey }),
-                });
+                // since we already have the armored private key, we avoid calling the
+                // `toPublicKeyReference` helper which internally re-exports the key
+                const publicKey = await CryptoProxy.importPublicKey({ armoredKey: PrivateKey });
                 return {
                     ID,
                     privateKey,

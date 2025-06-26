@@ -1,6 +1,11 @@
 import { c } from 'ttag';
 
-import type { ContextVerificationOptions, PrivateKeyReference, PublicKeyReference , ContextSigningOptions} from '@proton/crypto';
+import type {
+    ContextSigningOptions,
+    ContextVerificationOptions,
+    PrivateKeyReference,
+    PublicKeyReference,
+} from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
@@ -259,9 +264,9 @@ export const getDecryptedAddressKey = async (
     addressKeyPassword: string
 ): Promise<DecryptedAddressKey> => {
     const privateKey = await CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: addressKeyPassword });
-    const publicKey = await CryptoProxy.importPublicKey({
-        binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
-    });
+    // since we already have the armored private key, we avoid calling the
+    // `toPublicKeyReference` helper which internally re-exports the key
+    const publicKey = await CryptoProxy.importPublicKey({ armoredKey: PrivateKey });
     return {
         ID,
         Flags,

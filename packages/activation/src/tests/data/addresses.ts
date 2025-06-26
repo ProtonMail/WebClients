@@ -7,7 +7,6 @@ const activeKey: AddressKey = {
     Active: 1,
     Fingerprint: 'fingerprint',
     Fingerprints: [],
-    PublicKey: 'PublicKey',
     Version: 1,
     PrivateKey: 'PrivateKey',
     Signature: 'signature',
