@@ -1255,6 +1255,37 @@ describe('Newsletter subscription reducers', () => {
                 expect(state.value?.tabs.unsubscribe.totalCount).toEqual(0);
                 expect(state.value?.byId[activeSubscription.ID]).toBeUndefined();
             });
+
+            it('should not delete the subscription if it is not in the store', () => {
+                const secondActiveSubscription = {
+                    ...activeSubscription,
+                    ID: 'second-active-subscription-id',
+                };
+
+                state.value!.byId = {
+                    [secondActiveSubscription.ID]: secondActiveSubscription,
+                };
+                state.value!.tabs.active.ids = [secondActiveSubscription.ID];
+                state.value!.tabs.active.totalCount = 1;
+
+                handleServerEvent(state, {
+                    type: 'server event',
+                    payload: {
+                        NewsletterSubscriptions: [
+                            {
+                                Action: EVENT_ACTIONS.DELETE,
+                                ID: activeSubscription.ID,
+                            },
+                        ],
+                        More: 0,
+                        EventID: 'test-event-id',
+                    },
+                });
+
+                expect(state.value?.tabs.active.ids).toEqual([secondActiveSubscription.ID]);
+                expect(state.value?.tabs.active.totalCount).toEqual(1);
+                expect(state.value?.byId[activeSubscription.ID]).toBeUndefined();
+            });
         });
 
         it('should return undefined if the state is not initialized', () => {
