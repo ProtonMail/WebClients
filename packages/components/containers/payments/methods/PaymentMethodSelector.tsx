@@ -39,8 +39,12 @@ const PaymentMethodSelector = ({
         return null;
     }
 
+    const hasSavedPaymentMethod = options.find((it) => it.isSaved);
     const hasApplePay = options.some(({ type }) => type === PAYMENT_METHOD_TYPES.APPLE_PAY);
-    const showRadioButtons = (options.length <= 2 && !forceDropdown) || hasApplePay;
+    const showRadioButtons =
+        (options.length <= 2 && !forceDropdown) ||
+        // if user already has a saved payment method, we don't need to show all the payment methods at once
+        (hasApplePay && !hasSavedPaymentMethod);
 
     if (showRadioButtons) {
         return (
