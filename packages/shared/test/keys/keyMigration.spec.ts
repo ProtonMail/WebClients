@@ -46,7 +46,6 @@ const getSetup1 = async () => {
         organizationKey: {
             Key: {
                 PrivateKey: OrganizationKeyFull.Key.PrivateKey,
-                PublicKey: OrganizationKeyFull.Key.PublicKey,
             },
             key: OrganizationKeyFull.key,
         },

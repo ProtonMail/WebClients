@@ -92,7 +92,6 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
                         {
                             Primary: 1,
                             PrivateKey: toKeys.privateKeyArmored,
-                            PublicKey: toKeys.publicKeyArmored,
                         },
                     ],
                 } as Address,
