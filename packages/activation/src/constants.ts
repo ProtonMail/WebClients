@@ -8,12 +8,6 @@ import { ImportProvider, MailImportGmailCategories, OAUTH_PROVIDER, TIME_PERIOD 
 export const G_OAUTH_SCOPE_DEFAULT = ['email', 'openid'];
 
 export const G_OAUTH_SCOPE_MAIL_READONLY = ['https://www.googleapis.com/auth/gmail.readonly'];
-export const G_OAUTH_SCOPE_MAIL_FULL_SCOPE = ['https://mail.google.com/'];
-export const G_OAUTH_SCOPE_PROFILE = ['https://www.googleapis.com/auth/userinfo.profile'];
-
-export const G_OAUTH_SCOPE_CONTACTS = ['https://www.googleapis.com/auth/contacts.readonly'];
-export const G_OAUTH_SCOPE_CALENDAR = ['https://www.googleapis.com/auth/calendar.readonly'];
-// export const G_OAUTH_SCOPE_DRIVE = [];
 
 export const O_OAUTH_SCOPE_DEFAULT = ['email', 'openid', 'User.Read', 'offline_access'];
 export const O_OAUTH_SCOPE_MAIL = ['Mail.read'];
@@ -60,6 +54,11 @@ export const SYNC_G_OAUTH_SCOPES = [...G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL
 export const SYNC_SUCCESS_NOTIFICATION: CreateNotificationOptions = {
     type: 'success',
     text: c('account').t`Forwarding will start soon. New emails will appear in your inbox.`,
+};
+
+export const BYOE_FAIL_NOTIFICATION: CreateNotificationOptions = {
+    type: 'error',
+    text: c('loc_nightly: BYOE').t`Address could not be added.`,
 };
 
 export const MAX_SYNC_FREE_USER = 1;
