@@ -947,6 +947,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Explore other plans": [
+        "Explorar otros planes"
       ]
     },
     "Action subscription": {
@@ -9267,6 +9270,9 @@
       ],
       "PayPal": [
         "PayPal"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -13237,6 +13243,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Después de la verificación, no elimines este registro TXT porque se necesita para confirmar que continúas siendo el propietario del dominio."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferencia bancaria - ${ details }"
       ]
     }
   }
