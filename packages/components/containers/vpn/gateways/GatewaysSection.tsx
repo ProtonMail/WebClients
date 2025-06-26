@@ -8,7 +8,6 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Href } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -18,7 +17,6 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { PLANS, getCountryOptions, getVPNDedicatedIPs } from '@proton/payments';
-import { useIsB2BTrial } from '@proton/payments/ui';
 import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -53,8 +51,6 @@ const getFeaturesAndUserIds = (data: Partial<GatewayModel>): [number, readonly s
 };
 
 const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
-    const SERVERS = 'servers';
-    const GATEWAYS = 'gateways';
     const DASHBOARD = 'dashboard';
     const UPSELLS = 'upsells';
 
@@ -112,9 +108,6 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     }, [gateways, updatedLogicals, deletedLogicals]);
     const { sortedList } = useSortedList(allGateways as Gateway[], { key: 'Name', direction: SORT_DIRECTION.ASC });
     const [openSubscriptionModal] = useSubscriptionModal();
-
-    const isTrial = useIsB2BTrial(subscription, organization);
-    const [showTrialPrompt, setShowTrialPrompt] = useState<undefined | typeof SERVERS | typeof GATEWAYS>(undefined);
 
     if (!organization || !user || !subscription || !gateways || !locations) {
         return <Loader />;
@@ -517,9 +510,6 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         }
     };
 
-    const isDisabled = !isTrial && !canAdd;
-    const handleClick = isTrial && !canAdd ? () => setShowTrialPrompt('gateways') : addGateway;
-
     return (
         <>
             {isAdmin && (
@@ -540,9 +530,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                             size="small"
                             color="norm"
                             shape={canAdd ? 'outline' : 'solid'}
-                            onClick={
-                                isTrial ? () => setShowTrialPrompt(SERVERS) : getCustomizeSubscriptionOpener(DASHBOARD)
-                            }
+                            onClick={getCustomizeSubscriptionOpener(DASHBOARD)}
                             title={c('Title').t`Customize the number of IP addresses in your plan`}
                         >
                             {c('Action').t`Get more servers`}
@@ -557,8 +545,8 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         <div className="mb-4">
                             <Button
                                 color="norm"
-                                disabled={isDisabled}
-                                onClick={handleClick}
+                                disabled={!canAdd}
+                                onClick={addGateway}
                                 title={c('Title').t`Create a new Gateway`}
                             >
                                 {c('Action').t`Create Gateway`}
@@ -633,8 +621,8 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         <div>
                             <Button
                                 color="norm"
-                                disabled={!isTrial && !canAdd}
-                                onClick={isTrial && !canAdd ? () => setShowTrialPrompt('gateways') : addGateway}
+                                disabled={!canAdd}
+                                onClick={addGateway}
                                 title={c('Title').t`Create a new gateway`}
                             >
                                 {c('Action').t`Create Gateway`}
@@ -642,41 +630,6 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         </div>
                     )}
                 </EmptyViewContainer>
-            )}
-
-            {!!showTrialPrompt && (
-                <Prompt
-                    open={!!showTrialPrompt}
-                    title={
-                        showTrialPrompt === SERVERS
-                            ? c('Title').t`Cannot add servers`
-                            : c('Title').t`Cannot add Gateway`
-                    }
-                    buttons={[
-                        <Button
-                            color="norm"
-                            onClick={() => {
-                                setShowTrialPrompt(undefined);
-                            }}
-                            type="submit"
-                        >{c('Action').t`Got it`}</Button>,
-                    ]}
-                    onClose={() => {
-                        setShowTrialPrompt(undefined);
-                    }}
-                >
-                    {showTrialPrompt === SERVERS
-                        ? c('Body').ngettext(
-                              msgid`Your free trial includes ${ipAddresses} dedicated server. You can add more servers once your full subscription starts.`,
-                              `Your free trial includes ${ipAddresses} dedicated servers. You can add more servers once your full subscription starts.`,
-                              ipAddresses
-                          )
-                        : c('Body').ngettext(
-                              msgid`Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.`,
-                              `All your dedicated servers are already assigned to Gateways. You’ll be able to buy more servers once your free trial ends.`,
-                              ipAddresses
-                          )}
-                </Prompt>
             )}
         </>
     );
