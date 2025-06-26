@@ -18,7 +18,7 @@ import { PricingCard } from '../../components/PricingCard/PricingCard';
 import { getSignupHrefFromPlanIDs } from '../../helpers/path';
 import AccountDetailsForm from './AccountDetailsForm';
 
-import '../../styles/arizona.scss';
+import '../../../../shared/styles/arizona.scss';
 
 const Plans = ({ onScrollToTop }: { onScrollToTop: () => void }) => {
     const payments = usePaymentOptimistic();
