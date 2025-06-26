@@ -9271,8 +9271,14 @@
       "${ pricingTitle } offer expires today!": [
         "Прапанова з коштам ${ pricingTitle } сёння будзе пратэрмінавана!"
       ],
+      "Don’t show this again": [
+        "Больш не паказваць"
+      ],
       "Don’t show this offer again": [
         "Больш не паказваць гэту прапанову"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Атрымайце ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Атрымайце Drive Plus усяго за ${ pricingTitle }"
@@ -9326,9 +9332,20 @@
         "Ваша падпіска неўзабаве падоўжыцца"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Зашыфраваны менеджар пароляў"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "Больш за 10 прэміяльных функцый"
+      ],
+      "500 GB secure storage": [
+        "500 ГБ бяспечнага сховішча"
+      ],
+      "Advanced threat protection": [
+        "Пашыраная абарона ад пагроз"
       ],
       "Custom email domain": [
         "Карыстальніцкі дамен электроннай пошты"
@@ -9350,6 +9367,12 @@
       ],
       "Storage": [
         "Сховішча"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Звышхуткія серверы VPN у больш чым 110 краінах"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Неабмежаваная колькасць псеўданімаў, каб абараніць вашу ідэнтычнасць"
       ]
     },
     "Onboarding": {
@@ -9663,6 +9686,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Банкаўскі перавод"
       ],
@@ -9796,6 +9822,14 @@
     "Payments.plan_name": {
       "Free": [
         "Бясплатна"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - карта, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Банкаўскі перавод - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -10432,8 +10466,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Праглядайце бяспечна"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Рабіце больш з ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Атрымайце неабмежаваную колькасць псеўданімаў"
+      ],
       "Go to subscription plans": [
         "Перайсці ў тарыфныя планы"
+      ],
+      "Guard against threats": [
+        "Абараніце сябе ад пагроз"
+      ],
+      "Increase your storage": [
+        "Павялічце сваё сховішча"
+      ],
+      "Keep passwords safe": [
+        "Захоўвайце паролі ў бяспецы"
+      ],
+      "Unblock streaming content": [
+        "Разблакіроўка змесціва трансляцыі"
       ],
       "Upgrade": [
         "Палепшыць"
@@ -10514,6 +10569,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Доступ да змесціва на сэрвісах з трансляцыямі па ўсім свеце"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Атрымайце 500 ГБ для бяспечнага захоўвання ўсіх сваіх файлаў і фатаграфій"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Атрымайце доступ да звышхуткіх сервераў VPN у больш чым 110 краінах"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Атрымайце тарыфны план ${ BRAND_NAME } Unlimited, які аб'ядноўвае ўсе функцыі."
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Атрымайце неабмежаваную колькасць псеўданімаў, каб абараніць сваю ідэнтычнасць і паменшыць спам"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаванымі пры дапамозе некалькіх сховішч "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Абараніце свой уліковы запіс ад пагроз з дамогай Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Палепшыце свой тарыфны план і зэканомце больш грошай, купіўшы ${ planName } на 2 гады"
       ]
@@ -12409,6 +12485,14 @@
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ]
     },
+    "Unlimited offer": {
+      "/month": [
+        "/месяц"
+      ],
+      "Only": [
+        "Толькі"
+      ]
+    },
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў, а таксама аднаўляць іх паролі."
@@ -12437,6 +12521,9 @@
       ],
       "Name must not be empty": [
         "Назва не можа быць пустой"
+      ],
+      "Name must not contain slashes (/)": [
+        "Назва не павінна змяшчаць слэшы (/)"
       ]
     },
     "Video control": {
