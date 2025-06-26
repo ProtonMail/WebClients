@@ -442,6 +442,9 @@
       "Delete logo": [
         "Выдаліць лагатып"
       ],
+      "Delete logs": [
+        "Выдаліць журналы"
+      ],
       "Delete member": [
         "Выдаліць удзельніка"
       ],
@@ -468,6 +471,12 @@
       ],
       "Delete “${ label.Name }”": [
         "Выдаліць “${ label.Name }”"
+      ],
+      "Deleting folder": [
+        "Выдаленне папкі"
+      ],
+      "Deleting label": [
+        "Выдаленне меткі"
       ],
       "Deny access": [
         "Адмовіць у доступе"
@@ -642,6 +651,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Даследаваць іншыя тарыфныя планы ${ BRAND_NAME }"
+      ],
+      "Explore other plans": [
+        "Даследаваць іншыя тарыфныя планы"
       ],
       "Export": [
         "Экспартаваць"
@@ -4177,6 +4189,12 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Уключыце ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Уключыць падрабязныя падзеі і ${ PROTON_SENTINEL_NAME } для доступу да гэтых функцый"
+      ],
+      "Enable detailed events to access these features": [
+        "Уключыць падрабязныя падзеі для доступу да гэтых функцый"
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Заахвочвайце выкарыстанне двухфактарнай аўтэнтыфікацыі ў сваёй арганізацыі для дадатковай бяспекі."
       ],
@@ -4266,18 +4284,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
-      ],
-      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "Вам неабходна ўключыць падрабязныя падзеі і ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый."
-      ],
-      "You should enable detailed events in order to access these features": [
-        "Вам неабходна ўключыць падрабязныя падзеі, каб атрымаць доступ да гэтых функцый."
-      ],
-      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "Адміністратар вашай арганізацыі павінен уключыць падрабязныя падзеі і ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
-      ],
-      "Your organization administrator should enable detailed events in order to access these features": [
-        "Адміністратар вашай арганізацыі павінен уключыць падрабязныя падзеі, каб атрымаць доступ да гэтых функцый"
       ]
     },
     "description": {
@@ -6493,8 +6499,14 @@
       ]
     },
     "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+, Prime Video з любой краіны ў свеце."
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+, Prime Video з любой краіны ў свеце"
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "Абараняе вас ад рэкламы, праграм сачэння і шкодных праграм на вэб-сайтах і ў праграмах"
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Серверы Secure Core маршрутызуюць ваш трафік праз 2 серверы VPN для дадатковай бяспекі"
       ]
     },
     "fido2: Action": {
@@ -13129,17 +13141,20 @@
       ],
       "Two password mode enabled": [
         "Рэжым двух пароляў уключаны"
+      ],
+      "Unknown": [
+        "Невядома"
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "Манітор актыўнасці"
+      ],
       "Enable ${ reason }": [
         "Уключыць ${ reason }"
       ],
       "Enable detailed events": [
         "Уключыць падрабязныя падзеі"
-      ],
-      "Enable security events": [
-        "Уключыць падзеі бяспекі"
       ]
     },
     "Mail import summary": {
@@ -15034,8 +15049,14 @@
       "${ pricingTitle } offer expires today!": [
         "Прапанова з коштам ${ pricingTitle } сёння будзе пратэрмінавана!"
       ],
+      "Don’t show this again": [
+        "Больш не паказваць"
+      ],
       "Don’t show this offer again": [
         "Больш не паказваць гэту прапанову"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Атрымайце ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Атрымайце Drive Plus усяго за ${ pricingTitle }"
@@ -15089,9 +15110,20 @@
         "Ваша падпіска неўзабаве падоўжыцца"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Зашыфраваны менеджар пароляў"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "Больш за 10 прэміяльных функцый"
+      ],
+      "500 GB secure storage": [
+        "500 ГБ бяспечнага сховішча"
+      ],
+      "Advanced threat protection": [
+        "Пашыраная абарона ад пагроз"
       ],
       "Custom email domain": [
         "Карыстальніцкі дамен электроннай пошты"
@@ -15113,6 +15145,12 @@
       ],
       "Storage": [
         "Сховішча"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Звышхуткія серверы VPN у больш чым 110 краінах"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Неабмежаваная колькасць псеўданімаў, каб абараніць вашу ідэнтычнасць"
       ]
     },
     "Onboarding": {
@@ -16112,6 +16150,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Банкаўскі перавод"
       ],
@@ -16157,9 +16198,6 @@
       ],
       "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
         "Для SEPA прымаюцца толькі еўра. Ваша валюта зменена. Выкарыстоўвайце селектар, каб скінуць свой выбар."
-      ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Дадайце спосаб аплаты ў панэль кіравання для працягу."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
@@ -16257,6 +16295,14 @@
     "Payments.plan_name": {
       "Free": [
         "Бясплатна"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - карта, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Банкаўскі перавод - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -18005,8 +18051,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Праглядайце бяспечна"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Рабіце больш з ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Атрымайце неабмежаваную колькасць псеўданімаў"
+      ],
       "Go to subscription plans": [
         "Перайсці ў тарыфныя планы"
+      ],
+      "Guard against threats": [
+        "Абараніце сябе ад пагроз"
+      ],
+      "Increase your storage": [
+        "Павялічце сваё сховішча"
+      ],
+      "Keep passwords safe": [
+        "Захоўвайце паролі ў бяспецы"
+      ],
+      "Unblock streaming content": [
+        "Разблакіроўка змесціва трансляцыі"
       ],
       "Upgrade": [
         "Палепшыць"
@@ -18087,6 +18154,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Доступ да змесціва на сэрвісах з трансляцыямі па ўсім свеце"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Атрымайце 500 ГБ для бяспечнага захоўвання ўсіх сваіх файлаў і фатаграфій"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Атрымайце доступ да звышхуткіх сервераў VPN у больш чым 110 краінах"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Атрымайце тарыфны план ${ BRAND_NAME } Unlimited, які аб'ядноўвае ўсе функцыі."
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Атрымайце неабмежаваную колькасць псеўданімаў, каб абараніць сваю ідэнтычнасць і паменшыць спам"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаванымі пры дапамозе некалькіх сховішч "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Абараніце свой уліковы запіс ад пагроз з дамогай Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Палепшыце свой тарыфны план і зэканомце больш грошай, купіўшы ${ planName } на 2 гады"
       ]
@@ -20086,9 +20174,6 @@
       "Delete label?": [
         "Выдаліць метку?"
       ],
-      "Delete logs": [
-        "Выдаліць журналы"
-      ],
       "Delete organization logo?": [
         "Выдаліць лагатып арганізацыі?"
       ],
@@ -21614,6 +21699,14 @@
       ],
       "Refund": [
         "Вяртанне"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/месяц"
+      ],
+      "Only": [
+        "Толькі"
       ]
     },
     "unprivatization": {

@@ -643,6 +643,9 @@
       "Explore other ${ BRAND_NAME } plans": [
         "Explorare alte planuri ${ BRAND_NAME }"
       ],
+      "Explore other plans": [
+        "Explorare alte planuri"
+      ],
       "Export": [
         "Exportare"
       ],
@@ -4156,6 +4159,12 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activați ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Activați evenimente detaliate și ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
+      ],
+      "Enable detailed events to access these features": [
+        "Activați evenimente detaliate pentru a accesa aceste funcții."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Încurajați utilizarea autentificării cu doi factori în organizație pentru un plus de securitate."
       ],
@@ -4245,18 +4254,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
-      ],
-      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "Ar trebui să activați evenimente detaliate și ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
-      ],
-      "You should enable detailed events in order to access these features": [
-        "Ar trebui să activați evenimente detaliate pentru a accesa aceste funcții."
-      ],
-      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "Administratorul organizației ar trebui să activeze evenimentele detaliate și ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
-      ],
-      "Your organization administrator should enable detailed events in order to access these features": [
-        "Administratorul organizației ar trebui să activeze evenimentele detaliate pentru a accesa aceste funcții."
       ]
     },
     "description": {
@@ -6459,8 +6456,14 @@
       ]
     },
     "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney +, Prime Video și altele."
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney+, Prime Video și altele."
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "Vă protejează de reclame, urmăritori și programe malițioase pe site-uri web și aplicații."
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Serverele Secure Core vă direcționează traficul prin două servere VPN pentru securitate suplimentară."
       ]
     },
     "fido2: Action": {
@@ -13009,17 +13012,20 @@
       ],
       "Two password mode enabled": [
         "Mod cu două parole activat."
+      ],
+      "Unknown": [
+        "Necunoscut"
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "Monitorizare activitate"
+      ],
       "Enable ${ reason }": [
         "Activare ${ reason }"
       ],
       "Enable detailed events": [
         "Activare evenimente detaliate"
-      ],
-      "Enable security events": [
-        "Activare evenimente de securitate"
       ]
     },
     "Mail import summary": {
@@ -14872,8 +14878,14 @@
       "${ pricingTitle } offer expires today!": [
         "Oferta cu ${ pricingTitle } expiră astăzi!"
       ],
+      "Don’t show this again": [
+        "Nu mai arăta asta"
+      ],
       "Don’t show this offer again": [
         "Nu mai arăta această ofertă"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Obțineți ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Luați Drive Plus cu doar ${ pricingTitle }"
@@ -14927,9 +14939,20 @@
         "Abonamentul se va reînnoi în curând"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Manager de parole criptat"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "Peste 10 funcții premium"
+      ],
+      "500 GB secure storage": [
+        "500 GiB de stocare securizată"
+      ],
+      "Advanced threat protection": [
+        "Protecție avansată împotriva amenințărilor"
       ],
       "Custom email domain": [
         "Domeniu personal de e-mail"
@@ -14951,6 +14974,12 @@
       ],
       "Storage": [
         "Spațiu de stocare"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Servere VPN ultrarapide în peste 110 țări"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Aliasuri nelimitate pentru a vă proteja identitatea"
       ]
     },
     "Onboarding": {
@@ -16010,8 +16039,8 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Vă rugăm să adăugați o metodă de plată în panoul general pentru a continua."
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Se acceptă doar euro pentru zona SEPA. Moneda a fost schimbată. Utilizați selectorul dacă doriți să remodificați."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
@@ -17831,8 +17860,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Navigați în siguranță"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Faceți mai multe cu ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Obțineți aliasuri nelimitate"
+      ],
       "Go to subscription plans": [
         "Accesare planuri abonamente"
+      ],
+      "Guard against threats": [
+        "Protejați-vă împotriva amenințărilor"
+      ],
+      "Increase your storage": [
+        "Măriți-vă spațiul de stocare"
+      ],
+      "Keep passwords safe": [
+        "Păstrați parolele în siguranță"
+      ],
+      "Unblock streaming content": [
+        "Deblocați transmisiile în flux de conținut"
       ],
       "Upgrade": [
         "Modificare"
@@ -17912,6 +17962,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Acces la conținut de pe servicii de transmisie în flux la nivel global"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Obțineți 500 GiB pentru a vă stoca în siguranță toate fișierele și fotografiile"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Obțineți acces la servere VPN ultrarapide în peste 110 de țări"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Obțineți un plan care include totul, luați ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Obțineți aliasuri nelimitate pentru a vă proteja identitatea și a reduce mesajele nedorite"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Păstrați-vă parolele în siguranță și organizate în mai multe seifuri"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Protejați-vă contul de amenințări cu Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Modernizați contul și salvați mai mult cu doi ani la ${ planName }"
       ]
@@ -19869,9 +19940,6 @@
       "Delete label?": [
         "Ștergere etichetă?"
       ],
-      "Delete logs": [
-        "Ștergere jurnale"
-      ],
       "Delete organization logo?": [
         "Ștergeți logoul organizației?"
       ],
@@ -21392,6 +21460,14 @@
       ],
       "Refund": [
         "Restituire"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/lună"
+      ],
+      "Only": [
+        "Doar"
       ]
     },
     "unprivatization": {
