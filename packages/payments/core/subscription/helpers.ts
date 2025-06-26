@@ -13,11 +13,24 @@ import {
     type UserModel,
 } from '@proton/shared/lib/interfaces';
 
-import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '../constants';
+import {
+    ADDON_NAMES,
+    COUPON_CODES,
+    CYCLE,
+    PLANS,
+    PLAN_NAMES,
+    PLAN_SERVICES,
+    PLAN_TYPES,
+    TRIAL_MAX_DEDICATED_IPS,
+    TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
+    TRIAL_MAX_LUMO_SEATS,
+    TRIAL_MAX_SCRIBE_SEATS,
+    TRIAL_MAX_USERS,
+} from '../constants';
 import { isRegionalCurrency } from '../helpers';
 import type { Currency, FreeSubscription, MaxKeys, PlanIDs, Pricing } from '../interface';
 import { getSupportedAddons, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from '../plan/addons';
-import { getIsB2BAudienceFromPlan } from '../plan/helpers';
+import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '../plan/helpers';
 import type { Plan, PlansMap, SubscriptionPlan } from '../plan/interface';
 import { getPricePerCycle, getPricePerMember, isMultiUserPersonalPlan } from '../price-helpers';
 import { isFreeSubscription } from '../type-guards';
@@ -939,6 +952,28 @@ export const getMaxValue = (plan: Plan, key: MaxKeys): number => {
     return result ?? 0;
 };
 
+type PlanQuantity = {
+    plan: Plan;
+    quantity: number;
+};
+
+type PlansQuantity = PlanQuantity[];
+
+export function getPlansQuantity(planIDs: PlanIDs, plansMap: PlansMap): PlansQuantity {
+    return Object.entries(planIDs)
+        .map(([planName, quantity]) => {
+            const plan = plansMap[planName as PLANS | ADDON_NAMES];
+            return plan === undefined ? undefined : { plan, quantity };
+        })
+        .filter((elem) => elem !== undefined);
+}
+
+export function getPlansLimit(plans: PlansQuantity, maxKey: MaxKeys): number {
+    return plans.reduce((acc, { plan, quantity }) => {
+        return acc + quantity * getMaxValue(plan, maxKey);
+    }, 0);
+}
+
 export function getAddonMultiplier(addonMaxKey: MaxKeys, addon: Plan): number {
     let addonMultiplier: number;
     if (addonMaxKey === 'MaxIPs') {
@@ -1157,3 +1192,54 @@ export function getAvailableSubscriptionActions(subscription: Subscription): Sub
         cantCancelReason: managedExternally ? ('subscription_managed_externally' as const) : undefined,
     } as SubscriptionActions;
 }
+
+export const shouldPassIsTrial = ({
+    plansMap,
+    newPlanIDs,
+    oldPlanIDs,
+    newCycle,
+    oldCycle,
+}: {
+    plansMap: PlansMap;
+    newPlanIDs: PlanIDs;
+    oldPlanIDs: PlanIDs;
+    newCycle: CYCLE;
+    oldCycle: CYCLE;
+}) => {
+    if (newCycle !== oldCycle) {
+        return false;
+    }
+
+    const newPrimaryPlan = getPlanFromPlanIDs(plansMap, newPlanIDs);
+    const oldPrimaryPlan = getPlanFromPlanIDs(plansMap, oldPlanIDs);
+    if (!newPrimaryPlan || !oldPrimaryPlan) {
+        return false;
+    }
+
+    if (newPrimaryPlan.Name !== oldPrimaryPlan.Name) {
+        return false;
+    }
+
+    const newPlans = getPlansQuantity(newPlanIDs, plansMap);
+    const oldPlans = getPlansQuantity(oldPlanIDs, plansMap);
+
+    const maxBaseDomains = newPrimaryPlan.MaxDomains;
+    const limits = Object.entries({
+        MaxMembers: TRIAL_MAX_USERS,
+        MaxDomains: maxBaseDomains + TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
+        MaxIPs: TRIAL_MAX_DEDICATED_IPS,
+        MaxAI: TRIAL_MAX_SCRIBE_SEATS,
+        MaxLumo: TRIAL_MAX_LUMO_SEATS,
+    }) as [MaxKeys, number][];
+
+    for (const [maxKey, limit] of limits) {
+        const newLimit = getPlansLimit(newPlans, maxKey);
+        const oldLimit = getPlansLimit(oldPlans, maxKey);
+
+        if (newLimit > limit || newLimit < oldLimit) {
+            return false;
+        }
+    }
+
+    return true;
+};
