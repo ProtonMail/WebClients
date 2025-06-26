@@ -1789,7 +1789,7 @@
     },
     "Commander action": {
       "Day view": [
-        "Tampilan harian"
+        "Tampilan hari"
       ],
       "Month view": [
         "Tampilan bulan"
@@ -1798,7 +1798,7 @@
         "Acara baru"
       ],
       "Next period": [
-        "Periode selanjutnya"
+        "Periode berikutnya"
       ],
       "Previous period": [
         "Periode sebelumnya"
@@ -1810,7 +1810,7 @@
         "Hari ini"
       ],
       "Week view": [
-        "Tampilan mingguan"
+        "Tampilan minggu"
       ]
     },
     "Confirm modal title": {
@@ -8163,8 +8163,14 @@
       "${ pricingTitle } offer expires today!": [
         "Penawaran ${ pricingTitle } berakhir hari ini!"
       ],
+      "Don’t show this again": [
+        "Jangan tampilkan ini lagi"
+      ],
       "Don’t show this offer again": [
         "Jangan tampilkan penawaran ini lagi"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Dapatkan ${ BRAND_NAME } Tanpa Batas"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
@@ -8218,9 +8224,20 @@
         "Langganan Anda akan segera diperbarui"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Pengelola sandi terenkripsi"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 fitur premium lainnya"
+      ],
+      "500 GB secure storage": [
+        "Penyimpanan aman 500 GB"
+      ],
+      "Advanced threat protection": [
+        "Perlindungan ancaman tingkat lanjut"
       ],
       "Custom email domain": [
         "Domain email khusus"
@@ -8242,6 +8259,12 @@
       ],
       "Storage": [
         "Ruang penyimpanan"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Server VPN sangat cepat di 110+ negara"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Alias tak terbatas untuk melindungi identitas Anda"
       ]
     },
     "Onboarding": {
@@ -8538,6 +8561,9 @@
       ],
       "More plans are available in other currencies": [
         "Lebih banyak paket tersedia pada mata uang lainnya"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Hanya Euro yang diterima untuk SEPA. Mata uang Anda telah diubah. Harap gunakan pemilih untuk mengembalikan pilihan Anda."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
@@ -9276,8 +9302,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Jelajahi dengan aman"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Lakukan lebih banyak dengan ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Dapatkan alias tak terbatas"
+      ],
       "Go to subscription plans": [
         "Tuju daftar paket langganan"
+      ],
+      "Guard against threats": [
+        "Lindungi dari ancaman"
+      ],
+      "Increase your storage": [
+        "Tingkatkan penyimpanan Anda"
+      ],
+      "Keep passwords safe": [
+        "Jaga sandi tetap aman"
+      ],
+      "Unblock streaming content": [
+        "Buka blokir konten streaming"
       ],
       "Upgrade": [
         "Tingkatkan akun"
@@ -9355,6 +9402,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Akses konten di layanan streaming di seluruh dunia"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Dapatkan 500 GB untuk menyimpan semua file dan foto Anda dengan aman"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Dapatkan akses ke server VPN sangat cepat di 110+ negara"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Dapatkan satu paket yang mencakup semuanya, dapatkan ${ BRAND_NAME } Tanpa Batas"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Dapatkan alias tak terbatas untuk melindungi identitas Anda dan mengurangi spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Simpan sandi Anda dengan aman dan terorganisasi di beberapa brankas"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Lindungi akun Anda dari ancaman dengan Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Tingkatkan dan hemat lebih banyak dengan ${ planName } selama 2 tahun"
       ]
@@ -10994,6 +11062,14 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Dibagikan secara end-to-end dengan kontak yang terverifikasi"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/bulan"
+      ],
+      "Only": [
+        "Hanya"
       ]
     },
     "unprivatization": {
