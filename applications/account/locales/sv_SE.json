@@ -1575,6 +1575,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Create free account now": [
+        "Skapa gratiskonto nu"
       ]
     },
     "action": {
@@ -5701,6 +5704,9 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "Permissions request failed.": [
+        "Behörighetsbegäran misslyckades."
       ]
     },
     "error": {
@@ -10670,6 +10676,9 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
       ]
     },
     "info": {
@@ -15899,6 +15908,9 @@
     "Payments.Saved payment method details": {
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
+      ],
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -17373,6 +17385,32 @@
       ],
       "Your plan": [
         "Ditt paket"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } adress",
+        "${ maxAddresses } adresser"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } kalender",
+        "${ maxCalendars } kalendrar"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } molnlagringsutrymme för filer och foton"
+      ],
+      "Every free account comes with:": [
+        "Varje gratiskonto levereras med:"
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Skaffa en säker från oss, eller ${ internalButton }"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Registrera dig för att få allt ${ BRAND_NAME } har att erbjuda"
+      ],
+      "use your current email.": [
+        "använd din nuvarande e-post."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN med servrar i ${ vpnServersCountData.free.countries } länder"
       ]
     },
     "Signup label": {
@@ -17396,6 +17434,9 @@
       ],
       "Username": [
         "Användarnamn"
+      ],
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME }-lösenord"
       ]
     },
     "Signup step": {
@@ -18907,6 +18948,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du kommer få ditt användarnamn via SMS inom en minut om du har angett ett giltigt telefonnummer för återställning."
+      ],
+      "Address successfully added": [
+        "Adress tillagd"
       ]
     },
     "Success message": {
@@ -20670,6 +20714,9 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du har blivit inbjuden att prova ${ MAIL_APP_NAME }"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flera konton, 1 privat inkorg"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22091,6 +22138,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Prenumeration avslutad."
       ]
     }
   }

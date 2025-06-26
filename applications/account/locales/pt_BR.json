@@ -10757,6 +10757,9 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Você também perderá o acesso ao ${ boldPlanTitle } recursos:"
       ]
     },
     "info": {
@@ -17501,6 +17504,14 @@
       ],
       "Your plan": [
         "Seu plano"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } endereço",
+        "${ maxAddresses } endereços"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } calendário",
+        "${ maxCalendars } calendários"
       ]
     },
     "Signup label": {
@@ -22207,6 +22218,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Assinatura cancelada."
       ]
     }
   }
