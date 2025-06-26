@@ -24,7 +24,12 @@ import {
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import type { Address, GroupMembershipReturn, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { UserType } from '@proton/shared/lib/interfaces';
-import { getIsExternalAccount, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
+import {
+    getIsBYOEAccount,
+    getIsExternalAccount,
+    getIsGlobalSSOAccount,
+    getIsSSOVPNOnlyAccount,
+} from '@proton/shared/lib/keys';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 
@@ -90,11 +95,12 @@ export const getAccountAppRoutes = ({
 
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
     const isExternalUser = getIsExternalAccount(user);
+    const isBYOEUser = getIsBYOEAccount(user);
 
     const hasSplitStorage =
         getHasStorageSplit(user) && !getHasVpnB2BPlan(subscription) && app !== APPS.PROTONVPN_SETTINGS;
 
-    const showEasySwitchSection = !isExternalUser && app !== APPS.PROTONPASS && !isSSOUser;
+    const showEasySwitchSection = (!isExternalUser || isBYOEUser) && app !== APPS.PROTONPASS && !isSSOUser;
 
     const showVideoConferenceSection =
         isZoomIntegrationEnabled &&
