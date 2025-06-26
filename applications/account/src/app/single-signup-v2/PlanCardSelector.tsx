@@ -10,6 +10,8 @@ import { PlanCardFeatureList } from '@proton/components/containers/payments/subs
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import {
     CYCLE,
+    type Currency,
+    FREE_PLAN,
     type FreePlanDefault,
     PLANS,
     type Plan,
@@ -17,15 +19,15 @@ import {
     type PlansMap,
     type Subscription,
     type SubscriptionPlan,
+    getPlanFromPlanIDs,
+    getPlanIDs,
+    getPlanOffer,
     getRenewCycle,
 } from '@proton/payments';
-import { type Currency } from '@proton/payments';
-import { getPlanIDs, getPlanOffer } from '@proton/payments';
-import { FREE_PLAN } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { getPlanFromPlanIDs, getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
+import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
