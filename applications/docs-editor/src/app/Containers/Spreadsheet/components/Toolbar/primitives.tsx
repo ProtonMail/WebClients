@@ -1,10 +1,10 @@
-import { type ComponentPropsWithRef, forwardRef, type ReactNode } from 'react'
+import { type ComponentPropsWithoutRef, forwardRef, type ReactNode } from 'react'
 import * as Ariakit from '@ariakit/react'
 import type { IconName } from '@proton/icons'
 import clsx from '@proton/utils/clsx'
-import { Icon } from '@proton/components'
+import { Icon, type IconData } from '../ui'
 
-export interface ContainerProps extends ComponentPropsWithRef<'div'> {
+export interface ContainerProps extends ComponentPropsWithoutRef<'div'> {
   formulaBarSlot?: ReactNode
 }
 
@@ -13,8 +13,8 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Con
   ref,
 ) {
   return (
-    <div ref={ref} {...props} className={clsx('bg-[#F9FBFC] px-4 pb-3', props.className)}>
-      <Ariakit.Toolbar className="border-weak flex max-w-[104.5rem] items-center gap-[.125rem] rounded-t-[1rem] border bg-[white] px-3 py-[.375rem]">
+    <div ref={ref} {...props} className={clsx('px-4 pb-3', props.className)}>
+      <Ariakit.Toolbar className="border-weak flex items-center gap-[.125rem] rounded-t-[1rem] border bg-[white] px-3 py-[.375rem]">
         {props.children}
       </Ariakit.Toolbar>
       {formulaBarSlot}
@@ -22,54 +22,54 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Con
   )
 })
 
-export interface ButtonProps extends Ariakit.ToolbarItemProps {
-  icon: IconName
-  isActive?: boolean
+export interface ItemProps extends Ariakit.ToolbarItemProps {
+  /** @default 'icon' */
+  variant?: 'icon' | 'icon-small' | 'label'
+  icon?: IconData
+  /** @deprecated Use `icon` instead */
+  legacyIconName?: IconName
+  showLabel?: boolean
+  pressed?: boolean
+  dropdownIndicator?: boolean
   children?: string
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Item(
-  { icon, isActive, children, ...props }: ButtonProps,
+export const Item = forwardRef<HTMLButtonElement, ItemProps>(function Item(
+  { variant = 'icon', icon, legacyIconName, showLabel, pressed, dropdownIndicator, children, ...props }: ItemProps,
   ref,
 ) {
+  const displayLabel = Boolean(variant === 'label' || showLabel)
   return (
     <Ariakit.ToolbarItem
-      aria-label={children}
+      aria-label={!displayLabel ? children : undefined}
       ref={ref}
       {...props}
       className={clsx(
-        'flex h-9 w-9 items-center justify-center',
-        isActive && 'TODO:',
-        'rounded-[.5rem] text-[#0C0C14] hover:bg-[#C2C1C0]/20 [&[disabled]]:text-[#8F8D8A]',
+        'flex shrink-0 items-center justify-center gap-[.375rem] rounded-[.5rem] text-[#0C0C14] focus:outline-none [&[disabled]]:text-[#8F8D8A]',
+        'aria-expanded:bg-[#C2C1C0]/20',
+        variant === 'icon' && 'p-[.625rem]',
+        variant === 'icon-small' && 'p-[.375rem]',
+        variant === 'label' && 'p-2',
+        !pressed
+          ? [
+              'bg-[white]',
+              // TODO: "hocus" type tw variant
+              'hover:bg-[#C2C1C0]/20 focus-visible:bg-[#C2C1C0]/20 data-[focus-visible]:bg-[#C2C1C0]/20',
+              // TODO: "active" tw variant
+              'active:bg-[#C2C0BE]/35 data-[active]:bg-[#C2C0BE]/35',
+            ]
+          : [
+              'TODO:',
+              'bg-[red]',
+              'hover:bg-[yellow] focus-visible:bg-[yellow] data-[focus-visible]:bg-[yellow]',
+              'active:bg-[green] data-[active]:bg-[green]',
+            ],
         props.className,
       )}
     >
-      <Icon className="text-[#0C0C14] [[disabled]_&]:text-[#8F8D8A]" name={icon} />
-    </Ariakit.ToolbarItem>
-  )
-})
-
-export interface TriggerProps extends Ariakit.ToolbarItemProps {
-  children?: string
-}
-
-export const Trigger = forwardRef<HTMLButtonElement, TriggerProps>(function Item(
-  { children, ...props }: TriggerProps,
-  ref,
-) {
-  return (
-    <Ariakit.ToolbarItem
-      ref={ref}
-      {...props}
-      className={clsx(
-        'flex h-9 items-center justify-between gap-2 rounded-[.5rem] p-2 text-[.875rem] text-[#0C0C14] hover:bg-[#C2C1C0]/20',
-        props.className,
-      )}
-    >
-      <span>{children}</span>
-      <span>
-        <Icon name="chevron-down-filled" />
-      </span>
+      {(icon || legacyIconName) && <Icon className="shrink-0" data={icon} legacyName={legacyIconName} />}
+      {displayLabel && <span className="grow truncate text-start text-[.875rem]">{children}</span>}
+      {dropdownIndicator && <Icon className="shrink-0" legacyName="chevron-down-filled" />}
     </Ariakit.ToolbarItem>
   )
 })
