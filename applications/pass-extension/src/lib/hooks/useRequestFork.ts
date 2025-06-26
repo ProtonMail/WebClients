@@ -8,7 +8,7 @@ import { useNotifications } from '@proton/components';
 import type { RequestForkData, RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import { getStateKey, requestFork } from '@proton/pass/lib/auth/fork';
 import browser from '@proton/pass/lib/globals/browser';
-import type { ForkType } from '@proton/shared/lib/authentication/fork/constants';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -22,7 +22,12 @@ type UseRequestForkWithPermissionsOptions = Partial<{ autoClose: boolean; replac
  * very limited support for the tabs API */
 export const useRequestFork = () =>
     useCallback(async ({ data, replace, ...options }: UseRequestForkOptions) => {
-        const { url, state } = requestFork({ ...options, host: SSO_URL, app: APPS.PROTONPASSBROWSEREXTENSION });
+        const { url, state } = requestFork({ 
+            ...options, 
+            host: SSO_URL, 
+            app: APPS.PROTONPASSBROWSEREXTENSION,
+            plan: BUILD_TARGET === 'safari' && options.forkType === ForkType.SIGNUP ? 'free' : undefined
+         });
 
         if (data) await browser.storage.session.set({ [getStateKey(state)]: JSON.stringify(data) }).catch(noop);
         if (replace) return window.location.replace(url);
