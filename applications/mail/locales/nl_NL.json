@@ -337,6 +337,9 @@
       "Create folder": [
         "Map maken"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Map ${ boldFolderName } aanmaken"
+      ],
       "Create label": [
         "Label maken"
       ],
@@ -6248,6 +6251,10 @@
         "${ messagesNotAuthorizedToMove } bericht kon niet verplaatst worden.",
         "${ messagesNotAuthorizedToMove } berichten konden niet worden verplaatst."
       ],
+      "${ n } newsletter": [
+        "${ n } nieuwsbrief",
+        "${ n } nieuwsbrieven"
+      ],
       "${ n } unread conversation": [
         "${ n } ongelezen gesprek",
         "${ n } ongelezen gesprekken"
@@ -6616,6 +6623,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
+      ],
+      "Block sender": [
+        "Blokkeer afzender"
       ],
       "Body: ": [
         "Tekst: "
@@ -7112,8 +7122,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -7325,6 +7334,9 @@
       "No links cleaned": [
         "Geen links opgeruimd"
       ],
+      "No messages to show": [
+        "Geen berichten om weer te geven"
+      ],
       "No more results found": [
         "Geen resultaten meer gevonden"
       ],
@@ -7497,6 +7509,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Een ogenblik geduld, we zoeken naar contactpersonen die gegevens bevatten die versleuteld zijn met de inactieve sleutel."
+      ],
+      "Preferences updated": [
+        "Voorkeuren bijgewerkt"
       ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
@@ -7836,6 +7851,9 @@
       ],
       "Themes can give your inbox a new look.": [
         "Thema's kunnen uw inbox een nieuwe look geven."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Er zijn geen berichten van deze afzender in uw inbox."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Er is iets misgegaan met de ondertekening tijdens het controleren van de contactgegevens, dat veroorzaakt kan zijn door het resetten van uw wachtwoord."
@@ -8943,6 +8961,9 @@
       "CC": [
         "CC"
       ],
+      "Choose what to do instead": [
+        "Kies wat u in plaats daarvan wilt doen"
+      ],
       "City": [
         "Stad"
       ],
@@ -9062,6 +9083,9 @@
       ],
       "Extended address": [
         "Adrestoevoeging"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Mislukt om map ${ customFolderName } aan te maken"
       ],
       "Filter Name": [
         "Filternaam"
@@ -9186,6 +9210,10 @@
       ],
       "Move to Inbox": [
         "Verplaats naar inbox"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } bericht verplaatst naar ${ labelName }.",
+        "${ count } berichten verplaatst naar ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "${ count } bericht verplaatst naar Archief.",
@@ -11606,6 +11634,9 @@
       ],
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Alleen Euro wordt geaccepteerd voor SEPA. Uw valuta is gewijzigd. Gebruik de selector om uw keuze ongedaan te maken."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
@@ -14629,6 +14660,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Afmelden van ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Afmelden niet beschikbaar voor deze afzender"
       ],
       "Unsubscribe request sent": [
         "Verzoek tot uitschrijven gestuurd"

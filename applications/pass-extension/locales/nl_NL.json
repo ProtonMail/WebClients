@@ -1806,8 +1806,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2625,6 +2624,9 @@
       "City": [
         "Stad"
       ],
+      "Class": [
+        "Klasse"
+      ],
       "Code": [
         "Code"
       ],
@@ -2714,6 +2716,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Dokter"
       ],
       "Domain": [
         "Domeinnaam"
@@ -2823,6 +2828,9 @@
       "Holder Name": [
         "Naam rekeninghouder"
       ],
+      "Hospital": [
+        "Ziekenhuis"
+      ],
       "Host": [
         "Host"
       ],
@@ -2886,6 +2894,9 @@
       "Issuing Country": [
         "Land van uitgifte"
       ],
+      "Issuing State/Country": [
+        "Staat/Land van uitgifte"
+      ],
       "Item ID": [
         "Item ID"
       ],
@@ -2897,6 +2908,9 @@
       ],
       "Key fingerprint": [
         "Vingerafdruk sleutel"
+      ],
+      "Key type": [
+        "Sleuteltype"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Toetsenbordsneltoets: ${ shortcut }"
@@ -2931,6 +2945,9 @@
       "License number": [
         "Licentienummer"
       ],
+      "License Number": [
+        "Rijbewijsnummer"
+      ],
       "LinkedIn account": [
         "LinkedIn-account"
       ],
@@ -2961,17 +2978,29 @@
       "max views reached": [
         "max weergaven bereikt"
       ],
+      "Medical Conditions": [
+        "Medische aandoeningen"
+      ],
       "Medical Record": [
         "Medisch Gegeven"
       ],
+      "Medications": [
+        "Medicatie"
+      ],
       "Member ID": [
         "Lid-ID"
+      ],
+      "Member Name": [
+        "Lid Name"
       ],
       "Members": [
         "Leden"
       ],
       "Membership": [
         "Lidmaatschap"
+      ],
+      "Membership ID": [
+        "Lidmaatschap ID"
       ],
       "Middle name": [
         "Tussenvoegsel"
@@ -3048,6 +3077,9 @@
       "Organization": [
         "Organisatie"
       ],
+      "Organization Name": [
+        "Organisatienaam"
+      ],
       "Other": [
         "Overig"
       ],
@@ -3080,6 +3112,9 @@
       ],
       "Passwords": [
         "Wachtwoorden"
+      ],
+      "Patient Name": [
+        "Naam patiënt"
       ],
       "Pause list": [
         "Pauze lijst"
@@ -3155,6 +3190,9 @@
       ],
       "Recent": [
         "Recent"
+      ],
+      "Record Number": [
+        "Recordnummer"
       ],
       "Reddit handle": [
         "Reddit-gebruikersnaam"
@@ -3308,6 +3346,9 @@
       ],
       "Theme": [
         "Thema"
+      ],
+      "Tier/Level": [
+        "Rang/Niveau"
       ],
       "Tier/Status": [
         "Rang/Status"
@@ -3620,6 +3661,18 @@
       ],
       "Add note": [
         "Notitie toevoegen"
+      ],
+      "Add password": [
+        "Wachtwoord toevoegen"
+      ],
+      "Add private key": [
+        "Privé-sleutel toevoegen"
+      ],
+      "Add public key": [
+        "Openbare sleutel toevoegen"
+      ],
+      "Add SSID": [
+        "SSID toevoegen"
       ],
       "Add text": [
         "Tekst toevoegen"
@@ -4015,9 +4068,6 @@
       "Grant permissions": [
         "Toestemmingen verlenen"
       ],
-      "Hide my email": [
-        "Hide-my-email"
-      ],
       "History": [
         "Geschiedenis"
       ],
@@ -4277,6 +4327,12 @@
       ],
       "URL is invalid": [
         "URL is ongeldig"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Item verplaatsen naar",
+        "Items verplaatsen naar"
       ]
     },
     "Warning": {

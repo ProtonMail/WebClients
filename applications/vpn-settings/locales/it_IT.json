@@ -366,6 +366,9 @@
       "Explore other ${ BRAND_NAME } plans": [
         "Esplora gli altri piani di ${ BRAND_NAME }"
       ],
+      "Explore other plans": [
+        "Esplora gli altri piani"
+      ],
       "Export": [
         "Esporta"
       ],
@@ -1242,9 +1245,6 @@
       ],
       "on ${ formattedDate }": [
         "il ${ formattedDate }"
-      ],
-      "Try it free for 14 days": [
-        "Provalo gratis per 14 giorni"
       ]
     },
     "b2b_trials_2025_Label": {
@@ -3891,8 +3891,14 @@
       ]
     },
     "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi."
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi"
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "Ti protegge da pubblicità, tracker e malware su siti web e app"
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "I server Secure Core instradano il tuo traffico attraverso 2 server VPN per una maggiore sicurezza"
       ]
     },
     "fido2: Action": {
@@ -7479,6 +7485,9 @@
       ],
       "Two password mode enabled": [
         "Modalità a doppia password abilitata"
+      ],
+      "Unknown": [
+        "Sconosciuto"
       ]
     },
     "Log preference": {
@@ -8757,8 +8766,14 @@
       "${ pricingTitle } offer expires today!": [
         "L'offerta ${ pricingTitle } scade oggi!"
       ],
+      "Don’t show this again": [
+        "Non mostrare più"
+      ],
       "Don’t show this offer again": [
         "Non mostrare più questa offerta"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Ottieni ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Ottieni Drive Plus per solo ${ pricingTitle }"
@@ -8812,9 +8827,20 @@
         "Il tuo abbonamento si rinnoverà presto"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Gestore di password crittografato"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 funzionalità premium in più"
+      ],
+      "500 GB secure storage": [
+        "500 GB di archiviazione sicura"
+      ],
+      "Advanced threat protection": [
+        "Protezione avanzata dalle minacce"
       ],
       "Custom email domain": [
         "Dominio email personalizzato"
@@ -8836,6 +8862,12 @@
       ],
       "Storage": [
         "Archiviazione"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Server VPN ultraveloci in oltre 110 paesi"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Alias illimitati per proteggere la tua identità"
       ]
     },
     "Onboarding": {
@@ -9251,6 +9283,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Bonifico"
       ],
@@ -9302,9 +9337,6 @@
       ],
       "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
         "Per i pagamenti SEPA è accettato solo l’euro. La tua valuta è stata modificata. Usa il selettore per ripristinare la tua scelta."
-      ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Aggiungi un metodo di pagamento nella dashboard per continuare."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
@@ -9394,6 +9426,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - carta che termina con ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bonifico bancario - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -10312,8 +10352,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Naviga in sicurezza"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Supera i tuoi limiti grazie a ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Ottieni alias illimitati"
+      ],
       "Go to subscription plans": [
         "Vai ai piani di abbonamento"
+      ],
+      "Guard against threats": [
+        "Proteggiti dalle minacce"
+      ],
+      "Increase your storage": [
+        "Aumenta il tuo spazio di archiviazione"
+      ],
+      "Keep passwords safe": [
+        "Tieni le tue password al sicuro"
+      ],
+      "Unblock streaming content": [
+        "Goditi lo streaming senza limiti"
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -10392,6 +10453,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Accedi ai contenuti di servizi di streaming in tutto il mondo"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Ottieni 500 GB per archiviare in modo sicuro tutti i tuoi file e foto"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Accedi a server VPN ultraveloci in oltre 110 paesi"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Ottieni un piano che include tutto: ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Ottieni alias illimitati per proteggere la tua identità e ridurre lo spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Mantieni le tue password al sicuro e organizzate in varie casseforti "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Proteggi il tuo account dalle minacce con Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Effettua l'upgrade e risparmia ancora di più con 2 anni di ${ planName }"
       ]
@@ -12715,6 +12797,14 @@
       ],
       "Refund": [
         "Rimborso"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mese"
+      ],
+      "Only": [
+        "Solo"
       ]
     },
     "unprivatization": {
