@@ -366,6 +366,9 @@
       "Explore other ${ BRAND_NAME } plans": [
         "Utforska andra ${ BRAND_NAME }-paket"
       ],
+      "Explore other plans": [
+        "Utforska andra paket"
+      ],
       "Export": [
         "Exportera"
       ],
@@ -3858,8 +3861,14 @@
       ]
     },
     "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst"
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "Skyddar dig från annonser, spårare och skadlig kod på webbplatser och appar"
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Secure Core-servrar dirigerar din trafik genom 2 VPN-servrar för extra säkerhet"
       ]
     },
     "fido2: Action": {
@@ -4456,6 +4465,9 @@
         "aktiv"
       ],
       "Activity monitor": [
+        "Aktivitetsövervakare"
+      ],
+      "Activity Monitor": [
         "Aktivitetsövervakare"
       ],
       "add a recovery method": [
@@ -5159,6 +5171,9 @@
       "Learn more": [
         "Lär dig mer"
       ],
+      "Learn more about Activity Monitor": [
+        "Lär dig mer om aktivitetsövervakare"
+      ],
       "Learn more about Gateways": [
         "Lär dig mer om gateways"
       ],
@@ -5182,6 +5197,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Läser in kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
+      ],
+      "Loading detailed events current status.": [
+        "Laddar nuvarande status för detaljerade händelser."
       ],
       "Loading eduGAIN data...": [
         "Laddar eduGAIN-data …"
@@ -7400,6 +7418,9 @@
       ],
       "Sign out": [
         "Logga ut"
+      ],
+      "Unknown": [
+        "Okänd"
       ]
     },
     "Log preference": {
@@ -8674,8 +8695,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
+      "Don’t show this again": [
+        "Visa inte detta igen"
+      ],
       "Don’t show this offer again": [
         "Visa inte detta erbjudande igen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Skaffa ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaffa Drive Plus för endast ${ pricingTitle }"
@@ -8729,9 +8756,20 @@
         "Din prenumeration förnyas snart"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Krypterad lösenordshanterare"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 fler premiumfunktioner"
+      ],
+      "500 GB secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "Advanced threat protection": [
+        "Avancerat hotskydd"
       ],
       "Custom email domain": [
         "Anpassad e-postdomän"
@@ -8753,6 +8791,12 @@
       ],
       "Storage": [
         "Lagringsutrymme"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultrasnabba VPN-servrar i 110+ länder"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Obegränsat antal alias för att skydda din identitet"
       ]
     },
     "Onboarding": {
@@ -9162,6 +9206,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Banköverföring"
       ],
@@ -9210,9 +9257,6 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
-      ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Lägg till en betalningsmetod i adminpanelen för att fortsätta."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
@@ -9302,6 +9346,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Bank transfer - ${ details }": [
+        "Banköverföring - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -10212,8 +10261,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Surfa säkert"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Gör mer med ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Skaffa obegränsat antal alias"
+      ],
       "Go to subscription plans": [
         "Gå till prenumerationspaket"
+      ],
+      "Guard against threats": [
+        "Skydd mot hot"
+      ],
+      "Increase your storage": [
+        "Öka ditt lagringsutrymme"
+      ],
+      "Keep passwords safe": [
+        "Håll lösenord säkra"
+      ],
+      "Unblock streaming content": [
+        "Avblockera streaminginnehåll"
       ],
       "Upgrade": [
         "Uppgradera"
@@ -10292,6 +10362,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Kom åt innehåll på streamingtjänster globalt"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Skaffa 500 GB för att säkert lagra alla dina filer och foton"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Få åtkomst till ultrasnabba VPN-servrar i 110+ länder"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Skaffa ett paket som inkluderar allt, skaffa ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Skaffa obegränsat antal alias för att skydda din identitet och minska skräppost"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Håll dina lösenord säkra och organiserade i flera valv "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Skydda ditt konto från hot med Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Uppgradera och spara mer med 2 års ${ planName }"
       ]
@@ -12611,6 +12702,14 @@
         "Återbetalning"
       ]
     },
+    "Unlimited offer": {
+      "/month": [
+        "/månad"
+      ],
+      "Only": [
+        "Endast"
+      ]
+    },
     "unprivatization": {
       "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
         "**Väntande administratörsåtkomst:** Vi skickade en begäran till denna användare om att tillåta vilken administratör som helst att hantera sitt konto."
@@ -12689,6 +12788,12 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Spara upp till ${ priceString }** med en längre prenumeration. Samma premiumfunktioner, lägre pris."
+      ],
+      "All premium ${ BRAND_NAME } services, one easy subscription.": [
+        "Alla premium ${ BRAND_NAME }-tjänster, en enkel prenumeration."
+      ],
+      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
+        "Alla premium ${ BRAND_NAME }-tjänster. Från endast ${ fallBackString } per månad"
       ],
       "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
         "Alla premium ${ BRAND_NAME }-tjänster. Endast **${ priceString }** mer varje månad."
