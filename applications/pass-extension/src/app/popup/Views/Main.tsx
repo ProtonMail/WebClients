@@ -7,6 +7,7 @@ import { useSaveTabState } from 'proton-pass-extension/lib/hooks/useSaveTabState
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { ContextMenuProvider } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
 import { Items } from '@proton/pass/components/Item/Items';
@@ -66,28 +67,30 @@ export const Main: FC = () => {
     useEffect(() => () => clearNotifications(), []);
 
     return (
-        <OrganizationProvider>
-            <BulkSelectProvider>
-                <VaultActionsProvider>
-                    <ItemActionsProvider>
-                        <InviteProvider>
-                            <PasswordProvider>
-                                <UpsellingProvider>
-                                    <SpotlightProvider>
-                                        <InAppNotificationProvider>
-                                            {lockSetup ? (
-                                                <LockOnboarding onCancel={() => logout({ soft: true })} />
-                                            ) : (
-                                                <MainSwitch />
-                                            )}
-                                        </InAppNotificationProvider>
-                                    </SpotlightProvider>
-                                </UpsellingProvider>
-                            </PasswordProvider>
-                        </InviteProvider>
-                    </ItemActionsProvider>
-                </VaultActionsProvider>
-            </BulkSelectProvider>
-        </OrganizationProvider>
+        <ContextMenuProvider>
+            <OrganizationProvider>
+                <BulkSelectProvider>
+                    <VaultActionsProvider>
+                        <ItemActionsProvider>
+                            <InviteProvider>
+                                <PasswordProvider>
+                                    <UpsellingProvider>
+                                        <SpotlightProvider>
+                                            <InAppNotificationProvider>
+                                                {lockSetup ? (
+                                                    <LockOnboarding onCancel={() => logout({ soft: true })} />
+                                                ) : (
+                                                    <MainSwitch />
+                                                )}
+                                            </InAppNotificationProvider>
+                                        </SpotlightProvider>
+                                    </UpsellingProvider>
+                                </PasswordProvider>
+                            </InviteProvider>
+                        </ItemActionsProvider>
+                    </VaultActionsProvider>
+                </BulkSelectProvider>
+            </OrganizationProvider>
+        </ContextMenuProvider>
     );
 };

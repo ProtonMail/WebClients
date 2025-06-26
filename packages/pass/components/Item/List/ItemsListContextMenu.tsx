@@ -16,7 +16,7 @@ import { useNavigationActions } from '@proton/pass/components/Navigation/Navigat
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { getItemKey, getItemRevisionKey } from '@proton/pass/lib/items/item.utils';
+import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { itemPinIntent, itemUnpinIntent } from '@proton/pass/store/actions';
 import { selectItemWithOptimistic } from '@proton/pass/store/selectors';
 import type { Item, ItemRevision, Maybe, MaybeNull, UniqueItem } from '@proton/pass/types';
@@ -119,7 +119,7 @@ const ConnectedItemsListContextMenu: FC<ConnectedProps> = ({ item, anchorRef }) 
     const itemActions = useItemsActions();
     const dispatch = useDispatch();
 
-    const id = getItemRevisionKey(item);
+    const id = getItemKey(item);
 
     const elements: ContextMenuElement[] = useMemo(() => {
         const { itemId, shareId } = item;
