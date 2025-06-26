@@ -1,10 +1,13 @@
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationFlow';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -18,13 +21,18 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     const { loadingCancelSubscription, cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({
         app,
     });
+    const [subscription] = useSubscription();
+    const [organization] = useOrganization();
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
 
     if (loadingCancelSubscription) {
         return null;
     }
 
     const handleContinueClick = () => {
-        if (b2cAccess || b2bAccess) {
+        if (isB2BTrial) {
+            void cancelSubscription({});
+        } else if (b2cAccess || b2bAccess) {
             redirectToCancellationFlow();
             sendStartCancellationSectionReport();
         } else {
@@ -32,12 +40,19 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
         }
     };
 
+    const defaultCancellationText = c('Info')
+        .t`When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${BRAND_NAME} Free plan.`;
+
+    const b2bTrialCancellationText = c('b2b_trials_2025_Info')
+        .t`When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${BRAND_NAME} Free plan.`;
+
+    const cancellationText = isB2BTrial ? b2bTrialCancellationText : defaultCancellationText;
+
     return (
         <>
             {cancelSubscriptionModals}
             <SettingsSection>
-                <SettingsParagraph>{c('Info')
-                    .t`When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${BRAND_NAME} Free plan.`}</SettingsParagraph>
+                <SettingsParagraph>{cancellationText}</SettingsParagraph>
                 {user.hasPassLifetime && (
                     <SettingsParagraph>
                         {c('Info')
