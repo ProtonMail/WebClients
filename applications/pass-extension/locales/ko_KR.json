@@ -1780,9 +1780,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
-      ],
       "Moving items": [
         "항목 이동 중"
       ],
@@ -2580,6 +2577,9 @@
       "City": [
         "시/군/구"
       ],
+      "Class": [
+        "등급"
+      ],
       "Code": [
         "코드"
       ],
@@ -2669,6 +2669,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "의사"
       ],
       "Domain": [
         "도메인"
@@ -2778,6 +2781,9 @@
       "Holder Name": [
         "소유자명"
       ],
+      "Hospital": [
+        "병원"
+      ],
       "Host": [
         "호스트"
       ],
@@ -2841,6 +2847,9 @@
       "Issuing Country": [
         "발행 지역"
       ],
+      "Issuing State/Country": [
+        "발행 지역/국가"
+      ],
       "Item ID": [
         "항목 ID"
       ],
@@ -2889,6 +2898,9 @@
       "License number": [
         "라이선스 번호"
       ],
+      "License Number": [
+        "면허 번호"
+      ],
       "LinkedIn account": [
         "LinkedIn 계정"
       ],
@@ -2919,17 +2931,29 @@
       "max views reached": [
         "최대 보기 수 도달"
       ],
+      "Medical Conditions": [
+        "건강 상태"
+      ],
       "Medical Record": [
         "의료 면허증"
       ],
+      "Medications": [
+        "복용 약물"
+      ],
       "Member ID": [
         "회원 ID"
+      ],
+      "Member Name": [
+        "멤버 이름"
       ],
       "Members": [
         "구성원"
       ],
       "Membership": [
         "회원권"
+      ],
+      "Membership ID": [
+        "멤버십 ID"
       ],
       "Middle name": [
         "중간 이름"
@@ -3006,6 +3030,9 @@
       "Organization": [
         "조직"
       ],
+      "Organization Name": [
+        "조직 이름"
+      ],
       "Other": [
         "기타"
       ],
@@ -3038,6 +3065,9 @@
       ],
       "Passwords": [
         "비밀번호"
+      ],
+      "Patient Name": [
+        "환자 이름"
       ],
       "Pause list": [
         "중단 목록"
@@ -3113,6 +3143,9 @@
       ],
       "Recent": [
         "최근"
+      ],
+      "Record Number": [
+        "기록 번호"
       ],
       "Reddit handle": [
         "Reddit 핸들"
@@ -3266,6 +3299,9 @@
       ],
       "Theme": [
         "테마"
+      ],
+      "Tier/Level": [
+        "티어/레벨"
       ],
       "Tier/Status": [
         "등급/상태"
@@ -3575,6 +3611,18 @@
       ],
       "Add note": [
         "메모 추가"
+      ],
+      "Add password": [
+        "비밀번호 추가"
+      ],
+      "Add private key": [
+        "개인 키 추가"
+      ],
+      "Add public key": [
+        "공개 키 추가"
+      ],
+      "Add SSID": [
+        "SSID 추가"
       ],
       "Add text": [
         "텍스트 추가"
@@ -3967,9 +4015,6 @@
       "Grant permissions": [
         "권한 부여"
       ],
-      "Hide my email": [
-        "Hide My Email"
-      ],
       "History": [
         "기록"
       ],
@@ -4225,6 +4270,11 @@
       ],
       "URL is invalid": [
         "URL이 올바르지 않습니다."
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "항목을 다음으로 이동:"
       ]
     },
     "Warning": {
