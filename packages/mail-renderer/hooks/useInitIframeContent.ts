@@ -1,7 +1,7 @@
 import type { RefObject } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import { useTheme } from '@proton/components';
+import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import {
     MESSAGE_IFRAME_BLOCKQUOTE_ID,
@@ -20,6 +20,9 @@ interface Props {
     onContentLoaded: (iframeRootDiv: HTMLDivElement) => void;
     onReady?: (iframe: RefObject<HTMLIFrameElement>) => void;
     isPrint: boolean;
+    theme: ThemeContextInterface;
+    iframeCSSStyles: string;
+    iframeSVG: string;
 }
 
 const useInitIframeContent = ({
@@ -31,12 +34,14 @@ const useInitIframeContent = ({
     isPlainText,
     onReady,
     isPrint,
+    theme,
+    iframeCSSStyles,
+    iframeSVG,
 }: Props) => {
     const [initStatus, setInitStatus] = useState<'start' | 'done'>('start');
     const hasBeenDone = useRef<boolean>(false);
     const iframeRootDivRef = useRef<HTMLDivElement>();
     const prevContentRef = useRef<string>(content);
-    const theme = useTheme();
     const themeIndex = theme.information.theme;
     const themeCSSVariables = theme.information.style;
     const isMounted = useIsMounted();
@@ -57,6 +62,8 @@ const useInitIframeContent = ({
                 isPlainText,
                 themeCSSVariables,
                 isPrint,
+                iframeCSSStyles,
+                iframeSVG,
             });
             doc?.open();
             doc?.write(iframeContent);

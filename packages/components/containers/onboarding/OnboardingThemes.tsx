@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import ThemeCards from '../themes/ThemeCards';
 import { useTheme } from '../themes/ThemeProvider';

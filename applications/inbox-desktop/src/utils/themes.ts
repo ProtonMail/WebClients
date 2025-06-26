@@ -1,16 +1,14 @@
 import { nativeTheme } from "electron";
 import { getSettings, updateSettings } from "../store/settingsStore";
 import {
-    ColorScheme,
     electronAppTheme,
     getDarkThemes,
     isDesktopThemeType,
     PROTON_THEMES_MAP,
-    ThemeModeSetting,
     ThemeSetting,
-    ThemeTypes,
 } from "@proton/shared/lib/themes/themes";
 import { getMainWindow } from "./view/viewManagement";
+import { ColorScheme, ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/constants";
 
 export const SERIALIZED_THEME_MODE = {
     [ThemeModeSetting.Auto]: "auto",

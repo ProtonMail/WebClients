@@ -22,7 +22,7 @@ import { otherProductParamValues } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import clamp from '@proton/utils/clamp';
 
 import type { PlanParameters, SignupDefaults } from '../single-signup-v2/interface';

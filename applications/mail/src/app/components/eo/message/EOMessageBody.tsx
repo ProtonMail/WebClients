@@ -1,10 +1,12 @@
 import { useMemo, useRef, useState } from 'react';
 
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import MessageBodyIframe from '@proton/mail-renderer/components/MessageBodyIframe';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { isAutoFlaggedPhishing, isPlainText, isSuspicious } from '@proton/shared/lib/mail/messages';
+import iframeSVG from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -14,6 +16,8 @@ import useMessageImagesLoadError from 'proton-mail/components/message/hooks/useM
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
+
+import iframeCSSStyles from '@proton/mail-renderer/helpers/MessageIframe.raw.scss';
 
 interface Props {
     message: MessageState;
@@ -36,7 +40,7 @@ const EOMessageBody = ({
     const [isIframeContentSet, setIsIframeContentSet] = useState(false);
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const iframeRootDivRef = useRef<HTMLDivElement>();
-
+    const theme = useTheme();
     const plain = isPlainText(message.data);
 
     const [content, blockquote] = useMemo(
@@ -94,6 +98,9 @@ const EOMessageBody = ({
                         isPlainText={plain}
                         message={message}
                         onMessageImageLoadError={handleMessageImageLoadError}
+                        theme={theme}
+                        iframeCSSStyles={iframeCSSStyles}
+                        iframeSVG={iframeSVG}
                     />
                     {linkModal}
                     <MessageBodyPrint isPrint={false} iframeRef={iframeRef} message={message} labelID="" />

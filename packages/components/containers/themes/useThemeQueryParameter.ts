@@ -1,6 +1,7 @@
 import { useLayoutEffect } from 'react';
 
-import { PROTON_DEFAULT_THEME, ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
 
 import { useTheme } from './ThemeProvider';
 
