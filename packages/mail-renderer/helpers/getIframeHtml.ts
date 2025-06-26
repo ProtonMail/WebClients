@@ -6,9 +6,6 @@ import {
 } from '@proton/mail-renderer/constants';
 import { locateHead } from '@proton/mail/helpers/locateHead';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
-import svg from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
-
-import cssStyles from './MessageIframe.raw.scss';
 
 type Options = {
     emailContent: string;
@@ -16,9 +13,19 @@ type Options = {
     isPlainText: boolean;
     themeCSSVariables: string;
     isPrint: boolean;
+    iframeCSSStyles: string;
+    iframeSVG: string;
 };
 
-const getIframeHtml = ({ emailContent, messageDocument, isPlainText, themeCSSVariables, isPrint }: Options) => {
+const getIframeHtml = ({
+    emailContent,
+    messageDocument,
+    isPlainText,
+    themeCSSVariables,
+    isPrint,
+    iframeCSSStyles,
+    iframeSVG,
+}: Options) => {
     const messageHead = locateHead(messageDocument) || '';
     const bodyStyles = messageDocument?.querySelector('body')?.getAttribute('style');
     const bodyClasses = messageDocument?.querySelector('body')?.getAttribute('class');
@@ -30,7 +37,7 @@ const getIframeHtml = ({ emailContent, messageDocument, isPlainText, themeCSSVar
      */
     // Plain text needs content needs to have no spaces in order to be correctly displayed
     if (isPlainText) {
-        const emailHead = `<head><style>${themeCSSVariables}</style><style>${cssStyles}</style>${messageHead}</head>`;
+        const emailHead = `<head><style>${themeCSSVariables}</style><style>${iframeCSSStyles}</style>${messageHead}</head>`;
         const emailBody = `<body><div id="${MESSAGE_IFRAME_ROOT_ID}" class="proton-plain-text ${
             isPrint ? MESSAGE_IFRAME_PRINT_CLASS : ''
         }">${
@@ -57,10 +64,10 @@ const getIframeHtml = ({ emailContent, messageDocument, isPlainText, themeCSSVar
         <head>
           <style>${themeCSSVariables}</style>
           <meta name="viewport" content="width=device-width">
-          <style>${cssStyles}</style>
+          <style>${iframeCSSStyles}</style>
           ${messageHead}
         </head>
-        ${svg}
+        ${iframeSVG}
         <div id="${MESSAGE_IFRAME_ROOT_ID}" ${isPrint ? `class="${MESSAGE_IFRAME_PRINT_CLASS}"` : ''}>
           ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>` : ''}
           <div ${
