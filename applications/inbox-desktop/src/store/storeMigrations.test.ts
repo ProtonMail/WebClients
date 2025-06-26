@@ -1,6 +1,7 @@
-import { ThemeModeSetting, ThemeSetting } from "@proton/shared/lib/themes/themes";
+import { ThemeSetting } from "@proton/shared/lib/themes/themes";
 import { getSettings, updateSettings } from "../store/settingsStore";
 import { performStoreMigrations } from "./storeMigrations";
+import { ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/constants";
 
 jest.mock("../store/settingsStore", () => ({
     getSettings: jest.fn(),
