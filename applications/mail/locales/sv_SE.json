@@ -399,6 +399,12 @@
       "Delete permanently": [
         "Ta bort permanent"
       ],
+      "Deleting folder": [
+        "Tar bort mapp"
+      ],
+      "Deleting label": [
+        "Tar bort etikett"
+      ],
       "Deselect all": [
         "Avmarkera alla"
       ],
@@ -7087,8 +7093,7 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -7605,6 +7610,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender enligt antalet tillgängliga kalendrar i ditt paket."
+      ],
+      "Selection pane": [
+        "Valpanel"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Skicka ett krypterat och lösenordsskyddat meddelande till en ${ boldText }e-postadress."
@@ -11113,8 +11121,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
+      "Don’t show this again": [
+        "Visa inte detta igen"
+      ],
       "Don’t show this offer again": [
         "Visa inte detta erbjudande igen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Skaffa ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaffa Drive Plus för endast ${ pricingTitle }"
@@ -11168,9 +11182,20 @@
         "Din prenumeration förnyas snart"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Krypterad lösenordshanterare"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 fler premiumfunktioner"
+      ],
+      "500 GB secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "Advanced threat protection": [
+        "Avancerat hotskydd"
       ],
       "Custom email domain": [
         "Anpassad e-postdomän"
@@ -11192,6 +11217,12 @@
       ],
       "Storage": [
         "Lagringsutrymme"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultrasnabba VPN-servrar i 110+ länder"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Obegränsat antal alias för att skydda din identitet"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11554,6 +11585,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Banköverföring"
       ],
@@ -11682,6 +11716,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Bank transfer - ${ details }": [
+        "Banköverföring - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -12553,8 +12592,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Surfa säkert"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Gör mer med ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Skaffa obegränsat antal alias"
+      ],
       "Go to subscription plans": [
         "Gå till prenumerationspaket"
+      ],
+      "Guard against threats": [
+        "Skydd mot hot"
+      ],
+      "Increase your storage": [
+        "Öka ditt lagringsutrymme"
+      ],
+      "Keep passwords safe": [
+        "Håll lösenord säkra"
+      ],
+      "Unblock streaming content": [
+        "Avblockera streaminginnehåll"
       ],
       "Upgrade": [
         "Uppgradera"
@@ -12633,6 +12693,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Kom åt innehåll på streamingtjänster globalt"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Skaffa 500 GB för att säkert lagra alla dina filer och foton"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Få åtkomst till ultrasnabba VPN-servrar i 110+ länder"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Skaffa ett paket som inkluderar allt, skaffa ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Skaffa obegränsat antal alias för att skydda din identitet och minska skräppost"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Håll dina lösenord säkra och organiserade i flera valv "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Skydda ditt konto från hot med Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Uppgradera och spara mer med 2 års ${ planName }"
       ]
@@ -14808,6 +14889,14 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Denna version av Tor-webbläsaren stöds inte. Uppdatera till senaste ${ stableRelease }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/månad"
+      ],
+      "Only": [
+        "Endast"
       ]
     },
     "unprivatization": {

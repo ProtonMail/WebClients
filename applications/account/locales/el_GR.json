@@ -442,6 +442,9 @@
       "Delete logo": [
         "Διαγραφή λογότυπου"
       ],
+      "Delete logs": [
+        "Διαγραφή αρχείων καταγραφής"
+      ],
       "Delete member": [
         "Διαγραφή μέλους"
       ],
@@ -468,6 +471,12 @@
       ],
       "Delete “${ label.Name }”": [
         "Διαγραφή “${ label.Name }”"
+      ],
+      "Deleting folder": [
+        "Διαγραφή φακέλου"
+      ],
+      "Deleting label": [
+        "Διαγραφή ετικέτας"
       ],
       "Deny access": [
         "Άρνηση πρόσβασης"
@@ -642,6 +651,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Εξερεύνηση άλλων προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "Explore other plans": [
+        "Εξερευνήστε άλλα πλάνα"
       ],
       "Export": [
         "Εξαγωγή"
@@ -4135,6 +4147,12 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ενεργοποιήστε το ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Ενεργοποίηση λεπτομερών συμβάντων και ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
+      ],
+      "Enable detailed events to access these features": [
+        "Ενεργοποίηση λεπτομερών συμβάντων για πρόσβαση σε αυτές τις δυνατότητες"
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Ενθαρρύνετε τη χρήση της ταυτοποίησης δύο παραγόντων στην οργάνωσή σας για επιπλέον ασφάλεια."
       ],
@@ -4224,18 +4242,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
-      ],
-      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "Πρέπει να ενεργοποιήσετε λεπτομερή γεγονότα και το ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
-      ],
-      "You should enable detailed events in order to access these features": [
-        "Πρέπει να ενεργοποιήσετε λεπτομερή γεγονότα για πρόσβαση σε αυτές τις δυνατότητες"
-      ],
-      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "Ο διαχειριστής του οργανισμού σας θα πρέπει να ενεργοποιήσει λεπτομερή γεγονότα και ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
-      ],
-      "Your organization administrator should enable detailed events in order to access these features": [
-        "Ο διαχειριστής του οργανισμού σας θα πρέπει να ενεργοποιήσει λεπτομερή γεγονότα προκειμένου να αποκτήσετε πρόσβαση σε αυτές τις λειτουργίες."
       ]
     },
     "description": {
@@ -6425,8 +6431,14 @@
       ]
     },
     "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+, Prime Video, και άλλων, από οπουδήποτε."
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+ και Prime Video, και άλλων, από οπουδήποτε"
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "Σας προστατεύει από διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό σε ιστοσελίδες και εφαρμογές"
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Οι διακομιστές Secure Core δρομολογούν την κίνησή σας μέσω 2 διακομιστών VPN για επιπλέον ασφάλεια"
       ]
     },
     "fido2: Action": {
@@ -12877,17 +12889,20 @@
       ],
       "Two password mode enabled": [
         "Η λειτουργία δύο κωδικών πρόσβασης ενεργοποιήθηκε"
+      ],
+      "Unknown": [
+        "Άγνωστο"
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "Παρακολούθηση δραστηριότητας"
+      ],
       "Enable ${ reason }": [
         "Ενεργοποίηση ${ reason }"
       ],
       "Enable detailed events": [
         "Ενεργοποίηση λεπτομερών συμβάντων"
-      ],
-      "Enable security events": [
-        "Ενεργοποίηση συμβάντων ασφαλείας"
       ]
     },
     "Mail import summary": {
@@ -14698,8 +14713,14 @@
       "${ pricingTitle } offer expires today!": [
         "Η ${ pricingTitle } προσφορά λήγει σήμερα!"
       ],
+      "Don’t show this again": [
+        "Να μην εμφανιστεί ξανά"
+      ],
       "Don’t show this offer again": [
         "Να μην εμφανιστεί ξανά αυτή η προσφορά"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Αποκτήστε ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Αποκτήστε το Drive Plus για μόνο ${ pricingTitle }"
@@ -14753,9 +14774,20 @@
         "Η συνδρομή σας ανανεωθεί σύντομα"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Κρυπτογραφημένος διαχειριστής κωδικών πρόσβασης"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 περισσότερες premium δυνατότητες"
+      ],
+      "500 GB secure storage": [
+        "500 GB ασφαλής χώρος αποθήκευσης"
+      ],
+      "Advanced threat protection": [
+        "Προηγμένη προστασία απειλών"
       ],
       "Custom email domain": [
         "Προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
@@ -14777,6 +14809,12 @@
       ],
       "Storage": [
         "Αποθηκευτικός χώρος"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ταχύτατοι διακομιστές VPN σε 110+ χώρες"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Απεριόριστα ψευδώνυμα για να προστατεύσετε την ταυτότητά σας"
       ]
     },
     "Onboarding": {
@@ -15768,6 +15806,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Τραπεζική μεταφορά"
       ],
@@ -15813,9 +15854,6 @@
       ],
       "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
         "Μόνο το ευρώ γίνεται δεκτό για SEPA. Το νόμισμά σας έχει αλλάξει. Χρησιμοποιήστε τον επιλογέα για να αναιρέσετε την επιλογή σας."
-      ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Παρακαλούμε προσθέστε έναν τρόπο πληρωμής στον πίνακα ελέγχου για να συνεχίσετε."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
@@ -15905,6 +15943,14 @@
     "Payments.plan_name": {
       "Free": [
         "Δωρεάν"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Τραπεζική μεταφορά - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -17609,8 +17655,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Περιηγηθείτε με ασφάλεια"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Κάντε περισσότερα με ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Αποκτήστε απεριόριστα ψευδώνυμα"
+      ],
       "Go to subscription plans": [
         "Μεταβείτε στα συνδρομητικά πλάνα"
+      ],
+      "Guard against threats": [
+        "Προστασία από απειλές"
+      ],
+      "Increase your storage": [
+        "Αυξήστε τον αποθηκευτικό σας χώρο"
+      ],
+      "Keep passwords safe": [
+        "Διατηρήστε τους κωδικούς πρόσβασης ασφαλείς"
+      ],
+      "Unblock streaming content": [
+        "Αφαίρεση φραγής περιεχομένου ροής"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -17689,6 +17756,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής παγκοσμίως"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Λάβετε 500 GB για ασφαλή αποθήκευση όλων των αρχείων και των φωτογραφιών σας"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Αποκτήστε πρόσβαση σε ταχύτατους διακομιστές VPN σε 110+ χώρες"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Αποκτήστε ένα πλάνο που τα περιλαμβάνει όλα, αποκτήστε ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Αποκτήστε απεριόριστα ψευδώνυμα για να προστατεύσετε την ταυτότητά σας και να μειώσετε τα ενοχλητικά"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Διατηρήστε τους κωδικούς σας ασφαλείς και οργανωμένους σε πολλαπλές κρύπτες "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Προστατέψτε τον λογαριασμό σας από απειλές με το Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Αναβαθμίστε και εξοικονομήστε περισσότερα με 2 χρόνια ${ planName }"
       ]
@@ -19601,9 +19689,6 @@
       "Delete label?": [
         "Διαγραφή ετικέτας;"
       ],
-      "Delete logs": [
-        "Διαγραφή αρχείων καταγραφής"
-      ],
       "Delete organization logo?": [
         "Διαγραφή λογότυπου οργανισμού;"
       ],
@@ -21119,6 +21204,14 @@
       ],
       "Refund": [
         "Επιστροφή χρημάτων"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/μήνα"
+      ],
+      "Only": [
+        "Μόνο"
       ]
     },
     "unprivatization": {

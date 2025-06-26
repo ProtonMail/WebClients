@@ -7971,8 +7971,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } Angebot läuft heute ab!"
       ],
+      "Don’t show this again": [
+        "Nicht erneut anzeigen"
+      ],
       "Don’t show this offer again": [
         "Dieses Angebot nicht mehr zeigen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Hol dir ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Hol dir Drive Plus für nur ${ pricingTitle }"
@@ -8026,9 +8032,20 @@
         "Dein Abonnement verlängert sich bald"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Verschlüsselter Passwortmanager"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 weitere Premium-Funktionen"
+      ],
+      "500 GB secure storage": [
+        "500 GB sicherer Speicher"
+      ],
+      "Advanced threat protection": [
+        "Erweiterter Bedrohungsschutz"
       ],
       "Custom email domain": [
         "Eigene E-Mail-Domain"
@@ -8050,6 +8067,12 @@
       ],
       "Storage": [
         "Speicherplatz"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultraschnelle VPN-Server in über 110 Ländern"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Unbegrenzte Aliase, um deine Identität zu schützen"
       ]
     },
     "Onboarding Trial": {
@@ -8225,6 +8248,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Banküberweisung"
       ],
@@ -8350,6 +8376,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - Karte endet mit ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Banküberweisung - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -9044,8 +9078,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Sicher surfen"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Mehr mit ${ BRAND_NAME } machen"
+      ],
+      "Get unlimited aliases": [
+        "Erhalte unbegrenzte Aliasse"
+      ],
       "Go to subscription plans": [
         "Zu Abonnements wechseln"
+      ],
+      "Guard against threats": [
+        "Schütze dich vor Bedrohungen"
+      ],
+      "Increase your storage": [
+        "Erhöhe deinen Speicherplatz"
+      ],
+      "Keep passwords safe": [
+        "Passwörter sicher aufbewahren"
+      ],
+      "Unblock streaming content": [
+        "Streaming-Inhalte entsperren"
       ],
       "Upgrade": [
         "Upgrade durchführen"
@@ -9124,6 +9179,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Greife weltweit auf Inhalte von Streaming-Diensten zu"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Hol dir 500 GB, um all deine Dateien und Fotos sicher zu speichern"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Erhalte Zugang zu ultraschnellen VPN-Servern in über 110 Ländern"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Hol dir ein Abonnement, das alles beinhaltet, hol dir ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Hol dir unbegrenzt Aliase, um deine Identität zu schützen und Spam zu reduzieren"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Halte deine Passwörter sicher und organisiere sie in mehreren Tresoren "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Schütze dein Konto vor Bedrohungen mit Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Führe ein Upgrade durch und spare noch mehr mit 2 Jahren ${ planName }"
       ]
@@ -10426,6 +10502,14 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ Monat"
+      ],
+      "Only": [
+        "Nur"
       ]
     },
     "unprivatization": {

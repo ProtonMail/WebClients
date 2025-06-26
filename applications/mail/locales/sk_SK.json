@@ -1236,6 +1236,9 @@
       "Send read receipt": [
         "Odoslať potvrdenie o prečítaní"
       ],
+      "Send unsubscribe email": [
+        "Odoslať email na odhlásenie odberu"
+      ],
       "Set": [
         "Nastaviť"
       ],
@@ -7318,10 +7321,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7532,6 +7532,9 @@
       ],
       "No links cleaned": [
         "Neboli vyčistené žiadne odkazy"
+      ],
+      "No messages to show": [
+        "Žiadne správy na zobrazenie"
       ],
       "No more results found": [
         "Nenašli sa žiadne ďalšie výsledky"
@@ -11473,8 +11476,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } ponuka končí dnes!"
       ],
+      "Don’t show this again": [
+        "Nabudúce nezobrazovať"
+      ],
       "Don’t show this offer again": [
         "Túto ponuku už nezobrazovať"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Získajte ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Získajte Drive Plus len za ${ pricingTitle }"
@@ -11528,9 +11537,20 @@
         "Vaše predplatné sa čoskoro obnoví"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Šifrovaný správca hesiel"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 ďalších prémiových funkcií"
+      ],
+      "500 GB secure storage": [
+        "500 GB bezpečného úložiska"
+      ],
+      "Advanced threat protection": [
+        "Pokročilá ochrana pred hrozbami"
       ],
       "Custom email domain": [
         "Vlastná emailová doména"
@@ -11552,6 +11572,12 @@
       ],
       "Storage": [
         "Úložisko"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultra rýchle VPN servery v 110+ krajinách"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Neobmedzené aliasy na ochranu vašej identity"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11964,6 +11990,9 @@
       ],
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Pre SEPA sa akceptuje len euro. Vaša mena bola zmenená. Na vrátenie pôvodnej voľby použite výber."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
@@ -12978,8 +13007,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Prehliadajte bezpečne"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Urobte viac pomocou ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Získajte neobmedzené aliasy"
+      ],
       "Go to subscription plans": [
         "Prejsť na plány predplatného"
+      ],
+      "Guard against threats": [
+        "Ochrana pred hrozbami"
+      ],
+      "Increase your storage": [
+        "Zväčšite svoje úložisko"
+      ],
+      "Keep passwords safe": [
+        "Uchovávajte heslá v bezpečí"
+      ],
+      "Unblock streaming content": [
+        "Odblokujte streamovaný obsah"
       ],
       "Upgrade": [
         "Inovovať"
@@ -13060,6 +13110,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Pristupujte k obsahu na streamovacích služieb na celom svete"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Získajte 500 GB na bezpečné uloženie všetkých vašich súborov a fotografií"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Získajte prístup k ultra rýchlym VPN serverom vo viac než 110 krajinách"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Získajte jeden plán, ktorý zahŕňa všetko, získajte ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Získajte neobmedzené aliasy na ochranu svojej identity a zníženie spamu"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Udržujte si svoje heslá v bezpečí a usporiadané vo viacerých trezoroch "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Chráňte svoj účet pred hrozbami so Sentinelom"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Inovujte a ušetrite viac s 2 rokmi ${ planName }"
       ]
@@ -15356,6 +15427,14 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na najnovší ${ stableRelease }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mesiac"
+      ],
+      "Only": [
+        "Iba"
       ]
     },
     "unprivatization": {

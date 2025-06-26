@@ -93,6 +93,9 @@
       "Apply": [
         "Toepassen"
       ],
+      "Ask me next time": [
+        "Volgende keer vragen"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
         "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
@@ -680,6 +683,9 @@
       ],
       "Save changes": [
         "Wijzigingen opslaan"
+      ],
+      "Save preferences": [
+        "Voorkeuren opslaan"
       ],
       "Search": [
         "Zoeken"
@@ -4416,6 +4422,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Contact verwijderd uit groep ${ contactGroupName }"
       ],
+      "Converting document...": [
+        "Document converteren..."
+      ],
       "Copy the link to clipboard": [
         "Link kopiëren naar klembord"
       ],
@@ -4459,6 +4468,9 @@
       ],
       "Creating link to folder": [
         "Link naar map maken"
+      ],
+      "Creating new document...": [
+        "Nieuw document maken..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
@@ -4577,6 +4589,12 @@
       "Enter your own password (as organization admin).": [
         "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Fout bij het converteren van document: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fout bij het laden van document: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Synchronisatiefout"
       ],
@@ -4636,6 +4654,12 @@
       ],
       "Geoblocking": [
         "Geoblocking"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Ontvang e-mailupdates voor opmerkingen en suggesties die aan uw documenten zijn toegevoegd."
+      ],
+      "Get Notified About Comments": [
+        "Krijg een melding bij reacties"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Ga naar ${ DRIVE_APP_NAME }"
@@ -4785,6 +4809,9 @@
       "Low Priority": [
         "Lage Prioriteit"
       ],
+      "Making a copy...": [
+        "Een kopie maken..."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
@@ -4824,6 +4851,9 @@
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Er is geen document meegegeven in de URL. Ga terug naar ${ DRIVE_APP_NAME } en selecteer een document."
       ],
       "No email address": [
         "Geen e-mailadres"
@@ -5166,6 +5196,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "De URL die u hebt ingevoegd, lijkt verkeerd te zijn gekopieerd uit Slack. Wanneer u lange koppelingen van Slack kopieert, klik met de rechtermuisknop op de link en kies dan \"Link kopiëren\" in plaats van de ingekorte URL-tekst direct te kopiëren."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
@@ -5892,6 +5925,9 @@
       "Emails (last month)": [
         "E-mails (laatste maand)"
       ],
+      "Enable email notifications": [
+        "E-mailmeldingen inschakelen"
+      ],
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
@@ -5948,6 +5984,9 @@
       ],
       "Import to:": [
         "Importeren naar:"
+      ],
+      "Include document name in notification": [
+        "Documentnaam opnemen in melding"
       ],
       "Include message and file name in invite email": [
         "Bericht- en bestandsnaam opnemen in uitnodigingsmail"
@@ -7829,6 +7868,9 @@
       "The link to your item was deleted": [
         "De link naar uw item werd verwijderd"
       ],
+      "The spreadsheet failed to be created": [
+        "De spreadsheet kon niet aangemaakt worden"
+      ],
       "Trash failed to be emptied": [
         "Prullenbak legen mislukt"
       ],
@@ -8168,6 +8210,9 @@
       ],
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Alleen Euro wordt geaccepteerd voor SEPA. Uw valuta is gewijzigd. Gebruik de selector om uw keuze ongedaan te maken."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
@@ -10146,6 +10191,9 @@
       ],
       "Untitled document ${ date }": [
         "Naamloos document ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Naamloos spreadsheet ${ date }"
       ],
       "Upgrade complete!": [
         "Upgrade voltooid!"

@@ -643,6 +643,9 @@
       "Explore other ${ BRAND_NAME } plans": [
         "További ${ BRAND_NAME } csomagok megismerése"
       ],
+      "Explore other plans": [
+        "További csomagok megismerése"
+      ],
       "Export": [
         "Exportálás"
       ],
@@ -4135,6 +4138,12 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "A funkciók eléréshez engedélyezze a ${ PROTON_SENTINEL_NAME } funkciót"
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Ezekhez a lehetőségekhez engedélyezze a részletes eseményeket és a ${ PROTON_SENTINEL_NAME }-t"
+      ],
+      "Enable detailed events to access these features": [
+        "Ezekhez a lehetőségekhez engedélyezze a részletes eseményeket"
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Ösztönözze a kétlépcsős hitelesítés használatát az Ön szervezetében a nagyobb biztonság érdekében."
       ],
@@ -4224,18 +4233,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Eseményeket iCal formátumból (ICS fájl) tud importálni.\nA fájl maximális mérete ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és maximum ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmazhat. Nagyobb fájl importálásához, kisebb darabokra kell vágnia."
-      ],
-      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "A részletes események és a ${ PROTON_SENTINEL_NAME } engedélyezése szükséges ahhoz, hogy hozzáférjen ezekhez a funkciókhoz."
-      ],
-      "You should enable detailed events in order to access these features": [
-        "A részletes események engedélyezése szükséges ahhoz, hogy hozzáférjen ezekhez a funkciókhoz."
-      ],
-      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "Az Ön szervezete rendszergazdájának engedélyeznie kell a részletes eseményeket és a ${ PROTON_SENTINEL_NAME }-t annak érdekében, hogy hozzáférhessen ezekhez a funkciókhoz."
-      ],
-      "Your organization administrator should enable detailed events in order to access these features": [
-        "Az Ön szervezete rendszergazdájának engedélyeznie kell a részletes eseményeket annak érdekében, hogy hozzáférhessen ezekhez a funkciókhoz"
       ]
     },
     "description": {
@@ -6425,8 +6422,14 @@
       ]
     },
     "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Akárhonnan hozzáférhet a videó tartalmakhoz, beleértve a Netflixet, a Disney+-t, a Prime Videót és más szolgáltatásokat."
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Akárhonnan hozzáférhet a videó tartalmakhoz, beleértve a Netflix, a Disney+, a Prime Video és más szolgáltatásokat"
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "Védelmet nyújt a hirdetések, követők és rosszindulatú szoftverek ellen weboldalakon és alkalmazásokban"
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "A Secure Core szerverek a forgalmat 2 VPN szerveren keresztül küldik át az extra biztonság érdekében."
       ]
     },
     "fido2: Action": {
@@ -12874,17 +12877,20 @@
       ],
       "Two password mode enabled": [
         "Két jelszavas mód engedélyezése"
+      ],
+      "Unknown": [
+        "Ismeretlen"
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "Tevékenység figyelő"
+      ],
       "Enable ${ reason }": [
         "${ reason } engedélyezése"
       ],
       "Enable detailed events": [
         "Részletes események bekapcsolása"
-      ],
-      "Enable security events": [
-        "Biztonsági események bekapcsolása"
       ]
     },
     "Mail import summary": {
@@ -14695,8 +14701,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } ajánlata ma lejár!"
       ],
+      "Don’t show this again": [
+        "Ne mutassa többször"
+      ],
       "Don’t show this offer again": [
         "Ne jelenjen meg többet ez az ajánlat"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Előfizetés ${ BRAND_NAME } Unlimitedre"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Szerezze be a Drive Plus csomagot ${ pricingTitle } áron"
@@ -14750,9 +14762,20 @@
         "Az előfizetése hamarosan megújul"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Titkosított jelszókezelő"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+További 10 prémium funkció"
+      ],
+      "500 GB secure storage": [
+        "500 GB biztonságos tárhely"
+      ],
+      "Advanced threat protection": [
+        "Fejlett védelem fenyegetés ellen"
       ],
       "Custom email domain": [
         "Egyéni e-mail domain név"
@@ -14774,6 +14797,12 @@
       ],
       "Storage": [
         "Tároló"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultra-gyors VPN szerverek több mint 110 országban"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Korlátlan számú e-mail álnév személyazonosságának védelmére"
       ]
     },
     "Onboarding": {
@@ -15808,8 +15837,8 @@
       "More plans are available in other currencies": [
         "További csomagok érhetők el más pénznemekben"
       ],
-      "Please add a payment method in the dashboard to continue.": [
-        "A folytatáshoz kérjük, vegyen fel egy fizetési módot a vezérlőközpontban."
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Csak eurót fogadunk el SEPA-hoz. Pénzneme megváltozott. Kérjük, a választó segítségével vonja vissza a választását."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Kérjük, először aktiválja újra az előfizetését, hogy csökkenthesse a bővítmények számát."
@@ -17603,8 +17632,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Biztonságosan böngésszen"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Tegyen többet ezzel: ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Szerezzen korlátlan számú e-mail álnevet"
+      ],
       "Go to subscription plans": [
         "Előfizetési csomagok megnyitása"
+      ],
+      "Guard against threats": [
+        "Védekezés a fenyegetések ellen"
+      ],
+      "Increase your storage": [
+        "Növelje a tárhelyét"
+      ],
+      "Keep passwords safe": [
+        "Tartsa biztonságban a jelszavakat"
+      ],
+      "Unblock streaming content": [
+        "Streaming tartalmak blokkolásának feloldása"
       ],
       "Upgrade": [
         "Váltás nagyobb csomagra"
@@ -17683,6 +17733,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Tartalom elérése videós szolgáltatásokon világszerte"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Kapjon 500 GB-ot, hogy biztonságosan tárolhassa az összes fájlját és fényképét."
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Hozzáférés ultragyors VPN-kiszolgálókhoz 110+ országban"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Szerezzen be egyetlen csomagot, amely mindent tartalmaz, ez a ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Korlátlan számú e-mail álnevet használhat személyazonosságának védelme és a levélszemét csökkentése érdekében"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Tartsa jelszavait biztonságban és rendszerezve több tárolóban"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Védje fiókját a fenyegetésektől a Sentinel segítségével"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Váltson csomagot és takarítson meg mégtöbbet a 2 éves ${ planName } csomaggal"
       ]
@@ -19595,9 +19666,6 @@
       "Delete label?": [
         "Címke törlése?"
       ],
-      "Delete logs": [
-        "Naplók törlése"
-      ],
       "Delete organization logo?": [
         "Törli a szervezet logóját?"
       ],
@@ -21113,6 +21181,14 @@
       ],
       "Refund": [
         "Visszatérítés"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/hó"
+      ],
+      "Only": [
+        "Csak"
       ]
     },
     "unprivatization": {

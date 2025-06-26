@@ -4256,18 +4256,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
-      ],
-      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "Bu özelliklere erişmek için ayrıntılı etkinlikler ve ${ PROTON_SENTINEL_NAME } özelliklerini açın"
-      ],
-      "You should enable detailed events in order to access these features": [
-        "Bu özelliklere erişmek için ayrıntılı etkinlikler özelliğini açmalısınız"
-      ],
-      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "Kuruluş yöneticiniz bu özelliklere erişmek için ayrıntılı etkinlikler ve ${ PROTON_SENTINEL_NAME } özelliklerini açmalıdır"
-      ],
-      "Your organization administrator should enable detailed events in order to access these features": [
-        "Bu özelliklere erişmek için kuruluş yöneticiniz ayrıntılı etkinlikler özelliğini açmalıdır"
       ]
     },
     "description": {
@@ -6454,11 +6442,6 @@
       ],
       "Secure streaming": [
         "Güvenli yayın akışı"
-      ]
-    },
-    "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Netflix, Disney+, Prime Video ve diğer yayın hizmetlerindeki içeriğe her yerden erişin."
       ]
     },
     "fido2: Action": {
@@ -12917,9 +12900,6 @@
       ],
       "Enable detailed events": [
         "Ayrıntılı etkinlikler özelliğini aç"
-      ],
-      "Enable security events": [
-        "Güvenlik etkinlikleri özelliğini aç"
       ]
     },
     "Mail import summary": {
@@ -15842,9 +15822,6 @@
       ],
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
-      ],
-      "Please add a payment method in the dashboard to continue.": [
-        "İlerlemek içn lütfen panodan bir ödeme yöntemi ekleyin."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
@@ -19637,9 +19614,6 @@
       ],
       "Delete label?": [
         "Etiket silinsin mi?"
-      ],
-      "Delete logs": [
-        "Günlük kayıtlarını sil"
       ],
       "Delete organization logo?": [
         "Kuruluş logosu silinsin mi?"
