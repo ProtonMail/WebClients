@@ -4,13 +4,15 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
+import { getEasySwitchFeaturesFromProducts } from '@proton/activation/src/hooks/useOAuthPopup.helpers';
 import type { OAuthProps } from '@proton/activation/src/interface';
-import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES, ImportProvider } from '@proton/activation/src/interface';
 import { createImporterThunk } from '@proton/activation/src/logic/draft/oauthDraft/createImporter.action';
 import { changeOAuthStep } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import {
     selectOauthDraftProvider,
     selectOauthDraftSource,
+    selectOauthImportStateProducts,
     selectOauthImportStateScopes,
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
@@ -27,6 +29,7 @@ const useOAuthModal = () => {
 
     const scopes = useEasySwitchSelector(selectOauthImportStateScopes);
     const provider = useEasySwitchSelector(selectOauthDraftProvider);
+    const products = useEasySwitchSelector(selectOauthImportStateProducts);
     const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
         errorMessage: c('Error').t`Your import will not be processed.`,
     });
@@ -42,13 +45,17 @@ const useOAuthModal = () => {
 
     const triggerOAuth = (tempScopes?: string[]) => {
         const finalScopes = scopes?.join(' ') ?? tempScopes?.join(' ');
-        if (!provider || !finalScopes) {
+        // Early return if we cannot continue, however we don't need scopes for Google oAuth
+        if (!provider || (!finalScopes && provider !== ImportProvider.GOOGLE)) {
             return;
         }
 
+        const features = getEasySwitchFeaturesFromProducts(products || []);
+
         void triggerOAuthPopup({
             provider,
-            scope: finalScopes,
+            scope: finalScopes || '',
+            features,
             callback: async (oAuthProps: OAuthProps) => {
                 if (!defaultAddress) {
                     throw new Error('Missing address');

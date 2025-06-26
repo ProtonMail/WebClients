@@ -10,7 +10,13 @@ import { Button } from '@proton/atoms';
 import { UpsellModal, useModalState } from '@proton/components';
 import useConfig from '@proton/components/hooks/useConfig';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import {
+    type APP_NAMES,
+    BRAND_NAME,
+    MAIL_APP_NAME,
+    SHARED_UPSELL_PATHS,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { isFree, isPaid } from '@proton/shared/lib/user/helpers';
 import forwardImg from '@proton/styles/assets/img/illustrations/new-upsells-img/easy-switch-forward.svg';
@@ -32,8 +38,7 @@ const ConnectGmailButton = ({
     const [user, loadingUser] = useUser();
     const { APP_NAME } = useConfig();
 
-    const { hasAccessToBYOE, isInMaintenance, googleOAuthScope, handleSyncCallback, allSyncs } =
-        useSetupGmailBYOEAddress();
+    const { hasAccessToBYOE, isInMaintenance, handleSyncCallback, allSyncs } = useSetupGmailBYOEAddress();
 
     const [syncModalProps, setSyncModalProps, renderSyncModal] = useModalState();
     const [reachedLimitForwardingModalProps, setReachedLimitForwardingModalProps, renderReachedLimitForwardingModal] =
@@ -44,7 +49,7 @@ const ConnectGmailButton = ({
     const upsellRef =
         getUpsellRefFromApp({
             app: APP_NAME,
-            feature: SHARED_UPSELL_PATHS.EASY_SWITCH_FORWARDING,
+            feature: SHARED_UPSELL_PATHS.EASY_SWITCH_BYOE,
             component: UPSELL_COMPONENT.MODAL,
             fromApp: app,
         }) || '';
@@ -58,17 +63,9 @@ const ConnectGmailButton = ({
     };
 
     const handleAddForwarding = () => {
-        /* TODO to change later
-         * For the first phase, we don't want to show the upsell modal to users not having access to BYOE.
-         * We want to show them the limit modal if they reach the current limit that is on production though
-         */
-        const showUpsellModal = hasAccessToBYOE && isFree(user) && allSyncs.length >= MAX_SYNC_FREE_USER;
-        const showLimitModal =
-            (isPaid(user) && allSyncs.length >= MAX_SYNC_PAID_USER) ||
-            (isFree(user) && allSyncs.length >= MAX_SYNC_PAID_USER);
-        if (showUpsellModal) {
+        if (isFree(user) && allSyncs.length >= MAX_SYNC_FREE_USER) {
             setUpsellForwardingModalProps(true);
-        } else if (showLimitModal) {
+        } else if (isPaid(user) && allSyncs.length >= MAX_SYNC_PAID_USER) {
             setReachedLimitForwardingModalProps(true);
         } else {
             setSyncModalProps(true);
@@ -91,7 +88,6 @@ const ConnectGmailButton = ({
                 <GmailSyncModal
                     noSkip
                     onSyncCallback={hasAccessToBYOE ? handleSyncCallback : handleCloseForwardingModal}
-                    scope={googleOAuthScope}
                     source={
                         hasAccessToBYOE
                             ? EASY_SWITCH_SOURCES.ACCOUNT_WEB_EXTERNAL_GMAIL
@@ -106,24 +102,42 @@ const ConnectGmailButton = ({
             {renderUpsellForwardingModal && (
                 <UpsellModal
                     upsellRef={upsellRef}
-                    title={c('loc_nightly: BYOE').t`Connect more Gmail addresses with ${planName}`}
+                    title={
+                        hasAccessToBYOE
+                            ? c('Title').t`Connect more Gmail addresses with ${planName}`
+                            : c('Title').t`Multiple accounts, 1 private inbox`
+                    }
                     description={
                         <>
-                            {/*translator: full sentence is "You've connected your 1 Gmail address."*/}
                             <span>
-                                {c('loc_nightly: BYOE').ngettext(
-                                    msgid`You've connected your ${MAX_SYNC_FREE_USER} Gmail address.`,
-                                    `You've connected your ${MAX_SYNC_FREE_USER} Gmail address.`,
-                                    MAX_SYNC_FREE_USER
-                                )}
+                                {hasAccessToBYOE
+                                    ? /*translator: full sentence is "You've connected your 1 Gmail address."*/
+                                      c('loc_nightly: BYOE').ngettext(
+                                          msgid`You've connected ${MAX_SYNC_FREE_USER} Gmail address to ${BRAND_NAME}.`,
+                                          `You've connected ${MAX_SYNC_FREE_USER} Gmail addresses to ${BRAND_NAME}.`,
+                                          MAX_SYNC_FREE_USER
+                                      )
+                                    : /*translator: full sentence is "You're forwarding emails from 1 external account to Proton Mail."*/
+                                      c('Easy switch').ngettext(
+                                          msgid`You're forwarding emails from ${MAX_SYNC_FREE_USER} external account to ${MAIL_APP_NAME}.`,
+                                          `You're forwarding emails from ${MAX_SYNC_FREE_USER} external accounts to ${MAIL_APP_NAME}.`,
+                                          MAX_SYNC_FREE_USER
+                                      )}
                             </span>
-                            {/*translator: full sentence is "To connect more, upgrade to Mail Plus and get up to 3 Gmail accounts linked to your inbox."*/}
-                            <span>
-                                {c('loc_nightly: BYOE').ngettext(
-                                    msgid`To connect more, upgrade to ${planName} and get up to ${MAX_SYNC_PAID_USER} Gmail accounts linked to your inbox.`,
-                                    `To connect more, upgrade to ${planName} and get up to ${MAX_SYNC_PAID_USER} Gmail accounts linked to your inbox.`,
-                                    MAX_SYNC_PAID_USER
-                                )}
+                            <span className="ml-1">
+                                {hasAccessToBYOE
+                                    ? /*translator: full sentence is "To connect more, upgrade to Mail Plus and get up to 3 Gmail accounts linked to your inbox."*/
+                                      c('loc_nightly: BYOE').ngettext(
+                                          msgid`To connect up to ${MAX_SYNC_PAID_USER} Gmail address, upgrade to ${planName}.`,
+                                          `To connect up to ${MAX_SYNC_PAID_USER} Gmail addresses, upgrade to ${planName}.`,
+                                          MAX_SYNC_PAID_USER
+                                      )
+                                    : /*translator: full sentence is "To forward emails from up to 3 accounts, upgrade to Mail Plus."*/
+                                      c('Easy switch').ngettext(
+                                          msgid`To forward emails from up to ${MAX_SYNC_PAID_USER} account, upgrade to ${planName}.`,
+                                          `To forward emails from up to ${MAX_SYNC_PAID_USER} accounts, upgrade to ${planName}.`,
+                                          MAX_SYNC_PAID_USER
+                                      )}
                             </span>
                         </>
                     }

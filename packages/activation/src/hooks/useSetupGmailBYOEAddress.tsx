@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { createBYOEAddress } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { getBYOEScope, getForwardingScope } from '@proton/activation/src/helpers/scope';
 import { useUser } from '@proton/account/user/hooks';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { deleteSyncItem, loadSyncList } from '@proton/activation/src/logic/sync/sync.actions';
@@ -29,8 +28,6 @@ const useSetupGmailBYOEAddress = () => {
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
     const dispatchEasySwitch = useEasySwitchDispatch();
-
-    const googleOAuthScope = hasAccessToBYOE ? getBYOEScope() : getForwardingScope();
 
     // Fetch syncs
     useEffect(() => {
@@ -71,7 +68,7 @@ const useSetupGmailBYOEAddress = () => {
                     );
 
                     if (address) {
-                        createNotification({ text: c('Success').t`Address added` });
+                        createNotification({ text: c('Success').t`Address successfully added` });
                     }
                 } catch {
                     // If we're not able to add the address, we want to delete the forwarding we just added
@@ -81,7 +78,7 @@ const useSetupGmailBYOEAddress = () => {
         }
     };
 
-    return { hasAccessToBYOE, isInMaintenance, googleOAuthScope, handleSyncCallback, allSyncs };
+    return { hasAccessToBYOE, isInMaintenance, handleSyncCallback, allSyncs };
 };
 
 export default useSetupGmailBYOEAddress;
