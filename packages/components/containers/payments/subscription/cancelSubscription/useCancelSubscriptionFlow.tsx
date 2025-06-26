@@ -374,7 +374,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             }
         }
 
-        if (hasPassLaunchOffer(subscription)) {
+        if (!isB2BTrial && hasPassLaunchOffer(subscription)) {
             try {
                 await showPassLaunchDowngradeModal();
             } catch {
@@ -486,7 +486,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             return SUBSCRIPTION_KEPT;
         }
 
-        if (hasCancellablePlan(subscription, user)) {
+        if (isB2BTrial || hasCancellablePlan(subscription, user)) {
             if (subscription.Renew === Renew.Disabled) {
                 return SUBSCRIPTION_KEPT;
             }
