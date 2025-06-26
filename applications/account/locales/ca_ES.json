@@ -442,6 +442,9 @@
       "Delete logo": [
         "Elimina el logo"
       ],
+      "Delete logs": [
+        "Elimineu els registres"
+      ],
       "Delete member": [
         "Elimina el membre"
       ],
@@ -468,6 +471,12 @@
       ],
       "Delete “${ label.Name }”": [
         "Suprimeix «${ label.Name }»"
+      ],
+      "Deleting folder": [
+        "S'està eliminant la carpeta"
+      ],
+      "Deleting label": [
+        "S'està eliminant l'etiqueta"
       ],
       "Deny access": [
         "Denega l'accés"
@@ -642,6 +651,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explora altres ${ BRAND_NAME } plans"
+      ],
+      "Explore other plans": [
+        "Exploreu altres plans"
       ],
       "Export": [
         "Exporta"
@@ -4135,6 +4147,12 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activeu ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Activeu els esdeveniments detallats i ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions."
+      ],
+      "Enable detailed events to access these features": [
+        "Activeu els esdeveniments detallats per accedir a aquestes funcions."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Fomenteu l'ús de l'autenticació de doble factor a la vostra organització per obtenir més seguretat."
       ],
@@ -4224,18 +4242,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
-      ],
-      "You should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "Hauríeu d'habilitar els esdeveniments detallats i el ${ PROTON_SENTINEL_NAME } per accedir a aquestes característiques."
-      ],
-      "You should enable detailed events in order to access these features": [
-        "Hauríeu d'habilitar els esdeveniments detallats per accedir a aquestes característiques."
-      ],
-      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "L'administrador de la vostra organització hauria d'habilitar els esdeveniments detallats i ${ PROTON_SENTINEL_NAME } per accedir a aquestes característiques."
-      ],
-      "Your organization administrator should enable detailed events in order to access these features": [
-        "L'administrador de la vostra organització hauria d'habilitar els esdeveniments detallats per accedir a aquestes característiques"
       ]
     },
     "description": {
@@ -6425,8 +6431,14 @@
       ]
     },
     "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Accediu al contingut dels serveis de reproducció en continu com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc"
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "Us protegeix d'anuncis, rastrejadors i programari maliciós en llocs web i aplicacions"
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Els servidors Secure Core encaminen el trànsit a través de 2 servidors VPN per a més seguretat"
       ]
     },
     "fido2: Action": {
@@ -12877,17 +12889,20 @@
       ],
       "Two password mode enabled": [
         "S'ha activat el mode de dues contrasenyes."
+      ],
+      "Unknown": [
+        "Desconeguda"
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "Monitor d'activitats"
+      ],
       "Enable ${ reason }": [
         "Activa ${ reason }"
       ],
       "Enable detailed events": [
         "Activeu els esdeveniments detallats"
-      ],
-      "Enable security events": [
-        "Habiliteu els esdeveniments de seguretat"
       ]
     },
     "Mail import summary": {
@@ -14698,8 +14713,14 @@
       "${ pricingTitle } offer expires today!": [
         "L'oferta de ${ pricingTitle } caduca avui!"
       ],
+      "Don’t show this again": [
+        "No ho tornis a mostrar"
+      ],
       "Don’t show this offer again": [
         "No tornis a mostrar aquesta oferta"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Obtingueu ${ BRAND_NAME } sense límits"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obteniu Drive Plus per només ${ pricingTitle }"
@@ -14753,9 +14774,20 @@
         "La subscripció es renovarà aviat."
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Gestor de contrasenyes xifrat"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 característiques prèmium més"
+      ],
+      "500 GB secure storage": [
+        "500 GB d'emmagatzematge segur"
+      ],
+      "Advanced threat protection": [
+        "Protecció avançada contra amenaces"
       ],
       "Custom email domain": [
         "Domini de correu electrònic personalitzat"
@@ -14777,6 +14809,12 @@
       ],
       "Storage": [
         "Emmagatzematge"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Servidors VPN ultraràpids en més de 110 països"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Un nombre il·limitat d'àlies per protegir la vostra identitat"
       ]
     },
     "Onboarding": {
@@ -15768,6 +15806,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Transferència bancària"
       ],
@@ -15813,9 +15854,6 @@
       ],
       "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
         "El SEPA només s'accepta l'euro. La moneda ha estat canviada. Utilitzeu el selector per revertir la vostra elecció."
-      ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Per continuar, afegiu una forma de pagament al tauler de control."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
@@ -15905,6 +15943,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - targeta que acaba en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferència bancària - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -17612,8 +17658,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Navegueu amb seguretat"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Supereu els vostres límits amb ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Obtingueu un nombre il·limitat d'àlies"
+      ],
       "Go to subscription plans": [
         "Ves als plans de subscripció"
+      ],
+      "Guard against threats": [
+        "Protegiu-vos d'amenaces"
+      ],
+      "Increase your storage": [
+        "Augmenteu el vostre emmagatzematge"
+      ],
+      "Keep passwords safe": [
+        "Mantingueu les vostres contrasenyes segures"
+      ],
+      "Unblock streaming content": [
+        "Tingui accés il·limitat a continguts en estríming"
       ],
       "Upgrade": [
         "Millora"
@@ -17692,6 +17759,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Accediu a contingut en serveis d'estríming a tot el món"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Obtingueu 500 GB per emmagatzemar de manera segura tots els vostres fitxers i fotos"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Obtingueu accés a servidors VPN ultraràpids en més de 110 països"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Obtingueu un pla que ho inclou tot: ${ BRAND_NAME } sense límits"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Obtingueu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Guardeu les vostres contrasenyes de manera segura i organitzada en diverses caixes fortes. "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Protegiu el vostre compte d'amenaces amb Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Milloreu i estalvieu més amb 2 anys de ${ planName }"
       ]
@@ -19607,9 +19695,6 @@
       "Delete label?": [
         "Voleu eliminar l'etiqueta?"
       ],
-      "Delete logs": [
-        "Elimineu els registres"
-      ],
       "Delete organization logo?": [
         "Voleu eliminar el logo de l'organització?"
       ],
@@ -21125,6 +21210,14 @@
       ],
       "Refund": [
         "Reemborsament"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mes"
+      ],
+      "Only": [
+        "Només"
       ]
     },
     "unprivatization": {

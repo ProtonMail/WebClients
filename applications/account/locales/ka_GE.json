@@ -643,6 +643,9 @@
       "Explore other ${ BRAND_NAME } plans": [
         "${ BRAND_NAME }-ის სხვა ტარიფების გადახედვა"
       ],
+      "Explore other plans": [
+        "სხვა სატარიფო გეგმების დათვალიერება"
+      ],
       "Export": [
         "გატანა"
       ],
@@ -6319,11 +6322,6 @@
       ],
       "Secure streaming": [
         "დაცული სტრიმინგი"
-      ]
-    },
-    "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+, Prime Video- და სხვ. ნებისმიერი ადგილიდან."
       ]
     },
     "fido2: Action": {
@@ -12664,17 +12662,20 @@
       ],
       "Two password mode enabled": [
         "ორპაროლიანი რეჟიმი ჩართულია"
+      ],
+      "Unknown": [
+        "უცნობი"
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "აქტივობების მონიტორი"
+      ],
       "Enable ${ reason }": [
         "${ reason }-ის ჩართვა"
       ],
       "Enable detailed events": [
         "დეტალური მოვლენების ჩართვა"
-      ],
-      "Enable security events": [
-        "უსაფრთხოების მოვლენების ჩართვა"
       ]
     },
     "Mail import summary": {
@@ -14479,8 +14480,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-ის შემოთავაზების ვადა დღეს იწურება!"
       ],
+      "Don’t show this again": [
+        "აღარ მაჩვენოთ ეს"
+      ],
       "Don’t show this offer again": [
         "აღარ მაჩვენო ეს შემოთავაზება"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "მიიღეთ ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "მიიღეთ Drive Plus ფასით ${ pricingTitle }"
@@ -14534,9 +14541,20 @@
         "თქვენი გამოწერა მალე განახლდება"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "დაშიფრული პაროლების მმართველი"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "და კიდევ 10+ ფასიანი ფუნქცია"
+      ],
+      "500 GB secure storage": [
+        "500 გბ დაცული საცავი"
+      ],
+      "Advanced threat protection": [
+        "დამატებითი დაცვა საშიშროებებისგან"
       ],
       "Custom email domain": [
         "თქვენი ელფოსტის დომენი"
@@ -14558,6 +14576,12 @@
       ],
       "Storage": [
         "საცავი"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "უსწრაფესი VPN სერვერები 110+ ქვეყანაში"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "განუსაზღვრელი ფსევდონიმები თქვენს დასაცავად"
       ]
     },
     "Onboarding": {
@@ -15567,9 +15591,6 @@
       ],
       "More plans are available in other currencies": [
         "სხვა სატარიფო გეგმები ხელმისაწვდომია სხვა ვალუტებში"
-      ],
-      "Please add a payment method in the dashboard to continue.": [
-        "გასაგრძელებლად სამუშაო დაფაზე გადახდის მეთოდი დაამატეთ."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
@@ -17347,8 +17368,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "იმუშავეთ ინტერნეტში დაცულად"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "გააკეთეთ მეტი ${ BRAND_NAME }-სთან ერთად"
+      ],
+      "Get unlimited aliases": [
+        "მიიღეთ უსაზღვრო ფსევდონიმი"
+      ],
       "Go to subscription plans": [
         "ტარიფებზე გადასვლა"
+      ],
+      "Guard against threats": [
+        "დაცვა საშიშროებების წინააღმდეგ"
+      ],
+      "Increase your storage": [
+        "გაზარდეთ თქვენი საცავი"
+      ],
+      "Keep passwords safe": [
+        "იქონიეთ პაროლები უსაფრთხოდ"
+      ],
+      "Unblock streaming content": [
+        "განბლოკეთ შემცველობის დასტრიმვა"
       ],
       "Upgrade": [
         "ტარიფის აწევა"
@@ -19321,9 +19363,6 @@
       "Delete label?": [
         "წავშალო ჭდე?"
       ],
-      "Delete logs": [
-        "ჟურნალის წაშლა"
-      ],
       "Delete organization logo?": [
         "წავშალო ორგანიზაციის ლოგო?"
       ],
@@ -20836,6 +20875,14 @@
       ],
       "Refund": [
         "ანაზღაურება"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/თვეში"
+      ],
+      "Only": [
+        "მხოლოდ"
       ]
     },
     "unprivatization": {

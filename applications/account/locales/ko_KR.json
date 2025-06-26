@@ -487,6 +487,9 @@
       "Disable recovery phrase?": [
         "복구시점 기록을 중지하시겠어요?"
       ],
+      "Disable security events": [
+        "보안 이벤트 비활성화"
+      ],
       "Discard": [
         "저장 안함"
       ],
@@ -1542,6 +1545,9 @@
       ],
       "What do I get?": [
         "무엇을 받게 되나요?"
+      ],
+      "Wipe": [
+        "초기화"
       ],
       "Yes": [
         "예"
@@ -4102,6 +4108,12 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "이 기능에 접근하려면 ${ PROTON_SENTINEL_NAME }을 활성화해 주세요."
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "이 기능들을 이용하려면 상세한 이벤트와 ${ PROTON_SENTINEL_NAME }를 활성화하세요."
+      ],
+      "Enable detailed events to access these features": [
+        "이 기능들을 사용하려면 상세한 이벤트를 활성화해야 합니다."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "보한 강화를 위해 조직에서 2단계 인증 사용을 권장하도록 설정해 보세요."
       ],
@@ -4191,12 +4203,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 포맷 (ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING } 이벤트를 가지고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주십시오."
-      ],
-      "Your organization administrator should enable detailed events and ${ PROTON_SENTINEL_NAME } in order to access these features": [
-        "조직 관리자가 이러한 기능에 접근하려면 자세한 이벤트 및 ${ PROTON_SENTINEL_NAME }를 활성화해야 합니다."
-      ],
-      "Your organization administrator should enable detailed events in order to access these features": [
-        "조직 관리자가 이러한 기능에 접근하려면 자세한 이벤트를 활성화해야 합니다."
       ]
     },
     "description": {
@@ -4398,7 +4404,7 @@
         "확장 프로그램 설치"
       ],
       "Installation guide": [
-        "설치 가이드"
+        "설치 가이드(설치 완료 후 설정창에서 한국어 변경 가능)"
       ],
       "iPhone/iPad": [
         "iPhone 및 iPad"
@@ -6373,8 +6379,14 @@
       ]
     },
     "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video 등이 포함됩니다."
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "어디서든지 Netflix, Disney+, Prime Video 등 스트리밍 서비스의 콘텐츠에 접근할 수 있습니다."
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "웹사이트 및 앱에서 광고, 추적기, 멀웨어로부터 사용자를 보호합니다."
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Secure Core 서버는 추가 보안을 위해 사용자의 트래픽을 2개의 VPN 서버를 통해 라우팅합니다."
       ]
     },
     "fido2: Action": {
@@ -7849,6 +7861,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "정말로 이 그룹을 떠날까요? 만약 떠난다면, 이 그룹에 다시 들어오기 위해 그룹 관리자에게 다시 초대받아야 합니다."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "정말로 모든 로그를 영구적으로 삭제하시겠습니까?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "이 사용자로부터 관리 권한을 제거하시겠습니까?"
       ],
@@ -7947,6 +7962,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "SimpleLogin 이메일로 ${ PASS_APP_NAME } 계정을 생성하면, ${ PASS_APP_NAME }에서 별칭을 즉시 관리할 수 있습니다."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "보안 이벤트 모니터링을 비활성화하면 전체 기록이 삭제됩니다. 정말 비활성화하시겠습니까?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
@@ -8401,6 +8419,9 @@
       "expires ${ expirationDate }": [
         "${ expirationDate }에 만료"
       ],
+      "Failed to fetch logs.": [
+        "로그를 가져오지 못했습니다."
+      ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "신속하고 충실하도록. 당신의 데스크톱으로 찾아온 이메일과 캘린더."
       ],
@@ -8796,6 +8817,9 @@
       ],
       "Learn more": [
         "더 알아보기"
+      ],
+      "Learn more about Activity Monitor": [
+        "활동 모니터링에 관해 더 알아보기"
       ],
       "Learn more about Gateways": [
         "게이트웨이에 대해 더 알아보기"
@@ -12724,11 +12748,20 @@
       ],
       "Two password mode enabled": [
         "이중 비밀번호 모드 활성화됨"
+      ],
+      "Unknown": [
+        "알 수 없음"
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "활동 모니터링"
+      ],
       "Enable ${ reason }": [
         "${ reason } 활성화"
+      ],
+      "Enable detailed events": [
+        "상세한 이벤트 기록 활성화"
       ]
     },
     "Mail import summary": {
@@ -14500,6 +14533,9 @@
       "Don’t show this offer again": [
         "이 제안을 다시 보지 않기"
       ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited 구매"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "단 ${ pricingTitle }(으)로 Drive Plus 구매"
       ],
@@ -14552,9 +14588,17 @@
         "구독이 곧 끝나게 됩니다"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "암호화된 비밀번호 관리자"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "그 외 10개 더 많은 프리미엄 기능들"
+      ],
+      "Advanced threat protection": [
+        "향상된 위협 보호 기능"
       ],
       "Custom email domain": [
         "사용자 지정 이메일 도메인"
@@ -15584,6 +15628,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "계좌 이체"
       ],
@@ -15627,8 +15674,8 @@
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
-      "Please add a payment method in the dashboard to continue.": [
-        "계속하려면 결제 수단을 대시보드에 추가하세요."
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "유로화는 SEPA로만 결제 가능합니다. 사용자의 결제 수단이 변경되었습니다. 선택기를 사용하여 선택을 다시 확인하세요."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
@@ -15714,6 +15761,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
       ]
     },
     "Payments.Sepa": {
@@ -17390,6 +17442,12 @@
       "Go to subscription plans": [
         "구독 요금제 보러가기"
       ],
+      "Guard against threats": [
+        "위협으로부터 보호"
+      ],
+      "Unblock streaming content": [
+        "스트리밍 콘텐츠 잠금 해제"
+      ],
       "Upgrade": [
         "업그레이드"
       ],
@@ -17466,6 +17524,18 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "전세계의 스트리밍 서비스 상의 콘텐츠에 접근"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "모든 것을 포함하는 하나의 플랜, ${ BRAND_NAME } Unlimited를 경험하세요"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "회원님의 모든 비밀번호를 여러 보관함에 안전하고 체계적으로 보관하세요. "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Sentinel로 계정을 위협으로부터 보호하세요"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "업그레이드로 2년 동안 더 저렴하게 ${ planName } 사용하기"
       ]
@@ -20536,6 +20606,9 @@
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "\"${ labelName }\"을(를) 위해 데스크탑 및 모바일 알림 활성화/비활성화"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "상세한 이벤트 기록을 활성화하면 각 이벤트의 IP 주소가 기록됩니다."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
       ],
@@ -20843,6 +20916,11 @@
       ],
       "Refund": [
         "환불"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/월간"
       ]
     },
     "unprivatization": {
