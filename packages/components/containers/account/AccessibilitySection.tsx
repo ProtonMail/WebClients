@@ -12,10 +12,8 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { MotionModeSetting, ThemeFeatureSetting, ThemeFontFaceSetting } from '@proton/shared/lib/themes/constants';
 import {
-    MotionModeSetting,
-    ThemeFeatureSetting,
-    ThemeFontFaceSetting,
     ThemeFontSizeSettingMap,
     getThemeFontFaceEntries,
     getThemeFontSizeEntries,

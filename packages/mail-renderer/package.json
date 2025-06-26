@@ -14,8 +14,13 @@
         "test:watch": "jest --watch --coverage=false"
     },
     "dependencies": {
+        "@proton/atoms": "workspace:^",
+        "@proton/colors": "workspace:^",
+        "@proton/components": "workspace:^",
+        "@proton/hooks": "workspace:^",
         "@proton/mail": "workspace:^",
         "@proton/styles": "workspace:^",
+        "@proton/utils": "workspace:^",
         "react": "^18.3.1",
         "react-redux": "^9.2.0"
     },

@@ -8,7 +8,8 @@ import type {
     SETTINGS_TIME_FORMAT,
     SETTINGS_WEEK_START,
 } from '@proton/shared/lib/interfaces';
-import type { ThemeSetting, ThemeTypes } from '@proton/shared/lib/themes/themes';
+import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import type { ThemeSetting } from '@proton/shared/lib/themes/themes';
 
 import type { RegistrationOptions } from '../../lib/webauthn/interface';
 
