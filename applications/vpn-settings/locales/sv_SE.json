@@ -3465,6 +3465,9 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "Permissions request failed.": [
+        "Behörighetsbegäran misslyckades."
       ]
     },
     "error": {
@@ -6311,6 +6314,9 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
       ]
     },
     "info": {
@@ -9351,6 +9357,9 @@
     "Payments.Saved payment method details": {
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
+      ],
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -10169,6 +10178,9 @@
       ],
       "Username": [
         "Användarnamn"
+      ],
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME }-lösenord"
       ]
     },
     "specialoffer: Action": {
@@ -11407,6 +11419,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du kommer få ditt användarnamn via SMS inom en minut om du har angett ett giltigt telefonnummer för återställning."
+      ],
+      "Address successfully added": [
+        "Adress tillagd"
       ]
     },
     "Success message": {
@@ -12450,6 +12465,9 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flera konton, 1 privat inkorg"
       ]
     },
     "Title for payment methods table": {
@@ -13200,6 +13218,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Efter lyckad verifiering, ta inte bort denna TXT-post eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Prenumeration avslutad."
       ]
     }
   }

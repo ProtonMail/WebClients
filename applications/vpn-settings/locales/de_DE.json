@@ -3495,6 +3495,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Permissions request failed.": [
+        "Berechtigungsanfrage fehlgeschlagen."
       ]
     },
     "error": {
@@ -6357,6 +6360,9 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du verlierst auch den Zugang zu den Funktionen von ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -10215,6 +10221,9 @@
       ],
       "Username": [
         "Benutzername"
+      ],
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME }-Passwort"
       ]
     },
     "specialoffer: Action": {
@@ -11449,6 +11458,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du erhältst deinen Benutzernamen innerhalb einer Minute per SMS, wenn du eine gültige Rückrufnummer eingegeben hast."
+      ],
+      "Address successfully added": [
+        "Adresse erfolgreich hinzugefügt"
       ]
     },
     "Success message": {
@@ -12492,6 +12504,12 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Verbinde mehr Gmail-Adressen mit ${ planName }"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Mehrere Konten, ein privater Posteingang"
       ]
     },
     "Title for payment methods table": {
@@ -13229,6 +13247,21 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonnement gekündigt."
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Um E-Mails von ${ MAX_SYNC_PAID_USER } Konto weiterzuleiten, upgrade auf ${ planName }.",
+        "Um E-Mails von bis zu ${ MAX_SYNC_PAID_USER } Konten weiterzuleiten, upgrade zu ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du leitest E-Mails von ${ MAX_SYNC_FREE_USER } externen Konto an ${ MAIL_APP_NAME } weiter.",
+        "Du leitest E-Mails von ${ MAX_SYNC_FREE_USER } externen Konten an ${ MAIL_APP_NAME } weiter."
       ]
     }
   }
