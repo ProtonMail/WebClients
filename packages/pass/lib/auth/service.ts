@@ -441,27 +441,43 @@ export const createAuthService = (config: AuthServiceConfig) => {
             }
         },
 
+        /** Check if the local lock has expired based on TTL without extending it.
+         * Used primarily to determine if auto-lock should be triggered when the
+         * TTL threshold has been exceeded since the last extension. */
+        checkAutoLock: async (): Promise<Maybe<Lock>> => {
+            const mode = authStore.getLockMode();
+            if (mode === LockMode.NONE) return;
+
+            /** Check if TTL has expired since last extension and trigger auto-lock */
+            const ttl = authStore.getLockTTL();
+            const lastExtendTime = authStore.getLockLastExtendTime();
+
+            if (ttl && lastExtendTime !== undefined) {
+                const now = getEpoch();
+                const diff = now - lastExtendTime;
+                if (diff > ttl) return authService.lock(mode, { soft: true, broadcast: true });
+            }
+        },
+
+        /** Check lock status and extend if valid. First checks for auto-lock
+         * conditions, then delegates to the adapter which handles both validation
+         * and extension (required for session PIN locks that need both local
+         * and backend-side extension). */
         checkLock: async (): Promise<Lock> => {
             const mode = authStore.getLockMode();
             if (mode === LockMode.NONE) return { mode: LockMode.NONE, locked: false };
 
-            /** If we have a TTL and lastExtendTime - check early
-             * if the TTL has been reached and lock accordingly */
-            const ttl = authStore.getLockTTL();
-            const lastExtendTime = authStore.getLockLastExtendTime();
+            return (
+                (await authService.checkAutoLock()) ??
+                (async () => {
+                    const adapter = getLockAdapter(mode);
+                    const lock = await adapter.check();
+                    const localID = authStore.getLocalID();
 
-            if (ttl && lastExtendTime) {
-                const now = getEpoch();
-                const diff = now - (lastExtendTime ?? 0);
-                if (diff > ttl) return authService.lock(mode, { soft: true, broadcast: true });
-            }
-
-            const adapter = getLockAdapter(mode);
-            const lock = await adapter.check();
-            const localID = authStore.getLocalID();
-
-            await config.onLockUpdate?.(lock, localID, false);
-            return lock;
+                    await config.onLockUpdate?.(lock, localID, false);
+                    return lock;
+                })()
+            );
         },
 
         /** Passing the `regenerateClientKey` option will generate
