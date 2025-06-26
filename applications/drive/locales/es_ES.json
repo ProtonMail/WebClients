@@ -9003,8 +9003,14 @@
       "${ pricingTitle } offer expires today!": [
         "¡La oferta de ${ pricingTitle } vence hoy!"
       ],
+      "Don’t show this again": [
+        "No mostrar esto de nuevo"
+      ],
       "Don’t show this offer again": [
         "No volver a mostrar esta oferta"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Obtén ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obtén Drive Plus por solo ${ pricingTitle }"
@@ -9058,9 +9064,20 @@
         "Tu suscripción se renueva pronto."
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Gestor de contraseñas cifrado"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 funciones premium más"
+      ],
+      "500 GB secure storage": [
+        "500 GB de almacenamiento seguro"
+      ],
+      "Advanced threat protection": [
+        "Protección avanzada contra amenazas"
       ],
       "Custom email domain": [
         "Dominio de correo electrónico personalizado"
@@ -9082,6 +9099,12 @@
       ],
       "Storage": [
         "Almacenamiento"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Servidores VPN ultrarápidos en más de 110 países"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Alias ilimitados para proteger tu identidad"
       ]
     },
     "Onboarding": {
@@ -10124,8 +10147,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Navega de forma segura"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Supera tus límites con ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Obtén alias ilimitados"
+      ],
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
+      ],
+      "Guard against threats": [
+        "Protégete contra las amenazas"
+      ],
+      "Increase your storage": [
+        "Mejora tu almacenamiento"
+      ],
+      "Keep passwords safe": [
+        "Mantén tus contraseñas a salvo"
+      ],
+      "Unblock streaming content": [
+        "Disfruta del streaming sin límites"
       ],
       "Upgrade": [
         "Mejorar"
@@ -10204,6 +10248,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Accede a contenidos de servicios de streaming en todo el mundo"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Obtén 500 GB para almacenar de forma segura todos tus archivos y fotos"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Obtén acceso a servidores VPN ultrarápidos en más de 110 países"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Consigue un plan que lo incluye todo: ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Obtén alias ilimitados para proteger tu identidad y reducir el spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Protege tus contraseñas y organízalas en varias cajas fuertes "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Protege tu cuenta de amenazas con Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Cambia de plan y ahorra más dinero contratando ${ planName } durante 2 años"
       ]
@@ -12019,6 +12084,14 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mes"
+      ],
+      "Only": [
+        "Solo"
       ]
     },
     "unprivatization": {

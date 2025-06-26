@@ -672,6 +672,9 @@
       "New shared album": [
         "새로운 공유된 앨범"
       ],
+      "New spreadsheet": [
+        "새로운 스프레드시트"
+      ],
       "Next": [
         "다음"
       ],
@@ -8703,6 +8706,9 @@
       "The link to your item was deleted": [
         "항목의 링크가 삭제되었습니다"
       ],
+      "The spreadsheet failed to be created": [
+        "스프레드시트를 생성하는데 실패했습니다."
+      ],
       "This item was not removed from your list": [
         "이 항목이 목록에서 삭제되지 않았습니다."
       ],
@@ -8764,6 +8770,9 @@
       "Don’t show this offer again": [
         "이 제안을 다시 보지 않기"
       ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited 구매"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "단 ${ pricingTitle }(으)로 Drive Plus 구매"
       ],
@@ -8816,9 +8825,17 @@
         "구독이 곧 끝나게 됩니다"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "암호화된 비밀번호 관리자"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "그 외 10개 더 많은 프리미엄 기능들"
+      ],
+      "Advanced threat protection": [
+        "향상된 위협 보호 기능"
       ],
       "Custom email domain": [
         "사용자 지정 이메일 도메인"
@@ -9150,6 +9167,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "계좌 이체"
       ],
@@ -9192,6 +9212,9 @@
       ],
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "유로화는 SEPA로만 결제 가능합니다. 사용자의 결제 수단이 변경되었습니다. 선택기를 사용하여 선택을 다시 확인하세요."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
@@ -9268,6 +9291,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
       ]
     },
     "Payments.Sepa": {
@@ -9850,6 +9878,12 @@
       "Go to subscription plans": [
         "구독 요금제 보러가기"
       ],
+      "Guard against threats": [
+        "위협으로부터 보호"
+      ],
+      "Unblock streaming content": [
+        "스트리밍 콘텐츠 잠금 해제"
+      ],
       "Upgrade": [
         "업그레이드"
       ],
@@ -9926,6 +9960,18 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "전세계의 스트리밍 서비스 상의 콘텐츠에 접근"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "모든 것을 포함하는 하나의 플랜, ${ BRAND_NAME } Unlimited를 경험하세요"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "회원님의 모든 비밀번호를 여러 보관함에 안전하고 체계적으로 보관하세요. "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Sentinel로 계정을 위협으로부터 보호하세요"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "업그레이드로 2년 동안 더 저렴하게 ${ planName } 사용하기"
       ]
@@ -11702,6 +11748,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/월간"
       ]
     },
     "unprivatization": {
