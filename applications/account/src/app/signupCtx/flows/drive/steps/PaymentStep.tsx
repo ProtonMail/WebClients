@@ -18,9 +18,9 @@ import {
     getIsB2BAudienceFromPlan,
     getIsVpnPlan,
     getPaymentsVersion,
+    getPlanFromPlanIDs,
 } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
-import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';

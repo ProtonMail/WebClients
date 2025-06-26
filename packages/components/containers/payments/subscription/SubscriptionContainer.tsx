@@ -26,6 +26,8 @@ import type {
     MultiCheckSubscriptionData,
     PaymentMethodStatusExtended,
     PaymentMethodType,
+    PaymentProcessorHook,
+    PaymentProcessorType,
     PlainPaymentMethodType,
 } from '@proton/payments';
 import {
@@ -54,6 +56,8 @@ import {
     getIsVpnPlan,
     getMaximumCycleForApp,
     getPaymentsVersion,
+    getPlanCurrencyFromPlanIDs,
+    getPlanFromPlanIDs,
     getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
@@ -62,10 +66,10 @@ import {
     isCheckForbidden,
     isFreeSubscription,
     isManagedExternally,
+    shouldPassIsTrial as shouldPassIsTrialPayments,
     updateCurrencyOverride,
 } from '@proton/payments';
-import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments';
-import { PaymentsContextProvider } from '@proton/payments/ui';
+import { PaymentsContextProvider, useIsB2BTrial } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS } from '@proton/shared/lib/constants';
@@ -75,15 +79,10 @@ import {
     getIsCustomCycle,
     getOptimisticCheckResult,
 } from '@proton/shared/lib/helpers/checkout';
-import {
-    getPlanCurrencyFromPlanIDs,
-    getPlanFromPlanIDs,
-    hasPlanIDs,
-    switchPlan,
-} from '@proton/shared/lib/helpers/planIDs';
+import { hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Organization, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
@@ -268,6 +267,7 @@ const SubscriptionContainerInner = ({
     const api = useApi();
     const { paymentsApi } = usePaymentsApi(api);
     const [user] = useUser();
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
     const { call } = useEventManager();
     const pollEventsMultipleTimes = usePollEvents();
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
@@ -430,6 +430,8 @@ const SubscriptionContainerInner = ({
         });
     };
 
+    const isTrial = checkResult?.SubscriptionMode === SubscriptionMode.Trial;
+
     const handleSubscribe = async (
         operations: Operations,
         { operationsSubscriptionData, paymentProcessorType, paymentMethodValue }: SubscriptionContext
@@ -474,6 +476,7 @@ const SubscriptionContainerInner = ({
                     Cycle: model.cycle,
                     product: app,
                     taxBillingAddress: model.taxBillingAddress,
+                    StartTrial: isTrial,
                 });
 
                 if (codes.some((code) => getHas2024OfferCoupon(code))) {
@@ -558,6 +561,7 @@ const SubscriptionContainerInner = ({
                     product: app,
                     Codes: getCodesForSubscription(),
                     taxBillingAddress: model.taxBillingAddress,
+                    StartTrial: isTrial,
                 },
                 paymentProcessorType,
                 paymentMethodValue: source,
@@ -658,6 +662,31 @@ const SubscriptionContainerInner = ({
         });
 
         setAdditionalCheckResults([...additionalChecks, checkResult]);
+    };
+
+    const shouldPassIsTrial = (newModel: Model) => {
+        if (!isB2BTrial) {
+            return false;
+        }
+
+        const oldSubscription = subscription?.UpcomingSubscription ?? subscription;
+
+        if (!oldSubscription) {
+            return false;
+        }
+
+        const newPlanIDs = newModel.planIDs;
+        const oldPlanIDs = getPlanIDs(subscription);
+        const newCycle = newModel.cycle;
+        const oldCycle = oldSubscription.Cycle;
+
+        return shouldPassIsTrialPayments({
+            plansMap,
+            newPlanIDs,
+            oldPlanIDs,
+            newCycle,
+            oldCycle,
+        });
     };
 
     const check = async (
@@ -763,6 +792,7 @@ const SubscriptionContainerInner = ({
                         currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
                             ? ProrationMode.Exact
                             : undefined,
+                    IsTrial: shouldPassIsTrial(newModel),
                 };
 
                 const checkResult = await paymentsApi.checkWithAutomaticVersion(checkPayload, {
@@ -880,6 +910,7 @@ const SubscriptionContainerInner = ({
                     Cycle: model.cycle,
                     product: app,
                     taxBillingAddress: model.taxBillingAddress,
+                    StartTrial: isTrial,
                 });
                 await processor.processPaymentToken();
             } catch (e) {
