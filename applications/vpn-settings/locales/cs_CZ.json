@@ -366,6 +366,9 @@
       "Explore other ${ BRAND_NAME } plans": [
         "Další tarify ${ BRAND_NAME }"
       ],
+      "Explore other plans": [
+        "Objevte další tarify"
+      ],
       "Export": [
         "Exportovat"
       ],
@@ -3932,8 +3935,14 @@
       ]
     },
     "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli."
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli"
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "Chraňte se před reklamou, sledovacími prvky a malware na webových stránkách a v aplikacích"
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Servery Secure Core směrují váš provoz skrze 2 servery VPN pro větší bezpečnost"
       ]
     },
     "fido2: Action": {
@@ -7648,6 +7657,9 @@
       ],
       "Two password mode enabled": [
         "Režim dvou hesel povolen"
+      ],
+      "Unknown": [
+        "Neznámý"
       ]
     },
     "Log preference": {
@@ -8949,8 +8961,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } nabídka končí dnes!"
       ],
+      "Don’t show this again": [
+        "Příště již nezobrazovat"
+      ],
       "Don’t show this offer again": [
         "Tuto nabídku již nezobrazovat"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Získejte ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Získejte Drive Plus za pouhých ${ pricingTitle }"
@@ -9004,9 +9022,20 @@
         "Vaše předplatné se brzy obnoví"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Šifrovaný správce hesel"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 dalších prémiových funkcí"
+      ],
+      "500 GB secure storage": [
+        "500 GB bezpečného úložiště"
+      ],
+      "Advanced threat protection": [
+        "Pokročilá ochrana před hrozbami"
       ],
       "Custom email domain": [
         "Vlastní e-mailová doména"
@@ -9028,6 +9057,12 @@
       ],
       "Storage": [
         "Úložiště"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Nejrychlejší servery VPN ve 110+ zemích"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Neomezený počet aliasů pro ochranu vaší identity"
       ]
     },
     "Onboarding": {
@@ -9451,6 +9486,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Bankovní převod"
       ],
@@ -9502,9 +9540,6 @@
       ],
       "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
         "V rámci SEPA je přijímáno pouze euro. Vaše měna byla změněna. Výběr můžete vrátit pomocí voliče."
-      ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Chcete-li pokračovat, přidejte prosím platební metodu na ovládacím panelu."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
@@ -9602,6 +9637,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - karta končící čísly ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankovní převod - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -9820,7 +9863,7 @@
         "Ověření vlastnictví"
       ],
       "Unknown": [
-        "Neznámá"
+        "Neznámý"
       ]
     },
     "Recovery Email": {
@@ -10562,8 +10605,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Bezpečné prohlížení"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Získejte více s ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Získejte neomezený počet aliasů"
+      ],
       "Go to subscription plans": [
         "Přejít na předplatné"
+      ],
+      "Guard against threats": [
+        "Chraňte se před hrozbami"
+      ],
+      "Increase your storage": [
+        "Navyšte své úložiště"
+      ],
+      "Keep passwords safe": [
+        "Udržujte hesla v bezpečí"
+      ],
+      "Unblock streaming content": [
+        "Odblokujte streamování obsahu"
       ],
       "Upgrade": [
         "Navýšit"
@@ -10644,6 +10708,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Přístup k obsahu ve streamovacích službách po celém světě"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Získejte 500 GB pro bezpečné uložení všech svých souborů a fotek"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Získejte přístup k nejrychlejším serverům VPN ve více než 110 zemích"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Získejte jeden tarif, který zahrnuje vše. Získejte ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Získejte neomezený počet aliasů pro ochranu své identity a snížení spamu"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Uchovávejte svá hesla v bezpečí a uspořádaná ve více trezorech "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Chraňte svůj účet před hrozbami pomocí programu Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Navyšte tarif a ušetřete více s 2 roky ${ planName }"
       ]
@@ -13041,6 +13126,14 @@
       ],
       "Refund": [
         "Vrácení peněz"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/měsíčně"
+      ],
+      "Only": [
+        "Pouze"
       ]
     },
     "unprivatization": {

@@ -3833,8 +3833,14 @@
       ]
     },
     "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video 등이 포함됩니다."
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "어디서든지 Netflix, Disney+, Prime Video 등 스트리밍 서비스의 콘텐츠에 접근할 수 있습니다."
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "웹사이트 및 앱에서 광고, 추적기, 멀웨어로부터 사용자를 보호합니다."
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Secure Core 서버는 추가 보안을 위해 사용자의 트래픽을 2개의 VPN 서버를 통해 라우팅합니다."
       ]
     },
     "fido2: Action": {
@@ -5109,6 +5115,9 @@
       ],
       "Learn more": [
         "더 알아보기"
+      ],
+      "Learn more about Activity Monitor": [
+        "활동 모니터링에 관해 더 알아보기"
       ],
       "Learn more about Gateways": [
         "게이트웨이에 대해 더 알아보기"
@@ -7351,6 +7360,9 @@
       ],
       "Two password mode enabled": [
         "이중 비밀번호 모드 활성화됨"
+      ],
+      "Unknown": [
+        "알 수 없음"
       ]
     },
     "Log preference": {
@@ -8601,6 +8613,9 @@
       "Don’t show this offer again": [
         "이 제안을 다시 보지 않기"
       ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited 구매"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "단 ${ pricingTitle }(으)로 Drive Plus 구매"
       ],
@@ -8653,9 +8668,17 @@
         "구독이 곧 끝나게 됩니다"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "암호화된 비밀번호 관리자"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "그 외 10개 더 많은 프리미엄 기능들"
+      ],
+      "Advanced threat protection": [
+        "향상된 위협 보호 기능"
       ],
       "Custom email domain": [
         "사용자 지정 이메일 도메인"
@@ -9088,6 +9111,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "계좌 이체"
       ],
@@ -9134,8 +9160,8 @@
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
-      "Please add a payment method in the dashboard to continue.": [
-        "계속하려면 결제 수단을 대시보드에 추가하세요."
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "유로화는 SEPA로만 결제 가능합니다. 사용자의 결제 수단이 변경되었습니다. 선택기를 사용하여 선택을 다시 확인하세요."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
@@ -9221,6 +9247,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
       ]
     },
     "Payments.Sepa": {
@@ -10116,6 +10147,12 @@
       "Go to subscription plans": [
         "구독 요금제 보러가기"
       ],
+      "Guard against threats": [
+        "위협으로부터 보호"
+      ],
+      "Unblock streaming content": [
+        "스트리밍 콘텐츠 잠금 해제"
+      ],
       "Upgrade": [
         "업그레이드"
       ],
@@ -10192,6 +10229,18 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "전세계의 스트리밍 서비스 상의 콘텐츠에 접근"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "모든 것을 포함하는 하나의 플랜, ${ BRAND_NAME } Unlimited를 경험하세요"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "회원님의 모든 비밀번호를 여러 보관함에 안전하고 체계적으로 보관하세요. "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Sentinel로 계정을 위협으로부터 보호하세요"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "업그레이드로 2년 동안 더 저렴하게 ${ planName } 사용하기"
       ]
@@ -12472,6 +12521,11 @@
       ],
       "Refund": [
         "환불"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/월간"
       ]
     },
     "unprivatization": {
