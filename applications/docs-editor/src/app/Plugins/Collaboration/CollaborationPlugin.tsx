@@ -1,6 +1,5 @@
 import type { Doc } from 'yjs'
 
-import { useCollaborationContext } from '@lexical/react/LexicalCollaborationContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import type { Provider } from '@lexical/yjs'
 import type { ReactNode } from 'react'
@@ -12,6 +11,7 @@ import type { EditorInitializationConfig } from '@proton/docs-shared'
 import { useYjsFocusTracking } from './useYjsFocusTracking'
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { useScrollToUserCursorOnEvent } from './ScrollToUserCursorPlugin'
+import { useCustomCollaborationContext } from './CustomCollaborationContext'
 
 type Props = {
   id: string
@@ -35,7 +35,7 @@ export function CollaborationPlugin({
   editorInitializationConfig,
   additionalAwarenessData,
 }: Props): ReactNode {
-  const collabContext = useCollaborationContext()
+  const collabContext = useCustomCollaborationContext()
 
   const { yjsDocMap, name, color } = collabContext
 
@@ -70,7 +70,8 @@ export function CollaborationPlugin({
 
   collabContext.clientID = binding.clientID
 
-  useYjsHistory(editor, binding)
+  const undoManager = useYjsHistory(editor, binding)
+  collabContext.undoManager = undoManager
   useYjsFocusTracking(editor, provider, name, color, additionalAwarenessData)
   useScrollToUserCursorOnEvent(binding)
 
