@@ -11,7 +11,21 @@
 @if $use-other-typo-helpers==true {
 	$dummy-map: ();
 	@each $name,
-		$size in (2xs: 9, xs: 10, sm: 12, rg: $base-font-size, lg: 16, xl: 18, 2xl: 20, 3xl: 22, 4xl: 24, 5xl: 28)
+		$size
+			in (
+				2xs: 9,
+				xs: 10,
+				sm: 12,
+				rg: $base-font-size,
+				lg: 16,
+				xl: 18,
+				2xl: 20,
+				3xl: 22,
+				4xl: 24,
+				5xl: 28,
+				6xl: 32,
+				7xl: 36
+			)
 	{
 		$dummy-map: map.merge(
 			$dummy-map,
