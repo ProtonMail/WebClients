@@ -1,12 +1,12 @@
 import Store from "electron-store";
 import { getSettings, updateSettings } from "./settingsStore";
 import { SERIALIZED_THEME_MODE } from "../utils/themes";
-import { electronAppTheme, getDarkThemes, ThemeModeSetting, ThemeSetting } from "@proton/shared/lib/themes/themes";
+import { electronAppTheme, getDarkThemes, ThemeSetting } from "@proton/shared/lib/themes/themes";
 import { setShouldCheckDefaultMailtoApp } from "../utils/protocol/default";
 import { loadDefaultProtocol } from "../utils/protocol/store";
 import { mainLogger } from "../utils/log";
 import { DESKTOP_FEATURES } from "../ipc/ipcConstants";
-import { ThemeTypes } from "@proton/shared/lib/themes/constants";
+import { ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/constants";
 
 const store = new Store();
 
