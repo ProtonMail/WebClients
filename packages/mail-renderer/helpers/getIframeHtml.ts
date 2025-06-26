@@ -6,7 +6,6 @@ import {
 } from '@proton/mail-renderer/constants';
 import { locateHead } from '@proton/mail/helpers/locateHead';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
-import svg from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
 
 type Options = {
     emailContent: string;
@@ -15,6 +14,7 @@ type Options = {
     themeCSSVariables: string;
     isPrint: boolean;
     iframeCSSStyles: string;
+    iframeSVG: string;
 };
 
 const getIframeHtml = ({
@@ -24,6 +24,7 @@ const getIframeHtml = ({
     themeCSSVariables,
     isPrint,
     iframeCSSStyles,
+    iframeSVG,
 }: Options) => {
     const messageHead = locateHead(messageDocument) || '';
     const bodyStyles = messageDocument?.querySelector('body')?.getAttribute('style');
@@ -66,7 +67,7 @@ const getIframeHtml = ({
           <style>${iframeCSSStyles}</style>
           ${messageHead}
         </head>
-        ${svg}
+        ${iframeSVG}
         <div id="${MESSAGE_IFRAME_ROOT_ID}" ${isPrint ? `class="${MESSAGE_IFRAME_PRINT_CLASS}"` : ''}>
           ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>` : ''}
           <div ${
