@@ -3,12 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useErrorHandler, useMyCountry } from '@proton/components';
-import { getIsB2BAudienceFromPlan } from '@proton/payments';
+import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
-import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getLocalPart } from '@proton/shared/lib/keys';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';

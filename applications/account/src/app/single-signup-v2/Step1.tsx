@@ -38,6 +38,7 @@ import {
     type SubscriptionPlan,
     getFallbackCurrency,
     getHas2024OfferCoupon,
+    getPlanFromPlanIDs,
     getPlanOffer,
     getPlansMap,
     isRegionalCurrency,
@@ -47,12 +48,7 @@ import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import {
-    getPlanFromPlanIDs,
-    getPricingFromPlanIDs,
-    getTotalFromPricing,
-    switchPlan,
-} from '@proton/shared/lib/helpers/planIDs';
+import { getPricingFromPlanIDs, getTotalFromPricing, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience, SubscriptionMode } from '@proton/shared/lib/interfaces';

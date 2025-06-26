@@ -22,6 +22,7 @@ import {
     getAddonMultiplier,
     getIsB2BAudienceFromPlan,
     getMembersFromPlanIDs,
+    getPlanFromPlanIDs,
     getPlanNameFromIDs,
     getPricePerCycle,
     getPricingPerMember,
@@ -34,7 +35,6 @@ import {
 
 import { LUMO_APP_NAME } from '../constants';
 import { type SubscriptionCheckResponse, SubscriptionMode } from '../interfaces';
-import { getPlanFromPlanIDs } from './planIDs';
 
 export const getUserTitle = (users: number) => {
     return c('Checkout row').ngettext(msgid`${users} user`, `${users} users`, users);
