@@ -1,9 +1,10 @@
 import type { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
+import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MIME_TYPES, PGP_SCHEMES } from '../constants';
+import { uint8ArrayToBase64String } from '../helpers/encoding';
 import type { MimeTypeVcard, PinnedKeysConfig } from '../interfaces';
 import type { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import { compareVCardPropertyByPref, createContactPropertyUid } from './properties';
@@ -83,7 +84,7 @@ export const toKeyProperty = async ({ publicKey, group, index }: VcardPublicKey)
     const binaryKey = await CryptoProxy.exportPublicKey({ key: publicKey, format: 'binary' });
     return {
         field: 'key',
-        value: `data:application/pgp-keys;base64,${encodeBase64(arrayToBinaryString(binaryKey))}`,
+        value: `data:application/pgp-keys;base64,${uint8ArrayToBase64String(binaryKey)}`,
         group,
         params: { pref: String(index + 1) }, // order is important
         uid: createContactPropertyUid(),
