@@ -31,6 +31,7 @@ import {
     getNormalCycleFromCustomCycle,
     getPaymentMethods,
     getPlan,
+    getPlanFromPlanIDs,
     getSubscription,
     isLifetimePlanSelected,
     isStringPLAN,
@@ -41,7 +42,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { getPlanFromPlanIDs, getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import type { Api, Organization, SubscriptionCheckResponse, User } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getOrganization } from '@proton/shared/lib/organization/api';

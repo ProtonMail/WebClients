@@ -3,7 +3,6 @@ import {
     ADDON_NAMES,
     type AggregatedPricing,
     CYCLE,
-    type Currency,
     DEFAULT_CURRENCY,
     PLANS,
     PLAN_TYPES,
@@ -12,7 +11,6 @@ import {
     type PlansMap,
     type PricingForCycles,
     SelectedPlan,
-    type StrictPlan,
     allCycles,
     getMaxValue,
     getPlanIDs,
@@ -310,21 +308,6 @@ export const setQuantity = (planIDs: PlanIDs, planID: PLANS | ADDON_NAMES, newQu
 export const supportB2BAddons = (planIDs: PlanIDs) => {
     const supportedAddons = getSupportedB2BAddons(planIDs);
     return !!Object.keys(supportedAddons).length;
-};
-
-export const getPlanFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs = {}): StrictPlan | undefined => {
-    const planID = Object.keys(planIDs).find((planID): planID is keyof PlansMap => {
-        const type = plansMap[planID as keyof PlansMap]?.Type;
-        return type === PLAN_TYPES.PLAN || type === PLAN_TYPES.PRODUCT;
-    });
-    if (planID) {
-        return plansMap[planID] as StrictPlan;
-    }
-};
-
-export const getPlanCurrencyFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs = {}): Currency | undefined => {
-    const plan = getPlanFromPlanIDs(plansMap, planIDs);
-    return plan?.Currency;
 };
 
 export function getPlanFromIDs(planIDs: PlanIDs, plansMap: PlansMap): Plan | undefined {

@@ -1,8 +1,8 @@
-import { type ADDON_NAMES, PLANS } from '../constants';
-import { type PlanIDs } from '../interface';
+import { type ADDON_NAMES, PLANS, PLAN_TYPES } from '../constants';
+import { type Currency, type PlanIDs } from '../interface';
 import { isLifetimePlan } from '../subscription/helpers';
 import { PlanState } from './constants';
-import { type Plan } from './interface';
+import { type Plan, type PlansMap, type StrictPlan } from './interface';
 
 export function isPlanEnabled(plan: Plan): boolean {
     return plan.State === PlanState.Available;
@@ -52,4 +52,19 @@ export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES | undefin
     }
 
     return b2bPlans.has(planName);
+};
+
+export const getPlanFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs = {}): StrictPlan | undefined => {
+    const planID = Object.keys(planIDs).find((planID): planID is keyof PlansMap => {
+        const type = plansMap[planID as keyof PlansMap]?.Type;
+        return type === PLAN_TYPES.PLAN || type === PLAN_TYPES.PRODUCT;
+    });
+    if (planID) {
+        return plansMap[planID] as StrictPlan;
+    }
+};
+
+export const getPlanCurrencyFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs = {}): Currency | undefined => {
+    const plan = getPlanFromPlanIDs(plansMap, planIDs);
+    return plan?.Currency;
 };
