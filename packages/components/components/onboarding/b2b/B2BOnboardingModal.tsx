@@ -16,6 +16,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
+import { useFlag } from '@proton/unleash/index';
 
 import './B2BOnboardingModal.scss';
 
@@ -44,6 +45,7 @@ const B2BOnboardingModal = (props: Props) => {
     const [forceModalSize, setForceModalSize] = useState(false);
     const { welcomeFlags, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
     const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const b2bOnboardingEnabled = useFlag('B2BOnboarding');
 
     const handleClose = () => {
         props?.onClose?.();
@@ -59,6 +61,12 @@ const B2BOnboardingModal = (props: Props) => {
         // don't show any other steps and close the onboarding immediately
         const parentApp = getAppFromPathnameSafe(window.location.pathname);
         if (APP_NAME === APPS.PROTONACCOUNT && parentApp !== APPS.PROTONMAIL && parentApp !== APPS.PROTONCALENDAR) {
+            handleClose();
+            return;
+        }
+
+        // If the B2B onboarding is not enabled, only do the B2B trial onboarding
+        if (!b2bOnboardingEnabled) {
             handleClose();
             return;
         }
