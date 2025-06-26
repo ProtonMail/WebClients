@@ -18,7 +18,7 @@ import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blo
 import {
     ExtraSessionForkSearchParameters,
     ForkSearchParameters,
-    ForkType,
+    type ForkType,
 } from '@proton/shared/lib/authentication/fork/constants';
 import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/fork/validation';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
@@ -42,6 +42,7 @@ export type RequestForkOptions = {
     localID?: number;
     payloadType?: 'offline' | 'default';
     payloadVersion?: AuthSessionVersion;
+    plan?: string;
     prompt?: 'login';
     promptBypass?: 'none' | 'sso';
     promptType?: 'default' | 'offline' | 'offline-bypass';
@@ -76,6 +77,7 @@ export const requestFork = ({
     localID,
     payloadType = 'offline',
     payloadVersion,
+    plan,
     /** `login` prompt will force re-auth if no by-pass is set-up */
     prompt = 'login',
     /** Default behaviour will by pass re-auth for SSO on login.
@@ -102,10 +104,7 @@ export const requestFork = ({
     if (localID !== undefined) searchParams.append(ForkSearchParameters.LocalID, `${localID}`);
     if (localID === undefined && email) searchParams.append(ExtraSessionForkSearchParameters.Email, email);
     if (forkType) searchParams.append(ForkSearchParameters.ForkType, forkType);
-
-    if (BUILD_TARGET === 'safari' && forkType === ForkType.SIGNUP) {
-        searchParams.append(ForkSearchParameters.Plan, 'free');
-    }
+    if (plan !== undefined) searchParams.append(ForkSearchParameters.Plan, plan);
 
     return { state, url: `${host}${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}` };
 };
