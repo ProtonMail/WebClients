@@ -23,7 +23,7 @@ import {
     getOptimisticCheckResult as innerGetOptimisticCheckResult,
 } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { getPlanFromPlanIDs, hasFreePlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { hasFreePlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import type { Api, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -41,6 +41,7 @@ import type {
     PaymentsApi,
     PlanIDs,
 } from '../../core/interface';
+import { getPlanFromPlanIDs } from '../../core/plan/helpers';
 import type { FreePlanDefault, Plan, PlansMap } from '../../core/plan/interface';
 import { FREE_PLAN } from '../../core/subscription/freePlans';
 import { isCheckForbidden } from '../../core/subscription/helpers';

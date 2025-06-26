@@ -1,9 +1,7 @@
-import { PLANS } from '@proton/payments';
-import { FREE_PLAN } from '@proton/payments';
+import { FREE_PLAN, PLANS, getPlanFromPlanIDs } from '@proton/payments';
 import { getIsLumoApp, getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import type { Audience } from '@proton/shared/lib/interfaces';
 import { type VPNServersCountData } from '@proton/shared/lib/interfaces';
 

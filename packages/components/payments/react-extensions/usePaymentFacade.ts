@@ -57,6 +57,7 @@ export interface OperationsSubscriptionData {
     Codes?: string[];
     product: ProductParam;
     taxBillingAddress: BillingAddress;
+    StartTrial?: boolean;
 }
 
 export interface OperationsInvoiceData {

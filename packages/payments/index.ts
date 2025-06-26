@@ -271,6 +271,8 @@ export {
     getPlanNameFromIDs,
     isLifetimePlanSelected,
     isPlanEnabled,
+    getPlanFromPlanIDs,
+    getPlanCurrencyFromPlanIDs,
 } from './core/plan/helpers';
 export type {
     Addon,
@@ -334,6 +336,9 @@ export {
     getMaximumCycleForApp,
     getMaxValue,
     getMembersFromPlanIDs,
+    getPlansQuantity,
+    getPlansLimit,
+    shouldPassIsTrial,
     getNormalCycleFromCustomCycle,
     getPlan,
     getPlanIDs,
