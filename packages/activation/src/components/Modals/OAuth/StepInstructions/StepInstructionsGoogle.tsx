@@ -54,8 +54,13 @@ const StepInstructionsGoogle = ({ triggerOAuth }: Props) => {
                 <Button shape="outline" onClick={handleBack} data-testid="StepInstruction:back">
                     {c('Action').t`Back`}
                 </Button>
-                <Button color="norm" onClick={triggerOAuth} data-testid="StepInstruction:submit">{c('Action')
-                    .t`Continue`}</Button>
+                <Button
+                    color="norm"
+                    onClick={triggerOAuth}
+                    data-testid="StepInstruction:submit"
+                >
+                    {c('Action') .t`Continue`}
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
