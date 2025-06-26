@@ -31,7 +31,7 @@ import {
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import CancelTrialModal from './CancelTrialModal';
+import LearnMoreModal from './LearnMoreModal';
 import TopBanner from './TopBanner';
 
 const ModalAction = ({ textAction, upsellRef }: { textAction: string; upsellRef: string | undefined }) => {
@@ -213,7 +213,7 @@ const B2BTrialTopBanner = () => {
 
     return (
         <>
-            {renderModal && <CancelTrialModal {...modalProps} />}
+            {renderModal && <LearnMoreModal {...modalProps} />}
             <TopBanner onClose={() => setClosed(true)} className="bg-info">
                 <span className="mr-1">{c('Info').jt`Your trial will end in ${timeRemaining}.`}</span>
                 <span className="mr-1">{c('Info')
