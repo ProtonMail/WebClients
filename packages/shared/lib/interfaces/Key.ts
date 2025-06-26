@@ -19,7 +19,6 @@ export interface Key {
     Flags?: number; // Only available for address keys
     Fingerprint: string;
     Fingerprints: string[];
-    PublicKey: string; // armored key
     Version: number;
     Activation?: string;
     PrivateKey: string; // armored key
@@ -50,7 +49,7 @@ export interface DecryptedKey<PrivateKeyReferenceWithVersion extends PrivateKeyR
 }
 
 export interface DecryptedAddressKey<PrivateKeyReferenceWithVersion extends PrivateKeyReference = PrivateKeyReference>
-extends KeyPair<PrivateKeyReferenceWithVersion> {
+    extends KeyPair<PrivateKeyReferenceWithVersion> {
     ID: string;
     Flags: number;
     Primary: 1 | 0;
