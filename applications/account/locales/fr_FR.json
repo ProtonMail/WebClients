@@ -1566,6 +1566,15 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Delete logs": [
+        "Supprimer les journaux"
+      ],
+      "Deleting folder": [
+        "Suppression du dossier"
+      ],
+      "Deleting label": [
+        "Suppression de l'étiquette"
       ]
     },
     "action": {
@@ -15976,7 +15985,7 @@
         "Apple Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
       ],
       "Bank transfer - ${ details }": [
-        "Virement bancaire - ${ details }"
+        "Virement - ${ details }"
       ]
     },
     "Payments.Sepa": {

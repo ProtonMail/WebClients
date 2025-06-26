@@ -1563,6 +1563,18 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Delete logs": [
+        "Logboeken wissen"
+      ],
+      "Deleting folder": [
+        "Map verwijderen"
+      ],
+      "Deleting label": [
+        "Label verwijderen"
+      ],
+      "Explore other plans": [
+        "Ontdek andere abonnementen"
       ]
     },
     "action": {
@@ -4256,6 +4268,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
+      ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Schakel gedetailleerde gebeurtenissen en ${ PROTON_SENTINEL_NAME } in om toegang te krijgen tot deze functies"
+      ],
+      "Enable detailed events to access these features": [
+        "Schakel gedetailleerde gebeurtenissen in om toegang te krijgen tot deze functies"
       ]
     },
     "description": {
@@ -12892,6 +12910,9 @@
       ],
       "Two password mode enabled": [
         "Twee wachtwoorden-modus ingeschakeld"
+      ],
+      "Unknown": [
+        "Onbekend"
       ]
     },
     "Log preference": {
@@ -12900,6 +12921,9 @@
       ],
       "Enable detailed events": [
         "Gedetailleerde gebeurtenissen inschakelen"
+      ],
+      "Activity monitor": [
+        "Activiteitenmonitor"
       ]
     },
     "Mail import summary": {
@@ -14763,6 +14787,12 @@
       ],
       "Your subscription renews soon": [
         "Uw abonnement verloopt binnenkort"
+      ],
+      "Don’t show this again": [
+        "Toon dit niet opnieuw"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Krijg ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -14789,6 +14819,18 @@
       ],
       "Storage": [
         "Opslagruimte"
+      ],
+      "500 GB secure storage": [
+        "500 GB veilige opslag"
+      ],
+      "Advanced threat protection": [
+        "Geavanceerde bedreigingsbeveiliging"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultrasnelle VPN-servers in 110+ landen"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Onbeperkt aliassen om uw identiteit te beschermen"
       ]
     },
     "Onboarding": {
@@ -15788,6 +15830,9 @@
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -17631,6 +17676,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Upgraden naar ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Veilig browsen"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Haal meer uit ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Krijg onbeperkt aliassen"
+      ],
+      "Guard against threats": [
+        "Beveilig u tegen bedreigingen"
+      ],
+      "Increase your storage": [
+        "Verhoog uw opslag"
+      ],
+      "Keep passwords safe": [
+        "Wachtwoorden veilig houden"
+      ],
+      "Unblock streaming content": [
+        "Deblokkeer streaming content"
       ]
     },
     "specialoffer: Offers": {
@@ -17705,6 +17771,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Upgrade en bespaar meer met 2 jaar ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Wereldwijde toegang tot content op streamingdiensten"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Krijg 500 GB om al uw bestanden en foto's veilig op te slaan"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Krijg toegang tot ultrasnelle VPN-servers in 110+ landen"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Krijg één abonnement dat alles omvat, krijg ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Krijg onbeperkt aliassen om uw identiteit te beschermen en spam te verminderen"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Bewaar uw wachtwoorden veilig en georganiseerd in meerdere kluizen "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Bescherm uw account tegen bedreigingen met Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -22041,6 +22128,38 @@
       ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video, en meer, waar u maar wilt"
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "Beschermt u tegen advertenties, trackers en malware op websites en apps"
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Secure Core servers routeren uw verkeer via 2 VPN-servers voor extra veiligheid"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordbeheerder"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankoverschrijving - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/maand"
+      ],
+      "Only": [
+        "Slechts"
       ]
     }
   }

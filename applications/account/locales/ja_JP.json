@@ -1521,6 +1521,12 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Delete filter “${ Name }”": [
+        "フィルター「${ Name }」を削除"
+      ],
+      "Deleting folder": [
+        "フォルダを削除中"
       ]
     },
     "action": {
@@ -1615,6 +1621,15 @@
       ],
       "Set as default": [
         "デフォルトとして設定"
+      ],
+      "Delete address “${ emailAddress }”": [
+        "アドレス「${ emailAddress }」を削除します"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "アドレス「${ emailAddress }」を無効化します"
+      ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "アドレス「${ emailAddress }」の不足しているキーを生成します"
       ]
     },
     "Address status": {
@@ -1722,6 +1737,33 @@
       ],
       "years": [
         "年"
+      ],
+      "200 GB storage": [
+        "200GBストレージ"
+      ],
+      "500 GB encrypted storage": [
+        "500 GBの暗号化されたストレージ"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "${ BRAND_NAME } Mail、Pass、VPN、Drive、カレンダーの全てのプレミアム機能"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "お客様の暗号化済みストレージを2倍に — お客様のすべてのデータに1 TBを提供します"
+      ],
+      "Encrypted password manager": [
+        "暗号化されたパスワードマネージャー"
+      ],
+      "Recover previous file versions": [
+        "以前のファイルを復元"
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムPass機能をお得にご利用いただけます。"
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムVPN機能をお得にご利用いただけます。"
+      ],
+      "Use your own email domain": [
+        "独自メールドメインを使用する"
       ]
     },
     "anniversary_2025: offer": {
@@ -1735,6 +1777,9 @@
       ],
       "15 months": [
         "15 か月"
+      ],
+      "/ month": [
+        "/ 月"
       ]
     },
     "app-switcher": {
@@ -4040,6 +4085,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
+      ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "これらの機能にアクセスするには ${ PROTON_SENTINEL_NAME } を有効にしてください"
+      ],
+      "Enable detailed events to access these features": [
+        "それらの機能にアクセスするために予定の詳細を有効にする"
       ]
     },
     "description": {
@@ -10306,6 +10357,39 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
+        " - お客様の組織全体における、ユーザーアクティビティの追跡、脅威の検出、およびコンプライアンス確保のためのコマンドセンター。"
+      ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } 件の結果が見つかりました"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "お客様のトライアル期間が${ boldCancelDate }に終了すると、${ boldProtonFree }にダウングレードされます。お客様の組織からすべてのユーザーアカウントが削除されます。"
+      ],
+      "Loading detailed events current status.": [
+        "詳細な予定の現在の状態を読み込んでいます。"
+      ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "お客様の ${ BRAND_NAME } 認証情報を使用するすべての ${ BRAND_NAME } サービスに対する認証の試行を監視および監査します。"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "新しいアクティビティデータの収集と表示が停止されます。"
+      ],
+      "No logs yet.": [
+        "ログがありません。"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "お客様の無料トライアルには${ ownedCount }台の専用サーバーが含まれています。"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "お客様の無料トライアルは、${ cycle }ヶ月サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "${ boldEndDate }に${ boldPlanTitle }へアクセスできなくなります。"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
       ]
     },
     "info": {
@@ -12324,6 +12408,9 @@
       ],
       "Why set recovery methods?": [
         "回復手段を設定しませんか？"
+      ],
+      "Groups": [
+        "グループ"
       ]
     },
     "Link label (optional)": {
@@ -14198,6 +14285,12 @@
       ],
       "Your subscription renews soon": [
         "サブスクリプションはまもなく更新されます"
+      ],
+      "Don’t show this again": [
+        "次回から表示しない"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimitedを入手"
       ]
     },
     "Offer feature": {
@@ -14224,6 +14317,9 @@
       ],
       "Storage": [
         "ストレージ"
+      ],
+      "Advanced threat protection": [
+        "高度な脅威保護"
       ]
     },
     "Onboarding": {
@@ -14259,6 +14355,18 @@
         "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
+      ],
+      "Cancel anytime before then.": [
+        "それまでにいつでもキャンセルできます。"
+      ],
+      "contact our support team": [
+        "サポートチームにお問い合わせください"
+      ],
+      "Your free trial has started": [
+        "無料トライアルが開始されました"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ]
     },
@@ -15189,6 +15297,9 @@
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -15280,6 +15391,12 @@
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "SEPAではユーロのみご利用いただけます。お客様の通貨が変更されました。選択を元に戻すには、セレクターをご利用ください。"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
       ]
     },
     "Payments.Error": {
@@ -16972,6 +17089,15 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "${ pricingTitle } へアップグレード"
+      ],
+      "Guard against threats": [
+        "脅威から保護する"
+      ],
+      "Increase your storage": [
+        "ストレージを増やす"
+      ],
+      "Unblock streaming content": [
+        "ストリーミングコンテンツのブロックを解除"
       ]
     },
     "specialoffer: Offers": {
@@ -17045,6 +17171,24 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "アップグレードして${ planName }の2年契約でもっとお得に"
+      ],
+      "Access content on streaming services worldwide": [
+        "世界中のストリーミングサービスでコンテンツにアクセス"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "すべてのファイルや写真を安全に保管する500 GBを入手"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "全てを含む1つのプラン、${ BRAND_NAME } Unlimitedをご利用ください。"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "無制限のエイリアスで、お客様のユーザー情報を保護し、迷惑メールを削減します。"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "パスワードを複数の保管庫に安全に整理して保管する "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Sentinelでアカウントを脅威から保護する"
       ]
     },
     "specialoffer: Tooltip": {
@@ -19908,6 +20052,15 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } の試用に招待されました"
+      ],
+      "Cannot add servers": [
+        "サーバーを追加できません"
+      ],
+      "Wipe all logs?": [
+        "全てのログを削除しますか？"
+      ],
+      "Your ${ planName } subscription has started": [
+        "${ planName }サブスクリプションが開始されました"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -20241,6 +20394,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "外部アカウントが 24 時間の帯域幅制限に達している可能性があります。 ${ BRAND_NAME } は、できるだけ早くインポートを再開しようとします。"
+      ],
+      "The Internet Service Provider of the IP address": [
+        "IPアドレスのインターネットサービスプロバイダ"
       ]
     },
     "tooltip": {
@@ -21228,6 +21384,79 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "割引を入手"
+      ]
+    },
+    "Body": {
+      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
+        "お客様の専用サーバーはすべて、すでにゲートウェイに割り当てられています。無料トライアルが終了すると、お客様はさらにサーバーを購入できるようになります。"
+      ],
+      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
+        "お客様の無料トライアルには、${ ipAddresses }個の専用サーバーが含まれています。本サブスクリプションが開始されましたら、さらにサーバーを追加できます。"
+      ],
+      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
+        "お客様の無料トライアルには最大${ maxMembers }ライセンスが含まれています。完全なサブスクリプションが開始された後、さらにライセンスを追加できます。"
+      ]
+    },
+    "Features: Tooltip": {
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "ウェブサイトやアプリの広告、トラッカー、マルウェアからお客様を保護します。"
+      ]
+    },
+    "Log event": {
+      "Account password change": [
+        "アカウントパスワードの変更"
+      ],
+      "Authentication success": [
+        "認証成功"
+      ],
+      "Mailbox password change": [
+        "メールボックスのパスワード変更"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "サインインがブロックされました (悪用のため)"
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "サインイン失敗 (ニーモニック失敗)"
+      ],
+      "Sign in failure (wrong password)": [
+        "サインイン失敗 (パスワードが間違っています)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "サインインが禁止されています (悪用のため)"
+      ],
+      "Sign in success (awaiting verify)": [
+        "サインイン成功 (検証待ち)"
+      ],
+      "Two password mode disabled": [
+        "2 つのパスワード モードが無効になっています"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "暗号化されたパスワードマネージャー"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
+      ]
+    },
+    "Protection type": {
+      "Captcha": [
+        "CAPTCHA"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ 月"
+      ],
+      "Only": [
+        "のみ"
       ]
     }
   }

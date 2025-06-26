@@ -1575,6 +1575,9 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Create free account now": [
+        "Kostenloses Konto jetzt erstellen"
       ]
     },
     "action": {
@@ -5748,6 +5751,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Permissions request failed.": [
+        "Berechtigungsanfrage fehlgeschlagen."
       ]
     },
     "error": {
@@ -10751,6 +10757,9 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du verlierst auch den Zugang zu den Funktionen von ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -17471,6 +17480,44 @@
       ],
       "Your plan": [
         "Dein Abonnement"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email-Aliasse, um Spam zu bekämpfen"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } Adresse",
+        "${ maxAddresses } Adressen"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } Kalender",
+        "${ maxCalendars } Kalender"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } Cloud-Speicherplatz für Dateien und Fotos"
+      ],
+      "Collaborative document editing": [
+        "Gemeinsame Dokumentbearbeitung"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Verschlüsselte E-Mail mit ${ totalMailStorageSize } Speicherplatz"
+      ],
+      "Every free account comes with:": [
+        "Jedes kostenlose Konto beinhaltet:"
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Hol dir Sicherheit von uns, oder ${ internalButton }"
+      ],
+      "Password manager for all your devices": [
+        "Passwortmanager für alle deine Geräte"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Registriere dich, um alles zu bekommen, was ${ BRAND_NAME } zu bieten hat."
+      ],
+      "use your current email.": [
+        "Nutze deine aktuelle E-Mail-Adresse."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN mit Servern in ${ vpnServersCountData.free.countries } Ländern"
       ]
     },
     "Signup label": {
@@ -17494,6 +17541,9 @@
       ],
       "Username": [
         "Benutzername"
+      ],
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME }-Passwort"
       ]
     },
     "Signup step": {
@@ -19005,6 +19055,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du erhältst deinen Benutzernamen innerhalb einer Minute per SMS, wenn du eine gültige Rückrufnummer eingegeben hast."
+      ],
+      "Address successfully added": [
+        "Adresse erfolgreich hinzugefügt"
       ]
     },
     "Success message": {
@@ -20756,6 +20809,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du wurdest eingeladen, ${ MAIL_APP_NAME } zu testen."
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Verbinde mehr Gmail-Adressen mit ${ planName }"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Mehrere Konten, ein privater Posteingang"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22160,6 +22219,21 @@
       ],
       "Yearly, ${ untilString }": [
         "Jährlich, ${ untilString }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonnement gekündigt."
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Um E-Mails von ${ MAX_SYNC_PAID_USER } Konto weiterzuleiten, upgrade auf ${ planName }.",
+        "Um E-Mails von bis zu ${ MAX_SYNC_PAID_USER } Konten weiterzuleiten, upgrade zu ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du leitest E-Mails von ${ MAX_SYNC_FREE_USER } externen Konto an ${ MAIL_APP_NAME } weiter.",
+        "Du leitest E-Mails von ${ MAX_SYNC_FREE_USER } externen Konten an ${ MAIL_APP_NAME } weiter."
       ]
     }
   }

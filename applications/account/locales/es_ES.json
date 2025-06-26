@@ -1563,6 +1563,18 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Delete logs": [
+        "Eliminar registros"
+      ],
+      "Deleting folder": [
+        "Eliminando la carpeta"
+      ],
+      "Deleting label": [
+        "Eliminando la etiqueta"
+      ],
+      "Explore other plans": [
+        "Explorar otros planes"
       ]
     },
     "action": {
@@ -15837,6 +15849,9 @@
       ],
       "New credit/debit card": [
         "Nueva tarjeta de crédito/débito"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -22143,6 +22158,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferencia bancaria - ${ details }"
       ]
     }
   }
