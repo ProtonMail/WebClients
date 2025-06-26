@@ -4,7 +4,7 @@ import type { OnLoginCallback } from '@proton/components';
 import { UnAuthenticated } from '@proton/components';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { type APP_NAMES, type CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 
 import SignupContainer from '../signup/SignupContainer';
 import { isMailReferAFriendSignup } from '../signup/helper';
@@ -58,7 +58,7 @@ const SingleSignupSwitchContainer = ({
 
     // Ignore mail refer until we're sure it's been tested on sps
 
-    const renderContextSignup = searchParams.get('mode') === 'ctx';
+    const renderContextSignup = searchParams.get('mode') === 'ctx' || location.pathname === SSO_PATHS.START;
 
     if (renderContextSignup) {
         return (
@@ -66,6 +66,7 @@ const SingleSignupSwitchContainer = ({
                 <SignupCtxRouter
                     onPreSubmit={onPreSubmit}
                     onStartAuth={onStartAuth}
+                    onLogin={onLogin}
                     loginUrl={paths.login}
                     productParam={productParam}
                 />

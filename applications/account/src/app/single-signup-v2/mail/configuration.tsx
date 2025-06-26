@@ -336,7 +336,18 @@ export const getMailConfiguration = ({
                 plan: PLANS.BUNDLE,
                 subsection: (
                     <>
-                        <AppsLogos className="mb-1 md:mb-3" />
+                        <AppsLogos
+                            className="mb-1 md:mb-3"
+                            fullWidth
+                            apps={[
+                                APPS.PROTONMAIL,
+                                APPS.PROTONCALENDAR,
+                                APPS.PROTONDRIVE,
+                                APPS.PROTONVPN_SETTINGS,
+                                APPS.PROTONPASS,
+                                APPS.PROTONDOCS,
+                            ]}
+                        />
                         <PlanCardFeatureList
                             {...planCardFeatureProps}
                             features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE], freePlan)}
@@ -351,7 +362,18 @@ export const getMailConfiguration = ({
                 plan: PLANS.FAMILY,
                 subsection: (
                     <>
-                        <AppsLogos className="mb-1 md:mb-3" />
+                        <AppsLogos
+                            className="mb-1 md:mb-3"
+                            fullWidth
+                            apps={[
+                                APPS.PROTONMAIL,
+                                APPS.PROTONCALENDAR,
+                                APPS.PROTONDRIVE,
+                                APPS.PROTONVPN_SETTINGS,
+                                APPS.PROTONPASS,
+                                APPS.PROTONDOCS,
+                            ]}
+                        />
                         <PlanCardFeatureList
                             {...planCardFeatureProps}
                             features={getCustomMailFeatures(plansMap?.[PLANS.FAMILY], freePlan)}

@@ -7,6 +7,7 @@ import { cachedPlans } from '../defaultPlans';
 import { type BaseSignupContextProps } from './context/SignupContext';
 import DrivePricing from './flows/drive/DrivePricing';
 import DriveSignup from './flows/drive/DriveSignup';
+import GenericStartSignup from './flows/genericStart/GenericStartSignup';
 
 const DriveSignupController = (props: BaseSignupContextProps) => {
     return (
@@ -21,14 +22,23 @@ const DriveSignupController = (props: BaseSignupContextProps) => {
     );
 };
 
-const GenericSignupController = () => {
+const GenericSignupController = (props: BaseSignupContextProps) => {
     /**
      * Here we can control which signups to initiate
      * ie, free, paid, logic for pre selected plans etc
      * Can also do a/b variant detection here
      * Define telemetry params etc
      */
-    return <Redirect to="/signup" />;
+    return (
+        <Switch>
+            <Route path={SSO_PATHS.START}>
+                <GenericStartSignup {...props} />
+            </Route>
+            <Route>
+                <Redirect to="/signup" />
+            </Route>
+        </Switch>
+    );
 };
 
 const SignupCtxRouter = (props: BaseSignupContextProps) => {
@@ -39,7 +49,7 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                     <DriveSignupController {...props} />
                 </Route>
                 <Route>
-                    <GenericSignupController />
+                    <GenericSignupController {...props} />
                 </Route>
             </Switch>
         </PaymentsContextOptimisticProvider>

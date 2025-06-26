@@ -371,6 +371,7 @@ export const SSO_PATHS = {
     LUMO_SIGNUP: '/lumo/signup',
     LUMO_SIGN_IN: '/lumo',
     SIGNUP: '/signup',
+    START: '/start',
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
     JOIN_MAGIC_LINK: '/join',
