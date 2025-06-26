@@ -196,6 +196,7 @@ const SingleSignupContainerV2 = ({
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const lumoSignupEnabled = useFlag('LumoSignupAvailable');
+    const isB2BTrialEnabled = useFlag('ManualTrialsFE');
 
     const { flagsReady } = useFlagsStatus();
 
@@ -260,6 +261,7 @@ const SingleSignupContainerV2 = ({
             location,
             visionarySignupEnabled,
             initialSearchParams,
+            isB2BTrialEnabled,
             partner,
         });
     });
@@ -348,6 +350,15 @@ const SingleSignupContainerV2 = ({
             redirectTo(`${SSO_PATHS.SIGNUP}${location.search}`);
         }
     }, [toApp, flagsReady, lumoSignupEnabled]);
+
+    useEffect(() => {
+        if (flagsReady && !isB2BTrialEnabled && signupParameters.trial) {
+            // remove ?trial from search params and redirect
+            const url = new URL(window.location.href);
+            url.searchParams.delete('trial');
+            window.location.href = url.toString();
+        }
+    }, [flagsReady, isB2BTrialEnabled, signupParameters.trial]);
 
     useEffect(() => {
         const run = async () => {
