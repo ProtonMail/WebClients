@@ -1,6 +1,8 @@
 import { format } from 'date-fns';
 
 import { MAX_CHARS_API } from '@proton/account';
+import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
+import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import type { VerificationModel } from '@proton/components';
 import { getInitialStorage, getStorageRange } from '@proton/components';
 import type { AppIntent } from '@proton/components/containers/login/interface';
@@ -557,6 +559,22 @@ export const handleSetupUser = async ({
     // Ignore the rest of the steps for VPN because we don't create an address and ask for recovery email at the start
     if (clientType === CLIENT_TYPES.VPN && !ignoreVPN) {
         return handleDone({ cache: newCache, appIntent: cache.appIntent });
+    }
+
+    // Start the easy switch import for pure BYOE accounts
+    if (
+        newCache.accountData?.signupType === SignupType.BringYourOwnEmail &&
+        newCache.setupData?.addresses &&
+        newCache.setupData?.addresses.length > 0
+    ) {
+        const addressID = newCache.setupData.addresses[0].ID;
+        await api(
+            startEasySwitchSignupImportTask({
+                Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SIGNUP,
+                AddressId: addressID,
+                Provider: OAUTH_PROVIDER.GOOGLE,
+            })
+        );
     }
 
     return {
