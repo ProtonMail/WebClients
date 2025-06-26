@@ -172,11 +172,11 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     <>
       {hidden && (
         <div
-          className="bg-norm absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4"
+          className="absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4 bg-[#F9FBFC]"
           data-testid="editor-curtain"
         />
       )}
-      <div className="flex h-full w-full flex-1 flex-col [grid-column:1/3] [grid-row:1/3]">
+      <div className="flex h-full w-full flex-1 flex-col bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
         {!isRevisionMode && (
           <WithFallback fallback={<LegacyToolbar state={state} downloadLogs={downloadLogs} isReadonly={isReadonly} />}>
             <Menubar ui={uiState} className="mb-2" />

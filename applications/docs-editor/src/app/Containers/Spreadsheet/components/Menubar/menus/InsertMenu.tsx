@@ -16,25 +16,25 @@ export function InsertMenu({ ui, renderMenuButton, ...props }: InsertMenuProps) 
       <UI.MenuButton render={renderMenuButton} />
       <UI.Menu>
         <UI.MenuProvider>
-          <UI.MenuButton render={<UI.MenuItem isSubmenuTrigger>{s('Cells')}</UI.MenuItem>} />
-          <UI.Menu>
+          <UI.SubMenuButton>{s('Cells')}</UI.SubMenuButton>
+          <UI.SubMenu>
             <UI.MenuItem onClick={ui.insert.cellsShiftRight}>{s('Insert cells and shift right')}</UI.MenuItem>
             <UI.MenuItem onClick={ui.insert.cellsShiftDown}>{s('Insert cells and shift down')}</UI.MenuItem>
-          </UI.Menu>
+          </UI.SubMenu>
         </UI.MenuProvider>
         <UI.MenuProvider>
-          <UI.MenuButton render={<UI.MenuItem isSubmenuTrigger />}>{s('Rows')}</UI.MenuButton>
-          <UI.Menu>
+          <UI.SubMenuButton>{s('Rows')}</UI.SubMenuButton>
+          <UI.SubMenu>
             <UI.MenuItem onClick={ui.insert.rowAbove}>{s('Insert 1 row above')}</UI.MenuItem>
             <UI.MenuItem onClick={ui.insert.rowBelow}>{s('Insert 1 row below')}</UI.MenuItem>
-          </UI.Menu>
+          </UI.SubMenu>
         </UI.MenuProvider>
         <UI.MenuProvider>
-          <UI.MenuButton render={<UI.MenuItem isSubmenuTrigger />}>{s('Columns')}</UI.MenuButton>
-          <UI.Menu>
+          <UI.SubMenuButton>{s('Columns')}</UI.SubMenuButton>
+          <UI.SubMenu>
             <UI.MenuItem onClick={ui.insert.columnLeft}>{s('Insert 1 column left')}</UI.MenuItem>
             <UI.MenuItem onClick={ui.insert.columnRight}>{s('Insert 1 column right')}</UI.MenuItem>
-          </UI.Menu>
+          </UI.SubMenu>
         </UI.MenuProvider>
         <UI.MenuItem onClick={ui.insert.sheet}>{s('Sheet')}</UI.MenuItem>
         <UI.MenuSeparator />
