@@ -27,6 +27,8 @@ import { useLatestAwarenessStates } from '../../Utils/useLatestAwarenessStates'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { useMarkNodesContext } from '../MarkNodesContext'
 import { useConfirmActionModal } from '@proton/components'
+import { nonUndoableUpdate } from '../Collaboration/useYjsHistory'
+import { useCustomCollaborationContext } from '../Collaboration/CustomCollaborationContext'
 
 export default function CommentPlugin({
   controller,
@@ -38,6 +40,8 @@ export default function CommentPlugin({
   const { application } = useApplication()
   const [editor] = useLexicalComposerContext()
   const isEditorEditable = useLexicalEditable()
+
+  const collabContext = useCustomCollaborationContext()
 
   /** Top level comment only, not reply */
   const [currentCommentDraft, setCurrentCommentDraft] = useState<string | undefined>()
@@ -92,27 +96,27 @@ export default function CommentPlugin({
         (from: CommentThreadMarkNode, to: CommentThreadMarkNode) => {
           // Merge the IDs
           const ids = from.getIDs()
-          ids.forEach((id) => {
-            to.addID(id)
-          })
+          for (let i = 0; i < ids.length; i++) {
+            to.addID(ids[i])
+          }
         },
       ),
       editor.registerMutationListener(CommentThreadMarkNode, (mutations) => {
         editor.getEditorState().read(() => {
           for (const [key, mutation] of mutations) {
             const node: null | CommentThreadMarkNode = $getNodeByKey(key)
-            let ids: NodeKey[] = []
+            let markIDs: string[] = []
 
             if (mutation === 'destroyed') {
-              ids = markNodeKeysToIDs.get(key) || []
+              markIDs = markNodeKeysToIDs.get(key) || []
             } else if ($isCommentThreadMarkNode(node)) {
-              ids = node.getIDs()
+              markIDs = node.getIDs()
             }
 
-            for (let i = 0; i < ids.length; i++) {
-              const id = ids[i]
+            for (let i = 0; i < markIDs.length; i++) {
+              const id = markIDs[i]
               let markNodeKeys = markNodeMap.get(id)
-              markNodeKeysToIDs.set(key, ids)
+              markNodeKeysToIDs.set(key, markIDs)
 
               if (mutation === 'destroyed') {
                 if (markNodeKeys !== undefined) {
@@ -121,14 +125,16 @@ export default function CommentPlugin({
                     markNodeMap.delete(id)
                   }
                 }
-              } else {
-                if (markNodeKeys === undefined) {
-                  markNodeKeys = new Set()
-                  markNodeMap.set(id, markNodeKeys)
-                }
-                if (!markNodeKeys.has(key)) {
-                  markNodeKeys.add(key)
-                }
+                continue
+              }
+
+              if (markNodeKeys === undefined) {
+                markNodeKeys = new Set()
+                markNodeMap.set(id, markNodeKeys)
+              }
+
+              if (!markNodeKeys.has(key)) {
+                markNodeKeys.add(key)
               }
             }
           }
@@ -186,7 +192,7 @@ export default function CommentPlugin({
 
   const createMarkNodeForCurrentSelection = useCallback(
     (id: string) => {
-      editor.update(() => {
+      nonUndoableUpdate(editor, collabContext.undoManager, () => {
         const selection = $getSelection()
         if ($isRangeSelection(selection)) {
           const isBackward = selection.isBackward()
@@ -194,7 +200,7 @@ export default function CommentPlugin({
         }
       })
     },
-    [editor],
+    [collabContext.undoManager, editor],
   )
 
   const removeMarkNode = useCallback(
@@ -203,9 +209,9 @@ export default function CommentPlugin({
       if (markNodeKeys !== undefined) {
         // Do async to avoid causing a React infinite loop
         setTimeout(() => {
-          editor.update(() => {
+          nonUndoableUpdate(editor, collabContext.undoManager, () => {
             for (const key of markNodeKeys) {
-              const node: null | CommentThreadMarkNode = $getNodeByKey(key)
+              const node: CommentThreadMarkNode | null = $getNodeByKey(key)
               if ($isCommentThreadMarkNode(node)) {
                 node.deleteID(markID)
                 if (node.getIDs().length === 0) {
@@ -217,21 +223,22 @@ export default function CommentPlugin({
         })
       }
     },
-    [editor, markNodeMap],
+    [collabContext.undoManager, editor, markNodeMap],
   )
 
   const resolveMarkNode = useCallback(
     (markID: string) => {
       const markNodeKeys = markNodeMap.get(markID)
       if (markNodeKeys !== undefined) {
-        editor.update(() => {
+        nonUndoableUpdate(editor, collabContext.undoManager, () => {
           for (const key of markNodeKeys) {
-            const node: null | CommentThreadMarkNode = $getNodeByKey(key)
+            const node: CommentThreadMarkNode | null = $getNodeByKey(key)
             if ($isCommentThreadMarkNode(node)) {
-              if (markNodeKeys.size === 1 && !node.getIDs().includes(markID)) {
+              const nodeMarkIDs = node.getIDs()
+              if (markNodeKeys.size === 1 && !nodeMarkIDs.includes(markID)) {
                 continue
               }
-              if (markNodeKeys.size > 1 && !node.getIDs().every((id) => id === markID)) {
+              if (markNodeKeys.size > 1 && !nodeMarkIDs.every((id) => id === markID)) {
                 continue
               }
               node.setResolved(true)
@@ -240,14 +247,14 @@ export default function CommentPlugin({
         })
       }
     },
-    [editor, markNodeMap],
+    [collabContext.undoManager, editor, markNodeMap],
   )
 
   const unresolveMarkNode = useCallback(
     (markID: string) => {
       const markNodeKeys = markNodeMap.get(markID)
       if (markNodeKeys !== undefined) {
-        editor.update(() => {
+        nonUndoableUpdate(editor, collabContext.undoManager, () => {
           for (const key of markNodeKeys) {
             const node: null | CommentThreadMarkNode = $getNodeByKey(key)
             if ($isCommentThreadMarkNode(node)) {
@@ -263,8 +270,39 @@ export default function CommentPlugin({
         })
       }
     },
-    [editor, markNodeMap],
+    [collabContext.undoManager, editor, markNodeMap],
   )
+
+  useEffect(
+    function handleInvalidMarkNodeStates() {
+      if (!isEditorEditable || threads.length === 0) {
+        return
+      }
+      editor.read(() => {
+        for (let i = 0; i < threads.length; i++) {
+          const thread = threads[i]
+          const markNodeKeys = markNodeMap.get(thread.markID)
+          if (!markNodeKeys || markNodeKeys.size === 0) {
+            continue
+          }
+          for (const key of markNodeKeys) {
+            const node = $getNodeByKey(key)
+            if (!$isCommentThreadMarkNode(node)) {
+              continue
+            }
+            const isThreadResolved = thread.state === CommentThreadState.Resolved
+            if (node.getResolved() !== isThreadResolved) {
+              nonUndoableUpdate(editor, collabContext.undoManager, () => {
+                node.setResolved(isThreadResolved)
+              })
+            }
+          }
+        }
+      })
+    },
+    [collabContext.undoManager, editor, isEditorEditable, markNodeMap, threads],
+  )
+
   const getMarkNodes = useCallback(
     (markID: string) => {
       return editor.getEditorState().read(() => {
