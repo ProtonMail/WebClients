@@ -5,7 +5,9 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
-import { Icon, useSyncIframeStyles, useTheme } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
+import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import MessageBodyImages from '@proton/mail-renderer/components/MessageBodyImages';
 import getIframeSandboxAttributes from '@proton/mail-renderer/helpers/getIframeSandboxAttributes';
 import useIframeDispatchEvents from '@proton/mail-renderer/hooks/useIframeDispatchEvents';
@@ -32,6 +34,9 @@ interface Props {
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
     onFocus?: () => void;
     onMessageImageLoadError: OnMessageImageLoadError;
+    theme: ThemeContextInterface;
+    iframeCSSStyles: string;
+    iframeSVG: string;
 }
 
 const MessageBodyIframe = ({
@@ -49,9 +54,10 @@ const MessageBodyIframe = ({
     onReady,
     onMessageImageLoadError,
     onFocus,
+    theme,
+    iframeCSSStyles,
+    iframeSVG,
 }: Props) => {
-    const theme = useTheme();
-
     useSyncIframeStyles(iframeRef.current?.contentWindow?.document.documentElement, document.documentElement);
 
     const { initStatus, iframeRootDivRef } = useInitIframeContent({
@@ -63,6 +69,9 @@ const MessageBodyIframe = ({
         isPlainText,
         onReady,
         isPrint,
+        theme,
+        iframeCSSStyles,
+        iframeSVG,
     });
 
     const { showToggle, iframeToggleDiv, showBlockquote, setShowBlockquote } = useIframeShowBlockquote({

@@ -3,7 +3,7 @@ import { useApi } from '@proton/components';
 import { PLANS } from '@proton/payments';
 import { type TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
