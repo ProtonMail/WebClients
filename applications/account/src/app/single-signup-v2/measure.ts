@@ -1,9 +1,15 @@
 import type { PaymentMethodStatus } from '@proton/payments';
-import { type CYCLE, PAYMENT_METHOD_TYPES, PLANS, type PlansMap } from '@proton/payments';
-import { type Currency } from '@proton/payments';
-import { getPlan } from '@proton/payments';
+import {
+    type CYCLE,
+    type Currency,
+    PAYMENT_METHOD_TYPES,
+    PLANS,
+    type PlansMap,
+    getPlan,
+    getPlanFromPlanIDs,
+} from '@proton/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { Clients } from '@proton/shared/lib/pass/constants';
 
 import type { SessionData, SignupCacheResult } from '../signup/interfaces';

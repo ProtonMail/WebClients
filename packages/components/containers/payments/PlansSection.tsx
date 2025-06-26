@@ -24,16 +24,19 @@ import {
     FREE_SUBSCRIPTION,
     type PlanIDs,
     getIsB2BAudienceFromPlan,
+    getPlanFromPlanIDs,
+    getPlanIDs,
     getPlansMap,
+    getValidAudience,
+    getValidCycle,
     isStringPLAN,
 } from '@proton/payments';
-import { getPlanIDs, getValidAudience, getValidCycle } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLink';

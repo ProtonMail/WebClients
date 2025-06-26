@@ -30,6 +30,7 @@ import {
     PLANS,
     type PlanIDs,
     getIsB2BAudienceFromPlan,
+    getPlanFromPlanIDs,
     getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
@@ -43,7 +44,6 @@ import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, MAIL_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
