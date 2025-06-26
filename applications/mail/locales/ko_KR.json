@@ -1595,6 +1595,12 @@
       ],
       "Create folder ${ boldFolderName }": [
         "${ boldFolderName } 폴더 생성"
+      ],
+      "Deleting folder": [
+        "폴더 삭제 중"
+      ],
+      "Deleting label": [
+        "라벨 삭제 중"
       ]
     },
     "action": {
@@ -8378,6 +8384,9 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "받은 편지함에 해당 보낸 사람의 메시지가 없습니다."
+      ],
+      "Block sender": [
+        "발신자 차단"
       ]
     },
     "info": {
@@ -9297,6 +9306,9 @@
       ],
       "Moved ${ count } message to ${ labelName }.": [
         "${ labelName }(으)로 ${ count }개 메시지가 이동되었습니다."
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "폴더 생성 실패 ${ customFolderName }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10992,6 +11004,9 @@
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited 구매"
+      ],
+      "Don’t show this again": [
+        "다시 보지 않기"
       ]
     },
     "Offer feature": {
@@ -11021,6 +11036,15 @@
       ],
       "Advanced threat protection": [
         "향상된 위협 보호 기능"
+      ],
+      "500 GB secure storage": [
+        "500 GB 보안 저장공간"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가 내의 초고속 VPN 서버"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "신원 보호를 위한 무제한 별칭"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11396,6 +11420,9 @@
       ],
       "New credit/debit card": [
         "신용/체크카드 추가"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12374,6 +12401,21 @@
       ],
       "Unblock streaming content": [
         "스트리밍 콘텐츠 잠금 해제"
+      ],
+      "Browse securely": [
+        "안전하게 탐색"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "${ BRAND_NAME }으로 더 많은 것을 시작해 보세요"
+      ],
+      "Get unlimited aliases": [
+        "무제한 별칭 받기"
+      ],
+      "Increase your storage": [
+        "저장공간 늘리기"
+      ],
+      "Keep passwords safe": [
+        "안전하게 비밀번호 유지"
       ]
     },
     "specialoffer: Offers": {
@@ -12459,6 +12501,15 @@
       ],
       "Protect your account from threats with Sentinel": [
         "Sentinel로 계정을 위협으로부터 보호하세요"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "모든 파일과 사진을 안전하게 저장할 수 있는 500 GB 스토리지를 받아보세요"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가의 초고속 VPN 서버에 접근"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "신원을 보호하고 스팸을 줄이기 위해 무제한 별칭을 받아보세요"
       ]
     },
     "specialoffer: Tooltip": {
@@ -14466,6 +14517,9 @@
       ],
       "Your subscriptions in one place": [
         "뉴스레터 구독을 모아보기"
+      ],
+      "Unsubscribe not available for this sender": [
+        "이 발신자에 대한 구독 해지가 지원되지 않습니다"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15011,6 +15065,17 @@
     "Unlimited offer": {
       "/month": [
         "/월간"
+      ],
+      "Only": [
+        "단"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ details }": [
+        "은행 송금 - ${ details }"
       ]
     }
   }

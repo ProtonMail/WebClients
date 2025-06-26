@@ -1600,6 +1600,12 @@
       ],
       "Create folder ${ boldFolderName }": [
         "Crea una carpeta \"${ boldFolderName }"
+      ],
+      "Deleting folder": [
+        "S'està eliminant la carpeta"
+      ],
+      "Deleting label": [
+        "S'està eliminant l'etiqueta"
       ]
     },
     "action": {
@@ -7096,8 +7102,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -11195,7 +11200,7 @@
         "No ho tornis a mostrar"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
-        "Obteniu ${ BRAND_NAME } Unlimited"
+        "Obtingueu ${ BRAND_NAME } sense límits"
       ]
     },
     "Offer feature": {
@@ -11616,6 +11621,9 @@
       ],
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12625,16 +12633,16 @@
         "Supereu els vostres límits amb ${ BRAND_NAME }"
       ],
       "Get unlimited aliases": [
-        "Obteniu un nombre il·limitat d'àlies"
+        "Obtingueu un nombre il·limitat d'àlies"
       ],
       "Guard against threats": [
-        "Protegiu-vos de les amenaces"
+        "Protegiu-vos d'amenaces"
       ],
       "Increase your storage": [
         "Augmenteu el vostre emmagatzematge"
       ],
       "Keep passwords safe": [
-        "Manteniu les vostres contrasenyes segures"
+        "Mantingueu les vostres contrasenyes segures"
       ],
       "Unblock streaming content": [
         "Tingui accés il·limitat a continguts en estríming"
@@ -12720,19 +12728,19 @@
         "Obtingueu 500 GB per emmagatzemar de manera segura tots els vostres fitxers i fotos"
       ],
       "Get access to ultrafast VPN servers in 110+ countries": [
-        "Obteniu accés a servidors VPN ultraràpids en més de 110 països"
+        "Obtingueu accés a servidors VPN ultraràpids en més de 110 països"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
-        "Obteniu un pla que ho inclou tot: ${ BRAND_NAME } Unlimited"
+        "Obtingueu un pla que ho inclou tot: ${ BRAND_NAME } sense límits"
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
-        "Obteniu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
+        "Obtingueu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
       ],
       "Keep your passwords safe and organized in multiple vaults ": [
         "Guardeu les vostres contrasenyes de manera segura i organitzada en diverses caixes fortes. "
       ],
       "Protect your account from threats with Sentinel": [
-        "Protegiu el vostre compte de les amenaces amb Sentinel"
+        "Protegiu el vostre compte d'amenaces amb Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -15396,10 +15404,18 @@
     },
     "Unlimited offer": {
       "/month": [
-        "/mesos"
+        "/mes"
       ],
       "Only": [
         "Només"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - targeta que acaba en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferència bancària - ${ details }"
       ]
     }
   }
