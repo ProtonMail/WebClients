@@ -179,7 +179,6 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
                     elementsData={elementsData}
                     toolbar={
                         <MailboxToolbar
-                            inHeader
                             params={params}
                             navigation={navigation}
                             elementsData={elementsData}
