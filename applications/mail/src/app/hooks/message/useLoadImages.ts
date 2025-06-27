@@ -1,8 +1,6 @@
 import { useCallback } from 'react';
 
 import { useApi, useAuthentication } from '@proton/components';
-import { transformEmbedded } from '@proton/mail-renderer/helpers/transforms/transformEmbedded';
-import { transformRemote } from '@proton/mail-renderer/helpers/transforms/transformRemote';
 import type {
     LoadEmbeddedResults,
     MessageRemoteImage,
@@ -11,6 +9,8 @@ import type {
 } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { transformEmbedded } from 'proton-mail/helpers/transforms/transformEmbedded';
+import { transformRemote } from 'proton-mail/helpers/transforms/transformRemote';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 import { useMailDispatch } from 'proton-mail/store/hooks';
