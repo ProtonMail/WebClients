@@ -6,6 +6,7 @@ import { useApi } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
+import { useBase64Cache } from '@proton/mail/hooks/useBase64Cache';
 import type {
     LoadEmbeddedResults,
     MessageErrors,
@@ -34,7 +35,6 @@ import {
     EOLoadRemote,
 } from '../../store/eo/eoActions';
 import type { EOLoadEmbeddedParams, EOLoadRemoteResults } from '../../store/eo/eoType';
-import { useBase64Cache } from '../useBase64Cache';
 import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 
 export const useInitializeEOMessage = () => {
