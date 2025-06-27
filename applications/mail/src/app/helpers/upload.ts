@@ -1,10 +1,10 @@
+import { createErrorHandler } from '@proton/mail/helpers/dom';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { serializeData } from '@proton/shared/lib/fetch/serialize';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 
 import { API_URL, APP_NAME, APP_VERSION } from '../config';
-import { createErrorHandler } from './dom';
 
 export type HTTPHeaders = { [key: string]: string };
 
