@@ -1,4 +1,5 @@
-import { base64Cache, clearAll } from '../../test/helper';
+import { base64Cache, clearAll } from 'proton-mail/helpers/test/helper';
+
 import { attachBase64, transformEscape } from '../transformEscape';
 
 describe('transformEscape', () => {

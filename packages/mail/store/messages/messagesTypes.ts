@@ -1,5 +1,6 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import type { Api, KeyTransparencyVerificationResult, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -8,7 +9,6 @@ import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import type { DecryptMessageResult } from 'proton-mail/helpers/message/messageDecrypt';
-import type { Preparation } from 'proton-mail/helpers/transforms/transforms';
 import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 
 export interface OutsideKey {

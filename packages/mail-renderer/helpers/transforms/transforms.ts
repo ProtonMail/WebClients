@@ -1,3 +1,4 @@
+import { transformAnchors } from '@proton/mail-renderer/helpers/transforms/transforAnchors';
 import type {
     LoadEmbeddedResults,
     MessageImage,
@@ -10,9 +11,8 @@ import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import { transformAnchors } from 'proton-mail/helpers/transforms/transforAnchors';
+import type { Base64Cache } from 'proton-mail/hooks/useBase64Cache';
 
-import type { Base64Cache } from '../../hooks/useBase64Cache';
 import { transformBase } from './transformBase';
 import { transformEmbedded } from './transformEmbedded';
 import { attachBase64, transformEscape } from './transformEscape';

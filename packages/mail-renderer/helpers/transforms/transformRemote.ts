@@ -7,11 +7,15 @@ import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import generateUID from '@proton/utils/generateUID';
 
+import { querySelectorAll } from 'proton-mail/helpers/message/messageContent';
+import { getRemoteImages, insertImageAnchor } from 'proton-mail/helpers/message/messageImages';
+import {
+    hasToSkipProxy,
+    loadFakeImages,
+    loadRemoteImages,
+    loadSkipProxyImages,
+} from 'proton-mail/helpers/message/messageRemotes';
 import { removeLineBreaks } from 'proton-mail/helpers/string';
-
-import { querySelectorAll } from '../message/messageContent';
-import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
-import { hasToSkipProxy, loadFakeImages, loadRemoteImages, loadSkipProxyImages } from '../message/messageRemotes';
 
 const SELECTOR = MESSAGE_IMAGE_ATTRIBUTES_TO_FIND.map((name) => {
     if (name === 'src') {

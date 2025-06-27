@@ -4,6 +4,8 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { useApi, useAuthentication } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
+import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
+import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
 import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
@@ -36,8 +38,6 @@ import {
     handleDispatchLoadRemoteImagesDirect,
 } from '../../helpers/message/messageImages';
 import { loadMessage } from '../../helpers/message/messageRead';
-import type { Preparation } from '../../helpers/transforms/transforms';
-import { prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
