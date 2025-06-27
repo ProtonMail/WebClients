@@ -1614,6 +1614,12 @@
       ],
       "Stop moving to Trash": [
         "Oprire mutare în gunoi"
+      ],
+      "Deleting folder": [
+        "Ștergerea folderului"
+      ],
+      "Deleting label": [
+        "Ștergerea etichetei"
       ]
     },
     "action": {
@@ -4773,6 +4779,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Limitați căutarea și reîncercați."
+      ],
+      "No address with sending permissions": [
+        "Nicio adresă cu permisiuni de trimitere."
+      ],
+      "Permissions request failed.": [
+        "Solicitarea de permisiuni a eșuat."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8556,6 +8568,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "Nu există mesaje de la acest expeditor în mesaje primite."
+      ],
+      "Dedicated VPN servers": [
+        "Servere VPN dedicate"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Număr de servere VPN dedicate din organizație"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -11282,6 +11303,12 @@
       ],
       "Your subscription renews soon": [
         "Abonamentul se va reînnoi în curând"
+      ],
+      "Don’t show this again": [
+        "Nu mai arăta asta"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Obțineți ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11308,6 +11335,18 @@
       ],
       "Storage": [
         "Spațiu de stocare"
+      ],
+      "500 GB secure storage": [
+        "500 GiB de stocare securizată"
+      ],
+      "Advanced threat protection": [
+        "Protecție avansată împotriva amenințărilor"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Servere VPN ultrarapide în peste 110 țări"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Aliasuri nelimitate pentru a vă proteja identitatea"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11438,6 +11477,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Domeniul și abonamentul sunt pregătite de utilizare."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } înseamnă că nu veți vedea niciodată reclame sponsorizate în aplicațiile noastre."
+      ],
+      "Ad-free promise": [
+        "Promisiunea fără reclame"
       ]
     },
     "Onboarding Proton": {
@@ -11685,6 +11730,9 @@
       ],
       "New credit/debit card": [
         "Card nou de credit/debit"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11778,6 +11826,9 @@
       ],
       "This payment method will become your new default for all future renewals.": [
         "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Se acceptă doar euro pentru zona SEPA. Moneda a fost schimbată. Utilizați selectorul dacă doriți să remodificați."
       ]
     },
     "Payments.Error": {
@@ -12712,6 +12763,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Îmbunătățiți planul cu ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Navigați în siguranță"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Faceți mai multe cu ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Obțineți aliasuri nelimitate"
+      ],
+      "Guard against threats": [
+        "Protejați-vă împotriva amenințărilor"
+      ],
+      "Increase your storage": [
+        "Măriți-vă spațiul de stocare"
+      ],
+      "Keep passwords safe": [
+        "Păstrați parolele în siguranță"
+      ],
+      "Unblock streaming content": [
+        "Deblocați transmisiile în flux de conținut"
       ]
     },
     "specialoffer: Offers": {
@@ -12787,6 +12859,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Modernizați contul și salvați mai mult cu doi ani la ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Acces la conținut de pe servicii de transmisie în flux la nivel global"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Obțineți 500 GiB pentru a vă stoca în siguranță toate fișierele și fotografiile"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Obțineți acces la servere VPN ultrarapide în peste 110 de țări"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Obțineți un plan care include totul, luați ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Obțineți aliasuri nelimitate pentru a vă proteja identitatea și a reduce mesajele nedorite"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Păstrați-vă parolele în siguranță și organizate în mai multe seifuri"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Protejați-vă contul de amenințări cu Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -15697,6 +15790,32 @@
       ],
       "for ${ durationDeal }": [
         "cu ${ durationDeal }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonament anulat."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Manager de parole criptat"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transfer bancar - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/lună"
+      ],
+      "Only": [
+        "Doar"
       ]
     }
   }

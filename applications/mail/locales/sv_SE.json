@@ -1609,6 +1609,12 @@
       ],
       "Stop moving to Trash": [
         "Sluta flytta till papperskorg"
+      ],
+      "Deleting folder": [
+        "Tar bort mapp"
+      ],
+      "Deleting label": [
+        "Tar bort etikett"
       ]
     },
     "action": {
@@ -4742,6 +4748,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Permissions request failed.": [
+        "Behörighetsbegäran misslyckades."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8396,6 +8405,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerade VPN-servrar i organisationen"
+      ],
+      "Selection pane": [
+        "Valpanel"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
       ]
     },
     "info": {
@@ -11083,6 +11104,12 @@
       ],
       "Your subscription renews soon": [
         "Din prenumeration förnyas snart"
+      ],
+      "Don’t show this again": [
+        "Visa inte detta igen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Skaffa ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11109,6 +11136,18 @@
       ],
       "Storage": [
         "Lagringsutrymme"
+      ],
+      "500 GB secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "Advanced threat protection": [
+        "Avancerat hotskydd"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultrasnabba VPN-servrar i 110+ länder"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Obegränsat antal alias för att skydda din identitet"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11485,6 +11524,9 @@
       ],
       "PayPal": [
         "PayPal"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12478,6 +12520,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Uppgradera för ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Surfa säkert"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Gör mer med ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Skaffa obegränsat antal alias"
+      ],
+      "Guard against threats": [
+        "Skydd mot hot"
+      ],
+      "Increase your storage": [
+        "Öka ditt lagringsutrymme"
+      ],
+      "Keep passwords safe": [
+        "Håll lösenord säkra"
+      ],
+      "Unblock streaming content": [
+        "Avblockera streaminginnehåll"
       ]
     },
     "specialoffer: Offers": {
@@ -12552,6 +12615,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Uppgradera och spara mer med 2 års ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Kom åt innehåll på streamingtjänster globalt"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Skaffa 500 GB för att säkert lagra alla dina filer och foton"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Få åtkomst till ultrasnabba VPN-servrar i 110+ länder"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Skaffa ett paket som inkluderar allt, skaffa ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Skaffa obegränsat antal alias för att skydda din identitet och minska skräppost"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Håll dina lösenord säkra och organiserade i flera valv "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Skydda ditt konto från hot med Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -15342,6 +15426,32 @@
       ],
       "for ${ durationDeal }": [
         "för ${ durationDeal }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Prenumeration avslutad."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Krypterad lösenordshanterare"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Banköverföring - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/månad"
+      ],
+      "Only": [
+        "Endast"
       ]
     }
   }

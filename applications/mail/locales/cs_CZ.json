@@ -1619,6 +1619,12 @@
       ],
       "Stop moving to Trash": [
         "Ukončit přesouvání do koše"
+      ],
+      "Deleting folder": [
+        "Smazat složku"
+      ],
+      "Deleting label": [
+        "Smazat štítek"
       ]
     },
     "action": {
@@ -4812,6 +4818,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
+      ],
+      "No address with sending permissions": [
+        "Žádná adresa s oprávněním odesílat"
+      ],
+      "Permissions request failed.": [
+        "Požadavek o oprávnění selhal."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8705,6 +8717,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "V doručené poště nejsou žádné zprávy od tohoto odesílatele."
+      ],
+      "Dedicated VPN servers": [
+        "Dedikované servery VPN"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Počet dedikovaných serverů VPN v organizaci"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Ztratíte také přístup k funkcím ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -11478,6 +11499,12 @@
       ],
       "Your subscription renews soon": [
         "Vaše předplatné se brzy obnoví"
+      ],
+      "Don’t show this again": [
+        "Příště již nezobrazovat"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Získejte ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11504,6 +11531,18 @@
       ],
       "Storage": [
         "Úložiště"
+      ],
+      "500 GB secure storage": [
+        "500 GB bezpečného úložiště"
+      ],
+      "Advanced threat protection": [
+        "Pokročilá ochrana před hrozbami"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Nejrychlejší servery VPN ve 110+ zemích"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Neomezený počet aliasů pro ochranu vaší identity"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11634,6 +11673,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Vaše doména a předplatné jsou připraveny k použití."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } znamená, že v našich aplikacích nikdy neuvidíte sponzorované reklamy."
+      ],
+      "Ad-free promise": [
+        "Slib bez reklam"
       ]
     },
     "Onboarding Proton": {
@@ -11882,6 +11927,9 @@
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12946,6 +12994,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Navýšit za ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Bezpečné prohlížení"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Získejte více s ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Získejte neomezený počet aliasů"
+      ],
+      "Guard against threats": [
+        "Chraňte se před hrozbami"
+      ],
+      "Increase your storage": [
+        "Navyšte své úložiště"
+      ],
+      "Keep passwords safe": [
+        "Udržujte hesla v bezpečí"
+      ],
+      "Unblock streaming content": [
+        "Odblokujte streamování obsahu"
       ]
     },
     "specialoffer: Offers": {
@@ -13022,6 +13091,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Navyšte tarif a ušetřete více s 2 roky ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Přístup k obsahu ve streamovacích službách po celém světě"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Získejte 500 GB pro bezpečné uložení všech svých souborů a fotek"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Získejte přístup k nejrychlejším serverům VPN ve více než 110 zemích"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Získejte jeden tarif, který zahrnuje vše. Získejte ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Získejte neomezený počet aliasů pro ochranu své identity a snížení spamu"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Uchovávejte svá hesla v bezpečí a uspořádaná ve více trezorech "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Chraňte svůj účet před hrozbami pomocí programu Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -16051,6 +16141,32 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Předplatné zrušeno."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Šifrovaný správce hesel"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - karta končící čísly ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankovní převod - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/měsíčně"
+      ],
+      "Only": [
+        "Pouze"
       ]
     }
   }

@@ -1612,6 +1612,12 @@
       ],
       "Stop moving to Trash": [
         "Parar de mover para a lixeira"
+      ],
+      "Deleting folder": [
+        "Excluir pasta"
+      ],
+      "Deleting label": [
+        "Excluir marcador"
       ]
     },
     "action": {
@@ -4753,6 +4759,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "No address with sending permissions": [
+        "Nenhum endereço com permissões de envio"
+      ],
+      "Permissions request failed.": [
+        "Falha na solicitação de permissões."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8426,6 +8438,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "Não há mensagens deste remetente na sua caixa de entrada."
+      ],
+      "Dedicated VPN servers": [
+        "Servidores de VPN dedicados"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados na organização."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Você também perderá o acesso ao ${ boldPlanTitle } recursos:"
       ]
     },
     "info": {
@@ -11113,6 +11134,12 @@
       ],
       "Your subscription renews soon": [
         "Sua assinatura renovará em breve"
+      ],
+      "Don’t show this again": [
+        "Não exibir novamente"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Obtenha o ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11139,6 +11166,18 @@
       ],
       "Storage": [
         "Armazenamento"
+      ],
+      "500 GB secure storage": [
+        "500 GB de armazenamento seguro"
+      ],
+      "Advanced threat protection": [
+        "Proteção avançada contra ameaças"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Servidores VPN ultrarrápidos em mais de 110 países"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Aliases ilimitados para proteger a sua identidade"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11275,6 +11314,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Seu domínio e assinatura estão prontos para uso."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } significa que você nunca verá anúncios patrocinados em nossos aplicativos."
+      ],
+      "Ad-free promise": [
+        "Promessa sem anúncios"
       ]
     },
     "Onboarding Proton": {
@@ -11527,6 +11572,9 @@
       ],
       "PayPal": [
         "PayPal"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12533,6 +12581,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Faça upgrade para o ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Navega com segurança"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Supere seus limites com a ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Obtenha aliases ilimitados"
+      ],
+      "Guard against threats": [
+        "Proteja-se contra ameaças"
+      ],
+      "Increase your storage": [
+        "Aumente seu armazenamento"
+      ],
+      "Keep passwords safe": [
+        "Mantenha as suas senhas seguras"
+      ],
+      "Unblock streaming content": [
+        "Desfrute do streaming sem limites"
       ]
     },
     "specialoffer: Offers": {
@@ -12607,6 +12676,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Faça upgrade e economize mais com 2 anos de ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Acesse conteúdo de serviços de streaming em todo o mundo"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Obtenha 500 GB para armazenar com segurança todos os seus arquivos e fotos"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Tenha acesso a servidores VPN ultra-rápidos em mais de 110 países"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Obtenha um plano que inclui tudo: o ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Obtenha aliases ilimitados para proteger a sua identidade e reduzir spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Mantenha suas senhas seguras e organizadas em vários cofres "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Proteja sua conta contra ameaças com o Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -15414,6 +15504,32 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Assinatura cancelada."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Gerenciador de senhas criptografadas"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferência bancária - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mês"
+      ],
+      "Only": [
+        "Somente"
       ]
     }
   }

@@ -1609,6 +1609,12 @@
       ],
       "Stop moving to Trash": [
         "Smetti di spostare nel cestino"
+      ],
+      "Deleting folder": [
+        "Eliminazione cartella"
+      ],
+      "Deleting label": [
+        "Eliminazione dell'etichetta"
       ]
     },
     "action": {
@@ -11110,6 +11116,12 @@
       ],
       "Your subscription renews soon": [
         "Il tuo abbonamento si rinnoverà presto"
+      ],
+      "Don’t show this again": [
+        "Non mostrare più"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Ottieni ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11136,6 +11148,18 @@
       ],
       "Storage": [
         "Archiviazione"
+      ],
+      "500 GB secure storage": [
+        "500 GB di archiviazione sicura"
+      ],
+      "Advanced threat protection": [
+        "Protezione avanzata dalle minacce"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Server VPN ultraveloci in oltre 110 paesi"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Alias illimitati per proteggere la tua identità"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11512,6 +11536,9 @@
       ],
       "New credit/debit card": [
         "Nuova carta di credito/debito"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12518,6 +12545,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Effettua l'upgrade per ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Naviga in sicurezza"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Supera i tuoi limiti grazie a ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Ottieni alias illimitati"
+      ],
+      "Guard against threats": [
+        "Proteggiti dalle minacce"
+      ],
+      "Increase your storage": [
+        "Aumenta il tuo spazio di archiviazione"
+      ],
+      "Keep passwords safe": [
+        "Tieni le tue password al sicuro"
+      ],
+      "Unblock streaming content": [
+        "Goditi lo streaming senza limiti"
       ]
     },
     "specialoffer: Offers": {
@@ -12592,6 +12640,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Effettua l'upgrade e risparmia ancora di più con 2 anni di ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Accedi ai contenuti di servizi di streaming in tutto il mondo"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Ottieni 500 GB per archiviare in modo sicuro tutti i tuoi file e foto"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Accedi a server VPN ultraveloci in oltre 110 paesi"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Ottieni un piano che include tutto: ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Ottieni alias illimitati per proteggere la tua identità e ridurre lo spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Mantieni le tue password al sicuro e organizzate in varie casseforti "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Proteggi il tuo account dalle minacce con Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -15399,6 +15468,27 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Gestore di password crittografato"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - carta che termina con ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bonifico bancario - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mese"
+      ],
+      "Only": [
+        "Solo"
       ]
     }
   }
