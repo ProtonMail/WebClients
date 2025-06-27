@@ -1,12 +1,13 @@
 import { select } from 'redux-saga/effects';
 
-import { WEBSITE_RULES_URL } from '@proton/pass/constants';
-import { validateRules } from '@proton/pass/lib/extension/utils/website-rules';
+import { WEBSITE_RULES_EXPERIMENTAL_URL, WEBSITE_RULES_URL } from '@proton/pass/constants';
+import { validateRules } from '@proton/pass/lib/extension/rules/rules';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import type { RequestEntry, RequestStatus } from '@proton/pass/store/request/types';
-import { selectRequest } from '@proton/pass/store/selectors';
+import { selectFeatureFlag, selectRequest } from '@proton/pass/store/selectors';
 import type { Maybe } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { msToEpoch } from '@proton/pass/utils/time/epoch';
 
 /* Don't fetch if the rules were not modified since our last fetch */
@@ -22,14 +23,16 @@ const revalidateWebsiteRules = async (lastRequestedAt: number): Promise<boolean>
 export default createRequestSaga({
     actions: resolveWebsiteRules,
     call: function* (_, { getStorage }) {
-        const lastRequest: Maybe<RequestEntry<RequestStatus>> = yield select(
-            selectRequest(resolveWebsiteRules.requestID())
-        );
+        const requestId = resolveWebsiteRules.requestID();
+        const lastRequest: Maybe<RequestEntry<RequestStatus>> = yield select(selectRequest(requestId));
         const lastRequestedAt = lastRequest?.status === 'success' ? lastRequest.requestedAt : 0;
 
         if (yield revalidateWebsiteRules(lastRequestedAt)) {
-            const response: Response = yield fetch(WEBSITE_RULES_URL);
+            const experimental: boolean = yield select(selectFeatureFlag(PassFeature.PassExperimentalWebsiteRules));
+            const url = experimental ? WEBSITE_RULES_EXPERIMENTAL_URL : WEBSITE_RULES_URL;
+            const response: Response = yield fetch(url);
             const rules: unknown = yield response.json();
+
             if (validateRules(rules)) yield getStorage?.().setItem('websiteRules', JSON.stringify(rules));
         }
 
