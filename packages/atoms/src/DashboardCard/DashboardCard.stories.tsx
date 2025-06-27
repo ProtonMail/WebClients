@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { DashboardCard } from '..';
+import { DashboardCard } from './DashboardCard';
 
 const meta: Meta<typeof DashboardCard> = {
     args: {

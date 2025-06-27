@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeColor } from '@proton/colors/types';
 
-import { Card, NotificationDot, type NotificationDotProps } from '..';
+import { Card } from '../Card/Card';
+import { NotificationDot, type NotificationDotProps } from './NotificationDot';
 
 const meta: Meta<typeof NotificationDot> = {
     args: {

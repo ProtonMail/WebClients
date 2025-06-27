@@ -9,7 +9,7 @@ export type AvatarProps<E extends ElementType> = PolymorphicPropsWithoutRef<{ co
 
 const defaultElement = 'span';
 
-const Avatar = <E extends ElementType = typeof defaultElement>({
+export const Avatar = <E extends ElementType = typeof defaultElement>({
     className: classNameProp,
     color,
     as,
@@ -23,5 +23,3 @@ const Avatar = <E extends ElementType = typeof defaultElement>({
     const Element: ElementType = as || defaultElement;
     return <Element className={className} {...rest} aria-hidden="true" />;
 };
-
-export default Avatar;

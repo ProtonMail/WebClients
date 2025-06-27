@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import Kbd from './Kbd';
+import { Kbd } from './Kbd';
 
 describe('<Kbd />', () => {
     it('should render with className kbd and additional className', () => {

@@ -36,5 +36,3 @@ export const PanelHeader: FC<Props> = ({ className, actions, ...props }) => {
         </header>
     );
 };
-
-export default PanelHeader;
