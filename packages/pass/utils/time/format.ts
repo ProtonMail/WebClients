@@ -68,12 +68,46 @@ export const epochToRemainingDuration = (epoch: number, options?: RemainingDurat
     return format(epochToRelativeDuration(epoch));
 };
 
-export const formatTimestamp = (timestamp: string): Maybe<string> => {
+/** Creates a Date object from a YYYY-MM-DD string in the user's local timezone.
+ * This function avoids timezone drift issues that occur when using the Date constructor
+ * with ISO date strings. The Date constructor interprets 'YYYY-MM-DD' as UTC midnight,
+ * which then gets converted to local time and can shift to the previous day.
+ *
+ * ```
+ * new Date('1990-12-14')
+ * > Thu Dec 13 1990 19:00:00 GMT-0500 (EST) -- Wrong day
+ *
+ * dateFromYYYYMMDD('1990-12-14')
+ * > Fri Dec 14 1990 00:00:00 GMT-0500 (EST) -- Correct day
+ * ```
+ */
+export const dateFromYYYYMMDD = (yyyymmdd: string): Maybe<Date> => {
+    if (!/^\d{4}-\d{1,2}-\d{1,2}$/.test(yyyymmdd)) return;
+    const [year, month, day] = yyyymmdd.split('-').map(Number);
+    const date = new Date(year, month - 1, day);
+
+    if (isFinite(date.getTime())) return date;
+};
+
+/** Formats a `YYYY-MM-DD` date string into a human-readable format.
+ * Avoids timezone drift by using `dateFromYYYYMMDD` internally. */
+export const formatYYYYMMDD = (yyyymmdd: string): Maybe<string> => {
     try {
-        return format(new Date(timestamp), 'PP', { locale: dateLocale });
+        const date = dateFromYYYYMMDD(yyyymmdd);
+        if (date) return format(date, 'PP', { locale: dateLocale });
     } catch {}
 };
 
-export const formatPlaceholder = () => format(new Date(new Date().getFullYear(), 11, 31), 'P', { locale: dateLocale });
-
+/** Formats a Date object to ISO date string (YYYY-MM-DD format) in UTC. */
 export const formatISODate = (date: Date) => formatISO(date).split('T')[0];
+
+/** Creates a sample date using December 31st of the current year to demonstrate
+ * the date format to users. Uses day 31 to avoid ambiguity between month/day
+ * ordering in different locales (since no month has 31 as a valid month number).
+ *
+ * ```
+ * formatPlaceholder() // → "12/31/2024" (in en-US)
+ * formatPlaceholder() // → "31/12/2024" (in en-GB)
+ * ```
+ */
+export const formatPlaceholder = () => format(new Date(new Date().getFullYear(), 11, 31), 'P', { locale: dateLocale });
