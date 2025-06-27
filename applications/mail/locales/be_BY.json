@@ -7330,7 +7330,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8810,6 +8813,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "Няма паведамленняў ад гэтага адпраўніка ў вашай паштовай скрыні."
+      ],
+      "Dedicated VPN servers": [
+        "Вылучаныя VPN серверы"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Колькасць вылучаных VPN сервераў у арганізацыі"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Вы таксама страціце доступ да функцый ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -16057,6 +16069,11 @@
       ],
       "Only": [
         "Толькі"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Падпіска скасавана."
       ]
     }
   }

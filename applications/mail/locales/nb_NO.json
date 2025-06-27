@@ -4868,6 +4868,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "No address with sending permissions": [
+        "Ingen adresse med tillatelser for sending"
+      ],
+      "Permissions request failed.": [
+        "Forespørsel om tillatelser mislyktes."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7102,7 +7108,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8532,6 +8539,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "Det er ingen meldinger fra denne avsenderen i innboksen din."
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-tjenere"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antall dedikerte VPN-tjenere i organisasjonen"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
       ]
     },
     "info": {
@@ -11366,6 +11382,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Domenet og abonnementet ditt er klart til bruk."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } : appene våre vil aldri vise sponsede annonser."
+      ],
+      "Ad-free promise": [
+        "Vår forpliktelse til reklamefrie tjenester"
       ]
     },
     "Onboarding Proton": {
@@ -15407,6 +15429,11 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankoverføring - ${ details }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonnement kansellert."
       ]
     }
   }

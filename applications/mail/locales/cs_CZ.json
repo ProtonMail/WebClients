@@ -4948,6 +4948,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
+      ],
+      "No address with sending permissions": [
+        "Žádná adresa s oprávněním odesílat"
+      ],
+      "Permissions request failed.": [
+        "Požadavek o oprávnění selhal."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7346,7 +7352,10 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8826,6 +8835,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "V doručené poště nejsou žádné zprávy od tohoto odesílatele."
+      ],
+      "Dedicated VPN servers": [
+        "Dedikované servery VPN"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Počet dedikovaných serverů VPN v organizaci"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Ztratíte také přístup k funkcím ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -11752,6 +11770,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Vaše doména a předplatné jsou připraveny k použití."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } znamená, že v našich aplikacích nikdy neuvidíte sponzorované reklamy."
+      ],
+      "Ad-free promise": [
+        "Slib bez reklam"
       ]
     },
     "Onboarding Proton": {
@@ -16078,6 +16102,11 @@
       ],
       "Only": [
         "Pouze"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Předplatné zrušeno."
       ]
     }
   }

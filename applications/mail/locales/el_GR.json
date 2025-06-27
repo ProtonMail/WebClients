@@ -4868,6 +4868,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "No address with sending permissions": [
+        "Δεν υπάρχει διεύθυνση με δικαιώματα αποστολής"
+      ],
+      "Permissions request failed.": [
+        "Το αίτημα αδειών απέτυχε."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7102,7 +7108,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8532,6 +8539,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "Δεν υπάρχουν μηνύματα από αυτόν τον αποστολέα στα εισερχόμενά σας."
+      ],
+      "Dedicated VPN servers": [
+        "Αποκλειστικοί διακομιστές VPN"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Αριθμός αποκλειστικών διακομιστών VPN στον οργανισμό"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Θα χάσετε επίσης την πρόσβαση στις δυνατότητες του ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -11366,6 +11382,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Ο τομέας και η συνδρομή σας είναι έτοιμα για χρήση."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } σημαίνει ότι δεν θα δείτε ποτέ διαφημίσεις χορηγών στις εφαρμογές μας."
+      ],
+      "Ad-free promise": [
+        "Υπόσχεση χωρίς διαφημίσεις"
       ]
     },
     "Onboarding Proton": {
@@ -15407,6 +15429,11 @@
       ],
       "Only": [
         "Μόνο"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Η συνδρομή ακυρώθηκε."
       ]
     }
   }
