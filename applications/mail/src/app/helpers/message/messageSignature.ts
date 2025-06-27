@@ -1,4 +1,5 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { containsHTMLTag, replaceLineBreaks } from '@proton/mail/helpers/string';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
@@ -10,7 +11,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { dedentTpl } from '../dedent';
 import { isHTMLEmpty } from '../dom';
-import { containsHTMLTag, replaceLineBreaks } from '../string';
 import { exportPlainText, getPlainTextContent } from './messageContent';
 import { CLASSNAME_BLOCKQUOTE } from './messageDraft';
 

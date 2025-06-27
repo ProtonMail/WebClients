@@ -6,6 +6,7 @@ import { useApi, useAuthentication } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
+import { useBase64Cache } from '@proton/mail/hooks/useBase64Cache';
 import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
@@ -51,7 +52,6 @@ import {
 } from '../../store/messages/read/messagesReadActions';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useGetAttachment } from '../attachments/useAttachment';
-import { useBase64Cache } from '../useBase64Cache';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useKeyVerification } from './useKeyVerification';
 import { useGetMessage } from './useMessage';
