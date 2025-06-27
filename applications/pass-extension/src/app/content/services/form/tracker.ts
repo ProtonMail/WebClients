@@ -14,7 +14,7 @@ import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
-import { FieldType, kButtonSubmitSelector } from '@proton/pass/fathom';
+import { FieldType, isBtnCandidate, kButtonSubmitSelector } from '@proton/pass/fathom';
 import browser from '@proton/pass/lib/globals/browser';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 import type { AutosaveFormEntry, FormCredentials, MaybeNull } from '@proton/pass/types';
@@ -222,8 +222,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         /* Trigger focus on empty active field to open dropdown :
          * Handles autofocused simple forms and dynamically added fields.
          * Note: This doesn't trigger a real DOM focus event. */
-        form
-            .getFields()
+        form.getFields()
             .find((field) => field.element === document.activeElement && !field.value)
             ?.focus();
     });
@@ -307,9 +306,9 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     listeners.addListener(form.element, 'submit', onSubmit);
     browser.runtime.onMessage.addListener(onTabMessage);
 
-    form.element
-        .querySelectorAll<HTMLButtonElement>(kButtonSubmitSelector)
-        .forEach((button) => listeners.addListener(button, 'click', onSubmit));
+    Array.from(form.element.querySelectorAll<HTMLButtonElement>(kButtonSubmitSelector))
+        .filter(isBtnCandidate)
+        .forEach((btn) => listeners.addListener(btn, 'click', onSubmit));
 
     return { detach, getState: () => state, reconciliate, reset, sync };
 };
