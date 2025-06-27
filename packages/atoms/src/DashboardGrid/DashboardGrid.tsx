@@ -91,7 +91,7 @@ export const DashboardGridSectionHeader = ({
     );
 };
 
-const DashboardGrid = <E extends ElementType = typeof defaultElement>({
+export const DashboardGrid = <E extends ElementType = typeof defaultElement>({
     className,
     as,
     children,
@@ -112,5 +112,3 @@ const DashboardGrid = <E extends ElementType = typeof defaultElement>({
         </Element>
     );
 };
-
-export default DashboardGrid;

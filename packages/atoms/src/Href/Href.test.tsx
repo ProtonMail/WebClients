@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import Href from './Href';
+import { Href } from './Href';
 
 describe('<Href />', () => {
     it('defaults href to #', () => {

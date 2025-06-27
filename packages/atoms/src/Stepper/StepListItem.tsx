@@ -8,7 +8,7 @@ export interface StepListItemProps extends ComponentPropsWithoutRef<'li'> {
     complete: boolean;
 }
 
-const StepListItem = ({ firstItem, active, complete, children, className, ...rest }: StepListItemProps) => {
+export const StepListItem = ({ firstItem, active, complete, children, className, ...rest }: StepListItemProps) => {
     return (
         <li
             {...rest}
@@ -24,5 +24,3 @@ const StepListItem = ({ firstItem, active, complete, children, className, ...res
         </li>
     );
 };
-
-export default StepListItem;

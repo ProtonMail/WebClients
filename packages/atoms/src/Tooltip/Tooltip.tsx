@@ -227,6 +227,4 @@ const TooltipBase = (
     );
 };
 
-const Tooltip = forwardRef<HTMLElement, Props>(TooltipBase);
-
-export default Tooltip;
+export const Tooltip = forwardRef<HTMLElement, Props>(TooltipBase);

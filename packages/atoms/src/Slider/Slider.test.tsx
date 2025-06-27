@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import Slider from './Slider';
+import { Slider } from './Slider';
 
 describe('<Slider />', () => {
     it('renders min and max mark labels', () => {
