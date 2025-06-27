@@ -1,5 +1,9 @@
-import { base64Cache, clearAll } from '../../test/helper';
-import { attachBase64, transformEscape } from '../transformEscape';
+import type { Base64Cache } from '@proton/mail/hooks/useBase64Cache';
+import createCache from '@proton/shared/lib/helpers/cache';
+
+import { attachBase64, removeBase64, transformEscape } from './transformEscape';
+
+const base64Cache = createCache<string, string>() as Base64Cache;
 
 describe('transformEscape', () => {
     const babase64 = `src="data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAABoIAAAVSCAYAAAAisOk2AAAMS2lDQ1BJQ0MgUHJv
@@ -146,7 +150,10 @@ describe('transformEscape', () => {
         return { document: doc, querySelector, querySelectorAll };
     };
 
-    afterEach(clearAll);
+    afterEach(() => {
+        jest.clearAllMocks();
+        base64Cache.clear();
+    });
 
     describe('Replace base64', () => {
         describe('No syntax hightlighting', () => {
@@ -584,6 +591,23 @@ describe('transformEscape', () => {
                 // Test content is preserved
                 expect(textareaElement?.textContent).toBe('Initial content');
             });
+        });
+    });
+});
+
+describe('Transform escape tests', () => {
+    describe('Remove base 64 tests', () => {
+        it('should remove png', () => {
+            const pngInput = `<p>hello</p><img src="data:image/png;base64,IMAGE_DATA"`;
+            const result = removeBase64(pngInput);
+            expect(result).not.toContain('img src="data:image/png;base64,IMAGE_DATA"');
+            expect(result).toContain('<img data-proton-replace-base');
+        });
+        it('should remove svg', () => {
+            const svgInput = `<p>hello</p><img src="data:image/svg+xml;base64,IMAGE_DATA"`;
+            const result = removeBase64(svgInput);
+            expect(result).not.toContain('img src="data:image/svg+xml;base64,IMAGE_DATA"');
+            expect(result).toContain('<img data-proton-replace-base');
         });
     });
 });

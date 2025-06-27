@@ -1,6 +1,7 @@
 import TurndownService from 'turndown';
 
-import { removeLineBreaks } from 'proton-mail/helpers/string';
+import { removeLineBreaks } from '@proton/mail/helpers/string';
+
 import {
     DEFAULT_TAGS_TO_DISABLE,
     escapeBackslash,
