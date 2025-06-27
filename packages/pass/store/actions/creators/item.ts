@@ -80,10 +80,10 @@ export const itemCreate = requestActionsFactory<ItemCreateIntent, ItemCreateSucc
 
 export const itemCreateDismiss = createOptimisticAction(
     'item::creation::dismiss',
-    (payload: { optimisticId: string; shareId: string; item: ItemRevision }) =>
+    (payload: { optimisticId: string; shareId: string; itemName: string }) =>
         withNotification({
             type: 'info',
-            text: c('Info').t`"${payload.item.data.metadata.name}" item was dismissed`,
+            text: c('Info').t`"${payload.itemName}" item was dismissed`,
         })({ payload }),
     ({ payload }) => getItemEntityID(payload)
 );
@@ -115,10 +115,10 @@ export const itemEdit = requestActionsFactory<ItemEditIntent, { item: ItemRevisi
 
 export const itemEditDismiss = createOptimisticAction(
     'item::edit::dismiss',
-    (payload: { itemId: string; shareId: string; item: ItemRevision }) =>
+    (payload: { itemId: string; shareId: string; itemName: string }) =>
         withNotification({
             type: 'info',
-            text: c('Info').t`"${payload.item.data.metadata.name}" update was dismissed`,
+            text: c('Info').t`"${payload.itemName}" update was dismissed`,
         })({ payload }),
     ({ payload }) => getItemEntityID(payload)
 );

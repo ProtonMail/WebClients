@@ -4,7 +4,7 @@ import { syncAliasMailboxes, syncAliasName, syncAliasSLNote } from '@proton/pass
 import { hasAttachments, hasHadAttachments } from '@proton/pass/lib/items/item.predicates';
 import { editItem } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import { aliasDetailsSync, filesResolve, itemEdit } from '@proton/pass/store/actions';
+import { aliasDetailsSync, filesResolve, itemEdit, itemEditDismiss } from '@proton/pass/store/actions';
 import type { AliasDetailsState, AliasState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { itemLinkPendingFiles } from '@proton/pass/store/sagas/items/item-files.sagas';
@@ -12,8 +12,10 @@ import {
     selectAliasDetails,
     selectAliasOptions,
     selectItem,
+    selectItemOrThrow,
     selectMailboxesForAlias,
 } from '@proton/pass/store/selectors';
+import { SelectorError } from '@proton/pass/store/selectors/errors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemEditIntent, ItemRevision, Maybe } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
@@ -70,8 +72,12 @@ function* itemEditWorker(options: RootSagaOptions, { payload: editIntent, meta }
     const { itemId, shareId, lastRevision, files } = editIntent;
     const { onItemsUpdated, getTelemetry } = options;
     const telemetry = getTelemetry();
+    const itemName = editIntent.metadata.name;
 
     try {
+        /** assert item exists */
+        yield select(selectItemOrThrow(shareId, itemId));
+
         if (editIntent.type === 'alias' && editIntent.extraData?.aliasOwner) yield call(aliasEditWorker, editIntent);
 
         let item: ItemRevision = yield editItem(editIntent, lastRevision);
@@ -96,8 +102,9 @@ function* itemEditWorker(options: RootSagaOptions, { payload: editIntent, meta }
         }
 
         onItemsUpdated?.();
-    } catch (err) {
-        yield put(itemEdit.failure(meta.request.id, err, { itemId, shareId }));
+    } catch (error) {
+        if (error instanceof SelectorError) yield put(itemEditDismiss({ itemId, shareId, itemName }));
+        yield put(itemEdit.failure(meta.request.id, error, { itemId, shareId }));
     }
 }
 

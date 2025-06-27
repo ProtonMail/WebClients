@@ -1,4 +1,4 @@
-import { type FC, useEffect, useMemo, useRef } from 'react';
+import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -44,6 +44,9 @@ export const Autosave: FC<Props> = ({ data }) => {
 
     const [busy, setBusy] = useMountedState(false);
     const prev = usePrevious(data);
+
+    /** Track failed auto-save attempts */
+    const [attempts, setAttempt] = useState<number>(0);
 
     const shouldUpdate = useMemo(() => {
         /** The autosave data may get revalidated in certain cases :
@@ -111,7 +114,10 @@ export const Autosave: FC<Props> = ({ data }) => {
                     if (result.type === 'success') {
                         onTelemetry(TelemetryEventName.AutosaveDone, {}, {});
                         controller.close?.({ discard: true });
-                    } else createNotification({ text: c('Warning').t`Unable to save`, type: 'error' });
+                    } else {
+                        setAttempt((prev) => prev + 1);
+                        createNotification({ text: c('Warning').t`Unable to save`, type: 'error' });
+                    }
                 })
                 .catch(noop)
                 .finally(() => setBusy(false));
@@ -153,6 +159,9 @@ export const Autosave: FC<Props> = ({ data }) => {
                                         component={AutosaveVaultPicker}
                                         fallback={c('Info').t`Save login`}
                                         anchorRef={vaultPickerAnchor}
+                                        /** Refresh vault picker options on each
+                                         * failed attempt in case vault deleted */
+                                        key={attempts}
                                     />
                                 );
                             case AutosaveMode.UPDATE:
