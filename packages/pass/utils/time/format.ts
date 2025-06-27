@@ -68,9 +68,16 @@ export const epochToRemainingDuration = (epoch: number, options?: RemainingDurat
     return format(epochToRelativeDuration(epoch));
 };
 
-export const formatTimestamp = (timestamp: string): Maybe<string> => {
+export const dateFromYYYYMMDD = (yyyymmdd: string): Date => {
+    const [year, month, day] = yyyymmdd.split('-').map(Number);
+    return new Date(year, month - 1, day);
+};
+
+/** Timestamp here must be YYYY-MM-DD */
+export const formatYYYYMMDD = (yyyymmdd: string): Maybe<string> => {
     try {
-        return format(new Date(timestamp), 'PP', { locale: dateLocale });
+        const date = dateFromYYYYMMDD(yyyymmdd);
+        return format(date, 'PP', { locale: dateLocale });
     } catch {}
 };
 

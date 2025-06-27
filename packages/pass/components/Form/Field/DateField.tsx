@@ -8,7 +8,7 @@ import { type Input } from '@proton/atoms';
 import { DateInputTwo, InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { type Maybe } from '@proton/pass/types/utils';
-import { formatISODate, formatPlaceholder } from '@proton/pass/utils/time/format';
+import { dateFromYYYYMMDD, formatISODate, formatPlaceholder } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 
 export type Props = FieldProps<string> & InputFieldProps<typeof Input>;
@@ -35,10 +35,7 @@ const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
     const formattedPlaceholder = useMemo(formatPlaceholder, []);
 
     const dateValue = useMemo<Maybe<Date>>(() => {
-        if (value) {
-            const date = new Date(value);
-            if (isFinite(date.getTime())) return date;
-        }
+        if (value) return dateFromYYYYMMDD(value);
     }, [value]);
 
     const handleDateChange = (date: Maybe<Date>): void => {
