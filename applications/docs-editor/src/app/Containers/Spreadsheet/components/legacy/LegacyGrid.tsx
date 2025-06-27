@@ -1,7 +1,9 @@
+import type { CanvasGridMethods } from '@rowsncolumns/spreadsheet'
 import { CanvasGrid } from '@rowsncolumns/spreadsheet'
 import type { ProtonSheetsState } from '../../state'
 import { functionDescriptions } from '@rowsncolumns/functions'
 import { ChartComponent } from '@rowsncolumns/charts'
+import { isDevOrBlack } from '@proton/utils/env'
 
 export type LegacyGridProps = {
   state: ProtonSheetsState
@@ -11,10 +13,18 @@ export type LegacyGridProps = {
   userName: string
 }
 
+const exposeCanvasGrid = (instance: CanvasGridMethods | null) => {
+  // Expose CanvasGrid to global window for e2e testing only in non-production environments
+  if (typeof window !== 'undefined' && instance && isDevOrBlack()) {
+    ;(window as any).spreadsheet = instance
+  }
+}
+
 export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridProps) {
   return (
     <CanvasGrid
       {...state.spreadsheetColors}
+      ref={exposeCanvasGrid}
       borderStyles={state.searchState.borderStyles}
       scale={state.scale}
       conditionalFormats={state.conditionalFormats}
