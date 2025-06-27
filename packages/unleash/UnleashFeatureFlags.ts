@@ -26,6 +26,7 @@ enum CommonFeatureFlag {
     DarkWebEmailNotifications = 'DarkWebEmailNotifications',
     InboxWebPostSubscriptionFlow = 'InboxWebPostSubscriptionFlow',
     NewCancellationFlowUpsell = 'NewCancellationFlowUpsell',
+    GoUnlimitedOffer2025 = 'GoUnlimitedOffer2025',
     ScribeAdminSetting = 'ScribeAdminSetting',
     SelfTroubleshoot = 'SelfTroubleshoot',
     WalletAztecoWeb = 'WalletAztecoWeb',
