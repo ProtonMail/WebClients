@@ -4,6 +4,8 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { useApi } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
+import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
+import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
 import type {
     LoadEmbeddedResults,
     MessageErrors,
@@ -23,8 +25,6 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { isNetworkError } from '../../helpers/errors';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
-import type { Preparation } from '../../helpers/transforms/transforms';
-import { prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
 import {
     EODocumentInitializeFulfilled,
     EODocumentInitializePending,
