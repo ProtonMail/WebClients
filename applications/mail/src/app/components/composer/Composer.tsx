@@ -9,6 +9,7 @@ import { useHandler, useLocalState, useSubscribeEventManager } from '@proton/com
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import { removeLineBreaks } from '@proton/mail/helpers/string';
 import type {
     MessageState,
     MessageStateWithData,
@@ -23,7 +24,6 @@ import noop from '@proton/utils/noop';
 
 import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
 import { insertTextBeforeContent, prepareContentToInsert } from 'proton-mail/helpers/message/messageContent';
-import { removeLineBreaks } from 'proton-mail/helpers/string';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
