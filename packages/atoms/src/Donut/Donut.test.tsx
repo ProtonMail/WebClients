@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 
 import { ThemeColor } from '@proton/colors/types';
 
-import Donut from './Donut';
+import { Donut } from './Donut';
 
 describe('<Donut />', () => {
     it('renders specified segments', () => {

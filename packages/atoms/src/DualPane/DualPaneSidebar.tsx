@@ -8,5 +8,3 @@ export const DualPaneSidebar: FC<PropsWithChildren> = ({ children }) => (
         {children}
     </div>
 );
-
-export default DualPaneSidebar;

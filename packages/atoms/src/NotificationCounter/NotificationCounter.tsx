@@ -22,7 +22,13 @@ export interface NotificationCounterProps extends ComponentPropsWithoutRef<'span
     count: number;
 }
 
-const NotificationCounter = ({ className, count, alt, color = ThemeColor.Norm, ...rest }: NotificationCounterProps) => {
+export const NotificationCounter = ({
+    className,
+    count,
+    alt,
+    color = ThemeColor.Norm,
+    ...rest
+}: NotificationCounterProps) => {
     return (
         <span
             className={clsx(className, 'notification-counter flex color-invert absolute rounded-50 text-sm')}
@@ -34,5 +40,3 @@ const NotificationCounter = ({ className, count, alt, color = ThemeColor.Norm, .
         </span>
     );
 };
-
-export default NotificationCounter;

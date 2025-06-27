@@ -2,7 +2,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import type { UserEvent } from '@testing-library/user-event';
 import userEvent from '@testing-library/user-event';
 
-import Tooltip from './Tooltip';
+import { Tooltip } from './Tooltip';
 
 describe('Tooltip', () => {
     let timerUserEvent: UserEvent;

@@ -14,7 +14,7 @@ export type CardProps<E extends ElementType> = PolymorphicPropsWithoutRef<CardOw
 
 const defaultElement = 'div';
 
-const Card = <E extends ElementType = typeof defaultElement>({
+export const Card = <E extends ElementType = typeof defaultElement>({
     className,
     bordered = true,
     rounded = false,
@@ -37,5 +37,3 @@ const Card = <E extends ElementType = typeof defaultElement>({
         />
     );
 };
-
-export default Card;
