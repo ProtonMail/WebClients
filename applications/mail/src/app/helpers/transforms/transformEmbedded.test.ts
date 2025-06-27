@@ -4,7 +4,7 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
-import { transformEmbedded } from '../transformEmbedded';
+import { transformEmbedded } from './transformEmbedded';
 
 const defaultMailSettings = {
     HideEmbeddedImages: SHOW_IMAGES.SHOW,

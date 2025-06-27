@@ -9,6 +9,8 @@ import type {
 } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { transformEmbedded } from 'proton-mail/helpers/transforms/transformEmbedded';
+import { transformRemote } from 'proton-mail/helpers/transforms/transformRemote';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -19,8 +21,6 @@ import {
     handleDispatchLoadRemoteImagesDirect,
     updateImages,
 } from '../../helpers/message/messageImages';
-import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
-import { transformRemote } from '../../helpers/transforms/transformRemote';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
 import { useGetAttachment } from '../attachments/useAttachment';

@@ -1,5 +1,6 @@
-import { removeLineBreaks } from 'proton-mail/helpers/string';
-import { transformAnchors } from 'proton-mail/helpers/transforms/transforAnchors';
+import { removeLineBreaks } from '@proton/mail/helpers/string';
+
+import { transformAnchors } from './transformAnchors';
 
 describe('transformAnchors', () => {
     const id = 'linkId';

@@ -4,6 +4,9 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { useApi, useAuthentication } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
+import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
+import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
+import { useBase64Cache } from '@proton/mail/hooks/useBase64Cache';
 import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
@@ -22,6 +25,8 @@ import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTracker
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import { transformEmbedded } from 'proton-mail/helpers/transforms/transformEmbedded';
+import { transformRemote } from 'proton-mail/helpers/transforms/transformRemote';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -36,8 +41,6 @@ import {
     handleDispatchLoadRemoteImagesDirect,
 } from '../../helpers/message/messageImages';
 import { loadMessage } from '../../helpers/message/messageRead';
-import type { Preparation } from '../../helpers/transforms/transforms';
-import { prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
@@ -49,7 +52,6 @@ import {
 } from '../../store/messages/read/messagesReadActions';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useGetAttachment } from '../attachments/useAttachment';
-import { useBase64Cache } from '../useBase64Cache';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useKeyVerification } from './useKeyVerification';
 import { useGetMessage } from './useMessage';
@@ -169,6 +171,16 @@ export const useInitializeMessage = () => {
                 const { payload } = await dispatchResult;
                 return payload;
             };
+            const handleTransformAndLoadEmbeddedImages = (document: Element) => {
+                return transformEmbedded(
+                    {
+                        ...message,
+                        messageDocument: { document },
+                    },
+                    mailSettings,
+                    handleLoadEmbeddedImages
+                );
+            };
 
             const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
                 return handleDispatchLoadImagesProxy(localID, imagesToLoad, authentication, dispatch);
@@ -180,6 +192,16 @@ export const useInitializeMessage = () => {
 
             const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
                 return handleDispatchLoadRemoteImagesDirect(localID, imagesToLoad, dispatch);
+            };
+
+            const handleTransformAndLoadRemoteImages = (document: Element) => {
+                return transformRemote(
+                    { ...message, messageDocument: { document } },
+                    mailSettings,
+                    handleLoadRemoteImagesDirect,
+                    handleLoadRemoteImagesProxy,
+                    handleLoadFakeImagesProxy
+                );
             };
 
             const handleCleanUTMTrackers = (utmTrackers: MessageUTMTracker[]) => {
@@ -203,10 +225,8 @@ export const useInitializeMessage = () => {
                       },
                       base64Cache,
                       mailSettings,
-                      handleLoadEmbeddedImages,
-                      handleLoadRemoteImagesProxy,
-                      handleLoadFakeImagesProxy,
-                      handleLoadRemoteImagesDirect,
+                      handleTransformAndLoadEmbeddedImages,
+                      handleTransformAndLoadRemoteImages,
                       handleCleanUTMTrackers
                   );
 

@@ -1,23 +1,19 @@
+import { transformAnchors } from '@proton/mail-renderer/helpers/transforms/transformAnchors';
+import type { Base64Cache } from '@proton/mail/hooks/useBase64Cache';
 import type {
-    LoadEmbeddedResults,
+    MessageEmbeddedImage,
     MessageImage,
     MessageRemoteImage,
     MessageState,
 } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import { transformAnchors } from 'proton-mail/helpers/transforms/transforAnchors';
-
-import type { Base64Cache } from '../../hooks/useBase64Cache';
 import { transformBase } from './transformBase';
-import { transformEmbedded } from './transformEmbedded';
 import { attachBase64, transformEscape } from './transformEscape';
 import { transformLinks } from './transformLinks';
-import { transformRemote } from './transformRemote';
 import { transformStyleAttributes } from './transformStyleAttributes';
 import { transformStylesheet } from './transformStylesheet';
 import { transformWelcome } from './transformWelcome';
@@ -37,10 +33,17 @@ export const prepareHtml = async (
     message: MessageState,
     base64Cache: Base64Cache,
     mailSettings: MailSettings,
-    onLoadEmbeddedImages: (attachments: Attachment[], isDraft?: boolean) => Promise<LoadEmbeddedResults>,
-    onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
-    onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => void,
-    onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void,
+    handleTransformAndLoadEmbeddedImages: (document: Element) => Promise<{
+        showEmbeddedImages: boolean | undefined;
+        embeddedImages: MessageEmbeddedImage[];
+        hasEmbeddedImages: boolean;
+    }>,
+    handleTransformAndLoadRemoteImages: (document: Element) => {
+        document: Document;
+        showRemoteImages: boolean | undefined;
+        remoteImages: MessageRemoteImage[];
+        hasRemoteImages: boolean;
+    },
     onCleanUTMTrackers: (utmTrackers: MessageUTMTracker[]) => void
 ): Promise<Preparation> => {
     const document = transformEscape(message.decryption?.decryptedBody, base64Cache);
@@ -51,11 +54,8 @@ export const prepareHtml = async (
 
     transformAnchors(document);
 
-    const { showEmbeddedImages, hasEmbeddedImages, embeddedImages } = await transformEmbedded(
-        { ...message, messageDocument: { document } },
-        mailSettings,
-        onLoadEmbeddedImages
-    );
+    const { showEmbeddedImages, hasEmbeddedImages, embeddedImages } =
+        await handleTransformAndLoadEmbeddedImages(document);
 
     transformWelcome(document);
 
@@ -63,13 +63,7 @@ export const prepareHtml = async (
 
     transformStyleAttributes(document);
 
-    const { showRemoteImages, hasRemoteImages, remoteImages } = transformRemote(
-        { ...message, messageDocument: { document } },
-        mailSettings,
-        onLoadRemoteImagesDirect,
-        onLoadRemoteImagesProxy,
-        onLoadFakeImagesProxy
-    );
+    const { showRemoteImages, hasRemoteImages, remoteImages } = handleTransformAndLoadRemoteImages(document);
 
     attachBase64(document, base64Cache);
 

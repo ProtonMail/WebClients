@@ -1,4 +1,4 @@
-import { transformStylesheet } from '../transformStylesheet';
+import { transformStylesheet } from './transformStylesheet';
 
 describe('transformStylesheet', () => {
     let element: Element;
