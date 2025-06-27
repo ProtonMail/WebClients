@@ -2,6 +2,7 @@ import { act, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -11,7 +12,6 @@ import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
 import { formatFullDate } from '../helpers/date';
 import { clearAll, getCompleteAddress, minimalCache, render, tick } from '../helpers/test/helper';
-import { preparePlainText } from '../helpers/transforms/transforms';
 import type { OnCompose } from '../hooks/composer/useCompose';
 import { ComposeTypes } from '../hooks/composer/useCompose';
 import { useOnCompose } from './ComposeProvider';
