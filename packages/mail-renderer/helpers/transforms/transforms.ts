@@ -1,4 +1,4 @@
-import { transformAnchors } from '@proton/mail-renderer/helpers/transforms/transforAnchors';
+import { transformAnchors } from '@proton/mail-renderer/helpers/transforms/transformAnchors';
 import type {
     LoadEmbeddedResults,
     MessageImage,

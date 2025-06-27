@@ -1,6 +1,6 @@
 import range from '@proton/utils/range';
 
-import { transformBase } from '../transformBase';
+import { transformBase } from './transformBase';
 
 describe('transformBase service', () => {
     const URL_PROTON = 'https://proton.me';
