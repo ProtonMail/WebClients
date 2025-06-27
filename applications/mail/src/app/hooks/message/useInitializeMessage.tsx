@@ -24,6 +24,8 @@ import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTracker
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import { transformEmbedded } from 'proton-mail/helpers/transforms/transformEmbedded';
+import { transformRemote } from 'proton-mail/helpers/transforms/transformRemote';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -169,6 +171,16 @@ export const useInitializeMessage = () => {
                 const { payload } = await dispatchResult;
                 return payload;
             };
+            const handleTransformAndLoadEmbeddedImages = (document: Element) => {
+                return transformEmbedded(
+                    {
+                        ...message,
+                        messageDocument: { document },
+                    },
+                    mailSettings,
+                    handleLoadEmbeddedImages
+                );
+            };
 
             const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
                 return handleDispatchLoadImagesProxy(localID, imagesToLoad, authentication, dispatch);
@@ -180,6 +192,16 @@ export const useInitializeMessage = () => {
 
             const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
                 return handleDispatchLoadRemoteImagesDirect(localID, imagesToLoad, dispatch);
+            };
+
+            const handleTransformAndLoadRemoteImages = (document: Element) => {
+                return transformRemote(
+                    { ...message, messageDocument: { document } },
+                    mailSettings,
+                    handleLoadRemoteImagesDirect,
+                    handleLoadRemoteImagesProxy,
+                    handleLoadFakeImagesProxy
+                );
             };
 
             const handleCleanUTMTrackers = (utmTrackers: MessageUTMTracker[]) => {
@@ -203,10 +225,8 @@ export const useInitializeMessage = () => {
                       },
                       base64Cache,
                       mailSettings,
-                      handleLoadEmbeddedImages,
-                      handleLoadRemoteImagesProxy,
-                      handleLoadFakeImagesProxy,
-                      handleLoadRemoteImagesDirect,
+                      handleTransformAndLoadEmbeddedImages,
+                      handleTransformAndLoadRemoteImages,
                       handleCleanUTMTrackers
                   );
 
