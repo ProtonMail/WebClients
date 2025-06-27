@@ -6,6 +6,7 @@ import {
     DrawerVisibilityButton,
     InboxQuickSettingsAppButton,
     PrivateMainArea,
+    useActiveBreakpoint,
 } from '@proton/components';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
@@ -69,10 +70,12 @@ export const RouterMailboxContainer = () => {
     const sort = useMemo<Sort>(() => sortFromUrl(location, labelID), [searchParams.sort, labelID]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
     useScrollToTop(listContainerRef as RefObject<HTMLElement>, [urlPage, labelID, sort, filter, elementsParams.search]);
-
+    const breakpoints = useActiveBreakpoint();
     if (!labelID) {
         return <Redirect to="/inbox" />;
     }
+
+    const viewPortIsNarrow = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
 
     return (
         <MailboxContainerContextProvider
@@ -87,7 +90,7 @@ export const RouterMailboxContainer = () => {
                 settingsButton={<InboxQuickSettingsAppButton />}
                 toolbar={
                     // Show toolbar in header when in row layout and an email is selected
-                    !columnMode && elementID ? (
+                    (!columnMode && elementID) || viewPortIsNarrow ? (
                         <div className="flex flex-nowrap">
                             <MailboxToolbar
                                 inHeader
