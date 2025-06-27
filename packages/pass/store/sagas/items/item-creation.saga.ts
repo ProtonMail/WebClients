@@ -1,13 +1,15 @@
 import type { Action } from 'redux';
-import { all, put, takeEvery } from 'redux-saga/effects';
+import { all, put, select, takeEvery } from 'redux-saga/effects';
 
 import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
 import type { ItemRevisionWithAlias } from '@proton/pass/lib/items/item.requests';
 import { createAlias, createItem, createItemWithAlias } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import { filesResolve, itemCreate } from '@proton/pass/store/actions';
+import { filesResolve, itemCreate, itemCreateDismiss } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { itemLinkPendingFiles } from '@proton/pass/store/sagas/items/item-files.sagas';
+import { selectShareOrThrow } from '@proton/pass/store/selectors';
+import { SelectorError } from '@proton/pass/store/selectors/errors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
@@ -30,8 +32,12 @@ function* singleItemCreationWorker(options: RootSagaOptions, action: ItemCreatio
     const { shareId, optimisticId, files } = createIntent;
     const isAlias = createIntent.type === 'alias';
     const shouldLink = files.toAdd.length > 0;
+    const itemName = action.payload.metadata.name;
 
     try {
+        /** assert share exists */
+        yield select(selectShareOrThrow(shareId));
+
         let item: ItemRevision = yield isAlias ? createAlias(createIntent) : createItem(createIntent);
         if (shouldLink) item = yield itemLinkPendingFiles(item, files, options);
 
@@ -48,6 +54,7 @@ function* singleItemCreationWorker(options: RootSagaOptions, action: ItemCreatio
 
         onItemsUpdated?.();
     } catch (error) {
+        if (error instanceof SelectorError) yield put(itemCreateDismiss({ optimisticId, shareId, itemName }));
         yield put(itemCreate.failure(meta.request.id, error, { optimisticId, shareId }));
     }
 }
