@@ -76,7 +76,6 @@ enum AccountFlag {
     DeleteAccountMergeReason = 'DeleteAccountMergeReason',
     VPNDashboard = 'VPNDashboard',
     PasswordPolicy = 'PasswordPolicy',
-    DwmTrialFree2025 = 'DwmTrialFree2025',
     SsoForPbs = 'SsoForPbs',
     DataRetentionPolicy = 'DataRetentionPolicy',
 }
