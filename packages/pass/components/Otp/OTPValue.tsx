@@ -7,7 +7,7 @@ export const OTPValue: FC<{ code?: string }> = ({ code }) => {
         if (!code || code.length % 3) return code;
         return chunk(Array.from(code), 3)
             .map((part) => part.join(''))
-            .join('•');
+            .join(' ');
     }, [code]);
 
     return <>{formatted}</>;

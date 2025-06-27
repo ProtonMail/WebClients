@@ -1,5 +1,5 @@
 import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
-import type { AutosaveFormEntry, AutosavePayload, Item, SelectedItem } from '@proton/pass/types';
+import type { AutosaveFormEntry, AutosavePayload, Item, LoginItemPreview } from '@proton/pass/types';
 
 import type { IFrameAppService } from './iframe';
 
@@ -12,7 +12,7 @@ export enum NotificationAction {
 
 export type NotificationActions =
     | { action: NotificationAction.AUTOSAVE; data: AutosavePayload }
-    | { action: NotificationAction.OTP; item: SelectedItem }
+    | { action: NotificationAction.OTP; item: LoginItemPreview }
     | {
           action: NotificationAction.PASSKEY_CREATE;
           domain: string;
