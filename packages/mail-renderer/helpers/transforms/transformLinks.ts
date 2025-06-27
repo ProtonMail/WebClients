@@ -1,7 +1,7 @@
 import { getUTMTrackersFromURL } from '@proton/shared/lib/mail/trackers';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import { matches } from '../dom';
+import { matches } from 'proton-mail/helpers/dom';
 
 const PROTOCOLS = ['ftp://', 'http://', 'https://', 'xmpp:', 'tel:', 'callto:'];
 const ALL_PROTOCOLS = PROTOCOLS.concat(['mailto:']);
