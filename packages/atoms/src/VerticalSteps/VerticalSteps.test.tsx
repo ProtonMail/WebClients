@@ -1,8 +1,8 @@
 import type { RenderResult } from '@testing-library/react';
 import { render } from '@testing-library/react';
 
-import VerticalStep, { VerticalStepStatusEnum } from './VerticalStep';
-import VerticalSteps from './VerticalSteps';
+import { VerticalStep, VerticalStepStatusEnum } from './VerticalStep';
+import { VerticalSteps } from './VerticalSteps';
 
 function renderBasicVerticalSteps() {
     return render(

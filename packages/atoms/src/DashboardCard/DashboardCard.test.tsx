@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import DashboardCard, { DashboardCardContent, DashboardCardImage } from './DashboardCard';
+import { DashboardCard, DashboardCardContent, DashboardCardImage } from './DashboardCard';
 
 describe('<DashboardCard />', () => {
     it('renders with a border and background by default', () => {

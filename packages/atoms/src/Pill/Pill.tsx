@@ -12,7 +12,7 @@ export interface PillProps extends ComponentPropsWithoutRef<'span'> {
     className?: string;
 }
 
-const Pill = ({ children, className, color, backgroundColor, ...rest }: PillProps) => {
+export const Pill = ({ children, className, color, backgroundColor, ...rest }: PillProps) => {
     const [text, background] = (() => {
         if (color && backgroundColor) {
             return [color, backgroundColor];
@@ -39,5 +39,3 @@ const Pill = ({ children, className, color, backgroundColor, ...rest }: PillProp
         </span>
     );
 };
-
-export default Pill;

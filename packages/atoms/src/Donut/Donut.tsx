@@ -33,7 +33,7 @@ export interface DonutProps {
     backgroundSegmentColor?: string;
 }
 
-const Donut = ({ segments, gap = 4, backgroundSegmentColor = 'var(--background-strong)' }: DonutProps) => {
+export const Donut = ({ segments, gap = 4, backgroundSegmentColor = 'var(--background-strong)' }: DonutProps) => {
     const uid = useUid('straight-gaps');
 
     const box = 200;
@@ -126,5 +126,3 @@ const Donut = ({ segments, gap = 4, backgroundSegmentColor = 'var(--background-s
         </svg>
     );
 };
-
-export default Donut;

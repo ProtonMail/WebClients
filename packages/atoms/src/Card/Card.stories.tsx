@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button, Card } from '..';
+import { Button } from '../Button/Button';
+import { Card } from './Card';
 
 const meta: Meta<typeof Card> = {
     args: {

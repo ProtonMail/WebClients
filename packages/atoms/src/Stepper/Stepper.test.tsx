@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
-import Step from './Step';
-import Stepper from './Stepper';
+import { Step } from './Step';
+import { Stepper } from './Stepper';
 
 describe('<Stepper />', () => {
     it('renders a label for each item', () => {

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import ProtonLoader, { ProtonLoaderType } from './ProtonLoader';
+import { ProtonLoader, ProtonLoaderType } from './ProtonLoader';
 
 const protonLoaderTestId = 'proton-loader';
 

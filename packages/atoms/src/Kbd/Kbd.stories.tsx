@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Kbd } from '..';
+import { Kbd } from './Kbd';
 
 const meta: Meta<typeof Kbd> = {
     args: {

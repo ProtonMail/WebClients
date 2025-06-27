@@ -7,8 +7,6 @@ import './Vr.scss';
 export interface VrProps extends ComponentPropsWithoutRef<'span'> {}
 
 // Vr stands for Vertical Rule
-const Vr = ({ className, ...rest }: VrProps) => {
+export const Vr = ({ className, ...rest }: VrProps) => {
     return <span className={clsx('vr', className)} {...rest} />;
 };
-
-export default Vr;

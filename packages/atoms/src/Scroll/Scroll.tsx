@@ -16,7 +16,7 @@ export interface ScrollProps extends ComponentPropsWithoutRef<'div'> {
     scrollContained?: boolean;
 }
 
-const Scroll = ({
+export const Scroll = ({
     children,
     horizontal,
     className,
@@ -140,5 +140,3 @@ const Scroll = ({
         </div>
     );
 };
-
-export default Scroll;

@@ -3,9 +3,9 @@ import { Children, cloneElement, isValidElement, useMemo } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import Step from './Step';
-import StepIndicator from './StepIndicator';
-import StepperContext from './StepperContext';
+import { Step } from './Step';
+import { StepIndicator } from './StepIndicator';
+import { StepperContext } from './StepperContext';
 
 import './Stepper.scss';
 
@@ -27,7 +27,13 @@ export interface StepperProps extends ComponentPropsWithoutRef<'div'> {
     position?: StepperPositionEnum;
 }
 
-const Stepper = ({ activeStep, position = StepperPositionEnum.Center, className, children, ...rest }: StepperProps) => {
+export const Stepper = ({
+    activeStep,
+    position = StepperPositionEnum.Center,
+    className,
+    children,
+    ...rest
+}: StepperProps) => {
     const childrenArray = Children.toArray(children).filter((child) => isValidElement(child) && child.type === Step);
 
     const stepIndicators = childrenArray.map((step, index) => {
@@ -56,5 +62,3 @@ const Stepper = ({ activeStep, position = StepperPositionEnum.Center, className,
         </StepperContext.Provider>
     );
 };
-
-export default Stepper;

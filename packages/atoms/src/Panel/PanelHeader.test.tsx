@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import PanelHeader from './PanelHeader';
+import { PanelHeader } from './PanelHeader';
 
 describe('PanelHeader', () => {
     it('should display panel header with title', () => {
