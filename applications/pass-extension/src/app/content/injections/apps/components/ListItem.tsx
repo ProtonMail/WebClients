@@ -17,6 +17,7 @@ type Props = {
     autogrow?: boolean;
     className?: string;
     disabled?: boolean;
+    fakeButton?: boolean;
     subTheme?: SubTheme;
     subTitle: ReactNode;
     title?: ReactNode;
@@ -32,6 +33,7 @@ export const ListItem: FC<Props> = ({
     icon,
     url,
     disabled,
+    fakeButton,
     autogrow,
     subTheme = SubTheme.VIOLET,
 }) => (
@@ -39,6 +41,7 @@ export const ListItem: FC<Props> = ({
         className={clsx(
             'pass-injected-dropdown--item text-left',
             autogrow ? 'min-h-custom' : 'h-custom',
+            fakeButton && 'pass-injected-dropdown--fake-button',
             subTheme,
             className
         )}

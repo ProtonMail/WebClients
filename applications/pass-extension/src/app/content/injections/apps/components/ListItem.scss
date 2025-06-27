@@ -1,8 +1,6 @@
-button.pass-injected-list--item {
-	padding-inline: 0.75em;
-	padding-block: 0.5em;
-
-	.pass-injected-list--subtitle {
-		line-height: 1.2;
+button.pass-injected-dropdown--item {
+	&.pass-injected-dropdown--fake-button:hover {
+		cursor: default;
+		background-color: transparent;
 	}
 }

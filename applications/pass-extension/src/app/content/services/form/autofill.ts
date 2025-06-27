@@ -13,6 +13,7 @@ import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
+import { omit } from '@proton/shared/lib/helpers/object';
 
 import { autofillIdentityFields } from './autofill.identity';
 
@@ -159,7 +160,7 @@ export const createAutofillService = () => {
             if (res.type === 'success' && res.shouldPrompt) {
                 ctx?.service.iframe.attachNotification()?.open({
                     action: NotificationAction.OTP,
-                    item: { shareId: res.shareId, itemId: res.itemId },
+                    item: omit(res, ['type', 'shouldPrompt']),
                 });
 
                 return true;

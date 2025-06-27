@@ -4,6 +4,7 @@ import {
     useIFrameAppController,
     useIFrameAppState,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import type { NotificationAction, NotificationActions } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
@@ -15,6 +16,7 @@ import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
 import type { OTPRendererHandles } from '@proton/pass/components/Otp/types';
 import { useOTPCode } from '@proton/pass/hooks/useOTPCode';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
+import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { MaybeNull, OtpRequest } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
@@ -45,10 +47,19 @@ export const AutofillOTP: FC<Props> = ({ item }) => {
                     />
                 }
             />
-            <div className="max-w-full">
-                <div className="flex flex-nowrap items-center justify-center gap-4">
+            <div className="max-w-full border rounded-xl border-weak">
+                <ListItem
+                    key={getItemKey(item)}
+                    title={item.name}
+                    subTitle={item.userIdentifier}
+                    icon="user"
+                    url={item.url}
+                    fakeButton
+                />
+
+                <div className="flex flex-nowrap items-center justify-space-between gap-4 px-3 pb-2">
                     <div className="text-4xl max-w-4/5 text-ellipsis">
-                        <span className="text-4xl">
+                        <span className="text-4xl lh100">
                             <OTPValue code={otpToken} />
                         </span>
                     </div>

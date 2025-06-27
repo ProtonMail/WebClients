@@ -3,6 +3,7 @@ import { onContextReady, withContext } from 'proton-pass-extension/app/worker/co
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isExtraOTPField } from '@proton/pass/lib/items/item.predicates';
+import { intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectItem, selectOTPCandidate } from '@proton/pass/store/selectors';
 import type { Maybe, OtpRequest } from '@proton/pass/types';
@@ -59,9 +60,7 @@ export const createOTPService = () => {
             const submission = ctx.service.formTracker.get(tabId, url);
             const state = ctx.service.store.getState();
             const match = selectOTPCandidate({ ...url, submission })(state);
-            return match
-                ? { shouldPrompt: true, shareId: match.shareId, itemId: match.itemId }
-                : { shouldPrompt: false };
+            return match ? { shouldPrompt: true, ...intoLoginItemPreview(match) } : { shouldPrompt: false };
         })
     );
 

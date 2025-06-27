@@ -132,11 +132,17 @@ export const NotificationDebug: FC = () => {
                 </MockIFrameApp>
 
                 {otpItem && (
-                    <MockIFrameApp width={NOTIFICATION_WIDTH} height={NOTIFICATION_MIN_HEIGHT} domain="proton.me">
+                    <MockIFrameApp width={NOTIFICATION_WIDTH} domain="proton.me">
                         <Notification
                             initial={{
                                 action: NotificationAction.OTP,
-                                item: { shareId: otpItem.shareId, itemId: otpItem.itemId },
+                                item: {
+                                    shareId: otpItem.shareId,
+                                    itemId: otpItem.itemId,
+                                    name: 'Netflix family',
+                                    userIdentifier: 'john@proton.me',
+                                    url: 'netflix.com',
+                                },
                             }}
                         />
                     </MockIFrameApp>
