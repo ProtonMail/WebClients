@@ -1609,6 +1609,15 @@
       ],
       "Stop moving to Trash": [
         "Stop met verplaatsen naar Prullenbak"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Map ${ boldFolderName } aanmaken"
+      ],
+      "Deleting folder": [
+        "Map verwijderen"
+      ],
+      "Deleting label": [
+        "Label verwijderen"
       ]
     },
     "action": {
@@ -8407,6 +8416,22 @@
       ],
       "Selection pane": [
         "Selectievenster"
+      ],
+      "${ n } newsletter": [
+        "${ n } nieuwsbrief",
+        "${ n } nieuwsbrieven"
+      ],
+      "Block sender": [
+        "Blokkeer afzender"
+      ],
+      "No messages to show": [
+        "Geen berichten om weer te geven"
+      ],
+      "Preferences updated": [
+        "Voorkeuren bijgewerkt"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Er zijn geen berichten van deze afzender in uw inbox."
       ]
     },
     "info": {
@@ -9337,6 +9362,16 @@
       ],
       "The filter is disabled. ${ enableButton }": [
         "Het filter is uitgeschakeld. ${ enableButton }"
+      ],
+      "Choose what to do instead": [
+        "Kies wat u in plaats daarvan wilt doen"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Mislukt om map ${ customFolderName } aan te maken"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count } bericht verplaatst naar ${ labelName }.",
+        "${ count } berichten verplaatst naar ${ labelName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11076,6 +11111,12 @@
       ],
       "Your subscription renews soon": [
         "Uw abonnement verloopt binnenkort"
+      ],
+      "Don’t show this again": [
+        "Toon dit niet opnieuw"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Krijg ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11102,6 +11143,18 @@
       ],
       "Storage": [
         "Opslagruimte"
+      ],
+      "500 GB secure storage": [
+        "500 GB veilige opslag"
+      ],
+      "Advanced threat protection": [
+        "Geavanceerde bedreigingsbeveiliging"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultrasnelle VPN-servers in 110+ landen"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Onbeperkt aliassen om uw identiteit te beschermen"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11478,6 +11531,9 @@
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11567,6 +11623,9 @@
       ],
       "This payment method will become your new default for all future renewals.": [
         "Deze betaalmethode wordt uw nieuwe standaard voor alle toekomstige verlengingen."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Alleen Euro wordt geaccepteerd voor SEPA. Uw valuta is gewijzigd. Gebruik de selector om uw keuze ongedaan te maken."
       ]
     },
     "Payments.Error": {
@@ -12481,6 +12540,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Upgraden naar ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Veilig browsen"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Haal meer uit ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Krijg onbeperkt aliassen"
+      ],
+      "Guard against threats": [
+        "Beveilig u tegen bedreigingen"
+      ],
+      "Increase your storage": [
+        "Verhoog uw opslag"
+      ],
+      "Keep passwords safe": [
+        "Wachtwoorden veilig houden"
+      ],
+      "Unblock streaming content": [
+        "Deblokkeer streaming content"
       ]
     },
     "specialoffer: Offers": {
@@ -12555,6 +12635,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Upgrade en bespaar meer met 2 jaar ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Wereldwijde toegang tot content op streamingdiensten"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Krijg 500 GB om al uw bestanden en foto's veilig op te slaan"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Krijg toegang tot ultrasnelle VPN-servers in 110+ landen"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Krijg één abonnement dat alles omvat, krijg ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Krijg onbeperkt aliassen om uw identiteit te beschermen en spam te verminderen"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Bewaar uw wachtwoorden veilig en georganiseerd in meerdere kluizen "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Bescherm uw account tegen bedreigingen met Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -14634,6 +14735,9 @@
       "Your free trial ends in ${ trialDurationFormatted } day": [
         "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dag",
         "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dagen"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Afmelden niet beschikbaar voor deze afzender"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15359,6 +15463,27 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordbeheerder"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankoverschrijving - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/maand"
+      ],
+      "Only": [
+        "Slechts"
       ]
     }
   }

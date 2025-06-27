@@ -1609,6 +1609,12 @@
       ],
       "Stop moving to Trash": [
         "Stoppe, in den Papierkorb zu verschieben"
+      ],
+      "Deleting folder": [
+        "Ordner löschen"
+      ],
+      "Deleting label": [
+        "Kategorie löschen"
       ]
     },
     "action": {
@@ -4750,6 +4756,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "No address with sending permissions": [
+        "Keine E-Mail-Adresse mit Sendeberechtigungen"
+      ],
+      "Permissions request failed.": [
+        "Berechtigungsanfrage fehlgeschlagen."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8423,6 +8435,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "Es befinden sich keine Nachrichten von diesem Absender in deinem Posteingang."
+      ],
+      "Dedicated VPN servers": [
+        "Dezidierte VPN-Server"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Anzahl der dedizierten VPN-Server in der Organisation"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du verlierst auch den Zugang zu den Funktionen von ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -11102,6 +11123,12 @@
       ],
       "Your subscription renews soon": [
         "Dein Abonnement verlängert sich bald"
+      ],
+      "Don’t show this again": [
+        "Nicht erneut anzeigen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Hol dir ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11128,6 +11155,18 @@
       ],
       "Storage": [
         "Speicherplatz"
+      ],
+      "500 GB secure storage": [
+        "500 GB sicherer Speicher"
+      ],
+      "Advanced threat protection": [
+        "Erweiterter Bedrohungsschutz"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultraschnelle VPN-Server in über 110 Ländern"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Unbegrenzte Aliase, um deine Identität zu schützen"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11258,6 +11297,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Deine Domain und dein Abonnement sind jetzt bereit."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } bedeutet, dass du niemals gesponserte Anzeigen in unseren Apps sehen wirst."
+      ],
+      "Ad-free promise": [
+        "Werbefreies Versprechen"
       ]
     },
     "Onboarding Proton": {
@@ -11504,6 +11549,9 @@
       ],
       "New credit/debit card": [
         "Neue Kredit-/Debitkarte"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12510,6 +12558,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Upgraden für ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Sicher surfen"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Mehr mit ${ BRAND_NAME } machen"
+      ],
+      "Get unlimited aliases": [
+        "Erhalte unbegrenzte Aliasse"
+      ],
+      "Guard against threats": [
+        "Schütze dich vor Bedrohungen"
+      ],
+      "Increase your storage": [
+        "Erhöhe deinen Speicherplatz"
+      ],
+      "Keep passwords safe": [
+        "Passwörter sicher aufbewahren"
+      ],
+      "Unblock streaming content": [
+        "Streaming-Inhalte entsperren"
       ]
     },
     "specialoffer: Offers": {
@@ -12584,6 +12653,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Führe ein Upgrade durch und spare noch mehr mit 2 Jahren ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Greife weltweit auf Inhalte von Streaming-Diensten zu"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Hol dir 500 GB, um all deine Dateien und Fotos sicher zu speichern"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Erhalte Zugang zu ultraschnellen VPN-Servern in über 110 Ländern"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Hol dir ein Abonnement, das alles beinhaltet, hol dir ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Hol dir unbegrenzt Aliase, um deine Identität zu schützen und Spam zu reduzieren"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Halte deine Passwörter sicher und organisiere sie in mehreren Tresoren "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Schütze dein Konto vor Bedrohungen mit Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -15391,6 +15481,32 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonnement gekündigt."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Verschlüsselter Passwortmanager"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - Karte endet mit ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Banküberweisung - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ Monat"
+      ],
+      "Only": [
+        "Nur"
       ]
     }
   }

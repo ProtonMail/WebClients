@@ -1609,6 +1609,12 @@
       ],
       "Stop moving to Trash": [
         "Stopp flytting til papirkurven"
+      ],
+      "Deleting folder": [
+        "Sletter mappe"
+      ],
+      "Deleting label": [
+        "Sletter etikett"
       ]
     },
     "action": {
@@ -4742,6 +4748,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "No address with sending permissions": [
+        "Ingen adresse med tillatelser for sending"
+      ],
+      "Permissions request failed.": [
+        "Forespørsel om tillatelser mislyktes."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8415,6 +8427,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "Det er ingen meldinger fra denne avsenderen i innboksen din."
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-tjenere"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antall dedikerte VPN-tjenere i organisasjonen"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
       ]
     },
     "info": {
@@ -11094,6 +11115,12 @@
       ],
       "Your subscription renews soon": [
         "Abonnementet ditt fornyes snart"
+      ],
+      "Don’t show this again": [
+        "Ikke vis dette igjen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Skaff deg ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11120,6 +11147,18 @@
       ],
       "Storage": [
         "Lagringsplass"
+      ],
+      "500 GB secure storage": [
+        "500 GB sikker lagring"
+      ],
+      "Advanced threat protection": [
+        "Avansert trusselbeskyttelse"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultraraske VPN-tjenere i 110+ land"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Ubegrenset med alias for å beskytte din identitet"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11250,6 +11289,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Domenet og abonnementet ditt er klart til bruk."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } : appene våre vil aldri vise sponsede annonser."
+      ],
+      "Ad-free promise": [
+        "Vår forpliktelse til reklamefrie tjenester"
       ]
     },
     "Onboarding Proton": {
@@ -11496,6 +11541,9 @@
       ],
       "New credit/debit card": [
         "Nytt kreditt-/debetkort"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11585,6 +11633,9 @@
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Kun Euro aksepteres for SEPA. Valutaen din er endret. Bruk velgeren for å angre valget ditt."
       ]
     },
     "Payments.Error": {
@@ -12494,6 +12545,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Oppgrader for ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Surf sikkert"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Gjør mer med ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Skaff deg ubegrenset antall aliaser"
+      ],
+      "Guard against threats": [
+        "Beskytt mot trusler"
+      ],
+      "Increase your storage": [
+        "Øk lagringsplassen din"
+      ],
+      "Keep passwords safe": [
+        "Hold passord trygge"
+      ],
+      "Unblock streaming content": [
+        "Opphev blokkering av strømmingsinnhold"
       ]
     },
     "specialoffer: Offers": {
@@ -12568,6 +12640,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Oppgrader og spar mer med 2 år med ${ planName }."
+      ],
+      "Access content on streaming services worldwide": [
+        "Tilgang til innhold på strømmetjenester globalt"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Skaff deg 500 GB til å lagre alle filene og bildene dine sikkert"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Få tilgang til ultra-raske VPN-tjenere i 110+ land"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Få én plan som inkluderer alt, skaff deg ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Skaff deg ubegrenset med alias for å beskytte din identitet og redusere søppelpost"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Hold passordene dine trygge og organiserte i flere hvelv "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Beskytt din konto mot trusler med Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -15367,6 +15460,32 @@
       ],
       "for ${ durationDeal }": [
         "for ${ durationDeal }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonnement kansellert."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Kryptert passordbehandler"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort som slutter på ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankoverføring - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/måned"
+      ],
+      "Only": [
+        "Kun"
       ]
     }
   }

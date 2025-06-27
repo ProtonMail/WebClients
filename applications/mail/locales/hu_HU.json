@@ -11086,6 +11086,12 @@
       ],
       "Your subscription renews soon": [
         "Az előfizetése hamarosan megújul"
+      ],
+      "Don’t show this again": [
+        "Ne mutassa többször"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Előfizetés ${ BRAND_NAME } Unlimitedre"
       ]
     },
     "Offer feature": {
@@ -11112,6 +11118,18 @@
       ],
       "Storage": [
         "Tároló"
+      ],
+      "500 GB secure storage": [
+        "500 GB biztonságos tárhely"
+      ],
+      "Advanced threat protection": [
+        "Fejlett védelem fenyegetés ellen"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultra-gyors VPN szerverek több mint 110 országban"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Korlátlan számú e-mail álnév személyazonosságának védelmére"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11530,6 +11548,9 @@
       ],
       "This payment method will become your new default for all future renewals.": [
         "Ez a fizetési mód lesz az új alapértelmezett minden jövőbeli megújításhoz."
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Csak eurót fogadunk el SEPA-hoz. Pénzneme megváltozott. Kérjük, a választó segítségével vonja vissza a választását."
       ]
     },
     "Payments.Error": {
@@ -12434,6 +12455,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Váltás a következőre: ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Biztonságosan böngésszen"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Tegyen többet ezzel: ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Szerezzen korlátlan számú e-mail álnevet"
+      ],
+      "Guard against threats": [
+        "Védekezés a fenyegetések ellen"
+      ],
+      "Increase your storage": [
+        "Növelje a tárhelyét"
+      ],
+      "Keep passwords safe": [
+        "Tartsa biztonságban a jelszavakat"
+      ],
+      "Unblock streaming content": [
+        "Streaming tartalmak blokkolásának feloldása"
       ]
     },
     "specialoffer: Offers": {
@@ -12508,6 +12550,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Váltson csomagot és takarítson meg mégtöbbet a 2 éves ${ planName } csomaggal"
+      ],
+      "Access content on streaming services worldwide": [
+        "Tartalom elérése videós szolgáltatásokon világszerte"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Kapjon 500 GB-ot, hogy biztonságosan tárolhassa az összes fájlját és fényképét."
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Hozzáférés ultragyors VPN-kiszolgálókhoz 110+ országban"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Szerezzen be egyetlen csomagot, amely mindent tartalmaz, ez a ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Korlátlan számú e-mail álnevet használhat személyazonosságának védelme és a levélszemét csökkentése érdekében"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Tartsa jelszavait biztonságban és rendszerezve több tárolóban"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Védje fiókját a fenyegetésektől a Sentinel segítségével"
       ]
     },
     "specialoffer: Tooltip": {
@@ -15356,6 +15419,19 @@
       "${ seconds } second": [
         "${ seconds } másodperc",
         "${ seconds } másodperc"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Titkosított jelszókezelő"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/hó"
+      ],
+      "Only": [
+        "Csak"
       ]
     }
   }

@@ -1584,7 +1584,7 @@
         "Allunyar"
       ],
       "Create folder ${ boldFolderName }": [
-        "Crea una carpeta \"${ boldFolderName }"
+        "Crea la carpeta \"${ boldFolderName }"
       ],
       "Hide-my-email": [
         "Hide-my-email"
@@ -1609,6 +1609,12 @@
       ],
       "Stop moving to Trash": [
         "Deixar de moure a la paperera"
+      ],
+      "Deleting folder": [
+        "S'està eliminant la carpeta"
+      ],
+      "Deleting label": [
+        "S'està eliminant l'etiqueta"
       ]
     },
     "action": {
@@ -4742,6 +4748,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu la cerca i torneu-ho a provar."
+      ],
+      "No address with sending permissions": [
+        "No hi ha cap adreça amb permisos d'enviament"
+      ],
+      "Permissions request failed.": [
+        "Error amb la sol·licitud de permisos"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8378,8 +8390,8 @@
         "Només sou a uns quants clics d'una safata d'entrada ordenada"
       ],
       "${ n } newsletter": [
-        "Butlletí de ${ n }",
-        "Butlletins de ${ n }"
+        "${ n } butlletí",
+        "${ n } butlletins"
       ],
       "${ receivedMessagesCount } email last month": [
         "${ receivedMessagesCount } correu el mes passat",
@@ -8415,6 +8427,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "No teniu missatges d'aquest remitent a la safata d'entrada."
+      ],
+      "Dedicated VPN servers": [
+        "Servidors VPN dedicats"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Nombre de servidors VPN dedicats a l'organització"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "També perdreu l'accés a les característiques de ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -8739,7 +8760,7 @@
         "Adreça"
       ],
       "Alias title": [
-        "Nom de l'àlies"
+        "Títol de l'àlies"
       ],
       "ALL": [
         "TOT"
@@ -9746,7 +9767,7 @@
         "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
-        "El vostre emmagatzematge està ple. Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
+        "L'emmagatzematge és ple. Per a continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
@@ -11097,6 +11118,12 @@
       ],
       "Your subscription renews soon": [
         "La subscripció es renovarà aviat."
+      ],
+      "Don’t show this again": [
+        "No ho tornis a mostrar"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Obteniu ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11123,6 +11150,18 @@
       ],
       "Storage": [
         "Emmagatzematge"
+      ],
+      "500 GB secure storage": [
+        "500 GB d'emmagatzematge segur"
+      ],
+      "Advanced threat protection": [
+        "Protecció avançada contra amenaces"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Servidors VPN ultraràpids en més de 110 països"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Un nombre il·limitat d'àlies per protegir la vostra identitat"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11183,7 +11222,7 @@
         "navegador"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Esborreu els correus suprimits i correu brossa en 30 dies."
+        "Esborra els correus eliminats i el correu brossa al cap de 30 dies."
       ],
       "Continue": [
         "Continua"
@@ -11259,6 +11298,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "El vostre domini i la vostra subscripció estan preparats per utilitzar-los."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }: mai veureu anuncis patrocinats a les nostres aplicacions."
+      ],
+      "Ad-free promise": [
+        "El nostre compromís sense publicitat"
       ]
     },
     "Onboarding Proton": {
@@ -11505,6 +11550,9 @@
       ],
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11593,7 +11641,7 @@
         "El vostre pagament encara s'està processant."
       ],
       "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "El SEPA només s'accepta l'euro. La moneda ha estat canviada. Utilitzeu el selector per revertir la vostra elecció."
+        "Només s'accepta l'euro per al SEPA. S'ha canviat la moneda. Utilitzeu el selector per revertir la vostra elecció."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Aquest mètode de pagament esdevindrà el vostre nou mètode per defecte per a totes les renovacions futures."
@@ -12506,6 +12554,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Milloreu el pla per ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Navegueu amb seguretat"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Supereu els vostres límits amb ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Obtingueu un nombre il·limitat d'àlies"
+      ],
+      "Guard against threats": [
+        "Protegiu-vos d'amenaces"
+      ],
+      "Increase your storage": [
+        "Augmenteu el vostre emmagatzematge"
+      ],
+      "Keep passwords safe": [
+        "Mantingueu les vostres contrasenyes segures"
+      ],
+      "Unblock streaming content": [
+        "Tingueu accés al contingut en estríming."
       ]
     },
     "specialoffer: Offers": {
@@ -12580,6 +12649,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Milloreu i estalvieu més amb 2 anys de ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Accediu a contingut en serveis d'estríming a tot el món"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Obtingueu 500 GB per emmagatzemar de manera segura tots els vostres fitxers i fotos"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Obtingueu accés a servidors VPN ultraràpids en més de 110 països"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Obtingueu un pla que ho inclou tot: ${ BRAND_NAME } sense límits"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Obtingueu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Guardeu les vostres contrasenyes de manera segura i organitzada en diverses caixes fortes. "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Protegiu el vostre compte d'amenaces amb Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -14660,8 +14750,8 @@
         "Anul·lar la subscripció no està disponible per a aquest remitent"
       ],
       "Your free trial ends in ${ trialDurationFormatted } day": [
-        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dia",
-        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dies"
+        "La prova gratuïta finalitza en ${ trialDurationFormatted } dia",
+        "La prova gratuïta finalitza en ${ trialDurationFormatted } dies"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15304,7 +15394,7 @@
         "Protegiu fins a 10 dispositius"
       ],
       "Recover previous file versions": [
-        "Recupereu versions anteriors del fitxer"
+        "Recupereu versions anteriors dels fitxers"
       ],
       "Save big on premium Drive features with a limited-time discount.": [
         "Estalviiareu molt amb les funcions premium de Drive amb un descompte per temps limitat"
@@ -15379,6 +15469,32 @@
       ],
       "for ${ durationDeal }": [
         "durant ${ durationDeal }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "S'ha cancel·lat la subscripció."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Gestor de contrasenyes xifrat"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - targeta que acaba en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferència bancària - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mes"
+      ],
+      "Only": [
+        "Només"
       ]
     }
   }
