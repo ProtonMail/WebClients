@@ -21,6 +21,4 @@ const InlineLinkButtonBase = (
     );
 };
 
-const InlineLinkButton = forwardRef<HTMLButtonElement, InlineLinkButtonProps>(InlineLinkButtonBase);
-
-export default InlineLinkButton;
+export const InlineLinkButton = forwardRef<HTMLButtonElement, InlineLinkButtonProps>(InlineLinkButtonBase);

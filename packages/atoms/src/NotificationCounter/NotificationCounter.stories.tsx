@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeColor } from '@proton/colors/types';
 
-import { NotificationCounter, type NotificationCounterProps } from '..';
+import { NotificationCounter, type NotificationCounterProps } from './NotificationCounter';
 
 const meta: Meta<typeof NotificationCounter> = {
     args: {

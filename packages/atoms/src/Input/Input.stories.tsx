@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Icon } from '@proton/components';
 
-import { Input } from '..';
+import { Input } from './Input';
 
 const meta: Meta<typeof Input> = {
     args: {

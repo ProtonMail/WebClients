@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Banner, BannerVariants, Href } from '..';
+import { Href } from '../Href/Href';
+import { Banner } from './Banner';
+import { BannerVariants } from './Banner';
 
 const meta: Meta<typeof Banner> = {
     argTypes: {

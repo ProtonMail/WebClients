@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ProtonLoader, ProtonLoaderType } from '..';
+import { ProtonLoader, ProtonLoaderType } from './ProtonLoader';
 
 const meta: Meta<typeof ProtonLoader> = {
     args: {

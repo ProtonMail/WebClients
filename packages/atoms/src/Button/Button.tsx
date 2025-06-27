@@ -2,7 +2,7 @@ import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
 import type { ButtonLikeProps } from './ButtonLike';
-import ButtonLike from './ButtonLike';
+import { ButtonLike } from './ButtonLike';
 
 export interface ButtonProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {}
 
