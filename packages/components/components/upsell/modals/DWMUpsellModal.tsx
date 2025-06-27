@@ -18,10 +18,9 @@ interface Props {
     upsellApp: APP_UPSELL_REF_PATH;
     upsellComponent: UPSELL_COMPONENT;
     onSubscribed?: () => void;
-    onClose?: () => void;
 }
 
-const DWMUpsellModal = ({ modalProps, upsellApp, upsellComponent, onSubscribed, onClose }: Props) => (
+const DWMUpsellModal = ({ modalProps, upsellApp, upsellComponent, onSubscribed }: Props) => (
     <UpsellModal
         title={DARK_WEB_MONITORING_NAME}
         description={c('Description')
@@ -53,7 +52,6 @@ const DWMUpsellModal = ({ modalProps, upsellApp, upsellComponent, onSubscribed, 
             feature: MAIL_UPSELL_PATHS.DARK_WEB_MONITORING,
         })}
         onSubscribed={onSubscribed}
-        onClose={onClose}
     />
 );
 

@@ -81,13 +81,6 @@ export enum TelemetryMailTrial2024UpsellModal {
     upsell = 'upsell',
 }
 
-export enum TelemetryDWMUpsellModal {
-    openModal = 'open_modal',
-    openModalCampaign = 'open_modal_campaign',
-    closeModal = 'close_modal',
-    upsell = 'upsell',
-}
-
 export enum TelemetryMailPagingControlsEvents {
     move_to_previous_page = 'move_to_previous_page',
     move_to_next_page = 'move_to_next_page',
@@ -359,7 +352,6 @@ export enum TelemetryUnlimitedOffer2025 {
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
-    | TelemetryDWMUpsellModal
     | TelemetryCalendarEvents
     | TelemetryIcsSurgeryEvents
     | TelemetryAccountSignupBasicEvents
