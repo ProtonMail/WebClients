@@ -29,6 +29,7 @@ import type {
     FormStatusPayload,
     FormSubmitPayload,
     ItemContent,
+    LoginItemPreview,
     Maybe,
     MaybeNull,
     OtpCode,
@@ -295,7 +296,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_IDENTITY]: ItemContent<'identity'>;
     [WorkerMessageType.AUTOFILL_LOGIN_QUERY]: AutofillLoginResult;
     [WorkerMessageType.AUTOFILL_LOGIN]: FormCredentials;
-    [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
+    [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
