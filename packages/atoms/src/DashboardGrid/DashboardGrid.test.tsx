@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 
-import DashboardGrid, {
+import {
+    DashboardGrid,
     DashboardGridSection,
     DashboardGridSectionHeader,
     DashboardGridSectionSubtitle,

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { DualPaneContent, DualPaneSidebar } from '..';
+import { DualPaneContent } from './DualPaneContent';
+import { DualPaneSidebar } from './DualPaneSidebar';
 
 const meta: Meta<typeof DualPaneContent | typeof DualPaneSidebar> = {
     component: DualPaneContent,

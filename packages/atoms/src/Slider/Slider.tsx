@@ -14,9 +14,9 @@ import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
-import ButtonLike from '../Button/ButtonLike';
-import Tooltip from '../Tooltip/Tooltip';
-import SliderMark from './SliderMark';
+import { ButtonLike } from '../Button/ButtonLike';
+import { Tooltip } from '../Tooltip/Tooltip';
+import { SliderMark } from './SliderMark';
 
 import './Slider.scss';
 
@@ -77,7 +77,7 @@ interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 
     onInput?: (value: number) => void;
 }
 
-const Slider = ({
+export const Slider = ({
     value,
     min = 0,
     max = 100,
@@ -357,5 +357,3 @@ const Slider = ({
         </div>
     );
 };
-
-export default Slider;

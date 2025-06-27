@@ -2,8 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeColor } from '@proton/colors';
 
-import { Button, ButtonLikeShapeEnum, ButtonLikeSizeEnum } from '..';
-import type { ButtonLikeOwnProps } from '..';
+import { Button } from './Button';
+import { ButtonLikeShapeEnum, ButtonLikeSizeEnum } from './ButtonLike';
+import type { ButtonLikeOwnProps } from './ButtonLike';
 
 const meta: Meta<typeof Button> = {
     args: {
