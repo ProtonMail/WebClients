@@ -1,6 +1,9 @@
-import { base64Cache, clearAll } from 'proton-mail/helpers/test/helper';
+import type { Base64Cache } from '@proton/mail/hooks/useBase64Cache';
+import createCache from '@proton/shared/lib/helpers/cache';
 
 import { attachBase64, removeBase64, transformEscape } from './transformEscape';
+
+const base64Cache = createCache<string, string>() as Base64Cache;
 
 describe('transformEscape', () => {
     const babase64 = `src="data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAABoIAAAVSCAYAAAAisOk2AAAMS2lDQ1BJQ0MgUHJv
@@ -147,7 +150,10 @@ describe('transformEscape', () => {
         return { document: doc, querySelector, querySelectorAll };
     };
 
-    afterEach(clearAll);
+    afterEach(() => {
+        jest.clearAllMocks();
+        base64Cache.clear();
+    });
 
     describe('Replace base64', () => {
         describe('No syntax hightlighting', () => {

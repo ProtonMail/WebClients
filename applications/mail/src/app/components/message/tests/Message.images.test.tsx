@@ -47,8 +47,8 @@ const content = `<div>
   </div>
 </div>`;
 
-jest.mock('../../../helpers/dom', () => ({
-    ...jest.requireActual('../../../helpers/dom'),
+jest.mock('@proton/mail/helpers/dom', () => ({
+    ...jest.requireActual('@proton/mail/helpers/dom'),
 }));
 
 const windowHostname = 'https://mail.proton.pink';
