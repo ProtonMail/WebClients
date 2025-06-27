@@ -1,6 +1,8 @@
 import { useCallback } from 'react';
 
 import { useApi, useAuthentication } from '@proton/components';
+import { transformEmbedded } from '@proton/mail-renderer/helpers/transforms/transformEmbedded';
+import { transformRemote } from '@proton/mail-renderer/helpers/transforms/transformRemote';
 import type {
     LoadEmbeddedResults,
     MessageRemoteImage,
@@ -19,8 +21,6 @@ import {
     handleDispatchLoadRemoteImagesDirect,
     updateImages,
 } from '../../helpers/message/messageImages';
-import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
-import { transformRemote } from '../../helpers/transforms/transformRemote';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
 import { useGetAttachment } from '../attachments/useAttachment';
