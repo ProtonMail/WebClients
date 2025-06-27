@@ -1,13 +1,20 @@
 const appendQueryParams = (url: URL, params: { [key: string]: any }) => {
-    Object.keys(params).forEach((key) => {
-        const value = params[key];
+    Object.entries(params).forEach(([key, value]) => {
         if (typeof value === 'undefined') {
             return;
         }
 
         if (Array.isArray(value)) {
             value.forEach((item) => {
-                url.searchParams.append(`${key}[]`, item);
+                // If the key already contains [], do not add it a second time or the request would be malformed
+                if (key.endsWith('[]')) {
+                    if (process.env.NODE_ENV !== 'production') {
+                        console.warn(`Warning: Key "${key}" ends with "[]". Please use "${key.slice(0, -2)}" instead.`);
+                    }
+                    url.searchParams.append(key, item);
+                } else {
+                    url.searchParams.append(`${key}[]`, item);
+                }
             });
         } else {
             url.searchParams.append(key, value);
