@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import Vr from './Vr';
+import { Vr } from './Vr';
 
 describe('<Vr />', () => {
     it('should render with className vr', () => {

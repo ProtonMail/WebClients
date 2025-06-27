@@ -3,8 +3,8 @@ import { fireEvent, render } from '@testing-library/react';
 import { IcEye } from '@proton/icons';
 
 import { Button } from '../Button/Button';
-import Href from '../Href/Href';
-import Banner from './Banner';
+import { Href } from '../Href/Href';
+import { Banner } from './Banner';
 
 describe('<Banner />', () => {
     it('should render with className banner and additional className', () => {

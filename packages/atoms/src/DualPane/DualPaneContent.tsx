@@ -10,5 +10,3 @@ export const DualPaneContent: FC<PropsWithChildren> = ({ children }) => {
         </div>
     );
 };
-
-export default DualPaneContent;

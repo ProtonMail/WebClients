@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Panel, PanelHeader } from '..';
+import { Panel } from './Panel';
+import { PanelHeader } from './PanelHeader';
 
 const HeaderTitle = <h3>Some header</h3>;
 
