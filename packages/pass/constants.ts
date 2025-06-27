@@ -47,12 +47,12 @@ export const PASS_LINUX_DOWNLOAD_URL = 'https://proton.me/support/set-up-proton-
 export const PASS_DESKTOP_CHANGELOG_URL =
     'https://github.com/ProtonMail/WebClients/blob/main/applications/pass-desktop/CHANGELOG.md';
 export const SIMPLELOGIN_DOMAIN_SETTINGS_URL = 'https://app.simplelogin.io/dashboard/custom_domain';
-export const WEBSITE_RULES_URL = 'https://proton.me/download/pass/auto-detection/rules.json';
 export const PASS_DOWNLOAD_URL = 'https://proton.me/pass/download';
 export const PASS_TROUBLESHOOT_URL = 'https://proton.me/support/pass-troubleshooting';
 export const PASS_HOWTO_URL = 'https://proton.me/support/pass/using-proton-pass';
 
-export const WEBSITE_RULES_SUPPORTED_VERSION = '1';
+export const WEBSITE_RULES_URL = 'https://proton.me/download/pass/auto-detection/rules.json';
+export const WEBSITE_RULES_EXPERIMENTAL_URL = 'https://proton.me/download/pass/auto-detection/rules.experimental.json';
 
 export const ITEM_COUNT_RATING_PROMPT = 10;
 
@@ -118,13 +118,14 @@ export const BIOMETRICS_KEY = 'offlineKey_biometrics';
  * fallback if the feature flag endpoint is unavailable.
  * FIXME: Remove feature flags that are permanently enabled */
 export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
-    [PassFeature.PassEnableDesktopAutoUpdate]: false,
-    [PassFeature.PassWebInternalAlpha]: false,
-    [PassFeature.PassWebPrfUnlock]: false,
-    [PassFeature.PassRenameAdminToManager]: false,
-    [PassFeature.PassProtonAnniversaryPromo2025]: false,
     [PassFeature.LoginAutofillTelemetry]: false,
     [PassFeature.PassBasicAuthAutofill]: false,
+    [PassFeature.PassEnableDesktopAutoUpdate]: false,
+    [PassFeature.PassExperimentalWebsiteRules]: true,
+    [PassFeature.PassProtonAnniversaryPromo2025]: false,
+    [PassFeature.PassRenameAdminToManager]: false,
+    [PassFeature.PassWebInternalAlpha]: false,
+    [PassFeature.PassWebPrfUnlock]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
