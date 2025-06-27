@@ -11,8 +11,9 @@ import {
     isCouponConfigRequiredProps,
 } from './interface';
 import { monthlyNudgeConfig } from './monthlyNudge';
+import { tldrNewsletterConfig } from './tldrNewsletter';
 
-const couponConfig: CouponConfig[] = [monthlyNudgeConfig, anniversary11Config];
+const couponConfig: CouponConfig[] = [monthlyNudgeConfig, anniversary11Config, tldrNewsletterConfig];
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
     renderAmountDueMessage?: () => ReactNode;
