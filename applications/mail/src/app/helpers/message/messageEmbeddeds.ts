@@ -1,3 +1,4 @@
+import { hash, removeLineBreaks, toUnsignedString } from '@proton/mail/helpers/string';
 import type {
     LoadEmbeddedResults,
     MessageEmbeddedImage,
@@ -9,7 +10,6 @@ import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
 
 import { ENCRYPTED_STATUS } from '../../constants';
-import { hash, removeLineBreaks, toUnsignedString } from '../string';
 import { querySelectorAll } from './messageContent';
 import { getEmbeddedImages, updateImages } from './messageImages';
 
