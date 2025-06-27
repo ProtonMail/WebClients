@@ -12,6 +12,11 @@ describe('fetch helpers', () => {
             expect(url.toString()).toBe('https://example.com/path?tags%5B%5D=a&tags%5B%5D=b');
         });
 
+        it('should handle array parameters with array key correctly', () => {
+            const url = createUrl('https://example.com/path', { 'tags[]': ['a', 'b'] });
+            expect(url.toString()).toBe('https://example.com/path?tags%5B%5D=a&tags%5B%5D=b');
+        });
+
         it('should skip undefined parameters', () => {
             const url = createUrl('https://example.com/path', { foo: undefined, bar: 'baz' });
             expect(url.toString()).toBe('https://example.com/path?bar=baz');
