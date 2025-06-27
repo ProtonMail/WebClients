@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Pill } from '..';
+import { Pill } from './Pill';
 
 const meta: Meta<typeof Pill> = {
     args: {

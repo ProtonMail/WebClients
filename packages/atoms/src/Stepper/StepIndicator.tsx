@@ -3,12 +3,12 @@ import { useContext } from 'react';
 import clsx from '@proton/utils/clsx';
 
 import type { StepListItemProps } from './StepListItem';
-import StepListItem from './StepListItem';
-import StepperContext from './StepperContext';
+import { StepListItem } from './StepListItem';
+import { StepperContext } from './StepperContext';
 
 export interface StepIndicatorProps extends Omit<StepListItemProps, 'firstItem' | 'active' | 'complete'> {}
 
-const StepIndicator = ({
+export const StepIndicator = ({
     index,
     className,
     ...rest
@@ -37,5 +37,3 @@ const StepIndicator = ({
         </StepListItem>
     );
 };
-
-export default StepIndicator;

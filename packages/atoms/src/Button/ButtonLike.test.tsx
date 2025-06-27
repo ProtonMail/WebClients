@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/tabindex-no-positive */
 import { fireEvent, render } from '@testing-library/react';
 
-import ButtonLike from './ButtonLike';
+import { ButtonLike } from './ButtonLike';
 
 const testid = 'button-like';
 

@@ -4,6 +4,4 @@ export interface StepperContextContextValue {
     activeStep: number;
 }
 
-const StepperContext = createContext({} as StepperContextContextValue);
-
-export default StepperContext;
+export const StepperContext = createContext({} as StepperContextContextValue);

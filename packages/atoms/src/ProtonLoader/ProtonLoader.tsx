@@ -25,7 +25,7 @@ const negativeColors = {
     stopColor2: '#FFFFFF',
 };
 
-const ProtonLoader = ({ className, type = ProtonLoaderType.Default, ...rest }: ProtonLoaderProps) => {
+export const ProtonLoader = ({ className, type = ProtonLoaderType.Default, ...rest }: ProtonLoaderProps) => {
     const colors = type === 'negative' ? negativeColors : defaultColors;
     const logoId = `p-logo-${type}`;
     const logoGradientId = `p-logo-gradient-${type}`;
@@ -73,4 +73,3 @@ const ProtonLoader = ({ className, type = ProtonLoaderType.Default, ...rest }: P
         </svg>
     );
 };
-export default ProtonLoader;
