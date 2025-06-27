@@ -8,6 +8,7 @@ import { useNavigate } from '@proton/pass/components/Navigation/NavigationAction
 import { getInitialFilters, getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -23,7 +24,7 @@ type Props = {
 
 export const SharedMenuItem = memo(({ to, count, selected, label, subLabel, icon, onAction = noop }: Props) => {
     const navigate = useNavigate();
-    const onSelect = () => navigate(getLocalPath(to), { filters: getInitialFilters() });
+    const onSelect = () => navigate(getLocalPath(to), { filters: omit(getInitialFilters(), ['search']) });
 
     return (
         <DropdownMenuButton
