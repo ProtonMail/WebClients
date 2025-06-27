@@ -90,6 +90,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
             createMissingKeys({ member, password, addressesToGenerate, onUpdate: handleUpdate })
         );
         createNotification({ text: result });
+        rest.onClose?.();
     };
 
     return (
