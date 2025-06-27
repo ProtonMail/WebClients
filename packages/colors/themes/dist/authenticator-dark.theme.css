@@ -81,7 +81,7 @@
   --focus-outline: var(--interaction-norm-major-2);
   --focus-ring: var(--interaction-norm-minor-1);
   --modal-background-color: #2d2b29;
-  --item-background: rgb(0 0 0 / 0.33);
+  --item-background: rgb(255 255 255 / 0.04);
 }
 @supports (-webkit-hyphens: none) {
   :root,
