@@ -85,13 +85,14 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
 
     const handleDismiss = () => {
         if (failure === undefined) return;
+        const itemName = item.data.metadata.name;
 
         if (itemCreate.intent.match(failure.action)) {
-            dispatch(itemCreateDismiss({ shareId, optimisticId: itemId, item }));
+            dispatch(itemCreateDismiss({ shareId, optimisticId: itemId, itemName }));
         }
 
         if (itemEdit.intent.match(failure.action)) {
-            dispatch(itemEditDismiss({ shareId, itemId, item }));
+            dispatch(itemEditDismiss({ shareId, itemId, itemName }));
         }
     };
 

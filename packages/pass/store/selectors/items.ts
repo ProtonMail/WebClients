@@ -6,6 +6,7 @@ import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-f
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
 import type { ItemsByShareId } from '@proton/pass/store/reducers/items';
 import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
+import { SelectorError } from '@proton/pass/store/selectors/errors';
 import type { State } from '@proton/pass/store/types';
 import type {
     ItemRevision,
@@ -61,6 +62,12 @@ export const selectItem = <T extends ItemType = ItemType>(shareId: string, itemI
         return (idFromOptimisticId
             ? byItemId?.[idFromOptimisticId]
             : byItemId?.[itemId]) satisfies Maybe<ItemRevision> as Maybe<ItemRevision<T>>;
+    });
+
+export const selectItemOrThrow = <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
+    createSelector(selectItem<T>(shareId, itemId), (item) => {
+        if (!item) throw new SelectorError(`Item ${itemId} not found`);
+        return item;
     });
 
 export const selectOptimisticItemState = (shareId: string, itemId: string) =>
