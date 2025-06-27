@@ -7,7 +7,7 @@ export interface HrefProps extends ComponentPropsWithRef<'a'> {
     children: ReactNode;
 }
 
-const Href = (
+const HrefBase = (
     { href = '#', target = '_blank', rel = 'noopener noreferrer nofollow', children, ...rest }: HrefProps,
     ref: Ref<HTMLAnchorElement>
 ) => (
@@ -16,4 +16,4 @@ const Href = (
     </a>
 );
 
-export default forwardRef<HTMLAnchorElement, HrefProps>(Href);
+export const Href = forwardRef<HTMLAnchorElement, HrefProps>(HrefBase);

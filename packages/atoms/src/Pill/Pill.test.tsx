@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import Pill from './Pill';
+import { Pill } from './Pill';
 
 describe('<Pill />', () => {
     it('should render element with text content Text', () => {

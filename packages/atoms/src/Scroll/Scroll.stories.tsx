@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Scroll } from '..';
+import { Scroll } from './Scroll';
 
 const meta: Meta<typeof Scroll> = {
     args: {

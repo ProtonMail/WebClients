@@ -3,14 +3,14 @@ import { useContext } from 'react';
 import clsx from '@proton/utils/clsx';
 
 import type { StepListItemProps } from './StepListItem';
-import StepListItem from './StepListItem';
-import StepperContext from './StepperContext';
+import { StepListItem } from './StepListItem';
+import { StepperContext } from './StepperContext';
 
 export interface StepProps extends Omit<StepListItemProps, 'firstItem' | 'active' | 'complete' | 'children'> {
     children?: string;
 }
 
-const Step = ({
+export const Step = ({
     index,
     children,
     className,
@@ -49,5 +49,3 @@ const Step = ({
         </StepListItem>
     );
 };
-
-export default Step;
