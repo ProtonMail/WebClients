@@ -5,7 +5,7 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
-import { transformRemote } from '../transformRemote';
+import { transformRemote } from './transformRemote';
 
 describe('transformRemote', () => {
     let onLoadRemoteImagesProxy: jest.Mock;

@@ -1,4 +1,4 @@
-import { transformLinks } from '../transformLinks';
+import { transformLinks } from './transformLinks';
 
 describe('transformLinks service', () => {
     const ADD_REF = `
