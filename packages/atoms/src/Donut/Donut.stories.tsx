@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeColor } from '@proton/colors';
 
-import { Donut } from '..';
+import { Donut } from './Donut';
 
 const meta: Meta<typeof Donut> = {
     args: {

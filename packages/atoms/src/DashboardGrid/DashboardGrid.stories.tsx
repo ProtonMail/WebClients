@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { DashboardCard, DashboardGrid, DashboardGridSection, DashboardGridSectionHeader } from '..';
+import { DashboardCard } from '../DashboardCard/DashboardCard';
+import { DashboardGrid, DashboardGridSection, DashboardGridSectionHeader } from './DashboardGrid';
 
 const meta: Meta<typeof DashboardGrid> = {
     args: {

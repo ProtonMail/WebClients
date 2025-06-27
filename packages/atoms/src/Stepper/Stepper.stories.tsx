@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Step, Stepper, StepperPositionEnum } from '..';
+import { Step } from './Step';
+import { Stepper, StepperPositionEnum } from './Stepper';
 
 const ITEMS = ['Item 1', 'Item 2.', 'Item 3', 'Item 4'];
 const Steps = ITEMS.map((step) => <Step key={step}>{step}</Step>);

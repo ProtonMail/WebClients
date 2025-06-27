@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { InlineLinkButton } from '..';
+import { InlineLinkButton } from './InlineLinkButton';
 
 const meta: Meta<typeof InlineLinkButton> = {
     args: {

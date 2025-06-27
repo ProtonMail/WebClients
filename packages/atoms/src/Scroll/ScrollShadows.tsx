@@ -4,7 +4,7 @@ interface Props {
     children: ReactNode;
 }
 
-const ScrollShadows = ({ children }: Props) => {
+export const ScrollShadows = ({ children }: Props) => {
     return (
         <div className="relative">
             <div className="scrollshadow-sticky scrollshadow-sticky--top" aria-hidden="true" />
@@ -15,5 +15,3 @@ const ScrollShadows = ({ children }: Props) => {
         </div>
     );
 };
-
-export default ScrollShadows;

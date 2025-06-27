@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeColor } from '@proton/colors/types';
 
-import { Slider, SliderSizeEnum } from '..';
+import { Slider, SliderSizeEnum } from './Slider';
 
 const sortedColors = Object.values(ThemeColor).sort();
 

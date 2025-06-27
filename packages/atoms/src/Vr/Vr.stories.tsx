@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Vr } from '..';
+import { Vr } from './Vr';
 
 const meta: Meta<typeof Vr> = {
     args: {

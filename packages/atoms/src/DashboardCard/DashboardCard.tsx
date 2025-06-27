@@ -27,7 +27,7 @@ export const DashboardCardContent = ({
     return <div className={clsx('DashboardCard-content', paddingClass, className)}>{children}</div>;
 };
 
-const DashboardCard = <E extends ElementType = typeof defaultElement>({
+export const DashboardCard = <E extends ElementType = typeof defaultElement>({
     className,
     as,
     children,
@@ -62,5 +62,3 @@ const DashboardCard = <E extends ElementType = typeof defaultElement>({
         </Element>
     );
 };
-
-export default DashboardCard;

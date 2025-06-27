@@ -21,7 +21,7 @@ export interface VerticalStepProps extends ComponentPropsWithoutRef<'li'> {
     status?: VerticalStepStatusEnum;
 }
 
-const VerticalStep = ({
+export const VerticalStep = ({
     title,
     titleCentered = false,
     titleBold = true,
@@ -65,5 +65,3 @@ const VerticalStep = ({
         </li>
     );
 };
-
-export default VerticalStep;

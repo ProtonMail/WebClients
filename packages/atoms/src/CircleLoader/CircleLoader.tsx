@@ -21,7 +21,7 @@ export interface CircleLoaderProps extends ComponentPropsWithoutRef<'svg'> {
     srLabelHidden?: Boolean;
 }
 
-const CircleLoader = ({ size, className, srLabelHidden, ...rest }: CircleLoaderProps) => {
+export const CircleLoader = ({ size, className, srLabelHidden, ...rest }: CircleLoaderProps) => {
     const uid = generateUID('circle-loader');
 
     return (
@@ -43,5 +43,3 @@ const CircleLoader = ({ size, className, srLabelHidden, ...rest }: CircleLoaderP
         </>
     );
 };
-
-export default CircleLoader;

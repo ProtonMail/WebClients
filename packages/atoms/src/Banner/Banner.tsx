@@ -98,7 +98,7 @@ const getButtonProps = (variant: BannerVariants): BaseButtonLikeProps => {
     }
 };
 
-const Banner = ({
+export const Banner = ({
     variant = BannerVariants.NORM,
     icon = getDefaultIcon(variant as BannerVariants),
     noIcon = false,
@@ -159,5 +159,3 @@ const Banner = ({
         </div>
     );
 };
-
-export default Banner;

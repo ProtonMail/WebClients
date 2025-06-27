@@ -16,7 +16,7 @@ export interface NotificationDotProps extends ComponentPropsWithoutRef<'span'> {
     alt?: String;
 }
 
-const NotificationDot = ({ color = ThemeColor.Norm, className, alt, ...rest }: NotificationDotProps) => {
+export const NotificationDot = ({ color = ThemeColor.Norm, className, alt, ...rest }: NotificationDotProps) => {
     return (
         <span
             className={clsx(className, 'notification-dot rounded-50')}
@@ -27,5 +27,3 @@ const NotificationDot = ({ color = ThemeColor.Norm, className, alt, ...rest }: N
         </span>
     );
 };
-
-export default NotificationDot;

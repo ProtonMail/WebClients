@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import CircleLoader from './CircleLoader';
+import { CircleLoader } from './CircleLoader';
 
 const circleLoaderTestId = 'circle-loader';
 

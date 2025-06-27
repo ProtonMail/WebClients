@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Href } from '..';
+import { Href } from './Href';
 
 const meta: Meta<typeof Href> = {
     args: {
