@@ -1605,6 +1605,12 @@
       ],
       "Create folder ${ boldFolderName }": [
         "Creare folder „${ boldFolderName }”"
+      ],
+      "Deleting folder": [
+        "Ștergerea folderului"
+      ],
+      "Deleting label": [
+        "Ștergerea etichetei"
       ]
     },
     "action": {
@@ -4894,6 +4900,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Limitați căutarea și reîncercați."
+      ],
+      "No address with sending permissions": [
+        "Nicio adresă cu permisiuni de trimitere."
+      ],
+      "Permissions request failed.": [
+        "Solicitarea de permisiuni a eșuat."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7210,7 +7222,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8665,6 +8679,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "Nu există mesaje de la acest expeditor în mesaje primite."
+      ],
+      "Dedicated VPN servers": [
+        "Servere VPN dedicate"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Număr de servere VPN dedicate din organizație"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -11545,6 +11568,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Domeniul și abonamentul sunt pregătite de utilizare."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } înseamnă că nu veți vedea niciodată reclame sponsorizate în aplicațiile noastre."
+      ],
+      "Ad-free promise": [
+        "Promisiunea fără reclame"
       ]
     },
     "Onboarding Proton": {
@@ -11792,6 +11821,9 @@
       ],
       "New credit/debit card": [
         "Card nou de credit/debit"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -15715,6 +15747,19 @@
       ],
       "Only": [
         "Doar"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonament anulat."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transfer bancar - ${ details }"
       ]
     }
   }

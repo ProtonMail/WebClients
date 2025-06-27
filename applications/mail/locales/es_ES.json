@@ -1603,6 +1603,12 @@
       ],
       "Create folder ${ boldFolderName }": [
         "Crear una carpeta ${ boldFolderName }"
+      ],
+      "Deleting folder": [
+        "Eliminando la carpeta"
+      ],
+      "Deleting label": [
+        "Eliminando la etiqueta"
       ]
     },
     "action": {
@@ -4881,6 +4887,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Tu búsqueda ha coincidido con muchos resultados. Limita tu búsqueda e inténtalo de nuevo."
+      ],
+      "No address with sending permissions": [
+        "No hay dirección con permisos de envío"
+      ],
+      "Permissions request failed.": [
+        "Error con la solicitud de permisos"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7115,7 +7127,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8545,6 +8558,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "No hay mensajes de este remitente en tu bandeja de entrada."
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados en la organización"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "También perderás acceso a las funciones de ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -11388,6 +11410,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "El dominio y la suscripción están listos para usar."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } significa que nunca verás anuncios patrocinados en nuestras aplicaciones."
+      ],
+      "Ad-free promise": [
+        "Nuestro compromiso sin publicidad"
       ]
     },
     "Onboarding Proton": {
@@ -11634,6 +11662,9 @@
       ],
       "New credit/debit card": [
         "Nueva tarjeta de crédito/débito"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -15423,6 +15454,19 @@
       ],
       "Only": [
         "Solo"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Se ha cancelado la suscripción."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferencia bancaria - ${ details }"
       ]
     }
   }

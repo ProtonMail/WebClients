@@ -1599,7 +1599,7 @@
         "Allunyar"
       ],
       "Create folder ${ boldFolderName }": [
-        "Crea una carpeta \"${ boldFolderName }"
+        "Crea la carpeta \"${ boldFolderName }"
       ],
       "Deleting folder": [
         "S'està eliminant la carpeta"
@@ -1790,7 +1790,7 @@
         "Protegiu fins a 10 dispositius"
       ],
       "Recover previous file versions": [
-        "Recupereu versions anteriors del fitxer"
+        "Recupereu versions anteriors dels fitxers"
       ],
       "Save big on premium Drive features with a limited-time discount.": [
         "Estalviiareu molt amb les funcions premium de Drive amb un descompte per temps limitat"
@@ -4868,6 +4868,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu la cerca i torneu-ho a provar."
+      ],
+      "No address with sending permissions": [
+        "No hi ha cap adreça amb permisos d'enviament"
+      ],
+      "Permissions request failed.": [
+        "Error amb la sol·licitud de permisos"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7102,7 +7108,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8518,8 +8525,8 @@
         "Només sou a uns quants clics d'una safata d'entrada ordenada"
       ],
       "${ n } newsletter": [
-        "Butlletí de ${ n }",
-        "Butlletins de ${ n }"
+        "${ n } butlletí",
+        "${ n } butlletins"
       ],
       "Block sender": [
         "Bloqueja el remitent"
@@ -8532,6 +8539,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "No teniu missatges d'aquest remitent a la safata d'entrada."
+      ],
+      "Dedicated VPN servers": [
+        "Servidors VPN dedicats"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Nombre de servidors VPN dedicats a l'organització"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "També perdreu l'accés a les característiques de ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -8856,7 +8872,7 @@
         "Adreça"
       ],
       "Alias title": [
-        "Nom de l'àlies"
+        "Títol de l'àlies"
       ],
       "ALL": [
         "TOT"
@@ -9850,7 +9866,7 @@
         "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
-        "El vostre emmagatzematge està ple. Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
+        "L'emmagatzematge és ple. Per a continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
@@ -11200,7 +11216,7 @@
         "No ho tornis a mostrar"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
-        "Obtingueu ${ BRAND_NAME } sense límits"
+        "Obteniu ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11299,7 +11315,7 @@
         "navegador"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Esborreu els correus suprimits i correu brossa en 30 dies."
+        "Esborra els correus eliminats i el correu brossa al cap de 30 dies."
       ],
       "Continue": [
         "Continua"
@@ -11375,6 +11391,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "El vostre domini i la vostra subscripció estan preparats per utilitzar-los."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }: mai veureu anuncis patrocinats a les nostres aplicacions."
+      ],
+      "Ad-free promise": [
+        "El nostre compromís sense publicitat"
       ]
     },
     "Onboarding Proton": {
@@ -11715,7 +11737,7 @@
         "El vostre pagament encara s'està processant."
       ],
       "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "El SEPA només s'accepta l'euro. La moneda ha estat canviada. Utilitzeu el selector per revertir la vostra elecció."
+        "Només s'accepta l'euro per al SEPA. S'ha canviat la moneda. Utilitzeu el selector per revertir la vostra elecció."
       ]
     },
     "Payments.Error": {
@@ -12645,7 +12667,7 @@
         "Mantingueu les vostres contrasenyes segures"
       ],
       "Unblock streaming content": [
-        "Tingui accés il·limitat a continguts en estríming"
+        "Tingueu accés al contingut en estríming."
       ]
     },
     "specialoffer: Offers": {
@@ -14799,8 +14821,8 @@
         "La vostra informació exposada"
       ],
       "Your free trial ends in ${ trialDurationFormatted } day": [
-        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dia",
-        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dies"
+        "La prova gratuïta finalitza en ${ trialDurationFormatted } dia",
+        "La prova gratuïta finalitza en ${ trialDurationFormatted } dies"
       ],
       "Your free trial has ended": [
         "La prova gratuïta ha finalitzat."
@@ -15416,6 +15438,11 @@
       ],
       "Bank transfer - ${ details }": [
         "Transferència bancària - ${ details }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "S'ha cancel·lat la subscripció."
       ]
     }
   }

@@ -1600,6 +1600,12 @@
       ],
       "Create folder ${ boldFolderName }": [
         "Créer un dossier « ${ boldFolderName } »"
+      ],
+      "Deleting folder": [
+        "Suppression du dossier"
+      ],
+      "Deleting label": [
+        "Suppression de l'étiquette"
       ]
     },
     "action": {
@@ -4878,6 +4884,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "No address with sending permissions": [
+        "Aucune adresse ne dispose de permissions d’envoi."
+      ],
+      "Permissions request failed.": [
+        "La demande d'autorisations n'a pas abouti."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7112,7 +7124,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8542,6 +8555,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "Il n'y a pas de messages de cet expéditeur dans votre boite de réception."
+      ],
+      "Dedicated VPN servers": [
+        "Serveurs VPN dédiés"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Nombre de serveurs VPN dédiés dans l'organisation"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Vous n'aurez également plus accès aux fonctionnalités de ${ boldPlanTitle } :"
       ]
     },
     "info": {
@@ -11385,6 +11407,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Votre domaine et votre abonnement sont prêts à être utilisés."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } : nos applications n'afficheront jamais de publicités sponsorisées."
+      ],
+      "Ad-free promise": [
+        "Notre engagement sans publicité"
       ]
     },
     "Onboarding Proton": {
@@ -15422,7 +15450,7 @@
         "Apple Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
       ],
       "Bank transfer - ${ details }": [
-        "Virement - ${ details }"
+        "Virement bancaire - ${ details }"
       ]
     },
     "Unlimited offer": {
@@ -15431,6 +15459,11 @@
       ],
       "Only": [
         "Seulement"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "L'abonnement a été annulé."
       ]
     }
   }

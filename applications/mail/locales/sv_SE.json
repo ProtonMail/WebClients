@@ -4865,6 +4865,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Permissions request failed.": [
+        "Behörighetsbegäran misslyckades."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7086,7 +7089,8 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8510,6 +8514,15 @@
       ],
       "Selection pane": [
         "Valpanel"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerade VPN-servrar i organisationen"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
       ]
     },
     "info": {
@@ -15368,6 +15381,9 @@
     "Payments.Saved payment method details": {
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
+      ],
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Unlimited offer": {
@@ -15376,6 +15392,11 @@
       ],
       "Only": [
         "Endast"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Prenumeration avslutad."
       ]
     }
   }
