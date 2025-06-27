@@ -1,4 +1,5 @@
 import { MESSAGE_IMAGE_ATTRIBUTES_TO_FIND, MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
+import { removeLineBreaks } from '@proton/mail/helpers/string';
 import type { MessageRemoteImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -15,7 +16,6 @@ import {
     loadRemoteImages,
     loadSkipProxyImages,
 } from 'proton-mail/helpers/message/messageRemotes';
-import { removeLineBreaks } from 'proton-mail/helpers/string';
 
 const SELECTOR = MESSAGE_IMAGE_ATTRIBUTES_TO_FIND.map((name) => {
     if (name === 'src') {
