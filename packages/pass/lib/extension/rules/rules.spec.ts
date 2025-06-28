@@ -1,7 +1,8 @@
-import { RULES_V1_MOCK } from '@proton/pass/lib/extension/rules/v1/mock';
-import { RULES_V2_MOCK } from '@proton/pass/lib/extension/rules/v2/mock';
-
 import { compileRules, expandArrayPattern, matchRules, matchSegments, parseRules, validateRules } from './rules';
+import { RULES_V1_MOCK } from './v1/mock';
+import RULES_V1_PROD from './v1/rules.json';
+import { RULES_V2_MOCK } from './v2/mock';
+import RULES_V2_PROD from './v2/rules.json';
 
 const toDict = (obj: object): object => {
     const replace = (_: string, value: any) => (value instanceof Map ? Object.fromEntries(value) : value);
@@ -192,6 +193,26 @@ describe('Compiler', () => {
             expect(toDict(compiled)).toEqual(expected);
         });
     });
+
+    describe('Sanity checks', () => {
+        test('Compiles production rules under 20ms', async () => {
+            const start = performance.now();
+            const result = compileRules(RULES_V1_PROD as any);
+            const duration = performance.now() - start;
+
+            expect(duration).toBeLessThan(20);
+            expect(result.version).toEqual('1');
+        });
+
+        test('Compiles production experimental rules under 20ms', async () => {
+            const start = performance.now();
+            const result = compileRules(RULES_V2_PROD as any);
+            const duration = performance.now() - start;
+
+            expect(duration).toBeLessThan(20);
+            expect(result.version).toEqual('2');
+        });
+    });
 });
 
 describe('Matchers', () => {
@@ -230,6 +251,11 @@ describe('Matchers', () => {
             const pathNode = comNode!.nodes!.get('/path');
             expect(matchSegments(compiledV2, ['example', 'com'], '/path')).toEqual([comNode, pathNode]);
         });
+
+        test('should not match partially', () => {
+            expect(matchSegments(compiledV2, ['example', 'com', 'fr'])).toEqual([]);
+            expect(matchSegments(compiledV2, ['example', 'com', 'sub', 'fr'], '/path')).toEqual([]);
+        });
     });
 
     describe('`matchRules`', () => {
@@ -261,6 +287,10 @@ describe('Matchers', () => {
                 version: '1',
                 exclude: ['rule > path > 2'],
             });
+
+            expect(matchRules(compiled, new URL('https://example.com.subdomain.fr'))).toEqual(null);
+            expect(matchRules(compiled, new URL('https://example.com.fr/path'))).toEqual(null);
+            expect(matchRules(compiled, new URL('http://example.com.fr/path'))).toEqual(null);
         });
 
         test('matches Rules V2', () => {
@@ -294,6 +324,10 @@ describe('Matchers', () => {
                 version: '2',
                 include: [{ selector: ['form'], formType: 'register' }],
             });
+
+            expect(matchRules(compiled, new URL('https://example.com.subdomain.fr'))).toEqual(null);
+            expect(matchRules(compiled, new URL('https://example.com.fr/path'))).toEqual(null);
+            expect(matchRules(compiled, new URL('http://example.com.fr/path'))).toEqual(null);
         });
 
         test('handles wildcard patterns', () => {
