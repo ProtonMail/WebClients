@@ -163,26 +163,6 @@ export const getSelfAddressData = ({
             selfAttendeeIndex: selfActiveAttendeeIndex,
         };
     }
-    // check emailTo
-    if (emailTo) {
-        const canonicalEmailTo = canonicalizeInternalEmail(emailTo);
-        const selfAttendeeIndex = canonicalAttendeeEmails.findIndex((email) => email === canonicalEmailTo);
-        if (selfAttendeeIndex !== -1) {
-            const selfAttendee = attendees[selfAttendeeIndex];
-            const catchAllAddress = internalAddresses.find(({ CatchAll }) => CatchAll);
-            const selfAddress = catchAllAddress || internalAddresses[0];
-
-            if (selfAddress) {
-                return {
-                    isOrganizer: false,
-                    isAttendee: true,
-                    selfAttendee,
-                    selfAddress,
-                    selfAttendeeIndex,
-                };
-            }
-        }
-    }
     // check inactive addresses
     const { selfInactiveAttendee, selfInactiveAddress, selfInactiveAttendeeIndex } = inactiveAddresses.reduce<{
         selfInactiveAttendee?: VcalAttendeeProperty;
@@ -214,12 +194,39 @@ export const getSelfAddressData = ({
         },
         { answeredAttendeeFound: false }
     );
+    if (selfInactiveAttendee || selfInactiveAddress || selfInactiveAttendeeIndex !== undefined) {
+        return {
+            isOrganizer: false,
+            isAttendee: !!selfInactiveAttendee,
+            selfAttendee: selfInactiveAttendee,
+            selfAddress: selfInactiveAddress,
+            selfAttendeeIndex: selfInactiveAttendeeIndex,
+        };
+    }
+    // check emailTo
+    if (emailTo) {
+        const canonicalEmailTo = canonicalizeInternalEmail(emailTo);
+        const selfAttendeeIndex = canonicalAttendeeEmails.findIndex((email) => email === canonicalEmailTo);
+        if (selfAttendeeIndex !== -1) {
+            const selfAttendee = attendees[selfAttendeeIndex];
+            const catchAllAddress = internalAddresses.find(({ CatchAll }) => CatchAll);
+            const selfAddress = catchAllAddress || internalAddresses[0];
+            return {
+                isOrganizer: false,
+                isAttendee: true,
+                selfAttendee,
+                selfAddress,
+                selfAttendeeIndex,
+            }
+        }
+    }
+
     return {
         isOrganizer: false,
-        isAttendee: !!selfInactiveAttendee,
-        selfAttendee: selfInactiveAttendee,
-        selfAddress: selfInactiveAddress,
-        selfAttendeeIndex: selfInactiveAttendeeIndex,
+        isAttendee: false,
+        selfAttendee: undefined,
+        selfAddress: undefined,
+        selfAttendeeIndex: undefined,
     };
 };
 
