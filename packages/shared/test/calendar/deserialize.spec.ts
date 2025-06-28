@@ -353,7 +353,7 @@ describe('getSelfAddressData()', () => {
         const organizer = buildVcalOrganizer('organizer@example.com');
 
         it('matches external email address with catch-all address', () => {
-            const externalEmailAttendee = buildVcalAttendee({
+            const externalAttendee = buildVcalAttendee({
                 email: 'user@external-domain.com',
                 cn: 'External Email User',
                 partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
@@ -363,7 +363,7 @@ describe('getSelfAddressData()', () => {
                 cn: 'Other Person',
                 partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
             });
-            const attendees = [otherAttendee, externalEmailAttendee];
+            const attendees = [otherAttendee, externalAttendee];
 
             const catchAllAddress = {
                 DisplayName: 'My Catch All',
@@ -397,19 +397,19 @@ describe('getSelfAddressData()', () => {
             ).toEqual({
                 isOrganizer: false,
                 isAttendee: true,
-                selfAttendee: externalEmailAttendee,
+                selfAttendee: externalAttendee,
                 selfAddress: catchAllAddress,
                 selfAttendeeIndex: 1,
             });
         });
 
         it('matches external email address without catch-all address', () => {
-            const forwardingEmailAttendee = buildVcalAttendee({
+            const forwardingAttendee = buildVcalAttendee({
                 email: 'work@company.com',
                 cn: 'Work Email',
                 partstat: ICAL_ATTENDEE_STATUS.TENTATIVE,
             });
-            const attendees = [forwardingEmailAttendee];
+            const attendees = [forwardingAttendee];
 
             const firstAddress = {
                 DisplayName: 'First Address',
@@ -443,7 +443,7 @@ describe('getSelfAddressData()', () => {
             ).toEqual({
                 isOrganizer: false,
                 isAttendee: true,
-                selfAttendee: forwardingEmailAttendee,
+                selfAttendee: forwardingAttendee,
                 selfAddress: firstAddress,
                 selfAttendeeIndex: 0,
             });
@@ -473,65 +473,39 @@ describe('getSelfAddressData()', () => {
             });
         });
 
-        it('falls back to regular matching when emailTo is not provided', () => {
-            const protonAttendee = buildVcalAttendee({
-                email: protonMailAddress.Email,
-                cn: 'Me',
+        it('prefers inactive address over emailTo match when both are present', () => {
+            const aliasDisabledAttendee = buildVcalAttendee({
+                email: aliasDisabledAddress.Email,
                 partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
             });
-            const attendees = [protonAttendee];
+            const aliasEmailToAttendee = buildVcalAttendee({
+                email: 'emailto@example.com',
+                partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
+            });
+            const attendees = [aliasEmailToAttendee, aliasDisabledAttendee];
 
             expect(
                 getSelfAddressData({
                     organizer,
                     attendees,
                     addresses,
+                    emailTo: 'emailto@example.com',
                 })
             ).toEqual({
                 isOrganizer: false,
                 isAttendee: true,
-                selfAttendee: protonAttendee,
-                selfAddress: protonMailAddress,
-                selfAttendeeIndex: 0,
-            });
-        });
-
-        it('prefers direct address match over emailTo match when both are present', () => {
-            const externalEmailAttendee = buildVcalAttendee({
-                email: 'alias@forwarding-service.com',
-                cn: 'Forwarded Email',
-                partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
-            });
-            const protonAttendee = buildVcalAttendee({
-                email: originalAddress.Email,
-                cn: 'Direct Match',
-                partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
-            });
-            const attendees = [externalEmailAttendee, protonAttendee];
-
-            expect(
-                getSelfAddressData({
-                    organizer,
-                    attendees,
-                    addresses,
-                    emailTo: 'alias@forwarding-service.com',
-                })
-            ).toEqual({
-                isOrganizer: false,
-                isAttendee: true,
-                selfAttendee: protonAttendee,
-                selfAddress: originalAddress,
+                selfAttendee: aliasDisabledAttendee,
+                selfAddress: aliasDisabledAddress,
                 selfAttendeeIndex: 1,
             });
         });
 
-        it('handles case when no internal addresses are available', () => {
-            const externalEmailAttendee = buildVcalAttendee({
-                email: 'user@external.com',
-                cn: 'External User',
-                partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+        it('handles case when no internal addresses nor emailTo are available', () => {
+            const externalAttendee = buildVcalAttendee({
+                email: externalAddress.Email,
+                partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
             });
-            const attendees = [externalEmailAttendee];
+            const attendees = [externalAttendee];
             const addresses = [externalAddress];
 
             expect(
@@ -539,7 +513,6 @@ describe('getSelfAddressData()', () => {
                     organizer,
                     attendees,
                     addresses,
-                    emailTo: 'user@external.com',
                 })
             ).toEqual({
                 isOrganizer: false,
