@@ -84,6 +84,35 @@ describe('Compiler', () => {
                 'www.google.de/login',
             ]);
         });
+
+        test('handles `i18n-tld` flag', () => {
+            expect(expandArrayPattern('www.amazon.{i18n-tld}/login')).toEqual([
+                'www.amazon.ae/login',
+                'www.amazon.be/login',
+                'www.amazon.ca/login',
+                'www.amazon.cn/login',
+                'www.amazon.co.jp/login',
+                'www.amazon.co.uk/login',
+                'www.amazon.co.za/login',
+                'www.amazon.com.au/login',
+                'www.amazon.com.be/login',
+                'www.amazon.com.br/login',
+                'www.amazon.com.mx/login',
+                'www.amazon.com.sa/login',
+                'www.amazon.com.tr/login',
+                'www.amazon.de/login',
+                'www.amazon.es/login',
+                'www.amazon.fr/login',
+                'www.amazon.ie/login',
+                'www.amazon.in/login',
+                'www.amazon.it/login',
+                'www.amazon.nl/login',
+                'www.amazon.pl/login',
+                'www.amazon.sa/login',
+                'www.amazon.se/login',
+                'www.amazon.sg/login',
+            ]);
+        });
     });
 
     describe('`compileRules`', () => {
