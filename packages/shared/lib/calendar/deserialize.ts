@@ -210,7 +210,7 @@ export const getSelfAddressData = ({
         if (selfAttendeeIndex !== -1) {
             const selfAttendee = attendees[selfAttendeeIndex];
             const catchAllAddress = internalAddresses.find(({ CatchAll }) => CatchAll);
-            const selfAddress = catchAllAddress || internalAddresses[0];
+            const selfAddress = catchAllAddress || activeAddresses[0] || inactiveAddresses[0];
             return {
                 isOrganizer: false,
                 isAttendee: true,
