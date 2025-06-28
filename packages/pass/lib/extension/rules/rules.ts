@@ -1,3 +1,4 @@
+import { I18N_TLDS, I18N_TLD_FLAG } from '@proton/pass/lib/extension/rules/tlds';
 import type { RuleV2 } from '@proton/pass/lib/extension/rules/v2/types';
 import type { MaybeNull } from '@proton/pass/types';
 import { isObject } from '@proton/pass/utils/object/is-object';
@@ -33,13 +34,28 @@ export const parseRules = (data: MaybeNull<string>): MaybeNull<DetectionRules> =
     }
 };
 
+const expand =
+    (pattern: string) =>
+    (str: string): string =>
+        pattern.replace(/\{[^}]+\}/, str);
+
+const expandOption =
+    (pattern: string) =>
+    (opt: string): string[] => {
+        switch (opt) {
+            case I18N_TLD_FLAG:
+                return I18N_TLDS.map(expand(pattern));
+            default:
+                return [expand(pattern)(opt)];
+        }
+    };
+
 /** Recursively expands array patterns in URL glob strings */
 export const expandArrayPattern = (pattern: string): string[] => {
     const match = pattern.match(/\{([^}]+)\}/);
     if (!match) return [pattern];
 
-    const options = match[1].split(',');
-    return options.map((opt) => pattern.replace(/\{[^}]+\}/, opt)).flatMap(expandArrayPattern);
+    return match[1].split(',').flatMap(expandOption(pattern)).flatMap(expandArrayPattern);
 };
 
 /** Compiles detection rules into a segment-Trie structure for fast URL matching.
