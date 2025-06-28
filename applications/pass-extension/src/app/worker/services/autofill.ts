@@ -235,6 +235,7 @@ export const createAutoFillService = () => {
         basicAuth: createBasicAuthController(),
         clear,
         getLoginCandidates,
+        getRules: () => state.rules,
         queryTabLoginForms,
         sync,
     };
