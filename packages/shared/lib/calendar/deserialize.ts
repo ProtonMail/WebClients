@@ -109,26 +109,6 @@ export const getSelfAddressData = ({
 
     const canonicalAttendeeEmails = attendees.map((attendee) => canonicalizeInternalEmail(getAttendeeEmail(attendee)));
 
-    if (emailTo) {
-        const canonicalEmailTo = canonicalizeInternalEmail(emailTo);
-        const emailToAttendeeIndex = canonicalAttendeeEmails.findIndex((email) => email === canonicalEmailTo);
-        if (emailToAttendeeIndex !== -1) {
-            const selfAttendee = attendees[emailToAttendeeIndex];
-            const catchAllAddress = internalAddresses.find(({ CatchAll }) => CatchAll);
-            const selfAddress = catchAllAddress || internalAddresses[0];
-
-            if (selfAddress) {
-                return {
-                    isOrganizer: false,
-                    isAttendee: true,
-                    selfAttendee,
-                    selfAddress,
-                    selfAttendeeIndex: emailToAttendeeIndex,
-                };
-            }
-        }
-    }
-
     // split active and inactive addresses
     const { activeAddresses, inactiveAddresses } = internalAddresses.reduce<{
         activeAddresses: Address[];
@@ -182,6 +162,26 @@ export const getSelfAddressData = ({
             selfAddress: selfActiveAddress,
             selfAttendeeIndex: selfActiveAttendeeIndex,
         };
+    }
+    // check emailTo
+    if (emailTo) {
+        const canonicalEmailTo = canonicalizeInternalEmail(emailTo);
+        const selfAttendeeIndex = canonicalAttendeeEmails.findIndex((email) => email === canonicalEmailTo);
+        if (selfAttendeeIndex !== -1) {
+            const selfAttendee = attendees[selfAttendeeIndex];
+            const catchAllAddress = internalAddresses.find(({ CatchAll }) => CatchAll);
+            const selfAddress = catchAllAddress || internalAddresses[0];
+
+            if (selfAddress) {
+                return {
+                    isOrganizer: false,
+                    isAttendee: true,
+                    selfAttendee,
+                    selfAddress,
+                    selfAttendeeIndex,
+                };
+            }
+        }
     }
     // check inactive addresses
     const { selfInactiveAttendee, selfInactiveAddress, selfInactiveAttendeeIndex } = inactiveAddresses.reduce<{

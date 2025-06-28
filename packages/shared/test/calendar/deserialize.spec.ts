@@ -496,7 +496,7 @@ describe('getSelfAddressData()', () => {
             });
         });
 
-        it('prefers emailTo match over regular address match', () => {
+        it('prefers direct address match over emailTo match when both are present', () => {
             const externalEmailAttendee = buildVcalAttendee({
                 email: 'alias@forwarding-service.com',
                 cn: 'Forwarded Email',
@@ -519,9 +519,9 @@ describe('getSelfAddressData()', () => {
             ).toEqual({
                 isOrganizer: false,
                 isAttendee: true,
-                selfAttendee: externalEmailAttendee,
+                selfAttendee: protonAttendee,
                 selfAddress: originalAddress,
-                selfAttendeeIndex: 0,
+                selfAttendeeIndex: 1,
             });
         });
 
