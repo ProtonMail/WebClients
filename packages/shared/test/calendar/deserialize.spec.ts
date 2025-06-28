@@ -87,7 +87,6 @@ describe('getSelfAddressData()', () => {
         Send: ADDRESS_SEND.SEND_NO,
         Type: ADDRESS_TYPE.TYPE_EXTERNAL,
     } as Address;
-    const anotherProtonEmail = 'another.me@proton.me';
 
     const addresses = [
         originalAddress,
@@ -114,14 +113,14 @@ describe('getSelfAddressData()', () => {
         });
         const attendees = [protonAttendee, externalAttendee];
 
-        expect(getSelfAddressData({ organizer, attendees, addresses, emailTo: anotherProtonEmail })).toEqual({
+        expect(getSelfAddressData({ organizer, attendees, addresses })).toEqual({
             isOrganizer: true,
             isAttendee: false,
             selfAddress: originalAddress,
         });
     });
 
-    it('does not identify me as an organizer when organizing an event with an external address != emailTo', () => {
+    it('does not identify me as an organizer when organizing an event with an external address', () => {
         const organizer = buildVcalOrganizer(externalAddress.Email);
 
         const protonAttendee = buildVcalAttendee({
@@ -136,7 +135,7 @@ describe('getSelfAddressData()', () => {
         });
         const attendees = [protonAttendee, otherAttendee];
 
-        expect(getSelfAddressData({ organizer, attendees, addresses, emailTo: anotherProtonEmail })).toEqual({
+        expect(getSelfAddressData({ organizer, attendees, addresses })).toEqual({
             isOrganizer: false,
             isAttendee: false,
             selfAddress: undefined,
@@ -145,7 +144,7 @@ describe('getSelfAddressData()', () => {
         });
     });
 
-    it('does not identify me as an attendee when attending an event with an external address != emailTo', () => {
+    it('does not identify me as an attendee when attending an event with an external address', () => {
         const organizer = buildVcalOrganizer('someone@proton.me');
 
         const externalAddressAttendee = buildVcalAttendee({
@@ -160,7 +159,7 @@ describe('getSelfAddressData()', () => {
         });
         const attendees = [externalAddressAttendee, otherAttendee];
 
-        expect(getSelfAddressData({ organizer, attendees, addresses, emailTo: anotherProtonEmail })).toEqual({
+        expect(getSelfAddressData({ organizer, attendees, addresses })).toEqual({
             isOrganizer: false,
             isAttendee: false,
             selfAddress: undefined,
@@ -215,7 +214,6 @@ describe('getSelfAddressData()', () => {
                         protonMailChAttendee,
                     ],
                     addresses,
-                    emailTo: anotherProtonEmail,
                 })
             ).toEqual({
                 isOrganizer: false,
@@ -269,7 +267,6 @@ describe('getSelfAddressData()', () => {
                         protonMailChAttendee,
                     ],
                     addresses,
-                    emailTo: anotherProtonEmail,
                 })
             ).toEqual({
                 isOrganizer: false,
@@ -299,7 +296,6 @@ describe('getSelfAddressData()', () => {
                     organizer,
                     attendees: [externalAttendee, freePmMeAttendee, aliasDisabledAttendee],
                     addresses,
-                    emailTo: anotherProtonEmail,
                 })
             ).toEqual({
                 isOrganizer: false,
@@ -340,7 +336,7 @@ describe('getSelfAddressData()', () => {
         } as Address;
         const addresses = [originalAddress, pmMeAddress];
 
-        expect(getSelfAddressData({ organizer, attendees, addresses, emailTo: anotherProtonEmail })).toEqual({
+        expect(getSelfAddressData({ organizer, attendees, addresses })).toEqual({
             isOrganizer: false,
             isAttendee: true,
             selfAttendee: pmMeAttendee,
