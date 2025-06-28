@@ -4,6 +4,7 @@ import Dialog from '@proton/components/components/dialog/Dialog';
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import { useModalPosition } from '@proton/components/components/modalTwo/modalPositions';
 import Portal from '@proton/components/components/portal/Portal';
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import useInstance from '@proton/hooks/useInstance';
 import usePrevious from '@proton/hooks/usePrevious';
@@ -77,6 +78,10 @@ export interface ModalOwnProps {
      * Whether or not to blur the backdrop of the modal
      */
     blurBackdrop?: boolean;
+    /**
+     * Extra hotkeys definition for modals
+     */
+    hotkeys?: HotkeyTuple[];
 }
 
 enum ExitState {
@@ -106,6 +111,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     behind,
     as,
     blurBackdrop,
+    hotkeys = [],
     ...rest
 }: PolymorphicPropsWithoutRef<ModalOwnProps, E>) => {
     const [key, setKey] = useState(() => generateUID());
@@ -158,6 +164,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     onClose?.();
                 },
             ],
+            ...hotkeys,
         ],
         { dependencies: [active, disableCloseOnEscape] }
     );

@@ -5,7 +5,9 @@ import { useLocation } from 'react-router-dom';
 import type { HotkeyTuple } from '@proton/components';
 import { useEventManager, useHotkeys } from '@proton/components';
 import { useFolders } from '@proton/mail';
-import { getFolderName } from '@proton/mail/labels/helpers';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { getFolderName } from '@proton/mail/store/labels/helpers';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isVisibleOnScreen } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -18,15 +20,13 @@ import {
     MESSAGE_FILTER_DROPDOWN_ID,
     MESSAGE_FOLDER_DROPDOWN_ID,
     MESSAGE_LABEL_DROPDOWN_ID,
-} from 'proton-mail/components/message/header/constants';
+} from 'proton-mail/components/message/extrasHeader/constants';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { isStarred } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import type { Element } from '../../models/element';
-import type { MessageState } from '../../store/messages/messagesTypes';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../actions/move/useMoveToFolder';
 import { useStar } from '../actions/useStar';
@@ -283,6 +283,7 @@ export const useMessageHotkeys = (
                         labelID,
                         status: MARK_AS_STATUS.UNREAD,
                         sourceAction: SOURCE_ACTION.SHORTCUTS,
+                        silent: true,
                     });
                     await call();
                 }

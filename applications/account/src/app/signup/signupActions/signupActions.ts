@@ -1,21 +1,14 @@
 import { format } from 'date-fns';
 
 import { MAX_CHARS_API } from '@proton/account';
-import { getInitialStorage, getStorageRange } from '@proton/components';
+import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
+import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import type { VerificationModel } from '@proton/components';
+import { getInitialStorage, getStorageRange } from '@proton/components';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
-import type { V5PaymentToken } from '@proton/payments';
-import {
-    COUPON_CODES,
-    type PaymentsVersion,
-    isTokenPayment,
-    isWrappedPaymentsVersion,
-    setPaymentMethodV4,
-    setPaymentMethodV5,
-    subscribe,
-} from '@proton/payments';
-import { getIsPassB2BPlan, getIsVpnB2BPlan } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
+import { type PaymentsVersion, getIsPassB2BPlan, getIsVpnB2BPlan, subscribe } from '@proton/payments';
 import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -42,6 +35,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api, HumanVerificationMethodType, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import {
     generateKeySaltAndPassphrase,
     generatePasswordlessOrganizationKey,
@@ -58,7 +52,6 @@ import noop from '@proton/utils/noop';
 
 import type {
     MnemonicData,
-    ReferralData,
     SignupActionDoneResponse,
     SignupActionResponse,
     SignupCacheResult,
@@ -84,7 +77,7 @@ export const handleDone = ({
     }
     const { session } = setupData;
 
-    // Users that creates an account after a logout don't have appIntent, foring forcing it here
+    // Users that creates an account after a logout don't have appIntent, forcing it here
     if (isElectronMail) {
         appIntent = {
             app: APPS.PROTONMAIL,
@@ -123,7 +116,7 @@ export const handleSaveRecovery = async ({
         !!recoveryPhone && srpAuth({ api, credentials: { password }, config: updatePhone({ Phone: recoveryPhone }) }),
         // Always send an update to the recovery email address when signing up with an external email address because the API sets it by default, so the client
         // needs to reset it to an empty string if the user chooses to not save a recovery email address.
-        (!!recoveryEmail || signupType === SignupType.Email) &&
+        (!!recoveryEmail || signupType === SignupType.External) &&
             srpAuth({
                 api,
                 credentials: { password },
@@ -131,7 +124,7 @@ export const handleSaveRecovery = async ({
             }).catch((e) => {
                 const { code } = getApiError(e);
                 // Ignore the error the API throws when updating the recovery email address to the external email address until it's fixed.
-                if (code === API_CUSTOM_ERROR_CODES.USER_UPDATE_EMAIL_SELF && signupType === SignupType.Email) {
+                if (code === API_CUSTOM_ERROR_CODES.USER_UPDATE_EMAIL_SELF && signupType === SignupType.External) {
                     return;
                 }
                 throw e;
@@ -328,7 +321,6 @@ export const getSubscriptionMetricsData = (
 export const handleSubscribeUser = async (
     api: Api,
     subscriptionData: SubscriptionData,
-    referralData: ReferralData | undefined,
     productParam: ProductParam,
     reportPaymentSuccess: () => void,
     reportPaymentFailure: () => void
@@ -341,28 +333,27 @@ export const handleSubscribeUser = async (
         let paymentsVersion: PaymentsVersion;
         if (subscriptionData.payment?.paymentsVersion) {
             paymentsVersion = subscriptionData.payment.paymentsVersion;
-        } else if (referralData) {
-            paymentsVersion = 'v5';
         } else {
             paymentsVersion = 'v4';
         }
 
-        await api(
+        const isTrial = subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+
+        const { Subscription } = await api<{ Subscription: Subscription }>(
             subscribe(
                 {
                     Plans: subscriptionData.planIDs,
                     Currency: subscriptionData.currency,
                     Cycle: subscriptionData.cycle,
                     BillingAddress: subscriptionData.billingAddress,
-                    ...(referralData
-                        ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
-                        : {
-                              Payment: subscriptionData.payment,
-                              Amount: subscriptionData.checkResult.AmountDue,
-                              ...(subscriptionData.checkResult.Coupon?.Code
-                                  ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
-                                  : undefined),
-                          }),
+                    ...{
+                        Payment: subscriptionData.payment,
+                        Amount: subscriptionData.checkResult.AmountDue,
+                        ...(subscriptionData.checkResult.Coupon?.Code
+                            ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
+                            : undefined),
+                        ...(isTrial ? { StartTrial: true } : {}),
+                    },
                 },
                 productParam,
                 paymentsVersion
@@ -371,21 +362,7 @@ export const handleSubscribeUser = async (
 
         reportPaymentSuccess();
 
-        if (subscriptionData.checkResult.AmountDue === 0 && isTokenPayment(subscriptionData.payment)) {
-            if (
-                isWrappedPaymentsVersion(subscriptionData.payment) &&
-                subscriptionData.payment.paymentsVersion === 'v5'
-            ) {
-                const v5PaymentToken: V5PaymentToken = {
-                    PaymentToken: subscriptionData.payment.Details.Token,
-                    v: 5,
-                };
-
-                await api(setPaymentMethodV5({ ...subscriptionData.payment, ...v5PaymentToken }));
-            } else {
-                await api(setPaymentMethodV4(subscriptionData.payment));
-            }
-        }
+        return Subscription;
     } catch (error: any) {
         reportPaymentFailure();
         throw error;
@@ -508,10 +485,10 @@ export const handleSetupUser = async ({
     } = cache;
 
     const userEmail = (() => {
-        if (signupType === SignupType.Username) {
+        if (signupType === SignupType.Proton) {
             return `${username}@${domain}`;
         }
-        if (signupType === SignupType.Email) {
+        if (signupType === SignupType.External || signupType === SignupType.BringYourOwnEmail) {
             return email;
         }
         throw new Error('Unknown type');
@@ -527,14 +504,19 @@ export const handleSetupUser = async ({
     }).then((response): Promise<AuthResponse> => response.json());
 
     // Perform the subscription first to prevent "locked user" while setting up keys.
-    await handleSubscribeUser(
-        api,
-        subscriptionData,
-        referralData,
-        productParam,
-        reportPaymentSuccess,
-        reportPaymentFailure
-    );
+    // Before, we needed to subscribe as a referral
+    // The backend now takes care of this for us,
+    // so we don't need to subscribe anymore on the frontend
+    let subscription: Subscription | undefined;
+    if (!referralData) {
+        subscription = await handleSubscribeUser(
+            api,
+            subscriptionData,
+            productParam,
+            reportPaymentSuccess,
+            reportPaymentFailure
+        );
+    }
 
     api(updateLocale(localeCode)).catch(noop);
 
@@ -563,6 +545,7 @@ export const handleSetupUser = async ({
     const newCache: SignupCacheResult = {
         ...cache,
         trusted,
+        subscription,
         setupData: {
             user,
             session: sessionResult,
@@ -576,6 +559,22 @@ export const handleSetupUser = async ({
     // Ignore the rest of the steps for VPN because we don't create an address and ask for recovery email at the start
     if (clientType === CLIENT_TYPES.VPN && !ignoreVPN) {
         return handleDone({ cache: newCache, appIntent: cache.appIntent });
+    }
+
+    // Start the easy switch import for pure BYOE accounts
+    if (
+        newCache.accountData?.signupType === SignupType.BringYourOwnEmail &&
+        newCache.setupData?.addresses &&
+        newCache.setupData?.addresses.length > 0
+    ) {
+        const addressID = newCache.setupData.addresses[0].ID;
+        await api(
+            startEasySwitchSignupImportTask({
+                Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SIGNUP,
+                AddressId: addressID,
+                Provider: OAUTH_PROVIDER.GOOGLE,
+            })
+        );
     }
 
     return {
@@ -645,7 +644,7 @@ export const handleCreateAccount = async ({
     } = cache;
 
     try {
-        if (signupType === SignupType.Username) {
+        if (signupType === SignupType.Proton) {
             await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
         }
     } catch (error: any) {
@@ -653,7 +652,7 @@ export const handleCreateAccount = async ({
         throw error;
     }
 
-    if (signupType === SignupType.Email) {
+    if (signupType === SignupType.External) {
         try {
             await api(
                 withVerificationHeaders(
@@ -675,10 +674,10 @@ export const handleCreateAccount = async ({
     }
 
     if (cache.referralData?.referrer) {
-        return {
+        return handleCreateUser({
             cache,
-            to: SignupSteps.TrialPlan,
-        };
+            api,
+        });
     }
 
     if (cache.subscriptionData.checkResult.Amount > 0 && hasPlanIDs(cache.subscriptionData.planIDs)) {

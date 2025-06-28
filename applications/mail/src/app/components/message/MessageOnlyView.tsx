@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Scroll } from '@proton/atoms';
 import { useHotkeys } from '@proton/components';
 import { useLabels } from '@proton/mail';
+import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -12,7 +13,6 @@ import clsx from '@proton/utils/clsx';
 import useClickOutsideFocusedMessage from '../../hooks/conversation/useClickOutsideFocusedMessage';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import { useMessage } from '../../hooks/message/useMessage';
-import type { MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 import ConversationHeader from '../conversation/ConversationHeader';
 import type { MessageViewRef } from './MessageView';
 import MessageView from './MessageView';
@@ -26,6 +26,7 @@ interface Props {
     onMessageReady: () => void;
     columnLayout: boolean;
     isComposerOpened: boolean;
+    showBackButton?: boolean;
 }
 
 const MessageOnlyView = ({
@@ -37,6 +38,7 @@ const MessageOnlyView = ({
     onMessageReady,
     columnLayout,
     isComposerOpened,
+    showBackButton = false,
 }: Props) => {
     const [labels = []] = useLabels();
 
@@ -129,6 +131,8 @@ const MessageOnlyView = ({
                 className={clsx([hidden && 'hidden'])}
                 loading={!messageLoaded}
                 element={message.data}
+                showBackButton={showBackButton}
+                onBack={onBack}
             />
             <div className="flex-1 px-4 mt-4 max-w-full outline-none" ref={messageContainerRef} tabIndex={-1}>
                 <MessageView

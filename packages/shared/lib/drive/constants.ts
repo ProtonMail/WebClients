@@ -172,6 +172,8 @@ export enum SupportedProtonDocsMimeTypes {
     md = 'text/markdown',
     html = 'text/html',
     xlsx = SupportedMimeTypes.xlsx,
+    csv = 'text/csv',
+    tsv = 'text/tab-separated-values',
 }
 
 // RAWMimeTypes keys must be the usual extension of the file. It is used in validation, see `isRAWExtension`.
@@ -217,6 +219,7 @@ export enum RAWThumbnailExtractionSupported {
     cr2 = 'image/x-canon-cr2',
     cr3 = 'image/x-canon-cr3',
     heic = 'image/heic',
+    nef = 'image/x-nikon-nef',
 }
 
 export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {

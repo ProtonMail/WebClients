@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/components';
-import { Icon, Tooltip } from '@proton/components';
+import { Icon } from '@proton/components'
+import { Tooltip } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import {

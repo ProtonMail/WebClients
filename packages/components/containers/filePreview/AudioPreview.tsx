@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { CircleLoader } from '@proton/atoms/index';
+import { CircleLoader } from '@proton/atoms';
 
 import UnsupportedPreview from './UnsupportedPreview';
 

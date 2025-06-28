@@ -22,3 +22,7 @@ export const selectSyncById = createSelector(
 export const selectSyncIdsByDate = createSelector(selectSync, (sync) =>
     orderBy(sync, 'startDate', 'desc').map((sync) => sync.id)
 );
+
+export const getAllSync = createSelector(selectSync, (syncs: SyncMap) => {
+    return Object.values(syncs);
+});

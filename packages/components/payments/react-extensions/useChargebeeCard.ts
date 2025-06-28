@@ -11,10 +11,10 @@ import {
     type ForceEnableChargebee,
     type PaymentVerificatorV5,
 } from '@proton/payments';
+import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments';
 import { type Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import type { PaymentProcessorHook, PaymentProcessorType } from './interface';
 import { usePaymentProcessor } from './usePaymentProcessor';
 
 export interface Props {
@@ -46,7 +46,6 @@ export type ChargebeeCardProcessorHook = Omit<PaymentProcessorHook, keyof Overri
     setPostalCode: (postalCode: string) => void;
     errors: Record<string, string>;
     submitted: boolean;
-    reset: () => void;
 } & Overrides;
 
 export const useChargebeeCard = (
@@ -109,6 +108,10 @@ export const useChargebeeCard = (
     useEffect(() => {
         paymentProcessor.onTokenIsChargeable = onChargeable;
     }, [onChargeable]);
+
+    useEffect(() => {
+        paymentProcessor.verifyOnly = !!verifyOnly;
+    }, [verifyOnly]);
 
     const reset = () => paymentProcessor.reset();
 

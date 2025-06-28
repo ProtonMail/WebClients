@@ -12,7 +12,7 @@ import {
     useNotifications,
     useThemeQueryParameter,
 } from '@proton/components';
-import AccountLockedUpsellForm from '@proton/components/components/upsell/modal/AccountLockedUpsellForm';
+import AccountLockedUpsellForm from '@proton/components/components/upsell/modals/AccountLockedUpsellForm';
 import useInstance from '@proton/hooks/useInstance';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';

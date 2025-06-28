@@ -46,4 +46,11 @@
 	.textarea {
 		font-size: em($base-font-size);
 	}
+
+	input,
+	textarea {
+		/* Account for potential sticky headers
+		 * when calling `scrollIntoView` on fields. */
+		scroll-margin-top: em(80);
+	}
 }

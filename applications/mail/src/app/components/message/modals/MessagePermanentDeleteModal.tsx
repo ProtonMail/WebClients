@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import { ErrorButton, Prompt, useApi, useEventManager, useNotifications } from '@proton/components';
+import { Prompt, useApi, useEventManager, useNotifications } from '@proton/components';
+import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 
 import {
@@ -10,7 +11,6 @@ import {
     getModalText,
     getNotificationText,
 } from '../../../hooks/actions/delete/usePermanentDeleteSelection';
-import type { MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 
 interface Props extends ModalProps {
     message: MessageWithOptionalBody;
@@ -34,7 +34,7 @@ const MessagePermanentDeleteModal = ({ message, ...rest }: Props) => {
         <Prompt
             title={getDeleteTitle(false, false, 1)}
             buttons={[
-                <ErrorButton onClick={handleDelete}>{c('Action').t`Delete`}</ErrorButton>,
+                <Button color="danger" onClick={handleDelete}>{c('Action').t`Delete`}</Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}

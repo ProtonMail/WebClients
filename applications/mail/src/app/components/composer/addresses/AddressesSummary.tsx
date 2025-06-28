@@ -3,8 +3,8 @@ import { Fragment, memo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, Label, Tooltip } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { Icon, Label } from '@proton/components';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';

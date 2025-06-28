@@ -1,14 +1,12 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import ErrorButton from '@proton/components/components/button/ErrorButton';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import useLoading from '@proton/hooks/useLoading';
 import { deleteLabel } from '@proton/shared/lib/api/labels';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
@@ -24,7 +22,7 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { onClose } = rest;
 
-    const [isDeleting, setIsDeleting] = useState(false);
+    const [loading, withLoading] = useLoading();
 
     const handleRemove = async () => {
         await api(deleteLabel(label.ID));
@@ -57,23 +55,24 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
         },
     };
 
+    const loadingButtonCopy =
+        label.Type === LABEL_TYPE.MESSAGE_FOLDER ? c('Action').t`Deleting folder` : c('Action').t`Deleting label`;
+
     return (
         <Prompt
             title={
                 label.Type === LABEL_TYPE.MESSAGE_FOLDER ? c('Title').t`Delete folder?` : c('Title').t`Delete label?`
             }
             buttons={[
-                <ErrorButton
-                    disabled={isDeleting}
+                <Button
+                    color="danger"
+                    loading={loading}
                     onClick={async () => {
-                        try {
-                            setIsDeleting(true);
-                            await handleRemove();
-                        } finally {
-                            setIsDeleting(false);
-                        }
+                        await withLoading(handleRemove);
                     }}
-                >{c('Action').t`Delete`}</ErrorButton>,
+                >
+                    {loading ? loadingButtonCopy : c('Action').t`Delete`}
+                </Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}

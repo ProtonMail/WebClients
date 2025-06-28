@@ -3,6 +3,7 @@ import keyBy from 'lodash/keyBy';
 import { c } from 'ttag';
 
 import { ImportProviderError, ImportReaderError } from '@proton/pass/lib/import/helpers/error';
+import { attachFilesToItem } from '@proton/pass/lib/import/helpers/files';
 import {
     getEmailOrUsername,
     getImportedVaultName,
@@ -10,36 +11,25 @@ import {
     importIdentityItem,
     importLoginItem,
     importNoteItem,
+    importSshKeyItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
-import { type BitwardenData, type BitwardenItem, BitwardenType } from './bitwarden.types';
+import { type BitwardenData, BitwardenType } from './bitwarden.types';
 import {
     extractBitwardenExtraFields,
     extractBitwardenIdentity,
+    extractBitwardenSSHSections,
     extractBitwardenUrls,
     formatBitwardenCCExpirationDate,
 } from './bitwarden.utils';
 
-const BitwardenTypeMap: Record<number, string> = {
-    1: 'Login',
-    2: 'Note',
-    3: 'Credit Card',
-    4: 'Identification',
-};
-
-const addCustomFieldsWarning = (ignored: string[], item: BitwardenItem) => {
-    if (item.fields) {
-        ignored.push(
-            // Translator: The item name and a colon will precede the warning message, e.g. "[My login]: item was imported without custom fields"
-            `[${BitwardenTypeMap[item.type]}] ${item.name}: ${c('Warning').t`item was imported without custom fields`}`
-        );
-    }
-};
-
-export const readBitwardenData = async (file: File): Promise<ImportReaderResult> => {
+export const readBitwardenData = async (
+    file: File,
+    attachments?: Map<string, string[]>
+): Promise<ImportReaderResult> => {
     try {
         const data = await file.text();
         const parsedData = JSON.parse(data) as BitwardenData;
@@ -81,13 +71,12 @@ export const readBitwardenData = async (file: File): Promise<ImportReaderResult>
                                     ...(await getEmailOrUsername(item.login.username)),
                                 });
                             case BitwardenType.NOTE:
-                                addCustomFieldsWarning(ignored, item);
                                 return importNoteItem({
                                     name: item.name,
                                     note: item.notes,
+                                    extraFields: extractBitwardenExtraFields(item.fields),
                                 });
                             case BitwardenType.CREDIT_CARD:
-                                addCustomFieldsWarning(ignored, item);
                                 return importCreditCardItem({
                                     name: item.name,
                                     note: item.notes,
@@ -95,19 +84,31 @@ export const readBitwardenData = async (file: File): Promise<ImportReaderResult>
                                     number: item.card.number,
                                     verificationNumber: item.card.code,
                                     expirationDate: formatBitwardenCCExpirationDate(item),
+                                    extraFields: extractBitwardenExtraFields(item.fields),
                                 });
                             case BitwardenType.IDENTITY:
-                                addCustomFieldsWarning(ignored, item);
                                 return importIdentityItem({
                                     name: item.name,
                                     note: item.notes,
                                     ...extractBitwardenIdentity(item),
                                 });
+                            case BitwardenType.SSH_KEY:
+                                return importSshKeyItem({
+                                    name: item.name,
+                                    note: item.notes,
+                                    publicKey: item.sshKey.publicKey,
+                                    privateKey: item.sshKey.privateKey,
+                                    extraFields: extractBitwardenExtraFields(item.fields),
+                                    sections: extractBitwardenSSHSections(item),
+                                });
                         }
                     })();
 
                     if (!value) ignored.push(`[${item.type}] ${item.name}`);
-                    else items.push(value);
+                    else {
+                        const files = attachments?.get(item.id) ?? [];
+                        items.push(attachFilesToItem(value, files));
+                    }
                 } catch (err) {
                     ignored.push(`[${item.type}] ${item.name}`);
                     logger.warn('[Importer::Bitwarden]', err);

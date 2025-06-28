@@ -1,5 +1,8 @@
+import { c, msgid } from 'ttag';
+
 import { isItemTarget } from '@proton/pass/lib/access/access.predicates';
-import type { NewUserPendingInvite } from '@proton/pass/types';
+import { AccessTarget } from '@proton/pass/lib/access/types';
+import type { NewUserPendingInvite, Share } from '@proton/pass/types';
 import { type InviteBase, NewUserInviteState, type Result } from '@proton/pass/types';
 import { and } from '@proton/pass/utils/fp/predicates';
 
@@ -31,3 +34,26 @@ export const concatInviteResults = (results: InviteBatchResult[]): InviteBatchRe
         },
         { ok: true }
     );
+
+export const getLimitReachedText = (share: Share, target: AccessTarget) => {
+    switch (target) {
+        case AccessTarget.Vault: {
+            const { targetMaxMembers } = share;
+            // translator: full message is "Vaults can’t contain more than 10 users.""
+            return c('Success').ngettext(
+                msgid`Vaults can’t contain more than ${targetMaxMembers} user.`,
+                `Vaults can’t contain more than ${targetMaxMembers} users.`,
+                targetMaxMembers
+            );
+        }
+
+        case AccessTarget.Item: {
+            // translator: full message is "Items can’t contain more than 10 users.""
+            return c('Success').ngettext(
+                msgid`Items can’t contain more than ${share.targetMaxMembers} user.`,
+                `Items can’t contain more than ${share.targetMaxMembers} users.`,
+                share.targetMaxMembers
+            );
+        }
+    }
+};

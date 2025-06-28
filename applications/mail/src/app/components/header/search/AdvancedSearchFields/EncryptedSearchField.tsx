@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Info, Label, Progress, Toggle, Tooltip, useModalState } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { Info, Label, Progress, Toggle, useModalState } from '@proton/components';
 import type { ESIndexingState } from '@proton/encrypted-search';
 import { useIndexedDBSupport } from '@proton/encrypted-search/lib/hooks/useIndexedDBSupport';
 import clsx from '@proton/utils/clsx';

@@ -67,7 +67,7 @@ export const VaultInviteCreate: FC<SelectedShare> = ({ shareId }) => {
     })();
 
     return (
-        <SidebarModal onClose={close} open className={`pass-invite--${form.values.step}`}>
+        <SidebarModal open className={`pass-invite--${form.values.step}`}>
             {(didEnter): ReactNode => (
                 <Panel loading={loading} header={<PanelHeader actions={InviteStepActions(FORM_ID, attributes)} />}>
                     <FormikProvider value={form}>

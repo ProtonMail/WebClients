@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Icon, SkeletonLoader, VpnLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
@@ -28,7 +29,6 @@ import {
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
-import { Icon, SkeletonLoader, VpnLogo } from '@proton/components/index';
 import type { IconSize } from '@proton/icons';
 import { PLANS, type Plan } from '@proton/payments';
 import { APPS, BRAND_NAME, PASS_APP_NAME, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';

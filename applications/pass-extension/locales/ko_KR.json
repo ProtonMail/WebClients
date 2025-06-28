@@ -29,6 +29,9 @@
       "Add domain": [
         "도메인 추가"
       ],
+      "Add field": [
+        "필드 추가"
+      ],
       "Add forwarding mailbox": [
         "포워딩 메일함 추가"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "생성"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
       "Create alias": [
@@ -359,6 +362,9 @@
       "Make editor": [
         "편집기 생성"
       ],
+      "Make manager": [
+        "중간 관리자로 설정"
+      ],
       "Make viewer": [
         "뷰어 생성"
       ],
@@ -398,6 +404,9 @@
       "Multiple select": [
         "다중 선택"
       ],
+      "Next month": [
+        "다음 달"
+      ],
       "No expired links": [
         "만료된 링크 없음"
       ],
@@ -428,11 +437,17 @@
       "Please retry": [
         "다시 시도하세요"
       ],
+      "Previous month": [
+        "지난 달"
+      ],
       "Re-verify": [
         "재인증"
       ],
       "Reactivate now": [
         "지금 재활성화"
+      ],
+      "Read More": [
+        "자세히 보기"
       ],
       "Refresh the page": [
         "페이지 새로 고침"
@@ -557,6 +572,9 @@
       "Show advanced options": [
         "고급 옵션 표시"
       ],
+      "Show Less": [
+        "간단히 보기"
+      ],
       "Sign back in": [
         "다시 로그인하기"
       ],
@@ -571,6 +589,9 @@
       ],
       "Sort vault items": [
         "금고 항목 정렬"
+      ],
+      "Start from scratch": [
+        "처음부터 시작하기"
       ],
       "Submit": [
         "제출"
@@ -752,9 +773,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } 파일을 분석할 수 없습니다. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[오류] 항목을 파싱할 수 없습니다"
-      ],
       "A domain ownership must be verified first.": [
         "도메인 소유권 인증이 우선 필요합니다."
       ],
@@ -777,6 +795,9 @@
         "인증 실패. 이 내보내기 작업을 완료하기 위해서는 백업 비밀번호를 입력하세요."
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "인증 실패. 이 내보내기 작업을 완료하기 위해서는 추가 비밀번호를 입력하세요."
+      ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
         "인증 실패. 이 내보내기 작업을 완료하기 위해서는 추가 비밀번호를 입력하세요."
       ],
       "Authentication failure: ${ message }": [
@@ -995,6 +1016,9 @@
       "File does not match expected format": [
         "파일이 형식과 일치되지 않습니다."
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "금고 \"${ vaultData.name }\"(으)로 불러오기 실패: ${ errorMessage }"
+      ],
       "Importing items failed": [
         "항목 불러오기 실패"
       ],
@@ -1124,6 +1148,9 @@
       "Unsupported 1Password file format": [
         "지원되지 않는 1Password 파일 포맷"
       ],
+      "Unsupported Bitwarden file format": [
+        "지원되지 않는 Bitwarden 파일 포맷"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" 금고를 업데이트하는데 실패했습니다."
       ],
@@ -1228,7 +1255,7 @@
       "${ count } view": [
         "${ count }명 조회"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
         "조회수 ${ count }건/${ maxReads }건"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1318,6 +1345,9 @@
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "${ PASS_APP_NAME }에 대한 접근이 항상 추가 비밀번호를 요구하게 됩니다."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "${ PASS_APP_NAME }에 대한 접근이 항상 추가 비밀번호를 요구하게 됩니다."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }에 접근하려면 지문 인식 및 기기 PIN코드가 필요합니다."
       ],
@@ -1380,6 +1410,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "자동 잠금이 성공적으로 비활성화 되었습니다."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "저장된 자격 증명으로 HTTP 기본 인증 대화상자를 자동 완성합니다."
       ],
       "automatically": [
         "자동"
@@ -1571,7 +1604,7 @@
         "받을 사람의 이메일 주소를 입력하세요."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "인증 코드를 입력하세요. ${ digit } 자리."
+        "인증 코드를 입력하세요. ${ digit }자리입니다."
       ],
       "Enter your extra password": [
         "추가 비밀번호 입력"
@@ -1728,6 +1761,9 @@
       ],
       "Make it your own": [
         "나만의 것으로 만들기"
+      ],
+      "Manager": [
+        "중간 관리자"
       ],
       "me": [
         "나"
@@ -1887,6 +1923,24 @@
       ],
       "Please confirm your PIN code to edit this setting.": [
         "이 설정을 수정하기 위해 PIN 코드를 입력해 주세요."
+      ],
+      "Please confirm your second password": [
+        "백업 비밀번호를 확인해주세요"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "생체인증으로 잠금 해제하려면 백업 암호를 확인하세요."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "비밀번호로 자동 잠금을 사용하려면 백업 비밀번호로 인증해주세요."
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 백업 비밀번호를 입력하세요."
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "현재 잠금의 등록을 취소하려면 백업 비밀번호로 인증해주세요."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "자동 잠금 시간을 업데이트하기 위해 백업 비밀번호를 확인해 주세요."
       ],
       "Please consider leaving a review.": [
         "리뷰 쓰는 것을 고려해 보세요."
@@ -2086,6 +2140,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "이 항목은 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
       ],
+      "This mailbox will use your previous email.": [
+        "이 메일함은 귀하의 이전 이메일을 사용할 것입니다."
+      ],
       "This operation is irreversible.": [
         "이 작업은 되돌릴 수 없습니다."
       ],
@@ -2155,6 +2212,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "추가 비밀번호로 ${ PASS_SHORT_APP_NAME } 잠금 해제"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "백업 비밀번호로 ${ PASS_SHORT_APP_NAME } 잠금 해제"
+      ],
       "Unlock it with your PIN to access the settings": [
         "설정에 접근하기 위해 PIN으로 잠금 해제 하세요."
       ],
@@ -2211,6 +2271,9 @@
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "SimpleLogin에 ${ aliasCount }개의 별칭이 존재하지만 ${ PASS_APP_NAME }에는 누락된 별칭이 있음이 발견되었어요. 해당 별명을 불러오시겠어요?"
+      ],
+      "Week": [
+        "주"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "${ email }(으)로 인증 코드를 발송해 드렸습니다. 아래에 코드를 입력해 주세요:"
@@ -2397,6 +2460,12 @@
       "Account": [
         "계정"
       ],
+      "Account Number": [
+        "계좌 번호"
+      ],
+      "Account Type": [
+        "계좌 유형"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "새로운 별칭을 만들 때 이 도메인에 임의의 접두사를 추가하세요."
       ],
@@ -2405,6 +2474,9 @@
       ],
       "Additional details": [
         "추가 정보"
+      ],
+      "Address": [
+        "주소"
       ],
       "Address details": [
         "주소 상세정보"
@@ -2433,6 +2505,12 @@
       "Always show username field": [
         "사용자 이름 입력란 항상 표시"
       ],
+      "API Credential": [
+        "API 자격 증명"
+      ],
+      "API Key": [
+        "API 키"
+      ],
       "Application logs": [
         "어플리케이션 로그"
       ],
@@ -2456,6 +2534,15 @@
       ],
       "Backup password": [
         "백업 비밀번호"
+      ],
+      "Bank Account": [
+        "은행 번호"
+      ],
+      "Bank Name": [
+        "은행명"
+      ],
+      "Basic Auth autofill": [
+        "기본 인증 자동 완성"
       ],
       "Biometrics": [
         "생체 인식"
@@ -2484,8 +2571,14 @@
       "Catch-All": [
         "Catch-All"
       ],
+      "Checkbox": [
+        "체크박스"
+      ],
       "City": [
         "시/군/구"
+      ],
+      "Class": [
+        "등급"
       ],
       "Code": [
         "코드"
@@ -2511,6 +2604,9 @@
       "Copy password": [
         "비밀번호 복사"
       ],
+      "Country": [
+        "국가"
+      ],
       "Country or Region": [
         "국가/지역"
       ],
@@ -2519,6 +2615,9 @@
       ],
       "Create a credit card": [
         "신용 카드 생성"
+      ],
+      "Create a custom item": [
+        "사용자 지정 항목 추가"
       ],
       "Create a hide-my-email alias": [
         "Hide-my-email 별칭 생성"
@@ -2538,17 +2637,26 @@
       "Create new vault": [
         "새 금고 생성"
       ],
-      "Created": [
-        "제작"
-      ],
       "Created at": [
         "생성일:"
       ],
-      "Custom hidden field": [
-        "사용자 지정 숨겨진 필드"
+      "Crypto Wallet": [
+        "암호화폐 지갑"
       ],
-      "Custom text field": [
-        "사용자 정의 필드"
+      "Custom Items": [
+        "사용자 지정 항목"
+      ],
+      "Database": [
+        "데이터 베이스"
+      ],
+      "Database Type": [
+        "데이터베이스 유형"
+      ],
+      "Date": [
+        "날짜"
+      ],
+      "Date of Birth": [
+        "생일"
       ],
       "Device": [
         "기기"
@@ -2561,6 +2669,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "의사"
       ],
       "Domain": [
         "도메인"
@@ -2576,6 +2687,9 @@
       ],
       "Download logs": [
         "로그 다운로드"
+      ],
+      "Driver License": [
+        "운전 면허증"
       ],
       "Email": [
         "이메일"
@@ -2604,8 +2718,14 @@
       "Expired": [
         "만료됨"
       ],
+      "Expiry Date": [
+        "만료 날짜"
+      ],
       "Export": [
         "내보내기"
+      ],
+      "Extra fields": [
+        "추가 입력란"
       ],
       "Extra password": [
         "추가 비밀번호"
@@ -2621,6 +2741,9 @@
       ],
       "File format": [
         "파일 형식"
+      ],
+      "Finance": [
+        "금융"
       ],
       "First name": [
         "이름"
@@ -2655,8 +2778,23 @@
       "Hide password": [
         "비밀번호 숨기기"
       ],
+      "Holder Name": [
+        "소유자명"
+      ],
+      "Hospital": [
+        "병원"
+      ],
+      "Host": [
+        "호스트"
+      ],
+      "Hostname": [
+        "호스트 이름"
+      ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "신분증"
@@ -2700,6 +2838,18 @@
       "Invitations": [
         "초대"
       ],
+      "IP Address": [
+        "IP 주소"
+      ],
+      "Issuing Authority": [
+        "발급 기관"
+      ],
+      "Issuing Country": [
+        "발행 지역"
+      ],
+      "Issuing State/Country": [
+        "발행 지역/국가"
+      ],
       "Item ID": [
         "항목 ID"
       ],
@@ -2708,6 +2858,12 @@
       ],
       "Key": [
         "키"
+      ],
+      "Key fingerprint": [
+        "지문 키"
+      ],
+      "Key type": [
+        "키 유형"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "키보드 단축키: ${ shortcut }"
@@ -2736,8 +2892,14 @@
       "License": [
         "라이선스"
       ],
+      "License Key": [
+        "인증키"
+      ],
       "License number": [
         "라이선스 번호"
+      ],
+      "License Number": [
+        "면허 번호"
       ],
       "LinkedIn account": [
         "LinkedIn 계정"
@@ -2760,14 +2922,38 @@
       "Make all editors": [
         "전체 구성원을 편집자로 선택"
       ],
+      "Make all managers": [
+        "전체 구성원을 중간 관리자로 선택"
+      ],
       "Make all viewers": [
         "전체 구성원을 뷰어로 선택"
       ],
       "max views reached": [
         "최대 보기 수 도달"
       ],
+      "Medical Conditions": [
+        "건강 상태"
+      ],
+      "Medical Record": [
+        "의료 면허증"
+      ],
+      "Medications": [
+        "복용 약물"
+      ],
+      "Member ID": [
+        "회원 ID"
+      ],
+      "Member Name": [
+        "멤버 이름"
+      ],
       "Members": [
         "구성원"
+      ],
+      "Membership": [
+        "회원권"
+      ],
+      "Membership ID": [
+        "멤버십 ID"
       ],
       "Middle name": [
         "중간 이름"
@@ -2784,11 +2970,17 @@
       "Name": [
         "이름"
       ],
+      "Name (SSID)": [
+        "이름 (SSID)"
+      ],
       "Name on card": [
         "카드 소유자 이름"
       ],
       "Need help?": [
         "도움이 필요한가요?"
+      ],
+      "Network": [
+        "네트워크"
       ],
       "New": [
         "신규"
@@ -2832,8 +3024,20 @@
       "Oldest to newest": [
         "오래된 항목 순"
       ],
+      "Operating System": [
+        "운영 체제"
+      ],
       "Organization": [
         "조직"
+      ],
+      "Organization Name": [
+        "조직 이름"
+      ],
+      "Other": [
+        "기타"
+      ],
+      "Owner": [
+        "소유자"
       ],
       "Passkey": [
         "패스키"
@@ -2847,6 +3051,9 @@
       "Passport": [
         "여권"
       ],
+      "Passport Number": [
+        "여권 번호"
+      ],
       "Passport number": [
         "여권 번호"
       ],
@@ -2859,8 +3066,17 @@
       "Passwords": [
         "비밀번호"
       ],
+      "Patient Name": [
+        "환자 이름"
+      ],
       "Pause list": [
         "중단 목록"
+      ],
+      "Permissions": [
+        "권한"
+      ],
+      "Personal": [
+        "개인"
       ],
       "Personal details": [
         "개인 정보"
@@ -2880,6 +3096,12 @@
       "PIN code": [
         "PIN 코드"
       ],
+      "Points Balance": [
+        "포인트 잔액"
+      ],
+      "Port": [
+        "포트"
+      ],
       "Prefix": [
         "접두어"
       ],
@@ -2888,6 +3110,18 @@
       ],
       "Priority:": [
         "우선 사항:"
+      ],
+      "Private key": [
+        "개인 키"
+      ],
+      "Private Key": [
+        "비밀 키"
+      ],
+      "Product": [
+        "제품"
+      ],
+      "Program Name": [
+        "프로그램 이름"
       ],
       "Prompt for auto-save": [
         "자동 저장할 때 묻기"
@@ -2901,11 +3135,17 @@
       "Public domain": [
         "공개 도메인"
       ],
+      "Public key": [
+        "공개 키"
+      ],
       "Rate us": [
         "평가해 주세요"
       ],
       "Recent": [
         "최근"
+      ],
+      "Record Number": [
+        "기록 번호"
       ],
       "Reddit handle": [
         "Reddit 핸들"
@@ -2922,11 +3162,20 @@
       "Reveal password": [
         "비밀번호 표시"
       ],
+      "Reward Program": [
+        "리워드 프로그램"
+      ],
+      "Routing Number": [
+        "라우팅 번호"
+      ],
       "Save passkeys": [
         "패스키 저장"
       ],
       "Second password": [
         "2차 비밀번호"
+      ],
+      "Secret": [
+        "시크릿 키"
       ],
       "Secure links": [
         "안전한 링크"
@@ -2939,6 +3188,9 @@
       ],
       "See member and permission overview": [
         "구성원과 부여된 권한을 확인해보세요"
+      ],
+      "Seed Phrase": [
+        "시드 구문"
       ],
       "Select a domain": [
         "도메인 선택"
@@ -2958,11 +3210,17 @@
       "Selected": [
         "선택됨"
       ],
+      "Server": [
+        "서버"
+      ],
       "Settings": [
         "설정"
       ],
       "Share": [
         "공유"
+      ],
+      "Share ID": [
+        "공유 ID"
       ],
       "Shared": [
         "공유됨"
@@ -2982,11 +3240,23 @@
       "Social security": [
         "사회 보장 번호"
       ],
+      "Social Security": [
+        "주민등록증"
+      ],
       "Social security number": [
         "사회 보장 번호"
       ],
+      "Software license": [
+        "소프트웨어 라이선스"
+      ],
       "Special characters (!&*)": [
         "특수 문자 (!&*)"
+      ],
+      "SSH key": [
+        "SSH 키"
+      ],
+      "SSN": [
+        "주민등록번호"
       ],
       "State or province": [
         "시/도"
@@ -3006,6 +3276,9 @@
       "Support": [
         "지원"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "SimpleLogin으로 별칭 동기화"
       ],
@@ -3015,6 +3288,9 @@
       "Tax number": [
         "세금 번호"
       ],
+      "Technology": [
+        "기술"
+      ],
       "Text": [
         "텍스트"
       ],
@@ -3023,6 +3299,12 @@
       ],
       "Theme": [
         "테마"
+      ],
+      "Tier/Level": [
+        "티어/레벨"
+      ],
+      "Tier/Status": [
+        "등급/상태"
       ],
       "Title": [
         "제목"
@@ -3060,6 +3342,9 @@
       "Unnamed Credit Card": [
         "이름 없는 신용카드"
       ],
+      "Unnamed custom item": [
+        "이름 없는 사용자 지정 항목"
+      ],
       "Unnamed identity": [
         "이름이 지정되지 않은 신원"
       ],
@@ -3068,6 +3353,15 @@
       ],
       "Unnamed note": [
         "이름 없는 메모"
+      ],
+      "Unnamed SSH key": [
+        "이름 없는 SSH 키"
+      ],
+      "Unnamed WiFi item": [
+        "이름 없는 WiFi 항목"
+      ],
+      "Unspecified": [
+        "지정되지 않음"
       ],
       "Untitled": [
         "제목 없음"
@@ -3102,6 +3396,9 @@
       "Vulnerable": [
         "취약함"
       ],
+      "Wallet Name": [
+        "지갑 이름"
+      ],
       "Weak": [
         "약함"
       ],
@@ -3110,6 +3407,9 @@
       ],
       "Websites": [
         "웹 사이트"
+      ],
+      "WiFi network": [
+        "WiFi 네트워크"
       ],
       "Work details": [
         "작업 세부 정보"
@@ -3312,6 +3612,18 @@
       "Add note": [
         "메모 추가"
       ],
+      "Add password": [
+        "비밀번호 추가"
+      ],
+      "Add private key": [
+        "개인 키 추가"
+      ],
+      "Add public key": [
+        "공개 키 추가"
+      ],
+      "Add SSID": [
+        "SSID 추가"
+      ],
       "Add text": [
         "텍스트 추가"
       ],
@@ -3320,6 +3632,9 @@
       ],
       "Coupon": [
         "쿠폰"
+      ],
+      "E.g., ": [
+        "예, "
       ],
       "Email address": [
         "이메일 주소"
@@ -3351,8 +3666,8 @@
       "my-domain.com": [
         "my-domain.com"
       ],
-      "Name to display when sending an email": [
-        "이메일 전송 중 표시되는 이름"
+      "Name displayed in emails": [
+        "이메일에 표시된 이름"
       ],
       "Note from SimpleLogin": [
         "SimpleLogin 메모"
@@ -3387,6 +3702,9 @@
       "Select a suffix": [
         "접미사 선택"
       ],
+      "Select option": [
+        "옵션 선택"
+      ],
       "Unknown origin": [
         "알 수 없는 출처"
       ],
@@ -3395,9 +3713,6 @@
       ],
       "Used on ${ url }": [
         "${ url }(애)서 사용됨"
-      ],
-      "Write your note": [
-        "메모를 작성하세요"
       ]
     },
     "sso": {
@@ -3670,6 +3985,9 @@
       "Enter coupon code": [
         "쿠폰 코드 입력"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "${ BRAND_NAME } 비밀번호 입력"
+      ],
       "Enter your backup password": [
         "백업 비밀번호를 입력하세요"
       ],
@@ -3678,6 +3996,9 @@
       ],
       "Enter your PIN": [
         "PIN을 입력해 주세요."
+      ],
+      "Enter your second password": [
+        "백업 비밀번호를 입력하세요"
       ],
       "Fill & copy password": [
         "비밀번호 복사 및 채우기"
@@ -3693,9 +4014,6 @@
       ],
       "Grant permissions": [
         "권한 부여"
-      ],
-      "Hide my email": [
-        "Hide My Email"
       ],
       "History": [
         "기록"
@@ -3741,6 +4059,9 @@
       ],
       "Members": [
         "구성원"
+      ],
+      "Minicalendar": [
+        "간편 캘린더"
       ],
       "Modified": [
         "수정됨"
@@ -3920,6 +4241,11 @@
         "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "오늘"
+      ]
+    },
     "Validation": {
       "Domain URL is invalid": [
         "도메인 URL이 유효하지 않습니다"
@@ -3933,9 +4259,6 @@
       "OTP secret or URI is invalid": [
         "OTP 시크릿 및 URI가 잘못되었습니다."
       ],
-      "OTP secret or URI required": [
-        "OTP 시크릿 및 URI가 필요합니다."
-      ],
       "Section name cannot be empty": [
         "섹션 이름은 비워둘 수 없습니다"
       ],
@@ -3947,6 +4270,11 @@
       ],
       "URL is invalid": [
         "URL이 올바르지 않습니다."
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "항목을 다음으로 이동:"
       ]
     },
     "Warning": {
@@ -4054,9 +4382,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "조직 외부의 이메일 주소로는 초대할 수 없습니다."
-      ],
-      "item was imported without custom fields": [
-        "항목이 커스텀 입력란 없이 불러와졌습니다."
       ],
       "Maximum length is ${ maxLength } character": [
         "최대 길이는 ${ maxLength }자 입니다."

@@ -29,6 +29,9 @@
       "Add domain": [
         "Lisää verkkotunnus"
       ],
+      "Add field": [
+        "Lisää kenttä"
+      ],
       "Add forwarding mailbox": [
         "Lisää välittävä postilaatikko"
       ],
@@ -57,7 +60,7 @@
         "Käytä elinikäistä etukoodia"
       ],
       "Authenticate": [
-        "Tunnistaudu"
+        "Todenna"
       ],
       "Back": [
         "Takaisin"
@@ -152,10 +155,10 @@
       "Create": [
         "Luo"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
       "Create alias": [
@@ -398,6 +401,9 @@
       "Multiple select": [
         "Monivalinta"
       ],
+      "Next month": [
+        "Seuraava kuukausi"
+      ],
       "No expired links": [
         "Erääntyneitä linkkejä ei ole"
       ],
@@ -428,11 +434,17 @@
       "Please retry": [
         "Yritä uudelleen"
       ],
+      "Previous month": [
+        "Edellinen kuukausi"
+      ],
       "Re-verify": [
         "Vahvista uudelleen"
       ],
       "Reactivate now": [
         "Uudelleenaktivoi nyt"
+      ],
+      "Read More": [
+        "Lue lisää"
       ],
       "Refresh the page": [
         "Päivitä sivu"
@@ -557,6 +569,9 @@
       "Show advanced options": [
         "Näytä lisävalinnat"
       ],
+      "Show Less": [
+        "Näytä vähemmän"
+      ],
       "Sign back in": [
         "Kirjaudu uudelleen"
       ],
@@ -571,6 +586,9 @@
       ],
       "Sort vault items": [
         "Järjestä holvin kohteet"
+      ],
+      "Start from scratch": [
+        "Aloita alusta"
       ],
       "Submit": [
         "Lähetä"
@@ -733,9 +751,6 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } -tiedostoa ei voitu jäsentää. ${ errorDetail }"
-      ],
-      "[Error] an item could not be parsed": [
-        "[Virhe] kohdetta ei voitu jäsentää"
       ],
       "A domain ownership must be verified first.": [
         "Verkkotunnuksen omistajuus on vahvistettava ensin."
@@ -1220,9 +1235,6 @@
       "${ count } view": [
         "${ count } avaus",
         "${ count } avausta"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } avausta"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } välitetty",
@@ -1910,6 +1922,9 @@
       "Please follow the steps below to set up your domain.": [
         "Seuraa alla olevia ohjeita verkkotunnuksesi määrittämiseksi."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Pidä tämä ikkuna auki, kun tietojasi tuodaan. Tämä prosessi voi kestää muutaman minuutin."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Huomioi, että et voi palauttaa poistettua aliasta. Haluatko sen sijaan poistaa sen käytöstä?"
       ],
@@ -1957,6 +1972,9 @@
       ],
       "Removing secure link...": [
         "Suojattua linkkiä poistetaan..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Historian nollaus poistaa kaikki aiemmat tiedostoversiot pysyvästi, eikä sitä voi perua."
       ],
       "Restoring items from trash": [
         "Kohteita palautetaan roskakorista"
@@ -2062,6 +2080,10 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Lisäsalasana tarvitaan ${ PASS_APP_NAME }in käyttöön ja se vaaditaan ${ BRAND_NAME }-tilisi salasanan lisäksi."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Seuraavaa ${ totalIgnored } kohdetta ei voitu tuoda:",
+        "Seuraavia ${ totalIgnored } kohdetta ei voitu tuoda:"
       ],
       "The secure link has been removed": [
         "Suojattu linkki poistettiin"
@@ -2208,6 +2230,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Havaitsimme, että sinulla on SimpleLoginissa ${ aliasCount } alias, joka puuttuu ${ PASS_APP_NAME }ista. Haluaisitko tuoda sen?",
         "Havaitsimme, että sinulla on SimpleLoginissa ${ aliasCount } aliasta, jotka puuttuvat ${ PASS_APP_NAME }ista. Haluaisitko tuoda ne?"
+      ],
+      "Week": [
+        "Viikko"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Osoitteeseen ${ email } on lähetetty vahvistuskoodi. Syötä se alle:"
@@ -2406,6 +2431,12 @@
       "Account": [
         "Tili"
       ],
+      "Account Number": [
+        "Tilinumero"
+      ],
+      "Account Type": [
+        "Tilin tyyppi"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Lisää tähän verkkotunnukseen satunnainen etuliite uutta aliasta luotaessa."
       ],
@@ -2414,6 +2445,9 @@
       ],
       "Additional details": [
         "Lisätiedot"
+      ],
+      "Address": [
+        "Osoite"
       ],
       "Address details": [
         "Osoitetiedot"
@@ -2442,6 +2476,9 @@
       "Always show username field": [
         "Näytä käyttäjätunnuskenttä aina"
       ],
+      "API Key": [
+        "API-avain"
+      ],
       "Application logs": [
         "Sovelluslokit"
       ],
@@ -2465,6 +2502,12 @@
       ],
       "Backup password": [
         "Varasalasana"
+      ],
+      "Bank Account": [
+        "Pankkitili"
+      ],
+      "Bank Name": [
+        "Pankin nimi"
       ],
       "Biometrics": [
         "Biometria"
@@ -2520,6 +2563,9 @@
       "Copy password": [
         "Kopioi salasana"
       ],
+      "Country": [
+        "Maa"
+      ],
       "Country or Region": [
         "Maa tai alue"
       ],
@@ -2528,6 +2574,9 @@
       ],
       "Create a credit card": [
         "Luo maksukortti"
+      ],
+      "Create a custom item": [
+        "Luo mukautettu kohde"
       ],
       "Create a hide-my-email alias": [
         "Luo Hide-my-email-alias"
@@ -2547,17 +2596,26 @@
       "Create new vault": [
         "Luo uusi holvi"
       ],
-      "Created": [
-        "Luotu"
-      ],
       "Created at": [
         "Luotu"
       ],
-      "Custom hidden field": [
-        "Mukautettu piilotettu kenttä"
+      "Crypto Wallet": [
+        "Kryptolompakko"
       ],
-      "Custom text field": [
-        "Mukautettu tekstikenttä"
+      "Custom Items": [
+        "Mukautetut kohteet"
+      ],
+      "Database": [
+        "Tietokanta"
+      ],
+      "Database Type": [
+        "Tietokannan tyyppi"
+      ],
+      "Date": [
+        "Päiväys"
+      ],
+      "Date of Birth": [
+        "Syntymäaika"
       ],
       "Device": [
         "Laite"
@@ -2586,6 +2644,9 @@
       "Download logs": [
         "Lataa lokitiedot"
       ],
+      "Driver License": [
+        "Ajokortti"
+      ],
       "Email": [
         "Sähköposti"
       ],
@@ -2613,6 +2674,9 @@
       "Expired": [
         "Erääntynyt"
       ],
+      "Expiry Date": [
+        "Voimassaoloaika"
+      ],
       "Export": [
         "Vienti"
       ],
@@ -2630,6 +2694,9 @@
       ],
       "File format": [
         "Tiedostomuoto"
+      ],
+      "Finance": [
+        "Talous"
       ],
       "First name": [
         "Etunimi"
@@ -2664,8 +2731,20 @@
       "Hide password": [
         "Piilota salasana"
       ],
+      "Holder Name": [
+        "Haltijan nimi"
+      ],
+      "Host": [
+        "Isäntä"
+      ],
+      "Hostname": [
+        "Isäntänimi"
+      ],
       "https://example.com": [
         "https://esimerkki.fi"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Henkilökortti"
@@ -2709,6 +2788,15 @@
       "Invitations": [
         "Kutsut"
       ],
+      "IP Address": [
+        "IP-osoite"
+      ],
+      "Issuing Authority": [
+        "Myöntävä viranomainen"
+      ],
+      "Issuing Country": [
+        "Myöntävä maa"
+      ],
       "Item ID": [
         "Kohteen ID"
       ],
@@ -2717,6 +2805,9 @@
       ],
       "Key": [
         "Avain"
+      ],
+      "Key fingerprint": [
+        "Avaimen sormenjälki"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pikanäppäin: ${ shortcut }"
@@ -2744,6 +2835,9 @@
       ],
       "License": [
         "Ajokortti"
+      ],
+      "License Key": [
+        "Lisenssiavain"
       ],
       "License number": [
         "Ajokortin numero"
@@ -2775,8 +2869,14 @@
       "max views reached": [
         "avausrajoitus on saavutettu"
       ],
+      "Member ID": [
+        "Jäsentunnus"
+      ],
       "Members": [
         "Jäsenet"
+      ],
+      "Membership": [
+        "Jäsenyys"
       ],
       "Middle name": [
         "Toinen nimi"
@@ -2793,11 +2893,17 @@
       "Name": [
         "Nimi"
       ],
+      "Name (SSID)": [
+        "Nimi (SSID)"
+      ],
       "Name on card": [
         "Kortissa oleva nimi"
       ],
       "Need help?": [
         "Tarvitsetko apua?"
+      ],
+      "Network": [
+        "Verkko"
       ],
       "New": [
         "Uusi"
@@ -2841,8 +2947,17 @@
       "Oldest to newest": [
         "Vanhimmasta uusimpaan"
       ],
+      "Operating System": [
+        "Käyttöjärjestelmä"
+      ],
       "Organization": [
         "Organisaatio"
+      ],
+      "Other": [
+        "Muu"
+      ],
+      "Owner": [
+        "Omistaja"
       ],
       "Passkey": [
         "Pääsyavain"
@@ -2855,6 +2970,9 @@
       ],
       "Passport": [
         "Passi"
+      ],
+      "Passport Number": [
+        "Passin numero"
       ],
       "Passport number": [
         "Passin numero"
@@ -2870,6 +2988,9 @@
       ],
       "Pause list": [
         "Pysäytyslista"
+      ],
+      "Personal": [
+        "Henkilökohtainen"
       ],
       "Personal details": [
         "Henkilötiedot"
@@ -2889,6 +3010,9 @@
       "PIN code": [
         "PIN-koodi"
       ],
+      "Port": [
+        "Portti"
+      ],
       "Prefix": [
         "Etuliite"
       ],
@@ -2897,6 +3021,18 @@
       ],
       "Priority:": [
         "Prioriteetti:"
+      ],
+      "Private key": [
+        "Yksityinen avain"
+      ],
+      "Private Key": [
+        "Yksityinen avain"
+      ],
+      "Product": [
+        "Tuote"
+      ],
+      "Program Name": [
+        "Ohjelman nimi"
       ],
       "Prompt for auto-save": [
         "Tarjoa automaattitallennusta"
@@ -2909,6 +3045,9 @@
       ],
       "Public domain": [
         "Julkinen verkkotunnus"
+      ],
+      "Public key": [
+        "Julkinen avain"
       ],
       "Rate us": [
         "Arvostele meidät"
@@ -2931,11 +3070,17 @@
       "Reveal password": [
         "Näytä salasana"
       ],
+      "Routing Number": [
+        "Reititysnumero"
+      ],
       "Save passkeys": [
         "Tallenna pääsyavaimet"
       ],
       "Second password": [
         "Toinen salasana"
+      ],
+      "Secret": [
+        "Salaisuus"
       ],
       "Secure links": [
         "Suojatut linkit"
@@ -2948,6 +3093,9 @@
       ],
       "See member and permission overview": [
         "Näytä jäsenten ja käyttöoikeuksien yleiskatsaus"
+      ],
+      "Seed Phrase": [
+        "Siemenlauseke"
       ],
       "Select a domain": [
         "Valitse verkkotunnus"
@@ -2967,11 +3115,17 @@
       "Selected": [
         "Valittu"
       ],
+      "Server": [
+        "Palvelin"
+      ],
       "Settings": [
         "Asetukset"
       ],
       "Share": [
         "Jaa"
+      ],
+      "Share ID": [
+        "Jako-ID"
       ],
       "Shared": [
         "Jaettu"
@@ -2991,11 +3145,23 @@
       "Social security": [
         "Sosialliturva"
       ],
+      "Social Security": [
+        "Sosialliturva"
+      ],
       "Social security number": [
         "Henkilötunnus"
       ],
+      "Software license": [
+        "Ohjelmistolisenssi"
+      ],
       "Special characters (!&*)": [
         "Erikoismerkit (!&*)"
+      ],
+      "SSH key": [
+        "SSH-avain"
+      ],
+      "SSN": [
+        "Hetu"
       ],
       "State or province": [
         "Osavaltio tai maakunta"
@@ -3015,6 +3181,9 @@
       "Support": [
         "Tuki"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synkronoi aliakset SimpleLoginiin"
       ],
@@ -3024,6 +3193,9 @@
       "Tax number": [
         "Veronumero"
       ],
+      "Technology": [
+        "Teknologia"
+      ],
       "Text": [
         "Teksti"
       ],
@@ -3032,6 +3204,9 @@
       ],
       "Theme": [
         "Teema"
+      ],
+      "Tier/Status": [
+        "Taso"
       ],
       "Title": [
         "Nimi"
@@ -3069,6 +3244,9 @@
       "Unnamed Credit Card": [
         "Nimetön maksukortti"
       ],
+      "Unnamed custom item": [
+        "Nimetön mukautettu kohde"
+      ],
       "Unnamed identity": [
         "Nimetön identiteetti"
       ],
@@ -3077,6 +3255,15 @@
       ],
       "Unnamed note": [
         "Nimetön muistiinpano"
+      ],
+      "Unnamed SSH key": [
+        "Nimetön SSH-avain"
+      ],
+      "Unnamed WiFi item": [
+        "Nimetön Wi-Fi-kohde"
+      ],
+      "Unspecified": [
+        "Ei määritetty"
       ],
       "Untitled": [
         "Nimetön"
@@ -3111,6 +3298,9 @@
       "Vulnerable": [
         "Haavoittuvainen"
       ],
+      "Wallet Name": [
+        "Lompakon nimi"
+      ],
       "Weak": [
         "Heikko"
       ],
@@ -3119,6 +3309,9 @@
       ],
       "Websites": [
         "Verkkosivustot"
+      ],
+      "WiFi network": [
+        "Wi-Fi-verkko"
       ],
       "Work details": [
         "Työtiedot"
@@ -3210,6 +3403,9 @@
       "\"${ filename }\" could not be imported.": [
         "Tiedostoa \"${ filename }\" ei voitu tuoda."
       ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" on liian suuri lähetettäväksi. Suurin sallittu koko on (${ maxFileSizeInMB })"
+      ],
       "${ filesCount } file": [
         "${ filesCount } tiedosto",
         "${ filesCount } tiedostoa"
@@ -3226,6 +3422,9 @@
       "Delete all files": [
         "Poista kaikki tiedostot"
       ],
+      "Do you want to remove all the files?": [
+        "Haluatko poistaa kaikki tiedostot?"
+      ],
       "Download": [
         "Lataa"
       ],
@@ -3234,6 +3433,9 @@
       ],
       "Download file": [
         "Lataa tiedosto"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Firefoxin rajoituksen takia, ${ PASS_APP_NAME } täytyy avata uudelleen uudessa ikkunassa, ennen kuin voit lähettää tiedostoja."
       ],
       "Exporting files": [
         "Tiedostoja viedään"
@@ -3247,11 +3449,23 @@
       "File attachments": [
         "Liitetiedostot"
       ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Jos käytössä, kaikki tiedostosi ladataan viennin yhteydessä. Tämä voi kestää jonkin aikaa Internet-yhteydestäsi riippuen."
+      ],
       "Include file attachments": [
         "Sisällytä liitetiedostot"
       ],
+      "Not enough available storage space for the selected files.": [
+        "Valituille tiedostoille ei ole riittävästi tallennustilaa."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Poistamisen jälkeen tämä tiedosto voidaan silti palauttaa kohteen historiasta."
+      ],
       "Open new window to upload files": [
         "Avaa uusi ikkuna lähettääksesi tiedostoja"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Ole kärsivällinen, kun tiedostojasi ladataan."
       ],
       "Remove all files": [
         "Poista kaikki tiedostot"
@@ -3262,14 +3476,26 @@
       "Restore": [
         "Palauta"
       ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Jotkin tiedostot ovat liian suuria lähetettäväksi. Suurin sallittu koko on (${ maxFileSizeInMB })"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Viedyt liitetiedostot eivät ole salattuja."
+      ],
       "The file you are trying to import is empty": [
         "Tiedosto, jota yrität tuoda, on tyhjä"
       ],
       "Total files: ": [
         "Tiedostoja yhteensä: "
       ],
+      "Total imported files: ": [
+        "Tuotuja tiedostoja yhteensä: "
+      ],
       "Upload files from your device.": [
         "Lähetä tiedostoja laitteeltasi."
+      ],
+      "You can attach files to items for a better organization": [
+        "Voit liittää kohteisiin tiedostoja parempaa organisointia varten"
       ],
       "You may close this window after saving the file.": [
         "Voit sulkea tämän ikkunan tiedoston tallentamisen jälkeen."
@@ -3293,6 +3519,9 @@
       ],
       "Coupon": [
         "Etukoodi"
+      ],
+      "E.g., ": [
+        "Esim. "
       ],
       "Email address": [
         "Sähköpostiosoite"
@@ -3323,9 +3552,6 @@
       ],
       "my-domain.com": [
         "oma-verkkotunnus.fi"
-      ],
-      "Name to display when sending an email": [
-        "Nimi, joka näytetään sähköpostia lähetettäessä"
       ],
       "Note from SimpleLogin": [
         "Muistiinpano SimpleLogista"
@@ -3360,6 +3586,9 @@
       "Select a suffix": [
         "Valitse jälkiliite"
       ],
+      "Select option": [
+        "Valitse vaihtoehto"
+      ],
       "Unknown origin": [
         "Tuntematon alkuperä"
       ],
@@ -3368,9 +3597,6 @@
       ],
       "Used on ${ url }": [
         "Käytetään osoitteessa ${ url }"
-      ],
-      "Write your note": [
-        "Kirjoita muistiinpanosi"
       ]
     },
     "sso": {
@@ -3646,6 +3872,9 @@
       "Enter coupon code": [
         "Syötä etukoodi"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Syötä ${ BRAND_NAME } -salasanasi"
+      ],
       "Enter your backup password": [
         "Syötä varasalasanasi"
       ],
@@ -3720,6 +3949,9 @@
       ],
       "Members": [
         "Jäsenet"
+      ],
+      "Minicalendar": [
+        "Pienoiskalenteri"
       ],
       "Modified": [
         "Muokattu"
@@ -3903,6 +4135,11 @@
         "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Tänään"
+      ]
+    },
     "Validation": {
       "Domain URL is invalid": [
         "Verkkotunnuksen URL-osoite on virheellinen"
@@ -3915,9 +4152,6 @@
       ],
       "OTP secret or URI is invalid": [
         "OTP-salaisuus tai URI on virheellinen"
-      ],
-      "OTP secret or URI required": [
-        "OTP-salaisuus tai URI vaaditaan"
       ],
       "Section name cannot be empty": [
         "Osion nimi ei voi olla tyhjä"
@@ -4039,9 +4273,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Organisaation ulkopuolisten sähköpostiosoitteiden kutsumista ei ole sallittu."
-      ],
-      "item was imported without custom fields": [
-        "kohde tuotiin ilman mukautettuja kenttiä"
       ],
       "Maximum length is ${ maxLength } character": [
         "Enimmäispituus on ${ maxLength } merkki",

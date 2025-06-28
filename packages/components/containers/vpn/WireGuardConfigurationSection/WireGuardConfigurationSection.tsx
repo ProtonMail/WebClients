@@ -9,7 +9,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, CircleLoader, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import ErrorButton from '@proton/components/components/button/ErrorButton';
 import Details from '@proton/components/components/container/Details';
 import Row from '@proton/components/components/container/Row';
 import Summary from '@proton/components/components/container/Summary';
@@ -59,7 +58,7 @@ import {
 import { normalize } from './normalize';
 import useCertificates from './useCertificates';
 
-enum PLATFORM {
+export enum PLATFORM {
     MACOS = 'macOS',
     LINUX = 'Linux',
     WINDOWS = 'Windows',
@@ -68,14 +67,14 @@ enum PLATFORM {
     ROUTER = 'Router',
 }
 
-interface Peer {
+export interface Peer {
     name: string;
     publicKey: string;
     ip: string;
     label: string;
 }
 
-interface ExtraCertificateFeatures {
+export interface ExtraCertificateFeatures {
     peerName: Peer['name'];
     peerPublicKey: Peer['publicKey'];
     peerIp: Peer['ip'];
@@ -133,7 +132,7 @@ const getFeatureLink = (feature: FeatureOption<any>) =>
         ''
     );
 
-const getConfigTemplate = (
+export const getConfigTemplate = (
     interfacePrivateKey: string,
     name: string | undefined,
     features: Partial<FeaturesValues & ExtraCertificateFeatures> | undefined,
@@ -150,7 +149,7 @@ DNS = 10.2.0.1
 [Peer]
 # ${features?.peerName || peer.name}
 PublicKey = ${features?.peerPublicKey || peer.publicKey}
-AllowedIPs = ${features?.platform === PLATFORM.WINDOWS ? '0.0.0.0/1, 128.0.0.0/1' : '0.0.0.0/0'}
+AllowedIPs = 0.0.0.0/0
 Endpoint = ${features?.peerIp || peer.ip}:51820`;
 
 const privateKeyPlaceholder = '*****';
@@ -534,7 +533,7 @@ const WireGuardConfigurationSection = () => {
                     small={false}
                     title={c('Title').t`Revoke certificate`}
                     onConfirm={resolve}
-                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    confirm={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
                     onClose={reject}
                 >
                     <Alert className="mb-4" type="info">

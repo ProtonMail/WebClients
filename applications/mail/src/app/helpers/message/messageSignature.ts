@@ -1,3 +1,7 @@
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { isHTMLEmpty } from '@proton/mail/helpers/dom';
+import { containsHTMLTag, replaceLineBreaks } from '@proton/mail/helpers/string';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
@@ -6,11 +10,7 @@ import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { message } from '@proton/shared/lib/sanitize';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { MESSAGE_ACTIONS } from '../../constants';
-import type { MessageState } from '../../store/messages/messagesTypes';
 import { dedentTpl } from '../dedent';
-import { isHTMLEmpty } from '../dom';
-import { containsHTMLTag, replaceLineBreaks } from '../string';
 import { exportPlainText, getPlainTextContent } from './messageContent';
 import { CLASSNAME_BLOCKQUOTE } from './messageDraft';
 
@@ -25,10 +25,11 @@ export const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
 const getProtonSignature = (mailSettings: Partial<MailSettings> = {}, userSettings: Partial<UserSettings> = {}) =>
     mailSettings.PMSignature === PM_SIGNATURE.DISABLED
         ? ''
-        : getProtonMailSignature({
-              isReferralProgramLinkEnabled: !!mailSettings.PMSignatureReferralLink,
-              referralProgramUserLink: userSettings.Referral?.Link,
-          });
+        : getProtonMailSignature(
+              !!mailSettings.PMSignatureReferralLink,
+              userSettings.Referral?.Link,
+              mailSettings.PMSignatureContent
+          );
 
 /**
  * Generate a space tag, it can be hidden from the UX via a className

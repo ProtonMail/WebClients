@@ -1,5 +1,5 @@
+import { Icon } from '@proton/components';
 import useUid from '@proton/components/hooks/useUid';
-import { Icon } from '@proton/components/index';
 import clsx from '@proton/utils/clsx';
 
 export const UpgradeIcon = ({ className }: { className?: string }) => {

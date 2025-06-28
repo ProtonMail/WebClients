@@ -1,3 +1,5 @@
+import type { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
+
 import type { OnePassFieldType, OnePassLoginDesignation } from './1pux.types';
 
 export enum OnePassLegacyItemType {
@@ -6,6 +8,8 @@ export enum OnePassLegacyItemType {
     LOGIN = 'webforms.WebForm',
     NOTE = 'securenotes.SecureNote',
     PASSWORD = 'passwords.Password',
+    WIFI = 'wallet.computer.Router',
+    SSH_KEY = '114',
 }
 
 export enum OnePassLegacySectionFieldKey {
@@ -65,6 +69,7 @@ export type OnePassLegacyItem = {
         expiry_yy?: string;
         password?: string;
         notesPlain?: string;
+        unknown_details?: { sections?: OnePassLegacySection[] };
         sections?: OnePassLegacySection[];
         fields?: OnePassLegacyField[];
         URLs?: OnePassLegacyURL[];
@@ -73,3 +78,5 @@ export type OnePassLegacyItem = {
 };
 
 export type OnePassLegacyFieldValueFactory = { [key: string]: (...args: any) => string };
+
+export type OnePasswordWifiFields = { ssid?: string; password?: string; security: WifiSecurity };

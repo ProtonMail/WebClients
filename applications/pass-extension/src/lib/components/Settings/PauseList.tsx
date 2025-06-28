@@ -125,7 +125,7 @@ export const PauseList: FC = () => {
                                 {criterias.map((criteria) => (
                                     <TableCell
                                         key={criteria}
-                                        label={(() => {
+                                        label={((): string => {
                                             switch (criteria) {
                                                 case 'Autofill':
                                                     return c('Label').t`Autofill`;
@@ -135,6 +135,8 @@ export const PauseList: FC = () => {
                                                     return c('Label').t`Autosuggest`;
                                                 case 'Autosave':
                                                     return c('Label').t`Autosave`;
+                                                case 'Passkey':
+                                                    return c('Label').t`Passkey`;
                                             }
                                         })()}
                                     >

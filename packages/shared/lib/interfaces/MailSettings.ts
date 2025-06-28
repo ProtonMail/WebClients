@@ -62,6 +62,7 @@ export interface MailSettings {
     Shortcuts: SHORTCUTS; // used by v4
     PMSignature: PM_SIGNATURE;
     PMSignatureReferralLink: PM_SIGNATURE_REFERRAL;
+    PMSignatureContent?: string;
     ImageProxy: number;
     RightToLeft: DIRECTION;
     AttachPublicKey: ATTACH_PUBLIC_KEY;

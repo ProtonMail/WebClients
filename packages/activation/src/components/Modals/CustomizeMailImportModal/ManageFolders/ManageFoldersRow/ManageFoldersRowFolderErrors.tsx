@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import { MailImportPayloadError } from '@proton/activation/src/interface';
-import { Icon, Tooltip } from '@proton/components';
+import { Tooltip, TooltipTypeEnum } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
@@ -20,13 +21,13 @@ const ManageFoldersRowFolderErrors = ({ isSystemFolderChild, checked, errors }: 
     return checked ? (
         <div className="shrink-0 inline-flex self-center shrink-0 ml-2">
             {tooLong && (
-                <Tooltip title={trans.errorNameTooLong()} type="error">
+                <Tooltip title={trans.errorNameTooLong()} type={TooltipTypeEnum.Error}>
                     <Icon tabIndex={-1} name="info-circle" className="color-danger" />
                 </Tooltip>
             )}
 
             {alreadyUsed && !tooLong && (
-                <Tooltip title={trans.errorNameAlreadyExists()} type="error">
+                <Tooltip title={trans.errorNameAlreadyExists()} type={TooltipTypeEnum.Error}>
                     <Icon tabIndex={-1} name="info-circle" className="color-danger" />
                 </Tooltip>
             )}
@@ -35,7 +36,7 @@ const ManageFoldersRowFolderErrors = ({ isSystemFolderChild, checked, errors }: 
                 <Tooltip
                     title={c('Warning')
                         .t`${BRAND_NAME} will merge all folders with the same name. To avoid this, change the names before import.`}
-                    type="warning"
+                    type={TooltipTypeEnum.Warning}
                 >
                     <Icon tabIndex={-1} name="info-circle" className="color-warning" />
                 </Tooltip>

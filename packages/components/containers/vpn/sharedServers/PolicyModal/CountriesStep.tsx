@@ -1,8 +1,8 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Input } from '@proton/atoms';
+import { CircleLoader, Input } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Table from '@proton/components/components/table/Table';
@@ -12,16 +12,13 @@ import TableRow from '@proton/components/components/table/TableRow';
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import clsx from '@proton/utils/clsx';
 
-interface CountriesGroup {
-    country: string;
-    localizedCountryName: string;
-    cities: string[];
-}
+import type { GroupedLocation } from './getGroupedLocations';
 
 interface SharedServersCountriesStepProps {
+    loading?: boolean;
     isEditing: boolean;
     policyName: string;
-    groupedLocations: CountriesGroup[];
+    groupedLocations: GroupedLocation[];
     selectedCities: Record<string, string[]>;
     onSelectCountry: (countryCode: string, cities: string[]) => void;
     onSelectCity: (countryCode: string, city: string) => void;
@@ -29,6 +26,7 @@ interface SharedServersCountriesStepProps {
 }
 
 const CountriesStep = ({
+    loading,
     isEditing,
     policyName,
     groupedLocations,
@@ -51,16 +49,23 @@ const CountriesStep = ({
     }, [groupedLocations, searchQuery]);
 
     const allCitiesCount = useMemo(() => groupedLocations.reduce((p, c) => p + c.cities.length, 0), [groupedLocations]);
-    const selectedCountriesCount = useMemo(
-        () => Object.keys(selectedCities).reduce((p, c) => p + Number(selectedCities[c].length > 0), 0),
+    const [selectedCountriesCount, selectedCitiesCount] = useMemo(
+        () =>
+            Object.keys(selectedCities).reduce(
+                ([p1, p2], c) => [p1 + Number(selectedCities[c].length > 0), p2 + selectedCities[c].length],
+                [0, 0]
+            ),
         [selectedCities]
     );
 
-    const onToggleCountry = (countryCode: string) =>
-        setExpandedCountries((prev) => ({
-            ...prev,
-            [countryCode]: !prev[countryCode],
-        }));
+    const onToggleCountryExpanded = useCallback(
+        (countryCode: string) =>
+            setExpandedCountries((prev) => ({
+                ...prev,
+                [countryCode]: !prev[countryCode],
+            })),
+        []
+    );
 
     return (
         <div style={{ maxHeight: '60vh', height: 600, overflow: 'auto' }}>
@@ -82,12 +87,19 @@ const CountriesStep = ({
                         <TableCell>
                             <div className="flex gap-4 w-full items-center">
                                 <Checkbox
-                                    checked={allCitiesCount <= selectedCountriesCount}
+                                    checked={selectedCitiesCount >= allCitiesCount}
                                     onChange={onSelectAllCities}
                                 />
                                 <span className="text-bold">{c('Label').t`Countries`}</span>
                                 {selectedCountriesCount > 0 && (
-                                    <span className="text-sm color-weak">
+                                    <span
+                                        className="text-sm color-weak"
+                                        title={c('CountriesStep:Info').ngettext(
+                                            msgid`${selectedCitiesCount} cities selected`,
+                                            `${selectedCitiesCount} cities selected`,
+                                            selectedCitiesCount
+                                        )}
+                                    >
                                         {c('CountriesStep:Info').ngettext(
                                             msgid`${selectedCountriesCount} selected`,
                                             `${selectedCountriesCount} selected`,
@@ -98,26 +110,41 @@ const CountriesStep = ({
                             </div>
                         </TableCell>
                     </TableRow>
-                    {filteredGroups.map(({ country, localizedCountryName, cities }) => {
+                    {loading && (
+                        <div className="flex flex-nowrap">
+                            <CircleLoader />
+                        </div>
+                    )}
+                    {filteredGroups.map(({ country, localizedCountryName, cities, localizedCities }) => {
                         const selectedCount = selectedCities[country]?.length ?? 0;
-                        const allCitiesSelected = selectedCount === cities.length;
-                        const isExpanded =
-                            expandedCountries[country] ||
-                            (expandedCountries[country] !== false && selectedCities[country]?.length > 0);
+                        const isAllCitiesSelected = selectedCount === cities.length;
+                        const isPartiallySelected = selectedCount > 0 && selectedCount < cities.length;
+                        const isExpanded = (expandedCountries[country] ||=
+                            expandedCountries[country] !== false && selectedCities[country]?.length > 0);
+
+                        const checkboxId = `country-${country}`;
 
                         return (
                             <React.Fragment key={country}>
-                                <TableRow onClick={() => onToggleCountry(country)} className="cursor-pointer">
+                                <TableRow
+                                    onClick={(ev) => {
+                                        // Ignore clicks on the checkbox when the country is expanded but not selected, or fully selected and collapsed; to not shrink and select or expand and unselect.
+                                        if (
+                                            (ev.target as HTMLElement).id === checkboxId &&
+                                            isExpanded !== isAllCitiesSelected
+                                        ) {
+                                            return;
+                                        }
+                                        onToggleCountryExpanded(country);
+                                    }}
+                                    className="cursor-pointer"
+                                >
                                     <TableCell>
-                                        <div
-                                            className={clsx(
-                                                'flex items-center gap-4',
-                                                !allCitiesSelected && 'opacity-50'
-                                            )}
-                                        >
+                                        <div className={clsx('flex items-center gap-4')}>
                                             <Checkbox
-                                                id={`country-${country}`}
-                                                checked={allCitiesSelected}
+                                                id={checkboxId}
+                                                checked={isAllCitiesSelected}
+                                                indeterminate={isPartiallySelected}
                                                 onChange={() =>
                                                     cities.length > 1
                                                         ? onSelectCountry(country, cities)
@@ -140,12 +167,7 @@ const CountriesStep = ({
                                         return (
                                             <TableRow key={`${country}-${city}`}>
                                                 <TableCell>
-                                                    <div
-                                                        className={clsx(
-                                                            'flex items-center gap-4 ml-8',
-                                                            !isChecked && 'opacity-50'
-                                                        )}
-                                                    >
+                                                    <div className={clsx('flex items-center gap-4 ml-8')}>
                                                         <Checkbox
                                                             id={`city-${country}-${city}`}
                                                             checked={isChecked}
@@ -153,7 +175,12 @@ const CountriesStep = ({
                                                             aria-label={c('Action').t`Select city ${city}`}
                                                         />
                                                         <Icon name="map-pin" />
-                                                        <span className="whitespace-nowrap">{city}</span>
+                                                        <span
+                                                            onClick={() => onSelectCity(country, city)}
+                                                            className="text-nowrap flex grow cursor-pointer"
+                                                        >
+                                                            {localizedCities[city]}
+                                                        </span>
                                                     </div>
                                                 </TableCell>
                                             </TableRow>

@@ -9,6 +9,8 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Time from '@proton/components/components/time/Time';
 import useApi from '@proton/components/hooks/useApi';
+import { CYCLE } from '@proton/payments';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import illustration from '@proton/styles/assets/img/illustrations/b2b-trial-end.svg';
 
 const TrialEndedModal = ({ onClose, ...rest }: ModalStateProps) => {
@@ -21,7 +23,7 @@ const TrialEndedModal = ({ onClose, ...rest }: ModalStateProps) => {
         return null;
     }
 
-    const title = c('Title').t`Your ${planName} subscription started`;
+    const title = c('Title').t`Your ${planName} subscription has started`;
 
     // Handle modal closure and update user preferences
     const handleClose = async () => {
@@ -39,19 +41,25 @@ const TrialEndedModal = ({ onClose, ...rest }: ModalStateProps) => {
             <Time>{subscription?.PeriodEnd}</Time>
         </span>
     );
-    const description = (
-        <span className="block mt-4">
-            {c('Info')
-                .jt`Your ${planName} plan is now a paid subscription that automatically renews every 12 months. Your next billing date is ${nextBillingDate}.`}
-        </span>
-    );
+
+    const cycle = subscription?.Cycle;
+
+    const renewalFrequency =
+        cycle === CYCLE.MONTHLY
+            ? c('Info')
+                  .jt`Your free trial was successfully converted to a monthly subscription. Your renewal date is ${nextBillingDate}.`
+            : c('Info')
+                  .jt`Your free trial was successfully converted to a ${cycle}-month subscription. Your renewal date is ${nextBillingDate}.`;
+
+    const description = c('Info').jt`Thank you for choosing ${BRAND_NAME} to secure your organization.`;
 
     return (
         <ModalTwo size="small" className="p-3" {...rest}>
             <ModalTwoHeader title={title} titleClassName="text-center mx-auto" hasClose={false} />
             <ModalTwoContent className="flex flex-column items-center">
                 <img src={illustration} alt="" />
-                {description}
+                <span className="block mt-4">{renewalFrequency}</span>
+                <span className="block mt-2">{description}</span>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button fullWidth onClick={handleClose}>{c('Action').t`Got it`}</Button>

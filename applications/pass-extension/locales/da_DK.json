@@ -56,9 +56,6 @@
       "Apply lifetime coupon code": [
         "Anvend livstids-kuponkode"
       ],
-      "Authenticate": [
-        "Godkend"
-      ],
       "Back": [
         "Tilbage"
       ],
@@ -152,10 +149,10 @@
       "Create": [
         "Opret"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -359,6 +356,9 @@
       "Make editor": [
         "Gør til redaktør"
       ],
+      "Make manager": [
+        "Angiv som administrator"
+      ],
       "Make viewer": [
         "Gør til seer"
       ],
@@ -398,6 +398,9 @@
       "Multiple select": [
         "Markér flere"
       ],
+      "Next month": [
+        "Næste måned"
+      ],
       "No expired links": [
         "Ingen udløbne links"
       ],
@@ -427,6 +430,9 @@
       ],
       "Please retry": [
         "Prøv igen"
+      ],
+      "Previous month": [
+        "Forrige måned"
       ],
       "Re-verify": [
         "Bekræft igen"
@@ -478,6 +484,9 @@
       ],
       "Reset": [
         "Nulstil"
+      ],
+      "Reset history": [
+        "Nulstil historik"
       ],
       "Restore": [
         "Gendan"
@@ -656,7 +665,7 @@
         "Se ældre historik"
       ],
       "With other ${ BRAND_NAME } users": [
-        "Med andre brugere af ${ BRAND_NAME }"
+        "Med andre ${ BRAND_NAME }-brugere"
       ],
       "Write us on X/Twitter": [
         "Skriv til os på X/Twitter"
@@ -751,9 +760,6 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunne ikke fortolkes. ${ errorDetail }"
-      ],
-      "[Error] an item could not be parsed": [
-        "[Fejl] et element kunne ikke håndteres"
       ],
       "A domain ownership must be verified first.": [
         "Ejerskabet af et domæne skal først bekræftes."
@@ -1136,7 +1142,7 @@
         "Vi stødte på et problem under opstart af ${ PASS_SHORT_APP_NAME }. Hvis problemet fortsætter, kontakt venligst vores kundesupport for hjælp."
       ],
       "Wrong backup password": [
-        "Forkert adgangskode til sikkerhedskopi"
+        "Forkert backupadgangskode"
       ],
       "Wrong extra password": [
         "Forkert ekstra adgangskode"
@@ -1233,9 +1239,6 @@
         "${ count } visning",
         "${ count } visninger"
       ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } visninger"
-      ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } videresendt",
         "${ forwardedEmailsCount } videresendte"
@@ -1329,6 +1332,9 @@
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Adgang til ${ PASS_APP_NAME } vil altid kræve din ekstra adgangskode."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "Adgang til ${ PASS_APP_NAME } vil altid kræve din anden adgangskode."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Brug af ${ PASS_APP_NAME } kræver dit fingeraftryk eller enhedens pinkode."
       ],
@@ -1340,6 +1346,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importeret dine data, kan du slette CSV-filen med dine adgangskoder for en sikkerheds skyld."
+      ],
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias er blevet aktiveret. Du kan nu modtage mails sendt til ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Alias-synkronisering mellem dine ${ BRAND_NAME }- og SimpleLogin-konti er aktiv."
@@ -1575,9 +1584,6 @@
       "Enter the address you want to email.": [
         "Indtast den adresse, du ønsker at sende en e-mail til."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Indtast verifikationskode. Ciffer ${ digit }."
-      ],
       "Enter your extra password": [
         "Indtast din ekstra adgangskode"
       ],
@@ -1734,6 +1740,9 @@
       "Make it your own": [
         "Gør den til din egen"
       ],
+      "Manager": [
+        "Leder"
+      ],
       "me": [
         "mig"
       ],
@@ -1839,7 +1848,7 @@
         "Bekræft din adgangskode til ${ BRAND_NAME } for at eksportere dine ${ PASS_APP_NAME }-data"
       ],
       "Please confirm your backup password": [
-        "Bekræft din adgangskode til sikkerhedskopi"
+        "Bekræft din backupadgangskode"
       ],
       "Please confirm your backup password in order to auto-lock with biometrics.": [
         "Bekræft din sikkerhedskopi-adgangskode for at få automatisk låsning med biometri."
@@ -1897,6 +1906,9 @@
       ],
       "Please consider leaving a review.": [
         "Skriv gerne en anmeldelse."
+      ],
+      "Please contact your administrator": [
+        "Kontakt din administrator"
       ],
       "Please do not close this window": [
         "Luk venligst ikke dette vindue"
@@ -2066,6 +2078,10 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Den ekstra adgangskode er påkrævet for at bruge ${ PASS_APP_NAME }. Den virker som en tillægskode til din ${ BRAND_NAME }-adgangskode."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Følgende ${ totalIgnored } element kunne ikke importeres:",
+        "Følgende ${ totalIgnored } elementer kunne ikke importeres:"
+      ],
       "The secure link has been removed": [
         "Det sikre link er blevet fjernet"
       ],
@@ -2089,6 +2105,9 @@
       ],
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Denne operation er irreversibel. Alle aliasser, der bruger domænet ${ domainTextBold }, vil blive slettet. Bemærk, at aliasser ikke kan gendannes, når de er slettet."
+      ],
+      "This option is currently not available on your browser.": [
+        "Denne mulighed er pt. ikke tilgængelig i din browser."
       ],
       "This option is currently not available on your device.": [
         "Denne mulighed er pt. ikke til stede på din enhed."
@@ -2142,10 +2161,13 @@
         "Lås op for ${ PASS_SHORT_APP_NAME } med din adgangskode til ${ BRAND_NAME }."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
-        "Lås ${ PASS_SHORT_APP_NAME } op med din adgangskode til sikkerhedskopi"
+        "Lås ${ PASS_SHORT_APP_NAME } op med din backupadgangskode"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Lås op for ${ PASS_SHORT_APP_NAME } med din ekstra adgangskode"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "Lås ${ PASS_SHORT_APP_NAME } op med din sekundære adgangskode"
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås den op med din pinkode for at få adgang til indstillingerne."
@@ -2206,6 +2228,9 @@
         "Vi har opdaget, at du har ${ aliasCount } alias, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere det?",
         "Vi har opdaget, at du har ${ aliasCount } aliasser, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere dem?"
       ],
+      "Week": [
+        "Uge"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Vi har sendt en bekræftelseskode til ${ email }. Indtast den nedenfor:"
       ],
@@ -2255,6 +2280,9 @@
       ],
       "You may close this tab.": [
         "Du kan lukke denne fane."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Du skal have en boks med rediger-tilladelse, før du kan importer elementer."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Du får mulighed for at tilpasse dine domæneindstillinger (catch-all e-mail-alias, standardvisningsnavn for aliasser osv.), når du har bekræftet dit domæne."
@@ -2307,6 +2335,10 @@
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
       ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementer"
+      ],
       "${ days } day": [
         "${ days } dag",
         "${ days } dage"
@@ -2330,12 +2362,19 @@
         "${ months } måned",
         "${ months } måneder"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } version"
       ],
       "${ repliedCount } reply": [
         "${ repliedCount } svar",
         "${ repliedCount } svar"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } sikkert link",
+        "${ secureLinksCount } sikre links"
       ],
       "${ years } year": [
         "${ years } år",
@@ -2401,6 +2440,9 @@
       "Additional details": [
         "Yderligere detaljer"
       ],
+      "Address": [
+        "Adresse"
+      ],
       "Address details": [
         "Adresseoplysninger"
       ],
@@ -2450,7 +2492,7 @@
         "Auto-forslag"
       ],
       "Backup password": [
-        "Adgangskode til sikkerhedskopi"
+        "Backupadgangskode"
       ],
       "Biometrics": [
         "Biometri"
@@ -2506,6 +2548,9 @@
       "Copy password": [
         "Kopiér adgangskode"
       ],
+      "Country": [
+        "Land"
+      ],
       "Country or Region": [
         "Land eller region"
       ],
@@ -2533,17 +2578,11 @@
       "Create new vault": [
         "Opret ny boks"
       ],
-      "Created": [
-        "Oprettet"
-      ],
       "Created at": [
         "Oprettet kl."
       ],
-      "Custom hidden field": [
-        "Tilpasset skjult felt"
-      ],
-      "Custom text field": [
-        "Tilpasset tekstfelt"
+      "Date": [
+        "Dato"
       ],
       "Device": [
         "Enhed"
@@ -2624,7 +2663,7 @@
         "Etage, lejlighed, bygning"
       ],
       "For a one-off sharing": [
-        "Til engangsdeling"
+        "Til éngangsdeling"
       ],
       "Forwards to": [
         "Videresender til"
@@ -2652,6 +2691,9 @@
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "ID-kort"
@@ -2830,6 +2872,9 @@
       "Organization": [
         "Organisation"
       ],
+      "Other": [
+        "Andet"
+      ],
       "Passkey": [
         "Adgangsnøgle"
       ],
@@ -2863,6 +2908,9 @@
       "Personal website": [
         "Personligt websted"
       ],
+      "PGP-encrypted (recommended)": [
+        "PGP-krypteret (anbefales)"
+      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -2871,6 +2919,9 @@
       ],
       "PIN code": [
         "Pinkode"
+      ],
+      "Port": [
+        "Port"
       ],
       "Prefix": [
         "Præfiks"
@@ -2919,6 +2970,9 @@
       ],
       "Second password": [
         "Anden adgangskode"
+      ],
+      "Secure links": [
+        "Sikre links"
       ],
       "Security": [
         "Sikkerhed"
@@ -3068,7 +3122,7 @@
         "Brug ${ PASS_APP_NAME } som din browsers standard adgangskodeadministrator"
       ],
       "Useful for permanent sharing": [
-        "Nyttig til permanent deling"
+        "Nyttigt til permanent deling"
       ],
       "Username": [
         "Brugernavn"
@@ -3123,6 +3177,9 @@
       ],
       "Your domain": [
         "Dit domæne"
+      ],
+      "ZIP": [
+        "ZIP-fil"
       ],
       "ZIP or Postal code": [
         "Postnummer"
@@ -3180,6 +3237,87 @@
         "Bundstreger"
       ]
     },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "\"${ file.name }\" kunne ikke uploades."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "\"${ filename }\" kunne ikke importeres."
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } fil",
+        "${ filesCount } filer"
+      ],
+      "Attachments": [
+        "Vedhæftede filer"
+      ],
+      "Choose a file or drag it here": [
+        "Vælg en fil eller træk den hertil"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Slet ${ deleteFile.state.name }"
+      ],
+      "Delete all files": [
+        "Slet alle filer"
+      ],
+      "Do you want to remove all the files?": [
+        "Vil du fjerne alle filerne?"
+      ],
+      "Download": [
+        "Download"
+      ],
+      "Download \"${ filename }\"": [
+        "Download \"${ filename }\""
+      ],
+      "Download file": [
+        "Download fil"
+      ],
+      "Failed linking files to item": [
+        "Kunne ikke linke filer til element"
+      ],
+      "File": [
+        "Fil"
+      ],
+      "File attachments": [
+        "Filvedhæftninger"
+      ],
+      "Include file attachments": [
+        "Medtag filvedhæftninger"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Ikke nok tilgængelig lagerplads til de valgte filer."
+      ],
+      "Open new window to upload files": [
+        "Åbn nyt vindue for at uploade filer"
+      ],
+      "Remove all files": [
+        "Fjern alle filer"
+      ],
+      "Rename": [
+        "Omdøb"
+      ],
+      "Restore": [
+        "Gendan"
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "De eksporterede filvedhæftninger vil ikke blive krypteret."
+      ],
+      "The file you are trying to import is empty": [
+        "Filen du prøver at importere er tom"
+      ],
+      "Total imported files: ": [
+        "Samlet antal importerede filer: "
+      ],
+      "Upgrade to support file attachments": [
+        "Opgrader for at støtte filvedhæftninger"
+      ],
+      "Upload files from your device.": [
+        "Upload filer fra din enhed."
+      ],
+      "You can attach files to items for a better organization": [
+        "Du kan vedhæfte filer til elementer for at få en bedre organisering"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Tilføj 2FA hemmelig nøgle"
@@ -3198,6 +3336,9 @@
       ],
       "Coupon": [
         "Kupon"
+      ],
+      "E.g., ": [
+        "F.eks., "
       ],
       "Email address": [
         "E-mail"
@@ -3228,9 +3369,6 @@
       ],
       "my-domain.com": [
         "my-domain.com"
-      ],
-      "Name to display when sending an email": [
-        "Navn, der skal vises, når du sender en e-mail"
       ],
       "Note from SimpleLogin": [
         "Note fra SimpleLogin"
@@ -3273,12 +3411,12 @@
       ],
       "Used on ${ url }": [
         "Brugt på ${ url }"
-      ],
-      "Write your note": [
-        "Skriv din note"
       ]
     },
     "sso": {
+      "Approve or deny it now": [
+        "Godkend eller nægt det nu"
+      ],
       "If you didn't make this request, cancel it now.": [
         "Hvis du ikke har anmodet om dette, så annuller det nu."
       ],
@@ -3290,6 +3428,9 @@
       ],
       "Sign-in failed": [
         "Log-ind mislykkedes"
+      ],
+      "Sign-in rejected": [
+        "Log ind afvist"
       ],
       "Sign-in rejection failure": [
         "Fejl med afvisning af login"
@@ -3527,6 +3668,9 @@
       "Email": [
         "E-mail"
       ],
+      "Encrypted import": [
+        "Krypteret import"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Glad for ${ PASS_APP_NAME }?"
       ],
@@ -3557,9 +3701,6 @@
       "Grant permissions": [
         "Giv tilladelser"
       ],
-      "Hide my email": [
-        "Hide my email"
-      ],
       "History": [
         "Historik"
       ],
@@ -3571,6 +3712,9 @@
       ],
       "Import to vault(s)": [
         "Importér til boks(e)"
+      ],
+      "Importing your data": [
+        "Importerer dine data"
       ],
       "Item": [
         "Element"
@@ -3601,6 +3745,9 @@
       ],
       "Members": [
         "Medlemmer"
+      ],
+      "Minicalendar": [
+        "Minikalender"
       ],
       "Modified": [
         "Ændret"
@@ -3662,11 +3809,17 @@
       "Random Prefix Generation": [
         "Generering af tilfældige præfikser"
       ],
+      "Reject device?": [
+        "Afvis enhed?"
+      ],
       "Remove extra password": [
         "Fjern ekstra adgangskode"
       ],
       "Remove secure link?": [
         "Fjern sikkert link?"
+      ],
+      "Reset history for this item?": [
+        "Nulstil historik for dette element?"
       ],
       "Restore this version?": [
         "Gendan denne version?"
@@ -3761,6 +3914,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Hvad er forskellen mellem en ${ PASS_SHORT_APP_NAME } note og en SimpleLogin note?"
       ],
+      "You don't have any vaults": [
+        "Du har ikke nogen bokse"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Dit ${ planName }-abonnement udløber ${ endDate }"
       ],
@@ -3775,6 +3931,11 @@
         "Du er ved at slette ${ aliasCount } aliasser permanent."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "I dag"
+      ]
+    },
     "Validation": {
       "Domain URL is invalid": [
         "Domæne-URL er ugyldig"
@@ -3787,9 +3948,6 @@
       ],
       "OTP secret or URI is invalid": [
         "OTP-hemmelighed eller URI er ugyldig"
-      ],
-      "OTP secret or URI required": [
-        "OTP-hemmelighed eller URI påkrævet"
       ],
       "Section name cannot be empty": [
         "Sektionsnavn kan ikke være tomt"
@@ -3808,6 +3966,9 @@
       "${ BRAND_NAME } password is required": [
         "Adgangskoden til ${ BRAND_NAME } kræves"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 på hinanden følgende prikker er ikke tilladt"
+      ],
       "A description of the problem is required": [
         "En beskrivelse af problemet er påkrævet"
       ],
@@ -3822,6 +3983,9 @@
       ],
       "An error occurred while exporting your data": [
         "Der opstod en fejl under eksport af dine data"
+      ],
+      "An error occurred while importing your data.": [
+        "Der opstod en fejl under import af dine data."
       ],
       "An error occurred while resuming your session": [
         "Der opstod en fejl under genoptagelse af din session"
@@ -3902,9 +4066,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Det er ikke tilladt at invitere e-mailadresser uden for organisationen."
-      ],
-      "item was imported without custom fields": [
-        "element blev importeret uden brugerdefinerede felter"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksimal længde er ${ maxLength } tegn",
@@ -4035,6 +4196,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke længere have adgang til denne boks. Hvis du vil være med igen, skal du have en ny invitation."
+      ],
+      "Your organization does not allow creating a vault": [
+        "Din organisation tillader ikke oprettelse af en boks"
       ],
       "Your organization does not allow sharing individual items": [
         "Din organisation tillader ikke deling af individuelle elementer"

@@ -13,14 +13,16 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    PrimaryButton,
     Row,
     useModalTwoStatic,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
+import { RenameModal } from '../../modals/RenameModal';
 import { formatLinkName, splitLinkName, validateLinkNameField } from '../../store';
+import { getIsPublicContext } from '../../utils/getIsPublicContext';
 
 interface Props {
     onClose?: () => void;
@@ -28,9 +30,20 @@ interface Props {
     isFile: boolean;
     isDoc: boolean;
     name: string;
+    volumeId?: string;
+    linkId?: string;
 }
 
-const RenameModal = ({ isFile, isDoc, name: linkName, onClose, onSubmit, ...modalProps }: Props & ModalStateProps) => {
+const RenameModalDeprecated = ({
+    isFile,
+    isDoc,
+    name: linkName,
+    onClose,
+    onSubmit,
+    volumeId, // here so they don't get added to the dom with modalProps
+    linkId, // here so they don't get added to the dom with modalProps
+    ...modalProps
+}: Props & ModalStateProps) => {
     const [name, setName] = useState(linkName);
     const [loading, withLoading] = useLoading();
     const [autofocusDone, setAutofocusDone] = useState(false);
@@ -103,16 +116,16 @@ const RenameModal = ({ isFile, isDoc, name: linkName, onClose, onSubmit, ...moda
                 <Button type="button" onClick={onClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton type="submit" loading={loading}>
+                <Button color="norm" type="submit" loading={loading}>
                     {c('Action').t`Rename`}
-                </PrimaryButton>
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
 };
 
-export default RenameModal;
-
 export const useRenameModal = () => {
-    return useModalTwoStatic(RenameModal);
+    const useSDKModal = useFlag('DriveWebSDKRenameModal');
+    const isPublic = getIsPublicContext();
+    return useModalTwoStatic(useSDKModal && !isPublic ? RenameModal : RenameModalDeprecated);
 };

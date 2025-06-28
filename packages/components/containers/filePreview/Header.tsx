@@ -11,9 +11,10 @@ import MimeIcon from '@proton/components/components/icon/MimeIcon';
 import TimeIntl from '@proton/components/components/time/TimeIntl';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
-import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
+import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
+import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
 const SHARED_STATUS_TO_COLOR = {
@@ -36,6 +37,8 @@ interface Props {
     onDetails?: () => void;
     onShare?: () => void;
     onSelectCover?: () => void; // photos inside album only
+    onFavorite?: () => void; // photos only
+    isFavorite?: boolean;
     onRestore?: () => void; // revision's specific
     onOpenInDocs?: () => void;
     date?: Date | string | number;
@@ -56,6 +59,8 @@ const Header = ({
     onRestore,
     onOpenInDocs,
     onSelectCover,
+    onFavorite,
+    isFavorite,
     date,
     children,
 }: Props) => {
@@ -88,41 +93,46 @@ const Header = ({
         );
     };
 
+    const openInDocsType = mimeTypeToOpenInDocsType(mimeType);
+
     return (
         <div className={clsx('file-preview-header flex justify-space-between items-center relative', headerSpacing)}>
-            <div className="file-preview-filename flex items-center flex-nowrap" data-testid="preview:file-name">
-                {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
-                <FileNameDisplay text={name} className="user-select" data-testid="file-preview:file-name" />
-                {signatureStatus}
+            <div className="flex-1">
+                <div className="file-preview-filename flex items-center flex-nowrap" data-testid="preview:file-name">
+                    {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
+                    <FileNameDisplay text={name} className="user-select" data-testid="file-preview:file-name" />
+                    {signatureStatus}
+                </div>
+                {date && (
+                    <TimeIntl
+                        className="hidden flex-1 text-ellipsis md:inline-block ml-6"
+                        data-testid="file-preview:date"
+                        options={{
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric',
+                            hour: 'numeric',
+                            minute: 'numeric',
+                        }}
+                    >
+                        {date}
+                    </TimeIntl>
+                )}
             </div>
-            {date && (
-                <TimeIntl
-                    className="flex-1 text-ellipsis ml-5"
-                    data-testid="file-preview:date"
-                    options={{
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric',
-                        hour: 'numeric',
-                        minute: 'numeric',
-                    }}
-                >
-                    {date}
-                </TimeIntl>
-            )}
+
             {children}
             <div className="flex items-center">
-                {isLargeViewport && onOpenInDocs && (
+                {isLargeViewport && onOpenInDocs && openInDocsType && (
                     <Button
-                        title={getOpenInDocsString(mimeType)}
+                        title={getOpenInDocsString(openInDocsType)}
                         onClick={onOpenInDocs}
                         shape="outline"
                         className="mr-4 flex items-center"
                         color="weak"
                         data-testid="file-preview:actions:open-in-docs"
                     >
-                        <MimeIcon name="proton-doc" className="mr-2" />
-                        {getOpenInDocsString(mimeType)}
+                        <MimeIcon name={getOpenInDocsMimeIconName(openInDocsType)} className="mr-2" />
+                        {getOpenInDocsString(openInDocsType)}
                     </Button>
                 )}
                 {onRestore && (
@@ -130,7 +140,7 @@ const Header = ({
                         title={c('Action').t`Restore`}
                         onClick={onRestore}
                         shape="solid"
-                        className="mx-2 lg:mr-4"
+                        className="md:mx-2 lg:mr-4"
                         color="norm"
                         data-testid="file-preview:actions:restore"
                     >
@@ -143,7 +153,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Download`}
                         onClick={onDownload}
-                        className="ml-2"
+                        className="sm:ml-2 hidden sm:inline-flex"
                         data-testid="file-preview:actions:download"
                     >
                         <Icon name="arrow-down-line" size={5} alt={c('Action').t`Download`} />
@@ -159,7 +169,7 @@ const Header = ({
                                 : c('Action').t`Save`
                         }
                         onClick={handleSave}
-                        className="ml-2"
+                        className="md:ml-2"
                         data-testid="file-preview:actions:save"
                         loading={isSaving}
                         disabled={!isDirty}
@@ -177,7 +187,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Details`}
                         onClick={onDetails}
-                        className="ml-2 hidden md:inline-flex"
+                        className="md:ml-2 hidden md:inline-flex"
                         data-testid="file-preview:actions:details"
                     >
                         <Icon name="info-circle" size={5} alt={c('Action').t`Details`} />
@@ -189,7 +199,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Share`}
                         onClick={onShare}
-                        className="ml-2 md:inline-flex"
+                        className="md:ml-2 md:inline-flex"
                         data-testid="file-preview:actions:share"
                     >
                         <Icon
@@ -200,13 +210,31 @@ const Header = ({
                         />
                     </Button>
                 )}
+                {onFavorite && typeof isFavorite !== 'undefined' && !isMobileHeaderPreview && (
+                    <Button
+                        icon
+                        shape="ghost"
+                        title={isFavorite ? c('Action').t`Remove from favorites` : c('Action').t`Mark as favorite`}
+                        onClick={onFavorite}
+                        className="md:ml-2 md:inline-flex"
+                        data-testid={
+                            isFavorite ? 'file-preview:actions:removefavorite' : 'file-preview:actions:markfavorite'
+                        }
+                    >
+                        <Icon
+                            name={isFavorite ? 'heart-filled' : 'heart'}
+                            size={5}
+                            alt={isFavorite ? c('Action').t`Remove from favorites` : c('Action').t`Mark as favorite`}
+                        />
+                    </Button>
+                )}
                 {onSelectCover && !isMobileHeaderPreview && (
                     <Button
                         icon
                         shape="ghost"
                         title={c('Action').t`Set as album cover`}
                         onClick={onSelectCover}
-                        className="ml-2 md:inline-flex"
+                        className="md:ml-2 md:inline-flex"
                         data-testid="file-preview:actions:selectcover"
                     >
                         <Icon name="window-image" size={5} alt={c('Action').t`Set as album cover`} />
@@ -218,7 +246,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Close`}
                         onClick={onClose}
-                        className="ml-2"
+                        className="md:ml-2"
                         data-testid="preview:button:close"
                     >
                         <Icon name="cross" size={5} alt={c('Action').t`Close`} />

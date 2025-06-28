@@ -7,7 +7,7 @@ import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
 import { type DecryptedLink, useActions, useDocumentActions } from '../../../store';
-import { useDriveDocsFeatureFlag } from '../../../store/_documents';
+import { useDriveDocsFeatureFlag, useDriveDocsSheetsFF } from '../../../store/_documents';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
@@ -31,6 +31,7 @@ import {
     UploadFolderButton,
 } from './ToolbarButtons';
 import { CreateNewDocumentButton } from './ToolbarButtons/CreateNewDocumentButton';
+import { CreateNewSheetButton } from './ToolbarButtons/CreateNewSheetButton';
 
 interface Props {
     shareId: string;
@@ -60,6 +61,7 @@ const DriveToolbar = ({
     const { createFolder, trashLinks, renameLink } = useActions();
     const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
+    const { isSheetsEnabled } = useDriveDocsSheetsFF();
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
@@ -89,6 +91,11 @@ const DriveToolbar = ({
                             {isDocsEnabled && !isLinkReadOnly && !isLinkInDeviceShare && (
                                 <CreateNewDocumentButton
                                     onClick={() => createDocument({ type: 'doc', shareId, parentLinkId: linkId })}
+                                />
+                            )}
+                            {isSheetsEnabled && !isLinkReadOnly && !isLinkInDeviceShare && (
+                                <CreateNewSheetButton
+                                    onClick={() => createDocument({ type: 'sheet', shareId, parentLinkId: linkId })}
                                 />
                             )}
                             <Vr />

@@ -30,7 +30,7 @@ const UserAndAddressesSectionIntro = () => {
     }
 
     if (hasExternalMemberCapableB2BPlan || hasInboxB2BPlan) {
-        const handleGetMoreLicense = () => {
+        const handleGetMoreLicense = () =>
             openSubscriptionModal({
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
@@ -43,7 +43,6 @@ const UserAndAddressesSectionIntro = () => {
                     source: 'vpn-um-get-more',
                 },
             });
-        };
 
         const maxMembers = organization?.MaxMembers || 0;
         const usedMembers = organization?.UsedMembers || 0;

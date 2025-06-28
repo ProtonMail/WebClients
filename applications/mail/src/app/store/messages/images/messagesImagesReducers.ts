@@ -1,13 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
-import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
-
-import { API_URL } from '../../../config';
-import { insertBlobImages, markEmbeddedAsLoaded, replaceEmbeddedUrls } from '../../../helpers/message/messageEmbeddeds';
-import { getEmbeddedImages, getRemoteImages, updateImages } from '../../../helpers/message/messageImages';
-import { loadBackgroundImages, loadImages, urlCreator } from '../../../helpers/message/messageRemotes';
-import { getMessage } from '../helpers/messagesReducer';
 import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
@@ -18,7 +11,14 @@ import type {
     MessageRemoteImage,
     MessageState,
     MessagesState,
-} from '../messagesTypes';
+} from '@proton/mail/store/messages/messagesTypes';
+import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
+
+import { API_URL } from '../../../config';
+import { insertBlobImages, markEmbeddedAsLoaded, replaceEmbeddedUrls } from '../../../helpers/message/messageEmbeddeds';
+import { getEmbeddedImages, getRemoteImages, updateImages } from '../../../helpers/message/messageImages';
+import { loadBackgroundImages, loadImages, urlCreator } from '../../../helpers/message/messageRemotes';
+import { getMessage } from '../helpers/messagesReducer';
 
 // Get image refs in the state for those in data
 const getStateImage = <T extends { image: MessageRemoteImage }>(data: T, messageState: MessageState) => {

@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { toggleZoomSettings } from '@proton/calendar/calendars/actions';
 import { useNotifications, useToggle } from '@proton/components';
+import { Info, SettingsLayoutLeft, SettingsLayoutRight } from '@proton/components';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import { Info, SettingsLayoutLeft, SettingsLayoutRight } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 

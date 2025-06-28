@@ -7,7 +7,7 @@ import { headers } from '@proton/activation/msw.header';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { APPS } from '@proton/shared/lib/constants';
 
-import ProviderCards from './ProviderCards';
+import ProviderCard from './ProviderCard';
 
 const defaultUseUser = [
     {
@@ -141,12 +141,12 @@ afterAll(() => {
 describe('Provider cards process testing', () => {
     it('Should display the four cards on the page without user data', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
-        const google = screen.getByTestId('ProviderCard:googleCard');
-        const yahoo = screen.getByTestId('ProviderCard:yahooCard');
-        const outlook = screen.getByTestId('ProviderCard:outlookCard');
-        const imap = screen.getByTestId('ProviderCard:imapCard');
+        const google = screen.getByTestId('ProviderButton:googleCard');
+        const yahoo = screen.getByTestId('ProviderButton:yahooCard');
+        const outlook = screen.getByTestId('ProviderButton:outlookCard');
+        const imap = screen.getByTestId('ProviderButton:imapCard');
 
         expect(google).toBeEnabled();
         expect(yahoo).toBeEnabled();
@@ -214,9 +214,9 @@ describe('Provider cards process testing', () => {
             })
         );
 
-        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
-        const yahoo = screen.getByTestId('ProviderCard:yahooCard');
+        const yahoo = screen.getByTestId('ProviderButton:yahooCard');
 
         // Open imap product modal and click calendar
         fireEvent.click(yahoo);
@@ -243,9 +243,9 @@ describe('Provider cards process testing', () => {
 
     it('Should click on imap calendar product', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
-        const imap = screen.getByTestId('ProviderCard:imapCard');
+        const imap = screen.getByTestId('ProviderButton:imapCard');
 
         // Open imap product modal and click calendar
         fireEvent.click(imap);
@@ -259,9 +259,9 @@ describe('Provider cards process testing', () => {
 
     it('Should click on every product in the imap modal', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
-        const imap = screen.getByTestId('ProviderCard:imapCard');
+        const imap = screen.getByTestId('ProviderButton:imapCard');
 
         // Open imap modal and click on email
         fireEvent.click(imap);
@@ -296,9 +296,9 @@ describe('Provider cards process testing', () => {
 
     it('Should click on every product in the yahoo modal', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
-        const yahoo = screen.getByTestId('ProviderCard:yahooCard');
+        const yahoo = screen.getByTestId('ProviderButton:yahooCard');
 
         // Open yahoo modal and click on email
         fireEvent.click(yahoo);
@@ -334,12 +334,12 @@ describe('Provider cards process testing', () => {
     it('Should disable all cards if user is delinquent', () => {
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: false }, false]);
 
-        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
-        const google = screen.getByTestId('ProviderCard:googleCard');
-        const yahoo = screen.getByTestId('ProviderCard:yahooCard');
-        const outlook = screen.getByTestId('ProviderCard:outlookCard');
-        const imap = screen.getByTestId('ProviderCard:imapCard');
+        const google = screen.getByTestId('ProviderButton:googleCard');
+        const yahoo = screen.getByTestId('ProviderButton:yahooCard');
+        const outlook = screen.getByTestId('ProviderButton:outlookCard');
+        const imap = screen.getByTestId('ProviderButton:imapCard');
 
         expect(google).toBeDisabled();
         expect(yahoo).toBeDisabled();
@@ -350,12 +350,12 @@ describe('Provider cards process testing', () => {
     it('Should disable all cards while user is loading', () => {
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, true]);
 
-        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
-        const google = screen.getByTestId('ProviderCard:googleCard');
-        const yahoo = screen.getByTestId('ProviderCard:yahooCard');
-        const outlook = screen.getByTestId('ProviderCard:outlookCard');
-        const imap = screen.getByTestId('ProviderCard:imapCard');
+        const google = screen.getByTestId('ProviderButton:googleCard');
+        const yahoo = screen.getByTestId('ProviderButton:yahooCard');
+        const outlook = screen.getByTestId('ProviderButton:outlookCard');
+        const imap = screen.getByTestId('ProviderButton:imapCard');
 
         expect(google).toBeDisabled();
         expect(yahoo).toBeDisabled();

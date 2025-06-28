@@ -1,9 +1,9 @@
-import { isCustomFolder, isCustomLabel } from '@proton/mail/labels/helpers';
+import { isCustomFolder, isCustomLabel } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { isMessage } from 'proton-mail/helpers/elements';
+import { hasLabel, isMessage } from 'proton-mail/helpers/elements';
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { ConversationState } from 'proton-mail/store/conversations/conversationsTypes';
 
@@ -132,6 +132,10 @@ export const moveOutPermanentDeleteAction = (onBack: () => void) => {
     onBack();
 };
 
+export const moveOutMarkAsAction = (onBack: () => void) => {
+    onBack();
+};
+
 export const moveOutApplyLabelAction = (
     sourceLabelID: string,
     changes: { [labelID: string]: boolean },
@@ -165,6 +169,7 @@ export const getOpenedElementUpdated = (elements: Element[], conversationMode: b
 };
 
 export const hasRemainingItemAfterAction = (
+    element: Message,
     sourceLabelID: string,
     conversationFromState: ConversationState | undefined
 ) => {
@@ -176,5 +181,16 @@ export const hasRemainingItemAfterAction = (
         conversationFromState?.Conversation.Labels?.find((label) => label.ID === sourceLabelID)?.ContextNumMessages ||
         0;
 
-    return matchingLabelNumMessage > 1;
+    // If the message we're acting on does not have the current label ID, the conversation stays in the current label
+    return matchingLabelNumMessage > 1 || !hasLabel(element, sourceLabelID);
+};
+
+export const hasReadItemsAfterAction = (conversationFromState: ConversationState | undefined) => {
+    if (!conversationFromState || !conversationFromState.Messages) {
+        return;
+    }
+
+    const unreadMessages = conversationFromState?.Messages?.filter((message) => message.Unread);
+
+    return conversationFromState.Messages?.length - unreadMessages.length > 1;
 };

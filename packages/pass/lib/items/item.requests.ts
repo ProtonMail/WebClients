@@ -31,7 +31,7 @@ import type {
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
-import { logger } from '@proton/pass/utils/logger';
+import { logId, logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import chunk from '@proton/utils/chunk';
 import identity from '@proton/utils/identity';
@@ -328,7 +328,7 @@ export const importItemsBatch = async (options: {
                             ModifyTime: modifyTime ?? null,
                         };
                     } catch (e) {
-                        logger.info(`[Import] could not import "${item.metadata.name}"`);
+                        logger.info(`[Import] could not import ${logId(item.metadata.itemUuid)}`);
                         return;
                     }
                 })

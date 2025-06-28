@@ -81,11 +81,16 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
                     !isDisplayedOnMobile && 'drawer-app--hide-on-mobile',
                 ])}
                 onClick={onContainerClick}
+                aria-labelledby="drawer-heading"
             >
                 <ErrorBoundary
                     component={<StandardErrorPage />}
                     initiative={appInView === DRAWER_NATIVE_APPS.SECURITY_CENTER ? 'drawer-security-center' : undefined}
                 >
+                    <h1 id="drawer-heading" className="sr-only">{
+                        // translator: this is a hidden text for a11y purposes => in this case, "Drawer" is the section that contains Contacts/Security center/etc. (can be translated as "Aside panel" if Drawer does not mean anything in your language)
+                        c('Header').t`Drawer`
+                    }</h1>
                     <div className="drawer-app-inner h-full w-full">
                         {Object.entries(iframeSrcMap)
                             .filter(([, src]) => src)

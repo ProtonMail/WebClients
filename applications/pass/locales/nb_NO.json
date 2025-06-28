@@ -46,6 +46,9 @@
       "Add domain": [
         "Legg til domene"
       ],
+      "Add field": [
+        "Legg til felt"
+      ],
       "Add forwarding mailbox": [
         "Legg til postboks for videresending"
       ],
@@ -230,7 +233,7 @@
         "Slett hvelv"
       ],
       "Deselect": [
-        "Fjern markeringen"
+        "Avbryt valg"
       ],
       "Disable alias": [
         "Deaktiver alias"
@@ -400,14 +403,17 @@
       "Move to another vault": [
         "Flytt til annet hvelv"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flytt til papirkurven"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flytt til papirkurven"
       ],
       "Multiple select": [
         "Flere valg"
+      ],
+      "Next month": [
+        "Neste måned"
       ],
       "No expired links": [
         "Ingen utløpte koblinger"
@@ -433,17 +439,26 @@
       "Pause monitoring": [
         "Sett overvåking på vent"
       ],
+      "Pay once": [
+        "Betal én gang"
+      ],
       "Pin item": [
         "Fest element"
       ],
       "Please retry": [
         "Prøv igjen"
       ],
+      "Previous month": [
+        "Forrige måned"
+      ],
       "Re-verify": [
         "Verifiser på nytt"
       ],
       "Reactivate now": [
         "Aktiver på nytt nå"
+      ],
+      "Read More": [
+        "Les mer"
       ],
       "Refresh the page": [
         "Oppdater siden"
@@ -529,9 +544,6 @@
       "See members": [
         "Vis medlemmer"
       ],
-      "Select": [
-        "Velg"
-      ],
       "Send email": [
         "Send e-post"
       ],
@@ -565,17 +577,26 @@
       "Show advanced options": [
         "Vis avanserte alternativer"
       ],
+      "Show Less": [
+        "Vis mindre"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Logg på med ${ BRAND_NAME }"
       ],
       "Sign out": [
         "Logg av"
       ],
+      "Skip": [
+        "Hopp over"
+      ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Noen har delt et element med deg på ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Sorter hvelvelementer"
+      ],
+      "Start from scratch": [
+        "Start fra begynnelsen"
       ],
       "Submit": [
         "Send inn"
@@ -793,9 +814,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunne ikke tolkes. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Feil] et element kunne ikke analyseres"
-      ],
       "A domain ownership must be verified first.": [
         "Et domeneeierskap må bekreftes først."
       ],
@@ -825,9 +843,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentisering mislyktes. Bekreft ditt andre passord for å fortsette med eksporteringen"
-      ],
-      "Biometric authentication failed": [
-        "Biometrisk autentisering mislyktes"
       ],
       "Cannot send invitation at the moment": [
         "Kan ikke sende invitasjon for øyeblikket",
@@ -1041,7 +1056,7 @@
       "File does not match expected format": [
         "Fil samsvarer ikke med forventet format"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Import mislyktes for hvelv \"${ vaultData.name }\": ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1157,6 +1172,9 @@
       ],
       "Unsupported 1Password file format": [
         "Ikke støttet 1Password-filformat"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Ikke støttet Bitwarden filformat"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Oppdatering av hvelv \"${ payload.content.name }\" mislyktes."
@@ -1282,7 +1300,8 @@
         "${ count } visning",
         "${ count } visninger"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } visning",
         "${ count }/${ maxReads } visninger"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1488,9 +1507,6 @@
       ],
       "Change your password": [
         "Endre passordet ditt"
-      ],
-      "Choose your preferred look and feel.": [
-        "Velg ditt foretrukne utseende og følelse."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Bekreft det ekstra passordet ditt for å fortsette med fjerningen."
@@ -1782,9 +1798,6 @@
       ],
       "Low Priority": [
         "Lav prioritet"
-      ],
-      "Make it your own": [
-        "Gjør det til ditt eget"
       ],
       "Manager": [
         "Administrator"
@@ -2231,6 +2244,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "For å se gjennom de importerte dataene dine, klikk på ${ PASS_APP_NAME }-ikonet i nettleserens verktøylinje."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Klarert av over 50 000 forretningsbrukere og 100 millioner kontoer rundt om i verden."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME }-funksjoner, oppdateringer og produkter før de er utgitt til offentligheten. Dette vil laste inn applikasjonen på nytt."
       ],
@@ -2310,6 +2326,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Vi oppdaget at du har ${ aliasCount } alias som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere det?",
         "Vi oppdaget at du har ${ aliasCount } aliaser som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere dem?"
+      ],
+      "Week": [
+        "Uke"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Vi har sendt en verifiseringskode til ${ email }. Skriv den inn nedenfor:"
@@ -2518,6 +2537,12 @@
       "Account": [
         "Konto"
       ],
+      "Account Number": [
+        "Kontonummer"
+      ],
+      "Account Type": [
+        "Kontotype"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Legg til et tilfeldig prefiks for dette domenet når du oppretter et nytt alias."
       ],
@@ -2526,6 +2551,9 @@
       ],
       "Additional details": [
         "Ytterligere detaljer"
+      ],
+      "Address": [
+        "Adresse"
       ],
       "Address details": [
         "Adressedetaljer"
@@ -2554,6 +2582,12 @@
       "Always show username field": [
         "Vis alltid brukernavnfeltet"
       ],
+      "API Credential": [
+        "API-identifikator"
+      ],
+      "API Key": [
+        "API-nøkkel"
+      ],
       "Application logs": [
         "Applikasjonslogger"
       ],
@@ -2563,6 +2597,12 @@
       "Backup password": [
         "Reservepassord"
       ],
+      "Bank Account": [
+        "Bankkonto"
+      ],
+      "Bank Name": [
+        "Banknavn"
+      ],
       "Beta Access": [
         "Beta-tilgang"
       ],
@@ -2571,6 +2611,12 @@
       ],
       "Birthdate": [
         "Fødselsdato"
+      ],
+      "Browse faster, smarter": [
+        "Surf raskere, smartere"
+      ],
+      "Built-in 2FA": [
+        "Innebygd 2FA"
       ],
       "Capital letters (A-Z)": [
         "Store bokstaver (A–Å)"
@@ -2590,8 +2636,20 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Avmerkingsboks"
+      ],
+      "Choose unlock method": [
+        "Velg opplåsingsmetode"
+      ],
+      "Choose your preferred look and feel.": [
+        "Velg ditt foretrukne utseende og følelse."
+      ],
       "City": [
         "Poststed"
+      ],
+      "Class": [
+        "Klasse"
       ],
       "Code": [
         "Kode"
@@ -2614,6 +2672,9 @@
       "Copy": [
         "Kopier"
       ],
+      "Country": [
+        "Land"
+      ],
       "Country or Region": [
         "Land eller region"
       ],
@@ -2622,6 +2683,9 @@
       ],
       "Create a credit card": [
         "Opprett et kredittkort"
+      ],
+      "Create a custom item": [
+        "Opprett et tilpasset element"
       ],
       "Create a hide-my-email alias": [
         "Opprett et hide-my-email-alias"
@@ -2641,20 +2705,29 @@
       "Create new vault": [
         "Opprett nytt hvelv"
       ],
-      "Created": [
-        "Opprettet"
-      ],
       "Created at": [
         "Opprettet den"
       ],
-      "Custom hidden field": [
-        "Tilpasset skjult felt"
+      "Credit cards": [
+        "Kredittkort"
       ],
-      "Custom text field": [
-        "Tilpasset tekstfelt"
+      "Crypto Wallet": [
+        "Krypto-wallet"
+      ],
+      "Custom Items": [
+        "Tilpassede elementer"
+      ],
+      "Database": [
+        "Database"
+      ],
+      "Database Type": [
+        "Databasetype"
       ],
       "Date": [
         "Dato"
+      ],
+      "Date of Birth": [
+        "Fødselsdato"
       ],
       "Device": [
         "Enhet"
@@ -2667,6 +2740,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Doktor"
       ],
       "Domain": [
         "Domene"
@@ -2682,6 +2758,9 @@
       ],
       "Download logs": [
         "Last ned logger"
+      ],
+      "Driver License": [
+        "Førerkort"
       ],
       "Email": [
         "E-post"
@@ -2713,8 +2792,17 @@
       "Expired": [
         "Utløpt"
       ],
+      "Expiry Date": [
+        "Utløpsdato"
+      ],
       "Export": [
         "Eksporter"
+      ],
+      "Extra email addresses": [
+        "Ekstra e-postadresser"
+      ],
+      "Extra fields": [
+        "Ekstra felt"
       ],
       "Extra password": [
         "Ekstra passord"
@@ -2728,8 +2816,14 @@
       "Field name": [
         "Feltnavn"
       ],
+      "File attachments": [
+        "Filvedlegg"
+      ],
       "File format": [
         "Filformat"
+      ],
+      "Finance": [
+        "Finans"
       ],
       "First name": [
         "Fornavn"
@@ -2740,8 +2834,14 @@
       "For a one-off sharing": [
         "For en engangsdeling"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Av sikkerhetsgrunner låser ${ PASS_SHORT_APP_NAME } seg automatisk etter 10 minutter med inaktivitet."
+      ],
       "Forwards to": [
         "Videresendes til"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Gratis for alltid"
@@ -2758,8 +2858,17 @@
       "Generic CSV": [
         "Generisk CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Skaff deg ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Skaff deg ${ PASS_SHORT_APP_NAME } Ubegrenset"
+      ],
       "Get Started": [
         "Kom i gang"
+      ],
+      "Get the extension for your browser.": [
+        "Skaff utvidelsen for nettleseren din."
       ],
       "Grant": [
         "Gi"
@@ -2770,8 +2879,32 @@
       "Hide password": [
         "Skjul passord"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliaser"
+      ],
+      "Highest": [
+        "Høyeste"
+      ],
+      "Holder Name": [
+        "Navn på innehaveren"
+      ],
+      "Hospital": [
+        "Sykehus"
+      ],
+      "Host": [
+        "Vert"
+      ],
+      "Hostname": [
+        "Vertsnavn"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Hvordan låse opp ${ PASS_SHORT_APP_NAME }"
+      ],
       "https://example.com": [
         "https://eksempel.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "ID-kort"
@@ -2809,8 +2942,26 @@
       "Instagram handle": [
         "Instagram-brukernavn"
       ],
+      "Install and continue": [
+        "Installer og fortsett"
+      ],
+      "Install extension": [
+        "Installer utvidelse"
+      ],
       "Invitations": [
         "Invitasjoner"
+      ],
+      "IP Address": [
+        "IP-adresse"
+      ],
+      "Issuing Authority": [
+        "Utstedende myndighet"
+      ],
+      "Issuing Country": [
+        "Utstedende land"
+      ],
+      "Issuing State/Country": [
+        "Utstedende stat/land"
       ],
       "Item ID": [
         "Element ID"
@@ -2820,6 +2971,12 @@
       ],
       "Key": [
         "Nøkkel"
+      ],
+      "Key fingerprint": [
+        "Nøkkelfingeravtrykk"
+      ],
+      "Key type": [
+        "Nøkkeltype"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastatursnarvei: ${ shortcut }"
@@ -2851,8 +3008,17 @@
       "License": [
         "Førerkort"
       ],
+      "License Key": [
+        "Lisensnøkkel"
+      ],
       "License number": [
         "Førerkortnummer"
+      ],
+      "License Number": [
+        "Førerkortnummer"
+      ],
+      "Limited time": [
+        "Kun i en begrenset periode"
       ],
       "LinkedIn account": [
         "LinkedIn-konto"
@@ -2878,11 +3044,35 @@
       "Make all viewers": [
         "Gjør alle seere"
       ],
+      "Make it your own.": [
+        "Gjør det til ditt eget."
+      ],
       "max views reached": [
         "maks antall visninger nådd"
       ],
+      "Medical Conditions": [
+        "Medisinske tilstander"
+      ],
+      "Medical Record": [
+        "Medisinsk journal"
+      ],
+      "Medications": [
+        "Medisiner"
+      ],
+      "Member ID": [
+        "Medlems-ID"
+      ],
+      "Member Name": [
+        "Medlemsnavn"
+      ],
       "Members": [
         "Medlemmer"
+      ],
+      "Membership": [
+        "Medlemskap"
+      ],
+      "Membership ID": [
+        "Medlemskaps-ID"
       ],
       "Middle name": [
         "Mellomnavn"
@@ -2899,11 +3089,17 @@
       "Name": [
         "Navn"
       ],
+      "Name (SSID)": [
+        "Navn (SSID)"
+      ],
       "Name on card": [
         "Navn på kortet"
       ],
       "Need help?": [
         "Trenger du hjelp?"
+      ],
+      "Network": [
+        "Nettverk"
       ],
       "New": [
         "Ny"
@@ -2953,8 +3149,20 @@
       "Open-source password manager for effortless protection.": [
         "Passordbehandling med åpen kildekode for uanstrengt beskyttelse."
       ],
+      "Operating System": [
+        "Operativsystem"
+      ],
       "Organization": [
         "Organisasjon"
+      ],
+      "Organization Name": [
+        "Organisasjonsnavn"
+      ],
+      "Other": [
+        "Annet"
+      ],
+      "Owner": [
+        "Eier"
       ],
       "Passkey": [
         "Tilgangsnøkkel"
@@ -2965,6 +3173,9 @@
       "Passport": [
         "Pass"
       ],
+      "Passport Number": [
+        "Passnummer"
+      ],
       "Passport number": [
         "Passnummer"
       ],
@@ -2974,11 +3185,23 @@
       "Password history": [
         "Passordhistorikk"
       ],
+      "Patient Name": [
+        "Pasientnavn"
+      ],
+      "Permissions": [
+        "Tillatelser"
+      ],
+      "Personal": [
+        "Personlig"
+      ],
       "Personal details": [
         "Personopplysninger"
       ],
       "Personal website": [
         "Personlig nettside"
+      ],
+      "Personalize": [
+        "Personliggjør"
       ],
       "PGP-encrypted (recommended)": [
         "PGP-kryptert (anbefalt)"
@@ -2992,6 +3215,15 @@
       "PIN code": [
         "PIN-kode"
       ],
+      "Plus": [
+        "Plus"
+      ],
+      "Points Balance": [
+        "Poengsaldo"
+      ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Prefiks"
       ],
@@ -3001,17 +3233,35 @@
       "Priority:": [
         "Prioritet:"
       ],
+      "Private key": [
+        "Privat nøkkel"
+      ],
+      "Private Key": [
+        "Privat nøkkel"
+      ],
+      "Product": [
+        "Produkt"
+      ],
+      "Program Name": [
+        "Programnavn"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Beskytt ${ PASS_APP_NAME } med ett ekstra passord"
       ],
       "Public domain": [
         "Offentlig domene"
       ],
+      "Public key": [
+        "Offentlig nøkkel"
+      ],
       "Rate us": [
         "Vurder oss"
       ],
       "Recent": [
         "Nylig"
+      ],
+      "Record Number": [
+        "Registreringsnummer"
       ],
       "Reddit handle": [
         "Reddit-brukernavn"
@@ -3028,8 +3278,17 @@
       "Reveal password": [
         "Avslør passord"
       ],
+      "Reward Program": [
+        "Belønningsprogram"
+      ],
+      "Routing Number": [
+        "Rutenummer"
+      ],
       "Second password": [
         "Andre passord"
+      ],
+      "Secret": [
+        "Hemmelighet"
       ],
       "Secure links": [
         "Sikre koblinger"
@@ -3046,6 +3305,9 @@
       "See member and permission overview": [
         "Se oversikt over medlemmer og tillatelser"
       ],
+      "Seed Phrase": [
+        "Gjenopprettingsfrase"
+      ],
       "Select a domain": [
         "Velg et domene"
       ],
@@ -3058,14 +3320,26 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Velg hvelvet der SimpleLogin-aliaser skal importeres til"
       ],
+      "Select theme": [
+        "Velg tema"
+      ],
       "Select your password manager": [
         "Velg passordbehandleren din"
+      ],
+      "Select your theme": [
+        "Velg temaet ditt"
       ],
       "Selected": [
         "Valgt"
       ],
+      "Server": [
+        "Tjener"
+      ],
       "Share": [
         "Del"
+      ],
+      "Share ID": [
+        "Del ID"
       ],
       "Shared": [
         "Delt"
@@ -3085,17 +3359,32 @@
       "Social security": [
         "Trygd"
       ],
+      "Social Security": [
+        "Trygd"
+      ],
       "Social security number": [
         "Personnummer"
       ],
+      "Software license": [
+        "Programvarelisens"
+      ],
       "Special characters (!&*)": [
         "Spesialtegn (!&*)"
+      ],
+      "SSH key": [
+        "SSH-nøkkel"
+      ],
+      "SSN": [
+        "Fødselsnummer"
       ],
       "State or province": [
         "Delstat eller provins"
       ],
       "Status": [
         "Status"
+      ],
+      "Storage": [
+        "Lagringsplass"
       ],
       "Street address": [
         "Gateadresse"
@@ -3112,6 +3401,9 @@
       "Support": [
         "Brukerstøtte"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synkroniser aliaser med SimpleLogin"
       ],
@@ -3121,8 +3413,14 @@
       "Tax number": [
         "Avgiftsnummer"
       ],
+      "Technology": [
+        "Teknologi"
+      ],
       "Text": [
         "Tekst"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Det beste av ${ BRAND_NAME } med ett abonnement"
       ],
       "The URL has been copied to the clipboard": [
         "Nettadressen er kopiert til utklippstavlen"
@@ -3132,6 +3430,12 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Dette elementet er tilgjengelig til ${ date } eller til visningsgrensen er nådd."
+      ],
+      "Tier/Level": [
+        "Nivå"
+      ],
+      "Tier/Status": [
+        "Nivå/status"
       ],
       "Title": [
         "Tittel"
@@ -3157,6 +3461,12 @@
       "Unknown": [
         "Ukjent"
       ],
+      "Unlimited": [
+        "Ubegrenset"
+      ],
+      "Unlock premium features": [
+        "Lås opp premiumfunksjoner"
+      ],
       "Unlock with": [
         "Lås opp med"
       ],
@@ -3166,6 +3476,9 @@
       "Unnamed Credit Card": [
         "Ikke navngitt kredittkort"
       ],
+      "Unnamed custom item": [
+        "Tilpasset element uten navn"
+      ],
       "Unnamed identity": [
         "Ikke navngitt identitet"
       ],
@@ -3174,6 +3487,15 @@
       ],
       "Unnamed note": [
         "Ikke navngitt notat"
+      ],
+      "Unnamed SSH key": [
+        "SSH-nøkkel uten navn"
+      ],
+      "Unnamed WiFi item": [
+        "Ikke navngitt WiFi-element"
+      ],
+      "Unspecified": [
+        "Uspesifisert"
       ],
       "Untitled": [
         "Uten tittel"
@@ -3196,6 +3518,9 @@
       "Vault ID": [
         "Hvelv ID"
       ],
+      "Vault, item & link sharing": [
+        "Deling av hvelv, elementer og koblinger"
+      ],
       "Vaults": [
         "Hvelv"
       ],
@@ -3205,8 +3530,17 @@
       "View logs": [
         "Se logger"
       ],
+      "VPN Devices": [
+        "VPN-enheter"
+      ],
+      "VPN Speed": [
+        "VPN-hastighet"
+      ],
       "Vulnerable": [
         "Sårbar"
+      ],
+      "Wallet Name": [
+        "Navn på lommebok"
       ],
       "Weak": [
         "Svak"
@@ -3216,6 +3550,12 @@
       ],
       "Websites": [
         "Nettsteder"
+      ],
+      "What's included": [
+        "Hva som er inkludert"
+      ],
+      "WiFi network": [
+        "WiFi-nettverk"
       ],
       "Work details": [
         "Arbeidsdetaljer"
@@ -3235,8 +3575,14 @@
       "You are about to create": [
         "Du er i ferd med å opprette"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Du kan velge mellom PIN-kode, biometri eller kontopassordet ditt for å låse opp."
+      ],
       "Your domain": [
         "Ditt domene"
+      ],
+      "Your passwords. Everywhere.": [
+        "Dine passord. Overalt."
       ],
       "ZIP": [
         "Postnummer"
@@ -3259,6 +3605,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3424,6 +3775,14 @@
         "Du kan legge ved filer til elementer for en bedre organisering"
       ]
     },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Livstid for ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/måned"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Legg til 2FA-hemmelig nøkkel"
@@ -3434,6 +3793,18 @@
       "Add note": [
         "Legg til notat"
       ],
+      "Add password": [
+        "Legg til passord"
+      ],
+      "Add private key": [
+        "Legg til privat nøkkel"
+      ],
+      "Add public key": [
+        "Legg til offentlig nøkkel"
+      ],
+      "Add SSID": [
+        "Legg til SSID"
+      ],
       "Add text": [
         "Legg til tekst"
       ],
@@ -3442,6 +3813,9 @@
       ],
       "Coupon": [
         "Kupong"
+      ],
+      "E.g., ": [
+        "F.eks. "
       ],
       "Email address": [
         "E-postadresse"
@@ -3473,8 +3847,8 @@
       "my-domain.com": [
         "mitt-domene.no"
       ],
-      "Name to display when sending an email": [
-        "Navn som skal vises når du sender en e-post"
+      "Name displayed in emails": [
+        "Navn vist i meldinger"
       ],
       "Note from SimpleLogin": [
         "Notat fra SimpleLogin"
@@ -3509,6 +3883,9 @@
       "Select a suffix": [
         "Velg et prefiks"
       ],
+      "Select option": [
+        "Velg alternativ"
+      ],
       "Unknown origin": [
         "Ukjent opprinnelse"
       ],
@@ -3517,9 +3894,6 @@
       ],
       "Used on ${ url }": [
         "Brukt på ${ url }"
-      ],
-      "Write your note": [
-        "Skriv notatet ditt"
       ]
     },
     "Security Center - Info": {
@@ -3682,8 +4056,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME }-adresser"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Ubegrenset"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Kontobeskyttelse"
@@ -3908,6 +4288,9 @@
       "Members": [
         "Medlemmer"
       ],
+      "Minicalendar": [
+        "Minikalender"
+      ],
       "Modified": [
         "Endret"
       ],
@@ -3960,6 +4343,9 @@
       ],
       "Pause monitoring?": [
         "Sette overvåking på vent?"
+      ],
+      "Pay once, access forever.": [
+        "Betal én gang, få tilgang for alltid."
       ],
       "Pending access confirmation": [
         "Venter på tilgangsbekreftelse"
@@ -4133,6 +4519,11 @@
         "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "I dag"
+      ]
+    },
     "Tooltip": {
       "Not all information listed here was exposed for all users.": [
         "Ikke all informasjon som er oppført her, ble eksponert for alle brukere."
@@ -4154,9 +4545,6 @@
       "OTP secret or URI is invalid": [
         "OTP-hemmelighet eller URI er ugyldig"
       ],
-      "OTP secret or URI required": [
-        "OTP-hemmelighet eller URI kreves"
-      ],
       "Section name cannot be empty": [
         "Seksjonsnavn kan ikke være tomt"
       ],
@@ -4168,6 +4556,12 @@
       ],
       "URL is invalid": [
         "Nettadressen er ugyldig"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Flytt element til",
+        "Flytt elementer til"
       ]
     },
     "Warning": {
@@ -4283,9 +4677,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Det er ikke tillatt å invitere e-postadresser utenfor organisasjonen."
-      ],
-      "item was imported without custom fields": [
-        "elementet ble importert uten egendefinerte felt"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksimal lengde er ${ maxLength } tegn",

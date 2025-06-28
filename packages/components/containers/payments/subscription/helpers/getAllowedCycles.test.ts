@@ -8,10 +8,11 @@ import {
     PLANS,
     type Plan,
     type PlanIDs,
+    getPlansMap,
     isRegionalCurrency,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { PLANS_MAP, getSubscriptionMock, getTestPlansMap } from '@proton/testing/data';
+import { PLANS_MAP, getLongTestPlans, getSubscriptionMock, getTestPlansMap } from '@proton/testing/data';
 
 import { type PlanCapRule, getAllowedCycles } from './getAllowedCycles';
 
@@ -1638,7 +1639,7 @@ describe('downcycling', () => {
     );
 
     it.each(allCombinations)(
-        'should return 1 year cap for plans with regional currencies - $plan $currency',
+        'should return 2 year cap for plans with regional currencies - $plan $currency',
         ({ plan, currency }) => {
             const subscription = undefined;
             const minimumCycle = CYCLE.MONTHLY;
@@ -1647,16 +1648,56 @@ describe('downcycling', () => {
                 [plan]: 1,
             };
 
+            const customPlansMap = getPlansMap(getLongTestPlans(currency), currency, false);
+
             const result = getAllowedCycles({
                 subscription,
                 minimumCycle,
                 maximumCycle,
                 planIDs,
-                plansMap: PLANS_MAP,
+                plansMap: customPlansMap,
                 currency,
             });
 
-            expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+            const cycles =
+                plan === PLANS.DRIVE ? [CYCLE.YEARLY, CYCLE.MONTHLY] : [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY];
+
+            expect(result).toEqual(cycles);
         }
     );
+
+    it('should not return 24m cycle if it does not exist on the backend', () => {
+        const customPlansMap = getTestPlansMap();
+        customPlansMap[PLANS.MAIL] = {
+            ...(customPlansMap[PLANS.MAIL] as Plan),
+            Pricing: {
+                [CYCLE.MONTHLY]: customPlansMap[PLANS.MAIL]!.Pricing[CYCLE.MONTHLY],
+                [CYCLE.YEARLY]: customPlansMap[PLANS.MAIL]!.Pricing[CYCLE.YEARLY],
+            },
+            DefaultPricing: {
+                [CYCLE.MONTHLY]: customPlansMap[PLANS.MAIL]!.DefaultPricing?.[CYCLE.MONTHLY],
+                [CYCLE.YEARLY]: customPlansMap[PLANS.MAIL]!.DefaultPricing?.[CYCLE.YEARLY],
+            },
+        };
+
+        expect(Object.keys(customPlansMap[PLANS.MAIL]?.Pricing ?? {}).map((it) => +it)).toEqual([
+            CYCLE.MONTHLY,
+            CYCLE.YEARLY,
+        ]);
+        expect(Object.keys(customPlansMap[PLANS.MAIL]?.DefaultPricing ?? {}).map((it) => +it)).toEqual([
+            CYCLE.MONTHLY,
+            CYCLE.YEARLY,
+        ]);
+
+        const result = getAllowedCycles({
+            subscription: FREE_SUBSCRIPTION,
+            minimumCycle: CYCLE.MONTHLY,
+            maximumCycle: CYCLE.TWO_YEARS,
+            planIDs: { [PLANS.MAIL]: 1 },
+            plansMap: customPlansMap,
+            currency: DEFAULT_CURRENCY,
+        });
+
+        expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+    });
 });

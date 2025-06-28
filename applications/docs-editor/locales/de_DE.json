@@ -5,11 +5,11 @@
   },
   "contexts": {
     "Action": {
-      "A) B) C) D)": [
-        "A) B) C) D)"
-      ],
       "a) b) c) d)": [
         "a) b) c) d)"
+      ],
+      "A) B) C) D)": [
+        "A) B) C) D)"
       ],
       "A. B. C. D.": [
         "A. B. C. D."
@@ -502,6 +502,9 @@
       "Comments": [
         "Kommentare"
       ],
+      "Copied to clipboard": [
+        "In die Zwischenablage kopiert"
+      ],
       "Editing": [
         "Bearbeitet"
       ],
@@ -676,6 +679,148 @@
       ],
       "Text": [
         "Text"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Insert image in cell": [
+        "Bild in Zelle einfügen"
+      ],
+      "Insert image over cells": [
+        "Bild über Zellen einfügen"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Kommagetrennte Werte (.csv)"
+      ],
+      "Download": [
+        "Herunterladen"
+      ],
+      "Download logs": [
+        "Protokolle herunterladen"
+      ],
+      "Help": [
+        "Hilfe"
+      ],
+      "Import": [
+        "Importieren"
+      ],
+      "Make a copy": [
+        "Erstelle eine Kopie"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "In Ordner verschieben"
+      ],
+      "Move to trash": [
+        "In Papierkorb verschieben"
+      ],
+      "New spreadsheet": [
+        "Neue Tabelle"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } öffnen"
+      ],
+      "Print": [
+        "Drucken"
+      ],
+      "See version history": [
+        "Versionsverlauf anzeigen"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tabulatorgetrennte Werte (.tsv)"
+      ],
+      "View recent spreadsheets": [
+        "Kürzlich geöffnete Tabellen anzeigen"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Zellen"
+      ],
+      "Chart": [
+        "Diagramm"
+      ],
+      "Columns": [
+        "Spalten"
+      ],
+      "Insert 1 column left": [
+        "1 Spalte links einfügen"
+      ],
+      "Insert 1 column right": [
+        "1 Spalte rechts einfügen"
+      ],
+      "Insert 1 row above": [
+        "1 Zeile darüber einfügen"
+      ],
+      "Insert 1 row below": [
+        "1 Zeile darunter einfügen"
+      ],
+      "Insert cells and shift down": [
+        "Zellen einfügen und nach unten verschieben"
+      ],
+      "Insert cells and shift right": [
+        "Zellen einfügen und nach rechts verschieben"
+      ],
+      "Note": [
+        "Hinweis"
+      ],
+      "Rows": [
+        "Zeilen"
+      ],
+      "Sheet": [
+        "Arbeitsblatt"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "File": [
+        "Datei"
+      ],
+      "Insert": [
+        "Einfügen"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Fett"
+      ],
+      "Clear formatting": [
+        "Formatierung löschen"
+      ],
+      "Decrease decimal places": [
+        "Dezimalstellen verringern"
+      ],
+      "Default (${ defaultFont })": [
+        "Standard (${ defaultFont })"
+      ],
+      "Format as currency": [
+        "Als Währung formatieren"
+      ],
+      "Format as percent": [
+        "Als Prozent formatieren"
+      ],
+      "Increase decimal places": [
+        "Dezimalstellen erhöhen"
+      ],
+      "Italic": [
+        "Kursiv"
+      ],
+      "Redo": [
+        "Wiederherstellen"
+      ],
+      "Search": [
+        "Suchen"
+      ],
+      "Strikethrough": [
+        "Durchstreichen"
+      ],
+      "Underline": [
+        "Unterstreichen"
+      ],
+      "Undo": [
+        "Rückgängig machen"
       ]
     },
     "Title": {

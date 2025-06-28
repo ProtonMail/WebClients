@@ -20,13 +20,13 @@ import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPane
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
-import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
+import { useAliasForLogin } from '@proton/pass/hooks/useAliasForLogin';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
-import { getSanitizedUserIdentifiers } from '@proton/pass/lib/items/item.utils';
-import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
+import { bindOTPSanitizer, getSanitizedUserIdentifiers, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
+import { getSecretOrUri } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { itemCreate } from '@proton/pass/store/actions';
@@ -34,6 +34,7 @@ import { selectShowUsernameField, selectTOTPLimits } from '@proton/pass/store/se
 import type { LoginItemFormValues } from '@proton/pass/types';
 import { arrayRemove } from '@proton/pass/utils/array/remove';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -102,11 +103,6 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                 !isEmptyString(values.aliasPrefix) &&
                 values.mailboxes.length > 0;
 
-            const normalizedOtpUri = parseOTPValue(totpUri, {
-                label: itemEmail || undefined,
-                issuer: name || undefined,
-            });
-
             if (withAlias) {
                 const aliasOptimisticId = uniqueId();
 
@@ -131,6 +127,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
             }
 
             const { email, username } = await getSanitizedUserIdentifiers({ itemEmail, itemUsername });
+            const sanitizeOTP = bindOTPSanitizer(itemEmail, name);
 
             onSubmit({
                 ...uneditable,
@@ -138,27 +135,13 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                     ...content,
                     passkeys,
                     password: obfuscate(password),
-                    totpUri: obfuscate(normalizedOtpUri),
+                    totpUri: pipe(sanitizeOTP, obfuscate)(totpUri),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
                     itemEmail: obfuscate(email),
                     itemUsername: obfuscate(username),
                 },
                 files,
-                extraFields: obfuscateExtraFields(
-                    extraFields.map((field) =>
-                        field.type === 'totp'
-                            ? {
-                                  ...field,
-                                  data: {
-                                      totpUri: parseOTPValue(field.data.totpUri, {
-                                          label: itemEmail || undefined,
-                                          issuer: name || undefined,
-                                      }),
-                                  },
-                              }
-                            : field
-                    )
-                ),
+                extraFields: obfuscateExtraFields(extraFields.map(sanitizeExtraField(sanitizeOTP))),
                 itemId,
                 lastRevision,
                 metadata: { ...metadata, name, note: obfuscate(note) },
@@ -177,7 +160,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
             .concat(form.values.url)
             .some((url) => url.includes(domain));
 
-    const { aliasOptions } = useAliasForLoginModal(form);
+    const alias = useAliasForLogin(form);
+    const { aliasOptions } = alias;
 
     const draft = useItemDraft<LoginItemFormValues>(form, {
         mode: 'edit',
@@ -193,13 +177,15 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
         if (!draft) {
             getSanitizedUserIdentifiers(content)
                 .then(({ username, email }) => {
+                    /** On mount, if username field is not expanded, use the `itemEmail` as
+                     * the virtual `Email or username` field value. This should be sanitized
+                     * on save by checking if the provided value is a valid email.  */
+                    const withUsername = form.values.withUsername || Boolean(username && email);
+                    const itemEmail = withUsername ? email : username || email;
+                    const itemUsername = withUsername ? username : '';
+
                     form.resetForm({
-                        values: {
-                            ...form.values,
-                            itemUsername: username,
-                            itemEmail: email,
-                            withUsername: form.values.withUsername || Boolean(username && email),
-                        },
+                        values: { ...form.values, itemUsername, itemEmail, withUsername },
                     });
                 })
                 .catch(noop);
@@ -253,7 +239,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                             ))}
 
                             <FieldsetCluster>
-                                <LoginEditCredentials form={form} />
+                                <LoginEditCredentials form={form} alias={alias} />
 
                                 {
                                     /* only allow adding a new TOTP code if user
@@ -313,6 +299,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                                 />
                             </FieldsetCluster>
 
+                            <ExtraFieldGroup form={form} />
+
                             <FieldsetCluster>
                                 <Field
                                     name="files"
@@ -322,8 +310,6 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                                     revision={lastRevision}
                                 />
                             </FieldsetCluster>
-
-                            <ExtraFieldGroup form={form} />
                         </Form>
                     </FormikProvider>
                 )}

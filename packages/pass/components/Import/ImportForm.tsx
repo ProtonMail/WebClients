@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -26,6 +26,7 @@ import './ImportForm.scss';
 
 const providerHasUnsupportedItemTypes = (provider: ImportProvider) =>
     ![
+        ImportProvider.APPLEPASSWORDS,
         ImportProvider.BRAVE,
         ImportProvider.FIREFOX,
         ImportProvider.CHROME,
@@ -36,11 +37,11 @@ const providerHasUnsupportedItemTypes = (provider: ImportProvider) =>
     ].includes(provider);
 
 const providerHasFileAttachments = (provider: ImportProvider) =>
-    [ImportProvider.ONEPASSWORD, ImportProvider.ENPASS].includes(provider);
+    [ImportProvider.ONEPASSWORD, ImportProvider.ENPASS, ImportProvider.BITWARDEN].includes(provider);
 
 export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'>> = ({ form, dropzone, busy }) => {
+    const customItemsEnabled = useFeatureFlag(PassFeature.PassCustomTypeV1);
     const free = useSelector(selectPassPlan) === UserPassPlan.FREE;
-    const fileAttachmentsEnabled = useFeatureFlag(PassFeature.PassFileAttachments);
 
     const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => {
         if (provider) dropzone.setSupportedFileTypes(PROVIDER_INFO_MAP[provider].fileExtension.split(', '));
@@ -127,7 +128,12 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
                         </Card>
                     )}
 
-                    <Dropzone onDrop={dropzone.onDrop} disabled={busy} border={false}>
+                    <Dropzone
+                        onDrop={dropzone.onDrop}
+                        disabled={busy}
+                        border={false}
+                        size={form.values.file ? 'small' : 'medium'}
+                    >
                         <Bordered
                             className={clsx([
                                 'flex flex-columns justify-center items-center relative p-4 mb-4 rounded border-weak min-h-custom pass-import-upload',
@@ -167,13 +173,13 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
                         </Bordered>
                     </Dropzone>
 
-                    {providerHasUnsupportedItemTypes(form.values.provider) && (
+                    {!customItemsEnabled && providerHasUnsupportedItemTypes(form.values.provider) && (
                         <Card className="mb-4 text-sm" type="primary">
                             {c('Info').t`${PASS_APP_NAME} will only import logins, notes, credit cards and identities.`}
                         </Card>
                     )}
 
-                    {fileAttachmentsEnabled && providerHasFileAttachments(form.values.provider) && free && (
+                    {providerHasFileAttachments(form.values.provider) && free && (
                         <Card className="mb-4 text-sm" type="primary">
                             {c('Pass_file_attachments')
                                 .t`If your data contains file attachments, they will not be imported.`}

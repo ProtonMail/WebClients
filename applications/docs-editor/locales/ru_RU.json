@@ -5,11 +5,11 @@
   },
   "contexts": {
     "Action": {
-      "A) B) C) D)": [
-        "A) B) C) D)"
-      ],
       "a) b) c) d)": [
         "a) b) c) d)"
+      ],
+      "A) B) C) D)": [
+        "A) B) C) D)"
       ],
       "A. B. C. D.": [
         "A. B. C. D."
@@ -75,7 +75,7 @@
         "Закрыть"
       ],
       "Code block": [
-        "Блокировка кода"
+        "Блок кода"
       ],
       "Color": [
         "Цвет"
@@ -210,10 +210,13 @@
         "Подпись не может быть подтверждена"
       ],
       "Strike-through": [
-        "Зачеркнутый"
+        "Зачёркнутый"
       ],
       "Submit": [
         "Отправить"
+      ],
+      "Table of contents": [
+        "Оглавление"
       ],
       "Table options": [
         "Параметры таблицы"
@@ -439,6 +442,9 @@
       "Request timed out": [
         "Время запроса истекло"
       ],
+      "Tried to import Sheet data into Lexical": [
+        "Попытка импорта данных Sheet в Lexical"
+      ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Не удается преобразовать документ Word. Защищен ли он паролем? Если да, удалите пароль и повторите попытку."
       ]
@@ -486,6 +492,9 @@
         "${ usersTranslation } печатают...",
         "${ usersTranslation } печатают..."
       ],
+      "Alpha only experimental feature": [
+        "Экспериментальная функция только для альфа-версии"
+      ],
       "Are you sure you want to delete this comment?": [
         "Вы уверены, что хотите удалить этот комментарий?"
       ],
@@ -495,6 +504,9 @@
       "Comments": [
         "Комментарии"
       ],
+      "Copied to clipboard": [
+        "Скопировано в буфер обмена"
+      ],
       "Editing": [
         "Изменение"
       ],
@@ -503,6 +515,9 @@
       ],
       "Font size": [
         "Размер шрифта"
+      ],
+      "Headings you add to the document will appear here.": [
+        "Заголовки, которые вы добавите в документ, появятся здесь."
       ],
       "Highlight": [
         "Выделить"
@@ -548,6 +563,15 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "${ name } цвет фона и белый цвет текста"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } цвет текста и выделение"
+      ],
+      "${ name } text color with no background": [
+        "${ name } цвет текста без фона"
+      ],
       "Add link": [
         "Добавить ссылку"
       ],
@@ -635,6 +659,9 @@
       "Replace link": [
         "Заменить ссылку"
       ],
+      "Text and highlight color": [
+        "Цвет текста и выделения"
+      ],
       "with \"${ replaceWith }\"": [
         "с помощью \"${ replaceWith }\""
       ]
@@ -654,6 +681,148 @@
       ],
       "Text": [
         "Текст"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Insert image in cell": [
+        "Вставить изображение в ячейку"
+      ],
+      "Insert image over cells": [
+        "Вставить изображение поверх ячеек"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Значения, разделённые запятыми (.csv)"
+      ],
+      "Download": [
+        "Скачать"
+      ],
+      "Download logs": [
+        "Скачать журналы"
+      ],
+      "Help": [
+        "Помощь"
+      ],
+      "Import": [
+        "Импортировать"
+      ],
+      "Make a copy": [
+        "Сделать копию"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Переместить в папку"
+      ],
+      "Move to trash": [
+        "Переместить в корзину"
+      ],
+      "New spreadsheet": [
+        "Новая электронная таблица"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Открыть ${ DRIVE_APP_NAME }"
+      ],
+      "Print": [
+        "Печать"
+      ],
+      "See version history": [
+        "Просмотреть историю версий"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Значения, разделённые табуляцией (.tsv)"
+      ],
+      "View recent spreadsheets": [
+        "Просмотреть недавние электронные таблицы"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Ячейки"
+      ],
+      "Chart": [
+        "Диаграмма"
+      ],
+      "Columns": [
+        "Столбцы"
+      ],
+      "Insert 1 column left": [
+        "Вставить 1 столбец слева"
+      ],
+      "Insert 1 column right": [
+        "Вставить 1 столбец справа"
+      ],
+      "Insert 1 row above": [
+        "Вставить 1 строку выше"
+      ],
+      "Insert 1 row below": [
+        "Вставить 1 строку ниже"
+      ],
+      "Insert cells and shift down": [
+        "Вставить ячейки и сдвинуть вниз"
+      ],
+      "Insert cells and shift right": [
+        "Вставить ячейки и сдвинуть вправо"
+      ],
+      "Note": [
+        "Заметка"
+      ],
+      "Rows": [
+        "Строки"
+      ],
+      "Sheet": [
+        "Лист"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "File": [
+        "Файл"
+      ],
+      "Insert": [
+        "Вставить"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Полужирный"
+      ],
+      "Clear formatting": [
+        "Очистить форматирование"
+      ],
+      "Decrease decimal places": [
+        "Уменьшить количество знаков после запятой"
+      ],
+      "Default (${ defaultFont })": [
+        "По умолчанию (${ defaultFont })"
+      ],
+      "Format as currency": [
+        "Форматировать как валюту"
+      ],
+      "Format as percent": [
+        "Форматировать как процент"
+      ],
+      "Increase decimal places": [
+        "Увеличить количество знаков после запятой"
+      ],
+      "Italic": [
+        "Курсив"
+      ],
+      "Redo": [
+        "Повторить"
+      ],
+      "Search": [
+        "Поиск"
+      ],
+      "Strikethrough": [
+        "Зачеркивание"
+      ],
+      "Underline": [
+        "Подчёркнутый"
+      ],
+      "Undo": [
+        "Отменить"
       ]
     },
     "Title": {

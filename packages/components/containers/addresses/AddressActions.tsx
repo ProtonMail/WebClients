@@ -43,32 +43,67 @@ const useAddressFlagsActionsList = (address: Address, user: UserModel, member: M
         return [];
     }
 
-    const { allowDisablingEncryption, encryptionDisabled, expectSignatureDisabled, handleSetAddressFlags } =
-        addressFlags;
+    const {
+        data: {
+            permissions: {
+                allowEnablingEncryption,
+                allowDisablingEncryption,
+                allowEnablingUnsignedMail,
+                allowDisablingUnsignedMail,
+            },
+            isEncryptionDisabled,
+            isExpectSignatureDisabled,
+        },
+        handleSetAddressFlags,
+    } = addressFlags;
 
     const actions = [];
 
-    if (!encryptionDisabled && allowDisablingEncryption) {
+    if (allowDisablingEncryption) {
         actions.push({
             // translator: this is in a small space, so the string should be short, max 25 characters
             text: c('Address action').t`Disable E2EE mail`,
-            onClick: () => handleSetAddressFlags({ encryptionDisabled: true, expectSignatureDisabled }),
+            onClick: () =>
+                handleSetAddressFlags({
+                    encryptionDisabled: true,
+                    expectSignatureDisabled: isExpectSignatureDisabled,
+                }),
         });
     }
 
-    if (encryptionDisabled) {
+    if (allowEnablingEncryption) {
         actions.push({
             // translator: this is in a small space, so the string should be short, max 25 characters
             text: c('Address action').t`Enable E2EE mail`,
-            onClick: () => handleSetAddressFlags({ encryptionDisabled: false, expectSignatureDisabled }),
+            onClick: () =>
+                handleSetAddressFlags({
+                    encryptionDisabled: false,
+                    expectSignatureDisabled: isEncryptionDisabled,
+                }),
         });
     }
 
-    if (expectSignatureDisabled) {
+    if (allowEnablingUnsignedMail) {
+        actions.push({
+            // translator: this is in a small space, so the string should be short, max 25 characters
+            text: c('Address action').t`Allow unsigned mail`,
+            onClick: () =>
+                handleSetAddressFlags({
+                    encryptionDisabled: isEncryptionDisabled,
+                    expectSignatureDisabled: true,
+                }),
+        });
+    }
+
+    if (allowDisablingUnsignedMail) {
         actions.push({
             // translator: this is in a small space, so the string should be short, max 25 characters
             text: c('Address action').t`Disallow unsigned mail`,
-            onClick: () => handleSetAddressFlags({ encryptionDisabled, expectSignatureDisabled: false }),
+            onClick: () =>
+                handleSetAddressFlags({
+                    encryptionDisabled: isEncryptionDisabled,
+                    expectSignatureDisabled: false,
+                }),
         });
     }
 
@@ -92,6 +127,7 @@ const AddressActions = ({
     const addressFlagsActionsList = useAddressFlagsActionsList(address, user, member);
     const dispatch = useDispatch();
     const [organizationKey] = useOrganizationKey();
+    const emailAddress = address.Email;
 
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
     const [deleteAddressPromptProps, setDeleteAddressPromptOpen, renderDeleteAddressPrompt] = useModalState();
@@ -135,10 +171,12 @@ const AddressActions = ({
                   permissions.canGenerate && {
                       text: c('Address action').t`Generate missing keys`,
                       onClick: () => setMissingKeysAddressModalOpen(true),
+                      'aria-label': c('Address action').t`Generate missing keys for address “${emailAddress}”`,
                   },
                   permissions.canEditInternalAddress && {
                       text: c('Address action').t`Edit`,
                       onClick: () => setEditInternalAddressOpen(true),
+                      'aria-label': c('Address action').t`Edit address “${emailAddress}”`,
                   },
                   permissions.canEditExternalAddress && {
                       text: c('Address action').t`Edit address`,
@@ -148,26 +186,31 @@ const AddressActions = ({
                       onSetDefault && {
                           text: c('Address action').t`Set as default`,
                           onClick: () => onSetDefault(),
+                          'aria-label': c('Address action').t`Set “${emailAddress}” as default address`,
                       },
                   permissions.canEnable && {
                       text: c('Address action').t`Enable`,
                       onClick: () => withLoading(handleEnable()),
+                      'aria-label': c('Address action').t`Enable address “${emailAddress}”`,
                   },
                   permissions.canDisable && {
                       text: c('Address action').t`Disable`,
                       onClick: () => setDisableAddressModalOpen(true),
+                      'aria-label': c('Address action').t`Disable address “${emailAddress}”`,
                   },
                   permissions.canDeleteAddress &&
                       ({
                           text: c('Address action').t`Delete address`,
                           actionType: 'delete',
                           onClick: () => setDeleteAddressModalOpen(true),
+                          'aria-label': c('Address action').t`Delete address “${emailAddress}”`,
                       } as const),
                   permissions.canDeleteAddressOncePerYear &&
                       !mustActivateOrganizationKey &&
                       ({
                           text: c('Address action').t`Delete address`,
                           actionType: 'delete',
+                          'aria-label': c('Address action').t`Delete address “${emailAddress}”`,
                           onClick: () => setDeleteAddressPromptOpen(true),
                           tooltip: allowAddressDeletion
                               ? c('Delete address tooltip').t`You can only delete 1 address per year`

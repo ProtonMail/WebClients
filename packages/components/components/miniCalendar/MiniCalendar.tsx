@@ -5,9 +5,9 @@ import { addMonths, endOfMonth, isSameMonth, startOfMonth } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button, Vr } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import TodayIcon from '@proton/components/components/icon/TodayIcon';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import clsx from '@proton/utils/clsx';
 

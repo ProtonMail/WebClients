@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import type { useConfirmActionModal } from '@proton/components/index';
+import type { useConfirmActionModal } from '@proton/components';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
@@ -110,17 +110,17 @@ export const useInvitationsActions = () => {
             case LinkType.ALBUM:
                 // translator: the variable is the name of a file/folder/album that the user declines the invitations too
                 message = c('Info')
-                    .jt`You're about to decline the invitation to join the ${invitationName}album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?`;
+                    .jt`You're about to decline the invitation to join the ${invitationName} album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?`;
                 break;
             case LinkType.FOLDER:
                 // translator: the variable is the name of a file/folder/album that the user declines the invitations too
                 message = c('Info')
-                    .jt`You're about to decline the invitation to join the ${invitationName}folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?`;
+                    .jt`You're about to decline the invitation to join the ${invitationName} folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?`;
                 break;
             default:
                 // translator: the variable is the name of a file/folder/album that the user declines the invitations too
                 message = c('Info')
-                    .jt`You're about to decline the invitation to join the ${invitationName}item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?`;
+                    .jt`You're about to decline the invitation to join the ${invitationName} item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?`;
         }
 
         showConfirmModal({

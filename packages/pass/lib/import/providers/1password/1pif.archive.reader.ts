@@ -28,7 +28,7 @@ export const read1Password1PifArchiveData = async (file: File): Promise<ImportRe
 
             /** Extract UUID from path - skip nested folders */
             const [uuid, ...rest] = path.replace(attachmentsDir, '').split('/');
-            if (rest.filter(truthy).length > 0) return false;
+            if (rest.filter(truthy).length > 0) return;
 
             fileReader.files.forEach((file) => {
                 if (file.startsWith(path)) {

@@ -19,10 +19,11 @@ import {
 } from '@proton/components'
 import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
 import { isDocumentState, PostApplicationError } from '@proton/docs-core'
+import type { SheetImportData } from '@proton/docs-shared'
 import { type DocTrashState, isWordCountSupported } from '@proton/docs-shared'
 import { isPrivateNodeMeta, type DocumentAction } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { APPS, APPS_CONFIGURATION, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getStaticURL } from '@proton/shared/lib/helpers/url'
 import { useApplication } from '~/utils/application-context'
 import { AutoGrowingInput } from './AutoGrowingInput'
@@ -36,13 +37,16 @@ import type { RenameControllerInterface } from '@proton/docs-core'
 import { useDocsContext } from '../../../context'
 import { WordCountIcon } from '../icons'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { useSheetImportModal } from './SheetImportModal'
+import { downloadLogsAsJSON } from '~/utils/downloadLogs'
+import { useIsSheetsEnabled } from '~/utils/misc'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
   renameController: RenameControllerInterface | undefined
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
-  action?: DocumentAction['mode']
+  actionMode?: DocumentAction['mode']
   documentType: DocumentType
 }
 
@@ -51,7 +55,7 @@ export function DocumentTitleDropdown({
   renameController,
   editorController,
   documentState,
-  action,
+  actionMode,
   documentType,
 }: DocumentTitleDropdownProps) {
   const application = useApplication()
@@ -68,7 +72,9 @@ export function DocumentTitleDropdown({
   const [isMakingNewDocument, setIsMakingNewDocument] = useState<boolean>(false)
   const [pdfModal, openPdfModal] = useExportToPDFModal()
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
+  const [sheetImportModal, openSheetImportModal] = useSheetImportModal()
   const [showVersionNumber, setShowVersionNumber] = useState(false)
+  const isSheetsEnabled = useIsSheetsEnabled()
 
   const [isRenaming, setIsRenaming] = useState(false)
   const [renameInputValue, setRenameInputValue] = useState(title)
@@ -76,7 +82,9 @@ export function DocumentTitleDropdown({
     setRenameInputValue(title)
   }, [title])
 
-  useAppTitle(title)
+  const isSpreadsheet = documentType === 'sheet'
+
+  useAppTitle(title, isSpreadsheet ? APPS_CONFIGURATION[APPS.PROTONSHEETS].name : undefined)
 
   useEffect(() => {
     // When the user holds down the shift key, show the version number. When they release, hide it.
@@ -189,7 +197,7 @@ export function DocumentTitleDropdown({
   )
 
   useEffect(() => {
-    if (action === 'history') {
+    if (actionMode === 'history') {
       if (!authenticatedController) {
         throw new Error('Attempting to view version history in a public context')
       }
@@ -198,9 +206,10 @@ export function DocumentTitleDropdown({
         versionHistory: authenticatedController.getVersionHistory(),
         editorController,
         docController: authenticatedController,
+        documentType,
       })
     }
-  }, [authenticatedController, action, showHistoryModal, editorController])
+  }, [authenticatedController, actionMode, showHistoryModal, editorController, documentType])
 
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
   const focusInputOnMount = useCallback((input: HTMLInputElement | null) => {
@@ -231,6 +240,17 @@ export function DocumentTitleDropdown({
     }
     openProtonDrive(to)
   }, [documentState, openProtonDrive, privateContext])
+
+  const handleSheetImportData = useCallback(
+    (data: SheetImportData) => {
+      void editorController.importDataIntoSheet(data)
+    },
+    [editorController],
+  )
+
+  const handleDownloadLogs = useCallback(() => {
+    void downloadLogsAsJSON(editorController, documentType)
+  }, [editorController, documentType])
 
   if (isRenaming) {
     return (
@@ -294,7 +314,7 @@ export function DocumentTitleDropdown({
               data-testid="dropdown-rename"
             >
               <Icon name="pencil" className="color-weak mr-2" />
-              {c('Action').t`Rename document`}
+              {isSpreadsheet ? c('sheets_2025:Action').t`Rename spreadsheet` : c('Action').t`Rename document`}
             </DropdownMenuButton>
           )}
 
@@ -306,8 +326,23 @@ export function DocumentTitleDropdown({
               data-testid="dropdown-new-document"
             >
               <Icon name="file" className="color-weak mr-2" />
-              {c('Action').t`New document`}
+              {isSpreadsheet ? c('sheets_2025:Action').t`New spreadsheet` : c('Action').t`New document`}
               {isMakingNewDocument && <CircleLoader size="small" className="ml-auto" />}
+            </DropdownMenuButton>
+          )}
+
+          {isSpreadsheet && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              data-testid="sheet-import"
+              onClick={() => {
+                openSheetImportModal({
+                  handleImport: handleSheetImportData,
+                })
+              }}
+            >
+              <Icon name="file-arrow-in-up" className="color-weak mr-2" />
+              {c('Action').t`Import`}
             </DropdownMenuButton>
           )}
 
@@ -347,6 +382,7 @@ export function DocumentTitleDropdown({
                   versionHistory: authenticatedController.getVersionHistory(),
                   editorController,
                   docController: authenticatedController,
+                  documentType,
                 })
               }}
               data-testid="dropdown-versioning"
@@ -356,7 +392,7 @@ export function DocumentTitleDropdown({
             </DropdownMenuButton>
           )}
 
-          {isWordCountSupported && (
+          {isWordCountSupported && !isSpreadsheet && (
             <SimpleDropdown
               as={DropdownMenuButton}
               className="flex items-center text-left"
@@ -478,52 +514,98 @@ export function DocumentTitleDropdown({
               offset: 0,
             }}
           >
-            <DropdownMenu>
-              <DropdownMenuButton
-                className="flex items-center text-left"
-                onClick={() => {
-                  void editorController.exportAndDownload('docx')
-                }}
-                data-testid="download-docx"
-              >
-                {c('Action').t`Microsoft Word (.docx)`}
-              </DropdownMenuButton>
-              <DropdownMenuButton
-                className="flex items-center text-left"
-                onClick={() => {
-                  void editorController.exportAndDownload('html')
-                }}
-                data-testid="download-html"
-              >
-                {c('Action').t`Web page (.html)`}
-              </DropdownMenuButton>
-              <DropdownMenuButton
-                className="flex items-center text-left"
-                onClick={() => {
-                  void editorController.exportAndDownload('txt')
-                }}
-                data-testid="download-txt"
-              >
-                {c('Action').t`Plain Text (.txt)`}
-              </DropdownMenuButton>
-              <DropdownMenuButton
-                className="flex items-center text-left"
-                onClick={() => {
-                  void editorController.exportAndDownload('md')
-                }}
-                data-testid="download-md"
-              >
-                {c('Action').t`Markdown (.md)`}
-              </DropdownMenuButton>
-              <DropdownMenuButton
-                className="flex items-center text-left"
-                onClick={onExportPDF}
-                data-testid="download-pdf"
-              >
-                {c('Action').t`PDF (.pdf)`}
-              </DropdownMenuButton>
-            </DropdownMenu>
+            {isSpreadsheet && (
+              <DropdownMenu>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('xlsx')
+                  }}
+                  data-testid="download-xlsx"
+                >
+                  {c('sheets_2025:Action').t`Microsoft Excel (.xlsx)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('csv')
+                  }}
+                  data-testid="download-csv"
+                >
+                  {c('sheets_2025:Action').t`Comma Separated Values (.csv)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('tsv')
+                  }}
+                  data-testid="download-tsv"
+                >
+                  {c('sheets_2025:Action').t`Tab Separated Values (.tsv)`}
+                </DropdownMenuButton>
+              </DropdownMenu>
+            )}
+            {!isSpreadsheet && (
+              <DropdownMenu>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('docx')
+                  }}
+                  data-testid="download-docx"
+                >
+                  {c('Action').t`Microsoft Word (.docx)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('html')
+                  }}
+                  data-testid="download-html"
+                >
+                  {c('Action').t`Web page (.html)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('txt')
+                  }}
+                  data-testid="download-txt"
+                >
+                  {c('Action').t`Plain Text (.txt)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void editorController.exportAndDownload('md')
+                  }}
+                  data-testid="download-md"
+                >
+                  {c('Action').t`Markdown (.md)`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={onExportPDF}
+                  data-testid="download-pdf"
+                >
+                  {c('Action').t`PDF (.pdf)`}
+                </DropdownMenuButton>
+              </DropdownMenu>
+            )}
           </SimpleDropdown>
+
+          {!isSpreadsheet && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              onClick={() => {
+                void editorController.copyCurrentSelection('md')
+              }}
+              data-testid="dropdown-copy-as-md"
+            >
+              <Icon name="squares" className="color-weak mr-2" />
+              {c('Action').t`Copy as markdown`}
+            </DropdownMenuButton>
+          )}
 
           <hr className="my-1 min-h-px" />
 
@@ -547,6 +629,17 @@ export function DocumentTitleDropdown({
             <Icon name="brand-proton-drive" className="color-weak mr-2" />
             {c('Action').t`Open ${DRIVE_APP_NAME}`}
           </DropdownMenuButton>
+
+          {isSpreadsheet && isSheetsEnabled && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              onClick={handleDownloadLogs}
+              data-testid="dropdown-download-logs"
+            >
+              <Icon name="arrow-down-to-square" className="color-weak mr-2" />
+              {c('Action').t`Download logs`}
+            </DropdownMenuButton>
+          )}
 
           <hr className="mb-0 mt-1 min-h-px" />
 
@@ -573,6 +666,7 @@ export function DocumentTitleDropdown({
 
       {historyModal}
       {pdfModal}
+      {sheetImportModal}
       {authenticatedController && isDocumentState(documentState) && (
         <TrashedDocumentModal
           documentTitle={title}

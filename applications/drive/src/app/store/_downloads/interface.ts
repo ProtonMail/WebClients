@@ -31,7 +31,7 @@ export type DownloadControls = {
 };
 
 export type DownloadStreamControls = Omit<DownloadControls, 'start'> & {
-    start: () => ReadableStream<Uint8Array>;
+    start: (doNotCheckManifestSignatureOnlyForVideoStreaming?: boolean) => ReadableStream<Uint8Array>;
 };
 
 export type DownloadEventCallbacks = {

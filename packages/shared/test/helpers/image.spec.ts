@@ -1,3 +1,5 @@
+import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
+
 import { encodeImageUri, forgeImageURL, formatImage, resizeImage, toBlob, toFile } from '../../lib/helpers/image';
 import { img } from './file.data';
 
@@ -28,7 +30,7 @@ describe('forgeImageURL', () => {
         const imageURL = 'https://example.com/image1.png';
         const uid = 'uid';
         const forgedURL = forgeImageURL({ apiUrl: 'api', url: imageURL, uid, origin: windowOrigin });
-        const expectedURL = `${windowOrigin}/api/core/v4/images?Url=${encodeURIComponent(
+        const expectedURL = `${windowOrigin}/api/${PROXY_IMG_URL}?Url=${encodeURIComponent(
             imageURL
         )}&DryRun=0&UID=${uid}`;
 

@@ -4,6 +4,14 @@
     "language": "hi_IN"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "फॉरवर्ड करना जल्द शुरू होगा। नए ईमेल आपके इनबॉक्स में आएंगे।"
+      ],
+      "Mail forward stopped": [
+        "मेल फॉरवर्ड रुक गया"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } और ${ remainingCount } अन्य संभावित लीक का पता चला। विवरण देखने और कार्रवाई करने के लिए ${ DARK_WEB_MONITORING_NAME } चालू करें। ${ link }"
@@ -28,10 +36,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate organization key": [
@@ -96,9 +104,6 @@
       ],
       "Back": [
         "पीछे जाएं"
-      ],
-      "Back to sign-in": [
-        "साइनइन पर वापस जाएँ"
       ],
       "Block": [
         "ब्लॉक करें"
@@ -197,7 +202,7 @@
         "उपयोगकर्ता बनाएं"
       ],
       "Current plan": [
-        "वर्तमान योजना"
+        "चालू प्लान"
       ],
       "Customize plan": [
         "योजना अनुकूलित करें"
@@ -249,6 +254,9 @@
       ],
       "Discard changes": [
         "परिवर्तन छोड़ें"
+      ],
+      "Discard Changes": [
+        "बदलाव रद्द करें"
       ],
       "Discover ${ planName }": [
         "जानें ${ planName }"
@@ -343,9 +351,6 @@
       "Fit to window": [
         "विंडो में फिट करें"
       ],
-      "Forgot password?": [
-        "पासवर्ड भूल गए?"
-      ],
       "Forgot recovery method?": [
         "रिकवरी विधि भूल गए?"
       ],
@@ -376,8 +381,14 @@
       "Get more servers": [
         "और सर्वर प्राप्त करें"
       ],
+      "Get the apps": [
+        "ऐप प्राप्त करें"
+      ],
       "Get the deal": [
         "सौदा लें"
+      ],
+      "Get the writing assistant": [
+        "लेखन सहायक प्राप्त करें"
       ],
       "Get verification code": [
         "सत्यापन कोड लें"
@@ -409,11 +420,20 @@
       "Invite user": [
         "यूज़र को न्योता भेजें"
       ],
+      "Keep Editing": [
+        "लिखना जारी रखें"
+      ],
+      "Keep editing": [
+        "संपादन जारी रखें"
+      ],
       "Keep logo": [
         "चिन्ह रखें"
       ],
       "Keep my subscription": [
         "मेरी सदस्यता बनाए रखें"
+      ],
+      "Learn more": [
+        "और जानें"
       ],
       "Let's talk": [
         "चलिए बात करते हैं"
@@ -435,6 +455,9 @@
       ],
       "Mark as default": [
         "डिफ़ॉल्ट रूप से चिह्नित करें"
+      ],
+      "Mark as favorite": [
+        "फ़ेवरेट के रूप में मार्क करें"
       ],
       "More info: ${ safeTitle }": [
         "और जानकारी: ${ safeTitle }"
@@ -465,9 +488,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } सेटिंग खोलें"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "${ DOCS_SHORT_APP_NAME } में खोलें"
       ],
       "Open navigation": [
         "नेविगेशन खोलें"
@@ -505,11 +525,14 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
+      "Refresh the page": [
+        "पन्ना रिफ्रेश करें"
+      ],
       "refresh the page": [
         "पृष्ठ रिफ्रेश करें"
       ],
-      "Refresh the page": [
-        "पन्ना रिफ्रेश करें"
+      "Reload": [
+        "रिलोड"
       ],
       "Remove": [
         "हटाएं"
@@ -522,6 +545,9 @@
       ],
       "Remove domain": [
         "डोमेन हटाएं"
+      ],
+      "Remove from favorites": [
+        "फेवरेट्स से हटाएं"
       ],
       "Remove gift code": [
         "उपहार कोड हटाएं"
@@ -652,6 +678,9 @@
       "Set new password": [
         "नया पासवर्ड रखें"
       ],
+      "Set up email forwarding": [
+        "ईमेल फॉरवर्ड सेट अप करें"
+      ],
       "Settings": [
         "सेटिंग"
       ],
@@ -677,7 +706,7 @@
         "प्रिव्यू दिखाएं"
       ],
       "Sign in": [
-        "साइन इन"
+        "साइनइन करें"
       ],
       "Sign in with password": [
         "पासवर्ड से साइन इन"
@@ -693,6 +722,9 @@
       ],
       "Signing in": [
         "साइनिंग इन"
+      ],
+      "Skip": [
+        "छोड़ें"
       ],
       "Spam": [
         "स्पैम"
@@ -732,6 +764,9 @@
       ],
       "Try another method": [
         "दूसरा तरीका आजमाएं"
+      ],
+      "Try for free": [
+        "मुफ्त में आजमाएं"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "सेव करने की कोशिश वापस करें। सेव करने में असफल इस वजह से हुए: ${ saveError }"
@@ -854,6 +889,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "संकेतहीन मेल को अनुमति दें"
+      ],
       "Delete address": [
         "पता मिटा दें"
       ],
@@ -922,6 +960,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "ये इस प्रमाण का इस्तेमाल करने वाले सारे राऊटर और क्लाइंट का कनेक्शन तोड़ देगा।"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } का इनबॉक्स"
+      ],
+      "5 trackers removed": [
+        "5 ट्रैकर हटाएं"
+      ],
+      "Auto forwarded": [
+        "अपनेआप फॉरवर्ड"
+      ],
+      "Email received": [
+        "ईमेल मिला"
+      ],
+      "Encrypted": [
+        "एन्क्रिप्ट किया"
+      ],
+      "New email": [
+        "नया ईमेल"
       ]
     },
     "Assistant toggle": {
@@ -1478,6 +1536,12 @@
         "भुगतान विधि हटाएं"
       ]
     },
+    "CountriesStep:Info": {
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } चयनित",
+        "${ selectedCountriesCount } चयनित"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "अब्खाज़िया"
@@ -1908,9 +1972,6 @@
       "Macao": [
         "मकाओ"
       ],
-      "Macedonia": [
-        "मैसिडोनिया"
-      ],
       "Madagascar": [
         "मेडागास्कर"
       ],
@@ -2320,9 +2381,14 @@
         "ज़्यादा जानें"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "सभी ${ BRAND_NAME } सेवाओं के लिए"
+      ]
+    },
     "Cycle": {
       "/month": [
-        "/माह"
+        "/महीना"
       ],
       "/user per month": [
         "/यूज़र हर महीने"
@@ -2404,9 +2470,6 @@
       ],
       "No one in your organization can connect to shared servers.": [
         "आपके संगठन में कोई भी साझा सर्वर से कनेक्ट नहीं कर सकता।"
-      ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "अपने जीवन के विभिन्न पहलुओं को एकाधिक ईमेल पतों के साथ अलग करें और अपग्रेड करने पर अधिक प्रीमियम सुविधाओं को अनलॉक करें।"
       ]
     },
     "Disable address prompt": {
@@ -2450,10 +2513,10 @@
         "${ name } को स्पैम लिस्ट में ले जाने में असफल"
       ],
       "${ name } moved to allow list": [
-        "${ name } को अलाउ सूची में ले जाया गया"
+        "${ name } अलाउ सूची में ले जाया गया"
       ],
       "${ name } moved to block list": [
-        "${ name } को ब्लॉक सूची में ले जाया गया"
+        "${ name } ब्लॉक सूची में ले जाया गया"
       ],
       "${ name } moved to spam list": [
         "${ name } स्पैम लिस्ट में ले जाया गया"
@@ -2543,9 +2606,6 @@
       ],
       "Download for Linux": [
         "Linux के लिए डाउनलोड करें"
-      ],
-      "Download for MacOS": [
-        "macOS के लिए डाउनलोड करें"
       ],
       "Download for Windows": [
         "Windows के लिए डाउनलोड करें"
@@ -2670,6 +2730,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } आपके बाहरी खाता से जुड़ नहीं सका"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }। आप हमारे ${ statusPageLink } भी देख सकते हैं"
       ],
@@ -2684,6 +2747,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "न्यूनतम से कम राशि (${ minimumAmount })।"
+      ],
+      "Authentication canceled.": [
+        "प्रमाणीकरण रद्द किया गया।"
+      ],
+      "Authentication error.": [
+        "प्रमाणीकरण त्रुटि"
       ],
       "Checkout expired, please try again": [
         "चेकआउट की समय सीमा समाप्त हो गई है, कृपया पुनः प्रयास करें।"
@@ -2758,10 +2827,10 @@
         "अमान्य ${ name } कोड"
       ],
       "Invalid card number": [
-        "अवैध कार्ड संख्या"
+        "अमान्य कार्ड नंबर"
       ],
       "Invalid code": [
-        "अवैध कोड"
+        "अमान्य कोड"
       ],
       "Invalid domain": [
         "अमान्य डोमेन"
@@ -2770,7 +2839,7 @@
         "अमान्य ईमेल पता"
       ],
       "Invalid expiration date": [
-        "अमान्य समाप्ति तिथि"
+        "अमान्य एक्सपायर तारीख"
       ],
       "Invalid IBAN": [
         "अमान्य IBAN"
@@ -2786,6 +2855,15 @@
       ],
       "Name does not match": [
         "नाम मेल नहीं खाता"
+      ],
+      "No calendars found to import": [
+        "आयात के लिए कोई सूछी न मिली"
+      ],
+      "No contacts found to import": [
+        "आयात के लिए कोई सम्पर्क न मिले"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "आयात के लिए कोई ईमेल ना मिला - खाते में इंबॉक्स नहीं है"
       ],
       "No image selected": [
         "कोई छवि चयनित नहीं है।"
@@ -2934,6 +3012,9 @@
       "Unable to upload file": [
         "फाइल अपलोड करने में असमर्थ"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "अनपेक्षित एरर, हम संपर्कों को आयात नहीं कर सकते"
+      ],
       "Unknown error": [
         "अज्ञात त्रुटि"
       ],
@@ -2958,6 +3039,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "गलत सत्यापन कोड। कृपया सुनिश्चित करें कि आपने सत्यापन कोड को सही तरीके से कॉपी किया है और पुनः प्रयास करें। परिवर्तनों को प्रभावी होने में 24 घंटे तक का समय लग सकता है।"
       ],
+      "You have reached the number of contacts limit for your account": [
+        "आपने अपने खाते की संपर्क सीमा तक पहुँच लिया है"
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "आपने अपनी योजना में सभी पतों का उपयोग किया है। कृपया एक नया पता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
       ],
@@ -2969,11 +3053,6 @@
       ],
       "ZIP code is required": [
         "ज़िप कोड आवश्यक है"
-      ]
-    },
-    "error": {
-      "Enter an email address": [
-        "एक ईमेल पता दर्ज करें"
       ]
     },
     "Error importing users": {
@@ -3364,11 +3443,6 @@
         "सुरक्षित स्ट्रीमिंग"
       ]
     },
-    "Features: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "कहीं से भी, Netflix, Disney+, Prime Video सहित, स्ट्रीमिंग सेवाओं पर कंटेंट तक पहुँचें।"
-      ]
-    },
     "fido2: Action": {
       "Delete key": [
         "चाबी मिटाएं"
@@ -3568,6 +3642,17 @@
         "${ BRAND_NAME }. Privacy by default।"
       ]
     },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "अपनेआप फॉरवर्ड"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail संदेश आपके इनबॉक्स में"
+      ],
+      "Sign in with Google": [
+        "Google से साइनइन करें"
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "खाता है? ${ signIn }"
@@ -3607,9 +3692,6 @@
       ]
     },
     "Header": {
-      "App version": [
-        "ऐप संस्करण"
-      ],
       "Best deal": [
         "सबसे अच्छा सौदा"
       ],
@@ -3645,9 +3727,6 @@
       ],
       "Organization key fingerprint": [
         "संगठन कुंजी फिंगरप्रिंट"
-      ],
-      "Protection": [
-        "सुरक्षा"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "${ VPN_APP_NAME } पर बेहतरीन डील के साथ बड़ी बचत करें"
@@ -3794,6 +3873,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके गैर-सिंगल साइन-ऑन सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करके अपने संगठन में साइनइन करते हैं।",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके गैर-सिंगल साइन-ऑन सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करके अपने संगठन में साइनइन करते हैं।"
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } और ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } को एक पासवर्ड के साथ भी इस्तेमाल किया जा सकता है जो लॉगइन और दूसरे पासवर्ड दोनों की जगह लेता है। एक-पासवर्ड मोड पर स्विच करने के लिए, वह एकल पासवर्ड दर्ज करें जो आप उपयोग करना चाहते हैं और 'सहेजें' पर क्लिक करें।"
       ],
@@ -3849,6 +3931,10 @@
         "${ remainingAddresses.length } और ईमेल पता",
         "${ remainingAddresses.length } और ईमेल पता"
       ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } चयनित",
+        "${ selectedEntities.length } चयनित"
+      ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
       ],
@@ -3880,6 +3966,9 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/महीना)"
+      ],
+      "(default)": [
+        "(डिफ़ॉल्ट)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME } सहित सभी ${ BRAND_NAME_TWO } सेवाओं का उपयोग करने के लिए **${ BRAND_NAME } पता प्राप्त करें**।"
@@ -4060,9 +4149,6 @@
       "Beta": [
         "बीटा"
       ],
-      "Billed at ${ price }": [
-        "${ price } पर बिल किया गया"
-      ],
       "Billing cycle: ${ text }": [
         "बिल चक्र: ${ text }"
       ],
@@ -4150,7 +4236,7 @@
         "आपके पिछले प्लान सदस्यता से बचा क्रेडिट"
       ],
       "Current plan": [
-        "वर्तमान योजना"
+        "चालू प्लान"
       ],
       "Custom": [
         "अनुकूल"
@@ -4167,11 +4253,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } एप्लिकेशन के स्वरूप और अनुभव को अनुकूलित करें"
       ],
-      "Dedicated servers": [
-        "विशेष सर्वर"
-      ],
       "dedicated servers": [
         "समर्पित सर्वर"
+      ],
+      "Dedicated servers": [
+        "विशेष सर्वर"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
@@ -4352,9 +4438,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "अपने ${ BRAND_NAME } खाते का ईमेल पता या यूज़रनेम डालें।"
       ],
-      "Enter your own password (as organization admin).": [
-        "अपना स्वयं का पासवर्ड दर्ज करें (संगठन व्यवस्थापक के रूप में)।"
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "अपना पुनर्प्राप्ति ईमेल पता या पुनर्प्राप्ति फ़ोन नंबर दर्ज करें और हम आपको अपना उपयोगकर्ता नाम या ईमेल पता भेजेंगे।"
       ],
@@ -4368,7 +4451,7 @@
         "उदाहरण: ${ spfExample }"
       ],
       "Expired": [
-        "समय सीमा समाप्त"
+        "एक्सपायर हो गया"
       ],
       "expires ${ expirationDate }": [
         "एक्सपायर होगा ${ expirationDate }"
@@ -4403,8 +4486,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "पहचान प्रदाता के पास जाएं, ${ appName } के लिए SAML मेटाडाटा प्राप्त करें और इसे यहां आयात करें।"
       ],
+      "Got it": [
+        "समझ गया"
+      ],
       "Group deleted": [
         "ग्रुप मिटाया गया"
+      ],
+      "Groups": [
+        "ग्रुप"
       ],
       "here": [
         "यहां"
@@ -4735,9 +4824,6 @@
       "Or select a particular server:": [
         "या किसी विशेष सर्वर का चयन करें:"
       ],
-      "Organization --> Groups": [
-        "संगठन --> ग्रुप"
-      ],
       "Organization size": [
         "संगठन का साइज़"
       ],
@@ -4776,12 +4862,6 @@
       ],
       "per month, billed at ${ price }": [
         "प्रति माह, ${ price } पर बिल किया गया"
-      ],
-      "per month, billed every 12 months": [
-        "प्रति माह, हर 12 महीने पर बिल किया गया"
-      ],
-      "per month, billed every 24 months": [
-        "प्रति माह, हर 24 महीने पर बिल किया गया"
       ],
       "Please add a password for the user on row": [
         "कृपया पंक्ति पर उपयोगकर्ता के लिए पासवर्ड जोड़ें",
@@ -4924,9 +5004,6 @@
       "SCIM token active": [
         "SCIM टोकन सक्रिय है"
       ],
-      "Search by an email address to begin": [
-        "शुरू करने के लिए एक ईमेल पता द्वारा खोजें"
-      ],
       "Secure your ${ BRAND_NAME } Account": [
         "अपने ${ BRAND_NAME } खाते को सुरक्षित करें"
       ],
@@ -4959,6 +5036,9 @@
       ],
       "Session timed out": [
         "सत्र का समय समाप्त हो गया"
+      ],
+      "Set up your organization": [
+        "अपना संगठन स्थापित करें"
       ],
       "Setting up ${ feature }…": [
         "${ feature } सेटअप किया जा रहा है…"
@@ -5181,9 +5261,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "पुष्टि करने के लिए, कृपया उस उपयोगकर्ता का नाम दर्ज करें जिसे आप हटाना चाहते हैं।"
       ],
-      "to continue to ${ product }": [
-        "${ product } को जारी रखने के लिए"
-      ],
       "To create your first user group, go to": [
         "अपना पहला उपयोगकर्ता ग्रुप बनाने के लिए, जाएँ"
       ],
@@ -5283,10 +5360,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -5941,6 +6018,9 @@
       "Could you please specify?": [
         "क्या आप कृपया निर्दिष्ट कर सकते हैं?"
       ],
+      "Countries": [
+        "देशों"
+      ],
       "Country": [
         "देश"
       ],
@@ -5995,6 +6075,9 @@
       "Email or username": [
         "ईमेल या उपयोगकर्ता का नाम"
       ],
+      "Enabled": [
+        "सक्षम"
+      ],
       "Enter the code displayed on your TV": [
         "अपने टीवी पे दिखनेवाला कोड डालें"
       ],
@@ -6046,6 +6129,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Import all messages": [
+        "सभी संदेशों को आयात करें"
+      ],
       "Integrated 2FA authenticator": [
         "एकीकृत 2-एफए सत्यापन"
       ],
@@ -6060,6 +6146,15 @@
       ],
       "Key": [
         "चाबी"
+      ],
+      "Last 12 months only": [
+        "पिछले 12 महीने ही"
+      ],
+      "Last 3 months only": [
+        "पिछले 3 महीने ही"
+      ],
+      "Last month only": [
+        "पिछले महीने ही"
       ],
       "Last name": [
         "अंतिम नाम"
@@ -6170,7 +6265,7 @@
         "भुगतान करनेवाले"
       ],
       "Payment details": [
-        "भुगतान जानकारी"
+        "भुगतान विवरण"
       ],
       "Payment method": [
         "भुगतान तरीका"
@@ -6241,9 +6336,6 @@
       "Search": [
         "खोजें"
       ],
-      "Search by email": [
-        "ईमेल द्वारा खोजें"
-      ],
       "Second password": [
         "दूसरा पासवर्ड"
       ],
@@ -6264,7 +6356,7 @@
         "विशेष वर्ण"
       ],
       "Start date": [
-        "आरंभ करने की तिथि"
+        "शुरू तारीख"
       ],
       "State": [
         "राज्य"
@@ -6359,16 +6451,13 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "हां, मैं इस खाते और इसके सभी डेटा को स्थायी रूप से हटाना चाहता हूं।"
       ],
-      "Your password (admin)": [
-        "आपका पासवर्ड (व्यवस्थापक)"
-      ],
       "ZIP code": [
         "ज़िप कोड"
       ]
     },
     "label": {
       "Recovery phone number": [
-        "पुनर्प्राप्ति फ़ोन नंबर"
+        "रिक्वरी फोन नंबर"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -6581,12 +6670,6 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "आपका खाता हटाने के खतरे में है। डाटा हानि से बचने के लिए, अपने एडमिन से अपग्रेड करने को कहें। ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "आपकी स्टोरेज भर गई है। ईमेल भेजने या प्राप्त करने के लिए, स्पेस खाली करें या ${ cta }।"
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "आपकी स्टोरेज भर गई है। फाइलें अपलोड करने या सिंक करने के लिए, स्पेस खाली करें या ${ cta }।"
-      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "आपकी सदस्यता समाप्त हो गई है। ${ cta } और डाटा हानि से बचने के लिए।"
       ]
@@ -6766,7 +6849,7 @@
         "बढ़िया वीपीएन रफ्तार"
       ],
       "Keep your inbox organized with folders": [
-        "फोल्डर के साथ इनबॉक्स व्यवस्थित रखें"
+        "अपने इनबॉक्स को फ़ोल्डरों के साथ व्यवस्थित रखें"
       ],
       "Medium VPN speed": [
         "मध्यम वीपीएन रफ्तार"
@@ -6774,7 +6857,7 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "खाता हटा दो"
+        "खाता मिटाएं"
       ],
       "Downgrade account": [
         "खाते को डाउनग्रेड करें"
@@ -6805,20 +6888,8 @@
       "From ${ price }": [
         "${ price } से"
       ],
-      "Get started for ${ priceCoupon }": [
-        "शुरू करें ${ priceCoupon } के लिए"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } से शुरू"
-      ],
       "Upgrade": [
         "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } पे अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -6833,8 +6904,8 @@
         "${ n } कैलेंडर"
       ],
       "${ n } calendar per user": [
-        "${ n } कैलेंडर हर यूज़र पे",
-        "${ n } कैलेंडर हर यूज़र पे"
+        "प्रति उपयोगकर्ता ${ n } कैलेंडर",
+        "प्रति उपयोगकर्ता ${ n } कैलेंडर"
       ],
       "${ n } custom email domain": [
         "${ n } कस्टम ईमेल डोमेन",
@@ -6914,26 +6985,14 @@
       "${ size } storage": [
         "${ size } स्टोरेज"
       ],
-      "1 TB secure storage": [
-        "1 टीबी सुरक्षित स्टोरेज"
+      "${ size } storage per user": [
+        "${ size } स्टोरेज हर यूज़र पे"
       ],
       "1 user": [
         "1 यूज़र"
       ],
-      "10 email addresses/aliases": [
-        "10 ईमेल पते/नकलीनाम"
-      ],
-      "10 more premium features": [
-        "10 अतिरिक्त प्रीमियम सुविधाएँ"
-      ],
       "10-year file version history": [
         "10-वर्षीय फ़ाइल संस्करण इतिहास"
-      ],
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "200 GB of storage": [
-        "200 जीबी स्टोरेज"
       ],
       "24/7 account management support": [
         "24/7 खाता प्रबंधन सहायता"
@@ -6953,17 +7012,11 @@
       "Administration Panel": [
         "प्रशासन पैनल"
       ],
-      "Advanced account protection": [
-        "उन्नत खाता सुरक्षा"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "उन्नत नकली-नाम सुविधाएँ (SimpleLogin द्वारा समर्थित)"
       ],
       "Advanced network security": [
         "उन्नत नेटवर्क सुरक्षा"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "सभी ${ BRAND_NAME } उत्पाद और खासियत"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "सभी बेसिक ${ BRAND_NAME } सेवाएँ (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6976,9 +7029,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "स्पैम और कचरे के संदेशो को अपनेआप मिटाएं"
       ],
       "Auto-reply": [
         "ऑटोमैटिक-जवाब"
@@ -7024,9 +7074,6 @@
       ],
       "Custom fields": [
         "कस्टम फील्ड"
-      ],
-      "Custom snooze time": [
-        "कस्टम स्नूज़ समय"
       ],
       "Custom workspace branding": [
         "कस्टम कार्यक्षेत्र ब्रांडिंग"
@@ -7085,9 +7132,6 @@
       "GDPR data processing agreement": [
         "जीडीपीआर डाटा प्रोसेस समझोता"
       ],
-      "Generate emails with a prompt": [
-        "एक प्रॉम्प्ट के साथ ईमेल जनरेट करें"
-      ],
       "Group management (coming soon)": [
         "समूह प्रबंधन (शीघ्र ही आ रहा है)"
       ],
@@ -7095,8 +7139,8 @@
         "उच्च गति स्विस VPN जो आपकी निजता की रक्षा करता है"
       ],
       "High-speed VPN on ${ n } device": [
-        "तेज़ वीपीएन ${ n } डिवाइस पे",
-        "तेज़ वीपीएन ${ n } डिवाइस पे"
+        "${ n } उपकरण पर उच्च गति वाला VPN",
+        "${ n } उपकरणों पर उच्च गति वाला VPN"
       ],
       "HTML signatures": [
         "HTML हस्ताक्षर"
@@ -7138,19 +7182,10 @@
         "प्राथमिक ईमेल मदद"
       ],
       "Priority support": [
-        "प्राथमिकता समर्थन"
+        "प्राथमिक सहायता"
       ],
       "Priority support & live chat": [
         "प्राथमिक सहायता और लाइव बातचीत"
-      ],
-      "Private photo backup": [
-        "निजी तस्वीर बैकअप"
-      ],
-      "Proofread and refine your emails": [
-        "अपने ईमेल्स का प्रूफरीड करें और उन्हें सुधारें"
-      ],
-      "Quickly craft replies": [
-        "तेजी से जवाब तैयार करें"
       ],
       "Recover previous file versions": [
         "पिछले फ़ाइल संस्करण रिकवर करें"
@@ -7164,23 +7199,11 @@
       "Router support": [
         "राउटर सपोर्ट"
       ],
-      "Save time emailing": [
-        "ईमेल करने में समय बचाएं"
-      ],
       "Schedule and snooze emails for any time": [
         "किसी भी समय के लिए ईमेल शेड्यूल करें और स्नूज़ करें"
       ],
-      "Schedule messages at any time": [
-        "संदेश कभी भी शेड्यूल करें"
-      ],
-      "Search message content": [
-        "संदेश कंटेंट खोजें"
-      ],
       "Secure Core servers": [
-        "सुरक्षित कोर सर्वर"
-      ],
-      "Secure file storage and sharing": [
-        "सुरक्षित फाइल स्टोरेज और साझा करना"
+        "Secure Core सर्वर"
       ],
       "Secure link sharing": [
         "सुरक्षित लिंक साझाकरण"
@@ -7219,9 +7242,6 @@
       "Strict no-logs policy": [
         "सख्त लॉग-नहीं नीति"
       ],
-      "Support for up to 2 users": [
-        "2 यूज़र तक के लिए समर्थन"
-      ],
       "Sync and backup all your files across devices": [
         "अपने सभी फ़ाइलों को डिवाइसों में सिंक करें और बैकअप करें"
       ],
@@ -7229,7 +7249,7 @@
         "VPN पर Tor"
       ],
       "Two-factor authentication": [
-        "दो तरीकों से प्रमाणीकरण"
+        "दो-फैक्टर सत्यापन"
       ],
       "Unlimited devices": [
         "असीम डिवाइस"
@@ -7318,23 +7338,9 @@
         "${ users } यूज़र"
       ]
     },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 कस्टम ईमेल डोमेन"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "अपनी ऑनलाइन पहचान के लिए एकाधिक ईमेल पते बनाएं, उदा. शॉपिंग खातों के लिए जॉनशॉपर@${ domain }, समाचार सदस्यता के लिए जॉनन्यूज@${ domain2 }"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "संदेशों को स्नूज़ करें और जब चाहें तो याद दिलाएं"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "स्टोरेज जगह का इस्तेमाल ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, और ${ DRIVE_APP_NAME } करते है।"
-      ]
-    },
     "new_plans: heading": {
       "Support": [
-        "मदद"
+        "सहायता"
       ],
       "Team management": [
         "टीम संभालना"
@@ -7404,11 +7410,8 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "आवश्यक नेटवर्क मॉनिटरिंग के साथ कहीं से भी सुरक्षित रूप से इंटरनेट एक्सेस करें"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "सुरक्षित क्लाउड स्टोरेज जो करने दे आपको फाइल स्टोर, सिंक, और शेयर आसान और सुरक्षित तरीके से।"
-      ],
       "Secure email with advanced features for your everyday communications.": [
-        "आपके रोज़मर्रा के बातचीत के लिए एडवांस सुविधाओं के साथ सुरक्षित ईमेल।"
+        "अपने रोजमर्रा के कामों के लिए सुरक्षित ईमेल, जिसमें कई आधुनिक सुविधाएँ हैं।"
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "विशिष्ट सुरक्षा आवश्यकताओं के साथ बड़े संगठनों के लिए अनुकूलित समाधान"
@@ -7466,14 +7469,6 @@
         "सिर्फ ${ priceLine } में सभी ${ BRAND_NAME } प्रीमियम उत्पाद और खासियतें अनलॉक करें। किसी भी समय रद्द करें।"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -7486,6 +7481,14 @@
       ],
       "Switch plans?": [
         "प्लान बदले?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -7767,9 +7770,6 @@
       ],
       "Require 2FA": [
         "2-एफए आवश्यक करें"
-      ],
-      "Support for ${ n } custom email domains": [
-        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट"
       ]
     },
     "news": {
@@ -7994,17 +7994,6 @@
         "${ appName } में आपका स्वागत है"
       ]
     },
-    "option": {
-      "Everyone": [
-        "सभी"
-      ],
-      "Group members": [
-        "ग्रुप सदस्य"
-      ],
-      "No one": [
-        "कोई भी नहीं"
-      ]
-    },
     "Option": {
       "Country configs": [
         "देश विन्यास"
@@ -8068,6 +8057,17 @@
       ],
       "The whole organization": [
         "संपूर्ण संगठन"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "सभी"
+      ],
+      "Group members": [
+        "ग्रुप सदस्य"
+      ],
+      "No one": [
+        "कोई भी नहीं"
       ]
     },
     "Organization capacity error": {
@@ -8359,9 +8359,6 @@
       "More plans are available in other currencies": [
         "अन्य मुद्राओं में और प्लैन उपलब्ध हैं"
       ],
-      "Please add a payment method in the dashboard to continue.": [
-        "कृपया जारी रखने के लिए डैशबोर्ड में एक भुगतान तरीका जोड़ें।"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "कृपया अपने सदस्यता को पहले फिर से सक्रिय करें ताकि ऐड-ऑन की संख्या कम हो सके।"
       ],
@@ -8382,6 +8379,12 @@
       ],
       "Select billing country to pay": [
         "भुगतान के लिए बिलिंग देश चुनें"
+      ],
+      "terms & conditions": [
+        "नियम और शर्तें"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ renewPriceStr } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "लेन-देन सफलतापूर्वक पहचाना गया है। लेन-देन पूरी तरह से पुष्टि होने पर आपके खाते में क्रेडिट जोड़ दिए जाएंगे।"
@@ -8504,6 +8507,9 @@
       "Main street 12": [
         "मुख्य सड़क 12"
       ],
+      "Organization name": [
+        "संगठन नाम"
+      ],
       "Other": [
         "दूसरा"
       ],
@@ -8604,12 +8610,12 @@
     },
     "Price": {
       "Free": [
-        "मुफ्त"
+        "Free"
       ]
     },
     "Recovery Email": {
       "Cancel": [
-        "रद्द करें"
+        "कैंसिल करें"
       ],
       "Email address has been verified.": [
         "ईमेल पता सत्यापित किया गया है।"
@@ -8646,7 +8652,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "रद्द करें"
+        "कैंसिल करें"
       ],
       "Phone number has been verified.": [
         " फोन नंबर सत्यापित कर दिया गया है।"
@@ -9290,9 +9296,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "यह सदस्यता स्वचालित रूप से हर 2 साल में उसी दर पर तब तक नवीनीकृत हो जाएगी जब तक इसे रद्द नहीं कर दिया जाता है।"
-      ],
       "Your subscription will renew at the same rate every year.": [
         "आपकी सदस्यता हर साल समान दर से नवीनीकृत होगी।"
       ]
@@ -9686,9 +9689,6 @@
       "For all ${ BRAND_NAME } services": [
         "सभी ${ BRAND_NAME } सेवाओं के लिए"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "ईमेल भेजने या प्राप्त करने के लिए, स्पेस खाली करें या ${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "फाइलें अपलोड या सिंक करने के लिए, स्पेस खाली करें या ${ upgrade }"
       ],
@@ -9707,12 +9707,6 @@
       ],
       "Your ${ appStorage } is full": [
         "आपका ${ appStorage } भर गया है"
-      ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "आपका ${ storage } ${ percentage }% भर गया है। ${ cta }।"
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "आपका ${ storage } भर गया है। ${ cta }।"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "आपका स्टोरेज ${ percentage }% भर गया है। ${ cta }।"
@@ -9739,21 +9733,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "बिल हर 2 साल पे"
-      ],
-      "Billed every 6 months": [
-        "बिल हर 6 महीने पे"
-      ],
-      "Billed for 15 months": [
-        "15 महीने के लिए बिल किया गया"
-      ],
-      "Billed for 18 months": [
-        "18 महीने के लिए बिल किया गया"
-      ],
-      "Billed for 3 months": [
-        "3 महीने के लिए बिल किया गया"
-      ],
-      "Billed for 30 months": [
-        "30 महीने के लिए बिल किया गया"
       ],
       "Billed monthly": [
         "मासिक बिल"
@@ -9837,7 +9816,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "समझ गए"
+        "ठीक है"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "बस अपने Apple App Store खाते में साइनइन करें, फिर ${ subscriptions } चुनें।"
@@ -10206,7 +10185,7 @@
     },
     "Subscription renewal state": {
       "Are you sure?": [
-        "पक्का?"
+        "क्या आप पक्का हैं?"
       ],
       "Auto-pay is disabled": [
         "अपनेआप भुगतान अक्षम है"
@@ -10228,6 +10207,11 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "हमारा सिस्टम अब इस भुगतान विधि का उपयोग करके आपको स्वतः चार्ज नहीं करेगा, लेकिन आपकी सदस्यता बिलिंग चक्र के अंत में अभी भी नवीनीकृत होगी। यदि आप अपनी सदस्यता को डाउनग्रेड या बदलना चाहते हैं, तो आपको बिलिंग अवधि समाप्त होने से पहले खुद ऐसा करना होगा। हम आपको स्वचालित रूप से डाउनग्रेड नहीं कर सकते क्योंकि यदि आप Free योजना की स्टोरेज सीमा से अधिक या अन्य भुगतान की गई सुविधाओं का उपयोग कर रहे हैं, तो हम आपके लिए फ़ाइलें, ईमेल, या अन्य डेटा स्वचालित रूप से हटा नहीं सकते। यदि आप स्वचालित भुगतान अक्षम करते हैं, तो खाते को निलंबित होने से रोकने के लिए नियत तारीख से पहले अपनी अगली सदस्यता रसीद का भुगतान करना याद रखें।"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString } की छूट"
       ]
     },
     "Subscription status": {
@@ -10259,6 +10243,9 @@
       "Billing details updated": [
         "बिलिंग विवरण अपडेट हुआ"
       ],
+      "Canceling import": [
+        "आयात रद्द कर रहे"
+      ],
       "Catch-all address updated": [
         "कैच-सभी पता अपडेट किया गया"
       ],
@@ -10266,7 +10253,7 @@
         "${ methodTo } को कोड भेजा गया"
       ],
       "Copied to clipboard": [
-        "क्लिपबोर्ड पे कॉपी किया"
+        "क्लिपबोर्ड पर कॉपी किया गया"
       ],
       "Credits added": [
         "क्रेडिट जोड़े गए"
@@ -10291,6 +10278,9 @@
       ],
       "Gift code applied": [
         "उपहार कोड लागू"
+      ],
+      "Import record deleted": [
+        "आयात रिकॉर्ड हटा दिए गए"
       ],
       "Invitation rejected": [
         "न्योता अस्वीकृत"
@@ -10351,6 +10341,9 @@
       ],
       "SPF value copied to clipboard": [
         "क्लिपबोर्ड पर कॉपी किया गया SPF मान"
+      ],
+      "Undo in progress": [
+        "अनडू चल रहा"
       ],
       "User updated": [
         "यूज़र अपडेट किए गए"
@@ -10434,7 +10427,7 @@
     },
     "Suffix": {
       "/month": [
-        "/महीने"
+        "/महीना"
       ],
       "/user per month": [
         "/यूज़र हर महीने"
@@ -10628,6 +10621,9 @@
       "Add to spam list": [
         "स्पैम लिस्ट में डाले"
       ],
+      "Add user": [
+        "उपयोगकर्ता जोड़ें"
+      ],
       "Add user accounts": [
         "उपयोगकर्ता खाता जोड़ें"
       ],
@@ -10671,7 +10667,7 @@
         "स्वचालित हटाना सक्रिय है"
       ],
       "Billing cycle": [
-        "बिलिंग चक्र"
+        "बिल चक्र"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } सदस्यता रद्द करें"
@@ -10807,7 +10803,7 @@
         "${ policyName } मिटाएं?"
       ],
       "Delete account": [
-        "खाता हटा दो"
+        "खाता मिटाएं"
       ],
       "Delete group?": [
         "ग्रुप मिटाएं?"
@@ -10921,9 +10917,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } बीटा कार्यक्रम में शामिल होने के लिए अपनी ${ BRAND_NAME } खाता जानकारी दर्ज करें"
       ],
-      "Enter your password": [
-        "आपका पासवर्ड डालें"
-      ],
       "Error": [
         "गड़बड़"
       ],
@@ -10994,14 +10987,14 @@
       "Human verification": [
         "मानव सत्यापन"
       ],
-      "Increase your privacy with more addresses": [
-        "ज़्यादा पतो के साथ अपनी निजता बढ़ाएं"
-      ],
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
       ],
       "Invoices": [
         "रसीद"
+      ],
+      "Limit reached": [
+        "सीमित पहुंच"
       ],
       "Main password": [
         "मुख्य पासवर्ड"
@@ -11016,7 +11009,7 @@
         "नेटवर्क एरर"
       ],
       "Next": [
-        "अगला"
+        "आगे"
       ],
       "Night theme": [
         "रात की थीम"
@@ -11085,7 +11078,7 @@
         "QR कोड"
       ],
       "Recommended": [
-        "सलाह"
+        "अनुशंसित"
       ],
       "Recovery": [
         "पुनर्प्राप्ति"
@@ -11136,7 +11129,7 @@
         "सुरक्षा घटनाएं"
       ],
       "Select a plan": [
-        "एक योजना चुनें"
+        "प्लान चुनें"
       ],
       "Send email reminders?": [
         "ईमेल अनुस्मारक भेजें?"
@@ -11150,8 +11143,14 @@
       "Set organization name": [
         "संगठन का नाम सेट करें"
       ],
+      "Set up email forwarding": [
+        "ईमेल फॉरवर्ड सेट अप करें"
+      ],
       "Set up two-factor authentication": [
         "दो-कारक प्रमाणीकरण सेट करें"
+      ],
+      "Set up your organization": [
+        "अपना संगठन स्थापित करें"
       ],
       "Set your password": [
         "अपना पासवर्ड सेट करें"
@@ -11366,12 +11365,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "आपकी कैलेंडर निमंत्रणों में वीडियो कॉन्फ्रेंसिंग लिंक सहजता से जोड़ने की अनुमति देता है।"
       ],
-      "An approximate location of the IP address": [
-        "IP ​​पते का अनुमानित स्थान"
-      ],
-      "Any protection applied to suspicious activity": [
-        "संदिग्ध गतिविधि पर लागू कोई भी सुरक्षा"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "अपने पसंदीदा दिन और रात के विषयों के बीच स्वचालित रूप से स्विच करें, जो आपके सिस्टम के दिन और रात मोड के साथ सिंक में हो।"
       ],
@@ -11380,9 +11373,6 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "इस यूआरएल को कॉपी करके अपने पहचान प्रदाता के इकाई आईडी फील्ड में पेस्ट करें"
-      ],
-      "Device information such as operating system": [
-        "डिवाइस की जानकारी जैसे ऑपरेटिंग सिस्टम"
       ],
       "Display name for the entity in the eduGAIN database": [
         "eduGAIN डेटाबेस में एंटिटी के लिए डिस्प्ले नाम"
@@ -11401,9 +11391,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "यदि आपने एक उपहार कोड खरीदा है या हमारी सहायता टीम से एक प्राप्त किया है, तो आप इसे यहां दर्ज कर सकते हैं।"
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP पता (Internet Service Provider)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "जो सदस्य 2-एफए का उपयोग नहीं करते हैं, उन्हें एक ईमेल प्राप्त होगा जिसमें उनसे इसे यथाशीघ्र सक्षम करने के लिए कहा जाएगा। सिंगल साइन-ऑन उपयोगकर्ताओं को ईमेल रिमाइंडर नहीं मिलेगा"
@@ -11654,8 +11641,8 @@
       "Recommended": [
         "सुझाव"
       ],
-      "Save ${ totals.discountPercentage }%": [
-        "${ totals.discountPercentage } की छूट%"
+      "Save ${ price.uiData.discountPercent }%": [
+        "${ price.uiData.discountPercent } की छूट%"
       ]
     },
     "User role": {
@@ -11843,6 +11830,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries } देश से स्वतः चयनित",
         "${ numberOfCountries } देशों से स्वतः चयनित"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }+ देश में सर्वर",
+        "${ numberOfCountries }+ देशों में सर्वर"
       ]
     },
     "vpn_2024: renew": {

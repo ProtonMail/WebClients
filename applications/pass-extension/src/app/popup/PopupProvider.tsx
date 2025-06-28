@@ -3,20 +3,24 @@ import { type FC, createContext, useCallback, useEffect, useMemo, useState } fro
 import { useSelector, useStore } from 'react-redux';
 
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
+import { popupMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { MODEL_VERSION } from '@proton/pass/constants';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { clientReady } from '@proton/pass/lib/client';
-import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { isEditItemDraft, isNewItemDraft } from '@proton/pass/lib/items/item.predicates';
 import { syncRequest } from '@proton/pass/store/actions/requests';
 import { selectLatestDraft, selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { MaybeNull, PopupInitialState } from '@proton/pass/types';
-import { AppStatus, WorkerMessageType } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 type Props = { ready: boolean };
 export interface PopupContextValue {
@@ -31,6 +35,7 @@ export const usePopupContext = createUseContext(PopupContext);
  * of the `useExtensionContext` call which requires this component to
  * be a descendant of `ExtensionConnect` */
 export const PopupProvider: FC<PropsWithChildren<Props>> = ({ children, ready }) => {
+    const { onTelemetry } = usePassCore();
     const store = useStore<State>();
     const { status } = useAppState();
     const { tabId } = useExtensionContext();
@@ -61,6 +66,8 @@ export const PopupProvider: FC<PropsWithChildren<Props>> = ({ children, ready })
 
         if (selectedItem) selectItem(selectedItem.shareId, selectedItem.itemId, { filters });
         else setFilters(filters);
+
+        onTelemetry(TelemetryEventName.ExtensionUsed, {}, { modelVersion: MODEL_VERSION });
     }, []);
 
     useEffect(() => {

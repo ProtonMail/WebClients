@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
-import { Step, Stepper } from '@proton/atoms';
+import { Step, Stepper, StepperPositionEnum } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
 import {
     HumanVerificationSteps,
@@ -17,34 +17,33 @@ import {
 } from '@proton/components';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
+import type { PaymentProcessorType } from '@proton/payments';
 import {
     type BillingAddress,
-    CYCLE,
     type Currency,
     type Cycle,
     DEFAULT_CYCLE,
     PLANS,
     type PlanIDs,
+    getIsB2BAudienceFromPlan,
+    getPlanFromPlanIDs,
+    getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
 } from '@proton/payments';
-import { getIsB2BAudienceFromPlan } from '@proton/payments';
-import { getFreeCheckResult } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getHasAppExternalSignup, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, MAIL_APP_NAME, REFERRER_CODE_MAIL_TRIAL, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, MAIL_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
@@ -54,7 +53,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import mailReferPage from '../../pages/refer-a-friend';
-import mailTrialPage from '../../pages/trial';
 import Layout from '../public/Layout';
 import { defaultPersistentKey, getContinueToString } from '../public/helper';
 import { getSubscriptionData } from '../single-signup-v2/helper';
@@ -70,18 +68,11 @@ import ExploreStep from './ExploreStep';
 import LoadingStep from './LoadingStep';
 import PaymentStep from './PaymentStep';
 import RecoveryStep from './RecoveryStep';
-import ReferralStep from './ReferralStep';
 import SignupSupportDropdown from './SignupSupportDropdown';
 import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import {
-    getOptimisticDomains,
-    getSignupApplication,
-    getSubscriptionPrices,
-    isMailReferAFriendSignup,
-    isMailTrialSignup,
-} from './helper';
+import { getOptimisticDomains, getSignupApplication, getSubscriptionPrices, isMailReferAFriendSignup } from './helper';
 import type { InviteData, SignupActionResponse, SignupCacheResult, SignupModel, SubscriptionData } from './interfaces';
 import { SignupSteps, SignupType } from './interfaces';
 import type { TelemetryMeasurementData } from './measure';
@@ -98,6 +89,11 @@ import {
     handleSetupUser,
     usernameAvailabilityError,
 } from './signupActions';
+import {
+    sendSignupAccountCreationTelemetry,
+    sendSignupLoadTelemetry,
+    sendSignupSubscriptionTelemetryEvent,
+} from './signupTelemetry';
 
 const {
     AccountCreationUsername,
@@ -105,7 +101,6 @@ const {
     SaveRecovery,
     Congratulations,
     Upsell,
-    TrialPlan,
     Payment,
     HumanVerification,
     CreatingAccount,
@@ -142,10 +137,9 @@ const SignupContainer = ({
     const { APP_NAME } = useConfig();
 
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
-    const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
 
-    useMetaTags(isMailRefer ? mailReferPage() : isMailTrial ? mailTrialPage() : metaTags);
+    useMetaTags(isMailRefer ? mailReferPage() : metaTags);
 
     const normalApi = useApi();
     const history = useHistory();
@@ -155,7 +149,7 @@ const SignupContainer = ({
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
 
     // Override the app to always be mail in trial or refer-a-friend signup
-    if (isMailTrial || isMailRefer) {
+    if (isMailRefer) {
         toApp = APPS.PROTONMAIL;
         toAppName = MAIL_APP_NAME;
     }
@@ -163,9 +157,6 @@ const SignupContainer = ({
         const params = getSignupSearchParams(location.pathname, new URLSearchParams(location.search), {
             cycle: DEFAULT_CYCLE,
         });
-        if (isMailTrial) {
-            params.referrer = REFERRER_CODE_MAIL_TRIAL;
-        }
         if (!params.email && initialSearchParams) {
             params.email = initialSearchParams.get('email') || params.email;
         }
@@ -210,7 +201,7 @@ const SignupContainer = ({
     const cache = cacheRef.current;
     const accountData = cache?.accountData;
 
-    const isReferral = model.referralData && !isMailTrial;
+    const isReferral = model.referralData;
 
     const measure = (data: TelemetryMeasurementData) => {
         const values = 'values' in data ? data.values : {};
@@ -242,16 +233,16 @@ const SignupContainer = ({
     const signupTypes = (() => {
         // Only on account.protonvpn.com do we suggest external only sign up
         if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
-            return [SignupType.Email];
+            return [SignupType.External];
         }
         if (toApp && getHasAppExternalSignup(toApp)) {
-            return [SignupType.Email, SignupType.Username];
+            return [SignupType.External, SignupType.Proton];
         }
         // Generic signup
         if (!toApp) {
-            return [SignupType.Username, SignupType.Email];
+            return [SignupType.Proton, SignupType.External];
         }
-        return [SignupType.Username];
+        return [SignupType.Proton];
     })();
     const defaultSignupType = signupTypes[0];
 
@@ -300,7 +291,7 @@ const SignupContainer = ({
 
             const { plans: Plans, freePlan } = plansResult;
 
-            if ((location.pathname === SSO_PATHS.REFER || location.pathname === SSO_PATHS.TRIAL) && !referralData) {
+            if (location.pathname === SSO_PATHS.REFER && !referralData) {
                 history.replace(SSO_PATHS.SIGNUP);
             }
 
@@ -345,6 +336,14 @@ const SignupContainer = ({
             void measure({
                 event: TelemetryAccountSignupEvents.pageLoad,
                 dimensions: {},
+            });
+
+            sendSignupLoadTelemetry({
+                planIDs: subscriptionData.planIDs,
+                flowId: 'legacy-signup',
+                productIntent: toApp,
+                currency,
+                cycle,
             });
         };
 
@@ -494,7 +493,6 @@ const SignupContainer = ({
                 [HumanVerification]: 'verification',
                 [Payment]: 'payment',
                 [Upsell]: 'upsell',
-                [TrialPlan]: 'referral',
                 [SaveRecovery]: 'recovery',
             };
 
@@ -531,7 +529,7 @@ const SignupContainer = ({
             };
         }
 
-        if ([Payment, Upsell, TrialPlan, SaveRecovery].includes(step)) {
+        if ([Payment, Upsell, SaveRecovery].includes(step)) {
             return () => {
                 reportBackButtonMetric(step);
                 handleBack();
@@ -571,7 +569,7 @@ const SignupContainer = ({
             payment: c('Signup step').t`Payment`,
         };
 
-        const isExternalAccountFlow = signupType.type === SignupType.Email;
+        const isExternalAccountFlow = signupType.type === SignupType.External;
         if (isExternalAccountFlow) {
             if (step === SignupSteps.AccountCreationUsername) {
                 return {
@@ -644,12 +642,12 @@ const SignupContainer = ({
                             return c('Title').t`Secure email based in Switzerland`;
                         }
                         if (toAppName) {
-                            if (signupType.type === SignupType.Username && signupTypes.includes(SignupType.Email)) {
+                            if (signupType.type === SignupType.Proton && signupTypes.includes(SignupType.External)) {
                                 return c('Info').t`to use ${toAppName} and all ${BRAND_NAME} services`;
                             }
                             return getContinueToString(toAppName);
                         }
-                        if (signupType.type === SignupType.Email) {
+                        if (signupType.type === SignupType.External) {
                             return '';
                         }
                         return c('Info').t`One account. All ${BRAND_NAME} services.`;
@@ -696,7 +694,7 @@ const SignupContainer = ({
                             humanVerificationInline: true,
                         };
 
-                        const accountType = signupType === SignupType.Email ? 'external_account' : 'proton_account';
+                        const accountType = signupType === SignupType.External ? 'external_account' : 'proton_account';
 
                         try {
                             const validateFlow = createFlow();
@@ -783,32 +781,6 @@ const SignupContainer = ({
                             handleError(error);
                             // Important this is thrown so that the human verification form can handle it
                             throw error;
-                        }
-                    }}
-                />
-            )}
-            {step === TrialPlan && (
-                <ReferralStep
-                    onBack={handleBackStep}
-                    onSubscriptionData={async ({ planIDs, billingAddress }) => {
-                        // Referral is always free even if there's a plan, and 1-month cycle
-                        const cycle = CYCLE.MONTHLY;
-                        const checkResult = getFreeCheckResult(model.subscriptionData.currency, cycle);
-
-                        try {
-                            await handlePlanSelectionCallback({ checkResult, planIDs, cycle, billingAddress });
-                            metrics.core_signup_referralStep_planSelection_total.increment({
-                                status: 'success',
-                                application: getSignupApplication(APP_NAME),
-                            });
-                        } catch (error) {
-                            handleError(error);
-                            observeApiError(error, (status) =>
-                                metrics.core_signup_referralStep_planSelection_total.increment({
-                                    status,
-                                    application: getSignupApplication(APP_NAME),
-                                })
-                            );
                         }
                     }}
                 />
@@ -933,12 +905,12 @@ const SignupContainer = ({
                              */
                             metrics.stopBatchingProcess();
 
-                            const getTelemetryParams = () => {
-                                const subscriptionData = cache.subscriptionData;
+                            const subscriptionData = cache.subscriptionData;
 
+                            const getTelemetryParams = () => {
+                                const plan = getPlanNameFromIDs(subscriptionData.planIDs);
                                 const method: PaymentProcessorType | 'n/a' =
                                     subscriptionData.payment?.paymentProcessorType ?? 'n/a';
-                                const plan = getPlanNameFromIDs(subscriptionData.planIDs);
 
                                 return {
                                     method,
@@ -964,7 +936,17 @@ const SignupContainer = ({
                                 },
                             });
 
-                            measure(getSignupTelemetryData(model.plansMap, cache));
+                            void measure(getSignupTelemetryData(model.plansMap, cache));
+
+                            sendSignupAccountCreationTelemetry({
+                                planIDs: subscriptionData.planIDs,
+                                flowId: 'legacy-signup',
+                                productIntent: toApp,
+                                currency: subscriptionData.currency,
+                                cycle: subscriptionData.cycle,
+                                signupType: signupType.type,
+                                amount: subscriptionData.checkResult.AmountDue,
+                            });
 
                             {
                                 const maybeSetupOrg = async () => {
@@ -988,6 +970,22 @@ const SignupContainer = ({
 
                             if (validateFlow()) {
                                 await handleResult(signupActionResponse);
+                            }
+
+                            const { subscription, userData } = signupActionResponse.cache;
+                            if (subscription && userData) {
+                                const planIDs = getPlanIDs(subscription);
+
+                                sendSignupSubscriptionTelemetryEvent({
+                                    planIDs,
+                                    flowId: 'legacy-signup',
+                                    currency: subscription.Currency,
+                                    cycle: subscription.Cycle,
+                                    userCreateTime: userData.User.CreateTime,
+                                    invoiceID: subscription.InvoiceID,
+                                    coupon: subscription.CouponCode,
+                                    amount: subscription.Amount,
+                                });
                             }
 
                             metrics.core_signup_loadingStep_accountSetup_total.increment({
@@ -1017,7 +1015,7 @@ const SignupContainer = ({
                 <CongratulationsStep
                     defaultName={
                         cache?.accountData.username ||
-                        (accountData?.signupType === SignupType.Email && getLocalPart(accountData.email)) ||
+                        (accountData?.signupType === SignupType.External && getLocalPart(accountData.email)) ||
                         ''
                     }
                     planName={planName}
@@ -1034,7 +1032,7 @@ const SignupContainer = ({
 
                             if (validateFlow()) {
                                 const getNextStep = (cache: SignupCacheResult) => {
-                                    if (cache.accountData.signupType === SignupType.Email) {
+                                    if (cache.accountData.signupType === SignupType.External) {
                                         // Ignore recovery step if signing up with an external email address because it's automatically set.
                                         return cache.ignoreExplore ? undefined : SignupSteps.Explore;
                                     }
@@ -1076,7 +1074,7 @@ const SignupContainer = ({
                     defaultCountry={defaultCountry}
                     defaultEmail={
                         (verificationModel?.method === 'email' && verificationModel?.value) ||
-                        (accountData?.signupType === SignupType.Email && accountData.email) ||
+                        (accountData?.signupType === SignupType.External && accountData.email) ||
                         ''
                     }
                     defaultPhone={verificationModel?.method === 'sms' ? verificationModel?.value : ''}
@@ -1174,7 +1172,7 @@ const SignupContainer = ({
             hasDecoration={hasDecoration}
             stepper={
                 stepper && (
-                    <Stepper position="center" activeStep={stepper.activeStep}>
+                    <Stepper position={StepperPositionEnum.Center} activeStep={stepper.activeStep}>
                         {stepper.steps.map((step) => (
                             <Step key={step}>{step}</Step>
                         ))}

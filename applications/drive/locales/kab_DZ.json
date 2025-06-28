@@ -22,6 +22,9 @@
       "Add": [
         "Rnu"
       ],
+      "Add account": [
+        "Rnu amiḍan"
+      ],
       "Add address": [
         "Rnu tansa"
       ],
@@ -49,6 +52,9 @@
       "Add phone number": [
         "Rnu uṭṭun n usawal"
       ],
+      "Add photos": [
+        "Rnu tiwlafin"
+      ],
       "Add to group": [
         "Rnu ɣer ugraw"
       ],
@@ -60,9 +66,6 @@
       ],
       "Attention required": [
         "Yesra leḥdar"
-      ],
-      "Authenticate": [
-        "Asesteb"
       ],
       "Back": [
         "Ɣer deffir"
@@ -318,6 +321,9 @@
       "Generate password": [
         "Sirew awal uffir"
       ],
+      "Get ${ planOrAppName }": [
+        "Awi ${ planOrAppName }"
+      ],
       "Get in touch": [
         "Nermes-aɣ-d"
       ],
@@ -329,6 +335,12 @@
       ],
       "Get verification code": [
         "Awi tangalt n usentem"
+      ],
+      "Go back": [
+        "Uɣal"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Ddu ɣer ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Ddu ɣer tecreḍt"
@@ -344,6 +356,9 @@
       ],
       "Grid layout": [
         "Tissi n uferrug"
+      ],
+      "Hide": [
+        "Ffer"
       ],
       "Hide advanced PGP settings": [
         "Ffer iɣewwaren n PGP leqqayen"
@@ -383,6 +398,9 @@
       ],
       "Learn more": [
         "Issin ugar"
+      ],
+      "Learn more.": [
+        "Issin ugar."
       ],
       "Leave": [
         "Eǧǧ"
@@ -429,6 +447,9 @@
       "More": [
         "Ugar"
       ],
+      "More actions": [
+        "Ugar n tigawin"
+      ],
       "More info: ${ safeTitle }": [
         "Ugar n telɣut: ${ safeTitle }"
       ],
@@ -446,6 +467,9 @@
       ],
       "New": [
         "Amynut"
+      ],
+      "New document": [
+        "Isemli amaynut"
       ],
       "New folder": [
         "Akaram amaynut"
@@ -473,9 +497,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Ldi deg ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Ldi tunigin"
@@ -546,11 +567,17 @@
       "Remove gift code": [
         "Kkes tangalt n usefk"
       ],
+      "Remove me": [
+        "Kkes-iyi"
+      ],
       "Rename": [
         "Beddel isem"
       ],
       "Replace file": [
         "Semselsi afaylu"
+      ],
+      "Report": [
+        "Aneqqis"
       ],
       "Report a problem": [
         "Azen aneqqis n wugur"
@@ -705,6 +732,9 @@
       "Switch or add account": [
         "Beddel neɣ rnu umiḍan"
       ],
+      "Take a tour": [
+        "Snirem"
+      ],
       "Toggle Calendar app": [
         "Sken/Ffer asnas n uwitay"
       ],
@@ -756,6 +786,9 @@
       "Upload file": [
         "Sali afaylu"
       ],
+      "Upload files": [
+        "Sali ifuyla"
+      ],
       "Upload folder": [
         "Sali akaram"
       ],
@@ -771,14 +804,8 @@
       "Use a different payment method": [
         "Seqdec tarayt-nniḍen n usellek"
       ],
-      "Use authentication code": [
-        "Seqdec tangalt n usesteb"
-      ],
       "Use for sending": [
         "Tuzna"
-      ],
-      "Use recovery code": [
-        "Seqdec tangalt n tririt"
       ],
       "Verify": [
         "Senqed"
@@ -800,6 +827,11 @@
       ],
       "Zoom out": [
         "Semẓi"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Sali"
       ]
     },
     "Actions message": {
@@ -965,6 +997,9 @@
       ],
       "Version history": [
         "Azray n lqem"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1011,9 +1046,6 @@
       ],
       "Monthly": [
         "S wayyur"
-      ],
-      "New!": [
-        "Amaynut"
       ],
       "Two-year": [
         "Snat n tikkal i useggas"
@@ -1091,17 +1123,34 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Mdel"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kemmel s useqdec ${ MAIL_APP_NAME }."
       ],
       "Continue using ${ planTitle }": [
         "Kemmel s useqdec ${ planTitle }"
+      ],
+      "Create label": [
+        "Rnu tabzimt"
+      ],
+      "Take a tour": [
+        "Snirem"
+      ]
+    },
+    "Cancellation upsell": {
+      "Save ${ upsellSavings }": [
+        "Sekles ${ upsellSavings }"
       ]
     },
     "Checkout row": {
       "${ users } user": [
         "${ users } n useqdac",
         "${ users } n yiseqdacen"
+      ],
+      "Total": [
+        "Asemday"
       ],
       "Total for ${ n } month": [
         "Asemday i ${ n } wayyur",
@@ -1263,6 +1312,9 @@
       ],
       "Work": [
         "Amahil"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -1664,9 +1716,6 @@
       ],
       "Macao": [
         "Makawu"
-      ],
-      "Macedonia": [
-        "Masidunya"
       ],
       "Madagascar": [
         "Madagaskaṛ"
@@ -2110,6 +2159,16 @@
         "Ɛawen-aɣ ad nennarni"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Kkes asenqes"
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Ldi deg ${ DRIVE_SHORT_APP_NAME }"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Priority support": [
         "Tallalt yezwaren"
@@ -2314,6 +2373,9 @@
       ],
       "Please activate your search again": [
         "Ttxil-k·m rmed anadi-k·m i tikkelt niḍen"
+      ],
+      "Please select a country": [
+        "Ttxil-k·m fren tamurt"
       ],
       "Port is required": [
         "Tawwurt tettwasra"
@@ -2611,6 +2673,11 @@
         "Ulac tugna yettwafernen"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Tuccḍa u nettwarǧa ara"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Afaylu ICS yeddan ulamek ad yettwawgelhen"
@@ -2722,16 +2789,6 @@
         "Kkes tuddsa?"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "Tasarutt n tɣellist"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Tasarutt n tɣellist"
-      ]
-    },
     "file size format": {
       "byte": [
         "ibiten",
@@ -2745,6 +2802,9 @@
       ],
       "MB": [
         "KAṬ"
+      ],
+      "TB": [
+        "TAṬ"
       ]
     },
     "file size format, long": {
@@ -2805,12 +2865,24 @@
         "Inermisen"
       ]
     },
+    "Heading": {
+      "Recent": [
+        "Melmi kan"
+      ]
+    },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Af asumer n ${ itemsCount }, seqdec anasiw i tunigin.",
+        "Af isumar ${ itemsCount }, seqdec anasiw i tunigin."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Seqdec tiqeffalin Asawen d Akessar i wakken ad tkecmeḍ ɣer yisumar syen asenqed-nsen seld anekcum. Sit ɣef Enter i wakken ad tesnetmeḍ afran-inek·inem, neɣ Escape i wakken ad tmedleḍ tabewwaḍt n yisumar."
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Imayl"
       ],
@@ -2819,6 +2891,44 @@
       ],
       "No verification method available": [
         "Ulac tarrayt n usenqed"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Izḍi usrid n uwitay ur yettusefrak ara"
+      ],
+      "Edited event not supported": [
+        "Aẓrag n tedyant ur yettusefrak ara"
+      ],
+      "End time out of bounds": [
+        "Akud n taggara akkin i tlisa"
+      ],
+      "Floating times not supported": [
+        "Akuden i d-yuflawen ur ttusefraken ara"
+      ],
+      "Malformed all-day event": [
+        "Tadyant i wass meṛṛa texṣer"
+      ],
+      "Malformed end time": [
+        "Akud n taggara ur yemsil ara akken ilaq"
+      ],
+      "Malformed recurring event": [
+        "Yir talɣa n tedyant d-ittuɣalen"
+      ],
+      "Malformed start time": [
+        "Akud n beddu ur yemsil ara akken ilaq"
+      ],
+      "Recurring rule not supported": [
+        "Alugen i d-yettuɣalen ur yettusefrak ara"
+      ],
+      "Start time out of bounds": [
+        "Akud n beddu akkin i tlisa"
+      ],
+      "Time zone not supported": [
+        "Izḍi usrid ur yettusefrak ara"
       ]
     },
     "Import calendar": {
@@ -3014,8 +3124,8 @@
       "Import from ${ provider }": [
         "Kter seg ${ provider }"
       ],
-      "Other": [
-        "Ayen-nniḍen"
+      "Import from Google": [
+        "Kter seg Google"
       ]
     },
     "Import warning": {
@@ -3123,6 +3233,10 @@
         "${ pausedCount } yettwaḥbes",
         "${ pausedCount } ttwaḥebsen"
       ],
+      "${ photoCount } item": [
+        "${ photoCount } n uferdis",
+        "${ photoCount } yiferdisen"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } d ukaram yettwafen",
         "${ providerFoldersNumLocalized } d ikaramen yettwafen"
@@ -3189,6 +3303,9 @@
       "Account successfully updated": [
         "Aleqqem n umiḍan yemmed"
       ],
+      "Address copied to clipboard": [
+        "Tansa tettwanɣel ɣef afus"
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Asenqed n tansa s tsura yettwamanen yermed i tansa-agi. Iwakken ad tizmireḍ ad tazneḍ ɣer tansa-agi, di tazwara isefk ad tgeḍ laman i tsura tizayazin i yezemren ad ttwasqedcent i tuzzna."
       ],
@@ -3243,6 +3360,9 @@
       "Anyone with this link can access your folder.": [
         "Kra n win i yesɛan aseɣwen-a yezmer ad yekcem ɣer ukaram-ik•im."
       ],
+      "Apr": [
+        "Yeb"
+      ],
       "Are you sure you want to discard your changes?": [
         "D tidet tebɣiḍ ad tesfesxeḍ ibeddilen-ik m?"
       ],
@@ -3263,6 +3383,9 @@
       ],
       "Attention required": [
         "Yesra leḥdar"
+      ],
+      "Aug": [
+        "Ɣuc"
       ],
       "Billing cycle: ${ text }": [
         "Asellek yal:${ text }"
@@ -3364,11 +3487,17 @@
       "Custom email domains": [
         "Tiɣula n yimayl tudmawanin"
       ],
+      "Dec": [
+        "Duǧ"
+      ],
       "Decrypting files": [
         "Kkes awgelhen i yifuyla"
       ],
       "Dedicated servers": [
         "Iqeddacen yettwagen"
+      ],
+      "default email address": [
+        "tansa yimayl n lexṣas"
       ],
       "Delete locked drive": [
         "Kkes ameɣri isekkren",
@@ -3413,6 +3542,9 @@
       "Enabling drive search": [
         "Armad n unadi n yibenk"
       ],
+      "Encrypted": [
+        "Iwgelhan"
+      ],
       "Encrypted search is here": [
         "Anadi awgelhan ha-t-a da"
       ],
@@ -3422,17 +3554,11 @@
       "Enter password": [
         "Sekcem Awal Uffir"
       ],
-      "Enter the code from your authenticator app": [
-        "Sekcem tangalt seg usnas-ik n usesteb"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Sekcem inekcam n umiḍan n yimayl iseg tebɣiḍ ad d-tketreḍ."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Sekcem awal-ik uffir (am unedbal n tkebbanit)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Akud i d-yeggran: ${ estimatedMinutes } n tesdat",
@@ -3458,6 +3584,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Tuccḍa deg ulday n useɣwen aɣellsan. Tamentilt d: ${ error }"
+      ],
+      "Feb": [
+        "Fuṛ"
       ],
       "File \"${ name }\" was deleted during download": [
         "Afaylu \"${ name }\" yettwakkes lawan n usader"
@@ -3538,6 +3667,15 @@
       "It’s easy and secure": [
         "D afessas, d aɣellsan"
       ],
+      "Jan": [
+        "Yen"
+      ],
+      "Jul": [
+        "Yul"
+      ],
+      "Jun": [
+        "Yun"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Sentem kan tafrayt-inek•inem nekni ad neg ayen iqqimen."
       ],
@@ -3586,8 +3724,14 @@
       "Makes your account safer": [
         "Seɣles amiḍan-ik"
       ],
+      "Mar": [
+        "Meɣ"
+      ],
       "Mastercard SecureCode logo": [
         "Alugu n Mastercard SecureCode"
+      ],
+      "May": [
+        "May"
       ],
       "Member": [
         "Aεeggal"
@@ -3637,6 +3781,12 @@
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
       ],
+      "Nov": [
+        "Wam"
+      ],
+      "Oct": [
+        "Tub"
+      ],
       "of": [
         "si"
       ],
@@ -3663,6 +3813,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Lexlaṣ yemmesten s TLS akked leqwanen n tbaḍnit n Swis."
+      ],
+      "Photos": [
+        "Tiwlafin"
       ],
       "Please enter the password to decrypt and view content.": [
         "Ttxil-k sekcem awal uffir i tukksa n uwgelhen akken ad twaliḍ agbur."
@@ -3743,9 +3896,6 @@
       "Search Enabled": [
         "Anadi yettwarmed"
       ],
-      "Select a service provider to start": [
-        "Fren asaǧǧăw n umeẓlu i wakken ad tebduḍ"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Fren afaylu neɣ akaram yulin syen snulfu-d aseɣwen ɣur-s."
       ],
@@ -3755,6 +3905,9 @@
       "Select what you want to import.": [
         "Fren acu i tebɣiḍ ad t-tketreḍ."
       ],
+      "Sep": [
+        "Cṭe"
+      ],
       "Session timed out": [
         "Yemmed wakud n tɣimit"
       ],
@@ -3763,6 +3916,9 @@
       ],
       "Share files with links": [
         "Bḍu ifuyla s yisɣewnen"
+      ],
+      "Shared": [
+        "Yettwabḍa"
       ],
       "Shared link not found": [
         "Aseɣwen yettwabḍan ulac-it"
@@ -3862,6 +4018,9 @@
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
+      ],
+      "Untitled": [
+        "War azwel"
       ],
       "Updating drive search...": [
         "Akeqqem n unadi n yimeɣri..."
@@ -4075,6 +4234,9 @@
       ],
       "Trusted": [
         "Yettwamen"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -4117,8 +4279,14 @@
       "Address": [
         "Tansa"
       ],
+      "Alias title": [
+        "Mefferisem azwel"
+      ],
       "All": [
         "Akk"
+      ],
+      "Anderson": [
+        "Anderson"
       ],
       "App password": [
         "Awal uffir n usnas"
@@ -4134,9 +4302,6 @@
       ],
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(win) n ugdil"
-      ],
-      "Authenticator app": [
-        "Asnas n usesteb"
       ],
       "Beta Access": [
         "Anekcum Biṭa"
@@ -4191,6 +4356,9 @@
       ],
       "Comment": [
         "Awennit"
+      ],
+      "Company name": [
+        "Isem n tekubannit"
       ],
       "Confirm password": [
         "Sentem awal uffir"
@@ -4337,6 +4505,9 @@
       "Import to:": [
         "Kter ɣer:"
       ],
+      "Integrated 2FA authenticator": [
+        "Yerna usesteb s snat tarrayin 2FA"
+      ],
       "Keep both": [
         "Eǧǧ isin"
       ],
@@ -4418,6 +4589,9 @@
       "Password": [
         "Awal uffir"
       ],
+      "Password strength": [
+        "Tizmert n wawal uffir"
+      ],
       "Payer": [
         "Amxellaṣ"
       ],
@@ -4475,6 +4649,12 @@
       "Set recovery method": [
         "Sbadu tarrayt n tririt"
       ],
+      "Shared": [
+        "Yettwabḍa"
+      ],
+      "Shared with me": [
+        "Yebḍa yid-i"
+      ],
       "Sign emails": [
         "Eg azmul i yimaylen"
       ],
@@ -4492,6 +4672,9 @@
       ],
       "Start date": [
         "Azemz n tazwara"
+      ],
+      "State": [
+        "Addad"
       ],
       "Stolen data": [
         "Isefka yettwakren"
@@ -4514,8 +4697,8 @@
       "Theme": [
         "Asentel"
       ],
-      "Title": [
-        "Azwel"
+      "Thomas": [
+        "Thomas"
       ],
       "To: ${ toEmail }": [
         "I: ${ toEmail }"
@@ -4541,6 +4724,9 @@
       "Upload your first file": [
         "Sali-d afaylu-k amezwaru"
       ],
+      "Uploaded by": [
+        "Yuli s"
+      ],
       "Verification code": [
         "Tangalt n usenqed"
       ],
@@ -4549,9 +4735,6 @@
       ],
       "Yes, I want to permanently delete my old files": [
         "Ih, bɣiɣ ad kkseɣ i lebda ifuyla-w iqburen"
-      ],
-      "Your password (admin)": [
-        "Awal-ik uffir (anedbal)"
       ]
     },
     "Label for contact group color": {
@@ -4643,6 +4826,9 @@
       ],
       "Sent": [
         "Yettwazen"
+      ],
+      "settings": [
+        "iɣewwaren"
       ],
       "Shared": [
         "Yettwabḍa"
@@ -4744,6 +4930,9 @@
       "Image": [
         "Tugna"
       ],
+      "JPEG image": [
+        "Tugna JPEG"
+      ],
       "Text": [
         "Aḍris"
       ],
@@ -4752,6 +4941,9 @@
       ],
       "Video file": [
         "Afaylu avidyu"
+      ],
+      "WEBP image": [
+        "Tugna WEBP"
       ]
     },
     "Modal title": {
@@ -4822,9 +5014,6 @@
       ],
       "Upgrade": [
         "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -4893,8 +5082,17 @@
       "${ size } storage": [
         "${ size } n uḥraz"
       ],
+      "${ size } storage per user": [
+        "${ size } uḥraz i aseqdac"
+      ],
       "1 user": [
         "1 useqdac"
+      ],
+      "10 email addresses/aliases": [
+        "10 n tansiwin n yimayl/mefferismawen"
+      ],
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
       ],
       "99.95% SLA": [
         "99.95% SLA"
@@ -4938,6 +5136,9 @@
       "Free VPN on a single device": [
         "VPN baṭel ɣef yibenk asuf"
       ],
+      "Fully refundable for 30 days": [
+        "Tiririt n yidrimen s umelkem ɣef 30 n wussan"
+      ],
       "GDPR data processing agreement": [
         "Awati n usesfer n yisefka GDPR"
       ],
@@ -4954,20 +5155,23 @@
       "Limited support": [
         "Tallalt s talast"
       ],
+      "Password manager": [
+        "Amsefrak n wawal uffir"
+      ],
+      "Phone support (20+ users)": [
+        "Tallalt s tilifun (ugar n 20 yiseqdacen)"
+      ],
       "Priority email support": [
         "Imayl n tallalt yezwaren"
       ],
       "Priority support": [
         "Tallalt yezwaren"
       ],
+      "Priority support & live chat": [
+        "Tallalt yezwaren & Asqerdec usrid"
+      ],
       "Router support": [
         "Tallalt n umeglay"
-      ],
-      "Schedule messages at any time": [
-        "Sɣawes akud n tuzna n yizen melmi i tebɣiḍ"
-      ],
-      "Search message content": [
-        "Agbur n yizen n unadi"
       ],
       "Secure Core servers": [
         "Iqeddacen n Secure Core"
@@ -4983,6 +5187,9 @@
       ],
       "Strict no-logs policy": [
         "Tasertit tuḥrist war aɣmis"
+      ],
+      "Tor over VPN": [
+        "Tor s VPN"
       ],
       "Two-factor authentication": [
         "Asesteb s snat n tarrayin"
@@ -5022,6 +5229,12 @@
         "Asefrek n tiɣimiyin n useqdac"
       ]
     },
+    "new_plans: feature highlight": {
+      "${ users } user": [
+        "${ users } useqdac",
+        "${ users } yiseqdacen"
+      ]
+    },
     "new_plans: feature info": {
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallunt n uḥraz tettwabḍa gar ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } d ${ DRIVE_APP_NAME }"
@@ -5057,6 +5270,9 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Aḥezzeb mgal agezzu ɣer tbaḍnit VPN s usεeddi n isefka-inek·inem internet ɣef iqeddacen imgaraden."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Azen timahilin-ik•im n internet s useqdec n uzeṭṭa Tor s yiwen n usiti"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield yettufeṣṣel s wudem uslig i ummesten n yibenk-inek·inem yerna ad yerr iminig-ik·im ad iteddu s zzerb s usewḥel n udellel, imakaren d yir yiseɣẓanen"
@@ -5105,9 +5321,6 @@
       ],
       "Require 2FA": [
         "Yesra 2FA"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Asefrek i ${ n } tiɣula n yimayl udmawan"
       ]
     },
     "Notification": {
@@ -5283,9 +5496,62 @@
         "Iɣewwaren-ik·im ggwabeddlen war ugur"
       ]
     },
+    "Offer": {
+      "Get the deal": [
+        "Faṛes tagnit"
+      ],
+      "Maybe later": [
+        "Ahat ticki"
+      ],
+      "Save": [
+        "Sekles"
+      ],
+      "Special offer": [
+        "Asefk ufrin"
+      ]
+    },
+    "Offer feature": {
+      "Email addresses": [
+        "Tansiwin imayl"
+      ],
+      "Free": [
+        "Baṭel"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Asekles"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Ansuf ɣer ${ appName }"
+      ]
+    },
+    "Onboarding Action": {
+      "Continue": [
+        "Kemmel"
+      ],
+      "Get started": [
+        "Bdu"
+      ],
+      "Maybe Later": [
+        "Ahat ticki"
+      ],
+      "Maybe later": [
+        "Ahat ticki"
+      ],
+      "Skip": [
+        "Zgel"
+      ]
+    },
+    "Onboarding Info": {
+      "Manage access": [
+        "Sefrek n unekcum"
+      ],
+      "Upload your first file": [
+        "Sali-d afaylu-k amezwaru"
       ]
     },
     "Option": {
@@ -5346,6 +5612,9 @@
       ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "terms & conditions": [
+        "tiwtilin n useqdec"
       ]
     },
     "Payments.Error": {
@@ -5385,6 +5654,9 @@
       ],
       "E.g., ": [
         "D am., "
+      ],
+      "Email": [
+        "Imayl"
       ],
       "Enter a new file name": [
         "Sekcem isem n ufaylu amaynut"
@@ -5445,6 +5717,9 @@
       ],
       "Select a reason": [
         "Fren taɣzint"
+      ],
+      "Select state": [
+        "Fren addad"
       ],
       "Start typing an email address": [
         "Bdu tira n tansa n yimayl"
@@ -5715,6 +5990,9 @@
       "/ month": [
         "/ n wayyur"
       ],
+      "/month": [
+        "/ayyur"
+      ],
       "1 year": [
         "1 n useggas"
       ],
@@ -5748,6 +6026,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Nced-d imeddukkal ɣer ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Qqen"
       ]
     },
     "Status": {
@@ -5808,6 +6091,14 @@
         "Imultaɣen"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -5819,6 +6110,21 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } n uḥraz asemday"
       ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } uwitay i yal aseqdac",
+        "${ planNumberOfCalendars } yiwitayen i yal aseqdac"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } taɣult n yimaylen udmawanen",
+        "${ planNumberOfDomains } tiɣula n yimaylen udmawanen"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } tansa n yimayl i useqdac",
+        "${ planNumberOfEmails } tansiwin n yimayl i useqdac"
+      ],
+      "2 users": [
+        "2 yiseqdacen"
+      ],
       "Learn more": [
         "Issin ugar"
       ],
@@ -5827,14 +6133,6 @@
       ],
       "Version history": [
         "Azray n lqem"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
       ]
     },
     "Subscription renewal state": {
@@ -5855,6 +6153,11 @@
       ],
       "Keep auto-pay": [
         "Eǧǧ lexlaṣ awurman"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Sekles ${ priceString }"
       ]
     },
     "Success": {
@@ -6001,6 +6304,17 @@
         "urti vCard"
       ]
     },
+    "Tag": {
+      "RAW": [
+        "RAW"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } n wass",
+        "${ ceilDays } n wussan"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } n usrag",
@@ -6070,6 +6384,9 @@
       ],
       "Add to ${ groupName }": [
         "Rnu ɣer ${ groupName }"
+      ],
+      "Add user": [
+        "Rnu aseqdac"
       ],
       "Addresses": [
         "Tansiwin"
@@ -6205,6 +6522,9 @@
       "Deleting contacts": [
         "Tukksa n yinermisen"
       ],
+      "Desktop": [
+        "Tanarit"
+      ],
       "Discard": [
         "Sefsex"
       ],
@@ -6262,9 +6582,6 @@
       "Enable drive search": [
         "Rmed n unadi n yibenk"
       ],
-      "Enter your password": [
-        "Sekcem awal-ik uffir"
-      ],
       "Error": [
         "Tuccḍa"
       ],
@@ -6292,6 +6609,9 @@
       ],
       "Groups": [
         "Igrawen"
+      ],
+      "Help center": [
+        "Tallalt"
       ],
       "Hm, we couldn't find that one": [
         "Hm, ur nessaweḍ ara ad naf wa"
@@ -6338,6 +6658,9 @@
       ],
       "Minicalendar": [
         "Awitay ameẓẓyan"
+      ],
+      "Mobile": [
+        "Aziraz"
       ],
       "Modified": [
         "Yettwabdel"
@@ -6516,9 +6839,6 @@
       "Type": [
         "Anaw"
       ],
-      "Unlock contacts groups": [
-        "Kkes asekkeṛ i yigrawen n yinermisen"
-      ],
       "Uploaded": [
         "Yuli"
       ],
@@ -6665,6 +6985,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } yibenk",
+        "${ n } yibenkan"
+      ],
       "${ n } server": [
         "Aqeddac ${ n }",
         "Ugar n ${ n } yiqeddacen"
@@ -6673,6 +6997,10 @@
         "${ n } tuqqna VPN",
         "${ n } n tuqqniwin VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } n tmurt",
+        "${ numberOfCountries } tmura"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
         "${ numberOfServers } deg ${ numberOfCountries } n tmura"
@@ -6680,6 +7008,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
         "${ numberOfServers } deg ${ numberOfCountries } n tmura"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Iqeddacen deg wugar ${ numberOfCountries } tmurt",
+        "Iqeddacen deg wugar n ${ numberOfCountries } tmura"
       ]
     },
     "vpn_2step: feature": {
@@ -6737,15 +7069,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ma yella ur tecfiḍ ara ɣef wawal uffir inek•m, tzemreḍ ad talseḍ asermed n tsarut-inek•m. Nezmer ad k•m-nɛiwen akken ad tzeggeleḍ taḥacit n ulɣu maca deg ukala ad tesṛuḥeḍ akk isefka ittuwglehnen s tsarut-agi."
       ],
-      "Invalid alias prefix": [
-        "Adat n alias d arameɣtu"
-      ],
-      "Missing alias prefix": [
-        "Ixuṣṣ adat n alias"
-      ],
-      "Missing alias suffix": [
-        "Ixuṣṣ adfir n alias"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n ibugen ur tettwagelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
       ],
@@ -6775,9 +7098,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Ur nezmir ara ad nsenqed aqeddac n yimayl. Ma yella tumneḍ-t, tzemreḍ ad tzegleḍ asenqed-a."
-      ],
-      "You must select at least one mailbox": [
-        "Isefk ad tferneḍ ma drus yiwet n tnaka n urmas"
       ],
       "You will lose any customization you made so far.": [
         "Ad tesruḥeḍ kra n waggan i tgiḍ ar tura."

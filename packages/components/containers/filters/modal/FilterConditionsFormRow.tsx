@@ -4,12 +4,12 @@ import { Fragment, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Input from '@proton/components/components/input/Input';
 import Radio from '@proton/components/components/input/Radio';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import clsx from '@proton/utils/clsx';
 

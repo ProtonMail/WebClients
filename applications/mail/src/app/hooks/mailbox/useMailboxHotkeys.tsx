@@ -6,7 +6,7 @@ import type { Location } from 'history';
 import type { HotkeyTuple } from '@proton/components';
 import { useHotkeys } from '@proton/components';
 import { useFolders } from '@proton/mail';
-import { getFolderName, labelIncludes } from '@proton/mail/labels/helpers';
+import { getFolderName, labelIncludes } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -320,6 +320,7 @@ export const useMailboxHotkeys = (
                         selectAll,
                         onCheckAll: handleCheckAll,
                         sourceAction: SOURCE_ACTION.SHORTCUTS,
+                        silent: true,
                     });
                 }
             },
@@ -340,6 +341,7 @@ export const useMailboxHotkeys = (
                         selectAll,
                         onCheckAll: handleCheckAll,
                         sourceAction: SOURCE_ACTION.SHORTCUTS,
+                        silent: true,
                     });
                 }
             },

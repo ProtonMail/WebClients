@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { Tooltip } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 const ToolbarButton = ({

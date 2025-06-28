@@ -5,14 +5,12 @@ import type { DeobfuscatedItemExtraField, IdentityValues } from '@proton/pass/ty
 import type { IdentityFormField } from './useIdentityForm';
 import { getIdentityFields, getInitialSections } from './utils';
 
-type IdentitySectionContent = { name: string; fields: IdentitySectionField[] };
+type IdentitySectionContent = {
+    name: string;
+    fields: IdentitySectionField[];
+    customFields: DeobfuscatedItemExtraField[];
+};
 type IdentitySectionField = Omit<IdentityFormField, 'name' | 'placeholder'> & { value: string; hidden?: boolean };
-
-const presentExtraField = (field: DeobfuscatedItemExtraField): IdentitySectionField => ({
-    label: field.fieldName,
-    value: field.type !== 'totp' ? field.data.content : '',
-    hidden: field.type === 'hidden',
-});
 
 export const buildContentSections = (values: IdentityValues): IdentitySectionContent[] => {
     const fields = getIdentityFields();
@@ -31,15 +29,14 @@ export const buildContentSections = (values: IdentityValues): IdentitySectionCon
                     value: values[field.name],
                 }));
 
-            const customFields = customFieldsKey ? values[customFieldsKey].map(presentExtraField) : [];
-
-            return { name: section.name, fields: fields.concat(customFields) };
+            return { name: section.name, fields, customFields: values[customFieldsKey] };
         })
-        .filter((sections) => sections.fields.length)
+        .filter((sections) => sections.fields.length + sections.customFields.length > 0)
         .concat(
             values.extraSections.map<IdentitySectionContent>(({ sectionFields, sectionName }) => ({
                 name: sectionName,
-                fields: sectionFields.map(presentExtraField),
+                fields: [],
+                customFields: sectionFields,
             }))
         );
 };

@@ -17,16 +17,6 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 const getThemeCards = (): PassThemeCardProps[] => [
     {
-        theme: PassThemeOption.PassDark,
-        label: c('Theme').t`Dark`,
-        src: darkThemeImg,
-    },
-    {
-        theme: PassThemeOption.PassLight,
-        label: c('Theme').t`Light`,
-        src: lightThemeImg,
-    },
-    {
         theme: PassThemeOption.OS,
         label: c('Theme').t`Automatic`,
         src: automaticThemeImg,
@@ -37,6 +27,16 @@ const getThemeCards = (): PassThemeCardProps[] => [
                 title={c('Info').t`${PASS_APP_NAME} will follow your system theme.`}
             />
         ),
+    },
+    {
+        theme: PassThemeOption.PassDark,
+        label: c('Theme').t`Dark`,
+        src: darkThemeImg,
+    },
+    {
+        theme: PassThemeOption.PassLight,
+        label: c('Theme').t`Light`,
+        src: lightThemeImg,
     },
 ];
 

@@ -1,4 +1,5 @@
-import type { MessageFailure, WorkerResponse } from '@proton/pass/types';
+import type { MessageFailure, WorkerResponse } from 'proton-pass-extension/types/messages';
+
 import { waitForPageReady } from '@proton/pass/utils/dom/state';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 import { error, throwError } from '@proton/pass/utils/fp/throw';

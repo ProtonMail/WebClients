@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Option, SelectTwo } from '@proton/components/index';
+import { Option, SelectTwo } from '@proton/components';
 import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
 import { selectClipboardTTL } from '@proton/pass/store/selectors';
 

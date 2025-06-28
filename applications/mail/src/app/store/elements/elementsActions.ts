@@ -37,8 +37,6 @@ export const updatePage = createAction<number>('elements/updatePage');
 
 export const setParams = createAction<Partial<ElementsStateParams> & { total?: number }>('elements/setParams');
 
-export const resetByPassFilter = createAction('elements/resetByPassFilter');
-
 export const retry = createAction<{
     queryParameters: unknown;
     error: Error | undefined;
@@ -309,3 +307,5 @@ export const labelAll = createAsyncThunk<
         timeoutID: timeoutID as NodeJS.Timeout,
     };
 });
+
+export const resetRetry = createAction<void>('elements/resetRetry');

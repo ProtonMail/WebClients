@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "Authenticate": [
-        "Auðkenna"
-      ],
       "Cancel": [
         "Hætta við"
       ],
@@ -28,9 +25,6 @@
       ],
       "Edit sign-in details": [
         "Breyttu innskráningarupplýsingum"
-      ],
-      "Forgot password?": [
-        "Gleymt lykilorð?"
       ],
       "Get verification code": [
         "Sækja staðfestingarkóða"
@@ -56,12 +50,6 @@
       "Try another method": [
         "Prófa aðra aðferð"
       ],
-      "Use authentication code": [
-        "Nota auðkenningarkóða"
-      ],
-      "Use recovery code": [
-        "Nota endurheimtukóða"
-      ],
       "Verify": [
         "Sannreyna"
       ],
@@ -70,68 +58,6 @@
       ],
       "View invoice": [
         "Skoða reikning"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "gulrót"
-      ],
-      "cerise": [
-        "kirsuberja"
-      ],
-      "cobalt": [
-        "kóbalt"
-      ],
-      "copper": [
-        "kopar"
-      ],
-      "enzian": [
-        "enzían"
-      ],
-      "fern": [
-        "laufgrænn"
-      ],
-      "forest": [
-        "skógur"
-      ],
-      "ocean": [
-        "haf"
-      ],
-      "olive": [
-        "ólífa"
-      ],
-      "pacific": [
-        "kyrrahaf"
-      ],
-      "pickle": [
-        "súrar gúrkur"
-      ],
-      "pine": [
-        "fura"
-      ],
-      "pink": [
-        "bleikur"
-      ],
-      "plum": [
-        "plómu"
-      ],
-      "purple": [
-        "purpuri"
-      ],
-      "reef": [
-        "rif"
-      ],
-      "sahara": [
-        "sahara"
-      ],
-      "slateblue": [
-        "flísblár"
-      ],
-      "soil": [
-        "jarðvegur"
-      ],
-      "strawberry": [
-        "jarðaber"
       ]
     },
     "Country name": {
@@ -955,24 +881,6 @@
         "Villa: ${ errorMessage }"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Eitthvað fór úrskeiðis við auðkenningu með öryggislyklinum þínum. Vinsamlegast reyndu aftur."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Settu inn öryggislykil sem er tengdur við þinn ${ BRAND_NAME } reikning."
-      ],
-      "Security key": [
-        "Öryggislykill"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Öryggislykill"
-      ]
-    },
     "file size format": {
       "byte": [
         "bæti",
@@ -1015,6 +923,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA-mennskupróf"
+      ],
       "Email": [
         "Tölvupóstur"
       ],
@@ -1038,23 +949,11 @@
       "Country code": [
         "Landsnúmer"
       ],
-      "Each code can only be used once": [
-        "Hvern kóða er aðeins hægt að nota einu sinni"
-      ],
       "Edit email address": [
         "Breyta netfangi"
       ],
-      "Enter the code from your authenticator app": [
-        "Settu inn kóðann sem auðkenningarforritið útbjó"
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Settu inn sannvottunarkóðann sem sendur var til ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Sláðu inn staðfestingarkóða. Tala ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Settu inn þitt eigið lykilorð (sem stjórnandi fyrirtækis/stofnunar/samtaka/félags)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ef þú átt í vandræðum með að útbúa notandaaðgang, geturðu sent inn beiðni um aðgang og við munum svara innan næsta virka dags."
@@ -1086,9 +985,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Við sendum nýjan staðfestingarkóða til ${ strong }"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Þegar þú setur upp tvíþætta auðkenningu þá gefum við upp endurheimtarkóða sem þú getur notað til að skrá þig inn ef þú missir aðgang að auðkenningarforritinu þínu."
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Viltu fá sendan nýjan sannvottunarkóða eða nota aðra aðferð til auðkenningar?"
       ],
@@ -1109,9 +1005,6 @@
       ]
     },
     "Label": {
-      "Authenticator app": [
-        "Auðkenningarforrit"
-      ],
       "Code is 6 digits without spaces": [
         "Kóðinn er 6 tölustafir án bils"
       ],
@@ -1132,12 +1025,12 @@
       ],
       "Verification code": [
         "Sannvottunarkóði"
-      ],
-      "Your password (admin)": [
-        "Lykilorðið þitt (stjórnandi)"
       ]
     },
     "Link": {
+      "contact us": [
+        "hafa samband"
+      ],
       "Learn more": [
         "Kanna nánar"
       ],
@@ -1150,15 +1043,12 @@
         "Hafðu pósthólfið þitt skipulagt með möppum"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Sæktu ${ planTitle }"
+      ]
+    },
     "new_plans: feature": {
-      "${ n } calendar": [
-        "${ n } dagatal",
-        "${ n } dagatöl"
-      ],
-      "${ n } calendar per user": [
-        "${ n } dagatal á hvern notanda",
-        "${ n } dagatöl á hvern notanda"
-      ],
       "${ n } custom email domain": [
         "${ n } sérsniðið tölvupóstlén",
         "${ n } sérsniðin tölvupóstlén"
@@ -1197,8 +1087,11 @@
       "${ size } storage": [
         "${ size } geymslurými"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Eyða sjálfkrafa ruslpósti og skilaboðum í rusli"
+      "${ size } storage per user": [
+        "${ size } geymslurými pr./notanda"
+      ],
+      "10 email addresses/aliases": [
+        "10 netföng/samnefni"
       ],
       "Auto-reply": [
         "Sjálfvirk-svörun"
@@ -1232,12 +1125,6 @@
       ],
       "Password-protected Emails": [
         "Lykilorðsvarðir tölvupóstar"
-      ],
-      "Schedule messages at any time": [
-        "Tímasettu skilaboð hvenær sem er"
-      ],
-      "Search message content": [
-        "Leita að innihaldi skilaboða"
       ],
       "Unlimited filters": [
         "Ótakmarkaðar síur"
@@ -1335,6 +1222,11 @@
         "Lykilorð"
       ]
     },
+    "sso": {
+      "Sign in": [
+        "Skrá inn"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Kóði var sendur á ${ methodTo }"
@@ -1344,9 +1236,6 @@
       ]
     },
     "Title": {
-      "Enter your password": [
-        "Settu inn lykilorðið þitt"
-      ],
       "Human verification": [
         "Mennskupróf"
       ],

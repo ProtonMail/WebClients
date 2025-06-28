@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import {
     Dropdown,
     DropdownButton,
     DropdownMenuButton,
     Icon,
-    Tooltip,
     useActiveBreakpoint,
     usePopperAnchor,
 } from '@proton/components';

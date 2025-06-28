@@ -18,6 +18,8 @@ export const getDefaultOrganizationSettings = (): OrganizationSettings => {
         VideoConferencingEnabled: false,
         AllowedProducts: ['All'],
         PasswordPolicies: [],
+        LogAuth: 0,
+        HighSecurity: 0,
     };
 };
 

@@ -85,11 +85,9 @@ export const getDefaultSelectedProductPlans = ({
     }
 
     const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, /*PLANS.VPN2024, */ PLANS.DRIVE, PLANS.WALLET].find(
-        (planName) => plan === planName || planIDs[planName]
+        (planName) => plan === planName
     );
-    const matchingB2BPlan = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO].find(
-        (planName) => plan === planName || planIDs[planName]
-    );
+    const matchingB2BPlan = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO].find((planName) => plan === planName);
     const defaultB2BPlan = PLANS.MAIL_PRO;
     return {
         [Audience.B2C]: matchingB2CPlan || defaultB2CPlan,

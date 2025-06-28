@@ -22,7 +22,7 @@ import { getSSODomainsSet } from '@proton/account/samlSSO/helper';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Avatar, Button } from '@proton/atoms';
+import { Avatar, Button, Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import Info from '@proton/components/components/link/Info';
@@ -79,7 +79,6 @@ import {
 } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 
-import Tooltip from '../../../components/tooltip/Tooltip';
 import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
 import AddressModal from '../../addresses/AddressModal';
 import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';

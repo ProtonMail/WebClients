@@ -11,22 +11,17 @@ const settingsAreaConfig = {
     to: '/easy-switch',
     icon: 'arrow-down-to-square',
     available: true,
-    description: 'Complete the transition to privacy with our secure importing and forwarding tools.',
-    subsections: [
-        {
-            text: 'Set up forwarding',
-            id: 'start-forward',
-        },
-        {
-            text: 'Import messages',
-            id: 'start-import',
-        },
-        {
-            text: 'History',
-            id: 'import-list',
-        },
-    ],
 };
+
+const subsections = [
+    {
+        id: 'easy-switch',
+    },
+    {
+        text: 'History',
+        id: 'import-list',
+    },
+];
 
 jest.mock('@proton/features/useFeature');
 const mockUseFeature = useFeature as jest.MockedFunction<any>;
@@ -44,10 +39,10 @@ describe('SettingsArea', () => {
     it('Should render the forward section if feature is enabled', async () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: false });
 
-        easySwitchRender(<SettingsArea config={settingsAreaConfig} app={APPS.PROTONMAIL} />);
+        easySwitchRender(<SettingsArea config={{ ...settingsAreaConfig, subsections }} app={APPS.PROTONMAIL} />);
 
-        const googleInScreen = screen.getAllByText('Google');
-        const gmailInScreen = screen.getByTestId('ProviderCard:googleCardForward');
+        const googleInScreen = screen.getAllByText('Import from Google');
+        const gmailInScreen = screen.getByTestId('ProviderButton:googleCardForward');
 
         screen.getByTestId('SettingsArea:forwardSection');
         expect(googleInScreen).toHaveLength(1);

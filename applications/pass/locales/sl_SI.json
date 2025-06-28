@@ -37,6 +37,9 @@
       "Add current URL": [
         "Dodaj trenutni URL"
       ],
+      "Add custom domain": [
+        "Dodaj domeno po meri"
+      ],
       "Add domain": [
         "Dodaj domeno"
       ],
@@ -64,9 +67,6 @@
       "Advanced options": [
         "Napredne nastavitve"
       ],
-      "Authenticate": [
-        "Preverjanje pristnosti"
-      ],
       "Back": [
         "Nazaj"
       ],
@@ -90,6 +90,9 @@
       ],
       "Cancel": [
         "Prekliči"
+      ],
+      "Cancel email change": [
+        "Prekliči spremembo e-pošte"
       ],
       "Change": [
         "Spremeni"
@@ -193,6 +196,9 @@
       "Delete all": [
         "Izbriši vse"
       ],
+      "Delete mailbox": [
+        "Izbriši poštni predal"
+      ],
       "Delete password": [
         "Izbriši geslo"
       ],
@@ -222,6 +228,9 @@
       ],
       "Edit vault": [
         "Uredi trezor"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Omogoči ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Exclude from monitoring": [
         "Izključi iz spremljanja"
@@ -282,6 +291,9 @@
       ],
       "Install extension": [
         "Namestite razširitev"
+      ],
+      "Invite more...": [
+        "Povabite več ..."
       ],
       "Invite others": [
         "Povabi druge"
@@ -352,14 +364,17 @@
       "Move to another vault": [
         "Premakni v drug trezor"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Premakni v smetnjak"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Premakni v smetnjak"
       ],
       "Multiple select": [
         "Več izbir"
+      ],
+      "Next month": [
+        "Naslednji mesec"
       ],
       "Not now": [
         "Ne zdaj"
@@ -384,6 +399,12 @@
       ],
       "Pin item": [
         "Pripni predmet"
+      ],
+      "Please retry": [
+        "Poskusite znova"
+      ],
+      "Previous month": [
+        "Prejšnji mesec"
       ],
       "Re-verify": [
         "Ponovno preveri"
@@ -472,9 +493,6 @@
       "See members": [
         "Ogled članov"
       ],
-      "Select": [
-        "Izberi"
-      ],
       "Send email": [
         "Pošlji e-pošto"
       ],
@@ -496,6 +514,9 @@
       "Share item": [
         "Daj predmet v skupno rabo"
       ],
+      "Share secure link": [
+        "Deljenje varne povezave"
+      ],
       "Share vault": [
         "Skupni trezor"
       ],
@@ -511,6 +532,9 @@
       "Sign out": [
         "Odjava"
       ],
+      "Skip": [
+        "Preskoči"
+      ],
       "Sort vault items": [
         "Razvrsti predmete v trezorju"
       ],
@@ -522,6 +546,9 @@
       ],
       "Sync aliases": [
         "Sinhroniziranje vzdevkov"
+      ],
+      "Transfer aliases": [
+        "Prenos vzdevkov"
       ],
       "Transfer ownership": [
         "Prenos lastništva"
@@ -890,6 +917,9 @@
       "Trashing item failed": [
         "Premeščanje predmeta v smetnjak ni uspelo"
       ],
+      "Try reaching out to the link owner.": [
+        "Poskusite stopiti v stik z lastnikom povezave."
+      ],
       "Unable to generate an OTP code for this item": [
         "Za ta predmet ni mogoče ustvariti kode OTP"
       ],
@@ -1101,6 +1131,9 @@
       "Auto-lock successfully disabled.": [
         "Samodejno zaklepanje je onemogočeno."
       ],
+      "automatically": [
+        "samodejno"
+      ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Pred izvozom podatkov v tej obliki odprite nastavitve Safarija -> zavihek \"Splošno\" -> onemogočite možnost \"Odpri varne datoteke po prenosu\". To bo Safariju preprečilo nepravilno ekstrahiranje izvožene datoteke."
       ],
@@ -1116,6 +1149,9 @@
       "Can be viewed": [
         "Lahko se ogleda"
       ],
+      "Can grant and revoke access to this item.": [
+        "Lahko odobri in prekliče dostop do tega predmeta."
+      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Lahko odobri in prekliče dostop do tega trezorja ter ga izbriše."
       ],
@@ -1124,6 +1160,9 @@
       ],
       "Can view items in this vault.": [
         "Lahko si ogleda predmete v tem trezorju."
+      ],
+      "Can view this item.": [
+        "Lahko si ogleda ta predmet."
       ],
       "Change your password": [
         "Spremenite vaše geslo"
@@ -1155,6 +1194,9 @@
       "Didn't receive the code?": [
         "Niste prejeli kode?"
       ],
+      "Disabling auto-lock": [
+        "Onemogočanje samodejnega zaklepa"
+      ],
       "Drop file here to upload": [
         "Spusti datoteko tukaj za nalaganje."
       ],
@@ -1182,8 +1224,8 @@
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "Omogoči ${ PASS_SHORT_APP_NAME } beta"
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Vnesite potrditveno kodo. Števka ${ digit }."
+      "Enter the address you want to email.": [
+        "Vnesite naslov, na katerega želite poslati e-pošto."
       ],
       "Enter your extra password": [
         "Vnesite dodatno geslo"
@@ -1332,6 +1374,12 @@
       "Monitoring settings successfully updated": [
         "Nastavitve nadzora so bile posodobljene."
       ],
+      "Move ${ count } item": [
+        "Premakni ${ count } predmet",
+        "Premakni ${ count } predmeta",
+        "Premakni ${ count } predmete",
+        "Premakni ${ count } predmete"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Premikanje vseh predmetov iz »${ payload.content.name }«"
       ],
@@ -1404,6 +1452,9 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potrdite geslo za ${ BRAND_NAME }, če želite izvoziti podatke ${ PASS_APP_NAME }."
       ],
+      "Please confirm your backup password": [
+        "Potrdite svoje varnostno geslo"
+      ],
       "Please confirm your password": [
         "Potrdite svoje geslo"
       ],
@@ -1460,6 +1511,9 @@
       ],
       "Secure links": [
         "Varne povezave"
+      ],
+      "See more info": [
+        "Oglejte si več informacij"
       ],
       "Select destination vault": [
         "Izberite ciljni trezor"
@@ -1566,6 +1620,9 @@
       "Upgrade Now to Unlock Premium Features": [
         "Nadgradite zdaj, da odklenete premijske funkcije"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Nadgradite na plačljivi paket, da ustvarite več trezorjev."
+      ],
       "User's access removed": [
         "Uporabnikov dostop odstranjen"
       ],
@@ -1592,6 +1649,9 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Imamo težave pri sinhronizaciji podatkov z vašo lokalno shrambo. Prepričajte se, da imate dovolj prostora na disku za nemoteno delovanje aplikacije ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Week": [
+        "Teden"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Poslali smo potrditveno kodo na ${ email }. Vnesite jo spodaj:"
@@ -1650,6 +1710,9 @@
       "You're invited to a vault.": [
         "Vabljeni ste v trezor."
       ],
+      "your domain": [
+        "vaša domena"
+      ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke bodo šifrirane in nato shranjene."
       ],
@@ -1670,6 +1733,12 @@
         "${ config.options.wordCount } besede",
         "${ config.options.wordCount } besed"
       ],
+      "${ count } item": [
+        "${ count } predmet",
+        "${ count } predmeta",
+        "${ count } predmeti",
+        "${ count } predmetov"
+      ],
       "${ days } day": [
         "${ days } dan",
         "${ days } dneva",
@@ -1688,6 +1757,12 @@
         "${ minutes } minute",
         "${ minutes } minut"
       ],
+      "${ months } month": [
+        "${ months } mesec",
+        "${ months } meseci",
+        "${ months } meseci",
+        "${ months } meseci"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Različica ${ PASS_SHORT_APP_NAME }"
       ],
@@ -1696,6 +1771,12 @@
         "${ usageCount } vpisa",
         "${ usageCount } vpisi",
         "${ usageCount } vpisov"
+      ],
+      "${ years } year": [
+        "${ years } leto",
+        "${ years } leta",
+        "${ years } let",
+        "${ years } let"
       ],
       "1 hour": [
         "1 ura"
@@ -1751,6 +1832,9 @@
       "Additional details": [
         "Dodatne podrobnosti"
       ],
+      "Address": [
+        "Naslov"
+      ],
       "Address details": [
         "Podrobnosti naslova"
       ],
@@ -1802,6 +1886,9 @@
       "Catch-All": [
         "Ujemi vse"
       ],
+      "Choose your preferred look and feel.": [
+        "Izberite želeni videz in občutek."
+      ],
       "City": [
         "Mesto"
       ],
@@ -1822,6 +1909,9 @@
       ],
       "Copy": [
         "Kopiraj"
+      ],
+      "Country": [
+        "Država"
       ],
       "Country or Region": [
         "Država ali regija"
@@ -1847,17 +1937,11 @@
       "Create new vault": [
         "Ustvari nov trezor"
       ],
-      "Created": [
-        "Ustvarjeno"
-      ],
       "Created at": [
         "Ustvarjeno ob"
       ],
-      "Custom hidden field": [
-        "Skrito polje po meri"
-      ],
-      "Custom text field": [
-        "Besedilno polje po meri"
+      "Credit cards": [
+        "Plačilne kartice"
       ],
       "Date": [
         "Datum"
@@ -1904,6 +1988,9 @@
       "Enable offline access": [
         "Omogoči način brez povezave"
       ],
+      "Enter email or username": [
+        "Vnesite e-pošto ali uporabniško ime"
+      ],
       "Expiration date": [
         "Datum poteka"
       ],
@@ -1925,6 +2012,9 @@
       "Field name": [
         "Ime polja"
       ],
+      "File attachments": [
+        "Priponke datotek"
+      ],
       "File format": [
         "Format datoteke"
       ],
@@ -1939,6 +2029,9 @@
       ],
       "Forwards to": [
         "Posreduje na"
+      ],
+      "Free": [
+        "Brezplačno"
       ],
       "Free forever": [
         "Brezplačno za vedno."
@@ -1958,6 +2051,9 @@
       "Get Started": [
         "Začnite"
       ],
+      "Get the extension for your browser.": [
+        "Prenesite razširitev za vaš brskalnik."
+      ],
       "Grant": [
         "Odobri"
       ],
@@ -1967,8 +2063,17 @@
       "Hide password": [
         "Skrij geslo"
       ],
+      "Hide-my-email aliases": [
+        "Vzdevki hide-my-email"
+      ],
+      "Highest": [
+        "Najvišja"
+      ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Osebna izkaznica"
@@ -1985,6 +2090,9 @@
       "Import passwords": [
         "Uvozi gesla"
       ],
+      "Imported from: ": [
+        "Uvoženo iz: "
+      ],
       "Imported on : ": [
         "Uvoženo dne : "
       ],
@@ -1999,6 +2107,12 @@
       ],
       "Instagram handle": [
         "Instagram vzdevek"
+      ],
+      "Install and continue": [
+        "Namesti in nadaljuj"
+      ],
+      "Install extension": [
+        "Namestite razširitev"
       ],
       "Invitations": [
         "Vabila"
@@ -2066,6 +2180,9 @@
       "Make all viewers": [
         "Omogoči ogled vsem"
       ],
+      "Make it your own.": [
+        "Prilagodite ga po svojih željah."
+      ],
       "Members": [
         "Člani"
       ],
@@ -2111,6 +2228,9 @@
       "None": [
         "Brez"
       ],
+      "Not selected": [
+        "Ni izbrano"
+      ],
       "Note": [
         "Opomba"
       ],
@@ -2131,6 +2251,9 @@
       ],
       "Organization": [
         "Organizacija"
+      ],
+      "Other": [
+        "Drugo"
       ],
       "Passkey": [
         "Identifikacijski ključ"
@@ -2165,8 +2288,17 @@
       "PIN code": [
         "PIN koda"
       ],
+      "Plus": [
+        "Plus"
+      ],
+      "Port": [
+        "Vrata"
+      ],
       "Prefix": [
         "Predpona"
+      ],
+      "Premium domain": [
+        "Premium domena"
       ],
       "Priority:": [
         "Prioriteta:"
@@ -2183,6 +2315,9 @@
       "Recent": [
         "Nedavno"
       ],
+      "Reddit handle": [
+        "Ime za Reddit"
+      ],
       "Remove link": [
         "Odstrani povezavo"
       ],
@@ -2197,6 +2332,9 @@
       ],
       "Second password": [
         "Drugo geslo"
+      ],
+      "Secure links": [
+        "Varne povezave"
       ],
       "Security": [
         "Varnost"
@@ -2216,8 +2354,14 @@
       "Select preferred language": [
         "Izberite želeni jezik"
       ],
+      "Select theme": [
+        "Izberite temo"
+      ],
       "Select your password manager": [
         "Izberite upravitelja gesel"
+      ],
+      "Select your theme": [
+        "Izberite svojo temo"
       ],
       "Selected": [
         "Izbrano"
@@ -2228,8 +2372,14 @@
       "Shared": [
         "V skupni rabi"
       ],
+      "Shared by me": [
+        "Kaj delim z drugimi"
+      ],
       "Shared link": [
         "Deli povezavo"
+      ],
+      "Shared with me": [
+        "Deljeno z mano"
       ],
       "Show website favicons": [
         "Pokaži ikone spletnega mesta"
@@ -2245,6 +2395,9 @@
       ],
       "Status": [
         "Stanje"
+      ],
+      "Storage": [
+        "Shramba"
       ],
       "Street address": [
         "Ulica"
@@ -2279,6 +2432,9 @@
       "Today": [
         "Danes"
       ],
+      "Total imported items: ": [
+        "Skupaj uvoženih predmetov: "
+      ],
       "Total items: ": [
         "Skupaj predmetov: "
       ],
@@ -2293,6 +2449,9 @@
       ],
       "Unknown": [
         "Neznano"
+      ],
+      "Unlimited": [
+        "Neomejeno"
       ],
       "Unlock with": [
         "Odkleni z"
@@ -2392,12 +2551,20 @@
         "Omogoči ${ reason }"
       ]
     },
+    "Medium": {
+      "Plus": [
+        "Plus"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } predmet",
         "${ count } predmeta",
         "${ count } predmeti",
         "${ count } predmetov"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "V tem trezorju ste izbrali ${ semiboldText }."
       ]
     },
     "new_plans: feature": {
@@ -2446,11 +2613,26 @@
       ]
     },
     "Pass_file_attachments": {
+      "${ filesCount } file": [
+        "Datoteka ${ filesCount }",
+        "${ filesCount } datoteki",
+        "${ filesCount } datoteke",
+        "${ filesCount } datotek"
+      ],
       "Attachments": [
         "Priponke"
       ],
+      "Choose a file or drag it here": [
+        "Izberite datoteko ali jo povlecite sem"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "Izbrišem ${ deleteFile.state.name }"
+      ],
       "Delete all files": [
         "Izbriši vse datoteke"
+      ],
+      "Do you want to remove all the files?": [
+        "Ali želite odstraniti vse datoteke?"
       ],
       "Download": [
         "Naloži"
@@ -2475,6 +2657,17 @@
       ],
       "Restore": [
         "Obnovi"
+      ],
+      "The file you are trying to import is empty": [
+        "Datoteka, ki jo poskušate uvoziti, je prazna"
+      ],
+      "Total files: ": [
+        "Skupaj datotek: "
+      ]
+    },
+    "PassOnboardingOffer": {
+      "${ price }/month": [
+        "${ price }/mesec"
       ]
     },
     "Placeholder": {
@@ -2490,8 +2683,14 @@
       "Add text": [
         "Dodaj tekst"
       ],
+      "Alias Display Name": [
+        "Prikazano ime vzdevka"
+      ],
       "Coupon": [
         "Kupon"
+      ],
+      "E.g., ": [
+        "Npr. "
       ],
       "Email address": [
         "E-poštni naslov"
@@ -2507,6 +2706,9 @@
       ],
       "Enter password": [
         "Vnesite geslo"
+      ],
+      "Enter username": [
+        "Vnesite uporabniško ime"
       ],
       "Full Name": [
         "Polno ime"
@@ -2538,6 +2740,9 @@
       "Search in ${ vaultName }": [
         "Iskanje ${ vaultName }"
       ],
+      "Search in all items": [
+        "Iskanje v vseh predmetih"
+      ],
       "Search in Trash": [
         "Iskanje v smetnjaku"
       ],
@@ -2552,9 +2757,6 @@
       ],
       "Used on ${ url }": [
         "Uporabljeno na ${ url }"
-      ],
-      "Write your note": [
-        "Napišite svojo opombo"
       ]
     },
     "Security Center - Info": {
@@ -2572,8 +2774,20 @@
       ]
     },
     "sso": {
+      "If you didn't make this request, cancel it now.": [
+        "Če tega niste zahtevali, jo takoj prekličite."
+      ],
       "Invalid confirmation code": [
         "Neveljavna potrditvena koda"
+      ],
+      "Sign-in failed": [
+        "Prijava ni uspela"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Zahteva za prijavo na drugi napravi. Ste bili vi?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Zahteva za prijavo na drugi napravi. Ste bili vi? "
       ],
       "Yes, it was me": [
         "Da, bil sem jaz."
@@ -2594,6 +2808,14 @@
       ],
       "Unknown": [
         "Neznan"
+      ]
+    },
+    "Success": {
+      "Default mailbox successfully updated": [
+        "Privzeti poštni predal je bil posodobljen"
+      ],
+      "Mailbox change successfully cancelled": [
+        "Sprememba poštnega predala je bila preklicana"
       ]
     },
     "Theme": {
@@ -2623,14 +2845,23 @@
       "Activity": [
         "Opravilo"
       ],
+      "Add custom domain": [
+        "Dodaj domeno po meri"
+      ],
       "Add mailbox": [
         "Dodaj poštni predal"
+      ],
+      "Alias contacts": [
+        "Vzdevki stikov"
       ],
       "Aliases": [
         "Vzdevki"
       ],
       "Auto-lock update": [
         "Posodobitev samodejnega zaklepanja"
+      ],
+      "Blocked addresses": [
+        "Blokirani naslovi"
       ],
       "Breach detected": [
         "Odkrito je uhajanje podatkov"
@@ -2689,6 +2920,12 @@
       "Delete domain": [
         "Izbris domene"
       ],
+      "Delete mailbox": [
+        "Izbriši poštni predal"
+      ],
+      "Did you know?": [
+        "Ali ste vedeli?"
+      ],
       "Discard changes?": [
         "Zavrzi spremembe?"
       ],
@@ -2706,6 +2943,15 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Uživate v ${ PASS_APP_NAME }?"
+      ],
+      "Enter coupon code": [
+        "Vnesite kodo kupona"
+      ],
+      "Enter your backup password": [
+        "Vnesite vaše varnostno geslo"
+      ],
+      "Enter your extra password": [
+        "Vnesite dodatno geslo"
       ],
       "Enter your PIN": [
         "Vnesite PIN"
@@ -2733,6 +2979,9 @@
       ],
       "Import your data": [
         "Uvozi svoje podatke"
+      ],
+      "Importing your data": [
+        "Uvažanje vaših podatkov"
       ],
       "Inactive 2FA": [
         "Neaktiven 2FA"
@@ -2775,6 +3024,9 @@
       ],
       "Members": [
         "Člani"
+      ],
+      "Minicalendar": [
+        "Mini koledar"
       ],
       "Modified": [
         "Spremenjeno"
@@ -2827,6 +3079,9 @@
       "Remove extra password": [
         "Odstranite dodatno geslo"
       ],
+      "Remove secure link?": [
+        "Odstrani varno povezavo?"
+      ],
       "Resolved breaches": [
         "Odpravljene kršitve"
       ],
@@ -2850,6 +3105,9 @@
       ],
       "Secure your data": [
         "Zavarujte svoje podatke"
+      ],
+      "Select the default domain for aliases": [
+        "Izberite privzeto domeno za vzdevke"
       ],
       "Set access level": [
         "Nastavite raven dostopa"
@@ -2939,6 +3197,11 @@
         "Vaš darilo za dobrodošlico"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Danes"
+      ]
+    },
     "Tooltip": {
       "Not all information listed here was exposed for all users.": [
         "Vse informacije, navedene tukaj, niso bile razkrite za vse uporabnike."
@@ -2957,9 +3220,6 @@
       "OTP secret or URI is invalid": [
         "Skrivnost OTP ali URI ni veljaven"
       ],
-      "OTP secret or URI required": [
-        "Zahtevana je skrivnost OTP ali URI"
-      ],
       "Section name cannot be empty": [
         "Ime razdelka ne sme biti prazno"
       ],
@@ -2974,6 +3234,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Zahtevano je geslo za ${ BRAND_NAME }"
+      ],
       "2 consecutive dots are not allowed": [
         "2 zaporedni piki nista dovoljeni"
       ],
@@ -3043,9 +3306,6 @@
       "Inviting email addresses outside organization is not allowed.": [
         "Vabljenje e-poštnih naslovov izven organizacije ni dovoljeno."
       ],
-      "item was imported without custom fields": [
-        "predmet je bil uvožen brez polj po meri"
-      ],
       "Maximum length is ${ maxLength } character": [
         "Največ dovoljenih znakov ${ maxLength }",
         "Največ dovoljenih znakov ${ maxLength }",
@@ -3090,6 +3350,9 @@
       ],
       "Passwords do not match": [
         "Gesli se ne ujemata"
+      ],
+      "Please contact us to investigate the issue": [
+        "Obrnite se na nas, da raziščemo težavo."
       ],
       "Please verify your email address in order to use email aliases": [
         "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati e-poštne vzdevke"

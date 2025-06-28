@@ -122,6 +122,9 @@ html {
 	cursor: text;
 	scrollbar-gutter: stable;
 
+	// to avoid overscrolling in case of reply to an email with a bg color set on body
+	overscroll-behavior: none;
+
 	/* Introduce `--setting-font-size` to make the font size setting possible. */
 
 	/* chosen size * browser default size / app default size * 100% / browser default size */
@@ -158,6 +161,9 @@ body {
 	line-height: 1.5; // Need to be bigger so that we don't have jumps when adding emojis
 	color: black;
 	background: white;
+
+	// to avoid overscrolling in case of reply to an email with a bg color set on body
+	overscroll-behavior: none;
 
 	/* to fix, CSS var are not passing through the iframe */
 	word-wrap: break-word;

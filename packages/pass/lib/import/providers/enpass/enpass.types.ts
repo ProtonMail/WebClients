@@ -42,8 +42,6 @@ export enum EnpassCategory {
     CREDIT_CARD = 'creditcard',
     NOTE = 'note',
     PASSWORD = 'password',
-
-    // Unsupported
     IDENTITY = 'identity',
     FINANCE = 'finance',
     LICENSE = 'license',

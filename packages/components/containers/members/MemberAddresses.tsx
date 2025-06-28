@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { PartialMemberAddress } from '@proton/shared/lib/interfaces';

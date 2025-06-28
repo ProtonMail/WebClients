@@ -1,6 +1,8 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
@@ -18,7 +20,6 @@ import {
 } from '../../../helpers/test/crypto';
 import { encryptMessage } from '../../../helpers/test/message';
 import { render } from '../../../helpers/test/render';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import MessageView from '../MessageView';
 import { addressID, labelID, messageID } from './Message.test.helpers';
@@ -54,7 +55,7 @@ describe('message trackers', () => {
     });
 
     it('should display the correct number of trackers before and after load', async () => {
-        addApiMock(`core/v4/images`, () => {
+        addApiMock(PROXY_IMG_URL, () => {
             const map = new Map();
             map.set('x-pm-tracker-provider', trackerName);
 

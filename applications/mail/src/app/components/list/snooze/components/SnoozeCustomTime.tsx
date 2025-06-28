@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
-import { DateInputTwo, InputFieldTwo, PrimaryButton, TimeInput } from '@proton/components';
+import { DateInputTwo, InputFieldTwo, TimeInput } from '@proton/components';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';
 
@@ -14,8 +14,8 @@ import { getSnoozeTimeFromSnoozeLabel } from 'proton-mail/helpers/snooze';
 import type { Element } from 'proton-mail/models/element';
 
 import { getMinScheduleTime } from '../../../../helpers/schedule';
-import type { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
 import useFutureTimeDate from '../../../../hooks/message/useFutureTimeDate';
+import { type SNOOZE_DURATION } from '../constant';
 import SnoozeHeader from './SnoozeHeader';
 
 interface Props {
@@ -90,11 +90,12 @@ const SnoozeCustomTime = ({ onClose, onLock, handleSnooze, element }: Props) => 
                 />
             </div>
             <div className="flex flex-column gap-2">
-                <PrimaryButton
+                <Button
+                    color="norm"
                     data-testid="snooze-time-confirm"
                     disabled={disabled}
                     onClick={(event: MouseEvent) => handleSnooze(event, 'custom', scheduleDateTime)}
-                >{c('Action').t`Snooze`}</PrimaryButton>
+                >{c('Action').t`Snooze`}</Button>
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
             </div>
         </div>

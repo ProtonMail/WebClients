@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import Logo from '@proton/components/components/logo/Logo';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
@@ -50,7 +50,7 @@ const VPNDrawerSpotlight = ({ children }: Props) => {
     const {
         welcomeFlags: { isDone },
     } = useWelcomeFlags();
-    const { show, onDisplayed, onClose } = useSpotlightOnFeature(FeatureCode.SpotlightVPNDrawer, isDone);
+    const { show, onDisplayed, onClose } = useSpotlightOnFeature(FeatureCode.SpotlightVPNDrawer, isDone && user.isFree);
     const shouldShowSpotlight = useSpotlightShow(show, 3 * SECOND);
 
     const handleClick = () => {

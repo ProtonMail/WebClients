@@ -10,6 +10,8 @@ import { PlanCardFeatureList } from '@proton/components/containers/payments/subs
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import {
     CYCLE,
+    type Currency,
+    FREE_PLAN,
     type FreePlanDefault,
     PLANS,
     type Plan,
@@ -17,14 +19,15 @@ import {
     type PlansMap,
     type Subscription,
     type SubscriptionPlan,
+    getPlanFromPlanIDs,
+    getPlanIDs,
+    getPlanOffer,
+    getRenewCycle,
 } from '@proton/payments';
-import { type Currency } from '@proton/payments';
-import { getPlanIDs, getPlanOffer } from '@proton/payments';
-import { FREE_PLAN } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { getPlanFromPlanIDs, getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
+import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -34,6 +37,7 @@ import BundlePlanSubSection from './BundlePlanSubSection';
 import SaveLabel from './SaveLabel';
 import type { SubscriptionDataCycleMapping } from './helper';
 import { getHasAnyPlusPlan, getSubscriptionMapping } from './helper';
+import type { SignupParameters2 } from './interface';
 
 import './PlanCardSelector.scss';
 
@@ -71,7 +75,15 @@ const getPerMonth = () => {
     return c('pass_signup_2023: Info').t`per month`;
 };
 
-export const getBilledText = ({ audience, cycle }: { audience?: Audience; cycle: CYCLE }): string | null => {
+export const getBilledText = ({
+    audience,
+    cycle,
+    planIDs,
+}: {
+    audience?: Audience;
+    cycle: CYCLE;
+    planIDs: PlanIDs;
+}): string | null => {
     if (audience === Audience.B2B) {
         switch (cycle) {
             case CYCLE.MONTHLY:
@@ -79,7 +91,10 @@ export const getBilledText = ({ audience, cycle }: { audience?: Audience; cycle:
             case CYCLE.YEARLY:
                 return c('pass_signup_2023: Info').t`/month /user, billed annually`;
             case CYCLE.TWO_YEARS:
-                return c('pass_signup_2023: Info').t`/month /user, billed biennially`;
+                if (getRenewCycle(planIDs, cycle) === cycle) {
+                    return c('pass_signup_2023: Info').t`/month /user, billed biennially`;
+                }
+                return c('pass_signup_2023: Info').t`/month /user`;
             case CYCLE.FIFTEEN:
             case CYCLE.THIRTY:
                 return c('pass_signup_2023: Info').t`/month /user`;
@@ -93,7 +108,11 @@ export const getBilledText = ({ audience, cycle }: { audience?: Audience; cycle:
         case CYCLE.YEARLY:
             return c('pass_signup_2023: Info').t`per month, billed annually`;
         case CYCLE.TWO_YEARS:
-            return c('pass_signup_2023: Info').t`per month, billed every two years`;
+            if (getRenewCycle(planIDs, cycle) === cycle) {
+                return c('pass_signup_2023: Info').t`per month, billed every two years`;
+            }
+
+            return c('pass_signup_2023: Info').t`per month`;
         case CYCLE.FIFTEEN:
             return c('pass_signup_2023: Info').t`per month`;
         case CYCLE.THIRTY:
@@ -146,7 +165,7 @@ const PlanCardViewSlot = ({
 }) => {
     const wrapper = (children: ReactNode) => {
         const className = clsx(
-            'card-plan overflow-hidden rounded-4xl border relative w-full h-full flex flex-column justify-start align-items-start',
+            'card-plan overflow-hidden rounded-xl md:rounded-4xl border relative w-full h-full flex flex-column justify-start align-items-start',
             selected && 'border-primary',
             !interactive && 'bg-weak'
         );
@@ -187,21 +206,21 @@ const PlanCardViewSlot = ({
                     {headerText ? (
                         <div
                             className={clsx(
-                                'flex justify-center items-center text-center card-plan-highlight text-sm text-semibold px-4 w-full h-custom',
+                                'flex justify-center items-center text-center card-plan-highlight text-sm text-semibold px-4 w-full md:h-custom',
                                 selected && 'card-plan-highlight--selected'
                             )}
-                            style={{ '--h-custom': '1.56rem' }}
+                            style={{ '--md-h-custom': '1.56rem' }}
                         >
                             {headerText}
                         </div>
                     ) : (
-                        <div className="w-full h-custom" style={{ '--h-custom': '1.56rem' }} />
+                        <div className="w-full md:h-custom" style={{ '--md-h-custom': '1.56rem' }} />
                     )}
 
-                    <div className="px-6 pb-6 pt-4 w-full">
+                    <div className="p-3 md:px-6 md:pb-6 md:pt-4 w-full">
                         <div className="flex items-start flex-column w-full">
-                            <div className="w-full flex *:min-size-auto flex-row flex-nowrap gap-3 items-center text-ellipsis">
-                                <strong className="text-2xl text-ellipsis text-left" id={`${id}-text`}>
+                            <div className="w-full flex *:min-size-auto flex-row flex-nowrap gap-2 md:gap-3 items-center text-ellipsis">
+                                <strong className="text-xl md:text-2xl text-ellipsis text-left" id={`${id}-text`}>
                                     {text}
                                 </strong>
                                 {interactive && selectable && (
@@ -221,7 +240,7 @@ const PlanCardViewSlot = ({
 
                             {subline && <div className="mt-4 text-left color-weak text-xs">{subline}</div>}
 
-                            <div className="mt-4 mb-6 text-left w-full">
+                            <div className="my-2 md:my-4 text-left w-full">
                                 <div
                                     id={`${id}-price`}
                                     className={clsx(
@@ -255,7 +274,7 @@ const PlanCardViewSlot = ({
                                 </div>
                             </div>
 
-                            {subsection}
+                            <div className="flex flex-column gap-1 w-full">{subsection}</div>
 
                             {cta && <div className="mt-4">{cta}</div>}
                         </div>
@@ -300,6 +319,7 @@ export const PlanCardSelector = ({
     planCards,
     dark,
     loading,
+    signupParameters,
 }: {
     subscriptionDataCycleMapping: SubscriptionDataCycleMapping;
     audience?: Audience;
@@ -312,6 +332,7 @@ export const PlanCardSelector = ({
     onSelect: (planIDs: PlanIDs, plan: PLANS) => void;
     onSelectedClick?: () => void;
     loading?: boolean;
+    signupParameters?: SignupParameters2;
 }) => {
     const planCount = planCards.length;
 
@@ -329,7 +350,7 @@ export const PlanCardSelector = ({
                 const planFromCard = isFreePlan ? FREE_PLAN : plansMap[planCard.plan];
                 const billedText = isFreePlan
                     ? c('pass_signup_2023: Info').t`Free forever`
-                    : getBilledText({ audience, cycle });
+                    : getBilledText({ audience, cycle, planIDs });
                 const selected = isFreePlan && !selectedPlanName ? true : selectedPlanName === planCard.plan;
 
                 if (!planFromCard) {
@@ -338,6 +359,20 @@ export const PlanCardSelector = ({
 
                 const offer = getPlanOffer(planFromCard);
                 const highlight = planCard.type === 'best' || offer.valid;
+
+                const shouldDisplayTrialText =
+                    audience === Audience.B2B && signupParameters?.trial && planCard.plan !== PLANS.ENTERPRISE;
+
+                const subsection = !shouldDisplayTrialText ? (
+                    planCard.subsection
+                ) : (
+                    <>
+                        <span className="color-success text-left text-sm text-bold mb-3">
+                            {c('b2b_trials_2025_Info').t`Try it free for 14 days`}
+                        </span>
+                        {planCard.subsection}
+                    </>
+                );
 
                 if (planCard.interactive === false) {
                     return (
@@ -349,7 +384,7 @@ export const PlanCardSelector = ({
                             subline={planCard.subline}
                             key={planCard.plan}
                             dark={dark}
-                            subsection={planCard.subsection}
+                            subsection={subsection}
                             interactive={planCard.interactive}
                             maxWidth={planCount > 2}
                         />
@@ -411,7 +446,7 @@ export const PlanCardSelector = ({
                         billedText={billedText}
                         key={planCard.plan}
                         dark={dark}
-                        subsection={planCard.subsection}
+                        subsection={subsection}
                         maxWidth={planCount > 2}
                         loading={loading}
                     />
@@ -499,7 +534,7 @@ export const UpsellCardSelector = ({
                     });
                     const billedText = subscription?.CouponCode
                         ? getPerMonth()
-                        : getBilledText({ cycle: subscription?.Cycle || cycle, audience });
+                        : getBilledText({ cycle: subscription?.Cycle || cycle, audience, planIDs: currentPlanIDs });
 
                     const shortPlan = currentPlan
                         ? getShortPlan(currentPlan.Name as any, plansMap, { vpnServers: vpnServersCountData, freePlan })
@@ -577,7 +612,9 @@ export const UpsellCardSelector = ({
                         return null;
                     }
 
-                    const billedText = coupon ? getPerMonth() : getBilledText({ cycle, audience });
+                    const billedText = coupon
+                        ? getPerMonth()
+                        : getBilledText({ cycle, audience, planIDs: { [plan.Name]: 1 } });
                     const totals = {
                         discountPercent: checkout.discountPercent,
                         monthlyPrice: checkout.withDiscountPerMonth,

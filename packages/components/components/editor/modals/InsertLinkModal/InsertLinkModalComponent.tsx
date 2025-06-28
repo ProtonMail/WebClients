@@ -4,7 +4,6 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href, Input } from '@proton/atoms';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Form from '@proton/components/components/form/Form';
@@ -15,7 +14,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { addLinkPrefix, linkToType } from '@proton/shared/lib/helpers/url';
 
@@ -169,9 +168,9 @@ const InsertLinkModalComponent = ({
                     <Button onClick={modalStateProps.onClose} data-testid="insert-link:cancel">
                         {c('Action').t`Cancel`}
                     </Button>
-                    <PrimaryButton type="submit" disabled={!canSubmit}>
+                    <Button color="norm" type="submit" disabled={!canSubmit}>
                         {c('Action').t`Insert`}
-                    </PrimaryButton>
+                    </Button>
                 </ModalTwoFooter>
             </ModalTwo>
             {linkModal}

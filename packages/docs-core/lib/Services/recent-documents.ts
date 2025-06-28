@@ -1,17 +1,18 @@
 import { getErrorString, ServerTime } from '@proton/docs-shared'
-import type { DriveCompat } from '@proton/drive-store'
+import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import type { DocsApi } from './../Api/DocsApi'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { RecentDocumentAPIItem } from './../Api/Types/GetRecentsResponse'
 import type { CacheService } from './CacheService'
-import { nodeMetaUniqueId } from '@proton/drive-store/lib'
+import { nodeMetaUniqueId } from '@proton/drive-store/lib/NodeMeta'
 import { BasePropertiesState } from '@proton/docs-shared'
+import { isProtonDocsDocument, type ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
 // Please remember to bump this number if you make changes to the format of
 // serialized data stored in cache (either directly or indirectly) in a way
 // that could potentially break the app. The cache will be automatically
 // invalidated if the version differs.
-const CACHE_VERSION = 0
+const CACHE_VERSION = 1
 const CACHE_VERSION_KEY = 'recent-documents-cache-version'
 
 // store
@@ -38,6 +39,8 @@ export interface RecentDocumentsInterface {
   state: Store
   fetch(): Promise<void>
   trashDocument(recentDocument: RecentDocumentsItem): Promise<void>
+  restoreDocument(recentDocument: RecentDocumentsItem): Promise<void>
+  deleteDocumentPermanently(recentDocument: RecentDocumentsItem): Promise<void>
   getSortedRecents(): RecentDocumentsItem[]
   updateRenamedDocumentInCache(uniqueId: string, name: string): Promise<void>
 }
@@ -203,7 +206,9 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
       ])
 
       const { linkId, shareId } = nodeIds
-      const { name, parentNodeId: parentLinkId, volumeId, signatureAddress: createdBy } = node
+      const { name, parentNodeId: parentLinkId, volumeId, signatureAddress: createdBy, mimeType } = node
+
+      const type = isProtonDocsDocument(mimeType) ? 'document' : 'spreadsheet'
 
       if (node.trashed) {
         return
@@ -221,6 +226,7 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
       }
 
       const record = RecentDocumentsItem.create({
+        type,
         name,
         linkId,
         parentLinkId,
@@ -258,6 +264,28 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
 
     this.state.setProperty('state', 'done')
   }
+
+  async restoreDocument(recentDocument: RecentDocumentsItem): Promise<void> {
+    if (!recentDocument.parentLinkId) {
+      throw new Error('Node does not have parent link ID')
+    }
+
+    await this.#driveCompat.restoreDocument(
+      { linkId: recentDocument.linkId, volumeId: recentDocument.volumeId },
+      recentDocument.parentLinkId,
+    )
+  }
+
+  async deleteDocumentPermanently(recentDocument: RecentDocumentsItem): Promise<void> {
+    if (!recentDocument.parentLinkId) {
+      throw new Error('Node does not have parent link ID')
+    }
+
+    await this.#driveCompat.deleteDocumentPermanently(
+      { linkId: recentDocument.linkId, volumeId: recentDocument.volumeId },
+      recentDocument.parentLinkId,
+    )
+  }
 }
 
 // item
@@ -269,6 +297,7 @@ export type RecentDocumentsItemLocation =
   | { type: 'shared-with-me' }
 
 export type RecentDocumentsItemValue = {
+  type: ProtonDocumentType
   name: string
   linkId: string
   parentLinkId: string | undefined
@@ -316,6 +345,9 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
     return nodeMetaUniqueId({ linkId: this.linkId, volumeId: this.volumeId })
   }
 
+  get type() {
+    return this.#value.type
+  }
   get name() {
     return this.#value.name
   }

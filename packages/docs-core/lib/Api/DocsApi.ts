@@ -48,6 +48,16 @@ export class DocsApi {
     window.addEventListener('beforeunload', this.handleWindowUnload)
   }
 
+  /**
+   * Resets the route executor's inflight requests count so that
+   * the user is not shown a confirmation popup when the page is
+   * being unloaded. This is needed when redirecting since it will
+   * otherwise block from redirecting until the user presses ok.
+   */
+  resetInflightCount = () => {
+    this.routeExecutor.inflight = 0
+  }
+
   handleWindowUnload = (event: BeforeUnloadEvent): void => {
     if (this.routeExecutor.inflight !== 0) {
       event.preventDefault()

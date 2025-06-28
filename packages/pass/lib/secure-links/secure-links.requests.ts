@@ -22,10 +22,7 @@ export const createSecureLink = async (
     options: SecureLinkOptions
 ): Promise<SecureLink> => {
     const itemKey = await resolveItemKey(shareId, itemId);
-    const linkData = await PassCrypto.createSecureLink({
-        shareId: options.linkKeyEncryptedWithItemKey ? undefined : shareId,
-        itemKey,
-    });
+    const linkData = await PassCrypto.createSecureLink({ itemKey });
     const { encryptedItemKey, encryptedLinkKey, secureLinkKey, keyRotation, linkKeyEncryptedWithItemKey } = linkData;
 
     const data: PublicLinkCreateRequest = {

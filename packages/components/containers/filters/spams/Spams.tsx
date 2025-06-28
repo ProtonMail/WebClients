@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 
-import { c } from 'ttag';
+import debounce from 'lodash/debounce';
+import { c, msgid } from 'ttag';
 
 import SearchInput from '@proton/components/components/input/SearchInput';
 import LabelStack from '@proton/components/components/labelStack/LabelStack';
@@ -40,6 +41,10 @@ interface Props {
     isOrganization?: boolean;
 }
 
+const debouncer = debounce((callback: () => void) => {
+    callback();
+}, 500);
+
 const Spams = ({ isOrganization }: Props) => {
     const isMounted = useIsMounted();
     const [modalProps, openModal, renderModal] = useModalState();
@@ -53,16 +58,18 @@ const Spams = ({ isOrganization }: Props) => {
         abortFetchSpams.current?.abort();
         abortFetchSpams.current = new AbortController();
 
-        void fetchSpams(
-            nextState.display,
-            nextState.search,
-            nextState.page - 1,
-            ELEMENTS_PER_PAGE,
-            abortFetchSpams.current
-        ).then((result) => {
-            if (isMounted()) {
-                dispatch({ type: 'setList', payload: result });
-            }
+        debouncer(() => {
+            void fetchSpams(
+                nextState.display,
+                nextState.search,
+                nextState.page - 1,
+                ELEMENTS_PER_PAGE,
+                abortFetchSpams.current
+            ).then((result) => {
+                if (isMounted()) {
+                    dispatch({ type: 'setList', payload: result });
+                }
+            });
         });
     });
 
@@ -128,6 +135,8 @@ const Spams = ({ isOrganization }: Props) => {
         dispatch({ type: 'fetchList' });
     }, []);
 
+    const resultsCount = list.length;
+
     return (
         <>
             <div className="mb-8 spam-add-address">
@@ -159,6 +168,13 @@ const Spams = ({ isOrganization }: Props) => {
                             placeholder={c('FilterSettings').t`Search list`}
                         />
                     </div>
+                    <span className="sr-only" aria-atomic aria-live="assertive">
+                        {c('Info').ngettext(
+                            msgid`${resultsCount} result found`,
+                            `${resultsCount} results found`,
+                            resultsCount
+                        )}
+                    </span>
 
                     <SpamsNav
                         selected={display}

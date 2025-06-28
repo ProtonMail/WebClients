@@ -1,16 +1,16 @@
 import { DEFAULT_FONT_FACE_ID, DEFAULT_FONT_SIZE } from '@proton/components/components/editor/constants';
+import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_IFRAME_ROOT_ID } from '@proton/mail-renderer/constants';
+import { toText } from '@proton/mail/helpers/parserHtml';
+import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { checkContrast, parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import { unescape } from '@proton/shared/lib/sanitize/escape';
 
-import { MESSAGE_IFRAME_ROOT_ID } from '../../components/message/constants';
-import type { MESSAGE_ACTIONS } from '../../constants';
-import type { MessageState, PartialMessageState } from '../../store/messages/messagesTypes';
 import { parseModelResult } from '../assistant/result';
 import { findSender } from '../message/messageRecipients';
-import { toText } from '../parserHtml';
 import { textToHtml } from '../textToHtml';
 import { locateBlockquote } from './messageBlockquote';
 import { generateBlockquote } from './messageDraft';

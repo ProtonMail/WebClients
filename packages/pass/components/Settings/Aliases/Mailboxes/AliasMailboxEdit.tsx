@@ -3,8 +3,8 @@ import { type FC } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button, Panel, PanelHeader } from '@proton/atoms/index';
-import { Icon } from '@proton/components/index';
+import { Button, Panel, PanelHeader } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';

@@ -2,7 +2,7 @@ import { put, select } from 'redux-saga/effects';
 
 import { hasAttachments, hasHadAttachments } from '@proton/pass/lib/items/item.predicates';
 import { deleteItemRevisions, deleteItems } from '@proton/pass/lib/items/item.requests';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import { filesResolve, itemDelete, itemDeleteRevisions } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';

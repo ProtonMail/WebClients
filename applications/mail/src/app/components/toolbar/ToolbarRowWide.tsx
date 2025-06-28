@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useElementBreakpoints } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
-import { getLabelName } from '@proton/mail/labels/helpers';
+import { getLabelName, isLabelIDNewsletterSubscription } from '@proton/mail/store/labels/helpers';
 import clsx from '@proton/utils/clsx';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
@@ -71,7 +71,7 @@ const ToolbarRowWide = ({
     const pageSize = useMailSelector(pageSizeSelector);
 
     return (
-        <div>
+        <div className="w-full">
             <nav
                 className={clsx(classname, 'justify-space-between py-1 pl-4 pr-2')}
                 data-shortcut-target="mailbox-toolbar"
@@ -120,16 +120,18 @@ const ToolbarRowWide = ({
                 </div>
 
                 <div className="flex items-center shrink-0 flex-nowrap toolbar-inner gap-2">
-                    <ListSettings
-                        sort={sort}
-                        onSort={onSort}
-                        onFilter={onFilter}
-                        filter={filter}
-                        conversationMode={conversationMode}
-                        mailSettings={mailSettings}
-                        labelID={labelID}
-                        filterAsDropdown={localIsNarrowAndMedium}
-                    />
+                    {isLabelIDNewsletterSubscription(labelID) ? null : (
+                        <ListSettings
+                            sort={sort}
+                            onSort={onSort}
+                            onFilter={onFilter}
+                            filter={filter}
+                            conversationMode={conversationMode}
+                            mailSettings={mailSettings}
+                            labelID={labelID}
+                            filterAsDropdown={localIsNarrowAndMedium}
+                        />
+                    )}
 
                     <PagingControls loading={loading} page={page} pageSize={pageSize} total={total} onPage={onPage} />
                 </div>

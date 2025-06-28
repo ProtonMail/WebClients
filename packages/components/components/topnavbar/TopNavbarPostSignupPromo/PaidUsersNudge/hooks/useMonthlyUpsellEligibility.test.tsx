@@ -2,13 +2,13 @@ import { subDays } from 'date-fns';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
-import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { CYCLE, External, PLANS, type Subscription } from '@proton/payments';
+import { CYCLE, PLANS, type Subscription, SubscriptionPlatform } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 import { HIDE_OFFER } from '../helpers/interface';
+import { paidConfig } from '../montlyPaidUserNudgeConfig';
 import { useMonthlyUpsellEligibility } from './useMonthlyUpsellEligibility';
 
 jest.mock('@proton/account/subscription/hooks');
@@ -59,10 +59,10 @@ describe('Mail Paid user nudge', () => {
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
-                    offerFlag: 'SubscriberNudgeMailMonthly',
-                    eligiblePlan: PLANS.MAIL,
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
                 })
             ).toBe(false);
         });
@@ -75,10 +75,10 @@ describe('Mail Paid user nudge', () => {
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
-                    offerFlag: 'SubscriberNudgeMailMonthly',
-                    eligiblePlan: PLANS.MAIL,
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
                 })
             ).toBe(false);
         });
@@ -91,10 +91,28 @@ describe('Mail Paid user nudge', () => {
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
-                    offerFlag: 'SubscriberNudgeMailMonthly',
-                    eligiblePlan: PLANS.MAIL,
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
+                })
+            ).toBe(false);
+        });
+
+        it('Should return false if the app is not in allow list', () => {
+            mockUseSubscription.mockReturnValue([null]);
+            mockUseConfig.mockReturnValue({
+                APP_NAME: APPS.PROTONDRIVE,
+            });
+            mockUseFlag.mockReturnValue(true);
+            mockUseFeature.mockReturnValue(featureEnabled);
+
+            expect(
+                useMonthlyUpsellEligibility({
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
                 })
             ).toBe(false);
         });
@@ -111,10 +129,10 @@ describe('Mail Paid user nudge', () => {
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
-                    offerFlag: 'SubscriberNudgeMailMonthly',
-                    eligiblePlan: PLANS.MAIL,
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
                 })
             ).toBe(false);
         });
@@ -129,10 +147,10 @@ describe('Mail Paid user nudge', () => {
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
-                    offerFlag: 'SubscriberNudgeMailMonthly',
-                    eligiblePlan: PLANS.MAIL,
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
                 })
             ).toBe(true);
         });
@@ -153,10 +171,10 @@ describe('Mail Paid user nudge', () => {
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
-                    offerFlag: 'SubscriberNudgeMailMonthly',
-                    eligiblePlan: PLANS.MAIL,
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
                 })
             ).toBe(false);
         });
@@ -176,10 +194,10 @@ describe('Mail Paid user nudge', () => {
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
-                    offerFlag: 'SubscriberNudgeMailMonthly',
-                    eligiblePlan: PLANS.MAIL,
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
                 })
             ).toBe(false);
         });
@@ -199,10 +217,10 @@ describe('Mail Paid user nudge', () => {
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
-                    offerFlag: 'SubscriberNudgeMailMonthly',
-                    eligiblePlan: PLANS.MAIL,
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
                 })
             ).toBe(false);
         });
@@ -217,16 +235,16 @@ describe('Mail Paid user nudge', () => {
                     Cycle: CYCLE.MONTHLY,
                     Plans: [{ Name: PLANS.MAIL }],
                     UpcomingSubscription: { Cycle: CYCLE.MONTHLY },
-                    External: External.Android,
+                    External: SubscriptionPlatform.Android,
                 } as unknown as Subscription,
             ]);
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
-                    offerFlag: 'SubscriberNudgeMailMonthly',
-                    eligiblePlan: PLANS.MAIL,
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
                 })
             ).toBe(false);
         });
@@ -246,10 +264,10 @@ describe('Mail Paid user nudge', () => {
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
-                    offerFlag: 'SubscriberNudgeMailMonthly',
-                    eligiblePlan: PLANS.MAIL,
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
                 })
             ).toBe(false);
         });
@@ -269,10 +287,10 @@ describe('Mail Paid user nudge', () => {
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
-                    offerFlag: 'SubscriberNudgeMailMonthly',
-                    eligiblePlan: PLANS.MAIL,
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
                 })
             ).toBe(true);
         });
@@ -292,10 +310,33 @@ describe('Mail Paid user nudge', () => {
 
             expect(
                 useMonthlyUpsellEligibility({
-                    allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-                    offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
-                    offerFlag: 'SubscriberNudgeMailMonthly',
-                    eligiblePlan: PLANS.MAIL,
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
+                })
+            ).toBe(true);
+        });
+
+        it('Should return true because user has migration coupon', () => {
+            mockUseFeature.mockReturnValue(featureEnabled);
+            mockUseConfig.mockReturnValue(defaultConfigMail);
+            mockUseFlag.mockReturnValue(true);
+            mockUseSubscription.mockReturnValue([
+                {
+                    PeriodStart: subDays(today.getTime(), 25).getTime() / 1000,
+                    Cycle: CYCLE.MONTHLY,
+                    Plans: [{ Name: PLANS.MAIL }],
+                    Coupon: { Name: 'MIGRATION' },
+                } as unknown as Subscription,
+            ]);
+
+            expect(
+                useMonthlyUpsellEligibility({
+                    allowedApps: paidConfig[PLANS.MAIL].allowedApps,
+                    offerTimestampFlag: paidConfig[PLANS.MAIL].offerTimestampFlag,
+                    offerFlag: paidConfig[PLANS.MAIL].offerFlag,
+                    eligiblePlan: paidConfig[PLANS.MAIL].currentPlan,
                 })
             ).toBe(true);
         });

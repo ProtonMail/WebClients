@@ -68,13 +68,13 @@ const getSearchFromHash = (search: string) => {
 };
 
 export const stringifySearchParams = (
-    params: { [key: string]: string | string[] | undefined },
+    params: { [key: string]: string | string[] | undefined | null },
     prefix?: string | undefined
 ) => {
     const urlSearchParams = new URLSearchParams();
 
     Object.entries(params)
-        .filter(([, value]) => value !== undefined && value !== '')
+        .filter(([, value]) => value !== undefined && value !== null && value !== '')
         .forEach(([key, value]) => {
             /*
              * typescript is not able to determine that stringifiedValue
@@ -213,7 +213,7 @@ export const isURLProtonInternal = (url: string, hostname: string) => {
     const currentDomain = getSecondLevelDomain(hostname);
     const targetOriginHostname = getHostname(url);
 
-    // Still need to check the current domain otherwise it would not work on proton.local, localhost, etc...
+    // Still need to check the current domain otherwise it would not work on proton.dev, localhost, etc...
     return [
         currentDomain,
         'proton.me',

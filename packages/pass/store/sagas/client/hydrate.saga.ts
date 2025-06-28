@@ -14,6 +14,7 @@ import { migrate } from '@proton/pass/store/migrate';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import type { SettingsState } from '@proton/pass/store/reducers/settings';
+import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { type Maybe, PlanType } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
@@ -39,7 +40,15 @@ export type HydrationResult = { fromCache: boolean; version?: string };
  * boolean flag indicating wether hydration happened from cache or not. */
 export function* hydrate(
     config: HydrateCacheOptions,
-    { getCache, getAuthService, getAuthStore, getSettings, getConfig, onBeforeHydrate }: RootSagaOptions
+    {
+        getCache,
+        getAuthService,
+        getAuthStore,
+        getSettings,
+        getConfig,
+        onBeforeHydrate,
+        onSettingsUpdated,
+    }: RootSagaOptions
 ): Generator<any, HydrationResult> {
     try {
         const authStore = getAuthStore();
@@ -59,6 +68,7 @@ export function* hydrate(
 
         const cachedUser = cachedState?.user;
         const snapshot = cache?.snapshot;
+        const fromCache = cache?.state !== undefined && cache?.snapshot !== undefined;
 
         const userState: HydratedUserState = userStateHydrated(cachedUser) ? cachedUser : yield getUserData();
 
@@ -69,11 +79,15 @@ export function* hydrate(
                 ? (cachedState?.organization ?? ((yield getOrganization()) as OrganizationState))
                 : null;
 
-        const twoPwd = userState.userSettings.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
+        const twoPasswordMode = userState.userSettings.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
 
-        if (twoPwd !== authStore.getTwoPasswordMode()) {
-            authStore.setTwoPasswordMode(twoPwd);
-            yield getAuthService().persistSession().catch(noop);
+        /** NOTE: This should only happen on first hydration as changing the password-mode
+         * setting should invalidate the session. User settings are not retrieved during
+         * the session fork sequence so we have to wait for initial settings hydration. */
+        if (twoPasswordMode !== authStore.getTwoPasswordMode()) {
+            const localID = authStore.getLocalID();
+            authStore.setTwoPasswordMode(twoPasswordMode);
+            yield getAuthService().syncPersistedSession(localID, { twoPasswordMode }).catch(noop);
         }
 
         /** Note: Settings may have been modified offline, thus they might not align
@@ -110,25 +124,28 @@ export function* hydrate(
         const incoming = { user: userState, settings, organization };
         const currentState: State = yield select();
 
-        const state: State = (onBeforeHydrate ?? identity)(
-            cachedState
-                ? config.merge(currentState, partialMerge(cachedState, incoming))
-                : partialMerge(currentState, incoming)
-        );
+        const prev = cachedState
+            ? config.merge(currentState, partialMerge(cachedState, incoming))
+            : partialMerge(currentState, incoming);
+
+        const next: State = yield (onBeforeHydrate ?? identity)(prev, fromCache);
+
+        /** Sync the local settings */
+        yield onSettingsUpdated?.(selectProxiedSettings(next));
 
         /** If `keyPassword` is not defined then we may be dealing with an offline
          * state hydration in which case hydrating PassCrypto would throw. In such
          * cases, wait for network online in order to resume session */
         if (keyPassword) yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot, clear: true });
 
-        yield put(stateHydrate(state));
+        yield put(stateHydrate(next));
 
         return {
-            fromCache: cache?.state !== undefined && cache?.snapshot !== undefined,
+            fromCache,
             version: encryptedCache?.version,
         };
     } catch (err) {
-        logger.warn(`[Boot] Hydration error`, err);
+        logger.warn(`[Hydration] Error occured`, err);
         yield config.onError?.();
         return { fromCache: false };
     }

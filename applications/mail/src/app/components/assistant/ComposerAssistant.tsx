@@ -3,9 +3,10 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import type { EditorMetadata } from '@proton/components';
 import { useModalStateObject } from '@proton/components';
-import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modal/types/ComposerAssistantUpsellModal';
+import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, getHasAssistantStatus, useAssistant } from '@proton/llm/lib';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import { removeLineBreaks } from '@proton/mail/helpers/string';
 import { ERROR_TYPE } from '@proton/shared/lib/assistant';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Recipient } from '@proton/shared/lib/interfaces';
@@ -16,7 +17,6 @@ import ComposerAssistantExpanded from 'proton-mail/components/assistant/Composer
 import ResumeDownloadingModal from 'proton-mail/components/assistant/modals/ResumeDownloadingModal';
 import ComposerAssistantToolbar from 'proton-mail/components/assistant/toolbar/ComposerAssistantToolbar';
 import type { ComposerReturnType } from 'proton-mail/helpers/composer/contentFromComposerMessage';
-import { removeLineBreaks } from 'proton-mail/helpers/string';
 import useComposerAssistantGenerate from 'proton-mail/hooks/assistant/useComposerAssistantGenerate';
 import useComposerAssistantScrollButton from 'proton-mail/hooks/assistant/useComposerAssistantScrollButton';
 import useComposerAssistantSelectedText from 'proton-mail/hooks/assistant/useComposerAssistantSelectedText';

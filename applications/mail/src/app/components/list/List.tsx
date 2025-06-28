@@ -5,14 +5,13 @@ import { c, msgid } from 'ttag';
 
 import { useActiveBreakpoint, useItemsDraggable } from '@proton/components';
 import { useLabels } from '@proton/mail';
-import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
-import { useMessageCounts } from '@proton/mail/counts/messageCounts';
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCounts';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCounts';
 import { DENSITY } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import type { Filter } from '@proton/shared/lib/mail/search';
-import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBanner';
@@ -33,8 +32,8 @@ import { pageSize as pageSizeSelector, showLabelTaskRunningBanner } from '../../
 import UserOnboardingMessageListPlaceholder from '../onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
-import ListBanners from './ListBanners';
-import ListPagination from './ListPagination';
+import ListBanners from './MailboxListBanners';
+import ListPagination from './MailboxListPagination';
 import { ResizeHandle } from './ResizeHandle';
 import SkeletonItem from './SkeletonItem';
 import useEncryptedSearchList from './useEncryptedSearchList';
@@ -83,6 +82,13 @@ interface Props {
     currentFolder?: string;
 }
 
+/**
+ * @deprecated
+ * Please use MailboxList component instead.
+ * A component that displays a list of messages.
+ *
+ * This component is responsible for rendering the list of messages
+ **/
 const List = (
     {
         show,
@@ -121,7 +127,6 @@ const List = (
 ) => {
     const mailSettings = useMailModel('MailSettings');
     const [labels] = useLabels();
-    const showAttachmentThumbnails = useFlag('AttachmentThumbnails');
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { selectAll, locationCount, selectAllAvailable } = useSelectAll({ labelID });
     const checkedIDsMap = useMemo<{ [ID: string]: boolean }>(() => {
@@ -157,7 +162,7 @@ const List = (
 
     const { displayState, changeChecklistDisplay, canDisplayChecklist } = useGetStartedChecklist();
 
-    const elements = usePlaceholders(inputElements, loading, placeholderCount);
+    const elements = usePlaceholders({ inputElements, loading, expectedLength: placeholderCount });
 
     const { stopELDTMetric } = useMailELDTMetric();
     const { stopPTTMetric } = useMailPTTMetric();
@@ -281,7 +286,6 @@ const List = (
                     <ListBanners
                         labelID={labelID}
                         columnLayout={columnLayout}
-                        userSettings={userSettings}
                         esState={{ isESLoading, isSearch, showESSlowToolbar }}
                         canDisplayTaskRunningBanner={canDisplayTaskRunningBanner}
                     />
@@ -336,7 +340,6 @@ const List = (
                                                         userSettings={userSettings}
                                                         mailSettings={mailSettings}
                                                         labels={labels}
-                                                        showAttachmentThumbnails={showAttachmentThumbnails}
                                                     />
                                                 )}
                                             </Fragment>
@@ -356,7 +359,14 @@ const List = (
 
                                 {total > 1 && (
                                     <div className="p-5 flex flex-column items-center shrink-0">
-                                        <ListPagination {...pagingHandlers} loading={loading} />
+                                        <ListPagination
+                                            page={page}
+                                            total={total}
+                                            handlePrevious={pagingHandlers.onPrevious}
+                                            handleNext={pagingHandlers.onNext}
+                                            handlePage={pagingHandlers.onPage}
+                                            loading={loading}
+                                        />
                                     </div>
                                 )}
                             </>

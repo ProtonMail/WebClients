@@ -1,3 +1,41 @@
+### Version 1.32.0
+
+- Add support for custom item types
+- Improve note item screen
+- Preserve custom item types when importing
+- Minor UX improvements
+- Support extra fields on alias, credit-cards & note items
+- Fix "attached-to-login" alias form validation
+- Fix auto-scroll when creating extra-field
+- Fix item auto-select conflict with filters after item creation
+- Fix destination vault change during item creation with file attachment
+
+### Version 1.31.5
+
+- Set default pass theme to system preference
+- Improved in-app onboarding on first login
+- Improved i18n/theme hydration on boot
+- Fix managers/admins not able to move items to another vault
+- Fix electron/os/pass theme conflicts
+- Fixed minor UI/UX issues
+
+### Version 1.31.4
+
+- Add support for OpenPGP grammar check
+
+### Version 1.31.3
+
+- Add Proton Anniversary 2025 offer
+- Fix extra-password authentication edge-case
+
+### Version 1.31.2
+
+- Improve invite members modal UX
+- Improve password prompt text by taking into account second password
+- Rename vault/item "admin" to "manager"
+- Make app header more easily draggable
+- Improve biometrics unlock error reporting
+
 ### Version 1.31.1
 
 - File attachments improvements

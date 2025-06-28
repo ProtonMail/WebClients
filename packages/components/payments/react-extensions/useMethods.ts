@@ -18,6 +18,7 @@ import type {
 import {
     type ADDON_NAMES,
     type BillingPlatform,
+    type Currency,
     PAYMENT_METHOD_TYPES,
     type PLANS,
     type Subscription,
@@ -27,7 +28,6 @@ import {
     isSavedPaymentMethodExternal,
     isSavedPaymentMethodInternal,
 } from '@proton/payments';
-import { type Currency } from '@proton/payments';
 import type { Api, ChargebeeEnabled, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
 
 export type OnMethodChangedHandler = (method: AvailablePaymentMethod) => void;
@@ -46,17 +46,12 @@ export interface Props {
     billingAddress?: BillingAddress;
     billingPlatform?: BillingPlatform;
     chargebeeUserExists?: ChargebeeUserExists;
-    disableNewPaymentMethods?: boolean;
-    onCurrencyChange?: (
-        currency: Currency,
-        context: {
-            paymentMethodType: PlainPaymentMethodType;
-        }
-    ) => void;
     enableSepa?: boolean;
     user?: User;
     planIDs?: PlanIDs;
     subscription?: Subscription;
+    canUseApplePay?: boolean;
+    enableApplePay?: boolean;
 }
 
 interface Dependencies {
@@ -79,6 +74,7 @@ export type MethodsHook = {
     status: PaymentMethodStatusExtended | undefined;
     savedMethods: SavedPaymentMethod[] | undefined;
     isNewPaypal: boolean;
+    isNewApplePay: boolean;
     isMethodTypeEnabled: (methodType: PlainPaymentMethodType) => boolean;
 };
 
@@ -179,12 +175,12 @@ export const useMethods = (
         billingAddress,
         billingPlatform,
         chargebeeUserExists,
-        disableNewPaymentMethods,
-        onCurrencyChange,
         enableSepa,
         user,
         planIDs,
         subscription,
+        canUseApplePay,
+        enableApplePay,
     }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
@@ -199,12 +195,13 @@ export const useMethods = (
         pendingBillingAddress?: BillingAddress;
         pendingBillingPlatform?: BillingPlatform;
         pendingChargebeeUserExists?: ChargebeeUserExists;
-        pendingDisableNewPaymentMethods?: boolean;
         pendingEnableSepa?: boolean;
         pendingUser?: User;
         pendingPlanIDs?: PlanIDs;
         pendingSubscription?: Subscription;
         pendingStatusExtended?: PaymentMethodStatusExtended;
+        pendingCanUseApplePay?: boolean;
+        pendingEnableApplePay?: boolean;
     }>();
 
     const [loading, setLoading] = useState(true);
@@ -263,12 +260,13 @@ export const useMethods = (
                 selectedPlanName,
                 billingPlatform,
                 chargebeeUserExists: overrideChargebeeUserExists ?? chargebeeUserExists,
-                disableNewPaymentMethods: !!disableNewPaymentMethods,
                 billingAddress,
                 enableSepa,
                 user,
                 planIDs,
                 subscription,
+                canUseApplePay,
+                enableApplePay,
             });
 
             // Initialization might take some time, so we need to check if there is any pending data
@@ -287,12 +285,13 @@ export const useMethods = (
                     pendingBillingAddress,
                     pendingBillingPlatform,
                     pendingChargebeeUserExists,
-                    pendingDisableNewPaymentMethods,
                     pendingEnableSepa,
                     pendingUser,
                     pendingPlanIDs,
                     pendingSubscription,
                     pendingStatusExtended,
+                    pendingCanUseApplePay,
+                    pendingEnableApplePay,
                 } = pendingDataRef.current;
                 pendingDataRef.current = undefined;
 
@@ -339,10 +338,6 @@ export const useMethods = (
                         overrideChargebeeUserExists ?? pendingChargebeeUserExists;
                 }
 
-                if (pendingDisableNewPaymentMethods !== undefined) {
-                    paymentMethodsRef.current.disableNewPaymentMethods = pendingDisableNewPaymentMethods;
-                }
-
                 if (pendingUser !== undefined) {
                     paymentMethodsRef.current.user = pendingUser;
                 }
@@ -357,6 +352,14 @@ export const useMethods = (
 
                 if (pendingStatusExtended !== undefined) {
                     paymentMethodsRef.current.statusExtended = pendingStatusExtended;
+                }
+
+                if (pendingCanUseApplePay !== undefined) {
+                    paymentMethodsRef.current.canUseApplePay = pendingCanUseApplePay;
+                }
+
+                if (pendingEnableApplePay !== undefined) {
+                    paymentMethodsRef.current.enableApplePay = pendingEnableApplePay;
                 }
             }
 
@@ -386,11 +389,12 @@ export const useMethods = (
                 pendingEnableSepa: enableSepa,
                 pendingBillingPlatform: billingPlatform,
                 pendingChargebeeUserExists: chargebeeUserExists,
-                pendingDisableNewPaymentMethods: disableNewPaymentMethods,
                 pendingUser: user,
                 pendingPlanIDs: planIDs,
                 pendingSubscription: subscription,
                 pendingStatusExtended: paymentMethodStatusExtended,
+                pendingCanUseApplePay: canUseApplePay,
+                pendingEnableApplePay: enableApplePay,
             };
             return;
         }
@@ -405,10 +409,11 @@ export const useMethods = (
         paymentMethodsRef.current.enableSepa = !!enableSepa;
         paymentMethodsRef.current.billingPlatform = billingPlatform;
         paymentMethodsRef.current.chargebeeUserExists = overrideChargebeeUserExists ?? chargebeeUserExists;
-        paymentMethodsRef.current.disableNewPaymentMethods = !!disableNewPaymentMethods;
         paymentMethodsRef.current.user = user;
         paymentMethodsRef.current.planIDs = planIDs;
         paymentMethodsRef.current.subscription = subscription;
+        paymentMethodsRef.current.canUseApplePay = !!canUseApplePay;
+        paymentMethodsRef.current.enableApplePay = !!enableApplePay;
         if (paymentMethodStatusExtended) {
             paymentMethodsRef.current.statusExtended = paymentMethodStatusExtended;
             setStatus(paymentMethodStatusExtended);
@@ -425,7 +430,8 @@ export const useMethods = (
         billingPlatform,
         overrideChargebeeUserExists,
         chargebeeUserExists,
-        disableNewPaymentMethods,
+        canUseApplePay,
+        enableApplePay,
     ]);
 
     const { usedMethods, newMethods, allMethods, lastUsedMethod } = getComputedMethods();
@@ -491,10 +497,6 @@ export const useMethods = (
         if (method) {
             if (selectedMethod?.value !== method.value) {
                 onMethodChanged?.(method);
-
-                if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
-                    onCurrencyChange?.('EUR', { paymentMethodType: method.type });
-                }
             }
             setSelectedMethod(method);
             return method;
@@ -524,6 +526,9 @@ export const useMethods = (
     const isNewPaypal =
         selectedMethod?.type === PAYMENT_METHOD_TYPES.PAYPAL && !isExistingPaymentMethod(selectedMethod?.value);
 
+    const isNewApplePay =
+        selectedMethod?.type === PAYMENT_METHOD_TYPES.APPLE_PAY && !isExistingPaymentMethod(selectedMethod?.value);
+
     return {
         selectedMethod,
         savedInternalSelectedMethod,
@@ -539,6 +544,7 @@ export const useMethods = (
         status,
         savedMethods,
         isNewPaypal,
+        isNewApplePay,
         isMethodTypeEnabled,
     };
 };

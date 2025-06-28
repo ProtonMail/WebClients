@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
 
+import { resolveMessageFactory } from 'proton-pass-extension/lib/message/send-message';
+
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { resolveMessageFactory } from '@proton/pass/lib/extension/message/send-message';
 
 export const useEndpointMessage = () => {
     const { endpoint } = usePassCore();

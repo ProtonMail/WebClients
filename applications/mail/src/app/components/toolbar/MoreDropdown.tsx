@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { DropdownMenu, DropdownMenuButton, Icon, useModalState } from '@proton/components';
-import { labelIncludes } from '@proton/mail/labels/helpers';
+import { labelIncludes } from '@proton/mail/store/labels/helpers';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -22,7 +22,7 @@ import SnoozeToolbarDropdownStepWrapper, {
     SnoozeToolbarDropdownStepWrapperProps,
 } from '../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
 import useListTelemetry, { ACTION_TYPE, SELECTED_RANGE, SOURCE_ACTION } from '../list/useListTelemetry';
-import type { DropdownRender } from '../message/header/HeaderDropdown';
+import { type DropdownRender } from '../message/extrasHeader/HeaderDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 
 const {

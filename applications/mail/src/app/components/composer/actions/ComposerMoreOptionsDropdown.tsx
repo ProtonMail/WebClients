@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
+import { Tooltip } from '@proton/atoms';
 import type { DropdownButtonProps, DropdownProps } from '@proton/components';
-import { Dropdown, DropdownButton, Tooltip, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownButton, usePopperAnchor } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
@@ -53,6 +54,7 @@ const ComposerMoreOptionsDropdown = ({
                     isOpen={isOpen}
                     onClick={handleClick}
                     caretClassName="editor-toolbar-icon"
+                    aria-expanded={isOpen}
                     disabled={disabled}
                     className={clsx([
                         'editor-toolbar-button interactive composer-toolbar-fontDropDown max-w-full flex items-center flex-nowrap',

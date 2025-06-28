@@ -9,6 +9,12 @@ import { useHandler, useLocalState, useSubscribeEventManager } from '@proton/com
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import { removeLineBreaks } from '@proton/mail/helpers/string';
+import type {
+    MessageState,
+    MessageStateWithData,
+    PartialMessageState,
+} from '@proton/mail/store/messages/messagesTypes';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
@@ -18,7 +24,6 @@ import noop from '@proton/utils/noop';
 
 import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
 import { insertTextBeforeContent, prepareContentToInsert } from 'proton-mail/helpers/message/messageContent';
-import { removeLineBreaks } from 'proton-mail/helpers/string';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
@@ -27,7 +32,6 @@ import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerM
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import type { Event } from '../../models/event';
-import type { MessageState, MessageStateWithData, PartialMessageState } from '../../store/messages/messagesTypes';
 import ComposerContent from './ComposerContent';
 import ComposerMeta from './ComposerMeta';
 import ComposerActions from './actions/ComposerActions/ComposerActions';

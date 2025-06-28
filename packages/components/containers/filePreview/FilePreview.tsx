@@ -12,10 +12,10 @@ import { isMinimumSafariVersion, isMobile, isSafari, isWebglSupported } from '@p
 import {
     isAudio,
     isCompatibleCBZ,
-    isIWAD,
     isCompatibleSTL,
+    isIWAD,
     isPDF,
-    isProtonDocument,
+    isProtonDocsDocument,
     isSupportedImage,
     isSupportedText,
     isVideo,
@@ -38,6 +38,7 @@ import SignatureIssue from './SignatureIssue';
 import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import VideoPreview from './VideoPreview';
+import VideoStreamingPreview from './VideoStreamingPreview';
 
 // Lazy Loaded since it includes jszip and it's a rare file type (not common)
 const ComicBookPreview = lazy(() => import(/* webpackChunkName: "comic-book-preview" */ './ComicBookPreview'));
@@ -60,6 +61,12 @@ interface FilePreviewProps {
     /** Feature flag for public Docs */
     isPublicDocsAvailable?: boolean;
 
+    // For Video Streaming
+    videoStreaming?: {
+        url: string;
+        onVideoPlaybackError?: (error?: unknown) => void;
+    };
+
     contents?: Uint8Array[];
     sharedStatus?: SharedStatus;
 
@@ -71,6 +78,8 @@ interface FilePreviewProps {
     onRestore?: () => void; // revision's specific
     onOpenInDocs?: () => void;
     onSelectCover?: () => void; // photos inside albums only
+    onFavorite?: () => void; // photos only
+    isFavorite?: boolean; // photos only
     date?: Date | string | number;
 
     navigationControls?: ReactNode;
@@ -89,6 +98,8 @@ export const FilePreviewContent = ({
     isPublic,
     isSharedFile,
     isPublicDocsAvailable,
+
+    videoStreaming,
 
     contents,
 
@@ -110,6 +121,12 @@ export const FilePreviewContent = ({
     isPublic?: boolean;
     isSharedFile?: boolean;
     isPublicDocsAvailable?: boolean;
+
+    // For Video Streaming
+    videoStreaming?: {
+        url: string;
+        onVideoPlaybackError?: (error?: unknown) => void;
+    };
 
     contents?: Uint8Array[];
 
@@ -139,7 +156,19 @@ export const FilePreviewContent = ({
             );
         }
 
-        if (mimeType && isProtonDocument(mimeType)) {
+        if (mimeType && isVideo(mimeType) && videoStreaming) {
+            return (
+                <VideoStreamingPreview
+                    isLoading={isLoading}
+                    isSharedFile={isSharedFile}
+                    onDownload={onDownload}
+                    videoStreaming={videoStreaming}
+                    imgThumbnailUrl={imgThumbnailUrl}
+                />
+            );
+        }
+
+        if (mimeType && isProtonDocsDocument(mimeType)) {
             return (
                 <div className="file-preview-container">
                     <ProtonDocsPreview
@@ -253,6 +282,8 @@ const FilePreview = (
         fileSize,
         isPublic,
 
+        videoStreaming,
+
         contents,
         navigationControls,
         isPublicDocsAvailable,
@@ -267,6 +298,8 @@ const FilePreview = (
         onRestore,
         onOpenInDocs,
         onSelectCover,
+        onFavorite,
+        isFavorite,
         date,
     }: FilePreviewProps,
     ref: Ref<HTMLDivElement>
@@ -356,6 +389,8 @@ const FilePreview = (
                 onRestore={onRestore}
                 onOpenInDocs={onOpenInDocs}
                 onSelectCover={onSelectCover}
+                onFavorite={onFavorite}
+                isFavorite={isFavorite}
                 date={date}
             >
                 {isDirty ? <div className="flex items-center">{c('Info').t`Unsaved changes`}</div> : navigationControls}
@@ -368,6 +403,7 @@ const FilePreview = (
                 imgThumbnailUrl={imgThumbnailUrl}
                 fileSize={fileSize}
                 fileName={fileName}
+                videoStreaming={videoStreaming}
                 isPublic={isPublic}
                 isPublicDocsAvailable={isPublicDocsAvailable}
                 onOpenInDocs={onOpenInDocs}

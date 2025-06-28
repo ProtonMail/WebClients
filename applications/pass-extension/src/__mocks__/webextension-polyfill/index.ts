@@ -10,6 +10,7 @@ const browser = {
             if (handler) return handler(message, sender);
             return false;
         }),
+        getManifest: () => ({}),
         onMessage: {
             addListener: jest.fn(),
             removeListener: jest.fn(),

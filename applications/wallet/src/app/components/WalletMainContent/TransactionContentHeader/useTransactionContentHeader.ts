@@ -21,6 +21,7 @@ export const useTransactionContentHeader = ({
 
     const syncingData = getSyncingData(walletId, walletAccountId);
     const isSyncingWalletData = syncingData?.syncing;
+    const hasTransaction = syncingData?.hasTransaction;
 
     const [isCoolingDown, setIsCoolingDown] = useState(false);
 
@@ -57,5 +58,7 @@ export const useTransactionContentHeader = ({
 
         isNarrow,
         handleClickSync,
+
+        hasTransaction,
     };
 };

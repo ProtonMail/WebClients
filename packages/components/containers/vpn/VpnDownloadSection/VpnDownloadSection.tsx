@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike, DashboardCard, DashboardCardContent } from '@proton/atoms/index';
+import { ButtonLike, DashboardCard, DashboardCardContent } from '@proton/atoms';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -101,11 +101,11 @@ const downloadData = [
                 content: {
                     image: macosPreview,
                     downloadButton: {
-                        title: () => c('Download').t`Download for MacOS`,
+                        title: () => c('Download').t`Download for macOS`,
                         links: [
                             {
                                 title: () => c('Download').t`macOS Ventura or later`,
-                                link: 'https://vpn.protondownload.com/download/macos/4.8.0/ProtonVPN_mac_v4.8.0.dmg',
+                                link: 'https://vpn.protondownload.com/download/macos/5.0.0/ProtonVPN_mac_v5.0.0.dmg',
                             },
                             {
                                 title: () => c('Download').t`macOS Monterey`,

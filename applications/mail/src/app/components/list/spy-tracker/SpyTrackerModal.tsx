@@ -13,13 +13,13 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import trackersImg from '@proton/styles/assets/img/illustrations/trackers-found.svg';
 import clsx from '@proton/utils/clsx';
 
 import { emailTrackerProtectionURL } from '../../../constants';
 import type { Tracker } from '../../../hooks/message/useMessageTrackers';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import NumberOfElementsBubble from './NumberOfElementsBubble';
 
 interface Props extends ModalProps {
@@ -27,7 +27,7 @@ interface Props extends ModalProps {
 }
 
 const SpyTrackerModal = ({ message, ...rest }: Props) => {
-    const { numberOfImageTrackers, imageTrackerText, imageTrackers } = useMessageTrackers(message);
+    const { numberOfImageTrackers: trackersCount, imageTrackerText, imageTrackers } = useMessageTrackers(message);
 
     const getHeaderContent = (tracker: Tracker) => {
         return (
@@ -38,9 +38,9 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
                     className="shrink-0"
                     data-testid="privacy:icon-number-of-trackers"
                     aria-label={c('Info').ngettext(
-                        msgid`${numberOfImageTrackers} email tracker blocked`,
-                        `${numberOfImageTrackers} email trackers blocked`,
-                        numberOfImageTrackers
+                        msgid`${trackersCount} email tracker blocked`,
+                        `${trackersCount} email trackers blocked`,
+                        trackersCount
                     )}
                 />
             </div>

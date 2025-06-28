@@ -1,4 +1,4 @@
-import { type FC, type ReactElement, useEffect } from 'react';
+import { type FC, type ReactElement } from 'react';
 
 import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
@@ -12,7 +12,7 @@ import { AliasModal } from '@proton/pass/components/Item/Alias/Alias.modal';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
-import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
+import type { AliasForLoginProps } from '@proton/pass/hooks/useAliasForLogin';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { type LoginItemFormValues } from '@proton/pass/types';
@@ -24,14 +24,14 @@ import './Login.edit.credentials.scss';
 
 type Props = {
     form: FormikContextType<LoginItemFormValues>;
+    alias: AliasForLoginProps;
 };
 
-export const LoginEditCredentials: FC<Props> = ({ form }) => {
-    const { aliasOptions, ...aliasModal } = useAliasForLoginModal(form);
+export const LoginEditCredentials: FC<Props> = ({ form, alias }) => {
+    const { aliasOptions, ...aliasModal } = alias;
     const passwordHistory = usePasswordHistoryActions();
 
-    const { itemEmail, itemUsername, withUsername } = form.values;
-
+    const { itemEmail, withUsername } = form.values;
     const itemEmailFieldIcon = withUsername ? 'envelope' : 'user';
 
     /** When enabling the username field set the `itemEmail` as
@@ -48,21 +48,6 @@ export const LoginEditCredentials: FC<Props> = ({ form }) => {
                     : {}),
             })
         );
-
-    useEffect(() => {
-        /** On mount, if username field is not expanded, use the `itemEmail` as
-         * the virtual `Email or username` field value. This should be sanitized
-         * on save by checking if the provided value is a valid email.  */
-        if (!withUsername) {
-            form.resetForm({
-                values: {
-                    ...form.values,
-                    itemEmail: itemUsername || itemEmail,
-                    itemUsername: '',
-                },
-            });
-        }
-    }, []);
 
     return (
         <>

@@ -94,6 +94,7 @@ const InvoicesSection = () => {
                     !!user.ChargebeeUserExists && {
                         text: c('Action').t`Edit billing address`,
                         'data-testid': 'editBillingAddress',
+                        key: 'editBillingAddress',
                         onClick: () =>
                             withLoadingBillingAddressModal(openBillingAddressModal({ editExistingInvoice: false })),
                         loading: loadingBillingAddressModal,
@@ -101,6 +102,7 @@ const InvoicesSection = () => {
                 {
                     text: c('Action').t`Edit invoice note`,
                     'data-testid': 'editInvoiceNote',
+                    key: 'editInvoiceNote',
                     onClick: () => setInvoiceModalOpen(true),
                 },
             ].filter(isTruthy)}

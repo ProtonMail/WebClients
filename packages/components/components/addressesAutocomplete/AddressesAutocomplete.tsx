@@ -1,11 +1,11 @@
 import type { KeyboardEvent, RefObject } from 'react';
 import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
+import { Tooltip } from '@proton/atoms';
 import AutocompleteList from '@proton/components/components/autocomplete/AutocompleteList';
 import { useAutocomplete, useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
 import Icon from '@proton/components/components/icon/Icon';
 import Marks from '@proton/components/components/text/Marks';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useCombinedRefs } from '@proton/hooks';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';

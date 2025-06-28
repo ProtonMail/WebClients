@@ -2,7 +2,7 @@ import { type CSSProperties, type ComponentPropsWithoutRef, type FC, useState } 
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 

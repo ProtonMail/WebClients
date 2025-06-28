@@ -1,9 +1,11 @@
+import { toPublicKeyReference } from '@proton/crypto';
+
 import { createAddressKeyRoute, createAddressKeyRouteV2 } from '../../api/keys';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../../constants';
 import {
-    type ActiveKeyWithVersion,
     type ActiveAddressKeysByVersion,
     type ActiveKey,
+    type ActiveKeyWithVersion,
     type Address,
     type Api,
     type KeyGenConfig,
@@ -51,7 +53,8 @@ export const createAddressKeyLegacy = async ({
         passphrase,
         keyGenConfig,
     });
-    const newActiveKey = await getActiveKeyObject(privateKey, {
+    const publicKey = await toPublicKeyReference(privateKey);
+    const newActiveKey = await getActiveKeyObject(privateKey, publicKey, {
         ID: 'tmp',
         primary: 1,
         flags: getDefaultKeyFlags(address),
@@ -111,7 +114,8 @@ export const createAddressKeyV2 = async ({
         passphrase: token,
         keyGenConfig,
     });
-    const newActiveKey = (await getActiveKeyObject(privateKey, {
+    const publicKey = await toPublicKeyReference(privateKey);
+    const newActiveKey = (await getActiveKeyObject(privateKey, publicKey, {
         ID: 'tmp',
         primary: 1,
         flags: getDefaultKeyFlags(address),

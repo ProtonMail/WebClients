@@ -32,6 +32,8 @@ export const IFRAME_EVENTS_LIST: Event['type'][] = [
 ];
 
 type FontFace =
+    | 'SANS_SERIF'
+    | 'SERIF'
     | 'GEORGIA'
     | 'ARIAL'
     | 'HELVETICA'
@@ -45,6 +47,16 @@ type FontFace =
  * Used in composer font selector
  */
 export const FONT_FACES: Record<FontFace, { id: string; label: string; value: string }> = {
+    SANS_SERIF: {
+        id: 'Sans-serif',
+        label: 'Sans Serif',
+        value: 'sans-serif',
+    },
+    SERIF: {
+        id: 'Serif',
+        label: 'Serif',
+        value: 'serif',
+    },
     GEORGIA: {
         id: 'Georgia',
         label: 'Georgia',

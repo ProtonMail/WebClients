@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { FeatureCode, useFeature } from '@proton/features';
 import {

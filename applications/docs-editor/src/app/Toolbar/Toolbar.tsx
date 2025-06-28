@@ -389,7 +389,7 @@ export default function DocumentEditorToolbar({
       },
       COMMAND_PRIORITY_CRITICAL,
     )
-  }, [$updateToolbar, editor])
+  }, [$updateToolbar, clientInvoker, editor])
 
   const setFontSizeForSelection = useCallback(
     (newFontSize: string) => {

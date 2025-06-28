@@ -13,16 +13,29 @@ import {
     type UserModel,
 } from '@proton/shared/lib/interfaces';
 
-import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '../constants';
+import {
+    ADDON_NAMES,
+    COUPON_CODES,
+    CYCLE,
+    PLANS,
+    PLAN_NAMES,
+    PLAN_SERVICES,
+    PLAN_TYPES,
+    TRIAL_MAX_DEDICATED_IPS,
+    TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
+    TRIAL_MAX_LUMO_SEATS,
+    TRIAL_MAX_SCRIBE_SEATS,
+    TRIAL_MAX_USERS,
+} from '../constants';
 import { isRegionalCurrency } from '../helpers';
 import type { Currency, FreeSubscription, MaxKeys, PlanIDs, Pricing } from '../interface';
 import { getSupportedAddons, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from '../plan/addons';
-import { getIsB2BAudienceFromPlan } from '../plan/helpers';
+import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '../plan/helpers';
 import type { Plan, PlansMap, SubscriptionPlan } from '../plan/interface';
 import { getPricePerCycle, getPricePerMember, isMultiUserPersonalPlan } from '../price-helpers';
 import { isFreeSubscription } from '../type-guards';
 import { isSplittedUser, onSessionMigrationChargebeeStatus } from '../utils';
-import { External } from './constants';
+import { SubscriptionPlatform } from './constants';
 import { FREE_PLAN } from './freePlans';
 import { type Subscription } from './interface';
 
@@ -61,6 +74,12 @@ export function hasLifetimeCoupon(subscription: Subscription | FreeSubscription 
     return subscription?.CouponCode === COUPON_CODES.LIFETIME;
 }
 
+export function hasAnniversary2025Coupon(subscription: Subscription | FreeSubscription | undefined) {
+    return (
+        [COUPON_CODES.COMMUNITYSPECIALDEAL25, COUPON_CODES.PROTONBDAYSALE25, COUPON_CODES.PROTONBDAYSALEB25] as string[]
+    ).includes(subscription?.CouponCode || '');
+}
+
 export function getSubscriptionPlanTitle(
     user: UserModel,
     subscription: Subscription | FreeSubscription | undefined
@@ -96,6 +115,8 @@ export const getLumoAddonNameByPlan = (planName: PLANS) => {
             return ADDON_NAMES.LUMO_MAIL;
         case PLANS.DRIVE:
             return ADDON_NAMES.LUMO_DRIVE;
+        // case PLANS.DRIVE_1TB:
+        //     return ADDON_NAMES.LUMO_DRIVE_1TB;
         case PLANS.PASS:
             return ADDON_NAMES.LUMO_PASS;
         case PLANS.PASS_FAMILY:
@@ -165,6 +186,7 @@ const {
     MAIL_PRO,
     MAIL_BUSINESS,
     DRIVE,
+    DRIVE_1TB,
     DRIVE_PRO,
     DRIVE_BUSINESS,
     PASS,
@@ -240,17 +262,44 @@ export const isManagedExternally = (
         return false;
     }
 
-    return subscription.External === External.Android || subscription.External === External.iOS;
+    return subscription.External === SubscriptionPlatform.Android || subscription.External === SubscriptionPlatform.iOS;
 };
+
+/**
+ * If user has multisubs, then this function will transform the nested secondary subscriptions into a flat array.
+ * This is useful for functions that need to iterate over all subscriptions.
+ */
+export const getSubscriptionsArray = (subscription: Subscription): Subscription[] => {
+    return [subscription, ...(subscription.SecondarySubscriptions ?? [])];
+};
+
+/**
+ * returns true if any of the multisubs is managed externally
+ */
+export function isAnyManagedExternally(
+    subscriptions: Subscription[] | Subscription | FreeSubscription | undefined | null
+): boolean {
+    if (!subscriptions || isFreeSubscription(subscriptions)) {
+        return false;
+    }
+
+    if (Array.isArray(subscriptions)) {
+        return subscriptions.some(isManagedExternally);
+    }
+
+    return getSubscriptionsArray(subscriptions).some(isManagedExternally);
+}
 
 export const hasVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VISIONARY);
 export const hasDeprecatedVPN = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
 export const hasVPN2024 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN2024);
+export const hasVPN2022 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
 export const hasVPNPassBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PASS_BUNDLE);
 export const hasMail = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL);
 export const hasMailPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL_PRO);
 export const hasMailBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL_BUSINESS);
 export const hasDrive = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE);
+export const hasDrive1TB = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_1TB);
 export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_PRO);
 export const hasDriveBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_BUSINESS);
 export const hasPass = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS);
@@ -378,6 +427,7 @@ export const getIsConsumerPassPlan = (planName: PLANS | ADDON_NAMES | undefined)
 const getCanAccessDuoPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.MAIL,
     PLANS.DRIVE,
+    PLANS.DRIVE_1TB,
     PLANS.PASS,
     PLANS.PASS_FAMILY,
     PLANS.VPN,
@@ -434,6 +484,13 @@ export const planSupportsSSO = (planName?: PLANS) => {
 
 export const upsellPlanSSO = (planName?: PLANS) => {
     return planName && [PLANS.VPN_PRO, PLANS.PASS_PRO].some((ssoPlanName) => ssoPlanName === planName);
+};
+
+export const getHasProPlan = (planName?: PLANS) => {
+    return (
+        planName &&
+        [PLANS.VPN_PRO, PLANS.PASS_PRO, PLANS.MAIL_PRO, PLANS.DRIVE_PRO].some((ssoPlanName) => ssoPlanName === planName)
+    );
 };
 
 export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {
@@ -782,7 +839,8 @@ export const getVPNDedicatedIPs = (subscription: Subscription | FreeSubscription
 
     // Some plans might have included IPs without any indication on the backend.
     // For example, 1 IP is included in the Business plan
-    const includedIPs = IPS_INCLUDED_IN_PLAN[planName] || 0;
+    const includedIPs =
+        planName in IPS_INCLUDED_IN_PLAN ? (isTrial(subscription) ? 1 : IPS_INCLUDED_IN_PLAN[planName] || 0) : 0;
 
     return (subscription as Subscription).Plans.reduce(
         (acc, { Name: addonOrPlanName, Quantity }) => acc + (isIpAddon(addonOrPlanName) ? Quantity : 0),
@@ -894,6 +952,28 @@ export const getMaxValue = (plan: Plan, key: MaxKeys): number => {
     return result ?? 0;
 };
 
+type PlanQuantity = {
+    plan: Plan;
+    quantity: number;
+};
+
+type PlansQuantity = PlanQuantity[];
+
+export function getPlansQuantity(planIDs: PlanIDs, plansMap: PlansMap): PlansQuantity {
+    return Object.entries(planIDs)
+        .map(([planName, quantity]) => {
+            const plan = plansMap[planName as PLANS | ADDON_NAMES];
+            return plan === undefined ? undefined : { plan, quantity };
+        })
+        .filter((elem) => elem !== undefined);
+}
+
+export function getPlansLimit(plans: PlansQuantity, maxKey: MaxKeys): number {
+    return plans.reduce((acc, { plan, quantity }) => {
+        return acc + quantity * getMaxValue(plan, maxKey);
+    }, 0);
+}
+
 export function getAddonMultiplier(addonMaxKey: MaxKeys, addon: Plan): number {
     let addonMultiplier: number;
     if (addonMaxKey === 'MaxIPs') {
@@ -953,6 +1033,29 @@ export function getRenewalTime(subscription: Subscription): number {
     return upcoming && isUpcomingSubscriptionUnpaid ? upcoming.PeriodStart : latestSubscription.PeriodEnd;
 }
 
+function isSubscriptionPrepaid(subscription: Subscription): boolean {
+    // InvoiceID idicates whether the subscription was alread prepaid. If there is no InvoiceID, then the upcoming
+    // subscription is unpaid.
+    return !!subscription?.InvoiceID;
+}
+
+/**
+ * Variable cycle offers are marked by automatically created unpaid scheduled subscriptions with different cycles than
+ * the current susbcription. For example when user subscribes to vpn2024 24m then the backend will create a scheduled
+ * 12m subscription. User will be billed when the upcoming 12m term starts. Another example is when user subscribes to
+ * bundle2022 6m - the backend will also create scheduled 12m subscription. P2-634 is the relevant ticket.
+ */
+function isVariableCycleOffer(subscription: Subscription | FreeSubscription | null | undefined): boolean {
+    if (!subscription || isFreeSubscription(subscription)) {
+        return false;
+    }
+
+    const current = subscription;
+    const upcoming = subscription.UpcomingSubscription;
+
+    return !!upcoming && current.Cycle !== upcoming.Cycle && !isSubscriptionPrepaid(upcoming);
+}
+
 export function isSubscriptionUnchanged(
     subscription: Subscription | FreeSubscription | null | undefined,
     planIds: PlanIDs,
@@ -962,8 +1065,181 @@ export function isSubscriptionUnchanged(
 
     const planIdsUnchanged = isDeepEqual(subscriptionPlanIds, planIds);
     // Cycle is optional, so if it is not provided, we assume it is unchanged
-    const cycleUnchanged =
-        !cycle || cycle === subscription?.Cycle || cycle === subscription?.UpcomingSubscription?.Cycle;
+    const cycleUnchanged = !cycle || cycle === subscription?.Cycle;
 
     return planIdsUnchanged && cycleUnchanged;
 }
+
+export function isCheckForbidden(
+    subscription: Subscription | FreeSubscription | null | undefined,
+    planIDs: PlanIDs,
+    cycle: CYCLE
+): boolean {
+    if (!subscription) {
+        return false;
+    }
+
+    const selectedSameAsCurrent =
+        !!subscription && !isFreeSubscription(subscription)
+            ? isSubscriptionUnchanged(subscription, planIDs, cycle)
+            : false;
+
+    const upcoming = subscription.UpcomingSubscription;
+    const hasUpcomingSubscription = !!upcoming;
+    const selectedSameAsUpcoming = hasUpcomingSubscription ? isSubscriptionUnchanged(upcoming, planIDs, cycle) : false;
+
+    const variableCycleOffer = isVariableCycleOffer(subscription);
+
+    const isScheduledUnpaidModification =
+        hasUpcomingSubscription && !variableCycleOffer && !isSubscriptionPrepaid(upcoming);
+
+    const selectedSameAsCurrentIgnorringCycle =
+        !!subscription && !isFreeSubscription(subscription) ? isSubscriptionUnchanged(subscription, planIDs) : false;
+
+    const managedExternally = isManagedExternally(subscription);
+
+    return (
+        /**
+         * Consider the table with possible cases:
+         * |                                | selectedSameAsCurrent | selectedSameAsUpcoming        |
+         * |--------------------------------|-----------------------|-------------------------------|
+         * | hasVariableCycleOffer          | check forbidden       | check forbidden               |
+         * | hasUpcomingPrepaidSubscription | check forbidden       | check forbidden               |
+         * | hasNoUpcomingSubscription      | check forbidden       | n/a                           |
+         * | hasScheduledUnpaidDowncycling  | check allowed         | check forbidden               |
+         *
+         * "check forbidden" means that the /check endpoint will return an error.
+         * "check allowed" means that the /check endpoint will work as expected.
+         *
+         * hasVariableCycleOffer - when user has an automatic scheduled unpaid subscription.
+         * For example, when user subscribes to vpn2024 24m then the backend will create a scheduled 12m subscription.
+         *
+         * hasUpcomingPrepaidSubscription - when user manually created a scheduled subscription and paid for it.
+         * This can happen when user subscribes to a higher cycle.
+         * For example, if user has 1m bundle2022 and subscribes to 12m bundle2022,
+         * then we will charge user immediately for 12m subscription, and it will start only when the 1m ends.
+         *
+         * hasNoUpcomingSubscription - the simplest case. Just subscription.
+         *
+         * hasScheduledUnpaidDowncycling - this is a special case for some addons like Scribe.
+         * If user has a B2B plan with scribe addons and they want to decrease the number of scribes
+         * then it creates a scheduled subscription with lower number of scribes.
+         *
+         * The four cases described above are handled by the first two disjunctions.
+         *
+         * The third disjunction is a special case for multi-subs. If user has a mobile subscription (for example, Lumo)
+         * and selects the same plan on web (any cycle) then the check is forbidden. Users must not be able to modify
+         * the subscription that's managed externally. In some cases, they should be allowed to create a new one, and
+         * we call it multi-subs.
+         *
+         * P2-634 is the relevant ticket.
+         */
+        (selectedSameAsCurrent && !isScheduledUnpaidModification) ||
+        selectedSameAsUpcoming ||
+        (selectedSameAsCurrentIgnorringCycle && managedExternally)
+    );
+}
+
+export function isMobileMultiSubSupported(subscription: Subscription) {
+    return hasLumo(subscription);
+}
+
+export function canModify(subscription: Subscription | FreeSubscription | null | undefined) {
+    return (
+        !subscription ||
+        isFreeSubscription(subscription) ||
+        !isManagedExternally(subscription) ||
+        isMobileMultiSubSupported(subscription)
+    );
+}
+
+type SubscriptionActions = (
+    | {
+          canModify: true;
+          cantModifyReason: undefined;
+      }
+    | {
+          canModify: false;
+          cantModifyReason: 'subscription_managed_externally';
+      }
+) &
+    (
+        | {
+              canCancel: true;
+              cantCancelReason: undefined;
+          }
+        | {
+              canCancel: false;
+              cantCancelReason: 'subscription_managed_externally';
+          }
+    );
+
+/**
+ * Returns the available subscription actions for the given subscription. Sometimes it's possible to modify the
+ * subscription, while it's not possible to cancel it.
+ *
+ * For example, if user has mobile Lumo subscription then it's possible to add a web subscription (canModify == true
+ * allows using the subscription modal). However it's not possible to cancel the mobile subscription on web.
+ */
+export function getAvailableSubscriptionActions(subscription: Subscription): SubscriptionActions {
+    const modificationAllowed = canModify(subscription);
+    const managedExternally = isManagedExternally(subscription);
+
+    return {
+        canModify: modificationAllowed,
+        cantModifyReason: !modificationAllowed ? ('subscription_managed_externally' as const) : undefined,
+        canCancel: !managedExternally,
+        cantCancelReason: managedExternally ? ('subscription_managed_externally' as const) : undefined,
+    } as SubscriptionActions;
+}
+
+export const shouldPassIsTrial = ({
+    plansMap,
+    newPlanIDs,
+    oldPlanIDs,
+    newCycle,
+    oldCycle,
+}: {
+    plansMap: PlansMap;
+    newPlanIDs: PlanIDs;
+    oldPlanIDs: PlanIDs;
+    newCycle: CYCLE;
+    oldCycle: CYCLE;
+}) => {
+    if (newCycle !== oldCycle) {
+        return false;
+    }
+
+    const newPrimaryPlan = getPlanFromPlanIDs(plansMap, newPlanIDs);
+    const oldPrimaryPlan = getPlanFromPlanIDs(plansMap, oldPlanIDs);
+    if (!newPrimaryPlan || !oldPrimaryPlan) {
+        return false;
+    }
+
+    if (newPrimaryPlan.Name !== oldPrimaryPlan.Name) {
+        return false;
+    }
+
+    const newPlans = getPlansQuantity(newPlanIDs, plansMap);
+    const oldPlans = getPlansQuantity(oldPlanIDs, plansMap);
+
+    const maxBaseDomains = newPrimaryPlan.MaxDomains;
+    const limits = Object.entries({
+        MaxMembers: TRIAL_MAX_USERS,
+        MaxDomains: maxBaseDomains + TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
+        MaxIPs: TRIAL_MAX_DEDICATED_IPS,
+        MaxAI: TRIAL_MAX_SCRIBE_SEATS,
+        MaxLumo: TRIAL_MAX_LUMO_SEATS,
+    }) as [MaxKeys, number][];
+
+    for (const [maxKey, limit] of limits) {
+        const newLimit = getPlansLimit(newPlans, maxKey);
+        const oldLimit = getPlansLimit(oldPlans, maxKey);
+
+        if (newLimit > limit || newLimit < oldLimit) {
+            return false;
+        }
+    }
+
+    return true;
+};

@@ -19,6 +19,7 @@ export interface Notification {
     icon?: IconName;
     deduplicate?: boolean;
     duplicate: { old: Notification | undefined; state: 'init' | 'removed'; key: number };
+    dataTestId?: string;
 }
 
 export interface CreateNotificationOptions
@@ -28,6 +29,8 @@ export interface CreateNotificationOptions
     type?: NotificationType;
     isClosing?: boolean;
     expiration?: number;
+    dataTestId?: string;
+    preWrap?: boolean;
 }
 
 export interface CustomNotificationProps {

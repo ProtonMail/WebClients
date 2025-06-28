@@ -96,7 +96,7 @@ export const queryTransferPhotoLinks = (volumeID: string, data: TransferPhotoLin
 
 export const queryRecoverPhotoLinks = (volumeID: string, data: RecoverPhotoLinks) => ({
     method: 'put',
-    url: `drive/volumes/${volumeID}/recover-multiple`,
+    url: `drive/photos/volumes/${volumeID}/recover-multiple`,
     data,
 });
 

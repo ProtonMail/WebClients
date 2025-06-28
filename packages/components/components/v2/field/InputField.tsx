@@ -3,10 +3,9 @@ import React, { forwardRef, useContext, useRef, useState } from 'react';
 
 import { isFocusable } from 'tabbable';
 
-import { Input } from '@proton/atoms';
+import { Input, Tooltip, TooltipTypeEnum } from '@proton/atoms';
 import { FormContext } from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useInstance from '@proton/hooks/useInstance';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
@@ -127,8 +126,8 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         const denseSuffix = (() => {
             if (isDense && (error || warning)) {
                 const { tooltipType, iconClassName, title } = error
-                    ? { tooltipType: 'error' as const, iconClassName: 'color-danger', title: error }
-                    : { tooltipType: 'warning' as const, iconClassName: 'color-warning', title: warning };
+                    ? { tooltipType: TooltipTypeEnum.Error, iconClassName: 'color-danger', title: error }
+                    : { tooltipType: TooltipTypeEnum.Warning, iconClassName: 'color-warning', title: warning };
 
                 // Force open it if the condition is true, otherwise leave it as undefined for the default handlers to deal with it
                 const isTooltipOpen = isFocused && !rest.value ? true : undefined;

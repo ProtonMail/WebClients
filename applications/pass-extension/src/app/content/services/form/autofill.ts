@@ -1,19 +1,19 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { type FieldHandle, type FormHandle, NotificationAction } from 'proton-pass-extension/app/content/types';
-import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
+import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { FieldType, FormType, isIgnored } from '@proton/pass/fathom';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { FormCredentials, ItemContent, MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array/first';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
+import { omit } from '@proton/shared/lib/helpers/object';
 
 import { autofillIdentityFields } from './autofill.identity';
 
@@ -76,25 +76,12 @@ export const createAutofillService = () => {
         if (identityFields && authorized) await getIdentitiesCount();
     });
 
-    const telemetry = (type: '2fa' | 'login') => {
-        const event = (() => {
-            switch (type) {
-                case 'login':
-                    return createTelemetryEvent(TelemetryEventName.AutofillTriggered, {}, { location: 'source' });
-                case '2fa':
-                    return createTelemetryEvent(TelemetryEventName.TwoFAAutofill, {}, {});
-            }
-        })();
-
-        sendTelemetryEvent(event);
-    };
-
     const autofillLogin = (form: FormHandle, data: FormCredentials) => {
         first(form.getFieldsFor(FieldType.USERNAME) ?? [])?.autofill(data.userIdentifier);
         first(form.getFieldsFor(FieldType.EMAIL) ?? [])?.autofill(data.userIdentifier);
         form.getFieldsFor(FieldType.PASSWORD_CURRENT).forEach((field) => field.autofill(data.password));
 
-        telemetry('login');
+        sendContentScriptTelemetry(TelemetryEventName.AutofillTriggered, {}, { location: 'source' });
     };
 
     const autofillPassword = withContext<(form: FormHandle, password: string) => void>((ctx, form, password) => {
@@ -135,7 +122,7 @@ export const createAutofillService = () => {
             });
         }
 
-        telemetry('2fa');
+        sendContentScriptTelemetry(TelemetryEventName.TwoFAAutofill, {}, {});
     };
 
     /** Clears previously autofilled identity fields when called with a new identity item */
@@ -173,7 +160,7 @@ export const createAutofillService = () => {
             if (res.type === 'success' && res.shouldPrompt) {
                 ctx?.service.iframe.attachNotification()?.open({
                     action: NotificationAction.OTP,
-                    item: { shareId: res.shareId, itemId: res.itemId },
+                    item: omit(res, ['type', 'shouldPrompt']),
                 });
 
                 return true;

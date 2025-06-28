@@ -1,5 +1,10 @@
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
-import type { DateTimeModel, EventModel, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
+import type {
+    AttendeeModel,
+    DateTimeModel,
+    EventModel,
+    NotificationModel,
+} from '@proton/shared/lib/interfaces/calendar';
 
 const keys = [
     'title',
@@ -40,6 +45,21 @@ const getHasEditedNotification = (notification: NotificationModel, otherNotifica
     );
 };
 
+const getHasEditedAttendees = (attendees: AttendeeModel[], otherAttendees: AttendeeModel[]) => {
+    // If the number of attendees is different, it means they have been edited
+    if (attendees.length !== otherAttendees.length) {
+        return true;
+    }
+
+    // Compare each attendee's email to check if they have been modified
+    return attendees.some((attendee, index) => {
+        const otherAttendee = otherAttendees[index];
+
+        // Compare only email addresses
+        return attendee.email !== otherAttendee.email;
+    });
+};
+
 export const getHasEditedNotifications = (
     notifications: NotificationModel[],
     otherNotifications: NotificationModel[]
@@ -55,12 +75,21 @@ const getNotifications = ({ isAllDay, partDayNotifications, fullDayNotifications
 };
 
 export const getHasDoneChanges = (model: EventModel, otherModel: EventModel, isEditMode: boolean) => {
+    const hasEditedKeys = getHasEdited(keys, model, otherModel);
+    const hasEditedNotifications = getHasEditedNotifications(getNotifications(model), getNotifications(otherModel));
+    const hasEditedStartTimezone = getHasEditedTimezone(model.start, otherModel.start);
+    const hasEditedEndTimezone = getHasEditedTimezone(model.end, otherModel.end);
+    const hasEditedStartDateTime = isEditMode && getHasEditedDateTime(model.start, otherModel.start);
+    const hasEditedEndDateTime = isEditMode && getHasEditedDateTime(model.end, otherModel.end);
+    const hasEditedAttendees = getHasEditedAttendees(model.attendees, otherModel.attendees);
+
     return (
-        getHasEdited(keys, model, otherModel) ||
-        getHasEditedNotifications(getNotifications(model), getNotifications(otherModel)) ||
-        getHasEditedTimezone(model.start, otherModel.start) ||
-        getHasEditedTimezone(model.end, otherModel.end) ||
-        (isEditMode &&
-            (getHasEditedDateTime(model.start, otherModel.start) || getHasEditedDateTime(model.end, otherModel.end)))
+        hasEditedKeys ||
+        hasEditedNotifications ||
+        hasEditedStartTimezone ||
+        hasEditedEndTimezone ||
+        hasEditedStartDateTime ||
+        hasEditedEndDateTime ||
+        hasEditedAttendees
     );
 };

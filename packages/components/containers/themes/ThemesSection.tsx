@@ -10,7 +10,8 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
-import { ColorScheme, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
+import { ColorScheme, ThemeModeSetting } from '@proton/shared/lib/themes/constants';
+import { getThemes } from '@proton/shared/lib/themes/themes';
 
 import ThemeCards from './ThemeCards';
 import { useTheme } from './ThemeProvider';

@@ -4,6 +4,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
+import useFlag from '@proton/unleash/useFlag';
 
 import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -18,14 +19,17 @@ export const useInvitationsView = () => {
     const { getCachedInvitations, loadInvitations } = useInvitationsListing();
     const driveEventManager = useDriveEventManager();
     const [showPhotosWithAlbums, setShowPhotosWithAlbums] = useState<undefined | boolean>();
-
-    const cachedInvitations = getCachedInvitations();
-    const invitations = useMemoArrayNoMatterTheOrder(
-        cachedInvitations.filter((invitation) => invitation.link.type !== LinkType.ALBUM || showPhotosWithAlbums)
-    );
-    const { getDefaultPhotosShare } = useDefaultShare();
-
     const { photosWithAlbumsEnabled } = useUserSettings();
+    const cachedInvitations = getCachedInvitations();
+
+    const invitations = useMemoArrayNoMatterTheOrder(
+        cachedInvitations.filter(
+            (invitation) => invitation.link.type !== LinkType.ALBUM || showPhotosWithAlbums || photosWithAlbumsEnabled
+        )
+    );
+
+    const { getDefaultPhotosShare } = useDefaultShare();
+    const photosWithAlbumsForNewVolume = useFlag('DriveAlbumsNewVolumes');
 
     const invitationsBrowserItems: SharedWithMeItem[] = useMemo(
         () =>
@@ -73,7 +77,10 @@ export const useInvitationsView = () => {
             setShowPhotosWithAlbums(true);
         } else {
             void getDefaultPhotosShare(abortController.signal).then((photosShare) =>
-                setShowPhotosWithAlbums(photosShare?.volumeType === VolumeType.Photos)
+                setShowPhotosWithAlbums(
+                    photosShare?.volumeType === VolumeType.Photos ||
+                        (photosWithAlbumsForNewVolume && photosShare === undefined)
+                )
             );
         }
 

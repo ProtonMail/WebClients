@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { FilePreview, NavigationControl, useActiveBreakpoint } from '@proton/components';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import {
     type DecryptedLink,
@@ -63,10 +63,10 @@ function SharedPagePreviewContainer({
         contents,
         navigation,
         link: loadedLink,
+        videoStreaming,
     } = usePublicFileView(token, linkId, true, sortParams);
-
     const rootRef = useRef<HTMLDivElement>(null);
-    const isDocument = isProtonDocument(loadedLink?.mimeType || '');
+    const isDocument = isProtonDocsDocument(loadedLink?.mimeType || '');
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
     const [publicDetailsModal, showPublicDetailsModal] = usePublicDetailsModal();
     const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
@@ -83,6 +83,7 @@ function SharedPagePreviewContainer({
                 imgThumbnailUrl={loadedLink?.cachedThumbnailUrl}
                 fileSize={loadedLink?.size}
                 contents={contents}
+                videoStreaming={videoStreaming}
                 ref={rootRef}
                 navigationControls={
                     loadedLink &&
@@ -136,7 +137,7 @@ export default function SharedFolder({
     const { submitAbuseReport, getVirusReportInfo } = usePublicShare();
 
     const onItemOpen = (item: DecryptedLink) => {
-        if (isProtonDocument(item.mimeType) && openInDocs) {
+        if (isProtonDocsDocument(item.mimeType) && openInDocs) {
             openInDocs(item.linkId);
             return;
         }

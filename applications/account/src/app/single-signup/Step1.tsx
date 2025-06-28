@@ -1,6 +1,5 @@
 import type { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
@@ -28,16 +27,15 @@ import {
     getProtectDevices,
     getStreaming,
 } from '@proton/components/containers/payments/features/vpn';
-import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
+import { ApplePayButton, ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
-import type { BillingAddress, ExtendedTokenPayment, TokenPayment } from '@proton/payments';
+import type { BillingAddress, ExtendedTokenPayment, PaymentProcessorHook, TokenPayment } from '@proton/payments';
 import {
     CYCLE,
     type Currency,
@@ -50,11 +48,13 @@ import {
     type PlanIDs,
     type StrictPlan,
     getBillingAddressStatus,
+    getHas2024OfferCoupon,
+    getIsVpnPlan,
     getPaymentsVersion,
+    getPlanFromPlanIDs,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { getHas2024OfferCoupon, getIsVpnPlan } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
@@ -67,9 +67,8 @@ import {
 import type { RequiredCheckResponse, SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
@@ -80,8 +79,8 @@ import noop from '@proton/utils/noop';
 import { getLocaleTermsURL } from '../content/helper';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
-import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
-import { SignupType } from '../signup/interfaces';
+import { type SignupCacheResult, SignupType, type SubscriptionData } from '../signup/interfaces';
+import { AccountFormDataContextProvider } from '../signupCtx/context/accountData/AccountFormDataContext';
 import type { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import AccountStepDetails from '../single-signup-v2/AccountStepDetails';
 import DiscountBanner from '../single-signup-v2/DiscountBanner';
@@ -97,6 +96,7 @@ import type { Background } from './Layout';
 import Layout from './Layout';
 import PaymentSummary from './PaymentSummary';
 import RightPlanSummary from './RightPlanSummary';
+import SignIntoLink from './SignIntoLink';
 import StepLabel from './StepLabel';
 import UpsellModal from './UpsellModal';
 import VPNPassUpsellToggle from './VPNPassUpsellButton';
@@ -130,7 +130,12 @@ export const getBilledText = (cycle: CYCLE): string | null => {
 const getBundleTitle = (a: string, b: string) => {
     return c('vpn_2step: info').t`Your ${a} and ${b} bundle`;
 };
-const getPlanTitle = (selected: string) => {
+const getPlanTitle = (selected: string, trial?: boolean) => {
+    if (trial) {
+        const freeFor14Days = <span className="color-success">{c('b2b_trials_2025_Info').t`free for 14 days`}</span>;
+        // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
+        return c('b2b_trials_2025_Info').jt`Try ${selected} ${freeFor14Days}`;
+    }
     return c('vpn_2step: info').t`Your ${selected} plan`;
 };
 const FeatureItem = ({ left, text }: { left: ReactNode; text: ReactNode }) => {
@@ -186,6 +191,7 @@ const Step1 = ({
     measure,
     className,
     currencyUrlParam,
+    trial,
 }: {
     activeBreakpoint: Breakpoints;
     defaultEmail?: string;
@@ -209,6 +215,7 @@ const Step1 = ({
     measure: Measure;
     className?: string;
     currencyUrlParam?: Currency;
+    trial?: boolean;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const normalApi = useApi();
@@ -333,7 +340,8 @@ const Step1 = ({
                 newCurrency,
                 newCycle,
                 newBillingAddress,
-                coupon
+                coupon,
+                trial
             );
 
             if (!validateFlow()) {
@@ -453,8 +461,9 @@ const Step1 = ({
         return handleCompletion(subscriptionData);
     };
 
+    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
     const hasGuarantee =
-        [PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan;
+        ([PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan) && !isTrial;
 
     const measurePay = (
         type: TelemetryPayType,
@@ -499,7 +508,7 @@ const Step1 = ({
         paymentMethodStatusExtended: model.paymentMethodStatusExtended,
         onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
-                const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
+                const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !isTrial;
 
                 const extendedParams: ExtendedTokenPayment = {
                     paymentsVersion,
@@ -802,34 +811,34 @@ const Step1 = ({
     );
 
     const process = (processor: PaymentProcessorHook | undefined) => {
-        const isFormValid = validatePayment() && accountDetailsRef.current?.validate();
-        if (!isFormValid) {
-            return;
-        }
-
-        const telemetryType = (() => {
-            const isFreeSignup = paymentFacade.amount <= 0;
-
-            if (isFreeSignup) {
-                return 'free';
-            }
-
-            if (processor?.meta.type === 'paypal') {
-                return 'pay_pp';
-            }
-
-            if (processor?.meta.type === 'paypal-credit') {
-                return 'pay_pp_no_cc';
-            }
-
-            return 'pay_cc';
-        })();
-        measurePaySubmit(telemetryType);
-
         async function run() {
             if (!processor) {
                 return;
             }
+
+            const isFormValid = validatePayment() && (await accountDetailsRef.current?.validate());
+            if (!isFormValid) {
+                return;
+            }
+
+            const telemetryType = (() => {
+                const isFreeSignup = paymentFacade.amount <= 0;
+
+                if (isFreeSignup) {
+                    return 'free';
+                }
+
+                if (processor?.meta.type === 'paypal') {
+                    return 'pay_pp';
+                }
+
+                if (processor?.meta.type === 'paypal-credit') {
+                    return 'pay_pp_no_cc';
+                }
+
+                return 'pay_cc';
+            })();
+            measurePaySubmit(telemetryType);
 
             try {
                 await processor.processPaymentToken();
@@ -981,7 +990,7 @@ const Step1 = ({
         />
     );
 
-    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue);
+    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue) || isTrial;
     const loadingPaymentsForm = model.loadingDependencies;
 
     return (
@@ -1049,6 +1058,10 @@ const Step1 = ({
                 )}
                 {(() => {
                     if (!actualCheckout.discountPercent) {
+                        return;
+                    }
+
+                    if (trial) {
                         return;
                     }
 
@@ -1163,94 +1176,73 @@ const Step1 = ({
                             />
                             <BoxContent>
                                 <div className="relative">
-                                    <AccountStepDetails
+                                    <AccountFormDataContextProvider
+                                        availableSignupTypes={new Set([SignupType.External])}
                                         domains={model.domains}
-                                        signupTypes={[SignupType.Email]}
                                         defaultEmail={defaultEmail}
-                                        passwordFields={false}
-                                        model={model}
-                                        measure={measure}
-                                        api={silentApi}
-                                        accountStepDetailsRef={accountDetailsRef}
-                                        disableChange={loadingSignup}
-                                        onSubmit={
-                                            hasSelectedFree
-                                                ? () => {
-                                                      withLoadingSignup(
-                                                          handleCompletion(
-                                                              getFreeSubscriptionData(model.subscriptionData)
-                                                          )
-                                                      ).catch(noop);
-                                                  }
-                                                : undefined
-                                        }
-                                        footer={(details) => {
-                                            const signInTo = {
-                                                pathname: `/dashboard${stringifySearchParams(
-                                                    {
-                                                        plan: options.plan.Name,
-                                                        cycle: `${options.cycle}`,
-                                                        currency: options.currency,
-                                                        coupon: options.checkResult.Coupon?.Code,
-                                                        type: 'offer',
-                                                        ref: 'signup',
-                                                    },
-                                                    '?'
-                                                )}`,
-                                                state: {
-                                                    username: details.email,
-                                                },
-                                            } as const;
-                                            const signIn = (
-                                                <Link
-                                                    key="signin"
-                                                    className="link link-focus text-nowrap"
-                                                    to={signInTo}
-                                                    onClick={() =>
-                                                        measure({
-                                                            event: TelemetryAccountSignupEvents.userSignIn,
-                                                            dimensions: {
-                                                                location: 'step2',
-                                                            },
-                                                        })
-                                                    }
-                                                >
-                                                    {c('Link').t`Sign in`}
-                                                </Link>
-                                            );
+                                    >
+                                        <AccountStepDetails
+                                            passwordFields={false}
+                                            model={model}
+                                            measure={measure}
+                                            accountStepDetailsRef={accountDetailsRef}
+                                            disableChange={loadingSignup}
+                                            onSubmit={
+                                                hasSelectedFree
+                                                    ? () => {
+                                                          withLoadingSignup(
+                                                              handleCompletion(
+                                                                  getFreeSubscriptionData(model.subscriptionData)
+                                                              )
+                                                          ).catch(noop);
+                                                      }
+                                                    : undefined
+                                            }
+                                            footer={(details) => {
+                                                const signIn = (
+                                                    <SignIntoLink
+                                                        key="sign-in"
+                                                        disabled={model.loadingDependencies}
+                                                        options={options}
+                                                        measure={measure}
+                                                        details={details}
+                                                    />
+                                                );
 
-                                            return (
-                                                <>
-                                                    {hasSelectedFree && (
-                                                        <div className="mb-4">
-                                                            <Button
-                                                                type="submit"
-                                                                size="large"
-                                                                loading={loadingSignup}
-                                                                color="norm"
-                                                                fullWidth
-                                                            >
-                                                                {c('pass_signup_2023: Action')
-                                                                    .t`Start using ${appName}`}
-                                                            </Button>
-                                                        </div>
-                                                    )}
-                                                    <span>
-                                                        {
-                                                            // translator: Full sentence "Already have an account? Sign in"
-                                                            c('Go to sign in').jt`Already have an account? ${signIn}`
-                                                        }
-                                                    </span>
-                                                    {!isB2bPlan && (
-                                                        <div className="mt-4 color-weak text-sm">
-                                                            {c('Info')
-                                                                .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
-                                                        </div>
-                                                    )}
-                                                </>
-                                            );
-                                        }}
-                                    />
+                                                return (
+                                                    <>
+                                                        {hasSelectedFree && (
+                                                            <div className="mb-4">
+                                                                <Button
+                                                                    type="submit"
+                                                                    size="large"
+                                                                    loading={loadingSignup}
+                                                                    color="norm"
+                                                                    fullWidth
+                                                                >
+                                                                    {c('pass_signup_2023: Action')
+                                                                        .t`Start using ${appName}`}
+                                                                </Button>
+                                                            </div>
+                                                        )}
+                                                        <span>
+                                                            {
+                                                                // translator: Full sentence "Already have an account? Sign in"
+                                                                c('Go to sign in')
+                                                                    .jt`Already have an account? ${signIn}`
+                                                            }
+                                                        </span>
+                                                        {!isB2bPlan && (
+                                                            <div className="mt-4 color-weak text-sm">
+                                                                {c('Info')
+                                                                    .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
+                                                            </div>
+                                                        )}
+                                                    </>
+                                                );
+                                            }}
+                                        />
+                                    </AccountFormDataContextProvider>
                                 </div>
                             </BoxContent>
                         </div>
@@ -1280,7 +1272,7 @@ const Step1 = ({
                                         title={
                                             options.planIDs[PLANS.VPN_PASS_BUNDLE]
                                                 ? getBundleTitle(VPN_SHORT_APP_NAME, PASS_SHORT_APP_NAME)
-                                                : getPlanTitle(planInformation.title)
+                                                : getPlanTitle(planInformation.title, trial)
                                         }
                                     />
                                 </div>
@@ -1292,10 +1284,15 @@ const Step1 = ({
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
                             step={showStepLabel ? step++ : undefined}
-                            title={c('Header').t`Checkout`}
+                            title={trial ? c('Header').t`Payment details` : c('Header').t`Checkout`}
                             right={!showCycleAndSelectors ? currencySelector : null}
                         />
                         <BoxContent>
+                            {trial && (
+                                <div className="mb-4 text-sm color-weak">
+                                    {c('b2b_trials_2025_Info').t`During the trial period, you can have up to 10 users.`}
+                                </div>
+                            )}
                             <div className="flex justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
                                 <div className="lg:flex-1 md:pr-1 order-1 lg:order-0">
                                     <form
@@ -1328,6 +1325,7 @@ const Step1 = ({
                                                             noop
                                                         )
                                                     }
+                                                    isTrialMode={trial}
                                                 />
                                                 <div className="border-bottom border-weak my-6" />
                                             </>
@@ -1342,6 +1340,7 @@ const Step1 = ({
                                                 billingAddressStatus={getBillingAddressStatus(
                                                     model.subscriptionData.billingAddress
                                                 )}
+                                                isTrial={isTrial}
                                             />
                                         ) : (
                                             <div className="mb-4">
@@ -1396,6 +1395,18 @@ const Step1 = ({
                                                 );
                                             }
 
+                                            if (
+                                                paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY &&
+                                                options.checkResult.AmountDue > 0
+                                            ) {
+                                                return (
+                                                    <ApplePayButton
+                                                        applePay={paymentFacade.applePay}
+                                                        iframeHandles={paymentFacade.iframeHandles}
+                                                    />
+                                                );
+                                            }
+
                                             return (
                                                 <>
                                                     <Button
@@ -1407,9 +1418,14 @@ const Step1 = ({
                                                         data-testid="pay"
                                                         fullWidth
                                                     >
-                                                        {options.checkResult.AmountDue > 0
-                                                            ? c('Action').jt`Pay ${price}`
-                                                            : c('Action').t`Confirm`}
+                                                        {(() => {
+                                                            if (isTrial) {
+                                                                return c('Action').t`Try for free`;
+                                                            }
+                                                            return options.checkResult.AmountDue > 0
+                                                                ? c('Action').jt`Pay ${price}`
+                                                                : c('Action').t`Confirm`;
+                                                        })()}
                                                     </Button>
                                                     {hasGuarantee && (
                                                         <div className="text-center color-success my-4">
@@ -1418,11 +1434,13 @@ const Step1 = ({
                                                     )}
                                                     <Alert3ds />
                                                     <div className="mt-4 text-sm color-weak text-center">
-                                                        {
-                                                            // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
-                                                            c('new_plans: signup')
-                                                                .jt`By clicking on "Pay", you agree to our ${termsAndConditions}.`
-                                                        }
+                                                        {isTrial
+                                                            ? // translator: Full sentence "By clicking on "Try", you agree to our terms and conditions."
+                                                              c('b2b_trials_2025_Info')
+                                                                  .jt`By clicking on "Try", you agree to our ${termsAndConditions}.`
+                                                            : // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
+                                                              c('new_plans: signup')
+                                                                  .jt`By clicking on "Pay", you agree to our ${termsAndConditions}.`}
                                                     </div>
                                                 </>
                                             );
@@ -1457,6 +1475,9 @@ const Step1 = ({
                                             giftCode={
                                                 <GiftCodeSummary
                                                     coupon={coupon}
+                                                    checkResult={model.subscriptionData.checkResult}
+                                                    planIDs={options.planIDs}
+                                                    plansMap={model.plansMap}
                                                     onApplyCode={async (code) => {
                                                         const checkResult = await getSubscriptionPrices(
                                                             getPaymentsApi(silentApi),
@@ -1464,7 +1485,8 @@ const Step1 = ({
                                                             options.currency,
                                                             options.cycle,
                                                             model.subscriptionData.billingAddress,
-                                                            code
+                                                            code,
+                                                            trial
                                                         );
 
                                                         setModel((old) => ({
@@ -1487,7 +1509,9 @@ const Step1 = ({
                                                             options.planIDs,
                                                             options.currency,
                                                             options.cycle,
-                                                            model.subscriptionData.billingAddress
+                                                            model.subscriptionData.billingAddress,
+                                                            undefined, // don't pass coupon code, it will be removed
+                                                            trial
                                                         );
 
                                                         setModel((old) => ({

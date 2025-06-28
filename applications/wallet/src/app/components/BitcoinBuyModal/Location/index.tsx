@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import type { WasmApiCountry } from '@proton/andromeda';
 import { Href } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
-import { Icon } from '@proton/components/index';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/index';
 import { useCountriesByProvider } from '@proton/wallet/store';

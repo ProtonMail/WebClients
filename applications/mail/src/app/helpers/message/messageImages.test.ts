@@ -1,5 +1,7 @@
-import type { MessageImage, MessageImages, MessageState } from '../../store/messages/messagesTypes';
-import { createDocument } from '../test/message';
+import type { MessageImage, MessageImages, MessageState } from '@proton/mail/store/messages/messagesTypes';
+
+import { parseDOMStringToBodyElement } from 'proton-mail/helpers/test/helper';
+
 import { removeProxyURLAttributes, replaceProxyWithOriginalURLAttributes } from './messageImages';
 
 const imageURL = 'imageURL';
@@ -149,7 +151,7 @@ describe('replaceProxyWithOriginalURLAttributes', () => {
                        </svg>
                   </div>`;
 
-        const result = replaceProxyWithOriginalURLAttributes(message, createDocument(content));
+        const result = replaceProxyWithOriginalURLAttributes(message, parseDOMStringToBodyElement(content));
 
         expect(result).toEqual(expected);
     });

@@ -20,15 +20,13 @@ const IPCell = ({ ip, isAuthLogAdvanced, isProtonSentinelEnabled, firstRow }: Pr
 
     if (firstRow) {
         return (
-            <span className="flex-1 text-bold color-weak">
+            <div className="flex-1 text-bold color-weak text-center">
                 {!isProtonSentinelEnabled && !isAuthLogAdvanced
                     ? advancedLogsAndProtonSentinelUpsell
                     : advancedLogsUpsell}
-            </span>
+            </div>
         );
     }
-
-    return null;
 };
 
 export default IPCell;

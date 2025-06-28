@@ -23,8 +23,9 @@ import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { FlagProvider } from '@proton/unleash';
 
 import { bootstrapApp } from './bootstrap';
+import NotificationManagerInjector from './components/notification/NotificationManagerInjector';
 import * as config from './config';
-import type { MailStore } from './store/store';
+import { type MailStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
 
 const defaultState: {
@@ -81,6 +82,7 @@ const App = () => {
                                                 <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
                                                     <ErrorBoundary big component={<StandardErrorPage big />}>
                                                         <StandardPrivateApp noModals>
+                                                            <NotificationManagerInjector />
                                                             <state.MainContainer />
                                                         </StandardPrivateApp>
                                                     </ErrorBoundary>

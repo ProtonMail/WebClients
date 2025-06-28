@@ -17,7 +17,8 @@ import {
     useModalState,
 } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
-import { getFolderName } from '@proton/mail/labels/helpers';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { getFolderName } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
@@ -44,7 +45,6 @@ import useScrollToTop from '../../components/list/useScrollToTop';
 import MessageOnlyView from '../../components/message/MessageOnlyView';
 import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';
 import Toolbar from '../../components/toolbar/Toolbar';
-import { MESSAGE_ACTIONS } from '../../constants';
 import { isMessage, isSearch as testIsSearch } from '../../helpers/elements';
 import { isColumnMode, isConversationMode } from '../../helpers/mailSettings';
 import {
@@ -322,6 +322,7 @@ const MailboxContainer = ({ labelID: inputLabelID, mailSettings, userSettings, e
                 selectAll,
                 onCheckAll: handleCheckAll,
                 sourceAction,
+                silent: true,
             });
         },
         [selectedIDs, labelID, handleBack, selectAll]
@@ -609,6 +610,7 @@ const MailboxContainer = ({ labelID: inputLabelID, mailSettings, userSettings, e
                                 !showContentPanel && 'hidden',
                                 showContentView ? 'overflow-hidden' : 'overflow-auto',
                             ])}
+                            aria-label={c('Info').t`Message view`}
                         >
                             {showPlaceholder && (
                                 <MailboxContainerPlaceholder

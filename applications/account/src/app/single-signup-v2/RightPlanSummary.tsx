@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { getDealDurationText } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { type CYCLE, type Currency, type Cycle } from '@proton/payments';
+import type { CYCLE, Currency, Cycle } from '@proton/payments';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -25,6 +25,7 @@ interface Props {
     className?: string;
     checkout?: SubscriptionCheckoutData;
     mode?: 'addons';
+    isTrial?: boolean;
 }
 
 const RightPlanSummary = ({
@@ -39,6 +40,7 @@ const RightPlanSummary = ({
     className,
     checkout,
     mode,
+    isTrial,
 }: Props) => {
     const { title, logo, features = [], isLifetime } = summaryPlan ?? {};
 
@@ -90,9 +92,11 @@ const RightPlanSummary = ({
                 return (
                     <>
                         {addons}
-                        <div className="mb-4">
-                            <hr />
-                        </div>
+                        {!isTrial && (
+                            <div className="mb-4">
+                                <hr />
+                            </div>
+                        )}
                     </>
                 );
             })()}

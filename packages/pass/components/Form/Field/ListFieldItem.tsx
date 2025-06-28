@@ -1,18 +1,22 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import type { KeyboardEventHandler } from 'react';
-import { useRef, useState } from 'react';
+import { memo, useRef, useState } from 'react';
 
-import { CircleLoader } from '@proton/atoms';
+import { ButtonLike, CircleLoader } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import type { ListFieldValue } from './ListField';
 
-export type ListFieldItemProps<T> = ListFieldValue<T> & {
+export type ListFieldItemProps<T> = {
+    index: number;
+    entry: ListFieldValue<T>;
     error?: boolean;
     loading: boolean;
-    onChange: (value: string) => void;
-    onMoveLeft: () => void;
-    onMoveRight: () => void;
+    onChange: (value: string, idx: number, entry: ListFieldValue<T>) => void;
+    onDelete: (idx: number) => void;
+    onMoveLeft: (idx: number) => void;
+    onMoveRight: (idx: number) => void;
     renderValue: (value: T) => string;
 };
 
@@ -31,12 +35,13 @@ const getCaretPosition = (el: HTMLElement): number => {
     return 0;
 };
 
-export const ListFieldItem = <T,>({
-    id,
+const ListFieldItemRender = <T,>({
+    index,
+    entry,
     error,
     loading,
-    value,
     onChange,
+    onDelete,
     onMoveLeft,
     onMoveRight,
     renderValue,
@@ -47,7 +52,7 @@ export const ListFieldItem = <T,>({
     const handleBlur = () => {
         setEditing(false);
         const update = ref.current?.innerText?.trim() ?? '';
-        if (update !== value) onChange(update);
+        if (update !== entry.value) onChange(update, index, entry);
     };
 
     const handleKeyDown: KeyboardEventHandler<HTMLSpanElement> = (evt) => {
@@ -59,7 +64,7 @@ export const ListFieldItem = <T,>({
         switch (evt.key) {
             case 'Enter':
                 evt.preventDefault();
-                onMoveRight();
+                onMoveRight(index);
                 break;
 
             case 'ArrowLeft':
@@ -68,7 +73,7 @@ export const ListFieldItem = <T,>({
                  * of the contenteditable's inner text */
                 if (getCaretPosition(el) === 0) {
                     evt.preventDefault();
-                    onMoveLeft();
+                    onMoveLeft(index);
                 }
                 break;
 
@@ -77,7 +82,7 @@ export const ListFieldItem = <T,>({
                  * of the contenteditable's inner text */
                 if (getCaretPosition(el) >= (innerText.length ?? 0)) {
                     evt.preventDefault();
-                    onMoveRight();
+                    onMoveRight(index);
                 }
                 break;
         }
@@ -88,19 +93,21 @@ export const ListFieldItem = <T,>({
             className={clsx(
                 'pass-field-text-group--item flex flex-nowrap flex-row max-w-full overflow-hidden stop-propagation border rounded',
                 error && 'pass-field-text-group--item:error',
-                loading && 'pass-field-text-group--item:loading'
+                loading && 'pass-field-text-group--item:loading',
+                editing && 'pass-field-text-group--item:editing'
             )}
         >
             <button
-                className="pill-remove inline-flex flex-nowrap items-center px-2 py-1 max-w-full gap-2"
+                className="pill-remove inline-flex flex-nowrap items-center px-2 py-1 max-w-full gap-2 relative"
                 type="button"
                 tabIndex={-1}
             >
                 <span
-                    id={id}
+                    id={entry.id}
                     onBlur={handleBlur}
                     onFocus={() => setEditing(true)}
                     onClick={(e) => e.stopPropagation()}
+                    onMouseDown={(e) => e.stopPropagation()}
                     contentEditable
                     onKeyDown={handleKeyDown}
                     ref={ref}
@@ -108,10 +115,30 @@ export const ListFieldItem = <T,>({
                     className={clsx(!editing && 'text-ellipsis')}
                     suppressContentEditableWarning
                 >
-                    {renderValue(value)}
+                    {renderValue(entry.value)}
                 </span>
+
                 {loading && <CircleLoader size="small" className="shrink-0" />}
+
+                {!loading && (
+                    <ButtonLike
+                        as="a"
+                        className="pass-field-text-group--item-delete flex absolute"
+                        shape="ghost"
+                        pill
+                        icon
+                        onClick={(evt) => {
+                            evt.preventDefault();
+                            evt.stopPropagation();
+                            onDelete(index);
+                        }}
+                    >
+                        <Icon name="cross" className="shrink-0" />
+                    </ButtonLike>
+                )}
             </button>
         </li>
     );
 };
+
+export const ListFieldItem = memo(ListFieldItemRender) as typeof ListFieldItemRender;

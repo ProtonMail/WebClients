@@ -1,9 +1,9 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { selectItem, selectPasskeys } from '@proton/pass/store/selectors';
-import { WorkerMessageType } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 export const createPasskeyService = () => {

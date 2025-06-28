@@ -1,11 +1,10 @@
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { ICAL_EXTENSIONS } from '@proton/shared/lib/calendar/constants';
 import { KEY_EXTENSION } from '@proton/shared/lib/constants';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { extractContentValue } from '@proton/shared/lib/mail/send/helpers';
-
-import type { MessageState } from '../../store/messages/messagesTypes';
 
 export const updateKeyPackets = (modelMessage: MessageState, syncedMessage: MessageState) => {
     let changed = false;

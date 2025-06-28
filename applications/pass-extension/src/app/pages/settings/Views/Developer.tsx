@@ -3,13 +3,13 @@ import { type FC } from 'react';
 import { DropdownDebug } from 'proton-pass-extension/lib/components/Settings/debug/DropdownDebug';
 import { NotificationDebug } from 'proton-pass-extension/lib/components/Settings/debug/NotificationDebug';
 import { WebsiteRulesDebug } from 'proton-pass-extension/lib/components/Settings/debug/WebsiteRulesDebug';
+import { pageMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { CACHE_KEY } from '@proton/pass/lib/api/cache';
-import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { WorkerMessageType } from '@proton/pass/types';
 
 export const Developer: FC = () => (
     <>

@@ -3,7 +3,11 @@ import LinkifyIt from 'linkify-it';
 import { getUTMTrackersFromURL } from '@proton/shared/lib/mail/trackers';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
+export const CUSTOM_DOMAINS = ['cloud', 'team'];
+
 const linkifyInstance = new LinkifyIt();
+
+linkifyInstance.tlds(CUSTOM_DOMAINS, true);
 
 const htmlEntities = (str = '') => {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

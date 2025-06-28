@@ -40,14 +40,17 @@ export const VPN_SHORT_APP_NAME = 'VPN';
 export const VPN_APP_NAME = `${BRAND_NAME} ${VPN_SHORT_APP_NAME}`;
 export const DOCS_SHORT_APP_NAME = 'Docs';
 export const DOCS_APP_NAME = `${BRAND_NAME} ${DOCS_SHORT_APP_NAME}`;
-export const DOCS_EDITOR_SHORT_APP_NAME = 'Docs Editor';
+export const DOCS_EDITOR_SHORT_APP_NAME = `${DOCS_SHORT_APP_NAME} Editor`;
 export const DOCS_EDITOR_APP_NAME = `${BRAND_NAME} ${DOCS_EDITOR_SHORT_APP_NAME}`;
+export const SHEETS_SHORT_APP_NAME = 'Sheets';
+export const SHEETS_APP_NAME = `${BRAND_NAME} ${SHEETS_SHORT_APP_NAME}`;
+export const SHEETS_EDITOR_SHORT_APP_NAME = `${SHEETS_SHORT_APP_NAME} Editor`;
+export const SHEETS_EDITOR_APP_NAME = `${BRAND_NAME} ${SHEETS_EDITOR_SHORT_APP_NAME}`;
 export const VERIFY_APP_NAME = 'Proton Verify';
 export const WALLET_SHORT_APP_NAME = 'Wallet';
 export const WALLET_APP_NAME = `${BRAND_NAME} ${WALLET_SHORT_APP_NAME}`;
 export const LUMO_SHORT_APP_NAME = 'Lumo';
 export const LUMO_APP_NAME = `${BRAND_NAME} ${LUMO_SHORT_APP_NAME}`;
-export const REFERRER_CODE_MAIL_TRIAL = 'MAILPLUSTRIAL';
 export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
 export const DARK_WEB_MONITORING_NAME = 'Dark Web Monitoring';
 
@@ -68,6 +71,8 @@ export const APPS = {
     PROTONPASSBROWSEREXTENSION: 'proton-pass-extension',
     PROTONDOCS: 'proton-docs',
     PROTONDOCSEDITOR: 'proton-docs-editor',
+    PROTONSHEETS: 'proton-sheets',
+    PROTONSHEETSEDITOR: 'proton-sheets-editor',
     PROTONLUMO: 'proton-lumo',
 } as const;
 
@@ -258,6 +263,26 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         settingsSlug: 'docs-editor',
         product: Product.Docs,
     },
+    [APPS.PROTONSHEETS]: {
+        publicPath: '',
+        subdomain: 'sheets',
+        name: SHEETS_APP_NAME,
+        bareName: SHEETS_SHORT_APP_NAME,
+        clientID: 'web-sheets',
+        icon: 'brand-proton', // TODO: brand icon for Sheets
+        settingsSlug: 'sheets',
+        product: Product.Docs,
+    },
+    [APPS.PROTONSHEETSEDITOR]: {
+        publicPath: '',
+        subdomain: 'sheets-editor',
+        name: SHEETS_EDITOR_APP_NAME,
+        bareName: SHEETS_EDITOR_SHORT_APP_NAME,
+        clientID: 'web-sheets-editor',
+        icon: 'brand-proton', // TODO: brand icon for Sheets
+        settingsSlug: 'sheets-editor',
+        product: Product.Docs,
+    },
     [APPS.PROTONLUMO]: {
         publicPath: '',
         subdomain: 'lumo',
@@ -346,9 +371,9 @@ export const SSO_PATHS = {
     LUMO_SIGNUP: '/lumo/signup',
     LUMO_SIGN_IN: '/lumo',
     SIGNUP: '/signup',
+    START: '/start',
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
-    TRIAL: '/trial',
     JOIN_MAGIC_LINK: '/join',
     PORKBUN_SIGNUP: '/partner/porkbun/signup',
     PORKBUN_SIGN_IN: '/partner/porkbun/login',
@@ -469,8 +494,9 @@ export enum ADDRESS_PERMISSION_TYPE {
 }
 
 export enum ADDRESS_FLAGS {
-    FLAG_DISABLE_E2EE = 16,
-    FLAG_DISABLE_EXPECTED_SIGNED = 32,
+    FLAG_DISABLE_E2EE = 1 << 4,
+    FLAG_DISABLE_EXPECTED_SIGNED = 1 << 5,
+    BYOE = 1 << 6,
 }
 
 export enum MEMBER_PERMISSIONS {
@@ -608,6 +634,8 @@ export enum MAIL_UPSELL_PATHS {
     UNLIMITED_FOLDERS = 'unlimited-folders',
     UNLIMITED_LABELS = 'unlimited-labels',
     UNLIMITED_FILTERS = 'unlimited-filters',
+    UNLIMITED_FILTERS_NEWSLETTER_SUBSCRIPTION = 'unlimited-filters-newsletter-subscription',
+    UNLIMITED_FOLDERS_NEWSLETTER_SUBSCRIPTION = 'unlimited-folders-newsletter-subscription',
     UNLIMITED_ADDRESSES = 'unlimited-addresses',
     FORWARD_EMAILS = 'forward-emails',
     SMTP_SUBMISSION = 'smtp-submission',
@@ -630,6 +658,7 @@ export enum MAIL_UPSELL_PATHS {
     ONE_DOLLAR_INITIAL_REMINDER = 'one-dollar-initial-reminder',
     ONE_DOLLAR_SECOND_REMINDER = 'one-dollar-second-reminder',
     ONE_DOLLAR_LAST_REMINDER = 'one-dollar-last-reminder',
+    GO_UNLIMITED_2025 = 'go-unlimited-2025',
     // Monthly subscriber upsell
     PLUS_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_MONEY = 'plus_monthly-subscriber-nudge-variant-money',
     BUNDLE_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_MONEY = 'bundle_monthly-subscriber-nudge-variant-money',
@@ -681,6 +710,7 @@ export enum SHARED_UPSELL_PATHS {
     TRIAL_WILL_END = 'trial-will-end',
     TOP_NAVIGATION_BAR = 'top-navigation-bar',
     PUBLIC_SHARING_PERMISSIONS_MENU = 'public-sharing-permissions-menu',
+    EASY_SWITCH_BYOE = 'easy-switch-byoe',
 }
 
 export enum DASHBOARD_UPSELL_PATHS {
@@ -1082,3 +1112,5 @@ export const RECOVERY_FILE_FILE_NAME = `proton_recovery${KEY_FILE_EXTENSION}`;
 export const TWO_FA_RECOVERY_CODES_FILE_NAME = `proton_2FA_recovery_codes.txt`;
 
 export const MAX_FOLDER_NESTING_LEVEL = 2;
+
+export const APPS_WITH_IN_APP_PAYMENTS = new Set<APP_NAMES>([APPS.PROTONMAIL, APPS.PROTONACCOUNT, APPS.PROTONCALENDAR]);

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import type { useConfirmActionModal } from '@proton/components';
-import { QuickSettingsButton, Tooltip } from '@proton/components';
+import { QuickSettingsButton } from '@proton/components'
+import { Tooltip } from '@proton/atoms';
 
 import { useSearchControl } from '../../../store';
 

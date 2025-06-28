@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import type { ButtonLikeShape, ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { copyDomToClipboard, textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 interface Props extends Omit<ButtonProps, 'value'> {
@@ -41,7 +41,7 @@ const Copy = (
     return (
         <Tooltip title={tooltipText || c('Label').t`Copy`}>
             <Button icon color="weak" shape={shape} ref={ref} {...rest} onClick={handleClick}>
-                {children || <Icon name="squares" alt={c('Label').t`Copy`} />}
+                {children || <Icon name="squares" alt={tooltipText || c('Label').t`Copy`} />}
             </Button>
         </Tooltip>
     );

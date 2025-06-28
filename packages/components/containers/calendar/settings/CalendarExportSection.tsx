@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
@@ -74,8 +74,8 @@ const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) =
                     </span>
                 )}
                 <span className="shrink-0">
-                    <PrimaryButton onClick={handleExport} disabled={!selectedCalendar}>{c('Action')
-                        .t`Download ICS`}</PrimaryButton>
+                    <Button color="norm" onClick={handleExport} disabled={!selectedCalendar}>{c('Action')
+                        .t`Download ICS`}</Button>
                 </span>
             </div>
         </SettingsSection>

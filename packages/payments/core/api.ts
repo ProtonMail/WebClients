@@ -1,11 +1,12 @@
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getProductHeaders } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces';
+import formatSubscription from '@proton/shared/lib/subscription/format';
 
-import { DEFAULT_TAX_BILLING_ADDRESS } from './billing-address';
 import type { BillingAddress, BillingAddressProperty } from './billing-address';
-import { PAYMENT_METHOD_TYPES, PLANS } from './constants';
+import { DEFAULT_TAX_BILLING_ADDRESS } from './billing-address';
 import type { Autopay, INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE, PAYMENT_TOKEN_STATUS } from './constants';
+import { PAYMENT_METHOD_TYPES, PLANS, PLAN_TYPES } from './constants';
 import type {
     AmountAndCurrency,
     ChargeablePaymentParameters,
@@ -22,8 +23,10 @@ import type {
     WrappedCryptoPayment,
     WrappedPaypalPayment,
 } from './interface';
+import { formatPaymentMethods } from './methods';
+import { PlanState } from './plan/constants';
 import { getPlanNameFromIDs, isLifetimePlanSelected } from './plan/helpers';
-import type { FreePlanDefault } from './plan/interface';
+import type { FreePlanDefault, SubscriptionPlan } from './plan/interface';
 import type { Renew } from './subscription/constants';
 import { FREE_PLAN } from './subscription/freePlans';
 import type { Subscription } from './subscription/interface';
@@ -120,6 +123,7 @@ export type CheckSubscriptionData = {
      */
     BillingAddress?: BillingAddress;
     ProrationMode?: ProrationMode;
+    IsTrial?: boolean;
 };
 
 type CommonSubscribeData = {
@@ -127,6 +131,7 @@ type CommonSubscribeData = {
     Currency: Currency;
     Cycle: Cycle;
     Codes?: string[];
+    StartTrial?: boolean;
 } & AmountAndCurrency;
 
 type SubscribeDataV4 = CommonSubscribeData & TokenPaymentMethod & BillingAddressProperty;
@@ -135,15 +140,16 @@ type SubscribeDataNoPayment = CommonSubscribeData;
 export type SubscribeData = SubscribeDataV4 | SubscribeDataV5 | SubscribeDataNoPayment;
 
 function isCommonSubscribeData(data: any): data is CommonSubscribeData {
-    return !!data.Plans && !!data.Currency && !!data.Cycle && !!data.Amount && !!data.Currency;
+    const props = ['Plans', 'Currency', 'Cycle', 'Amount'];
+    return data && props.every((prop) => Object.prototype.hasOwnProperty.call(data, prop));
 }
 
 function isSubscribeDataV4(data: any): data is SubscribeDataV4 {
-    return isCommonSubscribeData(data) && isTokenPaymentMethod(data);
+    return isCommonSubscribeData(data) && isTokenPaymentMethod(data as any);
 }
 
 function isSubscribeDataV5(data: any): data is SubscribeDataV5 {
-    return isCommonSubscribeData(data) && isV5PaymentToken(data);
+    return isCommonSubscribeData(data) && isV5PaymentToken(data as any);
 }
 
 function isSubscribeDataNoPayment(data: any): data is SubscribeDataNoPayment {
@@ -165,6 +171,7 @@ function prepareSubscribeDataPayload(data: SubscribeData): SubscribeData {
         'Amount',
         'Currency',
         'BillingAddress',
+        'StartTrial',
     ];
     const payload: any = {};
     Object.keys(data).forEach((key: any) => {
@@ -311,11 +318,6 @@ export const checkInvoice = (invoiceID: string, version?: PaymentsVersion, GiftC
     url: `payments/${version ?? paymentsVersion}/invoices/${invoiceID}/check`,
     method: 'put',
     data: { GiftCode },
-});
-
-export const queryPaymentMethods = (forceVersion?: PaymentsVersion) => ({
-    url: `payments/${forceVersion ?? paymentsVersion}/methods`,
-    method: 'get',
 });
 
 export type SetPaymentMethodDataV4 = TokenPayment & { Autopay?: Autopay };
@@ -470,11 +472,18 @@ export type CreatePaymentIntentDirectDebitData = AmountAndCurrency & {
     };
 };
 
+export type CreatePaymentIntentApplePayData = AmountAndCurrency & {
+    Payment: {
+        Type: PAYMENT_METHOD_TYPES.APPLE_PAY;
+    };
+};
+
 export type CreatePaymentIntentData =
     | CreatePaymentIntentPaypalData
     | CreatePaymentIntentCardData
     | CreatePaymentIntentSavedCardData
-    | CreatePaymentIntentDirectDebitData;
+    | CreatePaymentIntentDirectDebitData
+    | CreatePaymentIntentApplePayData;
 
 export const createPaymentIntentV5 = (data: CreatePaymentIntentData) => ({
     url: `payments/v5/tokens`,
@@ -488,16 +497,16 @@ export type BackendPaymentIntent = {
     Amount: number;
     GatewayAccountID: string;
     ExpiresAt: number;
-    PaymentMethodType: 'card' | 'paypal';
+    PaymentMethodType: 'card' | 'paypal' | 'apple_pay';
     CreatedAt: number;
     ModifiedAt: number;
     UpdatedAt: number;
     ResourceVersion: number;
     Object: 'payment_intent';
-    CustomerID: string;
+    CustomerID: string | null;
     CurrencyCode: Currency;
     Gateway: string;
-    ReferenceID: string;
+    ReferenceID: string | null;
     Email?: string;
 };
 
@@ -588,3 +597,82 @@ export const queryTransactions = (params: QueryTransactionsParams) => ({
     method: 'get',
     params,
 });
+
+// Do not export this function. Use getPaymentMethods instead.
+const queryPaymentMethods = (forceVersion?: PaymentsVersion) => ({
+    url: `payments/${forceVersion ?? paymentsVersion}/methods`,
+    method: 'get',
+});
+
+export async function getPaymentMethods(api: Api, forceVersion?: PaymentsVersion): Promise<SavedPaymentMethod[]> {
+    const response = await api<{ PaymentMethods: SavedPaymentMethod[] }>(queryPaymentMethods(forceVersion));
+    return formatPaymentMethods(response.PaymentMethods ?? []);
+}
+
+export function markPaymentMethodAsDefault(api: Api, methodID: string, methods: SavedPaymentMethod[]): Promise<void> {
+    const IDs = methods.map(({ ID }) => ID);
+    const index = methods.findIndex(({ ID }) => ID === methodID);
+    IDs.splice(index, 1);
+    IDs.unshift(methodID);
+    return api(orderPaymentMethods(IDs, 'v5'));
+}
+const addSubscriptionPlan = (subscription: Subscription): Subscription => {
+    if (!subscription) {
+        return subscription;
+    }
+
+    const subscriptionPlan: SubscriptionPlan = {
+        Amount: subscription.Amount,
+        Currency: subscription.Currency,
+        Cycle: subscription.Cycle,
+        Features: 0,
+        ID: `dummy-id-${subscription.ID}`,
+        Name: (subscription as any).Name,
+        Type: PLAN_TYPES.PLAN,
+        State: PlanState.Available,
+        Services: 0,
+        Title: (subscription as any).Title,
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxSpace: 0,
+        MaxCalendars: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Quantity: 1,
+    };
+
+    return {
+        ...subscription,
+        Plans: [subscriptionPlan],
+    };
+};
+
+export const querySubscriptionV5DynamicPlans = () => ({
+    url: `payments/v5/subscription?no-redirect=1`,
+    method: 'get',
+});
+
+export const getSubscriptionV5DynamicPlans = async (api: Api) => {
+    // Please note that this api actually DOES NOT return the proper Subscription objects.
+    // The response is very close to Subscription type, but not completely. The most significant problems:
+    // - Upcoming subscriptions must be manually linked to their parents
+    // - The Plans array doesn't exists and addons are not supported. Because of this, the new v5 response
+    // can be used only in limited capacity.
+    const { Subscriptions, UpcomingSubscriptions } = await api<{
+        Subscriptions: Subscription[];
+        UpcomingSubscriptions: Subscription[];
+    }>(querySubscriptionV5DynamicPlans());
+
+    return Subscriptions.map((subscription) => {
+        const upcomingSubscription = UpcomingSubscriptions.find(
+            (it: any) => it.ParentSubscriptionID === subscription.ID
+        );
+
+        return formatSubscription(
+            addSubscriptionPlan(subscription),
+            addSubscriptionPlan(upcomingSubscription as Subscription),
+            undefined
+        );
+    });
+};

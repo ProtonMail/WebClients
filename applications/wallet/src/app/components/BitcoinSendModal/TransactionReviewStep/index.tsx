@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
-import { CircleLoader } from '@proton/atoms';
-import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components';
+import { CircleLoader, Tooltip } from '@proton/atoms';
+import { Icon, useModalState, useModalStateWithData } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { COMPUTE_BITCOIN_UNIT, type IWasmApiWalletData, PriorityTargetBlock } from '@proton/wallet';
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';

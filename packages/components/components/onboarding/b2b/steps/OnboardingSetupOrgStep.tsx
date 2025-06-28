@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { MAX_CHARS_API } from '@proton/account/organization';
 import { initOrganization } from '@proton/account/organization/actions';
-import { Button } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';

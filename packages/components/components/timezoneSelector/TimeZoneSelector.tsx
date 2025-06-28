@@ -2,12 +2,12 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms';
 import type { Unit } from '@proton/components/components/dropdown/utils';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 import type { SearcheableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useApi from '@proton/components/hooks/useApi';
 import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { AbbreviatedTimezone } from '@proton/shared/lib/date/timezone';

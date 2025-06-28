@@ -14,6 +14,7 @@ import { getLoginPath } from '@proton/shared/lib/authentication/loginPath';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
+import { telemetry } from '@proton/shared/lib/telemetry';
 
 import PrivateApp from './PrivateApp';
 import PublicApp, { publicRoutes } from './PublicApp';
@@ -45,6 +46,11 @@ const bootstrapApp = () => {
         session = initStandaloneSession({ authentication, api });
     }
     const privateApp = Boolean(session);
+
+    if (!privateApp) {
+        telemetry.init({ config, uid: authentication.UID });
+    }
+
     return {
         store: setupStore({ mode: privateApp ? 'default' : 'public' }),
         privateApp,

@@ -1,14 +1,15 @@
 import { devToolsEnhancer } from '@redux-devtools/remote';
 import { configureStore } from '@reduxjs/toolkit';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
+import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
 import { chunkMiddleware } from 'proton-pass-extension/lib/store/chunk.middleware';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import { isSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { isActionFor, isActionFrom } from '@proton/pass/store/actions/enhancers/endpoint';
 import reducer from '@proton/pass/store/reducers';
 import { requestMiddlewareFactory } from '@proton/pass/store/request/middleware';
-import { type ClientEndpoint, type TabId, WorkerMessageType } from '@proton/pass/types';
+import type { ClientEndpoint, TabId } from '@proton/pass/types';
 import { not } from '@proton/pass/utils/fp/predicates';
 
 import { relayMiddleware } from './relay.middleware';

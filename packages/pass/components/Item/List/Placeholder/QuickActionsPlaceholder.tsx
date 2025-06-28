@@ -14,9 +14,11 @@ import { useNavigate } from '@proton/pass/components/Navigation/NavigationAction
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectAllVaults, selectCanCreateItems, selectShare } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import clsx from '@proton/utils/clsx';
 
 type ItemQuickAction = {
@@ -42,9 +44,10 @@ export const QuickActionsPlaceholder: FC = () => {
     const onCreate = useCallback((type: ItemType) => navigate(getNewItemRoute(type, scope)), [scope]);
 
     const canCreate = useSelector(selectCanCreateItems);
+    const showCustomItem = useFeatureFlag(PassFeature.PassCustomTypeV1);
 
-    const quickActions = useMemo<ItemQuickAction[]>(
-        () => [
+    const quickActions = useMemo<ItemQuickAction[]>(() => {
+        const actions: ItemQuickAction[] = [
             {
                 icon: itemTypeToIconName.login,
                 label: c('Label').t`Create a login`,
@@ -80,15 +83,24 @@ export const QuickActionsPlaceholder: FC = () => {
                 onClick: () => onCreate('identity'),
             },
             {
+                hidden: !showCustomItem,
+                icon: itemTypeToIconName.custom,
+                label: c('Label').t`Create a custom item`,
+                subTheme: SubTheme.GRAY,
+                type: 'custom',
+                onClick: () => onCreate('custom'),
+            },
+            {
                 type: 'import',
                 icon: 'arrow-up-line',
                 shape: 'outline',
                 label: c('Label').t`Import passwords`,
                 onClick: () => openSettings?.('import'),
             },
-        ],
-        [onCreate]
-    );
+        ];
+
+        return actions.filter(({ hidden }) => !hidden);
+    }, [onCreate, showCustomItem]);
 
     return (
         <div className="flex flex-column gap-3 text-center">
@@ -101,28 +113,26 @@ export const QuickActionsPlaceholder: FC = () => {
                 </span>
             </div>
 
-            {quickActions
-                .filter(({ hidden }) => !hidden)
-                .map(({ type, icon, label, shape, subTheme, onClick }) => (
-                    <Button
-                        pill
-                        shape={shape ?? 'solid'}
-                        color="weak"
-                        key={`quick-action-${type}`}
-                        className={clsx('pass-sub-sidebar--hidable w-full relative', subTheme)}
-                        onClick={onClick}
-                        disabled={(selectedShare && !isWritableVault(selectedShare)) || !canCreate}
-                        size={EXTENSION_BUILD ? 'small' : 'medium'}
-                    >
-                        <Icon
-                            name={icon}
-                            color="var(--interaction-norm)"
-                            className="absolute left-custom top-0 bottom-0 my-auto"
-                            style={{ '--left-custom': '1rem' }}
-                        />
-                        <span className="max-w-full px-8 text-ellipsis">{label}</span>
-                    </Button>
-                ))}
+            {quickActions.map(({ type, icon, label, shape, subTheme, onClick }) => (
+                <Button
+                    pill
+                    shape={shape ?? 'solid'}
+                    color="weak"
+                    key={`quick-action-${type}`}
+                    className={clsx('pass-sub-sidebar--hidable w-full relative', subTheme)}
+                    onClick={onClick}
+                    disabled={(selectedShare && !isWritableVault(selectedShare)) || !canCreate}
+                    size={EXTENSION_BUILD ? 'small' : 'medium'}
+                >
+                    <Icon
+                        name={icon}
+                        color="var(--interaction-norm)"
+                        className="absolute left-custom top-0 bottom-0 my-auto"
+                        style={{ '--left-custom': '1rem' }}
+                    />
+                    <span className="max-w-full px-8 text-ellipsis">{label}</span>
+                </Button>
+            ))}
         </div>
     );
 };

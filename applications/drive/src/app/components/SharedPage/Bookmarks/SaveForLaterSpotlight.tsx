@@ -2,7 +2,7 @@ import { type ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Spotlight } from '@proton/components/index';
+import { Spotlight } from '@proton/components';
 
 export interface SaveForLaterSpotlightProps {
     children: ReactNode;

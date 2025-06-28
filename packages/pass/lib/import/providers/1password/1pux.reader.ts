@@ -6,9 +6,12 @@ import {
     getEmailOrUsername,
     getImportedVaultName,
     importCreditCardItem,
+    importCustomItem,
     importIdentityItem,
     importLoginItem,
     importNoteItem,
+    importSshKeyItem,
+    importWifiItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
@@ -21,10 +24,11 @@ import {
     extract1PasswordExtraFields,
     extract1PasswordIdentity,
     extract1PasswordLoginField,
-    extract1PasswordNote,
+    extract1PasswordSSHSections,
     extract1PasswordURLs,
+    extract1PasswordWifiFields,
     format1PasswordMonthYear,
-    intoFilesFrom1PasswordItem,
+    into1PasswordItemFiles,
     is1PasswordCCField,
 } from './1p.utils';
 import type { OnePass1PuxData, OnePassBaseItem, OnePassCreditCardFields, OnePassItem } from './1pux.types';
@@ -35,17 +39,18 @@ const processNoteItem = (
 ): ItemImportIntent<'note'> =>
     importNoteItem({
         name: item.overview.title,
-        note: extract1PasswordNote(item.details),
+        note: item.details?.notesPlain,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
         trashed: item.state === OnePassState.ARCHIVED,
+        extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
     });
 
 const processLoginItem = async (
     item: Extract<OnePassItem, { categoryUuid: OnePassCategory.LOGIN }>
 ): Promise<ItemImportIntent<'login'>> => {
     const [totp, extraFields] = extractFirst(
-        extract1PasswordExtraFields(item),
+        item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
         (extraField): extraField is DeobfuscatedItemExtraField<'totp'> => extraField.type === 'totp'
     );
 
@@ -65,10 +70,8 @@ const processLoginItem = async (
 
 const processPasswordItem = (
     item: Extract<OnePassItem, { categoryUuid: OnePassCategory.PASSWORD }>
-): Maybe<ItemImportIntent<'login'>> => {
-    if (item.details.password === undefined) return undefined;
-
-    return importLoginItem({
+): ItemImportIntent<'login'> =>
+    importLoginItem({
         name: item.overview.title,
         note: item.details.notesPlain,
         password: item.details.password,
@@ -76,8 +79,8 @@ const processPasswordItem = (
         trashed: item.state === OnePassState.ARCHIVED,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
+        extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
     });
-};
 
 const processIdentityItem = (
     item: Extract<OnePassItem, { categoryUuid: OnePassCategory.IDENTITY }>
@@ -91,6 +94,8 @@ const processIdentityItem = (
     });
 
 const processCreditCardItem = (item: Extract<OnePassItem, { categoryUuid: OnePassCategory.CREDIT_CARD }>) => {
+    const extraFields = item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [];
+
     const { cardholder, ccnum, cvv, expiry, pin } = ((): OnePassCreditCardFields => {
         const { sections } = item.details;
         if (!sections || sections.length === 0) return {};
@@ -114,8 +119,51 @@ const processCreditCardItem = (item: Extract<OnePassItem, { categoryUuid: OnePas
         verificationNumber: cvv?.value.concealed,
         expirationDate: format1PasswordMonthYear(expiry?.value.monthYear),
         pin: pin?.value.concealed,
+        extraFields,
     });
 };
+
+const processCustomItem = (item: OnePassItem) =>
+    importCustomItem({
+        name: item.overview.title,
+        note: item.details.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        trashed: item.state === OnePassState.ARCHIVED,
+        sections: item.details.sections?.map((s) => ({
+            sectionName: s.title,
+            sectionFields: extract1PasswordExtraFields(s),
+        })),
+        extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
+    });
+
+const processSshKeyItem = (item: OnePassItem) => {
+    const sshKey = item.details.sections?.flatMap(prop('fields')).find((field) => field.id === 'private_key')
+        ?.value?.sshKey;
+
+    return importSshKeyItem({
+        privateKey: sshKey?.metadata?.privateKey,
+        publicKey: sshKey?.metadata?.publicKey,
+        name: item.overview.title,
+        note: item.details.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        trashed: item.state === OnePassState.ARCHIVED,
+        extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
+        sections: extract1PasswordSSHSections(sshKey),
+    });
+};
+
+const processWifiItem = (item: OnePassItem) =>
+    importWifiItem({
+        name: item.overview.title,
+        note: item.details.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        trashed: item.state === OnePassState.ARCHIVED,
+        extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],
+        ...extract1PasswordWifiFields(item.details.sections),
+    });
 
 export const read1Password1PuxData = async (file: File): Promise<ImportReaderResult> => {
     try {
@@ -137,7 +185,7 @@ export const read1Password1PuxData = async (file: File): Promise<ImportReaderRes
                 const category = item?.categoryUuid;
                 const type = (category ? OnePasswordTypeMap[category] : null) ?? c('Label').t`Unknown`;
                 const title = item?.overview?.title ?? item?.overview?.subtitle ?? '';
-                const files = intoFilesFrom1PasswordItem(item.details.sections);
+                const files = into1PasswordItemFiles(item.details.sections);
 
                 try {
                     const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
@@ -154,13 +202,17 @@ export const read1Password1PuxData = async (file: File): Promise<ImportReaderRes
                             case OnePassCategory.IDENTITY:
                                 const identityItem = processIdentityItem(item);
                                 return identityItem ? attachFilesToItem(identityItem, files) : identityItem;
+                            case OnePassCategory.SSH_KEY:
+                                return attachFilesToItem(processSshKeyItem(item), files);
+                            case OnePassCategory.WIFI:
+                                return attachFilesToItem(processWifiItem(item), files);
 
                             default:
                                 const unknownItem = item as OnePassBaseItem & { details: any };
                                 return 'loginFields' in unknownItem.details &&
                                     unknownItem.details.loginFields.length > 0
                                     ? attachFilesToItem(await processLoginItem(unknownItem as any), files)
-                                    : attachFilesToItem(processNoteItem(unknownItem as any), files);
+                                    : attachFilesToItem(processCustomItem(unknownItem as any), files);
                         }
                     })();
 

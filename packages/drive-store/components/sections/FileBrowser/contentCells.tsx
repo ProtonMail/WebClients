@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Avatar, Button, UserAvatar } from '@proton/atoms';
+import { Avatar, Button, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms';
 import { FileIcon, Icon, TableCell, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
-import { useContactEmails } from '@proton/mail/contactEmails/hooks';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
@@ -30,7 +30,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
     return (
         <TableCell className="m-0 flex items-center flex-nowrap flex-1" data-testid="column-name">
             {item.albumProperties && (
-                <Icon name="album" alt={c('Label').t`Album`} className="file-browser-list-item--icon mr-2" />
+                <FileIcon mimeType="Album" alt={c('Label').t`Album`} className="file-browser-list-item--icon mr-2" />
             )}
             {item.cachedThumbnailUrl && !item.albumProperties && (
                 <img
@@ -41,7 +41,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
             )}
             {!item.cachedThumbnailUrl && !item.albumProperties && (
                 <FileIcon
-                    mimeType={item.isFile ? item.mimeType : 'Folder'}
+                    mimeType={item.isFile ? item.mimeType : item.mimeType || 'Folder'}
                     alt={iconText}
                     className="file-browser-list-item--icon mr-2"
                 />
@@ -52,6 +52,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
                 isFile={item.isFile}
                 mimeType={item.mimeType}
                 className="mr-2 shrink-0"
+                haveParentAccess={!!item.parentLinkId}
             />
             <NameCellBase name={item.name} />
         </TableCell>
@@ -219,7 +220,7 @@ export const SharedByCell = ({ item }: { item: SharedWithMeItem }) => {
         <TableCell className="flex flex-nowrap items-center gap-2 m-0 w-1/5" data-testid="column-shared-by">
             {displayName && (
                 <>
-                    <UserAvatar name={displayName} size="small" />
+                    <UserAvatar name={displayName} size={UserAvatarSizeEnum.Small} />
                     <span className="text-ellipsis">{displayName}</span>
                 </>
             )}

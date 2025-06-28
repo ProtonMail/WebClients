@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import Radio from '@proton/components/components/input/Radio';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
 import { useRevisionRetentionDays } from '../../../hooks/drive/useRevisionRetentionDays';

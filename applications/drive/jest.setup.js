@@ -8,6 +8,8 @@ import '@proton/testing/lib/mockUnleash';
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 
+global.OffscreenCanvas = Object;
+
 // JSDom does not include a full implementation of webcrypto
 const crypto = require('crypto').webcrypto;
 global.crypto.subtle = crypto.subtle;

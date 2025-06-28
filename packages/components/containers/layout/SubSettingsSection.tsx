@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { DashboardCard, DashboardCardContent, DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/index';
+import { DashboardCard, DashboardCardContent, DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';

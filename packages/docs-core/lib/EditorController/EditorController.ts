@@ -1,5 +1,5 @@
 import type { LoggerInterface } from '@proton/utils/logs'
-import type { EditorInitializationConfig } from '@proton/docs-shared'
+import type { EditorInitializationConfig, SheetImportData } from '@proton/docs-shared'
 import {
   DocUpdateOrigin,
   type ClientRequiresEditorMethods,
@@ -15,17 +15,21 @@ import { EventType } from '@proton/docs-proto'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
 
 export interface EditorControllerInterface {
+  copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array>
   getDocumentClientId(): Promise<number | undefined>
   getDocumentState(): Promise<Uint8Array>
   getEditorJSON(): Promise<SerializedEditorState | undefined>
+  getLatestSpreadsheetStateToLogJSON(): Promise<unknown>
+  getYDocAsJSON(): Promise<unknown>
   printAsPDF(): Promise<void>
   receiveEditor(editorInvoker: ClientRequiresEditorMethods): void
   restoreRevisionByReplacing(lexicalState: SerializedEditorState): Promise<void>
   showCommentsPanel(): void
   toggleDebugTreeView(): Promise<void>
   initializeEditor(editorInitializationConfig: EditorInitializationConfig | undefined, userAddress: string): void
+  importDataIntoSheet(data: SheetImportData): Promise<void>
 }
 
 /** Allows the UI to invoke methods on the editor. */
@@ -242,6 +246,24 @@ export class EditorController implements EditorControllerInterface {
     return json
   }
 
+  async getLatestSpreadsheetStateToLogJSON(): Promise<unknown> {
+    if (!this.editorInvoker) {
+      throw new Error('Editor invoker not initialized')
+    }
+
+    const json = await this.editorInvoker.getLatestSpreadsheetStateToLogJSON()
+    return json
+  }
+
+  async getYDocAsJSON(): Promise<unknown> {
+    if (!this.editorInvoker) {
+      throw new Error('Editor invoker not initialized')
+    }
+
+    const json = await this.editorInvoker.getYDocAsJSON()
+    return json
+  }
+
   showCommentsPanel(): void {
     if (!this.editorInvoker) {
       return
@@ -256,6 +278,14 @@ export class EditorController implements EditorControllerInterface {
     }
 
     return this.editorInvoker.exportData(format)
+  }
+
+  async copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error(`Attepting to export document before editor invoker or decrypted node is initialized`)
+    }
+
+    return this.editorInvoker.copyCurrentSelection(format)
   }
 
   async getDocumentState(): Promise<Uint8Array> {
@@ -344,5 +374,13 @@ export class EditorController implements EditorControllerInterface {
     metrics.docs_readonly_mode_documents_total.increment({
       reason: reason,
     })
+  }
+
+  async importDataIntoSheet(data: SheetImportData): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to import data into sheet before editor invoker is initialized')
+    }
+
+    await this.editorInvoker.importDataIntoSheet(data)
   }
 }

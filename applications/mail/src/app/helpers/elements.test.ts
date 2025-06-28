@@ -1,5 +1,5 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { LabelCount, MailSettings } from '@proton/shared/lib/interfaces';
+import type { Label, LabelCount, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
@@ -13,6 +13,7 @@ import {
     getDate,
     getLocationElementsCount,
     isConversation,
+    isElementOutsideFolders,
     isMessage,
     isUnread,
     matchAddressID,
@@ -281,12 +282,68 @@ describe('elements', () => {
             });
         });
 
-        it('should match partial email address', () => {
+        it('should match partial email address input', () => {
             const addresses = ['sender@', 'sender'];
 
             addresses.forEach((address) => {
                 expect(matchFrom(message, address)).toBeTruthy();
                 expect(matchFrom(conversation, address)).toBeTruthy();
+            });
+        });
+
+        it('should match alias sender address', () => {
+            const addresses = ['sender@', 'sender', 'sender@protonmail.com', 'alias', 'ALIAS'];
+
+            const aliasSenderAddress = 'sender+alias@protonmail.com';
+
+            const messageWithAliasSender = {
+                ...message,
+                Sender: {
+                    Name: 'Sender',
+                    Address: aliasSenderAddress,
+                },
+            } as Message;
+
+            const conversationWithAliasSender = {
+                ...conversation,
+                Senders: [
+                    {
+                        Name: 'Sender',
+                        Address: aliasSenderAddress,
+                    },
+                ],
+            } as Conversation;
+
+            addresses.forEach((address) => {
+                expect(matchFrom(messageWithAliasSender, address)).toBeTruthy();
+                expect(matchFrom(conversationWithAliasSender, address)).toBeTruthy();
+            });
+        });
+
+        it('should match sender name', () => {
+            const addresses = ['test', 'TEST'];
+
+            const messageWithNamedSender = {
+                ...message,
+                Sender: {
+                    Name: 'Test',
+                    Address: senderAddress,
+                },
+            } as Message;
+
+            const conversationWithNamedSender = {
+                ...conversation,
+                Senders: [
+                    {
+                        Name: 'test',
+                        Address: senderAddress,
+                    },
+                ],
+            } as Conversation;
+
+            addresses.forEach((address) => {
+                expect(matchFrom(messageWithNamedSender, address)).toBeTruthy();
+                expect(matchFrom(conversationWithNamedSender, address)).toBeTruthy();
             });
         });
     });
@@ -310,12 +367,72 @@ describe('elements', () => {
             });
         });
 
-        it('should match partial email address', () => {
+        it('should match partial email address input', () => {
             const addresses = ['recipient@', 'recipient'];
 
             addresses.forEach((address) => {
                 expect(matchTo(message, address)).toBeTruthy();
                 expect(matchTo(conversation, address)).toBeTruthy();
+            });
+        });
+
+        it('should match alias recipient address', () => {
+            const addresses = ['recipient@', 'recipient', 'recipient@protonmail.com', 'alias', 'ALIAS'];
+
+            const aliasRecipientAddress = 'recipient+alias@protonmail.com';
+
+            const messageWithAliasRecipient = {
+                ...message,
+                ToList: [
+                    {
+                        Name: 'Recipient',
+                        Address: aliasRecipientAddress,
+                    },
+                ],
+            } as Message;
+
+            const conversationWithAliasRecipient = {
+                ...conversation,
+                Recipients: [
+                    {
+                        Name: 'Recipient',
+                        Address: aliasRecipientAddress,
+                    },
+                ],
+            } as Conversation;
+
+            addresses.forEach((address) => {
+                expect(matchTo(messageWithAliasRecipient, address)).toBeTruthy();
+                expect(matchTo(conversationWithAliasRecipient, address)).toBeTruthy();
+            });
+        });
+
+        it('should match recipient name', () => {
+            const addresses = ['test', 'TEST'];
+
+            const messageWithNamedRecipient = {
+                ...message,
+                ToList: [
+                    {
+                        Name: 'Test',
+                        Address: toAddress,
+                    },
+                ],
+            } as Message;
+
+            const conversationWithNamedRecipient = {
+                ...conversation,
+                Recipients: [
+                    {
+                        Name: 'test',
+                        Address: toAddress,
+                    },
+                ],
+            } as Conversation;
+
+            addresses.forEach((address) => {
+                expect(matchTo(messageWithNamedRecipient, address)).toBeTruthy();
+                expect(matchTo(conversationWithNamedRecipient, address)).toBeTruthy();
             });
         });
     });
@@ -523,6 +640,98 @@ describe('elements', () => {
                     } as SearchParameters,
                 })
             ).toEqual(expectedFilteredList);
+        });
+    });
+
+    describe('isElementOutsideFolders', () => {
+        const labels = [
+            { ID: 'custom-label-1', Name: 'Custom1' } as Label,
+            { ID: 'custom-label-2', Name: 'Custom2' } as Label,
+        ];
+
+        it('should be true when element is in all mail only', () => {
+            const message = {
+                ConversationID: 'conversationID',
+                LabelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL],
+            } as Message;
+
+            const conversation = {
+                Labels: [{ ID: MAILBOX_LABEL_IDS.ALL_MAIL } as ConversationLabel],
+            } as Conversation;
+
+            expect(isElementOutsideFolders(message, labels)).toBeTruthy();
+            expect(isElementOutsideFolders(conversation, labels)).toBeTruthy();
+        });
+
+        it('should be true when element is in all mail and almost all mail', () => {
+            const message = {
+                ConversationID: 'conversationID',
+                LabelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
+            } as Message;
+
+            const conversation = {
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.ALL_MAIL } as ConversationLabel,
+                    { ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL } as ConversationLabel,
+                ],
+            } as Conversation;
+
+            expect(isElementOutsideFolders(message, labels)).toBeTruthy();
+            expect(isElementOutsideFolders(conversation, labels)).toBeTruthy();
+        });
+
+        it('should be true when element is in ll mail, almost all mail and a custom label', () => {
+            const message = {
+                ConversationID: 'conversationID',
+                LabelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL, 'custom-label-1'],
+            } as Message;
+
+            const conversation = {
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.ALL_MAIL } as ConversationLabel,
+                    { ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL } as ConversationLabel,
+                    { ID: 'custom-label-1' } as ConversationLabel,
+                ],
+            } as Conversation;
+
+            expect(isElementOutsideFolders(message, labels)).toBeTruthy();
+            expect(isElementOutsideFolders(conversation, labels)).toBeTruthy();
+        });
+
+        it('should be true when element is in ll mail, almost all mail and a Starred', () => {
+            const message = {
+                ConversationID: 'conversationID',
+                LabelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL, MAILBOX_LABEL_IDS.STARRED],
+            } as Message;
+
+            const conversation = {
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.ALL_MAIL } as ConversationLabel,
+                    { ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL } as ConversationLabel,
+                    { ID: MAILBOX_LABEL_IDS.STARRED } as ConversationLabel,
+                ],
+            } as Conversation;
+
+            expect(isElementOutsideFolders(message, labels)).toBeTruthy();
+            expect(isElementOutsideFolders(conversation, labels)).toBeTruthy();
+        });
+
+        it('should be false when element is not only in all mail and almost all mail', () => {
+            const message = {
+                ConversationID: 'conversationID',
+                LabelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL, MAILBOX_LABEL_IDS.INBOX],
+            } as Message;
+
+            const conversation = {
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.ALL_MAIL } as ConversationLabel,
+                    { ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL } as ConversationLabel,
+                    { ID: MAILBOX_LABEL_IDS.INBOX } as ConversationLabel,
+                ],
+            } as Conversation;
+
+            expect(isElementOutsideFolders(message, labels)).toBeFalsy();
+            expect(isElementOutsideFolders(conversation, labels)).toBeFalsy();
         });
     });
 });

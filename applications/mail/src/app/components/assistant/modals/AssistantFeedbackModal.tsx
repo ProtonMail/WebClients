@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import {
     Checkbox,
     Icon,
@@ -12,7 +12,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    Tooltip,
     useApi,
     useModalStateObject,
     useNotifications,

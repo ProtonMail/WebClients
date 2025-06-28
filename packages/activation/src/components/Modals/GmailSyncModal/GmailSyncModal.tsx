@@ -1,15 +1,16 @@
 import { c } from 'ttag';
 
-import { SYNC_G_OAUTH_SCOPES, SYNC_SUCCESS_NOTIFICATION } from '@proton/activation/src/constants';
+import AddBYOEModal from '@proton/activation/src/components/Modals/AddBYOEModal/AddBYOEModal';
+import { BYOE_FAIL_NOTIFICATION, SYNC_SUCCESS_NOTIFICATION } from '@proton/activation/src/constants';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { EASY_SWITCH_SOURCES, OAuthProps } from '@proton/activation/src/interface';
-import { ImportProvider } from '@proton/activation/src/interface';
+import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
+import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms';
-import type { ModalProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 
 import GmailSyncModalAnimation from './GmailSyncModalAnimation';
 import SignInWithGoogle from './SignInWithGoogle';
@@ -17,24 +18,34 @@ import SignInWithGoogle from './SignInWithGoogle';
 interface Props extends ModalProps {
     source: EASY_SWITCH_SOURCES;
     reduceHeight?: boolean;
-    onSyncCallback?: (hasError: boolean) => void;
+    onSyncCallback?: (hasError: boolean, sync?: Sync, displayName?: string) => void;
     onSyncSkipCallback?: () => void;
     noSkip?: boolean;
+    hasAccessToBYOE?: boolean;
 }
 
-const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, source, reduceHeight, noSkip, ...rest }: Props) => {
+const GmailSyncModal = ({
+    onSyncCallback,
+    onSyncSkipCallback,
+    source,
+    reduceHeight,
+    noSkip,
+    hasAccessToBYOE,
+    ...rest
+}: Props) => {
     const dispatch = useEasySwitchDispatch();
     const syncState = useEasySwitchSelector(selectCreateSyncState);
     const loading = syncState === 'pending';
 
     const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
-        errorMessage: c('loc_nightly:Error').t`Your sync will not be processed.`,
+        // translators: This string is shown when something went wrong during easy switch Gmail oAuth
+        errorMessage: c('Error').t`Permissions request failed.`,
     });
 
     const handleGoogleSync = () => {
         void triggerOAuthPopup({
-            provider: ImportProvider.GOOGLE,
-            scope: SYNC_G_OAUTH_SCOPES.join(' '),
+            provider: OAUTH_PROVIDER.GOOGLE,
+            features: hasAccessToBYOE ? [EASY_SWITCH_FEATURES.BYOE] : [EASY_SWITCH_FEATURES.IMPORT_MAIL],
             callback: async (oAuthProps: OAuthProps) => {
                 const { Code, Provider, RedirectUri } = oAuthProps;
                 dispatch(changeCreateLoadingState('pending'));
@@ -44,15 +55,20 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, source, reduceHeig
                         Provider,
                         RedirectUri,
                         Source: source,
-                        notification: SYNC_SUCCESS_NOTIFICATION,
+                        successNotification: hasAccessToBYOE ? undefined : SYNC_SUCCESS_NOTIFICATION,
+                        errorNotification: hasAccessToBYOE ? BYOE_FAIL_NOTIFICATION : undefined,
                     })
                 );
+                const payload = res.type.endsWith('fulfilled') ? res?.payload : undefined;
+
+                const sync = payload?.sync as Sync;
+                const displayName = payload?.displayName;
 
                 const hasError = res.type.endsWith('rejected');
                 if (!hasError) {
                     rest?.onClose?.();
                 }
-                onSyncCallback?.(hasError);
+                onSyncCallback?.(hasError, sync, displayName);
             },
         });
     };
@@ -67,8 +83,12 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, source, reduceHeig
         rest?.onClose?.();
     };
 
+    if (hasAccessToBYOE) {
+        return <AddBYOEModal {...rest} onClose={handleClose} onSubmit={handleGoogleSync} isLoading={loading} />;
+    }
+
     return (
-        <ModalTwo size="xlarge" fullscreenOnMobile {...rest} onClose={handleClose}>
+        <ModalTwo size={hasAccessToBYOE ? 'small' : 'xlarge'} fullscreenOnMobile {...rest} onClose={handleClose}>
             <ModalTwoHeader />
             <ModalTwoContent className="m-8 mt-0 flex flex-row items-center flex-nowrap gap-7">
                 <div className="flex flex-column flex-1 gap-7">

@@ -26,14 +26,24 @@ $header-height: 52;
 
 	.header {
 		-webkit-app-region: drag;
+	}
 
-		button,
-		input,
-		select,
-		textarea,
-		ol,
-		ul {
-			-webkit-app-region: no-drag;
-		}
+	/** -webkit-app-region doesn't respect element positioning,
+	  * so any element rendered on top of a .header is still unclickable
+	  * regardless of z-index. To mitigate we're explicitly listing
+	  * common interactive elements after a -webkit-app-region: drag rule
+	  * to make them work.
+	  * 
+	  * Looks like this isn't getting fixed upstream, see
+	  * https://github.com/electron/electron/issues/7605
+	  */
+	button,
+	input,
+	select,
+	textarea,
+	ol,
+	ul,
+	a {
+		-webkit-app-region: no-drag;
 	}
 }

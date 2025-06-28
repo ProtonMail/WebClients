@@ -32,6 +32,7 @@ beforeEach(() => {
             savedMethods: undefined,
             isNewPaypal: false,
             isMethodTypeEnabled: jest.fn(),
+            isNewApplePay: false,
         } as MethodsHook,
     };
 });

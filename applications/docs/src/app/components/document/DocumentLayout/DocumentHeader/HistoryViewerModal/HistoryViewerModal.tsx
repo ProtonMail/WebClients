@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms'
+import { Button, Input, Tooltip } from '@proton/atoms'
 import type { ModalStateProps } from '@proton/components'
 import {
   Icon,
@@ -7,7 +7,6 @@ import {
   ModalTwoContent,
   ModalTwoFooter,
   ModalTwoHeader,
-  Tooltip,
   useModalTwoStatic,
   useNotifications,
   NotificationButton,
@@ -23,6 +22,8 @@ import { SingleRevisionViewer } from './SingleRevisionViewer'
 import { useLoading } from '@proton/hooks/index'
 import { type SerializedEditorState } from 'lexical'
 import type { EditorControllerInterface } from '@proton/docs-core'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { useDebug } from '~/components/document/DocumentViewer/DebugMenu'
 
 type RestoreType = 'replace' | 'as-copy'
 
@@ -31,6 +32,7 @@ type HistoryViewerModalContentProps = {
   onClose: () => void
   editorController: EditorControllerInterface
   docController: AuthenticatedDocControllerInterface
+  documentType: DocumentType
 }
 
 function HistoryViewerModalContent({
@@ -38,7 +40,11 @@ function HistoryViewerModalContent({
   onClose,
   editorController,
   docController,
+  documentType,
 }: HistoryViewerModalContentProps) {
+  const isDebugEnabled = useDebug()
+
+  const [batchThreshold, setBatchThreshold] = useState(() => versionHistory.batchThreshold)
   const [selectedBatchIndex, setSelectedBatchIndex] = useState(() => versionHistory.batches.length - 1)
   const [editorInvoker, setEditorInvoker] = useState<EditorInvoker | undefined>()
   const { createNotification, hideNotification } = useNotifications()
@@ -66,6 +72,8 @@ function HistoryViewerModalContent({
     }
     return versionHistory.getFormattedDateAndTimeForBatch(selectedBatch)
   }, [selectedBatch, versionHistory])
+
+  const [formattedBatchGroups, setFormattedBatchGroups] = useState(() => versionHistory.getFormattedBatchGroups())
 
   const showSuccessfulUndoNotification = useCallback(() => {
     createNotification({
@@ -181,6 +189,7 @@ function HistoryViewerModalContent({
             key={selectedBatchIndex}
             state={selectedYjsState}
             onEditorInvokerRef={setEditorInvoker}
+            documentType={documentType}
           />
         </div>
       </div>
@@ -200,6 +209,7 @@ function HistoryViewerModalContent({
           <div className="flex flex-col">
             <HistoryTimeline
               versionHistory={versionHistory}
+              formattedBatchGroups={formattedBatchGroups}
               selectedBatchIndex={selectedBatchIndex}
               onSelectedBatchIndexChange={setSelectedBatchIndex}
             />
@@ -212,32 +222,50 @@ function HistoryViewerModalContent({
         </div>
 
         {/* Bottom-anchored content */}
-        {selectedBatchIndex >= 0 && !isSelectedRevisionCurrentDocument && (
-          <div className="mt-auto flex flex-col items-stretch justify-end px-5 pb-3 pt-5">
-            <Button
-              className="mb-2 w-full"
-              data-testid="restore-revision-by-copy"
-              color="norm"
-              loading={isRestoringAsCopy}
-              onClick={() => {
-                void withRestoringAsCopy(onRestore('as-copy'))
-              }}
-            >
-              {c('Action').t`Make a copy`}
-            </Button>
-
-            <Button
-              className="w-full"
-              data-testid="restore-revision-by-replace"
-              loading={isRestoring}
-              onClick={() => {
-                void withRestoring(onRestore('replace'))
-              }}
-            >
-              {c('Action').t`Restore this version`}
-            </Button>
-          </div>
-        )}
+        <div className="mt-auto flex flex-col items-stretch justify-end px-5 pb-3 pt-5">
+          {isDebugEnabled && (
+            // eslint-disable-next-line jsx-a11y/label-has-associated-control
+            <label className="my-2 flex items-center gap-2">
+              <div>Batch granularity:</div>
+              <Input
+                type="number"
+                value={batchThreshold}
+                onChange={(event) => {
+                  const value = parseInt(event.target.value)
+                  versionHistory.setBatchThreshold(value)
+                  setBatchThreshold(value)
+                  setFormattedBatchGroups(versionHistory.getFormattedBatchGroups())
+                }}
+                min={1}
+              />
+            </label>
+          )}
+          {selectedBatchIndex >= 0 && !isSelectedRevisionCurrentDocument && (
+            <>
+              <Button
+                className="mb-2 w-full"
+                data-testid="restore-revision-by-copy"
+                color="norm"
+                loading={isRestoringAsCopy}
+                onClick={() => {
+                  void withRestoringAsCopy(onRestore('as-copy'))
+                }}
+              >
+                {c('Action').t`Make a copy`}
+              </Button>
+              <Button
+                className="w-full"
+                data-testid="restore-revision-by-replace"
+                loading={isRestoring}
+                onClick={() => {
+                  void withRestoring(onRestore('replace'))
+                }}
+              >
+                {c('Action').t`Restore this version`}
+              </Button>
+            </>
+          )}
+        </div>
       </div>
     </div>
   )
@@ -247,6 +275,7 @@ type HistoryViewerModalProps = ModalStateProps & {
   versionHistory: NativeVersionHistory | undefined
   editorController: EditorControllerInterface
   docController: AuthenticatedDocControllerInterface
+  documentType: DocumentType
 }
 
 function HistoryViewerModal({
@@ -254,6 +283,7 @@ function HistoryViewerModal({
   onClose,
   editorController,
   docController,
+  documentType,
   ...rest
 }: HistoryViewerModalProps) {
   const isVersionHistoryAvailable = !!versionHistory
@@ -272,6 +302,7 @@ function HistoryViewerModal({
           onClose={onClose}
           editorController={editorController}
           docController={docController}
+          documentType={documentType}
         />
       ) : (
         <>

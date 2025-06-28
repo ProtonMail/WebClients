@@ -43,7 +43,6 @@ export enum FeatureCode {
     ComposerAssistantSpotlight = 'ComposerAssistantSpotlight',
     ComposerAssistantInitialSetup = 'ComposerAssistantInitialSetup',
     ComposerAssistantTrialStartDate = 'ComposerAssistantTrialStartDate',
-    DarkStylesInBody = 'DarkStylesInBody',
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
     DriveSearchSpotlight = 'DriveSearchSpotlight',
     ESAutomaticBackgroundIndexing = 'ESAutomaticBackgroundIndexing',
@@ -76,6 +75,10 @@ export enum FeatureCode {
     DrivePaidUserNudgeTimestamp = 'DrivePaidUserNudgeTimestamp',
     BundlePaidUserNudgeTimestamp = 'BundlePaidUserNudgeTimestamp',
 
+    // Flags for the newsletter subscription view
+    NewsletterSubscriptionViewOnboarding = 'NewsletterSubscriptionViewOnboarding',
+    NewsletterSubscriptionSpotlight = 'NewsletterSubscriptionSpotlight',
+
     OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
     OfferMailTrial2023 = 'OfferMailTrial2023',
@@ -92,6 +95,15 @@ export enum FeatureCode {
     OfferBlackFriday2024VPNMonthly = 'OfferBlackFriday2024VPNMonthly',
     OfferBlackFriday2024Unlimited = 'OfferBlackFriday2024Unlimited',
     OfferBlackFriday2024Duo = 'OfferBlackFriday2024Duo',
+
+    // Anniversary 2025
+    OfferAnniversary2025Bundle = 'OfferAnniversary2025Bundle',
+    OfferAnniversary2025Duo = 'OfferAnniversary2025Duo',
+    OfferAnniversary2025Family = 'OfferAnniversary2025Family',
+    OfferAnniversary2025MailPlus = 'OfferAnniversary2025MailPlus',
+    OfferAnniversary2025DrivePlus = 'OfferAnniversary2025DrivePlus',
+    OfferAnniversary2025PassPlus = 'OfferAnniversary2025PassPlus',
+    OfferAnniversary2025VPNPlus = 'OfferAnniversary2025VPNPlus',
 
     Offers = 'Offers',
     PrivacyDropdownOpened = 'PrivacyDropdownOpened',
@@ -115,4 +127,8 @@ export enum FeatureCode {
     PostSubscriptionShortDomainSpotlight = 'PostSubscriptionShortDomainSpotlight',
     FeatureTourExpirationDate = 'FeatureTourExpirationDate',
     FeatureTourDrawerSpotlightDisplayDate = 'FeatureTourDrawerSpotlightDisplayDate',
+
+    // Go unlimited 2025
+    OfferGoUnlimited2025 = 'OfferGoUnlimited2025',
+    OfferUnlimitedRotationState = 'OfferUnlimitedRotationState',
 }

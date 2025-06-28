@@ -122,8 +122,7 @@ export const DrivePostSignupOneDollar = () => {
 
     return (
         <SpotlightWithPromo
-            borderRadius={daysSinceOffer >= LAST_REMINDER_DAY ? 'md' : 'xl'}
-            onPromoClick={() => {
+            promoOnClick={() => {
                 if (daysSinceOffer >= LAST_REMINDER_DAY) {
                     handleUpsellClick();
                 } else {
@@ -139,10 +138,11 @@ export const DrivePostSignupOneDollar = () => {
             promoIconName={upgradeIcon}
             promoChildren={upgradeText}
             promoColor="full-gradient"
-            innerClassName={clsx(daysSinceOffer >= LAST_REMINDER_DAY ? undefined : 'p-0')}
-            show={show || spotlightState}
-            onClose={handleClose}
-            content={
+            spotlightBorderRadius={daysSinceOffer >= LAST_REMINDER_DAY ? 'md' : 'xl'}
+            spotlightInnerClassName={clsx(daysSinceOffer >= LAST_REMINDER_DAY ? undefined : 'p-0')}
+            spotlightShow={show || spotlightState}
+            spotlightOnClose={handleClose}
+            spotlightContent={
                 <DrivePostSignupDollarContent
                     pricingTitle={pricingTitle}
                     onClose={() => {

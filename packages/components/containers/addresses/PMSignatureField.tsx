@@ -1,25 +1,22 @@
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
+import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import { useLoading } from '@proton/hooks';
-import { mailSettingsActions } from '@proton/mail/mailSettings';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
-import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import signatureImg from '@proton/styles/assets/img/illustrations/new-upsells-img/tools.svg';
 
@@ -41,15 +38,17 @@ const PMSignature = ({ id }: Props) => {
     const api = useApi();
     const dispatch = useDispatch();
 
-    const [user] = useUser();
-    const [mailSettings] = useMailSettings();
-    const [userSettings] = useUserSettings();
+    const [user, loadingUser] = useUser();
+    const [mailSettings, loadingMailSettings] = useMailSettings();
+    const [userSettings, loadingUserSettings] = useUserSettings();
+    const [organization, loadingOrganization] = useOrganization();
+    const loadingData = loadingMailSettings || loadingUserSettings || loadingUser || loadingOrganization;
 
     const [loading, withLoading] = useLoading();
-    const { state, toggle } = useToggle(hasBit(mailSettings?.PMSignature, PM_SIGNATURE.ENABLED));
+    const { state, toggle } = useToggle(!!mailSettings?.PMSignature);
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
-    const pmSignatureEnabled = canUpdateSignature(user, mailSettings);
+    const pmSignatureEnabled = canUpdateSignature(user, organization, mailSettings);
 
     const handleChange = async (checked: number) => {
         const { MailSettings } = await api<{ MailSettings: MailSettings }>(updatePMSignature(checked));
@@ -58,34 +57,9 @@ const PMSignature = ({ id }: Props) => {
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
-    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
-
-    const modal = displayNewUpsellModalsVariant ? (
-        <NewUpsellModal
-            titleModal={c('Title').t`Personalize your email footer`}
-            description={c('Description').t`Make your email footer your own — showcase your unique brand, not ours.`}
-            modalProps={upsellModalProps}
-            illustration={signatureImg}
-            sourceEvent="BUTTON_MAIL_FOOTER"
-            {...upsellConfig}
-        />
-    ) : (
-        <UpsellModal
-            title={c('Title').t`Personalize your e-mail footer`}
-            description={c('Description')
-                .t`To remove the ${MAIL_APP_NAME} footer, upgrade and unlock even more premium features.`}
-            modalProps={upsellModalProps}
-            sourceEvent="BUTTON_MAIL_FOOTER"
-            features={[
-                'unlimited-folders-and-labels',
-                'search-message-content',
-                'more-storage',
-                'more-email-addresses',
-                'custom-email-domains',
-            ]}
-            {...upsellConfig}
-        />
-    );
+    if (loadingData) {
+        return null;
+    }
 
     return (
         <div className="flex flex-1 align-items-center">
@@ -93,10 +67,11 @@ const PMSignature = ({ id }: Props) => {
                 className="border-container flex-1 pr-4 py-2 mb-4"
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
-                    __html: getProtonMailSignature({
-                        isReferralProgramLinkEnabled: !!mailSettings?.PMSignatureReferralLink,
-                        referralProgramUserLink: userSettings.Referral?.Link,
-                    }),
+                    __html: getProtonMailSignature(
+                        !!mailSettings?.PMSignatureReferralLink,
+                        userSettings.Referral?.Link,
+                        mailSettings?.PMSignatureContent
+                    ),
                 }}
             />
             <div className="ml-0 md:ml-2 pt-2" data-testid="settings:identity-section:signature-toggle">
@@ -119,7 +94,17 @@ const PMSignature = ({ id }: Props) => {
                     }}
                 />
             </div>
-            {renderUpsellModal && modal}
+
+            {renderUpsellModal && (
+                <UpsellModal
+                    title={c('Title').t`Personalize your email footer`}
+                    description={c('Description')
+                        .t`Make your email footer your own — showcase your unique brand, not ours.`}
+                    modalProps={upsellModalProps}
+                    illustration={signatureImg}
+                    upsellRef={upsellRef}
+                />
+            )}
         </div>
     );
 };

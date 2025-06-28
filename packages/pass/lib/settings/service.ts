@@ -2,18 +2,23 @@ import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/red
 import type { MaybePromise } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 
-export interface SettingsService {
+export interface SettingsServiceConfig {
     clear: (localID?: number) => MaybePromise<void>;
-    resolve: (localID?: number) => Promise<ProxiedSettings>;
+    read: (localID?: number) => Promise<ProxiedSettings>;
     sync: (settings: ProxiedSettings, localID?: number) => MaybePromise<void>;
 }
 
-export const createSettingsService = (options: SettingsService): SettingsService => {
+export interface SettingsService extends SettingsServiceConfig {
+    resolve: (localID?: number) => Promise<ProxiedSettings>;
+}
+
+export const createSettingsService = (options: SettingsServiceConfig): SettingsService => {
     return {
         clear: options.clear,
+        read: options.read,
         resolve: async (localID) => {
             try {
-                const settings = await options.resolve(localID);
+                const settings = await options.read(localID);
                 return merge(getInitialSettings(), settings ?? {});
             } catch {
                 return getInitialSettings();

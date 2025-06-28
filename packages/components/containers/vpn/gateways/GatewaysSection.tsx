@@ -16,9 +16,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { PLANS } from '@proton/payments';
-import { getCountryOptions } from '@proton/payments';
-import { getVPNDedicatedIPs } from '@proton/payments';
+import { PLANS, getCountryOptions, getVPNDedicatedIPs } from '@proton/payments';
 import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -53,6 +51,9 @@ const getFeaturesAndUserIds = (data: Partial<GatewayModel>): [number, readonly s
 };
 
 const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
+    const DASHBOARD = 'dashboard';
+    const UPSELLS = 'upsells';
+
     const api = useApi();
     const [createModal, showCreateModal] = useModalTwoStatic(GatewayModal);
     const [renameModal, showRenameModal] = useModalTwoStatic(GatewayRenameModal);
@@ -136,7 +137,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         return createdGateway;
     };
 
-    const getCustomizeSubscriptionOpener = (source: 'dashboard' | 'upsells') => () =>
+    const getCustomizeSubscriptionOpener = (source: typeof DASHBOARD | typeof UPSELLS) => () =>
         openSubscriptionModal({
             metrics: {
                 source,
@@ -195,7 +196,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                             <Button
                                 color="norm"
                                 fullWidth
-                                onClick={getCustomizeSubscriptionOpener('upsells')}
+                                onClick={getCustomizeSubscriptionOpener(UPSELLS)}
                                 title={c('Title').t`Setup dedicated servers by upgrading to Business`}
                             >
                                 {c('Action').t`Upgrade to Business`}
@@ -418,7 +419,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
                 await refreshList();
             },
-            onUpsell: getCustomizeSubscriptionOpener('dashboard'),
+            onUpsell: getCustomizeSubscriptionOpener(DASHBOARD),
         });
 
     const editGatewayUsers = (gateway: Gateway, logical: GatewayLogical) => () =>
@@ -529,7 +530,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                             size="small"
                             color="norm"
                             shape={canAdd ? 'outline' : 'solid'}
-                            onClick={getCustomizeSubscriptionOpener('dashboard')}
+                            onClick={getCustomizeSubscriptionOpener(DASHBOARD)}
                             title={c('Title').t`Customize the number of IP addresses in your plan`}
                         >
                             {c('Action').t`Get more servers`}
@@ -557,11 +558,10 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         <thead>
                             <tr>
                                 <TableCell key="name" type="header" className="w-1/5">{c('Header').t`Name`}</TableCell>
-                                <TableCell key="status" type="header" className="w-1/10">
+                                <TableCell key="status" type="header" className="w-1/6">
                                     {c('Header').t`Status`}
                                 </TableCell>
-                                <TableCell key="servers" type="header" className="w-1/5">{c('Header')
-                                    .t`Servers`}</TableCell>
+                                <TableCell key="servers" type="header">{c('Header').t`Servers`}</TableCell>
                                 {isAdmin && (
                                     <>
                                         <TableCell key="members" type="header" className="w-1/5">{c('Header')
@@ -607,9 +607,9 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         key: 'no-gateways-image',
                     }}
                 >
-                    <h3 className="text-bold">
+                    <h2 className="h3 text-bold">
                         {isAdmin ? c('Info').t`Create your first Gateway` : c('Info').t`No Gateways yet`}
-                    </h3>
+                    </h2>
                     <p className="color-weak">
                         {isAdmin
                             ? c('Info')

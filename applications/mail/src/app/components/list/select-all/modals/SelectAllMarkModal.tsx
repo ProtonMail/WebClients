@@ -3,8 +3,8 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { Prompt } from '@proton/components';
-import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
-import { useMessageCounts } from '@proton/mail/counts/messageCounts';
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCounts';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCounts';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { getLocationElementsCount } from 'proton-mail/helpers/elements';

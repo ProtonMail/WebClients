@@ -93,6 +93,13 @@ module.exports = {
         'no-restricted-imports': [
             'error',
             {
+                paths: [
+                    {
+                        name: 'reselect',
+                        importNames: ['createSelector'],
+                        message: 'Please use createSelector from @redux/toolkit instead.',
+                    },
+                ],
                 patterns: [
                     {
                         group: ['pmcrypto'],
@@ -110,6 +117,14 @@ module.exports = {
                     {
                         group: ['@proton/payments/ui/*'],
                         message: 'You should import from `@proton/payments/ui` instead.',
+                    },
+                    {
+                        group: ['@proton/atoms/*'],
+                        message: 'You should import from `@proton/atoms` instead.',
+                    },
+                    {
+                        group: ['@proton/components/index'],
+                        message: 'You should import from `@proton/components` instead.',
                     },
                 ],
             },
@@ -226,18 +241,6 @@ module.exports = {
         'custom-rules/date-formatting-locale': 'warn',
         '@typescript-eslint/consistent-type-imports': 'error',
         'lodash/import-scope': [2, 'method'],
-        'no-restricted-imports': [
-            'error',
-            {
-                paths: [
-                    {
-                        name: 'reselect',
-                        importNames: ['createSelector'],
-                        message: 'Please use createSelector from @redux/toolkit instead.',
-                    },
-                ],
-            },
-        ],
     },
     settings: {
         'import/resolver': {

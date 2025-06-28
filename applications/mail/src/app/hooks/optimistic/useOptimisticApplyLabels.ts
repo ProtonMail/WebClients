@@ -7,7 +7,7 @@ import {
     useFolders,
     useLabels,
 } from '@proton/mail';
-import { isCustomLabel } from '@proton/mail/labels/helpers';
+import { isCustomLabel } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -17,7 +17,13 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { updateCounters } from '../../helpers/counter';
-import { getCurrentFolderIDs, getLabelIDs, hasLabel, isMessage as testIsMessage } from '../../helpers/elements';
+import {
+    getCurrentFolderIDs,
+    getLabelIDs,
+    hasLabel,
+    isElementOutsideFolders,
+    isMessage as testIsMessage,
+} from '../../helpers/elements';
 import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
 import {
     applyLabelChangesOnConversation,
@@ -155,7 +161,8 @@ export const useOptimisticApplyLabels = () => {
 
                     const isMoveToCurrentFolder = currentFolderIDs.every((folderID) => changes[folderID]);
 
-                    if (isMoveToCurrentFolder) {
+                    // When deleting a folder, elements have no folder. Instead, they only have All mail and/or Almost all mail labels
+                    if (isMoveToCurrentFolder && !isElementOutsideFolders(element, labels)) {
                         // It's a move to the folder where the elements already are, so nothing to do or undo
                         return;
                     }

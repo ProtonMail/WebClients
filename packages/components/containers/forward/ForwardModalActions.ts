@@ -2,6 +2,7 @@ import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import { type AddressKeysState, addressKeysThunk } from '@proton/account/addressKeys';
+import { setAddressFlags } from '@proton/account/addressKeys/actions';
 import { addressesThunk } from '@proton/account/addresses';
 import type { DomainsState } from '@proton/account/domains';
 import type { KtState } from '@proton/account/kt';
@@ -14,7 +15,6 @@ import {
     generateNewE2EEForwardingCompatibleAddressKey,
     handleUnsetV6PrimaryKey,
 } from '@proton/components/containers/forward/keyHelpers';
-import type { UseAddressFlags } from '@proton/components/hooks/useAddressFlags';
 import { CryptoProxy, type PrivateKeyReferenceV4, type PublicKeyReference } from '@proton/crypto';
 import { createKTVerifier } from '@proton/key-transparency/lib';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -27,6 +27,7 @@ import {
 } from '@proton/shared/lib/api/forwardings';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';
+import { getAddressFlagsData } from '@proton/shared/lib/helpers/address';
 import { ForwardingType } from '@proton/shared/lib/interfaces';
 import type { GetPublicKeysForInbox } from '@proton/shared/lib/interfaces/hooks/GetPublicKeysForInbox';
 import {
@@ -160,7 +161,6 @@ export const finalizeForwardingSetup = ({
     isReEnablingForwarding,
     isInternal,
     isExternal,
-    addressFlags,
 }: {
     forwarderAddressID: string;
     filterID: string | undefined;
@@ -169,8 +169,7 @@ export const finalizeForwardingSetup = ({
     isReEnablingForwarding: boolean | undefined;
     isInternal: boolean | undefined;
     isExternal: boolean | undefined;
-    addressFlags: ReturnType<UseAddressFlags>;
-}): ThunkAction<Promise<void>, AddressKeysState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<Promise<void>, AddressKeysState & KtState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState, extra) => {
         const { email, version, conditions, statement } = filter;
 
@@ -235,13 +234,16 @@ export const finalizeForwardingSetup = ({
                       })
             );
         } else {
+            const addressFlags = getAddressFlagsData(forwarderAddress);
             // Disable encryption if the email is external
-            if (isExternal && !addressFlags.encryptionDisabled) {
-                await addressFlags?.handleSetAddressFlags({
-                    encryptionDisabled: true,
-                    expectSignatureDisabled: addressFlags.expectSignatureDisabled,
-                    notify: false,
-                });
+            if (isExternal && !addressFlags.isEncryptionDisabled) {
+                await dispatch(
+                    setAddressFlags({
+                        address: forwarderAddress,
+                        encryptionDisabled: true,
+                        expectSignatureDisabled: addressFlags.isExpectSignatureDisabled,
+                    })
+                );
             }
 
             await silentApi(

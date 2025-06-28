@@ -1,14 +1,13 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useErrorHandler, useMyCountry } from '@proton/components';
-import { getIsB2BAudienceFromPlan } from '@proton/payments';
+import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
-import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getLocalPart } from '@proton/shared/lib/keys';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
@@ -55,11 +54,13 @@ const CustomStep = ({
     const plan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs);
     const planName = plan?.Title;
     const isB2BAudienceFromPlan = Boolean(plan && getIsB2BAudienceFromPlan(plan.Name));
+    const isBYOEAccount =
+        model.cache?.type === 'signup' && model.cache.accountData.signupType === SignupType.BringYourOwnEmail;
 
     const steps: Step[] = [
         !!mnemonicData && Step.MnemonicRecovery,
-        Step.Congratulations,
-        !mnemonicData && Step.SaveRecovery,
+        !isBYOEAccount && Step.Congratulations,
+        !isBYOEAccount && !mnemonicData && Step.SaveRecovery,
         isB2BAudienceFromPlan && Step.OrgSetup,
         isB2BAudienceFromPlan && Step.RedirectAdmin,
         !!hasExploreStep && Step.Explore,
@@ -106,12 +107,23 @@ const CustomStep = ({
             return verificationModel.value;
         }
 
-        if (accountData?.signupType === SignupType.Email) {
+        if (accountData?.signupType === SignupType.External) {
             return accountData.email;
         }
 
         return '';
     })();
+
+    // BYOE accounts might not have custom steps by default
+    useEffect(() => {
+        if (step === undefined) {
+            const signupActionResponse = handleDone({
+                cache,
+                appIntent: { app: product, ref: hasExploreStep ? 'product-switch' : undefined },
+            });
+            void onSetup({ type: 'signup', payload: signupActionResponse });
+        }
+    }, [step]);
 
     return (
         <Layout logo={logo} hasDecoration={false}>
@@ -131,7 +143,7 @@ const CustomStep = ({
                 <CongratulationsStep
                     defaultName={
                         accountData.username ||
-                        (accountData?.signupType === SignupType.Email && getLocalPart(accountData.email)) ||
+                        (accountData?.signupType === SignupType.External && getLocalPart(accountData.email)) ||
                         ''
                     }
                     planName={planName}

@@ -6,7 +6,7 @@ import { headers } from '@proton/activation/msw.header';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { APPS } from '@proton/shared/lib/constants';
 
-import ProviderCards from '../../SettingsArea/ProviderCards/ProviderCards';
+import ProviderCard from '../../SettingsArea/ProviderCards/ProviderCard';
 
 const server = setupServer();
 
@@ -110,9 +110,9 @@ afterAll(() => {
 
 describe('OAuth start step', () => {
     it.skip('Should render the product selection modal when clicking on Google', async () => {
-        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
-        const google = screen.getByTestId('ProviderCard:googleCard');
+        const google = screen.getByTestId('ProviderButton:googleCard');
 
         expect(google).toBeEnabled();
 
@@ -122,9 +122,9 @@ describe('OAuth start step', () => {
     });
 
     it.skip('Should render the product selection modal when clicking on Outlook', async () => {
-        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
-        const outlook = screen.getByTestId('ProviderCard:outlookCard');
+        const outlook = screen.getByTestId('ProviderButton:outlookCard');
 
         expect(outlook).toBeEnabled();
 
@@ -134,10 +134,10 @@ describe('OAuth start step', () => {
     });
 
     it('Should render the instruction modal if Google is selected', async () => {
-        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
         // Open the product modal
-        const google = screen.getByTestId('ProviderCard:googleCard');
+        const google = screen.getByTestId('ProviderButton:googleCard');
         expect(google).toBeEnabled();
         fireEvent.click(google);
 
@@ -165,10 +165,10 @@ describe('OAuth start step', () => {
             })
         );
 
-        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
         // Open the product modal
-        const outlook = screen.getByTestId('ProviderCard:outlookCard');
+        const outlook = screen.getByTestId('ProviderButton:outlookCard');
         expect(outlook).toBeEnabled();
         fireEvent.click(outlook);
 
@@ -186,10 +186,10 @@ describe('OAuth start step', () => {
             })
         );
 
-        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
         // Open the product modal
-        const google = screen.getByTestId('ProviderCard:googleCard');
+        const google = screen.getByTestId('ProviderButton:googleCard');
         expect(google).toBeEnabled();
         fireEvent.click(google);
 

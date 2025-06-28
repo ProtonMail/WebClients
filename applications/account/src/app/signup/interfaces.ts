@@ -42,7 +42,6 @@ export enum SignupSteps {
     Payment = 'payment',
     HumanVerification = 'human-verification',
     CreatingAccount = 'creating-account',
-    TrialPlan = 'trial-plan',
     Explore = 'explore',
     Done = 'done',
 }
@@ -90,8 +89,9 @@ export interface ReferralData {
 }
 
 export enum SignupType {
-    Email = 1,
-    Username,
+    External = 1,
+    Proton = 2,
+    BringYourOwnEmail = 3,
 }
 
 export interface SignupModel {
@@ -186,6 +186,12 @@ export interface UserCacheResult {
     session: SessionData;
 }
 
+export interface HumanVerificationResult {
+    tokenType: HumanVerificationMethodType;
+    token: string;
+    verificationModel?: VerificationModel;
+}
+
 export interface SignupCacheResult {
     type: 'signup';
     appIntent?: AppIntent;
@@ -194,6 +200,7 @@ export interface SignupCacheResult {
     setupData?: SetupData;
     accountData: AccountData;
     subscriptionData: SubscriptionData;
+    subscription?: Subscription;
     ktActivation: KeyTransparencyActivation;
     appName: APP_NAMES;
     inviteData: InviteData | undefined;
@@ -205,11 +212,7 @@ export interface SignupCacheResult {
     ignoreExplore: boolean;
     humanVerificationInline?: boolean;
     humanVerificationData?: HumanVerificationData;
-    humanVerificationResult?: {
-        tokenType: HumanVerificationMethodType;
-        token: string;
-        verificationModel?: VerificationModel;
-    };
+    humanVerificationResult?: HumanVerificationResult;
 }
 
 export interface SignupActionContinueResponse {

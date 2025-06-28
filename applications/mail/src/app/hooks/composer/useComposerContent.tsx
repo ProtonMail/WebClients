@@ -11,10 +11,14 @@ import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssista
 import { getHasAssistantStatus } from '@proton/llm/lib';
 import type { OpenedAssistant } from '@proton/llm/lib/types';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+import { sanitizeComposerReply } from '@proton/shared/lib/sanitize/purify';
+import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import type { ComposerReturnType } from 'proton-mail/helpers/composer/contentFromComposerMessage';
@@ -34,7 +38,6 @@ import { messageByID } from 'proton-mail/store/messages/messagesSelectors';
 
 import type { MessageChange } from '../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
-import { MESSAGE_ACTIONS } from '../../constants';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import { getDate } from '../../helpers/elements';
 import {
@@ -48,7 +51,6 @@ import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbedde
 import { mergeMessages } from '../../helpers/message/messages';
 import type { ComposerID } from '../../store/composers/composerTypes';
 import { removeInitialAttachments, updateDraftContent } from '../../store/messages/draft/messagesDraftActions';
-import type { MessageState } from '../../store/messages/messagesTypes';
 import { useInitializeMessage } from '../message/useInitializeMessage';
 import { useGetMessage, useMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
@@ -84,6 +86,7 @@ export type EditorArgs = {
 export const useComposerContent = (args: EditorArgs) => {
     const [addresses = []] = useAddresses();
     const mailSettings = useMailModel('MailSettings');
+    const isRemoveReplyStyleEnabled = useFlag('RemoveReplyStyles');
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const getMessage = useGetMessage();
@@ -290,6 +293,12 @@ export const useComposerContent = (args: EditorArgs) => {
                   { Password: undefined, PasswordHint: undefined };
 
             const documentCloned = syncedMessage.messageDocument?.document?.cloneNode(true) as Element;
+            // Sanitize the document to remove unwanted tags (like <style>) from blockquote sections.
+            // This prevents potential styling issues and security vulnerabilities when rendering quoted content.
+            if (isRemoveReplyStyleEnabled) {
+                sanitizeComposerReply(documentCloned);
+            }
+
             const newModelMessage = {
                 ...syncedMessage,
                 ...modelMessage,

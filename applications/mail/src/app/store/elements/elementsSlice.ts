@@ -4,8 +4,15 @@ import { createSlice } from '@reduxjs/toolkit';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { globalReset } from '../actions';
+import {
+    markConversationsAsRead,
+    markConversationsAsUnread,
+    markMessagesAsRead,
+    markMessagesAsUnread,
+} from '../mailbox/mailboxActions';
 import { deleteDraft } from '../messages/draft/messagesDraftActions';
 import { expireMessages } from '../messages/expire/messagesExpireActions';
+import { filterSubscriptionList } from '../newsletterSubscriptions/newsletterSubscriptionsActions';
 import {
     addESResults,
     backendActionFinished,
@@ -26,7 +33,7 @@ import {
     pollTaskRunning,
     removeExpired,
     reset,
-    resetByPassFilter,
+    resetRetry,
     retry,
     setParams,
     showSerializedElements as showSerializedElementsAction,
@@ -48,13 +55,22 @@ import {
     loadPending,
     manualFulfilled as manualFulfilledReducer,
     manualPending as manualPendingReducer,
+    markConversationsAsReadPending,
+    markConversationsAsReadRejected,
+    markConversationsAsUnreadPending,
+    markConversationsAsUnreadRejected,
+    markMessagesAsReadPending,
+    markMessagesAsReadRejected,
+    markMessagesAsUnreadPending,
+    markMessagesAsUnreadRejected,
+    markNewsletterElementsAsReadPending,
     optimisticDelete as optimisticDeleteReducer,
     optimisticEmptyLabel as optimisticEmptyLabelReducer,
     optimisticUpdates,
     pollTaskRunningFulfilled,
     removeExpired as removeExpiredReducer,
-    resetByPassFilter as resetByPassFilterReducer,
     reset as resetReducer,
+    resetRetry as resetRetryReducer,
     retry as retryReducer,
     selectAllFulfilled,
     setParams as setParamsReducer,
@@ -115,10 +131,10 @@ const elementsSlice = createSlice({
 
         builder.addCase(reset, resetReducer);
         builder.addCase(updatePage, updatePageReducer);
-        builder.addCase(resetByPassFilter, resetByPassFilterReducer);
         builder.addCase(load.pending, loadPending);
         builder.addCase(load.fulfilled, loadFulfilled);
         builder.addCase(retry, retryReducer);
+        builder.addCase(resetRetry, resetRetryReducer);
         builder.addCase(removeExpired, removeExpiredReducer);
         builder.addCase(invalidate, invalidateReducer);
         builder.addCase(eventUpdates.pending, eventUpdatesPending);
@@ -150,6 +166,17 @@ const elementsSlice = createSlice({
         builder.addCase(showSerializedElementsAction, showSerializedElementsReducer);
 
         builder.addCase(setParams, setParamsReducer);
+
+        builder.addCase(markMessagesAsRead.pending, markMessagesAsReadPending);
+        builder.addCase(markMessagesAsRead.rejected, markMessagesAsReadRejected);
+        builder.addCase(markMessagesAsUnread.pending, markMessagesAsUnreadPending);
+        builder.addCase(markMessagesAsUnread.rejected, markMessagesAsUnreadRejected);
+        builder.addCase(markConversationsAsRead.pending, markConversationsAsReadPending);
+        builder.addCase(markConversationsAsRead.rejected, markConversationsAsReadRejected);
+        builder.addCase(markConversationsAsUnread.pending, markConversationsAsUnreadPending);
+        builder.addCase(markConversationsAsUnread.rejected, markConversationsAsUnreadRejected);
+
+        builder.addCase(filterSubscriptionList.pending, markNewsletterElementsAsReadPending);
     },
 });
 

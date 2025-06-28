@@ -3,14 +3,17 @@ import { configureStore } from '@reduxjs/toolkit';
 import * as CONFIG from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { isChromeExtensionRollback } from 'proton-pass-extension/lib/utils/chrome';
+import { portTransferWriter } from 'proton-pass-extension/lib/utils/fs.utils';
+import { WEB_REQUEST_PERMISSIONS, hasPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { EXTENSION_BUILD_VERSION, EXTENSION_MANIFEST_VERSION } from 'proton-pass-extension/lib/utils/version';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import createSagaMiddleware from 'redux-saga';
 
 import { authStore } from '@proton/pass/lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
-import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import { cacheGuard } from '@proton/pass/store/migrate';
@@ -18,9 +21,9 @@ import reducer from '@proton/pass/store/reducers';
 import { requestMiddlewareFactory } from '@proton/pass/store/request/middleware';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { EXTENSION_SAGAS } from '@proton/pass/store/sagas/extension';
-import { selectLocale } from '@proton/pass/store/selectors';
+import { selectFeatureFlag, selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import { WorkerMessageType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { first } from '@proton/pass/utils/array/first';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -68,6 +71,7 @@ export const options: RootSagaOptions = {
     }),
 
     getPort: (name) => first(WorkerMessageBroker.ports.query(eq(name))),
+    getPortWriter: portTransferWriter,
 
     /* adapt event polling interval based on popup activity :
      * 30 seconds if popup is opened / 30 minutes if closed */
@@ -96,9 +100,20 @@ export const options: RootSagaOptions = {
     getAppState: withContext((ctx) => ctx.getState()),
     setAppStatus: withContext((ctx, status) => ctx.setStatus(status)),
 
-    /* Sets the worker status according to the
-     * boot sequence's result. On boot failure,
-     * clear */
+    onBeforeHydrate: async (state) => {
+        if (BUILD_TARGET !== 'safari') {
+            /** Initialize basic auth autofill setting based on current permission state.
+             * If not explicitly set by user, default to enabled when permission is already granted.
+             * Done during hydration to keep browser API calls out of core application logic. */
+            const basicAuth = state.settings.autofill.basicAuth;
+            state.settings.autofill.basicAuth = basicAuth ?? (await hasPermissions(WEB_REQUEST_PERMISSIONS));
+        }
+
+        return state;
+    },
+
+    /* Sets the worker status according to the boot
+     * sequence's result. On boot failure, clear. */
     onBoot: withContext(async (ctx, res) => {
         if (res.ok) {
             const state = store.getState();
@@ -168,7 +183,15 @@ export const options: RootSagaOptions = {
             : WorkerMessageBroker.buffer.push(message);
     },
 
-    onSettingsUpdated: withContext((ctx, update) => ctx.service.settings.sync(update)),
+    onSettingsUpdated: withContext(async (ctx, update) => {
+        /** Toggle autofill listener based on setting (runs on app boot and when user changes setting)
+         * This ensures we only listen for basic auth opportunities when the feature is enabled */
+        const basicAuthEnabled = selectFeatureFlag(PassFeature.PassBasicAuthAutofill)(ctx.service.store.getState());
+        if (update.autofill.basicAuth && basicAuthEnabled) ctx.service.autofill.basicAuth.listen();
+        else ctx.service.autofill.basicAuth.destroy();
+
+        await ctx.service.settings.sync(update);
+    }),
 };
 
 /** Redux Saga emits a `@@redux-saga/INIT` action when running the middleware.

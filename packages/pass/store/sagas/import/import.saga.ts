@@ -6,7 +6,7 @@ import { MAX_BATCH_PER_IMPORT_REQUEST } from '@proton/pass/constants';
 import { type ImportReport, formatIgnoredItem } from '@proton/pass/lib/import/helpers/report';
 import { type ImportVault } from '@proton/pass/lib/import/types';
 import { importItemsBatch } from '@proton/pass/lib/items/item.requests';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     importItems,
@@ -25,6 +25,7 @@ import type {
     IndexedByShareIdAndItemId,
     ItemImportIntent,
     ItemRevision,
+    ItemType,
     Maybe,
     MaybeNull,
     PassPlanResponse,
@@ -38,6 +39,7 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import chunk from '@proton/utils/chunk';
+import partition from '@proton/utils/partition';
 
 type ImportWorkerState = {
     /** `true` when the import request has been cancelled via
@@ -45,6 +47,12 @@ type ImportWorkerState = {
      * operation to complete before terminating */
     aborted: boolean;
 };
+
+const unsupported = ['custom', 'sshKey', 'wifi'] as const;
+const isSupportedItemType = (
+    item: ItemImportIntent
+): item is Exclude<ItemImportIntent, ItemImportIntent<(typeof unsupported)[number]>> =>
+    !(unsupported as readonly ItemType[]).includes(item.type);
 
 /** Creates a dedicated vault for imported items by directly invoking
  * the vault creation worker saga. This bypasses the standard action
@@ -91,15 +99,24 @@ function* importWorker(
      * files to their parent items after import completes */
     const pendingFiles: string[] = [];
     const filesForImport: IndexedByShareIdAndItemId<string[]> = {};
+    const ignored = [...data.ignored];
 
     const passPlan: UserPassPlan = yield select(selectPassPlan);
     const userPlan: MaybeNull<PassPlanResponse> = yield select(selectUserPlan);
-    const fileAttachmentsEnabled: boolean = yield select(selectFeatureFlag(PassFeature.PassFileAttachments));
+    const canImportFiles = isPaidPlan(passPlan) && userPlan?.DisplayName !== 'Pass Essentials';
+    const canImportCustomItems: boolean = yield select(selectFeatureFlag(PassFeature.PassCustomTypeV1));
 
-    const canImportFiles =
-        fileAttachmentsEnabled && isPaidPlan(passPlan) && userPlan?.DisplayName !== 'Pass Essentials';
+    const sanitized = (() => {
+        if (canImportCustomItems) return data.vaults;
 
-    Object.values(data.vaults).forEach(({ items }) =>
+        return data.vaults.map((vault) => {
+            const [items, ignore] = partition(vault.items, isSupportedItemType);
+            ignored.push(...ignore.map(({ metadata, type }) => `[${type}] ${metadata.name}`));
+            return { ...vault, items };
+        });
+    })();
+
+    Object.values(sanitized).forEach(({ items }) =>
         items.forEach((item) => {
             pendingItems.set(item.metadata.itemUuid, item);
             if (item.files) {
@@ -116,11 +133,10 @@ function* importWorker(
     const getImportReport = (err?: unknown): ImportReport => {
         const error = err instanceof Error ? err.name : undefined;
         const pendingIgnored = Array.from(pendingItems.values().map(formatIgnoredItem));
-        const ignored = data.ignored.concat(...pendingIgnored);
 
         return {
             error,
-            ignored,
+            ignored: ignored.concat(...pendingIgnored),
             ignoredFiles: pendingFiles,
             importedAt: getEpoch(),
             provider,
@@ -130,7 +146,7 @@ function* importWorker(
         };
     };
 
-    const importVaults = groupByKey(data.vaults, 'shareId', { splitEmpty: true }).map(
+    const importVaults = groupByKey(sanitized, 'shareId', { splitEmpty: true }).map(
         ([vault, ...vaults]): ImportVault => ({
             ...vault,
             items: vault.items.concat(...vaults.map(prop('items'))),
@@ -172,7 +188,7 @@ function* importWorker(
                                 endpoint,
                                 key: requestID,
                                 type: 'error',
-                                text: c('Error').t`Import failed for vault "${vaultData.name}" : ${errorMessage}`,
+                                text: c('Error').t`Import failed for vault "${vaultData.name}": ${errorMessage}`,
                             })
                         );
                     }

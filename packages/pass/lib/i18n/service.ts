@@ -34,10 +34,11 @@ export const createI18nService = (options: I18nServiceOptions) => {
 
     const getLocale = async () => (await options.getLocale()) ?? getFallbackLocale();
 
+    const getDefaultLocale = () => getClosestLocaleCode(getFallbackLocale(), options.locales);
+
     const setLocale = async (locale?: string) => {
         try {
             const nextLocale = getClosestLocaleCode(locale ?? (await getLocale()), options.locales);
-
             if (options.loadDateLocale) await loadDateLocale(nextLocale).catch(noop);
 
             await loadLocale(nextLocale, options.locales);
@@ -51,7 +52,7 @@ export const createI18nService = (options: I18nServiceOptions) => {
     return {
         setLocale,
         getLocale,
-        getFallbackLocale,
+        getDefaultLocale,
         subscribe: (fn: Subscriber<LocaleEvent>) => pubsub.subscribe(fn),
         unsubscribe: () => pubsub.unsubscribe(),
     };

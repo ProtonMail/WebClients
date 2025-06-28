@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -21,17 +21,17 @@ import type { AuthSession } from '@proton/components/containers/login/interface'
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
-import type { FullPlansMap, PaymentMethodFlows } from '@proton/payments';
+import type { FullPlansMap, PaymentMethodFlows, PaymentProcessorType } from '@proton/payments';
 import {
     type Currency,
     DEFAULT_CYCLE,
     PAYMENT_METHOD_TYPES,
     PLANS,
-    getPlansMap,
+    getPlanIDs,
     getPlanNameFromIDs,
+    getPlansMap,
 } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -48,6 +48,7 @@ import { appendReturnUrlParams } from '@proton/shared/lib/authentication/returnU
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { redirectTo } from '@proton/shared/lib/helpers/browser';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -62,10 +63,10 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import mailReferPage from '../../pages/refer-a-friend';
-import mailTrialPage from '../../pages/trial';
 import { PublicThemeProvider, getPublicTheme } from '../containers/PublicThemeProvider';
 import type { Paths } from '../content/helper';
-import { getOptimisticDomains, isMailReferAFriendSignup, isMailTrialSignup, isPorkbunSignup } from '../signup/helper';
+import { cachedPlans, cachedPlansMap } from '../defaultPlans';
+import { getOptimisticDomains, isMailReferAFriendSignup, isPorkbunSignup } from '../signup/helper';
 import type {
     InviteData,
     SessionData,
@@ -78,6 +79,11 @@ import type {
 import { getPlanIDsFromParams } from '../signup/searchParams';
 import { handleDone, handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
+import {
+    sendSignupAccountCreationTelemetry,
+    sendSignupLoadTelemetry,
+    sendSignupSubscriptionTelemetryEvent,
+} from '../signup/signupTelemetry';
 import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import type { MetaTags } from '../useMetaTags';
@@ -89,7 +95,6 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import SwitchModal from './SwitchModal';
 import { defaultSignupModel } from './constants';
-import { cachedPlans, cachedPlansMap } from './defaultPlans';
 import { getSessionsData } from './getSessionsData';
 import {
     getAccessiblePlans,
@@ -191,6 +196,7 @@ const SingleSignupContainerV2 = ({
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const lumoSignupEnabled = useFlag('LumoSignupAvailable');
+    const isB2BTrialEnabled = useFlag('ManualTrialsFE');
 
     const { flagsReady } = useFlagsStatus();
 
@@ -210,15 +216,14 @@ const SingleSignupContainerV2 = ({
         }
         return Audience.B2C;
     })();
-    const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
     const isPorkbun = isPorkbunSignup(location);
-    useMetaTags(isMailRefer ? mailReferPage() : isMailTrial ? mailTrialPage() : metaTags);
+    useMetaTags(isMailRefer ? mailReferPage() : metaTags);
 
     const step1Ref = useRef<Step1Rref | undefined>(undefined);
 
     // Override the app to always be mail in trial or refer-a-friend signup
-    if (isMailTrial || isMailRefer) {
+    if (isMailRefer) {
         toApp = APPS.PROTONMAIL;
     }
 
@@ -256,12 +261,13 @@ const SingleSignupContainerV2 = ({
             location,
             visionarySignupEnabled,
             initialSearchParams,
-            isMailTrial,
+            isB2BTrialEnabled,
             partner,
         });
     });
 
     const theme = getPublicTheme(toApp, audience, viewportWidth, signupParameters);
+    const trial = !!(signupParameters.trial && audience === Audience.B2B);
 
     const [model, setModel] = useState<SignupModelV2>(() => {
         // Add free plan
@@ -338,6 +344,21 @@ const SingleSignupContainerV2 = ({
         generateMnemonic,
         CustomStep,
     } = signupConfiguration;
+
+    useEffect(() => {
+        if (toApp === APPS.PROTONLUMO && flagsReady && !lumoSignupEnabled) {
+            redirectTo(`${SSO_PATHS.SIGNUP}${location.search}`);
+        }
+    }, [toApp, flagsReady, lumoSignupEnabled]);
+
+    useEffect(() => {
+        if (flagsReady && !isB2BTrialEnabled && signupParameters.trial) {
+            // remove ?trial from search params and redirect
+            const url = new URL(window.location.href);
+            url.searchParams.delete('trial');
+            window.location.href = url.toString();
+        }
+    }, [flagsReady, isB2BTrialEnabled, signupParameters.trial]);
 
     useEffect(() => {
         const run = async () => {
@@ -571,6 +592,14 @@ const SingleSignupContainerV2 = ({
 
             const plansMap = getPlansMap(plans, currency, false);
 
+            sendSignupLoadTelemetry({
+                planIDs: planParameters.planIDs,
+                flowId: 'single-page-signup',
+                productIntent: toApp,
+                currency,
+                cycle,
+            });
+
             void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
             const [
@@ -608,6 +637,7 @@ const SingleSignupContainerV2 = ({
                             CountryCode: paymentMethodStatus.CountryCode,
                             State: paymentMethodStatus.State,
                         },
+                        trial,
                     },
                     toApp: product,
                     availableCycles: signupConfiguration.cycles,
@@ -653,7 +683,7 @@ const SingleSignupContainerV2 = ({
                 if (signupParameters.mode === SignupMode.MailReferral) {
                     signupParametersDiff.mode = SignupMode.Default;
                 }
-                if (isMailTrial || isMailRefer) {
+                if (isMailRefer) {
                     history.replace(SSO_PATHS.SIGNUP);
                 }
             }
@@ -787,6 +817,7 @@ const SingleSignupContainerV2 = ({
                     planIDs,
                     coupon: signupParameters.coupon,
                     billingAddress: model.subscriptionData.billingAddress,
+                    trial,
                 },
                 planParameters: model.planParameters!,
                 signupParameters,
@@ -901,6 +932,7 @@ const SingleSignupContainerV2 = ({
                     planIDs,
                     coupon: model.subscriptionData.checkResult?.Coupon?.Code,
                     billingAddress: model.subscriptionData.billingAddress,
+                    trial,
                 },
                 toApp: product,
                 availableCycles: signupConfiguration.cycles,
@@ -1138,7 +1170,6 @@ const SingleSignupContainerV2 = ({
             await handleSubscribeUser(
                 silentApi,
                 cache.subscriptionData,
-                undefined,
                 productParam,
                 getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
                 getReportPaymentFailure(cache.subscriptionData, isAuthenticated)
@@ -1179,13 +1210,29 @@ const SingleSignupContainerV2 = ({
             wait(3500),
         ]);
 
+        const { subscription, userData } = result.cache;
+        if (subscription && userData) {
+            const planIDs = getPlanIDs(subscription);
+
+            sendSignupSubscriptionTelemetryEvent({
+                planIDs,
+                flowId: 'single-page-signup',
+                currency: subscription.Currency,
+                cycle: subscription.Cycle,
+                userCreateTime: userData.User.CreateTime,
+                invoiceID: subscription.InvoiceID,
+                coupon: subscription.CouponCode,
+                amount: subscription.Amount,
+            });
+        }
+
         measure(getSignupTelemetryData(model.plansMap, cache));
 
         return result.cache;
     };
 
     if (toApp === APPS.PROTONLUMO && flagsReady && !lumoSignupEnabled) {
-        return <Redirect to={SSO_PATHS.LOGIN} />;
+        return null;
     }
 
     if (toApp === APPS.PROTONLUMO && !flagsReady) {
@@ -1453,6 +1500,7 @@ const SingleSignupContainerV2 = ({
                             }
                         }}
                         mode={signupParameters.mode}
+                        trial={trial}
                     />
                 )}
                 {model.step === Steps.Loading && (
@@ -1515,6 +1563,15 @@ const SingleSignupContainerV2 = ({
                                         }
                                     }
 
+                                    sendSignupAccountCreationTelemetry({
+                                        planIDs: cache.subscriptionData.planIDs,
+                                        flowId: 'single-page-signup',
+                                        productIntent: toApp,
+                                        currency: cache.subscriptionData.currency,
+                                        cycle: cache.subscriptionData.cycle,
+                                        signupType: cache.type === 'signup' ? cache.accountData.signupType : undefined,
+                                        amount: cache.subscriptionData.checkResult.AmountDue,
+                                    });
                                     metrics.core_single_signup_setup_total.increment({
                                         status: 'success',
                                     });
@@ -1562,4 +1619,5 @@ const SingleSignupContainerV2 = ({
         </PublicThemeProvider>
     );
 };
+
 export default SingleSignupContainerV2;

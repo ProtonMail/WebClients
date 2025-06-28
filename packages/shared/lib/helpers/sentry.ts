@@ -265,7 +265,7 @@ function main({
                 });
             }
 
-            // This will prevent from sending the password in the public url. Ex: https://drive.proton.local/urls/TBYS1295RG#[password]
+            // This will prevent from sending the password in the public url. Ex: https://drive.proton.dev/urls/TBYS1295RG#[password]
             if (event.exception && event.exception.values) {
                 event.exception.values = event.exception.values.map((error) => {
                     if (
@@ -318,6 +318,7 @@ export enum SentryMailInitiatives {
     MAIL_ONBOARDING = 'mail-onboarding',
     LIST_ACTIONS_TELEMETRY = 'list-actions-telemetry',
     REMOVE_EMAIL_TRACKERS = 'remove-email-trackers',
+    UPSELL_MODALS = 'upsell-modals',
 }
 
 export enum SentryCommonInitiatives {

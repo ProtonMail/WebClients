@@ -4,10 +4,12 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components';
 import type { ContactEditProps } from '@proton/components';
+import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
-import { getHumanLabelID } from '@proton/mail/labels/helpers';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { getHumanLabelID } from '@proton/mail/store/labels/helpers';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
@@ -17,7 +19,6 @@ import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
@@ -26,7 +27,6 @@ import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import useBlockSender from '../../../hooks/useBlockSender';
 import type { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import type { Element } from '../../../models/element';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import RecipientItemSingle from './RecipientItemSingle';
 

@@ -233,6 +233,8 @@ export enum EASY_SWITCH_SOURCES {
     CONTACTS_WEB_SETTINGS = 'contacts-web-settings',
     ACCOUNT_WEB_RECONNECT_IMPORT = 'account-web-reconnect-import',
     ACCOUNT_WEB_RECONNECT_SYNC = 'account-web-reconnect-sync',
+    ACCOUNT_WEB_EXTERNAL_GMAIL = 'account-web-external-gmail',
+    ACCOUNT_WEB_SIGNUP = 'account-web-signup',
     WEB_ONBOARDING = 'web-onboarding',
     MAIL_WEB_SIDEBAR = 'mail-web-sidebar',
     CONTACT_WEB_IMPORT_BUTTON = 'contacts-web-import-button',
@@ -260,4 +262,12 @@ export interface EasySwitchFeatureFlag {
     OtherCalendar: boolean;
     OtherContacts: boolean;
     OtherDrive: boolean;
+}
+
+export enum EASY_SWITCH_FEATURES {
+    IMPORT_MAIL = 'ImportMail',
+    IMPORT_CALENDAR = 'ImportCalendar',
+    IMPORT_CONTACTS = 'ImportContacts',
+    MANAGE_MEETINGS = 'ManageMeetings',
+    BYOE = 'byoe',
 }

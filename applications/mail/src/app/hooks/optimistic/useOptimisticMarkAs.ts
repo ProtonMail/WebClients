@@ -7,7 +7,7 @@ import {
     selectConversationCounts,
     selectMessageCounts,
 } from '@proton/mail';
-import { isSystemLabel } from '@proton/mail/labels/helpers';
+import { isSystemLabel } from '@proton/mail/store/labels/helpers';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -19,7 +19,6 @@ import { isUnread, isMessage as testIsMessage } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 import { isElementReminded } from '../../helpers/snooze';
-import useMailModel from '../../hooks/useMailModel';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import {
@@ -33,6 +32,7 @@ import {
 } from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
+import useMailModel from '../useMailModel';
 
 export type MarkAsChanges = { status: MARK_AS_STATUS; displaySnoozedReminder?: boolean };
 

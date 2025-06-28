@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { Href } from '@proton/atoms';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { Tooltip } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 const CLASSNAMES = {

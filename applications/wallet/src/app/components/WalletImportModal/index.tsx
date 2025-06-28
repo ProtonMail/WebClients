@@ -161,6 +161,7 @@ export const WalletImportModal = ({
                     >{c('Wallet setup').t`My wallet had a passphrase`}</CollapsibleHeader>
                     <CollapsibleContent>
                         <Input
+                            autoComplete="new-password"
                             autoFocus
                             id="passphrase"
                             as={PasswordInputTwo}

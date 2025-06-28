@@ -17,6 +17,9 @@
       "Add": [
         "Dodaj"
       ],
+      "Add account": [
+        "Dodaj račun"
+      ],
       "Add address": [
         "Dodajte adresu"
       ],
@@ -52,9 +55,6 @@
       ],
       "Attach screenshot(s)": [
         "Priložite snimku(e) zaslona"
-      ],
-      "Authenticate": [
-        "Autenticiraj"
       ],
       "Back": [
         "Natrag"
@@ -270,17 +270,20 @@
       "Fit to window": [
         "Prilagodi prozoru"
       ],
-      "Forgot password?": [
-        "Zaboravili ste lozinku?"
-      ],
       "Forward as attachment": [
         "Proslijedi kao privitak"
+      ],
+      "Get ${ planOrAppName }": [
+        "Nabavite ${ planOrAppName }"
       ],
       "Get link": [
         "Dobavite poveznicu"
       ],
       "Get Started": [
         "Započni"
+      ],
+      "Get the apps": [
+        "Preuzmite aplikacije"
       ],
       "Get verification code": [
         "Nabavi kôd za provjeru"
@@ -296,6 +299,9 @@
       ],
       "Got it": [
         "Shvaćam"
+      ],
+      "Hide": [
+        "Sakrij"
       ],
       "Hide advanced PGP settings": [
         "Sakrij napredne PGP postavke"
@@ -318,6 +324,9 @@
       "Import from .csv or vCard": [
         "Uvezite iz .csv ili vCard"
       ],
+      "Import from Google": [
+        "Uvoz iz Googlea"
+      ],
       "Import from Outlook": [
         "Uvoz iz Outlooka"
       ],
@@ -329,6 +338,9 @@
       ],
       "Learn more": [
         "Saznajte više"
+      ],
+      "Learn more.": [
+        "Više informacija."
       ],
       "Leave": [
         "Napusti"
@@ -368,6 +380,9 @@
       ],
       "More": [
         "Više"
+      ],
+      "More actions": [
+        "Više akcija"
       ],
       "More info: ${ safeTitle }": [
         "Više informacija: ${ safeTitle }"
@@ -413,9 +428,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvori ${ CALENDAR_APP_NAME } postavke"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Otvori u ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Otvori navigaciju"
@@ -485,6 +497,9 @@
       ],
       "Replace file": [
         "Zamijeni datoteku"
+      ],
+      "Report": [
+        "Prijavi"
       ],
       "Report a problem": [
         "Prijavi problem"
@@ -606,6 +621,9 @@
       "Submit report": [
         "Prijavi problem"
       ],
+      "Take a tour": [
+        "Započnite obilazak"
+      ],
       "Trust": [
         "Vjeruj"
       ],
@@ -669,9 +687,6 @@
       "Use for sending": [
         "Koristi za slanje"
       ],
-      "Use recovery code": [
-        "Koristi kôd za oporavak"
-      ],
       "Verify": [
         "Potvrdi"
       ],
@@ -689,6 +704,11 @@
       ],
       "Zoom out": [
         "Smanji"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Učitaj"
       ]
     },
     "Actions message": {
@@ -960,11 +980,31 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Zatvori"
+      ],
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Nastavi koristiti ${ MAIL_APP_NAME }."
+      ],
       "Continue using ${ planTitle }": [
         "Nastavi koristiti ${ planTitle }"
       ],
       "Continue your subscription": [
         "Nastavi svoju pretplatu"
+      ],
+      "Create label": [
+        "Stvori oznaku"
+      ],
+      "Take a tour": [
+        "Započnite obilazak"
+      ]
+    },
+    "Cancellation upsell": {
+      "Save ${ upsellSavings }": [
+        "Uštedite ${ upsellSavings }"
+      ],
+      "Try ${ planName }": [
+        "Isprobajte ${ planName }"
       ]
     },
     "Checkout row": {
@@ -1135,6 +1175,9 @@
       ],
       "Work": [
         "Posao"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -1539,9 +1582,6 @@
       ],
       "Macao": [
         "Makao"
-      ],
-      "Macedonia": [
-        "Makedonija"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -1966,6 +2006,11 @@
         "Pronađena su sljedeća polja u CSV datoteci koju ste prenijeli. Označite one koje želite uvesti."
       ]
     },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Otvori u ${ DRIVE_SHORT_APP_NAME }"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Priority support": [
         "Prioritetna podrška"
@@ -2306,6 +2351,11 @@
         "Nije odabrana nijedna slika"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Neočekivana pogreška"
+      ]
+    },
     "Event invitation error": {
       "Invalid invitation": [
         "Nevažeća pozivnica"
@@ -2361,16 +2411,6 @@
       ],
       "customer support": [
         "korisnička podrška"
-      ]
-    },
-    "fido2: Info": {
-      "Security key": [
-        "Sigurnosni ključ"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Sigurnosni ključ"
       ]
     },
     "file size format": {
@@ -2471,12 +2511,25 @@
         "Kontakti"
       ]
     },
+    "Heading": {
+      "Recent": [
+        "Nedavno"
+      ]
+    },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Pronađen je ${ itemsCount } prijedlog. Za navigaciju koristite tipkovnicu.",
+        "Pronađena su ${ itemsCount } prijedloga. Za navigaciju koristite tipkovnicu.",
+        "Pronađeno je ${ itemsCount } prijedloga. Za navigaciju koristite tipkovnicu."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Upotrijebite tipke gore i dolje za pristup i pregledavanje prijedloga nakon unosa. Pritisnite Enter da biste potvrdili svoj izbor ili Escape da biste zatvorili okvir za prijedloge."
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -2485,6 +2538,41 @@
       ],
       "No verification method available": [
         "Nema dostupne metode za provjeru"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "ICS event error": {
+      "Edited event not supported": [
+        "Uređeni događaj nije podržan"
+      ],
+      "End time out of bounds": [
+        "Krajnje vrijeme je van granica"
+      ],
+      "Event validation failed": [
+        "Neuspjela provjera valjanosti događaja"
+      ],
+      "Floating times not supported": [
+        "Floating vremena nisu podržana"
+      ],
+      "Malformed all-day event": [
+        "Nevažeći cjelodnevni događaj"
+      ],
+      "Malformed end time": [
+        "Nevažeće krajnje vrijeme"
+      ],
+      "Malformed recurring event": [
+        "Neispravan ponavljajući događaj"
+      ],
+      "Malformed start time": [
+        "Nevažeće početno vrijeme"
+      ],
+      "Recurring rule not supported": [
+        "Ponavljajuće pravilo nije podržano"
+      ],
+      "Start time out of bounds": [
+        "Početno vrijeme je van granica"
       ]
     },
     "Import calendar": {
@@ -2632,8 +2720,11 @@
       "Import from ${ provider }": [
         "Uvoz iz ${ provider }a"
       ],
-      "Other": [
-        "Ostalo"
+      "Import from Google": [
+        "Uvoz iz Googlea"
+      ],
+      "Import from Outlook": [
+        "Uvoz iz Outlooka"
       ]
     },
     "Import warning": {
@@ -2694,6 +2785,11 @@
         "${ groupCounts } grupe pronađene",
         "${ groupCounts } grupa pronađeno"
       ],
+      "${ photoCount } item": [
+        "${ photoCount } stavka",
+        "${ photoCount } stavke",
+        "${ photoCount } stavki"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mapa pronađena",
         "${ providerFoldersNumLocalized } mape pronađene",
@@ -2743,6 +2839,9 @@
       ],
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
+      ],
+      "Address copied to clipboard": [
+        "Adresa je kopirana u međuspremnik"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Za ovu adresu je omogućena potvrda adrese s pouzdanim ključevima. Da biste mogli slati na ovu adresu, prvo povjerite javne ključeve koji se mogu koristiti za slanje."
@@ -2810,6 +2909,9 @@
       "Create links and share your files with others.": [
         "Stvorite poveznice i dijelite svoje datoteke s drugima."
       ],
+      "Create public link": [
+        "Stvori javnu poveznicu"
+      ],
       "Create your first folder and start moving your files.": [
         "Stvorite svoju prvu mapu i počnite premještati datoteke."
       ],
@@ -2827,6 +2929,9 @@
       ],
       "Custom email domains": [
         "Prilagođene domene"
+      ],
+      "default email address": [
+        "zadana adresa e-pošte"
       ],
       "Delete locked drive": [
         "Obriši zaključani disk",
@@ -2856,6 +2961,9 @@
       ],
       "email": [
         "e-pošta"
+      ],
+      "Encrypted": [
+        "Šifrirano"
       ],
       "End-to-end encrypted": [
         "End-to-End šifriranje"
@@ -3030,6 +3138,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plaćanja su zaštićena TLS enkripcijom i švicarskim zakonima o privatnosti."
       ],
+      "Photos": [
+        "Fotografije"
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Imajte na umu da adrese dodijeljene ovoj grupi NEĆE biti izbrisane."
       ],
@@ -3081,6 +3192,9 @@
       "Share files with links": [
         "Dijeli datoteke s poveznicama"
       ],
+      "Shared": [
+        "Dijeljeno"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
       ],
@@ -3092,6 +3206,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ovaj preglednik ne podržava pregled PDF dokumenata. Preuzmite datoteku."
+      ],
+      "This folder is empty": [
+        "Ova mapa je prazna"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ova poveznica vodi do web-mjesta koje možda pokušava ukrasti vaše podatke, kao što su lozinke i podaci o kreditnoj kartici."
@@ -3128,6 +3245,9 @@
       ],
       "Unsupported file": [
         "Nepodržana datoteka"
+      ],
+      "Untitled": [
+        "Bez naslova"
       ],
       "Uploaded": [
         "Učitano"
@@ -3268,6 +3388,9 @@
       ],
       "Trusted": [
         "Pouzdan"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -3324,9 +3447,6 @@
       ],
       "Attach screenshot(s)": [
         "Priložite snimku(e) zaslona"
-      ],
-      "Authenticator app": [
-        "Aplikacija autentifikatora"
       ],
       "Beta Access": [
         "Beta pristup"
@@ -3466,6 +3586,9 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "Import all messages": [
         "Uvoz svih poruka"
       ],
@@ -3583,6 +3706,9 @@
       "Set recovery method": [
         "Postavite metodu oporavka"
       ],
+      "Shared": [
+        "Dijeljeno"
+      ],
       "Sign emails": [
         "Potpisivanje e-pošte"
       ],
@@ -3601,6 +3727,9 @@
       "Start date": [
         "Početni datum"
       ],
+      "State": [
+        "Država"
+      ],
       "Stop sharing": [
         "Zaustavi dijeljenje"
       ],
@@ -3616,9 +3745,6 @@
       "Theme": [
         "Tema"
       ],
-      "Title": [
-        "Naslov"
-      ],
       "To: ${ toEmail }": [
         "Za: ${ toEmail }"
       ],
@@ -3631,6 +3757,12 @@
       "Upload picture": [
         "Učitaj sliku"
       ],
+      "Uploaded by": [
+        "Prenio"
+      ],
+      "VAT": [
+        "PDV"
+      ],
       "Verification code": [
         "Kôd za provjeru"
       ],
@@ -3639,9 +3771,6 @@
       ],
       "What happened?": [
         "Što se dogodilo?"
-      ],
-      "Your password (admin)": [
-        "Vaša lozinka (administrator)"
       ]
     },
     "Label for contact group color": {
@@ -3725,6 +3854,9 @@
       ],
       "Sent": [
         "Poslano"
+      ],
+      "settings": [
+        "postavke"
       ],
       "Shared": [
         "Dijeljeno"
@@ -3858,9 +3990,6 @@
     "new_plans: Action": {
       "Upgrade": [
         "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -3928,8 +4057,14 @@
       "${ size } attachment size": [
         "Veličina privitka: ${ size }"
       ],
+      "${ size } storage per user": [
+        "${ size } prostora za pohranu po korisniku"
+      ],
       "1 user": [
         "1 korisnik"
+      ],
+      "15 GB storage": [
+        "15 GB pohrane"
       ],
       "Auto-reply": [
         "Automatski odgovor"
@@ -3970,9 +4105,6 @@
       "Priority support": [
         "Prioritetna podrška"
       ],
-      "Search message content": [
-        "Pretraži sadržaj poruka"
-      ],
       "Secure Core servers": [
         "Secure Core poslužitelji"
       ],
@@ -3981,6 +4113,9 @@
       ],
       "Strict no-logs policy": [
         "Stroga politika ne spremanja zapisa"
+      ],
+      "Tor over VPN": [
+        "Tor preko VPN-a"
       ],
       "Two-factor authentication": [
         "Dvofaktorska autentikacija"
@@ -3999,6 +4134,13 @@
       ],
       "Unlimited messages per day": [
         "Neograničen broj poruka dnevno"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ users } user": [
+        "${ users } korisnik",
+        "${ users } korisnika",
+        "${ users } korisnika"
       ]
     },
     "new_plans: heading": {
@@ -4055,6 +4197,9 @@
       "Failed to move, please try again": [
         "Neuspješno premještanje, pokušajte ponovo"
       ],
+      "Link copied to clipboard": [
+        "Poveznica kopirana u međuspremnik"
+      ],
       "Move ${ n } file": [
         "Premjesti ${ n } datoteku",
         "Premjesti ${ n } datoteke",
@@ -4074,9 +4219,57 @@
         "Vaše postavke su promijenjene."
       ]
     },
+    "Offer": {
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
+      "Maybe later": [
+        "Možda kasnije"
+      ],
+      "Save": [
+        "Spremi"
+      ],
+      "Special offer": [
+        "Posebna ponuda"
+      ]
+    },
+    "Offer feature": {
+      "Email addresses": [
+        "Adrese e-pošte"
+      ],
+      "Free": [
+        "Besplatno"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Prostor za pohranu"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Dobrodošli u ${ appName }"
+      ]
+    },
+    "Onboarding Action": {
+      "Continue": [
+        "Nastavite"
+      ],
+      "Get started": [
+        "Započnite"
+      ],
+      "Maybe later": [
+        "Možda kasnije"
+      ],
+      "Skip": [
+        "Preskoči"
+      ],
+      "Upload file": [
+        "Učitaj datoteku"
+      ],
+      "Upload folder": [
+        "Učitaj mapu"
       ]
     },
     "Option": {
@@ -4128,11 +4321,17 @@
       "Card number": [
         "Broj kartice"
       ],
+      "CVC": [
+        "CVC"
+      ],
       "Got it": [
         "Razumijem"
       ],
       "MM/YY": [
         "MM/GG"
+      ],
+      "terms & conditions": [
+        "uvjeti i odredbe"
       ]
     },
     "Payments.Error": {
@@ -4144,6 +4343,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša kartica je odbijena. Molimo pokušajte s drugom karticom ili kontaktirajte vašu banku da autorizira ovu naplatu."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "PGP key encryption warning": {
@@ -4162,6 +4366,9 @@
       ],
       "E.g., ": [
         "Npr. "
+      ],
+      "Email": [
+        "E-pošta"
       ],
       "Enter a new folder name": [
         "Unesite novi naziv mape"
@@ -4195,6 +4402,9 @@
       ],
       "New name": [
         "Novi naziv"
+      ],
+      "Organization name": [
+        "Naziv organizacije"
       ],
       "Password": [
         "Lozinka"
@@ -4474,6 +4684,9 @@
       "/ month": [
         "/ mjesec"
       ],
+      "/month": [
+        "/mjesec"
+      ],
       "1 year": [
         "1 godina"
       ],
@@ -4517,6 +4730,11 @@
         "Standardna cijena ${ amount } za 30 mjeseci"
       ]
     },
+    "sso": {
+      "Sign in": [
+        "Prijavi se"
+      ]
+    },
     "Status": {
       "Pending": [
         "Na čekanju"
@@ -4538,18 +4756,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Naplaćuje se svake 2 godine"
-      ],
-      "Billed for 15 months": [
-        "Naplaćuje se svakih 15 mjeseci"
-      ],
-      "Billed for 18 months": [
-        "Naplaćuje se svakih 18 mjeseci"
-      ],
-      "Billed for 3 months": [
-        "Naplaćuje se svakih 3 mjeseci"
-      ],
-      "Billed for 30 months": [
-        "Naplaćuje se svakih 30 mjeseci"
       ],
       "Billed monthly": [
         "Mjesečni račun"
@@ -4582,20 +4788,6 @@
         "Razumijem"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } prostora za pohranu po korisniku"
-      ],
-      "Learn more": [
-        "Više informacija"
-      ],
-      "Priority support": [
-        "Prioritetna podrška"
-      ],
-      "Version history": [
-        "Povijest verzija"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB pohrane"
@@ -4607,9 +4799,51 @@
         "Nadogradi"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } prostora za pohranu po korisniku"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalendar po korisniku",
+        "${ planNumberOfCalendars } kalendara po korisniku",
+        "${ planNumberOfCalendars } kalendara po korisniku"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adresa e-pošte",
+        "${ planNumberOfEmails } adrese e-pošte",
+        "${ planNumberOfEmails } adrese e-pošte"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-pošta po korisniku",
+        "${ planNumberOfEmails } e-pošte po korisniku",
+        "${ planNumberOfEmails } e-pošte po korisniku"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } korisnik",
+        "${ planNumberOfUsers } korisnika",
+        "${ planNumberOfUsers } korisnika"
+      ],
+      "2 users": [
+        "2 korisnika"
+      ],
+      "Learn more": [
+        "Više informacija"
+      ],
+      "Priority support": [
+        "Prioritetna podrška"
+      ],
+      "Version history": [
+        "Povijest verzija"
+      ]
+    },
     "Subscription renewal state": {
       "Disable": [
         "Onemogući"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Uštedite ${ priceString }"
       ]
     },
     "Success": {
@@ -4754,6 +4988,11 @@
         "vCard polje"
       ]
     },
+    "Tag": {
+      "RAW": [
+        "RAW"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ minutes } min": [
         "${ minutes } minuta",
@@ -4804,6 +5043,9 @@
       ],
       "Add to ${ groupName }": [
         "Dodaj u ${ groupName }"
+      ],
+      "Add user": [
+        "Dodaj korisnika"
       ],
       "Addresses": [
         "Adrese"
@@ -4896,6 +5138,9 @@
         "Izbriši ${ count } grupe kontakata",
         "Izbriši ${ count } grupa kontakata"
       ],
+      "Delete ${ name }?": [
+        "Izbriši ${ name }?"
+      ],
       "Delete ${ value }": [
         "Izbriši ${ value }"
       ],
@@ -4947,9 +5192,6 @@
       "Empty trash": [
         "Isprazni otpad"
       ],
-      "Enter your password": [
-        "Unesite vašu lozinku"
-      ],
       "Error": [
         "Pogreška"
       ],
@@ -4974,11 +5216,17 @@
       "Groups": [
         "Grupe"
       ],
+      "Help center": [
+        "Centar za pomoć"
+      ],
       "Human verification": [
         "Ljudska provjera"
       ],
       "Import contacts": [
         "Uvezi kontakte"
+      ],
+      "Import events": [
+        "Uvezi događaje"
       ],
       "Import failed": [
         "Neuspješan uvoz"
@@ -5090,6 +5338,9 @@
       ],
       "Restore your files": [
         "Vratite vaše datoteke"
+      ],
+      "Search results": [
+        "Rezultati pretraživanja"
       ],
       "Select a plan": [
         "Odaberite plan"
@@ -5247,6 +5498,11 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } uređaj",
+        "${ n } uređaja",
+        "${ n } uređaja"
+      ],
       "${ n } server": [
         "${ n } poslužitelj",
         "${ n }+ poslužitelja",

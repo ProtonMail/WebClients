@@ -847,7 +847,7 @@ export type PublicLinkGetResponse = {
     /* Whether the link is active or already expired/beyond read count */
     Active: boolean;
     /* If the link key is being encrypted with the item key */
-    LinkKeyEncryptedWithItemKey?: unknown;
+    LinkKeyEncryptedWithItemKey?: boolean;
 };
 export type SessionLockStorageTokenResponse = {
     /* Storage token to encrypt the local storage */

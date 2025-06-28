@@ -3,10 +3,12 @@ import type { FC } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
+import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { BaseTextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
+import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { BaseTitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
@@ -14,8 +16,11 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constan
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
+import { deobfuscateExtraFields, obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { validateNoteForm } from '@proton/pass/lib/validation/note';
 import type { NoteFormValues } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 const FORM_ID = 'edit-note';
@@ -27,12 +32,21 @@ export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ share, revision, onSub
     const note = useDeobfuscatedValue(metadata.note);
 
     const form = useFormik<NoteFormValues>({
-        initialValues: { name: metadata.name, note, files: filesFormInitializer(), shareId },
-        onSubmit: ({ name, note, files }) => {
+        initialValues: {
+            name: metadata.name,
+            note,
+            extraFields: deobfuscateExtraFields(item.extraFields),
+            files: filesFormInitializer(),
+            shareId,
+        },
+        onSubmit: ({ name, note, files, extraFields }) => {
+            const sanitizeOTP = bindOTPSanitizer(name);
+
             onSubmit({
                 ...uneditable,
                 itemId,
                 lastRevision,
+                extraFields: obfuscateExtraFields(extraFields.map(sanitizeExtraField(sanitizeOTP))),
                 files,
                 metadata: { ...metadata, name, note: obfuscate(note) },
                 shareId,
@@ -71,16 +85,22 @@ export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ share, revision, onSub
                             placeholder={c('Placeholder').t`Untitled`}
                             maxLength={MAX_ITEM_NAME_LENGTH}
                         />
-                        <Field
-                            component={BaseTextAreaField}
-                            label={c('Label').t`Note`}
-                            labelContainerClassName="sr-only"
-                            name="note"
-                            placeholder={c('Placeholder').t`Write your note`}
-                            maxLength={MAX_ITEM_NOTE_LENGTH}
-                            minRows={1}
-                            rows={Number.MAX_SAFE_INTEGER}
-                        />
+                        <FieldsetCluster className="mt-4">
+                            <Field
+                                component={TextAreaField}
+                                name="note"
+                                placeholder={c('Label').t`Note`}
+                                maxLength={MAX_ITEM_NOTE_LENGTH}
+                                rows={25}
+                                minRows={10}
+                            />
+                        </FieldsetCluster>
+                        <FeatureFlag feature={PassFeature.PassCustomTypeV1}>
+                            <ExtraFieldGroup
+                                form={form}
+                                customButton={{ shape: 'solid', color: 'weak', label: c('Action').t`Add field` }}
+                            />
+                        </FeatureFlag>
                         <FieldsetCluster className="bg-weak mt-4" mode="read">
                             <Field
                                 name="files"

@@ -1,72 +1,139 @@
-import { chainSort, compare, sortOn } from './sort';
+import { chainSort, sortOn } from './sort';
 
-describe('compare', () => {
-    test('should compare strings', () => {
-        expect(compare('a', 'b')).toBeLessThan(0);
-        expect(compare('b', 'a')).toBeGreaterThan(0);
-        expect(compare('a', 'a')).toBe(0);
-    });
+type SafeItem = { id: number; name: string; flag: boolean };
+type UnsafeItem = Partial<{ id: number; name: string; flag: boolean }>;
 
-    test('should compare numbers', () => {
-        expect(compare(1, 2)).toBeLessThan(0);
-        expect(compare(2, 1)).toBeGreaterThan(0);
-        expect(compare(1, 1)).toBe(0);
-    });
+const SAFE_ITEMS: SafeItem[] = [
+    { id: 2, name: 'a', flag: true },
+    { id: 1, name: 'c', flag: false },
+    { id: 3, name: 'b', flag: true },
+];
 
-    test('should compare booleans', () => {
-        expect(compare(false, true)).toBeLessThan(0);
-        expect(compare(true, false)).toBeGreaterThan(0);
-        expect(compare(true, true)).toBe(0);
-    });
-
-    test('should return 0 for incomparable types', () => {
-        expect(compare(1, '1' as any)).toBe(0);
-        expect(compare({}, [])).toBe(0);
-        expect(compare(null, undefined)).toBe(0);
-    });
-});
+const UNSAFE_ITEMS: UnsafeItem[] = [
+    { id: 2, name: 'a' },
+    { id: 1, flag: true },
+    { name: 'b', flag: false },
+];
 
 describe('sortOn', () => {
-    const items = [
-        { id: 2, name: 'a' },
-        { id: 1, name: 'c' },
-        { id: 3, name: 'b' },
-    ];
+    describe('Defaults', () => {
+        test('should sort descending', () => {
+            expect([...SAFE_ITEMS].sort(sortOn('id'))).toEqual([
+                { id: 3, name: 'b', flag: true },
+                { id: 2, name: 'a', flag: true },
+                { id: 1, name: 'c', flag: false },
+            ]);
+        });
 
-    test('should sort descending by default', () => {
-        expect([...items].sort(sortOn('id'))).toEqual([
-            { id: 3, name: 'b' },
-            { id: 2, name: 'a' },
-            { id: 1, name: 'c' },
-        ]);
+        test('should support partial items', () => {
+            expect([...UNSAFE_ITEMS].sort(sortOn('id'))).toEqual([
+                { id: 2, name: 'a' },
+                { id: 1, flag: true },
+                { name: 'b', flag: false },
+            ]);
+        });
     });
 
-    test('should sort on `id`', () => {
-        expect([...items].sort(sortOn('id', 'ASC'))).toEqual([
-            { id: 1, name: 'c' },
-            { id: 2, name: 'a' },
-            { id: 3, name: 'b' },
-        ]);
+    describe('Numbers', () => {
+        test('should sort ascending', () => {
+            expect([...SAFE_ITEMS].sort(sortOn('id', 'ASC'))).toEqual([
+                { id: 1, name: 'c', flag: false },
+                { id: 2, name: 'a', flag: true },
+                { id: 3, name: 'b', flag: true },
+            ]);
+        });
 
-        expect([...items].sort(sortOn('id', 'DESC'))).toEqual([
-            { id: 3, name: 'b' },
-            { id: 2, name: 'a' },
-            { id: 1, name: 'c' },
-        ]);
+        test('should sort descending', () => {
+            expect([...SAFE_ITEMS].sort(sortOn('id', 'DESC'))).toEqual([
+                { id: 3, name: 'b', flag: true },
+                { id: 2, name: 'a', flag: true },
+                { id: 1, name: 'c', flag: false },
+            ]);
+        });
+
+        test('should sort ascending partial items', () => {
+            expect([...UNSAFE_ITEMS].sort(sortOn('id', 'ASC'))).toEqual([
+                { id: 1, flag: true },
+                { id: 2, name: 'a' },
+                { name: 'b', flag: false },
+            ]);
+        });
+
+        test('should sort descending partial items', () => {
+            expect([...UNSAFE_ITEMS].sort(sortOn('id', 'DESC'))).toEqual([
+                { id: 2, name: 'a' },
+                { id: 1, flag: true },
+                { name: 'b', flag: false },
+            ]);
+        });
     });
 
-    test('should sort on `name`', () => {
-        expect([...items].sort(sortOn('name', 'ASC'))).toEqual([
-            { id: 2, name: 'a' },
-            { id: 3, name: 'b' },
-            { id: 1, name: 'c' },
-        ]);
+    describe('Strings', () => {
+        test('should sort ascending', () => {
+            expect([...SAFE_ITEMS].sort(sortOn('name', 'ASC'))).toEqual([
+                { id: 2, name: 'a', flag: true },
+                { id: 3, name: 'b', flag: true },
+                { id: 1, name: 'c', flag: false },
+            ]);
+        });
 
-        expect([...items].sort(sortOn('name', 'DESC'))).toEqual([
-            { id: 1, name: 'c' },
-            { id: 3, name: 'b' },
-            { id: 2, name: 'a' },
-        ]);
+        test('should sort descending', () => {
+            expect([...SAFE_ITEMS].sort(sortOn('name', 'DESC'))).toEqual([
+                { id: 1, name: 'c', flag: false },
+                { id: 3, name: 'b', flag: true },
+                { id: 2, name: 'a', flag: true },
+            ]);
+        });
+
+        test('should sort ascending partial items', () => {
+            expect([...UNSAFE_ITEMS].sort(sortOn('name', 'ASC'))).toEqual([
+                { id: 2, name: 'a' },
+                { name: 'b', flag: false },
+                { id: 1, flag: true },
+            ]);
+        });
+
+        test('should sort descending partial items', () => {
+            expect([...UNSAFE_ITEMS].sort(sortOn('name', 'DESC'))).toEqual([
+                { name: 'b', flag: false },
+                { id: 2, name: 'a' },
+                { id: 1, flag: true },
+            ]);
+        });
+    });
+
+    describe('Booleans', () => {
+        test('should sort ascending', () => {
+            expect([...SAFE_ITEMS].sort(sortOn('flag', 'ASC'))).toEqual([
+                { id: 1, name: 'c', flag: false },
+                { id: 2, name: 'a', flag: true },
+                { id: 3, name: 'b', flag: true },
+            ]);
+        });
+
+        test('should sort descending', () => {
+            expect([...SAFE_ITEMS].sort(sortOn('flag', 'DESC'))).toEqual([
+                { id: 2, name: 'a', flag: true },
+                { id: 3, name: 'b', flag: true },
+                { id: 1, name: 'c', flag: false },
+            ]);
+        });
+
+        test('should sort ascending partial items', () => {
+            expect([...UNSAFE_ITEMS].sort(sortOn('flag', 'ASC'))).toEqual([
+                { name: 'b', flag: false },
+                { id: 1, flag: true },
+                { id: 2, name: 'a' },
+            ]);
+        });
+
+        test('should sort descending partial items', () => {
+            expect([...UNSAFE_ITEMS].sort(sortOn('flag', 'DESC'))).toEqual([
+                { id: 1, flag: true },
+                { name: 'b', flag: false },
+                { id: 2, name: 'a' },
+            ]);
+        });
     });
 });
 

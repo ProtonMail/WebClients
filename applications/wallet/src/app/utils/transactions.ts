@@ -38,7 +38,7 @@ export const getNowTimestamp = (): string => {
 };
 
 export const getTransactionValue = (tx?: TransactionData, includeFeeOnSent: boolean = true) => {
-    const value = (tx?.networkData.received ?? 0) - (tx?.networkData.sent ?? 0);
+    const value = tx?.networkData.transaction_value ?? 0;
     return !includeFeeOnSent && value < 0 ? value + (tx?.networkData.fee ?? 0) : value;
 };
 

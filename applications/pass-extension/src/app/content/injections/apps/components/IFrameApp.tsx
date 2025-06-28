@@ -9,6 +9,7 @@ import type { IFrameMessageType, IFramePortMessageHandler } from 'proton-pass-ex
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import locales from 'proton-pass-extension/app/locales';
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import useInstance from '@proton/hooks/useInstance';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
@@ -17,7 +18,6 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import type { MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { withMerge } from '@proton/pass/utils/object/merge';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';

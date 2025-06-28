@@ -42,12 +42,8 @@ const FeatureTourStepsContent = ({
     return (
         <ModalContent unstyled>
             <div
-                className={illustration ? 'relative flex justify-center items-center h-custom custom-bg' : undefined}
-                style={
-                    illustration
-                        ? { '--h-custom': '12rem', '--custom-bg': 'var(--optional-background-lowered)' }
-                        : undefined
-                }
+                className={illustration ? 'relative flex justify-center items-center h-custom bg-lowered' : undefined}
+                style={illustration ? { '--h-custom': '12rem' } : undefined}
             >
                 <ModalHeaderCloseButton
                     buttonProps={{

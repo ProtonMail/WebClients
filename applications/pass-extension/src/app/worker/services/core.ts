@@ -1,9 +1,9 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { createPassCoreMainThreadService } from '@proton/pass/lib/core/core.main.service';
 import { createPassCoreProxy } from '@proton/pass/lib/core/core.proxy';
 import type { PassCoreMethod, PassCoreResult } from '@proton/pass/lib/core/core.types';
-import { WorkerMessageType } from '@proton/pass/types';
 
 export const createPassCoreProxyService = () => {
     const core = createPassCoreMainThreadService();

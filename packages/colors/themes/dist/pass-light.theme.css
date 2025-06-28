@@ -93,12 +93,8 @@
   --vault-mercury: 117 117 117;
   --vault-water-leaf: 20 154 161;
   --pass-scroll-shadow-color: rgb(14 14 14 / 0.1);
-  --pass-lobby-background-color: radial-gradient(
-      61.86% 61.86% at 50% 0%,
-      #f6f5f8 0%,
-      #f3eeff 100%
-    ),
-    #f6f5f8;
+  --pass-lobby-background-color:
+    radial-gradient(61.86% 61.86% at 50% 0%, #f6f5f8 0%, #f3eeff 100%), #f6f5f8;
 }
 
 .ui-violet {
@@ -183,5 +179,22 @@
   --interaction-weak-major-1: #d7e4d0;
   --interaction-weak-major-2: #cbd8c5;
   --interaction-weak-major-3: #c0ccba;
+  --interaction-weak-contrast: #000000;
+}
+
+.ui-gray {
+  --interaction-norm-minor-2: #c3c3c9;
+  --interaction-norm-minor-1: #9c9ca6;
+  --interaction-norm: #38384c;
+  --interaction-norm-major-1: #353548;
+  --interaction-norm-major-2: #323244;
+  --interaction-norm-major-3: #303041;
+  --interaction-norm-contrast: #ffffff;
+  --interaction-weak-minor-2: #f9f9f9;
+  --interaction-weak-minor-1: #f6f6f6;
+  --interaction-weak: #ececec;
+  --interaction-weak-major-1: #e0e0e0;
+  --interaction-weak-major-2: #d4d4d4;
+  --interaction-weak-major-3: #c9c9c9;
   --interaction-weak-contrast: #000000;
 }

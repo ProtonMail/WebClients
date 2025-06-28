@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { Tooltip } from '@proton/atoms';
 import { getAppVersion } from '@proton/components/helpers/appVersion';
 import useConfig from '@proton/components/hooks/useConfig';
 import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';

@@ -1,5 +1,6 @@
 import { findByText } from '@testing-library/react';
 
+import type { PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -7,7 +8,6 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useGetMessageKeys } from 'proton-mail/hooks/message/useGetMessageKeys';
 
 import { addApiKeys, addApiMock, clearAll } from '../../../helpers/test/helper';
-import type { PublicPrivateKey } from '../../../store/messages/messagesTypes';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { addressID, getIframeRootDiv, messageID, setup } from './Message.test.helpers';
 

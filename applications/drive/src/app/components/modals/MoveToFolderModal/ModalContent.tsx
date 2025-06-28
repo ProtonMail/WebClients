@@ -1,15 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Alert,
-    Icon,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    PrimaryButton,
-    UnderlineButton,
-} from '@proton/components';
+import { Alert, Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
 import type { DecryptedLink, TreeItem } from '../../../store';
 import FolderTree from '../../FolderTree/FolderTree';
@@ -71,20 +63,28 @@ export const ModalContent = ({
                             <Icon name="folder-plus" />
                         </Button>
                     ) : (
-                        <UnderlineButton
+                        <Button
+                            shape="underline"
+                            color="norm"
                             disabled={isLoading || !selectedLinkId}
                             onClick={() => onCreate(selectedLinkId)}
                         >
                             {c('Action').t`Create new folder`}
-                        </UnderlineButton>
+                        </Button>
                     )}
                     <div>
                         <Button type="reset" disabled={isLoading} autoFocus>
                             {c('Action').t`Close`}
                         </Button>
-                        <PrimaryButton className="ml-4" loading={isLoading} type="submit" disabled={isMoveDisabled}>
+                        <Button
+                            color="norm"
+                            className="ml-4"
+                            loading={isLoading}
+                            type="submit"
+                            disabled={isMoveDisabled}
+                        >
                             {c('Action').t`Move`}
-                        </PrimaryButton>
+                        </Button>
                     </div>
                 </div>
             </ModalTwoFooter>

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import ErrorButton from '@proton/components/components/button/ErrorButton';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import ConfirmModal from '@proton/components/components/modal/Confirm';
@@ -13,12 +13,12 @@ import {
     type CardModel,
     PAYMENT_METHOD_TYPES,
     type PaymentMethodCardDetails,
-    type SavedPaymentMethod,
-    isExpired,
-    paymentMethodPaymentsVersion,
-    deletePaymentMethod,
-    orderPaymentMethods,
     type PaymentsVersion,
+    type SavedPaymentMethod,
+    deletePaymentMethod,
+    isExpired,
+    markPaymentMethodAsDefault,
+    paymentMethodPaymentsVersion,
 } from '@proton/payments';
 import { EditCardModal } from '@proton/payments/ui';
 
@@ -34,12 +34,11 @@ const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {
 };
 
 export interface Props {
-    index: number;
     method: SavedPaymentMethod;
     methods: SavedPaymentMethod[];
 }
 
-const PaymentMethodActions = ({ method, methods, index }: Props) => {
+const PaymentMethodActions = ({ method, methods }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const api = useApi();
@@ -53,11 +52,7 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
     };
 
     const markAsDefault = async () => {
-        const IDs = methods.map(({ ID }) => ID);
-
-        IDs.splice(index, 1);
-        IDs.unshift(method.ID);
-        await api(orderPaymentMethods(IDs, apiVersion));
+        await markPaymentMethodAsDefault(api, method.ID, methods);
         await call();
         createNotification({ text: c('Success').t`Payment method updated` });
     };
@@ -75,7 +70,7 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
         });
     }
 
-    if (index > 0 && !isExpired(method.Details)) {
+    if (!method.IsDefault && !isExpired(method.Details)) {
         dropdownActions.push({
             text: c('Action').t`Mark as default`,
             onClick: markAsDefault,
@@ -91,7 +86,7 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
                 <ConfirmModal
                     onConfirm={deleteMethod}
                     title={c('Confirmation title').t`Delete payment method`}
-                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    confirm={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
                 >
                     <Alert className="mb-4" data-testid="valid-payment-alert">{c('Info when deleting payment method')
                         .t`To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.`}</Alert>

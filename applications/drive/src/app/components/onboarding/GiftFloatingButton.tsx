@@ -237,7 +237,7 @@ function WelcomeActions({
             />
             <WelcomeAction
                 icon={getIconName(ChecklistKey.DriveShare, 'user-plus')}
-                title={c('Label').t`Share a file`}
+                title={c('Label').t`Share a file, folder, or album`}
                 text={c('Info').t`It’s easy and secure`}
                 action={() => {
                     void showFileSharingModal({ shareId: activeFolder.shareId, showLinkSharingModal });

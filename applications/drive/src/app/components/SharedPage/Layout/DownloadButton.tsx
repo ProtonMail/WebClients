@@ -11,7 +11,7 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
 import type { DecryptedLink } from '../../../store';
@@ -51,7 +51,8 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
         // Document downloads are handled in two ways:
         //  1. single files are redirected to the Docs app using `downloadDocument`
         //  2. multiple files are ignored, using `handleContainsDocument` in the queue
-        const documentLink = count === 1 && isProtonDocument(selectedItems[0].mimeType) ? selectedItems[0] : undefined;
+        const documentLink =
+            count === 1 && isProtonDocsDocument(selectedItems[0].mimeType) ? selectedItems[0] : undefined;
 
         if (documentLink) {
             // Should never happen to have openInDocs false as the button will be disabled in that case
@@ -70,9 +71,8 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
 
     const isDownloading = !!downloads.find((transfer) => isTransferActive(transfer) || isTransferPaused(transfer));
 
-    const buttonTextWithScan = count > 1 ? c('Action').t`Download (${count})` : c('Action').t`Download`;
-    const buttonTextWithoutScan =
-        count > 1 ? c('Action').t`Download without scanning (${count})` : c('Action').t`Download without scanning`;
+    const buttonTextWithoutScan = count > 1 ? c('Action').t`Download (${count})` : c('Action').t`Download`;
+    const buttonTextWithScan = count > 1 ? c('Action').t`Scan & Download (${count})` : c('Action').t`Scan & Download`;
 
     if (!isDownloadScanEnabled) {
         return (
@@ -87,7 +87,7 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
             >
                 <Icon name="arrow-down-line" size={4} />
                 {/* Default Download text if scan not available */}
-                {buttonTextWithScan}
+                {buttonTextWithoutScan}
             </Button>
         );
     }
@@ -97,13 +97,13 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
             <ButtonGroup className="flex justify-end flex-nowrap" ref={anchorRef} separators={!isDownloading}>
                 <Button
                     className="flex items-center gap-2 mr-auto"
-                    onClick={() => handleDownload({ virusScan: true })}
+                    onClick={() => handleDownload({ virusScan: false })}
                     disabled={disabled || isDownloading}
-                    data-testid="scan-download-button"
+                    data-testid="download-button"
                     color="weak"
                 >
                     <Icon name="arrow-down-line" size={4} />
-                    {buttonTextWithScan}
+                    {buttonTextWithoutScan}
                 </Button>
                 <Button
                     disabled={disabled || isDownloading}
@@ -128,19 +128,19 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
                 <DropdownMenu>
                     <DropdownMenuButton
                         className="flex items-center gap-2"
+                        onClick={() => handleDownload()}
+                        data-testid="dropdown-download-button"
+                    >
+                        <Icon name="arrow-down-line" />
+                        {buttonTextWithoutScan}
+                    </DropdownMenuButton>
+                    <DropdownMenuButton
+                        className="flex items-center gap-2"
                         onClick={() => handleDownload({ virusScan: true })}
                         data-testid="scan-download-button"
                     >
                         <Icon name="arrow-down-line" />
                         {buttonTextWithScan}
-                    </DropdownMenuButton>
-                    <DropdownMenuButton
-                        className="flex items-center gap-2"
-                        onClick={() => handleDownload()}
-                        data-testid="download-button"
-                    >
-                        <Icon name="arrow-down-line" />
-                        {buttonTextWithoutScan}
                     </DropdownMenuButton>
                     <ContextSeparator />
                     <DropdownMenuButton

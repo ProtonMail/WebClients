@@ -1,11 +1,11 @@
 import { type FC, useEffect } from 'react';
 
 import { SSO_URL } from 'proton-pass-extension/app/config';
+import { pageMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { CircleLoader } from '@proton/atoms';
-import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
-import { WorkerMessageType } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 

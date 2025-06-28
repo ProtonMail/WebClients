@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -9,23 +9,21 @@ import {
     type SignInWithAnotherDeviceResult,
     signInWithAnotherDevicePull,
 } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePull';
-import { Button, ButtonLike } from '@proton/atoms/index';
+import { Button, ButtonLike } from '@proton/atoms';
+import { useLocalState } from '@proton/components';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useLocalState } from '@proton/components/index';
 import metrics from '@proton/metrics/index';
 import observeApiError from '@proton/metrics/lib/observeApiError';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
-import { type APP_NAMES, BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
+import { type APP_NAMES, BRAND_NAME, MAIL_APP_NAME, SECOND } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Api } from '@proton/shared/lib/interfaces';
-import { useFlagsStatus } from '@proton/unleash/index';
-import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import type { Paths } from '../../content/helper';
@@ -55,8 +53,6 @@ type State =
 
 const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartAuth }: Props) => {
     const [result, setResult] = useState<State>(null);
-    const qrCodeSignInEnabled = useFlag('QRCodeSignIn');
-    const { flagsReady } = useFlagsStatus();
     const { APP_NAME } = useConfig();
     const [persistent] = useLocalState(false, defaultPersistentKey);
     const getKtActivation = useGetAccountKTActivation();
@@ -136,10 +132,6 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
 
     const toAppName = getToAppName(toApp);
 
-    if (flagsReady && !qrCodeSignInEnabled) {
-        return <Redirect to={paths.login} />;
-    }
-
     if (result?.type === 'error') {
         return (
             <Layout hasDecoration={true} toApp={toApp}>
@@ -181,7 +173,7 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                                     {c('edm').t`Generate QR code`}
                                 </Button>
                                 <ButtonLike size="large" as={Link} to={paths.login} fullWidth>
-                                    {c('Action').t`Sign in with ${BRAND_NAME}`}
+                                    {c('Action').t`Back to sign in`}
                                 </ButtonLike>
                             </div>
                         </div>
@@ -215,7 +207,7 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                                 .t`Get another device that’s signed in to your ${BRAND_NAME} Account`}</li>
                             <li className="mb-2">
                                 {getBoldFormattedText(
-                                    c('edm').t`Using that device, open any ${BRAND_NAME} app and select **Settings**`
+                                    c('edm').t`Using that device, open the ${MAIL_APP_NAME} app and select **Settings**`
                                 )}
                             </li>
                             <li className="mb-2">

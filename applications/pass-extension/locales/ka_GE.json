@@ -29,6 +29,9 @@
       "Add domain": [
         "დომენის დამატება"
       ],
+      "Add field": [
+        "ველის დამატება"
+      ],
       "Add forwarding mailbox": [
         "გადაგზავნადი საფოსტო ყუთის დამატება"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create alias": [
@@ -401,6 +404,9 @@
       "Multiple select": [
         "ერთზე მეტის მონიშვნა"
       ],
+      "Next month": [
+        "შემდეგი თვე"
+      ],
       "No expired links": [
         "ვადაგასული ბმულების გარეშე"
       ],
@@ -431,11 +437,17 @@
       "Please retry": [
         "თავიდან სცადეთ"
       ],
+      "Previous month": [
+        "წინა თვე"
+      ],
       "Re-verify": [
         "თავიდან გადამოწმება"
       ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
+      ],
+      "Read More": [
+        "მეტის წაკითხვა"
       ],
       "Refresh the page": [
         "გვერდის განახლება"
@@ -560,6 +572,9 @@
       "Show advanced options": [
         "დამატებითი პარამეტრების ჩვენება"
       ],
+      "Show Less": [
+        "ნაკლების ჩვენება"
+      ],
       "Sign back in": [
         "თავიდან შესვლა"
       ],
@@ -574,6 +589,9 @@
       ],
       "Sort vault items": [
         "საცავის ელემენტების დალაგება"
+      ],
+      "Start from scratch": [
+        "ნულიდან დაწყება"
       ],
       "Submit": [
         "დამტკიცება"
@@ -740,9 +758,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-ის ფაილის დამუშავების შეცდომა. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[შეცდომა] ელემენტის დამუშავება შეუძლებელია"
-      ],
       "A domain ownership must be verified first.": [
         "ჯერ დომენის ფლობა უნდა გადაამოწმოთ."
       ],
@@ -766,6 +781,9 @@
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი დამატებითი პაროლი, რომ გატანა გაგრძელდეს"
+      ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი მეორე პაროლი, რომ გატანა გაგრძელდეს"
       ],
       "Authentication failure: ${ message }": [
         "ავთენტიკაცია ჩავარდა: ${ message }"
@@ -985,8 +1003,8 @@
       "File does not match expected format": [
         "ფაილი არ ემთხვევა სასურველ ფორმატს"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "შემოტანა ჩავარდა საცავისთვის \"${ vaultData.name }\" : ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "შემოტანა ჩავარდა საცავისთვის \"${ vaultData.name }\": ${ errorMessage }"
       ],
       "Importing items failed": [
         "ელემენტების შემოტანის შეცდომა"
@@ -1117,6 +1135,9 @@
       "Unsupported 1Password file format": [
         "მხარდაუჭერელი 1Password-ის ფაილის ფორმატი"
       ],
+      "Unsupported Bitwarden file format": [
+        "მხარდაუჭერელი Bitwarden-ის ფაილის ფორმატი"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "საცავის \"${ payload.content.name }\" განახლების შეცდომა"
       ],
@@ -1230,7 +1251,8 @@
         "${ count } ხედი",
         "${ count } ხედი"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } ნახვა",
         "${ count }/${ maxReads } ნახვა"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1326,6 +1348,9 @@
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "${ PASS_APP_NAME }-სთან წვდომას ყოველთვის დასჭირდება დამატებითი პაროლი."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your second password.": [
+        "${ PASS_APP_NAME }-სთან წვდომას ყოველთვის დასჭირდება მეორე პაროლი."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }-სთან წვდომისთვის თქვენი თითის ანაბეჭდი, ან მოწყობილობის PIN-კოდი დაგჭირდებათ."
       ],
@@ -1388,6 +1413,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "ავტომატური დაბლოკვა წარმატებით გამოირთო."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "HTTP საბაზისო ავთენტიკაციის დიალოგების ავტოშევსება შენახული ავტორიზაციის დეტალებით."
       ],
       "automatically": [
         "ავტომატურად"
@@ -1901,6 +1929,21 @@
       "Please confirm your second password": [
         "დაადასტურეთ თქვენი მეორე პაროლი"
       ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "დაადასტურეთ თქვენი მეორე პაროლი, რომ ბიომეტრიით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "დაადასტურეთ თქვენი მეორე პაროლი, რომ თქვენი პაროლით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "დაადასტურეთ თქვნი მეორე პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი მეორე პაროლი."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "დაადასტურეთ თქვენი მეორე პაროლი, რომ ავტოდაბლოკვის დრო განაახლოთ."
+      ],
       "Please consider leaving a review.": [
         "სჯობს, გახვიდეთ მიმოხილვიდან."
       ],
@@ -2163,6 +2206,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი დამატებითი პაროლით"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
+        "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი მეორე პაროლით"
+      ],
       "Unlock it with your PIN to access the settings": [
         "პარამეტრებთან წვდომისთვის საჭიროა მისი განბლოკვა PIN კოდით"
       ],
@@ -2221,6 +2267,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "აღმოვაჩინეთ, რომ გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი შემოტანა?",
         "აღმოვაჩინეთ, რომ გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი შემოტანა?"
+      ],
+      "Week": [
+        "კვირა"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "გადამოწმების კოდი გაგზავნილია მისამართზე ${ email }. შეიყვანეთ ის ქვემოთ:"
@@ -2422,6 +2471,12 @@
       "Account": [
         "ანგარიში"
       ],
+      "Account Number": [
+        "ანგარიშის ნომერი"
+      ],
+      "Account Type": [
+        "ანგარიშის ტიპი"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "შემთხვევითი პრეფიქსის დამატება დომენისთვის ახალი ფსევდონიმის შექმნისას."
       ],
@@ -2430,6 +2485,9 @@
       ],
       "Additional details": [
         "დამატებითი დეტალები"
+      ],
+      "Address": [
+        "მისამართი"
       ],
       "Address details": [
         "მისამართის დეტალები"
@@ -2458,6 +2516,12 @@
       "Always show username field": [
         "მომხმარებლის ველის ყოველთვის ჩვენება"
       ],
+      "API Credential": [
+        "API-ის ავტორიზაციის დეტალები"
+      ],
+      "API Key": [
+        "API-ის გასაღები"
+      ],
       "Application logs": [
         "აპლიკაციის ჟურნალი"
       ],
@@ -2481,6 +2545,15 @@
       ],
       "Backup password": [
         "მარქაფი პაროლი"
+      ],
+      "Bank Account": [
+        "საბანკო ანგარიში"
+      ],
+      "Bank Name": [
+        "ბანკის სახელი"
+      ],
+      "Basic Auth autofill": [
+        "საბაზისო ავთენტიკაციის ავტოშევსება"
       ],
       "Biometrics": [
         "ბიომეტრია"
@@ -2509,8 +2582,14 @@
       "Catch-All": [
         "ყველას დაჭერა"
       ],
+      "Checkbox": [
+        "თოლია"
+      ],
       "City": [
         "ქალაქი"
+      ],
+      "Class": [
+        "კლასი"
       ],
       "Code": [
         "კოდი"
@@ -2536,6 +2615,9 @@
       "Copy password": [
         "პაროლის კოპირება"
       ],
+      "Country": [
+        "ქვეყანა"
+      ],
       "Country or Region": [
         "ქვეყანა ან რეგიონი"
       ],
@@ -2544,6 +2626,9 @@
       ],
       "Create a credit card": [
         "საკრედიტო ბარათის შექმნა"
+      ],
+      "Create a custom item": [
+        "მორგებული ელემენტის შექმნა"
       ],
       "Create a hide-my-email alias": [
         "Hide-my-email-ის ფსევდონიმის შექმნა"
@@ -2563,17 +2648,26 @@
       "Create new vault": [
         "ახალი საცავის შექმნა"
       ],
-      "Created": [
-        "შექმნილია"
-      ],
       "Created at": [
         "შექმნის დრო"
       ],
-      "Custom hidden field": [
-        "მორგებული დამალული ველი"
+      "Crypto Wallet": [
+        "კრიპტო საფულე"
       ],
-      "Custom text field": [
-        "მორგებული ტექსტური ველი"
+      "Custom Items": [
+        "მომხმარებლის ელემენტები"
+      ],
+      "Database": [
+        "მონაცემთა ბაზა"
+      ],
+      "Database Type": [
+        "მონაცემთა ბაზის ტიპი"
+      ],
+      "Date": [
+        "თარიღი"
+      ],
+      "Date of Birth": [
+        "დაბადების თარიღი"
       ],
       "Device": [
         "მოწყობილობა"
@@ -2586,6 +2680,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "ექიმი"
       ],
       "Domain": [
         "დომენი"
@@ -2601,6 +2698,9 @@
       ],
       "Download logs": [
         "ჟურნალის გადმოწერა"
+      ],
+      "Driver License": [
+        "მართვის მოწმობა"
       ],
       "Email": [
         "ელფოსტა"
@@ -2629,8 +2729,14 @@
       "Expired": [
         "ვადაგასულია"
       ],
+      "Expiry Date": [
+        "ვადის ამოწურვის თარიღი"
+      ],
       "Export": [
         "გატანა"
+      ],
+      "Extra fields": [
+        "დამატებითი ველები"
       ],
       "Extra password": [
         "დამატებითი პაროლი"
@@ -2646,6 +2752,9 @@
       ],
       "File format": [
         "ფაილის ფორმატი"
+      ],
+      "Finance": [
+        "ფინანსები"
       ],
       "First name": [
         "სახელი"
@@ -2680,8 +2789,23 @@
       "Hide password": [
         "პაროლის დამალვა"
       ],
+      "Holder Name": [
+        "მფლობელის სახელი"
+      ],
+      "Hospital": [
+        "საავადმყოფო"
+      ],
+      "Host": [
+        "ჰოსტი"
+      ],
+      "Hostname": [
+        "ჰოსტის სახელი"
+      ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "ID ბარათი"
@@ -2725,6 +2849,18 @@
       "Invitations": [
         "მოწვევები"
       ],
+      "IP Address": [
+        "IP მისამართი"
+      ],
+      "Issuing Authority": [
+        "გამცემი ორგანო"
+      ],
+      "Issuing Country": [
+        "გამომცემელი ქვეყანა"
+      ],
+      "Issuing State/Country": [
+        "გამომცენელი შტატი/ქვეყანა"
+      ],
       "Item ID": [
         "ელემენტის ID"
       ],
@@ -2733,6 +2869,12 @@
       ],
       "Key": [
         "გასაღები"
+      ],
+      "Key fingerprint": [
+        "გასაღებს ანაბეჭდი"
+      ],
+      "Key type": [
+        "გასაღების ტიპი"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "კლავიატურის მალსახმობი: ${ shortcut }"
@@ -2761,7 +2903,13 @@
       "License": [
         "ლიცენზია"
       ],
+      "License Key": [
+        "ლიცენზიის გასაღები"
+      ],
       "License number": [
+        "ლიცენზიის ნომერი"
+      ],
+      "License Number": [
         "ლიცენზიის ნომერი"
       ],
       "LinkedIn account": [
@@ -2794,8 +2942,29 @@
       "max views reached": [
         "მიღწეულია მაქს. ნახვები"
       ],
+      "Medical Conditions": [
+        "სამედიცინო პირობები"
+      ],
+      "Medical Record": [
+        "სამედიცინო ჩანაწერი"
+      ],
+      "Medications": [
+        "მედიკამენტები"
+      ],
+      "Member ID": [
+        "წევრის ID"
+      ],
+      "Member Name": [
+        "წევრის სახელი"
+      ],
       "Members": [
         "წევრები"
+      ],
+      "Membership": [
+        "წევრობა"
+      ],
+      "Membership ID": [
+        "წევრობის ID"
       ],
       "Middle name": [
         "მამის / მეორე სახელი"
@@ -2812,11 +2981,17 @@
       "Name": [
         "სახელი"
       ],
+      "Name (SSID)": [
+        "სახელი (SSID)"
+      ],
       "Name on card": [
         "სახელი ბარათზე"
       ],
       "Need help?": [
         "დახმარება გჭირდებათ?"
+      ],
+      "Network": [
+        "ქსელი"
       ],
       "New": [
         "ახალი"
@@ -2860,8 +3035,20 @@
       "Oldest to newest": [
         "უძველესიდან ახლისკენ"
       ],
+      "Operating System": [
+        "ოპერაციული სისტემა"
+      ],
       "Organization": [
         "ორგანიზაცია"
+      ],
+      "Organization Name": [
+        "ორგანიზაციის სახელი"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Owner": [
+        "მფლობელი"
       ],
       "Passkey": [
         "წვდომის გასაღები"
@@ -2875,6 +3062,9 @@
       "Passport": [
         "პასპორტი"
       ],
+      "Passport Number": [
+        "პასპორტის ნომერი"
+      ],
       "Passport number": [
         "პასპორტის ნომერი"
       ],
@@ -2887,8 +3077,17 @@
       "Passwords": [
         "პაროლები"
       ],
+      "Patient Name": [
+        "პაციენტის სახელი"
+      ],
       "Pause list": [
         "შეჩერებულების სია"
+      ],
+      "Permissions": [
+        "წვდომები"
+      ],
+      "Personal": [
+        "პირადი"
       ],
       "Personal details": [
         "პირადი ინფორმაცია"
@@ -2908,6 +3107,12 @@
       "PIN code": [
         "PIN კოდი"
       ],
+      "Points Balance": [
+        "ქულების ბალანსი"
+      ],
+      "Port": [
+        "პორტი"
+      ],
       "Prefix": [
         "პრეფიქსი"
       ],
@@ -2916,6 +3121,18 @@
       ],
       "Priority:": [
         "პრიორიტეტი:"
+      ],
+      "Private key": [
+        "პირადი გასაღები"
+      ],
+      "Private Key": [
+        "პირადი გასაღები"
+      ],
+      "Product": [
+        "პროდუქტი"
+      ],
+      "Program Name": [
+        "პროგრამის სახელი"
       ],
       "Prompt for auto-save": [
         "კითხვა ავტომატური შენახვისას"
@@ -2929,11 +3146,17 @@
       "Public domain": [
         "საჯარო დომენი"
       ],
+      "Public key": [
+        "საჯარო გასაღები"
+      ],
       "Rate us": [
         "შეგვაფასეთ"
       ],
       "Recent": [
         "უახლესი"
+      ],
+      "Record Number": [
+        "ჩანაწერის ნომერი"
       ],
       "Reddit handle": [
         "Reddit-ის პროფილი"
@@ -2950,11 +3173,20 @@
       "Reveal password": [
         "პაროლის ჩვენება"
       ],
+      "Reward Program": [
+        "დაჯილდოების პროგრამა"
+      ],
+      "Routing Number": [
+        "რაუტინგის ნომერი"
+      ],
       "Save passkeys": [
         "წვდომის გასაღებების შენახვა"
       ],
       "Second password": [
         "მეორე პაროლი"
+      ],
+      "Secret": [
+        "საიდუმლო"
       ],
       "Secure links": [
         "დაცული ბმულები"
@@ -2967,6 +3199,9 @@
       ],
       "See member and permission overview": [
         "წევრებისა და წვდომების გადახედვა"
+      ],
+      "Seed Phrase": [
+        "Seed-ფრაზა"
       ],
       "Select a domain": [
         "აირჩიეთ დომენი"
@@ -2986,11 +3221,17 @@
       "Selected": [
         "მონიშნულია"
       ],
+      "Server": [
+        "სერვერი"
+      ],
       "Settings": [
         "მორგება"
       ],
       "Share": [
         "გაზიარება"
+      ],
+      "Share ID": [
+        "ID-ის გაზიარება"
       ],
       "Shared": [
         "გაზიარებული"
@@ -3010,11 +3251,23 @@
       "Social security": [
         "სოციალური უსაფრთხოება"
       ],
+      "Social Security": [
+        "სოციალური უსაფრთხოება"
+      ],
       "Social security number": [
         "სოციალური უსაფრთხოების ნომერი"
       ],
+      "Software license": [
+        "პროგრამული უზრუნველყოფის ლიცენზია"
+      ],
       "Special characters (!&*)": [
         "სპეცსიმბოლოები (!&*)"
+      ],
+      "SSH key": [
+        "SSH გასაღები"
+      ],
+      "SSN": [
+        "SSN"
       ],
       "State or province": [
         "შტატი ან პროვინცია"
@@ -3034,6 +3287,9 @@
       "Support": [
         "მხარდაჭერა"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "ფსევდონიმების სინქრონიზაცია SimpleLogin-თან"
       ],
@@ -3043,6 +3299,9 @@
       "Tax number": [
         "ფისკალური ნომერი"
       ],
+      "Technology": [
+        "ტექნოლოგია"
+      ],
       "Text": [
         "ტექსტი"
       ],
@@ -3051,6 +3310,12 @@
       ],
       "Theme": [
         "თემა"
+      ],
+      "Tier/Level": [
+        "დონე"
+      ],
+      "Tier/Status": [
+        "დონე/სტატუსი"
       ],
       "Title": [
         "სათაური"
@@ -3088,6 +3353,9 @@
       "Unnamed Credit Card": [
         "უსახელო საკრედიტო ბარათი"
       ],
+      "Unnamed custom item": [
+        "უსახელო მორგებული ელემენტი"
+      ],
       "Unnamed identity": [
         "უსახელო იდენტიფიკატორი"
       ],
@@ -3096,6 +3364,15 @@
       ],
       "Unnamed note": [
         "უსახელო შენიშვნა"
+      ],
+      "Unnamed SSH key": [
+        "უსახელო SSH გასაღები"
+      ],
+      "Unnamed WiFi item": [
+        "უსახელო WiFi ელემენტი"
+      ],
+      "Unspecified": [
+        "მითითებული არაა"
       ],
       "Untitled": [
         "უსათაურო"
@@ -3130,6 +3407,9 @@
       "Vulnerable": [
         "მოწყვლადი"
       ],
+      "Wallet Name": [
+        "საფულის სახელი"
+      ],
       "Weak": [
         "სუსტი"
       ],
@@ -3138,6 +3418,9 @@
       ],
       "Websites": [
         "ვებსაიტები"
+      ],
+      "WiFi network": [
+        "Wi-Fi ქსელი"
       ],
       "Work details": [
         "სამსახურის დეტალები"
@@ -3260,6 +3543,9 @@
       "Download file": [
         "ფაილის გადმოწერა"
       ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Firefox-ის შეზღუდვების გამო საჭიროა, ${ PASS_APP_NAME } თავიდან გახსნათ ახალ ფანჯარაში, სანამ ფაილების ატვირთვას შეძლებთ."
+      ],
       "Exporting files": [
         "ფაილების გატანა"
       ],
@@ -3271,6 +3557,9 @@
       ],
       "File attachments": [
         "მიმაგრებული ფაილები"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "თუ ჩართულია, გატანისას ყველა თქვენი ფაილის გადმოწერა მოხდება. ამას რაღაც დრო შეიძლება დასჭირდეს, თქვენი ინტერნეტის სიჩქარეზე დამოკიდებულებით."
       ],
       "If your data contains file attachments, they will not be imported.": [
         "თუ თქვენი მონაცემები მიმაგრებულ ფაილებს შეიცავს, მათი შემოტანა არ მოხდება."
@@ -3337,6 +3626,18 @@
       "Add note": [
         "შენიშვნის დამატება"
       ],
+      "Add password": [
+        "პაროლის დამატება"
+      ],
+      "Add private key": [
+        "პირადი გასაღების დამატება"
+      ],
+      "Add public key": [
+        "საჯარო გასაღების დამატება"
+      ],
+      "Add SSID": [
+        "SSID-ის დამატება"
+      ],
       "Add text": [
         "ტექსტის დამატება"
       ],
@@ -3345,6 +3646,9 @@
       ],
       "Coupon": [
         "კუპონი"
+      ],
+      "E.g., ": [
+        "მაგ. "
       ],
       "Email address": [
         "ელ-ფოსტის მისამართი"
@@ -3376,8 +3680,8 @@
       "my-domain.com": [
         "my-domain.com"
       ],
-      "Name to display when sending an email": [
-        "საჩვეენებელი სახელი ელფოსტის გაგზავნისას"
+      "Name displayed in emails": [
+        "ელფოსტებში ნაჩვენები სახელი"
       ],
       "Note from SimpleLogin": [
         "შენიშვნა SimpleLogin-დან"
@@ -3412,6 +3716,9 @@
       "Select a suffix": [
         "აირჩიეთ სუფიქსი"
       ],
+      "Select option": [
+        "აირჩიეთ პარამეტრი"
+      ],
       "Unknown origin": [
         "უცნობი წყარო"
       ],
@@ -3420,9 +3727,6 @@
       ],
       "Used on ${ url }": [
         "გამოიყენება ${ url } -ზე"
-      ],
-      "Write your note": [
-        "დაწერეთ თქვენი შენიშვნა"
       ]
     },
     "sso": {
@@ -3698,6 +4002,9 @@
       "Enter coupon code": [
         "შეიყვანეთ კუპონის კოდი"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "შეიყვანეთ თქვენი ${ BRAND_NAME }-ის პაროლი"
+      ],
       "Enter your backup password": [
         "შეიყვანეთ თქვენი მარქაფის პაროლი"
       ],
@@ -3724,9 +4031,6 @@
       ],
       "Grant permissions": [
         "წვდომების მინიჭება"
-      ],
-      "Hide my email": [
-        "Hide my email"
       ],
       "History": [
         "ისტორია"
@@ -3772,6 +4076,9 @@
       ],
       "Members": [
         "წევრები"
+      ],
+      "Minicalendar": [
+        "მინიკალენდარი"
       ],
       "Modified": [
         "შეცვლილია"
@@ -3955,6 +4262,11 @@
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "დღეს"
+      ]
+    },
     "Validation": {
       "Domain URL is invalid": [
         "დომენის URL არასწორია"
@@ -3968,9 +4280,6 @@
       "OTP secret or URI is invalid": [
         "OTP საიდუმლო ან URI არასწორია"
       ],
-      "OTP secret or URI required": [
-        "აუცილებელია OTP საიდუმლო ან URI"
-      ],
       "Section name cannot be empty": [
         "განყოფლების სახელი ცარიელი ვერ იქნება"
       ],
@@ -3982,6 +4291,12 @@
       ],
       "URL is invalid": [
         "URL არასწორია"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "ელემენტების გადატანა",
+        "ელემენტების გადატანა"
       ]
     },
     "Warning": {
@@ -4091,9 +4406,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "ორგანიზაციის გარედან ელფოსტის მისამართების მოწვევა დაშვებული არაა."
-      ],
-      "item was imported without custom fields": [
-        "ელემენტის შემოტანა მომხმარებლის ველების გარეშე მოხდა"
       ],
       "Maximum length is ${ maxLength } character": [
         "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო",

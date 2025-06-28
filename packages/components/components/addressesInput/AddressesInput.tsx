@@ -3,8 +3,8 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
 interface AddressesInputItemProps extends ComponentPropsWithoutRef<'div'> {

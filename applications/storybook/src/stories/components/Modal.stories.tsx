@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import type { ModalProps, ModalSize } from '@proton/components';
 import {
     BasicModal,
@@ -14,7 +14,6 @@ import {
     ModalTwoHeader,
     Prompt,
     RadioGroup,
-    Tooltip,
     useModalState,
     useModalStateObject,
 } from '@proton/components';

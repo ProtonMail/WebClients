@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import HolidaysCalendarModal from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';

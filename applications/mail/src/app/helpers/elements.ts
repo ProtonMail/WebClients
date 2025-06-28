@@ -1,6 +1,7 @@
 import { formatRelative, fromUnixTime } from 'date-fns';
 import type { Location } from 'history';
 
+import { isCustomLabel } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { omit, toMap } from '@proton/shared/lib/helpers/object';
@@ -8,6 +9,7 @@ import type { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import {
     getSender,
     getRecipients as messageGetRecipients,
@@ -43,7 +45,7 @@ export interface TypeParams {
 export const getCurrentType = ({ labelID, mailSettings, location }: TypeParams) =>
     isConversationMode(labelID, mailSettings, location) ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
 
-export const isMessage = (element: Element | undefined): boolean =>
+export const isMessage = (element: Element | undefined): element is Message =>
     typeof (element as Message)?.ConversationID === 'string';
 export const isConversation = (element: Element | undefined): boolean => !isMessage(element);
 
@@ -245,16 +247,34 @@ export const getLocationElementsCount = (
 
 export const matchFrom = (element: Element, fromInput: string) => {
     const senders = getSenders(element);
-    return senders.some((sender) =>
-        canonicalizeEmailByGuess(sender?.Address || '').includes(canonicalizeEmailByGuess(fromInput))
-    );
+    const cleanedInput = fromInput.toLowerCase();
+    return senders.some((sender) => {
+        const senderAddress = (sender?.Address || '').toLowerCase();
+        const senderName = (sender?.Name || '').toLowerCase();
+        // We have to match "sender+alias@protonmail.com" with "sender@alias.com" as search input. So we need to canonicalize the email
+        // However, we also need to match "sender+alias@protonmail.com" with "alias" search input. So we need to check that the search input is included in the sender
+        return (
+            canonicalizeEmailByGuess(senderAddress).includes(canonicalizeEmailByGuess(cleanedInput)) ||
+            senderAddress.includes(cleanedInput) ||
+            senderName.includes(cleanedInput)
+        );
+    });
 };
 
 export const matchTo = (element: Element, toInput: string) => {
     const recipients = getRecipients(element);
-    return recipients.some((recipient) =>
-        canonicalizeEmailByGuess(recipient?.Address || '').includes(canonicalizeEmailByGuess(toInput))
-    );
+    const cleanedInput = toInput.toLowerCase();
+    return recipients.some((recipient) => {
+        const recipientAddress = (recipient?.Address || '').toLowerCase();
+        const recipientName = (recipient?.Name || '').toLowerCase();
+        // We have to match "recipient+alias@protonmail.com" with "recipient@alias.com" as search input. So we need to canonicalize the email
+        // However, we also need to match "recipient+alias@protonmail.com" with "alias" search input. So we need to check that the search input is included in the recipient
+        return (
+            canonicalizeEmailByGuess(recipientAddress).includes(canonicalizeEmailByGuess(cleanedInput)) ||
+            recipientAddress.includes(cleanedInput) ||
+            recipientName.includes(cleanedInput)
+        );
+    });
 };
 
 export const matchBegin = (element: Element, labelID: string, begin: number) => {
@@ -276,6 +296,7 @@ export const filterElementsInState = ({
     filter,
     conversationMode,
     search,
+    newsletterSubscriptionID,
 }: {
     elements: Element[];
     addresses?: Address[];
@@ -284,6 +305,7 @@ export const filterElementsInState = ({
     filter: Filter;
     conversationMode: boolean;
     search: SearchParameters;
+    newsletterSubscriptionID?: string;
 }) => {
     const bypassFilterSet = new Set(bypassFilter);
     return elements.filter((element) => {
@@ -299,12 +321,22 @@ export const filterElementsInState = ({
             return false;
         }
 
-        if (!hasLabel(element, labelID)) {
+        if (!hasLabel(element, labelID) && labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
             return false;
         }
 
-        // Check element type (cheap operation)
         if (conversationMode ? !isConversation(element) : !isMessage(element)) {
+            return false;
+        }
+
+        if (
+            labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS &&
+            isMessage(element) &&
+            // Note: This only filters messages. We don't expect conversations but if there are Conversations in newsletter context (if any exist)
+            // would not be filtered by subscription ID here.
+            (newsletterSubscriptionID !== (element as Message).NewsletterSubscriptionID ||
+                !hasLabel(element, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL)) //we need to filter out elements that are in newsletter subscriptions but not in almost all mail
+        ) {
             return false;
         }
 
@@ -347,6 +379,37 @@ export const getElementContextIdentifier = (contextFilter: {
     begin?: number;
     end?: number;
     keyword?: string;
+    newsletterSubscriptionID?: string;
 }) => {
-    return JSON.stringify(contextFilter);
+    // For search queries, exclude newsletterSubscriptionID from the context to avoid
+    // creating separate contexts for the same search across different newsletter subscriptions
+    const isSearchQuery =
+        !!contextFilter.keyword ||
+        !!contextFilter.from ||
+        !!contextFilter.to ||
+        !!contextFilter.address ||
+        !!contextFilter.begin ||
+        !!contextFilter.end;
+
+    const contextForIdentifier = isSearchQuery
+        ? { ...contextFilter, newsletterSubscriptionID: undefined }
+        : contextFilter;
+
+    return JSON.stringify(contextForIdentifier);
+};
+
+export const isElementOutsideFolders = (element: Element, labels: Label[]): boolean => {
+    const elementLabelIDs = Object.keys(getLabelIDs(element, undefined));
+
+    // Filter out labels that are NOT considered folders (custom or system)
+    const folderLabelIDs = elementLabelIDs.filter((labelID) => {
+        const isStarred = labelID === MAILBOX_LABEL_IDS.STARRED;
+        const isAllMail = labelID === MAILBOX_LABEL_IDS.ALL_MAIL;
+        const isAlmostAllMail = labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL;
+
+        return !isCustomLabel(labelID, labels) && !isStarred && !isAllMail && !isAlmostAllMail;
+    });
+
+    // If no folder-related labels remain, the element is outside of folders
+    return folderLabelIDs.length === 0;
 };

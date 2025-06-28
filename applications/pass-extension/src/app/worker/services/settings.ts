@@ -1,19 +1,31 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import { createSettingsService as createCoreSettingsService } from '@proton/pass/lib/settings/service';
 import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
 import { updatePauseListItem } from '@proton/pass/store/actions';
 import { type ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectCanCreateItems, selectProxiedSettings } from '@proton/pass/store/selectors';
-import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 export const createSettingsService = () => {
+    const broadcast = withContext<(settings: ProxiedSettings) => void>(({ service }, settings) => {
+        const state = service.store.getState();
+        const canCreateItems = selectCanCreateItems(state);
+
+        WorkerMessageBroker.ports.broadcast(
+            backgroundMessage({
+                type: WorkerMessageType.SETTINGS_UPDATE,
+                payload: sanitizeSettings(settings, { canCreateItems }),
+            })
+        );
+    });
+
     const service = createCoreSettingsService({
         clear: withContext(({ service }) => service.storage.local.removeItem('settings')),
-        resolve: withContext(async ({ service }) => {
+        read: withContext(async ({ service }) => {
             const settings = await service.storage.local.getItem('settings');
             if (!settings) throw new Error('settings not found');
 
@@ -25,16 +37,7 @@ export const createSettingsService = () => {
         sync: withContext<(settings: ProxiedSettings) => Promise<void>>(async ({ service }, settings) => {
             logger.info('[Worker::Settings] synced settings');
             await service.storage.local.setItem('settings', JSON.stringify(settings));
-
-            const state = service.store.getState();
-            const canCreateItems = selectCanCreateItems(state);
-
-            WorkerMessageBroker.ports.broadcast(
-                backgroundMessage({
-                    type: WorkerMessageType.SETTINGS_UPDATE,
-                    payload: sanitizeSettings(settings, { canCreateItems }),
-                })
-            );
+            broadcast(settings);
         }),
     });
 
@@ -53,7 +56,7 @@ export const createSettingsService = () => {
         })
     );
 
-    return { onInstall, ...service };
+    return { onInstall, broadcast, ...service };
 };
 
 export type SettingsService = ReturnType<typeof createSettingsService>;

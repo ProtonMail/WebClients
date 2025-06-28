@@ -10,12 +10,5 @@ interface Props {
 export const MonthylPaidUsersNudge = ({ plan }: Props) => {
     const { openSpotlight, isLoading } = usePaidUsersNudge({ plan });
 
-    return (
-        <PaidUserNudgeOffer
-            currentPlan={paidConfig[plan].currentPlan}
-            offerTimestampFlag={paidConfig[plan].offerTimestampFlag}
-            openSpotlight={openSpotlight}
-            isLoading={isLoading}
-        />
-    );
+    return <PaidUserNudgeOffer offerConfig={paidConfig[plan]} openSpotlight={openSpotlight} isLoading={isLoading} />;
 };

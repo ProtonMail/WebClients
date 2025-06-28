@@ -1,4 +1,4 @@
-import { addMinutes, fromUnixTime } from 'date-fns';
+import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import { PRODUCT_BIT, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
@@ -13,7 +13,9 @@ export const hasPaidDrive = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.
 export const hasPaidWallet = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.WALLET);
 export const hasPaidVpn = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.VPN);
 export const hasPassLifetime = (user: User) => !!user.Flags?.['pass-lifetime'];
-export const hasPaidPass = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.PASS) || hasPassLifetime(user);
+export const hasPassViaSimpleLogin = (user: User) => !!user.Flags?.['pass-from-sl'];
+export const hasPaidPass = (user: User) =>
+    hasBit(user.Subscribed, PRODUCT_BIT.PASS) || hasPassLifetime(user) || hasPassViaSimpleLogin(user);
 export const isPaid = (user: User) => !!user.Subscribed;
 export const isPrivate = (user: User) => user.Private === 1;
 export const isFree = (user: User) => !isPaid(user);
@@ -56,16 +58,20 @@ export const getUserByte = (user: User) => {
     return byteCharacters.charCodeAt(0);
 };
 
-export const getUserAccountAge = (user: User) => {
+export const getUserCreationDate = (user: User) => {
     return fromUnixTime(user.CreateTime);
 };
 
+export const getUserDaysSinceCreation = (creationDate: Date) => {
+    return differenceInDays(new Date(), creationDate);
+};
+
 /**
- * Checks if a user is older than a specified number of minutes.
+ * Checks if a user is older than a specified number of days.
  * @param user - The user to check.
- * @param minutes - The number of minutes to compare against.
- * @returns `true` if the user is older than the specified number of minutes, `false` otherwise.
+ * @param days - The number of days to compare against.
+ * @returns `true` if the user account is at least as old as the specified number of days.
  */
-export const isUserOlderThan = (user: User, minutes: number) => {
-    return new Date() > addMinutes(getUserAccountAge(user), minutes);
+export const isUserAccountOlderThanOrEqualToDays = (user: User, days: number) => {
+    return getUserDaysSinceCreation(getUserCreationDate(user)) >= days;
 };

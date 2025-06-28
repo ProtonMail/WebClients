@@ -48,11 +48,14 @@ const user: User = {
         sso: false,
         'no-proton-address': false,
         'pass-lifetime': false,
+        'pass-from-sl': false,
+        'has-a-byoe-address': false,
     },
     ChargebeeUser: 0,
     ChargebeeUserExists: 0,
     DriveEarlyAccess: 0,
     Idle: 0,
+    HasMultipleSubscriptions: false,
 };
 
 const userMock: UserModel = formatUser(user);

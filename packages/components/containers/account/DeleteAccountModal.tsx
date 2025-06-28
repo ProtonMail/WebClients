@@ -305,7 +305,7 @@ const DeleteAccountModal = (props: Props) => {
             >
                 {!hideHeader && <ModalTwoHeader title={c('Title').t`Delete account`} subline={Email} />}
                 <ModalTwoContent>{content}</ModalTwoContent>
-                <ModalTwoFooter className="block">
+                <ModalTwoFooter className="flex-column">
                     <div className="flex justify-space-between">{footer}</div>
 
                     <div className="flex justify-center">

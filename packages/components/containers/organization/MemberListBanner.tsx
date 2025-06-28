@@ -2,7 +2,7 @@ import { type ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Card, InlineLinkButton } from '@proton/atoms/index';
+import { Card, InlineLinkButton } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons';
 import type { Member } from '@proton/shared/lib/interfaces';

@@ -6,6 +6,7 @@ import clsx from '@proton/utils/clsx';
 import type { IconSize } from './Icon';
 
 export type MimeName =
+    | 'album'
     | 'attachments'
     | 'calendar'
     | 'doc'

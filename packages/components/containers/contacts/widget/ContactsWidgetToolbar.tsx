@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -11,7 +11,6 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -157,6 +156,7 @@ const ContactsWidgetToolbar = ({
                             title={c('Action').t`More actions`}
                             data-testid="contacts:more-actions"
                             ref={anchorRef}
+                            aria-expanded={isOpen}
                         >
                             <Icon name="three-dots-horizontal" alt={c('Action').t`More actions`} />
                         </DropdownButton>

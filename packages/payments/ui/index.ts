@@ -4,13 +4,20 @@ export { OfferPrice, type Props as OfferPriceProps } from './components/OfferPri
 export { WrappedTaxCountrySelector, type OnBillingAddressChange } from './components/TaxCountrySelector';
 export { default as EditCardModal } from './containers/EditCardModal';
 export {
-    PaymentsContextProvider,
     getPlanToCheck,
+    PaymentsContextProvider,
     usePayments,
     usePaymentsInner,
     usePaymentsPreloaded,
+    type InitializeProps,
     type PaymentsContextType,
     type PlanToCheck,
     type PreloadedPaymentsContextType,
 } from './context/PaymentContext';
+export { default as useIsB2BTrial } from './hooks/useIsB2BTrial';
+export {
+    PaymentsContextOptimisticProvider,
+    usePaymentOptimistic,
+    type PaymentsContextOptimisticType,
+} from './context/PaymentContextOptimistic';
 export { getBankSvg, type CreditCardType } from './helpers/credit-card-icons';

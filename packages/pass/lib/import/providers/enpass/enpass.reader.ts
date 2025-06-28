@@ -6,6 +6,7 @@ import { attachFilesToItem } from '@proton/pass/lib/import/helpers/files';
 import {
     getImportedVaultName,
     importCreditCardItem,
+    importCustomItem,
     importIdentityItem,
     importLoginItem,
     importNoteItem,
@@ -19,9 +20,9 @@ import { isObject } from '@proton/pass/utils/object/is-object';
 import type { EnpassItem } from './enpass.types';
 import { EnpassCategory, type EnpassData } from './enpass.types';
 import {
-    ENPASS_FIELD_TYPES,
     enpassFileReader,
     extractEnpassCC,
+    extractEnpassCustom,
     extractEnpassExtraFields,
     extractEnpassIdentity,
     extractEnpassLogin,
@@ -40,11 +41,7 @@ const processLoginItem = (
         trashed: isTrashedEnpassItem(item),
         createTime: item.createdAt,
         modifyTime: item.updated_at,
-        extraFields: extractEnpassExtraFields(remaining).concat(
-            extracted.username && extracted.email
-                ? [{ data: { content: extracted.email }, fieldName: 'E-mail', type: 'text' }]
-                : []
-        ),
+        extraFields: extractEnpassExtraFields(remaining),
         email: extracted.email,
         username: extracted.username,
         password: extracted.password,
@@ -62,10 +59,10 @@ const processNoteItem = (item: EnpassItem<EnpassCategory.NOTE>): ItemImportInten
         modifyTime: item.updated_at,
     });
 
-const processCreditCardItem = (item: EnpassItem<EnpassCategory.CREDIT_CARD>): ItemImportIntent[] => {
+const processCreditCardItem = (item: EnpassItem<EnpassCategory.CREDIT_CARD>): ItemImportIntent<'creditCard'> => {
     const { extracted: extractedCCData, remaining } = extractEnpassCC(item.fields ?? []);
 
-    const ccItem = importCreditCardItem({
+    return importCreditCardItem({
         name: item.title,
         note: item.note,
         trashed: isTrashedEnpassItem(item),
@@ -76,22 +73,8 @@ const processCreditCardItem = (item: EnpassItem<EnpassCategory.CREDIT_CARD>): It
         expirationDate: extractedCCData.ccExpiry,
         number: extractedCCData.ccNumber,
         verificationNumber: extractedCCData.ccCvc,
+        extraFields: extractEnpassExtraFields(remaining),
     });
-
-    const hasLoginFields = remaining.some(({ type }) => (<readonly string[]>ENPASS_FIELD_TYPES.login).includes(type));
-
-    if (hasLoginFields) {
-        const enpassLoginItem: EnpassItem<EnpassCategory.LOGIN> = {
-            ...item,
-            category: EnpassCategory.LOGIN,
-            fields: remaining,
-        };
-
-        const loginItem = processLoginItem(enpassLoginItem);
-        return [ccItem, loginItem];
-    }
-
-    return [ccItem];
 };
 
 const processIdentityItem = (item: EnpassItem<EnpassCategory.IDENTITY>): ItemImportIntent<'identity'> =>
@@ -100,6 +83,16 @@ const processIdentityItem = (item: EnpassItem<EnpassCategory.IDENTITY>): ItemImp
         note: item.note,
         ...extractEnpassIdentity(item),
     });
+
+const processCustomItem = (item: EnpassItem<any>): ItemImportIntent<'custom'> => {
+    const { remaining } = extractEnpassCustom(item.fields ?? []);
+
+    return importCustomItem({
+        name: item.title,
+        note: item.note,
+        extraFields: extractEnpassExtraFields(remaining),
+    });
+};
 
 const validateEnpassData = (data: any): data is EnpassData =>
     isObject(data) && 'items' in data && Array.isArray(data.items);
@@ -140,13 +133,11 @@ export const readEnpassData = async (file: File): Promise<ImportReaderResult> =>
                                 case EnpassCategory.NOTE:
                                     return attachFilesToItem(processNoteItem(item), files);
                                 case EnpassCategory.CREDIT_CARD:
-                                    const [cardItem, loginItem] = processCreditCardItem(item);
-                                    return [attachFilesToItem(cardItem, files), loginItem];
+                                    return attachFilesToItem(processCreditCardItem(item), files);
                                 case EnpassCategory.IDENTITY:
                                     return attachFilesToItem(processIdentityItem(item), files);
                                 default:
-                                    ignored.push(`[${type}] ${title}`);
-                                    return;
+                                    return attachFilesToItem(processCustomItem(item), files);
                             }
                         } catch (err) {
                             ignored.push(`[${type}] ${title}`);

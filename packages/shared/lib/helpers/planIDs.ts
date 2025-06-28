@@ -1,35 +1,41 @@
+import type { FreeSubscription, Subscription } from '@proton/payments';
 import {
     ADDON_NAMES,
+    type AggregatedPricing,
     CYCLE,
-    type Currency,
     DEFAULT_CURRENCY,
-    type PLANS,
+    PLANS,
     PLAN_TYPES,
     type Plan,
     type PlanIDs,
     type PlansMap,
+    type PricingForCycles,
     SelectedPlan,
-    type StrictPlan,
+    allCycles,
+    getMaxValue,
+    getPlanIDs,
+    getPlanMembers,
     getPlanNameFromIDs,
     getPricePerCycle,
     getPricePerMember,
-} from '@proton/payments';
-import type { AggregatedPricing, PricingForCycles } from '@proton/payments';
-import { allCycles, getMaxValue, getPlanMembers } from '@proton/payments';
-import {
+    getSubscriptionsArray,
     getSupportedAddons,
     getSupportedB2BAddons,
+    hasLumo,
     isDomainAddon,
+    isFreeSubscription,
     isIpAddon,
     isLumoAddon,
+    isManagedExternally,
     isMemberAddon,
     isScribeAddon,
-} from '@proton/payments/core/plan/addons';
+} from '@proton/payments';
 
-import type { Organization, SubscriptionCheckResponse, User } from '../interfaces';
+import type { EitherOr, Organization, SubscriptionCheckResponse, User } from '../interfaces';
 import { ChargebeeEnabled } from '../interfaces';
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
+export const hasFreePlanIDs = (planIDs: PlanIDs) => !hasPlanIDs(planIDs) || Boolean(planIDs[PLANS.FREE]);
 
 const getLumoWithEnoughSeats = ({
     planIDs,
@@ -80,34 +86,79 @@ export const clearPlanIDs = (planIDs: PlanIDs): PlanIDs => {
     }, {});
 };
 
+const allAddons = ['lumo', 'ip', 'scribe', 'member', 'domain'] as const;
+type Addons = (typeof allAddons)[number];
+
+type SwitchPlanOptions = EitherOr<
+    {
+        currentPlanIDs: PlanIDs;
+        subscription: Subscription | FreeSubscription | null | undefined;
+        newPlan?: PLANS | ADDON_NAMES;
+        organization?: Organization;
+        plans: Plan[];
+        user: User | undefined;
+        dontTransferAddons?: Set<Addons> | Addons[] | Addons | boolean;
+    },
+    'currentPlanIDs' | 'subscription'
+>;
+
 /**
  * Transfer addons from one plan to another. In different plans, addons have different names
  * and potentially different resource limits, so they must be converted manually using this function.
  *
+ * The function can accept `subscription` or `currentPlanIDs` as an argument. It's recommended to use `subscription`,
+ * because it provides more information such as `External` property. If you don't provide `subscription`, you need to
+ * make sure that `dontTransferAddons` is set correctly.
+ *
  * @returns
  */
 export const switchPlan = ({
-    currentPlanIDs,
+    currentPlanIDs: currentPlanIDsParam,
+    subscription,
     newPlan,
     organization,
     plans,
     user,
-}: {
-    currentPlanIDs: PlanIDs;
-    newPlan?: PLANS | ADDON_NAMES;
-    organization?: Organization;
-    plans: Plan[];
-    user: User | undefined;
-}): PlanIDs => {
+    dontTransferAddons: dontTransferAddonsParam = new Set(),
+}: SwitchPlanOptions): PlanIDs => {
     if (newPlan === undefined) {
         return {};
+    }
+
+    const currentPlanIDs = currentPlanIDsParam ?? getPlanIDs(subscription);
+
+    // Simply normalizing the dontTransferAddons param to a Set.
+    const dontTransferAddons: Set<Addons> = (() => {
+        let initialSet: readonly Addons[];
+        if (typeof dontTransferAddonsParam === 'boolean') {
+            initialSet = allAddons;
+        } else if (typeof dontTransferAddonsParam === 'string') {
+            initialSet = [dontTransferAddonsParam];
+        } else {
+            initialSet = [...dontTransferAddonsParam];
+        }
+
+        return new Set(initialSet);
+    })();
+
+    // If user has a mobile lumo subscription and wants to buy any other plan, we don't transfer lumo addons, because
+    // it doesn't make sense to have Lumo Plus mobile on web and, for example, Unlimited with +1 lumo addon on web.
+    // This code isn't exactly scalable in case if we allow more combinations of multi-subs. Perhaps in the future
+    // we can remove addons from the resulting newPlanIDs instead of manipulating the dontTransferAddons set.
+    {
+        const multisubs = subscription && !isFreeSubscription(subscription) ? getSubscriptionsArray(subscription) : [];
+        const hasExternallyManagedLumo = multisubs.some((sub) => isManagedExternally(sub) && hasLumo(sub));
+        if (hasExternallyManagedLumo) {
+            dontTransferAddons.add('lumo');
+        }
     }
 
     const newPlanIDs = { [newPlan]: 1 };
     const supportedAddons = getSupportedAddons(newPlanIDs);
 
+    const supportedAddonNames = Object.keys(supportedAddons) as ADDON_NAMES[];
     // Transfer addons
-    (Object.keys(supportedAddons) as ADDON_NAMES[]).forEach((addon) => {
+    supportedAddonNames.forEach((addon) => {
         const quantity = currentPlanIDs[addon as keyof PlanIDs];
 
         if (quantity) {
@@ -117,7 +168,7 @@ export const switchPlan = ({
         const plan = plans.find(({ Name }) => Name === newPlan);
 
         // Transfer member addons
-        if (isMemberAddon(addon) && plan && organization) {
+        if (isMemberAddon(addon) && plan && organization && !dontTransferAddons.has('member')) {
             const memberAddon = plans.find(({ Name }) => Name === addon);
 
             if (memberAddon) {
@@ -174,7 +225,7 @@ export const switchPlan = ({
         }
 
         // Transfer domain addons
-        if (isDomainAddon(addon) && plan && organization) {
+        if (isDomainAddon(addon) && plan && organization && !dontTransferAddons.has('domain')) {
             const domainAddon = plans.find(({ Name }) => Name === addon);
             const diffDomains = (organization.UsedDomains || 0) - plan.MaxDomains;
 
@@ -192,7 +243,7 @@ export const switchPlan = ({
         // which don't support scribe.
         const canTransferScribe = user?.ChargebeeUser !== ChargebeeEnabled.INHOUSE_FORCED;
 
-        if (isScribeAddon(addon) && plan && organization && canTransferScribe) {
+        if (isScribeAddon(addon) && plan && organization && canTransferScribe && !dontTransferAddons.has('scribe')) {
             const gptAddon = plans.find(({ Name }) => Name === addon);
             const diffAIs = (organization.UsedAI || 0) - getMaxValue(plan, 'MaxAI');
 
@@ -214,7 +265,7 @@ export const switchPlan = ({
             }
         }
 
-        if (isLumoAddon(addon) && plan && organization) {
+        if (isLumoAddon(addon) && plan && organization && !dontTransferAddons.has('lumo')) {
             const lumoAddon = plans.find(({ Name }) => Name === addon);
 
             if (lumoAddon) {
@@ -228,7 +279,7 @@ export const switchPlan = ({
             }
         }
 
-        if (isIpAddon(addon) && plan && organization) {
+        if (isIpAddon(addon) && plan && organization && !dontTransferAddons.has('ip')) {
             // cycle and currency don't matter in this case
             const currentPlan = new SelectedPlan(currentPlanIDs, plans, CYCLE.MONTHLY, DEFAULT_CURRENCY);
             const newPlan = new SelectedPlan(newPlanIDs, plans, CYCLE.MONTHLY, DEFAULT_CURRENCY);
@@ -257,21 +308,6 @@ export const setQuantity = (planIDs: PlanIDs, planID: PLANS | ADDON_NAMES, newQu
 export const supportB2BAddons = (planIDs: PlanIDs) => {
     const supportedAddons = getSupportedB2BAddons(planIDs);
     return !!Object.keys(supportedAddons).length;
-};
-
-export const getPlanFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs = {}): StrictPlan | undefined => {
-    const planID = Object.keys(planIDs).find((planID): planID is keyof PlansMap => {
-        const type = plansMap[planID as keyof PlansMap]?.Type;
-        return type === PLAN_TYPES.PLAN || type === PLAN_TYPES.PRODUCT;
-    });
-    if (planID) {
-        return plansMap[planID] as StrictPlan;
-    }
-};
-
-export const getPlanCurrencyFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs = {}): Currency | undefined => {
-    const plan = getPlanFromPlanIDs(plansMap, planIDs);
-    return plan?.Currency;
 };
 
 export function getPlanFromIDs(planIDs: PlanIDs, plansMap: PlansMap): Plan | undefined {

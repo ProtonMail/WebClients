@@ -111,4 +111,6 @@ const TextAreaWithCounter = forwardRef<HTMLTextAreaElement, TextAreaWithCounterP
     );
 });
 
+TextAreaWithCounter.displayName = 'TextAreaWithCounter';
+
 export default TextAreaWithCounter;

@@ -14,7 +14,7 @@ describe('`openSecureLinkFileDescriptor` crypto process', () => {
         const itemKey = await createRandomItemKey(1);
         const fileDescriptor = await createFileDescriptor(mockMetadata, 1);
         const encryptedFileKey = await encryptData(itemKey.key, fileDescriptor.fileKey, PassEncryptionTag.FileKey);
-        const secureLinkData = await createSecureLink({ itemKey, shareKey: itemKey });
+        const secureLinkData = await createSecureLink({ itemKey });
 
         const result = await openSecureLinkFileDescriptor({
             encryptedFileKey: uint8ArrayToBase64String(encryptedFileKey),
@@ -32,7 +32,7 @@ describe('`openSecureLinkFileDescriptor` crypto process', () => {
         const itemKey = await createRandomItemKey(1);
         const fileDescriptor = await createFileDescriptor(mockMetadata, 2);
         const encryptedFileKey = await encryptData(itemKey.key, fileDescriptor.fileKey, PassEncryptionTag.FileKey);
-        const secureLinkData = await createSecureLink({ itemKey, shareKey: itemKey });
+        const secureLinkData = await createSecureLink({ itemKey });
 
         const result = await openSecureLinkFileDescriptor({
             encryptedFileKey: uint8ArrayToBase64String(encryptedFileKey),
@@ -51,7 +51,7 @@ describe('`openSecureLinkFileDescriptor` crypto process', () => {
         const otherItemKey = await createRandomItemKey(1);
         const fileDescriptor = await createFileDescriptor(mockMetadata, 1);
         const encryptedFileKey = await encryptData(itemKey.key, fileDescriptor.fileKey, PassEncryptionTag.FileKey);
-        const secureLinkData = await createSecureLink({ itemKey: otherItemKey, shareKey: otherItemKey });
+        const secureLinkData = await createSecureLink({ itemKey: otherItemKey });
 
         await expect(
             openSecureLinkFileDescriptor({

@@ -1,11 +1,12 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady } from 'proton-pass-extension/app/worker/context/inject';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { itemCreate, requestAliasOptions } from '@proton/pass/store/actions';
 import { selectAliasLimits, selectMostRecentVaultShareID } from '@proton/pass/store/selectors';
-import { type ItemCreateIntent, WorkerMessageType } from '@proton/pass/types';
+import { type ItemCreateIntent } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';

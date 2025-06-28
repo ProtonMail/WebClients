@@ -1,6 +1,6 @@
 import { Button, ButtonLike } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
 import NotificationInput from '@proton/components/containers/calendar/notifications/inputs/NotificationInput';
 import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';

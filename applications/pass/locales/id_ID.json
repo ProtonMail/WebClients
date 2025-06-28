@@ -46,6 +46,9 @@
       "Add domain": [
         "Tambah domain"
       ],
+      "Add field": [
+        "Tambahkan kolom"
+      ],
       "Add forwarding mailbox": [
         "Tambah kotak surat penerusan"
       ],
@@ -400,14 +403,17 @@
       "Move to another vault": [
         "Pindahkan ke brankas lainnya"
       ],
-      "Move to Trash": [
-        "Pindahkan ke Sampah"
-      ],
       "Move to trash": [
         "Pindahkan ke sampah"
       ],
+      "Move to Trash": [
+        "Pindahkan ke Sampah"
+      ],
       "Multiple select": [
         "Pilih banyak berkas"
+      ],
+      "Next month": [
+        "Bulan selanjutnya"
       ],
       "No expired links": [
         "Tidak ada tautan yang kedaluwarsa"
@@ -433,17 +439,26 @@
       "Pause monitoring": [
         "Jeda pemantauan"
       ],
+      "Pay once": [
+        "Bayar sekali"
+      ],
       "Pin item": [
         "Sematkan item"
       ],
       "Please retry": [
         "Silakan coba lagi"
       ],
+      "Previous month": [
+        "Bulan sebelumnya"
+      ],
       "Re-verify": [
         "Verifikasi ulang"
       ],
       "Reactivate now": [
         "Aktifkan ulang sekarang"
+      ],
+      "Read More": [
+        "Membaca Selengkapnya"
       ],
       "Refresh the page": [
         "Muat ulang halaman"
@@ -458,7 +473,7 @@
         "Tolak undangan"
       ],
       "Reload": [
-        "Muat ulang"
+        "Muat Ulang"
       ],
       "Remove": [
         "Hapus"
@@ -529,9 +544,6 @@
       "See members": [
         "Lihat anggota"
       ],
-      "Select": [
-        "Pilih"
-      ],
       "Send email": [
         "Kirim email"
       ],
@@ -565,17 +577,26 @@
       "Show advanced options": [
         "Tampilkan opsi lanjutan"
       ],
+      "Show Less": [
+        "Tunjukkan Sedikit Saja"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Masuk dengan ${ BRAND_NAME }"
       ],
       "Sign out": [
         "Keluar"
       ],
+      "Skip": [
+        "Lewati"
+      ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Seseorang telah membagikan item kepada Anda di ${ PASS_APP_NAME }"
       ],
       "Sort vault items": [
         "Sortir item brankas"
+      ],
+      "Start from scratch": [
+        "Mulai dari awal"
       ],
       "Submit": [
         "Kirim"
@@ -790,9 +811,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Berkas ${ provider } tidak dapat diurai. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Kesalahan] terdapat item yang tidak dapat diurai"
-      ],
       "A domain ownership must be verified first.": [
         "Kepemilikan domain harus diverifikasi terlebih dahulu."
       ],
@@ -822,9 +840,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentikasi gagal. Konfirmasikan kata sandi kedua Anda untuk melanjutkan ekspor"
-      ],
-      "Biometric authentication failed": [
-        "Autentikasi biometrik gagal"
       ],
       "Cannot send invitation at the moment": [
         "Undangan tidak dapat dikirim untuk saat ini"
@@ -1036,8 +1051,8 @@
       "File does not match expected format": [
         "Berkas tidak cocok dengan format yang diharapkan"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Impor untuk brankas \"${ vaultData.name }\" gagal : ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Impor untuk brankas \"${ vaultData.name }\" gagal: ${ errorMessage }"
       ],
       "Importing items failed": [
         "Item gagal diimpor"
@@ -1152,6 +1167,9 @@
       ],
       "Unsupported 1Password file format": [
         "Format berkas 1Password tidak didukung"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Format berkas Bitwarden tidak didukung"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Brankas \"${ payload.content.name }\" gagal diperbarui"
@@ -1268,7 +1286,7 @@
       "${ count } view": [
         "${ count } kali dilihat"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
         "${ count }/${ maxReads } tampilan"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1362,13 +1380,13 @@
         "Alias berhasil diaktifkan. Anda kini dapat menerima email yang terkirim ke ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
-        "Penyinkronan alias antara akun ${ BRAND_NAME } dan SimpleLogin Anda sedang aktif."
+        "Sinkronisasi alias antar akun ${ BRAND_NAME } dan SimpleLogin Anda sedang aktif."
       ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
         "Alias di sampah akan terus meneruskan email. Jika anda mau berhenti menerima email di alamat ini, nonaktifkan saja."
       ],
       "Aliases out of sync (${ aliasCount })": [
-        "Alias yang tidak sinkron (${ aliasCount })"
+        "Alias yang tidak tersinkron (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Alias dengan domain khusus tidak dipantau. Silakan tambahkan alias ini sebagai email khusus untuk keperluan pemantauan."
@@ -1431,7 +1449,7 @@
         "Bawa kata sandi Anda ke ${ BRAND_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
-        "Bawa domain milik Anda sendiri, dan Anda tidak akan lagi butuh untuk membeli solusi hosting email lainnya."
+        "Bawa domain milik Anda sendiri ke layanan kami, dan Anda tidak akan lagi butuh untuk membeli solusi hosting email lainnya."
       ],
       "Built in 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
@@ -1468,9 +1486,6 @@
       ],
       "Change your password": [
         "Ubah kata sandi Anda"
-      ],
-      "Choose your preferred look and feel.": [
-        "Pilih tampilan dan nuansa yang Anda inginkan."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Konfirmasi kata sandi tambahan Anda untuk melanjutkan penghapusan kata sandi ini."
@@ -1759,9 +1774,6 @@
       ],
       "Low Priority": [
         "Prioritas Rendah"
-      ],
-      "Make it your own": [
-        "Jadikan aplikasi ini milik Anda"
       ],
       "Manager": [
         "Pengelola"
@@ -2204,6 +2216,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Untuk meninjau data Anda yang telah diimpor, klik ikon ${ PASS_APP_NAME } pada bilah toolbar browser Anda."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Terpercaya oleh lebih dari 50.000 pengguna bisnis dan 100 juta akun di seluruh dunia."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
       ],
@@ -2281,6 +2296,9 @@
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Kami mendeteksi bahwa Anda memiliki ${ aliasCount } alias yang terdapat pada SimpleLogin namun tidak ada pada ${ PASS_APP_NAME }. Apakah Anda ingin mengimpor alias ini?"
+      ],
+      "Week": [
+        "Pekan"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Kami telah mengirimkan kode verifikasi ke ${ email }. Masukkan kode tersebut pada kolom di bawah ini:"
@@ -2473,6 +2491,12 @@
       "Account": [
         "Akun"
       ],
+      "Account Number": [
+        "Nomor Rekening"
+      ],
+      "Account Type": [
+        "Tipe Akun"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Tambahkan awalan acak untuk domain ini pada saat membuat alias baru."
       ],
@@ -2481,6 +2505,9 @@
       ],
       "Additional details": [
         "Rincian tambahan"
+      ],
+      "Address": [
+        "Alamat"
       ],
       "Address details": [
         "Rincian alamat"
@@ -2509,6 +2536,12 @@
       "Always show username field": [
         "Selalu tampilkan kolom nama pengguna"
       ],
+      "API Credential": [
+        "Kredensial API"
+      ],
+      "API Key": [
+        "Kunci API"
+      ],
       "Application logs": [
         "Log aplikasi"
       ],
@@ -2518,6 +2551,12 @@
       "Backup password": [
         "Kata sandi cadangan"
       ],
+      "Bank Account": [
+        "Akun Bank"
+      ],
+      "Bank Name": [
+        "Nama Bank"
+      ],
       "Beta Access": [
         "Akses Beta"
       ],
@@ -2526,6 +2565,12 @@
       ],
       "Birthdate": [
         "Tanggal lahir"
+      ],
+      "Browse faster, smarter": [
+        "Jelajahi internet secara lebih cepat dan cermat"
+      ],
+      "Built-in 2FA": [
+        "2FA Bawaan"
       ],
       "Capital letters (A-Z)": [
         "Huruf kapital (A-Z)"
@@ -2545,8 +2590,20 @@
       "Catch-All": [
         "Catch-All"
       ],
+      "Checkbox": [
+        "Kotak centang"
+      ],
+      "Choose unlock method": [
+        "Pilih metode pembukaan"
+      ],
+      "Choose your preferred look and feel.": [
+        "Tentukan tampilan dan nuansa yang Anda kehendaki."
+      ],
       "City": [
         "Kota"
+      ],
+      "Class": [
+        "Kelas"
       ],
       "Code": [
         "Kode"
@@ -2569,6 +2626,9 @@
       "Copy": [
         "Salin"
       ],
+      "Country": [
+        "Negara"
+      ],
       "Country or Region": [
         "Negara atau Wilayah"
       ],
@@ -2577,6 +2637,9 @@
       ],
       "Create a credit card": [
         "Buat kartu kredit"
+      ],
+      "Create a custom item": [
+        "Buat item khusus"
       ],
       "Create a hide-my-email alias": [
         "Buat alias hide-my-email"
@@ -2596,20 +2659,29 @@
       "Create new vault": [
         "Buat brankas baru"
       ],
-      "Created": [
-        "Waktu pembuatan"
-      ],
       "Created at": [
         "Dibuat pada"
       ],
-      "Custom hidden field": [
-        "Kolom khusus tersembunyi"
+      "Credit cards": [
+        "Kartu kredit"
       ],
-      "Custom text field": [
-        "Kolom teks khusus"
+      "Crypto Wallet": [
+        "Dompet Kripto"
+      ],
+      "Custom Items": [
+        "Item khusus"
+      ],
+      "Database": [
+        "Database"
+      ],
+      "Database Type": [
+        "Tipe Database"
       ],
       "Date": [
         "Tanggal"
+      ],
+      "Date of Birth": [
+        "Tanggal Lahir"
       ],
       "Device": [
         "Perangkat"
@@ -2622,6 +2694,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Dokter"
       ],
       "Domain": [
         "Domain"
@@ -2637,6 +2712,9 @@
       ],
       "Download logs": [
         "Unduh log"
+      ],
+      "Driver License": [
+        "Surat Izin Mengemudi"
       ],
       "Email": [
         "Email"
@@ -2668,8 +2746,17 @@
       "Expired": [
         "Kedaluwarsa"
       ],
+      "Expiry Date": [
+        "Tanggal Kedaluwarsa"
+      ],
       "Export": [
         "Ekspor"
+      ],
+      "Extra email addresses": [
+        "Alamat email tambahan"
+      ],
+      "Extra fields": [
+        "Kolom Tambahan"
       ],
       "Extra password": [
         "Kata sandi tambahan"
@@ -2683,8 +2770,14 @@
       "Field name": [
         "Nama kolom"
       ],
+      "File attachments": [
+        "Lampiran berkas"
+      ],
       "File format": [
         "Format berkas"
+      ],
+      "Finance": [
+        "Keuangan"
       ],
       "First name": [
         "Nama depan"
@@ -2695,8 +2788,14 @@
       "For a one-off sharing": [
         "Untuk pembagian yang hanya satu kali"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Demi alasan keamanan, ${ PASS_SHORT_APP_NAME } akan mengunci dirinya sendiri secara otomatis setelah 10 menit tidak aktif."
+      ],
       "Forwards to": [
         "Teruskan ke"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Gratis untuk selamanya"
@@ -2713,8 +2812,17 @@
       "Generic CSV": [
         "Berkas CSV umum"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Dapatkan ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Dapatkan ${ PASS_SHORT_APP_NAME } tampa batas"
+      ],
       "Get Started": [
         "Mulai"
+      ],
+      "Get the extension for your browser.": [
+        "Dapatkan ekstensi ini untuk browser Anda"
       ],
       "Grant": [
         "Izinkan"
@@ -2725,8 +2833,32 @@
       "Hide password": [
         "Sembunyikan kata sandi"
       ],
+      "Hide-my-email aliases": [
+        "Alias hide-my-email"
+      ],
+      "Highest": [
+        "Tertinggi"
+      ],
+      "Holder Name": [
+        "Nama Pemegang Akun"
+      ],
+      "Hospital": [
+        "Rumah Sakit"
+      ],
+      "Host": [
+        "Host"
+      ],
+      "Hostname": [
+        "Nama Host"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Cara membuka ${ PASS_SHORT_APP_NAME }"
+      ],
       "https://example.com": [
         "https://contoh.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Kartu ID"
@@ -2764,8 +2896,26 @@
       "Instagram handle": [
         "Akun Instagram"
       ],
+      "Install and continue": [
+        "Pasang dan lanjutkan"
+      ],
+      "Install extension": [
+        "Pasang ekstensi"
+      ],
       "Invitations": [
         "Undangan"
+      ],
+      "IP Address": [
+        "Alamat IP"
+      ],
+      "Issuing Authority": [
+        "Otoritas Penerbit"
+      ],
+      "Issuing Country": [
+        "Negara Penerbit"
+      ],
+      "Issuing State/Country": [
+        "Negara/Negara Bagian Penerbit"
       ],
       "Item ID": [
         "ID Item"
@@ -2775,6 +2925,12 @@
       ],
       "Key": [
         "Kunci"
+      ],
+      "Key fingerprint": [
+        "Sidik jari kunci"
+      ],
+      "Key type": [
+        "Jenis kunci"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pintasan keyboard: ${ shortcut }"
@@ -2806,8 +2962,17 @@
       "License": [
         "Lisensi"
       ],
+      "License Key": [
+        "Kunci Lisensi"
+      ],
       "License number": [
         "Nomor lisensi"
+      ],
+      "License Number": [
+        "Nomor Lisensi"
+      ],
+      "Limited time": [
+        "Waktu terbatas"
       ],
       "LinkedIn account": [
         "Akun LinkedIn"
@@ -2833,11 +2998,35 @@
       "Make all viewers": [
         "Jadikan seluruh anggota sebagai pengamat"
       ],
+      "Make it your own.": [
+        "Jadikan aplikasi ini milik Anda."
+      ],
       "max views reached": [
         "tampilan maksimum tercapai"
       ],
+      "Medical Conditions": [
+        "Kondisi Kesehatan"
+      ],
+      "Medical Record": [
+        "Rekaman Medis"
+      ],
+      "Medications": [
+        "Pengobatan"
+      ],
+      "Member ID": [
+        "ID Anggota"
+      ],
+      "Member Name": [
+        "Nama Anggota"
+      ],
       "Members": [
         "Anggota"
+      ],
+      "Membership": [
+        "Keanggotaan"
+      ],
+      "Membership ID": [
+        "ID Keanggotaan"
       ],
       "Middle name": [
         "Nama tengah"
@@ -2854,11 +3043,17 @@
       "Name": [
         "Nama"
       ],
+      "Name (SSID)": [
+        "Nama (SSID)"
+      ],
       "Name on card": [
         "Nama di kartu"
       ],
       "Need help?": [
         "Butuh bantuan?"
+      ],
+      "Network": [
+        "Jaringan"
       ],
       "New": [
         "Baru"
@@ -2908,8 +3103,20 @@
       "Open-source password manager for effortless protection.": [
         "Pengelola kata sandi open-source untuk perlindungan yang mudah."
       ],
+      "Operating System": [
+        "Sistem Operasi"
+      ],
       "Organization": [
         "Organisasi"
+      ],
+      "Organization Name": [
+        "Nama Organisasi"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Owner": [
+        "Pemilik"
       ],
       "Passkey": [
         "Passkey"
@@ -2920,6 +3127,9 @@
       "Passport": [
         "Paspor"
       ],
+      "Passport Number": [
+        "Nomor Paspor"
+      ],
       "Passport number": [
         "Nomor paspor"
       ],
@@ -2929,11 +3139,23 @@
       "Password history": [
         "Riwayat kata sandi"
       ],
+      "Patient Name": [
+        "Nama Pasien"
+      ],
+      "Permissions": [
+        "Perizinan"
+      ],
+      "Personal": [
+        "Pribadi"
+      ],
       "Personal details": [
         "Rincian pribadi"
       ],
       "Personal website": [
         "Situs web pribadi"
+      ],
+      "Personalize": [
+        "Personalisasi"
       ],
       "PGP-encrypted (recommended)": [
         "Terenkripsi PGP (direkomendasikan)"
@@ -2947,6 +3169,15 @@
       "PIN code": [
         "Kode PIN"
       ],
+      "Plus": [
+        "Plus"
+      ],
+      "Points Balance": [
+        "Saldo"
+      ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Awalan"
       ],
@@ -2956,17 +3187,35 @@
       "Priority:": [
         "Prioritas:"
       ],
+      "Private key": [
+        "Kunci pribadi"
+      ],
+      "Private Key": [
+        "Kunci Pribadi"
+      ],
+      "Product": [
+        "Produk"
+      ],
+      "Program Name": [
+        "Nama Program"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Lindungi ${ PASS_APP_NAME } dengan kata sandi tambahan"
       ],
       "Public domain": [
         "Domain publik"
       ],
+      "Public key": [
+        "Kunci publik"
+      ],
       "Rate us": [
         "Beri kami nilai"
       ],
       "Recent": [
         "Baru digunakan"
+      ],
+      "Record Number": [
+        "Nomor Rekaman"
       ],
       "Reddit handle": [
         "Akun Reddit"
@@ -2983,8 +3232,17 @@
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
+      "Reward Program": [
+        "Program Hadiah"
+      ],
+      "Routing Number": [
+        "Nomor Perutean"
+      ],
       "Second password": [
         "Kata sandi kedua"
+      ],
+      "Secret": [
+        "Secret"
       ],
       "Secure links": [
         "Tautan aman"
@@ -3001,6 +3259,9 @@
       "See member and permission overview": [
         "Lihat ikhtisar anggota dan perizinan"
       ],
+      "Seed Phrase": [
+        "Frasa Benih"
+      ],
       "Select a domain": [
         "Pilih domain"
       ],
@@ -3013,14 +3274,26 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Pilih brankas di mana alias SimpleLogin akan diimpor"
       ],
+      "Select theme": [
+        "Pilih tema"
+      ],
       "Select your password manager": [
         "Pilih pengelola kata sandi Anda"
+      ],
+      "Select your theme": [
+        "Pilih tema Anda"
       ],
       "Selected": [
         "Dipilih"
       ],
+      "Server": [
+        "Server"
+      ],
       "Share": [
         "Bagikan"
+      ],
+      "Share ID": [
+        "Bagikan ID"
       ],
       "Shared": [
         "Dibagikan"
@@ -3040,17 +3313,32 @@
       "Social security": [
         "Jaminan sosial"
       ],
+      "Social Security": [
+        "BPJS"
+      ],
       "Social security number": [
         "Nomor jaminan sosial"
       ],
+      "Software license": [
+        "Lisensi perangkat lunak"
+      ],
       "Special characters (!&*)": [
         "Karakter khusus (!&*)"
+      ],
+      "SSH key": [
+        "Kunci SSH"
+      ],
+      "SSN": [
+        "NIK (Nomor Induk Kependudukan)"
       ],
       "State or province": [
         "Negara bagian atau provinsi"
       ],
       "Status": [
         "Status"
+      ],
+      "Storage": [
+        "Ruang penyimpanan"
       ],
       "Street address": [
         "Alamat jalan"
@@ -3067,6 +3355,9 @@
       "Support": [
         "Dukungan"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Sinkronkan alias dengan SimpleLogin"
       ],
@@ -3076,8 +3367,14 @@
       "Tax number": [
         "Nomor pajak"
       ],
+      "Technology": [
+        "Teknologi"
+      ],
       "Text": [
         "Teks"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Yang terbaik dari ${ BRAND_NAME } dengan satu langganan"
       ],
       "The URL has been copied to the clipboard": [
         "URL telah disalin ke papan klip"
@@ -3087,6 +3384,12 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Item ini dapat diakses hingga ${ date } atau hingga batas jumlah tampilannya tercapai."
+      ],
+      "Tier/Level": [
+        "Tingkat/Level Keanggotaan"
+      ],
+      "Tier/Status": [
+        "Tingkatan/Status"
       ],
       "Title": [
         "Judul"
@@ -3112,6 +3415,12 @@
       "Unknown": [
         "Tidak diketahui"
       ],
+      "Unlimited": [
+        "Tidak terbatas"
+      ],
+      "Unlock premium features": [
+        "Aktifkan fitur premium"
+      ],
       "Unlock with": [
         "Buka dengan"
       ],
@@ -3121,6 +3430,9 @@
       "Unnamed Credit Card": [
         "Kartu Kredit tidak bernama"
       ],
+      "Unnamed custom item": [
+        "Item khusus tanpa nama"
+      ],
       "Unnamed identity": [
         "Identitas tanpa nama"
       ],
@@ -3129,6 +3441,15 @@
       ],
       "Unnamed note": [
         "Catatan tidak bernama"
+      ],
+      "Unnamed SSH key": [
+        "Kunci SSH tanpa nama"
+      ],
+      "Unnamed WiFi item": [
+        "Item WiFi tanpa nama"
+      ],
+      "Unspecified": [
+        "Tidak ditentukan"
       ],
       "Untitled": [
         "Tanpa judul"
@@ -3151,6 +3472,9 @@
       "Vault ID": [
         "ID Brankas"
       ],
+      "Vault, item & link sharing": [
+        "Pembagian brankas, item, dan tautan"
+      ],
       "Vaults": [
         "Brankas"
       ],
@@ -3160,8 +3484,17 @@
       "View logs": [
         "Lihat log"
       ],
+      "VPN Devices": [
+        "Perangkat VPN"
+      ],
+      "VPN Speed": [
+        "Kecepatan VPN"
+      ],
       "Vulnerable": [
         "Rentan"
+      ],
+      "Wallet Name": [
+        "Nama Dompet"
       ],
       "Weak": [
         "Lemah"
@@ -3171,6 +3504,12 @@
       ],
       "Websites": [
         "Situs web"
+      ],
+      "What's included": [
+        "Apa yang termasuk"
+      ],
+      "WiFi network": [
+        "Jaringan WiFi"
       ],
       "Work details": [
         "Rincian pekerjaan"
@@ -3190,8 +3529,14 @@
       "You are about to create": [
         "Anda akan membuat"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Anda dapat memilih antara kode PIN, biometrik, atau kata sandi akun untuk membuka kunci."
+      ],
       "Your domain": [
         "Domain Anda"
+      ],
+      "Your passwords. Everywhere.": [
+        "Kata sandi Anda. Di mana pun Anda berada."
       ],
       "ZIP": [
         "Kode pos"
@@ -3216,12 +3561,17 @@
         "Aktifkan ${ reason }"
       ]
     },
+    "Medium": {
+      "Plus": [
+        "Plus"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } item"
       ],
       "You can drag and drop the selected item to another vault": [
-        "Anda dapat menarik dan melepas item yang dipilih ke brankas lain"
+        "Anda dapat menyeret dan melepaskan item yang dipilih ke brankas lain"
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Anda memilih ${ semiboldText } dalam brankas ini."
@@ -3376,6 +3726,14 @@
         "Anda dapat melampirkan berkas ke item untuk pengelolaan yang lebih baik"
       ]
     },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Langganan Seumur Hidup Plus seharga ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/bulan"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Tambah kunci rahasia 2FA"
@@ -3386,6 +3744,18 @@
       "Add note": [
         "Tambah catatan"
       ],
+      "Add password": [
+        "Tambah kata sandi"
+      ],
+      "Add private key": [
+        "Tambah kunci pribadi"
+      ],
+      "Add public key": [
+        "Tambah kunci publik"
+      ],
+      "Add SSID": [
+        "Tambah SSID"
+      ],
       "Add text": [
         "Tambahkan teks"
       ],
@@ -3394,6 +3764,9 @@
       ],
       "Coupon": [
         "Kupon"
+      ],
+      "E.g., ": [
+        "Misalnya "
       ],
       "Email address": [
         "Alamat email"
@@ -3425,8 +3798,8 @@
       "my-domain.com": [
         "domain-saya.com"
       ],
-      "Name to display when sending an email": [
-        "Nama yang ditampilkan saat mengirim email"
+      "Name displayed in emails": [
+        "Nama yang ditampilkan di email"
       ],
       "Note from SimpleLogin": [
         "Catatan dari SimpleLogin"
@@ -3461,6 +3834,9 @@
       "Select a suffix": [
         "Pilih akhiran"
       ],
+      "Select option": [
+        "Pilih opsi"
+      ],
       "Unknown origin": [
         "Asal tidak diketahui"
       ],
@@ -3469,9 +3845,6 @@
       ],
       "Used on ${ url }": [
         "Digunakan pada ${ url }"
-      ],
-      "Write your note": [
-        "Tulis catatan Anda"
       ]
     },
     "Security Center - Info": {
@@ -3632,8 +4005,14 @@
       "${ BRAND_NAME } addresses": [
         "Alamat ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Perlindungan akun"
@@ -3857,6 +4236,9 @@
       "Members": [
         "Anggota"
       ],
+      "Minicalendar": [
+        "Kalender mini"
+      ],
       "Modified": [
         "Diubah"
       ],
@@ -3907,6 +4289,9 @@
       ],
       "Pause monitoring?": [
         "Jeda pemantauan?"
+      ],
+      "Pay once, access forever.": [
+        "Bayar sekali, akses selamanya."
       ],
       "Pending access confirmation": [
         "Menunggu konfirmasi akses"
@@ -4077,6 +4462,11 @@
         "Anda akan menghapus ${ aliasCount } alias secara permanen."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hari ini"
+      ]
+    },
     "Tooltip": {
       "Not all information listed here was exposed for all users.": [
         "Tidak semua informasi yang tercantum di sini terpapar untuk seluruh pengguna."
@@ -4098,9 +4488,6 @@
       "OTP secret or URI is invalid": [
         "Secret OTP atau URI tidak valid"
       ],
-      "OTP secret or URI required": [
-        "Secret OTP atau URI wajib diisi"
-      ],
       "Section name cannot be empty": [
         "Nama bagian tidak dapat dikosongkan"
       ],
@@ -4112,6 +4499,11 @@
       ],
       "URL is invalid": [
         "URL tidak valid"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Pindahkan item ke"
       ]
     },
     "Warning": {
@@ -4225,9 +4617,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Mengundang alamat email di luar organisasi tidak diperkenankan"
-      ],
-      "item was imported without custom fields": [
-        "item diimpor tanpa kolom khusus"
       ],
       "Maximum length is ${ maxLength } character": [
         "Panjang maksimum adalah ${ maxLength } karakter"

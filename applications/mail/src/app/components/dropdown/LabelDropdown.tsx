@@ -4,22 +4,20 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import {
     Checkbox,
     EditLabelModal,
     Icon,
     LabelsUpsellModal,
     Mark,
-    PrimaryButton,
     SearchInput,
-    Tooltip,
     useActiveBreakpoint,
     useModalState,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
-import { getStandardFolders, isCustomLabel } from '@proton/mail/labels/helpers';
+import { getStandardFolders, isCustomLabel } from '@proton/mail/store/labels/helpers';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_IDENTIFIERS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
@@ -463,7 +461,8 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
                 </Checkbox>
             </div>
             <div className="m-4 shrink-0">
-                <PrimaryButton
+                <Button
+                    color="norm"
                     className="w-full"
                     loading={loading}
                     disabled={applyDisabled}
@@ -472,7 +471,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
                     type="submit"
                 >
                     {c('Action').t`Apply`}
-                </PrimaryButton>
+                </Button>
             </div>
             {moveScheduledModal}
             {moveSnoozedModal}

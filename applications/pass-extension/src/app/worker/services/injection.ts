@@ -1,14 +1,14 @@
 import { captureMessage as sentryCaptureMessage } from '@sentry/browser';
+import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
-import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types';
-import { type TabId, WorkerMessageType } from '@proton/pass/types';
+import { type TabId } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
-import WorkerMessageBroker from '../channel';
 
 const withTabEffect =
     (fn: (tabId: TabId, frameId: Maybe<number>) => Promise<void>) =>

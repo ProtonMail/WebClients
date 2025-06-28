@@ -198,6 +198,9 @@
       "Copy address": [
         "Kopiera adress"
       ],
+      "Copy alias “${ name }”": [
+        "Kopiera alias “${ name }“"
+      ],
       "Copy email address": [
         "Kopiera e-postadress"
       ],
@@ -290,6 +293,9 @@
       "Download": [
         "Ladda ner"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Ladda ner ${ DRIVE_APP_NAME } appen"
+      ],
       "Download now": [
         "Ladda ner nu"
       ],
@@ -353,6 +359,9 @@
       "Get the apps": [
         "Skaffa apparna"
       ],
+      "Get the writing assistant": [
+        "Skaffa skrivassistenten"
+      ],
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
@@ -374,6 +383,9 @@
       "Help and resources": [
         "Hjälp och resurser"
       ],
+      "Hide": [
+        "Dölj"
+      ],
       "Hide advanced PGP settings": [
         "Dölj avancerade PGP-inställningar"
       ],
@@ -382,6 +394,9 @@
       ],
       "Hide busy times": [
         "Dölj upptagna tider"
+      ],
+      "Hide more benefits": [
+        "Dölj fler fördelar"
       ],
       "Hide time zones": [
         "Dölj tidszoner"
@@ -437,8 +452,14 @@
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
+      "Keep subscription": [
+        "Behåll prenumeration"
+      ],
       "Later": [
         "Senare"
+      ],
+      "Learn more": [
+        "Lär dig mer"
       ],
       "Let's talk": [
         "Låt oss prata!"
@@ -496,6 +517,9 @@
       ],
       "More actions": [
         "Fler åtgärder"
+      ],
+      "More benefits": [
+        "Fler fördelar"
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
@@ -719,6 +743,9 @@
       "Show more": [
         "Visa mer"
       ],
+      "Show more benefits": [
+        "Visa fler fördelar"
+      ],
       "Show navigation bar": [
         "Visa navigeringsfält"
       ],
@@ -745,9 +772,6 @@
       ],
       "Start setup": [
         "Starta inställning"
-      ],
-      "Starting from ${ priceUnlimited }": [
-        "Startar från ${ priceUnlimited }"
       ],
       "Stay": [
         "Stanna"
@@ -803,17 +827,11 @@
       "Upgrade": [
         "Uppgradera"
       ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
       "Upgrade Now": [
         "Uppgradera nu"
       ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Uppgradera till ${ BRAND_NAME } Unlimited"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
+      "Upgrade now": [
+        "Uppgradera nu"
       ],
       "Upload and share files": [
         "Ladda upp och dela filer"
@@ -1004,6 +1022,135 @@
       ],
       "Please do not close this tab. Some requests are still being processed in the background.": [
         "Stäng inte denna flik. Några förfrågningar bearbetas fortfarande i bakgrunden."
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "200 GB storage": [
+        "200 GB lagringsutrymme"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB krypterat lagringsutrymme"
+      ],
+      "Add unlimited credit cards": [
+        "Lägg till obegränsat antal kreditkort"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alla premiumfunktioner i ${ BRAND_NAME } Mail, Pass, VPN, Drive och Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockera annonser, spårare och skadlig kod"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Dubbla ditt krypterade lagringsutrymme – få 1 TB för alla dina data"
+      ],
+      "Encrypted password manager": [
+        "Krypterad lösenordshanterare"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Här är en exklusiv gåva för att fira vår resa tillsammans."
+      ],
+      "High speed streaming with VPN": [
+        "Höghastighetsstreaming med VPN"
+      ],
+      "of privacy": [
+        "av integritet"
+      ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
+      "Online privacy for up to 2 people": [
+        "Integritet online för upp till 2 personer"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Integritet online för hela din familj (upp till 6 användare)"
+      ],
+      "Protect up to 10 devices": [
+        "Skydda upp till 10 enheter"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Spara stort på premium Drive-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Spara stort på premium Mail-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Spara stort på premium Pass-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Spara stort på premium VPN-funktioner med en tidsbegränsad rabatt."
+      ],
+      "Save time with built-in 2FA": [
+        "Spara tid med inbyggd 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Säker e-post med obegränsade alias"
+      ],
+      "Select any server": [
+        "Välj vilken server som helst"
+      ],
+      "Share passwords easily": [
+        "Dela lösenord enkelt"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Stream your favorite content": [
+        "Streama ditt favoritinnehåll"
+      ],
+      "thanks to you": [
+        "tack vare dig"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Trippla ditt krypterade lagringsutrymme – få 3 TB för alla dina data"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Obegränsat antal mappar, etiketter och filter"
+      ],
+      "Use your own email domain": [
+        "Använd din egen e-postdomän"
+      ],
+      "years": [
+        "år"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumserbjudande"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
+      "/ month": [
+        "/månad"
+      ],
+      "12 months": [
+        "12 månader"
+      ],
+      "15 months": [
+        "15 månader"
+      ],
+      "24 months": [
+        "24 månader"
+      ],
+      "30 months": [
+        "30 månader"
+      ],
+      "for ${ durationDeal }": [
+        "för ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -1213,9 +1360,6 @@
       ],
       "Monthly": [
         "Månadsvis"
-      ],
-      "New!": [
-        "Nytt!"
       ],
       "Two-year": [
         "Tvåårig"
@@ -2216,9 +2360,6 @@
       "Macao": [
         "Macao"
       ],
-      "Macedonia": [
-        "Makedonien"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2749,9 +2890,6 @@
       "Availability unknown": [
         "Tillgänglighet okänt"
       ],
-      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
-        "Organisera din dag bättre, håll koll på din tid och prioritera uppgifter. Färgkoda din kalender med anpassade händelsefärger."
-      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Färgkoda händelser för att göra det enklare att organisera din dag, hålla koll på din tid och prioritera uppgifter."
       ],
@@ -2772,9 +2910,6 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Tar bort kontakter... Detta kan ta några minuter. När processen är klar kan du stänga detta fönster."
-      ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Designad för användare som söker utökat skydd för sina konton."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Enkel åtkomst till din e-post och kalender på stationär dator och mobil."
@@ -2803,9 +2938,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli aviserad om ditt lösenord eller annan data har läckts från en tredjepartstjänst."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ PLAN_NAMES[PLANS.BUNDLE] }"
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
       ],
@@ -2820,9 +2952,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sammanfogar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Spara tid genom att skicka e-post till alla på en gång med kontaktgrupper. Lås upp denna och andra premiumfunktioner när du uppgraderar."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Konfigurera en dataåterställningsmetod för att förhindra dataförlust."
@@ -2851,11 +2980,11 @@
       "To start, give your organization a name.": [
         "Börja med att ge din organisation ett namn."
       ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Uppgradera ditt konto för att aktivera ${ PROTON_SENTINEL_NAME }, vår banbrytande AI-drivna säkerhetslösning med dedikerad expertsupport dygnet runt."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Använd dra och släpp för att ange prioritet vid sammanslagning av kontakter. Avmarkera kontakterna du inte vill sammanfoga."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Använd den här guiden för att din organisation snabbt ska kunna dra nytta av ${ BRAND_NAME }:s branschledande kryptering och ekosystem för integritet."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
@@ -3017,6 +3146,11 @@
         "Redigera händelse"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "OBS:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "BESKRIVNING:\n${ eventDescription }"
@@ -3031,6 +3165,9 @@
       ],
       "Here's what changed:": [
         "Här är vad som ändrades:"
+      ],
+      "NOTE:": [
+        "OBS:"
       ],
       "This event occurrence was canceled.": [
         "Denna händelseförekomst blev inställd."
@@ -3551,7 +3688,7 @@
         "Prova använda endast bokstäver, siffror och _.-"
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Det går inte att ladda VPN-instrumentpanelen. Kontrollera din anslutning och försök igen."
+        "Kan inte ladda VPN-adminpanel. Kontrollera din anslutning och försök igen."
       ],
       "Unexpected error, we can't import the contacts": [
         "Oväntat fel, vi kan inte importera kontakterna"
@@ -4489,8 +4626,17 @@
       "Import from ${ provider }": [
         "Importera från ${ provider }"
       ],
-      "Other": [
-        "Annat"
+      "Import from Google": [
+        "Importera från Google"
+      ],
+      "Import from other": [
+        "Importera från andra"
+      ],
+      "Import from Outlook": [
+        "Importera från Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importera från Yahoo"
       ]
     },
     "Import warning": {
@@ -4742,6 +4888,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Vid slutet av din provperiod ${ boldCancelDate }, kommer du att nedgraderas till ${ boldProtonFree }. Alla användarkonton kommer att tas bort från din organisation."
+      ],
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
@@ -4762,6 +4911,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Förstärk din organisations varumärkesidentitet och skapa en mer konsekvent upplevelse online för dina användare."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Ta med dina meddelanden, kontakter och kalendrar till ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
@@ -4998,6 +5150,9 @@
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
       ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Om du ångrar dig kan du prenumerera igen när som helst. Tråkigt att du lämnar oss!"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
       ],
@@ -5191,6 +5346,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
       ],
+      "One time import": [
+        "Engångsimport"
+      ],
       "Open shortcut cheat sheet": [
         "Öppna fuskblad för genvägar"
       ],
@@ -5314,9 +5472,6 @@
       "Scan the QR code with your mobile device": [
         "Skanna QR-koden med din mobila enhet"
       ],
-      "Select a service provider to start": [
-        "Välj en tjänsteleverantör för att starta"
-      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Välj det e-postformat du vill använda som standard när du skickar ett e-postmeddelande till den här e-postadressen."
       ],
@@ -5380,6 +5535,10 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Skicka in en insättning med följande adress eller skanna QR-koden. Din insättning kommer att återspeglas på ditt konto efter bekräftelse."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Prenumeration förnyas automatiskt varje ${ cycle } månad.",
+        "Prenumerationen förnyas automatiskt var ${ cycle }:e månad."
+      ],
       "Subscription auto-renews every month.": [
         "Prenumeration förnyas automatiskt varje månad."
       ],
@@ -5394,6 +5553,9 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
+      ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Tack för att du väljer ${ BRAND_NAME } för att skydda din organisation."
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Tack för att du prenumererar. Säker surfning börjar nu."
@@ -5718,6 +5880,16 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Du kommer att uppdatera alla händelser i denna serie. Borttagna deltagare kommer att aviseras."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
+        "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du har nått det maximala antalet adresser i kontaktgruppen/kontaktgrupperna:"
       ],
@@ -5766,6 +5938,9 @@
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
       ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Din gratis provperiod har konverterats till en månadsprenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Din information hittades den ${ displayedDate }"
       ],
@@ -5799,6 +5974,10 @@
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Din fysiska plats är synlig och kan användas för att begränsa din åtkomst till internet."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att förnyas automatiskt varje ${ cycle } månad.",
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att förnyas automatiskt var ${ cycle }:e månad."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
       ],
@@ -5807,6 +5986,15 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszon verkar ha ändrats till ${ timezone }. Vill du uppdatera din tidszons preferens?"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Din provperiod slutar om ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Du kommer förlora åtkomst till ${ boldPlanTitle } den ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
       ]
     },
     "info": {
@@ -6002,6 +6190,9 @@
       ],
       "Address": [
         "Adress"
+      ],
+      "Alias title": [
+        "Alias-rubrik"
       ],
       "All day": [
         "Heldag"
@@ -6391,9 +6582,6 @@
       "Time zone": [
         "Tidszon"
       ],
-      "Title": [
-        "Rubrik"
-      ],
       "To: ${ toEmail }": [
         "Till: ${ toEmail }"
       ],
@@ -6531,6 +6719,9 @@
       ],
       "Drafts": [
         "Utkast"
+      ],
+      "Enforcing 2FA for organizations": [
+        "Kräver 2FA för organisationer"
       ],
       "How to add users": [
         "Hur man lägger till användare"
@@ -6687,11 +6878,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ditt konto riskerar att tas bort. För att undvika dataförlust, be din administratör att uppgradera. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ditt lagringsutrymme är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ditt lagringsutrymme är fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ditt lagringsutrymme är fullt. För att fortsätta använda ${ BRAND_NAME }-produkter, frigör utrymme eller ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Din prenumeration har upphört. ${ cta } och för att undvika dataförlust."
@@ -7036,21 +7224,6 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7203,9 +7376,6 @@
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Ta bort skräppost och kastade meddelanden automatiskt"
-      ],
       "Auto-reply": [
         "Automatiskt svar"
       ],
@@ -7247,9 +7417,6 @@
       ],
       "Custom fields": [
         "Anpassade fält"
-      ],
-      "Custom snooze time": [
-        "Anpassad snooztid"
       ],
       "Custom workspace branding": [
         "Anpassat utseende för arbetsyta"
@@ -7390,12 +7557,6 @@
       "Schedule and snooze emails for any time": [
         "Schemalägg och snooza e-post när som helst"
       ],
-      "Schedule messages at any time": [
-        "Schemalägg meddelanden när som helst"
-      ],
-      "Search message content": [
-        "Sök meddelandeinnehåll"
-      ],
       "Secure Core servers": [
         "Secure Core-servrar"
       ],
@@ -7532,9 +7693,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain2 } för nyhetsprenumeration"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Snooza meddelanden och bli påmind när du vill"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }"
       ]
@@ -7550,6 +7708,12 @@
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avancerad nätverkssäkerhet och åtkomsthantering med dedikerade säkra gateways"
@@ -7611,9 +7775,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Säker åtkomst till Internet var som helst med väsentlig nätverksövervakning"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Säker molnlagring som låter dig lagra, synkronisera och dela filer enkelt och säkert."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
       ],
@@ -7637,16 +7798,14 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Startar från ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Det rabatterade priset på ${ priceCoupon } är giltigt för den första månaden. Därefter kommer det förnyas automatiskt med ${ priceLine }. Du kan avbryta när som helst."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: title": {
@@ -7661,6 +7820,11 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7935,7 +8099,8 @@
       "Require 2FA": [
         "Kräver 2FA"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "Stöd för ${ n } anpassad e-postdomän",
         "Stöd för ${ n } anpassade e-postdomäner"
       ]
     },
@@ -8142,8 +8307,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
+      "Don’t show this again": [
+        "Visa inte detta igen"
+      ],
       "Don’t show this offer again": [
         "Visa inte detta erbjudande igen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Skaffa ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaffa Drive Plus för endast ${ pricingTitle }"
@@ -8197,9 +8368,20 @@
         "Din prenumeration förnyas snart"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Krypterad lösenordshanterare"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 fler premiumfunktioner"
+      ],
+      "500 GB secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "Advanced threat protection": [
+        "Avancerat hotskydd"
       ],
       "Custom email domain": [
         "Anpassad e-postdomän"
@@ -8221,6 +8403,12 @@
       ],
       "Storage": [
         "Lagringsutrymme"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultrasnabba VPN-servrar i 110+ länder"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Obegränsat antal alias för att skydda din identitet"
       ]
     },
     "Onboarding": {
@@ -8257,6 +8445,47 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "Du kommer att kunna ändra ditt tema när som helst i dina inställningar."
+      ]
+    },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " besök vårt ${ helpCenterLink } eller ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Avbryt när som helst före ${ cancelDate }."
+      ],
+      "Cancel anytime before then.": [
+        "Avbryt när som helst innan dess."
+      ],
+      "contact our support team": [
+        "kontakta vårt supportteam"
+      ],
+      "Continue": [
+        "Fortsätt"
+      ],
+      "help center": [
+        "hjälpcenter"
+      ],
+      "If you need help,": [
+        "Om du behöver hjälp,"
+      ],
+      "Once your full subscription starts...": [
+        "När din fullständiga prenumeration startar …"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Du kan använda ${ planTitle } tills provperioden är slut, och du kommer inte att debiteras."
+      ],
+      "Your free trial has started": [
+        "Din gratis provperiod har startat"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Du kommer att kunna använda ${ planTitle } tills provperioden slutar, utan kostnad."
       ]
     },
     "Option": {
@@ -8352,6 +8581,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Åtkomst till alla ${ BRAND_NAME }-appar och premiumfunktioner"
+      ],
       "Secure vault sharing": [
         "Säker valvdelning"
       ],
@@ -8430,6 +8662,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Banköverföring"
       ],
@@ -8494,6 +8729,9 @@
       "Please select your billing state first.": [
         "Välj din delstat för fakturering först."
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Priserna för förnyelse kan ändras enligt ${ termsAndConditionsLink }."
+      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
       ],
@@ -8506,6 +8744,24 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupongen är giltig för ${ couponRedemptions } förnyelse.",
         "Kupongen är giltig för ${ couponRedemptions } förnyelser."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Det rabatterade priset ${ priceWithDiscount } gäller för den första ${ subscriptionLength } månaden.",
+        "Det rabatterade priset på ${ priceWithDiscount } gäller under de första ${ subscriptionLength } månaderna."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det rabatterade priset på ${ priceWithDiscount } gäller den första månaden. Kupongen är giltig för ${ couponRedemptions } förnyelse. Därefter förnyas det automatiskt till ${ renewPriceStr } i 1 månad. Du kan avbryt när som helst.",
+        "Det rabatterade priset på ${ priceWithDiscount } gäller den första månaden. Kupongen är giltig för ${ couponRedemptions } förnyelse. Därefter förnyas det automatiskt till ${ renewPriceStr } i 1 månad. Du kan avbryt när som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltig för den första månaden. Sedan kommer det förnyas den automatiskt med ${ renewPriceStr } varje månad. Du kan avbryta när som helst."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
+        "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Denna betalningsmetod kommer bli din nya standard för alla framtida förnyelser."
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
@@ -8537,6 +8793,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Bank transfer - ${ details }": [
+        "Banköverföring - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -9206,16 +9467,37 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Denna prenumeration kommer förnyas automatiskt vartannat år med samma pris tills den avbryts."
+      "The special offer is valid for the first 2 years.": [
+        "Specialerbjudandet gäller de första 2 åren."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Din prenumeration kommer att förnyas med samma pris varje år."
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Surfa säkert"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Gör mer med ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Skaffa obegränsat antal alias"
+      ],
       "Go to subscription plans": [
         "Gå till prenumerationspaket"
+      ],
+      "Guard against threats": [
+        "Skydd mot hot"
+      ],
+      "Increase your storage": [
+        "Öka ditt lagringsutrymme"
+      ],
+      "Keep passwords safe": [
+        "Håll lösenord säkra"
+      ],
+      "Unblock streaming content": [
+        "Avblockera streaminginnehåll"
       ],
       "Upgrade": [
         "Uppgradera"
@@ -9288,9 +9570,33 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Ordinarie pris ${ amount } för 30 månader"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Specialerbjudandet gäller de första 2 åren"
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Kom åt innehåll på streamingtjänster globalt"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Skaffa 500 GB för att säkert lagra alla dina filer och foton"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Få åtkomst till ultrasnabba VPN-servrar i 110+ länder"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Skaffa ett paket som inkluderar allt, skaffa ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Skaffa obegränsat antal alias för att skydda din identitet och minska skräppost"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Håll dina lösenord säkra och organiserade i flera valv "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Skydda ditt konto från hot med Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Uppgradera och spara mer med 2 års ${ planName }"
       ]
@@ -9394,6 +9700,9 @@
       "For all ${ BRAND_NAME } services": [
         "För alla ${ BRAND_NAME }-tjänster"
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "För att fortsätta använda ${ BRAND_NAME }-produkter, frigör utrymme eller ${ upgrade }"
+      ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }"
       ],
@@ -9416,11 +9725,11 @@
       "Your ${ appStorage } is full": [
         "Ditt ${ appStorage } är fullt"
       ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Ditt ${ storage } är ${ percentage } % fullt. ${ cta }."
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Ditt ${ productString } är ${ percentage } % fullt. ${ cta }."
       ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Ditt ${ storage } är fullt. ${ cta }."
+      "Your ${ productString } is full. ${ cta }.": [
+        "Ditt ${ productString } är fullt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ditt lagringsutrymme är ${ percentage } % fullt. ${ cta }."
@@ -9461,21 +9770,6 @@
       "Billed every 2 years": [
         "Faktureras vartannat år"
       ],
-      "Billed every 6 months": [
-        "Faktureras var 6:e månad"
-      ],
-      "Billed for 15 months": [
-        "Fakturerad med för 15 månader"
-      ],
-      "Billed for 18 months": [
-        "Fakturerad för 18 månader"
-      ],
-      "Billed for 3 months": [
-        "Fakturerad för 3 månader"
-      ],
-      "Billed for 30 months": [
-        "Fakturerad för 30 månader"
-      ],
       "Billed monthly": [
         "Faktureras månadsvis"
       ],
@@ -9504,7 +9798,7 @@
         "${ n } VPN-anslutning per användare",
         "${ n } VPN-anslutningar per användare"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "VPN-anslutning för ${ n } enhet per användare",
         "VPN-anslutning för ${ n } enheter per användare"
       ]
@@ -10160,6 +10454,29 @@
         "vCard-fält"
       ]
     },
+    "Teams": {
+      "Join Teams meeting": [
+        "Gå med i Teams-möte"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dagar"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } timme",
+        "${ ceilHours } timmar"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minuter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } timme",
@@ -10399,6 +10716,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Nedgradera till ${ downgradedPlanName }?"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Ladda ner ${ DRIVE_APP_NAME } appar"
+      ],
       "Download the app": [
         "Ladda ner appen"
       ],
@@ -10470,9 +10790,6 @@
       ],
       "Exporting contacts": [
         "Exporterar kontakter"
-      ],
-      "Get advanced protection": [
-        "Skaffa avancerat skydd"
       ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
@@ -10555,6 +10872,9 @@
       ],
       "Network error": [
         "Nätverksfel"
+      ],
+      "Newsletters view": [
+        "Nyhetsbrevsvy"
       ],
       "Night theme": [
         "Nattema"
@@ -10742,14 +11062,14 @@
       "Start import process": [
         "Starta importprocessen"
       ],
+      "Subscription canceled": [
+        "Prenumeration avslutad"
+      ],
       "Summary": [
         "Sammanfattning"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Unlock contacts groups": [
-        "Lås upp kontaktgrupper"
       ],
       "Update event": [
         "Uppdatera händelse"
@@ -10817,6 +11137,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
       ],
+      "Your ${ planName } subscription has started": [
+        "Din ${ planName }-prenumeration har startat"
+      ],
       "Your account is protected": [
         "Ditt konto är skyddat"
       ],
@@ -10825,6 +11148,10 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Din gratis provperiod slutar om ${ trialDurationFormatted } dag",
+        "Din gratis provperiod slutar om ${ trialDurationFormatted } dagar"
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
@@ -10941,6 +11268,14 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Delad end-to-end-krypterad med verifierad kontakt"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/månad"
+      ],
+      "Only": [
+        "Endast"
       ]
     },
     "unprivatization": {
@@ -11080,9 +11415,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } kommer att överföra så mycket data som möjligt och börjar med dina senaste meddelanden."
       ],
-      "2 consecutive dots are not allowed": [
-        "2 på varandra följande punkter är inte tillåtet"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Är du säker på att du vill ta bort ${ count } kontakt?",
         "Är du säker på att du vill ta bort ${ count } kontakter?"
@@ -11096,35 +11428,11 @@
       "Are you sure you want to permanently delete this contact?": [
         "Är du säker på att du vill ta bort denna kontakt permanent?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Kan inte innehålla en punkt i början"
-      ],
-      "Cannot contain a dot at the end": [
-        "Kan inte innehålla en punkt i slutet"
-      ],
       "Contacts could not be merged": [
         "Kontakter kunde inte slås samman"
       ],
-      "Expiration Date is not in the format MM/YY": [
-        "Utgångsdatum är inte i formatet MM/ÅÅ"
-      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Om du inte kommer ihåg ditt lösenord är det omöjligt att återaktivera din nyckel. Vi kan hjälpa dig att avvisa varningsbannern men i processen kommer du permanent att förlora åtkomst till all data krypterad med den nyckeln."
-      ],
-      "Invalid alias prefix": [
-        "Ogiltigt alias-prefix"
-      ],
-      "Missing alias prefix": [
-        "Alias-prefix saknas"
-      ],
-      "Missing alias suffix": [
-        "Alias-suffix saknas"
-      ],
-      "Name is required": [
-        "Namn är obligatoriskt"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Endast alfanumeriska gemener, punkter, bindestreck och understreck är tillåtna"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."
@@ -11134,9 +11442,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Några av kontakterna som ska slås samman visar fel. Granska dem individuellt"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Alias-prefixet får inte vara längre än 40 tecken"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktuppgiften har blivit korrupt och kan inte visas."
@@ -11164,9 +11469,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Vi kunde inte verifiera e-postservern. Om du litar på den kan du hoppa över denna verifiering."
-      ],
-      "You must select at least one mailbox": [
-        "Du måste välja minst en brevlåda"
       ],
       "You will lose any customization you made so far.": [
         "Du kommer förlora alla anpassningar du gjort hittills."
@@ -11426,6 +11728,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Gå med i Zoom-möte"
       ]
     },
     "Zoom integration": {

@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
@@ -33,13 +33,15 @@ export const OnboardingState: FC<{ className?: string }> = ({ className }) => {
                     <div className="text-lg text-semibold">{c('Label').t`Get Started`}</div>
                 </div>
                 {steps.map(({ key, shortTitle }) => (
-                    <div key={key} className="w-full text-left flex gap-2 items-center mt-2">
-                        {completed.includes(key) ? (
-                            <Icon name="checkmark-circle-filled" color="var(--signal-success)" />
-                        ) : (
-                            <Icon name="circle" />
-                        )}
-                        {shortTitle}
+                    <div key={key} className="w-full text-left flex flex-nowrap gap-2 items-start mt-2">
+                        <div className="shrink-0">
+                            {completed.includes(key) ? (
+                                <Icon name="checkmark-circle-filled" color="var(--signal-success)" />
+                            ) : (
+                                <Icon name="circle" />
+                            )}
+                        </div>
+                        <div>{shortTitle}</div>
                     </div>
                 ))}
             </Button>

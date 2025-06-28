@@ -29,6 +29,9 @@
       "Add domain": [
         "Ajouter un domaine"
       ],
+      "Add field": [
+        "Ajouter un champ"
+      ],
       "Add forwarding mailbox": [
         "Ajouter une messagerie de transfert"
       ],
@@ -54,7 +57,7 @@
         "Options avancées"
       ],
       "Apply lifetime coupon code": [
-        "Appliquer le code promo pour compte Lifetime"
+        "Appliquer le code promo pour un accès à vie"
       ],
       "Authenticate": [
         "S'authentifier"
@@ -152,10 +155,10 @@
       "Create": [
         "Créer"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Créer un compte ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Créer un compte ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -393,13 +396,16 @@
         "Déplacer vers un autre coffre-fort"
       ],
       "Move to trash": [
-        "Déplacer dans le dossier Corbeille"
+        "Déplacer dans la corbeille"
       ],
       "Move to Trash": [
         "Déplacer dans la corbeille"
       ],
       "Multiple select": [
         "Sélection multiple"
+      ],
+      "Next month": [
+        "Mois suivant"
       ],
       "No expired links": [
         "Aucun lien expiré"
@@ -431,11 +437,17 @@
       "Please retry": [
         "Veuillez réessayer."
       ],
+      "Previous month": [
+        "Mois précédent"
+      ],
       "Re-verify": [
         "Vérifier à nouveau"
       ],
       "Reactivate now": [
         "Réactiver maintenant"
+      ],
+      "Read More": [
+        "En savoir plus"
       ],
       "Refresh the page": [
         "Actualiser la page"
@@ -560,6 +572,9 @@
       "Show advanced options": [
         "Afficher les options avancées"
       ],
+      "Show Less": [
+        "Afficher moins"
+      ],
       "Sign back in": [
         "Se reconnecter"
       ],
@@ -574,6 +589,9 @@
       ],
       "Sort vault items": [
         "Trier les éléments du coffre-fort"
+      ],
+      "Start from scratch": [
+        "Démarrer sans données existantes"
       ],
       "Submit": [
         "Envoyer"
@@ -610,8 +628,8 @@
         "Débloquer le contact"
       ],
       "Understood, I will never need it": [
-        "J'ai compris et je n'en aurai jamais besoin.",
-        "J'ai compris et je n'en aurai jamais besoin."
+        "J'ai compris et n'en aurai jamais besoin.",
+        "J'ai compris et n'en aurai jamais besoin."
       ],
       "Unlock": [
         "Déverrouiller"
@@ -757,9 +775,6 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Le fichier ${ provider } n'a pu être analysé. ${ errorDetail }"
-      ],
-      "[Error] an item could not be parsed": [
-        "[Erreur] Un élément n'a pas pu être analysé."
       ],
       "A domain ownership must be verified first.": [
         "La propriété d'un domaine doit d'abord être vérifiée."
@@ -1006,7 +1021,7 @@
       "File does not match expected format": [
         "Le fichier ne correspond pas au format attendu."
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "L'importation du coffre-fort « ${ vaultData.name } » n'a pas abouti : ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1138,6 +1153,9 @@
       "Unsupported 1Password file format": [
         "Le format de fichier 1Password n'est pas pris en charge."
       ],
+      "Unsupported Bitwarden file format": [
+        "Le format de fichier Bitwarden n'est pas pris en charge."
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "La mise à jour du coffre-fort « ${ payload.content.name } » n'a pas abouti."
       ],
@@ -1251,7 +1269,8 @@
         "${ count } vue",
         "${ count } vues"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } vue",
         "${ count }/${ maxReads } vues"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1412,6 +1431,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Le verrouillage automatique a été désactivé."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Saisissez automatiquement les identifiants basiques enregistrés dans les fenêtres de connexion HTTP."
       ],
       "automatically": [
         "automatiquement"
@@ -1603,7 +1625,7 @@
         "Saisissez l'adresse à laquelle vous souhaitez envoyer un e-mail."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ],
       "Enter your extra password": [
         "Saisissez votre mot de passe supplémentaire."
@@ -2282,6 +2304,9 @@
         "Nous avons détecté que vous avez ${ aliasCount } alias qui est présent dans SimpleLogin mais manquant dans ${ PASS_APP_NAME }. Souhaitez-vous l'importer ?",
         "Nous avons détecté que vous avez ${ aliasCount } alias qui sont présents dans SimpleLogin mais manquants dans ${ PASS_APP_NAME }. Souhaitez-vous les importer ?"
       ],
+      "Week": [
+        "Semaine"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Nous avons envoyé un code de vérification à ${ email }. Veuillez le saisir ci-dessous :"
       ],
@@ -2482,6 +2507,12 @@
       "Account": [
         "Compte"
       ],
+      "Account Number": [
+        "Numéro de compte"
+      ],
+      "Account Type": [
+        "Type de compte"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Ajoutez un préfixe aléatoire pour ce domaine lors de la création d'un alias."
       ],
@@ -2490,6 +2521,9 @@
       ],
       "Additional details": [
         "Informations supplémentaires"
+      ],
+      "Address": [
+        "Adresse"
       ],
       "Address details": [
         "Informations sur l'adresse"
@@ -2518,6 +2552,12 @@
       "Always show username field": [
         "Toujours afficher le champ Nom d'utilisateur"
       ],
+      "API Credential": [
+        "Identifiant API"
+      ],
+      "API Key": [
+        "Clé API"
+      ],
       "Application logs": [
         "Journaux de l'application"
       ],
@@ -2541,6 +2581,15 @@
       ],
       "Backup password": [
         "Mot de passe de secours"
+      ],
+      "Bank Account": [
+        "Compte bancaire"
+      ],
+      "Bank Name": [
+        "Nom de la banque"
+      ],
+      "Basic Auth autofill": [
+        "Saisie automatique basique des identifiants"
       ],
       "Biometrics": [
         "Données biométriques"
@@ -2569,8 +2618,14 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Case à cocher"
+      ],
       "City": [
         "Ville"
+      ],
+      "Class": [
+        "Classe"
       ],
       "Code": [
         "Code"
@@ -2596,6 +2651,9 @@
       "Copy password": [
         "Copier le mot de passe"
       ],
+      "Country": [
+        "Pays"
+      ],
       "Country or Region": [
         "Pays ou région"
       ],
@@ -2604,6 +2662,9 @@
       ],
       "Create a credit card": [
         "Créer une carte de paiement"
+      ],
+      "Create a custom item": [
+        "Créer un élément personnalisé"
       ],
       "Create a hide-my-email alias": [
         "Créer un alias « hide-my-email »"
@@ -2623,17 +2684,26 @@
       "Create new vault": [
         "Créer un coffre-fort"
       ],
-      "Created": [
-        "Créé"
-      ],
       "Created at": [
         "Créée le"
       ],
-      "Custom hidden field": [
-        "Champ masqué personnalisé"
+      "Crypto Wallet": [
+        "Portefeuille de cryptomonnaies"
       ],
-      "Custom text field": [
-        "Champ personnalisé"
+      "Custom Items": [
+        "Éléments personnalisés"
+      ],
+      "Database": [
+        "Base de données"
+      ],
+      "Database Type": [
+        "Type de base de données"
+      ],
+      "Date": [
+        "Date"
+      ],
+      "Date of Birth": [
+        "Date de naissance"
       ],
       "Device": [
         "Appareil"
@@ -2646,6 +2716,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Médecin"
       ],
       "Domain": [
         "Domaine"
@@ -2661,6 +2734,9 @@
       ],
       "Download logs": [
         "Télécharger les journaux"
+      ],
+      "Driver License": [
+        "Permis de conduire"
       ],
       "Email": [
         "Adresse e-mail"
@@ -2689,8 +2765,14 @@
       "Expired": [
         "Expiré"
       ],
+      "Expiry Date": [
+        "Date d'expiration"
+      ],
       "Export": [
         "Exportation"
+      ],
+      "Extra fields": [
+        "Champs supplémentaires"
       ],
       "Extra password": [
         "Mot de passe supplémentaire"
@@ -2706,6 +2788,9 @@
       ],
       "File format": [
         "Format de fichier"
+      ],
+      "Finance": [
+        "Finance"
       ],
       "First name": [
         "Prénom"
@@ -2740,8 +2825,23 @@
       "Hide password": [
         "Masquer le mot de passe"
       ],
+      "Holder Name": [
+        "Nom du titulaire"
+      ],
+      "Hospital": [
+        "Hôpital"
+      ],
+      "Host": [
+        "Hôte"
+      ],
+      "Hostname": [
+        "Nom de l’hôte"
+      ],
       "https://example.com": [
         "https://exemple.fr"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Carte d'identité"
@@ -2785,6 +2885,18 @@
       "Invitations": [
         "Invitations"
       ],
+      "IP Address": [
+        "Adresse IP"
+      ],
+      "Issuing Authority": [
+        "Autorité de délivrance"
+      ],
+      "Issuing Country": [
+        "Pays émetteur"
+      ],
+      "Issuing State/Country": [
+        "Pays ou état de délivrance"
+      ],
       "Item ID": [
         "ID de l'élément"
       ],
@@ -2793,6 +2905,12 @@
       ],
       "Key": [
         "Clé"
+      ],
+      "Key fingerprint": [
+        "Empreinte de la clé"
+      ],
+      "Key type": [
+        "Type de clé"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Raccourci clavier : ${ shortcut }"
@@ -2821,7 +2939,13 @@
       "License": [
         "Permis de conduire"
       ],
+      "License Key": [
+        "Clé de licence"
+      ],
       "License number": [
+        "Numéro de permis"
+      ],
+      "License Number": [
         "Numéro de permis"
       ],
       "LinkedIn account": [
@@ -2854,8 +2978,29 @@
       "max views reached": [
         "le nombre maximum de vues a été atteint."
       ],
+      "Medical Conditions": [
+        "Conditions médicales"
+      ],
+      "Medical Record": [
+        "Dossier médical"
+      ],
+      "Medications": [
+        "Traitements médicamenteux"
+      ],
+      "Member ID": [
+        "ID de membre"
+      ],
+      "Member Name": [
+        "Nom de membre"
+      ],
       "Members": [
         "Membres"
+      ],
+      "Membership": [
+        "Abonnement"
+      ],
+      "Membership ID": [
+        "ID de membre"
       ],
       "Middle name": [
         "Deuxième prénom"
@@ -2872,11 +3017,17 @@
       "Name": [
         "Nom"
       ],
+      "Name (SSID)": [
+        "Nom (SSID)"
+      ],
       "Name on card": [
         "Nom sur la carte"
       ],
       "Need help?": [
         "Besoin d'aide ?"
+      ],
+      "Network": [
+        "Réseau"
       ],
       "New": [
         "Nouveau"
@@ -2920,8 +3071,20 @@
       "Oldest to newest": [
         "Du plus ancien au plus récent"
       ],
+      "Operating System": [
+        "Système d'exploitation"
+      ],
       "Organization": [
         "Organisation"
+      ],
+      "Organization Name": [
+        "Nom de l'organisation"
+      ],
+      "Other": [
+        "Autre"
+      ],
+      "Owner": [
+        "Propriétaire"
       ],
       "Passkey": [
         "Clé d'accès"
@@ -2935,6 +3098,9 @@
       "Passport": [
         "Passeport"
       ],
+      "Passport Number": [
+        "Numéro de passeport"
+      ],
       "Passport number": [
         "Numéro de passeport"
       ],
@@ -2947,8 +3113,17 @@
       "Passwords": [
         "Mots de passe"
       ],
+      "Patient Name": [
+        "Nom du patient"
+      ],
       "Pause list": [
         "Domaines et fonctionnalités exclus"
+      ],
+      "Permissions": [
+        "Autorisations"
+      ],
+      "Personal": [
+        "Personnel"
       ],
       "Personal details": [
         "Informations personnelles"
@@ -2968,6 +3143,12 @@
       "PIN code": [
         "Code PIN"
       ],
+      "Points Balance": [
+        "Solde de points"
+      ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Préfixe"
       ],
@@ -2976,6 +3157,18 @@
       ],
       "Priority:": [
         "Priorité :"
+      ],
+      "Private key": [
+        "Clé privée"
+      ],
+      "Private Key": [
+        "Clé privée"
+      ],
+      "Product": [
+        "Produit"
+      ],
+      "Program Name": [
+        "Nom du programme"
       ],
       "Prompt for auto-save": [
         "Demander l'enregistrement automatique"
@@ -2989,11 +3182,17 @@
       "Public domain": [
         "Domaine public"
       ],
+      "Public key": [
+        "Clé publique"
+      ],
       "Rate us": [
         "Évaluez-nous"
       ],
       "Recent": [
         "Le plus récent"
+      ],
+      "Record Number": [
+        "Numéro d'enregistrement"
       ],
       "Reddit handle": [
         "Compte Reddit"
@@ -3010,11 +3209,20 @@
       "Reveal password": [
         "Afficher le mot de passe"
       ],
+      "Reward Program": [
+        "Programme de récompenses"
+      ],
+      "Routing Number": [
+        "Numéro d’acheminement"
+      ],
       "Save passkeys": [
         "Enregistrer les clés d'accès"
       ],
       "Second password": [
         "Second mot de passe"
+      ],
+      "Secret": [
+        "Clé secrète"
       ],
       "Secure links": [
         "Liens sécurisés"
@@ -3027,6 +3235,9 @@
       ],
       "See member and permission overview": [
         "Affichez l'ensemble des membres et des autorisations"
+      ],
+      "Seed Phrase": [
+        "Phrase de récupération"
       ],
       "Select a domain": [
         "Sélectionner un domaine"
@@ -3046,11 +3257,17 @@
       "Selected": [
         "Sélectionné"
       ],
+      "Server": [
+        "Serveur"
+      ],
       "Settings": [
         "Paramètres"
       ],
       "Share": [
         "Partager"
+      ],
+      "Share ID": [
+        "ID de partage"
       ],
       "Shared": [
         "Partagé"
@@ -3070,11 +3287,23 @@
       "Social security": [
         "Sécurité sociale"
       ],
+      "Social Security": [
+        "Sécurité sociale"
+      ],
       "Social security number": [
         "Numéro de sécurité sociale"
       ],
+      "Software license": [
+        "Licence de logiciel"
+      ],
       "Special characters (!&*)": [
         "Caractères spéciaux (!&*)"
+      ],
+      "SSH key": [
+        "Clé SSH"
+      ],
+      "SSN": [
+        "Numéro de sécurité sociale"
       ],
       "State or province": [
         "État ou province"
@@ -3094,6 +3323,9 @@
       "Support": [
         "Support"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synchroniser les alias avec SimpleLogin"
       ],
@@ -3103,6 +3335,9 @@
       "Tax number": [
         "Numéro fiscal"
       ],
+      "Technology": [
+        "Technologie"
+      ],
       "Text": [
         "Texte"
       ],
@@ -3111,6 +3346,12 @@
       ],
       "Theme": [
         "Thème"
+      ],
+      "Tier/Level": [
+        "Niveau"
+      ],
+      "Tier/Status": [
+        "Niveau/Statut"
       ],
       "Title": [
         "Titre"
@@ -3148,6 +3389,9 @@
       "Unnamed Credit Card": [
         "Carte de paiement sans nom"
       ],
+      "Unnamed custom item": [
+        "Élément personnalisé sans nom"
+      ],
       "Unnamed identity": [
         "Identité sans nom"
       ],
@@ -3157,6 +3401,15 @@
       "Unnamed note": [
         "Note sans nom"
       ],
+      "Unnamed SSH key": [
+        "Clé SSH sans nom"
+      ],
+      "Unnamed WiFi item": [
+        "Élément wifi sans nom"
+      ],
+      "Unspecified": [
+        "Non spécifié"
+      ],
       "Untitled": [
         "Sans titre"
       ],
@@ -3164,7 +3417,7 @@
         "Mettre à jour"
       ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
-        "Utiliser ${ PASS_APP_NAME } comme le gestionnaire de mots de passe par défaut de votre navigateur"
+        "Utilisez ${ PASS_APP_NAME } comme le gestionnaire de mots de passe par défaut de votre navigateur."
       ],
       "Useful for permanent sharing": [
         "Utile pour un partage permanent"
@@ -3190,6 +3443,9 @@
       "Vulnerable": [
         "Vulnérable"
       ],
+      "Wallet Name": [
+        "Nom du portefeuille"
+      ],
       "Weak": [
         "Faible"
       ],
@@ -3198,6 +3454,9 @@
       ],
       "Websites": [
         "Sites internet"
+      ],
+      "WiFi network": [
+        "Réseau wifi"
       ],
       "Work details": [
         "Informations sur le poste"
@@ -3403,6 +3662,18 @@
       "Add note": [
         "Ajoutez une note."
       ],
+      "Add password": [
+        "Ajouter un mot de passe"
+      ],
+      "Add private key": [
+        "Ajouter une clé privée"
+      ],
+      "Add public key": [
+        "Ajouter une clé publique"
+      ],
+      "Add SSID": [
+        "Ajouter un SSID"
+      ],
       "Add text": [
         "Ajoutez du texte."
       ],
@@ -3411,6 +3682,9 @@
       ],
       "Coupon": [
         "Code promo"
+      ],
+      "E.g., ": [
+        "Par exemple, "
       ],
       "Email address": [
         "Adresse e-mail"
@@ -3442,8 +3716,8 @@
       "my-domain.com": [
         "mon-domaine.fr"
       ],
-      "Name to display when sending an email": [
-        "Nom d'affichage lors de l'envoi d'un e-mail"
+      "Name displayed in emails": [
+        "Nom affiché dans les messages"
       ],
       "Note from SimpleLogin": [
         "Note de SimpleLogin"
@@ -3478,6 +3752,9 @@
       "Select a suffix": [
         "Sélectionnez un suffixe."
       ],
+      "Select option": [
+        "Sélectionnez une option"
+      ],
       "Unknown origin": [
         "Origine inconnue"
       ],
@@ -3486,9 +3763,6 @@
       ],
       "Used on ${ url }": [
         "Utilisé sur ${ url }"
-      ],
-      "Write your note": [
-        "Rédigez votre note."
       ]
     },
     "sso": {
@@ -3795,7 +4069,7 @@
         "Accordez les autorisations"
       ],
       "Hide my email": [
-        "Hide-my-email"
+        "Masquer mon e-mail"
       ],
       "History": [
         "Historique"
@@ -3841,6 +4115,9 @@
       ],
       "Members": [
         "Membres"
+      ],
+      "Minicalendar": [
+        "Mini calendrier"
       ],
       "Modified": [
         "Modifié"
@@ -4024,6 +4301,11 @@
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Aujourd'hui"
+      ]
+    },
     "Validation": {
       "Domain URL is invalid": [
         "L'URL du domaine n'est pas valide."
@@ -4037,9 +4319,6 @@
       "OTP secret or URI is invalid": [
         "La clé secrète du mot de passe à usage unique (OTP) ou l'URI (Uniform Resource Identifier) n'est pas valide."
       ],
-      "OTP secret or URI required": [
-        "La clé secrète du mot de passe à usage unique (OTP) ou l'URI (Uniform Resource Identifier) est nécessaire."
-      ],
       "Section name cannot be empty": [
         "Le nom de la section ne peut pas être vide."
       ],
@@ -4051,6 +4330,12 @@
       ],
       "URL is invalid": [
         "L'URL n'est pas valide."
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Déplacer l'élément vers",
+        "Déplacer les éléments vers"
       ]
     },
     "Warning": {
@@ -4160,9 +4445,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Les invitations d'adresses e-mail en dehors de l'organisation ne sont pas autorisées."
-      ],
-      "item was imported without custom fields": [
-        "L'élément a été importé sans les champs personnalisés."
       ],
       "Maximum length is ${ maxLength } character": [
         "${ maxLength } caractère maximum",

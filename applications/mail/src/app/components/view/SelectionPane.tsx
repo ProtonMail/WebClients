@@ -9,11 +9,10 @@ import { useModalState, useTheme } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useFolders, useLabels } from '@proton/mail';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
-import { getLabelName, isCustomLabel as testIsCustomLabel } from '@proton/mail/labels/helpers';
+import { getLabelName, isCustomLabel as testIsCustomLabel } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
@@ -24,7 +23,7 @@ import { isSearch as testIsSearch } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import { contextTotal as contextTotalSelector } from '../../store/elements/elementsSelectors';
+import { contextTotal } from '../../store/elements/elementsSelectors';
 import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
@@ -34,23 +33,18 @@ interface Props {
     labelID: string;
     mailSettings: MailSettings;
     location: Location;
-    labelCount: LabelCount | undefined;
     checkedIDs?: string[];
     onCheckAll: (checked: boolean) => void;
 }
 
 const { SPAM } = MAILBOX_LABEL_IDS;
 
-const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs = [], onCheckAll }: Props) => {
+const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onCheckAll }: Props) => {
     const theme = useTheme();
 
     const appLocation = useLocation();
     const conversationMode = isConversationMode(labelID, mailSettings, location);
     const { selectAll, setSelectAll, getBannerTextWithLocation } = useSelectAll({ labelID });
-
-    // We display 50 elements maximum in the list. To know how much results are matching a search, we store it in Redux, in elements.total
-    const elementsFoundCount = useMailSelector(contextTotalSelector) || 0;
-
     const [labels] = useLabels();
     const [folders] = useFolders();
 
@@ -60,7 +54,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
     const isCustomLabel = testIsCustomLabel(labelID, labels);
-    const total = labelCount?.Total || 0;
+    const total = useMailSelector(contextTotal) || 0;
     const checkeds = checkedIDs.length;
 
     const labelName = useMemo(() => getLabelName(labelID, labels, folders), [labelID, labels, folders]);
@@ -156,14 +150,14 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const getSelectionPaneText = () => {
         if (isSearch && !checkeds) {
             /* translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code. Here, "{numberOfElements} result/s" will be bold. You need to put them in your translation too.
-             * ${elementsFoundCount} is the number of elements found during search
+             * ${total} is the number of elements found during search
              * ${labelName} is the name of the label/folder the in which the user is performing a search
              * Full string for reference: 3 results found in Inbox
              */
             const text = c('Info').ngettext(
-                msgid`**${elementsFoundCount}** result found in ${labelName}`,
-                `**${elementsFoundCount}** results found in ${labelName}`,
-                elementsFoundCount
+                msgid`**${total}** result found in ${labelName}`,
+                `**${total}** results found in ${labelName}`,
+                total
             );
 
             return getBoldFormattedText(text);
@@ -185,12 +179,16 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     const text = getSelectionPaneText();
 
-    const showText = checkeds || labelCount;
+    const showText = checkeds || total;
 
     const showSimpleLoginPlaceholder = checkeds === 0 && labelID === SPAM;
 
     return (
-        <div className="m-auto text-center p-7 max-w-full" data-testid="section-pane--wrapper">
+        <section
+            className="m-auto text-center p-7 max-w-full"
+            data-testid="section-pane--wrapper"
+            aria-label={c('Info').t`Selection pane`}
+        >
             {showSimpleLoginPlaceholder ? (
                 <ProtonPassPlaceholder />
             ) : (
@@ -224,16 +222,16 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                         />
                     </div>
                     {checkeds === 0 && labelName && (
-                        <h3 className="lh-rg text-ellipsis" title={labelName}>
+                        <h1 className="h3 lh-rg text-ellipsis" title={labelName}>
                             {labelName}
-                        </h3>
+                        </h1>
                     )}
                     <p className="my-2 text-keep-space">{showText ? text : null}</p>
                     {checkeds > 0 && <Button onClick={handleClearSelection}>{c('Action').t`Clear selection`}</Button>}
                 </>
             )}
             {renderEnableESModal && <EnableEncryptedSearchModal openSearchAfterEnabling {...enableESModalProps} />}
-        </div>
+        </section>
     );
 };
 

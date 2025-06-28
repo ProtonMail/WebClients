@@ -100,7 +100,9 @@ export interface User {
         'no-proton-address': boolean;
         'recovery-attempt': boolean;
         'pass-lifetime': boolean;
+        'pass-from-sl': boolean;
         sso: boolean;
+        'has-a-byoe-address': boolean;
     };
     AccountRecovery: {
         State: SessionRecoveryState;
@@ -113,6 +115,7 @@ export interface User {
     LockedFlags?: number;
     Billed?: boolean;
     ChargebeeUserExists?: ChargebeeUserExists;
+    HasMultipleSubscriptions: boolean;
 }
 
 export function isBilledUser(user: User | undefined): boolean {

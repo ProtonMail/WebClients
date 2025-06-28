@@ -13,9 +13,6 @@
 	border-start-end-radius: var(--border-radius-lg);
 
 	& p {
-		/*
-		 * Create a variable of the color: #d8aaff
-		*/
-		background: linear-gradient(239.41deg, #d8aaff -8.13%, var(--primary) 115.83%);
+		background: linear-gradient(239.41deg, var(--promotion-secondary-color) -8.13%, var(--primary) 115.83%);
 	}
 }

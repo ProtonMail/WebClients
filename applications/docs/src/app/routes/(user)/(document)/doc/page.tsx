@@ -24,6 +24,7 @@ import { PrivateHookChangesToEvents } from './__components/PrivateHookChangesToE
 import { useFlag } from '@proton/unleash'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useLocation } from 'react-router-dom-v5-compat'
+import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
 
 export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCompat }) {
   const application = useApplication()
@@ -56,7 +57,9 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
     application.logger.info('Creating new document in root')
 
     const date = getPlatformFriendlyDateForFileName()
-    const name = c('Title').t`Untitled document ${date}`
+    const docType = openAction?.type ?? 'doc'
+    const name =
+      docType === 'sheet' ? c('Title').t`Untitled spreadsheet ${date}` : c('Title').t`Untitled document ${date}`
 
     const root =
       openAction && openAction.mode === 'create'
@@ -65,7 +68,11 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
             linkId: openAction.parentLinkId,
           }
         : await driveCompat.getMyFilesNodeMeta()
-    const result = await driveCompat.createDocumentNode(root, name, openAction?.type ?? 'doc')
+    const result = await driveCompat.createDocumentNode(
+      root,
+      name,
+      tmpConvertNewDocTypeToOld(openAction?.type ?? 'doc'),
+    )
 
     return result
   }, [application.logger, driveCompat, openAction])
@@ -101,7 +108,11 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
       setIsCreatingNewDocument(true)
 
       void createNewDocInRoot().then((result) => {
-        updateParameters({ newVolumeId: result.volumeId, newLinkId: result.linkId, pathname: 'doc' })
+        updateParameters({
+          newVolumeId: result.volumeId,
+          newLinkId: result.linkId,
+          pathname: tmpConvertNewDocTypeToOld(openAction?.type ?? 'doc'),
+        })
 
         setIsCreatingNewDocument(false)
         setDidCreateNewDocument(true)
@@ -155,7 +166,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
   return (
     <WordCountProvider>
       <DocsProvider publicContext={undefined} privateContext={{ user, compat: driveCompat }}>
-        <DocumentLayout documentType={openAction?.type ?? 'doc'} action={actionMode}>
+        <DocumentLayout documentType={tmpConvertNewDocTypeToOld(openAction?.type ?? 'doc')} actionMode={actionMode}>
           <PrivateHookChangesToEvents />
           <Content
             onConversionSuccess={onConversionSuccess}
@@ -224,7 +235,11 @@ function Content({
     return (
       <div className="flex-column flex h-full w-full items-center justify-center gap-4">
         <CircleLoader size="large" />
-        <div className="text-center">{c('Info').t`Creating new document...`}</div>
+        <div className="text-center">
+          {openAction?.type === 'sheet'
+            ? c('sheets_2025:Info').t`Creating new spreadsheet...`
+            : c('Info').t`Creating new document...`}
+        </div>
       </div>
     )
   }
@@ -255,7 +270,7 @@ function Content({
     if (isURLTruncatedBySlack) {
       return (
         <div className="m-auto max-w-prose text-center" data-testid="invalid-openaction-error">{c('Info')
-          .t`The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose "Copy link" rather than copy the truncated URL text directly.`}</div>
+          .t`The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose "Copy link" rather than copying the truncated URL text directly.`}</div>
       )
     }
 
@@ -275,7 +290,9 @@ function Content({
           editorInitializationConfig={editorInitializationConfig}
           nodeMeta={nodeMeta}
           openAction={openAction}
+          actionMode={actionMode}
           providerType="private"
+          documentType={openAction.type}
         />
       </>
     )

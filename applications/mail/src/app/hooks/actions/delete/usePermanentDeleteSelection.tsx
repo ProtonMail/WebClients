@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ErrorButton, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import { Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
@@ -219,8 +219,8 @@ export const usePermanentDeleteSelection = (labelID: string) => {
         <Prompt
             title={getDeleteTitle(draft, conversationMode, selectedItemsCount, totalMessages)}
             buttons={[
-                <ErrorButton onClick={handleSubmit} data-testid="permanent-delete-modal:submit">{c('Action')
-                    .t`Delete`}</ErrorButton>,
+                <Button color="danger" onClick={handleSubmit} data-testid="permanent-delete-modal:submit">{c('Action')
+                    .t`Delete`}</Button>,
                 <Button onClick={deleteModalProps.onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...deleteModalProps}

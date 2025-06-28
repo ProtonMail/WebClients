@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import usePublicToken from '../../../../hooks/drive/usePublicToken';
 import type { LinkDownload } from '../../../../store';
@@ -21,7 +21,7 @@ export const DownloadButton = ({ selectedBrowserItems, close, openInDocs, virusS
     const { download } = useDownload();
     const { token } = usePublicToken();
     const count = selectedBrowserItems.length;
-    const isDoc = isProtonDocument(selectedBrowserItems[0]?.mimeType);
+    const isDoc = isProtonDocsDocument(selectedBrowserItems[0]?.mimeType);
 
     const onClick = async () => {
         // Document downloads are handled in two ways:
@@ -46,9 +46,8 @@ export const DownloadButton = ({ selectedBrowserItems, close, openInDocs, virusS
         );
     };
 
-    const buttonTextWithScan = count > 1 ? c('Action').t`Download (${count})` : c('Action').t`Download`;
-    const buttonTextWithoutScan =
-        count > 1 ? c('Action').t`Download without scanning (${count})` : c('Action').t`Download without scanning`;
+    const buttonTextWithScan = count > 1 ? c('Action').t`Scan & Download (${count})` : c('Action').t`Scan & Download`;
+    const buttonTextWithoutScan = count > 1 ? c('Action').t`Download (${count})` : c('Action').t`Download`;
 
     return (
         <ContextMenuButton

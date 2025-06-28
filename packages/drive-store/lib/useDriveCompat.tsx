@@ -1,7 +1,7 @@
 import { type ReactNode, useCallback } from 'react';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import { useAuthentication } from '@proton/components/index';
+import { useAuthentication } from '@proton/components';
 import type { PublicKeyReference, SessionKey } from '@proton/crypto/lib';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
@@ -92,6 +92,7 @@ export interface DriveCompat {
 
     trashDocument: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
     restoreDocument: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
+    deleteDocumentPermanently: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
     /**
      * Gets the URL for a given document.
      */
@@ -106,6 +107,7 @@ export interface DriveCompat {
         linkId: string;
         volumeId: string;
         onPublicLinkToggle?: (enabled: boolean) => void;
+        registerOverriddenNameListener?: (listener: (name: string) => void) => void;
     }) => void;
 
     /**
@@ -116,7 +118,7 @@ export interface DriveCompat {
     /**
      * Opens a document in a new window.
      */
-    openDocument: (meta: NodeMeta) => void;
+    openDocument: (meta: NodeMeta, type?: DocumentType) => void;
     openDocumentWindow: (
         action: DocumentAction & {
             window: Window;
@@ -157,8 +159,16 @@ export const useDriveCompat = (): DriveCompat => {
         return { encryptionKey: key, namespace: localId };
     }, [authentication]);
 
-    const { createDocumentNode, getDocumentKeys, renameDocument, getDocumentUrl, trashDocument, restoreDocument } =
-        useDocuments();
+    const {
+        createDocumentNode,
+        getDocumentKeys,
+        renameDocument,
+        getDocumentUrl,
+        trashDocument,
+        restoreDocument,
+        deleteDocumentPermanently,
+        confirmModal,
+    } = useDocuments();
     const abortSignal = useAbortSignal([]);
     const { getLink } = useLink();
     const { getNode, getLatestNode, getNodeContents, getNodePermissions, findAvailableNodeName } = useNode();
@@ -189,9 +199,15 @@ export const useDriveCompat = (): DriveCompat => {
         linkId: string;
         volumeId: string;
         onPublicLinkToggle?: (enabled: boolean) => void;
+        registerOverriddenNameListener?: (listener: (name: string) => void) => void;
     }) => {
         const fnToWrap = ({ shareId, linkId }: { shareId: string; linkId: string }) =>
-            showLinkSharingModal({ shareId, linkId, onPublicLinkToggle: props.onPublicLinkToggle });
+            showLinkSharingModal({
+                shareId,
+                linkId,
+                onPublicLinkToggle: props.onPublicLinkToggle,
+                registerOverriddenNameListener: props.registerOverriddenNameListener,
+            });
 
         const wrappedFn = withResolveShareId(fnToWrap);
 
@@ -231,6 +247,7 @@ export const useDriveCompat = (): DriveCompat => {
         renameDocument: withResolveShareId(renameDocument),
         trashDocument: withResolveShareId(trashDocument),
         restoreDocument: withResolveShareId(restoreDocument),
+        deleteDocumentPermanently: withResolveShareId(deleteDocumentPermanently),
         getDocumentUrl,
         openDocument,
         openDocumentWindow,
@@ -243,6 +260,7 @@ export const useDriveCompat = (): DriveCompat => {
             <>
                 {moveToFolderModal}
                 {linkSharingModal}
+                {confirmModal}
             </>
         ),
         getKeysForLocalStorageEncryption,

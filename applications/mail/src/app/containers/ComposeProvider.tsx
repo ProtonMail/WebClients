@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext } from 'react';
 
-import { MESSAGE_ACTIONS } from '../constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+
 import { mailtoParser } from '../helpers/url';
 import type { OnCompose } from '../hooks/composer/useCompose';
 import { ComposeTypes } from '../hooks/composer/useCompose';
@@ -25,6 +26,7 @@ interface Props {
     children: ReactNode;
     onCompose: OnCompose;
 }
+
 export const ComposeProvider = ({ children, onCompose }: Props) => {
     return <ComposeProviderContext.Provider value={onCompose}>{children}</ComposeProviderContext.Provider>;
 };

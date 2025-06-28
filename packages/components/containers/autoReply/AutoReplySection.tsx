@@ -17,8 +17,8 @@ import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { mailSettingsActions } from '@proton/mail/mailSettings';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
@@ -201,7 +201,12 @@ export const AutoReplySection = () => {
 
                         <SettingsLayout>
                             <SettingsLayoutLeft>
-                                <label className="text-semibold" onClick={() => editorActionsRef.current?.focus()}>
+                                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
+                                <label
+                                    htmlFor="rooster-editor"
+                                    className="text-semibold"
+                                    onClick={() => editorActionsRef.current?.focus()}
+                                >
                                     {c('Label').t`Message`}
                                 </label>
                             </SettingsLayoutLeft>
@@ -219,6 +224,7 @@ export const AutoReplySection = () => {
                                         modalImage={modalImage}
                                         modalDefaultFont={modalDefaultFont}
                                         mailSettings={mailSettings}
+                                        title={c('Label').t`Message (auto-reply)`}
                                     />
                                 </div>
                                 {messageLimitReached && (

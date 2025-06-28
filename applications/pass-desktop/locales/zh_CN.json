@@ -46,6 +46,9 @@
       "Add domain": [
         "添加域名"
       ],
+      "Add field": [
+        "添加字段"
+      ],
       "Add forwarding mailbox": [
         "添加转发邮箱"
       ],
@@ -77,7 +80,7 @@
         "使用终身优惠券代码"
       ],
       "Authenticate": [
-        "认证"
+        "身份验证"
       ],
       "Back": [
         "上一步"
@@ -403,10 +406,10 @@
       "Move to another vault": [
         "移至另一个保险库"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "移至回收站"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "移至回收站"
       ],
       "Multiple select": [
@@ -414,6 +417,9 @@
       ],
       "Next": [
         "继续"
+      ],
+      "Next month": [
+        "下个月"
       ],
       "No expired links": [
         "无过期链接"
@@ -439,6 +445,9 @@
       "Pause monitoring": [
         "暂停监测"
       ],
+      "Pay once": [
+        "一次性支付"
+      ],
       "Pin item": [
         "固定项"
       ],
@@ -448,11 +457,17 @@
       "Previous": [
         "上一页"
       ],
+      "Previous month": [
+        "上个月"
+      ],
       "Re-verify": [
         "重新验证"
       ],
       "Reactivate now": [
         "立即重新激活"
+      ],
+      "Read More": [
+        "了解更多"
       ],
       "Refresh the page": [
         "刷新页面"
@@ -571,6 +586,9 @@
       "Show advanced options": [
         "显示进阶选项"
       ],
+      "Show Less": [
+        "收起"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "使用${ BRAND_NAME }登录"
       ],
@@ -585,6 +603,9 @@
       ],
       "Sort vault items": [
         "对保险库项目排序"
+      ],
+      "Start from scratch": [
+        "从零开始"
       ],
       "Submit": [
         "提交"
@@ -822,9 +843,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "无法解析 ${ provider } 文件。${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[错误] 无法解析一个项目"
-      ],
       "A domain ownership must be verified first.": [
         "必须首先验证域名所有权。"
       ],
@@ -854,9 +872,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "身份验证失败。请确认您的二次密码以继续导出"
-      ],
-      "Biometric authentication failed": [
-        "生物特征认证失败"
       ],
       "Cannot send invitation at the moment": [
         "目前无法发送邀请"
@@ -1068,7 +1083,7 @@
       "File does not match expected format": [
         "文件与预期格式不匹配"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "保险库 “${ vaultData.name }” 导入失败：${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1184,6 +1199,9 @@
       ],
       "Unsupported 1Password file format": [
         "不支持的 1Password 文件格式"
+      ],
+      "Unsupported Bitwarden file format": [
+        "不支持的 Bitwarden 文件格式"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "更新保险库 “${ payload.content.name }” 失败"
@@ -1325,8 +1343,8 @@
       "${ count } view": [
         "${ count } 次查看"
       ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } 浏览"
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } 视图"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } 已转发"
@@ -1638,7 +1656,7 @@
         "输入您要发送电子邮件的地址。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "输入第 ${ digit } 位验证码。"
+        "请输入验证码的第 ${ digit } 位数字。"
       ],
       "Enter your extra password": [
         "输入您的额外密码"
@@ -2261,6 +2279,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "要查看您导入到数据，请点击浏览器工具栏中的 ${ PASS_APP_NAME } 图标。"
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "深受全球 50,000 多家企业用户和 1 亿账户的信赖。"
+      ],
       "Unable to copy to clipboard": [
         "无法复制到剪贴板"
       ],
@@ -2335,6 +2356,9 @@
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "我们检测到您有 ${ aliasCount } 个别名存在于 SimpleLogin 中，但在 ${ PASS_APP_NAME } 中丢失了。您想导入它们吗？"
+      ],
+      "Week": [
+        "周"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "我们已经向 ${ email }发送了验证码。请在下面输入："
@@ -2533,6 +2557,12 @@
       "Account": [
         "帐户"
       ],
+      "Account Number": [
+        "账户号码"
+      ],
+      "Account Type": [
+        "帐户类型"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "创建新别名时，请为该域添加一个随机前缀。"
       ],
@@ -2541,6 +2571,9 @@
       ],
       "Additional details": [
         "更多详细信息"
+      ],
+      "Address": [
+        "地址"
       ],
       "Address details": [
         "地址详情"
@@ -2569,6 +2602,12 @@
       "Always show username field": [
         "始终显示用户名字段"
       ],
+      "API Credential": [
+        "API 凭证"
+      ],
+      "API Key": [
+        "API 密钥"
+      ],
       "Application logs": [
         "应用程序日志"
       ],
@@ -2577,6 +2616,12 @@
       ],
       "Backup password": [
         "备用密码"
+      ],
+      "Bank Account": [
+        "银行账户"
+      ],
+      "Bank Name": [
+        "银行名称"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "除了储存登录信息外，${ PASS_APP_NAME } 还通过集成的邮箱别名功能保护您的身份。每当你注册一个新的在线账户时，${ PASS_APP_NAME } 都会自动创建一个别名，以保护您的真实邮箱地址。"
@@ -2589,6 +2634,9 @@
       ],
       "Browse faster, smarter": [
         "更快、更智能地浏览"
+      ],
+      "Built-in 2FA": [
+        "内置 2FA"
       ],
       "Capital letters (A-Z)": [
         "大写字母 (A-Z)"
@@ -2607,6 +2655,9 @@
       ],
       "Catch-All": [
         "通配邮箱"
+      ],
+      "Checkbox": [
+        "复选框"
       ],
       "Choose unlock method": [
         "选择解锁方式"
@@ -2641,6 +2692,9 @@
       "Copy": [
         "复制"
       ],
+      "Country": [
+        "国家/地区"
+      ],
       "Country or Region": [
         "国家或地区"
       ],
@@ -2649,6 +2703,9 @@
       ],
       "Create a credit card": [
         "创建信用卡"
+      ],
+      "Create a custom item": [
+        "创建自定义项目"
       ],
       "Create a hide-my-email alias": [
         "创建一个 hide-my-email 别名"
@@ -2668,20 +2725,29 @@
       "Create new vault": [
         "创建新的保险库"
       ],
-      "Created": [
-        "创建时间"
-      ],
       "Created at": [
         "创建于"
       ],
-      "Custom hidden field": [
-        "自定义隐藏字段"
+      "Credit cards": [
+        "信用卡"
       ],
-      "Custom text field": [
-        "自定义文本字段"
+      "Crypto Wallet": [
+        "加密钱包"
+      ],
+      "Custom Items": [
+        "自定义项目"
+      ],
+      "Database": [
+        "数据库"
+      ],
+      "Database Type": [
+        "数据库类型"
       ],
       "Date": [
         "日期"
+      ],
+      "Date of Birth": [
+        "出生日期"
       ],
       "Device": [
         "设备"
@@ -2706,6 +2772,9 @@
       ],
       "Download logs": [
         "下载日志"
+      ],
+      "Driver License": [
+        "驾驶执照"
       ],
       "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
         "轻松与任何人共享敏感信息，即使他们不使用 ${ PASS_APP_NAME } 。您可以共享单个密码、便条或信用卡，也可以共享同一文件夹中的多个项目。"
@@ -2740,8 +2809,17 @@
       "Expired": [
         "已失效"
       ],
+      "Expiry Date": [
+        "截止日期"
+      ],
       "Export": [
         "导出"
+      ],
+      "Extra email addresses": [
+        "额外的邮箱地址"
+      ],
+      "Extra fields": [
+        "附加字段"
       ],
       "Extra password": [
         "额外密码"
@@ -2755,8 +2833,14 @@
       "Field name": [
         "字段名称"
       ],
+      "File attachments": [
+        "文件附件"
+      ],
       "File format": [
         "文件格式"
+      ],
+      "Finance": [
+        "金融"
       ],
       "First name": [
         "名"
@@ -2772,6 +2856,9 @@
       ],
       "Forwards to": [
         "转发至"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "永久免费"
@@ -2791,6 +2878,12 @@
       "Generic CSV": [
         "通用 CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "开通 ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "开通 ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "立即体验"
       ],
@@ -2809,11 +2902,26 @@
       "Hide-my-email aliases": [
         "Hide-my-email 别名"
       ],
+      "Highest": [
+        "最快"
+      ],
+      "Holder Name": [
+        "持有人姓名"
+      ],
+      "Host": [
+        "主机"
+      ],
+      "Hostname": [
+        "主机名"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "如何解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "国际银行账户号码（IBAN）"
       ],
       "ID Card": [
         "身份证"
@@ -2863,6 +2971,15 @@
       "Invitations": [
         "邀请"
       ],
+      "IP Address": [
+        "IP 地址"
+      ],
+      "Issuing Authority": [
+        "签发机关"
+      ],
+      "Issuing Country": [
+        "签发国家/地区"
+      ],
       "Item ID": [
         "项目 ID"
       ],
@@ -2871,6 +2988,9 @@
       ],
       "Key": [
         "密钥"
+      ],
+      "Key fingerprint": [
+        "指纹识别"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "快捷键：${ shortcut }"
@@ -2902,8 +3022,14 @@
       "License": [
         "许可协议"
       ],
+      "License Key": [
+        "许可证密钥"
+      ],
       "License number": [
         "许可编号"
+      ],
+      "Limited time": [
+        "限时"
       ],
       "LinkedIn account": [
         "LinkedIn 帐户"
@@ -2935,8 +3061,17 @@
       "max views reached": [
         "达到最大浏览量"
       ],
+      "Medical Record": [
+        "医疗记录"
+      ],
+      "Member ID": [
+        "成员编号"
+      ],
       "Members": [
         "成员"
+      ],
+      "Membership": [
+        "成员资格"
       ],
       "Middle name": [
         "中间名（若有）"
@@ -2953,11 +3088,17 @@
       "Name": [
         "名称"
       ],
+      "Name (SSID)": [
+        "名称 (SSID)"
+      ],
       "Name on card": [
         "持卡人姓名"
       ],
       "Need help?": [
         "需要帮助？"
+      ],
+      "Network": [
+        "网络"
       ],
       "Never": [
         "永不"
@@ -3010,8 +3151,17 @@
       "Open-source password manager for effortless protection.": [
         "开源密码管理器，轻松提供保护。"
       ],
+      "Operating System": [
+        "操作系统"
+      ],
       "Organization": [
         "机构"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Owner": [
+        "所有者"
       ],
       "Passkey": [
         "通行密钥"
@@ -3025,6 +3175,9 @@
       "Passport": [
         "护照"
       ],
+      "Passport Number": [
+        "护照号码"
+      ],
       "Passport number": [
         "护照号码"
       ],
@@ -3033,6 +3186,12 @@
       ],
       "Password history": [
         "密码历史记录"
+      ],
+      "Permissions": [
+        "权限"
+      ],
+      "Personal": [
+        "私人"
       ],
       "Personal details": [
         "个人资料"
@@ -3055,6 +3214,15 @@
       "PIN code": [
         "PIN 码"
       ],
+      "Plus": [
+        "Plus"
+      ],
+      "Points Balance": [
+        "积分余额"
+      ],
+      "Port": [
+        "端口"
+      ],
       "Prefix": [
         "前綴"
       ],
@@ -3064,11 +3232,26 @@
       "Priority:": [
         "优先级："
       ],
+      "Private key": [
+        "私钥"
+      ],
+      "Private Key": [
+        "私钥"
+      ],
+      "Product": [
+        "产品"
+      ],
+      "Program Name": [
+        "程序名称"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "用额外密码保护 ${ PASS_APP_NAME }"
       ],
       "Public domain": [
         "公共域名"
+      ],
+      "Public key": [
+        "公钥"
       ],
       "Rate us": [
         "去评分"
@@ -3094,8 +3277,17 @@
       "Reveal password": [
         "显示密码"
       ],
+      "Reward Program": [
+        "奖励计划"
+      ],
+      "Routing Number": [
+        "路由号码"
+      ],
       "Second password": [
         "副密码"
+      ],
+      "Secret": [
+        "密钥"
       ],
       "Secure links": [
         "安全链接"
@@ -3121,6 +3313,9 @@
       "See member and permission overview": [
         "查看成员和权限概述。"
       ],
+      "Seed Phrase": [
+        "种子短语"
+      ],
       "Select a domain": [
         "选择域名"
       ],
@@ -3145,8 +3340,14 @@
       "Selected": [
         "已选中"
       ],
+      "Server": [
+        "服务器"
+      ],
       "Share": [
         "分享"
+      ],
+      "Share ID": [
+        "共享 ID"
       ],
       "Shared": [
         "已共享"
@@ -3169,17 +3370,32 @@
       "Social security": [
         "社会保障"
       ],
+      "Social Security": [
+        "社会保障"
+      ],
       "Social security number": [
         "社会保障号码"
       ],
+      "Software license": [
+        "软件许可证"
+      ],
       "Special characters (!&*)": [
         "特殊字符 (!&*)"
+      ],
+      "SSH key": [
+        "SSH 密钥"
+      ],
+      "SSN": [
+        "社会保险号码（SSN）"
       ],
       "State or province": [
         "省、自治区或直辖市"
       ],
       "Status": [
         "状态"
+      ],
+      "Storage": [
+        "存储"
       ],
       "Street address": [
         "街道地址"
@@ -3196,6 +3412,9 @@
       "Support": [
         "帮助"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "使用 SimpleLogin 同步别名"
       ],
@@ -3205,8 +3424,14 @@
       "Tax number": [
         "纳税人识别号"
       ],
+      "Technology": [
+        "技术"
+      ],
       "Text": [
         "文本"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "仅需一次订阅即可享受最棒的 ${ BRAND_NAME } 体验"
       ],
       "The URL has been copied to the clipboard": [
         "URL 已复制到剪贴板"
@@ -3216,6 +3441,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "在 ${ date } 或达到查看限制之前，都可以访问此项目。"
+      ],
+      "Tier/Status": [
+        "级别/状态"
       ],
       "Title": [
         "标题"
@@ -3244,6 +3472,12 @@
       "Unknown": [
         "未知"
       ],
+      "Unlimited": [
+        "无限制"
+      ],
+      "Unlock premium features": [
+        "解锁高级功能"
+      ],
       "Unlock with": [
         "解锁方式"
       ],
@@ -3253,6 +3487,9 @@
       "Unnamed Credit Card": [
         "未命名信用卡"
       ],
+      "Unnamed custom item": [
+        "未命名自定义项目"
+      ],
       "Unnamed identity": [
         "未命名标识"
       ],
@@ -3261,6 +3498,15 @@
       ],
       "Unnamed note": [
         "未命名笔记"
+      ],
+      "Unnamed SSH key": [
+        "未命名 SSH 密钥"
+      ],
+      "Unnamed WiFi item": [
+        "未命名 WiFi 项目"
+      ],
+      "Unspecified": [
+        "未指定"
       ],
       "Untitled": [
         "未命名"
@@ -3283,6 +3529,9 @@
       "Vault ID": [
         "保险库 ID"
       ],
+      "Vault, item & link sharing": [
+        "保险库、项目和链接共享"
+      ],
       "Vaults": [
         "保险库"
       ],
@@ -3292,8 +3541,17 @@
       "View logs": [
         "查看日志"
       ],
+      "VPN Devices": [
+        "VPN 设备"
+      ],
+      "VPN Speed": [
+        "VPN 速度"
+      ],
       "Vulnerable": [
         "易受攻击"
+      ],
+      "Wallet Name": [
+        "钱包名称"
       ],
       "Weak": [
         "弱"
@@ -3303,6 +3561,12 @@
       ],
       "Websites": [
         "网站"
+      ],
+      "What's included": [
+        "包括哪些内容"
+      ],
+      "WiFi network": [
+        "WiFi 网络"
       ],
       "Work details": [
         "工作详情"
@@ -3352,6 +3616,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "启用 ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3528,6 +3797,14 @@
         "您可以将文件附加到项目上，以便更好地进行整理"
       ]
     },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus 终身版仅需 ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/月"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "添加 2FA 密钥"
@@ -3546,6 +3823,9 @@
       ],
       "Coupon": [
         "优惠券"
+      ],
+      "E.g., ": [
+        "例如："
       ],
       "Email address": [
         "邮箱地址"
@@ -3577,8 +3857,8 @@
       "my-domain.com": [
         "my-domain.com"
       ],
-      "Name to display when sending an email": [
-        "发送电子邮件时要显示的名称"
+      "Name displayed in emails": [
+        "显示在邮件中的名称"
       ],
       "Note from SimpleLogin": [
         "来自 SimpleLogin 的笔记"
@@ -3613,6 +3893,9 @@
       "Select a suffix": [
         "选择一个后缀"
       ],
+      "Select option": [
+        "选择选项"
+      ],
       "Unknown origin": [
         "未知来源"
       ],
@@ -3621,9 +3904,6 @@
       ],
       "Used on ${ url }": [
         "用于 ${ url }"
-      ],
-      "Write your note": [
-        "撰写您的笔记"
       ]
     },
     "Security Center - Info": {
@@ -3784,8 +4064,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } 个地址"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } 监视器"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "账户保护"
@@ -4009,6 +4295,9 @@
       "Members": [
         "成员"
       ],
+      "Minicalendar": [
+        "迷你日历"
+      ],
       "Modified": [
         "修改时间"
       ],
@@ -4059,6 +4348,9 @@
       ],
       "Pause monitoring?": [
         "暂停监测?"
+      ],
+      "Pay once, access forever.": [
+        "一次支付，终身使用。"
       ],
       "Pending access confirmation": [
         "正在等待访问确认"
@@ -4229,6 +4521,11 @@
         "您将永久删除 ${ aliasCount } 个别名。"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "今天"
+      ]
+    },
     "Tooltip": {
       "Not all information listed here was exposed for all users.": [
         "并非所有用户都能查看此处列出的全部信息。"
@@ -4249,9 +4546,6 @@
       ],
       "OTP secret or URI is invalid": [
         "动态密码或网址无效"
-      ],
-      "OTP secret or URI required": [
-        "需要动态密码或网址"
       ],
       "Section name cannot be empty": [
         "分组名称不能为空"
@@ -4377,9 +4671,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "不允许邀请组织外的电子邮件地址。"
-      ],
-      "item was imported without custom fields": [
-        "项目导入时没有自定义字段"
       ],
       "Maximum length is ${ maxLength } character": [
         "最大长度为 ${ maxLength } 个字符"

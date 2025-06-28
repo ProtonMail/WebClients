@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/components';
-import { PassLogo } from '@proton/components';
+import { AppsLogos, PassLogo } from '@proton/components';
 import { getPassKeys, getPassMonitor } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
@@ -56,7 +56,6 @@ import noop from '@proton/utils/noop';
 import { SignupType } from '../../signup/interfaces';
 import type { BenefitItem } from '../Benefits';
 import Benefits from '../Benefits';
-import BundlePlanSubSection from '../BundlePlanSubSection';
 import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkSubsection from '../LetsTalkSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
@@ -400,7 +399,7 @@ export const getPassBenefits = (
 };
 
 export const getFreePassFeatures = () => {
-    return [getPassUsers(1), getLoginsAndNotes('free'), getDevices(), getPassKeys(true), getSecureVaultSharing()];
+    return [getPassUsers(1), getLoginsAndNotes('free'), getDevices(), getPassKeys(true)];
 };
 
 export const getCustomPassFeatures = ({ isLifetime }: { isLifetime?: boolean } = {}) => {
@@ -413,26 +412,51 @@ export const getCustomPassFeatures = ({ isLifetime }: { isLifetime?: boolean } =
               }
             : null,
         isLifetime ? null : getPassUsers(1),
-        getLoginsAndNotes('paid'),
-        get2FAAuthenticator(true),
         getDevicesAndAliases(),
+        get2FAAuthenticator(true),
+        getSecureVaultSharing(true),
+        getLoginsAndNotes('paid'),
         getAdvancedAliasFeatures(true),
         getPassKeys(true),
-        getSecureVaultSharing(true),
         getPassMonitor(true),
+    ].filter(isTruthy);
+};
+
+export const getCustomPassKeyFeatures = ({ isLifetime }: { isLifetime?: boolean } = {}) => {
+    return [
+        isLifetime
+            ? {
+                  key: 'pass-lifetime-one-time-payment',
+                  text: c('pass_signup_2024: Info').t`One-time payment, lifetime deal`,
+                  included: true,
+              }
+            : null,
+        isLifetime ? null : getPassUsers(1),
+        getDevicesAndAliases(),
+        get2FAAuthenticator(true),
+        getSecureVaultSharing(true),
     ].filter(isTruthy);
 };
 
 export const getCustomPassFamilyFeatures = () => {
     return [
         getPassUsers(FAMILY_MAX_USERS),
-        getLoginsAndNotes('paid'),
         getDevicesAndAliases(),
+        get2FAAuthenticator(true),
+        getSecureVaultSharing(true),
+        getLoginsAndNotes('paid'),
         getAdvancedAliasFeatures(true),
         getPassKeys(true),
-        getSecureVaultSharing(true),
         getPassMonitor(true),
+    ];
+};
+
+export const getCustomPassFamilyKeyFeatures = () => {
+    return [
+        getPassUsers(FAMILY_MAX_USERS),
+        getDevicesAndAliases(),
         get2FAAuthenticator(true),
+        getSecureVaultSharing(true),
     ];
 };
 
@@ -447,6 +471,7 @@ export const getPassConfiguration = ({
     isPaidPassVPNBundle,
     plansMap,
     plan,
+    signupParameters,
 }: {
     showPassFamily: boolean;
     mode: SignupMode;
@@ -458,6 +483,7 @@ export const getPassConfiguration = ({
     isPaidPassVPNBundle: boolean;
     plansMap?: PlansMap;
     plan: Plan | undefined;
+    signupParameters?: { trial?: boolean };
 }): SignupConfiguration => {
     const logo = <PassLogo />;
 
@@ -519,7 +545,9 @@ export const getPassConfiguration = ({
             },
             {
                 plan: PLANS.ENTERPRISE,
-                subsection: <LetsTalkSubsection vpnServersCountData={vpnServersCountData} />,
+                subsection: (
+                    <LetsTalkSubsection vpnServersCountData={vpnServersCountData} signupParameters={signupParameters} />
+                ),
                 type: 'standard' as const,
                 guarantee: true,
                 interactive: false,
@@ -534,19 +562,50 @@ export const getPassConfiguration = ({
             },
             {
                 plan: PLANS.PASS,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getCustomPassFeatures()} />,
+                subsection: (
+                    <PlanCardFeatureList
+                        {...planCardFeatureProps}
+                        features={getCustomPassFeatures()}
+                        keyFeatures={getCustomPassKeyFeatures()}
+                    />
+                ),
                 type: 'best' as const,
                 guarantee: true,
             },
             showPassFamily && {
                 plan: PLANS.PASS_FAMILY,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getCustomPassFamilyFeatures()} />,
+                subsection: (
+                    <PlanCardFeatureList
+                        {...planCardFeatureProps}
+                        features={getCustomPassFamilyFeatures()}
+                        keyFeatures={getCustomPassFamilyKeyFeatures()}
+                    />
+                ),
                 type: 'standard' as const,
                 guarantee: true,
             },
             {
                 plan: PLANS.BUNDLE,
-                subsection: <BundlePlanSubSection vpnServersCountData={vpnServersCountData} />,
+                subsection: (
+                    <>
+                        <div className="color-weak text-left text-sm mb-1">
+                            {c('pass_signup_2023: Info').t`All premium ${BRAND_NAME} services.`}
+                            <br />
+                            {c('pass_signup_2023: Info').t`One easy subscription.`}
+                        </div>
+                        <AppsLogos
+                            fullWidth
+                            apps={[
+                                APPS.PROTONMAIL,
+                                APPS.PROTONCALENDAR,
+                                APPS.PROTONDRIVE,
+                                APPS.PROTONVPN_SETTINGS,
+                                APPS.PROTONPASS,
+                                APPS.PROTONDOCS,
+                            ]}
+                        />
+                    </>
+                ),
                 type: 'standard' as const,
                 guarantee: true,
             },
@@ -631,7 +690,7 @@ export const getPassConfiguration = ({
                 defaultPlan: PLANS.PASS_BUSINESS,
             },
         ],
-        signupTypes: [SignupType.Email, SignupType.Username],
+        signupTypes: [SignupType.External, SignupType.Proton],
         generateMnemonic: true,
         defaults: {
             plan: (() => {

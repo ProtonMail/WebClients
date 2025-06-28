@@ -24,6 +24,7 @@ export type FieldBoxProps = {
     icon?: IconName | ReactElement;
     unstyled?: boolean;
     onClick?: MouseEventHandler;
+    onMouseDown?: MouseEventHandler;
 };
 
 const stopOnClickPropagation = (nodes: MaybeArray<ReactElement>): MaybeArray<ReactElement> =>
@@ -56,6 +57,7 @@ const FieldBoxRender: ForwardRefRenderFunction<HTMLDivElement, FieldBoxProps> = 
             className={clsx('pass-field-box flex flex-nowrap items-start', !props.unstyled && 'px-4 py-3', className)}
             ref={ref}
             onClick={props.onClick}
+            onMouseDown={props.onMouseDown}
         >
             {icon && (
                 <span

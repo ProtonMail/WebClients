@@ -29,6 +29,9 @@
       "Add domain": [
         "Domein toevoegen"
       ],
+      "Add field": [
+        "Veld toevoegen"
+      ],
       "Add forwarding mailbox": [
         "Doorstuur mailbox toevoegen"
       ],
@@ -152,10 +155,10 @@
       "Create": [
         "Aanmaken"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
       "Create alias": [
@@ -401,6 +404,9 @@
       "Multiple select": [
         "Meervoudige selectie"
       ],
+      "Next month": [
+        "Volgende maand"
+      ],
       "No expired links": [
         "Geen verlopen koppelingen"
       ],
@@ -431,11 +437,17 @@
       "Please retry": [
         "Probeer het opnieuw"
       ],
+      "Previous month": [
+        "Vorige maand"
+      ],
       "Re-verify": [
         "Opnieuw verifiëren"
       ],
       "Reactivate now": [
         "Heractiveren"
+      ],
+      "Read More": [
+        "Lees Meer"
       ],
       "Refresh the page": [
         "Pagina vernieuwen"
@@ -560,6 +572,9 @@
       "Show advanced options": [
         "Geavanceerde opties weergeven"
       ],
+      "Show Less": [
+        "Minder Weergeven"
+      ],
       "Sign back in": [
         "Opnieuw inloggen"
       ],
@@ -574,6 +589,9 @@
       ],
       "Sort vault items": [
         "Sorteer kluisitems"
+      ],
+      "Start from scratch": [
+        "Begin opnieuw"
       ],
       "Submit": [
         "Versturen"
@@ -623,7 +641,7 @@
         "Item losmaken"
       ],
       "Update": [
-        "Bijwerken"
+        "Update"
       ],
       "Update this login": [
         "Update deze login"
@@ -757,9 +775,6 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-bestand kon niet worden verwerkt. ${ errorDetail }"
-      ],
-      "[Error] an item could not be parsed": [
-        "[Fout] een item kon niet worden verwerkt"
       ],
       "A domain ownership must be verified first.": [
         "De eigenaar van het domein moet eerst worden gecontroleerd."
@@ -1006,8 +1021,8 @@
       "File does not match expected format": [
         "Bestand komt niet overeen met verwacht formaat"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Importeren mislukt voor kluis \"${ vaultData.name }\" : ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Importeren mislukt voor kluis \"${ vaultData.name }\": ${ errorMessage }"
       ],
       "Importing items failed": [
         "Items importeren mislukt"
@@ -1138,6 +1153,9 @@
       "Unsupported 1Password file format": [
         "Niet-ondersteund 1Password-bestandsformaat"
       ],
+      "Unsupported Bitwarden file format": [
+        "Niet-ondersteund Bitwarden-bestandsformaat"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Bijwerken kluis \"${ payload.content.name }\" mislukt"
       ],
@@ -1251,7 +1269,8 @@
         "${ count } weergave",
         "${ count } weergaven"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } keer bekeken",
         "${ count }/${ maxReads } keer bekeken"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1412,6 +1431,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Auto-vergrendelen succesvol ingeschakeld."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Automatisch aanvullen van HTTP-basic verificatie dialogen met opgeslagen inloggegevens."
       ],
       "automatically": [
         "automatisch"
@@ -2282,6 +2304,9 @@
         "We hebben gedetecteerd dat u ${ aliasCount } alias hebt die aanwezig is in SimpleLogin, maar ontbreekt in ${ PASS_APP_NAME }. Wilt u deze importeren?",
         "We hebben gedetecteerd dat u ${ aliasCount } aliassen hebt die aanwezig zijn in SimpleLogin, maar ontbreken in ${ PASS_APP_NAME }. Wilt u deze importeren?"
       ],
+      "Week": [
+        "Week"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "We hebben een verificatiecode gestuurd naar ${ email }. Voer deze hieronder in:"
       ],
@@ -2482,6 +2507,12 @@
       "Account": [
         "Account"
       ],
+      "Account Number": [
+        "Account Nummer"
+      ],
+      "Account Type": [
+        "Accounttype"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Voeg een willekeurige prefix toe voor dit domein bij het maken van een nieuwe alias."
       ],
@@ -2490,6 +2521,9 @@
       ],
       "Additional details": [
         "Aanvullende details"
+      ],
+      "Address": [
+        "Adres"
       ],
       "Address details": [
         "Adresgegevens"
@@ -2518,6 +2552,12 @@
       "Always show username field": [
         "Altijd het veld gebruikersnaam tonen"
       ],
+      "API Credential": [
+        "API-toegangscode"
+      ],
+      "API Key": [
+        "API-sleutel"
+      ],
       "Application logs": [
         "Applicatielogboek"
       ],
@@ -2541,6 +2581,15 @@
       ],
       "Backup password": [
         "Back-up wachtwoord"
+      ],
+      "Bank Account": [
+        "Bankrekening"
+      ],
+      "Bank Name": [
+        "Naam bank"
+      ],
+      "Basic Auth autofill": [
+        "Basis verificatie automatisch aanvullen"
       ],
       "Biometrics": [
         "Biometrie"
@@ -2569,8 +2618,14 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Selectievakje"
+      ],
       "City": [
         "Stad"
+      ],
+      "Class": [
+        "Klasse"
       ],
       "Code": [
         "Code"
@@ -2596,6 +2651,9 @@
       "Copy password": [
         "Wachtwoord kopiëren"
       ],
+      "Country": [
+        "Land"
+      ],
       "Country or Region": [
         "Land of regio"
       ],
@@ -2604,6 +2662,9 @@
       ],
       "Create a credit card": [
         "Kredietkaart aanmaken"
+      ],
+      "Create a custom item": [
+        "Maak een aangepast item"
       ],
       "Create a hide-my-email alias": [
         "Maak een Hide-my-email-alias"
@@ -2623,17 +2684,26 @@
       "Create new vault": [
         "Nieuwe kluis aanmaken"
       ],
-      "Created": [
-        "Aangemaakt"
-      ],
       "Created at": [
         "Aangemaakt op"
       ],
-      "Custom hidden field": [
-        "Aangepast verborgen veld"
+      "Crypto Wallet": [
+        "Crypto Wallet"
       ],
-      "Custom text field": [
-        "Tekst aangepast veld"
+      "Custom Items": [
+        "Aangepaste items"
+      ],
+      "Database": [
+        "Database"
+      ],
+      "Database Type": [
+        "Databasetype"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date of Birth": [
+        "Geboortedatum"
       ],
       "Device": [
         "Apparaat"
@@ -2646,6 +2716,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Dokter"
       ],
       "Domain": [
         "Domeinnaam"
@@ -2661,6 +2734,9 @@
       ],
       "Download logs": [
         "Logboeken downloaden"
+      ],
+      "Driver License": [
+        "Rijbewijs"
       ],
       "Email": [
         "E-mailadres"
@@ -2689,8 +2765,14 @@
       "Expired": [
         "Verlopen"
       ],
+      "Expiry Date": [
+        "Vervaldatum"
+      ],
       "Export": [
         "Exporteren"
+      ],
+      "Extra fields": [
+        "Extra velden"
       ],
       "Extra password": [
         "Extra wachtwoord"
@@ -2706,6 +2788,9 @@
       ],
       "File format": [
         "Bestandsformaat"
+      ],
+      "Finance": [
+        "Financiën"
       ],
       "First name": [
         "Voornaam"
@@ -2740,8 +2825,23 @@
       "Hide password": [
         "Wachtwoord verbergen"
       ],
+      "Holder Name": [
+        "Naam rekeninghouder"
+      ],
+      "Hospital": [
+        "Ziekenhuis"
+      ],
+      "Host": [
+        "Host"
+      ],
+      "Hostname": [
+        "Hostnaam"
+      ],
       "https://example.com": [
         "https://voorbeeld.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "ID-kaart"
@@ -2785,6 +2885,18 @@
       "Invitations": [
         "Uitnodigingen"
       ],
+      "IP Address": [
+        "IP-adres"
+      ],
+      "Issuing Authority": [
+        "Uitgevende autoriteit"
+      ],
+      "Issuing Country": [
+        "Land van uitgifte"
+      ],
+      "Issuing State/Country": [
+        "Staat/Land van uitgifte"
+      ],
       "Item ID": [
         "Item ID"
       ],
@@ -2793,6 +2905,12 @@
       ],
       "Key": [
         "Sleutel"
+      ],
+      "Key fingerprint": [
+        "Vingerafdruk sleutel"
+      ],
+      "Key type": [
+        "Sleuteltype"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Toetsenbordsneltoets: ${ shortcut }"
@@ -2821,8 +2939,14 @@
       "License": [
         "Licentie"
       ],
+      "License Key": [
+        "Licentiesleutel"
+      ],
       "License number": [
         "Licentienummer"
+      ],
+      "License Number": [
+        "Rijbewijsnummer"
       ],
       "LinkedIn account": [
         "LinkedIn-account"
@@ -2854,8 +2978,29 @@
       "max views reached": [
         "max weergaven bereikt"
       ],
+      "Medical Conditions": [
+        "Medische aandoeningen"
+      ],
+      "Medical Record": [
+        "Medisch Gegeven"
+      ],
+      "Medications": [
+        "Medicatie"
+      ],
+      "Member ID": [
+        "Lid-ID"
+      ],
+      "Member Name": [
+        "Lid Name"
+      ],
       "Members": [
         "Leden"
+      ],
+      "Membership": [
+        "Lidmaatschap"
+      ],
+      "Membership ID": [
+        "Lidmaatschap ID"
       ],
       "Middle name": [
         "Tussenvoegsel"
@@ -2872,11 +3017,17 @@
       "Name": [
         "Naam"
       ],
+      "Name (SSID)": [
+        "Naam (SSID}"
+      ],
       "Name on card": [
         "Naam op de kaart"
       ],
       "Need help?": [
         "Heeft u hulp nodig?"
+      ],
+      "Network": [
+        "Netwerk"
       ],
       "New": [
         "Nieuw"
@@ -2920,8 +3071,20 @@
       "Oldest to newest": [
         "Van oud naar nieuw"
       ],
+      "Operating System": [
+        "Besturingssysteem"
+      ],
       "Organization": [
         "Organisatie"
+      ],
+      "Organization Name": [
+        "Organisatienaam"
+      ],
+      "Other": [
+        "Overig"
+      ],
+      "Owner": [
+        "Eigenaar"
       ],
       "Passkey": [
         "Toegangssleutel"
@@ -2935,6 +3098,9 @@
       "Passport": [
         "Paspoort"
       ],
+      "Passport Number": [
+        "Paspoortnummer"
+      ],
       "Passport number": [
         "Paspoortnummer"
       ],
@@ -2947,8 +3113,17 @@
       "Passwords": [
         "Wachtwoorden"
       ],
+      "Patient Name": [
+        "Naam patiënt"
+      ],
       "Pause list": [
         "Pauze lijst"
+      ],
+      "Permissions": [
+        "Machtigingen"
+      ],
+      "Personal": [
+        "Persoonlijk"
       ],
       "Personal details": [
         "Persoonlijke gegevens"
@@ -2968,6 +3143,12 @@
       "PIN code": [
         "Pincode"
       ],
+      "Points Balance": [
+        "Puntensaldo"
+      ],
+      "Port": [
+        "Poort"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -2976,6 +3157,18 @@
       ],
       "Priority:": [
         "Prioriteit:"
+      ],
+      "Private key": [
+        "Privé sleutel"
+      ],
+      "Private Key": [
+        "Privé sleutel"
+      ],
+      "Product": [
+        "Product"
+      ],
+      "Program Name": [
+        "Programmanaam"
       ],
       "Prompt for auto-save": [
         "Vragen om automatisch opslaan"
@@ -2989,11 +3182,17 @@
       "Public domain": [
         "Publiek domein"
       ],
+      "Public key": [
+        "Publieke sleutel"
+      ],
       "Rate us": [
         "Beoordeel ons"
       ],
       "Recent": [
         "Recent"
+      ],
+      "Record Number": [
+        "Recordnummer"
       ],
       "Reddit handle": [
         "Reddit-gebruikersnaam"
@@ -3010,11 +3209,20 @@
       "Reveal password": [
         "Wachtwoord tonen"
       ],
+      "Reward Program": [
+        "Beloningsprogramma"
+      ],
+      "Routing Number": [
+        "Routeringsnummer"
+      ],
       "Save passkeys": [
         "Passkey opslaan"
       ],
       "Second password": [
         "Tweede wachtwoord"
+      ],
+      "Secret": [
+        "Geheim"
       ],
       "Secure links": [
         "Beveiligde links"
@@ -3027,6 +3235,9 @@
       ],
       "See member and permission overview": [
         "Zie leden en overzicht toelatingen"
+      ],
+      "Seed Phrase": [
+        "Seed Phrase"
       ],
       "Select a domain": [
         "Domein selecteren"
@@ -3046,11 +3257,17 @@
       "Selected": [
         "Geselecteerd"
       ],
+      "Server": [
+        "Server"
+      ],
       "Settings": [
         "Instellingen"
       ],
       "Share": [
         "Delen"
+      ],
+      "Share ID": [
+        "ID delen"
       ],
       "Shared": [
         "Gedeeld"
@@ -3070,11 +3287,23 @@
       "Social security": [
         "Burgerservicenummer (rijksregisternummer)"
       ],
+      "Social Security": [
+        "Burgerservicenummer (rijksregisternummer)"
+      ],
       "Social security number": [
         "Burgerservicenummer (Rijksregisternummer)"
       ],
+      "Software license": [
+        "Software licentie"
+      ],
       "Special characters (!&*)": [
         "Speciale tekens (!&*)"
+      ],
+      "SSH key": [
+        "SSH-sleutel"
+      ],
+      "SSN": [
+        "SSN"
       ],
       "State or province": [
         "Provincie"
@@ -3094,6 +3323,9 @@
       "Support": [
         "Ondersteuning"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synchroniseer aliassen met SimpleLogin"
       ],
@@ -3103,6 +3335,9 @@
       "Tax number": [
         "BTW-nummer"
       ],
+      "Technology": [
+        "Technologie"
+      ],
       "Text": [
         "Tekst"
       ],
@@ -3111,6 +3346,12 @@
       ],
       "Theme": [
         "Thema"
+      ],
+      "Tier/Level": [
+        "Rang/Niveau"
+      ],
+      "Tier/Status": [
+        "Rang/Status"
       ],
       "Title": [
         "Titel"
@@ -3148,6 +3389,9 @@
       "Unnamed Credit Card": [
         "Naamloze kredietkaart"
       ],
+      "Unnamed custom item": [
+        "Naamloos aangepast item"
+      ],
       "Unnamed identity": [
         "Naamloze identiteit"
       ],
@@ -3157,11 +3401,20 @@
       "Unnamed note": [
         "Naamloze notitie"
       ],
+      "Unnamed SSH key": [
+        "Naamloze SSH-sleutel"
+      ],
+      "Unnamed WiFi item": [
+        "Naamloos wifi item"
+      ],
+      "Unspecified": [
+        "Niet gespecificeerd"
+      ],
       "Untitled": [
         "Naamloos"
       ],
       "Update": [
-        "Bijwerken"
+        "Update"
       ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "${ PASS_APP_NAME } gebruiken als standaard wachtwoordbeheer van uw browser"
@@ -3190,6 +3443,9 @@
       "Vulnerable": [
         "Kwetsbaar"
       ],
+      "Wallet Name": [
+        "Naam Wallet"
+      ],
       "Weak": [
         "Zwak"
       ],
@@ -3198,6 +3454,9 @@
       ],
       "Websites": [
         "Websites"
+      ],
+      "WiFi network": [
+        "Wifi-netwerk"
       ],
       "Work details": [
         "Werk gegevens"
@@ -3403,6 +3662,18 @@
       "Add note": [
         "Notitie toevoegen"
       ],
+      "Add password": [
+        "Wachtwoord toevoegen"
+      ],
+      "Add private key": [
+        "Privé-sleutel toevoegen"
+      ],
+      "Add public key": [
+        "Openbare sleutel toevoegen"
+      ],
+      "Add SSID": [
+        "SSID toevoegen"
+      ],
       "Add text": [
         "Tekst toevoegen"
       ],
@@ -3411,6 +3682,9 @@
       ],
       "Coupon": [
         "Kortingscode"
+      ],
+      "E.g., ": [
+        "Bijv., "
       ],
       "Email address": [
         "E-mailadres"
@@ -3442,8 +3716,8 @@
       "my-domain.com": [
         "mijn-domein.com"
       ],
-      "Name to display when sending an email": [
-        "Naam die getoond moet worden bij het verzenden van een e-mail"
+      "Name displayed in emails": [
+        "Naam weergegeven in e-mails"
       ],
       "Note from SimpleLogin": [
         "Notitie van SimpleLogin"
@@ -3478,6 +3752,9 @@
       "Select a suffix": [
         "Selecteer een achtervoegsel"
       ],
+      "Select option": [
+        "Selecteer optie"
+      ],
       "Unknown origin": [
         "Onbekende oorsprong"
       ],
@@ -3486,9 +3763,6 @@
       ],
       "Used on ${ url }": [
         "Gebruikt op ${ url }"
-      ],
-      "Write your note": [
-        "Schrijf uw notitie"
       ]
     },
     "sso": {
@@ -3794,9 +4068,6 @@
       "Grant permissions": [
         "Toestemmingen verlenen"
       ],
-      "Hide my email": [
-        "Hide-my-email"
-      ],
       "History": [
         "Geschiedenis"
       ],
@@ -3841,6 +4112,9 @@
       ],
       "Members": [
         "Leden"
+      ],
+      "Minicalendar": [
+        "Mini-agenda"
       ],
       "Modified": [
         "Gewijzigd"
@@ -4024,6 +4298,11 @@
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Vandaag"
+      ]
+    },
     "Validation": {
       "Domain URL is invalid": [
         "Domein URL is ongeldig"
@@ -4037,9 +4316,6 @@
       "OTP secret or URI is invalid": [
         "OTP-geheim of URI is ongeldig"
       ],
-      "OTP secret or URI required": [
-        "OTP-geheim of URI vereist"
-      ],
       "Section name cannot be empty": [
         "Sectienaam kan niet leeg zijn"
       ],
@@ -4051,6 +4327,12 @@
       ],
       "URL is invalid": [
         "URL is ongeldig"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Item verplaatsen naar",
+        "Items verplaatsen naar"
       ]
     },
     "Warning": {
@@ -4160,9 +4442,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Het uitnodigen van e-mailadressen buiten de organisatie is niet toegestaan."
-      ],
-      "item was imported without custom fields": [
-        "item is geïmporteerd zonder aangepaste velden"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximale lengte is ${ maxLength } teken",

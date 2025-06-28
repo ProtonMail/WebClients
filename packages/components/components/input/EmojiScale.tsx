@@ -2,9 +2,9 @@ import type { ChangeEvent, ComponentPropsWithoutRef } from 'react';
 
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms';
 import type { InputButtonProps } from '@proton/components/components/input/InputButton';
 import InputButton from '@proton/components/components/input/InputButton';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import emojiAwful from '@proton/styles/assets/img/emojis/emoji-awful.svg';
 import emojiBad from '@proton/styles/assets/img/emojis/emoji-bad.svg';
 import emojiGood from '@proton/styles/assets/img/emojis/emoji-good.svg';

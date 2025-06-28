@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms';
 import type { useConfirmActionModal } from '@proton/components';
-import { QuickSettingsButton, Tooltip } from '@proton/components';
+import { QuickSettingsButton } from '@proton/components';
 
 import { useEncryptedSearchLibrary } from '../../EncryptedSearchLibraryProvider';
 import { useCalendarSearch } from '../search/CalendarSearchProvider';

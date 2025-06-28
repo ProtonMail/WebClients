@@ -1,0 +1,415 @@
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+/*
+ * Button shape
+ */
+.button {
+	display: inline-block;
+	padding-block: var(--padding-block);
+	padding-inline: var(--padding-inline);
+	border: 1px solid var(--button-default-border-color, transparent);
+	border-radius: var(--border-radius-md);
+	outline: none; // be careful of a11y
+	background-color: var(--button-default-background-color, transparent);
+	color: var(--button-default-text-color, inherit);
+	text-align: center;
+	cursor: pointer; // In case of a tag different from a or button
+	transition:
+		0.15s easing(ease-out-quint),
+		background-position 0s;
+
+	@supports selector(:focus-visible:has(a, b)) {
+		// had to do this because of Safari
+		outline: unset;
+	}
+
+	&,
+	&:hover,
+	&:focus,
+	&:focus-within,
+	&:active {
+		text-decoration: none;
+	}
+
+	&:hover,
+	&.is-hover {
+		border-color: var(--button-hover-border-color, transparent);
+		background-color: var(--button-hover-background-color, transparent);
+		color: var(--button-hover-text-color, inherit);
+		opacity: 1; // In case the button is invisible as default
+	}
+
+	@supports not selector(:focus-visible:has(a, b)) {
+		&:focus,
+		&:focus-within {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			color: var(--button-default-text-color, inherit);
+		}
+	}
+
+	@supports selector(:focus-visible:has(a, b)) {
+		&:focus {
+			// explicitly set color in case focus state get invoked
+			color: var(--button-default-text-color, inherit);
+		}
+
+		&:focus-visible,
+		&:has(*:focus-visible),
+		&.display-focus-visible {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			color: var(--button-default-text-color, inherit);
+		}
+	}
+
+	&:active,
+	&.is-active,
+	// When clicking on a button to expand a container, we usually don't need to specify the `aria-controls` attribute
+	// because the expanded container is right next to that button, so the `aria-expanded` style makes sense,
+	// but in some cases that expanded container isn't so obviously visually connected to that button, so we use
+	// `aria-controls` to specify it, and avoid the `aria-expanded` style in the same time.
+	&[aria-expanded='true']:not([aria-controls]) {
+		border-color: var(--button-active-border-color, transparent);
+		background-color: var(--button-active-background-color, transparent);
+		color: var(--button-active-text-color, inherit);
+		opacity: 1; // In case the button is invisible as default
+	}
+
+	&[disabled],
+	&.is-disabled {
+		pointer-events: none;
+		background-color: var(--button-hover-background-color, transparent);
+
+		&:not([aria-busy='true'], .no-disabled-styles) {
+			border-color: transparent;
+			background-color: var(--interaction-weak, transparent);
+			color: var(--text-weak, inherit);
+			opacity: 0.5;
+
+			&[class*='button-ghost'] {
+				background-color: var(--button-default-background-color, transparent);
+			}
+		}
+	}
+}
+
+.button-underline {
+	--padding-block: #{em(7)}; // To ensure vertical alignments
+
+	position: relative;
+	display: inline-block;
+	padding-block: var(--padding-block);
+	padding-inline: var(--padding-inline);
+	outline: none; // be careful of a11y
+	color: var(--button-default-text-color, inherit);
+	text-decoration: underline;
+	transition: 0.15s easing(ease-out-quint);
+
+	@supports selector(:focus-visible:has(a, b)) {
+		// had to do this because of Safari
+		outline: unset;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset-block: em(4);
+		inset-inline: em(-3);
+		z-index: 1;
+		border-radius: var(--border-radius-md);
+		border: 1px solid transparent;
+		pointer-events: none;
+		transition: 0.15s easing(ease-out-quad);
+	}
+
+	@supports not selector(:focus-visible:has(a, b)) {
+		&:focus,
+		&:focus-within {
+			&::after {
+				border-color: var(--focus-outline);
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
+		}
+	}
+
+	@supports selector(:focus-visible:has(a, b)) {
+		&:focus-visible,
+		&:has(*:focus-visible) {
+			&::after {
+				border-color: var(--focus-outline);
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
+		}
+	}
+
+	&.button-tiny,
+	&.button-small,
+	&.button-medium,
+	&.button-large {
+		--padding-inline: 0;
+	}
+
+	&:hover,
+	&:focus,
+	&:focus-within,
+	&:active {
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:focus-within {
+		color: var(--button-hover-text-color, inherit);
+	}
+
+	&:active,
+	&.is-active {
+		color: var(--button-active-text-color, inherit);
+	}
+
+	&[disabled],
+	&.is-disabled {
+		pointer-events: none;
+
+		&:not([aria-busy='true'], .no-disabled-styles) {
+			color: var(--text-weak, inherit);
+			opacity: 0.5;
+		}
+	}
+}
+
+/*
+ * Button variants
+ */
+@each $color in (norm, weak, danger, warning, success, info) {
+	// Initialize namespace
+	$group: if($color == 'norm' or $color == 'weak', 'interaction', 'signal');
+
+	// Solid shape
+	.button-solid-#{$color} {
+		$solid-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'contrast'))});
+
+		--button-default-background-color: var(--#{dash-join($group, $color)});
+		--button-hover-background-color: var(--#{dash-join($group, $color, 'major-1')});
+		--button-active-background-color: var(--#{dash-join($group, $color, 'major-2')});
+		--button-default-text-color: #{$solid-text-color};
+		--button-hover-text-color: #{$solid-text-color};
+		--button-active-text-color: #{$solid-text-color};
+
+		@if $color == 'norm' {
+			--focus-outline: var(--interaction-norm-major-2);
+		}
+	}
+
+	// Outline shape
+	.button-outline-#{$color} {
+		--button-default-background-color: var(--background-norm);
+		--button-hover-background-color: var(--#{dash-join($group, $color, 'minor-2')});
+		--button-active-background-color: var(--#{dash-join($group, $color, 'minor-1')});
+		--button-default-border-color: var(--#{dash-join($group, $color, 'major-1')});
+		--button-hover-border-color: var(--#{dash-join($group, $color, 'major-2')});
+		--button-active-border-color: var(--#{dash-join($group, $color, 'major-3')});
+		--button-default-text-color: var(
+			--#{if($color == 'weak' or $color == 'norm', 'text-norm', dash-join($group, $color, 'major-1'))}
+		);
+		--button-hover-text-color: var(
+			--#{if($color == 'weak' or $color == 'norm', 'text-norm', dash-join($group, $color, 'major-2'))}
+		);
+		--button-active-text-color: var(
+			--#{if($color == 'weak' or $color == 'norm', 'text-norm', dash-join($group, $color, 'major-3'))}
+		);
+	}
+
+	// Ghost shape
+	.button-ghost-#{$color} {
+		--button-default-background-color: var(--interaction-default);
+		--button-hover-background-color: var(--interaction-default-hover);
+		--button-active-background-color: var(--interaction-default-active);
+		--button-default-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-1'))});
+		--button-hover-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-2'))});
+		--button-active-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-3'))});
+	}
+
+	// Underline shape
+	.button-underline-#{$color} {
+		--button-default-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-1'))});
+		--button-hover-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-2'))});
+		--button-active-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-3'))});
+	}
+}
+
+// exception for some designs, will see if we introduce a new variant soon
+.button-solid-norm-light {
+	--button-default-background-color: var(--interaction-norm-minor-2);
+	--button-hover-background-color: var(--interaction-norm-minor-2);
+	--button-default-text-color: var(--interaction-norm);
+	--button-hover-text-color: var(--interaction-norm);
+}
+
+/*
+ * Modifiers
+ */
+
+.button-tiny {
+	--padding-block: #{em(5, 12)}; // 28px height
+	--padding-inline: #{em(8, 12)};
+
+	font-size: em(12);
+	line-height: #{math.div(16, 12)};
+}
+
+.button-small {
+	--padding-block: #{em(3)}; // 28px height
+	--padding-inline: #{em(11)};
+}
+
+.button-medium {
+	--padding-block: #{em(7)}; // 36 height
+	--padding-inline: #{em(15)};
+}
+
+.button-large {
+	--padding-block: #{em(9, 16)}; // 44px height
+	--padding-inline: #{em(19, 16)};
+
+	font-size: em(16);
+	line-height: #{math.div(24, 16)};
+}
+
+.button-for-icon {
+	&.button-tiny {
+		--padding-block: #{em(5, 12)};
+		--padding-inline: #{em(5, 12)};
+	}
+
+	&.button-small {
+		--padding-block: #{em(5)};
+		--padding-inline: #{em(5)};
+	}
+
+	&.button-medium {
+		--padding-block: #{em(9)}; // To have same height as fields
+		--padding-inline: #{em(9)};
+	}
+
+	&.button-large {
+		--padding-block: #{em(13, 16)};
+		--padding-inline: #{em(13, 16)};
+	}
+
+	& > svg {
+		display: block;
+		transition: opacity 0.25s ease-out;
+	}
+}
+
+// Loading state
+.button[aria-busy='true'] {
+	position: relative;
+
+	&:not(.button-for-icon) {
+		&.button-tiny {
+			padding-inline-end: em(24);
+		}
+
+		&.button-small {
+			padding-inline-end: em(32);
+		}
+
+		&.button-medium {
+			padding-inline-end: em(40);
+		}
+
+		&.button-large {
+			padding-inline-end: em(44);
+		}
+
+		&.w-full:not([class*='\:w-auto']) {
+			padding-inline-end: var(--padding-inline);
+		}
+
+		&.w-full.sm\:w-auto {
+			@include media('<=xsmall') {
+				padding-inline-end: var(--padding-inline);
+			}
+		}
+
+		&.w-full.md\:w-auto {
+			@include media('<=small') {
+				padding-inline-end: var(--padding-inline);
+			}
+		}
+
+		&.w-full.lg\:w-auto {
+			@include media('<=medium') {
+				padding-inline-end: var(--padding-inline);
+			}
+		}
+
+		&.w-full.xl\:w-auto {
+			@include media('<=large') {
+				padding-inline-end: var(--padding-inline);
+			}
+		}
+
+		&.button-tiny .button-loader-container {
+			inset-inline-end: em(6);
+		}
+
+		&.button-small .button-loader-container {
+			inset-inline-end: em(10);
+		}
+
+		&.button-medium .button-loader-container {
+			inset-inline-end: em(12);
+		}
+
+		&.button-large .button-loader-container {
+			inset-inline-end: em(16, 16);
+		}
+	}
+
+	&.button-for-icon {
+		& > svg {
+			opacity: 0;
+		}
+
+		.button-loader-container {
+			inset: 0;
+		}
+	}
+}
+
+.button-underline[aria-busy='true'] {
+	position: relative;
+	padding-inline-end: em(20);
+
+	.button-loader-container {
+		inset-inline-end: 0;
+	}
+}
+
+.button-loader-container {
+	position: absolute;
+	inset-block: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: 0.25s ease-out both anime-button-loader-container-fade-in;
+
+	@keyframes anime-button-loader-container-fade-in {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+}
+
+.button-pill {
+	border-radius: 2em;
+}

@@ -29,6 +29,9 @@
       "Add domain": [
         "添加域名"
       ],
+      "Add field": [
+        "添加字段"
+      ],
       "Add forwarding mailbox": [
         "添加转发邮箱"
       ],
@@ -57,7 +60,7 @@
         "使用终身优惠券代码"
       ],
       "Authenticate": [
-        "认证"
+        "身份验证"
       ],
       "Back": [
         "上一步"
@@ -152,10 +155,10 @@
       "Create": [
         "创建"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "创建 ${ BRAND_NAME } 账户"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "创建 ${ BRAND_NAME } 账户"
       ],
       "Create alias": [
@@ -401,6 +404,9 @@
       "Multiple select": [
         "多重选择"
       ],
+      "Next month": [
+        "下个月"
+      ],
       "No expired links": [
         "无过期链接"
       ],
@@ -431,11 +437,17 @@
       "Please retry": [
         "请重试"
       ],
+      "Previous month": [
+        "上个月"
+      ],
       "Re-verify": [
         "重新验证"
       ],
       "Reactivate now": [
         "立即重新激活"
+      ],
+      "Read More": [
+        "了解更多"
       ],
       "Refresh the page": [
         "刷新页面"
@@ -560,6 +572,9 @@
       "Show advanced options": [
         "显示进阶选项"
       ],
+      "Show Less": [
+        "收起"
+      ],
       "Sign back in": [
         "重新登录"
       ],
@@ -574,6 +589,9 @@
       ],
       "Sort vault items": [
         "对保险库项目排序"
+      ],
+      "Start from scratch": [
+        "从零开始"
       ],
       "Submit": [
         "提交"
@@ -754,9 +772,6 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "无法解析 ${ provider } 文件。${ errorDetail }"
-      ],
-      "[Error] an item could not be parsed": [
-        "[错误] 无法解析一个项目"
       ],
       "A domain ownership must be verified first.": [
         "必须首先验证域名所有权。"
@@ -1001,7 +1016,7 @@
       "File does not match expected format": [
         "文件与预期格式不匹配"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "保险库 “${ vaultData.name }” 导入失败：${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1133,6 +1148,9 @@
       "Unsupported 1Password file format": [
         "不支持的 1Password 文件格式"
       ],
+      "Unsupported Bitwarden file format": [
+        "不支持的 Bitwarden 文件格式"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "更新保险库 “${ payload.content.name }” 失败"
       ],
@@ -1237,8 +1255,8 @@
       "${ count } view": [
         "${ count } 次查看"
       ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } 浏览"
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } 视图"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } 已转发"
@@ -1392,6 +1410,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "已成功禁用自动锁定。"
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "使用已保存的凭据自动填充 HTTP 基本身份验证对话框。"
       ],
       "automatically": [
         "自动"
@@ -1583,7 +1604,7 @@
         "输入您要发送电子邮件的地址。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "输入第 ${ digit } 位验证码。"
+        "请输入验证码的第 ${ digit } 位数字。"
       ],
       "Enter your extra password": [
         "输入您的额外密码"
@@ -2254,6 +2275,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "我们检测到您有 ${ aliasCount } 个别名存在于 SimpleLogin 中，但在 ${ PASS_APP_NAME } 中丢失了。您想导入它们吗？"
       ],
+      "Week": [
+        "周"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "我们已经向 ${ email }发送了验证码。请在下面输入："
       ],
@@ -2439,6 +2463,12 @@
       "Account": [
         "帐户"
       ],
+      "Account Number": [
+        "账户号码"
+      ],
+      "Account Type": [
+        "帐户类型"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "创建新别名时，请为该域添加一个随机前缀。"
       ],
@@ -2447,6 +2477,9 @@
       ],
       "Additional details": [
         "更多详细信息"
+      ],
+      "Address": [
+        "地址"
       ],
       "Address details": [
         "地址详情"
@@ -2475,6 +2508,12 @@
       "Always show username field": [
         "始终显示用户名字段"
       ],
+      "API Credential": [
+        "API 凭证"
+      ],
+      "API Key": [
+        "API 密钥"
+      ],
       "Application logs": [
         "应用程序日志"
       ],
@@ -2498,6 +2537,15 @@
       ],
       "Backup password": [
         "备用密码"
+      ],
+      "Bank Account": [
+        "银行账户"
+      ],
+      "Bank Name": [
+        "银行名称"
+      ],
+      "Basic Auth autofill": [
+        "基本身份验证自动填充"
       ],
       "Biometrics": [
         "生物识别"
@@ -2526,6 +2574,9 @@
       "Catch-All": [
         "通配邮箱"
       ],
+      "Checkbox": [
+        "复选框"
+      ],
       "City": [
         "城市"
       ],
@@ -2553,6 +2604,9 @@
       "Copy password": [
         "复制密码"
       ],
+      "Country": [
+        "国家/地区"
+      ],
       "Country or Region": [
         "国家或地区"
       ],
@@ -2561,6 +2615,9 @@
       ],
       "Create a credit card": [
         "创建信用卡"
+      ],
+      "Create a custom item": [
+        "创建自定义项目"
       ],
       "Create a hide-my-email alias": [
         "创建一个 hide-my-email 别名"
@@ -2580,17 +2637,26 @@
       "Create new vault": [
         "创建新的保险库"
       ],
-      "Created": [
-        "创建时间"
-      ],
       "Created at": [
         "创建于"
       ],
-      "Custom hidden field": [
-        "自定义隐藏字段"
+      "Crypto Wallet": [
+        "加密钱包"
       ],
-      "Custom text field": [
-        "自定义文本字段"
+      "Custom Items": [
+        "自定义项目"
+      ],
+      "Database": [
+        "数据库"
+      ],
+      "Database Type": [
+        "数据库类型"
+      ],
+      "Date": [
+        "日期"
+      ],
+      "Date of Birth": [
+        "出生日期"
       ],
       "Device": [
         "设备"
@@ -2615,6 +2681,9 @@
       ],
       "Download logs": [
         "下载日志"
+      ],
+      "Driver License": [
+        "驾驶执照"
       ],
       "Email": [
         "邮箱"
@@ -2643,8 +2712,14 @@
       "Expired": [
         "已失效"
       ],
+      "Expiry Date": [
+        "截止日期"
+      ],
       "Export": [
         "导出"
+      ],
+      "Extra fields": [
+        "附加字段"
       ],
       "Extra password": [
         "额外密码"
@@ -2660,6 +2735,9 @@
       ],
       "File format": [
         "文件格式"
+      ],
+      "Finance": [
+        "金融"
       ],
       "First name": [
         "名"
@@ -2694,8 +2772,20 @@
       "Hide password": [
         "隐藏密码"
       ],
+      "Holder Name": [
+        "持有人姓名"
+      ],
+      "Host": [
+        "主机"
+      ],
+      "Hostname": [
+        "主机名"
+      ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "国际银行账户号码（IBAN）"
       ],
       "ID Card": [
         "身份证"
@@ -2739,6 +2829,15 @@
       "Invitations": [
         "邀请"
       ],
+      "IP Address": [
+        "IP 地址"
+      ],
+      "Issuing Authority": [
+        "签发机关"
+      ],
+      "Issuing Country": [
+        "签发国家/地区"
+      ],
       "Item ID": [
         "项目 ID"
       ],
@@ -2747,6 +2846,9 @@
       ],
       "Key": [
         "密钥"
+      ],
+      "Key fingerprint": [
+        "指纹识别"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "快捷键：${ shortcut }"
@@ -2774,6 +2876,9 @@
       ],
       "License": [
         "许可协议"
+      ],
+      "License Key": [
+        "许可证密钥"
       ],
       "License number": [
         "许可编号"
@@ -2808,8 +2913,17 @@
       "max views reached": [
         "达到最大浏览量"
       ],
+      "Medical Record": [
+        "医疗记录"
+      ],
+      "Member ID": [
+        "成员编号"
+      ],
       "Members": [
         "成员"
+      ],
+      "Membership": [
+        "成员资格"
       ],
       "Middle name": [
         "中间名（若有）"
@@ -2826,11 +2940,17 @@
       "Name": [
         "名称"
       ],
+      "Name (SSID)": [
+        "名称 (SSID)"
+      ],
       "Name on card": [
         "持卡人姓名"
       ],
       "Need help?": [
         "需要帮助？"
+      ],
+      "Network": [
+        "网络"
       ],
       "New": [
         "新"
@@ -2874,8 +2994,17 @@
       "Oldest to newest": [
         "从旧到新"
       ],
+      "Operating System": [
+        "操作系统"
+      ],
       "Organization": [
         "机构"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Owner": [
+        "所有者"
       ],
       "Passkey": [
         "通行密钥"
@@ -2888,6 +3017,9 @@
       ],
       "Passport": [
         "护照"
+      ],
+      "Passport Number": [
+        "护照号码"
       ],
       "Passport number": [
         "护照号码"
@@ -2903,6 +3035,12 @@
       ],
       "Pause list": [
         "暂停列表"
+      ],
+      "Permissions": [
+        "权限"
+      ],
+      "Personal": [
+        "私人"
       ],
       "Personal details": [
         "个人资料"
@@ -2922,6 +3060,12 @@
       "PIN code": [
         "PIN 码"
       ],
+      "Points Balance": [
+        "积分余额"
+      ],
+      "Port": [
+        "端口"
+      ],
       "Prefix": [
         "前綴"
       ],
@@ -2930,6 +3074,18 @@
       ],
       "Priority:": [
         "优先级："
+      ],
+      "Private key": [
+        "私钥"
+      ],
+      "Private Key": [
+        "私钥"
+      ],
+      "Product": [
+        "产品"
+      ],
+      "Program Name": [
+        "程序名称"
       ],
       "Prompt for auto-save": [
         "提示自动保存"
@@ -2942,6 +3098,9 @@
       ],
       "Public domain": [
         "公共域名"
+      ],
+      "Public key": [
+        "公钥"
       ],
       "Rate us": [
         "去评分"
@@ -2964,11 +3123,20 @@
       "Reveal password": [
         "显示密码"
       ],
+      "Reward Program": [
+        "奖励计划"
+      ],
+      "Routing Number": [
+        "路由号码"
+      ],
       "Save passkeys": [
         "保存通行密钥"
       ],
       "Second password": [
         "副密码"
+      ],
+      "Secret": [
+        "密钥"
       ],
       "Secure links": [
         "安全链接"
@@ -2981,6 +3149,9 @@
       ],
       "See member and permission overview": [
         "查看成员和权限概述。"
+      ],
+      "Seed Phrase": [
+        "种子短语"
       ],
       "Select a domain": [
         "选择域名"
@@ -3000,11 +3171,17 @@
       "Selected": [
         "已选中"
       ],
+      "Server": [
+        "服务器"
+      ],
       "Settings": [
         "设置"
       ],
       "Share": [
         "分享"
+      ],
+      "Share ID": [
+        "共享 ID"
       ],
       "Shared": [
         "已共享"
@@ -3024,11 +3201,23 @@
       "Social security": [
         "社会保障"
       ],
+      "Social Security": [
+        "社会保障"
+      ],
       "Social security number": [
         "社会保障号码"
       ],
+      "Software license": [
+        "软件许可证"
+      ],
       "Special characters (!&*)": [
         "特殊字符 (!&*)"
+      ],
+      "SSH key": [
+        "SSH 密钥"
+      ],
+      "SSN": [
+        "社会保险号码（SSN）"
       ],
       "State or province": [
         "省、自治区或直辖市"
@@ -3048,6 +3237,9 @@
       "Support": [
         "帮助"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "使用 SimpleLogin 同步别名"
       ],
@@ -3057,6 +3249,9 @@
       "Tax number": [
         "纳税人识别号"
       ],
+      "Technology": [
+        "技术"
+      ],
       "Text": [
         "文本"
       ],
@@ -3065,6 +3260,9 @@
       ],
       "Theme": [
         "主题"
+      ],
+      "Tier/Status": [
+        "级别/状态"
       ],
       "Title": [
         "标题"
@@ -3102,6 +3300,9 @@
       "Unnamed Credit Card": [
         "未命名信用卡"
       ],
+      "Unnamed custom item": [
+        "未命名自定义项目"
+      ],
       "Unnamed identity": [
         "未命名标识"
       ],
@@ -3110,6 +3311,15 @@
       ],
       "Unnamed note": [
         "未命名笔记"
+      ],
+      "Unnamed SSH key": [
+        "未命名 SSH 密钥"
+      ],
+      "Unnamed WiFi item": [
+        "未命名 WiFi 项目"
+      ],
+      "Unspecified": [
+        "未指定"
       ],
       "Untitled": [
         "未命名"
@@ -3144,6 +3354,9 @@
       "Vulnerable": [
         "易受攻击"
       ],
+      "Wallet Name": [
+        "钱包名称"
+      ],
       "Weak": [
         "弱"
       ],
@@ -3152,6 +3365,9 @@
       ],
       "Websites": [
         "网站"
+      ],
+      "WiFi network": [
+        "WiFi 网络"
       ],
       "Work details": [
         "工作详情"
@@ -3363,6 +3579,9 @@
       "Coupon": [
         "优惠券"
       ],
+      "E.g., ": [
+        "例如："
+      ],
       "Email address": [
         "邮箱地址"
       ],
@@ -3393,8 +3612,8 @@
       "my-domain.com": [
         "my-domain.com"
       ],
-      "Name to display when sending an email": [
-        "发送电子邮件时要显示的名称"
+      "Name displayed in emails": [
+        "显示在邮件中的名称"
       ],
       "Note from SimpleLogin": [
         "来自 SimpleLogin 的笔记"
@@ -3429,6 +3648,9 @@
       "Select a suffix": [
         "选择一个后缀"
       ],
+      "Select option": [
+        "选择选项"
+      ],
       "Unknown origin": [
         "未知来源"
       ],
@@ -3437,9 +3659,6 @@
       ],
       "Used on ${ url }": [
         "用于 ${ url }"
-      ],
-      "Write your note": [
-        "撰写您的笔记"
       ]
     },
     "sso": {
@@ -3742,9 +3961,6 @@
       "Grant permissions": [
         "授予权限"
       ],
-      "Hide my email": [
-        "Hide-my-email"
-      ],
       "History": [
         "历史记录"
       ],
@@ -3789,6 +4005,9 @@
       ],
       "Members": [
         "成员"
+      ],
+      "Minicalendar": [
+        "迷你日历"
       ],
       "Modified": [
         "修改时间"
@@ -3968,6 +4187,11 @@
         "您将永久删除 ${ aliasCount } 个别名。"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "今天"
+      ]
+    },
     "Validation": {
       "Domain URL is invalid": [
         "域名 URL 无效"
@@ -3980,9 +4204,6 @@
       ],
       "OTP secret or URI is invalid": [
         "动态密码或网址无效"
-      ],
-      "OTP secret or URI required": [
-        "需要动态密码或网址"
       ],
       "Section name cannot be empty": [
         "分组名称不能为空"
@@ -4102,9 +4323,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "不允许邀请组织外的电子邮件地址。"
-      ],
-      "item was imported without custom fields": [
-        "项目导入时没有自定义字段"
       ],
       "Maximum length is ${ maxLength } character": [
         "最大长度为 ${ maxLength } 个字符"

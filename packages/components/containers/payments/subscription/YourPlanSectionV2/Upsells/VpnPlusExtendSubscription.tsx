@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button, DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/index';
+import { Button, DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';

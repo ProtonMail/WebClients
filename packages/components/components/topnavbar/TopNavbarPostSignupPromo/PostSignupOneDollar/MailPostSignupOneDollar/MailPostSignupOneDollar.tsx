@@ -4,7 +4,7 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
@@ -133,8 +133,7 @@ export const MailPostSignupOneDollar = () => {
 
     return (
         <SpotlightWithPromo
-            borderRadius={daysSinceOffer >= LAST_REMINDER_DAY ? 'md' : 'xl'}
-            onPromoClick={() => {
+            promoOnClick={() => {
                 if (daysSinceOffer >= LAST_REMINDER_DAY) {
                     handleUpsellClick();
                 } else {
@@ -145,10 +144,11 @@ export const MailPostSignupOneDollar = () => {
             promoIconName={upgradeIcon}
             promoChildren={upgradeText}
             promoColor="full-gradient"
-            innerClassName={daysSinceOffer >= LAST_REMINDER_DAY ? undefined : 'p-0'}
-            show={show || spotlightState}
-            onClose={handleClose}
-            content={
+            spotlightBorderRadius={daysSinceOffer >= LAST_REMINDER_DAY ? 'md' : 'xl'}
+            spotlightInnerClassName={daysSinceOffer >= LAST_REMINDER_DAY ? undefined : 'p-0'}
+            spotlightShow={show || spotlightState}
+            spotlightOnClose={handleClose}
+            spotlightContent={
                 <MailPostSignupDollarContent
                     pricingTitle={pricingTitle}
                     onClose={() => {

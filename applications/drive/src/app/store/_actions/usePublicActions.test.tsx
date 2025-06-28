@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useNotifications } from '@proton/components/index';
+import { useNotifications } from '@proton/components';
 
 import { usePublicLinkActions, usePublicLinksActions, usePublicLinksListing } from '../_links';
 import useLinksState from '../_links/useLinksState';
@@ -205,6 +205,7 @@ describe('usePublicActions', () => {
                 token: mockToken,
                 parentLinkId: mockParentLinkId,
                 name: 'Untitled document 2024-01-01 10.30.45',
+                documentType: 'doc',
             });
             expect(mockLoadChildren).toHaveBeenCalledWith(mockAbortSignal, mockToken, mockParentLinkId, false);
             expect(documentId).toBe(mockDocumentId);
@@ -225,6 +226,7 @@ describe('usePublicActions', () => {
                 token: mockToken,
                 parentLinkId: mockParentLinkId,
                 name: expect.any(String),
+                documentType: 'doc',
             });
             expect(mockShowErrorNotification).toHaveBeenCalledWith(
                 mockError,

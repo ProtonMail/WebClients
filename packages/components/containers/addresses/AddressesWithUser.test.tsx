@@ -7,6 +7,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
+import useAddressFlags from '@proton/components/hooks/useAddressFlags';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
@@ -19,14 +20,10 @@ import useKTVerifier from '../keyTransparency/useKTVerifier';
 import AddressesWithUser from './AddressesWithUser';
 
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
-jest.mock('@proton/components/components/upsell/useOneDollarPromo.tsx', () => ({
-    __esModule: true,
-    default: () => null,
-}));
 
-jest.mock('@proton/components/components/upsell/useUpsellConfig.ts', () => ({
+jest.mock('@proton/components/components/upsell/config/useUpsellConfig.ts', () => ({
     __esModule: true,
-    default: () => null,
+    default: () => ({}),
 }));
 
 jest.mock('@proton/components/hooks/mail/usePostSubscriptionTourTelemetry', () => ({
@@ -36,11 +33,7 @@ jest.mock('@proton/components/hooks/mail/usePostSubscriptionTourTelemetry', () =
     },
 }));
 
-jest.mock('@proton/shared/lib/helpers/upsell.ts', () => ({
-    __esModule: true,
-    useNewUpsellModalVariant: () => true,
-    getUpsellRef: () => '',
-}));
+jest.mock('@proton/shared/lib/helpers/upsell.ts', () => ({ __esModule: true, getUpsellRef: () => '' }));
 
 jest.mock('@proton/components/components/orderableTable/OrderableTable');
 const ActualOrderableTable = jest.requireActual('@proton/components/components/orderableTable/OrderableTable').default;
@@ -51,6 +44,9 @@ const mockedUseAddresses = useAddresses as jest.MockedFunction<typeof useAddress
 
 jest.mock('@proton/components/hooks/useApi');
 const mockedUseApi = useApi as jest.MockedFunction<typeof useApi>;
+
+jest.mock('@proton/components/hooks/useAddressFlags');
+const mockedUseAddressFlags = useAddressFlags as jest.MockedFunction<typeof useAddressFlags>;
 
 jest.mock('@proton/components/hooks/useNotifications');
 const mockedUseNotifications = useNotifications as jest.MockedFunction<typeof useNotifications>;
@@ -70,50 +66,18 @@ const mockedUseFlag = useFlag as jest.MockedFunction<any>;
 jest.mock('@proton/account/organizationKey/hooks');
 const mockedUseOrganizationKey = useOrganizationKey as jest.MockedFunction<typeof useOrganizationKey>;
 
+jest.mock('@proton/components/components/link/SettingsLink', () => 'string');
+
 jest.mock('@proton/redux-shared-store');
 
 describe('addresses with user', () => {
-    const user = {
-        ID: 'abc',
-    } as UserModel;
+    const user = { ID: 'abc' } as UserModel;
 
     const addresses = [
-        {
-            ID: '1',
-            Email: 'a@proton.me',
-            Type: ADDRESS_TYPE.TYPE_ORIGINAL,
-            Status: 1,
-            Receive: 1,
-            Send: 1,
-            HasKeys: 1,
-        },
-        {
-            ID: '2',
-            Email: 'a@foo.bar',
-            Type: ADDRESS_TYPE.TYPE_EXTERNAL,
-            Status: 1,
-            Receive: 0,
-            Send: 0,
-            HasKeys: 1,
-        },
-        {
-            ID: '3',
-            Email: 'a1@proton.me',
-            Type: ADDRESS_TYPE.TYPE_ALIAS,
-            Status: 1,
-            Receive: 1,
-            Send: 1,
-            HasKeys: 1,
-        },
-        {
-            ID: '4',
-            Email: 'a2@pm.me',
-            Type: ADDRESS_TYPE.TYPE_PREMIUM,
-            Status: 0,
-            Receive: 0,
-            Send: 0,
-            HasKeys: 1,
-        },
+        { ID: '1', Email: 'a@proton.me', Type: ADDRESS_TYPE.TYPE_ORIGINAL, Status: 1, Receive: 1, Send: 1, HasKeys: 1 },
+        { ID: '2', Email: 'a@foo.bar', Type: ADDRESS_TYPE.TYPE_EXTERNAL, Status: 1, Receive: 0, Send: 0, HasKeys: 1 },
+        { ID: '3', Email: 'a1@proton.me', Type: ADDRESS_TYPE.TYPE_ALIAS, Status: 1, Receive: 1, Send: 1, HasKeys: 1 },
+        { ID: '4', Email: 'a2@pm.me', Type: ADDRESS_TYPE.TYPE_PREMIUM, Status: 0, Receive: 0, Send: 0, HasKeys: 1 },
     ] as Address[];
 
     mockedUseAddresses.mockReturnValue([addresses, false]);
@@ -124,6 +88,12 @@ describe('addresses with user', () => {
     mockedUseKTVerifier.mockReturnValue({} as any);
     mockedUseOrganizationKey.mockReturnValue([{}] as any);
     mockedUseFlag.mockReturnValue(true);
+    mockedUseAddressFlags.mockReturnValue({
+        data: {
+            permissions: {} as any,
+        } as any,
+        handleSetAddressFlags: async () => {},
+    });
     mockUseFeatureBarrel({ feature: { Value: true } as any });
 
     const getFirstAddress = (container: HTMLElement) => {

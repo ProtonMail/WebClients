@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { BannerVariants } from '@proton/atoms/Banner/Banner';
-import { Banner } from '@proton/atoms/index';
+import { Banner, BannerVariants } from '@proton/atoms';
 import { TextLoader } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/crypto';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -21,6 +20,7 @@ type Props = {
     corruptedLink?: boolean;
     mimeType?: string;
     className?: string;
+    haveParentAccess: boolean;
 };
 
 export default function SignatureAlert({
@@ -33,6 +33,7 @@ export default function SignatureAlert({
     mimeType,
     isFile,
     className,
+    haveParentAccess,
     ...props
 }: Props) {
     if (loading) {
@@ -60,7 +61,8 @@ export default function SignatureAlert({
         );
     }
 
-    const validAnonymousSignature = isAnonymous && hasValidAnonymousSignature(signatureIssues, { mimeType, isFile });
+    const validAnonymousSignature =
+        isAnonymous && hasValidAnonymousSignature(signatureIssues, { mimeType, isFile, haveParentAccess });
 
     return (
         <Banner

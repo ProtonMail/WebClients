@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
-import { Alert, Checkbox, ErrorButton, useLocalState } from '@proton/components';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { Button, Href } from '@proton/atoms';
+import { Alert, Checkbox, useLocalState } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
@@ -10,7 +11,6 @@ import useFlag from '@proton/unleash/useFlag';
 
 import { NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../../constants';
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import type { MessageChange } from '../Composer';
 import ComposerAssistantSettingModal from './ComposerAssistantSettingModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
@@ -89,7 +89,7 @@ const ComposerInnerModals = ({
                     title={c('Title').t`Delete draft`}
                     onCancel={handleCloseInnerModal}
                     onSubmit={handleDelete}
-                    submitActions={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    submitActions={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
                 >
                     <Alert className="mb-4" type="error">{c('Info')
                         .t`Are you sure you want to permanently delete this draft?`}</Alert>

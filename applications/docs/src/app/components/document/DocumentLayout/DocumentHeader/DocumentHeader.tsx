@@ -24,14 +24,15 @@ import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authenticatio
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import useFlag from '@proton/unleash/useFlag'
+import clsx from '@proton/utils/clsx'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
 }
 
-export type DocsHeaderProps = { action?: DocumentAction['mode']; documentType: DocumentType }
+export type DocsHeaderProps = { actionMode?: DocumentAction['mode']; documentType: DocumentType }
 
-export function DocumentHeader({ action, documentType }: DocsHeaderProps) {
+export function DocumentHeader({ actionMode, documentType }: DocsHeaderProps) {
   const application = useApplication()
 
   const [isReady, setIsReady] = useState(false)
@@ -73,7 +74,7 @@ export function DocumentHeader({ action, documentType }: DocsHeaderProps) {
     return (
       <DocsHeaderForDocument
         documentType={documentType}
-        action={action}
+        actionMode={actionMode}
         editorController={editorController}
         documentState={documentState}
         authenticatedController={authenticatedController}
@@ -119,7 +120,7 @@ function DocsHeaderNoDocument() {
 }
 
 type DocsHeaderForDocumentProps = {
-  action?: DocumentAction['mode']
+  actionMode?: DocumentAction['mode']
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -131,7 +132,7 @@ type DocsHeaderForDocumentProps = {
  * Header shown while a document is present.
  */
 function DocsHeaderForDocument({
-  action,
+  actionMode,
   editorController,
   documentState,
   authenticatedController,
@@ -151,13 +152,16 @@ function DocsHeaderForDocument({
   )
 
   return (
-    <div className="flex flex-nowrap items-center gap-2 px-3 py-2" data-testid="docs-header">
+    <div
+      className={clsx('flex flex-nowrap items-center gap-2 px-3 py-2', documentType === 'sheet' && 'bg-[#F9FBFC]')}
+      data-testid="docs-header"
+    >
       <div className="flex flex-1 flex-nowrap items-center head-480-749:!flex-none head-max-479:!basis-auto">
         {isHomepageEnabled ? <a href={getAppHref('/', APPS.PROTONDOCS)}>{icon}</a> : icon}
 
         <DocumentTitleDropdown
           documentType={documentType}
-          action={action}
+          actionMode={actionMode}
           authenticatedController={authenticatedController}
           editorController={editorController}
           documentState={documentState}
@@ -177,6 +181,7 @@ function DocsHeaderForDocument({
           <HeaderPublicOptions
             editorController={editorController}
             documentState={documentState as PublicDocumentState}
+            documentType={documentType}
           />
         ) : (
           <>

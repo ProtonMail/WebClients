@@ -19,14 +19,13 @@ import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { useItemLoading } from '@proton/pass/hooks/useItemLoading';
 import { isItemShared, isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { BitField, type ItemType, ShareRole, SpotlightMessage } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -77,6 +76,8 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const vaults = useSelector(selectAllVaults);
     const plan = useSelector(selectPassPlan);
     const monitored = isMonitored(revision);
+    const loading = useItemLoading(revision);
+    const actionsDisabled = loading || optimistic;
 
     const org = useOrganization();
     const orgItemSharingDisabled = org?.settings.ItemShareMode === BitField.DISABLED;
@@ -92,22 +93,19 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const isOwnerOrManager = owner || shareRoleId === ShareRole.MANAGER;
 
     const hasMultipleVaults = vaults.length > 1;
-    const canMove = (!shared || owner) && hasMultipleVaults;
+    const canMove = (!shared || !readOnly) && hasMultipleVaults;
 
     const pinInFlight = useSelector(selectRequestInFlight(itemPinRequest(shareId, itemId)));
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
     const canTogglePinned = !(pinInFlight || unpinInFlight);
 
-    const itemSharingEnabled = useFeatureFlag(PassFeature.PassItemSharingV1);
-    const itemShareLinkSharingEnabled = useFeatureFlag(PassFeature.PassSecureLinkCryptoChangeV1);
-
     const accessCount = targetMembers + (revision.shareCount ?? 0);
 
     const canManage = isShareManageable(share);
     const canShare = canManage && type !== 'alias';
-    const canLinkShare = (isVault || itemShareLinkSharingEnabled) && canShare;
-    const canItemShare = itemSharingEnabled && canShare && !orgItemSharingDisabled;
-    const canManageAccess = itemSharingEnabled && shared && !readOnly;
+    const canLinkShare = canShare;
+    const canItemShare = canShare && !orgItemSharingDisabled;
+    const canManageAccess = shared && !readOnly;
     const canLeave = !isVault && !owner;
     const canMonitor = !EXTENSION_BUILD && !trashed && data.type === 'login' && !readOnly;
 
@@ -125,7 +123,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
     const monitorActions = canMonitor && (
         <DropdownMenuButton
-            disabled={optimistic}
+            disabled={actionsDisabled}
             onClick={handleToggleFlagsClick}
             icon={monitored ? 'eye-slash' : 'eye'}
             label={monitored ? c('Action').t`Exclude from monitoring` : c('Action').t`Include in monitoring`}
@@ -182,7 +180,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     key="item-quick-actions-dropdown"
                                     color="weak"
                                     shape="ghost"
-                                    disabled={optimistic}
+                                    disabled={actionsDisabled}
                                 >
                                     <DropdownMenuButton
                                         onClick={handleRestoreClick}
@@ -219,7 +217,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                 shape="solid"
                                 color="weak"
                                 onClick={handleEditClick}
-                                disabled={optimistic || readOnly}
+                                disabled={actionsDisabled || readOnly}
                             >
                                 <Icon name="pencil" className="mr-1" />
                                 <span>{c('Action').t`Edit`}</span>
@@ -236,8 +234,8 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     icon="users-plus"
                                     menuClassName="flex flex-column"
                                     dropdownHeader={c('Label').t`Share`}
-                                    disabled={!online || optimistic || disabledSharing}
-                                    badge={itemSharingEnabled && accessCount > 1 ? accessCount : undefined}
+                                    disabled={!online || actionsDisabled || disabledSharing}
+                                    badge={accessCount > 1 ? accessCount : undefined}
                                     signaled={isOwnerOrManager && signalItemSharing}
                                     dropdownSize={{
                                         height: DropdownSizeUnit.Dynamic,
@@ -296,7 +294,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                             <QuickActionsDropdown
                                 key="item-quick-actions-dropdown"
                                 color="norm"
-                                disabled={optimistic}
+                                disabled={actionsDisabled}
                                 shape="ghost"
                             >
                                 {canMove && (
@@ -304,7 +302,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         onClick={handleMoveToVaultClick}
                                         label={c('Action').t`Move to another vault`}
                                         icon="folder-arrow-in"
-                                        disabled={readOnly}
                                     />
                                 )}
 
@@ -314,7 +311,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     onClick={handlePinClick}
                                     label={pinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`}
                                     icon={pinned ? 'pin-angled-slash' : 'pin-angled'}
-                                    disabled={optimistic || !canTogglePinned}
+                                    disabled={!canTogglePinned}
                                     loading={!canTogglePinned}
                                 />
 

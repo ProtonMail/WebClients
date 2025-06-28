@@ -1,13 +1,23 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import MessageBodyIframe from '@proton/mail-renderer/components/MessageBodyIframe';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
-import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { isAutoFlaggedPhishing, isPlainText, isSuspicious } from '@proton/shared/lib/mail/messages';
+import iframeSVG from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
+
+import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPlaceholder';
+import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
+import useMessageImagesLoadError from 'proton-mail/components/message/hooks/useMessageImagesLoadError';
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
-import type { MessageState } from '../../../store/messages/messagesTypes';
-import MessageBodyIframe from '../../message/MessageBodyIframe';
+
+import iframeCSSStyles from '@proton/mail-renderer/helpers/MessageIframe.raw.scss';
 
 interface Props {
     message: MessageState;
@@ -27,7 +37,10 @@ const EOMessageBody = ({
     onBlockquoteToggle,
 }: Props) => {
     const bodyRef = useRef<HTMLDivElement>(null);
+    const [isIframeContentSet, setIsIframeContentSet] = useState(false);
     const iframeRef = useRef<HTMLIFrameElement>(null);
+    const iframeRootDivRef = useRef<HTMLDivElement>();
+    const theme = useTheme();
     const plain = isPlainText(message.data);
 
     const [content, blockquote] = useMemo(
@@ -37,6 +50,18 @@ const EOMessageBody = ({
                 : locateBlockquote(message.messageDocument?.document),
         [message.messageDocument?.document?.innerHTML, message.messageDocument?.plainText, plain]
     );
+
+    const { modal: linkModal } = useLinkHandler(iframeRootDivRef, EO_DEFAULT_MAILSETTINGS, {
+        onMailTo: noop,
+        startListening: isIframeContentSet && iframeRootDivRef.current !== undefined,
+        isOutside: false,
+        isPhishingAttempt: isAutoFlaggedPhishing(message.data) || isSuspicious(message.data),
+    });
+
+    const handleMessageImageLoadError = useMessageImagesLoadError({
+        localID: message.localID,
+        useProxy: !!EO_DEFAULT_MAILSETTINGS.ImageProxy,
+    });
 
     const encryptedMode = messageLoaded && !!message.errors?.decryption?.length;
     const sourceMode = !encryptedMode && inputSourceMode;
@@ -56,34 +81,7 @@ const EOMessageBody = ({
         >
             {encryptedMode && <pre>{message.data?.Body}</pre>}
             {sourceMode && <pre>{message.decryption?.decryptedBody}</pre>}
-            {(loadingMode || decryptingMode) && (
-                <>
-                    <div
-                        className="message-content-loading-placeholder mb-1 max-w-custom"
-                        style={{ '--max-w-custom': '8em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mb-1 max-w-custom"
-                        style={{ '--max-w-custom': '50em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mb-1 max-w-custom"
-                        style={{ '--max-w-custom': '40em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mb-1 max-w-custom"
-                        style={{ '--max-w-custom': '50em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mb-1 max-w-custom"
-                        style={{ '--max-w-custom': '15em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder max-w-custom"
-                        style={{ '--max-w-custom': '8em' }}
-                    />
-                </>
-            )}
+            {(loadingMode || decryptingMode) && <MessageBodyPlaceholder margin="small" />}
             {contentMode && (
                 <MailboxContainerContextProvider containerRef={null} elementID={undefined} isResizing={false}>
                     <MessageBodyIframe
@@ -93,13 +91,19 @@ const EOMessageBody = ({
                         showBlockquote={originalMessageMode}
                         showBlockquoteToggle={isBlockquote}
                         onBlockquoteToggle={onBlockquoteToggle}
-                        onContentLoaded={() => {}}
+                        onContentLoaded={(iframeRootDiv) => {
+                            setIsIframeContentSet(true);
+                            iframeRootDivRef.current = iframeRootDiv;
+                        }}
                         isPlainText={plain}
                         message={message}
-                        labelID=""
-                        isOutside
-                        mailSettings={EO_DEFAULT_MAILSETTINGS}
+                        onMessageImageLoadError={handleMessageImageLoadError}
+                        theme={theme}
+                        iframeCSSStyles={iframeCSSStyles}
+                        iframeSVG={iframeSVG}
                     />
+                    {linkModal}
+                    <MessageBodyPrint isPrint={false} iframeRef={iframeRef} message={message} labelID="" />
                 </MailboxContainerContextProvider>
             )}
         </div>

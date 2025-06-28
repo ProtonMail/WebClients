@@ -36,7 +36,7 @@ export function SharedWithMeContextMenu({
 
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const { showOpenInDocs } = useOpenInDocs(selectedBrowserItem);
+    const openInDocs = useOpenInDocs(selectedBrowserItem);
     const { removeMe } = useSharedWithMeActions();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
 
@@ -54,9 +54,7 @@ export function SharedWithMeContextMenu({
                                 close={close}
                             />
                         )}
-                        {isOnlyOneFileItem && showOpenInDocs && (
-                            <OpenInDocsButton selectedBrowserItem={selectedBrowserItem} close={close} />
-                        )}
+                        {isOnlyOneFileItem && openInDocs.canOpen && <OpenInDocsButton {...openInDocs} close={close} />}
                         {!hasAlbumSelected && (
                             <DownloadButton selectedBrowserItems={selectedBrowserItems} close={close} />
                         )}

@@ -3,7 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/index';
+import { useNotifications } from '@proton/components';
 import {
     queryAddAlbumPhotos,
     queryAlbumPhotos,
@@ -36,6 +36,7 @@ import { SHOULD_MIGRATE_PHOTOS_STATUS } from '../../store/_shares/useShareAction
 import { useBatchHelper } from '../../store/_utils/useBatchHelper';
 import { VolumeTypeForEvents, useVolumesState } from '../../store/_volumes';
 import { sendErrorReport } from '../../utils/errorHandling';
+import { useAlbumProgressStore } from '../../zustand/photos/addToAlbumProgress.store';
 import { useCreatePhotosWithAlbums } from './useCreatePhotosWithAlbums';
 
 export interface Album {
@@ -58,7 +59,7 @@ export interface DecryptedAlbum extends DecryptedLink {
     };
 }
 
-export const MAX_ADD_ALBUM_PHOTOS_BATCH = 100;
+export const MAX_ADD_ALBUM_PHOTOS_BATCH = 10;
 export const MAX_REMOVE_ALBUM_PHOTOS_BATCH = 10;
 
 /**
@@ -91,7 +92,7 @@ export const PhotosWithAlbumsContext = createContext<{
     loadSharedWithMeAlbums: (abortSignal: AbortSignal) => Promise<void>;
     removePhotosFromCache: (linkIds: string[]) => void;
     updateAlbumsFromCache: (linkIds: string[]) => void;
-    deletePhotosShare: () => Promise<void>;
+    deletePhotosShare: (volumeId: string, shareId: string) => Promise<void>;
     updatePhotoFavoriteFromCache: (linkId: string, isFavorite: boolean) => void;
     addNewAlbumPhotoToCache: (
         abortSignal: AbortSignal,
@@ -122,6 +123,7 @@ export enum MIGRATION_STATUS {
     MIGRATING = 'migrating',
     MIGRATED = 'migrated',
 }
+
 export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const [photosShare, setPhotosShare] = useState<ShareWithKey>();
     const shareId = photosShare?.shareId;
@@ -148,16 +150,34 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { updatePhotoLinkTags } = useLinksState();
     const { setVolumeShareIds } = useVolumesState();
     const { shouldMigratePhotos, migratePhotos } = useShareActions();
+    const eventAbortController = useRef<AbortController | undefined>(undefined);
+    const albumProgress = useAlbumProgressStore();
 
     const { createNotification } = useNotifications();
+
+    // we will need the photosShare for loadAlbum and loadPhotos
+    // the only other way to populate it would be with startPhotosMigration
+    // but we don't want to call it outside of the photos section
+    useEffect(() => {
+        void getDefaultPhotosShare().then((defaultPhotosShare) => {
+            setPhotosShare(defaultPhotosShare);
+        });
+    }, []);
 
     const startPhotosMigration = useCallback(async () => {
         const signal = new AbortController().signal;
         const status = await shouldMigratePhotos();
+        // eslint-disable-next-line no-console
+        console.info('Photo migration status:', status);
         let result;
         let newPhotosShare;
         if (status === SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATED) {
-            const defaultPhotosShare = await getDefaultPhotosShare();
+            let defaultPhotosShare = await getDefaultPhotosShare();
+            if (!defaultPhotosShare) {
+                // Furce=true to re-fetch the share in case the local state is outdated.
+                // It can happen after recovery process depending on timing and user action.
+                defaultPhotosShare = await getDefaultPhotosShare(signal, true);
+            }
             if (!defaultPhotosShare) {
                 throw new Error('No default photos share found');
             }
@@ -466,7 +486,15 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                         })
                     );
                     setAlbums((prevAlbums) => {
-                        const newAlbums = new Map(prevAlbums);
+                        const newAlbums = new Map(
+                            // We need Array.from as filter on map iterator is very new and not supported in all browsers yet
+                            Array.from(prevAlbums.entries()).filter(([, album]) => {
+                                // Filter out albums that are not in the current volume,
+                                // that is only own albums. All new shared albums will be
+                                // set via newDecryptedAlbums.
+                                return album.volumeId === volumeId;
+                            })
+                        );
                         newDecryptedAlbums.forEach((album) => {
                             if (album !== undefined) {
                                 newAlbums.set(album.linkId, album);
@@ -487,16 +515,18 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     );
 
     useEffect(() => {
-        const abortController = new AbortController();
         const unsubscribe = driveEventManager.eventHandlers.subscribeToCore((event) => {
             if (event.DriveShareRefresh?.Action === 2) {
-                loadSharedWithMeAlbums(abortController.signal, true).catch(sendErrorReport);
+                if (eventAbortController.current) {
+                    eventAbortController.current.abort();
+                }
+                eventAbortController.current = new AbortController();
+                loadSharedWithMeAlbums(eventAbortController.current.signal, true).catch(sendErrorReport);
             }
         });
 
         return () => {
             unsubscribe();
-            abortController.abort();
         };
     }, [loadSharedWithMeAlbums, driveEventManager.eventHandlers]);
 
@@ -557,7 +587,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             };
 
             const addPhotoToInfoMap = async (link: DecryptedLink, mainPhotoLinkId?: string) => {
-                const { Hash, Name, NodePassphrase, NodePassphraseSignature } = await getPhotoCloneForAlbum(
+                const { Hash, Name, NodePassphrase } = await getPhotoCloneForAlbum(
                     abortSignal,
                     albumShareId,
                     link.rootShareId,
@@ -570,14 +600,15 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 }
 
                 linksInfoForAlbum.set(link.linkId, {
+                    // TODO: payload doesnt include NodePassphraseSignature and SignatureEmail
+                    // for anoanymous photos. Public sharing is not supported yet, so that is
+                    // fine, but must be implemented once enabled.
                     payload: {
                         LinkID: link.linkId,
                         Hash,
                         Name,
                         NodePassphrase,
-                        NodePassphraseSignature,
                         NameSignatureEmail: link.nameSignatureEmail,
-                        SignatureEmail: link.signatureEmail,
                         ContentHash: link.activeRevision?.photo?.contentHash,
                     },
                     albumPhoto: !mainPhotoLinkId ? getAlbumPhotoFromLink(link) : undefined,
@@ -596,8 +627,10 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     await runInQueue(relatedPhotosQueue, MAX_THREADS_PER_REQUEST);
                 }
             };
-
+            albumProgress.setStatus('in-progress');
+            albumProgress.setTotal(linkIDs.length);
             const queue = linkIDs.map((linkId) => async () => {
+                albumProgress.incrementAdded();
                 if (abortSignal.aborted) {
                     return;
                 }
@@ -615,23 +648,57 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             abortSignal: AbortSignal,
             volumeId: string,
             albumLinkId: string,
-            linksInfoForAlbum: Map<string, any>
+            linksInfoForAlbum: Map<
+                string,
+                {
+                    payload: PhotoDataForAddToAlbumPayload;
+                    albumPhoto: AlbumPhoto | undefined;
+                }
+            >
         ) => {
+            let addedLinkIds: string[] = [];
+
             const result = await batchAPIHelper(abortSignal, {
                 linkIds: [...linksInfoForAlbum.keys()],
                 batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
                 ignoredCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
                 query: async (batchLinkIds) => {
-                    const links = await Promise.all(
-                        batchLinkIds.map(async (linkId) => linksInfoForAlbum.get(linkId)?.payload)
-                    );
+                    let linksPayloads = [];
+                    for (const linkId of batchLinkIds) {
+                        if (addedLinkIds.includes(linkId)) {
+                            continue;
+                        }
+                        const linkInfo = linksInfoForAlbum.get(linkId);
+                        if (linkInfo) {
+                            linksPayloads.push(linkInfo.payload);
+                            addedLinkIds.push(linkId);
 
-                    return queryAddAlbumPhotos(volumeId, albumLinkId, {
-                        AlbumData: links.filter(isTruthy),
-                    });
+                            // All the related photos must be together with the main
+                            // photo in one batch request.
+                            // Backend has high limit of batch size, so we can simply
+                            // include all related photos in the payload.
+                            // It would be good to improve this in the future to avoid
+                            // creating huge payloads by sending just one photo with
+                            // all related photos in one request if its more than the
+                            // batch size.
+                            linkInfo.albumPhoto?.relatedPhotos.forEach((relatedPhoto) => {
+                                const relatedLinkInfo = linksInfoForAlbum.get(relatedPhoto.linkId);
+                                if (relatedLinkInfo) {
+                                    linksPayloads.push(relatedLinkInfo.payload);
+                                    addedLinkIds.push(relatedPhoto.linkId);
+                                }
+                            });
+                        }
+                    }
+
+                    if (linksPayloads.length) {
+                        return queryAddAlbumPhotos(volumeId, albumLinkId, {
+                            AlbumData: linksPayloads,
+                        });
+                    }
                 },
             });
-
+            albumProgress.setStatus('done');
             return {
                 successes: result.successes,
                 failures: result.failures,
@@ -653,7 +720,8 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (nbFailures) {
                 createNotification({
                     type: 'error',
-                    text: c('Notification').t`⁠Some photo(s) could not be added to "${albumName}"`,
+                    text: c('Notification').t`Some photo(s) could not be added to "${albumName}"`,
+                    preWrap: true,
                 });
             }
 
@@ -661,6 +729,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 createNotification({
                     type: 'success',
                     text: c('Notification').t`Your photo(s) have been added to "${albumName}"`,
+                    preWrap: true,
                 });
             }
 
@@ -668,6 +737,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 createNotification({
                     type: 'info',
                     text: c('Notification').t`Selected photo(s) already in "${albumName}"`,
+                    preWrap: true,
                 });
             }
         },
@@ -940,12 +1010,12 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         });
     }, []);
 
-    const deletePhotosShare = useCallback(async (): Promise<void> => {
-        if (!volumeId || !shareId) {
-            return;
-        }
-        await request(queryDeletePhotosShare(volumeId, shareId));
-    }, [request, volumeId, shareId]);
+    const deletePhotosShare = useCallback(
+        async (volumeId: string, shareId: string): Promise<void> => {
+            await request(queryDeletePhotosShare(volumeId, shareId));
+        },
+        [request]
+    );
 
     const deleteAlbum = useCallback(
         async (abortSignal: AbortSignal, albumLinkId: string, force: boolean): Promise<void> => {
@@ -985,13 +1055,15 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (nbFailures) {
                 createNotification({
                     type: 'error',
-                    text: c('Notification').t`⁠Some photo(s) could not be removed from ${albumLink.name}`,
+                    text: c('Notification').t`Some photo(s) could not be removed from ${albumLink.name}`,
+                    preWrap: true,
                 });
             }
             if (nbSuccesses) {
                 createNotification({
                     type: 'success',
-                    text: c('Notification').t`⁠Your photo(s) have been removed from ${albumLink.name}`,
+                    text: c('Notification').t`Your photo(s) have been removed from ${albumLink.name}`,
+                    preWrap: true,
                 });
             }
 

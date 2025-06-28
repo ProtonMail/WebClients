@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { deleteDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms';
-import ErrorButton from '@proton/components/components/button/ErrorButton';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -37,12 +36,13 @@ const DeleteDomainModal = ({ domain, ...rest }: Props) => {
         <Prompt
             title={c('Delete domain prompt').t`Delete domain?`}
             buttons={[
-                <ErrorButton
+                <Button
+                    color="danger"
                     onClick={() => {
                         withLoading(handleConfirmDelete()).catch(handleError);
                     }}
                     loading={loading}
-                >{c('Delete domain prompt').t`Delete`}</ErrorButton>,
+                >{c('Delete domain prompt').t`Delete`}</Button>,
                 <Button onClick={rest.onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}

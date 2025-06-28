@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { Icon, useNotifications } from '@proton/components/index';
+import { Button } from '@proton/atoms';
+import { Icon, useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';

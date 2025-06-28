@@ -46,6 +46,9 @@
       "Add domain": [
         "Etki alanı ekle"
       ],
+      "Add field": [
+        "Alan ekle"
+      ],
       "Add forwarding mailbox": [
         "İletme e-posta kutusu ekle"
       ],
@@ -400,14 +403,17 @@
       "Move to another vault": [
         "Başka bir kasaya taşı"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Çöpe at"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Çöpe at"
       ],
       "Multiple select": [
         "Çoklu seçim"
+      ],
+      "Next month": [
+        "Sonraki ay"
       ],
       "No expired links": [
         "Geçerlilik süresi geçmiş bir bağlantı yok"
@@ -433,17 +439,26 @@
       "Pause monitoring": [
         "İzlemeyi duraklat"
       ],
+      "Pay once": [
+        "Bir kez ödeyin"
+      ],
       "Pin item": [
         "Ögeyi sabitle"
       ],
       "Please retry": [
         "Lütfen yeniden deneyin"
       ],
+      "Previous month": [
+        "Önceki ay"
+      ],
       "Re-verify": [
         "Yeniden doğrula"
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
+      ],
+      "Read More": [
+        "Devamını oku"
       ],
       "Refresh the page": [
         "Sayfayı yenile"
@@ -529,9 +544,6 @@
       "See members": [
         "Üyeleri görüntüle"
       ],
-      "Select": [
-        "Seçin"
-      ],
       "Send email": [
         "E-posta gönder"
       ],
@@ -565,17 +577,26 @@
       "Show advanced options": [
         "Gelişmiş seçenekleri görüntüle"
       ],
+      "Show Less": [
+        "Daha az görüntüle"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } ile oturum aç"
       ],
       "Sign out": [
         "Oturumu kapat"
       ],
+      "Skip": [
+        "Atla"
+      ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Birisi sizinle ${ PASS_APP_NAME } üzerinde bir öge paylaştı."
       ],
       "Sort vault items": [
         "Kasa ögelerini sırala"
+      ],
+      "Start from scratch": [
+        "Sıfırdan başla"
       ],
       "Submit": [
         "Gönder"
@@ -793,9 +814,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } dosyası işlenemedi. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Error] bir öge işlenemedi"
-      ],
       "A domain ownership must be verified first.": [
         "Önce bir etki alanının sahipliği doğrulanmalıdır."
       ],
@@ -825,9 +843,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ikinci parolanızı yazın"
-      ],
-      "Biometric authentication failed": [
-        "Biyometrik doğrulama yapılamadı"
       ],
       "Cannot send invitation at the moment": [
         "Davetiye şu anda gönderilemiyor",
@@ -1041,8 +1056,8 @@
       "File does not match expected format": [
         "Dosya beklenen biçimde değil"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "\"${ vaultData.name }\" kasası içine aktarılamadı: ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "\"${ vaultData.name }\" kasası içe aktarılamadı: ${ errorMessage }"
       ],
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
@@ -1157,6 +1172,9 @@
       ],
       "Unsupported 1Password file format": [
         "Desteklenmeyen 1Password dosya biçimi"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Desteklenmeyen Bitwarden dosya biçimi"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası güncellenemedi"
@@ -1282,8 +1300,9 @@
         "${ count } görüntülenme",
         "${ count } görüntülenme"
       ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } görüntüleme"
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } görüntülenme",
+        "${ count }/${ maxReads } görüntülenme"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } iletildi",
@@ -1488,9 +1507,6 @@
       ],
       "Change your password": [
         "Parolanızı değiştirin"
-      ],
-      "Choose your preferred look and feel.": [
-        "Kullanmak istediğiniz görünüm ve duyguyu seçin."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Kaldırma işlemini tamamlamak için ek parolanızı doğrulayın."
@@ -1782,9 +1798,6 @@
       ],
       "Low Priority": [
         "Düşük Öncelik"
-      ],
-      "Make it your own": [
-        "Size özel yapın"
       ],
       "Manager": [
         "Yönetici"
@@ -2231,6 +2244,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "İçe aktarılan verilerinizi gözden geçirmek için tarayıcınızın araç çubuğundaki ${ PASS_APP_NAME } simgesine tıklayın."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Dünya çapında 50.000 üzerinde kurumsal kullanıcı ve 100 milyon hesap tarafından güveniliyor."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
       ],
@@ -2310,6 +2326,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunu içe aktarmak ister misiniz?",
         "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunları içe aktarmak ister misiniz?"
+      ],
+      "Week": [
+        "Hafta"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "${ email } adresine bir doğrulama kodu gönderdik. Lütfen kodu aşağıya yazın:"
@@ -2518,6 +2537,12 @@
       "Account": [
         "Hesap"
       ],
+      "Account Number": [
+        "Hesap numarası"
+      ],
+      "Account Type": [
+        "Hesap türü"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Bu etki alanı için yeni bir takma ad oluşturulurken rastgele bir ön ek ekler."
       ],
@@ -2526,6 +2551,9 @@
       ],
       "Additional details": [
         "Ek bilgiler"
+      ],
+      "Address": [
+        "Adres"
       ],
       "Address details": [
         "Adres bilgileri"
@@ -2554,6 +2582,12 @@
       "Always show username field": [
         "Kullanıcı adı alanı her zaman görüntülensin"
       ],
+      "API Credential": [
+        "API kimlik doğrulama bilgisi"
+      ],
+      "API Key": [
+        "API anahtarı"
+      ],
       "Application logs": [
         "Uygulama günlüğü"
       ],
@@ -2563,6 +2597,12 @@
       "Backup password": [
         "Yedek parola"
       ],
+      "Bank Account": [
+        "Banka hesabı"
+      ],
+      "Bank Name": [
+        "Banka adı"
+      ],
       "Beta Access": [
         "Beta erişimi"
       ],
@@ -2571,6 +2611,12 @@
       ],
       "Birthdate": [
         "Doğum tarihi"
+      ],
+      "Browse faster, smarter": [
+        "Daha hızlı ve akıllıca gezinin"
+      ],
+      "Built-in 2FA": [
+        "Yerleşik iki adımlı doğrulama"
       ],
       "Capital letters (A-Z)": [
         "Büyük harfler (A-Z)"
@@ -2590,8 +2636,20 @@
       "Catch-All": [
         "Tümünü toplama"
       ],
+      "Checkbox": [
+        "İşaret kutusu"
+      ],
+      "Choose unlock method": [
+        "Kilit açma yöntemini seçin"
+      ],
+      "Choose your preferred look and feel.": [
+        "Kullanmak istediğiniz görünüm ve duyguyu seçin."
+      ],
       "City": [
         "İl"
+      ],
+      "Class": [
+        "Sınıf"
       ],
       "Code": [
         "Kod"
@@ -2614,6 +2672,9 @@
       "Copy": [
         "Kopyala"
       ],
+      "Country": [
+        "Ülke"
+      ],
       "Country or Region": [
         "Ülke ya da bölge"
       ],
@@ -2622,6 +2683,9 @@
       ],
       "Create a credit card": [
         "Kredi kartı ekle"
+      ],
+      "Create a custom item": [
+        "Özel öge oluştur"
       ],
       "Create a hide-my-email alias": [
         "Bir hide-my-email takma adı oluştur"
@@ -2641,20 +2705,29 @@
       "Create new vault": [
         "Yeni kasa oluştur"
       ],
-      "Created": [
-        "Oluşturulma"
-      ],
       "Created at": [
         "Oluşturulma tarihi"
       ],
-      "Custom hidden field": [
-        "Özel gizli alan"
+      "Credit cards": [
+        "Kredi kartları"
       ],
-      "Custom text field": [
-        "Özel metin alanı"
+      "Crypto Wallet": [
+        "Kripto cüzdan"
+      ],
+      "Custom Items": [
+        "Özel ögeler"
+      ],
+      "Database": [
+        "Veri tabanı"
+      ],
+      "Database Type": [
+        "Veri tabanı türü"
       ],
       "Date": [
         "Tarih"
+      ],
+      "Date of Birth": [
+        "Doğum tarihi"
       ],
       "Device": [
         "Aygıt"
@@ -2667,6 +2740,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Doktor"
       ],
       "Domain": [
         "Etki alanı"
@@ -2682,6 +2758,9 @@
       ],
       "Download logs": [
         "Günlüğü indir"
+      ],
+      "Driver License": [
+        "Sürücü belgesi"
       ],
       "Email": [
         "E-posta"
@@ -2713,8 +2792,17 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
+      "Expiry Date": [
+        "Son geçerlilik tarihi"
+      ],
       "Export": [
         "Dışa aktar"
+      ],
+      "Extra email addresses": [
+        "Ek e-posta adresleri"
+      ],
+      "Extra fields": [
+        "Ek alanlar"
       ],
       "Extra password": [
         "Ek parola"
@@ -2728,8 +2816,14 @@
       "Field name": [
         "Alan adı"
       ],
+      "File attachments": [
+        "Ek dosyalar"
+      ],
       "File format": [
         "Dosya biçimi"
+      ],
+      "Finance": [
+        "Finans"
       ],
       "First name": [
         "Ad"
@@ -2740,8 +2834,14 @@
       "For a one-off sharing": [
         "Bir kerelik paylaşım için"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Güvenlik nedeniyle, ${ PASS_SHORT_APP_NAME } üzerinde 10 dakika boyunca bir işlem yapılmazsa otomatik olarak kendini kilitler."
+      ],
       "Forwards to": [
         "Şuraya iletiyor"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Sonsuza kadar ücretsiz"
@@ -2758,8 +2858,17 @@
       "Generic CSV": [
         "CSV dosyası"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus edinin"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "${ PASS_SHORT_APP_NAME } Unlimited edinin"
+      ],
       "Get Started": [
         "Başlayalım"
+      ],
+      "Get the extension for your browser.": [
+        "Tarayıcınıza uygun eklentiyi edinin."
       ],
       "Grant": [
         "İzin ver"
@@ -2770,8 +2879,32 @@
       "Hide password": [
         "Parolayı gizle"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email takma adları"
+      ],
+      "Highest": [
+        "En yüksek"
+      ],
+      "Holder Name": [
+        "Kart üzerindeki ad"
+      ],
+      "Hospital": [
+        "Hastane"
+      ],
+      "Host": [
+        "Sunucu"
+      ],
+      "Hostname": [
+        "Sunucu adı"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME } kilidi nasıl açılır"
+      ],
       "https://example.com": [
         "https://ornek.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Kimlik kartı"
@@ -2809,8 +2942,26 @@
       "Instagram handle": [
         "Instagram kullanıcı adı"
       ],
+      "Install and continue": [
+        "Kur ve ilerle"
+      ],
+      "Install extension": [
+        "Eklentiyi kur"
+      ],
       "Invitations": [
         "Davetler"
+      ],
+      "IP Address": [
+        "IP adresi"
+      ],
+      "Issuing Authority": [
+        "Veren makam"
+      ],
+      "Issuing Country": [
+        "Veren ülke"
+      ],
+      "Issuing State/Country": [
+        "Verildiği il/ülke"
       ],
       "Item ID": [
         "Öge kimliği"
@@ -2820,6 +2971,12 @@
       ],
       "Key": [
         "Anahtar"
+      ],
+      "Key fingerprint": [
+        "Anahtar parmak izi"
+      ],
+      "Key type": [
+        "Anahtar türü"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klavye kısayolu: ${ shortcut }"
@@ -2851,8 +3008,17 @@
       "License": [
         "Ehliyet"
       ],
+      "License Key": [
+        "Lisans anahtarı"
+      ],
       "License number": [
         "Ehliyet numarası"
+      ],
+      "License Number": [
+        "Ehliyet numarası"
+      ],
+      "Limited time": [
+        "Sınırlı süreli"
       ],
       "LinkedIn account": [
         "LinkedIn hesabı"
@@ -2878,11 +3044,35 @@
       "Make all viewers": [
         "Tümünü izleyici yap"
       ],
+      "Make it your own.": [
+        "Size özel yapın."
+      ],
       "max views reached": [
         "en fazla görüntülenme sayısına ulaşılmış"
       ],
+      "Medical Conditions": [
+        "Tıbbi durumlar"
+      ],
+      "Medical Record": [
+        "Sağlık kaydı"
+      ],
+      "Medications": [
+        "İlaçlar"
+      ],
+      "Member ID": [
+        "Üye kimliği"
+      ],
+      "Member Name": [
+        "Üye adı"
+      ],
       "Members": [
         "Üyeler"
+      ],
+      "Membership": [
+        "Üyelik"
+      ],
+      "Membership ID": [
+        "Üyelik kimliği"
       ],
       "Middle name": [
         "İkinci ad"
@@ -2899,11 +3089,17 @@
       "Name": [
         "Ad"
       ],
+      "Name (SSID)": [
+        "Ağ adı (SSID)"
+      ],
       "Name on card": [
         "Kart üzerindeki isim"
       ],
       "Need help?": [
         "Yardım mı gerekiyor?"
+      ],
+      "Network": [
+        "Ağ"
       ],
       "New": [
         "Yeni"
@@ -2953,8 +3149,20 @@
       "Open-source password manager for effortless protection.": [
         "Kolay koruma için açık kaynaklı parola yöneticisi."
       ],
+      "Operating System": [
+        "İşletim sistemi"
+      ],
       "Organization": [
         "Kuruluş"
+      ],
+      "Organization Name": [
+        "Kuruluş adı"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Owner": [
+        "Sahibi"
       ],
       "Passkey": [
         "Geçiş anahtarı"
@@ -2965,6 +3173,9 @@
       "Passport": [
         "Pasaport"
       ],
+      "Passport Number": [
+        "Pasaport numarası"
+      ],
       "Passport number": [
         "Pasaport numarası"
       ],
@@ -2974,11 +3185,23 @@
       "Password history": [
         "Parola geçmişi"
       ],
+      "Patient Name": [
+        "Hasta adı"
+      ],
+      "Permissions": [
+        "İzinler"
+      ],
+      "Personal": [
+        "Kişisel"
+      ],
       "Personal details": [
         "Kişisel bilgiler"
       ],
       "Personal website": [
         "Kişisel site"
+      ],
+      "Personalize": [
+        "Kişiselleştir"
       ],
       "PGP-encrypted (recommended)": [
         "PGP ile şifrelenmiş (önerilir)"
@@ -2992,6 +3215,15 @@
       "PIN code": [
         "PIN kodu"
       ],
+      "Plus": [
+        "Plus"
+      ],
+      "Points Balance": [
+        "Puan bakiyesi"
+      ],
+      "Port": [
+        "Bağlantı noktası"
+      ],
       "Prefix": [
         "Ön ek"
       ],
@@ -3001,17 +3233,35 @@
       "Priority:": [
         "Öncelik:"
       ],
+      "Private key": [
+        "Kişisel anahtar"
+      ],
+      "Private Key": [
+        "Kişisel anahtar"
+      ],
+      "Product": [
+        "Ürün"
+      ],
+      "Program Name": [
+        "Program adı"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "${ PASS_APP_NAME } uygulamasını ek parola ile koruyun"
       ],
       "Public domain": [
         "Herkese açık etki alanı"
       ],
+      "Public key": [
+        "Herkese açık anahtar"
+      ],
       "Rate us": [
         "Bizi değerlendirin"
       ],
       "Recent": [
         "Son"
+      ],
+      "Record Number": [
+        "Kayıt numarası"
       ],
       "Reddit handle": [
         "Reddit takma adı"
@@ -3028,8 +3278,17 @@
       "Reveal password": [
         "Parolayı görüntüle"
       ],
+      "Reward Program": [
+        "Ödül programı"
+      ],
+      "Routing Number": [
+        "Şube kodu"
+      ],
       "Second password": [
         "İkinci parola"
+      ],
+      "Secret": [
+        "Parola"
       ],
       "Secure links": [
         "Güvenli bağlantılar"
@@ -3046,6 +3305,9 @@
       "See member and permission overview": [
         "Üye ve izin özetini görüntüleyin"
       ],
+      "Seed Phrase": [
+        "Tohum ifadesi"
+      ],
       "Select a domain": [
         "Bir etki alanı seçin"
       ],
@@ -3058,14 +3320,26 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "SimpleLogin takma adlarının içe aktarılacağı kasayı seçin"
       ],
+      "Select theme": [
+        "Tema seçin"
+      ],
       "Select your password manager": [
         "Parola yöneticinizi seçin"
+      ],
+      "Select your theme": [
+        "Temayı seçin"
       ],
       "Selected": [
         "Seçilmiş"
       ],
+      "Server": [
+        "Sunucu"
+      ],
       "Share": [
         "Paylaş"
+      ],
+      "Share ID": [
+        "Paylaşım kimliği"
       ],
       "Shared": [
         "Paylaşılmış"
@@ -3085,17 +3359,32 @@
       "Social security": [
         "Sosyal güvenlik"
       ],
+      "Social Security": [
+        "Sosyal güvenlik"
+      ],
       "Social security number": [
         "Sosyal güvenlik numarası"
       ],
+      "Software license": [
+        "Yazılım lisansı"
+      ],
       "Special characters (!&*)": [
         "Özel karakterler (!&*)"
+      ],
+      "SSH key": [
+        "SSH anahtarı"
+      ],
+      "SSN": [
+        "SGN"
       ],
       "State or province": [
         "İl ya da bölge"
       ],
       "Status": [
         "Durum"
+      ],
+      "Storage": [
+        "Depolama alanı"
       ],
       "Street address": [
         "Sokak adresi"
@@ -3112,6 +3401,9 @@
       "Support": [
         "Destek"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Takma adları SimpleLogin ile eşitle"
       ],
@@ -3121,8 +3413,14 @@
       "Tax number": [
         "Vergi numarası"
       ],
+      "Technology": [
+        "Teknoloji"
+      ],
       "Text": [
         "Metin"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Tek bir abonelikle en iyi ${ BRAND_NAME } hizmetleri"
       ],
       "The URL has been copied to the clipboard": [
         "Adres panoya kopyalandı"
@@ -3132,6 +3430,12 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Bu ögeye ${ date } tarihine kadar veya görüntüleme sayısı sınırına ulaşılana kadar erişilebilir."
+      ],
+      "Tier/Level": [
+        "Sınıf/Düzey"
+      ],
+      "Tier/Status": [
+        "Kademe/Durum"
       ],
       "Title": [
         "Başlık"
@@ -3157,6 +3461,12 @@
       "Unknown": [
         "Bilinmiyor"
       ],
+      "Unlimited": [
+        "Sınırsız"
+      ],
+      "Unlock premium features": [
+        "Ücretli özelliklere erişin"
+      ],
       "Unlock with": [
         "Kilit şununla açılsın:"
       ],
@@ -3166,6 +3476,9 @@
       "Unnamed Credit Card": [
         "Adsız kredi kartı"
       ],
+      "Unnamed custom item": [
+        "Adlandırılmamış özel öge"
+      ],
       "Unnamed identity": [
         "Adsız kimlik"
       ],
@@ -3174,6 +3487,15 @@
       ],
       "Unnamed note": [
         "Adsız not"
+      ],
+      "Unnamed SSH key": [
+        "Adlandırılmamış SSH anahtarı"
+      ],
+      "Unnamed WiFi item": [
+        "Adlandırılmamış kablosuz ağ ögesi"
+      ],
+      "Unspecified": [
+        "Belirtilmemiş"
       ],
       "Untitled": [
         "Adsız"
@@ -3196,6 +3518,9 @@
       "Vault ID": [
         "Kasa kimliği"
       ],
+      "Vault, item & link sharing": [
+        "Kasa, öge ve bağlantı paylaşımı"
+      ],
       "Vaults": [
         "Kasalar"
       ],
@@ -3205,8 +3530,17 @@
       "View logs": [
         "Günlüğü görüntüle"
       ],
+      "VPN Devices": [
+        "VPN aygıtları"
+      ],
+      "VPN Speed": [
+        "VPN hızı"
+      ],
       "Vulnerable": [
         "Çok zayıf"
+      ],
+      "Wallet Name": [
+        "Cüzdan adı"
       ],
       "Weak": [
         "Zayıf"
@@ -3216,6 +3550,12 @@
       ],
       "Websites": [
         "Siteler"
+      ],
+      "What's included": [
+        "Neler bulunuyor"
+      ],
+      "WiFi network": [
+        "Kablosuz ağ"
       ],
       "Work details": [
         "İş bilgileri"
@@ -3235,8 +3575,14 @@
       "You are about to create": [
         "Şunu oluşturmak üzeresiniz"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Kilidi açmak için PIN kodunuzu, biyometrik verilerinizi veya hesap parolanızı kullanmayı seçebilirsiniz."
+      ],
       "Your domain": [
         "Etki alanınız"
+      ],
+      "Your passwords. Everywhere.": [
+        "Parolalarınız yalnızca sizin. Her yerde."
       ],
       "ZIP": [
         "ZIP"
@@ -3259,6 +3605,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } özelliğini aç"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3424,6 +3775,14 @@
         "Daha iyi bir düzen için ögelere dosyalar ekleyebilirsiniz"
       ]
     },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime ${ plusLifetimePrice } ile"
+      ],
+      "${ price }/month": [
+        "${ price }/ay"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "İki adımlı doğrulama gizli anahtarı ekle"
@@ -3434,6 +3793,18 @@
       "Add note": [
         "Not ekle"
       ],
+      "Add password": [
+        "Parola ekle"
+      ],
+      "Add private key": [
+        "Kişisel anahtar ekle"
+      ],
+      "Add public key": [
+        "Herkese açık anahtar ekle"
+      ],
+      "Add SSID": [
+        "SSID ekle"
+      ],
       "Add text": [
         "Metin ekle"
       ],
@@ -3442,6 +3813,9 @@
       ],
       "Coupon": [
         "Kupon"
+      ],
+      "E.g., ": [
+        "Örneğin, "
       ],
       "Email address": [
         "E-posta adresi"
@@ -3473,8 +3847,8 @@
       "my-domain.com": [
         "etki-alanim.com"
       ],
-      "Name to display when sending an email": [
-        "Bir e-posta gönderirken görüntülenecek ad"
+      "Name displayed in emails": [
+        "E-postalarda görüntülecek ad"
       ],
       "Note from SimpleLogin": [
         "SimpleLogin notu"
@@ -3509,6 +3883,9 @@
       "Select a suffix": [
         "Bir son ek yazın"
       ],
+      "Select option": [
+        "Seçenek seçin"
+      ],
       "Unknown origin": [
         "Kaynak bilinmiyor"
       ],
@@ -3517,9 +3894,6 @@
       ],
       "Used on ${ url }": [
         "${ url } üzerinde kullanılmış"
-      ],
-      "Write your note": [
-        "Notunuzu yazın"
       ]
     },
     "Security Center - Info": {
@@ -3682,8 +4056,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adresleri"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Hesap koruması"
@@ -3824,6 +4204,9 @@
       "Enter coupon code": [
         "Kupon kodunu yazın"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "${ BRAND_NAME } parolanızı yazın"
+      ],
       "Enter your backup password": [
         "Yedek parolanızı yazın"
       ],
@@ -3905,6 +4288,9 @@
       "Members": [
         "Üyeler"
       ],
+      "Minicalendar": [
+        "Mini takvim"
+      ],
       "Modified": [
         "Değiştirilme"
       ],
@@ -3957,6 +4343,9 @@
       ],
       "Pause monitoring?": [
         "İzleme durdurulsun mu?"
+      ],
+      "Pay once, access forever.": [
+        "Bir kere ödeyin, ömür boyu kullanın."
       ],
       "Pending access confirmation": [
         "Bekleyen erişme izni onayı"
@@ -4130,6 +4519,11 @@
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Bugün"
+      ]
+    },
     "Tooltip": {
       "Not all information listed here was exposed for all users.": [
         "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmemiştir."
@@ -4151,9 +4545,6 @@
       "OTP secret or URI is invalid": [
         "Tek kullanımlık parola kodu ya da adresi geçersiz"
       ],
-      "OTP secret or URI required": [
-        "Tek kullanımlık parola kodu ya da adresi gerekli"
-      ],
       "Section name cannot be empty": [
         "Bölüm adı boş olamaz"
       ],
@@ -4165,6 +4556,12 @@
       ],
       "URL is invalid": [
         "Adres geçersiz"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Ögeyi şuraya taşı",
+        "Ögeleri şuraya taşı"
       ]
     },
     "Warning": {
@@ -4280,9 +4677,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Kuruluş dışından e-posta adreslerinin davet edilmesine izin verilmiyor."
-      ],
-      "item was imported without custom fields": [
-        "öge özel alanlar olmadan ie aktarılmış"
       ],
       "Maximum length is ${ maxLength } character": [
         "En fazla uzunluk ${ maxLength } karakter",

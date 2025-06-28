@@ -9,7 +9,7 @@ import DropdownActions from '@proton/components/components/dropdown/DropdownActi
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import FiltersUpsellModal from '@proton/components/components/upsell/modal/types/FiltersUpsellModal';
+import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -72,19 +72,23 @@ function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props
 
     const editAction: DropdownActionProps = {
         text: c('Action').t`Edit`,
+        label: c('Action').t`Edit filter “${Name}”`,
         onClick: handleEdit(),
     };
     const editSieveAction: DropdownActionProps = {
         text: c('Action').t`Edit sieve`,
+        label: c('Action').t`Edit sieve filter “${Name}”`,
         onClick: handleEdit('sieve'),
     };
     const applyFilterAction: DropdownActionProps = {
         text: c('Action').t`Apply to existing messages`,
+        label: c('Action').t`Apply filter “${Name}” to existing messages`,
         onClick: () => setApplyFilterModalOpen(true),
     };
 
     const deleteFilterAction: DropdownActionProps = {
         text: c('Action').t`Delete`,
+        label: c('Action').t`Delete filter “${Name}”`,
         actionType: 'delete',
         onClick: () => setDeleteFilterModalOpen(true),
     };

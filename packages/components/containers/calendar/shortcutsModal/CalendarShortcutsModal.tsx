@@ -10,7 +10,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import ShortcutsSectionView from '@proton/components/components/shortcuts/ShortcutsSectionView';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';

@@ -1,6 +1,5 @@
 import type { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
@@ -27,16 +26,15 @@ import {
     getProtectDevices,
     getStreaming,
 } from '@proton/components/containers/payments/features/vpn';
-import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
+import { ApplePayButton, ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
-import type { BillingAddress, ExtendedTokenPayment, TokenPayment } from '@proton/payments';
+import type { BillingAddress, ExtendedTokenPayment, PaymentProcessorHook, TokenPayment } from '@proton/payments';
 import {
     CYCLE,
     type Currency,
@@ -49,11 +47,13 @@ import {
     type PlanIDs,
     type StrictPlan,
     getBillingAddressStatus,
+    getHas2024OfferCoupon,
+    getIsVpnPlan,
     getPaymentsVersion,
+    getPlanFromPlanIDs,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { getHas2024OfferCoupon, getIsVpnPlan } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
@@ -66,9 +66,8 @@ import {
 import type { RequiredCheckResponse, SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
@@ -81,6 +80,7 @@ import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
 import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
+import { AccountFormDataContextProvider } from '../signupCtx/context/accountData/AccountFormDataContext';
 import type { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import AccountStepDetails from '../single-signup-v2/AccountStepDetails';
 import DiscountBanner from '../single-signup-v2/DiscountBanner';
@@ -97,6 +97,7 @@ import type { Background } from './Layout';
 import Layout from './Layout';
 import PaymentSummary from './PaymentSummary';
 import RightPlanSummary from './RightPlanSummaryB';
+import SignIntoLink from './SignIntoLink';
 import UpsellModal from './UpsellModal';
 import VPNPassUpsellToggle from './VPNPassUpsellButton';
 import swissFlag from './flag.svg';
@@ -129,6 +130,15 @@ export const getBilledText = (cycle: CYCLE): string | null => {
 
 const getBundleTitle = (a: string, b: string) => {
     return c('vpn_2step: info').t`Your ${a} and ${b} bundle`;
+};
+
+const getPlanTitle = (selected: string, trial?: boolean) => {
+    if (trial) {
+        const freeFor14Days = <span className="color-success">{c('b2b_trials_2025_Info').t`free for 14 days`}</span>;
+        // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
+        return c('b2b_trials_2025_Info').jt`Try ${selected} ${freeFor14Days}`;
+    }
+    return c('vpn_2step: info').t`Your plan includes:`;
 };
 
 const FeatureItem = ({ left, text }: { left: ReactNode; text: ReactNode }) => {
@@ -177,6 +187,7 @@ const Step1B = ({
     measure,
     className,
     currencyUrlParam,
+    trial,
     toAppName,
 }: {
     activeBreakpoint: Breakpoints;
@@ -201,6 +212,7 @@ const Step1B = ({
     measure: Measure;
     className?: string;
     currencyUrlParam?: Currency;
+    trial: boolean;
     toAppName: string;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
@@ -482,6 +494,7 @@ const Step1B = ({
     };
 
     const chargebeeContext = useChargebeeContext();
+    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
@@ -492,7 +505,7 @@ const Step1B = ({
         paymentMethodStatusExtended: model.paymentMethodStatusExtended,
         onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
-                const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
+                const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !isTrial;
 
                 const extendedParams: ExtendedTokenPayment = {
                     paymentsVersion,
@@ -792,34 +805,34 @@ const Step1B = ({
     );
 
     const process = (processor: PaymentProcessorHook | undefined) => {
-        const isFormValid = validatePayment() && accountDetailsRef.current?.validate();
-        if (!isFormValid) {
-            return;
-        }
-
-        const telemetryType = (() => {
-            const isFreeSignup = paymentFacade.amount <= 0;
-
-            if (isFreeSignup) {
-                return 'free';
-            }
-
-            if (processor?.meta.type === 'paypal') {
-                return 'pay_pp';
-            }
-
-            if (processor?.meta.type === 'paypal-credit') {
-                return 'pay_pp_no_cc';
-            }
-
-            return 'pay_cc';
-        })();
-        measurePaySubmit(telemetryType);
-
         async function run() {
             if (!processor) {
                 return;
             }
+
+            const isFormValid = validatePayment() && (await accountDetailsRef.current?.validate());
+            if (!isFormValid) {
+                return;
+            }
+
+            const telemetryType = (() => {
+                const isFreeSignup = paymentFacade.amount <= 0;
+
+                if (isFreeSignup) {
+                    return 'free';
+                }
+
+                if (processor?.meta.type === 'paypal') {
+                    return 'pay_pp';
+                }
+
+                if (processor?.meta.type === 'paypal-credit') {
+                    return 'pay_pp_no_cc';
+                }
+
+                return 'pay_cc';
+            })();
+            measurePaySubmit(telemetryType);
 
             try {
                 await processor.processPaymentToken();
@@ -971,7 +984,7 @@ const Step1B = ({
         />
     );
 
-    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue);
+    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue) || isTrial;
     const loadingPaymentsForm = model.loadingDependencies;
 
     const title = (() => {
@@ -996,40 +1009,18 @@ const Step1B = ({
         return;
     })();
 
-    const signInTo = {
-        pathname: `/dashboard${stringifySearchParams(
-            {
-                plan: options.plan.Name,
-                cycle: `${options.cycle}`,
-                currency: options.currency,
-                coupon: options.checkResult.Coupon?.Code,
-                type: 'offer',
-                ref: 'signup',
-            },
-            '?'
-        )}`,
-    } as const;
-
     const signIn = (
-        <Link
-            key="signin"
-            className="link link-focus text-nowrap"
-            to={signInTo}
-            onClick={() =>
-                measure({
-                    event: TelemetryAccountSignupEvents.userSignIn,
-                    dimensions: {
-                        location: 'step2',
-                    },
-                })
-            }
-        >
-            {c('Link').t`Sign in`}
-        </Link>
+        <SignIntoLink
+            key="sign-in"
+            options={options}
+            measure={measure}
+            details={undefined}
+            disabled={model.loadingDependencies}
+        />
     );
 
     const signInText = (
-        <div className="text-center">
+        <div className="text-center color-norm">
             {
                 // translator: Full sentence "Already have an account? Sign in"
                 c('Go to sign in').jt`Already have an account? ${signIn}`
@@ -1060,6 +1051,9 @@ const Step1B = ({
             giftCode={
                 <GiftCodeSummary
                     coupon={coupon}
+                    checkResult={model.subscriptionData.checkResult}
+                    planIDs={options.planIDs}
+                    plansMap={model.plansMap}
                     onApplyCode={async (code) => {
                         const checkResult = await getSubscriptionPrices(
                             getPaymentsApi(silentApi),
@@ -1123,14 +1117,7 @@ const Step1B = ({
             isB2bPlan={isB2bPlan}
             headerCenterElement={viewportWidth['<=small'] ? undefined : signInText}
         >
-            {viewportWidth['<=small'] && (
-                <div className="text-center">
-                    {
-                        // translator: Full sentence "Already have an account? Sign in"
-                        c('Go to sign in').jt`Already have an account? ${signIn}`
-                    }
-                </div>
-            )}
+            {viewportWidth['<=small'] && signInText}
             <div className="flex items-center flex-column">
                 {title && (
                     <div className="signup-v1-header mb-4 mt-4 md:mt-0 text-center">
@@ -1158,6 +1145,10 @@ const Step1B = ({
                 )}
                 {(() => {
                     if (!actualCheckout.discountPercent) {
+                        return;
+                    }
+
+                    if (isTrial) {
                         return;
                     }
 
@@ -1268,55 +1259,57 @@ const Step1B = ({
                             <BoxHeader title={c('Header').t`Enter your email address`} />
                             <BoxContent>
                                 <div className="relative">
-                                    <AccountStepDetails
+                                    <AccountFormDataContextProvider
+                                        availableSignupTypes={new Set([SignupType.External])}
                                         domains={model.domains}
-                                        signupTypes={[SignupType.Email]}
                                         defaultEmail={defaultEmail}
-                                        passwordFields={false}
-                                        model={model}
-                                        measure={measure}
-                                        api={silentApi}
-                                        accountStepDetailsRef={accountDetailsRef}
-                                        disableChange={loadingSignup}
-                                        hideEmailLabel
-                                        onSubmit={
-                                            hasSelectedFree
-                                                ? () => {
-                                                      withLoadingSignup(
-                                                          handleCompletion(
-                                                              getFreeSubscriptionData(model.subscriptionData)
-                                                          )
-                                                      ).catch(noop);
-                                                  }
-                                                : undefined
-                                        }
-                                        footer={() => {
-                                            return (
-                                                <>
-                                                    {hasSelectedFree && (
-                                                        <div className="mb-4">
-                                                            <Button
-                                                                type="submit"
-                                                                size="large"
-                                                                loading={loadingSignup}
-                                                                color="norm"
-                                                                fullWidth
-                                                            >
-                                                                {c('pass_signup_2023: Action')
-                                                                    .t`Start using ${appName}`}
-                                                            </Button>
-                                                        </div>
-                                                    )}
-                                                    {!isB2bPlan && (
-                                                        <div className="mt-4 color-weak text-sm">
-                                                            {c('Info')
-                                                                .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
-                                                        </div>
-                                                    )}
-                                                </>
-                                            );
-                                        }}
-                                    />
+                                    >
+                                        <AccountStepDetails
+                                            passwordFields={false}
+                                            model={model}
+                                            measure={measure}
+                                            accountStepDetailsRef={accountDetailsRef}
+                                            disableChange={loadingSignup}
+                                            hideEmailLabel
+                                            onSubmit={
+                                                hasSelectedFree
+                                                    ? () => {
+                                                          withLoadingSignup(
+                                                              handleCompletion(
+                                                                  getFreeSubscriptionData(model.subscriptionData)
+                                                              )
+                                                          ).catch(noop);
+                                                      }
+                                                    : undefined
+                                            }
+                                            footer={() => {
+                                                return (
+                                                    <>
+                                                        {hasSelectedFree && (
+                                                            <div className="mb-4">
+                                                                <Button
+                                                                    type="submit"
+                                                                    size="large"
+                                                                    loading={loadingSignup}
+                                                                    color="norm"
+                                                                    fullWidth
+                                                                >
+                                                                    {c('pass_signup_2023: Action')
+                                                                        .t`Start using ${appName}`}
+                                                                </Button>
+                                                            </div>
+                                                        )}
+                                                        {!isB2bPlan && (
+                                                            <div className="mt-4 color-weak text-sm">
+                                                                {c('Info')
+                                                                    .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
+                                                            </div>
+                                                        )}
+                                                    </>
+                                                );
+                                            }}
+                                        />
+                                    </AccountFormDataContextProvider>
                                 </div>
                             </BoxContent>
                         </div>
@@ -1341,7 +1334,7 @@ const Step1B = ({
                                     title={
                                         options.planIDs[PLANS.VPN_PASS_BUNDLE]
                                             ? getBundleTitle(VPN_SHORT_APP_NAME, PASS_SHORT_APP_NAME)
-                                            : c('vpn_2step: info').t`Your plan includes:`
+                                            : getPlanTitle(planInformation.title, isTrial)
                                     }
                                 />
                             </div>
@@ -1354,7 +1347,6 @@ const Step1B = ({
                             title={viewportWidth['>=large'] ? c('Header').t`Select your payment method` : ''}
                             right={!showCycleAndSelectors ? currencySelector : null}
                         />
-
                         {viewportWidth['<=medium'] ? (
                             <>
                                 <BoxContent>
@@ -1366,8 +1358,12 @@ const Step1B = ({
                                 <h2 className="text-bold text-4xl mt-8">{c('Header').t`Select your payment method`}</h2>
                             </>
                         ) : null}
-
                         <BoxContent className="mt-4">
+                            {trial && (
+                                <div className="mb-4 text-sm color-weak">
+                                    {c('b2b_trials_2025_Info').t`During the trial period, you can have up to 10 users.`}
+                                </div>
+                            )}
                             <div className="flex justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
                                 <div className="lg:flex-1 md:pr-1 order-1 lg:order-0">
                                     <form
@@ -1400,6 +1396,7 @@ const Step1B = ({
                                                             noop
                                                         )
                                                     }
+                                                    isTrialMode={isTrial}
                                                 />
                                                 <div className="border-bottom border-weak my-6" />
                                             </>
@@ -1415,6 +1412,7 @@ const Step1B = ({
                                                     model.subscriptionData.billingAddress
                                                 )}
                                                 showCardIcons
+                                                isTrial={isTrial}
                                             />
                                         ) : (
                                             <div className="mb-4">
@@ -1469,6 +1467,18 @@ const Step1B = ({
                                                 );
                                             }
 
+                                            if (
+                                                paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY &&
+                                                options.checkResult.AmountDue > 0
+                                            ) {
+                                                return (
+                                                    <ApplePayButton
+                                                        applePay={paymentFacade.applePay}
+                                                        iframeHandles={paymentFacade.iframeHandles}
+                                                    />
+                                                );
+                                            }
+
                                             return (
                                                 <>
                                                     <Button
@@ -1485,11 +1495,13 @@ const Step1B = ({
                                                             : c('Action').t`Confirm`}
                                                     </Button>
                                                     <div className="mt-4 text-sm color-weak text-center">
-                                                        {
-                                                            // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
-                                                            c('new_plans: signup')
-                                                                .jt`By clicking on "Pay", you agree to our ${termsAndConditions}.`
-                                                        }
+                                                        {isTrial
+                                                            ? // translator: Full sentence "By clicking on "Try", you agree to our terms and conditions."
+                                                              c('b2b_trials_2025_Info')
+                                                                  .jt`By clicking on "Try", you agree to our ${termsAndConditions}.`
+                                                            : // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
+                                                              c('new_plans: signup')
+                                                                  .jt`By clicking on "Pay", you agree to our ${termsAndConditions}.`}
                                                     </div>
                                                 </>
                                             );

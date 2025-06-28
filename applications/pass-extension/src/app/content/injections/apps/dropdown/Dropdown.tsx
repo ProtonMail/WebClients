@@ -12,15 +12,15 @@ import { ListItemIcon } from 'proton-pass-extension/app/content/injections/apps/
 import { PinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
 import { DropdownAction, type DropdownActions, IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { clientBusy, clientErrored, clientMissingScope, clientSessionLocked } from '@proton/pass/lib/client';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';

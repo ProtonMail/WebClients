@@ -11,7 +11,7 @@ import { monitor } from 'proton-pass-web/lib/monitor';
 import { settings } from 'proton-pass-web/lib/settings';
 import { spotlightProxy as spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
-import { getInitialTheme } from 'proton-pass-web/lib/theme';
+import { getTheme } from 'proton-pass-web/lib/theme';
 
 import {
     CompatibilityCheck,
@@ -52,7 +52,7 @@ import {
     isPRFSupported,
 } from '@proton/pass/lib/crypto/utils/prf';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import type { Maybe } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
@@ -88,10 +88,10 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         spotlight,
 
         theme: createPassThemeManager({
-            getInitialTheme: async () => {
+            getTheme: async () => {
                 /** UnauthorizedRoutes should stay in PassDark mode */
                 const forceDarkMode = matchPath(window.location.pathname, PublicRoutes.SecureLink);
-                return forceDarkMode ? PassThemeOption.PassDark : getInitialTheme();
+                return forceDarkMode ? PassThemeOption.PassDark : getTheme();
             },
         }),
 

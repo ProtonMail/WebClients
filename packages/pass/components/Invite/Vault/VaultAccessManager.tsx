@@ -1,7 +1,7 @@
 import { type FC, useCallback, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
@@ -18,6 +18,7 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useShareAccess } from '@proton/pass/hooks/invite/useShareAccess';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
 import { AccessTarget } from '@proton/pass/lib/access/types';
+import { getLimitReachedText } from '@proton/pass/lib/invites/invite.utils';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
@@ -39,7 +40,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const canTransfer = vault.owner && ownWritableVaults.length > 1;
 
     const { limitReached, invites, members } = access;
-    const { shared, targetMaxMembers } = vault;
+    const { shared } = vault;
 
     const onVaultInvite = useCallback(() => {
         if (limitReached) setLimitModalOpen(true);
@@ -105,14 +106,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                     <AccessLimitPrompt
                         open={limitModalOpen}
                         onClose={() => setLimitModalOpen(false)}
-                        promptText={
-                            // translator: full message is "Vaults can’t contain more than 10 users.""
-                            c('Success').ngettext(
-                                msgid`Vaults can’t contain more than ${targetMaxMembers} user.`,
-                                `Vaults can’t contain more than ${targetMaxMembers} users.`,
-                                targetMaxMembers
-                            )
-                        }
+                        promptText={getLimitReachedText(vault, AccessTarget.Vault)}
                     />
                 </PanelFallback>
             </Panel>

@@ -173,7 +173,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const [MainContainer, userData] = await Promise.all([
             appContainerPromise,
             userPromise,
-            bootstrap.loadCrypto({ appName }),
+            bootstrap.loadCrypto({ appName, unleashClient }),
             unleashPromise,
         ]);
         // postLoad needs everything to be loaded.

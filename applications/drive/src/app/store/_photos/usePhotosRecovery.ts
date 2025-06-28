@@ -27,9 +27,12 @@ export type RECOVERY_STATE =
 
 const RECOVERY_STATE_CACHE_KEY = 'photos-recovery-state';
 
-export const usePhotosRecovery = () => {
+export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}) => {
     const { shareId, linkId, volumeId, volumeType, deletePhotosShare } = usePhotosOrPhotosWithAlbums();
-    const getRestoredPhotosShares = useSharesStore((state) => state.getRestoredPhotosShares);
+    const { getRestoredPhotosShares, removeShares } = useSharesStore((state) => ({
+        getRestoredPhotosShares: state.getRestoredPhotosShares,
+        removeShares: state.removeShares,
+    }));
     const { getCachedChildren, getCachedTrashed, loadChildren } = useLinksListing();
     const { recoverPhotoLinks, moveLinks } = useLinksActions();
     const [countOfUnrecoveredLinksLeft, setCountOfUnrecoveredLinksLeft] = useState<number>(0);
@@ -99,10 +102,11 @@ export const usePhotosRecovery = () => {
                 );
                 if (!links.length && !trashLinks.length) {
                     await deletePhotosShare(share.volumeId, share.shareId);
+                    removeShares([share.shareId]);
                 }
             }
         },
-        [deletePhotosShare, getCachedChildren, getCachedTrashed]
+        [deletePhotosShare, getCachedChildren, getCachedTrashed, removeShares]
     );
 
     const handleMoveLinks = useCallback(
@@ -219,13 +223,14 @@ export const usePhotosRecovery = () => {
                 }
                 removeItem(RECOVERY_STATE_CACHE_KEY);
                 setState('SUCCEED');
+                onSucceed?.();
             })
             .catch(handleFailed);
 
         return () => {
             abortController.abort();
         };
-    }, [countOfFailedLinks, countOfUnrecoveredLinksLeft, restoredShares, safelyDeleteShares, state]);
+    }, [countOfFailedLinks, countOfUnrecoveredLinksLeft, restoredShares, safelyDeleteShares, state, onSucceed]);
 
     const start = useCallback(() => {
         setItem(RECOVERY_STATE_CACHE_KEY, 'progress');

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { EditLabelModal, Field, Icon, Label, LabelStack, Row, Tooltip, useModalState } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { EditLabelModal, Field, Icon, Label, LabelStack, Row, useModalState } from '@proton/components';
 import type { LabelModel } from '@proton/components';
 
 interface Props {

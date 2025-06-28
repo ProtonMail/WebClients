@@ -1,11 +1,13 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Element } from 'proton-mail/models/element';
 import type { ConversationState } from 'proton-mail/store/conversations/conversationsTypes';
 
 import {
     getOpenedElementUpdated,
+    hasReadItemsAfterAction,
     hasRemainingItemAfterAction,
     moveOutApplyLabelAction,
     moveOutMoveAction,
@@ -473,7 +475,29 @@ describe('Move back action helpers tests', () => {
     describe('hasRemainingItemAfterAction', () => {
         it('should return true if more than 1 elements remain in the conversation', () => {
             expect(
-                hasRemainingItemAfterAction('ID', {
+                hasRemainingItemAfterAction(
+                    {
+                        LabelIDs: ['ID'],
+                        ConversationID: 'ConversationID',
+                    } as Message,
+                    'ID',
+                    {
+                        Conversation: {
+                            Labels: [
+                                {
+                                    ID: 'ID',
+                                    ContextNumMessages: 2,
+                                },
+                            ],
+                        },
+                    } as ConversationState
+                )
+            ).toBeTruthy();
+        });
+
+        it('should return true if the action is not moving the item from the current label', () => {
+            expect(
+                hasRemainingItemAfterAction({ LabelIDs: ['ID2'], ConversationID: 'ConversationID' } as Message, 'ID', {
                     Conversation: {
                         Labels: [
                             {
@@ -488,7 +512,7 @@ describe('Move back action helpers tests', () => {
 
         it('should return false if less or 1 elements remain in the conversation', () => {
             expect(
-                hasRemainingItemAfterAction('ID', {
+                hasRemainingItemAfterAction({ LabelIDs: ['ID'], ConversationID: 'ConversationID' } as Message, 'ID', {
                     Conversation: {
                         Labels: [
                             {
@@ -501,9 +525,9 @@ describe('Move back action helpers tests', () => {
             ).toBeFalsy();
         });
 
-        it('should return false if no ContextNumMessagesin the conversation', () => {
+        it('should return false if no ContextNumMessages in the conversation', () => {
             expect(
-                hasRemainingItemAfterAction('ID', {
+                hasRemainingItemAfterAction({ LabelIDs: ['ID'], ConversationID: 'ConversationID' } as Message, 'ID', {
                     Conversation: {
                         Labels: [
                             {
@@ -516,7 +540,39 @@ describe('Move back action helpers tests', () => {
         });
 
         it('should return false if no conversation state', () => {
-            expect(hasRemainingItemAfterAction('ID', undefined)).toBeFalsy();
+            expect(
+                hasRemainingItemAfterAction(
+                    { LabelIDs: ['ID'], ConversationID: 'ConversationID' } as Message,
+                    'ID',
+                    undefined
+                )
+            ).toBeFalsy();
+        });
+    });
+
+    describe('hasReadItemsAfterAction', () => {
+        it('should return true if more than 1 elements remain read after the action in the conversation', () => {
+            expect(
+                hasReadItemsAfterAction({
+                    Messages: [{ Unread: 0 } as Message, { Unread: 0 } as Message, { Unread: 1 } as Message],
+                } as ConversationState)
+            ).toBeTruthy();
+        });
+
+        it('should return false all messages from conversation will be unread', () => {
+            expect(
+                hasReadItemsAfterAction({
+                    Messages: [{ Unread: 0 } as Message, { Unread: 1 } as Message, { Unread: 1 } as Message],
+                } as ConversationState)
+            ).toBeFalsy();
+        });
+
+        it('should return false if no conversation state', () => {
+            expect(hasReadItemsAfterAction(undefined)).toBeFalsy();
+        });
+
+        it('should return false if no messages in conversation state', () => {
+            expect(hasReadItemsAfterAction({ Messages: undefined } as ConversationState)).toBeFalsy();
         });
     });
 });

@@ -142,3 +142,4 @@ export const waitForNoNotification = (timeout = 8000) =>
             timeout,
         }
     );
+export { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';

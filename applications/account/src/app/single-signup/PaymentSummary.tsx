@@ -1,15 +1,20 @@
 import type { ReactNode } from 'react';
 
+import { addDays, getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { Time } from '@proton/components';
 import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
+import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { ADDON_NAMES, type Plan } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import type { getCheckout } from '@proton/shared/lib/helpers/checkout';
+import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import type { OptimisticOptions } from '../single-signup-v2/interface';
@@ -60,6 +65,23 @@ const PaymentSummary = ({
         cycle: options.cycle,
     });
 
+    const couponConfig = useCouponConfig({
+        planIDs: options.planIDs,
+        plansMap: model.plansMap,
+        checkResult: model.subscriptionData.checkResult,
+    });
+
+    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+
+    const discountPercent = (() => {
+        if (!isTrial) {
+            return actualCheckout.discountPercent;
+        }
+        const pricing = getPricingFromPlanIDs(options.planIDs, model.plansMap);
+        const totals = getTotalFromPricing(pricing, options.cycle);
+        return totals.discountPercentage;
+    })();
+
     return (
         <div className="flex flex-column gap-3">
             <div className="color-weak text-semibold mx-3">{c('Info').t`Summary`}</div>
@@ -96,9 +118,9 @@ const PaymentSummary = ({
                                 <div className="flex-1 flex items-center gap-2">
                                     <div className="flex-1 text-sm">
                                         <span className="color-weak mr-1">{getBilledText(options.cycle)}</span>
-                                        {actualCheckout.discountPercent > 0 && (
+                                        {discountPercent > 0 && !couponConfig?.hidden && (
                                             <SaveLabel2 className="text-sm inline-block" highlightPrice>
-                                                {`− ${actualCheckout.discountPercent}%`}
+                                                {`− ${discountPercent}%`}
                                             </SaveLabel2>
                                         )}
                                     </div>
@@ -107,7 +129,7 @@ const PaymentSummary = ({
                                         <div className="flex-1 text-sm color-weak">{c('Info').t`Free forever`}</div>
                                     )}
 
-                                    {!isB2bPlan && actualCheckout.discountPercent > 0 && (
+                                    {!isB2bPlan && discountPercent > 0 && (
                                         <span className="inline-flex">
                                             <span className="text-sm color-weak text-strike text-ellipsis">
                                                 {regularPrice}
@@ -171,27 +193,26 @@ const PaymentSummary = ({
                             });
                         })()}
                     </div>
-                    <div className="mx-3 border-bottom border-weak" />
+                    {!isTrial && <div className="mx-3 border-bottom border-weak" />}
                 </>
             ) : null}
 
-            {isB2bPlan && (
-                <>
-                    <div className="mx-3 text-bold flex justify-space-between text-rg gap-2">
-                        <span>{getTotalBillingText(options.cycle, options.planIDs)}</span>
-                        <span>
-                            {initialLoading ? (
-                                loaderNode
-                            ) : (
-                                <Price currency={options.currency}>{options.checkResult.Amount}</Price>
-                            )}
-                        </span>
-                    </div>
-                    <div className="mx-3 border-bottom border-weak" />
-                </>
+            {isB2bPlan && !isTrial && (
+                <div className="mx-3 text-bold flex justify-space-between text-rg gap-2">
+                    <span>{getTotalBillingText(options.cycle, options.planIDs)}</span>
+                    <span>
+                        {initialLoading ? (
+                            loaderNode
+                        ) : (
+                            <Price currency={options.currency}>{options.checkResult.Amount}</Price>
+                        )}
+                    </span>
+                </div>
             )}
 
-            {isB2bPlan && (
+            {isB2bPlan && <div className="mx-3 border-bottom border-weak" />}
+
+            {isB2bPlan && !isTrial && (
                 <>
                     <div className="mx-3">{giftCode}</div>
                     <div className="mx-3 border-bottom border-weak" />
@@ -207,19 +228,23 @@ const PaymentSummary = ({
                 )}
                 <div className={clsx('text-bold', 'flex justify-space-between text-rg gap-2')}>
                     <span>
-                        {isB2bPlan ? c('Info').t`Amount due` : getTotalBillingText(options.cycle, options.planIDs)}
+                        {isTrial
+                            ? c('b2b_trials_2025_Label').t`Amount due now`
+                            : isB2bPlan
+                              ? c('Info').t`Amount due`
+                              : getTotalBillingText(options.cycle, options.planIDs)}
                     </span>
                     <span>
                         {loading ? (
                             loaderNode
                         ) : (
                             <>
-                                <Price currency={options.currency}>{options.checkResult.AmountDue}</Price>*
+                                <Price currency={options.currency}>{options.checkResult.AmountDue}</Price>
+                                {!isTrial && '*'}
                             </>
                         )}
                     </span>
                 </div>
-
                 {showInclusiveTax && (
                     <InclusiveVatText
                         tax={options.checkResult?.Taxes?.[0]}
@@ -228,6 +253,36 @@ const PaymentSummary = ({
                     />
                 )}
             </div>
+            {(() => {
+                if (!isTrial) {
+                    return null;
+                }
+                // hardcoded 14 days, for now. Need to get from BE
+                const trialEndDate = addDays(new Date(), 14);
+                const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
+
+                return (
+                    <>
+                        <div className="mx-3 flex flex-column gap-2">
+                            <div className="flex justify-space-between text-bold text-rg">
+                                <span>{c('b2b_trials_2025_Label').t`Amount due after trial`}</span>
+                                <span>
+                                    {loading ? (
+                                        loaderNode
+                                    ) : (
+                                        <Price currency={options.currency}>
+                                            {options.checkResult.BaseRenewAmount ?? 0}
+                                        </Price>
+                                    )}
+                                </span>
+                            </div>
+                            <div className="text-sm color-weak">
+                                {c('b2b_trials_2025_Info').jt`on ${formattedDate}`}
+                            </div>
+                        </div>
+                    </>
+                );
+            })()}
         </div>
     );
 };

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import type { OnFileUploadProgress } from '@proton/pass/hooks/files/useFileUpload';
-import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
+import { resolveMimeTypeForFile, useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { isAbortError } from '@proton/pass/lib/api/errors';
 import { getImportFilename } from '@proton/pass/lib/import/helpers/files';
@@ -81,9 +81,12 @@ export const useFileImporter = () => {
                                                 });
                                             }
 
+                                            const mimeType = await resolveMimeTypeForFile(blob);
+
                                             const fileID = await fileUpload.start(
                                                 blob,
                                                 filename,
+                                                mimeType,
                                                 shareId,
                                                 uniqueId(),
                                                 onFileProgress

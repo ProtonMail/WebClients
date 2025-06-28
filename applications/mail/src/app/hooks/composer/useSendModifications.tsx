@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 
 import { useAuthentication } from '@proton/components';
+import type { MessageEmbeddedImage, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { isAttachPublicKey, isPlainText } from '@proton/shared/lib/mail/messages';
@@ -12,7 +13,6 @@ import { attachPublicKey } from '../../helpers/message/messageAttachPublicKey';
 import { replaceDataUrl } from '../../helpers/message/messageDataUrl';
 import { createEmbeddedImageFromUpload } from '../../helpers/message/messageEmbeddeds';
 import { sendModifications } from '../../store/messages/draft/messagesDraftActions';
-import type { MessageEmbeddedImage, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 

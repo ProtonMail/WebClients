@@ -17,7 +17,8 @@ export async function getSubscriptionPrices(
     currency: Currency,
     cycle: Cycle,
     billingAddress?: BillingAddress,
-    maybeCoupon?: string
+    maybeCoupon?: string,
+    trial?: boolean
 ) {
     if (!hasPlanIDs(planIDs) || planIDs[PLANS.FREE]) {
         return getFreeCheckResult(currency, cycle);
@@ -39,12 +40,12 @@ export async function getSubscriptionPrices(
         };
     }
 
+    if (trial) {
+        data.IsTrial = true;
+    }
+
     return paymentsApi.checkWithAutomaticVersion(data);
 }
-
-export const isMailTrialSignup = (location: Location) => {
-    return location.pathname.includes(SSO_PATHS.TRIAL);
-};
 
 export const isMailReferAFriendSignup = (location: Location) => {
     return location.pathname.includes(SSO_PATHS.REFER);

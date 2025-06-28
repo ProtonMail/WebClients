@@ -53,6 +53,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.PASS]: null,
             [PLANS.PASS_LIFETIME]: null,
             [PLANS.DRIVE]: null,
+            [PLANS.DRIVE_1TB]: null,
             [PLANS.DRIVE_BUSINESS]: null,
             [PLANS.WALLET]: null,
             [PLANS.FAMILY]: {
@@ -135,6 +136,11 @@ export const get24x7Support = (): PlanCardFeatureDefinition => ({
     text: c('new_plans: feature').t`24/7 account management support`,
 });
 
+export const getAllPremiumServices = (): PlanCardFeatureDefinition => ({
+    included: true,
+    text: c('pass_signup_2023: Info').t`Access to all ${BRAND_NAME} apps and premium features`,
+});
+
 export const getSentinel = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`${PROTON_SENTINEL_NAME} program`,
@@ -198,6 +204,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL]: getSupport('priority'),
                 [PLANS.VPN]: getSupport('priority'),
                 [PLANS.DRIVE]: getSupport('priority'),
+                [PLANS.DRIVE_1TB]: getSupport('priority'),
                 [PLANS.DRIVE_BUSINESS]: getSupport('priority', 'drive'),
                 [PLANS.PASS]: getSupport('priority'),
                 [PLANS.PASS_LIFETIME]: getSupport('priority'),
@@ -225,6 +232,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL]: getSentinel(),
                 [PLANS.VPN]: getSentinel(),
                 [PLANS.DRIVE]: getSentinel(),
+                [PLANS.DRIVE_1TB]: getSentinel(),
                 [PLANS.DRIVE_BUSINESS]: null,
                 [PLANS.PASS]: getSentinel(true),
                 [PLANS.PASS_LIFETIME]: getSentinel(true),
@@ -252,6 +260,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL]: null,
                 [PLANS.VPN]: null,
                 [PLANS.DRIVE]: null,
+                [PLANS.DRIVE_1TB]: null,
                 [PLANS.DRIVE_BUSINESS]: getCustomBranding(true),
                 [PLANS.WALLET]: null,
                 [PLANS.PASS]: null,
@@ -280,6 +289,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL]: null,
                 [PLANS.VPN]: null,
                 [PLANS.DRIVE]: null,
+                [PLANS.DRIVE_1TB]: null,
                 [PLANS.DRIVE_BUSINESS]: null,
                 [PLANS.PASS]: null,
                 [PLANS.PASS_LIFETIME]: null,

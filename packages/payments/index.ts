@@ -1,6 +1,4 @@
 export {
-    InvoiceDocument,
-    ProrationMode,
     buyCredit,
     changeRenewState,
     checkInvoice,
@@ -15,19 +13,23 @@ export {
     getInvoicePDF,
     getLastCancelledSubscription,
     getLifetimeProductType,
+    getPaymentMethods,
     getPaymentMethodStatus,
     getPaymentsVersion,
     getSubscription,
+    getSubscriptionV5DynamicPlans,
     getTokenStatus,
     getTokenStatusV4,
     getTokenStatusV5,
     getTransactionPDF,
+    InvoiceDocument,
+    markPaymentMethodAsDefault,
     orderPaymentMethods,
     payInvoice,
+    ProrationMode,
     queryFreePlan,
     queryInvoices,
     queryPaymentMethodStatus,
-    queryPaymentMethods,
     queryPlans,
     queryTransactions,
     setPaymentMethodV4,
@@ -49,9 +51,9 @@ export {
 } from './core/api';
 export {
     BILLING_ADDRESS_VALID,
-    DEFAULT_TAX_BILLING_ADDRESS,
     billingCountryValidator,
     billingStateValidator,
+    DEFAULT_TAX_BILLING_ADDRESS,
     getBillingAddressStatus,
     type BillingAddress,
     type BillingAddressProperty,
@@ -68,8 +70,8 @@ export {
     Autopay,
     COUPON_CODES,
     CURRENCIES,
-    CYCLE,
     CurrencySymbols,
+    CYCLE,
     DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
     FREE_SUBSCRIPTION,
@@ -88,20 +90,25 @@ export {
     MAX_MEMBER_VPN_B2B_ADDON,
     MAX_PAYPAL_AMOUNT,
     MAX_VPN_ADDON,
+    MethodStorage,
     MIN_BITCOIN_AMOUNT,
     MIN_CREDIT_AMOUNT,
     MIN_MEMBER_PASS_B2B_ADDON,
     MIN_PAYPAL_AMOUNT_CHARGEBEE,
     MIN_PAYPAL_AMOUNT_INHOUSE,
-    MethodStorage,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
-    PLANS,
     PLAN_NAMES,
     PLAN_SERVICES,
     PLAN_TYPES,
+    PLANS,
     TransactionState,
     TransactionType,
+    TRIAL_MAX_DEDICATED_IPS,
+    TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
+    TRIAL_MAX_LUMO_SEATS,
+    TRIAL_MAX_SCRIBE_SEATS,
+    TRIAL_MAX_USERS,
     VPN_PASS_PROMOTION_COUPONS,
 } from './core/constants';
 export {
@@ -126,7 +133,6 @@ export {
 } from './core/ensureTokenChargeable';
 export { DisplayablePaymentError } from './core/errors';
 export {
-    NEW_BATCH_CURRENCIES_FEATURE_FLAG,
     captureWrongPlanIDs,
     captureWrongPlanName,
     extendStatus,
@@ -144,6 +150,7 @@ export {
     isRegularInvoice,
     isSignupFlow,
     mainCurrencies,
+    NEW_BATCH_CURRENCIES_FEATURE_FLAG,
     type GetPreferredCurrencyParams,
 } from './core/helpers';
 export type {
@@ -177,7 +184,6 @@ export type {
     MultiCheckSubscriptionData,
     NonChargeablePaymentToken,
     NonChargeableV5PaymentToken,
-    PayPalDetails,
     PaymentMethodCardDetails,
     PaymentMethodFlows,
     PaymentMethodPaypal,
@@ -185,8 +191,9 @@ export type {
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
     PaymentMethodType,
-    PaymentTokenResult,
     PaymentsApi,
+    PaymentTokenResult,
+    PayPalDetails,
     PaypalPayment,
     PlainPaymentMethodType,
     PlanIDs,
@@ -207,7 +214,9 @@ export type {
     WrappedCryptoPayment,
     WrappedPaypalPayment,
 } from './core/interface';
-export { PaymentMethods, initializePaymentMethods } from './core/methods';
+export { formatPaymentMethod, formatPaymentMethods, initializePaymentMethods, PaymentMethods } from './core/methods';
+export { isSavablePaymentMethod } from './core/payment-methods/helpers';
+export { getIsCurrencyOverriden, updateCurrencyOverride } from './core/payment-methods/sepa-currency-override';
 export {
     CardPaymentProcessor,
     InvalidCardDataError,
@@ -221,10 +230,20 @@ export {
     ChargebeePaypalPaymentProcessor,
     type ChargebeePaypalModalHandles,
 } from './core/payment-processors/chargebeePaypalPayment';
+export {
+    getSystemByHookType,
+    type PaymentProcessorHook,
+    type PaymentProcessorType,
+} from './core/payment-processors/interface';
 export { PaymentProcessor } from './core/payment-processors/paymentProcessor';
 export { PaypalPaymentProcessor } from './core/payment-processors/paypalPayment';
 export { SavedChargebeePaymentProcessor } from './core/payment-processors/savedChargebeePayment';
 export { SavedPaymentProcessor } from './core/payment-processors/savedPayment';
+export {
+    useApplePay,
+    type ApplePayModalHandles,
+    type ApplePayProcessorHook,
+} from './core/payment-processors/useApplePay';
 export {
     countAddonsByType,
     getAddonType,
@@ -252,6 +271,8 @@ export {
     getPlanNameFromIDs,
     isLifetimePlanSelected,
     isPlanEnabled,
+    getPlanFromPlanIDs,
+    getPlanCurrencyFromPlanIDs,
 } from './core/plan/helpers';
 export type {
     Addon,
@@ -264,26 +285,27 @@ export type {
     SubscriptionPlan,
 } from './core/plan/interface';
 export {
-    INCLUDED_IP_PRICING,
     getIpPricePerMonth,
     getPricePerCycle,
     getPricePerMember,
     getPriceStartsFrom,
     getPriceStartsFromPerMonth,
+    INCLUDED_IP_PRICING,
     isMultiUserPersonalPlan,
 } from './core/price-helpers';
-export { extractIBAN, formatPaymentMethod, formatPaymentMethods, type ExtendedExtractIBANResult } from './core/sepa';
-export { BillingPlatform, External, Renew } from './core/subscription/constants';
+export { getRenewCycle } from './core/renewals';
+export { extractIBAN, type ExtendedExtractIBANResult } from './core/sepa';
+export { BillingPlatform, Renew, SubscriptionPlatform } from './core/subscription/constants';
 export { FREE_PLAN, getFreeCheckResult } from './core/subscription/freePlans';
 export {
-    PASS_LAUNCH_OFFER,
-    PLANS_WITH_AI_INCLUDED,
     allCycles,
     canCheckItemGetStarted,
     canCheckItemPaidChecklist,
+    canModify,
     customCycles,
     getAddonMultiplier,
     getAddons,
+    getAvailableSubscriptionActions,
     getBaseAmount,
     getCanSubscriptionAccessDuoPlan,
     getCanSubscriptionAccessPassFamilyPlan,
@@ -296,6 +318,7 @@ export {
     getHasMailB2BPlan,
     getHasMemberCapablePlan,
     getHasPassB2BPlan,
+    getHasProPlan,
     getHasSomeVpnPlan,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
@@ -310,9 +333,12 @@ export {
     getIsVpnPlan,
     getLongerCycle,
     getLumoAddonNameByPlan,
-    getMaxValue,
     getMaximumCycleForApp,
+    getMaxValue,
     getMembersFromPlanIDs,
+    getPlansQuantity,
+    getPlansLimit,
+    shouldPassIsTrial,
     getNormalCycleFromCustomCycle,
     getPlan,
     getPlanIDs,
@@ -325,13 +351,15 @@ export {
     getRenewalTime,
     getScribeAddonNameByPlan,
     getSubscriptionPlanTitle as getSubscriptionPlanTitleAndName,
+    getSubscriptionsArray,
     getUpgradedPlan,
-    getVPNDedicatedIPs,
     getValidAudience,
     getValidCycle,
-    hasAIAssistant,
+    getVPNDedicatedIPs,
     hasAddons,
+    hasAIAssistant,
     hasAllProductsB2CPlan,
+    hasAnniversary2025Coupon,
     hasAnyBundlePro,
     hasB2BPlan,
     hasBundle,
@@ -340,6 +368,7 @@ export {
     hasCancellablePlan,
     hasDeprecatedVPN,
     hasDrive,
+    hasDrive1TB,
     hasDriveBusiness,
     hasDrivePro,
     hasDuo,
@@ -365,21 +394,25 @@ export {
     hasSomePlan,
     hasThirty,
     hasTwoYears,
-    hasVPN2024,
-    hasVPNPassBundle,
     hasVisionary,
+    hasVPN2022,
+    hasVPN2024,
     hasVpnBusiness,
+    hasVPNPassBundle,
     hasVpnPro,
     hasWallet,
     hasYearly,
+    isAnyManagedExternally,
     isCancellableOnlyViaSupport,
+    isCheckForbidden,
     isLifetimePlan,
     isManagedExternally,
     isRegularCycle,
-    isSubscriptionUnchanged,
     isTaxInclusive,
     isTrial,
     isTrialExpired,
+    PASS_LAUNCH_OFFER,
+    PLANS_WITH_AI_INCLUDED,
     planSupportsSSO,
     regularCycles,
     upsellPlanSSO,
@@ -387,8 +420,7 @@ export {
     type AggregatedPricing,
     type PricingForCycles,
 } from './core/subscription/helpers';
-export { type Subscription } from './core/subscription/interface';
-export type { FullPlansMap } from './core/subscription/interface';
+export { type FullPlansMap, type Subscription } from './core/subscription/interface';
 export {
     getAvailableCycles,
     getPlanByName,
@@ -412,6 +444,7 @@ export {
     isPaypalDetails,
     isPaypalPayment,
     isSavedCardDetails,
+    isSavedPaymentMethodApplePay,
     isSavedPaymentMethodExternal,
     isSavedPaymentMethodInternal,
     isSavedPaymentMethodSepa,

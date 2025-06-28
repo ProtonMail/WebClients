@@ -41,9 +41,11 @@ const ReportsTable = () => {
                 <TableHeader>
                     <TableRow>
                         <TableHeaderCell>{c('Title header').t`Import`}</TableHeaderCell>
-                        <TableHeaderCell>{c('Title header').t`Status`}</TableHeaderCell>
+                        <TableHeaderCell className="w-custom" style={{ '--w-custom': '10em' }}>{c('Title header')
+                            .t`Status`}</TableHeaderCell>
                         <TableHeaderCell>{c('Title header').t`Date`}</TableHeaderCell>
-                        <TableHeaderCell>{c('Title header').t`Size`}</TableHeaderCell>
+                        <TableHeaderCell className="w-custom" style={{ '--w-custom': '8em' }}>{c('Title header')
+                            .t`Size`}</TableHeaderCell>
                         <TableHeaderCell>{c('Title header').t`Actions`}</TableHeaderCell>
                     </TableRow>
                 </TableHeader>

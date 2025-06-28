@@ -24,7 +24,6 @@ export const getRoutes = ({
     subscription,
     isDataRecoveryAvailable,
     isSessionRecoveryAvailable,
-    isQRCodeSignInEnabled,
     isReferralProgramEnabled,
     recoveryNotification,
     isBreachesAccountDashboardEnabled,
@@ -46,6 +45,8 @@ export const getRoutes = ({
     isCalendarHotkeysEnabled,
     isSharedServerFeatureEnabled,
     isPasswordPolicyEnabled,
+    isOrganizationPolicyEnforced,
+    isB2BTrial,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -56,7 +57,6 @@ export const getRoutes = ({
             isDataRecoveryAvailable,
             isSessionRecoveryAvailable,
             isReferralProgramEnabled,
-            isQRCodeSignInEnabled,
             recoveryNotification,
             organization,
             isBreachesAccountDashboardEnabled,
@@ -66,6 +66,7 @@ export const getRoutes = ({
             isUserGroupsMembershipFeatureEnabled,
             memberships,
             isZoomIntegrationEnabled,
+            isB2BTrial,
         }),
         mail: getMailAppRoutes({
             app,
@@ -90,6 +91,7 @@ export const getRoutes = ({
             isZoomIntegrationEnabled,
             isSharedServerFeatureEnabled,
             isPasswordPolicyEnabled,
+            isOrganizationPolicyEnforced,
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),

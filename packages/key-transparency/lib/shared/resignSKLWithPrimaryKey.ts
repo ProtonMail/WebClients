@@ -8,6 +8,11 @@ import { fetchVerifiedEpoch, updateSignedKeyListSignature } from '../helpers/api
 import { ktSentryReportError } from '../helpers/utils';
 import { verifySKLSignature } from '../verification/verifyKeys';
 
+/**
+ * Resigning old SKLs is needed on primary key changes,
+ * as non-primary keys may not be available for future SKL verifications
+ * if they are deleted or marked as compromised.
+ */
 export const resignSKLWithPrimaryKey = async ({
     api: normalApi,
     ktActivation,
@@ -33,6 +38,14 @@ export const resignSKLWithPrimaryKey = async ({
                         signedKeyListSignature: skl.Signature,
                     });
                     if (!timestamp) {
+                        return;
+                    }
+                    // To resign an old SKL, we need the `newPrimaryKeys` to be valid at `timestamp`:
+                    // for newly generated or imported keys, this won't be the case.
+                    // We simply check the key creation time, as this covers most cases, and this
+                    // re-signing step is a best-effort solution.
+                    // Signing might still fail depending on the actual signing (sub)key validity.
+                    if (newPrimaryKeys.some((key) => key.getCreationTime() > timestamp)) {
                         return;
                     }
                     const newSignature = await getSignedKeyListSignature(skl.Data, newPrimaryKeys, timestamp);

@@ -1,6 +1,5 @@
 import { type ReactElement, useEffect, useState } from 'react';
 
-import { isBefore } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -30,24 +29,26 @@ import {
     type PaymentsApi,
     type Plan,
     type PlanIDs,
+    type PlansMap,
     Renew,
     type Subscription,
     type SubscriptionPlan,
+    getCanSubscriptionAccessDuoPlan,
     getIpPricePerMonth,
     getIsB2BAudienceFromPlan,
     isFreeSubscription as getIsFreeSubscription,
+    getMaximumCycleForApp,
     getPlan,
     getPlansMap,
-    isRegionalCurrency,
-    mainCurrencies,
-} from '@proton/payments';
-import {
-    getCanSubscriptionAccessDuoPlan,
-    getMaximumCycleForApp,
     hasMaximumCycle,
     hasPass,
     hasPassFamily,
     hasSomeAddonOrPlan,
+    isAnyManagedExternally,
+    isCheckForbidden,
+    isFreeSubscription,
+    isRegionalCurrency,
+    mainCurrencies,
 } from '@proton/payments';
 import { OfferPrice } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -68,6 +69,7 @@ import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
 import PlanCard, { type HocPrice } from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
+import { getAllowedCycles } from './helpers';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
 import {
     getAutoCoupon,
@@ -161,6 +163,30 @@ function excludingTheOnlyFreePlan(plan: Plan | ShortPlanLike, _: number, allPlan
     return !(plan === FREE_PLAN && allPlans.length === 1);
 }
 
+/**
+ * There might be cases when all the possible cycles are forbidden for a plan.
+ * This can happen if there is a subscription with a selected plan managed externally, by Google or Apple.
+ * In this case we don't want to display this plan to the user - they can't change anything anyways.
+ */
+function excludingPlansWithAllChecksFordidden(
+    subscription: Subscription | FreeSubscription | null | undefined,
+    plansMap: PlansMap
+) {
+    return (plan: Plan | ShortPlanLike | PLANS) => {
+        if (isShortPlanLike(plan) || !subscription || isFreeSubscription(subscription)) {
+            return true;
+        }
+
+        const planName = typeof plan === 'string' ? plan : plan.Name;
+
+        const planIDs = { [planName]: 1 };
+        const allowedCycles = getAllowedCycles({ subscription, planIDs, currency: subscription.Currency, plansMap });
+
+        const allChecksForbidden = allowedCycles.every((cycle) => isCheckForbidden(subscription, planIDs, cycle));
+        return !allChecksForbidden;
+    };
+}
+
 export type AccessiblePlansHookProps = {
     user: UserModel;
 } & Pick<
@@ -191,6 +217,12 @@ export function useAccessiblePlans({
     audience,
 }: AccessiblePlansHookProps) {
     const passLifetimeFeatureFlag = useFlag('PassLifetimeFrontend');
+    const lumoPlusEnabled = useFlag('LumoPlusFrontend');
+
+    const isVpnSettingsApp = app === APPS.PROTONVPN_SETTINGS;
+    const isPassSettingsApp = app === APPS.PROTONPASS;
+    const isDriveSettingsApp = app === APPS.PROTONDRIVE;
+    const isWalletSettingsApp = app === APPS.PROTONWALLET;
 
     const plansMap = getPlansMap(plans, currency, false);
 
@@ -202,10 +234,12 @@ export function useAccessiblePlans({
         getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
         PLANS.DRIVE,
         !user.hasPassLifetime && PLANS.PASS,
-        PLANS.LUMO,
-    ].filter(isTruthy);
+        lumoPlusEnabled && PLANS.LUMO,
+    ]
+        .filter(isTruthy)
+        .filter(excludingPlansWithAllChecksFordidden(subscription, plansMap));
 
-    let enabledProductB2CPlans = enabledProductB2CPlanNames.map((planName) => plansMap[planName]).filter(isTruthy);
+    const enabledProductB2CPlans = enabledProductB2CPlanNames.map((planName) => plansMap[planName]).filter(isTruthy);
 
     const alreadyHasMaxCycle = hasMaximumCycle(subscription);
 
@@ -217,26 +251,43 @@ export function useAccessiblePlans({
         return plans
             .filter(isTruthy)
             .filter(excludingCurrentPlanWithMaxCycle(currentPlan, alreadyHasMaxCycle))
-            .filter(excludingTheOnlyFreePlan);
+            .filter(excludingTheOnlyFreePlan)
+            .filter(excludingPlansWithAllChecksFordidden(subscription, plansMap));
     }
 
-    let IndividualPlans = filterPlans([
+    let IndividualPlans: (Plan | ShortPlanLike)[] = [];
+
+    const driveIndividualPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
-        // Special condition to temporarily hide Wallet plus in the individual tab if we are in Proton Wallet
-        app !== APPS.PROTONWALLET
-            ? (enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
-              enabledProductB2CPlans[0] ??
-              plansMap[PLANS.MAIL])
-            : null,
+        plansMap[PLANS.DRIVE],
+        plansMap[PLANS.DRIVE_1TB],
         plansMap[PLANS.BUNDLE],
-        // Special condition to hide Pass plus in the individual tab if it's the current plan
-        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
-        app === APPS.PROTONWALLET ? plansMap[PLANS.VISIONARY] : null,
     ]);
+
+    const walletIndividualPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.VISIONARY]]);
+
+    const isDriveIndividualPlans = isDriveSettingsApp && driveIndividualPlans.length !== 0;
+    const isWalletIndividualPlans = isWalletSettingsApp && walletIndividualPlans.length !== 0;
+
+    // Update IndividualPlans to use Drive-specific plans when in Drive settings app
+    if (isDriveIndividualPlans) {
+        IndividualPlans = driveIndividualPlans;
+    } else if (isWalletIndividualPlans) {
+        IndividualPlans = walletIndividualPlans;
+    } else {
+        IndividualPlans = filterPlans([
+            hasFreePlan ? FREE_PLAN : null,
+            enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
+                enabledProductB2CPlans[0] ??
+                plansMap[PLANS.MAIL],
+            plansMap[PLANS.BUNDLE],
+            canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
+        ]);
+    }
 
     const canAccessPassFamilyPlan =
         (isFree(user) && app === APPS.PROTONPASS) || hasPass(subscription) || hasPassFamily(subscription);
-    let FamilyPlans = filterPlans([
+    const FamilyPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
         canAccessDuoPlan && !canAccessPassFamilyPlan ? plansMap[PLANS.DUO] : null,
         canAccessPassFamilyPlan ? plansMap[PLANS.PASS_FAMILY] : null,
@@ -263,11 +314,6 @@ export function useAccessiblePlans({
 
     const walletB2BPlans = filterPlans([plansMap[bundleProPlan]]);
 
-    const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
-    const isPassSettingsApp = app == APPS.PROTONPASS;
-    const isDriveSettingsApp = app == APPS.PROTONDRIVE;
-    const isWalletSettingsApp = app == APPS.PROTONWALLET;
-
     /**
      * The VPN B2B plans should be displayed only in the ProtonVPN Settings app (protonvpn.com).
      *
@@ -279,21 +325,31 @@ export function useAccessiblePlans({
     const isDriveB2bPlans = isDriveSettingsApp && driveB2BPlans.length !== 0;
     const isWalletB2BPlans = isWalletSettingsApp && walletB2BPlans.length !== 0;
 
-    let B2BPlans: (Plan | ShortPlanLike)[] = [];
-    if (isVpnB2bPlans) {
-        B2BPlans = vpnB2BPlans;
-    } else if (isPassB2bPlans) {
-        // Lifetime users shouldn't see Pass B2B plans
-        if (!user.hasPassLifetime) {
-            B2BPlans = passB2BPlans;
+    const B2BPlans: (Plan | ShortPlanLike)[] = (() => {
+        // In the realm of multi-subs, if user has any subscription managed exteranlly, we don't display the B2B plans
+        // It can cause any sort of problems at the moment: with addons transfering, with subscriptions,
+        // with organizations.
+        if (isAnyManagedExternally(subscription)) {
+            return [];
         }
-    } else if (isDriveB2bPlans) {
-        B2BPlans = driveB2BPlans;
-    } else if (isWalletB2BPlans) {
-        B2BPlans = walletB2BPlans;
-    } else {
-        B2BPlans = filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
-    }
+
+        if (isVpnB2bPlans) {
+            return vpnB2BPlans;
+        } else if (isPassB2bPlans) {
+            // Lifetime users shouldn't see Pass B2B plans
+            if (!user.hasPassLifetime) {
+                return passB2BPlans;
+            }
+        } else if (isDriveB2bPlans) {
+            return driveB2BPlans;
+        } else if (isWalletB2BPlans) {
+            return walletB2BPlans;
+        } else {
+            return filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
+        }
+
+        return [];
+    })();
 
     const isPassLifetimeEligible =
         passLifetimeFeatureFlag &&
@@ -362,7 +418,6 @@ const PlanSelection = (props: Props) => {
     const {
         app,
         mode,
-        planIDs,
         plans,
         freePlan,
         vpnServers,
@@ -446,6 +501,7 @@ const PlanSelection = (props: Props) => {
 
     const b2cRecommendedPlans = [
         hasSomeAddonOrPlan(subscription, [PLANS.BUNDLE, PLANS.VISIONARY, PLANS.FAMILY]) ? undefined : PLANS.BUNDLE,
+        PLANS.DRIVE_1TB,
         PLANS.DUO,
         PLANS.FAMILY,
     ].filter(isTruthy);
@@ -508,7 +564,9 @@ const PlanSelection = (props: Props) => {
                       };
                   })
                 : [];
-        const isSelectable = plansList.some(({ planName: otherPlanName }) => otherPlanName === plan.Name);
+        // Only show the selectable plans dropdown in case the user is free
+        const isSelectable =
+            plansList.some(({ planName: otherPlanName }) => otherPlanName === plan.Name) && user.isFree;
         const selectedPlan = plansList.some(
             ({ planName: otherPlanName }) => otherPlanName === selectedProductPlans[audience]
         )
@@ -588,7 +646,7 @@ const PlanSelection = (props: Props) => {
 
                     onChangePlanIDs(
                         switchPlan({
-                            currentPlanIDs: planIDs,
+                            subscription,
                             newPlan: isFree ? undefined : planName,
                             organization,
                             plans,
@@ -638,7 +696,12 @@ const PlanSelection = (props: Props) => {
                             style={{ '--plan-selection-number': 3 }}
                             data-testid="lifetime-plan-cycle"
                         >
-                            {renderPlanCard(passLifetimePlan, Audience.B2C, [], IndividualPlans)}
+                            {renderPlanCard(
+                                passLifetimePlan,
+                                Audience.B2C,
+                                [],
+                                IndividualPlans.filter((plan): plan is Plan => !isShortPlanLike(plan))
+                            )}
                         </div>
                     ) : (
                         <div
@@ -650,7 +713,12 @@ const PlanSelection = (props: Props) => {
                             data-testid="b2c-plan"
                         >
                             {IndividualPlans.map((plan) =>
-                                renderPlanCard(plan, Audience.B2C, b2cRecommendedPlans, IndividualPlans)
+                                renderPlanCard(
+                                    plan as Plan,
+                                    Audience.B2C,
+                                    b2cRecommendedPlans,
+                                    IndividualPlans.filter((plan): plan is Plan => !isShortPlanLike(plan))
+                                )
                             )}
                         </div>
                     )}
@@ -760,23 +828,6 @@ const PlanSelection = (props: Props) => {
                                       {
                                           text: c('Billing cycle option').t`Lifetime`,
                                           value: 'lifetime',
-                                          element: (() => {
-                                              // months are 0-indexed, because why not
-                                              const april15th = new Date(2025, 3, 15);
-                                              // sure thing, feel free to remove this logic after the 15th of April
-                                              const showNew = isBefore(new Date(), april15th);
-
-                                              return (
-                                                  <>
-                                                      {c('Billing cycle option').t`Lifetime`}
-                                                      {showNew && (
-                                                          <span className="badge-label-success ml-2 text-semibold">{c(
-                                                              'Billing cycle option'
-                                                          ).t`New!`}</span>
-                                                      )}
-                                                  </>
-                                              );
-                                          })(),
                                       },
                                   ]
                                 : undefined

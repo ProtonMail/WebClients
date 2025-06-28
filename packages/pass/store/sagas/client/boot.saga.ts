@@ -49,7 +49,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
 
         options.setAppStatus(AppStatus.BOOTING);
         yield put(stopEventPolling());
-        yield loadCryptoWorker();
+        yield loadCryptoWorker({ openpgpConfigOptions: { enforceOpenpgpGrammar: true } });
 
         /* merge the existing cache to preserve any state that may have been
          * mutated before the boot sequence (session lock data) */

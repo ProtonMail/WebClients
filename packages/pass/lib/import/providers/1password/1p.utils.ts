@@ -1,28 +1,40 @@
 import { c } from 'ttag';
 
 import { type ItemBuilder, itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, Maybe, MaybeNull } from '@proton/pass/types';
+import type {
+    DeobfuscatedItemExtraField,
+    IdentityFieldName,
+    ItemContent,
+    ItemImportIntent,
+    Maybe,
+    MaybeNull,
+} from '@proton/pass/types';
+import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { objectKeys } from '@proton/pass/utils/object/generic';
+import { isObject } from '@proton/pass/utils/object/is-object';
 import { epochToDate } from '@proton/pass/utils/time/format';
 import lastItem from '@proton/utils/lastItem';
 
-import type { OnePassLegacyItem, OnePassLegacyURL } from './1pif.types';
+import type { OnePassLegacyItem, OnePassLegacyURL, OnePasswordWifiFields } from './1pif.types';
 import { type OnePassLegacySection, type OnePassLegacySectionField, OnePassLegacySectionFieldKey } from './1pif.types';
 import type {
     OnePassCategory,
     OnePassCreditCardFieldId,
     OnePassField,
+    OnePassFieldValue,
     OnePassFields,
     OnePassItem,
-    OnePassItemDetails,
     OnePassLoginDesignation,
     OnePassSection,
 } from './1pux.types';
-import { OnePassCreditCardFieldIds, OnePassFieldKey, OnePassFieldValueKeys } from './1pux.types';
+import { OnePassCreditCardFieldIds, OnePassFieldKey } from './1pux.types';
 
 const ONE_PASS_FIXED_SECTIONS = ['name', 'address', 'internet'];
 const ONE_PASS_ADDRESS_KEYS = ['street', 'city', 'country', 'zip', 'state'];
+const ONE_PASS_WIFI_KEYS = ['network_name', 'wireless_password', 'wireless_security'];
+const ONE_PASS_SSH_KEYS = ['sshKey-privateKey', 'sshKey-publicKey'];
 const ONE_PASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     address1: 'streetAddress',
     busphone: 'workPhoneNumber',
@@ -44,13 +56,6 @@ const ONE_PASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     zip: 'zipOrPostalCode',
 };
 
-export const is1PasswordNoteField = ({ value }: OnePassField) => 'string' in value || 'url' in value;
-export const is1PasswordLegacyNoteField = ({ k: key }: OnePassLegacySectionField) =>
-    key === OnePassLegacySectionFieldKey.STRING || key === OnePassLegacySectionFieldKey.URL;
-
-export const is1PasswordSupportedField = ({ value }: OnePassField) =>
-    OnePassFieldValueKeys.some((key) => key === Object.keys(value)[0]);
-
 export const is1PasswordCCField = (field: OnePassField): field is OnePassField & { id: OnePassCreditCardFieldId } =>
     OnePassCreditCardFieldIds.some((id) => id === field.id);
 
@@ -58,6 +63,46 @@ export const format1PasswordMonthYear = (monthYear: Maybe<number>): string => {
     const monthYearString = String(monthYear);
     if (!monthYear || monthYearString.length !== 6) return '';
     return `${monthYearString.slice(4, 6)}${monthYearString.slice(0, 4)}`;
+};
+
+/** 1P field values can be nested objects of type :
+ * `{ value: { [string | menu | concealed]: string } }`*/
+const sanitizeFieldValue = (data: unknown): string => {
+    if (isObject(data)) {
+        if (Array.isArray(data)) return '';
+        const value = Object.values(data)?.[0];
+        if (typeof value === 'string') return value;
+        else return '';
+    }
+
+    return String(data);
+};
+
+const into1PasswordExtraField = (
+    value: unknown,
+    fieldName: MaybeNull<string> = null
+): MaybeNull<DeobfuscatedItemExtraField | DeobfuscatedItemExtraField[]> => {
+    try {
+        if (!value || Array.isArray(value)) return null;
+
+        if (isObject(value)) {
+            return Object.entries(value)
+                .filter(([, val]) => truthy(val) && !isObject(val))
+                .map(([key, val]) => ({
+                    fieldName: key,
+                    type: 'text',
+                    data: { content: String(val) },
+                }));
+        }
+
+        return {
+            fieldName: fieldName || c('Label').t`Text`,
+            type: 'text',
+            data: { content: String(value) },
+        };
+    } catch {
+        return null;
+    }
 };
 
 export const format1PasswordFieldValue = (field: OnePassFields, key: OnePassFieldKey): string => {
@@ -70,7 +115,7 @@ export const format1PasswordFieldValue = (field: OnePassFields, key: OnePassFiel
         case OnePassFieldKey.MONTH_YEAR:
             return format1PasswordMonthYear(field[key]!);
         default:
-            return String(value);
+            return sanitizeFieldValue(value);
     }
 };
 
@@ -82,157 +127,111 @@ export const format1PasswordLegacyFieldValue = (field: OnePassLegacySectionField
         case OnePassLegacySectionFieldKey.DATE:
             return epochToDate(field.v!);
         default:
-            return String(value);
+            return sanitizeFieldValue(value);
     }
 };
 
-export const extract1PasswordNote = (details: OnePassItemDetails): string => {
-    const base = details.notesPlain;
-
-    return (details.sections ?? [])
-        .reduce<string>(
-            (fullNote, section) => {
-                if (!section) return fullNote;
-
-                const hasNoteFields = section.fields.some(is1PasswordNoteField);
-                if (!hasNoteFields) return fullNote;
-
-                if (section.title) fullNote += `${section.title}\n`;
-
-                (section.fields ?? []).forEach((field, idx, fields) => {
-                    if (!is1PasswordNoteField(field)) return;
-
-                    const subTitle = field.title;
-                    const value = field.value.string ?? field.value.url ?? '';
-                    if (subTitle) fullNote += `${subTitle}\n`;
-                    if (value) fullNote += `${value}\n${idx === fields.length - 1 ? '\n' : ''}`;
-                });
-
-                return fullNote;
-            },
-            base ? `${base}\n\n` : ''
-        )
-        .trim();
+const extractURLsFromItem = <T>(options: {
+    item: T;
+    getPrimaryUrl: (item: T) => Maybe<string>;
+    getSecondaryUrls: (item: T) => string[];
+}): string[] => {
+    const primary = options.getPrimaryUrl(options.item);
+    const secondary = options.getSecondaryUrls(options.item);
+    return [primary, ...secondary].filter(truthy);
 };
 
-export const extract1PasswordLegacyNote = (item: OnePassLegacyItem): string => {
-    const base = item.secureContents?.notesPlain;
+export const extract1PasswordURLs = (item: OnePassItem): string[] =>
+    extractURLsFromItem({
+        item,
+        getPrimaryUrl: (item) => item.overview.url,
+        getSecondaryUrls: (item) => (item.overview.urls ?? []).map(({ url }) => url),
+    });
 
-    return (item.secureContents.sections ?? [])
-        .reduce<string>(
-            (fullNote, section) => {
-                const hasNoteFields = section.fields?.some(is1PasswordLegacyNoteField);
-                if (!hasNoteFields) return fullNote;
+export const extract1PasswordLegacyURLs = (item: OnePassLegacyItem): string[] =>
+    extractURLsFromItem({
+        item,
+        getPrimaryUrl: () => undefined,
+        getSecondaryUrls: (item) => item.secureContents?.URLs?.map(({ url }: OnePassLegacyURL) => url) ?? [],
+    });
 
-                if (section.title) fullNote += `${section.title}\n`;
+const createTextExtraField = (title: Maybe<string>, content: string): DeobfuscatedItemExtraField => ({
+    fieldName: title || c('Label').t`Text`,
+    type: 'text',
+    data: { content },
+});
 
-                (section.fields ?? []).forEach((field, idx, fields) => {
-                    const { t: subTitle, v: value } = field;
-                    if (!is1PasswordLegacyNoteField(field)) return;
+const createHiddenExtraField = (title: Maybe<string>, content: string): DeobfuscatedItemExtraField => ({
+    fieldName: title || c('Label').t`Hidden`,
+    type: 'hidden',
+    data: { content },
+});
 
-                    if (subTitle) fullNote += `${subTitle}\n`;
-                    if (value) fullNote += `${value}\n${idx === fields.length - 1 ? '\n' : ''}`;
-                });
+const createTotpExtraField = (title: Maybe<string>, content: string): DeobfuscatedItemExtraField => ({
+    fieldName: title || c('Label').t`TOTP`,
+    type: 'totp',
+    data: { totpUri: content },
+});
 
-                return fullNote;
-            },
-            base ? `${base}\n\n` : ''
-        )
-        .trim();
+export const extract1PasswordExtraFields = (section: OnePassSection): DeobfuscatedItemExtraField[] => {
+    return section.fields
+        .flatMap<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value, id }) => {
+            const [fieldKey] = objectKeys(value);
+            const data = value[fieldKey];
+
+            if (!data || ONE_PASS_WIFI_KEYS.includes(id)) return null;
+
+            switch (fieldKey) {
+                case OnePassFieldKey.STRING:
+                case OnePassFieldKey.DATE:
+                case OnePassFieldKey.MONTH_YEAR:
+                case OnePassFieldKey.URL:
+                    return createTextExtraField(title, format1PasswordFieldValue(value, fieldKey));
+                case OnePassFieldKey.TOTP:
+                    return createTotpExtraField(title, format1PasswordFieldValue(value, fieldKey));
+                case OnePassFieldKey.CONCEALED:
+                case OnePassFieldKey.CREDIT_CARD_NUMBER:
+                    return createHiddenExtraField(title, format1PasswordFieldValue(value, fieldKey));
+                case OnePassFieldKey.SSH_KEY:
+                case OnePassFieldKey.FILE:
+                    return null;
+                default:
+                    return into1PasswordExtraField(data, title);
+            }
+        })
+        .filter(truthy);
 };
 
-export const extract1PasswordURLs = ({ overview }: OnePassItem): string[] => [
-    overview.url,
-    ...(overview.urls ?? []).map(({ url }) => url),
-];
+const mapLegacyFieldIntoExtraField = (
+    field: OnePassLegacySectionField
+): MaybeNull<DeobfuscatedItemExtraField | DeobfuscatedItemExtraField[]> => {
+    if (ONE_PASS_WIFI_KEYS.includes(field.n)) return null;
 
-export const extract1PasswordLegacyURLs = (item: OnePassLegacyItem): string[] => {
-    if (item.secureContents?.URLs === undefined) return [];
-    return item.secureContents.URLs.map(({ url }: OnePassLegacyURL) => url);
+    switch (field.k) {
+        case OnePassLegacySectionFieldKey.STRING:
+        case OnePassLegacySectionFieldKey.URL:
+            return createTextExtraField(field.t, field.v ?? '');
+        case OnePassLegacySectionFieldKey.CONCEALED:
+            if (field.n.startsWith('TOTP')) return createTotpExtraField(field.t, field.v ?? '');
+            return createHiddenExtraField(field.t, field.v ?? '');
+        default:
+            return into1PasswordExtraField(field.v, field.t);
+    }
 };
 
-export const extract1PasswordExtraFields = (item: OnePassItem): DeobfuscatedItemExtraField[] => {
-    const { sections } = item.details;
-    if (!sections) return [];
+export const extract1PasswordLegacyExtraFields = (item: OnePassLegacyItem): DeobfuscatedItemExtraField[] =>
+    item.secureContents.sections?.flatMap(
+        ({ fields }) => fields?.flatMap(mapLegacyFieldIntoExtraField).filter(truthy) ?? []
+    ) ?? [];
 
-    return (
-        sections
-            /* check that field value key is supported and remove any credit card fields */
-            .flatMap(({ fields }) =>
-                fields.filter((field) => is1PasswordSupportedField(field) && !is1PasswordCCField(field))
-            )
-            .map<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value }) => {
-                const [fieldKey] = objectKeys(value);
-                const data = value[fieldKey];
-                if (!data) return null;
-
-                switch (fieldKey) {
-                    case OnePassFieldKey.STRING:
-                    case OnePassFieldKey.DATE:
-                    case OnePassFieldKey.MONTH_YEAR:
-                    case OnePassFieldKey.URL:
-                        return {
-                            fieldName: title || c('Label').t`Text`,
-                            type: 'text',
-                            data: { content: format1PasswordFieldValue(value, fieldKey) },
-                        };
-                    case OnePassFieldKey.TOTP:
-                        return {
-                            fieldName: title || c('Label').t`TOTP`,
-                            type: 'totp',
-                            data: { totpUri: format1PasswordFieldValue(value, fieldKey) },
-                        };
-                    case OnePassFieldKey.CONCEALED:
-                    case OnePassFieldKey.CREDIT_CARD_NUMBER:
-                        return {
-                            fieldName: title || c('Label').t`Hidden`,
-                            type: 'hidden',
-                            data: { content: format1PasswordFieldValue(value, fieldKey) },
-                        };
-                    default:
-                        return null;
-                }
-            })
-            .filter(truthy)
-    );
-};
-
-export const extract1PasswordLegacyExtraFields = (item: OnePassLegacyItem) => {
-    return item.secureContents.sections
-        ?.filter(({ fields }) => Boolean(fields))
-        .flatMap(({ fields }) =>
-            (fields as OnePassLegacySectionField[])
-                .filter(({ k }) => Object.values(OnePassLegacySectionFieldKey).includes(k))
-                .map<MaybeNull<DeobfuscatedItemExtraField>>((field) => {
-                    switch (field.k) {
-                        case OnePassLegacySectionFieldKey.STRING:
-                        case OnePassLegacySectionFieldKey.URL:
-                            return {
-                                fieldName: field.t || c('Label').t`Text`,
-                                type: 'text',
-                                data: { content: field.v ?? '' },
-                            };
-                        case OnePassLegacySectionFieldKey.CONCEALED:
-                            if (field.n.startsWith('TOTP')) {
-                                return {
-                                    fieldName: field.t || c('Label').t`TOTP`,
-                                    type: 'totp',
-                                    data: { totpUri: field.v ?? '' },
-                                };
-                            }
-                            return {
-                                // translator: label for a field that is hidden. Singular only.
-                                fieldName: field.t || c('Label').t`Hidden`,
-                                type: 'hidden',
-                                data: { content: field.v ?? '' },
-                            };
-                        default:
-                            return null;
-                    }
-                })
-                .filter(truthy)
-        );
-};
+export const extract1PasswordLegacyUnknownExtraFields = (item: OnePassLegacyItem): DeobfuscatedItemExtraField[] =>
+    item.secureContents.unknown_details?.sections?.flatMap(
+        ({ fields }) =>
+            fields
+                ?.filter(({ n }) => !ONE_PASS_SSH_KEYS.includes(n))
+                .flatMap(mapLegacyFieldIntoExtraField)
+                .filter(truthy) ?? []
+    ) ?? [];
 
 export const extract1PasswordLoginField = (
     item: Extract<OnePassItem, { categoryUuid: OnePassCategory.LOGIN }>,
@@ -255,38 +254,30 @@ const identityBuilderFactory =
         return item.data.content;
     };
 
+const processAddressField = (item: ItemBuilder<'identity'>, addressData: Record<string, any>): void => {
+    ONE_PASS_ADDRESS_KEYS.forEach((key) => {
+        const field = ONE_PASS_IDENTITY_FIELD_MAP[key];
+        if (field) item.set('content', (content) => content.set(field, addressData[key] ?? ''));
+    });
+};
+
 export const extract1PasswordIdentity = identityBuilderFactory<OnePassField, OnePassSection>((item, { id, value }) => {
     const [fieldKey] = objectKeys<OnePassFieldKey>(value);
     const fieldName = ONE_PASS_IDENTITY_FIELD_MAP[id];
-
-    if (fieldKey === OnePassFieldKey.ADDRESS) {
-        return ONE_PASS_ADDRESS_KEYS.forEach((key) => {
-            const address = value[fieldKey];
-            const field = ONE_PASS_IDENTITY_FIELD_MAP[key];
-            if (field) item.set('content', (content) => content.set(field, address?.[key] ?? ''));
-        });
-    }
-
-    if (fieldName) {
-        item.set('content', (content) => content.set(fieldName, format1PasswordFieldValue(value, fieldKey)));
-    }
+    if (fieldKey === OnePassFieldKey.ADDRESS && value[fieldKey]) return processAddressField(item, value[fieldKey]);
+    if (fieldName) item.set('content', (content) => content.set(fieldName, format1PasswordFieldValue(value, fieldKey)));
 });
 
 export const extract1PasswordLegacyIdentity = identityBuilderFactory<OnePassLegacySectionField, OnePassLegacySection>(
     (item, field) => {
-        if (field.k === OnePassLegacySectionFieldKey.ADDRESS && field.v) {
-            return Object.entries(field.v).forEach(([key, value]) => {
-                const field = ONE_PASS_IDENTITY_FIELD_MAP[key];
-                if (field) item.set('content', (content) => content.set(field, value ?? ''));
-            });
-        }
-
-        const fieldName = ONE_PASS_IDENTITY_FIELD_MAP[field.n];
+        const { k, v, n } = field;
+        const fieldName = ONE_PASS_IDENTITY_FIELD_MAP[n];
+        if (k === OnePassLegacySectionFieldKey.ADDRESS && v) return processAddressField(item, v);
         if (fieldName) item.set('content', (content) => content.set(fieldName, format1PasswordLegacyFieldValue(field)));
     }
 );
 
-export const intoFilesFrom1PasswordItem = (sections: Maybe<OnePassSection[]>): string[] => {
+export const into1PasswordItemFiles = (sections: Maybe<OnePassSection[]>): string[] => {
     if (!sections) return [];
 
     return sections.reduce<string[]>((acc, section) => {
@@ -303,3 +294,73 @@ export const intoFilesFrom1PasswordItem = (sections: Maybe<OnePassSection[]>): s
         return acc;
     }, []);
 };
+
+export const extract1PasswordSSHSections = (
+    sshKey: OnePassFieldValue<OnePassFieldKey.SSH_KEY>
+): ItemImportIntent<'sshKey'>['content']['sections'] => {
+    const sectionFields: DeobfuscatedItemExtraField[] = [];
+
+    if (sshKey?.privateKey) {
+        sectionFields.push({
+            fieldName: c('Label').t`Private Key`,
+            type: 'hidden',
+            data: { content: sshKey.privateKey },
+        });
+    }
+
+    if (sshKey?.metadata?.fingerprint) {
+        sectionFields.push({
+            fieldName: c('Label').t`Key fingerprint`,
+            type: 'hidden',
+            data: { content: sshKey.metadata.fingerprint },
+        });
+    }
+
+    if (sshKey?.metadata?.keyType) {
+        sectionFields.push({
+            fieldName: c('Label').t`Key type`,
+            type: 'text',
+            data: { content: sshKey.metadata.keyType },
+        });
+    }
+
+    return sectionFields.length ? [{ sectionName: 'OpenSSH', sectionFields }] : [];
+};
+
+const extractBaseWifiFields = <T extends { fields?: any[] }>(
+    sections: Maybe<T[]> = [],
+    findFieldValue: (field: NonNullable<T['fields']>[number], key: string) => any
+): OnePasswordWifiFields => {
+    const fields = sections.flatMap(prop('fields'));
+    const [ssid, password, wirelessSecurity] = ONE_PASS_WIFI_KEYS.map((key) => {
+        const match = fields.find((field) => findFieldValue(field, key));
+        if (match) return sanitizeFieldValue(findFieldValue(match, key));
+    });
+
+    return {
+        ssid,
+        password,
+        security: (() => {
+            switch (wirelessSecurity) {
+                case 'wpa3p':
+                case 'wpa3e':
+                    return WifiSecurity.WPA3;
+                case 'wpa2p':
+                case 'wpa2e':
+                    return WifiSecurity.WPA2;
+                case 'wpa':
+                    return WifiSecurity.WPA;
+                case 'wep':
+                    return WifiSecurity.WEP;
+                default:
+                    return WifiSecurity.UnspecifiedWifiSecurity;
+            }
+        })(),
+    };
+};
+
+export const extract1PasswordWifiFields = (sections: Maybe<OnePassSection[]> = []): OnePasswordWifiFields =>
+    extractBaseWifiFields(sections, (field, key) => (field.id === key ? field.value : undefined));
+
+export const extractLegacy1PasswordWifiFields = (sections: Maybe<OnePassLegacySection[]> = []): OnePasswordWifiFields =>
+    extractBaseWifiFields(sections, (field, key) => (field?.n === key ? field.v : undefined));

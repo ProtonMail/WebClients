@@ -8,13 +8,13 @@ import {
     type PlansMap,
     type Subscription,
     hasCycle,
-    isMainCurrency,
-    isRegionalCurrency,
+    isRegularCycle,
+    isTrial,
 } from '@proton/payments';
-import { isRegularCycle, isTrial } from '@proton/payments';
 import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
 
+import { type CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';
 
@@ -31,18 +31,7 @@ export type PlanCapRule = {
 };
 
 const defaultRules: PlanCapRule[] = [
-    // We want to show Mail Plus 2 years when possible. Regional currencies don't have 2-year plans, so
-    // so we add a restrictions for them
-    {
-        plan: PLANS.MAIL,
-        cycle: CYCLE.TWO_YEARS,
-        currencyPredicate: isMainCurrency,
-    },
-    {
-        plan: PLANS.MAIL,
-        cycle: CYCLE.YEARLY,
-        currencyPredicate: isRegionalCurrency,
-    },
+    { plan: PLANS.MAIL, cycle: CYCLE.TWO_YEARS },
     { plan: PLANS.VPN, cycle: CYCLE.YEARLY },
     { plan: PLANS.VPN2024, cycle: CYCLE.TWO_YEARS },
     { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY },
@@ -56,11 +45,8 @@ const defaultRules: PlanCapRule[] = [
     // The only exception is BRL which technically supports 2-year bundle2022 but has a placeholder
     // price: 2 * 12m price.
     { plan: PLANS.BUNDLE, cycle: CYCLE.TWO_YEARS },
-    // Duo and Family 24m don't support regional currencies, so we disable them.
-    { plan: PLANS.DUO, cycle: CYCLE.TWO_YEARS, currencyPredicate: isMainCurrency },
-    { plan: PLANS.DUO, cycle: CYCLE.YEARLY, currencyPredicate: isRegionalCurrency },
-    { plan: PLANS.FAMILY, cycle: CYCLE.TWO_YEARS, currencyPredicate: isMainCurrency },
-    { plan: PLANS.FAMILY, cycle: CYCLE.YEARLY, currencyPredicate: isRegionalCurrency },
+    { plan: PLANS.DUO, cycle: CYCLE.TWO_YEARS },
+    { plan: PLANS.FAMILY, cycle: CYCLE.TWO_YEARS },
     // And Visionary doesn't have regional currencies at all, for none of the cycles, so we don't need any additional
     // predicates here. It will filtered out by different components.
     { plan: PLANS.VISIONARY, cycle: CYCLE.TWO_YEARS },
@@ -180,6 +166,7 @@ export const getAllowedCycles = ({
     rules,
     cycleParam,
     app,
+    couponConfig,
 }: {
     subscription: Subscription | FreeSubscription | undefined;
     minimumCycle?: CYCLE;
@@ -193,6 +180,7 @@ export const getAllowedCycles = ({
     rules?: PlanCapRule[];
     cycleParam?: CYCLE;
     app?: ProductParam;
+    couponConfig?: CouponConfigRendered;
 }): CYCLE[] => {
     const plan = getPlanFromIDs(planIDs, plansMap);
     if (!plan) {
@@ -229,13 +217,18 @@ export const getAllowedCycles = ({
         const isHigherThanUpcoming: boolean =
             cycle >= (subscription?.UpcomingSubscription?.Cycle ?? 0) || !!disableUpcomingCycleCheck;
 
+        const allowedByCouponConfig =
+            !couponConfig || !couponConfig.availableCycles || couponConfig.availableCycles.includes(cycle);
+
         const isEligibleForSelection: boolean =
             (isHigherThanCurrentSubscription && isHigherThanUpcoming) ||
             isTrialSubscription ||
             !isSamePlan ||
             !!allowDowncycling;
 
-        return cycle >= minimumCycle && cycle <= adjustedMaximumCycle && isEligibleForSelection;
+        return (
+            cycle >= minimumCycle && cycle <= adjustedMaximumCycle && isEligibleForSelection && allowedByCouponConfig
+        );
     });
 
     return result;

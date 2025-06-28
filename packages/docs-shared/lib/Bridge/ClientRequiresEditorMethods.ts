@@ -6,6 +6,7 @@ import type { SerializedEditorState } from 'lexical'
 import type { UserSettings } from '@proton/shared/lib/interfaces'
 import type { YjsState } from '../YjsState'
 import type { SyncedEditorEvent, SyncedEditorStateValues } from '../State/SyncedEditorState'
+import type { SheetImportData } from '../SheetImportData'
 
 export interface ClientRequiresEditorMethods {
   receiveMessage(message: RtsMessagePayload): Promise<void>
@@ -15,6 +16,10 @@ export interface ClientRequiresEditorMethods {
   getDocumentState(): Promise<YjsState>
   /** Returns the Lexical state of the editor, unrelated to the Yjs state */
   getCurrentEditorState(): Promise<SerializedEditorState | undefined>
+  /** Returns all the state in the current Sheet as JSON */
+  getLatestSpreadsheetStateToLogJSON(): Promise<unknown>
+  /** Returns the current Y.Doc as JSON */
+  getYDocAsJSON(): Promise<unknown>
   /**
    * A destructive operation that replaces the current editor state with the given state,
    * used when restoring a document from history
@@ -38,9 +43,11 @@ export interface ClientRequiresEditorMethods {
   changeLockedState(locked: boolean): Promise<void>
   broadcastPresenceState(): Promise<void>
   exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array>
+  copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   printAsPDF(): Promise<void>
   loadUserSettings(settings: UserSettings): Promise<void>
   toggleDebugTreeView(): Promise<void>
+  importDataIntoSheet(data: SheetImportData): Promise<void>
 
   syncProperty(
     property: keyof SyncedEditorStateValues,

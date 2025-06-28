@@ -2,12 +2,7 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    CalendarShortcutsModal,
-    Commander,
-    type CommanderItemInterface,
-    useModalState,
-} from '@proton/components/index';
+import { CalendarShortcutsModal, Commander, type CommanderItemInterface, useModalState } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
 import useFlag from '@proton/unleash/useFlag';

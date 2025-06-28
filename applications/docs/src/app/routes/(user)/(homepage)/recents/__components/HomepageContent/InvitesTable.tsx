@@ -1,15 +1,16 @@
-import { Avatar, Button } from '@proton/atoms'
-import { c } from 'ttag'
+import { Avatar, Button, Tooltip } from '@proton/atoms'
+import { Icon } from '@proton/components'
 import { DateFormatter } from '@proton/docs-core'
-import { Icon, Tooltip } from '@proton/components'
 import { ServerTime } from '@proton/docs-shared'
 import { useDocInvites } from '@proton/drive-store'
-import * as Table from './table'
-import { useState, type ComponentPropsWithoutRef } from 'react'
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype'
 import { getInitials } from '@proton/shared/lib/helpers/string'
-import { ContentSheet } from './shared'
 import clsx from '@proton/utils/clsx'
+import { useState, type ComponentPropsWithoutRef } from 'react'
+import { c, msgid } from 'ttag'
 import { useHomepageView } from '../../__utils/homepage-view'
+import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
+import * as Table from './table'
 
 const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
 const MAX_INVITES_WHEN_COLLAPSED = 3
@@ -53,9 +54,9 @@ export function InvitesTable(props: InvitesTableProps) {
       className={clsx('shrink-0', props.className)}
     >
       <Table.Table data-testid="invites-table">
-        <Table.Head className="border-weak border-b">
+        <Table.Head topLevelSticky className="border-weak border-b">
           <Table.Header isTitle data-testid="invite-column-name">
-            <div className="flex items-center justify-between">
+            <div className="flex w-full items-center justify-between">
               <span className="flex flex-nowrap items-center gap-[.375rem]">
                 <span className="shrink-0">{c('Info').t`Pending invitations`}</span>
                 <div className="flex h-5 !min-w-5 shrink-0 items-center justify-center rounded-[.375rem] bg-[#0284C7] px-1">
@@ -68,7 +69,7 @@ export function InvitesTable(props: InvitesTableProps) {
           <Table.Header target="large" data-testid="invite-column-date">{c('Info').t`Shared on`}</Table.Header>
           <Table.Header target="medium" data-testid="invite-column-shared-by">{c('Info').t`Shared by`}</Table.Header>
           <Table.Header target="medium" data-testid="invite-column-actions">
-            <div className="flex flex-nowrap items-center justify-between">
+            <div className="flex w-full flex-nowrap items-center justify-between">
               <span>{c('Info').t`Accept/decline`}</span>
               {collapseButton}
             </div>
@@ -115,6 +116,8 @@ export function InvitesTable(props: InvitesTableProps) {
               </div>
             )
 
+            const type = isProtonDocsDocument(invite.link.mimeType) ? 'document' : 'spreadsheet'
+
             return (
               <Table.Row key={invite.invitation.invitationId} data-testid="invite-row">
                 <Table.DataCell>
@@ -123,7 +126,12 @@ export function InvitesTable(props: InvitesTableProps) {
                     title={invite.decryptedLinkName}
                   >
                     <span className="flex flex-nowrap items-center gap-3">
-                      <Icon name="brand-proton-docs" size={5} className="shrink-0 text-[#34B8EE]" />
+                      <Icon
+                        name={ICON_BY_TYPE[type]}
+                        size={5}
+                        className="shrink-0 text-[--icon-color]"
+                        style={{ '--icon-color': COLOR_BY_TYPE[type] }}
+                      />
                       <span className="text-pre text-ellipsis" data-testid="invite-document-name">
                         {invite.decryptedLinkName}
                       </span>
@@ -142,7 +150,7 @@ export function InvitesTable(props: InvitesTableProps) {
                   </div>
                 </Table.DataCell>
                 <Table.DataCell target="medium">
-                  <span className="flex flex-nowrap items-center gap-2">
+                  <span className="flex flex-nowrap items-center gap-2 overflow-hidden">
                     <Avatar
                       color="weak"
                       className="min-w-custom max-w-custom max-h-custom bg-[--interaction-default-hover]"
@@ -177,7 +185,13 @@ export function InvitesTable(props: InvitesTableProps) {
           className="flex h-[3.375rem] w-full items-center gap-3 px-6 text-[#0284C7]"
         >
           <Icon name="chevron-down" size={4} className="shrink-0" />
-          <span className="text-[.875rem]">{c('Action').t`View all ${pendingCount} invitations`}</span>
+          <span className="text-[.875rem]">
+            {c('Action').ngettext(
+              msgid`View ${pendingCount} invitation`,
+              `View all ${pendingCount} invitations`,
+              pendingCount,
+            )}
+          </span>
         </button>
       )}
       {confirmModal}

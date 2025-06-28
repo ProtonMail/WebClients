@@ -4,17 +4,19 @@ import type {
   RtsMessagePayload,
   DocumentRoleType,
   TranslatedResult,
+  SheetImportData,
 } from '@proton/docs-shared'
 import {
   BridgeOriginProvider,
   CommentsEvent,
   EDITOR_READY_POST_MESSAGE_EVENT,
   LiveCommentsEvent,
+  SheetImportEvent,
 } from '@proton/docs-shared'
 
 import { bootstrapEditorApp } from '../Lib/Bootstrap'
 import { c } from 'ttag'
-import { CircleLoader } from '@proton/atoms/index'
+import { CircleLoader } from '@proton/atoms'
 import { Editor } from './Editor'
 import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 import { EditorUserMode } from '../Lib/EditorUserMode'
@@ -25,7 +27,13 @@ import { rejectAllSuggestions } from '../Plugins/Suggestions/rejectAllSuggestion
 import { removeCommentThreadMarks } from '../Tools/removeCommentThreadMarks'
 import { reportErrorToSentry } from '../Utils/errorMessage'
 import { SHOW_ALL_COMMENTS_COMMAND } from '../Commands'
-import { $getSelection, $setSelection, type LexicalEditor, type SerializedEditorState } from 'lexical'
+import {
+  $getSelection,
+  $isRangeSelection,
+  $setSelection,
+  type LexicalEditor,
+  type SerializedEditorState,
+} from 'lexical'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useSyncedState } from '../Hooks/useSyncedState'
 import * as config from '../config'
@@ -33,7 +41,7 @@ import clsx from '@proton/utils/clsx'
 import debounce from '@proton/utils/debounce'
 import locales from '../locales'
 import noop from '@proton/utils/noop'
-import type { EditorState, BaseSelection } from 'lexical'
+import type { EditorState, BaseSelection, SerializedLexicalNode } from 'lexical'
 import type { useBridge } from '../Lib/useBridge'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useEditorStateValues } from '../Lib/useEditorStateValues'
@@ -42,8 +50,14 @@ import { IS_CHROME } from '../Shared/environment'
 import { useStateRef } from '../Hooks/useStateRef'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 // eslint-disable-next-line monorepo-cop/no-relative-import-outside-package
-import { SpreadsheetProvider } from '../../../../../vendor/rowsncolumns'
-import { Spreadsheet } from './Spreadsheet'
+import { SpreadsheetProvider } from '@rowsncolumns/spreadsheet'
+import type { SpreadsheetRef } from './Spreadsheet/Spreadsheet'
+import { Spreadsheet } from './Spreadsheet/Spreadsheet'
+import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
+import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-state-from-nodes'
+import { utf8ArrayToString } from '@proton/crypto/lib/utils'
+import { copyTextToClipboard } from '../Utils/copy-to-clipboard'
+import { ErrorBoundary, useNotifications } from '@proton/components'
 
 type AppProps = {
   documentType: DocumentType
@@ -53,6 +67,7 @@ type AppProps = {
 
 export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const { application, bridge, docState, docMap, editorConfig, setEditorConfig, didSetInitialConfig } = bridgeState
+  const { createNotification } = useNotifications()
   const { suggestionsEnabled } = useSyncedState()
   const { editorState } = useEditorState()
   const { userMode } = useEditorStateValues()
@@ -77,6 +92,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   })
 
   const editorRef = useRef<LexicalEditor | null>(null)
+  const spreadsheetRef = useRef<SpreadsheetRef | null>(null)
+  const latestSpreadsheetStateToLogRef = useRef<unknown>({})
   const [clonedEditorState, setClonedEditorState] = useState<EditorState>()
 
   useEffect(() => {
@@ -323,21 +340,23 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
       },
 
       async exportData(format): Promise<Uint8Array> {
-        if (!editorRef.current) {
-          throw new Error('Editor is not initialized')
+        if (editorRef.current) {
+          const editorState = editorRef.current.getEditorState().toJSON()
+
+          try {
+            const result = await exportDataFromEditorState(editorState, format, {
+              fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
+            })
+            return result
+          } catch (error) {
+            void bridge.getClientInvoker().showGenericAlertModal(c('Error').t`Failed to export document.`)
+            throw error
+          }
+        } else if (spreadsheetRef.current) {
+          return spreadsheetRef.current.exportData(format)
         }
 
-        const editorState = editorRef.current.getEditorState().toJSON()
-
-        try {
-          const result = await exportDataFromEditorState(editorState, format, {
-            fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
-          })
-          return result
-        } catch (error) {
-          void bridge.getClientInvoker().showGenericAlertModal(c('Error').t`Failed to export document.`)
-          throw error
-        }
+        throw new Error('Could not export data for current doc/sheet')
       },
 
       async printAsPDF(): Promise<void> {
@@ -366,6 +385,80 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
       async toggleDebugTreeView() {
         setShowTreeView((show) => !show)
       },
+
+      async copyCurrentSelection(format) {
+        const editor = editorRef.current
+        if (!editor) {
+          return
+        }
+
+        try {
+          const selection = editor.read(() => {
+            const selection = $getSelection()
+            if (!$isRangeSelection(selection) || selection.isCollapsed()) {
+              return null
+            }
+            return selection
+          })
+
+          let editorState: SerializedEditorState<SerializedLexicalNode> | null = null
+          if (selection) {
+            editor.update(
+              () => {
+                const { nodes } = $generateJSONFromSelectedNodes(editor, selection)
+                editorState = getEditorStateFromSerializedNodes(nodes)
+              },
+              {
+                discrete: true,
+              },
+            )
+          } else {
+            editorState = editor.getEditorState().toJSON()
+          }
+          if (!editorState) {
+            return
+          }
+
+          const result = await exportDataFromEditorState(editorState, format, {
+            fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
+          })
+          const resultString = utf8ArrayToString(result)
+          copyTextToClipboard(resultString)
+          createNotification({
+            type: 'success',
+            text: c('Info').t`Copied to clipboard`,
+          })
+
+          if (selection) {
+            editor.update(
+              () => {
+                $setSelection(selection.clone())
+              },
+              {
+                discrete: true,
+              },
+            )
+          }
+        } catch (error) {
+          console.error('Could not copy as markdown', error)
+        }
+      },
+
+      async getLatestSpreadsheetStateToLogJSON() {
+        return latestSpreadsheetStateToLogRef.current
+      },
+
+      async getYDocAsJSON() {
+        const ydoc = docState.getDoc()
+        return ydoc.toJSON()
+      },
+
+      async importDataIntoSheet(data) {
+        application.eventBus.publish<SheetImportData>({
+          type: SheetImportEvent,
+          payload: data,
+        })
+      },
     }
 
     application.logger.info('Setting request handler for bridge')
@@ -382,6 +475,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     applyBeforePrintFixesForChrome,
     userModeRef,
     editorState,
+    createNotification,
   ])
 
   const onUserModeChange = useCallback(
@@ -561,14 +655,26 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           </div>
         </>
       ) : (
-        <SpreadsheetProvider>
-          <Spreadsheet
-            docState={docState}
-            hidden={editorHidden}
-            onEditorLoadResult={onEditorLoadResult}
-            editorInitializationConfig={editorConfig.current.editorInitializationConfig}
-          />
-        </SpreadsheetProvider>
+        <ErrorBoundary
+          onError={(error) => {
+            reportErrorToSentry(error)
+          }}
+        >
+          <SpreadsheetProvider>
+            <Spreadsheet
+              ref={spreadsheetRef}
+              docState={docState}
+              hidden={editorHidden}
+              onEditorLoadResult={onEditorLoadResult}
+              editorInitializationConfig={editorConfig.current.editorInitializationConfig}
+              systemMode={systemMode}
+              editingLocked={editingLocked || userMode === EditorUserMode.Preview}
+              updateLatestStateToLog={(state) => {
+                latestSpreadsheetStateToLogRef.current = state
+              }}
+            />
+          </SpreadsheetProvider>
+        </ErrorBoundary>
       )}
     </div>
   )

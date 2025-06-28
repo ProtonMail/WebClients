@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { IconName } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
-import { getStandardFolders } from '@proton/mail/labels/helpers';
+import { getStandardFolders } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
@@ -120,9 +120,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
         buildFolderOption(folderMap, INBOX),
         buildFolderOption(folderMap, SNOOZED),
         buildFolderOption(folderMap, DRAFT_TYPE),
-        ...(canScheduleSend
-            ? [buildFolderOption(folderMap, SCHEDULED)]
-            : []),
+        ...(canScheduleSend ? [buildFolderOption(folderMap, SCHEDULED)] : []),
         buildFolderOption(folderMap, SENT_TYPE),
         buildFolderOption(folderMap, STARRED),
         buildFolderOption(folderMap, ARCHIVE),

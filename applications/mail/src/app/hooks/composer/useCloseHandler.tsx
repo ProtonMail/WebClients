@@ -5,12 +5,12 @@ import { c } from 'ttag';
 import type { Cancellable } from '@proton/components';
 import { useHandler, useNotifications } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { SavingDraftNotificationAction } from '../../components/notifications/SavingDraftNotification';
 import SavingDraftNotification from '../../components/notifications/SavingDraftNotification';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import type { MessageState } from '../../store/messages/messagesTypes';
 import type { PromiseHandlers } from '../usePromise';
 import { ComposeTypes } from './useCompose';
 

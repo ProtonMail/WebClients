@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { Button } from '@proton/atoms';
-import { Alert, BasicModal, Prompt } from '@proton/components';
+import { Alert, Prompt } from '@proton/components';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 import type { InviteActions } from '../../../../interfaces/Invite';
@@ -49,37 +49,25 @@ const EditRecurringConfirmModal = ({
 }: Props) => {
     const [type, setType] = useState(types[0]);
 
-    const { title, confirm, cancel, alertText } = getTexts(types, inviteActions);
     const hasPreviousSingleEdits =
         (type === RECURRING_TYPES.ALL && hasSingleEdits) || (type === RECURRING_TYPES.FUTURE && hasSingleEditsAfter);
     const hasPreviousSingleDeletes =
         (type === RECURRING_TYPES.ALL && hasSingleDeletes) ||
         (type === RECURRING_TYPES.FUTURE && hasSingleDeletesAfter);
     const hasPreviousModifications = hasPreviousSingleEdits || hasPreviousSingleDeletes;
-    const recurringWarningText = getRecurringWarningText({
-        inviteActions,
-        hasPreviousSingleEdits,
-        hasPreviousSingleDeletes,
-        isOrganizer,
-        isBreakingChange,
-        canEditOnlyPersonalPart,
-    });
-
-    const showRruleWarning = !isAttendee && type === RECURRING_TYPES.SINGLE && hasRruleModification;
-    const rruleWarningText = showRruleWarning ? getRruleWarningText() : '';
 
     if (isAttendee && hasCalendarModification && hasPreviousModifications) {
-        const { title, cancel, alertText } = getCalendarChangeForbiddenTexts();
+        const attendeeCopy = getCalendarChangeForbiddenTexts();
+
         return (
-            <BasicModal
-                title={title}
-                footer={<Button onClick={onClose}>{cancel}</Button>}
+            <Prompt
+                title={attendeeCopy.title}
                 onClose={onClose}
-                size="small"
-                isOpen={isOpen}
+                open={isOpen}
+                buttons={[<Button onClick={onClose}>{attendeeCopy.cancel}</Button>]}
             >
-                {alertText}
-            </BasicModal>
+                {attendeeCopy.alertText}
+            </Prompt>
         );
     }
 
@@ -91,20 +79,33 @@ const EditRecurringConfirmModal = ({
         onClose();
     };
 
+    const editCopy = getTexts(types, inviteActions);
+
+    const showRruleWarning = !isAttendee && type === RECURRING_TYPES.SINGLE && hasRruleModification;
+    const rruleWarningText = showRruleWarning ? getRruleWarningText() : '';
+    const recurringWarningText = getRecurringWarningText({
+        inviteActions,
+        hasPreviousSingleEdits,
+        hasPreviousSingleDeletes,
+        isOrganizer,
+        isBreakingChange,
+        canEditOnlyPersonalPart,
+    });
+
     return (
         <Prompt
-            title={title}
+            title={editCopy.title}
             buttons={[
                 <Button color="norm" onClick={handleSubmit}>
-                    {confirm}
+                    {editCopy.confirm}
                 </Button>,
-                <Button onClick={handleCancel}>{cancel}</Button>,
+                <Button onClick={handleCancel}>{editCopy.cancel}</Button>,
             ]}
             onSubmit={handleSubmit}
             onClose={handleCancel}
             open={isOpen}
         >
-            <div className="mb-4">{alertText}</div>
+            <div className="mb-4">{editCopy.alertText}</div>
             {types.length > 1 ? (
                 <SelectRecurringType
                     types={types}

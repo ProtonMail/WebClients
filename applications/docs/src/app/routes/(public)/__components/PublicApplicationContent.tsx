@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Application } from '@proton/docs-core'
 
-import { useApi } from '@proton/components/index'
+import { useApi } from '@proton/components'
 import { ApplicationProvider } from '~/utils/application-context'
 import { DocumentViewer } from '~/components/document/DocumentViewer/DocumentViewer'
 import {
@@ -20,6 +20,7 @@ import { useUnleashClient } from '@proton/unleash'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { Route, Routes } from 'react-router-dom-v5-compat'
 import type { ProviderType } from '../../../provider-type'
+import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
 
 export function PublicApplicationContent({
   publicDriveCompat,
@@ -85,7 +86,7 @@ export function PublicApplicationContent({
             <Route
               path="*"
               element={
-                <DocumentLayout documentType={openAction.type}>
+                <DocumentLayout documentType={tmpConvertNewDocTypeToOld(openAction.type)}>
                   <Content providerType={providerType} openAction={openAction} />
                 </DocumentLayout>
               }
@@ -113,5 +114,13 @@ function Content({ openAction, providerType }: { openAction: DocumentAction | nu
     linkId: linkId,
   }
 
-  return <DocumentViewer nodeMeta={nodeMeta} openAction={openAction} providerType={providerType} />
+  return (
+    <DocumentViewer
+      nodeMeta={nodeMeta}
+      openAction={openAction}
+      actionMode={undefined}
+      providerType={providerType}
+      documentType={openAction.type}
+    />
+  )
 }

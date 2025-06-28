@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useOpenDrawerOnLoad } from '@proton/components/index';
+import { useOpenDrawerOnLoad } from '@proton/components';
 
 import { useContactsListener } from 'proton-mail/hooks/contact/useContactsListener';
 import { useConversationsEvent } from 'proton-mail/hooks/events/useConversationsEvents';
@@ -12,7 +12,7 @@ import { useMailPTTMetric } from 'proton-mail/metrics/useMailPTTMetric';
 
 import { useAppShellSideEffects } from './useAppShellSideEffects';
 
-jest.mock('@proton/components/index', () => ({
+jest.mock('@proton/components', () => ({
     useOpenDrawerOnLoad: jest.fn(),
 }));
 jest.mock('proton-mail/hooks/contact/useContactsListener', () => ({

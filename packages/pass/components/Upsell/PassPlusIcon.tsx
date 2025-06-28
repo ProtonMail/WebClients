@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 type Props = { className?: string };

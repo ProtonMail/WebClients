@@ -5,16 +5,14 @@ import { useLocation } from 'react-router-dom';
 import { type FieldProps } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
-import { Dropzone, FileInput, Icon, Tooltip, useNotifications } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { Dropzone, FileInput, Icon, useNotifications } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { useFileEncryptionVersion } from '@proton/pass/hooks/files/useFileEncryptionVersion';
-import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
+import { FILE_ENCRYPTION_VERSION, UpsellRef } from '@proton/pass/constants';
+import { resolveMimeTypeForFile, useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { isAbortError } from '@proton/pass/lib/api/errors';
 import { validateFileName } from '@proton/pass/lib/file-attachments/helpers';
@@ -26,8 +24,8 @@ import {
     selectUserStorageUsed,
 } from '@proton/pass/store/selectors';
 import type { BaseFileDescriptor, FileAttachmentValues, FileID, ShareId } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
+import { seq } from '@proton/pass/utils/fp/promises';
 import { updateMap } from '@proton/pass/utils/fp/state';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -47,11 +45,10 @@ type Props = FieldProps<{}, FileAttachmentValues> &
 
 type FileUploadDescriptor = Omit<BaseFileDescriptor, 'fileID'> & { uploadID: string; fileID?: FileID };
 
-export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
-    WithPaidUser(({ children, form, filesCount = 0, shareId, onDeleteAllFiles }) => {
+export const FileAttachmentsField: FC<Props> = WithPaidUser(
+    ({ children, form, filesCount = 0, shareId, onDeleteAllFiles }) => {
         const { popup } = usePassCore();
         const dispatch = useAsyncRequestDispatch();
-        const fileEncryptionVersion = useFileEncryptionVersion();
 
         const fileUpload = useFileUpload();
         const usedStorage = useSelector(selectUserStorageUsed);
@@ -68,27 +65,30 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
 
         const uploadFiles = useCallback(
             async (toUpload: File[]) => {
-                const encryptionVersion = fileEncryptionVersion.current;
-                const uploads = toUpload.map((file) => ({ file, uploadID: uniqueId() }));
+                const uploads = await seq(toUpload, async (file) => ({
+                    file,
+                    mimeType: await resolveMimeTypeForFile(file),
+                    uploadID: uniqueId(),
+                }));
 
                 setFiles(
                     updateMap((next) => {
-                        uploads.forEach(({ file, uploadID }) => {
+                        uploads.forEach(({ file, uploadID, mimeType }) => {
                             next.set(uploadID, {
                                 name: file.name,
                                 size: file.size,
-                                mimeType: file.type,
+                                mimeType,
                                 uploadID,
-                                encryptionVersion,
+                                encryptionVersion: FILE_ENCRYPTION_VERSION,
                             });
                         });
                     })
                 );
 
                 await Promise.all(
-                    uploads.map(async ({ file, uploadID }) =>
+                    uploads.map(async ({ file, uploadID, mimeType }) =>
                         fileUpload
-                            .start(file, file.name, shareId, uploadID)
+                            .start(file, file.name, mimeType, shareId, uploadID)
                             .then((fileID) => {
                                 setFiles(updateMap((next) => next.set(uploadID, { ...next.get(uploadID)!, fileID })));
                                 return form.setValues((values) => {
@@ -226,7 +226,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                 >
                                     <div className="m-4">
                                         <Button
-                                            className="rounded-full inline-block gap-1"
+                                            className="button-fluid rounded-full inline-block gap-1"
                                             shape="solid"
                                             color="weak"
                                             onClick={() => popup?.expand(pathname)}
@@ -242,7 +242,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                     /** Disable the "accept" attribute on iOS because the
                                      * "accept" attribute does not support the extension */
                                     {...(isIos() ? {} : { accept: '*' })}
-                                    className="m-4 rounded-full"
+                                    className="button-fluid m-4 rounded-full"
                                     onChange={({ target }) => onAddFiles([...(target.files ?? [])])}
                                     disabled={!online}
                                     shape="solid"
@@ -256,7 +256,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                         {!canUseStorage && (
                             <div className="m-4">
                                 <Button
-                                    className="rounded-full inline-block"
+                                    className="button-fluid rounded-full inline-block"
                                     shape="solid"
                                     color="weak"
                                     onClick={() => upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })}
@@ -270,6 +270,5 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                 </div>
             </Dropzone>
         );
-    }),
-    PassFeature.PassFileAttachments
+    }
 );

@@ -6,7 +6,7 @@ import type { IconName } from '@proton/components';
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import generateUID from '@proton/utils/generateUID';
 
 import type { DecryptedLink, useActions } from '../../../../store';
@@ -69,7 +69,9 @@ const ActionsDropdown = ({ shareId, selectedLinks, permissions, trashLinks, rena
                 showRenameModal({
                     isFile: selectedLinks[0].isFile,
                     name: selectedLinks[0].name,
-                    isDoc: isProtonDocument(selectedLinks[0].mimeType),
+                    isDoc: isProtonDocsDocument(selectedLinks[0].mimeType),
+                    volumeId: selectedLinks[0].volumeId,
+                    linkId: selectedLinks[0].linkId,
                     onSubmit: (formattedName) =>
                         renameLink(
                             new AbortController().signal,

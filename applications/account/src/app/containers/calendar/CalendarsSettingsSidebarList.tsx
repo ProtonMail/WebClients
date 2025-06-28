@@ -70,7 +70,6 @@ const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
     const calendarsSettingsHeaderProps = {
         to: sectionPath,
         icon: calendarsSection.icon,
-        key: calendarsSection.to,
         exact: true,
     };
 
@@ -125,7 +124,11 @@ const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
     })();
 
     if (!calendars.length) {
-        return <SettingsListItem {...calendarsSettingsHeaderProps}>{calendarsSettingsHeaderContent}</SettingsListItem>;
+        return (
+            <SettingsListItem key={calendarsSection.to} {...calendarsSettingsHeaderProps}>
+                {calendarsSettingsHeaderContent}
+            </SettingsListItem>
+        );
     }
 
     return (

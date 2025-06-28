@@ -1,3 +1,4 @@
+import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { removeProxyUrlsFromContent } from '@proton/shared/lib/mail/images';
 
@@ -5,7 +6,7 @@ describe('Images helpers', () => {
     describe('removeProxyUrlsFromContent', () => {
         it('should replace images with their original URLs', () => {
             const originalURL = 'https://image.com/image1.png';
-            const proxyURL = `https://mail.proton.me/api/core/v4/images?Url=${originalURL}&DryRun=0&UID=userID`;
+            const proxyURL = `https://mail.proton.me/api/${PROXY_IMG_URL}?Url=${originalURL}&DryRun=0&UID=userID`;
             const content = `<div>
 <p>Some text before</p>
 <img src="${proxyURL}" alt="">

@@ -1,10 +1,10 @@
 import { getUnixTime } from 'date-fns';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
-import type { DriveFileRevisionPayload } from '@proton/shared/lib/interfaces/drive/file';
+import { type DriveFileRevisionPayload, PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type {
     ShareExternalInvitationPayload,
     ShareInvitationDetailsPayload,
@@ -16,13 +16,14 @@ import type { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/
 import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload, SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { DriveVolume as DriveVolumePayload } from '@proton/shared/lib/interfaces/drive/volume';
 
 import type { Device } from '../_devices';
 import type { DriveEvents } from '../_events';
-import type { EncryptedLink } from '../_links';
+import type { DecryptedLink, EncryptedLink } from '../_links';
 import type { Photo } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
-import { hasCustomPassword, hasGeneratedPasswordIncluded, ShareType } from '../_shares';
+import { ShareType, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import type {
     Share,
     ShareExternalInvitation,
@@ -36,6 +37,7 @@ import type {
     SharedUrlInfo,
 } from '../_shares';
 import { ThumbnailType } from '../_uploads/media';
+import type { DriveVolume } from '../_volumes';
 
 // LinkMetaWithShareURL is used when loading shared links.
 // We need this to load information about number of accesses.
@@ -46,12 +48,13 @@ type LinkMetaWithShareURL = LinkMeta & {
 };
 
 export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: string): EncryptedLink {
-    const isDocument = link.Type === LinkType.FILE && isProtonDocument(link.MIMEType);
+    const isDocument = link.Type === LinkType.FILE && isProtonDocsDocument(link.MIMEType);
 
     const currentUnixTime = getUnixTime(Date.now());
     return {
         linkId: link.LinkID,
         parentLinkId: link.ParentLinkID ?? '',
+        type: link.Type,
         // API recognises only file and folder at this moment. In the future,
         // it might include hard- and soft-links, but still, for our case we
         // will differenciate only between files and folders, so we can convert
@@ -151,6 +154,9 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                       addedTime: album.AddedTime,
                   })),
                   tags: link.PhotoProperties.Tags,
+                  isFavorite: Boolean(
+                      PhotoTag.Favorites === link.PhotoProperties.Tags.find((tag) => tag === PhotoTag.Favorites)
+                  ),
               }
             : undefined,
         albumProperties: link.AlbumProperties
@@ -208,6 +214,7 @@ export function shareMetaShortToShare(share: ShareMetaShort): Share {
         isDefault: share.Type === ShareType.default,
         possibleKeyPackets: (share.PossibleKeyPackets || []).map(({ KeyPacket }) => KeyPacket),
         type: share.Type,
+        linkType: share.LinkType,
         state: share.State,
         createTime: share.CreateTime,
     };
@@ -326,6 +333,22 @@ export const photoPayloadToPhotos = (photo: PhotoPayload): Photo => {
     };
 };
 
+export const decryptedLinkToPhotos = (link: DecryptedLink, relatedPhotoLinks: DecryptedLink[]): Photo => {
+    return {
+        linkId: link.linkId,
+        captureTime: link?.activeRevision?.photo?.captureTime ?? link.createTime,
+        hash: link?.activeRevision?.photo?.hash ?? undefined,
+        contentHash: link?.activeRevision?.photo?.contentHash,
+        tags: link.photoProperties?.tags ?? [],
+        relatedPhotos: relatedPhotoLinks.map((relatedPhotoLink) => ({
+            linkId: relatedPhotoLink.linkId,
+            captureTime: relatedPhotoLink?.activeRevision?.photo?.captureTime ?? relatedPhotoLink.createTime,
+            hash: relatedPhotoLink?.activeRevision?.photo?.hash ?? undefined,
+            contentHash: relatedPhotoLink?.activeRevision?.photo?.contentHash,
+        })),
+    };
+};
+
 export const revisionPayloadToRevision = (revision: DriveFileRevisionPayload): DriveFileRevision => {
     return {
         id: revision.ID,
@@ -387,7 +410,9 @@ export const shareInvitationDetailsPayloadToShareInvitationDetails = (
         link: {
             linkId: shareInvitationDetails.Link.LinkID,
             name: shareInvitationDetails.Link.Name,
-            mimeType: shareInvitationDetails.Link.MIMEType,
+            mimeType:
+                shareInvitationDetails.Link.MIMEType ||
+                (shareInvitationDetails.Link.Type === LinkType.ALBUM ? 'Album' : ''),
             isFile: shareInvitationDetails.Link.Type === LinkType.FILE,
             type: shareInvitationDetails.Link.Type,
         },
@@ -415,3 +440,23 @@ export const sharedUrlInfoPayloadToSharedUrlInfo = (sharedUrlInfoPayload: Shared
         token: sharedUrlInfoPayload.Token,
     };
 };
+
+export function volumePayloadToVolume(volume: DriveVolumePayload): DriveVolume {
+    return {
+        id: volume.ID,
+        volumeId: volume.VolumeID,
+        createTime: volume.CreateTime || undefined,
+        modifyTime: volume.ModifyTime || undefined,
+        usedSpace: volume.UsedSpace,
+        downloadedBytes: volume.DownloadedBytes,
+        uploadedBytes: volume.UploadedBytes,
+        state: volume.State,
+        share: {
+            shareId: volume.Share.ShareID,
+            id: volume.Share.ID,
+            linkId: volume.Share.LinkID,
+        },
+        type: volume.Type,
+        restoreStatus: volume.RestoreStatus || undefined,
+    };
+}

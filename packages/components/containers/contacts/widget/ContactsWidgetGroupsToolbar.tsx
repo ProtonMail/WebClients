@@ -3,9 +3,9 @@ import type { ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import type { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 

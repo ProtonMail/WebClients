@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import ButtonLike from '@proton/atoms/Button/ButtonLike';
+import { ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -10,8 +10,7 @@ import type {
     B2BOnboardingFeature,
 } from '@proton/components/components/onboarding/b2b/interface';
 import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
-import { getPlan } from '@proton/payments';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { type Subscription, getPlan } from '@proton/payments';
 import {
     APPS,
     type APP_NAMES,

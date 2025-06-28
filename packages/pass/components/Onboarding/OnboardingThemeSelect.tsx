@@ -17,16 +17,6 @@ import clsx from '@proton/utils/clsx';
 
 const getThemeCards = (): PassThemeCardProps[] => [
     {
-        theme: PassThemeOption.PassDark,
-        label: c('Theme').t`Dark`,
-        src: darkThemeImg,
-    },
-    {
-        theme: PassThemeOption.PassLight,
-        label: c('Theme').t`Light`,
-        src: lightThemeImg,
-    },
-    {
         theme: PassThemeOption.OS,
         label: c('Theme').t`Automatic`,
         src: automaticThemeImg,
@@ -37,6 +27,16 @@ const getThemeCards = (): PassThemeCardProps[] => [
                 title={c('Info').t`${PASS_APP_NAME} will follow your system theme.`}
             />
         ),
+    },
+    {
+        theme: PassThemeOption.PassDark,
+        label: c('Theme').t`Dark`,
+        src: darkThemeImg,
+    },
+    {
+        theme: PassThemeOption.PassLight,
+        label: c('Theme').t`Light`,
+        src: lightThemeImg,
     },
 ];
 
@@ -58,7 +58,7 @@ export const OnboardingThemeSelect: FC = () => {
                     value: theme,
                     label: (
                         <div className="pass-onboarding-modal--option rounded-xl flex items-center w-full py-3 px-4">
-                            <img src={src} alt="" />
+                            <img src={src} alt="" width={134} height={91} />
                             <div
                                 className={clsx(
                                     'flex-1 px-4 flex items-center flex-nowrap gap-1',

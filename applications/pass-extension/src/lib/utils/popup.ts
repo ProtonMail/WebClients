@@ -5,6 +5,7 @@ import type { PopupController } from '@proton/pass/components/Core/PassCoreProvi
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types';
 import { pixelParser } from '@proton/pass/utils/dom/computed-styles';
+import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
 export const setPopupIcon = (options: { disabled: boolean; locked: boolean }): Promise<void> => {
@@ -31,21 +32,24 @@ export const setPopupIconBadge = (tabId: number, count: number): Promise<void> =
  * when the user changes the default page zoom in their browser settings. */
 export const popupSizeSurgery = () => {
     if (BUILD_TARGET === 'chrome') {
-        const rootStyles = getComputedStyle(document.documentElement);
-        const popupWidth = pixelParser(rootStyles.getPropertyValue('--popup-width'));
-
-        const onResize = () => {
+        const onResize = debounce(() => {
             const { clientWidth, clientHeight } = document.documentElement;
-            if (clientWidth !== popupWidth) {
+            const rootStyles = getComputedStyle(document.documentElement);
+            const popupWidth = pixelParser(rootStyles.getPropertyValue('--popup-width'));
+
+            /** Only resize if difference > 1px to ignore floating point rounding
+             * This prevents the gradual shrinking loop reported on ChromeOS */
+            if (Math.abs(clientWidth - popupWidth) > 1) {
                 document.documentElement.style.setProperty('--popup-width', `${clientWidth}px`);
                 document.documentElement.style.setProperty('--popup-height', `${clientHeight}px`);
             }
-        };
+        }, 50);
 
         isVivaldiBrowser()
             .then((isVivaldi) => {
                 if (!isVivaldi) {
                     onResize();
+                    onResize.flush();
                     window.addEventListener('resize', onResize);
                 }
             })
@@ -54,29 +58,33 @@ export const popupSizeSurgery = () => {
 };
 
 export const isExpandedPopup = async (): Promise<boolean> => {
-    const currentTab = (await browser.tabs.getCurrent()) as Maybe<Tabs.Tab>;
+    try {
+        const currentTab = (await browser.tabs.getCurrent()) as Maybe<Tabs.Tab>;
 
-    const expanded = (() => {
-        if (BUILD_TARGET === 'safari') {
-            const url = currentTab?.url;
-            const popupPath = `${window.location.origin}/popup.html`;
-            /** In Safari, `currentTab` returns the tab behind the extension popup frame.
-             * If it matches the current location, then we're expanded in a dedicated tab */
-            return Boolean(url?.toLowerCase().startsWith(popupPath));
+        const expanded = (() => {
+            if (BUILD_TARGET === 'safari') {
+                const url = currentTab?.url;
+                const popupPath = `${window.location.origin}/popup.html`;
+                /** In Safari, `currentTab` returns the tab behind the extension popup frame.
+                 * If it matches the current location, then we're expanded in a dedicated tab */
+                return Boolean(url?.toLowerCase().startsWith(popupPath));
+            }
+
+            /** On chromium based browsers : the current tab will be `undefined`
+             * when called from the extension popup frame */
+            return currentTab !== undefined;
+        })();
+
+        if (expanded) {
+            /* when pop-up is expanded: reset the dimension constraints */
+            document.documentElement.style.setProperty('--popup-width', '100%');
+            document.documentElement.style.setProperty('--popup-height', '100%');
         }
 
-        /** On chromium based browsers : the current tab will be `undefined`
-         * when called from the extension popup frame */
-        return currentTab !== undefined;
-    })();
-
-    if (expanded) {
-        /* when pop-up is expanded: reset the dimension constraints */
-        document.documentElement.style.setProperty('--popup-width', '100%');
-        document.documentElement.style.setProperty('--popup-height', '100%');
+        return expanded;
+    } catch {
+        return false;
     }
-
-    return expanded;
 };
 
 export const createPopupController = (): PopupController => {
@@ -96,10 +104,12 @@ export const createPopupController = (): PopupController => {
             .catch(noop);
     };
 
-    popupSizeSurgery();
-
     isExpandedPopup()
-        .then((expanded) => (state.expanded = expanded))
+        .then((expanded) => {
+            /** Only apply popup surgery for non-expanded popups */
+            if (!expanded) popupSizeSurgery();
+            state.expanded = expanded;
+        })
         .catch(noop);
 
     return {

@@ -1,10 +1,10 @@
+import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { type Middleware, isAction } from 'redux';
 
-import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { isSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { isActionFrom, withSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { ClientEndpoint, TabId } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 type ProxyActionsMiddlewareOptions = {

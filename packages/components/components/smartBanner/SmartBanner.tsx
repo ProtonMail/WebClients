@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button, ButtonLike, Tooltip } from '@proton/atoms';
 import Logo from '@proton/components/components/logo/Logo';
 import useLocalState from '@proton/components/hooks/useLocalState';
 
 import Icon from '../icon/Icon';
-import Tooltip from '../tooltip/Tooltip';
 import type { SmartBannerApp } from './types';
 import { useSmartBanner } from './useSmartBanner';
 import { useSmartBannerTelemetry } from './useSmartBannerTelemetry';

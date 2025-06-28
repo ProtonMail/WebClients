@@ -6,8 +6,6 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
-import isTruthy from '@proton/utils/isTruthy';
-import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import ItemColumnLayout from 'proton-mail/components/list/ItemColumnLayout';
 import { MAX_COLUMN_ATTACHMENT_THUMBNAILS } from 'proton-mail/constants';
@@ -56,12 +54,7 @@ const generateAttachmentsMetadata = (numberOfAttachments: number, extension = 'p
 const setup = async (
     attachmentsMetadata: AttachmentsMetadata[],
     numAttachments: number,
-    {
-        AddressID,
-        fromAddress,
-        fromKeys,
-        showAttachmentThumbnails = true,
-    }: { AddressID: string; fromAddress: string; fromKeys: GeneratedKey; showAttachmentThumbnails?: boolean }
+    { AddressID, fromAddress, fromKeys }: { AddressID: string; fromAddress: string; fromKeys: GeneratedKey }
 ) => {
     const element = {
         ID: 'conversationID',
@@ -85,7 +78,6 @@ const setup = async (
             unread={false}
             onBack={jest.fn()}
             isSelected={false}
-            showAttachmentThumbnails={showAttachmentThumbnails}
             attachmentsMetadata={filterAttachmentToPreview(attachmentsMetadata)}
         />,
         {
@@ -286,10 +278,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 const attachmentPackets = await encryptAttachment(fileContent, file, false, keys.publicKeys[0], []);
                 // Trigger a fail during decrypt (when necessary) to test some scenarios (e.g. decryption failed)
                 const attachmentKeyPackets = decryptShouldFail ? new Uint8Array() : attachmentPackets.keys;
-                const concatenatedPackets = mergeUint8Arrays(
-                    [attachmentPackets.data, attachmentKeyPackets, attachmentPackets.signature].filter(isTruthy)
-                );
-                const attachmentSpy = jest.fn(() => concatenatedPackets);
+                const attachmentSpy = jest.fn(() => attachmentPackets.data);
                 const attachmentMetadataSpy = jest.fn(() => ({
                     Attachment: {
                         KeyPackets: arrayToBase64(attachmentKeyPackets),

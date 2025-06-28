@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
@@ -43,7 +44,6 @@ interface Props {
     unread: boolean;
     onBack?: () => void;
     attachmentsMetadata?: AttachmentsMetadata[];
-    showAttachmentThumbnails?: boolean;
 }
 
 const ItemRowLayout = ({
@@ -59,7 +59,6 @@ const ItemRowLayout = ({
     unread,
     onBack = () => {},
     attachmentsMetadata = [],
-    showAttachmentThumbnails,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -91,12 +90,7 @@ const ItemRowLayout = ({
 
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
 
-    const showThumbnails = canShowAttachmentThumbnails(
-        isCompactView,
-        element,
-        attachmentsMetadata,
-        showAttachmentThumbnails
-    );
+    const showThumbnails = canShowAttachmentThumbnails(isCompactView, element, attachmentsMetadata);
 
     return (
         <div className={clsx('flex flex-nowrap flex-column w-full my-auto', showThumbnails && 'mt-1')}>
@@ -133,12 +127,14 @@ const ItemRowLayout = ({
                     style={loading ? { '--w-custom': '35rem' } : {}}
                 >
                     <div className="flex flex-column inline-block">
+                        {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
                         <span
                             role="heading"
                             aria-level={2}
                             className={clsx(['max-w-full text-ellipsis', unread && 'text-semibold'])}
                             title={Subject}
                             data-testid="message-row:subject"
+                            id={toValidHtmlId(`message-subject-${element.ID}`)}
                         >
                             {showIcon && (
                                 <span className="inline-flex shrink-0 align-bottom mr-1">

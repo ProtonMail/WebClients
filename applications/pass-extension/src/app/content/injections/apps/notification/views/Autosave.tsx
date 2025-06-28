@@ -1,7 +1,7 @@
-import { type FC, useEffect, useMemo } from 'react';
+import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { FormikErrors } from 'formik';
-import { Field, Form, FormikProvider, useFormik } from 'formik';
+import { Form, FormikProvider, useFormik } from 'formik';
 import { AutosaveVaultPicker } from 'proton-pass-extension/app/content/injections/apps/components/AutosaveVaultPicker';
 import {
     useIFrameAppController,
@@ -12,16 +12,19 @@ import { AutosaveForm } from 'proton-pass-extension/app/content/injections/apps/
 import { AutosaveSelect } from 'proton-pass-extension/app/content/injections/apps/notification/components/AutosaveSelect';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
 import type { NotificationAction, NotificationActions } from 'proton-pass-extension/app/content/types/notification';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { Field } from '@proton/pass/components/Form/Field/Field';
+import { MODEL_VERSION } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { validateItemName } from '@proton/pass/lib/validation/item';
-import { type AutosaveFormValues, AutosaveMode, type AutosavePayload, WorkerMessageType } from '@proton/pass/types';
+import { type AutosaveFormValues, AutosaveMode, type AutosavePayload } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { withMerge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';
@@ -40,8 +43,10 @@ export const Autosave: FC<Props> = ({ data }) => {
     const { createNotification } = useNotifications();
 
     const [busy, setBusy] = useMountedState(false);
-
     const prev = usePrevious(data);
+
+    /** Track failed auto-save attempts */
+    const [attempts, setAttempt] = useState<number>(0);
 
     const shouldUpdate = useMemo(() => {
         /** The autosave data may get revalidated in certain cases :
@@ -109,7 +114,10 @@ export const Autosave: FC<Props> = ({ data }) => {
                     if (result.type === 'success') {
                         onTelemetry(TelemetryEventName.AutosaveDone, {}, {});
                         controller.close?.({ discard: true });
-                    } else createNotification({ text: c('Warning').t`Unable to save`, type: 'error' });
+                    } else {
+                        setAttempt((prev) => prev + 1);
+                        createNotification({ text: c('Warning').t`Unable to save`, type: 'error' });
+                    }
                 })
                 .catch(noop)
                 .finally(() => setBusy(false));
@@ -127,11 +135,21 @@ export const Autosave: FC<Props> = ({ data }) => {
         }
     }, [shouldUpdate, data]);
 
+    const vaultPickerAnchor = useRef<HTMLDivElement>(null);
+
     return (
         <FormikProvider value={form}>
             <Form className="ui-violet flex flex-column flex-nowrap *:shrink-0 justify-space-between h-full anime-fadein gap-2">
                 <NotificationHeader
                     discardOnClose={shouldDiscard}
+                    ref={vaultPickerAnchor}
+                    onClose={() =>
+                        onTelemetry(
+                            TelemetryEventName.AutosaveDismissed,
+                            {},
+                            { dismissReason: 'close', modelVersion: MODEL_VERSION }
+                        )
+                    }
                     title={(() => {
                         switch (form.values.type) {
                             case AutosaveMode.NEW:
@@ -140,6 +158,10 @@ export const Autosave: FC<Props> = ({ data }) => {
                                         name="shareId"
                                         component={AutosaveVaultPicker}
                                         fallback={c('Info').t`Save login`}
+                                        anchorRef={vaultPickerAnchor}
+                                        /** Refresh vault picker options on each
+                                         * failed attempt in case vault deleted */
+                                        key={attempts}
                                     />
                                 );
                             case AutosaveMode.UPDATE:

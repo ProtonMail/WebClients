@@ -10,6 +10,11 @@ import { MoveToTrashButton } from './buttons/MoveToTrashButton'
 import { MoveButton } from './buttons/MoveButton'
 import { RenameButton } from './buttons/RenameButton'
 import { IS_MOVE_ENABLED, IS_RENAME_ENABLED } from '../../../__utils/features'
+import { useDocumentActions } from '../../../__utils/document-actions'
+import { useEvent } from '~/utils/misc'
+import { useHomepageView } from '../../../__utils/homepage-view'
+import { RestoreFromTrashButton } from './buttons/RestoreFromTrash'
+import { DeletePermanentlyButton } from './buttons/DeletePermanently'
 
 export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
   currentDocument: RecentDocumentsItem | undefined
@@ -33,6 +38,32 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
     }
   }, [position?.left, position?.top])
 
+  const {
+    updateRecentDocuments,
+    state: { view },
+  } = useHomepageView()
+  const isTrash = view === 'trash'
+
+  const documentActions = useDocumentActions()
+  const onTrashed = useEvent((id: string) => {
+    if (currentDocument?.uniqueId() === id) {
+      close()
+    }
+  })
+  useEffect(() => {
+    documentActions.onTrashed(onTrashed)
+  }, [documentActions, onTrashed])
+
+  const onRestored = useEvent((id: string) => {
+    if (currentDocument?.uniqueId() === id) {
+      close()
+    }
+    void updateRecentDocuments()
+  })
+  useEffect(() => {
+    documentActions.onRestored(onRestored)
+  }, [documentActions, onRestored])
+
   if (!currentDocument) {
     return null
   }
@@ -48,22 +79,31 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
         size={{ maxHeight: DropdownSizeUnit.Viewport, maxWidth: DropdownSizeUnit.Viewport }}
         anchorRef={anchorRef}
       >
-        <OpenButton currentDocument={currentDocument} close={close} />
-        {!currentDocument.isSharedWithMe ? <ShareButton currentDocument={currentDocument} close={close} /> : null}
-        {separator}
-        {IS_MOVE_ENABLED && !currentDocument.isSharedWithMe ? (
-          <MoveButton currentDocument={currentDocument} close={close} />
-        ) : null}
-        <OpenFolderButton currentDocument={currentDocument} close={close} />
-        {IS_RENAME_ENABLED && !currentDocument.isSharedWithMe ? (
-          <RenameButton currentDocument={currentDocument} close={close} />
-        ) : null}
-        {!currentDocument.isSharedWithMe ? (
+        {!isTrash ? (
           <>
+            <OpenButton currentDocument={currentDocument} close={close} />
+            {!currentDocument.isSharedWithMe ? <ShareButton currentDocument={currentDocument} close={close} /> : null}
             {separator}
-            <MoveToTrashButton currentDocument={currentDocument} close={close} />
+            {IS_MOVE_ENABLED && !currentDocument.isSharedWithMe ? (
+              <MoveButton currentDocument={currentDocument} close={close} />
+            ) : null}
+            <OpenFolderButton currentDocument={currentDocument} close={close} />
+            {IS_RENAME_ENABLED && !currentDocument.isSharedWithMe ? (
+              <RenameButton currentDocument={currentDocument} close={close} />
+            ) : null}
+            {!currentDocument.isSharedWithMe ? (
+              <>
+                {separator}
+                <MoveToTrashButton currentDocument={currentDocument} />
+              </>
+            ) : null}
           </>
-        ) : null}
+        ) : (
+          <>
+            <RestoreFromTrashButton currentDocument={currentDocument} />
+            <DeletePermanentlyButton currentDocument={currentDocument} close={close} />
+          </>
+        )}
       </ContextMenu>
     </>
   )

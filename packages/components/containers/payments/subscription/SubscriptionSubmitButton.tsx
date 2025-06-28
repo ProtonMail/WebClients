@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import { Button } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
 import useConfig from '@proton/components/hooks/useConfig';
 import { isChargebeePaymentProcessor } from '@proton/components/payments/react-extensions/helpers';
-import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import type { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
+import type { ApplePayProcessorHook, PaymentProcessorType } from '@proton/payments';
 import type { PaymentMethodType, PlainPaymentMethodType } from '@proton/payments';
 import {
     type BillingAddressStatus,
@@ -14,14 +14,14 @@ import {
     PAYMENT_METHOD_TYPES,
     type Subscription,
     isChargebeePaymentMethod,
+    isTrial,
 } from '@proton/payments';
-import { isTrial } from '@proton/payments';
 import { EditCardModal } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import type { ChargebeePaypalWrapperProps } from '../../../payments/chargebee/ChargebeeWrapper';
-import { ChargebeePaypalWrapper } from '../../../payments/chargebee/ChargebeeWrapper';
+import { ApplePayButton, ChargebeePaypalWrapper } from '../../../payments/chargebee/ChargebeeWrapper';
 import StyledPayPalButton from '../StyledPayPalButton';
 import type { SUBSCRIPTION_STEPS } from './constants';
 
@@ -41,6 +41,7 @@ type Props = {
     hasPaymentMethod: boolean;
     billingAddressStatus: BillingAddressStatus;
     paymentProcessorType: PaymentProcessorType | undefined;
+    applePay: ApplePayProcessorHook;
 } & Pick<ChargebeePaypalWrapperProps, 'chargebeePaypal' | 'iframeHandles'>;
 
 const SubscriptionSubmitButton = ({
@@ -60,6 +61,7 @@ const SubscriptionSubmitButton = ({
     subscription,
     billingAddressStatus,
     paymentProcessorType,
+    applePay,
 }: Props) => {
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
     const { APP_NAME } = useConfig();
@@ -68,14 +70,15 @@ const SubscriptionSubmitButton = ({
         if (isTrial(subscription) && !hasPaymentMethod) {
             return (
                 <>
-                    <PrimaryButton
+                    <Button
+                        color="norm"
                         className={className}
                         disabled={disabled}
                         loading={loading}
                         onClick={() => setCreditCardModalOpen(true)}
                     >
                         {c('Action').t`Add credit / debit card`}
-                    </PrimaryButton>
+                    </Button>
                     {renderCreditCardModal && (
                         <EditCardModal enableRenewToggle={false} onMethodAdded={onDone} {...creditCardModalProps} />
                     )}
@@ -86,15 +89,15 @@ const SubscriptionSubmitButton = ({
         // If the user is on the ProtonAccountLite app, the user should not be able to close the modal
         if (APP_NAME === APPS.PROTONACCOUNTLITE) {
             return (
-                <PrimaryButton className={className} disabled={true} loading={loading}>{c('Action')
-                    .t`Done`}</PrimaryButton>
+                <Button color="norm" className={className} disabled={true} loading={loading}>{c('Action')
+                    .t`Done`}</Button>
             );
         }
 
         return (
-            <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onDone}>
+            <Button color="norm" className={className} disabled={disabled} loading={loading} onClick={onDone}>
                 {c('Action').t`Close`}
-            </PrimaryButton>
+            </Button>
         );
     }
 
@@ -107,7 +110,8 @@ const SubscriptionSubmitButton = ({
     const amountDue = checkResult?.AmountDue || 0;
     if (amountDue === 0) {
         return (
-            <PrimaryButton
+            <Button
+                color="norm"
                 className={className}
                 loading={loading}
                 disabled={disabled || chargebeeInvalidBillingAddress}
@@ -115,7 +119,7 @@ const SubscriptionSubmitButton = ({
                 data-testid="confirm"
             >
                 {c('Action').t`Confirm`}
-            </PrimaryButton>
+            </Button>
         );
     }
 
@@ -133,8 +137,8 @@ const SubscriptionSubmitButton = ({
     }
 
     const billingAddressPlaceholder = (
-        <PrimaryButton className={className} disabled={true}>{c('Payments')
-            .t`Select billing country to pay`}</PrimaryButton>
+        <Button color="norm" className={className} disabled={true}>{c('Payments')
+            .t`Select billing country to pay`}</Button>
     );
 
     if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
@@ -145,11 +149,15 @@ const SubscriptionSubmitButton = ({
         return <ChargebeePaypalWrapper chargebeePaypal={chargebeePaypal} iframeHandles={iframeHandles} />;
     }
 
+    if (paymentMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY) {
+        return <ApplePayButton applePay={applePay} iframeHandles={iframeHandles} />;
+    }
+
     if (!loading && paymentMethodValue === PAYMENT_METHOD_TYPES.CASH) {
         return (
-            <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onDone}>
+            <Button color="norm" className={className} disabled={disabled} loading={loading} onClick={onDone}>
                 {c('Action').t`Done`}
-            </PrimaryButton>
+            </Button>
         );
     }
 
@@ -162,9 +170,9 @@ const SubscriptionSubmitButton = ({
         }
 
         return (
-            <PrimaryButton className={className} disabled={true} loading={loading}>
+            <Button color="norm" className={className} disabled={true} loading={loading}>
                 {c('Info').t`Awaiting transaction`}
-            </PrimaryButton>
+            </Button>
         );
     }
 
@@ -180,7 +188,8 @@ const SubscriptionSubmitButton = ({
 
     return (
         <>
-            <PrimaryButton
+            <Button
+                color="norm"
                 className={className}
                 loading={loading}
                 disabled={disabled}
@@ -188,7 +197,7 @@ const SubscriptionSubmitButton = ({
                 data-testid="confirm"
             >
                 {amountDue > 0 ? c('Action').jt`Pay ${price} now` : c('Action').t`Confirm`}
-            </PrimaryButton>
+            </Button>
         </>
     );
 };

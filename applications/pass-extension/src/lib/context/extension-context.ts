@@ -1,10 +1,10 @@
+import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { generatePortName } from 'proton-pass-extension/lib/utils/port';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
-import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import type { ClientEndpoint, MaybeNull, TabId } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { contextHandlerFactory } from '@proton/pass/utils/context';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';

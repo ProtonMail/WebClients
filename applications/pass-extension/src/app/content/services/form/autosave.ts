@@ -1,15 +1,16 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { NotificationAction } from 'proton-pass-extension/app/content/types';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import {
     commit,
     isFormEntryPromptable,
     stash,
     validateFormCredentials,
 } from 'proton-pass-extension/lib/utils/form-entry';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { AutosaveFormEntry } from '@proton/pass/types';
-import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
+import { FormEntryStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { urlEq } from '@proton/pass/utils/url/utils';
 import debounce from '@proton/utils/debounce';

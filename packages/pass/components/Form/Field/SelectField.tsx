@@ -1,17 +1,21 @@
-import { type FC, type MutableRefObject, useRef } from 'react';
+import type { FC, ForwardedRef, MutableRefObject } from 'react';
+import { useRef } from 'react';
 
 import { type FieldProps } from 'formik';
 
 import { InputFieldTwo, SelectTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
 import clsx from '@proton/utils/clsx';
 
-import { useFieldControl } from '../../../hooks/useFieldControl';
 import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
 export type SelectFieldProps = FieldProps &
-    InputFieldProps<typeof SelectTwo> &
-    Omit<FieldBoxProps, 'actions' | 'actionsContainerClassName'> & { selectClassName?: string };
+    Omit<InputFieldProps<typeof SelectTwo>, 'anchorRef'> &
+    Omit<FieldBoxProps, 'actions' | 'actionsContainerClassName' | 'anchorRef'> & {
+        selectClassName?: string;
+        anchorRef?: ForwardedRef<HTMLElement>;
+    };
 
 const Loader: FC = () => <div className="pass-skeleton pass-skeleton--select" />;
 
@@ -26,6 +30,7 @@ export const SelectField: FC<SelectFieldProps> = ({
     selectClassName,
     onValue,
     renderSelected,
+    anchorRef,
     ...props
 }) => {
     const { error } = useFieldControl({ field, form, meta });
@@ -40,7 +45,7 @@ export const SelectField: FC<SelectFieldProps> = ({
                 labelContainerClassName="expand-click-area color-weak m-0 text-normal text-sm"
                 originalPlacement="bottom"
                 renderSelected={() => (loading ? <Loader /> : renderSelected?.())}
-                anchorRef={fieldBoxRef as MutableRefObject<any>}
+                anchorRef={(anchorRef ?? fieldBoxRef) as MutableRefObject<any>}
                 unstyled
                 {...field}
                 {...props}

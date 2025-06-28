@@ -46,6 +46,7 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -58,7 +59,6 @@ import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 
-import NoAppsAvailable from '../containers/NoAppsAvailable';
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
 import AccountSidebar from './AccountSidebar';
@@ -149,7 +149,6 @@ const MainContainer = () => {
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
     const isUserGroupsMembershipFeatureEnabled = useFlag('UserGroupsMembersPermissionCheck');
-    const isQRCodeSignInEnabled = useFlag('QRCodeSignIn');
     const isPasswordPolicyEnabled = useFlag('PasswordPolicy');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
@@ -185,6 +184,8 @@ const MainContainer = () => {
 
     const { isB2B: isB2BDrive } = useDrivePlan();
 
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
+
     const routes = getRoutes({
         app,
         user,
@@ -192,6 +193,7 @@ const MainContainer = () => {
         organization,
         subscription,
         isReferralProgramEnabled: Boolean(userSettings.Referral?.Eligible),
+        isOrganizationPolicyEnforced: Boolean(userSettings?.OrganizationPolicy?.Enforced),
         isDataRecoveryAvailable,
         isSessionRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
@@ -213,8 +215,8 @@ const MainContainer = () => {
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,
         isCalendarHotkeysEnabled,
-        isQRCodeSignInEnabled,
         isPasswordPolicyEnabled,
+        isB2BTrial,
     });
 
     useEffect(() => {
@@ -368,10 +370,12 @@ const MainContainer = () => {
         isDocsHomepageAvailable,
     });
 
-    if (!availableApps.includes(app) && appFromPathname /* wait for app in pathname to ensure replacement works */) {
-        if (!availableApps.length) {
-            return <NoAppsAvailable />;
-        }
+    // Should never happen that available apps is empty, but just as a safety mechanism anyway
+    if (
+        !availableApps.includes(app) &&
+        appFromPathname /* wait for app in pathname to ensure replacement works */ &&
+        availableApps.length
+    ) {
         const [firstAvailableApp] = availableApps;
         const locationWithNewApp = getPathFromLocation(location).replace(
             pathPrefix,

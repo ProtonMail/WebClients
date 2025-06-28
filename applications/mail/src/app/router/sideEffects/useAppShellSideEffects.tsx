@@ -1,4 +1,4 @@
-import { useOpenDrawerOnLoad } from '@proton/components/index';
+import { useOpenDrawerOnLoad } from '@proton/components';
 
 import { useContactsListener } from 'proton-mail/hooks/contact/useContactsListener';
 import { useConversationsEvent } from 'proton-mail/hooks/events/useConversationsEvents';

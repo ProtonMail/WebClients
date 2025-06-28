@@ -100,8 +100,13 @@ export const checkKeysInSKL = (email: string, apiKeys: KeyWithFlags[], sklData: 
 };
 
 /**
- * Verify SKL signature using the primary keys among the provided verification keys.
- * The SKL must be signed by all the primary keys for verification to succeed.
+ * Verify SKL signature using any of the provided verification keys.
+ * Verification is not restricted to using the primary keys declared in the SKL,
+ * because for older SKLs those keys may no longer be available among the address verification
+ * keys (e.g. because the keys were deleted or marked as compromised by the user),
+ * and the SKL may have been re-signed using a new primary key.
+ * NB: even if the SKL includes a PQC signature, we don't mandate that it verifies over
+ * the non-PQC one.
  * @returns verified signature timestamp, or null if verification failed.
  */
 export const verifySKLSignature = async ({
@@ -115,40 +120,17 @@ export const verifySKLSignature = async ({
     signedKeyListSignature: string;
     verificationTime?: Date;
 }): Promise<Date | null> => {
-    const parsedSKL = new ParsedSignedKeyList(signedKeyListData).getParsedSignedKeyList();
-    if (!parsedSKL) {
+    const verificationResult = await CryptoProxy.verifyMessage({
+        armoredSignature: signedKeyListSignature,
+        verificationKeys,
+        textData: signedKeyListData,
+        signatureContext: KT_SKL_VERIFICATION_CONTEXT,
+        date: verificationTime,
+    });
+    if (verificationResult.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         return null;
     }
-
-    // We need to ensure the SKL is signed by each primary key, both for correctness and for PQC resistance
-    // if a v6 PQC primary key is present.
-    const primaryItems = parsedSKL.filter((item) => item.Primary === 1);
-    const primaryVerificationKeys = verificationKeys.filter(
-        (key) =>
-            !!primaryItems.find(
-                ({ SHA256Fingerprints }) => key.getSHA256Fingerprints().join() === SHA256Fingerprints.join()
-            )
-    );
-
-    if (primaryItems.length !== primaryVerificationKeys.length) {
-        return null;
-    }
-
-    const verificationResults = await Promise.all(
-        primaryVerificationKeys.map((verificationKey) =>
-            CryptoProxy.verifyMessage({
-                armoredSignature: signedKeyListSignature,
-                verificationKeys: verificationKey,
-                textData: signedKeyListData,
-                signatureContext: KT_SKL_VERIFICATION_CONTEXT,
-                date: verificationTime,
-            })
-        )
-    );
-    if (verificationResults.some(({ verificationStatus }) => verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID)) {
-        return null;
-    }
-    return verificationResults[0].signatureTimestamp; // any timestamp works as they are expected to have the same value
+    return verificationResult.signatureTimestamp;
 };
 
 /**

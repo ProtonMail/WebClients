@@ -6,7 +6,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import { isSubscriptionUnchanged } from '@proton/payments';
 import {
     type CheckSubscriptionData,
     type CheckWithAutomaticOptions,
@@ -18,23 +17,25 @@ import {
     type PaymentMethodStatus,
     type PaymentMethodStatusExtended,
     type PaymentsApi,
+    type PaymentsVersion,
     type RequestOptions,
     captureWrongPlanIDs,
     extendStatus,
     getLifetimeProductType,
     getPaymentsVersion,
+    getPlanName,
+    isCheckForbidden,
     isCheckWithAutomaticOptions,
     isLifetimePlanSelected,
     isPaymentMethodStatusExtended,
     queryPaymentMethodStatus,
 } from '@proton/payments';
-import { type PaymentsVersion } from '@proton/payments';
-import { getPlanName } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { type Api, ChargebeeEnabled, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
 
@@ -145,13 +146,18 @@ export const useReportRoutingError = () => {
 
 export const useMultiCheckCache = () => {
     const cacheRef = useRef<Record<string, EnrichedCheckResponse>>({});
+    const cacheByPlanRef = useRef<Record<string, Set<string> | undefined>>({});
 
-    const hash = (data: CheckSubscriptionData, options?: CheckWithAutomaticOptions) => {
-        const plans = Object.entries(data.Plans)
+    const getPlanID = (plans: CheckSubscriptionData['Plans']) => {
+        return Object.entries(plans)
             .sort((a, b) => a[0].localeCompare(b[0]))
             .reduce((acc, [key, value]) => {
                 return `${acc}-${key}-${value}`;
             }, '');
+    };
+
+    const hash = (data: CheckSubscriptionData, options?: CheckWithAutomaticOptions) => {
+        const plans = getPlanID(data.Plans);
 
         const id =
             `p-${plans}` +
@@ -180,11 +186,23 @@ export const useMultiCheckCache = () => {
     ) => {
         const id = hash(data, options);
         cacheRef.current[id] = value;
+
+        const planID = getPlanID(data.Plans);
+        cacheByPlanRef.current[planID] = cacheByPlanRef.current[planID] ?? new Set<string>();
+        cacheByPlanRef.current[planID].add(id);
+    };
+
+    const getByPlans = (plans: CheckSubscriptionData['Plans']) => {
+        const planID = getPlanID(plans);
+        return Array.from(cacheByPlanRef.current[planID] ?? [])
+            .map((id) => cacheRef.current[id])
+            .filter(isTruthy);
     };
 
     return {
         get,
         set,
+        getByPlans,
     };
 };
 
@@ -450,6 +468,10 @@ export const usePaymentsApi = (
             return multiCheckCache.get(data, undefined);
         };
 
+        const getCachedCheckByPlans = (plans: CheckSubscriptionData['Plans']) => {
+            return multiCheckCache.getByPlans(plans);
+        };
+
         return {
             checkWithAutomaticVersion,
             multiCheck,
@@ -461,6 +483,7 @@ export const usePaymentsApi = (
             getInvoiceBillingAddress,
             cachedCheck,
             getCachedCheck,
+            getCachedCheckByPlans,
         };
     };
 
@@ -486,8 +509,8 @@ export const usePaymentsApiWithCheckFallback = () => {
     const checkV5Fallback = (data: CheckSubscriptionData): EnrichedCheckResponse | null => {
         const { Cycle, Currency, Plans } = data;
 
-        const samePlan = isSubscriptionUnchanged(subscription, Plans, Cycle);
-        if (!samePlan) {
+        const checkForbidden = isCheckForbidden(subscription, Plans, Cycle);
+        if (!checkForbidden) {
             return null;
         }
 

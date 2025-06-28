@@ -1,6 +1,6 @@
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { isIFrameMessage, sanitizeIframeStyles } from 'proton-pass-extension/app/content/injections/iframe/utils';
+import { isIFrameMessage } from 'proton-pass-extension/app/content/injections/iframe/utils';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
 import type {
     IFrameApp,
@@ -8,6 +8,7 @@ import type {
     IFrameEndpoint,
     IFrameInitPayload,
     IFrameMessage,
+    IFrameMessageHandlerOptions,
     IFrameMessageType,
     IFrameMessageWithSender,
     IFramePortMessageHandler,
@@ -15,21 +16,26 @@ import type {
     IFrameState,
 } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
-import type { Runtime } from 'webextension-polyfill';
-
+import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
 import {
     contentScriptMessage,
     portForwardingMessage,
     sendMessage,
-} from '@proton/pass/lib/extension/message/send-message';
+} from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+import type { Runtime } from 'webextension-polyfill';
+
+import { MODEL_VERSION } from '@proton/pass/constants';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';
+import { TopLayerManager } from '@proton/pass/utils/dom/popover';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 
 type CreateIFrameAppOptions<A> = {
@@ -86,24 +92,11 @@ export const createIFrameApp = <A>({
     const iframe = createElement<HTMLIFrameElement>({
         type: 'iframe',
         classNames,
-        attributes: { src, popover: '' },
-        parent: popover.root,
-        shadow: true,
+        attributes: { src },
+        parent: popover.root.shadowRoot,
     });
 
     iframe.style.setProperty(`--frame-animation`, animation);
-
-    listeners.addObserver(
-        iframe,
-        (mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.attributeName === 'style') {
-                    sanitizeIframeStyles(iframe);
-                }
-            });
-        },
-        { attributes: true, childList: false, subtree: false }
-    );
 
     const unlisten = listeners.addListener(window, 'message', (event) => {
         if (event.data.type === IFRAME_APP_READY_EVENT && event.data.endpoint === id) {
@@ -141,11 +134,16 @@ export const createIFrameApp = <A>({
      * make sure to filter messages not only by type but by sender id */
     const registerMessageHandler = <M extends IFrameMessageType>(
         type: M,
-        handler: (message: IFrameMessageWithSender<M>) => void
+        handler: (message: IFrameMessageWithSender<M>) => void,
+        options?: IFrameMessageHandlerOptions
     ) => {
         const safeHandler = (message: Maybe<IFrameMessageWithSender>) => {
             if (message?.type === type && message.sender === id) {
-                handler(message as IFrameMessageWithSender<M>);
+                /** If the message handler is a result of an iframe user-action,
+                 * validate the action against potential click-jacking attacks */
+                if (!options?.userAction || TopLayerManager.ensureTopLevel(popover.root.customElement)) {
+                    handler(message as IFrameMessageWithSender<M>);
+                } else logger.warn(`[IFrame::${id}] Untrusted user action`);
             }
         };
 
@@ -171,7 +169,7 @@ export const createIFrameApp = <A>({
 
     const updatePosition = () => {
         cancelAnimationFrame(state.positionReq);
-        state.positionReq = requestAnimationFrame(() => setIframePosition(position(popover.root)));
+        state.positionReq = requestAnimationFrame(() => setIframePosition(position(popover.root.customElement)));
     };
 
     const close = (options: IFrameCloseOptions = {}) => {
@@ -250,7 +248,7 @@ export const createIFrameApp = <A>({
         listeners.removeAll();
         activeListeners.removeAll();
         state.port?.onMessage.removeListener(onMessageHandler);
-        safeCall(() => popover.root.removeChild(iframe))();
+        safeCall(() => popover.root.shadowRoot.removeChild(iframe))();
         state.port = null;
     };
 
@@ -259,7 +257,10 @@ export const createIFrameApp = <A>({
         state.framePort = framePort;
     });
 
-    registerMessageHandler(IFramePortMessageType.IFRAME_CLOSE, (message) => close(message.payload));
+    registerMessageHandler(IFramePortMessageType.IFRAME_CLOSE, (message) => {
+        close(message.payload);
+        sendContentScriptTelemetry(TelemetryEventName.ExtensionUsed, {}, { modelVersion: MODEL_VERSION });
+    });
 
     registerMessageHandler(IFramePortMessageType.IFRAME_DIMENSIONS, (message) => {
         const { width, height } = merge(dimensions(state), { height: message.payload.height });
@@ -269,12 +270,13 @@ export const createIFrameApp = <A>({
     return {
         element: iframe,
         state,
+
         close,
         destroy,
-        getPosition,
-        init,
         ensureLoaded,
         ensureReady,
+        getPosition,
+        init,
         open,
         registerMessageHandler,
         sendPortMessage,

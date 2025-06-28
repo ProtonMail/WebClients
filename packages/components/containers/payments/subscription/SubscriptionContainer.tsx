@@ -4,10 +4,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { setUsedBfOffer } from '@proton/components/containers/offers/bfOffer';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useApi from '@proton/components/hooks/useApi';
@@ -22,10 +21,13 @@ import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
 import type {
+    AddonGuard,
     BillingAddress,
-    CheckWithAutomaticOptions,
     MultiCheckSubscriptionData,
     PaymentMethodStatusExtended,
+    PaymentMethodType,
+    PaymentProcessorHook,
+    PaymentProcessorType,
     PlainPaymentMethodType,
 } from '@proton/payments';
 import {
@@ -47,24 +49,27 @@ import {
     getCheckoutModifiers,
     getFreeCheckResult,
     getHas2024OfferCoupon,
-    getIsB2BAudienceFromPlan,
-    getPaymentsVersion,
-    getPlanNameFromIDs,
-    getPlansMap,
-    isFreeSubscription,
-    isOnSessionMigration,
-} from '@proton/payments';
-import type { AddonGuard } from '@proton/payments';
-import {
     getHasSomeVpnPlan,
+    getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
+    getIsCurrencyOverriden,
     getIsVpnPlan,
     getMaximumCycleForApp,
+    getPaymentsVersion,
+    getPlanCurrencyFromPlanIDs,
+    getPlanFromPlanIDs,
     getPlanIDs,
+    getPlanNameFromIDs,
+    getPlansMap,
     hasDeprecatedVPN,
+    hasLumo,
+    isCheckForbidden,
+    isFreeSubscription,
+    isManagedExternally,
+    shouldPassIsTrial as shouldPassIsTrialPayments,
+    updateCurrencyOverride,
 } from '@proton/payments';
-import { isSubscriptionUnchanged } from '@proton/payments';
-import { PaymentsContextProvider } from '@proton/payments/ui';
+import { PaymentsContextProvider, useIsB2BTrial } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS } from '@proton/shared/lib/constants';
@@ -74,15 +79,10 @@ import {
     getIsCustomCycle,
     getOptimisticCheckResult,
 } from '@proton/shared/lib/helpers/checkout';
-import {
-    getPlanCurrencyFromPlanIDs,
-    getPlanFromPlanIDs,
-    hasPlanIDs,
-    switchPlan,
-} from '@proton/shared/lib/helpers/planIDs';
+import { hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Organization, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { Audience, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
@@ -92,13 +92,10 @@ import { usePaymentFacade } from '../../../../components/payments/client-extensi
 import { useChargebeeContext } from '../../../../components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '../../../../components/payments/client-extensions/usePollEvents';
 import type { Operations, OperationsSubscriptionData } from '../../../../components/payments/react-extensions';
-import type {
-    PaymentProcessorHook,
-    PaymentProcessorType,
-} from '../../../../components/payments/react-extensions/interface';
 import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
 import GenericError from '../../error/GenericError';
+import { changeDefaultPaymentMethodBeforePayment } from '../DefaultPaymentMethodMessage';
 import InclusiveVatText from '../InclusiveVatText';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
@@ -134,6 +131,7 @@ export interface Model {
     step: SUBSCRIPTION_STEPS;
     planIDs: PlanIDs;
     currency: Currency;
+    currencyBeforeOverride?: Currency;
     cycle: Cycle;
     coupon?: string;
     gift?: string;
@@ -200,6 +198,16 @@ export interface SubscriptionContainerProps {
     paymentsStatus: PaymentMethodStatusExtended;
 }
 
+/**
+ * If user already has mobile lumo subscription then they can't buy lumo addon.
+ */
+const canAddLumoAddon = (subscription: Subscription): boolean => {
+    // Check if the current subscription or any of the secondary subscriptions has a mobile lumo subscription.
+    return ![subscription, ...(subscription.SecondarySubscriptions ?? [])].some(
+        (sub) => hasLumo(sub) && isManagedExternally(sub)
+    );
+};
+
 const SubscriptionContainerInner = ({
     topRef: customTopRef,
     upsellRef,
@@ -234,7 +242,7 @@ const SubscriptionContainerInner = ({
     paymentsStatus,
 }: SubscriptionContainerProps) => {
     const scheduledDowncycling = useFlag('ScheduledDowncycling');
-    const isLumoAddonAvailable = useFlag('LumoAddonAvailable');
+    const isLumoAddonAvailable = useFlag('LumoAddonAvailable') && canAddLumoAddon(subscription);
 
     const defaultMaximumCycle = getMaximumCycleForApp(app);
     const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
@@ -259,6 +267,7 @@ const SubscriptionContainerInner = ({
     const api = useApi();
     const { paymentsApi } = usePaymentsApi(api);
     const [user] = useUser();
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
     const { call } = useEventManager();
     const pollEventsMultipleTimes = usePollEvents();
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
@@ -314,7 +323,7 @@ const SubscriptionContainerInner = ({
 
         if (newPlan) {
             return switchPlan({
-                currentPlanIDs: subscriptionPlanIDs,
+                subscription: latestSubscription,
                 newPlan,
                 organization,
                 plans,
@@ -421,9 +430,11 @@ const SubscriptionContainerInner = ({
         });
     };
 
+    const isTrial = checkResult?.SubscriptionMode === SubscriptionMode.Trial;
+
     const handleSubscribe = async (
         operations: Operations,
-        { operationsSubscriptionData, paymentProcessorType }: SubscriptionContext
+        { operationsSubscriptionData, paymentProcessorType, paymentMethodValue }: SubscriptionContext
     ) => {
         if (!hasPlanIDs(operationsSubscriptionData.Plans)) {
             const result = await cancelSubscription({});
@@ -451,6 +462,13 @@ const SubscriptionContainerInner = ({
         try {
             setModel((model) => ({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE }));
             try {
+                await changeDefaultPaymentMethodBeforePayment(
+                    api,
+                    paymentMethodValue,
+                    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                    paymentFacade.methods.savedMethods ?? []
+                );
+
                 const codes = getCodesForSubscription();
                 await operations.subscribe({
                     Codes: codes,
@@ -458,6 +476,7 @@ const SubscriptionContainerInner = ({
                     Cycle: model.cycle,
                     product: app,
                     taxBillingAddress: model.taxBillingAddress,
+                    StartTrial: isTrial,
                 });
 
                 if (codes.some((code) => getHas2024OfferCoupon(code))) {
@@ -479,6 +498,10 @@ const SubscriptionContainerInner = ({
             } catch (error) {
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.telemetry.reportPaymentFailure(paymentProcessorType);
+
+                // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                paymentFacade.reset();
+
                 throw error;
             }
             await call();
@@ -517,6 +540,7 @@ const SubscriptionContainerInner = ({
     type SubscriptionContext = {
         operationsSubscriptionData: OperationsSubscriptionData;
         paymentProcessorType: PaymentProcessorType;
+        paymentMethodValue: PaymentMethodType;
     };
 
     const selectedPlanCurrency = checkResult?.Currency ?? DEFAULT_CURRENCY;
@@ -529,7 +553,7 @@ const SubscriptionContainerInner = ({
         billingPlatform: subscription?.BillingPlatform,
         chargebeeUserExists: user.ChargebeeUserExists,
         paymentMethodStatusExtended: paymentsStatus,
-        onChargeable: (operations, { sourceType, paymentProcessorType }) => {
+        onChargeable: (operations, { sourceType, paymentProcessorType, source }) => {
             const context: SubscriptionContext = {
                 operationsSubscriptionData: {
                     Plans: model.planIDs,
@@ -537,8 +561,10 @@ const SubscriptionContainerInner = ({
                     product: app,
                     Codes: getCodesForSubscription(),
                     taxBillingAddress: model.taxBillingAddress,
+                    StartTrial: isTrial,
                 },
                 paymentProcessorType,
+                paymentMethodValue: source,
             };
 
             const promise = withSubscribing(handleSubscribe(operations, context));
@@ -551,8 +577,6 @@ const SubscriptionContainerInner = ({
 
             return promise.catch(noop);
         },
-        // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        onCurrencyChange: (currency, context) => handleChangeCurrency(currency, context),
         flow: 'subscription',
         telemetryFlow,
         user,
@@ -597,12 +621,12 @@ const SubscriptionContainerInner = ({
             allowDowncycling: scheduledDowncycling,
             cycleParam: maybeCycle,
             app,
+            couponConfig,
         });
 
     const runAdditionalChecks = async (
         newModel: Model,
         checkPayload: CheckSubscriptionData,
-        options: CheckWithAutomaticOptions | undefined,
         checkResult: EnrichedCheckResponse,
         signal: AbortSignal
     ) => {
@@ -615,20 +639,19 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        paymentsApi.cacheMultiCheck(checkPayload, options, checkResult);
+        paymentsApi.cacheMultiCheck(checkPayload, undefined, checkResult);
 
         const additionalCycles = computeAllowedCycles(newModel.planIDs)
             // skip the cycle that was just checked
             .filter((cycle) => cycle !== checkResult.Cycle)
 
             // skip cycles of the currently active subscription, because the backend doesn't allows to check them
-            .filter((cycle) => !isSubscriptionUnchanged(subscription, newModel.planIDs, cycle));
+            .filter((cycle) => !isCheckForbidden(subscription, newModel.planIDs, cycle));
 
         const additionalPayloads = additionalCycles.map(
             (Cycle) =>
                 ({
                     ...checkPayload,
-                    ...options,
                     Cycle,
                 }) as MultiCheckSubscriptionData
         );
@@ -641,18 +664,51 @@ const SubscriptionContainerInner = ({
         setAdditionalCheckResults([...additionalChecks, checkResult]);
     };
 
+    const shouldPassIsTrial = (newModel: Model) => {
+        if (!isB2BTrial) {
+            return false;
+        }
+
+        const oldSubscription = subscription?.UpcomingSubscription ?? subscription;
+
+        if (!oldSubscription) {
+            return false;
+        }
+
+        const newPlanIDs = newModel.planIDs;
+        const oldPlanIDs = getPlanIDs(subscription);
+        const newCycle = newModel.cycle;
+        const oldCycle = oldSubscription.Cycle;
+
+        return shouldPassIsTrialPayments({
+            plansMap,
+            newPlanIDs,
+            oldPlanIDs,
+            newCycle,
+            oldCycle,
+        });
+    };
+
     const check = async (
         newModel: Model = model,
         wantToApplyNewGiftCode: boolean = false,
-        selectedMethod?: string
+        selectedMethod?: PlainPaymentMethodType
     ): Promise<SubscriptionCheckResponse | undefined> => {
+        const overrideCurrency = updateCurrencyOverride({
+            currentCurrency: newModel.currency,
+            currencyBeforeOverride: newModel.currencyBeforeOverride,
+            currentSelectedMethod: paymentFacade.selectedMethodType,
+            newSelectedMethod: selectedMethod,
+        });
+
         const copyNewModel = {
             ...newModel,
+            ...overrideCurrency,
             initialCheckComplete: true,
             noPaymentNeeded: false,
         };
 
-        if (!hasPlanIDs(newModel.planIDs)) {
+        if (!hasPlanIDs(copyNewModel.planIDs)) {
             setCheckResult(getFreeCheckResult(model.currency, model.cycle));
             setModel(copyNewModel);
             return;
@@ -675,14 +731,7 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        const isInhouseForcedUser =
-            chargebeeContext.enableChargebeeRef.current === ChargebeeEnabled.INHOUSE_FORCED ||
-            isOnSessionMigration(user.ChargebeeUser, subscription?.BillingPlatform);
-
-        if (
-            isSubscriptionUnchanged(latestSubscription, copyNewModel.planIDs, copyNewModel.cycle) &&
-            !isInhouseForcedUser
-        ) {
+        if (isCheckForbidden(subscription, copyNewModel.planIDs, copyNewModel.cycle)) {
             setCheckResult({
                 ...getOptimisticCheckResult({
                     plansMap,
@@ -707,64 +756,53 @@ const SubscriptionContainerInner = ({
                 abortControllerRef.current = new AbortController();
 
                 const coupon = getAutoCoupon({
-                    coupon: newModel.coupon,
-                    planIDs: newModel.planIDs,
-                    cycle: newModel.cycle,
+                    coupon: copyNewModel.coupon,
+                    planIDs: copyNewModel.planIDs,
+                    cycle: copyNewModel.cycle,
                 });
-
-                let options: CheckWithAutomaticOptions | undefined;
-                if (
-                    // the first check handle the onMethod callback because the
-                    // component is not rerendered and didn't update paymentFacade by that time yet.
-                    // the second check handles the case when the component was already rerendered
-                    (selectedMethod === PAYMENT_METHOD_TYPES.BITCOIN ||
-                        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN) &&
-                    isOnSessionMigration(user.ChargebeeUser, subscription.BillingPlatform)
-                ) {
-                    options = {
-                        forcedVersion: 'v4',
-                        reason: 'bitcoin-on-session',
-                    };
-                }
 
                 // PAY-1822. To put it simply, this code removes all the previously applied coupons or gift codes
                 // if user re-enters the same coupon code as in the currently active subscription.
                 // We must do it because of backend limitations. The backend won't recognize the currently active
                 // subscription coupon if there is any other valid coupon in the request payload.
                 const codesArgument =
-                    !!subscriptionCouponCode && newModel.gift === subscriptionCouponCode
+                    !!subscriptionCouponCode && copyNewModel.gift === subscriptionCouponCode
                         ? { coupon: subscriptionCouponCode }
-                        : { gift: newModel.gift, coupon };
+                        : { gift: copyNewModel.gift, coupon };
 
                 const Codes = getCodes(codesArgument);
 
+                // selectedMethod variable prevails over paymentFacade.selectedMethodType because it's passed in the
+                // onMethod change handler. So this variable changes before the paymentFacade.selectedMethodType is
+                // updated. We must take into account the case when user unselects SEPA, making selectedMethod not SEPA,
+                // while paymentFacade.selectedMethodType is still SEPA. In this case we want to call /check without
+                // ProrationMode == Exact.
+                const currentlySelectedMethod = selectedMethod ?? paymentFacade.selectedMethodType;
+
                 const checkPayload: CheckSubscriptionData = {
                     Codes,
-                    Plans: newModel.planIDs,
-                    Currency: newModel.currency,
-                    Cycle: newModel.cycle,
+                    Plans: copyNewModel.planIDs,
+                    Currency: copyNewModel.currency,
+                    Cycle: copyNewModel.cycle,
                     BillingAddress: {
-                        CountryCode: newModel.taxBillingAddress.CountryCode,
-                        State: newModel.taxBillingAddress.State,
+                        CountryCode: copyNewModel.taxBillingAddress.CountryCode,
+                        State: copyNewModel.taxBillingAddress.State,
                     },
-                    ProrationMode: [selectedMethod, paymentFacade.selectedMethodType].includes(
-                        PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-                    )
-                        ? ProrationMode.Exact
-                        : undefined,
+                    ProrationMode:
+                        currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+                            ? ProrationMode.Exact
+                            : undefined,
+                    IsTrial: shouldPassIsTrial(newModel),
                 };
 
-                const checkResult = await paymentsApi.checkWithAutomaticVersion(
-                    checkPayload,
-                    { signal: abortControllerRef.current.signal },
-                    options
-                );
+                const checkResult = await paymentsApi.checkWithAutomaticVersion(checkPayload, {
+                    signal: abortControllerRef.current.signal,
+                });
 
                 try {
                     await runAdditionalChecks(
-                        newModel,
+                        copyNewModel,
                         checkPayload,
-                        options,
                         checkResult,
                         abortControllerRef.current.signal
                     );
@@ -778,7 +816,7 @@ const SubscriptionContainerInner = ({
                 const { Gift = 0 } = checkResult;
                 const { Code = '' } = checkResult.Coupon || {}; // Coupon can equal null
 
-                if (wantToApplyNewGiftCode && newModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
+                if (wantToApplyNewGiftCode && copyNewModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
                     createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
                     giftCodeRef.current?.focus();
                 }
@@ -794,7 +832,7 @@ const SubscriptionContainerInner = ({
 
                 setCheckResult(checkResult);
                 setModel(copyNewModel);
-                onCheck?.({ model, newModel, type: 'success', result: checkResult });
+                onCheck?.({ model, newModel: copyNewModel, type: 'success', result: checkResult });
             } catch (error: any) {
                 if (error?.name === 'AbortError') {
                     return;
@@ -803,7 +841,7 @@ const SubscriptionContainerInner = ({
                 if (error.name === 'OfflineError') {
                     setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
                 }
-                onCheck?.({ model, newModel, type: 'error', error });
+                onCheck?.({ model, newModel: copyNewModel, type: 'error', error });
             }
 
             return checkResult;
@@ -872,6 +910,7 @@ const SubscriptionContainerInner = ({
                     Cycle: model.cycle,
                     product: app,
                     taxBillingAddress: model.taxBillingAddress,
+                    StartTrial: isTrial,
                 });
                 await processor.processPaymentToken();
             } catch (e) {
@@ -998,6 +1037,7 @@ const SubscriptionContainerInner = ({
                 hasPaymentMethod={hasPaymentMethod}
                 billingAddressStatus={billingAddressStatus}
                 paymentProcessorType={paymentFacade.selectedProcessor?.meta.type}
+                applePay={paymentFacade.applePay}
             />
             {paymentFacade.showInclusiveTax && (
                 <InclusiveVatText
@@ -1104,8 +1144,8 @@ const SubscriptionContainerInner = ({
             )}
 
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
-                <div className="subscriptionCheckout-top-container">
-                    <div className="flex-1 w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
+                <div className="subscriptionCheckout-top-container gap-4 lg:gap-6">
+                    <div className="flex-1 w-full md:w-auto pt-6">
                         <div
                             className="mx-auto max-w-custom subscriptionCheckout-soptions"
                             style={{ '--max-w-custom': '37em' }}
@@ -1176,12 +1216,29 @@ const SubscriptionContainerInner = ({
                                     hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                     hasSomeVpnPlan={hasSomeVpnPlan}
                                     billingAddressStatus={billingAddressStatus}
-                                    onMethod={(value) => {
-                                        if (
-                                            value === PAYMENT_METHOD_TYPES.BITCOIN &&
-                                            isOnSessionMigration(user.ChargebeeUser, subscription.BillingPlatform)
-                                        ) {
-                                            void check(model, false, value);
+                                    isCurrencyOverriden={getIsCurrencyOverriden({
+                                        currentCurrency: model.currency,
+                                        currencyBeforeOverride: model.currencyBeforeOverride,
+                                    })}
+                                    onMethod={(newPaymentMethodValue) => {
+                                        const newPaymentType = paymentFacade.methods.allMethods.find(
+                                            (method) => method.value === newPaymentMethodValue
+                                        )?.type;
+                                        const userSelectedSEPA =
+                                            newPaymentType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+
+                                        // current type is SEPA and the selected type is not SEPA.
+                                        const userUnselectedSEPA =
+                                            paymentFacade.selectedMethodType ===
+                                                PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT &&
+                                            newPaymentType !== PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+
+                                        // If user selects SEPA payment method then we need to do additional
+                                        // subscription/check call with the ProrationMode == Exact. Same thing if user
+                                        // unselects SEPA payment method, but in this case we need to call /check
+                                        // without ProrationMode == Exact.
+                                        if (userSelectedSEPA || userUnselectedSEPA) {
+                                            void check(model, false, newPaymentType);
                                         }
                                     }}
                                 />

@@ -1,9 +1,10 @@
 import { NotificationAction } from 'proton-pass-extension/app/content/types';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientHasSession, clientNeedsSession } from '@proton/pass/lib/client';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { SanitizedPublicKeyRequest } from '@proton/pass/lib/passkeys/types';
-import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { type MaybeNull } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import type { Predicate } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';

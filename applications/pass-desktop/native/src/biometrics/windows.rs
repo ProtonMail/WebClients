@@ -1,17 +1,13 @@
-use anyhow::{anyhow, ensure, Result};
-use base64::{engine::general_purpose::STANDARD as base64_engine, Engine};
+use anyhow::{ ensure, bail, Result };
 use rand::RngCore;
-use sha2::{Digest, Sha256};
 use widestring::U16CString;
 use windows::{
-    core::{factory, h, Array, HSTRING, PCWSTR, PWSTR},
+    core::{factory, HSTRING, PCWSTR, PWSTR},
     Foundation::IAsyncOperation,
     Security::{
         Credentials::{
-            KeyCredentialCreationOption, KeyCredentialManager, KeyCredentialStatus,
             UI::{UserConsentVerificationResult, UserConsentVerifier, UserConsentVerifierAvailability},
-        },
-        Cryptography::CryptographicBuffer,
+        }
     },
     Win32::{
         Foundation::{FILETIME, HWND},
@@ -50,14 +46,14 @@ impl super::BiometricsTrait for Biometrics {
         let result = operation.get()?;
 
         match result {
-            UserConsentVerificationResult::Verified => Ok(),
-            UserConsentVerificationResult::DeviceBusy => Err("Authentication device is busy."),
-            UserConsentVerificationResult::DeviceNotPresent => Err("No authentication device found."),
-            UserConsentVerificationResult::DisabledByPolicy => Err("Authentication device is disabled by policy."),
-            UserConsentVerificationResult::NotConfiguredForUser => Err("No authentication device configured."),
-            UserConsentVerificationResult::Canceled => Err("Authentication cancelled."),
-            UserConsentVerificationResult::RetriesExhausted => Err("There have been too many failed attempts."),
-            _ => Err("Biometric authentication failed."),
+            UserConsentVerificationResult::Verified => Ok(()),
+            UserConsentVerificationResult::DeviceBusy => bail!("Authentication device is busy."),
+            UserConsentVerificationResult::DeviceNotPresent => bail!("No authentication device found."),
+            UserConsentVerificationResult::DisabledByPolicy => bail!("Authentication device is disabled by policy."),
+            UserConsentVerificationResult::NotConfiguredForUser => bail!("No authentication device configured."),
+            UserConsentVerificationResult::Canceled => bail!("Authentication cancelled."),
+            UserConsentVerificationResult::RetriesExhausted => bail!("There have been too many failed attempts."),
+            _ => bail!("Biometric authentication failed."),
         }
     }
 

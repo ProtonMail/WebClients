@@ -8,6 +8,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { EditorMetadata } from '@proton/components';
 import { DropdownMenuButton, Icon } from '@proton/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {
@@ -19,7 +20,6 @@ import clsx from '@proton/utils/clsx';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { exportPlainText, plainTextToHTML, setDocumentContent } from '../../../helpers/message/messageContent';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import type { MessageChange, MessageChangeFlag } from '../Composer';
 import type { ExternalEditorActions } from '../editor/EditorWrapper';
 
@@ -94,6 +94,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                 <DropdownMenuButton
                     key={3}
                     className="text-left flex flex-nowrap items-center"
+                    aria-pressed={!editorMetadata.isPlainText}
                     onClick={() => {
                         if (editorMetadata.isPlainText !== false) {
                             handleChangeMetadata({ isPlainText: false });
@@ -107,6 +108,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                 <DropdownMenuButton
                     key={4}
                     className="text-left flex flex-nowrap items-center"
+                    aria-pressed={editorMetadata.isPlainText}
                     onClick={() => {
                         if (editorMetadata.isPlainText !== true) {
                             handleChangeMetadata({ isPlainText: true });
@@ -123,6 +125,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                 className="text-left flex flex-nowrap items-center"
                 onClick={handleTogglePublicKey}
                 data-testid="composer:attach-public-key-button"
+                aria-pressed={isAttachPublicKey}
             >
                 <span className="my-auto flex-1 pl-1">{c('Info').t`Attach public key`}</span>
                 <Icon name="checkmark" className={clsx(['ml-4', getClassname(isAttachPublicKey)])} />
@@ -131,6 +134,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                 className="text-left flex flex-nowrap items-center"
                 onClick={handleToggleReceiptRequest}
                 data-testid="composer:read-receipt-button"
+                aria-pressed={isReceiptRequest}
             >
                 <span className="my-auto flex-1 pl-1">{c('Info').t`Request read receipt`}</span>
                 <Icon name="checkmark" className={clsx(['ml-4', getClassname(isReceiptRequest)])} />

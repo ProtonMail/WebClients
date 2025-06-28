@@ -5,6 +5,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasNew } from '@proton/pass/components/Item/Alias/Alias.new';
 import { CreditCardNew } from '@proton/pass/components/Item/CreditCard/CreditCard.new';
+import { CustomNew } from '@proton/pass/components/Item/Custom/Custom.new';
 import { IdentityNew } from '@proton/pass/components/Item/Identity/Identity.new';
 import { LoginNew } from '@proton/pass/components/Item/Login/Login.new';
 import { NoteNew } from '@proton/pass/components/Item/Note/Note.new';
@@ -30,6 +31,9 @@ const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
     alias: AliasNew,
     creditCard: CreditCardNew,
     identity: IdentityNew,
+    sshKey: CustomNew,
+    wifi: CustomNew,
+    custom: CustomNew,
 };
 
 export const ItemNew: FC = () => {
@@ -80,11 +84,12 @@ export const ItemNew: FC = () => {
         selectItem(createIntent.shareId, createIntent.optimisticId, { mode: 'replace' });
     };
 
-    const ItemNewComponent = itemNewMap[type];
+    const ItemNewComponent = itemNewMap[type] as FC<ItemNewViewProps>;
 
     return (
         shareId && (
             <ItemNewComponent
+                type={type}
                 onCancel={handleCancel}
                 onSubmit={handleSubmit}
                 shareId={shareId}

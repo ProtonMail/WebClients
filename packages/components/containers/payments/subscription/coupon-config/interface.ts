@@ -17,9 +17,9 @@ export function isCouponConfigRequiredProps(props: CouponConfigProps): props is 
 
 export type CouponConfig = {
     /**
-     * The coupon code that triggers this config.
+     * The coupon codes that trigger this config.
      */
-    coupon: string;
+    coupons: string | string[];
     /**
      * If set to true then the coupon will not be displayed in the UI. It hides the coupon and "coupon discount" number.
      * In addition, it changes the displayed price per user and total. These amounts now include the discount.
@@ -45,6 +45,11 @@ export type CouponConfig = {
      * something else.
      */
     cycleTitle?: (params: { cycle: CYCLE }, config: CouponConfigRequiredProps) => ReactNode;
+
+    /**
+     * If set, this will limit the cycles that are available in the cycle selector.
+     */
+    availableCycles?: CYCLE[];
 };
 
 type FirstParam<T> = T extends (first: infer P, ...args: any[]) => any ? P : never;

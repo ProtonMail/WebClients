@@ -97,7 +97,7 @@ const AccountSettingsRouter = ({
                     <AutomaticSubscriptionModal />
                     <PrivateMainSettingsArea
                         config={dashboardV2}
-                        mainAreaClass="bg-lowered"
+                        mainAreaClass="bg-lowered settings-cards"
                         wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
                         style={{ '--max-w-custom': '1500px' }}
                     >
@@ -114,7 +114,7 @@ const AccountSettingsRouter = ({
                     <AutomaticSubscriptionModal />
                     <PrivateMainSettingsArea
                         config={subscription}
-                        mainAreaClass="bg-lowered"
+                        mainAreaClass="bg-lowered settings-cards"
                         wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
                         style={{ '--max-w-custom': '1500px' }}
                     >

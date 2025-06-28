@@ -1,10 +1,12 @@
 import { c, msgid } from 'ttag';
 
 import PassUI from '@proton/pass/lib/core/ui.proxy';
+import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { Draft } from '@proton/pass/store/reducers';
 import type {
     BulkSelectionDTO,
     DeobfuscatedItem,
+    DeobfuscatedItemExtraField,
     IdentityItemPreview,
     ItemRevision,
     ItemSortFilter,
@@ -22,6 +24,10 @@ import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constan
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { hasUserIdentifier, isEditItemDraft } from './item.predicates';
+
+export const compoundItemFilters: Partial<Record<ItemType, ItemType[]>> = {
+    custom: ['custom', 'sshKey', 'wifi'],
+};
 
 const SEPERATOR = '::';
 const toKey = (...args: (string | number)[]) => args.join(SEPERATOR);
@@ -100,7 +106,8 @@ export const filterItemsByType =
     (itemType?: MaybeNull<ItemType>) =>
     <T extends ItemRevision>(items: T[]) => {
         if (!itemType) return items;
-        return items.filter((item) => !itemType || itemType === item.data.type);
+        const compoundFilters = compoundItemFilters[itemType] ?? [itemType];
+        return items.filter((item) => compoundFilters.includes(item.data.type));
     };
 
 export const filterItemsByUserIdentifier = (email: string) => (items: LoginItem[]) =>
@@ -183,6 +190,21 @@ export const getSanitizedUserIdentifiers = async ({
     /* If `itemEmail` is valid, keep it; otherwise, move it to username field */
     return validEmail ? { email: itemEmail, username: '' } : { email: '', username: itemEmail };
 };
+
+export const bindOTPSanitizer =
+    (label?: string, issuer?: string) =>
+    (totpUri: string): string =>
+        parseOTPValue(totpUri, {
+            label: label || undefined,
+            issuer: issuer || undefined,
+        });
+
+export const sanitizeExtraField =
+    (otpSanitizer: (totpUri: string) => string) =>
+    (extraField: DeobfuscatedItemExtraField): DeobfuscatedItemExtraField =>
+        extraField.type === 'totp'
+            ? { ...extraField, data: { totpUri: otpSanitizer(extraField.data.totpUri) } }
+            : extraField;
 
 export const intoBulkSelection = (items: UniqueItem[]): BulkSelectionDTO =>
     items.reduce<BulkSelectionDTO>((dto, { shareId, itemId }) => {

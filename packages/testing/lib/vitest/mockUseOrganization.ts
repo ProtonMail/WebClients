@@ -44,6 +44,7 @@ export const mockUseGetOrganization = (value: Partial<OrganizationExtended> = {}
                     HasKeys: 0,
                     ToMigrate: 0,
                     BrokenSKL: 0,
+                    IsBusiness: false,
                     Settings: {
                         ShowName: true,
                         LogoID: null,

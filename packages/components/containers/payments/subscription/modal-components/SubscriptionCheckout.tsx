@@ -22,14 +22,15 @@ import {
     type Plan,
     type PlanIDs,
     type Subscription,
+    getPlanFromPlanIDs,
+    getPlanIDs,
     isLifetimePlanSelected,
 } from '@proton/payments';
-import { getPlanIDs } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { getPlanFromPlanIDs, hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helpers/planIDs';
+import { hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helpers/planIDs';
 import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -169,7 +170,7 @@ const SubscriptionCheckout = ({
             type="success"
             tooltip={c('Info')
                 .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`}
-            className="ml-2 text-semibold absolute"
+            className="ml-2 text-semibold"
         >
             -{discountPercent}%
         </Badge>
@@ -199,14 +200,16 @@ const SubscriptionCheckout = ({
             }
         >
             <div className="mb-4 flex flex-column">
-                <span className="relative">
+                <div className="min-h-custom" style={{ '--min-h-custom': '1.5rem' }}>
                     <strong className="mb-1">{isFreePlanSelected ? c('Payments.plan_name').t`Free` : planTitle}</strong>
                     {discountPercent !== 0 && !loading && !couponConfig?.hidden && discountBadgeElement}
-                </span>
+                </div>
 
-                {isPaidPlanSelected && !isSpecialRenewPlan(planIDs) && !lifetimePlan && (
-                    <BilledCycleText cycle={cycle} />
-                )}
+                <div className="min-h-custom" style={{ '--min-h-custom': '1.25rem' }}>
+                    {isPaidPlanSelected && !isSpecialRenewPlan(planIDs) && !lifetimePlan && (
+                        <BilledCycleText cycle={cycle} planIDs={planIDs} />
+                    )}
+                </div>
             </div>
             {(() => {
                 if (lifetimePlan) {

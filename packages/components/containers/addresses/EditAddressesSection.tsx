@@ -13,7 +13,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -122,7 +122,11 @@ const EditAddressesSection = ({ address }: Props) => {
             <SettingsLayout stackEarlier className="max-w-custom" style={{ '--max-w-custom': '49em' }}>
                 <SettingsLayoutLeft>
                     {/* eslint-disable-next-line */}
-                    <label htmlFor="editor" className="text-semibold" onClick={() => editorRef.current?.focus()}>
+                    <label
+                        htmlFor="rooster-editor"
+                        className="text-semibold"
+                        onClick={() => editorRef.current?.focus()}
+                    >
                         <span className="mr-2">{c('Label').t`Signature`}</span>
                         <Info
                             url={getKnowledgeBaseUrl('/display-name-email-signature')}
@@ -146,6 +150,7 @@ const EditAddressesSection = ({ address }: Props) => {
                             modalDefaultFont={modalDefaultFont}
                             isSmallViewportForToolbar={viewportWidth['<=medium']}
                             mailSettings={mailSettings}
+                            title={c('Label').t`Signature`}
                         />
                     </div>
 

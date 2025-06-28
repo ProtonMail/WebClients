@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
 import { MaskedValueControl } from '@proton/pass/components/Form/Field/Control/MaskedValueControl';
 import { ObfuscatedValueControl } from '@proton/pass/components/Form/Field/Control/ObfuscatedValueControl';
 import { UpgradeControl } from '@proton/pass/components/Form/Field/Control/UpgradeControl';
@@ -17,17 +18,18 @@ import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaRe
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { usePartialDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { formatExpirationDateMMYY } from '@proton/pass/lib/validation/credit-card';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { deobfuscateCCField } from '@proton/pass/utils/obfuscate/xor';
+import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
 
 export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLinkItem, revision }) => {
-    const { data: item } = revision;
+    const { data: item, itemId, shareId } = revision;
 
     const {
         metadata: { note },
         content: { cardholderName, expirationDate, number, verificationNumber, pin },
+        extraFields,
     } = usePartialDeobfuscatedItem(item);
 
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
@@ -94,6 +96,10 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
                         value={note}
                     />
                 </FieldsetCluster>
+            )}
+
+            {Boolean(extraFields.length) && (
+                <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />
             )}
         </>
     );

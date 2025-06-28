@@ -2,13 +2,14 @@ import { findByTestId, fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 import { addApiMock, assertIcon, clearAll, minimalCache } from '../../../helpers/test/helper';
-import { createDocument } from '../../../helpers/test/message';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import MessageView from '../MessageView';
 import { defaultProps, getIframeRootDiv, setup } from './Message.test.helpers';
 
@@ -46,8 +47,8 @@ const content = `<div>
   </div>
 </div>`;
 
-jest.mock('../../../helpers/dom', () => ({
-    ...jest.requireActual('../../../helpers/dom'),
+jest.mock('@proton/mail/helpers/dom', () => ({
+    ...jest.requireActual('@proton/mail/helpers/dom'),
 }));
 
 const windowHostname = 'https://mail.proton.pink';
@@ -64,7 +65,7 @@ describe('Message images', () => {
     afterEach(clearAll);
 
     it('should display all elements other than images', async () => {
-        const document = createDocument(content);
+        const document = parseDOMStringToBodyElement(content);
 
         const message: MessageState = {
             localID: 'messageID',
@@ -133,8 +134,8 @@ describe('Message images', () => {
     });
 
     it('should load correctly all elements other than images with proxy', async () => {
-        const forgedURL = `${windowHostname}/api/core/v4/images?Url=imageURL&DryRun=0&UID=uid`;
-        const document = createDocument(content);
+        const forgedURL = `${windowHostname}/api/${PROXY_IMG_URL}?Url=imageURL&DryRun=0&UID=uid`;
+        const document = parseDOMStringToBodyElement(content);
 
         const message: MessageState = {
             localID: 'messageID',
@@ -211,7 +212,7 @@ describe('Message images', () => {
     it('should be able to load direct when proxy failed at loading', async () => {
         const imageURL = 'imageURL';
         const content = `<div><img proton-src="${imageURL}" data-testid="image"/></div>`;
-        const document = createDocument(content);
+        const document = parseDOMStringToBodyElement(content);
         const message: MessageState = {
             localID: 'messageID',
             data: {
@@ -228,7 +229,7 @@ describe('Message images', () => {
             },
         };
 
-        addApiMock(`core/v4/images`, () => {
+        addApiMock(PROXY_IMG_URL, () => {
             const error = new Error();
             (error as any).data = { Code: 2902, Error: 'TEST error message' };
             return Promise.reject(error);
@@ -275,7 +276,7 @@ describe('Message images', () => {
         const loadedImage = iframeRerendered.querySelector('.proton-image-anchor img') as HTMLImageElement;
         expect(loadedImage).toBeDefined();
         expect(loadedImage.getAttribute('src')).toEqual(
-            `https://mail.proton.pink/api/core/v4/images?Url=${imageURL}&DryRun=0&UID=uid`
+            `https://mail.proton.pink/api/${PROXY_IMG_URL}?Url=${imageURL}&DryRun=0&UID=uid`
         );
     });
 });

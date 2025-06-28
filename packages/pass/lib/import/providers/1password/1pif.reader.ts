@@ -6,19 +6,25 @@ import {
     getEmailOrUsername,
     getImportedVaultName,
     importCreditCardItem,
+    importCustomItem,
     importIdentityItem,
     importLoginItem,
     importNoteItem,
+    importSshKeyItem,
+    importWifiItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
+import { extractFirst } from '@proton/pass/utils/array/extract-first';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 
 import {
     extract1PasswordLegacyExtraFields,
     extract1PasswordLegacyIdentity,
-    extract1PasswordLegacyNote,
     extract1PasswordLegacyURLs,
+    extract1PasswordLegacyUnknownExtraFields,
+    extractLegacy1PasswordWifiFields,
 } from './1p.utils';
 import type { OnePassLegacyItem } from './1pif.types';
 import { OnePassLegacyItemType } from './1pif.types';
@@ -29,15 +35,23 @@ const ENTRY_SEPARATOR_1PIF = '***';
 export const processLoginItem = async (item: OnePassLegacyItem): Promise<ItemImportIntent<'login'>> => {
     const fields = item.secureContents.fields;
 
+    const [totp, extraFields] = extractFirst(
+        extract1PasswordLegacyExtraFields(item),
+        (extraField): extraField is DeobfuscatedItemExtraField<'totp'> => extraField.type === 'totp'
+    );
+
+    const userIdentifiers = await getEmailOrUsername(
+        fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value
+    );
+
     return importLoginItem({
+        ...userIdentifiers,
         name: item.title,
         note: item.secureContents?.notesPlain,
-        ...(await getEmailOrUsername(
-            fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value
-        )),
         password: fields?.find(({ designation }) => designation === OnePassLoginDesignation.PASSWORD)?.value,
         urls: extract1PasswordLegacyURLs(item),
-        extraFields: extract1PasswordLegacyExtraFields(item),
+        totp: totp?.data.totpUri,
+        extraFields,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
     });
@@ -46,9 +60,10 @@ export const processLoginItem = async (item: OnePassLegacyItem): Promise<ItemImp
 export const processNoteItem = (item: OnePassLegacyItem): ItemImportIntent<'note'> =>
     importNoteItem({
         name: item.title,
-        note: extract1PasswordLegacyNote(item),
+        note: item.secureContents?.notesPlain,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
+        extraFields: extract1PasswordLegacyExtraFields(item),
     });
 
 export const processPasswordItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> =>
@@ -76,6 +91,7 @@ export const processCreditCardItem = (item: OnePassLegacyItem): ItemImportIntent
         verificationNumber: item.secureContents.cvv,
         expirationDate,
         pin: item.secureContents.pin,
+        extraFields: extract1PasswordLegacyExtraFields(item),
     });
 };
 
@@ -86,6 +102,41 @@ export const processIdentityItem = (item: OnePassLegacyItem): ItemImportIntent<'
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
         ...extract1PasswordLegacyIdentity(item.secureContents.sections),
+    });
+
+export const processCustomItem = (item: OnePassLegacyItem): ItemImportIntent<'custom'> =>
+    importCustomItem({
+        name: item.title,
+        note: item.secureContents.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        extraFields: [...extract1PasswordLegacyUnknownExtraFields(item), ...extract1PasswordLegacyExtraFields(item)],
+    });
+
+export const processSshKeyItem = (item: OnePassLegacyItem): ItemImportIntent<'sshKey'> => {
+    const fields = item.secureContents.unknown_details?.sections?.flatMap(prop('fields'));
+    const privateKey = fields?.find((f) => f?.n === 'sshKey-privateKey')?.v as string;
+    const publicKey = fields?.find((f) => f?.n === 'sshKey-publicKey')?.v as string;
+
+    return importSshKeyItem({
+        privateKey,
+        publicKey,
+        name: item.title,
+        note: item.secureContents.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        extraFields: [...extract1PasswordLegacyUnknownExtraFields(item), ...extract1PasswordLegacyExtraFields(item)],
+    });
+};
+
+export const processWifiItem = (item: OnePassLegacyItem): ItemImportIntent<'wifi'> =>
+    importWifiItem({
+        name: item.title,
+        note: item.secureContents?.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        extraFields: [...extract1PasswordLegacyUnknownExtraFields(item), ...extract1PasswordLegacyExtraFields(item)],
+        ...extractLegacy1PasswordWifiFields(item.secureContents.sections),
     });
 
 export const parse1PifData = (data: string): OnePassLegacyItem[] =>
@@ -124,6 +175,12 @@ export const read1Password1PifData = async (
                             return attachFilesToItem(processCreditCardItem(item), files);
                         case OnePassLegacyItemType.IDENTITY:
                             return attachFilesToItem(processIdentityItem(item), files);
+                        case OnePassLegacyItemType.WIFI:
+                            return attachFilesToItem(processWifiItem(item), files);
+                        case OnePassLegacyItemType.SSH_KEY:
+                            return attachFilesToItem(processSshKeyItem(item), files);
+                        default:
+                            return attachFilesToItem(processCustomItem(item), files);
                     }
                 })();
 

@@ -11,6 +11,7 @@ import type {
   YjsState,
   SyncedEditorStateValues,
   SyncedEditorEvent,
+  SheetImportData,
 } from '@proton/docs-shared'
 import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -110,6 +111,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('exportData', [format])
   }
 
+  async copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
+    return this.invokeEditorMethod('copyCurrentSelection', [format])
+  }
+
   async printAsPDF(): Promise<void> {
     return this.invokeEditorMethod('printAsPDF', [])
   }
@@ -120,6 +125,18 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
 
   async toggleDebugTreeView(): Promise<void> {
     return this.invokeEditorMethod('toggleDebugTreeView', [])
+  }
+
+  async getLatestSpreadsheetStateToLogJSON(): Promise<unknown> {
+    return this.invokeEditorMethod('getLatestSpreadsheetStateToLogJSON', [])
+  }
+
+  async getYDocAsJSON(): Promise<unknown> {
+    return this.invokeEditorMethod('getYDocAsJSON', [])
+  }
+
+  async importDataIntoSheet(data: SheetImportData): Promise<void> {
+    return this.invokeEditorMethod('importDataIntoSheet', [data])
   }
 
   async initializeEditor(

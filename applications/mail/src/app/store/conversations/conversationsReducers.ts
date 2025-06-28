@@ -1,8 +1,10 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { isDraft } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { mergeConversations } from '../../helpers/conversation';
@@ -330,4 +332,160 @@ export const updateMessageOnSend = (state: Draft<ConversationsState>, { payload:
             conversationState.Messages[messageIndex] = Sent;
         }
     }
+};
+
+export const markMessagesAsReadPending = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        { arg: { elements: Element[]; isEncryptedSearch: boolean; labelID: string; showSuccessNotification?: boolean } }
+    >
+) => {
+    const { elements } = action.meta.arg;
+
+    elements.forEach((selectedElement) => {
+        const selectedMessage = selectedElement as Message;
+
+        if (selectedMessage.Unread === 0) {
+            return;
+        }
+
+        const conversationState = getConversation(state, selectedMessage.ConversationID);
+
+        if (conversationState) {
+            conversationState.Conversation.ContextNumUnread = safeDecreaseCount(
+                conversationState.Conversation.ContextNumUnread,
+                1
+            );
+
+            conversationState.Conversation.NumUnread = safeDecreaseCount(conversationState.Conversation.NumUnread, 1);
+
+            selectedMessage.LabelIDs.forEach((messageLabelID) => {
+                const conversationLabel = conversationState.Conversation.Labels?.find(
+                    (label) => label.ID === messageLabelID
+                );
+
+                if (conversationLabel) {
+                    conversationLabel.ContextNumUnread = safeDecreaseCount(conversationLabel.ContextNumUnread, 1);
+                }
+            });
+
+            const messageState = conversationState.Messages?.find((message) => message.ID === selectedMessage.ID);
+
+            if (messageState) {
+                messageState.Unread = 0;
+            }
+        }
+    });
+};
+
+export const markMessagesAsUnreadPending = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+) => {
+    const { elements } = action.meta.arg;
+
+    elements.forEach((selectedElement) => {
+        const selectedMessage = selectedElement as Message;
+
+        if (selectedMessage.Unread === 1) {
+            return;
+        }
+
+        const conversationState = getConversation(state, selectedMessage.ConversationID);
+
+        if (conversationState) {
+            conversationState.Conversation.ContextNumUnread = safeIncreaseCount(
+                conversationState.Conversation.ContextNumUnread,
+                1
+            );
+            conversationState.Conversation.NumUnread = safeIncreaseCount(conversationState.Conversation.NumUnread, 1);
+
+            selectedMessage.LabelIDs.forEach((messageLabelID) => {
+                const conversationLabel = conversationState.Conversation.Labels?.find(
+                    (label) => label.ID === messageLabelID
+                );
+
+                if (conversationLabel) {
+                    conversationLabel.ContextNumUnread = safeIncreaseCount(conversationLabel.ContextNumUnread, 1);
+                }
+            });
+
+            const messageState = conversationState.Messages?.find((message) => message.ID === selectedMessage.ID);
+
+            if (messageState) {
+                messageState.Unread = 1;
+            }
+        }
+    });
+};
+
+export const markConversationsAsReadPending = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+) => {
+    const { elements, labelID } = action.meta.arg;
+
+    elements.forEach((selectedElement) => {
+        const selectedConversation = selectedElement as Conversation;
+        const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
+
+        if (conversationLabel?.ContextNumUnread === 0) {
+            return;
+        }
+
+        const conversationState = getConversation(state, selectedConversation.ID);
+
+        if (conversationState) {
+            conversationState.Conversation.ContextNumUnread = 0;
+            conversationState.Conversation.NumUnread = 0;
+            conversationState.Conversation.Labels?.forEach((label) => {
+                label.ContextNumUnread = 0;
+            });
+            conversationState.Messages?.forEach((message) => {
+                message.Unread = 0;
+            });
+        }
+    });
+};
+
+export const markConversationsAsUnreadPending = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+) => {
+    const { elements, labelID } = action.meta.arg;
+
+    elements.forEach((selectedElement) => {
+        const selectedConversation = selectedElement as Conversation;
+        const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
+
+        if (!!conversationLabel?.ContextNumUnread) {
+            // Conversation is already unread, do nothing
+            return;
+        }
+
+        const conversationState = getConversation(state, selectedConversation.ID);
+
+        if (conversationState) {
+            conversationState.Conversation.ContextNumUnread = safeIncreaseCount(
+                conversationState.Conversation.ContextNumUnread,
+                1
+            );
+            conversationState.Conversation.NumUnread = safeIncreaseCount(conversationState.Conversation.NumUnread, 1);
+            conversationState.Conversation.Labels?.forEach((label) => {
+                if (label.ID === labelID) {
+                    label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
+                }
+            });
+
+            const latestMessage = conversationState.Messages?.filter(
+                (message) => message.LabelIDs.includes(labelID) && !isDraft(message)
+            ).sort((a, b) => (b?.Order || 0) - (a?.Order || 0))[0];
+
+            if (latestMessage) {
+                latestMessage.Unread = 1;
+            }
+        }
+    });
 };

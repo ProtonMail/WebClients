@@ -64,6 +64,10 @@ const PassAliasesList = ({ items }: Props) => {
                             size="small"
                             shape="ghost"
                             value={alias}
+                            tooltipText={
+                                // translator: this is the tooltip of the copy button in security center/aliases => Copy alias “<Alias name>”
+                                c('Action').t`Copy alias “${name}”`
+                            }
                             className="shrink-0 expand-click-area"
                             onCopy={handleCopy}
                         />

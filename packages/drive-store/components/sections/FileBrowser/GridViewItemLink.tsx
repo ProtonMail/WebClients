@@ -22,7 +22,7 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
     const IconComponent = (
         <>
             {item.albumProperties && (
-                <Icon name="album" alt={c('Label').t`Album`} className="file-browser-grid-item--icon mr-2" />
+                <Icon name="album-folder" alt={c('Label').t`Album`} className="file-browser-grid-item--icon mr-2" />
             )}
             {item.cachedThumbnailUrl && !item.albumProperties && (
                 <img
@@ -41,6 +41,7 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
                     mimeType={item.isFile ? item.mimeType : 'Folder'}
                     alt={iconText}
                     className="file-browser-grid-item--icon"
+                    size={12}
                 />
             )}
         </>
@@ -56,6 +57,7 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
                     signatureIssues={item.signatureIssues}
                     isAnonymous={item.isAnonymous}
                     className="file-browser-grid-view--signature-icon"
+                    haveParentAccess={!!item.parentLinkId}
                 />
             }
             item={item}

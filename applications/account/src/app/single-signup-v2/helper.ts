@@ -3,52 +3,46 @@ import { c } from 'ttag';
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
 import {
+    type ADDON_NAMES,
+    type BillingAddress,
     COUPON_CODES,
     CYCLE,
+    type Currency,
     type Cycle,
     type CycleMapping,
+    DEFAULT_CURRENCY,
+    DEFAULT_TAX_BILLING_ADDRESS,
+    FREE_PLAN,
+    FREE_SUBSCRIPTION,
+    type FullPlansMap,
+    type PAYMENT_METHOD_TYPES,
+    PLANS,
+    type PaymentsApi,
     type Plan,
+    type PlanIDs,
     type PlansMap,
+    type SavedPaymentMethod,
     type StrictPlan,
     type Subscription,
     type SubscriptionPlan,
-    formatPaymentMethods,
-    getSubscription,
-    isLifetimePlanSelected,
-    queryPaymentMethods,
-} from '@proton/payments';
-import type {
-    BillingAddress,
-    FullPlansMap,
-    PAYMENT_METHOD_TYPES,
-    PaymentsApi,
-    SavedPaymentMethod,
-} from '@proton/payments';
-import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
-import {
-    type ADDON_NAMES,
-    type Currency,
-    DEFAULT_CURRENCY,
-    FREE_SUBSCRIPTION,
-    PLANS,
-    type PlanIDs,
-    isStringPLAN,
-} from '@proton/payments';
-import {
+    getFreeCheckResult,
     getHas2024OfferCoupon,
     getIsB2BAudienceFromPlan,
     getNormalCycleFromCustomCycle,
+    getPaymentMethods,
     getPlan,
-    getPlanIDs,
+    getPlanFromPlanIDs,
+    getSubscription,
+    isLifetimePlanSelected,
+    isStringPLAN,
 } from '@proton/payments';
-import { FREE_PLAN, getFreeCheckResult } from '@proton/payments';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { getPlanFromPlanIDs, getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import type { Api, Organization, SubscriptionCheckResponse, User } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getOrganization } from '@proton/shared/lib/organization/api';
@@ -91,7 +85,7 @@ export const getIsBundleB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
 };
 
 export const getHasAnyPlusPlan = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
-    return [PLANS.MAIL, PLANS.DRIVE, PLANS.VPN, PLANS.VPN2024, PLANS.PASS, PLANS.VPN_PASS_BUNDLE].some(
+    return [PLANS.MAIL, PLANS.DRIVE, PLANS.DRIVE_1TB, PLANS.VPN, PLANS.VPN2024, PLANS.PASS, PLANS.VPN_PASS_BUNDLE].some(
         (plan) => plan === subscribedPlan
     );
 };
@@ -115,6 +109,7 @@ export const getSubscriptionData = async (
     paymentsApi: PaymentsApi,
     options: Options & {
         info?: boolean;
+        trial?: boolean;
     }
 ): Promise<SubscriptionData> => {
     const { planIDs, checkResult } = await getSubscriptionPrices(
@@ -123,7 +118,8 @@ export const getSubscriptionData = async (
         options.currency,
         options.cycle,
         options.billingAddress,
-        options.coupon
+        options.coupon,
+        options.trial
     )
         .then((checkResult) => {
             return {
@@ -497,11 +493,7 @@ export const getUserInfo = async ({
     const forcePaymentsVersion = getMaybeForcePaymentsVersion(user);
 
     const [paymentMethods, subscription, organization] = await Promise.all([
-        state.payable
-            ? api(queryPaymentMethods(forcePaymentsVersion)).then(({ PaymentMethods }) =>
-                  formatPaymentMethods(PaymentMethods)
-              )
-            : [],
+        state.payable ? getPaymentMethods(api, forcePaymentsVersion) : [],
         state.payable && state.admin && state.subscribed
             ? api(getSubscription(forcePaymentsVersion)).then(
                   ({ Subscription, UpcomingSubscription }) => UpcomingSubscription ?? Subscription
@@ -568,7 +560,7 @@ export const getUserInfo = async ({
                 ...optionsWithSubscriptionDefaults,
                 ...upsell.subscriptionOptions,
                 planIDs: switchPlan({
-                    currentPlanIDs: getPlanIDs(subscription),
+                    subscription,
                     newPlan: upsell.plan.Name,
                     organization,
                     plans,
@@ -609,39 +601,6 @@ export const getSessionDataFromSignup = (cache: SignupCacheResult): SessionData 
             access: false,
         },
     };
-};
-
-export const runAfterScroll = (el: Element, done: () => void) => {
-    let same = 0;
-    let lastPos = el.scrollTop;
-    let startTime = -1;
-    // Timeout after 1 second
-    const maxTime = 1000;
-    const maxFrames = 4;
-
-    const cb = (time: number) => {
-        if (startTime === -1) {
-            startTime = time;
-        }
-        if (time - startTime > maxTime) {
-            done();
-            return;
-        }
-        const newPos = el.scrollTop;
-        if (lastPos === newPos) {
-            if (same++ > maxFrames) {
-                done();
-                return;
-            }
-        } else {
-            same = 0;
-            lastPos = newPos;
-        }
-
-        requestAnimationFrame(cb);
-    };
-
-    requestAnimationFrame(cb);
 };
 
 export type SubscriptionDataCycleMapping = Partial<{ [key in PLANS]: CycleMapping<SubscriptionData> }>;

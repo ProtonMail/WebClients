@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Button, ButtonLike } from '@proton/atoms'
+import { Button, ButtonLike, Tooltip } from '@proton/atoms'
 import { c } from 'ttag'
 import { useDocsContext } from '../context'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { RedirectAction } from '@proton/drive-store/store/_documents'
 import { useApplication } from '~/utils/application-context'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
@@ -11,7 +12,6 @@ import type { EditorControllerInterface } from '@proton/docs-core'
 import type { PublicDocumentState } from '@proton/docs-core'
 import {
   Spotlight,
-  Tooltip,
   Icon,
   DropdownButton,
   usePopperAnchor,
@@ -42,6 +42,7 @@ import {
   setPublicRedirectSpotlightToShown,
 } from '@proton/drive-store/utils/publicRedirectSpotlight'
 import './HeaderPublicOptions.scss'
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
 type UserInfoProps = {
   user: UserModel
@@ -116,9 +117,10 @@ function useSaveToDrive({
 export type HeaderPublicOptionsProps = {
   editorController: EditorControllerInterface
   documentState: PublicDocumentState
+  documentType: DocumentType | ProtonDocumentType
 }
 
-export function HeaderPublicOptions({ editorController, documentState }: HeaderPublicOptionsProps) {
+export function HeaderPublicOptions({ editorController, documentState, documentType }: HeaderPublicOptionsProps) {
   const { surePublicContext } = useDocsContext()
   const { removeActionFromUrl } = useDocsUrlBar()
   const application = useApplication()
@@ -130,6 +132,7 @@ export function HeaderPublicOptions({ editorController, documentState }: HeaderP
     context: surePublicContext,
     editorController,
     documentState,
+    documentType,
   })
   const { user, openParams, compat } = surePublicContext
   const { isSharedUrlAFolder } = compat
@@ -200,7 +203,7 @@ export function HeaderPublicOptions({ editorController, documentState }: HeaderP
       linkId,
       email: '',
       urlPassword,
-      openInNewTab: false,
+      openInNewTab: true,
     })
   }, [linkId, token, urlPassword])
 

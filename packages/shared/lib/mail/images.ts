@@ -1,3 +1,4 @@
+import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
@@ -13,7 +14,7 @@ export const removeProxyUrlsFromContent = (content: Document) => {
 
     // Replace all proxy images with their original URL
     contentImages.forEach((img) => {
-        const isProxyUrl = img.src.includes('core/v4/images');
+        const isProxyUrl = img.src.includes(PROXY_IMG_URL);
         if (isProxyUrl) {
             // In proxy URLs, image original URL is passed in "Url" search param
             const originalUrl = new URL(img.src).searchParams.get('Url');

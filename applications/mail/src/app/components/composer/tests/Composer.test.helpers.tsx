@@ -1,6 +1,7 @@
 import type { RenderResult } from '@testing-library/react';
 import { fireEvent } from '@testing-library/react';
 
+import type { MessageStateWithData, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
@@ -18,7 +19,6 @@ import {
     waitForNoNotification,
     waitForNotification,
 } from '../../../helpers/test/helper';
-import type { MessageStateWithData, PartialMessageState } from '../../../store/messages/messagesTypes';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import Composer from '../Composer';
 

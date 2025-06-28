@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "Authenticate": [
-        "احراز هویت"
-      ],
       "Cancel": [
         "انصراف"
       ],
@@ -28,9 +25,6 @@
       ],
       "Edit sign-in details": [
         "ویرایش جزئیات ورود"
-      ],
-      "Forgot password?": [
-        "فراموشی گذرواژه?"
       ],
       "Get verification code": [
         "دریافت کد تایید"
@@ -56,12 +50,6 @@
       "Try another method": [
         "روش دیگری بیازمایید"
       ],
-      "Use authentication code": [
-        "از کد تایید استفاده نمایید"
-      ],
-      "Use recovery code": [
-        "از کد بازیابی استفاده کنید"
-      ],
       "Verify": [
         "تایید"
       ],
@@ -70,68 +58,6 @@
       ],
       "View invoice": [
         "مشاهده صورت‌حساب"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "هویج"
-      ],
-      "cerise": [
-        "شفقی"
-      ],
-      "cobalt": [
-        "کبالت"
-      ],
-      "copper": [
-        "مس"
-      ],
-      "enzian": [
-        "نیلی متالیک"
-      ],
-      "fern": [
-        "خزه ای"
-      ],
-      "forest": [
-        "جنگل"
-      ],
-      "ocean": [
-        "اقیانوس"
-      ],
-      "olive": [
-        "زیتون"
-      ],
-      "pacific": [
-        "آبی آسمانی سیر"
-      ],
-      "pickle": [
-        "خیارشور"
-      ],
-      "pine": [
-        "کاج"
-      ],
-      "pink": [
-        "صورتی"
-      ],
-      "plum": [
-        "آلو"
-      ],
-      "purple": [
-        "بنفش"
-      ],
-      "reef": [
-        "سخره مرجانی"
-      ],
-      "sahara": [
-        "صحرا"
-      ],
-      "slateblue": [
-        "آبی کدر"
-      ],
-      "soil": [
-        "خاک"
-      ],
-      "strawberry": [
-        "توت فرنگی"
       ]
     },
     "Country name": {
@@ -955,24 +881,6 @@
         "مشکلی پیش آمد"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "مشکلی در صحت سنجی کلید امنیتی شما پیش آمد. لطفا دوباره امتحان کنید."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "کلید امنیتی مرتبط با اکانت ${ BRAND_NAME } خودتان را وارد کنید."
-      ],
-      "Security key": [
-        "کلید امنیتی"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "کلید امنیتی"
-      ]
-    },
     "file size format": {
       "byte": [
         "بایت",
@@ -1016,6 +924,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "کپچا"
+      ],
       "Email": [
         "رایانامه"
       ],
@@ -1024,6 +935,9 @@
       ],
       "No verification method available": [
         "هیچ شیوه تاییدی در دسترس نیست"
+      ],
+      "SMS": [
+        "پیامک"
       ]
     },
     "Info": {
@@ -1033,20 +947,11 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
       ],
-      "Each code can only be used once": [
-        "هر کد تنها یک بار می‌تواند استفاده شود"
-      ],
       "Edit email address": [
         "ویرایش رایانشانی"
       ],
-      "Enter the code from your authenticator app": [
-        "کد سامانه تایید کننده را وارد نمایید"
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "کد تاییدی که به ${ destinationText } ارسال شد را وارد نمایید."
-      ],
-      "Enter your own password (as organization admin).": [
-        "گذرواژه خود را وارد نمایید (به عنوان مدیر سازمان)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "اگر در ایجاد حساب کاربری خود مشکلی دارید، لطفا یک دعوت‌ نامه درخواست کنید و ما ظرف یک روز کاری پاسخ خواهیم داد."
@@ -1078,9 +983,6 @@
       "We'll send a new verification code to ${ strong }": [
         "یک کد تأیید جدید به ${ strong } ارسال خواهیم کرد"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "زمانی که شما اصالت‌سنجی دو-عاملی را فعال کنید، ما به شما کد بازیابی میدهیم که در صورت عدم دسترسی به برنامه اصالت‌سنجی خود، میتوانید از این کدها برای ورود به حساب استفاده کنید."
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "آیا می‌خواهید یک کد تایید جدید دریافت نمایید یا از یک روش تایید جایگزین استفاده کنید؟"
       ],
@@ -1095,9 +997,6 @@
       ]
     },
     "Label": {
-      "Authenticator app": [
-        "برنامه اصالت سنجی"
-      ],
       "Code is 6 digits without spaces": [
         "کد ۶ رقمی بدون فاصله می‌باشد"
       ],
@@ -1118,17 +1017,20 @@
       ],
       "Verification code": [
         "کد تایید"
-      ],
-      "Your password (admin)": [
-        "گذرواژه شما (مدیر)"
       ]
     },
     "Link": {
+      "contact us": [
+        "تماس با ما"
+      ],
       "Learn more": [
         "بیشتر بدانید"
       ],
       "Request an invite": [
         "درخواست دعوت‌نامه"
+      ],
+      "terms of service": [
+        "شرایط سرویس"
       ]
     },
     "new_plans": {
@@ -1136,11 +1038,12 @@
         "صندوق دریافتی خود را با پوشه ها منظم نگه دارید"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "دریافت ${ planTitle }"
+      ]
+    },
     "new_plans: feature": {
-      "${ n } calendar": [
-        "${ n } تقویم",
-        "${ n } تقویم"
-      ],
       "${ n } custom email domain": [
         "${ n } دامنه ایمیل سفارشی",
         "${ n } دامنه ایمیل سفارشی"
@@ -1179,6 +1082,15 @@
       "${ size } storage": [
         "${ size } ذخیره سازی"
       ],
+      "${ size } storage per user": [
+        "${ size } فضای ذخیره‌سازی برای هر کاربر"
+      ],
+      "10 email addresses/aliases": [
+        "10 نشانی ایمیل/نام مستعار"
+      ],
+      "15 GB storage": [
+        "۱۵ گیگابایت فضای ذخیره‌سازی"
+      ],
       "Auto-reply": [
         "پاسخ خودکار"
       ],
@@ -1214,9 +1126,6 @@
       ],
       "Password-protected Emails": [
         "ایمیل محافظت شده با رمزعبور"
-      ],
-      "Search message content": [
-        "جستجوی محتوای پیام"
       ],
       "Unlimited filters": [
         "بی نهایت فیلتر"
@@ -1302,14 +1211,16 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "فضای ذخیره‌سازی خود را به ${ bundleStorage } افزایش دهید"
-      ],
-      "Support for ${ n } custom email domains": [
-        "پشتیبانی از ${ n } دامنه ایمیل سفارشی"
       ]
     },
     "Placeholder": {
       "Password": [
         "گذرواژه"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "ورود به حساب"
       ]
     },
     "Success": {
@@ -1321,9 +1232,6 @@
       ]
     },
     "Title": {
-      "Enter your password": [
-        "گذرواژه خود را وارد کنید"
-      ],
       "Human verification": [
         "تشخیص انسان"
       ],

@@ -48,7 +48,7 @@ export interface PhotoDataForAddToAlbumPayload {
     Name: string;
     Hash: string;
     NodePassphrase: string;
-    NodePassphraseSignature: string;
+    NodePassphraseSignature?: string;
     SignatureEmail?: string;
     NameSignatureEmail?: string;
     ContentHash?: string;

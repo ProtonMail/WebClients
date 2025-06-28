@@ -4,13 +4,13 @@ import { useContext, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, NotificationDot } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors/types';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import AccountSessionsSwitcher from '@proton/components/containers/heading/AccountSessionsSwitcher';
 import { AppSwitcher } from '@proton/components/containers/heading/AppSwitcher';
 import { SchedulePhoneCall } from '@proton/components/containers/heading/SchedulePhoneCall';

@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -139,6 +138,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         shape="solid"
                         value={emailAddress}
                         className="smtp-token-copy relative shrink-0 ml-2"
+                        tooltipText={c('Action').t`Copy SMTP username`}
                         onCopy={handleCopyEmail}
                     />
                 </div>
@@ -155,6 +155,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         shape="solid"
                         value={token}
                         className="smtp-token-copy relative shrink-0 ml-2"
+                        tooltipText={c('Action').t`Copy SMTP token`}
                         onCopy={handleCopyToken}
                     />
                 </div>
@@ -173,6 +174,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         shape="solid"
                         value={SMTP_SERVER}
                         className="smtp-token-copy relative shrink-0 ml-2"
+                        tooltipText={c('Action').t`Copy SMTP server`}
                         onCopy={handleCopyServer}
                     />
                 </div>
@@ -189,6 +191,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         shape="solid"
                         value={SMTP_PORT}
                         className="smtp-token-copy relative shrink-0 ml-2"
+                        tooltipText={c('Action').t`Copy SMTP port`}
                         onCopy={handleCopyPort}
                     />
                 </div>
@@ -202,9 +205,9 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
             return (
                 <>
                     <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
-                    <PrimaryButton type="submit" loading={loading}>
+                    <Button color="norm" type="submit" loading={loading}>
                         {c('Action').t`Generate`}
-                    </PrimaryButton>
+                    </Button>
                 </>
             );
         }

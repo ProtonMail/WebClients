@@ -11,6 +11,7 @@ import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pas
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { ClientEndpoint } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
+import { SilentError } from '@proton/pass/utils/errors/errors';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -114,12 +115,16 @@ export const unlock = requestActionsFactory<UnlockDTO, LockMode, LockMode>('auth
                 }
             })();
 
-            return withNotification({
-                key: NotificationKey.LOCK,
-                type: 'error',
-                text: reason,
-                error,
-            })({ payload, error: reason });
+            const dto = { payload, error: reason };
+
+            return error instanceof SilentError
+                ? dto
+                : withNotification({
+                      key: NotificationKey.LOCK,
+                      type: 'error',
+                      text: reason,
+                      error,
+                  })(dto);
         },
     },
 });

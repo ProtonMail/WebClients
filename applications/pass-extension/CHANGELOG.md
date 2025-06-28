@@ -1,3 +1,54 @@
+### Version 1.32.1
+
+- Fix Firefox ESR 115 support
+
+### Version 1.32.0
+
+- Add support for custom item types
+- Add support for basic auth autofill
+- Improve note item screen
+- Preserve custom item types when importing
+- Minor UX improvements
+- Support extra fields on alias, credit-cards & note items
+- Fix "attached-to-login" alias form validation
+- Fix auto-scroll when creating extra-field
+- Fix item auto-select conflict with filters after item creation
+- Fix destination vault change during item creation with file attachment
+
+### Version 1.31.6
+
+- Fix tab messaging race-condition
+- Fix invalid telemetry beacons
+
+### Version 1.31.5
+
+- Set default pass theme to system preference
+- Secure injected elements into closed shadow DOM
+- Improved in-app onboarding on first login
+- Improved i18n/theme hydration on boot
+- Improve autofill failure monitoring
+- Fix managers/admins not able to move items to another vault
+- Fix unstable sorting for autofill candidates
+- Fix item draft loss edge-case
+- Fixed minor UI/UX issues
+
+### Version 1.31.4
+
+- Add support for OpenPGP grammar check
+
+### Version 1.31.3
+
+- Add Proton Anniversary 2025 offer
+- Fix extra-password authentication edge-case
+
+### Version 1.31.2
+
+- Improve invite members modal UX
+- Fix gradient rendering issue on Safari extension
+- Improve WASM support for safari extension
+- Rename vault/item "admin" to "manager"
+- Edge extension uses Edge Addons URL instead of Chrome store URL
+
 ### Version 1.31.1
 
 - File attachments improvements

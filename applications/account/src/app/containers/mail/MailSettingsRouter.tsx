@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
 import { useLoadAllowedTimeZones } from '@proton/calendar/timezones';
 import {
     AddressKeysSection,
@@ -37,7 +38,7 @@ import {
 } from '@proton/components';
 import ForwardSection from '@proton/components/containers/forward/ForwardSection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import type { getMailAppRoutes } from './routes';
 import { getHasPmMeAddress } from './routes';
@@ -86,7 +87,9 @@ const MailSettingsRouter = ({
                     <PmMeSection isPMAddressActive={getHasPmMeAddress(addresses)} />
                     <IdentitySection />
                     <AliasPromotionSection />
-                    <AddressesSection isOnlySelf />
+                    <EasySwitchStoreProvider>
+                        <AddressesSection isOnlySelf />
+                    </EasySwitchStoreProvider>
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, folder)}>

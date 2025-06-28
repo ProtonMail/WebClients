@@ -29,6 +29,9 @@
       "Add domain": [
         "Adăugare domeniu"
       ],
+      "Add field": [
+        "Adăugare câmp"
+      ],
       "Add forwarding mailbox": [
         "Adăugare adresă redirecționare"
       ],
@@ -152,11 +155,11 @@
       "Create": [
         "Creare"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Creați un cont ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Creare cont ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Creați un cont ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Creare alias"
@@ -401,6 +404,9 @@
       "Multiple select": [
         "Selectare multiplă"
       ],
+      "Next month": [
+        "Luna viitoare"
+      ],
       "No expired links": [
         "Nu există legături web expirate"
       ],
@@ -431,11 +437,17 @@
       "Please retry": [
         "Reîncercați"
       ],
+      "Previous month": [
+        "Luna trecută"
+      ],
       "Re-verify": [
         "Reverificare"
       ],
       "Reactivate now": [
         "Reactivare"
+      ],
+      "Read More": [
+        "Detalii"
       ],
       "Refresh the page": [
         "Împrospătare pagină"
@@ -560,6 +572,9 @@
       "Show advanced options": [
         "Afișare opțiuni avansate"
       ],
+      "Show Less": [
+        "Arată mai puțin"
+      ],
       "Sign back in": [
         "Reconectare"
       ],
@@ -574,6 +589,9 @@
       ],
       "Sort vault items": [
         "Sortare articole seif"
+      ],
+      "Start from scratch": [
+        "De la început"
       ],
       "Submit": [
         "Trimitere"
@@ -760,9 +778,6 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } nu a putut fi analizat. ${ errorDetail }"
-      ],
-      "[Error] an item could not be parsed": [
-        "[Eroare] Un articol nu a putut fi analizat."
       ],
       "A domain ownership must be verified first.": [
         "Deținerea unui domeniu trebuie verificată mai întâi."
@@ -1011,7 +1026,7 @@
       "File does not match expected format": [
         "Fișierul nu are formatul așteptat."
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Importare eșuată pentru seiful „${ vaultData.name }”: ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1143,6 +1158,9 @@
       "Unsupported 1Password file format": [
         "Format de fișier 1Password neacceptat."
       ],
+      "Unsupported Bitwarden file format": [
+        "Format de fișier Bitwarden neacceptat."
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Actualizarea seifului „${ payload.content.name }” a eșuat."
       ],
@@ -1265,8 +1283,10 @@
         "${ count } vizualizări",
         "${ count } de vizualizări"
       ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } vizualizări"
+      "${ count }/${ maxReads } view": [
+        "Vizualizări: ${ count }/${ maxReads }",
+        "Vizualizări: ${ count }/${ maxReads }",
+        "Vizualizări: ${ count }/${ maxReads }"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "Redirecționate: ${ forwardedEmailsCount }",
@@ -1432,6 +1452,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Blocarea automată s-a dezactivat."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Autocompletează casetele de dialog de autentificare de bază HTTP cu acreditările salvate."
       ],
       "automatically": [
         "automat"
@@ -2307,6 +2330,9 @@
         "Am detectat că aveți ${ aliasCount } aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?",
         "Am detectat că aveți ${ aliasCount } de aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?"
       ],
+      "Week": [
+        "Săptămâna"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Vi s-a trimis un cod de verificare la ${ email }. Introduceți codul primit mai jos:"
       ],
@@ -2522,6 +2548,12 @@
       "Account": [
         "Cont"
       ],
+      "Account Number": [
+        "Număr cont"
+      ],
+      "Account Type": [
+        "Tip cont"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Adăugare prefix aleatoriu pentru acest domeniu atunci când se creează un alias nou."
       ],
@@ -2530,6 +2562,9 @@
       ],
       "Additional details": [
         "Detalii suplimentare"
+      ],
+      "Address": [
+        "Adresa"
       ],
       "Address details": [
         "Detalii adresă"
@@ -2558,6 +2593,12 @@
       "Always show username field": [
         "Afișare permanentă câmp nume utilizator"
       ],
+      "API Credential": [
+        "Acreditare API"
+      ],
+      "API Key": [
+        "Cheie API"
+      ],
       "Application logs": [
         "Jurnale aplicație"
       ],
@@ -2581,6 +2622,15 @@
       ],
       "Backup password": [
         "Parola de rezervă"
+      ],
+      "Bank Account": [
+        "Cont bancar"
+      ],
+      "Bank Name": [
+        "Nume bancă"
+      ],
+      "Basic Auth autofill": [
+        "Autocompletare autorizare de bază"
       ],
       "Biometrics": [
         "Date biometrice"
@@ -2609,8 +2659,14 @@
       "Catch-All": [
         "Adresă de agregare"
       ],
+      "Checkbox": [
+        "Casetă de validare"
+      ],
       "City": [
         "Oraş"
+      ],
+      "Class": [
+        "Clasa"
       ],
       "Code": [
         "Cod"
@@ -2636,6 +2692,9 @@
       "Copy password": [
         "Copiere parolă"
       ],
+      "Country": [
+        "Țara"
+      ],
       "Country or Region": [
         "Țara"
       ],
@@ -2644,6 +2703,9 @@
       ],
       "Create a credit card": [
         "Creare card de credit"
+      ],
+      "Create a custom item": [
+        "Creare articol personal"
       ],
       "Create a hide-my-email alias": [
         "Creare alias hide-my-email"
@@ -2663,17 +2725,26 @@
       "Create new vault": [
         "Creare seif"
       ],
-      "Created": [
-        "Creat la"
-      ],
       "Created at": [
         "Creat la"
       ],
-      "Custom hidden field": [
-        "Câmp ascuns personal"
+      "Crypto Wallet": [
+        "Portofel cripto"
       ],
-      "Custom text field": [
-        "Câmp text personal"
+      "Custom Items": [
+        "Articole personale"
+      ],
+      "Database": [
+        "Baza de date"
+      ],
+      "Database Type": [
+        "Tip bază de date"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Date of Birth": [
+        "Data nașterii"
       ],
       "Device": [
         "Dispozitiv"
@@ -2686,6 +2757,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Doctor"
       ],
       "Domain": [
         "Domeniu"
@@ -2701,6 +2775,9 @@
       ],
       "Download logs": [
         "Descărcare jurnale"
+      ],
+      "Driver License": [
+        "Permis de conducere"
       ],
       "Email": [
         "E-mail"
@@ -2729,8 +2806,14 @@
       "Expired": [
         "Expirat"
       ],
+      "Expiry Date": [
+        "Dată expirare"
+      ],
       "Export": [
         "Exportare"
+      ],
+      "Extra fields": [
+        "Câmpuri suplimentare"
       ],
       "Extra password": [
         "Parola suplimentară"
@@ -2746,6 +2829,9 @@
       ],
       "File format": [
         "Format fișier"
+      ],
+      "Finance": [
+        "Finanțe"
       ],
       "First name": [
         "Prenume"
@@ -2780,8 +2866,23 @@
       "Hide password": [
         "Ascundere parolă"
       ],
+      "Holder Name": [
+        "Nume titular"
+      ],
+      "Hospital": [
+        "Spital"
+      ],
+      "Host": [
+        "Gazdă"
+      ],
+      "Hostname": [
+        "Nume gazdă"
+      ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Carte de identitate"
@@ -2825,6 +2926,18 @@
       "Invitations": [
         "Invitații"
       ],
+      "IP Address": [
+        "Adresa IP"
+      ],
+      "Issuing Authority": [
+        "Autoritate emitentă"
+      ],
+      "Issuing Country": [
+        "Țara emitentă"
+      ],
+      "Issuing State/Country": [
+        "Stat/Țară emitentă"
+      ],
       "Item ID": [
         "ID articol"
       ],
@@ -2833,6 +2946,12 @@
       ],
       "Key": [
         "Cheia"
+      ],
+      "Key fingerprint": [
+        "Amprentă cheie"
+      ],
+      "Key type": [
+        "Tip cheie"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Combinații taste: ${ shortcut }"
@@ -2861,8 +2980,14 @@
       "License": [
         "Permis de conducere"
       ],
+      "License Key": [
+        "Cheie licență"
+      ],
       "License number": [
         "Permis de conducere"
+      ],
+      "License Number": [
+        "Număr licență"
       ],
       "LinkedIn account": [
         "Cont LinkdIn"
@@ -2894,8 +3019,29 @@
       "max views reached": [
         "vizualizări maxime depășite"
       ],
+      "Medical Conditions": [
+        "Afecțiuni medicale"
+      ],
+      "Medical Record": [
+        "Fișă medicală"
+      ],
+      "Medications": [
+        "Tratamente"
+      ],
+      "Member ID": [
+        "ID membru"
+      ],
+      "Member Name": [
+        "Nume membru"
+      ],
       "Members": [
         "Membri"
+      ],
+      "Membership": [
+        "Apartenență"
+      ],
+      "Membership ID": [
+        "ID de membru"
       ],
       "Middle name": [
         "Nume mijlociu"
@@ -2912,11 +3058,17 @@
       "Name": [
         "Nume"
       ],
+      "Name (SSID)": [
+        "Nume (SSID)"
+      ],
       "Name on card": [
         "Titular card"
       ],
       "Need help?": [
         "Doriți ajutor?"
+      ],
+      "Network": [
+        "Rețea"
       ],
       "New": [
         "Nou"
@@ -2960,8 +3112,20 @@
       "Oldest to newest": [
         "De la vechi la noi"
       ],
+      "Operating System": [
+        "Sistem de operare"
+      ],
       "Organization": [
         "Organizația"
+      ],
+      "Organization Name": [
+        "Nume organizație"
+      ],
+      "Other": [
+        "Alt motiv"
+      ],
+      "Owner": [
+        "Proprietar"
       ],
       "Passkey": [
         "Cheie de acces"
@@ -2975,6 +3139,9 @@
       "Passport": [
         "Pașaport"
       ],
+      "Passport Number": [
+        "Număr pașaport"
+      ],
       "Passport number": [
         "Număr pașaport"
       ],
@@ -2987,8 +3154,17 @@
       "Passwords": [
         "Parole"
       ],
+      "Patient Name": [
+        "Nume pacient"
+      ],
       "Pause list": [
         "Listă suspendări"
+      ],
+      "Permissions": [
+        "Permisiuni"
+      ],
+      "Personal": [
+        "Personal"
       ],
       "Personal details": [
         "Detalii personale"
@@ -3008,6 +3184,12 @@
       "PIN code": [
         "Cod PIN"
       ],
+      "Points Balance": [
+        "Balanță puncte"
+      ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -3016,6 +3198,18 @@
       ],
       "Priority:": [
         "Prioritate:"
+      ],
+      "Private key": [
+        "Cheie privată"
+      ],
+      "Private Key": [
+        "Cheie privată"
+      ],
+      "Product": [
+        "Produs"
+      ],
+      "Program Name": [
+        "Nume program"
       ],
       "Prompt for auto-save": [
         "Solicitare autosalvare"
@@ -3029,11 +3223,17 @@
       "Public domain": [
         "Domeniu public"
       ],
+      "Public key": [
+        "Cheie publică"
+      ],
       "Rate us": [
         "Evaluați-ne"
       ],
       "Recent": [
         "Recente"
+      ],
+      "Record Number": [
+        "Număr de înregistrare"
       ],
       "Reddit handle": [
         "Cont Reddit"
@@ -3050,11 +3250,20 @@
       "Reveal password": [
         "Afișare parolă"
       ],
+      "Reward Program": [
+        "Program de recompense"
+      ],
+      "Routing Number": [
+        "Număr de repartizare"
+      ],
       "Save passkeys": [
         "Salvare chei de acces"
       ],
       "Second password": [
         "Parola secundară"
+      ],
+      "Secret": [
+        "Secret"
       ],
       "Secure links": [
         "Legături web securizate"
@@ -3067,6 +3276,9 @@
       ],
       "See member and permission overview": [
         "Afișare prezentare generală membru și permisiuni"
+      ],
+      "Seed Phrase": [
+        "Fraza de bază"
       ],
       "Select a domain": [
         "Selectare domeniu"
@@ -3086,11 +3298,17 @@
       "Selected": [
         "Selectat"
       ],
+      "Server": [
+        "Server"
+      ],
       "Settings": [
         "Setări"
       ],
       "Share": [
         "Partajare"
+      ],
+      "Share ID": [
+        "Partajare ID"
       ],
       "Shared": [
         "Partajat"
@@ -3110,11 +3328,23 @@
       "Social security": [
         "Card de sănătate"
       ],
+      "Social Security": [
+        "Card de sănătate"
+      ],
       "Social security number": [
         "Cod numeric personal"
       ],
+      "Software license": [
+        "Licență program"
+      ],
       "Special characters (!&*)": [
         "Caractere speciale (!&*)"
+      ],
+      "SSH key": [
+        "Cheie SSH"
+      ],
+      "SSN": [
+        "Număr asigurări de sănătate"
       ],
       "State or province": [
         "Județul"
@@ -3134,6 +3364,9 @@
       "Support": [
         "Asistență"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Sincronizare aliasuri cu SimpleLogin"
       ],
@@ -3143,6 +3376,9 @@
       "Tax number": [
         "Număr identificare fiscală"
       ],
+      "Technology": [
+        "Tehnologie"
+      ],
       "Text": [
         "Text"
       ],
@@ -3151,6 +3387,12 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Tier/Level": [
+        "Rang/Nivel"
+      ],
+      "Tier/Status": [
+        "Rang/Stare"
       ],
       "Title": [
         "Titlu"
@@ -3188,6 +3430,9 @@
       "Unnamed Credit Card": [
         "Card de credit nedenumit"
       ],
+      "Unnamed custom item": [
+        "Articol personal nenumit"
+      ],
       "Unnamed identity": [
         "Identitate nedenumită"
       ],
@@ -3196,6 +3441,15 @@
       ],
       "Unnamed note": [
         "Notiță fără nume"
+      ],
+      "Unnamed SSH key": [
+        "Cheie SSH fără nume"
+      ],
+      "Unnamed WiFi item": [
+        "Articol Wi-Fi fără nume"
+      ],
+      "Unspecified": [
+        "Nespecificat(ă)"
       ],
       "Untitled": [
         "Fără nume"
@@ -3230,6 +3484,9 @@
       "Vulnerable": [
         "Vulnerabilă"
       ],
+      "Wallet Name": [
+        "Nume portofel"
+      ],
       "Weak": [
         "Slabă"
       ],
@@ -3238,6 +3495,9 @@
       ],
       "Websites": [
         "Pagini web"
+      ],
+      "WiFi network": [
+        "Rețea Wi-Fi"
       ],
       "Work details": [
         "Detalii loc de muncă"
@@ -3446,6 +3706,18 @@
       "Add note": [
         "Adăugare notiță"
       ],
+      "Add password": [
+        "Adăugare parolă"
+      ],
+      "Add private key": [
+        "Adăugare cheie privată"
+      ],
+      "Add public key": [
+        "Adăugare cheie publică"
+      ],
+      "Add SSID": [
+        "Adăugare SSID"
+      ],
       "Add text": [
         "Adăugare text"
       ],
@@ -3454,6 +3726,9 @@
       ],
       "Coupon": [
         "Cupon"
+      ],
+      "E.g., ": [
+        "Ex.: "
       ],
       "Email address": [
         "Adresă e-mail"
@@ -3485,8 +3760,8 @@
       "my-domain.com": [
         "domeniul-meu.com"
       ],
-      "Name to display when sending an email": [
-        "Numele de afișat când se trimite un mesaj"
+      "Name displayed in emails": [
+        "Nume afișat în mesaje"
       ],
       "Note from SimpleLogin": [
         "Notiță din SimpleLogin"
@@ -3521,6 +3796,9 @@
       "Select a suffix": [
         "Selectați un sufix"
       ],
+      "Select option": [
+        "Selectare opțiune"
+      ],
       "Unknown origin": [
         "Origine necunoscută"
       ],
@@ -3529,9 +3807,6 @@
       ],
       "Used on ${ url }": [
         "Folosit la ${ url }"
-      ],
-      "Write your note": [
-        "Scrieți-vă notița"
       ]
     },
     "sso": {
@@ -3841,7 +4116,7 @@
         "Acordare permisiuni"
       ],
       "Hide my email": [
-        "Hide my email"
+        "Ascundere adresă e-mail"
       ],
       "History": [
         "Istoric"
@@ -3887,6 +4162,9 @@
       ],
       "Members": [
         "Membri"
+      ],
+      "Minicalendar": [
+        "Minicalendar"
       ],
       "Modified": [
         "Modificat"
@@ -4074,6 +4352,11 @@
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Astăzi"
+      ]
+    },
     "Validation": {
       "Domain URL is invalid": [
         "Adresa URL a domeniului nu este validă."
@@ -4087,9 +4370,6 @@
       "OTP secret or URI is invalid": [
         "Secretul OTP sau URI nu este valid."
       ],
-      "OTP secret or URI required": [
-        "Este necesar secretul OTP sau URI."
-      ],
       "Section name cannot be empty": [
         "Numele secțiunii nu poate fi gol"
       ],
@@ -4101,6 +4381,13 @@
       ],
       "URL is invalid": [
         "Adresa URL nu este validă."
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Mutare articol în",
+        "Mutare articole în",
+        "Mutare articole în"
       ]
     },
     "Warning": {
@@ -4212,9 +4499,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Invitarea adreselor de e-mail din afara organizației nu este permisă."
-      ],
-      "item was imported without custom fields": [
-        "articol importat fără câmpurile personale"
       ],
       "Maximum length is ${ maxLength } character": [
         "Lungimea maximă este de ${ maxLength } caracter.",

@@ -5,6 +5,7 @@ import {
     INPUT_BASE_STYLES_ATTR,
 } from 'proton-pass-extension/app/content/constants.static';
 import { type ProtonPassControl } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassControl';
+import ProtonPassControlStyles from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassControl.raw.scss';
 import type { FieldHandle } from 'proton-pass-extension/app/content/types';
 
 import {
@@ -14,7 +15,7 @@ import {
     pixelEncoder,
     pixelParser,
 } from '@proton/pass/utils/dom/computed-styles';
-import { createElement } from '@proton/pass/utils/dom/create-element';
+import { createCustomElement, createElement } from '@proton/pass/utils/dom/create-element';
 import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 import { repaint } from '@proton/pass/utils/dom/repaint';
 
@@ -245,20 +246,20 @@ export const createIcon = (field: FieldHandle, controlTag: string): InjectionEle
     const input = field.element as HTMLInputElement;
     const inputBox = field.boxElement;
 
-    const control = createElement<ProtonPassControl>({ type: controlTag });
+    const control = createCustomElement<ProtonPassControl>({ type: controlTag, styles: ProtonPassControlStyles });
     const icon = createElement<HTMLButtonElement>({ type: 'button', classNames: [] });
 
     icon.tabIndex = -1;
     icon.style.zIndex = field.zIndex.toString();
     icon.setAttribute('type', 'button');
 
-    const elements = { icon, control, input, inputBox, form: field.getFormHandle().element };
+    const elements = { icon, control: control.customElement, input, inputBox, form: field.getFormHandle().element };
     const boxed = input !== inputBox;
 
-    if (boxed) inputBox.insertBefore(control, inputBox.firstElementChild);
-    else input.parentElement!.insertBefore(control, input);
+    if (boxed) inputBox.insertBefore(control.customElement, inputBox.firstElementChild);
+    else input.parentElement!.insertBefore(control.customElement, input);
 
-    control.shadowRoot?.appendChild(icon);
+    control.shadowRoot.appendChild(icon);
 
     return elements;
 };

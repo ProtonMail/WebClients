@@ -1,0 +1,45 @@
+@import '~@proton/styles/scss/lib';
+
+.subscription-container {
+	background-color: var(--background-lowered);
+
+	.subscriptions-list-header {
+		background-color: var(--background-lowered);
+	}
+
+	.subscription-card {
+		background-color: var(--background-elevated);
+		transition: box-shadow 0.2s easing(ease);
+
+		&-container {
+			container-type: inline-size;
+		}
+
+		&-title {
+			--w-custom: 12.5rem;
+
+			@container (max-width: 30.5rem) {
+				--w-custom: auto;
+			}
+		}
+
+		&-content {
+			@container (max-width: 30.5rem) {
+				flex-direction: column;
+			}
+		}
+
+		&-image {
+			inline-size: 2.25rem;
+		}
+
+		&-dropdown {
+			margin-inline-start: auto;
+		}
+
+		&:hover,
+		&:focus-within {
+			box-shadow: var(--shadow-raised);
+		}
+	}
+}

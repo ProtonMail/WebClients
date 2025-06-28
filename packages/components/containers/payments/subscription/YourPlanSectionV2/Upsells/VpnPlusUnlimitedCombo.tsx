@@ -10,7 +10,7 @@ import {
     DashboardCardImage,
     DashboardGrid,
     DashboardGridSectionHeader,
-} from '@proton/atoms/index';
+} from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';

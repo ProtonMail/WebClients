@@ -9,3 +9,6 @@ export enum BitField {
     DISABLED = 0,
     ACTIVE = 1,
 }
+
+export type CustomSectionValue = { sectionName: string; sectionFields: DeobfuscatedItemExtraField[] };
+export type CustomSectionGroupValues = { sections: CustomSectionValue[] };

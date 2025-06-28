@@ -13,7 +13,7 @@ import { monitor } from 'proton-pass-web/lib/monitor';
 import { settings } from 'proton-pass-web/lib/settings';
 import { spotlightProxy as spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
-import { getInitialTheme } from 'proton-pass-web/lib/theme';
+import { getTheme } from 'proton-pass-web/lib/theme';
 
 import {
     ErrorBoundary,
@@ -31,7 +31,6 @@ import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
-import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
@@ -44,7 +43,7 @@ import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
@@ -75,7 +74,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     monitor,
     settings,
     spotlight,
-    theme: createPassThemeManager({ getInitialTheme }),
+    theme: createPassThemeManager({ getTheme }),
 
     generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
 
@@ -139,7 +138,6 @@ export const App = () => {
                                             <AuthSwitchProvider>
                                                 <AuthServiceProvider>
                                                     <StoreProvider>
-                                                        <ThemeConnect />
                                                         <Localized>
                                                             {showWelcome ? <WelcomeScreen /> : <AppGuard />}
                                                         </Localized>

@@ -11,10 +11,10 @@ import {
     type ForceEnableChargebee,
     type PaymentVerificatorV5,
 } from '@proton/payments';
+import { type PaymentProcessorHook } from '@proton/payments';
 import { type Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { type PaymentProcessorHook } from './interface';
 import { usePaymentProcessor } from './usePaymentProcessor';
 
 export interface Props {
@@ -40,7 +40,6 @@ type Overrides = {
 };
 
 export type ChargebeePaypalProcessorHook = Omit<PaymentProcessorHook, keyof Overrides> & {
-    reset: () => void;
     initialize: (abortSignal: AbortSignal) => Promise<void>;
     initializing: boolean;
     paypalIframeLoadedRef: React.MutableRefObject<boolean>;

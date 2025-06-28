@@ -20,18 +20,18 @@ import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreate
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
-import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
+import { useAliasForLogin } from '@proton/pass/hooks/useAliasForLogin';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
-import { getSanitizedUserIdentifiers } from '@proton/pass/lib/items/item.utils';
-import { parseOTPValue } from '@proton/pass/lib/otp/otp';
+import { bindOTPSanitizer, getSanitizedUserIdentifiers, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { selectShowUsernameField, selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { LoginItemFormValues } from '@proton/pass/types';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -124,12 +124,8 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                   }
                 : { withAlias: false };
 
-            const normalizedOtpUri = parseOTPValue(totpUri, {
-                label: itemEmail || undefined,
-                issuer: name || undefined,
-            });
-
             const { email, username } = await getSanitizedUserIdentifiers({ itemEmail, itemUsername });
+            const sanitizeOTP = bindOTPSanitizer(itemEmail, name);
 
             onSubmit({
                 type: 'login',
@@ -146,24 +142,10 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                     itemUsername: obfuscate(username),
                     password: obfuscate(password),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
-                    totpUri: obfuscate(normalizedOtpUri),
+                    totpUri: pipe(sanitizeOTP, obfuscate)(totpUri),
                     passkeys: [],
                 },
-                extraFields: obfuscateExtraFields(
-                    extraFields.map((field) =>
-                        field.type === 'totp'
-                            ? {
-                                  ...field,
-                                  data: {
-                                      totpUri: parseOTPValue(field.data.totpUri, {
-                                          label: itemEmail || undefined,
-                                          issuer: name || undefined,
-                                      }),
-                                  },
-                              }
-                            : field
-                    )
-                ),
+                extraFields: obfuscateExtraFields(extraFields.map(sanitizeExtraField(sanitizeOTP))),
                 extraData,
             });
         },
@@ -172,7 +154,8 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
         validateOnMount: true,
     });
 
-    const { aliasOptions } = useAliasForLoginModal(form);
+    const alias = useAliasForLogin(form);
+    const { aliasOptions } = alias;
 
     const draft = useItemDraft<LoginItemFormValues>(form, {
         type: 'login',
@@ -221,7 +204,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                             </FieldsetCluster>
 
                             <FieldsetCluster>
-                                <LoginEditCredentials form={form} />
+                                <LoginEditCredentials form={form} alias={alias} />
 
                                 {
                                     /* only allow adding a new TOTP code if user
@@ -258,11 +241,11 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                                 />
                             </FieldsetCluster>
 
+                            <ExtraFieldGroup form={form} />
+
                             <FieldsetCluster>
                                 <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                             </FieldsetCluster>
-
-                            <ExtraFieldGroup form={form} />
                         </Form>
                     </FormikProvider>
                 )}

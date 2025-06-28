@@ -1,16 +1,22 @@
 import { c } from 'ttag';
 
+import { InlineLinkButton } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
 import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import { CYCLE, type Subscription, getSubscriptionPlanTitleAndName } from '@proton/payments';
+import Time from '@proton/components/components/time/Time';
+import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
+import { Renew, type Subscription } from '@proton/payments';
 import {
+    CYCLE,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
     getIsPassB2BPlan,
     getIsSentinelPlan,
+    getSubscriptionPlanTitleAndName,
     hasDeprecatedVPN,
     hasDriveBusiness,
     hasLumo,
@@ -23,6 +29,7 @@ import {
     isManagedExternally,
     isTrial,
 } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -85,6 +92,8 @@ interface Props {
 const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, addresses, upsells }: Props) => {
     const { planTitle, planName } = getSubscriptionPlanTitleAndName(user, subscription);
     const isPassB2bPlan = getIsPassB2BPlan(planName);
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const [learnMoreModalProps, setLearnMoreModal, renderLearnMoreModal] = useModalState();
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
     const amount = (subscription?.Amount ?? 0) / cycle;
@@ -103,8 +112,8 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         return null;
     }
 
-    // Hide this panel for trial case
-    if (subscription && isTrial(subscription)) {
+    // Hide this panel for trial case, but not for B2B trials
+    if (subscription && isTrial(subscription) && !isB2BTrial) {
         return null;
     }
 
@@ -426,6 +435,25 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         </h2>
     );
 
+    const b2bTrialLearnMore = (() => {
+        const trialCancelled = subscription?.Renew === Renew.Disabled;
+        if (!isB2BTrial || trialCancelled) {
+            return null;
+        }
+
+        const periodEnd = subscription?.PeriodEnd;
+        const startsOnTime = periodEnd ? <Time>{periodEnd}</Time> : null;
+
+        return (
+            <>
+                {startsOnTime && <div className="color-weak">{c('Info').jt`Starts on ${startsOnTime}`}</div>}
+                <InlineLinkButton className="color-weak" onClick={() => setLearnMoreModal(true)}>
+                    {c('Link').t`Learn more`}
+                </InlineLinkButton>
+            </>
+        );
+    })();
+
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
     // In walletEA, we only show Visionary as the suggested plan, but if the user has that, there's no point in exploring other plans
@@ -435,53 +463,57 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     const showActionButtons = !hasVpnB2BPlan && !isWalletEA;
 
     return (
-        <Panel
-            data-testid="current-plan"
-            titleDataTestId="plan-name"
-            titleElement={planTitleElement}
-            secondaryTitleElement={planPriceElement}
-            // If there are no action buttons, we want to reduce the bottom padding of the panel
-            // On the other hand, if there are action buttons, we want to keep the additional space
-            // after between the last button and the border
-            className={clsx(!showActionButtons && 'p-6 pb-1')}
-        >
-            {(() => {
-                if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
-                    return getVpnAppFree();
-                }
-                if (hasDeprecatedVPN(subscription)) {
-                    return getVpnPlus();
-                }
-                if (hasVPNPassBundle(subscription)) {
-                    return getVpnPass();
-                }
-                if (hasPass(subscription) || (user.isFree && user.hasPassLifetime)) {
-                    return getPassAppPassPlus();
-                }
-                if (user.isFree && app === APPS.PROTONPASS) {
-                    return getPassAppFree();
-                }
-                if (hasPassFamily(subscription)) {
-                    return getPassAppPassFamily();
-                }
-                if (getHasVpnB2BPlan(subscription)) {
-                    return getVpnB2B();
-                }
-                if (hasWallet(subscription)) {
-                    return getWalletAppWalletPlus();
-                }
-                if (hasLumo(subscription)) {
-                    return getLumo();
-                }
-                if (hasDriveBusiness(subscription)) {
-                    return getDriveAppB2B();
-                }
+        <>
+            {renderLearnMoreModal && <LearnMoreModal {...learnMoreModalProps} />}
+            <Panel
+                data-testid="current-plan"
+                titleDataTestId="plan-name"
+                titleElement={planTitleElement}
+                secondaryTitleElement={planPriceElement}
+                // If there are no action buttons, we want to reduce the bottom padding of the panel
+                // On the other hand, if there are action buttons, we want to keep the additional space
+                // after between the last button and the border
+                className={clsx(!showActionButtons && 'p-6 pb-1')}
+            >
+                {b2bTrialLearnMore}
+                {(() => {
+                    if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
+                        return getVpnAppFree();
+                    }
+                    if (hasDeprecatedVPN(subscription)) {
+                        return getVpnPlus();
+                    }
+                    if (hasVPNPassBundle(subscription)) {
+                        return getVpnPass();
+                    }
+                    if (hasPass(subscription) || (user.isFree && user.hasPassLifetime)) {
+                        return getPassAppPassPlus();
+                    }
+                    if (user.isFree && app === APPS.PROTONPASS) {
+                        return getPassAppFree();
+                    }
+                    if (hasPassFamily(subscription)) {
+                        return getPassAppPassFamily();
+                    }
+                    if (getHasVpnB2BPlan(subscription)) {
+                        return getVpnB2B();
+                    }
+                    if (hasWallet(subscription)) {
+                        return getWalletAppWalletPlus();
+                    }
+                    if (hasLumo(subscription)) {
+                        return getLumo();
+                    }
+                    if (hasDriveBusiness(subscription)) {
+                        return getDriveAppB2B();
+                    }
 
-                return getDefault();
-            })()}
-            <SubscriptionPanelManageUserButton />
-            {showActionButtons ? <ActionButtons app={app} user={user} subscription={subscription} /> : null}
-        </Panel>
+                    return getDefault();
+                })()}
+                <SubscriptionPanelManageUserButton />
+                {showActionButtons ? <ActionButtons app={app} user={user} subscription={subscription} /> : null}
+            </Panel>
+        </>
     );
 };
 

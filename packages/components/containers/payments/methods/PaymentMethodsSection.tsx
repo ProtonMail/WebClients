@@ -18,10 +18,10 @@ import {
     MethodStorage,
     PAYMENT_METHOD_TYPES,
     type SavedPaymentMethod,
+    getAvailableSubscriptionActions,
     isOnSessionMigration,
     isSplittedUser,
 } from '@proton/payments';
-import { isManagedExternally } from '@proton/payments';
 import { EditCardModal } from '@proton/payments/ui';
 import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -58,7 +58,7 @@ const PaymentMethodsSection = () => {
     const [pollingEvents, withPollingEvents] = useLoading();
     const redirectToAccountApp = useRedirectToAccountApp();
 
-    if (loadingPaymentMethods || loadingSubscription) {
+    if (loadingPaymentMethods || loadingSubscription || !subscription) {
         return <Loader />;
     }
 
@@ -83,6 +83,8 @@ const PaymentMethodsSection = () => {
         void withPollingEvents(pollPaymentMethodsCreate());
     };
 
+    const subscriptionActions = getAvailableSubscriptionActions(subscription);
+
     return (
         <SettingsSection>
             <SettingsParagraph learnMoreUrl={learnMoreUrl}>
@@ -99,7 +101,7 @@ const PaymentMethodsSection = () => {
                             return;
                         }
 
-                        if (isManagedExternally(subscription)) {
+                        if (!subscriptionActions.canModify) {
                             setInAppPurchaseModalOpen(true);
                             return;
                         }
@@ -118,7 +120,7 @@ const PaymentMethodsSection = () => {
                                 return;
                             }
 
-                            if (isManagedExternally(subscription)) {
+                            if (!subscriptionActions.canModify) {
                                 setInAppPurchaseModalOpen(true);
                                 return;
                             }
@@ -135,7 +137,7 @@ const PaymentMethodsSection = () => {
                                 return;
                             }
 
-                            if (isManagedExternally(subscription)) {
+                            if (!subscriptionActions.canModify) {
                                 setInAppPurchaseModalOpen(true);
                                 return;
                             }

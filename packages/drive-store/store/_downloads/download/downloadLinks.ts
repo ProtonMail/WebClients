@@ -1,4 +1,4 @@
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type {
@@ -95,7 +95,7 @@ function loadTotalSize(
 ) {
     const sizePromises = links.map(async (link) => {
         // Proton Documents are skipped, so let's set them as 0 size
-        if (isProtonDocument(link.mimeType)) {
+        if (isProtonDocsDocument(link.mimeType)) {
             return { size: 0, linkSizes: { [link.linkId]: 0 } };
         }
 
@@ -124,7 +124,7 @@ async function* iterateAllLinks(
 ): AsyncGenerator<NestedLinkDownload> {
     for (const link of links) {
         // If this is removed, remove it in `loadTotalSize` as well.
-        if (isProtonDocument(link.mimeType)) {
+        if (isProtonDocsDocument(link.mimeType)) {
             await onContainsDocument?.(new AbortController().signal);
             continue;
         }

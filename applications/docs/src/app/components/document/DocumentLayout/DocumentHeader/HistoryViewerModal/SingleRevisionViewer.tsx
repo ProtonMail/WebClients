@@ -6,13 +6,15 @@ import { useCallback } from 'react'
 import { ClientToEditorBridge } from '@proton/docs-core'
 import type { EditorOrchestratorInterface } from '@proton/docs-core'
 import { useApplication } from '~/utils/application-context'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 export type SingleRevisionViewerProps = {
   state: YjsState
   onEditorInvokerRef: (editorInvoker: EditorInvoker) => void
+  documentType: DocumentType
 }
 
-export function SingleRevisionViewer({ state, onEditorInvokerRef }: SingleRevisionViewerProps) {
+export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }: SingleRevisionViewerProps) {
   const { logger } = useApplication()
 
   const onFrameReady = useCallback(
@@ -45,5 +47,12 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef }: SingleRevisi
     [onEditorInvokerRef, state],
   )
 
-  return <EditorFrame systemMode={EditorSystemMode.Revision} onFrameReady={onFrameReady} logger={logger} />
+  return (
+    <EditorFrame
+      systemMode={EditorSystemMode.Revision}
+      onFrameReady={onFrameReady}
+      logger={logger}
+      documentType={documentType}
+    />
+  )
 }

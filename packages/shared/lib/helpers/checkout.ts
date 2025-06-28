@@ -18,16 +18,23 @@ import {
     type Pricing,
     type Subscription,
     VPN_PASS_PROMOTION_COUPONS,
+    customCycles,
+    getAddonMultiplier,
     getIsB2BAudienceFromPlan,
+    getMembersFromPlanIDs,
+    getPlanFromPlanIDs,
     getPlanNameFromIDs,
     getPricePerCycle,
+    getPricingPerMember,
+    isDomainAddon,
+    isIpAddon,
+    isLumoAddon,
+    isMemberAddon,
+    isScribeAddon,
 } from '@proton/payments';
-import { customCycles, getAddonMultiplier, getMembersFromPlanIDs, getPricingPerMember } from '@proton/payments';
-import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from '@proton/payments/core/plan/addons';
 
 import { LUMO_APP_NAME } from '../constants';
 import { type SubscriptionCheckResponse, SubscriptionMode } from '../interfaces';
-import { getPlanFromPlanIDs } from './planIDs';
 
 export const getUserTitle = (users: number) => {
     return c('Checkout row').ngettext(msgid`${users} user`, `${users} users`, users);
@@ -258,6 +265,7 @@ export const getCheckout = ({
     const withDiscountOneMemberPerMonth = withDiscountMembersPerMonth / usersAndAddons.users;
 
     return {
+        regularAmountPerCycle: amount,
         couponDiscount: checkResult.CouponDiscount,
         planIDs,
         planName: usersAndAddons.planName,
@@ -265,7 +273,7 @@ export const getCheckout = ({
         addons: usersAndAddons.addons,
         usersTitle: getUserTitle(usersAndAddons.viewUsers || 1), // VPN and free plan has no users
         withoutDiscountPerMonth,
-        withoutDiscountPerCycle: amount,
+        withoutDiscountPerCycle,
         withDiscountPerCycle,
         withDiscountPerMonth: withDiscountPerCycle / cycle,
         membersPerMonth,
@@ -274,8 +282,11 @@ export const getCheckout = ({
         currency: checkResult.Currency,
         withDiscountMembersPerMonth,
         withDiscountOneMemberPerMonth,
+        cycle,
     };
 };
+
+export type PaymentsCheckout = ReturnType<typeof getCheckout>;
 
 export type Included =
     | {

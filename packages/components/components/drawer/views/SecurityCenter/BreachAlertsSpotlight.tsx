@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 
-import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useWelcomeFlags } from '@proton/account';
@@ -13,6 +12,7 @@ import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeatur
 import { FeatureCode } from '@proton/features';
 import { PLANS } from '@proton/payments';
 import { DARK_WEB_MONITORING_NAME, SECOND } from '@proton/shared/lib/constants';
+import { isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';
 import spotlightImg from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
 
 interface Props {
@@ -40,7 +40,7 @@ const BreachAlertsSpotlight = ({ children }: Props) => {
         subscription?.Plans?.some(({ Name }) => Name === plan)
     );
     const hasCustomDomains = organization && organization?.UsedDomains > 0;
-    const accountIsOlderThanFourDays = differenceInDays(new Date(), fromUnixTime(user.CreateTime)) >= 4;
+    const accountIsOlderThanFourDays = isUserAccountOlderThanOrEqualToDays(user, 4);
 
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(
         FeatureCode.SpotlightBreachAlertSecurityCenter,

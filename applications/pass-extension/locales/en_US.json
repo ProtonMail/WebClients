@@ -4,18 +4,67 @@
     "language": "en_US"
   },
   "contexts": {
+    "Action": {
+      "More info": [
+        "Learn more"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Learn more"
+      ]
+    },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosave, Autosuggest) should not be run. ${ infoText }"
+      ]
+    },
+    "Error": {
+      "Cannot create alias (${ error }).": [
+        "Cannot create alias: (${ error })."
+      ]
+    },
     "Info": {
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } will suggest authenticating using saved passkeys."
+      ],
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } will suggest creating a strong password on sign up forms."
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 days to try premium features for free. Only during your first week with ${ BRAND_NAME }."
       ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Discover ${ PASS_APP_NAME } YouTube Video"
+      ],
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "Please confirm your extra password to unlock with biometrics."
+      ]
+    },
+    "Label": {
+      "Create an Identity": [
+        "Create an identity"
+      ],
+      "Instagram handle": [
+        "Instagram username"
+      ],
+      "Login": [
+        "Sign in"
+      ],
+      "No Activity in the last 14 days.": [
+        "No activity in the last 14 days."
       ]
     },
     "Title": {
       "Please note that once deleted, the alias can't be restored.": [
         "Please note that once deleted, the alias can't be restored.",
         "Please note that once deleted, the aliases can't be restored."
+      ],
+      "The extension is now ready to use.": [
+        "The extension is now ready to use"
+      ],
+      "Vault": [
+        "Vaults"
       ]
     }
   }

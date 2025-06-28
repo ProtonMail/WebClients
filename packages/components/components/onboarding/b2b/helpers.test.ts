@@ -1,7 +1,7 @@
 import { getFeatures, getSections } from '@proton/components/components/onboarding/b2b/helpers';
 import type { B2BFeaturesSection } from '@proton/components/components/onboarding/b2b/interface';
 import { getPlan } from '@proton/payments';
-import { PLANS } from '@proton/payments/core/constants';
+import { PLANS } from '@proton/payments';
 import {
     APPS,
     CALENDAR_APP_NAME,

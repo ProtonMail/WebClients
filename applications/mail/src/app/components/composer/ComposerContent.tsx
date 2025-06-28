@@ -6,14 +6,14 @@ import { c } from 'ttag';
 import type { EditorMetadata } from '@proton/components';
 import { Dropzone, EllipsisLoader } from '@proton/components';
 import type { EditorProps } from '@proton/components/components/editor/Editor';
+import type { MessageState, MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import AttachmentList, { AttachmentAction } from '../../components/message/extrasFooter/attachment/AttachmentList';
 import type { PendingUpload } from '../../hooks/composer/useAttachments';
-import type { MessageState, MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
-import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
 import type { MessageChange } from './Composer';
 import type { ExternalEditorActions } from './editor/EditorWrapper';
 import EditorWrapper from './editor/EditorWrapper';

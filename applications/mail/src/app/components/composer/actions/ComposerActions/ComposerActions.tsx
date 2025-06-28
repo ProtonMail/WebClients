@@ -5,13 +5,14 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, Vr } from '@proton/atoms';
+import { Button, Tooltip, Vr } from '@proton/atoms';
 import type { EditorMetadata } from '@proton/components';
-import { Icon, Tooltip, useActiveBreakpoint, useModalStateObject, useSpotlightOnFeature } from '@proton/components';
-import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modal/types/ComposerAssistantUpsellModal';
+import { Icon, useActiveBreakpoint, useModalStateObject, useSpotlightOnFeature } from '@proton/components';
+import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { FeatureCode, useFeature } from '@proton/features';
 import { getIsAssistantOpened, useAssistant } from '@proton/llm/lib';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
@@ -21,12 +22,11 @@ import clsx from '@proton/utils/clsx';
 
 import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import ComposerAssistantSpotlight from 'proton-mail/components/assistant/spotlights/ComposerAssistantSpotlight';
+import AttachmentsButton from 'proton-mail/components/message/extrasFooter/attachment/AttachmentsButton';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { updateExpires } from 'proton-mail/store/messages/draft/messagesDraftActions';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
-import type { MessageState } from '../../../../store/messages/messagesTypes';
-import AttachmentsButton from '../../../attachment/AttachmentsButton';
 import type { MessageChange, MessageChangeFlag } from '../../Composer';
 import type { ExternalEditorActions } from '../../editor/EditorWrapper';
 import ComposerMoreActions from '../ComposerMoreActions';
@@ -180,8 +180,8 @@ const ComposerActions = ({
         }
 
         return isAssistantOpened
-            ? c('Action').t`Show ${BRAND_NAME} Scribe writing assistant`
-            : c('Action').t`Hide ${BRAND_NAME} Scribe writing assistant`;
+            ? c('Action').t`Hide ${BRAND_NAME} Scribe writing assistant`
+            : c('Action').t`Show ${BRAND_NAME} Scribe writing assistant`;
     })();
 
     return (

@@ -156,6 +156,8 @@ describe('Payment', () => {
                         bankAccount: {} as any,
                     } as any
                 }
+                savedPaymentMethods={[]}
+                isCurrencyOverriden={false}
             />
         );
     });
@@ -191,6 +193,8 @@ describe('Payment', () => {
                         bankAccount: {} as any,
                     } as any
                 }
+                savedPaymentMethods={[]}
+                isCurrencyOverriden={false}
             />
         );
 
@@ -266,6 +270,8 @@ describe('Payment', () => {
                         bankAccount: {} as any,
                     } as any
                 }
+                savedPaymentMethods={[]}
+                isCurrencyOverriden={false}
             />
         );
 
@@ -336,6 +342,8 @@ describe('Payment', () => {
                         bankAccount: {} as any,
                     } as any
                 }
+                savedPaymentMethods={[]}
+                isCurrencyOverriden={false}
             />
         );
 

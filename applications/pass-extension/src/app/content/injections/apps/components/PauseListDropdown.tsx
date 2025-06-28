@@ -4,11 +4,14 @@ import {
     useIFrameAppController,
     useIFrameAppState,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { WorkerMessageType } from '@proton/pass/types';
+import { MODEL_VERSION } from '@proton/pass/constants';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { type CriteriaMasks } from '@proton/pass/types/worker/settings';
 
 type Props = {
@@ -20,6 +23,7 @@ type Props = {
 export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label }) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
+    const { onTelemetry } = usePassCore();
 
     const addToPauseList = () => {
         if (hostname) {
@@ -29,6 +33,20 @@ export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label 
                     payload: { hostname, criteria },
                 })
             );
+        }
+
+        switch (criteria) {
+            case 'Autosave': {
+                onTelemetry(
+                    TelemetryEventName.AutosaveDismissed,
+                    {},
+                    {
+                        dismissReason: 'disable',
+                        modelVersion: MODEL_VERSION,
+                    }
+                );
+                break;
+            }
         }
 
         controller.close();

@@ -23,6 +23,7 @@ import {
     type PaymentMethodFlows,
     type PaymentMethodStatusExtended,
     type PaymentMethodType,
+    type SavedPaymentMethod,
     type SavedPaymentMethodExternal,
     type SavedPaymentMethodInternal,
     canUseChargebee,
@@ -40,7 +41,9 @@ import {
     ChargebeeSavedCardWrapper,
 } from '../../payments/chargebee/ChargebeeWrapper';
 import Alert3DS from './Alert3ds';
+import { ApplePayView } from './ApplePayView';
 import Cash from './Cash';
+import DefaultPaymentMethodMessage from './DefaultPaymentMethodMessage';
 import PayPalView from './PayPalView';
 import Bitcoin from './bitcoin/Bitcoin';
 import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
@@ -70,6 +73,7 @@ export interface Props {
     chargebeePaypal: ChargebeePaypalProcessorHook;
     hasSomeVpnPlan: boolean;
     user: User | undefined;
+    isTrial?: boolean;
 }
 
 export interface NoApiProps extends Props {
@@ -91,6 +95,8 @@ export interface NoApiProps extends Props {
     billingAddressStatus?: BillingAddressStatus;
     onChargebeeInitialized?: () => void;
     showCardIcons?: boolean;
+    savedPaymentMethods: SavedPaymentMethod[];
+    isCurrencyOverriden: boolean;
 }
 
 export const PaymentsNoApi = ({
@@ -131,6 +137,9 @@ export const PaymentsNoApi = ({
     paymentStatus,
     onChargebeeInitialized,
     showCardIcons,
+    savedPaymentMethods,
+    isTrial,
+    isCurrencyOverriden,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -171,7 +180,7 @@ export const PaymentsNoApi = ({
         );
     }
 
-    if (amount <= 0) {
+    if (amount <= 0 && !isTrial) {
         const price = (
             <Price key="price" currency={currency}>
                 {0}
@@ -224,6 +233,14 @@ export const PaymentsNoApi = ({
         // by having a saved v4 payment method and the chargebeeEnabled flag being set to CHARGEBEE_ALLOWED.
         (savedMethod?.Type === PAYMENT_METHOD_TYPES.CARD && canUseChargebee(isChargebeeEnabled()));
 
+    const defaultPaymentMethodMessage = type === 'subscription' && (
+        <DefaultPaymentMethodMessage
+            className="mt-4"
+            savedPaymentMethods={savedPaymentMethods}
+            selectedPaymentMethod={method}
+        />
+    );
+
     return (
         <>
             <div
@@ -257,8 +274,9 @@ export const PaymentsNoApi = ({
                         </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
+                    {method === PAYMENT_METHOD_TYPES.APPLE_PAY && <ApplePayView />}
                     {method === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
-                        <SepaDirectDebit {...sharedCbProps} />
+                        <SepaDirectDebit {...sharedCbProps} isCurrencyOverriden={isCurrencyOverriden} />
                     )}
                     {(() => {
                         if (!showBitcoinMethod) {
@@ -335,6 +353,7 @@ export const PaymentsNoApi = ({
                         </>
                     )}
                     {children}
+                    {defaultPaymentMethodMessage}
                 </div>
             </div>
         </>

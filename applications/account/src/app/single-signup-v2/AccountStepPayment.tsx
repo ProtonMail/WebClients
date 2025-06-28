@@ -5,30 +5,32 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Alert3ds, PayPalButton, StyledPayPalButton } from '@proton/components';
+import { changeDefaultPaymentMethodBeforePayment } from '@proton/components/containers/payments/DefaultPaymentMethodMessage';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
-import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
+import { ApplePayButton, ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import type { WithLoading } from '@proton/hooks/useLoading';
-import type { ExtendedTokenPayment, PaymentMethodFlows, TokenPayment } from '@proton/payments';
+import type { ExtendedTokenPayment, PaymentMethodFlows, PaymentProcessorHook, TokenPayment } from '@proton/payments';
 import {
     PAYMENT_METHOD_TYPES,
     type Plan,
     getBillingAddressStatus,
+    getIsB2BAudienceFromPlan,
+    getIsVpnPlan,
     getPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { getIsB2BAudienceFromPlan, getIsVpnPlan } from '@proton/payments';
 import { type OnBillingAddressChange } from '@proton/payments/ui';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
+import { Audience, SubscriptionMode, isBilledUser } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -56,17 +58,17 @@ interface Props {
     loadingPaymentDetails: boolean;
     loadingSignup: boolean;
     onPay: (payment: 'signup-token' | ExtendedTokenPayment, type: 'pp' | 'btc' | 'cc' | undefined) => Promise<void>;
-    onValidate: () => boolean;
+    onValidate: () => Promise<boolean>;
     isDarkBg?: boolean;
     withLoadingSignup: WithLoading;
     measure: Measure;
     defaultMethod: PAYMENT_METHOD_TYPES | undefined;
-    takeNullCreditCard?: boolean;
     handleOptimistic: (optimistic: Partial<OptimisticOptions>) => void;
     onBillingAddressChange: OnBillingAddressChange;
     terms?: ReactNode;
     signupParameters: SignupParameters2;
     showRenewalNotice: boolean;
+    app: APP_NAMES;
 }
 
 const AccountStepPayment = ({
@@ -89,6 +91,7 @@ const AccountStepPayment = ({
     terms,
     signupParameters,
     showRenewalNotice,
+    app,
 }: Props) => {
     const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
@@ -147,6 +150,7 @@ const AccountStepPayment = ({
     const user = model.session?.resumedSessionResult.User;
 
     const billingAddress = model.subscriptionData.billingAddress;
+    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
@@ -163,14 +167,14 @@ const AccountStepPayment = ({
         user,
         subscription: model.session?.subscription,
         planIDs: model.subscriptionData.planIDs,
-        onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, paymentProcessorType }) => {
+        onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, paymentProcessorType, source }) => {
             return withLoadingSignup(async () => {
                 const extendedTokenPayment: ExtendedTokenPayment = {
                     paymentsVersion,
                     paymentProcessorType,
                 };
 
-                const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
+                const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !isTrial;
                 if (isFreeSignup) {
                     await onPay(extendedTokenPayment, undefined);
                     return;
@@ -192,6 +196,13 @@ const AccountStepPayment = ({
 
                 Object.assign(extendedTokenPayment, legacyTokenPayment);
 
+                await changeDefaultPaymentMethodBeforePayment(
+                    normalApi,
+                    source,
+                    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                    paymentFacade.methods.savedMethods ?? []
+                );
+
                 await onPay(extendedTokenPayment, paymentType);
             });
         },
@@ -207,37 +218,38 @@ const AccountStepPayment = ({
     });
 
     const process = (processor: PaymentProcessorHook | undefined) => {
-        if (!onValidate() || !validatePayment()) {
-            return;
-        }
-
-        const telemetryType = (() => {
-            const isFreeSignup = paymentFacade.amount <= 0;
-
-            if (isFreeSignup) {
-                return 'free';
-            }
-
-            if (processor?.meta.type === 'paypal') {
-                return 'pay_pp';
-            }
-
-            if (processor?.meta.type === 'paypal-credit') {
-                return 'pay_pp_no_cc';
-            }
-
-            if (processor?.meta.type === 'bitcoin') {
-                return 'pay_btc';
-            }
-
-            return 'pay_cc';
-        })();
-        measurePaySubmit(telemetryType);
-
         async function run() {
             if (!processor) {
                 return;
             }
+
+            if (!(await onValidate()) || !validatePayment()) {
+                return;
+            }
+
+            const telemetryType = (() => {
+                const isFreeSignup = paymentFacade.amount <= 0;
+
+                if (isFreeSignup) {
+                    return 'free';
+                }
+
+                if (processor?.meta.type === 'paypal') {
+                    return 'pay_pp';
+                }
+
+                if (processor?.meta.type === 'paypal-credit') {
+                    return 'pay_pp_no_cc';
+                }
+
+                if (processor?.meta.type === 'bitcoin') {
+                    return 'pay_btc';
+                }
+
+                return 'pay_cc';
+            })();
+            measurePaySubmit(telemetryType);
+
             try {
                 await processor.processPaymentToken();
             } catch (error) {
@@ -298,7 +310,7 @@ const AccountStepPayment = ({
         paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
     const showAlert3ds = selectedMethodCard && !isSignupPass;
 
-    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue);
+    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue) || isTrial;
     const loadingPaymentsForm = model.loadingDependencies;
 
     const paymentsForm = (
@@ -344,6 +356,7 @@ const AccountStepPayment = ({
                             audience={isB2BPlan ? Audience.B2B : Audience.B2C}
                             scribeAddonEnabled
                             showUsersTooltip
+                            isTrialMode={signupParameters.trial}
                         />
                     );
                 })()}
@@ -357,6 +370,7 @@ const AccountStepPayment = ({
                         hideFirstLabel
                         hasSomeVpnPlan={hasSomeVpnPlan}
                         billingAddressStatus={getBillingAddressStatus(billingAddress)}
+                        isTrial={isTrial}
                     />
                 ) : (
                     <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
@@ -411,6 +425,18 @@ const AccountStepPayment = ({
                     }
 
                     if (
+                        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY &&
+                        options.checkResult.AmountDue > 0
+                    ) {
+                        return (
+                            <ApplePayButton
+                                applePay={paymentFacade.applePay}
+                                iframeHandles={paymentFacade.iframeHandles}
+                            />
+                        );
+                    }
+
+                    if (
                         (paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN ||
                             paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) &&
                         options.checkResult.AmountDue > 0
@@ -427,13 +453,16 @@ const AccountStepPayment = ({
                                 color="norm"
                                 pill
                                 className="block mx-auto"
-                                onClick={() => {
+                                onClick={async () => {
                                     measurePaySubmit('pay_btc');
-                                    if (onValidate() && validatePayment()) {
-                                        withLoadingSignup(onPay('signup-token', undefined)).catch(() => {
-                                            measurePayError('pay_btc');
-                                        });
-                                    }
+                                    const run = async () => {
+                                        if ((await onValidate()) && validatePayment()) {
+                                            return onPay('signup-token', undefined).catch(() => {
+                                                measurePayError('pay_btc');
+                                            });
+                                        }
+                                    };
+                                    withLoadingSignup(run()).catch(noop);
                                 }}
                             >
                                 {c('pass_signup_2023: Action').t`Continue with Bitcoin`}
@@ -456,7 +485,7 @@ const AccountStepPayment = ({
                             </Button>
                             <div className="text-center color-success mt-4">
                                 {subscriptionData.checkResult.AmountDue === 0 ? (
-                                    c('Info').t`Cancel anytime`
+                                    !isTrial && c('Info').t`Cancel anytime`
                                 ) : (
                                     <Guarantee />
                                 )}
@@ -484,6 +513,7 @@ const AccountStepPayment = ({
                 showRenewalNotice={showRenewalNotice}
                 showInclusiveTax={paymentFacade.showInclusiveTax}
                 showTaxCountry={paymentFacade.showTaxCountry}
+                app={app}
             />
         </div>
     );

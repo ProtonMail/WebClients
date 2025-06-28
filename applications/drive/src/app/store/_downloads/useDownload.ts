@@ -19,6 +19,7 @@ import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import type { DecryptedLink, SignatureIssues } from '../_links';
 import { useLink } from '../_links';
+import { decryptExtendedAttributes } from '../_links/extendedAttributes';
 import { ThumbnailType } from '../_uploads/media';
 import { waitFor } from '../_utils';
 import useDownloadDecryptionIssue from './DownloadProvider/useDownloadDecryptionIssue';
@@ -404,11 +405,62 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
         return thumbnail.contents;
     };
 
+    const getVideoData = async (abortSignal: AbortSignal, shareId: string, linkId: string, pagination: Pagination) => {
+        const { blocks, xAttr, manifestSignature } = await getBlocks(abortSignal, shareId, linkId, pagination);
+        const [keys] = await getKeysWithSignatures(abortSignal, shareId, linkId);
+        const { xattrs } = await decryptExtendedAttributes(xAttr, keys.privateKey, keys.addressPublicKeys || []);
+        return {
+            blocks,
+            xAttr: xattrs,
+            manifestSignature,
+        };
+    };
+
+    // Attention, this ignore signature issues, it's okey since it's just downloading certain blocks and not verifying the entire content
+    // Must be used for Video Streaming (or other type of streaming) only
+    const downloadSlices = (
+        link: LinkDownload,
+        blocks: DriveFileBlock[],
+        manifestSignature: string
+    ): { controls: DownloadStreamControls; stream: ReadableStream<Uint8Array> } => {
+        const controls = initDownloadStream(
+            [link],
+            {
+                getChildren,
+                getBlocks: async () =>
+                    Promise.resolve({
+                        blocks,
+                        thumbnailHashes: [],
+                        manifestSignature: manifestSignature,
+                        xAttr: '',
+                    }),
+                getKeys: getKeysGenerator(),
+                onSignatureIssue: async () => {
+                    // downloadSlices is used for Video Streaming only (so far)
+                    // We do not care of signature issues on random blocks
+                },
+                onError: (error: Error) => {
+                    if (error) {
+                        report(link.shareId, TransferState.Error, link.size, error);
+                    }
+                },
+                onFinish: () => {
+                    report(link.shareId, TransferState.Done, link.size);
+                },
+            },
+            api
+        );
+        const stream = controls.start(true);
+        return { controls, stream };
+    };
+
     return {
         initDownload,
         downloadStream,
         downloadThumbnail,
         getPreviewThumbnail,
         checkFirstBlockSignature,
+        getVideoData,
+        downloadSlices,
     };
 }

@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';

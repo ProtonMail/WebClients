@@ -45,6 +45,7 @@ export type ItemEditViewProps<T extends ItemType = ItemType> = {
 };
 
 export type ItemNewViewProps<T extends ItemType = ItemType> = {
+    type: T;
     shareId: string;
     url: MaybeNull<ParsedUrl>;
     onCancel: () => void;

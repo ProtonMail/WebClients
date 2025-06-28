@@ -4,10 +4,12 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
+import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { BaseTextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
+import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { BaseTitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
@@ -16,24 +18,34 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constan
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
+import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { validateNoteForm } from '@proton/pass/lib/validation/note';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { NoteFormValues } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 const FORM_ID = 'new-note';
 
 export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCancel }) => {
-    const initialValues: NoteFormValues = { name: '', note: '', shareId, files: filesFormInitializer() };
+    const initialValues: NoteFormValues = {
+        name: '',
+        note: '',
+        shareId,
+        extraFields: [],
+        files: filesFormInitializer(),
+    };
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { ParentPortal, openPortal } = usePortal();
 
     const form = useFormik<NoteFormValues>({
         initialValues,
         initialErrors: validateNoteForm(initialValues),
-        onSubmit: ({ shareId, name, note, files }) => {
+        onSubmit: ({ shareId, name, note, files, extraFields }) => {
             const optimisticId = uniqueId();
+            const sanitizeOTP = bindOTPSanitizer(name);
 
             onSubmit({
                 type: 'note',
@@ -42,7 +54,7 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
                 metadata: { name, note: obfuscate(note), itemUuid: optimisticId },
                 files,
                 content: {},
-                extraFields: [],
+                extraFields: obfuscateExtraFields(extraFields.map(sanitizeExtraField(sanitizeOTP))),
             });
         },
         validate: validateNoteForm,
@@ -77,16 +89,22 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
                             key={`note-name-${didEnter}`}
                             maxLength={MAX_ITEM_NAME_LENGTH}
                         />
-                        <Field
-                            component={BaseTextAreaField}
-                            label={c('Label').t`Note`}
-                            labelContainerClassName="sr-only"
-                            name="note"
-                            placeholder={c('Placeholder').t`Write your note`}
-                            maxLength={MAX_ITEM_NOTE_LENGTH}
-                            minRows={1}
-                            rows={Number.MAX_SAFE_INTEGER}
-                        />
+                        <FieldsetCluster className="mt-4">
+                            <Field
+                                component={TextAreaField}
+                                name="note"
+                                placeholder={c('Label').t`Note`}
+                                maxLength={MAX_ITEM_NOTE_LENGTH}
+                                rows={25}
+                                minRows={10}
+                            />
+                        </FieldsetCluster>
+                        <FeatureFlag feature={PassFeature.PassCustomTypeV1}>
+                            <ExtraFieldGroup
+                                form={form}
+                                customButton={{ shape: 'solid', color: 'weak', label: c('Action').t`Add field` }}
+                            />
+                        </FeatureFlag>
                         <FieldsetCluster className="mt-4">
                             <Field name="files" component={FileAttachmentsField} shareId={form.values.shareId} />
                         </FieldsetCluster>

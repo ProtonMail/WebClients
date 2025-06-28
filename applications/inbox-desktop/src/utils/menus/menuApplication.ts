@@ -153,7 +153,7 @@ export const setApplicationMenu = () => {
                     click: () => uninstallProton(),
                 },
                 { type: "separator" },
-                { role: "quit", label: c("App menu").t`Quit ${MAIL_APP_NAME}l` },
+                { role: "quit", label: c("App menu").t`Quit ${MAIL_APP_NAME}` },
             ],
         });
 

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
+import { useModalTwoStatic } from '@proton/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalSize } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -12,16 +13,8 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
-import UpsellFeatureList from '@proton/components/components/upsell/modal/UpsellFeatureList';
-import useApi from '@proton/components/hooks/useApi';
-import { useModalTwoStatic } from '@proton/components/index';
+import UpsellFeatureList from '@proton/components/components/upsell/UpsellFeatureList';
 import { CYCLE, type Currency, PLANS } from '@proton/payments';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
-import {
-    type SourceEventUpsell,
-    UPSELL_MODALS_TYPE,
-    sendRequestUpsellModalReport,
-} from '@proton/shared/lib/helpers/upsell';
 
 import './DriveUpsellModal.scss';
 
@@ -35,9 +28,6 @@ export interface DriveUpsellModalProps {
     onUpgrade?: () => void;
     size?: ModalSize;
     submitText?: ReactNode;
-    sourceEvent: SourceEventUpsell;
-    upsellModalType?: UPSELL_MODALS_TYPE;
-    application?: APP_NAMES;
     /**
      * Overrides `submitText`, `position` and `handleUpgrade` as it is a ReactNode
      * replacing submit button
@@ -59,23 +49,13 @@ const DriveUpsellModal = ({
     submitText,
     submitButton,
     footerText,
-    sourceEvent,
-    upsellModalType = UPSELL_MODALS_TYPE.NEW,
-    application = APPS.PROTONDRIVE,
     onExit,
     open,
     closeButtonColor,
 }: DriveUpsellModalProps & ModalStateProps) => {
-    const api = useApi();
     const [user] = useUser();
 
     const handleUpgrade = () => {
-        sendRequestUpsellModalReport({
-            api,
-            application,
-            sourceEvent,
-            upsellModalType,
-        });
         onUpgrade?.();
         onClose();
     };

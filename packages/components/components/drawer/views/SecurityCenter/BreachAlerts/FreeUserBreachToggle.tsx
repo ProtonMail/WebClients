@@ -37,7 +37,7 @@ const learnMoreLinkBreach = (
 const FreeUserBreachToggle = ({ onToggleBreaches, hasBreach, sample, count }: Props) => {
     return (
         <DrawerAppSection>
-            <div className="flex flex-nowrap items-center gap-2 mt-2">
+            <div className="flex flex-nowrap items-center gap-2 mt-2" data-testid="breach-alert:free:upsell">
                 <div className="shrink-0 flex">
                     <img src={ProtonSentinelPlusLogo} alt="" width={22} />
                 </div>

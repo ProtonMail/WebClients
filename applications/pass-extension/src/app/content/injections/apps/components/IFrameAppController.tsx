@@ -9,16 +9,16 @@ import type {
     IFramePortMessageHandler,
 } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
-import type { Runtime } from 'webextension-polyfill';
-
 import {
     contentScriptMessage,
     portForwardingMessage,
     sendMessage,
-} from '@proton/pass/lib/extension/message/send-message';
+} from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+import type { Runtime } from 'webextension-polyfill';
+
 import browser from '@proton/pass/lib/globals/browser';
 import type { Callback, Maybe, MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { type Subscriber, createPubSub } from '@proton/pass/utils/pubsub/factory';

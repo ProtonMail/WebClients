@@ -2,13 +2,13 @@ import { c, msgid } from 'ttag';
 
 import { FileNameDisplay } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import { getAttachmentCounts } from '../../helpers/message/messages';
-import type { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

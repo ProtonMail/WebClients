@@ -76,6 +76,7 @@ import LiveChatZendesk, {
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -104,13 +105,16 @@ const MainContainer: FunctionComponent = () => {
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const isPasswordPolicyEnabled = useFlag('PasswordPolicy');
+    const isOrganizationPolicyEnforced = Boolean(userSettings?.OrganizationPolicy?.Enforced);
     const [groups, loadingGroups] = useGroups();
     const { showVPNDashboard } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
 
     const vpnRoutes = getRoutes({
         user,
         subscription,
         showVPNDashboard,
+        isB2BTrial,
     });
 
     const organizationAppRoutes = getOrganizationAppRoutes({
@@ -125,6 +129,7 @@ const MainContainer: FunctionComponent = () => {
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,
         isPasswordPolicyEnabled,
+        isOrganizationPolicyEnforced,
     });
 
     const canEnableChat = useCanEnableChat(user);
@@ -279,7 +284,7 @@ const MainContainer: FunctionComponent = () => {
                                     <AutomaticSubscriptionModal />
                                     <PrivateMainSettingsArea
                                         config={vpnRoutes.dashboardV2}
-                                        mainAreaClass="bg-lowered"
+                                        mainAreaClass="bg-lowered settings-cards"
                                         wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
                                         style={{ '--max-w-custom': '1500px' }}
                                     >
@@ -296,7 +301,7 @@ const MainContainer: FunctionComponent = () => {
                                     <AutomaticSubscriptionModal />
                                     <PrivateMainSettingsArea
                                         config={vpnRoutes.subscription}
-                                        mainAreaClass="bg-lowered"
+                                        mainAreaClass="bg-lowered settings-cards"
                                         wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
                                         style={{ '--max-w-custom': '1500px' }}
                                     >

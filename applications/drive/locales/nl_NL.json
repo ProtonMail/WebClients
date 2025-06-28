@@ -237,6 +237,9 @@
       "Copy address": [
         "Adres kopiëren"
       ],
+      "Copy alias “${ name }”": [
+        "Kopieer alias \"${ name }\""
+      ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
@@ -374,12 +377,6 @@
       "Download logs": [
         "Logboeken downloaden"
       ],
-      "Download without scanning": [
-        "Downloaden zonder scannen"
-      ],
-      "Download without scanning (${ count })": [
-        "Download zonder scannen (${ count })"
-      ],
       "Drive Locked": [
         "Drive versleuteld"
       ],
@@ -428,6 +425,9 @@
       "Export selection as .vcf": [
         "Exporteer selectie als .vcf"
       ],
+      "Export system log": [
+        "Exporteer systeemlogboek"
+      ],
       "Fit to window": [
         "Passend in venster"
       ],
@@ -452,17 +452,26 @@
       "Get link": [
         "Link krijgen"
       ],
+      "Get secure storage for ${ simplePriceString }": [
+        "Krijg veilige opslag voor ${ simplePriceString }"
+      ],
       "Get Started": [
         "Aan de slag"
       ],
       "Get the apps": [
         "De apps downloaden"
       ],
+      "Get the writing assistant": [
+        "Verkrijg de schrijfassistent"
+      ],
       "Get verification code": [
         "Krijg verificatie code"
       ],
       "Go back": [
         "Ga terug"
+      ],
+      "Go back to album “${ albumName }“": [
+        "Ga terug naar album “${ albumName }“"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Ga naar ${ DRIVE_SHORT_APP_NAME }"
@@ -491,11 +500,17 @@
       "Help and resources": [
         "Hulp en bronnen"
       ],
+      "Hide": [
+        "Verbergen"
+      ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
       ],
       "Hide download options": [
         "Verberg download opties"
+      ],
+      "Hide more benefits": [
+        "Toon minder voordelen"
       ],
       "Image could not be loaded with tracker protection.": [
         "Afbeelding kan niet worden geladen met trackerbeveiliging."
@@ -538,6 +553,9 @@
       ],
       "Keep my subscription": [
         "Mijn abonnement behouden"
+      ],
+      "Keep subscription": [
+        "Abonnement behouden"
       ],
       "Later": [
         "Later"
@@ -617,6 +635,9 @@
       "More actions": [
         "Meer acties"
       ],
+      "More benefits": [
+        "Meer voordelen"
+      ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
@@ -656,6 +677,9 @@
       "New shared album": [
         "Nieuw gedeeld album"
       ],
+      "New spreadsheet": [
+        "Nieuw spreadsheet"
+      ],
       "Next": [
         "Volgende"
       ],
@@ -676,9 +700,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Openen in ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Navigatie openen"
@@ -845,6 +866,12 @@
       "Save photos and remove": [
         "Sla foto's op en verwijder ze"
       ],
+      "Scan & Download": [
+        "Scan & download"
+      ],
+      "Scan & Download (${ count })": [
+        "Scan & download (${ count })"
+      ],
       "Search": [
         "Zoeken"
       ],
@@ -926,6 +953,9 @@
       "Show more": [
         "Meer weergeven"
       ],
+      "Show more benefits": [
+        "Toon meer voordelen"
+      ],
       "Show more download options": [
         "Toon meer download opties"
       ],
@@ -956,9 +986,6 @@
       "Start recovering": [
         "Herstellen starten"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Vanaf ${ priceUnlimited }"
-      ],
       "Stay": [
         "Blijf"
       ],
@@ -980,6 +1007,9 @@
       "Take a tour": [
         "Volg een rondleiding"
       ],
+      "This album is empty": [
+        "Dit album is leeg."
+      ],
       "Toggle Calendar app": [
         "Agenda app kiezen"
       ],
@@ -997,6 +1027,9 @@
       ],
       "Try another method": [
         "Andere methode proberen"
+      ],
+      "Try it now": [
+        "Probeer het nu"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Probeer opnieuw op te slaan. Opslaan mislukt door: ${ saveError }"
@@ -1027,9 +1060,6 @@
       ],
       "Upgrade now": [
         "Nu upgraden"
-      ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Upgrade naar ${ BRAND_NAME } Unlimited"
       ],
       "Upload": [
         "Uploaden"
@@ -1074,7 +1104,7 @@
         "Gebruik een andere betaalmethode"
       ],
       "Use authentication code": [
-        "Verificatiecode gebruiken"
+        "Authenticatiecode gebruiken"
       ],
       "Use for sending": [
         "Gebruiken om te versturen"
@@ -1174,6 +1204,138 @@
         "Door nu te verlaten, worden sommige afspraken mogelijk niet geïmporteerd"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Pak deze deal"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "200 GB storage": [
+        "200 GB opslagruimte"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB versleutelde opslagruimte"
+      ],
+      "Add unlimited credit cards": [
+        "Onbeperkt aantal kredietkaarten toevoegen"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle premium functies van ${ BRAND_NAME } Mail, Pass, VPN, Drive, en Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkeer advertenties, trackers en malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijs. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Verdubbel uw versleutelde opslag – krijg 1 TB voor al uw gegevens"
+      ],
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordbeheerder"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Hier is een exclusief geschenk om onze reis samen te vieren."
+      ],
+      "High speed streaming with VPN": [
+        "Streamen aan hoge snelheid met VPN"
+      ],
+      "of privacy": [
+        "van privacy"
+      ],
+      "Online document editor": [
+        "Online document editor"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online privacy voor maximaal 2 personen"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online privacy voor het hele gezin (tot 6 gebruikers)"
+      ],
+      "Protect up to 10 devices": [
+        "Bescherm tot 10 apparaten"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Bespaar veel op premium Drive functies met een tijdelijke korting."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Bespaar veel op premium Mail functies met een tijdelijke korting."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Bespaar veel op premium Pass functies met een tijdelijke korting."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Bespaar veel op premium VPN functies met een tijdelijke korting."
+      ],
+      "Save time with built-in 2FA": [
+        "Bespaar tijd met ingebouwde 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Beveiligde e-mail met onbeperkt aantal aliassen"
+      ],
+      "Select any server": [
+        "Selecteer een server"
+      ],
+      "Share passwords easily": [
+        "Eenvoudig wachtwoorden delen"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me adres"
+      ],
+      "Stream your favorite content": [
+        "Stream uw favoriete inhoud"
+      ],
+      "thanks to you": [
+        "dankzij u"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Verdrievoudig uw versleutelde opslag – krijg 3 TB voor al uw gegevens"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ],
+      "years": [
+        "jaren"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumaanbieding"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "/ month": [
+        "/ maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "15 months": [
+        "15 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
+      ],
+      "30 months": [
+        "30 maanden"
+      ],
+      "for ${ durationDeal }": [
+        "voor ${ durationDeal }"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-applicaties"
@@ -1202,6 +1364,14 @@
       ],
       "Unsupported event": [
         "Niet-ondersteunde afspraak"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ cycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
       ]
     },
     "Badge": {
@@ -1376,9 +1546,6 @@
       ],
       "Monthly": [
         "Maandelijks"
-      ],
-      "New!": [
-        "Nieuw!"
       ],
       "Two-year": [
         "Tweejaarlijks"
@@ -1572,6 +1739,14 @@
       ],
       "Expand": [
         "Uitvouwen"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } ?": [
+        "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME } toevoegen"
       ]
     },
     "color": {
@@ -2170,9 +2345,6 @@
       "Macao": [
         "Macau"
       ],
-      "Macedonia": [
-        "Noord-Macedonië"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2633,9 +2805,6 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen verwijderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Krijg eenvoudig toegang tot uw e-mail en agenda op desktop en mobiel."
       ],
@@ -2663,9 +2832,6 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Krijg onbeperkte aliassen en 500 GB opslagruimte met ${ PLAN_NAMES[PLANS.BUNDLE] }."
-      ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
       ],
@@ -2677,9 +2843,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Bespaar tijd door met contactgroepen iedereen tegelijk e-mails te sturen. Ontgrendel deze en andere premium-functies wanneer u upgrade."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Stel een methode voor gegevensherstel in om gegevensverlies te voorkomen."
@@ -2707,9 +2870,6 @@
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Upgrade naar ${ planName } om bestanden te blijven delen met bewerkingsrechten"
-      ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Upgrade uw account om ${ PROTON_SENTINEL_NAME } te activeren, onze geavanceerde AI-gedreven beveiligingsoplossing met toegewijde 24/7 deskundige ondersteuning."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wilt samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
@@ -3070,11 +3230,17 @@
       "Failed to copy photo to album": [
         "Kopiëren van foto naar album is mislukt."
       ],
+      "Failed to create folder": [
+        "Mislukt om map aan te maken"
+      ],
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
       ],
-      "Failed to save photo to your Drive": [
-        "Kan de foto niet opslaan in uw Drive"
+      "Failed to move items": [
+        "Items verplaatsen mislukt"
+      ],
+      "Failed to save some photos to your Drive": [
+        "Kan sommige foto's niet opslaan in uw Drive"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Bestand \"${ item.name }\" kan niet worden geüpload vanwege \"${ error }\" fout"
@@ -3805,7 +3971,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME } account."
       ],
       "Security key": [
         "Beveiligingssleutel"
@@ -3912,6 +4078,9 @@
       ],
       "Create new shared album": [
         "Nieuw gedeeld album maken"
+      ],
+      "Drawer": [
+        "Zijpaneel"
       ],
       "Rename album": [
         "Albumnaam wijzigen"
@@ -4255,8 +4424,17 @@
       "Import from ${ provider }": [
         "Importeer uit ${ provider }"
       ],
-      "Other": [
-        "Overig"
+      "Import from Google": [
+        "Importeer uit Google"
+      ],
+      "Import from other": [
+        "Importeer uit andere"
+      ],
+      "Import from Outlook": [
+        "Importeer uit Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importeer uit Outlook"
       ]
     },
     "Import warning": {
@@ -4358,8 +4536,8 @@
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } in de Play Store"
       ],
-      "${ email } invited you to join **${ albumName }**": [
-        "${ email } heeft u uitgenodigd om lid te worden van **${ albumName }**"
+      "${ email } invited you to join ${ albumName }": [
+        "${ email } heeft u uitgenodigd om lid te worden van ${ albumName }"
       ],
       "${ errorCount } failed": [
         "${ errorCount } mislukt",
@@ -4582,6 +4760,9 @@
       "Anyone with this link can access your folder.": [
         "Iedereen met deze link heeft toegang tot deze map."
       ],
+      "Apr": [
+        "Apr"
+      ],
       "Are you sure you want to discard your changes?": [
         "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
       ],
@@ -4606,8 +4787,14 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Voer minstens ${ BETTER_PASSWORD_LENGTH } tekens in"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Aan het einde van uw proefversie ${ boldCancelDate } wordt u gedowngraded naar ${ boldProtonFree }. Alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
       "Attention required": [
         "Aandacht vereist"
+      ],
+      "Aug": [
+        "Aug"
       ],
       "Automated Recovery ${ formattedDate }": [
         "Automatisch herstel ${ formattedDate }"
@@ -4632,6 +4819,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Boost de merkidentiteit van uw organisatie en creëer een consistentere online ervaring voor uw gebruikers."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Breng uw berichten, contacten en agenda's naar ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
@@ -4752,6 +4942,9 @@
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
       ],
+      "Dec": [
+        "Dec"
+      ],
       "Decrypting files": [
         "Bestanden ontsleutelen"
       ],
@@ -4862,7 +5055,7 @@
         "Vul login wachtwoord in"
       ],
       "Enter the code from your authenticator app": [
-        "Voer de code van uw verificatie-app in"
+        "Voer de code van uw authenticatie app in"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
@@ -4889,6 +5082,9 @@
       "Expired": [
         "Verlopen"
       ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "Diagnostische logboeken exporteren voor technische ondersteuning en probleemoplossing"
+      ],
       "Failed": [
         "Mislukt"
       ],
@@ -4900,6 +5096,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Het is niet gelukt om een beveiligde link te openen. De reden is: ${ error }"
+      ],
+      "Feb": [
+        "Feb"
       ],
       "File \"${ name }\" was deleted during download": [
         "Bestand \"${ name }\" werd verwijderd tijdens downloaden"
@@ -4982,8 +5181,14 @@
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
       ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Als u van gedachten verandert, kunt u op elk moment opnieuw abonneren. Jammer dat u vertrekt!"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
+      ],
+      "If you have a large photo library, it might take some time.": [
+        "Als u een grote fotobibliotheek hebt, kan het enige tijd duren."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Als u een van deze heeft, ga dan verder naar ${ BRAND_NAME }-account instelling om het deblokkeer proces voort te zetten."
@@ -5067,8 +5272,17 @@
       "It’s easy and secure": [
         "Het is eenvoudig en veilig"
       ],
+      "Jan": [
+        "Jan"
+      ],
       "JCB logo": [
         "JCB-logo"
+      ],
+      "Jul": [
+        "Jul"
+      ],
+      "Jun": [
+        "Jun"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
@@ -5133,12 +5347,18 @@
       "Makes your account safer": [
         "Maakt uw account veiliger"
       ],
+      "Mar": [
+        "Mrt"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakters"
+      ],
+      "May": [
+        "Mei"
       ],
       "Medium Priority": [
         "Middelmatige prioriteit"
@@ -5215,11 +5435,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Opmerking: gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ DRIVE_APP_NAME } hebt geïnstalleerd."
       ],
+      "Nov": [
+        "Nov"
+      ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
       "Numbers": [
         "Nummers"
+      ],
+      "Oct": [
+        "Okt"
       ],
       "of": [
         "van"
@@ -5235,6 +5461,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
+      ],
+      "One time import": [
+        "Eenmalige import"
       ],
       "Only the people with the link and the password can access this file.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot dit bestand."
@@ -5299,11 +5528,14 @@
       "Photo is set as album cover": [
         "Foto is ingesteld als albumhoes"
       ],
-      "Photo saved to your Drive": [
-        "Foto opgeslagen in uw Drive"
-      ],
       "Photo was copied to stream and marked favorite there.": [
         "Foto is gekopieerd naar de stream en daar als favoriet gemarkeerd."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Foto('s) opgeslagen in uw Drive"
+      ],
+      "Photos": [
+        "Foto's"
       ],
       "Photos have been successfully recovered.": [
         "Foto's zijn succesvol hersteld."
@@ -5445,9 +5677,6 @@
       "Restore": [
         "Herstel"
       ],
-      "Restore is in progress. This can take a few seconds.": [
-        "Bezig met herstellen. Dit kan enkele seconden duren."
-      ],
       "Restore Photos": [
         "Foto's herstellen"
       ],
@@ -5475,9 +5704,6 @@
       "Select a folder to move to.": [
         "Kies een map om naartoe te verplaatsen"
       ],
-      "Select a service provider to start": [
-        "Selecteer een dienstverlener om te beginnen"
-      ],
       "Select all items for": [
         "Selecteer alle items voor"
       ],
@@ -5496,6 +5722,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
       ],
+      "Sep": [
+        "Sep"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalingen zijn momenteel niet beschikbaar. Probeer het later nogmaals."
       ],
@@ -5510,9 +5739,6 @@
       ],
       "Setting up ${ feature }…": [
         "Instellen van ${ feature }…"
-      ],
-      "Setting up Albums & Filters. This might take a few minutes.": [
-        "Albums en filters instellen. Dit kan enkele minuten duren."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
@@ -5529,14 +5755,23 @@
       "Shared": [
         "Gedeeld"
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "Gedeeld door ${ rootLink.signatureEmail }"
+      "Shared by ": [
+        "Gedeeld door "
+      ],
+      "Shared by ${ sharedBy }": [
+        "Gedeeld door ${ sharedBy }"
+      ],
+      "Shared by you": [
+        "Gedeeld door u"
       ],
       "Shared link not found": [
         "Gedeelde link niet gevonden"
       ],
       "Shared with me": [
         "Gedeeld met mij"
+      ],
+      "Shared with you": [
+        "Gedeeld met u"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
@@ -5613,6 +5848,9 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
+      ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Bedankt om te kiezen voor ${ BRAND_NAME } om uw organisatie te beschermen."
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Bedankt voor uw abonnement. Veilig browsen begint nu."
@@ -5949,7 +6187,7 @@
         "Wanneer u verbinding maakt met VPN, gebruikt het versleutelingstechnologie om uw IP-adres te verbergen (een unieke code toegewezen aan uw apparaat)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "wordt hersteld naar de versie van ${ formattedRevisionDate }. Alle andere versies blijven bewaard."
@@ -6015,6 +6253,9 @@
       "You can close the tab or browser in the meantime.": [
         "In de tussentijd kunt u de tab of browser sluiten."
       ],
+      "You can close the tab. We'll work on it in the background.": [
+        "U kunt het tabblad sluiten. We werken er op de achtergrond aan."
+      ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
       ],
@@ -6073,18 +6314,24 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
+      ],
+      "You'll also lose access to ${ boldPlanTitle } features:": [
+        "U verliest ook toegang tot ${ boldPlanTitle } functies:"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
         "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
       ],
-      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "U staat op het punt de uitnodiging te weigeren om deel te nemen aan het ${ invitationName }album. Als u doorgaat, zult u niet in staat zijn om er toegang toe te krijgen, tenzij de eigenaar u opnieuw uitnodigt. Weet u zeker dat u wilt doorgaan?"
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "U staat op het punt de uitnodiging om deel te nemen aan het album ${ invitationName } af te wijzen. Als u doorgaat, zult u geen toegang meer hebben, tenzij de eigenaar u opnieuw uitnodigt. Weet u zeker dat u wilt doorgaan?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "U staat op het punt de uitnodiging te weigeren om deel te nemen aan het ${ invitationName }folder. Als u doorgaat, zult u niet in staat zijn om er toegang toe te krijgen, tenzij de eigenaar u opnieuw uitnodigt. Weet u zeker dat u wilt doorgaan?"
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "U staat op het punt de uitnodiging te weigeren om deel te nemen aan de ${ invitationName } folder. Als u doorgaat, zult u geen toegang meer hebben, tenzij de eigenaar u opnieuw uitnodigt. Weet u zeker dat u wilt doorgaan?"
       ],
-      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "U staat op het punt de uitnodiging te weigeren om deel te nemen aan het ${ invitationName }item. Als u doorgaat, zult u niet in staat zijn om er toegang toe te krijgen, tenzij de eigenaar u opnieuw uitnodigt. Weet u zeker dat u wilt doorgaan?"
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "U staat op het punt de uitnodiging te weigeren om deel te nemen aan het ${ invitationName } item. Als u doorgaat, zult u geen toegang meer hebben, tenzij de eigenaar u opnieuw uitnodigt. Weet u zeker dat u wilt doorgaan?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "U heeft het maximaal aantal adressen bereikt in de contactgroep(en):"
@@ -6137,6 +6384,12 @@
       "Your files will be encrypted and then saved.": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen."
       ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Uw gratis proefversie werd succesvol omgezet naar een ${ cycle }-maands abonnement. Uw verlengingsdatum is ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Uw gratis proefversie werd succesvol omgezet naar een maandelijks abonnement. Uw verlengingsdatum is ${ nextBillingDate }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Uw informatie is gevonden op ${ displayedDate }"
       ],
@@ -6188,6 +6441,15 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Uw abonnement wordt automatisch verlengd op ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Uw proefperiode eindigt over ${ timeRemaining }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "U verliest toegang tot ${ boldPlanTitle } op ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
       ]
     },
     "info": {
@@ -6276,6 +6538,9 @@
       "# of downloads": [
         "# downloads"
       ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } van ${ albumProgress.total }"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
@@ -6315,6 +6580,9 @@
       "Address": [
         "Adres"
       ],
+      "Alias title": [
+        "Alias titel"
+      ],
       "All": [
         "Alle"
       ],
@@ -6346,7 +6614,7 @@
         "Schermafbeelding(en) toevoegen"
       ],
       "Authenticator app": [
-        "Authenticator-app"
+        "Authenticatie app"
       ],
       "Beta Access": [
         "Bèta toegang"
@@ -6736,8 +7004,8 @@
       "Set recovery method": [
         "Herstelmethode instellen"
       ],
-      "Share a file": [
-        "Een bestand delen"
+      "Share a file, folder, or album": [
+        "Deel een bestand, map of album"
       ],
       "Shared": [
         "Gedeeld"
@@ -6807,9 +7075,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "Title": [
-        "Titel"
       ],
       "To: ${ toEmail }": [
         "Naar: ${ toEmail }"
@@ -6881,7 +7146,7 @@
         "Uw locatie"
       ],
       "Your password (admin)": [
-        "Uw wachtwoord (admin)"
+        "Uw wachtwoord (beheerder)"
       ]
     },
     "Label for contact group color": {
@@ -7115,11 +7380,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Uw account loopt het risico om te worden verwijderd. Om het verlies van gegevens te voorkomen vraag uw beheerder om te upgraden. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Uw opslag is vol. Om e-mails te verzenden of te ontvangen, maak ruimte vrij of ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Uw opslag is vol. Maak ruimte vrij om bestanden te uploaden of te synchroniseren of ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Uw opslag is vol. Om ${ BRAND_NAME } producten te kunnen blijven gebruiken, maakt u ruimte vrij of voert u een ${ cta } uit."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
@@ -7463,23 +7725,11 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Aan de slag voor ${ priceCoupon }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "Plannen vanaf ${ priceDrivePlus }"
       ],
-      "Starting from ${ pricing }": [
-        "Vanaf ${ pricing }"
-      ],
       "Upgrade": [
         "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7632,9 +7882,6 @@
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Automatisch spam en verwijderde berichten verwijderen"
-      ],
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
@@ -7676,9 +7923,6 @@
       ],
       "Custom fields": [
         "Aangepaste velden"
-      ],
-      "Custom snooze time": [
-        "Aangepaste snoozetijd"
       ],
       "Custom workspace branding": [
         "Aangepaste workspace branding"
@@ -7819,12 +8063,6 @@
       "Schedule and snooze emails for any time": [
         "E-mails plannen en snoozen wanneer u wilt"
       ],
-      "Schedule messages at any time": [
-        "Plan berichten in op ieder moment"
-      ],
-      "Search message content": [
-        "Doorzoek berichtinhoud"
-      ],
       "Secure Core servers": [
         "Secure Core-servers"
       ],
@@ -7961,9 +8199,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Berichten snoozen en ontvangen wanneer u wil"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ]
@@ -7979,6 +8214,12 @@
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd door end-to-end versleuteling."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
@@ -8040,9 +8281,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "Veilig toegang krijgen tot internet vanaf elke locatie met essentiële netwerkmonitoring."
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
       ],
@@ -8066,6 +8304,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Vanaf ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "De prijs van ${ priceCoupon } is alleen voor de eerste maand, hierna wordt uw abonnement automatisch verlengt voor ${ priceLine }. U kunt op ieder moment annuleren."
       ],
@@ -8359,7 +8600,8 @@
       "Require 2FA": [
         "2FA vereist"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "Ondersteuning voor ${ n } aangepast e-maildomein",
         "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
@@ -8465,6 +8707,9 @@
       "Access for the member removed": [
         "Toegang voor het lid verwijderd"
       ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Krijg toegang tot onze nieuwe Albums, Filters en meer door actie te ondernemen op uw vergrendelde volume. Herstel of verwijder deze nu om onmiddellijk van deze nieuwe functies te genieten."
+      ],
       "Access updated": [
         "Toegang bijgewerkt."
       ],
@@ -8482,6 +8727,9 @@
       ],
       "An invitation has been sent": [
         "Er is een uitnodiging verzonden"
+      ],
+      "Cannot load file or folder info": [
+        "Kan informatie over bestand of map niet laden"
       ],
       "Cannot load link": [
         "Kan koppelingen niet laden"
@@ -8595,6 +8843,12 @@
       "Share invitation declined": [
         "Deel-uitnodiging afgewezen"
       ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Sommige foto('s) konden niet toegevoegd worden aan ${ albumName }"
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Sommige foto('s) konden niet verwijderd worden uit ${ albumLink.name }"
+      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Sorry, we konden de map niet verwijderen omdat deze niet leeg is.",
         "Sorry, we kunnen de mappen niet verwijderen omdat ze niet leeg zijn."
@@ -8604,6 +8858,9 @@
       ],
       "Subfolder failed to be loaded": [
         "Submap kon niet geladen worden"
+      ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "De functie Albums is onderweg! We rollen deze geleidelijk uit — probeer het binnenkort opnieuw"
       ],
       "The document failed to be created": [
         "Het document kon niet aangemaakt worden"
@@ -8619,6 +8876,9 @@
       ],
       "The link to your item was deleted": [
         "De link naar uw item werd verwijderd"
+      ],
+      "The spreadsheet failed to be created": [
+        "De spreadsheet kon niet aangemaakt worden"
       ],
       "This item was not removed from your list": [
         "Dit item werd niet uit uw lijst verwijderd.",
@@ -8640,20 +8900,14 @@
       "Your photo(s) have been added to \"${ albumName }\"": [
         "Uw foto('s) zijn toegevoegd aan \"${ albumName }\""
       ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Uw foto('s) zijn verwijderd uit ${ albumLink.name }"
+      ],
       "Your settings failed to be saved": [
         "Uw instellingen konden niet worden bewaard"
       ],
       "Your settings have been changed successfully": [
         "Uw instellingen zijn succesvol gewijzigd."
-      ],
-      "⁠Some photo(s) could not be added to \"${ albumName }\"": [
-        "Sommige foto('s) konden niet worden toegevoegd aan \"${ albumName }\""
-      ],
-      "⁠Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Sommige foto('s) konden niet worden verwijderd uit ${ albumLink.name }"
-      ],
-      "⁠Your photo(s) have been removed from ${ albumLink.name }": [
-        "Uw foto('s) zijn verwijderd uit ${ albumLink.name }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8791,10 +9045,10 @@
       "Invite members": [
         "Nodig leden uit"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Misschien later"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Misschien later"
       ],
       "Select theme": [
@@ -8917,6 +9171,53 @@
         "Werk samen"
       ]
     },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "U kunt op elk moment annuleren vóór ${ cancelDate }."
+      ],
+      "Cancel anytime before then.": [
+        "U kunt op elk moment ervoor annuleren."
+      ],
+      "contact our support team": [
+        "neem contact op met ons support team"
+      ],
+      "Continue": [
+        "Ga verder"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Profiteer tot ${ trialEndsOnFormatted } van gratis beveiligingsfuncties voor bedrijven."
+      ],
+      "help center": [
+        "helpcentrum"
+      ],
+      "If you need help,": [
+        "Als u hulp nodig heeft,"
+      ],
+      "Once your full subscription starts...": [
+        "Zodra uw volledige abonnement ingaat..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Kunt u nog steeds annuleren binnen 30 dagen en evenredig terugbetaald krijgen."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "U kunt nog steeds annuleren binnen 30 dagen en een pro-rata restitutie krijgen."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "U kunt ${ planTitle } gebruiken totdat de proefversie eindigt en u wordt niets in rekening gebracht."
+      ],
+      "Your free trial has started": [
+        "Uw gratis proefversie is gestart"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Uw volledige ${ planTitle } abonnement begint op ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "U kunt kosteloos gebruikmaken van ${ planTitle } totdat de proefversie eindigt."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Toevoegen aan bestaande groep"
@@ -8948,6 +9249,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Toegang tot alle ${ BRAND_NAME }-apps en premium functies"
+      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
       ],
@@ -9069,6 +9373,9 @@
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
       ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "Alleen Euro wordt geaccepteerd voor SEPA. Uw valuta is gewijzigd. Gebruik de selector om uw keuze ongedaan te maken."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
       ],
@@ -9114,6 +9421,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
         "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Deze betaalmethode wordt uw nieuwe standaard voor alle toekomstige verlengingen."
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
@@ -9645,6 +9955,14 @@
         "Gedeeld door ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Nieuw werkblad"
+      ],
+      "Open in ${ appName }": [
+        "Openen in ${ appName }"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Niet ondertekenen"
@@ -9735,8 +10053,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Dit abonnement wordt na twee jaar automatisch verlengd tegen dezelfde prijs totdat het wordt geannuleerd."
+      "The special offer is valid for the first 2 years.": [
+        "De speciale aanbieding is geldig voor de eerste 2 jaar."
       ],
       "Your subscription will renew at the same rate every year.": [
         "Uw abonnement zal elk jaar met hetzelfde tarief worden verlengd."
@@ -9817,6 +10135,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standaardprijs ${ amount } voor 30 maanden"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "De speciale aanbieding is geldig voor de eerste 2 jaar"
       ]
     },
     "specialoffer: Title": {
@@ -9934,6 +10255,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Maak ruimte vrij of upgrade voor meer opslag om bestanden te kunnen blijven uploaden of synchroniseren."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Om ${ BRAND_NAME } producten te kunnen blijven gebruiken, maakt u ruimte vrij of voert u een ${ upgrade } uit"
+      ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "Maak ruimte vrij of ${ upgrade } om mail te verzenden of te ontvangen"
       ],
@@ -9959,11 +10283,11 @@
       "Your ${ appStorage } is full": [
         "Uw ${ appStorage } is vol"
       ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Uw ${ storage } is ${ percentage }% vol. ${ cta }."
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Uw ${ productString } zit ${ percentage }% vol. ${ cta }."
       ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Uw ${ storage } is vol. ${ cta }."
+      "Your ${ productString } is full. ${ cta }.": [
+        "Uw ${ productString } zit vol. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Uw opslag is ${ percentage }% vol. ${ cta }."
@@ -9990,21 +10314,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Wordt om de 2 jaar gefactureerd"
-      ],
-      "Billed every 6 months": [
-        "Elke 6 maanden gefactureerd"
-      ],
-      "Billed for 15 months": [
-        "U betaalt voor 15 maanden"
-      ],
-      "Billed for 18 months": [
-        "Gefactureerd voor 18 maanden"
-      ],
-      "Billed for 3 months": [
-        "Gefactureerd voor 3 maanden"
-      ],
-      "Billed for 30 months": [
-        "Gefactureerd voor 30 maanden"
       ],
       "Billed monthly": [
         "Maandelijks gefactureerd"
@@ -10034,9 +10343,9 @@
         "${ n } VPN-verbinding per gebruiker",
         "${ n } VPN-verbindingen per gebruiker"
       ],
-      "VPN connection for ${ n } devices per user": [
-        "VPN-verbinding voor ${ n } apparaat per gebruiker",
-        "VPN-verbinding voor ${ n } apparaten per gebruiker"
+      "VPN connection for ${ n } device per user": [
+        "VPN verbinding voor ${ n } apparaat per gebruiker",
+        "VPN verbinding voor ${ n } apparaten per gebruiker"
       ]
     },
     "Subscription change warning": {
@@ -10416,6 +10725,9 @@
       "Albums you've shared will appear here": [
         "Uw gedeelde albums zullen hier weergegeven worden"
       ],
+      "Securely share your favorite moments with friends and family using Albums.": [
+        "Deel uw favoriete momenten veilig met vrienden en familie via Albums."
+      ],
       "Your favorited photos will appear here": [
         "Uw favoriete foto's zullen hier weergegeven worden"
       ],
@@ -10666,6 +10978,24 @@
       ],
       "Videos": [
         "Video's"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dagen"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } uur",
+        "${ ceilHours } uren"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuut",
+        "${ ceilMinutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -11036,9 +11366,6 @@
         "${ searchView.numberOfResults } zoekresultaat",
         "${ searchView.numberOfResults } zoekresultaten"
       ],
-      "Get advanced protection": [
-        "Kies geavanceerde bescherming"
-      ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
       ],
@@ -11145,6 +11472,9 @@
       "Network error": [
         "Netwerkfout"
       ],
+      "Newsletters view": [
+        "Nieuwsbrievenoverzicht"
+      ],
       "Night theme": [
         "Nacht thema"
       ],
@@ -11231,6 +11561,9 @@
       ],
       "Phone numbers": [
         "Telefoonnummers"
+      ],
+      "Photo albums are here!": [
+        "Fotoalbums zijn hier!"
       ],
       "Photos": [
         "Foto's"
@@ -11329,6 +11662,9 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
+      "Setting up Albums & Filters": [
+        "Albums & Filters instellen"
+      ],
       "Settings": [
         "Instellingen"
       ],
@@ -11380,6 +11716,9 @@
       "Stop transfers?": [
         "Overdrachten stoppen?"
       ],
+      "Subscription canceled": [
+        "Abonnement opgezegd"
+      ],
       "Summary": [
         "Overzicht"
       ],
@@ -11410,17 +11749,14 @@
       "Type": [
         "Soort"
       ],
-      "Unlock contacts groups": [
-        "Ontgrendel contactgroepen"
-      ],
       "Untitled document ${ date }": [
         "Naamloos document ${ date }"
       ],
+      "Untitled spreadsheet ${ date }": [
+        "Naamloos spreadsheet ${ date }"
+      ],
       "Upgrade complete!": [
         "Upgrade voltooid!"
-      ],
-      "Upgrading your Photos experience": [
-        "Uw Foto's-ervaring upgraden"
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"
@@ -11491,6 +11827,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
       ],
+      "Your ${ planName } subscription has started": [
+        "Uw ${ planName } abonnement is ingegaan"
+      ],
       "Your 3 GB bonus": [
         "Uw 3 GB bonus"
       ],
@@ -11505,6 +11844,10 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
+      ],
+      "Your free trial ends in ${ trialDurationFormatted } day": [
+        "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dag",
+        "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dagen"
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
@@ -11753,9 +12096,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
       ],
-      "2 consecutive dots are not allowed": [
-        "2 opeenvolgende punten zijn niet toegestaan"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
         "Weet u zeker dat u ${ count } contacten permanent wilt verwijderen?"
@@ -11769,35 +12109,11 @@
       "Are you sure you want to permanently delete this contact?": [
         "Weet u zeker dat u dit contact permanent wilt verwijderen?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Kan niet starten met een punt"
-      ],
-      "Cannot contain a dot at the end": [
-        "Kan niet eindigen met een punt"
-      ],
       "Contacts could not be merged": [
         "Contactpersonen konden niet samengevoegd worden"
       ],
-      "Expiration Date is not in the format MM/YY": [
-        "Vervaldatum is niet in het formaat MM/JJ"
-      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
-      ],
-      "Invalid alias prefix": [
-        "Ongeldig aliasvoorvoegsel"
-      ],
-      "Missing alias prefix": [
-        "Ontbrekend aliasvoorvoegsel"
-      ],
-      "Missing alias suffix": [
-        "Ontbrekend alias-achtervoegsel"
-      ],
-      "Name is required": [
-        "Naam is vereist."
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Alleen alfanumerieke kleine letters, punten, koppeltekens en underscores zijn toegestaan"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
@@ -11807,9 +12123,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Enkele contactpersonen die moeten worden samengevoegd bevatten fouten. Controleer ze individueel"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Het aliasvoorvoegsel mag niet langer zijn dan 40 tekens"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "De gegevens van de contactpersoon zijn beschadigd en kunnen niet worden weergegeven."
@@ -11837,9 +12150,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "We konden de mailserver niet verifiëren. Als u het vertrouwt dan kan u deze verificatie overslaan."
-      ],
-      "You must select at least one mailbox": [
-        "U moet ten minste één mailbox selecteren"
       ],
       "You will lose any customization you made so far.": [
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."

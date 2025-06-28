@@ -45,11 +45,20 @@
       "Add": [
         "Добавить"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "Добавьте ${ photoCount } фото в новый альбом",
+        "Добавьте ${ photoCount } фото в новый альбом",
+        "Добавьте ${ photoCount } фото в новый альбом",
+        "Добавьте ${ photoCount } фото в новый альбом"
+      ],
       "Add account": [
         "Добавить аккаунт"
       ],
       "Add address": [
         "Добавить адрес"
+      ],
+      "Add another account": [
+        "Добавить другой аккаунт"
       ],
       "Add birthday": [
         "Добавить день рождения"
@@ -81,6 +90,12 @@
       "Add photos": [
         "Добавить фото"
       ],
+      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
+        "Добавить в “${ album.name }” (${ album.photoCount } фото)",
+        "Добавить в “${ album.name }” (${ album.photoCount } фото)",
+        "Добавить в “${ album.name }” (${ album.photoCount } фото)",
+        "Добавить в “${ album.name }” (${ album.photoCount } фото)"
+      ],
       "Add to album": [
         "Добавить в альбом"
       ],
@@ -106,7 +121,7 @@
         "Требуется внимание"
       ],
       "Authenticate": [
-        "Аутентифицировать"
+        "Аутентификация"
       ],
       "Back": [
         "Назад"
@@ -177,6 +192,9 @@
       "Close transfers": [
         "Закрыть окно передач"
       ],
+      "Collaborate on documents": [
+        "Совместно работайте над документами"
+      ],
       "Collapse": [
         "Свернуть"
       ],
@@ -194,6 +212,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Подтвердите открытие ссылки ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Подключить приложения и устройства"
+      ],
+      "Connect to video conferencing": [
+        "Подключайтесь к видеоконференциям"
       ],
       "Contact group": [
         "Группа контактов"
@@ -345,6 +369,9 @@
       "Download": [
         "Скачать"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Скачать приложения ${ DRIVE_APP_NAME }"
+      ],
       "Download (${ count })": [
         "Скачать (${ count })"
       ],
@@ -356,12 +383,6 @@
       ],
       "Download logs": [
         "Скачать журналы"
-      ],
-      "Download without scanning": [
-        "Скачать без сканирования"
-      ],
-      "Download without scanning (${ count })": [
-        "Скачать без сканирования (${ count })"
       ],
       "Drive Locked": [
         "Хранилище заблокировано"
@@ -438,11 +459,20 @@
       "Get Started": [
         "Начать"
       ],
+      "Get the apps": [
+        "Получить приложения"
+      ],
+      "Get the writing assistant": [
+        "Получить помощник по написанию"
+      ],
       "Get verification code": [
         "Получить проверочный код"
       ],
       "Go back": [
         "Назад"
+      ],
+      "Go back to album “${ albumName }“": [
+        "Вернуться к альбому “${ albumName }“"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Перейдите в ${ DRIVE_SHORT_APP_NAME }"
@@ -464,6 +494,15 @@
       ],
       "Grid layout": [
         "Сеточный макет"
+      ],
+      "Help and feedback": [
+        "Помощь и обратная связь"
+      ],
+      "Help and resources": [
+        "Помощь и информация"
+      ],
+      "Hide": [
+        "Скрыть"
       ],
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
@@ -491,6 +530,9 @@
       ],
       "Import emails": [
         "Импортировать электронную почту"
+      ],
+      "Import emails, calendars, contacts": [
+        "Импорт электронных писем, календарей и контактов"
       ],
       "Import from .csv or vCard": [
         "Импорт из .csv или vCard"
@@ -522,6 +564,9 @@
       "Leave": [
         "Оставить"
       ],
+      "Leave album": [
+        "Покинуть альбом"
+      ],
       "Let's talk": [
         "Свяжитесь с нами"
       ],
@@ -537,8 +582,14 @@
       "Loading verification": [
         "Загружается проверка"
       ],
+      "Manage advanced account protections": [
+        "Управление расширенной защитой аккаунта"
+      ],
       "Manage folders": [
         "Управление папками"
+      ],
+      "Manage groups": [
+        "Управлять группами"
       ],
       "Manage labels": [
         "Управление ярлыками"
@@ -548,6 +599,9 @@
       ],
       "Manage share": [
         "Управление общим ресурсом"
+      ],
+      "Manage users/addresses": [
+        "Управление пользователями/адресами"
       ],
       "Mark as favorite": [
         "Отметить как избранное"
@@ -582,6 +636,9 @@
       "More options": [
         "Дополнительные параметры"
       ],
+      "More options for accounts": [
+        "Больше настроек для аккаунтов"
+      ],
       "Move": [
         "Переместить"
       ],
@@ -609,6 +666,9 @@
       "New message": [
         "Новое сообщение"
       ],
+      "New shared album": [
+        "Новый общий альбом"
+      ],
       "Next": [
         "Далее"
       ],
@@ -629,9 +689,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "Открыть в ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Открыть панель навигации"
@@ -692,6 +749,9 @@
       ],
       "Remove bonuses": [
         "Удалить бонусы"
+      ],
+      "Remove button": [
+        "Удалить кнопку"
       ],
       "Remove device": [
         "Удалить устройство"
@@ -828,8 +888,23 @@
       "Set as album cover": [
         "Сделать обложкой альбома"
       ],
+      "Set as cover": [
+        "Установить как обложку"
+      ],
+      "Set recovery methods": [
+        "Установить методы восстановления"
+      ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
+      ],
+      "Set up 2FA": [
+        "Настроить двухфакторную аутентификацию"
+      ],
+      "Set up a custom domain": [
+        "Настроить пользовательский домен"
+      ],
+      "Set up email forwarding": [
+        "Настройка пересылки писем"
       ],
       "Settings": [
         "Настройки"
@@ -848,6 +923,9 @@
       ],
       "Share via link": [
         "Поделиться по ссылке"
+      ],
+      "Share your calendar with your team": [
+        "Делитесь вашим календарем со своей командой"
       ],
       "Sharing options": [
         "Параметры совместного доступа"
@@ -888,9 +966,6 @@
       "Start recovering": [
         "Начать восстановление"
       ],
-      "Starting from ${ priceUnlimited }": [
-        "Начиная с ${ priceUnlimited }"
-      ],
       "Stay": [
         "Остаться"
       ],
@@ -912,6 +987,9 @@
       "Take a tour": [
         "Ознакомительный тур"
       ],
+      "This album is empty": [
+        "Этот альбом пуст."
+      ],
       "Toggle Calendar app": [
         "Переключить на приложение Календарь"
       ],
@@ -932,6 +1010,9 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Попробуйте сохранить еще раз. Не удалось сохранить из-за: ${ saveError }"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Включить ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Undo": [
         "Отменить"
@@ -957,11 +1038,11 @@
       "Upgrade now": [
         "Улучшить сейчас"
       ],
-      "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Улучшить до ${ BRAND_NAME } Unlimited"
-      ],
       "Upload": [
         "Загрузить"
+      ],
+      "Upload and share files": [
+        "Загружайте и делитесь файлами"
       ],
       "Upload anyway": [
         "Все равно загрузить"
@@ -975,6 +1056,9 @@
       "Upload folder": [
         "Загрузить папку"
       ],
+      "Upload from computer": [
+        "Загрузить с компьютера"
+      ],
       "Upload photos": [
         "Загрузить фото"
       ],
@@ -984,6 +1068,12 @@
       "Use ${ label } theme": [
         "Использовать тему ${ label }"
       ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Используйте ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Используйте ${ VPN_SHORT_APP_NAME } для обеспечения конфиденциальности данных"
+      ],
       "Use a different card": [
         "Использовать другую карту"
       ],
@@ -991,13 +1081,13 @@
         "Использовать другой способ оплаты"
       ],
       "Use authentication code": [
-        "Используйте код аутентификации"
+        "Использовать код аутентификации"
       ],
       "Use for sending": [
         "Использовать для отправки"
       ],
       "Use recovery code": [
-        "Использовать код восстановления"
+        "Использовать код восстановлени"
       ],
       "Verify": [
         "Подтвердить"
@@ -1074,6 +1164,9 @@
       "${ price } per domain": [
         "${ price } за домен"
       ],
+      "${ price } per seat": [
+        "${ price } за лицензию"
+      ],
       "${ price } per user": [
         "${ price } за пользователя"
       ],
@@ -1126,6 +1219,14 @@
       ],
       "Unsupported event": [
         "Событие не поддерживается"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается раз в ${ cycle } мес. ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
       ]
     },
     "Badge": {
@@ -1230,11 +1331,17 @@
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
       ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Неограниченное количество имен пользователей, кредитных карт, псевдонимов hide-my-email и многое другое"
+      ],
       "Use your own email domain": [
         "Используйте свой собственный домен электронной почты"
       ],
       "Version history": [
         "История версий"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1292,6 +1399,9 @@
       ],
       "Annually": [
         "Ежегодно"
+      ],
+      "Lifetime": [
+        "Пожизненная"
       ],
       "Monthly": [
         "Ежемесячно"
@@ -1492,6 +1602,14 @@
       ],
       "Expand": [
         "Развернуть"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } ?": [
+        "${ LUMO_APP_NAME } — это искусственный интеллект, ориентированный на конфиденциальность, который помогает вам выполнять больше задач, сохраняя ваши данные в безопасности. Раскройте его полный потенциал и наслаждайтесь ранним доступом к новым функциям по мере их появления."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Добавить приложение ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -2090,9 +2208,6 @@
       "Macao": [
         "Макао"
       ],
-      "Macedonia": [
-        "Македония"
-      ],
       "Madagascar": [
         "Мадагаскар"
       ],
@@ -2466,6 +2581,31 @@
         "Аландские острова"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "За все службы ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "За ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "За ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Для ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "За ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/месяц"
@@ -2495,14 +2635,32 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } в ${ DRIVE_APP_NAME } позволяет вам работать вместе с другими людьми в защищенной и зашифрованной среде."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Добавляйте папки и файлы в ${ DRIVE_APP_NAME } и приглашайте членов команды для просмотра или изменения."
+      ],
       "Also included": [
         "Также включены"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Автоматически пересылайте входящие сообщения на другой адрес электронной почты."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Сначала настройте это, чтобы активировать вашу организацию и настроить ваш адрес электронной почты."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Подключите CRM (управление взаимоотношениями с клиентами), веб-сайт, принтеры и многое другое."
+      ],
+      "Create groups you can email with a single address.": [
+        "Создавайте группы, в которые вы сможете отправлять электронные письма с одного адреса."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
@@ -2510,32 +2668,56 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Удаление контактов... Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это окно."
       ],
-      "Designed for users seeking heightened protection for their accounts.": [
-        "Создан для пользователей, желающих получить усиленную защиту своих аккаунтов."
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Получите легкий доступ к вашей электронной почте и календарю на компьютере и мобильных устройствах."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Легко синхронизируйте файлы с облаком с настольного компьютера и получайте к ним доступ с мобильного устройства."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Поощряйте использование двухфакторной аутентификации в вашей организации для обеспечения дополнительной безопасности."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Обеспечьте защищенный доступ к данным организации, даже если ваша команда работает удаленно или использует публичный WiFi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Обеспечьте высочайший уровень безопасности для вашего аккаунта с помощью программы ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Убедитесь, что вы по-прежнему можете получить доступ к своему аккаунту и данным, даже если вы потеряете ваш пароль ${ BRAND_NAME }."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Для плавного перехода на ${ BRAND_NAME } импортируйте данные из Google, Outlook и других приложений."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
-      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Получите неограниченное количество псевдонимов и 500 ГБ в облачном хранилище с ${ PLAN_NAMES[PLANS.BUNDLE] }."
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Поможет вашей команде защищенно хранить пароли к конфиденциальной деловой и клиентской информации."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Позволяет мгновенно добавлять ссылки на встречи к вашим приглашениям на события."
+      ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
-      ],
-      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Экономьте время, отправляя электронные письма всем сразу с помощью групп контактов. Разблокируйте эти и другие платные функции при обновлении."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Установите метод восстановления данных, чтобы предотвратить их потерю."
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Установите метод восстановления, чтобы не потерять доступ к своему аккаунту."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Настроить аккаунты для всех пользователей и пригласить их присоединиться к ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Упростите синхронизацию и планирование с общими календарями."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Чтобы убедиться в высшей безопасности вашего аккаунта, установите фразу для восстановления."
@@ -2546,11 +2728,17 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Чтобы импортировать контакты из Google или Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Обновите свой аккаунт, чтобы активировать ${ PROTON_SENTINEL_NAME }, наше передовое решение безопасности на основе искусственного интеллекта с круглосуточной поддержкой экспертов."
+      "To start, give your organization a name.": [
+        "Чтобы начать, дайте имя вашей организации."
+      ],
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Улучшите до тарифа ${ planName } для продолжения обмена файлами с правом изменения"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Перетаскивайте контакты, чтобы задавать им приоритет при объединении. Снимите галочку с контактов, которые вы не хотите объединять."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Воспользуйтесь этим руководством, чтобы ваша организация начала быстро получать выгоду от лучшей в отрасли экосистемы шифрования и приватности ${ BRAND_NAME }."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Используя группы контактов, вы можете отправлять письма всем членам группы одним щелчком."
@@ -2652,6 +2840,17 @@
         "Вы подписаны на ${ PLAN_NAMES[PLANS.PASS] } по специальной цене ${ price } в год. Перейдя на бесплатный план, вы навсегда потеряете скидку, даже если вы улучшите снова в будущем."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Скачать для Linux"
+      ],
+      "Download for macOS": [
+        "Скачать для macOS"
+      ],
+      "Download for Windows": [
+        "Скачать для Windows"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Открыть в ${ DRIVE_SHORT_APP_NAME }"
@@ -2668,6 +2867,11 @@
         "Приоритетная поддержка"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "ПРИМЕЧАНИЕ:\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "Описание:\n${ eventDescription }"
@@ -2679,6 +2883,12 @@
       ],
       "All events in this series were updated.": [
         "Все события в этой серии были обновлены."
+      ],
+      "Here's what changed:": [
+        "Вот что изменилось:"
+      ],
+      "NOTE:": [
+        "ПРИМЕЧАНИЕ:"
       ],
       "This event occurrence was canceled.": [
         "Частота этого события была отменена"
@@ -2743,6 +2953,9 @@
       ]
     },
     "Error": {
+      "\"${ sanitizedName }\" already exists": [
+        "\"${ sanitizedName }\" уже существует"
+      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } не может подключиться к вашему внешнему аккаунту"
       ],
@@ -2824,11 +3037,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Невозможно включить поиск контента. Пожалуйста, перезапустите приложение или очистите данные."
       ],
+      "Could not add to favorites": [
+        "Не удалось добавить в избранное"
+      ],
       "Could not open created vault": [
         "Не могу открыть созданное хранилище"
       ],
       "Could not open updated vault": [
         "Не могу открыть обновлённое хранилище"
+      ],
+      "Could not remove from favorites": [
+        "Не удалось удалить из избранного"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
@@ -2874,6 +3093,18 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Внешние приглашения временно отключены. Повторите попытку позже"
+      ],
+      "Failed to copy photo to album": [
+        "Не удалось скопировать фото в альбом"
+      ],
+      "Failed to load the STL preview": [
+        "Не удалось загрузить предварительный просмотр STL"
+      ],
+      "Failed to move items": [
+        "Не удалось переместить элементы"
+      ],
+      "Failed to save some photos to your Drive": [
+        "Не удалось сохранить некоторые фото в Drive"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Файл \"${ item.name }\" не может быть загружен из-за \"${ error }\" ошибки"
@@ -3177,6 +3408,12 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Попробуйте, используя только буквы, цифры и _.-"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Не удалось загрузить панель управления VPN. Проверьте ваше подключение и попробуйте снова."
+      ],
+      "Unable to set photo as cover": [
+        "Невозможно установить фото как обложку"
       ],
       "Unexpected error, we can't import the contacts": [
         "Неожиданная ошибка, мы не можем импортировать контакты"
@@ -3609,12 +3846,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
+        "Произошла ошибка при аутентификации с помощью ключа безопасности. Попробуйте снова."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
+        "Вставьте ключ безопасности, привязанный к аккаунту ${ BRAND_NAME }."
       ],
       "Security key": [
         "Ключ безопасности"
@@ -3731,16 +3968,37 @@
       "Create new album": [
         "Создать новый альбом"
       ],
+      "Create new shared album": [
+        "Создать новый общий альбом"
+      ],
+      "Rename album": [
+        "Переименовать альбом"
+      ],
       "Security Center": [
         "Центр безопасности"
       ]
     },
     "Heading": {
+      "Add ${ photoCount } photo to": [
+        "Добавить ${ photoCount } фото в",
+        "Добавить ${ photoCount } фото в",
+        "Добавить ${ photoCount } фото в",
+        "Добавить ${ photoCount } фото в"
+      ],
+      "Add to shared album": [
+        "Добавить в общий альбом"
+      ],
       "All albums": [
         "Все альбомы"
       ],
       "Recent": [
         "Недавние"
+      ],
+      "Share ${ photoCount } photo via": [
+        "Поделиться ${ photoCount } фото через",
+        "Поделиться ${ photoCount } фото через",
+        "Поделиться ${ photoCount } фото через",
+        "Поделиться ${ photoCount } фото через"
       ]
     },
     "Hint": {
@@ -4073,8 +4331,17 @@
       "Import from ${ provider }": [
         "Импортировать из ${ provider }"
       ],
-      "Other": [
-        "Другой"
+      "Import from Google": [
+        "Импортировать из Google"
+      ],
+      "Import from other": [
+        "Импортировать из другого"
+      ],
+      "Import from Outlook": [
+        "Импортировать из Outlook"
+      ],
+      "Import from Yahoo": [
+        "Импортировать из Yahoo"
       ]
     },
     "Import warning": {
@@ -4206,6 +4473,9 @@
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } в Play Store"
       ],
+      "${ email } invited you to join ${ albumName }": [
+        "${ email } пригласил вас присоединиться к ${ albumName }"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } не удался",
         "${ errorCount } не удались",
@@ -4241,6 +4511,12 @@
         "${ pausedCount } приостановлены",
         "${ pausedCount } приостановлены",
         "${ pausedCount } приостановлены"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } элемент",
+        "${ photoCount } элемента",
+        "${ photoCount } элементов",
+        "${ photoCount } элементов"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
@@ -4317,6 +4593,9 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } уже существует в этой папке."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } скрывает ваш IP-адрес, поэтому веб-сайты не могут вас идентифицировать."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } участник)",
         "(${ memberCount } участника)",
@@ -4325,6 +4604,12 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } в месяц)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Автоподключение**: Открывает и подключается к VPN, как только вы включаете устройство."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: Останавливает утечку данных, блокируя Интернет, если VPN неожиданно отключается."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонусного пространства"
@@ -4347,14 +4632,29 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Безопасное подключение необходимо при удаленной работе. VPN защищает данные компании от киберугроз и сохраняет приватность вашей работы."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN шифрует ваше подключение и скрывает ваш адрес IP, что значительно затрудняет отслеживание и контроль вашего просмотра веб-страниц."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN скрывает ваш адрес IP и шифрует ваши действия в браузере, благодаря чему веб-сайтам, рекламодателям и интернет-провайдерам сложнее впоследствии вас отследить."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN - это защищенный туннель между вашим устройством и Интернетом. Он скрывает ваше местоположение и активность от вашего интернет-провайдера (ISP) и посещаемых вами сайтов."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
       ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
+      ],
+      "Ad targeting": [
+        "Нацеливание рекламы"
       ],
       "Address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
@@ -4364,6 +4664,9 @@
       ],
       "Admin account allocation": [
         "Распределение аккаунтов администраторов"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Рекламодатели отслеживают ваш просмотр веб-страниц, чтобы показывать целевую рекламу. ${ VPN_APP_NAME } блокирует трекеры и рекламу, делая ваше подключение быстрее и улучшая работу в Интернете."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
@@ -4485,6 +4788,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Расширьте идентификацию бренда вашей организации и создайте более последовательный опыт работы в Интернете для ваших пользователей."
       ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Перенесите ваши сообщения, контакты и календари в ${ BRAND_NAME }."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
       ],
@@ -4535,6 +4841,9 @@
       ],
       "Conflict": [
         "Конфликт"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Подключитесь к ${ VPN_APP_NAME }, чтобы приватно просматривать веб-страницы"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Контакт назначен группе ${ contactGroupName }"
@@ -4677,9 +4986,6 @@
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
       ],
-      "Each code can only be used once": [
-        "Каждый код может быть использован только один раз"
-      ],
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
@@ -4717,7 +5023,7 @@
         "Введите пароль"
       ],
       "Enter the code from your authenticator app": [
-        "Введите код из приложения для аутентификации"
+        "Введите код из приложения-аутентификатора"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
@@ -4725,11 +5031,8 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введите код подтверждения. Цифра ${ digit }."
-      ],
       "Enter your own password (as organization admin).": [
-        "Введите собственный пароль (как администратор организации)."
+        "Введите свой пароль как администратора организации."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Оставшееся время: ${ estimatedMinutes } минута",
@@ -4803,6 +5106,9 @@
       "from the version history?": [
         "из истории версий?"
       ],
+      "Geoblocking": [
+        "Геоблокировка"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Получите приложение для резервного копирования фотографий с вашего телефона или загрузите их здесь."
       ],
@@ -4817,6 +5123,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Сначала перейдите в раздел \"Мои файлы\" и загрузите несколько файлов."
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Правительства и интернет-провайдеры могут отслеживать ваши действия в Интернете. Скрывая свой реальный адрес IP и шифруя свои действия, ваш просмотр веб-страниц становится приватным."
       ],
       "here": [
         "здесь"
@@ -4835,6 +5144,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
+      ],
+      "If you have a large photo library, it might take some time.": [
+        "Если у вас большая библиотека фотографий, это может занять некоторое время."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Если у вас есть одно из этого, перейдите к настройкам аккаунта ${ BRAND_NAME }, чтобы начать процесс разблокировки."
@@ -4868,6 +5180,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
+      ],
+      "In restrictive countries": [
+        "В странах, где действуют ограничения"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
@@ -4911,6 +5226,9 @@
       "Items moved to the trash will stay here until deleted": [
         "Элементы, перемещенные в корзину, будут находиться там до тех пор, пока не будут удалены"
       ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Лучше всего использовать VPN постоянно. А вот когда угрозы кибербезопасности могут быть самыми высокими:"
+      ],
       "It’s easy and secure": [
         "Он прост и безопасен"
       ],
@@ -4943,6 +5261,9 @@
       ],
       "Learn more": [
         "Узнать больше"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Узнайте, что делать ${ dataLeakedLink }"
       ],
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
@@ -5004,6 +5325,9 @@
       "More": [
         "Ещё"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Большинство публичных сетей WiFi безопасны, но в некоторых из них отсутствует защита, что подвергает вас киберугрозам. VPN шифрует ваш трафик, обеспечивая вам защиту."
+      ],
       "Moving files": [
         "Перемещение файлов"
       ],
@@ -5052,6 +5376,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Не все файлы были переданы. Попробуйте загрузить или скачать файлы еще раз."
       ],
+      "Not connected": [
+        "Нет подключения"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Примечание: данные все еще могут быть доступны локально на устройствах, на которых вы установили ${ DRIVE_APP_NAME }."
       ],
@@ -5064,6 +5391,9 @@
       "of": [
         "из"
       ],
+      "On public WiFi networks": [
+        "При использовании публичных сетей WiFi"
+      ],
       "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
         "После завершения этого процесса вы найдете копию восстановленных данных в новой папке под названием \"Автоматическое восстановление (сегодняшняя дата)\". Эта копия ваших данных не будет учитываться в квоте храненилища."
       ],
@@ -5073,11 +5403,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
+      "One time import": [
+        "Одноразовый импорт"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Только люди со ссылкой и паролем могут получить доступ к этому файлу."
       ],
       "Only the people with the link and the password can access this folder.": [
         "Только люди со ссылкой и паролем могут получить доступ к этой папке."
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Откройте руководство, чтобы узнать о рекомендуемых действиях и полезных ссылках."
       ],
       "or discover other features:": [
         "или откройте для себя другие возможности:"
@@ -5087,6 +5423,9 @@
       ],
       "Organization size": [
         "Размер организации"
+      ],
+      "Other accounts": [
+        "Другие аккаунты"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Наши предупреждения приоритизируют безопасность. Если вы не узнаёте ничего из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
@@ -5102,6 +5441,9 @@
       ],
       "Password copied to clipboard": [
         "Пароль скопирован в буфер обмена"
+      ],
+      "Password must have:": [
+        "Пароль должен содержать:"
       ],
       "Paused": [
         "Приостановлено"
@@ -5127,6 +5469,15 @@
       "Photo is set as album cover": [
         "Фотография установлена обложкой альбома"
       ],
+      "Photo was copied to stream and marked favorite there.": [
+        "Фотография была скопирована в ленту и помечена там как избранная."
+      ],
+      "Photo(s) saved to your Drive": [
+        "Фото сохранено(ы) в Drive"
+      ],
+      "Photos": [
+        "Фото"
+      ],
       "Photos have been successfully recovered.": [
         "Фотоснимки успешно восстановлены."
       ],
@@ -5141,6 +5492,9 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Для расшифровки и просмотра содержимого введите пароль."
+      ],
+      "Please fill in all required fields.": [
+        "Заполните все обязательные поля."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этим группам, НЕ будут удалены."
@@ -5226,6 +5580,9 @@
       "Primary": [
         "Основной"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Приватный просмотр (или режим «инкогнито») полезен только для того, чтобы скрыть ваши действия на устройстве. Он не позволяет браузеру сохранять историю и файлы cookie, но не делает вас невидимым. Ваш интернет-провайдер, администратор сети и посещаемые вами сайты все равно могут видеть, что вы делаете в Интернете."
+      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Конфиденциальный поиск включен. Теперь вы можете закрыть этот диалог и начать поиск файлов и папок."
       ],
@@ -5265,9 +5622,6 @@
       "Restore": [
         "Восстановить"
       ],
-      "Restore is in progress. This can take a few seconds.": [
-        "Восстановление идёт. Это может занять несколько секунд."
-      ],
       "Restore Photos": [
         "Восстановить фотографии"
       ],
@@ -5283,6 +5637,9 @@
       "Scan issue": [
         "Проблема сканирования"
       ],
+      "Scan the QR code with your mobile device": [
+        "Отсканируйте QR-код с вашего мобильного устройства"
+      ],
       "Search cannot be enabled in this browser": [
         "Поиск не может быть включен в этом браузере"
       ],
@@ -5291,9 +5648,6 @@
       ],
       "Select a folder to move to.": [
         "Выберите папку для перемещения."
-      ],
-      "Select a service provider to start": [
-        "Выберите поставщика услуг, чтобы начать"
       ],
       "Select all items for": [
         "Выберите все элементы для"
@@ -5322,6 +5676,9 @@
       "Session timed out": [
         "Время сеанса истекло"
       ],
+      "Set up your organization": [
+        "Настройка организации"
+      ],
       "Setting up ${ feature }…": [
         "Установка ${ feature }…"
       ],
@@ -5340,8 +5697,8 @@
       "Shared": [
         "В общем доступе"
       ],
-      "Shared by ${ rootLink.signatureEmail }": [
-        "${ rootLink.signatureEmail } поделился с вами."
+      "Shared by ": [
+        "Общий доступ предоставлен "
       ],
       "Shared link not found": [
         "Ссылка общего доступа не найдена"
@@ -5370,14 +5727,26 @@
       "Some files failed to upload. Try uploading the files again.": [
         "Не удалось загрузить некоторые файлы. Попробуйте загрузить файлы еще раз."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Некоторые правительства блокируют или ограничивают доступ к определенным веб-сайтам. VPN помогает обойти цензуру, при этом сохраняя ваши действия и личные данные конфиденциальными."
+      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Некоторые из ваших файлов больше недоступны. Восстановите доступ к своим файлам. ${ StartRecoveryButton }"
+      ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Некоторые фотографии в этом альбоме не сохранены на вашей ленте времени. Удаление этого альбома приведет к окончательному удалению этих фотографий."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Некоторые веб-сайты службы трансляций блокируют содержимое по регионам. VPN позволяет вам обходить эти ограничения и получать свободный доступ к Интернету."
       ],
       "Something went wrong, please try again later.": [
         "Что-то пошло не так. Пожалуйста, повторите попытку позже."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Оставайтесь на связи без усилий, включив следующие настройки VPN:"
       ],
       "Storage allocated to other users in this organisation": [
         "Хранилище, выделенное другим пользователям в этой организации"
@@ -5394,17 +5763,29 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Подписка обновляется каждый ${ cycle } месяц.",
+        "Подписка обновляется каждые ${ cycle } месяца.",
+        "Подписка обновляется каждые ${ cycle } месяцев.",
+        "Подписка обновляется каждые ${ cycle } месяцев."
+      ],
       "Subscription auto-renews every month.": [
         "Подписка автоматически обновляется каждый месяц."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
+      "Surveillance": [
+        "Надзор"
+      ],
       "Symbols (#$&)": [
         "Символы (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Спасибо за подписку. Защищенный просмотр веб-страниц начинается сейчас."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Акаунт может иметь новый ключ или могли быть взломаны следующие элементы: ${ items }. Открывайте только в том случае, если вы им доверяете."
@@ -5463,11 +5844,20 @@
       "This folder is empty": [
         "Эта папка пуста"
       ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Это название или псевдоним для вашей организации, который будут видеть ваши пользователи. Вы можете изменить его в любое время."
+      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Теперь это ваш ${ defaultEmailAddress } для отправки новых сообщений."
       ],
       "This item already exists in your library": [
         "Этот элемент уже существует в вашей библиотеке"
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Этот элемент не сохранен в вашей библиотеке Фото. Если вы удалите его из этого альбома, вы навсегда потеряете к нему доступ.",
+        "Некоторые из выбранных элементов не сохранены в библиотеке Фото. Если вы удалите их из этого альбома, вы навсегда потеряете к ним доступ.",
+        "Некоторые из выбранных элементов не сохранены в библиотеке Фото. Если вы удалите их из этого альбома, вы навсегда потеряете к ним доступ.",
+        "Некоторые из выбранных элементов не сохранены в библиотеке Фото. Если вы удалите их из этого альбома, вы навсегда потеряете к ним доступ."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
@@ -5478,8 +5868,14 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Эта ссылка была создана в предыдущей версии и не может быть изменена. Удалите эту ссылку и создайте новую, чтобы изменить настройки."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Это означает, что ваш интернет-провайдер и посещаемые вами сайты не смогут связать вашу личную информацию с вашими действиями в Интернете."
+      ],
       "This month": [
         "Этот месяц"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Этот уникальный код может использоваться веб-сайтами и интернет-провайдерами для привязки вашего местоположения и истории просмотров к вашему устройству."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Будет удален только альбом. Вши фото останутся в вашей хронологии. Данное действие необратимо."
@@ -5492,6 +5888,9 @@
       ],
       "This will permanently delete the selected items you uploaded.": [
         "Это навсегда удалит загруженные вами выбранные элементы"
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "Это приведет к удалению синхронизированного устройства ${ deviceName } из ${ DRIVE_APP_NAME } и всех его данных из ${ DRIVE_APP_NAME }. Папки, добавленные в папку Мои компьютеры, перестанут синхронизироваться."
       ],
       "This will replace the existing file with the folder": [
         "Это заменит существующий файл на папку"
@@ -5523,6 +5922,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
+        "Чтобы защитить вас, ${ DRIVE_APP_NAME } может сканировать ваши файлы с сохранением конфиденциальности и блокировать вредоносные файлы. Однако все же лучше загружать файлы только из надежных источников. "
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Чтобы импортировать события, сначала создайте календарь в ${ CALENDAR_APP_NAME }. Именно в нём события будут отображаться после импорта."
       ],
@@ -5549,6 +5951,9 @@
       ],
       "Total VPN connections": [
         "Всего подключений к VPN"
+      ],
+      "Tracking": [
+        "Отслеживание"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Отменена передача файла \"${ name }\""
@@ -5649,6 +6054,9 @@
       "Visa Secure logo": [
         "Логотип Visa Secure"
       ],
+      "VPN IP": [
+        "IP VPN"
+      ],
       "Want to sync files faster?": [
         "Хотите синхронизировать файлы быстрее?"
       ],
@@ -5657,6 +6065,9 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Так держать, вы только что увеличили свое хранилище до 5 ГБ!"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "У нас возникли технические проблемы. Все действия, связанные с альбомами, временно отключены."
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "У нас возникли технические проблемы. Загрузка новых фото временно отключена."
@@ -5703,8 +6114,14 @@
       "What would you like to do?": [
         "Что вы хотели бы сделать?"
       ],
+      "When working remotely": [
+        "Во время удаленной работы"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Когда вы подключаетесь к VPN, используется технология шифрования, чтобы скрыть ваш адрес IP (уникальный код, присвоенный вашему устройству)."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
+        "При настройке двухфакторной аутентификации, мы предоставляем коды восстановления для входа в аккаунт, если вы потеряете доступ к приложению аутентификатора."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "будет восстановлена версия от ${ formattedRevisionDate }. Все другие версии также будут сохранены."
@@ -5720,6 +6137,15 @@
       ],
       "Would you like to restore your files?": [
         "Хотите восстановить свои файлы?"
+      ],
+      "Would you like to save it before removing?": [
+        "Хотите его сохранить перед удалением?",
+        "Хотите их сохранить перед удалением?",
+        "Хотите их сохранить перед удалением?",
+        "Хотите их сохранить перед удалением?"
+      ],
+      "Would you like to save them before removing?": [
+        "Хотите их сохранить перед удалением?"
       ],
       "Writing assistant": [
         "Помощник по написанию"
@@ -5762,6 +6188,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Тем временем можно закрыть вкладку или браузер."
+      ],
+      "You can close the tab. We'll work on it in the background.": [
+        "Вы можете закрыть вкладку. Мы будем работать над этим в фоновом режиме."
       ],
       "You can import one data type at a time.": [
         "Вы можете импортировать один тип данных за один раз."
@@ -5829,6 +6258,12 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Затем каждый ${ renewCycle } месяц вам будет выставляться счет на ${ renewAmountStr }.",
+        "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }.",
+        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }.",
+        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Вы достигли лимита количества адресов в группе(-ах) контактов:"
       ],
@@ -5883,6 +6318,15 @@
       "Your information was found on ${ displayedDate }": [
         "Ваша информация была найдена ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Ваш интернет-провайдер может отслеживать, а иногда и продавать ваши данные или даже определять, на какие сайты вы можете заходить."
+      ],
+      "Your IP": [
+        "Ваш IP-адрес"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Ваш адрес IP виден и может быть использован для отслеживания ваших действий в Интернете."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
       ],
@@ -5892,11 +6336,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
       ],
+      "Your online activity is protected": [
+        "Ваши действия в Интернете защищены"
+      ],
       "Your password was leaked:": [
         "Произошла утечка вашего пароля:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Ваше физическое местоположение видно и может быть использовано для ограничения вашего доступа к Интернету."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Ваш план ограничен 10 версиями на срок до 7 дней"
@@ -5907,8 +6357,17 @@
       "Your previous recovery phrase": [
         "Ваша предыдущая фраза для восстановления"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждый ${ cycle } месяц.",
+        "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяца.",
+        "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяцев.",
+        "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяцев."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждый месяц."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Ваша подписка будет автоматически обновлена ${ renewalTime }."
       ]
     },
     "info": {
@@ -6397,6 +6856,9 @@
       "Password": [
         "Пароль"
       ],
+      "Password strength": [
+        "Надежность пароля"
+      ],
       "Payer": [
         "Плательщик"
       ],
@@ -6466,8 +6928,8 @@
       "Set recovery method": [
         "Установить способ восстановления"
       ],
-      "Share a file": [
-        "Поделиться файлом"
+      "Share a file, folder, or album": [
+        "Поделиться файлом, папкой или альбом"
       ],
       "Shared": [
         "В общем доступе"
@@ -6538,9 +7000,6 @@
       "Thomas": [
         "Томас"
       ],
-      "Title": [
-        "Заголовок"
-      ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
       ],
@@ -6600,6 +7059,15 @@
       ],
       "Your alias": [
         "Ваш псевдоним"
+      ],
+      "Your IP": [
+        "Ваш IP-адрес"
+      ],
+      "Your ISP": [
+        "Ваш интернет-провайдер"
+      ],
+      "Your location": [
+        "Ваше местоположение"
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
@@ -6685,8 +7153,56 @@
       "Drafts": [
         "Черновики"
       ],
+      "Enforcing 2FA for organizations": [
+        "Обеспечение двухфакторной аутентификации для организаций"
+      ],
+      "How to add users": [
+        "Как добавить пользователей"
+      ],
+      "How to add Zoom links": [
+        "Как добавить ссылки Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Как сотрудничать в ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Как включить ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Как перенести данные в ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Как оплатить с помощью Bitcoin?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Как настроить ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Как настроить пользовательский домен"
+      ],
+      "How to set up SMTP": [
+        "Как настроить SMTP"
+      ],
+      "How to share a calendar": [
+        "Как поделиться календарем"
+      ],
+      "How to share via email": [
+        "Как поделиться по электронной почте"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Как использовать ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Как использовать ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Как использовать пересылку писем"
+      ],
+      "How to use Groups": [
+        "Как использовать Группы"
+      ],
+      "if your data is leaked": [
+        "в случае утечки ваших данных"
       ],
       "Inbox": [
         "Входящие"
@@ -6732,6 +7248,9 @@
       ],
       "Trash": [
         "Корзина"
+      ],
+      "Types of recovery methods": [
+        "Типы способов восстановления"
       ],
       "What’s this?": [
         "Что это такое?"
@@ -6787,11 +7306,8 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш аккаунт находится под угрозой удаления. Чтобы избежать потери данных, обратитесь к администратору с просьбой об улучшении тарифа. ${ cta }"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваше хранилище заполнено. Чтобы отправлять или получать электронные письма, освободите место или ${ cta }."
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваше хранилище заполнено. Чтобы загружать или синхронизировать файлы, освободите место или ${ cta }."
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Ваше хранилище заполнено. Чтобы продолжить использование продуктов ${ BRAND_NAME }, освободите место или ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша подписка закончилась. ${ cta } и избежать потери данных."
@@ -6834,6 +7350,9 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Добавить помощника по написанию ${ BRAND_NAME } Scribe"
+      ],
+      "Add-on with free trial": [
+        "Дополнение с бесплатным пробным периодом"
       ],
       "for ${ price }": [
         "за ${ price }"
@@ -7140,20 +7659,11 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
       ],
-      "Get started for ${ priceCoupon }": [
-        "Начните с ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Начиная с ${ pricing }"
+      "Plans starting from ${ priceDrivePlus }": [
+        "Тарифы начиная с ${ priceDrivePlus }"
       ],
       "Upgrade": [
         "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7283,6 +7793,9 @@
       "${ size } storage": [
         "${ size } хранилища"
       ],
+      "${ size } storage per user": [
+        "${ size } хранилища на пользователя"
+      ],
       "1 TB secure storage": [
         "1 ТБ защищенного хранения"
       ],
@@ -7337,9 +7850,6 @@
       "Auto-delete Spam and Trash": [
         "Автоудаление спама и сообщений в корзине"
       ],
-      "Auto-delete spam and trashed messages": [
-        "Автоудаление спама и удаленных сообщений"
-      ],
       "Auto-reply": [
         "Автоответчик"
       ],
@@ -7381,9 +7891,6 @@
       ],
       "Custom fields": [
         "Настраиваемые поля"
-      ],
-      "Custom snooze time": [
-        "Настраиваемое время пробуждения"
       ],
       "Custom workspace branding": [
         "Пользовательское брендирование рабочего пространства"
@@ -7460,6 +7967,9 @@
       "Limited support": [
         "Ограниченная поддержка"
       ],
+      "Manage user permissions and access": [
+        "Управление разрешениями пользователя и доступом"
+      ],
       "Multiple admin roles": [
         "Несколько должностей администраторов"
       ],
@@ -7477,6 +7987,9 @@
       ],
       "Password manager": [
         "Менеджер паролей"
+      ],
+      "Password manager to secure credentials": [
+        "Менеджер паролей для защиты учетных данных"
       ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
@@ -7519,12 +8032,6 @@
       ],
       "Schedule and snooze emails for any time": [
         "Планируйте и откладывайте сообщения электронной почты на любое время"
-      ],
-      "Schedule messages at any time": [
-        "Планируйте сообщения в любое время"
-      ],
-      "Search message content": [
-        "Поиск содержимого сообщения"
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
@@ -7674,9 +8181,6 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
       ],
-      "Snooze messages and get reminded when you want": [
-        "Отложите сообщения и получите напоминание в нужное время"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
       ]
@@ -7735,6 +8239,9 @@
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Наш тариф ${ visionary } больше не доступен для новых подписчиков, поскольку это специальный тариф для первоначальных пользователей ${ BRAND_NAME } с особыми возможностями и преимуществами."
       ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Заплатите один раз и навсегда защитите свои пароли и личные данные."
+      ],
       "Popular": [
         "Популярный"
       ],
@@ -7749,9 +8256,6 @@
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Получите безопасный доступ в Интернет из любой точки мира, проводя необходимый мониторинг сети"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Защищенное облачное хранилище, позволяющее легко и безопасно хранить, синхронизировать и обмениваться файлами."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Защищенная электронная почта с дополнительными возможностями для повседневного общения."
@@ -7776,6 +8280,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Начиная с ${ priceLine }"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Цена со скидкой ${ priceCoupon } действительна в течение первого месяца. Затем она будет автоматически продлена по цене ${ priceLine }. Вы можете отменить это в любое время."
       ],
@@ -8072,9 +8579,6 @@
       ],
       "Require 2FA": [
         "Требуется двухфакторная аутентификация"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Поддержка ${ n } пользовательских доменов электронной почты"
       ]
     },
     "Notification": {
@@ -8200,6 +8704,9 @@
       ],
       "Access for the member removed": [
         "Доступ для участника удален"
+      ],
+      "Access our new Albums, Filters, and more by taking action on your locked volume. Restore or delete it now to enjoy these new features immediately.": [
+        "Получите доступ к нашим новым Альбомам, Фильтрам и прочему, выполнив действия с заблокированным томом. Восстановите или удалите его сейчас, чтобы сразу же воспользоваться этими новыми функциями."
       ],
       "Access updated": [
         "Доступ обновлен"
@@ -8330,11 +8837,20 @@
       "Root folder failed to be loaded": [
         "Не удалось загрузить корневую папку"
       ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Выбранное(ые) фото уже в \"${ albumName }\""
+      ],
       "Share invitation accepted successfully": [
         "Приглашение на использование общего ресурса успешно принято"
       ],
       "Share invitation declined": [
         "Приглашение поделиться отклонено"
+      ],
+      "Some photo(s) could not be added to \"${ albumName }\"": [
+        "Некоторые фото не могут быть добавлены в «${ albumName }»."
+      ],
+      "Some photo(s) could not be removed from ${ albumLink.name }": [
+        "Одно (некоторые) фото не может(гут) быть удалено(ы) из ${ albumLink.name }"
       ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "К сожалению, мы не можем удалить папку, потому что она не пуста.",
@@ -8342,8 +8858,14 @@
         "К сожалению, мы не можем удалить папки, потому что они не пусты.",
         "К сожалению, мы не можем удалить папки, потому что они не пусты."
       ],
+      "Stopping the sharing of this item has failed": [
+        "Не удалось остановить совместное использование этого элемента"
+      ],
       "Subfolder failed to be loaded": [
         "Не удалось загрузить подпапку"
+      ],
+      "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
+        "Функция Альбомов уже в пути! Мы внедряем ее постепенно, попробуйте снова в ближайшее время"
       ],
       "The document failed to be created": [
         "Не удалось создать документ"
@@ -8381,6 +8903,12 @@
       "Your old files will be deleted in 72 hours": [
         "Ваши старые файлы будут удалены в течение 72 часов"
       ],
+      "Your photo(s) have been added to \"${ albumName }\"": [
+        "Ваше(и) фото было(и) добавлено(ы) в альбом «${ albumName }»."
+      ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Ваше(и) фото было(и) удалено(ы) из ${ albumLink.name }"
+      ],
       "Your settings failed to be saved": [
         "Не удалось сохранить настройки"
       ],
@@ -8409,6 +8937,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited на 12 месяцев"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } на 12 месяцев"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Предложение ${ pricingTitle } истекает сегодня!"
       ],
@@ -8517,14 +9051,14 @@
       "Invite members": [
         "Пригласить участников"
       ],
-      "Maybe later": [
-        "Может быть позже"
-      ],
       "Maybe Later": [
         "Может, позже"
       ],
+      "Maybe later": [
+        "Может быть позже"
+      ],
       "Select theme": [
-        "Выберите тему"
+        "Выбрать тему"
       ],
       "Skip": [
         "Пропустить"
@@ -8674,8 +9208,17 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Доступ ко всем приложениям ${ BRAND_NAME } и платным функциям"
+      ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
+      ],
+      "Secure vault, item and link sharing": [
+        "Защищенное хранилище, обмен ссылками и элементами"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Неограниченное количество имен пользователей, заметок, кредитных карт и многое другое"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8779,6 +9322,9 @@
       "CVC": [
         "CVC-код"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "В течение этого времени вы не сможете изменить или отменить свою подписку. Дождитесь завершения оплаты, прежде чем пытаться внести какие-либо изменения. Благодарим вас за терпение."
+      ],
       "Got it": [
         "Понятно"
       ],
@@ -8803,11 +9349,50 @@
       "Please select your billing state first.": [
         "Сначала выберите государство для выставления счета."
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Цены продления могут быть изменены в соответствии с ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Продлевается по цене ${ renewPriceStr }, можно отменить в любое время."
+      ],
       "Select billing country to pay": [
         "Для оплаты, пожалуйста выберите страну"
       ],
+      "terms & conditions": [
+        "правила и условия"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Купон действителен для ${ couponRedemptions } продления.",
+        "Купон действителен для ${ couponRedemptions } продлений.",
+        "Купон действителен для ${ couponRedemptions } продлений.",
+        "Купон действителен для ${ couponRedemptions } продлений."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Специально сниженная с ${ priceWithDiscount } цена действует в течение первого ${ subscriptionLength } месяца.",
+        "Специально сниженная с ${ priceWithDiscount } цена действует в течение первых ${ subscriptionLength } месяцев.",
+        "Специально сниженная с ${ priceWithDiscount } цена действует в течение первых ${ subscriptionLength } месяцев.",
+        "Специально сниженная с ${ priceWithDiscount } цена действует в течение первых ${ subscriptionLength } месяцев."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен для ${ couponRedemptions } продления. Затем он будет автоматически продлен по цене ${ renewPriceStr } на 1 месяц. Вы можете отказаться в любое время.",
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен для ${ couponRedemptions } продлений. Затем он будет автоматически продлен по цене ${ renewPriceStr } на 1 месяц. Вы можете отказаться в любое время.",
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен для ${ couponRedemptions } продлений. Затем он будет автоматически продлен по цене ${ renewPriceStr } на 1 месяц. Вы можете отказаться в любое время.",
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен для ${ couponRedemptions } продлений. Затем он будет автоматически продлен по цене ${ renewPriceStr } на 1 месяц. Вы можете отказаться в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } каждый месяц. Вы можете отказаться в любое время."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяц. Вы можете отменить его в любое время.",
+        "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяца. Вы можете отменить его в любое время.",
+        "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяцев. Вы можете отменить его в любое время.",
+        "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяцев. Вы можете отменить его в любое время."
+      ],
       "Timeout exceeded": [
         "Превышено время ожидания"
+      ],
+      "Your payment is still being processed": [
+        "Ваш платёж все еще обрабатывается"
       ]
     },
     "Payments.Error": {
@@ -8928,6 +9513,9 @@
       "New name": [
         "Новое имя"
       ],
+      "Organization name": [
+        "Название организации"
+      ],
       "Password": [
         "Пароль"
       ],
@@ -8960,6 +9548,9 @@
       ],
       "Start typing an email address": [
         "Начните вводить адрес эл. почты"
+      ],
+      "Your organization name": [
+        "Название вашей организации"
       ]
     },
     "Placeholder for contact group name": {
@@ -9054,6 +9645,11 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Вход не был успешно завершен."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Настройка организации и безопасность аккаунта"
       ]
     },
     "Security Center": {
@@ -9350,6 +9946,14 @@
         "Доступ предоставил ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Новая таблица"
+      ],
+      "Open in ${ appName }": [
+        "Открыть в ${ appName }"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Не подписывать"
@@ -9450,8 +10054,8 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Эта подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока она не будет отменена."
+      "The special offer is valid for the first 2 years.": [
+        "Специальное предложение действительно в течение первых 2 лет"
       ],
       "Your subscription will renew at the same rate every year.": [
         "Ваша подписка будет продлеваться каждый год по фиксированной цене."
@@ -9534,6 +10138,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Цена без скидки: ${ amount } за 30 месяцев."
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Специальное предложение действительно в течение первых 2 лет"
       ]
     },
     "specialoffer: Title": {
@@ -9651,6 +10258,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Чтобы продолжить загрузку и синхронизацию файлов, освободите место или улучшите тариф для увеличения объема хранилища."
       ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Чтобы продолжить использование продуктов ${ BRAND_NAME }, освободите место или ${ upgrade }"
+      ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "Для отправки и получения электронной почты, освободите место или ${ upgrade }"
       ],
@@ -9678,11 +10288,11 @@
       "Your ${ appStorage } is full": [
         "Ваше ${ appStorage } заполнено"
       ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Ваше ${ storage } заполнено на ${ percentage }%. ${ cta }."
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Ваше ${ productString } заполнено на ${ percentage }%. ${ cta }."
       ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "Ваше ${ storage } заполнено. ${ cta }"
+      "Your ${ productString } is full. ${ cta }.": [
+        "Ваше ${ productString } заполнено. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ваше хранилище заполнено на ${ percentage }%. ${ cta }."
@@ -9709,21 +10319,6 @@
     "Subscription": {
       "Billed every 2 years": [
         "Оплата каждые 2 года"
-      ],
-      "Billed every 6 months": [
-        "Списано каждые 6 месяцев"
-      ],
-      "Billed for 15 months": [
-        "Оплата за 15 месяцев."
-      ],
-      "Billed for 18 months": [
-        "Счет выставлен за 18 месяцев"
-      ],
-      "Billed for 3 months": [
-        "Счет выставлен за 3 месяцев"
-      ],
-      "Billed for 30 months": [
-        "Счет выставлен за 30 месяцев"
       ],
       "Billed monthly": [
         "Ежемесячная оплата"
@@ -10141,6 +10736,49 @@
         "Наша система больше не будет автоматически списывать платежи, используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платёжного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платёжного периода. Мы не можем автоматически понизить ваш уровень подписки, так как если вы превшаете лимит бесплатного хранилища или используете платные функции, мы не можем автоматически удалить файлы, электронные письма или другие данные. Если вы отключите автоматический платёж, не забудьте оплатить следующий счёт по подписке до даты окончания, чтобы избежать блокировки аккаунта."
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Сэкономьте ${ priceString }"
+      ]
+    },
+    "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Альбомы, которыми с вами поделились, появятся здесь"
+      ],
+      "Albums you've shared will appear here": [
+        "Альбомы, которыми вы поделились, появятся здесь"
+      ],
+      "Your favorited photos will appear here": [
+        "Ваши избранные фото появятся здесь"
+      ],
+      "Your Live Photos will appear here": [
+        "Ваши живые фото появятся здесь"
+      ],
+      "Your panorama photos will appear here": [
+        "Ваши панорамные фото появятся здесь"
+      ],
+      "Your photo bursts will appear here": [
+        "Ваши серийные фото появятся здесь"
+      ],
+      "Your portraits photos will appear here": [
+        "Ваши портретные фотографии появятся здесь"
+      ],
+      "Your RAW photos will appear here": [
+        "Ваши фото в формате RAW появятся здесь"
+      ],
+      "Your screenshots will appear here": [
+        "Ваши снимки экрана появятся здесь"
+      ],
+      "Your selfies photos will appear here": [
+        "Ваши фото селфи появятся здесь"
+      ],
+      "Your tagged photos will appear here": [
+        "Ваши фото с тегом появятся здесь"
+      ],
+      "Your videos will appear here": [
+        "Ваши видео появятся здесь"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } контакт выглядит одинаково.",
@@ -10468,11 +11106,17 @@
       "Add to ${ groupName }": [
         "Добавить в ${ groupName }"
       ],
+      "Add user": [
+        "Добавить пользователя"
+      ],
       "Addresses": [
         "Адреса"
       ],
       "Album": [
         "Альбом"
+      ],
+      "Album details": [
+        "Информация об альбоме"
       ],
       "Albums": [
         "Альбомы"
@@ -10543,6 +11187,9 @@
       "Clearing data": [
         "Очистка данных"
       ],
+      "Collaborate on documents": [
+        "Совместно работайте над документами"
+      ],
       "Completed": [
         "Завершено"
       ],
@@ -10554,6 +11201,18 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Подтвердите потерю бонусов ${ BRAND_NAME }"
+      ],
+      "Confirmation required": [
+        "Требуется подтверждение"
+      ],
+      "Connect apps and devices": [
+        "Подключить приложения и устройства"
+      ],
+      "Connect to video conferencing": [
+        "Подключайтесь к видеоконференциям"
+      ],
+      "Connect your custom domain": [
+        "Подключить пользовательский домен"
       ],
       "Contact Details": [
         "Контактные данные"
@@ -10606,6 +11265,9 @@
       "Day theme": [
         "Дневная тема"
       ],
+      "Decline invitation?": [
+        "Отклонить приглашение?"
+      ],
       "Delete": [
         "Удалить"
       ],
@@ -10622,7 +11284,7 @@
         "Удаление ${ count } группы контактов"
       ],
       "Delete ${ links.length } items?": [
-        "Удалить ${ links.length } объектов?"
+        "Удалить ${ links.length } элементов?"
       ],
       "Delete ${ name }?": [
         "Удалить ${ name }?"
@@ -10635,6 +11297,9 @@
       ],
       "Deleting contacts": [
         "Удаление контактов"
+      ],
+      "Desktop": [
+        "Для настольных компьютеров"
       ],
       "Discard": [
         "Сбросить"
@@ -10650,6 +11315,12 @@
       ],
       "Download ${ date }": [
         "Скачать ${ date }"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Скачать приложения ${ DRIVE_APP_NAME }"
+      ],
+      "Download the app": [
+        "Скачать приложение"
       ],
       "Download unverified file?": [
         "Скачать непроверенный файл?"
@@ -10696,14 +11367,20 @@
       "Enable 2FA": [
         "Включить 2ФА"
       ],
+      "Enable advanced account protection": [
+        "Включить расширенную защиту аккаунта"
+      ],
       "Enable drive search": [
         "Включить поиск по хранилищу"
+      ],
+      "Enhance security with 2FA": [
+        "Повысьте безопасность с двухфакторной аутентификацией"
       ],
       "Enter 2FA code": [
         "Введите код двухфакторной аутентификации"
       ],
       "Enter your password": [
-        "Введите свой пароль"
+        "Введите пароль"
       ],
       "Error": [
         "Ошибка"
@@ -10729,8 +11406,8 @@
         "Найдено ${ searchView.numberOfResults } результатов",
         "Найдено ${ searchView.numberOfResults } результатов"
       ],
-      "Get advanced protection": [
-        "Получить расширенную защиту"
+      "Get more from your VPN": [
+        "Получите больше от VPN"
       ],
       "Get the apps": [
         "Получить приложения"
@@ -10741,6 +11418,9 @@
       "Groups": [
         "Группы"
       ],
+      "Help and feedback": [
+        "Помощь и обратная связь"
+      ],
       "Help center": [
         "Справочный центр"
       ],
@@ -10749,6 +11429,9 @@
       ],
       "Hm, we couldn't find that one": [
         "Похоже, мы не смогли найти эту страницу"
+      ],
+      "How does it all work?": [
+        "Как все это работает?"
       ],
       "Human verification": [
         "Проверка \"Я не робот\""
@@ -10762,6 +11445,9 @@
       "Import contacts": [
         "Импорт контактов"
       ],
+      "Import emails, calendars, contacts": [
+        "Импорт электронных писем, календарей и контактов"
+      ],
       "Import events": [
         "Импортировать события"
       ],
@@ -10770,6 +11456,9 @@
       ],
       "Import groups": [
         "Импорт групп"
+      ],
+      "Information exposed in breach": [
+        "Информация, раскрытая при утечке"
       ],
       "Invalid verification code": [
         "Неверный проверочный код"
@@ -10786,6 +11475,9 @@
       "Location": [
         "Местоположение"
       ],
+      "Make a secure connection your default": [
+        "Сделайте защищенное подключение вашим подключением по умолчанию"
+      ],
       "Manage secure link": [
         "Управление безопасной ссылкой"
       ],
@@ -10800,6 +11492,9 @@
       ],
       "Minicalendar": [
         "Миникалендарь"
+      ],
+      "Mobile": [
+        "Для мобильных устройств"
       ],
       "Modified": [
         "Изменено"
@@ -10822,11 +11517,47 @@
       "Night theme": [
         "Ночная тема"
       ],
+      "No albums shared with me": [
+        "Нет альбомов, которыми поделились со мной"
+      ],
       "No breaches detected": [
         "Нарушения не обнаружены"
       ],
+      "No bursts": [
+        "Нет серийных снимков"
+      ],
+      "No favorites": [
+        "Нет избранных"
+      ],
+      "No Live Photos": [
+        "Нет живых фото"
+      ],
+      "No panorama": [
+        "Нет панорам"
+      ],
+      "No photos": [
+        "Нет фото"
+      ],
+      "No portraits": [
+        "Нет портретов"
+      ],
+      "No RAW": [
+        "Нет RAW"
+      ],
       "No results found": [
         "Результатов не найдено"
+      ],
+      "No screenshots": [
+        "Нет снимков экрана"
+      ],
+      "No selfies": [
+        "Нет селфи"
+      ],
+      "No shared albums": [
+        "Нет общих альбомов"
+      ],
+      "No videos": [
+        "Нет видео"
       ],
       "Notes": [
         "Заметки"
@@ -10839,6 +11570,12 @@
       ],
       "Open actions dropdown": [
         "Показать список доступных действий"
+      ],
+      "Org setup": [
+        "Настройки организации"
+      ],
+      "Organization setup": [
+        "Настройки организации"
       ],
       "Original size": [
         "Начальный размер"
@@ -10870,6 +11607,9 @@
       "Preview": [
         "Предварительный просмотр"
       ],
+      "Private browsing vs VPN": [
+        "Приватный просмотр по сравнению с VPN"
+      ],
       "Processing...": [
         "Обработка…"
       ],
@@ -10896,6 +11636,12 @@
       ],
       "Remove device?": [
         "Удалить устройство?"
+      ],
+      "Remove item?": [
+        "Удалить элемент?",
+        "Удалить элементы?",
+        "Удалить элементы?",
+        "Удалить элементы?"
       ],
       "Rename a file": [
         "Переименовать файл"
@@ -10942,14 +11688,29 @@
       "Select link expiration time": [
         "Выберите время окончания действия ссылки"
       ],
+      "Set recovery methods": [
+        "Установить методы восстановления"
+      ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
+      ],
+      "Set up email forwarding": [
+        "Настройка пересылки писем"
+      ],
+      "Set up your organization": [
+        "Настройка организации"
+      ],
+      "Setting up Albums & Filters": [
+        "Настройка Альбомов и Фильтров"
       ],
       "Settings": [
         "Настройки"
       ],
       "Share ${ name }": [
         "Общий ресурс ${ name }"
+      ],
+      "Share your calendar with your team": [
+        "Делитесь вашим календарем со своей командой"
       ],
       "Shared": [
         "В общем доступе"
@@ -10965,6 +11726,12 @@
       ],
       "Sign out": [
         "Выйти"
+      ],
+      "Simplify email distribution": [
+        "Упрощение рассылки электронной почты"
+      ],
+      "Simplify password management": [
+        "Упростить управление паролями"
       ],
       "Size": [
         "Размер"
@@ -11011,17 +11778,20 @@
       "Trash": [
         "Корзина"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Включить ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Type": [
         "Тип"
-      ],
-      "Unlock contacts groups": [
-        "Разблокировать группы контактов"
       ],
       "Untitled document ${ date }": [
         "Документ без названия ${ date }"
       ],
       "Upgrade complete!": [
         "Улучшение выполнено!"
+      ],
+      "Upload and share files": [
+        "Загружайте и делитесь файлами"
       ],
       "Uploaded": [
         "Загружено"
@@ -11031,6 +11801,9 @@
       ],
       "Uploading a large file or folder": [
         "Загрузка большого файла или папки"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Используйте ${ VPN_SHORT_APP_NAME } для обеспечения конфиденциальности данных"
       ],
       "Verification failed": [
         "Проверка не удалась"
@@ -11047,14 +11820,29 @@
       "Version history": [
         "История версий"
       ],
+      "VPN explained": [
+        "Что такое VPN"
+      ],
       "Warning": [
         "Предупреждение"
       ],
       "Warning: suspected fake website": [
         "Предупреждение: предполагаемый поддельный сайт"
       ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Добро пожаловать в ${ BRAND_NAME } для бизнеса"
+      ],
+      "What can a VPN protect you from?": [
+        "От чего вас может защитить VPN?"
+      ],
+      "What is a VPN?": [
+        "Что такое VPN?"
+      ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Когда важнее всего использовать VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Теперь вы можете создавать неограниченное количество папок и ярлыков."
@@ -11153,8 +11941,14 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Сообщение и имя файла хранятся с шифрованием с нулевым доступом, когда они включены в электронное письмо"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "Не вся перечисленная здесь информация была открыта для всех пользователей."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
+      ],
+      "Shared with end-to-end encryption": [
+        "Совместный доступ со сквозным шифрованием"
       ],
       "Show side panel": [
         "Показать боковую панель"
@@ -11173,6 +11967,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новый цикл подписки начинается ${ formattedTime }"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Зашифрованные пароли остаются в безопасности, пока их не расшифруют, даже если они находятся в открытом доступе."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
@@ -11225,6 +12022,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } устройство",
+        "${ n } устройства",
+        "${ n } устройств",
+        "${ n } устройств"
+      ],
       "${ n } server": [
         "${ n } сервер",
         "${ n }+ сервера",
@@ -11260,9 +12063,18 @@
         "Автоматически выбирается из ${ numberOfCountries } стран",
         "Автоматически выбирается из ${ numberOfCountries } стран",
         "Автоматически выбирается из ${ numberOfCountries } стран"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Серверы в более чем ${ numberOfCountries } стране",
+        "Серверы в более чем ${ numberOfCountries } странах",
+        "Серверы в более чем ${ numberOfCountries } странах",
+        "Серверы в более чем ${ numberOfCountries } странах"
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Затем вам будут выставляться счета каждые 12 месяцев по цене ${ renewPriceStr }."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
@@ -11341,9 +12153,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } передаст как можно больше данных, начиная с ваших последних сообщений."
       ],
-      "2 consecutive dots are not allowed": [
-        "2 точки подряд не допускаются"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы уверены, что хотите навсегда удалить ${ count } контакт?",
         "Вы уверены, что хотите навсегда удалить ${ count } контакта?",
@@ -11359,35 +12168,11 @@
       "Are you sure you want to permanently delete this contact?": [
         "Вы уверены, что хотите навсегда удалить этот контакт?"
       ],
-      "Cannot contain a dot at the beginning": [
-        "Не может содержать точку в начале"
-      ],
-      "Cannot contain a dot at the end": [
-        "Не может содержать точку в конце"
-      ],
       "Contacts could not be merged": [
         "Контакты не могут быть объединены"
       ],
-      "Expiration Date is not in the format MM/YY": [
-        "Срок действия не в формате ММ/ГГ"
-      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Если вы не помните свой пароль, повторно активировать ключ невозможно. Мы можем помочь вам отключить предупреждение, но тогда вы навсегда потеряете доступ ко всем данным, зашифрованным с помощью этого ключа."
-      ],
-      "Invalid alias prefix": [
-        "Недопустимый префикс псевдонима"
-      ],
-      "Missing alias prefix": [
-        "Отсутствует префикс псевдонима"
-      ],
-      "Missing alias suffix": [
-        "Отсутствует суффикс псевдонима"
-      ],
-      "Name is required": [
-        "Требуется имя"
-      ],
-      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Допускаются только алфавитно-цифровые строчные символы, точки, дефисы и символы подчеркивания"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
@@ -11397,9 +12182,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Некоторые из планируемых к объединению контактов отображают ошибки. Пожалуйста, рассмотрите каждый из них по отдельности"
-      ],
-      "The alias prefix cannot be longer than 40 characters": [
-        "Префикс псевдонима не может быть длиннее 40 символов"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Данные контакта повреждены и не могут быть отображены."
@@ -11427,9 +12209,6 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Не удалось проверить почтовый сервер. Если вы доверяете ему, эту проверку можно пропустить."
-      ],
-      "You must select at least one mailbox": [
-        "Вы должны выбрать хотя бы один почтовый ящик"
       ],
       "You will lose any customization you made so far.": [
         "Вы потеряете все сделанные вами до этого настройки."

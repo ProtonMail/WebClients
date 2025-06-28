@@ -3,18 +3,16 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { Href } from '@proton/atoms';
+import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
+import { Href, Tooltip } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
 import OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';
 import OrderableTableHeader from '@proton/components/components/orderableTable/OrderableTableHeader';
 import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
-import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
+import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import useApi from '@proton/components/hooks/useApi';
@@ -24,6 +22,7 @@ import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import {
     ADDRESS_TYPE,
+    type APP_NAMES,
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
     MAIL_UPSELL_PATHS,
@@ -48,6 +47,8 @@ interface Props {
     organizationKey?: CachedOrganizationKey;
     hasDescription?: boolean;
     allowAddressDeletion: boolean;
+    hasAccessToBYOE?: boolean;
+    app?: APP_NAMES;
 }
 
 const upsellRef = getUpsellRef({
@@ -57,7 +58,15 @@ const upsellRef = getUpsellRef({
     isSettings: true,
 });
 
-const AddressesUser = ({ user, organizationKey, member, hasDescription = true, allowAddressDeletion }: Props) => {
+const AddressesUser = ({
+    user,
+    organizationKey,
+    member,
+    hasDescription = true,
+    allowAddressDeletion,
+    hasAccessToBYOE,
+    app,
+}: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [savingIndex, setSavingIndex] = useState<number | undefined>();
@@ -65,8 +74,6 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
     const sendTelemetryEvent = usePostSubscriptionTourTelemetry();
-
-    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
@@ -96,10 +103,7 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
                         }
                     })();
                     if (errorMessage) {
-                        createNotification({
-                            type: 'error',
-                            text: errorMessage,
-                        });
+                        createNotification({ type: 'error', text: errorMessage });
                     }
                     setAddresses(sortAddresses(addresses));
                     return;
@@ -147,34 +151,9 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
         return <Alert className="mb-4">{c('Info').t`No addresses exist`}</Alert>;
     }
 
-    const modal = displayNewUpsellModalsVariant ? (
-        <NewUpsellModal
-            titleModal={c('Title').t`An address for each role`}
-            description={c('Description')
-                .t`Keep different parts of your life separate and your inbox organized with additional addresses.`}
-            modalProps={upsellModalProps}
-            illustration={addressesImg}
-            sourceEvent="BUTTON_MORE_ADDRESSES"
-            {...upsellConfig}
-        />
-    ) : (
-        <UpsellModal
-            title={c('Title').t`Increase your privacy with more addresses`}
-            description={c('Description')
-                .t`Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.`}
-            modalProps={upsellModalProps}
-            sourceEvent="BUTTON_MORE_ADDRESSES"
-            features={['more-storage', 'more-email-addresses', 'unlimited-folders-and-labels', 'custom-email-domains']}
-            {...upsellConfig}
-        />
-    );
-
     const handleCopyEmail = (email: string) => {
         textToClipboard(email);
-        createNotification({
-            type: 'success',
-            text: c('Success').t`Email address copied to clipboard`,
-        });
+        createNotification({ type: 'success', text: c('Success').t`Email address copied to clipboard` });
     };
 
     return (
@@ -190,10 +169,16 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
             )}
 
             {!user.hasPaidMail && (
-                <MailUpsellButton
-                    onClick={() => handleUpsellModalDisplay(true)}
-                    text={c('Action').t`Get more addresses`}
-                />
+                <div className="mb-4 flex gap-2 self-start items-center">
+                    <MailUpsellButton
+                        onClick={() => handleUpsellModalDisplay(true)}
+                        text={c('Action').t`Get more addresses`}
+                    />
+
+                    {hasAccessToBYOE && (
+                        <ConnectGmailButton app={app} buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`} />
+                    )}
+                </div>
             )}
 
             <OrderableTable
@@ -255,7 +240,16 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
                 </OrderableTableBody>
             </OrderableTable>
 
-            {renderUpsellModal && modal}
+            {renderUpsellModal && (
+                <UpsellModal
+                    title={c('Title').t`An address for each role`}
+                    description={c('Description')
+                        .t`Keep different parts of your life separate and your inbox organized with additional addresses.`}
+                    modalProps={upsellModalProps}
+                    illustration={addressesImg}
+                    upsellRef={upsellRef}
+                />
+            )}
         </>
     );
 };

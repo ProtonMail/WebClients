@@ -1,6 +1,7 @@
 import type { Reducer } from 'redux';
 
-import { type PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
+import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
+import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
@@ -45,6 +46,10 @@ export type SettingsState = {
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
     showUsernameField?: boolean;
     theme?: PassThemeOption;
+    /* Using browser privacy capabilities requires permissions and a reload to be effective:
+     * This flag is used during the reload after getting the permission to trigger browser
+     * privacy. We store a timestamp here to validate the pending request. */
+    pendingBrowserAutofill?: number;
 };
 
 export const EXCLUDED_SETTINGS_KEYS = ['createdItemsCount', 'lockMode', 'extraPassword'] as const;
@@ -64,10 +69,7 @@ export const getInitialSettings = (): ProxiedSettings => ({
     passkeys: { get: true, create: true },
     passwordOptions: null,
     showUsernameField: false,
-    /* Theme is set to undefined so we can prompt <ThemeOnboardingModal> for discovery.
-     * Once we decide to no longer display that modal (e.g theme feature is not considered new anymore)
-     * then change value to PassThemeOption.OS */
-    theme: undefined,
+    theme: EXTENSION_BUILD ? undefined : PASS_DEFAULT_THEME,
 });
 
 const getInitialState = (): SettingsState => ({
@@ -88,13 +90,7 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
         return partialMerge(state, { lockMode: action.payload.lock.mode, lockTTL: action.payload.lock.ttl });
     }
 
-    if (settingsEditSuccess.match(action)) {
-        const update = { ...state };
-
-        /* `disallowedDomains` update should act as a setter */
-        if ('disallowedDomains' in action.payload) update.disallowedDomains = {};
-        return partialMerge<SettingsState>(update, action.payload);
-    }
+    if (settingsEditSuccess.match(action)) return { ...state, ...action.payload };
 
     if (userEvent.match(action)) {
         const locale = action.payload.UserSettings?.Locale;

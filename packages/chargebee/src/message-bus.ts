@@ -1,6 +1,10 @@
 import noop from '@proton/utils/noop';
 
 import type {
+    ApplePayAuthorizedPayload,
+    ApplePayCancelledMessage,
+    ApplePayClickedMessage,
+    ApplePayFailedMessage,
     BinData,
     CardFormRenderMode,
     CbIframeConfig,
@@ -27,6 +31,10 @@ import type {
     UpdateFieldsPayload,
 } from '../lib';
 import {
+    applePayAuthorizedMessageType,
+    applePayCancelledMessageType,
+    applePayClickedMessageType,
+    applePayFailedMessageType,
     paypalAuthorizedMessageType,
     paypalCancelledMessageType,
     paypalClickedMessageType,
@@ -193,6 +201,41 @@ export type OnDirectDebitSubmitHandler = (
     sendResponseToParent: SendResponseToParent<{}>
 ) => void;
 
+export const setApplePayPaymentIntentMessageType = 'set-apple-pay-payment-intent';
+
+export type SetApplePayPaymentIntentEvent = {
+    type: typeof setApplePayPaymentIntentMessageType;
+    correlationId: string;
+    applePayButtonHeight?: number;
+} & ChargebeeSubmitEventPayload;
+
+export function isSetApplePayPaymentIntentEvent(event: any): event is SetApplePayPaymentIntentEvent {
+    return event?.type === setApplePayPaymentIntentMessageType;
+}
+
+export type OnSetApplePayPaymentIntentHandler = (
+    event: SetApplePayPaymentIntentEvent,
+    sendResponseToParent: SendResponseToParent<void>
+) => void;
+
+export type GetCanMakePaymentsWithActiveCardEvent = {
+    type: 'get-can-make-payments-with-active-card';
+    correlationId: string;
+};
+
+export type GetCanMakePaymentsWithActiveCardResponse = {
+    canMakePaymentsWithActiveCard: boolean;
+};
+
+export function isGetCanMakePaymentsWithActiveCardEvent(event: any): event is GetCanMakePaymentsWithActiveCardEvent {
+    return event?.type === 'get-can-make-payments-with-active-card';
+}
+
+export type OnGetCanMakePaymentsWithActiveCardHandler = (
+    event: GetCanMakePaymentsWithActiveCardEvent,
+    sendResponseToParent: SendResponseToParent<GetCanMakePaymentsWithActiveCardResponse>
+) => void;
+
 export interface ParentMessagesProps {
     onSetConfiguration?: (event: SetConfigurationEvent, sendResponseToParent: SendResponseToParent<{}>) => void;
     onSubmit?: OnSubmitHandler;
@@ -204,6 +247,8 @@ export interface ParentMessagesProps {
     onChangeRenderMode?: OnChangeRenderModeHandler;
     onUpdateFields?: OnUpdateFieldsHandler;
     onDirectDebitSubmit?: OnDirectDebitSubmitHandler;
+    onSetApplePayPaymentIntent?: OnSetApplePayPaymentIntentHandler;
+    onGetCanMakePaymentsWithActiveCard?: OnGetCanMakePaymentsWithActiveCardHandler;
 }
 
 // the event handler function must be async to make sure that we catch all errors, sync and async
@@ -306,6 +351,22 @@ const getEventListener = (messageBus: MessageBus) => async (e: MessageEvent) => 
                     ...result,
                 });
             });
+        } else if (isSetApplePayPaymentIntentEvent(event)) {
+            await messageBus.onSetApplePayPaymentIntent(event, (result) => {
+                messageBus.sendMessage({
+                    type: `${setApplePayPaymentIntentMessageType}-response`,
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
+        } else if (isGetCanMakePaymentsWithActiveCardEvent(event)) {
+            await messageBus.onGetCanMakePaymentsWithActiveCard(event, (result) => {
+                messageBus.sendMessage({
+                    type: 'get-can-make-payments-with-active-card-response',
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
         } else if (isChargebeeEvent(event)) {
             // ignore chargebee event
         } else {
@@ -338,6 +399,10 @@ export class MessageBus {
 
     public onDirectDebitSubmit;
 
+    public onSetApplePayPaymentIntent;
+
+    public onGetCanMakePaymentsWithActiveCard;
+
     private eventListener: ((e: MessageEvent) => void) | null = null;
 
     constructor({
@@ -351,6 +416,8 @@ export class MessageBus {
         onChangeRenderMode,
         onUpdateFields,
         onDirectDebitSubmit,
+        onSetApplePayPaymentIntent,
+        onGetCanMakePaymentsWithActiveCard,
     }: ParentMessagesProps) {
         this.onSetConfiguration = onSetConfiguration ?? noop;
         this.onSubmit = onSubmit ?? noop;
@@ -362,6 +429,8 @@ export class MessageBus {
         this.onChangeRenderMode = onChangeRenderMode ?? noop;
         this.onUpdateFields = onUpdateFields ?? noop;
         this.onDirectDebitSubmit = onDirectDebitSubmit ?? noop;
+        this.onSetApplePayPaymentIntent = onSetApplePayPaymentIntent ?? noop;
+        this.onGetCanMakePaymentsWithActiveCard = onGetCanMakePaymentsWithActiveCard ?? noop;
     }
 
     initialize() {
@@ -506,6 +575,48 @@ export class MessageBus {
             error,
             correlationId,
         });
+    }
+
+    sendApplePayAuthorizedMessage(data: ApplePayAuthorizedPayload) {
+        const message: MessageBusResponse<ApplePayAuthorizedPayload> = {
+            status: 'success',
+            data,
+        };
+
+        this.sendMessage({
+            type: applePayAuthorizedMessageType,
+            ...message,
+        });
+    }
+
+    sendApplePayFailedMessage(error: any) {
+        const message: ApplePayFailedMessage = {
+            type: applePayFailedMessageType,
+            status: 'failure',
+            error,
+        };
+
+        this.sendMessage(message);
+    }
+
+    sendApplePayClickedMessage() {
+        const message: ApplePayClickedMessage = {
+            type: applePayClickedMessageType,
+            status: 'success',
+            data: {},
+        };
+
+        this.sendMessage(message);
+    }
+
+    sendApplePayCancelledMessage() {
+        const message: ApplePayCancelledMessage = {
+            type: applePayCancelledMessageType,
+            status: 'success',
+            data: {},
+        };
+
+        this.sendMessage(message);
     }
 
     sendUnhandledErrorMessage(errorObj: any) {

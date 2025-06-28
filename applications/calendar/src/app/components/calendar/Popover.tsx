@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import { useActiveBreakpoint } from '@proton/components/index';
+import { useActiveBreakpoint } from '@proton/components';
 
 import type { Rect } from '../../hooks/observeRect';
 import { useRect } from '../../hooks/useRect';

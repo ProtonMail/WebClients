@@ -43,7 +43,7 @@ const CustomStepB2B = ({ measure, productAppName, logo, model, signupParameters 
         if (cache.type === 'signup') {
             const accountData = cache.accountData;
             const username =
-                (accountData?.signupType === SignupType.Email && accountData.email) || accountData.username;
+                (accountData?.signupType === SignupType.External && accountData.email) || accountData.username;
             return {
                 username,
                 accountData,
@@ -95,7 +95,7 @@ const CustomStepB2B = ({ measure, productAppName, logo, model, signupParameters 
                     )}
                     defaultName={
                         accountData.username ||
-                        (accountData?.signupType === SignupType.Email && getLocalPart(accountData.email)) ||
+                        (accountData?.signupType === SignupType.External && getLocalPart(accountData.email)) ||
                         ''
                     }
                     planName={undefined}

@@ -5,38 +5,36 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import useUpsellConfig, { appsWithInApp } from '@proton/components/components/upsell/useUpsellConfig';
+import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { type FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { TelemetryPaidUsersNudge } from '@proton/shared/lib/api/telemetry';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, APPS_WITH_IN_APP_PAYMENTS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
 import { SpotlightWithPromo } from '../../common/SpotlightWithPromo';
 import { HIDE_OFFER } from '../helpers/interface';
-import type { SupportedPlans } from '../helpers/interface';
-import { getPlanCopy, offerSpotlightImg, offerUpsellConfig, offerUpsellRef } from '../helpers/offerConfigHelpers';
+import { defaultOfferUpsellConfig, getPlanCopy } from '../helpers/offerConfigHelpers';
 import { getSubscriptionAge, isLastDayOfWindow } from '../helpers/paidUserNudgeHelper';
 import { useGetPlanPriceWithCoupon } from '../hooks/useGetPlanPriceWithCoupon';
 import { usePaidUsersNudgeTelemetry } from '../hooks/usePaidUsersNudgeTelemetry';
+import type { PaidUserConfig } from '../montlyPaidUserNudgeConfig';
 import { NudgeOfferContent } from './internal/NudgeOfferContent';
 import { NudgeOfferPromoChild } from './internal/NudgeOfferPromoChild';
 import { NudgeOfferSpotlight } from './internal/NudgeOfferSpotlight';
 
 interface Props {
-    currentPlan: SupportedPlans;
-    offerTimestampFlag: FeatureCode;
+    offerConfig: PaidUserConfig;
     openSpotlight: boolean;
     isLoading: boolean;
 }
 
-export const PaidUserNudgeOffer = ({ currentPlan, offerTimestampFlag, openSpotlight, isLoading }: Props) => {
+export const PaidUserNudgeOffer = ({ offerConfig, openSpotlight, isLoading }: Props) => {
     const { APP_NAME } = useConfig();
-    const { sendPaidUserNudgeReport } = usePaidUsersNudgeTelemetry({ plan: currentPlan });
-    const { prices, loading } = useGetPlanPriceWithCoupon({ plan: currentPlan });
+    const { sendPaidUserNudgeReport } = usePaidUsersNudgeTelemetry({ plan: offerConfig.currentPlan });
+    const { prices, loading } = useGetPlanPriceWithCoupon({ plan: offerConfig.currentPlan });
 
     const { createNotification } = useNotifications();
     const [subscription, loadingSubscription] = useSubscription();
@@ -46,7 +44,7 @@ export const PaidUserNudgeOffer = ({ currentPlan, offerTimestampFlag, openSpotli
 
     const goToSettings = useSettingsLink();
 
-    const { update } = useFeature(offerTimestampFlag);
+    const { update } = useFeature(offerConfig.offerTimestampFlag);
 
     const [spotlightState, setSpotlightState] = useState(openSpotlight && !isLoading);
     const [isLastOfferDay, setIsLastOfferDay] = useState(false);
@@ -73,8 +71,9 @@ export const PaidUserNudgeOffer = ({ currentPlan, offerTimestampFlag, openSpotli
     };
 
     const { onUpgrade } = useUpsellConfig({
-        ...offerUpsellConfig[currentPlan],
-        upsellRef: offerUpsellRef[currentPlan],
+        ...defaultOfferUpsellConfig,
+        plan: offerConfig.currentPlan,
+        upsellRef: offerConfig.upsellRef,
         onSubscribed: handleSubscribed,
     });
 
@@ -83,8 +82,9 @@ export const PaidUserNudgeOffer = ({ currentPlan, offerTimestampFlag, openSpotli
             onUpgrade();
         } else {
             openSubscriptionModal({
-                ...offerUpsellConfig[currentPlan],
-                upsellRef: offerUpsellRef[currentPlan],
+                ...defaultOfferUpsellConfig,
+                plan: offerConfig.currentPlan,
+                upsellRef: offerConfig.upsellRef,
                 metrics: {
                     source: 'upsells',
                 },
@@ -101,16 +101,17 @@ export const PaidUserNudgeOffer = ({ currentPlan, offerTimestampFlag, openSpotli
                     subscription,
                     app: APP_NAME,
                     target: 'checkout',
-                    ...offerUpsellConfig[currentPlan],
+                    ...defaultOfferUpsellConfig,
+                    plan: offerConfig.currentPlan,
                 }),
-                offerUpsellRef[currentPlan]
+                offerConfig.upsellRef
             )
         );
     };
 
     const handleClick = () => {
         sendTelemetryEvent(TelemetryPaidUsersNudge.clickUpsellButton);
-        if (appsWithInApp.has(APP_NAME) && APP_NAME !== APPS.PROTONACCOUNT) {
+        if (APPS_WITH_IN_APP_PAYMENTS.has(APP_NAME) && APP_NAME !== APPS.PROTONACCOUNT) {
             upsellInApp();
         } else {
             upsellInSettings();
@@ -134,9 +135,7 @@ export const PaidUserNudgeOffer = ({ currentPlan, offerTimestampFlag, openSpotli
 
     return (
         <SpotlightWithPromo
-            borderRadius={isLastOfferDay ? 'md' : 'xl'}
-            show={spotlightState}
-            onPromoClick={() => {
+            promoOnClick={() => {
                 if (isLastOfferDay) {
                     handleClick();
                     setSpotlightState(false);
@@ -152,22 +151,24 @@ export const PaidUserNudgeOffer = ({ currentPlan, offerTimestampFlag, openSpotli
                     <NudgeOfferPromoChild prices={prices} />
                 </span>
             }
-            onClose={() => {
+            spotlightBorderRadius={isLastOfferDay ? 'md' : 'xl'}
+            spotlightShow={spotlightState}
+            spotlightOnClose={() => {
                 setSpotlightState(false);
                 sendTelemetryEvent(TelemetryPaidUsersNudge.closeOffer);
             }}
             promoLoading={loading || loadingSubscription || isLoading}
-            innerClassName={isLastOfferDay ? undefined : 'p-0'}
-            content={
+            spotlightInnerClassName={isLastOfferDay ? undefined : 'p-0'}
+            spotlightContent={
                 isLastOfferDay ? (
-                    <NudgeOfferSpotlight imgSrc={offerSpotlightImg[currentPlan]} prices={prices} />
+                    <NudgeOfferSpotlight imgSrc={offerConfig.spotlightImage} prices={prices} />
                 ) : (
                     <NudgeOfferContent
-                        imgSrc={offerSpotlightImg[currentPlan]}
+                        imgSrc={offerConfig.spotlightImage}
                         onClick={handleClick}
                         prices={prices}
                         onNeverShow={handleHideOffer}
-                        planCopy={getPlanCopy(currentPlan)}
+                        planCopy={getPlanCopy(offerConfig.currentPlan)}
                     />
                 )
             }

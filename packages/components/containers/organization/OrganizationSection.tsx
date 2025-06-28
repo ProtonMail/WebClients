@@ -5,9 +5,8 @@ import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button, ButtonLike, CircleLoader, InlineLinkButton } from '@proton/atoms';
+import { Button, ButtonLike, CircleLoader, InlineLinkButton, Tooltip } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
-import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Row from '@proton/components/components/container/Row';
 import Icon from '@proton/components/components/icon/Icon';
 import Label from '@proton/components/components/label/Label';
@@ -16,7 +15,6 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
@@ -181,7 +179,8 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                     : c('familyOffer_2023:Info')
                                           .t`Create and manage family members and assign them storage space shared between ${DRIVE_APP_NAME} and ${MAIL_APP_NAME}.`}
                             </SettingsParagraph>
-                            <PrimaryButton
+                            <Button
+                                color="norm"
                                 onClick={async () => {
                                     if (!hasMemberCapablePlan) {
                                         return createNotification({
@@ -198,7 +197,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                 }}
                             >
                                 {buttonCTA}
-                            </PrimaryButton>
+                            </Button>
                         </>
                     );
                 }
@@ -210,7 +209,8 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                 {c('Info')
                                     .t`Create and manage sub-accounts and assign them email addresses on your custom domain.`}
                             </SettingsParagraph>
-                            <PrimaryButton
+                            <Button
+                                color="norm"
                                 loading={loading}
                                 onClick={async () => {
                                     if (!hasMemberCapablePlan) {
@@ -236,7 +236,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
 
                                     withLoading(run().catch(errorHandler));
                                 }}
-                            >{c('Action').t`Enable multi-user support`}</PrimaryButton>
+                            >{c('Action').t`Enable multi-user support`}</Button>
                         </>
                     );
                 }

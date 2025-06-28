@@ -9,6 +9,7 @@ import { useMembers } from '@proton/account/members/hooks';
 import { getDomainAddressError } from '@proton/account/members/validateAddUser';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
+import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
 import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -17,7 +18,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import GenericError from '@proton/components/containers/error/GenericError';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { ALL_MEMBERS_ID, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { ALL_MEMBERS_ID, type APP_NAMES, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
@@ -45,6 +46,8 @@ interface Props {
     memberID?: string;
     allowAddressDeletion: boolean;
     hasDescription?: boolean;
+    hasAccessToBYOE?: boolean;
+    app?: APP_NAMES;
 }
 
 const AddressesWithMembers = ({
@@ -54,6 +57,8 @@ const AddressesWithMembers = ({
     isOnlySelf,
     allowAddressDeletion,
     hasDescription = true,
+    hasAccessToBYOE,
+    app,
 }: Props) => {
     const [members, loadingMembers] = useMembers();
     const [addresses, loadingAddresses] = useAddresses();
@@ -61,6 +66,7 @@ const AddressesWithMembers = ({
     const [{ premiumDomains, protonDomains }] = useProtonDomains();
     const [organizationKey] = useOrganizationKey();
     const [addressModalProps, setAddressModalOpen, renderAddressModal] = useModalState();
+
     const { createNotification } = useNotifications();
     const [tmpMember, setTmpMember] = useState<Member | null>(null);
 
@@ -152,31 +158,40 @@ const AddressesWithMembers = ({
             )}
 
             {currentMember && user.isSelf && (
-                <div className="mb-4 flex gap-2 self-start items-center">
-                    <div className="mr-4">
-                        {mustActivateOrganizationKey ? (
-                            <Alert className="mb-4" type="warning">
-                                {c('Warning')
-                                    .jt`You must ${activateLink} the organization key before adding an email address to a non-private member.`}
-                            </Alert>
-                        ) : (
-                            <Button
-                                shape="outline"
-                                onClick={() => handleAddAddress(currentMember)}
-                                data-testid="settings:identity-section:add-address"
-                            >
-                                {c('Action').t`Add address`}
-                            </Button>
-                        )}
+                <>
+                    <div className="mb-2 flex gap-2 self-start items-center">
+                        <div className="mr-4">
+                            {mustActivateOrganizationKey ? (
+                                <Alert className="mb-4" type="warning">
+                                    {c('Warning')
+                                        .jt`You must ${activateLink} the organization key before adding an email address to a non-private member.`}
+                                </Alert>
+                            ) : (
+                                <Button
+                                    shape="outline"
+                                    onClick={() => handleAddAddress(currentMember)}
+                                    data-testid="settings:identity-section:add-address"
+                                >
+                                    {c('Action').t`Add address`}
+                                </Button>
+                            )}
+                            {hasAccessToBYOE && (
+                                <ConnectGmailButton
+                                    app={app}
+                                    buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`}
+                                    className="ml-2"
+                                />
+                            )}
+                        </div>
                     </div>
-                    <div>
+                    <div className="color-weak text-sm">
                         {c('Label').ngettext(
                             msgid`${UsedAddresses} of ${MaxAddresses} email address`,
                             `${UsedAddresses} of ${MaxAddresses} email addresses`,
                             MaxAddresses
                         )}
                     </div>
-                </div>
+                </>
             )}
 
             {(() => {

@@ -7,7 +7,7 @@ import { c } from 'ttag';
  * @returns The text for the plan or app name
  * @example
  * getPlanOrAppNameText('Drive') // Displays: 'Get Drive'
- * getPlanOrAppNameText('Mail') // Displays: 'Get Mail'
+ * getPlanOrAppNameText('Mail Plus') // Displays: 'Get Mail Plus'
  */
 export const getPlanOrAppNameText = (planOrAppName: string) => {
     return c('Action').t`Get ${planOrAppName}`;

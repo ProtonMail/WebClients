@@ -5,6 +5,7 @@ import {
     selectConversationCounts,
     selectMessageCounts,
 } from '@proton/mail';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
@@ -21,7 +22,6 @@ import {
     optimisticEmptyLabel as optimisticEmptyLabelElements,
     optimisticRestoreEmptyLabel as optimisticRestoreEmptyLabelElements,
 } from '../../store/elements/elementsActions';
-import type { MessageState } from '../../store/messages/messagesTypes';
 import {
     optimisticEmptyLabel as optimisticEmptyLabelMessage,
     optimisticRestore as optimisticRestoreMessage,

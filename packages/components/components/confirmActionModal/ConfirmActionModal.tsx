@@ -11,6 +11,8 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
 export interface ConfirmActionModalProps {
     message: string | ReactNode;
@@ -43,8 +45,7 @@ export const ConfirmActionModal = ({
     const [submitLoading, setSubmitLoading] = useState(false);
 
     const isLoading = loading || submitLoading;
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+    const handleSubmit = async () => {
         if (onSubmit) {
             setSubmitLoading(true);
             await onSubmit().finally(() => {
@@ -56,14 +57,32 @@ export const ConfirmActionModal = ({
         }
     };
 
+    const onSubmitHotkeyPress = async (e: any) => {
+        e.stopPropagation();
+        // Irreversible actions do not benefit from the "confirm on enter"
+        // feature to prevent accidental destructive actions
+        if (canUndo) {
+            await handleSubmit();
+        }
+    };
+
+    const hotkeys: HotkeyTuple[] = [
+        [KeyboardKey.Enter, onSubmitHotkeyPress],
+        [KeyboardKey.Space, onSubmitHotkeyPress],
+    ];
+
     return (
         <ModalTwo
             as="form"
             disableCloseOnEscape={loading}
             onClose={onClose}
             onReset={onClose}
-            onSubmit={handleSubmit}
+            onSubmit={async (e: React.FormEvent) => {
+                e.preventDefault();
+                await handleSubmit();
+            }}
             size={size}
+            hotkeys={hotkeys}
             {...modalProps}
         >
             <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={title} />

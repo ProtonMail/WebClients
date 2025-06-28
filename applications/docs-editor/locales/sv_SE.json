@@ -5,11 +5,11 @@
   },
   "contexts": {
     "Action": {
-      "A) B) C) D)": [
-        "A) B) C) D)"
-      ],
       "a) b) c) d)": [
         "a) b) c) d)"
+      ],
+      "A) B) C) D)": [
+        "A) B) C) D)"
       ],
       "A. B. C. D.": [
         "A. B. C. D."
@@ -442,6 +442,9 @@
       "Request timed out": [
         "Förfrågan gjorde timeout"
       ],
+      "Tried to import Sheet data into Lexical": [
+        "Försökte importera arkdata till Lexical"
+      ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Kan inte konvertera Word-dokument. Är det lösenordsskyddat? Ta i så fall bort lösenordet och försök igen."
       ]
@@ -487,6 +490,9 @@
         "${ usersTranslation } skriver …",
         "${ usersTranslation } skriver …"
       ],
+      "Alpha only experimental feature": [
+        "Experimentell funktion endast för alfaversion"
+      ],
       "Are you sure you want to delete this comment?": [
         "Är du säker på att du vill ta bort denna kommentar?"
       ],
@@ -495,6 +501,9 @@
       ],
       "Comments": [
         "Kommentarer"
+      ],
+      "Copied to clipboard": [
+        "Kopierad till urklipp"
       ],
       "Editing": [
         "Redigerar"

@@ -8,7 +8,7 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
     useModalState,
-} from '@proton/components/index';
+} from '@proton/components';
 import { useFlag } from '@proton/unleash/index';
 
 import { Button } from '../../../atoms';

@@ -5,7 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Icon, SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components';
 import useUid from '@proton/components/hooks/useUid';
 import { hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily } from '@proton/payments';
-import { PLANS } from '@proton/payments/core/constants';
+import { PLANS } from '@proton/payments';
 
 import { Button } from '../../atoms';
 

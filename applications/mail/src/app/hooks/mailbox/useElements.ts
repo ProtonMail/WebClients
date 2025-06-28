@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { useConversationCounts, useGetConversationCounts } from '@proton/mail/counts/conversationCounts';
-import { useGetMessageCounts, useMessageCounts } from '@proton/mail/counts/messageCounts';
-import { useFolders, useLabels } from '@proton/mail/labels/hooks';
+import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCounts';
+import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCounts';
+import { getCustomViewFromRoute, isValidCustomViewLabel } from '@proton/mail/store/labels/helpers';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -25,14 +26,7 @@ import { isSearch } from '../../helpers/elements';
 import { pageCount } from '../../helpers/paging';
 import type { Element } from '../../models/element';
 import { conversationByID } from '../../store/conversations/conversationsSelectors';
-import {
-    load as loadAction,
-    removeExpired,
-    reset,
-    resetByPassFilter,
-    setParams,
-    updatePage,
-} from '../../store/elements/elementsActions';
+import { load as loadAction, removeExpired, reset, setParams, updatePage } from '../../store/elements/elementsActions';
 import {
     dynamicTotal as dynamicTotalSelector,
     elementIDs as elementIDsSelector,
@@ -59,6 +53,15 @@ import { useElementsEvents } from '../events/useElementsEvents';
 import { useExpirationCheck } from '../useExpirationCheck';
 
 const getParametersFromPath = (pathname: string) => {
+    const customRoute = getCustomViewFromRoute(pathname);
+    if (customRoute) {
+        return {
+            rawLabelID: customRoute.label,
+            elementID: undefined,
+            messageID: undefined,
+        };
+    }
+
     const pathSegments = pathname.split('/').filter(Boolean);
 
     return {
@@ -71,6 +74,10 @@ const getParametersFromPath = (pathname: string) => {
 const getLabelIDFromRawID = (labelIDs: string[], rawID?: string) => {
     if (!rawID) {
         rawID = LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX];
+    }
+
+    if (isValidCustomViewLabel(rawID)) {
+        return rawID;
     }
 
     return HUMAN_TO_LABEL_IDS[rawID] || (labelIDs.includes(rawID) ? rawID : undefined);
@@ -185,12 +192,21 @@ export const useElements: UseElements = ({
         const isSearching = isSearch(search);
         const conversationMode = isConversationMode(labelID, mailSettings, location);
 
+        const isNavigatingToNewsletterView =
+            stateParams.newsletterSubscriptionID !== undefined && labelID !== undefined;
+
+        // Define the core reset conditions
+        const hasSearchKeywordChange = search.keyword !== stateParams.search.keyword;
+        const hasESEnabledChange = !esEnabled && isSearch(search);
+        const hasPageJump = !pageIsConsecutive;
+        const hasSortChange = !isDeepEqual(sort, stateParams.sort);
+
+        // Reset logic:
+        // - Always reset for search keyword changes (even in newsletter view)
+        // - For other changes, only reset if not in newsletter view
         const shouldResetElementsState =
-            search.keyword !== stateParams.search.keyword || // Reset the cache since we do not support client search (filtering)
-            (esEnabled !== stateParams.esEnabled && isSearch(search)) ||
-            !pageIsConsecutive ||
-            // Reset the cache when sort changes to ensure correct ordering
-            !isDeepEqual(sort, stateParams.sort);
+            hasSearchKeywordChange ||
+            (!isNavigatingToNewsletterView && (hasESEnabledChange || hasPageJump || hasSortChange));
 
         if (shouldResetElementsState) {
             dispatch(
@@ -257,14 +273,17 @@ export const useElements: UseElements = ({
         );
     }, [mailSettings.PageSize, mailSettings.ViewMode]);
 
-    // If sort or filter is being updated, we can reset bypass filter value from the state, otherwise it could create
-    // false placeholders when switching filters.
-    useEffect(() => {
-        dispatch(resetByPassFilter());
-    }, [sort, filter]);
-
     // Main effect watching all inputs and responsible to trigger actions on the state
     useEffect(() => {
+        // We don't want to use the conversation fetch in the custom views
+        // The store is initilized with 'inbox' as default value creating
+        // problem when opening directly the custom views
+        const customRoute = getCustomViewFromRoute(location.pathname);
+        const initialRender = !!(labelID === MAILBOX_LABEL_IDS.INBOX && customRoute?.label);
+        if ((isValidCustomViewLabel(labelID) && !stateParams.newsletterSubscriptionID) || initialRender) {
+            return;
+        }
+
         // If we have actions pending OR select all actions pending, we don't want to load elements because it would cancel our optimistic updates
         const hasPendingActions = pendingActions > 0 || tasksRunning.labelIDs.includes(labelID);
 
@@ -294,6 +313,7 @@ export const useElements: UseElements = ({
         pageSize,
         labelID,
         tasksRunning,
+        stateParams.newsletterSubscriptionID,
     ]);
 
     // Move to the last page if the current one becomes empty
@@ -350,7 +370,7 @@ export const useElements: UseElements = ({
         }
     }, [stateInconsistency]);
 
-    useElementsEvents(conversationMode, search);
+    useElementsEvents(conversationMode);
 
     return {
         labelID: stateParams.labelID,

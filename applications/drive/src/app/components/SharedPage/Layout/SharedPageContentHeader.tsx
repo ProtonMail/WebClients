@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/index';
+import { CircleLoader } from '@proton/atoms';
 import { FileNameDisplay } from '@proton/components';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
 import { type useBookmarksPublicView } from '../../../store';
@@ -56,8 +56,9 @@ export function SharedPageContentHeader({
     const selectedItems = getSelectedItems(items || [], selectionControls?.selectedItemIds || []);
 
     const hasOnlyDocuments =
-        (items.length > 0 && items.every((item) => item.isFile && isProtonDocument(item.mimeType))) ||
-        (selectedItems.length > 0 && selectedItems.every((item) => item.isFile && isProtonDocument(item.mimeType)));
+        (items.length > 0 && items.every((item) => item.isFile && isProtonDocsDocument(item.mimeType))) ||
+        (selectedItems.length > 0 && selectedItems.every((item) => item.isFile && isProtonDocsDocument(item.mimeType)));
+    const sharedBy = rootLink.signatureEmail;
 
     return (
         <div className={clsx('flex w-full justify-space-between gap-4', className)}>
@@ -80,7 +81,7 @@ export function SharedPageContentHeader({
                     {rootLink.signatureEmail && (
                         // translator: Text will be like: Shared by eric.norbert@pm.me
                         <>
-                            <span>{c('Info').t`Shared by ${rootLink.signatureEmail}`}</span>
+                            <span>{c('Info').t`Shared by ${sharedBy}`}</span>
                             <i
                                 className="mx-2 w-custom h-custom rounded-full bg-strong"
                                 aria-hidden="true"

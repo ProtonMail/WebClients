@@ -15,22 +15,25 @@ import {
 import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
+import type { PaymentProcessorType } from '@proton/payments';
 import {
     type BillingAddress,
     CURRENCIES,
     CYCLE,
     type Currency,
+    FREE_PLAN,
     PLANS,
     type Plan,
+    getHas2024OfferCoupon,
+    getIsVpnB2BPlan,
+    getPlanFromPlanIDs,
+    getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
     isMainCurrency,
 } from '@proton/payments';
-import { getHas2024OfferCoupon, getIsVpnB2BPlan } from '@proton/payments';
-import { FREE_PLAN } from '@proton/payments';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -39,18 +42,20 @@ import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces/Subscription';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
+import { useFlag, useFlagsStatus } from '@proton/unleash/index';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
+import { cachedPlans, cachedPlansMap } from '../defaultPlans';
 import { getOptimisticDomains } from '../signup/helper';
-import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
-import { SignupType } from '../signup/interfaces';
+import { type SignupCacheResult, SignupType, type SubscriptionData } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import {
     getSubscriptionMetricsData,
@@ -60,8 +65,12 @@ import {
     handleSetupUser,
 } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
+import {
+    sendSignupAccountCreationTelemetry,
+    sendSignupLoadTelemetry,
+    sendSignupSubscriptionTelemetryEvent,
+} from '../signup/signupTelemetry';
 import { defaultSignupModel } from '../single-signup-v2/constants';
-import { cachedPlans, cachedPlansMap } from '../single-signup-v2/defaultPlans';
 import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
 import {
     getOptimisticPlanCardSubscriptionData,
@@ -138,6 +147,7 @@ const SingleSignupContainer = ({
     clientType,
     onLogin,
     productParam,
+    toApp,
     toAppName,
 }: Props) => {
     const getKtActivation = useGetAccountKTActivation();
@@ -162,6 +172,10 @@ const SingleSignupContainer = ({
 
     const isVariantB = getSearchParams().get('v') === 'b' || getSearchParams().get('v') === 'aff';
 
+    const isB2BTrialEnabled = useFlag('ManualTrialsFE');
+
+    const { flagsReady } = useFlagsStatus();
+
     const [signupParameters, setSignupParameters] = useState(() => {
         const result = getSignupSearchParams(location.pathname, getSearchParams());
 
@@ -180,6 +194,14 @@ const SingleSignupContainer = ({
 
         return result;
     });
+    useEffect(() => {
+        if (flagsReady && !isB2BTrialEnabled && signupParameters.trial) {
+            // remove ?trial from search params and redirect
+            const url = new URL(window.location.href);
+            url.searchParams.delete('trial');
+            window.location.href = url.toString();
+        }
+    }, [flagsReady, isB2BTrialEnabled, signupParameters.trial]);
 
     const [model, setModel] = useState<VPNSignupModel>(() => {
         // Add free plan
@@ -314,6 +336,10 @@ const SingleSignupContainer = ({
         const isVpnPassPromotion = getIsVPNPassPromotion(coupon, selectedPlanCurrency);
         const billingAddress = maybeBillingAddress ?? model.subscriptionData.billingAddress;
 
+        const trial = withModel
+            ? model.subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial
+            : signupParameters.trial;
+
         const getSubscriptionDataCycleMapping = async () => {
             const originalCoupon = coupon;
 
@@ -405,6 +431,7 @@ const SingleSignupContainer = ({
                 cycle,
                 coupon,
                 billingAddress,
+                trial,
             });
         }
 
@@ -518,6 +545,14 @@ const SingleSignupContainer = ({
                 },
             });
 
+            sendSignupLoadTelemetry({
+                planIDs: subscriptionData.planIDs,
+                flowId: 'single-page-signup-vpn',
+                productIntent: toApp,
+                currency: preferredCurrency,
+                cycle: subscriptionData.cycle,
+            });
+
             setModelDiff({
                 domains,
                 plans,
@@ -584,6 +619,22 @@ const SingleSignupContainer = ({
             }),
             wait(3500),
         ]);
+
+        const { subscription, userData } = result.cache;
+        if (subscription && userData) {
+            const planIDs = getPlanIDs(subscription);
+
+            sendSignupSubscriptionTelemetryEvent({
+                planIDs,
+                flowId: 'single-page-signup-vpn',
+                currency: subscription.Currency,
+                cycle: subscription.Cycle,
+                userCreateTime: userData.User.CreateTime,
+                invoiceID: subscription.InvoiceID,
+                coupon: subscription.CouponCode,
+                amount: subscription.Amount,
+            });
+        }
 
         const signupFinishEvents = getSignupTelemetryData(model.plansMap, cache);
         if (signupFinishEvents.dimensions.type === 'free') {
@@ -657,7 +708,9 @@ const SingleSignupContainer = ({
                             onComplete={async (data) => {
                                 const { accountData, subscriptionData } = data;
                                 const accountType =
-                                    accountData.signupType === SignupType.Email ? 'external_account' : 'proton_account';
+                                    accountData.signupType === SignupType.External
+                                        ? 'external_account'
+                                        : 'proton_account';
                                 try {
                                     const cache: SignupCacheResult = {
                                         type: 'signup',
@@ -707,6 +760,7 @@ const SingleSignupContainer = ({
                             onCurrencyChange={updatePlans}
                             hideFreePlan={signupParameters.hideFreePlan}
                             upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
+                            trial={signupParameters.trial}
                             toAppName={toAppName}
                         />
                     ) : (
@@ -724,10 +778,13 @@ const SingleSignupContainer = ({
                             setModel={setModel}
                             measure={measure}
                             currencyUrlParam={signupParameters.currency}
+                            trial={signupParameters.trial}
                             onComplete={async (data) => {
                                 const { accountData, subscriptionData } = data;
                                 const accountType =
-                                    accountData.signupType === SignupType.Email ? 'external_account' : 'proton_account';
+                                    accountData.signupType === SignupType.External
+                                        ? 'external_account'
+                                        : 'proton_account';
                                 try {
                                     const cache: SignupCacheResult = {
                                         type: 'signup',
@@ -814,6 +871,16 @@ const SingleSignupContainer = ({
                                         flow: isB2bPlan ? 'b2b' : 'b2c',
                                     });
                                 }
+
+                                sendSignupAccountCreationTelemetry({
+                                    planIDs: cache.subscriptionData.planIDs,
+                                    flowId: 'single-page-signup-vpn',
+                                    productIntent: toApp,
+                                    currency: cache.subscriptionData.currency,
+                                    cycle: cache.subscriptionData.cycle,
+                                    signupType: cache.accountData.signupType,
+                                    amount: cache.subscriptionData.checkResult.AmountDue,
+                                });
                             } catch (error: any) {
                                 observeApiError(error, (status) =>
                                     metrics.core_vpn_single_signup_step2_setup_3_total.increment({

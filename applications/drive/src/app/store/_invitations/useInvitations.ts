@@ -32,6 +32,7 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
+import useFlag from '@proton/unleash/useFlag';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -63,6 +64,7 @@ export const useInvitations = () => {
     const debouncedRequest = useDebouncedRequest();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
+    const photosWithAlbumsForNewVolume = useFlag('DriveAlbumsNewVolumes');
     const driveCrypto = useDriveCrypto();
     const { isSharingExternalInviteDisabled } = useDriveSharingFlags();
     const { getShareCreatorKeys, getShareSessionKey } = useShare();
@@ -351,11 +353,14 @@ export const useInvitations = () => {
             })
         );
         // TODO: Remove that after full rollout of photos
-        if (
-            invitationDetails?.link.type === LinkType.ALBUM &&
-            !photosWithAlbumsEnabled &&
-            (await getDefaultPhotosShare().then((photosShare) => photosShare?.volumeType !== VolumeType.Photos))
-        ) {
+        // We return if customer will NOT have new album experience
+        const volumeType = await getDefaultPhotosShare().then((photosShare) => photosShare?.volumeType);
+
+        const willHaveAlbum =
+            photosWithAlbumsEnabled ||
+            (!photosWithAlbumsEnabled && volumeType === VolumeType.Photos) ||
+            (photosWithAlbumsForNewVolume && volumeType === undefined);
+        if (invitationDetails?.link.type === LinkType.ALBUM && !willHaveAlbum) {
             return invitationDetails;
         }
         invitationsState.setInvitations([invitationDetails]);

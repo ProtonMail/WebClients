@@ -62,7 +62,7 @@ export const SpotlightContent: FC<SpotlightMessageDefinition> = (props) => {
                     shape="ghost"
                     color="weak"
                     size="small"
-                    className="absolute top-0 right-0"
+                    className="absolute top-0 right-0 pass-spotlight-content--close"
                     onClick={onClose}
                 >
                     <Icon name="cross-circle-filled" color="var(--background-invert)" alt={c('Action').t`Close`} />

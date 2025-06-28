@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, Tooltip } from '@proton/components';
+import { Tooltip } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import clsx from '@proton/utils/clsx';
 

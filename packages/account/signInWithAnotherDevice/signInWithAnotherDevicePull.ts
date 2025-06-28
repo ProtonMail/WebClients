@@ -248,7 +248,7 @@ const consumeForkSession = async ({
     return session;
 };
 
-const pollInterval = 7 * SECOND;
+const pollInterval = 3 * SECOND;
 
 interface PollArguments {
     api: Api;

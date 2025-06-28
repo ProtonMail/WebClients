@@ -15,7 +15,7 @@ const SSODeviceRejected = ({ onBack }: { onBack: () => void }) => {
                 {c('sso').t`Contact your administrator if the problem persists.`}
             </div>
             <Button size="large" shape="outline" color="weak" type="button" onClick={onBack} fullWidth>
-                {c('Action').t`Back to sign-in`}
+                {c('Action').t`Back to sign in`}
             </Button>
         </div>
     );

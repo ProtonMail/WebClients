@@ -2,16 +2,20 @@ import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom-v5-compat';
 
+import { useUser } from '@proton/account/user/hooks';
 import { GlobalLoader, GlobalLoaderProvider, LoaderPage, ModalsChildren, useDrawerWidth } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
+import { useDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
+import { isPaid } from '@proton/shared/lib/user/helpers';
 import useFlag from '@proton/unleash/useFlag';
 
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
 import { useAutoRestoreModal } from '../components/modals/AutoRestoreModal';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
+import * as config from '../config';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
@@ -66,6 +70,8 @@ const FloatingElements = () => {
 };
 
 const InitContainer = () => {
+    const [user] = useUser();
+    const { init: initDrive, drive } = useDrive();
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const { migrateShares } = useShareActions();
     const { autoRestore, restoreHashKey } = useSanitization();
@@ -88,6 +94,15 @@ const InitContainer = () => {
     useEffect(() => {
         const abortController = new AbortController();
         const initPromise = async () => {
+            const userPlan = isPaid(user) ? 'paid' : 'free';
+            if (!drive) {
+                initDrive({
+                    appName: config.APP_NAME,
+                    appVersion: config.APP_VERSION,
+                    userPlan,
+                });
+            }
+
             try {
                 // In case the user Sign-in from the public page modal, we will redirect him back after we add the file/folder to his bookmarks
                 // In case the user Sign-up we just let him in the App (in /shared-with-me route)

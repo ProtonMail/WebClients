@@ -1,11 +1,20 @@
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 import { getSubscriptionMock } from '@proton/testing/data';
 
-import { CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES, PLAN_TYPES } from '../constants';
+import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES, PLAN_TYPES } from '../constants';
 import { type PlanIDs } from '../interface';
 import { type Plan } from '../plan/interface';
+import { SubscriptionPlatform } from './constants';
 import { FREE_PLAN } from './freePlans';
-import { getPlanIDs, getSubscriptionPlanTitle, isSubscriptionUnchanged } from './helpers';
+import {
+    canModify,
+    getAvailableSubscriptionActions,
+    getPlanIDs,
+    getSubscriptionPlanTitle,
+    isCheckForbidden,
+    isManagedExternally,
+    isSubscriptionUnchanged,
+} from './helpers';
 
 describe('getSubscriptionPlanTitle', () => {
     it('should return plan title and name for a paid user with subscription', () => {
@@ -166,21 +175,6 @@ describe('isSubscriptionUnchanged', () => {
         expect(result).toBe(false);
     });
 
-    it('should return true if the upcoming subscription unchanged', () => {
-        const subscription = getSubscriptionMock();
-        subscription.Cycle = CYCLE.MONTHLY;
-        subscription.UpcomingSubscription = getSubscriptionMock();
-        subscription.UpcomingSubscription.Cycle = CYCLE.YEARLY;
-
-        const planIds: PlanIDs = getPlanIDs(subscription);
-
-        const currentSubscriptionUnchanged = isSubscriptionUnchanged(subscription, planIds, CYCLE.MONTHLY);
-        expect(currentSubscriptionUnchanged).toBe(true);
-
-        const upcomingSubscriptionUnchanged = isSubscriptionUnchanged(subscription, planIds, CYCLE.YEARLY);
-        expect(upcomingSubscriptionUnchanged).toBe(true);
-    });
-
     it('should return false if there is no upcoming subscription', () => {
         const subscription = getSubscriptionMock();
         subscription.Cycle = CYCLE.MONTHLY;
@@ -195,5 +189,261 @@ describe('isSubscriptionUnchanged', () => {
 
         const upcomingSubscriptionUnchangedTwoYears = isSubscriptionUnchanged(subscription, planIds, CYCLE.TWO_YEARS);
         expect(upcomingSubscriptionUnchangedTwoYears).toBe(false);
+    });
+});
+
+describe('isCheckForbidden', () => {
+    it('returns false when subscription is null or undefined', () => {
+        expect(isCheckForbidden(null, {}, CYCLE.MONTHLY)).toBe(false);
+        expect(isCheckForbidden(undefined, {}, CYCLE.MONTHLY)).toBe(false);
+    });
+
+    it('returns true when selected plan is same as current with no upcoming subscription', () => {
+        const subscription = getSubscriptionMock();
+        const planIds = getPlanIDs(subscription);
+
+        // No upcoming subscription scenario
+        expect(isCheckForbidden(subscription, planIds, subscription.Cycle)).toBe(true);
+    });
+
+    it('returns false for free subscription', () => {
+        const freeSubscription = FREE_SUBSCRIPTION;
+        const planIds = {};
+
+        expect(isCheckForbidden(freeSubscription, planIds, CYCLE.MONTHLY)).toBe(false);
+    });
+
+    it('handles variable cycle offer correctly (automatic unpaid scheduled subscription)', () => {
+        const UpcomingSubscription = buildSubscription({ Cycle: CYCLE.YEARLY, InvoiceID: '' });
+
+        const subscription = buildSubscription({ Cycle: CYCLE.TWO_YEARS, UpcomingSubscription });
+
+        const currentPlanIds = getPlanIDs(subscription);
+        const upcomingPlanIds = getPlanIDs(UpcomingSubscription);
+
+        expect(isCheckForbidden(subscription, currentPlanIds, CYCLE.TWO_YEARS)).toBe(true);
+        expect(isCheckForbidden(subscription, upcomingPlanIds, CYCLE.YEARLY)).toBe(true);
+    });
+
+    it('handles scheduled unpaid modification correctly (addon downgrade/downcycling)', () => {
+        const Cycle = CYCLE.MONTHLY;
+
+        const UpcomingSubscription = buildSubscription(
+            {
+                InvoiceID: '',
+                Cycle,
+            },
+            {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2,
+            }
+        );
+
+        const subscription = buildSubscription(
+            { Cycle, UpcomingSubscription },
+            {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 3,
+            }
+        );
+
+        const currentPlanIds = getPlanIDs(subscription);
+        const upcomingPlanIds = getPlanIDs(UpcomingSubscription);
+
+        expect(isCheckForbidden(subscription, currentPlanIds, Cycle)).toBe(false);
+
+        expect(isCheckForbidden(subscription, upcomingPlanIds, Cycle)).toBe(true);
+    });
+
+    it('handles prepaid upcoming subscription correctly', () => {
+        const UpcomingSubscription = buildSubscription({ Cycle: CYCLE.YEARLY });
+        const subscription = buildSubscription({ Cycle: CYCLE.MONTHLY, UpcomingSubscription });
+
+        const currentPlanIds = getPlanIDs(subscription);
+        const upcomingPlanIds = getPlanIDs(UpcomingSubscription);
+
+        expect(isCheckForbidden(subscription, currentPlanIds, CYCLE.MONTHLY)).toBe(true);
+        expect(isCheckForbidden(subscription, upcomingPlanIds, CYCLE.YEARLY)).toBe(true);
+    });
+
+    it('returns false when selected plan is different from both current and upcoming', () => {
+        const UpcomingSubscription = buildSubscription({ Cycle: CYCLE.YEARLY });
+        const subscription = buildSubscription({ Cycle: CYCLE.MONTHLY, UpcomingSubscription });
+
+        const differentPlanIds = { [PLANS.DRIVE]: 1 };
+
+        expect(isCheckForbidden(subscription, differentPlanIds, CYCLE.MONTHLY)).toBe(false);
+        expect(isCheckForbidden(subscription, differentPlanIds, CYCLE.YEARLY)).toBe(false);
+    });
+
+    it('should return true when user has externally managed Lumo subscription and selects the same plan', () => {
+        const subscribtion = buildSubscription(
+            {
+                External: SubscriptionPlatform.iOS,
+            },
+            { [PLANS.LUMO]: 1 }
+        );
+
+        expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.MONTHLY)).toBe(true);
+        expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.YEARLY)).toBe(true);
+        expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.TWO_YEARS)).toBe(true);
+    });
+
+    it('should return false when user has externally managed Lumo subscription and selects a different plan', () => {
+        const subscription = buildSubscription(
+            {
+                External: SubscriptionPlatform.iOS,
+            },
+            { [PLANS.LUMO]: 1 }
+        );
+
+        expect(isCheckForbidden(subscription, { [PLANS.MAIL]: 1 }, CYCLE.MONTHLY)).toBe(false);
+        expect(isCheckForbidden(subscription, { [PLANS.MAIL]: 1 }, CYCLE.YEARLY)).toBe(false);
+        expect(isCheckForbidden(subscription, { [PLANS.MAIL]: 1 }, CYCLE.TWO_YEARS)).toBe(false);
+    });
+
+    it('should work with lumo the usual way if it is managed internally', () => {
+        const subscribtion = buildSubscription(
+            {
+                Cycle: CYCLE.MONTHLY,
+                External: SubscriptionPlatform.Default,
+            },
+            { [PLANS.LUMO]: 1 }
+        );
+
+        expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.MONTHLY)).toBe(true);
+        expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.YEARLY)).toBe(false);
+        expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.TWO_YEARS)).toBe(false);
+    });
+});
+
+describe('isManagedExternally', () => {
+    it('returns false when subscription is null', () => {
+        expect(isManagedExternally(null)).toBe(false);
+    });
+
+    it('returns false when subscription is undefined', () => {
+        expect(isManagedExternally(undefined)).toBe(false);
+    });
+
+    it('returns false for free subscription', () => {
+        const freeSubscription = FREE_SUBSCRIPTION;
+        expect(isManagedExternally(freeSubscription)).toBe(false);
+    });
+
+    it('returns true when subscription is managed by Android', () => {
+        const subscription = buildSubscription({
+            External: SubscriptionPlatform.Android,
+        });
+        expect(isManagedExternally(subscription)).toBe(true);
+    });
+
+    it('returns true when subscription is managed by iOS', () => {
+        const subscription = buildSubscription({
+            External: SubscriptionPlatform.iOS,
+        });
+        expect(isManagedExternally(subscription)).toBe(true);
+    });
+
+    it('returns false when subscription is not externally managed', () => {
+        const subscription = buildSubscription({
+            External: SubscriptionPlatform.Default,
+        });
+        expect(isManagedExternally(subscription)).toBe(false);
+    });
+});
+
+describe('canModify', () => {
+    it('returns true when subscription is null', () => {
+        expect(canModify(null as any)).toBe(true);
+    });
+
+    it('returns true when subscription is undefined', () => {
+        expect(canModify(undefined as any)).toBe(true);
+    });
+
+    it('returns true for free subscription', () => {
+        expect(canModify(FREE_SUBSCRIPTION as any)).toBe(true);
+    });
+
+    it('returns false for externally managed subscription without Lumo', () => {
+        const subscription = buildSubscription({
+            External: SubscriptionPlatform.Android,
+        });
+        expect(canModify(subscription)).toBe(false);
+    });
+
+    it('returns true for non-externally managed subscription', () => {
+        const subscription = buildSubscription({
+            External: SubscriptionPlatform.Default,
+        });
+        expect(canModify(subscription)).toBe(true);
+    });
+
+    it('returns true for externally managed subscription with Lumo', () => {
+        const subscription = buildSubscription(
+            {
+                External: SubscriptionPlatform.Android,
+            },
+            {
+                [PLANS.LUMO]: 1,
+            }
+        );
+
+        expect(canModify(subscription)).toBe(true);
+    });
+});
+
+describe('getAvailableActions', () => {
+    it('returns all actions available for non-externally managed subscription', () => {
+        const subscription = buildSubscription({
+            External: SubscriptionPlatform.Default,
+        });
+
+        const result = getAvailableSubscriptionActions(subscription);
+
+        expect(result).toEqual({
+            canModify: true,
+            cantModifyReason: undefined,
+            canCancel: true,
+            cantCancelReason: undefined,
+        });
+    });
+
+    it('returns no actions available for externally managed subscription without Lumo', () => {
+        const subscription = buildSubscription({
+            External: SubscriptionPlatform.Android,
+        });
+
+        const result = getAvailableSubscriptionActions(subscription);
+
+        expect(result).toEqual({
+            canModify: false,
+            cantModifyReason: 'subscription_managed_externally',
+            canCancel: false,
+            cantCancelReason: 'subscription_managed_externally',
+        });
+    });
+
+    it('returns only modify action available for externally managed subscription with Lumo', () => {
+        const subscription = buildSubscription(
+            {
+                External: SubscriptionPlatform.Android,
+            },
+            {
+                [PLANS.LUMO]: 1,
+            }
+        );
+
+        const result = getAvailableSubscriptionActions(subscription);
+
+        expect(result).toEqual({
+            canModify: true,
+            cantModifyReason: undefined,
+            canCancel: false,
+            cantCancelReason: 'subscription_managed_externally',
+        });
     });
 });

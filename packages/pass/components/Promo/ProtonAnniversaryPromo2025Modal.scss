@@ -1,0 +1,52 @@
+// Copied from packages/components/containers/offers/components/anniversary2025/Anniversary2025Layout.scss
+@import '~@proton/styles/scss/lib';
+
+.offer-modal[class*='offer-anniversary-2025'] {
+	background: #08031f;
+
+	// taxonomy override for unique layout
+	--modal-text-color: white;
+	--text-norm: white;
+	--border-norm: white;
+	--text-weak: rgb(255 255 255 / 0.7);
+	--background-weak: rgb(226 219 255 / 0.15);
+
+	.modal-close-icon {
+		inline-size: 1rem;
+		block-size: 1rem;
+	}
+
+	.anniversary-2025-header {
+		@include media('<xsmall') {
+			font-size: em(20);
+		}
+	}
+
+	.anniversary-2025-price-off {
+		border-width: 4px;
+		font-size: em(28);
+		line-height: 1.1;
+	}
+
+	&.offer-modal--one-deal {
+		&#{&} {
+			--size: #{em(480)};
+
+			.info-button > svg {
+				color: var(--text-norm);
+			}
+
+			.scroll-outer-vertical .scroll-inner,
+			.scroll-outer-vertical .scroll-child {
+				overflow: overlay;
+			}
+
+			.anniversary-2025-price {
+				font-size: em(48);
+				@include media('<xsmall') {
+					font-size: em(30);
+				}
+			}
+		}
+	}
+}

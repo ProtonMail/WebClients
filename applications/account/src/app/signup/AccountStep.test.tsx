@@ -27,8 +27,8 @@ beforeEach(() => {
     props = {
         clientType: CLIENT_TYPES.VPN,
         toApp: 'proton-vpn-settings',
-        signupTypes: [SignupType.Email, SignupType.Username],
-        signupType: SignupType.Email,
+        signupTypes: [SignupType.External, SignupType.Proton],
+        signupType: SignupType.External,
         onChangeSignupType: jest.fn(),
         domains: [],
         hasChallenge: false,

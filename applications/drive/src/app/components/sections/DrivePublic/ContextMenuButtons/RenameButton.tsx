@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import usePublicToken from '../../../../hooks/drive/usePublicToken';
 import { type DecryptedLink, usePublicActions } from '../../../../store';
-import { type useRenameModal } from '../../../modals/RenameModal';
+import type { useRenameModal } from '../../../modals/RenameModal';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
@@ -25,7 +25,9 @@ export const RenameButton = ({ link, showRenameModal, close }: Props) => {
                 showRenameModal({
                     isFile: link.isFile,
                     name: link.name,
-                    isDoc: isProtonDocument(link.mimeType),
+                    isDoc: isProtonDocsDocument(link.mimeType),
+                    volumeId: link.volumeId,
+                    linkId: link.linkId,
                     onSubmit: (formattedName) =>
                         renameLink(new AbortController().signal, {
                             token,

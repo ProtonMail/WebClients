@@ -1,18 +1,22 @@
+import type {
+    LoadEmbeddedResults,
+    MessageEmbeddedImage,
+    MessageState,
+} from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasShowEmbedded } from '@proton/shared/lib/mail/images';
 import { getAttachments, hasProtonSender, isDraft } from '@proton/shared/lib/mail/messages';
 import generateUID from '@proton/utils/generateUID';
 
-import type { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '../../store/messages/messagesTypes';
 import {
     decryptEmbeddedImages,
     findEmbedded,
     matchSameCidOrLoc,
     readContentIDandLocation,
     setEmbeddedAttr,
-} from '../message/messageEmbeddeds';
-import { getEmbeddedImages, insertImageAnchor } from '../message/messageImages';
+} from 'proton-mail/helpers/message/messageEmbeddeds';
+import { getEmbeddedImages, insertImageAnchor } from 'proton-mail/helpers/message/messageImages';
 
 export const transformEmbedded = async (
     message: MessageState,

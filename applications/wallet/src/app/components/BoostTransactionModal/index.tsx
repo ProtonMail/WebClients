@@ -3,12 +3,12 @@ import { useMemo, useState } from 'react';
 import compact from 'lodash/compact';
 import isUndefined from 'lodash/isUndefined';
 import noop from 'lodash/noop';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
-import { Slider } from '@proton/atoms/index';
+import { Slider, SliderSizeEnum } from '@proton/atoms';
 import { type ModalStateProps, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { type Address } from '@proton/shared/lib/interfaces';
@@ -99,7 +99,7 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
                 return lowLabel;
             };
 
-            return [c('Wallet send').t`~${minutes} minutes`, label()];
+            return [c('Wallet send').ngettext(msgid`~${minutes} minute`, `~${minutes} minutes`, minutes), label()];
         }
 
         return [c('Wallet send').t`10+ hours`, lowLabel];
@@ -282,7 +282,7 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
                         step={1}
                         value={feesValue}
                         onChange={(value) => setFeesValue(value)}
-                        size="small"
+                        size={SliderSizeEnum.Small}
                         color="norm"
                     ></Slider>
                 </div>

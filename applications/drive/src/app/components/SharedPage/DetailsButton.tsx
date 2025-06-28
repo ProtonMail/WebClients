@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';

@@ -15,6 +15,7 @@ import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button, InlineLinkButton } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
@@ -28,7 +29,6 @@ import { usePasswordPolicyValidation } from '@proton/components/components/passw
 import PasswordWithPolicyInputs from '@proton/components/components/passwordPolicy/PasswordWithPolicyInputs';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';

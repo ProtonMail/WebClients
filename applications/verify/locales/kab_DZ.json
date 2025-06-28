@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "Authenticate": [
-        "Asesteb"
-      ],
       "Cancel": [
         "Sefsex"
       ],
@@ -53,12 +50,6 @@
       "Try another method": [
         "Ɛreḍ tarrayt nniḍen"
       ],
-      "Use authentication code": [
-        "Seqdec tangalt n usesteb"
-      ],
-      "Use recovery code": [
-        "Seqdec tangalt n tririt"
-      ],
       "Verify": [
         "Senqed"
       ],
@@ -75,62 +66,6 @@
       ],
       "Use your own email domain": [
         "Use a own email domain"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "zṛudyya"
-      ],
-      "cerise": [
-        "areḍli"
-      ],
-      "cobalt": [
-        "kubalt"
-      ],
-      "copper": [
-        "nnḥas"
-      ],
-      "fern": [
-        "ifilku"
-      ],
-      "forest": [
-        "tiẓgi"
-      ],
-      "ocean": [
-        "agaraw"
-      ],
-      "olive": [
-        "azemmur"
-      ],
-      "pacific": [
-        "amelwi"
-      ],
-      "pine": [
-        "azumba"
-      ],
-      "pink": [
-        "axuxi"
-      ],
-      "plum": [
-        "taxuxet"
-      ],
-      "purple": [
-        "akeẓẓal"
-      ],
-      "reef": [
-        "lmerǧan"
-      ],
-      "sahara": [
-        "sseḥra"
-      ],
-      "slateblue": [
-        "tabdert tazegzawt"
-      ],
-      "soil": [
-        "akal"
-      ],
-      "strawberry": [
-        "tizwal"
       ]
     },
     "Country name": {
@@ -948,16 +883,6 @@
         "Yella wayen yeḍran"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "Tasarutt n tɣellist"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Tasarutt n tɣellist"
-      ]
-    },
     "file size format": {
       "byte": [
         "ibiten",
@@ -971,6 +896,9 @@
       ],
       "MB": [
         "KAṬ"
+      ],
+      "TB": [
+        "TAṬ"
       ]
     },
     "file size format, long": {
@@ -1005,6 +933,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Imayl"
       ],
@@ -1013,6 +944,9 @@
       ],
       "No verification method available": [
         "Ulac tarrayt n usenqed"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -1028,14 +962,8 @@
       "Edit email address": [
         "Ẓreg tansa n yimayl"
       ],
-      "Enter the code from your authenticator app": [
-        "Sekcem tangalt seg usnas-ik n usesteb"
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Sekcem awal-ik uffir (am unedbal n tkebbanit)"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
@@ -1078,9 +1006,6 @@
       ]
     },
     "Label": {
-      "Authenticator app": [
-        "Asnas n usesteb"
-      ],
       "Code is 6 digits without spaces": [
         "Tangalt tesɛa 6 n yizwilen war tallunt"
       ],
@@ -1101,17 +1026,20 @@
       ],
       "Verification code": [
         "Tangalt n usenqed"
-      ],
-      "Your password (admin)": [
-        "Awal-ik uffir (anedbal)"
       ]
     },
     "Link": {
+      "contact us": [
+        "nermes-aɣ-d"
+      ],
       "Learn more": [
         "Issin ugar"
       ],
       "Request an invite": [
         "Suter tinubga"
+      ],
+      "terms of service": [
+        "tiwtilin n useqdec"
       ]
     },
     "new_plans": {
@@ -1119,15 +1047,12 @@
         "Eǧǧ tanaka-k n urmas teddes s yikaramen."
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Awi ${ planTitle }"
+      ]
+    },
     "new_plans: feature": {
-      "${ n } calendar": [
-        "${ n } uwitay",
-        "${ n } yiwitayen"
-      ],
-      "${ n } calendar per user": [
-        "${ n } uwitay i yal aseqdac",
-        "${ n } yiwitayen i yal aseqdac"
-      ],
       "${ n } custom email domain": [
         "${ n } taɣult n yimaylen udmawanen",
         "${ n } tiɣula n yimaylen udmawanen"
@@ -1166,6 +1091,15 @@
       "${ size } storage": [
         "${ size } n uḥraz"
       ],
+      "${ size } storage per user": [
+        "${ size } uḥraz i aseqdac"
+      ],
+      "10 email addresses/aliases": [
+        "10 n tansiwin n yimayl/mefferismawen"
+      ],
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
       "Auto-reply": [
         "Tiririt tawurmant"
       ],
@@ -1192,15 +1126,6 @@
       ],
       "HTML signatures": [
         "Izmulen n HTML"
-      ],
-      "Schedule messages at any time": [
-        "Sɣawes akud n tuzna n yizen melmi i tebɣiḍ"
-      ],
-      "Search message content": [
-        "Agbur n yizen n unadi"
-      ],
-      "Send & receive invitations": [
-        "Azen & nermes-d tinubgiwin"
       ],
       "SMTP submission": [
         "Assuter n SMTP"
@@ -1235,18 +1160,16 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Snerni tallunt-ik n uḥraz i usemday n ${ bundleStorage }"
-      ],
-      "Create up to ${ n } calendar": [
-        "Rnu alamma d ${ n } n uwitay",
-        "Rnu alamma d ${ n } n yiwitayen"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Asefrek i ${ n } tiɣula n yimayl udmawan"
       ]
     },
     "Placeholder": {
       "Password": [
         "Awal ufir"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Qqen"
       ]
     },
     "Success": {
@@ -1258,9 +1181,6 @@
       ]
     },
     "Title": {
-      "Enter your password": [
-        "Sekcem awal-ik uffir"
-      ],
       "Human verification": [
         "Asenqed b-umdan"
       ],

@@ -19,8 +19,8 @@ import {
     PLANS,
     fixPlanIDs,
     fixPlanName,
+    getAvailableSubscriptionActions,
     getHas2024OfferCoupon,
-    isManagedExternally,
 } from '@proton/payments';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -96,7 +96,8 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
             return null;
         }
 
-        if (isManagedExternally(subscription)) {
+        const subscriptionActions = getAvailableSubscriptionActions(subscription);
+        if (!subscriptionActions.canModify) {
             return <InAppPurchaseModal subscription={subscription} {...modalState} />;
         } else if (isBilledUser(user)) {
             return <BilledUserModal user={user} {...modalState} />;
@@ -201,7 +202,6 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                                 subscriptionModalClassName,
                                 isPlanSelection && 'subscription-modal--fixed-height subscription-modal--large-width',
                                 isCheckout && 'subscription-modal--fixed-height subscription-modal--medium-width',
-                                isUpgradeOrThanks && 'modal-two--twocolors',
                             ])}
                             rootClassName={rootClassName}
                             data-testid="plansModal"
@@ -210,10 +210,10 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                             disableCloseOnEscape={disableCloseOnEscape}
                             fullscreen={fullscreen}
                             as="form"
-                            size={isUpgradeOrThanks ? undefined : 'large'}
+                            size={isUpgradeOrThanks ? 'xsmall' : 'large'}
                             onSubmit={onSubmit}
                         >
-                            <ModalTwoHeader title={title} hasClose={hasClose} />
+                            {isUpgradeOrThanks ? null : <ModalTwoHeader title={title} hasClose={hasClose} />}
                             {isUpgradeOrThanks ? content : <ModalTwoContent>{content}</ModalTwoContent>}
                             {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
                         </ModalTwo>

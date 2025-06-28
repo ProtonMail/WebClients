@@ -3,9 +3,9 @@ import type { ComponentPropsWithRef, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { NotificationCounter, NotificationDot } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import type { ThemeColor } from '@proton/colors/types';
 import type { PopperPlacement } from '@proton/components/components/popper/interface';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
 export interface Props extends ComponentPropsWithRef<'button'> {

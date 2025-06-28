@@ -46,6 +46,9 @@
       "Add domain": [
         "Adicionar domínio"
       ],
+      "Add field": [
+        "Adicionar um campo"
+      ],
       "Add forwarding mailbox": [
         "Adicionar uma caixa de correio de encaminhamento"
       ],
@@ -400,14 +403,17 @@
       "Move to another vault": [
         "Mover para outro cofre"
       ],
-      "Move to Trash": [
-        "Mover para a Lixeira"
-      ],
       "Move to trash": [
         "Mover para a lixeira"
       ],
+      "Move to Trash": [
+        "Mover para a Lixeira"
+      ],
       "Multiple select": [
         "Seleção múltipla"
+      ],
+      "Next month": [
+        "Próximo mês"
       ],
       "No expired links": [
         "Nenhum link expirado"
@@ -433,17 +439,26 @@
       "Pause monitoring": [
         "Pausar monitoramento"
       ],
+      "Pay once": [
+        "Pague uma vez"
+      ],
       "Pin item": [
         "Fixar item"
       ],
       "Please retry": [
         "Tente novamente."
       ],
+      "Previous month": [
+        "Mês anterior"
+      ],
       "Re-verify": [
         "Verificar novamente"
       ],
       "Reactivate now": [
         "Reativar agora"
+      ],
+      "Read More": [
+        "Ler mais"
       ],
       "Refresh the page": [
         "Atualizar a página"
@@ -529,9 +544,6 @@
       "See members": [
         "Ver membros"
       ],
-      "Select": [
-        "Selecionar"
-      ],
       "Send email": [
         "Enviar e-mail"
       ],
@@ -565,17 +577,26 @@
       "Show advanced options": [
         "Mostrar opções avançadas"
       ],
+      "Show Less": [
+        "Mostrar menos"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sessão com ${ BRAND_NAME }"
       ],
       "Sign out": [
         "Encerrar sessão"
       ],
+      "Skip": [
+        "Ignorar"
+      ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Alguém compartilhou um item com você no ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Ordenar itens do cofre"
+      ],
+      "Start from scratch": [
+        "Começar do zero"
       ],
       "Submit": [
         "Enviar"
@@ -793,9 +814,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "O arquivo ${ provider } não pôde ser analisado ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Erro] um item não pôde ser analisado"
-      ],
       "A domain ownership must be verified first.": [
         "A propriedade de um domínio deve ser verificada primeiro."
       ],
@@ -825,9 +843,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Falha na autenticação. Confirme sua segunda senha para prosseguir com a exportação."
-      ],
-      "Biometric authentication failed": [
-        "A Autenticação biométrica falhou"
       ],
       "Cannot send invitation at the moment": [
         "Não é possível enviar o convite no momento",
@@ -1041,7 +1056,7 @@
       "File does not match expected format": [
         "O arquivo não corresponde ao formato esperado"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Falha na importação para o cofre \"${ vaultData.name }\" : ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1157,6 +1172,9 @@
       ],
       "Unsupported 1Password file format": [
         "Formato de arquivo do 1Password não suportado"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Formato de arquivo do Bitwarden não suportado"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Erro ao atualizar o cofre \"${ payload.content.name }\""
@@ -1282,7 +1300,8 @@
         "${ count } vista",
         "${ count } vistas"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } visualização",
         "${ count }/${ maxReads } visualizações"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1488,9 +1507,6 @@
       ],
       "Change your password": [
         "Alterar sua senha"
-      ],
-      "Choose your preferred look and feel.": [
-        "Escolha sua aparência preferida."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirme sua senha adicional para prosseguir com a remoção."
@@ -1782,9 +1798,6 @@
       ],
       "Low Priority": [
         "Baixa prioridade"
-      ],
-      "Make it your own": [
-        "Deixe do seu jeito"
       ],
       "Manager": [
         "Gerente"
@@ -2231,6 +2244,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Para revisar seus dados importados, clique no ícone do ${ PASS_APP_NAME } na barra de ferramentas de seu navegador."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Com a confiança de mais de 50.000 usuários de negócios e 100 milhões de contas em todo o mundo."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
       ],
@@ -2310,6 +2326,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Detectamos que você tem o alias ${ aliasCount } que está presente no SimpleLogin, mas ausente no ${ PASS_APP_NAME }. Gostaria de importá-lo?",
         "Detectamos que você tem ${ aliasCount } aliases que estão presentes no SimpleLogin, mas ausentes no ${ PASS_APP_NAME }. Gostaria de importá-los?"
+      ],
+      "Week": [
+        "Semana"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Enviamos um código de verificação para ${ email }. Insira-o abaixo:"
@@ -2518,6 +2537,12 @@
       "Account": [
         "Conta"
       ],
+      "Account Number": [
+        "Número da conta"
+      ],
+      "Account Type": [
+        "Tipo de conta"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Adicione um prefixo aleatório para esse domínio ao criar um alias."
       ],
@@ -2526,6 +2551,9 @@
       ],
       "Additional details": [
         "Detalhes adicionais"
+      ],
+      "Address": [
+        "Endereço"
       ],
       "Address details": [
         "Detalhes do endereço"
@@ -2554,6 +2582,12 @@
       "Always show username field": [
         "Sempre mostrar o campo do nome de usuário"
       ],
+      "API Credential": [
+        "Credencial de API"
+      ],
+      "API Key": [
+        "Chave API"
+      ],
       "Application logs": [
         "Registros do aplicativo"
       ],
@@ -2563,6 +2597,12 @@
       "Backup password": [
         "Senha de backup"
       ],
+      "Bank Account": [
+        "Conta bancária"
+      ],
+      "Bank Name": [
+        "Nome do banco"
+      ],
       "Beta Access": [
         "Acesso beta"
       ],
@@ -2571,6 +2611,12 @@
       ],
       "Birthdate": [
         "Data de nascimento"
+      ],
+      "Browse faster, smarter": [
+        "Navegue com mais rapidez e inteligência"
+      ],
+      "Built-in 2FA": [
+        "A2F integrada"
       ],
       "Capital letters (A-Z)": [
         "Letras maiúsculas (A-Z)"
@@ -2590,8 +2636,20 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Caixa de seleção"
+      ],
+      "Choose unlock method": [
+        "Escolha o método de desbloqueio"
+      ],
+      "Choose your preferred look and feel.": [
+        "Escolha sua aparência preferida."
+      ],
       "City": [
         "Cidade"
+      ],
+      "Class": [
+        "Classe"
       ],
       "Code": [
         "Código"
@@ -2614,6 +2672,9 @@
       "Copy": [
         "Copiar"
       ],
+      "Country": [
+        "País"
+      ],
       "Country or Region": [
         "País ou região"
       ],
@@ -2622,6 +2683,9 @@
       ],
       "Create a credit card": [
         "Criar um cartão de crédito"
+      ],
+      "Create a custom item": [
+        "Criar um item personalizado"
       ],
       "Create a hide-my-email alias": [
         "Criar um alias para ocultar meu e-mail"
@@ -2641,20 +2705,29 @@
       "Create new vault": [
         "Criar um cofre"
       ],
-      "Created": [
-        "Criado"
-      ],
       "Created at": [
         "Criado em"
       ],
-      "Custom hidden field": [
-        "Campo oculto personalizado"
+      "Credit cards": [
+        "Cartões de créditos"
       ],
-      "Custom text field": [
-        "Campo de texto personalizado"
+      "Crypto Wallet": [
+        "Carteira de criptomoedas"
+      ],
+      "Custom Items": [
+        "Itens personalizados"
+      ],
+      "Database": [
+        "Base de dados"
+      ],
+      "Database Type": [
+        "Tipo do banco de dados"
       ],
       "Date": [
         "Data"
+      ],
+      "Date of Birth": [
+        "Data de nascimento"
       ],
       "Device": [
         "Dispositivo"
@@ -2667,6 +2740,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Médico"
       ],
       "Domain": [
         "Domínio"
@@ -2682,6 +2758,9 @@
       ],
       "Download logs": [
         "Registros de downloads"
+      ],
+      "Driver License": [
+        "Carteira de motorista"
       ],
       "Email": [
         "E-mail"
@@ -2713,8 +2792,17 @@
       "Expired": [
         "Expirado"
       ],
+      "Expiry Date": [
+        "Data de validade"
+      ],
       "Export": [
         "Exportar"
+      ],
+      "Extra email addresses": [
+        "Endereços de e-mail extras"
+      ],
+      "Extra fields": [
+        "Campos extras"
       ],
       "Extra password": [
         "Senha adicional"
@@ -2728,8 +2816,14 @@
       "Field name": [
         "Nome do campo"
       ],
+      "File attachments": [
+        "Anexos de arquivo"
+      ],
       "File format": [
         "Formato do arquivo"
+      ],
+      "Finance": [
+        "Finanças"
       ],
       "First name": [
         "Primeiro nome"
@@ -2740,8 +2834,14 @@
       "For a one-off sharing": [
         "Para uso único"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Por motivos de segurança, o ${ PASS_SHORT_APP_NAME } bloqueia-se automaticamente após 10 minutos de inatividade."
+      ],
       "Forwards to": [
         "Encaminhar para"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Gratuito para sempre"
@@ -2758,8 +2858,17 @@
       "Generic CSV": [
         "CSV genérico"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Obtenha o ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Obtenha o ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Começar"
+      ],
+      "Get the extension for your browser.": [
+        "Obtenha a extensão para seu navegador."
       ],
       "Grant": [
         "Conceder"
@@ -2770,8 +2879,32 @@
       "Hide password": [
         "Ocultar senha"
       ],
+      "Hide-my-email aliases": [
+        "Aliases do hide-my-email"
+      ],
+      "Highest": [
+        "Máxima"
+      ],
+      "Holder Name": [
+        "Nome do titular"
+      ],
+      "Hospital": [
+        "Hospital"
+      ],
+      "Host": [
+        "Anfitrião"
+      ],
+      "Hostname": [
+        "Nome do anfitrião"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Como desbloquear o ${ PASS_SHORT_APP_NAME }"
+      ],
       "https://example.com": [
         "https://exemplo.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Carteira de identidade"
@@ -2809,8 +2942,26 @@
       "Instagram handle": [
         "Usuário no Instagram"
       ],
+      "Install and continue": [
+        "Instalar e continuar"
+      ],
+      "Install extension": [
+        "Instalar extensão"
+      ],
       "Invitations": [
         "Convites"
+      ],
+      "IP Address": [
+        "Endereço IP"
+      ],
+      "Issuing Authority": [
+        "Autoridade emissora"
+      ],
+      "Issuing Country": [
+        "País emissor"
+      ],
+      "Issuing State/Country": [
+        "Estado/país Emissor"
       ],
       "Item ID": [
         "ID do item"
@@ -2820,6 +2971,12 @@
       ],
       "Key": [
         "Chave"
+      ],
+      "Key fingerprint": [
+        "Chave de impressão digital"
+      ],
+      "Key type": [
+        "Tipo de chave"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atalho de teclado: ${ shortcut }"
@@ -2851,8 +3008,17 @@
       "License": [
         "Licença"
       ],
+      "License Key": [
+        "Chave de licença"
+      ],
       "License number": [
         "Número da licença"
+      ],
+      "License Number": [
+        "Número da Licença"
+      ],
+      "Limited time": [
+        "Tempo limitado"
       ],
       "LinkedIn account": [
         "Conta do LinkedIn"
@@ -2878,11 +3044,35 @@
       "Make all viewers": [
         "Definir todos como leitores"
       ],
+      "Make it your own.": [
+        "Deixe do seu jeito."
+      ],
       "max views reached": [
         "visualizações máximas alcançadas"
       ],
+      "Medical Conditions": [
+        "Condições médicas"
+      ],
+      "Medical Record": [
+        "Registro médico"
+      ],
+      "Medications": [
+        "Medicamentos"
+      ],
+      "Member ID": [
+        "ID de membro"
+      ],
+      "Member Name": [
+        "Nome do membro"
+      ],
       "Members": [
         "Membros"
+      ],
+      "Membership": [
+        "Subscrição"
+      ],
+      "Membership ID": [
+        "Identificação da associação"
       ],
       "Middle name": [
         "Segundo nome"
@@ -2899,11 +3089,17 @@
       "Name": [
         "Nome"
       ],
+      "Name (SSID)": [
+        "Nome (SSID)"
+      ],
       "Name on card": [
         "Nome no cartão"
       ],
       "Need help?": [
         "Precisa de ajuda?"
+      ],
+      "Network": [
+        "Rede"
       ],
       "New": [
         "Novo"
@@ -2953,8 +3149,20 @@
       "Open-source password manager for effortless protection.": [
         "Gerenciador de senhas de código aberto para proteção sem esforço."
       ],
+      "Operating System": [
+        "Sistema operacional"
+      ],
       "Organization": [
         "Organização"
+      ],
+      "Organization Name": [
+        "Nome da organização"
+      ],
+      "Other": [
+        "Outros"
+      ],
+      "Owner": [
+        "Proprietário"
       ],
       "Passkey": [
         "Chave de acesso"
@@ -2965,6 +3173,9 @@
       "Passport": [
         "Passaporte"
       ],
+      "Passport Number": [
+        "Número de passaporte"
+      ],
       "Passport number": [
         "Número do passaporte"
       ],
@@ -2974,11 +3185,23 @@
       "Password history": [
         "Histórico de senhas"
       ],
+      "Patient Name": [
+        "Nome do paciente"
+      ],
+      "Permissions": [
+        "Permissões"
+      ],
+      "Personal": [
+        "Pessoal"
+      ],
       "Personal details": [
         "Detalhes pessoais"
       ],
       "Personal website": [
         "Site pessoal"
+      ],
+      "Personalize": [
+        "Personalizar"
       ],
       "PGP-encrypted (recommended)": [
         "Criptografado por PGP (recomendado)"
@@ -2992,6 +3215,15 @@
       "PIN code": [
         "Código PIN"
       ],
+      "Plus": [
+        "Plus"
+      ],
+      "Points Balance": [
+        "Saldo de pontos"
+      ],
+      "Port": [
+        "Porta"
+      ],
       "Prefix": [
         "Prefixo"
       ],
@@ -3001,17 +3233,35 @@
       "Priority:": [
         "Prioridade:"
       ],
+      "Private key": [
+        "Chave privada"
+      ],
+      "Private Key": [
+        "Chave privada"
+      ],
+      "Product": [
+        "Produto"
+      ],
+      "Program Name": [
+        "Nome do programa"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Proteja o ${ PASS_APP_NAME } com uma senha adicional"
       ],
       "Public domain": [
         "Domínio público"
       ],
+      "Public key": [
+        "Chave pública"
+      ],
       "Rate us": [
         "Avalie-nos"
       ],
       "Recent": [
         "Recente"
+      ],
+      "Record Number": [
+        "Número de registro"
       ],
       "Reddit handle": [
         "Usuário no Reddit"
@@ -3028,8 +3278,17 @@
       "Reveal password": [
         "Mostrar senha"
       ],
+      "Reward Program": [
+        "Programa de recompensas"
+      ],
+      "Routing Number": [
+        "Número de roteamento"
+      ],
       "Second password": [
         "Segunda senha"
+      ],
+      "Secret": [
+        "Segredo"
       ],
       "Secure links": [
         "Links seguros"
@@ -3046,6 +3305,9 @@
       "See member and permission overview": [
         "Ver todos os membros e permissões"
       ],
+      "Seed Phrase": [
+        "Frase de recuperação"
+      ],
       "Select a domain": [
         "Selecionar um domínio"
       ],
@@ -3058,14 +3320,26 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Selecione o cofre para o qual os aliases do SimpleLogin serão importados"
       ],
+      "Select theme": [
+        "Selecionar tema"
+      ],
       "Select your password manager": [
         "Selecione o seu gerenciador de senhas"
+      ],
+      "Select your theme": [
+        "Selecione seu tema"
       ],
       "Selected": [
         "Selecionado"
       ],
+      "Server": [
+        "Servidor"
+      ],
       "Share": [
         "Compartilhar"
+      ],
+      "Share ID": [
+        "Compartilhar ID"
       ],
       "Shared": [
         "Compartilhado"
@@ -3085,17 +3359,32 @@
       "Social security": [
         "Número de Segurança Social"
       ],
+      "Social Security": [
+        "Previdência social"
+      ],
       "Social security number": [
         "CPF"
       ],
+      "Software license": [
+        "Licença de software"
+      ],
       "Special characters (!&*)": [
         "Carateres especiais (!&*)"
+      ],
+      "SSH key": [
+        "Chave SSH"
+      ],
+      "SSN": [
+        "SSN"
       ],
       "State or province": [
         "Estado ou município"
       ],
       "Status": [
         "Status"
+      ],
+      "Storage": [
+        "Armazenamento"
       ],
       "Street address": [
         "Endereço"
@@ -3112,6 +3401,9 @@
       "Support": [
         "Suporte"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Sincronizar aliases com SimpleLogin"
       ],
@@ -3121,8 +3413,14 @@
       "Tax number": [
         "Número de identificação fiscal"
       ],
+      "Technology": [
+        "Tecnologia"
+      ],
       "Text": [
         "Texto"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "O melhor da ${ BRAND_NAME } com uma sola assinatura"
       ],
       "The URL has been copied to the clipboard": [
         "O link foi copiado para a área de transferência"
@@ -3132,6 +3430,12 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Este item está disponível até ${ date } ou até que o limite de visualizações seja atingido."
+      ],
+      "Tier/Level": [
+        "Camada/Nível"
+      ],
+      "Tier/Status": [
+        "Nível"
       ],
       "Title": [
         "Título"
@@ -3157,6 +3461,12 @@
       "Unknown": [
         "Desconhecido"
       ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Unlock premium features": [
+        "Desbloqueie recursos premium"
+      ],
       "Unlock with": [
         "Desbloquear com"
       ],
@@ -3166,6 +3476,9 @@
       "Unnamed Credit Card": [
         "Cartão de crédito sem nome"
       ],
+      "Unnamed custom item": [
+        "Item personalizado sem nome"
+      ],
       "Unnamed identity": [
         "Identidade sem nome"
       ],
@@ -3174,6 +3487,15 @@
       ],
       "Unnamed note": [
         "Nota sem nome"
+      ],
+      "Unnamed SSH key": [
+        "Chave SSH sem nome"
+      ],
+      "Unnamed WiFi item": [
+        "Item Wi-Fi sem nome"
+      ],
+      "Unspecified": [
+        "Não especificado"
       ],
       "Untitled": [
         "Sem título"
@@ -3196,6 +3518,9 @@
       "Vault ID": [
         "ID do cofre"
       ],
+      "Vault, item & link sharing": [
+        "Compartilhamento de cofres, itens e links"
+      ],
       "Vaults": [
         "Cofres"
       ],
@@ -3205,8 +3530,17 @@
       "View logs": [
         "Visualizar registros"
       ],
+      "VPN Devices": [
+        "Dispositivos VPN"
+      ],
+      "VPN Speed": [
+        "Velocidade da VPN"
+      ],
       "Vulnerable": [
         "Vulnerável"
+      ],
+      "Wallet Name": [
+        "Nome da carteira"
       ],
       "Weak": [
         "Fraco"
@@ -3216,6 +3550,12 @@
       ],
       "Websites": [
         "Sites"
+      ],
+      "What's included": [
+        "O que está incluído"
+      ],
+      "WiFi network": [
+        "Rede Wi-Fi"
       ],
       "Work details": [
         "Detalhes do trabalho"
@@ -3235,8 +3575,14 @@
       "You are about to create": [
         "Você está prestes a criar"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Você pode escolher entre código PIN, biometria ou a senha da sua conta para desbloquear."
+      ],
       "Your domain": [
         "Seu domínio"
+      ],
+      "Your passwords. Everywhere.": [
+        "Suas senhas. Em todos os lugares."
       ],
       "ZIP": [
         "Arquivo ZIP"
@@ -3259,6 +3605,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ativar ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Message": {
@@ -3424,6 +3775,14 @@
         "Você pode anexar arquivos aos itens para uma melhor organização"
       ]
     },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime por ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/mês"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Adicionar chave secreta A2F"
@@ -3434,6 +3793,18 @@
       "Add note": [
         "Adicionar nota"
       ],
+      "Add password": [
+        "Adicionar senha"
+      ],
+      "Add private key": [
+        "Adicionar chave privada"
+      ],
+      "Add public key": [
+        "Adicionar chave pública"
+      ],
+      "Add SSID": [
+        "Adicionar SSID"
+      ],
       "Add text": [
         "Adicionar texto"
       ],
@@ -3442,6 +3813,9 @@
       ],
       "Coupon": [
         "Cupom"
+      ],
+      "E.g., ": [
+        "Ex., "
       ],
       "Email address": [
         "Endereço de e-mail"
@@ -3473,8 +3847,8 @@
       "my-domain.com": [
         "meu-dominio.com"
       ],
-      "Name to display when sending an email": [
-        "Nome a ser exibido ao enviar um e-mail"
+      "Name displayed in emails": [
+        "Nome exibido nos e-mails"
       ],
       "Note from SimpleLogin": [
         "Nota do SimpleLogin"
@@ -3509,6 +3883,9 @@
       "Select a suffix": [
         "Selecionar um sufixo"
       ],
+      "Select option": [
+        "Selecionar opção"
+      ],
       "Unknown origin": [
         "Origem desconhecida"
       ],
@@ -3517,9 +3894,6 @@
       ],
       "Used on ${ url }": [
         "Usado no ${ url }"
-      ],
-      "Write your note": [
-        "Escreva sua nota"
       ]
     },
     "Security Center - Info": {
@@ -3682,8 +4056,14 @@
       "${ BRAND_NAME } addresses": [
         "Endereços da ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Proteção de conta"
@@ -3908,6 +4288,9 @@
       "Members": [
         "Membros"
       ],
+      "Minicalendar": [
+        "Mini calendário"
+      ],
       "Modified": [
         "Modificado"
       ],
@@ -3960,6 +4343,9 @@
       ],
       "Pause monitoring?": [
         "Pausar monitoramento?"
+      ],
+      "Pay once, access forever.": [
+        "Pague uma vez e acesse para sempre."
       ],
       "Pending access confirmation": [
         "Confirmação de acesso pendente"
@@ -4133,6 +4519,11 @@
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hoje"
+      ]
+    },
     "Tooltip": {
       "Not all information listed here was exposed for all users.": [
         "Nem todas as informações listadas aqui foram expostas para todos os usuários."
@@ -4154,9 +4545,6 @@
       "OTP secret or URI is invalid": [
         "A chave secreta OTP ou o URL não funciona."
       ],
-      "OTP secret or URI required": [
-        "É necessário introduzir uma chave secreta OTP ou um URI."
-      ],
       "Section name cannot be empty": [
         "O nome da seção não pode estar vazio"
       ],
@@ -4168,6 +4556,12 @@
       ],
       "URL is invalid": [
         "O URL não é válido"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Mover o item para",
+        "Mover os itens para"
       ]
     },
     "Warning": {
@@ -4283,9 +4677,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Convidar endereços de e-mail de fora da organização não é permitido."
-      ],
-      "item was imported without custom fields": [
-        "itens foram importados sem os campos personalizados"
       ],
       "Maximum length is ${ maxLength } character": [
         "O comprimento máximo é ${ maxLength } carácter",

@@ -1,5 +1,4 @@
-import type { ReactNode } from 'react';
-import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { type ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -18,15 +17,13 @@ import {
 } from '@proton/encrypted-search';
 import { useIndexedDBSupport } from '@proton/encrypted-search/lib/hooks/useIndexedDBSupport';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
-import { FeatureCode, useFeature } from '@proton/features';
-import { useGetMessageCounts } from '@proton/mail/counts/messageCounts';
+import { useGetMessageCounts } from '@proton/mail/store/counts/messageCounts';
 import { SECOND } from '@proton/shared/lib/constants';
 import { isESEnabledUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { isFree } from '@proton/shared/lib/user/helpers';
 
 import ESDeletedConversationsCache from 'proton-mail/helpers/encryptedSearch/ESDeletedConversationsCache';
 
@@ -57,7 +54,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const api = useApi();
     const { welcomeFlags } = useWelcomeFlags();
     const { isESEnabledInbox } = useISESEnabledElectron();
-    const { feature: esAutomaticBackgroundIndexingFeature } = useFeature(FeatureCode.ESAutomaticBackgroundIndexing);
     const { isSearch, page } = parseSearchParams(history.location);
     const { isSupported: isIDBSupported } = useIndexedDBSupport();
 
@@ -131,7 +127,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Initialize ES
      */
     const initializeESMail = async () => {
-        if (isESEnabledInbox || (isFree(user) && !!esAutomaticBackgroundIndexingFeature?.Value)) {
+        if (isESEnabledInbox) {
             if (!(await checkVersionedESDB(user.ID))) {
                 // Avoid indexing for incognito users, and users that only log in on a device once
                 // If initialIndexing is set, it means that the user is most likely not in incognito mode, since they have persistent storage

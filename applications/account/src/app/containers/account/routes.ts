@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { DEFAULT_CURRENCY } from '@proton/payments';
+import { DEFAULT_CURRENCY, isManagedExternally } from '@proton/payments';
 import { Renew, type Subscription } from '@proton/payments';
 import {
     getHasExternalMemberCapableB2BPlan,
@@ -24,7 +24,12 @@ import {
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import type { Address, GroupMembershipReturn, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { UserType } from '@proton/shared/lib/interfaces';
-import { getIsExternalAccount, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
+import {
+    getIsBYOEAccount,
+    getIsExternalAccount,
+    getIsGlobalSSOAccount,
+    getIsSSOVPNOnlyAccount,
+} from '@proton/shared/lib/keys';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 
@@ -37,7 +42,6 @@ export const getAccountAppRoutes = ({
     subscription,
     isDataRecoveryAvailable,
     isReferralProgramEnabled,
-    isQRCodeSignInEnabled,
     recoveryNotification,
     organization,
     isBreachesAccountDashboardEnabled,
@@ -47,6 +51,7 @@ export const getAccountAppRoutes = ({
     isUserGroupsMembershipFeatureEnabled,
     memberships,
     isZoomIntegrationEnabled,
+    isB2BTrial,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -55,7 +60,6 @@ export const getAccountAppRoutes = ({
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
-    isQRCodeSignInEnabled: boolean;
     recoveryNotification?: ThemeColor;
     organization?: OrganizationExtended;
     isBreachesAccountDashboardEnabled: boolean;
@@ -65,6 +69,7 @@ export const getAccountAppRoutes = ({
     isUserGroupsMembershipFeatureEnabled: boolean;
     memberships: GroupMembershipReturn[] | undefined;
     isZoomIntegrationEnabled: boolean;
+    isB2BTrial: boolean;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
     const credits = getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
@@ -86,13 +91,16 @@ export const getAccountAppRoutes = ({
     const cancellablePlan = hasCancellablePlan(subscription, user);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
 
+    const planIsManagedExternally = isManagedExternally(subscription);
+
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
     const isExternalUser = getIsExternalAccount(user);
+    const isBYOEUser = getIsBYOEAccount(user);
 
     const hasSplitStorage =
         getHasStorageSplit(user) && !getHasVpnB2BPlan(subscription) && app !== APPS.PROTONVPN_SETTINGS;
 
-    const showEasySwitchSection = !isExternalUser && app !== APPS.PROTONPASS && !isSSOUser;
+    const showEasySwitchSection = (!isExternalUser || isBYOEUser) && app !== APPS.PROTONPASS && !isSSOUser;
 
     const showVideoConferenceSection =
         isZoomIntegrationEnabled &&
@@ -121,7 +129,7 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Upgrade your privacy`,
                         invisibleTitle: true,
                         id: 'YourPlanUpsellsSectionV2',
-                        available: canPay,
+                        available: canPay && !planIsManagedExternally,
                     },
                     {
                         text: c('Title').t`Downloads`,
@@ -184,7 +192,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Invoices`,
                         id: 'invoices',
-                        available: canPay,
+                        available: canPay && !isB2BTrial,
                         variant: 'card',
                     },
                     {
@@ -267,7 +275,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Invoices`,
                         id: 'invoices',
-                        available: canPay,
+                        available: canPay && !isB2BTrial,
                     },
                     {
                         text: c('Title').t`Notifications`,
@@ -359,7 +367,7 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Account recovery`,
                         id: 'account-recovery',
                         // This is a special section for non-private users that only contains the QR code sign in
-                        available: isQRCodeSignInEnabled && !user.isPrivate && !isAccountRecoveryAvailable,
+                        available: !user.isPrivate && !isAccountRecoveryAvailable,
                     },
                     {
                         text: isFamilyOrg
@@ -431,7 +439,6 @@ export const getAccountAppRoutes = ({
                         id: 'sentinel',
                         available: !isSSOUser,
                     },
-
                     {
                         text: DARK_WEB_MONITORING_NAME,
                         id: 'breaches',
@@ -448,7 +455,7 @@ export const getAccountAppRoutes = ({
                         available: !isSSOUser,
                     },
                     {
-                        text: c('Title').t`Security events`,
+                        text: c('Title').t`Activity monitor`,
                         id: 'logs',
                         available: !isSSOUser,
                     },
@@ -484,16 +491,9 @@ export const getAccountAppRoutes = ({
                 to: '/easy-switch',
                 icon: 'arrow-down-to-square',
                 available: showEasySwitchSection,
-                description: c('Settings description')
-                    .t`Complete the transition to privacy with our secure importing and forwarding tools.`,
                 subsections: [
                     {
-                        text: c('Title').t`Set up forwarding`,
-                        id: 'start-forward',
-                    },
-                    {
-                        text: c('Title').t`Import messages`,
-                        id: 'start-import',
+                        id: 'easy-switch',
                     },
                     {
                         text: c('Title').t`History`,
@@ -506,11 +506,7 @@ export const getAccountAppRoutes = ({
                 to: '/group-membership',
                 icon: 'pass-group',
                 available: isUserGroupsMembershipFeatureEnabled && (memberships?.length ?? 0) > 0,
-                subsections: [
-                    {
-                        id: 'group-membership',
-                    },
-                ],
+                subsections: [{ id: 'group-membership' }],
             },
         },
     };

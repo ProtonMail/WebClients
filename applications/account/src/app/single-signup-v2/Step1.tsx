@@ -1,4 +1,4 @@
-import type { Dispatch, MutableRefObject, ReactNode, SetStateAction } from 'react';
+import type { ComponentProps, Dispatch, MutableRefObject, ReactNode, SetStateAction } from 'react';
 import { Fragment, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
@@ -12,6 +12,7 @@ import {
     Icon,
     SkeletonLoader,
     getCheckoutRenewNoticeTextFromCheckResult,
+    useActiveBreakpoint,
     useErrorHandler,
     useHandler,
     useModalState,
@@ -30,30 +31,27 @@ import {
     CYCLE,
     type Currency,
     type Cycle,
+    FREE_PLAN,
     type FullPlansMap,
     PLANS,
     type PlanIDs,
     type SubscriptionPlan,
     getFallbackCurrency,
+    getHas2024OfferCoupon,
+    getPlanFromPlanIDs,
+    getPlanOffer,
     getPlansMap,
     isRegionalCurrency,
 } from '@proton/payments';
-import { getHas2024OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/payments';
-import { FREE_PLAN } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import {
-    getPlanFromPlanIDs,
-    getPricingFromPlanIDs,
-    getTotalFromPricing,
-    switchPlan,
-} from '@proton/shared/lib/helpers/planIDs';
+import { getPricingFromPlanIDs, getTotalFromPricing, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import simpleLoginLogo from '@proton/styles/assets/img/illustrations/simplelogin-logo.svg';
 import { useFlag } from '@proton/unleash';
@@ -67,6 +65,7 @@ import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
 import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
+import { AccountFormDataContextProvider } from '../signupCtx/context/accountData/AccountFormDataContext';
 import type { AccountStepDetailsRef } from './AccountStepDetails';
 import AccountStepDetails from './AccountStepDetails';
 import type { AccountStepPaymentRef } from './AccountStepPayment';
@@ -135,6 +134,7 @@ const Step1 = ({
     measure,
     mode,
     onChangeCurrency,
+    trial,
 }: {
     initialSessionsLength: boolean;
     signupConfiguration: SignupConfiguration;
@@ -167,6 +167,7 @@ const Step1 = ({
     step1Ref: MutableRefObject<Step1Rref | undefined>;
     activeSessions?: ActiveSession[];
     onChangeCurrency: (newCurrency: Currency) => Promise<FullPlansMap>;
+    trial: boolean;
 }) => {
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
@@ -192,6 +193,8 @@ const Step1 = ({
     const { getAvailableCurrencies } = useCurrencies();
     const [changingCurrency, withChangingCurrency] = useLoading();
 
+    const { viewportWidth } = useActiveBreakpoint();
+
     useEffect(() => {
         metrics.core_single_signup_pageLoad_total.increment({});
     }, []);
@@ -213,6 +216,7 @@ const Step1 = ({
         coupon: model.subscriptionData.checkResult.Coupon?.Code || undefined,
         billingAddress: model.subscriptionData.billingAddress,
         checkResult: model.subscriptionData.checkResult,
+        trial: model.subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial || undefined,
     };
     const options: OptimisticOptions = {
         ...subscriptionCheckOptions,
@@ -239,6 +243,7 @@ const Step1 = ({
         cycle: Cycle;
         billingAddress: BillingAddress;
         coupon?: string;
+        trial?: boolean;
     }) => {
         const paymentsApi = await getSilentPaymentApi();
         return getSubscriptionPrices(
@@ -247,7 +252,8 @@ const Step1 = ({
             values.currency,
             values.cycle,
             values.billingAddress,
-            values.coupon
+            values.coupon,
+            values.trial
         );
     };
 
@@ -264,6 +270,7 @@ const Step1 = ({
                         planIDs: optimistic.planIDs,
                         checkResult,
                         billingAddress: optimistic.billingAddress,
+                        trial: optimistic.trial,
                     },
                     optimistic: {},
                 }));
@@ -303,6 +310,7 @@ const Step1 = ({
         const completeCheckOptions = {
             ...subscriptionCheckOptions,
             coupon: subscriptionCheckOptions.coupon || signupParameters.coupon,
+            trial: subscriptionCheckOptions.trial || trial,
             ...mergedCheckOptions,
         };
 
@@ -366,15 +374,15 @@ const Step1 = ({
         if (model.loadingDependencies) {
             return;
         }
-        measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
+        void measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
         return handleOptimistic({ cycle });
     };
 
-    const handleChangePlan = (planIDs: PlanIDs, planName: PLANS, currencyOverride?: Currency) => {
+    const handleChangePlan = (planIDs: PlanIDs, planName: PLANS, currencyOverride?: Currency, audience?: Audience) => {
         if (model.loadingDependencies) {
             return;
         }
-        measure({ event: TelemetryAccountSignupEvents.planSelect, dimensions: { plan: planName } });
+        void measure({ event: TelemetryAccountSignupEvents.planSelect, dimensions: { plan: planName } });
 
         const currency = currencyOverride ?? getPlanFromPlanIDs(model.plansMap, planIDs)?.Currency;
         const checkOptions: Partial<OptimisticOptions> = {
@@ -387,7 +395,7 @@ const Step1 = ({
 
         if (model.session?.subscription && model.session.organization && model.plansMap[planName]) {
             const switchedPlanIds = switchPlan({
-                currentPlanIDs: getPlanIDs(model.session.subscription),
+                subscription: model.session.subscription,
                 newPlan: planName,
                 organization: model.session.organization,
                 plans: model.plans,
@@ -395,6 +403,12 @@ const Step1 = ({
             });
 
             checkOptions.planIDs = switchedPlanIds;
+        }
+
+        // TODO(plavarin): hack until we have a proper way to optimistically determine whether
+        // a plan supports trials. Currently, only B2B plans support trials.
+        if (trial && audience === Audience.B2B) {
+            checkOptions.trial = true;
         }
 
         return handleOptimistic(checkOptions);
@@ -430,6 +444,11 @@ const Step1 = ({
     const cta = (() => {
         if (mode === SignupMode.MailReferral && selectedPlan.Name !== PLANS.FREE) {
             return c('Action in trial plan').t`Try free for 30 days`;
+        }
+
+        const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+        if (isTrial) {
+            return c('Action').t`Try for free`;
         }
 
         return c('pass_signup_2023: Action').t`Start using ${appName} now`;
@@ -491,7 +510,8 @@ const Step1 = ({
         checkResult: options.checkResult,
     });
 
-    const showRenewalNotice = !hasSelectedFree;
+    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+    const showRenewalNotice = !hasSelectedFree && !isTrial;
     const renewalNotice = showRenewalNotice && (
         <div className="w-full text-sm color-norm opacity-70">
             *
@@ -565,7 +585,12 @@ const Step1 = ({
                     audiences={audiences}
                     onChangeAudience={async (newAudience) => {
                         const newCurrency = await handleCurrencyChangeOnAudienceChange(newAudience.value);
-                        handleChangePlan({ [newAudience.defaultPlan]: 1 }, newAudience.defaultPlan, newCurrency);
+                        handleChangePlan(
+                            { [newAudience.defaultPlan]: 1 },
+                            newAudience.defaultPlan,
+                            newCurrency,
+                            newAudience.value
+                        );
                         history.push(newAudience.locationDescriptor);
                     }}
                 />
@@ -659,7 +684,7 @@ const Step1 = ({
 
     const offerBanner = (() => {
         if (model.loadingDependencies) {
-            return <SkeletonLoader width="36em" height="2.4rem" index={0} className="mt-4" />;
+            return <SkeletonLoader width="36em" height="2.4rem" index={0} className="mt-4 max-w-full" />;
         }
 
         if (isPorkbunPayment) {
@@ -863,8 +888,12 @@ const Step1 = ({
                         return;
                     }
 
+                    if (signupParameters.trial) {
+                        return;
+                    }
+
                     if (model.loadingDependencies) {
-                        return <SkeletonLoader width="36em" height="2.5rem" index={0} className="mt-4" />;
+                        return <SkeletonLoader width="36em" height="2.5rem" index={0} className="mt-4 max-w-full" />;
                     }
 
                     return (
@@ -927,9 +956,12 @@ const Step1 = ({
                                             planCards={planCards[audience]}
                                             onSelect={handleChangePlan}
                                             onSelectedClick={() => {
-                                                accountDetailsRef.current?.scrollInto('email');
+                                                if (!viewportWidth['<=medium']) {
+                                                    accountDetailsRef.current?.scrollInto('email');
+                                                }
                                             }}
                                             loading={model.loadingDependencies}
+                                            signupParameters={signupParameters}
                                         />
                                     ) : null;
                                 })()}
@@ -944,7 +976,7 @@ const Step1 = ({
                                                 'flex justify-center'
                                             )}
                                         >
-                                            <Guarantee />
+                                            {!signupParameters.trial && <Guarantee />}
                                         </div>
                                     </>
                                 )}
@@ -1086,6 +1118,41 @@ const Step1 = ({
                                 signupParameters.mode !== SignupMode.MailReferral &&
                                 signupParameters.mode !== SignupMode.PassSimpleLogin;
 
+                            const inviteProps = (() => {
+                                const contextProps: Partial<
+                                    Pick<
+                                        ComponentProps<typeof AccountFormDataContextProvider>,
+                                        'availableSignupTypes' | 'defaultEmail'
+                                    >
+                                > = {};
+
+                                const stepProps: Partial<
+                                    Pick<ComponentProps<typeof AccountStepDetails>, 'emailReadOnly'>
+                                > = {};
+
+                                if (signupParameters.email) {
+                                    contextProps.defaultEmail = signupParameters.email;
+                                }
+
+                                const invitation = signupParameters.invite;
+                                if (
+                                    invitation &&
+                                    (invitation.type === 'wallet' ||
+                                        invitation.type === 'pass' ||
+                                        invitation.type === 'drive' ||
+                                        invitation.type === 'porkbun')
+                                ) {
+                                    contextProps.defaultEmail = invitation.data.invitee;
+                                    contextProps.availableSignupTypes = new Set([SignupType.External]);
+                                    stepProps.emailReadOnly = invitation.data.invitee !== '';
+                                }
+
+                                return {
+                                    contextProps,
+                                    stepProps,
+                                };
+                            })();
+
                             return (
                                 <>
                                     <BoxHeader
@@ -1123,217 +1190,206 @@ const Step1 = ({
                                     <BoxContent>
                                         <div className="flex md:flex-nowrap items-start justify-space-between gap-10 lg:gap-20">
                                             <div className="flex-1 w-0 relative">
-                                                <AccountStepDetails
-                                                    signupTypes={signupTypes}
-                                                    {...(signupParameters.email
-                                                        ? { defaultEmail: signupParameters.email }
-                                                        : undefined)}
-                                                    {...(() => {
-                                                        const invitation = signupParameters.invite;
-                                                        if (
-                                                            invitation &&
-                                                            (invitation.type === 'wallet' ||
-                                                                invitation.type === 'pass' ||
-                                                                invitation.type === 'drive' ||
-                                                                invitation.type === 'porkbun')
-                                                        ) {
-                                                            return {
-                                                                defaultEmail: invitation.data.invitee,
-                                                                emailReadOnly: invitation.data.invitee !== '',
-                                                                signupTypes: [SignupType.Email],
-                                                            };
-                                                        }
-                                                    })()}
-                                                    {...(signupParameters.mode === SignupMode.PassSimpleLogin
-                                                        ? {
-                                                              emailDescription: c('Info')
-                                                                  .t`By creating a ${PASS_APP_NAME} account with your SimpleLogin email, you can manage your aliases directly from ${PASS_APP_NAME}.`,
-                                                          }
-                                                        : {})}
+                                                <AccountFormDataContextProvider
+                                                    availableSignupTypes={new Set(signupTypes)}
+                                                    {...inviteProps.contextProps}
                                                     domains={model.domains}
-                                                    passwordFields={true}
-                                                    model={model}
-                                                    measure={measure}
-                                                    api={silentApi}
-                                                    accountStepDetailsRef={accountDetailsRef}
-                                                    disableChange={loadingSignup}
-                                                    onSubmit={
-                                                        hasSelectedFree
-                                                            ? async () => {
-                                                                  if (
-                                                                      selectedPlan.Name === PLANS.FREE &&
-                                                                      !signupParameters.noPromo
-                                                                  ) {
-                                                                      if (
-                                                                          app === APPS.PROTONMAIL &&
-                                                                          mailTrialOfferEnabled
-                                                                      ) {
-                                                                          try {
-                                                                              await fetchTrialPrice(PLANS.MAIL);
-
-                                                                              setUpsellMailTrialModal(true);
-
-                                                                              return;
-                                                                          } catch {}
-                                                                      }
-                                                                      if (
-                                                                          app === APPS.PROTONDRIVE &&
-                                                                          driveTrialOfferEnabled
-                                                                      ) {
-                                                                          try {
-                                                                              await fetchTrialPrice(PLANS.DRIVE);
-
-                                                                              setUpsellDriveTrialModal(true);
-
-                                                                              return;
-                                                                          } catch {}
-                                                                      }
-                                                                      if (
-                                                                          app === APPS.PROTONPASS &&
-                                                                          passTrialOfferEnabled
-                                                                      ) {
-                                                                          try {
-                                                                              await fetchTrialPrice(PLANS.PASS);
-
-                                                                              setUpsellPassTrialModal(true);
-
-                                                                              return;
-                                                                          } catch {}
-                                                                      }
-                                                                  }
-
-                                                                  let subscriptionData = getFreeSubscriptionData(
-                                                                      model.subscriptionData
-                                                                  );
-                                                                  if (
-                                                                      mode === SignupMode.MailReferral &&
-                                                                      selectedPlan.Name !== PLANS.FREE
-                                                                  ) {
-                                                                      subscriptionData = {
-                                                                          ...subscriptionData,
-                                                                          cycle: CYCLE.MONTHLY,
-                                                                          planIDs: options.planIDs,
-                                                                      };
-                                                                  }
-                                                                  withLoadingSignup(
-                                                                      handleCompletion(subscriptionData)
-                                                                  ).catch(noop);
+                                                >
+                                                    <AccountStepDetails
+                                                        {...inviteProps.stepProps}
+                                                        {...(signupParameters.mode === SignupMode.PassSimpleLogin
+                                                            ? {
+                                                                  emailDescription: c('Info')
+                                                                      .t`By creating a ${PASS_APP_NAME} account with your SimpleLogin email, you can manage your aliases directly from ${PASS_APP_NAME}.`,
                                                               }
-                                                            : accountStepPaymentRef.current?.process
-                                                    }
-                                                    footer={(details) => {
-                                                        return (
-                                                            <>
-                                                                {hasSelectedFree && (
-                                                                    <div className="mb-4">
-                                                                        <Button
-                                                                            {...(() => {
-                                                                                if (loadingSignup || checkingTrial) {
-                                                                                    return { loading: true };
-                                                                                }
-                                                                                if (disableInitialFormSubmit) {
-                                                                                    return {
-                                                                                        disabled: true,
-                                                                                        noDisabledStyles: true,
-                                                                                    };
-                                                                                }
-                                                                            })()}
-                                                                            type="submit"
-                                                                            size="large"
-                                                                            color="norm"
-                                                                            className="block mx-auto"
-                                                                            pill
-                                                                        >
-                                                                            {cta}
-                                                                        </Button>
-                                                                    </div>
-                                                                )}
-                                                                {(showSignIn || details.emailAlreadyUsed) && (
-                                                                    <div className="text-center">
-                                                                        <span>
-                                                                            {(() => {
-                                                                                if (
-                                                                                    signupParameters.signIn ===
-                                                                                        'redirect' &&
-                                                                                    // we don't redirect users if a coupon is present to avoid loosing the offer
-                                                                                    !signupParameters.coupon
-                                                                                ) {
-                                                                                    const searchParams =
-                                                                                        new URLSearchParams();
-                                                                                    searchParams.set(
-                                                                                        'email',
-                                                                                        details.email
-                                                                                    );
+                                                            : {})}
+                                                        passwordFields={true}
+                                                        model={model}
+                                                        measure={measure}
+                                                        accountStepDetailsRef={accountDetailsRef}
+                                                        disableChange={loadingSignup}
+                                                        onSubmit={
+                                                            hasSelectedFree
+                                                                ? async () => {
+                                                                      if (
+                                                                          selectedPlan.Name === PLANS.FREE &&
+                                                                          !signupParameters.noPromo
+                                                                      ) {
+                                                                          if (
+                                                                              app === APPS.PROTONMAIL &&
+                                                                              mailTrialOfferEnabled
+                                                                          ) {
+                                                                              try {
+                                                                                  await fetchTrialPrice(PLANS.MAIL);
+
+                                                                                  setUpsellMailTrialModal(true);
+
+                                                                                  return;
+                                                                              } catch {}
+                                                                          }
+                                                                          if (
+                                                                              app === APPS.PROTONDRIVE &&
+                                                                              driveTrialOfferEnabled
+                                                                          ) {
+                                                                              try {
+                                                                                  await fetchTrialPrice(PLANS.DRIVE);
+
+                                                                                  setUpsellDriveTrialModal(true);
+
+                                                                                  return;
+                                                                              } catch {}
+                                                                          }
+                                                                          if (
+                                                                              app === APPS.PROTONPASS &&
+                                                                              passTrialOfferEnabled
+                                                                          ) {
+                                                                              try {
+                                                                                  await fetchTrialPrice(PLANS.PASS);
+
+                                                                                  setUpsellPassTrialModal(true);
+
+                                                                                  return;
+                                                                              } catch {}
+                                                                          }
+                                                                      }
+
+                                                                      let subscriptionData = getFreeSubscriptionData(
+                                                                          model.subscriptionData
+                                                                      );
+                                                                      if (
+                                                                          mode === SignupMode.MailReferral &&
+                                                                          selectedPlan.Name !== PLANS.FREE
+                                                                      ) {
+                                                                          subscriptionData = {
+                                                                              ...subscriptionData,
+                                                                              cycle: CYCLE.MONTHLY,
+                                                                              planIDs: options.planIDs,
+                                                                          };
+                                                                      }
+                                                                      withLoadingSignup(
+                                                                          handleCompletion(subscriptionData)
+                                                                      ).catch(noop);
+                                                                  }
+                                                                : accountStepPaymentRef.current?.process
+                                                        }
+                                                        footer={(details) => {
+                                                            return (
+                                                                <>
+                                                                    {hasSelectedFree && (
+                                                                        <div className="mb-4">
+                                                                            <Button
+                                                                                {...(() => {
+                                                                                    if (
+                                                                                        loadingSignup ||
+                                                                                        checkingTrial
+                                                                                    ) {
+                                                                                        return { loading: true };
+                                                                                    }
+                                                                                    if (disableInitialFormSubmit) {
+                                                                                        return {
+                                                                                            disabled: true,
+                                                                                            noDisabledStyles: true,
+                                                                                        };
+                                                                                    }
+                                                                                })()}
+                                                                                type="submit"
+                                                                                size="large"
+                                                                                color="norm"
+                                                                                className="block mx-auto"
+                                                                                pill
+                                                                            >
+                                                                                {cta}
+                                                                            </Button>
+                                                                        </div>
+                                                                    )}
+                                                                    {(showSignIn || details.emailAlreadyUsed) && (
+                                                                        <div className="text-center">
+                                                                            <span>
+                                                                                {(() => {
+                                                                                    if (
+                                                                                        signupParameters.signIn ===
+                                                                                            'redirect' &&
+                                                                                        // we don't redirect users if a coupon is present to avoid loosing the offer
+                                                                                        !signupParameters.coupon
+                                                                                    ) {
+                                                                                        const searchParams =
+                                                                                            new URLSearchParams();
+                                                                                        searchParams.set(
+                                                                                            'email',
+                                                                                            details.email
+                                                                                        );
+                                                                                        const signIn = (
+                                                                                            <Link
+                                                                                                key="signin"
+                                                                                                className="link link-focus text-nowrap"
+                                                                                                to={`${SSO_PATHS.SWITCH}?${searchParams.toString()}`}
+                                                                                            >
+                                                                                                {c('Link').t`Sign in`}
+                                                                                            </Link>
+                                                                                        );
+                                                                                        // translator: Full sentence "Already have an account? Sign in"
+                                                                                        return c('Go to sign in')
+                                                                                            .jt`Already have an account? ${signIn}`;
+                                                                                    }
+
                                                                                     const signIn = (
-                                                                                        <Link
+                                                                                        <InlineLinkButton
                                                                                             key="signin"
                                                                                             className="link link-focus text-nowrap"
-                                                                                            to={`${SSO_PATHS.SWITCH}?${searchParams.toString()}`}
+                                                                                            onClick={() => {
+                                                                                                if (
+                                                                                                    disableInitialFormSubmit
+                                                                                                ) {
+                                                                                                    return;
+                                                                                                }
+                                                                                                onOpenLogin({
+                                                                                                    email: details.email.trim(),
+                                                                                                    location: 'step2',
+                                                                                                });
+                                                                                            }}
                                                                                         >
                                                                                             {c('Link').t`Sign in`}
-                                                                                        </Link>
+                                                                                        </InlineLinkButton>
                                                                                     );
-                                                                                    // translator: Full sentence "Already have an account? Sign in"
-                                                                                    return c('Go to sign in')
-                                                                                        .jt`Already have an account? ${signIn}`;
-                                                                                }
 
-                                                                                const signIn = (
-                                                                                    <InlineLinkButton
-                                                                                        key="signin"
-                                                                                        className="link link-focus text-nowrap"
-                                                                                        onClick={() => {
-                                                                                            if (
-                                                                                                disableInitialFormSubmit
-                                                                                            ) {
-                                                                                                return;
-                                                                                            }
-                                                                                            onOpenLogin({
-                                                                                                email: details.email.trim(),
-                                                                                                location: 'step2',
-                                                                                            });
-                                                                                        }}
-                                                                                    >
-                                                                                        {c('Link').t`Sign in`}
-                                                                                    </InlineLinkButton>
-                                                                                );
-
-                                                                                const switchAccount = (
-                                                                                    <InlineLinkButton
-                                                                                        key="switch"
-                                                                                        className="link link-focus text-nowrap"
-                                                                                        onClick={() => {
-                                                                                            if (
-                                                                                                disableInitialFormSubmit
-                                                                                            ) {
-                                                                                                return;
-                                                                                            }
-                                                                                            onOpenSwitch();
-                                                                                        }}
-                                                                                    >
-                                                                                        {c('Link').t`switch account`}
-                                                                                    </InlineLinkButton>
-                                                                                );
-                                                                                return (activeSessions?.length || 0) >=
-                                                                                    1
-                                                                                    ? // translator: Full sentence "Already have an account? Sign in or switch account"
-                                                                                      c('Go to sign in')
-                                                                                          .jt`Already have an account? ${signIn} or ${switchAccount}`
-                                                                                    : // translator: Full sentence "Already have an account? Sign in"
-                                                                                      c('Go to sign in')
-                                                                                          .jt`Already have an account? ${signIn}`;
-                                                                            })()}
-                                                                        </span>
-                                                                    </div>
-                                                                )}
-                                                                {hasSelectedFree && terms}
-                                                                {selectedPlan.Name === PLANS.PASS_LIFETIME && (
-                                                                    <PassLifetimeFeaturedSection className="mt-8" />
-                                                                )}
-                                                            </>
-                                                        );
-                                                    }}
-                                                />
+                                                                                    const switchAccount = (
+                                                                                        <InlineLinkButton
+                                                                                            key="switch"
+                                                                                            className="link link-focus text-nowrap"
+                                                                                            onClick={() => {
+                                                                                                if (
+                                                                                                    disableInitialFormSubmit
+                                                                                                ) {
+                                                                                                    return;
+                                                                                                }
+                                                                                                onOpenSwitch();
+                                                                                            }}
+                                                                                        >
+                                                                                            {c('Link')
+                                                                                                .t`switch account`}
+                                                                                        </InlineLinkButton>
+                                                                                    );
+                                                                                    return (activeSessions?.length ||
+                                                                                        0) >= 1
+                                                                                        ? // translator: Full sentence "Already have an account? Sign in or switch account"
+                                                                                          c('Go to sign in')
+                                                                                              .jt`Already have an account? ${signIn} or ${switchAccount}`
+                                                                                        : // translator: Full sentence "Already have an account? Sign in"
+                                                                                          c('Go to sign in')
+                                                                                              .jt`Already have an account? ${signIn}`;
+                                                                                })()}
+                                                                            </span>
+                                                                        </div>
+                                                                    )}
+                                                                    {hasSelectedFree && terms}
+                                                                    {selectedPlan.Name === PLANS.PASS_LIFETIME && (
+                                                                        <PassLifetimeFeaturedSection className="mt-8" />
+                                                                    )}
+                                                                </>
+                                                            );
+                                                        }}
+                                                    />
+                                                </AccountFormDataContextProvider>
                                             </div>
                                             {step2Summary}
                                         </div>
@@ -1347,10 +1403,19 @@ const Step1 = ({
                     <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
                         <BoxHeader
                             step={step++}
-                            title={c('pass_signup_2023: Header').t`Checkout`}
+                            title={
+                                signupParameters.trial
+                                    ? c('b2b_trials_2025: Header').t`Payment details`
+                                    : c('pass_signup_2023: Header').t`Checkout`
+                            }
                             right={!hasPlanSelector ? currencySelector : null}
                         />
                         <BoxContent>
+                            {signupParameters.trial && (
+                                <div className="mb-4 text-sm color-weak">
+                                    {c('b2b_trials_2025_Info').t`During the trial period, you can have up to 10 users.`}
+                                </div>
+                            )}
                             <AccountStepPayment
                                 selectedPlan={selectedPlan}
                                 measure={measure}
@@ -1369,6 +1434,7 @@ const Step1 = ({
                                 isDarkBg={isDarkBg}
                                 signupParameters={signupParameters}
                                 showRenewalNotice={showRenewalNotice}
+                                app={app}
                                 onPay={async (payment, type) => {
                                     if (payment === 'signup-token') {
                                         await handleCompletion(model.subscriptionData, 'signup-token');
@@ -1380,7 +1446,7 @@ const Step1 = ({
                                         type,
                                     });
                                 }}
-                                onValidate={() => {
+                                onValidate={async () => {
                                     return accountDetailsRef.current?.validate() ?? true;
                                 }}
                                 withLoadingSignup={withLoadingSignup}

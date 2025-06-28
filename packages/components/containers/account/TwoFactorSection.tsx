@@ -4,12 +4,12 @@ import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, InlineLinkButton } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { APPS } from '@proton/shared/lib/constants';

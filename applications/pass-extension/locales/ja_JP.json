@@ -152,11 +152,11 @@
       "Create": [
         "作成"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } アカウントを作成する"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを作成"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを作成する"
       ],
       "Create alias": [
         "エイリアスを作成"
@@ -401,6 +401,9 @@
       "Multiple select": [
         "複数選択"
       ],
+      "Next month": [
+        "翌月"
+      ],
       "No expired links": [
         "期限切れのリンクはありません"
       ],
@@ -430,6 +433,9 @@
       ],
       "Please retry": [
         "再度お試しください"
+      ],
+      "Previous month": [
+        "前月"
       ],
       "Re-verify": [
         "再認証"
@@ -574,6 +580,9 @@
       ],
       "Sort vault items": [
         "保管庫のアイテムを並び替え"
+      ],
+      "Start from scratch": [
+        "ゼロから始める"
       ],
       "Submit": [
         "送信"
@@ -754,9 +763,6 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } ファイルを解析できませんでした。 ${ errorDetail }"
-      ],
-      "[Error] an item could not be parsed": [
-        "[エラー] アイテムを解析できませんでした"
       ],
       "A domain ownership must be verified first.": [
         "ドメインの所有権を最初に確認しなければなりません。"
@@ -1001,9 +1007,6 @@
       "File does not match expected format": [
         "予期しないファイル形式です"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "保管庫「${ vaultData.name }」のインポートに失敗しました: ${ errorMessage }"
-      ],
       "Importing items failed": [
         "アイテムのインポートに失敗しました"
       ],
@@ -1236,9 +1239,6 @@
       ],
       "${ count } view": [
         "${ count } 回表示"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } 表示"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount }件の転送済み"
@@ -1583,7 +1583,7 @@
         "メールを送りたいアドレスを入力してください。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "検証コードを入力してください。桁数は ${ digit } 桁です。"
+        "認証コードを入力してください。${ digit }桁です。"
       ],
       "Enter your extra password": [
         "追加パスワードを入力してください"
@@ -2251,6 +2251,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "SimpleLogin に ${ aliasCount } 個のエイリアスが存在しますが、 ${ PASS_APP_NAME }に見つかりませんでした。インポートしますか？"
       ],
+      "Week": [
+        "週"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "確認コードを ${ email } に送信しました。以下に入力してください。"
       ],
@@ -2436,6 +2439,12 @@
       "Account": [
         "アカウント"
       ],
+      "Account Number": [
+        "口座番号"
+      ],
+      "Account Type": [
+        "口座種別"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "新しいエイリアスを作成する際に、このドメインにランダムなプレフィックスを追加します。"
       ],
@@ -2444,6 +2453,9 @@
       ],
       "Additional details": [
         "その他の詳細"
+      ],
+      "Address": [
+        "メールアドレス"
       ],
       "Address details": [
         "住所の詳細"
@@ -2472,6 +2484,12 @@
       "Always show username field": [
         "ユーザー名フィールドを常に表示"
       ],
+      "API Credential": [
+        "API認証情報"
+      ],
+      "API Key": [
+        "APIキー"
+      ],
       "Application logs": [
         "アプリケーションのログ"
       ],
@@ -2495,6 +2513,12 @@
       ],
       "Backup password": [
         "バックアップパスワード"
+      ],
+      "Bank Account": [
+        "銀行口座"
+      ],
+      "Bank Name": [
+        "銀行名"
       ],
       "Biometrics": [
         "生体認証"
@@ -2550,6 +2574,9 @@
       "Copy password": [
         "パスワードをコピー"
       ],
+      "Country": [
+        "国"
+      ],
       "Country or Region": [
         "国または地域"
       ],
@@ -2558,6 +2585,9 @@
       ],
       "Create a credit card": [
         "クレジットカード情報を作成"
+      ],
+      "Create a custom item": [
+        "カスタムアイテムを作成"
       ],
       "Create a hide-my-email alias": [
         "Hide-my-emailエイリアスを作成"
@@ -2577,17 +2607,26 @@
       "Create new vault": [
         "新しい保管庫を作成"
       ],
-      "Created": [
-        "作成日時"
-      ],
       "Created at": [
         "作成日時"
       ],
-      "Custom hidden field": [
-        "カスタム非表示フィールド"
+      "Crypto Wallet": [
+        "暗号通貨ウォレット"
       ],
-      "Custom text field": [
-        "カスタムテキストフィールド"
+      "Custom Items": [
+        "カスタムアイテム"
+      ],
+      "Database": [
+        "データベース"
+      ],
+      "Database Type": [
+        "データベース種類"
+      ],
+      "Date": [
+        "日付"
+      ],
+      "Date of Birth": [
+        "生年月日"
       ],
       "Device": [
         "デバイス"
@@ -2616,6 +2655,9 @@
       "Download logs": [
         "過去ログのダウンロード"
       ],
+      "Driver License": [
+        "運転免許証"
+      ],
       "Email": [
         "メールアドレス"
       ],
@@ -2643,6 +2685,9 @@
       "Expired": [
         "有効期限切れ"
       ],
+      "Expiry Date": [
+        "有効期限"
+      ],
       "Export": [
         "エクスポート"
       ],
@@ -2660,6 +2705,9 @@
       ],
       "File format": [
         "ファイル形式"
+      ],
+      "Finance": [
+        "ファイナンス"
       ],
       "First name": [
         "名"
@@ -2694,8 +2742,20 @@
       "Hide password": [
         "パスワードを隠す"
       ],
+      "Holder Name": [
+        "所有者名"
+      ],
+      "Host": [
+        "ホスト"
+      ],
+      "Hostname": [
+        "ホスト名"
+      ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "個人番号カード"
@@ -2739,6 +2799,15 @@
       "Invitations": [
         "招待"
       ],
+      "IP Address": [
+        "IPアドレス"
+      ],
+      "Issuing Authority": [
+        "発行機関"
+      ],
+      "Issuing Country": [
+        "発行国"
+      ],
       "Item ID": [
         "アイテム ID"
       ],
@@ -2775,6 +2844,9 @@
       "License": [
         "免許証"
       ],
+      "License Key": [
+        "ライセンスキー"
+      ],
       "License number": [
         "免許証番号"
       ],
@@ -2808,8 +2880,17 @@
       "max views reached": [
         "閲覧回数の上限に達しました"
       ],
+      "Medical Record": [
+        "医療記録"
+      ],
+      "Member ID": [
+        "メンバーID"
+      ],
       "Members": [
         "メンバー"
+      ],
+      "Membership": [
+        "メンバーシップ"
       ],
       "Middle name": [
         "ミドルネーム"
@@ -2826,11 +2907,17 @@
       "Name": [
         "名前"
       ],
+      "Name (SSID)": [
+        "名前 (SSID)"
+      ],
       "Name on card": [
         "カード名義人"
       ],
       "Need help?": [
         "お困りですか？"
+      ],
+      "Network": [
+        "ネットワーク"
       ],
       "New": [
         "新しい"
@@ -2874,8 +2961,17 @@
       "Oldest to newest": [
         "古い順"
       ],
+      "Operating System": [
+        "オペレーティングシステム"
+      ],
       "Organization": [
         "組織"
+      ],
+      "Other": [
+        "その他"
+      ],
+      "Owner": [
+        "所有者"
       ],
       "Passkey": [
         "パスキー"
@@ -2888,6 +2984,9 @@
       ],
       "Passport": [
         "パスポート"
+      ],
+      "Passport Number": [
+        "パスポート番号"
       ],
       "Passport number": [
         "パスポート番号"
@@ -2903,6 +3002,12 @@
       ],
       "Pause list": [
         "一時停止リスト"
+      ],
+      "Permissions": [
+        "許可"
+      ],
+      "Personal": [
+        "個人"
       ],
       "Personal details": [
         "個人情報の詳細"
@@ -2922,6 +3027,12 @@
       "PIN code": [
         "PIN コード"
       ],
+      "Points Balance": [
+        "ポイント残高"
+      ],
+      "Port": [
+        "ポート"
+      ],
       "Prefix": [
         "プレフィックス"
       ],
@@ -2930,6 +3041,18 @@
       ],
       "Priority:": [
         "優先度:"
+      ],
+      "Private key": [
+        "秘密鍵"
+      ],
+      "Private Key": [
+        "秘密鍵"
+      ],
+      "Product": [
+        "製品"
+      ],
+      "Program Name": [
+        "プログラム名"
       ],
       "Prompt for auto-save": [
         "自動保存のプロンプト"
@@ -2942,6 +3065,9 @@
       ],
       "Public domain": [
         "公開ドメイン"
+      ],
+      "Public key": [
+        "公開鍵"
       ],
       "Rate us": [
         "評価"
@@ -2964,11 +3090,20 @@
       "Reveal password": [
         "パスワードを表示する"
       ],
+      "Reward Program": [
+        "報酬プログラム"
+      ],
+      "Routing Number": [
+        "支店番号"
+      ],
       "Save passkeys": [
         "パスキーを保存する"
       ],
       "Second password": [
         "セカンドパスワード"
+      ],
+      "Secret": [
+        "秘密"
       ],
       "Secure links": [
         "安全なリンク"
@@ -2981,6 +3116,9 @@
       ],
       "See member and permission overview": [
         "メンバーと権限の概要を表示"
+      ],
+      "Seed Phrase": [
+        "シードフレーズ"
       ],
       "Select a domain": [
         "ドメイン選択"
@@ -2999,6 +3137,9 @@
       ],
       "Selected": [
         "選択済み"
+      ],
+      "Server": [
+        "サーバー"
       ],
       "Settings": [
         "設定"
@@ -3024,11 +3165,23 @@
       "Social security": [
         "社会保障"
       ],
+      "Social Security": [
+        "社会保障"
+      ],
       "Social security number": [
         "社会保障番号"
       ],
+      "Software license": [
+        "ソフトウェアライセンス"
+      ],
       "Special characters (!&*)": [
         "特殊文字 (!&*)"
+      ],
+      "SSH key": [
+        "SSHキー"
+      ],
+      "SSN": [
+        "SSN"
       ],
       "State or province": [
         "都道府県"
@@ -3048,6 +3201,9 @@
       "Support": [
         "サポート"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "SimpleLoginとエイリアスを同期"
       ],
@@ -3057,6 +3213,9 @@
       "Tax number": [
         "納税者番号"
       ],
+      "Technology": [
+        "テクノロジー"
+      ],
       "Text": [
         "テキスト"
       ],
@@ -3065,6 +3224,9 @@
       ],
       "Theme": [
         "テーマ"
+      ],
+      "Tier/Status": [
+        "階級/ステータス"
       ],
       "Title": [
         "タイトル"
@@ -3102,6 +3264,9 @@
       "Unnamed Credit Card": [
         "無名のクレジットカード"
       ],
+      "Unnamed custom item": [
+        "無題のカスタムアイテム"
+      ],
       "Unnamed identity": [
         "名前のないユーザー情報"
       ],
@@ -3110,6 +3275,15 @@
       ],
       "Unnamed note": [
         "名前のないメモ"
+      ],
+      "Unnamed SSH key": [
+        "無題のSSHキー"
+      ],
+      "Unnamed WiFi item": [
+        "無題のWiFiアイテム"
+      ],
+      "Unspecified": [
+        "未設定"
       ],
       "Untitled": [
         "タイトルなし"
@@ -3144,6 +3318,9 @@
       "Vulnerable": [
         "脆弱"
       ],
+      "Wallet Name": [
+        "ウォレット名"
+      ],
       "Weak": [
         "弱い"
       ],
@@ -3152,6 +3329,9 @@
       ],
       "Websites": [
         "ウェブサイト"
+      ],
+      "WiFi network": [
+        "WiFiネットワーク"
       ],
       "Work details": [
         "仕事の詳細"
@@ -3363,6 +3543,9 @@
       "Coupon": [
         "クーポン"
       ],
+      "E.g., ": [
+        "例: "
+      ],
       "Email address": [
         "メールアドレス"
       ],
@@ -3393,8 +3576,8 @@
       "my-domain.com": [
         "my-domain.com"
       ],
-      "Name to display when sending an email": [
-        "メールを送るときに表示される名前"
+      "Name displayed in emails": [
+        "メールに表示される名前"
       ],
       "Note from SimpleLogin": [
         "SimpleLoginからのメモ"
@@ -3429,6 +3612,9 @@
       "Select a suffix": [
         "サフィックスを選択"
       ],
+      "Select option": [
+        "オプションを選択"
+      ],
       "Unknown origin": [
         "オリジナル不明"
       ],
@@ -3437,9 +3623,6 @@
       ],
       "Used on ${ url }": [
         "${ url } で使用されます"
-      ],
-      "Write your note": [
-        "メモを書く"
       ]
     },
     "sso": {
@@ -3712,6 +3895,9 @@
       "Enter coupon code": [
         "クーポンコードを入力"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "${ BRAND_NAME } の パスワード を入力してください"
+      ],
       "Enter your backup password": [
         "バックアップパスワードを入力してください"
       ],
@@ -3786,6 +3972,9 @@
       ],
       "Members": [
         "メンバー"
+      ],
+      "Minicalendar": [
+        "ミニカレンダー"
       ],
       "Modified": [
         "更新日時"
@@ -3965,6 +4154,11 @@
         "${ aliasCount }個のエイリアスを完全に削除しようとしています。"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "今日"
+      ]
+    },
     "Validation": {
       "Domain URL is invalid": [
         "ドメインURLが無効です"
@@ -3977,9 +4171,6 @@
       ],
       "OTP secret or URI is invalid": [
         "OTP シークレットまたは URI が無効です"
-      ],
-      "OTP secret or URI required": [
-        "OTP シークレットまたは URI が必要です"
       ],
       "Section name cannot be empty": [
         "セクション名は空欄にできません"
@@ -4099,9 +4290,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "組織外のメール アドレスを招待することはできません。"
-      ],
-      "item was imported without custom fields": [
-        "アイテムはカスタムフィールドなしでインポートされました"
       ],
       "Maximum length is ${ maxLength } character": [
         "最大長は ${ maxLength } 文字です"

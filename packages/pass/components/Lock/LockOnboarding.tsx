@@ -12,7 +12,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 type Props = { onCancel: () => void };
 
 export const LockOnboarding: FC<Props> = ({ onCancel }) => (
-    <LobbyLayout overlay>
+    <LobbyLayout>
         <div
             key="lock-setup"
             className="anime-fade-in flex flex-nowrap shrink-0 flex-column gap-5"

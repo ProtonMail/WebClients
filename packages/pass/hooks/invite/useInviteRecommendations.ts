@@ -88,6 +88,7 @@ export const useInviteRecommendations = ({ shareId, itemId }: AccessKeys, starts
             state,
             loadMore: () => {
                 if (!state.loading && state.more && state.next) {
+                    setState((prev) => ({ ...prev, loading: true }));
                     recommendations.revalidate(
                         {
                             pageSize,

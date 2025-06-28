@@ -1,11 +1,10 @@
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
-import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, UNPAID_STATE } from '@proton/shared/lib/interfaces';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 
-import { queryPaymentMethods } from './api';
 import {
     Autopay,
     FREE_SUBSCRIPTION,
+    MIN_APPLE_PAY_AMOUNT,
     MIN_BITCOIN_AMOUNT,
     MIN_PAYPAL_AMOUNT_CHARGEBEE,
     MethodStorage,
@@ -49,7 +48,6 @@ describe('getNewMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -71,7 +69,6 @@ describe('getNewMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -92,7 +89,6 @@ describe('getNewMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -112,7 +108,6 @@ describe('getNewMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -144,7 +139,6 @@ describe('getNewMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -164,7 +158,6 @@ describe('getNewMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -186,7 +179,6 @@ describe('getNewMethods()', () => {
                 selectedPlanName: undefined,
                 billingPlatform: undefined,
                 chargebeeUserExists: undefined,
-                disableNewPaymentMethods: false,
                 billingAddress: undefined,
                 enableSepa: true,
             });
@@ -207,7 +199,6 @@ describe('getNewMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -227,7 +218,6 @@ describe('getNewMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -249,7 +239,6 @@ describe('getNewMethods()', () => {
                 selectedPlanName: undefined,
                 billingPlatform: undefined,
                 chargebeeUserExists: undefined,
-                disableNewPaymentMethods: false,
                 billingAddress: undefined,
                 enableSepa: true,
             });
@@ -270,7 +259,6 @@ describe('getNewMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -295,7 +283,6 @@ describe('getNewMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -367,7 +354,6 @@ describe('getUsedMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -438,7 +424,6 @@ describe('getAvailablePaymentMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -515,7 +500,6 @@ describe('getLastUsedMethod()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -528,6 +512,7 @@ describe('getLastUsedMethod()', () => {
             value: '1',
             isSaved: true,
             isExpired: false,
+            isDefault: false,
         });
     });
 });
@@ -607,7 +592,6 @@ describe('getSavedMethodById()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -683,7 +667,7 @@ describe('initializePaymentMethods()', () => {
         ];
 
         apiMock.mockImplementation(({ url }) => {
-            if (url === queryPaymentMethods().url) {
+            if (url === 'payments/v5/methods') {
                 return {
                     PaymentMethods: paymentMethods,
                 };
@@ -717,7 +701,6 @@ describe('initializePaymentMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: false,
         });
@@ -765,7 +748,6 @@ describe('initializePaymentMethods()', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: false,
         });
@@ -793,7 +775,6 @@ describe('Cash', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -816,7 +797,6 @@ describe('Cash', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -836,7 +816,6 @@ describe('Cash', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -858,7 +837,6 @@ describe('Cash', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
             planIDs: {
@@ -883,7 +861,6 @@ describe('Cash', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
             planIDs: {
@@ -908,7 +885,6 @@ describe('Cash', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -932,7 +908,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -955,7 +930,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -983,7 +957,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1005,7 +978,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1029,7 +1001,6 @@ describe('Chargebee Bitcoin', () => {
                 selectedPlanName: plan,
                 billingPlatform: undefined,
                 chargebeeUserExists: undefined,
-                disableNewPaymentMethods: false,
                 billingAddress: undefined,
                 enableSepa: true,
             });
@@ -1052,7 +1023,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1077,7 +1047,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1102,7 +1071,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1124,7 +1092,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
             user: buildUser({
@@ -1152,7 +1119,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
             user: buildUser(),
@@ -1178,7 +1144,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
             user: buildUser(),
@@ -1207,7 +1172,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
             user: buildUser(),
@@ -1236,7 +1200,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
             user: buildUser(),
@@ -1263,7 +1226,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
             user: buildUser(),
@@ -1293,7 +1255,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1318,7 +1279,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1344,7 +1304,6 @@ describe('Chargebee Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
             user,
@@ -1367,7 +1326,6 @@ describe('Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1388,7 +1346,6 @@ describe('Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1414,7 +1371,6 @@ describe('Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1437,7 +1393,6 @@ describe('Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1465,7 +1420,6 @@ describe('Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1487,7 +1441,6 @@ describe('Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1511,7 +1464,6 @@ describe('Bitcoin', () => {
                 selectedPlanName: plan,
                 billingPlatform: undefined,
                 chargebeeUserExists: undefined,
-                disableNewPaymentMethods: false,
                 billingAddress: undefined,
                 enableSepa: true,
             });
@@ -1537,7 +1489,6 @@ describe('Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1562,7 +1513,6 @@ describe('Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1587,7 +1537,6 @@ describe('Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1612,12 +1561,256 @@ describe('Bitcoin', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
+    });
+});
+
+// Mock browser helper functions
+jest.mock('@proton/shared/lib/helpers/browser', () => ({
+    isSafari: jest.fn(),
+    isMobile: jest.fn().mockReturnValue(false),
+    getBrowser: jest.fn().mockReturnValue({ name: 'Chrome', version: '90.0.0' }),
+    getOS: jest.fn().mockReturnValue({ name: 'macOS', version: '10.15' }),
+    isAndroid: jest.fn().mockReturnValue(false),
+    isIos: jest.fn().mockReturnValue(false),
+    isDesktop: jest.fn().mockReturnValue(true),
+    isChromiumBased: jest.fn().mockReturnValue(true),
+    isFirefox: jest.fn().mockReturnValue(false),
+}));
+
+describe('Apple Pay', () => {
+    let mockIsSafari: jest.MockedFunction<() => boolean>;
+
+    beforeEach(() => {
+        const { isSafari } = require('@proton/shared/lib/helpers/browser');
+        mockIsSafari = isSafari as jest.MockedFunction<() => boolean>;
+        mockIsSafari.mockReturnValue(true); // Default to Safari
+    });
+
+    afterEach(() => {
+        mockIsSafari.mockRestore();
+    });
+
+    it('should display Apple Pay when all conditions are met', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
+            amount: MIN_APPLE_PAY_AMOUNT,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            billingAddress: undefined,
+            enableSepa: true,
+            canUseApplePay: true,
+            enableApplePay: true,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(true);
+    });
+
+    it('should not display Apple Pay when canUseApplePay is false', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
+            amount: MIN_APPLE_PAY_AMOUNT,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            billingAddress: undefined,
+            enableSepa: true,
+            canUseApplePay: false,
+            enableApplePay: true,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(false);
+    });
+
+    it('should not display Apple Pay when not running in Safari', () => {
+        mockIsSafari.mockReturnValue(false);
+        const flow: PaymentMethodFlows = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
+            amount: MIN_APPLE_PAY_AMOUNT,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            billingAddress: undefined,
+            enableSepa: true,
+            canUseApplePay: true,
+            enableApplePay: true,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(false);
+    });
+
+    it('should not display Apple Pay when amount is below minimum', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
+            amount: MIN_APPLE_PAY_AMOUNT - 1,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            billingAddress: undefined,
+            enableSepa: true,
+            canUseApplePay: true,
+            enableApplePay: true,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(false);
+    });
+
+    it.each([
+        'signup',
+        'signup-pass',
+        'signup-pass-upgrade',
+        'signup-wallet',
+        'signup-v2',
+        'signup-v2-upgrade',
+        'signup-vpn',
+        'subscription',
+    ] as PaymentMethodFlows[])('should display Apple Pay for allowed flow %s', (flow) => {
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
+            amount: MIN_APPLE_PAY_AMOUNT,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            billingAddress: undefined,
+            enableSepa: true,
+            canUseApplePay: true,
+            enableApplePay: true,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(true);
+    });
+
+    it.each(['credit', 'invoice', 'add-card', 'add-paypal'] as PaymentMethodFlows[])(
+        'should not display Apple Pay for disallowed flow %s',
+        (flow) => {
+            const methods = new PaymentMethods({
+                paymentMethodStatus: status,
+                paymentMethods: [],
+                chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
+                amount: MIN_APPLE_PAY_AMOUNT,
+                currency: TEST_CURRENCY,
+                coupon: '',
+                flow: flow,
+                selectedPlanName: undefined,
+                billingPlatform: undefined,
+                chargebeeUserExists: undefined,
+                billingAddress: undefined,
+                enableSepa: true,
+                canUseApplePay: true,
+                enableApplePay: true,
+            });
+
+            expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(
+                false
+            );
+        }
+    );
+
+    it('should display Apple Pay with Chargebee enabled', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
+            amount: MIN_APPLE_PAY_AMOUNT,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            billingAddress: undefined,
+            enableSepa: true,
+            canUseApplePay: true,
+            enableApplePay: true,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(true);
+    });
+
+    it('should not display Apple Pay when canUseApplePay is undefined (defaults to false)', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
+            amount: MIN_APPLE_PAY_AMOUNT,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            billingAddress: undefined,
+            enableSepa: true,
+            enableApplePay: true,
+            // canUseApplePay: undefined - testing default behavior
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(false);
+    });
+
+    it('should display Apple Pay even with high amount', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
+            amount: MIN_APPLE_PAY_AMOUNT * 10, // Much higher than minimum
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            billingAddress: undefined,
+            enableSepa: true,
+            canUseApplePay: true,
+            enableApplePay: true,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(true);
     });
 });
 
@@ -1636,7 +1829,6 @@ describe('Chargebee card', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1658,7 +1850,6 @@ describe('Chargebee card', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1683,7 +1874,6 @@ describe('Chargebee card', () => {
             selectedPlanName: undefined,
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1708,7 +1898,6 @@ describe('Chargebee card', () => {
             selectedPlanName: undefined,
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1732,7 +1921,6 @@ describe('Chargebee card', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1754,7 +1942,6 @@ describe('Chargebee card', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1776,7 +1963,6 @@ describe('Chargebee card', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1800,7 +1986,6 @@ describe('Chargebee PayPal', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1822,7 +2007,6 @@ describe('Chargebee PayPal', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1849,7 +2033,6 @@ describe('Chargebee PayPal', () => {
             selectedPlanName: undefined,
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1874,7 +2057,6 @@ describe('Chargebee PayPal', () => {
             selectedPlanName: undefined,
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1908,7 +2090,6 @@ describe('Chargebee PayPal', () => {
             selectedPlanName: undefined,
             billingPlatform: BillingPlatform.Chargebee,
             chargebeeUserExists: 1,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1930,7 +2111,6 @@ describe('Chargebee PayPal', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1952,7 +2132,6 @@ describe('Chargebee PayPal', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1975,37 +2154,12 @@ describe('Chargebee PayPal', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: undefined,
             enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
     });
-});
-
-it('should not have new payment methods if they are disabled', () => {
-    const flow: PaymentMethodFlows = 'invoice';
-
-    const disableNewPaymentMethods = true;
-
-    const methods = new PaymentMethods({
-        paymentMethodStatus: status,
-        paymentMethods: [],
-        chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
-        amount: MIN_PAYPAL_AMOUNT_CHARGEBEE - 1,
-        currency: TEST_CURRENCY,
-        coupon: '',
-        flow: flow,
-        selectedPlanName: undefined,
-        billingPlatform: undefined,
-        chargebeeUserExists: undefined,
-        disableNewPaymentMethods: disableNewPaymentMethods,
-        billingAddress: undefined,
-        enableSepa: true,
-    });
-
-    expect(methods.getNewMethods().length).toBe(0);
 });
 
 describe('SEPA', () => {
@@ -2023,7 +2177,6 @@ describe('SEPA', () => {
             selectedPlanName: PLANS.MAIL_PRO,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: { CountryCode: 'CH' },
             enableSepa: true,
         });
@@ -2047,7 +2200,6 @@ describe('SEPA', () => {
             selectedPlanName: PLANS.MAIL_PRO,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: { CountryCode: 'CH' },
             enableSepa: true,
         });
@@ -2077,7 +2229,6 @@ describe('SEPA', () => {
             selectedPlanName: PLANS.MAIL_PRO,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: { CountryCode: 'CH' },
             enableSepa: true,
         });
@@ -2101,7 +2252,6 @@ describe('SEPA', () => {
             selectedPlanName: PLANS.MAIL_PRO,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: { CountryCode: 'US' },
             enableSepa: true,
         });
@@ -2127,7 +2277,6 @@ describe('SEPA', () => {
             selectedPlanName: PLANS.MAIL_PRO,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: { CountryCode: 'CH' },
             enableSepa: enableSepaFalse,
         });
@@ -2151,7 +2300,6 @@ describe('SEPA', () => {
             selectedPlanName: PLANS.MAIL,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: { CountryCode: 'CH' },
             enableSepa: true,
         });
@@ -2175,7 +2323,6 @@ describe('SEPA', () => {
             selectedPlanName: undefined,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
-            disableNewPaymentMethods: false,
             billingAddress: { CountryCode: 'CH' },
             enableSepa: true,
         });

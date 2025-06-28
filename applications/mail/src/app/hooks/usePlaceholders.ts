@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import generateUID from '@proton/utils/generateUID';
 import range from '@proton/utils/range';
 
 import type { Element } from '../models/element';
+import useMailModel from './useMailModel';
 
 export const PLACEHOLDER_ID_PREFIX = 'placeholder';
 
@@ -13,23 +13,37 @@ type ElementOrPlaceholder =
           ID: string;
       };
 
-export const usePlaceholders = (
-    inputElements: ElementOrPlaceholder[] | undefined,
-    loading: boolean,
-    expectedLength: number
-): Element[] => {
+interface UsePlaceholdersProps {
+    inputElements: ElementOrPlaceholder[] | undefined;
+    loading: boolean;
+    expectedLength: number;
+    // If true it allow to return more placeholders than the page size setting
+    unsafeLength?: boolean;
+}
+
+export const usePlaceholders = ({
+    inputElements,
+    loading,
+    expectedLength,
+    unsafeLength = false,
+}: UsePlaceholdersProps): Element[] => {
+    const mailSettings = useMailModel('MailSettings');
+
     const elements: ElementOrPlaceholder[] = useMemo(() => {
         if (loading) {
+            const length = expectedLength - (inputElements?.length ?? 0);
+            const inputRange = unsafeLength ? length : Math.min(length, mailSettings.PageSize);
+
             return [
                 ...(inputElements ?? []),
-                ...range(0, expectedLength - (inputElements?.length ?? 0)).map(() => ({
-                    ID: generateUID(PLACEHOLDER_ID_PREFIX),
+                ...range(0, inputRange).map((_, index) => ({
+                    ID: `${PLACEHOLDER_ID_PREFIX}-${index}`,
                 })),
             ];
         }
 
         return inputElements ?? [];
-    }, [loading, inputElements, expectedLength]);
+    }, [loading, inputElements, expectedLength, unsafeLength, mailSettings.PageSize]);
 
     return elements;
 };

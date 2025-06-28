@@ -46,6 +46,9 @@
       "Add domain": [
         "Afegir domini"
       ],
+      "Add field": [
+        "Afegeix un camp"
+      ],
       "Add forwarding mailbox": [
         "Afegeix una bústia de reenviament"
       ],
@@ -403,10 +406,10 @@
       "Move to another vault": [
         "Mou a una altra caixa forta"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mou a la paperera"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mou a la paperera"
       ],
       "Multiple select": [
@@ -414,6 +417,9 @@
       ],
       "Next": [
         "Següent"
+      ],
+      "Next month": [
+        "Mes següent"
       ],
       "No expired links": [
         "Sense enllaços caducats"
@@ -439,6 +445,9 @@
       "Pause monitoring": [
         "Posa en pausa el monitoratge"
       ],
+      "Pay once": [
+        "Pagament únic"
+      ],
       "Pin item": [
         "Ancora l'element"
       ],
@@ -448,11 +457,17 @@
       "Previous": [
         "Anterior"
       ],
+      "Previous month": [
+        "Mes anterior"
+      ],
       "Re-verify": [
         "Torna a verificar"
       ],
       "Reactivate now": [
         "Reactiva ara"
+      ],
+      "Read More": [
+        "Per a més informació"
       ],
       "Refresh the page": [
         "Refresca la pàgina"
@@ -571,6 +586,9 @@
       "Show advanced options": [
         "Mostra les opcions avançades"
       ],
+      "Show Less": [
+        "Mostra menys"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Inicia sessió amb ${ BRAND_NAME }"
       ],
@@ -585,6 +603,9 @@
       ],
       "Sort vault items": [
         "Ordena els elements de la caixa forta"
+      ],
+      "Start from scratch": [
+        "Comença des de zero"
       ],
       "Submit": [
         "Envia"
@@ -825,9 +846,6 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No s'ha pogut analitzar el fitxer de ${ provider }. ${ errorDetail }"
       ],
-      "[Error] an item could not be parsed": [
-        "[Error] no s'ha pogut analitzar un element."
-      ],
       "A domain ownership must be verified first.": [
         "Primer s'ha de verificar la propietat d'un domini."
       ],
@@ -857,9 +875,6 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "S'ha produït un error amb l'autenticació. Confirmeu la segona contrasenya per continuar amb l'exportació."
-      ],
-      "Biometric authentication failed": [
-        "L'autenticació biomètrica no ha funcionat."
       ],
       "Cannot send invitation at the moment": [
         "Ara mateix no es pot enviar la invitació",
@@ -1073,7 +1088,7 @@
       "File does not match expected format": [
         "El fitxer no coincideix amb el format esperat"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "No s'ha pogut importar la caixa forta «${ vaultData.name }»: ${ errorMessage }"
       ],
       "Importing items failed": [
@@ -1189,6 +1204,9 @@
       ],
       "Unsupported 1Password file format": [
         "Format de fitxer de 1Password no suportat"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Aquest format de fitxer Bitwarden no és compatible"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "No s'ha pogut actualitzar la caixa forta \"${ payload.content.name }\""
@@ -1339,7 +1357,8 @@
         "${ count } vista",
         "${ count } vistes"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } vista",
         "${ count }/${ maxReads } vistes"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -2288,6 +2307,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Per revisar les dades importades, feu clic a la icona del ${ PASS_APP_NAME } de la barra d'eines del navegador."
       ],
+      "Trusted by over 50,000 business users and 100 million accounts around the world.": [
+        "Més de 50.000 usuaris empresarials i 100 milions de comptes a tot el món confien en nosaltres."
+      ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
       ],
@@ -2364,6 +2386,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareix en ${ PASS_APP_NAME }. Voleu importar-lo?",
         "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareixen en ${ PASS_APP_NAME }. Voleu importar-los?"
+      ],
+      "Week": [
+        "Setmana"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Hem enviat un codi de verificació a ${ email }. Si us plau, introdueixi'l a continuació:"
@@ -2578,6 +2603,12 @@
       "Account": [
         "Compte"
       ],
+      "Account Number": [
+        "Número de compte"
+      ],
+      "Account Type": [
+        "Tipus de compte"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Afegiu un prefix aleatori per a aquest domini en crear un àlies."
       ],
@@ -2586,6 +2617,9 @@
       ],
       "Additional details": [
         "Més detalls"
+      ],
+      "Address": [
+        "Adreça"
       ],
       "Address details": [
         "Detalls de l'adreça"
@@ -2614,6 +2648,12 @@
       "Always show username field": [
         "Mostra sempre el camp del nom d'usuari"
       ],
+      "API Credential": [
+        "Credencial de l'API"
+      ],
+      "API Key": [
+        "Clau API"
+      ],
       "Application logs": [
         "Registres de l'aplicació"
       ],
@@ -2622,6 +2662,12 @@
       ],
       "Backup password": [
         "Contrasenya de recuperació"
+      ],
+      "Bank Account": [
+        "Compte bancari"
+      ],
+      "Bank Name": [
+        "Nom del banc"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "A més de conservar les vostres credencials, ${ PASS_APP_NAME } protegeix la vostra identitat amb la seva funcionalitat d'àlies de correu electrònic integrada. Cada vegada que us registreu per obtenir un compte en línia nou, ${ PASS_APP_NAME } pot crear automàticament un àlies per protegir la vostra adreça electrònica real. "
@@ -2634,6 +2680,9 @@
       ],
       "Browse faster, smarter": [
         "Navegueu de forma més ràpida i eficient"
+      ],
+      "Built-in 2FA": [
+        "2FA integrat"
       ],
       "Capital letters (A-Z)": [
         "Lletres majúscules (A-Z)"
@@ -2653,6 +2702,9 @@
       "Catch-All": [
         "Catch-all"
       ],
+      "Checkbox": [
+        "Casella de selecció"
+      ],
       "Choose unlock method": [
         "Trieu el mètode de desbloqueig"
       ],
@@ -2661,6 +2713,9 @@
       ],
       "City": [
         "Ciutat"
+      ],
+      "Class": [
+        "Classe"
       ],
       "Clear clipboard after": [
         "Neteja el porta-retalls després"
@@ -2686,6 +2741,9 @@
       "Copy": [
         "Copia"
       ],
+      "Country": [
+        "País"
+      ],
       "Country or Region": [
         "País o regió"
       ],
@@ -2694,6 +2752,9 @@
       ],
       "Create a credit card": [
         "Crea una targeta de crèdit"
+      ],
+      "Create a custom item": [
+        "Crea un element personalitzat"
       ],
       "Create a hide-my-email alias": [
         "Crea un àlies hide-my-email"
@@ -2713,20 +2774,29 @@
       "Create new vault": [
         "Crea una caixa forta"
       ],
-      "Created": [
-        "Creat"
-      ],
       "Created at": [
         "Creat a"
       ],
-      "Custom hidden field": [
-        "Camp amagat personalitzat"
+      "Credit cards": [
+        "Targetes de crèdit"
       ],
-      "Custom text field": [
-        "Camp de text personalitzat"
+      "Crypto Wallet": [
+        "Cartera de criptomonedes"
+      ],
+      "Custom Items": [
+        "Elements personalitzats"
+      ],
+      "Database": [
+        "Base de dades"
+      ],
+      "Database Type": [
+        "Tipus de base de dades"
       ],
       "Date": [
         "Data"
+      ],
+      "Date of Birth": [
+        "Data de naixement"
       ],
       "Device": [
         "Dispositiu"
@@ -2739,6 +2809,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Doctor"
       ],
       "Domain": [
         "Domini"
@@ -2754,6 +2827,9 @@
       ],
       "Download logs": [
         "Descarrega els registres"
+      ],
+      "Driver License": [
+        "Permís de conduir"
       ],
       "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
         "Compartiu fàcilment informació sensible amb qualsevol persona, encara que no faci servir ${ PASS_APP_NAME }. Podeu compartir una sola contrasenya, nota o targeta de crèdit, o diversos elements a la mateixa carpeta."
@@ -2788,8 +2864,17 @@
       "Expired": [
         "Caducat"
       ],
+      "Expiry Date": [
+        "Data d'expiració"
+      ],
       "Export": [
         "Exporta"
+      ],
+      "Extra email addresses": [
+        "Adreces de correu electrònic addicionals"
+      ],
+      "Extra fields": [
+        "Camps addicionals"
       ],
       "Extra password": [
         "Contrasenya addicional"
@@ -2803,8 +2888,14 @@
       "Field name": [
         "Nom del camp"
       ],
+      "File attachments": [
+        "Fitxers adjunts"
+      ],
       "File format": [
         "Format de fitxer"
+      ],
+      "Finance": [
+        "Finances"
       ],
       "First name": [
         "Nom"
@@ -2813,13 +2904,16 @@
         "Planta, apartament, edifici"
       ],
       "For a one-off sharing": [
-        "Per a un ús únic"
+        "Per a un sol ús"
       ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
         "Per motius de seguretat, ${ PASS_SHORT_APP_NAME } es bloqueja automàticament després de 10 minuts d'inactivitat."
       ],
       "Forwards to": [
         "Reenvia a"
+      ],
+      "Free": [
+        "Free"
       ],
       "Free forever": [
         "Gratuït per sempre"
@@ -2839,6 +2933,12 @@
       "Generic CSV": [
         "CSV genèric"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Obteniu ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Obteniu ${ PASS_SHORT_APP_NAME } Unlimited"
+      ],
       "Get Started": [
         "Comenceu"
       ],
@@ -2857,11 +2957,29 @@
       "Hide-my-email aliases": [
         "Àlies de hide-my-email"
       ],
+      "Highest": [
+        "Més alt"
+      ],
+      "Holder Name": [
+        "Nom del titular"
+      ],
+      "Hospital": [
+        "Hospital"
+      ],
+      "Host": [
+        "Amfitrió"
+      ],
+      "Hostname": [
+        "Nom de l'amfitrió"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Com desbloquejar ${ PASS_SHORT_APP_NAME }?"
       ],
       "https://example.com": [
         "https://exemple.cat"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Targeta d'identitat"
@@ -2911,6 +3029,18 @@
       "Invitations": [
         "Invitacions"
       ],
+      "IP Address": [
+        "Adreça IP"
+      ],
+      "Issuing Authority": [
+        "Autoritat emissora"
+      ],
+      "Issuing Country": [
+        "País emissor"
+      ],
+      "Issuing State/Country": [
+        "País o estat emissor"
+      ],
       "Item ID": [
         "ID de l'element"
       ],
@@ -2919,6 +3049,12 @@
       ],
       "Key": [
         "Clau"
+      ],
+      "Key fingerprint": [
+        "Clau d'empremta digital"
+      ],
+      "Key type": [
+        "Tipus de clau"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Drecera de teclat: ${ shortcut }"
@@ -2950,8 +3086,17 @@
       "License": [
         "Permís de conduir"
       ],
+      "License Key": [
+        "Clau de llicència"
+      ],
       "License number": [
         "Número de llicència"
+      ],
+      "License Number": [
+        "Número de llicència"
+      ],
+      "Limited time": [
+        "Oferta per temps limitat"
       ],
       "LinkedIn account": [
         "Compte de LinkedIn"
@@ -2983,8 +3128,29 @@
       "max views reached": [
         "s'ha assolit el nombre màxim de visualitzacions."
       ],
+      "Medical Conditions": [
+        "Estat de salut"
+      ],
+      "Medical Record": [
+        "Registre mèdic"
+      ],
+      "Medications": [
+        "Medicaments"
+      ],
+      "Member ID": [
+        "ID del membre"
+      ],
+      "Member Name": [
+        "Nom del membre"
+      ],
       "Members": [
         "Membres"
+      ],
+      "Membership": [
+        "Subscripció"
+      ],
+      "Membership ID": [
+        "ID de subscripció"
       ],
       "Middle name": [
         "Segon nom"
@@ -3001,11 +3167,17 @@
       "Name": [
         "Nom"
       ],
+      "Name (SSID)": [
+        "Nom (SSID)"
+      ],
       "Name on card": [
         "Nom de la targeta"
       ],
       "Need help?": [
         "Necessiteu ajuda?"
+      ],
+      "Network": [
+        "Xarxa"
       ],
       "Never": [
         "Mai"
@@ -3058,8 +3230,20 @@
       "Open-source password manager for effortless protection.": [
         "Gestor de contrasenyes de codi obert per a una protecció sense complicacions."
       ],
+      "Operating System": [
+        "Sistema operatiu"
+      ],
       "Organization": [
         "Organització"
+      ],
+      "Organization Name": [
+        "Nom de l'organització"
+      ],
+      "Other": [
+        "Altres"
+      ],
+      "Owner": [
+        "Propietari"
       ],
       "Passkey": [
         "Clau d'accés"
@@ -3073,6 +3257,9 @@
       "Passport": [
         "Passaport"
       ],
+      "Passport Number": [
+        "Número de passaport"
+      ],
       "Passport number": [
         "Número de passaport"
       ],
@@ -3081,6 +3268,15 @@
       ],
       "Password history": [
         "Historial de les contrasenyes"
+      ],
+      "Patient Name": [
+        "Nom del pacient"
+      ],
+      "Permissions": [
+        "Permisos"
+      ],
+      "Personal": [
+        "Personal"
       ],
       "Personal details": [
         "Detalls personals"
@@ -3103,6 +3299,15 @@
       "PIN code": [
         "Codi PIN"
       ],
+      "Plus": [
+        "Plus"
+      ],
+      "Points Balance": [
+        "Saldo de punts"
+      ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Prefix"
       ],
@@ -3112,11 +3317,26 @@
       "Priority:": [
         "Prioritat:"
       ],
+      "Private key": [
+        "Clau privada"
+      ],
+      "Private Key": [
+        "Clau privada"
+      ],
+      "Product": [
+        "Producte"
+      ],
+      "Program Name": [
+        "Nom del programa"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Protegiu ${ PASS_APP_NAME } amb una contrasenya addicional."
       ],
       "Public domain": [
         "Domini públic"
+      ],
+      "Public key": [
+        "Clau pública"
       ],
       "Rate us": [
         "Avalueu-nos"
@@ -3126,6 +3346,9 @@
       ],
       "Recent": [
         "Recents"
+      ],
+      "Record Number": [
+        "Número de registre"
       ],
       "Reddit handle": [
         "Nom d'usuari del Reddit"
@@ -3142,8 +3365,17 @@
       "Reveal password": [
         "Mostra la contrasenya"
       ],
+      "Reward Program": [
+        "Programa de recompenses"
+      ],
+      "Routing Number": [
+        "Número d'encaminament"
+      ],
       "Second password": [
         "Segona contrasenya"
+      ],
+      "Secret": [
+        "Secret"
       ],
       "Secure links": [
         "Enllaços segurs"
@@ -3169,6 +3401,9 @@
       "See member and permission overview": [
         "Consulteu tots els membres i els permisos"
       ],
+      "Seed Phrase": [
+        "Frase de recuperació"
+      ],
       "Select a domain": [
         "Selecciona un domini"
       ],
@@ -3193,8 +3428,14 @@
       "Selected": [
         "Seleccionat"
       ],
+      "Server": [
+        "Servidor"
+      ],
       "Share": [
         "Comparteix"
+      ],
+      "Share ID": [
+        "ID de compartició"
       ],
       "Shared": [
         "Compartit"
@@ -3217,17 +3458,32 @@
       "Social security": [
         "Seguretat social"
       ],
+      "Social Security": [
+        "Seguretat Social"
+      ],
       "Social security number": [
         "Número de la Seguretat Social"
       ],
+      "Software license": [
+        "Llicència de programari"
+      ],
       "Special characters (!&*)": [
         "Caràcters especials (!&*)"
+      ],
+      "SSH key": [
+        "Clau SSH"
+      ],
+      "SSN": [
+        "Número de la seguretat social"
       ],
       "State or province": [
         "Estat o província"
       ],
       "Status": [
         "Estat"
+      ],
+      "Storage": [
+        "Emmagatzematge"
       ],
       "Street address": [
         "Adreça de carrer"
@@ -3244,6 +3500,9 @@
       "Support": [
         "Suport"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Sincronitza els àlies amb SimpleLogin"
       ],
@@ -3253,8 +3512,14 @@
       "Tax number": [
         "Número d'identificació fiscal"
       ],
+      "Technology": [
+        "Tecnologia"
+      ],
       "Text": [
         "Text"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "El millor de ${ BRAND_NAME } amb una subscripció"
       ],
       "The URL has been copied to the clipboard": [
         "S'ha copiat l'URL al porta-retalls."
@@ -3264,6 +3529,12 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Aquest element és accessible fins a ${ date } o fins que s'arribi al límit de visualitzacions."
+      ],
+      "Tier/Level": [
+        "Nivell"
+      ],
+      "Tier/Status": [
+        "Nivell/Estat"
       ],
       "Title": [
         "Títol"
@@ -3292,6 +3563,12 @@
       "Unknown": [
         "Desconegut"
       ],
+      "Unlimited": [
+        "Il·limitat"
+      ],
+      "Unlock premium features": [
+        "Desbloqueu característiques prèmium"
+      ],
       "Unlock with": [
         "Desbloqueja amb"
       ],
@@ -3301,6 +3578,9 @@
       "Unnamed Credit Card": [
         "Targeta de crèdit sense nom"
       ],
+      "Unnamed custom item": [
+        "Element personalitzat sense nom"
+      ],
       "Unnamed identity": [
         "Identitat sense nom"
       ],
@@ -3309,6 +3589,15 @@
       ],
       "Unnamed note": [
         "Nota sense nom"
+      ],
+      "Unnamed SSH key": [
+        "Clau SSH sense nom"
+      ],
+      "Unnamed WiFi item": [
+        "Element wifi sense nom"
+      ],
+      "Unspecified": [
+        "Sense especificar"
       ],
       "Untitled": [
         "Sense títol"
@@ -3331,6 +3620,9 @@
       "Vault ID": [
         "ID de la caixa forta"
       ],
+      "Vault, item & link sharing": [
+        "Compartició de caixes fortes, elements i enllaços"
+      ],
       "Vaults": [
         "Caixes fortes"
       ],
@@ -3340,8 +3632,17 @@
       "View logs": [
         "Mostra els registres"
       ],
+      "VPN Devices": [
+        "Dispositius VPN"
+      ],
+      "VPN Speed": [
+        "Velocitat de la VPN"
+      ],
       "Vulnerable": [
         "Vulnerable"
+      ],
+      "Wallet Name": [
+        "Nom de la cartera"
       ],
       "Weak": [
         "Feble"
@@ -3351,6 +3652,12 @@
       ],
       "Websites": [
         "Llocs web"
+      ],
+      "What's included": [
+        "Què s'inclou"
+      ],
+      "WiFi network": [
+        "Xarxa wifi"
       ],
       "Work details": [
         "Detalls de la feina"
@@ -3400,6 +3707,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activa ${ reason }"
+      ]
+    },
+    "Medium": {
+      "Plus": [
+        "Plus"
       ]
     },
     "Menu": {
@@ -3579,6 +3891,14 @@
         "Podeu adjuntar fitxers als elements per a una millor organització."
       ]
     },
+    "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Lifetime per a ${ plusLifetimePrice }"
+      ],
+      "${ price }/month": [
+        "${ price }/mes"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Afegeix una clau secreta d'A2F"
@@ -3589,6 +3909,18 @@
       "Add note": [
         "Afegeix una nota"
       ],
+      "Add password": [
+        "Afegeix una contrasenya"
+      ],
+      "Add private key": [
+        "Afegeix una clau privada"
+      ],
+      "Add public key": [
+        "Afegeix una clau pública"
+      ],
+      "Add SSID": [
+        "Afegeix un SSID"
+      ],
       "Add text": [
         "Afegiu text"
       ],
@@ -3597,6 +3929,9 @@
       ],
       "Coupon": [
         "Cupó"
+      ],
+      "E.g., ": [
+        "Ex., "
       ],
       "Email address": [
         "Adreça de correu electrònic"
@@ -3628,8 +3963,8 @@
       "my-domain.com": [
         "el-meu-domini.cat"
       ],
-      "Name to display when sending an email": [
-        "Nom a mostrar quan s'envia un correu electrònic"
+      "Name displayed in emails": [
+        "Nom mostrat als correus electrònics"
       ],
       "Note from SimpleLogin": [
         "Nota de SimpleLogin"
@@ -3664,6 +3999,9 @@
       "Select a suffix": [
         "Seleccioneu un sufix"
       ],
+      "Select option": [
+        "Seleccioneu una opció"
+      ],
       "Unknown origin": [
         "Origen desconegut"
       ],
@@ -3672,9 +4010,6 @@
       ],
       "Used on ${ url }": [
         "Utilitzada a ${ url }"
-      ],
-      "Write your note": [
-        "Escriviu la vostra nota"
       ]
     },
     "Security Center - Info": {
@@ -3837,8 +4172,14 @@
       "${ BRAND_NAME } addresses": [
         "Adreces de ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Protecció del compte"
@@ -4025,7 +4366,7 @@
         "2FA inactiva"
       ],
       "Information exposed in breach": [
-        "Informació exposada en la infracció"
+        "Informació exposada en la filtració"
       ],
       "Install extension": [
         "Instal·la l'extensió"
@@ -4062,6 +4403,9 @@
       ],
       "Members": [
         "Membres"
+      ],
+      "Minicalendar": [
+        "Minicalendari"
       ],
       "Modified": [
         "Modificació"
@@ -4115,6 +4459,9 @@
       ],
       "Pause monitoring?": [
         "Voleu posar en pausa el monitoratge?"
+      ],
+      "Pay once, access forever.": [
+        "Únic pagament, accés per sempre"
       ],
       "Pending access confirmation": [
         "Confirmació d'accés pendent"
@@ -4288,6 +4635,11 @@
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Avui"
+      ]
+    },
     "Tooltip": {
       "Not all information listed here was exposed for all users.": [
         "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
@@ -4309,9 +4661,6 @@
       "OTP secret or URI is invalid": [
         "La clau secreta OTP o l'URL no són vàlids."
       ],
-      "OTP secret or URI required": [
-        "Heu d'introduir una clau secreta OTP o un URL."
-      ],
       "Section name cannot be empty": [
         "El nom de la selecció no pot estar buit."
       ],
@@ -4323,6 +4672,12 @@
       ],
       "URL is invalid": [
         "L'URL no és vàlid."
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Mou l'element a",
+        "Mou elements a"
       ]
     },
     "Warning": {
@@ -4438,9 +4793,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "No es permet convidar adreces de correu electrònic de fora de l'organització."
-      ],
-      "item was imported without custom fields": [
-        "L'element s'ha importat sense camps personalitzats"
       ],
       "Maximum length is ${ maxLength } character": [
         "La longitud màxima és d'${ maxLength } caràcter.",

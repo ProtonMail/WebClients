@@ -10,7 +10,7 @@ import { type InviteAddressValidator } from '@proton/pass/hooks/invite/useAddres
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { type AccessKeys, AccessTarget } from '@proton/pass/lib/access/types';
 import { selectAccessMembers } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
+import type { InviteFormMemberItem, InviteFormStep, MaybeNull } from '@proton/pass/types';
 import { type VaultInviteFormValues } from '@proton/pass/types';
 
 import { VaultHeading } from './VaultHeading';
@@ -28,6 +28,18 @@ export const VaultInviteForm = forwardRef<HTMLInputElement, Props>(({ form, auto
     const excluded = useMemoSelector(selectAccessMembers, [shareId]);
     const access = useMemo<AccessKeys>(() => ({ shareId }), [shareId]);
 
+    const handles = useMemo(
+        () => ({
+            setMembers: async (next: InviteFormMemberItem[]) => {
+                await form.setFieldValue('members', next);
+            },
+            setStep: async (next: InviteFormStep) => {
+                await form.setFieldValue('step', next);
+            },
+        }),
+        []
+    );
+
     return (
         <>
             {step === 'members' && (
@@ -39,7 +51,7 @@ export const VaultInviteForm = forwardRef<HTMLInputElement, Props>(({ form, auto
                     heading={<VaultHeading shareId={shareId} />}
                     members={members}
                     validator={validator}
-                    onUpdate={(next) => form.setFieldValue('members', next)}
+                    onUpdate={handles.setMembers}
                 />
             )}
 
@@ -48,8 +60,8 @@ export const VaultInviteForm = forwardRef<HTMLInputElement, Props>(({ form, auto
                     heading={<VaultHeading shareId={shareId} />}
                     members={members}
                     target={AccessTarget.Vault}
-                    onStep={(next) => form.setFieldValue('step', next)}
-                    onUpdate={(next) => form.setFieldValue('members', next)}
+                    onStep={handles.setStep}
+                    onUpdate={handles.setMembers}
                 />
             )}
 

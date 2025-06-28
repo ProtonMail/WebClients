@@ -21,6 +21,8 @@ class EditorCustomPastePlugin implements EditorPlugin {
 
     private onPasteFiles: ((files: File[]) => void) | undefined;
 
+    private readonly PROTOCOLS = ['http:', 'https:', 'mailto:', 'tel:'];
+
     constructor(onPasteFiles: (files: File[]) => void) {
         this.editor = undefined;
         this.onPasteFiles = onPasteFiles;
@@ -41,21 +43,72 @@ class EditorCustomPastePlugin implements EditorPlugin {
             return;
         }
 
+        if (this.handleUrlPaste(event)) {
+            return;
+        }
+
         this.updateSanitizingOptions(event);
         this.linkifyPlainTextContent(event);
         this.handlePasteImage(event);
     }
 
-    private validateLink(link: string, htmlElement: HTMLElement) {
-        const PROTOCOLS = ['http:', 'https:', 'mailto:'];
-        let url;
+    private validateUrl(urlString: string): URL | undefined {
         try {
-            url = new URL(link);
+            const url = new URL(urlString);
+            return this.PROTOCOLS.includes(url.protocol as (typeof this.PROTOCOLS)[number]) ? url : undefined;
         } catch {
-            url = undefined;
+            return undefined;
+        }
+    }
+
+    /**
+     * Handles pasting a URL when text is selected in the editor
+     * If a valid URL is pasted while text is selected, converts the selected text into a link
+     * @returns true if URL was successfully pasted as a link, false otherwise
+     */
+    private handleUrlPaste(event: BeforePasteEvent): boolean {
+        const { clipboardData } = event;
+        const isPlainTextContent =
+            clipboardData.text && clipboardData.types.length === 1 && clipboardData.types[0] === 'text/plain';
+
+        if (!isPlainTextContent || !this.editor) {
+            return false;
         }
 
-        if (url && PROTOCOLS.includes(url.protocol)) {
+        const url = this.validateUrl(clipboardData.text.trim());
+
+        if (!url) {
+            return false;
+        }
+
+        const selection = this.editor.getSelectionRange();
+
+        if (!selection || selection.collapsed) {
+            return false;
+        }
+
+        const selectedText = selection.cloneContents()?.textContent;
+
+        if (!selectedText) {
+            return false;
+        }
+
+        const link = document.createElement('a');
+        link.href = url.toString();
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = selectedText;
+
+        this.editor.deleteSelectedContent();
+        this.editor.insertNode(link);
+
+        event.fragment.textContent = '';
+        return true;
+    }
+
+    private validateLink(link: string, htmlElement: HTMLElement) {
+        const url = this.validateUrl(link);
+        if (url) {
             return link;
         }
         htmlElement.removeAttribute('href');

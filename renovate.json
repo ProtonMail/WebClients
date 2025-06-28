@@ -6,6 +6,7 @@
     "rebaseWhen": "conflicted",
     "prConcurrentLimit": 2,
     "ignoreDeps": [
+        "@proton/drive-sdk",
         "roosterjs",
         "emoji-mart",
         "@emoji-mart/data",
@@ -18,6 +19,7 @@
     ],
     "ignorePaths": [
         "**/node_modules/**",
+        "vendor/**",
         "applications/pass-extension/safari/**",
         "applications/pass-desktop/native/**"
     ],

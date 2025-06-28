@@ -19,6 +19,7 @@ export enum PAYMENT_METHOD_TYPES {
     CHARGEBEE_CARD = 'chargebee-card',
     CHARGEBEE_PAYPAL = 'chargebee-paypal',
     CHARGEBEE_SEPA_DIRECT_DEBIT = 'sepa-direct-debit',
+    APPLE_PAY = 'apple-pay',
 }
 export const signupFlows: readonly PaymentMethodFlows[] = Object.freeze([
     'signup',
@@ -149,6 +150,7 @@ export enum ADDON_NAMES {
 export enum PLANS {
     FREE = 'free',
     DRIVE = 'drive2022',
+    DRIVE_1TB = 'drive1tb2025',
     DRIVE_PRO = 'drivepro2022',
     DRIVE_BUSINESS = 'drivebiz2024',
     DRIVE_LITE = 'drivelite2024',
@@ -245,6 +247,14 @@ export const MAX_IPS_ADDON = 100;
 export const MIN_MEMBER_PASS_B2B_ADDON = 3;
 export const MAX_MEMBER_PASS_PRO_ADDON = 30;
 
+// Trial limits, currently only used for B2B Trials
+// Hardcoded FE side. Protections will (as of 2025-06-18) be added on the BE side too.
+export const TRIAL_MAX_USERS = 10;
+export const TRIAL_MAX_SCRIBE_SEATS = 10;
+export const TRIAL_MAX_LUMO_SEATS = 10;
+export const TRIAL_MAX_DEDICATED_IPS = 1;
+export const TRIAL_MAX_EXTRA_CUSTOM_DOMAINS = 0;
+
 export const AddonLimit: { [key in ADDON_NAMES]: number } = {
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: MAX_DOMAIN_PRO_ADDON,
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: MAX_DOMAIN_PRO_ADDON,
@@ -291,7 +301,8 @@ export const AddonLimit: { [key in ADDON_NAMES]: number } = {
 export const PLAN_NAMES: { [key in PLANS]: string } = {
     [PLANS.FREE]: 'Free',
     [PLANS.VPN2024]: 'VPN Plus',
-    [PLANS.DRIVE]: 'Drive Plus',
+    [PLANS.DRIVE]: 'Drive Plus 200 GB',
+    [PLANS.DRIVE_1TB]: 'Drive Plus 1 TB',
     [PLANS.DRIVE_PRO]: 'Drive Essentials',
     [PLANS.DRIVE_BUSINESS]: 'Drive Professional',
     [PLANS.DRIVE_LITE]: 'Drive Lite',
@@ -356,6 +367,7 @@ export const MAX_BITCOIN_AMOUNT = MAX_CREDIT_AMOUNT;
 export const MIN_PAYPAL_AMOUNT_INHOUSE = 499;
 export const MIN_PAYPAL_AMOUNT_CHARGEBEE = 100;
 export const MAX_PAYPAL_AMOUNT = 99999900;
+export const MIN_APPLE_PAY_AMOUNT = 100;
 
 export const FREE_SUBSCRIPTION = {
     isFreeSubscription: true,
@@ -430,6 +442,14 @@ export enum COUPON_CODES {
     /** PassFamily Promo */
     PASSEARLYSUPPORTER = 'PASSEARLYSUPPORTER',
     PASSFAMILYLAUNCH = 'PASSFAMILYLAUNCH',
+
+    /** Proton Anniversary 11 */
+    PROTONBDAYSALE25 = 'PROTONBDAYSALE25', // Used by website only
+    PROTONBDAYSALEB25 = 'PROTONBDAYSALEB25',
+    COMMUNITYSPECIALDEAL25 = 'COMMUNITYSPECIALDEAL25',
+    B2C2BPRO = 'B2C2BPRO',
+
+    TLDRPROMO072025 = 'TLDRPROMO072025',
 }
 
 export const VPN_PASS_PROMOTION_COUPONS = [

@@ -1,0 +1,38 @@
+{
+    "name": "@proton/mail-renderer",
+    "private": true,
+    "description": "",
+    "license": "GPL-3.0",
+    "sideEffects": false,
+    "main": "index.ts",
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "true",
+        "test": "jest --logHeapUsage --forceExit",
+        "test:ci": "jest --coverage --runInBand --ci --forceExit",
+        "test:coverage": "jest --collectCoverage",
+        "test:watch": "jest --watch --coverage=false"
+    },
+    "dependencies": {
+        "@proton/atoms": "workspace:^",
+        "@proton/colors": "workspace:^",
+        "@proton/components": "workspace:^",
+        "@proton/hooks": "workspace:^",
+        "@proton/mail": "workspace:^",
+        "@proton/styles": "workspace:^",
+        "@proton/utils": "workspace:^",
+        "react": "^18.3.1",
+        "react-redux": "^9.2.0"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/react": "^15.0.7",
+        "eslint": "^8.57.1",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "ts-jest": "^29.4.0",
+        "typescript": "^5.8.3"
+    }
+}

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
-import { CalendarLogo, DriveLogo, MailLogo, PassLogo, Tooltip, VpnLogo } from '@proton/components';
+import { ButtonLike, Tooltip } from '@proton/atoms';
+import { CalendarLogo, DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
@@ -23,7 +23,13 @@ import {
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 
-const LetsTalkSubSection = ({ vpnServersCountData }: { vpnServersCountData: VPNServersCountData }) => {
+const LetsTalkSubSection = ({
+    vpnServersCountData,
+    signupParameters,
+}: {
+    vpnServersCountData: VPNServersCountData;
+    signupParameters?: { trial?: boolean };
+}) => {
     const logoSize = 8;
     return (
         <div className="flex flex-column gap-4 w-full">
@@ -39,7 +45,9 @@ const LetsTalkSubSection = ({ vpnServersCountData }: { vpnServersCountData: VPNS
                 href={getStaticURL('/business/contact?pd=pass&int=enterprise&ref=appdashboard')}
                 target="_blank"
             >
-                {c('pass_signup_2023: Action').t`Request trial`}
+                {signupParameters?.trial
+                    ? c('pass_signup_2023: Action').t`Contact us`
+                    : c('pass_signup_2023: Action').t`Request trial`}
             </ButtonLike>
             <div className="flex justify-center flex-nowrap gap-2 text-center">
                 {[

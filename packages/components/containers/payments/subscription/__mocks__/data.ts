@@ -349,8 +349,9 @@ export const mailProfessionalUpsell = {
 export const drivePlusUpsell = {
     plan: PLANS.DRIVE,
     planKey: PLANS.DRIVE,
-    title: 'Drive Plus',
-    description: 'Secure cloud storage that lets you store, sync, and share files easily and securely.',
+    title: 'Drive Plus 200 GB',
+    description:
+        '200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.',
     upsellRefLink: 'upsell_drive-button-drive-dashboard_settings',
     features: [
         {
@@ -604,6 +605,7 @@ export const organization = {
     MaxMembers: 5,
     Settings: {},
     State: ORGANIZATION_STATE.ACTIVE,
+    IsBusiness: false,
 } as OrganizationExtended;
 
 export const vpnServersCount = {

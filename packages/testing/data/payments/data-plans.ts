@@ -390,7 +390,7 @@ const plans: Plan[] = deepFreeze([
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'drive2022',
-        Title: 'Drive Plus',
+        Title: 'Drive Plus 200 GB',
         MaxDomains: 0,
         MaxAddresses: 0,
         MaxCalendars: 0,
@@ -3508,6 +3508,74 @@ const plans: Plan[] = deepFreeze([
             },
         },
     },
+    {
+        ID: 'l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'drive1tb2025',
+        Title: 'Drive Plus 1 TB',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 1099511627776,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 2,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 999,
+            '12': 9588,
+        },
+        DefaultPricing: {
+            '1': 999,
+            '12': 9588,
+        },
+        PeriodEnd: {
+            '1': 1730287229,
+            '12': 1759231229,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 999,
+    },
+    {
+        ID: 'zxjpD7cbQkxa-LT26f_1WyeLTk0eBGkrYgA3Fmj5poVjKBUav0puffFtRfySjVBSMJMTYsZaR8tpBQsT4CI_Cg==',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'lumo2024',
+        Title: 'Lumo Plus',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 64,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 1299,
+            '12': 11988,
+        },
+        DefaultPricing: {
+            '1': 1299,
+            '12': 11988,
+        },
+        PeriodEnd: {
+            '1': 1749885345,
+            '12': 1778742945,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 1299,
+    },
 ]);
 
 export function getTestPlansMap() {
@@ -3544,6 +3612,6 @@ export function getTestPlans(currency?: Currency): Plan[] {
     });
 }
 
-export function getLongTestPlans(): Plan[] {
-    return [...getTestPlans('USD'), ...getTestPlans('CHF'), ...getTestPlans('EUR'), ...getTestPlans('BRL')];
+export function getLongTestPlans(currency: Currency = 'BRL'): Plan[] {
+    return [...getTestPlans('USD'), ...getTestPlans('CHF'), ...getTestPlans('EUR'), ...getTestPlans(currency)];
 }

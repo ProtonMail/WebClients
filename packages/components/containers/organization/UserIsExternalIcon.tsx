@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
 
 // based on the Info component - packages/components/components/link/Info.tsx

@@ -6,19 +6,11 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import type { HotkeyTuple } from '@proton/components';
-import {
-    Icon,
-    SidebarList,
-    SidebarListItem,
-    SimpleSidebarListItemHeader,
-    Tooltip,
-    useHotkeys,
-    useLocalState,
-} from '@proton/components';
+import { SidebarList, SimpleSidebarListItemHeader, useHotkeys, useLocalState } from '@proton/components';
 import { useFolders, useLabels, useSystemFolders } from '@proton/mail';
-import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
-import { useMessageCounts } from '@proton/mail/counts/messageCounts';
-import { isCustomFolder, isCustomLabel } from '@proton/mail/labels/helpers';
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCounts';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCounts';
+import { isCustomFolder, isCustomLabel } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { SOURCE_EVENT } from '@proton/shared/lib/helpers/collapsibleSidebar';
@@ -37,6 +29,8 @@ import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { LabelActionsContextProvider } from './EditLabelContext';
+import { MailSidebarCollapsedButton } from './MailSidebarCollapsedButton';
+import { MailSidebarCustomView } from './MailSidebarCustomView';
 import MailSidebarListActions from './MailSidebarListActions';
 import MailSidebarSystemFolders from './MailSidebarSystemFolders';
 import SidebarFolders from './SidebarFolders';
@@ -304,33 +298,15 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                         moveToFolder={moveToFolder}
                     />
 
+                    <MailSidebarCustomView collapsed={collapsed} />
+
                     {collapsed ? (
-                        <SidebarListItem>
-                            <Tooltip
-                                originalPlacement="right"
-                                title={c('Action').t`Expand navigation bar to see folders`}
-                            >
-                                <button
-                                    onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_FOLDERS)}
-                                    className="flex items-center relative navigation-link-header-group-link mx-auto w-full"
-                                >
-                                    <Icon
-                                        name="folders"
-                                        alt={c('Action').t`Expand navigation bar to see folders`}
-                                        className="mx-auto"
-                                    />
-                                    {foldersUnread && (
-                                        <span className="navigation-counter-item shrink-0">
-                                            <span className="sr-only">
-                                                {mailSettings.ViewMode === VIEW_MODE.GROUP
-                                                    ? c('Info').t`Unread conversations`
-                                                    : c('Info').t`Unread messages`}
-                                            </span>
-                                        </span>
-                                    )}
-                                </button>
-                            </Tooltip>
-                        </SidebarListItem>
+                        <MailSidebarCollapsedButton
+                            onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_FOLDERS)}
+                            iconName="folders"
+                            title={c('Action').t`Expand navigation bar to see folders`}
+                            unread={foldersUnread}
+                        />
                     ) : (
                         <>
                             <SimpleSidebarListItemHeader
@@ -358,33 +334,14 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                             )}
                         </>
                     )}
+
                     {collapsed ? (
-                        <SidebarListItem>
-                            <Tooltip
-                                originalPlacement="right"
-                                title={c('Action').t`Expand navigation bar to see labels`}
-                            >
-                                <button
-                                    onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_LABELS)}
-                                    className="flex items-center relative navigation-link-header-group-link mx-auto w-full"
-                                >
-                                    <Icon
-                                        name="tags"
-                                        alt={c('Action').t`Expand navigation bar to see labels`}
-                                        className="mx-auto"
-                                    />
-                                    {labelsUnread && (
-                                        <span className="navigation-counter-item shrink-0">
-                                            <span className="sr-only">
-                                                {mailSettings.ViewMode === VIEW_MODE.GROUP
-                                                    ? c('Info').t`Unread conversations`
-                                                    : c('Info').t`Unread messages`}
-                                            </span>
-                                        </span>
-                                    )}
-                                </button>
-                            </Tooltip>
-                        </SidebarListItem>
+                        <MailSidebarCollapsedButton
+                            onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_LABELS)}
+                            iconName="tags"
+                            title={c('Action').t`Expand navigation bar to see labels`}
+                            unread={labelsUnread}
+                        />
                     ) : (
                         <>
                             <SimpleSidebarListItemHeader

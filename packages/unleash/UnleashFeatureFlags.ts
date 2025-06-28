@@ -24,9 +24,9 @@ enum CommonFeatureFlag {
     SentinelRecoverySettings = 'SentinelRecoverySettings',
     InboxDesktopWinLinNewAppSwitcher = 'InboxDesktopWinLinNewAppSwitcher',
     DarkWebEmailNotifications = 'DarkWebEmailNotifications',
-    InboxNewUpsellModals = 'InboxNewUpsellModals',
     InboxWebPostSubscriptionFlow = 'InboxWebPostSubscriptionFlow',
     NewCancellationFlowUpsell = 'NewCancellationFlowUpsell',
+    GoUnlimitedOffer2025 = 'GoUnlimitedOffer2025',
     ScribeAdminSetting = 'ScribeAdminSetting',
     SelfTroubleshoot = 'SelfTroubleshoot',
     WalletAztecoWeb = 'WalletAztecoWeb',
@@ -39,6 +39,10 @@ enum CommonFeatureFlag {
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
     SubscriberNudgeDriveMonthly = 'SubscriberNudgeDriveMonthly',
     B2BOnboarding = 'B2BOnboarding',
+    InboxBringYourOwnEmail = 'InboxBringYourOwnEmail',
+    InboxBringYourOwnEmailSignup = 'InboxBringYourOwnEmailSignup',
+    LumoPlusFrontend = 'LumoPlusFrontend',
+    CryptoEnforceOpenpgpGrammar = 'CryptoEnforceOpenpgpGrammar',
 }
 
 enum AccountFlag {
@@ -68,8 +72,8 @@ enum AccountFlag {
     PassB2BReports = 'PassB2BReports',
     DeleteAccountMergeReason = 'DeleteAccountMergeReason',
     VPNDashboard = 'VPNDashboard',
-    QRCodeSignIn = 'QRCodeSignIn',
     PasswordPolicy = 'PasswordPolicy',
+    DwmTrialFree2025 = 'DwmTrialFree2025',
 }
 
 enum PaymentsFlag {
@@ -82,6 +86,7 @@ enum PaymentsFlag {
     EditInvoiceDetails = 'EditInvoiceDetails',
     PassLifetimeFrontend = 'PassLifetimeFrontend',
     PassOrgSizeLimit = 'PassOrgSizeLimit',
+    ApplePayWeb = 'ApplePayWeb',
 }
 
 enum CalendarFeatureFlag {
@@ -101,6 +106,7 @@ enum DriveFeatureFlag {
     DriveSharingDisabled = 'DriveSharingDisabled',
     DriveSharingEditingDisabled = 'DriveSharingEditingDisabled',
     DriveExternalInvitationsDisabled = 'DriveSharingExternalInvitationsDisabled',
+    DriveWebSharePageUpsell = 'DriveWebSharePageUpsell',
     // Public sharing edit mode
     DrivePublicShareEditMode = 'DrivePublicShareEditMode',
     DrivePublicShareEditModeDisabled = 'DrivePublicShareEditModeDisabled',
@@ -116,10 +122,18 @@ enum DriveFeatureFlag {
     // Albums
     DriveAlbums = 'DriveAlbums',
     DriveAlbumsDisabled = 'DriveAlbumsDisabled',
-    DriveAlbumsTempDisabledOnRelease = 'DriveAlbumsTempDisabledOnRelease',
+    DriveAlbumsNewVolumes = 'DriveAlbumsNewVolumes',
+    DriveAlbumOnboardingModal = 'DriveAlbumOnboardingModal',
     // One-dollar offer
     DrivePostSignupOneDollarPromo = 'DrivePostSignupOneDollarPromo',
     DriveWebRecoveryASV = 'DriveWebRecoveryASV',
+    // Video Streaming
+    // TODO: Convert to Kill-Switch once launched and tested
+    DriveWebVideoStreaming = 'DriveWebVideoStreaming',
+    // SDK Migration
+    DriveWebSDKRenameModal = 'DriveWebSDKRenameModal',
+    DriveWebSDKMoveItemsModal = 'DriveWebSDKMoveItemsModal',
+    DriveWebSDKCreateFolderModal = 'DriveWebSDKCreateFolderModal',
 }
 
 enum DocsFeatureFlag {
@@ -141,7 +155,6 @@ enum DocsFeatureFlag {
 }
 
 enum MailFeatureFlag {
-    AttachmentThumbnails = 'AttachmentThumbnails',
     SelectAll = 'SelectAll',
     SelectAllOptimistic = 'SelectAllOptimistic',
     PasswordNudge = 'PasswordNudge',
@@ -156,6 +169,10 @@ enum MailFeatureFlag {
     MailPostSignupOneDollarPromo = 'MailPostSignupOneDollarPromo',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
     MailboxRefactoring = 'MailboxRefactoring',
+    NewsletterSubscriptionView = 'NewsletterSubscriptionView',
+    RemoveReplyStyles = 'RemoveReplyStyles',
+    MailboxOptimisticRefactoring = 'MailboxOptimisticRefactoring',
+    SaveAttachmentsToDrive = 'MailSaveAttachmentsToDrive',
 }
 
 enum AdminFeatureFlag {
@@ -166,6 +183,11 @@ enum WalletFlag {
     ImportPaperWallet = 'ImportPaperWallet',
     WalletDarkMode = 'WalletDarkMode',
     WalletMessageSigner = 'WalletMessageSigner',
+    WalletExportTransaction = 'WalletExportTransaction',
+}
+
+enum PaymentsFeatureFlag {
+    ManualTrialsFE = 'ManualTrialsFE',
 }
 
 export type FeatureFlag =
@@ -177,4 +199,5 @@ export type FeatureFlag =
     | `${DocsFeatureFlag}`
     | `${MailFeatureFlag}`
     | `${AdminFeatureFlag}`
-    | `${WalletFlag}`;
+    | `${WalletFlag}`
+    | `${PaymentsFeatureFlag}`;

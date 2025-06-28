@@ -3,12 +3,13 @@ import { createContext, useEffect, useRef, useState } from 'react';
 
 import { type ExtensionContextType, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { WithExtensionLocale } from 'proton-pass-extension/lib/hooks/useExtensionLocale';
+import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { type MaybeNull } from '@proton/pass/types';
 import { registerLoggerEffect } from '@proton/pass/utils/logger';
 
 type Props = { children: ReactNode; recycle?: boolean };

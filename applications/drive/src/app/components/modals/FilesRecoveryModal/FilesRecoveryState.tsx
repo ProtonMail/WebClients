@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, PrimaryButton } from '@proton/components';
+import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import keyAndFileSvg from '@proton/styles/assets/img/illustrations/file-recovery.svg';
 
 interface Props {
@@ -34,14 +34,15 @@ const FilesRecoveryState = ({ onRecovery, onClose, recovering }: Props) => {
                         style={{ '--min-w-custom': '7em' }}
                         onClick={onClose}
                     >{c('Action').t`Cancel`}</Button>
-                    <PrimaryButton
+                    <Button
+                        color="norm"
                         loading={recovering}
                         className="min-w-custom"
                         style={{ '--min-w-custom': '7em' }}
                         onClick={onRecovery}
                     >
                         {c('Action').t`Start recovering`}
-                    </PrimaryButton>
+                    </Button>
                 </div>
             </ModalTwoFooter>
         </>

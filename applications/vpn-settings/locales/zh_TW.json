@@ -4,6 +4,14 @@
     "language": "zh_TW"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "轉發將很快開始。新電子郵件將會出現在您的收件匣中。"
+      ],
+      "Mail forward stopped": [
+        "已停止郵件轉寄"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "偵測到 ${ name } 及 ${ remainingCount } 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
@@ -28,10 +36,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate organization key": [
@@ -39,6 +47,9 @@
       ],
       "Add": [
         "加入"
+      ],
+      "Add account": [
+        "加入帳號"
       ],
       "Add address": [
         "加入電郵位址"
@@ -94,8 +105,8 @@
       "Back": [
         "返回"
       ],
-      "Back to sign-in": [
-        "返回登入"
+      "Back to sign in": [
+        "返回登錄"
       ],
       "Block": [
         "封鎖"
@@ -135,6 +146,15 @@
       ],
       "Close this banner": [
         "關閉此橫幅"
+      ],
+      "Collaborate on documents": [
+        "於文件上合作"
+      ],
+      "Compare all plans": [
+        "比較所有方案"
+      ],
+      "Compare plans": [
+        "比較方案"
       ],
       "Configure SAML": [
         "配置 SAML"
@@ -188,7 +208,7 @@
         "創建使用者"
       ],
       "Current plan": [
-        "現行方案"
+        "當前方案"
       ],
       "Customize plan": [
         "客製化您的專屬方案"
@@ -214,6 +234,9 @@
       "Delete member": [
         "刪除成員"
       ],
+      "Delete policy": [
+        "刪除政策"
+      ],
       "Delete user": [
         "刪除使用者"
       ],
@@ -237,6 +260,12 @@
       ],
       "Discard changes": [
         "放棄變更"
+      ],
+      "Discard Changes": [
+        "放棄修改"
+      ],
+      "Discover ${ planName }": [
+        "探索 ${ planName }"
       ],
       "Dismiss": [
         "忽略"
@@ -267,6 +296,9 @@
       ],
       "Edit billing cycle": [
         "修改帳單週期"
+      ],
+      "Edit countries": [
+        "編輯國家"
       ],
       "Edit display name": [
         "編輯顯示名稱"
@@ -358,8 +390,14 @@
       "Get more servers": [
         "取得更多伺服器"
       ],
+      "Get the apps": [
+        "取得應用程式"
+      ],
       "Get the deal": [
         "取得優惠"
+      ],
+      "Get the writing assistant": [
+        "取得寫作幫手"
       ],
       "Get verification code": [
         "取得驗證碼"
@@ -391,11 +429,20 @@
       "Invite user": [
         "邀請使用者"
       ],
+      "Keep Editing": [
+        "繼續編輯"
+      ],
+      "Keep editing": [
+        "繼續編輯"
+      ],
       "Keep logo": [
         "保留標誌"
       ],
       "Keep my subscription": [
         "保持訂閱"
+      ],
+      "Learn more": [
+        "瞭解詳情"
       ],
       "Let's talk": [
         "我們一起聊聊！"
@@ -412,11 +459,17 @@
       "Make admin": [
         "設為管理員"
       ],
+      "Manage groups": [
+        "管理群組"
+      ],
       "Manage subscription": [
         "管理訂購授權"
       ],
       "Mark as default": [
         "標記為預設值"
+      ],
+      "Mark as favorite": [
+        "標記為最愛"
       ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
@@ -447,9 +500,6 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
-      ],
-      "Open in ${ DOCS_SHORT_APP_NAME }": [
-        "於 ${ DOCS_SHORT_APP_NAME } 開啟"
       ],
       "Open navigation": [
         "開啟導覽"
@@ -487,11 +537,14 @@
       "Refresh status": [
         "重新整理狀態"
       ],
+      "Refresh the page": [
+        "重新整理此頁面"
+      ],
       "refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
-        "重新整理此頁面"
+      "Reload": [
+        "重新載入"
       ],
       "Remove": [
         "移除"
@@ -504,6 +557,9 @@
       ],
       "Remove domain": [
         "刪除網域"
+      ],
+      "Remove from favorites": [
+        "從我的最愛移除"
       ],
       "Remove gift code": [
         "移除禮品代碼"
@@ -628,6 +684,15 @@
       "Set new password": [
         "設定新密碼"
       ],
+      "Set recovery methods": [
+        "設定復原方式"
+      ],
+      "Set up 2FA": [
+        "設定兩步驟驗證"
+      ],
+      "Set up email forwarding": [
+        "設定電子郵件轉發"
+      ],
       "Settings": [
         "設定"
       ],
@@ -653,7 +718,7 @@
         "顯示預覽"
       ],
       "Sign in": [
-        "登入"
+        "登錄"
       ],
       "Sign in with password": [
         "使用密碼登入"
@@ -669,6 +734,9 @@
       ],
       "Signing in": [
         "正在登入"
+      ],
+      "Skip": [
+        "略過"
       ],
       "Spam": [
         "垃圾郵件"
@@ -709,8 +777,14 @@
       "Try another method": [
         "嘗試其它驗證方式"
       ],
+      "Try for free": [
+        "免費滿意體驗"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "嘗試再次儲存。儲存失敗原因：${ saveError }"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
       ],
       "Unlock": [
         "解鎖"
@@ -826,6 +900,9 @@
       ]
     },
     "Address action": {
+      "Allow unsigned mail": [
+        "允許未經數位簽章的郵件"
+      ],
       "Delete address": [
         "刪除地址"
       ],
@@ -894,6 +971,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "這將會把使用此憑證的所有路由器和客戶端都中斷連線。"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } 的收件匣"
+      ],
+      "5 trackers removed": [
+        "已移除 5 個追蹤程式"
+      ],
+      "Auto forwarded": [
+        "自動轉寄"
+      ],
+      "Email received": [
+        "收到的電子郵件"
+      ],
+      "Encrypted": [
+        "已加密"
+      ],
+      "New email": [
+        "新電子郵件"
       ]
     },
     "Assistant toggle": {
@@ -1103,6 +1200,9 @@
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "自動以 ${ renewPrice } 續訂，繳費長度為 ${ renewLength }月"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "自動續期在${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -1115,11 +1215,22 @@
       "Annually": [
         "每年"
       ],
+      "Lifetime": [
+        "終身"
+      ],
       "Monthly": [
         "每月"
       ],
       "Two-year": [
         "兩年"
+      ]
+    },
+    "Blog": {
+      "Increase VPN speeds by up to 400% with VPN Accelerator": [
+        "使用 VPN Accelerator 將 VPN 速度提升多達 400%"
+      ],
+      "Watch your favorite movies and TV shows": [
+        "觀看您喜愛的電影與電視節目"
       ]
     },
     "Browser": {
@@ -1380,6 +1491,11 @@
     "Confirmation title": {
       "Delete payment method": [
         "刪除繳款方式"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCountriesCount } selected": [
+        "已選取 ${ selectedCountriesCount } 個"
       ]
     },
     "Country name": {
@@ -1812,9 +1928,6 @@
       "Macao": [
         "澳門"
       ],
-      "Macedonia": [
-        "馬其頓"
-      ],
       "Madagascar": [
         "馬達加斯加"
       ],
@@ -2224,6 +2337,31 @@
         "了解更多"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "所有 ${ BRAND_NAME } 服務"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "為期 ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "為期 ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "為期 ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "為期 ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/月"
@@ -2277,6 +2415,12 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "創建政策以決定誰可連接至於各國的共享伺服器"
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "於您的組織內任何人可連接至於全部國家共享伺服器"
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "取得通知當您的密碼或其他資料在第三方服務中洩漏。"
       ],
@@ -2288,9 +2432,6 @@
       ],
       "No one in your organization can connect to shared servers.": [
         "於您的組織內無人可連接至於共享伺服器"
-      ],
-      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "使用多個電子郵件位址分隔生活的不同方面，並在升級時解鎖更多進階功能。"
       ]
     },
     "Disable address prompt": {
@@ -2403,12 +2544,94 @@
         "您的${ PLAN_NAMES[PLANS.PASS] }訂閱為特殊價格${ price }每年。若降級為免費方案，您將永久失去此折扣，就算未來再次升級。"
       ]
     },
+    "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
+      "Browser": [
+        "瀏覽器"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Desktop": [
+        "電腦版應用程式"
+      ],
+      "Download for Linux": [
+        "適用於 Linux 的下載"
+      ],
+      "Download for macOS": [
+        "適用於 macOS 的下載"
+      ],
+      "Download for Windows": [
+        "適用於 Windows 的下載"
+      ],
+      "Download on the Apple App Store": [
+        "於 Apple App Store 下載"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Get the app": [
+        "取得應用程式"
+      ],
+      "Get the extension": [
+        "取得延伸功能"
+      ],
+      "iPhone/iPad": [
+        "iPhone/iPad"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "macOS Big Sur": [
+        "macOS Big Sur"
+      ],
+      "macOS Catalina": [
+        "macOS Catalina"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "Mobile": [
+        "手機"
+      ],
+      "TV": [
+        "電視"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "Windows 10/11 (ARM64)": [
+        "Windows 10/11 (ARM64)"
+      ],
+      "Windows 10/11 (x64)": [
+        "Windows 10/11 (x64)"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "展開版本紀錄"
       ],
       "Priority support": [
         "優先支援"
+      ]
+    },
+    "edm": {
+      "Security tips": [
+        "安全性提示"
       ]
     },
     "Email spam notification": {
@@ -2451,6 +2674,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME }無法連接外部帳號"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
       ],
@@ -2465,6 +2691,12 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "金額不得低於 (${ minimumAmount })。"
+      ],
+      "Authentication canceled.": [
+        "驗證已取消。"
+      ],
+      "Authentication error.": [
+        "認證錯誤。"
       ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
@@ -2567,6 +2799,15 @@
       ],
       "Name does not match": [
         "名稱不相符"
+      ],
+      "No calendars found to import": [
+        "沒有找到行事曆可以匯入"
+      ],
+      "No contacts found to import": [
+        "沒有找到聯絡人可以匯入"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "沒有找到電子郵件可以匯入 - 該帳號沒有收件匣"
       ],
       "No image selected": [
         "沒有選擇圖像"
@@ -2682,6 +2923,9 @@
       "The minimum payment we accept is ${ price }": [
         "付款的最低金額為 ${ price }"
       ],
+      "The policy name must be between 3 and 40 characters.": [
+        "政策名稱長度必須介乎 3 至 40 個字元。"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此欄位還剩下 ${ maximumLength } 個字元。"
       ],
@@ -2702,6 +2946,9 @@
       ],
       "Unable to upload file": [
         "無法上傳文件"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "未知錯誤，無法匯入聯絡人"
       ],
       "Unknown error": [
         "未知錯誤"
@@ -2727,6 +2974,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "驗證碼錯誤，請確保已正確複製驗證碼後重試。變更或需時最長 24 小時才能生效。"
       ],
+      "You have reached the number of contacts limit for your account": [
+        "您的帳號已達聯絡人數量限制"
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您已使用您的方案中所有電郵位址。請升級您的方案以加入電郵位址。"
       ],
@@ -2738,11 +2988,6 @@
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
-      ]
-    },
-    "error": {
-      "Enter an email address": [
-        "輸入電子郵件地址"
       ]
     },
     "Error importing users": {
@@ -2817,6 +3062,9 @@
       ],
       "Got it": [
         "我知道了"
+      ],
+      "Invite a user": [
+        "邀請使用者"
       ],
       "Invite an existing ${ BRAND_NAME } user": [
         "邀請現有的 ${ BRAND_NAME } 使用者"
@@ -3067,6 +3315,9 @@
       "Continue": [
         "下一步"
       ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "全部都在 ${ PLAN_NAMES[PLANS.VPN2024] }"
+      ],
       "Fastest VPN servers": [
         "最快速的 VPN 伺服器"
       ],
@@ -3086,9 +3337,20 @@
         "無限制的 hide-my-email 別名"
       ]
     },
+    "Features": {
+      "and more premium features...": [
+        "還有更多豐富的加值功能..."
+      ],
+      "Secure streaming": [
+        "安全的串流"
+      ]
+    },
     "fido2: Action": {
       "Delete key": [
         "刪除金鑰"
+      ],
+      "New security key": [
+        "新增安全金鑰"
       ]
     },
     "fido2: Error": {
@@ -3275,6 +3537,17 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "自動轉寄"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail 訊息到您的收件匣"
+      ],
+      "Sign in with Google": [
+        "使用 Google 帳號登入"
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "已有帳號？${ signIn }"
@@ -3313,17 +3586,20 @@
       ]
     },
     "Header": {
-      "App version": [
-        "應用程式版本"
-      ],
       "Best deal": [
         "最划算"
       ],
       "Checkout": [
         "結帳"
       ],
+      "Create your account": [
+        "創建您的帳號"
+      ],
       "Device": [
-        "裝置"
+        "設備"
+      ],
+      "Enter your email address": [
+        "輸入您的電子郵件位址"
       ],
       "Event": [
         "行程"
@@ -3335,7 +3611,7 @@
         "金鑰類型"
       ],
       "Location": [
-        "位置"
+        "路徑"
       ],
       "Members": [
         "成員"
@@ -3346,8 +3622,8 @@
       "Organization key fingerprint": [
         "組織金鑰指紋"
       ],
-      "Protection": [
-        "安全"
+      "Payment details": [
+        "繳款詳細資訊"
       ],
       "Select your deal": [
         "請選擇您的優惠"
@@ -3406,8 +3682,23 @@
       ]
     },
     "Headline": {
+      "Compare plans": [
+        "比較方案"
+      ],
       "Contact us": [
         "聯絡我們"
+      ],
+      "Enjoying ${ planName }?": [
+        "享受 ${ planName }?"
+      ],
+      "Upgrade your privacy": [
+        "升級您的隱私"
+      ],
+      "You currently pay": [
+        "您目前付款"
+      ],
+      "Your plan": [
+        "您的方案"
       ]
     },
     "Hint": {
@@ -3439,6 +3730,9 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "目前${ amountUsers }/${ totalUsers }位使用者有存取權至共享伺服器"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
       ],
@@ -3502,6 +3796,9 @@
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length }更多的電子郵件位址"
       ],
+      "${ selectedEntities.length } selected": [
+        "已選取 ${ selectedEntities.length } 個"
+      ],
       "${ storage } storage": [
         "${ storage } 儲存空間"
       ],
@@ -3532,8 +3829,14 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /月)"
       ],
+      "(default)": [
+        "(預設)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**取得一個 ${ BRAND_NAME } 位址**並用於全部 ${ BRAND_NAME_TWO } 服務，包括 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }。"
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } 更多"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -3548,7 +3851,7 @@
         "30 天體驗不滿意退款服務"
       ],
       "30-day money-back guarantee.": [
-        "30天退款保證。"
+        "30 日體驗不滿意退款服務."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain }是由${ BRAND_NAME }管理，允許您快速設定子網域。${ learnMoreLink }"
@@ -3706,9 +4009,6 @@
       "Beta": [
         "測試版"
       ],
-      "Billed at ${ price }": [
-        "以 ${ price } 計費"
-      ],
       "Billing cycle: ${ text }": [
         "繳款單週期：${ text }"
       ],
@@ -3788,7 +4088,7 @@
         "自訂品牌"
       ],
       "Custom email domains": [
-        "自訂電郵網域"
+        "自訂電子郵件網域"
       ],
       "Custom policies": [
         "自訂政策"
@@ -3796,10 +4096,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "自訂 ${ BRAND_NAME } 應用程式的視覺與設計。"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -3910,6 +4210,9 @@
       "Enable single sign-on to keep your organization safe": [
         "開啟單一登入((SSO)來保障你的組織安全"
       ],
+      "Enabled countries": [
+        "已啟用的國家"
+      ],
       "Enabled on ${ formattedDateAndTime }": [
         "於${ formattedDateAndTime }啟用"
       ],
@@ -4012,8 +4315,14 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "請前往您的身分提供者，取得 ${ appName } 的 SAML 中繼資料並在此匯入。"
       ],
+      "Got it": [
+        "瞭解"
+      ],
       "Group deleted": [
         "群組刪除"
+      ],
+      "Groups": [
+        "群組"
       ],
       "here": [
         "這裡"
@@ -4342,14 +4651,14 @@
       "Or select a particular server:": [
         "或挑選特定的伺服器："
       ],
-      "Organization --> Groups": [
-        "組織 -->群組"
-      ],
       "Organization size": [
         "組織規模"
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "將您的專用伺服器整理為閘道，然後決定哪些成員可以存取它們。"
+      ],
+      "Other accounts": [
+        "其他帳號"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "您的組織中還有其他系統管理員，您有責任告知他們新密碼。"
@@ -4380,12 +4689,6 @@
       ],
       "per month, billed at ${ price }": [
         "每月 ${ price }"
-      ],
-      "per month, billed every 12 months": [
-        "每月，每12個月收費"
-      ],
-      "per month, billed every 24 months": [
-        "每月，每24個月收費"
       ],
       "Please add a password for the user on row": [
         "請在此行使用者處加入密碼"
@@ -4525,9 +4828,6 @@
       "SCIM token active": [
         "SCIM 憑證啟用"
       ],
-      "Search by an email address to begin": [
-        "透過電子郵件地址以開始"
-      ],
       "Secure your ${ BRAND_NAME } Account": [
         "保護您的 ${ BRAND_NAME } 帳號"
       ],
@@ -4554,6 +4854,9 @@
       ],
       "Session timed out": [
         "工作階段已逾時"
+      ],
+      "Set up your organization": [
+        "設定您的組織"
       ],
       "Setting up ${ feature }…": [
         "設定${ feature }…"
@@ -4614,6 +4917,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "每${ cycle }個月自動續訂。"
       ],
       "Subscription auto-renews every month.": [
         "每月自動續購授權"
@@ -4759,7 +5065,7 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "要確認，請輸入您想要刪除的使用者名稱。"
       ],
-      "to continue to ${ product }": [
+      "To continue to ${ product }": [
         "繼續使用 ${ product }"
       ],
       "To create your first user group, go to": [
@@ -4861,10 +5167,10 @@
       "User activated": [
         "使用者已啟用"
       ],
-      "username": [
+      "Username": [
         "使用者名稱"
       ],
-      "Username": [
+      "username": [
         "使用者名稱"
       ],
       "Users": [
@@ -5128,6 +5434,9 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "您10內無法將此伺服器分配至其他國家。"
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "您已在 ${ MAX_SYNC_PAID_USER } 個 Gmail 位址上啟用轉寄功能。若要新增另一個，請先停用其中一個。"
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "您${ boldPlanTitle }的${ boldDiscountPercent }折扣已套用"
       ],
@@ -5185,8 +5494,14 @@
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "您的方案開始於${ renewalTime }及於每月重新開始。"
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "您的訂購授權將於 ${ renewalTime } 自動更新。"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "您可立即添加此伺服器至其他閘道器。"
@@ -5297,6 +5612,9 @@
       "Other": [
         "其它"
       ],
+      "Product": [
+        "產品"
+      ],
       "Refund": [
         "退款"
       ],
@@ -5310,6 +5628,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
+      ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } 使用者"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -5346,6 +5667,9 @@
       ],
       "Addresses": [
         "電郵位址"
+      ],
+      "Advanced": [
+        "進階"
       ],
       "Allow": [
         "允許"
@@ -5405,7 +5729,7 @@
         "瀏覽器版本"
       ],
       "BTC address": [
-        "比特幣位址 (數位錢包)"
+        "比特幣位址"
       ],
       "BTC amount": [
         "比特幣金額"
@@ -5417,7 +5741,7 @@
         "持卡人"
       ],
       "Card number": [
-        "卡號"
+        "信用卡號"
       ],
       "Cash": [
         "現金"
@@ -5439,6 +5763,9 @@
       ],
       "Colors": [
         "色彩"
+      ],
+      "Common passwords": [
+        "常見密碼"
       ],
       "Company": [
         "公司"
@@ -5478,6 +5805,9 @@
       ],
       "Could you please specify?": [
         "您可以具體說明嗎？"
+      ],
+      "Countries": [
+        "國家"
       ],
       "Country": [
         "國家"
@@ -5533,6 +5863,9 @@
       "Email or username": [
         "電郵位址或使用者名稱"
       ],
+      "Enabled": [
+        "啟用"
+      ],
       "Enter the code displayed on your TV": [
         "輸入在您的電視上顯示的代碼"
       ],
@@ -5569,11 +5902,17 @@
       "Group name": [
         "群組名稱"
       ],
+      "Groups": [
+        "群組"
+      ],
       "Hide password": [
         "隱藏密碼"
       ],
       "IBAN": [
         "國際銀行帳號"
+      ],
+      "Import all messages": [
+        "匯入全部郵件"
       ],
       "Integrated 2FA authenticator": [
         "整合雙重驗證"
@@ -5589,6 +5928,15 @@
       ],
       "Key": [
         "金鑰"
+      ],
+      "Last 12 months only": [
+        "僅過去 12 個月"
+      ],
+      "Last 3 months only": [
+        "僅過去 3 個月"
+      ],
+      "Last month only": [
+        "僅過去 1 個月"
       ],
       "Last name": [
         "姓"
@@ -5639,7 +5987,7 @@
         "新的組織密碼"
       ],
       "New password": [
-        "新密碼"
+        "新增密碼"
       ],
       "New second password": [
         "新的第二密碼"
@@ -5693,7 +6041,7 @@
         "付款人"
       ],
       "Payment details": [
-        "付款細節"
+        "繳款詳細資訊"
       ],
       "Payment method": [
         "付款方式"
@@ -5715,6 +6063,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "請提供任何意見回饋以協助我們改進。"
+      ],
+      "Policy name": [
+        "政策名稱"
       ],
       "Postal code": [
         "郵遞區號"
@@ -5761,11 +6112,11 @@
       "Search": [
         "搜尋"
       ],
-      "Search by email": [
-        "透過電子郵件搜尋"
-      ],
       "Second password": [
         "第二密碼"
+      ],
+      "Sequences": [
+        "序段"
       ],
       "Show ${ n } administrator": [
         "顯示 ${ n } 管理員"
@@ -5815,6 +6166,9 @@
       "Type": [
         "類型"
       ],
+      "Uppercase and lowercase letters": [
+        "大寫及小寫字母"
+      ],
       "User": [
         "使用者"
       ],
@@ -5823,6 +6177,9 @@
       ],
       "Username": [
         "使用者名稱"
+      ],
+      "Users": [
+        "使用者"
       ],
       "Value": [
         "值"
@@ -5875,7 +6232,7 @@
     },
     "label": {
       "Recovery phone number": [
-        "復原手機號碼"
+        "復原電話號碼"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -5974,6 +6331,9 @@
       "Create account": [
         "創建帳號"
       ],
+      "Don't have access to your 2FA?": [
+        "沒有存取您的雙重驗證？"
+      ],
       "Forgot email?": [
         "忘了電子信箱？"
       ],
@@ -5982,6 +6342,9 @@
       ],
       "Forgot username?": [
         "忘記使用者名稱？"
+      ],
+      "Groups": [
+        "群組"
       ],
       "Help": [
         "幫助"
@@ -5994,6 +6357,9 @@
       ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "如何使用${ DARK_WEB_MONITORING_NAME }"
       ],
       "Learn more": [
         "瞭解詳情"
@@ -6079,12 +6445,6 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "您的帳號可能會被刪除。為了避免資料損失，請向您的管理員查詢或升級。 ${ cta }"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
-        "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ cta }。"
-      ],
-      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "您的儲存已滿。要上載或同步檔案，釋放空間或${ cta }。"
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
@@ -6201,11 +6561,26 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "澳大利亞元"
+      ],
+      "Brazilian real": [
+        "巴西雷亞爾"
+      ],
+      "British pound": [
+        "英鎊"
+      ],
+      "Canadian dollar": [
+        "加拿大元"
+      ],
       "Euro": [
         "歐元"
       ],
       "Swiss franc": [
         "瑞士法郎"
+      ],
+      "US Dollar": [
+        "美元"
       ]
     },
     "Navigation": {
@@ -6235,7 +6610,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "頂尖 VPN 速度"
+        "最高 VPN 速度"
       ],
       "Keep your inbox organized with folders": [
         "用資料夾讓信箱井然有序"
@@ -6277,20 +6652,8 @@
       "From ${ price }": [
         "${ price }起"
       ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
       "Upgrade": [
         "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -6340,7 +6703,7 @@
         "${ n } 個保險櫃"
       ],
       "${ n } VPN connection": [
-        "${ n } 個 VPN 連線"
+        "${ n } 個VPN 連線"
       ],
       "${ numberOfUsers } user": [
         "${ numberOfUsers }個用戶"
@@ -6367,28 +6730,16 @@
         "每位使用者${ size }安全空間"
       ],
       "${ size } storage": [
-        "${ size } 儲存空間"
+        "${ size }儲存"
       ],
-      "1 TB secure storage": [
-        "1TB安全儲存空間"
+      "${ size } storage per user": [
+        "${ size } 可用空間 / 每位使用者"
       ],
       "1 user": [
         "1 位使用者"
       ],
-      "10 email addresses/aliases": [
-        "10 組電子郵件地址/別名"
-      ],
-      "10 more premium features": [
-        "10多項豐富的頂級功能"
-      ],
       "10-year file version history": [
         "10年的檔案版本紀錄"
-      ],
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "200 GB of storage": [
-        "200 GB的儲存空間"
       ],
       "24/7 account management support": [
         "24/7 帳戶管理支援"
@@ -6408,17 +6759,11 @@
       "Administration Panel": [
         "管理介面"
       ],
-      "Advanced account protection": [
-        "進階的帳號保護"
-      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "進階別功能(由SimpleLogin驅動)"
       ],
       "Advanced network security": [
         "進階網路安全"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "全部${ BRAND_NAME }產品及功能"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
@@ -6428,9 +6773,6 @@
       ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
-      ],
-      "Auto-delete spam and trashed messages": [
-        "自動刪除垃圾郵件與垃圾桶中的訊息"
       ],
       "Auto-reply": [
         "自動回覆"
@@ -6445,7 +6787,7 @@
         "所有平台皆可使用"
       ],
       "Calendar sharing": [
-        "行事曆分享"
+        "行事曆共享"
       ],
       "Catch-all": [
         "全部擷取"
@@ -6476,9 +6818,6 @@
       ],
       "Custom fields": [
         "自訂欄位"
-      ],
-      "Custom snooze time": [
-        "自訂延遲時間"
       ],
       "Custom workspace branding": [
         "自訂工作空間的品牌"
@@ -6529,7 +6868,7 @@
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 和 ${ DRIVE_SHORT_APP_NAME } 的免費功能"
       ],
       "Free VPN on a single device": [
-        "單一裝置的免費 VPN"
+        "單一裝置上的免費 VPN"
       ],
       "Fully refundable for 30 days": [
         "30 天體驗不滿意退款服務"
@@ -6537,11 +6876,11 @@
       "GDPR data processing agreement": [
         "GDRP資料處理協議"
       ],
-      "Generate emails with a prompt": [
-        "透過提示生成電子郵件"
-      ],
       "Group management (coming soon)": [
         "群組管理(即將推出)"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "高速的瑞士 VPN 可保護您的隱私"
       ],
       "High-speed VPN on ${ n } device": [
         "極速 VPN 裝載多達 ${ n } 臺裝置"
@@ -6576,6 +6915,9 @@
       "Password manager": [
         "密碼管理員"
       ],
+      "Password manager to secure credentials": [
+        "密碼管理器以確保身分安全"
+      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
@@ -6591,15 +6933,6 @@
       "Priority support & live chat": [
         "優先處理您的客服單與線上聊天客服"
       ],
-      "Private photo backup": [
-        "私人照片備份"
-      ],
-      "Proofread and refine your emails": [
-        "校閱與修飾你的電子郵件"
-      ],
-      "Quickly craft replies": [
-        "快速替回復打草稿"
-      ],
       "Recover previous file versions": [
         "復原先前的檔案版本"
       ],
@@ -6612,23 +6945,11 @@
       "Router support": [
         "路由器支援"
       ],
-      "Save time emailing": [
-        "儲存寄件時間"
-      ],
       "Schedule and snooze emails for any time": [
         "隨時計畫和延後電子郵件"
       ],
-      "Schedule messages at any time": [
-        "在任意時間排程訊息"
-      ],
-      "Search message content": [
-        "搜尋郵件內容"
-      ],
       "Secure Core servers": [
-        "Secure Core 伺服器"
-      ],
-      "Secure file storage and sharing": [
-        "安全地儲存和共享檔案"
+        "Secure Core伺服器"
       ],
       "Secure link sharing": [
         "安全連結分享"
@@ -6660,11 +6981,11 @@
       "Start protecting your organization": [
         "開始保護您的組織"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "2 個簡單步驟即可啟動您專屬的線上防護"
+      ],
       "Strict no-logs policy": [
         "嚴格的無日誌政策"
-      ],
-      "Support for up to 2 users": [
-        "支援最多2位使用者"
       ],
       "Sync and backup all your files across devices": [
         "於裝置同步及備份您全部的檔案"
@@ -6676,7 +6997,7 @@
         "兩步驟驗證"
       ],
       "Unlimited devices": [
-        "無限裝置數量"
+        "無限裝置數"
       ],
       "Unlimited devices and aliases": [
         "無限裝置和別名"
@@ -6724,7 +7045,7 @@
         "至多${ n }位使用者(${ adminsText }, ${ usersText })"
       ],
       "Up to ${ totalStorageSize } storage": [
-        "最多至 ${ totalStorageSize } 儲存空間"
+        "多至 ${ totalStorageSize } 儲存空間"
       ],
       "Use on up to ${ n } device at once": [
         "最多同一時間於 ${ n } 裝置"
@@ -6751,20 +7072,6 @@
       ],
       "${ users } user": [
         "${ users }位使用者"
-      ]
-    },
-    "new_plans: feature info": {
-      "1 custom email domain": [
-        "1個自訂電子郵件網域"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "創建多重電子郵件位址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
-      ],
-      "Snooze messages and get reminded when you want": [
-        "緩辦郵件，容後依時提醒"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -6804,7 +7111,7 @@
         "為團隊增強安全及頂級功能"
       ],
       "For next-level password management and identity protection.": [
-        "用於下一個層級的密碼管理與身份保護。"
+        "使用密碼管理器及身分保護以增加安全性。"
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "若你將帳號刪除，你將失去所有 ${ visionary } 帶來的福利，且即使你決定重新創建帳號，也不能再次選擇該方案。"
@@ -6833,9 +7140,6 @@
       "Safely access internet from anywhere with essential network monitoring": [
         "透過必要的網路監控，您可以從任何地方安全地上網"
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "安全的雲端儲存空間，讓您輕鬆安全地貯存、同步和分享檔案。"
-      ],
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"
       ],
@@ -6846,7 +7150,7 @@
         "專屬的 VPN 解決方案，提供安全、不設限、高速的網際網路存取。"
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "完全免費的新手版帳號，旨在提供所有人以隱私權為首要使命的服務。"
+        "免費版帳號提供所有人以隱私權為宗旨的服務。"
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "無限隱私與更多儲存空間，最多提供給至多 2 人使用。"
@@ -6888,19 +7192,14 @@
       ]
     },
     "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "從${ priceLine }起"
+      ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "於第一個月享受${ priceCoupon }優惠折扣。而後將以每 ${ priceLine } 月的價格自動續約。您可以於任何時候取消訂閱。"
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "只要${ priceLine }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
       ]
     },
     "new_plans: title": {
@@ -6914,7 +7213,15 @@
         "檢視訂購授權與繳款"
       ],
       "Switch plans?": [
-        "切換方案？"
+        "切換方案?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -7163,7 +7470,7 @@
         "繞過審查制度"
       ],
       "Central control panel": [
-        "中控面板"
+        "中央控制面板"
       ],
       "Create up to ${ n } calendar": [
         "創建多達 ${ n } 個行事曆"
@@ -7185,9 +7492,59 @@
       ],
       "Require 2FA": [
         "要求兩階段認證"
+      ]
+    },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } 與 ${ additionalApp } 的更新"
       ],
-      "Support for ${ n } custom email domains": [
-        "支援 ${ n } 組自訂電子郵件網域"
+      "${ app } product updates": [
+        "${ app } 產品更新"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } 商業通訊"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } 重要通知"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } 通訊"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } 促銷與優惠"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } 產品公告"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } 使用者問卷"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } 歡迎電子郵件"
+      ],
+      "1 email per month": [
+        "每月 1 封電郵"
+      ],
+      "1 email per quarter": [
+        "每季 1 封電子郵件"
+      ],
+      "1-2 emails per month": [
+        "每月 1-2 封電子郵件"
+      ],
+      "2-4 emails per year": [
+        "每年 2 - 4 封電子郵件電郵"
+      ],
+      "4-6 emails per year": [
+        "每年 4 - 6 封電子報電郵"
+      ],
+      "Daily email notifications": [
+        "每日電子郵件通知"
+      ],
+      "Email subscriptions": [
+        "電子報訂閱"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "參與調查以改進 ${ BRAND_NAME } 服務"
       ]
     },
     "Notification": {
@@ -7332,9 +7689,9 @@
         "歡迎來到 ${ appName }"
       ]
     },
-    "option": {
-      "Group members": [
-        "群組成員"
+    "Onboarding Trial": {
+      "Continue": [
+        "繼續"
       ]
     },
     "Option": {
@@ -7345,7 +7702,7 @@
         "免費伺服器組態設定"
       ],
       "I found another service that I like better": [
-        "別家的服務，我更喜歡"
+        "我找到了另一個我更喜歡的服務"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "我使用不同的 ${ BRAND_NAME } 帳號"
@@ -7397,6 +7754,14 @@
       ],
       "The whole organization": [
         "整個組織"
+      ]
+    },
+    "option": {
+      "Group members": [
+        "群組成員"
+      ],
+      "No one": [
+        "沒有人"
       ]
     },
     "Organization capacity error": {
@@ -7560,7 +7925,7 @@
         "以下管理員將可以存取組織機構金鑰"
       ],
       "The organization key must be activated first.": [
-        "必須先啟用組織金鑰。"
+        "必須先啟用組織機構的金鑰."
       ],
       "To enable administrator rights on your account, activate the organization key.": [
         "若要替您的帳號啟用管理員權限，需要啟用組織金鑰。"
@@ -7591,6 +7956,9 @@
       "Bank transfer": [
         "銀行轉帳"
       ],
+      "Bitcoin": [
+        "比特幣"
+      ],
       "Credit/debit card": [
         "信用卡/簽帳金融卡"
       ],
@@ -7611,7 +7979,7 @@
         "計費國家"
       ],
       "Card number": [
-        "卡號"
+        "信用卡號"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "目前自動續訂為關閉。若現在變更訂閱，自動續訂將重新啟用。"
@@ -7623,7 +7991,7 @@
         "瞭解"
       ],
       "MM/YY": [
-        "MM/YY"
+        "月份/年分"
       ],
       "More plans are available in other currencies": [
         "其他貨幣有更多的方案"
@@ -7646,11 +8014,23 @@
       "Processing payment": [
         "正在處理付款"
       ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "更新價 ${ renewPriceStr }，任何時間都可取消。"
+      ],
       "Select billing country to pay": [
         "選取繳款國家以付款"
       ],
+      "terms & conditions": [
+        "條款及細則"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
+      ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "Your payment is still being processed": [
+        "您的付款仍在處理中"
       ]
     },
     "Payments.Error": {
@@ -7679,6 +8059,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
+      ],
       "Street address, postal code, and city": [
         "地址，郵政區碼，及城市"
       ]
@@ -7709,6 +8092,9 @@
       ],
       "Address": [
         "電郵位址"
+      ],
+      "Anderson": [
+        "安德松"
       ],
       "Choose a name": [
         "請選定一個名稱"
@@ -7752,6 +8138,9 @@
       "Group name": [
         "群組名稱"
       ],
+      "Organization name": [
+        "組織名稱"
+      ],
       "Other": [
         "其它"
       ],
@@ -7794,13 +8183,24 @@
       "Start date": [
         "開始日期"
       ],
+      "Thomas": [
+        "湯姆斯"
+      ],
       "yourdomain.com": [
         "yourdomain.com"
       ]
     },
     "placeholder": {
+      "Add a group name": [
+        "加入群組名稱"
+      ],
       "Members": [
         "成員"
+      ]
+    },
+    "Plan card": {
+      "Secure email that protects your privacy": [
+        "安全防護的電子郵件保護隱私"
       ]
     },
     "plan customizer, users": {
@@ -7808,9 +8208,22 @@
         "業務聯繫"
       ]
     },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle }個月"
+      ],
+      "Enjoying ${ planName }?": [
+        "享受 ${ planName }?"
+      ]
+    },
     "Price": {
       "Free": [
         "免費"
+      ]
+    },
+    "Protection type": {
+      "Ok": [
+        "確定"
       ]
     },
     "Recovery Email": {
@@ -7833,7 +8246,7 @@
         "驗證還原電郵？"
       ],
       "Verify with email": [
-        "電郵驗證"
+        "郵件驗證"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "驗證您的電郵位址可以增加您帳號的安全性，並提供了額外的還原選項。"
@@ -7995,6 +8408,9 @@
       ],
       "Currency conversion": [
         "貨幣轉換"
+      ],
+      "Invoice": [
+        "繳款單"
       ]
     },
     "Select search results": {
@@ -8373,9 +8789,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
-      ],
       "Your subscription will renew at the same rate every year.": [
         "您的訂閱每年將以同費率更新"
       ]
@@ -8631,6 +9044,9 @@
       "Single sign-on removed": [
         "已移除單一登入"
       ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "這會登出您的其他裝置，您必須建立新的備份密碼。"
+      ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "若要確定真的是您嘗試登入 **${ email }**，請檢視確認碼，並從其他裝置批准請求。"
       ],
@@ -8661,10 +9077,10 @@
     },
     "sso: auth device state": {
       "Active": [
-        "啟用"
+        "啟用的"
       ],
       "Inactive": [
-        "未使用"
+        "未啟用"
       ],
       "Pending activation": [
         "待啟動"
@@ -8727,9 +9143,6 @@
       "For all ${ BRAND_NAME } services": [
         "所有 ${ BRAND_NAME } 服務"
       ],
-      "To send or receive emails, free up space or ${ upgrade }": [
-        "您的儲存已滿，要傳送或接收電郵，請釋放儲存空間或${ upgrade }"
-      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "要繼續上傳或同步檔案，請釋放一些空間或${ upgrade }"
       ],
@@ -8745,11 +9158,8 @@
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
       ],
-      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "您已使用 ${ percentage }% 的 ${ storage }。${ cta }"
-      ],
-      "Your ${ storage } is full. ${ cta }.": [
-        "您的${ storage }已滿${ cta }。"
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "您已使用 ${ percentage }% 的 ${ productString }。${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "你的儲存量已達 ${ percentage }% 滿. ${ cta }."
@@ -8777,23 +9187,8 @@
       "Billed every 2 years": [
         "雙年繳制"
       ],
-      "Billed every 6 months": [
-        "每 6 個月付款"
-      ],
-      "Billed for 15 months": [
-        "15個月的費用為"
-      ],
-      "Billed for 18 months": [
-        "18個月的費用為"
-      ],
-      "Billed for 3 months": [
-        "3個月的費用為"
-      ],
-      "Billed for 30 months": [
-        "30個月的費用為"
-      ],
       "Billed monthly": [
-        "月繳"
+        "每月出帳"
       ],
       "Billed yearly": [
         "年繳"
@@ -8860,7 +9255,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "明白"
+        "瞭解"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "請登入您的 Apple App Store 帳號，然後選取「${ subscriptions }」。"
@@ -9208,7 +9603,7 @@
         "自動付款已啟用"
       ],
       "Disable": [
-        "停用"
+        "關閉"
       ],
       "Enable auto-pay support": [
         "啟用自動付款支援"
@@ -9223,12 +9618,20 @@
         "我們的系統將不再以此付款方法自動向您收費，惟您的訂購授權仍會在繳款單週期屆滿時續約。若您想降級或更改您的訂購授權，您仍需於繳款單週期完結前自行辦妥。我們無法自動為您降級，因為若您已超過免費方案的儲存空間配額，或是在使用其它付款功能，我們無法為您自動刪除檔案、電子郵件或其它資料。若您停用自動付款，請記得在到期日之前繳付您下一張訂購授權帳單，以免帳號被暫停。"
       ]
     },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "降價 ${ priceString }"
+      ]
+    },
     "Subscription status": {
       "Active": [
         "使用中"
       ],
       "Expiring": [
         "到期"
+      ],
+      "Free Trial": [
+        "免費試用期"
       ]
     },
     "Success": {
@@ -9246,6 +9649,9 @@
       ],
       "Billing details updated": [
         "帳單詳情已更新"
+      ],
+      "Canceling import": [
+        "正在取消匯入"
       ],
       "Catch-all address updated": [
         "全部擷取電子郵件位址已更新"
@@ -9279,6 +9685,9 @@
       ],
       "Gift code applied": [
         "禮品代碼已套用"
+      ],
+      "Import record deleted": [
+        "匯入記錄已刪除"
       ],
       "Invitation rejected": [
         "邀請已拒絕"
@@ -9339,6 +9748,9 @@
       ],
       "SPF value copied to clipboard": [
         "SFP 字串已複製到剪貼簿"
+      ],
+      "Undo in progress": [
+        "復原進行中"
       ],
       "User updated": [
         "使用者已更新"
@@ -9525,6 +9937,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } 訂閱"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME }訂閱撰寫扳手"
       ],
@@ -9558,6 +9973,9 @@
       "4. Select a server to connect to": [
         "4. 選取要連接的伺服器"
       ],
+      "Access control": [
+        "存取控制"
+      ],
       "Account": [
         "帳號"
       ],
@@ -9565,7 +9983,7 @@
         "帳號已被停用"
       ],
       "Action": [
-        "動作"
+        "操作"
       ],
       "Actions": [
         "操作"
@@ -9614,6 +10032,9 @@
       ],
       "Add to spam list": [
         "新增到垃圾郵件清單"
+      ],
+      "Add user": [
+        "加入使用者"
       ],
       "Add user accounts": [
         "添加使用者帳號"
@@ -9699,6 +10120,9 @@
       "Close": [
         "關閉"
       ],
+      "Collaborate on documents": [
+        "於文件上合作"
+      ],
       "Confirm": [
         "確認"
       ],
@@ -9754,7 +10178,7 @@
         "創建使用者帳號"
       ],
       "Credits": [
-        "儲值"
+        "額度"
       ],
       "Currency": [
         "貨幣"
@@ -9898,7 +10322,7 @@
         "輸入您的 ${ BRAND_NAME } 帳號詳細資訊以加入 ${ app } 體驗版方案"
       ],
       "Enter your password": [
-        "請輸入您的密碼"
+        "輸入您的密碼"
       ],
       "Error": [
         "錯誤"
@@ -9963,14 +10387,14 @@
       "Human verification": [
         "真人身分驗證"
       ],
-      "Increase your privacy with more addresses": [
-        "使用更多位址增加您的隱私"
-      ],
       "Invalid verification code": [
         "驗證碼無效"
       ],
       "Invoices": [
         "繳款單"
+      ],
+      "Limit reached": [
+        "已達上限"
       ],
       "Main password": [
         "主要密碼"
@@ -9982,10 +10406,10 @@
         "多使用者支援"
       ],
       "Network error": [
-        "網路錯誤"
+        "網路連線錯誤"
       ],
       "Next": [
-        "下一頁"
+        "下一步"
       ],
       "Night theme": [
         "夜間布景主題"
@@ -10013,6 +10437,9 @@
       ],
       "Organization name": [
         "組織名稱"
+      ],
+      "Organization setup": [
+        "組織機構設定"
       ],
       "Origin": [
         "起源"
@@ -10054,7 +10481,7 @@
         "QRCode"
       ],
       "Recommended": [
-        "推薦"
+        "推薦使用"
       ],
       "Recovery": [
         "復原"
@@ -10119,8 +10546,17 @@
       "Set organization name": [
         "設定組織名稱"
       ],
+      "Set recovery methods": [
+        "設定復原方式"
+      ],
+      "Set up email forwarding": [
+        "設定電子郵件轉發"
+      ],
       "Set up two-factor authentication": [
         "啟用二步驟驗證 (2FA)"
+      ],
+      "Set up your organization": [
+        "設定您的組織"
       ],
       "Set your password": [
         "設定您的密碼"
@@ -10162,7 +10598,7 @@
         "成功創建 ${ n } 使用者帳號"
       ],
       "Summary": [
-        "總結"
+        "摘要"
       ],
       "Switch to one-password mode": [
         "切換為單一密碼模式"
@@ -10175,6 +10611,9 @@
       ],
       "There are no groups": [
         "沒有小組"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
       ],
       "TV sign in": [
         "電視登入"
@@ -10328,20 +10767,14 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "允許無痕添加會議連結至您的行事曆邀請函。"
       ],
-      "An approximate location of the IP address": [
-        "IP 位址的大概位置"
-      ],
-      "Any protection applied to suspicious activity": [
-        "針對可疑活動所採取的保護措施"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "與系統的日夜模式同步，在白天和晚上的偏好布景主題之間自動切換"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "請複製此 URL 並到您的身分提供者提示的 ACS (判斷提示取用者服務) URL 欄位中貼上"
       ],
-      "Device information such as operating system": [
-        "裝置資訊如作業系統"
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "請複製此 URL 並到您的身分提供者提示的實體 ID 欄位中貼上"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "來自身分提供商(例如 e.g. https://idp.example.com/sso/saml)端點網址"
@@ -10354,9 +10787,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已購買或從我們的支援團隊收到禮品代碼，您可在此輸入。"
-      ],
-      "IP address (Internet Service Provider)": [
-        "IP地址(網際網路服務提供商)"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "指定允許以 SAML SSO 驗證的網域"
@@ -10417,7 +10847,56 @@
         "此版本的 Tor 瀏覽器已經不被支援。請更新到最新版 ${ stableRelease }"
       ]
     },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "拒付"
+      ],
+      "Failed": [
+        "失敗"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Authorization": [
+        "授權"
+      ],
+      "Bank transfer": [
+        "銀行轉帳"
+      ],
+      "Bitcoin": [
+        "比特幣"
+      ],
+      "Cash": [
+        "現金"
+      ],
+      "Chargeback": [
+        "拒付"
+      ],
+      "Credit": [
+        "儲值"
+      ],
+      "Currency conversion": [
+        "貨幣轉換"
+      ],
+      "Gift card": [
+        "禮品卡"
+      ],
+      "Migration": [
+        "轉移"
+      ],
+      "Payment": [
+        "付款"
+      ],
+      "Refund": [
+        "退款"
+      ]
+    },
     "unprivatization": {
+      "Cancel request": [
+        "取消要求"
+      ],
+      "Confirm all": [
+        "確認全部"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "因為他們的加密金鑰同時被更新，無法替${ n }使用者自動啟用管理員權限權"
       ],
@@ -10431,9 +10910,20 @@
         "傳送請求"
       ]
     },
+    "Upsell": {
+      "Did you know?": [
+        "您知道嗎？"
+      ]
+    },
     "upsell panel": {
+      "Best deal": [
+        "最划算"
+      ],
       "Recommended": [
         "推薦使用"
+      ],
+      "Save ${ price.uiData.discountPercent }%": [
+        "降價 ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {
@@ -10501,6 +10991,9 @@
       "2FA": [
         "雙重驗證"
       ],
+      "Inactive": [
+        "未啟用"
+      ],
       "Invite sent": [
         "已傳送邀請"
       ],
@@ -10555,7 +11048,7 @@
         "${ n } 臺伺服器"
       ],
       "${ n } VPN connection": [
-        "${ n } 條VPN連線"
+        "${ n } 個VPN 連線"
       ],
       "${ numberOfCountries } country": [
         "${ numberOfCountries } 個國家"
@@ -10568,6 +11061,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "從 ${ numberOfCountries } 國家自動選擇"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "伺服器遍布 ${ numberOfCountries }+ 國家"
       ]
     },
     "vpn_2024: renew": {
@@ -10632,6 +11128,9 @@
       ],
       "Try ${ upsellPlanName } risk-free": [
         "嘗試無風險的 ${ upsellPlanName }"
+      ],
+      "Your ${ selected } plan": [
+        "您專屬的 ${ selected } 方案"
       ]
     },
     "vpn_2step: tooltip": {

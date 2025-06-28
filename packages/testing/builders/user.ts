@@ -58,7 +58,9 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
             'no-proton-address': false,
             'recovery-attempt': false,
             'pass-lifetime': false,
+            'pass-from-sl': false,
             sso: false,
+            'has-a-byoe-address': false,
         },
         isAdmin: true,
         isMember: false,
@@ -76,6 +78,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         canPay: true,
         AccountRecovery: null,
         ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED,
+        HasMultipleSubscriptions: false,
         ...value,
     };
 };

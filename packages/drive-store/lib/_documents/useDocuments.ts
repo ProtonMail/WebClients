@@ -31,7 +31,7 @@ export const useDocuments = () => {
     const { getLink, getLinkPrivateKey, getLinkHashKey, getLinkSessionKey } = useLink();
     const { removeLinkForDriveCompat } = useLinksState();
     const { getShareCreatorKeys } = useShare();
-    const { renameLink, trashLinks, restoreLinks } = useActions();
+    const { renameLink, trashLinks, restoreLinks, deletePermanently, confirmModal } = useActions();
     const { getLocalID } = useAuthentication();
 
     const getDocumentSigningKeys = async (shareId: string) => {
@@ -164,6 +164,13 @@ export const useDocuments = () => {
         await getLink(abortSignal, shareId, linkId);
     };
 
+    const deleteDocumentPermanently = async (
+        { shareId, linkId, volumeId }: LegacyNodeMeta,
+        parentLinkId: string
+    ): Promise<void> => {
+        await deletePermanently(abortSignal, [{ linkId, rootShareId: shareId, parentLinkId, isFile: true, volumeId }]);
+    };
+
     const restoreDocument = async (
         { shareId, linkId, volumeId }: LegacyNodeMeta,
         parentLinkId: string
@@ -190,5 +197,7 @@ export const useDocuments = () => {
         getDocumentUrl,
         trashDocument,
         restoreDocument,
+        deleteDocumentPermanently,
+        confirmModal,
     };
 };

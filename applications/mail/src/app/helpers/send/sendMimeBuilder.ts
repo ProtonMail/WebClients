@@ -1,23 +1,23 @@
 import mimemessage from '@protontech/mimemessage';
 
 import { arrayToBinaryString } from '@proton/crypto/lib/utils';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
-import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
-import { getAttachments, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-
 import type {
     MessageEmbeddedImage,
     MessageImages,
     MessageKeys,
     MessageState,
-} from '../../store/messages/messagesTypes';
+} from '@proton/mail/store/messages/messagesTypes';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import type { Api } from '@proton/shared/lib/interfaces';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
+import { getAttachments, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import type { Download } from '../attachment/attachmentDownloader';
 import { formatDownload } from '../attachment/attachmentDownloader';
 import { getPlainText } from '../message/messageContent';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
 import { prepareExport } from '../message/messageExport';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 // Reference: Angular/src/app/composer/services/mimeMessageBuilder.js
 

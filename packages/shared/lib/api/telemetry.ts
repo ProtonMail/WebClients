@@ -33,6 +33,8 @@ export enum TelemetryMeasurementGroups {
     mailPostSignupOneDollar = 'mail.web.post_signup_one_dollar',
     mailPagingControls = 'mail.web.paging_controls',
     passNudge = 'mail.web.pass_nudge',
+    mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
+    mailUnlimitedOffer2025 = 'mail.web.unlimited_offer_2025',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     vpnDrawer = 'any.web.vpn_drawer',
@@ -41,15 +43,16 @@ export enum TelemetryMeasurementGroups {
     driveWebFeaturePerformance = 'drive.web.feature_performance_unauth',
     driveWebActions = 'drive.web.actions_unauth',
     drivePostSignupOneDollar = 'drive.web.post_signup_one_dollar',
+    driveUnlimitedOffer2025 = 'mail.web.unlimited_offer_2025',
     /** Shared */
     collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
     smartBanner = 'any.web.smart_banner',
     clientInstalls = 'common.any.client_installs',
-    upsellModals = 'any.web.upsell_modals',
     clientSearch = 'any.web.client_search',
     b2bOnboarding = 'any.web.b2b_onboarding',
     /** Docs */
     docsSuggestions = 'common.web.suggestions',
+    docsHomepage = 'drive.docs.homepage',
 }
 
 export enum TelemetryMailOnboardingEvents {
@@ -78,6 +81,13 @@ export enum TelemetryMailTrial2024UpsellModal {
     upsell = 'upsell',
 }
 
+export enum TelemetryDWMUpsellModal {
+    openModal = 'open_modal',
+    openModalCampaign = 'open_modal_campaign',
+    closeModal = 'close_modal',
+    upsell = 'upsell',
+}
+
 export enum TelemetryMailPagingControlsEvents {
     move_to_previous_page = 'move_to_previous_page',
     move_to_next_page = 'move_to_next_page',
@@ -94,6 +104,14 @@ export enum TelemetryCalendarVideoConferencing {
     video_conference_widget = 'video_conference_widget',
     video_conference_settings_toggle = 'video_conference_settings_toggle',
     video_conference_zoom_integration = 'video_conference_zoom_integration',
+}
+
+export enum TelemetryMailNewsletterSubscriptions {
+    newsletters_view_visit = 'newsletters_view_visit',
+    newsletter_action = 'newsletter_action',
+    newsletter_messages_action = 'newsletter_messages_action',
+    newsletters_list_sorting = 'newsletters_list_sorting',
+    newsletters_list_pagination = 'newsletters_list_pagination',
 }
 
 export enum TelemetryIcsSurgeryEvents {
@@ -246,10 +264,6 @@ export enum TelemetryCollapsibleLeftSidebarEvents {
     toggleLeftSidebar = 'toggle_left_sidebar',
 }
 
-export enum TelemetryUpsellModalsEvents {
-    clickUpsellModals = 'click_upsell_modals',
-}
-
 export enum TelemetryProtonTipsEvents {
     tipDispayed = 'tip_displayed',
     CTAButtonClicked = 'cta_clicked',
@@ -270,6 +284,18 @@ export enum TelemetryDocsEvents {
     suggestion_created = 'suggestion.created',
     suggestion_resolved = 'suggestion.resolved',
     suggestion_commented = 'suggestion.comment',
+}
+
+export enum TelemetryDocsHomepageEvents {
+    document_opened = 'document.opened',
+    document_created = 'document.created',
+    document_shared = 'document.shared',
+    document_trashed = 'document.trashed',
+    document_renamed = 'document.renamed',
+    document_moved = 'document.moved',
+    document_source_opened = 'document.source.opened',
+    sorting_changed_to_name = 'sorting.changed.to_name',
+    sorting_changed_to_time = 'sorting.changed.to_time',
 }
 
 export enum TelemetryPostSubscriptionTourEvents {
@@ -322,9 +348,18 @@ export enum TelemetryPassNudgeEvents {
     pass_cta_click = 'pass_cta_click',
 }
 
+export enum TelemetryUnlimitedOffer2025 {
+    clickTopNavbar = 'click_top_navbar',
+    clickUpsellButton = 'click_upsell_button',
+    closeOffer = 'close_offer',
+    userSubscribed = 'user_subscribed',
+    clickHideOffer = 'click_hide_offer',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
+    | TelemetryDWMUpsellModal
     | TelemetryCalendarEvents
     | TelemetryIcsSurgeryEvents
     | TelemetryAccountSignupBasicEvents
@@ -346,20 +381,22 @@ export type TelemetryEvents =
     | TelemetryDriveWebFeature
     | TelemetryAccountSecurityCheckupEvents
     | TelemetryCollapsibleLeftSidebarEvents
-    | TelemetryUpsellModalsEvents
     | TelemetryProtonTipsEvents
     | TelemetryHeartbeatEvents
     | TelemetrySmartBannerEvents
     | TelemetryDesktopEvents
     | TelemetryInboxDestkopEvents
     | TelemetryDocsEvents
+    | TelemetryDocsHomepageEvents
     | TelemetryCalendarVideoConferencing
     | TelemetryEncryptedSearchEvents
     | TelemetryB2BOnboardingEvents
     | TelemetryPostSubscriptionTourEvents
     | TelemetryMailDrivePostSignupOneDollarEvents
     | TelemetryPaidUsersNudge
-    | TelemetryPassNudgeEvents;
+    | TelemetryPassNudgeEvents
+    | TelemetryMailNewsletterSubscriptions
+    | TelemetryUnlimitedOffer2025;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

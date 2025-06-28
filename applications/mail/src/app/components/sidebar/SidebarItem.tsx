@@ -63,6 +63,8 @@ interface Props {
     moveToFolder: (params: MoveParams) => void;
     applyLabels: (params: ApplyLabelsParams) => void;
     className?: string;
+    onClickCallback?: () => void;
+    hideSpinner?: boolean;
 }
 
 const SidebarItem = ({
@@ -88,6 +90,8 @@ const SidebarItem = ({
     moveToFolder,
     applyLabels,
     className,
+    onClickCallback,
+    hideSpinner = false,
 }: Props) => {
     const { call } = useEventManager();
     const history = useHistory();
@@ -119,6 +123,9 @@ const SidebarItem = ({
             event.preventDefault();
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
+
+        // Allow to handle click outside of the SidebarItem
+        onClickCallback?.();
     };
 
     const handleRefresh = () => {
@@ -204,6 +211,7 @@ const SidebarItem = ({
                     }
                     right={
                         <LocationAside
+                            labelID={labelID}
                             unreadCount={needsTotalDisplay ? totalMessagesCount : unreadCount}
                             weak={labelID !== MAILBOX_LABEL_IDS.INBOX}
                             refreshing={refreshing}
@@ -213,6 +221,7 @@ const SidebarItem = ({
                             itemOptions={itemOptions}
                             isOptionDropdownOpened={isOptionDropdownOpened}
                             collapsed={collapsed}
+                            hideSpinner={hideSpinner}
                         />
                     }
                 >

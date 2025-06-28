@@ -7,27 +7,33 @@
     "scripts": {
         "check-types": "tsc",
         "lint": "true",
-        "test": "true",
-        "test:ci": "true"
+        "pretty:fix": "prettier --write  .",
+        "test": "jest --logHeapUsage --forceExit",
+        "test:ci": "jest --coverage --runInBand --ci --forceExit",
+        "test:coverage": "jest --collectCoverage",
+        "test:watch": "jest --watch --coverage=false"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
         "@proton/react-redux-store": "workspace:^",
         "@proton/redux-shared-store-types": "workspace:^",
         "@proton/styles": "workspace:^",
-        "@reduxjs/toolkit": "^2.6.1",
+        "@reduxjs/toolkit": "^2.8.2",
         "react": "^18.3.1",
-        "react-redux": "^9.2.0"
+        "react-redux": "^9.2.0",
+        "turndown": "^7.2.0"
     },
     "devDependencies": {
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^15.0.7",
+        "@types/turndown": "^5.0.5",
         "eslint": "^8.57.1",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
+        "prettier": "^3.6.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "ts-jest": "^29.3.2",
+        "ts-jest": "^29.4.0",
         "typescript": "^5.8.3"
     }
 }

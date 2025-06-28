@@ -7,7 +7,6 @@ import { createWebAuthNService } from 'proton-pass-extension/app/content/service
 import { IGNORED_TAGS } from 'proton-pass-extension/app/content/utils/nodes';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
-import { hasCriteria } from '@proton/pass/lib/settings/criteria';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
@@ -16,6 +15,7 @@ import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 
 import { CSContext } from './context';
 import type { CSContextState, ContentScriptContext } from './types';
+import { hasPauseCriteria } from './utils';
 
 export const createContentScriptContext = (options: {
     scriptId: string;
@@ -69,21 +69,17 @@ export const createContentScriptContext = (options: {
             const disallowed = settings.disallowedDomains ?? {};
             const url = context.getExtensionContext()?.url;
 
-            /* merge domain and subdomain masks if we have both in the pause-list */
-            const domainMask = url?.domain ? disallowed[url.domain] : 0;
-            const subDomainMask = url?.subdomain ? disallowed[url.subdomain] : 0;
-            const mask = domainMask | subDomainMask;
-
             const { autofill, autosuggest, autosave, passkeys } = settings;
+            const hasPause = hasPauseCriteria({ disallowedDomains: disallowed, url });
 
             return {
                 /** autofill can only be active if user has `autofill.login` or `autofill.identity` */
-                Autofill: (autofill.login || autofill.identity) && !hasCriteria(mask, 'Autofill'),
-                Autofill2FA: autofill.twofa && !hasCriteria(mask, 'Autofill2FA'),
-                AutosuggestPassword: autosuggest.password && !hasCriteria(mask, 'Autosuggest'),
-                AutosuggestAlias: autosuggest.email && !hasCriteria(mask, 'Autosuggest'),
-                Autosave: autosave.prompt && !hasCriteria(mask, 'Autosave'),
-                Passkeys: (passkeys.create || passkeys.get) && !hasCriteria(mask, 'Passkey'),
+                Autofill: (autofill.login || autofill.identity) && !hasPause.Autofill,
+                Autofill2FA: autofill.twofa && !hasPause.Autofill2FA,
+                AutosuggestPassword: autosuggest.password && !hasPause.Autosuggest,
+                AutosuggestAlias: autosuggest.email && !hasPause.Autosuggest,
+                Autosave: autosave.prompt && !hasPause.Autosave,
+                Passkeys: (passkeys.create || passkeys.get) && !hasPause.Passkey,
             };
         },
         getSettings: () => settings,

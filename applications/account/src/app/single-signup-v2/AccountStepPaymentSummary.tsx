@@ -1,23 +1,27 @@
+import { addDays, getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { Info, Price, Time } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
+import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
+import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
-import { Info, Price } from '@proton/components/index';
-import { type Plan } from '@proton/payments';
-import { getHas2024OfferCoupon, getIsB2BAudienceFromPlan, isTaxInclusive } from '@proton/payments';
-import { COUPON_CODES } from '@proton/payments/index';
+import { type Plan, getHas2024OfferCoupon, getIsB2BAudienceFromPlan, isTaxInclusive } from '@proton/payments';
+import { COUPON_CODES } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
+import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import RightPlanSummary, { RightPlanSummaryAddons } from './RightPlanSummary';
 import RightSummary from './RightSummary';
-import SaveLabel from './SaveLabel';
 import { getSummaryPlan } from './configuration';
 import type { OptimisticOptions, SignupModelV2 } from './interface';
 
@@ -31,6 +35,7 @@ interface Props {
     showRenewalNotice: boolean;
     showInclusiveTax: boolean;
     showTaxCountry: boolean;
+    app: APP_NAMES;
 }
 
 const AccountStepPaymentSummary = ({
@@ -43,6 +48,7 @@ const AccountStepPaymentSummary = ({
     showRenewalNotice,
     showInclusiveTax,
     showTaxCountry,
+    app,
 }: Props) => {
     const summaryPlan = getSummaryPlan({
         plan: selectedPlan,
@@ -59,6 +65,12 @@ const AccountStepPaymentSummary = ({
         checkResult: hasCouponCode ? model.subscriptionData.checkResult : options.checkResult,
     });
 
+    const couponConfig = useCouponConfig({
+        checkResult: model.subscriptionData.checkResult,
+        planIDs: model.subscriptionData.planIDs,
+        plansMap: model.plansMap,
+    });
+
     if (!summaryPlan) {
         return null;
     }
@@ -68,13 +80,14 @@ const AccountStepPaymentSummary = ({
     const proration = subscriptionData.checkResult?.Proration ?? 0;
     const credits = subscriptionData.checkResult?.Credit ?? 0;
     const isBFOffer = getHas2024OfferCoupon(subscriptionData.checkResult?.Coupon?.Code);
-    const couponDiscount = isBFOffer ? 0 : currentCheckout.couponDiscount || 0;
+    const couponDiscount = isBFOffer || couponConfig?.hidden ? 0 : currentCheckout.couponDiscount || 0;
     const billingAddress = subscriptionData.billingAddress;
 
     const isPorkbun = subscriptionData.checkResult.Coupon?.Code === COUPON_CODES.PORKBUN;
-    const hideDiscount = isPorkbun;
+    const hideDiscount = isPorkbun || !!couponConfig?.hidden;
 
-    const showAmountDue = proration !== 0 || credits !== 0 || couponDiscount !== 0 || hideDiscount;
+    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+    const showAmountDue = proration !== 0 || credits !== 0 || couponDiscount !== 0 || hideDiscount || isTrial;
 
     const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlan.Name);
 
@@ -98,39 +111,39 @@ const AccountStepPaymentSummary = ({
             !hideDiscount && {
                 id: 'amount',
                 left: <span>{getTotalBillingText(options.cycle, currentCheckout.planIDs)}</span>,
-                right: isBFOffer ? (
-                    <>
-                        {loading ? (
-                            loaderNode
-                        ) : (
-                            <>
-                                <Price currency={subscriptionData.currency}>
-                                    {currentCheckout.withDiscountPerCycle}
-                                </Price>
-                                {!showAmountDue && showRenewalNotice && '*'}
-                            </>
-                        )}
-                    </>
-                ) : (
-                    <>
-                        {getPrice(currentCheckout.withoutDiscountPerCycle)}
-                        {!showAmountDue && showRenewalNotice && '*'}
-                    </>
-                ),
+                right:
+                    isBFOffer || couponConfig?.hidden ? (
+                        <>
+                            {loading ? (
+                                loaderNode
+                            ) : (
+                                <>
+                                    <Price currency={subscriptionData.currency}>
+                                        {isTrial
+                                            ? (options.checkResult.BaseRenewAmount ?? 0)
+                                            : currentCheckout.withDiscountPerCycle}
+                                    </Price>
+                                    {!showAmountDue && showRenewalNotice && '*'}
+                                </>
+                            )}
+                        </>
+                    ) : (
+                        <>
+                            {getPrice(
+                                isTrial
+                                    ? (options.checkResult.BaseRenewAmount ?? 0)
+                                    : currentCheckout.regularAmountPerCycle
+                            )}
+                            {!showAmountDue && showRenewalNotice && '*'}
+                        </>
+                    ),
                 bold: true,
                 loader: !showAmountDue,
             },
             !hideDiscount &&
                 couponDiscount !== 0 && {
                     id: 'discount',
-                    left: (
-                        <div>
-                            {c('Info').t`Discount`}{' '}
-                            <span className="text-sm">
-                                <SaveLabel percent={currentCheckout.discountPercent} />
-                            </span>
-                        </div>
-                    ),
+                    left: c('Info').t`Discount`,
                     right: getPrice(couponDiscount),
                 },
             proration !== 0 && {
@@ -197,12 +210,22 @@ const AccountStepPaymentSummary = ({
                 price={
                     initialLoading
                         ? loaderNode
-                        : getSimplePriceString(options.currency, currentCheckout.withDiscountPerMonth)
+                        : getSimplePriceString(
+                              options.currency,
+                              isTrial
+                                  ? (options.checkResult.BaseRenewAmount ?? 0)
+                                  : currentCheckout.withDiscountPerMonth
+                          )
                 }
                 regularPrice={
                     initialLoading
                         ? loaderNode
-                        : getSimplePriceString(options.currency, currentCheckout.withoutDiscountPerMonth)
+                        : getSimplePriceString(
+                              options.currency,
+                              isTrial
+                                  ? (options.checkResult.BaseRenewAmount ?? 0)
+                                  : currentCheckout.withoutDiscountPerMonth
+                          )
                 }
                 addons={
                     <RightPlanSummaryAddons
@@ -212,9 +235,21 @@ const AccountStepPaymentSummary = ({
                         displayMembersWithDiscount={hideDiscount}
                     />
                 }
-                discount={initialLoading ? 0 : currentCheckout.discountPercent}
+                discount={(() => {
+                    if (initialLoading) {
+                        return 0;
+                    }
+                    if (isTrial) {
+                        // For trials, show the original plan discount instead of the 100% trial discount
+                        const pricing = getPricingFromPlanIDs(options.planIDs, model.plansMap);
+                        const totals = getTotalFromPricing(pricing, options.cycle);
+                        return totals.discountPercentage;
+                    }
+                    return currentCheckout.discountPercent;
+                })()}
                 checkout={currentCheckout}
                 mode={isB2BPlan ? 'addons' : undefined}
+                isTrial={isTrial}
             >
                 {!initialLoading && showTaxCountry && (
                     <WrappedTaxCountrySelector
@@ -235,7 +270,9 @@ const AccountStepPaymentSummary = ({
                         <>
                             {priceBreakdown.length > 0 && <hr className="m-0" />}
                             <div className="flex justify-space-between text-bold text-rg">
-                                <span className="">{c('Label').t`Amount due`}</span>
+                                <span className="">
+                                    {isTrial ? c('b2b_trials_2025_Label').t`Amount due now` : c('Label').t`Amount due`}
+                                </span>
                                 <span>
                                     {loading ? (
                                         loaderNode
@@ -244,7 +281,7 @@ const AccountStepPaymentSummary = ({
                                             <Price currency={subscriptionData.currency}>
                                                 {options.checkResult.AmountDue}
                                             </Price>
-                                            *
+                                            {!isTrial && '*'}
                                         </>
                                     )}
                                 </span>
@@ -252,6 +289,46 @@ const AccountStepPaymentSummary = ({
                             {isTaxInclusive(options.checkResult) && taxInclusiveText}
                         </>
                     )}
+                    {(() => {
+                        if (!isTrial) {
+                            return null;
+                        }
+
+                        const disclaimer = getCheckoutRenewNoticeTextFromCheckResult({
+                            checkResult: options.checkResult,
+                            plansMap: model.plansMap,
+                            planIDs: options.planIDs,
+                            subscription: model.session?.subscription,
+                            app,
+                        });
+
+                        return (
+                            <>
+                                <div className="flex justify-space-between text-bold text-rg">
+                                    <span className="">{c('b2b_trials_2025_Label').t`Amount due after trial`}</span>
+                                    <span>
+                                        {loading ? (
+                                            loaderNode
+                                        ) : (
+                                            <Price currency={subscriptionData.currency}>
+                                                {options.checkResult.BaseRenewAmount ?? 0}
+                                            </Price>
+                                        )}
+                                    </span>
+                                </div>
+                                <div className="text-sm color-weak">
+                                    {(() => {
+                                        // hardcoded 14 days, for now. Need to get from BE
+                                        const trialEndDate = addDays(new Date(), 14);
+                                        const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
+                                        return c('b2b_trials_2025_Info').jt`on ${formattedDate}`;
+                                    })()}
+                                </div>
+                                <hr className="m-0" />
+                                <div className="text-sm color-weak">{disclaimer}</div>
+                            </>
+                        );
+                    })()}
                     {loading && <span className="sr-only">{c('Info').t`Loading`}</span>}
                 </div>
             </RightPlanSummary>

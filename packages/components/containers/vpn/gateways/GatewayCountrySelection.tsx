@@ -3,6 +3,8 @@ import { useRef } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Icon from '@proton/components/components/icon/Icon';
@@ -14,6 +16,7 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { useNow } from '@proton/components/hooks/useNow';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { ButtonNumberInput } from './ButtonNumberInput';
@@ -50,6 +53,10 @@ export const GatewayCountrySelection = ({
     onUpdateCheckedLocations,
     changeModel,
 }: Props) => {
+    const [subscription] = useSubscription();
+    const [organization] = useOrganization();
+    const isTrial = useIsB2BTrial(subscription, organization);
+
     const recentlyUsedServersRef = useRef<GatewayLocation[]>([]);
     const remainingCount = ownedCount - usedCount;
     const availableCount = Math.max(0, remainingCount - addedCount - (deletedDedicatedIPs?.length || 0));
@@ -227,6 +234,15 @@ export const GatewayCountrySelection = ({
                         availableCount
                     )}
                 </p>
+                {!isTrial && (
+                    <div className="flex flex-nowrap mb-4 rounded p-2 bg-weak">
+                        <Icon name="info-circle" className="shrink-0" />
+                        <div className="ml-2">
+                            {c('Info')
+                                .t`We recommend having multiple servers in different locations to provide redundancy.`}
+                        </div>
+                    </div>
+                )}
                 <p></p>
                 {locations.map((location) => {
                     const locationId = getLocationId(location);
@@ -257,7 +273,11 @@ export const GatewayCountrySelection = ({
             <div className="flex flex-nowrap mb-4 rounded p-2 bg-weak">
                 <Icon name="info-circle" className="shrink-0" />
                 <div className="ml-2">
-                    {c('Info').t`We recommend having multiple servers in different locations to provide redundancy.`}
+                    {c('Info').ngettext(
+                        msgid`Your free trial includes ${ownedCount} dedicated server.`,
+                        `Your free trial includes ${ownedCount} dedicated servers.`,
+                        ownedCount
+                    )}
                 </div>
             </div>
         </>

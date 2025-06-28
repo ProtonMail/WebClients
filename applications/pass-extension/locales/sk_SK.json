@@ -29,6 +29,9 @@
       "Add domain": [
         "Pridať doménu"
       ],
+      "Add field": [
+        "Pridať pole"
+      ],
       "Add forwarding mailbox": [
         "Pridať schránku na presmerovanie"
       ],
@@ -152,11 +155,11 @@
       "Create": [
         "Vytvoriť"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvoriť ${ BRAND_NAME } účet"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvoriť účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvoriť ${ BRAND_NAME } účet"
       ],
       "Create alias": [
         "Vytvoriť alias"
@@ -401,6 +404,9 @@
       "Multiple select": [
         "Viacnásobný výber"
       ],
+      "Next month": [
+        "Budúci mesiac"
+      ],
       "No expired links": [
         "Žiadne exspirované odkazy"
       ],
@@ -431,11 +437,17 @@
       "Please retry": [
         "Skúste to znova, prosím"
       ],
+      "Previous month": [
+        "Predchádzajúci mesiac"
+      ],
       "Re-verify": [
         "Znova overiť"
       ],
       "Reactivate now": [
         "Znovu aktivovať"
+      ],
+      "Read More": [
+        "Čítať ďalej"
       ],
       "Refresh the page": [
         "Obnoviť stránku"
@@ -560,6 +572,9 @@
       "Show advanced options": [
         "Zobraziť pokročilé možnosti"
       ],
+      "Show Less": [
+        "Zobraziť menej"
+      ],
       "Sign back in": [
         "Prihláste sa späť"
       ],
@@ -574,6 +589,9 @@
       ],
       "Sort vault items": [
         "Triediť položky trezoru"
+      ],
+      "Start from scratch": [
+        "Začať úplne od začiatku"
       ],
       "Submit": [
         "Potvrdiť"
@@ -763,9 +781,6 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } súbor nebolo možné analyzovať. ${ errorDetail }"
-      ],
-      "[Error] an item could not be parsed": [
-        "[Chyba] položku nebolo možné analyzovať"
       ],
       "A domain ownership must be verified first.": [
         "Najprv je potrebné overiť vlastníctvo domény."
@@ -1016,8 +1031,8 @@
       "File does not match expected format": [
         "Súbor nezodpovedá očakávanému formátu"
       ],
-      "Import failed for vault \"${ vaultData.name }\" : ${ errorMessage }": [
-        "Import trezora \"${ vaultData.name }\" zlyhal : ${ errorMessage }"
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Import trezora „${ vaultData.name }\" zlyhal: ${ errorMessage }"
       ],
       "Importing items failed": [
         "Importovanie položiek zlyhalo"
@@ -1147,6 +1162,9 @@
       ],
       "Unsupported 1Password file format": [
         "Nepodporovaný formát súboru 1Password"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Nepodporovaný formát súboru Bitwarden"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aktualizácia trezoru \"${ payload.content.name }\" zlyhala"
@@ -1279,7 +1297,10 @@
         "${ count } zobrazenia",
         "${ count }/ zobrazení"
       ],
-      "${ count }/${ maxReads } views": [
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } zobrazenie",
+        "${ count }/${ maxReads } zobrazenia",
+        "${ count }/${ maxReads } zobrazení",
         "${ count }/${ maxReads } zobrazení"
       ],
       "${ forwardedEmailsCount } forwarded": [
@@ -1452,6 +1473,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Automatické uzamknutie bolo úspešne deaktivované."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Automatické vyplňovanie dialógových okien HTTP základného overenia s uloženými prihlasovacími údajmi."
       ],
       "automatically": [
         "automaticky"
@@ -2335,6 +2359,9 @@
         "Zaznamenali sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?",
         "Zaznamenali sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?"
       ],
+      "Week": [
+        "Týždeň"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Odoslali sme overovací kód na adresu ${ email }. Zadajte ho, prosím, nižšie:"
       ],
@@ -2565,6 +2592,12 @@
       "Account": [
         "Účet"
       ],
+      "Account Number": [
+        "Číslo účtu"
+      ],
+      "Account Type": [
+        "Typ účtu"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Pridať náhodný prefix pre túto doménu pri vytváraní nového aliasu."
       ],
@@ -2573,6 +2606,9 @@
       ],
       "Additional details": [
         "Ďalšie podrobnosti"
+      ],
+      "Address": [
+        "Adresa"
       ],
       "Address details": [
         "Detaily adresy"
@@ -2601,6 +2637,12 @@
       "Always show username field": [
         "Vždy zobrazovať pole s používateľským menom"
       ],
+      "API Credential": [
+        "API poverenie"
+      ],
+      "API Key": [
+        "API kľúč"
+      ],
       "Application logs": [
         "Záznamy aplikácie"
       ],
@@ -2624,6 +2666,15 @@
       ],
       "Backup password": [
         "Záložné heslo"
+      ],
+      "Bank Account": [
+        "Bankový účet"
+      ],
+      "Bank Name": [
+        "Názov banky"
+      ],
+      "Basic Auth autofill": [
+        "Automatické vyplnenie Basic Auth"
       ],
       "Biometrics": [
         "Biometria"
@@ -2652,8 +2703,14 @@
       "Catch-All": [
         "Doménový kôš"
       ],
+      "Checkbox": [
+        "Začiarkavacie políčko"
+      ],
       "City": [
         "Mesto"
+      ],
+      "Class": [
+        "Trieda"
       ],
       "Code": [
         "Kód"
@@ -2679,6 +2736,9 @@
       "Copy password": [
         "Kopírovať heslo"
       ],
+      "Country": [
+        "Krajina"
+      ],
       "Country or Region": [
         "Krajina alebo región"
       ],
@@ -2687,6 +2747,9 @@
       ],
       "Create a credit card": [
         "Vytvoriť platobnú kartu"
+      ],
+      "Create a custom item": [
+        "Vytvoriť vlastnú položku"
       ],
       "Create a hide-my-email alias": [
         "Vytvoriť hide-my-email alias"
@@ -2706,17 +2769,26 @@
       "Create new vault": [
         "Vytvoriť nový trezor"
       ],
-      "Created": [
-        "Vytvorené"
-      ],
       "Created at": [
         "Vytvorené"
       ],
-      "Custom hidden field": [
-        "Vlastné ukryté pole"
+      "Crypto Wallet": [
+        "Krypto peňaženka"
       ],
-      "Custom text field": [
-        "Vlastné textové pole"
+      "Custom Items": [
+        "Vlastné položky"
+      ],
+      "Database": [
+        "Databáza"
+      ],
+      "Database Type": [
+        "Typ databázy"
+      ],
+      "Date": [
+        "Dátum"
+      ],
+      "Date of Birth": [
+        "Dátum narodenia"
       ],
       "Device": [
         "Zariadenie"
@@ -2729,6 +2801,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Lekár"
       ],
       "Domain": [
         "Doména"
@@ -2744,6 +2819,9 @@
       ],
       "Download logs": [
         "Stiahnuť záznamy"
+      ],
+      "Driver License": [
+        "Vodičský preukaz"
       ],
       "Email": [
         "Email"
@@ -2772,8 +2850,14 @@
       "Expired": [
         "Vypršal"
       ],
+      "Expiry Date": [
+        "Dátum exspirácie"
+      ],
       "Export": [
         "Export"
+      ],
+      "Extra fields": [
+        "Vlastné polia"
       ],
       "Extra password": [
         "Dodatočné heslo"
@@ -2789,6 +2873,9 @@
       ],
       "File format": [
         "Formát súboru"
+      ],
+      "Finance": [
+        "Financie"
       ],
       "First name": [
         "Krstné meno"
@@ -2823,8 +2910,23 @@
       "Hide password": [
         "Skryť heslo"
       ],
+      "Holder Name": [
+        "Meno vlastníka"
+      ],
+      "Hospital": [
+        "Nemocnica"
+      ],
+      "Host": [
+        "Hostiteľ"
+      ],
+      "Hostname": [
+        "Názov hostiteľa"
+      ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "ID karta"
@@ -2868,6 +2970,18 @@
       "Invitations": [
         "Pozvánky"
       ],
+      "IP Address": [
+        "IP adresa"
+      ],
+      "Issuing Authority": [
+        "Vydal"
+      ],
+      "Issuing Country": [
+        "Vydávajúca krajina"
+      ],
+      "Issuing State/Country": [
+        "Štát/Krajina vydania"
+      ],
       "Item ID": [
         "ID položky"
       ],
@@ -2876,6 +2990,12 @@
       ],
       "Key": [
         "Kľúč"
+      ],
+      "Key fingerprint": [
+        "Identifikátor kľúča"
+      ],
+      "Key type": [
+        "Typ kľúča"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klávesová skratka: ${ shortcut }"
@@ -2904,7 +3024,13 @@
       "License": [
         "Licencia"
       ],
+      "License Key": [
+        "Licenčný kľúč"
+      ],
       "License number": [
+        "Licenčné číslo"
+      ],
+      "License Number": [
         "Licenčné číslo"
       ],
       "LinkedIn account": [
@@ -2937,8 +3063,29 @@
       "max views reached": [
         "dosiahnutý max. počet zobrazení"
       ],
+      "Medical Conditions": [
+        "Zdravotný stav"
+      ],
+      "Medical Record": [
+        "Zdravotný záznam"
+      ],
+      "Medications": [
+        "Lieky"
+      ],
+      "Member ID": [
+        "ID člena"
+      ],
+      "Member Name": [
+        "Meno člena"
+      ],
       "Members": [
         "Členovia"
+      ],
+      "Membership": [
+        "Členstvo"
+      ],
+      "Membership ID": [
+        "ID členstva"
       ],
       "Middle name": [
         "Stredné meno"
@@ -2955,11 +3102,17 @@
       "Name": [
         "Meno"
       ],
+      "Name (SSID)": [
+        "Názov (SSID)"
+      ],
       "Name on card": [
         "Meno na karte"
       ],
       "Need help?": [
         "Potrebujete pomôcť?"
+      ],
+      "Network": [
+        "Sieť"
       ],
       "New": [
         "Nová"
@@ -3003,8 +3156,20 @@
       "Oldest to newest": [
         "Od najstaršieho po najnovšie"
       ],
+      "Operating System": [
+        "Operačný systém"
+      ],
       "Organization": [
         "Organizácia"
+      ],
+      "Organization Name": [
+        "Názov organizácie"
+      ],
+      "Other": [
+        "Iné"
+      ],
+      "Owner": [
+        "Vlastník"
       ],
       "Passkey": [
         "Prístupový kľúč"
@@ -3018,6 +3183,9 @@
       "Passport": [
         "Cestovný pas"
       ],
+      "Passport Number": [
+        "Číslo pasu"
+      ],
       "Passport number": [
         "Číslo pasu"
       ],
@@ -3030,8 +3198,17 @@
       "Passwords": [
         "Heslá"
       ],
+      "Patient Name": [
+        "Meno pacienta"
+      ],
       "Pause list": [
         "Zoznam pozastavených"
+      ],
+      "Permissions": [
+        "Oprávnenia"
+      ],
+      "Personal": [
+        "Osobné"
       ],
       "Personal details": [
         "Osobné údaje"
@@ -3051,6 +3228,12 @@
       "PIN code": [
         "PIN kód"
       ],
+      "Points Balance": [
+        "Stav bodov"
+      ],
+      "Port": [
+        "Port"
+      ],
       "Prefix": [
         "Predpona"
       ],
@@ -3059,6 +3242,18 @@
       ],
       "Priority:": [
         "Priorita:"
+      ],
+      "Private key": [
+        "Súkromný kľúč"
+      ],
+      "Private Key": [
+        "Súkromný kľúč"
+      ],
+      "Product": [
+        "Produkt"
+      ],
+      "Program Name": [
+        "Názov programu"
       ],
       "Prompt for auto-save": [
         "Výzva na automatické ukladanie"
@@ -3072,11 +3267,17 @@
       "Public domain": [
         "Verejná doména"
       ],
+      "Public key": [
+        "Verejný kľúč"
+      ],
       "Rate us": [
         "Ohodnoťte nás"
       ],
       "Recent": [
         "Nedávne"
+      ],
+      "Record Number": [
+        "Číslo záznamu"
       ],
       "Reddit handle": [
         "Používateľské meno Reddit"
@@ -3093,11 +3294,20 @@
       "Reveal password": [
         "Odkryť heslo"
       ],
+      "Reward Program": [
+        "Vernostný program"
+      ],
+      "Routing Number": [
+        "Smerový kód banky"
+      ],
       "Save passkeys": [
         "Uložiť prístupové kľúče"
       ],
       "Second password": [
         "Druhé heslo"
+      ],
+      "Secret": [
+        "Tajné"
       ],
       "Secure links": [
         "Bezpečné odkazy"
@@ -3110,6 +3320,9 @@
       ],
       "See member and permission overview": [
         "Prehľad členov a oprávnení"
+      ],
+      "Seed Phrase": [
+        "Seed fráza"
       ],
       "Select a domain": [
         "Vyberte doménu"
@@ -3129,11 +3342,17 @@
       "Selected": [
         "Vybrané"
       ],
+      "Server": [
+        "Server"
+      ],
       "Settings": [
         "Nastavenia"
       ],
       "Share": [
         "Zdieľať"
+      ],
+      "Share ID": [
+        "Zdieľať ID"
       ],
       "Shared": [
         "Zdieľané"
@@ -3153,11 +3372,23 @@
       "Social security": [
         "Rodné číslo (číslo sociálneho poistenia)"
       ],
+      "Social Security": [
+        "Rodné číslo (číslo sociálneho poistenia)"
+      ],
       "Social security number": [
         "Číslo poistenca sociálnej poisťovne"
       ],
+      "Software license": [
+        "Softvérová licencia"
+      ],
       "Special characters (!&*)": [
         "Špeciálne znaky (!&*)"
+      ],
+      "SSH key": [
+        "SSH kľúč"
+      ],
+      "SSN": [
+        "SSN"
       ],
       "State or province": [
         "Štát alebo provincia"
@@ -3177,6 +3408,9 @@
       "Support": [
         "Podpora"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synchronizovať aliasy pomocou SimpleLogin"
       ],
@@ -3186,6 +3420,9 @@
       "Tax number": [
         "Daňové identifikačné číslo"
       ],
+      "Technology": [
+        "Technológie"
+      ],
       "Text": [
         "Text"
       ],
@@ -3194,6 +3431,12 @@
       ],
       "Theme": [
         "Motív"
+      ],
+      "Tier/Level": [
+        "Úroveň členstva"
+      ],
+      "Tier/Status": [
+        "Úroveň/Stav"
       ],
       "Title": [
         "Názov"
@@ -3231,6 +3474,9 @@
       "Unnamed Credit Card": [
         "Nepomenovaná platobná karta"
       ],
+      "Unnamed custom item": [
+        "Nepomenovaná vlastná položka"
+      ],
       "Unnamed identity": [
         "Nepomenovaná identita"
       ],
@@ -3239,6 +3485,15 @@
       ],
       "Unnamed note": [
         "Nepomenovaná poznámka"
+      ],
+      "Unnamed SSH key": [
+        "Nepomenovaný SSH kľúč"
+      ],
+      "Unnamed WiFi item": [
+        "Nepomenovaná WiFi položka"
+      ],
+      "Unspecified": [
+        "Nešpecifikované"
       ],
       "Untitled": [
         "Bez názvu"
@@ -3273,6 +3528,9 @@
       "Vulnerable": [
         "Zraniteľné"
       ],
+      "Wallet Name": [
+        "Názov peňaženky"
+      ],
       "Weak": [
         "Slabé"
       ],
@@ -3281,6 +3539,9 @@
       ],
       "Websites": [
         "Webové stránky"
+      ],
+      "WiFi network": [
+        "WiFi sieť"
       ],
       "Work details": [
         "Podrobnosti o pracovnej činnosti"
@@ -3492,6 +3753,18 @@
       "Add note": [
         "Pridať poznámku"
       ],
+      "Add password": [
+        "Pridať heslo"
+      ],
+      "Add private key": [
+        "Pridať súkromný kľúč"
+      ],
+      "Add public key": [
+        "Pridať verejný kľúč"
+      ],
+      "Add SSID": [
+        "Pridať SSID"
+      ],
       "Add text": [
         "Pridať text"
       ],
@@ -3500,6 +3773,9 @@
       ],
       "Coupon": [
         "Kupón"
+      ],
+      "E.g., ": [
+        "Napr., "
       ],
       "Email address": [
         "Emailová adresa"
@@ -3531,8 +3807,8 @@
       "my-domain.com": [
         "moja-domena.sk"
       ],
-      "Name to display when sending an email": [
-        "Meno zobrazované pri odosielaní emailu"
+      "Name displayed in emails": [
+        "Meno zobrazené v emailoch"
       ],
       "Note from SimpleLogin": [
         "Poznámka zo SimpleLogin"
@@ -3567,6 +3843,9 @@
       "Select a suffix": [
         "Vyberte príponu"
       ],
+      "Select option": [
+        "Vyberte možnosť"
+      ],
       "Unknown origin": [
         "Neznámy pôvod"
       ],
@@ -3575,9 +3854,6 @@
       ],
       "Used on ${ url }": [
         "Používa sa na ${ url }"
-      ],
-      "Write your note": [
-        "Napíšte si poznámku"
       ]
     },
     "sso": {
@@ -3859,6 +4135,9 @@
       "Enter coupon code": [
         "Zadajte kód kupónu"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Zadajte svoje ${ BRAND_NAME } heslo"
+      ],
       "Enter your backup password": [
         "Zadajte vaše záložné heslo"
       ],
@@ -3933,6 +4212,9 @@
       ],
       "Members": [
         "Členovia"
+      ],
+      "Minicalendar": [
+        "Minikalendár"
       ],
       "Modified": [
         "Upravené"
@@ -4124,6 +4406,11 @@
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Dnes"
+      ]
+    },
     "Validation": {
       "Domain URL is invalid": [
         "URL adresa domény je neplatná"
@@ -4137,9 +4424,6 @@
       "OTP secret or URI is invalid": [
         "Neplatný OTP tajný kľúč alebo URI"
       ],
-      "OTP secret or URI required": [
-        "Vyžaduje sa OTP tajný kľúč alebo URI"
-      ],
       "Section name cannot be empty": [
         "Názov sekcie nemôže byť prázdny"
       ],
@@ -4151,6 +4435,14 @@
       ],
       "URL is invalid": [
         "URL je neplatná"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Presunúť položku do",
+        "Presunúť položky do",
+        "Presunúť položky do",
+        "Presunúť položky do"
       ]
     },
     "Warning": {
@@ -4264,9 +4556,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Pozývanie emailových adries nepatriacich do organizácie nie je povolené."
-      ],
-      "item was imported without custom fields": [
-        "Položka bola importovaná bez vlastných polí"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximálna dĺžka je ${ maxLength } znak",

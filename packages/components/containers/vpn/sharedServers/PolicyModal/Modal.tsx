@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
@@ -40,8 +41,10 @@ interface SharedServersModalProps extends ModalProps {
 
 const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ...rest }: SharedServersModalProps) => {
     const { createNotification } = useNotifications();
-    const { locations, users, groups } = useSharedServers(10 * MINUTE);
+    const { locations, users, groups, translations, loading } = useSharedServers(10 * MINUTE);
+
     const [userSettings] = useUserSettings();
+    const [organization] = useOrganization();
     const countryOptions = getCountryOptions(userSettings);
     const [discardModal, showDiscardModal] = useModalTwoStatic(DiscardModal);
 
@@ -68,7 +71,10 @@ const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ..
         setSelectedCities(map);
     }, [isEditing, policy]);
 
-    const groupedLocations = useMemo(() => getGroupedLocations(locations, countryOptions), [locations, countryOptions]);
+    const groupedLocations = useMemo(
+        () => getGroupedLocations(locations, countryOptions, translations.cities),
+        [locations, countryOptions]
+    );
 
     const allCitiesSelected = useMemo(() => {
         const allCitiesCount = groupedLocations.reduce((prev, cur) => prev + cur.cities.length, 0);
@@ -197,6 +203,8 @@ const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ..
 
                 {step === POLICY_STEP.MEMBERS && (
                     <MembersStep
+                        organization={organization}
+                        loading={loading}
                         isEditing={isEditing as boolean}
                         policyName={policyName}
                         users={users}
@@ -236,6 +244,7 @@ const SharedServersModal = ({ policy, isEditing = false, soloStep, onSuccess, ..
 
                 {step === POLICY_STEP.COUNTRIES && (
                     <CountriesStep
+                        loading={loading}
                         isEditing={isEditing as boolean}
                         policyName={policyName}
                         groupedLocations={groupedLocations}

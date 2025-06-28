@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { Tooltip } from '@proton/atoms';
 import {
     Icon,
     Sidebar,
     SidebarDrawerItems,
     SidebarLogo,
     SidebarNav,
-    Tooltip,
     useActiveBreakpoint,
     useApi,
     useLocalState,

@@ -2,18 +2,25 @@ import type { RefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useTheme } from '@proton/components';
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import MessageBodyIframe from '@proton/mail-renderer/components/MessageBodyIframe';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { isAutoFlaggedPhishing, isPlainText, isSuspicious } from '@proton/shared/lib/mail/messages';
+import iframeSVG from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
 import clsx from '@proton/utils/clsx';
 
+import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPlaceholder';
+import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
+import useMessageImagesLoadError from 'proton-mail/components/message/hooks/useMessageImagesLoadError';
+import { useMailboxContainerContext } from 'proton-mail/containers/mailbox/MailboxContainerProvider';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnMailTo } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
-import type { MessageState } from '../../store/messages/messagesTypes';
-import MessageBodyIframe from './MessageBodyIframe';
-import useMessageDarkStyles from './hooks/useMessageDarkStyles';
+
+import iframeCSSStyles from '@proton/mail-renderer/helpers/MessageIframe.raw.scss';
 
 interface Props {
     labelID: string;
@@ -52,17 +59,17 @@ const MessageBody = ({
     const [isIframeContentSet, setIsIframeContentSet] = useState(false);
     const bodyRef = useRef<HTMLDivElement>(null);
     const iframeRef = useRef<HTMLIFrameElement>(null);
+    const iframeRootDivRef = useRef<HTMLDivElement>();
     const theme = useTheme();
     const { highlightString, shouldHighlight } = useEncryptedSearchContext();
     const onMailTo = useOnMailTo();
     const mailSettings = useMailModel('MailSettings');
     const highlightBody = shouldHighlight();
     const plain = isPlainText(message.data);
-    const { support: hasDarkStyles, loading: hasDarkStylesLoading } = useMessageDarkStyles(
-        message,
-        isIframeContentSet,
-        iframeRef
-    );
+    const handleMessageImageLoadError = useMessageImagesLoadError({
+        localID: message.localID,
+        useProxy: !!mailSettings.ImageProxy,
+    });
     const [content, blockquote] = useMemo(
         () =>
             plain
@@ -76,11 +83,11 @@ const MessageBody = ({
     const decryptingMode = !encryptedMode && !sourceMode && !bodyLoaded && messageLoaded;
     const loadingMode = !messageLoaded;
     const contentMode = !encryptedMode && !sourceMode && bodyLoaded;
-    const contentModeShow = contentMode && isIframeContentSet && !hasDarkStylesLoading;
+    const contentModeShow = contentMode && isIframeContentSet;
     const placeholderMode = (loadingMode || decryptingMode || !contentModeShow) && !sourceMode;
     const isBlockquote = blockquote !== '';
     const showButton = !forceBlockquote && isBlockquote;
-    const showBlockquote = forceBlockquote || originalMessageMode || hasDarkStylesLoading;
+    const showBlockquote = forceBlockquote || originalMessageMode;
     const highlightedContent = useMemo(
         () => (!!content && highlightBody ? highlightString(content, true) : content),
         [content, highlightBody]
@@ -94,14 +101,23 @@ const MessageBody = ({
     );
     const showBlockquoteResults = highlightedBlockquote !== blockquote;
 
+    const { modal: linkModal } = useLinkHandler(iframeRootDivRef, mailSettings, {
+        onMailTo,
+        startListening: isIframeContentSet && iframeRootDivRef.current !== undefined,
+        isOutside: false,
+        isPhishingAttempt: isAutoFlaggedPhishing(message.data) || isSuspicious(message.data),
+    });
+    const { isResizing } = useMailboxContainerContext();
+
     useEffect(() => {
         if (!loadingMode && !decryptingMode && onMessageReady) {
             setTimeout(onMessageReady);
         }
     }, [loadingMode, decryptingMode, message.data?.ID]);
 
-    const handleContentLoaded = () => {
+    const handleContentLoaded = (iframeRootDivElement: HTMLDivElement) => {
         setIsIframeContentSet(true);
+        iframeRootDivRef.current = iframeRootDivElement;
     };
 
     useEffect(() => {
@@ -119,40 +135,13 @@ const MessageBody = ({
                 plain && 'plain',
                 isPrint && 'message-content-print',
                 isPrint || !isIframeContentSet ? '' : 'p-0 md:py-4 px-5',
-                !placeholderMode && !hasDarkStyles && theme.information.dark && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
+                !placeholderMode && theme.information.dark && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
             ])}
             data-testid="message-content:body"
         >
             {encryptedMode && <pre className="m-0 p-4">{message.data?.Body}</pre>}
             {sourceMode && <pre className="m-0 p-4">{message.decryption?.decryptedBody}</pre>}
-            {placeholderMode && !encryptedMode && (
-                <div className="bg-norm color-norm p-4">
-                    <div
-                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
-                        style={{ '--max-w-custom': '8em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
-                        style={{ '--max-w-custom': '50em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
-                        style={{ '--max-w-custom': '40em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
-                        style={{ '--max-w-custom': '50em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
-                        style={{ '--max-w-custom': '15em' }}
-                    />
-                    <div
-                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
-                        style={{ '--max-w-custom': '8em' }}
-                    />
-                </div>
-            )}
+            {placeholderMode && !encryptedMode && <MessageBodyPlaceholder margin="normal" />}
             {contentMode && (
                 <div
                     className={clsx([
@@ -170,15 +159,18 @@ const MessageBody = ({
                         onBlockquoteToggle={toggleOriginalMessage}
                         onContentLoaded={handleContentLoaded}
                         isPlainText={plain}
-                        hasDarkStyles={hasDarkStyles}
                         isPrint={isPrint}
+                        className={isResizing ? 'pointer-events-none' : undefined}
                         message={message}
-                        labelID={labelID}
                         onReady={onIframeReady}
-                        onMailTo={onMailTo}
-                        mailSettings={mailSettings}
                         onFocus={onFocusIframe}
+                        onMessageImageLoadError={handleMessageImageLoadError}
+                        theme={theme}
+                        iframeCSSStyles={iframeCSSStyles}
+                        iframeSVG={iframeSVG}
                     />
+                    <MessageBodyPrint isPrint={isPrint} iframeRef={iframeRef} message={message} labelID={labelID} />
+                    {linkModal}
                 </div>
             )}
         </div>

@@ -4,6 +4,7 @@ import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 export enum ImportProvider {
+    APPLEPASSWORDS = 'applepasswords',
     BITWARDEN = 'bitwarden',
     BRAVE = 'brave',
     CHROME = 'chrome',
@@ -25,9 +26,14 @@ export enum ImportProvider {
 
 export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExtension: string; tutorialUrl: string }> =
     {
+        [ImportProvider.APPLEPASSWORDS]: {
+            title: 'Apple Passwords',
+            fileExtension: 'csv',
+            tutorialUrl: '',
+        },
         [ImportProvider.BITWARDEN]: {
             title: 'Bitwarden',
-            fileExtension: 'json',
+            fileExtension: 'json, zip',
             tutorialUrl: 'https://proton.me/support/pass-import-bitwarden',
         },
         [ImportProvider.BRAVE]: {

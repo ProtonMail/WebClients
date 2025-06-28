@@ -3,11 +3,11 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey, MailSettings } from '@proton/shared/lib/interfaces';
 import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
-import type { MessageStateWithData } from 'proton-mail/store/messages/messagesTypes';
 import type { MailState } from 'proton-mail/store/store';
 
 import { arrayToBase64 } from '../../../helpers/base64';
@@ -25,7 +25,6 @@ import {
     addApiMock,
     clearAll,
     createAttachment,
-    createDocument,
     createEmbeddedImage,
     createMessageImages,
     decryptMessage,
@@ -33,6 +32,7 @@ import {
     decryptSessionKey,
     getCompleteAddress,
     minimalCache,
+    parseDOMStringToBodyElement,
     readSessionKey,
 } from '../../../helpers/test/helper';
 import { addAttachment } from '../../../store/attachments/attachmentsActions';
@@ -133,7 +133,6 @@ describe('Composer sending', () => {
                     {
                         Primary: 1,
                         PrivateKey: fromKeys.privateKeyArmored,
-                        PublicKey: fromKeys.publicKeyArmored,
                     } as AddressKey,
                 ],
             });
@@ -216,7 +215,7 @@ describe('Composer sending', () => {
             const content = 'test';
 
             const message = getMessage({
-                messageDocument: { document: createDocument(content) },
+                messageDocument: { document: parseDOMStringToBodyElement(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
@@ -248,7 +247,7 @@ describe('Composer sending', () => {
             const content = 'test';
 
             const message = getMessage({
-                messageDocument: { document: createDocument(content) },
+                messageDocument: { document: parseDOMStringToBodyElement(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
@@ -285,7 +284,7 @@ describe('Composer sending', () => {
             const content = 'test';
 
             const message = getMessage({
-                messageDocument: { document: createDocument(content) },
+                messageDocument: { document: parseDOMStringToBodyElement(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
@@ -313,7 +312,7 @@ describe('Composer sending', () => {
             const content = 'test';
 
             const message = getMessage({
-                messageDocument: { document: createDocument(content) },
+                messageDocument: { document: parseDOMStringToBodyElement(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
@@ -343,7 +342,7 @@ describe('Composer sending', () => {
             const content = 'test';
 
             const message = getMessage({
-                messageDocument: { document: createDocument(content) },
+                messageDocument: { document: parseDOMStringToBodyElement(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
@@ -418,7 +417,7 @@ describe('Composer sending', () => {
                 fromKeys.publicKeys
             );
             const message = getMessage({
-                messageDocument: { document: createDocument(content) },
+                messageDocument: { document: parseDOMStringToBodyElement(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] },
             });
 
@@ -453,7 +452,7 @@ describe('Composer sending', () => {
                 fromKeys.publicKeys
             );
             const message = getMessage({
-                messageDocument: { document: createDocument(content) },
+                messageDocument: { document: parseDOMStringToBodyElement(content) },
                 data: {
                     MIMEType: MIME_TYPES.DEFAULT,
                     Attachments: [attachment],
@@ -604,7 +603,7 @@ describe('Composer sending', () => {
         addApiKeys(false, toAddress, []);
 
         const message = getMessage({
-            messageDocument: { document: createDocument(content) },
+            messageDocument: { document: parseDOMStringToBodyElement(content) },
             data: { MIMEType: MIME_TYPES.DEFAULT },
         });
 

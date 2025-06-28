@@ -3,8 +3,11 @@ import { Icon, useLocalState } from '@proton/components'
 import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
 import { useEffect, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
+import { downloadLogsAsJSON } from '~/utils/downloadLogs'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
+import clsx from '@proton/utils/clsx'
 
 export function useDebug() {
   const [debug] = useLocalState(false, DOCS_DEBUG_KEY)
@@ -15,9 +18,10 @@ export type DebugMenuProps = {
   docController: AuthenticatedDocControllerInterface
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
+  documentType: DocumentType
 }
 
-export function DebugMenu({ docController, editorController, documentState }: DebugMenuProps) {
+export function DebugMenu({ docController, editorController, documentState, documentType }: DebugMenuProps) {
   const application = useApplication()
 
   const [isOpen, setIsOpen] = useState(false)
@@ -61,15 +65,41 @@ export function DebugMenu({ docController, editorController, documentState }: De
     void navigator.clipboard.writeText(stringified)
   }
 
+  const copyLatestSpreadsheetStateToLogJSON = async () => {
+    const json = await editorController.getLatestSpreadsheetStateToLogJSON()
+    if (!json) {
+      return
+    }
+
+    const stringified = JSON.stringify(json)
+    void navigator.clipboard.writeText(stringified)
+  }
+
+  const copyYDocAsJSON = async () => {
+    const yDocJSON = await editorController.getYDocAsJSON()
+    if (!yDocJSON) {
+      return
+    }
+
+    const stringified = JSON.stringify(yDocJSON)
+    void navigator.clipboard.writeText(stringified)
+  }
+
   const toggleDebugTreeView = () => {
     void editorController.toggleDebugTreeView()
   }
+
+  const isDocument = documentType === 'doc'
+  const isSpreadsheet = documentType === 'sheet'
 
   if (!isOpen) {
     return (
       <button
         id="debug-menu-button"
-        className="fixed bottom-2 left-2 z-20 flex items-center justify-center rounded-full border border-[--border-weak] bg-[--background-weak] p-2 hover:bg-[--background-strong]"
+        className={clsx(
+          'fixed bottom-2 z-20 flex items-center justify-center rounded-full border border-[--border-weak] bg-[--background-weak] p-2 hover:bg-[--background-strong]',
+          isSpreadsheet ? 'right-2' : 'left-2',
+        )}
         onClick={() => setIsOpen(true)}
         data-testid="debug-menu-button"
       >
@@ -82,7 +112,10 @@ export function DebugMenu({ docController, editorController, documentState }: De
   return (
     <div
       id="debug-menu"
-      className="fixed bottom-2 left-2 z-20 flex min-w-[12.5rem] flex-col gap-2 rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1"
+      className={clsx(
+        'fixed bottom-2 z-20 flex min-w-[12.5rem] flex-col gap-2 rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1',
+        isSpreadsheet ? 'right-2' : 'left-2',
+      )}
       data-testid="debug-menu"
     >
       <div className="mt-1 flex items-center justify-between gap-2 px-2 font-semibold">
@@ -113,12 +146,31 @@ export function DebugMenu({ docController, editorController, documentState }: De
         <Button size="small" onClick={closeConnection}>
           Close Connection
         </Button>
-        <Button size="small" onClick={copyEditorJSON}>
-          Copy Editor JSON
+        <Button size="small" onClick={copyYDocAsJSON}>
+          Copy Y.Doc as JSON
         </Button>
-        <Button size="small" onClick={toggleDebugTreeView}>
-          Toggle Tree View
-        </Button>
+        {isSpreadsheet && (
+          <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
+            Download Logs as JSON
+          </Button>
+        )}
+        {isDocument && (
+          <>
+            <Button size="small" onClick={copyEditorJSON}>
+              Copy Editor JSON
+            </Button>
+            <Button size="small" onClick={toggleDebugTreeView}>
+              Toggle Tree View
+            </Button>
+          </>
+        )}
+        {isSpreadsheet && (
+          <>
+            <Button size="small" onClick={copyLatestSpreadsheetStateToLogJSON}>
+              Copy Spreadsheet State
+            </Button>
+          </>
+        )}
       </div>
     </div>
   )

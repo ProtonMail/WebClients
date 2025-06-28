@@ -7,7 +7,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import {
     CalendarLogo,
     DriveLogo,
@@ -17,7 +17,6 @@ import {
     PassLogo,
     ProtonLogo,
     SUBSCRIPTION_STEPS,
-    Tooltip,
     VpnLogo,
 } from '@proton/components';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
@@ -28,13 +27,17 @@ import {
     COUPON_CODES,
     CURRENCIES,
     type Currency,
+    FREE_PLAN,
     PLANS,
     PLAN_TYPES,
     type PaymentMethodStatusExtended,
     fixPlanName,
+    getAvailableSubscriptionActions,
+    getHas2024OfferCoupon,
+    getPlan,
+    getUpgradedPlan,
+    getValidCycle,
 } from '@proton/payments';
-import { getHas2024OfferCoupon, getPlan, getUpgradedPlan, getValidCycle, isManagedExternally } from '@proton/payments';
-import { FREE_PLAN } from '@proton/payments';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import {
@@ -308,7 +311,8 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
         return <PromotionAlreadyApplied />;
     }
 
-    if (isManagedExternally(subscription)) {
+    const subscriptionActions = getAvailableSubscriptionActions(subscription);
+    if (!subscriptionActions.canModify) {
         return (
             <div className="h-full flex flex-column justify-center items-center bg-norm text-center">
                 <div className="max-w-custom p-11" style={{ '--max-w-custom': '33.3rem' }}>

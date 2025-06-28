@@ -16,6 +16,7 @@ import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { MaybeNull } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import type { CustomElementRef } from '@proton/pass/utils/dom/create-element';
 import { POPOVER_SUPPORTED, getActiveModal, getClosestModal } from '@proton/pass/utils/dom/popover';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
@@ -26,18 +27,18 @@ import { createNotification } from './notification';
 
 type IFrameServiceState = {
     apps: { dropdown: MaybeNull<InjectedDropdown>; notification: MaybeNull<InjectedNotification> };
-    root: MaybeNull<ProtonPassRoot>;
+    root: MaybeNull<CustomElementRef<ProtonPassRoot>>;
 };
 
 export interface IFrameService {
     dropdown: MaybeNull<InjectedDropdown>;
     notification: MaybeNull<InjectedNotification>;
-    root: ProtonPassRoot;
+    root: CustomElementRef<ProtonPassRoot>;
     attachDropdown: (anchor: HTMLElement) => MaybeNull<InjectedDropdown>;
     attachNotification: () => MaybeNull<InjectedNotification>;
     destroy: () => void;
     ensureInteractive: (anchor: MaybeNull<HTMLElement>, killswitch: boolean) => void;
-    init: (rootAnchor?: HTMLElement) => ProtonPassRoot;
+    init: (rootAnchor?: HTMLElement) => CustomElementRef<ProtonPassRoot>;
     setTheme: (theme?: PassThemeOption) => void;
 }
 
@@ -96,11 +97,11 @@ export const createIFrameService = (elements: PassElementsConfig) => {
             if (usePopover) {
                 const activeRoot = state.root;
                 const nextParent = (anchor ? getClosestModal(anchor) : getActiveModal()) ?? document.body;
-                const parent = activeRoot?.parentElement;
+                const parent = activeRoot?.customElement.parentElement;
 
                 if (parent !== nextParent) {
                     service.destroy();
-                    if (activeRoot) parent?.removeChild(activeRoot);
+                    if (activeRoot) parent?.removeChild(activeRoot.customElement);
                     service.init(nextParent);
                 }
             }
@@ -129,7 +130,9 @@ export const createIFrameService = (elements: PassElementsConfig) => {
                 if (settings?.theme === PassThemeOption.OS) service.setTheme(settings.theme);
             });
 
-            listeners.addListener(state.root, PASS_ROOT_REMOVED_EVENT as any, handleRootRemoval, { once: true });
+            listeners.addListener(state.root.customElement, PASS_ROOT_REMOVED_EVENT as any, handleRootRemoval, {
+                once: true,
+            });
             listeners.addListener(matchDarkTheme(), 'change', handleColorSchemeChange);
 
             return state.root;
@@ -182,7 +185,7 @@ export const createIFrameService = (elements: PassElementsConfig) => {
         }),
 
         setTheme: (theme = PASS_DEFAULT_THEME) => {
-            state.root?.setAttribute(
+            state.root?.customElement.setAttribute(
                 PASS_ELEMENT_THEME,
                 ((): string => {
                     switch (theme) {

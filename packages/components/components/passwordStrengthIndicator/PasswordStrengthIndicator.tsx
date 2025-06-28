@@ -21,7 +21,7 @@ const context: {
     service: undefined,
 };
 
-export const usePasswordStrengthIndicator = () => {
+export const useLoadPasswordStrengthIndicatorWasm = () => {
     const [supported, setSupported] = useState(context.service !== undefined);
 
     useEffect(() => {

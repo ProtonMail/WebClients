@@ -1,9 +1,9 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Store } from 'redux';
 
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { createMonitorService as createCoreMonitorService } from '@proton/pass/lib/monitor/service';
-import { WorkerMessageType } from '@proton/pass/types';
 
 export const createMonitorService = (core: PassCoreProxy, store: Store) => {
     const service = createCoreMonitorService(core, store);

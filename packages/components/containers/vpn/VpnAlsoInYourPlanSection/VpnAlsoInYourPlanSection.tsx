@@ -14,7 +14,7 @@ import {
     DashboardGrid,
     DashboardGridSection,
     DashboardGridSectionHeader,
-} from '@proton/atoms/index';
+} from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
@@ -36,6 +36,7 @@ import {
     getPlansMap,
     getPricePerCycle,
     getSubscriptionPlanTitleAndName,
+    isManagedExternally,
 } from '@proton/payments';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -177,6 +178,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const plan = PLANS.BUNDLE;
     const telemetryFlow = useDashboardPaymentFlow(app);
+    const planIsManagedExternally = isManagedExternally(subscription);
 
     useLoad();
 
@@ -224,7 +226,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
         card.shouldRender(planName)
     );
 
-    const showUnlimitedUpsell = freeAndPlusPlans.includes(planName);
+    const showUnlimitedUpsell = freeAndPlusPlans.includes(planName) && !planIsManagedExternally;
 
     if (filteredCards.length === 0) {
         return false;

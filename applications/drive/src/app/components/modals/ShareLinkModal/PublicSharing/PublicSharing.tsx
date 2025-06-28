@@ -3,12 +3,11 @@ import { useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Avatar, Button, Input } from '@proton/atoms';
+import { Avatar, Button, Input, Tooltip } from '@proton/atoms';
 import {
     Icon,
     SUBSCRIPTION_STEPS,
     Toggle,
-    Tooltip,
     useConfig,
     useNotifications,
     useSettingsLink,
@@ -79,7 +78,6 @@ export const PublicSharing = ({
                     return showDriveUpsellModal({
                         size: 'large',
                         'data-testid': 'public-sharing',
-                        sourceEvent: 'BUTTON_PUBLIC_SHARING_EDITOR',
                         titleModal: c('Title').t`Need to share more files with edit access?`,
                         // translator: We can have two different plan upgrade: "Upgrade to Proton Drive Plus" or "Upgrade to Proton Drive Unlimited"
                         description: c('Description').t`Upgrade to ${planName} to keep sharing files with edit access`,

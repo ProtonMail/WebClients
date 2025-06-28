@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms';
 import { type OnLoginCallback } from '@proton/components';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import useNotifications from '@proton/components/hooks/useNotifications';

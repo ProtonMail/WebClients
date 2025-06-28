@@ -5,7 +5,6 @@ import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { LoginItemFormValues } from '@proton/pass/types';
 
 import { validateAliasForm } from './alias';
-import { validateExtraFields } from './extra-field';
 import { validateItemErrors } from './item';
 import { validateUrl, validateUrls } from './url';
 
@@ -29,7 +28,6 @@ export const validateLoginForm = async ({ values }: ValidateLoginForm): Promise<
     const urlsErrors = validateUrls(values);
     const totpUriErrors = validateTotpUri(values);
     const aliasErrors = values.withAlias && (await validateAliasForm(values));
-    const extraFieldsErrors = validateExtraFields(values);
 
     return {
         ...errors,
@@ -37,6 +35,5 @@ export const validateLoginForm = async ({ values }: ValidateLoginForm): Promise<
         ...urlsErrors,
         ...totpUriErrors,
         ...aliasErrors,
-        ...extraFieldsErrors,
     };
 };

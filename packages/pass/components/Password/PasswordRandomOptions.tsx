@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Slider } from '@proton/atoms';
+import { Slider, SliderSizeEnum } from '@proton/atoms';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
@@ -36,7 +36,7 @@ export const PasswordRandomOptions: FC<Props> = ({
                         min={policy?.RandomPasswordMinLength ?? 4}
                         max={policy?.RandomPasswordMaxLength ?? 64}
                         step={1}
-                        size="small"
+                        size={SliderSizeEnum.Small}
                         color="norm"
                         value={config.options.length}
                         onInput={(length) => setPasswordOptions('random', { length })}

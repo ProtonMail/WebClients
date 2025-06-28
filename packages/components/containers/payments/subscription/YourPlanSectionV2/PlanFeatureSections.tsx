@@ -2,8 +2,8 @@ import { type ReactElement } from 'react';
 
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms';
 import Time from '@proton/components/components/time/Time';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { IcCheckmark, IcClockCircleFilled, IcGlobe, IcMobile, IcServers, IcStorage, IcUserFilled } from '@proton/icons';
 import { type Subscription } from '@proton/payments';
 import { getVPNDedicatedIPs } from '@proton/payments';

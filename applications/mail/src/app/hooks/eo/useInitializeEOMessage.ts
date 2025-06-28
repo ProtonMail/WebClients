@@ -4,26 +4,9 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { useApi } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
-import { isPlainText } from '@proton/shared/lib/mail/messages';
-import noop from '@proton/utils/noop';
-
-import { useMailDispatch } from 'proton-mail/store/hooks';
-
-import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
-import { isNetworkError } from '../../helpers/errors';
-import { decryptMessage } from '../../helpers/message/messageDecrypt';
-import type { Preparation } from '../../helpers/transforms/transforms';
-import { prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
-import {
-    EODocumentInitializeFulfilled,
-    EODocumentInitializePending,
-    EOLoadEmbedded,
-    EOLoadRemote,
-} from '../../store/eo/eoActions';
-import type { EOLoadEmbeddedParams, EOLoadRemoteResults } from '../../store/eo/eoType';
+import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
+import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
+import { useBase64Cache } from '@proton/mail/hooks/useBase64Cache';
 import type {
     LoadEmbeddedResults,
     MessageErrors,
@@ -31,8 +14,27 @@ import type {
     MessageRemoteImage,
     MessageState,
     MessageStateWithDataFull,
-} from '../../store/messages/messagesTypes';
-import { useBase64Cache } from '../useBase64Cache';
+} from '@proton/mail/store/messages/messagesTypes';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
+import { isPlainText } from '@proton/shared/lib/mail/messages';
+import noop from '@proton/utils/noop';
+
+import { transformEmbedded } from 'proton-mail/helpers/transforms/transformEmbedded';
+import { transformRemote } from 'proton-mail/helpers/transforms/transformRemote';
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
+import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
+import { isNetworkError } from '../../helpers/errors';
+import { decryptMessage } from '../../helpers/message/messageDecrypt';
+import {
+    EODocumentInitializeFulfilled,
+    EODocumentInitializePending,
+    EOLoadEmbedded,
+    EOLoadRemote,
+} from '../../store/eo/eoActions';
+import type { EOLoadEmbeddedParams, EOLoadRemoteResults } from '../../store/eo/eoType';
 import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 
 export const useInitializeEOMessage = () => {
@@ -81,6 +83,12 @@ export const useInitializeEOMessage = () => {
 
             const MIMEType = dataChanges.MIMEType || getData().MIMEType;
 
+            const message = {
+                ...messageFromState,
+                decryption,
+                data: { ...messageFromState.data, Attachments: allAttachments } as Message,
+            };
+
             const handleEOLoadEmbeddedImages = async (attachments: Attachment[]) => {
                 const dispatchResult = dispatch(
                     EOLoadEmbedded({
@@ -96,6 +104,17 @@ export const useInitializeEOMessage = () => {
                 return payload;
             };
 
+            const handleEOTransformAndLoadEmbeddedImages = (document: Element) => {
+                return transformEmbedded(
+                    {
+                        ...message,
+                        messageDocument: { document },
+                    },
+                    EO_DEFAULT_MAILSETTINGS,
+                    handleEOLoadEmbeddedImages
+                );
+            };
+
             const handleEOLoadRemoteImages = (imagesToLoad: MessageRemoteImage[]) => {
                 const dispatchResult = dispatch(
                     EOLoadRemote({
@@ -105,20 +124,24 @@ export const useInitializeEOMessage = () => {
                 return dispatchResult as any as Promise<EOLoadRemoteResults[]>;
             };
 
+            const handleTransformAndLoadRemoteImages = (document: Element) => {
+                return transformRemote(
+                    { ...message, messageDocument: { document } },
+                    EO_DEFAULT_MAILSETTINGS,
+                    handleEOLoadRemoteImages,
+                    noop,
+                    noop
+                );
+            };
+
             preparation = isPlainText({ MIMEType })
                 ? await preparePlainText(decryption.decryptedBody, false, EO_DEFAULT_MAILSETTINGS)
                 : await prepareHtml(
-                      {
-                          ...messageFromState,
-                          decryption,
-                          data: { ...messageFromState.data, Attachments: allAttachments } as Message,
-                      },
+                      message,
                       base64Cache,
                       EO_DEFAULT_MAILSETTINGS,
-                      handleEOLoadEmbeddedImages,
-                      noop,
-                      noop,
-                      handleEOLoadRemoteImages,
+                      handleEOTransformAndLoadEmbeddedImages,
+                      handleTransformAndLoadRemoteImages,
                       noop
                   );
 

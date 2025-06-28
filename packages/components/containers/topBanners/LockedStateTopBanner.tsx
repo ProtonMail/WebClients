@@ -7,7 +7,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { PLANS, type Subscription } from '@proton/payments';
 import { getPlan } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -17,7 +17,7 @@ import { getAppStorage } from '@proton/shared/lib/user/storage';
 
 import TopBanner from './TopBanner';
 
-const StorageBannerText = ({ app, type, cta }: { app: APP_NAMES; type: UserLockedFlags; cta: ReactNode }) => {
+const StorageBannerText = ({ type, cta }: { type: UserLockedFlags; cta: ReactNode }) => {
     switch (type) {
         case UserLockedFlags.BASE_STORAGE_EXCEEDED:
             const mailStorage = getAppStorage(MAIL_SHORT_APP_NAME);
@@ -30,14 +30,9 @@ const StorageBannerText = ({ app, type, cta }: { app: APP_NAMES; type: UserLocke
             return c('locked_state_storage_banner: info')
                 .jt`Your ${driveStorage} is full. To upload or sync files, free up space or ${cta}.`;
         case UserLockedFlags.STORAGE_EXCEEDED:
-            if (app === APPS.PROTONDRIVE) {
-                // Translator: Your storage is full. To upload or sync files, free up space or upgrade for more storage.
-                return c('locked_state_storage_banner: info')
-                    .jt`Your storage is full. To upload or sync files, free up space or ${cta}.`;
-            }
-            // Translator: Your storage is full. To send or receive emails, free up space or upgrade for more storage.
+            // Translator: Your storage is full. To continue using Proton , free up space or upgrade for more storage.
             return c('locked_state_storage_banner: info')
-                .jt`Your storage is full. To send or receive emails, free up space or ${cta}.`;
+                .jt`Your storage is full. To continue using ${BRAND_NAME} products, free up space or ${cta}.`;
         case UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN:
             // Translator: Your subscription has ended. Upgrade to restore full access and to avoid data loss.
             return c('locked_state_storage_banner: info')
@@ -89,20 +84,20 @@ const StorageBannerCTA = ({
     );
 };
 
-const getBannerTypeFromLockedFlags = (lcokedFlags: number): UserLockedFlags => {
+const getBannerTypeFromLockedFlags = (lockedFlags: number): UserLockedFlags => {
     let type = UserLockedFlags.STORAGE_EXCEEDED;
-    if (hasBit(lcokedFlags, UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN)) {
+    if (hasBit(lockedFlags, UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN)) {
         type = UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN;
-    } else if (hasBit(lcokedFlags, UserLockedFlags.ORG_ISSUE_FOR_MEMBER)) {
+    } else if (hasBit(lockedFlags, UserLockedFlags.ORG_ISSUE_FOR_MEMBER)) {
         type = UserLockedFlags.ORG_ISSUE_FOR_MEMBER;
     } else if (
-        hasBit(lcokedFlags, UserLockedFlags.BASE_STORAGE_EXCEEDED) &&
-        hasBit(lcokedFlags, UserLockedFlags.DRIVE_STORAGE_EXCEEDED)
+        hasBit(lockedFlags, UserLockedFlags.BASE_STORAGE_EXCEEDED) &&
+        hasBit(lockedFlags, UserLockedFlags.DRIVE_STORAGE_EXCEEDED)
     ) {
         type = UserLockedFlags.STORAGE_EXCEEDED;
-    } else if (hasBit(lcokedFlags, UserLockedFlags.BASE_STORAGE_EXCEEDED)) {
+    } else if (hasBit(lockedFlags, UserLockedFlags.BASE_STORAGE_EXCEEDED)) {
         type = UserLockedFlags.BASE_STORAGE_EXCEEDED;
-    } else if (hasBit(lcokedFlags, UserLockedFlags.DRIVE_STORAGE_EXCEEDED)) {
+    } else if (hasBit(lockedFlags, UserLockedFlags.DRIVE_STORAGE_EXCEEDED)) {
         type = UserLockedFlags.DRIVE_STORAGE_EXCEEDED;
     }
     return type;
@@ -116,7 +111,7 @@ interface Props {
     lockedFlags: number;
 }
 
-const LockedStateTopBanner = ({ app, user, subscription, upsellRef, lockedFlags }: Props) => {
+export const LockedStateTopBanner = ({ app, user, subscription, upsellRef, lockedFlags }: Props) => {
     const planName = getPlan(subscription)?.Name;
     let plan = planName;
     if (plan === undefined) {
@@ -130,10 +125,8 @@ const LockedStateTopBanner = ({ app, user, subscription, upsellRef, lockedFlags 
     );
 
     return (
-        <TopBanner className="bg-danger">
-            <StorageBannerText app={app} type={type} cta={cta} />
+        <TopBanner className="bg-danger" data-testid="storage-banner:lock-state">
+            <StorageBannerText type={type} cta={cta} />
         </TopBanner>
     );
 };
-
-export default LockedStateTopBanner;

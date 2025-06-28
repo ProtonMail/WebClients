@@ -5,11 +5,11 @@
   },
   "contexts": {
     "Action": {
-      "A) B) C) D)": [
-        "A) B) C) D)"
-      ],
       "a) b) c) d)": [
         "a) b) c) d)"
+      ],
+      "A) B) C) D)": [
+        "A) B) C) D)"
       ],
       "A. B. C. D.": [
         "A. B. C. D."
@@ -120,7 +120,7 @@
         "Ajustar a tabela na largura da página"
       ],
       "Indent": [
-        "Aumentar o recuo"
+        "Aumentar recuo"
       ],
       "Insert above": [
         "Inserir acima"
@@ -168,7 +168,7 @@
         "Opções"
       ],
       "Outdent": [
-        "Diminuir o recuo"
+        "Diminuir recuo"
       ],
       "Quote": [
         "Citar"
@@ -494,13 +494,16 @@
         "Funcionalidade experimental apenas para Alphas"
       ],
       "Are you sure you want to delete this comment?": [
-        "Você tem certeza que deseja excluir este comentário?"
+        "Tem certeza que deseja excluir este comentário?"
       ],
       "Are you sure you want to delete this thread?": [
-        "Você tem certeza de que deseja excluir este tópico?"
+        "Tem a certeza de que quer apagar este tópico?"
       ],
       "Comments": [
         "Comentários"
+      ],
+      "Copied to clipboard": [
+        "Copiado para a área de transferência"
       ],
       "Editing": [
         "Editar"
@@ -676,6 +679,148 @@
       ],
       "Text": [
         "Texto"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Insert image in cell": [
+        "Inserir imagem na célula"
+      ],
+      "Insert image over cells": [
+        "Inserir imagem sobre as células"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Valores separados por vírgula (.csv)"
+      ],
+      "Download": [
+        "Download"
+      ],
+      "Download logs": [
+        "Registros de downloads"
+      ],
+      "Help": [
+        "Ajuda"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Make a copy": [
+        "Fazer uma cópia"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Mover para pasta"
+      ],
+      "Move to trash": [
+        "Mover para a lixeira"
+      ],
+      "New spreadsheet": [
+        "Nova planilha"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Abrir ${ DRIVE_APP_NAME }"
+      ],
+      "Print": [
+        "Imprimir"
+      ],
+      "See version history": [
+        "Ver histórico de versões"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Valores separados por tabulação (.tsv)"
+      ],
+      "View recent spreadsheets": [
+        "Ver planilhas recentes"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Células"
+      ],
+      "Chart": [
+        "Gráfico"
+      ],
+      "Columns": [
+        "Colunas"
+      ],
+      "Insert 1 column left": [
+        "Inserir 1 coluna à esquerda"
+      ],
+      "Insert 1 column right": [
+        "Inserir 1 coluna à direita"
+      ],
+      "Insert 1 row above": [
+        "Inserir 1 linha acima"
+      ],
+      "Insert 1 row below": [
+        "Inserir 1 linha abaixo"
+      ],
+      "Insert cells and shift down": [
+        "Inserir células e deslocar para baixo"
+      ],
+      "Insert cells and shift right": [
+        "Inserir células e deslocar para a direita"
+      ],
+      "Note": [
+        "Nota"
+      ],
+      "Rows": [
+        "Linhas"
+      ],
+      "Sheet": [
+        "Planilha"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "File": [
+        "Arquivo"
+      ],
+      "Insert": [
+        "Inserir"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Negrito"
+      ],
+      "Clear formatting": [
+        "Limpar formatação"
+      ],
+      "Decrease decimal places": [
+        "Diminuir casas decimais"
+      ],
+      "Default (${ defaultFont })": [
+        "Padrão (${ defaultFont })"
+      ],
+      "Format as currency": [
+        "Formatar como moeda"
+      ],
+      "Format as percent": [
+        "Formatar como porcentagem"
+      ],
+      "Increase decimal places": [
+        "Aumentar casas decimais"
+      ],
+      "Italic": [
+        "Itálico"
+      ],
+      "Redo": [
+        "Refazer"
+      ],
+      "Search": [
+        "Pesquisar"
+      ],
+      "Strikethrough": [
+        "Tachado"
+      ],
+      "Underline": [
+        "Sublinhado"
+      ],
+      "Undo": [
+        "Desfazer"
       ]
     },
     "Title": {

@@ -10,7 +10,7 @@ import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddres
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { type AccessKeys, AccessTarget } from '@proton/pass/lib/access/types';
 import { selectAccessMembers } from '@proton/pass/store/selectors';
-import type { ItemInviteFormValues, MaybeNull } from '@proton/pass/types';
+import type { InviteFormMemberItem, InviteFormStep, ItemInviteFormValues, MaybeNull } from '@proton/pass/types';
 
 import { ItemInviteHeader } from './ItemInviteHeader';
 
@@ -27,6 +27,18 @@ export const ItemInviteForm = forwardRef<HTMLInputElement, Props>(({ form, autoF
     const excluded = useMemoSelector(selectAccessMembers, [shareId, itemId]);
     const access = useMemo<AccessKeys>(() => ({ shareId, itemId }), [shareId, itemId]);
 
+    const handles = useMemo(
+        () => ({
+            setMembers: async (next: InviteFormMemberItem[]) => {
+                await form.setFieldValue('members', next);
+            },
+            setStep: async (next: InviteFormStep) => {
+                await form.setFieldValue('step', next);
+            },
+        }),
+        []
+    );
+
     return (
         <>
             {step === 'members' && (
@@ -37,7 +49,7 @@ export const ItemInviteForm = forwardRef<HTMLInputElement, Props>(({ form, autoF
                     excluded={excluded}
                     members={members}
                     validator={validator}
-                    onUpdate={(next) => form.setFieldValue('members', next)}
+                    onUpdate={handles.setMembers}
                 />
             )}
 
@@ -45,8 +57,8 @@ export const ItemInviteForm = forwardRef<HTMLInputElement, Props>(({ form, autoF
                 <InviteStepPermissions
                     members={members}
                     target={AccessTarget.Item}
-                    onUpdate={(next) => form.setFieldValue('members', next)}
-                    onStep={(next) => form.setFieldValue('step', next)}
+                    onUpdate={handles.setMembers}
+                    onStep={handles.setStep}
                 />
             )}
 

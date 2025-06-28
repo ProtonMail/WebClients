@@ -1,5 +1,5 @@
-import { Href } from '@proton/atoms';
-import { Icon, Loader, Tooltip } from '@proton/components';
+import { Href, Tooltip } from '@proton/atoms';
+import { Icon, Loader } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { getSendIconHref, getStatusIconName } from '../../helpers/message/icon';

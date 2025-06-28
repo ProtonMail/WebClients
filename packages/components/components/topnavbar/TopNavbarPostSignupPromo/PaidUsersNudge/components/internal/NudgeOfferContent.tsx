@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
 import Price from '@proton/components/components/price/Price';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -46,7 +46,9 @@ export const NudgeOfferContent = ({ imgSrc, onClick, onNeverShow, prices, planCo
             <div className="rounded-lg border p-3 mb-4">
                 {prices?.discountedPrice ? (
                     <div className={clsx('flex justify-space-between flex-nowrap', prices.yearlyPrice ? 'mb-2' : '')}>
-                        <p className="m-0">{planCopy}</p>
+                        <p className="m-0" data-testId="monthly-offer:plan-copy">
+                            {planCopy}
+                        </p>
                         <Price className="text-tabular-nums" currency={currency}>
                             {prices.discountedPrice}
                         </Price>

@@ -1,8 +1,12 @@
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
+import type {
+    MessageEmbeddedImage,
+    MessageImage,
+    PartialMessageState,
+} from '@proton/mail/store/messages/messagesTypes';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { MessageEmbeddedImage, MessageImage, PartialMessageState } from '../../store/messages/messagesTypes';
-import { createDocument } from '../test/message';
 import {
     createBlob,
     createEmbeddedImageFromUpload,
@@ -204,7 +208,7 @@ describe('messageEmbeddeds', () => {
 <img ${attribute}="${value}"/>
 <span>something</span>
 </div>`;
-            const document = createDocument(string);
+            const document = parseDOMStringToBodyElement(string);
 
             const expectedImg = window.document.createElement('img');
             expectedImg.setAttribute(attribute, value);
@@ -218,7 +222,7 @@ describe('messageEmbeddeds', () => {
 <img proton-src="${contentLocation}"/>
 <span>something</span>
 </div>`;
-            const document = createDocument(string);
+            const document = parseDOMStringToBodyElement(string);
 
             const expectedImg = window.document.createElement('img');
             expectedImg.setAttribute('proton-src', contentLocation);
@@ -231,7 +235,7 @@ describe('messageEmbeddeds', () => {
 <img src="random">
 <span>something</span>
 </div>`;
-            const document = createDocument(string);
+            const document = parseDOMStringToBodyElement(string);
 
             expect(findEmbedded(contentID, contentLocation, document)).toEqual([]);
         });
@@ -263,7 +267,7 @@ describe('messageEmbeddeds', () => {
 <img src="random" data-embedded-img="cid:${contentID}">
 <span>something</span>
 </div>`;
-            const document = createDocument(string);
+            const document = parseDOMStringToBodyElement(string);
 
             insertActualEmbeddedImages(document);
 
@@ -278,7 +282,7 @@ describe('messageEmbeddeds', () => {
 <img src="random" data-embedded-img="cloc:${contentLocation}">
 <span>something</span>
 </div>`;
-            const document = createDocument(string);
+            const document = parseDOMStringToBodyElement(string);
 
             insertActualEmbeddedImages(document);
 
@@ -322,7 +326,7 @@ describe('messageEmbeddeds', () => {
 <img src="random" data-embedded-img="${contentID}">
 <span>something</span>
 </div>`;
-            const document = createDocument(string);
+            const document = parseDOMStringToBodyElement(string);
 
             removeEmbeddedHTML(document, attachment);
 
@@ -337,7 +341,7 @@ describe('messageEmbeddeds', () => {
 <img proton-src="${url}" data-embedded-img="${contentID}">
 <span>something</span>
 </div>`;
-            const document = createDocument(string);
+            const document = parseDOMStringToBodyElement(string);
 
             const embeddedImages = [
                 { cid: contentID, type: 'embedded', url } as MessageEmbeddedImage,

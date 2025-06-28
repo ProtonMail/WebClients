@@ -16,7 +16,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
-import { useFilters } from '@proton/mail/filters/hooks';
+import { useFilters } from '@proton/mail/store/filters/hooks';
 import { addTreeFilter, applyFilters, updateFilter } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';

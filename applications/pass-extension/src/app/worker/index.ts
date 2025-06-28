@@ -5,13 +5,13 @@
  * any bundled code that runs immediately when the file is loaded. This includes
  * side-effects such as directly executed statements and exported constants. */
 import * as config from 'proton-pass-extension/app/config';
+import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { checkChromeRuntimeError } from 'proton-pass-extension/lib/utils/chrome';
 import 'proton-pass-extension/lib/utils/polyfills';
 import { devReload } from 'proton-pass-extension/lib/utils/reload';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
-import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import noop from '@proton/utils/noop';
 

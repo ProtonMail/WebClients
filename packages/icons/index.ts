@@ -6,7 +6,7 @@
 export * from './types';
 
 export type IconName =
-    | 'album'
+    | 'album-folder'
     | 'alias'
     | 'alias-slash'
     | 'app-switch'
@@ -51,6 +51,7 @@ export type IconName =
     | 'backspace'
     | 'percent'
     | 'bag-percent'
+    | 'bag-percent-filled'
     | 'bank'
     | 'bell'
     | 'bolt'
@@ -66,6 +67,8 @@ export type IconName =
     | 'brand-discover'
     | 'brand-edge'
     | 'brand-firefox'
+    | 'brand-github'
+    | 'brand-google'
     | 'brand-ios'
     | 'brand-linux'
     | 'brand-mac'
@@ -75,6 +78,7 @@ export type IconName =
     | 'brand-proton-calendar'
     | 'brand-proton-calendar-filled'
     | 'brand-proton-docs'
+    | 'brand-proton-sheets'
     | 'brand-proton-drive'
     | 'brand-proton-drive-filled'
     | 'brand-proton-mail'
@@ -89,7 +93,6 @@ export type IconName =
     | 'brand-tor'
     | 'brand-twitter'
     | 'brand-reddit'
-    | 'brand-github'
     | 'brand-visa'
     | 'brand-windows'
     | 'brand-wireguard'
@@ -134,6 +137,7 @@ export type IconName =
     | 'clock-paper-plane'
     | 'clock-rotate-left'
     | 'cloud'
+    | 'cloud-arrow-down'
     | 'code'
     | 'cog-wheel'
     | 'cog-drawer'
@@ -153,6 +157,7 @@ export type IconName =
     | 'emoji'
     | 'envelope'
     | 'envelope-arrow-up-and-right'
+    | 'envelope-check'
     | 'envelope-cross'
     | 'envelope-dot'
     | 'envelope-lock'
@@ -342,6 +347,8 @@ export type IconName =
     | 'shield-exclamation-filled'
     | 'size-arrow-up'
     | 'size-arrow-down'
+    | 'spam'
+    | 'sort-alphabetically'
     | 'speech-bubble'
     | 'sliders'
     | 'squares'
@@ -400,7 +407,7 @@ export type IconName =
     | 'window-terminal'
     | 'wrench';
 
-export { IcAlbum } from './icons/IcAlbum';
+export { IcAlbumFolder } from './icons/IcAlbumFolder';
 export { IcAlias } from './icons/IcAlias';
 export { IcAliasSlash } from './icons/IcAliasSlash';
 export { IcAppSwitch } from './icons/IcAppSwitch';
@@ -445,6 +452,7 @@ export { IcAt } from './icons/IcAt';
 export { IcBackspace } from './icons/IcBackspace';
 export { IcPercent } from './icons/IcPercent';
 export { IcBagPercent } from './icons/IcBagPercent';
+export { IcBagPercentFilled } from './icons/IcBagPercentFilled';
 export { IcBank } from './icons/IcBank';
 export { IcBell } from './icons/IcBell';
 export { IcBolt } from './icons/IcBolt';
@@ -460,6 +468,8 @@ export { IcBrandChrome } from './icons/IcBrandChrome';
 export { IcBrandDiscover } from './icons/IcBrandDiscover';
 export { IcBrandEdge } from './icons/IcBrandEdge';
 export { IcBrandFirefox } from './icons/IcBrandFirefox';
+export { IcBrandGithub } from './icons/IcBrandGithub';
+export { IcBrandGoogle } from './icons/IcBrandGoogle';
 export { IcBrandIos } from './icons/IcBrandIos';
 export { IcBrandLinux } from './icons/IcBrandLinux';
 export { IcBrandMac } from './icons/IcBrandMac';
@@ -469,6 +479,7 @@ export { IcBrandProton } from './icons/IcBrandProton';
 export { IcBrandProtonCalendar } from './icons/IcBrandProtonCalendar';
 export { IcBrandProtonCalendarFilled } from './icons/IcBrandProtonCalendarFilled';
 export { IcBrandProtonDocs } from './icons/IcBrandProtonDocs';
+export { IcBrandProtonSheets } from './icons/IcBrandProtonSheets';
 export { IcBrandProtonDrive } from './icons/IcBrandProtonDrive';
 export { IcBrandProtonDriveFilled } from './icons/IcBrandProtonDriveFilled';
 export { IcBrandProtonMail } from './icons/IcBrandProtonMail';
@@ -483,7 +494,6 @@ export { IcBrandSimpleLogin } from './icons/IcBrandSimpleLogin';
 export { IcBrandTor } from './icons/IcBrandTor';
 export { IcBrandTwitter } from './icons/IcBrandTwitter';
 export { IcBrandReddit } from './icons/IcBrandReddit';
-export { IcBrandGithub } from './icons/IcBrandGithub';
 export { IcBrandVisa } from './icons/IcBrandVisa';
 export { IcBrandWindows } from './icons/IcBrandWindows';
 export { IcBrandWireguard } from './icons/IcBrandWireguard';
@@ -528,6 +538,7 @@ export { IcClockCircleFilled } from './icons/IcClockCircleFilled';
 export { IcClockPaperPlane } from './icons/IcClockPaperPlane';
 export { IcClockRotateLeft } from './icons/IcClockRotateLeft';
 export { IcCloud } from './icons/IcCloud';
+export { IcCloudArrowDown } from './icons/IcCloudArrowDown';
 export { IcCode } from './icons/IcCode';
 export { IcCogWheel } from './icons/IcCogWheel';
 export { IcCogDrawer } from './icons/IcCogDrawer';
@@ -547,6 +558,7 @@ export { IcEarth } from './icons/IcEarth';
 export { IcEmoji } from './icons/IcEmoji';
 export { IcEnvelope } from './icons/IcEnvelope';
 export { IcEnvelopeArrowUpAndRight } from './icons/IcEnvelopeArrowUpAndRight';
+export { IcEnvelopeCheck } from './icons/IcEnvelopeCheck';
 export { IcEnvelopeCross } from './icons/IcEnvelopeCross';
 export { IcEnvelopeDot } from './icons/IcEnvelopeDot';
 export { IcEnvelopeLock } from './icons/IcEnvelopeLock';
@@ -736,6 +748,8 @@ export { IcShieldHalfFilled } from './icons/IcShieldHalfFilled';
 export { IcShieldExclamationFilled } from './icons/IcShieldExclamationFilled';
 export { IcSizeArrowUp } from './icons/IcSizeArrowUp';
 export { IcSizeArrowDown } from './icons/IcSizeArrowDown';
+export { IcSpam } from './icons/IcSpam';
+export { IcSortAlphabetically } from './icons/IcSortAlphabetically';
 export { IcSpeechBubble } from './icons/IcSpeechBubble';
 export { IcSliders } from './icons/IcSliders';
 export { IcSquares } from './icons/IcSquares';

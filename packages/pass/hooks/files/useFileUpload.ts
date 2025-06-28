@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { FILE_CHUNK_SIZE, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pass/constants';
+import { FILE_CHUNK_SIZE, FILE_ENCRYPTION_VERSION, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pass/constants';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { sanitizeFileName } from '@proton/pass/lib/file-attachments/helpers';
@@ -17,9 +17,18 @@ import { abortable, asyncQueue } from '@proton/pass/utils/fp/promises';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-import { useFileEncryptionVersion } from './useFileEncryptionVersion';
-
 export type OnFileUploadProgress = (uploaded: number, total: number) => void;
+
+export const resolveMimeTypeForFile = async (file: Blob) => {
+    try {
+        const mimeTypeBuffer = await file.slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE).arrayBuffer();
+        return await PassUI.mime_type_from_content(new Uint8Array(mimeTypeBuffer));
+    } catch {
+        /** If the Rust-based MIME detection fails,
+         * use the browser's MIME type detection. */
+        return file.type;
+    }
+};
 
 /** In web/desktop, the uploading happens on the same JS context, we can
  * pass blob references around. In the extension, store each chunk to the
@@ -69,7 +78,6 @@ const getChunkDTO = async (
 };
 
 export const useFileUpload = () => {
-    const fileEncryptionVersion = useFileEncryptionVersion();
     const tabId = useCurrentTabID();
 
     const { onTelemetry } = usePassCore();
@@ -98,13 +106,13 @@ export const useFileUpload = () => {
             async (
                 file: Blob,
                 name: string,
+                mimeType: string,
                 shareId: ShareId,
                 uploadID: string,
                 onProgress?: OnFileUploadProgress
             ): Promise<FileID> => {
                 let fileID: Maybe<string>;
-                const encryptionVersion = fileEncryptionVersion.current;
-                logger.debug(`[File::upload::v${encryptionVersion}] uploading ${logId(uploadID)}`);
+                logger.debug(`[File::upload::v${FILE_ENCRYPTION_VERSION}] uploading ${logId(uploadID)}`);
 
                 try {
                     const ctrl = ctrls.current.get(uploadID);
@@ -115,27 +123,13 @@ export const useFileUpload = () => {
 
                     onProgress?.(0, totalChunks);
 
-                    const mimeType = await (async (): Promise<string> => {
-                        try {
-                            const mimeTypeBuffer = await file
-                                .slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE)
-                                .arrayBuffer();
-
-                            return await PassUI.mime_type_from_content(new Uint8Array(mimeTypeBuffer));
-                        } catch {
-                            /** If the Rust-based MIME detection fails,
-                             * use the browser's MIME type detection. */
-                            return file.type;
-                        }
-                    })();
-
                     const initDTO = {
                         name: sanitizeFileName(name),
                         mimeType,
                         totalChunks,
                         uploadID,
                         shareId,
-                        encryptionVersion,
+                        encryptionVersion: FILE_ENCRYPTION_VERSION,
                     };
 
                     const init = await abortable(ctrl.signal)(
@@ -156,7 +150,14 @@ export const useFileUpload = () => {
                         const blob = file.slice(start, end);
 
                         const dto = await getChunkDTO(
-                            { shareId, fileID, chunkIndex, totalChunks, encryptionVersion, blob },
+                            {
+                                shareId,
+                                fileID,
+                                chunkIndex,
+                                totalChunks,
+                                encryptionVersion: FILE_ENCRYPTION_VERSION,
+                                blob,
+                            },
                             init.data.storageType,
                             tabId,
                             ctrl.signal
@@ -192,6 +193,7 @@ export const useFileUpload = () => {
         (
             file: Blob,
             name: string,
+            mimeType: string,
             shareId: ShareId,
             uploadID: string,
             onProgress?: OnFileUploadProgress
@@ -205,7 +207,7 @@ export const useFileUpload = () => {
             ctrls.current.set(uploadID, new AbortController());
             syncLoadingState();
 
-            return queue(file, name, shareId, uploadID, onProgress);
+            return queue(file, name, mimeType, shareId, uploadID, onProgress);
         },
         []
     );

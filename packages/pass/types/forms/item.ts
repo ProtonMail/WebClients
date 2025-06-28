@@ -7,9 +7,17 @@ import type {
 } from '@proton/pass/types/data';
 import type { ExtractKeysOfType } from '@proton/pass/types/utils';
 
-import type { ExtraFieldGroupValues, UrlGroupValues } from './fields';
+import type { ItemCustomType } from '@proton/pass/types/protobuf';
+import type { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
+import type { CustomSectionGroupValues, ExtraFieldGroupValues, UrlGroupValues } from './fields';
 
-export type BaseItemValues = { name: string; note: string; shareId: string } & FileAttachmentValues;
+export type BaseItemValues = {
+    name: string;
+    note: string;
+    shareId: string;
+} & FileAttachmentValues &
+    ExtraFieldGroupValues;
+
 export type NoteFormValues = BaseItemValues;
 
 export type LoginItemFormValues = BaseItemValues & {
@@ -21,8 +29,7 @@ export type LoginItemFormValues = BaseItemValues & {
     withAlias: boolean;
     withUsername: boolean;
 } & AliasFormValues &
-    UrlGroupValues &
-    ExtraFieldGroupValues;
+    UrlGroupValues;
 
 export type AliasFormValues = {
     aliasPrefix: string;
@@ -43,7 +50,7 @@ export type EditAliasFormValues = BaseItemValues &
 
 export type IdentityValues = ItemContent<'identity'>;
 export type IdentityItemFormValues = { shareId: string } & BaseItemValues & IdentityValues;
-export type IdentitySectionFormValues = { sectionName: string };
+export type ItemSectionFormValues = { sectionName: string };
 export type IdentityFieldName = ExtractKeysOfType<IdentityValues, string>;
 export type IdentityExtraFieldsKey = ExtractKeysOfType<IdentityValues, DeobfuscatedItemExtraField[]>;
 
@@ -57,3 +64,14 @@ export type CreditCardItemFormValues = BaseItemValues & {
     pin: string;
     note: string;
 };
+
+export type CustomItemFormValues<T extends ItemCustomType = ItemCustomType> = Extract<
+    BaseItemValues &
+        CustomSectionGroupValues &
+        (
+            | { type: 'wifi'; password: string; security: WifiSecurity; ssid: string }
+            | { type: 'sshKey'; privateKey: string; publicKey: string }
+            | { type: 'custom' }
+        ),
+    { type: T }
+>;

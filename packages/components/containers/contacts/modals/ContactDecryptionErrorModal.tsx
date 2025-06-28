@@ -6,7 +6,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Copy from '@proton/components/components/button/Copy';
-import UnderlineButton from '@proton/components/components/button/UnderlineButton';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -14,7 +13,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useContact } from '@proton/mail/contacts/contactHooks';
+import { useContact } from '@proton/mail/store/contacts/contactHooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerifications';
 import type { Key } from '@proton/shared/lib/interfaces';
@@ -82,9 +81,9 @@ const ContactDecryptionErrorModal = ({ contactID, onClearDataConfirm, ...rest }:
                 <Alert className="mb-4" type="info">
                     {c('Info')
                         .t`Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.`}
-                    <UnderlineButton className="ml-2" onClick={handleClear} disabled={!errorKey}>
+                    <Button shape="underline" color="norm" className="ml-2" onClick={handleClear} disabled={!errorKey}>
                         {c('Action').t`Click here.`}
-                    </UnderlineButton>
+                    </Button>
                 </Alert>
             </ModalTwoContent>
             <ModalTwoFooter>

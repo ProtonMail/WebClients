@@ -78,7 +78,11 @@ const ConversationView = ({
     const wrapperRef = useRef<HTMLDivElement>(null);
 
     const { Conversation: conversation, Messages: inputMessages = [] } = conversationState || {};
-    const messages = usePlaceholders(inputMessages, loadingMessages, conversation?.NumMessages || 1) as Message[];
+    const messages = usePlaceholders({
+        inputElements: inputMessages,
+        loading: loadingMessages,
+        expectedLength: conversation?.NumMessages || 1,
+    }) as Message[];
 
     const inTrash = labelID === TRASH;
     const inAllMail = labelID === ALL_MAIL;
@@ -88,7 +92,7 @@ const ConversationView = ({
 
     const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
 
-    const sortedMessages = messagesToShow.sort((a, b) => a.Time - b.Time);
+    const sortedMessages = [...messagesToShow].sort((a, b) => a.Time - b.Time);
 
     // "messagesWithoutQuickReplies" contains filtered messages to display or not in the conversation view.
     // We can use this variable to get unread notifications since trashed or inbox messages (depending on the current location) will be filtered or not.
@@ -149,6 +153,7 @@ const ConversationView = ({
                 labelID,
                 status: MARK_AS_STATUS.READ,
                 sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
+                silent: true,
             });
         }
     }, [conversation]);

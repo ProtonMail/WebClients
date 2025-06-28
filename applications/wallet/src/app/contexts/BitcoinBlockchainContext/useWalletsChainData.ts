@@ -30,7 +30,13 @@ import type {
 import { removeMasterPrefix } from '../../utils';
 import { clearChangeSet, isFullSyncDone, setFullSyncDone } from '../../utils/cache';
 
-export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number; error: string | null };
+export type SyncingMetadata = {
+    syncing: boolean;
+    count: number;
+    lastSyncing: number;
+    error: string | null;
+    hasTransaction: boolean;
+};
 
 const POLLING_UID_PREFIX = 'polling';
 
@@ -219,13 +225,17 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                 lastSyncing: Date.now(),
                 count: (prev[key]?.count ?? 0) + 1,
                 error: null,
+                hasTransaction: false,
             },
         }));
     }, []);
 
-    const removeSyncing = useCallback((walletId: string, walletAccountID: string) => {
+    const removeSyncing = useCallback((walletId: string, walletAccountID: string, hasTransaction: boolean) => {
         setSyncingMetatadaByAccountId((prev) =>
             set({ ...prev }, [getKey(walletId, walletAccountID), 'syncing'], false)
+        );
+        setSyncingMetatadaByAccountId((prev) =>
+            set({ ...prev }, [getKey(walletId, walletAccountID), 'hasTransaction'], hasTransaction)
         );
     }, []);
 
@@ -294,7 +304,15 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                         error?.error ?? c('Wallet').t`An error occurred whilst syncing your wallet. Please try again.`;
                     syncingFailed(walletId, accountId, message);
                 } finally {
-                    removeSyncing(walletId, accountId);
+                    const wasmAccount = account.account;
+                    const balance = (await wasmAccount.getBalance()).data;
+                    const hasTransaction =
+                        balance.trusted_spendable > 0 ||
+                        balance.trusted_pending > 0 ||
+                        balance.confirmed > 0 ||
+                        balance.immature > 0 ||
+                        balance.untrusted_pending > 0;
+                    removeSyncing(walletId, accountId, hasTransaction);
                 }
             }
         },

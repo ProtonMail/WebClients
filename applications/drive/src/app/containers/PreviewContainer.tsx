@@ -59,9 +59,10 @@ export default function PreviewContainer() {
         contentsMimeType,
         downloadFile,
         navigation,
+        videoStreaming,
     } = useFileView(shareId, linkId, useNavigation);
 
-    const { showOpenInDocs, openInDocsAction } = useOpenInDocs(link);
+    const openInDocs = useOpenInDocs(link);
 
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
@@ -191,6 +192,7 @@ export default function PreviewContainer() {
                 fileSize={link?.size}
                 onClose={navigateToParent}
                 onDownload={downloadFile}
+                videoStreaming={videoStreaming}
                 onSave={isEditEnabled ? handleSaveFile : undefined}
                 onDetails={() => showDetailsModal({ shareId, linkId })}
                 onShare={
@@ -199,9 +201,9 @@ export default function PreviewContainer() {
                         : () => showLinkSharingModal({ shareId, linkId })
                 }
                 onOpenInDocs={
-                    showOpenInDocs
+                    openInDocs.canOpen
                         ? () => {
-                              void openInDocsAction({ shareId, linkId });
+                              void openInDocs.openDocument({ link: { shareId, linkId } });
                           }
                         : undefined
                 }

@@ -1,10 +1,10 @@
 import * as config from 'proton-pass-extension/app/config';
+import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
-import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import browser from '@proton/pass/lib/globals/browser';
 import type { ApiCallFn } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import configureApi from '@proton/shared/lib/api';
 import { pullForkSession } from '@proton/shared/lib/api/auth';

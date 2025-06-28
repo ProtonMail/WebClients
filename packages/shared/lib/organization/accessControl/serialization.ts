@@ -63,7 +63,7 @@ export const getAreAllProductsAllowed = (value: ReturnType<typeof deserializeAll
  */
 export const getAppNameSetFromProductSet = (apps: Set<OrganizationSettingsAllowedProduct>): Set<APP_NAMES> => {
     return new Set(
-        apps.values().flatMap((product) => {
+        Array.from(apps).flatMap((product) => {
             return productsToApps[product];
         })
     );

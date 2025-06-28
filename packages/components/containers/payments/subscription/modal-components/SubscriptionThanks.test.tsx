@@ -56,7 +56,7 @@ describe('SubscriptionThanks', () => {
     it('calls onClose when close button is clicked', () => {
         render(<SubscriptionThanks onClose={mockOnClose} planIDs={{}} />);
 
-        const closeButton = screen.getByText('Close');
+        const closeButton = screen.getByText('Close', { selector: 'button' });
         closeButton.click();
 
         expect(mockOnClose).toHaveBeenCalledTimes(1);

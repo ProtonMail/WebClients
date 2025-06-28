@@ -90,7 +90,7 @@ const InboxDesktopFreeTrialEnded = () => {
                             onClick={() => freeTrialUpgradeClick(upsellRef)}
                             fullWidth
                         >{c('Free trial desktop').t`Keep using the desktop app`}</Button>
-                        <Button onClick={backToLogin} shape="outline" fullWidth>{c('Free trial desktop')
+                        <Button onClick={backToLogin} shape="outline" fullWidth>{c('Action')
                             .t`Back to sign in`}</Button>
                     </div>
                     <div>

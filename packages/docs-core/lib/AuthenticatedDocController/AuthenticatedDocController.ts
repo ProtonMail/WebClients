@@ -22,6 +22,13 @@ import { isDocumentState, type DocumentState } from '../State/DocumentState'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { getErrorString } from '../Util/GetErrorString'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
+
+// This is part of a hack to make sure the name in the document sharing modal is updated when the document name changes.
+// While having these module-scoped variable here looks a bit stinky, it's completely fine because the purpose is to prevent a
+// memory leak by re-setting it every time the modal is opened.
+let OVERRIDDEN_NAME_CLEANUP = () => {}
+let OVERRIDDEN_NAME_LISTENERS = new Set<(name: string) => void>()
 
 /**
  * Controls the lifecycle of a single document for an authenticated user.
@@ -229,9 +236,10 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   }
 
   public async duplicateDocument(editorYjsState: Uint8Array): Promise<void> {
+    const node = this.documentState.getProperty('decryptedNode')
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,
-      this.documentState.getProperty('decryptedNode'),
+      node,
       editorYjsState,
     )
 
@@ -247,13 +255,14 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
     const shell = result.getValue()
 
-    void this.driveCompat.openDocument(shell)
+    void this.driveCompat.openDocument(shell, isProtonDocsSpreadsheet(node.mimeType) ? 'sheet' : 'doc')
   }
 
   public async restoreRevisionAsCopy(yjsContent: YjsState): Promise<void> {
+    const node = this.documentState.getProperty('decryptedNode')
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,
-      this.documentState.getProperty('decryptedNode'),
+      node,
       yjsContent,
     )
 
@@ -269,13 +278,15 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
     const shell = result.getValue()
 
-    void this.driveCompat.openDocument(shell)
+    void this.driveCompat.openDocument(shell, isProtonDocsSpreadsheet(node.mimeType) ? 'sheet' : 'doc')
   }
 
   public async createNewDocument(documentType: DocumentType): Promise<void> {
     const date = getPlatformFriendlyDateForFileName()
     // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
-    const baseTitle = c('Title').t`Untitled document ${date}`
+    const docTitle = c('Title').t`Untitled document ${date}`
+    const sheetTitle = c('Title').t`Untitled spreadsheet ${date}`
+    const baseTitle = documentType === 'sheet' ? sheetTitle : docTitle
     const newName = `${baseTitle}`
 
     const result = await this._createNewDocument.execute(
@@ -297,7 +308,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
     const shell = result.getValue()
 
-    void this.driveCompat.openDocument(shell)
+    void this.driveCompat.openDocument(shell, documentType)
   }
 
   public async renameDocument(newName: string): Promise<TranslatedResult<void>> {
@@ -365,6 +376,14 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   }
 
   public openDocumentSharingModal(): void {
+    OVERRIDDEN_NAME_CLEANUP()
+    OVERRIDDEN_NAME_LISTENERS.clear()
+    OVERRIDDEN_NAME_LISTENERS = new Set<(name: string) => void>()
+    OVERRIDDEN_NAME_CLEANUP = this.documentState.subscribeToProperty('documentName', (name) => {
+      for (const listener of OVERRIDDEN_NAME_LISTENERS) {
+        listener(name)
+      }
+    })
     void this.driveCompat.openDocumentSharingModal({
       linkId: this.documentState.getProperty('entitlements').nodeMeta.linkId,
       volumeId: this.documentState.getProperty('entitlements').nodeMeta.volumeId,
@@ -374,6 +393,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
           payload: { enabled },
         })
       },
+      registerOverriddenNameListener: (listener: (name: string) => void) => OVERRIDDEN_NAME_LISTENERS.add(listener),
     })
   }
 

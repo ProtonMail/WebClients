@@ -244,7 +244,7 @@ const oneWayTransferHanders: OneWayTransferHandler[] = [
             serialize: (result: any) => [result, []], // unused
             deserialize: ResultTranferer.deserialize,
         },
-    },
+    }
 ];
 
 /**

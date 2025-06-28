@@ -8,7 +8,7 @@ let package = Package(name: "Shared",
                       products: [.library(name: "Shared", targets: ["Shared"])],
                       dependencies: [
                           .package(url: "https://github.com/lukacs-m/SimpleKeychain", exact: "0.1.2"),
-                          .package(url: "https://github.com/ProtonMail/protoncore_ios", exact: "32.0.0")
+                          .package(url: "https://github.com/ProtonMail/protoncore_ios", exact: "32.7.0")
                       ],
                       targets: [
                           .target(name: "Shared",
@@ -22,7 +22,7 @@ let package = Package(name: "Shared",
                                       .product(name: "ProtonCoreForceUpgrade", package: "protoncore_ios"),
                                       .product(name: "ProtonCoreHumanVerification", package: "protoncore_ios"),
                                       .product(name: "ProtonCoreNetworking", package: "protoncore_ios"),
-                                      .product(name: "ProtonCorePaymentsUI", package: "protoncore_ios")
+                                      .product(name: "ProtonCorePaymentsUIV2", package: "protoncore_ios")
                                   ]),
                           .testTarget(name: "SharedTests", dependencies: ["Shared"], path: "Tests")
                       ])

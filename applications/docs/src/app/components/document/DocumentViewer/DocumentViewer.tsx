@@ -52,13 +52,16 @@ import type { InviteAutoAcceptResult } from './InviteAutoAccepter'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import { useAuthentication } from '@proton/components/index'
+import { useAuthentication } from '@proton/components'
 import { useApplication } from '~/utils/application-context'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
 import useFlag from '@proton/unleash/useFlag'
 import type { ProviderType } from '../../../provider-type'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { tmpConvertNewDocTypeToOld, type DocumentType } from '@proton/drive-store/store/_documents'
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import { UserSettingsProvider } from '@proton/drive-store/store'
+import { useDocsContext } from '../context'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -70,14 +73,17 @@ export type DocumentViewerProps = {
   editorInitializationConfig?: EditorInitializationConfig
   providerType: ProviderType
   openAction: DocumentAction
-  documentType?: DocumentType
+  actionMode: DocumentAction['mode'] | undefined
+  documentType: DocumentType | ProtonDocumentType
 }
 
 export function DocumentViewer({
   nodeMeta,
   editorInitializationConfig,
   openAction,
+  actionMode,
   providerType,
+  documentType,
 }: DocumentViewerProps) {
   const application = useApplication()
   const { getLocalID } = useAuthentication()
@@ -119,12 +125,12 @@ export function DocumentViewer({
     application.syncedEditorState.setProperty('suggestionsEnabled', isSuggestionsEnabled || isLocalEnvironment())
   }, [application.syncedEditorState, isSuggestionsEnabled])
 
-  const isDownloadAction = openAction.mode === 'download' || openAction.mode === 'open-url-download'
+  const isDownloadAction = actionMode === 'download' || openAction.mode === 'open-url-download'
   useEffect(() => {
     if (isDownloadAction && didLoadTitle && didLoadEditorContent && docOrchestrator) {
-      void docOrchestrator.exportAndDownload('docx')
+      void docOrchestrator.exportAndDownload(tmpConvertNewDocTypeToOld(documentType) === 'doc' ? 'docx' : 'xlsx')
     }
-  }, [docOrchestrator, didLoadTitle, didLoadEditorContent, isDownloadAction])
+  }, [docOrchestrator, didLoadTitle, didLoadEditorContent, isDownloadAction, documentType])
 
   useEffect(() => {
     if (!bridge) {
@@ -171,10 +177,10 @@ export function DocumentViewer({
   useEffect(() => {
     return application.eventBus.addEventCallback(() => {
       if (isPublicViewer && editorController && documentState) {
-        openPublicSplashModal({ editorController, documentState: documentState as PublicDocumentState })
+        openPublicSplashModal({ editorController, documentState: documentState as PublicDocumentState, documentType })
       }
     }, EditorEvent.ToolbarClicked)
-  }, [application.eventBus, isPublicViewer, openPublicSplashModal, editorController, documentState])
+  }, [application.eventBus, isPublicViewer, openPublicSplashModal, editorController, documentState, documentType])
 
   useEffect(() => {
     return application.eventBus.addEventCallback(() => {
@@ -417,6 +423,8 @@ export function DocumentViewer({
   const isPrivateModeUserWithInsufficientPermissions =
     isPrivateNodeMeta(nodeMeta) && error && error.code === DocsApiErrorCode.InsufficientPermissions
 
+  const { publicContext, privateContext } = useDocsContext()
+
   if (
     !didAttemptToAutoAcceptInvite &&
     (isSignedInUserInPublicReadonlyMode || isPrivateModeUserWithInsufficientPermissions)
@@ -425,7 +433,25 @@ export function DocumentViewer({
 
     return (
       <>
-        <InviteAutoAccepter nodeMeta={nodeMeta} onResult={onInviteAutoAcceptResult} />
+        <UserSettingsProvider
+          initialUser={publicContext?.user ?? privateContext?.user ?? ({} as any)}
+          initialDriveUserSettings={{
+            Defaults: {
+              RevisionRetentionDays: 0,
+              B2BPhotosEnabled: false,
+              PhotoTags: [],
+            },
+            UserSettings: {
+              Sort: null,
+              Layout: null,
+              RevisionRetentionDays: null,
+              B2BPhotosEnabled: null,
+              PhotoTags: null,
+            },
+          }}
+        >
+          <InviteAutoAccepter nodeMeta={nodeMeta} onResult={onInviteAutoAcceptResult} />
+        </UserSettingsProvider>
         {Loader}
       </>
     )
@@ -443,7 +469,12 @@ export function DocumentViewer({
   return (
     <div className="relative h-full w-full">
       {ready && debug && docController && editorController && documentState && (
-        <DebugMenu docController={docController} editorController={editorController} documentState={documentState} />
+        <DebugMenu
+          docController={docController}
+          editorController={editorController}
+          documentState={documentState}
+          documentType={tmpConvertNewDocTypeToOld(openAction.type)}
+        />
       )}
 
       {ready && <WordCountOverlay />}
@@ -463,7 +494,7 @@ export function DocumentViewer({
           onFrameReady={onFrameReady}
           systemMode={isPublicViewer ? EditorSystemMode.PublicView : EditorSystemMode.Edit}
           logger={application.logger}
-          documentType={openAction.type}
+          documentType={tmpConvertNewDocTypeToOld(openAction.type)}
         />
       )}
 

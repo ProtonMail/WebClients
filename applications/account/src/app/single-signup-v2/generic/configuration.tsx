@@ -40,11 +40,12 @@ export const getGenericConfiguration = ({
         vpnServersCountData,
         signupParameters,
         freePlan,
+        canUseBYOE: false,
     });
 
     return {
         ...mailConfiguration,
-        signupTypes: [SignupType.Username, SignupType.Email],
+        signupTypes: [SignupType.Proton, SignupType.External],
         logo,
         CustomStep,
     };

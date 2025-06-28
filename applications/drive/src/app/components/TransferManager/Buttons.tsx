@@ -1,5 +1,5 @@
-import { Button } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { Button, Tooltip } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import type { TransfersManagerButtonsProps } from './interfaces';

@@ -5,7 +5,7 @@ import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
+import { Button, ButtonLike, CircleLoader, Tooltip } from '@proton/atoms';
 import {
     AppLink,
     ContactDrawerAppButton,
@@ -21,14 +21,12 @@ import {
     InboxDesktopFreeTrialTopBanner,
     InboxDesktopOutdatedAppTopBanner,
     LocalizedMiniCalendar,
-    PrimaryButton,
     PrivateAppContainer,
     PrivateHeader,
     PrivateMainArea,
     QuickSettingsAppButton,
     SmartBanner,
     ToolbarButton,
-    Tooltip,
     TopBanners,
     UserDropdown,
     useActiveBreakpoint,
@@ -546,21 +544,21 @@ const CalendarContainerView = ({
                 onToggleExpand={onToggleExpand}
                 isSmallViewport={viewportWidth['<=small']}
                 actionArea={!isDrawerApp ? toolbar : null}
-                hideUpsellButton={viewportWidth['<=small']}
                 settingsButton={drawerSettingsButton}
             />
         </>
     );
 
     const footerButtons = [
-        <PrimaryButton
+        <Button
+            color="norm"
             key="footer-button-1"
             onClick={() => onCreateEvent?.()}
             disabled={!onCreateEvent}
             data-testid="calendar-drawer:create-event-button"
         >
             {createEventText}
-        </PrimaryButton>,
+        </Button>,
         <ButtonLike
             as={AppLink}
             key="footer-button-2"

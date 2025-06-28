@@ -36,6 +36,7 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     DOCUMENT_PARTICIPANT_LIMIT_REACHED: 3012,
     CLIENT_VERSION_NOT_SUPPORTED: 3013,
     USER_PERMISSIONS_TO_DOCUMENT_CHANGED: 3014,
+    DOCUMENT_IS_INACCESSIBLE: 3015,
   }
 
   static messages: Record<number, string> = {
@@ -71,6 +72,8 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     [ConnectionCloseReason.CODES.CLIENT_VERSION_NOT_SUPPORTED]:
       'Client version not supported. Please upgrade your client.',
     [ConnectionCloseReason.CODES.USER_PERMISSIONS_TO_DOCUMENT_CHANGED]: 'User permissions to document changed',
+    [ConnectionCloseReason.CODES.DOCUMENT_IS_INACCESSIBLE]:
+      'We are currently fixing your document. Please contact customer support for more information.',
   }
 
   static create(props: ConnectionCloseReasonProps): ConnectionCloseReason {

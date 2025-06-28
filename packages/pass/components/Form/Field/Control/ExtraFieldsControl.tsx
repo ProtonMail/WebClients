@@ -1,13 +1,15 @@
+import type { PropsWithChildren } from 'react';
 import { type FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
-import { getExtraFieldOption } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
+import { getExtraFieldOption } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import { UpsellRef } from '@proton/pass/constants';
 import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
 import type { DeobfuscatedItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import { formatTimestamp } from '@proton/pass/utils/time/format';
 
 import { OTPValueControl } from './OTPValueControl';
 import { UpgradeControl } from './UpgradeControl';
@@ -17,14 +19,23 @@ type ExtraFieldsControlProps = {
     extraFields: DeobfuscatedItemExtraField[];
     itemId: string;
     shareId: string;
+    hideIcons?: boolean;
+    onCopy?: () => void;
 };
 
-export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, itemId, shareId }) => {
+export const ExtraFieldsControl: FC<PropsWithChildren<ExtraFieldsControlProps>> = ({
+    children,
+    extraFields,
+    hideIcons = false,
+    itemId,
+    shareId,
+    onCopy,
+}) => {
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     const getControlByType = useCallback(
         ({ fieldName, type, data }: DeobfuscatedItemExtraField, index: number) => {
-            const { icon } = getExtraFieldOption(type);
+            const icon = hideIcons ? undefined : getExtraFieldOption(type).icon;
             const key = `${index}-${fieldName}`;
 
             if (needsUpgrade) {
@@ -36,13 +47,34 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
             switch (type) {
                 case 'totp':
                     return isEmptyString(data.totpUri) ? (
-                        <ValueControl icon={icon} key={key} label={fieldName} value={undefined} />
+                        <ValueControl icon={icon} key={key} label={fieldName} />
                     ) : (
-                        <OTPValueControl key={key} label={fieldName} payload={{ totpUri: data.totpUri, type: 'uri' }} />
+                        <OTPValueControl
+                            icon={icon}
+                            key={key}
+                            label={fieldName}
+                            payload={{ totpUri: data.totpUri, type: 'uri' }}
+                            onCopy={onCopy}
+                        />
+                    );
+                case 'timestamp':
+                    return isEmptyString(data.timestamp) ? (
+                        <ValueControl icon={icon} key={key} label={fieldName} />
+                    ) : (
+                        <ValueControl
+                            clickToCopy
+                            key={key}
+                            icon={icon}
+                            label={fieldName}
+                            value={formatTimestamp(data.timestamp)}
+                            onCopy={onCopy}
+                        />
                     );
                 case 'hidden':
                 case 'text':
-                    return (
+                    return isEmptyString(data.content) ? (
+                        <ValueControl icon={icon} key={key} label={fieldName} />
+                    ) : (
                         <ValueControl
                             clickToCopy
                             as={TextAreaReadonly}
@@ -51,6 +83,7 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
                             icon={icon}
                             label={fieldName}
                             value={data.content}
+                            onCopy={onCopy}
                         />
                     );
             }
@@ -60,6 +93,7 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
 
     return (
         <FieldsetCluster mode="read" as="div">
+            {children}
             {extraFields.map((extraField, index) => getControlByType(extraField, index))}
         </FieldsetCluster>
     );

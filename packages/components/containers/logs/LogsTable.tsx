@@ -10,10 +10,11 @@ import TableRow from '@proton/components/components/table/TableRow';
 import Time from '@proton/components/components/time/Time';
 import type { AuthLog } from '@proton/shared/lib/authlog';
 import { SETTINGS_LOG_AUTH_STATE, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
+import emptySearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { GenericErrorDisplay } from '../error/GenericError';
 import AppVersionCell from './AppVersionCell';
-import DeviceCell from './DeviceCell';
 import EventCell from './EventCell';
 import IPCell from './IPCell';
 import LocationCell from './LocationCell';
@@ -36,8 +37,14 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
 
     if (logAuth === DISABLE) {
         return (
-            <Alert className="mb-4">{c('Info')
-                .t`You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.`}</Alert>
+            <GenericErrorDisplay
+                title={c('Title').t`There are no events for your account`}
+                customImage={emptySearchSvg}
+            >
+                <div className="text-weak text-sm color-weak text-center">
+                    {c('Error message').t`Ask your administrator to enable Account monitor.`}
+                </div>
+            </GenericErrorDisplay>
         );
     }
 
@@ -58,15 +65,8 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
 
     const headerCells = [
         {
-            className: 'text-left',
-            header: c('Header').t`Time`,
-        },
-        {
             className: isAuthLogAdvanced || isProtonSentinelEnabled ? 'w-1/6' : 'w-1/5',
             header: c('Header').t`Event`,
-        },
-        {
-            header: c('Header').t`App version`,
         },
         {
             className: isAuthLogAdvanced ? 'w-1/6' : 'bg-weak w-custom',
@@ -87,14 +87,13 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
             info: c('Tooltip').t`The Internet Service Provider of the IP address`,
         },
         {
-            className: isProtonSentinelEnabled ? isUnavailableClass(false) : `${isUnavailableClass(false)} w-5`,
-            header: c('Header').t`Device`,
-            info: c('Tooltip').t`Device information such as operating system`,
-        },
-        {
             className: isUnavailableClass(false),
             header: c('Header').t`Protection`,
             info: c('Tooltip').t`Any protection applied to suspicious activity`,
+        },
+        {
+            header: c('Header').t`Device`,
+            info: c('Tooltip').t`Device information such as operating system`,
         },
     ].filter(isTruthy);
 
@@ -132,31 +131,26 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                         const key = index.toString();
                         const cells = [
                             {
-                                label: c('Header').t`Time`,
+                                label: c('Header').t`Event`,
                                 className: 'text-left',
                                 content: (
-                                    <Time key={key} format="PPp">
-                                        {time}
-                                    </Time>
+                                    <div className="flex flex-column my-1">
+                                        <EventCell description={Description} status={Status} isB2B />
+                                        <Time format="PPp" className="color-weak mt-2 ml-2">
+                                            {time}
+                                        </Time>
+                                    </div>
                                 ),
                             },
                             {
-                                label: c('Header').t`Event`,
-                                content: <EventCell description={Description} status={Status} />,
-                            },
-                            {
-                                label: c('Header').t`App version`,
-                                content: <AppVersionCell appVersion={AppVersion} />,
-                            },
-                            {
                                 label: 'IP',
-                                className: isAuthLogAdvanced ? '' : 'bg-weak hidden lg:table-cell text-center',
+                                className: isAuthLogAdvanced ? '' : 'bg-weak hidden lg:table-cell',
                                 colSpan: (() => {
                                     if (!isAuthLogAdvanced) {
                                         if (isProtonSentinelEnabled) {
                                             return 3;
                                         }
-                                        return 5;
+                                        return 4;
                                     }
                                     return 1;
                                 })(),
@@ -174,7 +168,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                 className: `${isUnavailableClass()} ${
                                     !isAuthLogAdvanced || !isProtonSentinelEnabled ? 'text-left lg:text-center' : ''
                                 }`,
-                                colSpan: isProtonSentinelEnabled ? 1 : 4,
+                                colSpan: isProtonSentinelEnabled ? 1 : 3,
                                 content: (
                                     <LocationCell
                                         isProtonSentinelEnabled={isProtonSentinelEnabled}
@@ -189,12 +183,17 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                     content: <span className="flex-1">{InternetProvider || '-'}</span>,
                                 },
                             isProtonSentinelEnabled && {
-                                label: c('Header').t`Device`,
-                                content: <DeviceCell device={Device} />,
-                            },
-                            isProtonSentinelEnabled && {
                                 label: c('Header').t`Protection`,
                                 content: <ProtectionCell protection={Protection} protectionDesc={ProtectionDesc} />,
+                            },
+                            {
+                                label: c('Header').t`Device`,
+                                content: (
+                                    <div className="flex flex-column my-1">
+                                        <span>{isProtonSentinelEnabled ? Device : '-'}</span>
+                                        <AppVersionCell appVersion={AppVersion} />
+                                    </div>
+                                ),
                             },
                         ].filter(isTruthy);
 
