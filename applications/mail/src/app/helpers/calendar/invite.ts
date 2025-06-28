@@ -81,7 +81,7 @@ import unary from '@proton/utils/unary';
 
 import { hasIcalExtension } from 'proton-mail/helpers/attachment/attachment';
 
-import type { FetchAllEventsByUID } from './inviteApi';;
+import type { FetchAllEventsByUID } from './inviteApi';
 
 export enum EVENT_TIME_STATUS {
     PAST,
