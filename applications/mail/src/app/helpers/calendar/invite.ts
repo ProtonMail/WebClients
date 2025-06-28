@@ -78,9 +78,8 @@ import type { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo, hasSimpleLoginSender } from '@proton/shared/lib/mail/messages';
 import unary from '@proton/utils/unary';
 
-import { hasIcalExtension } from 'proton-mail/helpers/attachment/attachment';
-
 import type { MessageStateWithData, MessageWithOptionalBody } from '../../store/messages/messagesTypes';
+import { hasIcalExtension } from '../attachment/attachment';
 import type { FetchAllEventsByUID } from './inviteApi';
 
 export enum EVENT_TIME_STATUS {
@@ -475,6 +474,7 @@ export const processEventInvitation = <T>(
         organizer,
         attendees,
         addresses: ownAddresses,
+        emailTo: originalTo,
     });
     let isAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
     let isAddressDisabled = selfAddress ? getIsAddressDisabled(selfAddress) : false;

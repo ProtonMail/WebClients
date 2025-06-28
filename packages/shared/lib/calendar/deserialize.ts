@@ -76,10 +76,12 @@ export const getSelfAddressData = ({
     organizer,
     attendees = [],
     addresses = [],
+    emailTo,
 }: {
     organizer?: VcalOrganizerProperty;
     attendees?: VcalAttendeeProperty[];
     addresses?: Address[];
+    emailTo?: string;
 }) => {
     if (!organizer) {
         // it is not an invitation
@@ -106,6 +108,26 @@ export const getSelfAddressData = ({
     }
 
     const canonicalAttendeeEmails = attendees.map((attendee) => canonicalizeInternalEmail(getAttendeeEmail(attendee)));
+
+    if (emailTo) {
+        const canonicalEmailTo = canonicalizeInternalEmail(emailTo);
+        const emailToAttendeeIndex = canonicalAttendeeEmails.findIndex((email) => email === canonicalEmailTo);
+        if (emailToAttendeeIndex !== -1) {
+            const selfAttendee = attendees[emailToAttendeeIndex];
+            const catchAllAddress = internalAddresses.find(({ CatchAll }) => CatchAll);
+            const selfAddress = catchAllAddress || internalAddresses[0];
+
+            if (selfAddress) {
+                return {
+                    isOrganizer: false,
+                    isAttendee: true,
+                    selfAttendee,
+                    selfAddress,
+                    selfAttendeeIndex: emailToAttendeeIndex,
+                };
+            }
+        }
+    }
 
     // split active and inactive addresses
     const { activeAddresses, inactiveAddresses } = internalAddresses.reduce<{
