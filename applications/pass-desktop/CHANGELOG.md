@@ -1,3 +1,7 @@
+### Version 1.32.2
+
+- Fix date fields accounting for TZ offset
+
 ### Version 1.32.0
 
 - Add support for custom item types
