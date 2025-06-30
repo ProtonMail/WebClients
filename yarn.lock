@@ -8762,30 +8762,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/testpackage-loki-client@workspace:^, @proton/testpackage-loki-client@workspace:tests/packages/loki":
-  version: 0.0.0-use.local
-  resolution: "@proton/testpackage-loki-client@workspace:tests/packages/loki"
-  dependencies:
-    cross-fetch: "npm:^4.1.0"
-    eslint: "npm:^8.57.1"
-    prettier: "npm:^3.5.3"
-    proxy-agent: "npm:^6.5.0"
-    typescript: "npm:^5.8.3"
-  languageName: unknown
-  linkType: soft
-
-"@proton/testpackage-measurement-sdk@workspace:tests/packages/measurement-sdk":
-  version: 0.0.0-use.local
-  resolution: "@proton/testpackage-measurement-sdk@workspace:tests/packages/measurement-sdk"
-  dependencies:
-    "@playwright/test": "npm:^1.53.1"
-    "@proton/testpackage-loki-client": "workspace:^"
-    eslint: "npm:^8.57.1"
-    prettier: "npm:^3.5.3"
-    typescript: "npm:^5.8.3"
-  languageName: unknown
-  linkType: soft
-
 "@proton/unleash@workspace:^, @proton/unleash@workspace:packages/unleash":
   version: 0.0.0-use.local
   resolution: "@proton/unleash@workspace:packages/unleash"
@@ -13524,7 +13500,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tpe/mock-proxy-web-client@npm:^1.0.1":
+"@tpe/loki-client@npm:0.2.1":
+  version: 0.2.1
+  resolution: "@tpe/loki-client@npm:0.2.1::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Floki-client%2F-%2F%40tpe%2Floki-client-0.2.1.tgz"
+  dependencies:
+    cross-fetch: "npm:^4.1.0"
+    proxy-agent: "npm:^6.5.0"
+  checksum: 10c0/bdc98e05e751d297574e05dcbdb358b67283ac82caed30183fffd0a2ff9bd399ad0fe38973e55a7a4c8880094fa5532e16fca692ab03eb3e28ee87ae28087006
+  languageName: node
+  linkType: hard
+
+"@tpe/measurement-sdk@npm:0.2.2":
+  version: 0.2.2
+  resolution: "@tpe/measurement-sdk@npm:0.2.2::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fmeasurement-sdk%2F-%2F%40tpe%2Fmeasurement-sdk-0.2.2.tgz"
+  dependencies:
+    "@tpe/loki-client": "npm:0.2.1"
+  peerDependencies:
+    "@playwright/test": ">=1.52.0"
+  checksum: 10c0/54e360810f6e5aa7eeeee53bec12a701e21d54259d01856902a529ba1b556fe27e7e4a762f19f096d6480c2f4f2294ad4ab73335472b8a3c3ffb9a1f3afc5c28
+  languageName: node
+  linkType: hard
+
+"@tpe/mock-proxy-web-client@npm:1.0.1":
   version: 1.0.1
   resolution: "@tpe/mock-proxy-web-client@npm:1.0.1::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fmock-proxy-web-client%2F-%2F%40tpe%2Fmock-proxy-web-client-1.0.1.tgz"
   dependencies:
@@ -39278,7 +39275,9 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@proton/srp": "workspace:^"
     "@proton/utils": "workspace:^"
-    "@tpe/mock-proxy-web-client": "npm:^1.0.1"
+    "@tpe/loki-client": "npm:0.2.1"
+    "@tpe/measurement-sdk": "npm:0.2.2"
+    "@tpe/mock-proxy-web-client": "npm:1.0.1"
     "@types/chance": "npm:^1.1.6"
     "@types/fs-extra": "npm:^11.0.4"
     "@types/nodemailer": "npm:^6.4.17"
