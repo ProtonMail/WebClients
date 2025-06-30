@@ -23,7 +23,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { LABEL_IDS_TO_HUMAN, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { MAIL_PAGE_SIZE, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -256,7 +255,7 @@ const MailboxContainer = ({ labelID: inputLabelID, mailSettings, userSettings, e
                 if (isMessage(element) && isDraft(element) && !preventComposer) {
                     void onCompose({
                         type: ComposeTypes.existingDraft,
-                        existingDraft: { localID: element.ID as string, data: element as Message },
+                        existingDraft: { localID: element.ID as string, data: element },
                         fromUndo: false,
                     });
                 }
@@ -265,7 +264,7 @@ const MailboxContainer = ({ labelID: inputLabelID, mailSettings, userSettings, e
                     history.push(
                         setParamsInLocation(history.location, {
                             labelID,
-                            elementID: (element as Message).ConversationID,
+                            elementID: element.ConversationID,
                             messageID: element.ID,
                         })
                     );
