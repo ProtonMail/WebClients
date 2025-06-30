@@ -10,6 +10,7 @@ import type {
     InjectedDropdown,
 } from 'proton-pass-extension/app/content/types';
 import { DropdownAction, IFramePortMessageType } from 'proton-pass-extension/app/content/types';
+import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -47,8 +48,9 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
         },
         onError: () => iframe.destroy(),
         onClose: (_, options) => {
-            if (options.refocus) fieldRef.current?.focus();
-            else if (fieldRef.current?.element !== document.activeElement) fieldRef.current?.detachIcon();
+            const field = fieldRef.current;
+            if (options.refocus) field?.focus();
+            else if (!isActiveElement(fieldRef.current?.element)) fieldRef.current?.detachIcon();
         },
         backdropExclude: () => [fieldRef.current?.icon?.element, fieldRef.current?.element].filter(truthy),
         position: (root: HTMLElement) => {
