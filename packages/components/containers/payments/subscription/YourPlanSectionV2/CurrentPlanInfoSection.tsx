@@ -4,19 +4,20 @@ import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Price from '@proton/components/components/price/Price';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { CYCLE, type Subscription, canModify, getSubscriptionPlanTitleAndName } from '@proton/payments';
 import {
+    CYCLE,
+    type Subscription,
+    canModify,
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
     getIsCustomCycle,
-    hasMaximumCycle,
+    getSubscriptionPlanTitleAndName,
     hasVPNPassBundle,
     isManagedExternally,
 } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
-import useFlag from '@proton/unleash/useFlag';
 
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
@@ -98,7 +99,6 @@ export const CurrentPlanInfoSection = ({
     addresses,
     editBillingCycle = false,
 }: CurrentPlanInfoSectionProps) => {
-    const scheduledDowncycling = useFlag('ScheduledDowncycling');
     const [openSubscriptionModal] = useSubscriptionModal();
     const space = getSpace(user);
     const { isFree, canPay, isMember } = user;
@@ -115,7 +115,6 @@ export const CurrentPlanInfoSection = ({
     const showEditBillingDetails =
         user.isPaid &&
         user.canPay &&
-        (!hasMaximumCycle(subscription) || scheduledDowncycling) &&
         !getHasPassB2BPlan(subscription) &&
         !getIsCustomCycle(subscription) &&
         !hasVPNPassBundle(subscription) &&

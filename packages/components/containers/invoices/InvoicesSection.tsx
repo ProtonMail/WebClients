@@ -34,7 +34,6 @@ enum DocumentType {
 
 const InvoicesSection = () => {
     const enableTransactions = useFlag('TransactionsView');
-    const enableBillingAddressModal = useFlag('BillingAddressModal');
 
     const [user] = useUser();
 
@@ -90,15 +89,14 @@ const InvoicesSection = () => {
         <DropdownActions
             size="medium"
             list={[
-                enableBillingAddressModal &&
-                    !!user.ChargebeeUserExists && {
-                        text: c('Action').t`Edit billing address`,
-                        'data-testid': 'editBillingAddress',
-                        key: 'editBillingAddress',
-                        onClick: () =>
-                            withLoadingBillingAddressModal(openBillingAddressModal({ editExistingInvoice: false })),
-                        loading: loadingBillingAddressModal,
-                    },
+                !!user.ChargebeeUserExists && {
+                    text: c('Action').t`Edit billing address`,
+                    'data-testid': 'editBillingAddress',
+                    key: 'editBillingAddress',
+                    onClick: () =>
+                        withLoadingBillingAddressModal(openBillingAddressModal({ editExistingInvoice: false })),
+                    loading: loadingBillingAddressModal,
+                },
                 {
                     text: c('Action').t`Edit invoice note`,
                     'data-testid': 'editInvoiceNote',
