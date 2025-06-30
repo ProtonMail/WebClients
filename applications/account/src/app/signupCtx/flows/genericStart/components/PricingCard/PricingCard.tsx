@@ -41,7 +41,11 @@ const PricingFeatures = () => {
                     highlighted
                 />
                 <FeatureItem
-                    text={c('Signup').t`VPN with servers in ${vpnServersCountData.free.countries} countries`}
+                    text={c('Signup').ngettext(
+                        msgid`VPN with servers in ${vpnServersCountData.free.countries} country`,
+                        `VPN with servers in ${vpnServersCountData.free.countries} countries`,
+                        vpnServersCountData.free.countries
+                    )}
                     highlighted
                     loading={vpnServersCountLoading}
                 />
