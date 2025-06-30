@@ -216,7 +216,6 @@ export function useAccessiblePlans({
     currency,
     audience,
 }: AccessiblePlansHookProps) {
-    const passLifetimeFeatureFlag = useFlag('PassLifetimeFrontend');
     const lumoPlusEnabled = useFlag('LumoPlusFrontend');
 
     const isVpnSettingsApp = app === APPS.PROTONVPN_SETTINGS;
@@ -352,7 +351,6 @@ export function useAccessiblePlans({
     })();
 
     const isPassLifetimeEligible =
-        passLifetimeFeatureFlag &&
         isPassSettingsApp &&
         !user.hasPassLifetime &&
         audience === Audience.B2C &&

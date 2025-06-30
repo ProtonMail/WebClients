@@ -29,12 +29,6 @@ const mockUseFlag = useFlag as unknown as jest.MockedFunction<any>;
 describe('useAccessiblePlans', () => {
     beforeEach(() => {
         jest.clearAllMocks();
-
-        mockUseFlag.mockImplementation((flag: string) => {
-            if (flag === 'PassLifetimeFrontend') {
-                return true;
-            }
-        });
     });
 
     it('should return the plans accessible to free users in mail app', () => {
