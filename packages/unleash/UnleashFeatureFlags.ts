@@ -78,14 +78,7 @@ enum AccountFlag {
 
 enum PaymentsFlag {
     SepaPayments = 'SepaPayments',
-    IpAddonDowngrade = 'IpAddonDowngrade',
-    RegionalCurrenciesBatch2 = 'RegionalCurrenciesBatch2',
     TransactionsView = 'TransactionsView',
-    ScheduledDowncycling = 'ScheduledDowncycling',
-    BillingAddressModal = 'BillingAddressModal',
-    EditInvoiceDetails = 'EditInvoiceDetails',
-    PassLifetimeFrontend = 'PassLifetimeFrontend',
-    PassOrgSizeLimit = 'PassOrgSizeLimit',
     ApplePayWeb = 'ApplePayWeb',
 }
 

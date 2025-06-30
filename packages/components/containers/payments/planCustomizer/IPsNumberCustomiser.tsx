@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import { type SelectedPlan, getIsVpnPlan } from '@proton/payments';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { useFlag } from '@proton/unleash';
 
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
 
@@ -14,8 +13,6 @@ interface IPsNumberCustomiserProps extends Omit<NumberCustomiserProps, 'label' |
 }
 
 export const IPsNumberCustomiser = ({ selectedPlan, ...rest }: IPsNumberCustomiserProps) => {
-    const isIpAddonDowngradeEnabled = useFlag('IpAddonDowngrade');
-
     const planName = selectedPlan.getPlanName();
 
     const { label, tooltip } = useMemo(() => {
@@ -38,9 +35,7 @@ export const IPsNumberCustomiser = ({ selectedPlan, ...rest }: IPsNumberCustomis
     return (
         <div>
             <NumberCustomiser label={label} tooltip={tooltip} {...rest} />
-            {isIpAddonDowngradeEnabled && (
-                <Href href={getKnowledgeBaseUrl('/add-vpn-servers-organization')}>{c('Link').t`Learn more`}</Href>
-            )}
+            <Href href={getKnowledgeBaseUrl('/add-vpn-servers-organization')}>{c('Link').t`Learn more`}</Href>
         </div>
     );
 };
