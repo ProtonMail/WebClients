@@ -1,24 +1,23 @@
-import type { Participant } from 'livekit-client';
-
 import { CircleLoader } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
-import { useMeetContext } from '../../contexts/MeetContext';
-import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 
 import './ParticipantPlaceholder.scss';
 
 interface ParticipantPlaceholderProps {
-    participant: Participant;
+    participantName?: string;
     smallView?: boolean;
+    backgroundColor?: string;
+    profileColor?: string;
 }
 
-export const ParticipantPlaceholder = ({ participant, smallView = false }: ParticipantPlaceholderProps) => {
-    const { backgroundColor, profileColor } = getParticipantDisplayColors(participant);
-
-    const { participantNameMap } = useMeetContext();
-
+export const ParticipantPlaceholder = ({
+    participantName,
+    smallView = false,
+    backgroundColor,
+    profileColor,
+}: ParticipantPlaceholderProps) => {
     return (
         <div
             className={clsx(
@@ -39,15 +38,14 @@ export const ParticipantPlaceholder = ({ participant, smallView = false }: Parti
                     '--h-custom': smallView ? '4rem' : '5rem',
                 }}
             >
-                {participantNameMap[participant.identity] ? (
-                    getParticipantInitials(participantNameMap[participant.identity])
+                {participantName ? (
+                    getParticipantInitials(participantName)
                 ) : (
                     <CircleLoader
                         className="color-primary w-custom h-custom"
                         style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
                     />
                 )}
-                {}
             </div>
         </div>
     );

@@ -37,6 +37,14 @@
 	}
 }
 
+.circle-button-transparent {
+	--circle-button-bg: transparent;
+
+	&:hover {
+		--circle-button-bg: color-mix(in srgb, var(--background-invert), transparent 76%) !important;
+	}
+}
+
 .indicator-warning {
 	background: var(--signal-warning-major-1);
 	color: var(--text-norm);
@@ -50,4 +58,9 @@
 .indicator-success {
 	background: var(--signal-success);
 	color: var(--text-invert);
+}
+
+.indicator-danger {
+	background: var(--signal-danger-major-3);
+	color: var(--text-norm);
 }

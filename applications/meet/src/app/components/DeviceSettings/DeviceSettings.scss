@@ -4,4 +4,9 @@
 		linear-gradient(0deg, var(--background-strong), var(--background-strong));
 	box-shadow: 0 0.5rem 2.5rem 0 #00000029;
 	border-radius: 2rem;
+	font-weight: 500;
+}
+
+.white-border {
+	border-color: color-mix(in srgb, var(--background-invert), transparent 76%) !important;
 }

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 import { useLocalParticipant } from '@livekit/components-react';
 import type { RemoteParticipant, RemoteTrackPublication } from 'livekit-client';
@@ -11,46 +11,11 @@ const increasedVideoQuality = process.env.LIVEKIT_INCREASED_VIDEO_QUALITY === 't
 
 export const usePublicationQualityControls = () => {
     const { sortedParticipants, pagedParticipants } = useSortedParticipants();
-    const { quality } = useMeetContext();
+    const { quality, participantsWithDisabledVideos, disableVideos } = useMeetContext();
     const { localParticipant } = useLocalParticipant();
 
-    const prevSortedParticipants = useRef(sortedParticipants);
-    const prevPagedParticipants = useRef(pagedParticipants);
-
-    const compareParticipants = () => {
-        let hasChanged = false;
-
-        if (prevSortedParticipants.current.length !== sortedParticipants.length) {
-            hasChanged = true;
-        }
-
-        if (prevPagedParticipants.current.length !== pagedParticipants.length) {
-            hasChanged = true;
-        }
-
-        if (
-            prevSortedParticipants.current.some((participant, index) => {
-                return participant.identity !== sortedParticipants[index]?.identity;
-            })
-        ) {
-            hasChanged = true;
-        }
-
-        if (
-            prevPagedParticipants.current.some((participant, index) => {
-                return participant.identity !== pagedParticipants[index]?.identity;
-            })
-        ) {
-            hasChanged = true;
-        }
-
-        prevSortedParticipants.current = sortedParticipants;
-        prevPagedParticipants.current = pagedParticipants;
-
-        return hasChanged;
-    };
-
-    const hasParticipantsChanged = compareParticipants();
+    const sortedParticipantIdentities = sortedParticipants.map((participant) => participant.identity).join(',');
+    const pagedParticipantIdentities = pagedParticipants.map((participant) => participant.identity).join(',');
 
     useEffect(() => {
         sortedParticipants.forEach((participant) => {
@@ -60,6 +25,11 @@ export const usePublicationQualityControls = () => {
 
             Array.from((participant as RemoteParticipant).trackPublications.values()).forEach(
                 (publication: RemoteTrackPublication) => {
+                    if (disableVideos || participantsWithDisabledVideos.includes(participant.identity)) {
+                        publication.setEnabled(false);
+                        return;
+                    }
+
                     if (
                         publication.kind === Track.Kind.Video &&
                         publication.source !== Track.Source.ScreenShare &&
@@ -72,21 +42,23 @@ export const usePublicationQualityControls = () => {
                                 publication.setVideoQuality(quality);
                             }
 
-                            if (!publication.isSubscribed) {
-                                publication.setSubscribed(true);
-                            }
+                            publication.setEnabled(true);
                         } else {
                             if (increasedVideoQuality) {
                                 publication.setVideoQuality(VideoQuality.LOW);
                             }
 
-                            if (publication.isSubscribed) {
-                                publication.setSubscribed(false);
-                            }
+                            publication.setEnabled(false);
                         }
                     }
                 }
             );
         });
-    }, [hasParticipantsChanged, quality]);
+    }, [
+        sortedParticipantIdentities,
+        pagedParticipantIdentities,
+        quality,
+        disableVideos,
+        participantsWithDisabledVideos,
+    ]);
 };

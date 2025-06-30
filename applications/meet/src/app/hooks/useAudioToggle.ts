@@ -12,15 +12,16 @@ export const useAudioToggle = () => {
 
     const bitrate = audioQualityDetails[quality];
 
-    const toggleAudio = async ({ isEnabled, audioDeviceId }: { isEnabled: boolean; audioDeviceId: string }) => {
-        const audio = isEnabled
-            ? {
-                  deviceId: { exact: audioDeviceId },
-                  autoGainControl: true,
-                  echoCancellation: true,
-                  noiseSuppression: true,
-              }
-            : false;
+    const toggleAudio = async ({ isEnabled, audioDeviceId }: { isEnabled: boolean; audioDeviceId: string | null }) => {
+        const audio =
+            isEnabled && audioDeviceId
+                ? {
+                      deviceId: { exact: audioDeviceId },
+                      autoGainControl: true,
+                      echoCancellation: true,
+                      noiseSuppression: true,
+                  }
+                : false;
 
         const audioTrack = [...localParticipant.trackPublications.values()].find(
             (item) => item.kind === Track.Kind.Audio && item.source === Track.Source.Microphone

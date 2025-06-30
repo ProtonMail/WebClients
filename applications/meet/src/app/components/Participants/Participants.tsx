@@ -27,7 +27,7 @@ export const Participants = () => {
 
     const activeSpeakers = useDebouncedActiveSpeakers();
 
-    const { sideBarState } = useMeetContext();
+    const { sideBarState, participantsWithDisabledVideos, setParticipantsWithDisabledVideos } = useMeetContext();
 
     const { participantNameMap } = useMeetContext();
 
@@ -116,7 +116,39 @@ export const Participants = () => {
                                     <>{isMuted ? <IcMeetMicrophoneOff /> : <IcMeetMicrophone />}</>
                                 )}
 
-                                {!!videoPub && !videoPub.isMuted ? <IcMeetCamera /> : <IcMeetCameraOff />}
+                                <Button
+                                    className="p-2 flex items-center justify-center rounded-full"
+                                    shape="ghost"
+                                    size="small"
+                                    onClick={() => {
+                                        if (participant.isLocal) {
+                                            return;
+                                        }
+
+                                        if (participantsWithDisabledVideos.includes(participant.identity)) {
+                                            setParticipantsWithDisabledVideos(
+                                                participantsWithDisabledVideos.filter(
+                                                    (id) => id !== participant.identity
+                                                )
+                                            );
+                                        } else {
+                                            setParticipantsWithDisabledVideos([
+                                                ...participantsWithDisabledVideos,
+                                                participant.identity,
+                                            ]);
+                                        }
+                                    }}
+                                    aria-label={c('l10n_nightly Action').t`Enable video`}
+                                    aria-pressed={videoPub?.isEnabled}
+                                >
+                                    {!!videoPub &&
+                                    !videoPub.isMuted &&
+                                    !participantsWithDisabledVideos.includes(participant.identity) ? (
+                                        <IcMeetCamera />
+                                    ) : (
+                                        <IcMeetCameraOff />
+                                    )}
+                                </Button>
                             </div>
                         </div>
                     );

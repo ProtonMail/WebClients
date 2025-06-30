@@ -6,9 +6,10 @@ import type { IconSize } from '@proton/icons';
 import { IcMeetCamera, IcMeetCameraOff, IcMeetMicrophoneOff } from '@proton/icons';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
-import { useMediaPermissionsStatus } from '../../hooks/useMediaPermissionStatus';
+import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsContext';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
 import { MicrophoneWithVolume } from '../MicrophoneWithVolume';
+import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
 import { VideoPreview } from '../VideoPreview/VideoPreview';
 
 import './DeviceSettings.scss';
@@ -54,7 +55,9 @@ export const DeviceSettings = ({
     onMicrophoneChange,
     displayName,
 }: DeviceSettingsProps) => {
-    const { camera, microphone } = useMediaPermissionsStatus();
+    const {
+        devicePermissions: { camera, microphone },
+    } = useDevicePermissionsContext();
 
     const noCameraPermission = camera !== 'granted';
     const noMicrophonePermission = microphone !== 'granted';
@@ -71,22 +74,28 @@ export const DeviceSettings = ({
             >
                 {displayName && (
                     <div
-                        className="absolute left-custom bottom-custom"
+                        className="absolute left-custom bottom-custom z-up"
                         style={{ '--left-custom': '1.5rem', '--bottom-custom': '2rem' }}
                     >
                         {displayName}
                     </div>
                 )}
-                <VideoPreview
-                    selectedCameraId={selectedCameraId}
-                    isCameraEnabled={isCameraEnabled}
-                    hasCameraPermission={!noCameraPermission}
-                />
+                {isCameraEnabled ? (
+                    <VideoPreview selectedCameraId={selectedCameraId} />
+                ) : (
+                    <ParticipantPlaceholder
+                        participantName={displayName}
+                        backgroundColor="meet-background-1"
+                        profileColor="profile-background-1"
+                    />
+                )}
+
                 <div
-                    className="flex flex-nowrap w-full justify-center gap-2 absolute bottom-custom"
+                    className="flex flex-nowrap w-full justify-center gap-2 absolute bottom-custom z-up"
                     style={{ '--bottom-custom': '1.5rem' }}
                 >
                     <CircleButton
+                        className="border white-border"
                         onClick={noMicrophonePermission ? undefined : onMicrophoneToggle}
                         IconComponent={
                             isMicrophoneEnabled
@@ -98,17 +107,20 @@ export const DeviceSettings = ({
                                   )
                                 : IcMeetMicrophoneOff
                         }
-                        variant={isMicrophoneEnabled ? 'default' : 'danger'}
+                        variant={'transparent'}
                         indicatorContent={noMicrophonePermission ? '!' : undefined}
-                        indicatorStatus={noMicrophonePermission ? 'warning' : 'default'}
+                        indicatorStatus={noMicrophonePermission ? 'danger' : 'default'}
+                        noBorder={false}
                     />
 
                     <CircleButton
+                        className="border white-border"
                         onClick={noCameraPermission ? undefined : onCameraToggle}
                         IconComponent={isCameraEnabled ? IcMeetCamera : IcMeetCameraOff}
-                        variant={isCameraEnabled ? 'default' : 'danger'}
+                        variant={'transparent'}
                         indicatorContent={noCameraPermission ? '!' : undefined}
-                        indicatorStatus={noCameraPermission ? 'warning' : 'default'}
+                        indicatorStatus={noCameraPermission ? 'danger' : 'default'}
+                        noBorder={false}
                     />
                 </div>
             </div>

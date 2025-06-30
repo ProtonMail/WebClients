@@ -78,3 +78,7 @@ $profile-colors:
 		border: 2px solid nth($profile-colors, $i);
 	}
 }
+
+.gradient-overlay {
+	background-image: linear-gradient(180deg, rgb(0 0 0 / 0) 52.27%, rgb(0 0 0 / 0.6) 100%);
+}

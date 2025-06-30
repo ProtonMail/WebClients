@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react';
 
-import { useRequestPermissions } from './useRequestPermissions';
+import { useDevicePermissionsContext } from '../contexts/DevicePermissionsContext';
 
 const getDevices = async (kind: MediaDeviceKind) => {
-    const devices = await navigator.mediaDevices.enumerateDevices();
-    return devices.filter((d) => d.kind === kind);
+    try {
+        const devices = await navigator.mediaDevices.enumerateDevices();
+        return devices.filter((d) => d.kind === kind);
+    } catch (err) {
+        console.log(err);
+
+        return [];
+    }
 };
 
 export const useDevices = () => {
@@ -12,7 +18,7 @@ export const useDevices = () => {
     const [microphones, setMicrophones] = useState<MediaDeviceInfo[]>([]);
     const [speakers, setSpeakers] = useState<MediaDeviceInfo[]>([]);
 
-    const requestPermissions = useRequestPermissions();
+    const { devicePermissions } = useDevicePermissionsContext();
 
     const updateAllDevices = async () => {
         setCameras(await getDevices('videoinput'));
@@ -20,46 +26,16 @@ export const useDevices = () => {
         setSpeakers(await getDevices('audiooutput'));
     };
 
-    const setup = async () => {
-        await requestPermissions();
-        await updateAllDevices();
-    };
+    useEffect(() => {
+        void updateAllDevices();
+    }, [devicePermissions]);
 
     useEffect(() => {
-        void setup();
-    }, []);
-
-    useEffect(() => {
-        let cameraPerm: PermissionStatus | null = null;
-        let micPerm: PermissionStatus | null = null;
-
         navigator.mediaDevices.addEventListener('devicechange', updateAllDevices);
-
-        async function setupPermissions() {
-            if (navigator.permissions) {
-                try {
-                    cameraPerm = await navigator.permissions.query({ name: 'camera' as PermissionName });
-                    micPerm = await navigator.permissions.query({ name: 'microphone' as PermissionName });
-                    cameraPerm.onchange = updateAllDevices;
-                    micPerm.onchange = updateAllDevices;
-                } catch (e) {
-                    console.error(e);
-                }
-            }
-        }
-
-        void setupPermissions();
 
         return () => {
             if (navigator.mediaDevices && navigator.mediaDevices.removeEventListener) {
                 navigator.mediaDevices.removeEventListener('devicechange', updateAllDevices);
-            }
-
-            if (cameraPerm) {
-                cameraPerm.onchange = null;
-            }
-            if (micPerm) {
-                micPerm.onchange = null;
             }
         };
     }, []);

@@ -8,10 +8,12 @@ import { useCurrentScreenShare } from '../../hooks/useCurrentScreenShare';
 import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails } from '../MeetingDetails/MeetingDetails';
+import { NoPermissionInfo } from '../NoPermissionInfo/NoPermissionInfo';
 import { ParticipantControls } from '../ParticipantControls/ParticipantControls';
 import { ParticipantGrid } from '../ParticipantGrid';
 import { ParticipantSidebar } from '../ParticipantSidebar/ParticipantSidebar';
 import { Participants } from '../Participants/Participants';
+import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
 import { ScreenShareHeading } from '../ScreenShareHeading/ScreenShareHeading';
 import { Settings } from '../Settings/Settings';
 import { ToastMessages } from '../ToastMessages/ToastMessages';
@@ -84,6 +86,8 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
             <ParticipantControls />
             <RoomAudioRenderer />
             <ToastMessages />
+            <NoPermissionInfo />
+            <PermissionRequest />
         </div>
     );
 };

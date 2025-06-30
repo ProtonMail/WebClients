@@ -16,3 +16,19 @@
 		box-shadow: 0 0 0 0.065rem var(--interaction-norm) !important;
 	}
 }
+
+.join-button {
+	&:hover {
+		color: var(--text-invert) !important;
+	}
+}
+
+.copy-button {
+	background-color: var(--interaction-norm-minor-3);
+	color: var(--interaction-norm);
+
+	&:hover {
+		background-color: var(--interaction-norm-minor-2);
+		color: var(--interaction-norm);
+	}
+}

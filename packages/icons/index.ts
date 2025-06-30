@@ -274,6 +274,7 @@ export type IconName =
     | 'meet-settings'
     | 'meet-shield'
     | 'meet-speaker'
+    | 'meet-speaker-alt'
     | 'meet-participants'
     | 'meet-record'
     | 'meet-user'
@@ -706,6 +707,7 @@ export { IcMeetScreenShare } from './icons/IcMeetScreenShare';
 export { IcMeetSettings } from './icons/IcMeetSettings';
 export { IcMeetShield } from './icons/IcMeetShield';
 export { IcMeetSpeaker } from './icons/IcMeetSpeaker';
+export { IcMeetSpeakerAlt } from './icons/IcMeetSpeakerAlt';
 export { IcMeetParticipants } from './icons/IcMeetParticipants';
 export { IcMeetRecord } from './icons/IcMeetRecord';
 export { IcMeetUser } from './icons/IcMeetUser';
