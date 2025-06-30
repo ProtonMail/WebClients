@@ -5,7 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import { useGetElementsFromIDs } from '../../../../hooks/mailbox/useElements';
-import { SOURCE_ACTION } from '../../useListTelemetry';
+import { SOURCE_ACTION } from '../../list-telemetry/useListTelemetry';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';
 import { type SNOOZE_DURATION } from '../constant';

@@ -133,8 +133,8 @@ jest.mock('@proton/account/securityCheckup/listener', () => ({
     securityCheckupListener: jest.fn().mockReturnValue({}),
 }));
 
-jest.mock('proton-mail/components/list/useListTelemetry.tsx', () => ({
-    ...jest.requireActual('proton-mail/components/list/useListTelemetry.tsx'),
+jest.mock('proton-mail/components/list/list-telemetry/useListTelemetry.tsx', () => ({
+    ...jest.requireActual('proton-mail/components/list/list-telemetry/useListTelemetry.tsx'),
     __esModule: true,
     folderLocation: () => {
         return 'INBOX';
