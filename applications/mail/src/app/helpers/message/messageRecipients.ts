@@ -151,7 +151,7 @@ export const getNumParticipants = (element: Element) => {
     let recipients: Recipient[];
 
     if (isMessage(element)) {
-        const { ToList = [], CCList = [], BCCList = [], Sender = {} } = element as Message;
+        const { ToList = [], CCList = [], BCCList = [], Sender = {} } = element;
         recipients = [...ToList, ...CCList, ...BCCList, Sender as Recipient];
     } else {
         const { Senders = [], Recipients = [] } = element as Conversation;
