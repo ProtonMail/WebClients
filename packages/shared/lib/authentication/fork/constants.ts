@@ -21,6 +21,7 @@ export const ForkableApps = new Set(
         APPS.PROTONVPNBROWSEREXTENSION,
         APPS.PROTONWALLET,
         APPS.PROTONLUMO,
+        APPS.PROTONAUTHENTICATOR,
     ].filter(Boolean)
 );
 
