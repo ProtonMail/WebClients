@@ -55,6 +55,7 @@ export const SERVICES: { [key: string]: APP_NAMES } = {
     docs: APPS.PROTONDOCS,
     wallet: APPS.PROTONWALLET,
     lumo: APPS.PROTONLUMO,
+    authenticator: APPS.PROTONAUTHENTICATOR,
 };
 
 export interface SessionData {
