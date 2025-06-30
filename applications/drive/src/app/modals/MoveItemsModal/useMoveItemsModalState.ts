@@ -62,7 +62,7 @@ export const useMoveItemsModalState = ({
                     }
                 }
             } catch (e) {
-                handleError(e as Error, c('Error').t`Failed to move items`, { itemsUId, targetId });
+                handleError(e, c('Error').t`Failed to move items`, { itemsUId, targetId });
             }
         }
 
@@ -100,7 +100,7 @@ export const useMoveItemsModalState = ({
             const { volumeId } = internal.splitNodeUid(targetFolderUid);
             await events.pollEvents.volumes(volumeId);
         } catch (e) {
-            handleError(e as Error, c('Error').t`Failed to move items`, { itemsUId, targetFolderUid });
+            handleError(e, c('Error').t`Failed to move items`, { itemsUId, targetFolderUid });
         }
     };
 
