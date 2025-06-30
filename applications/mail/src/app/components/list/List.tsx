@@ -36,9 +36,9 @@ import ListBanners from './MailboxListBanners';
 import ListPagination from './MailboxListPagination';
 import { ResizeHandle } from './ResizeHandle';
 import SkeletonItem from './SkeletonItem';
+import type { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 import useEncryptedSearchList from './useEncryptedSearchList';
 import { useItemContextMenu } from './useItemContextMenu';
-import type { SOURCE_ACTION } from './useListTelemetry';
 
 import './delight/DelightList.scss';
 

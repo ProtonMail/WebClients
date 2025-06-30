@@ -11,7 +11,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../store/elements/elementsSelectors';
-import { SOURCE_ACTION } from './useListTelemetry';
+import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface Props {
     checkedIDs: string[];

@@ -6,12 +6,12 @@ import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useFlag } from '@proton/unleash';
 
-import SelectAllMarkModal from 'proton-mail/components/list/select-all/modals/SelectAllMarkModal';
 import useListTelemetry, {
     ACTION_TYPE,
     SELECTED_RANGE,
     type SOURCE_ACTION,
-} from 'proton-mail/components/list/useListTelemetry';
+} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import SelectAllMarkModal from 'proton-mail/components/list/select-all/modals/SelectAllMarkModal';
 import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/helpers/moveToFolder';
 import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
 import { useOptimisticMarkAs } from 'proton-mail/hooks/optimistic/useOptimisticMarkAs';

@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 import MailboxList from 'proton-mail/components/list/MailboxList';
 import ResizableWrapper from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
-import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { ROUTE_ELEMENT } from 'proton-mail/constants';
 import MailboxContainerPlaceholder from 'proton-mail/containers/mailbox/MailboxContainerPlaceholder';
 import { useMailCommander } from 'proton-mail/hooks/commander/useMailCommander';

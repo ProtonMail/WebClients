@@ -7,7 +7,7 @@ import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import useBlockSender from '../../hooks/useBlockSender';
 import type { Element } from '../../models/element';
 import ItemContextMenu from './ItemContextMenu';
-import type { SOURCE_ACTION } from './useListTelemetry';
+import type { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface Props {
     elementID?: string;

@@ -4,13 +4,13 @@ import { useCallback } from 'react';
 import { useFolders, useLabels } from '@proton/mail';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { folderLocation } from 'proton-mail/components/list/list-telemetry/listTelemetryHelper';
 import useListTelemetry, {
     ACTION_TYPE,
     type SOURCE_ACTION,
-    folderLocation,
     getActionFromLabel,
     numberSelectionElements,
-} from 'proton-mail/components/list/useListTelemetry';
+} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useMoveSelectionToFolder } from 'proton-mail/hooks/actions/move/useMoveSelectionToFolder';
 

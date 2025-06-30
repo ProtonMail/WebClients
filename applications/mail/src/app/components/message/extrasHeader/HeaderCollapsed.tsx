@@ -16,7 +16,7 @@ import {
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';

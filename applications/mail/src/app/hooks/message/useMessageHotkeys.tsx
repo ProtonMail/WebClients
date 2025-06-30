@@ -15,7 +15,7 @@ import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import {
     MESSAGE_FILTER_DROPDOWN_ID,
     MESSAGE_FOLDER_DROPDOWN_ID,

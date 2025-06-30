@@ -8,7 +8,7 @@ import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import type { Props as ListSettingsProps } from '../list/ListSettings';
-import type { SOURCE_ACTION } from '../list/useListTelemetry';
+import type { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import SelectAll from './SelectAll';
 import ToolbarColumnWide from './ToolbarColumnWide';
 import ToolbarHeaderMessageNarrow from './ToolbarHeaderMessageNarrow';

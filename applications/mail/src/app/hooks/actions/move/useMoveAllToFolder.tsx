@@ -8,15 +8,15 @@ import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 
-import MoveAllModal from 'proton-mail/components/list/select-all/modals/MoveAllModal';
-import SelectAllMoveModal from 'proton-mail/components/list/select-all/modals/SelectAllMoveModal';
+import { folderLocation } from 'proton-mail/components/list/list-telemetry/listTelemetryHelper';
 import useListTelemetry, {
     ACTION_TYPE,
     SELECTED_RANGE,
     type SOURCE_ACTION,
-    folderLocation,
     getActionFromLabel,
-} from 'proton-mail/components/list/useListTelemetry';
+} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import MoveAllModal from 'proton-mail/components/list/select-all/modals/MoveAllModal';
+import SelectAllMoveModal from 'proton-mail/components/list/select-all/modals/SelectAllMoveModal';
 import { isMessage as testIsMessage } from 'proton-mail/helpers/elements';
 import {
     getCleanedFolderID,

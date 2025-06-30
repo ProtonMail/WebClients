@@ -7,7 +7,7 @@ import useListTelemetry, {
     ACTION_TYPE,
     type SOURCE_ACTION,
     numberSelectionElements,
-} from 'proton-mail/components/list/useListTelemetry';
+} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
