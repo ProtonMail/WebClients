@@ -116,7 +116,13 @@ function build_firefox_prod {
         ./*.mjs \
         -x "*/.DS_Store" \
         -x "*/node_modules/*" \
+        -x "test/*" \
         -x "packages/config/*" \
+        -x "packages/drive/*" \
+        -x "packages/drive-store/*" \
+        -x "packages/docs-proto/*" \
+        -x "packages/docs-core/*" \
+        -x "packages/docs-shared/*" \
         -x "packages/raw-images/tests/*" \
         -x "applications/pass-extension/dist/*" \
         -x "applications/pass-extension/*.md" \
