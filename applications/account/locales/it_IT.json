@@ -1575,6 +1575,9 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Create free account now": [
+        "Crea un account gratuito ora"
       ]
     },
     "action": {
@@ -2000,6 +2003,21 @@
       ],
       "Try it free for 14 days": [
         "Provalo gratis per 14 giorni"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze Lumo durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_USERS } utenti durante il periodo di prova."
+      ],
+      "You have reached the trial limit.": [
+        "Hai raggiunto il limite della prova."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -5748,6 +5766,9 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ],
+      "Permissions request failed.": [
+        "Richiesta di autorizzazioni non riuscita."
       ]
     },
     "error": {
@@ -10754,6 +10775,15 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "Dedicated VPN servers": [
+        "Server VPN dedicati"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Numero di server VPN dedicati nell'organizzazione"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Perderai anche l'accesso alle funzionalità di ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -12779,7 +12809,7 @@
         "Termini"
       ],
       "Trouble signing in?": [
-        "Problemi ad accedere?"
+        "Altre opzioni di accesso"
       ],
       "Types of recovery methods": [
         "Tipi di metodi di recupero"
@@ -17501,6 +17531,44 @@
       ],
       "Your plan": [
         "Il tuo piano"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "Alias hide-my-email di ${ FREE_PASS_ALIASES } per combattere lo spam"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } indirizzo",
+        "${ maxAddresses } indirizzi"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } calendario",
+        "${ maxCalendars } calendari"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } di archiviazione cloud per i tuoi file e foto"
+      ],
+      "Collaborative document editing": [
+        "Modifica collaborativa di documenti"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Email crittografata con ${ totalMailStorageSize } di spazio di archiviazione"
+      ],
+      "Every free account comes with:": [
+        "Ogni account gratuito include:"
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Ottienine uno sicuro da noi oppure ${ internalButton }"
+      ],
+      "Password manager for all your devices": [
+        "Gestore di password per tutti i tuoi dispositivi"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Registrati per scoprire tutto ciò che ${ BRAND_NAME } ha da offrire"
+      ],
+      "use your current email.": [
+        "usa la tua email attuale."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN con server in ${ vpnServersCountData.free.countries } paesi"
       ]
     },
     "Signup label": {
@@ -17524,6 +17592,9 @@
       ],
       "Username": [
         "Nome utente"
+      ],
+      "${ BRAND_NAME } password": [
+        "Password di ${ BRAND_NAME }"
       ]
     },
     "Signup step": {
@@ -19035,6 +19106,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Riceverai il tuo nome utente via SMS entro un minuto se hai inserito un numero di telefono di recupero valido."
+      ],
+      "Address successfully added": [
+        "Indirizzo aggiunto"
       ]
     },
     "Success message": {
@@ -20786,6 +20860,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Sei stato invitato a provare ${ MAIL_APP_NAME }"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Connetti più indirizzi Gmail con ${ planName }"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Più account, 1 casella di posta privata"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22198,6 +22278,21 @@
       ],
       "Yearly, ${ untilString }": [
         "Ogni anno, ${ untilString }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abbonamento annullato."
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Per inoltrare email da un massimo di ${ MAX_SYNC_PAID_USER } account, effettua l’upgrade a ${ planName }.",
+        "Per inoltrare email da un massimo di ${ MAX_SYNC_PAID_USER } account, effettua l\"upgrade a ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Stai inoltrando email da ${ MAX_SYNC_FREE_USER } account esterno a ${ MAIL_APP_NAME }.",
+        "Stai inoltrando email da ${ MAX_SYNC_FREE_USER } account esterni a ${ MAIL_APP_NAME }."
       ]
     }
   }

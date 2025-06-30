@@ -1566,6 +1566,18 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Create free account now": [
+        "შექმენით უფასო ანგარიში ახლავე"
+      ],
+      "Delete logs": [
+        "ჟურნალის წაშლა"
+      ],
+      "Deleting folder": [
+        "საქაღალდის წაშლა"
+      ],
+      "Deleting label": [
+        "ჭდის წაშლა"
       ]
     },
     "action": {
@@ -1845,6 +1857,9 @@
       ],
       "years": [
         "წელი"
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "დაზოგეთ ბევრი VPN-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
       ]
     },
     "anniversary_2025: offer": {
@@ -4171,6 +4186,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "შეგიძლიათ, შემოიტანოთ ფაილები iCAL ფორმატში (ICS ფაილები). ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება შეიცავდეს ${ MAX_IMPORT_EVENTS_STRING }-მდე მოვლენას. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ."
+      ],
+      "Enable detailed events to access these features": [
+        "ამ ფუნქციებთან წვდომისთვის ჩართეთ დეტალური მოვლენები"
       ]
     },
     "description": {
@@ -5610,6 +5628,9 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ],
+      "Permissions request failed.": [
+        "წვდომების მოთხოვნა ჩავარდა."
       ]
     },
     "error": {
@@ -10503,6 +10524,15 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "გამოყოფილი VPN სერვერების რაოდენობა ორგანიზაციაში"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
       ]
     },
     "info": {
@@ -15560,6 +15590,9 @@
       ],
       "New credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათი"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -17147,6 +17180,41 @@
       ],
       "Your plan": [
         "თქვენი გეგმა"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email სპამთან საბრძოლველად"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } მისამართი",
+        "${ maxAddresses } მისამართი"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } კალენდარი",
+        "${ maxCalendars } კალენდარი"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } ღრუბლოვანი საცავი ფაილებისა და სურათებისთვის"
+      ],
+      "Collaborative document editing": [
+        "კოლაბორაციული დოკუმენტის ჩასწორება"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "დაშიფრული ელფოსტა ${ totalMailStorageSize } საცავით"
+      ],
+      "Every free account comes with:": [
+        "ყოველ უფასო ანგარიშს მოჰყვება ფუნქციები:"
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "მიიღეთ დაცული ჩვენგან, ან ${ internalButton }"
+      ],
+      "Password manager for all your devices": [
+        "პაროლების მმართველი ყველა თქვენი მოწყობილობისთვის"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "დარეგისტრირდით, რომ მიიღოთ ყველაფერი, რისი შემოთავაზებაც ${ BRAND_NAME }-ს შეუძლია"
+      ],
+      "use your current email.": [
+        "გამოიყენეთ თქვენი მიმდინარე ელფოსტა."
       ]
     },
     "Signup label": {
@@ -17170,6 +17238,9 @@
       ],
       "Username": [
         "მომხმარებლის სახელი"
+      ],
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME }-ის პაროლი"
       ]
     },
     "Signup step": {
@@ -17471,6 +17542,24 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "ასწიეთ სატარიფო გეგმა დაზოგეთ მეტი 2 წლით ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "იქონიეთ წვდომა სტრიმინგის სერვისებთან მთელ მსოფლიოში"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "მიიღეთ 500გბ და შეინახეთ დაცულად ყველა თქვენი ფაილი და სურათი"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "მიიღეთ წვდომა უსწრაფეს VPN სერვერებთან 110+ ქვეყანაში"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "მიიღეთ შეუზღუდავი ფსევდონიმები, რომ დაიცვათ თავი და შეამციროთ სპამის რაოდენობა"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "იქონიეთ თქვენი პაროლები უსაფრთხოდ და დალაგებულად მრავალ საცავში "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "დაიცავით თქვენი ანგარიში საშიშროებებისგან Sentinel-თან ერთად"
       ]
     },
     "specialoffer: Tooltip": {
@@ -18639,6 +18728,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "თუ ტელეფონის ნომერი სწორია, რამდენიმე წუთში თქვენ მიიღებთ SMS-ს თქვენი მომხმარებლის სახელით."
+      ],
+      "Address successfully added": [
+        "მისამართი წარმატებით დაემატა"
       ]
     },
     "Success message": {
@@ -20390,6 +20482,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "თქვენ მიგიწვიეს, სცადოთ ${ MAIL_APP_NAME }"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "დაუკავშირდით მეტ Gmail-ის მისამართს ${ planName }-თან ერთად"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "ერთზე მეტი ანგარიში, 1 პირადი საფოსტო ყუთი"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -21785,6 +21883,60 @@
       ],
       "Yearly, ${ untilString }": [
         "ყოველწლიურად, ${ untilString }-მდე"
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "გადახდის დეტალები"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "During the trial period, you can have up to 10 users.": [
+        "გამოსაცდელ პერიოდში შეგიძლიათ, გქონდეთ 10-მდე მომხმარებელი."
+      ],
+      "free for 14 days": [
+        "უფასო 14 დღით"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "სცადეთ ${ selected } ${ freeFor14Days }"
+      ],
+      "Try it free for 14 days": [
+        "მოსინჯეთ 14 დღე უფასოდ"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "გამოსაცდელი პერიოდის მიმდინარეობისას თქვენს დომენებს ვერ დაამატებთ."
+      ],
+      "You have reached the trial limit.": [
+        "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "გადასახდელი თანხა გამოსაცდელი პერიოდის შემდეგ"
+      ],
+      "Amount due now": [
+        "ახლა გადასახდელი თანხა"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "გამოწერა გაუქმდა."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "საბანკო გადარიცხვა - ${ details }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "${ appName }-ში გახსნა"
       ]
     }
   }

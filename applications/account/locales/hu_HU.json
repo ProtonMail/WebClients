@@ -17411,6 +17411,14 @@
       ],
       "Your plan": [
         "Az ön csomagja"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } cím",
+        "${ maxAddresses } cím"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } naptár",
+        "${ maxCalendars } naptár"
       ]
     },
     "Signup label": {
@@ -22094,6 +22102,12 @@
       ],
       "Yearly, ${ untilString }": [
         "Évente, ${ untilString }"
+      ]
+    },
+    "Easy switch": {
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "E-maileket továbbít ${ MAX_SYNC_FREE_USER } külső fiókból a ${ MAIL_APP_NAME } szolgáltatásba.",
+        "E-maileket továbbít ${ MAX_SYNC_FREE_USER } külső fiókból a ${ MAIL_APP_NAME } szolgáltatásba."
       ]
     }
   }

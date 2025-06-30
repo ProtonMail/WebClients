@@ -1575,6 +1575,9 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Create free account now": [
+        "Opprett gratis konto nå"
       ]
     },
     "action": {
@@ -5716,6 +5719,9 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Permissions request failed.": [
+        "Forespørsel om tillatelser mislyktes."
       ]
     },
     "error": {
@@ -10722,6 +10728,15 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-tjenere"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antall dedikerte VPN-tjenere i organisasjonen"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
       ]
     },
     "info": {
@@ -17461,6 +17476,44 @@
       ],
       "Your plan": [
         "Planen din"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email-aliaser for å bekjempe søppelpost"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } adresse",
+        "${ maxAddresses } adresser"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } kalender",
+        "${ maxCalendars } kalendere"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } skylagring for filer og bilder"
+      ],
+      "Collaborative document editing": [
+        "Samarbeidende dokumentredigering"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Kryptert e-post med ${ totalMailStorageSize } lagring"
+      ],
+      "Every free account comes with:": [
+        "Hver gratis konto inkluderer:"
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Skaff deg en sikker en fra oss, eller ${ internalButton }"
+      ],
+      "Password manager for all your devices": [
+        "Passordbehandler for alle dine enheter"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Meld deg på for å få alt ${ BRAND_NAME } har å tilby"
+      ],
+      "use your current email.": [
+        "bruk din nåværende e-post."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN med tjenere i ${ vpnServersCountData.free.countries } land"
       ]
     },
     "Signup label": {
@@ -17484,6 +17537,9 @@
       ],
       "Username": [
         "Brukernavn"
+      ],
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME }-passord"
       ]
     },
     "Signup step": {
@@ -18995,6 +19051,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du vil motta brukernavnet ditt via SMS innen et minutt hvis du har oppgitt et gyldig telefonnummer for gjenoppretting."
+      ],
+      "Address successfully added": [
+        "Adressen ble lagt til"
       ]
     },
     "Success message": {
@@ -20743,6 +20802,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du er blitt invitert til å forsøke ${ MAIL_APP_NAME }"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Koble til flere Gmail-adresser med ${ planName }"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flere kontoer, 1 privat innboks"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22170,6 +22235,86 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Betalingsinformasjon"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveversjonen avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk hver ${ cycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveversjonen avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk månedlig ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Ved å klikke på \"Prøv\", sier du deg enig med våre ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "I prøveversjonsperioden kan du ha opptil 10 brukere."
+      ],
+      "free for 14 days": [
+        "gratis i 14 dager"
+      ],
+      "on ${ formattedDate }": [
+        "på ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Prøv ${ selected } ${ freeFor14Days }"
+      ],
+      "Try it free for 14 days": [
+        "Prøv gratis i 14 dager"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Når du avbryter, vil din gratis prøveversjon ikke bli konvertert til et betalt abonnement, men du kan fortsatt dra nytte av planfordeler til slutten av prøveperioden. Etter det blir du nedgradert til ${ BRAND_NAME } Free-planen."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveversjonsperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } Lumo-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveversjonsperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan ikke legge til egendefinerte domener i prøveversjonsperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nådd prøveversjonsgrensen."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Beløp som forfaller etter prøvetiden"
+      ],
+      "Amount due now": [
+        "Beløp å betale nå"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonnement kansellert."
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } konto, oppgrader til ${ planName }.",
+        "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } kontoer, oppgrader til ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
+        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } eksterne kontoer til ${ MAIL_APP_NAME }."
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Åpne i ${ appName }"
       ]
     }
   }

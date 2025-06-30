@@ -1566,6 +1566,18 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Create free account now": [
+        "Creați acum un cont gratuit"
+      ],
+      "Delete logs": [
+        "Ștergere jurnale"
+      ],
+      "Deleting folder": [
+        "Ștergerea folderului"
+      ],
+      "Deleting label": [
+        "Ștergerea etichetei"
       ]
     },
     "action": {
@@ -5273,7 +5285,7 @@
         "Expirat."
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        "Nu s-a reușit obținerea unei sesiuni active. Vă rugăm să ${ refresh } sau încercați mai târziu."
+        "Nu s-a reușit obținerea unei sesiuni active. Încercați să ${ refresh } sau încercați mai târziu."
       ],
       "Failed to load OAuth modal.": [
         "Eșuare încărcare panou modal OAuth."
@@ -5733,6 +5745,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Permissions request failed.": [
+        "Solicitarea de permisiuni a eșuat."
       ]
     },
     "error": {
@@ -8754,7 +8769,7 @@
         "Dacă v-ați conectat în altă parte, puteți să ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
+        "Dacă credeți că acest lucru este o eroare, contactați-ne la ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Dacă anulați, abonamentul la ${ planTitle } nu va fi reînnoit când va expira la ${ expiryDate }."
@@ -9389,7 +9404,7 @@
         "Verificați fișierul sau încercați să folosiți ${ csvTemplateButton }."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "Vă rugăm să introduceți fraza de recuperare de 12 cuvinte asociată acestui cont."
+        "Introduceți fraza de recuperare de 12 cuvinte asociată acestui cont."
       ],
       "Please fill in all required fields.": [
         "Completați toate câmpurile obligatorii."
@@ -9398,7 +9413,7 @@
         "Trebuie să completați acest câmp."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Vă rugăm să o păstrați în siguranță. Veți avea nevoie de ea pentru a vă accesa contul și pentru a vă decripta datele în cazul unei resetări a parolei."
+        "Trebuie să o păstrați în siguranță. Veți avea nevoie de ea pentru a vă accesa contul și pentru a vă decripta datele în cazul unei resetări a parolei."
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Dacă ștergeți filtrul ${ nameDeleted } se va opri procesarea tuturor acțiunilor automate pe care le declanșează."
@@ -9790,7 +9805,7 @@
         "TechRadar Pro l-a recomandat cu o evaluare de 4,2 din 5 stele"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
+        "Temporar indisponibil. Reveniți mai târziu."
       ],
       "Test link": [
         "Testare legătură web"
@@ -10697,10 +10712,10 @@
         "Contul ${ BRAND_NAME } este asociat cu ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, trebuie să plătiți toate facturile restante."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, trebuie să plătiți toate facturile restante."
       ],
       "Your ${ BRAND_NAME } password": [
         "Parola ${ BRAND_NAME }"
@@ -10830,6 +10845,15 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Dedicated VPN servers": [
+        "Servere VPN dedicate"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Număr de servere VPN dedicate din organizație"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -11361,7 +11385,7 @@
         "${ UsedAddresses } din ${ MaxAddresses } de adrese de e-mail"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
+        "(Temporar indisponibil. Reveniți mai târziu.)"
       ],
       "1 hour": [
         "o oră"
@@ -15810,7 +15834,7 @@
         "Reducerea de ${ discount }% de Vinerea Neagră a fost aplicată."
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
-        "Organizația are acces la ${ free }. Dacă doriți să accesați funcțiile premium ale ${ appName }, vă rugăm să solicitați administratorului organizației să modifice contul."
+        "Organizația are acces la ${ free }. Dacă doriți să accesați funcțiile premium ale ${ appName }, trebuie să solicitați administratorului organizației să modifice contul."
       ]
     },
     "pass_signup_2023: Title": {
@@ -16004,6 +16028,9 @@
       ],
       "New credit/debit card": [
         "Card nou de credit/debit"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -17634,6 +17661,46 @@
       ],
       "Your plan": [
         "Planul actual"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } de aliasuri „hide-my-email” pentru a combate mesajele nedorite"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } adresă",
+        "${ maxAddresses } adrese",
+        "${ maxAddresses } de adrese"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } calendar",
+        "${ maxCalendars } calendare",
+        "${ maxCalendars } de calendare"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } stocare în cloud pentru fișiere și fotografii"
+      ],
+      "Collaborative document editing": [
+        "Editare colaborativă de documente"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "E-mail criptat cu ${ totalMailStorageSize } spațiu de stocare"
+      ],
+      "Every free account comes with:": [
+        "Fiecare cont gratuit include:"
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Obțineți unul securizat de la noi sau ${ internalButton }"
+      ],
+      "Password manager for all your devices": [
+        "Manager de parole pentru toate dispozitivele deținute"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Înregistrați-vă pentru a obține tot ce are de oferit ${ BRAND_NAME }"
+      ],
+      "use your current email.": [
+        "utilizați adresa curentă de e-mail."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN cu servere în ${ vpnServersCountData.free.countries } de țări"
       ]
     },
     "Signup label": {
@@ -17657,6 +17724,9 @@
       ],
       "Username": [
         "Utilizator"
+      ],
+      "${ BRAND_NAME } password": [
+        "Parola ${ BRAND_NAME }"
       ]
     },
     "Signup step": {
@@ -19204,6 +19274,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Veți primi numele de utilizator prin SMS într-un minut dacă ați introdus un număr de telefon de recuperare valid."
+      ],
+      "Address successfully added": [
+        "Adresa a fost adăugată."
       ]
     },
     "Success message": {
@@ -20972,6 +21045,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Ați fost invitat să încercați ${ MAIL_APP_NAME }"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Conectați mai multe adrese Gmail cu ${ planName }"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Conturi multiple, un cont privat"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22448,6 +22527,96 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Detalii plată"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce se încheie perioada de probare la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ cycle } luni, la ${ formattedDate }. Nu vi se va percepe nicio taxă dacă anulați înainte de ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce probarea se încheie pe ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar la data de ${ formattedDate }. Nu vi se va percepe nicio taxă dacă anulați înainte de ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Făcând clic pe «Încercare», sunteți de acord cu ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "În perioada de probare, puteți avea până la 10 utilizatori."
+      ],
+      "free for 14 days": [
+        "gratuit timp de 14 zile"
+      ],
+      "on ${ formattedDate }": [
+        "la ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Încercați ${ selected } ${ freeFor14Days }"
+      ],
+      "Try it free for 14 days": [
+        "Încercați gratuit 14 zile"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Dacă anulați, perioada de probare gratuită nu va fi convertită într-un abonament cu plată, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de probare. După aceea, planul va fi retrogradat la ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } licențe Lumo în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de probare."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nu puteți adăuga domenii personale în perioada de probare."
+      ],
+      "You have reached the trial limit.": [
+        "Ați atins limita de probare."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Suma datorată după probare"
+      ],
+      "Amount due now": [
+        "Suma datorată acum"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonament anulat."
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Pentru a redirecționa mesaje de la ${ MAX_SYNC_PAID_USER } cont, treceți la ${ planName }.",
+        "Pentru a redirecționa mesaje de până la ${ MAX_SYNC_PAID_USER } conturi, treceți la ${ planName }.",
+        "Pentru a redirecționa mesaje de până la ${ MAX_SYNC_PAID_USER } de conturi, treceți la ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Redirecționați mesaje de la ${ MAX_SYNC_FREE_USER } cont extern către ${ MAIL_APP_NAME }.",
+        "Redirecționați mesaje de la ${ MAX_SYNC_FREE_USER } conturi externe către ${ MAIL_APP_NAME }.",
+        "Redirecționați mesaje de la ${ MAX_SYNC_FREE_USER } de conturi externe către ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transfer bancar - ${ details }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Deschidere în ${ appName }"
       ]
     }
   }
