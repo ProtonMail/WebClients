@@ -1,7 +1,7 @@
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
+import { sendPasswordChangeMessageToTabs } from '@proton/shared/lib/authentication/passwordChangeMessage';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { isSelf } from '@proton/shared/lib/user/helpers';
 
@@ -44,9 +44,9 @@ const mutatePassword = async ({
         authentication.setClientKey(clientKey);
         authentication.setOfflineKey(offlineKey);
 
-        sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: true });
+        sendPasswordChangeMessageToTabs({ localID, status: true });
     } catch (e: any) {
-        sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: false });
+        sendPasswordChangeMessageToTabs({ localID, status: true });
         // If persisting the password fails for some reason.
         throw e;
     }
