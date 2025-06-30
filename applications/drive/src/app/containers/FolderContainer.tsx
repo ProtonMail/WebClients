@@ -48,7 +48,11 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
         if (!shareId && !type && !linkId) {
             const defaultShare = await getDefaultShare();
             if (defaultShare) {
-                return { shareId: defaultShare.shareId, linkId: defaultShare.rootLinkId };
+                return {
+                    volumeId: defaultShare.volumeId,
+                    shareId: defaultShare.shareId,
+                    linkId: defaultShare.rootLinkId,
+                };
             }
             setError(() => {
                 // Throwing error in async function does not propagate it to
@@ -60,13 +64,14 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
             navigateToRoot();
         } else if (type === LinkURLType.FOLDER) {
             const ac = new AbortController();
-            const isAvailable = await isShareAvailable(ac.signal, shareId);
-            if (!isAvailable) {
+            const share = await isShareAvailable(ac.signal, shareId);
+
+            if (!share) {
                 console.warn('Provided share is not available, probably locked or soft deleted');
                 navigateToRoot();
                 return;
             }
-            return { shareId, linkId };
+            return { volumeId: share.volumeId, shareId, linkId };
         }
         return lastFolderPromise.current;
     }, [params.linkId, params.shareId, type]);

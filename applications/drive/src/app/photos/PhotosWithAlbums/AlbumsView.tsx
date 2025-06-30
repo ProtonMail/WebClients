@@ -195,7 +195,7 @@ export const AlbumsView: FC = () => {
     // the sorting is just so we maintain some ordering
     const filteredAlbums = filterAlbums(albums, selectedTags[0]).sort((a, b) => (a.createTime < b.createTime ? -1 : 1));
 
-    if (!shareId || !linkId || (isAlbumsLoading && !albums) || (isAlbumsLoading && albums.length === 0)) {
+    if (!volumeId || !shareId || !linkId || (isAlbumsLoading && !albums) || (isAlbumsLoading && albums.length === 0)) {
         return <Loader />;
     }
 
@@ -223,7 +223,7 @@ export const AlbumsView: FC = () => {
                         navigateToAlbum(shareId, linkId);
                     }}
                     onItemShare={(linkId) => {
-                        modals.linkSharing?.({ shareId, linkId });
+                        modals.linkSharing?.({ volumeId, shareId, linkId });
                     }}
                     onItemRename={(linkId) => {
                         setRenameAlbumLinkId(linkId);
