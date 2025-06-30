@@ -179,6 +179,7 @@ export const ShareOptionsCell = ({ item }: { item: DriveItem }) => {
         >
             {item.isShared && item.showLinkSharingModal && (
                 <ShareIcon
+                    volumeId={item.volumeId}
                     shareId={activeShareId}
                     linkId={item.linkId}
                     trashed={item.trashed}

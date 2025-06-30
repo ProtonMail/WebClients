@@ -130,7 +130,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useEffect(() => {
         if (album && albumShareId) {
             if (searchParams.has('openShare')) {
-                modals.linkSharing?.({ shareId: albumShareId, linkId: album.linkId });
+                modals.linkSharing?.({ volumeId: album.volumeId, shareId: albumShareId, linkId: album.linkId });
                 searchParams.delete('openShare');
                 setSearchParams(searchParams);
             }
@@ -188,7 +188,11 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                         album={album}
                         photoCount={photoCount}
                         onShare={() => {
-                            modals.linkSharing?.({ shareId: albumShareId, linkId: album.linkId });
+                            modals.linkSharing?.({
+                                volumeId: album.volumeId,
+                                shareId: albumShareId,
+                                linkId: album.linkId,
+                            });
                         }}
                         onAddAlbumPhotos={() => {
                             navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
