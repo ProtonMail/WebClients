@@ -6,7 +6,14 @@ import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap'
 import { canAutosave } from 'proton-pass-extension/app/content/utils/autosave';
 import { hasProcessableFields } from 'proton-pass-extension/app/content/utils/nodes';
 
-import { FieldType, type FormType, buttonSelector, isVisibleForm, removeClassifierFlags } from '@proton/pass/fathom';
+import {
+    FieldType,
+    type FormType,
+    buttonSelector,
+    isVisibleForm,
+    removeClassifierFlags,
+    shadowPiercingContains,
+} from '@proton/pass/fathom';
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
 import { findScrollableParent } from '@proton/pass/utils/dom/scroll';
 import { getMaxZIndex } from '@proton/pass/utils/dom/zindex';
@@ -51,7 +58,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         },
 
         get detached() {
-            return !document.body.contains(form) || !isVisibleForm(form);
+            return !shadowPiercingContains(document.body, form) || !isVisibleForm(form, { skipCache: true });
         },
 
         getFieldsFor: (type, predicate) => {
@@ -160,7 +167,10 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                 field.detach();
             });
 
-            removeClassifierFlags(form, { preserveIgnored: true });
+            removeClassifierFlags(form, {
+                preserveIgnored: true,
+                fields: formHandle.getFields().map(prop('element')),
+            });
         }),
     };
 

@@ -63,7 +63,10 @@ export const resolveClosestStackZIndex = (el: HTMLElement, cache?: WeakMap<HTMLE
 /* Gets the maximum z-index value for an HTML element and its descendants */
 export const getMaxZIndex = (anchors: HTMLElement[]) => {
     let cache: MaybeNull<WeakMap<HTMLElement, MaybeNull<number>>> = anchors.length > 1 ? new WeakMap() : null;
-    const max = Math.max(...anchors.map((el) => resolveClosestStackZIndex(el, cache!)));
+
+    const zIndexes = anchors.map((el) => resolveClosestStackZIndex(el, cache!));
+    const max = Math.max(0, ...zIndexes);
+
     cache = null;
 
     return max;
