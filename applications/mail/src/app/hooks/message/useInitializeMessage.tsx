@@ -24,7 +24,7 @@ import { isDraft, isPlainText } from '@proton/shared/lib/mail/messages';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { transformEmbedded } from 'proton-mail/helpers/transforms/transformEmbedded';
 import { transformRemote } from 'proton-mail/helpers/transforms/transformRemote';
 import useMailModel from 'proton-mail/hooks/useMailModel';
