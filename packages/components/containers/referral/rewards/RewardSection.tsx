@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Card } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
@@ -31,8 +31,13 @@ export const RewardSection = () => {
         <SettingsSectionWide>
             {reachedRewardLimit ? (
                 <Card rounded className="text-center mb-8">
-                    <strong>{c('Description')
-                        .t`Congratulations! You've earned the maximum of ${rewardsLimit} free months of ${plusPlanName}.`}</strong>
+                    <strong>
+                        {c('Description').ngettext(
+                            msgid`Congratulations! You've earned the maximum of ${rewardsLimit} free month of ${plusPlanName}.`,
+                            `Congratulations! You've earned the maximum of ${rewardsLimit} free months of ${plusPlanName}.`,
+                            rewardsLimit
+                        )}
+                    </strong>
                     <br />
                     {c('Description').t`You can continue to invite friends, but you wont be able to earn more credits`}
                 </Card>
