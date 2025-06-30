@@ -53,6 +53,8 @@ export const LUMO_SHORT_APP_NAME = 'Lumo';
 export const LUMO_APP_NAME = `${BRAND_NAME} ${LUMO_SHORT_APP_NAME}`;
 export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
 export const DARK_WEB_MONITORING_NAME = 'Dark Web Monitoring';
+export const AUTHENTICATOR_SHORT_APP_NAME = 'Authenticator';
+export const AUTHENTICATOR_APP_NAME = `${BRAND_NAME} ${AUTHENTICATOR_SHORT_APP_NAME}`;
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
@@ -74,6 +76,7 @@ export const APPS = {
     PROTONSHEETS: 'proton-sheets',
     PROTONSHEETSEDITOR: 'proton-sheets-editor',
     PROTONLUMO: 'proton-lumo',
+    PROTONAUTHENTICATOR: 'proton-authenticator',
 } as const;
 
 interface AppConfiguration {
@@ -293,6 +296,19 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         settingsSlug: 'lumo',
         product: Product.Lumo,
     },
+    [APPS.PROTONAUTHENTICATOR]: {
+        publicPath: '',
+        subdomain: 'authenticator',
+        name: AUTHENTICATOR_APP_NAME,
+        bareName: AUTHENTICATOR_SHORT_APP_NAME,
+        clientID: 'web-authenticator',
+        windowsClientID: 'windows-authenticator',
+        macosClientID: 'macos-authenticator',
+        linuxClientID: 'linux-authenticator',
+        icon: '', // TODO: brand icon for Authenticator
+        settingsSlug: '',
+        product: Product.Authenticator,
+    },
 };
 
 export enum PRODUCT {
@@ -302,7 +318,8 @@ export enum PRODUCT {
     DRIVE = 4,
     PASS = 5,
     WALLET = 6,
-    LUMO = 7,
+    LUMO = 9,
+    AUTHENTICATOR = 10,
 }
 
 // Should be synced with ProductGroup in API
@@ -889,6 +906,7 @@ export enum CLIENT_TYPES {
     VPN = 2,
     PASS = 5,
     WALLET = 6,
+    AUTHENTICATOR = 10,
 }
 
 export enum TOKEN_TYPES {
