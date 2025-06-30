@@ -27,7 +27,8 @@ const getCameraVideoPublication = (participant: Participant) => {
 
 export const ParticipantTile = ({ participant, smallView = false }: ParticipantTileProps) => {
     const { localParticipant } = useLocalParticipant();
-    const { shouldShowConnectionIndicator, participantNameMap } = useMeetContext();
+    const { shouldShowConnectionIndicator, participantNameMap, disableVideos, participantsWithDisabledVideos } =
+        useMeetContext();
     const cameraVideoPublication = getCameraVideoPublication(participant);
     const audioPublication = Array.from(participant.trackPublications.values()).find(
         (pub) => pub.kind === Track.Kind.Audio && pub.track
@@ -35,11 +36,14 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
 
     const audioIsOn = audioPublication ? !audioPublication.isMuted : false;
     const shouldShowVideo =
-        !!cameraVideoPublication && !!cameraVideoPublication.track && !cameraVideoPublication.isMuted;
+        !!cameraVideoPublication &&
+        !!cameraVideoPublication.track &&
+        !cameraVideoPublication.isMuted &&
+        ((!disableVideos && !participantsWithDisabledVideos.includes(participant.identity)) || participant.isLocal);
 
     const isSpeaking = useDebouncedSpeakingStatus(participant);
 
-    const { borderColor } = getParticipantDisplayColors(participant);
+    const { borderColor, backgroundColor, profileColor } = getParticipantDisplayColors(participant);
 
     const speakingIndicatorClassName =
         (shouldShowVideo ? getParticipantDisplayColors({}).borderColor : borderColor) + (smallView ? '-small' : '');
@@ -107,7 +111,12 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                     />
                 </>
             ) : (
-                <ParticipantPlaceholder participant={participant} smallView={smallView} />
+                <ParticipantPlaceholder
+                    participantName={participantName}
+                    smallView={smallView}
+                    backgroundColor={backgroundColor}
+                    profileColor={profileColor}
+                />
             )}
             <div
                 className="color-norm flex flex-nowrap items-center absolute left-custom bottom-custom z-up"

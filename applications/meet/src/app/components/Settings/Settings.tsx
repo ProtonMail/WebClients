@@ -16,8 +16,15 @@ import './Settings.scss';
 const increasedVideoQuality = process.env.LIVEKIT_INCREASED_VIDEO_QUALITY === 'true';
 
 export const Settings = () => {
-    const { sideBarState, selfView, setSelfView, shouldShowConnectionIndicator, setShouldShowConnectionIndicator } =
-        useMeetContext();
+    const {
+        sideBarState,
+        selfView,
+        setSelfView,
+        shouldShowConnectionIndicator,
+        setShouldShowConnectionIndicator,
+        disableVideos,
+        setDisableVideos,
+    } = useMeetContext();
 
     const { resolution, handleResolutionChange } = useLocalParticipantResolution();
 
@@ -104,6 +111,17 @@ export const Settings = () => {
                         }
                         className="color-weak bg-weak settings-toggle settings-toggle-inactive"
                         aria-label={c('l10n_nightly Alt').t`Desktop notifications`}
+                    />
+                </div>
+                <div className="flex items-center justify-space-between gap-2">
+                    <span className="text-xl text-neutral-weak">{c('l10n_nightly Action')
+                        .t`Hide participant videos on join`}</span>
+                    <Toggle
+                        id="disable-videos"
+                        checked={disableVideos}
+                        onChange={() => setDisableVideos(!disableVideos)}
+                        className={clsx('settings-toggle', disableVideos ? '' : 'settings-toggle-inactive')}
+                        aria-label={c('l10n_nightly Alt').t`Hide participant videos on join`}
                     />
                 </div>
             </div>

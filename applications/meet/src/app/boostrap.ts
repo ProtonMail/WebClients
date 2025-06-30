@@ -34,15 +34,17 @@ const getApis = (config: ProtonConfig) => {
 };
 
 const getSession = async ({ authentication, api }: Pick<ProtonThunkArguments, 'authentication' | 'api'>) => {
-    const guestUrl =
-        window.location.pathname.replace(/\/$/, '') + '/guest' + window.location.search + window.location.hash;
+    const guestUrl = '/guest' + window.location.pathname + window.location.search + window.location.hash;
 
     const sessionResult = await bootstrap.loadSession({
         authentication,
         api,
         pathname: window.location.pathname,
         searchParams: new URLSearchParams(window.location.search),
-        unauthenticatedReturnUrl: guestUrl,
+        unauthenticatedReturnUrl:
+            !window.location.pathname.includes('guest') && !window.location.pathname.includes('login')
+                ? guestUrl
+                : undefined,
     });
 
     return sessionResult as SessionPayloadData;
@@ -212,7 +214,7 @@ export const bootstrapGuestApp = async (config: ProtonConfig) => {
 
     await bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient });
 
-    const history = createBrowserHistory({ basename: '/meet' });
+    const history = createBrowserHistory({ basename: '/guest' });
 
     await unleashClient.start();
 

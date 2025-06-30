@@ -1,31 +1,19 @@
 import { render, screen } from '@testing-library/react';
-import type { Participant } from 'livekit-client';
 
-import { MeetContext } from '../../contexts/MeetContext';
 import { ParticipantPlaceholder } from './ParticipantPlaceholder';
 
 describe('ParticipantPlaceholder', () => {
-    const mockParticipant = {
-        identity: 'participant-123',
-        metadata: '{"profileColor": "profile-background-1", "backgroundColor": "meet-background-1"}',
-    } as Participant;
-
-    const defaultContextValue = {
-        participantNameMap: {
-            'participant-123': 'John Doe',
-        },
-    };
-
-    const emptyContextValue = {
-        participantNameMap: {},
-    };
+    const participantName = 'John Doe';
+    const backgroundColor = 'meet-background-1';
+    const profileColor = 'profile-background-1';
 
     it('renders loading spinner when participant name is not available', () => {
         render(
-            // @ts-expect-error - Only providing participantNameMap
-            <MeetContext.Provider value={emptyContextValue}>
-                <ParticipantPlaceholder participant={mockParticipant} />
-            </MeetContext.Provider>
+            <ParticipantPlaceholder
+                participantName={undefined}
+                backgroundColor={backgroundColor}
+                profileColor={profileColor}
+            />
         );
 
         expect(screen.getByTestId('circle-loader')).toBeInTheDocument();
@@ -33,10 +21,11 @@ describe('ParticipantPlaceholder', () => {
 
     it('renders participant initials when participant name is available', () => {
         render(
-            // @ts-expect-error - Only providing participantNameMap
-            <MeetContext.Provider value={defaultContextValue}>
-                <ParticipantPlaceholder participant={mockParticipant} />
-            </MeetContext.Provider>
+            <ParticipantPlaceholder
+                participantName={participantName}
+                backgroundColor={backgroundColor}
+                profileColor={profileColor}
+            />
         );
 
         expect(screen.getByText('JD')).toBeInTheDocument();
@@ -45,10 +34,11 @@ describe('ParticipantPlaceholder', () => {
 
     it('applies correct styling for regular view', () => {
         render(
-            // @ts-expect-error - Only providing participantNameMap
-            <MeetContext.Provider value={defaultContextValue}>
-                <ParticipantPlaceholder participant={mockParticipant} />
-            </MeetContext.Provider>
+            <ParticipantPlaceholder
+                participantName={participantName}
+                backgroundColor={backgroundColor}
+                profileColor={profileColor}
+            />
         );
 
         const initialsContainer = screen.getByText('JD').closest('div');
@@ -59,10 +49,12 @@ describe('ParticipantPlaceholder', () => {
 
     it('applies correct styling for small view', () => {
         render(
-            // @ts-expect-error - Only providing participantNameMap
-            <MeetContext.Provider value={defaultContextValue}>
-                <ParticipantPlaceholder participant={mockParticipant} smallView={true} />
-            </MeetContext.Provider>
+            <ParticipantPlaceholder
+                participantName={participantName}
+                backgroundColor={backgroundColor}
+                profileColor={profileColor}
+                smallView={true}
+            />
         );
 
         const initialsContainer = screen.getByText('JD').closest('div');
@@ -73,10 +65,11 @@ describe('ParticipantPlaceholder', () => {
 
     it('renders with correct placeholder container classes', () => {
         render(
-            // @ts-expect-error - Only providing participantNameMap
-            <MeetContext.Provider value={defaultContextValue}>
-                <ParticipantPlaceholder participant={mockParticipant} />
-            </MeetContext.Provider>
+            <ParticipantPlaceholder
+                participantName={participantName}
+                backgroundColor={backgroundColor}
+                profileColor={profileColor}
+            />
         );
 
         const initialsContainer = screen.getByText('JD');

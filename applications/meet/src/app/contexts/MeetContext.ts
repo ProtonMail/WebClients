@@ -4,7 +4,7 @@ import { VideoQuality } from 'livekit-client';
 
 import { PAGE_SIZE } from '../constants';
 import type { MeetChatMessage, ParticipantEventRecord } from '../types';
-import { PopUpControls } from '../types';
+import { PermissionPromptStatus, PopUpControls } from '../types';
 import { MeetingSideBars } from '../types';
 
 export interface MeetContextValues {
@@ -12,9 +12,9 @@ export interface MeetContextValues {
     quality: VideoQuality;
     setPage: React.Dispatch<React.SetStateAction<number>>;
     setQuality: (quality: VideoQuality) => void;
-    audioDeviceId: string;
+    audioDeviceId: string | null;
     videoDeviceId: string;
-    setAudioDeviceId: (deviceId: string) => void;
+    setAudioDeviceId: (deviceId: string | null) => void;
     setVideoDeviceId: (deviceId: string) => void;
     roomName: string;
     resolution: string | null;
@@ -41,6 +41,12 @@ export interface MeetContextValues {
     isFaceTrackingEnabled: boolean;
     participantNameMap: Record<string, string>;
     getParticipants: () => Promise<void>;
+    disableVideos: boolean;
+    setDisableVideos: (disableVideos: boolean) => void;
+    participantsWithDisabledVideos: string[];
+    setParticipantsWithDisabledVideos: (participantsWithDisabledVideos: string[]) => void;
+    permissionPromptStatus: PermissionPromptStatus;
+    setPermissionPromptStatus: (permissionPromptStatus: PermissionPromptStatus) => void;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -85,6 +91,12 @@ export const MeetContext = createContext<MeetContextValues>({
     isFaceTrackingEnabled: false,
     participantNameMap: {},
     getParticipants: () => Promise.resolve(),
+    disableVideos: false,
+    setDisableVideos: () => {},
+    participantsWithDisabledVideos: [],
+    setParticipantsWithDisabledVideos: () => {},
+    permissionPromptStatus: PermissionPromptStatus.CLOSED,
+    setPermissionPromptStatus: () => {},
 });
 
 export const useMeetContext = () => {

@@ -19,6 +19,7 @@ interface PrejoinContainerProps {
     guestMode?: boolean;
     shareLink: string;
     roomName: string;
+    roomId: string;
 }
 
 export const PrejoinContainer = ({
@@ -28,6 +29,7 @@ export const PrejoinContainer = ({
     guestMode = false,
     shareLink,
     roomName,
+    roomId,
 }: PrejoinContainerProps) => {
     const [selectedCamera, setSelectedCamera] = useState<MediaDeviceInfo | null>(null);
     const [selectedMicrophone, setSelectedMicrophone] = useState<MediaDeviceInfo | null>(null);
@@ -106,6 +108,7 @@ export const PrejoinContainer = ({
                 ) : (
                     <PreJoinDetails
                         roomName={roomName}
+                        roomId={roomId}
                         displayName={displayName}
                         onDisplayNameChange={setDisplayName}
                         onJoinMeeting={handleJoinMeeting}

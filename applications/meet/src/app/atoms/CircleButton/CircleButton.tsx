@@ -4,8 +4,8 @@ import clsx from '@proton/utils/clsx';
 
 import './CircleButton.scss';
 
-type CircleButtonVariant = 'default' | 'active' | 'danger';
-type IndicatorStatus = 'warning' | 'default' | 'success';
+type CircleButtonVariant = 'default' | 'active' | 'danger' | 'transparent';
+type IndicatorStatus = 'warning' | 'default' | 'success' | 'danger';
 
 interface CircleButtonProps {
     IconComponent: (props: Pick<IconProps, 'viewBox' | 'size'>) => JSX.Element;
@@ -16,6 +16,7 @@ interface CircleButtonProps {
     iconViewPort?: string;
     variant?: CircleButtonVariant;
     ariaLabel?: string;
+    noBorder?: boolean;
 }
 
 export const CircleButton = ({
@@ -27,13 +28,15 @@ export const CircleButton = ({
     iconViewPort,
     variant = 'default',
     ariaLabel,
+    noBorder = true,
 }: CircleButtonProps) => {
     return (
         <Button
             className={clsx(
                 'circle-button',
                 `circle-button-${variant}`,
-                'color-norm rounded-full gap-2 border-none relative',
+                'color-norm rounded-full gap-2 relative',
+                noBorder && 'border-none',
                 className
             )}
             onClick={onClick}

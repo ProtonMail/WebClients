@@ -1,14 +1,16 @@
+import { useRef } from 'react';
+
 import { useUser } from '@proton/account/user/hooks';
 import clsx from '@proton/utils/clsx';
 
 export const UserInfo = () => {
     const [user] = useUser();
 
+    const colorIndex = useRef(Math.ceil(6 * Math.random()));
+
     if (!user) {
         return null;
     }
-
-    const colorIndex = Math.ceil(6 * Math.random());
 
     return (
         <div className="flex items-center gap-2">
@@ -19,8 +21,8 @@ export const UserInfo = () => {
             <div
                 className={clsx(
                     'w-custom h-custom flex justify-center items-center rounded-full',
-                    `meet-background-${colorIndex}`,
-                    `profile-color-${colorIndex}`
+                    `meet-background-${colorIndex.current}`,
+                    `profile-color-${colorIndex.current}`
                 )}
                 style={{
                     '--w-custom': '2.5rem',

@@ -8,6 +8,7 @@ import './PreJoinDetails.scss';
 
 interface PreJoinDetailsProps {
     roomName: string;
+    roomId: string;
     displayName: string;
     onDisplayNameChange: (displayName: string) => void;
     onJoinMeeting: ({ displayName }: { displayName: string }) => void;
@@ -16,6 +17,7 @@ interface PreJoinDetailsProps {
 
 export const PreJoinDetails = ({
     roomName,
+    roomId,
     displayName,
     onDisplayNameChange,
     onJoinMeeting,
@@ -23,7 +25,11 @@ export const PreJoinDetails = ({
 }: PreJoinDetailsProps) => {
     return (
         <div className="flex flex-nowrap flex-column gap-4 w-custom" style={{ '--w-custom': '22.625rem' }}>
-            <h1 className="h2 text-center">{c('l10n_nightly Title').t`Talk freely`}</h1>
+            <h1 className="h2 text-center">
+                {roomName
+                    ? c('l10n_nightly Title').t`Join ${roomName}`
+                    : c('l10n_nightly Title').t`Decrypting room name...`}
+            </h1>
             <p className="text-center color-weak">
                 {c('l10n_nightly Info')
                     .t`Our end-to-end encrypted meetings protect privacy and empower truly free expression.`}
@@ -31,15 +37,15 @@ export const PreJoinDetails = ({
             <InputFieldStackedGroup classname="mb-4 w-full">
                 <InputFieldStacked isGroupElement>
                     <InputFieldTwo
-                        label={c('l10n_nightly Label').t`Meeting name`}
+                        label={c('l10n_nightly Label').t`Meeting ID`}
                         type="text"
                         unstyled
                         inputClassName="rounded-none"
-                        value={roomName || c('l10n_nightly Placeholder').t`Loading...`}
+                        value={roomId || c('l10n_nightly Placeholder').t`Loading...`}
                         onChange={(e) => e.preventDefault()}
                     />
                     <Button
-                        className="absolute top-custom right-custom w-custom h-custom bg-norm color-norm rounded-full flex items-center justify-center border-none p-0"
+                        className="copy-button absolute top-custom right-custom w-custom h-custom rounded-full flex items-center justify-center border-none p-0"
                         style={{
                             '--top-custom': '50%',
                             '--right-custom': '1rem',
@@ -68,7 +74,7 @@ export const PreJoinDetails = ({
                 </InputFieldStacked>
             </InputFieldStackedGroup>
             <Button
-                className="p-5 rounded-full color-invert"
+                className="join-button p-5 rounded-full color-invert"
                 color="norm"
                 size="large"
                 fullWidth

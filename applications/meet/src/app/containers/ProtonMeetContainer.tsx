@@ -4,7 +4,9 @@ import { RoomContext } from '@livekit/components-react';
 import { Room } from 'livekit-client';
 
 import { PasswordPrompt } from '../components/PasswordPrompt/PasswordPrompt';
+import { DevicePermissionsContext } from '../contexts/DevicePermissionsContext';
 import { useMeetingSetup } from '../hooks/srp/useMeetingSetup';
+import { useDevicePermissionChangeListener } from '../hooks/useDevicePermissionChangeListener';
 import { useParticipantNameMap } from '../hooks/useParticipantNameMap';
 import { useQualityLevel } from '../hooks/useQualityLevel';
 import { qualityConstants } from '../qualityConstants';
@@ -38,6 +40,14 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const [participantSettings, setParticipantSettings] = useState<ParticipantSettings | null>(null);
 
+    const [devicePermissions, setDevicePermissions] = useState<{
+        camera: PermissionState;
+        microphone: PermissionState;
+    }>({
+        camera: 'prompt',
+        microphone: 'prompt',
+    });
+
     const [joiningInProgress, setJoiningInProgress] = useState(false);
     const [joinedRoom, setJoinedRoom] = useState(false);
 
@@ -48,6 +58,15 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     const defaultResolution = qualityConstants[QualityScenarios.Default][defaultQuality];
 
     const { getParticipants, participantNameMap } = useParticipantNameMap(token);
+
+    const handleDevicePermissionChange = useCallback(
+        (permissions: { camera?: PermissionState; microphone?: PermissionState }) => {
+            setDevicePermissions((prevPermissions) => ({ ...prevPermissions, ...permissions }));
+        },
+        []
+    );
+
+    useDevicePermissionChangeListener(handleDevicePermissionChange);
 
     const handleJoin = useCallback(
         async (participantSettings: ParticipantSettings) => {
@@ -136,43 +155,48 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     }
 
     return (
-        <div className="h-full w-full">
-            {decryptionReadinessStatus === MeetingDecryptionReadinessStatus.INITIALIZED && (
-                <PasswordPrompt
-                    onPasswordSubmit={(password) => {
-                        setCustomPassword(password);
-                        setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
-                    }}
-                />
-            )}
-            {joinedRoom && roomRef.current && participantSettings ? (
-                <RoomContext.Provider value={roomRef.current}>
-                    <MeetContainer
-                        participantSettings={participantSettings}
-                        setAudioDeviceId={(deviceId) =>
-                            setParticipantSettings({ ...participantSettings, audioDeviceId: deviceId })
-                        }
-                        setVideoDeviceId={(deviceId) =>
-                            setParticipantSettings({ ...participantSettings, videoDeviceId: deviceId })
-                        }
-                        handleLeave={handleLeave}
-                        setParticipantSettings={setParticipantSettings}
+        <DevicePermissionsContext.Provider
+            value={{ devicePermissions, setDevicePermissions: handleDevicePermissionChange }}
+        >
+            <div className="h-full w-full">
+                {decryptionReadinessStatus === MeetingDecryptionReadinessStatus.INITIALIZED && (
+                    <PasswordPrompt
+                        onPasswordSubmit={(password) => {
+                            setCustomPassword(password);
+                            setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
+                        }}
+                    />
+                )}
+                {joinedRoom && roomRef.current && participantSettings ? (
+                    <RoomContext.Provider value={roomRef.current}>
+                        <MeetContainer
+                            participantSettings={participantSettings}
+                            setAudioDeviceId={(deviceId) =>
+                                setParticipantSettings({ ...participantSettings, audioDeviceId: deviceId })
+                            }
+                            setVideoDeviceId={(deviceId) =>
+                                setParticipantSettings({ ...participantSettings, videoDeviceId: deviceId })
+                            }
+                            handleLeave={handleLeave}
+                            setParticipantSettings={setParticipantSettings}
+                            shareLink={shareLink}
+                            roomName={roomName}
+                            participantNameMap={participantNameMap}
+                            getParticipants={getParticipants}
+                        />
+                    </RoomContext.Provider>
+                ) : (
+                    <PrejoinContainer
+                        handleJoin={handleJoin}
+                        loadingState={LoadingState.JoiningInProgress}
+                        isLoading={joiningInProgress}
+                        guestMode={guestMode}
                         shareLink={shareLink}
                         roomName={roomName}
-                        participantNameMap={participantNameMap}
-                        getParticipants={getParticipants}
+                        roomId={token}
                     />
-                </RoomContext.Provider>
-            ) : (
-                <PrejoinContainer
-                    handleJoin={handleJoin}
-                    loadingState={LoadingState.JoiningInProgress}
-                    isLoading={joiningInProgress}
-                    guestMode={guestMode}
-                    shareLink={shareLink}
-                    roomName={roomName}
-                />
-            )}
-        </div>
+                )}
+            </div>
+        </DevicePermissionsContext.Provider>
     );
 };

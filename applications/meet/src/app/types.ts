@@ -2,7 +2,7 @@ import type { ChatMessage } from 'livekit-client';
 
 export interface ParticipantSettings {
     displayName: string;
-    audioDeviceId: string;
+    audioDeviceId: string | null;
     videoDeviceId: string;
     isAudioEnabled: boolean;
     isVideoEnabled: boolean;
@@ -82,4 +82,10 @@ export interface MeetingDetails {
     time: string;
     meetingLink: string;
     duration: string;
+}
+
+export enum PermissionPromptStatus {
+    CAMERA = 'CAMERA',
+    MICROPHONE = 'MICROPHONE',
+    CLOSED = 'CLOSED',
 }

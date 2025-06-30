@@ -1,11 +1,11 @@
+import type { RefObject } from 'react';
 import { useRef } from 'react';
 
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import type { IconProps } from '@proton/components';
 import { IcChevronDown, IcChevronUp } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
-import { useMeetContext } from '../../contexts/MeetContext';
 import { type PopUpControls } from '../../types';
 
 import './ToggleButton.scss';
@@ -15,10 +15,15 @@ interface ToggleButtonProps {
     OffIconComponent: (props: Pick<IconProps, 'size'>) => JSX.Element;
     isOn: boolean;
     onClick: () => void;
-    Content?: () => JSX.Element;
+    isOpen: boolean;
+    onPopupButtonClick: () => void;
+    Content?: (props: { anchorRef?: RefObject<HTMLButtonElement> }) => JSX.Element;
     popUp: PopUpControls;
     ariaLabel?: string;
     secondaryAriaLabel?: string;
+    buttonRef?: RefObject<HTMLButtonElement>;
+    hasWarning?: boolean;
+    tooltipTitle?: string;
 }
 
 export const ToggleButton = ({
@@ -26,31 +31,35 @@ export const ToggleButton = ({
     OffIconComponent,
     isOn,
     onClick,
+    isOpen,
+    onPopupButtonClick,
     Content,
-    popUp,
     ariaLabel,
     secondaryAriaLabel,
+    hasWarning,
+    tooltipTitle,
 }: ToggleButtonProps) => {
+    const buttonRef = useRef<HTMLButtonElement>(null);
     const toggleButtonCircleRef = useRef<HTMLButtonElement | null>(null);
-
-    const { popupState, togglePopupState } = useMeetContext();
-
-    const isOpen = popupState[popUp];
 
     return (
         <div className="relative">
-            <button
-                className={clsx(
-                    isOn && !isOpen && 'toggle-button-body-on',
-                    !isOn && 'toggle-button-body-off',
-                    'flex flex-nowrap items-center gap-4 text-norm pl-6 pr-1 rounded-full w-custom h-custom'
-                )}
-                style={{ '--w-custom': '7rem', '--h-custom': '3.5rem' }}
-                onClick={onClick}
-                aria-label={ariaLabel}
-            >
-                {isOn ? <OnIconComponent size={6} /> : <OffIconComponent size={6} />}
-            </button>
+            <Tooltip title={tooltipTitle} isOpen={!tooltipTitle ? false : undefined}>
+                <button
+                    ref={buttonRef}
+                    className={clsx(
+                        isOn && !isOpen && 'toggle-button-body-on',
+                        !isOn && 'toggle-button-body-off',
+                        'flex flex-nowrap items-center gap-4 text-norm pl-6 pr-1 rounded-full w-custom h-custom'
+                    )}
+                    style={{ '--w-custom': '7rem', '--h-custom': '3.5rem' }}
+                    onClick={onClick}
+                    aria-label={ariaLabel}
+                >
+                    {isOn ? <OnIconComponent size={6} /> : <OffIconComponent size={6} />}
+                </button>
+            </Tooltip>
+
             <Button
                 ref={(el) => (toggleButtonCircleRef.current = el)}
                 className={clsx(
@@ -61,7 +70,7 @@ export const ToggleButton = ({
                 )}
                 onClick={(e) => {
                     e.stopPropagation();
-                    togglePopupState(popUp);
+                    onPopupButtonClick();
                 }}
                 style={{
                     '--w-custom': '3rem',
@@ -73,8 +82,24 @@ export const ToggleButton = ({
             >
                 {isOpen ? <IcChevronUp /> : <IcChevronDown />}
             </Button>
+            {hasWarning && (
+                <div
+                    className={clsx(
+                        'warning-indicator rounded-full flex justify-center items-center absolute top-custom left-custom w-custom h-custom color-invert'
+                    )}
+                    style={{
+                        '--w-custom': '1.25rem',
+                        '--h-custom': '1.25rem',
+                        '--top-custom': '0rem',
+                        '--left-custom': '50%',
+                        transform: 'translate(-50%, -50%)',
+                    }}
+                >
+                    !
+                </div>
+            )}
             <div className="relative flex flex-nowrap items-center flex-column">
-                {Content && (
+                {isOpen && Content && (
                     <button
                         className="toggle-button-hover-content rounded-full p-2 z-up absolute left-custom bottom-custom mb-2 cursor-default"
                         onClick={(e) => {
@@ -82,14 +107,12 @@ export const ToggleButton = ({
                             e.preventDefault();
                         }}
                         style={{
-                            visibility: isOpen ? 'visible' : 'hidden',
-                            maxHeight: isOpen ? undefined : 0,
                             '--left-custom': '-1rem',
                             '--bottom-custom': '4rem',
                         }}
                         aria-expanded={isOpen}
                     >
-                        <Content />
+                        <Content anchorRef={buttonRef} />
                     </button>
                 )}
             </div>

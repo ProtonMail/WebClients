@@ -7,12 +7,12 @@ import { PAGE_SIZE } from '../constants';
 import { MeetContext } from '../contexts/MeetContext';
 import { useFaceTrackingSetup } from '../hooks/useFaceTrackingSetup';
 import type { MeetChatMessage, ParticipantEventRecord } from '../types';
-import { MeetingSideBars, type ParticipantSettings, PopUpControls } from '../types';
+import { MeetingSideBars, type ParticipantSettings, PermissionPromptStatus, PopUpControls } from '../types';
 
 interface MeetContainerProps {
     setParticipantSettings: React.Dispatch<React.SetStateAction<ParticipantSettings | null>>;
     participantSettings: ParticipantSettings;
-    setAudioDeviceId: (deviceId: string) => void;
+    setAudioDeviceId: (deviceId: string | null) => void;
     setVideoDeviceId: (deviceId: string) => void;
     handleLeave: () => void;
     shareLink: string;
@@ -51,11 +51,15 @@ export const MeetContainer = ({
         [PopUpControls.Microphone]: false,
         [PopUpControls.Camera]: false,
     });
-
     const [selfView, setSelfView] = useState(true);
     const [shouldShowConnectionIndicator, setShouldShowConnectionIndicator] = useState(false);
+    const [disableVideos, setDisableVideos] = useState(false);
 
     const faceTrack = useFaceTrackingSetup({ isFaceTrackingEnabled, videoDeviceId });
+
+    const [participantsWithDisabledVideos, setParticipantsWithDisabledVideos] = useState<string[]>([]);
+
+    const [permissionPromptStatus, setPermissionPromptStatus] = useState(PermissionPromptStatus.CLOSED);
 
     const toggleSideBarState = useCallback(
         (sidebar: MeetingSideBars) => {
@@ -130,6 +134,12 @@ export const MeetContainer = ({
                     setIsVideoEnabled,
                     participantNameMap,
                     getParticipants,
+                    disableVideos,
+                    setDisableVideos,
+                    participantsWithDisabledVideos,
+                    setParticipantsWithDisabledVideos,
+                    permissionPromptStatus,
+                    setPermissionPromptStatus,
                 }}
             >
                 <MeetingBody isFaceTrackingEnabled={isFaceTrackingEnabled} faceTrack={faceTrack} />
