@@ -212,11 +212,11 @@ export function useDefaultShare() {
     );
 
     const isShareAvailable = useCallback(
-        (abortSignal: AbortSignal, shareId: string): Promise<boolean> => {
+        (abortSignal: AbortSignal, shareId: string): Promise<Share | undefined> => {
             return debouncedFunction(
                 async (abortSignal: AbortSignal) => {
                     const share = await getShare(abortSignal, shareId);
-                    return !share.isLocked;
+                    return !share.isLocked ? share : undefined;
                 },
                 ['isShareAvailable', shareId],
                 abortSignal

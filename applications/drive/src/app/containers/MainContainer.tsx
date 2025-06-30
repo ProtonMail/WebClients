@@ -179,11 +179,15 @@ const InitContainer = () => {
         );
     }
 
-    if (error || !defaultShareRoot.shareId || !defaultShareRoot.linkId) {
+    if (error || !defaultShareRoot.volumeId || !defaultShareRoot.shareId || !defaultShareRoot.linkId) {
         throw error || new Error('Default share failed to be loaded');
     }
 
-    const rootShare = { shareId: defaultShareRoot.shareId, linkId: defaultShareRoot.linkId };
+    const rootShare = {
+        volumeId: defaultShareRoot.volumeId,
+        shareId: defaultShareRoot.shareId,
+        linkId: defaultShareRoot.linkId,
+    };
 
     const routes = (
         <>

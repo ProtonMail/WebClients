@@ -34,6 +34,7 @@ import { CreateNewDocumentButton } from './ToolbarButtons/CreateNewDocumentButto
 import { CreateNewSheetButton } from './ToolbarButtons/CreateNewSheetButton';
 
 interface Props {
+    volumeId: string;
     shareId: string;
     linkId: string;
     items: DecryptedLink[];
@@ -45,6 +46,7 @@ interface Props {
 }
 
 const DriveToolbar = ({
+    volumeId,
     shareId,
     linkId,
     items,
@@ -86,7 +88,10 @@ const DriveToolbar = ({
                 <>
                     {isEditor && !isLinkReadOnly ? (
                         <>
-                            <CreateNewFolderButton createFolder={createFolder} activeFolder={{ shareId, linkId }} />
+                            <CreateNewFolderButton
+                                createFolder={createFolder}
+                                activeFolder={{ volumeId, shareId, linkId }}
+                            />
                             {isEditEnabled && <CreateNewFileButton />}
                             {isDocsEnabled && !isLinkReadOnly && !isLinkInDeviceShare && (
                                 <CreateNewDocumentButton
@@ -106,7 +111,9 @@ const DriveToolbar = ({
                     ) : null}
 
                     {shouldShowShareButton && <ShareButton shareId={shareId} />}
-                    {shouldShowShareLinkButton && <ShareLinkButton shareId={shareId} linkId={linkId} />}
+                    {shouldShowShareLinkButton && (
+                        <ShareLinkButton volumeId={volumeId} shareId={shareId} linkId={linkId} />
+                    )}
                 </>
             );
         }
@@ -118,6 +125,7 @@ const DriveToolbar = ({
                 <DownloadButton selectedBrowserItems={selectedItems} />
                 {viewportWidth['<=small'] ? (
                     <ActionsDropdown
+                        volumeId={volumeId}
                         shareId={shareId}
                         selectedLinks={selectedItems}
                         permissions={permissions}
@@ -128,7 +136,11 @@ const DriveToolbar = ({
                     <>
                         {shouldShowShareLinkButton && selectedItem && (
                             <>
-                                <ShareLinkButton shareId={selectedItem.rootShareId} linkId={selectedItem.linkId} />
+                                <ShareLinkButton
+                                    volumeId={selectedItem.volumeId}
+                                    shareId={selectedItem.rootShareId}
+                                    linkId={selectedItem.linkId}
+                                />
                                 <Vr />
                             </>
                         )}

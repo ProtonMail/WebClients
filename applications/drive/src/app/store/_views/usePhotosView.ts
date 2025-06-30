@@ -209,6 +209,7 @@ export const usePhotosView = () => {
     };
 
     return {
+        volumeId,
         shareId,
         linkId,
         photos: photosViewData,
