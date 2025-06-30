@@ -482,7 +482,7 @@ export const PhotosLayout = () => {
     const openSharePhotoModal = useCallback(() => {
         const link = selectedItems[0];
 
-        showLinkSharingModal({ shareId: link.rootShareId, linkId: link.linkId });
+        showLinkSharingModal({ volumeId: link.volumeId, shareId: link.rootShareId, linkId: link.linkId });
     }, [showLinkSharingModal, selectedItems]);
 
     const onAddAlbumPhotos = useCallback(
@@ -670,7 +670,12 @@ export const PhotosLayout = () => {
                     onShare={
                         (isDecryptedLink(previewItem) && previewItem?.trashed) || !canChangeSharePhotoInPreview
                             ? undefined
-                            : () => showLinkSharingModal({ shareId: previewShareId, linkId: previewItem.linkId })
+                            : () =>
+                                  showLinkSharingModal({
+                                      volumeId: previewItem.volumeId,
+                                      shareId: previewShareId,
+                                      linkId: previewItem.linkId,
+                                  })
                     }
                     onDetails={onShowDetails}
                     onSelectCover={

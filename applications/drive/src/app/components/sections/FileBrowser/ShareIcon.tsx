@@ -7,6 +7,7 @@ import type { BrowserItemId } from '../../FileBrowser/interface';
 import type { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 
 interface Props {
+    volumeId: string;
     shareId: string;
     linkId: BrowserItemId;
     trashed: number | null;
@@ -15,7 +16,7 @@ interface Props {
     isAdmin: boolean;
 }
 
-const ShareIcon = ({ shareId, linkId, trashed, className, showLinkSharingModal, isAdmin }: Props) => {
+const ShareIcon = ({ volumeId, shareId, linkId, trashed, className, showLinkSharingModal, isAdmin }: Props) => {
     if (trashed || !isAdmin) {
         return null;
     }
@@ -30,6 +31,7 @@ const ShareIcon = ({ shareId, linkId, trashed, className, showLinkSharingModal, 
                     className={className}
                     onClick={() => {
                         void showLinkSharingModal({
+                            volumeId,
                             shareId,
                             linkId,
                         });
