@@ -197,7 +197,7 @@
         "Autentisering"
       ],
       "Auto-delete spam and trash": [
-        "Autoborttagning av skräppost och kastat"
+        "Ta bort skräppost och papperskorg automatiskt"
       ],
       "Back": [
         "Tillbaka"
@@ -7976,19 +7976,19 @@
         "Uppmärksamhet krävs"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
-        "Autosvar är aktivt varje månad mellan vald start- och sluttid."
+        "Automatiskt svar är aktivt varje månad mellan vald start- och sluttid."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
-        "Autosvar är aktivt varje vecka mellan vald start- och sluttid."
+        "Automatiskt svar är aktivt varje vecka mellan vald start- och sluttid."
       ],
       "Auto-reply is active from the start time to the end time.": [
-        "Autosvar är aktivt från starttiden till sluttiden."
+        "Automatiskt svar är aktivt från starttiden till sluttiden."
       ],
       "Auto-reply is active until you turn it off.": [
-        "Autosvar är aktivt tills att du stänger av det."
+        "Automatiskt svar är aktivt tills att du stänger av det."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Autosvar är alltid aktivt de veckodagar du väljer, mellan de valda timmarna."
+        "Automatiskt svar är alltid aktivt de veckodagar du väljer, mellan de valda timmarna."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Rensa automatiskt bort e-postmeddelanden flyttade till papperskorgen och skräppost för mer än 30 dagar sedan."
@@ -10679,6 +10679,12 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerade VPN-servrar i organisationen"
       ]
     },
     "info": {
@@ -12357,6 +12363,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Message (auto-reply)": [
+        "Meddelande (automatiskt svar)"
       ]
     },
     "label": {
@@ -17411,6 +17420,15 @@
       ],
       "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
         "VPN med servrar i ${ vpnServersCountData.free.countries } länder"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email-alias för att bekämpa skräppost"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Krypterad e-post med ${ totalMailStorageSize } lagringsutrymme"
+      ],
+      "Password manager for all your devices": [
+        "Lösenordshanterare för alla dina enheter"
       ]
     },
     "Signup label": {
@@ -18734,10 +18752,10 @@
         "Administratörsrättigheter återställda"
       ],
       "Auto-reply disabled": [
-        "Autosvar inaktiverad"
+        "Automatiskt svar inaktiverat"
       ],
       "Auto-reply updated": [
-        "Autosvar uppdaterat"
+        "Automatiskt svar uppdaterat"
       ],
       "Backup password updated": [
         "Säkerhetslösenord uppdaterat"
@@ -20616,10 +20634,10 @@
         "Verifiera e-postadress"
       ],
       "Verifying your card...": [
-        "Verifierar ditt kort..."
+        "Verifierar ditt kort …"
       ],
       "Verifying your payment...": [
-        "Verifierar din betalning..."
+        "Verifierar din betalning …"
       ],
       "Version history": [
         "Versionshistorik"
@@ -20717,6 +20735,9 @@
       ],
       "Multiple accounts, 1 private inbox": [
         "Flera konton, 1 privat inkorg"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Anslut fler Gmail-adresser med ${ planName }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22143,6 +22164,55 @@
     "b2b_trials_Success": {
       "Subscription canceled.": [
         "Prenumeration avslutad."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Betalningsdetaljer"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Genom att klicka på “Prova“ godkänner du våra ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Under provperioden kan du ha upp till 10 användare."
+      ],
+      "free for 14 days": [
+        "gratis i 14 dagar"
+      ],
+      "on ${ formattedDate }": [
+        "den ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Prova ${ selected } ${ freeFor14Days }"
+      ],
+      "Try it free for 14 days": [
+        "Prova det gratis i 14 dagar"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerade servrar under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_USERS } användare under provperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan inte lägga till anpassade domäner under provperioden."
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konto, uppgradera till ${ planName }.",
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konton, uppgradera till ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externt konto till ${ MAIL_APP_NAME }.",
+        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externa konton till ${ MAIL_APP_NAME }."
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Öppna i ${ appName }"
       ]
     }
   }

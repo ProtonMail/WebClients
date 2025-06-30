@@ -1575,6 +1575,9 @@
       ],
       "Deleting label": [
         "A eliminar a etiqueta"
+      ],
+      "Create free account now": [
+        "Criar uma conta gratuita agora"
       ]
     },
     "action": {
@@ -5716,6 +5719,9 @@
       ],
       "ZIP code is required": [
         "O código postal é necessário."
+      ],
+      "Permissions request failed.": [
+        "Erro no pedido de permissões"
       ]
     },
     "error": {
@@ -10722,6 +10728,15 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados na organização"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Também perderá o acesso às funcionalidades do ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -17438,6 +17453,44 @@
       ],
       "Your plan": [
         "O seu plano"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "Aliases do Hide-my-email do ${ FREE_PASS_ALIASES } para combater spam"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } endereço",
+        "${ maxAddresses } endereços"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } calendário",
+        "${ maxCalendars } calendários"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } de armazenamento em nuvem para ficheiros e fotografias"
+      ],
+      "Collaborative document editing": [
+        "Edição colaborativa de documentos"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "E-mail encriptado com ${ totalMailStorageSize } armazenamento"
+      ],
+      "Every free account comes with:": [
+        "Toda conta gratuita vem com:"
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Crie um seguro connosco ou ${ internalButton }"
+      ],
+      "Password manager for all your devices": [
+        "Gestor de palavras-passe para todos os seus dispositivos"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Crie uma conta para aproveitar ao máximo tudo o que ${ BRAND_NAME } tem a oferecer."
+      ],
+      "use your current email.": [
+        "use o seu e-mail atual."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN com servidores em ${ vpnServersCountData.free.countries } países"
       ]
     },
     "Signup label": {
@@ -17461,6 +17514,9 @@
       ],
       "Username": [
         "Utilizador"
+      ],
+      "${ BRAND_NAME } password": [
+        "Palavra-passe do ${ BRAND_NAME }"
       ]
     },
     "Signup step": {
@@ -18972,6 +19028,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Se inseriu um número de telefone válido, enviaremos-lhe um SMS com o seu nome de utilizador no próximo minuto."
+      ],
+      "Address successfully added": [
+        "O endereço foi adicionado."
       ]
     },
     "Success message": {
@@ -20720,6 +20779,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Foi convidado a experimentar ${ MAIL_APP_NAME }"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Conecte mais endereços do Gmail com ${ planName }"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Várias contas, 1 caixa de entrada privada"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22134,6 +22199,86 @@
       ],
       "Bank transfer - ${ details }": [
         "Transferência bancária - ${ details }"
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Detalhes do pagamento"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Após o término da avaliação em ${ formattedDate }, ela se tornará uma subscrição paga que se renova automaticamente a cada ${ cycle } meses em ${ formattedDate }. Não será cobrado se cancelar antes de ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Após o período de avaliação terminar em ${ formattedDate }, ela se tornará uma subscrição paga que será renovada automaticamente mensalmente em ${ formattedDate }. Não será cobrado se cancelar antes de ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Ao clicar em \"Experimentar\", concorda com os nossos ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Durante o período experimental, pode ter até 10 utilizadores."
+      ],
+      "free for 14 days": [
+        "Gratuito por 14 dias"
+      ],
+      "on ${ formattedDate }": [
+        "em ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Experimente ${ selected } ${ freeFor14Days }"
+      ],
+      "Try it free for 14 days": [
+        "Experimente gratuitamente por 14 dias"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Ao cancelar, o seu período de avaliação gratuita não será convertido numa subscrição paga, mas poderá continuar a usufruir dos benefícios do plano até ao final do período de avaliação. Após isso, mudará para o plano ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Pode ter até ${ TRIAL_MAX_LUMO_SEATS } licenças do Lumo durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Pode ter até ${ TRIAL_MAX_SCRIBE_SEATS } licenças do Scribe durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Pode ter até ${ TRIAL_MAX_USERS } utilizadores durante o período de avaliação."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Não pode adicionar domínios personalizados durante o período de avaliação."
+      ],
+      "You have reached the trial limit.": [
+        "Atingiu o limite da avaliação."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Montante devido depois da versão de avaliação"
+      ],
+      "Amount due now": [
+        "Montante devido agora"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "A subscrição foi cancelada."
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } conta, melhore para o ${ planName }.",
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } contas, melhore para ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Está a encaminhar e-mails de ${ MAX_SYNC_FREE_USER } conta externa para ${ MAIL_APP_NAME }.",
+        "Está a encaminhar e-mails de ${ MAX_SYNC_FREE_USER } contas externas para ${ MAIL_APP_NAME }."
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Abrir no ${ appName }"
       ]
     }
   }

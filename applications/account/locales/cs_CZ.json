@@ -473,10 +473,10 @@
         "Smazat “${ label.Name }”"
       ],
       "Deleting folder": [
-        "Smazat složku"
+        "Smazání složky"
       ],
       "Deleting label": [
-        "Smazat štítek"
+        "Smazání štítku"
       ],
       "Deny access": [
         "Zamítnout přístup"
@@ -1575,6 +1575,9 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Create free account now": [
+        "Vytvořit nyní účet zdarma"
       ]
     },
     "action": {
@@ -2007,6 +2010,30 @@
       ],
       "on ${ formattedDate }": [
         "dne ${ formattedDate }"
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Kliknutím na \"Vyzkoušet\" vyjadřujete souhlas s našimi ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Během zkušebního doby můžete mít až 10 uživatelů."
+      ],
+      "free for 14 days": [
+        "zdarma na 14 dnů"
+      ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Vyzkoušejte ${ selected } ${ freeFor14Days }"
+      ],
+      "Try it free for 14 days": [
+        "Vyzkoušet na 14 dní zdarma"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Když zrušíte bezplatnou zkušební verzi, nebude převedena na placené předplatné, ale výhody tarifu můžete využívat až do konce zkušebního doby. Poté budete převedeni na tarif ${ BRAND_NAME } Free."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Během zkušební doby nelze přidávat vlastní domény."
+      ],
+      "You have reached the trial limit.": [
+        "Dosáhli jste limitu zkušební verze."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -5797,6 +5824,9 @@
       ],
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
+      ],
+      "Permissions request failed.": [
+        "Požadavek o oprávnění selhal."
       ]
     },
     "error": {
@@ -10985,6 +11015,15 @@
       ],
       "Zoom meeting": [
         "schůzku na Zoomu"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikované servery VPN"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Počet dedikovaných serverů VPN v organizaci"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Ztratíte také přístup k funkcím ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -12426,7 +12465,7 @@
         "Hledat"
       ],
       "Search for a name or email": [
-        "Vyhledat název nebo e-mail"
+        "Vyhledat jméno nebo e-mail"
       ],
       "Second password": [
         "Druhé heslo"
@@ -17881,6 +17920,42 @@
       ],
       "Your plan": [
         "Váš tarif"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } adresa",
+        "${ maxAddresses } adresy",
+        "${ maxAddresses } adres",
+        "${ maxAddresses } adres"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } kalendář",
+        "${ maxCalendars } kalendáře",
+        "${ maxCalendars } kalendářů",
+        "${ maxCalendars } kalendářů"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } cloudového úložiště pro soubory a fotky"
+      ],
+      "Collaborative document editing": [
+        "Spolupráce na úpravě dokumentů"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Šifrovaný e-mail s úložištěm ${ totalMailStorageSize }"
+      ],
+      "Every free account comes with:": [
+        "Každý bezplatný účet obsahuje:"
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Získejte od nás bezpečnou adresu, nebo ${ internalButton }"
+      ],
+      "Password manager for all your devices": [
+        "Správce hesel pro všechna vaše zařízení"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Zaregistrujte se a získejte vše, co ${ BRAND_NAME } nabízí"
+      ],
+      "use your current email.": [
+        "použijte svůj aktualní e-mail."
       ]
     },
     "Signup label": {
@@ -17904,6 +17979,9 @@
       ],
       "Username": [
         "Uživatelské jméno"
+      ],
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME } heslo"
       ]
     },
     "Signup step": {
@@ -18216,7 +18294,7 @@
     },
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
-        "Přístup k obsahu ve streamovacích službách po celém světě"
+        "Přístup k obsahu streamovacích služeb po celém světě"
       ],
       "Get 500 GB to securely store all your files and photos": [
         "Získejte 500 GB pro bezpečné uložení všech svých souborů a fotek"
@@ -19487,6 +19565,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Pokud jste zadali platné telefonní číslo pro obnovení, obdržíte do minuty své uživatelské jméno prostřednictvím SMS."
+      ],
+      "Address successfully added": [
+        "Adresa byla úspěšně přidána"
       ]
     },
     "Success message": {
@@ -21272,6 +21353,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Byli jste pozváni k vyzkoušení ${ MAIL_APP_NAME }"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Připojení více adres Gmail s ${ planName }"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Více účtů, 1 soukromá doručená pošta"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22797,6 +22884,25 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročně, ${ untilString }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Předplatné zrušeno."
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Chcete-li přeposílat e-maily z ${ MAX_SYNC_PAID_USER } účtu, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až ze ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externího účtu na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }."
       ]
     }
   }

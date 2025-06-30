@@ -10274,6 +10274,17 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } tulos löytyi",
+        "${ resultsCount } tulosta löytyi"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Jatkossa uusia aktiivisuustietoja ei enää kerätä, eikä niitä näytetä."
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Ilmainen kokeilujaksosi sisältää ${ ownedCount } oman palvelimen.",
+        "Ilmainen kokeilujaksosi sisältää ${ ownedCount } omaa palvelinta."
       ]
     },
     "info": {
@@ -16671,6 +16682,14 @@
       ],
       "Your plan": [
         "Sinun tilauksesi"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } osoite",
+        "${ maxAddresses } osoitetta"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } kalenteri",
+        "${ maxCalendars } kalenteria"
       ]
     },
     "Signup label": {
@@ -21188,6 +21207,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Vuosittain, ${ untilString }"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Välittääksesi sähköposteja ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }.",
+        "Välittääksesi sähköposteja jopa ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin.",
+        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin."
       ]
     }
   }

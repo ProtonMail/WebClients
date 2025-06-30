@@ -1575,6 +1575,9 @@
       ],
       "Explore other plans": [
         "다른 플랜 알아보기"
+      ],
+      "Create free account now": [
+        "지금 무료 계정 생성하기"
       ]
     },
     "action": {
@@ -5684,6 +5687,9 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Permissions request failed.": [
+        "권한 요청을 실패했습니다."
       ]
     },
     "error": {
@@ -10599,6 +10605,15 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "Dedicated VPN servers": [
+        "전용 VPN 서버"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "조직의 전용 VPN 서버 수"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "또한 ${ boldPlanTitle }의 모든 기능도 사용할 수 없게 됩니다:"
       ]
     },
     "info": {
@@ -17256,6 +17271,36 @@
       ],
       "Your plan": [
         "내 플랜"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "스팸을 방지할 수 있는 ${ FREE_PASS_ALIASES } hide-my-email 별칭"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses }개 주소"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars }개 캘린더"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "파일 및 사진을 위한 ${ totalDriveStorageSize } 클라우드 스토리지"
+      ],
+      "Collaborative document editing": [
+        "협업 문서 편집"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "${ totalMailStorageSize } 스토리지가 포함된 암호화된 이메일"
+      ],
+      "Every free account comes with:": [
+        "모든 무료 계정에는 다음이 포함됩니다:"
+      ],
+      "Password manager for all your devices": [
+        "당신의 모든 기기에서 사용할 수 있는 비밀번호관리자"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "${ BRAND_NAME }이 제공하는 모든 것을 경험하시려면 회원 가입하세요."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "${ vpnServersCountData.free.countries }개 국가에 소재된 서버의 VPN"
       ]
     },
     "Signup label": {
@@ -17279,6 +17324,9 @@
       ],
       "Username": [
         "사용자 이름"
+      ],
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME } 비밀번호"
       ]
     },
     "Signup step": {
@@ -18751,6 +18799,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "정상적인 확인 전화번호를 입력했다면 수 분내로 아이디가 적혀있는 문자 메시지를 받으실 수 있습니다."
+      ],
+      "Address successfully added": [
+        "주소가 성공적으로 추가되었습니다"
       ]
     },
     "Success message": {
@@ -20482,6 +20533,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } 체험에 초대되었습니다."
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "더 많은 Gmail 주소를 ${ planName }(으)로 연결하기"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "여러 계정, 단 하나의 받은 편지함"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -21860,6 +21917,81 @@
       ],
       "Yearly, ${ untilString }": [
         "연간, ${ untilString }"
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "결제 수단 정보"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, ${ formattedDate }에 ${ cycle }개월마다 자동 갱신되는 유료 구독으로 전환됩니다. ${ formattedDate } 이전에 취소시 요금이 부과되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매월 ${ formattedDate }에 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "\"체험\"을 클릭하면, ${ termsAndConditions }에 동의하는 것으로 간주됩니다."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "무료 체험 기간동안 최대 10명의 사용자를 추가할 수 있습니다."
+      ],
+      "free for 14 days": [
+        "14일간 무료"
+      ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "${ selected }을(를) ${ freeFor14Days }로 사용해 보세요"
+      ],
+      "Try it free for 14 days": [
+        "14일간 무료로 체험해 보기"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "취소시 무료 체험이 유료 구독으로 전환되지 않지만, 체험 기간이 끝날 때까지 플랜의 혜택을 계속 누리실 수 있습니다. 기간 종료 후 ${ BRAND_NAME } 무료 요금제로 자동 다운그레이드됩니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_LUMO_SEATS }개의 Lumo 계정을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 Scribe 사용 권한을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_USERS }명의 사용자를 추가할 수 있습니다."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "체험 기간 동안 사용자 지정 도메인을 추가할 수 없습니다."
+      ],
+      "You have reached the trial limit.": [
+        "무료 체험 한도에 도달했습니다."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "무료 체험 후 납부할 금액"
+      ],
+      "Amount due now": [
+        "지금 납부할 금액"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "구독이 취소되었습니다."
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "최대 ${ MAX_SYNC_PAID_USER }개의 계정에서 이메일을 전달하려면, ${ planName }(으)로 업그레이드하세요."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "${ MAX_SYNC_FREE_USER }개의 외부 계정에서 ${ MAIL_APP_NAME }(으)로 이메일을 전달하는 중입니다."
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "${ appName }(에)서 열기"
       ]
     }
   }
