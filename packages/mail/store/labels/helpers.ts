@@ -7,6 +7,7 @@ import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import {
     CUSTOM_VIEWS,
     CUSTOM_VIEWS_LABELS,
+    CUSTOM_VIEWS_TO_HUMAN,
     LABELS_AUTO_READ,
     LABELS_UNMODIFIABLE_BY_USER,
     LABEL_IDS_TO_HUMAN,
@@ -235,3 +236,11 @@ export const isAutoRead = (labelID: MAILBOX_LABEL_IDS | string) =>
 
 export const isUnmodifiableByUser = (labelID: MAILBOX_LABEL_IDS | string) =>
     LABELS_UNMODIFIABLE_BY_USER.includes(labelID as MAILBOX_LABEL_IDS);
+
+export const isHumalLabelIDKey = (labelID: string): labelID is keyof typeof LABEL_IDS_TO_HUMAN => {
+    return labelID in LABEL_IDS_TO_HUMAN;
+};
+
+export const isHumanCustomViewKey = (labelID: string): labelID is keyof typeof CUSTOM_VIEWS_TO_HUMAN => {
+    return labelID in CUSTOM_VIEWS_TO_HUMAN;
+};
