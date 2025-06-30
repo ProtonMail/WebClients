@@ -68,36 +68,38 @@ export const ConfirmMoveManyItems: FC<
     useEffect(autoConfirm ? onConfirm : noop, []);
 
     return (
-        <WithVault shareId={shareId} onFallback={onCancel}>
-            {({ content: { name: vaultName } }) => (
-                <ConfirmationPrompt
-                    onConfirm={onConfirm}
-                    onCancel={onCancel}
-                    title={c('Title').ngettext(
-                        msgid`Move ${count} item to ${vaultName}`,
-                        `Move ${count} items to ${vaultName}`,
-                        count
-                    )}
-                    message={
-                        <div className="flex gap-y-4">
-                            {hasSharedItems && (
-                                <Alert type="error">
-                                    {c('Warning')
-                                        .t`Some items are currently shared. Moving them to another vault will remove access for all other users.`}
-                                </Alert>
-                            )}
-
-                            {hasSecureLinks &&
-                                c('Info').ngettext(
-                                    msgid`Moving an item to another vault will erase its secure links.`,
-                                    `Moving items to another vault will erase their secure links.`,
-                                    count
+        !autoConfirm && (
+            <WithVault shareId={shareId} onFallback={onCancel}>
+                {({ content: { name: vaultName } }) => (
+                    <ConfirmationPrompt
+                        onConfirm={onConfirm}
+                        onCancel={onCancel}
+                        title={c('Title').ngettext(
+                            msgid`Move ${count} item to ${vaultName}`,
+                            `Move ${count} items to ${vaultName}`,
+                            count
+                        )}
+                        message={
+                            <div className="flex gap-y-4">
+                                {hasSharedItems && (
+                                    <Alert type="error">
+                                        {c('Warning')
+                                            .t`Some items are currently shared. Moving them to another vault will remove access for all other users.`}
+                                    </Alert>
                                 )}
-                        </div>
-                    }
-                />
-            )}
-        </WithVault>
+
+                                {hasSecureLinks &&
+                                    c('Info').ngettext(
+                                        msgid`Moving an item to another vault will erase its secure links.`,
+                                        `Moving items to another vault will erase their secure links.`,
+                                        count
+                                    )}
+                            </div>
+                        }
+                    />
+                )}
+            </WithVault>
+        )
     );
 };
 
