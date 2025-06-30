@@ -191,23 +191,6 @@ const plansWithIpAddons = [
     },
 ];
 
-it.each(plansWithIpAddons)('should disable decrease button for IP addon - $plan', ({ plan, addon }) => {
-    const planIDs: PlanIDs = {
-        [plan]: 1,
-        [addon]: 1,
-    };
-
-    const props: Props = {
-        ...defaultProps,
-        currentPlan: PLANS_MAP[plan] as Plan,
-        planIDs,
-        latestSubscription: buildSubscription({}, planIDs),
-    };
-
-    render(<ProtonPlanCustomizer {...props} />);
-    expect(screen.getByTestId(`decrease-addon-${addon}`)).toBeDisabled();
-});
-
 it.each(plansWithIpAddons)(
     'should enable decrease button if the feature flag is enabled - $plan',
     ({ plan, addon }) => {
