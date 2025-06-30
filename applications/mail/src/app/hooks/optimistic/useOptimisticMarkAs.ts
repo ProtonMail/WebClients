@@ -136,12 +136,10 @@ export const useOptimisticMarkAs = () => {
                 rollbackChanges.push({ element, changes: computeRollbackMarkAsChanges(element, labelID, changes) });
 
                 if (testIsMessage(element)) {
-                    const message = element as Message;
-
-                    dispatch(optimisticMarkAsMessageAction({ ID: message.ID, changes }));
+                    dispatch(optimisticMarkAsMessageAction({ ID: element.ID, changes }));
 
                     // Update in conversation cache
-                    const conversationState = getConversation(message.ConversationID);
+                    const conversationState = getConversation(element.ConversationID);
                     if (conversationState && conversationState.Conversation) {
                         const conversation = conversationState.Conversation;
                         const updatedConversation = applyMarkAsChangesOnConversationWithMessages(
@@ -152,8 +150,8 @@ export const useOptimisticMarkAs = () => {
 
                         dispatch(
                             optimisticMarkAsConversationMessages({
-                                ID: message.ConversationID,
-                                messageID: message.ID,
+                                ID: element.ConversationID,
+                                messageID: element.ID,
                                 updatedConversation,
                                 changes,
                             })
@@ -168,7 +166,7 @@ export const useOptimisticMarkAs = () => {
                     }
 
                     // Updates in elements cache if message mode
-                    const messageElement = getElementByID(message.ID);
+                    const messageElement = getElementByID(element.ID);
                     if (messageElement && messageElement.ID) {
                         const updatedMessage = applyMarkAsChangesOnMessage(messageElement as Message, changes);
                         updatedElements.push(updatedMessage);
@@ -177,11 +175,11 @@ export const useOptimisticMarkAs = () => {
                         }
 
                         // Update counters
-                        messageCounters = updateCountersForMarkAs(message, updatedMessage, messageCounters);
+                        messageCounters = updateCountersForMarkAs(element, updatedMessage, messageCounters);
                     }
 
                     // Update in elements cache if conversation mode
-                    const conversationElement = getElementByID(message.ConversationID);
+                    const conversationElement = getElementByID(element.ConversationID);
                     if (conversationElement && conversationElement.ID) {
                         updatedElements.push(
                             applyMarkAsChangesOnConversationWithMessages(conversationElement, labelID, changes)

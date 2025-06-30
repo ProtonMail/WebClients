@@ -93,7 +93,7 @@ const Item = ({
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const isSelected =
         isConversationContentView && isMessage(element)
-            ? elementID === (element as Message).ConversationID
+            ? elementID === element.ConversationID
             : elementID === element.ID;
     const showIcon = labelsWithIcons.includes(labelID) || isCustomLabel(labelID, labels);
     const senders = conversationMode

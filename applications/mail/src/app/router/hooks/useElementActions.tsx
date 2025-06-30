@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 import { useItemsSelection } from '@proton/components';
 import { useFolders } from '@proton/mail';
 import { convertCustomViewLabelsToAlmostAllMail, getFolderName } from '@proton/mail/store/labels/helpers';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
@@ -99,7 +98,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
                 if (isMessage(element) && isDraft(element) && !preventComposer) {
                     void onCompose({
                         type: ComposeTypes.existingDraft,
-                        existingDraft: { localID: element.ID as string, data: element as Message },
+                        existingDraft: { localID: element.ID as string, data: element },
                         fromUndo: false,
                     });
                 }
@@ -108,7 +107,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
                     history.push(
                         setParamsInLocation(history.location, {
                             labelID,
-                            elementID: (element as Message).ConversationID,
+                            elementID: element.ConversationID,
                             messageID: element.ID,
                         })
                     );

@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import clsx from '@proton/utils/clsx';
 
 import { isMessage } from '../../helpers/elements';
@@ -18,25 +17,23 @@ const ItemAction = ({ element, className }: Props) => {
         return null;
     }
 
-    const message = element as Message;
-
-    if (!message.IsReplied && !message.IsRepliedAll && !message.IsForwarded) {
+    if (!element.IsReplied && !element.IsRepliedAll && !element.IsForwarded) {
         return null;
     }
 
     return (
         <div className={clsx(['flex flex-nowrap', className])}>
-            {!!message.IsReplied && (
+            {!!element.IsReplied && (
                 <Tooltip title={c('Alt').t`Replied to`}>
                     <Icon name="arrow-up-and-left-big" alt={c('Alt').t`Replied to`} className="shrink-0 mr-1" />
                 </Tooltip>
             )}
-            {!!message.IsRepliedAll && (
+            {!!element.IsRepliedAll && (
                 <Tooltip title={c('Alt').t`Replied to all`}>
                     <Icon name="arrows-up-and-left-big" alt={c('Alt').t`Replied to all`} className="shrink-0 mr-1" />
                 </Tooltip>
             )}
-            {!!message.IsForwarded && (
+            {!!element.IsForwarded && (
                 <Tooltip title={c('Alt').t`Forwarded`}>
                     <Icon name="arrow-up-and-left-big" alt={c('Alt').t`Forwarded`} className="mirror shrink-0 mr-1" />
                 </Tooltip>
