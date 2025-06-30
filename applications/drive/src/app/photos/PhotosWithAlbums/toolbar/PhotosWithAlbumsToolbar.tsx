@@ -343,7 +343,11 @@ const ToolbarRightActionsAlbumGallery = ({
                     showIconOnly={showIconOnly}
                     onClick={() => {
                         // TODO: avoid the data loop and just execute callback
-                        showLinkSharingModal({ shareId: album.rootShareId, linkId: album.linkId });
+                        showLinkSharingModal({
+                            volumeId: album.volumeId,
+                            shareId: album.rootShareId,
+                            linkId: album.linkId,
+                        });
                     }}
                 />
             )}

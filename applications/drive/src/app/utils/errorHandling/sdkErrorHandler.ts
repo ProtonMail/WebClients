@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import { useNotifications } from '@proton/components';
 import { AbortError, ConnectionError, ProtonDriveError, RateLimitedError, ValidationError } from '@proton/drive';
 
@@ -15,13 +17,18 @@ export const shouldTrackError = (err: Error) =>
 export const useSdkErrorHandler = () => {
     const { createNotification } = useNotifications();
 
-    const handleError = (error: Error, fallbackMessage?: string, extra?: {}) => {
-        const message = error?.message || fallbackMessage;
-        createNotification({ type: 'error', text: message, preWrap: true });
-        if (shouldTrackError(error)) {
-            sendErrorReport(new EnrichedError(error.message, { tags: { component: 'drive-sdk' }, extra }));
-        }
-    };
+    const handleError = useCallback(
+        (error: Error | unknown, fallbackMessage?: string, extra?: {}) => {
+            const errorToHandle = error instanceof Error ? error : new Error(fallbackMessage);
+            const message = errorToHandle?.message || fallbackMessage;
+            createNotification({ type: 'error', text: message, preWrap: true });
+            if (shouldTrackError(errorToHandle)) {
+                sendErrorReport(new EnrichedError(errorToHandle.message, { tags: { component: 'drive-sdk' }, extra }));
+            }
+        },
+        [createNotification]
+    );
+
     return {
         handleError,
     };

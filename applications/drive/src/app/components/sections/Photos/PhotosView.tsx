@@ -28,6 +28,7 @@ export const PhotosView: FC = () => {
 
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const {
+        volumeId,
         shareId,
         linkId,
         photos,
@@ -93,7 +94,7 @@ export const PhotosView: FC = () => {
         return <Loader />;
     }
 
-    if (!shareId || !linkId) {
+    if (!volumeId || !shareId || !linkId) {
         return <EmptyPhotos />;
     }
 
@@ -122,7 +123,12 @@ export const PhotosView: FC = () => {
                     onShare={
                         isDecryptedLink(previewItem) && previewItem?.trashed
                             ? undefined
-                            : () => showLinkSharingModal({ shareId, linkId: previewItem.linkId })
+                            : () =>
+                                  showLinkSharingModal({
+                                      volumeId,
+                                      shareId,
+                                      linkId: previewItem.linkId,
+                                  })
                     }
                     onDetails={() =>
                         showDetailsModal({

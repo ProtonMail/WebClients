@@ -37,7 +37,7 @@ const SelectedFileToShareModal = ({
 
     const handleSubmit = async () => {
         if (selectedFile) {
-            void showLinkSharingModal({ shareId, linkId: selectedFile.linkId });
+            void showLinkSharingModal({ shareId, linkId: selectedFile.linkId, volumeId: selectedFile.volumeId });
             onClose?.();
         }
     };

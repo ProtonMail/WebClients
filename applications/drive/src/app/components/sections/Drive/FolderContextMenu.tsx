@@ -144,6 +144,7 @@ export function FolderContextMenu({
                     <>
                         <ContextSeparator />
                         <ShareLinkButton
+                            volumeId={activeFolder.volumeId}
                             close={close}
                             shareId={activeFolder.shareId}
                             linkId={activeFolder.linkId}

@@ -17,6 +17,7 @@ import { useRenameModal } from '../../../modals/RenameModal';
 import { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLinkModal';
 
 interface Props {
+    volumeId: string;
     shareId: string;
     selectedLinks: DecryptedLink[];
     permissions: SHARE_MEMBER_PERMISSIONS;
@@ -24,7 +25,7 @@ interface Props {
     renameLink: ReturnType<typeof useActions>['renameLink'];
 }
 
-const ActionsDropdown = ({ shareId, selectedLinks, permissions, trashLinks, renameLink }: Props) => {
+const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashLinks, renameLink }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
@@ -51,7 +52,7 @@ const ActionsDropdown = ({ shareId, selectedLinks, permissions, trashLinks, rena
             name: c('Action').t`Share`,
             icon: 'user-plus',
             testId: 'actions-dropdown-share-link',
-            action: () => showLinkSharingModal({ shareId: shareId, linkId: selectedLinkIds[0] }),
+            action: () => showLinkSharingModal({ volumeId, shareId, linkId: selectedLinkIds[0] }),
         },
         {
             hidden: !isEditor,

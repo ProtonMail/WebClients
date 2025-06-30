@@ -41,6 +41,7 @@ export function SearchView() {
                     <DriveToolbar
                         //TODO: We don't support search view and direct sharing so we assume that user is owner.
                         permissions={SHARE_MEMBER_PERMISSIONS.OWNER}
+                        volumeId={activeFolder.volumeId}
                         shareId={activeFolder.shareId}
                         linkId={activeFolder.linkId}
                         items={searchView.items}

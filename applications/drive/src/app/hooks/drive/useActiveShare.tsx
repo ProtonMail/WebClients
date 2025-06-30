@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useState } from 'react';
 import * as React from 'react';
 
-export type DriveFolder = { shareId: string; linkId: string };
+export type DriveFolder = { volumeId: string; shareId: string; linkId: string };
 
 interface ActiveShareProviderState {
     activeShareId: string;

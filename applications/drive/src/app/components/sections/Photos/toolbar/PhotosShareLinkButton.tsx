@@ -40,7 +40,9 @@ const PhotosShareLinkButton = ({ selectedLinks }: Props) => {
             <ToolbarButton
                 title={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
                 icon={<Icon name={iconName} alt={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Share`} />}
-                onClick={() => showLinkSharingModal({ shareId: link.rootShareId, linkId: link.linkId })}
+                onClick={() =>
+                    showLinkSharingModal({ volumeId: link.volumeId, shareId: link.rootShareId, linkId: link.linkId })
+                }
                 data-testid={hasSharedLink ? 'toolbar-manage-link' : 'toolbar-share-link'}
             />
             {linkSharingModal}

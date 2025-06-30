@@ -32,8 +32,8 @@ const useSearchSpotlight = () => {
 
     useEffect(() => {
         getDefaultShare()
-            .then(({ shareId, rootLinkId }) => {
-                setRootFolder({ shareId, linkId: rootLinkId });
+            .then(({ volumeId, shareId, rootLinkId }) => {
+                setRootFolder({ volumeId, shareId, linkId: rootLinkId });
             })
             .catch(sendErrorReport);
     }, []);

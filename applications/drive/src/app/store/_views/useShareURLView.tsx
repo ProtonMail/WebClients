@@ -258,7 +258,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
     };
 
     // TODO: Remove this parameter when we will have share events
-    const deleteLink = async (deleteIfEmptyCallback: ReturnType<typeof useShareMemberView>['deleteShareIfEmpty']) => {
+    const deleteLink = async (deleteIfEmptyCallback?: ReturnType<typeof useShareMemberView>['deleteShareIfEmpty']) => {
         if (!link || !shareUrl) {
             return;
         }
@@ -282,11 +282,12 @@ export default function useShareURLView(shareId: string, linkId: string) {
                     });
                 });
             await updateLinkState(abortController.signal);
-            await deleteIfEmptyCallback();
+            await deleteIfEmptyCallback?.();
         });
     };
 
-    const stopSharing = async () => {
+    // TODO: Remove that when we will have sdk public link
+    const stopSharing = async (withNotification: boolean = true) => {
         return withDeleting(async () => {
             const abortController = new AbortController();
             const loadedLink = await getLink(abortController.signal, shareId, linkId);
@@ -295,15 +296,23 @@ export default function useShareURLView(shareId: string, linkId: string) {
             }
             await deleteShare(loadedLink.sharingDetails.shareId, { force: true })
                 .then(() => {
-                    createNotification({
-                        text: c('Notification').t`You stopped sharing this item`,
-                    });
+                    setShareUrlInfo(undefined);
+                    setSharedLink('');
+                    setPassword('');
+                    setInitialExpiration(null);
+                    if (withNotification) {
+                        createNotification({
+                            text: c('Notification').t`You stopped sharing this item`,
+                        });
+                    }
                 })
                 .catch(() => {
-                    createNotification({
-                        type: 'error',
-                        text: c('Notification').t`Stopping the sharing of this item has failed`,
-                    });
+                    if (withNotification) {
+                        createNotification({
+                            type: 'error',
+                            text: c('Notification').t`Stopping the sharing of this item has failed`,
+                        });
+                    }
                 });
             await updateLinkState(abortController.signal);
         });

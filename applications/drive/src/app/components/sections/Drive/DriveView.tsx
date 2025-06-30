@@ -47,6 +47,7 @@ function DriveView() {
             isLinkReadOnly={folderView.isActiveLinkReadOnly}
             isLinkRoot={folderView.isActiveLinkRoot}
             isLinkInDeviceShare={folderView.isActiveLinkInDeviceShare}
+            volumeId={activeFolder.volumeId}
             shareId={activeFolder.shareId}
             linkId={activeFolder.linkId}
             items={folderView.items}
