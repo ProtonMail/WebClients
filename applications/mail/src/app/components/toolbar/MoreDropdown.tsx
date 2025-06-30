@@ -17,11 +17,11 @@ import useSnooze from '../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../hooks/useLabelActions';
 import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
+import useListTelemetry, { ACTION_TYPE, SELECTED_RANGE, SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import SnoozeUpsellModal from '../list/snooze/components/SnoozeUpsellModal';
 import SnoozeToolbarDropdownStepWrapper, {
     SnoozeToolbarDropdownStepWrapperProps,
 } from '../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
-import useListTelemetry, { ACTION_TYPE, SELECTED_RANGE, SOURCE_ACTION } from '../list/useListTelemetry';
 import { type DropdownRender } from '../message/extrasHeader/HeaderDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 

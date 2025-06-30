@@ -6,8 +6,11 @@ import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
-import useListTelemetry, { ACTION_TYPE, numberSelectionElements } from 'proton-mail/components/list/useListTelemetry';
+import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import useListTelemetry, {
+    ACTION_TYPE,
+    numberSelectionElements,
+} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { useMarkAllAs } from 'proton-mail/hooks/actions/markAs/useMarkAllAs';
 import { useMarkSelectionAs } from 'proton-mail/hooks/actions/markAs/useMarkSelectionAs';
 import { MOVE_BACK_ACTION_TYPES } from 'proton-mail/hooks/actions/moveBackAction/interfaces';
@@ -15,8 +18,12 @@ import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useM
 import { useGetConversationsByIDs } from 'proton-mail/hooks/conversation/useConversation';
 import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { useMailDispatch } from 'proton-mail/store/hooks';
-import { markMessagesAsRead, markMessagesAsUnread } from 'proton-mail/store/mailbox/mailboxActions';
-import { markConversationsAsRead, markConversationsAsUnread } from 'proton-mail/store/mailbox/mailboxActions';
+import {
+    markConversationsAsRead,
+    markConversationsAsUnread,
+    markMessagesAsRead,
+    markMessagesAsUnread,
+} from 'proton-mail/store/mailbox/mailboxActions';
 
 import { isMessage as testIsMessage } from '../../../helpers/elements';
 import type { Element } from '../../../models/element';
