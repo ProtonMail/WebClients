@@ -121,7 +121,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.LoginAutofillTelemetry]: false,
     [PassFeature.PassBasicAuthAutofill]: false,
     [PassFeature.PassEnableDesktopAutoUpdate]: false,
-    [PassFeature.PassExperimentalWebsiteRules]: true,
+    [PassFeature.PassExperimentalWebsiteRules]: false,
     [PassFeature.PassProtonAnniversaryPromo2025]: false,
     [PassFeature.PassRenameAdminToManager]: false,
     [PassFeature.PassWebInternalAlpha]: false,
