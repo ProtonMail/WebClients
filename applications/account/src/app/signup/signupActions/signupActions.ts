@@ -13,20 +13,16 @@ import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { getAllMembers, updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-import {
-    queryCheckEmailAvailability,
-    queryCheckUsernameAvailability,
-    unlockPasswordChanges,
-} from '@proton/shared/lib/api/user';
+import { queryCheckEmailAvailability, queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { sendPasswordChangeMessageToTabs } from '@proton/shared/lib/authentication/passwordChangeMessage';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, CLIENT_TYPES, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -37,15 +33,13 @@ import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api, HumanVerificationMethodType, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
 import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import {
-    generateKeySaltAndPassphrase,
     generatePasswordlessOrganizationKey,
     getDecryptedUserKeysHelper,
     handleSetupKeys,
 } from '@proton/shared/lib/keys';
-import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import { getOrganization } from '@proton/shared/lib/organization/api';
-import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
+import { srpAuth } from '@proton/shared/lib/srp';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
@@ -159,6 +153,53 @@ export const handleDisplayName = async ({
     };
 };
 
+const handleSetupKeysHelper = async ({
+    api,
+    ktActivation,
+    password,
+    productParam,
+    setupKeys,
+}: {
+    password: string;
+    api: Api;
+    ktActivation: KeyTransparencyActivation;
+    productParam: ProductParam;
+    setupKeys: boolean;
+}) => {
+    // NOTE: For VPN signup, the API doesn't automatically create an address, so this will simply return an empty
+    // array, and keys won't be setup.
+    const addresses = await getAllAddresses(api);
+
+    let keySetupData = {
+        keyPassword: '',
+        clearKeyPassword: '',
+    };
+
+    if (!setupKeys) {
+        const user = await getUser(api);
+        return { keySetupData, user, addresses };
+    }
+
+    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation);
+    if (addresses.length) {
+        const keyPassword = await handleSetupKeys({
+            api,
+            addresses,
+            password,
+            preAuthKTVerify,
+            product: productParam,
+        });
+        keySetupData = {
+            keyPassword,
+            clearKeyPassword: password,
+        };
+    }
+
+    const user = await getUser(api);
+    await preAuthKTCommit(user.ID, api);
+    return { keySetupData, user, addresses };
+};
+
 export const handleSetPassword = async ({
     cache,
     api,
@@ -168,51 +209,32 @@ export const handleSetPassword = async ({
     api: Api;
     newPassword: string;
 }): Promise<SignupActionResponse> => {
-    const { persistent, setupData, accountData } = cache;
-    const user = setupData?.user;
-    if (!setupData || !user) {
+    const { persistent, setupData, accountData, productParam, ktActivation } = cache;
+    const maybeUser = setupData?.user;
+    if (!setupData || !maybeUser) {
         throw new Error('Missing user');
     }
 
-    const userKeys = await getDecryptedUserKeysHelper(user, setupData.session.keyPassword);
-    const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(newPassword);
-    const updateKeysPayload = await getUpdateKeysPayload({
-        addressesKeys: [],
-        userKeys,
-        organizationKey: undefined,
-        keyPassword,
-        keySalt,
-        forceMigratedAddressKeys: true,
-    });
-
-    await srpAuth({
+    const { keySetupData, user, addresses } = await handleSetupKeysHelper({
         api,
-        credentials: {
-            password: accountData.password,
-        },
-        config: unlockPasswordChanges(),
-    });
-    await srpVerify({
-        api,
-        credentials: {
-            password: newPassword,
-        },
-        config: updatePrivateKeyRoute(updateKeysPayload),
+        ktActivation,
+        password: newPassword,
+        productParam,
+        setupKeys: true,
     });
 
     const sessionResult = await persistSession({
-        api,
-        clearKeyPassword: newPassword,
-        keyPassword,
+        ...setupData.authResponse,
+        clearKeyPassword: keySetupData.clearKeyPassword,
+        keyPassword: keySetupData.keyPassword,
         User: user,
-        UID: setupData?.authResponse.UID,
-        LocalID: setupData?.authResponse.LocalID,
+        api,
         persistent,
         trusted: false,
         source: SessionSource.Proton,
     });
 
-    const updatedUser = await getUser(api);
+    sendPasswordChangeMessageToTabs({ localID: setupData.authResponse.LocalID, status: true });
 
     return {
         cache: {
@@ -223,8 +245,9 @@ export const handleSetPassword = async ({
             },
             setupData: {
                 ...setupData,
-                session: { ...sessionResult, User: updatedUser },
-                user: updatedUser,
+                addresses,
+                session: { ...sessionResult, User: user },
+                user: user,
             },
         },
         to: SignupSteps.Congratulations,
@@ -419,51 +442,12 @@ export const handleSetupMnemonic = async ({
     };
 };
 
-const setupKeys = async ({
-    api,
-    ktActivation,
-    password,
-    productParam,
-}: {
-    password: string;
-    api: Api;
-    ktActivation: KeyTransparencyActivation;
-    productParam: ProductParam;
-}) => {
-    // NOTE: For VPN signup, the API doesn't automatically create an address, so this will simply return an empty
-    // array, and keys won't be setup.
-    const addresses = await getAllAddresses(api);
-
-    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation);
-
-    let keySetupData = {
-        keyPassword: '',
-        clearKeyPassword: '',
-    };
-    if (addresses.length) {
-        const keyPassword = await handleSetupKeys({
-            api,
-            addresses,
-            password,
-            preAuthKTVerify,
-            product: productParam,
-        });
-        keySetupData = {
-            keyPassword,
-            clearKeyPassword: password,
-        };
-    }
-
-    const user = await getUser(api);
-    await preAuthKTCommit(user.ID, api);
-    return { keySetupData, user, addresses };
-};
-
 export const handleSetupUser = async ({
     cache,
     api,
     ignoreVPN,
     setupMnemonic,
+    setupKeys = true,
     reportPaymentSuccess,
     reportPaymentFailure,
 }: {
@@ -471,6 +455,7 @@ export const handleSetupUser = async ({
     api: Api;
     ignoreVPN?: boolean;
     setupMnemonic?: SetupMnemonic;
+    setupKeys?: boolean;
     reportPaymentSuccess: () => void;
     reportPaymentFailure: () => void;
 }): Promise<SignupActionResponse> => {
@@ -520,7 +505,13 @@ export const handleSetupUser = async ({
 
     api(updateLocale(localeCode)).catch(noop);
 
-    const { keySetupData, user, addresses } = await setupKeys({ api, ktActivation, password, productParam });
+    const { keySetupData, user, addresses } = await handleSetupKeysHelper({
+        api,
+        ktActivation,
+        password,
+        productParam,
+        setupKeys,
+    });
 
     const trusted = false;
     const sessionResult = await persistSession({
