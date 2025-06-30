@@ -36,6 +36,7 @@ import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
+import { sagaEvents } from '@proton/pass/store/events';
 import { cacheGuard } from '@proton/pass/store/migrate';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { DESKTOP_SAGAS } from '@proton/pass/store/sagas/desktop';
@@ -73,6 +74,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
         const runner = sagaMiddleware.run(
             rootSagaFactory(SAGAS).bind(null, {
                 endpoint: 'web',
+                publish: sagaEvents.publish,
+
                 getConfig: () => config,
                 getAppState: () => AppStateManager.getState(),
                 setAppStatus: AppStateManager.setStatus,
