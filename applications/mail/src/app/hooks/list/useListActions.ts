@@ -2,8 +2,8 @@ import type { RefObject } from 'react';
 
 import noop from '@proton/utils/noop';
 
+import type { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
 import { useItemContextMenu } from '../../components/list/useItemContextMenu';
-import type { SOURCE_ACTION } from '../../components/list/useListTelemetry';
 
 /**
  * Hook to manage list actions like mark as, delete, move, etc.

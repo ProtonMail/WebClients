@@ -1,5 +1,5 @@
-import { createContext, useContext } from 'react';
 import type { ReactNode, RefObject } from 'react';
+import { createContext, useContext } from 'react';
 
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import type { Filter } from '@proton/shared/lib/mail/search';
@@ -11,7 +11,7 @@ import { usePaging } from '../../hooks/usePaging';
 import type { Element as MailElement } from '../../models/element';
 import { pageSize as pageSizeSelector, params } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-import type { SOURCE_ACTION } from './useListTelemetry';
+import type { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface MailboxListProviderProps {
     children: ReactNode;

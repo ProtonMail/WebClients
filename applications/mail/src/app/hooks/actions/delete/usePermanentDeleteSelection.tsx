@@ -9,8 +9,11 @@ import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
-import useListTelemetry, { ACTION_TYPE, numberSelectionElements } from 'proton-mail/components/list/useListTelemetry';
+import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import useListTelemetry, {
+    ACTION_TYPE,
+    numberSelectionElements,
+} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { useMailDispatch } from 'proton-mail/store/hooks';

@@ -33,7 +33,7 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';

@@ -7,7 +7,7 @@ import { metaKey } from '@proton/shared/lib/helpers/browser';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { SOURCE_ACTION } from '../list/useListTelemetry';
+import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 
 interface Props {
     selectedIDs: string[];

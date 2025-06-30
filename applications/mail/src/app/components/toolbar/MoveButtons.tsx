@@ -8,7 +8,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useLabelActions } from '../../hooks/useLabelActions';
-import { SOURCE_ACTION } from '../list/useListTelemetry';
+import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import DeleteButton from './DeleteButton';
 
 const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;

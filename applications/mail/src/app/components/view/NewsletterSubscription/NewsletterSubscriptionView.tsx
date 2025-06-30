@@ -15,7 +15,7 @@ import useFlag from '@proton/unleash/useFlag';
 
 import ResizableWrapper from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
-import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import MessageOnlyView from 'proton-mail/components/message/MessageOnlyView';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import useMailModel from 'proton-mail/hooks/useMailModel';

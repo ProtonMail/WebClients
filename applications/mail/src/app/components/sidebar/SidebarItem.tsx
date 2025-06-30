@@ -29,7 +29,8 @@ import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import { SOURCE_ACTION, folderLocation } from '../list/useListTelemetry';
+import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
+import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import LocationAside from './LocationAside';
 
 import './SidebarItem.scss';
@@ -110,7 +111,6 @@ const SidebarItem = ({
     const link = `/${humanID}`;
 
     const needsTotalDisplay = shouldDisplayTotal(labelID);
-    const currentFolder = folderLocation(currentLabelID, labels, folders);
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
         if (
@@ -150,7 +150,7 @@ const SidebarItem = ({
                         selectAll,
                         onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
                         sourceAction: SOURCE_ACTION.DRAG_AND_DROP_MENU,
-                        currentFolder: currentFolder,
+                        currentFolder: folderLocation(currentLabelID, labels, folders),
                     });
                 } else {
                     void applyLabels({

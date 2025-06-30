@@ -9,6 +9,8 @@ import {
     isCustomFolder,
     isCustomLabel,
     isCustomLabelOrFolder,
+    isHumalLabelIDKey,
+    isHumanCustomViewKey,
     isLabelIDNewsletterSubscription,
     isStringHumanLabelID,
     isValidCustomViewLabel,
@@ -152,6 +154,30 @@ describe('label', () => {
                 getCustomViewFromRoute(CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route)
             ).toBeTruthy();
             expect(getCustomViewFromRoute('not-existing')).toBeFalsy();
+        });
+    });
+
+    describe('isLabelIdKey', () => {
+        it('should return true if value is a label ID key', () => {
+            const val = isHumalLabelIDKey('0');
+            expect(val).toBeTruthy();
+        });
+
+        it('should return false if the value is custom folder ID', () => {
+            const val = isHumalLabelIDKey('CUSTOM_FOLDER');
+            expect(val).toBeFalsy();
+        });
+    });
+
+    describe('isCustomViewKey', () => {
+        it('should return true if the value is the custom newsletter view', () => {
+            const val = isHumanCustomViewKey('views/newsletters');
+            expect(val).toBeTruthy();
+        });
+
+        it('should return false if the value is custom folder ID', () => {
+            const val = isHumanCustomViewKey('CUSTOM_FOLDER');
+            expect(val).toBeFalsy();
         });
     });
 });

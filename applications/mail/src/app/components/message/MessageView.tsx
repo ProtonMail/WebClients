@@ -29,7 +29,7 @@ import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { useMailECRTMetric } from '../../metrics/useMailECRTMetric';
 import type { Element } from '../../models/element';
-import { SOURCE_ACTION } from '../list/useListTelemetry';
+import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import MessageBody from './MessageBody';
 import MessageFooter from './extrasFooter/MessageFooter';
 import HeaderCollapsed from './extrasHeader/HeaderCollapsed';

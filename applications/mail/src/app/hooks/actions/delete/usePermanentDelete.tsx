@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { usePermanentDeleteAll } from 'proton-mail/hooks/actions/delete/usePermanentDeleteAll';
 import { usePermanentDeleteSelection } from 'proton-mail/hooks/actions/delete/usePermanentDeleteSelection';
 

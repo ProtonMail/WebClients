@@ -38,7 +38,8 @@ import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useGetElementsFromIDs, useGetMessagesOrElementsFromIDs } from '../../hooks/mailbox/useElements';
-import { SOURCE_ACTION, folderLocation } from '../list/useListTelemetry';
+import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
+import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 
 import './MoveDropdown.scss';
 
