@@ -1,13 +1,13 @@
 import useApi from '@proton/components/hooks/useApi';
 import { useFolders, useLabels } from '@proton/mail';
-import { isCustomFolder, isCustomLabel } from '@proton/mail/store/labels/helpers';
 import { TelemetryMailListEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
+
+import { folderLocation } from './listTelemetryHelper';
 
 export const enum ACTION_TYPE {
     MARK_AS_READ = 'MARK_AS_READ',
@@ -78,52 +78,6 @@ export const getActionFromLabel = (labelID: string) => {
             return ACTION_TYPE.SNOOZE;
         default:
             traceInitiativeError('list-actions-telemetry', 'Missing label ID for action');
-    }
-};
-
-export const folderLocation = (labelID: string, labels?: Label[], folders?: Folder[]) => {
-    const isFolder = isCustomFolder(labelID, folders);
-    const isLabel = isCustomLabel(labelID, labels);
-
-    if (isFolder) {
-        return 'CUSTOM_FOLDER';
-    }
-
-    if (isLabel) {
-        return 'CUSTOM_LABEL';
-    }
-
-    switch (labelID) {
-        case '0':
-            return 'INBOX';
-        case '1':
-            return 'ALL_DRAFTS';
-        case '2':
-            return 'ALL_SENT';
-        case '3':
-            return 'TRASH';
-        case '4':
-            return 'SPAM';
-        case '5':
-            return 'ALL_MAIL';
-        case '6':
-            return 'ARCHIVE';
-        case '7':
-            return 'SENT';
-        case '8':
-            return 'DRAFTS';
-        case '9':
-            return 'OUTBOX';
-        case '10':
-            return 'STARRED';
-        case '12':
-            return 'SCHEDULED';
-        case '15':
-            return 'ALMOST_ALL_MAIL';
-        case '16':
-            return 'SNOOZED';
-        default:
-            traceInitiativeError('list-actions-telemetry', 'Folder location not defined.');
     }
 };
 

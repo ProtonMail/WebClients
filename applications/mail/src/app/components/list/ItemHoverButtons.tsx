@@ -20,8 +20,9 @@ import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useStar } from '../../hooks/actions/useStar';
 import type { Element } from '../../models/element';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
+import { folderLocation } from './list-telemetry/listTelemetryHelper';
+import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 import SnoozeDropdown from './snooze/containers/SnoozeDropdown';
-import { SOURCE_ACTION, folderLocation } from './useListTelemetry';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
 const { ARCHIVE, TRASH } = MAILBOX_LABEL_IDS;

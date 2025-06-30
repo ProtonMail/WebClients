@@ -33,7 +33,8 @@ import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import type { Element } from '../../models/element';
-import { SOURCE_ACTION, folderLocation } from '../list/useListTelemetry';
+import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
+import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 
 import './LabelDropdown.scss';
 

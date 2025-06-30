@@ -29,7 +29,7 @@ import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
 import ItemExpiration from './item-expiration/ItemExpiration';
-import { SOURCE_ACTION } from './useListTelemetry';
+import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface Props {
     isCompactView: boolean;

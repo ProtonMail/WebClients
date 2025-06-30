@@ -40,7 +40,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import ConversationView from '../../components/conversation/ConversationView';
 import MailHeader from '../../components/header/MailHeader';
 import List from '../../components/list/List';
-import type { SOURCE_ACTION } from '../../components/list/useListTelemetry';
+import type { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
 import useScrollToTop from '../../components/list/useScrollToTop';
 import MessageOnlyView from '../../components/message/MessageOnlyView';
 import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';
