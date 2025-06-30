@@ -8,7 +8,7 @@ import { Icon } from '@proton/components';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { isSnoozed } from '@proton/shared/lib/mail/messages';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../../constants';
 import { formatDateToHuman } from '../../../../helpers/date';

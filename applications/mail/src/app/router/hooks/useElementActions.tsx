@@ -8,7 +8,7 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
-import { type SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import { type SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
 import { isMessage } from 'proton-mail/helpers/elements';
 import { setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';

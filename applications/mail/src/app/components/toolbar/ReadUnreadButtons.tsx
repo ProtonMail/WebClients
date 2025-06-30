@@ -10,7 +10,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../store/elements/elementsSelectors';
-import { SOURCE_ACTION } from '../list/useListTelemetry';
+import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
 

@@ -12,7 +12,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { isMessage, isStarred as testIsStarred } from '../../helpers/elements';
 import { useStar } from '../../hooks/actions/useStar';
 import type { Element } from '../../models/element';
-import type { SOURCE_ACTION } from './useListTelemetry';
+import type { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface Props {
     element?: Element;
