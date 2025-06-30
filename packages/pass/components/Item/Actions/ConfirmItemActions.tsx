@@ -57,28 +57,30 @@ export const ConfirmMoveItem: FC<ConfirmationPromptHandles & ItemMoveIntent> = (
     const autoConfirm = !(hasLinks || shared);
     useEffect(autoConfirm ? onConfirm : noop, []);
 
-    return autoConfirm ? null : (
-        <WithVault shareId={targetShareId} onFallback={onCancel}>
-            {({ content: { name: vaultName } }) => (
-                <ConfirmationPrompt
-                    onConfirm={onConfirm}
-                    onCancel={onCancel}
-                    title={c('Title').t`Move item to "${vaultName}"`}
-                    message={
-                        <div className="flex gap-y-4">
-                            {shared && (
-                                <Alert type="error">
-                                    {c('Warning')
-                                        .t`This item is currently shared. Moving it to another vault will remove access for all other users.`}
-                                </Alert>
-                            )}
+    return (
+        !autoConfirm && (
+            <WithVault shareId={targetShareId} onFallback={onCancel}>
+                {({ content: { name: vaultName } }) => (
+                    <ConfirmationPrompt
+                        onConfirm={onConfirm}
+                        onCancel={onCancel}
+                        title={c('Title').t`Move item to "${vaultName}"`}
+                        message={
+                            <div className="flex gap-y-4">
+                                {shared && (
+                                    <Alert type="error">
+                                        {c('Warning')
+                                            .t`This item is currently shared. Moving it to another vault will remove access for all other users.`}
+                                    </Alert>
+                                )}
 
-                            {hasLinks && c('Info').t`Moving an item to another vault will erase its secure links.`}
-                        </div>
-                    }
-                />
-            )}
-        </WithVault>
+                                {hasLinks && c('Info').t`Moving an item to another vault will erase its secure links.`}
+                            </div>
+                        }
+                    />
+                )}
+            </WithVault>
+        )
     );
 };
 
