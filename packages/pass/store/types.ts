@@ -5,6 +5,7 @@ import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { FilePortWriter } from '@proton/pass/lib/file-storage/types';
+import type { SagaEvent } from '@proton/pass/store/events';
 import type {
     AnyStorage,
     AppState,
@@ -94,4 +95,6 @@ export interface RootSagaOptions {
     /** Callback triggered when settings have been updated: leverage
      * this to persist the settings to storage if needed. */
     onSettingsUpdated?: (settings: ProxiedSettings) => MaybePromise<void>;
+
+    publish: (evt: SagaEvent) => void;
 }
