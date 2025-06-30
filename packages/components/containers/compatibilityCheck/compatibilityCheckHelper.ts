@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { isBigIntSupported, isGoodPrngAvailable, isWebCryptoAvailable } from '@proton/crypto/lib/compatibilityChecks';
+import { isFirefoxWithBrokenX25519Support } from '@proton/shared/lib/helpers/browser';
 
 export type CompatibilityItem = {
     name: string;
@@ -81,6 +82,11 @@ export const getCompatibilityList = (compatibilities: CompatibilityItem[] = []):
             name: 'ReplaceAll',
             valid: hasReplaceAll(),
             text: '',
+        },
+        {
+            name: 'isFirefoxWithBrokenX25519Support',
+            valid: !isFirefoxWithBrokenX25519Support(),
+            text: 'This version of Firefox is no longer supported due to a bug in the  WebCrypto API. Plese update to a newer version.',
         },
         ...compatibilities,
     ];
