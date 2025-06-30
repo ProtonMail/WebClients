@@ -52,7 +52,11 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
                 {selectedItem && (
                     <>
                         <Vr />
-                        <ShareLinkButton shareId={selectedItem.rootShareId} linkId={selectedItem.linkId} />
+                        <ShareLinkButton
+                            volumeId={selectedItem.volumeId}
+                            shareId={selectedItem.rootShareId}
+                            linkId={selectedItem.linkId}
+                        />
                     </>
                 )}
 

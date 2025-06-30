@@ -78,6 +78,7 @@ export function DriveItemContextMenu({
                 )}
                 {isAdmin && isOnlyOneItem && (
                     <ShareLinkButton
+                        volumeId={selectedLink.volumeId}
                         shareId={selectedLink.rootShareId}
                         showLinkSharingModal={showLinkSharingModal}
                         linkId={selectedLink.linkId}

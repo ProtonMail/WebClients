@@ -4,6 +4,7 @@ import type { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLi
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
+    volumeId: string;
     shareId: string;
     linkId: string;
     showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
@@ -11,13 +12,13 @@ interface Props {
     close: () => void;
 }
 
-const ShareLinkButton = ({ shareId, linkId, showLinkSharingModal, isSharedWithMe, close }: Props) => {
+const ShareLinkButton = ({ volumeId, shareId, linkId, showLinkSharingModal, isSharedWithMe, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Share`}
             icon={isSharedWithMe ? 'users' : 'user-plus'}
             testId="context-menu-share-link"
-            action={() => showLinkSharingModal({ shareId, linkId })}
+            action={() => showLinkSharingModal({ shareId, linkId, volumeId })}
             close={close}
         />
     );

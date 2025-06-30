@@ -16,7 +16,9 @@ import {
     useToggle,
 } from '@proton/components';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import useFlag from '@proton/unleash/useFlag';
 
+import { SharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { ShareMember } from '../../../store';
 import { useDrivePublicSharingFlags, useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
@@ -27,6 +29,7 @@ import { PublicSharing } from './PublicSharing';
 import { useLinkSharingSettingsModal } from './ShareLinkSettingsModal';
 
 export type SharingModalProps = {
+    volumeId: string;
     modalTitleID?: string;
     shareId: string;
     linkId: string;
@@ -39,12 +42,13 @@ export type SharingModalProps = {
     registerOverriddenNameListener?: (listener: (name: string) => void) => void;
 };
 
-export function SharingModal(props: SharingModalProps & ModalStateProps) {
+export function SharingModalDeprecated(props: SharingModalProps & ModalStateProps) {
     const shareMemberList = useShareMemberView(props.shareId, props.linkId);
     return <SharingModalInner {...props} shareMemberList={shareMemberList} />;
 }
 
 function SharingModalInner({
+    volumeId,
     shareId: rootShareId,
     linkId,
     onClose,
@@ -84,7 +88,6 @@ function SharingModalInner({
     const name = overriddenName ?? originalName;
 
     const {
-        volumeId,
         members,
         invitations,
         externalInvitations,
@@ -329,5 +332,6 @@ function SharingModalInner({
 }
 
 export const useLinkSharingModal = () => {
-    return useModalTwoStatic(SharingModal);
+    const useSDKModal = useFlag('DriveWebSDKSharingModal');
+    return useModalTwoStatic(useSDKModal ? SharingModal : SharingModalDeprecated);
 };

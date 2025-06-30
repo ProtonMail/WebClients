@@ -26,7 +26,7 @@ import clsx from '@proton/utils/clsx';
 
 import { ExpirationTimeDatePicker } from './PublicSharing';
 
-interface Props {
+export interface SharingSettingsModalProps {
     initialExpiration: number | null;
     customPassword: string;
     isDeleting?: boolean;
@@ -52,7 +52,7 @@ const SharingSettingsModal = ({
     havePublicSharedLink,
     isShareUrlEnabled,
     ...modalProps
-}: Props & ModalProps) => {
+}: SharingSettingsModalProps & ModalProps) => {
     const [password, setPassword] = useState(customPassword);
     const [expiration, setExpiration] = useState(initialExpiration);
     const [confirmActionModal, showConfirmActionModal] = useConfirmActionModal();
@@ -88,7 +88,10 @@ const SharingSettingsModal = ({
             submitText: c('Action').t`Stop sharing`,
             message: confirmationMessage,
             canUndo: true, // Just to hide the message
-            onSubmit: stopSharing,
+            onSubmit: async () => {
+                await stopSharing();
+                modalProps.onClose?.();
+            },
         });
     };
 
