@@ -50,10 +50,8 @@ export function isRegionalCurrency(currency: Currency): boolean {
     return !isMainCurrency(currency);
 }
 
-// undefined is reserved for the case when we don't plan a new batch of regional currencies for the time being.
-export const NEW_BATCH_CURRENCIES_FEATURE_FLAG: FeatureFlag | undefined = 'RegionalCurrenciesBatch2';
-
-const newBatchCurrencies = new Set<Currency>(['GBP', 'AUD', 'CAD']);
+export const NEW_BATCH_CURRENCIES_FEATURE_FLAG: FeatureFlag | undefined = undefined;
+const newBatchCurrencies = new Set<Currency>([]);
 
 export function mapCountryToRegionalCurrency(
     countryCode: string,
