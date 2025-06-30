@@ -1575,6 +1575,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Create free account now": [
+        "Δημιουργία δωρεάν λογαριασμού τώρα"
       ]
     },
     "action": {
@@ -5716,6 +5719,9 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Permissions request failed.": [
+        "Το αίτημα αδειών απέτυχε."
       ]
     },
     "error": {
@@ -10719,6 +10725,15 @@
       ],
       "Zoom meeting": [
         "Τηλεδιάσκεψη Zoom"
+      ],
+      "Dedicated VPN servers": [
+        "Αποκλειστικοί διακομιστές VPN"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Αριθμός αποκλειστικών διακομιστών VPN στον οργανισμό"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Θα χάσετε επίσης την πρόσβαση στις δυνατότητες του ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -17434,6 +17449,44 @@
       ],
       "Your plan": [
         "Το πλάνο σας"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email ψευδώνυμα για την καταπολέμηση των ενοχλητικών μηνυμάτων"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } διεύθυνση",
+        "${ maxAddresses } διευθύνσεις"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } ημερολόγιο",
+        "${ maxCalendars } ημερολόγια"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } αποθηκευτικός χώρος στο cloud για αρχεία και φωτογραφίες"
+      ],
+      "Collaborative document editing": [
+        "Συνεργατική επεξεργασία εγγράφων"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Κρυπτογραφημένο ηλεκτρονικό ταχυδρομείο με ${ totalMailStorageSize } αποθηκευτικό χώρο"
+      ],
+      "Every free account comes with:": [
+        "Κάθε δωρεάν λογαριασμός περιλαμβάνει:"
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Λάβετε έναν ασφαλή από εμάς, ή ${ internalButton }"
+      ],
+      "Password manager for all your devices": [
+        "Διαχειριστής κωδικών πρόσβασης για όλες τις συσκευές σας"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Εγγραφείτε για να αποκτήσετε τα πάντα που έχει να προσφέρει το ${ BRAND_NAME }"
+      ],
+      "use your current email.": [
+        "χρησιμοποιήστε την τρέχουσα ηλεκτρονική σας διεύθυνση."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN με διακομιστές σε ${ vpnServersCountData.free.countries } χώρες"
       ]
     },
     "Signup label": {
@@ -17457,6 +17510,9 @@
       ],
       "Username": [
         "Όνομα χρήστη"
+      ],
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME } κωδικός"
       ]
     },
     "Signup step": {
@@ -18968,6 +19024,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Θα λάβετε το όνομα χρήστη σας μέσω SMS μέσα σε ένα λεπτό εάν εισαγάγατε έναν έγκυρο αριθμό τηλεφώνου ανάκτησης."
+      ],
+      "Address successfully added": [
+        "Η διεύθυνση προστέθηκε επιτυχώς"
       ]
     },
     "Success message": {
@@ -20716,6 +20775,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Έχετε προσκληθεί να δοκιμάσετε το ${ MAIL_APP_NAME }"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Συνδέστε περισσότερες διευθύνσεις Gmail με ${ planName }"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Πολλαπλοί λογαριασμοί, 1 ιδιωτικά εισερχόμενο"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22120,6 +22185,86 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Στοιχεία Πληρωμής"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ cycle } μήνες στις ${ formattedDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα στις ${ formattedDate }. Δεν θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Κάνοντας κλικ στο \"Δοκιμή\", συμφωνείτε με τους ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Κατά τη δοκιμαστική περίοδο, μπορείτε να έχετε έως και 10 χρήστες."
+      ],
+      "free for 14 days": [
+        "δωρεάν για 14 ημέρες"
+      ],
+      "on ${ formattedDate }": [
+        "στις ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Δοκιμάστε ${ selected } ${ freeFor14Days }"
+      ],
+      "Try it free for 14 days": [
+        "Δοκιμάστε το δωρεάν για 14 ημέρες"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Όταν ακυρώσετε, η δωρεάν δοκιμή σας δε θα μετατραπεί σε συνδρομή επί πληρωμή, αλλά θα εξακολουθείτε να απολαμβάνετε τα οφέλη του πλάνου μέχρι το τέλος της δοκιμαστικής περιόδου. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Μπορείτε να έχετε έως ${ TRIAL_MAX_DEDICATED_IPS } αφιερωμένο διακομιστή κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_LUMO_SEATS } θέσεις Lumo κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } θέσεις Scribe κατά τη δοκιμαστική περίοδο."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_USERS } χρήστες κατά τη δοκιμαστική περίοδο."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Δεν μπορείτε να προσθέσετε προσαρμοσμένους τομείς κατά τη δοκιμαστική περίοδο."
+      ],
+      "You have reached the trial limit.": [
+        "Έχετε φτάσει το όριο της δοκιμής."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Οφειλόμενο ποσό μετά τη δοκιμαστική περίοδο"
+      ],
+      "Amount due now": [
+        "Οφειλόμενο ποσό τώρα"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Η συνδρομή ακυρώθηκε."
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμό, αναβαθμίστε σε ${ planName }.",
+        "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς, αναβαθμίστε σε ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικό λογαριασμό στο ${ MAIL_APP_NAME }.",
+        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικούς λογαριασμούς στο ${ MAIL_APP_NAME }."
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Άνοιγμα σε ${ appName }"
       ]
     }
   }

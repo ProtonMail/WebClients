@@ -20222,6 +20222,17 @@
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
       ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/måned"
+      ]
     }
   }
 }

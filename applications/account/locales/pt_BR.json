@@ -1575,6 +1575,9 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Create free account now": [
+        "Crie uma conta gratuita agora."
       ]
     },
     "action": {
@@ -2000,6 +2003,39 @@
       ],
       "Try it free for 14 days": [
         "Experimente grátis por 14 dias"
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Clicando em «Experimentar», você concorda com os nossos ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Durante o período de avaliação, você pode ter até 10 usuários."
+      ],
+      "free for 14 days": [
+        "grátis por 14 dias"
+      ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Experimente ${ selected } ${ freeFor14Days }"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Ao cancelar, sua avaliação gratuita não será convertida em uma assinatura paga, mas você ainda pode aproveitar os benefícios do plano até o final do período de avaliação. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_LUMO_SEATS } licenças do Lumo durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_SCRIBE_SEATS } licenças do Scribe durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_USERS } usuários durante o período de avaliação."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Você não pode adicionar domínios personalizados durante o período de avaliação."
+      ],
+      "You have reached the trial limit.": [
+        "Você atingiu o limite de avaliação."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -5748,6 +5784,9 @@
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
+      ],
+      "Permissions request failed.": [
+        "Falha na solicitação de permissões."
       ]
     },
     "error": {
@@ -10760,6 +10799,12 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Você também perderá o acesso ao ${ boldPlanTitle } recursos:"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores de VPN dedicados"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados na organização."
       ]
     },
     "info": {
@@ -17512,6 +17557,36 @@
       "${ maxCalendars } calendar": [
         "${ maxCalendars } calendário",
         "${ maxCalendars } calendários"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } aliases do hide-my-email para combater spam"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } de armazenamento em nuvem para arquivos e fotos"
+      ],
+      "Collaborative document editing": [
+        "Edição de documentos colaborativos"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "E-mail criptografado com ${ totalMailStorageSize } de armazenamento."
+      ],
+      "Every free account comes with:": [
+        "Toda conta gratuita vem com:"
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Obtenha um seguro conosco ou ${ internalButton }."
+      ],
+      "Password manager for all your devices": [
+        "Gerenciador de senhas para todos os seus dispositivos."
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Crie uma conta para aproveitar ao máximo tudo o que ${ BRAND_NAME } tem a oferecer."
+      ],
+      "use your current email.": [
+        "use seu e-mail atual."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN com servidores em ${ vpnServersCountData.free.countries } países."
       ]
     },
     "Signup label": {
@@ -17535,6 +17610,9 @@
       ],
       "Username": [
         "Nome de usuário"
+      ],
+      "${ BRAND_NAME } password": [
+        "senha do ${ BRAND_NAME }"
       ]
     },
     "Signup step": {
@@ -19046,6 +19124,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Você receberá seu nome de usuário por SMS em um minuto se tiver inserido um número de telefone de recuperação válido."
+      ],
+      "Address successfully added": [
+        "Endereço adicionado com sucesso"
       ]
     },
     "Success message": {
@@ -20809,6 +20890,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Você foi convidado a experimentar o ${ MAIL_APP_NAME }."
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Conecte mais endereços do Gmail com ${ planName }."
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Várias contas, 1 caixa de entrada privada."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22223,6 +22310,16 @@
     "b2b_trials_Success": {
       "Subscription canceled.": [
         "Assinatura cancelada."
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } conta, faça o upgrade para ${ planName }.",
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } contas, faça o upgrade para ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando e-mails de ${ MAX_SYNC_FREE_USER } conta externa para ${ MAIL_APP_NAME }.\n",
+        "Você está encaminhando e-mails de ${ MAX_SYNC_FREE_USER } contas externas para ${ MAIL_APP_NAME }."
       ]
     }
   }
