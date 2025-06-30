@@ -68,8 +68,8 @@ export default function PreviewContainer() {
 
     // Open sharing modal through URL parameter - needed for Proton Docs
     useEffect(() => {
-        if (isShareAction) {
-            showLinkSharingModal({ shareId, linkId });
+        if (isShareAction && link) {
+            showLinkSharingModal({ volumeId: link.volumeId, shareId, linkId });
         }
     }, []);
 
@@ -82,7 +82,7 @@ export default function PreviewContainer() {
 
     useEffect(() => {
         if (link && !referer?.startsWith('/shared-with-me')) {
-            setFolder({ shareId, linkId: link.parentLinkId });
+            setFolder({ volumeId: link.volumeId, shareId, linkId: link.parentLinkId });
         }
     }, [shareId, link?.parentLinkId]);
 
@@ -196,9 +196,9 @@ export default function PreviewContainer() {
                 onSave={isEditEnabled ? handleSaveFile : undefined}
                 onDetails={() => showDetailsModal({ shareId, linkId })}
                 onShare={
-                    !isAdmin || isLinkLoading || !!link?.trashed
+                    !isAdmin || isLinkLoading || !link || !!link?.trashed
                         ? undefined
-                        : () => showLinkSharingModal({ shareId, linkId })
+                        : () => showLinkSharingModal({ volumeId: link.volumeId, shareId, linkId })
                 }
                 onOpenInDocs={
                     openInDocs.canOpen
