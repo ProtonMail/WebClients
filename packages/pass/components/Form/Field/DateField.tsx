@@ -8,22 +8,24 @@ import { type Input } from '@proton/atoms';
 import { DateInputTwo, InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { type Maybe } from '@proton/pass/types/utils';
-import { formatISODate, formatPlaceholder } from '@proton/pass/utils/time/format';
+import { dateFromYYYYMMDD, formatISODate, formatPlaceholder } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 
 export type Props = FieldProps<string> & InputFieldProps<typeof Input>;
 
 const DATE_FORMATS = ['PP', 'P'];
 
-const handleInput = (value: string, locale: Locale) => {
+const fromFormatter = (value: string, locale: Locale) => {
+    const now = new Date();
+
     for (const format of DATE_FORMATS) {
         try {
-            const parsed = parse(value, format, new Date(), { locale });
+            const parsed = parse(value, format, now, { locale });
             if (!isNaN(parsed.getTime())) return parsed;
         } catch {}
     }
 
-    return new Date();
+    return now;
 };
 
 const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
@@ -35,10 +37,7 @@ const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
     const formattedPlaceholder = useMemo(formatPlaceholder, []);
 
     const dateValue = useMemo<Maybe<Date>>(() => {
-        if (value) {
-            const date = new Date(value);
-            if (isFinite(date.getTime())) return date;
-        }
+        if (value) return dateFromYYYYMMDD(value);
     }, [value]);
 
     const handleDateChange = (date: Maybe<Date>): void => {
@@ -62,7 +61,7 @@ const DateFieldRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
             onChange={handleDateChange}
             ref={ref}
             value={dateValue}
-            fromFormatter={handleInput}
+            fromFormatter={fromFormatter}
         />
     );
 };
