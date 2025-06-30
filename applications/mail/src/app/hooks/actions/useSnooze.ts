@@ -4,9 +4,12 @@ import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { snoozeConversations, unsnoozeConversations } from '@proton/shared/lib/api/conversations';
 import { MAILBOX_IDENTIFIERS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import useListTelemetry, {
+    ACTION_TYPE,
+    numberSelectionElements,
+} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import type { SNOOZE_DURATION, SnoozeState } from 'proton-mail/components/list/snooze/constant';
-import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
-import useListTelemetry, { ACTION_TYPE, numberSelectionElements } from 'proton-mail/components/list/useListTelemetry';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { getSnoozeNotificationText, getSnoozeUnixTime } from '../../helpers/snooze';

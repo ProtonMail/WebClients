@@ -6,7 +6,7 @@ import useListTelemetry, {
     ACTION_TYPE,
     SELECTED_RANGE,
     type SOURCE_ACTION,
-} from 'proton-mail/components/list/useListTelemetry';
+} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { isMessage as testIsMessage } from 'proton-mail/helpers/elements';
 import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/helpers/moveToFolder';
 import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
