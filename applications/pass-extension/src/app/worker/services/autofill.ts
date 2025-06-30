@@ -1,7 +1,6 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { createBasicAuthController } from 'proton-pass-extension/app/worker/listeners/auth-required';
-import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
@@ -9,12 +8,14 @@ import type { AutofillCheckFormMessage, WorkerMessageResponse } from 'proton-pas
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientReady } from '@proton/pass/lib/client';
-import { getRulesForURL, parseRules } from '@proton/pass/lib/extension/utils/website-rules';
+import { compileRules, matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
+import type { CompiledRules } from '@proton/pass/lib/extension/rules/types';
 import browser from '@proton/pass/lib/globals/browser';
 import { intoIdentityItemPreview, intoLoginItemPreview, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
 import { itemAutofilled } from '@proton/pass/store/actions';
+import { sagaEvents } from '@proton/pass/store/events';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import {
     selectAutofillIdentityCandidates,
@@ -26,12 +27,31 @@ import {
     selectPasswordOptions,
     selectVaultLimits,
 } from '@proton/pass/store/selectors';
-import type { FormCredentials, ItemContent, ItemRevision, Maybe, SelectedItem, TabId } from '@proton/pass/types';
+import type {
+    FormCredentials,
+    ItemContent,
+    ItemRevision,
+    Maybe,
+    MaybeNull,
+    SelectedItem,
+    TabId,
+} from '@proton/pass/types';
+import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
+type AutofillServiceState = { rules: MaybeNull<CompiledRules> };
+
 export const createAutoFillService = () => {
+    const state: AutofillServiceState = { rules: null };
+
+    const init = withContext(async (ctx) => {
+        const rules = parseRules(await ctx.service.storage.local.getItem('websiteRules'));
+        state.rules = rules ? compileRules(rules) : null;
+        if (state.rules) logger.info(`[AutofillService] Compiled website rules v${rules?.version}`);
+    });
+
     const getLoginCandidates = withContext<(options: SelectAutofillCandidatesOptions) => ItemRevision<'login'>[]>(
         (ctx, options) => selectAutofillLoginCandidates(options)(ctx.service.store.getState())
     );
@@ -183,15 +203,9 @@ export const createAutoFillService = () => {
         })
     );
 
-    WorkerMessageBroker.registerMessage(
-        WorkerMessageType.WEBSITE_RULES_REQUEST,
-        withContext<MessageHandlerCallback<WorkerMessageType.WEBSITE_RULES_REQUEST>>(async (ctx, _, sender) => {
-            const rules = parseRules(await ctx.service.storage.local.getItem('websiteRules'));
-            if (!(rules && sender.url)) return { rules: null };
-
-            return { rules: getRulesForURL(rules, new URL(sender.url)) };
-        })
-    );
+    WorkerMessageBroker.registerMessage(WorkerMessageType.WEBSITE_RULES_REQUEST, (_, sender) => ({
+        rules: state.rules && sender.url ? matchRules(state.rules, new URL(sender.url)) : null,
+    }));
 
     /* onUpdated will be triggered every time a tab has been loaded with a new url :
      * update the badge count accordingly. `ensureReady` is used in place instead of
@@ -208,10 +222,23 @@ export const createAutoFillService = () => {
         })
     );
 
+    sagaEvents.subscribe(
+        withContext(async (ctx, evt) => {
+            switch (evt.type) {
+                case 'website-rules::resolved': {
+                    void ctx.service.storage.local.setItem('websiteRules', JSON.stringify(evt.data));
+                    state.rules = compileRules(evt.data);
+                }
+            }
+        })
+    );
+
     return {
         basicAuth: createBasicAuthController(),
+        init,
         clear,
         getLoginCandidates,
+        getRules: () => state.rules,
         queryTabLoginForms,
         sync,
     };

@@ -2,13 +2,14 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { createFormHandles } from 'proton-pass-extension/app/content/services/handles/form';
 import type { FormHandle } from 'proton-pass-extension/app/content/types';
 import {
+    getActiveElement,
     hasProcessableFields,
     hasProcessableNodes,
     isAddedNodeOfInterest,
     isNodeOfInterest,
     isParentOfInterest,
     isRemovedNodeOfInterest,
-    isUnprocessed,
+    isUnprocessedInput,
 } from 'proton-pass-extension/app/content/utils/nodes';
 
 import {
@@ -16,12 +17,13 @@ import {
     clearDetectionCache,
     getIgnoredParent,
     getParentFormPrediction,
+    isCustomElementWithShadowRoot,
     isPrediction,
     removeClassifierFlags,
     removeProcessedFlag,
 } from '@proton/pass/fathom';
 import { type MaybeNull } from '@proton/pass/types';
-import { isInputElement, isValidInputElement } from '@proton/pass/utils/dom/predicates';
+import { isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';
 import { debounceBuffer } from '@proton/pass/utils/fp/control';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
@@ -127,7 +129,6 @@ export const createFormManager = (options: FormManagerOptions) => {
 
                         try {
                             const forms = ctx?.service.detector.runDetection({ onBottleneck, excludedFieldTypes });
-
                             forms?.forEach((options) => {
                                 const formHandle = state.trackedForms.get(options.form) ?? createFormHandles(options);
                                 state.trackedForms.set(options.form, formHandle);
@@ -299,12 +300,25 @@ export const createFormManager = (options: FormManagerOptions) => {
         { leading: true }
     );
 
+    /** Fallback detection trigger for inputs missed by other detection triggers
+     * (page load, DOM mutations, transitions). Only processes valid, unprocessed
+     * inputs that aren't explicitly ignored. */
     const onFocusIn = ({ target }: Event) => {
-        /** Fallback detection trigger for inputs missed by other detection triggers
-         * (page load, DOM mutations, transitions). Only processes valid, unprocessed
-         * inputs that aren't explicitly ignored. */
-        if (target && isValidInputElement(target) && isUnprocessed(target)) {
-            void detect({ reason: 'FocusIn' });
+        if (target && isHTMLElement(target)) {
+            const trigger = (() => {
+                if (isUnprocessedInput(target)) return true;
+
+                /** Custom elements may encapsulate the actual active
+                 * input element within their shadow DOM */
+                if (isCustomElementWithShadowRoot(target)) {
+                    const active = getActiveElement(target.shadowRoot);
+                    return active && isHTMLElement(active) && isUnprocessedInput(active);
+                }
+
+                return false;
+            })();
+
+            if (trigger) void detect({ reason: 'FocusIn' });
         }
     };
 

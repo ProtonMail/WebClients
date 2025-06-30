@@ -8,6 +8,7 @@ import { type ProtonPassControl } from 'proton-pass-extension/app/content/inject
 import ProtonPassControlStyles from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassControl.raw.scss';
 import type { FieldHandle } from 'proton-pass-extension/app/content/types';
 
+import { shadowPiercingContains } from '@proton/pass/fathom';
 import {
     type BoundComputeStyles,
     createStyleCompute,
@@ -59,7 +60,7 @@ const getOverlayShift = (options: {
             if (el === input || el === inputBox) break; /* Stop at target elements */
             if (!isHTMLElement(el)) continue; /* Skip non-HTMLElements */
             if (el.tagName.startsWith('PROTONPASS')) continue; /* Skip injected pass elements */
-            if (!form.contains(el)) continue; /* Skip elements outside form */
+            if (!shadowPiercingContains(form, el)) continue; /* Skip elements outside form */
             if (el.matches('svg *')) continue; /* Skip SVG subtrees */
 
             /** Skip large text elements. NOTE: The `isHTMLElement` check is loose in order to

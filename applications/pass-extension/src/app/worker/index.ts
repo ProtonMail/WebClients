@@ -59,14 +59,17 @@ if (typeof browser !== 'undefined') {
     }
 
     const context = createWorkerContext(config);
-    const { activation } = context.service;
 
+    context.service.autofill.init().catch(noop);
     browser.runtime.onConnect.addListener(WorkerMessageBroker.ports.onConnect);
     browser.runtime.onMessageExternal.addListener(WorkerMessageBroker.onMessage);
     browser.runtime.onMessage.addListener(WorkerMessageBroker.onMessage);
-    browser.runtime.onStartup.addListener(activation.onStartup);
-    browser.runtime.onInstalled.addListener(activation.onInstall);
-    if (BUILD_TARGET !== 'safari') browser.runtime.onUpdateAvailable.addListener(activation.onUpdateAvailable);
+    browser.runtime.onStartup.addListener(context.service.activation.onStartup);
+    browser.runtime.onInstalled.addListener(context.service.activation.onInstall);
+
+    if (BUILD_TARGET !== 'safari') {
+        browser.runtime.onUpdateAvailable.addListener(context.service.activation.onUpdateAvailable);
+    }
 
     if (BUILD_TARGET === 'firefox' && ENV === 'production') {
         /* Block direct access to certain `web_accessible_resources`

@@ -1,0 +1,81 @@
+{
+    "version": "2",
+    "rules": {
+        "app.hibob.com": {
+            "exclude": ["app-invite-peers-dialog"]
+        },
+        "web.tresorit.com/admin/groups": {
+            "exclude": ["body"]
+        },
+        "login.live.com": {
+            "include": [
+                {
+                    "selector": ["form[data-testid=\"passwordEntryForm\"]"],
+                    "formType": "login",
+                    "fields": [
+                        {
+                            "selector": ["input[type=\"hidden\"][name=\"login\"]"],
+                            "fieldType": "username-hidden"
+                        },
+                        {
+                            "selector": ["input[type=\"password\"][id=\"passwordEntry\"]"],
+                            "fieldType": "password"
+                        }
+                    ]
+                }
+            ]
+        },
+        "www.reddit.com": {
+            "include": [
+                {
+                    "selector": ["#login > auth-flow-modal"],
+                    "formType": "login",
+                    "fields": [
+                        {
+                            "selector": ["faceplate-text-input#login-username", "input"],
+                            "fieldType": "email"
+                        },
+                        {
+                            "selector": ["faceplate-text-input#login-password", "input"],
+                            "fieldType": "password"
+                        }
+                    ]
+                },
+                {
+                    "selector": ["#register auth-flow-modal[pagename=\"register_email\"]"],
+                    "formType": "register",
+                    "fields": [
+                        {
+                            "selector": ["faceplate-text-input#register-email", "input"],
+                            "fieldType": "email"
+                        }
+                    ]
+                },
+                {
+                    "selector": ["#register auth-flow-modal[pagename=\"register_username_and_password\"]"],
+                    "formType": "register",
+                    "fields": [
+                        {
+                            "selector": ["faceplate-text-input#register-password", "input"],
+                            "fieldType": "new-password"
+                        }
+                    ]
+                }
+            ]
+        },
+        "*.signin.aws.amazon.com": {
+            "exclude": ["input[name=\"account\"][id=\"account\"]"]
+        },
+        "signin.aws.amazon.com": {
+            "exclude": ["input[name=\"account\"][id=\"account\"]"]
+        },
+        "www.amazon.{i18n-tld}/ap/signin": {
+            "include": [
+                {
+                    "selector": ["form[id=\"ap_login_form\"]"],
+                    "formType": "login"
+                }
+            ]
+        }
+    }
+}
