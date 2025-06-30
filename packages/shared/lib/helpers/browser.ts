@@ -173,6 +173,10 @@ export const getActiveXObject = (name: string) => {
     }
 };
 
+// See https://bugzilla.mozilla.org/show_bug.cgi?id=1918354
+export const isFirefoxWithBrokenX25519Support = () =>
+    isFirefox() && !!ua.browser.major && (+ua.browser.major === 130 || +ua.browser.major === 131);
+
 export const isIos = () =>
     // https://racase.com.np/javascript-how-to-detect-if-device-is-ios/
     (/iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream) ||
