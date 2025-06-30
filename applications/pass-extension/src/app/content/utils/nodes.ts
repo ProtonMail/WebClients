@@ -7,8 +7,8 @@ import {
     shallowShadowQuerySelector,
 } from '@proton/pass/fathom';
 import type { MaybeNull } from '@proton/pass/types';
-import { isFormElement, isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';
-import { not, or } from '@proton/pass/utils/fp/predicates';
+import { isFormElement, isHTMLElement, isInputElement, isValidInputElement } from '@proton/pass/utils/dom/predicates';
+import { and, not, or } from '@proton/pass/utils/fp/predicates';
 
 /** Elements excluded from form/field container checks.
  * Use with `childElementCount` to also skip leaf nodes. */
@@ -32,6 +32,7 @@ export const IGNORED_TAGS = new Set([
 export const IGNORED_ROLES = new Set(['button', 'link', 'menuitem', 'checkbox', 'radio', 'switch']);
 
 export const isUnprocessed = not(or(isProcessed, isIgnored));
+export const isUnprocessedInput = and(isValidInputElement, isUnprocessed);
 
 export const hasProcessableForms = (target?: Document | HTMLElement) =>
     selectFormCandidates(target).some(or(isUnprocessed, isHidden));

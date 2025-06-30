@@ -2,6 +2,7 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { type FieldHandle, type FormHandle, IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { actionPrevented, actionTrap, withActionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill';
+import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 
 import { FieldType, FormType } from '@proton/pass/fathom';
 import { findBoundingInputElement } from '@proton/pass/utils/dom/input';
@@ -149,7 +150,7 @@ export const createFieldHandles = ({
          * attached action effect : as there is no way to attach extra data to a focus event,
          * so we rely on adding custom properties on the field element itself */
         focus(options) {
-            const isFocusedField = document.activeElement === field.element;
+            const isFocusedField = isActiveElement(field.element);
             if (options?.preventAction) actionTrap(field.element);
             field.element.focus();
 
