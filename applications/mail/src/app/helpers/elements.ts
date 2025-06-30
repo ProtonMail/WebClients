@@ -83,7 +83,7 @@ export const isUnread = (element: Element | undefined, labelID: string | undefin
     }
 
     if (isMessage(element)) {
-        return (element as Message).Unread !== 0;
+        return element.Unread !== 0;
     }
 
     return conversationIsUnread(element as Conversation, labelID);
@@ -93,13 +93,10 @@ export const isUnreadMessage = (message: Message) => isUnread(message, undefined
 
 export const getLabelIDs = (element: Element | undefined, contextLabelID: string | undefined) =>
     isMessage(element)
-        ? (element as Message | undefined)?.LabelIDs?.reduce<{ [labelID: string]: boolean | undefined }>(
-              (acc, labelID) => {
-                  acc[labelID] = true;
-                  return acc;
-              },
-              {}
-          ) || {}
+        ? element?.LabelIDs?.reduce<{ [labelID: string]: boolean | undefined }>((acc, labelID) => {
+              acc[labelID] = true;
+              return acc;
+          }, {}) || {}
         : conversationGetLabelIDs(element, contextLabelID);
 
 export const hasLabel = (element: Element | undefined, labelID: string) =>
@@ -146,10 +143,10 @@ export const getCounterMap = (
 };
 
 export const hasAttachments = (element: Element) =>
-    isMessage(element) ? messageHasAttachments(element as Message) : conversationHasAttachments(element);
+    isMessage(element) ? messageHasAttachments(element) : conversationHasAttachments(element);
 
 export const getNumAttachments = (element: Element) =>
-    isMessage(element) ? (element as Message)?.NumAttachments || 0 : conversationNumAttachments(element);
+    isMessage(element) ? element?.NumAttachments || 0 : conversationNumAttachments(element);
 
 /**
  * Starting from the element LabelIDs list, add and remove labels from an event manager event
@@ -204,21 +201,21 @@ export const getCurrentFolderIDs = (element: Element | undefined, customFoldersL
 
 export const getSenders = (element: Element) => {
     if (isMessage(element)) {
-        return [getSender(element as Message)];
+        return [getSender(element)];
     }
     return conversationGetSenders(element as Conversation);
 };
 
 export const getRecipients = (element: Element) => {
     if (isMessage(element)) {
-        return messageGetRecipients(element as Message);
+        return messageGetRecipients(element);
     }
     return (element as Conversation).Recipients || [];
 };
 
 export const getAddressID = (element: Element) => {
     if (isMessage(element)) {
-        return (element as Message).AddressID;
+        return element.AddressID;
     }
     // Default to empty string for conversations
     return '';

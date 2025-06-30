@@ -56,7 +56,7 @@ export const getSnoozeTimeFromSnoozeLabel = (element?: Element) => {
     }
 
     if (isMessage(element)) {
-        return (element as Message).SnoozeTime;
+        return element.SnoozeTime;
     }
 
     return (element as Conversation).Labels?.find(({ ID }) => {
@@ -70,7 +70,7 @@ export const getSnoozeTimeFromElement = (element?: Element, labelID?: string) =>
     }
 
     if (isMessage(element)) {
-        return (element as Message).SnoozeTime;
+        return element.SnoozeTime;
     }
 
     return (element as Conversation).Labels?.find(({ ID }) => {
