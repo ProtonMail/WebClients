@@ -9,6 +9,7 @@ import type {
 } from 'proton-pass-extension/app/content/types';
 import { DropdownAction } from 'proton-pass-extension/app/content/types';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
+import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
 import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -223,7 +224,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
          * Handles autofocused simple forms and dynamically added fields.
          * Note: This doesn't trigger a real DOM focus event. */
         form.getFields()
-            .find((field) => field.element === document.activeElement && !field.value)
+            .find((field) => isActiveElement(field.element) && !field.value)
             ?.focus();
     });
 
