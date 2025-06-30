@@ -25,7 +25,7 @@ import { useConversation } from '../../hooks/conversation/useConversation';
 import { useConversationFocus } from '../../hooks/conversation/useConversationFocus';
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
-import { SOURCE_ACTION } from '../list/useListTelemetry';
+import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import type { MessageViewRef } from '../message/MessageView';
 import MessageView from '../message/MessageView';
 import ConversationErrorBanner from './ConversationErrorBanner';
