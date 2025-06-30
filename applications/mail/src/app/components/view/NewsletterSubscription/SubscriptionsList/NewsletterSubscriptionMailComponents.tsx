@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { SkeletonLoader } from '@proton/components';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import { MailboxToolbar } from 'proton-mail/router/components/MailboxToolbar';
 import type { MailboxActions, RouterNavigation } from 'proton-mail/router/interface';

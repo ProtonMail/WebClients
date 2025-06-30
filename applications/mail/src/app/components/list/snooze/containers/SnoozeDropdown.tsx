@@ -15,7 +15,7 @@ import { selectSnoozeDropdownState, selectSnoozeElement } from 'proton-mail/stor
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import type { Element } from '../../../../models/element';
 import { snoozeActions } from '../../../../store/snooze/snoozeSlice';
-import { SOURCE_ACTION } from '../../useListTelemetry';
+import { SOURCE_ACTION } from '../../list-telemetry/useListTelemetry';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
