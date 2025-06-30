@@ -1,134 +1,154 @@
 import type { MouseEvent } from 'react';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
-import type { ModalStateProps } from '@proton/components';
 import {
     ContactEmailsProvider,
     Icon,
+    type ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    useModalTwoStatic,
     useToggle,
 } from '@proton/components';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-import useFlag from '@proton/unleash/useFlag';
+import {
+    type Member,
+    MemberRole,
+    type NonProtonInvitation,
+    type ProtonInvitation,
+    type ShareNodeSettings,
+} from '@proton/drive/index';
+import useLoading from '@proton/hooks/useLoading';
 
-import { SharingModal } from '../../../modals/SharingModal/SharingModal';
-import type { ShareMember } from '../../../store';
-import { useDrivePublicSharingFlags, useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
-import ModalContentLoader from '../ModalContentLoader';
-import { DirectSharingAutocomplete, DirectSharingListing, useShareInvitees } from './DirectSharing';
+import ModalContentLoader from '../../components/modals/ModalContentLoader';
+import ErrorState from '../../components/modals/ShareLinkModal/ErrorState';
+import { useLinkSharingSettingsModal } from '../../components/modals/ShareLinkModal/ShareLinkSettingsModal';
+import { useDrivePublicSharingFlags, useDriveSharingFlags } from '../../store';
+import { DirectSharingAutocomplete } from './DirectSharing/DirectSharingAutocomplete';
 import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
-import ErrorState from './ErrorState';
-import { PublicSharing } from './PublicSharing';
-import { useLinkSharingSettingsModal } from './ShareLinkSettingsModal';
+import { DirectSharingListing } from './DirectSharing/DirectSharingListing';
+import { PublicSharing } from './PublicSharing/PublicSharing';
+import { useShareInvitees } from './useShareInvitees';
 
-export type SharingModalProps = {
+export interface SharingModalViewProps extends ModalStateProps {
+    isLoading: boolean;
+    isSaving: boolean;
+    isDeleting: boolean;
+    isCreating: boolean;
+    isShareUrlLoading: boolean;
+
+    name: string;
     volumeId: string;
-    modalTitleID?: string;
-    shareId: string;
     linkId: string;
-    onPublicLinkToggle?: (enabled: boolean) => void;
-    /**
-     * Escape hatch that is necessary for Docs. Please do not use unless you know what you are doing.
-     *
-     * The reason behind this workaround is stale cache issues. See MR for more details.
-     */
-    registerOverriddenNameListener?: (listener: (name: string) => void) => void;
-};
+    sharedLink: string | undefined;
+    ownerEmail?: string;
+    ownerDisplayName?: string;
+    permissions: number;
+    members: Member[];
+    protonInvitations: ProtonInvitation[];
+    nonProtonInvitations: NonProtonInvitation[];
+    customPassword: string;
+    initialExpiration: number | null;
+    hasGeneratedPasswordIncluded: boolean;
+    confirmationMessage: string;
+    isShareUrlEnabled: boolean;
 
-export function SharingModalDeprecated(props: SharingModalProps & ModalStateProps) {
-    const shareMemberList = useShareMemberView(props.shareId, props.linkId);
-    return <SharingModalInner {...props} shareMemberList={shareMemberList} />;
+    errorMessage?: string;
+    loadingMessage?: string;
+
+    isShared: boolean;
+    hasSharedLink: boolean;
+
+    unshareNode: (email: string) => Promise<void>;
+    updateShareNode: (shareNodeSettings: ShareNodeSettings) => Promise<void>;
+    resendInvitation: (invitationUid: string) => Promise<void>;
+    copyInvitationLink: (invitationUid: string, email: string) => void;
+    deleteLink: () => Promise<void>;
+    onPublicLinkToggle?: (enabled: boolean) => void;
+
+    createSharedLink: () => Promise<void>;
+    saveSharedLink: (newCustomPassword?: string, newDuration?: number | null) => Promise<any>;
+    updatePermissions: (permissions: number) => Promise<void>;
+    stopSharing: () => Promise<void>;
 }
 
-function SharingModalInner({
-    volumeId,
-    shareId: rootShareId,
-    linkId,
+export const SharingModalView = ({
     onClose,
-    shareMemberList,
+    onExit,
+    open,
+    isLoading,
+    isSaving,
+    isDeleting,
+    isCreating,
+    isShareUrlLoading,
+    name,
+    volumeId,
+    linkId,
+    sharedLink,
+    ownerEmail,
+    ownerDisplayName,
+    permissions,
+    members,
+    protonInvitations,
+    nonProtonInvitations,
+    customPassword,
+    initialExpiration,
+    hasGeneratedPasswordIncluded,
+    confirmationMessage,
+    isShareUrlEnabled,
+    errorMessage,
+    loadingMessage,
+    isShared,
+    hasSharedLink,
+    unshareNode,
+    updateShareNode,
+    resendInvitation,
+    copyInvitationLink,
+    deleteLink,
     onPublicLinkToggle,
-    registerOverriddenNameListener,
-    ...modalProps
-}: SharingModalProps & ModalStateProps & { shareMemberList: ReturnType<typeof useShareMemberView> }) {
-    const {
-        customPassword,
-        initialExpiration,
-        name: originalName,
-        deleteLink,
-        stopSharing,
-        sharedLink,
-        permissions: sharedLinkPermissions,
-        updatePermissions: updateSharedLinkPermissions,
-        hasSharedLink,
-        errorMessage,
-        loadingMessage,
-        confirmationMessage,
-        hasGeneratedPasswordIncluded,
-        createSharedLink,
-        saveSharedLink,
-        isSaving,
-        isDeleting,
-        isCreating,
-        isShareUrlLoading,
-        isShareUrlEnabled,
-    } = useShareURLView(rootShareId, linkId);
-
-    const [overriddenName, setOverriddenName] = useState<string>();
-    useEffect(() => {
-        registerOverriddenNameListener?.(setOverriddenName);
-    }, [registerOverriddenNameListener]);
-
-    const name = overriddenName ?? originalName;
-
-    const {
-        members,
-        invitations,
-        externalInvitations,
-        existingEmails,
-        isLoading,
-        isAdding,
-        isShared,
-        addNewMembers,
-        removeMember,
-        updateMemberPermissions,
-        removeInvitation,
-        resendInvitation,
-        resendExternalInvitation,
-        updateInvitePermissions,
-        removeExternalInvitation,
-        updateExternalInvitePermissions,
-        deleteShareIfEmpty,
-    } = shareMemberList;
-
+    createSharedLink,
+    saveSharedLink,
+    updatePermissions,
+    stopSharing,
+}: SharingModalViewProps) => {
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const { isPublicEditModeEnabled } = useDrivePublicSharingFlags();
 
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
 
-    const [selectedPermissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.EDITOR);
+    const [selectedRole, setRole] = useState<MemberRole>(MemberRole.Editor);
     const [inviteMessage, setInviteMessage] = useState('');
     const {
         state: includeInviteMessage,
         toggle: toggleIncludeInviteMessage,
         set: setIncludeInviteMessage,
     } = useToggle(true);
+    const [isAdding, withAdding] = useLoading();
 
-    const isClosedButtonDisabled = isSaving || isDeleting || isCreating || isAdding;
-    // It's important in this order. As if it's hasSharedLink is true, isShared is true as well (even if cache not updated)
-    const isSharedAvailable = hasSharedLink || isShared;
-    const isSettingsDisabled = isShareUrlLoading || isSaving || isDeleting || isCreating || !isSharedAvailable;
+    const existingEmails = useMemo(
+        () =>
+            members
+                .concat(nonProtonInvitations)
+                .concat(protonInvitations)
+                .map((member) => member.inviteeEmail),
+        [members, nonProtonInvitations, protonInvitations]
+    );
+
     const { invitees, add: addInvitee, remove: removeInvitee, clean: cleanInvitees } = useShareInvitees(existingEmails);
 
     const isInvitationWorkflow = !!invitees.length;
-    const isShareWithAnyoneLoading = isShareUrlLoading || isDeleting || isCreating;
-    const isDirectSharingAutocompleteDisabled = isAdding || isLoading || isDirectSharingDisabled;
+    const isSubmitDisabled = useMemo(
+        () => !invitees.length || !!invitees.find((invitee) => invitee.isLoading || invitee.error),
+        [invitees]
+    );
+    const isSettingsDisabled =
+        isShareUrlLoading || isSaving || isDeleting || isCreating || !(hasSharedLink || isShared);
+    // TODO: Remove isLoading when public sharing is implement in sdk. I am doing that to prevent issue on action on the same share between sdk/store
+    const isShareWithAnyoneLoading = isShareUrlLoading || isDeleting || isCreating || isLoading;
+    const isClosedButtonDisabled = isSaving || isDeleting || isCreating || isAdding;
 
     const cleanFields = () => {
         setInviteMessage('');
@@ -136,37 +156,30 @@ function SharingModalInner({
         cleanInvitees();
     };
 
-    const handleSubmit = async (e: MouseEvent) => {
-        e.preventDefault();
-        await addNewMembers({
-            invitees,
-            permissions: selectedPermissions,
-            emailDetails: includeInviteMessage
-                ? {
-                      message: inviteMessage,
-                      itemName: name,
-                  }
-                : undefined,
+    const handleSubmit = (e: MouseEvent) =>
+        withAdding(async () => {
+            e.preventDefault();
+            await updateShareNode({
+                users: invitees.map((invitee) => ({
+                    email: invitee.email,
+                    role: selectedRole,
+                })),
+                emailOptions: {
+                    message: inviteMessage,
+                    includeNodeName: includeInviteMessage,
+                },
+            });
+            cleanFields();
         });
-        cleanFields();
-    };
 
-    // Here we check if the email address is already in invited members
-    const isSubmitDisabled = useMemo(
-        () => !invitees.length || !!invitees.find((invitee) => invitee.isLoading || invitee.error),
-        [invitees]
-    );
+    const handleOnRoleChange = async (email: string, role: MemberRole) => {
+        await updateShareNode({
+            users: [{ email, role }],
+        });
+    };
 
     const handleCancel = () => {
         cleanFields();
-    };
-
-    const handlePermissionsChange = async (member: ShareMember, permissions: SHARE_MEMBER_PERMISSIONS) => {
-        await updateMemberPermissions({ ...member, permissions });
-    };
-
-    const handleDeleteLink = async () => {
-        await deleteLink(deleteShareIfEmpty);
     };
 
     const renderModalState = () => {
@@ -218,13 +231,13 @@ function SharingModalInner({
                         !isInvitationWorkflow ? (
                             <>
                                 <DirectSharingAutocomplete
-                                    disabled={isDirectSharingAutocompleteDisabled}
+                                    disabled={isDirectSharingDisabled}
                                     existingEmails={existingEmails}
                                     invitees={invitees}
                                     onAdd={addInvitee}
                                     onRemove={removeInvitee}
-                                    onChangePermissions={setPermissions}
-                                    selectedPermissions={selectedPermissions}
+                                    onChangeRole={setRole}
+                                    selectedRole={selectedRole}
                                 />
                                 <h2 className="text-lg text-semibold">{c('Info').t`People with access`}</h2>
                             </>
@@ -239,17 +252,15 @@ function SharingModalInner({
                                 volumeId={volumeId}
                                 linkId={linkId}
                                 isLoading={isLoading}
+                                ownerEmail={ownerEmail}
+                                ownerDisplayName={ownerDisplayName}
                                 members={members}
-                                invitations={invitations}
-                                externalInvitations={externalInvitations}
-                                onPermissionsChange={handlePermissionsChange}
-                                onMemberRemove={removeMember}
-                                onInvitationRemove={removeInvitation}
-                                onInvitationPermissionsChange={updateInvitePermissions}
-                                onExternalInvitationRemove={removeExternalInvitation}
-                                onExternalInvitationPermissionsChange={updateExternalInvitePermissions}
-                                onResendInvitationEmail={resendInvitation}
-                                onResendExternalInvitationEmail={resendExternalInvitation}
+                                protonInvitations={protonInvitations}
+                                nonProtonInvitations={nonProtonInvitations}
+                                onRemove={unshareNode}
+                                onRoleChange={handleOnRoleChange}
+                                onResendInvitation={resendInvitation}
+                                onCopyInvitationLink={copyInvitationLink}
                             />
                         </ModalTwoContent>
                         {isShareUrlEnabled ? (
@@ -260,10 +271,10 @@ function SharingModalInner({
                                         viewOnly={!isPublicEditModeEnabled}
                                         createSharedLink={createSharedLink}
                                         isLoading={isShareWithAnyoneLoading}
-                                        publicSharedLink={sharedLink}
-                                        publicSharedLinkPermissions={sharedLinkPermissions}
-                                        onChangePermissions={updateSharedLinkPermissions}
-                                        deleteSharedLink={handleDeleteLink}
+                                        publicSharedLink={sharedLink || ''}
+                                        publicSharedLinkPermissions={permissions}
+                                        onChangePermissions={updatePermissions}
+                                        deleteSharedLink={deleteLink}
                                         onPublicLinkToggle={onPublicLinkToggle}
                                     />
                                 </ModalTwoFooter>
@@ -274,13 +285,13 @@ function SharingModalInner({
                     <>
                         <ModalTwoContent className="mb-5">
                             <DirectSharingAutocomplete
-                                disabled={isDirectSharingAutocompleteDisabled}
+                                disabled={isDirectSharingDisabled}
                                 existingEmails={existingEmails}
                                 invitees={invitees}
                                 onAdd={addInvitee}
                                 onRemove={removeInvitee}
-                                onChangePermissions={setPermissions}
-                                selectedPermissions={selectedPermissions}
+                                onChangeRole={setRole}
+                                selectedRole={selectedRole}
                             />
                             <DirectSharingInviteMessage
                                 isAdding={isAdding}
@@ -315,6 +326,7 @@ function SharingModalInner({
             <ModalTwo
                 as="form"
                 onClose={onClose}
+                onExit={onExit}
                 onReset={(e: any) => {
                     e.preventDefault();
                     onClose();
@@ -322,16 +334,11 @@ function SharingModalInner({
                 disableCloseOnEscape={isSaving || isDeleting}
                 size="large"
                 fullscreenOnMobile
-                {...modalProps}
+                open={open}
             >
                 {renderModalState()}
             </ModalTwo>
             {settingsModal}
         </>
     );
-}
-
-export const useLinkSharingModal = () => {
-    const useSDKModal = useFlag('DriveWebSDKSharingModal');
-    return useModalTwoStatic(useSDKModal ? SharingModal : SharingModalDeprecated);
 };
