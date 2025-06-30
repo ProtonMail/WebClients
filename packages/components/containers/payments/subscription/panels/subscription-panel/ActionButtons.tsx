@@ -2,18 +2,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { type Subscription, isManagedExternally } from '@proton/payments';
 import {
+    type Subscription,
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
     getIsCustomCycle,
-    hasMaximumCycle,
     hasVPNPassBundle,
+    isManagedExternally,
 } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
 
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
@@ -27,7 +26,6 @@ export const ActionButtons = ({
     subscription?: Subscription;
     app: APP_NAMES;
 }) => {
-    const scheduledDowncycling = useFlag('ScheduledDowncycling');
     const [openSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
@@ -68,7 +66,6 @@ export const ActionButtons = ({
     const showEditBillingDetails =
         user.isPaid &&
         user.canPay &&
-        (!hasMaximumCycle(subscription) || scheduledDowncycling) &&
         !hasPassB2B &&
         !getIsCustomCycle(subscription) &&
         !hasVPNPassBundle(subscription) &&

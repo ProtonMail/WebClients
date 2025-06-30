@@ -26,7 +26,10 @@ import {
     TRIAL_MAX_LUMO_SEATS,
     TRIAL_MAX_SCRIBE_SEATS,
     TRIAL_MAX_USERS,
+    getAddonMultiplier,
     getAddonType,
+    getHasPassB2BPlan,
+    getMaxValue,
     getSupportedAddons,
     isDomainAddon,
     isDriveOrgSizeAddon,
@@ -38,19 +41,9 @@ import {
     isPassOrgSizeAddon,
     isScribeAddon,
 } from '@proton/payments';
-import {
-    getAddonMultiplier,
-    getHasPassB2BPlan,
-    getMaxValue,
-    getVPNDedicatedIPs,
-    hasBundlePro,
-    hasBundlePro2024,
-    hasVpnBusiness,
-} from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
 import type { Audience } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import ScribeAddon from '../ScribeAddon';
@@ -152,9 +145,6 @@ const AddonCustomizer = ({
     mode,
     isTrialMode,
 }: AddonCustomizerProps) => {
-    const ipAddonDowngrade = useFlag('IpAddonDowngrade');
-    const passOrgSizeLimitFlag = useFlag('PassOrgSizeLimit');
-
     const addon = plansMap[addonName];
     const [showScribeBanner, setShowScribeBanner] = useState(mode === 'signup');
 
@@ -184,7 +174,6 @@ const AddonCustomizer = ({
      * Don't enforce for existing Pass B2B users who aren't within limit.
      */
     const enforcePassOrgSizeLimit =
-        passOrgSizeLimitFlag &&
         isPassOrgSizeAddon(addonNameKey) &&
         (!getHasPassB2BPlan(latestSubscription) ||
             isWithinPassOrgSizeLimit({
@@ -217,20 +206,6 @@ const AddonCustomizer = ({
     };
 
     const displayMin = (() => {
-        // Existing users of VPN Business can't downgrade the number of IP addons, it must be done by contacting
-        // customer support.
-        if (
-            // This feature flag enables self-service downgrading of IP addons
-            !ipAddonDowngrade &&
-            isIpAddon(addonNameKey) &&
-            (hasVpnBusiness(latestSubscription) ||
-                hasBundlePro(latestSubscription) ||
-                hasBundlePro2024(latestSubscription))
-        ) {
-            const minNumberOfServers = getVPNDedicatedIPs(latestSubscription);
-            return applyForbiddenModificationLimitation(minNumberOfServers);
-        }
-
         if (enforcePassOrgSizeLimit) {
             return applyForbiddenModificationLimitation(MIN_MEMBER_PASS_B2B_ADDON);
         }
