@@ -74,7 +74,13 @@ const CopyPasswordModal = ({
                         rest?.onClose?.();
                     }}
                 >{c('Action').t`Edit password`}</Button>
-                <Button color="norm" onClick={onConfirm}>{c('Action').t`Confirm`}</Button>
+                <Button
+                    color="norm"
+                    onClick={() => {
+                        onConfirm();
+                        rest?.onClose?.();
+                    }}
+                >{c('Action').t`Confirm`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
@@ -97,6 +103,7 @@ const GeneratedPasswordDisplay = ({
         <div className={clsx('pl-4 py-1 bg-weak rounded flex justify-space-between items-center', className)}>
             <div
                 className="user-select text-pre-wrap break"
+                data-testid="generated-password"
                 onCopy={() => {
                     setCopied(true);
                 }}
@@ -131,7 +138,7 @@ const Step3 = ({
 }: {
     password: string;
     email: string;
-    onComplete: (newPassword: string | undefined) => Promise<void>;
+    onComplete: (newPassword: string) => Promise<void>;
     measure: Measure;
     isB2bPlan: boolean;
     background?: Background;
@@ -173,7 +180,7 @@ const Step3 = ({
         });
     }, [setOwnPasswordMode]);
 
-    const finalPassword = setOwnPasswordMode ? newPassword : undefined;
+    const finalPassword = setOwnPasswordMode ? newPassword : password;
     const onBack = setOwnPasswordMode
         ? () => {
               if (loading) {
@@ -276,9 +283,11 @@ const Step3 = ({
                                 shape="ghost"
                                 type="submit"
                                 fullWidth
-                                loading={loading}
                                 className="mt-2"
                                 onClick={() => {
+                                    if (loading) {
+                                        return;
+                                    }
                                     void measure({
                                         event: TelemetryAccountSignupEvents.interactPassword,
                                         dimensions: { click: 'set_custom' },
@@ -308,7 +317,7 @@ const Step3 = ({
                         setSetOwnPasswordMode(true);
                         reset();
                     }}
-                    onConfirm={() => onComplete(finalPassword).catch(noop)}
+                    onConfirm={() => withLoading(onComplete(finalPassword)).catch(noop)}
                     password={password}
                     isB2bPlan={isB2bPlan}
                 />

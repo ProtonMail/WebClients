@@ -608,6 +608,7 @@ const SingleSignupContainer = ({
                 cache,
                 api: silentApi,
                 ignoreVPN: true,
+                setupKeys: false,
                 reportPaymentSuccess: () => {
                     const { method, overrides } = getTelemetryParams();
                     reportPaymentSuccess(method, overrides);
@@ -915,7 +916,7 @@ const SingleSignupContainer = ({
                         product={VPN_APP_NAME}
                         isB2bPlan={isB2bPlan}
                         background={background}
-                        onComplete={async (newPassword: string | undefined) => {
+                        onComplete={async (newPassword: string) => {
                             if (!cache || cache.type !== 'signup') {
                                 throw new Error('Missing cache');
                             }
