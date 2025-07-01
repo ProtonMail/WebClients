@@ -1,11 +1,10 @@
 import { Details, Summary } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Details.mdx';
 
 export default {
     component: Details,
-    title: getTitle(__filename, false),
+    title: 'Components/Details',
     parameters: {
         docs: {
             page: mdx,

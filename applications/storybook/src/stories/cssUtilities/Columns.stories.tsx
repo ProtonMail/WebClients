@@ -1,8 +1,7 @@
-import { getTitle } from '../../helpers/title';
 import mdx from './Columns.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Columns',
     parameters: {
         docs: {
             page: mdx,

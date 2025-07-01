@@ -1,8 +1,7 @@
-import { getTitle } from '../../helpers/title';
 import mdx from './Opacity.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Opacity',
     parameters: {
         docs: {
             page: mdx,
@@ -12,8 +11,7 @@ export default {
 
 const values = ['0', '30', '40', '50', '65', '70', '100'];
 
-const demoItemClasses =
-    'user-select flex items-center justify-center bg-primary rounded-sm text-center';
+const demoItemClasses = 'user-select flex items-center justify-center bg-primary rounded-sm text-center';
 
 export const Opacity = () => {
     return (

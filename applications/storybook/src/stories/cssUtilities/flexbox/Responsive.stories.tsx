@@ -1,8 +1,7 @@
-import { getTitle } from '../../../helpers/title';
 import mdx from './Responsive.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Flexbox/Responsive',
     parameters: {
         docs: {
             page: mdx,

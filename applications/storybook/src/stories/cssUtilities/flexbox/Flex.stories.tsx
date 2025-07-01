@@ -1,8 +1,7 @@
-import { getTitle } from '../../../helpers/title';
 import mdx from './Flex.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Flexbox/Flex',
     parameters: {
         docs: {
             page: mdx,
