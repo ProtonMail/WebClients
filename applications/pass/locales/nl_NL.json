@@ -1282,12 +1282,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "\"${ payload.item.data.metadata.name }\"-item werd genegeerd"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" update is afgewezen"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } geblokkeerd",
         "${ blockedEmailsCount } geblokkeerd"
