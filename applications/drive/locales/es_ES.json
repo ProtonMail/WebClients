@@ -1374,6 +1374,11 @@
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Se ha cancelado la suscripción."
+      ]
+    },
     "Badge": {
       "Invited": [
         "Invitado"
@@ -1702,7 +1707,7 @@
         "Nuestro plan básico y gratuito con correo y almacenamiento cifrado de extremo a extremo. No incluye características prémium."
       ],
       "Save ${ upsellSavings }": [
-        "Ahorra un ${ upsellSavings }"
+        "Ahorra ${ upsellSavings }"
       ],
       "Save money with ${ upsellPlanName }": [
         "Ahorra dinero con ${ upsellPlanName }"
@@ -3233,14 +3238,29 @@
       "Failed to create folder": [
         "Error al crear la carpeta"
       ],
+      "Failed to fetch node": [
+        "Error al obtener nodo"
+      ],
+      "Failed to fetch sharing info": [
+        "Error al obtener información para compartir"
+      ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa STL"
       ],
       "Failed to move items": [
         "Error al mover elementos"
       ],
+      "Failed to resend invitation": [
+        "No se pudo reenviar la invitación"
+      ],
       "Failed to save some photos to your Drive": [
         "No se han podido guardar algunas fotos en tu Drive"
+      ],
+      "Failed to unshare node": [
+        "Error al descompartir nodo"
+      ],
+      "Failed to update share node": [
+        "Error al actualizar el nodo compartido"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El archivo \"${ item.name }\" no se puede cargar debido al error \"${ error }\"."
@@ -4951,6 +4971,9 @@
       "Dedicated servers": [
         "Servidores dedicados"
       ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
       "default email address": [
         "dirección de correo electrónico por defecto"
       ],
@@ -5440,6 +5463,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados en la organización"
       ],
       "Numbers": [
         "Números"
@@ -6317,9 +6343,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se te cobrará si cancelas antes del ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "También perderás acceso a las funciones de ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Después se te facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
         "Después se te facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
@@ -6444,6 +6467,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Tu prueba acaba en ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "También perderás acceso a las funciones de ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Perderás el acceso a ${ boldPlanTitle } el ${ boldEndDate }."
@@ -9416,6 +9442,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Transferencia bancaria"
       ],
@@ -9541,6 +9570,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferencia bancaria - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -12116,6 +12153,9 @@
       ],
       "Name must not be empty": [
         "El nombre no debe estar vacío."
+      ],
+      "Name must not contain slashes (/)": [
+        "El nombre no debe contener barras inclinadas (/)"
       ]
     },
     "Video control": {

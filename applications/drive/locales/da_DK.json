@@ -1162,6 +1162,12 @@
         "Ved at forlade nu, vil nogle begivenheder måske ikke blive importeret"
       ]
     },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } applikationer"
@@ -10798,7 +10804,7 @@
         "Netværksfejl"
       ],
       "Newsletters view": [
-        "Visning af nyheder"
+        "Visning af nyhedsbreve"
       ],
       "Night theme": [
         "Nattetema"
@@ -11256,6 +11262,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/måned"
       ]
     },
     "unprivatization": {

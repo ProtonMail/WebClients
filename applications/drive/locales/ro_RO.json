@@ -683,7 +683,7 @@
         "Album nou partajat"
       ],
       "New spreadsheet": [
-        "Foaie de calcul nouă"
+        "Registru de lucru nou"
       ],
       "Next": [
         "Înainte"
@@ -1375,6 +1375,11 @@
       ],
       "Unsupported event": [
         "Eveniment nesuportat"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonament anulat."
       ]
     },
     "Badge": {
@@ -3234,14 +3239,29 @@
       "Failed to create folder": [
         "Crearea folderului a eșuat."
       ],
+      "Failed to fetch node": [
+        "Eșuare preluare nod."
+      ],
+      "Failed to fetch sharing info": [
+        "Eșuare preluare informații de partajare."
+      ],
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
       ],
       "Failed to move items": [
         "Mutarea articolelor a eșuat."
       ],
+      "Failed to resend invitation": [
+        "Eșuare retrimitere invitație."
+      ],
       "Failed to save some photos to your Drive": [
         "Nu s-au putut salva unele fotografii în Drive."
+      ],
+      "Failed to unshare node": [
+        "Eșuare anulare partajare nod."
+      ],
+      "Failed to update share node": [
+        "Nu s-a putut actualiza nodul de partajare."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fișierul „${ item.name }” nu poate fi încărcat din cauza erorii „${ error }”."
@@ -5012,6 +5032,9 @@
       "Dedicated servers": [
         "Servere dedicate"
       ],
+      "Dedicated VPN servers": [
+        "Servere VPN dedicate"
+      ],
       "default email address": [
         "adresa de e-mail implicită"
       ],
@@ -5506,6 +5529,9 @@
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
       ],
+      "Number of dedicated VPN servers in the organization": [
+        "Număr de servere VPN dedicate din organizație"
+      ],
       "Numbers": [
         "Cifre"
       ],
@@ -5915,7 +5941,7 @@
         "Simboluri (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
+        "Temporar indisponibil. Reveniți mai târziu."
       ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Vă mulțumim că ați ales ${ BRAND_NAME } pentru a vă securiza organizația."
@@ -6391,9 +6417,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Plata va fi apoi la ${ renewCycle } lună cu ${ renewAmountStr }.",
         "Plata va fi apoi la ${ renewCycle } luni cu ${ renewAmountStr }.",
@@ -6415,10 +6438,10 @@
         "Ați atins numărul maxim de adrese din grupul de contacte."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, trebuie să plătiți toate facturile restante."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, trebuie să plătiți toate facturile restante."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Abonamentul ${ PASS_SHORT_APP_NAME } Plus va fi înlocuit cu ${ PASS_SHORT_APP_NAME } pe viață. Soldul rămas din abonament va fi restituit în cont. Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
@@ -6520,6 +6543,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Perioada de probare se termină ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Veți pierde accesul la ${ boldPlanTitle } la ${ boldEndDate }."
@@ -6641,7 +6667,7 @@
         "(Expirat)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
+        "(Temporar indisponibil. Reveniți mai târziu.)"
       ],
       "Account holder": [
         "Titular cont"
@@ -7677,7 +7703,7 @@
         "Document de prezentare OpenDocument"
       ],
       "OpenDocument spreadsheet document": [
-        "Document foaie de calcul OpenDocument"
+        "Document registru de lucru OpenDocument"
       ],
       "OpenDocument text document": [
         "Document text OpenDocument"
@@ -8990,7 +9016,7 @@
         "Subfolderul nu s-a putut încărca."
       ],
       "The Albums feature is on its way! We're rolling it out gradually — please try again soon": [
-        "Funcția albume este pe drum! O lansăm treptat — vă rugăm să reîncercați în curând."
+        "Funcția albume este pe drum! O lansăm treptat — reîncercați în curând."
       ],
       "The document failed to be created": [
         "Crearea documentului a eșuat."
@@ -9008,7 +9034,7 @@
         "Legătura către element a fost ștearsă."
       ],
       "The spreadsheet failed to be created": [
-        "Crearea foii de calcul a eșuat."
+        "Crearea registrului de lucru a eșuat."
       ],
       "This item was not removed from your list": [
         "Acest articol nu a fost eliminat din listă.",
@@ -9486,6 +9512,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Transfer bancar"
       ],
@@ -9615,6 +9644,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transfer bancar - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -12005,7 +12042,7 @@
         "Document nedenumit ${ date }"
       ],
       "Untitled spreadsheet ${ date }": [
-        "Foaie de calcul nedenumită ${ date }"
+        "Registru de lucru nedenumit ${ date }"
       ],
       "Upgrade complete!": [
         "Modificare finalizată!"
