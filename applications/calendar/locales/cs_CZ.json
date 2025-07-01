@@ -1217,6 +1217,11 @@
         "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Předplatné zrušeno."
+      ]
+    },
     "Badge": {
       "New!": [
         "Nové!"
@@ -5188,6 +5193,9 @@
       "Dedicated servers": [
         "Dedikované servery"
       ],
+      "Dedicated VPN servers": [
+        "Dedikované servery VPN"
+      ],
       "default email address": [
         "výchozí e-mailová adresa"
       ],
@@ -5502,6 +5510,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Počet dedikovaných serverů VPN v organizaci"
       ],
       "Numbers": [
         "Číslice"
@@ -6067,9 +6078,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Pokud službu zrušíte před ${ trialEndsOnFormatted }, nebudou vám účtovány žádné poplatky."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Ztratíte také přístup k funkcím ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }.",
         "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
@@ -6180,6 +6188,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše zkušební verze skončí za ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Ztratíte také přístup k funkcím ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Přístup k ${ boldPlanTitle } ztratíte ${ boldEndDate }."
@@ -9955,7 +9966,7 @@
     },
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
-        "Přístup k obsahu ve streamovacích službách po celém světě"
+        "Přístup k obsahu streamovacích služeb po celém světě"
       ],
       "Get 500 GB to securely store all your files and photos": [
         "Získejte 500 GB pro bezpečné uložení všech svých souborů a fotek"
