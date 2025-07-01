@@ -13,17 +13,17 @@
         "pretty": "prettier --write  cli bin"
     },
     "dependencies": {
-        "@babel/core": "^7.27.4",
+        "@babel/core": "^7.27.7",
         "@babel/plugin-transform-class-properties": "^7.27.1",
         "@babel/plugin-transform-runtime": "^7.27.4",
         "@babel/preset-env": "^7.27.2",
         "@babel/preset-react": "^7.27.1",
         "@babel/preset-typescript": "^7.27.1",
         "@babel/runtime": "^7.27.6",
-        "@pmmmwh/react-refresh-webpack-plugin": "^0.6.0",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.6.1",
         "@proton/collect-metrics": "workspace:^",
         "@sentry/webpack-plugin": "^1.21.0",
-        "@swc/core": "^1.12.5",
+        "@swc/core": "^1.12.9",
         "@types/webpack": "^5.28.5",
         "autoprefixer": "^10.4.21",
         "babel-loader": "^10.0.0",
@@ -45,7 +45,7 @@
         "html-webpack-plugin": "^5.6.3",
         "mini-css-extract-plugin": "^2.9.2",
         "portfinder": "^1.0.37",
-        "postcss": "^8.5.5",
+        "postcss": "^8.5.6",
         "postcss-color-functional-notation": "^6.0.14",
         "postcss-loader": "^8.1.1",
         "postcss-logical": "^8.1.0",
@@ -64,7 +64,7 @@
     },
     "devDependencies": {
         "eslint": "^8.57.1",
-        "prettier": "^3.5.3",
+        "prettier": "^3.6.2",
         "webpack-bundle-analyzer": "^4.10.2"
     },
     "engines": {
