@@ -396,6 +396,12 @@
       "Delete permanently": [
         "영구적으로 삭제"
       ],
+      "Deleting folder": [
+        "폴더 삭제 중"
+      ],
+      "Deleting label": [
+        "라벨 삭제 중"
+      ],
       "Deselect all": [
         "선택 해제"
       ],
@@ -1416,6 +1422,9 @@
       "Trust": [
         "신뢰"
       ],
+      "Trust key": [
+        "키 신뢰하기"
+      ],
       "Trust public key": [
         "공개 키 신뢰하기"
       ],
@@ -1478,9 +1487,6 @@
       ],
       "Upgrade": [
         "업그레이드"
-      ],
-      "Upgrade Now": [
-        "지금 업그레이드"
       ],
       "Upgrade now": [
         "지금 업그레이드"
@@ -1577,15 +1583,6 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "회원님의 데스크톱 앱 무료 체험이 2일 내에 종료됩니다. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "회원님의 데스크톱 앱 무료 체험이 5일 내에 종료됩니다. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "나의 이메일 작성 도우미"
@@ -1912,6 +1909,11 @@
       ],
       "Sender verification passed": [
         "발신자 검증 통과"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "구독이 취소되었습니다."
       ]
     },
     "bf2023: Deal details": {
@@ -4522,6 +4524,9 @@
       "No address with keys available to compose a message": [
         "메시지를 작성하는 데 사용할 수 있는 키가 있는 주소가 없습니다"
       ],
+      "No address with sending permissions": [
+        "발신 권한이 있는 주소가 없습니다."
+      ],
       "No calendars found to import": [
         "불러올 캘린더를 찾을 수 없음"
       ],
@@ -4566,6 +4571,9 @@
       ],
       "Payment process not supported": [
         "지원하지 않는 결제수단"
+      ],
+      "Permissions request failed.": [
+        "권한 요청을 실패했습니다."
       ],
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
@@ -6495,6 +6503,9 @@
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
       ],
+      "Block sender": [
+        "발신자 차단"
+      ],
       "Body: ": [
         "본문: "
       ],
@@ -6641,6 +6652,9 @@
       ],
       "Dedicated servers": [
         "전용 서버"
+      ],
+      "Dedicated VPN servers": [
+        "전용 VPN 서버"
       ],
       "default email address": [
         "기본 이메일 주소"
@@ -7223,6 +7237,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "조직의 전용 VPN 서버 수"
       ],
       "Numbers": [
         "숫자"
@@ -8253,9 +8270,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "\"${ attachmentsFoundKeyword }\" 으로 작성하였지만, 추가된 첨부 파일이 없습니다. 이 메시지를 그대로 전송하시겠습니까?"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "또한 ${ boldPlanTitle }의 기능을 사용할 수 없게 됩니다:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "${ renewCycle }개월마다 ${ renewAmountStr }의 가격으로 갱신됩니다."
       ],
@@ -8366,6 +8380,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "무료 체험이 ${ timeRemaining }에 종료됩니다."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "또한 ${ boldPlanTitle }의 모든 기능도 사용할 수 없게 됩니다:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "${ boldEndDate }에 ${ boldPlanTitle }에 더 이상 접근할 수 없게 됩니다"
@@ -8910,6 +8927,9 @@
       ],
       "Extended address": [
         "상세 주소"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "폴더 생성 실패 ${ customFolderName }"
       ],
       "Filter Name": [
         "필터 이름"
@@ -10930,6 +10950,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 할인이 오늘 만료됩니다!"
       ],
+      "Don’t show this again": [
+        "다시 보지 않기"
+      ],
       "Don’t show this offer again": [
         "이 제안을 다시 보지 않기"
       ],
@@ -10997,6 +11020,9 @@
       "+10 more premium features": [
         "그 외 10개 더 많은 프리미엄 기능들"
       ],
+      "500 GB secure storage": [
+        "500 GB 보안 저장공간"
+      ],
       "Advanced threat protection": [
         "향상된 위협 보호 기능"
       ],
@@ -11020,6 +11046,12 @@
       ],
       "Storage": [
         "저장 공간"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가 내의 초고속 VPN 서버"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "신원 보호를 위한 무제한 별칭"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11043,6 +11075,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }은 우리가 만든 앱에서는 절대 광고를 개재하지 않을 것이라는 고객과의 약속입니다."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle }가 나와 지정된 수신자만 이메일에 접근할 수 있도록 보장해 드립니다."
       ],
@@ -11063,6 +11098,9 @@
       ],
       "Activate selected": [
         "선택 활성화"
+      ],
+      "Ad-free promise": [
+        "광고 없는 약속"
       ],
       "Advanced encryption": [
         "향상된 암호화"
@@ -11516,6 +11554,9 @@
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ details }": [
+        "은행 송금 - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -12367,11 +12408,26 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "안전하게 탐색"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "${ BRAND_NAME }으로 더 많은 것을 시작해 보세요"
+      ],
+      "Get unlimited aliases": [
+        "무제한 별칭 받기"
+      ],
       "Go to subscription plans": [
         "구독 요금제 보러가기"
       ],
       "Guard against threats": [
         "위협으로부터 보호"
+      ],
+      "Increase your storage": [
+        "저장공간 늘리기"
+      ],
+      "Keep passwords safe": [
+        "안전하게 비밀번호 유지"
       ],
       "Unblock streaming content": [
         "스트리밍 콘텐츠 잠금 해제"
@@ -12455,8 +12511,17 @@
       "Access content on streaming services worldwide": [
         "전세계의 스트리밍 서비스 상의 콘텐츠에 접근"
       ],
+      "Get 500 GB to securely store all your files and photos": [
+        "모든 파일과 사진을 안전하게 저장할 수 있는 500 GB 스토리지를 받아보세요"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가의 초고속 VPN 서버에 접근"
+      ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "모든 것을 포함하는 하나의 플랜, ${ BRAND_NAME } Unlimited를 경험하세요"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "신원을 보호하고 스팸을 줄이기 위해 무제한 별칭을 받아보세요"
       ],
       "Keep your passwords safe and organized in multiple vaults ": [
         "회원님의 모든 비밀번호를 여러 보관함에 안전하고 체계적으로 보관하세요. "
@@ -14387,6 +14452,9 @@
       "Unsubscribe from ${ subscription.Name }?": [
         "${ subscription.Name }(을)를 구독 취소하시겠어요?"
       ],
+      "Unsubscribe not available for this sender": [
+        "이 발신자에 대한 구독 해지가 지원되지 않습니다"
+      ],
       "Unsubscribe request sent": [
         "수신 거부 요청이 전송됨"
       ],
@@ -14585,6 +14653,9 @@
     "Unlimited offer": {
       "/month": [
         "/월간"
+      ],
+      "Only": [
+        "단"
       ]
     },
     "unprivatization": {

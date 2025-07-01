@@ -409,6 +409,9 @@
       "Delete and confirm": [
         "Удалить и подтвердить"
       ],
+      "Delete filter “${ Name }”": [
+        "Удалить фильтр \"${ Name }\""
+      ],
       "Delete Gateway": [
         "Удалить Шлюз"
       ],
@@ -901,9 +904,6 @@
       "Next month": [
         "Следующий месяц"
       ],
-      "Next page": [
-        "Следующая страница"
-      ],
       "No": [
         "Нет"
       ],
@@ -948,9 +948,6 @@
       ],
       "Previous month": [
         "Предыдущий месяц"
-      ],
-      "Previous page": [
-        "Предыдущая страница"
       ],
       "Publish changes": [
         "Опубликовать изменения"
@@ -3946,9 +3943,6 @@
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Сначала настройте это, чтобы активировать вашу организацию и настроить ваш адрес электронной почты."
-      ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "Поздравляем! Вы заработали максимальное количество из ${ rewardsLimit } бесплатных месяцев ${ plusPlanName }."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Подключите CRM (управление взаимоотношениями с клиентами), веб-сайт, принтеры и многое другое."
@@ -12474,6 +12468,9 @@
       "Get ${ VPN_APP_NAME }": [
         "Перейти на тариф ${ VPN_APP_NAME }"
       ],
+      "Groups": [
+        "Группы"
+      ],
       "Help": [
         "Помощь"
       ],
@@ -12671,6 +12668,14 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша подписка закончилась. ${ cta } и избежать потери данных."
+      ]
+    },
+    "Log event": {
+      "Password reset": [
+        "Сброс пароля"
+      ],
+      "Sign out": [
+        "Bыйти"
       ]
     },
     "Log preference": {
@@ -13237,7 +13242,7 @@
       "${ n } calendar per user": [
         "${ n } календарь на пользователя",
         "${ n } календаря на пользователя",
-        "${ n } календаря на пользователя",
+        "${ n } календарей на пользователя",
         "${ n } календарей на пользователя"
       ],
       "${ n } custom email domain": [
@@ -14259,7 +14264,7 @@
         "Центральная панель управления"
       ],
       "Create up to ${ n } calendar": [
-        "Создайте до ${ n } календарей",
+        "Создать до ${ n } календаря",
         "Создать до ${ n } календарей",
         "Создать до ${ n } календарей",
         "Создать до ${ n } календарей"
@@ -14538,11 +14543,6 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
-      ]
-    },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Что-то пошло не так при входе в ваш аккаунт Gmail"
       ]
     },
     "Offer": {
@@ -16023,6 +16023,11 @@
         "Рабочий"
       ]
     },
+    "Protection type": {
+      "Blocked": [
+        "Заблокирован"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Обратно к ${ signIn }."
@@ -17090,6 +17095,18 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } для Business"
       ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } адрес",
+        "${ maxAddresses } адреса",
+        "${ maxAddresses } адресов",
+        "${ maxAddresses } адресов"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } календарь",
+        "${ maxCalendars } календаря",
+        "${ maxCalendars } календарей",
+        "${ maxCalendars } календарей"
+      ],
       "${ value } of secure storage": [
         "${ value } безопасного хранилища"
       ],
@@ -17662,15 +17679,15 @@
       ],
       "Delete ${ n } inactive user?": [
         "Удалить ${ n } неактивного пользователя?",
-        "Удалить ${ n } неактивных пользователей?",
+        "Удалить ${ n } неактивных пользователя?",
         "Удалить ${ n } неактивных пользователей?",
         "Удалить ${ n } неактивных пользователей?"
       ],
       "Delete ${ n } user": [
         "Удалить ${ n } пользователя",
+        "Удалить ${ n } пользователя",
         "Удалить ${ n } пользователей",
-        "Удалить ${ n } пользователей",
-        "Удалить ${ n } пользователя"
+        "Удалить ${ n } пользователей"
       ],
       "Deny": [
         "Отказать"
@@ -19100,7 +19117,7 @@
         "Добавить ${ totalServerCount } сервер?",
         "Добавить ${ totalServerCount } сервера?",
         "Добавить ${ totalServerCount } серверов?",
-        "Добавить ${ totalServerCount } сервера?"
+        "Добавить ${ totalServerCount } серверов?"
       ],
       "Add a custom logo": [
         "Добавить свой логотип"
@@ -20207,7 +20224,7 @@
         "Настройка выделенных серверов, улучшив тариф до Business"
       ],
       "Share your calendar with your team": [
-        "Делитесь вашим календарем со своей командой"
+        "Делитесь своим календарём с командой"
       ],
       "Shared servers": [
         "Общие серверы"
@@ -21358,7 +21375,7 @@
         "Ваш запланированный тариф начинается с ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
-        "Ваша подписка будет автоматически обновлена через ${ cycle } месяц.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."

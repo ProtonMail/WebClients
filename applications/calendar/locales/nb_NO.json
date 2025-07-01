@@ -1191,6 +1191,11 @@
         "Valgfritt"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonnement kansellert."
+      ]
+    },
     "Badge": {
       "New!": [
         "Ny!"
@@ -5028,6 +5033,9 @@
       "Dedicated servers": [
         "Dedikerte tjenere"
       ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-tjenere"
+      ],
       "default email address": [
         "standard e-postadresse"
       ],
@@ -5336,6 +5344,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antall dedikerte VPN-tjenere i organisasjonen"
       ],
       "Numbers": [
         "Tall"
@@ -5889,9 +5900,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
@@ -5998,6 +6006,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Prøveversjonen avsluttes om ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du mister tilgang til ${ boldPlanTitle } den ${ boldEndDate }."

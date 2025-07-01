@@ -1259,7 +1259,7 @@
         "Protegiu fins a 10 dispositius"
       ],
       "Recover previous file versions": [
-        "Recupereu versions anteriors del fitxer"
+        "Recupereu versions anteriors dels fitxers"
       ],
       "Save big on premium Drive features with a limited-time discount.": [
         "Estalviiareu molt amb les funcions premium de Drive amb un descompte per temps limitat"
@@ -1364,6 +1364,11 @@
       ],
       "Unsupported event": [
         "Esdeveniment no suportat"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "S'ha cancel·lat la subscripció."
       ]
     },
     "Badge": {
@@ -3217,14 +3222,29 @@
       "Failed to create folder": [
         "No s'ha pogut crear la carpeta"
       ],
+      "Failed to fetch node": [
+        "No s'ha pogut obtenir el node"
+      ],
+      "Failed to fetch sharing info": [
+        "No s'ha pogut obtenir la informació de compartició"
+      ],
       "Failed to load the STL preview": [
         "No s'ha pogut carregar la previsualització STL."
       ],
       "Failed to move items": [
         "No s'ha pogut moure els elements."
       ],
+      "Failed to resend invitation": [
+        "No s'ha pogut tornar a enviar la invitació"
+      ],
       "Failed to save some photos to your Drive": [
         "No s'han pogut desar algunes fotos al vostre Drive"
+      ],
+      "Failed to unshare node": [
+        "No s'ha pogut descompartir el node"
+      ],
+      "Failed to update share node": [
+        "No s'ha pogut actualitzar el node compartit"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El fitxer «${ item.name }» no s'ha pogut pujar a causa de l'error «${ error }»"
@@ -4935,6 +4955,9 @@
       "Dedicated servers": [
         "Servidors dedicats"
       ],
+      "Dedicated VPN servers": [
+        "Servidors VPN dedicats"
+      ],
       "default email address": [
         "adreça de correu electrònic per defecte"
       ],
@@ -5424,6 +5447,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Nombre de servidors VPN dedicats a l'organització"
       ],
       "Numbers": [
         "Números"
@@ -6301,9 +6327,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "També perdreu l'accés a les característiques de ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
         "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
@@ -6428,6 +6451,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "El període de prova finalitzarà en ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "També perdreu l'accés a les característiques de ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Perdreu l'accés a ${ boldPlanTitle } el ${ boldEndDate }."
@@ -6571,7 +6597,7 @@
         "Àlbum"
       ],
       "Alias title": [
-        "Nom de l'àlies"
+        "Títol de l'àlies"
       ],
       "All": [
         "Tot"
@@ -7371,7 +7397,7 @@
         "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
-        "El vostre emmagatzematge està ple. Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
+        "L'emmagatzematge és ple. Per a continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
@@ -8994,7 +9020,7 @@
         "No tornis a mostrar aquesta oferta"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
-        "Obtingueu ${ BRAND_NAME } sense límits"
+        "Obteniu ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obteniu Drive Plus per només ${ pricingTitle }"
@@ -9447,7 +9473,7 @@
         "Hi ha més plans disponibles en altres divises."
       ],
       "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "El SEPA només s'accepta l'euro. La moneda ha estat canviada. Utilitzeu el selector per revertir la vostra elecció."
+        "Només s'accepta l'euro per al SEPA. S'ha canviat la moneda. Utilitzeu el selector per revertir la vostra elecció."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
@@ -10156,7 +10182,7 @@
         "Mantingueu les vostres contrasenyes segures"
       ],
       "Unblock streaming content": [
-        "Tingui accés il·limitat a continguts en estríming"
+        "Tingueu accés al contingut en estríming."
       ],
       "Upgrade": [
         "Millora"
@@ -11961,8 +11987,8 @@
         "La vostra informació exposada"
       ],
       "Your free trial ends in ${ trialDurationFormatted } day": [
-        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dia",
-        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dies"
+        "La prova gratuïta finalitza en ${ trialDurationFormatted } dia",
+        "La prova gratuïta finalitza en ${ trialDurationFormatted } dies"
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
