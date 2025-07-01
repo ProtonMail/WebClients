@@ -91,15 +91,13 @@ export const RouterMailboxContainer = () => {
                 toolbar={
                     // Show toolbar in header when in row layout and an email is selected
                     (!columnMode && elementID) || viewPortIsNarrow ? (
-                        <div className="flex flex-nowrap">
-                            <MailboxToolbar
-                                inHeader
-                                params={params}
-                                navigation={navigation}
-                                elementsData={elementsData}
-                                actions={actions}
-                            />
-                        </div>
+                        <MailboxToolbar
+                            inHeader
+                            params={params}
+                            navigation={navigation}
+                            elementsData={elementsData}
+                            actions={actions}
+                        />
                     ) : undefined
                 }
             />
