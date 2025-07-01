@@ -1044,12 +1044,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Predmet »${ payload.item.data.metadata.name }« je bil opuščen"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Posodobitev »${ payload.item.data.metadata.name }« je bila opuščena"
-      ],
       "${ count } time": [
         "${ count }-krat",
         "${ count }-krat",

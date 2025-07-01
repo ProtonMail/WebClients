@@ -1282,12 +1282,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" elem elvetve"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" frissítése elvetve"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } blokkolva",
         "${ blockedEmailsCount } blokkolva"

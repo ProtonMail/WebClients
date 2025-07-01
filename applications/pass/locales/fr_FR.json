@@ -1282,11 +1282,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "L'élément « ${ payload.item.data.metadata.name } » a été rejeté."
+      "\"${ payload.itemName }\" item was dismissed": [
+        "L'élément « ${ payload.itemName } » a été ignoré."
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "La mise à jour de « ${ payload.item.data.metadata.name } » a été rejetée."
+      "\"${ payload.itemName }\" update was dismissed": [
+        "La mise à jour de « ${ payload.itemName } » a été ignorée."
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } bloqué",
