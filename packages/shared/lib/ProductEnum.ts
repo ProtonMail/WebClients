@@ -1,6 +1,5 @@
 export enum Product {
     Account = 'Account',
-    Authenticator = 'Authenticator',
     Mail = 'Mail',
     Calendar = 'Calendar',
     Wallet = 'Wallet',
