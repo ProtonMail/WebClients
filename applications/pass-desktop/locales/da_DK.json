@@ -1306,12 +1306,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" element blev afvist"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } blokeret",
         "${ blockedEmailsCount } blokerede"
@@ -2156,7 +2150,7 @@
         "Tak, problemet er blevet rapporteret"
       ],
       "The changelog can be found ${ changelogLink }.": [
-        "Ændringsloggen kan tilgås her ${ changelogLink }."
+        "Ændringsloggen kan tilgås ${ changelogLink }."
       ],
       "The display name when sending an email from this alias.": [
         "Visningsnavnet, når man sender en e-mail fra dette alias."
