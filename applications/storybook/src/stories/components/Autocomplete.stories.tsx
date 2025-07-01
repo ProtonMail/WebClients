@@ -13,11 +13,10 @@ import {
     useAutocompleteFilter,
 } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Autocomplete.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'Components/Autocomplete',
     component: Autocomplete,
     parameters: {
         docs: {

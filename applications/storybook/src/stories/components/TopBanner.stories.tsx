@@ -1,11 +1,10 @@
 import { TopBanner } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './TopBanner.mdx';
 
 export default {
     component: TopBanner,
-    title: getTitle(__filename, false),
+    title: 'Components/Top Banner',
     parameters: {
         docs: {
             page: mdx,

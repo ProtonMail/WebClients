@@ -6,11 +6,10 @@ import { Checkbox, Option, SelectTwo, type Tab, Tabs } from '@proton/components'
 import bulbasaur from '../../assets/bulbasaur.png';
 import charmander from '../../assets/charmander.png';
 import squirtle from '../../assets/squirtle.png';
-import { getTitle } from '../../helpers/title';
 import mdx from './Tabs.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'Components/Tabs',
     component: Tabs,
     parameters: {
         docs: {

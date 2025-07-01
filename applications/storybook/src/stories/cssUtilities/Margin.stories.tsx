@@ -14,11 +14,10 @@ import {
     TableRow,
 } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Margin.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Margin',
     parameters: {
         docs: {
             page: mdx,
