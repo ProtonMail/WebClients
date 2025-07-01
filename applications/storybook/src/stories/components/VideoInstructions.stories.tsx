@@ -2,12 +2,11 @@ import { VideoInstructions } from '@proton/components';
 
 import videoMp4 from '../../assets/videos/oauth-instructions.mp4';
 import videoWebm from '../../assets/videos/oauth-instructions.webm';
-import { getTitle } from '../../helpers/title';
 import mdx from './VideoInstructions.mdx';
 
 export default {
     component: VideoInstructions,
-    title: getTitle(__filename, false),
+    title: 'Components/Video Instructions',
     parameters: {
         docs: {
             page: mdx,

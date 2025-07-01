@@ -1,11 +1,10 @@
 import { Price } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Price.mdx';
 
 export default {
     component: Price,
-    title: getTitle(__filename, false),
+    title: 'Components/Price',
     parameters: {
         docs: {
             page: mdx,

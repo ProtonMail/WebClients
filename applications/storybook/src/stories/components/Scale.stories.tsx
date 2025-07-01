@@ -2,12 +2,11 @@ import { useState } from 'react';
 
 import { EmojiScale, Scale } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Scale.mdx';
 
 export default {
     component: Scale,
-    title: getTitle(__filename, false),
+    title: 'Components/Scale',
     parameters: {
         docs: {
             page: mdx,

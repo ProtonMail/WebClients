@@ -14,12 +14,11 @@ import {
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Logo.mdx';
 
 export default {
     component: Logo,
-    title: getTitle(__filename, false),
+    title: 'Components/Logo',
     parameters: {
         docs: {
             page: mdx,

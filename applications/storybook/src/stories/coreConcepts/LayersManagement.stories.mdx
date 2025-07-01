@@ -1,8 +1,6 @@
 import { Meta, Source } from '@storybook/addon-docs';
 
-import { getTitle } from '../../helpers/title';
-
-<Meta title={getTitle(__filename)} />
+<Meta title="Core Concepts/Layers Management" />
 
 # Layers management (z-indexes)
 
@@ -14,25 +12,25 @@ We have create a SASS map for managing layer stack, named `$z-indexes`.
 
 Here are the available entries of `$z-indexes` SASS map. Remember that you don't really need to take care of their value for **abstraction purposes**, so let's consider them as from higher to lower level layer.
 
--   **`tooltips`** for tooltips
+- **`tooltips`** for tooltips
 
--   **`notifications`** for notifications
+- **`notifications`** for notifications
 
--   **`modals`** for modals and dropdowns
+- **`modals`** for modals and dropdowns
 
--   **`mobile-navigation`** for navigation bar on mobile
+- **`mobile-navigation`** for navigation bar on mobile
 
--   **`transfer-manager`** for transfer manager in Drive
+- **`transfer-manager`** for transfer manager in Drive
 
--   **`previewer`** for file preview
+- **`previewer`** for file preview
 
--   **`floating-frames`** for floating frames, sush as the composer
+- **`floating-frames`** for floating frames, sush as the composer
 
--   **`drawer`** for the drawer
+- **`drawer`** for the drawer
 
--   **`floating-action-buttons`** for floating action buttons, sush as new message on mobile
+- **`floating-action-buttons`** for floating action buttons, sush as new message on mobile
 
--   **`dropzone`** for drag and drop zone area
+- **`dropzone`** for drag and drop zone area
 
 ## How to use
 

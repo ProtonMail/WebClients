@@ -2,12 +2,11 @@ import { useState } from 'react';
 
 import { Radio, RadioGroup } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Radio.mdx';
 
 export default {
     component: Radio,
-    title: getTitle(__filename, false),
+    title: 'Components/Radio',
     parameters: {
         docs: {
             page: mdx,

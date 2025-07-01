@@ -12,12 +12,11 @@ import {
     Toggle,
 } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './QuickSettings.mdx';
 
 export default {
     component: DrawerAppScrollContainer,
-    title: getTitle(__filename, false),
+    title: 'Components/Quick Settings',
     parameters: {
         docs: {
             page: mdx,

@@ -1,8 +1,7 @@
-import { getTitle } from '../../helpers/title';
 import mdx from './Scroll.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Scroll',
     parameters: {
         docs: {
             page: mdx,

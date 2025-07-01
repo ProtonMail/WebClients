@@ -3,12 +3,11 @@ import { useState } from 'react';
 import { Button } from '@proton/atoms';
 import { ButtonGroup, RadioGroup, Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './ButtonGroup.mdx';
 
 export default {
     component: ButtonGroup,
-    title: getTitle(__filename, false),
+    title: 'Components/Button Group',
     parameters: {
         docs: {
             page: mdx,

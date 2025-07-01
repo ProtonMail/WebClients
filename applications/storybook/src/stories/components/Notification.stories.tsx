@@ -5,11 +5,10 @@ import { Button, CircleLoader } from '@proton/atoms';
 import type { CreateNotificationOptions, CustomNotificationProps } from '@proton/components';
 import { Checkbox, InputFieldTwo, NotificationButton, RadioGroup, useNotifications } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Notification.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'Components/Notification',
     parameters: {
         docs: {
             page: mdx,

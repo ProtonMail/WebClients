@@ -1,10 +1,9 @@
 import { Checkbox } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './ExpandClickArea.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Expand Click Area',
     parameters: {
         docs: {
             page: mdx,

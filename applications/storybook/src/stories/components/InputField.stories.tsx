@@ -16,12 +16,11 @@ import {
     TotpInput,
 } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './InputField.mdx';
 
 export default {
     component: InputFieldTwo,
-    title: getTitle(__filename, false),
+    title: 'Components/Input Field',
     parameters: {
         docs: {
             page: mdx,

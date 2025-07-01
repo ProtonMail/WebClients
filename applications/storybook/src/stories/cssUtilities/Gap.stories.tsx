@@ -1,10 +1,9 @@
 import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Gap.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Gap',
     parameters: {
         docs: {
             page: mdx,

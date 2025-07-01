@@ -1,9 +1,7 @@
 import { CompatibilityCheckView, getCompatibilityList } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { getTitle } from '../../helpers/title';
-
-export default { title: getTitle(__filename) };
+export default { title: 'Components/Errors' };
 
 export {
     GenericError,

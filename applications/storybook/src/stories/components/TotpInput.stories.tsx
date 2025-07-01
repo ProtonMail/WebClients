@@ -3,12 +3,11 @@ import { useState } from 'react';
 import { InlineLinkButton } from '@proton/atoms';
 import { Toggle, TotpInput } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './TotpInput.mdx';
 
 export default {
     component: TotpInput,
-    title: getTitle(__filename, false),
+    title: 'Components/Totp Input',
     parameters: {
         docs: {
             page: mdx,

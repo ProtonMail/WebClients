@@ -18,12 +18,11 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Dropdown.mdx';
 
 export default {
     component: Dropdown,
-    title: getTitle(__filename, false),
+    title: 'Components/Dropdown',
     parameters: {
         docs: {
             page: mdx,
