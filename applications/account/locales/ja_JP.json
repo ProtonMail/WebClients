@@ -412,6 +412,9 @@
       "Delete and confirm": [
         "削除と確認"
       ],
+      "Delete filter “${ Name }”": [
+        "フィルター「${ Name }」を削除"
+      ],
       "Delete Gateway": [
         "ゲートウェイ削除"
       ],
@@ -447,6 +450,9 @@
       ],
       "Delete “${ label.Name }”": [
         "「${ label.Name }」を削除"
+      ],
+      "Deleting folder": [
+        "フォルダを削除中"
       ],
       "Deny access": [
         "アクセスを拒否"
@@ -919,9 +925,6 @@
       "Next month": [
         "翌月"
       ],
-      "Next page": [
-        "次のページ"
-      ],
       "No": [
         "いいえ"
       ],
@@ -966,9 +969,6 @@
       ],
       "Previous month": [
         "前月"
-      ],
-      "Previous page": [
-        "前のページ"
       ],
       "Publish changes": [
         "変更を公開"
@@ -1586,8 +1586,14 @@
       "Delete address": [
         "アドレスの削除"
       ],
+      "Delete address “${ emailAddress }”": [
+        "アドレス「${ emailAddress }」を削除します"
+      ],
       "Disable": [
         "無効にする"
+      ],
+      "Disable address “${ emailAddress }”": [
+        "アドレス「${ emailAddress }」を無効化します"
       ],
       "Disable E2EE mail": [
         "エンドツーエンド暗号化メールを無効にする"
@@ -1609,6 +1615,9 @@
       ],
       "Generate missing keys": [
         "紛失した鍵の生成"
+      ],
+      "Generate missing keys for address “${ emailAddress }”": [
+        "アドレス「${ emailAddress }」の不足しているキーを生成します"
       ],
       "Saving": [
         "保存中"
@@ -1695,12 +1704,32 @@
         "新しいメール"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "割引を入手"
+      ]
+    },
     "anniversary_2025: Offer": {
+      "200 GB storage": [
+        "200GBストレージ"
+      ],
+      "500 GB encrypted storage": [
+        "500 GBの暗号化されたストレージ"
+      ],
       "Add unlimited credit cards": [
         "無制限のクレジットカードを追加する"
       ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "${ BRAND_NAME } Mail、Pass、VPN、Drive、カレンダーの全てのプレミアム機能"
+      ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "割引は標準の月額料金に基づいています。支払いサイクルの終わりに、お客様のサブスクリプションは標準の年間料金で更新されます。"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "お客様の暗号化済みストレージを2倍に — お客様のすべてのデータに1 TBを提供します"
+      ],
+      "Encrypted password manager": [
+        "暗号化されたパスワードマネージャー"
       ],
       "Online document editor": [
         "オンライン文書エディタ"
@@ -1708,8 +1737,17 @@
       "Online privacy for up to 2 people": [
         "最大2人までのオンラインプライバシー"
       ],
+      "Recover previous file versions": [
+        "以前のファイルを復元"
+      ],
       "Save big on premium Drive features with a limited-time discount.": [
         "期間限定の割引で、プレミアムDrive機能をお得にご利用いただけます。"
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムPass機能をお得にご利用いただけます。"
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムVPN機能をお得にご利用いただけます。"
       ],
       "Save time with built-in 2FA": [
         "内蔵の2要素認証で時間を節約"
@@ -1719,6 +1757,9 @@
       ],
       "thanks to you": [
         "ありがとうございます"
+      ],
+      "Use your own email domain": [
+        "独自メールドメインを使用する"
       ],
       "years": [
         "年"
@@ -1732,6 +1773,9 @@
     "anniversary_2025: Offers": {
       "${ n } month": [
         "${ n } ヶ月"
+      ],
+      "/ month": [
+        "/ 月"
       ],
       "15 months": [
         "15 か月"
@@ -3927,9 +3971,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "最初に組織を有効にし、メールアドレスをカスタマイズするように設定してください。"
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "おめでとうございます! ${ plusPlanName } を ${ rewardsLimit } ヶ月間無料で獲得しました。"
-      ],
       "Connect your CRM, website, printers, and more.": [
         "CRM、ウェブサイト、プリンターなどを接続。"
       ],
@@ -3950,6 +3991,12 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "デスクトップからクラウドにファイルを簡単に同期し、モバイルデバイスからアクセスできます。"
+      ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "これらの機能にアクセスするには ${ PROTON_SENTINEL_NAME } を有効にしてください"
+      ],
+      "Enable detailed events to access these features": [
+        "それらの機能にアクセスするために予定の詳細を有効にする"
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "セキュリティを強化するために、組織内で2要素認証の使用を推奨します。"
@@ -6201,6 +6248,11 @@
         "安全なストリーミング"
       ]
     },
+    "Features: Tooltip": {
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "ウェブサイトやアプリの広告、トラッカー、マルウェアからお客様を保護します。"
+      ]
+    },
     "fido2: Action": {
       "Delete key": [
         "キーを削除"
@@ -7202,6 +7254,9 @@
       ]
     },
     "Info": {
+      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
+        " - お客様の組織全体における、ユーザーアクティビティの追跡、脅威の検出、およびコンプライアンス確保のためのコマンドセンター。"
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "現在、${ amountUsers }/${ totalUsers }人のユーザーが共有サーバーにアクセスできます。"
       ],
@@ -7345,6 +7400,9 @@
       ],
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } 件のメールアドレス"
+      ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } 件の結果が見つかりました"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
@@ -7672,6 +7730,9 @@
       ],
       "At least one application must be active": [
         "少なくとも1つのアプリがアクティブである必要があります"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "お客様のトライアル期間が${ boldCancelDate }に終了すると、${ boldProtonFree }にダウングレードされます。お客様の組織からすべてのユーザーアカウントが削除されます。"
       ],
       "Attention required": [
         "注意が必要です"
@@ -8639,6 +8700,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "カレンダーを読み込み中です。お待ちください。スケジューリングプラットフォームの Calendly へ新しいタブでリダイレクトされます。"
       ],
+      "Loading detailed events current status.": [
+        "詳細な予定の現在の状態を読み込んでいます。"
+      ],
       "Loading eduGAIN data...": [
         "EduGAINデータを読み込み中…"
       ],
@@ -8693,6 +8757,9 @@
       "Monitor accounts": [
         "アカウントモニター"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "お客様の ${ BRAND_NAME } 認証情報を使用するすべての ${ BRAND_NAME } サービスに対する認証の試行を監視および監査します。"
+      ],
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
       ],
@@ -8719,6 +8786,9 @@
       ],
       "New": [
         "新規"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "新しいアクティビティデータの収集と表示が停止されます。"
       ],
       "New user invited to organization": [
         "新しいユーザーが組織に招待されました"
@@ -8761,6 +8831,9 @@
       ],
       "No label selected": [
         "ラベルが選択されていません"
+      ],
+      "No logs yet.": [
+        "ログがありません。"
       ],
       "No payment is required at this time.": [
         "現時点での支払いは必要ありません。"
@@ -10241,6 +10314,12 @@
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "お客様の無料トライアルには${ ownedCount }台の専用サーバーが含まれています。"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "お客様の無料トライアルは、${ cycle }ヶ月サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
+      ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "お客様の無料トライアルは月額サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
       ],
@@ -10300,6 +10379,12 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "これらのサーバーはすぐに別のゲートウェイに追加できます。"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "${ boldEndDate }に${ boldPlanTitle }へアクセスできなくなります。"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
       ],
       "You’re all set": [
         "準備完了です"
@@ -12184,6 +12269,9 @@
       "Get ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } を入手"
       ],
+      "Groups": [
+        "グループ"
+      ],
       "Help": [
         "ヘルプ"
       ],
@@ -12378,6 +12466,35 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "サブスクリプションが終了しました。${ cta }そしてデータの喪失を防ぎましょう。"
+      ]
+    },
+    "Log event": {
+      "Account password change": [
+        "アカウントパスワードの変更"
+      ],
+      "Authentication success": [
+        "認証成功"
+      ],
+      "Mailbox password change": [
+        "メールボックスのパスワード変更"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "サインインがブロックされました (悪用のため)"
+      ],
+      "Sign in failure (mnemonic failed)": [
+        "サインイン失敗 (ニーモニック失敗)"
+      ],
+      "Sign in failure (wrong password)": [
+        "サインイン失敗 (パスワードが間違っています)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "サインインが禁止されています (悪用のため)"
+      ],
+      "Sign in success (awaiting verify)": [
+        "サインイン成功 (検証待ち)"
+      ],
+      "Two password mode disabled": [
+        "2 つのパスワード モードが無効になっています"
       ]
     },
     "Log preference": {
@@ -14130,11 +14247,6 @@
         "${ BRAND_NAME } がアクセスできるものを選択してください：あなたのメールメッセージと設定を表示、連絡先の表示とダウンロード、Google カレンダーからアクセスするすべての予定表の表示とダウンロード。"
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Gmailアカウントへのログイン中に問題が発生しました。"
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "12 ヶ月間の${ BRAND_NAME } Unlimited"
@@ -14145,8 +14257,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } オファーの有効期限は今日までです！"
       ],
+      "Don’t show this again": [
+        "次回から表示しない"
+      ],
       "Don’t show this offer again": [
         "今後このオファーを表示しない"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimitedを入手"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "たった${ pricingTitle }でDrive Plusを入手"
@@ -14200,9 +14318,17 @@
         "サブスクリプションはまもなく更新されます"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "暗号化されたパスワードマネージャー"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 以上のプレミアム機能"
+      ],
+      "Advanced threat protection": [
+        "高度な脅威保護"
       ],
       "Custom email domain": [
         "独自メールドメイン"
@@ -14243,6 +14369,12 @@
       ]
     },
     "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "それまでにいつでもキャンセルできます。"
+      ],
+      "contact our support team": [
+        "サポートチームにお問い合わせください"
+      ],
       "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } まで無料のビジネスセキュリティ機能をお楽しみいただけます。"
       ],
@@ -14259,6 +14391,12 @@
         "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
+      ],
+      "Your free trial has started": [
+        "無料トライアルが開始されました"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ]
     },
@@ -15181,6 +15319,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "銀行振込"
       ],
@@ -15223,6 +15364,9 @@
       ],
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "SEPAではユーロのみご利用いただけます。お客様の通貨が変更されました。選択を元に戻すには、セレクターをご利用ください。"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
@@ -15272,6 +15416,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "その後、 ${ renewPriceStr } で ${ renewalLength } ヶ月間自動的に更新されます。いつでもキャンセルできます。"
       ],
+      "This payment method will become your new default for all future renewals.": [
+        "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
+      ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
       ],
@@ -15305,6 +15452,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
       ]
     },
     "Payments.Sepa": {
@@ -15601,6 +15753,11 @@
       ],
       "Work": [
         "勤務先"
+      ]
+    },
+    "Protection type": {
+      "Captcha": [
+        "CAPTCHA"
       ]
     },
     "Recovery Email": {
@@ -16967,6 +17124,15 @@
       "Go to subscription plans": [
         "サブスクリプションプランへ移動"
       ],
+      "Guard against threats": [
+        "脅威から保護する"
+      ],
+      "Increase your storage": [
+        "ストレージを増やす"
+      ],
+      "Unblock streaming content": [
+        "ストリーミングコンテンツのブロックを解除"
+      ],
       "Upgrade": [
         "アップグレード"
       ],
@@ -17043,6 +17209,24 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "世界中のストリーミングサービスでコンテンツにアクセス"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "すべてのファイルや写真を安全に保管する500 GBを入手"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "全てを含む1つのプラン、${ BRAND_NAME } Unlimitedをご利用ください。"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "無制限のエイリアスで、お客様のユーザー情報を保護し、迷惑メールを削減します。"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "パスワードを複数の保管庫に安全に整理して保管する "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Sentinelでアカウントを脅威から保護する"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "アップグレードして${ planName }の2年契約でもっとお得に"
       ]
@@ -19861,6 +20045,9 @@
       "What would you like to import?": [
         "何をインポートしたいですか?"
       ],
+      "Wipe all logs?": [
+        "全てのログを削除しますか？"
+      ],
       "WireGuard configuration": [
         "WireGuard 設定ファイル"
       ],
@@ -19875,6 +20062,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName }の無料トライアルは${ textDate }に終了します"
+      ],
+      "Your ${ planName } subscription has started": [
+        "${ planName }サブスクリプションが開始されました"
       ],
       "Your calendar link": [
         "カレンダーのリンク"
@@ -20152,6 +20342,9 @@
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
       ],
+      "The Internet Service Provider of the IP address": [
+        "IPアドレスのインターネットサービスプロバイダ"
+      ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新しいサブスクリプション サイクルは ${ formattedTime } に始まります"
       ],
@@ -20372,6 +20565,14 @@
       ],
       "Refund": [
         "返金"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ 月"
+      ],
+      "Only": [
+        "のみ"
       ]
     },
     "unprivatization": {

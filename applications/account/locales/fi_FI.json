@@ -595,6 +595,9 @@
       "Edit users": [
         "Muokkaa käyttäjiä"
       ],
+      "Edit “${ label.Name }”": [
+        "Muokkaa \"${ label.Name }\""
+      ],
       "Emoji": [
         "Emoji"
       ],
@@ -928,9 +931,6 @@
       "Next month": [
         "Seuraava kuukausi"
       ],
-      "Next page": [
-        "Seuraava sivu"
-      ],
       "No": [
         "En"
       ],
@@ -975,9 +975,6 @@
       ],
       "Previous month": [
         "Edellinen kuukausi"
-      ],
-      "Previous page": [
-        "Edellinen sivu"
       ],
       "Publish changes": [
         "Julkaise muutokset"
@@ -1515,6 +1512,9 @@
       ],
       "What do I get?": [
         "Mitä saan?"
+      ],
+      "Wipe": [
+        "Tyhjennä"
       ],
       "Yes": [
         "Kyllä"
@@ -3966,9 +3966,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Määritä tämä ensin aktivoidaksesi organisaatiosi ja mukauttaaksesi sähköpostiosoitettasi."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "Onnittelut! Olet ansainnut vapaiden kuukausien enimmäismäärän ${ rewardsLimit } kuukautta ${ plusPlanName }."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Yhdistä CRM:si, verkkosivustosi, tulostimesi ja muuta."
       ],
@@ -4378,6 +4375,16 @@
       ],
       "90 minutes": [
         "90 minuuttia"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Välittääksesi sähköposteja ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }.",
+        "Välittääksesi sähköposteja jopa ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin.",
+        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin."
       ]
     },
     "edm": {
@@ -6654,6 +6661,9 @@
       "Permissions": [
         "Käyttöoikeudet"
       ],
+      "Protection": [
+        "Suojaus"
+      ],
       "Select your deal": [
         "Valitse tarjouksesi"
       ],
@@ -7333,6 +7343,10 @@
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } lisäosoite",
         "${ remainingAddresses.length } lisäosoitetta"
+      ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } tulos löytyi",
+        "${ resultsCount } tulosta löytyi"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteri",
@@ -8712,6 +8726,9 @@
       "New": [
         "Uusi"
       ],
+      "New activity data will stop being collected and shown.": [
+        "Jatkossa uusia aktiivisuustietoja ei enää kerätä, eikä niitä näytetä."
+      ],
       "New user invited to organization": [
         "Uusi käyttäjä kutsuttiin organisaatioon"
       ],
@@ -8753,6 +8770,9 @@
       ],
       "No label selected": [
         "Tunnistetta ei valittu"
+      ],
+      "No logs yet.": [
+        "Lokeja ei vielä ole."
       ],
       "No payment is required at this time.": [
         "Maksua ei nyt vaadita."
@@ -10212,6 +10232,10 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Ilmainen kokeilujaksosi sisältää ${ ownedCount } oman palvelimen.",
+        "Ilmainen kokeilujaksosi sisältää ${ ownedCount } omaa palvelinta."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Tuonti tililtä ${ accounts } on tilapäisesti viivästynyt.",
@@ -12069,6 +12093,9 @@
       "${ Label.Name } created": [
         "${ Label.Name } luotiin"
       ],
+      "${ labelName } updated": [
+        "${ labelName } päivitettiin"
+      ],
       "Preference saved": [
         "Asetus tallennettiin"
       ]
@@ -12362,6 +12389,23 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
+      ]
+    },
+    "Log event": {
+      "Password reset": [
+        "Salasanan nollaus"
+      ],
+      "Sign out": [
+        "Uloskirjautuminen"
+      ],
+      "Two password mode disabled": [
+        "Kahden salasanan tila poistettiin käytöstä"
+      ],
+      "Two password mode enabled": [
+        "Kahden salasanan tila otettiin käyttöön"
+      ],
+      "Unknown": [
+        "Tuntematon"
       ]
     },
     "Log preference": {
@@ -14153,8 +14197,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } tarjous päättyy tänään!"
       ],
+      "Don’t show this again": [
+        "Älä näytä tätä uudelleen"
+      ],
       "Don’t show this offer again": [
         "Älä näytä tätä tarjousta uudelleen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Hanki ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Hanki Drive Plus hintaan ${ pricingTitle }"
@@ -14208,9 +14258,17 @@
         "Tilauksesi uusiutuu pian"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 muuta premium-ominaisuutta"
+      ],
+      "500 GB secure storage": [
+        "500 Gt suojattua tallennustilaa"
       ],
       "Custom email domain": [
         "Oma sähköpostiverkkotunnus"
@@ -14253,6 +14311,9 @@
     "Onboarding Trial": {
       "Continue": [
         "Jatka"
+      ],
+      "If you need help,": [
+        "Jos tarvitset apua,"
       ]
     },
     "Option": {
@@ -14673,6 +14734,9 @@
     "pass_signup_2023: Action": {
       "Buy now": [
         "Osta nyt"
+      ],
+      "Contact us": [
+        "Ota yhteyttä"
       ],
       "Continue": [
         "Jatka"
@@ -15172,6 +15236,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Pankkisiirto"
       ],
@@ -15572,6 +15639,26 @@
       ],
       "Work": [
         "Työ"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "Estetty"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Device verification": [
+        "Laitteen vahvistus"
+      ],
+      "Ok": [
+        "OK"
+      ],
+      "Ownership verification": [
+        "Omistajuuden vahvistus"
+      ],
+      "Unknown": [
+        "Tuntematon"
       ]
     },
     "Recovery Email": {
@@ -16606,6 +16693,17 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } osoite",
+        "${ maxAddresses } osoitetta"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } kalenteri",
+        "${ maxCalendars } kalenteria"
+      ],
+      "/user": [
+        "/käyttäjä"
+      ],
       "30 custom email addresses": [
         "30 mukautettua sähköpostiosoitetta"
       ],
@@ -16627,11 +16725,17 @@
       "End-to-end encryption": [
         "Päästä päähän ‐salaus"
       ],
+      "Free": [
+        "Ilmainen"
+      ],
       "Monthly": [
         "Kuukausittain"
       ],
       "Most popular": [
         "Suosituin"
+      ],
+      "Need more space?": [
+        "Tarvitsetko lisää tallennustilaa?"
       ],
       "Online documents": [
         "Verkkodokumentit"
@@ -16669,11 +16773,17 @@
       "Up to 6 users": [
         "Enintään 6 käyttäjää"
       ],
+      "Yearly": [
+        "Vuosittain"
+      ],
       "Your plan": [
         "Sinun tilauksesi"
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME }-salasana"
+      ],
       "Confirm password": [
         "Vahvista salasana"
       ],
@@ -16708,6 +16818,9 @@
       ]
     },
     "signup: Action": {
+      "Contact us": [
+        "Ota yhteyttä"
+      ],
       "Request trial": [
         "Pyydä kokeiluversiota"
       ]
@@ -17912,6 +18025,9 @@
       ],
       "Expiring": [
         "Päättyy"
+      ],
+      "Free Trial": [
+        "Ilmainen kokeilu"
       ]
     },
     "Subtitle": {
@@ -19636,6 +19752,9 @@
       "Subscription": [
         "Tilaus"
       ],
+      "Subscription canceled": [
+        "Tilaus on peruttu"
+      ],
       "Success": [
         "Onnistui"
       ],
@@ -19988,6 +20107,9 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Poista roskakorin ja roskapostin viestit 30 päivän kuluttua. Automaattisen poiston käyttöönotto asettaa roskakorissa/roskapostissa jo olevien viestien poistopäivän niiden siirtopäivän perusteella."
       ],
+      "Device name and app version": [
+        "Laitteen nimi ja sovelluksen versio"
+      ],
       "Display name for the entity in the eduGAIN database": [
         "Entiteetin näyttönimi eduGAIN-tietokannassa"
       ],
@@ -20301,6 +20423,11 @@
       ],
       "Refund": [
         "Hyvitys"
+      ]
+    },
+    "Unlimited offer": {
+      "Only": [
+        "Vain"
       ]
     },
     "unprivatization": {

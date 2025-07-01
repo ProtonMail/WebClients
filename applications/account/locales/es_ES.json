@@ -376,6 +376,9 @@
       "Create folder": [
         "Crear carpeta"
       ],
+      "Create free account now": [
+        "Crea una cuenta gratis ahora"
+      ],
       "Create Gateway": [
         "Crear una puerta de enlace"
       ],
@@ -442,6 +445,9 @@
       "Delete logo": [
         "Eliminar el logo"
       ],
+      "Delete logs": [
+        "Eliminar registros"
+      ],
       "Delete member": [
         "Eliminar el miembro"
       ],
@@ -468,6 +474,12 @@
       ],
       "Delete “${ label.Name }”": [
         "Eliminar «${ label.Name }»"
+      ],
+      "Deleting folder": [
+        "Eliminando la carpeta"
+      ],
+      "Deleting label": [
+        "Eliminando la etiqueta"
       ],
       "Deny access": [
         "Denegar el acceso"
@@ -642,6 +654,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explorar otros planes de ${ BRAND_NAME }"
+      ],
+      "Explore other plans": [
+        "Explorar otros planes"
       ],
       "Export": [
         "Exportar"
@@ -958,9 +973,6 @@
       "Next month": [
         "Mes siguiente"
       ],
-      "Next page": [
-        "Página siguiente"
-      ],
       "No": [
         "No"
       ],
@@ -1005,9 +1017,6 @@
       ],
       "Previous month": [
         "Mes anterior"
-      ],
-      "Previous page": [
-        "Página anterior"
       ],
       "Publish changes": [
         "Publicar los cambios"
@@ -1998,6 +2007,11 @@
         "Importe a pagar ahora"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Se ha cancelado la suscripción."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Desactivado"
@@ -2329,20 +2343,6 @@
       ],
       "Working with sensitive data?": [
         "¿Trabajas con datos sensibles?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Tu servidor dedicado ya está asignado a una puerta de enlace. Podrás comprar más servidores una vez que termine tu prueba gratuita.",
-        "Todos tus servidores dedicados ya están asignados a puertas de enlace. Podrás comprar más servidores una vez que termine tu prueba gratuita."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Tu prueba gratuita incluye ${ ipAddresses } servidor dedicado. Puedes añadir más servidores una vez que comience tu suscripción completa.",
-        "Tu prueba gratuita incluye ${ ipAddresses } servidores dedicados. Puedes añadir más servidores una vez que comience tu suscripción completa."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Tu prueba gratuita incluye ${ maxMembers } licencia. Puedes añadir más servidores una vez que comience tu suscripción completa.",
-        "Tu prueba gratuita incluye un máximo de ${ maxMembers } licencias. Puedes añadir más licencias una vez que comience tu suscripción completa."
       ]
     },
     "breadcrumb": {
@@ -2715,7 +2715,7 @@
         "Nuestro plan básico y gratuito con correo y almacenamiento cifrado de extremo a extremo. No incluye características prémium."
       ],
       "Save ${ upsellSavings }": [
-        "Ahorra un ${ upsellSavings }"
+        "Ahorra ${ upsellSavings }"
       ],
       "Save money with ${ upsellPlanName }": [
         "Ahorra dinero con ${ upsellPlanName }"
@@ -4140,8 +4140,9 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Configura esto primero para activar tu organización y personalizar tu dirección de correo electrónico."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "¡Felicidades! Has ganado el máximo de meses gratis de ${ rewardsLimit } de ${ plusPlanName }."
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
+        "¡Enhorabuena! Te has ganado ${ rewardsLimit } mes gratis de ${ plusPlanName }.",
+        "¡Enhorabuena! Te has ganado un máximo de ${ rewardsLimit } meses gratis de ${ plusPlanName }."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Conecta tu CRM, sitio web, impresoras y mucho más."
@@ -4579,6 +4580,16 @@
       ],
       "90 minutes": [
         "90 minutos"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuenta, mejora a ${ planName }.",
+        "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuentas, mejora a ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Estás reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuenta externa a ${ MAIL_APP_NAME }.",
+        "Estás reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuentas externas a ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5455,6 +5466,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Los pagos no están disponibles actualmente. Inténtalo de nuevo más tarde."
+      ],
+      "Permissions request failed.": [
+        "Error con la solicitud de permisos"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configura un dominio personalizado antes de añadir direcciones."
@@ -8265,6 +8279,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
       ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
       "default email address": [
         "dirección de correo electrónico por defecto"
       ],
@@ -9156,6 +9173,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados en la organización"
       ],
       "Number of items the user has access to (includes owned items + shared items)": [
         "Número de elementos a los que el usuario tiene acceso (incluye elementos propios y compartidos)"
@@ -10591,9 +10611,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "No podrás recuperar datos bloqueados usando los archivos de recuperación descargados. Esto también desactivará la recuperación desde un dispositivo."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "También perderás acceso a las funciones de ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Después se te facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
         "Después se te facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
@@ -10727,6 +10744,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Tu prueba acaba en ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "También perderás acceso a las funciones de ${ boldPlanTitle }:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Podrás añadir estos servidores a otra puerta de enlace inmediatamente."
@@ -14721,11 +14741,6 @@
         "Selecciona a lo que ${ BRAND_NAME } puede acceder: ver tus correos y ajustes, ver y descargar tus contactos, ver y descargar todas tus agendas a las que accedes en Google Calendar."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Se ha producido un error al iniciar sesión en tu cuenta de Gmail."
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited por 12 meses"
@@ -15829,6 +15844,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Transferencia bancaria"
       ],
@@ -15963,6 +15981,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferencia bancaria - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -17323,6 +17349,20 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "Alias de hide-my-email ${ FREE_PASS_ALIASES } para combatir spam"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } dirección",
+        "${ maxAddresses } direcciones"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } calendario",
+        "${ maxCalendars } calendarios"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } de almacenamiento en la nube para tus archivos y fotos"
+      ],
       "${ value } of secure storage": [
         "${ value } de almacenamiento seguro"
       ],
@@ -17341,6 +17381,9 @@
       "Billing Cycle": [
         "Ciclo de facturación"
       ],
+      "Collaborative document editing": [
+        "Edición colaborativa de documentos"
+      ],
       "Compare plans": [
         "Compara los planes"
       ],
@@ -17353,11 +17396,17 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Continuar con ${ PLAN_NAMES[plan] }"
       ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Correo electrónico cifrado con ${ totalMailStorageSize } de almacenamiento"
+      ],
       "Encrypted password manager": [
         "Gestor de contraseñas cifrado"
       ],
       "End-to-end encryption": [
         "Cifrado de extremo a extremo"
+      ],
+      "Every free account comes with:": [
+        "Cada cuenta gratuita incluye:"
       ],
       "Free": [
         "Free"
@@ -17367,6 +17416,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "obtén una dirección segura de ${ MAIL_APP_NAME }."
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Obtén una segura de nosotros o ${ internalButton }"
       ],
       "Manage user access": [
         "Administrar el acceso de los usuarios"
@@ -17385,6 +17437,9 @@
       ],
       "Online documents": [
         "Documentos online"
+      ],
+      "Password manager for all your devices": [
+        "Gestor de contraseñas para todos tus dispositivos"
       ],
       "Pick your perfect plan": [
         "Elige el plan perfecto para ti"
@@ -17419,6 +17474,9 @@
       "Share and collaborate of files": [
         "Compartir y colaborar con archivos"
       ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Regístrate para obtener todo lo que ${ BRAND_NAME } tiene para ofrecerte."
+      ],
       "Sign up, protect your files": [
         "Regístrate y protege tus archivos"
       ],
@@ -17443,6 +17501,9 @@
       "Upload files of any size": [
         "Carga archivos de cualquier tamaño"
       ],
+      "use your current email.": [
+        "usa tu correo electrónico actual."
+      ],
       "Use your email, or ${ externalButton }": [
         "Usa tu correo electrónico, o ${ externalButton }"
       ],
@@ -17457,6 +17518,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "Contraseña de ${ BRAND_NAME }"
+      ],
       "Confirm password": [
         "Confirmar contraseña"
       ],
@@ -18767,6 +18831,9 @@
       "Address added": [
         "Dirección añadida"
       ],
+      "Address successfully added": [
+        "Se ha añadido la dirección."
+      ],
       "Address updated": [
         "Se ha actualizado la dirección."
       ],
@@ -19480,17 +19547,8 @@
       "Cancel subscription?": [
         "¿Cancelar suscripción?"
       ],
-      "Cannot add Gateway": [
-        "No se puede añadir una puerta de enlace."
-      ],
-      "Cannot add licenses": [
-        "No se pueden añadir licencias."
-      ],
       "Cannot add more users": [
         "No se pueden añadir más usuarios."
-      ],
-      "Cannot add servers": [
-        "No se pueden añadir servidores."
       ],
       "Card verification": [
         "Verificación de la tarjeta"
@@ -19563,6 +19621,9 @@
       ],
       "Connect apps and devices": [
         "Conectar aplicaciones y dispositivos"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Conecta más direcciones de Gmail con ${ planName }"
       ],
       "Connect organization": [
         "Conectar la organización"
@@ -20137,6 +20198,9 @@
       ],
       "Multi-user support": [
         "Soporte multiusuario"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Varias cuentas, 1 bandeja de entrada privada"
       ],
       "My addresses": [
         "Mis direcciones"
@@ -21914,7 +21978,7 @@
         "Cada ${ interval } semanas los viernes"
       ],
       "Every ${ interval } week on Monday": [
-        "Cada semana los lunes ${ interval }",
+        "Cada ${ interval } semana los lunes ",
         "Cada ${ interval } semanas los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
