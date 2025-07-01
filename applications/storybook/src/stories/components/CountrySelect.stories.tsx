@@ -4,12 +4,11 @@ import { InputFieldTwo } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import type { CountryOption } from '@proton/components/components/country/helpers';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './CountrySelect.mdx';
 
 export default {
     component: CountrySelect,
-    title: getTitle(__filename, false),
+    title: 'Components/Country Select',
     parameters: {
         docs: {
             page: mdx,

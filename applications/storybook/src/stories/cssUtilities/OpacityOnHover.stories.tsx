@@ -1,10 +1,9 @@
 import { Button } from '@proton/atoms';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './OpacityOnHover.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Opacity On Hover',
     parameters: {
         docs: {
             page: mdx,

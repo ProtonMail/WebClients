@@ -1,12 +1,11 @@
 import type { IconProps } from '@proton/components';
 import { Icon } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Icon.mdx';
 
 export default {
     component: Icon,
-    title: getTitle(__filename, false),
+    title: 'Components/Icon',
     parameters: {
         docs: {
             page: mdx,

@@ -1,11 +1,10 @@
-import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components'
 import { Tooltip } from '@proton/atoms';
+import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Sizing.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Sizing',
     parameters: {
         docs: {
             page: mdx,
