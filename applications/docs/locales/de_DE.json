@@ -1128,6 +1128,11 @@
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonnement gekündigt."
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 Benutzer"
@@ -4487,6 +4492,9 @@
       "Dedicated servers": [
         "Dezidierte Server"
       ],
+      "Dedicated VPN servers": [
+        "Dezidierte VPN-Server"
+      ],
       "default email address": [
         "Standard-E-Mail-Adresse"
       ],
@@ -4884,6 +4892,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Anzahl der dedizierten VPN-Server in der Organisation"
       ],
       "Numbers": [
         "Zahlen"
@@ -5532,9 +5543,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Dir wird nichts berechnet, wenn du vor ${ trialEndsOnFormatted } kündigst."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Du verlierst auch den Zugang zu den Funktionen von ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
         "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
@@ -5650,6 +5658,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Deine Testversion endet in ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du verlierst auch den Zugang zu den Funktionen von ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du verlierst den Zugriff auf ${ boldPlanTitle } am ${ boldEndDate }."

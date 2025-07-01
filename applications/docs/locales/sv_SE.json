@@ -1117,6 +1117,11 @@
         "Händelse stöds inte"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Prenumeration avslutad."
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 användare"
@@ -4463,6 +4468,9 @@
       "Dedicated servers": [
         "Dedikerade servrar"
       ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
       "default email address": [
         "standard e-postadress"
       ],
@@ -4861,6 +4869,9 @@
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerade VPN-servrar i organisationen"
+      ],
       "Numbers": [
         "Siffror"
       ],
@@ -5172,6 +5183,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "URL:en du angav verkar ha kopierats felaktigt från Slack. När du kopierar långa länkar från Slack, högerklicka på länken och välj sedan “Kopiera länk“ istället för att kopiera den avkortade URL-texten direkt."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
@@ -5505,9 +5519,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
         "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
@@ -5614,6 +5625,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Din provperiod slutar om ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du kommer förlora åtkomst till ${ boldPlanTitle } den ${ boldEndDate }."
@@ -7894,6 +7908,9 @@
       "The link to your item was deleted": [
         "Länken till ditt objekt togs bort"
       ],
+      "The spreadsheet failed to be created": [
+        "Kalkylbladet misslyckades att skapas"
+      ],
       "Trash failed to be emptied": [
         "Misslyckades att tömma papperskorg"
       ],
@@ -8342,6 +8359,9 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
+      ],
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
       ]
@@ -10254,10 +10274,10 @@
         "Verifiering misslyckades"
       ],
       "Verifying your card...": [
-        "Verifierar ditt kort..."
+        "Verifierar ditt kort …"
       ],
       "Verifying your payment...": [
-        "Verifierar din betalning..."
+        "Verifierar din betalning …"
       ],
       "Version details": [
         "Versionsdetaljer"
