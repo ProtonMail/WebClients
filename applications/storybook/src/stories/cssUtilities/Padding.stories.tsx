@@ -12,11 +12,10 @@ import {
     TableRow,
 } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Padding.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Padding',
     parameters: {
         docs: {
             page: mdx,

@@ -7,12 +7,11 @@ import {
     TextAreaTwo,
 } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './InputFieldStacked.mdx';
 
 export default {
     component: InputFieldTwo,
-    title: getTitle(__filename, false),
+    title: 'Components/Input Field Stacked',
     parameters: {
         docs: {
             page: mdx,
