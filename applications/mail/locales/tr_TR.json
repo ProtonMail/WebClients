@@ -1421,7 +1421,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1485,9 +1486,6 @@
       ],
       "Upgrade": [
         "Yükselt"
-      ],
-      "Upgrade Now": [
-        "Şimdi yükselt"
       ],
       "Upgrade now": [
         "Şimdi yükselt"
@@ -1585,15 +1583,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Bilgisayar uygulamasını ücretsiz deneme süreniz 2 gün sonra sona erecek. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Bilgisayar uygulamasını ücretsiz deneme süreniz 5 gün sonra sona erecek. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "E-posta yazma yardımcınız"
@@ -8416,9 +8405,6 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” yazdınız ama bir dosya eklemediniz. İletinizi yine de göndermek istiyor musunuz?"
-      ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "${ boldPlanTitle } özelliklerine erişiminizi de kaybedeceksiniz:"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } tutar ödeyeceksiniz.",

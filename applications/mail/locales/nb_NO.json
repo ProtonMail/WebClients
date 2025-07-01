@@ -1426,6 +1426,10 @@
       "Trust": [
         "Klarér"
       ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -1488,9 +1492,6 @@
       ],
       "Upgrade": [
         "Oppgrader"
-      ],
-      "Upgrade Now": [
-        "Oppgrader nå"
       ],
       "Upgrade now": [
         "Oppgrader nå"
@@ -1588,15 +1589,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Den gratis prøveperioden for skrivebordsappen avsluttes om 2 dager ${ upgradeButton }."
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Den gratis prøveperioden for skrivebordsappen avsluttes om 5 dager ${ upgradeButton }."
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Din e-postskrivingsassistent"
@@ -1934,6 +1926,11 @@
       ],
       "Sender verification passed": [
         "Avsenderbekreftelse bestått"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonnement kansellert."
       ]
     },
     "bf2023: Deal details": {
@@ -4559,6 +4556,9 @@
       "No address with keys available to compose a message": [
         "Ingen adresse med nøkler tilgjengelig for å skrive en melding"
       ],
+      "No address with sending permissions": [
+        "Ingen adresse med tillatelser for sending"
+      ],
       "No calendars found to import": [
         "Fant ingen kalendere å importere"
       ],
@@ -4605,6 +4605,9 @@
       ],
       "Payment process not supported": [
         "Betalingsprosess støttes ikke"
+      ],
+      "Permissions request failed.": [
+        "Forespørsel om tillatelser mislyktes."
       ],
       "Please activate your search again": [
         "Aktiver søket ditt på nytt"
@@ -6763,6 +6766,9 @@
       "Dedicated servers": [
         "Dedikerte tjenere"
       ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-tjenere"
+      ],
       "default email address": [
         "standard e-postadresse"
       ],
@@ -7353,6 +7359,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antall dedikerte VPN-tjenere i organisasjonen"
       ],
       "Numbers": [
         "Tall"
@@ -8404,9 +8413,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev \"${ attachmentsFoundKeyword }\", men ingen vedlegg er lagt til. Ønsker du å sende meldingen uansett?"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
@@ -8520,6 +8526,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Prøveversjonen avsluttes om ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du mister tilgang til ${ boldPlanTitle } den ${ boldEndDate }."
@@ -11257,6 +11266,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }: appene våre vil aldri vise sponsede annonser."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } sikrer at bare du og tiltenkte mottakere har tilgang til e-postene dine."
       ],
@@ -11277,6 +11289,9 @@
       ],
       "Activate selected": [
         "Aktiver valgte"
+      ],
+      "Ad-free promise": [
+        "Vår forpliktelse til reklamefrie tjenester"
       ],
       "Advanced encryption": [
         "Avansert kryptering"

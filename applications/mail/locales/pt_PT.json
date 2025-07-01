@@ -399,6 +399,12 @@
       "Delete permanently": [
         "Eliminar permanentemente"
       ],
+      "Deleting folder": [
+        "A eliminar a pasta"
+      ],
+      "Deleting label": [
+        "A eliminar a etiqueta"
+      ],
       "Deselect all": [
         "De-selecionar tudo"
       ],
@@ -1420,6 +1426,10 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Confiar na chave",
+        "Confiar nas chaves"
+      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -1482,9 +1492,6 @@
       ],
       "Upgrade": [
         "Actualizar"
-      ],
-      "Upgrade Now": [
-        "Atualizar agora"
       ],
       "Upgrade now": [
         "Actualizar agora"
@@ -1582,15 +1589,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contacto.",
         "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contactos."
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "A sua avaliação gratuita da aplicação para desktop termina em 2 dias. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "A sua avaliação gratuita da aplicação para desktop termina em 5 dias. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "A sua avaliação gratuita da aplicação para desktop termina em ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "O seu assistente de escrita de e-mail"
@@ -1928,6 +1926,11 @@
       ],
       "Sender verification passed": [
         "Verificação do remetente aprovada"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "A subscrição foi cancelada."
       ]
     },
     "bf2023: Deal details": {
@@ -4553,6 +4556,9 @@
       "No address with keys available to compose a message": [
         "Nenhum endereço com chaves disponíveis para compor uma mensagem"
       ],
+      "No address with sending permissions": [
+        "Nenhum endereço com permissões de envio"
+      ],
       "No calendars found to import": [
         "Não foi encontrado nenhum calendário para importação."
       ],
@@ -4599,6 +4605,9 @@
       ],
       "Payment process not supported": [
         "Processo de pagamento não suportado"
+      ],
+      "Permissions request failed.": [
+        "Erro no pedido de permissões"
       ],
       "Please activate your search again": [
         "Ative a pesquisa novamente."
@@ -6757,6 +6766,9 @@
       "Dedicated servers": [
         "Servidores dedicados"
       ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
       "default email address": [
         "endereço de e-mail padrão"
       ],
@@ -7347,6 +7359,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados na organização"
       ],
       "Numbers": [
         "Números"
@@ -8398,9 +8413,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Escreveu \"${ attachmentsFoundKeyword }\", mas não adicionou nenhum anexo. Ainda quer enviar esta mensagem?"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Também perderá o acesso às funcionalidades do ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Será então cobrado a cada ${ renewCycle } mês no valor de ${ renewAmountStr }.",
         "Será então cobrado a cada ${ renewCycle } meses no valor de ${ renewAmountStr }."
@@ -8514,6 +8526,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "A sua avaliação terminará em ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Também perderá o acesso às funcionalidades do ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Vai perder o acesso ao ${ boldPlanTitle } em ${ boldEndDate }."
@@ -11251,6 +11266,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }: nunca verá anúncios patrocinados nas nossas aplicações."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } garante que apenas o utilizador e os destinatários pretendidos podem aceder aos seus e-mails."
       ],
@@ -11271,6 +11289,9 @@
       ],
       "Activate selected": [
         "Ativar a seleção"
+      ],
+      "Ad-free promise": [
+        "O nosso compromisso sem anúncios"
       ],
       "Advanced encryption": [
         "Encriptação avançada"
@@ -11596,6 +11617,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Transferência bancária"
       ],
@@ -11721,6 +11745,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferência bancária - ${ details }"
       ]
     },
     "Payments.Sepa": {

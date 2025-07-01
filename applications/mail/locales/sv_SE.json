@@ -155,7 +155,7 @@
         "Autentisera"
       ],
       "Auto-delete spam and trash": [
-        "Autoborttagning av skräppost och kastat"
+        "Ta bort skräppost och papperskorg automatiskt"
       ],
       "Back": [
         "Tillbaka"
@@ -1426,6 +1426,10 @@
       "Trust": [
         "Lita på"
       ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
+      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -1488,9 +1492,6 @@
       ],
       "Upgrade": [
         "Uppgradera"
-      ],
-      "Upgrade Now": [
-        "Uppgradera nu"
       ],
       "Upgrade now": [
         "Uppgradera nu"
@@ -1588,15 +1589,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakt",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Din gratis provperiod av skrivbordsappen slutar om 2 dagar. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Din gratis provperiod av skrivbordsappen slutar om 5 dagar. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Din gratis provperiod av skrivbordsappen slutar den ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Din skrivassistent för e-post"
@@ -1931,6 +1923,11 @@
       ],
       "Sender verification passed": [
         "Avsändarverifiering godkänd"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Prenumeration avslutad."
       ]
     },
     "bf2023: Deal details": {
@@ -4603,6 +4600,9 @@
       "Payment process not supported": [
         "Betalningsprocessen stöds inte"
       ],
+      "Permissions request failed.": [
+        "Behörighetsbegäran misslyckades."
+      ],
       "Please activate your search again": [
         "Aktivera din sökning igen"
       ],
@@ -6747,6 +6747,9 @@
       "Dedicated servers": [
         "Dedikerade servrar"
       ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
       "default email address": [
         "standard e-postadress"
       ],
@@ -7337,6 +7340,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerade VPN-servrar i organisationen"
       ],
       "Numbers": [
         "Siffror"
@@ -8388,9 +8394,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev “${ attachmentsFoundKeyword }”, men ingen bilaga har lagts till. Vill du skicka ditt meddelande i alla fall?"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
         "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
@@ -8501,6 +8504,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Din provperiod slutar om ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du kommer förlora åtkomst till ${ boldPlanTitle } den ${ boldEndDate }."
@@ -11719,6 +11725,9 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
+      ],
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
       ]
@@ -14713,10 +14722,10 @@
         "Verifiering misslyckades"
       ],
       "Verifying your card...": [
-        "Verifierar ditt kort..."
+        "Verifierar ditt kort …"
       ],
       "Verifying your payment...": [
-        "Verifierar din betalning..."
+        "Verifierar din betalning …"
       ],
       "VPN explained": [
         "VPN förklarat"

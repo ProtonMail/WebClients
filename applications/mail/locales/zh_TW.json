@@ -1311,6 +1311,9 @@
       "Trust": [
         "信任"
       ],
+      "Trust key": [
+        "信任金鑰"
+      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -1373,9 +1376,6 @@
       ],
       "Upgrade": [
         "升級"
-      ],
-      "Upgrade Now": [
-        "請升級"
       ],
       "Upgrade now": [
         "立即升級"
@@ -1463,15 +1463,6 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "您的桌面應用程式將於兩天內結束試用。 ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "您的桌面應用程式將於五日內結束試用。 ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
       ],
       "Your email writing assistant": [
         "您電子郵件的撰寫幫手"

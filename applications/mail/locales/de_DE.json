@@ -1426,6 +1426,10 @@
       "Trust": [
         "Vertrauen"
       ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüssel vertrauen"
+      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -1488,9 +1492,6 @@
       ],
       "Upgrade": [
         "Wechseln"
-      ],
-      "Upgrade Now": [
-        "Jetzt upgraden"
       ],
       "Upgrade now": [
         "Jetzt upgraden"
@@ -1588,15 +1589,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakt enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Deine kostenlose Testversion der Desktop-App endet in 2 Tagen. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Deine kostenlose Testversion der Desktop-App endet in 5 Tagen. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Dein E-Mail-Schreibassistent"
@@ -1942,6 +1934,11 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonnement gekündigt."
       ]
     },
     "bf2023: Deal details": {
@@ -4575,6 +4572,9 @@
       "No address with keys available to compose a message": [
         "Keine E-Mail-Adresse mit Schlüsseln zum Verfassen einer Nachricht verfügbar."
       ],
+      "No address with sending permissions": [
+        "Keine E-Mail-Adresse mit Sendeberechtigungen"
+      ],
       "No calendars found to import": [
         "Keine Kalender zum Importieren vorhanden"
       ],
@@ -4621,6 +4621,9 @@
       ],
       "Payment process not supported": [
         "Bezahlvorgang nicht unterstützt"
+      ],
+      "Permissions request failed.": [
+        "Berechtigungsanfrage fehlgeschlagen."
       ],
       "Please activate your search again": [
         "Bitte aktiviere die Inhaltssuche erneut."
@@ -6779,6 +6782,9 @@
       "Dedicated servers": [
         "Dezidierte Server"
       ],
+      "Dedicated VPN servers": [
+        "Dezidierte VPN-Server"
+      ],
       "default email address": [
         "Standard-E-Mail-Adresse"
       ],
@@ -7369,6 +7375,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Anzahl der dedizierten VPN-Server in der Organisation"
       ],
       "Numbers": [
         "Zahlen"
@@ -8420,9 +8429,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Deine Nachricht enthält das Schlüsselwort „${ attachmentsFoundKeyword }“, es wurde jedoch kein Anhang hinzugefügt. Möchtest du deine Nachricht trotzdem senden?"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Du verlierst auch den Zugang zu den Funktionen von ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
         "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
@@ -8536,6 +8542,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Deine Testversion endet in ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du verlierst auch den Zugang zu den Funktionen von ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du verlierst den Zugriff auf ${ boldPlanTitle } am ${ boldEndDate }."
@@ -11273,6 +11282,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } bedeutet, dass du niemals gesponserte Anzeigen in unseren Apps sehen wirst."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } stellt sicher, dass nur du und die vorgesehenen Empfänger auf deine E-Mails zugreifen können."
       ],
@@ -11293,6 +11305,9 @@
       ],
       "Activate selected": [
         "Ausgewählte aktivieren"
+      ],
+      "Ad-free promise": [
+        "Werbefreies Versprechen"
       ],
       "Advanced encryption": [
         "Fortschrittliche Verschlüsselung"

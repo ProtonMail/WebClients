@@ -1426,7 +1426,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufaj kluczowi",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1490,9 +1493,6 @@
       ],
       "Upgrade": [
         "Ulepsz"
-      ],
-      "Upgrade Now": [
-        "Ulepsz teraz"
       ],
       "Upgrade now": [
         "Ulepsz teraz"
@@ -1592,15 +1592,6 @@
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakty",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Darmowa wersja próbna aplikacji desktopowej zakończy się za 2 dni. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Darmowa wersja próbna aplikacji desktopowej zakończy się za 5 dni. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Darmowa wersja próbna aplikacji desktopowej zakończy się ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Twój asystent pisania"
@@ -8667,9 +8658,6 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Wiadomość zawiera wyrażenie \"${ attachmentsFoundKeyword }\", ale załącznik nie został dodany. Czy chcesz wysłać wiadomość mimo to?"
-      ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Stracisz również dostęp do funkcji planu ${ boldPlanTitle }:"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Następnie zapłacisz co ${ renewCycle } miesiąc ${ renewAmountStr }.",
