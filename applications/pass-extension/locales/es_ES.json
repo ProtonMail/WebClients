@@ -1251,11 +1251,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Se ha descartado el elemento \"${ payload.item.data.metadata.name }\"."
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Se ha descartado el elemento \"${ payload.itemName }\"."
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Actualización de \"${ payload.itemName }\" descartada"
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } bloqueo",
@@ -4067,6 +4067,9 @@
       ],
       "Grant permissions": [
         "Conceder permisos"
+      ],
+      "Hide my email": [
+        "Ocultar mi correo electrónico"
       ],
       "History": [
         "Historial"

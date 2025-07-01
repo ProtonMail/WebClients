@@ -1363,6 +1363,11 @@
         "Händelse stöds inte"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Prenumeration avslutad."
+      ]
+    },
     "Badge": {
       "Invited": [
         "Inbjuden"
@@ -3214,11 +3219,20 @@
       "Failed to create folder": [
         "Misslyckades att skapa mapp"
       ],
+      "Failed to fetch node": [
+        "Misslyckades att hämta nod"
+      ],
+      "Failed to fetch sharing info": [
+        "Misslyckades att hämta delningsinformation"
+      ],
       "Failed to load the STL preview": [
         "Misslyckades att ladda STL-förhandsgranskningen"
       ],
       "Failed to move items": [
         "Misslyckades att flytta objekt"
+      ],
+      "Failed to resend invitation": [
+        "Misslyckades att skicka inbjudan igen"
       ],
       "Failed to save some photos to your Drive": [
         "Misslyckades att spara några foton till din Drive"
@@ -4929,6 +4943,9 @@
       "Dedicated servers": [
         "Dedikerade servrar"
       ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
       "default email address": [
         "standard e-postadress"
       ],
@@ -5418,6 +5435,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerade VPN-servrar i organisationen"
       ],
       "Numbers": [
         "Siffror"
@@ -6292,9 +6312,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
         "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
@@ -6407,6 +6424,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Din provperiod slutar om ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du kommer förlora åtkomst till ${ boldPlanTitle } den ${ boldEndDate }."
@@ -8902,6 +8922,9 @@
       "The link to your item was deleted": [
         "Länken till ditt objekt togs bort"
       ],
+      "The spreadsheet failed to be created": [
+        "Kalkylbladet misslyckades att skapas"
+      ],
       "This item was not removed from your list": [
         "Detta objekt togs inte bort från din lista",
         "Några objekt misslyckades att tas bort från din lista"
@@ -9503,6 +9526,9 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
+      ],
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
       ]
@@ -11861,10 +11887,10 @@
         "Verifiering misslyckades"
       ],
       "Verifying your card...": [
-        "Verifierar ditt kort..."
+        "Verifierar ditt kort …"
       ],
       "Verifying your payment...": [
-        "Verifierar din betalning..."
+        "Verifierar din betalning …"
       ],
       "Version details": [
         "Versionsdetaljer"

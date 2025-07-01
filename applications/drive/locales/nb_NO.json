@@ -1366,6 +1366,11 @@
         "Ikke støttet hendelse"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonnement kansellert."
+      ]
+    },
     "Badge": {
       "Invited": [
         "Invitert"
@@ -3217,14 +3222,29 @@
       "Failed to create folder": [
         "Kunne ikke opprette mappe"
       ],
+      "Failed to fetch node": [
+        "Kunne ikke hente node"
+      ],
+      "Failed to fetch sharing info": [
+        "Kunne ikke hente delingsinfo"
+      ],
       "Failed to load the STL preview": [
         "Kan ikke laste inn STL-forhåndsvisningen"
       ],
       "Failed to move items": [
         "Kunne ikke flytte elementer"
       ],
+      "Failed to resend invitation": [
+        "Kunne ikke sende invitasjonen på nytt"
+      ],
       "Failed to save some photos to your Drive": [
         "Kunne ikke lagre noen bilder på din Drive"
+      ],
+      "Failed to unshare node": [
+        "Kunne ikke oppheve deling av node"
+      ],
+      "Failed to update share node": [
+        "Kunne ikke oppdatere delingsnode"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fil \"${ item.name }\" kunne ikke lastes opp på grunn av \"${ error }\" feilmelding"
@@ -4935,6 +4955,9 @@
       "Dedicated servers": [
         "Dedikerte tjenere"
       ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-tjenere"
+      ],
       "default email address": [
         "standard e-postadresse"
       ],
@@ -5424,6 +5447,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antall dedikerte VPN-tjenere i organisasjonen"
       ],
       "Numbers": [
         "Tall"
@@ -6301,9 +6327,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
@@ -6428,6 +6451,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Prøveversjonen avsluttes om ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du mister tilgang til ${ boldPlanTitle } den ${ boldEndDate }."

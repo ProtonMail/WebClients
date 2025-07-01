@@ -376,6 +376,9 @@
       "Create folder": [
         "Δημιουργία φακέλου"
       ],
+      "Create free account now": [
+        "Δημιουργία δωρεάν λογαριασμού τώρα"
+      ],
       "Create Gateway": [
         "Δημιουργία Πύλης"
       ],
@@ -970,9 +973,6 @@
       "Next month": [
         "Επόμενος μήνας"
       ],
-      "Next page": [
-        "Επόμενη σελίδα"
-      ],
       "No": [
         "Όχι"
       ],
@@ -1017,9 +1017,6 @@
       ],
       "Previous month": [
         "Προηγούμενος μήνας"
-      ],
-      "Previous page": [
-        "Προηγούμενη σελίδα"
       ],
       "Publish changes": [
         "Δημοσιεύστε τις αλλαγές"
@@ -1983,6 +1980,11 @@
         "Είμαι εκτός γραφείου με περιορισμένη πρόσβαση στο ηλεκτρονικό ταχυδρομείο μου."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Η συνδρομή ακυρώθηκε."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Απενεργοποιημένο"
@@ -2314,20 +2316,6 @@
       ],
       "Working with sensitive data?": [
         "Εργάζεστε με ευαίσθητα δεδομένα;"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Ο αποκλειστικός σας διακομιστής είναι ήδη εκχωρημένος σε μια Πύλη. Θα μπορείτε να αγοράσετε περισσότερους διακομιστές μόλις τελειώσει η δωρεάν δοκιμή σας.",
-        "Όλοι οι αφιερωμένοι διακομιστές σας έχουν ήδη εκχωρηθεί σε Πύλες. Θα μπορείτε να αγοράσετε περισσότερους διακομιστές μόλις λήξει η δωρεάν δοκιμή σας."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Η δωρεάν δοκιμή σας περιλαμβάνει ${ ipAddresses } αποκλειστικό διακομιστή. Μπορείτε να προσθέσετε περισσότερους διακομιστές μόλις ξεκινήσει η πλήρη συνδρομή σας.",
-        "Η δωρεάν δοκιμή σας περιλαμβάνει ${ ipAddresses } αποκλειστικούς διακομιστές. Μπορείτε να προσθέσετε περισσότερους διακομιστές μόλις ξεκινήσει η πλήρη συνδρομή σας."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Η δωρεάν δοκιμή σας περιλαμβάνει ${ maxMembers } άδεια. Μπορείτε να προσθέσετε περισσότερες άδειες μόλις ξεκινήσει η πλήρης συνδρομή σας.",
-        "Η δωρεάν δοκιμή σας περιλαμβάνει το πολύ ${ maxMembers } άδειες. Μπορείτε να προσθέσετε περισσότερες άδειες μόλις ξεκινήσει η πλήρης συνδρομή σας."
       ]
     },
     "breadcrumb": {
@@ -4120,8 +4108,9 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Ρυθμίστε πρώτα αυτό για να ενεργοποιήσετε τον οργανισμό σας και να προσαρμόσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "Συγχαρητήρια! Κερδίσατε το μέγιστο των ${ rewardsLimit } δωρεάν μηνών ${ plusPlanName }."
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
+        "Συγχαρητήρια! Κερδίσατε το μέγιστο ${ rewardsLimit } δωρεάν μήνα του ${ plusPlanName }.",
+        "Συγχαρητήρια! Κερδίσατε το μέγιστο των ${ rewardsLimit } δωρεάν μήνες ${ plusPlanName }."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Συνδέστε το CRM, την ιστοσελίδα, τους εκτυπωτές σας και άλλα."
@@ -4559,6 +4548,16 @@
       ],
       "90 minutes": [
         "90 λεπτά"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμό, αναβαθμίστε σε ${ planName }.",
+        "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς, αναβαθμίστε σε ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικό λογαριασμό στο ${ MAIL_APP_NAME }.",
+        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικούς λογαριασμούς στο ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5435,6 +5434,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Οι πληρωμές δεν είναι διαθέσιμες προς το παρόν, παρακαλώ δοκιμάστε ξανά αργότερα"
+      ],
+      "Permissions request failed.": [
+        "Το αίτημα αδειών απέτυχε."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Παρακαλούμε διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε διευθύνσεις"
@@ -8242,6 +8244,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να επιτρέψουν βελτιστοποιημένο έλεγχο πρόσβασης."
       ],
+      "Dedicated VPN servers": [
+        "Αποκλειστικοί διακομιστές VPN"
+      ],
       "default email address": [
         "προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -9133,6 +9138,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Αριθμός αποκλειστικών διακομιστών VPN στον οργανισμό"
       ],
       "Number of items the user has access to (includes owned items + shared items)": [
         "Αριθμός στοιχείων στα οποία έχει πρόσβαση ο χρήστης (περιλαμβάνει ιδιόκτητα στοιχεία + κοινόχρηστα στοιχεία)"
@@ -10568,9 +10576,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Δεν θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα αρχεία ανάκτησης που λάβατε. Αυτό θα απενεργοποιήσει επίσης την ανάκτηση βάσει συσκευής."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Θα χάσετε επίσης την πρόσβαση στις δυνατότητες του ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }.",
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }."
@@ -10704,6 +10709,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Η δοκιμή σας θα τελειώσει σε ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Θα χάσετε επίσης την πρόσβαση στις δυνατότητες του ${ boldPlanTitle }:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Θα μπορείτε να προσθέσετε αυτούς τους διακομιστές σε άλλη πύλη αμέσως."
@@ -14698,11 +14706,6 @@
         "Επιλέξτε σε τι μπορεί να έχει πρόσβαση το ${ BRAND_NAME }: δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου και τις ρυθμίσεις σας, προβάλετε και κατεβάστε τις επαφές σας, προβάλετε και κατεβάστε όλες τις ατζέντες στις οποίες έχετε πρόσβαση από το Google Calendar."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Κάτι πήγε στραβά κατά τη σύνδεση στον λογαριασμό σας Gmail"
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited για 12 μήνες"
@@ -17303,6 +17306,20 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email ψευδώνυμα για την καταπολέμηση των ενοχλητικών μηνυμάτων"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } διεύθυνση",
+        "${ maxAddresses } διευθύνσεις"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } ημερολόγιο",
+        "${ maxCalendars } ημερολόγια"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } αποθηκευτικός χώρος στο cloud για αρχεία και φωτογραφίες"
+      ],
       "${ value } of secure storage": [
         "${ value } ασφαλούς αποθηκευτικού χώρου"
       ],
@@ -17321,6 +17338,9 @@
       "Billing Cycle": [
         "Κύκλος Χρέωσης"
       ],
+      "Collaborative document editing": [
+        "Συνεργατική επεξεργασία εγγράφων"
+      ],
       "Compare plans": [
         "Σύγκριση πλάνων"
       ],
@@ -17333,11 +17353,17 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Συνεχίστε με ${ PLAN_NAMES[plan] }"
       ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Κρυπτογραφημένο ηλεκτρονικό ταχυδρομείο με ${ totalMailStorageSize } αποθηκευτικό χώρο"
+      ],
       "Encrypted password manager": [
         "Κρυπτογραφημένος διαχειριστής κωδικών πρόσβασης"
       ],
       "End-to-end encryption": [
         "Διατερματική κρυπτογράφηση"
+      ],
+      "Every free account comes with:": [
+        "Κάθε δωρεάν λογαριασμός περιλαμβάνει:"
       ],
       "Free": [
         "Δωρεάν"
@@ -17347,6 +17373,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "αποκτήστε μια ασφαλή διεύθυνση ${ MAIL_APP_NAME }."
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Λάβετε έναν ασφαλή από εμάς, ή ${ internalButton }"
       ],
       "Manage user access": [
         "Διαχείριση προσβασιμότητας χρηστών"
@@ -17365,6 +17394,9 @@
       ],
       "Online documents": [
         "Διαδικτυακά έγγραφα"
+      ],
+      "Password manager for all your devices": [
+        "Διαχειριστής κωδικών πρόσβασης για όλες τις συσκευές σας"
       ],
       "Pick your perfect plan": [
         "Επιλέξτε το ιδανικό σας πλάνο"
@@ -17399,6 +17431,9 @@
       "Share and collaborate of files": [
         "Κοινοποίηση και συνεργασία με αρχεία"
       ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Εγγραφείτε για να αποκτήσετε τα πάντα που έχει να προσφέρει το ${ BRAND_NAME }"
+      ],
       "Sign up, protect your files": [
         "Εγγραφείτε, προστατέψτε τα αρχεία σας"
       ],
@@ -17423,11 +17458,18 @@
       "Upload files of any size": [
         "Ανεβάστε αρχεία οποιουδήποτε μεγέθους"
       ],
+      "use your current email.": [
+        "χρησιμοποιήστε την τρέχουσα ηλεκτρονική σας διεύθυνση."
+      ],
       "Use your email, or ${ externalButton }": [
         "Χρησιμοποιήστε την ηλεκτρονική σας διεύθυνση, ή ${ externalButton }"
       ],
       "use your own email.": [
         "χρησιμοποιήστε το δικό σας email."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN με διακομιστές σε ${ vpnServersCountData.free.countries } χώρα",
+        "VPN με διακομιστές σε ${ vpnServersCountData.free.countries } χώρες"
       ],
       "Yearly": [
         "Ετησίως"
@@ -17437,6 +17479,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME } κωδικός"
+      ],
       "Confirm password": [
         "Επιβεβαίωση κωδικού πρόσβασης"
       ],
@@ -18747,6 +18792,9 @@
       "Address added": [
         "Η διεύθυνση προστέθηκε"
       ],
+      "Address successfully added": [
+        "Η διεύθυνση προστέθηκε επιτυχώς"
+      ],
       "Address updated": [
         "Η διεύθυνση ενημερώθηκε"
       ],
@@ -19457,17 +19505,8 @@
       "Cancel subscription?": [
         "Ακύρωση συνδρομής;"
       ],
-      "Cannot add Gateway": [
-        "Αδυναμία προσθήκης Πύλης"
-      ],
-      "Cannot add licenses": [
-        "Αδυναμία προσθήκης αδειών"
-      ],
       "Cannot add more users": [
         "Αδυναμία προσθήκης περισσότερων χρηστών"
-      ],
-      "Cannot add servers": [
-        "Αδυναμία προσθήκης διακομιστών"
       ],
       "Card verification": [
         "Επαλήθευση Κάρτας"
@@ -19540,6 +19579,9 @@
       ],
       "Connect apps and devices": [
         "Σύνδεση εφαρμογών και συσκευών"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Συνδέστε περισσότερες διευθύνσεις Gmail με ${ planName }"
       ],
       "Connect organization": [
         "Σύνδεση οργανισμού"
@@ -20114,6 +20156,9 @@
       ],
       "Multi-user support": [
         "Υποστήριξη Πολλαπλών Χρηστών"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Πολλαπλοί λογαριασμοί, 1 ιδιωτικά εισερχόμενο"
       ],
       "My addresses": [
         "Οι διευθύνσεις μου"

@@ -376,6 +376,9 @@
       "Create folder": [
         "Vytvořit složku"
       ],
+      "Create free account now": [
+        "Vytvořit nyní účet zdarma"
+      ],
       "Create Gateway": [
         "Vytvořit bránu"
       ],
@@ -473,10 +476,10 @@
         "Smazat “${ label.Name }”"
       ],
       "Deleting folder": [
-        "Smazat složku"
+        "Smazání složky"
       ],
       "Deleting label": [
-        "Smazat štítek"
+        "Smazání štítku"
       ],
       "Deny access": [
         "Zamítnout přístup"
@@ -970,9 +973,6 @@
       "Next month": [
         "Další měsíc"
       ],
-      "Next page": [
-        "Další stránka"
-      ],
       "No": [
         "Ne"
       ],
@@ -1017,9 +1017,6 @@
       ],
       "Previous month": [
         "Předchozí měsíc"
-      ],
-      "Previous page": [
-        "Předchozí stránka"
       ],
       "Publish changes": [
         "Zveřejnit změny"
@@ -2017,6 +2014,11 @@
         "Částka splatná nyní"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Předplatné zrušeno."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Vypnuto"
@@ -2356,26 +2358,6 @@
       ],
       "Working with sensitive data?": [
         "Pracujete s citlivými údaji?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Váš dedikovaný server je již přiřazen k bráně. Po skončení bezplatné zkušební verze si budete moci zakoupit další servery.",
-        "Všechny vaše dedikované servery jsou již přiřazeny k bráně. Po skončení bezplatné zkušební verze si budete moci zakoupit další servery.",
-        "Všechny vaše dedikované servery jsou již přiřazeny k bráně. Po skončení bezplatné zkušební verze si budete moci zakoupit další servery.",
-        "Všechny vaše dedikované servery jsou již přiřazeny k bráně. Po skončení bezplatné zkušební verze si budete moci zakoupit další servery."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Vaše bezplatná zkušební verze obsahuje ${ ipAddresses } dedikovaný server. Po spuštění plného předplatného můžete přidat další servery.",
-        "Vaše bezplatná zkušební verze obsahuje ${ ipAddresses } dedikované servery. Po spuštění plného předplatného můžete přidat další servery.",
-        "Vaše bezplatná zkušební verze obsahuje ${ ipAddresses } dedikovaných serverů. Po spuštění plného předplatného můžete přidat další servery.",
-        "Vaše bezplatná zkušební verze obsahuje ${ ipAddresses } dedikovaných serverů. Po spuštění plného předplatného můžete přidat další servery."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Vaše bezplatná zkušební verze obsahuje ${ maxMembers } licenci. Po spuštění plného předplatného můžete přidat další licence.",
-        "Vaše bezplatná zkušební verze obsahuje ${ maxMembers } licence. Po spuštění plného předplatného můžete přidat další licence.",
-        "Vaše bezplatná zkušební verze obsahuje ${ maxMembers } licencí. Po spuštění plného předplatného můžete přidat další licence.",
-        "Vaše bezplatná zkušební verze obsahuje ${ maxMembers } licencí. Po spuštění plného předplatného můžete přidat další licence."
       ]
     },
     "breadcrumb": {
@@ -4191,9 +4173,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Při konfiguraci nejprve aktivujte svou organizaci a přizpůsobte e-mailovou adresu."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "Blahopřejeme! Získali jste maximálního počtu ${ rewardsLimit } měsíců zdarma ${ plusPlanName }."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Propojte svůj CRM, webové stránky, tiskárny a další."
       ],
@@ -4630,6 +4609,20 @@
       ],
       "90 minutes": [
         "90 minut"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Chcete-li přeposílat e-maily z ${ MAX_SYNC_PAID_USER } účtu, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až ze ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externího účtu na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5512,6 +5505,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Provádět platby není momentálně dostupné, zkuste to prosím později"
+      ],
+      "Permissions request failed.": [
+        "Požadavek o oprávnění selhal."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Před přidáním adres nastavte vlastní doménu."
@@ -8445,6 +8441,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
       ],
+      "Dedicated VPN servers": [
+        "Dedikované servery VPN"
+      ],
       "default email address": [
         "výchozí e-mailová adresa"
       ],
@@ -9344,6 +9343,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Počet dedikovaných serverů VPN v organizaci"
       ],
       "Number of items the user has access to (includes owned items + shared items)": [
         "Počet položek, ke kterým má uživatel přístup (zahrnuje vlastní položky + sdílené položky)"
@@ -10824,9 +10826,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Nebudete moci obnovit uzamčená data pomocí obnovovacích souborů, které jste si stáhli. Toto také deaktivuje obnovu založenou na zařízení."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Ztratíte také přístup k funkcím ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }.",
         "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
@@ -10970,6 +10969,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše zkušební verze skončí za ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Ztratíte také přístup k funkcím ${ boldPlanTitle }:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Tyto servery budete moci okamžitě přidat do jiné brány."
@@ -12426,7 +12428,7 @@
         "Hledat"
       ],
       "Search for a name or email": [
-        "Vyhledat název nebo e-mail"
+        "Vyhledat jméno nebo e-mail"
       ],
       "Second password": [
         "Druhé heslo"
@@ -15067,11 +15069,6 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Vyberte, k čemu může ${ BRAND_NAME } přistupovat: zobrazit e-mailové zprávy a nastavení, zobrazit a stáhnout kontakty, zobrazit a stáhnout všechny denní události, ke kterým máte přístup z kalendáře Google."
-      ]
-    },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Něco se pokazilo při přihlašování k účtu Gmail"
       ]
     },
     "Offer": {
@@ -17750,6 +17747,21 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } adresa",
+        "${ maxAddresses } adresy",
+        "${ maxAddresses } adres",
+        "${ maxAddresses } adres"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } kalendář",
+        "${ maxCalendars } kalendáře",
+        "${ maxCalendars } kalendářů",
+        "${ maxCalendars } kalendářů"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } cloudového úložiště pro soubory a fotky"
+      ],
       "${ value } of secure storage": [
         "${ value } bezpečného úložiště"
       ],
@@ -17768,6 +17780,9 @@
       "Billing Cycle": [
         "Fakturační cyklus"
       ],
+      "Collaborative document editing": [
+        "Spolupráce na úpravě dokumentů"
+      ],
       "Compare plans": [
         "Porovnání tarifů"
       ],
@@ -17780,11 +17795,17 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Pokračovat s ${ PLAN_NAMES[plan] }"
       ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Šifrovaný e-mail s úložištěm ${ totalMailStorageSize }"
+      ],
       "Encrypted password manager": [
         "Šifrovaný správce hesel"
       ],
       "End-to-end encryption": [
         "Koncové šifrování"
+      ],
+      "Every free account comes with:": [
+        "Každý bezplatný účet obsahuje:"
       ],
       "Free": [
         "Free"
@@ -17794,6 +17815,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "získejte bezpečnou ${ MAIL_APP_NAME } adresu."
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Získejte od nás bezpečnou adresu, nebo ${ internalButton }"
       ],
       "Manage user access": [
         "Správa přístupu uživatele"
@@ -17812,6 +17836,9 @@
       ],
       "Online documents": [
         "Online dokumenty"
+      ],
+      "Password manager for all your devices": [
+        "Správce hesel pro všechna vaše zařízení"
       ],
       "Pick your perfect plan": [
         "Vyberte si ideální tarif"
@@ -17846,6 +17873,9 @@
       "Share and collaborate of files": [
         "Sdílení a spolupráce na souborech"
       ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Zaregistrujte se a získejte vše, co ${ BRAND_NAME } nabízí"
+      ],
       "Sign up, protect your files": [
         "Zaregistrujte se a chraňte své soubory"
       ],
@@ -17870,6 +17900,9 @@
       "Upload files of any size": [
         "Nahrát soubory libovolné velikosti"
       ],
+      "use your current email.": [
+        "použijte svůj aktuální e-mail."
+      ],
       "Use your email, or ${ externalButton }": [
         "Použijte svůj e-mail nebo ${ externalButton }"
       ],
@@ -17884,6 +17917,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME } heslo"
+      ],
       "Confirm password": [
         "Potvrdit heslo"
       ],
@@ -18216,7 +18252,7 @@
     },
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
-        "Přístup k obsahu ve streamovacích službách po celém světě"
+        "Přístup k obsahu streamovacích služeb po celém světě"
       ],
       "Get 500 GB to securely store all your files and photos": [
         "Získejte 500 GB pro bezpečné uložení všech svých souborů a fotek"
@@ -19266,6 +19302,9 @@
       "Address added": [
         "Adresa přidána"
       ],
+      "Address successfully added": [
+        "Adresa byla úspěšně přidána"
+      ],
       "Address updated": [
         "Adresa aktualizována"
       ],
@@ -20001,17 +20040,8 @@
       "Cancel subscription?": [
         "Zrušit předplatné?"
       ],
-      "Cannot add Gateway": [
-        "Nelze přidat bránu"
-      ],
-      "Cannot add licenses": [
-        "Nelze přidat licence"
-      ],
       "Cannot add more users": [
         "Nelze přidat další uživatele"
-      ],
-      "Cannot add servers": [
-        "Nelze přidat servery"
       ],
       "Card verification": [
         "Ověření karty"
@@ -20084,6 +20114,9 @@
       ],
       "Connect apps and devices": [
         "Připojit aplikace a zařízení"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Připojení více adres Gmail s ${ planName }"
       ],
       "Connect organization": [
         "Připojení organizace"
@@ -20666,6 +20699,9 @@
       ],
       "Multi-user support": [
         "Podpora pro více uživatelů"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Více účtů, 1 soukromá doručená pošta"
       ],
       "My addresses": [
         "Moje adresy"

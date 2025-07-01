@@ -366,6 +366,9 @@
       "Explore other ${ BRAND_NAME } plans": [
         "다른 ${ BRAND_NAME } 플랜 살펴보기"
       ],
+      "Explore other plans": [
+        "다른 플랜 알아보기"
+      ],
       "Export": [
         "내보내기"
       ],
@@ -1222,6 +1225,11 @@
         "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "구독이 취소되었습니다."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "비활성화됨"
@@ -1515,17 +1523,6 @@
       ],
       "Working with sensitive data?": [
         "민감한 데이터를 다루고 계신가요?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "모든 전용 서버가 이미 게이트웨이에 할당되었습니다. 무료 체험 기간 종료 후 더 많은 서버를 구매할 수 있습니다."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "무료 체험에 ${ ipAddresses }개의 전용 서버가 포함되어 있습니다. 전체 구독이 시작되면 서버를 더 추가할 수 있습니다."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "무료 체험에 최대 ${ maxMembers }개의 라이선스가 포함됩니다. 전체 구독이 시작되면 라이선스를 더 추가할 수 있습니다."
       ]
     },
     "Browser": {
@@ -3016,6 +3013,14 @@
         "우선 지원"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "최대 ${ MAX_SYNC_PAID_USER }개의 계정에서 이메일을 전달하려면, ${ planName }(으)로 업그레이드하세요."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "${ MAX_SYNC_FREE_USER }개의 외부 계정에서 ${ MAIL_APP_NAME }(으)로 이메일을 전달하는 중입니다."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "입력란은 선택 사항입니다. 이 양식에 작성되는 정보는 향후 발행되는 청구서에만 표시되며 기존 청구서에는 영향을 미치지 않습니다."
@@ -3287,6 +3292,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "현재 결제를 사용할 수 없습니다. 나중에 다시 시도해주세요"
+      ],
+      "Permissions request failed.": [
+        "권한 요청을 실패했습니다."
       ],
       "Please configure a custom domain before adding addresses.": [
         "주소를 추가하기 전에 지정 도메인을 설정해야 합니다."
@@ -4675,6 +4683,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "전용 IP 주소가 있는 전용 서버를 개인 게이트웨이에 추가하여 미세 조정된 접근 제어가 가능합니다."
       ],
+      "Dedicated VPN servers": [
+        "전용 VPN 서버"
+      ],
       "default email address": [
         "기본 이메일 주소"
       ],
@@ -5244,6 +5255,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "조직의 전용 VPN 서버 수"
       ],
       "Numbers": [
         "숫자"
@@ -6148,9 +6162,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "10일간 해당 서버를 다른 국가로 재할당할 수 없습니다."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "또한 ${ boldPlanTitle }의 기능을 사용할 수 없게 됩니다:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "${ renewCycle }개월마다 ${ renewAmountStr }의 가격으로 갱신됩니다."
       ],
@@ -6231,6 +6242,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "무료 체험이 ${ timeRemaining }에 종료됩니다."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "또한 ${ boldPlanTitle }의 모든 기능도 사용할 수 없게 됩니다:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "해당 서버들을 다른 게이트웨이로 즉시 추가할 수 있게 됩니다."
@@ -6548,6 +6562,9 @@
       ],
       "Copy": [
         "복사"
+      ],
+      "Copy IP address to clipboard": [
+        "클립보드에 IP 주소 복사"
       ],
       "Could you please let us know which provider?": [
         "어느 제공자인지 말해주실 수 있나요?"
@@ -7347,7 +7364,7 @@
         "로그인 성공 (니모닉 대기)"
       ],
       "Sign in success (awaiting second factor)": [
-        "로그인 성공 (이중 인증 대기)"
+        "로그인 성공 (2단계 인증 대기)"
       ],
       "Sign in success (awaiting verify)": [
         "로그인 성공 (인증 대기)"
@@ -8595,11 +8612,6 @@
         "선택한 이미지 중 일부가 중복된 파일명으로 인해 업로드되지 않았습니다."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Gmail 계정 로그인 중 오류가 발생했습니다."
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited 12개월 플랜"
@@ -8609,6 +8621,9 @@
       ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 할인이 오늘 만료됩니다!"
+      ],
+      "Don’t show this again": [
+        "다시 보지 않기"
       ],
       "Don’t show this offer again": [
         "이 제안을 다시 보지 않기"
@@ -8677,6 +8692,9 @@
       "+10 more premium features": [
         "그 외 10개 더 많은 프리미엄 기능들"
       ],
+      "500 GB secure storage": [
+        "500 GB 보안 저장공간"
+      ],
       "Advanced threat protection": [
         "향상된 위협 보호 기능"
       ],
@@ -8700,6 +8718,12 @@
       ],
       "Storage": [
         "저장 공간"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가 내의 초고속 VPN 서버"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "신원 보호를 위한 무제한 별칭"
       ]
     },
     "Onboarding": {
@@ -9252,6 +9276,9 @@
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ details }": [
+        "은행 송금 - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -10046,6 +10073,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME } 비밀번호"
+      ],
       "Confirm password": [
         "비밀번호 확인"
       ],
@@ -10144,11 +10174,26 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "안전하게 탐색"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "${ BRAND_NAME }으로 더 많은 것을 시작해 보세요"
+      ],
+      "Get unlimited aliases": [
+        "무제한 별칭 받기"
+      ],
       "Go to subscription plans": [
         "구독 요금제 보러가기"
       ],
       "Guard against threats": [
         "위협으로부터 보호"
+      ],
+      "Increase your storage": [
+        "저장공간 늘리기"
+      ],
+      "Keep passwords safe": [
+        "안전하게 비밀번호 유지"
       ],
       "Unblock streaming content": [
         "스트리밍 콘텐츠 잠금 해제"
@@ -10232,8 +10277,17 @@
       "Access content on streaming services worldwide": [
         "전세계의 스트리밍 서비스 상의 콘텐츠에 접근"
       ],
+      "Get 500 GB to securely store all your files and photos": [
+        "모든 파일과 사진을 안전하게 저장할 수 있는 500 GB 스토리지를 받아보세요"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가의 초고속 VPN 서버에 접근"
+      ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "모든 것을 포함하는 하나의 플랜, ${ BRAND_NAME } Unlimited를 경험하세요"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "신원을 보호하고 스팸을 줄이기 위해 무제한 별칭을 받아보세요"
       ],
       "Keep your passwords safe and organized in multiple vaults ": [
         "회원님의 모든 비밀번호를 여러 보관함에 안전하고 체계적으로 보관하세요. "
@@ -11086,6 +11140,9 @@
       "Address added": [
         "주소 추가됨"
       ],
+      "Address successfully added": [
+        "주소가 성공적으로 추가되었습니다"
+      ],
       "Administrator privileges restored": [
         "관리자 권한 재설정됨"
       ],
@@ -11567,17 +11624,8 @@
       "Cancel subscription?": [
         "구독을 취소하시겠습니까?"
       ],
-      "Cannot add Gateway": [
-        "게이트웨이 추가 불가능"
-      ],
-      "Cannot add licenses": [
-        "라이선스를 더 추가할 수 없음"
-      ],
       "Cannot add more users": [
         "사용자를 더 추가할 수 없음"
-      ],
-      "Cannot add servers": [
-        "서버 추가 불가"
       ],
       "Card verification": [
         "카드 확인"
@@ -11635,6 +11683,9 @@
       ],
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "더 많은 Gmail 주소를 ${ planName }(으)로 연결하기"
       ],
       "Connect organization": [
         "조직에 연결"
@@ -11935,6 +11986,9 @@
       ],
       "Multi-user support": [
         "다중 사용자 지원"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "여러 계정, 단 하나의 받은 편지함"
       ],
       "Network error": [
         "네트워크 오류"
@@ -12526,6 +12580,9 @@
     "Unlimited offer": {
       "/month": [
         "/월간"
+      ],
+      "Only": [
+        "단"
       ]
     },
     "unprivatization": {

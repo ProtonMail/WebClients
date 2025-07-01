@@ -399,6 +399,12 @@
       "Delete permanently": [
         "სამუდამოდ წაშლა"
       ],
+      "Deleting folder": [
+        "საქაღალდის წაშლა"
+      ],
+      "Deleting label": [
+        "ჭდის წაშლა"
+      ],
       "Deselect all": [
         "მონიშვნის მოხსნა"
       ],
@@ -1420,6 +1426,10 @@
       "Trust": [
         "ნდობა"
       ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
+      ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
       ],
@@ -1482,9 +1492,6 @@
       ],
       "Upgrade": [
         "ტარიფის აწევა"
-      ],
-      "Upgrade Now": [
-        "ახლა გაუმჯობესება"
       ],
       "Upgrade now": [
         "ტარიფის განახლება"
@@ -1582,15 +1589,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია 2 დღეში დასრულდება. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია 5 დღეში დასრულდება. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "თქვენი ელფოსტის წერის დამხმარე"
@@ -1780,6 +1778,9 @@
       "Recover previous file versions": [
         "წინა ფაილის ვერსიების აღდგენა"
       ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "დაზოგეთ ბევრი VPN-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
+      ],
       "Save time with built-in 2FA": [
         "დაზოგეთ დრო ჩაშენებული 2FA-ით"
       ],
@@ -1910,6 +1911,11 @@
       ],
       "Sender verification passed": [
         "გამომგზავნის შემოწმება წარმატებულია"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "გამოწერა გაუქმდა."
       ]
     },
     "bf2023: Deal details": {
@@ -4517,6 +4523,9 @@
       "No address with keys available to compose a message": [
         "შეტყობინების დასაწერად გასაღებიანი მისამართი ნაპოვნი არაა"
       ],
+      "No address with sending permissions": [
+        "გაგზავნის უფლების მქონე მისამართის გარეშე"
+      ],
       "No calendars found to import": [
         "შემოსატანი კალენდრები ვერ ვიპოვე"
       ],
@@ -4563,6 +4572,9 @@
       ],
       "Payment process not supported": [
         "გადახდის პროცესის მხარდაჭერა არ არსებობს"
+      ],
+      "Permissions request failed.": [
+        "წვდომების მოთხოვნა ჩავარდა."
       ],
       "Please activate your search again": [
         "თავიდან ჩართეთ შემცველობაში ძებნის ფუნქცია"
@@ -6694,6 +6706,9 @@
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
       ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
       "default email address": [
         "ნაგულისხმევი ელფოსტის მისამართი"
       ],
@@ -7269,6 +7284,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "გამოყოფილი VPN სერვერების რაოდენობა ორგანიზაციაში"
       ],
       "Numbers": [
         "რიცხვები"
@@ -8287,9 +8305,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "თქვენ დაწერეთ \"${ attachmentsFoundKeyword }\", მაგრამ ფაილი არ მიგიმაგრებიათ. მაინც გააგზავნით შეტყობინებას?"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }.",
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }."
@@ -8394,6 +8409,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "თქვენი გამოსაცდელი პერიოდის დასრულების დროა: ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
@@ -11137,6 +11155,9 @@
       "Activate selected": [
         "მონიშნულის გააქტიურება"
       ],
+      "Ad-free promise": [
+        "დაპირება რეკლამის გარეშე"
+      ],
       "Advanced encryption": [
         "დამატებითი დაშიფვრა"
       ],
@@ -11443,6 +11464,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "საბანკო გადარიცხვა"
       ],
@@ -11555,6 +11579,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "საბანკო გადარიცხვა - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -12529,6 +12561,24 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "იქონიეთ წვდომა სტრიმინგის სერვისებთან მთელ მსოფლიოში"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "მიიღეთ 500გბ და შეინახეთ დაცულად ყველა თქვენი ფაილი და სურათი"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "მიიღეთ წვდომა უსწრაფეს VPN სერვერებთან 110+ ქვეყანაში"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "მიიღეთ შეუზღუდავი ფსევდონიმები, რომ დაიცვათ თავი და შეამციროთ სპამის რაოდენობა"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "იქონიეთ თქვენი პაროლები უსაფრთხოდ და დალაგებულად მრავალ საცავში "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "დაიცავით თქვენი ანგარიში საშიშროებებისგან Sentinel-თან ერთად"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "ასწიეთ სატარიფო გეგმა დაზოგეთ მეტი 2 წლით ${ planName }"
       ]
