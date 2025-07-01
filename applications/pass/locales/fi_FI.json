@@ -1249,12 +1249,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Kohde \"${ payload.item.data.metadata.name }\" hylättiin"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } estetty",
         "${ blockedEmailsCount } estetty"
@@ -2551,6 +2545,9 @@
       "Catch-All": [
         "Nappaa kaikki"
       ],
+      "Checkbox": [
+        "Valintaruutu"
+      ],
       "Choose unlock method": [
         "Valitse avaustapa"
       ],
@@ -2559,6 +2556,9 @@
       ],
       "City": [
         "Kaupunki"
+      ],
+      "Class": [
+        "Luokka"
       ],
       "Code": [
         "Koodi"
@@ -2650,6 +2650,9 @@
       "DNS": [
         "DNS"
       ],
+      "Doctor": [
+        "Lääkäri"
+      ],
       "Domain": [
         "Verkkotunnus"
       ],
@@ -2706,6 +2709,9 @@
       ],
       "Extra email addresses": [
         "Lisäsähköpostiosoitetta"
+      ],
+      "Extra fields": [
+        "Lisäkentät"
       ],
       "Extra password": [
         "Lisäsalasana"
@@ -2788,6 +2794,9 @@
       "Holder Name": [
         "Haltijan nimi"
       ],
+      "Hospital": [
+        "Sairaala"
+      ],
       "Host": [
         "Isäntä"
       ],
@@ -2869,6 +2878,9 @@
       "Key fingerprint": [
         "Avaimen sormenjälki"
       ],
+      "Key type": [
+        "Avaimen tyyppi"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pikanäppäin: ${ shortcut }"
       ],
@@ -2935,14 +2947,23 @@
       "max views reached": [
         "avausrajoitus on saavutettu"
       ],
+      "Medications": [
+        "Lääkitykset"
+      ],
       "Member ID": [
         "Jäsentunnus"
+      ],
+      "Member Name": [
+        "Jäsenen nimi"
       ],
       "Members": [
         "Jäsenet"
       ],
       "Membership": [
         "Jäsenyys"
+      ],
+      "Membership ID": [
+        "Jäsentunnus"
       ],
       "Middle name": [
         "Toinen nimi"
@@ -3025,6 +3046,9 @@
       "Organization": [
         "Organisaatio"
       ],
+      "Organization Name": [
+        "Organisaation nimi"
+      ],
       "Other": [
         "Muu"
       ],
@@ -3051,6 +3075,9 @@
       ],
       "Password history": [
         "Salasanahistoria"
+      ],
+      "Patient Name": [
+        "Potilaan nimi"
       ],
       "Personal": [
         "Henkilökohtainen"
@@ -3282,6 +3309,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Tämä kohde on käytettävissä ${ date } asti, tai kunnes katselurajoitus on saavutettu."
+      ],
+      "Tier/Level": [
+        "Taso"
       ],
       "Tier/Status": [
         "Taso"
@@ -3627,6 +3657,18 @@
       "Add note": [
         "Lisää muistiinpano"
       ],
+      "Add password": [
+        "Lisää salasana"
+      ],
+      "Add private key": [
+        "Lisää yksityinen avain"
+      ],
+      "Add public key": [
+        "Lisää julkinen avain"
+      ],
+      "Add SSID": [
+        "Lisää SSID"
+      ],
       "Add text": [
         "Lisää teksti"
       ],
@@ -3880,6 +3922,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Tilin suojaus"
@@ -4369,6 +4414,12 @@
       ],
       "URL is invalid": [
         "URL on virheellinen."
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Siirrä kohde holviin",
+        "Siirrä kohteet holviin"
       ]
     },
     "Warning": {
