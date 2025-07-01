@@ -22,6 +22,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecoveryState';
 import { getSubscriptionPlanTitleAndName } from '@proton/payments';
 import { isTrial } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import type { ForkType } from '@proton/shared/lib/authentication/fork';
 import { APPS, type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -56,6 +57,7 @@ const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLin
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
     const location = useLocation();
     const referral = useReferral(location);
     const authentication = useAuthentication();
@@ -138,7 +140,10 @@ const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLin
     });
     const upgradeUrl = addUpsellPath(upgradePathname, upsellRef);
     const displayUpgradeButton =
-        (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname) && !user.hasPassLifetime;
+        (user.isFree || isTrial(subscription)) &&
+        !isB2BTrial &&
+        !location.pathname.endsWith(upgradePathname) &&
+        !user.hasPassLifetime;
 
     // nameToDisplay can be falsy for external account
     const nameToDisplay = user.DisplayName || user.Name || '';
