@@ -1273,12 +1273,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Element \"${ payload.item.data.metadata.name }\" został odrzucony"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Aktualizacja \"${ payload.item.data.metadata.name }\" została odrzucona"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } zablokowana",
         "${ blockedEmailsCount } zablokowane",

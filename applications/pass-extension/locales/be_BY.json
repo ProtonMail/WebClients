@@ -237,7 +237,7 @@
         "Адключыць гэты псеўданім і спыніць атрыманне лістоў, якія адпраўляюцца на яго"
       ],
       "Discard": [
-        "Скасаваць"
+        "Адхіліць"
       ],
       "Dismiss": [
         "Адхіліць"
@@ -1273,11 +1273,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Элемент \"${ payload.item.data.metadata.name }\" быў адхілены"
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Элемент \"${ payload.itemName }\" быў адхілены"
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Абнаўленне \"${ payload.itemName }\" было адхілена"
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } заблакіраваны",
@@ -3858,7 +3858,7 @@
     },
     "sso": {
       "Approve or deny it now": [
-        "Ухваліць або адхіліць яго"
+        "Ухваліць або забараніць яго"
       ],
       "Enter the confirmation code we sent on your other device.": [
         "Увядзіце код пацвярджэння адпраўлены на вашу іншую прыладу."
@@ -4109,7 +4109,7 @@
         "Ці ведалі вы што?"
       ],
       "Discard changes?": [
-        "Скасаваць змены?"
+        "Адхіліць змены?"
       ],
       "DKIM (Optional)": [
         "DKIM (неабавязкова)"
