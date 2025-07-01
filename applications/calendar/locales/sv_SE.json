@@ -1188,6 +1188,11 @@
         "Valfritt"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Prenumeration avslutad."
+      ]
+    },
     "Badge": {
       "New!": [
         "Nytt!"
@@ -5022,6 +5027,9 @@
       "Dedicated servers": [
         "Dedikerade servrar"
       ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
       "default email address": [
         "standard e-postadress"
       ],
@@ -5330,6 +5338,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerade VPN-servrar i organisationen"
       ],
       "Numbers": [
         "Siffror"
@@ -5883,9 +5894,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
         "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
@@ -5989,6 +5997,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Din provperiod slutar om ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du kommer förlora åtkomst till ${ boldPlanTitle } den ${ boldEndDate }."
@@ -8796,6 +8807,9 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
+      ],
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
       ]
@@ -11090,10 +11104,10 @@
         "Verifiering misslyckades"
       ],
       "Verifying your card...": [
-        "Verifierar ditt kort..."
+        "Verifierar ditt kort …"
       ],
       "Verifying your payment...": [
-        "Verifierar din betalning..."
+        "Verifierar din betalning …"
       ],
       "VPN explained": [
         "VPN förklarat"

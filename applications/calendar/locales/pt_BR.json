@@ -1199,6 +1199,11 @@
         "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Assinatura cancelada."
+      ]
+    },
     "Badge": {
       "New!": [
         "Novo!"
@@ -5044,6 +5049,9 @@
       "Dedicated servers": [
         "Servidores dedicados"
       ],
+      "Dedicated VPN servers": [
+        "Servidores de VPN dedicados"
+      ],
       "default email address": [
         "endereço de e-mail padrão"
       ],
@@ -5352,6 +5360,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados na organização."
       ],
       "Numbers": [
         "Números"
@@ -5905,9 +5916,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Você não será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Você também perderá o acesso ao ${ boldPlanTitle } recursos:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }.",
         "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }."
@@ -6014,6 +6022,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Seu período de avaliação termina em ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Você também perderá o acesso ao ${ boldPlanTitle } recursos:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Você perderá o acesso a ${ boldPlanTitle } em ${ boldEndDate }."

@@ -282,7 +282,7 @@
         "Зняць выбар з усіх"
       ],
       "Discard": [
-        "Скасаваць"
+        "Адхіліць"
       ],
       "Dismiss": [
         "Адхіліць"
@@ -1101,10 +1101,10 @@
         "Значная эканомія на прэміяльных функцыях Drive з абмежаванай па часе скідкай."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
-        "Значная эканомія на прэміяльныя функцыі Mail з абмежаванай па часе скідкай."
+        "Значная эканомія на прэміяльных функцыях Mail з абмежаванай па часе скідкай."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
-        "Значная эканомія на прэміяльныя функцыі Pass з абмежаванай па часе скідкай."
+        "Значная эканомія на прэміяльных функцыях Pass з абмежаванай па часе скідкай."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
         "Значная эканомія на прэміяльных функцыях VPN з абмежаванай па часе скідкай."
@@ -1207,6 +1207,11 @@
     "Attendee role": {
       "Optional": [
         "Неабавязкова"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Падпіска скасавана."
       ]
     },
     "Badge": {
@@ -5029,7 +5034,7 @@
         "Любы чалавек з гэтай спасылкай зможа ўбачыць у вашым календары, ці маеце вы вольны час або заняты ўвесь дзень. Аднак, ён не зможа ўбачыць падрабязнасці падзеі, напрыклад, загаловак, размяшчэнне або ўдзельнікаў."
       ],
       "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце скасаваць імпартаванне?"
+        "Вы сапраўды хочаце адхіліць імпартаванне?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
@@ -5172,6 +5177,9 @@
       "Dedicated servers": [
         "Вылучаныя серверы"
       ],
+      "Dedicated VPN servers": [
+        "Вылучаныя VPN серверы"
+      ],
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
       ],
@@ -5182,7 +5190,7 @@
         "Выдаленне падзей..."
       ],
       "Discard changes?": [
-        "Скасаваць змены?"
+        "Адхіліць змены?"
       ],
       "Discover new features unlocked and start using them right away!": [
         "Пазнаёмцеся з новымі функцыямі і пачніце выкарыстоўваць іх неадкладна!"
@@ -5486,6 +5494,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Колькасць вылучаных VPN сервераў у арганізацыі"
       ],
       "Numbers": [
         "Лічбы"
@@ -6051,9 +6062,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Вы таксама страціце доступ да функцый ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцы ў памеры ${ renewAmountStr }.",
@@ -6109,10 +6117,10 @@
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Ваша дата падаўжэння: ${ nextBillingDate }."
+        "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Ваша дата падаўжэння: ${ nextBillingDate }."
+        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your information was found on ${ displayedDate }": [
         "Вашы звесткі былі знойдзены ${ displayedDate }"
@@ -6165,11 +6173,14 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Ваш пробны перыяд завершыцца праз ${ timeRemaining }."
       ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Вы таксама страціце доступ да функцый ${ boldPlanTitle }:"
+      ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Доступ да ${ boldPlanTitle } будзе страчаны ${ boldEndDate }."
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
-        "Вы ўсё яшчэ зможаце праглядаць даныя вашага ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+        "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
       ]
     },
     "info": {
@@ -7964,7 +7975,7 @@
         "200 ГБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў"
+        "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў з адмысловай абаронай"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Пашыраная бяспека для каманд, якая выходзіць за рамкі прамысловых стандартаў."
@@ -8767,10 +8778,10 @@
         "Як толькі пачнецца ваша поўная падпіска..."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Вы ўсё яшчэ зможаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+        "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
-        "Вы ўсё яшчэ зможаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+        "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Вы можаце карыстацца ${ planTitle } да канца пробнага перыяду. Плата за гэта спаганяцца не будзе."
@@ -9109,7 +9120,7 @@
     },
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - карта, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+        "Apple Pay - картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
       ],
       "Bank transfer - ${ details }": [
         "Банкаўскі перавод - ${ details }"
@@ -9948,13 +9959,13 @@
         "Атрымайце доступ да звышхуткіх сервераў VPN у больш чым 110 краінах"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
-        "Атрымайце тарыфны план ${ BRAND_NAME } Unlimited, які аб'ядноўвае ўсе функцыі."
+        "Атрымайце тарыфны план ${ BRAND_NAME } Unlimited, які аб'ядноўвае ўсе гэтыя функцыі."
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Атрымайце неабмежаваную колькасць псеўданімаў, каб абараніць сваю ідэнтычнасць і паменшыць спам"
       ],
       "Keep your passwords safe and organized in multiple vaults ": [
-        "Захоўвайце свае паролі ў бяспецы і ўпарадкаванымі пры дапамозе некалькіх сховішч "
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч "
       ],
       "Protect your account from threats with Sentinel": [
         "Абараніце свой уліковы запіс ад пагроз з дамогай Sentinel"
