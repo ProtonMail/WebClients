@@ -265,7 +265,7 @@
         "Адключыць"
       ],
       "Discard": [
-        "Скасаваць"
+        "Адхіліць"
       ],
       "Discard changes": [
         "Адхіліць змены"
@@ -1168,10 +1168,10 @@
         "Значная эканомія на прэміяльных функцыях Drive з абмежаванай па часе скідкай."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
-        "Значная эканомія на прэміяльныя функцыі Mail з абмежаванай па часе скідкай."
+        "Значная эканомія на прэміяльных функцыях Mail з абмежаванай па часе скідкай."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
-        "Значная эканомія на прэміяльныя функцыі Pass з абмежаванай па часе скідкай."
+        "Значная эканомія на прэміяльных функцыях Pass з абмежаванай па часе скідкай."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
         "Значная эканомія на прэміяльных функцыях VPN з абмежаванай па часе скідкай."
@@ -1244,6 +1244,11 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Падпіска скасавана."
       ]
     },
     "Badge for domain": {
@@ -1551,26 +1556,6 @@
       ],
       "Working with sensitive data?": [
         "Працуеце з канфідэнцыяльнымі данымі?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Ваш вылучаны сервер ужо прызначаны шлюзу. У вас будзе магчымасць купіць больш сервераў, як толькі завершыцца ваш бясплатны пробны перыяд.",
-        "Усе вашы вылучаныя серверы ўжо прызначаны шлюзам. У вас будзе магчымасць купіць больш сервераў, як толькі завершыцца ваш бясплатны пробны перыяд.",
-        "Усе вашы вылучаныя серверы ўжо прызначаны шлюзам. У вас будзе магчымасць купіць больш сервераў, як толькі завершыцца ваш бясплатны пробны перыяд.",
-        "Усе вашы вылучаныя серверы ўжо прызначаны шлюзам. У вас будзе магчымасць купіць больш сервераў, як толькі завершыцца ваш бясплатны пробны перыяд."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Ваш бясплатны пробны перыяд уключае ${ ipAddresses } вылучаны сервер. Вы можаце дадаць больш сервераў, як толькі пачне дзейнічаць ваша поўная падпіска.",
-        "Ваш бясплатны пробны перыяд уключае ${ ipAddresses } вылучаныя серверы. Вы можаце дадаць больш сервераў, як толькі пачне дзейнічаць ваша поўная падпіска.",
-        "Ваш бясплатны пробны перыяд уключае ${ ipAddresses } вылучаных сервераў. Вы можаце дадаць больш сервераў, як толькі пачне дзейнічаць ваша поўная падпіска.",
-        "Ваш бясплатны пробны перыяд уключае ${ ipAddresses } вылучаны сервер. Вы можаце дадаць больш сервераў, як толькі пачне дзейнічаць ваша поўная падпіска."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Ваш бясплатны пробны перыяд уключае ${ maxMembers } ліцэнзію. Вы можаце дадаць больш ліцэнзій, як толькі пачне дзейнічаць ваша поўная падпіска.",
-        "Ваш бясплатны пробны перыяд уключае максімум ${ maxMembers } ліцэнзіі. Вы можаце дадаць больш ліцэнзій, як толькі пачне дзейнічаць ваша поўная падпіска.",
-        "Ваш бясплатны пробны перыяд уключае максімум ${ maxMembers } ліцэнзій. Вы можаце дадаць больш ліцэнзій, як толькі пачне дзейнічаць ваша поўная падпіска.",
-        "Ваш бясплатны пробны перыяд уключае максімум ${ maxMembers } ліцэнзій. Вы можаце дадаць больш ліцэнзій, як толькі пачне дзейнічаць ваша поўная падпіска."
       ]
     },
     "Browser": {
@@ -3073,6 +3058,20 @@
         "Прыярытэтная падтрымка"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковы запіс.",
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковыя запісы.",
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў.",
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешняга ўліковага запісу ў ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, з'явяцца толькі ў выстаўленых рахунках у будучым і гэта не акажа ўплыў на бягучыя рахункі."
@@ -3344,6 +3343,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Плацяжы ў цяперашні час недаступны. Паспрабуйце яшчэ раз пазней"
+      ],
+      "Permissions request failed.": [
+        "Збой запыту дазволаў."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Перад дадаваннем адрасоў неабходна сканфігураваць карыстальніцкі дамен."
@@ -4473,9 +4475,9 @@
       ],
       "${ resultsCount } result found": [
         "${ resultsCount } вынік знойдзены",
-        "${ resultsCount } вынікі знойдзена",
-        "${ resultsCount } вынікаў знойдзена",
-        "${ resultsCount } вынікаў знойдзена"
+        "${ resultsCount } вынікі знойдзены",
+        "${ resultsCount } вынікаў знойдзены",
+        "${ resultsCount } вынікаў знойдзены"
       ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length } выбраны",
@@ -4670,7 +4672,7 @@
         "Вы сапраўды хочаце скасаваць рэдагаванне групы?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Вы сапраўды хочаце скасаваць змены?"
+        "Вы сапраўды хочаце адхіліць змены?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Вы сапраўды хочаце даць гэтаму карыстальніку прывілеі адміністратара?"
@@ -4851,6 +4853,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
+      ],
+      "Dedicated VPN servers": [
+        "Вылучаныя VPN серверы"
       ],
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
@@ -5427,6 +5432,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Колькасць вылучаных VPN сервераў у арганізацыі"
       ],
       "Numbers": [
         "Лічбы"
@@ -6379,9 +6387,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "У вас не будзе магчымасці паўторна прызначыць гэтыя серверы іншай краіне на працягу 10 дзён."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Вы таксама страціце доступ да функцый ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцы ў памеры ${ renewAmountStr }.",
@@ -6475,6 +6480,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Ваш пробны перыяд завершыцца праз ${ timeRemaining }."
       ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Вы таксама страціце доступ да функцый ${ boldPlanTitle }:"
+      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "У вас будзе магчымасць неадкладна дадаць гэтыя серверы ў іншы шлюз."
       ],
@@ -6482,7 +6490,7 @@
         "Доступ да ${ boldPlanTitle } будзе страчаны ${ boldEndDate }."
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
-        "Вы ўсё яшчэ зможаце праглядаць даныя вашага ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+        "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
@@ -7714,7 +7722,7 @@
         "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashacampaniya.by). Наш майстар дапаможа вам з працэсам наладжвання."
       ],
       "View account-related events across your organization.": [
-        "Паглядзець падзеі, якія звязаны з уліковым запісам ва ўсё арганізацыі."
+        "Паглядзець падзеі, якія звязаны з уліковым запісам ва ўсёй арганізацыі."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
@@ -8925,11 +8933,6 @@
         "Некаторыя відарысы не былі запампаваны па прычыне дубліравання імён файлаў у бягучым выбары."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Нешта пайшло не так падчас уваходу ў ваш уліковы запіс Gmail"
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited за 12 месяцаў"
@@ -9078,10 +9081,10 @@
         "Як толькі пачнецца ваша поўная падпіска..."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Вы ўсё яшчэ зможаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+        "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
-        "Вы ўсё яшчэ зможаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+        "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Вы можаце карыстацца ${ planTitle } да канца пробнага перыяду. Плата за гэта спаганяцца не будзе."
@@ -9599,7 +9602,7 @@
     },
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - карта, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+        "Apple Pay - картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
       ],
       "Bank transfer - ${ details }": [
         "Банкаўскі перавод - ${ details }"
@@ -10445,6 +10448,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "Пароль ад ${ BRAND_NAME }"
+      ],
       "Confirm password": [
         "Пацвердзіце пароль"
       ],
@@ -10671,13 +10677,13 @@
         "Атрымайце доступ да звышхуткіх сервераў VPN у больш чым 110 краінах"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
-        "Атрымайце тарыфны план ${ BRAND_NAME } Unlimited, які аб'ядноўвае ўсе функцыі."
+        "Атрымайце тарыфны план ${ BRAND_NAME } Unlimited, які аб'ядноўвае ўсе гэтыя функцыі."
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Атрымайце неабмежаваную колькасць псеўданімаў, каб абараніць сваю ідэнтычнасць і паменшыць спам"
       ],
       "Keep your passwords safe and organized in multiple vaults ": [
-        "Захоўвайце свае паролі ў бяспецы і ўпарадкаванымі пры дапамозе некалькіх сховішч "
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч "
       ],
       "Protect your account from threats with Sentinel": [
         "Абараніце свой уліковы запіс ад пагроз з дамогай Sentinel"
@@ -11611,6 +11617,9 @@
       "Address added": [
         "Адрас дададзены"
       ],
+      "Address successfully added": [
+        "Адрас паспяхова дададзены"
+      ],
       "Administrator privileges restored": [
         "Прывілеі адміністратара адноўлены"
       ],
@@ -12110,17 +12119,8 @@
       "Cancel subscription?": [
         "Скасаваць падпіску?"
       ],
-      "Cannot add Gateway": [
-        "Немагчыма дадаць шлюз"
-      ],
-      "Cannot add licenses": [
-        "Немагчыма дадаць ліцэнзіі"
-      ],
       "Cannot add more users": [
         "Немагчыма дадаць больш карыстальнікаў"
-      ],
-      "Cannot add servers": [
-        "Немагчыма дадаць серверы"
       ],
       "Card verification": [
         "Праверка карткі"
@@ -12178,6 +12178,9 @@
       ],
       "Connect apps and devices": [
         "Падключэнне праграм і прылад"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Падключайце больш адрасоў Gmail з ${ planName }"
       ],
       "Connect organization": [
         "Падключэнне арганізацыі"
@@ -12300,7 +12303,7 @@
         "Адключыць двухфактарную аўтэнтыфікацыю?"
       ],
       "Discard changes?": [
-        "Скасаваць змены?"
+        "Адхіліць змены?"
       ],
       "Domain names": [
         "Даменныя імёны"
@@ -12487,6 +12490,9 @@
       ],
       "Multi-user support": [
         "Падтрымка шматкарыстальніцкага рэжыму"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Некалькі ўліковых запісаў і 1 прыватная паштовая скрыня"
       ],
       "Network error": [
         "Памылка сеткі"

@@ -1255,6 +1255,11 @@
         "Importo dovuto ora"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abbonamento annullato."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Disabilitata"
@@ -1552,20 +1557,6 @@
       ],
       "Working with sensitive data?": [
         "Lavori con dati sensibili?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Il tuo server dedicato è già assegnato a un Gateway. Potrai acquistare altri server una volta terminata la tua prova gratuita.",
-        "Tutti i tuoi server dedicati sono già assegnati ai Gateway. Potrai acquistare altri server una volta terminata la tua prova gratuita."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "La tua prova gratuita include ${ ipAddresses } server dedicato. Puoi aggiungere altri server una volta iniziato il tuo abbonamento completo.",
-        "La tua prova gratuita include ${ ipAddresses } server dedicati. Puoi aggiungere altri server una volta iniziato il tuo abbonamento completo."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "La tua prova gratuita include ${ maxMembers } licenza. Puoi aggiungere altre licenze una volta iniziato il tuo abbonamento completo.",
-        "La tua prova gratuita include un massimo di ${ maxMembers } licenze. Puoi aggiungere altre licenze una volta iniziato il tuo abbonamento completo."
       ]
     },
     "Browser": {
@@ -3068,6 +3059,16 @@
         "Supporto prioritario"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Per inoltrare email da un massimo di ${ MAX_SYNC_PAID_USER } account, effettua l’upgrade a ${ planName }.",
+        "Per inoltrare email da un massimo di ${ MAX_SYNC_PAID_USER } account, effettua l\"upgrade a ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Stai inoltrando email da ${ MAX_SYNC_FREE_USER } account esterno a ${ MAIL_APP_NAME }.",
+        "Stai inoltrando email da ${ MAX_SYNC_FREE_USER } account esterni a ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "I campi di testo sono opzionali. Le informazioni inserite in questo modulo verranno mostrate solo sulle fatture future e non su quelle esistenti."
@@ -3339,6 +3340,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "I pagamenti non sono attualmente disponibili, per favore riprova più tardi"
+      ],
+      "Permissions request failed.": [
+        "Richiesta di autorizzazioni non riuscita."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configura un dominio personalizzato prima di aggiungere indirizzi."
@@ -4767,6 +4771,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
       ],
+      "Dedicated VPN servers": [
+        "Server VPN dedicati"
+      ],
       "default email address": [
         "indirizzo email predefinito"
       ],
@@ -5338,6 +5345,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Numero di server VPN dedicati nell'organizzazione"
       ],
       "Numbers": [
         "Numeri"
@@ -6261,9 +6271,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Non potrai riassegnare questi server a un altro Paese per 10 giorni."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Perderai anche l'accesso alle funzionalità di ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese.",
         "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mesi."
@@ -6348,6 +6355,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "La tua prova terminerà tra ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Perderai anche l'accesso alle funzionalità di ${ boldPlanTitle }:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Potrai aggiungere immediatamente questi server a un altro Gateway."
@@ -8751,11 +8761,6 @@
         "Alcune immagini non sono state caricate a causa di nomi di file duplicati nell'attuale selezione."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Qualcosa è andato storto mentre cercavi di accedere al tuo account Gmail."
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited per 12 mesi"
@@ -10249,6 +10254,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "Password di ${ BRAND_NAME }"
+      ],
       "Confirm password": [
         "Conferma la password"
       ],
@@ -11349,6 +11357,9 @@
       "Address added": [
         "Indirizzo aggiunto"
       ],
+      "Address successfully added": [
+        "Indirizzo aggiunto"
+      ],
       "Administrator privileges restored": [
         "Privilegi di amministratore ripristinati"
       ],
@@ -11838,17 +11849,8 @@
       "Cancel subscription?": [
         "Vuoi annullare l'abbonamento?"
       ],
-      "Cannot add Gateway": [
-        "Impossibile aggiungere gateway"
-      ],
-      "Cannot add licenses": [
-        "Impossibile aggiungere licenze"
-      ],
       "Cannot add more users": [
         "Impossibile aggiungere altri utenti"
-      ],
-      "Cannot add servers": [
-        "Impossibile aggiungere server"
       ],
       "Card verification": [
         "Verifica della carta"
@@ -11906,6 +11908,9 @@
       ],
       "Connect apps and devices": [
         "Connetti app e dispositivi"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Connetti più indirizzi Gmail con ${ planName }"
       ],
       "Connect organization": [
         "Connetti l'organizzazione"
@@ -12209,6 +12214,9 @@
       ],
       "Multi-user support": [
         "Supporto multi-utente"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Più account, 1 casella di posta privata"
       ],
       "Network error": [
         "Errore di rete"
