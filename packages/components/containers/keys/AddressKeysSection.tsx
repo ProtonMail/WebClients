@@ -93,6 +93,14 @@ const AddressKeysSection = () => {
     }, [addressIndex, Addresses]);
 
     const isLoadingKey = loadingKeyID !== '';
+    const outgoingE2EEForwardings =
+        loadingOutgoingAddressForwardings || !Address
+            ? []
+            : outgoingAddressForwardings.filter(
+                  ({ Type, ForwarderAddressID }) =>
+                      Type === ForwardingType.InternalEncrypted && ForwarderAddressID === Address.ID
+              );
+    const hasOutgoingE2EEForwardings = outgoingE2EEForwardings.length > 0;
 
     const handleSetPrimaryKey = async (ID: string) => {
         if (isLoadingKey || !addressKeys || !userKeys || loadingOutgoingAddressForwardings) {
@@ -132,11 +140,7 @@ const AddressKeysSection = () => {
             }
         };
 
-        const outgoingE2EEForwardings = outgoingAddressForwardings.filter(
-            ({ Type }) => Type === ForwardingType.InternalEncrypted
-        );
-
-        if (outgoingE2EEForwardings.length === 0) {
+        if (!hasOutgoingE2EEForwardings) {
             return onSetPrimaryKey(ID);
         }
 
@@ -407,8 +411,6 @@ const AddressKeysSection = () => {
             </SettingsSectionWide>
         );
     })();
-
-    const hasOutgoingE2EEForwardings = !loadingOutgoingAddressForwardings && outgoingAddressForwardings.length > 0;
 
     return (
         <>
