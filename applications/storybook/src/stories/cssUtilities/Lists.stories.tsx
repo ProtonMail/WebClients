@@ -1,8 +1,7 @@
-import { getTitle } from '../../helpers/title';
 import mdx from './Lists.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Lists',
     parameters: {
         docs: {
             page: mdx,

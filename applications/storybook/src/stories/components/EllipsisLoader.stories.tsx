@@ -1,11 +1,10 @@
 import { EllipsisLoader } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './EllipsisLoader.mdx';
 
 export default {
     component: EllipsisLoader,
-    title: getTitle(__filename, false),
+    title: 'Components/Ellipsis Loader',
     parameters: {
         docs: {
             page: mdx,

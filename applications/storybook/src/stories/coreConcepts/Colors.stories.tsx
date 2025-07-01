@@ -2,11 +2,10 @@ import type { FunctionComponent, ReactNode } from 'react';
 
 import { ColorItem, ColorPalette } from '@storybook/addon-docs';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Colors.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'Core Concepts/Colors',
     parameters: {
         docs: {
             page: mdx,

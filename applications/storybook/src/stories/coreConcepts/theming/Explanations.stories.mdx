@@ -3,9 +3,7 @@ import { Meta, Source } from '@storybook/addon-docs';
 import { Alert, ThemeSvg } from '@proton/components';
 import { PROTON_DEFAULT_THEME, PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 
-import { getTitle } from '../../../helpers/title';
-
-<Meta title={getTitle(__filename)} />
+<Meta title="Core Concepts/Theming/Explanations" />
 
 # Applications theming
 
@@ -89,8 +87,8 @@ selector {
 
 Optional variables are created for **two purposes**:
 
--   Allowing users to easily modify themes, for example customizing themes by injecting css
--   Enabling adaptation of properties for a specific theme in [certain cases](/docs/core-concepts-theming-usage--page#themeable-value-with-optional)
+- Allowing users to easily modify themes, for example customizing themes by injecting css
+- Enabling adaptation of properties for a specific theme in [certain cases](/docs/core-concepts-theming-usage--page#themeable-value-with-optional)
 
 Optional variables are usually only used for one situation, so it makes sense that an optional variable name refers to a specific context. The variable name must use train-case naming convention and be **as descriptive as possible to understand the context of use and impacted property**.
 
