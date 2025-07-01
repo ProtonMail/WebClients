@@ -597,7 +597,7 @@
         "Skicka"
       ],
       "Submitting report...": [
-        "Skickar rapport..."
+        "Skickar rapport …"
       ],
       "Sync alias": [
         "Synkronisera alias",
@@ -1248,11 +1248,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Objekt ”${ payload.item.data.metadata.name }” avfärdades"
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Objekt ”${ payload.itemName }” avfärdades"
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Uppdatering ”${ payload.item.data.metadata.name }” avfärdades"
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Uppdatering ”${ payload.itemName }” avfärdades"
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } blockerat",
@@ -1589,7 +1589,7 @@
         "E-post som skickas till dina alias vidarebefordras till dina brevlådor. Ett alias kan ha mer än en brevlåda, användbart för att dela ett alias mellan dig och dina vänner."
       ],
       "Emptying trash...": [
-        "Tömmer papperskorg..."
+        "Tömmer papperskorg …"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Aktivera ${ PASS_APP_NAME } genom att ansluta ditt ${ BRAND_NAME }-konto"
@@ -1763,7 +1763,7 @@
         "Lämnar objekt …"
       ],
       "Leaving vault...": [
-        "Lämnar valv..."
+        "Lämnar valv …"
       ],
       "Let's get you started by creating your first item": [
         "Kom igång genom att skapa ditt första objekt"
@@ -1879,7 +1879,7 @@
         "PIN-kod registrerad. Använd den för att låsa upp ${ PASS_APP_NAME }"
       ],
       "Pinning item...": [
-        "Fäster objekt..."
+        "Fäster objekt …"
       ],
       "Please check your spam folder or try resending the code.": [
         "Kontrollera din skräppostmapp eller försök att skicka koden igen."
@@ -2038,7 +2038,7 @@
         "Återställer objekt från papperskorg"
       ],
       "Restoring trashed items...": [
-        "Återställer kastade objekt..."
+        "Återställer kastade objekt …"
       ],
       "Save login": [
         "Spara inloggning"
@@ -2243,7 +2243,7 @@
         "Lås upp med biometri"
       ],
       "Unpinning item...": [
-        "Lossar objekt..."
+        "Lossar objekt …"
       ],
       "Unverified": [
         "Overifierad"
@@ -3669,7 +3669,7 @@
         "E-postadress"
       ],
       "Enter a note...": [
-        "Ange en anteckning..."
+        "Ange en anteckning …"
       ],
       "Enter a prefix": [
         "Ange ett prefix"

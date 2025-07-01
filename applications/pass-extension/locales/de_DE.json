@@ -1251,11 +1251,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Der Eintrag \"${ payload.item.data.metadata.name }\" wurde verworfen."
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Eintrag \"${ payload.itemName }\" verworfen"
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Die Aktualisierung von \"${ payload.item.data.metadata.name }\" wurde verworfen."
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Aktualisierung von \"${ payload.itemName }\" verworfen"
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } blockiert",
