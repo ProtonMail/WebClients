@@ -18,9 +18,9 @@ export const IconList = memo(({ items }: Props) => {
                 const { text, icon } = item;
 
                 return (
-                    <li key={text} className="flex items-center gap-2 my-1">
-                        {icon ? <Icon name={icon} /> : null}
-                        {text}
+                    <li key={text} className="flex flex-row flex-nowrap items-start gap-2 my-1">
+                        {icon ? <Icon name={icon} className="shrink-0 mt-0.5" /> : null}
+                        <span className="flex-1">{text}</span>
                     </li>
                 );
             })}
