@@ -1421,7 +1421,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Megbízható kulcs",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1485,9 +1486,6 @@
       ],
       "Upgrade": [
         "Csomagváltás"
-      ],
-      "Upgrade Now": [
-        "Váltás nagyobb csomagra"
       ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
@@ -1585,15 +1583,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Az asztali alkalmazás ingyenes kipróbálásának 2 nap múlva vége. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Az asztali alkalmazás ingyenes kipróbálásának 5 nap múlva vége. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Az Ön e-mail író segédje"
@@ -8400,9 +8389,6 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "A levél tartalmazza a \"${ attachmentsFoundKeyword }\" kifejezést, de nem csatolt mellékletet. Biztos, hogy elküldi így a levelet?"
-      ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Ön elveszíti a hozzáférést a(z) ${ boldPlanTitle } funkciókhoz:"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
