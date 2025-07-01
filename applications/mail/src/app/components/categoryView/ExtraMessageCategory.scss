@@ -1,0 +1,109 @@
+// This is temporary, we will need to use the theme colors and have better implementation
+.category-badge-container {
+	$iris-100: #ebefff;
+	$iris-300: #a0a1ff;
+	$iris-700: #4a2fa7;
+	$iris-900: #1e1340;
+	$sky-100: #e2f6ff;
+	$sky-300: #85cdfd;
+	$sky-700: #00699f;
+	$sky-900: #00233c;
+	$teal-100: #e1f9f3;
+	$teal-300: #84d8c9;
+	$teal-700: #00766b;
+	$teal-900: #002925;
+	$pink-100: #ffebf6;
+	$pink-300: #fb9ccb;
+	$pink-700: #9d2767;
+	$pink-900: #3a0b23;
+	$blue-100: #e5f3ff;
+	$blue-300: #8dbdff;
+	$blue-700: #2655a8;
+	$blue-900: #0c1d41;
+	$purple-100: #f7ecff;
+	$purple-300: #cf9ffd;
+	$purple-700: #6f2ea6;
+	$purple-900: #28113d;
+	$amber-100: #fbf4e3;
+	$amber-300: #f6cc89;
+	$amber-700: #a15f0b;
+	$amber-900: #381904;
+
+	.category-badge {
+		&--default {
+			background-color: $iris-100;
+			color: $iris-700;
+
+			&-dark {
+				background-color: $iris-900;
+				color: $iris-300;
+			}
+		}
+
+		&--social {
+			background-color: $sky-100;
+			color: $sky-700;
+
+			&-dark {
+				background-color: $sky-900;
+				color: $sky-300;
+			}
+		}
+
+		&--promotions {
+			background-color: $teal-100;
+			color: $teal-700;
+
+			&-dark {
+				background-color: $teal-900;
+				color: $teal-300;
+			}
+		}
+
+		&--newsletters {
+			background-color: $pink-100;
+			color: $pink-700;
+
+			&-dark {
+				background-color: $pink-900;
+				color: $pink-300;
+			}
+		}
+
+		&--transactions {
+			background-color: $blue-100;
+			color: $blue-700;
+
+			&-dark {
+				background-color: $blue-900;
+				color: $blue-300;
+			}
+		}
+
+		&--updates {
+			background-color: $purple-100;
+			color: $purple-700;
+
+			&-dark {
+				background-color: $purple-900;
+				color: $purple-300;
+			}
+		}
+
+		&--forums {
+			background-color: $amber-100;
+			color: $amber-700;
+
+			&-dark {
+				background-color: $amber-900;
+				color: $amber-300;
+			}
+		}
+	}
+
+	// Local override to avoid changing default value in applications/mail/src/app/styles/_message.scss
+	// Only change the width of the category label and not the rest
+	.container-to {
+		min-inline-size: 6em;
+	}
+}

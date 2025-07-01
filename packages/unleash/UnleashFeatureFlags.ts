@@ -173,6 +173,9 @@ enum MailFeatureFlag {
     RemoveReplyStyles = 'RemoveReplyStyles',
     MailboxOptimisticRefactoring = 'MailboxOptimisticRefactoring',
     SaveAttachmentsToDrive = 'MailSaveAttachmentsToDrive',
+    // Category view
+    ShowMessageCategory = 'ShowMessageCategory',
+    MailCategoryView = 'MailCategoryView',
 }
 
 enum AdminFeatureFlag {
