@@ -1535,20 +1535,6 @@
         "Érzékeny adatokkal dolgozik?"
       ]
     },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Dedikált szervere már hozzá van rendelve egy átjáróhoz. Több szervert vásárolhat majd, ha az ingyenes próbaidőszak lejár.",
-        "Minden dedikált szervere már hozzá van rendelve egy átjáróhoz. Több szervert vásárolhat majd, ha az ingyenes próbaidőszak lejár."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Az ingyenes próbaidőszak ${ ipAddresses } dedikált szervert tartalmaz. Több szervert adhat hozzá, miután elkezdődik a teljes előfizetése.",
-        "Az ingyenes próbaidőszak ${ ipAddresses } dedikált szervert tartalmaz. Több szervert adhat hozzá, miután elkezdődik a teljes előfizetése."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Az ingyenes próbaidőszak ${ maxMembers } licencet tartalmaz. Több licencet is hozzáadhat, amint elindul a teljes előfizetése.",
-        "Az ingyenes próbaidőszak ${ maxMembers } licencet tartalmaz. Több licencet is hozzáadhat, amint elindul a teljes előfizetése."
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
@@ -3039,6 +3025,12 @@
       ],
       "Priority support": [
         "Elsőbbségi támogatás"
+      ]
+    },
+    "Easy switch": {
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "E-maileket továbbít ${ MAX_SYNC_FREE_USER } külső fiókból a ${ MAIL_APP_NAME } szolgáltatásba.",
+        "E-maileket továbbít ${ MAX_SYNC_FREE_USER } külső fiókból a ${ MAIL_APP_NAME } szolgáltatásba."
       ]
     },
     "Edit billing address form note": {
@@ -6231,9 +6223,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "10 napig nem rendelheti át ezeket a szervereket másik országhoz."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Ön elveszíti a hozzáférést a(z) ${ boldPlanTitle } funkciókhoz:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel."
@@ -8701,11 +8690,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Néhány képet nem sikerült feltölteni, mert a kiválasztott elemek közt duplikált fájlnevek voltak."
-      ]
-    },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Valami hiba történt a Gmail fiókjába való bejelentkezés közben."
       ]
     },
     "Offer": {
@@ -11747,17 +11731,8 @@
       "Cancel subscription?": [
         "Előfizetés lemondása?"
       ],
-      "Cannot add Gateway": [
-        "Nem adhat hozzá átjárót"
-      ],
-      "Cannot add licenses": [
-        "Nem adhat hozzá licenceket"
-      ],
       "Cannot add more users": [
         "Nem adhat hozzá több felhasználót"
-      ],
-      "Cannot add servers": [
-        "Nem adhat hozzá szervereket"
       ],
       "Card verification": [
         "Bankkártya ellenőrzése"

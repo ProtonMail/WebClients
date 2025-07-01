@@ -1241,6 +1241,11 @@
         "Duceți productivitatea mesageriei la un nou nivel. Lăsați ${ BRAND_NAME } Scribe să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonament anulat."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Dezactivat"
@@ -1542,23 +1547,6 @@
       ],
       "Working with sensitive data?": [
         "Lucrați cu date confidențiale?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Serverul dedicat este deja alocat unei porți de acces. Veți putea achiziționa mai multe servere după ce se termină perioada de probare gratuită.",
-        "Serverele dedicate sunt deja alocate unor porți de acces. Veți putea achiziționa mai multe servere după ce se termină perioada de probare gratuită.",
-        "Serverele dedicate sunt deja alocate unor porți de acces. Veți putea achiziționa mai multe servere după ce se termină perioada de probare gratuită."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Perioada de probare gratuită include ${ ipAddresses } server dedicat. Puteți adăuga mai multe servere după ce începe abonamentul complet.",
-        "Perioada de probare gratuită include ${ ipAddresses } servere dedicate. Puteți adăuga mai multe servere după ce începe abonamentul complet.",
-        "Perioada de probare gratuită include ${ ipAddresses } de servere dedicate. Puteți adăuga mai multe servere după ce începe abonamentul complet."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Perioada de probare gratuită include ${ maxMembers } licență. Puteți adăuga mai multe licențe după ce începe abonamentul complet.",
-        "Perioada de probare gratuită include ${ maxMembers } licențe. Puteți adăuga mai multe licențe după ce începe abonamentul complet.",
-        "Perioada de probare gratuită include ${ maxMembers } de licențe. Puteți adăuga mai multe licențe după ce începe abonamentul complet."
       ]
     },
     "Browser": {
@@ -3057,6 +3045,18 @@
         "Asistență prioritară"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Pentru a redirecționa mesaje de la ${ MAX_SYNC_PAID_USER } cont, treceți la ${ planName }.",
+        "Pentru a redirecționa mesaje de până la ${ MAX_SYNC_PAID_USER } conturi, treceți la ${ planName }.",
+        "Pentru a redirecționa mesaje de până la ${ MAX_SYNC_PAID_USER } de conturi, treceți la ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Redirecționați mesaje de la ${ MAX_SYNC_FREE_USER } cont extern către ${ MAIL_APP_NAME }.",
+        "Redirecționați mesaje de la ${ MAX_SYNC_FREE_USER } conturi externe către ${ MAIL_APP_NAME }.",
+        "Redirecționați mesaje de la ${ MAX_SYNC_FREE_USER } de conturi externe către ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Câmpurile text sunt opționale. Informațiile furnizate în acest formular vor apărea doar pe facturile emise în viitor și nu vor afecta facturile deja emise."
@@ -3328,6 +3328,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Plățile nu sunt disponibile acum. Reîncercați mai târziu."
+      ],
+      "Permissions request failed.": [
+        "Solicitarea de permisiuni a eșuat."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configurația un domeniu personal înainte de a adăuga adrese."
@@ -4796,6 +4799,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
       ],
+      "Dedicated VPN servers": [
+        "Servere VPN dedicate"
+      ],
       "default email address": [
         "adresa de e-mail implicită"
       ],
@@ -5369,6 +5375,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Număr de servere VPN dedicate din organizație"
       ],
       "Numbers": [
         "Cifre"
@@ -6311,9 +6320,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Nu veți putea realoca aceste servere altei țări timp de 10 zile."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Plata va fi apoi la ${ renewCycle } lună cu ${ renewAmountStr }.",
         "Plata va fi apoi la ${ renewCycle } luni cu ${ renewAmountStr }.",
@@ -6331,10 +6337,10 @@
         "Reducerea de ${ boldDiscountPercent } pentru ${ boldPlanTitle } a fost aplicată."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, trebuie să plătiți toate facturile restante."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, trebuie să plătiți toate facturile restante."
       ],
       "Your ${ BRAND_NAME } password": [
         "Parola ${ BRAND_NAME }"
@@ -6402,6 +6408,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Perioada de probare se termină ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Veți putea adăuga aceste servere la o altă poartă de acces imediat."
@@ -8810,11 +8819,6 @@
         "Unele imagini nu au fost încărcate din cauza numelor de fișiere duplicate în selecția curentă."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "A intervenit o eroare la conectarea la contul Gmail."
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited pentru 12 luni"
@@ -9346,6 +9350,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Transfer bancar"
       ],
@@ -9487,6 +9494,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transfer bancar - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -10313,6 +10328,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "Parola ${ BRAND_NAME }"
+      ],
       "Confirm password": [
         "Confirmare parolă"
       ],
@@ -11439,6 +11457,9 @@
       "Address added": [
         "Adresă adăugată"
       ],
+      "Address successfully added": [
+        "Adresa a fost adăugată."
+      ],
       "Administrator privileges restored": [
         "Privilegiile de administrator s-au restaurat."
       ],
@@ -11933,17 +11954,8 @@
       "Cancel subscription?": [
         "Anulare abonament?"
       ],
-      "Cannot add Gateway": [
-        "Nu se pot adăuga porți de acces"
-      ],
-      "Cannot add licenses": [
-        "Nu se mai pot adăuga licențe"
-      ],
       "Cannot add more users": [
         "Nu se mai pot adăuga utilizatori"
-      ],
-      "Cannot add servers": [
-        "Nu se pot adăuga servere"
       ],
       "Card verification": [
         "Verificare card"
@@ -12001,6 +12013,9 @@
       ],
       "Connect apps and devices": [
         "Conectați aplicații și dispozitive"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Conectați mai multe adrese Gmail cu ${ planName }"
       ],
       "Connect organization": [
         "Conectare organizație"
@@ -12307,6 +12322,9 @@
       ],
       "Multi-user support": [
         "Suport utilizatori multipli"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Conturi multiple, un cont privat"
       ],
       "Network error": [
         "Eroare de rețea."
