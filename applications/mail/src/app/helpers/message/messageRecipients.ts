@@ -169,18 +169,17 @@ export const getSendersToBlock = (
     const allSenders: Recipient[] = [];
 
     // Get all senders without duplicates
-    elements.forEach((el) => {
-        const isConversation = testIsConversation(el);
-        if (isConversation) {
-            (el as Conversation)?.Senders?.map((sender) => {
+    elements.forEach((element) => {
+        if (testIsConversation(element)) {
+            element?.Senders?.map((sender) => {
                 if (sender && allSenders.every((s) => s.Address !== sender.Address)) {
                     allSenders.push(sender);
                 }
             });
         } else {
-            const sender = (el as Message).Sender;
+            const sender = (element as Message).Sender;
             if (sender && allSenders.every((s) => s.Address !== sender.Address)) {
-                allSenders.push((el as Message).Sender);
+                allSenders.push(element.Sender);
             }
         }
     }, []);
