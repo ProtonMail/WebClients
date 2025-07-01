@@ -84,6 +84,12 @@ html,
 			100vw - #{rem(450)} - #{$width-sidebar}px - #{rem(20)} - var(--drawer-width)
 		); // Same max width as list
 
+		// we need to set up locally drawer-width to 0 when drawer is "above" content and not aside
+		// so the calculation above will be correct
+		@include media('<=#{em($breakpoint-for-drawer, 16)}') {
+			--drawer-width: #{rem(0)};
+		}
+
 		@supports (inline-size: clamp(1px, calc(1vw), 100%)) {
 			inline-size: clamp(
 				#{rem(340)},
