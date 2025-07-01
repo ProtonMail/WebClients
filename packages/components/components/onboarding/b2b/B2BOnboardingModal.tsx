@@ -87,7 +87,7 @@ const B2BOnboardingModal = (props: Props) => {
 
             const initialStep = (() => {
                 // Show trial step first for B2B trial users
-                if (isB2BTrial) {
+                if (isB2BTrial && props.source !== 'navbar-button') {
                     return B2B_ONBOARDING_STEPS.TRIAL;
                 }
                 // Then show org setup or features based on org state
@@ -97,7 +97,7 @@ const B2BOnboardingModal = (props: Props) => {
             setStep(initialStep);
             orgSetupRef.current = true;
         }
-    }, [organization, loadingOrganization, isB2BTrial]);
+    }, [organization, loadingOrganization, isB2BTrial, props.source]);
 
     useEffect(() => {
         if (!telemetrySentRef.current) {
