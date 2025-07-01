@@ -125,6 +125,10 @@
 			font-variant-numeric: tabular-nums;
 		}
 
+		&-controls {
+			min-block-size: em(24.5); // to avoid jumps when status changes
+		}
+
 		&-controls-button {
 			padding: 0.375em;
 
