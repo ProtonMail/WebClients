@@ -272,12 +272,12 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
                                 title={(() => {
                                     if (cameraPermissionError === 'NotAllowedError') {
                                         return c('Sweep paper wallet')
-                                            .t`Please grant camera permission to use QRCode scanner`;
+                                            .t`Please grant camera permission to use QR Code scanner`;
                                     }
 
                                     if (!!cameraPermissionError) {
                                         return c('Sweep paper wallet')
-                                            .t`Cannot use QRCode scanner. Please check browser compatibility`;
+                                            .t`Cannot use QR Code scanner. Please check browser compatibility`;
                                     }
 
                                     return undefined;
