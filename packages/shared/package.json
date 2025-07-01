@@ -27,7 +27,7 @@
         "@protontech/timezone-support": "^2.1.0",
         "@scure/base": "^1.2.6",
         "@sentry/browser": "^7.120.3",
-        "@types/node": "^22.15.32",
+        "@types/node": "^22.15.34",
         "@types/papaparse": "^5.3.16",
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.8",
@@ -41,7 +41,7 @@
         "ua-parser-js": "^1.0.40",
         "web-streams-polyfill": "^3.3.3",
         "web-vitals": "^4.2.4",
-        "zod": "^3.25.64"
+        "zod": "^3.25.67"
     },
     "devDependencies": {
         "@babel/plugin-transform-runtime": "^7.27.4",
@@ -49,7 +49,7 @@
         "@proton/i18n": "workspace:^",
         "@types/jasmine": "^5.1.8",
         "@types/karma-junit-reporter": "^2.0.4",
-        "@webgpu/types": "^0.1.61",
+        "@webgpu/types": "^0.1.63",
         "eslint": "^8.57.1",
         "eslint-plugin-jasmine": "^4.2.2",
         "jasmine": "^5.8.0",
@@ -61,7 +61,7 @@
         "karma-spec-reporter": "^0.0.36",
         "karma-webpack": "^5.0.1",
         "playwright": "^1.53.1",
-        "prettier": "^3.5.3",
+        "prettier": "^3.6.2",
         "ts-loader": "^9.5.2",
         "ttag": "^1.8.7",
         "typescript": "^5.8.3",
