@@ -1374,6 +1374,11 @@
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "L'abonnement a été annulé."
+      ]
+    },
     "Badge": {
       "Invited": [
         "Invité"
@@ -3233,14 +3238,29 @@
       "Failed to create folder": [
         "La création du dossier n'a pas abouti."
       ],
+      "Failed to fetch node": [
+        "La récupération du nœud n'a pas abouti."
+      ],
+      "Failed to fetch sharing info": [
+        "La récupération des informations de partage n'a pas abouti."
+      ],
       "Failed to load the STL preview": [
         "Le chargement de l’aperçu STL n'a pas abouti."
       ],
       "Failed to move items": [
         "Les éléments n'ont pas été déplacés."
       ],
+      "Failed to resend invitation": [
+        "Le renvoi de l'invitation n'a pas abouti."
+      ],
       "Failed to save some photos to your Drive": [
         "L'enregistrement de certaines photos dans votre Drive n'a pas abouti."
+      ],
+      "Failed to unshare node": [
+        "La désactivation du partage du nœud n'a pas abouti."
+      ],
+      "Failed to update share node": [
+        "La mise à jour du nœud de partage n'a pas abouti."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Le fichier « ${ item.name } » ne peut pas être chargé en raison de l'erreur « ${ error } »."
@@ -4951,6 +4971,9 @@
       "Dedicated servers": [
         "Serveurs dédiés"
       ],
+      "Dedicated VPN servers": [
+        "Serveurs VPN dédiés"
+      ],
       "default email address": [
         "adresse e-mail par défaut"
       ],
@@ -5440,6 +5463,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Nombre de serveurs VPN dédiés dans l'organisation"
       ],
       "Numbers": [
         "Chiffres"
@@ -6317,9 +6343,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Vous ne serez pas facturé si vous annulez avant le ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Vous n'aurez également plus accès aux fonctionnalités de ${ boldPlanTitle } :"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois.",
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
@@ -6444,6 +6467,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Votre version d'essai se terminera dans ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Vous n'aurez également plus accès aux fonctionnalités de ${ boldPlanTitle } :"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Vous n'aurez plus accès à ${ boldPlanTitle } le ${ boldEndDate }."

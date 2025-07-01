@@ -1366,6 +1366,11 @@
         "Μη υποστηριζόμενη εκδήλωση"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Η συνδρομή ακυρώθηκε."
+      ]
+    },
     "Badge": {
       "Invited": [
         "Προσκεκλημένοι"
@@ -3217,14 +3222,29 @@
       "Failed to create folder": [
         "Αποτυχία δημιουργίας φακέλου"
       ],
+      "Failed to fetch node": [
+        "Αποτυχία ανάκτησης κόμβου"
+      ],
+      "Failed to fetch sharing info": [
+        "Αποτυχία ανάκτησης πληροφοριών κοινοποίησης"
+      ],
       "Failed to load the STL preview": [
         "Αποτυχία φόρτωσης της προεπισκόπησης STL"
       ],
       "Failed to move items": [
         "Αποτυχία μετακίνησης στοιχείων"
       ],
+      "Failed to resend invitation": [
+        "Αποτυχία επαναποστολής πρόσκλησης"
+      ],
       "Failed to save some photos to your Drive": [
         "Αποτυχία αποθήκευσης ορισμένων φωτογραφιών στο Drive σας"
+      ],
+      "Failed to unshare node": [
+        "Αποτυχία κατάργησης κοινοχρησίας κόμβου"
+      ],
+      "Failed to update share node": [
+        "Αποτυχία ενημέρωσης κόμβου κοινοποίησης"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Αδυναμία ανεβάσματος αρχείου \"${ item.name }\", λόγω σφάλματος \"${ error }\""
@@ -4935,6 +4955,9 @@
       "Dedicated servers": [
         "Αποκλειστικοί διακομιστές"
       ],
+      "Dedicated VPN servers": [
+        "Αποκλειστικοί διακομιστές VPN"
+      ],
       "default email address": [
         "προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -5424,6 +5447,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Αριθμός αποκλειστικών διακομιστών VPN στον οργανισμό"
       ],
       "Numbers": [
         "Αριθμοί"
@@ -6301,9 +6327,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Θα χάσετε επίσης την πρόσβαση στις δυνατότητες του ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }.",
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }."
@@ -6428,6 +6451,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Η δοκιμή σας θα τελειώσει σε ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Θα χάσετε επίσης την πρόσβαση στις δυνατότητες του ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Θα χάσετε την πρόσβαση σε ${ boldPlanTitle } στις ${ boldEndDate }."
@@ -6694,8 +6720,8 @@
         "Διαγραφή"
       ],
       "Delete drive?": [
-        "Διαγραφή αρχειοθήκης;",
-        "Διαγραφή αρχειοθηκών;"
+        "Διαγραφή δίσκου;",
+        "Διαγραφή δίσκων;"
       ],
       "Delete recovery-related information.": [
         "Διαγράψτε πληροφορίες που σχετίζονται με την ανάκτηση."

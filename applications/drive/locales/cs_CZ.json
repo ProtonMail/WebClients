@@ -1396,6 +1396,11 @@
         "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Předplatné zrušeno."
+      ]
+    },
     "Badge": {
       "Invited": [
         "Pozváno"
@@ -3273,6 +3278,9 @@
       "Failed to move items": [
         "Přesun položek selhal"
       ],
+      "Failed to resend invitation": [
+        "Pozvánku se nepodařilo znovu odeslat"
+      ],
       "Failed to save some photos to your Drive": [
         "Uložení některých fotek na váš Proton Drive selhalo"
       ],
@@ -5105,6 +5113,9 @@
       "Dedicated servers": [
         "Dedikované servery"
       ],
+      "Dedicated VPN servers": [
+        "Dedikované servery VPN"
+      ],
       "default email address": [
         "výchozí e-mailová adresa"
       ],
@@ -5602,6 +5613,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Počet dedikovaných serverů VPN v organizaci"
       ],
       "Numbers": [
         "Číslice"
@@ -6497,9 +6511,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Pokud službu zrušíte před ${ trialEndsOnFormatted }, nebudou vám účtovány žádné poplatky."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Ztratíte také přístup k funkcím ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }.",
         "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
@@ -6628,6 +6639,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše zkušební verze skončí za ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Ztratíte také přístup k funkcím ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Přístup k ${ boldPlanTitle } ztratíte ${ boldEndDate }."
@@ -10543,7 +10557,7 @@
     },
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
-        "Přístup k obsahu ve streamovacích službách po celém světě"
+        "Přístup k obsahu streamovacích služeb po celém světě"
       ],
       "Get 500 GB to securely store all your files and photos": [
         "Získejte 500 GB pro bezpečné uložení všech svých souborů a fotek"
@@ -11168,10 +11182,10 @@
     },
     "Subtitle": {
       "Albums shared with you will appear here": [
-        "Zde se zobrazí sdílená alba s vámi"
+        "Zde se zobrazí alba sdílená s vámi"
       ],
       "Albums you've shared will appear here": [
-        "Zde se zobrazí vámi sdílená alba"
+        "Zde se zobrazí alba sdílená vámi"
       ],
       "Securely share your favorite moments with friends and family using Albums.": [
         "Pomocí alb můžete bezpečně sdílet své oblíbené okamžiky s přáteli a rodinou."
