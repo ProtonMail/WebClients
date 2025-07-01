@@ -1271,11 +1271,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Item \"${ payload.item.data.metadata.name }\" telah diabaikan"
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Item \"${ payload.itemName }\" telah diabaikan"
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Pembaruan \"${ payload.item.data.metadata.name }\" telah diabaikan"
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Pembaruan \"${ payload.itemName }\" telah diabaikan"
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } diblokir"

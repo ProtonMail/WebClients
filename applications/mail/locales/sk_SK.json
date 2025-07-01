@@ -405,6 +405,12 @@
       "Delete permanently": [
         "Navždy vymazať"
       ],
+      "Deleting folder": [
+        "Mazanie priečinka"
+      ],
+      "Deleting label": [
+        "Mazanie štítku"
+      ],
       "Deselect all": [
         "Zrušiť výber všetkého"
       ],
@@ -1428,6 +1434,12 @@
       "Trust": [
         "Dôverovať"
       ],
+      "Trust key": [
+        "Dôveryhodný kľúč",
+        "Dôveryhodný kľúč",
+        "Dôverovať kľúčom",
+        "Dôverovať novým kľúčom"
+      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -1490,9 +1502,6 @@
       ],
       "Upgrade": [
         "Prejsť na platený plán"
-      ],
-      "Upgrade Now": [
-        "Inovovať teraz"
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
@@ -1592,15 +1601,6 @@
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Bezplatná skúšobná verzia desktopovej aplikácie končí za 2 dni. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Bezplatná skúšobná verzia desktopovej aplikácie končí za 5 dní. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Váš asistent písania emailov"
@@ -1948,6 +1948,11 @@
       ],
       "Sender verification passed": [
         "Overenie odosielateľa bolo úspešné"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Predplatné bolo zrušené."
       ]
     },
     "bf2023: Deal details": {
@@ -4603,6 +4608,9 @@
       "No address with keys available to compose a message": [
         "Nie je k dispozícii adresa s kľúčmi na vytvorenie správy"
       ],
+      "No address with sending permissions": [
+        "Žiadna adresa s oprávneniami na odosielanie"
+      ],
       "No calendars found to import": [
         "Neboli nájdené žiadne kalendáre na import"
       ],
@@ -4653,6 +4661,9 @@
       ],
       "Payment process not supported": [
         "Proces platby nie je podporovaný"
+      ],
+      "Permissions request failed.": [
+        "Žiadosť o oprávnenia zlyhala."
       ],
       "Please activate your search again": [
         "Aktivujte znovu vyhľadávanie"
@@ -6957,6 +6968,9 @@
       "Dedicated servers": [
         "Dedikované servery"
       ],
+      "Dedicated VPN servers": [
+        "Dedikované VPN servery"
+      ],
       "default email address": [
         "predvolená emailová adresa"
       ],
@@ -7565,6 +7579,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Počet dedikovaných VPN serverov v organizácii"
       ],
       "Numbers": [
         "Čísla"
@@ -8658,9 +8675,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Napísali ste \"${ attachmentsFoundKeyword }\", ale príloha nebola pridaná. Chcete napriek tomu správu poslať?"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Taktiež stratíte prístup k funkciám ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }.",
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }.",
@@ -8780,6 +8794,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše skúšobné obdobie končí ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Taktiež stratíte prístup k funkciám ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Prístup k ${ boldPlanTitle } stratíte ${ boldEndDate }."
@@ -11601,6 +11618,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } znamená, že v našich aplikáciách nikdy neuvidíte sponzorované reklamy."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } zaistí, že k vašim emailom budete mať prístup len vy a určení príjemcovia."
       ],
@@ -11621,6 +11641,9 @@
       ],
       "Activate selected": [
         "Aktivovať vybrané"
+      ],
+      "Ad-free promise": [
+        "Prísľub bez reklám"
       ],
       "Advanced encryption": [
         "Pokročilé šifrovanie"
@@ -11948,6 +11971,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Bankový prevod"
       ],
@@ -12081,6 +12107,14 @@
     "Payments.plan_name": {
       "Free": [
         "Zdarma"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankový prevod – ${ details }"
       ]
     },
     "Payments.Sepa": {

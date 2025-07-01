@@ -1355,6 +1355,11 @@
         "Acara tidak didukung"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Langganan dibatalkan."
+      ]
+    },
     "Badge": {
       "Invited": [
         "Diundang"
@@ -4858,6 +4863,9 @@
       "Dedicated servers": [
         "Server khusus"
       ],
+      "Dedicated VPN servers": [
+        "Server VPN khusus"
+      ],
       "default email address": [
         "alamat email bawaan"
       ],
@@ -5343,6 +5351,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Jumlah server VPN khusus pada organisasi"
       ],
       "Numbers": [
         "Angka"
@@ -6211,9 +6222,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Anda juga akan kehilangan akses ke berbagai fitur ${ boldPlanTitle } berikut:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
       ],
@@ -6336,6 +6344,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Masa uji coba Anda akan berakhir dalam ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Anda juga akan kehilangan akses ke berbagai fitur ${ boldPlanTitle } berikut:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Anda akan kehilangan akses ke ${ boldPlanTitle } pada ${ boldEndDate }."
@@ -8840,7 +8851,7 @@
         "Jangan tampilkan penawaran ini lagi"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
-        "Dapatkan ${ BRAND_NAME } Tanpa Batas"
+        "Dapatkan ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
@@ -9946,7 +9957,7 @@
     },
     "specialoffer: Link": {
       "Browse securely": [
-        "Jelajahi dengan aman"
+        "Jelajahi internet secara aman"
       ],
       "Do more with ${ BRAND_NAME }": [
         "Lakukan lebih banyak dengan ${ BRAND_NAME }"
@@ -10055,7 +10066,7 @@
         "Dapatkan akses ke server VPN sangat cepat di 110+ negara"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
-        "Dapatkan satu paket yang mencakup semuanya, dapatkan ${ BRAND_NAME } Tanpa Batas"
+        "Dapatkan satu paket yang mencakup semuanya, dapatkan ${ BRAND_NAME } Unlimited"
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Dapatkan alias tak terbatas untuk melindungi identitas Anda dan mengurangi spam"

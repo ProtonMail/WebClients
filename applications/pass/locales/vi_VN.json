@@ -881,12 +881,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Nội dung \"${ payload.item.data.metadata.name }\" đã bỏ qua"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Cập nhật nội dung \"${ payload.item.data.metadata.name }\" đã bỏ qua"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } đã chặn"
       ],

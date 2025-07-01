@@ -1339,11 +1339,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "\"${ payload.item.data.metadata.name }\"-element ble avvist"
+      "\"${ payload.itemName }\" item was dismissed": [
+        "\"${ payload.itemName }\"-element ble avvist"
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" oppdatering ble avvist"
+      "\"${ payload.itemName }\" update was dismissed": [
+        "\"${ payload.itemName }\"-oppdatering ble avvist"
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } blokkert",

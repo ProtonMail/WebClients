@@ -1426,6 +1426,10 @@
       "Trust": [
         "Αξιόπιστο"
       ],
+      "Trust key": [
+        "Εμπιστοσύνη στο κλειδί",
+        "Εμπιστοσύνη στα κλειδιά"
+      ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
       ],
@@ -1488,9 +1492,6 @@
       ],
       "Upgrade": [
         "Αναβάθμιση"
-      ],
-      "Upgrade Now": [
-        "Αναβαθμίστε Τώρα"
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
@@ -1588,15 +1589,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει σε 2 ημέρες. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει σε 5 ημέρες. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Ο βοηθός σύνταξης ηλ. ταχυδρομείου σας"
@@ -1934,6 +1926,11 @@
       ],
       "Sender verification passed": [
         "Η επαλήθευση του αποστολέα ολοκληρώθηκε επιτυχώς"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Η συνδρομή ακυρώθηκε."
       ]
     },
     "bf2023: Deal details": {
@@ -4559,6 +4556,9 @@
       "No address with keys available to compose a message": [
         "Δεν υπάρχει διεύθυνση με διαθέσιμα κλειδιά για τη σύνταξη ενός μηνύματος"
       ],
+      "No address with sending permissions": [
+        "Δεν υπάρχει διεύθυνση με δικαιώματα αποστολής"
+      ],
       "No calendars found to import": [
         "Δεν βρέθηκαν ημερολόγια προς εισαγωγή."
       ],
@@ -4605,6 +4605,9 @@
       ],
       "Payment process not supported": [
         "Η διαδικασία πληρωμής δεν υποστηρίζεται"
+      ],
+      "Permissions request failed.": [
+        "Το αίτημα αδειών απέτυχε."
       ],
       "Please activate your search again": [
         "Παρακαλούμε ενεργοποιήστε ξανά την αναζήτησή σας"
@@ -6763,6 +6766,9 @@
       "Dedicated servers": [
         "Αποκλειστικοί διακομιστές"
       ],
+      "Dedicated VPN servers": [
+        "Αποκλειστικοί διακομιστές VPN"
+      ],
       "default email address": [
         "προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -7353,6 +7359,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Αριθμός αποκλειστικών διακομιστών VPN στον οργανισμό"
       ],
       "Numbers": [
         "Αριθμοί"
@@ -8404,9 +8413,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Γράψατε “${ attachmentsFoundKeyword }”, αλλά δεν έχει προστεθεί συνημμένο. Θέλετε να στείλετε το μήνυμά σας ούτως ή άλλως;"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Θα χάσετε επίσης την πρόσβαση στις δυνατότητες του ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }.",
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }."
@@ -8520,6 +8526,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Η δοκιμή σας θα τελειώσει σε ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Θα χάσετε επίσης την πρόσβαση στις δυνατότητες του ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Θα χάσετε την πρόσβαση σε ${ boldPlanTitle } στις ${ boldEndDate }."
@@ -11257,6 +11266,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } σημαίνει ότι δεν θα δείτε ποτέ διαφημίσεις χορηγών στις εφαρμογές μας."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } διασφαλίζει ότι μόνο εσείς και οι προοριζόμενοι παραλήπτες μπορείτε να έχετε πρόσβαση στα μηνύματα ηλεκτρονικού ταχυδρομείου σας."
       ],
@@ -11277,6 +11289,9 @@
       ],
       "Activate selected": [
         "Ενεργοποίηση επιλεγμένων"
+      ],
+      "Ad-free promise": [
+        "Υπόσχεση χωρίς διαφημίσεις"
       ],
       "Advanced encryption": [
         "Προηγμένη κρυπτογράφηση"

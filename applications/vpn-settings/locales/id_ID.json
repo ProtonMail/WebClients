@@ -367,7 +367,7 @@
         "Telusuri paket ${ BRAND_NAME } lainnya"
       ],
       "Explore other plans": [
-        "Jelajahi paket lain"
+        "Telusuri paket lainnya"
       ],
       "Export": [
         "Ekspor"
@@ -1231,6 +1231,11 @@
         "Bawa produktivitas email Anda ke tingkatan yang baru. Biarkan ${ BRAND_NAME } Scribe membantu Anda menulis, membalas, dan mengoreksi email Anda."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Langganan dibatalkan."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Nonaktif"
@@ -1524,17 +1529,6 @@
       ],
       "Working with sensitive data?": [
         "Bekerja dengan data yang sensitif?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Semua server khusus Anda sudah ditetapkan ke Gateway. Anda akan dapat membeli lebih banyak server setelah uji coba gratis Anda berakhir."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Uji coba gratis Anda meliputi ${ ipAddresses } server khusus. Anda akan dapat menambahkan lebih banyak server setelah langganan penuh Anda dimulai."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Uji coba gratis Anda meliputi ${ maxMembers } lisensi. Anda akan dapat menambahkan lebih banyak lisensi setelah langganan penuh Anda dimulai."
       ]
     },
     "Browser": {
@@ -3025,6 +3019,14 @@
         "Dukungan prioritas"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Untuk meneruskan email dari hingga ${ MAX_SYNC_PAID_USER } akun, tingkatkan ke ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Anda meneruskan alamat dari ${ MAX_SYNC_FREE_USER } akun eksternal ke ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
@@ -3296,6 +3298,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Pembayaran saat ini tidak tersedia. Silakan coba lagi nanti"
+      ],
+      "Permissions request failed.": [
+        "Permintaan izin gagal."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Silakan atur domain kustom sebelum menambahkan alamat"
@@ -3843,7 +3848,7 @@
     },
     "Features: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
-        "Akses konten di layanan streaming termasuk Netflix, Disney+, Prime Video, dan lainnya, dari mana saja"
+        "Akses konten pada berbagai layanan streaming termasuk Netflix, Disney+, Prime Video, dan lainnya dari mana saja"
       ],
       "Protects you from ads, trackers, and malware on websites and apps": [
         "Melindungi Anda dari iklan, pelacak, dan malware di situs web dan aplikasi"
@@ -4684,6 +4689,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
       ],
+      "Dedicated VPN servers": [
+        "Server VPN khusus"
+      ],
       "default email address": [
         "alamat email bawaan"
       ],
@@ -5253,6 +5261,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Jumlah server VPN khusus pada organisasi"
       ],
       "Numbers": [
         "Angka"
@@ -6154,9 +6165,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Anda tidak akan dapat menetapkan ulang server ini ke negara lain selama 10 hari."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Anda juga akan kehilangan akses ke berbagai fitur ${ boldPlanTitle } berikut:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
       ],
@@ -6237,6 +6245,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Masa uji coba Anda akan berakhir dalam ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Anda juga akan kehilangan akses ke berbagai fitur ${ boldPlanTitle } berikut:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Anda akan dapat menambahkan server berikut ke Gateway lain dengan segera."
@@ -8601,11 +8612,6 @@
         "Beberapa gambar tidak diunggah karena nama berkas yang berduplikat dalam seleksi saat ini."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Terjadi kesalahan saat masuk ke akun Gmail Anda"
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited untuk 12 bulan"
@@ -8623,7 +8629,7 @@
         "Jangan tampilkan penawaran ini lagi"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
-        "Dapatkan ${ BRAND_NAME } Tanpa Batas"
+        "Dapatkan ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
@@ -10038,6 +10044,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "Kata sandi ${ BRAND_NAME }"
+      ],
       "Confirm password": [
         "Konfirmasi kata sandi"
       ],
@@ -10137,7 +10146,7 @@
     },
     "specialoffer: Link": {
       "Browse securely": [
-        "Jelajahi dengan aman"
+        "Jelajahi internet secara aman"
       ],
       "Do more with ${ BRAND_NAME }": [
         "Lakukan lebih banyak dengan ${ BRAND_NAME }"
@@ -10246,7 +10255,7 @@
         "Dapatkan akses ke server VPN sangat cepat di 110+ negara"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
-        "Dapatkan satu paket yang mencakup semuanya, dapatkan ${ BRAND_NAME } Tanpa Batas"
+        "Dapatkan satu paket yang mencakup semuanya, dapatkan ${ BRAND_NAME } Unlimited"
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Dapatkan alias tak terbatas untuk melindungi identitas Anda dan mengurangi spam"
@@ -11102,6 +11111,9 @@
       "Address added": [
         "Alamat ditambahkan"
       ],
+      "Address successfully added": [
+        "Alamat berhasil ditambahkan"
+      ],
       "Administrator privileges restored": [
         "Hak administrator dipulihkan"
       ],
@@ -11586,17 +11598,8 @@
       "Cancel subscription?": [
         "Batalkan langganan?"
       ],
-      "Cannot add Gateway": [
-        "Gateway tidak dapat ditambahkan"
-      ],
-      "Cannot add licenses": [
-        "Lisensi tidak dapat ditambahkan"
-      ],
       "Cannot add more users": [
         "Tidak dapat menambahkan lebih banyak pengguna"
-      ],
-      "Cannot add servers": [
-        "Server tidak dapat ditambahkan"
       ],
       "Card verification": [
         "Verifikasi kartu"
@@ -11654,6 +11657,9 @@
       ],
       "Connect apps and devices": [
         "Hubungkan aplkasi dan perangkat"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Hubungkan lebih banyak alamat Gmail dengan ${ planName }"
       ],
       "Connect organization": [
         "Sambungkan organisasi"
@@ -11954,6 +11960,9 @@
       ],
       "Multi-user support": [
         "Dukungan multi-pengguna"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Banyak akun, 1 kotak masuk privat"
       ],
       "Network error": [
         "Kesalahan jaringan"
