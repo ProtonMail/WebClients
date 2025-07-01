@@ -1221,12 +1221,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" element blev afvist"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } blokeret",
         "${ blockedEmailsCount } blokerede"
