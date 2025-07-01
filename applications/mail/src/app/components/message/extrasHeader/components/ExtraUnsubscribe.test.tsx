@@ -4,6 +4,9 @@ import loudRejection from 'loud-rejection';
 import { getModelState } from '@proton/account/test';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
+
+import { newElementsState } from 'proton-mail/store/elements/elementsSlice';
 
 import { mergeMessages } from '../../../../helpers/message/messages';
 import { getCompleteAddress, minimalCache } from '../../../../helpers/test/cache';
@@ -296,5 +299,29 @@ describe('Unsubscribe banner', () => {
 
         // Second modal should not be opened
         expect(screen.queryByText('with hide-my-email aliases')).toBeNull();
+    });
+
+    it('should not show the unsubscribe button in the newsletter subscriptions view', async () => {
+        const unsubscribeCall = jest.fn();
+        const markUnsubscribedCall = jest.fn();
+
+        minimalCache();
+        addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
+        addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
+
+        const message = mergeMessages(defaultMessage, {
+            data: {
+                UnsubscribeMethods: { OneClick: 'OneClick' },
+            },
+        }) as MessageStateWithData;
+
+        await render(<ExtraUnsubscribe message={message.data} />, {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
+                elements: newElementsState({ params: { labelID: CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS } }),
+            },
+        });
+
+        expect(screen.queryByText('Unsubscribe')).toBeNull();
     });
 });
