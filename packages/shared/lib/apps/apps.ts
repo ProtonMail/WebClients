@@ -32,7 +32,6 @@ const allApps: APP_NAMES[] = [
     APPS.PROTONDOCS,
     APPS.PROTONWALLET,
     APPS.PROTONLUMO,
-    APPS.PROTONAUTHENTICATOR,
 ];
 
 const allAppsSet: Set<APP_NAMES> = new Set(allApps);
