@@ -630,7 +630,7 @@
         "Перевірити"
       ],
       "Via secure link": [
-        "Через безпечне посилання"
+        "Безпечне посилання"
       ],
       "View app logs": [
         "Перегляд журналів програми"
@@ -639,13 +639,13 @@
         "Переглянути історію"
       ],
       "View item history": [
-        "Дивитися історію елемента"
+        "Історія елемента"
       ],
       "View older history": [
         "Дивитися старішу історію"
       ],
       "With other ${ BRAND_NAME } users": [
-        "З іншими користувачами ${ BRAND_NAME }"
+        "Інші користувачі ${ BRAND_NAME }"
       ],
       "Your password manager is not here? Request it.": [
         "Немає вашого менеджера паролів? Попросіть його."
@@ -1195,12 +1195,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" елемент було відхилено"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Оновлення \"${ payload.item.data.metadata.name }\" було відхилено"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } заблоковано",
         "${ blockedEmailsCount } заблоковано",
@@ -2755,7 +2749,7 @@
         "Потрібна допомога?"
       ],
       "New": [
-        "Новий"
+        "Нове"
       ],
       "New email": [
         "Нова адреса електронної пошти"
@@ -2905,7 +2899,7 @@
         "Код безпеки"
       ],
       "See member and permission overview": [
-        "Дивіться огляд учасників та дозволів"
+        "Перегляд учасників і дозволів"
       ],
       "Select a domain": [
         "Обрати домен"
@@ -2929,7 +2923,7 @@
         "Налаштування"
       ],
       "Share": [
-        "Поділитися"
+        "Спільний доступ"
       ],
       "Shared": [
         "Спільний доступ"
@@ -3046,7 +3040,7 @@
         "Використовуйте ${ PASS_APP_NAME } як менеджер паролів за замовчуванням у вашому браузері"
       ],
       "Useful for permanent sharing": [
-        "Корисно для постійного спільного використання"
+        "Корисно для постійного спільного доступу"
       ],
       "Username": [
         "Ім'я користувача"

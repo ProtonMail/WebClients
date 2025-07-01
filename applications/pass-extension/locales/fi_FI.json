@@ -1218,12 +1218,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Kohde \"${ payload.item.data.metadata.name }\" hylättiin"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } estetty",
         "${ blockedEmailsCount } estetty"
@@ -2536,8 +2530,14 @@
       "Catch-All": [
         "Nappaa kaikki"
       ],
+      "Checkbox": [
+        "Valintaruutu"
+      ],
       "City": [
         "Kaupunki"
+      ],
+      "Class": [
+        "Luokka"
       ],
       "Code": [
         "Koodi"
@@ -2629,6 +2629,9 @@
       "DNS": [
         "DNS"
       ],
+      "Doctor": [
+        "Lääkäri"
+      ],
       "Domain": [
         "Verkkotunnus"
       ],
@@ -2679,6 +2682,9 @@
       ],
       "Export": [
         "Vienti"
+      ],
+      "Extra fields": [
+        "Lisäkentät"
       ],
       "Extra password": [
         "Lisäsalasana"
@@ -2733,6 +2739,9 @@
       ],
       "Holder Name": [
         "Haltijan nimi"
+      ],
+      "Hospital": [
+        "Sairaala"
       ],
       "Host": [
         "Isäntä"
@@ -2809,6 +2818,9 @@
       "Key fingerprint": [
         "Avaimen sormenjälki"
       ],
+      "Key type": [
+        "Avaimen tyyppi"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pikanäppäin: ${ shortcut }"
       ],
@@ -2869,14 +2881,23 @@
       "max views reached": [
         "avausrajoitus on saavutettu"
       ],
+      "Medications": [
+        "Lääkitykset"
+      ],
       "Member ID": [
         "Jäsentunnus"
+      ],
+      "Member Name": [
+        "Jäsenen nimi"
       ],
       "Members": [
         "Jäsenet"
       ],
       "Membership": [
         "Jäsenyys"
+      ],
+      "Membership ID": [
+        "Jäsentunnus"
       ],
       "Middle name": [
         "Toinen nimi"
@@ -2953,6 +2974,9 @@
       "Organization": [
         "Organisaatio"
       ],
+      "Organization Name": [
+        "Organisaation nimi"
+      ],
       "Other": [
         "Muu"
       ],
@@ -2985,6 +3009,9 @@
       ],
       "Passwords": [
         "Salasanat"
+      ],
+      "Patient Name": [
+        "Potilaan nimi"
       ],
       "Pause list": [
         "Pysäytyslista"
@@ -3204,6 +3231,9 @@
       ],
       "Theme": [
         "Teema"
+      ],
+      "Tier/Level": [
+        "Taso"
       ],
       "Tier/Status": [
         "Taso"
@@ -3510,6 +3540,18 @@
       ],
       "Add note": [
         "Lisää muistiinpano"
+      ],
+      "Add password": [
+        "Lisää salasana"
+      ],
+      "Add private key": [
+        "Lisää yksityinen avain"
+      ],
+      "Add public key": [
+        "Lisää julkinen avain"
+      ],
+      "Add SSID": [
+        "Lisää SSID"
       ],
       "Add text": [
         "Lisää teksti"
@@ -4164,6 +4206,12 @@
       ],
       "URL is invalid": [
         "URL on virheellinen."
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Siirrä kohde holviin",
+        "Siirrä kohteet holviin"
       ]
     },
     "Warning": {

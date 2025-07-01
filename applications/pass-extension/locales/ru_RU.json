@@ -1255,12 +1255,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Элемент \"${ payload.item.data.metadata.name }\" был отклонен"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Обновление \"${ payload.item.data.metadata.name }\" было отклонено"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } заблокировано",
         "${ blockedEmailsCount } заблокированы",
@@ -1289,10 +1283,10 @@
         "${ inviterEmail } хочет поделиться с вами элементом."
       ],
       "${ memberCount } member": [
-        "${ memberCount } член",
-        "${ memberCount } члена",
-        "${ memberCount } членов",
-        "${ memberCount } член"
+        "${ memberCount } участник",
+        "${ memberCount } участника",
+        "${ memberCount } участников",
+        "${ memberCount } участников"
       ],
       "${ n } item": [
         "${ n } элемент",
@@ -1775,7 +1769,7 @@
         "Элемент успешно включен в мониторинг"
       ],
       "Item successfully moved": [
-        "Элемент успешно перемещен"
+        "Элемент успешно перемещён"
       ],
       "Item successfully pinned": [
         "Элемент закреплен"
@@ -2438,9 +2432,9 @@
       ],
       "${ config.options.length } character": [
         "${ config.options.length } символ",
-        "${ config.options.length } символов",
         "${ config.options.length } символа",
-        "${ config.options.length } символа"
+        "${ config.options.length } символов",
+        "${ config.options.length } символов"
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } слово",

@@ -1240,12 +1240,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "“${ payload.item.data.metadata.name }” 项目被拒绝"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "“${ payload.item.data.metadata.name }” 更新被拒绝"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } 已阻止"
       ],

@@ -1262,11 +1262,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Articolul „${ payload.item.data.metadata.name }” a fost respins."
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Articolul „${ payload.itemName }” a fost respins."
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Actualizarea pentru „${ payload.item.data.metadata.name }” a fost respinsă."
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Actualizarea pentru „${ payload.itemName }” a fost respinsă."
       ],
       "${ blockedEmailsCount } blocked": [
         "Blocate: ${ blockedEmailsCount }",
@@ -1998,7 +1998,7 @@
         "Luați în considerare scrierea unei recenzii."
       ],
       "Please contact your administrator": [
-        "Vă rugăm să vă contactați administratorul."
+        "Trebuie să vă contactați administratorul."
       ],
       "Please do not close this window": [
         "Nu închideți această fereastră."

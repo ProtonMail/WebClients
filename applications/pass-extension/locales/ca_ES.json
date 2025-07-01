@@ -1251,11 +1251,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "S'ha descartat l'element \"${ payload.item.data.metadata.name }\""
+      "\"${ payload.itemName }\" item was dismissed": [
+        "S'ha descartat l'element de «${ payload.itemName }»"
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "S'ha descartat l'actualització de \"${ payload.item.data.metadata.name }\""
+      "\"${ payload.itemName }\" update was dismissed": [
+        "S'ha descartat l'actualització del «${ payload.itemName }»"
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } bloquejat",
