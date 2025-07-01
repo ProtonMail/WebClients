@@ -1374,6 +1374,11 @@
         "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente mensualmente el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Suscripción cancelada."
+      ]
+    },
     "Badge": {
       "Invited": [
         "Invitado"
@@ -1702,7 +1707,7 @@
         "Nuestro plan gratuito básico con correo y almacenamiento cifrados de extremo a extremo. Sin funciones premium incluidas."
       ],
       "Save ${ upsellSavings }": [
-        "Ahorre un ${ upsellSavings }"
+        "Ahorre ${ upsellSavings }"
       ],
       "Save money with ${ upsellPlanName }": [
         "Ahorre dinero con ${ upsellPlanName }"
@@ -3233,14 +3238,29 @@
       "Failed to create folder": [
         "Error al crear carpeta"
       ],
+      "Failed to fetch node": [
+        "Error al obtener nodo"
+      ],
+      "Failed to fetch sharing info": [
+        "Error al obtener información para compartir"
+      ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa de STL"
       ],
       "Failed to move items": [
         "Error al mover los elementos"
       ],
+      "Failed to resend invitation": [
+        "Error al reenviar la invitación"
+      ],
       "Failed to save some photos to your Drive": [
         "No se pudieron guardar algunas fotos en su Drive"
+      ],
+      "Failed to unshare node": [
+        "Error al dejar de compartir el nodo"
+      ],
+      "Failed to update share node": [
+        "Error al actualizar el nodo compartido"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El archivo \"${ item.name }\" no puede cargarse debido a un error de \"${ error }\""
@@ -4951,6 +4971,9 @@
       "Dedicated servers": [
         "Servidores dedicados"
       ],
+      "Dedicated VPN servers": [
+        "Servidores dedicados de VPN"
+      ],
       "default email address": [
         "dirección de correo por defecto"
       ],
@@ -5440,6 +5463,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados en la organización"
       ],
       "Numbers": [
         "Números"
@@ -6317,9 +6343,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se le cobrará si cancela antes del ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "También perderá acceso a las funciones de ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Después se le facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
         "Después se le facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
@@ -6444,6 +6467,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Su prueba finalizará en ${ timeRemaining }"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "También perderá acceso a las funciones de ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Perderá el acceso a ${ boldPlanTitle } el ${ boldEndDate }."

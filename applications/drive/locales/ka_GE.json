@@ -1255,6 +1255,9 @@
       "Recover previous file versions": [
         "წინა ფაილის ვერსიების აღდგენა"
       ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "დაზოგეთ ბევრი VPN-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
+      ],
       "Save time with built-in 2FA": [
         "დაზოგეთ დრო ჩაშენებული 2FA-ით"
       ],
@@ -1346,6 +1349,11 @@
       ],
       "Unsupported event": [
         "გაუთვალისწინებელი შემთხვევა"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "გამოწერა გაუქმდა."
       ]
     },
     "Badge": {
@@ -4875,6 +4883,9 @@
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
       ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
       "default email address": [
         "ნაგულისხმევი ელფოსტის მისამართი"
       ],
@@ -5352,6 +5363,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "გამოყოფილი VPN სერვერების რაოდენობა ორგანიზაციაში"
       ],
       "Numbers": [
         "რიცხვები"
@@ -6180,9 +6194,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }.",
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }."
@@ -6289,6 +6300,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "თქვენი გამოსაცდელი პერიოდის დასრულების დროა: ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
@@ -9165,6 +9179,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "საბანკო გადარიცხვა"
       ],
@@ -9277,6 +9294,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "საბანკო გადარიცხვა - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -9973,6 +9998,24 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "იქონიეთ წვდომა სტრიმინგის სერვისებთან მთელ მსოფლიოში"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "მიიღეთ 500გბ და შეინახეთ დაცულად ყველა თქვენი ფაილი და სურათი"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "მიიღეთ წვდომა უსწრაფეს VPN სერვერებთან 110+ ქვეყანაში"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "მიიღეთ შეუზღუდავი ფსევდონიმები, რომ დაიცვათ თავი და შეამციროთ სპამის რაოდენობა"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "იქონიეთ თქვენი პაროლები უსაფრთხოდ და დალაგებულად მრავალ საცავში "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "დაიცავით თქვენი ანგარიში საშიშროებებისგან Sentinel-თან ერთად"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "ასწიეთ სატარიფო გეგმა დაზოგეთ მეტი 2 წლით ${ planName }"
       ]
