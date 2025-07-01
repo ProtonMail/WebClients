@@ -82,6 +82,7 @@
   --focus-ring: var(--interaction-norm-minor-1);
   --modal-background-color: #2d2b29;
   --item-background: rgb(255 255 255 / 0.04);
+  --field-hover: #6d697d;
 }
 @supports (-webkit-hyphens: none) {
   :root,
