@@ -1339,11 +1339,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Το στοιχείο \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Το στοιχείο \"${ payload.itemName }\" απορρίφθηκε"
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Η ενημερωμένη έκδοση του \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Η ενημερωμένη έκδοση του \"${ payload.itemName }\" απορρίφθηκε"
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } αποκλείστηκε",

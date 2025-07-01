@@ -1313,12 +1313,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "「${ payload.item.data.metadata.name }」アイテムは無視されました"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "「${ payload.item.data.metadata.name }」更新が却下されました"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount }件のブロック済み"
       ],

@@ -1339,11 +1339,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "O item \"${ payload.item.data.metadata.name }\" foi descartado"
+      "\"${ payload.itemName }\" item was dismissed": [
+        "O item «${ payload.itemName }» foi descartado."
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "A atualização do \"${ payload.item.data.metadata.name }\" foi descartada."
+      "\"${ payload.itemName }\" update was dismissed": [
+        "A atualização do «${ payload.itemName }» foi descartada."
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } bloqueado",

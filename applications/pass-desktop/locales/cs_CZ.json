@@ -1361,11 +1361,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Položka \"${ payload.item.data.metadata.name }\" byla odmítnuta"
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Položka \"${ payload.itemName }\" byla odmítnuta"
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Aktualizace \"${ payload.item.data.metadata.name }\" byla odmítnuta"
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Aktualizace \"${ payload.itemName }\" byla odmítnuta"
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } blokován",
