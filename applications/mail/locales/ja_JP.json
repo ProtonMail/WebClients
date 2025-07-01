@@ -336,6 +336,9 @@
       "Create folder": [
         "フォルダーの作成"
       ],
+      "Create folder ${ boldFolderName }": [
+        "「${ boldFolderName }」フォルダーを作成"
+      ],
       "Create label": [
         "ラベルを作成"
       ],
@@ -392,6 +395,9 @@
       ],
       "Delete permanently": [
         "完全に削除"
+      ],
+      "Deleting folder": [
+        "フォルダを削除中"
       ],
       "Deselect all": [
         "すべての選択を解除"
@@ -1212,6 +1218,9 @@
       "Send read receipt": [
         "開封確認を送信する"
       ],
+      "Send unsubscribe email": [
+        "登録解除メールを送る"
+      ],
       "Set": [
         "設定"
       ],
@@ -1347,6 +1356,12 @@
       "Stop marking as read": [
         "既読としてマークしない"
       ],
+      "Stop moving to Archive": [
+        "アーカイブへの移動を停止"
+      ],
+      "Stop moving to Trash": [
+        "ごみ箱への移動を停止"
+      ],
       "Strikethrough": [
         "取り消し線"
       ],
@@ -1394,6 +1409,9 @@
       ],
       "Trust": [
         "信頼する"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"
@@ -1457,9 +1475,6 @@
       ],
       "Upgrade": [
         "アップグレード"
-      ],
-      "Upgrade Now": [
-        "今すぐアップグレード"
       ],
       "Upgrade now": [
         "今すぐアップグレード"
@@ -1556,15 +1571,6 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }件を超える連絡先のvCardファイルを送信できません。"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "デスクトップアプリの無料トライアルはあと2日で終了します。${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "デスクトップアプリの無料トライアルはあと5日で終了します。${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "メール執筆アシスタント"
@@ -1699,12 +1705,32 @@
         "新しいメール"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "割引を入手"
+      ]
+    },
     "anniversary_2025: Offer": {
+      "200 GB storage": [
+        "200GBストレージ"
+      ],
+      "500 GB encrypted storage": [
+        "500 GBの暗号化されたストレージ"
+      ],
       "Add unlimited credit cards": [
         "無制限のクレジットカードを追加する"
       ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "${ BRAND_NAME } Mail、Pass、VPN、Drive、カレンダーの全てのプレミアム機能"
+      ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "割引は標準の月額料金に基づいています。支払いサイクルの終わりに、お客様のサブスクリプションは標準の年間料金で更新されます。"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "お客様の暗号化済みストレージを2倍に — お客様のすべてのデータに1 TBを提供します"
+      ],
+      "Encrypted password manager": [
+        "暗号化されたパスワードマネージャー"
       ],
       "Online document editor": [
         "オンライン文書エディタ"
@@ -1712,8 +1738,17 @@
       "Online privacy for up to 2 people": [
         "最大2人までのオンラインプライバシー"
       ],
+      "Recover previous file versions": [
+        "以前のファイルを復元"
+      ],
       "Save big on premium Drive features with a limited-time discount.": [
         "期間限定の割引で、プレミアムDrive機能をお得にご利用いただけます。"
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムPass機能をお得にご利用いただけます。"
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムVPN機能をお得にご利用いただけます。"
       ],
       "Save time with built-in 2FA": [
         "内蔵の2要素認証で時間を節約"
@@ -1723,6 +1758,9 @@
       ],
       "thanks to you": [
         "ありがとうございます"
+      ],
+      "Use your own email domain": [
+        "独自メールドメインを使用する"
       ],
       "years": [
         "年"
@@ -1736,6 +1774,9 @@
     "anniversary_2025: Offers": {
       "${ n } month": [
         "${ n } ヶ月"
+      ],
+      "/ month": [
+        "/ 月"
       ],
       "15 months": [
         "15 か月"
@@ -6049,6 +6090,9 @@
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 件のメッセージを移動できませんでした。"
       ],
+      "${ n } newsletter": [
+        "${ n } 件のニュースレター"
+      ],
       "${ n } unread conversation": [
         "${ n } 件の未読の会話"
       ],
@@ -6355,6 +6399,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "少なくとも ${ BETTER_PASSWORD_LENGTH } 文字以上"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "お客様のトライアル期間が${ boldCancelDate }に終了すると、${ boldProtonFree }にダウングレードされます。お客様の組織からすべてのユーザーアカウントが削除されます。"
+      ],
       "Attach public key": [
         "公開鍵を添付"
       ],
@@ -6384,6 +6431,9 @@
       ],
       "Billing cycle: ${ text }": [
         "支払いサイクル: ${ text }"
+      ],
+      "Block sender": [
+        "差出人をブロック"
       ],
       "Body: ": [
         "本文: "
@@ -7003,6 +7053,9 @@
       "Message headers": [
         "メッセージヘッダー"
       ],
+      "Message list": [
+        "メッセージリスト"
+      ],
       "Message sent": [
         "メッセージが送信されました"
       ],
@@ -7071,6 +7124,9 @@
       ],
       "No links cleaned": [
         "クリアされたリンクはありません"
+      ],
+      "No messages to show": [
+        "表示するメッセージはありません"
       ],
       "No more results found": [
         "これ以上の結果が見つかりません"
@@ -7572,6 +7628,9 @@
       ],
       "Themes can give your inbox a new look.": [
         "テーマで受信トレイを新しい見た目に変更できます。"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "受信トレイには、この差出人からのメッセージはありません。"
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "連絡先の詳細の検証に使われる署名にエラーがあります。おそらくパスワードリセットによって引き起こされています。"
@@ -8164,6 +8223,9 @@
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "お客様の無料トライアルは、${ cycle }ヶ月サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
+      ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "お客様の無料トライアルは月額サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
       ],
@@ -8226,6 +8288,12 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "トライアルは${ timeRemaining }に終了します。"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "${ boldEndDate }に${ boldPlanTitle }へアクセスできなくなります。"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
@@ -8642,6 +8710,9 @@
       "CC": [
         "CC"
       ],
+      "Choose what to do instead": [
+        "代わりに何をするか選択してください"
+      ],
       "City": [
         "市区町村"
       ],
@@ -8884,6 +8955,9 @@
       ],
       "Move to Inbox": [
         "受信トレイに移動"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "${ count }件のメッセージを${ labelName }に移動しました。"
       ],
       "Moved ${ count } message to Archive.": [
         "${ count }件のメッセージをアーカイブへ移動しました。"
@@ -10769,8 +10843,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } オファーの有効期限は今日までです！"
       ],
+      "Don’t show this again": [
+        "次回から表示しない"
+      ],
       "Don’t show this offer again": [
         "今後このオファーを表示しない"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimitedを入手"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "たった${ pricingTitle }でDrive Plusを入手"
@@ -10824,9 +10904,17 @@
         "サブスクリプションはまもなく更新されます"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "暗号化されたパスワードマネージャー"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 以上のプレミアム機能"
+      ],
+      "Advanced threat protection": [
+        "高度な脅威保護"
       ],
       "Custom email domain": [
         "独自メールドメイン"
@@ -11010,6 +11098,12 @@
       ]
     },
     "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "それまでにいつでもキャンセルできます。"
+      ],
+      "contact our support team": [
+        "サポートチームにお問い合わせください"
+      ],
       "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } まで無料のビジネスセキュリティ機能をお楽しみいただけます。"
       ],
@@ -11026,6 +11120,12 @@
         "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
+      ],
+      "Your free trial has started": [
+        "無料トライアルが開始されました"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ]
     },
@@ -11188,6 +11288,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "銀行振込"
       ],
@@ -11231,6 +11334,9 @@
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
       ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "SEPAではユーロのみご利用いただけます。お客様の通貨が変更されました。選択を元に戻すには、セレクターをご利用ください。"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
@@ -11273,6 +11379,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "その後、 ${ renewPriceStr } で ${ renewalLength } ヶ月間自動的に更新されます。いつでもキャンセルできます。"
       ],
+      "This payment method will become your new default for all future renewals.": [
+        "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
+      ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
       ],
@@ -11303,6 +11412,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
       ]
     },
     "Payments.Sepa": {
@@ -12157,6 +12271,15 @@
       "Go to subscription plans": [
         "サブスクリプションプランへ移動"
       ],
+      "Guard against threats": [
+        "脅威から保護する"
+      ],
+      "Increase your storage": [
+        "ストレージを増やす"
+      ],
+      "Unblock streaming content": [
+        "ストリーミングコンテンツのブロックを解除"
+      ],
       "Upgrade": [
         "アップグレード"
       ],
@@ -12233,6 +12356,24 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "世界中のストリーミングサービスでコンテンツにアクセス"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "すべてのファイルや写真を安全に保管する500 GBを入手"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "全てを含む1つのプラン、${ BRAND_NAME } Unlimitedをご利用ください。"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "無制限のエイリアスで、お客様のユーザー情報を保護し、迷惑メールを削減します。"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "パスワードを複数の保管庫に安全に整理して保管する "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Sentinelでアカウントを脅威から保護する"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "アップグレードして${ planName }の2年契約でもっとお得に"
       ]
@@ -14210,6 +14351,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName }の無料トライアルは${ textDate }に終了します"
       ],
+      "Your ${ planName } subscription has started": [
+        "${ planName }サブスクリプションが開始されました"
+      ],
       "Your account is protected": [
         "あなたのアカウントは保護されています"
       ],
@@ -14337,6 +14481,14 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Torブラウザのこのバージョンはサポートされていません。最近の${ stableRelease }へアップグレードしてください。"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ 月"
+      ],
+      "Only": [
+        "のみ"
       ]
     },
     "unprivatization": {

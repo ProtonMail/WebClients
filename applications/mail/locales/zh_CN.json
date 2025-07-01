@@ -1414,7 +1414,7 @@
         "信任"
       ],
       "Trust key": [
-        "信任密钥"
+        "信任此密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -1478,9 +1478,6 @@
       ],
       "Upgrade": [
         "升级账户"
-      ],
-      "Upgrade Now": [
-        "立即升级账户"
       ],
       "Upgrade now": [
         "立即升级账户"
@@ -1577,15 +1574,6 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "您的桌面应用免费试用将在 2 天内结束。 ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "您的桌面应用免费试用将在 5 天内结束。 ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "你的邮件写作助手"
@@ -8246,9 +8234,6 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您提到了“${ attachmentsFoundKeyword }”，但没有添加附件。是否仍要发送邮件？"
-      ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"

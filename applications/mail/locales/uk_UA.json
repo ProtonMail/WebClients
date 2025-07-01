@@ -1284,6 +1284,12 @@
       "Trust": [
         "Довіряти"
       ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
+      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -1340,9 +1346,6 @@
       ],
       "Upgrade": [
         "Покращити"
-      ],
-      "Upgrade Now": [
-        "Передплатити"
       ],
       "Upgrade now": [
         "Покращити"
@@ -1427,15 +1430,6 @@
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контакти",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Безплатний пробний період програми для комп'ютера завершується через 2 дні. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Безплатний пробний період програми для комп'ютера завершується через 5 днів. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Безплатний пробний період програми для комп'ютера завершується ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Ваш помічник з написання електронних листів"
