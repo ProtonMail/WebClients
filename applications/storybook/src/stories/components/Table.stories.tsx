@@ -1,11 +1,10 @@
 import { Button } from '@proton/atoms';
 import { Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Table.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'Components/Table',
     component: Table,
     subcomponents: { TableHeader, TableHeaderCell, TableRow, TableCell, TableBody },
     parameters: {

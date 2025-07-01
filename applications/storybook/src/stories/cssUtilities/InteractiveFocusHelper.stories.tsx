@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { getTitle } from '../../helpers/title';
 import mdx from './InteractiveFocusHelper.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Interactive Focus Helper',
     parameters: {
         docs: {
             page: mdx,

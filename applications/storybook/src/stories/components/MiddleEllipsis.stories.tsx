@@ -1,11 +1,10 @@
 import { MiddleEllipsis } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './MiddleEllipsis.mdx';
 
 export default {
     component: MiddleEllipsis,
-    title: getTitle(__filename, false),
+    title: 'Components/Middle Ellipsis',
     parameters: {
         docs: {
             page: mdx,

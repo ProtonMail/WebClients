@@ -1,8 +1,7 @@
-import { getTitle } from '../../../helpers/title';
 import mdx from './Sizing.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Flexbox/Sizing',
     parameters: {
         docs: {
             page: mdx,

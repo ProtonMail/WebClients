@@ -3,12 +3,11 @@ import { useEffect, useState } from 'react';
 import type { PopperPlacement } from '@proton/components';
 import { RadioGroup, Spotlight, allPopperPlacements } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Spotlight.mdx';
 
 export default {
     component: Spotlight,
-    title: getTitle(__filename, false),
+    title: 'Components/Spotlight',
     parameters: {
         docs: {
             page: mdx,

@@ -4,12 +4,11 @@ import { InputFieldTwo, Toggle } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Toggle.mdx';
 
 export default {
     component: Toggle,
-    title: getTitle(__filename, false),
+    title: 'Components/Toggle',
     parameters: {
         docs: {
             page: mdx,

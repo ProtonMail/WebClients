@@ -1,11 +1,10 @@
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './HidingDisablingContent.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Hiding Disabling Content',
     parameters: {
         docs: {
             page: mdx,

@@ -1,11 +1,10 @@
 import { LabelStack } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './LabelStack.mdx';
 
 export default {
     component: LabelStack,
-    title: getTitle(__filename, false),
+    title: 'Components/Label Stack',
     parameters: {
         docs: {
             page: mdx,

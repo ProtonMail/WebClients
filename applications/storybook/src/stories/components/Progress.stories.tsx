@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react';
 
 import { Progress } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Progress.mdx';
 
 export default {
     component: Progress,
-    title: getTitle(__filename, false),
+    title: 'Components/Progress',
     parameters: {
         docs: {
             page: mdx,

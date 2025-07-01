@@ -1,8 +1,7 @@
-import { getTitle } from '../../helpers/title';
 import mdx from './Transforms.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Transforms',
     parameters: {
         docs: {
             page: mdx,
@@ -10,8 +9,7 @@ export default {
     },
 };
 
-const demoItemClasses =
-    'user-select flex items-center p-4 justify-center bg-primary rounded-sm text-center';
+const demoItemClasses = 'user-select flex items-center p-4 justify-center bg-primary rounded-sm text-center';
 
 const demoContainerClasses = 'border rounded w-full relative flex p-4 items-center justify-space-around';
 

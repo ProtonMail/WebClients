@@ -3,12 +3,11 @@ import { useMemo, useState } from 'react';
 import { DateInput } from '@proton/components';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './DateInput.mdx';
 
 export default {
     component: DateInput,
-    title: getTitle(__filename, false),
+    title: 'Components/Date Input',
     parameters: {
         docs: {
             page: mdx,

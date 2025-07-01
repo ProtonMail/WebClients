@@ -1,10 +1,9 @@
 import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Typography.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'Core Concepts/Typography',
     parameters: {
         docs: {
             page: mdx,

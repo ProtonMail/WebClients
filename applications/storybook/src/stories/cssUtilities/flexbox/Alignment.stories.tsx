@@ -1,8 +1,7 @@
-import { getTitle } from '../../../helpers/title';
 import mdx from './Alignment.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Flexbox/Alignment',
     parameters: {
         docs: {
             page: mdx,

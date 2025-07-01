@@ -1,10 +1,9 @@
 import clsx from '@proton/utils/clsx';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Colors.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'CSS Utilities/Colors',
     parameters: {
         docs: {
             page: mdx,

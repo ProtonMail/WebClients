@@ -4,12 +4,11 @@ import { Checkbox, InputFieldTwo } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Checkbox.mdx';
 
 export default {
     component: Checkbox,
-    title: getTitle(__filename, false),
+    title: 'Components/Checkbox',
     parameters: {
         docs: {
             page: mdx,

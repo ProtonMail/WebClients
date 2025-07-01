@@ -5,11 +5,10 @@ import type { IconName } from '@proton/components';
 import { ButtonGroup, Icon, Mark } from '@proton/components';
 import iconSvg from '@proton/icons/assets/sprite-icons.svg';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Icons.mdx';
 
 export default {
-    title: getTitle(__filename, false),
+    title: 'Core Concepts/Icons',
     parameters: {
         docs: {
             page: mdx,
