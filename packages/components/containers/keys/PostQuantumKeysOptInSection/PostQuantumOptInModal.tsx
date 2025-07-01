@@ -10,7 +10,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
-import { ForwardingType } from '@proton/shared/lib/interfaces';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import useNotifications from '../../../hooks/useNotifications';
@@ -169,7 +169,11 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
             <ModalTwoContent>
                 <div>
                     {(() => {
-                        const hasOutgoingE2EEForwardingsAcrossAddresses = outgoingAddressForwardings.some(({ Type }) => Type === ForwardingType.InternalEncrypted);
+                        const hasOutgoingE2EEForwardingsAcrossAddresses = outgoingAddressForwardings.some(({ Type, State }) => (
+                            Type === ForwardingType.InternalEncrypted &&
+                            // these states are already inactive and require re-confirmation by the forwardee, so we ignore them
+                            State !== ForwardingState.Outdated && State !== ForwardingState.Rejected
+                        ));
                             return (
                                 <>
                                     <div className="mb-2">
