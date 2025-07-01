@@ -39,6 +39,7 @@ export interface SSOAuthModalProps
         Omit<PromptProps, 'title' | 'buttons' | 'children' | 'onError'> {
     onSuccess?: (data: SSOAuthModalResult) => Promise<void> | void;
     api?: Api;
+    info?: SSOInfoResponse;
 }
 
 const SSOAuthModal = ({
@@ -49,17 +50,25 @@ const SSOAuthModal = ({
     onSuccess,
     onError,
     config,
+    info: initialInfo,
     ...rest
 }: SSOAuthModalProps) => {
     const abortRef = useRef<AbortController | null>(null);
     const handleError = useErrorHandler();
     const [state, setState] = useState<State>(initialState);
+    const initialInfoRef = useRef(initialInfo);
     const ssoInfoResponsePromiseRef = useRef<Promise<SSOInfoResponse> | null>(null);
     const contextApi = useApi();
     const api = maybeApi || contextApi;
     const { APP_NAME } = useConfig();
 
     const refresh = useCallback(() => {
+        const value = initialInfoRef.current;
+        if (value) {
+            initialInfoRef.current = undefined;
+            ssoInfoResponsePromiseRef.current = Promise.resolve(value);
+            return;
+        }
         // The SSO info response is cached so that browsers have an easier time allowing the new tab to be opened
         ssoInfoResponsePromiseRef.current = api<SSOInfoResponse>(getInfo({ intent: 'SSO', reauthScope: scope }));
     }, []);
