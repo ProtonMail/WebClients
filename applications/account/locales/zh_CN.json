@@ -955,9 +955,6 @@
       "Next month": [
         "下个月"
       ],
-      "Next page": [
-        "下一页"
-      ],
       "No": [
         "否"
       ],
@@ -1002,9 +999,6 @@
       ],
       "Previous month": [
         "上个月"
-      ],
-      "Previous page": [
-        "上一页"
       ],
       "Publish changes": [
         "发布更改"
@@ -2287,17 +2281,6 @@
       ],
       "Working with sensitive data?": [
         "正在处理敏感数据？"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "您的所有专用服务器都已分配给网关。免费试用结束后，您可以购买更多服务器。"
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "免费试用版包含 ${ ipAddresses } 个专用服务器。正式订购开始后，您可以添加更多服务器。"
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "免费试用版包含最多 ${ maxMembers } 个许可证。正式订购开始后，您可以添加更多许可证。"
       ]
     },
     "breadcrumb": {
@@ -4080,9 +4063,6 @@
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "首先进行配置，以激活您的组织并自定义您的邮箱地址。"
-      ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "恭喜您已满额获得 ${ rewardsLimit } 个月的 ${ plusPlanName } 免费体验期."
       ],
       "Connect your CRM, website, printers, and more.": [
         "连接您的 CRM、网站、打印机等。"
@@ -10385,9 +10365,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "您将无法使用下载的恢复文件恢复锁定的数据。这也会禁用基于设备的恢复。"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
       ],
@@ -14445,11 +14422,6 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "选择 ${ BRAND_NAME } 可以访问的内容：查看电子邮件信息和设置、查看和下载联系人信息、查看和下载从 Google 日历访问的所有日程。"
-      ]
-    },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "在登录您的 Gmail 账户时出现了一些问题。"
       ]
     },
     "Offer": {
@@ -19055,17 +19027,8 @@
       "Cancel subscription?": [
         "取消订阅?"
       ],
-      "Cannot add Gateway": [
-        "无法添加网关"
-      ],
-      "Cannot add licenses": [
-        "无法添加许可证"
-      ],
       "Cannot add more users": [
         "无法添加更多用户"
-      ],
-      "Cannot add servers": [
-        "无法添加服务器"
       ],
       "Card verification": [
         "银行卡验证"
