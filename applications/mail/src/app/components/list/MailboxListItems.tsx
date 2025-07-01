@@ -1,11 +1,11 @@
-import type { ChangeEvent, RefObject } from 'react';
-import { Fragment } from 'react';
+import { type ChangeEvent, Fragment, type RefObject, useEffect } from 'react';
 
 import { useUserSettings } from '@proton/account';
 import { DENSITY } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
+import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -23,8 +23,6 @@ interface MailboxListItemsProps {
     onBack: () => void;
     labels: Label[];
     columnLayout?: boolean;
-    canDisplayChecklist?: boolean;
-    displayState?: string;
     listRef?: RefObject<HTMLDivElement>;
 }
 
@@ -35,8 +33,6 @@ const MailboxListItems = ({
     onBack,
     labels = [],
     columnLayout = true,
-    canDisplayChecklist = false,
-    displayState = '',
     listRef,
 }: MailboxListItemsProps) => {
     const [userSettings] = useUserSettings();
@@ -56,12 +52,18 @@ const MailboxListItems = ({
         elementID,
         isSearch,
     } = useMailboxListContext();
-
+    const { displayState, changeChecklistDisplay, canDisplayChecklist } = useGetStartedChecklist();
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const mailSettings = useMailModel('MailSettings');
     const { contentIndexingDone, esEnabled } = esStatus;
     const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldOverrideCompactness;
+
+    useEffect(() => {
+        if (elements.length >= 5 && displayState === CHECKLIST_DISPLAY_TYPE.FULL) {
+            changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED);
+        }
+    }, [elements]);
 
     if (elements.length === 0) {
         return <EmptyListPlaceholder labelID={labelID} isSearch={isSearch} isUnread={false} />;
