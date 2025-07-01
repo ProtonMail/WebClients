@@ -284,7 +284,7 @@
         "Пацвердзіць адкрыццё спасылкі ${ linkToShow }"
       ],
       "Confirm purchase": [
-        "Пацвердзіце куплю"
+        "Пацвердзіць куплю"
       ],
       "Connect": [
         "Падключыцца"
@@ -347,13 +347,13 @@
         "Скапіяваць пароль"
       ],
       "Copy SMTP port": [
-        "Скапіраваць порт SMTP"
+        "Скапіяваць порт SMTP"
       ],
       "Copy SMTP server": [
         "Скапіяваць сервер SMTP"
       ],
       "Copy SMTP token": [
-        "Скапіраваць токен SMTP"
+        "Скапіяваць токен SMTP"
       ],
       "Copy SMTP username": [
         "Скапіяваць імя карыстальніка SMTP"
@@ -375,6 +375,9 @@
       ],
       "Create folder": [
         "Стварыць папку"
+      ],
+      "Create free account now": [
+        "Стварыць бясплатны ўліковы запіс"
       ],
       "Create Gateway": [
         "Стварыць шлюз"
@@ -479,7 +482,7 @@
         "Выдаленне меткі"
       ],
       "Deny access": [
-        "Адмовіць у доступе"
+        "Забараніць доступ"
       ],
       "Details": [
         "Падрабязнасці"
@@ -500,13 +503,13 @@
         "Адключыць падзеі бяспекі"
       ],
       "Discard": [
-        "Скасаваць"
+        "Адхіліць"
       ],
       "Discard changes": [
-        "Скасаваць змены"
+        "Адхіліць змены"
       ],
       "Discard Changes": [
-        "Скасаваць змены"
+        "Адхіліць змены"
       ],
       "Discover ${ planName }": [
         "Знаёмства з ${ planName }"
@@ -611,7 +614,7 @@
         "Рэдагаваць Sieve"
       ],
       "Edit sieve filter “${ Name }”": [
-        "Рэдагаваць Sieve фільтр “${ Name }”"
+        "Рэдагаваць фільтр Sieve з назвай “${ Name }”"
       ],
       "Edit sign-in details": [
         "Рэдагаваць звесткі ўваходу"
@@ -764,7 +767,7 @@
         "Вярнуцца"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
-        "Перайдзіце ў ${ DRIVE_APP_NAME }"
+        "Перайсці ў ${ DRIVE_APP_NAME }"
       ],
       "Go to label": [
         "Перайсці ў меткі"
@@ -970,9 +973,6 @@
       "Next month": [
         "Наступны месяц"
       ],
-      "Next page": [
-        "Наступная старонка"
-      ],
       "No": [
         "Не"
       ],
@@ -1017,9 +1017,6 @@
       ],
       "Previous month": [
         "Папярэдні месяц"
-      ],
-      "Previous page": [
-        "Папярэдняя старонка"
       ],
       "Publish changes": [
         "Апублікаваць змяненні"
@@ -1840,10 +1837,10 @@
         "Значная эканомія на прэміяльных функцыях Drive з абмежаванай па часе скідкай."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
-        "Значная эканомія на прэміяльныя функцыі Mail з абмежаванай па часе скідкай."
+        "Значная эканомія на прэміяльных функцыях Mail з абмежаванай па часе скідкай."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
-        "Значная эканомія на прэміяльныя функцыі Pass з абмежаванай па часе скідкай."
+        "Значная эканомія на прэміяльных функцыях Pass з абмежаванай па часе скідкай."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
         "Значная эканомія на прэміяльных функцыях VPN з абмежаванай па часе скідкай."
@@ -1991,6 +1988,11 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Я не на працоўным месцы і ў мяне няма поўнага доступу да пошты."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Падпіска скасавана."
       ]
     },
     "Badge for domain": {
@@ -2332,26 +2334,6 @@
       ],
       "Working with sensitive data?": [
         "Працуеце з канфідэнцыяльнымі данымі?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Ваш вылучаны сервер ужо прызначаны шлюзу. У вас будзе магчымасць купіць больш сервераў, як толькі завершыцца ваш бясплатны пробны перыяд.",
-        "Усе вашы вылучаныя серверы ўжо прызначаны шлюзам. У вас будзе магчымасць купіць больш сервераў, як толькі завершыцца ваш бясплатны пробны перыяд.",
-        "Усе вашы вылучаныя серверы ўжо прызначаны шлюзам. У вас будзе магчымасць купіць больш сервераў, як толькі завершыцца ваш бясплатны пробны перыяд.",
-        "Усе вашы вылучаныя серверы ўжо прызначаны шлюзам. У вас будзе магчымасць купіць больш сервераў, як толькі завершыцца ваш бясплатны пробны перыяд."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Ваш бясплатны пробны перыяд уключае ${ ipAddresses } вылучаны сервер. Вы можаце дадаць больш сервераў, як толькі пачне дзейнічаць ваша поўная падпіска.",
-        "Ваш бясплатны пробны перыяд уключае ${ ipAddresses } вылучаныя серверы. Вы можаце дадаць больш сервераў, як толькі пачне дзейнічаць ваша поўная падпіска.",
-        "Ваш бясплатны пробны перыяд уключае ${ ipAddresses } вылучаных сервераў. Вы можаце дадаць больш сервераў, як толькі пачне дзейнічаць ваша поўная падпіска.",
-        "Ваш бясплатны пробны перыяд уключае ${ ipAddresses } вылучаны сервер. Вы можаце дадаць больш сервераў, як толькі пачне дзейнічаць ваша поўная падпіска."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Ваш бясплатны пробны перыяд уключае ${ maxMembers } ліцэнзію. Вы можаце дадаць больш ліцэнзій, як толькі пачне дзейнічаць ваша поўная падпіска.",
-        "Ваш бясплатны пробны перыяд уключае максімум ${ maxMembers } ліцэнзіі. Вы можаце дадаць больш ліцэнзій, як толькі пачне дзейнічаць ваша поўная падпіска.",
-        "Ваш бясплатны пробны перыяд уключае максімум ${ maxMembers } ліцэнзій. Вы можаце дадаць больш ліцэнзій, як толькі пачне дзейнічаць ваша поўная падпіска.",
-        "Ваш бясплатны пробны перыяд уключае максімум ${ maxMembers } ліцэнзій. Вы можаце дадаць больш ліцэнзій, як толькі пачне дзейнічаць ваша поўная падпіска."
       ]
     },
     "breadcrumb": {
@@ -4162,9 +4144,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Спачатку сканфігурыруйце гэтыя функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "Віншуем! Вы зарабілі максімальную колькасць з ${ rewardsLimit } бясплатных месяцаў тарыфнага плана ${ plusPlanName }."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Падключыце сваю CRM, вэб-сайт, прынтары і іншае."
       ],
@@ -4190,10 +4169,10 @@
         "Уключыце ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
       ],
       "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Уключыць падрабязныя падзеі і ${ PROTON_SENTINEL_NAME } для доступу да гэтых функцый"
+        "Уключэнне падрабязных падзей і ${ PROTON_SENTINEL_NAME } для доступу да гэтых функцый"
       ],
       "Enable detailed events to access these features": [
-        "Уключыць падрабязныя падзеі для доступу да гэтых функцый"
+        "Уключэнне падрабязных падзей для доступу да гэтых функцый"
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Заахвочвайце выкарыстанне двухфактарнай аўтэнтыфікацыі ў сваёй арганізацыі для дадатковай бяспекі."
@@ -4601,6 +4580,20 @@
       ],
       "90 minutes": [
         "90 хвілін"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковы запіс.",
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковыя запісы.",
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў.",
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешняга ўліковага запісу ў ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5484,6 +5477,9 @@
       "Payments are currently not available, please try again later": [
         "Плацяжы ў цяперашні час недаступны. Паспрабуйце яшчэ раз пазней"
       ],
+      "Permissions request failed.": [
+        "Збой запыту дазволаў."
+      ],
       "Please configure a custom domain before adding addresses.": [
         "Перад дадаваннем адрасоў неабходна сканфігураваць карыстальніцкі дамен."
       ],
@@ -6187,7 +6183,7 @@
         "Уліковыя запісы з карыстальніцкімі даменамі нельга далучыць да сямейнага тарыфнага плана."
       ],
       "After leaving, you will be moved to a ${ BRAND_NAME } Free plan.": [
-        "Вы будзеце пераведзены на тарыфны план ${ BRAND_NAME } Free пасля таго, як выйдзіце з яго."
+        "Вы будзеце пераведзены на тарыфны план ${ BRAND_NAME } Free пасля таго, як выйдзіце з бягучага тарыфнага плана."
       ],
       "customer support": [
         "падтрымка кліентаў"
@@ -6312,7 +6308,7 @@
         "*Толькі адзін бясплатны пробны перыяд на карыстальніка. Пасля гэтага перыяду будзе ўжыта стандартная плата."
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
-        "Карыстальнік будзе пераведзены на тарыфны план ${ BRAND_NAME } Free пасля таго, як ён выйдзе з яго."
+        "Карыстальнік будзе пераведзены на тарыфны план ${ BRAND_NAME } Free пасля таго, як ён выйдзе з вашага тарыфнага плана."
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Пасля адмовы ад вашага бягучага тарыфнага плана наступныя карыстальнікі будуць пераведзены на тарыфны план ${ BRAND_NAME } Unlimited з бясплатным пробным перыядам на працягу 30 дзён."
@@ -7767,9 +7763,9 @@
       ],
       "${ resultsCount } result found": [
         "${ resultsCount } вынік знойдзены",
-        "${ resultsCount } вынікі знойдзена",
-        "${ resultsCount } вынікаў знойдзена",
-        "${ resultsCount } вынікаў знойдзена"
+        "${ resultsCount } вынікі знойдзены",
+        "${ resultsCount } вынікаў знойдзены",
+        "${ resultsCount } вынікаў знойдзены"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } каляндар з ${ providerCalendars.length }",
@@ -7886,7 +7882,7 @@
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
-        "Паддамен ${ protonSubdomain } размешчаны на ${ BRAND_NAME }, які дазваляе вам хутка наладжваць паддамены. ${ learnMoreLink }"
+        "${ protonSubdomain } размешчаны на ${ BRAND_NAME }. Ён дазваляе хутка наладжваць паддамены. ${ learnMoreLink }"
       ],
       "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
         "Для стварэння груп патрабуецца карыстальніцкі дамен. Калі ў вас адсутнічае наладжаны карыстальніцкі дамен, то спачатку стварыце яго па спасылцы ${ linkToDomainPage }."
@@ -8120,10 +8116,10 @@
         "Вы сапраўды хочаце выдаліць гэту метку?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Вы сапраўды хочаце скасаваць змены?"
+        "Вы сапраўды хочаце адхіліць змены?"
       ],
       "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце скасаваць імпартаванне?"
+        "Вы сапраўды хочаце адхіліць імпартаванне?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Вы сапраўды хочаце даць гэтаму карыстальніку прывілеі адміністратара?"
@@ -8234,7 +8230,7 @@
         "Ствараючы ўліковы запіс ${ PASS_APP_NAME } з дапамогай вашай электроннай пошты SimpleLogin, вы можаце кіраваць сваімі псеўданімамі наўпрост з ${ PASS_APP_NAME }."
       ],
       "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Адключыўшы ўвесь свой маніторынг падзеяў, вы таксама ачысціце ўсю сваю гісторыю. Вы сапраўды хочаце яго адключыць?"
+        "Вы таксама ачысціце ўсю сваю гісторыю, калі адключыце маніторынг падзей бяспекі. Вы сапраўды хочаце яго адключыць?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
@@ -8415,6 +8411,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
+      ],
+      "Dedicated VPN servers": [
+        "Вылучаныя VPN серверы"
       ],
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
@@ -9316,6 +9315,9 @@
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
+      "Number of dedicated VPN servers in the organization": [
+        "Колькасць вылучаных VPN сервераў у арганізацыі"
+      ],
       "Number of items the user has access to (includes owned items + shared items)": [
         "Колькасць элементаў, да якіх у карыстальніка ёсць доступ (уключаючы элементы ва ўласнасці + абагуленыя элементы)"
       ],
@@ -10088,7 +10090,7 @@
         "Гэта выдаліць усе папярэднія версіі вашых файлаў."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
-        "Гэта прывядзе да адмовы ў доступе да **${ email }**. Вы сапраўды хочаце працягнуць?"
+        "Гэта прывядзе да забароны ў доступе да **${ email }**. Вы сапраўды хочаце працягнуць?"
       ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Гэта адключыць двухфактарную аўтэнтыфікацыю, а таксама праграму аўтэнтыфікатар і метады ключоў бяспекі."
@@ -10792,9 +10794,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "У вас не будзе магчымасці аднавіць заблакіраваныя даныя з дапамогай спампаваных файлаў аднаўлення. Гэта таксама адключыць аднаўленне з дапамогай даверанай прылады."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Вы таксама страціце доступ да функцый ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцы ў памеры ${ renewAmountStr }.",
@@ -10871,10 +10870,10 @@
         "Ваш бясплатны пробны перыяд уключае ${ ownedCount } вылучаных сервераў."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Ваша дата падаўжэння: ${ nextBillingDate }."
+        "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Ваша дата падаўжэння: ${ nextBillingDate }."
+        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Ваша імпартаванне з ${ accounts } часова адкладзена.",
@@ -10939,6 +10938,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Ваш пробны перыяд завершыцца праз ${ timeRemaining }."
       ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Вы таксама страціце доступ да функцый ${ boldPlanTitle }:"
+      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "У вас будзе магчымасць неадкладна дадаць гэтыя серверы ў іншы шлюз."
       ],
@@ -10946,7 +10948,7 @@
         "Доступ да ${ boldPlanTitle } будзе страчаны ${ boldEndDate }."
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
-        "Вы ўсё яшчэ зможаце праглядаць даныя вашага ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+        "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
       ],
       "You’re all set": [
         "Усё гатова"
@@ -11210,7 +11212,7 @@
         "Выдаліць незваротна"
       ],
       "Discard draft": [
-        "Скасаваць чарнавік"
+        "Адхіліць чарнавік"
       ],
       "Expand / contract composer": [
         "Разгарнуць / сціснуць рэдактар"
@@ -13339,7 +13341,7 @@
         "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashacampaniya.by). Наш майстар дапаможа вам з працэсам наладжвання."
       ],
       "View account-related events across your organization.": [
-        "Паглядзець падзеі, якія звязаны з уліковым запісам ва ўсё арганізацыі."
+        "Паглядзець падзеі, якія звязаны з уліковым запісам ва ўсёй арганізацыі."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
@@ -14304,7 +14306,7 @@
         "200 ГБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў"
+        "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў з адмысловай абаронай"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Пашыраная бяспека для каманд, якая выходзіць за рамкі прамысловых стандартаў."
@@ -15034,11 +15036,6 @@
         "Выберыце, да чаго можа атрымліваць доступ ${ BRAND_NAME }: прагляд вашых электронных лістоў і налад, прагляд і спампоўванне кантактаў, прагляд і спампоўванне распарадку дня з праграмы Каляндар Google."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Нешта пайшло не так падчас уваходу ў ваш уліковы запіс Gmail"
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited за 12 месяцаў"
@@ -15198,10 +15195,10 @@
         "Як толькі пачнецца ваша поўная падпіска..."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Вы ўсё яшчэ зможаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+        "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
-        "Вы ўсё яшчэ зможаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+        "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Вы можаце карыстацца ${ planTitle } да канца пробнага перыяду. Плата за гэта спаганяцца не будзе."
@@ -15506,7 +15503,7 @@
     },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
-        "${ upgradeLink }, каб дадаць больш карыстальнікаў або выдаліце некаторыя ўліковыя запісы карыстальнікаў."
+        "${ upgradeLink }, каб дадаць больш карыстальнікаў. Вы таксама можаце выдаліць некаторыя ўліковыя запісы карыстальнікаў, каб вызваліць месца."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
         "${ upgradeLink }, каб атрымаць больш уліковых запісаў або выдаліце доступ па VPN для некаторых карыстальнікаў."
@@ -15870,7 +15867,7 @@
         "Прапанова абмежавана па часе: ${ title } вам абыдзецца ў ${ price } за першы месяц"
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
-        "Прапанова абмежаваная па часе. Атрымайце ${ title } вам абыдзецца ў ${ price } штомесяц за карыстальніка!"
+        "Прапанова абмежаваная па часе. Атрымайце ${ title } за ${ price } штомесячнай платы за карыстальніка!"
       ],
       "One easy subscription.": [
         "Адна нескладаная падпіска."
@@ -16299,7 +16296,7 @@
     },
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - карта, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+        "Apple Pay - картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
       ],
       "Bank transfer - ${ details }": [
         "Банкаўскі перавод - ${ details }"
@@ -17689,6 +17686,24 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "Псеўданімы hide-my-email ${ FREE_PASS_ALIASES } для барацьбы са спамам"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } адрас",
+        "${ maxAddresses } адрасы",
+        "${ maxAddresses } адрасоў",
+        "${ maxAddresses } адрасоў"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } каляндар",
+        "${ maxCalendars } календары",
+        "${ maxCalendars } календароў",
+        "${ maxCalendars } календароў"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } воблачнае сховішча для файлаў і фатаграфій"
+      ],
       "${ value } of secure storage": [
         "${ value } бяспечнага сховішча"
       ],
@@ -17707,6 +17722,9 @@
       "Billing Cycle": [
         "Перыяд аплаты"
       ],
+      "Collaborative document editing": [
+        "Сумеснае рэдагаванне дакументаў"
+      ],
       "Compare plans": [
         "Параўнайце тарыфныя планы"
       ],
@@ -17719,11 +17737,17 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Працягнуць з ${ PLAN_NAMES[plan] }"
       ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Зашыфраваная электронная пошта з ${ totalMailStorageSize } сховішча"
+      ],
       "Encrypted password manager": [
         "Зашыфраваны менеджар пароляў"
       ],
       "End-to-end encryption": [
         "Скразное шыфраванне"
+      ],
+      "Every free account comes with:": [
+        "Кожны бясплатны ўліковы запіс уключае:"
       ],
       "Free": [
         "Free"
@@ -17733,6 +17757,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "атрымайце бяспечны адрас ${ MAIL_APP_NAME }."
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Атрымайце бяспечны код ад нас або ${ internalButton }"
       ],
       "Manage user access": [
         "Кіраванне доступам карыстальнікаў"
@@ -17751,6 +17778,9 @@
       ],
       "Online documents": [
         "Дакументы ў сетцы"
+      ],
+      "Password manager for all your devices": [
+        "Менеджар пароляў для ўсіх вашых прылад"
       ],
       "Pick your perfect plan": [
         "Выберыце свой ідэальны тарыфны план"
@@ -17785,6 +17815,9 @@
       "Share and collaborate of files": [
         "Абагульванне файлаў і супрацоўніцтва"
       ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Зарэгіструйцеся, каб скарыстацца ўсімі магчымасцямі ${ BRAND_NAME }"
+      ],
       "Sign up, protect your files": [
         "Зарэгіструйцеся і абараніце свае файлы"
       ],
@@ -17809,11 +17842,20 @@
       "Upload files of any size": [
         "Запамоўванне файлаў любога памеру"
       ],
+      "use your current email.": [
+        "скарыстайцеся сваёй бягучай электроннай поштай."
+      ],
       "Use your email, or ${ externalButton }": [
         "Выкарыстоўвайце сваю электронную пошту або ${ externalButton }"
       ],
       "use your own email.": [
         "выкарыстоўвайце ўласную электронную пошту."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN з серверамі ў ${ vpnServersCountData.free.countries } краіне",
+        "VPN з серверамі ў ${ vpnServersCountData.free.countries } краінах",
+        "VPN з серверамі ў ${ vpnServersCountData.free.countries } краінах",
+        "VPN з серверамі ў ${ vpnServersCountData.free.countries } краінах"
       ],
       "Yearly": [
         "Штогод"
@@ -17823,6 +17865,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "Пароль ад ${ BRAND_NAME }"
+      ],
       "Confirm password": [
         "Пацвердзіце пароль"
       ],
@@ -18164,13 +18209,13 @@
         "Атрымайце доступ да звышхуткіх сервераў VPN у больш чым 110 краінах"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
-        "Атрымайце тарыфны план ${ BRAND_NAME } Unlimited, які аб'ядноўвае ўсе функцыі."
+        "Атрымайце тарыфны план ${ BRAND_NAME } Unlimited, які аб'ядноўвае ўсе гэтыя функцыі."
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Атрымайце неабмежаваную колькасць псеўданімаў, каб абараніць сваю ідэнтычнасць і паменшыць спам"
       ],
       "Keep your passwords safe and organized in multiple vaults ": [
-        "Захоўвайце свае паролі ў бяспецы і ўпарадкаванымі пры дапамозе некалькіх сховішч "
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч "
       ],
       "Protect your account from threats with Sentinel": [
         "Абараніце свой уліковы запіс ад пагроз з дамогай Sentinel"
@@ -18269,7 +18314,7 @@
         "Ухваліць"
       ],
       "Approve or deny it now": [
-        "Ухваліць або адхіліць яго"
+        "Ухваліць або забараніць яго"
       ],
       "Approve the sign-in from another device": [
         "Ухваліце ​​ўваход з іншай прылады"
@@ -18320,7 +18365,7 @@
         "Забараніць"
       ],
       "Deny access": [
-        "Адмовіць у доступе"
+        "Забараніць доступ"
       ],
       "Devices available": [
         "Даступныя прылады"
@@ -19205,6 +19250,9 @@
       "Address added": [
         "Адрас дададзены"
       ],
+      "Address successfully added": [
+        "Адрас паспяхова дададзены"
+      ],
       "Address updated": [
         "Адрас абноўлены"
       ],
@@ -19940,17 +19988,8 @@
       "Cancel subscription?": [
         "Скасаваць падпіску?"
       ],
-      "Cannot add Gateway": [
-        "Немагчыма дадаць шлюз"
-      ],
-      "Cannot add licenses": [
-        "Немагчыма дадаць ліцэнзіі"
-      ],
       "Cannot add more users": [
         "Немагчыма дадаць больш карыстальнікаў"
-      ],
-      "Cannot add servers": [
-        "Немагчыма дадаць серверы"
       ],
       "Card verification": [
         "Праверка карткі"
@@ -20023,6 +20062,9 @@
       ],
       "Connect apps and devices": [
         "Падключэнне праграм і прылад"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Падключайце больш адрасоў Gmail з ${ planName }"
       ],
       "Connect organization": [
         "Падключэнне арганізацыі"
@@ -20190,7 +20232,7 @@
         "Выдаліць гісторыю версій?"
       ],
       "Deny access to user?": [
-        "Адмовіць у доступе карыстальніку?"
+        "Забараніць доступ карыстальніку?"
       ],
       "Description": [
         "Апісанне"
@@ -20217,7 +20259,7 @@
         "Адключыць двухфактарную аўтэнтыфікацыю?"
       ],
       "Discard changes?": [
-        "Скасаваць змены?"
+        "Адхіліць змены?"
       ],
       "Display name and signature": [
         "Бачнае імя і подпіс"
@@ -20605,6 +20647,9 @@
       ],
       "Multi-user support": [
         "Падтрымка шматкарыстальніцкага рэжыму"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Некалькі ўліковых запісаў і 1 прыватная паштовая скрыня"
       ],
       "My addresses": [
         "Мае адрасы"
@@ -21659,7 +21704,7 @@
     },
     "Transaction type display as badge": {
       "Adjustment credit": [
-        "Крэдытны рахунак карэкцыі"
+        "Рэгуляванне крэдыту"
       ],
       "Authorization": [
         "Аўтарызацыя"

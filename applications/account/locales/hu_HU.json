@@ -961,9 +961,6 @@
       "Next month": [
         "Következő hónap"
       ],
-      "Next page": [
-        "Következő oldal"
-      ],
       "No": [
         "Nem"
       ],
@@ -1008,9 +1005,6 @@
       ],
       "Previous month": [
         "Előző hónap"
-      ],
-      "Previous page": [
-        "Előző oldal"
       ],
       "Publish changes": [
         "Változások közzététele"
@@ -2305,20 +2299,6 @@
       ],
       "Working with sensitive data?": [
         "Érzékeny adatokkal dolgozik?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Dedikált szervere már hozzá van rendelve egy átjáróhoz. Több szervert vásárolhat majd, ha az ingyenes próbaidőszak lejár.",
-        "Minden dedikált szervere már hozzá van rendelve egy átjáróhoz. Több szervert vásárolhat majd, ha az ingyenes próbaidőszak lejár."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Az ingyenes próbaidőszak ${ ipAddresses } dedikált szervert tartalmaz. Több szervert adhat hozzá, miután elkezdődik a teljes előfizetése.",
-        "Az ingyenes próbaidőszak ${ ipAddresses } dedikált szervert tartalmaz. Több szervert adhat hozzá, miután elkezdődik a teljes előfizetése."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Az ingyenes próbaidőszak ${ maxMembers } licencet tartalmaz. Több licencet is hozzáadhat, amint elindul a teljes előfizetése.",
-        "Az ingyenes próbaidőszak ${ maxMembers } licencet tartalmaz. Több licencet is hozzáadhat, amint elindul a teljes előfizetése."
       ]
     },
     "breadcrumb": {
@@ -4111,9 +4091,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurálja először ezt, hogy aktiválja a szervezetét és testre szabja az Ön e-mail címét."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "Gratulálunk! Megszerezte a maximum ${ rewardsLimit } hónapnyi ingyenes ${ plusPlanName } elérést."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Csatlakoztassa a CRM-jét, weboldalát, nyomtatóit és egyebeket."
       ],
@@ -4550,6 +4527,12 @@
       ],
       "90 minutes": [
         "90 perc"
+      ]
+    },
+    "Easy switch": {
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "E-maileket továbbít ${ MAX_SYNC_FREE_USER } külső fiókból a ${ MAIL_APP_NAME } szolgáltatásba.",
+        "E-maileket továbbít ${ MAX_SYNC_FREE_USER } külső fiókból a ${ MAIL_APP_NAME } szolgáltatásba."
       ]
     },
     "Edit billing address form note": {
@@ -10559,9 +10542,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Nem fogja tudni helyreállítani az zárolt adatait, a letöltött helyreállítási fájlokkal. Ez az eszköz alapú helyreállítást is érvényteleníti."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Ön elveszíti a hozzáférést a(z) ${ boldPlanTitle } funkciókhoz:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
         "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel."
@@ -14686,11 +14666,6 @@
         "Válassza ki, ${ BRAND_NAME } mihez férhet hozzá: megtekintheti az e-mail üzeneteit és a beállításokat, megtekintheti és letöltheti a névjegyeit, valamint megtekintheti és letöltheti az összes naptárát, amelyhez a Google Calendar alkalmazásból hozzáfér."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Valami hiba történt a Gmail fiókjába való bejelentkezés közben."
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } korlátlan 12 hónapra"
@@ -17280,6 +17255,14 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } cím",
+        "${ maxAddresses } cím"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } naptár",
+        "${ maxCalendars } naptár"
+      ],
       "${ value } of secure storage": [
         "${ value } biztonságos tárhely"
       ],
@@ -19434,17 +19417,8 @@
       "Cancel subscription?": [
         "Előfizetés lemondása?"
       ],
-      "Cannot add Gateway": [
-        "Nem adhat hozzá átjárót"
-      ],
-      "Cannot add licenses": [
-        "Nem adhat hozzá licenceket"
-      ],
       "Cannot add more users": [
         "Nem adhat hozzá több felhasználót"
-      ],
-      "Cannot add servers": [
-        "Nem adhat hozzá szervereket"
       ],
       "Card verification": [
         "Bankkártya ellenőrzése"

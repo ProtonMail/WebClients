@@ -442,6 +442,9 @@
       "Delete logo": [
         "Logo verwijderen"
       ],
+      "Delete logs": [
+        "Logboeken wissen"
+      ],
       "Delete member": [
         "Verwijder lid"
       ],
@@ -468,6 +471,12 @@
       ],
       "Delete “${ label.Name }”": [
         "Verwijder \"${ label.Name }\""
+      ],
+      "Deleting folder": [
+        "Map verwijderen"
+      ],
+      "Deleting label": [
+        "Label verwijderen"
       ],
       "Deny access": [
         "Toegang weigeren"
@@ -642,6 +651,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Ontdek andere ${ BRAND_NAME }-abonnementen"
+      ],
+      "Explore other plans": [
+        "Ontdek andere abonnementen"
       ],
       "Export": [
         "Exporteren"
@@ -958,9 +970,6 @@
       "Next month": [
         "Volgende maand"
       ],
-      "Next page": [
-        "Volgende pagina"
-      ],
       "No": [
         "Nee"
       ],
@@ -1005,9 +1014,6 @@
       ],
       "Previous month": [
         "Vorige maand"
-      ],
-      "Previous page": [
-        "Vorige pagina"
       ],
       "Publish changes": [
         "Publiceer wijzigingen"
@@ -2329,20 +2335,6 @@
       ],
       "Working with sensitive data?": [
         "Werkt u met gevoelige gegevens?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Uw toegewijde server is al toegewezen aan een gateway. U kunt meer servers kopen zodra uw gratis proefversie eindigt.",
-        "Al uw toegewijde servers zijn al toegewezen aan een gateway. U kunt meer servers kopen zodra uw gratis proefversie eindigt."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Uw gratis proefversie bevat ${ ipAddresses } toegewijde server. U kunt meer servers toevoegen zodra uw volledige abonnement start.",
-        "Uw gratis proefversie bevat ${ ipAddresses } toegewijde servers. U kunt meer servers toevoegen zodra uw volledige abonnement start."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Uw gratis proefversie bevat ${ maxMembers } licentie. U kunt meer licenties toevoegen zodra uw volledige abonnement start.",
-        "Uw gratis proefversie bevat maximaal ${ maxMembers } licenties. U kunt meer licenties toevoegen zodra uw volledige abonnement start."
       ]
     },
     "breadcrumb": {
@@ -4140,7 +4132,8 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Configureer dit eerst om uw organisatie te activeren en uw e-mailadres aan te passen."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
+        "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maand ${ plusPlanName } verdiend.",
         "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maanden ${ plusPlanName } verdiend."
       ],
       "Connect your CRM, website, printers, and more.": [
@@ -4166,6 +4159,12 @@
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Schakel ${ PROTON_SENTINEL_NAME } in om toegang te krijgen tot deze functies"
+      ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Schakel gedetailleerde gebeurtenissen en ${ PROTON_SENTINEL_NAME } in om toegang te krijgen tot deze functies"
+      ],
+      "Enable detailed events to access these features": [
+        "Schakel gedetailleerde gebeurtenissen in om toegang te krijgen tot deze functies"
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Moedig het gebruik van tweestapsverificatie in uw organisatie aan voor extra beveiliging."
@@ -6444,6 +6443,17 @@
         "Veilig streamen"
       ]
     },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video, en meer, waar u maar wilt"
+      ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "Beschermt u tegen advertenties, trackers en malware op websites en apps"
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Secure Core servers routeren uw verkeer via 2 VPN-servers voor extra veiligheid"
+      ]
+    },
     "fido2: Action": {
       "Delete key": [
         "Sleutel verwijderen"
@@ -7389,7 +7399,7 @@
         "Importeer uit Outlook"
       ],
       "Import from Yahoo": [
-        "Importeer uit Outlook"
+        "Importeer uit Yahoo"
       ]
     },
     "Import rollback status": {
@@ -10571,9 +10581,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "U zult niet in staat zijn om vergrendelde gegevens te herstellen met behulp van uw gedownloade herstelbestanden. Hiermee schakelt u ook de op toestel-gebaseerde herstelfunctie uit."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "U verliest ook toegang tot ${ boldPlanTitle } functies:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
         "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
@@ -12892,9 +12899,15 @@
       ],
       "Two password mode enabled": [
         "Twee wachtwoorden-modus ingeschakeld"
+      ],
+      "Unknown": [
+        "Onbekend"
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "Activiteitenmonitor"
+      ],
       "Enable ${ reason }": [
         "${ reason } inschakelen"
       ],
@@ -14695,11 +14708,6 @@
         "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Er ging iets mis tijdens het aanmelden bij uw Gmail-account"
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Onbeperkt voor 12 maanden"
@@ -14710,8 +14718,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } aanbieding verloopt vandaag!"
       ],
+      "Don’t show this again": [
+        "Toon dit niet opnieuw"
+      ],
       "Don’t show this offer again": [
         "Toon deze aanbieding niet opnieuw"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Krijg ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Krijg Drive Plus voor slechts ${ pricingTitle }"
@@ -14765,9 +14779,20 @@
         "Uw abonnement verloopt binnenkort"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordbeheerder"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 meer premium functies"
+      ],
+      "500 GB secure storage": [
+        "500 GB veilige opslag"
+      ],
+      "Advanced threat protection": [
+        "Geavanceerde bedreigingsbeveiliging"
       ],
       "Custom email domain": [
         "Aangepast e-maildomein"
@@ -14789,6 +14814,12 @@
       ],
       "Storage": [
         "Opslagruimte"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultrasnelle VPN-servers in 110+ landen"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Onbeperkt aliassen om uw identiteit te beschermen"
       ]
     },
     "Onboarding": {
@@ -15780,6 +15811,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Bankoverschrijving"
       ],
@@ -15914,6 +15948,14 @@
     "Payments.plan_name": {
       "Free": [
         "Gratis"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankoverschrijving - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -17623,8 +17665,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Veilig browsen"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Haal meer uit ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Krijg onbeperkt aliassen"
+      ],
       "Go to subscription plans": [
         "Naar abonnementen"
+      ],
+      "Guard against threats": [
+        "Beveilig u tegen bedreigingen"
+      ],
+      "Increase your storage": [
+        "Verhoog uw opslag"
+      ],
+      "Keep passwords safe": [
+        "Wachtwoorden veilig houden"
+      ],
+      "Unblock streaming content": [
+        "Deblokkeer streaming content"
       ],
       "Upgrade": [
         "Upgraden"
@@ -17703,6 +17766,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Wereldwijde toegang tot content op streamingdiensten"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Krijg 500 GB om al uw bestanden en foto's veilig op te slaan"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Krijg toegang tot ultrasnelle VPN-servers in 110+ landen"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Krijg één abonnement dat alles omvat, krijg ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Krijg onbeperkt aliassen om uw identiteit te beschermen en spam te verminderen"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Bewaar uw wachtwoorden veilig en georganiseerd in meerdere kluizen "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Bescherm uw account tegen bedreigingen met Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Upgrade en bespaar meer met 2 jaar ${ planName }"
       ]
@@ -19386,17 +19470,8 @@
       "Cancel subscription?": [
         "Abonnement opzeggen?"
       ],
-      "Cannot add Gateway": [
-        "Kan geen gateway toevoegen"
-      ],
-      "Cannot add licenses": [
-        "Kan geen licenties toevoegen"
-      ],
       "Cannot add more users": [
         "Kan niet meer gebruikers toevoegen"
-      ],
-      "Cannot add servers": [
-        "Kan geen servers toevoegen"
       ],
       "Card verification": [
         "Kaartverificatie"
@@ -21133,6 +21208,14 @@
       ],
       "Refund": [
         "Terugbetalen"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/maand"
+      ],
+      "Only": [
+        "Slechts"
       ]
     },
     "unprivatization": {
