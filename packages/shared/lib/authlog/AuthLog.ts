@@ -99,7 +99,7 @@ export const getAuthLogProtectionI18N = (type: ProtectionType | null): string =>
         case ProtectionType.BLOCKED:
             return c('Protection type').t`Blocked`;
         case ProtectionType.CAPTCHA:
-            return c('Protection type').t`Captcha`;
+            return c('Protection type').t`CAPTCHA`;
         case ProtectionType.OWNERSHIP_VERIFICATION:
             return c('Protection type').t`Ownership verification`;
         case ProtectionType.DEVICE_VERIFICATION:
