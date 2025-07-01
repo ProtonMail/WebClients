@@ -2905,6 +2905,16 @@
         "Ensisijainen tuki"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Välittääksesi sähköposteja ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }.",
+        "Välittääksesi sähköposteja jopa ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin.",
+        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin."
+      ]
+    },
     "edm": {
       "Allow QR code sign‒in": [
         "Salli kirjautuminen QR-koodilla"
@@ -4199,6 +4209,10 @@
         "${ remainingAddresses.length } lisäosoite",
         "${ remainingAddresses.length } lisäosoitetta"
       ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } tulos löytyi",
+        "${ resultsCount } tulosta löytyi"
+      ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length } valittu",
         "${ selectedEntities.length } valittu"
@@ -5054,6 +5068,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Jatkossa uusia aktiivisuustietoja ei enää kerätä, eikä niitä näytetä."
       ],
       "New user invited to organization": [
         "Uusi käyttäjä kutsuttiin organisaatioon"
@@ -6013,6 +6030,10 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Ilmainen kokeilujaksosi sisältää ${ ownedCount } oman palvelimen.",
+        "Ilmainen kokeilujaksosi sisältää ${ ownedCount } omaa palvelinta."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Tietosi ovat turvassa meillä. Otamme sinuun yhteyttä vain, kun se on tarpeen palveluidemme tarjoamiseksi."
@@ -7096,6 +7117,23 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
+      ]
+    },
+    "Log event": {
+      "Password reset": [
+        "Salasanan nollaus"
+      ],
+      "Sign out": [
+        "Uloskirjautuminen"
+      ],
+      "Two password mode disabled": [
+        "Kahden salasanan tila poistettiin käytöstä"
+      ],
+      "Two password mode enabled": [
+        "Kahden salasanan tila otettiin käyttöön"
+      ],
+      "Unknown": [
+        "Tuntematon"
       ]
     },
     "Log preference": {
@@ -8339,8 +8377,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } tarjous päättyy tänään!"
       ],
+      "Don’t show this again": [
+        "Älä näytä tätä uudelleen"
+      ],
       "Don’t show this offer again": [
         "Älä näytä tätä tarjousta uudelleen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Hanki ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Hanki Drive Plus hintaan ${ pricingTitle }"
@@ -8394,9 +8438,17 @@
         "Tilauksesi uusiutuu pian"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 muuta premium-ominaisuutta"
+      ],
+      "500 GB secure storage": [
+        "500 Gt suojattua tallennustilaa"
       ],
       "Custom email domain": [
         "Oma sähköpostiverkkotunnus"
@@ -8428,6 +8480,9 @@
     "Onboarding Trial": {
       "Continue": [
         "Jatka"
+      ],
+      "If you need help,": [
+        "Jos tarvitset apua,"
       ]
     },
     "Option": {
@@ -8764,6 +8819,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Pankkisiirto"
       ],
@@ -9087,6 +9145,26 @@
     "Price": {
       "Free": [
         "Free"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "Estetty"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Device verification": [
+        "Laitteen vahvistus"
+      ],
+      "Ok": [
+        "OK"
+      ],
+      "Ownership verification": [
+        "Omistajuuden vahvistus"
+      ],
+      "Unknown": [
+        "Tuntematon"
       ]
     },
     "Recovery Email": {
@@ -9682,6 +9760,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME }-salasana"
+      ],
       "Confirm password": [
         "Vahvista salasana"
       ],
@@ -10712,6 +10793,9 @@
       ],
       "Expiring": [
         "Päättyy"
+      ],
+      "Free Trial": [
+        "Ilmainen kokeilu"
       ]
     },
     "Subtitle": {
@@ -11755,6 +11839,9 @@
       "Subscription": [
         "Tilaus"
       ],
+      "Subscription canceled": [
+        "Tilaus on peruttu"
+      ],
       "Successfully created ${ n } user account": [
         "${ n } käyttäjätili luotiin",
         "${ n } käyttäjätilit luotiin"
@@ -11953,6 +12040,9 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Kopio ja liitä tämä URL identiteetintarjoajasi entiteetti-ID-kenttään"
       ],
+      "Device name and app version": [
+        "Laitteen nimi ja sovelluksen versio"
+      ],
       "Display name for the entity in the eduGAIN database": [
         "Entiteetin näyttönimi eduGAIN-tietokannassa"
       ],
@@ -12119,6 +12209,11 @@
       ],
       "Refund": [
         "Hyvitys"
+      ]
+    },
+    "Unlimited offer": {
+      "Only": [
+        "Vain"
       ]
     },
     "unprivatization": {
