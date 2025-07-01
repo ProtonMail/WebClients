@@ -59,7 +59,6 @@ const allApps = new Set([
     APPS.PROTONDOCS,
     APPS.PROTONWALLET,
     APPS.PROTONLUMO,
-    APPS.PROTONAUTHENTICATOR,
 ]);
 
 const sort = (a: APP_NAMES[], b: APP_NAMES[] | Set<APP_NAMES>) => {
