@@ -18,13 +18,12 @@ import {
     useModalStateObject,
 } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Modal.mdx';
 
 export default {
     component: ModalTwo,
     subcomponents: { ModalTwoHeader, Prompt },
-    title: getTitle(__filename, false),
+    title: 'Components/Modal',
     parameters: {
         docs: {
             page: mdx,
