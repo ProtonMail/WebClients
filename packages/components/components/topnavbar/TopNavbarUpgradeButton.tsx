@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
@@ -14,6 +15,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
 import { isTrial } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -29,6 +31,8 @@ interface Props {
 const TopNavbarUpgradeButton = ({ app }: Props) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
+    const [organization] = useOrganization();
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
     const location = useLocation();
     const { APP_NAME } = useConfig();
     const goToSettings = useSettingsLink();
@@ -47,6 +51,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
     // We want to have metrics from where the user has clicked on the upgrade button
     const displayUpgradeButton =
         ((user.isFree && !user.hasPassLifetime) || isTrial(subscription)) &&
+        !isB2BTrial &&
         !location.pathname.endsWith(upgradePathname);
     const upgradeText = c('specialoffer: Link').t`Upgrade`;
     const upgradeIcon = upgradeText.length > 20 && viewportWidth['>=large'] ? undefined : 'upgrade';
