@@ -338,7 +338,7 @@
         "Crear carpeta"
       ],
       "Create folder ${ boldFolderName }": [
-        "Crea una carpeta \"${ boldFolderName }"
+        "Crea la carpeta \"${ boldFolderName }"
       ],
       "Create label": [
         "Crear etiqueta"
@@ -1426,6 +1426,10 @@
       "Trust": [
         "De confiança"
       ],
+      "Trust key": [
+        "Clau de confiança",
+        "Claus de confiança"
+      ],
       "Trust public key": [
         "Confia en la clau pública"
       ],
@@ -1488,9 +1492,6 @@
       ],
       "Upgrade": [
         "Millora"
-      ],
-      "Upgrade Now": [
-        "Millora ara"
       ],
       "Upgrade now": [
         "Millora ara"
@@ -1588,15 +1589,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "La prova gratuïta de l'aplicació d'escriptori finalitza d'aquí a 2 dies. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "La prova gratuïta de l'aplicació d'escriptori finalitza d'aquí a 5 dies. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "El vostre assistent d'escriptura de correus electrònics"
@@ -1790,7 +1782,7 @@
         "Protegiu fins a 10 dispositius"
       ],
       "Recover previous file versions": [
-        "Recupereu versions anteriors del fitxer"
+        "Recupereu versions anteriors dels fitxers"
       ],
       "Save big on premium Drive features with a limited-time discount.": [
         "Estalviiareu molt amb les funcions premium de Drive amb un descompte per temps limitat"
@@ -1934,6 +1926,11 @@
       ],
       "Sender verification passed": [
         "S'ha aprovat la verificació del remitent"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "S'ha cancel·lat la subscripció."
       ]
     },
     "bf2023: Deal details": {
@@ -4559,6 +4556,9 @@
       "No address with keys available to compose a message": [
         "Cap adreça amb les claus disponibles per redactar un missatge"
       ],
+      "No address with sending permissions": [
+        "No hi ha cap adreça amb permisos d'enviament"
+      ],
       "No calendars found to import": [
         "No s'ha trobat cap calendari per importar"
       ],
@@ -4605,6 +4605,9 @@
       ],
       "Payment process not supported": [
         "Procés de pagament no soportat"
+      ],
+      "Permissions request failed.": [
+        "Error amb la sol·licitud de permisos"
       ],
       "Please activate your search again": [
         "Activeu de nou la vostra cerca."
@@ -6239,8 +6242,8 @@
         "${ messagesNotAuthorizedToMove } missatges no s'han pogut moure."
       ],
       "${ n } newsletter": [
-        "Butlletí de ${ n }",
-        "Butlletins de ${ n }"
+        "${ n } butlletí",
+        "${ n } butlletins"
       ],
       "${ n } unread conversation": [
         "${ n } conversació sense llegir",
@@ -6762,6 +6765,9 @@
       ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "Dedicated VPN servers": [
+        "Servidors VPN dedicats"
       ],
       "default email address": [
         "adreça de correu electrònic per defecte"
@@ -7353,6 +7359,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Nombre de servidors VPN dedicats a l'organització"
       ],
       "Numbers": [
         "Números"
@@ -8404,9 +8413,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Heu escrit \"${ attachmentsFoundKeyword }\", però no s'ha afegit cap adjunt. Voleu enviar el missatge de totes maneres?"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "També perdreu l'accés a les característiques de ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
         "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
@@ -8520,6 +8526,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "El període de prova finalitzarà en ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "També perdreu l'accés a les característiques de ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Perdreu l'accés a ${ boldPlanTitle } el ${ boldEndDate }."
@@ -8853,7 +8862,7 @@
         "Adreça"
       ],
       "Alias title": [
-        "Nom de l'àlies"
+        "Títol de l'àlies"
       ],
       "ALL": [
         "TOT"
@@ -9843,7 +9852,7 @@
         "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
-        "El vostre emmagatzematge està ple. Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
+        "L'emmagatzematge és ple. Per a continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
@@ -11142,7 +11151,7 @@
         "No tornis a mostrar aquesta oferta"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
-        "Obtingueu ${ BRAND_NAME } sense límits"
+        "Obteniu ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obteniu Drive Plus per només ${ pricingTitle }"
@@ -11260,6 +11269,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }: mai veureu anuncis patrocinats a les nostres aplicacions."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } garanteix que només vosaltres i els destinataris previstos podeu accedir als correus electrònics."
       ],
@@ -11281,6 +11293,9 @@
       "Activate selected": [
         "Activa la selecció"
       ],
+      "Ad-free promise": [
+        "El nostre compromís sense publicitat"
+      ],
       "Advanced encryption": [
         "Xifratge avançat"
       ],
@@ -11297,7 +11312,7 @@
         "navegador"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Esborreu els correus suprimits i correu brossa en 30 dies."
+        "Esborra els correus eliminats i el correu brossa al cap de 30 dies."
       ],
       "Continue": [
         "Continua"
@@ -11658,7 +11673,7 @@
         "Hi ha més plans disponibles en altres divises."
       ],
       "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "El SEPA només s'accepta l'euro. La moneda ha estat canviada. Utilitzeu el selector per revertir la vostra elecció."
+        "Només s'accepta l'euro per al SEPA. S'ha canviat la moneda. Utilitzeu el selector per revertir la vostra elecció."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
@@ -12645,7 +12660,7 @@
         "Mantingueu les vostres contrasenyes segures"
       ],
       "Unblock streaming content": [
-        "Tingui accés il·limitat a continguts en estríming"
+        "Tingueu accés al contingut en estríming."
       ],
       "Upgrade": [
         "Millora"
@@ -14808,8 +14823,8 @@
         "La vostra informació exposada"
       ],
       "Your free trial ends in ${ trialDurationFormatted } day": [
-        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dia",
-        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dies"
+        "La prova gratuïta finalitza en ${ trialDurationFormatted } dia",
+        "La prova gratuïta finalitza en ${ trialDurationFormatted } dies"
       ],
       "Your free trial has ended": [
         "La prova gratuïta ha finalitzat."

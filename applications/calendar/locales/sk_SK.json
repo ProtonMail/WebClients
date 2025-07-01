@@ -1209,6 +1209,11 @@
         "Voliteľné"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Predplatné bolo zrušené."
+      ]
+    },
     "Badge": {
       "New!": [
         "Nové!"
@@ -5172,6 +5177,9 @@
       "Dedicated servers": [
         "Dedikované servery"
       ],
+      "Dedicated VPN servers": [
+        "Dedikované VPN servery"
+      ],
       "default email address": [
         "predvolená emailová adresa"
       ],
@@ -5486,6 +5494,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Počet dedikovaných VPN serverov v organizácii"
       ],
       "Numbers": [
         "Čísla"
@@ -6051,9 +6062,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nebude sa vám účtovať, ak zrušíte pred ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Taktiež stratíte prístup k funkciám ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }.",
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }.",
@@ -6164,6 +6172,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše skúšobné obdobie končí ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Taktiež stratíte prístup k funkciám ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Prístup k ${ boldPlanTitle } stratíte ${ boldEndDate }."
@@ -8969,6 +8980,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Bankový prevod"
       ],
@@ -9102,6 +9116,14 @@
     "Payments.plan_name": {
       "Free": [
         "Zdarma"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankový prevod – ${ details }"
       ]
     },
     "Payments.Sepa": {

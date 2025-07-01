@@ -1144,6 +1144,9 @@
       "Save": [
         "Tallenna"
       ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Tallenna ${ DRIVE_APP_NAME }en"
+      ],
       "Saving${ ellipsis }": [
         "Tallennetaan${ ellipsis }"
       ],
@@ -1396,6 +1399,10 @@
       "Trust": [
         "Luota"
       ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -1458,9 +1465,6 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
-      ],
-      "Upgrade Now": [
-        "Päivitä tilaus nyt"
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
@@ -1558,15 +1562,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy 2 päivän kuluttua. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy 5 päivän kuluttua. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Sähköpostin kirjoitusavustajasi"
@@ -6120,6 +6115,10 @@
         "${ messagesNotAuthorizedToMove } viestiä ei voitu siirtää.",
         "${ messagesNotAuthorizedToMove } viestiä ei voitu siirtää."
       ],
+      "${ n } newsletter": [
+        "${ n } uutiskirje",
+        "${ n } uutiskirjettä"
+      ],
       "${ n } unread conversation": [
         "${ n } lukematon keskustelu",
         "${ n } lukematonta keskustelua"
@@ -6475,6 +6474,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
+      ],
+      "Block sender": [
+        "Estä lähettäjä"
       ],
       "Body: ": [
         "Sisältö: "
@@ -7093,11 +7095,17 @@
       "Message headers": [
         "Viestin otsakkeet"
       ],
+      "Message list": [
+        "Viestilista"
+      ],
       "Message sent": [
         "Viesti lähetettiin"
       ],
       "Message sent.": [
         "Viesti lähetettiin."
+      ],
+      "Message view": [
+        "Viestinäkymä"
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
         "Viesti lähetetään aamulla klo ${ formattedTime }"
@@ -7334,6 +7342,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Odota, kun etsimme inaktiivisella avaimella salattuja tietoja sisältäviä yhteystietoja."
+      ],
+      "Preferences updated": [
+        "Asetukset päivitettiin"
       ],
       "Preview failed to be loaded": [
         "Esikatselun lataus epäonnistui"
@@ -8650,6 +8661,9 @@
       ],
       "Address": [
         "Osoite"
+      ],
+      "Alias title": [
+        "Aliaksen otsikko"
       ],
       "ALL": [
         "KAIKKI"
@@ -10911,8 +10925,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } tarjous päättyy tänään!"
       ],
+      "Don’t show this again": [
+        "Älä näytä tätä uudelleen"
+      ],
       "Don’t show this offer again": [
         "Älä näytä tätä tarjousta uudelleen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Hanki ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Hanki Drive Plus hintaan ${ pricingTitle }"
@@ -10966,9 +10986,17 @@
         "Tilauksesi uusiutuu pian"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 muuta premium-ominaisuutta"
+      ],
+      "500 GB secure storage": [
+        "500 Gt suojattua tallennustilaa"
       ],
       "Custom email domain": [
         "Oma sähköpostiverkkotunnus"
@@ -11154,6 +11182,9 @@
     "Onboarding Trial": {
       "Continue": [
         "Jatka"
+      ],
+      "If you need help,": [
+        "Jos tarvitset apua,"
       ]
     },
     "Online accounts": {
@@ -11313,6 +11344,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Pankkisiirto"
       ],
@@ -14315,6 +14349,9 @@
       "Subject missing": [
         "Aihe puuttuu"
       ],
+      "Subscription canceled": [
+        "Tilaus on peruttu"
+      ],
       "Summary": [
         "Yhteenveto"
       ],
@@ -14540,6 +14577,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tätä Tor-selaimen versiota ei tueta. Päivitä viimeisimpään ${ stableRelease }"
+      ]
+    },
+    "Unlimited offer": {
+      "Only": [
+        "Vain"
       ]
     },
     "unprivatization": {

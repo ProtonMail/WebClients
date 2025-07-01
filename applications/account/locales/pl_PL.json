@@ -955,9 +955,6 @@
       "Next month": [
         "Następny miesiąc"
       ],
-      "Next page": [
-        "Następna strona"
-      ],
       "No": [
         "Nie"
       ],
@@ -1002,9 +999,6 @@
       ],
       "Previous month": [
         "Poprzedni miesiąc"
-      ],
-      "Previous page": [
-        "Poprzednia strona"
       ],
       "Publish changes": [
         "Opublikuj zmiany"
@@ -2341,26 +2335,6 @@
       ],
       "Working with sensitive data?": [
         "Pracujesz z poufnymi danymi?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Dedykowany serwer został przypisany do bramy. Po zakończeniu darmowej wersji próbnej będziesz mógł zakupić więcej serwerów.",
-        "Dedykowane serwery zostały przypisane do bram. Po zakończeniu darmowej wersji próbnej będziesz mógł zakupić więcej serwerów.",
-        "Dedykowane serwery zostały przypisane do bram. Po zakończeniu darmowej wersji próbnej będziesz mógł zakupić więcej serwerów.",
-        "Dedykowane serwery zostały przypisane do bram. Po zakończeniu darmowej wersji próbnej będziesz mógł zakupić więcej serwerów."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Darmowa wersja próbna zawiera ${ ipAddresses } dedykowany serwer. W pełnej subskrypcji możesz dodać więcej serwerów.",
-        "Darmowa wersja próbna zawiera ${ ipAddresses } dedykowane serwery. W pełnej subskrypcji możesz dodać więcej serwerów.",
-        "Darmowa wersja próbna zawiera ${ ipAddresses } dedykowanych serwerów. W pełnej subskrypcji możesz dodać więcej serwerów.",
-        "Darmowa wersja próbna zawiera ${ ipAddresses } dedykowanych serwerów. W pełnej subskrypcji możesz dodać więcej serwerów."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Darmowa wersja próbna zawiera ${ maxMembers } licencję. W pełnej subskrypcji możesz dodać więcej licencji.",
-        "Darmowa wersja próbna zawiera ${ maxMembers } licencje. W pełnej subskrypcji możesz dodać więcej licencji.",
-        "Darmowa wersja próbna zawiera ${ maxMembers } licencji. W pełnej subskrypcji możesz dodać więcej licencji.",
-        "Darmowa wersja próbna zawiera ${ maxMembers } licencji. W pełnej subskrypcji możesz dodać więcej licencji."
       ]
     },
     "breadcrumb": {
@@ -4175,9 +4149,6 @@
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Skonfiguruj to najpierw, aby aktywować organizację i dostosować adres e-mail."
-      ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "Gratulacje! Przyznano maksymalną liczbę ${ rewardsLimit } darmowych miesięcy planu ${ plusPlanName }."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Połącz CRM, stronę internetową, drukarki i nie tylko."
@@ -10753,9 +10724,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Odzyskiwanie zablokowanych danych za pomocą pobranych plików odzyskiwania nie będzie możliwe. Spowoduje to również wyłączenie odzyskiwania za pomocą zaufanego urządzenia."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Stracisz również dostęp do funkcji planu ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Następnie zapłacisz co ${ renewCycle } miesiąc ${ renewAmountStr }.",
         "Następnie zapłacisz co ${ renewCycle } miesiące ${ renewAmountStr }.",
@@ -14981,11 +14949,6 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Wybierz, do czego ${ BRAND_NAME } może uzyskać dostęp: odczytywać wiadomości i ustawienia, odczytywać i pobierać kontakty, odczytywać i pobierać wszystkie harmonogramy, do których masz dostęp w Kalendarzu Google."
-      ]
-    },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Coś poszło nie tak podczas logowania do konta Gmail"
       ]
     },
     "Offer": {
@@ -19815,17 +19778,8 @@
       "Cancel subscription?": [
         "Anulować subskrypcję?"
       ],
-      "Cannot add Gateway": [
-        "Nie można dodać bram"
-      ],
-      "Cannot add licenses": [
-        "Nie można dodać licencji"
-      ],
       "Cannot add more users": [
         "Nie można dodać więcej użytkowników"
-      ],
-      "Cannot add servers": [
-        "Nie można dodać serwerów"
       ],
       "Card verification": [
         "Weryfikacja karty płatniczej"

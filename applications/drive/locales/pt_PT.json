@@ -1366,6 +1366,11 @@
         "Evento não suportado"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "A subscrição foi cancelada."
+      ]
+    },
     "Badge": {
       "Invited": [
         "Convidado"
@@ -3217,14 +3222,29 @@
       "Failed to create folder": [
         "Erro na criação da pasta"
       ],
+      "Failed to fetch node": [
+        "Erro ao obter o nó"
+      ],
+      "Failed to fetch sharing info": [
+        "Erro ao obter as informações para partilhar"
+      ],
       "Failed to load the STL preview": [
         "Erro ao carregar a pré-visualização STL"
       ],
       "Failed to move items": [
         "Erro ao mover os itens"
       ],
+      "Failed to resend invitation": [
+        "Erro ao reenviar o convite"
+      ],
       "Failed to save some photos to your Drive": [
         "Erro ao guardar algumas fotos no seu Drive"
+      ],
+      "Failed to unshare node": [
+        "Erro ao deixar de partilhar o nó"
+      ],
+      "Failed to update share node": [
+        "Erro ao atualizar o nó de partilha"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "O ficheiro \"${ item.name }\" não pode ser enviado devido ao erro \"${ error }\"."
@@ -4935,6 +4955,9 @@
       "Dedicated servers": [
         "Servidores dedicados"
       ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
       "default email address": [
         "endereço de e-mail padrão"
       ],
@@ -5424,6 +5447,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados na organização"
       ],
       "Numbers": [
         "Números"
@@ -6301,9 +6327,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Não lhe será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Também perderá o acesso às funcionalidades do ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Será então cobrado a cada ${ renewCycle } mês no valor de ${ renewAmountStr }.",
         "Será então cobrado a cada ${ renewCycle } meses no valor de ${ renewAmountStr }."
@@ -6428,6 +6451,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "A sua avaliação terminará em ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Também perderá o acesso às funcionalidades do ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Vai perder o acesso ao ${ boldPlanTitle } em ${ boldEndDate }."
@@ -9337,6 +9363,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Transferência bancária"
       ],
@@ -9462,6 +9491,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferência bancária - ${ details }"
       ]
     },
     "Payments.Sepa": {

@@ -1199,6 +1199,11 @@
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "L'abonnement a été annulé."
+      ]
+    },
     "Badge": {
       "New!": [
         "Nouveau"
@@ -5044,6 +5049,9 @@
       "Dedicated servers": [
         "Serveurs dédiés"
       ],
+      "Dedicated VPN servers": [
+        "Serveurs VPN dédiés"
+      ],
       "default email address": [
         "adresse e-mail par défaut"
       ],
@@ -5352,6 +5360,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Nombre de serveurs VPN dédiés dans l'organisation"
       ],
       "Numbers": [
         "Chiffres"
@@ -5905,9 +5916,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Vous ne serez pas facturé si vous annulez avant le ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Vous n'aurez également plus accès aux fonctionnalités de ${ boldPlanTitle } :"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois.",
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
@@ -6014,6 +6022,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Votre version d'essai se terminera dans ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Vous n'aurez également plus accès aux fonctionnalités de ${ boldPlanTitle } :"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Vous n'aurez plus accès à ${ boldPlanTitle } le ${ boldEndDate }."

@@ -1233,6 +1233,11 @@
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Prenumeration avslutad."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Inaktiverad"
@@ -1530,20 +1535,6 @@
       ],
       "Working with sensitive data?": [
         "Arbetar du med känslig data?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Din dedikerade server är redan tilldelad till en gateway. Du kommer att kunna köpa fler servrar när din gratis provperiod slutar.",
-        "Alla dina dedikerade servrar är redan tilldelad till en gateway. Du kommer att kunna köpa fler servrar när din gratis provperiod slutar."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Din gratis provperiod inkluderar ${ ipAddresses } dedikerad server. Du kan lägga till fler servrar när din fullständiga prenumeration startar.",
-        "Din gratis provperiod inkluderar ${ ipAddresses } dedikerade servrar. Du kan lägga till fler servrar när din fullständiga prenumeration startar."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Din gratis provperiod inkluderar ${ maxMembers } licens. Du kan lägga till fler licenser när din fullständiga prenumeration startar.",
-        "Din gratis provperiod inkluderar maximalt ${ maxMembers } licenser. Du kan lägga till fler licenser när din fullständiga prenumeration startar."
       ]
     },
     "Browser": {
@@ -3038,6 +3029,16 @@
         "Prioriterad support"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konto, uppgradera till ${ planName }.",
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konton, uppgradera till ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externt konto till ${ MAIL_APP_NAME }.",
+        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externa konton till ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textfält är valfria. Informationen du anger i detta formulär kommer endast att visas på fakturor som utfärdas i framtiden och kommer inte att påverka befintliga fakturor."
@@ -3309,6 +3310,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Betalningar är för närvarande inte tillgängliga, försök igen senare"
+      ],
+      "Permissions request failed.": [
+        "Behörighetsbegäran misslyckades."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Konfigurera en anpassad domän innan du lägger till adresser."
@@ -4731,6 +4735,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
       ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
       "default email address": [
         "standard e-postadress"
       ],
@@ -5296,6 +5303,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerade VPN-servrar i organisationen"
       ],
       "Numbers": [
         "Siffror"
@@ -6216,9 +6226,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Du kommer inte kunna tilldela om dessa servrar till ett annat land på 10 dagar."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
         "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
@@ -6299,6 +6306,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Din provperiod slutar om ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Du kommer att kunna lägga till dessa servrar till en annan gateway omedelbart."
@@ -8680,11 +8690,6 @@
         "Några bilder laddades inte upp på grund av dubbla filnamn i det nuvarande valet."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Något gick fel vid inloggning på ditt Gmail-konto"
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Obegränsat i 12 månader"
@@ -9349,6 +9354,9 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
+      ],
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
       ]
@@ -10158,6 +10166,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME }-lösenord"
+      ],
       "Confirm password": [
         "Bekräfta lösenord"
       ],
@@ -11258,6 +11269,9 @@
       "Address added": [
         "Adress tillagd"
       ],
+      "Address successfully added": [
+        "Adress tillagd"
+      ],
       "Administrator privileges restored": [
         "Administratörsrättigheter återställda"
       ],
@@ -11747,17 +11761,8 @@
       "Cancel subscription?": [
         "Avsluta prenumeration?"
       ],
-      "Cannot add Gateway": [
-        "Kan inte lägga till gateway"
-      ],
-      "Cannot add licenses": [
-        "Kan inte lägga till licenser"
-      ],
       "Cannot add more users": [
         "Kan inte lägga till fler användare"
-      ],
-      "Cannot add servers": [
-        "Kan inte lägga till servrar"
       ],
       "Card verification": [
         "Kortverifiering"
@@ -11815,6 +11820,9 @@
       ],
       "Connect apps and devices": [
         "Anslut appar och enheter"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Anslut fler Gmail-adresser med ${ planName }"
       ],
       "Connect organization": [
         "Anslut organisation"
@@ -12118,6 +12126,9 @@
       ],
       "Multi-user support": [
         "Stöd för flera användare"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flera konton, 1 privat inkorg"
       ],
       "Network error": [
         "Nätverksfel"

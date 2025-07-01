@@ -1339,12 +1339,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" ögesi yok sayıldı"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
-      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } engellendi",
         "${ blockedEmailsCount } engellendi"

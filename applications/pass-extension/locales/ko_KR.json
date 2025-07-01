@@ -1240,11 +1240,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" 항목이 무시되었습니다."
+      "\"${ payload.itemName }\" item was dismissed": [
+        "\"${ payload.itemName }\" 항목이 무시되었습니다."
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" 업데이트가 무시되었습니다."
+      "\"${ payload.itemName }\" update was dismissed": [
+        "\"${ payload.itemName }\" 업데이트가 무시되었습니다."
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount }개 차단됨"
@@ -4014,6 +4014,9 @@
       ],
       "Grant permissions": [
         "권한 부여"
+      ],
+      "Hide my email": [
+        "내 이메일 숨기기"
       ],
       "History": [
         "기록"

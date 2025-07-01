@@ -1551,20 +1551,6 @@
         "Önemli bilgilerle mi çalışıyorsunuz?"
       ]
     },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Size ayrılmış sunucunuz zaten bir ağ geçidine atanmış. Ücretsiz deneme süreniz sona erdiğinde daha fazla sunucu satın alabilirsiniz.",
-        "Size ayrılmış sunucunuz zaten ağ geçitlerine atanmış. Ücretsiz deneme süreniz sona erdiğinde daha fazla sunucu satın alabilirsiniz."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Ücretsiz denemenizde size ayrılmış ${ ipAddresses } sunucu var. Tam aboneliğe geçtiğinizde daha fazla sunucu ekleyebilirsiniz.",
-        "Ücretsiz denemenizde size ayrılmış ${ ipAddresses } sunucu var. Tam aboneliğe geçtiğinizde daha fazla sunucu ekleyebilirsiniz."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Ücretsiz denemenizde ${ maxMembers } lisans var. Tam aboneliğiniz başladığında daha fazla lisans ekleyebilirsiniz.",
-        "Ücretsiz denemenizde ${ maxMembers } lisans var. Tam aboneliğiniz başladığında daha fazla lisans ekleyebilirsiniz."
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } bilgisayar uygulaması"
@@ -6240,9 +6226,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Bu sunucuları 10 gün boyunca başka bir ülkeye atayamazsınız."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "${ boldPlanTitle } özelliklerine erişiminizi de kaybedeceksiniz:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } tutar ödeyeceksiniz.",
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } tutar ödeyeceksiniz."
@@ -8703,11 +8686,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Geçerli seçimdeki yinelenen dosya adları nedeniyle bazı görseller yüklenmedi."
-      ]
-    },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Gmail hesabınızda oturum açılırken bir sorun çıktı"
       ]
     },
     "Offer": {
@@ -11677,17 +11655,8 @@
       "Cancel subscription?": [
         "Abonelik iptal edilsin mi?"
       ],
-      "Cannot add Gateway": [
-        "Ağ geçidi eklenemez"
-      ],
-      "Cannot add licenses": [
-        "Lisanslar eklenemez"
-      ],
       "Cannot add more users": [
         "Başka kullanıcı eklenemez"
-      ],
-      "Cannot add servers": [
-        "Sunucu eklenemez"
       ],
       "Card verification": [
         "Kart doğrulama"

@@ -665,6 +665,9 @@
       "New shared album": [
         "Uusi jaettu albumi"
       ],
+      "New spreadsheet": [
+        "Uusi laskentataulukko"
+      ],
       "Next": [
         "Seuraava"
       ],
@@ -850,6 +853,12 @@
       ],
       "Save photos and remove": [
         "Tallenna kuvat ja poista"
+      ],
+      "Scan & Download": [
+        "Skannaa ja lataa"
+      ],
+      "Scan & Download (${ count })": [
+        "Skannaa ja lataa (${ count })"
       ],
       "Search": [
         "Hae"
@@ -6361,6 +6370,9 @@
       "Address": [
         "Osoite"
       ],
+      "Alias title": [
+        "Aliaksen otsikko"
+      ],
       "All": [
         "Kaikki"
       ],
@@ -8693,8 +8705,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } tarjous päättyy tänään!"
       ],
+      "Don’t show this again": [
+        "Älä näytä tätä uudelleen"
+      ],
       "Don’t show this offer again": [
         "Älä näytä tätä tarjousta uudelleen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Hanki ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Hanki Drive Plus hintaan ${ pricingTitle }"
@@ -8748,9 +8766,17 @@
         "Tilauksesi uusiutuu pian"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 muuta premium-ominaisuutta"
+      ],
+      "500 GB secure storage": [
+        "500 Gt suojattua tallennustilaa"
       ],
       "Custom email domain": [
         "Oma sähköpostiverkkotunnus"
@@ -8927,6 +8953,9 @@
     "Onboarding Trial": {
       "Continue": [
         "Jatka"
+      ],
+      "If you need help,": [
+        "Jos tarvitset apua,"
       ]
     },
     "Option": {
@@ -9038,6 +9067,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Pankkisiirto"
       ],
@@ -11391,6 +11423,9 @@
       "Stop transfers?": [
         "Lopetetaanko siirrot?"
       ],
+      "Subscription canceled": [
+        "Tilaus on peruttu"
+      ],
       "Summary": [
         "Yhteenveto"
       ],
@@ -11618,6 +11653,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
+      ]
+    },
+    "Unlimited offer": {
+      "Only": [
+        "Vain"
       ]
     },
     "unprivatization": {

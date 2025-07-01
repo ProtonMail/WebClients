@@ -197,7 +197,7 @@
         "Autentisering"
       ],
       "Auto-delete spam and trash": [
-        "Autoborttagning av skräppost och kastat"
+        "Ta bort skräppost och papperskorg automatiskt"
       ],
       "Back": [
         "Tillbaka"
@@ -375,6 +375,9 @@
       ],
       "Create folder": [
         "Skapa mapp"
+      ],
+      "Create free account now": [
+        "Skapa gratiskonto nu"
       ],
       "Create Gateway": [
         "Skapa gateway"
@@ -970,9 +973,6 @@
       "Next month": [
         "Nästa månad"
       ],
-      "Next page": [
-        "Nästa sida"
-      ],
       "No": [
         "Nej"
       ],
@@ -1017,9 +1017,6 @@
       ],
       "Previous month": [
         "Föregående månad"
-      ],
-      "Previous page": [
-        "Föregående sida"
       ],
       "Publish changes": [
         "Publicera ändringar"
@@ -1980,6 +1977,11 @@
         "Jag är inte på kontoret och har begränsad åtkomst till min e-post."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Prenumeration avslutad."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Inaktiverad"
@@ -2311,20 +2313,6 @@
       ],
       "Working with sensitive data?": [
         "Arbetar du med känslig data?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Din dedikerade server är redan tilldelad till en gateway. Du kommer att kunna köpa fler servrar när din gratis provperiod slutar.",
-        "Alla dina dedikerade servrar är redan tilldelad till en gateway. Du kommer att kunna köpa fler servrar när din gratis provperiod slutar."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Din gratis provperiod inkluderar ${ ipAddresses } dedikerad server. Du kan lägga till fler servrar när din fullständiga prenumeration startar.",
-        "Din gratis provperiod inkluderar ${ ipAddresses } dedikerade servrar. Du kan lägga till fler servrar när din fullständiga prenumeration startar."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Din gratis provperiod inkluderar ${ maxMembers } licens. Du kan lägga till fler licenser när din fullständiga prenumeration startar.",
-        "Din gratis provperiod inkluderar maximalt ${ maxMembers } licenser. Du kan lägga till fler licenser när din fullständiga prenumeration startar."
       ]
     },
     "breadcrumb": {
@@ -4117,9 +4105,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurera detta först för att aktivera din organisation och anpassa din e-postadress."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "Grattis! Du har tjänat det maximala antalet ${ rewardsLimit } gratis månader av ${ plusPlanName }."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Anslut din CRM, webbplats, skrivare och mer."
       ],
@@ -4556,6 +4541,16 @@
       ],
       "90 minutes": [
         "90 minuter"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konto, uppgradera till ${ planName }.",
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konton, uppgradera till ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externt konto till ${ MAIL_APP_NAME }.",
+        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externa konton till ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5420,6 +5415,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Betalningar är för närvarande inte tillgängliga, försök igen senare"
+      ],
+      "Permissions request failed.": [
+        "Behörighetsbegäran misslyckades."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Konfigurera en anpassad domän innan du lägger till adresser."
@@ -7970,19 +7968,19 @@
         "Uppmärksamhet krävs"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
-        "Autosvar är aktivt varje månad mellan vald start- och sluttid."
+        "Automatiskt svar är aktivt varje månad mellan vald start- och sluttid."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
-        "Autosvar är aktivt varje vecka mellan vald start- och sluttid."
+        "Automatiskt svar är aktivt varje vecka mellan vald start- och sluttid."
       ],
       "Auto-reply is active from the start time to the end time.": [
-        "Autosvar är aktivt från starttiden till sluttiden."
+        "Automatiskt svar är aktivt från starttiden till sluttiden."
       ],
       "Auto-reply is active until you turn it off.": [
-        "Autosvar är aktivt tills att du stänger av det."
+        "Automatiskt svar är aktivt tills att du stänger av det."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Autosvar är alltid aktivt de veckodagar du väljer, mellan de valda timmarna."
+        "Automatiskt svar är alltid aktivt de veckodagar du väljer, mellan de valda timmarna."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Rensa automatiskt bort e-postmeddelanden flyttade till papperskorgen och skräppost för mer än 30 dagar sedan."
@@ -8220,6 +8218,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
       ],
       "default email address": [
         "standard e-postadress"
@@ -9091,6 +9092,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerade VPN-servrar i organisationen"
       ],
       "Number of items the user has access to (includes owned items + shared items)": [
         "Antal objekt användaren har åtkomst till (inklusive ägda objekt + delade objekt)"
@@ -10526,9 +10530,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Du kommer inte att kunna återställa låsta data med dina nedladdade återställningsfiler. Detta kommer också att inaktivera enhetsbaserad återställning."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
         "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
@@ -10655,6 +10656,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Din provperiod slutar om ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Du kommer att kunna lägga till dessa servrar till en annan gateway omedelbart."
@@ -11858,6 +11862,9 @@
       ],
       "Message": [
         "Meddelande"
+      ],
+      "Message (auto-reply)": [
+        "Meddelande (automatiskt svar)"
       ],
       "Messages per page": [
         "Meddelanden per sida"
@@ -14634,11 +14641,6 @@
         "Välj vad ${ BRAND_NAME } kan komma åt: visa dina e-postmeddelanden och inställningar, visa och ladda ner dina kontakter, visa och ladda ner alla agendor du kommer åt från Google Kalender."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Något gick fel vid inloggning på ditt Gmail-konto"
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Obegränsat i 12 månader"
@@ -15897,6 +15899,9 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
+      ],
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
       ]
@@ -17245,6 +17250,20 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email-alias för att bekämpa skräppost"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } adress",
+        "${ maxAddresses } adresser"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } kalender",
+        "${ maxCalendars } kalendrar"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } molnlagringsutrymme för filer och foton"
+      ],
       "${ value } of secure storage": [
         "${ value } säkert lagringsutrymme"
       ],
@@ -17275,11 +17294,17 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Fortsätt med ${ PLAN_NAMES[plan] }"
       ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Krypterad e-post med ${ totalMailStorageSize } lagringsutrymme"
+      ],
       "Encrypted password manager": [
         "Krypterad lösenordshanterare"
       ],
       "End-to-end encryption": [
         "End-to-end-kryptering"
+      ],
+      "Every free account comes with:": [
+        "Varje gratiskonto levereras med:"
       ],
       "Free": [
         "Free"
@@ -17289,6 +17314,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "skaffa en säker ${ MAIL_APP_NAME }-adress."
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Skaffa en säker från oss, eller ${ internalButton }"
       ],
       "Manage user access": [
         "Hantera användaråtkomst"
@@ -17304,6 +17332,9 @@
       ],
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "Behöver du mer lagringsutrymme? Du kan uppgradera när som helst med paket från 200 GB till 3 TB. 5 GB räcker för 2 500 foton från en modern telefon (ca. ~2 MB styck)."
+      ],
+      "Password manager for all your devices": [
+        "Lösenordshanterare för alla dina enheter"
       ],
       "Pick your perfect plan": [
         "Välj ditt perfekta paket"
@@ -17338,6 +17369,9 @@
       "Share and collaborate of files": [
         "Dela och samarbeta på filer"
       ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Registrera dig för att få allt ${ BRAND_NAME } har att erbjuda"
+      ],
       "Sign up, protect your files": [
         "Registrera dig, skydda dina filer"
       ],
@@ -17362,6 +17396,9 @@
       "Upload files of any size": [
         "Ladda upp filer av valfri storlek"
       ],
+      "use your current email.": [
+        "använd din nuvarande e-post."
+      ],
       "Use your email, or ${ externalButton }": [
         "Använd din e-post, eller ${ externalButton }"
       ],
@@ -17376,6 +17413,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME }-lösenord"
+      ],
       "Confirm password": [
         "Bekräfta lösenord"
       ],
@@ -18686,6 +18726,9 @@
       "Address added": [
         "Adress tillagd"
       ],
+      "Address successfully added": [
+        "Adress tillagd"
+      ],
       "Address updated": [
         "Adress uppdaterad"
       ],
@@ -18693,10 +18736,10 @@
         "Administratörsrättigheter återställda"
       ],
       "Auto-reply disabled": [
-        "Autosvar inaktiverad"
+        "Automatiskt svar inaktiverat"
       ],
       "Auto-reply updated": [
-        "Autosvar uppdaterat"
+        "Automatiskt svar uppdaterat"
       ],
       "Backup password updated": [
         "Säkerhetslösenord uppdaterat"
@@ -19402,17 +19445,8 @@
       "Cancel subscription?": [
         "Avsluta prenumeration?"
       ],
-      "Cannot add Gateway": [
-        "Kan inte lägga till gateway"
-      ],
-      "Cannot add licenses": [
-        "Kan inte lägga till licenser"
-      ],
       "Cannot add more users": [
         "Kan inte lägga till fler användare"
-      ],
-      "Cannot add servers": [
-        "Kan inte lägga till servrar"
       ],
       "Card verification": [
         "Kortverifiering"
@@ -19485,6 +19519,9 @@
       ],
       "Connect apps and devices": [
         "Anslut appar och enheter"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Anslut fler Gmail-adresser med ${ planName }"
       ],
       "Connect organization": [
         "Anslut organisation"
@@ -20063,6 +20100,9 @@
       "Multi-user support": [
         "Stöd för flera användare"
       ],
+      "Multiple accounts, 1 private inbox": [
+        "Flera konton, 1 privat inkorg"
+      ],
       "My addresses": [
         "Mina adresser"
       ],
@@ -20572,10 +20612,10 @@
         "Verifiera e-postadress"
       ],
       "Verifying your card...": [
-        "Verifierar ditt kort..."
+        "Verifierar ditt kort …"
       ],
       "Verifying your payment...": [
-        "Verifierar din betalning..."
+        "Verifierar din betalning …"
       ],
       "Version history": [
         "Versionshistorik"

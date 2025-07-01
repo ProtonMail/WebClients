@@ -376,6 +376,9 @@
       "Create folder": [
         "Vytvoriť priečinok"
       ],
+      "Create free account now": [
+        "Vytvorte si bezplatný účet teraz"
+      ],
       "Create Gateway": [
         "Vytvoriť bránu"
       ],
@@ -442,6 +445,9 @@
       "Delete logo": [
         "Vymazať logo"
       ],
+      "Delete logs": [
+        "Vymazať záznamy"
+      ],
       "Delete member": [
         "Vymazať člena"
       ],
@@ -468,6 +474,12 @@
       ],
       "Delete “${ label.Name }”": [
         "Vymazať \"${ label.Name }”"
+      ],
+      "Deleting folder": [
+        "Mazanie priečinka"
+      ],
+      "Deleting label": [
+        "Mazanie štítku"
       ],
       "Deny access": [
         "Zamietnuť prístup"
@@ -961,9 +973,6 @@
       "Next month": [
         "Budúci mesiac"
       ],
-      "Next page": [
-        "Ďalšia strana"
-      ],
       "No": [
         "Nie"
       ],
@@ -1008,9 +1017,6 @@
       ],
       "Previous month": [
         "Predchádzajúci mesiac"
-      ],
-      "Previous page": [
-        "Predchádzajúca strana"
       ],
       "Publish changes": [
         "Zverejniť zmeny"
@@ -1984,6 +1990,11 @@
         "Som mimo kanceláriu s obmedzeným prístupom k emailu."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Predplatné bolo zrušené."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Zakázané"
@@ -2323,26 +2334,6 @@
       ],
       "Working with sensitive data?": [
         "Pracujete s citlivými údajmi?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Váš dedikovaný server je už priradený k bráne. Po skončení bezplatnej skúšobnej verzie si budete môcť kúpiť ďalšie servery.",
-        "Všetky vaše dedikované servery sú už priradené k bránam. Ďalšie servery si budete môcť kúpiť po skončení bezplatnej skúšobnej verzie.",
-        "Všetky vaše dedikované servery sú už priradené k bránam. Ďalšie servery si budete môcť kúpiť po skončení bezplatnej skúšobnej verzie.",
-        "Všetky vaše dedikované servery sú už priradené k bránam. Ďalšie servery si budete môcť kúpiť po skončení bezplatnej skúšobnej verzie."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Vaša bezplatná skúšobná verzia zahŕňa ${ ipAddresses } dedikovaný server. Ďalšie servery môžete pridať po spustení plného predplatného.",
-        "Vaša bezplatná skúšobná verzia zahŕňa ${ ipAddresses } dedikované servery. Ďalšie servery môžete pridať po spustení plného predplatného.",
-        "Vaša bezplatná skúšobná verzia zahŕňa ${ ipAddresses } dedikovaných serverov. Ďalšie servery môžete pridať po spustení plného predplatného.",
-        "Vaša bezplatná skúšobná verzia zahŕňa ${ ipAddresses } dedikovaných serverov. Ďalšie servery môžete pridať po spustení plného predplatného."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Vaša bezplatná skúšobná verzia obsahuje ${ maxMembers } licenciu. Ďalšie licencie môžete pridať po spustení plného predplatného.",
-        "Vaša bezplatná skúšobná verzia obsahuje ${ maxMembers } licencie. Ďalšie licencie môžete pridať po spustení plného predplatného.",
-        "Vaša bezplatná skúšobná verzia obsahuje ${ maxMembers } licencií. Ďalšie licencie môžete pridať po spustení plného predplatného.",
-        "Vaša bezplatná skúšobná verzia obsahuje ${ maxMembers } licencií. Ďalšie licencie môžete pridať po spustení plného predplatného."
       ]
     },
     "breadcrumb": {
@@ -4153,9 +4144,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Najprv nakonfigurujte túto možnosť, aby ste aktivovali svoju organizáciu a prispôsobili svoju emailovú adresu."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "Gratulujeme! Získali ste maximum ${ rewardsLimit } bezplatných mesiacov ${ plusPlanName }."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Pripojte svoj CRM, webovú stránku, tlačiarne a ďalšie."
       ],
@@ -4592,6 +4580,20 @@
       ],
       "90 minutes": [
         "90 minút"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Na preposielanie emailov z ${ MAX_SYNC_PAID_USER } účtu prejdite na ${ planName }.",
+        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }.",
+        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }.",
+        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externého účtu do ${ MAIL_APP_NAME }.",
+        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
+        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
+        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5474,6 +5476,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Platby sú momentálne nedostupné, skúste to prosím neskôr"
+      ],
+      "Permissions request failed.": [
+        "Žiadosť o oprávnenia zlyhala."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Pred pridaním adries nastavte vlastnú doménu."
@@ -8407,6 +8412,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
       ],
+      "Dedicated VPN servers": [
+        "Dedikované VPN servery"
+      ],
       "default email address": [
         "predvolená emailová adresa"
       ],
@@ -9306,6 +9314,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Počet dedikovaných VPN serverov v organizácii"
       ],
       "Number of items the user has access to (includes owned items + shared items)": [
         "Počet položiek, ku ktorým má používateľ prístup (zahŕňa vlastnené položky + zdieľané položky)"
@@ -10783,9 +10794,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Pomocou stiahnutých súborov na obnovu nebudete môcť obnoviť uzamknuté údaje. Tým sa zakáže aj obnovenie na základe zariadenia."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Taktiež stratíte prístup k funkciám ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }.",
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }.",
@@ -10929,6 +10937,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše skúšobné obdobie končí ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Taktiež stratíte prístup k funkciám ${ boldPlanTitle }:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Tieto servery budete môcť okamžite pridať do inej brány."
@@ -15025,11 +15036,6 @@
         "Vyberte, k čomu môže ${ BRAND_NAME } pristupovať: zobraziť emailové správy a nastavenia, prezerať a sťahovať vaše kontakty, zobrazovať a sťahovať všetky agendy, ku ktorým máte prístup z Google kalendára."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Pri prihlasovaní do konta Gmail sa niečo pokazilo"
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited na 12 mesiacov"
@@ -16141,6 +16147,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Bankový prevod"
       ],
@@ -16283,6 +16292,14 @@
     "Payments.plan_name": {
       "Free": [
         "Zdarma"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankový prevod – ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -17669,6 +17686,24 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email aliasov na boj proti spamu"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } adresa",
+        "${ maxAddresses } adresy",
+        "${ maxAddresses } adries",
+        "${ maxAddresses } adries"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } kalendár",
+        "${ maxCalendars } kalendáre",
+        "${ maxCalendars } kalendárov",
+        "${ maxCalendars } kalendárov"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } cloudového úložiska na súbory a fotografie"
+      ],
       "${ value } of secure storage": [
         "${ value } bezpečného úložiska"
       ],
@@ -17687,6 +17722,9 @@
       "Billing Cycle": [
         "Fakturačné obdobie"
       ],
+      "Collaborative document editing": [
+        "Spoločné úpravy dokumentov"
+      ],
       "Compare plans": [
         "Porovnať plány"
       ],
@@ -17699,11 +17737,17 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Pokračujte s ${ PLAN_NAMES[plan] }"
       ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Šifrovaný email s ${ totalMailStorageSize } úložiskom"
+      ],
       "Encrypted password manager": [
         "Šifrovaný správca hesiel"
       ],
       "End-to-end encryption": [
         "End-to-end šifrovanie"
+      ],
+      "Every free account comes with:": [
+        "Každý bezplatný účet obsahuje:"
       ],
       "Free": [
         "Free"
@@ -17713,6 +17757,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "získajte bezpečnú ${ MAIL_APP_NAME } adresu."
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Získajte si od nás bezpečnú, alebo ${ internalButton }"
       ],
       "Manage user access": [
         "Správa prístupov používateľov"
@@ -17731,6 +17778,9 @@
       ],
       "Online documents": [
         "Online dokumenty"
+      ],
+      "Password manager for all your devices": [
+        "Správca hesiel pre všetky vaše zariadenia"
       ],
       "Pick your perfect plan": [
         "Vyberte si svoj perfektný plán"
@@ -17765,6 +17815,9 @@
       "Share and collaborate of files": [
         "Zdieľajte a spolupracujte na súboroch"
       ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Zaregistrujte sa a získajte všetko, čo ${ BRAND_NAME } ponúka"
+      ],
       "Sign up, protect your files": [
         "Zaregistrujte sa, chráňte si svoje súbory"
       ],
@@ -17789,6 +17842,9 @@
       "Upload files of any size": [
         "Nahrajte súbory ľubovoľnej veľkosti"
       ],
+      "use your current email.": [
+        "používajte svoj aktuálny email."
+      ],
       "Use your email, or ${ externalButton }": [
         "Použite svoju emailovú adresu, alebo ${ externalButton }"
       ],
@@ -17803,6 +17859,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME } heslo"
+      ],
       "Confirm password": [
         "Potvrdiť heslo"
       ],
@@ -19185,6 +19244,9 @@
       "Address added": [
         "Adresa pridaná"
       ],
+      "Address successfully added": [
+        "Adresa bola úspešne pridaná"
+      ],
       "Address updated": [
         "Adresa aktualizovaná"
       ],
@@ -19920,17 +19982,8 @@
       "Cancel subscription?": [
         "Zrušiť predplatné?"
       ],
-      "Cannot add Gateway": [
-        "Nie je možné pridať bránu"
-      ],
-      "Cannot add licenses": [
-        "Nie je možné pridať licencie"
-      ],
       "Cannot add more users": [
         "Nie je možné pridať ďalších používateľov"
-      ],
-      "Cannot add servers": [
-        "Nie je možné pridať servery"
       ],
       "Card verification": [
         "Overenie karty"
@@ -20003,6 +20056,9 @@
       ],
       "Connect apps and devices": [
         "Pripojenie aplikácií a zariadení"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Pripojte viac Gmail adries s ${ planName }"
       ],
       "Connect organization": [
         "Pripojiť organizáciu"
@@ -20585,6 +20641,9 @@
       ],
       "Multi-user support": [
         "Podpora viacerých používateľov"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Viacero účtov, 1 súkromná doručená pošta"
       ],
       "My addresses": [
         "Moje adresy"

@@ -399,6 +399,12 @@
       "Delete permanently": [
         "Supprimer définitivement"
       ],
+      "Deleting folder": [
+        "Suppression du dossier"
+      ],
+      "Deleting label": [
+        "Suppression de l'étiquette"
+      ],
       "Deselect all": [
         "Tout désélectionner"
       ],
@@ -1420,6 +1426,10 @@
       "Trust": [
         "Faire confiance"
       ],
+      "Trust key": [
+        "Approuver la clé",
+        "Approuver les clés"
+      ],
       "Trust public key": [
         "Approuver la clé publique"
       ],
@@ -1482,9 +1492,6 @@
       ],
       "Upgrade": [
         "Changer d'abonnement"
-      ],
-      "Upgrade Now": [
-        "Passer à l'abonnement supérieur"
       ],
       "Upgrade now": [
         "Changer d'abonnement"
@@ -1582,15 +1589,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contact.",
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Votre essai gratuit de l'application de bureau se termine dans 2 jours. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Votre essai gratuit de l'application de bureau se termine dans 5 jours. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Votre assistant d'écriture de messages"
@@ -1936,6 +1934,11 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "L'abonnement a été annulé."
       ]
     },
     "bf2023: Deal details": {
@@ -4569,6 +4572,9 @@
       "No address with keys available to compose a message": [
         "Il n'y a aucune adresse avec des clés disponibles pour écrire un message."
       ],
+      "No address with sending permissions": [
+        "Aucune adresse ne dispose de permissions d’envoi."
+      ],
       "No calendars found to import": [
         "Aucun calendrier n'a été trouvé pour l'importation."
       ],
@@ -4615,6 +4621,9 @@
       ],
       "Payment process not supported": [
         "Le traitement du paiement n'est pas pris en charge."
+      ],
+      "Permissions request failed.": [
+        "La demande d'autorisations n'a pas abouti."
       ],
       "Please activate your search again": [
         "Veuillez réactiver votre recherche."
@@ -6773,6 +6782,9 @@
       "Dedicated servers": [
         "Serveurs dédiés"
       ],
+      "Dedicated VPN servers": [
+        "Serveurs VPN dédiés"
+      ],
       "default email address": [
         "adresse e-mail par défaut"
       ],
@@ -7363,6 +7375,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Nombre de serveurs VPN dédiés dans l'organisation"
       ],
       "Numbers": [
         "Chiffres"
@@ -8414,9 +8429,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Vous avez écrit « ${ attachmentsFoundKeyword } », mais il n'y aucune pièce jointe. Voulez-vous quand même envoyer votre message ?"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Vous n'aurez également plus accès aux fonctionnalités de ${ boldPlanTitle } :"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois.",
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
@@ -8530,6 +8542,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Votre version d'essai se terminera dans ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Vous n'aurez également plus accès aux fonctionnalités de ${ boldPlanTitle } :"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Vous n'aurez plus accès à ${ boldPlanTitle } le ${ boldEndDate }."
@@ -11270,6 +11285,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } : nos applications n'afficheront jamais de publicités sponsorisées."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } assure que seuls vous et les destinataires prévus pouvez accéder à vos e-mails."
       ],
@@ -11290,6 +11308,9 @@
       ],
       "Activate selected": [
         "Activez la sélection"
+      ],
+      "Ad-free promise": [
+        "Notre engagement sans publicité"
       ],
       "Advanced encryption": [
         "Chiffrement avancé"

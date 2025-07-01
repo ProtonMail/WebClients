@@ -1131,6 +1131,11 @@
         "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente mensualmente el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Suscripción cancelada."
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 usuario"
@@ -1443,7 +1448,7 @@
         "Nuestro plan gratuito básico con correo y almacenamiento cifrados de extremo a extremo. Sin funciones premium incluidas."
       ],
       "Save ${ upsellSavings }": [
-        "Ahorre un ${ upsellSavings }"
+        "Ahorre ${ upsellSavings }"
       ],
       "Save money with ${ upsellPlanName }": [
         "Ahorre dinero con ${ upsellPlanName }"
@@ -4490,6 +4495,9 @@
       "Dedicated servers": [
         "Servidores dedicados"
       ],
+      "Dedicated VPN servers": [
+        "Servidores dedicados de VPN"
+      ],
       "default email address": [
         "dirección de correo por defecto"
       ],
@@ -4887,6 +4895,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados en la organización"
       ],
       "Numbers": [
         "Números"
@@ -5535,9 +5546,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se le cobrará si cancela antes del ${ trialEndsOnFormatted }."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "También perderá acceso a las funciones de ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Después se le facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
         "Después se le facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
@@ -5653,6 +5661,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Su prueba finalizará en ${ timeRemaining }"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "También perderá acceso a las funciones de ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Perderá el acceso a ${ boldPlanTitle } el ${ boldEndDate }."

@@ -864,12 +864,6 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "忽略${ payload.item.data.metadata.name }項目"
-      ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "${ payload.item.data.metadata.name }已忽略更新"
-      ],
       "${ count } time": [
         "${ count }次數"
       ],

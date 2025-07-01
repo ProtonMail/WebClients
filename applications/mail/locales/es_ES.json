@@ -399,6 +399,12 @@
       "Delete permanently": [
         "Eliminar permanentemente"
       ],
+      "Deleting folder": [
+        "Eliminando la carpeta"
+      ],
+      "Deleting label": [
+        "Eliminando la etiqueta"
+      ],
       "Deselect all": [
         "Anular la selección de todo"
       ],
@@ -1421,7 +1427,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -1485,9 +1492,6 @@
       ],
       "Upgrade": [
         "Cambiar de plan"
-      ],
-      "Upgrade Now": [
-        "Mejorar ahora"
       ],
       "Upgrade now": [
         "Cambiar de plan"
@@ -1585,15 +1589,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contactos."
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Tu prueba gratuita de la aplicación de escritorio finaliza en 2 días. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Tu prueba gratuita de la aplicación de escritorio finaliza en 5 días. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Tu prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Tu asistente de escritura de correo"
@@ -1939,6 +1934,11 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Se ha cancelado la suscripción."
       ]
     },
     "bf2023: Deal details": {
@@ -2544,7 +2544,7 @@
         "Nuestro plan básico y gratuito con correo y almacenamiento cifrado de extremo a extremo. No incluye características prémium."
       ],
       "Save ${ upsellSavings }": [
-        "Ahorra un ${ upsellSavings }"
+        "Ahorra ${ upsellSavings }"
       ],
       "Save money with ${ upsellPlanName }": [
         "Ahorra dinero con ${ upsellPlanName }"
@@ -4572,6 +4572,9 @@
       "No address with keys available to compose a message": [
         "No hay una dirección con claves disponibles para escribir un mensaje"
       ],
+      "No address with sending permissions": [
+        "No hay dirección con permisos de envío"
+      ],
       "No calendars found to import": [
         "No se han encontrado calendarios para importar."
       ],
@@ -4618,6 +4621,9 @@
       ],
       "Payment process not supported": [
         "Proceso de pago no soportado"
+      ],
+      "Permissions request failed.": [
+        "Error con la solicitud de permisos"
       ],
       "Please activate your search again": [
         "Activa de nuevo tu búsqueda."
@@ -6776,6 +6782,9 @@
       "Dedicated servers": [
         "Servidores dedicados"
       ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
       "default email address": [
         "dirección de correo electrónico por defecto"
       ],
@@ -7366,6 +7375,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados en la organización"
       ],
       "Numbers": [
         "Números"
@@ -8417,9 +8429,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Has escrito \"${ attachmentsFoundKeyword }\" pero no se ha añadido ningún archivo adjunto. ¿Quieres enviar tu mensaje de todos modos?"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "También perderás acceso a las funciones de ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Después se te facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
         "Después se te facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
@@ -8533,6 +8542,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Tu prueba acaba en ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "También perderás acceso a las funciones de ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Perderás el acceso a ${ boldPlanTitle } el ${ boldEndDate }."
@@ -11273,6 +11285,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } significa que nunca verás anuncios patrocinados en nuestras aplicaciones."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } asegura que solo tú y los remitentes esperados podáis acceder a tus correos electrónicos."
       ],
@@ -11293,6 +11308,9 @@
       ],
       "Activate selected": [
         "Activar la selección"
+      ],
+      "Ad-free promise": [
+        "Nuestro compromiso sin publicidad"
       ],
       "Advanced encryption": [
         "Cifrado avanzado"
@@ -11624,6 +11642,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Transferencia bancaria"
       ],
@@ -11749,6 +11770,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferencia bancaria - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -15174,7 +15203,7 @@
         "Cada ${ interval } semanas los viernes"
       ],
       "Every ${ interval } week on Monday": [
-        "Cada semana los lunes ${ interval }",
+        "Cada ${ interval } semana los lunes ",
         "Cada ${ interval } semanas los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [

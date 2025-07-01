@@ -1154,7 +1154,7 @@
         "Protegiu fins a 10 dispositius"
       ],
       "Recover previous file versions": [
-        "Recupereu versions anteriors del fitxer"
+        "Recupereu versions anteriors dels fitxers"
       ],
       "Save big on premium Drive features with a limited-time discount.": [
         "Estalviiareu molt amb les funcions premium de Drive amb un descompte per temps limitat"
@@ -1234,6 +1234,11 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Porteu la productivitat del correu electrònic a nivells nous. Deixeu que ${ BRAND_NAME } Scribe us ajudi a escriure, respondre i corregir els correus electrònics. "
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "S'ha cancel·lat la subscripció."
       ]
     },
     "Badge for domain": {
@@ -1533,20 +1538,6 @@
       ],
       "Working with sensitive data?": [
         "Treballeu amb dades sensibles?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "El servidor dedicat ja està assignat a una passarel·la. Podreu comprar-ne més un cop se us acabi la prova gratuïta.",
-        "Tots els servidors dedicats ja estan assignats a passarel·les. Podreu comprar-ne més un cop se us acabi la prova gratuïta."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "La prova gratuïta inclou el servidor dedicat ${ ipAddresses }. Podreu afegir més servidors un cop comenci la subscripció completa.",
-        "La prova gratuïta inclou els servidors dedicats ${ ipAddresses }. Podreu afegir més servidors un cop comenci la subscripció completa."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "La prova gratuïta inclou ${ maxMembers } llicència. Podreu afegir més llicències un cop comenci la subscripció completa.",
-        "La prova gratuïta inclou un màxim de ${ maxMembers } llicències. Podreu afegir-ne més un cop comenci la subscripció completa."
       ]
     },
     "Browser": {
@@ -3041,6 +3032,16 @@
         "Suport prioritari"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Per reenviar correus electrònics des de fins a ${ MAX_SYNC_PAID_USER } compte, milloreu a ${ planName }.",
+        "Per reenviar correus electrònics des de fins a ${ MAX_SYNC_PAID_USER } comptes, milloreu a ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Esteu reenviant correus electrònics des de ${ MAX_SYNC_FREE_USER } compte extern a ${ MAIL_APP_NAME }.",
+        "Esteu reenviant correus electrònics de ${ MAX_SYNC_FREE_USER } comptes externs a ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només apareixerà en les factures emeses en el futur i no afectarà les factures existents."
@@ -3312,6 +3313,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Els pagaments actualment no estan disponibles, proveu-ho més tard"
+      ],
+      "Permissions request failed.": [
+        "Error amb la sol·licitud de permisos"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configureu un domini personalitzat abans d'afegir adreces."
@@ -4740,6 +4744,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Es poden afegir servidors dedicats amb adreces IP dedicades a portes d'enllaç privades per a activar un control d'accés més optimitzat."
       ],
+      "Dedicated VPN servers": [
+        "Servidors VPN dedicats"
+      ],
       "default email address": [
         "adreça de correu electrònic per defecte"
       ],
@@ -5311,6 +5318,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Nombre de servidors VPN dedicats a l'organització"
       ],
       "Numbers": [
         "Números"
@@ -6231,9 +6241,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "No podreu reassignar aquests servidors a un altre país durant 10 dies."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "També perdreu l'accés a les característiques de ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
         "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
@@ -6318,6 +6325,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "El període de prova finalitzarà en ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "També perdreu l'accés a les característiques de ${ boldPlanTitle }:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Podreu afegir aquests servidors a una altra passarel·la immediatament."
@@ -7380,7 +7390,7 @@
         "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
-        "El vostre emmagatzematge està ple. Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
+        "L'emmagatzematge és ple. Per a continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
@@ -8718,11 +8728,6 @@
         "Algunes imatges no s'han carregat a causa dels noms de fitxer duplicats a la selecció actual."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "S'ha produït un error en iniciar sessió al vostre compte del Gmail."
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited durant 12 mesos"
@@ -8740,7 +8745,7 @@
         "No tornis a mostrar aquesta oferta"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
-        "Obtingueu ${ BRAND_NAME } sense límits"
+        "Obteniu ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obteniu Drive Plus per només ${ pricingTitle }"
@@ -9282,7 +9287,7 @@
         "Hi ha més plans disponibles en altres divises."
       ],
       "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "El SEPA només s'accepta l'euro. La moneda ha estat canviada. Utilitzeu el selector per revertir la vostra elecció."
+        "Només s'accepta l'euro per al SEPA. S'ha canviat la moneda. Utilitzeu el selector per revertir la vostra elecció."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
@@ -10190,6 +10195,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "Contrasenya de ${ BRAND_NAME }"
+      ],
       "Confirm password": [
         "Confirmeu la contrasenya"
       ],
@@ -10315,7 +10323,7 @@
         "Mantingueu les vostres contrasenyes segures"
       ],
       "Unblock streaming content": [
-        "Tingui accés il·limitat a continguts en estríming"
+        "Tingueu accés al contingut en estríming."
       ],
       "Upgrade": [
         "Millora"
@@ -11290,6 +11298,9 @@
       "Address added": [
         "Adreça afegida"
       ],
+      "Address successfully added": [
+        "S\"ha afegit l\"adreça correctament."
+      ],
       "Administrator privileges restored": [
         "S'han restaurat els privilegis de l'administrador"
       ],
@@ -11779,17 +11790,8 @@
       "Cancel subscription?": [
         "Voleu cancel·lar la subscripció?"
       ],
-      "Cannot add Gateway": [
-        "No es pot afegir una passarel·la."
-      ],
-      "Cannot add licenses": [
-        "No es poden afegir llicències."
-      ],
       "Cannot add more users": [
         "No es poden afegir més usuaris."
-      ],
-      "Cannot add servers": [
-        "No es poden afegir servidors."
       ],
       "Card verification": [
         "Verificació de la targeta"
@@ -11847,6 +11849,9 @@
       ],
       "Connect apps and devices": [
         "Connecteu aplicacions i dispositius"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Connecteu més adreces de Gmail amb ${ planName }"
       ],
       "Connect organization": [
         "Connecta l'organització"
@@ -12150,6 +12155,9 @@
       ],
       "Multi-user support": [
         "Suport multi-usuari"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Múltiples comptes, 1 safata d'entrada privada"
       ],
       "Network error": [
         "Error de xarxa"
@@ -12471,8 +12479,8 @@
         "El vostre pla actual"
       ],
       "Your free trial ends in ${ trialDurationFormatted } day": [
-        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dia",
-        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dies"
+        "La prova gratuïta finalitza en ${ trialDurationFormatted } dia",
+        "La prova gratuïta finalitza en ${ trialDurationFormatted } dies"
       ],
       "Your plan": [
         "El vostre pla"

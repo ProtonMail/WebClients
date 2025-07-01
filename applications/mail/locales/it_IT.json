@@ -1426,6 +1426,10 @@
       "Trust": [
         "Considera attendibile"
       ],
+      "Trust key": [
+        "Considera attendibile la chiave",
+        "Considera attendibili le chiavi"
+      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -1488,9 +1492,6 @@
       ],
       "Upgrade": [
         "Effettua l'upgrade"
-      ],
-      "Upgrade Now": [
-        "Effettua l'upgrade ora"
       ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
@@ -1588,15 +1589,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatto",
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "La tua prova gratuita dell'applicazione desktop termina tra 2 giorni. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "La tua prova gratuita dell'applicazione desktop termina tra 5 giorni. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Il tuo assistente per la scrittura di email"
@@ -1942,6 +1934,11 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abbonamento annullato."
       ]
     },
     "bf2023: Deal details": {
@@ -4575,6 +4572,9 @@
       "No address with keys available to compose a message": [
         "Nessun indirizzo con chiavi disponibili per scrivere un messaggio"
       ],
+      "No address with sending permissions": [
+        "Nessun indirizzo con autorizzazioni di invio"
+      ],
       "No calendars found to import": [
         "Nessun calendario trovato da importare"
       ],
@@ -4621,6 +4621,9 @@
       ],
       "Payment process not supported": [
         "Processo di pagamento non supportato"
+      ],
+      "Permissions request failed.": [
+        "Richiesta di autorizzazioni non riuscita."
       ],
       "Please activate your search again": [
         "Attiva nuovamente la tua ricerca"
@@ -6779,6 +6782,9 @@
       "Dedicated servers": [
         "Server dedicati"
       ],
+      "Dedicated VPN servers": [
+        "Server VPN dedicati"
+      ],
       "default email address": [
         "indirizzo email predefinito"
       ],
@@ -7369,6 +7375,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Numero di server VPN dedicati nell'organizzazione"
       ],
       "Numbers": [
         "Numeri"
@@ -8420,9 +8429,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Hai scritto “${ attachmentsFoundKeyword }”, ma nessun allegato è stato aggiunto. Vuoi comunque inviare il tuo messaggio?"
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Perderai anche l'accesso alle funzionalità di ${ boldPlanTitle }:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese.",
         "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mesi."
@@ -8536,6 +8542,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "La tua prova terminerà tra ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Perderai anche l'accesso alle funzionalità di ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Perderai l'accesso a ${ boldPlanTitle } il ${ boldEndDate }."
@@ -11281,6 +11290,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }: non vedrai mai annunci sponsorizzati nelle nostre app."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } garantisce che solo tu e i destinatari possiate accedere alle tue email."
       ],
@@ -11301,6 +11313,9 @@
       ],
       "Activate selected": [
         "Attiva selezionato"
+      ],
+      "Ad-free promise": [
+        "Il nostro impegno senza pubblicità"
       ],
       "Advanced encryption": [
         "Crittografia avanzata"

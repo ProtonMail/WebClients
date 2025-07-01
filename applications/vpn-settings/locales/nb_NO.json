@@ -1236,6 +1236,11 @@
         "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abonnement kansellert."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Deaktivert"
@@ -1533,20 +1538,6 @@
       ],
       "Working with sensitive data?": [
         "Jobber du med sensitive data?"
-      ]
-    },
-    "Body": {
-      "Your dedicated server is already assigned to a Gateway. You’ll be able to buy more servers once your free trial ends.": [
-        "Din dedikerte tjener er allerede tilordnet en porttjener. Du vil kunne kjøpe flere tjenere når din gratis prøveversjon er avsluttet.",
-        "Alle dine dedikerte tjenere er allerede tildelt til porttjenere. Du vil kunne kjøpe flere tjenere når din gratis prøveversjonen avsluttes."
-      ],
-      "Your free trial includes ${ ipAddresses } dedicated server. You can add more servers once your full subscription starts.": [
-        "Din gratis prøveversjon inkluderer ${ ipAddresses } dedikert tjener. Du kan legge til flere tjenere når hele abonnement ditt starter.",
-        "Din gratis prøveversjon inkluderer ${ ipAddresses } dedikerte tjenere. Du kan legge til flere tjenere når hele abonnement ditt starter."
-      ],
-      "Your free trial includes ${ maxMembers } license. You can add more licenses once your full subscription starts.": [
-        "Din gratis prøveversjon inkluderer ${ maxMembers } lisens. Du kan legge til flere lisenser når hele abonnementet ditt starter.",
-        "Din gratis prøveversjon inkluderer maksimalt ${ maxMembers } lisenser. Du kan legge til flere lisenser når hele abonnementet ditt starter."
       ]
     },
     "Browser": {
@@ -3041,6 +3032,16 @@
         "Prioritert brukerstøtte"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } konto, oppgrader til ${ planName }.",
+        "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } kontoer, oppgrader til ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
+        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } eksterne kontoer til ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstfelt er valgfrie. Informasjonen du oppgir i dette skjemaet vil bare vises på fakturaer som utstedes i fremtiden og vil ikke påvirke eksisterende fakturaer."
@@ -3312,6 +3313,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Betalinger er for øyeblikket ikke tilgjengelige. Prøv igjen senere."
+      ],
+      "Permissions request failed.": [
+        "Forespørsel om tillatelser mislyktes."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Konfigurer et egendefinert domene før du legger til adresser."
@@ -4740,6 +4744,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
       ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-tjenere"
+      ],
       "default email address": [
         "standard e-postadresse"
       ],
@@ -5311,6 +5318,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antall dedikerte VPN-tjenere i organisasjonen"
       ],
       "Numbers": [
         "Tall"
@@ -6234,9 +6244,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Du vil ikke kunne tilordne disse tjenerne til et annet land på 10 dager."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
@@ -6321,6 +6328,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Prøveversjonen avsluttes om ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Du vil kunne legge til disse tjenerne i en annen porttjener umiddelbart."
@@ -8709,11 +8719,6 @@
         "Noen bilder ble ikke lastet opp på grunn av dupliserte filnavn i gjeldende utvalg."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Noe gikk galt under pålogging til din Gmail-konto"
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Ubegrenset i 12 måneder"
@@ -10199,6 +10204,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME }-passord"
+      ],
       "Confirm password": [
         "Bekreft passord"
       ],
@@ -11295,6 +11303,9 @@
       "Address added": [
         "Adresse lagt til"
       ],
+      "Address successfully added": [
+        "Adressen ble lagt til"
+      ],
       "Administrator privileges restored": [
         "Administratorprivilegier gjenopprettet"
       ],
@@ -11781,17 +11792,8 @@
       "Cancel subscription?": [
         "Avbryte abonnement?"
       ],
-      "Cannot add Gateway": [
-        "Kan ikke legge til porttjener"
-      ],
-      "Cannot add licenses": [
-        "Kan ikke legge til lisenser"
-      ],
       "Cannot add more users": [
         "Kan ikke legge til flere brukere"
-      ],
-      "Cannot add servers": [
-        "Kan ikke legge til tjenere"
       ],
       "Card verification": [
         "Verifisering av kort"
@@ -11849,6 +11851,9 @@
       ],
       "Connect apps and devices": [
         "Koble til apper og enheter"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Koble til flere Gmail-adresser med ${ planName }"
       ],
       "Connect organization": [
         "Koble organisasjon"
@@ -12152,6 +12157,9 @@
       ],
       "Multi-user support": [
         "Flerbrukerstøtte"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flere kontoer, 1 privat innboks"
       ],
       "Network error": [
         "Nettverksfeil"

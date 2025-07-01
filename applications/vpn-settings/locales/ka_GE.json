@@ -1150,6 +1150,9 @@
       "Recover previous file versions": [
         "წინა ფაილის ვერსიების აღდგენა"
       ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "დაზოგეთ ბევრი VPN-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
+      ],
       "Save time with built-in 2FA": [
         "დაზოგეთ დრო ჩაშენებული 2FA-ით"
       ],
@@ -1216,6 +1219,11 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "აიყვანეთ ელფოსტის წარმადობა ახალ დონეებზე. მიეცით საშუალება ${ BRAND_NAME } Scribe-ს, რომ დაგეხმაროთ თქვენი ელფოსტების წერაში, პასუხში და გადამოწმებაში."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "გამოწერა გაუქმდა."
       ]
     },
     "Badge for domain": {
@@ -3234,6 +3242,9 @@
       "Payments are currently not available, please try again later": [
         "გადახდები ამჟამად ხელმიუწვდომელია. მოგვიანებით სცადეთ"
       ],
+      "Permissions request failed.": [
+        "წვდომების მოთხოვნა ჩავარდა."
+      ],
       "Please configure a custom domain before adding addresses.": [
         "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
       ],
@@ -4633,6 +4644,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
       ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
       "default email address": [
         "ნაგულისხმევი ელფოსტის მისამართი"
       ],
@@ -5195,6 +5209,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "გამოყოფილი VPN სერვერების რაოდენობა ორგანიზაციაში"
       ],
       "Numbers": [
         "რიცხვები"
@@ -6094,9 +6111,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "ამ სერვერებს სხვა ქვეყანას შემდეგ 10 დღე ვერ მიანიჭებთ."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }.",
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }."
@@ -6171,6 +6185,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "თქვენი გამოსაცდელი პერიოდის დასრულების დროა: ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "ამ სერვერების სხვა კარიბჭეში ჩამატება დაუყოვნებლივ შეგეძლებათ."
@@ -8539,11 +8556,6 @@
         "ზოგიერთი გამოსახულება არ აიტვირთა, რადგან მიმდინარე მონიშნულებში ფაილის სახელები მეორდება."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "რაღაც არასწორად წავიდა თქვენს Gmail-ის ანგარიშში შესვლისას"
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } შეუზღუდავი 12 თვით"
@@ -9032,6 +9044,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "საბანკო გადარიცხვა"
       ],
@@ -9159,6 +9174,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "საბანკო გადარიცხვა - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -9966,6 +9989,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME }-ის პაროლი"
+      ],
       "Confirm password": [
         "დაადასტურეთ პაროლი"
       ],
@@ -10170,6 +10196,24 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "იქონიეთ წვდომა სტრიმინგის სერვისებთან მთელ მსოფლიოში"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "მიიღეთ 500გბ და შეინახეთ დაცულად ყველა თქვენი ფაილი და სურათი"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "მიიღეთ წვდომა უსწრაფეს VPN სერვერებთან 110+ ქვეყანაში"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "მიიღეთ შეუზღუდავი ფსევდონიმები, რომ დაიცვათ თავი და შეამციროთ სპამის რაოდენობა"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "იქონიეთ თქვენი პაროლები უსაფრთხოდ და დალაგებულად მრავალ საცავში "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "დაიცავით თქვენი ანგარიში საშიშროებებისგან Sentinel-თან ერთად"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "ასწიეთ სატარიფო გეგმა დაზოგეთ მეტი 2 წლით ${ planName }"
       ]
@@ -11036,6 +11080,9 @@
       "Address added": [
         "მისამართი დაემატა"
       ],
+      "Address successfully added": [
+        "მისამართი წარმატებით დაემატა"
+      ],
       "Administrator privileges restored": [
         "ადმინისტრატორის პრივილეგიები აღდგენილია"
       ],
@@ -11516,17 +11563,8 @@
       "Cancel subscription?": [
         "გავაუქმო ხელმოწერა?"
       ],
-      "Cannot add Gateway": [
-        "კვანძის დამატება შეუძლებელია"
-      ],
-      "Cannot add licenses": [
-        "ლიცენზიების დამატება შეუძლებელია"
-      ],
       "Cannot add more users": [
         "მეტ მომხმარებელს ვერ დაამატებთ"
-      ],
-      "Cannot add servers": [
-        "სერვერების დამატება შეუძლებელია"
       ],
       "Card verification": [
         "ბარათის გადამოწმება"
@@ -11584,6 +11622,9 @@
       ],
       "Connect apps and devices": [
         "აპებისა და მოწყობილობების დაკავშირება"
+      ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "დაუკავშირდით მეტ Gmail-ის მისამართს ${ planName }-თან ერთად"
       ],
       "Connect organization": [
         "ორგანიზაციასთან მიერთება"
@@ -11887,6 +11928,9 @@
       ],
       "Multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "ერთზე მეტი ანგარიში, 1 პირადი საფოსტო ყუთი"
       ],
       "Network error": [
         "ქსელის შეცდომა"

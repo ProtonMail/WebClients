@@ -880,9 +880,6 @@
       "Next month": [
         "Næste måned"
       ],
-      "Next page": [
-        "Næste side"
-      ],
       "No": [
         "Nej"
       ],
@@ -927,9 +924,6 @@
       ],
       "Previous month": [
         "Forrige måned"
-      ],
-      "Previous page": [
-        "Forrige side"
       ],
       "Publish changes": [
         "Udgiv ændringer"
@@ -1643,6 +1637,12 @@
       ],
       "New email": [
         "Ny e-mail"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
       ]
     },
     "app-switcher": {
@@ -3777,9 +3777,6 @@
       ],
       "Available with ${ MAIL_APP_NAME } Plus": [
         "Tilgængelig med ${ MAIL_APP_NAME } Plus"
-      ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "Tillykke! Du har optjent de maksimale ${ rewardsLimit } gratis måneder med ${ plusPlanName }."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Forbind din CRM, dit websted, dine printere og mere."
@@ -19361,6 +19358,11 @@
       ],
       "Refund": [
         "Refundering"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/måned"
       ]
     },
     "unprivatization": {

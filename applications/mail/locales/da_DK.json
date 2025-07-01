@@ -871,6 +871,9 @@
       "Move to archive": [
         "Flyt til arkiv"
       ],
+      "Move to Archive": [
+        "Flyt til arkiv"
+      ],
       "Move to folder": [
         "Flyt til mappe"
       ],
@@ -1195,6 +1198,9 @@
       "Send read receipt": [
         "Send læsekvittering"
       ],
+      "Send unsubscribe email": [
+        "Send afmeldings-e-mail"
+      ],
       "Set": [
         "Indstil"
       ],
@@ -1372,6 +1378,10 @@
       "Trust": [
         "Hav tillid til"
       ],
+      "Trust key": [
+        "Stol på nøgle",
+        "Stol på nøgler"
+      ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
       ],
@@ -1434,9 +1444,6 @@
       ],
       "Upgrade": [
         "Opgradér"
-      ],
-      "Upgrade Now": [
-        "Opgradere nu"
       ],
       "Upgrade now": [
         "Opgradér nu"
@@ -1528,15 +1535,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Din desktop app's gratis prøveperiode slutter om 2 dage. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Din desktop app's gratis prøveperiode slutter om 5 dage. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
       ],
       "Your email writing assistant": [
         "Din assistent til at skrive e-mails"
@@ -1673,6 +1671,12 @@
       ],
       "New email": [
         "Ny e-mail"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
       ]
     },
     "Apps dropdown": {
@@ -5959,6 +5963,10 @@
         "${ messagesNotAuthorizedToMove } besked kunne ikke flyttes.",
         "${ messagesNotAuthorizedToMove } beskeder kunne ikke flyttes."
       ],
+      "${ n } newsletter": [
+        "${ n } nyhedsbrev",
+        "${ n } nyhedsbreve"
+      ],
       "${ n } unread conversation": [
         "${ n } ulæst samtale",
         "${ n } ulæste samtaler"
@@ -6053,8 +6061,8 @@
         "${ trackersCount } trackere blokeret"
       ],
       "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } ulæst nyhed",
-        "${ unreadCount } ulæste nyheder"
+        "${ unreadCount } nyhedsbrevsabonnement",
+        "${ unreadCount } nyhedsbrevsabonnementer"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } planlagt besked",
@@ -6314,7 +6322,7 @@
         "Browser understøttes ikke"
       ],
       "Bulk delete": [
-        "multisletning"
+        "Masse-slet"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
@@ -8736,6 +8744,9 @@
         "Markerede ${ unreadCount } besked som læst.",
         "Markerede ${ unreadCount } beskeder som læst."
       ],
+      "Message:": [
+        "Besked:"
+      ],
       "Move ${ sidebarElementName }": [
         "Flyt ${ sidebarElementName }"
       ],
@@ -8772,7 +8783,7 @@
         "Ny adgangskode"
       ],
       "Newsletters": [
-        "Nyheder"
+        "Nyhedsbreve"
       ],
       "No label found": [
         "Ingen etikette fundet"
@@ -9068,6 +9079,11 @@
       ],
       "To: ${ to }": [
         "Til: ${ to }"
+      ]
+    },
+    "Labels": {
+      "Newsletters you unsubscribe from will show up here.": [
+        "Nyhedsbreve, du afmelder, vises her."
       ]
     },
     "Landmarks": {
@@ -13709,10 +13725,10 @@
         "Ny besked"
       ],
       "Newsletters": [
-        "Nyheder"
+        "Nyhedsbreve"
       ],
       "Newsletters view": [
-        "Visning af nyheder"
+        "Visning af nyhedsbreve"
       ],
       "Next conversation": [
         "Næste samtale"
@@ -13737,6 +13753,9 @@
       ],
       "No trackers found": [
         "Ingen trackere fundet"
+      ],
+      "No unsubscribed newsletters": [
+        "Ingen afmeldte nyhedsbreve"
       ],
       "No-reply address detected": [
         "Ingen svar-adresse fundet"
@@ -13972,6 +13991,9 @@
       "Trash": [
         "Papirkurv"
       ],
+      "Trash all messages?": [
+        "Flyt alle beskeder til papirkurven?"
+      ],
       "Trust new key?": [
         "Stol på ny nøgle?",
         "Stol på nye nøgler?"
@@ -13990,6 +14012,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Afmeld fra ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Afmelding ikke mulig for denne afsender"
       ],
       "Unsubscribe request sent": [
         "Anmodning om afmelding afsendt"
@@ -14173,6 +14198,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Denne version af Tor Browser er ikke understøttet. Opdater venligst til den seneste ${ stableRelease }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/måned"
       ]
     },
     "unprivatization": {
