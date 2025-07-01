@@ -1,4 +1,4 @@
-import type { MouseEvent } from 'react';
+import { type MouseEvent, Suspense, lazy } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,6 +15,7 @@ import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getHasOnlyIcsAttachments, getRecipients, isInternal, isScheduled } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import { useCategoryViewExperiment } from 'proton-mail/components/categoryView/useCategoryViewExperiment';
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
@@ -34,6 +35,8 @@ import RecipientItem from '../recipients/RecipientItem';
 import RecipientType from '../recipients/RecipientType';
 import HeaderExtra from './HeaderExtra';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
+
+const ExtraMessageCategory = lazy(() => import('../../categoryView/ExtraMessageCategory'));
 
 interface Props {
     labelID: string;
@@ -82,6 +85,8 @@ const HeaderExpanded = ({
 }: Props) => {
     const [addresses = []] = useAddresses();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
+
+    const { canSeeCategoryLabel } = useCategoryViewExperiment();
 
     const isSendingMessage = message.draftFlags?.sending;
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
@@ -261,7 +266,12 @@ const HeaderExpanded = ({
                     </div>
                 )}
             </div>
-            <div className="flex md:flex-nowrap items-center mb-2 message-header-ccbcc-container">
+            <div
+                className={clsx(
+                    'flex md:flex-nowrap items-center message-header-ccbcc-container',
+                    canSeeCategoryLabel ? '' : 'mb-2'
+                )}
+            >
                 <MailRecipients
                     message={message}
                     recipientsOrGroup={recipientsOrGroup}
@@ -273,6 +283,11 @@ const HeaderExpanded = ({
                     onContactEdit={onContactEdit}
                 />
             </div>
+            {canSeeCategoryLabel && (
+                <Suspense fallback={null}>
+                    <ExtraMessageCategory message={message} />
+                </Suspense>
+            )}
             {showDetails && (
                 <div className="mb-2 flex flex-nowrap color-weak">
                     <span className="self-center mr-2 text-ellipsis">
