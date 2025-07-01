@@ -47,7 +47,7 @@ export const getCurrentType = ({ labelID, mailSettings, location }: TypeParams) 
 
 export const isMessage = (element: Element | undefined): element is Message =>
     typeof (element as Message)?.ConversationID === 'string';
-export const isConversation = (element: Element | undefined): boolean => !isMessage(element);
+export const isConversation = (element: Element | undefined): element is Conversation => !isMessage(element);
 
 /**
  * Get the date of an element.
@@ -86,7 +86,7 @@ export const isUnread = (element: Element | undefined, labelID: string | undefin
         return element.Unread !== 0;
     }
 
-    return conversationIsUnread(element as Conversation, labelID);
+    return conversationIsUnread(element, labelID);
 };
 
 export const isUnreadMessage = (message: Message) => isUnread(message, undefined);
