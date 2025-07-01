@@ -1321,11 +1321,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" ელემენტი წაიშალა"
+      "\"${ payload.itemName }\" item was dismissed": [
+        "\"${ payload.itemName }\" ელემენტი მოცილებულია"
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" განახლება წაიშალა"
+      "\"${ payload.itemName }\" update was dismissed": [
+        "\"${ payload.itemName }\" განახლება მოცილებულია"
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } დაბლოკილი",

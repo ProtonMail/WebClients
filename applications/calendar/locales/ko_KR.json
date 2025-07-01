@@ -1176,6 +1176,11 @@
         "선택 사항"
       ]
     },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "구독이 취소되었습니다."
+      ]
+    },
     "Badge": {
       "New!": [
         "신규!"
@@ -1782,8 +1787,29 @@
       ]
     },
     "Commander action": {
+      "Day view": [
+        "일간 보기"
+      ],
+      "Month view": [
+        "월간 보기"
+      ],
+      "New event": [
+        "신규 이벤트"
+      ],
+      "Next period": [
+        "다음 기간"
+      ],
+      "Previous period": [
+        "이전 기간"
+      ],
       "Search events": [
         "이벤트 검색"
+      ],
+      "Today": [
+        "오늘"
+      ],
+      "Week view": [
+        "주간 보기"
       ]
     },
     "Confirm modal title": {
@@ -4929,6 +4955,9 @@
       "Dedicated servers": [
         "전용 서버"
       ],
+      "Dedicated VPN servers": [
+        "전용 VPN 서버"
+      ],
       "default email address": [
         "기본 이메일 주소"
       ],
@@ -5234,6 +5263,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "조직의 전용 VPN 서버 수"
       ],
       "Numbers": [
         "숫자"
@@ -5781,9 +5813,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } 전까지 취소하는 경우 결제되지 않습니다."
       ],
-      "You'll also lose access to ${ boldPlanTitle } features:": [
-        "또한 ${ boldPlanTitle }의 기능을 사용할 수 없게 됩니다:"
-      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "${ renewCycle }개월마다 ${ renewAmountStr }의 가격으로 갱신됩니다."
       ],
@@ -5888,6 +5917,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "무료 체험이 ${ timeRemaining }에 종료됩니다."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "또한 ${ boldPlanTitle }의 모든 기능도 사용할 수 없게 됩니다:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "${ boldEndDate }에 ${ boldPlanTitle }에 더 이상 접근할 수 없게 됩니다"
@@ -8136,6 +8168,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 할인이 오늘 만료됩니다!"
       ],
+      "Don’t show this again": [
+        "다시 보지 않기"
+      ],
       "Don’t show this offer again": [
         "이 제안을 다시 보지 않기"
       ],
@@ -8203,6 +8238,9 @@
       "+10 more premium features": [
         "그 외 10개 더 많은 프리미엄 기능들"
       ],
+      "500 GB secure storage": [
+        "500 GB 보안 저장공간"
+      ],
       "Advanced threat protection": [
         "향상된 위협 보호 기능"
       ],
@@ -8226,6 +8264,12 @@
       ],
       "Storage": [
         "저장 공간"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가 내의 초고속 VPN 서버"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "신원 보호를 위한 무제한 별칭"
       ]
     },
     "Onboarding": {
@@ -8609,6 +8653,9 @@
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ details }": [
+        "은행 송금 - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -9271,11 +9318,26 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "안전하게 탐색"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "${ BRAND_NAME }으로 더 많은 것을 시작해 보세요"
+      ],
+      "Get unlimited aliases": [
+        "무제한 별칭 받기"
+      ],
       "Go to subscription plans": [
         "구독 요금제 보러가기"
       ],
       "Guard against threats": [
         "위협으로부터 보호"
+      ],
+      "Increase your storage": [
+        "저장공간 늘리기"
+      ],
+      "Keep passwords safe": [
+        "안전하게 비밀번호 유지"
       ],
       "Unblock streaming content": [
         "스트리밍 콘텐츠 잠금 해제"
@@ -9359,8 +9421,17 @@
       "Access content on streaming services worldwide": [
         "전세계의 스트리밍 서비스 상의 콘텐츠에 접근"
       ],
+      "Get 500 GB to securely store all your files and photos": [
+        "모든 파일과 사진을 안전하게 저장할 수 있는 500 GB 스토리지를 받아보세요"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가의 초고속 VPN 서버에 접근"
+      ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "모든 것을 포함하는 하나의 플랜, ${ BRAND_NAME } Unlimited를 경험하세요"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "신원을 보호하고 스팸을 줄이기 위해 무제한 별칭을 받아보세요"
       ],
       "Keep your passwords safe and organized in multiple vaults ": [
         "회원님의 모든 비밀번호를 여러 보관함에 안전하고 체계적으로 보관하세요. "
@@ -11012,6 +11083,9 @@
     "Unlimited offer": {
       "/month": [
         "/월간"
+      ],
+      "Only": [
+        "단"
       ]
     },
     "unprivatization": {

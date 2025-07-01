@@ -7125,6 +7125,9 @@
       "Forgot username?": [
         "Забыли имя пользователя?"
       ],
+      "Groups": [
+        "Группы"
+      ],
       "Help": [
         "Помощь"
       ],
@@ -7275,6 +7278,14 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша подписка закончилась. ${ cta } и избежать потери данных."
+      ]
+    },
+    "Log event": {
+      "Password reset": [
+        "Сброс пароля"
+      ],
+      "Sign out": [
+        "Bыйти"
       ]
     },
     "Log preference": {
@@ -8564,11 +8575,6 @@
         "Некоторые изображения не были загружены из-за дублирования имен файлов в текущей выборке."
       ]
     },
-    "oc_nightly: BYOE": {
-      "Something went wrong while loging into your Gmail account": [
-        "Что-то пошло не так при входе в ваш аккаунт Gmail"
-      ]
-    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited на 12 месяцев"
@@ -9351,6 +9357,11 @@
     "Price": {
       "Free": [
         "Free"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "Заблокирован"
       ]
     },
     "Recovery Email": {
@@ -12081,7 +12092,7 @@
         "Настройка выделенных серверов, улучшив тариф до Business"
       ],
       "Share your calendar with your team": [
-        "Делитесь вашим календарем со своей командой"
+        "Делитесь своим календарём с командой"
       ],
       "Shared servers": [
         "Общие серверы"

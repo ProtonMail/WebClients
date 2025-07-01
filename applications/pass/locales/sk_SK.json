@@ -1304,11 +1304,11 @@
       ]
     },
     "Info": {
-      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Položka \"${ payload.item.data.metadata.name }\" bola zamietnutá"
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Položka \"${ payload.itemName }\" bola zamietnutá"
       ],
-      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Aktualizácia \"${ payload.item.data.metadata.name }\" bola zamietnutá"
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Aktualizácia \"${ payload.itemName }\" bola zamietnutá"
       ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } zablokovaný",
