@@ -1,9 +1,10 @@
 import { useCallback, useMemo, useState } from 'react';
 
+import { MemoryCache, ProtonDriveClient, generateNodeUid } from '@protontech/drive-sdk';
+import { splitInvitationUid, splitNodeRevisionUid, splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
+import type { MemoryLogHandler } from '@protontech/drive-sdk/dist/telemetry';
+
 import { useLocalState } from '@proton/components';
-import { MemoryCache, ProtonDriveClient, generateNodeUid } from '@proton/drive-sdk';
-import { splitInvitationUid, splitNodeRevisionUid, splitNodeUid } from '@proton/drive-sdk/dist/internal/uids';
-import type { MemoryLogHandler } from '@proton/drive-sdk/dist/telemetry';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
@@ -28,7 +29,7 @@ export type {
     ProtonInvitation,
     NonProtonInvitation,
     Member,
-} from '@proton/drive-sdk';
+} from '@protontech/drive-sdk';
 export {
     DeviceType,
     NodeType,
@@ -42,7 +43,8 @@ export {
     RateLimitedError,
     ConnectionError,
     ShareNodeSettings,
-} from '@proton/drive-sdk';
+    NonProtonInvitationState,
+} from '@protontech/drive-sdk';
 
 let driveSingleton: ProtonDriveClient;
 let memoryLogHandlerSingleton: MemoryLogHandler | undefined;
