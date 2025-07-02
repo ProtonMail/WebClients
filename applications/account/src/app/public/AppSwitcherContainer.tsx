@@ -76,7 +76,7 @@ const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; organizati
             </div>
             <div className="flex-1">
                 {getBoldFormattedText(
-                    organization
+                    organization && organizationName
                         ? c('Info').t`**${appName}** is not supported in your organization **${organizationName}**.`
                         : c('Info').t`**${appName}** is not supported.`
                 )}
