@@ -22,6 +22,7 @@ import {
     selectSubscriptionsCount,
     selectTabSortingState,
     selectedTab,
+    selectedTabSubscriptionsCount,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
@@ -32,6 +33,8 @@ const SortingDropdownMenu = () => {
 
     const selectedSort = useMailSelector(selectTabSortingState);
     const { sendNewslettersListSorting } = useNewsletterSubscriptionTelemetry();
+
+    const selectedTabSubCount = useMailSelector(selectedTabSubscriptionsCount);
 
     const dispatch = useMailDispatch();
 
@@ -93,9 +96,11 @@ const SortingDropdownMenu = () => {
                 icon
                 ref={anchorRef}
                 isOpen={isOpen}
+                disabled={selectedTabSubCount === 0}
                 onClick={toggle}
                 shape="ghost"
                 className="shrink-0 self-end"
+                aria-disabled={selectedTabSubCount === 0}
             >
                 <Icon name="list-arrow-down" alt={c('Action').t`Change sorting`} />
             </DropdownButton>

@@ -71,6 +71,37 @@ export const handleUpdateRejection = (
     stateValue.deletingSubscriptionId = undefined;
 };
 
+export const handleUnsubscribePending = (
+    state: NewsletterSubscriptionsStateType,
+    action: ReturnType<typeof unsubscribeSubscription.pending> | ReturnType<typeof updateSubscription.pending>
+) => {
+    const stateValue = getStoreValue(state);
+    if (!stateValue) {
+        return;
+    }
+
+    const subscriptionId = action.meta.arg.subscription.ID;
+    const originalIndex = stateValue.tabs.active.ids.indexOf(subscriptionId);
+
+    updateSubscriptionState(stateValue.byId, subscriptionId, {
+        UnsubscribedTime: Date.now(),
+    });
+
+    // We unselect the subscription if it's the one currently selected
+    if (stateValue.selectedSubscriptionId === subscriptionId) {
+        stateValue.selectedSubscriptionId = undefined;
+    }
+
+    if (originalIndex !== -1) {
+        stateValue.tabs.active.totalCount = safeDecreaseCount(stateValue.tabs.active.totalCount);
+        // We don't remove the ID of the active tab now, we do this once the animation is done
+        stateValue.deletingSubscriptionId = subscriptionId;
+    }
+
+    stateValue.tabs.unsubscribe.ids.unshift(subscriptionId);
+    stateValue.tabs.unsubscribe.totalCount = safeIncreaseCount(stateValue.tabs.unsubscribe.totalCount);
+};
+
 export const handleCreateServerEvent = (
     state: NewsletterSubscriptionsStateType,
     update: CreateEventItemUpdate<NewsletterSubscription, 'NewsletterSubscription'>
