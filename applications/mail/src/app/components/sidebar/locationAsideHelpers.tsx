@@ -38,7 +38,11 @@ export const getUnreadTitle = (
     return getNUnreadMessagesText(unreadCount);
 };
 
-export const getUnreadCount = (labelID: string, unreadCount: number) => {
+export const getUnreadCount = (labelID: string, unreadCount?: number) => {
+    if (!unreadCount) {
+        return undefined;
+    }
+
     if (labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
         return unreadCount > MAIL_SUBSCRIPTION_LIMIT ? '999+' : unreadCount;
     }
