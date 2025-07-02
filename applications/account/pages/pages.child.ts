@@ -16,7 +16,7 @@ const getPathnameFromFilename = (filename: string) => {
             // Drop json from the path
             .replace(pageExtensionRegex, '')
             // We replace . with / to pretend mail.signup -> mail/signup
-            .replace('.', '/')
+            .replaceAll('.', '/')
     );
 };
 
