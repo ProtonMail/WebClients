@@ -128,7 +128,7 @@ describe('Payment', () => {
 
         render(
             <PaymentContext
-                type="subscription"
+                flow="subscription"
                 onMethod={() => {}}
                 method={method}
                 amount={1000}
@@ -157,7 +157,7 @@ describe('Payment', () => {
                     } as any
                 }
                 savedPaymentMethods={[]}
-                isCurrencyOverriden={false}
+                currencyOverride={{ isCurrencyOverriden: false } as any}
             />
         );
     });
@@ -166,7 +166,7 @@ describe('Payment', () => {
         let { container } = render(
             <PaymentContext
                 onMethod={() => {}}
-                type="signup"
+                flow="signup"
                 method={PAYMENT_METHOD_TYPES.CARD}
                 amount={1000}
                 paypal={{}}
@@ -194,7 +194,7 @@ describe('Payment', () => {
                     } as any
                 }
                 savedPaymentMethods={[]}
-                isCurrencyOverriden={false}
+                currencyOverride={{ isCurrencyOverriden: false } as any}
             />
         );
 
@@ -243,7 +243,7 @@ describe('Payment', () => {
         let { container } = render(
             <PaymentContext
                 onMethod={() => {}}
-                type="subscription"
+                flow="subscription"
                 method="my-custom-method-123"
                 amount={1000}
                 paypal={{}}
@@ -271,7 +271,7 @@ describe('Payment', () => {
                     } as any
                 }
                 savedPaymentMethods={[]}
-                isCurrencyOverriden={false}
+                currencyOverride={{ isCurrencyOverriden: false } as any}
             />
         );
 
@@ -315,7 +315,7 @@ describe('Payment', () => {
         let { container } = render(
             <PaymentContext
                 onMethod={() => {}}
-                type="subscription"
+                flow="subscription"
                 method="my-custom-method-123"
                 amount={1000}
                 paypal={{}}
@@ -343,7 +343,7 @@ describe('Payment', () => {
                     } as any
                 }
                 savedPaymentMethods={[]}
-                isCurrencyOverriden={false}
+                currencyOverride={{ isCurrencyOverriden: false } as any}
             />
         );
 
