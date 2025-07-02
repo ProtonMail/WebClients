@@ -6,10 +6,17 @@ import type {
     MetricUploadEvent,
     MetricVerificationErrorEvent,
     MetricVolumeEventsSubscriptionsChangedEvent,
-} from '@proton/drive-sdk';
-import { MetricContext } from '@proton/drive-sdk';
-import type { MetricRecord } from '@proton/drive-sdk/dist/telemetry';
-import { ConsoleLogHandler, LogFilter, LogLevel, MemoryLogHandler, Telemetry } from '@proton/drive-sdk/dist/telemetry';
+} from '@protontech/drive-sdk';
+import { MetricContext } from '@protontech/drive-sdk';
+import type { MetricRecord } from '@protontech/drive-sdk/dist/telemetry';
+import {
+    ConsoleLogHandler,
+    LogFilter,
+    LogLevel,
+    MemoryLogHandler,
+    Telemetry,
+} from '@protontech/drive-sdk/dist/telemetry';
+
 import metrics from '@proton/metrics';
 
 import { SentryLogHandler } from './logHandlers/sentryLogHandler';

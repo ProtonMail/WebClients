@@ -1,5 +1,5 @@
 import { UserAvatar } from '@proton/atoms';
-import type { NonProtonInvitationState } from '@proton/drive-sdk';
+import type { NonProtonInvitationState } from '@proton/drive';
 import type { MemberRole } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 

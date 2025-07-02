@@ -1,4 +1,5 @@
-import { LogLevel } from '@proton/drive-sdk/dist/telemetry';
+import { LogLevel } from '@protontech/drive-sdk/dist/telemetry';
+
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { SentryLogHandler } from './sentryLogHandler';

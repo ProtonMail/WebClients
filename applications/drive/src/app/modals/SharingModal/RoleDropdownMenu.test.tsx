@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { usePopperAnchor } from '@proton/components';
-import { MemberRole, NonProtonInvitationState } from '@proton/drive-sdk';
+import { MemberRole, NonProtonInvitationState } from '@proton/drive';
 
 import { RoleDropdownMenu } from './RoleDropdownMenu';
 
