@@ -76,6 +76,20 @@ private extension LoggedInView {
                 }
             }
 
+            Section {
+                if let privacyUrl = URL(string: "https://proton.me/legal/privacy") {
+                    Link(destination: privacyUrl, label: {
+                        Text("Privacy policy")
+                    })
+                }
+
+                if let termsUrl = URL(string: "https://proton.me/legal/terms") {
+                    Link(destination: termsUrl, label: {
+                        Text("Terms of service")
+                    })
+                }
+            }
+
             Section(content: {
                 if let url = URL(string: "https://account.proton.me/u/0/mail/account-password") {
                     Link(destination: url, label: {
