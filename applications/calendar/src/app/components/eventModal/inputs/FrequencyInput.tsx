@@ -131,6 +131,8 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
     const getInitialSelection = () => {
         const isDefault = frequencyModel.type === ONCE;
         const isCustom = frequencyModel.type === CUSTOM;
+        const isDaily = frequencyModel.frequency === DAILY;
+        const isYearly = frequencyModel.frequency === YEARLY;
         const isWeekly = frequencyModel.frequency === WEEKLY;
         const isMonthly = frequencyModel.frequency === MONTHLY;
 
@@ -157,6 +159,10 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
                     option = frequencies.find(
                         (option) => option.type === MONTHLY && option.monthly?.type === frequencyModel.monthly.type
                     );
+                }
+
+                if (isDaily || isYearly) {
+                    option = frequencies.find((option) => option.type === frequencyModel.frequency);
                 }
             }
             return option || customOption || frequencies[0];
@@ -194,6 +200,12 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
     useEffect(() => {
         setSelectedOption(getInitialSelection);
     }, [start]);
+
+    useEffect(() => {
+        if (frequencyModel.type === CUSTOM) {
+            setSelectedOption(getInitialSelection);
+        }
+    }, [frequencyModel]);
 
     const filteredFrequencies = frequencies.filter(({ shouldDisplay }) => shouldDisplay);
 

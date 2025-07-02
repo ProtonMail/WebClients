@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import { END_TYPE, type VIEWS } from '@proton/shared/lib/calendar/constants';
+import { END_TYPE, FREQUENCY, type VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
 
@@ -36,7 +36,6 @@ const CustomFrequencyModal = ({
     view,
 }: Props) => {
     const [values, setValues] = useState(frequencyModel);
-    const [temporaryValues, setTemporaryValues] = useState(frequencyModel);
     const isDrawerApp = getIsCalendarAppInDrawer(view);
 
     return (
@@ -52,7 +51,6 @@ const CustomFrequencyModal = ({
                     isSubmitted={isSubmitted}
                     onChange={setValues}
                     displayStacked={isDrawerApp}
-                    setTemporaryValues={setTemporaryValues}
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
@@ -60,9 +58,9 @@ const CustomFrequencyModal = ({
                 <Button
                     color="norm"
                     onClick={() => {
-                        onChange(values);
+                        onChange({ ...values, type: FREQUENCY.CUSTOM });
                     }}
-                    disabled={temporaryValues.ends.type === END_TYPE.UNTIL && !values.ends.until}
+                    disabled={values.ends.type === END_TYPE.UNTIL && !values.ends.until}
                 >{c('Action').t`Done`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
