@@ -128,31 +128,33 @@ const SortingDropdownMenu = () => {
 interface HeaderTabProps {
     onClick: () => void;
     copy: string;
-    count: number;
-    active: boolean;
+    count?: number;
+    tab: SubscriptionTabs;
     dataTestId: string;
 }
 
-const HeaderTab = ({ onClick, copy, count, active, dataTestId }: HeaderTabProps) => {
+const HeaderTab = ({ onClick, copy, count, tab, dataTestId }: HeaderTabProps) => {
     const amountNewsletters = getUnreadCount(CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS, count);
     const unreadNewslettersText = getUnreadNewslettersText(count);
+
+    const activeTab = useMailSelector(selectedTab);
 
     return (
         <Button
             onClick={onClick}
-            shape={active ? 'solid' : 'ghost'}
-            color={active ? 'weak' : undefined}
+            shape={tab === activeTab ? 'solid' : 'ghost'}
+            color={tab === activeTab ? 'weak' : undefined}
             className="mr-1"
             role="tab"
-            aria-selected={active}
+            aria-selected={tab === activeTab}
             data-testid={dataTestId}
         >
             {copy}
-            {count ? (
+            {tab === SubscriptionTabs.Active && count ? (
                 <span
                     className={clsx(
                         'px-1 py-0.5 ml-2 rounded-sm text-xs align-text-bottom',
-                        active ? 'bg-norm' : 'bg-strong'
+                        tab === activeTab ? 'bg-norm' : 'bg-strong'
                     )}
                     data-testid={`${dataTestId}-count`}
                 >
@@ -170,7 +172,6 @@ interface NewsletterSubscriptionListHeaderProps {
 
 export const NewsletterSubscriptionListHeader = ({ tabClickCallback }: NewsletterSubscriptionListHeaderProps) => {
     const counts = useMailSelector(selectSubscriptionsCount);
-    const tab = useMailSelector(selectedTab);
     const dispatch = useMailDispatch();
 
     const handleTabClick = (tab: SubscriptionTabs) => {
@@ -189,8 +190,8 @@ export const NewsletterSubscriptionListHeader = ({ tabClickCallback }: Newslette
                             onClick={() => handleTabClick(SubscriptionTabs.Active)}
                             copy={c('Action').t`Active`}
                             count={counts.active}
-                            active={tab === SubscriptionTabs.Active}
                             dataTestId="newsletter-subscription-list-header--active"
+                            tab={SubscriptionTabs.Active}
                         />
                     </li>
                     {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
@@ -198,9 +199,8 @@ export const NewsletterSubscriptionListHeader = ({ tabClickCallback }: Newslette
                         <HeaderTab
                             onClick={() => handleTabClick(SubscriptionTabs.Unsubscribe)}
                             copy={c('Action').t`Unsubscribed`}
-                            count={counts.unsubscribe}
-                            active={tab === SubscriptionTabs.Unsubscribe}
                             dataTestId="newsletter-subscription-list-header--unsubscribed"
+                            tab={SubscriptionTabs.Unsubscribe}
                         />
                     </li>
                 </ul>
