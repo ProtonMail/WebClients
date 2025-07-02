@@ -52,7 +52,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
             {prefix && (
                 <div
                     className={clsx(
-                        'input-adornment ml-2 flex items-center shrink-0 flex-nowrap gap-2',
+                        'input-adornment ml-3 flex items-center shrink-0 flex-nowrap gap-2',
                         prefixClassName
                     )}
                     data-testid="input-prefix"
@@ -84,7 +84,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
             </div>
 
             {suffix && (
-                <div className="input-adornment mr-2 flex items-center shrink-0 flex-nowrap gap-2">{suffix}</div>
+                <div className="input-adornment mr-3 flex items-center shrink-0 flex-nowrap gap-2">{suffix}</div>
             )}
         </div>
     );
