@@ -1241,6 +1241,7 @@ const SubscriptionContainerInner = ({
                                 paymentNeeded={!model.noPaymentNeeded}
                                 user={user}
                                 couponConfig={couponConfig}
+                                trial={isB2BTrial}
                                 {...checkoutModifiers}
                             />
                         </div>
