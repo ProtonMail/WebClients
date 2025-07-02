@@ -24,7 +24,7 @@
         "test:watch": "jest --watch --coverage=false"
     },
     "dependencies": {
-        "@babel/plugin-transform-runtime": "^7.27.4",
+        "@babel/plugin-transform-runtime": "^7.28.0",
         "@proton/account": "workspace:^",
         "@proton/activation": "workspace:^",
         "@proton/atoms": "workspace:^",
