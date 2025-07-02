@@ -91,6 +91,7 @@ export interface SignupModelV2 {
     vpnServersCountData: VPNServersCountData;
     signupTokenMode?: boolean;
     loadingDependencies: boolean;
+    disableCurrencySelector?: boolean;
 }
 
 export type ActionResponse =
