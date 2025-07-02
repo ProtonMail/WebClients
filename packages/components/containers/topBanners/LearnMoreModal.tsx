@@ -1,8 +1,7 @@
 import type { ReactNode } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
-import { differenceInDays, fromUnixTime } from 'date-fns';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -14,6 +13,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Time from '@proton/components/components/time/Time';
+import TimeRemaining from '@proton/components/components/timeRemaining/TimeRemaining';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
@@ -83,20 +83,20 @@ const LearnMoreModal = (props: ModalStateProps) => {
         setShowModal(true);
     }, [open]);
 
-    const trialStartedOn = subscription?.PeriodStart;
     const trialEndsOn = subscription?.PeriodEnd;
     const planTitle = subscription?.Plans?.[0]?.Title;
 
-    const trialDurationExists = trialStartedOn && trialEndsOn;
-    const trialDurationFormatted = trialDurationExists
-        ? differenceInDays(fromUnixTime(trialEndsOn), fromUnixTime(trialStartedOn))
-        : 0;
-
     const trialInfo = useMemo(() => getTrialInfo(planTitle), [planTitle]);
 
-    if (!subscription || !organization || !user) {
+    if (!subscription || !organization || !user || !trialEndsOn) {
         return null;
     }
+
+    const timeRemaining = <TimeRemaining expiry={trialEndsOn} />;
+
+    // translator: full sentence is: "Your free trial ends in 14 days" or "Your free trial ends in 14 hours" or "Your free trial ends in 14 minutes"
+    // translator: the most common case is "days"
+    const title = c('b2b_trials_Title').jt`Your free trial ends in ${timeRemaining}`;
 
     const boldEndDate = (
         <span className="text-bold">
@@ -108,13 +108,7 @@ const LearnMoreModal = (props: ModalStateProps) => {
         <>
             {cancelSubscriptionModals}
             <ModalTwo {...props} rootClassName={clsx(!showModal && 'modal-two--out')}>
-                <ModalTwoHeader
-                    title={c('Title').ngettext(
-                        msgid`Your free trial ends in ${trialDurationFormatted} day`,
-                        `Your free trial ends in ${trialDurationFormatted} days`,
-                        trialDurationFormatted
-                    )}
-                />
+                <ModalTwoHeader title={title} />
                 <ModalTwoContent>
                     <p>{c('Onboarding Trial').jt`Your full ${planTitle} subscription starts on ${boldEndDate}.`}</p>
                     <div className="flex flex-column gap-y-4 mt-12">
