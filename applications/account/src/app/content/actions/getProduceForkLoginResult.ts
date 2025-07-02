@@ -1,4 +1,5 @@
 import type { AuthSession } from '@proton/components/containers/login/interface';
+import { Product } from '@proton/shared/lib/ProductEnum';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { type OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
@@ -23,6 +24,10 @@ import { getProductDisabledLoginResult } from './getProductDisabledResult';
 import { getSetupAddressLoginResult } from './getSetupAddressLoginResult';
 import type { LoginResult } from './interface';
 
+// A set of products for which availability (access control) should be ignored and instead always allowed.
+// This may be for apps which will never have a web app but for which forking should still be allowed and access control ignored.
+const allowSet = new Set<Product>([Product.Authenticator]);
+
 /**
  * Checks if the app is available to this user. It only does it based on the user's access control. Not based on the organization's access control
  * because we don't have the organization, and it's anyway done by the API later.
@@ -30,14 +35,17 @@ import type { LoginResult } from './interface';
 const getIsAppAvailable = (app: APP_NAMES, session: AuthSession) => {
     // Convert the app into a product, because the app may be an app, extension, or desktop app etc. and available products are only apps.
     const product = getProduct(app);
-    return getAvailableApps({
-        user: session.data.User,
-        context: 'app',
-        // The *lumo available* and *docs homepage* feature flag can always be true because we don't limit
-        // access to them from the Account FE when forking a session
-        isLumoAvailable: true,
-        isDocsHomepageAvailable: true,
-    }).some((availableApp) => product === getProduct(availableApp));
+    return (
+        allowSet.has(product) ||
+        getAvailableApps({
+            user: session.data.User,
+            context: 'app',
+            // The *lumo available* and *docs homepage* feature flag can always be true because we don't limit
+            // access to them from the Account FE when forking a session
+            isLumoAvailable: true,
+            isDocsHomepageAvailable: true,
+        }).some((availableApp) => product === getProduct(availableApp))
+    );
 };
 
 export const getProduceForkLoginResult = async ({
