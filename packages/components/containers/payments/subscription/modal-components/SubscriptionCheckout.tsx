@@ -34,6 +34,7 @@ import { hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helper
 import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 
 import Checkout from '../../Checkout';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '../../RenewalNotice';
@@ -66,6 +67,7 @@ type Props = {
     paymentNeeded: boolean;
     paymentMethods: MethodsHook;
     user: UserModel;
+    trial: boolean;
     couponConfig?: CouponConfigRendered;
 };
 
@@ -105,6 +107,7 @@ const SubscriptionCheckout = ({
     paymentNeeded,
     paymentMethods,
     user,
+    trial,
     couponConfig,
     ...checkoutModifiers
 }: Props & CheckoutModifiers) => {
@@ -155,7 +158,17 @@ const SubscriptionCheckout = ({
 
     const proration = checkResult.Proration ?? 0;
     const credit = checkResult.Credit ?? 0;
-    const amount = couponConfig?.hidden ? withDiscountPerCycle : checkResult.Amount;
+    const amount = (() => {
+        if (trial && checkResult.SubscriptionMode === SubscriptionMode.Trial) {
+            return checkResult.BaseRenewAmount ?? 0; // Not ideal to default to 0, but it shouldn't happen
+        }
+
+        if (couponConfig?.hidden) {
+            return withDiscountPerCycle;
+        }
+
+        return checkResult.Amount;
+    })();
     const amountDue = checkResult.AmountDue || 0;
     const giftValue = Math.abs(checkResult.Gift || 0);
 
