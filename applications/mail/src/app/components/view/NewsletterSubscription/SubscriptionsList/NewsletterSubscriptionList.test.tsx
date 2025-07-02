@@ -62,8 +62,9 @@ describe('NewsletterSubscriptionList', () => {
             const activeCount = screen.getByTestId('newsletter-subscription-list-header--active-count');
             expect(activeCount).toHaveTextContent('10');
 
-            const unsubscribedCount = screen.getByTestId('newsletter-subscription-list-header--unsubscribed-count');
-            expect(unsubscribedCount).toHaveTextContent('5');
+            // We don't display the count for the unsubscribed tab
+            const unsubscribedCount = screen.queryByTestId('newsletter-subscription-list-header--unsubscribed-count');
+            expect(unsubscribedCount).not.toBeInTheDocument();
         });
 
         it('should not display the count when the value is 0', async () => {
