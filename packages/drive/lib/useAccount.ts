@@ -1,12 +1,13 @@
 import { useRef } from 'react';
 
+import type { ProtonDriveAccount, ProtonDriveAccountAddress } from '@protontech/drive-sdk';
+import type { PublicKey } from '@protontech/drive-sdk/dist/crypto';
+
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useApi } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import type { ProtonDriveAccount, ProtonDriveAccountAddress } from '@proton/drive-sdk';
-import type { PublicKey } from '@proton/drive-sdk/dist/crypto';
 import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';

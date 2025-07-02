@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
-import { MemberRole, NonProtonInvitationState } from '@proton/drive-sdk';
+import { MemberRole, NonProtonInvitationState } from '@proton/drive';
 
 export const MenuItem = ({
     iconName,
