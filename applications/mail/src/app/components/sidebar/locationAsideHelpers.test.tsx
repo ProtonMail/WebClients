@@ -49,6 +49,10 @@ describe('locationAsideHelpers', () => {
     });
 
     describe('getUnreadCount', () => {
+        it('should return undefined when no count is provided', () => {
+            expect(getUnreadCount('INBOX', undefined)).toBe(undefined);
+        });
+
         it('should format the count normally for regular labels', () => {
             expect(getUnreadCount('INBOX', 5)).toBe(5);
             expect(getUnreadCount('TRASH', 100)).toBe(100);
