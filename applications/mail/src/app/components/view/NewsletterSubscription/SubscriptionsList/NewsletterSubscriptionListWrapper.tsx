@@ -21,7 +21,7 @@ export const NewsletterSubscriptionListWrapper = ({ isDisplayingPlaceholder = fa
             <div className="flex-1 flex flex-column flex-nowrap border-right border-weak h-full">
                 <NewsletterSubscriptionListHeader tabClickCallback={handleScrollToTop} />
                 {isDisplayingPlaceholder ? (
-                    <div className="flex w-full h-full flex-nowrap">{children}</div>
+                    <div className="flex flex-1 w-full h-full flex-nowrap">{children}</div>
                 ) : (
                     <Scroll className="flex-1 w-full" customContainerRef={scrollRef}>
                         <div className="flex px-6 flex-column flex-nowrap pb-4 px-1">{children}</div>
