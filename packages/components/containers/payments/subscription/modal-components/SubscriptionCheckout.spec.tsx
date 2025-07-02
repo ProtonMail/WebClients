@@ -58,6 +58,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             ></SubscriptionCheckout>
         );
 
@@ -87,6 +88,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             ></SubscriptionCheckout>
         );
 
@@ -116,6 +118,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             ></SubscriptionCheckout>
         );
 
@@ -147,6 +150,7 @@ describe('SubscriptionCheckout', () => {
                 })}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             ></SubscriptionCheckout>
         );
 
@@ -190,6 +194,7 @@ describe('SubscriptionCheckout', () => {
                 })}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             ></SubscriptionCheckout>
         );
 
@@ -240,6 +245,7 @@ describe('SubscriptionCheckout', () => {
                 })}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             ></SubscriptionCheckout>
         );
 
@@ -290,6 +296,7 @@ describe('SubscriptionCheckout', () => {
                 })}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             ></SubscriptionCheckout>
         );
 
@@ -318,6 +325,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             />
         );
 
@@ -345,6 +353,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             />
         );
 
@@ -372,6 +381,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             />
         );
 
@@ -399,6 +409,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             />
         );
 
@@ -426,6 +437,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             />
         );
 
@@ -453,6 +465,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                trial={false}
             />
         );
 
