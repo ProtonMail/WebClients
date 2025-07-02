@@ -1,5 +1,5 @@
 import type { MutableRefObject, ReactNode } from 'react';
-import { useImperativeHandle, useRef } from 'react';
+import { useEffect, useImperativeHandle, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -69,6 +69,7 @@ interface Props {
     signupParameters: SignupParameters2;
     showRenewalNotice: boolean;
     app: APP_NAMES;
+    setCurrencySelectorDisabled: (disabled: boolean) => void;
 }
 
 const AccountStepPayment = ({
@@ -92,6 +93,7 @@ const AccountStepPayment = ({
     signupParameters,
     showRenewalNotice,
     app,
+    setCurrencySelectorDisabled,
 }: Props) => {
     const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
@@ -216,6 +218,15 @@ const AccountStepPayment = ({
             }
         },
     });
+
+    useEffect(
+        function disableCurrencySelectorWhenSepaSelected() {
+            setCurrencySelectorDisabled(
+                paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+            );
+        },
+        [paymentFacade.selectedMethodType]
+    );
 
     const process = (processor: PaymentProcessorHook | undefined) => {
         async function run() {
@@ -371,6 +382,7 @@ const AccountStepPayment = ({
                         hasSomeVpnPlan={hasSomeVpnPlan}
                         billingAddressStatus={getBillingAddressStatus(billingAddress)}
                         isTrial={isTrial}
+                        onCurrencyChange={(currency) => handleOptimistic({ currency })}
                     />
                 ) : (
                     <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>

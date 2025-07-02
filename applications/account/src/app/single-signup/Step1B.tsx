@@ -501,6 +501,7 @@ const Step1B = ({
         amount: options.checkResult.AmountDue,
         currency: options.currency,
         api: silentApi,
+        billingAddress: options.billingAddress,
         selectedPlanName: getPlanFromPlanIDs(model.plansMap, options.planIDs)?.Name,
         paymentMethodStatusExtended: model.paymentMethodStatusExtended,
         onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, paymentProcessorType }) => {
@@ -981,6 +982,7 @@ const Step1B = ({
             currency={options.currency}
             loading={changingCurrency}
             onSelect={(currency) => handleChangeCurrency(currency)}
+            disabled={paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT}
         />
     );
 
@@ -1413,6 +1415,7 @@ const Step1B = ({
                                                 )}
                                                 showCardIcons
                                                 isTrial={isTrial}
+                                                onCurrencyChange={handleChangeCurrency}
                                             />
                                         ) : (
                                             <div className="mb-4">
