@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect, useState } from 'react';
+import { type ReactNode, useState } from 'react';
 
 import { isValid } from 'date-fns';
 import { c, msgid } from 'ttag';
@@ -24,7 +24,6 @@ interface Props {
     errors: EventModelErrors;
     isSubmitted: boolean;
     onChange: (value: FrequencyModel) => void;
-    setTemporaryValues: (value: FrequencyModel) => void;
 }
 
 const OptionRow = ({ title, input }: { title: string; input: ReactNode }) => {
@@ -38,16 +37,7 @@ const OptionRow = ({ title, input }: { title: string; input: ReactNode }) => {
     );
 };
 
-const EndsRow = ({
-    frequencyModel,
-    start,
-    displayWeekNumbers,
-    weekStartsOn,
-    errors,
-    isSubmitted,
-    onChange,
-    setTemporaryValues,
-}: Props) => {
+const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, errors, isSubmitted, onChange }: Props) => {
     const handleChangeEndType = (type: END_TYPE) => {
         onChange({ ...frequencyModel, ends: { ...frequencyModel.ends, type } });
     };
@@ -67,16 +57,6 @@ const EndsRow = ({
     const safeCountPlural = frequencyModel.ends.count || 1; // Can get undefined through the input
 
     const [selectedOption, setSelectedOption] = useState(frequencyModel.ends.type);
-
-    useEffect(() => {
-        setTemporaryValues({
-            ...frequencyModel,
-            ends: {
-                ...frequencyModel.ends,
-                type: selectedOption,
-            },
-        });
-    }, [selectedOption]);
 
     const options = [
         {
@@ -159,7 +139,10 @@ const EndsRow = ({
                 <RadioGroup
                     name="selected-end-type"
                     className="mb-0 mr-0 flex-nowrap self-start"
-                    onChange={(v) => setSelectedOption(v)}
+                    onChange={(v) => {
+                        handleChangeEndType(v);
+                        setSelectedOption(v);
+                    }}
                     value={selectedOption}
                     options={options.map((option) => ({ value: option.value, label: option.label }))}
                 />
