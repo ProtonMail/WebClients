@@ -5,6 +5,6 @@ export const useCategoryViewExperiment = () => {
     const mailCategoryView = useFlag('MailCategoryView');
 
     return {
-        canSeeCategoryLabel: false && isAvailable && mailCategoryView,
+        canSeeCategoryLabel: isAvailable && mailCategoryView,
     };
 };
