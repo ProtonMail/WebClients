@@ -27,6 +27,15 @@ export const selectTabSubscriptionsList = createSelector([selectNewsletterSubscr
     return store.tabs[tab].ids.map((id) => store.byId[id]);
 });
 
+export const selectedTabSubscriptionsCount = createSelector([selectNewsletterSubscriptions], (store) => {
+    if (!store) {
+        return 0;
+    }
+
+    const tab = store.selectedTab;
+    return store.tabs[tab].totalCount;
+});
+
 export const selectTabLoadingState = createSelector([selectNewsletterSubscriptions], (store) => {
     if (!store) {
         return [];
