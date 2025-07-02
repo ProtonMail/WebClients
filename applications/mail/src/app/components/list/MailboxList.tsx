@@ -21,6 +21,7 @@ import MailboxListPaginationWrapper from './MailboxListPaginationWrapper';
 import { MailboxListProvider } from './MailboxListProvider';
 
 import './MailboxList.scss';
+import './delight/DelightList.scss';
 
 interface MailboxListProps {
     elementsData: ElementsStructure;
