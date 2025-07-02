@@ -1,6 +1,6 @@
 import { PAYMENT_METHOD_TYPES } from '../constants';
 import { type Currency } from '../interface';
-import { SEPA_CURRENCY, getIsCurrencyOverriden, updateCurrencyOverride } from './sepa-currency-override';
+import { SEPA_CURRENCY, getIsCurrencyOverriden, updateCurrencyOverride } from './useSepaCurrencyOverride';
 
 describe('sepa-currency-override', () => {
     describe('getIsCurrencyOverriden', () => {

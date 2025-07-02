@@ -165,12 +165,12 @@ export const SepaDirectDebit = ({ directDebit, isCurrencyOverriden, ...rest }: D
                     </span>
                 </>
             )}
-            <div className="mt-2">
+            <div className="my-2">
                 <SepaAuthorizationText />
             </div>
 
             {isCurrencyOverriden && (
-                <Banner className="mt-4" variant={BannerVariants.INFO}>{c('Payments')
+                <Banner className="mt-2 mb-4" variant={BannerVariants.INFO}>{c('Payments')
                     .t`Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.`}</Banner>
             )}
 

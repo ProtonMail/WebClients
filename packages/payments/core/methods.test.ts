@@ -2217,7 +2217,7 @@ describe('SEPA', () => {
         'signup-v2-upgrade',
         'signup-vpn',
         'signup-wallet',
-    ] as PaymentMethodFlows[])('should not offer SEPA for %s flow', (flow) => {
+    ] as PaymentMethodFlows[])('should offer SEPA for %s flow', (flow) => {
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
             paymentMethods: [],
@@ -2235,7 +2235,7 @@ describe('SEPA', () => {
 
         expect(
             methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)
-        ).toBe(false);
+        ).toBe(true);
     });
 
     it('should not offer SEPA if the country is not supported', () => {

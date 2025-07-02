@@ -216,7 +216,7 @@ export type {
 } from './core/interface';
 export { formatPaymentMethod, formatPaymentMethods, initializePaymentMethods, PaymentMethods } from './core/methods';
 export { isSavablePaymentMethod } from './core/payment-methods/helpers';
-export { getIsCurrencyOverriden, updateCurrencyOverride } from './core/payment-methods/sepa-currency-override';
+export { useSepaCurrencyOverride } from './core/payment-methods/useSepaCurrencyOverride';
 export {
     CardPaymentProcessor,
     InvalidCardDataError,

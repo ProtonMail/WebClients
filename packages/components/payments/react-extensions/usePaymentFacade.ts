@@ -35,6 +35,7 @@ import {
     setPaymentMethodV5,
     subscribe,
     useApplePay,
+    useSepaCurrencyOverride,
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, ChargebeeEnabled, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
@@ -190,6 +191,7 @@ export const usePaymentFacade = (
         chargebeeUserExists,
         user,
         enableSepa,
+        enableSepaB2C,
         onBeforeSepaPayment,
         planIDs,
         subscription,
@@ -226,6 +228,7 @@ export const usePaymentFacade = (
         chargebeeUserExists?: ChargebeeUserExists;
         user: User | undefined;
         enableSepa?: boolean;
+        enableSepaB2C?: boolean;
         onBeforeSepaPayment?: () => Promise<boolean>;
         planIDs?: PlanIDs;
         subscription?: Subscription;
@@ -282,6 +285,7 @@ export const usePaymentFacade = (
             billingPlatform,
             chargebeeUserExists,
             enableSepa,
+            enableSepaB2C,
             user,
             planIDs,
             subscription,
@@ -655,6 +659,12 @@ export const usePaymentFacade = (
         ].forEach((paymentProcessor) => paymentProcessor.reset());
     };
 
+    const currencyOverride = useSepaCurrencyOverride({
+        currentCurrency: currency,
+        currentSelectedMethodType: paymentMethodType,
+        methods: methods.allMethods,
+    });
+
     return {
         methods,
         savedMethod,
@@ -674,5 +684,6 @@ export const usePaymentFacade = (
         directDebit,
         initialized,
         reset,
+        currencyOverride,
     };
 };
