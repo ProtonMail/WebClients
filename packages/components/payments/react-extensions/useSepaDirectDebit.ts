@@ -116,7 +116,8 @@ export const useSepaDirectDebit = (
 
     const processingToken = fetchingToken || verifyingToken;
 
-    const ibanStatus = extractIBAN(bankAccount.iban);
+    const formattedIban = electronicFormatIBAN(bankAccount.iban) ?? '';
+    const ibanStatus = extractIBAN(formattedIban);
 
     const submittedRef = useRef(false);
     const validator = (validations: string[]) => validations.reduce((acc, x) => acc || x, '');
@@ -134,8 +135,8 @@ export const useSepaDirectDebit = (
             firstNameError: isIndividual ? validator?.([requiredValidator(customer.firstName)]) : undefined,
             lastNameError: isIndividual ? validator?.([requiredValidator(customer.lastName)]) : undefined,
             ibanError: validator?.([
-                requiredValidator(bankAccount.iban),
-                isValidIBAN(bankAccount.iban) ? '' : c('Error').t`Invalid IBAN`,
+                requiredValidator(formattedIban),
+                isValidIBAN(formattedIban) ? '' : c('Error').t`Invalid IBAN`,
             ]),
             addressError: ibanStatus.requiresAddress
                 ? validator?.([requiredValidator(customer.addressLine1)])
@@ -183,8 +184,6 @@ export const useSepaDirectDebit = (
             if (!sepaEmail) {
                 throw new SepaEmailNotProvidedError();
             }
-
-            const formattedIban = electronicFormatIBAN(bankAccount.iban) ?? '';
 
             await handles.submitDirectDebit({
                 paymentIntent,
