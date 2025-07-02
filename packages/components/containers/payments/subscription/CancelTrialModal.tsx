@@ -112,8 +112,8 @@ const CancelTrialModal = ({ onConfirm, onClose, ...rest }: CancelTrialModalProps
                 <FeatureList />
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={onClose}>{c('Action').t`Keep subscription`}</Button>
-                <Button color="danger" onClick={onConfirm}>{c('Action').t`Cancel subscription`}</Button>
+                <Button onClick={onClose}>{c('Action').t`Close`}</Button>
+                <Button color="norm" onClick={onConfirm}>{c('Action').t`Continue`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
