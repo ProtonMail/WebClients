@@ -1,7 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 import type { serverEvent } from '@proton/account';
-import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type {
     GetNewsletterSubscriptionsApiResponse,
@@ -21,6 +20,7 @@ import {
     getStoreValue,
     handleCreateServerEvent,
     handleDeleteServerEvent,
+    handleUnsubscribePending,
     handleUpdateRejection,
     handleUpdateServerEvent,
     updateSubscriptionState,
@@ -62,7 +62,12 @@ export const setSelectedTabReducer = (
 
     stateValue.selectedTab = action.payload;
     stateValue.selectedElementId = undefined;
-    stateValue.selectedSubscriptionId = undefined;
+
+    if (stateValue.tabs[action.payload].ids.length > 0) {
+        stateValue.selectedSubscriptionId = stateValue.tabs[action.payload].ids[0];
+    } else {
+        stateValue.selectedSubscriptionId = undefined;
+    }
 };
 
 export const setSelectedSubscriptionReducer = (
@@ -107,31 +112,7 @@ export const unsubscribeSubscriptionPending = (
     state: NewsletterSubscriptionsStateType,
     action: ReturnType<typeof unsubscribeSubscription.pending>
 ) => {
-    const stateValue = getStoreValue(state);
-    if (!stateValue) {
-        return;
-    }
-
-    const subscriptionId = action.meta.arg.subscription.ID;
-    const originalIndex = stateValue.tabs.active.ids.indexOf(subscriptionId);
-
-    updateSubscriptionState(stateValue.byId, subscriptionId, {
-        UnsubscribedTime: Date.now(),
-    });
-
-    // We unselect the subscription if it's the one currently selected
-    if (stateValue.selectedSubscriptionId === subscriptionId) {
-        stateValue.selectedSubscriptionId = undefined;
-    }
-
-    if (originalIndex !== -1) {
-        stateValue.tabs.active.totalCount = safeDecreaseCount(stateValue.tabs.active.totalCount);
-        // We don't remove the ID of the active tab now, we do this once the animation is done
-        stateValue.deletingSubscriptionId = subscriptionId;
-    }
-
-    stateValue.tabs.unsubscribe.ids.unshift(subscriptionId);
-    stateValue.tabs.unsubscribe.totalCount = safeIncreaseCount(stateValue.tabs.unsubscribe.totalCount);
+    handleUnsubscribePending(state, action);
 };
 
 export const unsubscribeSubscriptionRejected = (
@@ -258,26 +239,7 @@ export const updateSubscriptionPending = (
     state: NewsletterSubscriptionsStateType,
     action: ReturnType<typeof updateSubscription.pending>
 ) => {
-    const stateValue = getStoreValue(state);
-    if (!stateValue) {
-        return;
-    }
-
-    const subscriptionId = action.meta.arg.subscription.ID;
-    const originalIndex = stateValue.tabs.active.ids.indexOf(subscriptionId);
-
-    updateSubscriptionState(stateValue.byId, subscriptionId, {
-        UnsubscribedTime: Date.now(),
-    });
-
-    if (originalIndex !== -1) {
-        stateValue.tabs.active.totalCount = safeDecreaseCount(stateValue.tabs.active.totalCount);
-        // We don't remove the ID of the active tab now, we do this once the animation is done
-        stateValue.deletingSubscriptionId = subscriptionId;
-    }
-
-    stateValue.tabs.unsubscribe.ids.unshift(subscriptionId);
-    stateValue.tabs.unsubscribe.totalCount = safeIncreaseCount(stateValue.tabs.unsubscribe.totalCount);
+    handleUnsubscribePending(state, action);
 };
 
 export const updateSubscriptionRejected = (

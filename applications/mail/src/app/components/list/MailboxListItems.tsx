@@ -24,6 +24,7 @@ interface MailboxListItemsProps {
     labels: Label[];
     columnLayout?: boolean;
     listRef?: RefObject<HTMLDivElement>;
+    noPlaceholder?: boolean;
 }
 
 const MailboxListItems = ({
@@ -34,6 +35,7 @@ const MailboxListItems = ({
     labels = [],
     columnLayout = true,
     listRef,
+    noPlaceholder = false,
 }: MailboxListItemsProps) => {
     const [userSettings] = useUserSettings();
     const {
@@ -66,7 +68,7 @@ const MailboxListItems = ({
     }, [elements]);
 
     if (elements.length === 0) {
-        return <EmptyListPlaceholder labelID={labelID} isSearch={isSearch} isUnread={false} />;
+        return noPlaceholder ? null : <EmptyListPlaceholder labelID={labelID} isSearch={isSearch} isUnread={false} />;
     }
 
     const showUserOnboarding =

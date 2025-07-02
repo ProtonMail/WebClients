@@ -30,6 +30,7 @@ import {
     selectedElementId,
     selectedSubscriptionIdSelector,
     selectedSubscriptionSelector,
+    selectedTabSubscriptionsCount,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
@@ -83,6 +84,7 @@ export const NewsletterSubscriptionView = ({
     const selectedElement = useMailSelector(selectedElementId);
     const selectedSubscriptionId = useMailSelector(selectedSubscriptionIdSelector);
     const subscriptionCount = useMailSelector(allSubscriptionCount);
+    const selectedTabSubCount = useMailSelector(selectedTabSubscriptionsCount);
 
     const onboardingModal = useModalStateObject();
     const subscriptionContainerRef = useRef<HTMLDivElement>(null);
@@ -173,6 +175,7 @@ export const NewsletterSubscriptionView = ({
                                     overrideColumnMode
                                     elementsData={selectedSubscriptionId ? elementsData : emptyElementsData}
                                     actions={overrideActions}
+                                    noPlaceholder={selectedTabSubCount === 0}
                                     toolbar={
                                         overrideActions.selectedIDs.length > 0 ? (
                                             <NewsletterSubscriptionMailListToolbar

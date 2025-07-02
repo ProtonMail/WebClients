@@ -788,6 +788,29 @@ describe('Newsletter subscription reducers', () => {
             expect(state.value?.deletingSubscriptionId).toEqual(activeSubscription.ID);
         });
 
+        it('should unselect the subscription if it is the one currently selected', () => {
+            state.value!.byId = {
+                [activeSubscription.ID]: activeSubscription,
+            };
+            state.value!.selectedSubscriptionId = activeSubscription.ID;
+            state.value!.tabs.active.ids = [activeSubscription.ID];
+            state.value!.tabs.active.totalCount = 1;
+
+            updateSubscriptionPending(state, {
+                type: 'newsletterSubscriptions/updateSubscription',
+                payload: undefined,
+                meta,
+            });
+
+            expect(state.value?.byId[activeSubscription.ID].UnsubscribedTime).not.toBe(0);
+            expect(state.value?.selectedSubscriptionId).toBeUndefined();
+            expect(state.value?.tabs.active.totalCount).toEqual(0);
+
+            expect(state.value?.tabs.unsubscribe.ids).toEqual([activeSubscription.ID]);
+            expect(state.value?.tabs.unsubscribe.totalCount).toEqual(1);
+            expect(state.value?.deletingSubscriptionId).toEqual(activeSubscription.ID);
+        });
+
         it('should return undefined if the state is not initialized', () => {
             updateSubscriptionPending(undefinedValueState, {
                 type: 'newsletterSubscriptions/updateSubscription',

@@ -1,5 +1,5 @@
-import { useRef } from 'react';
 import type { ReactNode, RefObject } from 'react';
+import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useLabels } from '@proton/mail/index';
@@ -31,6 +31,7 @@ interface MailboxListProps {
     toolbar?: ReactNode;
     listRef?: RefObject<HTMLDivElement>;
     noBorder?: boolean;
+    noPlaceholder?: boolean;
 }
 
 export default function MailboxList({
@@ -40,6 +41,7 @@ export default function MailboxList({
     listRef: externalListRef,
     noBorder = false,
     overrideColumnMode = false,
+    noPlaceholder = false,
 }: MailboxListProps) {
     const [labels = []] = useLabels();
     const location = useLocation();
@@ -127,6 +129,7 @@ export default function MailboxList({
                     columnLayout={overrideColumnMode || columnLayout}
                     onBack={navigation.handleBack}
                     labels={labels}
+                    noPlaceholder={noPlaceholder}
                 />
                 <MailboxListPaginationWrapper />
             </MailboxListContainer>

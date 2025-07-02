@@ -14,6 +14,7 @@ jest.mock('proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSele
     selectSubscriptionsCount: jest.fn(),
     selectTabSubscriptionsList: jest.fn(),
     selectTabSubscriptionPaginationQueryString: jest.fn(),
+    selectedTabSubscriptionsCount: jest.fn(),
 }));
 
 const mockedSelectedTab = mailboxSelectors.selectedTab as jest.Mock;
@@ -21,6 +22,7 @@ const mockedSelectSubscriptionsCount = mailboxSelectors.selectSubscriptionsCount
 const mockedSelectTabSubscriptionsList = mailboxSelectors.selectTabSubscriptionsList as unknown as jest.Mock;
 const mockedSelectTabSubscriptionPaginationQueryString =
     mailboxSelectors.selectTabSubscriptionPaginationQueryString as unknown as jest.Mock;
+const mockedSelectedTabSubscriptionsCount = mailboxSelectors.selectedTabSubscriptionsCount as unknown as jest.Mock;
 
 describe('NewsletterSubscriptionList', () => {
     beforeEach(() => {
@@ -30,7 +32,7 @@ describe('NewsletterSubscriptionList', () => {
             unsubscribe: 5,
         });
         mockedSelectTabSubscriptionsList.mockReturnValue([]);
-
+        mockedSelectedTabSubscriptionsCount.mockReturnValue(10);
         jest.spyOn(newsletterSubscriptionsActions, 'setSelectedTab');
         jest.spyOn(newsletterSubscriptionsActions, 'setSortingOrder');
     });
@@ -99,7 +101,7 @@ describe('NewsletterSubscriptionList', () => {
             expect(newsletterSubscriptionsActions.setSelectedTab).toHaveBeenCalledWith(SubscriptionTabs.Unsubscribe);
         });
 
-        it('should display the selected sorting option', async () => {
+        it('should display the selected sorting option when there is subscriptions on the tab', async () => {
             await render(<NewsletterSubscriptionList />);
 
             const sortingDropdown = screen.getByTestId('dropdown-button');
@@ -109,6 +111,16 @@ describe('NewsletterSubscriptionList', () => {
             const recentlyReceivedOption = screen.getByTestId('dropdown-item-inbox');
             expect(recentlyReceivedOption).toBeInTheDocument();
             expect(recentlyReceivedOption).toHaveClass('dropdown-item--is-selected');
+        });
+
+        it('should have a disabled sorting dropdown when there are no subscriptions on the tab', async () => {
+            mockedSelectedTabSubscriptionsCount.mockReturnValue(0);
+
+            await render(<NewsletterSubscriptionList />);
+
+            const sortingDropdown = screen.getByTestId('dropdown-button');
+            expect(sortingDropdown).toBeInTheDocument();
+            expect(sortingDropdown).toBeDisabled();
         });
     });
 
