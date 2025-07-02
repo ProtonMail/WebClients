@@ -1,9 +1,10 @@
-import { type FeedbackDowngradeData } from "@proton/payments";
 import type { ReactNode } from 'react';
-
 import { Fragment, useState } from 'react';
 
 import { c } from 'ttag';
+
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -18,6 +19,8 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useConfig from '@proton/components/hooks/useConfig';
+import { type FeedbackDowngradeData } from '@proton/payments';
+import { useIsB2BTrial } from '@proton/payments/ui';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -86,6 +89,9 @@ const FeedbackDowngradeModal = ({
     onReject,
     ...rest
 }: FeedbackDowngradeModalProps & PromiseHandlers) => {
+    const [subscription] = useSubscription();
+    const [organization] = useOrganization();
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
     const { APP_NAME } = useConfig();
 
     const { isPaid } = user;
@@ -257,6 +263,10 @@ const FeedbackDowngradeModal = ({
         onClose?.();
     };
 
+    const cancelFeedbackText = isB2BTrial ? c('b2b_trials_Action').t`Keep subscription` : c('Action').t`Cancel`;
+    const submitFeedbackText = isB2BTrial ? c('b2b_trials_Action').t`Cancel subscription` : c('Action').t`Submit`;
+    const submitFeedbackColor = isB2BTrial ? 'danger' : 'norm';
+
     return (
         <Modal as={Form} onClose={handleKeepSubscription} onSubmit={handleSubmit} data-testid="help-improve" {...rest}>
             <ModalHeader title={c('Downgrade modal exit survey title').t`Help us improve`} />
@@ -294,9 +304,11 @@ const FeedbackDowngradeModal = ({
                 />
             </ModalContent>
             <ModalFooter>
-                <Button data-testid="cancelFeedback" onClick={handleKeepSubscription}>{c('Action').t`Cancel`}</Button>
-                <Button data-testid="submitFeedback" type="submit" color="norm">
-                    {c('Action').t`Submit`}
+                <Button data-testid="cancelFeedback" onClick={handleKeepSubscription}>
+                    {cancelFeedbackText}
+                </Button>
+                <Button data-testid="submitFeedback" type="submit" color={submitFeedbackColor}>
+                    {submitFeedbackText}
                 </Button>
             </ModalFooter>
         </Modal>
