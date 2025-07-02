@@ -614,6 +614,7 @@ const Step1 = ({
                     void withChangingCurrency(handleChangeCurrency(newCurrency));
                 }}
                 unstyled
+                disabled={model.disableCurrencySelector}
             />
         ) : null;
 
@@ -1453,6 +1454,9 @@ const Step1 = ({
                                 onBillingAddressChange={(billingAddress: BillingAddress) => {
                                     handleOptimistic({ billingAddress });
                                 }}
+                                setCurrencySelectorDisabled={(disableCurrencySelector) =>
+                                    setModel((old) => ({ ...old, disableCurrencySelector }))
+                                }
                             />
                         </BoxContent>
                     </Box>
