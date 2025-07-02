@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import clsx from '@proton/utils/clsx';
 
 import { useMailboxListContext } from './MailboxListProvider';
+import MailboxListScreenReaderHeading from './MailboxListScreenReaderHeading';
 
 interface MailboxListContainerProps {
     className?: string;
@@ -19,7 +20,8 @@ const MailboxListContainer = (
     { className, show = true, showContentPanel = false, children, noBorder = false }: MailboxListContainerProps,
     ref: Ref<HTMLDivElement>
 ) => {
-    const { contextMenu, blockSenderModal, mailboxListLoading } = useMailboxListContext();
+    const { contextMenu, blockSenderModal, mailboxListLoading, conversationMode, labelID } = useMailboxListContext();
+
     return (
         <section
             aria-label={c('Info').t`Message list`}
@@ -30,6 +32,7 @@ const MailboxListContainer = (
                 className,
             ])}
         >
+            <MailboxListScreenReaderHeading conversationMode={conversationMode} labelID={labelID} />
             <div
                 ref={ref}
                 className={clsx(
