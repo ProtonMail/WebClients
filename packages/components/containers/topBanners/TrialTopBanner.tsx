@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { format, fromUnixTime, isBefore } from 'date-fns';
@@ -33,6 +33,8 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 
 import LearnMoreModal from './LearnMoreModal';
 import TopBanner from './TopBanner';
+import TrialCanceledModal from './TrialCanceledModal';
+import { OPEN_TRIAL_CANCELED_MODAL } from './constants';
 
 const ModalAction = ({ textAction, upsellRef }: { textAction: string; upsellRef: string | undefined }) => {
     const [subscription] = useSubscription();
@@ -226,6 +228,27 @@ const B2BTrialTopBanner = () => {
     );
 };
 
+const TrialCanceledModalWrapper = ({ children }: { children?: ReactNode }): ReactNode => {
+    const [canceledModalProps, setCanceledModalOpen, renderCanceledModal] = useModalState();
+
+    useEffect(() => {
+        const open = () => {
+            setCanceledModalOpen(true);
+        };
+        document.addEventListener(OPEN_TRIAL_CANCELED_MODAL, open);
+        return () => {
+            document.removeEventListener(OPEN_TRIAL_CANCELED_MODAL, open);
+        };
+    }, []);
+
+    return (
+        <>
+            {renderCanceledModal && <TrialCanceledModal {...canceledModalProps} />}
+            {children}
+        </>
+    );
+};
+
 const TrialTopBanner = ({ app }: { app?: APP_NAMES }) => {
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
@@ -234,15 +257,15 @@ const TrialTopBanner = ({ app }: { app?: APP_NAMES }) => {
     const trial = isTrial(subscription);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
 
+    let topBanner = undefined;
+
     if (isB2BTrial) {
-        return <B2BTrialTopBanner />;
+        topBanner = <B2BTrialTopBanner />;
+    } else if (trial && !isVpn && app) {
+        topBanner = <ReferralTopBanner fromApp={app} />;
     }
 
-    if (trial && !isVpn && app) {
-        return <ReferralTopBanner fromApp={app} />;
-    }
-
-    return null;
+    return <TrialCanceledModalWrapper>{topBanner}</TrialCanceledModalWrapper>;
 };
 
 export default TrialTopBanner;

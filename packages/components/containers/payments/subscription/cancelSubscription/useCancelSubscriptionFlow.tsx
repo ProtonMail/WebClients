@@ -39,6 +39,7 @@ import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { hasPaidMail, hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 
+import { OPEN_TRIAL_CANCELED_MODAL } from '../../../topBanners/constants';
 import DowngradeModal from '../../DowngradeModal';
 import LossLoyaltyModal from '../../LossLoyaltyModal';
 import MemberDowngradeModal from '../../MemberDowngradeModal';
@@ -52,7 +53,6 @@ import type { HighlightPlanDowngradeModalOwnProps } from '../HighlightPlanDowngr
 import HighlightPlanDowngradeModal, { planSupportsCancellationDowngradeModal } from '../HighlightPlanDowngradeModal';
 import InAppPurchaseModal from '../InAppPurchaseModal';
 import { DiscountWarningModal } from '../PlanLossWarningModal';
-import TrialCanceledModal from '../TrialCanceledModal';
 import UpsellModal from '../UpsellModal';
 import CancelSubscriptionLoadingModal from './CancelSubscriptionLoadingModal';
 import { CancelSubscriptionModal } from './CancelSubscriptionModal';
@@ -119,7 +119,6 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         useModalTwoPromise<HighlightPlanDowngradeModalOwnProps>();
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
     const [cancelTrialModal, showCancelTrialModal] = useModalTwoPromise();
-    const [trialCanceledModal, showTrialCanceledModal] = useModalTwoPromise();
     const [lossLoyaltyModal, showLossLoyaltyModal] = useModalTwoPromise();
     const [memberDowngradeModal, showMemberDowngradeModal] = useModalTwoPromise();
     const [passLaunchOfferDowngradeModal, showPassLaunchDowngradeModal] = useModalTwoPromise();
@@ -132,9 +131,6 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         <>
             {cancelTrialModal((props) => {
                 return <CancelTrialModal {...props} onConfirm={props.onResolve} onClose={props.onReject} />;
-            })}
-            {trialCanceledModal((props) => {
-                return <TrialCanceledModal {...props} onClose={props.onResolve} />;
             })}
             {downgradeModal((props) => {
                 return <DowngradeModal {...props} onConfirm={props.onResolve} onClose={props.onReject} />;
@@ -260,14 +256,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         }
 
         if (isB2BTrial) {
-            // Ooops: showing the trial canceled modal doesn't work because as soon as we unsubscribe,
-            // the `useCancelSubscriptionFlow` is no longer called as we hide all the unsubscribe logic
-            // This line actually does absolutely nothing UI-wise
-            // Keeping it here for reference, let's find a way to make it work later
-            /* await */ showTrialCanceledModal();
-
-            // Let's show a notification until we fix it
-            createNotification({ text: c('b2b_trials_Success').t`Subscription canceled.` });
+            document.dispatchEvent(new CustomEvent(OPEN_TRIAL_CANCELED_MODAL));
         }
 
         return SUBSCRIPTION_CANCELLED;
