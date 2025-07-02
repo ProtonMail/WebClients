@@ -1705,7 +1705,7 @@
         "Nuestro plan básico y gratuito con correo y almacenamiento cifrado de extremo a extremo. No incluye características prémium."
       ],
       "Save ${ upsellSavings }": [
-        "Ahorra un ${ upsellSavings }"
+        "Ahorra ${ upsellSavings }"
       ],
       "Save money with ${ upsellPlanName }": [
         "Ahorra dinero con ${ upsellPlanName }"
@@ -6020,6 +6020,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrás seguir viendo los datos de tu propia cuenta, pero todas las cuentas de usuario serán eliminadas de tu organización."
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados en la organización"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "También perderás acceso a las funciones de ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -8691,6 +8700,9 @@
       ],
       "New credit/debit card": [
         "Nueva tarjeta de crédito/débito"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11506,7 +11518,7 @@
         "Cada ${ interval } semanas los viernes"
       ],
       "Every ${ interval } week on Monday": [
-        "Cada semana los lunes ${ interval }",
+        "Cada ${ interval } semana los lunes ",
         "Cada ${ interval } semanas los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
@@ -11772,6 +11784,19 @@
       ],
       "Only": [
         "Solo"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Se ha cancelado la suscripción."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferencia bancaria - ${ details }"
       ]
     }
   }

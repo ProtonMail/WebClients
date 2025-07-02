@@ -5995,6 +5995,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerade VPN-servrar i organisationen"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
       ]
     },
     "info": {
@@ -11080,10 +11089,10 @@
         "Verifiering misslyckades"
       ],
       "Verifying your card...": [
-        "Verifierar ditt kort..."
+        "Verifierar ditt kort …"
       ],
       "Verifying your payment...": [
-        "Verifierar din betalning..."
+        "Verifierar din betalning …"
       ],
       "VPN explained": [
         "VPN förklarat"
@@ -11744,6 +11753,9 @@
     "Payments.Saved payment method details": {
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
+      ],
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Unlimited offer": {
@@ -11752,6 +11764,11 @@
       ],
       "Only": [
         "Endast"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Prenumeration avslutad."
       ]
     }
   }

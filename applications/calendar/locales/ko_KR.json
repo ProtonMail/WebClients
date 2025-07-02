@@ -5915,6 +5915,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "Dedicated VPN servers": [
+        "전용 VPN 서버"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "조직의 전용 VPN 서버 수"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "또한 ${ boldPlanTitle }의 모든 기능도 사용할 수 없게 됩니다:"
       ]
     },
     "info": {
@@ -11505,6 +11514,11 @@
       ],
       "Bank transfer - ${ details }": [
         "은행 송금 - ${ details }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "구독이 취소되었습니다."
       ]
     }
   }

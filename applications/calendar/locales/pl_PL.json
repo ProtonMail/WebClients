@@ -6178,6 +6178,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Nadal będziesz mógł przeglądać dane konta, ale wszystkie konta użytkowników zostaną usunięte z organizacji."
+      ],
+      "Dedicated VPN servers": [
+        "Dedykowane serwery VPN"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Liczba dedykowanych serwerów VPN organizacji"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Stracisz również dostęp do funkcji planu ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -8656,6 +8665,12 @@
       ],
       "Your subscription renews soon": [
         "Subskrypcja odnowi się wkrótce"
+      ],
+      "Don’t show this again": [
+        "Nie pokazuj ponownie"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Wybierz plan ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8682,6 +8697,18 @@
       ],
       "Storage": [
         "Przestrzeń dyskowa"
+      ],
+      "500 GB secure storage": [
+        "500 GB bezpiecznej przestrzeni dyskowej"
+      ],
+      "Advanced threat protection": [
+        "Zaawansowana ochrona przed zagrożeniami"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultraszybkie serwery w ponad 110 krajach"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Nieograniczona liczba aliasów chroniących tożsamość"
       ]
     },
     "Onboarding": {
@@ -8959,6 +8986,9 @@
       ],
       "New credit/debit card": [
         "Nowa karta płatnicza"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -9056,6 +9086,9 @@
       ],
       "Your payment is still being processed": [
         "Twoja płatność jest wciąż przetwarzana"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "W przelewach SEPA akceptowane jest tylko euro. Waluta została zmieniona. Użyj formularza, aby przywrócić swój wybór."
       ]
     },
     "Payments.Error": {
@@ -9811,6 +9844,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Ulepsz do planu ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Przeglądaj bezpiecznie"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Zrób więcej z ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Uzyskaj nieograniczoną liczbę aliasów"
+      ],
+      "Guard against threats": [
+        "Ochrona przed zagrożeniami"
+      ],
+      "Increase your storage": [
+        "Zwiększ przestrzeń dyskową"
+      ],
+      "Keep passwords safe": [
+        "Przechowuj hasła bezpiecznie"
+      ],
+      "Unblock streaming content": [
+        "Odblokuj streaming"
       ]
     },
     "specialoffer: Offers": {
@@ -9887,6 +9941,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Ulepsz konto i zaoszczędź więcej dzięki dwuletniemu planowi ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Uzyskaj dostęp do streamingu na całym świecie"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Uzyskaj 500 GB na bezpieczne przechowywanie wszystkich plików i zdjęć"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Uzyskaj dostęp do ultraszybkich serwerów VPN w ponad 110 krajach"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Uzyskaj jeden plan, który zawiera wszystko. Uzyskaj plan ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Uzyskaj nieograniczoną liczbę aliasów, aby chronić swoją tożsamość i ograniczyć spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Przechowuj hasła bezpiecznie i uporządkowane w wielu sejfach"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Chroń swoje konto przed zagrożeniami dzięki funkcji Proton Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -12190,6 +12265,32 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Subskrypcja została anulowana."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Szyfrowany menadżer haseł"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay — karta kończąca się na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Przelew bankowy — ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ miesiąc"
+      ],
+      "Only": [
+        "Tylko"
       ]
     }
   }

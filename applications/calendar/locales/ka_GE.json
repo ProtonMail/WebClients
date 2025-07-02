@@ -5762,6 +5762,15 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "გამოყოფილი VPN სერვერების რაოდენობა ორგანიზაციაში"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
       ]
     },
     "info": {
@@ -8403,6 +8412,9 @@
       ],
       "New credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათი"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -9289,6 +9301,24 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "ასწიეთ სატარიფო გეგმა დაზოგეთ მეტი 2 წლით ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "იქონიეთ წვდომა სტრიმინგის სერვისებთან მთელ მსოფლიოში"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "მიიღეთ 500გბ და შეინახეთ დაცულად ყველა თქვენი ფაილი და სურათი"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "მიიღეთ წვდომა უსწრაფეს VPN სერვერებთან 110+ ქვეყანაში"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "მიიღეთ შეუზღუდავი ფსევდონიმები, რომ დაიცვათ თავი და შეამციროთ სპამის რაოდენობა"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "იქონიეთ თქვენი პაროლები უსაფრთხოდ და დალაგებულად მრავალ საცავში "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "დაიცავით თქვენი ანგარიში საშიშროებებისგან Sentinel-თან ერთად"
       ]
     },
     "specialoffer: Tooltip": {
@@ -11516,6 +11546,9 @@
       ],
       "years": [
         "წელი"
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "დაზოგეთ ბევრი VPN-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
       ]
     },
     "anniversary_2025: offer": {
@@ -11584,6 +11617,19 @@
       ],
       "Only": [
         "მხოლოდ"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "გამოწერა გაუქმდა."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "საბანკო გადარიცხვა - ${ details }"
       ]
     }
   }
