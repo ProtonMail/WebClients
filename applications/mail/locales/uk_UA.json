@@ -1445,6 +1445,9 @@
       ],
       "Zoom out": [
         "Зменшити"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Створити папку ${ boldFolderName }"
       ]
     },
     "action": {
@@ -6716,9 +6719,6 @@
         "Ініціалізація…"
       ],
       "Insert image": [
-        "Вставити зображення",
-        "Вставити зображення",
-        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -7974,6 +7974,24 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
+      ],
+      "${ n } newsletter": [
+        "${ n } Розсилка, вісник",
+        "${ n } Розсилки, вісники",
+        "${ n } Розсилки, вісники",
+        "${ n } Розсилки, вісники"
+      ],
+      "Block sender": [
+        "Заблокувати відправника"
+      ],
+      "No messages to show": [
+        "Немає повідомлень для відображення"
+      ],
+      "Preferences updated": [
+        "Налаштування оновлено"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "У вашій поштовій скриньці немає повідомлень від цього відправника."
       ]
     },
     "info": {
@@ -8813,6 +8831,18 @@
       ],
       "Your location": [
         "Ваше розташування:"
+      ],
+      "Choose what to do instead": [
+        "Виберіть, що робити замість цього"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Не вдалося створити папку ${ customFolderName }"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "Переміщено ${ count } повідомлення до ${ labelName }.",
+        "Переміщено ${ count } повідомлень до ${ labelName }.",
+        "Переміщено ${ count } повідомлення до ${ labelName }.",
+        "Переміщено ${ count } повідомлення до ${ labelName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13801,6 +13831,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Скасувати підписку для цього відправника неможливо"
       ]
     },
     "Today icon tooltip in mini calendar": {

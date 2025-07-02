@@ -1576,6 +1576,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Tallenna ${ DRIVE_APP_NAME }en"
       ]
     },
     "action": {
@@ -6959,8 +6962,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8332,6 +8334,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "${ n } newsletter": [
+        "${ n } uutiskirje",
+        "${ n } uutiskirjettä"
+      ],
+      "Block sender": [
+        "Estä lähettäjä"
+      ],
+      "Message list": [
+        "Viestilista"
+      ],
+      "Message view": [
+        "Viestinäkymä"
+      ],
+      "Preferences updated": [
+        "Asetukset päivitettiin"
       ]
     },
     "info": {
@@ -9252,6 +9270,9 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "Alias title": [
+        "Aliaksen otsikko"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10969,6 +10990,12 @@
       ],
       "Your subscription renews soon": [
         "Tilauksesi uusiutuu pian"
+      ],
+      "Don’t show this again": [
+        "Älä näytä tätä uudelleen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Hanki ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -10995,6 +11022,9 @@
       ],
       "Storage": [
         "Tallennustila"
+      ],
+      "500 GB secure storage": [
+        "500 Gt suojattua tallennustilaa"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11159,6 +11189,9 @@
     "Onboarding Trial": {
       "Continue": [
         "Jatka"
+      ],
+      "If you need help,": [
+        "Jos tarvitset apua,"
       ]
     },
     "Online accounts": {
@@ -11326,6 +11359,9 @@
       ],
       "New credit/debit card": [
         "Uusi maksukortti"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -14438,6 +14474,9 @@
       ],
       "Your subscriptions in one place": [
         "Tilauksesi yhdessä paikassa"
+      ],
+      "Subscription canceled": [
+        "Tilaus on peruttu"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15020,6 +15059,16 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
+      ]
+    },
+    "Unlimited offer": {
+      "Only": [
+        "Vain"
       ]
     }
   }

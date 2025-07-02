@@ -418,7 +418,7 @@
         "Адключэнне псеўданіма"
       ],
       "Discard": [
-        "Скасаваць"
+        "Адхіліць"
       ],
       "Dismiss": [
         "Адхіліць"
@@ -595,7 +595,7 @@
         "Атрымаць праверачны код"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
-        "Перайдзіце ў ${ DRIVE_APP_NAME }"
+        "Перайсці ў ${ DRIVE_APP_NAME }"
       ],
       "Go to label": [
         "Перайсці ў меткі"
@@ -1234,7 +1234,7 @@
         "Адправіць апавяшчэнне аб прачытанні"
       ],
       "Send unsubscribe email": [
-        "Адправіць ліст скасавання падпіскі"
+        "Адправіць ліст аб скасаванні падпіскі"
       ],
       "Set": [
         "Задаць"
@@ -1814,10 +1814,10 @@
         "Значная эканомія на прэміяльных функцыях Drive з абмежаванай па часе скідкай."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
-        "Значная эканомія на прэміяльныя функцыі Mail з абмежаванай па часе скідкай."
+        "Значная эканомія на прэміяльных функцыях Mail з абмежаванай па часе скідкай."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
-        "Значная эканомія на прэміяльныя функцыі Pass з абмежаванай па часе скідкай."
+        "Значная эканомія на прэміяльных функцыях Pass з абмежаванай па часе скідкай."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
         "Значная эканомія на прэміяльных функцыях VPN з абмежаванай па часе скідкай."
@@ -4932,6 +4932,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паспрабуйце яшчэ раз."
+      ],
+      "No address with sending permissions": [
+        "Адсутнічае адрас з дазволамі на адпраўку"
+      ],
+      "Permissions request failed.": [
+        "Збой запыту дазволаў."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6554,9 +6560,9 @@
       ],
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** вынік знойдзены ў ${ labelName }",
-        "**${ total }** вынікі знойдзена ў ${ labelName }",
-        "**${ total }** вынікаў знойдзена ў ${ labelName }",
-        "**${ total }** вынікаў знойдзена ў ${ labelName }"
+        "**${ total }** вынікі знойдзены ў ${ labelName }",
+        "**${ total }** вынікаў знойдзены ў ${ labelName }",
+        "**${ total }** вынікаў знойдзены ў ${ labelName }"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Аўтаматычнае падключэнне**: падключэнне да сервера VPN адбываецца адразу пасля ўключэння прылады."
@@ -6739,10 +6745,10 @@
         "Вы сапраўды хочаце выдаліць гэту метку?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Вы сапраўды хочаце скасаваць змены?"
+        "Вы сапраўды хочаце адхіліць змены?"
       ],
       "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце скасаваць імпартаванне?"
+        "Вы сапраўды хочаце адхіліць імпартаванне?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
         "Вы сапраўды хочаце перамясціць усе паведамленні з гэтага месца ў архіў?"
@@ -7036,7 +7042,7 @@
         "Чарнавік"
       ],
       "Draft discarded": [
-        "Чарнавік скасаваны"
+        "Адхіліць чарнавік"
       ],
       "Draft saved.": [
         "Чарнавік захаваны."
@@ -7330,10 +7336,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8716,10 +8719,10 @@
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Ваша дата падаўжэння: ${ nextBillingDate }."
+        "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Ваша дата падаўжэння: ${ nextBillingDate }."
+        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Ваша абсталяванне не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
@@ -8791,7 +8794,7 @@
         "Доступ да ${ boldPlanTitle } будзе страчаны ${ boldEndDate }."
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
-        "Вы ўсё яшчэ зможаце праглядаць даныя вашага ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+        "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
@@ -8941,7 +8944,7 @@
         "Выдаліць незваротна"
       ],
       "Discard draft": [
-        "Скасаваць чарнавік"
+        "Адхіліць чарнавік"
       ],
       "Expand / contract composer": [
         "Разгарнуць / сціснуць рэдактар"
@@ -11055,7 +11058,7 @@
         "200 ГБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў"
+        "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў з адмысловай абаронай"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Пашыраная бяспека для каманд, якая выходзіць за рамкі прамысловых стандартаў."
@@ -11748,6 +11751,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Ваш дамен і падпіска гатовыя да выкарыстання."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } азначае, што вы ніколі не ўбачыце спонсарскую рэкламу ў нашых праграмах."
+      ],
+      "Ad-free promise": [
+        "Абяцанне без рэкламы"
       ]
     },
     "Onboarding Proton": {
@@ -11808,10 +11817,10 @@
         "Як толькі пачнецца ваша поўная падпіска..."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Вы ўсё яшчэ зможаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+        "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
-        "Вы ўсё яшчэ зможаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+        "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Вы можаце карыстацца ${ planTitle } да канца пробнага перыяду. Плата за гэта спаганяцца не будзе."
@@ -13166,13 +13175,13 @@
         "Атрымайце доступ да звышхуткіх сервераў VPN у больш чым 110 краінах"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
-        "Атрымайце тарыфны план ${ BRAND_NAME } Unlimited, які аб'ядноўвае ўсе функцыі."
+        "Атрымайце тарыфны план ${ BRAND_NAME } Unlimited, які аб'ядноўвае ўсе гэтыя функцыі."
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Атрымайце неабмежаваную колькасць псеўданімаў, каб абараніць сваю ідэнтычнасць і паменшыць спам"
       ],
       "Keep your passwords safe and organized in multiple vaults ": [
-        "Захоўвайце свае паролі ў бяспецы і ўпарадкаванымі пры дапамозе некалькіх сховішч "
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч "
       ],
       "Protect your account from threats with Sentinel": [
         "Абараніце свой уліковы запіс ад пагроз з дамогай Sentinel"
@@ -16057,7 +16066,7 @@
     },
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - карта, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+        "Apple Pay - картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
       ],
       "Bank transfer - ${ details }": [
         "Банкаўскі перавод - ${ details }"

@@ -4830,6 +4830,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
+      ],
+      "No address with sending permissions": [
+        "발신 권한이 있는 주소가 없습니다."
+      ],
+      "Permissions request failed.": [
+        "권한 요청을 실패했습니다."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8387,6 +8393,15 @@
       ],
       "Block sender": [
         "발신자 차단"
+      ],
+      "Dedicated VPN servers": [
+        "전용 VPN 서버"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "조직의 전용 VPN 서버 수"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "또한 ${ boldPlanTitle }의 모든 기능도 사용할 수 없게 됩니다:"
       ]
     },
     "info": {
@@ -11175,6 +11190,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "도메인과 구독을 사용할 수 있습니다."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }은 우리가 만든 앱에서는 절대 광고를 개재하지 않을 것이라는 고객과의 약속입니다."
+      ],
+      "Ad-free promise": [
+        "광고 없는 약속"
       ]
     },
     "Onboarding Proton": {
@@ -15076,6 +15097,11 @@
       ],
       "Bank transfer - ${ details }": [
         "은행 송금 - ${ details }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "구독이 취소되었습니다."
       ]
     }
   }

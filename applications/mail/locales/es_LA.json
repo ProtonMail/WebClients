@@ -2550,7 +2550,7 @@
         "Nuestro plan gratuito básico con correo y almacenamiento cifrados de extremo a extremo. Sin funciones premium incluidas."
       ],
       "Save ${ upsellSavings }": [
-        "Ahorre un ${ upsellSavings }"
+        "Ahorre ${ upsellSavings }"
       ],
       "Save money with ${ upsellPlanName }": [
         "Ahorre dinero con ${ upsellPlanName }"
@@ -7127,8 +7127,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -15199,8 +15198,8 @@
         "Cada semana los viernes ${ interval }"
       ],
       "Every ${ interval } week on Monday": [
-        "Cada semana los lunes ${ interval }",
-        "Cada semana los lunes ${ interval }"
+        "Cada ${ interval } semana los lunes",
+        "Cada ${ interval } semanas los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
         "Cada semana los lunes, ${ timesString } ${ interval }",
