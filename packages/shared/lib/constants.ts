@@ -373,6 +373,7 @@ export const SSO_PATHS = {
     CALENDAR_SIGN_IN: '/calendar',
     DRIVE_SIGNUP: '/drive/signup',
     DRIVE_SIGNUP_B2B: '/drive/signup/business',
+    DRIVE_SIGNUP_PRICING: '/drive/signup/pricing',
     DRIVE_SIGN_IN: '/drive',
     BUSINESS_SIGNUP: '/business/signup',
     VPN_SIGNUP: '/vpn/signup',
