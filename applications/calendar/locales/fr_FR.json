@@ -6020,6 +6020,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "Dedicated VPN servers": [
+        "Serveurs VPN dédiés"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Nombre de serveurs VPN dédiés dans l'organisation"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Vous n'aurez également plus accès aux fonctionnalités de ${ boldPlanTitle } :"
       ]
     },
     "info": {
@@ -11774,7 +11783,7 @@
         "Apple Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
       ],
       "Bank transfer - ${ details }": [
-        "Virement - ${ details }"
+        "Virement bancaire - ${ details }"
       ]
     },
     "Unlimited offer": {
@@ -11783,6 +11792,11 @@
       ],
       "Only": [
         "Seulement"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "L'abonnement a été annulé."
       ]
     }
   }

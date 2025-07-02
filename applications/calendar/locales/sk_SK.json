@@ -1152,8 +1152,8 @@
       "${ n } month": [
         "${ n } mesiac",
         "${ n } mesiace",
-        "${ n } mesiace",
-        "${ n } mesiace"
+        "${ n } mesiacov",
+        "${ n } mesiacov"
       ],
       "/ month": [
         "/ mesiac"
@@ -6049,7 +6049,7 @@
         "Aktualizujete všetky udalosti v tejto sérii. Odobraní účastníci budú oboznámení."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
-        "Nebude sa vám účtovať, ak zrušíte pred ${ trialEndsOnFormatted }."
+        "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
       ],
       "You'll also lose access to ${ boldPlanTitle } features:": [
         "Taktiež stratíte prístup k funkciám ${ boldPlanTitle }:"
@@ -6170,6 +6170,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "Dedicated VPN servers": [
+        "Dedikované VPN servery"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Počet dedikovaných VPN serverov v organizácii"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Taktiež stratíte prístup k funkciám ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -8762,10 +8771,10 @@
         "Akonáhle začne vaše plné predplatné..."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
-        "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+        "Stále môžete zrušiť do 30 dní a získať pomernú náhradu späť."
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
-        "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+        "Stále môžete zrušiť do 30 dní a získať späť pomernú náhradu."
       ],
       "Your free trial has started": [
         "Vaša bezplatná skúšobná verzia sa začala"
@@ -8972,6 +8981,9 @@
       ],
       "New credit/debit card": [
         "Nová platobná karta"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -9926,7 +9938,7 @@
         "Inovujte a ušetrite viac s 2 rokmi ${ planName }"
       ],
       "Access content on streaming services worldwide": [
-        "Pristupujte k obsahu na streamovacích služieb na celom svete"
+        "Pristupujte k obsahu streamovacích služieb na celom svete"
       ],
       "Get 500 GB to securely store all your files and photos": [
         "Získajte 500 GB na bezpečné uloženie všetkých vašich súborov a fotografií"
@@ -12256,6 +12268,19 @@
       ],
       "Only": [
         "Iba"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Predplatné bolo zrušené."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankový prevod – ${ details }"
       ]
     }
   }

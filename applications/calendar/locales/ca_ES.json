@@ -1079,7 +1079,7 @@
         "Protegiu fins a 10 dispositius"
       ],
       "Recover previous file versions": [
-        "Recupereu versions anteriors del fitxer"
+        "Recupereu versions anteriors dels fitxers"
       ],
       "Save big on premium Drive features with a limited-time discount.": [
         "Estalviiareu molt amb les funcions premium de Drive amb un descompte per temps limitat"
@@ -6004,6 +6004,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "Dedicated VPN servers": [
+        "Servidors VPN dedicats"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Nombre de servidors VPN dedicats a l'organització"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "També perdreu l'accés a les característiques de ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -6201,7 +6210,7 @@
         "Adreça"
       ],
       "Alias title": [
-        "Nom de l'àlies"
+        "Títol de l'àlies"
       ],
       "All day": [
         "Tot el dia"
@@ -6888,7 +6897,7 @@
         "El vostre compte corre el risc de ser suprimit. Per evitar la pèrdua de dades, demaneu al vostre administrador que us el millori. ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
-        "El vostre emmagatzematge està ple. Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
+        "L'emmagatzematge és ple. Per a continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
@@ -8369,7 +8378,7 @@
         "No ho tornis a mostrar"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
-        "Obtingueu ${ BRAND_NAME } sense límits"
+        "Obteniu ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8769,7 +8778,7 @@
         "El vostre pagament encara s'està processant."
       ],
       "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "El SEPA només s'accepta l'euro. La moneda ha estat canviada. Utilitzeu el selector per revertir la vostra elecció."
+        "Només s'accepta l'euro per al SEPA. S'ha canviat la moneda. Utilitzeu el selector per revertir la vostra elecció."
       ]
     },
     "Payments.Error": {
@@ -9505,7 +9514,7 @@
         "Mantingueu les vostres contrasenyes segures"
       ],
       "Unblock streaming content": [
-        "Tingui accés il·limitat a continguts en estríming"
+        "Tingueu accés al contingut en estríming."
       ]
     },
     "specialoffer: Offers": {
@@ -11152,8 +11161,8 @@
         "La vostra informació exposada"
       ],
       "Your free trial ends in ${ trialDurationFormatted } day": [
-        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dia",
-        "La prova gratuïta us finalitza en ${ trialDurationFormatted } dies"
+        "La prova gratuïta finalitza en ${ trialDurationFormatted } dia",
+        "La prova gratuïta finalitza en ${ trialDurationFormatted } dies"
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
@@ -11767,6 +11776,11 @@
       ],
       "Bank transfer - ${ details }": [
         "Transferència bancària - ${ details }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "S'ha cancel·lat la subscripció."
       ]
     }
   }
