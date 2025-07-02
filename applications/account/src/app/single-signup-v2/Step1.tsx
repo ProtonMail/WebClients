@@ -199,14 +199,6 @@ const Step1 = ({
         metrics.core_single_signup_pageLoad_total.increment({});
     }, []);
 
-    const availableCurrencies = getAvailableCurrencies({
-        status: model.paymentMethodStatusExtended,
-        plans: getAccessiblePlans({ planCards, audience, plans: model.plans }),
-        user: model.session?.resumedSessionResult.User,
-        subscription: model.session?.subscription,
-        paramCurrency: signupParameters.currency,
-    });
-
     const history = useHistory();
 
     const subscriptionCheckOptions = {
@@ -226,6 +218,15 @@ const Step1 = ({
     const [selectedB2CCurrency, setSelectedB2CCurrency] = useState<Currency>();
 
     const selectedPlan = getPlanFromPlanIDs(model.plansMap, options.planIDs) || FREE_PLAN;
+
+    const availableCurrencies = getAvailableCurrencies({
+        status: model.paymentMethodStatusExtended,
+        plans: getAccessiblePlans({ planCards, audience, plans: model.plans }),
+        user: model.session?.resumedSessionResult.User,
+        subscription: model.session?.subscription,
+        paramCurrency: signupParameters.currency,
+        selectedPlanName: selectedPlan.Name,
+    });
 
     const getSilentPaymentApi = async () => {
         let chargebeeEnabled = undefined;
