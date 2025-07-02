@@ -13,7 +13,6 @@ interface Props {
     isSubmitted: boolean;
     onChange: (value: FrequencyModel) => void;
     displayStacked?: boolean;
-    setTemporaryValues: (value: FrequencyModel) => void;
 }
 const CustomFrequencySelector = ({
     frequencyModel,
@@ -24,7 +23,6 @@ const CustomFrequencySelector = ({
     onChange,
     isSubmitted,
     displayStacked = false,
-    setTemporaryValues,
 }: Props) => {
     return (
         <>
@@ -46,7 +44,6 @@ const CustomFrequencySelector = ({
                 errors={errors}
                 isSubmitted={isSubmitted}
                 onChange={onChange}
-                setTemporaryValues={setTemporaryValues}
             />
         </>
     );

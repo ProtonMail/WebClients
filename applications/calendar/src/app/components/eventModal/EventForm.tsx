@@ -124,12 +124,13 @@ const EventForm = ({
                         if (frequencyModel.type === FREQUENCY.CUSTOM) {
                             customModal.openModal(true);
                             previousFrequencyRef.current = model.frequencyModel;
+                        } else {
+                            setModel({
+                                ...model,
+                                frequencyModel: frequencyModel,
+                                hasTouchedRrule: true,
+                            });
                         }
-                        setModel({
-                            ...model,
-                            frequencyModel: frequencyModel,
-                            hasTouchedRrule: true,
-                        });
                     }}
                 />
             </div>
@@ -142,7 +143,10 @@ const EventForm = ({
                             customModal.modalProps.onClose();
                             const frequencyModel = previousFrequencyRef.current;
                             if (frequencyModel) {
-                                setModel({ ...model, frequencyModel: model.frequencyModel });
+                                setModel({
+                                    ...model,
+                                    frequencyModel: { ...model.frequencyModel, type: FREQUENCY.CUSTOM },
+                                });
                             }
                         },
                     }}
