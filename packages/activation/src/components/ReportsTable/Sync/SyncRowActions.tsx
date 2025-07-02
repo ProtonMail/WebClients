@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { EasySwitchFeatureFlag, OAuthProps } from '@proton/activation/src/interface';
@@ -11,12 +12,14 @@ import { Button } from '@proton/atoms';
 import { Alert, DropdownActions, Prompt, useModalState } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
+import { getIsBYOEAccount } from '@proton/shared/lib/keys';
 
 interface Props {
     syncId: string;
 }
 
 const SyncRowActions = ({ syncId }: Props) => {
+    const [user] = useUser();
     const dispatch = useEasySwitchDispatch();
 
     const syncItem = useEasySwitchSelector((state) => selectSyncById(state, syncId));
@@ -35,7 +38,7 @@ const SyncRowActions = ({ syncId }: Props) => {
         void triggerOAuthPopup({
             provider: OAUTH_PROVIDER.GOOGLE,
             // We don't know if the sync is a forwarding or a BYOE, so we want to reconnect the user using the full scope for now
-            features: [EASY_SWITCH_FEATURES.BYOE],
+            features: [getIsBYOEAccount(user) ? EASY_SWITCH_FEATURES.BYOE : EASY_SWITCH_FEATURES.IMPORT_MAIL],
             callback: async (oAuthProps: OAuthProps) => {
                 const { Code, Provider, RedirectUri } = oAuthProps;
 
