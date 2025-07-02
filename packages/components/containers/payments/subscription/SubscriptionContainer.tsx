@@ -52,7 +52,6 @@ import {
     getHasSomeVpnPlan,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
-    getIsCurrencyOverriden,
     getIsVpnPlan,
     getMaximumCycleForApp,
     getPaymentsVersion,
@@ -67,7 +66,6 @@ import {
     isFreeSubscription,
     isManagedExternally,
     shouldPassIsTrial as shouldPassIsTrialPayments,
-    updateCurrencyOverride,
 } from '@proton/payments';
 import { PaymentsContextProvider, useIsB2BTrial } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -131,7 +129,6 @@ export interface Model {
     step: SUBSCRIPTION_STEPS;
     planIDs: PlanIDs;
     currency: Currency;
-    currencyBeforeOverride?: Currency;
     cycle: Cycle;
     coupon?: string;
     gift?: string;
@@ -693,16 +690,8 @@ const SubscriptionContainerInner = ({
         wantToApplyNewGiftCode: boolean = false,
         selectedMethod?: PlainPaymentMethodType
     ): Promise<SubscriptionCheckResponse | undefined> => {
-        const overrideCurrency = updateCurrencyOverride({
-            currentCurrency: newModel.currency,
-            currencyBeforeOverride: newModel.currencyBeforeOverride,
-            currentSelectedMethod: paymentFacade.selectedMethodType,
-            newSelectedMethod: selectedMethod,
-        });
-
         const copyNewModel = {
             ...newModel,
-            ...overrideCurrency,
             initialCheckComplete: true,
             noPaymentNeeded: false,
         };
@@ -1215,31 +1204,7 @@ const SubscriptionContainerInner = ({
                                     hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                     hasSomeVpnPlan={hasSomeVpnPlan}
                                     billingAddressStatus={billingAddressStatus}
-                                    isCurrencyOverriden={getIsCurrencyOverriden({
-                                        currentCurrency: model.currency,
-                                        currencyBeforeOverride: model.currencyBeforeOverride,
-                                    })}
-                                    onMethod={(newPaymentMethodValue) => {
-                                        const newPaymentType = paymentFacade.methods.allMethods.find(
-                                            (method) => method.value === newPaymentMethodValue
-                                        )?.type;
-                                        const userSelectedSEPA =
-                                            newPaymentType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
-
-                                        // current type is SEPA and the selected type is not SEPA.
-                                        const userUnselectedSEPA =
-                                            paymentFacade.selectedMethodType ===
-                                                PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT &&
-                                            newPaymentType !== PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
-
-                                        // If user selects SEPA payment method then we need to do additional
-                                        // subscription/check call with the ProrationMode == Exact. Same thing if user
-                                        // unselects SEPA payment method, but in this case we need to call /check
-                                        // without ProrationMode == Exact.
-                                        if (userSelectedSEPA || userUnselectedSEPA) {
-                                            void check(model, false, newPaymentType);
-                                        }
-                                    }}
+                                    onCurrencyChange={handleChangeCurrency}
                                 />
                             </div>
                             <NoPaymentRequiredNote
