@@ -1610,6 +1610,15 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Utwórz folder ${ boldFolderName }"
+      ],
+      "Deleting folder": [
+        "Usuwanie folderu"
+      ],
+      "Deleting label": [
+        "Usuwanie etykiety"
       ]
     },
     "action": {
@@ -4934,6 +4943,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Wyszukiwanie pasuje do zbyt wielu wyników. Sprecyzuj wyszukiwanie i spróbuj ponownie."
+      ],
+      "No address with sending permissions": [
+        "Brak adresu z uprawnieniami do wysyłania"
+      ],
+      "Permissions request failed.": [
+        "Żądanie uprawnień nie powiodło się."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7332,10 +7347,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8797,6 +8809,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "${ n } newsletter": [
+        "${ n } newsletter",
+        "${ n } newslettery",
+        "${ n } newsletterów",
+        "${ n } newsletterów"
+      ],
+      "Block sender": [
+        "Zablokuj nadawcę"
+      ],
+      "Dedicated VPN servers": [
+        "Dedykowane serwery VPN"
+      ],
+      "No messages to show": [
+        "Brak wiadomości"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Liczba dedykowanych serwerów VPN organizacji"
+      ],
+      "Preferences updated": [
+        "Ustawienia zostały zaktualizowane"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Brak wiadomości od tego nadawcy."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Stracisz również dostęp do funkcji planu ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -9740,6 +9779,18 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ],
+      "Choose what to do instead": [
+        "Wybierz, co zrobić zamiast tego"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Nie udało się utworzyć folderu ${ customFolderName }"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "Przeniesiono ${ count } wiadomość do folderu ${ labelName }.",
+        "Przeniesiono ${ count } wiadomości do folderu ${ labelName }.",
+        "Przeniesiono ${ count } wiadomości do folderu ${ labelName }.",
+        "Przeniesiono ${ count } wiadomości do folderu ${ labelName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11537,6 +11588,12 @@
       ],
       "Your subscription renews soon": [
         "Subskrypcja odnowi się wkrótce"
+      ],
+      "Don’t show this again": [
+        "Nie pokazuj ponownie"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Wybierz plan ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11563,6 +11620,18 @@
       ],
       "Storage": [
         "Przestrzeń dyskowa"
+      ],
+      "500 GB secure storage": [
+        "500 GB bezpiecznej przestrzeni dyskowej"
+      ],
+      "Advanced threat protection": [
+        "Zaawansowana ochrona przed zagrożeniami"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultraszybkie serwery w ponad 110 krajach"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Nieograniczona liczba aliasów chroniących tożsamość"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11693,6 +11762,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Twoja domena i subskrypcja są gotowe do użycia."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } oznacza to, że nigdy nie zobaczysz reklam sponsorowanych w naszych aplikacjach."
+      ],
+      "Ad-free promise": [
+        "Obietnica braku reklam"
       ]
     },
     "Onboarding Proton": {
@@ -11941,6 +12016,9 @@
       ],
       "New credit/debit card": [
         "Nowa karta płatnicza"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12038,6 +12116,9 @@
       ],
       "Your payment is still being processed": [
         "Twoja płatność jest wciąż przetwarzana"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "W przelewach SEPA akceptowane jest tylko euro. Waluta została zmieniona. Użyj formularza, aby przywrócić swój wybór."
       ]
     },
     "Payments.Error": {
@@ -13002,6 +13083,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Ulepsz do planu ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Przeglądaj bezpiecznie"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Zrób więcej z ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Uzyskaj nieograniczoną liczbę aliasów"
+      ],
+      "Guard against threats": [
+        "Ochrona przed zagrożeniami"
+      ],
+      "Increase your storage": [
+        "Zwiększ przestrzeń dyskową"
+      ],
+      "Keep passwords safe": [
+        "Przechowuj hasła bezpiecznie"
+      ],
+      "Unblock streaming content": [
+        "Odblokuj streaming"
       ]
     },
     "specialoffer: Offers": {
@@ -13078,6 +13180,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Ulepsz konto i zaoszczędź więcej dzięki dwuletniemu planowi ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Uzyskaj dostęp do streamingu na całym świecie"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Uzyskaj 500 GB na bezpieczne przechowywanie wszystkich plików i zdjęć"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Uzyskaj dostęp do ultraszybkich serwerów VPN w ponad 110 krajach"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Uzyskaj jeden plan, który zawiera wszystko. Uzyskaj plan ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Uzyskaj nieograniczoną liczbę aliasów, aby chronić swoją tożsamość i ograniczyć spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Przechowuj hasła bezpiecznie i uporządkowane w wielu sejfach"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Chroń swoje konto przed zagrożeniami dzięki funkcji Proton Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -15271,6 +15394,9 @@
       ],
       "Your subscriptions in one place": [
         "Twoje subskrypcje w jednym miejscu"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Anulowanie subskrypcji nie jest dostępne dla tego nadawcy"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15949,6 +16075,32 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Subskrypcja została anulowana."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Szyfrowany menadżer haseł"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay — karta kończąca się na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Przelew bankowy — ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ miesiąc"
+      ],
+      "Only": [
+        "Tylko"
       ]
     }
   }

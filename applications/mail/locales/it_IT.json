@@ -4884,6 +4884,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
+      ],
+      "No address with sending permissions": [
+        "Nessun indirizzo con autorizzazioni di invio"
+      ],
+      "Permissions request failed.": [
+        "Richiesta di autorizzazioni non riuscita."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7118,8 +7124,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8549,6 +8554,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "Non ci sono messaggi da questo mittente nella tua posta in arrivo."
+      ],
+      "Dedicated VPN servers": [
+        "Server VPN dedicati"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Numero di server VPN dedicati nell'organizzazione"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Perderai anche l'accesso alle funzionalità di ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -11391,6 +11405,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Il tuo dominio e il tuo abbonamento sono pronti per essere usati."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }: non vedrai mai annunci sponsorizzati nelle nostre app."
+      ],
+      "Ad-free promise": [
+        "Il nostro impegno senza pubblicità"
       ]
     },
     "Onboarding Proton": {
@@ -15437,6 +15457,11 @@
       ],
       "Bank transfer - ${ details }": [
         "Bonifico bancario - ${ details }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "Abbonamento annullato."
       ]
     }
   }

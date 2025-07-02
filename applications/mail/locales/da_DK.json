@@ -1546,6 +1546,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Move to Archive": [
+        "Flyt til arkiv"
+      ],
+      "Send unsubscribe email": [
+        "Send afmeldings-e-mail"
       ]
     },
     "action": {
@@ -6053,8 +6059,8 @@
         "${ trackersCount } trackere blokeret"
       ],
       "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } ulæst nyhed",
-        "${ unreadCount } ulæste nyheder"
+        "${ unreadCount } nyhedsbrevsabonnement",
+        "${ unreadCount } nyhedsbrevsabonnementer"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } planlagt besked",
@@ -6314,7 +6320,7 @@
         "Browser understøttes ikke"
       ],
       "Bulk delete": [
-        "multisletning"
+        "Masse-slet"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
@@ -6766,8 +6772,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8109,6 +8114,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "${ n } newsletter": [
+        "${ n } nyhedsbrev",
+        "${ n } nyhedsbreve"
       ]
     },
     "info": {
@@ -8777,7 +8786,7 @@
         "Ny adgangskode"
       ],
       "Newsletters": [
-        "Nyheder"
+        "Nyhedsbreve"
       ],
       "No label found": [
         "Ingen etikette fundet"
@@ -9003,6 +9012,9 @@
       ],
       "Your location": [
         "Din placering"
+      ],
+      "Message:": [
+        "Besked:"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13714,10 +13726,10 @@
         "Ny besked"
       ],
       "Newsletters": [
-        "Nyheder"
+        "Nyhedsbreve"
       ],
       "Newsletters view": [
-        "Visning af nyheder"
+        "Visning af nyhedsbreve"
       ],
       "Next conversation": [
         "Næste samtale"
@@ -14077,6 +14089,15 @@
       ],
       "Your subscriptions in one place": [
         "Dine abonnementer ét sted"
+      ],
+      "No unsubscribed newsletters": [
+        "Ingen afmeldte nyhedsbreve"
+      ],
+      "Trash all messages?": [
+        "Flyt alle beskeder til papirkurven?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Afmelding ikke mulig for denne afsender"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14650,6 +14671,22 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ]
+    },
+    "Labels": {
+      "Newsletters you unsubscribe from will show up here.": [
+        "Nyhedsbreve, du afmelder, vises her."
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/måned"
       ]
     }
   }

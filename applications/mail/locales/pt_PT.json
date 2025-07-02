@@ -4868,6 +4868,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa obteve muitas correspondências. Limite a pesquisa e tente novamente."
+      ],
+      "No address with sending permissions": [
+        "Nenhum endereço com permissões de envio"
+      ],
+      "Permissions request failed.": [
+        "Erro no pedido de permissões"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7102,8 +7108,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -8533,6 +8538,15 @@
       ],
       "There are no messages from this sender in your inbox.": [
         "Não há mensagens deste remetente na sua caixa de entrada."
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados na organização"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Também perderá o acesso às funcionalidades do ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -11367,6 +11381,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "O seu domínio e a sua subscrição estão prontos para serem usados."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }: nunca verá anúncios patrocinados nas nossas aplicações."
+      ],
+      "Ad-free promise": [
+        "O nosso compromisso sem anúncios"
       ]
     },
     "Onboarding Proton": {
@@ -15408,6 +15428,11 @@
       ],
       "Bank transfer - ${ details }": [
         "Transferência bancária - ${ details }"
+      ]
+    },
+    "b2b_trials_Success": {
+      "Subscription canceled.": [
+        "A subscrição foi cancelada."
       ]
     }
   }
