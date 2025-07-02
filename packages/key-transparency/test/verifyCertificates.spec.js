@@ -67,7 +67,7 @@ describe('certificate transparency', () => {
             await verifySCT(epochCert, issuerCert);
             errorThrown = false;
         } catch (err) {
-            expect(err.message).toEqual('The number of verified SCTs does not reach the number of operator threshold');
+            expect(err.message).toEqual('SCT verification failed');
         }
         expect(errorThrown).toEqual(true);
     });
@@ -75,7 +75,7 @@ describe('certificate transparency', () => {
 
 describe('certificate chain verification', () => {
     it('Should verify 0SSL certificate', async () => {
-        const now = new Date(1709515033 * SECOND + 24 * HOUR); // 24h after epoch was published.
+        const now = new Date(1743648000 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error;
         try {
             await verifyCertChain(await parseCertChain(zeroSSLCertificateChain), KT_CERTIFICATE_ISSUER.ZEROSSL, now);
@@ -85,7 +85,7 @@ describe('certificate chain verification', () => {
         expect(error).toBeUndefined();
     });
     it('Should verify LE certificate', async () => {
-        const now = new Date(1709529634 * SECOND + 24 * HOUR); // 24h after epoch was published.
+        const now = new Date(1743684323 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error;
         try {
             await verifyCertChain(
