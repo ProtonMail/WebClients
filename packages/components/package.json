@@ -71,9 +71,9 @@
         "ttag": "^1.8.12"
     },
     "devDependencies": {
-        "@babel/core": "^7.27.7",
-        "@babel/plugin-transform-runtime": "^7.27.4",
-        "@babel/preset-env": "^7.27.2",
+        "@babel/core": "^7.28.0",
+        "@babel/plugin-transform-runtime": "^7.28.0",
+        "@babel/preset-env": "^7.28.0",
         "@babel/preset-react": "^7.27.1",
         "@babel/preset-typescript": "^7.27.1",
         "@proton/eslint-config-proton": "workspace:^",
@@ -85,7 +85,7 @@
         "@testing-library/react-hooks": "^8.0.1",
         "@testing-library/user-event": "^14.6.1",
         "@types/jest": "^29.5.14",
-        "@types/three": "^0.177.0",
+        "@types/three": "^0.178.0",
         "@webgpu/types": "^0.1.63",
         "babel-jest": "^29.7.0",
         "babel-plugin-transform-require-context": "^0.1.1",

@@ -27,7 +27,7 @@
         "@protontech/timezone-support": "^2.1.0",
         "@scure/base": "^1.2.6",
         "@sentry/browser": "^7.120.3",
-        "@types/node": "^22.15.34",
+        "@types/node": "^22.16.0",
         "@types/papaparse": "^5.3.16",
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.8",
@@ -44,7 +44,7 @@
         "zod": "^3.25.67"
     },
     "devDependencies": {
-        "@babel/plugin-transform-runtime": "^7.27.4",
+        "@babel/plugin-transform-runtime": "^7.28.0",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@types/jasmine": "^5.1.8",
