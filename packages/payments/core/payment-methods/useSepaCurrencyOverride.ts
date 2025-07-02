@@ -1,5 +1,12 @@
+import { useState } from 'react';
+
 import { PAYMENT_METHOD_TYPES } from '../constants';
-import { type Currency, type PaymentMethodType } from '../interface';
+import {
+    type AvailablePaymentMethod,
+    type Currency,
+    type PaymentMethodType,
+    type PlainPaymentMethodType,
+} from '../interface';
 
 export const getIsCurrencyOverriden = ({
     currentCurrency,
@@ -59,4 +66,52 @@ export const updateCurrencyOverride = ({
             currencyBeforeOverride: undefined,
         };
     }
+};
+
+export const useSepaCurrencyOverride = ({
+    currentCurrency,
+    currentSelectedMethodType,
+    methods,
+}: {
+    currentCurrency: Currency;
+    currentSelectedMethodType: PlainPaymentMethodType | undefined;
+    methods: AvailablePaymentMethod[];
+}) => {
+    const [currencyBeforeOverride, setCurrencyBeforeOverride] = useState<Currency | undefined>(undefined);
+
+    return {
+        isCurrencyOverriden: getIsCurrencyOverriden({ currentCurrency, currencyBeforeOverride }),
+        updateCurrencyOverride: (newPaymentMethodValue: PaymentMethodType | undefined) => {
+            if (!newPaymentMethodValue) {
+                return;
+            }
+
+            const newPaymentType = methods.find((method) => method.value === newPaymentMethodValue)?.type;
+            const userSelectedSEPA = newPaymentType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+
+            // current type is SEPA and the selected type is not SEPA.
+            const userUnselectedSEPA =
+                currentSelectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT &&
+                newPaymentType !== PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+
+            if (!userSelectedSEPA && !userUnselectedSEPA) {
+                return;
+            }
+
+            const result = updateCurrencyOverride({
+                currentCurrency,
+                currencyBeforeOverride,
+                currentSelectedMethod: currentSelectedMethodType,
+                newSelectedMethod: newPaymentType,
+            });
+
+            if (!result) {
+                return;
+            }
+
+            setCurrencyBeforeOverride(result.currencyBeforeOverride);
+
+            return result.currency;
+        },
+    };
 };

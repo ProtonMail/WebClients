@@ -47,6 +47,7 @@ export interface Props {
     billingPlatform?: BillingPlatform;
     chargebeeUserExists?: ChargebeeUserExists;
     enableSepa?: boolean;
+    enableSepaB2C?: boolean;
     user?: User;
     planIDs?: PlanIDs;
     subscription?: Subscription;
@@ -176,6 +177,7 @@ export const useMethods = (
         billingPlatform,
         chargebeeUserExists,
         enableSepa,
+        enableSepaB2C,
         user,
         planIDs,
         subscription,
@@ -196,6 +198,7 @@ export const useMethods = (
         pendingBillingPlatform?: BillingPlatform;
         pendingChargebeeUserExists?: ChargebeeUserExists;
         pendingEnableSepa?: boolean;
+        pendingEnableSepaB2C?: boolean;
         pendingUser?: User;
         pendingPlanIDs?: PlanIDs;
         pendingSubscription?: Subscription;
@@ -262,6 +265,7 @@ export const useMethods = (
                 chargebeeUserExists: overrideChargebeeUserExists ?? chargebeeUserExists,
                 billingAddress,
                 enableSepa,
+                enableSepaB2C,
                 user,
                 planIDs,
                 subscription,
@@ -286,6 +290,7 @@ export const useMethods = (
                     pendingBillingPlatform,
                     pendingChargebeeUserExists,
                     pendingEnableSepa,
+                    pendingEnableSepaB2C,
                     pendingUser,
                     pendingPlanIDs,
                     pendingSubscription,
@@ -327,6 +332,10 @@ export const useMethods = (
 
                 if (pendingEnableSepa !== undefined) {
                     paymentMethodsRef.current.enableSepa = pendingEnableSepa;
+                }
+
+                if (pendingEnableSepaB2C !== undefined) {
+                    paymentMethodsRef.current.enableSepaB2C = pendingEnableSepaB2C;
                 }
 
                 if (pendingBillingPlatform !== undefined) {
@@ -387,6 +396,7 @@ export const useMethods = (
                 pendingSelectedPlanName: selectedPlanName,
                 pendingBillingAddress: billingAddress,
                 pendingEnableSepa: enableSepa,
+                pendingEnableSepaB2C: enableSepaB2C,
                 pendingBillingPlatform: billingPlatform,
                 pendingChargebeeUserExists: chargebeeUserExists,
                 pendingUser: user,
@@ -407,6 +417,7 @@ export const useMethods = (
         paymentMethodsRef.current.selectedPlanName = selectedPlanName;
         paymentMethodsRef.current.billingAddress = billingAddress;
         paymentMethodsRef.current.enableSepa = !!enableSepa;
+        paymentMethodsRef.current.enableSepaB2C = !!enableSepaB2C;
         paymentMethodsRef.current.billingPlatform = billingPlatform;
         paymentMethodsRef.current.chargebeeUserExists = overrideChargebeeUserExists ?? chargebeeUserExists;
         paymentMethodsRef.current.user = user;

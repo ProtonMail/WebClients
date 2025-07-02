@@ -175,6 +175,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                     hideFirstLabel
                     hasSomeVpnPlan={hasSomeVpnPlan}
                     billingAddressStatus={getBillingAddressStatus(payments.options.billingAddress)}
+                    onCurrencyChange={payments.selectCurrency}
                 />
 
                 {(() => {

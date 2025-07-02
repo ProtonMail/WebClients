@@ -104,6 +104,7 @@ export interface PaymentMethodsParameters {
     chargebeeUserExists?: ChargebeeUserExists;
     billingAddress?: BillingAddress;
     enableSepa?: boolean;
+    enableSepaB2C?: boolean;
     user?: User;
     planIDs?: PlanIDs;
     subscription?: Subscription | FreeSubscription;
@@ -217,13 +218,24 @@ export class PaymentMethods {
 
     public enableSepa: boolean;
 
+    public enableSepaB2C: boolean;
+
     public user: User | undefined;
 
     public planIDs: PlanIDs | undefined;
 
     public subscription: Subscription | FreeSubscription | undefined;
 
-    public readonly directDebitEnabledFlows: readonly PaymentMethodFlows[] = ['subscription'];
+    public readonly directDebitEnabledFlows: readonly PaymentMethodFlows[] = [
+        'signup',
+        'signup-pass',
+        'signup-pass-upgrade',
+        'signup-wallet',
+        'signup-v2',
+        'signup-v2-upgrade',
+        'signup-vpn',
+        'subscription',
+    ];
 
     public canUseApplePay: boolean;
 
@@ -242,6 +254,7 @@ export class PaymentMethods {
         chargebeeUserExists,
         billingAddress,
         enableSepa,
+        enableSepaB2C,
         user,
         planIDs,
         subscription,
@@ -261,6 +274,7 @@ export class PaymentMethods {
         this.chargebeeUserExists = chargebeeUserExists;
         this.billingAddress = billingAddress;
         this.enableSepa = !!enableSepa;
+        this.enableSepaB2C = !!enableSepaB2C;
         this.user = user;
         this.planIDs = planIDs;
         this.subscription = subscription;
@@ -443,7 +457,12 @@ export class PaymentMethods {
         const cbUser = this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
 
         return (
-            flowSupportsDirectDebit && billingCountrySupportsSEPA && cbUser && !this.isBF2024Offer() && this.isB2BPlan()
+            flowSupportsDirectDebit &&
+            billingCountrySupportsSEPA &&
+            cbUser &&
+            !this.isBF2024Offer() &&
+            // separate flag for B2C plans
+            (this.isB2BPlan() || this.enableSepaB2C)
         );
     }
 
@@ -634,6 +653,7 @@ export async function initializePaymentMethods({
     chargebeeUserExists?: ChargebeeUserExists;
     billingAddress?: BillingAddress;
     enableSepa?: boolean;
+    enableSepaB2C?: boolean;
     user?: User;
     planIDs?: PlanIDs;
     subscription?: Subscription;

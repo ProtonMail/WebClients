@@ -27,6 +27,7 @@ import {
     type SavedPaymentMethodExternal,
     type SavedPaymentMethodInternal,
     canUseChargebee,
+    type useSepaCurrencyOverride,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ChargebeeEnabled, User } from '@proton/shared/lib/interfaces';
@@ -52,9 +53,7 @@ import PaymentMethodSelector from './methods/PaymentMethodSelector';
 
 export interface Props {
     children?: ReactNode;
-    type: PaymentMethodFlows;
-    amount?: number;
-    currency?: Currency;
+    flow: PaymentMethodFlows;
     method?: PaymentMethodType;
     onMethod: (value: PaymentMethodType | undefined) => void;
     paypal: any;
@@ -63,7 +62,6 @@ export interface Props {
     paymentStatus: PaymentMethodStatusExtended | undefined;
     disabled?: boolean;
     paypalPrefetchToken?: boolean;
-    isAuthenticated?: boolean;
     hideFirstLabel?: boolean;
     triggersDisabled?: boolean;
     hideSavedMethodsDetails?: boolean;
@@ -74,9 +72,7 @@ export interface Props {
     hasSomeVpnPlan: boolean;
     user: User | undefined;
     isTrial?: boolean;
-}
-
-export interface NoApiProps extends Props {
+    currencyOverride: ReturnType<typeof useSepaCurrencyOverride>;
     lastUsedMethod?: ViewPaymentMethod;
     allMethods: ViewPaymentMethod[];
     isAuthenticated: boolean;
@@ -96,12 +92,11 @@ export interface NoApiProps extends Props {
     onChargebeeInitialized?: () => void;
     showCardIcons?: boolean;
     savedPaymentMethods: SavedPaymentMethod[];
-    isCurrencyOverriden: boolean;
 }
 
 export const PaymentsNoApi = ({
     children,
-    type,
+    flow,
     amount,
     currency,
     paypal,
@@ -139,8 +134,8 @@ export const PaymentsNoApi = ({
     showCardIcons,
     savedPaymentMethods,
     isTrial,
-    isCurrencyOverriden,
-}: NoApiProps) => {
+    currencyOverride,
+}: Props) => {
     const { APP_NAME } = useConfig();
 
     const isBitcoinMethod =
@@ -168,7 +163,7 @@ export const PaymentsNoApi = ({
         }
     }, [loading, allMethods.length]);
 
-    if (type === 'credit' && amount < MIN_CREDIT_AMOUNT) {
+    if (flow === 'credit' && amount < MIN_CREDIT_AMOUNT) {
         const price = (
             <Price key="price" currency={currency}>
                 {MIN_CREDIT_AMOUNT}
@@ -193,17 +188,17 @@ export const PaymentsNoApi = ({
         return <Loader />;
     }
 
-    const isSignupPass = type === 'signup-pass' || type === 'signup-pass-upgrade';
-    const isSignupVpn = type === 'signup-vpn';
-    const isSignupWallet = type === 'signup-wallet';
+    const isSignupPass = flow === 'signup-pass' || flow === 'signup-pass-upgrade';
+    const isSignupVpn = flow === 'signup-vpn';
+    const isSignupWallet = flow === 'signup-wallet';
     const isSingleSignup = isSignupPass || isSignupVpn || isSignupWallet;
     const showAlert3ds = !(
-        type === 'signup' ||
+        flow === 'signup' ||
         isSignupPass ||
         isSignupVpn ||
         isSignupWallet ||
-        type === 'signup-v2' ||
-        type === 'signup-v2-upgrade'
+        flow === 'signup-v2' ||
+        flow === 'signup-v2-upgrade'
     );
 
     const sharedCbProps: Pick<
@@ -233,7 +228,7 @@ export const PaymentsNoApi = ({
         // by having a saved v4 payment method and the chargebeeEnabled flag being set to CHARGEBEE_ALLOWED.
         (savedMethod?.Type === PAYMENT_METHOD_TYPES.CARD && canUseChargebee(isChargebeeEnabled()));
 
-    const defaultPaymentMethodMessage = type === 'subscription' && (
+    const defaultPaymentMethodMessage = flow === 'subscription' && (
         <DefaultPaymentMethodMessage
             className="mt-4"
             savedPaymentMethods={savedPaymentMethods}
@@ -276,7 +271,10 @@ export const PaymentsNoApi = ({
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
                     {method === PAYMENT_METHOD_TYPES.APPLE_PAY && <ApplePayView />}
                     {method === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
-                        <SepaDirectDebit {...sharedCbProps} isCurrencyOverriden={isCurrencyOverriden} />
+                        <SepaDirectDebit
+                            {...sharedCbProps}
+                            isCurrencyOverriden={currencyOverride.isCurrencyOverriden}
+                        />
                     )}
                     {(() => {
                         if (!showBitcoinMethod) {
@@ -333,7 +331,7 @@ export const PaymentsNoApi = ({
                             paypalCredit={paypalCredit}
                             amount={amount}
                             currency={currency}
-                            type={type}
+                            type={flow}
                             disabled={disabled}
                             prefetchToken={paypalPrefetchToken}
                             onClick={onPaypalCreditClick}

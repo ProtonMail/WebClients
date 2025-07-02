@@ -78,6 +78,7 @@ enum AccountFlag {
 
 enum PaymentsFlag {
     SepaPayments = 'SepaPayments',
+    SepaPaymentsB2C = 'SepaPaymentsB2C',
     TransactionsView = 'TransactionsView',
     ApplePayWeb = 'ApplePayWeb',
 }
