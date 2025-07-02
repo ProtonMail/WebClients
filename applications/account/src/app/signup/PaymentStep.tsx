@@ -132,6 +132,7 @@ const PaymentStep = ({
             });
         },
         flow: 'signup',
+        billingAddress: subscriptionData.billingAddress,
     });
 
     useEffect(() => {
@@ -348,6 +349,7 @@ const PaymentStep = ({
                                 noMaxWidth
                                 hasSomeVpnPlan={hasSomeVpnPlan}
                                 billingAddressStatus={getBillingAddressStatus(subscriptionData.billingAddress)}
+                                onCurrencyChange={onChangeCurrency}
                             />
                         ) : (
                             <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
