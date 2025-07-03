@@ -167,7 +167,6 @@ enum MailFeatureFlag {
     NewsletterSubscriptionView = 'NewsletterSubscriptionView',
     RemoveReplyStyles = 'RemoveReplyStyles',
     MailboxOptimisticRefactoring = 'MailboxOptimisticRefactoring',
-    SaveAttachmentsToDrive = 'MailSaveAttachmentsToDrive',
     // Category view
     ShowMessageCategory = 'ShowMessageCategory',
     MailCategoryView = 'MailCategoryView',
