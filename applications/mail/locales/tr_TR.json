@@ -730,9 +730,6 @@
       "Keep my subscription": [
         "Aboneliğimi sürdür"
       ],
-      "Keep subscription": [
-        "Aboneliği sürdür"
-      ],
       "Label as": [
         "Etiketle"
       ],
@@ -1421,8 +1418,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1486,6 +1482,9 @@
       ],
       "Upgrade": [
         "Yükselt"
+      ],
+      "Upgrade Now": [
+        "Şimdi yükselt"
       ],
       "Upgrade now": [
         "Şimdi yükselt"
@@ -1583,6 +1582,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Bilgisayar uygulamasını ücretsiz deneme süreniz 2 gün sonra sona erecek. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Bilgisayar uygulamasını ücretsiz deneme süreniz 5 gün sonra sona erecek. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "E-posta yazma yardımcınız"
@@ -7111,7 +7119,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -14722,10 +14731,6 @@
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Ücretsiz deneme süreniz ${ trialDurationFormatted } gün sonra bitecek",
-        "Ücretsiz deneme süreniz ${ trialDurationFormatted } gün sonra bitecek"
       ],
       "Your free trial has ended": [
         "Ücretsiz deneme süreniz sona erdi"

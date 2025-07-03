@@ -736,9 +736,6 @@
       "Keep my subscription": [
         "Manter a minha assinatura"
       ],
-      "Keep subscription": [
-        "Manter a subscrição"
-      ],
       "Label as": [
         "Etiquetar como"
       ],
@@ -1426,10 +1423,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
-      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -1492,6 +1485,9 @@
       ],
       "Upgrade": [
         "Actualizar"
+      ],
+      "Upgrade Now": [
+        "Atualizar agora"
       ],
       "Upgrade now": [
         "Actualizar agora"
@@ -1589,6 +1585,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contacto.",
         "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contactos."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "A sua avaliação gratuita da aplicação para desktop termina em 2 dias. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "A sua avaliação gratuita da aplicação para desktop termina em 5 dias. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "A sua avaliação gratuita da aplicação para desktop termina em ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "O seu assistente de escrita de e-mail"
@@ -1926,11 +1931,6 @@
       ],
       "Sender verification passed": [
         "Verificação do remetente aprovada"
-      ]
-    },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "A subscrição foi cancelada."
       ]
     },
     "bf2023: Deal details": {
@@ -7115,7 +7115,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -14812,10 +14813,6 @@
       ],
       "Your exposed information": [
         "As suas informações expostas"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "A sua avaliação gratuita termina em ${ trialDurationFormatted } dia.",
-        "A sua avaliação gratuita termina em ${ trialDurationFormatted } dias."
       ],
       "Your free trial has ended": [
         "Sua avaliação gratuita terminou"

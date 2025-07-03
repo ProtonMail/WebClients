@@ -1378,10 +1378,6 @@
       "Trust": [
         "Hav tillid til"
       ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
-      ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
       ],
@@ -1444,6 +1440,9 @@
       ],
       "Upgrade": [
         "Opgradér"
+      ],
+      "Upgrade Now": [
+        "Opgradere nu"
       ],
       "Upgrade now": [
         "Opgradér nu"
@@ -1535,6 +1534,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Din desktop app's gratis prøveperiode slutter om 2 dage. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Din desktop app's gratis prøveperiode slutter om 5 dage. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
       ],
       "Your email writing assistant": [
         "Din assistent til at skrive e-mails"
@@ -6774,7 +6782,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
