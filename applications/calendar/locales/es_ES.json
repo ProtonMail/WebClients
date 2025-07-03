@@ -452,9 +452,6 @@
       "Keep my subscription": [
         "Mantener mi suscripción"
       ],
-      "Keep subscription": [
-        "Mantener la suscripción"
-      ],
       "Later": [
         "Más tarde"
       ],
@@ -1199,9 +1196,17 @@
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Se ha cancelado la suscripción."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar la suscripción"
+      ],
+      "Keep subscription": [
+        "Mantener la suscripción"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Tu periodo de prueba gratuito termina en ${ timeRemaining }"
       ]
     },
     "Badge": {
@@ -11190,10 +11195,6 @@
       ],
       "Your exposed information": [
         "Tus datos expuestos"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Tu prueba gratuita termina en ${ trialDurationFormatted } día.",
-        "Tu prueba gratuita termina en ${ trialDurationFormatted } días"
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."

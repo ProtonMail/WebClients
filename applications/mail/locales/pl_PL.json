@@ -339,6 +339,9 @@
       "Create folder": [
         "Utwórz folder"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Utwórz folder ${ boldFolderName }"
+      ],
       "Create label": [
         "Utwórz etykietę"
       ],
@@ -401,6 +404,12 @@
       ],
       "Delete permanently": [
         "Usuń trwale"
+      ],
+      "Deleting folder": [
+        "Usuwanie folderu"
+      ],
+      "Deleting label": [
+        "Usuwanie etykiety"
       ],
       "Deselect all": [
         "Odznacz wszystkie"
@@ -733,9 +742,6 @@
         "Kursywa"
       ],
       "Keep my subscription": [
-        "Zachowaj subskrypcję"
-      ],
-      "Keep subscription": [
         "Zachowaj subskrypcję"
       ],
       "Label as": [
@@ -1426,10 +1432,7 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom"
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1474,7 +1477,7 @@
         "Anuluj subskrypcję"
       ],
       "Unsubscribed": [
-        "Subskrypcja została anulowana"
+        "Anulowane"
       ],
       "Unsubscribing": [
         "Anulowanie subskrypcji"
@@ -1493,6 +1496,9 @@
       ],
       "Upgrade": [
         "Ulepsz"
+      ],
+      "Upgrade Now": [
+        "Ulepsz teraz"
       ],
       "Upgrade now": [
         "Ulepsz teraz"
@@ -1592,6 +1598,15 @@
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakty",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Darmowa wersja próbna aplikacji desktopowej zakończy się za 2 dni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Darmowa wersja próbna aplikacji desktopowej zakończy się za 5 dni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Darmowa wersja próbna aplikacji desktopowej zakończy się ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Twój asystent pisania"
@@ -1947,6 +1962,19 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Anuluj subskrypcję"
+      ],
+      "Keep subscription": [
+        "Zachowaj subskrypcję"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Darmowa wersja próbna zakończy się za ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -4610,6 +4638,9 @@
       "No address with keys available to compose a message": [
         "Brak adresu z dostępnymi kluczami do utworzenia wiadomości"
       ],
+      "No address with sending permissions": [
+        "Brak adresu z uprawnieniami do wysyłania"
+      ],
       "No calendars found to import": [
         "Brak kalendarzy do zaimportowania"
       ],
@@ -4660,6 +4691,9 @@
       ],
       "Payment process not supported": [
         "Przetwarzanie płatności nie jest obsługiwane"
+      ],
+      "Permissions request failed.": [
+        "Żądanie uprawnień nie powiodło się."
       ],
       "Please activate your search again": [
         "Włącz ponownie wyszukiwanie"
@@ -6385,6 +6419,12 @@
         "${ messagesNotAuthorizedToMove } wiadomości nie mogło zostać przeniesionych.",
         "${ messagesNotAuthorizedToMove } wiadomości nie mogło zostać przeniesionych."
       ],
+      "${ n } newsletter": [
+        "${ n } newsletter",
+        "${ n } newslettery",
+        "${ n } newsletterów",
+        "${ n } newsletterów"
+      ],
       "${ n } unread conversation": [
         "${ n } nieprzeczytany wątek",
         "${ n } nieprzeczytane wątki",
@@ -6814,6 +6854,9 @@
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
       ],
+      "Block sender": [
+        "Zablokuj nadawcę"
+      ],
       "Body: ": [
         "Treść: "
       ],
@@ -6966,6 +7009,9 @@
       ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "Dedicated VPN servers": [
+        "Dedykowane serwery VPN"
       ],
       "default email address": [
         "domyślny adres e-mail"
@@ -7331,7 +7377,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -7543,6 +7592,9 @@
       "No links cleaned": [
         "Brak wyczyszczonych linków"
       ],
+      "No messages to show": [
+        "Brak wiadomości"
+      ],
       "No more results found": [
         "Nie znaleziono więcej wyników"
       ],
@@ -7572,6 +7624,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Liczba dedykowanych serwerów VPN organizacji"
       ],
       "Numbers": [
         "Cyfry"
@@ -7719,6 +7774,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Poczekaj na sprawdzenie kontaktów, które zawierają zaszyfrowane dane za pomocą nieaktywnego klucza."
+      ],
+      "Preferences updated": [
+        "Ustawienia zostały zaktualizowane"
       ],
       "Preview failed to be loaded": [
         "Załadowanie podglądu nie powiodło się"
@@ -8064,6 +8122,9 @@
       ],
       "Themes can give your inbox a new look.": [
         "Motywy zapewniają Twojej skrzynce nowy wygląd."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Brak wiadomości od tego nadawcy."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Wystąpił błąd z podpisem używanym do weryfikowania szczegółów kontaktu, którego powodem może być zresetowane hasło."
@@ -8779,6 +8840,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Wersja próbna zakończy się za ${ timeRemaining }."
       ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Stracisz również dostęp do funkcji planu ${ boldPlanTitle }:"
+      ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Stracisz dostęp do planu ${ boldPlanTitle } ${ boldEndDate }."
       ],
@@ -9218,6 +9282,9 @@
       "CC": [
         "DW"
       ],
+      "Choose what to do instead": [
+        "Wybierz, co zrobić zamiast tego"
+      ],
       "City": [
         "Miasto"
       ],
@@ -9337,6 +9404,9 @@
       ],
       "Extended address": [
         "Rozszerzony adres"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Nie udało się utworzyć folderu ${ customFolderName }"
       ],
       "Filter Name": [
         "Nazwa filtra"
@@ -9463,6 +9533,12 @@
       ],
       "Move to Inbox": [
         "Przenieś do Odebranych"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "Przeniesiono ${ count } wiadomość do folderu ${ labelName }.",
+        "Przeniesiono ${ count } wiadomości do folderu ${ labelName }.",
+        "Przeniesiono ${ count } wiadomości do folderu ${ labelName }.",
+        "Przeniesiono ${ count } wiadomości do folderu ${ labelName }."
       ],
       "Moved ${ count } message to Archive.": [
         "Przeniesiono ${ count } wiadomość do archiwum.",
@@ -11468,8 +11544,14 @@
       "${ pricingTitle } offer expires today!": [
         "Oferta ${ pricingTitle } wygasa dzisiaj!"
       ],
+      "Don’t show this again": [
+        "Nie pokazuj ponownie"
+      ],
       "Don’t show this offer again": [
         "Nie pokazuj tej oferty ponownie"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Wybierz plan ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Wybierz plan Drive Plus za ${ pricingTitle }"
@@ -11523,9 +11605,20 @@
         "Subskrypcja odnowi się wkrótce"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Szyfrowany menadżer haseł"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 więcej funkcji premium"
+      ],
+      "500 GB secure storage": [
+        "500 GB bezpiecznej przestrzeni dyskowej"
+      ],
+      "Advanced threat protection": [
+        "Zaawansowana ochrona przed zagrożeniami"
       ],
       "Custom email domain": [
         "Niestandardowa domena"
@@ -11547,6 +11640,12 @@
       ],
       "Storage": [
         "Przestrzeń dyskowa"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultraszybkie serwery w ponad 110 krajach"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Nieograniczona liczba aliasów chroniących tożsamość"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11570,6 +11669,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } oznacza to, że nigdy nie zobaczysz reklam sponsorowanych w naszych aplikacjach."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } zapewnia, że tylko Ty i Twoi odbiorcy mają dostęp do wiadomości."
       ],
@@ -11590,6 +11692,9 @@
       ],
       "Activate selected": [
         "Aktywuj zaznaczone"
+      ],
+      "Ad-free promise": [
+        "Obietnica braku reklam"
       ],
       "Advanced encryption": [
         "Zaawansowane szyfrowanie"
@@ -11917,6 +12022,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Przelew bankowy"
       ],
@@ -11959,6 +12067,9 @@
       ],
       "More plans are available in other currencies": [
         "Więcej planów jest dostępnych w innych walutach"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "W przelewach SEPA akceptowane jest tylko euro. Waluta została zmieniona. Użyj formularza, aby przywrócić swój wybór."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
@@ -12047,6 +12158,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay — karta kończąca się na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Przelew bankowy — ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -12978,8 +13097,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Przeglądaj bezpiecznie"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Zrób więcej z ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Uzyskaj nieograniczoną liczbę aliasów"
+      ],
       "Go to subscription plans": [
         "Przejdź do planów subskrypcji"
+      ],
+      "Guard against threats": [
+        "Ochrona przed zagrożeniami"
+      ],
+      "Increase your storage": [
+        "Zwiększ przestrzeń dyskową"
+      ],
+      "Keep passwords safe": [
+        "Przechowuj hasła bezpiecznie"
+      ],
+      "Unblock streaming content": [
+        "Odblokuj streaming"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -13060,6 +13200,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Uzyskaj dostęp do streamingu na całym świecie"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Uzyskaj 500 GB na bezpieczne przechowywanie wszystkich plików i zdjęć"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Uzyskaj dostęp do ultraszybkich serwerów VPN w ponad 110 krajach"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Uzyskaj jeden plan, który zawiera wszystko. Uzyskaj plan ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Uzyskaj nieograniczoną liczbę aliasów, aby chronić swoją tożsamość i ograniczyć spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Przechowuj hasła bezpiecznie i uporządkowane w wielu sejfach"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Chroń swoje konto przed zagrożeniami dzięki funkcji Proton Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Ulepsz konto i zaoszczędź więcej dzięki dwuletniemu planowi ${ planName }"
       ]
@@ -15163,6 +15324,9 @@
       "Unsubscribe from ${ subscription.Name }?": [
         "Anulować subskrypcję ${ subscription.Name }?"
       ],
+      "Unsubscribe not available for this sender": [
+        "Anulowanie subskrypcji nie jest dostępne dla tego nadawcy"
+      ],
       "Unsubscribe request sent": [
         "Żądanie anulowania subskrypcji zostało wysłane"
       ],
@@ -15240,12 +15404,6 @@
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dzień",
-        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dni",
-        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dni",
-        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dnia"
       ],
       "Your free trial has ended": [
         "Darmowa wersja próbna zakończyła się"
@@ -15362,6 +15520,14 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Ta wersja przeglądarki Tor nie jest obsługiwana. Zaktualizuj ją do najnowszej ${ stableRelease }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ miesiąc"
+      ],
+      "Only": [
+        "Tylko"
       ]
     },
     "unprivatization": {

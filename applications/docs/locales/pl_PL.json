@@ -93,6 +93,9 @@
       "Apply": [
         "Zastosuj"
       ],
+      "Ask me next time": [
+        "Zapytaj później"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakt",
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakty",
@@ -456,9 +459,6 @@
       "Keep my subscription": [
         "Zachowaj subskrypcję"
       ],
-      "Keep subscription": [
-        "Zachowaj subskrypcję"
-      ],
       "Learn more": [
         "Dowiedz się więcej"
       ],
@@ -683,6 +683,9 @@
       ],
       "Save changes": [
         "Zapisz zmiany"
+      ],
+      "Save preferences": [
+        "Zapisz ustawienia"
       ],
       "Search": [
         "Szukaj"
@@ -1131,6 +1134,19 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Anuluj subskrypcję"
+      ],
+      "Keep subscription": [
+        "Zachowaj subskrypcję"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Darmowa wersja próbna zakończy się za ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -4523,6 +4539,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt został usunięty z grupy ${ contactGroupName }"
       ],
+      "Converting document...": [
+        "Konwertowanie dokumentu..."
+      ],
       "Copy the link to clipboard": [
         "Kopiuj link do schowka"
       ],
@@ -4571,6 +4590,9 @@
       "Creating link to folder": [
         "Tworzenie linku do folderu"
       ],
+      "Creating new document...": [
+        "Tworzenie nowego dokumentu..."
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Niewykorzystane środki z poprzedniego planu"
       ],
@@ -4585,6 +4607,9 @@
       ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "Dedicated VPN servers": [
+        "Dedykowane serwery VPN"
       ],
       "default email address": [
         "domyślny adres e-mail"
@@ -4688,6 +4713,12 @@
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Wystąpił błąd podczas konwertowania dokumentu: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Wystąpił błąd podczas ładowania dokumentu: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Błąd synchronizacji"
       ],
@@ -4747,6 +4778,12 @@
       ],
       "Geoblocking": [
         "Blokada geograficzna"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Otrzymaj wiadomości o komentarzach i sugestiach w dokumentach."
+      ],
+      "Get Notified About Comments": [
+        "Otrzymaj powiadomienia o komentarzach"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Przejdź do ${ DRIVE_APP_NAME }"
@@ -4898,6 +4935,9 @@
       "Low Priority": [
         "Niski priorytet"
       ],
+      "Making a copy...": [
+        "Tworzenie kopii..."
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -4940,6 +4980,9 @@
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
       ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Adres URL nie zawiera dokumentu. Wróć do ${ DRIVE_APP_NAME } i wybierz dokument."
+      ],
       "No email address": [
         "Brak adresu e-mail"
       ],
@@ -4969,6 +5012,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Liczba dedykowanych serwerów VPN organizacji"
       ],
       "Numbers": [
         "Cyfry"
@@ -5287,6 +5333,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Właściciel adresu wyłączył szyfrowanie end-to-end. Aby móc wysyłać wiadomości zaszyfrowane na ten adres, właściciel musi ponownie włączyć szyfrowanie end-to-end."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Adres URL został nieprawidłowo skopiowany ze Slacka. Zamiast bezpośrednio kopiować skrócony adresu URL, kliknij link prawym przyciskiem, a następnie wybierz opcję \"Kopiuj adres linku\"."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien."
@@ -5744,6 +5793,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Wersja próbna zakończy się za ${ timeRemaining }."
       ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Stracisz również dostęp do funkcji planu ${ boldPlanTitle }:"
+      ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Stracisz dostęp do planu ${ boldPlanTitle } ${ boldEndDate }."
       ],
@@ -6024,6 +6076,9 @@
       "Emails (last month)": [
         "Wiadomości (ostatni miesiąc)"
       ],
+      "Enable email notifications": [
+        "Włącz powiadomienia e-mail"
+      ],
       "Encrypt emails": [
         "Zaszyfruj wiadomości"
       ],
@@ -6080,6 +6135,9 @@
       ],
       "Import to:": [
         "Importuj do:"
+      ],
+      "Include document name in notification": [
+        "Dołącz nazwę dokumentu w powiadomieniu"
       ],
       "Include message and file name in invite email": [
         "Dołącz wiadomość i nazwę pliku w zaproszeniu"
@@ -8114,6 +8172,9 @@
       "The link to your item was deleted": [
         "Link do elementu został usunięty"
       ],
+      "The spreadsheet failed to be created": [
+        "Utworzenie arkusza kalkulacyjnego nie powiodło się"
+      ],
       "Trash failed to be emptied": [
         "Opróżnienie kosza nie powiodło się"
       ],
@@ -8157,8 +8218,14 @@
       "${ pricingTitle } offer expires today!": [
         "Oferta ${ pricingTitle } wygasa dzisiaj!"
       ],
+      "Don’t show this again": [
+        "Nie pokazuj ponownie"
+      ],
       "Don’t show this offer again": [
         "Nie pokazuj tej oferty ponownie"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Wybierz plan ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Wybierz plan Drive Plus za ${ pricingTitle }"
@@ -8212,9 +8279,20 @@
         "Subskrypcja odnowi się wkrótce"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Szyfrowany menadżer haseł"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 więcej funkcji premium"
+      ],
+      "500 GB secure storage": [
+        "500 GB bezpiecznej przestrzeni dyskowej"
+      ],
+      "Advanced threat protection": [
+        "Zaawansowana ochrona przed zagrożeniami"
       ],
       "Custom email domain": [
         "Niestandardowa domena"
@@ -8236,6 +8314,12 @@
       ],
       "Storage": [
         "Przestrzeń dyskowa"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultraszybkie serwery w ponad 110 krajach"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Nieograniczona liczba aliasów chroniących tożsamość"
       ]
     },
     "Onboarding Trial": {
@@ -8413,6 +8497,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Przelew bankowy"
       ],
@@ -8455,6 +8542,9 @@
       ],
       "More plans are available in other currencies": [
         "Więcej planów jest dostępnych w innych walutach"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "W przelewach SEPA akceptowane jest tylko euro. Waluta została zmieniona. Użyj formularza, aby przywrócić swój wybór."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
@@ -8543,6 +8633,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay — karta kończąca się na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Przelew bankowy — ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -9275,8 +9373,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Przeglądaj bezpiecznie"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Zrób więcej z ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Uzyskaj nieograniczoną liczbę aliasów"
+      ],
       "Go to subscription plans": [
         "Przejdź do planów subskrypcji"
+      ],
+      "Guard against threats": [
+        "Ochrona przed zagrożeniami"
+      ],
+      "Increase your storage": [
+        "Zwiększ przestrzeń dyskową"
+      ],
+      "Keep passwords safe": [
+        "Przechowuj hasła bezpiecznie"
+      ],
+      "Unblock streaming content": [
+        "Odblokuj streaming"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -9357,6 +9476,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Uzyskaj dostęp do streamingu na całym świecie"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Uzyskaj 500 GB na bezpieczne przechowywanie wszystkich plików i zdjęć"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Uzyskaj dostęp do ultraszybkich serwerów VPN w ponad 110 krajach"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Uzyskaj jeden plan, który zawiera wszystko. Uzyskaj plan ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Uzyskaj nieograniczoną liczbę aliasów, aby chronić swoją tożsamość i ograniczyć spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Przechowuj hasła bezpiecznie i uporządkowane w wielu sejfach"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Chroń swoje konto przed zagrożeniami dzięki funkcji Proton Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Ulepsz konto i zaoszczędź więcej dzięki dwuletniemu planowi ${ planName }"
       ]
@@ -10536,6 +10676,9 @@
       "Untitled document ${ date }": [
         "Dokument bez nazwy ${ date }"
       ],
+      "Untitled spreadsheet ${ date }": [
+        "Arkusz kalkulacyjny bez nazwy ${ date }"
+      ],
       "Upgrade complete!": [
         "Ulepszenie zakończone!"
       ],
@@ -10610,12 +10753,6 @@
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dzień",
-        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dni",
-        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dni",
-        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dnia"
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
@@ -10712,6 +10849,14 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ miesiąc"
+      ],
+      "Only": [
+        "Tylko"
       ]
     },
     "unprivatization": {

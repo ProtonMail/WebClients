@@ -865,9 +865,6 @@
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
-      "Keep subscription": [
-        "Behåll prenumeration"
-      ],
       "label emails as": [
         "märk e-postmeddelanden som"
       ],
@@ -973,6 +970,9 @@
       "Next month": [
         "Nästa månad"
       ],
+      "Next page": [
+        "Nästa sida"
+      ],
       "No": [
         "Nej"
       ],
@@ -1017,6 +1017,9 @@
       ],
       "Previous month": [
         "Föregående månad"
+      ],
+      "Previous page": [
+        "Föregående sida"
       ],
       "Publish changes": [
         "Publicera ändringar"
@@ -1977,9 +1980,17 @@
         "Jag är inte på kontoret och har begränsad åtkomst till min e-post."
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Prenumeration avslutad."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Avsluta prenumeration"
+      ],
+      "Keep subscription": [
+        "Behåll prenumeration"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Din gratis provperiod slutar om ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -12827,6 +12838,9 @@
       "Sign out": [
         "Logga ut"
       ],
+      "Two password mode disabled": [
+        "Två-lösenordsläge inaktiverat"
+      ],
       "Unknown": [
         "Okänd"
       ]
@@ -16205,8 +16219,8 @@
       "Blocked": [
         "Blockerad"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Enhetsverifiering"
@@ -20685,10 +20699,6 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Din gratis provperiod slutar om ${ trialDurationFormatted } dag",
-        "Din gratis provperiod slutar om ${ trialDurationFormatted } dagar"
       ],
       "Your plan": [
         "Ditt paket"
