@@ -90,13 +90,9 @@ const order = [
 ];
 
 export const parameters = {
-    viewMode: 'docs',
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: { expanded: true },
     docs: { theme: storybookTheme },
-    previewTabs: {
-        canvas: { hidden: true },
-    },
     options: {
         storySort: (a, b) => {
             const aName = a[0];
@@ -111,4 +107,8 @@ export const parameters = {
             return a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
         },
     },
+    previewTabs: {
+        canvas: { hidden: true },
+    },
+    viewMode: 'docs',
 };
