@@ -48,14 +48,15 @@ const UserSection = ({ info, upgrade }: { info: UserDropdownValue['info']; upgra
     if (viewportWidth['<=small']) {
         return (
             <div className="p-4 flex justify-space-between">
-                {info.planName ? (
+                {info.planNames.map((planName) => (
                     <span
                         className="inline-block py-px px-1 text-sm rounded-sm userDropdown-planname"
                         data-testid="userdropdown:label:plan-name"
+                        key={planName}
                     >
-                        {info.planName}
+                        {planName}
                     </span>
-                ) : null}
+                ))}
 
                 {info.organizationName ? (
                     <span
@@ -129,14 +130,15 @@ const UserSection = ({ info, upgrade }: { info: UserDropdownValue['info']; upgra
                 ) : null}
 
                 <div className="flex justify-center gap-2 empty:hidden">
-                    {info.planName ? (
+                    {info.planNames.map((planName) => (
                         <span
                             className="inline-block py-px px-1 text-sm rounded-sm userDropdown-planname"
                             data-testid="userdropdown:label:plan-name"
+                            key={planName}
                         >
-                            {info.planName}
+                            {planName}
                         </span>
-                    ) : null}
+                    ))}
 
                     {upgrade.display ? (
                         <SettingsLink

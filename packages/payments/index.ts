@@ -351,6 +351,7 @@ export {
     getRenewalTime,
     getScribeAddonNameByPlan,
     getSubscriptionPlanTitle as getSubscriptionPlanTitleAndName,
+    getSubscriptionPlanTitles,
     getSubscriptionsArray,
     getUpgradedPlan,
     getValidAudience,
