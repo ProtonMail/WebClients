@@ -5,15 +5,15 @@ const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
 const getOptimization = require('@proton/pack/webpack/optimization');
 
 module.exports = {
+    addons: ['@storybook/addon-links', '@storybook/addon-storysource', '@storybook/addon-essentials'],
     core: {
         builder: 'webpack5',
     },
+    staticDirs: ['../src/assets', '../src/assets/favicons'],
     stories: [
         '../src/stories/**/*.stories.@(mdx|js|jsx|ts|tsx)',
         '../../../packages/atoms/**/*.stories.@(js|jsx|ts|tsx)',
     ],
-    addons: ['@storybook/addon-links', '@storybook/addon-storysource', '@storybook/addon-essentials'],
-    staticDirs: ['../src/assets', '../src/assets/favicons'],
     typescript: {
         check: false,
         checkOptions: {},
