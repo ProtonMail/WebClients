@@ -865,9 +865,6 @@
       "Keep my subscription": [
         "Mantén la subscripció"
       ],
-      "Keep subscription": [
-        "Mantingueu la subscripció"
-      ],
       "label emails as": [
         "etiquetar correus electrònics com"
       ],
@@ -973,6 +970,9 @@
       "Next month": [
         "Mes següent"
       ],
+      "Next page": [
+        "Pàgina següent"
+      ],
       "No": [
         "No"
       ],
@@ -1017,6 +1017,9 @@
       ],
       "Previous month": [
         "Mes anterior"
+      ],
+      "Previous page": [
+        "Pàgina anterior"
       ],
       "Publish changes": [
         "Publica els canvis"
@@ -1980,9 +1983,17 @@
         "Soc fora de l'oficina i amb accés limitat al meu correu electrònic."
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "S'ha cancel·lat la subscripció."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancel·la la subscripció"
+      ],
+      "Keep subscription": [
+        "Mantingueu la subscripció"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "La prova gratuïta se us acaba en ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -16258,8 +16269,8 @@
       "Blocked": [
         "Bloquejat"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Verificació del dispositiu"
@@ -20742,10 +20753,6 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "La prova gratuïta finalitza en ${ trialDurationFormatted } dia",
-        "La prova gratuïta finalitza en ${ trialDurationFormatted } dies"
       ],
       "Your plan": [
         "El vostre pla"

@@ -865,9 +865,6 @@
       "Keep my subscription": [
         "내 구독 유지하기"
       ],
-      "Keep subscription": [
-        "구독 유지"
-      ],
       "label emails as": [
         "다음으로 라벨 지정"
       ],
@@ -973,6 +970,9 @@
       "Next month": [
         "다음 달"
       ],
+      "Next page": [
+        "다음 페이지"
+      ],
       "No": [
         "아니오"
       ],
@@ -1017,6 +1017,9 @@
       ],
       "Previous month": [
         "지난 달"
+      ],
+      "Previous page": [
+        "이전 페이지"
       ],
       "Publish changes": [
         "변경 사항 게시"
@@ -1967,11 +1970,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "사무실에 가지 못해 이메일을 열람할 수 없는 상황입니다. 양해 부탁합니다."
-      ]
-    },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "구독이 취소되었습니다."
       ]
     },
     "Badge for domain": {
@@ -4083,6 +4081,9 @@
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "먼저 구성하여 조직을 활성화한 뒤 이메일 주소를 사용자화하세요."
+      ],
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
+        "축하합니다! ${ plusPlanName }의 최대 ${ rewardsLimit }월이 무료로 적립되었습니다."
       ],
       "Connect your CRM, website, printers, and more.": [
         "CRM, 웹 사이트, 프린터 등에 연렬하세요."
@@ -16098,9 +16099,6 @@
       "Blocked": [
         "차단됨"
       ],
-      "Captcha": [
-        "Captcha"
-      ],
       "Device verification": [
         "기기 인증"
       ],
@@ -17277,6 +17275,9 @@
       ],
       "Upload files of any size": [
         "모든 크기의 파일 업로드"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.countries }개 국가에 소재된 서버의 VPN"
       ],
       "Yearly": [
         "연간"
@@ -20488,9 +20489,6 @@
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "무료 체험이 ${ trialDurationFormatted }일 후 종료됩니다"
       ],
       "Your plan": [
         "내 플랜"
