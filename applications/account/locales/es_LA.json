@@ -865,9 +865,6 @@
       "Keep my subscription": [
         "Mantener mi suscripción"
       ],
-      "Keep subscription": [
-        "Mantener la suscripción"
-      ],
       "label emails as": [
         "etiquetar correos como"
       ],
@@ -973,6 +970,9 @@
       "Next month": [
         "Mes siguiente"
       ],
+      "Next page": [
+        "Página siguiente"
+      ],
       "No": [
         "No"
       ],
@@ -1017,6 +1017,9 @@
       ],
       "Previous month": [
         "Mes anterior"
+      ],
+      "Previous page": [
+        "Página anterior"
       ],
       "Publish changes": [
         "Publicar cambios"
@@ -2007,9 +2010,17 @@
         "Importe a pagar ahora"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Suscripción cancelada."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar la suscripción"
+      ],
+      "Keep subscription": [
+        "Mantener la suscripción"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Su prueba gratuita termina en ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -16293,8 +16304,8 @@
       "Blocked": [
         "Bloqueado"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Verificación del dispositivo"
@@ -20779,10 +20790,6 @@
       ],
       "Your exposed information": [
         "Sus datos expuestos"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Su prueba gratuita termina en ${ trialDurationFormatted } día",
-        "Su prueba gratuita termina en ${ trialDurationFormatted } días"
       ],
       "Your plan": [
         "El plan"

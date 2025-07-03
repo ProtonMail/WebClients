@@ -865,9 +865,6 @@
       "Keep my subscription": [
         "ჩემი გამოწერის შენარჩუნება"
       ],
-      "Keep subscription": [
-        "გამოწერის შენარჩუნება"
-      ],
       "label emails as": [
         "ელ-ფოსტების მონიშვნა, როგორც"
       ],
@@ -973,6 +970,9 @@
       "Next month": [
         "შემდეგი თვე"
       ],
+      "Next page": [
+        "შემდეგი გვერდი"
+      ],
       "No": [
         "არა"
       ],
@@ -1017,6 +1017,9 @@
       ],
       "Previous month": [
         "წინა თვე"
+      ],
+      "Previous page": [
+        "წინა გვერდი"
       ],
       "Publish changes": [
         "ცვლილებების გამოცემა"
@@ -1963,11 +1966,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "გასული ვარ ოფისთან, ელფოსტასთან შეზღუდული წვდომით."
-      ]
-    },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "გამოწერა გაუქმდა."
       ]
     },
     "Badge for domain": {
@@ -16003,9 +16001,6 @@
       "Blocked": [
         "დაბლოკილია"
       ],
-      "Captcha": [
-        "კაფჩა"
-      ],
       "Device verification": [
         "მოწყობილობის შემოწმება"
       ],
@@ -20450,10 +20445,6 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში",
-        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში"
       ],
       "Your plan": [
         "თქვენი გეგმა"

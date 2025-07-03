@@ -865,9 +865,6 @@
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
-      "Keep subscription": [
-        "Διατήρηση συνδρομής"
-      ],
       "label emails as": [
         "ορίστε ετικέτα στα email ως"
       ],
@@ -973,6 +970,9 @@
       "Next month": [
         "Επόμενος μήνας"
       ],
+      "Next page": [
+        "Επόμενη σελίδα"
+      ],
       "No": [
         "Όχι"
       ],
@@ -1017,6 +1017,9 @@
       ],
       "Previous month": [
         "Προηγούμενος μήνας"
+      ],
+      "Previous page": [
+        "Προηγούμενη σελίδα"
       ],
       "Publish changes": [
         "Δημοσιεύστε τις αλλαγές"
@@ -1980,9 +1983,17 @@
         "Είμαι εκτός γραφείου με περιορισμένη πρόσβαση στο ηλεκτρονικό ταχυδρομείο μου."
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Η συνδρομή ακυρώθηκε."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Ακύρωση συνδρομής"
+      ],
+      "Keep subscription": [
+        "Διατήρηση συνδρομής"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Η δωρεάν δοκιμή σας λήγει σε ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -16258,8 +16269,8 @@
       "Blocked": [
         "Αποκλεισμένο"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Επαλήθευση συσκευών"
@@ -20736,10 +20747,6 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Η δωρεάν δοκιμή σας λήγει σε ${ trialDurationFormatted } ημέρα",
-        "Η δωρεάν δοκιμή σας λήγει σε ${ trialDurationFormatted } ημέρες"
       ],
       "Your plan": [
         "Το πακέτο σας"
