@@ -1295,8 +1295,7 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "ट्रस्ट कुंजी",
-        "ट्रस्ट कुंजी"
+        "विश्वसनीय चाबी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -1357,6 +1356,9 @@
       ],
       "Upgrade": [
         "अपग्रेड करें"
+      ],
+      "Upgrade Now": [
+        "अभी अपग्रेड करें"
       ],
       "Upgrade now": [
         "अभी अपग्रेड करें"
@@ -1439,6 +1441,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "आप ${ maxAttachments } से अधिक संपर्क के vCard फाइल्स नहीं भेज सकते",
         "आप ${ maxAttachments } से अधिक संपर्कों के vCard फाइल्स नहीं भेज सकते"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "आपका डेस्कटॉप ऐप मुफ्त ट्रायल 2 दिनों में समाप्त हो जाता है ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "आपका डेस्कटॉप ऐप मुफ्त ट्रायल 5 दिनों में समाप्त हो जाता है ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "आपका डेस्कटॉप ऐप मुफ्त ट्रायल ${ formattedEndDate } को समाप्त होता है ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "आपका ईमेल लेखन सहायक"
@@ -6543,7 +6554,8 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें"
+        "तस्वीर डालें",
+        "तस्वीरें डालें"
       ],
       "Insert link": [
         "लिंक डालें"

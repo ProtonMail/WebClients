@@ -726,9 +726,6 @@
       "Keep my subscription": [
         "サブスクリプションを継続する"
       ],
-      "Keep subscription": [
-        "サブスクリプションを継続"
-      ],
       "Label as": [
         "ラベル付け"
       ],
@@ -1410,9 +1407,6 @@
       "Trust": [
         "信頼する"
       ],
-      "Trust key": [
-        "鍵を信頼する"
-      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -1475,6 +1469,9 @@
       ],
       "Upgrade": [
         "アップグレード"
+      ],
+      "Upgrade Now": [
+        "今すぐアップグレード"
       ],
       "Upgrade now": [
         "今すぐアップグレード"
@@ -1571,6 +1568,15 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }件を超える連絡先のvCardファイルを送信できません。"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "デスクトップアプリの無料トライアルはあと2日で終了します。${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "デスクトップアプリの無料トライアルはあと5日で終了します。${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "メール執筆アシスタント"
@@ -6919,7 +6925,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -14362,9 +14368,6 @@
       ],
       "Your exposed information": [
         "あなたの公開情報"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "無料トライアルは${ trialDurationFormatted }日後に終了します"
       ],
       "Your free trial has ended": [
         "無料トライアルが終了しました"
