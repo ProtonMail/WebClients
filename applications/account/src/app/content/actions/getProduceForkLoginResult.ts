@@ -1,6 +1,7 @@
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { type OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getClientID, getProduct, isExtension } from '@proton/shared/lib/apps/helper';
@@ -14,6 +15,7 @@ import {
 import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, type APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
@@ -76,49 +78,61 @@ export const getProduceForkLoginResult = async ({
             return getProductDisabledLoginResult({ api, app, paths, session });
         }
 
-        if (isExtension(app)) {
-            const childClientID = getClientID(app);
-            const { Selector: selector } = await api<PushForkResponse>(
-                withUIDHeaders(
-                    session.data.UID,
-                    pushForkSession({
-                        ChildClientID: childClientID,
-                        Independent: forkParameters.independent ? 1 : 0,
-                    })
-                )
-            );
-            const result = await produceExtensionFork({
-                app,
-                payload: {
-                    selector,
-                    session: session.data,
-                    forkParameters,
-                },
-            });
+        try {
+            if (isExtension(app)) {
+                const childClientID = getClientID(app);
+                const { Selector: selector } = await api<PushForkResponse>(
+                    withUIDHeaders(
+                        session.data.UID,
+                        pushForkSession({
+                            ChildClientID: childClientID,
+                            Independent: forkParameters.independent ? 1 : 0,
+                        })
+                    )
+                );
+                const result = await produceExtensionFork({
+                    app,
+                    payload: {
+                        selector,
+                        session: session.data,
+                        forkParameters,
+                    },
+                });
 
-            const state: AuthExtensionState = { ...result, app };
+                const state: AuthExtensionState = { ...result, app };
+                return {
+                    type: 'auth-ext',
+                    payload: state,
+                    location: {
+                        pathname: '/auth-ext',
+                    },
+                };
+            }
+
+            const produceForkPayload = await produceFork({
+                api,
+                session: session.data,
+                forkParameters,
+            });
+            const url = getProduceForkUrl(produceForkPayload, forkParameters, searchParameters);
             return {
-                type: 'auth-ext',
-                payload: state,
-                location: {
-                    pathname: '/auth-ext',
+                type: 'done',
+                payload: {
+                    session,
+                    url,
                 },
             };
+        } catch (e) {
+            const { code } = getApiError(e);
+            if (
+                [API_CUSTOM_ERROR_CODES.SSO_APPLICATION_INVALID, API_CUSTOM_ERROR_CODES.APPLICATION_BLOCKED].some(
+                    (errorCode) => errorCode === code
+                )
+            ) {
+                return getProductDisabledLoginResult({ app: forkParameters.app, session, paths, api });
+            }
+            throw e;
         }
-
-        const produceForkPayload = await produceFork({
-            api,
-            session: session.data,
-            forkParameters,
-        });
-        const url = getProduceForkUrl(produceForkPayload, forkParameters, searchParameters);
-        return {
-            type: 'done',
-            payload: {
-                session,
-                url,
-            },
-        };
     }
 
     if (data.type === SSOType.OAuth) {

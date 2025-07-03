@@ -1,5 +1,5 @@
 import type { AuthSession } from '@proton/components/containers/login/interface';
-import { getApiError, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
     type ProduceForkParametersFull,
@@ -13,11 +13,9 @@ import {
     getActiveSessionsResult,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getActiveSessions, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';
-import { getProductDisabledLoginResult } from '../actions/getProductDisabledResult';
 import type { LoginResult } from '../actions/interface';
 import type { Paths } from '../helper';
 
@@ -65,29 +63,14 @@ export const handleProtonFork = async ({ api, paths }: { api: Api; paths: Paths 
             return await handleActiveSessions(activeSessionsResult, forkParameters);
         }
 
-        try {
-            const loginResult = await getProduceForkLoginResult({
-                api,
-                session,
-                data: { type: SSOType.Proton, payload: { forkParameters } },
-                paths,
-            });
+        const loginResult = await getProduceForkLoginResult({
+            api,
+            session,
+            data: { type: SSOType.Proton, payload: { forkParameters } },
+            paths,
+        });
 
-            return { type: 'login', payload: loginResult };
-        } catch (e: any) {
-            const { code } = getApiError(e);
-            if (
-                [API_CUSTOM_ERROR_CODES.SSO_APPLICATION_INVALID, API_CUSTOM_ERROR_CODES.APPLICATION_BLOCKED].some(
-                    (errorCode) => errorCode === code
-                )
-            ) {
-                return {
-                    type: 'login',
-                    payload: await getProductDisabledLoginResult({ app: forkParameters.app, session, paths, api }),
-                };
-            }
-            throw e;
-        }
+        return { type: 'login', payload: loginResult };
     } catch (e: any) {
         if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
             const activeSessionsResult = await getActiveSessions({
