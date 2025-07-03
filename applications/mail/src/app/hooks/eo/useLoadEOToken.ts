@@ -32,7 +32,7 @@ export const useLoadEOToken = ({ id, encryptedToken, setSessionStorage }: Props)
                 history.push(`${EO_MESSAGE_REDIRECT_PATH}/${id}`);
             } catch (e: any) {
                 console.error(e);
-                createNotification({ text: c('Error').t`Wrong second password`, type: 'error' });
+                createNotification({ text: c('Error').t`Wrong password`, type: 'error' });
             }
         } else {
             createNotification({ text: c('Error').t`Enter a password`, type: 'error' });
