@@ -1,27 +1,31 @@
 import { useCallback, useMemo, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
+import { useDrive } from '@proton/drive/index';
 
+import type { BrowserItemId, ListViewHeaderItem } from '../../../components/FileBrowser';
+import FileBrowser, {
+    Cells,
+    type FileBrowserBaseItem,
+    useItemContextMenu,
+    useSelection,
+} from '../../../components/FileBrowser';
+import EmptyDevices from '../../../components/sections/Devices/EmptyDevices';
+import { getDevicesSectionName } from '../../../components/sections/Devices/constants';
+import { GridViewItemDevice } from '../../../components/sections/FileBrowser/GridViewItemDevice';
+import { DeviceNameCell } from '../../../components/sections/FileBrowser/contentCells';
+import headerCellsCommon from '../../../components/sections/FileBrowser/headerCells';
+import headerCells from '../../../components/sections/FileBrowser/headerCells';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
-import type { useDevicesView } from '../../../store';
-import FileBrowser, { Cells, useItemContextMenu, useSelection } from '../../FileBrowser';
-import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
-import { GridViewItemDevice } from '../FileBrowser/GridViewItemDevice';
-import { DeviceNameCell } from '../FileBrowser/contentCells';
-import headerCellsCommon from '../FileBrowser/headerCells';
-import { DevicesItemContextMenuDeprecated } from './ContextMenu/DevicesContextMenu';
-import EmptyDevices from './EmptyDevices';
-import { getSelectedItems } from './Toolbar/DevicesToolbar';
-import { getDevicesSectionName } from './constants';
-import headerCells from './headerCells';
+import { useUserSettings } from '../../../store';
+import { DevicesItemContextMenu } from '../DevicesItemContextMenu/DevicesContextMenu';
+import { useDeviceStore } from '../devices.store';
+import { getSelectedDevice } from './getSelectedDevice';
 
 export interface DeviceItem extends FileBrowserBaseItem {
     modificationTime: number;
     name: string;
-}
-interface Props {
-    view: ReturnType<typeof useDevicesView>;
 }
 
 const { ContextMenuCell } = Cells;
@@ -33,21 +37,35 @@ const headerItemsLargeScreen: ListViewHeaderItem[] = [headerCells.name, headerCe
 
 const headerItemsSmallScreen: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
 
-/**
- * @deprecated
- */
-export function Devices({ view }: Props) {
+export function DevicesBrowser() {
+    const { deviceList, isLoading } = useDeviceStore();
+    const { layout } = useUserSettings();
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
+    const { internal } = useDrive();
     const { navigateToLink } = useDriveNavigation();
     const browserItemContextMenu = useItemContextMenu();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(view.layout, view.isLoading);
-    const { layout, items: browserItems, isLoading } = view;
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, isLoading);
     const sectionTitle = getDevicesSectionName();
 
-    const selectedItems = useMemo(
-        () => getSelectedItems(browserItems, selectionControls!.selectedItemIds),
+    // TODO: remove once FileBrowser is converted
+    // Conversion from SDK Device to a type compatible with the file browser
+    const browserItems = useMemo(
+        () =>
+            deviceList.map((device) => ({
+                ...device,
+                modificationTime: device.creationTime.getTime(),
+                id: internal.splitNodeUid(device.uid).nodeId,
+                linkId: internal.splitNodeUid(device.rootFolderUid).nodeId,
+                volumeId: internal.splitNodeUid(device.rootFolderUid).volumeId,
+                haveLegacyName: false,
+            })),
+        [deviceList, internal]
+    );
+
+    const selectedItemsUid = useMemo(
+        () => getSelectedDevice(browserItems, selectionControls!.selectedItemIds).map((dev) => dev.uid),
         [browserItems, selectionControls!.selectedItemIds]
     );
 
@@ -85,8 +103,8 @@ export function Devices({ view }: Props) {
 
     return (
         <>
-            <DevicesItemContextMenuDeprecated
-                selectedDevices={selectedItems}
+            <DevicesItemContextMenu
+                selectedDevicesUid={selectedItemsUid}
                 anchorRef={contextMenuAnchorRef}
                 close={browserItemContextMenu.close}
                 isOpen={browserItemContextMenu.isOpen}
