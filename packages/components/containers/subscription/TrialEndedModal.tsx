@@ -17,7 +17,7 @@ const TrialEndedModal = ({ onClose, ...rest }: ModalStateProps) => {
     const api = useApi();
     const [subscription] = useSubscription();
 
-    const planName = subscription?.Plans[0]?.Title;
+    const planName = subscription?.Plans?.[0]?.Title;
 
     if (planName === undefined) {
         return null;
