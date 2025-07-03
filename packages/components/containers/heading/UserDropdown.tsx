@@ -20,7 +20,7 @@ import AuthenticatedBugModal from '@proton/components/containers/support/Authent
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecoveryState';
-import { getSubscriptionPlanTitleAndName } from '@proton/payments';
+import { getSubscriptionPlanTitles } from '@proton/payments';
 import { isTrial } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { ForkType } from '@proton/shared/lib/authentication/fork';
@@ -32,6 +32,7 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/index';
+import isTruthy from '@proton/utils/isTruthy';
 
 import HelpModal from '../support/HelpModal';
 import SelfHelpModal from '../support/SelfHelpModal';
@@ -148,7 +149,11 @@ const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLin
     // nameToDisplay can be falsy for external account
     const nameToDisplay = user.DisplayName || user.Name || '';
     const info: UserDropdownValue['info'] = {
-        planName: user.isMember ? '' : getSubscriptionPlanTitleAndName(user, subscription).planTitle,
+        planNames: user.isMember
+            ? []
+            : getSubscriptionPlanTitles(user, subscription)
+                  .map((it) => it.planTitle)
+                  .filter(isTruthy),
         name: nameToDisplay,
         email: user.Email,
         // DisplayName is null for VPN users without any addresses, cast to undefined in case Name would be null too.

@@ -108,6 +108,20 @@ export function getSubscriptionPlanTitle(
     };
 }
 
+export function getSubscriptionPlanTitles(
+    user: UserModel,
+    subscription: Subscription | FreeSubscription | undefined
+): ReturnType<typeof getSubscriptionPlanTitle>[] {
+    if (isFreeSubscription(subscription)) {
+        return [getSubscriptionPlanTitle(user, subscription)];
+    }
+
+    return [
+        getSubscriptionPlanTitle(user, subscription),
+        ...(subscription?.SecondarySubscriptions?.map((sub) => getSubscriptionPlanTitle(user, sub)) ?? []),
+    ];
+}
+
 export const getLumoAddonNameByPlan = (planName: PLANS) => {
     switch (planName) {
         // B2C
