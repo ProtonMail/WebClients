@@ -172,7 +172,7 @@ describe('useMailboxFocus', () => {
 
         rerender({
             ...defaultProps,
-            filter: {} as Filter, // Change filter
+            filter: { a: 1 } as Filter, // Change filter
         });
 
         expect(result.current.focusID).toBeUndefined();
