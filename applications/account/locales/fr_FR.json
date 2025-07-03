@@ -865,9 +865,6 @@
       "Keep my subscription": [
         "Conserver mon abonnement"
       ],
-      "Keep subscription": [
-        "Conserver l'abonnement"
-      ],
       "label emails as": [
         "labelliser les messages comme"
       ],
@@ -973,6 +970,9 @@
       "Next month": [
         "Mois suivant"
       ],
+      "Next page": [
+        "Page suivante"
+      ],
       "No": [
         "Non"
       ],
@@ -1017,6 +1017,9 @@
       ],
       "Previous month": [
         "Mois précédent"
+      ],
+      "Previous page": [
+        "Page précédente"
       ],
       "Publish changes": [
         "Publier les modifications"
@@ -2007,9 +2010,17 @@
         "Montant dû maintenant"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "L'abonnement a été annulé."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Annuler l'abonnement"
+      ],
+      "Keep subscription": [
+        "Conserver l'abonnement"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Votre essai gratuit se termine dans ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -4139,6 +4150,10 @@
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurez d'abord cette option pour activer votre organisation et personnaliser votre adresse e-mail."
+      ],
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
+        "Bravo ! Vous bénéficiez du maximum de ${ rewardsLimit } mois gratuit pour ${ plusPlanName }.",
+        "Bravo ! Vous bénéficiez du maximum de ${ rewardsLimit } mois gratuits pour ${ plusPlanName }."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Connectez votre CRM, votre site internet, vos imprimantes et bien plus encore."
@@ -16289,8 +16304,8 @@
       "Blocked": [
         "Bloqué"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Vérification de l'appareil"
@@ -17505,6 +17520,10 @@
       ],
       "use your own email.": [
         "utilisez votre propre adresse e-mail."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "Un VPN avec de serveurs dans ${ vpnServersCountData.free.countries } pays",
+        "Un VPN avec de serveurs dans ${ vpnServersCountData.free.countries } pays"
       ],
       "Yearly": [
         "Annuel"
@@ -20774,10 +20793,6 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Votre essai gratuit se termine dans ${ trialDurationFormatted } jour.",
-        "Votre essai gratuit se termine dans ${ trialDurationFormatted } jours."
       ],
       "Your plan": [
         "Votre abonnement"
