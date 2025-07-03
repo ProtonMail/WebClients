@@ -736,9 +736,6 @@
       "Keep my subscription": [
         "Manter minha assinatura"
       ],
-      "Keep subscription": [
-        "Manter assinatura"
-      ],
       "Label as": [
         "Marcar como"
       ],
@@ -1427,8 +1424,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1492,6 +1488,9 @@
       ],
       "Upgrade": [
         "Fazer upgrade"
+      ],
+      "Upgrade Now": [
+        "Fazer upgrade agora"
       ],
       "Upgrade now": [
         "Atualizar agora"
@@ -1589,6 +1588,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Sua avaliação gratuita do aplicativo de computador termina em 2 dias. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Sua avaliação gratuita do aplicativo de computador termina em 5 dias. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Seu assistente de escrita de e-mail"
@@ -1936,9 +1944,17 @@
         "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Assinatura cancelada."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar assinatura"
+      ],
+      "Keep subscription": [
+        "Manter assinatura"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Sua avaliação gratuita termina em ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -7131,7 +7147,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -7315,6 +7332,9 @@
       ],
       "New": [
         "Novo"
+      ],
+      "newsletters": [
+        "boletins"
       ],
       "No action selected": [
         "Nenhuma ação selecionada"
@@ -14853,10 +14873,6 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Sua avaliação gratuita termina em ${ trialDurationFormatted } dia",
-        "Sua avaliação gratuita termina em ${ trialDurationFormatted } dias"
       ],
       "Your free trial has ended": [
         "Sua avaliação gratuita terminou"
