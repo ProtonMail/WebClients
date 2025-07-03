@@ -1,7 +1,7 @@
 :root,
 .ui-standard {
     --primary: #8a6eff;
-    
+
     --signal-danger: #cc2d4f;
     --signal-warning: #e65200;
     --signal-success: #007b58;
@@ -13,6 +13,8 @@
     --text-disabled: #adadad;
     --text-invert: #ffffff;
 
+    --field-background-color: #e4e4e4;
+    --field-hover-background-color: #e4e4e4;
     --field-norm: #ffffff;
     --field-disabled: #d0d3da;
 
@@ -43,7 +45,7 @@
 
     --focus-outline: var(--interaction-norm-major-2);
     --focus-ring: var(--interaction-norm-minor-1);
-    
+
     --item-background: rgb(255 255 255 / 0.66);
 
     --field-hover: #a4a9b5;
