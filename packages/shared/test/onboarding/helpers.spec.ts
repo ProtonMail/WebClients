@@ -1,26 +1,11 @@
-import { CYCLE, Renew, type Subscription, SubscriptionPlatform } from '@proton/payments';
+import { type Subscription } from '@proton/payments';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { canShowB2BOnboardingButton } from '@proton/shared/lib/onboarding/helpers';
+import { buildSubscription } from '@proton/testing/builders';
 
 describe('onboarding helpers', () => {
     describe('canShowB2BOnboardingButton', () => {
-        const defaultSubscription = {
-            ID: 'id-123',
-            InvoiceID: 'invoice-id-123',
-            Cycle: CYCLE.MONTHLY,
-            PeriodStart: 123,
-            PeriodEnd: 777,
-            CreateTime: 123,
-            CouponCode: null,
-            Currency: 'EUR',
-            Amount: 123,
-            RenewAmount: 123,
-            Discount: 123,
-            RenewDiscount: 123,
-            Plans: [],
-            External: SubscriptionPlatform.Default,
-            Renew: Renew.Enabled,
-        } as Subscription;
+        const defaultSubscription = buildSubscription();
 
         it('should be possible to show the b2b onboarding button', () => {
             const subscription = {

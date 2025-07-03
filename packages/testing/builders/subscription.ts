@@ -8,30 +8,21 @@ import {
     SelectedPlan,
     type Subscription,
     SubscriptionPlatform,
+    isStringPLAN,
 } from '@proton/payments';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import type { EitherOr } from '@proton/shared/lib/interfaces';
 
 import { getTestPlans } from '../data';
 
-export const buildSubscription = (
-    value?: Partial<Subscription>,
-    planIDs: PlanIDs = {
-        [PLANS.BUNDLE]: 1,
-    }
-): Subscription => {
+const innerBuildSubscription = (value?: Partial<Subscription>): Subscription => {
     const Cycle = value?.Cycle ?? CYCLE.YEARLY;
     const Currency = value?.Currency ?? 'EUR';
-
-    const Plans = Object.entries(planIDs).map(([planName, quantity]) => ({
-        ...(getTestPlans(Currency).find((plan) => plan.Name === planName) as Plan),
-        Quantity: quantity,
-    }));
 
     return {
         Cycle,
         Currency,
-        Plans,
+        Plans: [],
         ID: 'subscriptionId123',
         InvoiceID: 'invoiceId123',
         PeriodStart: 1685966060,
@@ -44,33 +35,51 @@ export const buildSubscription = (
         RenewDiscount: 0,
         Renew: Renew.Enabled,
         External: SubscriptionPlatform.Default,
+        IsTrial: false,
         ...value,
     };
 };
 
-type SelectedPlanParam =
-    | SelectedPlan
-    | EitherOr<
-          {
-              planIDs: PlanIDs;
-              planName: PLANS;
-              currency: Currency;
-              cycle: CYCLE;
-          },
-          'planIDs' | 'planName'
-      >;
+type FullPlanConfig = EitherOr<
+    {
+        planIDs: PlanIDs;
+        planName: PLANS;
+        currency: Currency;
+        cycle: CYCLE;
+    },
+    'planIDs' | 'planName'
+>;
+
+function isFullPlanConfig(plan: SelectedPlanParam): plan is FullPlanConfig {
+    return (
+        typeof plan === 'object' && ('planIDs' in plan || 'planName' in plan) && 'currency' in plan && 'cycle' in plan
+    );
+}
+
+type SelectedPlanParam = SelectedPlan | FullPlanConfig | PLANS | PlanIDs;
 
 const getSelectedPlan = (plan: SelectedPlanParam): SelectedPlan => {
     if (plan instanceof SelectedPlan) {
         return plan;
     }
 
-    const planIDs: PlanIDs = plan.planIDs ?? { [plan.planName]: 1 };
+    const defaultCurrency: Currency = 'EUR';
+    const defaultCycle: CYCLE = CYCLE.YEARLY;
 
-    return new SelectedPlan(planIDs, getTestPlans(plan.currency), plan.cycle, plan.currency);
+    if (typeof plan === 'string' && isStringPLAN(plan)) {
+        return new SelectedPlan({ [plan]: 1 }, getTestPlans(defaultCurrency), defaultCycle, defaultCurrency);
+    }
+
+    if (isFullPlanConfig(plan)) {
+        const planIDs: PlanIDs = plan.planIDs ?? { [plan.planName]: 1 };
+
+        return new SelectedPlan(planIDs, getTestPlans(plan.currency), plan.cycle, plan.currency);
+    }
+
+    return new SelectedPlan(plan, getTestPlans(defaultCurrency), defaultCycle, defaultCurrency);
 };
 
-export const smartBuildSubscription = (plan: SelectedPlanParam, override?: Partial<Subscription>) => {
+export const buildSubscription = (plan: SelectedPlanParam = PLANS.BUNDLE, override?: Partial<Subscription>) => {
     const selectedPlan = getSelectedPlan(plan);
 
     const plans = getTestPlans(selectedPlan.currency);
@@ -92,7 +101,7 @@ export const smartBuildSubscription = (plan: SelectedPlanParam, override?: Parti
     const PeriodEnd = addMonths(new Date(), selectedPlan.cycle).getTime() / 1000;
     const CreateTime = PeriodStart;
 
-    return buildSubscription({
+    return innerBuildSubscription({
         Amount: totalPrice,
         RenewAmount: totalPrice,
         Currency: selectedPlan.currency,
