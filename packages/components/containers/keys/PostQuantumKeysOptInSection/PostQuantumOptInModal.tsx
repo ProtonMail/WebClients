@@ -1,3 +1,4 @@
+import type { ReactNode} from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -13,6 +14,7 @@ import {
 } from '@proton/account';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import LoadingTextStepper from '@proton/components/components/loader/LoadingTextStepper';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -21,6 +23,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from '@proton/components/hooks/useDeviceRecovery';
+import useLoading from '@proton/hooks/useLoading';
 import { resignSKLWithPrimaryKey } from '@proton/key-transparency/lib';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -31,14 +34,26 @@ import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import { addAddressKeysProcess, addUserKeysProcess, getPrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import useNotifications from '../../../hooks/useNotifications';
+import { getMailRouteTitles } from '../../account/constants/settingsRouteTitles';
 import useKTVerifier from '../../keyTransparency/useKTVerifier';
 import getPausedForwardingNotice from '../changePrimaryKeyForwardingNotice/getPausedForwardingNotice';
 
 interface Props extends ModalProps {}
 
+enum Step {
+    CONFIRMATION,
+    IN_PROGRESS_OPTIN,
+    IN_PROGRESS_ACCOUNT_KEY,
+    IN_PROGRESS_ADDRESS_KEYS,
+    SUCCESS,
+    ERROR,
+}
+interface Model {
+    step: Step;
+    error?: ReactNode;
+}
+
 const PostQuantumOptInModal = ({ ...rest }: Props) => {
-    const { createNotification } = useNotifications();
     const api = useApi();
     const createKTVerifier = useKTVerifier();
     const dispatch = useDispatch();
@@ -48,55 +63,8 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
     const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
 
     const loadingDependencies = loadingOutgoingAddressForwardings || loadingDeviceRecovery;
-    const [loading, setLoading] = useState(false);
-
-    const handleOptIn = async () => {
-        try {
-            const updatedFlagSupportPgpV6Keys = { SupportPgpV6Keys: 1 } as const;
-            await api(updateFlags(updatedFlagSupportPgpV6Keys));
-            // optimistically update user settings without waiting for event loop;
-            // this is done only after awaiting the API response since it will fail if the action is not authorized.
-            dispatch(userSettingsActions.update({ UserSettings: { Flags: updatedFlagSupportPgpV6Keys } }));
-        } catch (error) {
-            console.error(error);
-            createNotification({
-                text: c('PQC optin').t`Enabling post-quantum protection failed. Please try again later.`,
-                type: 'error',
-            });
-        }
-    };
-    const handleGenerateUserKey = async () => {
-        const [user, userKeys, addresses, organizationKey] = await Promise.all([
-            dispatch(userThunk()),
-            dispatch(userKeysThunk()),
-            dispatch(addressesThunk()),
-            dispatch(organizationKeyThunk()),
-        ]);
-
-        try {
-            await addUserKeysProcess({
-                api,
-                user,
-                organizationKey,
-                isDeviceRecoveryAvailable,
-                isDeviceRecoveryEnabled,
-                keyGenConfig: KEYGEN_CONFIGS.PQC,
-                userKeys,
-                addresses,
-                passphrase: authentication.getPassword(),
-            });
-            await dispatch(userThunk({ cache: CacheType.None })); // Ensures user keys is up to date.
-            createNotification({
-                text: c('PQC account key generation').t`Post-quantum account key successfully generated.`,
-            });
-        } catch (error) {
-            console.error(error);
-            createNotification({
-                text: c('PQC account key generation').t`Generating post-quantum account key failed.`,
-                type: 'error',
-            });
-        }
-    };
+    const [loading, withLoading] = useLoading();
+    const [model, setModel] = useState<Model>({ step: Step.CONFIRMATION });
 
     const handleGenerateAddressKeyForAllAddresses = async () => {
         const [user, userKeys, addresses] = await Promise.all([
@@ -107,8 +75,12 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
         try {
             await Promise.all(
                 addresses.map(async (address) => {
-                    const { ID: addressID = '', Email: addressEmail = '' } = address || {};
+                    const { ID: addressID } = address;
                     const addressKeys = await dispatch(addressKeysThunk({ addressID }));
+                    // v6 key already present, skip (TODO: check PQC algo)
+                    if (addressKeys.some((key) => key.privateKey.isPrivateKeyV6())) {
+                        return;
+                    }
                     const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
                     const [, updatedActiveKeys, formerActiveKeys] = await addAddressKeysProcess({
                         api,
@@ -131,93 +103,186 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                         }),
                         keyTransparencyCommit(user, userKeys),
                     ]);
-                    createNotification({
-                        text: c('PQC address key generation')
-                            .t`Post-quantum address key successfully generated for ${addressEmail}.`,
-                    });
                 })
             );
 
             await dispatch(addressesThunk({ cache: CacheType.None })); // Ensures address keys is up to date.
-
-            // TODO use n-step modal for progress instead of notifications
-            // with address key generation in last step, so that the "resumption button" can open the same one
+            setModel({ step: Step.SUCCESS });
         } catch (error) {
             console.error(error);
-            createNotification({
-                text: c('PQC address key generation')
-                    .t`Generating post-quantum address keys failed for one or more addresses.`,
-                type: 'error',
+            const encryptionAndKeysSettingsTitle = getMailRouteTitles().keys;
+            setModel({
+                step: Step.ERROR,
+                error: c('PQC adress key generation')
+                    .t`Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${encryptionAndKeysSettingsTitle} settings.`,
             });
         }
     };
 
-    const handleProcess = async () => {
+    const handleGenerateUserKey = async () => {
+        const [user, userKeys, addresses, organizationKey] = await Promise.all([
+            dispatch(userThunk()),
+            dispatch(userKeysThunk()),
+            dispatch(addressesThunk()),
+            dispatch(organizationKeyThunk()),
+        ]);
+
         try {
-            setLoading(true);
-            await handleOptIn();
-            await handleGenerateUserKey();
-            await handleGenerateAddressKeyForAllAddresses();
-        } finally {
-            setLoading(false);
-            rest.onClose?.();
+            await addUserKeysProcess({
+                api,
+                user,
+                organizationKey,
+                isDeviceRecoveryAvailable,
+                isDeviceRecoveryEnabled,
+                keyGenConfig: KEYGEN_CONFIGS.PQC,
+                userKeys,
+                addresses,
+                passphrase: authentication.getPassword(),
+            });
+            await dispatch(userThunk({ cache: CacheType.None })); // Ensures user keys is up to date.
+            setModel({ step: Step.IN_PROGRESS_ADDRESS_KEYS });
+            return await handleGenerateAddressKeyForAllAddresses();
+        } catch (error) {
+            console.error(error);
+            const encryptionAndKeysSettingsTitle = getMailRouteTitles().keys;
+            setModel({
+                step: Step.ERROR,
+                error: c('PQC account key generation')
+                    .t`Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${encryptionAndKeysSettingsTitle} settings.`,
+            });
         }
     };
+
+    const handleOptIn = async () => {
+        try {
+            const updatedFlagSupportPgpV6Keys = { SupportPgpV6Keys: 1 } as const;
+            await api(updateFlags(updatedFlagSupportPgpV6Keys));
+            // optimistically update user settings without waiting for event loop;
+            // this is done only after awaiting the API response since it will fail if the action is not authorized.
+            dispatch(userSettingsActions.update({ UserSettings: { Flags: updatedFlagSupportPgpV6Keys } }));
+            setModel({
+                step: Step.IN_PROGRESS_ACCOUNT_KEY,
+            });
+            return await handleGenerateUserKey();
+        } catch (error) {
+            console.error(error);
+            setModel({
+                step: Step.ERROR,
+                error: c('PQC optin').t`Enabling post-quantum protection failed. Try again later.`,
+            });
+        }
+    };
+
+    const handleSubmit = async () => {
+        if (model.step === Step.CONFIRMATION) {
+            setModel({ step: Step.IN_PROGRESS_OPTIN });
+            return handleOptIn();
+        }
+    };
+
+    const hasOutgoingE2EEForwardingsAcrossAddresses = outgoingAddressForwardings.some(
+        ({ Type, State }) =>
+            Type === ForwardingType.InternalEncrypted &&
+            // these states are already inactive and require re-confirmation by the forwardee, so we ignore them
+            State !== ForwardingState.Outdated &&
+            State !== ForwardingState.Rejected
+    );
+
+    const isProgressStep =
+        model.step === Step.IN_PROGRESS_OPTIN ||
+        model.step === Step.IN_PROGRESS_ADDRESS_KEYS ||
+        model.step === Step.IN_PROGRESS_ACCOUNT_KEY;
 
     return (
         <ModalTwo size="medium" {...rest}>
             <ModalTwoHeader title={c('PQC optin').t`Enable post-quantum protection`} />
             <ModalTwoContent>
                 <div>
-                    {(() => {
-                        const hasOutgoingE2EEForwardingsAcrossAddresses = outgoingAddressForwardings.some(
-                            ({ Type, State }) =>
-                                Type === ForwardingType.InternalEncrypted &&
-                                // these states are already inactive and require re-confirmation by the forwardee, so we ignore them
-                                State !== ForwardingState.Outdated &&
-                                State !== ForwardingState.Rejected
-                        );
-                        return (
-                            <>
-                                <div className="mb-2">
-                                    {c('PQC account key generation')
-                                        .t`This will generate a new post-quantum account key, which will be used to encrypt future contact details, email encryption keys, and other data.`}
-                                </div>
-                                <div className="mb-2">
-                                    {c('PQC address key generation')
-                                        .t`It will also generate a new address key, which will be used to encrypt future draft emails, among other data. Email messages sent from other ${BRAND_NAME} user will also be encrypted using this key.`}
-                                </div>
+                    {model.step === Step.CONFIRMATION && (
+                        <>
+                            <div className="mb-2">
+                                {c('PQC account key generation')
+                                    .t`This will generate a new post-quantum account key, which will be used to encrypt future contact details, email encryption keys, and other data.`}
+                            </div>
+                            <div className="mb-2">
+                                {c('PQC address key generation')
+                                    .t`It will also generate a new address key, which will be used to encrypt future draft emails, among other data. Email messages sent from other ${BRAND_NAME} user will also be encrypted using this key.`}
+                            </div>
+                            <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
+                                <Icon name="exclamation-circle" className="shrink-0 color-warning" />
+                                <p className="text-sm color-weak flex-1 pl-4 my-0">{c('PQC compatibility warning')
+                                    .t`After enabling post-quantum protection, you will no longer be able to login from older versions of ${BRAND_NAME} mobile apps.`}</p>
+                            </div>
+                            {hasOutgoingE2EEForwardingsAcrossAddresses && (
                                 <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
                                     <Icon name="exclamation-circle" className="shrink-0 color-warning" />
-                                    <p className="text-sm color-weak flex-1 pl-4 my-0">{c('PQC compatibility warning')
-                                        .t`After enabling post-quantum protection, you will no longer be able to login from older versions of ${BRAND_NAME} mobile apps.`}</p>
+                                    <p className="text-sm color-weak flex-1 pl-4 my-0">{getPausedForwardingNotice()}</p>
                                 </div>
-                                {hasOutgoingE2EEForwardingsAcrossAddresses && (
-                                    <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
-                                        <Icon name="exclamation-circle" className="shrink-0 color-warning" />
-                                        <p className="text-sm color-weak flex-1 pl-4 my-0">
-                                            {getPausedForwardingNotice()}
-                                        </p>
-                                    </div>
-                                )}
-                            </>
-                        );
-                    })()}
+                            )}
+                        </>
+                    )}
+                    {isProgressStep && (
+                        <>
+                            <div className="text-center" role="alert">
+                                <div className="inline-block">
+                                    <LoadingTextStepper
+                                        steps={[
+                                            c('pqc-optin: Progress status').t`Opting into post-quantum protection`,
+                                            c('pqc-optin: Progress status').t`Generating post-quantum account key`,
+                                            c('pqc-optin: Progress status')
+                                                .t`Generating post-quantum address keys for each address`,
+                                        ]}
+                                        stepIndex={[
+                                            Step.IN_PROGRESS_OPTIN,
+                                            Step.IN_PROGRESS_ACCOUNT_KEY,
+                                            Step.IN_PROGRESS_ADDRESS_KEYS,
+                                        ].indexOf(model.step)}
+                                        hideFutureSteps={false}
+                                    />
+                                </div>
+                            </div>
+                        </>
+                    )}
+                    {model.step === Step.SUCCESS && (
+                        <>
+                            <div className="text-center">
+                                {/* <img src={forwardingSuccessIllustration} alt="" /> */}
+                                <p>
+                                    {c('pqc-optin: Info').jt`Post-quantum protection has been enabled on your account!`}
+                                </p>
+                            </div>
+                        </>
+                    )}
+                    {model.step === Step.ERROR && (
+                        <>
+                            <div className="text-center">
+                                {/* <img src={} alt="" /> */}
+                                <p>{model.error}</p>
+                            </div>
+                        </>
+                    )}
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
-                <Button
-                    color="norm"
-                    loading={loading}
-                    disabled={loadingDependencies}
-                    data-testid="confirm-pqc-opt-in"
-                    onClick={() => {
-                        handleProcess().catch(noop);
-                    }}
-                >
-                    {c('PQC optin').t`Enable post-Quantum protection`}
-                </Button>
+                {(model.step === Step.CONFIRMATION || isProgressStep) && (
+                    <>
+                        <Button disabled={loading} onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
+                        <Button
+                            color="norm"
+                            loading={loading}
+                            disabled={loadingDependencies}
+                            data-testid="confirm-pqc-opt-in"
+                            onClick={() => withLoading(handleSubmit().catch(noop))}
+                        >
+                            {c('PQC optin').t`Enable post-quantum protection`}
+                        </Button>
+                    </>
+                )}
+                {(model.step === Step.SUCCESS || model.step === Step.ERROR) && (
+                    <Button onClick={rest.onClose} fullWidth={true}>
+                        {c('pqc-optin: Action').t`Got it`}
+                    </Button>
+                )}
             </ModalTwoFooter>
         </ModalTwo>
     );
