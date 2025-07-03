@@ -12,6 +12,7 @@ import clsx from '@proton/utils/clsx';
 import ItemAttachmentThumbnails from 'proton-mail/components/list/ItemAttachmentThumbnails';
 import { MAX_ROW_ATTACHMENT_THUMBNAILS } from 'proton-mail/constants';
 import { canShowAttachmentThumbnails } from 'proton-mail/helpers/attachment/attachmentThumbnails';
+import { getLabelIDs } from 'proton-mail/helpers/conversation';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -19,6 +20,7 @@ import { useExpiringElement } from '../../hooks/useExpiringElement';
 import type { Element } from '../../models/element';
 import type { ESMessage } from '../../models/encryptedSearch';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
+import { CategoryBadge } from '../categoryView/CategoryBadge';
 import NumMessages from '../conversation/NumMessages';
 import ItemAction from './ItemAction';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
@@ -121,6 +123,8 @@ const ItemRowLayout = ({
                     showDropdown={false}
                     isCollapsed={false}
                 />
+
+                <CategoryBadge labelIDs={Object.keys(getLabelIDs(element, labelID))} />
 
                 <div
                     className={clsx('item-subject flex items-center flex-nowrap', loading && 'w-custom')}
