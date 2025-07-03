@@ -145,7 +145,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedImmediately={true}
                 isScheduledChargedLater={false}
                 isScheduled={true}
-                subscription={buildSubscription({
+                subscription={buildSubscription(undefined, {
                     PeriodEnd: 1668868986,
                 })}
                 paymentNeeded={true}
@@ -189,7 +189,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
                 isScheduled={false}
-                subscription={buildSubscription({
+                subscription={buildSubscription(undefined, {
                     PeriodEnd: 1668868986,
                 })}
                 paymentNeeded={true}
@@ -240,7 +240,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
                 isScheduled={false}
-                subscription={buildSubscription({
+                subscription={buildSubscription(undefined, {
                     PeriodEnd: 1668868986,
                 })}
                 paymentNeeded={true}
@@ -291,7 +291,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
                 isScheduled={false}
-                subscription={buildSubscription({
+                subscription={buildSubscription(undefined, {
                     PeriodEnd: 1668868986,
                 })}
                 paymentNeeded={true}
