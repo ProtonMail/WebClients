@@ -549,9 +549,6 @@
       "Keep my subscription": [
         "내 구독 유지하기"
       ],
-      "Keep subscription": [
-        "구독 유지"
-      ],
       "Later": [
         "나중에"
       ],
@@ -1347,11 +1344,6 @@
       ],
       "Unsupported event": [
         "지원되지 않는 이벤트"
-      ]
-    },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "구독이 취소되었습니다."
       ]
     },
     "Badge": {
@@ -3199,14 +3191,26 @@
       "Failed to create folder": [
         "폴더 생성 실패"
       ],
+      "Failed to fetch sharing info": [
+        "공유 정보 가져오기 실패"
+      ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
       ],
       "Failed to move items": [
         "항목 이동 실패"
       ],
+      "Failed to resend invitation": [
+        "초대장 재전송 실패"
+      ],
       "Failed to save some photos to your Drive": [
         "일부 사진을 Drive에 저장할 수 없습니다"
+      ],
+      "Failed to unshare node": [
+        "노드 공유 해제 실패"
+      ],
+      "Failed to update share node": [
+        "공유 노드 업데이트 실패"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "\"${ item.name }\" 파일을  \"${ error }\" 오류로 인해 업로드할 수 없습니다."
@@ -11690,9 +11694,6 @@
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "무료 체험이 ${ trialDurationFormatted }일 후 종료됩니다"
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"

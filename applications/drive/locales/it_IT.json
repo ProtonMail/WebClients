@@ -554,9 +554,6 @@
       "Keep my subscription": [
         "Mantieni il mio abbonamento"
       ],
-      "Keep subscription": [
-        "Mantieni l'abbonamento"
-      ],
       "Later": [
         "Più tardi"
       ],
@@ -1372,11 +1369,6 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
-      ]
-    },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Abbonamento annullato."
       ]
     },
     "Badge": {
@@ -3238,14 +3230,29 @@
       "Failed to create folder": [
         "Impossibile creare la cartella"
       ],
+      "Failed to fetch node": [
+        "Impossibile recuperare il nodo"
+      ],
+      "Failed to fetch sharing info": [
+        "Impossibile recuperare le informazioni di condivisione"
+      ],
       "Failed to load the STL preview": [
         "Impossibile caricare l'anteprima STL"
       ],
       "Failed to move items": [
         "Impossibile spostare gli elementi"
       ],
+      "Failed to resend invitation": [
+        "Impossibile rinviare l'invito"
+      ],
       "Failed to save some photos to your Drive": [
         "Impossibile salvare alcune foto nel tuo Drive"
+      ],
+      "Failed to unshare node": [
+        "Impossibile annullare la condivisione del nodo"
+      ],
+      "Failed to update share node": [
+        "Impossibile aggiornare il nodo di condivisione"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Impossibile caricare il file \"${ item.name }\" a causa dell'errore \"${ error }\""
@@ -11987,10 +11994,6 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "La tua prova gratuita termina tra ${ trialDurationFormatted } giorno.",
-        "La tua prova gratuita termina tra ${ trialDurationFormatted } giorni."
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
