@@ -376,6 +376,9 @@
       "Create folder": [
         "Map maken"
       ],
+      "Create free account now": [
+        "Maak nu een gratis account aan"
+      ],
       "Create Gateway": [
         "Gateway opzetten"
       ],
@@ -862,9 +865,6 @@
       "Keep my subscription": [
         "Mijn abonnement behouden"
       ],
-      "Keep subscription": [
-        "Abonnement behouden"
-      ],
       "label emails as": [
         "e-mail labellen als"
       ],
@@ -970,6 +970,9 @@
       "Next month": [
         "Volgende maand"
       ],
+      "Next page": [
+        "Volgende pagina"
+      ],
       "No": [
         "Nee"
       ],
@@ -1014,6 +1017,9 @@
       ],
       "Previous month": [
         "Vorige maand"
+      ],
+      "Previous page": [
+        "Vorige pagina"
       ],
       "Publish changes": [
         "Publiceer wijzigingen"
@@ -5449,6 +5455,9 @@
       "Payments are currently not available, please try again later": [
         "Betalingen zijn op dit moment niet beschikbaar, probeer het later nog eens"
       ],
+      "Permissions request failed.": [
+        "Verzoek om toestemming mislukt."
+      ],
       "Please configure a custom domain before adding addresses.": [
         "Configureer eerst een eigen domein voordat u adressen toevoegt."
       ],
@@ -8255,6 +8264,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
       ],
+      "Dedicated VPN servers": [
+        "Dedicated VPN-servers"
+      ],
       "default email address": [
         "standaard e-mailadres"
       ],
@@ -9146,6 +9158,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Aantal dedicated VPN-servers in uw organisatie"
       ],
       "Number of items the user has access to (includes owned items + shared items)": [
         "Aantal items waartoe de gebruiker toegang heeft (inclusief eigen items + gedeelde items)"
@@ -10714,6 +10729,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Uw proefperiode eindigt over ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "U verliest ook toegang tot ${ boldPlanTitle } functies:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "U kunt deze servers onmiddellijk aan een andere Gateway toevoegen."
@@ -16260,9 +16278,6 @@
       "Blocked": [
         "Geblokkerd"
       ],
-      "Captcha": [
-        "Captcha"
-      ],
       "Device verification": [
         "Apparaat verificatie"
       ],
@@ -17313,6 +17328,10 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } adres",
+        "${ maxAddresses } adressen"
+      ],
       "${ value } of secure storage": [
         "${ value } veilige opslag"
       ],
@@ -17331,6 +17350,9 @@
       "Billing Cycle": [
         "Facturatiefrequentie"
       ],
+      "Collaborative document editing": [
+        "Samen documenten bewerken"
+      ],
       "Compare plans": [
         "Vergelijk abonnementen"
       ],
@@ -17343,11 +17365,17 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Ga verder met ${ PLAN_NAMES[plan] }"
       ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Versleutelde e-mail met ${ totalMailStorageSize } opslagruimte"
+      ],
       "Encrypted password manager": [
         "Versleutelde wachtwoordmanager"
       ],
       "End-to-end encryption": [
         "End-to-end versleuteling"
+      ],
+      "Every free account comes with:": [
+        "Elk gratis account omvat:"
       ],
       "Free": [
         "Free"
@@ -17375,6 +17403,9 @@
       ],
       "Online documents": [
         "Online documenten"
+      ],
+      "Password manager for all your devices": [
+        "Wachtwoordbeheerder voor al uw apparaten"
       ],
       "Pick your perfect plan": [
         "Kies uw perfecte abonnement"
@@ -17409,6 +17440,9 @@
       "Share and collaborate of files": [
         "Deel en werk samen aan bestanden"
       ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Schrijf u in krijg alles wat ${ BRAND_NAME } te bieden heeft."
+      ],
       "Sign up, protect your files": [
         "Schrijf in, bescherm uw bestanden"
       ],
@@ -17433,6 +17467,9 @@
       "Upload files of any size": [
         "Bestanden van elke grootte uploaden"
       ],
+      "use your current email.": [
+        "gebruik uw huidige e-mailadres."
+      ],
       "Use your email, or ${ externalButton }": [
         "Gebruik uw e-mailadres, of ${ externalButton }"
       ],
@@ -17447,6 +17484,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME } wachtwoord"
+      ],
       "Confirm password": [
         "Wachtwoord bevestigen"
       ],
@@ -19545,6 +19585,9 @@
       "Connect apps and devices": [
         "Apps en apparaten verbinden"
       ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "Verbind meer Gmail-adressen met ${ planName }"
+      ],
       "Connect organization": [
         "Connecteer organisatie"
       ],
@@ -20118,6 +20161,9 @@
       ],
       "Multi-user support": [
         "Ondersteuning voor meerdere gebruikers"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Meerdere accounts, 1 privé inbox"
       ],
       "My addresses": [
         "Mijn adressen"
@@ -20695,10 +20741,6 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dag",
-        "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dagen"
       ],
       "Your plan": [
         "Uw abonnement"

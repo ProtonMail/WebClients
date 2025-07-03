@@ -554,9 +554,6 @@
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
-      "Keep subscription": [
-        "Behåll prenumeration"
-      ],
       "Later": [
         "Senare"
       ],
@@ -1363,9 +1360,17 @@
         "Händelse stöds inte"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Prenumeration avslutad."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Avsluta prenumeration"
+      ],
+      "Keep subscription": [
+        "Behåll prenumeration"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Din gratis provperiod slutar om ${ timeRemaining }"
       ]
     },
     "Badge": {
@@ -11954,10 +11959,6 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Din gratis provperiod slutar om ${ trialDurationFormatted } dag",
-        "Din gratis provperiod slutar om ${ trialDurationFormatted } dagar"
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"

@@ -554,9 +554,6 @@
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
-      "Keep subscription": [
-        "Διατήρηση συνδρομής"
-      ],
       "Later": [
         "Αργότερα"
       ],
@@ -1366,9 +1363,17 @@
         "Μη υποστηριζόμενη εκδήλωση"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Η συνδρομή ακυρώθηκε."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Ακύρωση συνδρομής"
+      ],
+      "Keep subscription": [
+        "Διατήρηση συνδρομής"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Η δωρεάν δοκιμή σας λήγει σε ${ timeRemaining }"
       ]
     },
     "Badge": {
@@ -11922,10 +11927,6 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Η δωρεάν δοκιμή σας λήγει σε ${ trialDurationFormatted } ημέρα",
-        "Η δωρεάν δοκιμή σας λήγει σε ${ trialDurationFormatted } ημέρες"
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"

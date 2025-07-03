@@ -564,9 +564,6 @@
       "Keep my subscription": [
         "Zachowaj subskrypcję"
       ],
-      "Keep subscription": [
-        "Zachowaj subskrypcję"
-      ],
       "Later": [
         "Później"
       ],
@@ -686,6 +683,9 @@
       ],
       "New shared album": [
         "Nowy udostępniony album"
+      ],
+      "New spreadsheet": [
+        "Nowy arkusz kalkulacyjny"
       ],
       "Next": [
         "Dalej"
@@ -1391,6 +1391,19 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Anuluj subskrypcję"
+      ],
+      "Keep subscription": [
+        "Zachowaj subskrypcję"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Darmowa wersja próbna zakończy się za ${ timeRemaining }"
       ]
     },
     "Badge": {
@@ -3261,14 +3274,32 @@
       "Failed to copy photo to album": [
         "Nie udało się skopiować zdjęcia do albumu"
       ],
+      "Failed to create folder": [
+        "Nie udało się utworzyć folderu"
+      ],
+      "Failed to fetch node": [
+        "Nie udało się pobrać węzła"
+      ],
+      "Failed to fetch sharing info": [
+        "Nie udało się pobrać informacji o udostępnianiu"
+      ],
       "Failed to load the STL preview": [
         "Nie udało się załadować podglądu STL"
       ],
       "Failed to move items": [
         "Nie udało się przenieść elementów"
       ],
+      "Failed to resend invitation": [
+        "Nie udało się ponownie wysłać zaproszenia"
+      ],
       "Failed to save some photos to your Drive": [
         "Nie udało się zapisać niektórych zdjęć na dysku"
+      ],
+      "Failed to unshare node": [
+        "Nie udało się usunąć udostępniania węzła"
+      ],
+      "Failed to update share node": [
+        "Nie udało się zaktualizować węzła udostępniania"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Plik \"${ item.name }\" nie może zostać przesłany z powodu błędu: ${ error }"
@@ -5099,6 +5130,9 @@
       "Dedicated servers": [
         "Dedykowane serwery"
       ],
+      "Dedicated VPN servers": [
+        "Dedykowane serwery VPN"
+      ],
       "default email address": [
         "domyślny adres e-mail"
       ],
@@ -5596,6 +5630,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Liczba dedykowanych serwerów VPN organizacji"
       ],
       "Numbers": [
         "Cyfry"
@@ -6616,6 +6653,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Wersja próbna zakończy się za ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Stracisz również dostęp do funkcji planu ${ boldPlanTitle }:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Stracisz dostęp do planu ${ boldPlanTitle } ${ boldEndDate }."
@@ -9208,6 +9248,9 @@
       "The link to your item was deleted": [
         "Link do elementu został usunięty"
       ],
+      "The spreadsheet failed to be created": [
+        "Utworzenie arkusza kalkulacyjnego nie powiodło się"
+      ],
       "This item was not removed from your list": [
         "Element nie został usunięty z listy",
         "Elementy nie zostały usunięte z listy",
@@ -9231,6 +9274,9 @@
       ],
       "Your photo(s) have been added to \"${ albumName }\"": [
         "Zdjęcia zostały dodane do albumu \"${ albumName }\""
+      ],
+      "Your photo(s) have been removed from ${ albumLink.name }": [
+        "Zdjęcia zostały usunięte z albumu ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Zapisywanie ustawień nie powiodło się"
@@ -9269,8 +9315,14 @@
       "${ pricingTitle } offer expires today!": [
         "Oferta ${ pricingTitle } wygasa dzisiaj!"
       ],
+      "Don’t show this again": [
+        "Nie pokazuj ponownie"
+      ],
       "Don’t show this offer again": [
         "Nie pokazuj tej oferty ponownie"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Wybierz plan ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Wybierz plan Drive Plus za ${ pricingTitle }"
@@ -9324,9 +9376,20 @@
         "Subskrypcja odnowi się wkrótce"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Szyfrowany menadżer haseł"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 więcej funkcji premium"
+      ],
+      "500 GB secure storage": [
+        "500 GB bezpiecznej przestrzeni dyskowej"
+      ],
+      "Advanced threat protection": [
+        "Zaawansowana ochrona przed zagrożeniami"
       ],
       "Custom email domain": [
         "Niestandardowa domena"
@@ -9348,6 +9411,12 @@
       ],
       "Storage": [
         "Przestrzeń dyskowa"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultraszybkie serwery w ponad 110 krajach"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Nieograniczona liczba aliasów chroniących tożsamość"
       ]
     },
     "Onboarding": {
@@ -9661,6 +9730,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Przelew bankowy"
       ],
@@ -9703,6 +9775,9 @@
       ],
       "More plans are available in other currencies": [
         "Więcej planów jest dostępnych w innych walutach"
+      ],
+      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
+        "W przelewach SEPA akceptowane jest tylko euro. Waluta została zmieniona. Użyj formularza, aby przywrócić swój wybór."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
@@ -9791,6 +9866,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay — karta kończąca się na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Przelew bankowy — ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -10435,8 +10518,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Przeglądaj bezpiecznie"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Zrób więcej z ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Uzyskaj nieograniczoną liczbę aliasów"
+      ],
       "Go to subscription plans": [
         "Przejdź do planów subskrypcji"
+      ],
+      "Guard against threats": [
+        "Ochrona przed zagrożeniami"
+      ],
+      "Increase your storage": [
+        "Zwiększ przestrzeń dyskową"
+      ],
+      "Keep passwords safe": [
+        "Przechowuj hasła bezpiecznie"
+      ],
+      "Unblock streaming content": [
+        "Odblokuj streaming"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -10517,6 +10621,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Uzyskaj dostęp do streamingu na całym świecie"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Uzyskaj 500 GB na bezpieczne przechowywanie wszystkich plików i zdjęć"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Uzyskaj dostęp do ultraszybkich serwerów VPN w ponad 110 krajach"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Uzyskaj jeden plan, który zawiera wszystko. Uzyskaj plan ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Uzyskaj nieograniczoną liczbę aliasów, aby chronić swoją tożsamość i ograniczyć spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Przechowuj hasła bezpiecznie i uporządkowane w wielu sejfach"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Chroń swoje konto przed zagrożeniami dzięki funkcji Proton Sentinel"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Ulepsz konto i zaoszczędź więcej dzięki dwuletniemu planowi ${ planName }"
       ]
@@ -12204,6 +12329,9 @@
       "Untitled document ${ date }": [
         "Dokument bez nazwy ${ date }"
       ],
+      "Untitled spreadsheet ${ date }": [
+        "Arkusz kalkulacyjny bez nazwy ${ date }"
+      ],
       "Upgrade complete!": [
         "Ulepszenie zakończone!"
       ],
@@ -12293,12 +12421,6 @@
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dzień",
-        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dni",
-        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dni",
-        "Darmowa wersja próbna zakończy się za ${ trialDurationFormatted } dnia"
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
@@ -12409,6 +12531,14 @@
         "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
       ]
     },
+    "Unlimited offer": {
+      "/month": [
+        "/ miesiąc"
+      ],
+      "Only": [
+        "Tylko"
+      ]
+    },
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorzy nie mają dostępu do danych prywatnych użytkowników i nie mogą zresetować ich haseł."
@@ -12437,6 +12567,9 @@
       ],
       "Name must not be empty": [
         "Nazwa nie może być pusta"
+      ],
+      "Name must not contain slashes (/)": [
+        "Nazwa nie może zawierać ukośników (/)"
       ]
     },
     "Video control": {

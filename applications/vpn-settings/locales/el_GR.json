@@ -474,9 +474,6 @@
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
-      "Keep subscription": [
-        "Διατήρηση συνδρομής"
-      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
@@ -1236,9 +1233,17 @@
         "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ BRAND_NAME } Scribe να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Η συνδρομή ακυρώθηκε."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Ακύρωση συνδρομής"
+      ],
+      "Keep subscription": [
+        "Διατήρηση συνδρομής"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Η δωρεάν δοκιμή σας λήγει σε ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -9576,8 +9581,8 @@
       "Blocked": [
         "Αποκλεισμένο"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Επαλήθευση συσκευών"
@@ -12467,10 +12472,6 @@
       ],
       "Your current plan": [
         "Το τρέχον πακέτο σας"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Η δωρεάν δοκιμή σας λήγει σε ${ trialDurationFormatted } ημέρα",
-        "Η δωρεάν δοκιμή σας λήγει σε ${ trialDurationFormatted } ημέρες"
       ],
       "Your plan": [
         "Το πακέτο σας"

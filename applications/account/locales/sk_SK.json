@@ -865,9 +865,6 @@
       "Keep my subscription": [
         "Ponechať moje predplatné"
       ],
-      "Keep subscription": [
-        "Ponechať predplatné"
-      ],
       "label emails as": [
         "označiť emaily ako"
       ],
@@ -973,6 +970,9 @@
       "Next month": [
         "Budúci mesiac"
       ],
+      "Next page": [
+        "Ďalšia strana"
+      ],
       "No": [
         "Nie"
       ],
@@ -1017,6 +1017,9 @@
       ],
       "Previous month": [
         "Predchádzajúci mesiac"
+      ],
+      "Previous page": [
+        "Predchádzajúca strana"
       ],
       "Publish changes": [
         "Zverejniť zmeny"
@@ -1888,8 +1891,8 @@
       "${ n } month": [
         "${ n } mesiac",
         "${ n } mesiace",
-        "${ n } mesiace",
-        "${ n } mesiace"
+        "${ n } mesiacov",
+        "${ n } mesiacov"
       ],
       "/ month": [
         "/ mesiac"
@@ -1988,11 +1991,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Som mimo kanceláriu s obmedzeným prístupom k emailu."
-      ]
-    },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Predplatné bolo zrušené."
       ]
     },
     "Badge for domain": {
@@ -4144,6 +4142,12 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Najprv nakonfigurujte túto možnosť, aby ste aktivovali svoju organizáciu a prispôsobili svoju emailovú adresu."
       ],
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
+        "Gratulujeme! Získali ste maximálne ${ rewardsLimit } bezplatný mesiac ${ plusPlanName }.",
+        "Gratulujeme! Získali ste maximálne ${ rewardsLimit } bezplatné mesiace ${ plusPlanName }.",
+        "Gratulujeme! Získali ste maximálne ${ rewardsLimit } bezplatných mesiacov ${ plusPlanName }.",
+        "Gratulujeme! Získali ste maximálne ${ rewardsLimit } bezplatných mesiacov ${ plusPlanName }."
+      ],
       "Connect your CRM, website, printers, and more.": [
         "Pripojte svoj CRM, webovú stránku, tlačiarne a ďalšie."
       ],
@@ -4530,7 +4534,7 @@
     },
     "drive_signup_2024: Info": {
       "**Collaborative:** online document editor": [
-        "**Kolektívny:** online editor dokumentov"
+        "**Kolektívne:** online editor dokumentov"
       ],
       "**GDPR** and **HIPAA** compliant": [
         "V súlade s **GDPR** a **HIPAA**"
@@ -4539,10 +4543,10 @@
         "Certifikát **ISO 27001**"
       ],
       "**Secure:** end-to-end encryption": [
-        "**Bezpečný:** end-to-end šifrovanie"
+        "**Bezpečné:** end-to-end šifrovanie"
       ],
       "**Simple and user-friendly:** import your files and setup in minutes": [
-        "**Jednoduchý a používateľsky prívetivý:** importujte svoje súbory a nastavte ich za niekoľko minút"
+        "**Jednoduchý a používateľsky prívetivé:** importujte svoje súbory a nastavte ich za niekoľko minút"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Pokročilá ochrana presahujúca priemyselné štandardy"
@@ -10783,7 +10787,7 @@
         "Za účelom overenia platby budete presmerovaný na PayPal."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
-        "Nebude sa vám účtovať, ak zrušíte pred ${ trialEndsOnFormatted }."
+        "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
       ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Počas 10 dní nebude možné tieto servery preradiť do inej krajiny."
@@ -15195,10 +15199,10 @@
         "Akonáhle začne vaše plné predplatné..."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
-        "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+        "Stále môžete zrušiť do 30 dní a získať pomernú náhradu späť."
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
-        "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+        "Stále môžete zrušiť do 30 dní a získať späť pomernú náhradu."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Môžete používať ${ planTitle } až do konca skúšobného obdobia bez spoplatnenia."
@@ -16608,9 +16612,6 @@
       "Blocked": [
         "Blokované"
       ],
-      "Captcha": [
-        "Captcha"
-      ],
       "Device verification": [
         "Overenie zariadenia"
       ],
@@ -17851,6 +17852,12 @@
       "use your own email.": [
         "používajte svoj vlastný email."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN so servermi v ${ vpnServersCountData.free.countries } krajine",
+        "VPN so servermi v ${ vpnServersCountData.free.countries } krajinách",
+        "VPN so servermi v ${ vpnServersCountData.free.countries } krajinách",
+        "VPN so servermi v ${ vpnServersCountData.free.countries } krajinách"
+      ],
       "Yearly": [
         "Ročne"
       ],
@@ -17919,7 +17926,7 @@
         "Pokročilé bezpečnostné funkcie"
       ],
       "Advanced sharing security": [
-        "Pokročilá bezpečnosť zdieľania"
+        "Pokročilú bezpečnosť zdieľania"
       ],
       "Apps for all devices": [
         "Aplikácie pre všetky zariadenia"
@@ -17931,7 +17938,7 @@
         "Integrované šifrovanie"
       ],
       "Calendar, password manager, file storage, and VPN included": [
-        "Obsahuje kalendár, správcu hesiel, úložisko súborov a VPN"
+        "Kalendár, správcu hesiel, úložisko súborov a VPN"
       ],
       "Device sync": [
         "Synchronizácia zariadenia"
@@ -18194,7 +18201,7 @@
     },
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
-        "Pristupujte k obsahu na streamovacích služieb na celom svete"
+        "Pristupujte k obsahu streamovacích služieb na celom svete"
       ],
       "Get 500 GB to securely store all your files and photos": [
         "Získajte 500 GB na bezpečné uloženie všetkých vašich súborov a fotografií"
@@ -21223,12 +21230,6 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } deň",
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dni",
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní",
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní"
       ],
       "Your plan": [
         "Váš plán"

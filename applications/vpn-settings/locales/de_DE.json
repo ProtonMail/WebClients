@@ -474,9 +474,6 @@
       "Keep my subscription": [
         "Behalte mein Abonnement"
       ],
-      "Keep subscription": [
-        "Abonnement behalten"
-      ],
       "Learn more": [
         "Mehr erfahren"
       ],
@@ -1255,9 +1252,17 @@
         "Jetzt fälliger Betrag"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Abonnement gekündigt."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Abonnement kündigen"
+      ],
+      "Keep subscription": [
+        "Abonnement behalten"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Deine kostenlose Testversion endet in ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -4381,7 +4386,7 @@
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "${ PASS_SHORT_APP_NAME } Lifetime Deal hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung deines Abonnements ${ planTitle } bleiben unverändert."
+        "Das ${ PASS_SHORT_APP_NAME } Lifetime-Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung deines Abonnements ${ planTitle } bleiben unverändert."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -8604,8 +8609,8 @@
         "2FA erzwingen"
       ],
       "Support for ${ n } custom email domain": [
-        "Support für ${ n } benutzerdefinierte E-Mail-Domäne",
-        "Support für ${ n } benutzerdefinierte E-Mail-Domänen"
+        "Support für ${ n } benutzerdefinierte E-Mail-Domain",
+        "Support für ${ n } benutzerdefinierte E-Mail-Domains"
       ]
     },
     "news": {
@@ -8867,7 +8872,7 @@
         "Jederzeit vor dem ${ cancelDate } kündigen."
       ],
       "Cancel anytime before then.": [
-        "Du kannst jederzeit vorher abbrechen."
+        "Du kannst jederzeit vorher kündigen."
       ],
       "contact our support team": [
         "Kontaktiere unser Support-Team"
@@ -9326,7 +9331,7 @@
         "Wähle zum Bezahlen ein Rechnungsland aus"
       ],
       "terms & conditions": [
-        "Bedingungen & Konditionen"
+        "Allgemeine Geschäftsbedingungen"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
@@ -9595,8 +9600,8 @@
       "Blocked": [
         "Gesperrt"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Geräteüberprüfung"
@@ -11081,7 +11086,7 @@
         "Wie wir lokale Aktivisten unterstützt haben, als die Privatsphäre und die Redefreiheit bedroht waren."
       ],
       "If you exceed free plan limits, you won't be able to:": [
-        "Wenn du die Limite der kostenlosen Version überschreitest, ist Folgendes nicht möglich:"
+        "Wenn du die Grenzen der kostenlosen Version überschreitest, ist Folgendes nicht mehr möglich:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
         "Wenn deine Nutzung die Limite der kostenlosen Version überschreitet, kann der Zugang zu den Produktfunktionen und deinen Daten eingeschränkt sein."
@@ -12194,7 +12199,7 @@
         "OpenVPN Konfigurationsdateien"
       ],
       "Org setup": [
-        "Org.-Einrichtung"
+        "Organisationseinrichtung"
       ],
       "Organization filters": [
         "Organisationsfilter"
@@ -12487,10 +12492,6 @@
       ],
       "Your current plan": [
         "Dein aktuelles Abonnement"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Deine kostenlose Testversion endet in ${ trialDurationFormatted } Tag.",
-        "Deine kostenlose Testversion endet in ${ trialDurationFormatted } Tagen."
       ],
       "Your plan": [
         "Dein Abonnement"

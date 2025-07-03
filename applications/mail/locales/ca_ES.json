@@ -736,9 +736,6 @@
       "Keep my subscription": [
         "Mantén la subscripció"
       ],
-      "Keep subscription": [
-        "Mantingueu la subscripció"
-      ],
       "Label as": [
         "Etiqueta com a"
       ],
@@ -1426,10 +1423,6 @@
       "Trust": [
         "De confiança"
       ],
-      "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
-      ],
       "Trust public key": [
         "Confia en la clau pública"
       ],
@@ -1492,6 +1485,9 @@
       ],
       "Upgrade": [
         "Millora"
+      ],
+      "Upgrade Now": [
+        "Millora ara"
       ],
       "Upgrade now": [
         "Millora ara"
@@ -1589,6 +1585,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "La prova gratuïta de l'aplicació d'escriptori finalitza d'aquí a 2 dies. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "La prova gratuïta de l'aplicació d'escriptori finalitza d'aquí a 5 dies. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "El vostre assistent d'escriptura de correus electrònics"
@@ -1928,9 +1933,17 @@
         "S'ha aprovat la verificació del remitent"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "S'ha cancel·lat la subscripció."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancel·la la subscripció"
+      ],
+      "Keep subscription": [
+        "Mantingueu la subscripció"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "La prova gratuïta se us acaba en ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -7115,7 +7128,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7299,6 +7313,9 @@
       ],
       "New": [
         "Nova"
+      ],
+      "newsletters": [
+        "butlletins"
       ],
       "No action selected": [
         "No s'ha seleccionat cap acció"
@@ -14821,10 +14838,6 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "La prova gratuïta finalitza en ${ trialDurationFormatted } dia",
-        "La prova gratuïta finalitza en ${ trialDurationFormatted } dies"
       ],
       "Your free trial has ended": [
         "La prova gratuïta ha finalitzat."

@@ -736,9 +736,6 @@
       "Keep my subscription": [
         "Mijn abonnement behouden"
       ],
-      "Keep subscription": [
-        "Abonnement behouden"
-      ],
       "Label as": [
         "Labellen als"
       ],
@@ -1427,8 +1424,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Vertrouwde sleutels"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1492,6 +1488,9 @@
       ],
       "Upgrade": [
         "Upgraden"
+      ],
+      "Upgrade Now": [
+        "Upgrade Nu"
       ],
       "Upgrade now": [
         "Nu upgraden"
@@ -1589,6 +1588,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "U kunt geen vCard-bestanden met meer dan ${ maxAttachments } contact verzenden",
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "De gratis proefperiode van uw desktop programma loopt over 2 dagen af. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "De gratis proefperiode van uw desktop programma loopt over 5 dagen af. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Uw e-mailschrijfassistent"
@@ -4614,6 +4622,9 @@
       "Payment process not supported": [
         "Betalingsproces niet ondersteund"
       ],
+      "Permissions request failed.": [
+        "Verzoek om toestemming mislukt."
+      ],
       "Please activate your search again": [
         "Activeer het zoeken opnieuw"
       ],
@@ -6771,6 +6782,9 @@
       "Dedicated servers": [
         "Dedicated servers"
       ],
+      "Dedicated VPN servers": [
+        "Dedicated VPN-servers"
+      ],
       "default email address": [
         "standaard e-mailadres"
       ],
@@ -7117,7 +7131,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -7361,6 +7376,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Aantal dedicated VPN-servers in uw organisatie"
       ],
       "Numbers": [
         "Nummers"
@@ -8525,6 +8543,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Uw proefperiode eindigt over ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "U verliest ook toegang tot ${ boldPlanTitle } functies:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "U verliest toegang tot ${ boldPlanTitle } op ${ boldEndDate }."
@@ -11282,6 +11303,9 @@
       ],
       "Activate selected": [
         "Activeer geselecteerde"
+      ],
+      "Ad-free promise": [
+        "Beloofd vrij van reclame"
       ],
       "Advanced encryption": [
         "Geavanceerde versleuteling"
@@ -14807,10 +14831,6 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dag",
-        "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dagen"
       ],
       "Your free trial has ended": [
         "Uw gratis proefperiode is afgelopen"

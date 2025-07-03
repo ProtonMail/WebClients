@@ -554,9 +554,6 @@
       "Keep my subscription": [
         "Conserver mon abonnement"
       ],
-      "Keep subscription": [
-        "Conserver l'abonnement"
-      ],
       "Later": [
         "Plus tard"
       ],
@@ -1374,9 +1371,17 @@
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "L'abonnement a été annulé."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Annuler l'abonnement"
+      ],
+      "Keep subscription": [
+        "Conserver l'abonnement"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Votre essai gratuit se termine dans ${ timeRemaining }"
       ]
     },
     "Badge": {
@@ -12009,10 +12014,6 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Votre essai gratuit se termine dans ${ trialDurationFormatted } jour.",
-        "Votre essai gratuit se termine dans ${ trialDurationFormatted } jours."
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."

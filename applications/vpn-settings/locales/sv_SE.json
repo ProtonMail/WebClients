@@ -474,9 +474,6 @@
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
-      "Keep subscription": [
-        "Behåll prenumeration"
-      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -1233,9 +1230,17 @@
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Prenumeration avslutad."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Avsluta prenumeration"
+      ],
+      "Keep subscription": [
+        "Behåll prenumeration"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Din gratis provperiod slutar om ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -7429,6 +7434,9 @@
       "Sign out": [
         "Logga ut"
       ],
+      "Two password mode disabled": [
+        "Två-lösenordsläge inaktiverat"
+      ],
       "Unknown": [
         "Okänd"
       ]
@@ -9560,8 +9568,8 @@
       "Blocked": [
         "Blockerad"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Enhetsverifiering"
@@ -12448,10 +12456,6 @@
       ],
       "Your current plan": [
         "Ditt nuvarande paket"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Din gratis provperiod slutar om ${ trialDurationFormatted } dag",
-        "Din gratis provperiod slutar om ${ trialDurationFormatted } dagar"
       ],
       "Your plan": [
         "Ditt paket"

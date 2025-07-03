@@ -736,9 +736,6 @@
       "Keep my subscription": [
         "Conserver mon abonnement"
       ],
-      "Keep subscription": [
-        "Conserver l'abonnement"
-      ],
       "Label as": [
         "Labelliser"
       ],
@@ -1426,10 +1423,6 @@
       "Trust": [
         "Faire confiance"
       ],
-      "Trust key": [
-        "Approuver la clé",
-        "Approuver les clés"
-      ],
       "Trust public key": [
         "Approuver la clé publique"
       ],
@@ -1492,6 +1485,9 @@
       ],
       "Upgrade": [
         "Changer d'abonnement"
+      ],
+      "Upgrade Now": [
+        "Passer à l'abonnement supérieur"
       ],
       "Upgrade now": [
         "Changer d'abonnement"
@@ -1589,6 +1585,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contact.",
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Votre essai gratuit de l'application de bureau se termine dans 2 jours. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Votre essai gratuit de l'application de bureau se termine dans 5 jours. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Votre assistant d'écriture de messages"
@@ -1936,9 +1941,17 @@
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "L'abonnement a été annulé."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Annuler l'abonnement"
+      ],
+      "Keep subscription": [
+        "Conserver l'abonnement"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Votre essai gratuit se termine dans ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -7131,7 +7144,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -7315,6 +7329,9 @@
       ],
       "New": [
         "Nouveau"
+      ],
+      "newsletters": [
+        "newsletters"
       ],
       "No action selected": [
         "Aucune action n'est sélectionnée."
@@ -14842,10 +14859,6 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Votre essai gratuit se termine dans ${ trialDurationFormatted } jour.",
-        "Votre essai gratuit se termine dans ${ trialDurationFormatted } jours."
       ],
       "Your free trial has ended": [
         "Votre essai gratuit est terminé."

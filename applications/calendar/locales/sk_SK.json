@@ -458,9 +458,6 @@
       "Keep my subscription": [
         "Ponechať moje predplatné"
       ],
-      "Keep subscription": [
-        "Ponechať predplatné"
-      ],
       "Later": [
         "Neskôr"
       ],
@@ -1152,8 +1149,8 @@
       "${ n } month": [
         "${ n } mesiac",
         "${ n } mesiace",
-        "${ n } mesiace",
-        "${ n } mesiace"
+        "${ n } mesiacov",
+        "${ n } mesiacov"
       ],
       "/ month": [
         "/ mesiac"
@@ -1207,11 +1204,6 @@
     "Attendee role": {
       "Optional": [
         "Voliteľné"
-      ]
-    },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Predplatné bolo zrušené."
       ]
     },
     "Badge": {
@@ -6060,7 +6052,7 @@
         "Aktualizujete všetky udalosti v tejto sérii. Odobraní účastníci budú oboznámení."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
-        "Nebude sa vám účtovať, ak zrušíte pred ${ trialEndsOnFormatted }."
+        "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }.",
@@ -8778,10 +8770,10 @@
         "Akonáhle začne vaše plné predplatné..."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
-        "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+        "Stále môžete zrušiť do 30 dní a získať pomernú náhradu späť."
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
-        "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+        "Stále môžete zrušiť do 30 dní a získať späť pomernú náhradu."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Môžete používať ${ planTitle } až do konca skúšobného obdobia bez spoplatnenia."
@@ -9950,7 +9942,7 @@
     },
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
-        "Pristupujte k obsahu na streamovacích služieb na celom svete"
+        "Pristupujte k obsahu streamovacích služieb na celom svete"
       ],
       "Get 500 GB to securely store all your files and photos": [
         "Získajte 500 GB na bezpečné uloženie všetkých vašich súborov a fotografií"
@@ -11580,12 +11572,6 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } deň",
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dni",
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní",
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní"
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"

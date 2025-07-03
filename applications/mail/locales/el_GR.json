@@ -736,9 +736,6 @@
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
-      "Keep subscription": [
-        "Διατήρηση συνδρομής"
-      ],
       "Label as": [
         "Απόδοση ετικετών"
       ],
@@ -1426,10 +1423,6 @@
       "Trust": [
         "Αξιόπιστο"
       ],
-      "Trust key": [
-        "Εμπιστοσύνη στο κλειδί",
-        "Εμπιστοσύνη στα κλειδιά"
-      ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
       ],
@@ -1492,6 +1485,9 @@
       ],
       "Upgrade": [
         "Αναβάθμιση"
+      ],
+      "Upgrade Now": [
+        "Αναβαθμίστε Τώρα"
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
@@ -1589,6 +1585,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει σε 2 ημέρες. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει σε 5 ημέρες. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Ο βοηθός σύνταξης ηλ. ταχυδρομείου σας"
@@ -1928,9 +1933,17 @@
         "Η επαλήθευση του αποστολέα ολοκληρώθηκε επιτυχώς"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Η συνδρομή ακυρώθηκε."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Ακύρωση συνδρομής"
+      ],
+      "Keep subscription": [
+        "Διατήρηση συνδρομής"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Η δωρεάν δοκιμή σας λήγει σε ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -7115,7 +7128,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -7299,6 +7313,9 @@
       ],
       "New": [
         "Νέο"
+      ],
+      "newsletters": [
+        "ενημερωτικά δελτία"
       ],
       "No action selected": [
         "Δεν έχει επιλεγεί καμία ενέργεια"
@@ -14812,10 +14829,6 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Η δωρεάν δοκιμή σας λήγει σε ${ trialDurationFormatted } ημέρα",
-        "Η δωρεάν δοκιμή σας λήγει σε ${ trialDurationFormatted } ημέρες"
       ],
       "Your free trial has ended": [
         "Η δωρεάν δοκιμαστική περίοδός σας έχει λήξει."

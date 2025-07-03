@@ -736,9 +736,6 @@
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
-      "Keep subscription": [
-        "Behåll prenumeration"
-      ],
       "Label as": [
         "Märk som"
       ],
@@ -1426,10 +1423,6 @@
       "Trust": [
         "Lita på"
       ],
-      "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
-      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -1492,6 +1485,9 @@
       ],
       "Upgrade": [
         "Uppgradera"
+      ],
+      "Upgrade Now": [
+        "Uppgradera nu"
       ],
       "Upgrade now": [
         "Uppgradera nu"
@@ -1589,6 +1585,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakt",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Din gratis provperiod av skrivbordsappen slutar om 2 dagar. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Din gratis provperiod av skrivbordsappen slutar om 5 dagar. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Din gratis provperiod av skrivbordsappen slutar den ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Din skrivassistent för e-post"
@@ -1925,9 +1930,17 @@
         "Avsändarverifiering godkänd"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Prenumeration avslutad."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Avsluta prenumeration"
+      ],
+      "Keep subscription": [
+        "Behåll prenumeration"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Din gratis provperiod slutar om ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -7096,7 +7109,8 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -7280,6 +7294,9 @@
       ],
       "New": [
         "Ny"
+      ],
+      "newsletters": [
+        "nyhetsbrev"
       ],
       "No action selected": [
         "Ingen åtgärd vald"
@@ -14778,10 +14795,6 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Din gratis provperiod slutar om ${ trialDurationFormatted } dag",
-        "Din gratis provperiod slutar om ${ trialDurationFormatted } dagar"
       ],
       "Your free trial has ended": [
         "Din gratis provperiod har avslutats"

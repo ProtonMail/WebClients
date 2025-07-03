@@ -442,6 +442,9 @@
       "Delete logo": [
         "删除徽标"
       ],
+      "Delete logs": [
+        "删除日志"
+      ],
       "Delete member": [
         "删除成员"
       ],
@@ -847,9 +850,6 @@
       "Keep my subscription": [
         "保留订阅"
       ],
-      "Keep subscription": [
-        "继续订阅"
-      ],
       "label emails as": [
         "给邮件加标签"
       ],
@@ -955,6 +955,9 @@
       "Next month": [
         "下个月"
       ],
+      "Next page": [
+        "下一页"
+      ],
       "No": [
         "否"
       ],
@@ -999,6 +1002,9 @@
       ],
       "Previous month": [
         "上个月"
+      ],
+      "Previous page": [
+        "上一页"
       ],
       "Publish changes": [
         "发布更改"
@@ -1536,6 +1542,9 @@
       ],
       "What do I get?": [
         "我可获得什么？"
+      ],
+      "Wipe": [
+        "清除"
       ],
       "Yes": [
         "是"
@@ -6346,6 +6355,11 @@
         "安全看视频"
       ]
     },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "随时随地访问流媒体服务内容，包括 Netflix、Disney+、Prime Video 等"
+      ]
+    },
     "fido2: Action": {
       "Delete key": [
         "删除密钥"
@@ -7638,6 +7652,9 @@
       "Activity monitor": [
         "活动监视器"
       ],
+      "Activity Monitor": [
+        "活动监视器"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
       ],
@@ -7808,6 +7825,9 @@
       ],
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "您确定要离开该群组吗？如果您离开，则需要群组管理员重新邀请你才能再次加入。"
+      ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "您确定要永久删除所有日志吗？"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "您确定要移除此用户的管理权限吗？"
@@ -8360,6 +8380,9 @@
       ],
       "expires ${ expirationDate }": [
         "于 ${ expirationDate } 过期"
+      ],
+      "Failed to fetch logs.": [
+        "获取日志失败。"
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
@@ -11345,6 +11368,9 @@
       "Copy fingerprint": [
         "复制指纹"
       ],
+      "Copy IP address to clipboard": [
+        "复制 IP 地址到剪贴板"
+      ],
       "Could you please let us know which provider?": [
         "您能告诉我们是哪一款邮箱吗？"
       ],
@@ -12666,11 +12692,20 @@
       ],
       "Two password mode enabled": [
         "已开启双密码模式"
+      ],
+      "Unknown": [
+        "未知"
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "活动监视器"
+      ],
       "Enable ${ reason }": [
         "启用 ${ reason }"
+      ],
+      "Enable detailed events": [
+        "启用详细活动"
       ]
     },
     "Mail import summary": {
@@ -15929,9 +15964,6 @@
       "Blocked": [
         "已拦截"
       ],
-      "Captcha": [
-        "CAPTCHA"
-      ],
       "Device verification": [
         "设备验证"
       ],
@@ -17025,6 +17057,9 @@
       "Online documents": [
         "在线文件"
       ],
+      "Password manager for all your devices": [
+        "适用于所有设备的密码管理器"
+      ],
       "Pick your perfect plan": [
         "选择您心仪的套餐"
       ],
@@ -17096,6 +17131,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME } 密码"
+      ],
       "Confirm password": [
         "确认密码"
       ],
@@ -20242,9 +20280,6 @@
       "Your exposed information": [
         "您的泄露信息"
       ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "您的免费体验期将于 ${ trialDurationFormatted } 结束。"
-      ],
       "Your plan": [
         "您的账户等级"
       ],
@@ -20391,6 +20426,9 @@
       ],
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "允许在日历邀请中无缝添加视频会议链接。"
+      ],
+      "Any protection applied to suspicious activity": [
+        "对于可疑操作所采取的所有防护措施"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "根据系统设置自动调整日间或夜间模式。"
