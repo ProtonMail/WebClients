@@ -744,9 +744,6 @@
       "Keep my subscription": [
         "Zachovat mé předplatné"
       ],
-      "Keep subscription": [
-        "Zachovat předplatné"
-      ],
       "Label as": [
         "Označit jako"
       ],
@@ -1434,12 +1431,6 @@
       "Trust": [
         "Důvěřovat"
       ],
-      "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
-      ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
       ],
@@ -1502,6 +1493,9 @@
       ],
       "Upgrade": [
         "Přejít na placený tarif"
+      ],
+      "Upgrade Now": [
+        "Navýšit nyní"
       ],
       "Upgrade now": [
         "Navýšit nyní"
@@ -1601,6 +1595,15 @@
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Bezplatná zkušební verze desktopové aplikace končí za 2 dny. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Bezplatná zkušební verze desktopové aplikace končí za 5 dní. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Váš asistent psaní e-mailů"
@@ -1956,11 +1959,6 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
-      ]
-    },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Předplatné zrušeno."
       ]
     },
     "bf2023: Deal details": {
@@ -7363,7 +7361,10 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -15387,12 +15388,6 @@
       ],
       "Your exposed information": [
         "Vaše uniklé informace"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } den",
-        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dny",
-        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dnů",
-        "Vaše bezplatná zkušební verze končí za ${ trialDurationFormatted } dnů"
       ],
       "Your free trial has ended": [
         "Vaše zkušební doba skončila"

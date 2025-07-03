@@ -1874,12 +1874,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
-      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -2564,7 +2558,7 @@
         "${ repliedCount } odpovedí"
       ],
       "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } bezpečný odkazpo",
+        "${ secureLinksCount } bezpečný odkaz",
         "${ secureLinksCount } bezpečné odkazy",
         "${ secureLinksCount } bezpečných odkazov",
         "${ secureLinksCount } bezpečných odkazov"
@@ -2675,7 +2669,7 @@
         "Vždy zobrazovať pole s používateľským menom"
       ],
       "API Credential": [
-        "API poverenie"
+        "API prihlasovací údaj"
       ],
       "API Key": [
         "API kľúč"
@@ -2729,7 +2723,7 @@
         "Doménový kôš"
       ],
       "Checkbox": [
-        "Začiarkavacie políčko"
+        "Zaškrtávacie políčko"
       ],
       "Choose unlock method": [
         "Vyberte spôsob odomknutia"
@@ -2891,7 +2885,7 @@
         "Export"
       ],
       "Extra email addresses": [
-        "Ďalších emailových adries"
+        "Ďalšie emailové adresy"
       ],
       "Extra fields": [
         "Vlastné polia"
@@ -3804,7 +3798,7 @@
         "Stiahnuť súbor"
       ],
       "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
-        "Z dôvodu obmedzenia prehliadača Firefox je potrebné pred odoslaním súborov znovu otvoriť ${ PASS_APP_NAME } v novom okne."
+        "Z dôvodu obmedzenia prehliadača Firefox je potrebné pred nahratím súborov znovu otvoriť ${ PASS_APP_NAME } v novom okne."
       ],
       "Exporting files": [
         "Exportovanie súborov"
@@ -3834,7 +3828,7 @@
         "Po vymazaní je stále možné tento súbor obnoviť z histórie položky."
       ],
       "Open new window to upload files": [
-        "Otvoriť nové okno na nahranie súborov"
+        "Otvoriť nové okno pre nahranie súborov"
       ],
       "Please be patient while your files are being downloaded.": [
         "Počas sťahovania súborov buďte prosím trpezliví."

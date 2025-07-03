@@ -865,9 +865,6 @@
       "Keep my subscription": [
         "Mantieni il mio abbonamento"
       ],
-      "Keep subscription": [
-        "Mantieni l'abbonamento"
-      ],
       "label emails as": [
         "etichetta le email come"
       ],
@@ -973,6 +970,9 @@
       "Next month": [
         "Mese successivo"
       ],
+      "Next page": [
+        "Pagina successiva"
+      ],
       "No": [
         "No"
       ],
@@ -1017,6 +1017,9 @@
       ],
       "Previous month": [
         "Mese precedente"
+      ],
+      "Previous page": [
+        "Pagina precedente"
       ],
       "Publish changes": [
         "Pubblica le modifiche"
@@ -2005,11 +2008,6 @@
       ],
       "Amount due now": [
         "Importo dovuto ora"
-      ]
-    },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Abbonamento annullato."
       ]
     },
     "Badge for domain": {
@@ -4139,6 +4137,10 @@
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configura prima questa opzione per attivare la tua organizzazione e personalizzare il tuo indirizzo email."
+      ],
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
+        "Congratulazioni! Hai guadagnato il massimo di ${ rewardsLimit } mese gratuito di ${ plusPlanName }.",
+        "Congratulazioni! Hai guadagnato il massimo di ${ rewardsLimit } mesi gratuiti di ${ plusPlanName }."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Connetti il tuo CRM, sito web, stampanti e altro."
@@ -16316,8 +16318,8 @@
       "Blocked": [
         "Bloccato"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Verifica del dispositivo"
@@ -17529,6 +17531,10 @@
       ],
       "use your own email.": [
         "usa la tua email."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN con server in ${ vpnServersCountData.free.countries } paese",
+        "VPN con server in ${ vpnServersCountData.free.countries } paesi"
       ],
       "Yearly": [
         "Annuale"
@@ -20798,10 +20804,6 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "La tua prova gratuita termina tra ${ trialDurationFormatted } giorno.",
-        "La tua prova gratuita termina tra ${ trialDurationFormatted } giorni."
       ],
       "Your plan": [
         "Il tuo piano"

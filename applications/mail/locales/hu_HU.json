@@ -730,9 +730,6 @@
       "Keep my subscription": [
         "Előfizetés megtartása"
       ],
-      "Keep subscription": [
-        "Előfizetés megtartása"
-      ],
       "Label as": [
         "Címkézés, mint"
       ],
@@ -1421,8 +1418,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1486,6 +1482,9 @@
       ],
       "Upgrade": [
         "Csomagváltás"
+      ],
+      "Upgrade Now": [
+        "Váltás nagyobb csomagra"
       ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
@@ -1583,6 +1582,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Az asztali alkalmazás ingyenes kipróbálásának 2 nap múlva vége. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Az asztali alkalmazás ingyenes kipróbálásának 5 nap múlva vége. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Az Ön e-mail író segédje"
@@ -6111,10 +6119,10 @@
         "${ boldBulkDelete }, archiválja vagy helyezze át a régi e-maileket egy mappába."
       ],
       "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
-        "${ boldQuicklySpot } mely előfizetések már nem relevánsak."
+        "${ boldQuicklySpot } mely előfizetések nem relevánsak."
       ],
       "${ boldUnsubscribe } from them with one click.": [
-        "${ boldUnsubscribe } tőlük egy kattintással."
+        "${ boldUnsubscribe } egy kattintással."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe segítségével gyorsan és könnyedén készíthet jobb e-maileket."
@@ -7095,6 +7103,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -7523,7 +7532,7 @@
         "A dokumentum nyilvános megosztása még nem támogatott."
       ],
       "Quickly spot": [
-        "Gyorsan észrevenni"
+        "Gyorsabb észrevenni"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Forduljon hozzánk segítségért bármilyen ${ BRAND_NAME } témában."
@@ -14769,10 +14778,6 @@
       ],
       "Your exposed information": [
         "Az ön kiszivárgott információi"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Az ingyenes próbaverziója ${ trialDurationFormatted } nap múlva ér véget.",
-        "Az ingyenes próbaverziója ${ trialDurationFormatted } nap múlva ér véget."
       ],
       "Your free trial has ended": [
         "Az ön ingyenes próbaidőszaka végett ért"

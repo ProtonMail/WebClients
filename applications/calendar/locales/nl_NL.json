@@ -452,9 +452,6 @@
       "Keep my subscription": [
         "Mijn abonnement behouden"
       ],
-      "Keep subscription": [
-        "Abonnement behouden"
-      ],
       "Later": [
         "Later"
       ],
@@ -5044,6 +5041,9 @@
       "Dedicated servers": [
         "Dedicated servers"
       ],
+      "Dedicated VPN servers": [
+        "Dedicated VPN-servers"
+      ],
       "default email address": [
         "standaard e-mailadres"
       ],
@@ -5352,6 +5352,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Aantal dedicated VPN-servers in uw organisatie"
       ],
       "Numbers": [
         "Nummers"
@@ -6011,6 +6014,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Uw proefperiode eindigt over ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "U verliest ook toegang tot ${ boldPlanTitle } functies:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "U verliest toegang tot ${ boldPlanTitle } op ${ boldEndDate }."
@@ -11173,10 +11179,6 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dag",
-        "Uw gratis proefversie eindigt binnen ${ trialDurationFormatted } dagen"
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
