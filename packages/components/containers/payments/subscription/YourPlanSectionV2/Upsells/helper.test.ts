@@ -4,7 +4,7 @@ import { type Plan } from '@proton/payments';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments';
 import { SelectedPlan } from '@proton/payments';
 import { hookWrapper } from '@proton/testing';
-import { smartBuildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders';
 import { getTestPlans } from '@proton/testing/data';
 import { withApi, withConfig, withReduxStore } from '@proton/testing/lib/context/providers';
 
@@ -62,7 +62,7 @@ describe('useSubscriptionPriceComparison', () => {
     });
 
     it('should return default values when plans map is loading', () => {
-        const subscription = smartBuildSubscription(
+        const subscription = buildSubscription(
             new SelectedPlan(
                 {
                     [PLANS.MAIL]: 1,
@@ -90,7 +90,7 @@ describe('useSubscriptionPriceComparison', () => {
     });
 
     it('should calculate price difference when subscription and compareWithPlan are provided', () => {
-        const subscription = smartBuildSubscription(
+        const subscription = buildSubscription(
             new SelectedPlan(
                 {
                     [PLANS.MAIL]: 1,
@@ -119,7 +119,7 @@ describe('useSubscriptionPriceComparison', () => {
 
     it('should calculate cheapest cycle pricing and potential savings', () => {
         // Create a subscription with a higher monthly price than standard pricing
-        const subscription = smartBuildSubscription(
+        const subscription = buildSubscription(
             new SelectedPlan(
                 {
                     [PLANS.MAIL]: 1,
@@ -151,7 +151,7 @@ describe('useSubscriptionPriceComparison', () => {
     });
 
     it('should use upcoming subscription if available', () => {
-        const upcomingSubscription = smartBuildSubscription(
+        const upcomingSubscription = buildSubscription(
             new SelectedPlan(
                 {
                     [PLANS.MAIL]: 1,
@@ -162,7 +162,7 @@ describe('useSubscriptionPriceComparison', () => {
             )
         );
 
-        const subscription = smartBuildSubscription(
+        const subscription = buildSubscription(
             new SelectedPlan(
                 {
                     [PLANS.MAIL]: 1,
@@ -195,7 +195,7 @@ describe('useSubscriptionPriceComparison', () => {
     });
 
     it('should handle when compareWithPlan is not provided', () => {
-        const subscription = smartBuildSubscription(
+        const subscription = buildSubscription(
             new SelectedPlan(
                 {
                     [PLANS.MAIL]: 1,
@@ -224,7 +224,7 @@ describe('useSubscriptionPriceComparison', () => {
     });
 
     it('should return default values when compareWithPlan is not found in plansMap', () => {
-        const subscription = smartBuildSubscription(
+        const subscription = buildSubscription(
             new SelectedPlan(
                 {
                     [PLANS.MAIL]: 1,
@@ -253,7 +253,7 @@ describe('useSubscriptionPriceComparison', () => {
     });
 
     it('should handle different currency subscriptions', () => {
-        const subscription = smartBuildSubscription(
+        const subscription = buildSubscription(
             new SelectedPlan(
                 {
                     [PLANS.MAIL]: 1,
@@ -281,7 +281,7 @@ describe('useSubscriptionPriceComparison', () => {
     });
 
     it('should handle different cycle lengths', () => {
-        const yearlySubscription = smartBuildSubscription(
+        const yearlySubscription = buildSubscription(
             new SelectedPlan(
                 {
                     [PLANS.MAIL]: 1,
@@ -310,7 +310,7 @@ describe('useSubscriptionPriceComparison', () => {
 
     it('should handle when no pricing options match available cycles', () => {
         // Mock a subscription with a cycle that might not have pricing options in plansMap
-        const subscription = smartBuildSubscription(
+        const subscription = buildSubscription(
             new SelectedPlan(
                 {
                     [PLANS.VPN2024]: 1,
@@ -339,7 +339,7 @@ describe('useSubscriptionPriceComparison', () => {
     });
 
     it('should compare between different plan types', () => {
-        const subscription = smartBuildSubscription(
+        const subscription = buildSubscription(
             new SelectedPlan(
                 {
                     [PLANS.MAIL]: 1,

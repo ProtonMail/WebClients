@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { CYCLE, PLANS, PLAN_TYPES, type Plan, SubscriptionPlatform } from '@proton/payments';
+import { CYCLE, PLANS, SubscriptionPlatform } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
@@ -27,7 +27,7 @@ describe('SubscriptionPanel', () => {
 
     it('should not render for trial subscriptions', () => {
         const { container } = render(
-            <SubscriptionPanel {...defaultProps} subscription={buildSubscription({ IsTrial: true })} />
+            <SubscriptionPanel {...defaultProps} subscription={buildSubscription(undefined, { IsTrial: true })} />
         );
         expect(container).toBeEmptyDOMElement();
     });
@@ -43,9 +43,9 @@ describe('SubscriptionPanel', () => {
                 {...defaultProps}
                 user={buildUser({ isPaid: true, hasPaidMail: true })}
                 subscription={buildSubscription({
-                    Plans: [{ Name: PLANS.MAIL, Title: 'Mail Plus', Type: PLAN_TYPES.PLAN } as Plan],
-                    Cycle: CYCLE.MONTHLY,
-                    Amount: 499,
+                    planName: PLANS.MAIL,
+                    cycle: CYCLE.MONTHLY,
+                    currency: 'USD',
                 })}
             />
         );
@@ -102,9 +102,9 @@ describe('SubscriptionPanel', () => {
                     app={APPS.PROTONVPN_SETTINGS}
                     user={buildUser({ isPaid: true, hasPaidVpn: true })}
                     subscription={buildSubscription({
-                        Plans: [{ Name: PLANS.VPN, Title: 'VPN Plus', Type: PLAN_TYPES.PLAN } as Plan],
-                        Cycle: CYCLE.MONTHLY,
-                        Amount: 999,
+                        planName: PLANS.VPN,
+                        cycle: CYCLE.MONTHLY,
+                        currency: 'USD',
                     })}
                 />
             );
@@ -119,7 +119,7 @@ describe('SubscriptionPanel', () => {
         renderWithProviders(
             <SubscriptionPanel
                 {...defaultProps}
-                subscription={buildSubscription({ External: SubscriptionPlatform.Android })}
+                subscription={buildSubscription(undefined, { External: SubscriptionPlatform.Android })}
             />
         );
         expect(screen.queryByTestId('plan-price')).not.toBeInTheDocument();

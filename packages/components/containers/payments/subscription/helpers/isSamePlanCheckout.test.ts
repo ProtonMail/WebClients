@@ -11,9 +11,7 @@ describe('isSamePlanCheckout', () => {
         const mailPlan = testPlans.find((plan) => plan.Name === PLANS.MAIL) as Plan;
         expect(mailPlan).toBeDefined();
 
-        const subscription = buildSubscription({
-            Plans: [mailPlan],
-        });
+        const subscription = buildSubscription(PLANS.MAIL);
         const planIDs: PlanIDs = { [PLANS.MAIL]: 1 };
 
         expect(isSamePlanCheckout(subscription, planIDs)).toBe(true);
@@ -23,9 +21,7 @@ describe('isSamePlanCheckout', () => {
         const mailPlan = testPlans.find((plan) => plan.Name === PLANS.MAIL) as Plan;
         expect(mailPlan).toBeDefined();
 
-        const subscription = buildSubscription({
-            Plans: [mailPlan],
-        });
+        const subscription = buildSubscription(PLANS.MAIL);
         const planIDs: PlanIDs = { [PLANS.DRIVE]: 1 };
 
         expect(isSamePlanCheckout(subscription, planIDs)).toBe(false);
@@ -53,9 +49,7 @@ describe('isSamePlanCheckout', () => {
         const bundlePlan = testPlans.find((plan) => plan.Name === PLANS.BUNDLE) as Plan;
         expect(bundlePlan).toBeDefined();
 
-        const subscription = buildSubscription({
-            Plans: [bundlePlan],
-        });
+        const subscription = buildSubscription(PLANS.BUNDLE);
         const planIDs: PlanIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 };
 
         expect(isSamePlanCheckout(subscription, planIDs)).toBe(false);
@@ -68,7 +62,8 @@ describe('isSamePlanCheckout', () => {
         expect(memberMailProPlan).toBeDefined();
 
         const subscription = buildSubscription({
-            Plans: [mailProPlan, memberMailProPlan],
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 1,
         });
 
         const planIDs: PlanIDs = { [PLANS.MAIL_PRO]: 1 };
