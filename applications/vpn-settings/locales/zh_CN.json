@@ -471,9 +471,6 @@
       "Keep my subscription": [
         "保留订阅"
       ],
-      "Keep subscription": [
-        "继续订阅"
-      ],
       "Learn more": [
         "了解详情"
       ],
@@ -3827,6 +3824,11 @@
         "安全看视频"
       ]
     },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "随时随地访问流媒体服务内容，包括 Netflix、Disney+、Prime Video 等"
+      ]
+    },
     "fido2: Action": {
       "Delete key": [
         "删除密钥"
@@ -4396,6 +4398,9 @@
         "启用"
       ],
       "Activity monitor": [
+        "活动监视器"
+      ],
+      "Activity Monitor": [
         "活动监视器"
       ],
       "add a recovery method": [
@@ -6512,6 +6517,9 @@
       "Copy": [
         "复制"
       ],
+      "Copy IP address to clipboard": [
+        "复制 IP 地址到剪贴板"
+      ],
       "Could you please let us know which provider?": [
         "您能告诉我们是哪一款邮箱吗？"
       ],
@@ -7320,6 +7328,9 @@
       ],
       "Two password mode enabled": [
         "已开启双密码模式"
+      ],
+      "Unknown": [
+        "未知"
       ]
     },
     "Log preference": {
@@ -9360,9 +9371,6 @@
       "Blocked": [
         "已拦截"
       ],
-      "Captcha": [
-        "CAPTCHA"
-      ],
       "Device verification": [
         "设备验证"
       ],
@@ -9955,6 +9963,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "${ BRAND_NAME } 密码"
+      ],
       "Confirm password": [
         "确认密码"
       ],
@@ -12132,9 +12143,6 @@
       ],
       "Your current plan": [
         "您的账户等级"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "您的免费体验期将于 ${ trialDurationFormatted } 结束。"
       ],
       "Your plan": [
         "您的账户等级"
