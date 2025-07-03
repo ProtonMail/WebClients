@@ -161,12 +161,9 @@ it('should disable decrease button if the user cancelled the subscription', () =
 
     const props: Props = {
         ...defaultProps,
-        latestSubscription: buildSubscription(
-            {
-                Renew: Renew.Disabled,
-            },
-            planIDs
-        ),
+        latestSubscription: buildSubscription(planIDs, {
+            Renew: Renew.Disabled,
+        }),
         planIDs,
         currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
     };
@@ -205,7 +202,7 @@ it.each(plansWithIpAddons)(
             ...defaultProps,
             planIDs,
             currentPlan: PLANS_MAP[plan] as Plan,
-            latestSubscription: buildSubscription({}, planIDs),
+            latestSubscription: buildSubscription(planIDs),
         };
 
         render(<ProtonPlanCustomizer {...props} />);
@@ -224,7 +221,7 @@ it('should increase the number of scribes together with the number of members', 
         ...defaultProps,
         planIDs,
         currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
-        latestSubscription: buildSubscription({}, planIDs),
+        latestSubscription: buildSubscription(planIDs),
     };
 
     render(<ProtonPlanCustomizer {...props} />);
@@ -250,7 +247,7 @@ it('should decrease the number of scribes together with the number of members', 
         ...defaultProps,
         planIDs,
         currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
-        latestSubscription: buildSubscription({}, planIDs),
+        latestSubscription: buildSubscription(planIDs),
     };
 
     render(<ProtonPlanCustomizer {...props} />);
@@ -273,7 +270,7 @@ it('should not increase the number of scribes if the number of members is not th
         ...defaultProps,
         planIDs,
         currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
-        latestSubscription: buildSubscription({}, planIDs),
+        latestSubscription: buildSubscription(planIDs),
     };
 
     render(<ProtonPlanCustomizer {...props} />);
@@ -298,7 +295,7 @@ it('should not decrease the number of scribes if the number of members is not th
         ...defaultProps,
         planIDs,
         currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
-        latestSubscription: buildSubscription({}, planIDs),
+        latestSubscription: buildSubscription(planIDs),
     };
 
     render(<ProtonPlanCustomizer {...props} />);
@@ -322,7 +319,7 @@ it('should allow input of members through text field', async () => {
         ...defaultProps,
         planIDs,
         currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
-        latestSubscription: buildSubscription({}, planIDs),
+        latestSubscription: buildSubscription(planIDs),
     };
 
     render(<ProtonPlanCustomizer {...props} />);
@@ -347,7 +344,7 @@ it('should balance scribes and lumos when total exceeds members', () => {
         ...defaultProps,
         planIDs,
         currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
-        latestSubscription: buildSubscription({}, planIDs),
+        latestSubscription: buildSubscription(planIDs),
     };
 
     const { rerender } = render(<ProtonPlanCustomizer {...props} />);

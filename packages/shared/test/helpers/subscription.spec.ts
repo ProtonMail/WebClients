@@ -26,8 +26,9 @@ import {
     willTrialExpire,
 } from '@proton/payments';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { buildSubscription } from '@proton/testing/builders';
 // still uses Karma. The payments data specifically don't need jest, so it's safe to impoet it directly
-import { getSubscriptionMock, getUserMock } from '@proton/testing/data';
+import { getUserMock } from '@proton/testing/data';
 
 let subscription: Subscription;
 let defaultPlan: SubscriptionPlan;
@@ -49,6 +50,7 @@ beforeEach(() => {
         Plans: [],
         External: SubscriptionPlatform.Default,
         Renew: Renew.Enabled,
+        IsTrial: false,
     };
 
     defaultPlan = {
@@ -113,8 +115,8 @@ describe('hasLifetime', () => {
 });
 
 describe('isTrial', () => {
-    it('should be a trial - V4', () => {
-        expect(isTrial({ ...subscription, CouponCode: COUPON_CODES.REFERRAL })).toBe(true);
+    it('should NOT be a trial - V4 (old way of checking trials)', () => {
+        expect(isTrial({ ...subscription, CouponCode: 'REFERRAL' })).toBe(false);
     });
 
     it('should not be a trial - V4', () => {
@@ -313,7 +315,7 @@ describe('hasCancellablePlan', () => {
     it('should be cancellable with inhouse subscription', () => {
         const testCases = [PLANS.PASS, PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE];
 
-        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+        const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Proton });
 
         const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED, ChargebeeUserExists: 0 });
 
@@ -345,7 +347,7 @@ describe('hasCancellablePlan', () => {
             PLANS.WALLET,
         ];
 
-        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+        const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Proton });
 
         const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED, ChargebeeUserExists: 0 });
 
@@ -358,7 +360,7 @@ describe('hasCancellablePlan', () => {
     it('should have cancellable plan if user is on-session migration eligible', () => {
         const testCases = [PLANS.PASS, PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE];
 
-        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+        const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Proton });
         const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 0 });
 
         testCases.forEach((plan) => {
@@ -389,7 +391,7 @@ describe('hasCancellablePlan', () => {
             PLANS.WALLET,
         ];
 
-        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+        const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Proton });
         const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 0 });
 
         testCases.forEach((plan) => {
@@ -423,7 +425,7 @@ describe('hasCancellablePlan', () => {
             PLANS.WALLET,
         ];
 
-        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Chargebee });
+        const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Chargebee });
         const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 1 });
 
         testCases.forEach((plan) => {
@@ -457,7 +459,7 @@ describe('hasCancellablePlan', () => {
             PLANS.WALLET,
         ];
 
-        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+        const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Proton });
         const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 1 });
 
         testCases.forEach((plan) => {
@@ -469,7 +471,7 @@ describe('hasCancellablePlan', () => {
     it('should not be cancellable if plan is non-cancellable', () => {
         const testCases = [PLANS.VPN_BUSINESS, PLANS.VPN_PRO];
 
-        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+        const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Proton });
         const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 1 });
 
         testCases.forEach((plan) => {
@@ -479,7 +481,7 @@ describe('hasCancellablePlan', () => {
     });
 
     it('should not be cancellable if plan is bundle pro with IP addon', () => {
-        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+        const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Proton });
         const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 1 });
 
         const testCases = [

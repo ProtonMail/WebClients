@@ -1,6 +1,6 @@
 import { render, screen, within } from '@testing-library/react';
 
-import { COUPON_CODES, type Subscription } from '@proton/payments';
+import { type Subscription } from '@proton/payments';
 
 import {
     familyUpsell,
@@ -65,7 +65,7 @@ describe('UpsellPanel', () => {
                 subscription={
                     {
                         ...subscription,
-                        CouponCode: COUPON_CODES.REFERRAL,
+                        IsTrial: true,
                         PeriodEnd: 1718870501,
                     } as Subscription
                 }
@@ -91,7 +91,7 @@ describe('UpsellPanel', () => {
                 subscription={
                     {
                         ...subscription,
-                        CouponCode: COUPON_CODES.REFERRAL,
+                        IsTrial: true,
                         PeriodEnd: 1718870501,
                     } as Subscription
                 }

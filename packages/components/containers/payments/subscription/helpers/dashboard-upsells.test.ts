@@ -1,4 +1,4 @@
-import { COUPON_CODES, CYCLE, FREE_PLAN, PLANS, PLAN_TYPES, type Subscription, getPlansMap } from '@proton/payments';
+import { CYCLE, FREE_PLAN, PLANS, PLAN_TYPES, type Subscription, getPlansMap } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildUser } from '@proton/testing/builders';
 import { getTestPlans } from '@proton/testing/data';
@@ -89,7 +89,7 @@ describe('resolveUpsellsToDisplay', () => {
                 ...base,
                 subscription: {
                     ...base.subscription,
-                    CouponCode: COUPON_CODES.REFERRAL,
+                    IsTrial: true,
                     PeriodEnd: 1718870501,
                 } as Subscription,
             });
@@ -136,7 +136,7 @@ describe('resolveUpsellsToDisplay', () => {
                 ...base,
                 subscription: {
                     ...subscriptionBundle,
-                    CouponCode: COUPON_CODES.MEMBER_DOWNGRADE_TRIAL,
+                    IsTrial: true,
                     PeriodEnd: 1718870501,
                 } as Subscription,
             });
