@@ -22,8 +22,9 @@ describe('getInitialCycle', () => {
     });
 
     const mockSubscription = buildSubscription({
-        Cycle: CYCLE.MONTHLY,
-        Currency: 'USD',
+        planName: PLANS.BUNDLE,
+        cycle: CYCLE.MONTHLY,
+        currency: 'USD',
     });
 
     const defaultPlanIDs: PlanIDs = {
@@ -146,9 +147,10 @@ describe('getInitialCycle', () => {
         const mailPlan = getTestPlans('USD').find((it) => it.Name === PLANS.MAIL) as Plan;
         expect(mailPlan).toBeDefined();
 
-        const subscriptionMock = buildSubscription({
-            Plans: [mailPlan],
-            Cycle: CYCLE.TWO_YEARS,
+        const subscription = buildSubscription({
+            planName: PLANS.BUNDLE,
+            cycle: CYCLE.TWO_YEARS,
+            currency: 'USD',
         });
 
         const planIDs: PlanIDs = {
@@ -157,7 +159,7 @@ describe('getInitialCycle', () => {
 
         const result = getInitialCycle({
             cycleParam: CYCLE.YEARLY,
-            subscription: subscriptionMock,
+            subscription,
             planIDs,
             plansMap: mockPlansMap,
             isPlanSelection: true,

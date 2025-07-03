@@ -419,14 +419,9 @@ describe('switchPlan', () => {
     });
 
     it('should not transfer lumo addons if the user already has lumo on mobile (multi-subs)', () => {
-        const subscription = buildSubscription(
-            {
-                External: SubscriptionPlatform.iOS,
-            },
-            {
-                [PLANS.LUMO]: 1,
-            }
-        );
+        const subscription = buildSubscription(PLANS.LUMO, {
+            External: SubscriptionPlatform.iOS,
+        });
 
         expect(
             switchPlan({

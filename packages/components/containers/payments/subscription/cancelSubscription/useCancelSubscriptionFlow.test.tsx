@@ -5,20 +5,21 @@ import { getModelState } from '@proton/account/test';
 import { organization, vpnServersCount } from '@proton/components/containers/payments/subscription/__mocks__/data';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import {
+    FREE_PLAN,
     FREE_SUBSCRIPTION,
     PLANS,
     Renew,
     type Subscription,
-    deleteSubscription,
     changeRenewState,
+    deleteSubscription,
 } from '@proton/payments';
-import { FREE_PLAN } from '@proton/payments';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { renderWithProviders } from '@proton/testing';
-import { PLANS_MAP, subscriptionMock } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders';
+import { PLANS_MAP } from '@proton/testing/data';
 import { apiMock } from '@proton/testing/lib/api';
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
@@ -34,25 +35,9 @@ const userModel: UserModel = {
     ID: 'user-123',
 } as UserModel;
 
-const vpnSubscription: Subscription = {
-    ...subscriptionMock,
-    Plans: [
-        {
-            ...subscriptionMock.Plans[0],
-            Name: PLANS.VPN,
-        },
-    ],
-};
+const vpnSubscription = buildSubscription(PLANS.VPN);
 
-const mailSubscription: Subscription = {
-    ...subscriptionMock,
-    Plans: [
-        {
-            ...subscriptionMock.Plans[0],
-            Name: PLANS.MAIL_PRO,
-        },
-    ],
-};
+const mailProSubscription = buildSubscription(PLANS.MAIL_PRO);
 
 type HookRef = { hook?: ReturnType<typeof useCancelSubscriptionFlow> };
 const Component = ({ hookRef }: { hookRef: HookRef }) => {
@@ -196,7 +181,7 @@ describe('downgrade subscription', () => {
             result: { container },
         } = setup({
             preloadedState: {
-                subscription: getSubscriptionState(mailSubscription),
+                subscription: getSubscriptionState(mailProSubscription),
                 user: getModelState({ ...userModel, hasPaidMail: true, Subscribed: PRODUCT_BIT.MAIL }),
                 organization: getOrganizationState(organization),
                 plans: {

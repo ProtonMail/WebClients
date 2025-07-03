@@ -3,6 +3,7 @@ import { buildSubscription, buildUser } from '@proton/testing/builders';
 
 import {
     Autopay,
+    CYCLE,
     FREE_SUBSCRIPTION,
     MIN_APPLE_PAY_AMOUNT,
     MIN_BITCOIN_AMOUNT,
@@ -1151,7 +1152,9 @@ describe('Chargebee Bitcoin', () => {
                 [PLANS.PASS_LIFETIME]: 1,
             },
             subscription: buildSubscription({
-                Currency: 'USD',
+                planName: PLANS.BUNDLE,
+                cycle: CYCLE.YEARLY,
+                currency: 'USD',
             }),
         });
 
@@ -1179,7 +1182,9 @@ describe('Chargebee Bitcoin', () => {
                 [PLANS.PASS_LIFETIME]: 1,
             },
             subscription: buildSubscription({
-                Currency: TEST_CURRENCY,
+                planName: PLANS.BUNDLE,
+                cycle: CYCLE.YEARLY,
+                currency: TEST_CURRENCY,
             }),
         });
 

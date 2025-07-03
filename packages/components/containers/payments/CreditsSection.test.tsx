@@ -1,8 +1,9 @@
 import { getModelState } from '@proton/account/test';
 import { userDefault } from '@proton/components/hooks/helpers/test';
-import { BillingPlatform, PLANS, type Subscription } from '@proton/payments';
+import { BillingPlatform, CYCLE, PLANS, type Subscription } from '@proton/payments';
 import { renderWithProviders } from '@proton/testing';
 import { applyHOCs, getSubscriptionState, withApi, withCache } from '@proton/testing';
+import { buildSubscription } from '@proton/testing/builders';
 
 import CreditsSection from './CreditsSection';
 
@@ -15,86 +16,17 @@ jest.mock('@proton/components/components/portal/Portal');
 const ContextCreditsSection = applyHOCs(withApi(), withCache())(CreditsSection);
 
 beforeEach(() => {
-    subscription = {
-        ID: '123',
-        InvoiceID: '1234',
-        Cycle: 1,
-        PeriodStart: 1696561158,
-        PeriodEnd: 1699239558,
-        CreateTime: 1696561161,
-        CouponCode: null,
-        Currency: 'CHF',
-        Amount: 1299,
-        Discount: 0,
-        RenewDiscount: 0,
-        RenewAmount: 1299,
-        Plans: [
-            {
-                ID: '1',
-                Type: 1,
-                Name: PLANS.BUNDLE,
-                Title: 'Proton Unlimited',
-                MaxDomains: 3,
-                MaxAddresses: 15,
-                MaxCalendars: 25,
-                MaxSpace: 536870912000,
-                MaxMembers: 1,
-                MaxVPN: 10,
-                MaxTier: 2,
-                Services: 15,
-                Features: 1,
-                State: 1,
-                Cycle: 1,
-                Currency: 'CHF',
-                Amount: 1299,
-                Offer: 'default',
-                Quantity: 1,
-            },
-        ],
-        Renew: 1,
-        External: 0,
-        UpcomingSubscription: null,
-    };
+    subscription = buildSubscription({
+        planName: PLANS.BUNDLE,
+        currency: 'CHF',
+        cycle: CYCLE.MONTHLY,
+    });
 
-    upcoming = {
-        ID: '124',
-        InvoiceID: null as any,
-        Cycle: 12,
-        PeriodStart: 1699239558,
-        PeriodEnd: 1730861958,
-        CreateTime: 1696561195,
-        CouponCode: null,
-        Currency: 'CHF',
-        Amount: 11988,
-        Discount: 0,
-        RenewAmount: 11988,
-        RenewDiscount: 0,
-        Plans: [
-            {
-                ID: '1',
-                Type: 1,
-                Name: PLANS.BUNDLE,
-                Title: 'Proton Unlimited',
-                MaxDomains: 3,
-                MaxAddresses: 15,
-                MaxCalendars: 25,
-                MaxSpace: 536870912000,
-                MaxMembers: 1,
-                MaxVPN: 10,
-                MaxTier: 2,
-                Services: 15,
-                Features: 1,
-                State: 1,
-                Cycle: 12,
-                Currency: 'CHF',
-                Amount: 11988,
-                Quantity: 1,
-                Offer: 'default',
-            },
-        ],
-        Renew: 1,
-        External: 0,
-    };
+    upcoming = buildSubscription({
+        planName: PLANS.BUNDLE,
+        currency: 'CHF',
+        cycle: CYCLE.YEARLY,
+    });
 
     jest.clearAllMocks();
 
