@@ -571,18 +571,14 @@ export const getPlanIDs = (subscription: MaybeFreeSubscription | null): PlanIDs 
 };
 
 export const isTrial = (subscription: Subscription | FreeSubscription | undefined, plan?: PLANS): boolean => {
-    if (isFreeSubscription(subscription)) {
+    if (isFreeSubscription(subscription) || !subscription) {
         return false;
     }
 
-    const isTrialV4 =
-        subscription?.CouponCode === COUPON_CODES.REFERRAL ||
-        subscription?.CouponCode === COUPON_CODES.MEMBER_DOWNGRADE_TRIAL;
-    const isTrialV5 = !!subscription?.IsTrial;
-    const trial = isTrialV4 || isTrialV5;
+    const trial = !!subscription.IsTrial;
 
     if (!plan) {
-        return trial;
+        return !!subscription.IsTrial;
     }
 
     return trial && getPlanName(subscription) === plan;

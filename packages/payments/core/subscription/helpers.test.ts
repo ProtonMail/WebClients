@@ -1,9 +1,7 @@
 import { buildSubscription, buildUser } from '@proton/testing/builders';
-import { getSubscriptionMock } from '@proton/testing/data';
 
-import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES, PLAN_TYPES } from '../constants';
+import { ADDON_NAMES, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '../constants';
 import { type PlanIDs } from '../interface';
-import { type Plan } from '../plan/interface';
 import { SubscriptionPlatform } from './constants';
 import { FREE_PLAN } from './freePlans';
 import {
@@ -19,13 +17,9 @@ import {
 describe('getSubscriptionPlanTitle', () => {
     it('should return plan title and name for a paid user with subscription', () => {
         const subscription = buildSubscription({
-            Plans: [
-                {
-                    Name: PLANS.MAIL,
-                    Title: PLAN_NAMES[PLANS.MAIL],
-                    Type: PLAN_TYPES.PLAN,
-                } as Plan,
-            ],
+            planName: PLANS.MAIL,
+            cycle: CYCLE.MONTHLY,
+            currency: 'USD',
         });
 
         const result = getSubscriptionPlanTitle(
@@ -72,16 +66,16 @@ describe('getSubscriptionPlanTitle', () => {
     });
 
     it('should return "Lifetime" title for subscription with lifetime coupon', () => {
-        const subscription = buildSubscription({
-            Plans: [
-                {
-                    Name: PLANS.MAIL,
-                    Title: PLAN_NAMES[PLANS.MAIL],
-                    Type: PLAN_TYPES.PLAN,
-                } as Plan,
-            ],
-            CouponCode: 'LIFETIME',
-        });
+        const subscription = buildSubscription(
+            {
+                planName: PLANS.MAIL,
+                cycle: CYCLE.MONTHLY,
+                currency: 'USD',
+            },
+            {
+                CouponCode: COUPON_CODES.LIFETIME,
+            }
+        );
 
         const result = getSubscriptionPlanTitle(
             buildUser({
@@ -117,7 +111,7 @@ describe('getSubscriptionPlanTitle', () => {
 
 describe('isSubscriptionUnchanged', () => {
     it('returns true when subscription and planIds are deeply equal', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         const planIds: PlanIDs = getPlanIDs(subscription); // Assuming getPlanIDs is a function that extracts plan IDs from a subscription
 
         const result = isSubscriptionUnchanged(subscription, planIds);
@@ -125,7 +119,7 @@ describe('isSubscriptionUnchanged', () => {
     });
 
     it('returns false when subscription and planIds are not deeply equal', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         const planIds: PlanIDs = {
             mail2022: 1,
         };
@@ -149,14 +143,14 @@ describe('isSubscriptionUnchanged', () => {
     });
 
     it('returns false when subscription is not null and planIds is null', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
 
         const result = isSubscriptionUnchanged(subscription, null as any);
         expect(result).toBe(false);
     });
 
     it('should return true when cycle is the same as in the subscription', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
 
         const planIds: PlanIDs = getPlanIDs(subscription);
@@ -166,7 +160,7 @@ describe('isSubscriptionUnchanged', () => {
     });
 
     it('should return false when cycle is different from the subscription', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
 
         const planIds: PlanIDs = getPlanIDs(subscription);
@@ -176,7 +170,7 @@ describe('isSubscriptionUnchanged', () => {
     });
 
     it('should return false if there is no upcoming subscription', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
 
         const planIds: PlanIDs = getPlanIDs(subscription);
@@ -199,7 +193,7 @@ describe('isCheckForbidden', () => {
     });
 
     it('returns true when selected plan is same as current with no upcoming subscription', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         const planIds = getPlanIDs(subscription);
 
         // No upcoming subscription scenario
@@ -214,9 +208,27 @@ describe('isCheckForbidden', () => {
     });
 
     it('handles variable cycle offer correctly (automatic unpaid scheduled subscription)', () => {
-        const UpcomingSubscription = buildSubscription({ Cycle: CYCLE.YEARLY, InvoiceID: '' });
+        const UpcomingSubscription = buildSubscription(
+            {
+                planName: PLANS.BUNDLE,
+                cycle: CYCLE.YEARLY,
+                currency: 'USD',
+            },
+            {
+                InvoiceID: '',
+            }
+        );
 
-        const subscription = buildSubscription({ Cycle: CYCLE.TWO_YEARS, UpcomingSubscription });
+        const subscription = buildSubscription(
+            {
+                planName: PLANS.BUNDLE,
+                cycle: CYCLE.TWO_YEARS,
+                currency: 'USD',
+            },
+            {
+                UpcomingSubscription,
+            }
+        );
 
         const currentPlanIds = getPlanIDs(subscription);
         const upcomingPlanIds = getPlanIDs(UpcomingSubscription);
@@ -230,22 +242,31 @@ describe('isCheckForbidden', () => {
 
         const UpcomingSubscription = buildSubscription(
             {
-                InvoiceID: '',
-                Cycle,
+                planIDs: {
+                    [PLANS.MAIL_PRO]: 1,
+                    [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
+                    [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2,
+                },
+                cycle: Cycle,
+                currency: 'USD',
             },
             {
-                [PLANS.MAIL_PRO]: 1,
-                [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
-                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2,
+                InvoiceID: '',
             }
         );
 
         const subscription = buildSubscription(
-            { Cycle, UpcomingSubscription },
             {
-                [PLANS.MAIL_PRO]: 1,
-                [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
-                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 3,
+                planIDs: {
+                    [PLANS.MAIL_PRO]: 1,
+                    [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
+                    [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 3,
+                },
+                cycle: Cycle,
+                currency: 'USD',
+            },
+            {
+                UpcomingSubscription,
             }
         );
 
@@ -258,8 +279,21 @@ describe('isCheckForbidden', () => {
     });
 
     it('handles prepaid upcoming subscription correctly', () => {
-        const UpcomingSubscription = buildSubscription({ Cycle: CYCLE.YEARLY });
-        const subscription = buildSubscription({ Cycle: CYCLE.MONTHLY, UpcomingSubscription });
+        const UpcomingSubscription = buildSubscription({
+            planName: PLANS.BUNDLE,
+            cycle: CYCLE.YEARLY,
+            currency: 'USD',
+        });
+        const subscription = buildSubscription(
+            {
+                planName: PLANS.BUNDLE,
+                cycle: CYCLE.MONTHLY,
+                currency: 'USD',
+            },
+            {
+                UpcomingSubscription,
+            }
+        );
 
         const currentPlanIds = getPlanIDs(subscription);
         const upcomingPlanIds = getPlanIDs(UpcomingSubscription);
@@ -269,8 +303,21 @@ describe('isCheckForbidden', () => {
     });
 
     it('returns false when selected plan is different from both current and upcoming', () => {
-        const UpcomingSubscription = buildSubscription({ Cycle: CYCLE.YEARLY });
-        const subscription = buildSubscription({ Cycle: CYCLE.MONTHLY, UpcomingSubscription });
+        const UpcomingSubscription = buildSubscription({
+            planName: PLANS.BUNDLE,
+            cycle: CYCLE.YEARLY,
+            currency: 'USD',
+        });
+        const subscription = buildSubscription(
+            {
+                planName: PLANS.BUNDLE,
+                cycle: CYCLE.MONTHLY,
+                currency: 'USD',
+            },
+            {
+                UpcomingSubscription,
+            }
+        );
 
         const differentPlanIds = { [PLANS.DRIVE]: 1 };
 
@@ -279,12 +326,9 @@ describe('isCheckForbidden', () => {
     });
 
     it('should return true when user has externally managed Lumo subscription and selects the same plan', () => {
-        const subscribtion = buildSubscription(
-            {
-                External: SubscriptionPlatform.iOS,
-            },
-            { [PLANS.LUMO]: 1 }
-        );
+        const subscribtion = buildSubscription(PLANS.LUMO, {
+            External: SubscriptionPlatform.iOS,
+        });
 
         expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.MONTHLY)).toBe(true);
         expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.YEARLY)).toBe(true);
@@ -292,12 +336,9 @@ describe('isCheckForbidden', () => {
     });
 
     it('should return false when user has externally managed Lumo subscription and selects a different plan', () => {
-        const subscription = buildSubscription(
-            {
-                External: SubscriptionPlatform.iOS,
-            },
-            { [PLANS.LUMO]: 1 }
-        );
+        const subscription = buildSubscription(PLANS.LUMO, {
+            External: SubscriptionPlatform.iOS,
+        });
 
         expect(isCheckForbidden(subscription, { [PLANS.MAIL]: 1 }, CYCLE.MONTHLY)).toBe(false);
         expect(isCheckForbidden(subscription, { [PLANS.MAIL]: 1 }, CYCLE.YEARLY)).toBe(false);
@@ -307,10 +348,13 @@ describe('isCheckForbidden', () => {
     it('should work with lumo the usual way if it is managed internally', () => {
         const subscribtion = buildSubscription(
             {
-                Cycle: CYCLE.MONTHLY,
-                External: SubscriptionPlatform.Default,
+                planName: PLANS.LUMO,
+                cycle: CYCLE.MONTHLY,
+                currency: 'USD',
             },
-            { [PLANS.LUMO]: 1 }
+            {
+                External: SubscriptionPlatform.Default,
+            }
         );
 
         expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.MONTHLY)).toBe(true);
@@ -334,21 +378,21 @@ describe('isManagedExternally', () => {
     });
 
     it('returns true when subscription is managed by Android', () => {
-        const subscription = buildSubscription({
+        const subscription = buildSubscription(undefined, {
             External: SubscriptionPlatform.Android,
         });
         expect(isManagedExternally(subscription)).toBe(true);
     });
 
     it('returns true when subscription is managed by iOS', () => {
-        const subscription = buildSubscription({
+        const subscription = buildSubscription(undefined, {
             External: SubscriptionPlatform.iOS,
         });
         expect(isManagedExternally(subscription)).toBe(true);
     });
 
     it('returns false when subscription is not externally managed', () => {
-        const subscription = buildSubscription({
+        const subscription = buildSubscription(undefined, {
             External: SubscriptionPlatform.Default,
         });
         expect(isManagedExternally(subscription)).toBe(false);
@@ -369,28 +413,23 @@ describe('canModify', () => {
     });
 
     it('returns false for externally managed subscription without Lumo', () => {
-        const subscription = buildSubscription({
+        const subscription = buildSubscription(undefined, {
             External: SubscriptionPlatform.Android,
         });
         expect(canModify(subscription)).toBe(false);
     });
 
     it('returns true for non-externally managed subscription', () => {
-        const subscription = buildSubscription({
+        const subscription = buildSubscription(undefined, {
             External: SubscriptionPlatform.Default,
         });
         expect(canModify(subscription)).toBe(true);
     });
 
     it('returns true for externally managed subscription with Lumo', () => {
-        const subscription = buildSubscription(
-            {
-                External: SubscriptionPlatform.Android,
-            },
-            {
-                [PLANS.LUMO]: 1,
-            }
-        );
+        const subscription = buildSubscription(PLANS.LUMO, {
+            External: SubscriptionPlatform.Android,
+        });
 
         expect(canModify(subscription)).toBe(true);
     });
@@ -398,7 +437,7 @@ describe('canModify', () => {
 
 describe('getAvailableActions', () => {
     it('returns all actions available for non-externally managed subscription', () => {
-        const subscription = buildSubscription({
+        const subscription = buildSubscription(undefined, {
             External: SubscriptionPlatform.Default,
         });
 
@@ -413,7 +452,7 @@ describe('getAvailableActions', () => {
     });
 
     it('returns no actions available for externally managed subscription without Lumo', () => {
-        const subscription = buildSubscription({
+        const subscription = buildSubscription(undefined, {
             External: SubscriptionPlatform.Android,
         });
 
@@ -428,14 +467,9 @@ describe('getAvailableActions', () => {
     });
 
     it('returns only modify action available for externally managed subscription with Lumo', () => {
-        const subscription = buildSubscription(
-            {
-                External: SubscriptionPlatform.Android,
-            },
-            {
-                [PLANS.LUMO]: 1,
-            }
-        );
+        const subscription = buildSubscription(PLANS.LUMO, {
+            External: SubscriptionPlatform.Android,
+        });
 
         const result = getAvailableSubscriptionActions(subscription);
 
