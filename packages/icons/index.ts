@@ -49,11 +49,13 @@ export type IconName =
     | 'arrows-up-and-left-big'
     | 'at'
     | 'backspace'
+    | 'person-filled-2'
     | 'percent'
     | 'bag-percent'
     | 'bag-percent-filled'
     | 'bank'
     | 'bell'
+    | 'bell-filled-2'
     | 'bolt'
     | 'bolt-filled'
     | 'bookmark'
@@ -143,6 +145,7 @@ export type IconName =
     | 'cog-drawer'
     | 'credit-card'
     | 'credit-card-detailed'
+    | 'credit-cards'
     | 'cross'
     | 'cross-big'
     | 'cross-circle'
@@ -249,6 +252,7 @@ export type IconName =
     | 'mailbox'
     | 'map'
     | 'map-pin'
+    | 'megaphone-filled'
     | 'minus'
     | 'minus-circle'
     | 'minus-circle-filled'
@@ -257,6 +261,7 @@ export type IconName =
     | 'money-bills'
     | 'monitor'
     | 'moon'
+    | 'news'
     | 'note'
     | 'notepad-checklist'
     | 'pass-all-vaults'
@@ -350,7 +355,9 @@ export type IconName =
     | 'spam'
     | 'sort-alphabetically'
     | 'speech-bubble'
+    | 'speech-bubbles-filled'
     | 'sliders'
+    | 'sliders-2'
     | 'squares'
     | 'squares-in-square'
     | 'star'
@@ -450,11 +457,13 @@ export { IcArrowsUpAndLeft } from './icons/IcArrowsUpAndLeft';
 export { IcArrowsUpAndLeftBig } from './icons/IcArrowsUpAndLeftBig';
 export { IcAt } from './icons/IcAt';
 export { IcBackspace } from './icons/IcBackspace';
+export { IcPersonFilled2 } from './icons/IcPersonFilled2';
 export { IcPercent } from './icons/IcPercent';
 export { IcBagPercent } from './icons/IcBagPercent';
 export { IcBagPercentFilled } from './icons/IcBagPercentFilled';
 export { IcBank } from './icons/IcBank';
 export { IcBell } from './icons/IcBell';
+export { IcBellFilled2 } from './icons/IcBellFilled2';
 export { IcBolt } from './icons/IcBolt';
 export { IcBoltFilled } from './icons/IcBoltFilled';
 export { IcBookmark } from './icons/IcBookmark';
@@ -544,6 +553,7 @@ export { IcCogWheel } from './icons/IcCogWheel';
 export { IcCogDrawer } from './icons/IcCogDrawer';
 export { IcCreditCard } from './icons/IcCreditCard';
 export { IcCreditCardDetailed } from './icons/IcCreditCardDetailed';
+export { IcCreditCards } from './icons/IcCreditCards';
 export { IcCross } from './icons/IcCross';
 export { IcCrossBig } from './icons/IcCrossBig';
 export { IcCrossCircle } from './icons/IcCrossCircle';
@@ -650,6 +660,7 @@ export { IcMagnifierCheck } from './icons/IcMagnifierCheck';
 export { IcMailbox } from './icons/IcMailbox';
 export { IcMap } from './icons/IcMap';
 export { IcMapPin } from './icons/IcMapPin';
+export { IcMegaphoneFilled } from './icons/IcMegaphoneFilled';
 export { IcMinus } from './icons/IcMinus';
 export { IcMinusCircle } from './icons/IcMinusCircle';
 export { IcMinusCircleFilled } from './icons/IcMinusCircleFilled';
@@ -658,6 +669,7 @@ export { IcMobilePlus } from './icons/IcMobilePlus';
 export { IcMoneyBills } from './icons/IcMoneyBills';
 export { IcMonitor } from './icons/IcMonitor';
 export { IcMoon } from './icons/IcMoon';
+export { IcNews } from './icons/IcNews';
 export { IcNote } from './icons/IcNote';
 export { IcNotepadChecklist } from './icons/IcNotepadChecklist';
 export { IcPassAllVaults } from './icons/IcPassAllVaults';
@@ -751,7 +763,9 @@ export { IcSizeArrowDown } from './icons/IcSizeArrowDown';
 export { IcSpam } from './icons/IcSpam';
 export { IcSortAlphabetically } from './icons/IcSortAlphabetically';
 export { IcSpeechBubble } from './icons/IcSpeechBubble';
+export { IcSpeechBubblesFilled } from './icons/IcSpeechBubblesFilled';
 export { IcSliders } from './icons/IcSliders';
+export { IcSliders2 } from './icons/IcSliders2';
 export { IcSquares } from './icons/IcSquares';
 export { IcSquaresInSquare } from './icons/IcSquaresInSquare';
 export { IcStar } from './icons/IcStar';
