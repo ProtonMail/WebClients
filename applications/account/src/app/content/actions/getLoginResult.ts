@@ -1,5 +1,5 @@
 import type { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
-import { getAppHref, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
+import { getAppHref, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -220,20 +220,7 @@ export const getLoginResult = async ({
         };
     }
 
-    // Fork early to extensions because they don't need to follow the signup logic
-    if (forkState?.type === SSOType.Proton && getExtension(forkState.payload.forkParameters.app)) {
-        return getProduceForkLoginResult({
-            data: {
-                type: SSOType.Proton,
-                payload: { forkParameters: forkState.payload.forkParameters },
-            },
-            session,
-            api,
-            paths,
-        });
-    }
-
-    if (forkState?.type === SSOType.OAuth) {
+    if (forkState?.type === SSOType.OAuth && !appIntent?.app) {
         return getProduceForkLoginResult({
             data: {
                 type: SSOType.OAuth,
@@ -245,7 +232,14 @@ export const getLoginResult = async ({
         });
     }
 
-    if (forkState?.type === SSOType.Proton) {
+    if (
+        forkState?.type === SSOType.Proton &&
+        // If there is an app-intent, the app from the intent has priority over the app from the fork state.
+        // This may be different if a product is disabled in producing a fork, and then another product
+        // is selected. In those cases, the fork state should be ignored. However, the fork state shouldn't be completely
+        // reset as another user might get picked at some point.
+        (!appIntent?.app || appIntent.app === forkState.payload.forkParameters.app)
+    ) {
         const searchParameters = new URLSearchParams();
         if (session.flow === 'signup') {
             addSignupSearchParams(searchParameters, { appIntent });
