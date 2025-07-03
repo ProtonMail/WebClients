@@ -1273,6 +1273,12 @@
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Element \"${ payload.itemName }\" został odrzucony"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Aktualizacja \"${ payload.itemName }\" została odrzucona"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } zablokowana",
         "${ blockedEmailsCount } zablokowane",
@@ -1850,7 +1856,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2706,6 +2715,9 @@
       "City": [
         "Miasto"
       ],
+      "Class": [
+        "Klasa"
+      ],
       "Code": [
         "Kod"
       ],
@@ -2795,6 +2807,9 @@
       ],
       "DNS": [
         "DNS"
+      ],
+      "Doctor": [
+        "Lekarz"
       ],
       "Domain": [
         "Domena"
@@ -2904,6 +2919,9 @@
       "Holder Name": [
         "Nazwa właściciela"
       ],
+      "Hospital": [
+        "Szpital"
+      ],
       "Host": [
         "Host"
       ],
@@ -2967,6 +2985,9 @@
       "Issuing Country": [
         "Kraj wydający"
       ],
+      "Issuing State/Country": [
+        "Kraj wydający"
+      ],
       "Item ID": [
         "Identyfikator elementu"
       ],
@@ -2978,6 +2999,9 @@
       ],
       "Key fingerprint": [
         "Odcisk klucza"
+      ],
+      "Key type": [
+        "Typ klucza"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Skrót klawiszowy: ${ shortcut }"
@@ -3012,6 +3036,9 @@
       "License number": [
         "Numer prawa jazdy"
       ],
+      "License Number": [
+        "Numer prawa jazdy"
+      ],
       "LinkedIn account": [
         "Profil LinkedIn"
       ],
@@ -3042,17 +3069,29 @@
       "max views reached": [
         "maksymalna liczba dostępów została osiągnięta"
       ],
+      "Medical Conditions": [
+        "Stan zdrowia"
+      ],
       "Medical Record": [
         "Dokumentacja medyczna"
       ],
+      "Medications": [
+        "Leki"
+      ],
       "Member ID": [
         "Identyfikator członkostwa"
+      ],
+      "Member Name": [
+        "Nazwa członka"
       ],
       "Members": [
         "Użytkownicy"
       ],
       "Membership": [
         "Członkostwo"
+      ],
+      "Membership ID": [
+        "Identyfikator członkostwa"
       ],
       "Middle name": [
         "Drugie imię"
@@ -3129,6 +3168,9 @@
       "Organization": [
         "Organizacja"
       ],
+      "Organization Name": [
+        "Nazwa organizacji"
+      ],
       "Other": [
         "Inny"
       ],
@@ -3161,6 +3203,9 @@
       ],
       "Passwords": [
         "Hasła"
+      ],
+      "Patient Name": [
+        "Nazwa pacjenta"
       ],
       "Pause list": [
         "Lista wykluczonych"
@@ -3236,6 +3281,9 @@
       ],
       "Recent": [
         "Ostatnie"
+      ],
+      "Record Number": [
+        "Numer rekordu"
       ],
       "Reddit handle": [
         "Nazwa użytkownika Reddit"
@@ -3389,6 +3437,9 @@
       ],
       "Theme": [
         "Motyw"
+      ],
+      "Tier/Level": [
+        "Poziom"
       ],
       "Tier/Status": [
         "Poziom / status"
@@ -3707,6 +3758,18 @@
       ],
       "Add note": [
         "Dodaj notatkę"
+      ],
+      "Add password": [
+        "Dodaj hasło"
+      ],
+      "Add private key": [
+        "Dodaj klucz prywatny"
+      ],
+      "Add public key": [
+        "Dodaj klucz publiczny"
+      ],
+      "Add SSID": [
+        "Dodaj SSID"
       ],
       "Add text": [
         "Dodaj tekst"
@@ -4375,6 +4438,14 @@
       ],
       "URL is invalid": [
         "Adres URL jest nieprawidłowy"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Przenieś element do",
+        "Przenieś elementy do",
+        "Przenieś elementy do",
+        "Przenieś elementy do"
       ]
     },
     "Warning": {
