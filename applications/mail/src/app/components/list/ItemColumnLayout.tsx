@@ -22,6 +22,8 @@ import { useExpiringElement } from '../../hooks/useExpiringElement';
 import type { Element } from '../../models/element';
 import type { ESMessage } from '../../models/encryptedSearch';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
+import { CategoryBadge } from '../categoryView/CategoryBadge';
+import { isLabelIDCaregoryKey } from '../categoryView/categoryViewHelpers';
 import NumMessages from '../conversation/NumMessages';
 import ItemAction from './ItemAction';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
@@ -99,7 +101,10 @@ const ItemColumnLayout = ({
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
     const hasLabels = useMemo(() => {
         const allLabelIDs = Object.keys(getLabelIDs(element, labelID));
-        const labelIDs = allLabelIDs.filter((ID) => labels?.find((label) => ID === label.ID));
+        const labelIDs = allLabelIDs.filter(
+            // Remove the isLabelIDCaregoryKey test once the category label experiment is node
+            (ID) => labels?.find((label) => ID === label.ID) || isLabelIDCaregoryKey(ID)
+        );
         return !!labelIDs.length;
     }, [element, labels, labelID]);
 
@@ -250,7 +255,8 @@ const ItemColumnLayout = ({
             </div>
 
             {hasLabels && !isCompactView && (
-                <div className="flex flex-nowrap items-center max-w-full overflow-hidden">
+                <div className="flex flex-nowrap items-center max-w-full overflow-hidden gap-1">
+                    <CategoryBadge className="mt-1" labelIDs={Object.keys(getLabelIDs(element, labelID))} />
                     <div className="item-icons flex shrink-0 flex-nowrap mt-1">
                         <ItemLabels
                             className="ml-2"
