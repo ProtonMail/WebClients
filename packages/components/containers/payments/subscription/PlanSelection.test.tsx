@@ -773,7 +773,7 @@ describe('useAccessiblePlans', () => {
         });
 
         it('should be false when current plan is Pass Family', () => {
-            const subscription: Subscription = buildSubscription(undefined, {
+            const subscription: Subscription = buildSubscription({
                 [PLANS.PASS_FAMILY]: 1,
             });
             const props = {
@@ -785,7 +785,7 @@ describe('useAccessiblePlans', () => {
         });
 
         it('should be false when current plan is a B2B plan', () => {
-            const subscription: Subscription = buildSubscription(undefined, {
+            const subscription: Subscription = buildSubscription({
                 [PLANS.MAIL_BUSINESS]: 1,
             });
             const props = {
