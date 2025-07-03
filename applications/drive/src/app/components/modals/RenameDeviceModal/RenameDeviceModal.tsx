@@ -27,7 +27,7 @@ interface Props {
     device: Device;
 }
 
-const RenameDeviceModal = ({ device, onClose, ...modalProps }: Props & ModalStateProps) => {
+export const RenameDeviceModalDeprecated = ({ device, onClose, ...modalProps }: Props & ModalStateProps) => {
     const { renameDevice } = useActions();
     const [submitting, withSubmitting] = useLoading();
 
@@ -93,7 +93,6 @@ const RenameDeviceModal = ({ device, onClose, ...modalProps }: Props & ModalStat
     );
 };
 
-export default RenameDeviceModal;
 export const useRenameDeviceModal = () => {
-    return useModalTwoStatic(RenameDeviceModal);
+    return useModalTwoStatic(RenameDeviceModalDeprecated);
 };

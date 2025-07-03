@@ -1,3 +1,1 @@
-import DriveSidebarDevices from './SidebarDevices';
-
-export default DriveSidebarDevices;
+export { DriveSidebarDevicesDeprecated } from './SidebarDevices';
