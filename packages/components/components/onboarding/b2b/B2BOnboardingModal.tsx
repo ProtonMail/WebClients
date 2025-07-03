@@ -87,7 +87,7 @@ const B2BOnboardingModal = (props: Props) => {
 
             const initialStep = (() => {
                 // Show trial step first for B2B trial users
-                if (isB2BTrial && props.source !== 'navbar-button') {
+                if (isB2BTrial && props.source === 'onboarding') {
                     return B2B_ONBOARDING_STEPS.TRIAL;
                 }
                 // Then show org setup or features based on org state
