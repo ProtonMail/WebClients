@@ -1,6 +1,7 @@
+import { OpenPGPCryptoWithCryptoProxy } from '@protontech/drive-sdk';
+
 import { CryptoProxy } from '@proton/crypto';
 import type { WorkerEncryptSessionKeyOptions } from '@proton/crypto/lib/worker/api.models';
-import { OpenPGPCryptoWithCryptoProxy } from '@proton/drive-sdk';
 
 type CryptoProxyCompatibility = typeof CryptoProxy & {
     // SDK enforces `binary` format for encrypting session keys, while
