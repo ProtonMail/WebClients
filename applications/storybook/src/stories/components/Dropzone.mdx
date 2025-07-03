@@ -1,4 +1,4 @@
-import { ArgsTable, Canvas, PRIMARY_STORY, Primary, Story } from '@storybook/addon-docs';
+import { ArgTypes, Canvas, PRIMARY_STORY, Primary, Story } from '@storybook/addon-docs';
 
 import { Dropzone } from '@proton/components';
 
@@ -10,8 +10,8 @@ Extra props are spread on the container element, not the overlay.
 
 Small notes on the vocabulary we use:
 
--   **Children** is what you see when you are not dragging files.
--   **Content** is what you see in your dropzone when you are dragging files. By default, there is a content set for sizes `small`/`medium`/`large`. But you can override it with the prop `customContent`.
+- **Children** is what you see when you are not dragging files.
+- **Content** is what you see in your dropzone when you are dragging files. By default, there is a content set for sizes `small`/`medium`/`large`. But you can override it with the prop `customContent`.
 
 **Warning for developers:**
 
@@ -31,4 +31,4 @@ If you want to get a Dropzone that shows no content when hovering but keeps show
     <Story id="components-dropzone--invisible" />
 </Canvas>
 
-<ArgsTable story={PRIMARY_STORY} />
+<ArgTypes story={PRIMARY_STORY} />

@@ -4,14 +4,22 @@ const getCssLoaders = require('@proton/pack/webpack/css.loader');
 const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
 const getOptimization = require('@proton/pack/webpack/optimization');
 
+/** @type { import('@storybook/react-webpack5').StorybookConfig } */
 module.exports = {
-    addons: ['@storybook/addon-links', '@storybook/addon-storysource', '@storybook/addon-essentials'],
+    addons: ['@storybook/addon-essentials', '@storybook/addon-links', '@storybook/addon-storysource'],
     core: {
-        builder: 'webpack5',
+        disableTelemetry: true,
+    },
+    framework: {
+        name: '@storybook/react-webpack5',
+        options: {},
     },
     staticDirs: ['../src/assets', '../src/assets/favicons'],
     stories: [
-        '../src/stories/**/*.stories.@(mdx|js|jsx|ts|tsx)',
+        '../src/stories/components/*.stories.@(mdx|js|jsx|ts|tsx)',
+        // TODO: remove the commented out stories once we have a proper way to handle mdx files in storybook
+        // '../src/stories/coreConcepts/*.stories.@(mdx|js|jsx|ts|tsx)',
+        // '../src/stories/cssUtilities/*.stories.@(mdx|js|jsx|ts|tsx)',
         '../../../packages/atoms/**/*.stories.@(js|jsx|ts|tsx)',
     ],
     typescript: {
@@ -55,25 +63,16 @@ module.exports = {
 
         return {
             ...config,
-            resolve: {
-                ...config.resolve,
-                fallback: {
-                    ...config.resolve.fallback,
-                    // For some reason storybook brings in openpgp as a dependency and we need to
-                    // explicitly disable these in the webpack config
-                    stream: false,
-                    crypto: false,
-                    iconv: false,
-                },
-            },
+            experiments: { ...config.experiments, asyncWebAssembly: true },
             module: {
                 ...config.module,
                 rules: [
+                    // Filter out JS/CSS loaders that are not related to MDX to prevent Webpack from blowing up due to conflicting rules
                     ...config.module.rules.filter((rule) => {
-                        return rule.test.toString().includes('mdx');
+                        return rule && rule.test && rule.test.toString().includes('mdx');
                     }),
                     {
-                        test: /\.stories\.(tsx|mdx)?$/,
+                        test: /\.stories\.(mdx|tsx)?$/,
                         use: [
                             {
                                 loader: require.resolve('@storybook/source-loader'),
@@ -85,11 +84,15 @@ module.exports = {
                     ...[getJsLoader(options), ...getCssLoaders(options), ...getAssetsLoaders(options)],
                 ],
             },
+            node: {
+                ...config.node,
+                __dirname: true,
+                __filename: true,
+            },
             optimization: {
                 ...config.optimization,
                 minimizer: optimization.minimizer,
             },
-            experiments: { ...config.experiments, asyncWebAssembly: true },
             plugins: [
                 ...config.plugins,
                 new MiniCssExtractPlugin({
@@ -97,10 +100,16 @@ module.exports = {
                     chunkFilename: isProduction ? '[id].[contenthash:8].css' : '[id].css',
                 }),
             ],
-            node: {
-                ...config.node,
-                __dirname: true,
-                __filename: true,
+            resolve: {
+                ...config.resolve,
+                fallback: {
+                    ...config.resolve.fallback,
+                    // For some reason storybook brings in openpgp as a dependency and we need to
+                    // explicitly disable these in the webpack config
+                    crypto: false,
+                    iconv: false,
+                    stream: false,
+                },
             },
         };
     },

@@ -6,16 +6,17 @@
     "author": "",
     "main": "index.js",
     "scripts": {
-        "build:storybook": "build-storybook --docs",
         "check-types": "tsc",
         "deploy": "netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --dir applications/storybook/storybook-static --alias $NETLIFY_ALIAS",
         "deploy:prod": "netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --prod --dir applications/storybook/storybook-static",
         "postinstall": "proton-pack config",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -path ./src -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "start": "proton-pack config && start-storybook -p 6006",
-        "storybook": "start-storybook -p 6006 --docs --no-manager-cache",
-        "storybook-raw": "start-storybook -p 6006"
+        "start": "proton-pack config && storybook dev -p 6006",
+        "storybook:build": "storybook build --loglevel warn --quiet",
+        "storybook:build:serve": "http-server ./storybook-static --cors --port 3000 --silent",
+        "storybook:build:wait": "wait-on http://localhost:3000",
+        "storybook:dev": "storybook dev -p 6006"
     },
     "dependencies": {
         "@proton/components": "workspace:^",
@@ -41,16 +42,16 @@
     "devDependencies": {
         "@babel/core": "^7.28.0",
         "@proton/icons": "workspace:^",
-        "@storybook/addon-actions": "^6.5.16",
-        "@storybook/addon-essentials": "^6.5.16",
-        "@storybook/addon-links": "^6.5.16",
-        "@storybook/addon-storysource": "^6.5.16",
-        "@storybook/builder-webpack5": "^6.5.16",
-        "@storybook/manager-webpack5": "^6.5.16",
-        "@storybook/react": "^6.5.16",
-        "@storybook/source-loader": "^6.5.16",
+        "@storybook/addon-actions": "^8.6.14",
+        "@storybook/addon-essentials": "^8.6.14",
+        "@storybook/addon-links": "^8.6.14",
+        "@storybook/addon-storysource": "^8.6.14",
+        "@storybook/react": "^8.6.14",
+        "@storybook/react-webpack5": "^8.6.14",
+        "@storybook/source-loader": "^8.6.14",
         "babel-loader": "^10.0.0",
         "eslint-plugin-storybook": "^0.12.0",
-        "netlify-cli": "17.38.1"
+        "netlify-cli": "17.38.1",
+        "storybook": "^8.6.14"
     }
 }
