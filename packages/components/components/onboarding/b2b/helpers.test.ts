@@ -1,7 +1,6 @@
 import { getFeatures, getSections } from '@proton/components/components/onboarding/b2b/helpers';
 import type { B2BFeaturesSection } from '@proton/components/components/onboarding/b2b/interface';
-import { getPlan } from '@proton/payments';
-import { PLANS } from '@proton/payments';
+import { PLANS, getPlan } from '@proton/payments';
 import {
     APPS,
     CALENDAR_APP_NAME,
@@ -10,7 +9,7 @@ import {
     PASS_APP_NAME,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { getSubscriptionMock } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders';
 
 jest.mock('@proton/payments', () => ({
     __esModule: true,
@@ -36,7 +35,7 @@ describe('b2b onboarding helpers', () => {
     describe('getFeatures', () => {
         it('should return all features', () => {
             setMockPlan(PLANS.BUNDLE_PRO_2024);
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
 
             const features = getFeatures(subscription).filter((f) => f.canShowFeature);
             const featuresIDs = features.map((f) => f.id);
@@ -67,7 +66,7 @@ describe('b2b onboarding helpers', () => {
 
         it('should return only accessible features', () => {
             setMockPlan(PLANS.MAIL_PRO);
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
 
             const features = getFeatures(subscription).filter((f) => f.canShowFeature);
             const featuresIDs = features.map((f) => f.id);
