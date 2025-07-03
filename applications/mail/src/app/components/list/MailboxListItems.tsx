@@ -76,7 +76,7 @@ const MailboxListItems = ({
 
     return (
         <>
-            <div className="w-full shrink-0" ref={listRef}>
+            <div className="overflow-auto h-full w-full" ref={listRef}>
                 {elements.map((element, index) => {
                     return (
                         <Fragment key={element.ID}>
@@ -117,11 +117,11 @@ const MailboxListItems = ({
                         </Fragment>
                     );
                 })}
+
+                {showUserOnboarding && <UserOnboardingMessageListPlaceholder location="list" />}
+
+                {useLoadingElement && loadingElement}
             </div>
-
-            {showUserOnboarding && <UserOnboardingMessageListPlaceholder location="list" />}
-
-            {useLoadingElement && loadingElement}
         </>
     );
 };
