@@ -3,10 +3,12 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { SidebarList } from '@proton/components';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
+import { DevicesSidebar as DevicesSidebarSDK } from '../../../../sections/devices/DevicesSidebar';
 import { type ShareWithKey, useDriveSharingFlags, useInvitationsView, useUserSettings } from '../../../../store';
-import DriveSidebarDevices from './DriveSidebarDevices';
+import { DriveSidebarDevicesDeprecated } from './DriveSidebarDevices';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
 import DriveSidebarListItem from './DriveSidebarListItem';
 
@@ -20,6 +22,9 @@ const DriveSidebarList = ({ shareId, userShares, collapsed }: DriveSidebarListPr
     const { photosEnabled } = useUserSettings();
     const { invitations } = useInvitationsView();
     const [sidebarWidth, setSidebarWidth] = useState('100%');
+
+    const useSdkDevices = useFlag('DriveWebSDKDevices');
+
     const setSidebarLevel = (level: number) => {
         const extraWidth = Math.floor(level / 7) * 50;
         setSidebarWidth(`${100 + extraWidth}%`);
@@ -45,7 +50,11 @@ const DriveSidebarList = ({ shareId, userShares, collapsed }: DriveSidebarListPr
                     collapsed={collapsed}
                 />
             ))}
-            <DriveSidebarDevices collapsed={collapsed} setSidebarLevel={setSidebarLevel} />
+            {useSdkDevices ? (
+                <DevicesSidebarSDK collapsed={collapsed} setSidebarLevel={setSidebarLevel} />
+            ) : (
+                <DriveSidebarDevicesDeprecated collapsed={collapsed} setSidebarLevel={setSidebarLevel} />
+            )}
             {photosEnabled && (
                 <DriveSidebarListItem to="/photos" icon="image" collapsed={collapsed}>
                     <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={c('Link').t`Photos`}>

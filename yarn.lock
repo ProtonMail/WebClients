@@ -7752,14 +7752,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/drive-sdk@npm:^0.0.9":
-  version: 0.0.9
-  resolution: "@proton/drive-sdk@npm:0.0.9"
+"@proton/drive-sdk@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "@proton/drive-sdk@npm:0.0.10"
   dependencies:
     "@noble/hashes": "npm:^1.8.0"
     bcryptjs: "npm:^2.4.3"
     ttag: "npm:^1.8.7"
-  checksum: 10c0/bd5edc50b9c4ac48fb08b3f2474fccb1c536689f1176ec7843d743c2729f681bb6a6baa543031786d7a41e41ba50787121ed0f6dab0979270ba66aaf0ab0f98c
+  checksum: 10c0/b71f9c48f33d96249da4261796a274a4a107bedac97672f7730e86e02f27fd6b877cf415b308de1d0c25c4c05589009ed8e1067c225cdf75019aca885d16ba93
   languageName: node
   linkType: hard
 
@@ -7839,7 +7839,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/drive@workspace:packages/drive"
   dependencies:
-    "@proton/drive-sdk": "npm:^0.0.9"
+    "@proton/drive-sdk": "npm:^0.0.10"
     "@types/jest": "npm:^29.5.14"
     "@types/node": "npm:^22.16.0"
     eslint: "npm:^8.57.1"

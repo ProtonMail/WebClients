@@ -30,7 +30,7 @@ interface Props {
 export const deviceNameValidator = (value: string, deviceName: string) =>
     value !== deviceName ? c('Error').t`Device name does not match` : '';
 
-const RemoveDeviceModal = ({ device, onClose, ...modalProps }: Props) => {
+export const RemoveDeviceModalDeprecated = ({ device, onClose, ...modalProps }: Props) => {
     const { removeDevice } = useActions();
     const [submitting, withSubmitting] = useLoading();
 
@@ -102,7 +102,6 @@ const RemoveDeviceModal = ({ device, onClose, ...modalProps }: Props) => {
     );
 };
 
-export default RemoveDeviceModal;
 export const useRemoveDeviceModal = () => {
-    return useModalTwoStatic(RemoveDeviceModal);
+    return useModalTwoStatic(RemoveDeviceModalDeprecated);
 };

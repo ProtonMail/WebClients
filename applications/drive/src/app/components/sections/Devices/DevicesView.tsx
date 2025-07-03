@@ -3,11 +3,14 @@ import { useAppTitle } from '@proton/components';
 import { useDevicesView } from '../../../store';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
-import Devices from './Devices';
-import DevicesToolbar from './Toolbar/DevicesToolbar';
+import { Devices } from './Devices';
+import { DevicesToolbar } from './Toolbar/DevicesToolbar';
 import { getDevicesSectionName } from './constants';
 
-function DevicesView() {
+/**
+ * @deprecated
+ **/
+export function DevicesViewDeprecated() {
     const sectionTitle = getDevicesSectionName();
     useAppTitle(sectionTitle);
 
@@ -23,5 +26,3 @@ function DevicesView() {
         </FileBrowserStateProvider>
     );
 }
-
-export default DevicesView;

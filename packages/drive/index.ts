@@ -96,6 +96,8 @@ export function useDrive() {
                     baseUrl: `${window.location.host}/api`,
                 },
                 telemetry,
+                // @ts-expect-error TODO: add srp module with public link management
+                srpModule: undefined,
             });
 
             memoryLogHandlerSingleton = memoryLogHandler;

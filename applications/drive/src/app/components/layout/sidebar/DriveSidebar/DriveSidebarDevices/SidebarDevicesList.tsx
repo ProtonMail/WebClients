@@ -9,7 +9,6 @@ export const SidebarDeviceList = ({
     setSidebarLevel: (level: number) => void;
 }) => {
     const { cachedDevices } = useDevicesListing();
-
     if (!isRootExpanded || cachedDevices?.length === 0) {
         return null;
     }

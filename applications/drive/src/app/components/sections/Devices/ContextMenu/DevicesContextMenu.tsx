@@ -3,9 +3,9 @@ import type { ContextMenuProps } from '../../../FileBrowser/interface';
 import { useRemoveDeviceModal } from '../../../modals/RemoveDeviceModal';
 import { useRenameDeviceModal } from '../../../modals/RenameDeviceModal';
 import { ItemContextMenu } from '../../ContextMenu/ItemContextMenu';
-import { RemoveButton, RenameButton } from './buttons';
+import { DeviceRemoveButton, DeviceRenameButton } from './buttons';
 
-export function DevicesItemContextMenu({
+export function DevicesItemContextMenuDeprecated({
     selectedDevices,
     anchorRef,
     isOpen,
@@ -26,8 +26,16 @@ export function DevicesItemContextMenu({
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-                <RenameButton showRenameDeviceModal={showRenameDeviceModal} device={selectedDevices[0]} close={close} />
-                <RemoveButton showRemoveDeviceModal={showRemoveDeviceModal} device={selectedDevices[0]} close={close} />
+                <DeviceRenameButton
+                    showRenameDeviceModal={showRenameDeviceModal}
+                    device={selectedDevices[0]}
+                    close={close}
+                />
+                <DeviceRemoveButton
+                    showRemoveDeviceModal={showRemoveDeviceModal}
+                    device={selectedDevices[0]}
+                    close={close}
+                />
             </ItemContextMenu>
             {renameDeviceModal}
             {removeDeviceModal}

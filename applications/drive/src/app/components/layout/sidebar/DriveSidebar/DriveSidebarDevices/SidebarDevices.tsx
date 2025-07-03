@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { SidebarDeviceList } from './SidebarDevicesList';
 import { SidebarDevicesRoot } from './SidebarDevicesRoot';
 
-const DriveSidebarDevices = ({
+export const DriveSidebarDevicesDeprecated = ({
     setSidebarLevel,
     collapsed,
 }: {
@@ -23,5 +23,3 @@ const DriveSidebarDevices = ({
         </>
     );
 };
-
-export default DriveSidebarDevices;

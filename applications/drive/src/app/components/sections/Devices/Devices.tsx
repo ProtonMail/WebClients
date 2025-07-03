@@ -10,7 +10,7 @@ import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../
 import { GridViewItemDevice } from '../FileBrowser/GridViewItemDevice';
 import { DeviceNameCell } from '../FileBrowser/contentCells';
 import headerCellsCommon from '../FileBrowser/headerCells';
-import { DevicesItemContextMenu } from './ContextMenu/DevicesContextMenu';
+import { DevicesItemContextMenuDeprecated } from './ContextMenu/DevicesContextMenu';
 import EmptyDevices from './EmptyDevices';
 import { getSelectedItems } from './Toolbar/DevicesToolbar';
 import { getDevicesSectionName } from './constants';
@@ -33,9 +33,11 @@ const headerItemsLargeScreen: ListViewHeaderItem[] = [headerCells.name, headerCe
 
 const headerItemsSmallScreen: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
 
-function Devices({ view }: Props) {
+/**
+ * @deprecated
+ */
+export function Devices({ view }: Props) {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
-
     const { navigateToLink } = useDriveNavigation();
     const browserItemContextMenu = useItemContextMenu();
     const selectionControls = useSelection();
@@ -83,7 +85,7 @@ function Devices({ view }: Props) {
 
     return (
         <>
-            <DevicesItemContextMenu
+            <DevicesItemContextMenuDeprecated
                 selectedDevices={selectedItems}
                 anchorRef={contextMenuAnchorRef}
                 close={browserItemContextMenu.close}
@@ -109,5 +111,3 @@ function Devices({ view }: Props) {
         </>
     );
 }
-
-export default Devices;
