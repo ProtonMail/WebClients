@@ -73,7 +73,7 @@ describe('Encrypted Outside Unlock', () => {
         fireEvent.change(unlockInput, { target: { value: EOInvalidPassword } });
         fireEvent.keyDown(unlockInput, { key: 'Enter' });
 
-        await waitForNotification('Wrong second password');
+        await waitForNotification('Wrong password');
     });
 
     it('should see the form if the EO id is valid and redirect if password is valid', async () => {
