@@ -1,6 +1,8 @@
+import { DeviceType, useDrive } from '@proton/drive';
 import { queryCreateDriveDevice } from '@proton/shared/lib/api/drive/devices';
 import type { CreatedDriveVolumeResult } from '@proton/shared/lib/interfaces/drive/volume';
 import { generateDriveBootstrap, generateNodeHashKey } from '@proton/shared/lib/keys/driveKeys';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useDebouncedRequest } from '../_api';
 import useDefaultShare from './useDefaultShare';
@@ -11,6 +13,19 @@ export function useCreateDevice() {
     const debouncedRequest = useDebouncedRequest();
     const { getShareCreatorKeys } = useShare();
     const { getDefaultShare } = useDefaultShare();
+    const { drive, internal } = useDrive();
+    const useSdkDevices = useFlag('DriveWebSDKDevices');
+
+    const createSdkDevice = async () => {
+        const device = await drive.createDevice('root', DeviceType.Windows);
+
+        return {
+            id: internal.splitNodeUid(device.uid).nodeId,
+            linkId: internal.splitNodeUid(device.rootFolderUid).nodeId,
+            volumeId: internal.splitNodeUid(device.rootFolderUid).volumeId,
+            shareId: device.shareId,
+        };
+    };
 
     const createDevice = async (): Promise<{ volumeId: string; shareId: string; linkId: string }> => {
         const abortController = new AbortController();
@@ -49,6 +64,6 @@ export function useCreateDevice() {
     };
 
     return {
-        createDevice,
+        createDevice: useSdkDevices ? createSdkDevice : createDevice,
     };
 }
