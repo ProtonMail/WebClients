@@ -452,9 +452,6 @@
       "Keep my subscription": [
         "Manter minha assinatura"
       ],
-      "Keep subscription": [
-        "Manter assinatura"
-      ],
       "Later": [
         "Mais tarde"
       ],
@@ -1199,9 +1196,17 @@
         "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Assinatura cancelada."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar assinatura"
+      ],
+      "Keep subscription": [
+        "Manter assinatura"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Sua avaliação gratuita termina em ${ timeRemaining }"
       ]
     },
     "Badge": {
@@ -11201,10 +11206,6 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Sua avaliação gratuita termina em ${ trialDurationFormatted } dia",
-        "Sua avaliação gratuita termina em ${ trialDurationFormatted } dias"
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
