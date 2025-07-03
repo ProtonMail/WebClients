@@ -1,9 +1,13 @@
-import { Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderButton, CollapsibleHeaderIconButton, Icon } from '@proton/components';
-
-
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderButton,
+    CollapsibleHeaderIconButton,
+    Icon,
+} from '@proton/components';
 
 import mdx from './Collapsible.mdx';
-
 
 export default {
     component: Collapsible,
