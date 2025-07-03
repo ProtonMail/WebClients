@@ -44,7 +44,7 @@ describe('locationAsideHelpers', () => {
 
         it('should return unread newsletter subscriptions when in the newsletter subscriptions view', () => {
             const result = getUnreadTitle(false, 5, mockMailSettings, CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS);
-            expect(result).toBe('5 newsletter subscriptions');
+            expect(result).toBe('5 newsletters');
         });
     });
 

@@ -38,11 +38,11 @@ import MailboxList from '../../list/MailboxList';
 import ModalOnboarding from './SubscriptionsList/ModalOnboarding';
 import { NewsletterSubscriptionListLoader } from './SubscriptionsList/NewsletterSubscriptionCardSkeleton/NewsletterSubscriptionListLoader';
 import { NewsletterSubscriptionList } from './SubscriptionsList/NewsletterSubscriptionList';
-import { NewsletterSubscriptionListPlaceholder } from './SubscriptionsList/NewsletterSubscriptionListPlaceholder';
 import {
     NewsletterSubscriptionMailListHeader,
     NewsletterSubscriptionMailListToolbar,
 } from './SubscriptionsList/NewsletterSubscriptionMailComponents';
+import { NewsletterSubscriptionViewPlaceholder } from './SubscriptionsList/NewsletterSubscriptionViewPlaceholder';
 import { useNewsletterSubscriptionTelemetry } from './useNewsletterSubscriptionTelemetry';
 
 import './NewsletterSubscriptionView.scss';
@@ -132,7 +132,7 @@ export const NewsletterSubscriptionView = ({
     }
 
     if (!loadingSubscriptions && subscriptionCount === 0) {
-        return <NewsletterSubscriptionListPlaceholder />;
+        return <NewsletterSubscriptionViewPlaceholder />;
     }
 
     const hideEmailList = breakpoints.viewportWidth['<=medium'];
