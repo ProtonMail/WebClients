@@ -256,7 +256,7 @@ describe('SepaDirectDebit', () => {
 
         expect(
             screen.getByText(
-                'Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.'
+                'Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.'
             )
         ).toBeInTheDocument();
     });
@@ -266,7 +266,7 @@ describe('SepaDirectDebit', () => {
 
         expect(
             screen.queryByText(
-                'Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.'
+                'Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.'
             )
         ).not.toBeInTheDocument();
     });
