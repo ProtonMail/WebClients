@@ -63,7 +63,10 @@ const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; organizati
     const appName = getAppName(app);
     const organizationName = organization?.Name || '';
     return (
-        <div className="flex flex-row items-center gap-2 px-3 py-2 border rounded border-weak mb-6 mt-6">
+        <div
+            className="flex flex-row items-center gap-2 px-3 py-2 border rounded border-weak mb-6 mt-6"
+            data-testid="app-unsupported"
+        >
             <div className="shrink-0">
                 <Disabled>
                     <Logo
