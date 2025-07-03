@@ -13,7 +13,7 @@ export interface UserDropdownValue {
         display: boolean;
     };
     info: {
-        planName: string | undefined;
+        planNames: string[];
         email: string | undefined;
         name: string;
         organizationName: string;
