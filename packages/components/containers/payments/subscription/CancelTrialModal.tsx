@@ -58,7 +58,7 @@ const FeatureList = () => {
         return null;
     }
 
-    const planTitle = subscription?.Plans[0]?.Title;
+    const planTitle = subscription?.Plans?.[0]?.Title;
     const boldPlanTitle = <span className="text-bold">{planTitle}</span>;
 
     return (
