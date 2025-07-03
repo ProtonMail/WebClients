@@ -30,10 +30,14 @@ import { MIME_TYPES, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import { AUTO_SAVE_CONTACTS } from '@proton/shared/lib/mail/mailSettings';
 import { getOriginalTo, hasProtonSender, hasSimpleLoginSender, isUnsubscribed } from '@proton/shared/lib/mail/messages';
 import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
+
+import { params } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useOnCompose } from '../../../../containers/ComposeProvider';
 import { findSender } from '../../../../helpers/message/messageRecipients';
@@ -77,6 +81,8 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         return c('Info').t`This message is from a mailing list.`;
     }, [isSimpleLoginAlias]);
 
+    const param = useMailSelector(params);
+
     const actionText = useMemo(() => {
         if (isUnsubscribed(message)) {
             if (isSimpleLoginAlias) {
@@ -99,11 +105,10 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         return c('Action').t`Unsubscribe`;
     }, [loading, message]);
 
-    if (!hasUnsubscribeMethods || !address) {
+    // We don't want to show the unsubscribe button in the newsletter subscriptions view
+    if (!hasUnsubscribeMethods || !address || param.labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
         return null;
     }
-
-    const messageID = message.ID;
 
     let modalContent;
     let submit: () => void;
@@ -119,7 +124,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         );
 
         submit = async () => {
-            await api(oneClickUnsubscribe(messageID));
+            await api(oneClickUnsubscribe(message.ID));
         };
     } else if (unsubscribeMethods.HttpClient) {
         modalContent = (
@@ -225,7 +230,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             setUnsubscribedModalOpen(true);
         }
         await submit();
-        await api(markAsUnsubscribed([messageID]));
+        await api(markAsUnsubscribed([message.ID]));
         await call();
         createNotification({ text: c('Success').t`Mail list unsubscribed` });
     };
