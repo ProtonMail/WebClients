@@ -8,10 +8,11 @@ export const getNUnreadMessagesText = (n: number) => {
     return c('Info').ngettext(msgid`${n} unread conversation`, `${n} unread conversations`, n);
 };
 
-export const getUnreadNewslettersText = (n?: number) => {
-    if (!n) {
-        return c('Info').t`newsletters`;
+export const getUnreadNewslettersText = (unreadCount?: number) => {
+    if (!unreadCount) {
+        return c('Info').t`newsletter`;
     }
 
-    return c('Info').ngettext(msgid`${n} newsletter`, `${n} newsletters`, n);
+    // Fix for ttag and multiple string with different variables
+    return c('Info').ngettext(msgid`${unreadCount} newsletter`, `${unreadCount} newsletters`, unreadCount);
 };
