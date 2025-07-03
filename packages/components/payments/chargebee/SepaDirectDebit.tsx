@@ -171,7 +171,7 @@ export const SepaDirectDebit = ({ directDebit, isCurrencyOverriden, ...rest }: D
 
             {isCurrencyOverriden && (
                 <Banner className="mt-2 mb-4" variant={BannerVariants.INFO}>{c('Payments')
-                    .t`Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.`}</Banner>
+                    .t`Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.`}</Banner>
             )}
 
             <ChargebeeIframe type="direct-debit" {...rest} />
