@@ -171,9 +171,12 @@ const ItemRowLayout = ({
                         hasStar={false}
                         size="small"
                     />
+                    {loading && <div className="item-senddate-row w-custom" style={{ '--w-custom': '5rem' }} />}
                     <span
-                        className={clsx('item-senddate-row flex flex-nowrap items-center gap-3', loading && 'w-custom')}
-                        style={loading ? { '--w-custom': '5rem' } : {}}
+                        className={clsx(
+                            'item-senddate-row flex flex-nowrap items-center gap-3',
+                            loading && 'visibility-hidden'
+                        )}
                     >
                         {hasExpiration && (
                             <ItemExpiration expirationTime={expirationTime} element={element} labelID={labelID} />
