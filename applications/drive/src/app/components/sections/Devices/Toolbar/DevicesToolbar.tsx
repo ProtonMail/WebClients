@@ -21,7 +21,10 @@ export const getSelectedItems = (items: Device[], selectedItemIds: string[]): De
     return [];
 };
 
-const DevicesToolbar = ({ items }: Props) => {
+/**
+ * @deprecated
+ **/
+export const DevicesToolbar = ({ items }: Props) => {
     const selectionControls = useSelection()!;
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
@@ -50,5 +53,3 @@ const DevicesToolbar = ({ items }: Props) => {
         </Toolbar>
     );
 };
-
-export default DevicesToolbar;

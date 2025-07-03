@@ -10,7 +10,7 @@ interface Props {
     close: () => void;
 }
 
-const RenameButton = ({ device, showRenameDeviceModal, close }: Props) => {
+export const DeviceRenameButton = ({ device, showRenameDeviceModal, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Rename`}
@@ -21,5 +21,3 @@ const RenameButton = ({ device, showRenameDeviceModal, close }: Props) => {
         />
     );
 };
-
-export default RenameButton;
