@@ -724,9 +724,6 @@
       "Keep my subscription": [
         "Pidä tilaukseni"
       ],
-      "Keep subscription": [
-        "Pidä tilaus"
-      ],
       "Label as": [
         "Merkitse tunnisteella"
       ],
@@ -1399,10 +1396,6 @@
       "Trust": [
         "Luota"
       ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
-      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -1465,6 +1458,9 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
+      ],
+      "Upgrade Now": [
+        "Päivitä tilaus nyt"
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
@@ -1562,6 +1558,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy 2 päivän kuluttua. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy 5 päivän kuluttua. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Sähköpostin kirjoitusavustajasi"
@@ -6961,7 +6966,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"

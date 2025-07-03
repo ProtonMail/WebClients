@@ -315,6 +315,9 @@
       "Create folder": [
         "Створити теку"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Створити папку ${ boldFolderName }"
+      ],
       "Create label": [
         "Створити мітку"
       ],
@@ -1284,12 +1287,6 @@
       "Trust": [
         "Довіряти"
       ],
-      "Trust key": [
-        "Довіряти ключу",
-        "Довіряти ключам",
-        "Довіряти ключам",
-        "Довіряти ключам"
-      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -1346,6 +1343,9 @@
       ],
       "Upgrade": [
         "Покращити"
+      ],
+      "Upgrade Now": [
+        "Передплатити"
       ],
       "Upgrade now": [
         "Покращити"
@@ -1430,6 +1430,15 @@
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контакти",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Безплатний пробний період програми для комп'ютера завершується через 2 дні. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Безплатний пробний період програми для комп'ютера завершується через 5 днів. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Безплатний пробний період програми для комп'ютера завершується ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Ваш помічник з написання електронних листів"
@@ -5929,6 +5938,12 @@
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити.",
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити."
       ],
+      "${ n } newsletter": [
+        "${ n } Розсилка, вісник",
+        "${ n } Розсилки, вісники",
+        "${ n } Розсилки, вісники",
+        "${ n } Розсилки, вісники"
+      ],
       "${ n } unread conversation": [
         "${ n } непрочитана розмова",
         "${ n } непрочитані розмови",
@@ -6267,6 +6282,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Платіжний цикл: ${ text }"
+      ],
+      "Block sender": [
+        "Заблокувати відправника"
       ],
       "Body: ": [
         "Вміст: "
@@ -6710,6 +6728,9 @@
         "Ініціалізація…"
       ],
       "Insert image": [
+        "Вставити зображення",
+        "Вставити зображення",
+        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -6889,6 +6910,9 @@
       "No links cleaned": [
         "Посилання не очищено"
       ],
+      "No messages to show": [
+        "Немає повідомлень для відображення"
+      ],
       "No more results found": [
         "Більше нічого не знайдено"
       ],
@@ -7035,6 +7059,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Будь ласка, зачекайте поки ми перевіряємо контакти, що містять дані, зашифровані неактивним ключем."
+      ],
+      "Preferences updated": [
+        "Налаштування оновлено"
       ],
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
@@ -7326,6 +7353,9 @@
       ],
       "Themes can give your inbox a new look.": [
         "Теми можуть змінювати вигляд вашої поштової скриньки."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "У вашій поштовій скриньці немає повідомлень від цього відправника."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Сталася помилка з підписом, використаним для перевірки контактних даних, що могла стати результатом скидання пароля."
@@ -8367,6 +8397,9 @@
       "CC": [
         "Копія"
       ],
+      "Choose what to do instead": [
+        "Виберіть, що робити замість цього"
+      ],
       "City": [
         "Місто"
       ],
@@ -8477,6 +8510,9 @@
       ],
       "Extended address": [
         "Додаткова адреса"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Не вдалося створити папку ${ customFolderName }"
       ],
       "Filter Name": [
         "Назва фільтра"
@@ -8591,6 +8627,12 @@
       ],
       "Move to Inbox": [
         "Перемістити до вхідних"
+      ],
+      "Moved ${ count } message to ${ labelName }.": [
+        "Переміщено ${ count } повідомлення до ${ labelName }.",
+        "Переміщено ${ count } повідомлень до ${ labelName }.",
+        "Переміщено ${ count } повідомлення до ${ labelName }.",
+        "Переміщено ${ count } повідомлення до ${ labelName }."
       ],
       "Name": [
         "Назва"
@@ -13735,6 +13777,9 @@
       ],
       "Unsubscribe": [
         "Відписатися"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Скасувати підписку для цього відправника неможливо"
       ],
       "Unsubscribe request sent": [
         "Запит на скасування передплати надіслано"

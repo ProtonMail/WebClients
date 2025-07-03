@@ -1380,12 +1380,6 @@
       "Trust": [
         "Zaupaj"
       ],
-      "Trust key": [
-        "Zaupaj ključu",
-        "Zaupaj ključema",
-        "Zaupaj ključem",
-        "Zaupaj ključem"
-      ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
       ],
@@ -1448,6 +1442,9 @@
       ],
       "Upgrade": [
         "Nadgradi"
+      ],
+      "Upgrade Now": [
+        "Nadgradi zdaj"
       ],
       "Upgrade now": [
         "Nadgradi zdaj"
@@ -1541,6 +1538,15 @@
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stikoma ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Brezplačni preizkus namizne aplikacije poteče čez 2 dni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Brezplačni preizkus namizne aplikacije poteče čez pet dni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Vaš pomočnik pri pisanju e-pošte"
@@ -6959,7 +6965,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"

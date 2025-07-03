@@ -736,9 +736,6 @@
       "Keep my subscription": [
         "ჩემი გამოწერის შენარჩუნება"
       ],
-      "Keep subscription": [
-        "გამოწერის შენარჩუნება"
-      ],
       "Label as": [
         "დანიშვნა, როგორც"
       ],
@@ -1426,10 +1423,6 @@
       "Trust": [
         "ნდობა"
       ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
-      ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
       ],
@@ -1492,6 +1485,9 @@
       ],
       "Upgrade": [
         "ტარიფის აწევა"
+      ],
+      "Upgrade Now": [
+        "ახლა გაუმჯობესება"
       ],
       "Upgrade now": [
         "ტარიფის განახლება"
@@ -1589,6 +1585,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია 2 დღეში დასრულდება. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია 5 დღეში დასრულდება. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "თქვენი ელფოსტის წერის დამხმარე"
@@ -1911,11 +1916,6 @@
       ],
       "Sender verification passed": [
         "გამომგზავნის შემოწმება წარმატებულია"
-      ]
-    },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "გამოწერა გაუქმდა."
       ]
     },
     "bf2023: Deal details": {
@@ -7043,6 +7043,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
+        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -14637,10 +14638,6 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში",
-        "თქვენი უფასო სატესტო ვერსია დასრულდება ${ trialDurationFormatted } დღეში"
       ],
       "Your free trial has ended": [
         "თქვენი გამოსაცდელი პერიოდი დასრულდა"
