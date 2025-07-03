@@ -24,11 +24,7 @@ export const getUnreadTitle = (
     }
 
     if (labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
-        return c('Info').ngettext(
-            msgid`${unreadCount} newsletter subscription`,
-            `${unreadCount} newsletter subscriptions`,
-            unreadCount
-        );
+        return c('Info').ngettext(msgid`${unreadCount} newsletter`, `${unreadCount} newsletters`, unreadCount);
     }
 
     if (mailSettings.ViewMode === VIEW_MODE.GROUP) {
