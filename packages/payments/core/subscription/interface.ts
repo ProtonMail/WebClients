@@ -33,7 +33,7 @@ export interface Subscription {
     Plans: SubscriptionPlan[];
     External: SubscriptionPlatform;
     UpcomingSubscription?: Subscription | null;
-    IsTrial?: boolean;
+    IsTrial: boolean;
     BillingPlatform?: BillingPlatform;
     /**
      * Contains additional subscriptions if user has multiple subscriptions.
