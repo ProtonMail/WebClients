@@ -736,9 +736,6 @@
       "Keep my subscription": [
         "Behold mitt abonnement"
       ],
-      "Keep subscription": [
-        "Behold abonnementet"
-      ],
       "Label as": [
         "Merk som"
       ],
@@ -1426,10 +1423,6 @@
       "Trust": [
         "Klarér"
       ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
-      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -1492,6 +1485,9 @@
       ],
       "Upgrade": [
         "Oppgrader"
+      ],
+      "Upgrade Now": [
+        "Oppgrader nå"
       ],
       "Upgrade now": [
         "Oppgrader nå"
@@ -1589,6 +1585,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Den gratis prøveperioden for skrivebordsappen avsluttes om 2 dager ${ upgradeButton }."
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Den gratis prøveperioden for skrivebordsappen avsluttes om 5 dager ${ upgradeButton }."
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Din e-postskrivingsassistent"
@@ -1928,9 +1933,17 @@
         "Avsenderbekreftelse bestått"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Abonnement kansellert."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Avbryt abonnement"
+      ],
+      "Keep subscription": [
+        "Behold abonnement"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Prøveperioden avsluttes om ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -7115,7 +7128,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7299,6 +7313,9 @@
       ],
       "New": [
         "Ny"
+      ],
+      "newsletters": [
+        "nyhetsbrev"
       ],
       "No action selected": [
         "Ingen handling valgt"
@@ -14812,10 +14829,6 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dag",
-        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dager"
       ],
       "Your free trial has ended": [
         "Din gratis prøveperiode har utløpt"

@@ -723,9 +723,6 @@
       "Keep my subscription": [
         "保留订阅"
       ],
-      "Keep subscription": [
-        "继续订阅"
-      ],
       "Label as": [
         "加标签"
       ],
@@ -1414,7 +1411,7 @@
         "信任"
       ],
       "Trust key": [
-        "信任此密钥"
+        "信任密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -1478,6 +1475,9 @@
       ],
       "Upgrade": [
         "升级账户"
+      ],
+      "Upgrade Now": [
+        "立即升级账户"
       ],
       "Upgrade now": [
         "立即升级账户"
@@ -1574,6 +1574,15 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "您的桌面应用免费试用将在 2 天内结束。 ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "您的桌面应用免费试用将在 5 天内结束。 ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "你的邮件写作助手"
@@ -6970,7 +6979,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -14394,9 +14403,6 @@
       ],
       "Your exposed information": [
         "您的泄露信息"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "您的免费体验期将于 ${ trialDurationFormatted } 结束。"
       ],
       "Your free trial has ended": [
         "您的免费试用已结束"
