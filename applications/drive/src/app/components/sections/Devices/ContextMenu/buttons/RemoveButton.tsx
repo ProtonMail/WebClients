@@ -10,7 +10,7 @@ interface Props {
     close: () => void;
 }
 
-const RemoveButton = ({ device, showRemoveDeviceModal, close }: Props) => {
+export const DeviceRemoveButton = ({ device, showRemoveDeviceModal, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Remove`}
@@ -21,5 +21,3 @@ const RemoveButton = ({ device, showRemoveDeviceModal, close }: Props) => {
         />
     );
 };
-
-export default RemoveButton;
