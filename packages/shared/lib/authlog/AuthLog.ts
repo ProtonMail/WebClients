@@ -132,7 +132,7 @@ export const getAuthLogEventsI18N = (type: AUTH_LOG_EVENTS): string => {
         case AUTH_LOG_EVENTS.LOGIN_BLOCKED:
             return c('Log event').t`Sign in blocked (due to abuse)`;
         case AUTH_LOG_EVENTS.LOGIN_SUCCESS_AWAIT_VERIFY:
-            return c('Log event').t`Sign in success (awaiting verify)`;
+            return c('Log event').t`Sign in success (awaiting verification)`;
         case AUTH_LOG_EVENTS.REAUTH_FAILURE_PASSWORD:
             return c('Log event').t`Authentication failure (wrong password)`;
         case AUTH_LOG_EVENTS.REAUTH_FAILURE_2FA:
