@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { c } from 'ttag';
 
@@ -11,52 +11,24 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     Row,
-    useFormErrors,
-    useModalTwoStatic,
 } from '@proton/components';
-import { useLoading } from '@proton/hooks';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import noop from '@proton/utils/noop';
 
-import type { Device } from '../../../store';
-import { useActions } from '../../../store';
+import type { UseRemoveDeviceModalState } from './useRemoveDeviceModalState';
 
-interface Props {
-    onClose?: () => void;
-    device: Device;
-}
+export type RemoveDeviceModalViewProps = UseRemoveDeviceModalState;
 
-export const deviceNameValidator = (value: string, deviceName: string) =>
-    value !== deviceName ? c('Error').t`Device name does not match` : '';
-
-export const RemoveDeviceModalDeprecated = ({ device, onClose, ...modalProps }: Props) => {
-    const { removeDevice } = useActions();
-    const [submitting, withSubmitting] = useLoading();
-
-    const { validator, onFormSubmit } = useFormErrors();
-    const [model, setModel] = useState(() => {
-        return {
-            name: '',
-        };
-    });
-
-    const handleSubmit = async () => {
-        if (!onFormSubmit()) {
-            return;
-        }
-
-        return removeDevice(device.id, new AbortController().signal).then(() => {
-            onClose?.();
-        });
-    };
-
-    const deviceNameValidation = validator([
-        requiredValidator(model.name),
-        deviceNameValidator(model.name, device.name),
-    ]);
-
-    const deviceName = <strong className="text-break">{device.name}</strong>;
+export const RemoveDeviceModalView = ({
+    model,
+    setModel,
+    submitting,
+    handleSubmit,
+    deviceNameValidation,
+    deviceName: name,
+    onClose,
+    ...modalProps
+}: RemoveDeviceModalViewProps) => {
+    const deviceName = <strong className="text-break">{name}</strong>;
 
     return (
         <ModalTwo
@@ -64,7 +36,7 @@ export const RemoveDeviceModalDeprecated = ({ device, onClose, ...modalProps }: 
             disableCloseOnEscape={submitting}
             onClose={onClose}
             onReset={onClose}
-            onSubmit={() => withSubmitting(handleSubmit()).catch(noop)}
+            onSubmit={handleSubmit}
             size="small"
             {...modalProps}
         >
@@ -100,8 +72,4 @@ export const RemoveDeviceModalDeprecated = ({ device, onClose, ...modalProps }: 
             </ModalTwoFooter>
         </ModalTwo>
     );
-};
-
-export const useRemoveDeviceModal = () => {
-    return useModalTwoStatic(RemoveDeviceModalDeprecated);
 };
