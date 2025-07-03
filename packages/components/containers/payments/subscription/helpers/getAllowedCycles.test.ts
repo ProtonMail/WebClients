@@ -1,6 +1,5 @@
 import {
     ADDON_NAMES,
-    COUPON_CODES,
     CYCLE,
     type Currency,
     DEFAULT_CURRENCY,
@@ -12,7 +11,8 @@ import {
     isRegionalCurrency,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { PLANS_MAP, getLongTestPlans, getSubscriptionMock, getTestPlansMap } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders';
+import { PLANS_MAP, getLongTestPlans, getTestPlansMap } from '@proton/testing/data';
 
 import { type PlanCapRule, getAllowedCycles } from './getAllowedCycles';
 
@@ -82,7 +82,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return 1, 12 and 24 cycles when user has a 1-month subscription: with 24m rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
@@ -105,7 +105,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return 1, 12, 24 cycles when user has a 1-month subscription: with default rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
             [PLANS.MAIL]: 1,
@@ -127,7 +127,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return 12 and 24 cycles when user has a 12-month subscription: with 24m rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.YEARLY;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
@@ -150,7 +150,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return 12 and 24 cycles when user has a 12-month subscription: with default rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.YEARLY;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
@@ -172,7 +172,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return only 24 cycle if user has 24 cycle subscription', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.TWO_YEARS;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
@@ -194,13 +194,13 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return 12 and 24 cycles if user has upcoming 12-cycle: with 24m rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
         };
 
-        const upcomingSubscriptionMock = getSubscriptionMock();
+        const upcomingSubscriptionMock = buildSubscription();
         upcomingSubscriptionMock.Cycle = CYCLE.YEARLY;
         subscription.UpcomingSubscription = upcomingSubscriptionMock;
 
@@ -221,13 +221,13 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return 12 and 24 cycles if user has upcoming 12-cycle: with default rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
         };
 
-        const upcomingSubscriptionMock = getSubscriptionMock();
+        const upcomingSubscriptionMock = buildSubscription();
         upcomingSubscriptionMock.Cycle = CYCLE.YEARLY;
         subscription.UpcomingSubscription = upcomingSubscriptionMock;
 
@@ -247,9 +247,9 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return all cycles if user has referral subscription: with 24m rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
-        subscription.CouponCode = COUPON_CODES.REFERRAL;
+        subscription.IsTrial = true;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
         };
@@ -271,9 +271,9 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return all cycles if user has referral subscription: with default rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
-        subscription.CouponCode = COUPON_CODES.REFERRAL;
+        subscription.IsTrial = true;
         const planIDs: PlanIDs = {
             [PLANS.MAIL]: 1,
         };
@@ -294,9 +294,9 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return all cycles if user was downgraded: with 24m rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
-        subscription.CouponCode = COUPON_CODES.MEMBER_DOWNGRADE_TRIAL;
+        subscription.IsTrial = true;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
         };
@@ -318,9 +318,9 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return all cycles if user was downgraded: with default rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
-        subscription.CouponCode = COUPON_CODES.MEMBER_DOWNGRADE_TRIAL;
+        subscription.IsTrial = true;
         const planIDs: PlanIDs = {
             [PLANS.MAIL]: 1,
         };
@@ -341,7 +341,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return all cycles if user has trial subscription: with 24m rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         subscription.IsTrial = true;
         const planIDs: PlanIDs = {
@@ -365,7 +365,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return all cycles if user has trial subscription: with default rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         subscription.IsTrial = true;
         const planIDs: PlanIDs = {
@@ -388,7 +388,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return cycles respecting minimumCycle = 12 if user has trial subscription: with 24m rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         subscription.IsTrial = true;
         const planIDs: PlanIDs = {
@@ -412,7 +412,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return cycles respecting minimumCycle = 12 if user has trial subscription: with default rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         subscription.IsTrial = true;
         const planIDs: PlanIDs = {
@@ -435,7 +435,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return cycles respecting minimumCycle = 24 if user has trial subscription: with 24m rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         subscription.IsTrial = true;
         const planIDs: PlanIDs = {
@@ -459,7 +459,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return cycles respecting minimumCycle = 12 if user has trial subscription: with default rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         subscription.IsTrial = true;
         const planIDs: PlanIDs = {
@@ -482,7 +482,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return 1m, 12m, 24m if plan is changed from bundle 24m to mail: with 24m rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.TWO_YEARS;
         const planIDs: PlanIDs = {
             [PLANS.MAIL]: 1,
@@ -505,7 +505,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should filter the plans if the addons changed', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.TWO_YEARS;
         subscription.Plans[0].Name = PLANS.BUNDLE_PRO;
         subscription.Plans.push({
@@ -535,7 +535,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return cycles respecting the minimumCycle = 12 if plan is changed', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.TWO_YEARS;
         const planIDs: PlanIDs = {
             [PLANS.MAIL]: 1,
@@ -558,7 +558,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return cycles respecting the cycleParam if plan is changed', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.TWO_YEARS;
         const planIDs: PlanIDs = {
             [PLANS.MAIL]: 1,
@@ -577,7 +577,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should return cycles respecting the maximumCycle = 12', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         const minimumCycle = CYCLE.MONTHLY;
         const maximumCycle = CYCLE.YEARLY;
         const planIDs: PlanIDs = {
@@ -598,7 +598,7 @@ describe('getAllowedCycles', () => {
     });
 
     it('should allow the current cycle even if it is higher than maximum', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         const minimumCycle = CYCLE.MONTHLY;
         const maximumCycle = CYCLE.YEARLY;
         const planIDs: PlanIDs = {
@@ -619,9 +619,9 @@ describe('getAllowedCycles', () => {
     });
 
     it('should allow upcoming cycle even if it is higher than maximum', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.YEARLY;
-        const upcomingSubscription = getSubscriptionMock();
+        const upcomingSubscription = buildSubscription();
         upcomingSubscription.Cycle = CYCLE.TWO_YEARS;
         subscription.UpcomingSubscription = upcomingSubscription;
         const minimumCycle = CYCLE.MONTHLY;
@@ -642,9 +642,9 @@ describe('getAllowedCycles', () => {
     });
 
     it('should ignore upcoming cycle check with disableUpcomingCycleCheck', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.YEARLY;
-        const upcomingSubscription = getSubscriptionMock();
+        const upcomingSubscription = buildSubscription();
         upcomingSubscription.Cycle = CYCLE.TWO_YEARS;
         subscription.UpcomingSubscription = upcomingSubscription;
         const minimumCycle = CYCLE.MONTHLY;
@@ -736,7 +736,7 @@ describe('getAllowedCycles', () => {
     )(
         'should return all cycles when user is on vpn2022 with $fromCycle cycle and selects $targetPlan',
         ({ fromCycle, targetPlan }) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = fromCycle;
             subscription.Plans[0].Name = PLANS.VPN; // vpn2022
 
@@ -772,7 +772,7 @@ describe('getAllowedCycles', () => {
     )(
         'should return all cycles when user is on vpn2024 with $fromCycle cycle and selects $targetPlan',
         ({ fromCycle, targetPlan }) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = fromCycle;
             subscription.Plans[0].Name = PLANS.VPN2024;
 
@@ -805,7 +805,7 @@ describe('getAllowedCycles', () => {
     )(
         'should show all cycles when user is on $sourcePlan with 24m cycle and selects $targetPlan',
         ({ sourcePlan, targetPlan }) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = CYCLE.TWO_YEARS;
             subscription.Plans[0].Name = sourcePlan;
 
@@ -834,7 +834,7 @@ describe('getAllowedCycles', () => {
     )(
         'should show all cycles when user is on $sourcePlan with $fromCycle cycle and selects VPN',
         ({ fromCycle, sourcePlan }) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = fromCycle;
             subscription.Plans[0].Name = sourcePlan;
 
@@ -870,7 +870,7 @@ describe('getAllowedCycles', () => {
     )(
         'should show 1m, 12m cycles when user is on $sourcePlan with $cycle cycle and selects $targetPlan',
         ({ sourcePlan, targetPlan, cycle }) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = cycle;
             subscription.Plans[0].Name = sourcePlan;
 
@@ -905,7 +905,7 @@ describe('getAllowedCycles', () => {
     )(
         'should show 1m, 12m, 24m cycles when user is on $sourcePlan with $cycle cycle and selects $targetPlan',
         ({ sourcePlan, targetPlan, cycle }) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = cycle;
             subscription.Plans[0].Name = sourcePlan;
 
@@ -928,7 +928,7 @@ describe('getAllowedCycles', () => {
     it.each([PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.WALLET])(
         'should show 1m, 12m, 24m cycles when user is on $sourcePlan with 24m cycle and selects VPN',
         (sourcePlan) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = CYCLE.TWO_YEARS;
             subscription.Plans[0].Name = sourcePlan;
 
@@ -958,7 +958,7 @@ describe('getAllowedCycles', () => {
     )(
         'should show 1m, 12m, 24m cycles when user is on $sourcePlan with 24m cycle and selects $targetPlan',
         ({ sourcePlan, targetPlan }) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = CYCLE.TWO_YEARS;
             subscription.Plans[0].Name = sourcePlan;
 
@@ -992,7 +992,7 @@ describe('getAllowedCycles', () => {
     )(
         'should show 1m, 12m cycles when user is on $sourcePlan with 24m cycle and selects $targetPlan',
         ({ sourcePlan, targetPlan }) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = CYCLE.TWO_YEARS;
             subscription.Plans[0].Name = sourcePlan;
 
@@ -1012,11 +1012,11 @@ describe('getAllowedCycles', () => {
     );
 
     it('should show 24m option when user has a scheduled 24m subscription and selects the same plan', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.YEARLY;
         subscription.Plans[0].Name = PLANS.BUNDLE;
 
-        const upcomingSubscription = getSubscriptionMock();
+        const upcomingSubscription = buildSubscription();
         upcomingSubscription.Cycle = CYCLE.TWO_YEARS;
         upcomingSubscription.Plans[0].Name = PLANS.BUNDLE;
 
@@ -1051,11 +1051,11 @@ describe('getAllowedCycles', () => {
     it.each([...b2cPlusPlans, ...b2cBundlePlans])(
         'should show 1m, 12m, 24m cycles when user is on $sourcePlan with 24m cycle and selects VPN',
         (sourcePlan) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = CYCLE.YEARLY;
             subscription.Plans[0].Name = sourcePlan;
 
-            const upcomingSubscription = getSubscriptionMock();
+            const upcomingSubscription = buildSubscription();
             upcomingSubscription.Cycle = CYCLE.TWO_YEARS;
             upcomingSubscription.Plans[0].Name = sourcePlan;
 
@@ -1091,11 +1091,11 @@ describe('getAllowedCycles', () => {
     )(
         'should show 1m, 12m cycles when user is on $sourcePlan with 24m cycle and selects $targetPlan',
         ({ sourcePlan, targetPlan }) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = CYCLE.YEARLY;
             subscription.Plans[0].Name = sourcePlan;
 
-            const upcomingSubscription = getSubscriptionMock();
+            const upcomingSubscription = buildSubscription();
             upcomingSubscription.Cycle = CYCLE.TWO_YEARS;
             upcomingSubscription.Plans[0].Name = sourcePlan;
 
@@ -1130,11 +1130,11 @@ describe('getAllowedCycles', () => {
     )(
         'should show 1m, 12m, 24m cycles when user is on $sourcePlan with 24m scheduled cycle and selects $targetPlan',
         ({ sourcePlan, targetPlan }) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = CYCLE.YEARLY;
             subscription.Plans[0].Name = sourcePlan;
 
-            const upcomingSubscription = getSubscriptionMock();
+            const upcomingSubscription = buildSubscription();
             upcomingSubscription.Cycle = CYCLE.TWO_YEARS;
             upcomingSubscription.Plans[0].Name = sourcePlan;
 
@@ -1238,7 +1238,7 @@ describe('getAllowedCycles', () => {
     )(
         'should show 1m, 12m, 24m cycles when user is on $sourcePlan with $sourceCycle cycle and selects $targetPlan',
         ({ sourcePlan, sourceCycle, targetPlan }) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = sourceCycle;
             subscription.Plans[0].Name = sourcePlan;
 
@@ -1263,7 +1263,7 @@ describe('getAllowedCycles', () => {
     )(
         'should show 24m option when user is on $plan with $sourceCycle cycle and selects the same plan',
         ({ plan, sourceCycle }) => {
-            const subscription = getSubscriptionMock();
+            const subscription = buildSubscription();
             subscription.Cycle = sourceCycle;
             subscription.Plans[0].Name = plan;
 
@@ -1436,7 +1436,7 @@ describe('defaultCycles', () => {
 
 describe('downcycling', () => {
     it('should return 1, 12 and 24 cycles when user has a 12-month subscription and downcyling is allowed: with 24m rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.YEARLY;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
@@ -1460,7 +1460,7 @@ describe('downcycling', () => {
     });
 
     it('should return 1, 12 and 24 cycles when user has a 12-month subscription and downcyling is allowed: with default rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.YEARLY;
         const planIDs: PlanIDs = {
             [PLANS.PASS]: 1,
@@ -1483,7 +1483,7 @@ describe('downcycling', () => {
     });
 
     it('should return 1, 12, 24 cycles if user has 24 cycle subscription and downcyling is allowed', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.TWO_YEARS;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
@@ -1506,13 +1506,13 @@ describe('downcycling', () => {
     });
 
     it('should return 1, 12 and 24 cycles if user has upcoming 12-cycle and downcyling is allowed: with 24m rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
         };
 
-        const upcomingSubscriptionMock = getSubscriptionMock();
+        const upcomingSubscriptionMock = buildSubscription();
         upcomingSubscriptionMock.Cycle = CYCLE.YEARLY;
         subscription.UpcomingSubscription = upcomingSubscriptionMock;
 
@@ -1534,7 +1534,7 @@ describe('downcycling', () => {
     });
 
     it('should return 1, 12 and 24 cycles if user has upcoming 12-cycle and downcyling is allowed: with default rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
             [PLANS.PASS]: 1,
@@ -1557,7 +1557,7 @@ describe('downcycling', () => {
     });
 
     it('should return 12, 24 cycles if minimumCycle is 12 and downcyling is allowed: with 24m rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
@@ -1581,7 +1581,7 @@ describe('downcycling', () => {
     });
 
     it('should return 12, 24 cycles if minimumCycle is 12 and downcyling is allowed: with default rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
@@ -1604,7 +1604,7 @@ describe('downcycling', () => {
     });
 
     it('should return 12 cycle if minimumCycle is 12 and downcyling is allowed: with default rules', () => {
-        const subscription = getSubscriptionMock();
+        const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
             [PLANS.PASS]: 1,

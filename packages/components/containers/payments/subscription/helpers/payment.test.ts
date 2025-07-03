@@ -1,5 +1,6 @@
 import { CYCLE, FREE_SUBSCRIPTION, PLANS, Renew } from '@proton/payments';
-import { PLANS_MAP, subscriptionMock, upcomingSubscriptionMock } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders';
+import { PLANS_MAP } from '@proton/testing/data';
 
 import { notHigherThanAvailableOnBackend, subscriptionExpires } from './payment';
 
@@ -23,7 +24,7 @@ describe('subscriptionExpires()', () => {
     });
 
     it('should handle non-expiring subscription', () => {
-        expect(subscriptionExpires(subscriptionMock)).toEqual({
+        expect(subscriptionExpires(buildSubscription())).toEqual({
             subscriptionExpiresSoon: false,
             planName: 'Proton Unlimited',
             renewDisabled: false,
@@ -33,48 +34,43 @@ describe('subscriptionExpires()', () => {
     });
 
     it('should handle expiring subscription', () => {
-        expect(
-            subscriptionExpires({
-                ...subscriptionMock,
-                Renew: Renew.Disabled,
-            })
-        ).toEqual({
+        const subscription = buildSubscription(undefined, {
+            Renew: Renew.Disabled,
+        });
+
+        expect(subscriptionExpires(subscription)).toEqual({
             subscriptionExpiresSoon: true,
             planName: 'Proton Unlimited',
             renewDisabled: true,
             renewEnabled: false,
-            expirationDate: subscriptionMock.PeriodEnd,
+            expirationDate: subscription.PeriodEnd,
         });
     });
 
     it('should handle the case when the upcoming subscription expires', () => {
-        expect(
-            subscriptionExpires({
-                ...subscriptionMock,
-                UpcomingSubscription: {
-                    ...upcomingSubscriptionMock,
-                    Renew: Renew.Disabled,
-                },
-            })
-        ).toEqual({
+        const subscription = buildSubscription();
+        const upcoming = buildSubscription(undefined, {
+            Renew: Renew.Disabled,
+        });
+        subscription.UpcomingSubscription = upcoming;
+
+        expect(subscriptionExpires(subscription)).toEqual({
             subscriptionExpiresSoon: true,
             planName: 'Proton Unlimited',
             renewDisabled: true,
             renewEnabled: false,
-            expirationDate: upcomingSubscriptionMock.PeriodEnd,
+            expirationDate: upcoming.PeriodEnd,
         });
     });
 
     it('should handle the case when the upcoming subscription does not expire', () => {
-        expect(
-            subscriptionExpires({
-                ...subscriptionMock,
-                UpcomingSubscription: {
-                    ...upcomingSubscriptionMock,
-                    Renew: Renew.Enabled,
-                },
-            })
-        ).toEqual({
+        const subscription = buildSubscription();
+        const upcoming = buildSubscription(undefined, {
+            Renew: Renew.Enabled,
+        });
+        subscription.UpcomingSubscription = upcoming;
+
+        expect(subscriptionExpires(subscription)).toEqual({
             subscriptionExpiresSoon: false,
             planName: 'Proton Unlimited',
             renewDisabled: false,
@@ -84,19 +80,22 @@ describe('subscriptionExpires()', () => {
     });
 
     it('should ignore upcoming subscription if the current subscription is cancelled', () => {
-        expect(subscriptionExpires({ ...subscriptionMock, Renew: Renew.Disabled })).toEqual({
+        const subscription = buildSubscription(undefined, {
+            Renew: Renew.Disabled,
+        });
+        expect(subscriptionExpires(subscription)).toEqual({
             subscriptionExpiresSoon: true,
             renewDisabled: true,
             renewEnabled: false,
-            expirationDate: subscriptionMock.PeriodEnd,
+            expirationDate: subscription.PeriodEnd,
             planName: 'Proton Unlimited',
         });
 
-        expect(subscriptionExpires(subscriptionMock, true)).toEqual({
+        expect(subscriptionExpires(subscription, true)).toEqual({
             subscriptionExpiresSoon: true,
             renewDisabled: true,
             renewEnabled: false,
-            expirationDate: subscriptionMock.PeriodEnd,
+            expirationDate: subscription.PeriodEnd,
             planName: 'Proton Unlimited',
         });
     });

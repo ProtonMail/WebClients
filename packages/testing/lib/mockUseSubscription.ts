@@ -11,6 +11,6 @@ jest.mock('@proton/account/subscription/hooks', () => ({
 export const mockUseSubscription = (value: [Partial<Subscription>?, boolean?] = []) => {
     const [subscription, cached = false] = value;
     const mockedUseSubscription = jest.spyOn(useSubscriptionModule, 'useSubscription');
-    mockedUseSubscription.mockReturnValue([buildSubscription(subscription), Boolean(cached)]);
+    mockedUseSubscription.mockReturnValue([buildSubscription(undefined, subscription), Boolean(cached)]);
     return mockedUseSubscription;
 };
