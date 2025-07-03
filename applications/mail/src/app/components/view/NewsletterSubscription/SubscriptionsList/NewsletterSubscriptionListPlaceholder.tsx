@@ -24,13 +24,13 @@ export const NewsletterSubscriptionListPlaceholder = () => {
             height={128}
             title={
                 tabSelected === SubscriptionTabs.Active
-                    ? c('Title').t`No mail subscriptions`
+                    ? c('Title').t`No active newsletters`
                     : c('Title').t`No unsubscribed newsletters`
             }
             description={
                 tabSelected === SubscriptionTabs.Active
-                    ? c('Labels').t`View and manage newsletter and mailing list subscriptions here.`
-                    : c('Labels').t`Newsletters you unsubscribe from will show up here.`
+                    ? c('Labels').t`You don't have any active newsletters or mailing list subscriptions.`
+                    : c('Labels').t`Newsletters or mailing lists you unsubscribe from will show up here.`
             }
         />
     );
