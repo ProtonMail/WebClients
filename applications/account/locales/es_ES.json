@@ -865,9 +865,6 @@
       "Keep my subscription": [
         "Mantener mi suscripción"
       ],
-      "Keep subscription": [
-        "Mantener la suscripción"
-      ],
       "label emails as": [
         "etiquetar el correos electrónicos como"
       ],
@@ -973,6 +970,9 @@
       "Next month": [
         "Mes siguiente"
       ],
+      "Next page": [
+        "Página siguiente"
+      ],
       "No": [
         "No"
       ],
@@ -1017,6 +1017,9 @@
       ],
       "Previous month": [
         "Mes anterior"
+      ],
+      "Previous page": [
+        "Página anterior"
       ],
       "Publish changes": [
         "Publicar los cambios"
@@ -2007,9 +2010,17 @@
         "Importe a pagar ahora"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Se ha cancelado la suscripción."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar la suscripción"
+      ],
+      "Keep subscription": [
+        "Mantener la suscripción"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Tu periodo de prueba gratuito termina en ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -16293,8 +16304,8 @@
       "Blocked": [
         "Bloqueado"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Verificación del dispositivo"
@@ -17509,6 +17520,10 @@
       ],
       "use your own email.": [
         "usa tu propio correo electrónico."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN con servidores en ${ vpnServersCountData.free.countries } país",
+        "VPN con servidores en ${ vpnServersCountData.free.countries } países"
       ],
       "Yearly": [
         "Anual"
@@ -20778,10 +20793,6 @@
       ],
       "Your exposed information": [
         "Tus datos expuestos"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Tu prueba gratuita termina en ${ trialDurationFormatted } día.",
-        "Tu prueba gratuita termina en ${ trialDurationFormatted } días"
       ],
       "Your plan": [
         "Tu plan"

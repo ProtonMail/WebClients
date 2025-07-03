@@ -817,9 +817,6 @@
       "Keep my subscription": [
         "サブスクリプションを継続する"
       ],
-      "Keep subscription": [
-        "サブスクリプションを継続"
-      ],
       "label emails as": [
         "メールにラベル付け"
       ],
@@ -925,6 +922,9 @@
       "Next month": [
         "翌月"
       ],
+      "Next page": [
+        "次のページ"
+      ],
       "No": [
         "いいえ"
       ],
@@ -969,6 +969,9 @@
       ],
       "Previous month": [
         "前月"
+      ],
+      "Previous page": [
+        "前のページ"
       ],
       "Publish changes": [
         "変更を公開"
@@ -15755,11 +15758,6 @@
         "勤務先"
       ]
     },
-    "Protection type": {
-      "Captcha": [
-        "CAPTCHA"
-      ]
-    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "${ signIn } に戻る。"
@@ -20074,9 +20072,6 @@
       ],
       "Your exposed information": [
         "あなたの公開情報"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "無料トライアルは${ trialDurationFormatted }日後に終了します"
       ],
       "Your plan": [
         "現在のプラン"
