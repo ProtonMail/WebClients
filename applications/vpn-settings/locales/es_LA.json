@@ -474,9 +474,6 @@
       "Keep my subscription": [
         "Mantener mi suscripción"
       ],
-      "Keep subscription": [
-        "Mantener la suscripción"
-      ],
       "Learn more": [
         "Más información"
       ],
@@ -1255,9 +1252,17 @@
         "Importe a pagar ahora"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Suscripción cancelada."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar la suscripción"
+      ],
+      "Keep subscription": [
+        "Mantener la suscripción"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Su prueba gratuita termina en ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -9613,8 +9618,8 @@
       "Blocked": [
         "Bloqueado"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Verificación del dispositivo"
@@ -12509,10 +12514,6 @@
       ],
       "Your current plan": [
         "El plan actual"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Su prueba gratuita termina en ${ trialDurationFormatted } día",
-        "Su prueba gratuita termina en ${ trialDurationFormatted } días"
       ],
       "Your plan": [
         "El plan"

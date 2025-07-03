@@ -474,9 +474,6 @@
       "Keep my subscription": [
         "Behold mitt abonnement"
       ],
-      "Keep subscription": [
-        "Behold abonnementet"
-      ],
       "Learn more": [
         "Lær mer"
       ],
@@ -1236,9 +1233,17 @@
         "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Abonnement kansellert."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Avbryt abonnement"
+      ],
+      "Keep subscription": [
+        "Behold abonnement"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Prøveperioden avsluttes om ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -9595,8 +9600,8 @@
       "Blocked": [
         "Blokkert"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Enhetsverifisering"
@@ -12479,10 +12484,6 @@
       ],
       "Your current plan": [
         "Din gjeldende plan"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dag",
-        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dager"
       ],
       "Your plan": [
         "Din plan"

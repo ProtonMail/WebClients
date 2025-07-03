@@ -474,9 +474,6 @@
       "Keep my subscription": [
         "Mantén la subscripció"
       ],
-      "Keep subscription": [
-        "Mantingueu la subscripció"
-      ],
       "Learn more": [
         "Més informació"
       ],
@@ -1236,9 +1233,17 @@
         "Porteu la productivitat del correu electrònic a nivells nous. Deixeu que ${ BRAND_NAME } Scribe us ajudi a escriure, respondre i corregir els correus electrònics. "
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "S'ha cancel·lat la subscripció."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancel·la la subscripció"
+      ],
+      "Keep subscription": [
+        "Mantingueu la subscripció"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "La prova gratuïta se us acaba en ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -9586,8 +9591,8 @@
       "Blocked": [
         "Bloquejat"
       ],
-      "Captcha": [
-        "Captcha"
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Verificació del dispositiu"
@@ -12477,10 +12482,6 @@
       ],
       "Your current plan": [
         "El vostre pla actual"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "La prova gratuïta finalitza en ${ trialDurationFormatted } dia",
-        "La prova gratuïta finalitza en ${ trialDurationFormatted } dies"
       ],
       "Your plan": [
         "El vostre pla"
