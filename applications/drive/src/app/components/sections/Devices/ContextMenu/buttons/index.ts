@@ -1,2 +1,2 @@
-export { default as RenameButton } from './RenameButton';
-export { default as RemoveButton } from './RemoveButton';
+export { DeviceRenameButton } from './RenameButton';
+export { DeviceRemoveButton } from './RemoveButton';
