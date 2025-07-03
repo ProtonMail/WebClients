@@ -56,8 +56,11 @@ const PricingFeatures = () => {
                 <FeatureItem text={c('Signup').t`Collaborative document editing`} highlighted />
                 <FeatureItem text={c('Signup').t`Password manager for all your devices`} highlighted />
                 <FeatureItem
-                    text={c('Signup').t`${FREE_PASS_ALIASES} hide-my-email aliases to fight spam`}
-                    highlighted
+                    text={c('Signup').ngettext(
+                        msgid`${FREE_PASS_ALIASES} hide-my-email alias to fight spam`,
+                        `${FREE_PASS_ALIASES} hide-my-email aliases to fight spam`,
+                        FREE_PASS_ALIASES
+                    )}
                 />
             </ul>
         </div>
