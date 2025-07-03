@@ -456,9 +456,6 @@
       "Keep my subscription": [
         "Mantén la subscripció"
       ],
-      "Keep subscription": [
-        "Mantingueu la subscripció"
-      ],
       "Learn more": [
         "Més informació"
       ],
@@ -1123,9 +1120,17 @@
         "Esdeveniment no suportat"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "S'ha cancel·lat la subscripció."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancel·la la subscripció"
+      ],
+      "Keep subscription": [
+        "Mantingueu la subscripció"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "La prova gratuïta se us acaba en ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -10347,10 +10352,6 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "La prova gratuïta finalitza en ${ trialDurationFormatted } dia",
-        "La prova gratuïta finalitza en ${ trialDurationFormatted } dies"
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."

@@ -523,7 +523,7 @@
         "Схаваць больш пераваг"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Не атрымалася загрузіць відарыс з уключанай абаронай ад праграм сачэння."
+        "Не ўдалося загрузіць відарыс з уключанай абаронай ад праграм сачэння."
       ],
       "Image will be loaded without a proxy": [
         "Відарыс будзе загружаны без проксі"
@@ -562,9 +562,6 @@
         "Далучыцца да альбома"
       ],
       "Keep my subscription": [
-        "Пакінуць падпіску"
-      ],
-      "Keep subscription": [
         "Пакінуць падпіску"
       ],
       "Later": [
@@ -1388,9 +1385,17 @@
         "Падзея не падтрымліваецца"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Падпіска скасавана."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Скасаваць падпіску"
+      ],
+      "Keep subscription": [
+        "Пакінуць падпіску"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Ваш бясплатны пробны перыяд завершыцца ${ timeRemaining }"
       ]
     },
     "Badge": {
@@ -3143,10 +3148,10 @@
         "Патрабуецца псеўданім"
       ],
       "Alias options could not be resolved": [
-        "Не атрымалася вызначыць параметры псеўданіма"
+        "Не ўдалося вызначыць параметры псеўданіма"
       ],
       "Aliases could not be loaded": [
-        "Немагчыма загрузіць псеўданімы"
+        "Не ўдалося загрузіць псеўданімы"
       ],
       "Already a member of this share": [
         "Ужо з'яўляецца ўдзельнікам гэтага абагулення"
@@ -3179,7 +3184,7 @@
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
       ],
       "Contact could not be saved": [
-        "Не атрымалася захаваць кантакт"
+        "Не ўдалося захаваць кантакт"
       ],
       "Contact name is too long": [
         "Імя кантакту занадта доўгае"
@@ -3194,16 +3199,16 @@
         "Немагчыма ўключыць пошук па кантэксце. Перазапусціце праграму або ачысціце яе даныя."
       ],
       "Could not add to favorites": [
-        "Немагчыма дадаць у абранае"
+        "Не ўдалося дадаць у абранае"
       ],
       "Could not open created vault": [
-        "Немагчыма адкрыць створанае сховішча"
+        "Не ўдалося адкрыць створанае сховішча"
       ],
       "Could not open updated vault": [
-        "Немагчыма адкрыць абноўленае сховішча"
+        "Не ўдалося адкрыць абноўленае сховішча"
       ],
       "Could not remove from favorites": [
-        "Немагчыма выдаліць з абранага"
+        "Не ўдалося выдаліць з абранага"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
@@ -3473,13 +3478,13 @@
         "Не ўдалося праверыць подпіс"
       ],
       "Some contacts could not be deleted": [
-        "Не атрымалася выдаліць некаторыя кантакты"
+        "Не ўдалося выдаліць некаторыя кантакты"
       ],
       "Some files were ignored because they are not supported in Photos": [
         "Некаторыя файлы былі праігнараваны, бо яны не падтрымліваюцца ў Фатаграфіях."
       ],
       "Some groups could not be deleted": [
-        "Не атрымалася выдаліць некаторыя групы"
+        "Не ўдалося выдаліць некаторыя групы"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Назвы некаторых вашых папак недаступны. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
@@ -3742,7 +3747,7 @@
         "Апавяшчэнне па-за межамі"
       ],
       "Original recurring event could not be found": [
-        "Не атрымалася знайсці арыгінальную перыядычную падзею"
+        "Не ўдалося знайсці арыгінальную перыядычную падзею"
       ],
       "Time zone": [
         "Часавы пояс"
@@ -3821,10 +3826,10 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "Не атрымалася расшыфраваць далучаны файл ICS"
+        "Не ўдалося расшыфраваць далучаны файл ICS"
       ],
       "Attached ICS file could not be read": [
-        "Не атрымалася прачытаць далучаны файл ICS"
+        "Не ўдалося прачытаць далучаны файл ICS"
       ],
       "Invalid invitation": [
         "Памылковае запрашэнне"
@@ -3833,10 +3838,10 @@
         "Памылковы адказ"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "Не атрымалася дадаць падзею ў ваш каляндар. Адказ не адпраўлены"
+        "Не ўдалося дадаць падзею ў ваш каляндар. Адказ не адпраўлены"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "Не атрымалася абнавіць падзею ў вашым календары. Адказ не адпраўлены"
+        "Не ўдалося абнавіць падзею ў вашым календары. Адказ не адпраўлены"
       ],
       "Unsupported invitation": [
         "Запрашэнне не падтрымліваецца"
@@ -3845,19 +3850,19 @@
         "Адказ не падтрымліваецца"
       ],
       "We could not cancel the event in your calendar": [
-        "Мы не змаглі скасаваць падзею ў вашым календары"
+        "Не ўдалося скасаваць падзею ў вашым календары"
       ],
       "We could not retrieve the event from your calendar": [
-        "Мы не змаглі атрымаць падзею з вашага календара"
+        "Не ўдалося атрымаць падзею з вашага календара"
       ],
       "We could not update the event in your calendar": [
-        "Мы не змаглі абнавіць падзею ў вашым календары"
+        "Не ўдалося абнавіць падзею ў вашым календары"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "Ваш адказ адпраўлены, але не атрымалася дадаць падзею ў ваш каляндар"
+        "Ваш адказ адпраўлены, але не ўдалося дадаць падзею ў ваш каляндар"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Ваш адказ адпраўлены, але падзея ў календары не была абноўлена"
+        "Ваш адказ адпраўлены, але не ўдалося абнавіць падзею ў вашым календары"
       ]
     },
     "Event title": {
@@ -4849,7 +4854,7 @@
         "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Уся (${ totalFoldersCount } папка)",
+        "Усе (${ totalFoldersCount } папка)",
         "Усе (${ totalFoldersCount } папкі)",
         "Усе (${ totalFoldersCount } папак)",
         "Усе (${ totalFoldersCount } папкі)"
@@ -5902,7 +5907,7 @@
         "Вер"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Плацяжы SEPA у дадзены момант недаступныя. Паспрабуйце яшчэ раз пазней."
+        "У дадзены момант плацяжы SEPA недаступны. Паспрабуйце яшчэ раз пазней."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
@@ -9195,10 +9200,10 @@
         "Абагуленае запрашэнне адхілена"
       ],
       "Some photo(s) could not be added to \"${ albumName }\"": [
-        "Некаторыя фатаграфіі немагчыма дадаць у \"${ albumName }\""
+        "Не ўдалося дадаць у \"${ albumName }\" некаторыя фатаграфіі"
       ],
       "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Некаторыя фатаграфіі немагчыма выдаліць з ${ albumLink.name }"
+        "Не ўдалося выдаліць з ${ albumLink.name } некаторыя фатаграфіі"
       ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Немагчыма выдаліць папку, бо яна не пустая.",
@@ -10628,7 +10633,7 @@
         "Доступ да заблакіраванага змесціва і прыватны прагляд старонак у інтэрнэце. Уключае 1700 сервераў у больш чым 60 краінах свету, найвышэйшую хуткасць VPN, 10 падключэнняў па VPN, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Усе нашы прэміяльныя сэрвісы з іх найвышэйшымі квотамі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide-my-email, абагульванне календара, зашыфраванае воблачнае сховішча, абагульванне файлаў і іншыя функцыі."
+        "Усе нашы прэміяльныя сэрвісы з максімальнымі магчымасцямі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide-my-email, абагульванне календара, зашыфраванае воблачнае сховішча, абагульванне файлаў і іншыя функцыі."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
@@ -12396,12 +12401,6 @@
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
       ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Ваш бясплатны пробны перыяд скончыцца праз ${ trialDurationFormatted } дзень",
-        "Ваш бясплатны пробны перыяд скончыцца праз ${ trialDurationFormatted } дні",
-        "Ваш бясплатны пробны перыяд скончыцца праз ${ trialDurationFormatted } дзён",
-        "Ваш бясплатны пробны перыяд скончыцца праз ${ trialDurationFormatted } дзён"
-      ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
       ],
@@ -12485,10 +12484,10 @@
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "Не атрымалася загрузіць відарыс"
+        "Не ўдалося загрузіць відарыс"
       ],
       "The image could not be loaded using proxy": [
-        "Не атрымалася загрузіць відарыс з выкарыстаннем проксі"
+        "Не ўдалося загрузіць відарыс з выкарыстаннем проксі"
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
@@ -12708,7 +12707,7 @@
         "Вы сапраўды хочаце незваротна выдаліць гэты кантакт?"
       ],
       "Contacts could not be merged": [
-        "Не атрымалася аб'яднаць кантакты"
+        "Не ўдалося аб'яднаць кантакты"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Калі вы не памятаеце свой пароль, то немагчыма паўторна актываваць ваш ключ. Мы можам дапамагчы вам адхіліць банер папярэджання, але ў працэсе вы незваротна страціце доступ да ўсіх даных, якія зашыфраваны гэтым ключом."
@@ -12744,7 +12743,7 @@
         "Гэта імпартаванне можа перавысіць ёмістасць сховішча, якое цяпер даступна для вашага ўліковага запісу ${ BRAND_NAME }. Змяніце налады імпартавання."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "На жаль, мы знаходзімся па-за межамі сеткі ў гэты момант. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
+        "На жаль, у дадзены момант наша каманда падтрымкі знаходзіцца па-за сеткай. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Мы не змаглі праверыць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."

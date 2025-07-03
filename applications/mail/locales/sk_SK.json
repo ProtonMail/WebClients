@@ -744,9 +744,6 @@
       "Keep my subscription": [
         "Ponechať moje predplatné"
       ],
-      "Keep subscription": [
-        "Ponechať predplatné"
-      ],
       "Label as": [
         "Označiť ako"
       ],
@@ -1434,12 +1431,6 @@
       "Trust": [
         "Dôverovať"
       ],
-      "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodný kľúč",
-        "Dôverovať kľúčom",
-        "Dôverovať novým kľúčom"
-      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -1502,6 +1493,9 @@
       ],
       "Upgrade": [
         "Prejsť na platený plán"
+      ],
+      "Upgrade Now": [
+        "Inovovať teraz"
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
@@ -1601,6 +1595,15 @@
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Bezplatná skúšobná verzia desktopovej aplikácie končí za 2 dni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Bezplatná skúšobná verzia desktopovej aplikácie končí za 5 dní. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Váš asistent písania emailov"
@@ -1859,8 +1862,8 @@
       "${ n } month": [
         "${ n } mesiac",
         "${ n } mesiace",
-        "${ n } mesiace",
-        "${ n } mesiace"
+        "${ n } mesiacov",
+        "${ n } mesiacov"
       ],
       "/ month": [
         "/ mesiac"
@@ -1948,11 +1951,6 @@
       ],
       "Sender verification passed": [
         "Overenie odosielateľa bolo úspešné"
-      ]
-    },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Predplatné bolo zrušené."
       ]
     },
     "bf2023: Deal details": {
@@ -7335,7 +7333,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8670,7 +8671,7 @@
         "Za účelom overenia platby budete presmerovaný na PayPal."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
-        "Nebude sa vám účtovať, ak zrušíte pred ${ trialEndsOnFormatted }."
+        "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Napísali ste \"${ attachmentsFoundKeyword }\", ale príloha nebola pridaná. Chcete napriek tomu správu poslať?"
@@ -11791,10 +11792,10 @@
         "Akonáhle začne vaše plné predplatné..."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
-        "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+        "Stále môžete zrušiť do 30 dní a získať pomernú náhradu späť."
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
-        "stále môžete zrušiť do 30 dní a získať pomernú náhradu."
+        "Stále môžete zrušiť do 30 dní a získať späť pomernú náhradu."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Môžete používať ${ planTitle } až do konca skúšobného obdobia bez spoplatnenia."
@@ -13145,7 +13146,7 @@
     },
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
-        "Pristupujte k obsahu na streamovacích služieb na celom svete"
+        "Pristupujte k obsahu streamovacích služieb na celom svete"
       ],
       "Get 500 GB to securely store all your files and photos": [
         "Získajte 500 GB na bezpečné uloženie všetkých vašich súborov a fotografií"
@@ -15339,12 +15340,6 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } deň",
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dni",
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní",
-        "Vaša bezplatná skúšobná verzia skončí o ${ trialDurationFormatted } dní"
       ],
       "Your free trial has ended": [
         "Vaša bezplatná skúšobná verzia vypršala"
