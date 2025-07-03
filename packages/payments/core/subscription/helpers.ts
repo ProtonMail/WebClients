@@ -849,6 +849,11 @@ export const getHasCoupon = (subscription: Subscription | undefined, coupon: str
 };
 
 export function isCancellableOnlyViaSupport(subscription: Subscription | undefined) {
+    if (isTrial(subscription)) {
+        // Always allow canceling trials without contacting support
+        return false;
+    }
+
     const vpnB2BPlans = [PLANS.VPN_BUSINESS, PLANS.VPN_PRO];
     const isVpnB2BPlan = vpnB2BPlans.includes(getPlanName(subscription) as PLANS);
     if (isVpnB2BPlan) {
