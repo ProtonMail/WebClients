@@ -41,7 +41,7 @@ describe('NewsletterSubscriptionList', () => {
         it('should render a placeholder when the list is empty', async () => {
             await render(<NewsletterSubscriptionList />);
 
-            const title = screen.getByText('No mail subscriptions');
+            const title = screen.getByText('No active newsletters');
             expect(title).toBeInTheDocument();
         });
 
