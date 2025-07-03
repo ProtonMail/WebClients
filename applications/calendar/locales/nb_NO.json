@@ -452,9 +452,6 @@
       "Keep my subscription": [
         "Behold mitt abonnement"
       ],
-      "Keep subscription": [
-        "Behold abonnementet"
-      ],
       "Later": [
         "Senere"
       ],
@@ -1191,9 +1188,17 @@
         "Valgfritt"
       ]
     },
-    "b2b_trials_Success": {
-      "Subscription canceled.": [
-        "Abonnement kansellert."
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Avbryt abonnement"
+      ],
+      "Keep subscription": [
+        "Behold abonnement"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Prøveperioden avsluttes om ${ timeRemaining }"
       ]
     },
     "Badge": {
@@ -11171,10 +11176,6 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
-      ],
-      "Your free trial ends in ${ trialDurationFormatted } day": [
-        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dag",
-        "Din gratis prøveversjon slutter om ${ trialDurationFormatted } dager"
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
