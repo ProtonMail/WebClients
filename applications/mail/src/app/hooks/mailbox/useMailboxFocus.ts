@@ -1,6 +1,7 @@
 import type { MutableRefObject } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
 export interface MailboxFocusProps {
@@ -124,13 +125,14 @@ export const useMailboxFocus = ({
             return;
         }
 
-        // Reset focus when changing filter, sort, label or page
-        if (
-            previousState.current.filter !== filter ||
-            previousState.current.sort !== sort ||
+        // Reset focus when changing filter, sort, label or page (using deep equality for objects)
+        const contextChanged =
+            !isEqual(previousState.current.filter, filter) ||
+            !isEqual(previousState.current.sort, sort) ||
             previousState.current.labelID !== labelID ||
-            previousState.current.page !== page
-        ) {
+            previousState.current.page !== page;
+
+        if (contextChanged) {
             resetFocusID();
             saveNewState({ elementIDs, page, filter, sort, labelID });
             return;
@@ -148,6 +150,7 @@ export const useMailboxFocus = ({
             if (focusID && !elementIDs.includes(focusID)) {
                 // Focus the next element if the focusID is not in the list
                 const index = previousState.current.elementIDs.indexOf(focusID);
+
                 if (index === -1) {
                     // If the focusID is not in the list, reset focus
                     resetFocusID();
