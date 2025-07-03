@@ -7752,17 +7752,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/drive-sdk@npm:^0.0.10":
-  version: 0.0.10
-  resolution: "@proton/drive-sdk@npm:0.0.10"
-  dependencies:
-    "@noble/hashes": "npm:^1.8.0"
-    bcryptjs: "npm:^2.4.3"
-    ttag: "npm:^1.8.7"
-  checksum: 10c0/b71f9c48f33d96249da4261796a274a4a107bedac97672f7730e86e02f27fd6b877cf415b308de1d0c25c4c05589009ed8e1067c225cdf75019aca885d16ba93
-  languageName: node
-  linkType: hard
-
 "@proton/drive-store@workspace:^, @proton/drive-store@workspace:packages/drive-store":
   version: 0.0.0-use.local
   resolution: "@proton/drive-store@workspace:packages/drive-store"
@@ -7839,7 +7828,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/drive@workspace:packages/drive"
   dependencies:
-    "@proton/drive-sdk": "npm:^0.0.10"
+    "@protontech/drive-sdk": "npm:^0.0.10"
     "@types/jest": "npm:^29.5.14"
     "@types/node": "npm:^22.16.0"
     eslint: "npm:^8.57.1"
@@ -8566,6 +8555,17 @@ __metadata:
   version: 1.0.2
   resolution: "@protontech/bip39@npm:1.0.2"
   checksum: 10c0/ec1d911fc01035b3490079cd5f27a74c6af10a0b2ca4a2187b948be787bc10a7bb7f8365fa22821e5e1ef7776a93932c0e1778644f31de3637387a52d2585797
+  languageName: node
+  linkType: hard
+
+"@protontech/drive-sdk@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "@protontech/drive-sdk@npm:0.0.10"
+  dependencies:
+    "@noble/hashes": "npm:^1.8.0"
+    bcryptjs: "npm:^2.4.3"
+    ttag: "npm:^1.8.7"
+  checksum: 10c0/123664b5f90150c4cd222f53209b0978b9bec3505925a4440df01067a9b69949410a788f08be7dd39b2865d2f4d72e2e2e54d2b590751b5861f1c1d2817c7b1b
   languageName: node
   linkType: hard
 

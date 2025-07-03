@@ -1,4 +1,5 @@
-import { type LogHandler, LogLevel, type LogRecord } from '@proton/drive-sdk/dist/telemetry';
+import { type LogHandler, LogLevel, type LogRecord } from '@protontech/drive-sdk/dist/telemetry';
+
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 /**

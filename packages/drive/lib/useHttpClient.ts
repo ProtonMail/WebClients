@@ -1,12 +1,13 @@
 import { useRef } from 'react';
 
-import { useApi } from '@proton/components';
 import type {
     ProtonDriveHTTPClient,
     ProtonDriveHTTPClientBlobOptions,
     ProtonDriveHTTPClientJsonOptions,
-} from '@proton/drive-sdk';
-import { AbortError } from '@proton/drive-sdk';
+} from '@protontech/drive-sdk';
+import { AbortError } from '@protontech/drive-sdk';
+
+import { useApi } from '@proton/components';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';

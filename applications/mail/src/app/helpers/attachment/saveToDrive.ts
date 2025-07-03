@@ -1,4 +1,4 @@
-import type { NodeOrUid, ProtonDriveClient } from '@proton/drive-sdk';
+import type { NodeOrUid, ProtonDriveClient } from '@protontech/drive-sdk';
 
 interface SaveToDriveOptions {
     name: string;
