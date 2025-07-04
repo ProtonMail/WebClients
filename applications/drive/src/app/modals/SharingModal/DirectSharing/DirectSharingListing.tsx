@@ -1,100 +1,50 @@
-import { useMemo } from 'react';
-
 import { c } from 'ttag';
 
 import { CircleLoader, UserAvatar } from '@proton/atoms';
 import { useSortedList } from '@proton/components';
-import { type Member, type MemberRole, type NonProtonInvitation, type ProtonInvitation } from '@proton/drive/index';
+import { type MemberRole } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { useDriveSharingFlags } from '../../../store';
 import { RoleDropdownMenu } from '../RoleDropdownMenu';
-import { getContactNameAndEmail } from '../helpers/getContactNameAndEmail';
-import { DirectSharingListInvitation } from './DirectSharingListInvitation';
+import { type DirectMember, MemberType } from '../interfaces';
+import { getContactNameAndEmail } from './helpers/getContactNameAndEmail';
 
 interface Props {
-    volumeId?: string;
     linkId: string;
     ownerEmail?: string;
     ownerDisplayName?: string;
-    members: Member[];
-    protonInvitations: ProtonInvitation[];
-    nonProtonInvitations: NonProtonInvitation[];
+    members: DirectMember[];
     isLoading: boolean;
     onRemove: (email: string) => Promise<void>;
-    onRoleChange: (email: string, role: MemberRole) => Promise<void>;
+    onChangeRole: (email: string, role: MemberRole) => Promise<void>;
     onResendInvitation: (invitationId: string) => Promise<void>;
     onCopyInvitationLink: (invitationId: string, email: string) => void;
     viewOnly: boolean;
 }
 
-const MemberItem = ({
-    member,
-    contactName,
-    contactEmail,
-    onRoleChange,
-    onRemove,
-}: {
-    member: Member;
-    contactName?: string;
-    contactEmail: string;
-    onRoleChange: (email: string, role: MemberRole) => Promise<void>;
-    onRemove: (email: string) => Promise<void>;
-}) => {
-    const { isDirectSharingDisabled } = useDriveSharingFlags();
-    const [isLoading, withIsLoading] = useLoading(false);
-    const { uid, role } = member;
-    const handleRoleChange = (value: MemberRole) => withIsLoading(onRoleChange(contactEmail, value));
-
-    const handleMemberRemove = () => withIsLoading(onRemove(contactEmail));
-
-    return (
-        <div key={uid} className="flex my-4 justify-space-between items-center" data-testid="share-accepted-members">
-            <div className="flex items-center gap-2">
-                <UserAvatar name={contactName || contactEmail} />
-                <p className="flex flex-column p-0 m-0">
-                    <span className="text-semibold">{contactName ? contactName : contactEmail}</span>
-                    {contactName && <span className="color-weak">{contactEmail}</span>}
-                </p>
-            </div>
-            <RoleDropdownMenu
-                disabled={isDirectSharingDisabled}
-                isLoading={isLoading}
-                selectedRole={role}
-                onChangeRole={handleRoleChange}
-                onRemoveAccess={handleMemberRemove}
-            />
-        </div>
-    );
-};
-
 export const DirectSharingListing = ({
-    volumeId,
     ownerEmail,
     ownerDisplayName,
     members,
-    protonInvitations,
-    nonProtonInvitations,
     isLoading,
     onRemove,
-    onRoleChange,
+    onChangeRole,
     onResendInvitation,
     onCopyInvitationLink,
     viewOnly,
 }: Props) => {
     const [contactEmails] = useContactEmails();
-    const membersWithName = useMemo(
-        () =>
-            members.map((member) => {
-                const { contactName, contactEmail } = getContactNameAndEmail(member.inviteeEmail, contactEmails);
-                return { member, contactName, contactEmail };
-            }),
-        [members, contactEmails]
-    );
+    const [isActionLoading, withActionLoading] = useLoading(false);
+
+    const membersWithName = members.map((member) => {
+        const { contactName, contactEmail } = getContactNameAndEmail(member.inviteeEmail, contactEmails);
+        return { member, displayName: contactName, displayEmail: contactEmail };
+    });
+
     const { sortedList: sortedMembersWithName } = useSortedList(membersWithName, {
-        key: 'contactName',
+        key: 'displayName',
         direction: SORT_DIRECTION.ASC,
     });
 
@@ -117,60 +67,50 @@ export const DirectSharingListing = ({
                 </div>
                 <div className="mx-2 shrink-0">{c('Info').t`Owner`}</div>
             </div>
-
-            {volumeId &&
-                nonProtonInvitations.map((nonProtonInvitation) => {
-                    const { contactName, contactEmail } = getContactNameAndEmail(
-                        nonProtonInvitation.inviteeEmail,
-                        contactEmails
-                    );
-                    return (
-                        <DirectSharingListInvitation
-                            viewOnly={viewOnly}
-                            key={nonProtonInvitation.uid}
-                            invitationUid={nonProtonInvitation.uid}
-                            inviteeName={contactName}
-                            inviteeEmail={contactEmail}
-                            selectedRole={nonProtonInvitation.role}
-                            onRemove={onRemove}
-                            onRoleChange={onRoleChange}
-                            onResendInvitation={onResendInvitation}
-                            externalInvitationState={nonProtonInvitation.state}
-                        />
-                    );
-                })}
-            {volumeId &&
-                protonInvitations.map((protonInvitation) => {
-                    const { contactName, contactEmail } = getContactNameAndEmail(
-                        protonInvitation.inviteeEmail,
-                        contactEmails
-                    );
-                    return (
-                        <DirectSharingListInvitation
-                            viewOnly={viewOnly}
-                            key={protonInvitation.uid}
-                            invitationUid={protonInvitation.uid}
-                            inviteeName={contactName}
-                            inviteeEmail={contactEmail}
-                            selectedRole={protonInvitation.role}
-                            onRemove={onRemove}
-                            onRoleChange={onRoleChange}
-                            onResendInvitation={onResendInvitation}
-                            onCopyInvitationLink={onCopyInvitationLink}
-                        />
-                    );
-                })}
-
-            {sortedMembersWithName.map(({ member, contactName, contactEmail }) => {
+            {sortedMembersWithName.map(({ member, displayName, displayEmail }) => {
                 return (
-                    <MemberItem
+                    <div
                         key={member.uid}
-                        member={member}
-                        contactName={contactName}
-                        contactEmail={contactEmail}
-                        onRemove={onRemove}
-                        onRoleChange={onRoleChange}
-                    />
+                        className="flex flex-nowrap my-4 justify-space-between items-center"
+                        data-testid="share-members"
+                    >
+                        <div className="flex flex-nowrap items-center gap-2">
+                            <UserAvatar name={displayName || displayEmail} />
+                            <p className="flex flex-column p-0 m-0">
+                                <span
+                                    className="w-full text-semibold text-ellipsis"
+                                    title={displayName ? undefined : displayEmail}
+                                >
+                                    {displayName ? displayName : displayEmail}
+                                </span>
+                                {displayName ? (
+                                    <span className="w-full color-weak text-ellipsis" title={displayEmail}>
+                                        {displayEmail}
+                                    </span>
+                                ) : null}
+                            </p>
+                        </div>
+                        <RoleDropdownMenu
+                            disabled={viewOnly}
+                            isLoading={isActionLoading}
+                            externalInvitationState={member.state}
+                            onChangeRole={(newRole: MemberRole) =>
+                                withActionLoading(onChangeRole(member.inviteeEmail, newRole))
+                            }
+                            selectedRole={member.role}
+                            onCopyInvitationLink={
+                                member.type === MemberType.ProtonInvitation
+                                    ? () => onCopyInvitationLink(member.uid, member.inviteeEmail)
+                                    : undefined
+                            }
+                            onRemoveAccess={() => withActionLoading(onRemove(member.inviteeEmail))}
+                            onResendInvitationEmail={
+                                member.type === MemberType.ProtonInvitation
+                                    ? () => withActionLoading(onResendInvitation(member.uid))
+                                    : undefined
+                            }
+                        />
+                    </div>
                 );
             })}
         </>
