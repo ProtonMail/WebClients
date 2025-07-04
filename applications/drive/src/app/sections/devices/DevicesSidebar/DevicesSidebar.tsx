@@ -9,7 +9,7 @@ import clsx from '@proton/utils/clsx';
 import DriveExpandButton from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveExpandButton';
 import DriveSidebarListItem from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarListItem';
 import { getDevicesSectionName } from '../../../components/sections/Devices/constants';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/sdkErrorHandler';
+import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { type StoreDevice, useDeviceStore } from '../devices.store';
 import { DevicesSidebarItem } from './DevicesSidebarItem';
 
