@@ -250,78 +250,15 @@ describe('Newsletter subscriptions helpers', () => {
 
     describe('getNewsletterCopyForFilterAction', () => {
         it('Should return copy for mark as read', () => {
-            expect(
-                getNewsletterCopyForFilterAction({ UnreadMessageCount: 10 } as NewsletterSubscription, 'MarkAsRead')
-            ).toBe('Marked 10 messages as read.');
+            expect(getNewsletterCopyForFilterAction('MarkAsRead')).toBe('Marked as read');
         });
 
         it('Should return copy for move to archive', () => {
-            expect(
-                getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Last30Days: 10 } } as NewsletterSubscription,
-                    'MoveToArchive'
-                )
-            ).toBe('Moved 10 messages to Archive.');
+            expect(getNewsletterCopyForFilterAction('MoveToArchive')).toBe('Moved to Archive');
         });
 
         it('Should return copy for move to trash', () => {
-            expect(
-                getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Last30Days: 10 } } as NewsletterSubscription,
-                    'MoveToTrash'
-                )
-            ).toBe('Moved 10 messages to Trash.');
-        });
-
-        it('Should return singular copy for mark as read', () => {
-            expect(
-                getNewsletterCopyForFilterAction({ UnreadMessageCount: 1 } as NewsletterSubscription, 'MarkAsRead')
-            ).toBe('Marked 1 message as read.');
-        });
-
-        it('Should return default copy for mark as read', () => {
-            expect(
-                getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Last30Days: 1 } } as NewsletterSubscription,
-                    'MarkAsRead'
-                )
-            ).toBe('Marked 0 messages as read.');
-        });
-
-        it('Should return singular copy for move to archive', () => {
-            expect(
-                getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Last30Days: 1 } } as NewsletterSubscription,
-                    'MoveToArchive'
-                )
-            ).toBe('Moved 1 message to Archive.');
-        });
-
-        it('Should return singular copy for move to trash', () => {
-            expect(
-                getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Last30Days: 1 } } as NewsletterSubscription,
-                    'MoveToTrash'
-                )
-            ).toBe('Moved 1 message to Trash.');
-        });
-
-        it('Should return 0 if the Last30Days is 0', () => {
-            expect(
-                getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Last30Days: 0 } } as NewsletterSubscription,
-                    'MoveToTrash'
-                )
-            ).toBe('Moved 0 messages to Trash.');
-        });
-
-        it('Should return 0 if the Last30Days is not present', () => {
-            expect(
-                getNewsletterCopyForFilterAction(
-                    { ReceivedMessages: { Total: 0 } } as NewsletterSubscription,
-                    'MoveToTrash'
-                )
-            ).toBe('Moved 0 messages to Trash.');
+            expect(getNewsletterCopyForFilterAction('MoveToTrash')).toBe('Moved to Trash');
         });
     });
 
