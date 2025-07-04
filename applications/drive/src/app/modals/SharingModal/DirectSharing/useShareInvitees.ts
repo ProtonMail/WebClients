@@ -6,8 +6,11 @@ import { useNotifications } from '@proton/components';
 import { CryptoProxy } from '@proton/crypto';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
-import { type ShareInvitee, useDriveSharingFlags, useGetPublicKeysForEmail } from '../../store';
+import { useFlagsDriveDirectSharing } from '../../../flags/useFlagsDriveDirectSharing';
+// TODO: Prevent using it when we will be able to manage with sdk.
+import { useGetPublicKeysForEmail } from '../../../store';
 import { ShareInviteeValidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
+import { type ShareInvitee } from './interfaces';
 
 /**
  * useShareInvitees hook is used to manage a list of user that we want to add to a drive share.
@@ -35,7 +38,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
             }),
         [inviteesMap]
     );
-    const { isSharingExternalInviteDisabled } = useDriveSharingFlags();
+    const { isSharingExternalInviteDisabled } = useFlagsDriveDirectSharing();
 
     const { createNotification } = useNotifications();
 
@@ -123,11 +126,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
                     copy.set(email, {
                         ...filteredInvitee,
                         error: isSharingExternalInviteDisabled
-                            ? new ShareInviteeValidationError(
-                                  isSharingExternalInviteDisabled
-                                      ? VALIDATION_ERROR_TYPES.EXTERNAL_INVITE_DISABLED
-                                      : VALIDATION_ERROR_TYPES.EXTERNAL_INVITE_NOT_AVAILABLE
-                              )
+                            ? new ShareInviteeValidationError(VALIDATION_ERROR_TYPES.EXTERNAL_INVITE_DISABLED)
                             : undefined,
                         isExternal: true,
                         isLoading: false,
