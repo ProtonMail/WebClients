@@ -8,11 +8,11 @@ import { useContactGroups } from '@proton/mail';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { type ShareInvitee } from '../../../store';
 import { RoleDropdownMenu } from '../RoleDropdownMenu';
-import { getGroupsWithContactsMap } from '../helpers/getGroupsWithContactsMap';
-import { inviteesToRecipients, recipientsToInvitees } from '../helpers/transformers';
 import { DirectSharingAddressesInputItem } from './DirectSharingAddressesInputItem';
+import { getGroupsWithContactsMap } from './helpers/getGroupsWithContactsMap';
+import { inviteesToRecipients, recipientsToInvitees } from './helpers/transformers';
+import type { ShareInvitee } from './interfaces';
 
 interface Props {
     disabled: boolean;
@@ -59,7 +59,7 @@ export const DirectSharingAutocomplete = ({
                     id={inputId}
                     disabled={disabled}
                     onClick={() => {
-                        document.getElementById(inputId)?.focus();
+                        addressesAutocompleteRef.current?.focus();
                     }}
                     assistContainerClassName="sr-only"
                     autocomplete={
