@@ -14,65 +14,58 @@ import {
     ModalTwoHeader,
     useToggle,
 } from '@proton/components';
-import {
-    type Member,
-    MemberRole,
-    type NonProtonInvitation,
-    type ProtonInvitation,
-    type ShareNodeSettings,
-} from '@proton/drive/index';
+import { MemberRole, type ShareNodeSettings } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
 import ErrorState from '../../components/modals/ShareLinkModal/ErrorState';
-import { useLinkSharingSettingsModal } from '../../components/modals/ShareLinkModal/ShareLinkSettingsModal';
-import { useDrivePublicSharingFlags, useDriveSharingFlags } from '../../store';
+import { useFlagsDriveDirectSharing } from '../../flags/useFlagsDriveDirectSharing';
+import { useFlagsDrivePublicSharing } from '../../flags/useFlagsDrivePublicSharing';
 import { DirectSharingAutocomplete } from './DirectSharing/DirectSharingAutocomplete';
 import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
 import { DirectSharingListing } from './DirectSharing/DirectSharingListing';
+import { useShareInvitees } from './DirectSharing/useShareInvitees';
 import { PublicSharing } from './PublicSharing/PublicSharing';
-import { useShareInvitees } from './useShareInvitees';
+import { useSharingSettingsModal } from './SharingSettingsModal';
+import type { DirectMember } from './interfaces';
 
 export interface SharingModalViewProps extends ModalStateProps {
     isLoading: boolean;
-    isSaving: boolean;
-    isDeleting: boolean;
-    isCreating: boolean;
-    isShareUrlLoading: boolean;
 
     name: string;
-    volumeId: string;
     linkId: string;
-    sharedLink: string | undefined;
     ownerEmail?: string;
     ownerDisplayName?: string;
-    permissions: number;
-    members: Member[];
-    protonInvitations: ProtonInvitation[];
-    nonProtonInvitations: NonProtonInvitation[];
-    customPassword: string;
-    initialExpiration: number | null;
-    hasGeneratedPasswordIncluded: boolean;
-    confirmationMessage: string;
-    isShareUrlEnabled: boolean;
+    directMembers: DirectMember[];
 
     errorMessage?: string;
     loadingMessage?: string;
 
     isShared: boolean;
-    hasSharedLink: boolean;
 
-    unshareNode: (email: string) => Promise<void>;
-    updateShareNode: (shareNodeSettings: ShareNodeSettings) => Promise<void>;
-    resendInvitation: (invitationUid: string) => Promise<void>;
-    copyInvitationLink: (invitationUid: string, email: string) => void;
-    deleteLink: () => Promise<void>;
-    onPublicLinkToggle?: (enabled: boolean) => void;
+    isPublicLinkEnabled: boolean;
+    publicLink?: {
+        role: MemberRole;
+        url: string;
+        customPassword?: string;
+        expirationTime?: Date;
+    };
 
-    createSharedLink: () => Promise<void>;
-    saveSharedLink: (newCustomPassword?: string, newDuration?: number | null) => Promise<any>;
-    updatePermissions: (permissions: number) => Promise<void>;
-    stopSharing: () => Promise<void>;
+    actions: {
+        unshareNode: (email: string) => Promise<void>;
+        unsharePublic: () => Promise<void>;
+        resendInvitation: (invitationUid: string) => Promise<void>;
+        createSharePublic: () => Promise<void>;
+        updateShareDirect: (directShareSettings: Omit<ShareNodeSettings, 'publicLink'>) => Promise<void>;
+        updateSharePublic: (publicLinkSettings: {
+            role?: MemberRole;
+            customPassword?: string;
+            expiration?: Date;
+        }) => Promise<void>;
+        copyInvitationLink: (invitationUid: string, email: string) => void;
+        onPublicLinkToggle?: (enabled: boolean) => void;
+        stopSharing: () => Promise<void>;
+    };
 }
 
 export const SharingModalView = ({
@@ -80,44 +73,25 @@ export const SharingModalView = ({
     onExit,
     open,
     isLoading,
-    isSaving,
-    isDeleting,
-    isCreating,
-    isShareUrlLoading,
     name,
-    volumeId,
     linkId,
-    sharedLink,
     ownerEmail,
     ownerDisplayName,
-    permissions,
-    members,
-    protonInvitations,
-    nonProtonInvitations,
-    customPassword,
-    initialExpiration,
-    hasGeneratedPasswordIncluded,
-    confirmationMessage,
-    isShareUrlEnabled,
+    directMembers,
+    isPublicLinkEnabled,
+    publicLink,
     errorMessage,
     loadingMessage,
+    actions,
     isShared,
-    hasSharedLink,
-    unshareNode,
-    updateShareNode,
-    resendInvitation,
-    copyInvitationLink,
-    deleteLink,
-    onPublicLinkToggle,
-    createSharedLink,
-    saveSharedLink,
-    updatePermissions,
-    stopSharing,
 }: SharingModalViewProps) => {
-    const { isDirectSharingDisabled } = useDriveSharingFlags();
-    const { isPublicEditModeEnabled } = useDrivePublicSharingFlags();
+    const { isDirectSharingDisabled } = useFlagsDriveDirectSharing();
+    const { isPublicEditModeEnabled } = useFlagsDrivePublicSharing();
 
-    const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
+    const [settingsModal, showSettingsModal] = useSharingSettingsModal();
+
+    const [publicLinkUpdating, withPublicLinkUpdating] = useLoading();
+    const [publicLinkStateChanging, withPublicLinkStateChanging] = useLoading();
 
     const [selectedRole, setRole] = useState<MemberRole>(MemberRole.Editor);
     const [inviteMessage, setInviteMessage] = useState('');
@@ -128,14 +102,7 @@ export const SharingModalView = ({
     } = useToggle(true);
     const [isAdding, withAdding] = useLoading();
 
-    const existingEmails = useMemo(
-        () =>
-            members
-                .concat(nonProtonInvitations)
-                .concat(protonInvitations)
-                .map((member) => member.inviteeEmail),
-        [members, nonProtonInvitations, protonInvitations]
-    );
+    const existingEmails = useMemo(() => directMembers.map((member) => member.inviteeEmail), [directMembers]);
 
     const { invitees, add: addInvitee, remove: removeInvitee, clean: cleanInvitees } = useShareInvitees(existingEmails);
 
@@ -144,11 +111,9 @@ export const SharingModalView = ({
         () => !invitees.length || !!invitees.find((invitee) => invitee.isLoading || invitee.error),
         [invitees]
     );
-    const isSettingsDisabled =
-        isShareUrlLoading || isSaving || isDeleting || isCreating || !(hasSharedLink || isShared);
-    // TODO: Remove isLoading when public sharing is implement in sdk. I am doing that to prevent issue on action on the same share between sdk/store
-    const isShareWithAnyoneLoading = isShareUrlLoading || isDeleting || isCreating || isLoading;
-    const isClosedButtonDisabled = isSaving || isDeleting || isCreating || isAdding;
+    const isSettingsDisabled = publicLinkStateChanging || publicLinkUpdating || !(Boolean(publicLink?.url) || isShared);
+    const isShareWithAnyoneLoading = publicLinkStateChanging || isLoading;
+    const isClosedButtonDisabled = publicLinkStateChanging || publicLinkUpdating || isAdding;
 
     const cleanFields = () => {
         setInviteMessage('');
@@ -156,10 +121,10 @@ export const SharingModalView = ({
         cleanInvitees();
     };
 
-    const handleSubmit = (e: MouseEvent) =>
+    const handleSubmitDirectSharing = (e: MouseEvent) =>
         withAdding(async () => {
             e.preventDefault();
-            await updateShareNode({
+            await actions.updateShareDirect({
                 users: invitees.map((invitee) => ({
                     email: invitee.email,
                     role: selectedRole,
@@ -172,9 +137,39 @@ export const SharingModalView = ({
             cleanFields();
         });
 
-    const handleOnRoleChange = async (email: string, role: MemberRole) => {
-        await updateShareNode({
+    const handleChangeRole = async (email: string, role: MemberRole) => {
+        await actions.updateShareDirect({
             users: [{ email, role }],
+        });
+    };
+
+    const handleUpdatePublicLink = ({
+        role,
+        customPassword,
+        expiration,
+    }: {
+        role?: MemberRole;
+        customPassword?: string;
+        expiration?: Date;
+    }) => {
+        return withPublicLinkUpdating(async () => {
+            await actions.updateSharePublic({
+                role,
+                customPassword,
+                expiration,
+            });
+        });
+    };
+
+    const handleCreatePublicLink = async () => {
+        return withPublicLinkStateChanging(async () => {
+            await actions.createSharePublic();
+        });
+    };
+
+    const handleDeletePublicLink = async () => {
+        return withPublicLinkStateChanging(async () => {
+            await actions.unsharePublic();
         });
     };
 
@@ -187,7 +182,7 @@ export const SharingModalView = ({
             return <ErrorState onClose={onClose}>{errorMessage}</ErrorState>;
         }
 
-        if (loadingMessage && !isShareUrlLoading) {
+        if (loadingMessage) {
             return <ModalContentLoader>{loadingMessage}</ModalContentLoader>;
         }
 
@@ -205,18 +200,15 @@ export const SharingModalView = ({
                                           shape="ghost"
                                           onClick={() =>
                                               showSettingsModal({
-                                                  customPassword,
-                                                  initialExpiration,
-                                                  onSaveLinkClick: saveSharedLink,
-                                                  isDeleting,
+                                                  customPassword: publicLink?.customPassword,
+                                                  expiration: publicLink?.expirationTime,
+                                                  onPublicLinkSettingsChange: handleUpdatePublicLink,
                                                   stopSharing: async () => {
-                                                      await stopSharing();
+                                                      await actions.stopSharing();
                                                       onClose();
                                                   },
-                                                  havePublicSharedLink: !!sharedLink,
-                                                  confirmationMessage,
-                                                  modificationDisabled: !hasGeneratedPasswordIncluded,
-                                                  isShareUrlEnabled,
+                                                  havePublicLink: !!publicLink?.url,
+                                                  isPublicLinkEnabled,
                                               })
                                           }
                                           data-testid="share-modal-settings"
@@ -249,33 +241,31 @@ export const SharingModalView = ({
                         <ModalTwoContent className="mb-5">
                             <DirectSharingListing
                                 viewOnly={isDirectSharingDisabled}
-                                volumeId={volumeId}
                                 linkId={linkId}
                                 isLoading={isLoading}
                                 ownerEmail={ownerEmail}
                                 ownerDisplayName={ownerDisplayName}
-                                members={members}
-                                protonInvitations={protonInvitations}
-                                nonProtonInvitations={nonProtonInvitations}
-                                onRemove={unshareNode}
-                                onRoleChange={handleOnRoleChange}
-                                onResendInvitation={resendInvitation}
-                                onCopyInvitationLink={copyInvitationLink}
+                                members={directMembers}
+                                onRemove={actions.unshareNode}
+                                onChangeRole={handleChangeRole}
+                                onResendInvitation={actions.resendInvitation}
+                                onCopyInvitationLink={actions.copyInvitationLink}
                             />
                         </ModalTwoContent>
-                        {isShareUrlEnabled ? (
+                        {isPublicLinkEnabled ? (
                             <>
                                 <hr className="mb-0.5 min-h-px" />
                                 <ModalTwoFooter>
                                     <PublicSharing
                                         viewOnly={!isPublicEditModeEnabled}
-                                        createSharedLink={createSharedLink}
+                                        onCreate={handleCreatePublicLink}
                                         isLoading={isShareWithAnyoneLoading}
-                                        publicSharedLink={sharedLink || ''}
-                                        publicSharedLinkPermissions={permissions}
-                                        onChangePermissions={updatePermissions}
-                                        deleteSharedLink={deleteLink}
-                                        onPublicLinkToggle={onPublicLinkToggle}
+                                        url={publicLink?.url}
+                                        role={publicLink?.role || MemberRole.Viewer}
+                                        onChangeRole={handleUpdatePublicLink}
+                                        onDelete={handleDeletePublicLink}
+                                        onToggle={actions.onPublicLinkToggle}
+                                        disabledToggle={publicLinkUpdating}
                                     />
                                 </ModalTwoFooter>
                             </>
@@ -309,7 +299,7 @@ export const SharingModalView = ({
                                     color="norm"
                                     disabled={isSubmitDisabled}
                                     loading={isAdding}
-                                    onClick={handleSubmit}
+                                    onClick={handleSubmitDirectSharing}
                                 >
                                     {c('Action').t`Share`}
                                 </Button>
@@ -331,7 +321,7 @@ export const SharingModalView = ({
                     e.preventDefault();
                     onClose();
                 }}
-                disableCloseOnEscape={isSaving || isDeleting}
+                disableCloseOnEscape={publicLinkStateChanging || publicLinkUpdating || isAdding}
                 size="large"
                 fullscreenOnMobile
                 open={open}
