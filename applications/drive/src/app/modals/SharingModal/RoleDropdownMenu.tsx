@@ -39,6 +39,7 @@ interface Props {
     isLoading?: boolean;
     disabled?: boolean;
     autocompleteOptions?: boolean;
+    publicLinkOptions?: boolean;
 }
 
 export const RoleDropdownMenu = ({
@@ -51,6 +52,7 @@ export const RoleDropdownMenu = ({
     externalInvitationState,
     isLoading = false,
     autocompleteOptions = false,
+    publicLinkOptions = false,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
@@ -78,16 +80,24 @@ export const RoleDropdownMenu = ({
         [MemberRole.Editor]: c('Label').t`Make editor`,
     };
 
+    const publicLinkRoleLabels: Partial<{ [key in MemberRole]: string }> = {
+        [MemberRole.Viewer]: c('Label').t`Viewer`,
+        [MemberRole.Editor]: c('Label').t`Editor`,
+    };
+
     const getRoleOptionLabel = (role: MemberRole) => {
         if (autocompleteOptions) {
             return memberRoleLabels[role];
-        } else if (role === selectedRole) {
+        }
+        if (publicLinkOptions) {
+            return publicLinkRoleLabels[role];
+        }
+        if (role === selectedRole) {
             return externalInvitationState
                 ? `${memberRoleLabels[role]} (${externalInvitationStateLabels[externalInvitationState]})`
                 : memberRoleLabels[role];
-        } else {
-            return memberChangeRoleLabels[role];
         }
+        return memberChangeRoleLabels[role];
     };
 
     return (
