@@ -8,6 +8,7 @@ import { IcMagnifier } from '@proton/icons';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useChatMessage } from '../../hooks/useChatMessage';
 import { useMeetingRoomUpdates } from '../../hooks/useMeetingRoomUpdates';
 import { useSortedParticipants } from '../../hooks/useSortedParticipants';
@@ -24,7 +25,9 @@ export const Chat = () => {
     const [isSearchOn, setIsSearchOn] = useState(false);
     const [searchExpression, setSearchExpression] = useState('');
 
-    const { sideBarState, roomName, setChatMessages } = useMeetContext();
+    const { roomName, setChatMessages } = useMeetContext();
+
+    const { sideBarState } = useUIStateContext();
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
 
@@ -74,11 +77,10 @@ export const Chat = () => {
     }, [sideBarState[MeetingSideBars.Chat]]);
 
     const colors = useMemo(() => {
-        return meetingRoomUpdates.map(
-            (item) =>
-                getParticipantDisplayColors(
-                    sortedParticipants.find((p) => p.identity === item.identity) as LocalParticipant | RemoteParticipant
-                ).profileColor
+        return meetingRoomUpdates.map((item) =>
+            getParticipantDisplayColors(
+                sortedParticipants.find((p) => p.identity === item.identity) as LocalParticipant | RemoteParticipant
+            )
         );
     }, [meetingRoomUpdates, sortedParticipants]);
 
@@ -100,7 +102,7 @@ export const Chat = () => {
             <div className="absolute top-0 left-0 w-full px-4 pt-4 pb-0 bg-norm rounded-xl" style={{ opacity: 0.9 }}>
                 {!isSearchOn && (
                     <div className="mb-4 h3 text-semibold flex items-center">
-                        {c('l10n_nightly Title').t`Meeting Chat`}
+                        {c('l10n_nightly Title').t`Chat`}
                         <Button
                             className="p-0 ml-2 flex items-center justify-center"
                             shape="ghost"
@@ -132,7 +134,7 @@ export const Chat = () => {
                         key={`${item.identity}-${item.timestamp}`}
                         item={item}
                         roomName={roomName}
-                        colorClassName={colors[index]}
+                        colors={colors[index]}
                     />
                 ))}
             </div>

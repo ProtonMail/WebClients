@@ -11,13 +11,13 @@ describe('PasswordPrompt', () => {
 
         render(<PasswordPrompt onPasswordSubmit={onPasswordSubmit} />);
 
-        const passwordInput = screen.getByLabelText('Meeting password');
+        const passwordInput = screen.getByLabelText('Password');
 
         const user = userEvent.setup();
 
         await user.type(passwordInput, mockPassword);
 
-        const submitButton = screen.getByText('Submit');
+        const submitButton = screen.getByText('Continue');
         await user.click(submitButton);
 
         expect(onPasswordSubmit).toHaveBeenCalledWith(mockPassword);

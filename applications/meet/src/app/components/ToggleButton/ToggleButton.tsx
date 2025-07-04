@@ -4,9 +4,11 @@ import { useRef } from 'react';
 import { Button, Tooltip } from '@proton/atoms';
 import type { IconProps } from '@proton/components';
 import { IcChevronDown, IcChevronUp } from '@proton/icons';
+import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
 
 import { type PopUpControls } from '../../types';
+import { checkForInsideClick } from '../../utils/checkForInsideClick';
 
 import './ToggleButton.scss';
 
@@ -48,9 +50,9 @@ export const ToggleButton = ({
                 <button
                     ref={buttonRef}
                     className={clsx(
-                        isOn && !isOpen && 'toggle-button-body-on',
+                        isOn && 'toggle-button-body-on',
                         !isOn && 'toggle-button-body-off',
-                        'flex flex-nowrap items-center gap-4 text-norm pl-6 pr-1 rounded-full w-custom h-custom'
+                        'user-select-none flex flex-nowrap items-center gap-4 text-norm pl-6 pr-1 rounded-full w-custom h-custom'
                     )}
                     style={{ '--w-custom': '7rem', '--h-custom': '3.5rem' }}
                     onClick={onClick}
@@ -80,7 +82,7 @@ export const ToggleButton = ({
                 }}
                 aria-label={secondaryAriaLabel}
             >
-                {isOpen ? <IcChevronUp /> : <IcChevronDown />}
+                {isOpen ? <IcChevronUp size={6} /> : <IcChevronDown size={6} />}
             </Button>
             {hasWarning && (
                 <div
@@ -111,6 +113,17 @@ export const ToggleButton = ({
                             '--bottom-custom': '4rem',
                         }}
                         aria-expanded={isOpen}
+                        onBlur={(e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
+
+                            const isInsideDropdown = checkForInsideClick(e, dropdownRootClassName);
+                            const isToggleButtonCircle = checkForInsideClick(e, 'toggle-button-circle');
+
+                            if (isOpen && !isInsideDropdown && !isToggleButtonCircle) {
+                                onPopupButtonClick();
+                            }
+                        }}
                     >
                         <Content anchorRef={buttonRef} />
                     </button>

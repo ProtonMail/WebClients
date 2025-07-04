@@ -9,7 +9,10 @@ import './ChatItem.scss';
 interface ChatItemProps {
     roomName?: string;
     item: MeetingRoomUpdate;
-    colorClassName: string;
+    colors: {
+        backgroundColor: string;
+        profileTextColor: string;
+    };
     displayDate?: boolean;
     shouldGrow?: boolean;
 }
@@ -22,7 +25,7 @@ const isParticipantEventRecord = (item: MeetingRoomUpdate): item is ParticipantE
     return item.type === 'event';
 };
 
-export const ChatItem = ({ roomName, item, colorClassName, displayDate = true, shouldGrow = false }: ChatItemProps) => {
+export const ChatItem = ({ roomName, item, colors, displayDate = true, shouldGrow = false }: ChatItemProps) => {
     const { type, name, timestamp } = item;
 
     return (
@@ -34,7 +37,8 @@ export const ChatItem = ({ roomName, item, colorClassName, displayDate = true, s
             <div className="flex flex-nowrap items-start shrink-0">
                 <div
                     className={clsx(
-                        colorClassName,
+                        colors.backgroundColor,
+                        colors.profileTextColor,
                         'color-invert rounded-full flex items-center justify-center w-custom h-custom'
                     )}
                     style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
@@ -49,11 +53,13 @@ export const ChatItem = ({ roomName, item, colorClassName, displayDate = true, s
                 </div>
             </div>
 
-            <div className="flex flex-column flex-nowrap gap-1 justify-start">
+            <div className="flex flex-column flex-nowrap justify-start">
                 <div className="flex items-start text-semibold">
-                    <span>{name}</span>
+                    <span className="max-w-custom text-ellipsis" style={{ '--max-w-custom': '14rem' }} title={name}>
+                        {name}
+                    </span>
                     {displayDate && (
-                        <div className="ml-1 color-weak">
+                        <div className="ml-2 color-weak">
                             {new Date(timestamp).toLocaleTimeString([], {
                                 hour: 'numeric',
                                 minute: '2-digit',

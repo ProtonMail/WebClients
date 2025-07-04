@@ -1,12 +1,9 @@
 import { c } from 'ttag';
 
-import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { useApi } from '@proton/components';
-import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-
-import { type CreateMeetingResponse, CustomPasswordState, RecurringType } from '../../response-types';
-import { prepareMeetingCryptoData } from '../../utils/cryptoUtils';
+import { MeetingType } from '../../response-types';
+import type { CreateMeetingParams } from '../../types';
+import { useSaveMeeting } from '../useSaveMeeting';
+import { useGetMeetingDependencies } from './useGetMeetingDependencies';
 
 export const createMeetingCall = () => {
     return {
@@ -17,11 +14,9 @@ export const createMeetingCall = () => {
 };
 
 export const useCreateMeeting = () => {
-    const api = useApi();
+    const saveMeeting = useSaveMeeting();
 
-    const getAddresses = useGetAddresses();
-
-    const getUserKeys = useGetUserKeys();
+    const getMeetingDependencies = useGetMeetingDependencies();
 
     const createMeeting = async ({
         meetingName,
@@ -30,59 +25,15 @@ export const useCreateMeeting = () => {
         recurring,
         timeZone,
         customPassword = '',
-    }: {
-        meetingName: string;
-        startTime: string;
-        endTime: string;
-        recurring: boolean;
-        timeZone?: string;
-        customPassword?: string;
-    }) => {
-        const addresses = await getAddresses();
-
-        const activeAddresses = getActiveAddresses(addresses || []);
-
-        const userKeys = await getUserKeys();
-        const privateKey = userKeys[0].privateKey;
-
-        const addressId = activeAddresses[0].ID;
-
-        const {
-            encryptedMeetingName,
-            encryptedSessionKey,
-            encryptedPassword,
-            urlPasswordSalt,
-            srpVerifier,
-            srpModulusID,
-            salt,
-            passwordBase,
-        } = await prepareMeetingCryptoData({
-            customPassword,
-            primaryUserKey: privateKey,
-            meetingName,
-            api,
-        });
+        type = MeetingType.INSTANT,
+    }: CreateMeetingParams) => {
+        const { privateKey, addressId } = await getMeetingDependencies();
 
         try {
-            const response = await api<CreateMeetingResponse>({
-                ...createMeetingCall(),
-                data: {
-                    Name: encryptedMeetingName,
-                    Password: encryptedPassword,
-                    Salt: salt,
-                    SessionKey: encryptedSessionKey,
-                    SRPModulusID: srpModulusID,
-                    SRPSalt: urlPasswordSalt,
-                    SRPVerifier: srpVerifier,
-                    AddressID: addressId,
-                    StartTime: startTime,
-                    EndTime: endTime,
-                    RRule: recurring ? RecurringType.RECURRING : RecurringType.SCHEDULED,
-                    TimeZone: timeZone,
-                    CustomPassword: !!customPassword
-                        ? CustomPasswordState.PASSWORD_SET
-                        : CustomPasswordState.NO_PASSWORD,
-                },
+            const { response, passwordBase } = await saveMeeting({
+                params: { customPassword, meetingName, startTime, endTime, recurring, timeZone, type },
+                privateKey,
+                addressId,
             });
 
             return {

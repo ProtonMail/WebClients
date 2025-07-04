@@ -3,6 +3,7 @@ import React, { useMemo } from 'react';
 import { useLocalParticipant } from '@livekit/components-react';
 
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useSortedParticipants } from '../../hooks/useSortedParticipants';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';
 
@@ -12,7 +13,9 @@ export const ParticipantSidebar = () => {
     const { localParticipant } = useLocalParticipant();
     const { sortedParticipants, pagedParticipants } = useSortedParticipants();
 
-    const { sideBarState, selfView } = useMeetContext();
+    const { selfView } = useMeetContext();
+
+    const { sideBarState } = useUIStateContext();
 
     const filteredParticipants = useMemo(
         () =>

@@ -4,10 +4,12 @@ import type { LocalVideoTrack } from 'livekit-client';
 import clsx from '@proton/utils/clsx';
 
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useCurrentScreenShare } from '../../hooks/useCurrentScreenShare';
 import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails } from '../MeetingDetails/MeetingDetails';
+import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
 import { NoPermissionInfo } from '../NoPermissionInfo/NoPermissionInfo';
 import { ParticipantControls } from '../ParticipantControls/ParticipantControls';
 import { ParticipantGrid } from '../ParticipantGrid';
@@ -32,20 +34,17 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
 
     const { videoTrack, participant, isLocal, stopScreenShare, screenShareVideoRef } = useCurrentScreenShare();
 
-    const { sideBarState, participantNameMap } = useMeetContext();
+    const { participantNameMap, meetingLink } = useMeetContext();
+
+    const { sideBarState } = useUIStateContext();
 
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
-    const defaultColumns = `8fr${isSideBarOpen ? ' 3fr' : ''}`;
-    const screenShareColumns = `${isSideBarOpen ? 6 : 8}fr ${participants.length < 6 || isSideBarOpen ? 1 : 3}fr${isSideBarOpen ? ' 2fr' : ''}`;
+    const defaultColumns = `8fr${isSideBarOpen ? ' minmax(0, 3fr)' : ''}`;
+    const screenShareColumns = `${isSideBarOpen ? 6 : 8}fr ${participants.length < 6 || isSideBarOpen ? 1 : 3}fr${isSideBarOpen ? ' minmax(0, 2fr)' : ''}`;
 
     return (
-        <div
-            className={clsx(
-                'w-full h-full flex flex-column flex-nowrap gap-4 overflow-hidden pl-4 pr-4 pb-0',
-                videoTrack ? 'pt-4' : 'pt-8'
-            )}
-        >
+        <div className={clsx('w-full h-full flex flex-column flex-nowrap gap-4 overflow-hidden pl-4 pr-4 pb-0 pt-4')}>
             {videoTrack && (
                 <ScreenShareHeading
                     name={participantNameMap[participant?.identity ?? ''] ?? ''}
@@ -88,6 +87,7 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
             <ToastMessages />
             <NoPermissionInfo />
             <PermissionRequest />
+            <MeetingReadyPopup meetingLink={meetingLink} />
         </div>
     );
 };

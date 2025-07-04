@@ -6,12 +6,13 @@ import { Button, InlineLinkButton } from '@proton/atoms';
 import { IcCross } from '@proton/icons';
 
 import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsContext';
-import { useMeetContext } from '../../contexts/MeetContext';
+import { useUIStateContext } from '../../contexts/UIStateContext';
 import { PermissionPromptStatus } from '../../types';
 
 export const NoPermissionInfo = () => {
     const [isOpen, setIsOpen] = useState(true);
-    const { permissionPromptStatus, setPermissionPromptStatus } = useMeetContext();
+
+    const { permissionPromptStatus, setPermissionPromptStatus } = useUIStateContext();
 
     const {
         devicePermissions: { camera, microphone },

@@ -7,6 +7,8 @@ import { InputFieldTwo, TextAreaTwo, useHotkeys } from '@proton/components';
 import { IcArrowUp } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
+import { trimMessage } from '../../utils/trim-message';
+
 import './ChatMessage.scss';
 
 interface ChatMessageProps {
@@ -89,7 +91,7 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                         '--h-custom': '2.25rem',
                     }}
                     aria-label={c('l10n_nightly Alt').t`Send message`}
-                    disabled={message.trim() === ''}
+                    disabled={!trimMessage(message)}
                 >
                     <IcArrowUp size={5} className="color-invert" />
                 </Button>

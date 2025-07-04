@@ -12,12 +12,12 @@ export function useDefaultDisplayName() {
         displayName = undefined;
     }
 
-    return displayName || process.env.DEFAULT_NAME || '';
+    return displayName || '';
 }
 
 const useDefaultDisplayNameAuthenticated = () => {
     const [user] = useUser();
-    return user?.Name || process.env.DEFAULT_NAME || '';
+    return user?.Name || '';
 };
 
 const useDefaultDisplayNameUnauthenticated = () => {

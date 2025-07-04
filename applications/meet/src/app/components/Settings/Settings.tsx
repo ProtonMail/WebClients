@@ -8,6 +8,7 @@ import noop from '@proton/utils/noop';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { videoQualities } from '../../constants';
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useLocalParticipantResolution } from '../../hooks/useLocalParticipantResolution';
 import { MeetingSideBars } from '../../types';
 
@@ -17,7 +18,6 @@ const increasedVideoQuality = process.env.LIVEKIT_INCREASED_VIDEO_QUALITY === 't
 
 export const Settings = () => {
     const {
-        sideBarState,
         selfView,
         setSelfView,
         shouldShowConnectionIndicator,
@@ -27,6 +27,8 @@ export const Settings = () => {
     } = useMeetContext();
 
     const { resolution, handleResolutionChange } = useLocalParticipantResolution();
+
+    const { sideBarState } = useUIStateContext();
 
     if (!sideBarState[MeetingSideBars.Settings]) {
         return null;
@@ -60,6 +62,7 @@ export const Settings = () => {
                         onClick={() => window.alert(c('l10n_nightly Alert').t`Light mode is not supported yet`)}
                         className="settings-toggle"
                         aria-label={c('l10n_nightly Alt').t`Toggle dark mode`}
+                        disabled={true}
                     />
                 </div>
                 <div className="flex items-center justify-space-between gap-2">
@@ -83,6 +86,7 @@ export const Settings = () => {
                         onClick={() => window.alert(c('l10n_nightly Alert').t`Meeting timer is not supported yet`)}
                         className="settings-toggle settings-toggle-inactive"
                         aria-label={c('l10n_nightly Alt').t`Show meeting timer`}
+                        disabled={true}
                     />
                 </div>
                 <div className="flex items-center justify-space-between gap-2">
@@ -111,6 +115,7 @@ export const Settings = () => {
                         }
                         className="color-weak bg-weak settings-toggle settings-toggle-inactive"
                         aria-label={c('l10n_nightly Alt').t`Desktop notifications`}
+                        disabled={true}
                     />
                 </div>
                 <div className="flex items-center justify-space-between gap-2">

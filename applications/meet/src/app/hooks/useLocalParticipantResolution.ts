@@ -20,7 +20,7 @@ export const useLocalParticipantResolution = () => {
                 (pub) => pub.kind === Track.Kind.Video && pub.videoTrack
             );
 
-            if (videoTrackPub && videoTrackPub.videoTrack) {
+            if (videoTrackPub && videoTrackPub.videoTrack && videoDeviceId) {
                 await videoTrackPub.videoTrack.restartTrack({
                     deviceId: videoDeviceId,
                     resolution: { width, height },

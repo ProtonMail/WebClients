@@ -3,6 +3,8 @@ import userEvent from '@testing-library/user-event';
 
 import type { MeetContextValues } from '../../contexts/MeetContext';
 import { MeetContext } from '../../contexts/MeetContext';
+import type { UIStateContextType } from '../../contexts/UIStateContext';
+import { UIStateContext } from '../../contexts/UIStateContext';
 import { MeetingSideBars } from '../../types';
 import { Settings } from './Settings';
 
@@ -14,25 +16,37 @@ vi.mock('../../hooks/useLocalParticipantResolution', () => ({
 }));
 
 const mockContextValues = {
-    sideBarState: {
-        [MeetingSideBars.Settings]: true,
-    },
     selfView: true,
     setSelfView: vi.fn(),
     shouldShowConnectionIndicator: false,
     setShouldShowConnectionIndicator: vi.fn(),
 };
 
+const mockUIStateContextValues = {
+    sideBarState: {
+        [MeetingSideBars.Settings]: true,
+    },
+};
+
 const Wrapper = ({
     children,
     contextValue = {},
+    uiStateContextValue = {},
 }: {
     children: React.ReactNode;
     contextValue?: Partial<MeetContextValues>;
+    uiStateContextValue?: Partial<UIStateContextType>;
 }) => {
     return (
         // @ts-expect-error - contextValue is a partial MeetContextValues
-        <MeetContext.Provider value={{ ...mockContextValues, ...contextValue }}>{children}</MeetContext.Provider>
+        <MeetContext.Provider value={{ ...mockContextValues, ...contextValue }}>
+            <UIStateContext.Provider
+                // @ts-expect-error - mock data
+                value={{ ...mockUIStateContextValues, ...uiStateContextValue }}
+            >
+                {children}
+            </UIStateContext.Provider>
+        </MeetContext.Provider>
     );
 };
 

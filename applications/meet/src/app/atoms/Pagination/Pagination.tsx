@@ -14,7 +14,7 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }: Pagination
     const isLastPage = currentPage === totalPages - 1;
 
     return (
-        <div className="flex flex-nowrap gap-2 items-center">
+        <div className="flex flex-nowrap gap-2 items-center user-select-none">
             <Button shape="ghost" onClick={() => onPageChange(currentPage - 1)} disabled={isFirstPage}>
                 <IcChevronLeft alt={c('l10n_nightly Action').t`Previous page`} />
             </Button>

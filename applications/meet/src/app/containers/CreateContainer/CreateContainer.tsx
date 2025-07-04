@@ -10,6 +10,7 @@ import { format } from '@proton/shared/lib/date-fns-utc';
 import { getTimeZoneOptions } from '@proton/shared/lib/date/timezone';
 
 import { useCreateMeeting } from '../../hooks/admin/useCreateMeeting';
+import { MeetingType } from '../../response-types';
 import type { MeetingDetails } from '../../types';
 
 import './CreateContainer.scss';
@@ -51,7 +52,7 @@ export const CreateContainer = ({ onMeetingCreated }: CreateContainerProps) => {
     );
 
     const handleSubmit = async () => {
-        const { startDate, time, duration, ...restOfValues } = values;
+        const { startDate, time, duration, recurring, ...restOfValues } = values;
 
         const [hours, minutes] = time.split(':').map(Number);
 
@@ -61,11 +62,17 @@ export const CreateContainer = ({ onMeetingCreated }: CreateContainerProps) => {
 
         const endTime = new Date(startTime.getTime() + duration);
 
+        const type = recurring ? MeetingType.RECURRING : MeetingType.SCHEDULED;
+
+        const rrule = recurring ? recurring : null;
+
         try {
             const { meetingLink, id } = await createMeeting({
                 ...restOfValues,
                 startTime: startTime.toISOString(),
                 endTime: endTime.toISOString(),
+                recurring: rrule,
+                type,
             });
 
             onMeetingCreated({

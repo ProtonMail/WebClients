@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms';
 import { IcCross } from '@proton/icons';
 
 import { useMeetContext } from '../contexts/MeetContext';
+import { useUIStateContext } from '../contexts/UIStateContext';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import type { MeetChatMessage } from '../types';
 import { MeetingSideBars } from '../types';
@@ -16,7 +17,9 @@ import { ChatItem } from './ChatItem/ChatItem';
 const CHAT_MESSAGE_TIMEOUT = 8000;
 
 export const ChatPreview = () => {
-    const { sideBarState, chatMessages, setChatMessages } = useMeetContext();
+    const { chatMessages, setChatMessages } = useMeetContext();
+
+    const { sideBarState } = useUIStateContext();
 
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -75,27 +78,27 @@ export const ChatPreview = () => {
 
     return (
         <div
-            className="absolute bottom-custom left-custom z-up bg-norm border border-norm rounded-xl p-4 w-custom max-w-custom flex flex-nowrap justify-space-between items-center"
+            className="absolute bottom-custom left-custom z-up bg-norm border border-norm rounded-xl p-4 w-custom max-w-custom max-h-custom flex flex-nowrap justify-space-between items-center overflow-y-auto"
             style={{
                 '--bottom-custom': '4.5rem',
                 '--left-custom': '50%',
                 '--w-custom': '20rem',
                 '--max-w-custom': '20rem',
+                '--max-h-custom': '8rem',
                 transform: 'translateX(-50%)',
             }}
         >
             <ChatItem
                 item={latestChatMessage}
-                colorClassName={
-                    getParticipantDisplayColors(
-                        sortedParticipants.find((p) => p.identity === latestChatMessage.identity) as
-                            | RemoteParticipant
-                            | LocalParticipant
-                    ).profileColor
-                }
+                colors={getParticipantDisplayColors(
+                    sortedParticipants.find((p) => p.identity === latestChatMessage.identity) as
+                        | RemoteParticipant
+                        | LocalParticipant
+                )}
                 displayDate={false}
                 shouldGrow={true}
             />
+
             <Button
                 shape="ghost"
                 size="small"

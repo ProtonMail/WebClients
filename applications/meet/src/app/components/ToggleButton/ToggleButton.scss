@@ -16,6 +16,12 @@
 
 .toggle-button-circle {
 	transform: translateY(-50%);
+
+	path {
+		stroke: currentcolor !important;
+		stroke-width: 1.25px !important;
+		fill: currentcolor !important;
+	}
 }
 
 .toggle-button-circle-on {

@@ -4,12 +4,15 @@ import { useRoomContext } from '@livekit/components-react';
 import type { RemoteParticipant } from 'livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
+import { useUIStateContext } from '../contexts/UIStateContext';
 import { type MeetChatMessage, MeetingSideBars } from '../types';
 
 export const useChat = () => {
     const room = useRoomContext();
 
-    const { sideBarState, setChatMessages, participantNameMap } = useMeetContext();
+    const { setChatMessages, participantNameMap } = useMeetContext();
+
+    const { sideBarState } = useUIStateContext();
 
     const isChatOpen = sideBarState[MeetingSideBars.Chat];
 

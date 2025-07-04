@@ -4,11 +4,14 @@ import { IcMeetChat } from '@proton/icons';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
 import { useMeetContext } from '../contexts/MeetContext';
+import { useUIStateContext } from '../contexts/UIStateContext';
 import { MeetingSideBars } from '../types';
 import { ChatPreview } from './ChatPreview';
 
 export const ChatButton = () => {
-    const { toggleSideBarState, sideBarState, chatMessages } = useMeetContext();
+    const { chatMessages } = useMeetContext();
+
+    const { toggleSideBarState, sideBarState } = useUIStateContext();
 
     const unreadMessages = chatMessages.filter((message) => !message.seen).length;
 

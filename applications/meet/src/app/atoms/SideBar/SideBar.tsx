@@ -6,7 +6,9 @@ interface SideBarProps {
 
 export const SideBar = ({ children }: SideBarProps) => {
     return (
-        <div className="meet-side-bar bg-norm border border-norm flex flex-nowrap flex-column p-4 h-full w-full rounded-xl relative">
+        <div
+            className="meet-side-bar bg-norm border border-norm flex flex-nowrap flex-column p-4 h-full w-full rounded-xl relative max-w-full"
+        >
             {children}
         </div>
     );

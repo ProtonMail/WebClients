@@ -4,8 +4,6 @@ import { VideoQuality } from 'livekit-client';
 
 import { PAGE_SIZE } from '../constants';
 import type { MeetChatMessage, ParticipantEventRecord } from '../types';
-import { PermissionPromptStatus, PopUpControls } from '../types';
-import { MeetingSideBars } from '../types';
 
 export interface MeetContextValues {
     page: number;
@@ -13,17 +11,15 @@ export interface MeetContextValues {
     setPage: React.Dispatch<React.SetStateAction<number>>;
     setQuality: (quality: VideoQuality) => void;
     audioDeviceId: string | null;
-    videoDeviceId: string;
+    audioOutputDeviceId: string | null;
+    videoDeviceId: string | null;
     setAudioDeviceId: (deviceId: string | null) => void;
-    setVideoDeviceId: (deviceId: string) => void;
+    setAudioOutputDeviceId: (deviceId: string | null) => void;
+    setVideoDeviceId: (deviceId: string | null) => void;
     roomName: string;
     resolution: string | null;
     setResolution: (resolution: string | null) => void;
     meetingLink: string;
-    sideBarState: Record<MeetingSideBars, boolean>;
-    toggleSideBarState: (sidebar: MeetingSideBars) => void;
-    popupState: Record<PopUpControls, boolean>;
-    togglePopupState: (popup: PopUpControls) => void;
     chatMessages: MeetChatMessage[];
     setChatMessages: React.Dispatch<React.SetStateAction<MeetChatMessage[]>>;
     participantEvents: ParticipantEventRecord[];
@@ -45,8 +41,6 @@ export interface MeetContextValues {
     setDisableVideos: (disableVideos: boolean) => void;
     participantsWithDisabledVideos: string[];
     setParticipantsWithDisabledVideos: (participantsWithDisabledVideos: string[]) => void;
-    permissionPromptStatus: PermissionPromptStatus;
-    setPermissionPromptStatus: (permissionPromptStatus: PermissionPromptStatus) => void;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -55,25 +49,15 @@ export const MeetContext = createContext<MeetContextValues>({
     setPage: () => {},
     setQuality: () => {},
     audioDeviceId: '',
+    audioOutputDeviceId: '',
     videoDeviceId: '',
     setAudioDeviceId: () => {},
+    setAudioOutputDeviceId: () => {},
     setVideoDeviceId: () => {},
     roomName: '',
     resolution: null,
     setResolution: () => {},
     meetingLink: '',
-    sideBarState: {
-        [MeetingSideBars.Participants]: false,
-        [MeetingSideBars.Settings]: false,
-        [MeetingSideBars.Chat]: false,
-        [MeetingSideBars.MeetingDetails]: false,
-    },
-    toggleSideBarState: () => {},
-    popupState: {
-        [PopUpControls.Microphone]: false,
-        [PopUpControls.Camera]: false,
-    },
-    togglePopupState: () => {},
     chatMessages: [],
     setChatMessages: () => {},
     participantEvents: [],
@@ -95,8 +79,6 @@ export const MeetContext = createContext<MeetContextValues>({
     setDisableVideos: () => {},
     participantsWithDisabledVideos: [],
     setParticipantsWithDisabledVideos: () => {},
-    permissionPromptStatus: PermissionPromptStatus.CLOSED,
-    setPermissionPromptStatus: () => {},
 });
 
 export const useMeetContext = () => {

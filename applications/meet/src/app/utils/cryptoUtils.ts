@@ -79,12 +79,12 @@ export const decryptMeetingName = async ({
 
     return decryptedMeetingName;
 };
-
 interface PrepareMeetingCryptoDataParams {
     customPassword: string;
-    primaryUserKey: PrivateKeyReference;
+    primaryUserKey?: PrivateKeyReference;
     meetingName: string;
     api: Api;
+    noEncryptedPasswordReturn?: boolean;
 }
 
 export const prepareMeetingCryptoData = async ({
@@ -92,6 +92,7 @@ export const prepareMeetingCryptoData = async ({
     primaryUserKey,
     meetingName,
     api,
+    noEncryptedPasswordReturn = false,
 }: PrepareMeetingCryptoDataParams) => {
     const passwordBase = getRandomString(12);
     const salt = generateBcryptSalt();
@@ -111,18 +112,20 @@ export const prepareMeetingCryptoData = async ({
         })
     );
 
-    const encryptedPassword = (
-        await CryptoProxy.encryptMessage({
-            textData: password,
-            encryptionKeys: [primaryUserKey],
-            format: 'armored',
-            signingKeys: [primaryUserKey],
-            signatureContext: {
-                value: 'pw.link.meet.proton',
-                critical: true,
-            },
-        })
-    ).message;
+    const encryptedPassword = noEncryptedPasswordReturn
+        ? null
+        : (
+              await CryptoProxy.encryptMessage({
+                  textData: password,
+                  encryptionKeys: [primaryUserKey as PrivateKeyReference],
+                  format: 'armored',
+                  signingKeys: [primaryUserKey as PrivateKeyReference],
+                  signatureContext: {
+                      value: 'pw.link.meet.proton',
+                      critical: true,
+                  },
+              })
+          ).message;
 
     const {
         Auth: { Salt: urlPasswordSalt, Verifier: srpVerifier, ModulusID: srpModulusID },

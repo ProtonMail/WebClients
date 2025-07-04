@@ -9,7 +9,7 @@ const shouldAllowExperimentalFaceCrop = process.env.EXPERIMENTAL_FACE_CROP === '
 
 interface UseFaceTrackingSetupParams {
     isFaceTrackingEnabled: boolean;
-    videoDeviceId: string;
+    videoDeviceId: string | null;
 }
 
 export const useFaceTrackingSetup = ({ isFaceTrackingEnabled, videoDeviceId }: UseFaceTrackingSetupParams) => {
@@ -22,7 +22,7 @@ export const useFaceTrackingSetup = ({ isFaceTrackingEnabled, videoDeviceId }: U
 
         const [videoTrack] = await createLocalTracks({
             video: {
-                deviceId: { exact: videoDeviceId },
+                deviceId: videoDeviceId ? { exact: videoDeviceId } : undefined,
             },
         });
 

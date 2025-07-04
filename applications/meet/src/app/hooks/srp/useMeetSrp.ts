@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import { c } from 'ttag';
 
 import { useApi, useAuthentication } from '@proton/components';
@@ -54,76 +56,88 @@ export const useMeetSrp = () => {
     const api = useApi();
     const auth = useAuthentication();
 
-    const initHandshake = async (token: string) => {
-        try {
-            const response = await api<SRPHandshakeInfo>(queryInitSRPHandshake(token));
+    const initHandshake = useCallback(
+        async (token: string) => {
+            try {
+                const response = await api<SRPHandshakeInfo>(queryInitSRPHandshake(token));
 
-            return response;
-        } catch (error) {
-            throw new Error(c('l10n_nightly Error').t`Failed to initialize handshake`);
-        }
-    };
+                return response;
+            } catch (error) {
+                throw new Error(c('l10n_nightly Error').t`Failed to initialize handshake`);
+            }
+        },
+        [api]
+    );
 
-    const getSessionToken = async (
-        token: string,
-        password: string,
-        initHandshake: SRPHandshakeInfo
-    ): Promise<{ ServerProof: string; UID: string; AccessToken: string; TokenType: string; Code: string }> => {
-        const { Modulus, ServerEphemeral, Salt, SRPSession, Version } = initHandshake;
+    const getSessionToken = useCallback(
+        async (
+            token: string,
+            password: string,
+            initHandshake: SRPHandshakeInfo
+        ): Promise<{ ServerProof: string; UID: string; AccessToken: string; TokenType: string; Code: string }> => {
+            const { Modulus, ServerEphemeral, Salt, SRPSession, Version } = initHandshake;
 
-        const UID = auth.getUID();
+            const UID = auth.getUID();
 
-        const response = await srpAuth({
-            api,
-            credentials: { password },
-            info: {
-                Modulus,
-                ServerEphemeral,
-                Version,
-                Salt,
-                SRPSession,
-            },
-            config: {
-                ...(UID && { headers: getUIDHeaders(UID) }),
-                ...queryAuth(token),
-            },
-        });
-
-        return response.json();
-    };
-
-    const getMeetingInfo = async (meetingLinkName: string) => {
-        try {
-            const response = await api<MeetingInfoResponse>(queryMeetingInfo(meetingLinkName));
-
-            return response;
-        } catch (error) {
-            throw new Error(c('l10n_nightly Error').t`Failed to get meeting info`);
-        }
-    };
-
-    const getAccessToken = async (meetingLinkName: string, displayName: string) => {
-        const result = {
-            AccessToken: '',
-            WebsocketUrl: '',
-        };
-
-        try {
-            const { AccessToken, WebsocketUrl } = await api<AccessTokenResponse>({
-                ...queryAccessToken(meetingLinkName),
-                data: {
-                    DisplayName: displayName,
+            const response = await srpAuth({
+                api,
+                credentials: { password },
+                info: {
+                    Modulus,
+                    ServerEphemeral,
+                    Version,
+                    Salt,
+                    SRPSession,
+                },
+                config: {
+                    ...(UID && { headers: getUIDHeaders(UID) }),
+                    ...queryAuth(token),
                 },
             });
 
-            result.AccessToken = AccessToken;
-            result.WebsocketUrl = WebsocketUrl;
-        } catch (error) {
-            console.error(error);
-        }
+            return response.json();
+        },
+        [api, auth.getUID]
+    );
 
-        return result;
-    };
+    const getMeetingInfo = useCallback(
+        async (meetingLinkName: string) => {
+            try {
+                const response = await api<MeetingInfoResponse>(queryMeetingInfo(meetingLinkName));
+
+                return response;
+            } catch (error) {
+                throw new Error(c('l10n_nightly Error').t`Failed to get meeting info`);
+            }
+        },
+        [api]
+    );
+
+    const getAccessToken = useCallback(
+        async (meetingLinkName: string, displayName: string) => {
+            const result = {
+                AccessToken: '',
+                WebsocketUrl: '',
+            };
+
+            try {
+                const { AccessToken, WebsocketUrl } = await api<AccessTokenResponse>({
+                    ...queryAccessToken(meetingLinkName),
+                    data: {
+                        DisplayName: displayName,
+                    },
+                });
+
+                result.AccessToken = AccessToken;
+                result.WebsocketUrl = WebsocketUrl;
+            } catch (error) {
+                console.error(error);
+            }
+
+            return result;
+        },
+        [api]
+    );
 
     return {
         initHandshake,

@@ -26,7 +26,7 @@ export const SideBarSearch = ({
     }, []);
 
     return (
-        <div className="mb-4 flex items-center w-full">
+        <div className="mb-4 flex items-center w-full gap-2">
             <Input
                 ref={inputRef}
                 value={searchExpression}
@@ -36,7 +36,7 @@ export const SideBarSearch = ({
                 placeholder={placeholder}
             />
             <Button
-                className="p-0 ml-2 flex items-center justify-center text-disabled"
+                className="p-0 ml-2 flex items-center justify-center text-hint"
                 shape="ghost"
                 size="small"
                 onClick={() => {

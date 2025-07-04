@@ -12,6 +12,7 @@ import clsx from '@proton/utils/clsx';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useDebouncedActiveSpeakers } from '../../hooks/useDebouncedActiveSpeakers';
 import { MeetingSideBars } from '../../types';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
@@ -27,9 +28,9 @@ export const Participants = () => {
 
     const activeSpeakers = useDebouncedActiveSpeakers();
 
-    const { sideBarState, participantsWithDisabledVideos, setParticipantsWithDisabledVideos } = useMeetContext();
+    const { participantNameMap, participantsWithDisabledVideos, setParticipantsWithDisabledVideos } = useMeetContext();
 
-    const { participantNameMap } = useMeetContext();
+    const { sideBarState } = useUIStateContext();
 
     const filteredParticipants = useMemo(() => {
         if (!isSearchOn || !searchExpression) {
@@ -82,6 +83,8 @@ export const Participants = () => {
                     );
                     const isMuted = !audioPublication || audioPublication.isMuted;
 
+                    const name = participantNameMap[participant.identity] ?? c('l10n_nightly Info').t`Loading...`;
+
                     return (
                         <div
                             key={participant.identity}
@@ -90,8 +93,9 @@ export const Participants = () => {
                         >
                             <div
                                 className={clsx(
-                                    `profile-background-${(index % 6) + 1}`,
-                                    'color-invert rounded-full flex items-center justify-center w-custom h-custom'
+                                    `meet-background-${(index % 6) + 1}`,
+                                    `profile-color-${(index % 6) + 1}`,
+                                    'rounded-full flex items-center justify-center w-custom h-custom'
                                 )}
                                 style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
                             >
@@ -106,8 +110,12 @@ export const Participants = () => {
                                     )}
                                 </div>
                             </div>
-                            <div className="flex items-center">
-                                {participantNameMap[participant.identity] ?? c('l10n_nightly Info').t`Loading...`}
+                            <div
+                                className="max-w-custom text-ellipsis my-auto"
+                                style={{ '--max-w-custom': '12rem' }}
+                                title={name}
+                            >
+                                {name}
                             </div>
                             <div className="flex flex-nowrap items-center ml-auto gap-4 pr-4">
                                 {!!activeSpeakers.find((p) => p.identity === participant.identity) ? (

@@ -36,11 +36,7 @@ const result = (env: any): webpack.Configuration => {
 
     config.plugins?.push(
         new DefinePlugin({
-            'process.env.LIVEKIT_API_KEY': JSON.stringify(process.env.LIVEKIT_API_KEY),
-            'process.env.LIVEKIT_API_SECRET': JSON.stringify(process.env.LIVEKIT_API_SECRET),
             'process.env.LIVEKIT_ROOM_KEY': JSON.stringify(process.env.LIVEKIT_ROOM_KEY),
-            'process.env.LIVEKIT_DEFAULT_ROOM': JSON.stringify(process.env.LIVEKIT_DEFAULT_ROOM),
-            'process.env.DEFAULT_NAME': JSON.stringify(process.env.DEFAULT_NAME),
             'process.env.EXPERIMENTAL_FACE_CROP': JSON.stringify(process.env.EXPERIMENTAL_FACE_CROP),
             'process.env.LIVEKIT_INCREASED_VIDEO_QUALITY': JSON.stringify(process.env.LIVEKIT_INCREASED_VIDEO_QUALITY),
             'process.env.LIVEKIT_DECREASED_VIDEO_QUALITY': JSON.stringify(process.env.LIVEKIT_DECREASED_VIDEO_QUALITY),
