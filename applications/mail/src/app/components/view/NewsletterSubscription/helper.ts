@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import type { Filter } from '@proton/components/containers/filters/interfaces';
 import { getStandardFolders } from '@proton/mail/store/labels/helpers';
@@ -105,25 +105,14 @@ export const getReceivedMessagesCount = (subscription: Partial<NewsletterSubscri
     return subscription.ReceivedMessages?.Last30Days ?? 0;
 };
 
-export const getNewsletterCopyForFilterAction = (subscription: NewsletterSubscription, filterType: ModalFilterType) => {
-    const count = getReceivedMessagesCount(subscription);
-
+export const getNewsletterCopyForFilterAction = (filterType: ModalFilterType) => {
     if (filterType === 'MarkAsRead') {
-        const unreadCount = subscription.UnreadMessageCount ?? 0;
-        return c('Label').ngettext(
-            msgid`Marked ${unreadCount} message as read.`,
-            `Marked ${unreadCount} messages as read.`,
-            unreadCount
-        );
+        return c('Label').t`Marked as read`;
     } else if (filterType === 'MoveToArchive') {
-        return c('Label').ngettext(
-            msgid`Moved ${count} message to Archive.`,
-            `Moved ${count} messages to Archive.`,
-            count
-        );
+        return c('Label').t`Moved to Archive`;
     }
 
-    return c('Label').ngettext(msgid`Moved ${count} message to Trash.`, `Moved ${count} messages to Trash.`, count);
+    return c('Label').t`Moved to Trash`;
 };
 
 export const getFilterDropdownData = (subscription: NewsletterSubscription, filters: Filter[]): FilterDropdownData => {
