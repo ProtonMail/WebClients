@@ -1,8 +1,6 @@
-import { useCallback, useRef, useState } from 'react';
+import { type SyntheticEvent, useCallback, useRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms';
-
-import UnsupportedPreview from './UnsupportedPreview';
 
 import './VideoStreamingPreview.scss';
 
@@ -10,35 +8,26 @@ type VideoStreamingPreviewProps = {
     isLoading: boolean;
     videoStreaming: {
         url: string;
-        onVideoPlaybackError?: (error?: unknown) => void;
+        onVideoPlaybackError?: (error?: SyntheticEvent<HTMLVideoElement, Event>) => void;
     };
     imgThumbnailUrl?: string;
-    onDownload?: () => void;
     isSharedFile?: boolean;
 };
 
 export const VideoStreamingPreview: React.FC<VideoStreamingPreviewProps> = ({
-    onDownload,
     isSharedFile,
     imgThumbnailUrl,
     videoStreaming,
     isLoading,
 }: VideoStreamingPreviewProps) => {
     const videoRef = useRef<HTMLVideoElement>(null);
-    const [error, setError] = useState(false);
 
-    const handleBrokenVideo = useCallback((error?: unknown) => {
-        setError(true);
-        videoStreaming.onVideoPlaybackError?.(error);
-    }, []);
-
-    if (error) {
-        return (
-            <div className="flex flex-auto relative">
-                <UnsupportedPreview onDownload={onDownload} type="video" />
-            </div>
-        );
-    }
+    const handleBrokenVideo = useCallback(
+        (event: SyntheticEvent<HTMLVideoElement, Event>) => {
+            videoStreaming.onVideoPlaybackError?.(event);
+        },
+        [videoStreaming]
+    );
 
     return (
         <div

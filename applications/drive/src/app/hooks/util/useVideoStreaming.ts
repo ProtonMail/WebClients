@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { type SyntheticEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -6,6 +6,7 @@ import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { initDownloadSW } from '../../store/_downloads/fileSaver/download';
 import { sendErrorReport } from '../../utils/errorHandling';
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 
 type UseVideoStreamingProps = {
     mimeType?: string;
@@ -14,7 +15,6 @@ type UseVideoStreamingProps = {
     };
     downloadSlice?: (abortSignal: AbortSignal, indices: number[]) => Promise<Uint8Array[] | undefined>;
 };
-
 const FIRST_BLOCK_TIMEOUT = 30000; // 30 seconds for first block to be downloaded
 const SW_READY_TIMEOUT = 15 * 1000; // 15 seconds for SW to register
 
@@ -27,8 +27,19 @@ export const useVideoStreaming = ({ mimeType, videoData, downloadSlice }: UseVid
 
     const isServiceWorkerAvailable = useMemo(() => 'serviceWorker' in navigator, []);
 
-    const handleBrokenVideo = useCallback((error?: unknown) => {
-        sendErrorReport(error);
+    const handleBrokenVideo = useCallback((error?: SyntheticEvent<HTMLVideoElement, Event> | Error | unknown) => {
+        let videoError;
+        // TODO: Update it to Error.isError() when Typescript will include it in esnext
+        if (error instanceof Error) {
+            videoError = error;
+        } else {
+            videoError = new EnrichedError('Failed to load the video', {
+                extra: {
+                    error,
+                },
+            });
+        }
+        sendErrorReport(videoError);
         if (swTimeoutRef.current) {
             clearTimeout(swTimeoutRef.current);
             swTimeoutRef.current = null;
@@ -121,7 +132,7 @@ export const useVideoStreaming = ({ mimeType, videoData, downloadSlice }: UseVid
                 } else {
                     handleBrokenVideo(new Error('downloadSlice returned no data for indices'));
                 }
-            } catch (err) {
+            } catch (err: unknown) {
                 handleBrokenVideo(err);
             }
         };
