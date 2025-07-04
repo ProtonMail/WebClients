@@ -1,5 +1,5 @@
 import type { LoggerInterface } from '@proton/utils/logs'
-import type { EditorInitializationConfig, SheetImportData } from '@proton/docs-shared'
+import type { EditorInitializationConfig, InternalEventBusInterface, SheetImportData } from '@proton/docs-shared'
 import {
   DocUpdateOrigin,
   type ClientRequiresEditorMethods,
@@ -13,6 +13,8 @@ import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from '@p
 import { EventTypeEnum } from '@proton/docs-proto'
 import { EventType } from '@proton/docs-proto'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
+import { PostApplicationError } from '../Application/ApplicationEvent'
+import { c } from 'ttag'
 
 export interface EditorControllerInterface {
   copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
@@ -40,6 +42,7 @@ export class EditorController implements EditorControllerInterface {
     private readonly logger: LoggerInterface,
     private _exportAndDownload: ExportAndDownload,
     private readonly documentState: DocumentState | PublicDocumentState,
+    private eventBus: InternalEventBusInterface,
   ) {
     documentState.subscribeToProperty('realtimeReadyToBroadcast', (value) => {
       if (this.editorInvoker && value) {
@@ -127,12 +130,23 @@ export class EditorController implements EditorControllerInterface {
       return
     }
 
-    const squashedContent = baseCommit.squashedRepresentation()
-    void this.editorInvoker?.receiveMessage({
-      type: { wrapper: 'du' },
-      content: squashedContent,
-      origin: DocUpdateOrigin.InitialLoad,
-    })
+    try {
+      const squashedContent = baseCommit.squashedRepresentation()
+      void this.editorInvoker?.receiveMessage({
+        type: { wrapper: 'du' },
+        content: squashedContent,
+        origin: DocUpdateOrigin.InitialLoad,
+      })
+    } catch (error) {
+      if (error instanceof Error) {
+        this.logger.error(error)
+      }
+      PostApplicationError(this.eventBus, {
+        translatedError: c('Error')
+          .t`There was an error processing updates to the document. Please reload the page and try again.`,
+      })
+      this.documentState.setProperty('editorHasRenderingIssue', true)
+    }
   }
 
   initializeEditor(editorInitializationConfig: EditorInitializationConfig | undefined, userAddress: string): void {
