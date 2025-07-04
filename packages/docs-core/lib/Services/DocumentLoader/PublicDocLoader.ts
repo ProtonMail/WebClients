@@ -113,7 +113,12 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
 
     this.documentState = documentState
 
-    const editorController = new EditorController(this.logger, this.exportAndDownload, this.documentState)
+    const editorController = new EditorController(
+      this.logger,
+      this.exportAndDownload,
+      this.documentState,
+      this.eventBus,
+    )
     this.editorController = editorController
 
     if (publicEditingEnabled) {
