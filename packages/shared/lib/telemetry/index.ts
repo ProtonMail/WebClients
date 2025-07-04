@@ -28,6 +28,9 @@ class ProtonTelemetry {
             endpoint: `${config.API_URL}/data/v1/telemetry`,
             appVersion: getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION),
             debug: process.env.NODE_ENV !== 'production',
+            events: {
+                click: false,
+            },
         };
 
         this.setTelemetry();
