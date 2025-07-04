@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
@@ -32,7 +32,6 @@ import { MAX_FOLDER_NAME_LENGTH } from 'proton-mail/store/newsletterSubscription
 import { filterSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
-import { getReceivedMessagesCount } from '../../helper';
 import { NewsletterSubscriptionAction } from '../../interface';
 import { useNewsletterSubscriptionTelemetry } from '../../useNewsletterSubscriptionTelemetry';
 
@@ -132,13 +131,8 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
             })
         );
 
-        const count = getReceivedMessagesCount(subscription);
         createNotification({
-            text: c('Label').ngettext(
-                msgid`Moved ${count} message to ${labelName}.`,
-                `Moved ${count} messages to ${labelName}.`,
-                count
-            ),
+            text: c('Label').t`Moved to ${labelName}`,
         });
 
         sendNewsletterAction({
