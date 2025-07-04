@@ -72,7 +72,7 @@ const ModalNewsletterSubscriptionFilter = ({ subscription, filterType, ...props 
         );
 
         createNotification({
-            text: getNewsletterCopyForFilterAction(subscription, filterType),
+            text: getNewsletterCopyForFilterAction(filterType),
         });
 
         props?.onClose?.();
