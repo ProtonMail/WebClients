@@ -3,20 +3,13 @@ import { c } from 'ttag';
 export enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL,
     EXTERNAL_INVITE_DISABLED,
-    EXTERNAL_INVITE_NOT_AVAILABLE,
     DOES_NOT_EXIST,
     EXISTING_MEMBER,
     NOT_INTERNAL_ACCOUNT,
 }
 
-const {
-    INVALID_EMAIL,
-    EXTERNAL_INVITE_DISABLED,
-    EXTERNAL_INVITE_NOT_AVAILABLE,
-    DOES_NOT_EXIST,
-    EXISTING_MEMBER,
-    NOT_INTERNAL_ACCOUNT,
-} = VALIDATION_ERROR_TYPES;
+const { INVALID_EMAIL, EXTERNAL_INVITE_DISABLED, DOES_NOT_EXIST, EXISTING_MEMBER, NOT_INTERNAL_ACCOUNT } =
+    VALIDATION_ERROR_TYPES;
 
 const getValidationErrorMessage = (type: VALIDATION_ERROR_TYPES) => {
     if (type === INVALID_EMAIL) {
@@ -24,9 +17,6 @@ const getValidationErrorMessage = (type: VALIDATION_ERROR_TYPES) => {
     }
     if (type === EXTERNAL_INVITE_DISABLED) {
         return c('Error').t`External invitations are temporarily disabled.`;
-    }
-    if (type === EXTERNAL_INVITE_NOT_AVAILABLE) {
-        return c('Error').t`External invitations are not available yet.`;
     }
     if (type === DOES_NOT_EXIST) {
         return c('Error').t`Account does not exist`;

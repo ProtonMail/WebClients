@@ -1,6 +1,6 @@
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
-import type { ShareInvitee } from '../../../store';
+import type { ShareInvitee } from '../interfaces';
 
 export const inviteesToRecipients = (invitees: ShareInvitee[]): Recipient[] => {
     return invitees.map((invitee) => ({

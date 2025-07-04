@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, Loader } from '@proton/components';
 
-import type { ShareInvitee } from '../../../store';
+import type { ShareInvitee } from '../interfaces';
 
 /**
  * Generates attributes for an address input item based on the loading state, error state, and email.
