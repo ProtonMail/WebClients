@@ -22,7 +22,13 @@ const ModalOnboarding = ({ ...rest }: Props) => {
     };
 
     return (
-        <Modal {...rest} onClose={handleClose} size="xsmall" className="modal-two--twocolors">
+        <Modal
+            {...rest}
+            onClose={handleClose}
+            size="xsmall"
+            className="modal-two--twocolors"
+            data-testid="newsletter-onboarding"
+        >
             <ModalHeader />
             <div className="modal-two-illustration-container relative text-center">
                 <img src={illustration} alt="" />
@@ -39,7 +45,9 @@ const ModalOnboarding = ({ ...rest }: Props) => {
                         <li key="bulk-delete">{c('Info')
                             .jt`${boldBulkDelete}, archive, or move old emails to a folder.`}</li>
                     </ol>
-                    <Button fullWidth onClick={handleClose}>{c('Action').t`Got it`}</Button>
+                    <Button data-testid="newsletter-onboarding:got-it-button" fullWidth onClick={handleClose}>
+                        {c('Action').t`Got it`}
+                    </Button>
                 </ModalContent>
             </div>
         </Modal>
