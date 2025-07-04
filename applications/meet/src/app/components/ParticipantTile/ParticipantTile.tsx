@@ -55,6 +55,8 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
 
     const participantName = participantNameMap[participant.identity] ?? c('l10n_nightly Info').t`Loading...`;
 
+    console.log(participantNameMap, participant);
+
     return (
         <div
             className={clsx(
@@ -73,7 +75,7 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                 {isSpeaking && audioIsOn && <SpeakingIndicator size={32} participant={participant} />}
                 {!audioIsOn && (
                     <div
-                        className="flex items-center justify-center w-custom h-custom bg-weak rounded-full"
+                        className="user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full"
                         style={{
                             '--w-custom': '2rem',
                             '--h-custom': '2rem',
@@ -89,8 +91,8 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
             {isSpeaking && (
                 <div
                     className={clsx(
-                        'absolute top-0 left-0 w-full h-full z-up',
-                        isSpeaking && speakingIndicatorClassName,
+                        'speaker-border absolute top-0 left-0 w-full h-full',
+                        speakingIndicatorClassName,
                         smallView ? 'radius-small' : 'radius-normal'
                     )}
                 />
@@ -119,12 +121,13 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                 />
             )}
             <div
-                className="color-norm flex flex-nowrap items-center absolute left-custom bottom-custom z-up"
+                className="color-norm absolute left-custom bottom-custom participant-tile-name text-ellipsis max-w-custom"
                 style={{
-                    '--left-custom': smallView ? '0.75rem' : '1.25rem',
-                    '--bottom-custom': smallView ? '0.5rem' : '1.25rem',
-                    gap: '0.625rem',
+                    '--left-custom': smallView ? '1rem' : '1.25rem',
+                    '--bottom-custom': smallView ? '0.5rem' : '1rem',
+                    '--max-w-custom': smallView ? '8rem' : '15rem',
                 }}
+                title={participantName}
             >
                 {participantName}
             </div>

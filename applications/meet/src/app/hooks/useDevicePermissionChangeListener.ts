@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { isSafari } from '@proton/shared/lib/helpers/browser';
+import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useRequestPermission } from './useRequestPermission';
 
@@ -35,7 +35,7 @@ export const useDevicePermissionChangeListener = (
         const currentCameraStatus = await checkPermission('camera' as PermissionName);
         const currentMicStatus = await checkPermission('microphone' as PermissionName);
 
-        if (currentCameraStatus === 'prompt' || currentMicStatus === 'prompt') {
+        if (currentCameraStatus === 'prompt' || currentMicStatus === 'prompt' || isFirefox()) {
             void getPermissions();
         }
 

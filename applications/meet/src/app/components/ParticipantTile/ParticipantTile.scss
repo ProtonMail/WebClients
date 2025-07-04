@@ -15,3 +15,8 @@
 .radius-small {
 	border-radius: 1.5rem;
 }
+
+.participant-tile-name,
+.speaker-border {
+	z-index: +1;
+}

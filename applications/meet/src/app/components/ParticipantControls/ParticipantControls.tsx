@@ -16,6 +16,7 @@ import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination/Pagination';
 import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsContext';
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useAudioToggle } from '../../hooks/useAudioToggle';
 import { useVideoToggle } from '../../hooks/useVideoToggle';
 import { MeetingSideBars, PermissionPromptStatus, PopUpControls } from '../../types';
@@ -25,23 +26,14 @@ import { LeaveModal } from '../LeaveModal/LeaveModal';
 import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
 import { ScreenShareButton } from '../ScreenShareButton';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
-import { VideoSettings } from '../VideoSettings';
+import { VideoSettings } from '../VideoSettings/VideoSettings';
 
 export const ParticipantControls = () => {
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
-    const {
-        audioDeviceId,
-        videoDeviceId,
-        sideBarState,
-        toggleSideBarState,
-        togglePopupState,
-        setPermissionPromptStatus,
-        roomName,
-        page,
-        setPage,
-        pageSize,
-        popupState,
-    } = useMeetContext();
+    const { audioDeviceId, videoDeviceId, roomName, page, setPage, pageSize } = useMeetContext();
+
+    const { sideBarState, toggleSideBarState, togglePopupState, setPermissionPromptStatus, popupState } =
+        useUIStateContext();
 
     const participants = useParticipants();
 
@@ -126,9 +118,11 @@ export const ParticipantControls = () => {
                             return;
                         }
 
-                        void toggleVideo({ isEnabled: !isCameraEnabled, videoDeviceId });
+                        if (videoDeviceId) {
+                            void toggleVideo({ isEnabled: !isCameraEnabled, videoDeviceId });
+                        }
                     }}
-                    Content={() => <VideoSettings />}
+                    Content={VideoSettings}
                     popUp={PopUpControls.Camera}
                     ariaLabel={c('l10n_nightly Alt').t`Toggle camera`}
                     secondaryAriaLabel={c('l10n_nightly Alt').t`Video settings`}

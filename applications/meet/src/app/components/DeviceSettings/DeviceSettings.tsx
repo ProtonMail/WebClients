@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,10 +7,13 @@ import { IcMeetCamera, IcMeetCameraOff, IcMeetMicrophoneOff } from '@proton/icon
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsContext';
+import { getDeviceLabel } from '../../utils/getDeviceLabel';
+import { AudioSettingsDropdown } from '../AudioSettings/AudioSettingsDropdown';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
 import { MicrophoneWithVolume } from '../MicrophoneWithVolume';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
 import { VideoPreview } from '../VideoPreview/VideoPreview';
+import { VideoSettingsDropdown } from '../VideoSettings/VideoSettingsDropdown';
 
 import './DeviceSettings.scss';
 
@@ -21,26 +24,16 @@ interface DeviceSettingsProps {
     onMicrophoneToggle: () => void;
     cameras: MediaDeviceInfo[];
     microphones: MediaDeviceInfo[];
+    speakers: MediaDeviceInfo[];
     selectedCameraId: string;
     selectedMicrophoneId: string;
+    selectedAudioOutputDeviceId: string;
     onCameraChange: (camera: MediaDeviceInfo) => void;
     onMicrophoneChange: (microphone: MediaDeviceInfo) => void;
+    onAudioOutputDeviceChange: (speaker: MediaDeviceInfo) => void;
     displayName: string;
+    colorIndex: number;
 }
-
-const devicesToOptions = (devices: MediaDeviceInfo[]) => {
-    return devices.map((device) => ({
-        value: device.deviceId,
-        label: device.label,
-    }));
-};
-
-const placeholderOptions = [
-    {
-        value: 'no-permission',
-        label: c('l10n_nightly Info').t`Permissions not given.`,
-    },
-];
 
 export const DeviceSettings = ({
     isCameraEnabled,
@@ -49,11 +42,15 @@ export const DeviceSettings = ({
     onMicrophoneToggle,
     cameras,
     microphones,
+    speakers,
     selectedCameraId,
     selectedMicrophoneId,
+    selectedAudioOutputDeviceId,
     onCameraChange,
     onMicrophoneChange,
+    onAudioOutputDeviceChange,
     displayName,
+    colorIndex,
 }: DeviceSettingsProps) => {
     const {
         devicePermissions: { camera, microphone },
@@ -62,9 +59,29 @@ export const DeviceSettings = ({
     const noCameraPermission = camera !== 'granted';
     const noMicrophonePermission = microphone !== 'granted';
 
-    const camerasOptions = useMemo(() => devicesToOptions(cameras), [cameras]);
+    const [isAudioSettingsOpen, setIsAudioSettingsOpen] = useState(false);
+    const [isVideoSettingsOpen, setIsVideoSettingsOpen] = useState(false);
 
-    const microphonesOptions = useMemo(() => devicesToOptions(microphones), [microphones]);
+    const handleMicrophoneChange = useCallback(
+        (deviceId: string) => {
+            onMicrophoneChange(microphones.find((microphone) => microphone.deviceId === deviceId)!);
+        },
+        [onMicrophoneChange, microphones]
+    );
+
+    const handleOutputDeviceChange = useCallback(
+        (deviceId: string) => {
+            onAudioOutputDeviceChange(speakers.find((speaker) => speaker.deviceId === deviceId)!);
+        },
+        [onAudioOutputDeviceChange, speakers]
+    );
+
+    const handleCameraChange = useCallback(
+        (deviceId: string) => {
+            onCameraChange(cameras.find((camera) => camera.deviceId === deviceId)!);
+        },
+        [onCameraChange, cameras]
+    );
 
     return (
         <div className="flex flex-nowrap flex-column w-custom gap-2 mr-auto" style={{ '--w-custom': '41.6875rem' }}>
@@ -74,8 +91,9 @@ export const DeviceSettings = ({
             >
                 {displayName && (
                     <div
-                        className="absolute left-custom bottom-custom z-up"
-                        style={{ '--left-custom': '1.5rem', '--bottom-custom': '2rem' }}
+                        className="absolute left-custom bottom-custom z-up text-ellipsis max-w-custom"
+                        style={{ '--left-custom': '1.5rem', '--bottom-custom': '1rem', '--max-w-custom': '12rem' }}
+                        title={displayName}
                     >
                         {displayName}
                     </div>
@@ -85,13 +103,13 @@ export const DeviceSettings = ({
                 ) : (
                     <ParticipantPlaceholder
                         participantName={displayName}
-                        backgroundColor="meet-background-1"
-                        profileColor="profile-background-1"
+                        backgroundColor={`meet-background-${colorIndex}`}
+                        profileColor={`profile-background-${colorIndex}`}
                     />
                 )}
 
                 <div
-                    className="flex flex-nowrap w-full justify-center gap-2 absolute bottom-custom z-up"
+                    className="device-toggle-buttons flex flex-nowrap w-full justify-center gap-2 absolute bottom-custom"
                     style={{ '--bottom-custom': '1.5rem' }}
                 >
                     <CircleButton
@@ -126,22 +144,57 @@ export const DeviceSettings = ({
             </div>
             <div className="flex flex-nowrap gap-2 mt-2">
                 <DeviceSelect
-                    value={noMicrophonePermission ? 'no-permission' : selectedMicrophoneId}
-                    onValue={(value) =>
-                        onMicrophoneChange(microphones.find((microphone) => microphone.deviceId === value)!)
+                    label={
+                        noMicrophonePermission
+                            ? c('l10n_nightly Info').t`Permissions not given.`
+                            : getDeviceLabel(
+                                  microphones.find((microphone) => microphone.deviceId === selectedMicrophoneId)!
+                              )
                     }
-                    options={noMicrophonePermission ? placeholderOptions : microphonesOptions}
                     icon="meet-microphone"
                     title={c('l10n_nightly Label').t`Audio`}
                     disabled={noMicrophonePermission}
+                    isOpen={isAudioSettingsOpen}
+                    setIsOpen={(newIsOpen) => {
+                        setIsAudioSettingsOpen(newIsOpen);
+
+                        if (newIsOpen) {
+                            setIsVideoSettingsOpen(false);
+                        }
+                    }}
+                    Content={AudioSettingsDropdown}
+                    contentProps={{
+                        microphones,
+                        speakers,
+                        handleInputDeviceChange: handleMicrophoneChange,
+                        handleOutputDeviceChange: handleOutputDeviceChange,
+                        audioDeviceId: selectedMicrophoneId,
+                        activeOutputDeviceId: selectedAudioOutputDeviceId,
+                    }}
                 />
                 <DeviceSelect
-                    value={noCameraPermission ? 'no-permission' : selectedCameraId}
-                    onValue={(value) => onCameraChange(cameras.find((camera) => camera.deviceId === value)!)}
-                    options={noCameraPermission ? placeholderOptions : camerasOptions}
+                    label={
+                        noCameraPermission
+                            ? c('l10n_nightly Info').t`Permissions not given.`
+                            : getDeviceLabel(cameras.find((camera) => camera.deviceId === selectedCameraId)!)
+                    }
                     icon="meet-camera"
                     title={c('l10n_nightly Label').t`Video`}
                     disabled={noCameraPermission}
+                    isOpen={isVideoSettingsOpen}
+                    setIsOpen={(newIsOpen) => {
+                        setIsVideoSettingsOpen(newIsOpen);
+
+                        if (newIsOpen) {
+                            setIsAudioSettingsOpen(false);
+                        }
+                    }}
+                    Content={VideoSettingsDropdown}
+                    contentProps={{
+                        handleCameraChange,
+                        videoDeviceId: selectedCameraId,
+                        cameras,
+                    }}
                 />
             </div>
         </div>

@@ -14,7 +14,7 @@ export const useLocalParticipantQualityControl = () => {
     const isScreenShare = !!videoTrack;
 
     useEffect(() => {
-        if (isVideoEnabled) {
+        if (isVideoEnabled && videoDeviceId) {
             void toggleVideo({ isEnabled: true, videoDeviceId, forceUpdate: true });
         }
     }, [videoDeviceId, toggleVideo, isScreenShare]);

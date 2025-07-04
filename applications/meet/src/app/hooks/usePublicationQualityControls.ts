@@ -25,13 +25,15 @@ export const usePublicationQualityControls = () => {
 
             Array.from((participant as RemoteParticipant).trackPublications.values()).forEach(
                 (publication: RemoteTrackPublication) => {
-                    if (disableVideos || participantsWithDisabledVideos.includes(participant.identity)) {
+                    const isVideo = publication.kind === Track.Kind.Video;
+
+                    if (disableVideos || (participantsWithDisabledVideos.includes(participant.identity) && isVideo)) {
                         publication.setEnabled(false);
                         return;
                     }
 
                     if (
-                        publication.kind === Track.Kind.Video &&
+                        isVideo &&
                         publication.source !== Track.Source.ScreenShare &&
                         typeof publication.setVideoQuality === 'function'
                     ) {

@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,24 +6,34 @@ import { decryptMeetingName, getCombinedPassword } from '../../utils/cryptoUtils
 import type { SRPHandshakeInfo } from './useMeetSrp';
 import { useMeetSrp } from './useMeetSrp';
 
-export const useMeetingAuthentication = (token: string, urlPassword: string) => {
-    const [handshakeInfo, setHandshakeInfo] = useState<SRPHandshakeInfo | null>(null);
-
+export const useMeetingAuthentication = () => {
     const { initHandshake: initHandshakeFromSrp, getSessionToken, getMeetingInfo, getAccessToken } = useMeetSrp();
 
-    const initHandshake = useCallback(async () => {
-        const handshakeInfoResult = await initHandshakeFromSrp(token);
+    const initHandshake = useCallback(
+        async (token: string) => {
+            const handshakeInfoResult = await initHandshakeFromSrp(token);
 
-        if (!handshakeInfoResult) {
-            return null;
-        }
+            if (!handshakeInfoResult) {
+                return null;
+            }
 
-        setHandshakeInfo(handshakeInfoResult);
-        return handshakeInfoResult.CustomPassword;
-    }, [initHandshakeFromSrp]);
+            return handshakeInfoResult;
+        },
+        [initHandshakeFromSrp]
+    );
 
     const getRoomName = useCallback(
-        async (customPassword: string): Promise<string> => {
+        async ({
+            customPassword,
+            urlPassword,
+            token,
+            handshakeInfo,
+        }: {
+            customPassword: string;
+            urlPassword: string;
+            token: string;
+            handshakeInfo?: SRPHandshakeInfo;
+        }): Promise<string> => {
             let meetingName = '';
 
             if (!handshakeInfo) {
@@ -48,23 +58,20 @@ export const useMeetingAuthentication = (token: string, urlPassword: string) => 
 
             return meetingName;
         },
-        [token, urlPassword, handshakeInfo]
+        [getSessionToken, getMeetingInfo]
     );
 
-    const getAcccessDetails = useCallback(
-        async (displayName: string) => {
-            try {
-                const data = await getAccessToken(token, displayName);
-                return {
-                    accessToken: data.AccessToken,
-                    websocketUrl: data.WebsocketUrl.replace('/rtc', ''),
-                };
-            } catch (error) {
-                throw new Error(c('l10n_nightly Error').t`Failed to get access details`);
-            }
-        },
-        [token]
-    );
+    const getAcccessDetails = useCallback(async ({ displayName, token }: { displayName: string; token: string }) => {
+        try {
+            const data = await getAccessToken(token, displayName);
+            return {
+                accessToken: data.AccessToken,
+                websocketUrl: data.WebsocketUrl.replace('/rtc', ''),
+            };
+        } catch (error) {
+            throw new Error(c('l10n_nightly Error').t`Failed to get access details`);
+        }
+    }, []);
 
     return { getRoomName, getAcccessDetails, initHandshake, getHandshakeInfo: initHandshake };
 };

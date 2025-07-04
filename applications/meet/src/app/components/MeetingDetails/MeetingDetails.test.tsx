@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { MeetContext } from '../../contexts/MeetContext';
+import { UIStateContext } from '../../contexts/UIStateContext';
 import { MeetingSideBars } from '../../types';
 import { MeetingDetails } from './MeetingDetails';
 
@@ -12,14 +13,18 @@ describe('MeetingDetails', () => {
         render(<MeetingDetails />, {
             wrapper: ({ children }) => (
                 <MeetContext.Provider
+                    // @ts-expect-error - mock data
                     value={{
-                        // @ts-expect-error - mock data
-                        sideBarState: { [MeetingSideBars.MeetingDetails]: false },
                         meetingLink: mockLink,
                         roomName: mockMeetingName,
                     }}
                 >
-                    {children}
+                    <UIStateContext.Provider
+                        // @ts-expect-error - mock data
+                        value={{ sideBarState: { [MeetingSideBars.MeetingDetails]: false } }}
+                    >
+                        {children}
+                    </UIStateContext.Provider>
                 </MeetContext.Provider>
             ),
         });
@@ -31,14 +36,18 @@ describe('MeetingDetails', () => {
         render(<MeetingDetails />, {
             wrapper: ({ children }) => (
                 <MeetContext.Provider
+                    // @ts-expect-error\
                     value={{
-                        // @ts-expect-error - mock data
-                        sideBarState: { [MeetingSideBars.MeetingDetails]: true },
                         meetingLink: mockLink,
                         roomName: mockMeetingName,
                     }}
                 >
-                    {children}
+                    <UIStateContext.Provider
+                        // @ts-expect-error - mock data
+                        value={{ sideBarState: { [MeetingSideBars.MeetingDetails]: true } }}
+                    >
+                        {children}
+                    </UIStateContext.Provider>
                 </MeetContext.Provider>
             ),
         });

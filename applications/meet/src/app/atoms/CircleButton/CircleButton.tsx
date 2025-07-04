@@ -35,7 +35,7 @@ export const CircleButton = ({
             className={clsx(
                 'circle-button',
                 `circle-button-${variant}`,
-                'color-norm rounded-full gap-2 relative',
+                'user-select-none color-norm rounded-full gap-2 relative',
                 noBorder && 'border-none',
                 className
             )}

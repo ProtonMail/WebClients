@@ -9,5 +9,6 @@ export const getParticipantDisplayColors = (
         profileColor: metadata?.profileColor ?? `profile-background-1`,
         backgroundColor: metadata?.backgroundColor ?? `meet-background-1`,
         borderColor: metadata?.borderColor ?? `tile-border-1`,
+        profileTextColor: metadata?.profileTextColor ?? `profile-color-1`,
     };
 };

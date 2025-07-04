@@ -1,0 +1,10 @@
+.option-button {
+	word-break: keep-all;
+	margin-inline-start: -0.425rem;
+	white-space: nowrap;
+
+	&:hover,
+	&:focus-within {
+		background: var(--interaction-norm-minor-3);
+	}
+}

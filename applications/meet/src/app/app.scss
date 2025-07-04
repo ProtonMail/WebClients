@@ -40,6 +40,7 @@ body {
 		font-weight: 600 !important;
 	}
 
+	font-weight: 500;
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
 }
 
@@ -81,4 +82,21 @@ $profile-colors:
 
 .gradient-overlay {
 	background-image: linear-gradient(180deg, rgb(0 0 0 / 0) 52.27%, rgb(0 0 0 / 0.6) 100%);
+}
+
+.meet-radius {
+	border-radius: 1.5rem;
+}
+
+.meet-font-weight {
+	font-weight: 500;
+}
+
+.dropdown-content {
+	background-image: none !important;
+	scrollbar-color: var(--interaction-weak) transparent !important;
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--interaction-weak) !important;
+	}
 }

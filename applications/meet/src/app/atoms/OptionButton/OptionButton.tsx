@@ -14,7 +14,7 @@ interface OptionButtonProps {
 export const OptionButton = ({ showIcon, label, onClick, Icon, iconSize }: OptionButtonProps) => {
     return (
         <Button
-            className="option-button w-full max-w-custom flex items-center justify-start flex-nowrap pl-0"
+            className="option-button w-full max-w-custom flex items-center justify-start flex-nowrap pl-0 text-lg meet-font-weight"
             onClick={onClick}
             shape="ghost"
             style={{ '--max-w-custom': '25rem' }}

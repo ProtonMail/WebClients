@@ -33,7 +33,13 @@ describe('ChatItem', () => {
     afterEach(cleanup);
 
     it('should render a chat message', () => {
-        render(<ChatItem item={mockChatMessage} colorClassName="text-primary" displayDate={true} />);
+        render(
+            <ChatItem
+                item={mockChatMessage}
+                colors={{ backgroundColor: 'text-primary', profileTextColor: 'text-primary' }}
+                displayDate={true}
+            />
+        );
 
         expect(screen.getByText(mockChatMessage.name)).toBeInTheDocument();
         expect(screen.getByText(mockChatMessage.message)).toBeInTheDocument();
@@ -44,7 +50,7 @@ describe('ChatItem', () => {
         render(
             <ChatItem
                 item={mockParticipantEventRecord}
-                colorClassName="text-primary"
+                colors={{ backgroundColor: 'text-primary', profileTextColor: 'text-primary' }}
                 displayDate={false}
                 roomName={roomName}
             />
@@ -57,7 +63,13 @@ describe('ChatItem', () => {
     });
 
     it('should render the participant initials', () => {
-        render(<ChatItem item={mockChatMessage} colorClassName="text-primary" displayDate={true} />);
+        render(
+            <ChatItem
+                item={mockChatMessage}
+                colors={{ backgroundColor: 'text-primary', profileTextColor: 'text-primary' }}
+                displayDate={true}
+            />
+        );
 
         expect(screen.getByText('JD')).toBeInTheDocument();
     });

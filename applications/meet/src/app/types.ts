@@ -1,9 +1,12 @@
 import type { ChatMessage } from 'livekit-client';
 
+import type { MeetingType } from './response-types';
+
 export interface ParticipantSettings {
     displayName: string;
     audioDeviceId: string | null;
-    videoDeviceId: string;
+    audioOutputDeviceId: string | null;
+    videoDeviceId: string | null;
     isAudioEnabled: boolean;
     isVideoEnabled: boolean;
     isFaceTrackingEnabled: boolean;
@@ -66,7 +69,7 @@ export enum ParticipantCapabilityPermission {
 }
 
 export interface ParticipantEntity {
-    ParticipantUuid: string;
+    ParticipantUUID: string;
     DisplayName: string;
     CanSubscribe: ParticipantCapabilityPermission;
     CanPublish: ParticipantCapabilityPermission;
@@ -88,4 +91,14 @@ export enum PermissionPromptStatus {
     CAMERA = 'CAMERA',
     MICROPHONE = 'MICROPHONE',
     CLOSED = 'CLOSED',
+}
+
+export interface CreateMeetingParams {
+    meetingName: string;
+    startTime: string | null;
+    endTime: string | null;
+    recurring: boolean | null;
+    timeZone?: string | null;
+    customPassword?: string;
+    type?: MeetingType;
 }

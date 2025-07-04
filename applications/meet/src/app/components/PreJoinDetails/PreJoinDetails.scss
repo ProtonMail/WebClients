@@ -31,4 +31,23 @@
 		background-color: var(--interaction-norm-minor-2);
 		color: var(--interaction-norm);
 	}
+
+	&:active,
+	&:focus {
+		color: var(--interaction-norm);
+	}
+}
+
+.continue-button {
+	&:hover,
+	&:focus {
+		color: var(--text-invert) !important;
+	}
+}
+
+.meeting-id-field {
+	&:focus-within::after {
+		box-shadow: none !important;
+		border: none !important;
+	}
 }

@@ -115,7 +115,7 @@ describe('utils', () => {
         });
 
         const decryptionResult = await CryptoProxy.decryptMessage({
-            armoredMessage: encryptedPassword,
+            armoredMessage: encryptedPassword as string,
             decryptionKeys: [mockPrivateKey],
             format: 'utf8',
         });

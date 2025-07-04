@@ -5,13 +5,16 @@ import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 
 import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsContext';
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useRequestPermission } from '../../hooks/useRequestPermission';
 import { PermissionPromptStatus } from '../../types';
 
 import './PermissionRequest.scss';
 
 export const PermissionRequest = () => {
-    const { permissionPromptStatus, setPermissionPromptStatus, setAudioDeviceId, setVideoDeviceId } = useMeetContext();
+    const { setAudioDeviceId, setVideoDeviceId } = useMeetContext();
+
+    const { permissionPromptStatus, setPermissionPromptStatus } = useUIStateContext();
 
     const { setDevicePermissions } = useDevicePermissionsContext();
 

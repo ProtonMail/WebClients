@@ -1,0 +1,25 @@
+.meeting-ready-popup {
+	border-radius: 1.5rem;
+	z-index: 1000;
+}
+
+.copy-meeting-link-button {
+	background-color: var(--interaction-weak);
+
+	&:hover,
+	&:focus-within {
+		background-color: var(--interaction-weak-major-1) !important;
+	}
+}
+
+.meeting-ready-popup-title {
+	margin-block: 1rem;
+}
+
+.meeting-ready-popup-meeting-link {
+	margin-block-start: 1.5rem;
+}
+
+.meeting-ready-popup-meeting-link-text {
+	word-break: break-all;
+}

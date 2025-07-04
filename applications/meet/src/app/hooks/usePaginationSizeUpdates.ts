@@ -2,11 +2,13 @@ import { useEffect, useRef } from 'react';
 
 import { PAGE_SIZE, SCREEN_SHARE_DOUBLE_PAGE_SIZE, SCREEN_SHARE_PAGE_SIZE } from '../constants';
 import { useMeetContext } from '../contexts/MeetContext';
+import { useUIStateContext } from '../contexts/UIStateContext';
 import { useCurrentScreenShare } from './useCurrentScreenShare';
 import { useSortedParticipants } from './useSortedParticipants';
 
 export const usePaginationSizeUpdates = () => {
-    const { page, setPage, pageSize, setPageSize, sideBarState } = useMeetContext();
+    const { page, setPage, pageSize, setPageSize } = useMeetContext();
+    const { sideBarState } = useUIStateContext();
     const { videoTrack } = useCurrentScreenShare();
 
     const { sortedParticipants } = useSortedParticipants();

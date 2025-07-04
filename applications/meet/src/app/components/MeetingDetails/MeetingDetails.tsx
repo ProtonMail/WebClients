@@ -5,10 +5,13 @@ import { IcMeetCopy } from '@proton/icons';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useUIStateContext } from '../../contexts/UIStateContext';
 import { MeetingSideBars } from '../../types';
 
 export const MeetingDetails = () => {
-    const { meetingLink, roomName, sideBarState } = useMeetContext();
+    const { meetingLink, roomName } = useMeetContext();
+
+    const { sideBarState } = useUIStateContext();
 
     if (!sideBarState[MeetingSideBars.MeetingDetails]) {
         return null;

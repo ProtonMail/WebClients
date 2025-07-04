@@ -2,7 +2,7 @@ import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import { ParticipantTile } from './ParticipantTile/ParticipantTile';
 
 export const ParticipantGrid = () => {
-    const { pagedParticipants, sortedParticipants } = useSortedParticipants();
+    const { pagedParticipants } = useSortedParticipants();
 
     const gridTemplateColumns = (participantCount: number) => {
         if (participantCount < 4) {
@@ -30,8 +30,8 @@ export const ParticipantGrid = () => {
                 className="w-full h-full"
                 style={{
                     display: 'grid',
-                    gridTemplateColumns: gridTemplateColumns(sortedParticipants.length),
-                    gridTemplateRows: gridTemplateRows(sortedParticipants.length),
+                    gridTemplateColumns: gridTemplateColumns(pagedParticipants.length),
+                    gridTemplateRows: gridTemplateRows(pagedParticipants.length),
                     gap: '0.6875rem',
                 }}
             >

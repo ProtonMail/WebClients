@@ -5,32 +5,44 @@ import { VideoQuality } from 'livekit-client';
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { PAGE_SIZE } from '../constants';
 import { MeetContext } from '../contexts/MeetContext';
+import { UIStateProvider } from '../contexts/UIStateContext';
 import { useFaceTrackingSetup } from '../hooks/useFaceTrackingSetup';
 import type { MeetChatMessage, ParticipantEventRecord } from '../types';
-import { MeetingSideBars, type ParticipantSettings, PermissionPromptStatus, PopUpControls } from '../types';
+import { type ParticipantSettings } from '../types';
 
 interface MeetContainerProps {
     setParticipantSettings: React.Dispatch<React.SetStateAction<ParticipantSettings | null>>;
     participantSettings: ParticipantSettings;
     setAudioDeviceId: (deviceId: string | null) => void;
-    setVideoDeviceId: (deviceId: string) => void;
+    setAudioOutputDeviceId: (deviceId: string | null) => void;
+    setVideoDeviceId: (deviceId: string | null) => void;
     handleLeave: () => void;
     shareLink: string;
     roomName: string;
     participantNameMap: Record<string, string>;
     getParticipants: () => Promise<void>;
+    instantMeeting: boolean;
 }
 
 export const MeetContainer = ({
     setParticipantSettings,
-    participantSettings: { audioDeviceId, videoDeviceId, isFaceTrackingEnabled, isAudioEnabled, isVideoEnabled },
+    participantSettings: {
+        audioDeviceId,
+        audioOutputDeviceId,
+        videoDeviceId,
+        isFaceTrackingEnabled,
+        isAudioEnabled,
+        isVideoEnabled,
+    },
     setAudioDeviceId,
+    setAudioOutputDeviceId,
     setVideoDeviceId,
     handleLeave,
     shareLink,
     roomName,
     participantNameMap,
     getParticipants,
+    instantMeeting,
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
@@ -40,17 +52,6 @@ export const MeetContainer = ({
     const [chatMessages, setChatMessages] = useState<MeetChatMessage[]>([]);
     const [participantEvents, setParticipantEvents] = useState<ParticipantEventRecord[]>([]);
 
-    const [sideBarState, setSideBarState] = useState({
-        [MeetingSideBars.Participants]: false,
-        [MeetingSideBars.Settings]: false,
-        [MeetingSideBars.Chat]: false,
-        [MeetingSideBars.MeetingDetails]: false,
-    });
-
-    const [popupState, setPopupState] = useState({
-        [PopUpControls.Microphone]: false,
-        [PopUpControls.Camera]: false,
-    });
     const [selfView, setSelfView] = useState(true);
     const [shouldShowConnectionIndicator, setShouldShowConnectionIndicator] = useState(false);
     const [disableVideos, setDisableVideos] = useState(false);
@@ -58,34 +59,6 @@ export const MeetContainer = ({
     const faceTrack = useFaceTrackingSetup({ isFaceTrackingEnabled, videoDeviceId });
 
     const [participantsWithDisabledVideos, setParticipantsWithDisabledVideos] = useState<string[]>([]);
-
-    const [permissionPromptStatus, setPermissionPromptStatus] = useState(PermissionPromptStatus.CLOSED);
-
-    const toggleSideBarState = useCallback(
-        (sidebar: MeetingSideBars) => {
-            setSideBarState((prev) => {
-                const newSidebards = Object.fromEntries(
-                    Object.entries(prev).map(([key, value]) => [key, key === sidebar ? !value : false])
-                ) as Record<MeetingSideBars, boolean>;
-
-                return newSidebards;
-            });
-        },
-        [setSideBarState]
-    );
-
-    const togglePopupState = useCallback(
-        (popup: PopUpControls) => {
-            setPopupState((prev) => {
-                const newPopupState = Object.fromEntries(
-                    Object.entries(prev).map(([key, value]) => [key, key === popup ? !value : false])
-                ) as Record<PopUpControls, boolean>;
-
-                return newPopupState;
-            });
-        },
-        [setPopupState]
-    );
 
     const setIsVideoEnabled = useCallback(
         (isEnabled: boolean) => {
@@ -108,15 +81,13 @@ export const MeetContainer = ({
                     audioDeviceId,
                     videoDeviceId,
                     setAudioDeviceId,
+                    audioOutputDeviceId,
+                    setAudioOutputDeviceId,
                     setVideoDeviceId,
                     roomName,
                     resolution,
                     setResolution,
                     meetingLink: shareLink,
-                    sideBarState,
-                    toggleSideBarState,
-                    popupState,
-                    togglePopupState,
                     chatMessages,
                     setChatMessages,
                     participantEvents,
@@ -138,11 +109,11 @@ export const MeetContainer = ({
                     setDisableVideos,
                     participantsWithDisabledVideos,
                     setParticipantsWithDisabledVideos,
-                    permissionPromptStatus,
-                    setPermissionPromptStatus,
                 }}
             >
-                <MeetingBody isFaceTrackingEnabled={isFaceTrackingEnabled} faceTrack={faceTrack} />
+                <UIStateProvider instantMeeting={instantMeeting}>
+                    <MeetingBody isFaceTrackingEnabled={isFaceTrackingEnabled} faceTrack={faceTrack} />
+                </UIStateProvider>
             </MeetContext.Provider>
         </div>
     );
