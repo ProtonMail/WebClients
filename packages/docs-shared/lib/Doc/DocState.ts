@@ -148,7 +148,11 @@ export class DocState extends Observable<string> implements DocStateInterface {
     }
 
     if (message.type.wrapper === 'du') {
-      this.handleRawSyncMessage(message.content, message.origin)
+      try {
+        this.handleRawSyncMessage(message.content, message.origin)
+      } catch (error) {
+        this.callbacks.handleErrorWhenReceivingDocumentUpdate(error)
+      }
     } else if (message.type.wrapper === 'events') {
       if (message.type.eventType === EventTypeEnum.ClientIsBroadcastingItsPresenceState) {
         awarenessProtocol.applyAwarenessUpdate(this.awareness, message.content, message.origin)
