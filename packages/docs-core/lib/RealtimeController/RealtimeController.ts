@@ -190,7 +190,18 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     } else if (event.type === WebsocketConnectionEvent.DocumentUpdateMessage) {
       const { message } =
         event.payload as WebsocketConnectionEventPayloads[WebsocketConnectionEvent.DocumentUpdateMessage]
-      void this.handleDocumentUpdatesMessage(message)
+      try {
+        void this.handleDocumentUpdatesMessage(message)
+      } catch (error) {
+        if (error instanceof Error) {
+          this.logger.error(error)
+        }
+        PostApplicationError(this.eventBus, {
+          translatedError: c('Error')
+            .t`There was an error processing updates to the document. Please reload the page and try again.`,
+        })
+        this.documentState.setProperty('editorHasRenderingIssue', true)
+      }
     } else if (event.type === WebsocketConnectionEvent.EventMessage) {
       const { message } = event.payload as WebsocketConnectionEventPayloads[WebsocketConnectionEvent.EventMessage]
       void this.handleRealtimeServerEvent(message)

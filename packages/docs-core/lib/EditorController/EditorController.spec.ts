@@ -6,7 +6,7 @@ import { EventType, EventTypeEnum } from '@proton/docs-proto'
 import metrics from '@proton/metrics'
 import type { DocumentStateValues } from '../State/DocumentState'
 import { DocumentState } from '../State/DocumentState'
-import type { ClientRequiresEditorMethods, DecryptedMessage } from '@proton/docs-shared'
+import type { ClientRequiresEditorMethods, DecryptedMessage, InternalEventBusInterface } from '@proton/docs-shared'
 import type { SerializedEditorState } from 'lexical'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
@@ -23,6 +23,7 @@ describe('EditorController', () => {
   let exportAndDownload: any
   let sharedState: DocumentState
   let editorInvoker: jest.Mocked<ClientRequiresEditorMethods>
+  let eventBus: InternalEventBusInterface
 
   beforeEach(() => {
     jest.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(jest.fn())
@@ -60,7 +61,9 @@ describe('EditorController', () => {
       replaceEditorState: jest.fn(),
     } as unknown as jest.Mocked<ClientRequiresEditorMethods>
 
-    controller = new EditorController(logger, exportAndDownload, sharedState)
+    eventBus = {} as InternalEventBusInterface
+
+    controller = new EditorController(logger, exportAndDownload, sharedState, eventBus)
   })
 
   describe('receiveEditor', () => {
@@ -77,7 +80,7 @@ describe('EditorController', () => {
     })
 
     it('should throw error if editor invoker is not initialized', () => {
-      const controller = new EditorController(logger, exportAndDownload, sharedState)
+      const controller = new EditorController(logger, exportAndDownload, sharedState, eventBus)
       expect(() => controller.showEditorForTheFirstTime()).toThrow('Editor invoker not initialized')
     })
 
@@ -153,7 +156,7 @@ describe('EditorController', () => {
     })
 
     it('should do nothing if editor invoker is not initialized', () => {
-      const controller = new EditorController(logger, exportAndDownload, sharedState)
+      const controller = new EditorController(logger, exportAndDownload, sharedState, eventBus)
       controller.reloadEditingLockedState()
       expect(editorInvoker.changeLockedState).not.toHaveBeenCalled()
     })
@@ -320,7 +323,7 @@ describe('EditorController', () => {
     })
 
     it('should throw when exporting without editor invoker', async () => {
-      const controller = new EditorController(logger, exportAndDownload, sharedState)
+      const controller = new EditorController(logger, exportAndDownload, sharedState, eventBus)
       await expect(controller.exportAndDownload('docx')).rejects.toThrow()
     })
 
@@ -390,7 +393,7 @@ describe('EditorController', () => {
     })
 
     it('should throw when calling broadcastPresenceState without editor', () => {
-      const controller = new EditorController(logger, exportAndDownload, sharedState)
+      const controller = new EditorController(logger, exportAndDownload, sharedState, eventBus)
       expect(() => controller.broadcastPresenceState()).toThrow('Editor invoker not initialized')
     })
 
@@ -466,7 +469,7 @@ describe('EditorController', () => {
 
   describe('showCommentsPanel', () => {
     it('should do nothing if editor is not initialized', () => {
-      const controller = new EditorController(logger, exportAndDownload, sharedState)
+      const controller = new EditorController(logger, exportAndDownload, sharedState, eventBus)
       controller.showCommentsPanel()
       expect(editorInvoker.showCommentsPanel).not.toHaveBeenCalled()
     })

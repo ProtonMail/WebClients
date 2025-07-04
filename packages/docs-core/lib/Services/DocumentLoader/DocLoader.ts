@@ -98,7 +98,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
 
     this.documentState = documentState
 
-    const editorController = new EditorController(this.logger, this.exportAndDownload, documentState)
+    const editorController = new EditorController(this.logger, this.exportAndDownload, documentState, this.eventBus)
     this.editorController = editorController
 
     const controller = new AuthenticatedDocController(

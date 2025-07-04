@@ -13,6 +13,7 @@ import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 import type { EditorInitializationConfig } from '@proton/docs-shared/lib/EditorInitializationConfig'
 import { reportErrorToSentry } from '../Utils/errorMessage'
 import { EditorState } from './EditorState'
+import { c } from 'ttag'
 
 export type EditorConfig = {
   editorInitializationConfig?: EditorInitializationConfig
@@ -112,6 +113,20 @@ export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
               states,
             },
           })
+        },
+        handleErrorWhenReceivingDocumentUpdate: (error) => {
+          if (error instanceof Error) {
+            void reportErrorToSentry(error)
+          }
+          void bridge
+            .getClientInvoker()
+            .reportUserInterfaceError(
+              new Error(
+                c('Error')
+                  .t`There was an error processing updates to the document. Please reload the page and try again.`,
+              ),
+              { irrecoverable: false, lockEditor: true },
+            )
         },
       },
       application.logger,
