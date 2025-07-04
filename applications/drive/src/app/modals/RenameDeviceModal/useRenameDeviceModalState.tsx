@@ -8,7 +8,7 @@ import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { useDeviceStore } from '../../sections/devices/devices.store';
-import { useSdkErrorHandler } from '../../utils/errorHandling/sdkErrorHandler';
+import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 
 export type UseRenameDeviceModalProps = ModalStateProps & {
     deviceUid: string;
