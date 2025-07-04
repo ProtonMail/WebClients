@@ -14,7 +14,9 @@ import type { UserPlan } from './lib/telemetry';
 import { initTelemetry } from './lib/telemetry';
 import { useAccount } from './lib/useAccount';
 import { useHttpClient } from './lib/useHttpClient';
+import { useSrpModule } from './lib/useSrpModule';
 
+/* Type export */
 export type {
     Device,
     MaybeNode,
@@ -29,7 +31,10 @@ export type {
     ProtonInvitation,
     NonProtonInvitation,
     Member,
+    ShareNodeSettings,
 } from '@protontech/drive-sdk';
+
+/* Other export */
 export {
     DeviceType,
     NodeType,
@@ -42,7 +47,6 @@ export {
     AbortError,
     RateLimitedError,
     ConnectionError,
-    ShareNodeSettings,
     NonProtonInvitationState,
 } from '@protontech/drive-sdk';
 
@@ -61,6 +65,7 @@ export function useDrive() {
     const [debug] = useLocalState(false, 'proton-drive-debug');
     const httpClient = useHttpClient(appVersionHeaders);
     const account = useAccount();
+    const srpModule = useSrpModule();
     const openPGPCryptoModule = initOpenPGPCryptoModule();
 
     /**
@@ -94,12 +99,11 @@ export function useDrive() {
                 cryptoCache: new MemoryCache(),
                 account,
                 openPGPCryptoModule,
+                srpModule,
                 config: {
                     baseUrl: `${window.location.host}/api`,
                 },
                 telemetry,
-                // @ts-expect-error TODO: add srp module with public link management
-                srpModule: undefined,
             });
 
             memoryLogHandlerSingleton = memoryLogHandler;

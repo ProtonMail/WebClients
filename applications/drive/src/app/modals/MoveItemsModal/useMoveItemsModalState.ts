@@ -7,7 +7,7 @@ import { useDrive } from '@proton/drive';
 
 import { type DecryptedLink, useDriveEventManager, useTreeForModals } from '../../store';
 import useListNotifications from '../../store/_actions/useListNotifications';
-import { useSdkErrorHandler } from '../../utils/errorHandling/sdkErrorHandler';
+import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { CreateFolderModal } from '../CreateFolderModal';
 
 export type UseMoveItemsModalStateProps = ModalStateProps & {

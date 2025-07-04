@@ -9,7 +9,7 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import { useDriveEventManager } from '../../store';
-import { useSdkErrorHandler } from '../../utils/errorHandling/sdkErrorHandler';
+import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 
 export type UseRenameModalProps = ModalStateProps & {
     onClose?: () => void;

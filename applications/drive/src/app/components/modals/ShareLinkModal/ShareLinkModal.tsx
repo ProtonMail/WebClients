@@ -1,5 +1,6 @@
 import type { MouseEvent } from 'react';
 import { useEffect, useMemo, useState } from 'react';
+import { useLocation } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 
@@ -332,6 +333,8 @@ function SharingModalInner({
 }
 
 export const useLinkSharingModal = () => {
+    const location = useLocation();
+    const isAlbumRoute = location.pathname.includes('/photos/');
     const useSDKModal = useFlag('DriveWebSDKSharingModal');
-    return useModalTwoStatic(useSDKModal ? SharingModal : SharingModalDeprecated);
+    return useModalTwoStatic(useSDKModal && !isAlbumRoute ? SharingModal : SharingModalDeprecated);
 };

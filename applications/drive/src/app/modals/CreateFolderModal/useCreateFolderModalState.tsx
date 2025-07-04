@@ -8,7 +8,7 @@ import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/c
 import { useDrive } from '@proton/drive';
 
 import { formatLinkName, useDriveEventManager, validateLinkNameField } from '../../store';
-import { useSdkErrorHandler } from '../../utils/errorHandling/sdkErrorHandler';
+import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 
 export type UseCreateFolderModalStateProps = ModalStateProps & {
     parentFolderUid?: string;

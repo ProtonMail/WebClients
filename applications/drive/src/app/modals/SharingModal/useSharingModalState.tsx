@@ -5,26 +5,25 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components';
 import { useNotifications } from '@proton/components';
-import { type ShareNodeSettings, type ShareResult, useDrive } from '@proton/drive/index';
+import { MemberRole, type ShareNodeSettings, type ShareResult, useDrive } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { useDriveEventManager, useShareURLView } from '../../store';
-import { useSdkErrorHandler } from '../../utils/errorHandling/sdkErrorHandler';
+import { useFlagsDriveDocsPublicSharing } from '../../flags/useFlagsDriveDocsPublicSharing';
+// TODO: Remove this when events will be managed by sdk
+import { useDriveEventManager } from '../../store';
+import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { type SharingModalViewProps } from './SharingModalView';
+import { type DirectMember, MemberType } from './interfaces';
 
 export type UseSharingModalProps = ModalStateProps & {
     volumeId: string;
     shareId: string;
     linkId: string;
     onPublicLinkToggle?: (enabled: boolean) => void;
-    /**
-     * Escape hatch that is necessary for Docs. Please do not use unless you know what you are doing.
-     *
-     * The reason behind this workaround is stale cache issues. See MR for more details.
-     */
-    registerOverriddenNameListener?: (listener: (name: string) => void) => void;
 };
 
 const defaultSharingInfo = {
@@ -36,51 +35,21 @@ const defaultSharingInfo = {
 
 export const useSharingModalState = ({
     volumeId,
-    shareId: rootShareId,
     linkId,
     onClose,
     onPublicLinkToggle,
-    registerOverriddenNameListener,
     open,
     onExit,
-}: UseSharingModalProps) => {
-    const {
-        customPassword,
-        initialExpiration,
-        name: originalName,
-        deleteLink,
-        stopSharing,
-        sharedLink,
-        permissions,
-        updatePermissions,
-        hasSharedLink,
-        errorMessage,
-        loadingMessage,
-        confirmationMessage,
-        hasGeneratedPasswordIncluded,
-        createSharedLink,
-        saveSharedLink,
-        isSaving,
-        isDeleting,
-        isCreating,
-        isShareUrlLoading,
-        isShareUrlEnabled,
-    } = useShareURLView(rootShareId, linkId);
-
+}: UseSharingModalProps): SharingModalViewProps => {
     const events = useDriveEventManager();
+
+    const { isDocsPublicSharingEnabled } = useFlagsDriveDocsPublicSharing();
 
     const { handleError } = useSdkErrorHandler();
 
     const { createNotification } = useNotifications();
 
     const [user] = useUser();
-
-    const [overriddenName, setOverriddenName] = useState<string>();
-    useEffect(() => {
-        registerOverriddenNameListener?.(setOverriddenName);
-    }, [registerOverriddenNameListener]);
-
-    const name = overriddenName ?? originalName;
 
     const { drive, internal } = useDrive();
 
@@ -92,15 +61,16 @@ export const useSharingModalState = ({
 
     const [ownerEmail, setOwnerEmail] = useState<string | undefined>();
 
+    const [name, setName] = useState('');
+
+    const [isPublicLinkEnabled, setIsPublicLinkEnabled] = useState(true);
+
     const isDirectShared =
         sharingInfo.protonInvitations.length > 0 ||
         sharingInfo.nonProtonInvitations.length > 0 ||
         sharingInfo.members.length > 0;
-    const isPublicShared =
-        !!sharingInfo.publicLink ||
-        // TODO: Remove that when implementing public link with sdk
-        hasSharedLink;
-    const isShared = isDirectShared && isPublicShared;
+    const isPublicShared = !!sharingInfo.publicLink;
+    const isShared = isDirectShared || isPublicShared;
 
     const unshareNode = async (email: string) => {
         try {
@@ -122,22 +92,88 @@ export const useSharingModalState = ({
         }
     };
 
-    const updateShareNode = async (shareNodeSettings: ShareNodeSettings) => {
+    const unsharePublic = async () => {
         try {
-            const updatedShareResult = await drive.shareNode(nodeUid, shareNodeSettings);
-            createNotification({ type: 'info', text: c('Notification').t`Access updated and shared` });
+            const updatedShareResult = await drive.unshareNode(nodeUid, {
+                publicLink: 'remove',
+            });
+            createNotification({ text: c('Notification').t`The link to your item was deleted` });
+            setSharingInfo(updatedShareResult || defaultSharingInfo);
+            // TODO: Remove when implemented in SDK
+            void events.pollEvents.volumes(volumeId);
+        } catch (e) {
+            handleError(e, c('Error').t`The link to your item failed to be deleted`, { nodeUid });
+        }
+    };
+
+    const createSharePublic = async () => {
+        try {
+            const updatedShareResult = await drive.shareNode(nodeUid, {
+                publicLink: {
+                    role: MemberRole.Viewer,
+                },
+            });
             setSharingInfo(updatedShareResult);
             // TODO: Remove when implemented in SDK
             void events.pollEvents.volumes(volumeId);
         } catch (e) {
-            handleError(e, c('Error').t`Failed to update share node`, { nodeUid });
+            handleError(e, c('Error').t`Failed to create public share node`, { nodeUid });
         }
     };
 
-    // TODO: Remove that when publicLink will be working on sdk
+    const updateSharePublic = async (publicLinkSettings: {
+        role?: MemberRole;
+        customPassword?: string;
+        expiration?: Date;
+    }) => {
+        try {
+            // For safety if one of the value is not passed, we used the actual one
+            // Otherwise not passing it will either remove it or set as default
+            const updatedShareResult = await drive.shareNode(nodeUid, {
+                publicLink: {
+                    role: publicLinkSettings.role || sharingInfo.publicLink?.role || MemberRole.Viewer,
+                    expiration: publicLinkSettings.expiration || sharingInfo.publicLink?.expirationTime,
+                    customPassword: publicLinkSettings.customPassword || sharingInfo.publicLink?.customPassword,
+                },
+            });
+
+            if (publicLinkSettings.role) {
+                createNotification({ text: c('Notification').t`Public link access updated` });
+            } else {
+                createNotification({ text: c('Notification').t`Your settings have been changed successfully` });
+            }
+
+            setSharingInfo(updatedShareResult);
+            // TODO: Remove when implemented in SDK
+            void events.pollEvents.volumes(volumeId);
+        } catch (e) {
+            handleError(e, c('Error').t`Failed to update public share node`, { nodeUid });
+        }
+    };
+
+    const updateShareDirect = async (directShareSettings: Omit<ShareNodeSettings, 'publicLink'>) => {
+        try {
+            const updatedShareResult = await drive.shareNode(nodeUid, directShareSettings);
+            createNotification({ type: 'info', text: c('Notification').t`Access updated and shared` });
+
+            setSharingInfo(updatedShareResult);
+            // TODO: Remove when implemented in SDK
+            void events.pollEvents.volumes(volumeId);
+        } catch (e) {
+            handleError(e, c('Error').t`Failed to update direct share node`, { nodeUid });
+        }
+    };
+
     const stopSharingWithPollEvents = async () => {
-        await stopSharing();
-        await events.pollEvents.volumes(volumeId);
+        try {
+            const updatedShareResult = await drive.unshareNode(nodeUid);
+            setSharingInfo(updatedShareResult || defaultSharingInfo);
+            // TODO: Remove when implemented in SDK
+            await events.pollEvents.volumes(volumeId);
+            createNotification({ text: c('Notification').t`You stopped sharing this item` });
+        } catch (e) {
+            handleError(e, c('Error').t`Stopping the sharing of this item has failed`, { nodeUid });
+        }
     };
 
     const resendInvitation = async (invitationUid: string) => {
@@ -166,12 +202,19 @@ export const useSharingModalState = ({
                 if (nodeInfo.ok && nodeInfo.value.keyAuthor.ok && nodeInfo.value.keyAuthor.value) {
                     setOwnerEmail(nodeInfo.value.keyAuthor.value);
                 }
+                if (nodeInfo.ok) {
+                    setName(nodeInfo.value.name);
+                    if (nodeInfo.value.mediaType && isProtonDocsDocument(nodeInfo.value.mediaType)) {
+                        setIsPublicLinkEnabled(isDocsPublicSharingEnabled);
+                    }
+                    setIsPublicLinkEnabled(true);
+                }
             } catch (e) {
                 handleError(e, c('Error').t`Failed to fetch node`, { nodeUid });
             }
         };
         void withLoading(Promise.all([fetchSharingInfo(), fetchNodeInfo()]));
-    }, [drive, handleError, nodeUid, withLoading]);
+    }, [drive, handleError, isDocsPublicSharingEnabled, nodeUid, withLoading]);
 
     const copyInvitationLink = (invitationUid: string, email: string) => {
         const { invitationId } = internal.splitInvitationUid(invitationUid);
@@ -183,48 +226,61 @@ export const useSharingModalState = ({
     // TODO: Update with logic when we will be able to retrieve real DisplayName of any user
     const ownerDisplayName = user.Email === ownerEmail && user.DisplayName ? user.DisplayName : undefined;
 
-    // TODO: Update that when we will have sdk public link
-    const handleDeleteLink = async () => {
-        await deleteLink(!isDirectShared ? () => stopSharing(false) : undefined);
-    };
+    const directMembers: DirectMember[] = sharingInfo.members
+        .map((member) => ({
+            uid: member.uid,
+            inviteeEmail: member.inviteeEmail,
+            role: member.role,
+            type: MemberType.Member,
+        }))
+        .concat(
+            sharingInfo.protonInvitations.map((protonInvitation) => ({
+                uid: protonInvitation.uid,
+                inviteeEmail: protonInvitation.inviteeEmail,
+                role: protonInvitation.role,
+                type: MemberType.ProtonInvitation,
+            }))
+        )
+        .concat(
+            sharingInfo.nonProtonInvitations.map((nonProtonInvitation) => ({
+                uid: nonProtonInvitation.uid,
+                inviteeEmail: nonProtonInvitation.inviteeEmail,
+                role: nonProtonInvitation.role,
+                state: nonProtonInvitation.state,
+                type: MemberType.ProtonInvitation,
+            }))
+        );
 
     return {
         open,
         onExit,
         onClose,
-        isLoading,
-        isSaving,
-        isDeleting,
-        isCreating,
-        isShareUrlLoading,
+        linkId,
         name,
         ownerDisplayName,
         ownerEmail,
-        volumeId,
-        linkId,
-        sharedLink,
-        permissions,
-        members: sharingInfo.members,
-        protonInvitations: sharingInfo.protonInvitations,
-        nonProtonInvitations: sharingInfo.nonProtonInvitations,
-        customPassword,
-        initialExpiration,
-        hasGeneratedPasswordIncluded,
-        confirmationMessage,
-        isShareUrlEnabled,
-        errorMessage,
-        loadingMessage,
+        isLoading,
         isShared,
-        hasSharedLink,
-        unshareNode,
-        updateShareNode,
-        resendInvitation,
-        copyInvitationLink,
-        deleteLink: handleDeleteLink,
-        onPublicLinkToggle,
-        createSharedLink,
-        saveSharedLink,
-        updatePermissions,
-        stopSharing: stopSharingWithPollEvents,
+        isPublicLinkEnabled,
+        publicLink: sharingInfo.publicLink
+            ? {
+                  role: sharingInfo.publicLink.role,
+                  url: sharingInfo.publicLink.url,
+                  customPassword: sharingInfo.publicLink.customPassword,
+                  expirationTime: sharingInfo.publicLink.expirationTime,
+              }
+            : undefined,
+        directMembers,
+        actions: {
+            unshareNode,
+            unsharePublic,
+            createSharePublic,
+            updateShareDirect,
+            updateSharePublic,
+            resendInvitation,
+            copyInvitationLink,
+            onPublicLinkToggle,
+            stopSharing: stopSharingWithPollEvents,
+        },
     };
 };
