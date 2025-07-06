@@ -2,6 +2,8 @@ import { c, msgid } from 'ttag';
 
 import useApi from '@proton/components/hooks/useApi';
 import { useFetchData } from '@proton/components/hooks/useFetchData';
+import { PLANS } from '@proton/payments';
+import type { Organization } from '@proton/shared/lib/interfaces';
 
 import type { Gateway } from './Gateway';
 import type { GatewayLocation } from './GatewayLocation';
@@ -61,11 +63,30 @@ const getDefaultConfig = (nbDay: number) => {
     };
 };
 
-export const useGateways = (maxAge: number) => {
+export const useGateways = (organization: Organization | undefined, maxAge: number) => {
     const api = useApi();
+
+    const hasGatewaysAccess = organization && (
+        organization.PlanName === PLANS.VPN_BUSINESS ||
+        organization.PlanName === PLANS.BUNDLE_PRO ||
+        organization.PlanName === PLANS.BUNDLE_PRO_2024
+    );
+
+    // If there’s no result yet, define fallback config
+    const nbDay = 7;
 
     // Specialized fetcher for Gateways
     const fetcher = async () => {
+        if (!hasGatewaysAccess) {
+            return {
+                Config: getDefaultConfig(nbDay),
+                Countries: [],
+                Locations: [],
+                Gateways : [],
+                Users: [],
+            };
+        }
+
         return api<GatewayResult>(queryVPNGateways());
     };
 
@@ -75,10 +96,8 @@ export const useGateways = (maxAge: number) => {
         maxAge,
     });
 
-    // If there’s no result yet, define fallback config
-    const nbDay = 7;
-
     return {
+        hasGatewaysAccess,
         loading,
         config: result?.Config || getDefaultConfig(nbDay),
         locations: result?.Locations,
