@@ -16,7 +16,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { PLANS, getCountryOptions, getVPNDedicatedIPs } from '@proton/payments';
+import { getCountryOptions, getVPNDedicatedIPs } from '@proton/payments';
 import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -67,6 +67,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const [deletingLogicals, setDeletingLogicals] = useState<readonly string[]>([]);
     const [updatedLogicals, setUpdatedLogicals] = useState<Record<string, GatewayLogical>>({});
     const {
+        hasGatewaysAccess,
         config: {
             Table: { IPv4, IPv6, Load, Deleted },
             ServerTable: serverTableConfig,
@@ -76,7 +77,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         locations,
         gateways,
         refresh,
-    } = useGateways(10 * MINUTE);
+    } = useGateways(organization, 10 * MINUTE);
     const refreshList = async () => {
         setUpdatedLogicals({});
         await refresh();
@@ -150,10 +151,6 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
     const countryOptions = getCountryOptions(userSettings);
 
-    const hasGatewaysAccess =
-        organization.PlanName === PLANS.VPN_BUSINESS ||
-        organization.PlanName === PLANS.BUNDLE_PRO ||
-        organization.PlanName === PLANS.BUNDLE_PRO_2024;
     if (!hasGatewaysAccess) {
         const boldDedicatedServers = (
             <b key="bold-dedicated-servers">{
