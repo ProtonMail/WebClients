@@ -3,11 +3,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import PlusUnlimitedComparison from '@proton/components/containers/payments/subscription/PlusUnlimitedComparison';
 import { useLoading } from '@proton/hooks';
 import { type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
-
-import { getFreeTitle } from '../helper';
-import PlanComparison from './PlanComparison';
+import { getFreeTitle } from '@proton/shared/lib/apps/i18n';
 
 interface Props extends ModalProps {
     appName: string;
@@ -46,7 +45,7 @@ const SubUserModal = ({
                     {c('pass_signup_2023: Info')
                         .t`Your organization has access to ${free}. If you want to access premium ${appName} features, please ask your organization's administrator to upgrade.`}
                 </div>
-                <PlanComparison
+                <PlusUnlimitedComparison
                     dark={dark}
                     plansMap={plansMap}
                     upsellPlan={upsellPlan}
@@ -75,7 +74,7 @@ const SubUserModal = ({
                     >
                         {c('pass_signup_2023: Action').t`Create another account instead`}
                     </Button>
-                </PlanComparison>
+                </PlusUnlimitedComparison>
             </ModalTwoContent>
         </ModalTwo>
     );
