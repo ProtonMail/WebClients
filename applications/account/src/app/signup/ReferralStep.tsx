@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { Button, CircleLoader, Tooltip } from '@proton/atoms';
-import { ReferralFeaturesList, useConfig } from '@proton/components';
+import { ReferralFeaturesListLegacy, useConfig } from '@proton/components';
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
@@ -98,7 +98,7 @@ const ReferralStep = ({ paymentsApi, onSubscriptionData, onBack }: Props) => {
                     {c('Baseline in trial plan')
                         .t`${mailPlus}: the privacy-first Mail and Calendar solution for your everyday communications needs.`}
                 </Text>
-                <ReferralFeaturesList />
+                <ReferralFeaturesListLegacy />
                 <div className="text-center mb-2">
                     {statusLoading ? (
                         <CircleLoader className="color-primary" size="small" />
