@@ -14,17 +14,20 @@ import { sendEmailInvitation } from '@proton/shared/lib/api/core/referrals';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PROTONMAIL_DOMAINS, getEmailParts } from '@proton/shared/lib/helpers/email';
 import type { Recipient, Referral } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
 import InviteSendEmailRecipient from './InviteSendEmailRecipient';
 import { deduplicateRecipients, filterContactEmails, isValidEmailAdressToRefer } from './helpers';
+
+import './InviteSendEmail.scss';
 
 interface SendEmailInvitationResult {
     Code: number;
     Referrals: Referral[];
 }
 
-const InviteSendEmail = () => {
+const InviteSendEmail = ({ className }: { className?: string }) => {
     const api = useApi();
     const {
         invitedReferralsState: [invitedReferrals, setInvitedReferrals],
@@ -138,56 +141,56 @@ const InviteSendEmail = () => {
     }, [protonDomains, recipients]);
 
     return (
-        <div>
+        <div className={clsx('flex flex-column gap-4', className)}>
             <h2 className="h3 text-bold" id="id_desc_invite_email">{c('Label').t`Invite via email`}</h2>
-            <div className="flex gap-2 flex-nowrap items-end flex-column md:flex-row rounded">
-                <div className="md:flex-1 w-full md:w-auto">
-                    <div
-                        className="addresses-wrapper field h-auto flex gap-2 px-2"
-                        onClick={() => {
-                            anchorRef.current?.focus();
-                        }}
-                    >
-                        {recipients.map((recipient) => (
-                            <InviteSendEmailRecipient
-                                protonDomains={protonDomains}
-                                key={recipient.Address}
-                                recipient={recipient}
-                                isValid={isValidEmailAdressToRefer(protonDomains, recipient.Address)}
-                                onDeleteRecipient={(e) => {
-                                    e.stopPropagation();
-                                    setRecipients(recipients.filter((rec) => rec.Address !== recipient.Address));
-                                }}
-                            />
-                        ))}
-                        <div className="flex-1 flex referral-program-invite-input">
-                            <AddressesAutocomplete
-                                id="recipientsAutocomplete"
-                                className="border-none p-1"
-                                ref={anchorRef}
-                                anchorRef={anchorRef}
-                                loading={contactEmailIsLoading}
-                                recipients={recipients}
-                                contactEmails={filteredContactEmails}
-                                hasEmailPasting
-                                hasAddOnBlur
-                                onAddRecipients={onAutocompleteAddRecipient}
-                                onKeyDown={onAutocompleteKeyDown}
-                                aria-labelledby="id_desc_invite_email"
-                            />
-                        </div>
+            <div className="flex gap-2 flex-column lg:flex-row">
+                <div
+                    className="flex-auto field flex gap-2 px-2"
+                    style={{
+                        blockSize: 'unset',
+                    }}
+                    onClick={() => {
+                        anchorRef.current?.focus();
+                    }}
+                >
+                    {recipients.map((recipient) => (
+                        <InviteSendEmailRecipient
+                            protonDomains={protonDomains}
+                            key={recipient.Address}
+                            recipient={recipient}
+                            isValid={isValidEmailAdressToRefer(protonDomains, recipient.Address)}
+                            onDeleteRecipient={(e) => {
+                                e.stopPropagation();
+                                setRecipients(recipients.filter((rec) => rec.Address !== recipient.Address));
+                            }}
+                        />
+                    ))}
+                    <div className="flex-1 flex referral-program-invite-input">
+                        <AddressesAutocomplete
+                            id="recipientsAutocomplete"
+                            className="border-none p-1"
+                            ref={anchorRef}
+                            anchorRef={anchorRef}
+                            loading={contactEmailIsLoading}
+                            recipients={recipients}
+                            contactEmails={filteredContactEmails}
+                            hasEmailPasting
+                            hasAddOnBlur
+                            onAddRecipients={onAutocompleteAddRecipient}
+                            onKeyDown={onAutocompleteKeyDown}
+                            aria-labelledby="id_desc_invite_email"
+                        />
                     </div>
                 </div>
-                <div className="shrink-0 text-right">
+                <div className="flex justify-end flex-auto">
                     <Button
-                        title={c('Button').t`Invite`}
                         color="norm"
                         onClick={handleSendEmails}
                         loading={apiLoading || contactEmailIsLoading}
                         disabled={hasInvalidRecipients}
                     >
                         <span className="flex flex-nowrap items-center">
-                            <Icon name="paper-plane" className="mr-1 shrink-0" /> {c('Button').t`Send`}
+                            <Icon name="paper-plane" className="mr-2 shrink-0" /> {c('Button').t`Send`}
                         </span>
                     </Button>
                 </div>

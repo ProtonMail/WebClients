@@ -41,7 +41,7 @@ const InviteSendEmailRecipient = ({ protonDomains, recipient, onDeleteRecipient,
                 </span>
             </Tooltip>
             <Tooltip title={c('Action').t`Remove`}>
-                <button onClick={onDeleteRecipient} className="flex shrink-0 px-1 interactive">
+                <button type="button" onClick={onDeleteRecipient} className="flex shrink-0 px-1 interactive">
                     <Icon name="cross-small" className="m-auto" alt={c('Action').t`Remove`} />
                 </button>
             </Tooltip>

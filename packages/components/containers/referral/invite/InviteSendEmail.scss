@@ -1,0 +1,14 @@
+@import '~@proton/styles/scss/lib';
+
+.referral-program-invite-input {
+	flex-basis: 7em;
+
+	.field {
+		block-size: auto;
+		padding: 0;
+		border: none;
+		border-radius: 0;
+		background: inherit;
+		box-shadow: none;
+	}
+}

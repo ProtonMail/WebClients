@@ -29,6 +29,7 @@ export const VerticalStep = ({
     icon,
     status = VerticalStepStatusEnum.Next,
     className,
+    children,
     ...rest
 }: VerticalStepProps) => {
     return (
@@ -61,6 +62,7 @@ export const VerticalStep = ({
                 {description ? (
                     <span className={clsx(['text-sm', status !== 'passed' && 'color-weak'])}>{description}</span>
                 ) : null}
+                {children}
             </div>
         </li>
     );
