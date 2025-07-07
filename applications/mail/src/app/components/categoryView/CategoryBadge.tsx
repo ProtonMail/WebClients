@@ -1,5 +1,25 @@
-import { Badge, useTheme } from '@proton/components';
+import { useState } from 'react';
+
+import { Button, CircleLoader } from '@proton/atoms';
+import {
+    Badge,
+    Dropdown,
+    DropdownMenu,
+    DropdownMenuButton,
+    Icon,
+    useApi,
+    useEventManager,
+    useNotifications,
+    usePopperAnchor,
+    useTheme,
+} from '@proton/components';
+import useLoading from '@proton/hooks/useLoading';
+import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
+import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import clsx from '@proton/utils/clsx';
+
+import { isMessage } from 'proton-mail/helpers/elements';
+import type { Element } from 'proton-mail/models/element';
 
 import { categoryBadgeMapping } from './categoryViewConstants';
 import { isLabelIDCaregoryKey } from './categoryViewHelpers';
@@ -8,34 +28,138 @@ import { useCategoryViewExperiment } from './useCategoryViewExperiment';
 import './CategoryBadge.scss';
 
 interface Props {
+    element?: Element;
     labelIDs?: string[];
     className?: string;
 }
 
-export const CategoryBadge = ({ labelIDs, className }: Props) => {
+export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
     const theme = useTheme();
     const { canSeeCategoryLabel } = useCategoryViewExperiment();
 
-    if (!labelIDs || !canSeeCategoryLabel) {
+    const api = useApi();
+
+    const [labelValue, setLabelValue] = useState(() =>
+        (labelIDs || []).find((labelID) => isLabelIDCaregoryKey(labelID))
+    );
+
+    const { call } = useEventManager();
+    const [loading, withLoading] = useLoading(false);
+    const { createNotification } = useNotifications();
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+
+    if (!labelValue || !canSeeCategoryLabel) {
         return null;
     }
 
-    // find if one of the labelID is a category key
-    const labelID = labelIDs.find((labelID) => isLabelIDCaregoryKey(labelID));
-    if (!labelID) {
+    const data = categoryBadgeMapping[labelValue];
+    if (!data) {
         return null;
     }
 
-    const data = categoryBadgeMapping[labelID];
-    return data ? (
-        <Badge
-            className={clsx(
-                'text-semibold w-fit-content shrink-0',
-                theme.information.dark ? data.darkClassName : data.className,
-                className
-            )}
-        >
-            {data.label}
-        </Badge>
-    ) : null;
+    const handleCategoryClick = async (category: string) => {
+        if (!element) {
+            return;
+        }
+
+        toggle();
+
+        const newLabelPayload = {
+            LabelID: category,
+            IDs: [element.ID],
+        };
+
+        const unlabelPayload = {
+            LabelID: labelValue,
+            IDs: [element.ID],
+        };
+
+        const promises = [];
+        if (isMessage(element)) {
+            promises.push(api(labelMessages(newLabelPayload)));
+            promises.push(api(unlabelMessages(unlabelPayload)));
+        } else {
+            promises.push(api(labelConversations(newLabelPayload)));
+            promises.push(api(unlabelConversations(unlabelPayload)));
+        }
+
+        await Promise.all(promises);
+        setLabelValue(category);
+
+        createNotification({
+            text: 'The category has been updated, thanks for your feedback!',
+        });
+
+        await call();
+    };
+
+    return (
+        <>
+            <button
+                ref={anchorRef}
+                onClick={(e) => {
+                    e.stopPropagation();
+
+                    toggle();
+                }}
+                disabled={loading}
+                className={clsx(
+                    'badge-label-norm text-semibold w-fit-content shrink-0 flex items-center gap-2',
+                    theme.information.dark ? data.darkClassName : data.className,
+                    className
+                )}
+            >
+                {loading && <CircleLoader size="small" />}
+                {data.label}
+            </button>
+
+            <Dropdown anchorRef={anchorRef} isOpen={isOpen} originalPlacement="bottom" onClose={close}>
+                <DropdownMenu className="p-3">
+                    <p className="p-0 px-4 mb-2 text-sm color-weak">Select a category that best match this message</p>
+                    {Object.entries(categoryBadgeMapping).map(([key, value]) => {
+                        if (key === labelValue) {
+                            return null;
+                        }
+
+                        return (
+                            <DropdownMenuButton
+                                key={key}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    void withLoading(handleCategoryClick(key));
+                                }}
+                                className="text-left"
+                                disabled={loading}
+                            >
+                                <Badge
+                                    className={clsx(
+                                        'text-semibold w-fit-content shrink-0',
+                                        theme.information.dark ? value.darkClassName : value.className
+                                    )}
+                                >
+                                    <span className="flex items-center gap-2">
+                                        {loading ? <CircleLoader size="small" /> : <Icon name={value.icon} size={3} />}
+                                        {value.label}
+                                    </span>
+                                </Badge>
+                            </DropdownMenuButton>
+                        );
+                    })}
+                    <hr className="my-2 bg-weak" />
+                    <Button
+                        size="tiny"
+                        color="weak"
+                        className="text-right mx-2 px-4"
+                        shape="underline"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            toggle();
+                        }}
+                    >
+                        Cancel
+                    </Button>
+                </DropdownMenu>
+            </Dropdown>
+        </>
+    );
 };
