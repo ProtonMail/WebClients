@@ -68,7 +68,7 @@ export const handleUpdateRejection = (
 
     stateValue.tabs.active.ids.splice(originalIndex, 0, subscriptionId);
     stateValue.tabs.active.totalCount = safeIncreaseCount(stateValue.tabs.active.totalCount);
-    stateValue.deletingSubscriptionId = undefined;
+    stateValue.unsubscribingSubscriptionId = undefined;
 };
 
 export const handleUnsubscribePending = (
@@ -95,7 +95,7 @@ export const handleUnsubscribePending = (
     if (originalIndex !== -1) {
         stateValue.tabs.active.totalCount = safeDecreaseCount(stateValue.tabs.active.totalCount);
         // We don't remove the ID of the active tab now, we do this once the animation is done
-        stateValue.deletingSubscriptionId = subscriptionId;
+        stateValue.unsubscribingSubscriptionId = subscriptionId;
     }
 
     stateValue.tabs.unsubscribe.ids.unshift(subscriptionId);
