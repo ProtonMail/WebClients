@@ -79,7 +79,7 @@ const modelThunk = createAsyncModelThunk<
                 selectedTab: SubscriptionTabs.Active,
                 selectedSubscriptionId,
                 selectedElementId: undefined,
-                deletingSubscriptionId: undefined,
+                unsubscribingSubscriptionId: undefined,
             };
         } catch (error) {
             return {

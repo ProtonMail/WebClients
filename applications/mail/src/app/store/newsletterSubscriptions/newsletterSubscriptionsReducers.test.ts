@@ -84,7 +84,7 @@ describe('Newsletter subscription reducers', () => {
                 selectedTab: SubscriptionTabs.Active,
                 selectedSubscriptionId: undefined,
                 selectedElementId: undefined,
-                deletingSubscriptionId: undefined,
+                unsubscribingSubscriptionId: undefined,
             },
             error: null,
             meta: {
@@ -230,11 +230,11 @@ describe('Newsletter subscription reducers', () => {
 
     describe('deleteSubscriptionAnimationEndedReducer', () => {
         it('should reset the deleting subscription id', () => {
-            state.value!.deletingSubscriptionId = '1';
+            state.value!.unsubscribingSubscriptionId = '1';
 
             deleteSubscriptionAnimationEndedReducer(state);
 
-            expect(state.value?.deletingSubscriptionId).toBeUndefined();
+            expect(state.value?.unsubscribingSubscriptionId).toBeUndefined();
         });
 
         it('should return undefined if the state is not initialized', () => {
@@ -291,7 +291,7 @@ describe('Newsletter subscription reducers', () => {
             expect(testState.value?.tabs.unsubscribe.ids).toEqual([activeSubscription.ID]);
             expect(testState.value?.tabs.unsubscribe.totalCount).toEqual(1);
 
-            expect(testState.value?.deletingSubscriptionId).toEqual(activeSubscription.ID);
+            expect(testState.value?.unsubscribingSubscriptionId).toEqual(activeSubscription.ID);
         });
 
         it('should unselect the subscription if it is the one currently selected', () => {
@@ -375,7 +375,7 @@ describe('Newsletter subscription reducers', () => {
             });
 
             expect(state.value?.selectedSubscriptionId).toEqual(activeSubscription.ID);
-            expect(state.value?.deletingSubscriptionId).toBeUndefined();
+            expect(state.value?.unsubscribingSubscriptionId).toBeUndefined();
         });
 
         it('should not reset the selected subscription if selected', () => {
@@ -785,7 +785,7 @@ describe('Newsletter subscription reducers', () => {
 
             expect(state.value?.tabs.unsubscribe.ids).toEqual([activeSubscription.ID]);
             expect(state.value?.tabs.unsubscribe.totalCount).toEqual(1);
-            expect(state.value?.deletingSubscriptionId).toEqual(activeSubscription.ID);
+            expect(state.value?.unsubscribingSubscriptionId).toEqual(activeSubscription.ID);
         });
 
         it('should unselect the subscription if it is the one currently selected', () => {
@@ -808,7 +808,7 @@ describe('Newsletter subscription reducers', () => {
 
             expect(state.value?.tabs.unsubscribe.ids).toEqual([activeSubscription.ID]);
             expect(state.value?.tabs.unsubscribe.totalCount).toEqual(1);
-            expect(state.value?.deletingSubscriptionId).toEqual(activeSubscription.ID);
+            expect(state.value?.unsubscribingSubscriptionId).toEqual(activeSubscription.ID);
         });
 
         it('should return undefined if the state is not initialized', () => {
@@ -881,7 +881,7 @@ describe('Newsletter subscription reducers', () => {
             });
 
             expect(state.value?.selectedSubscriptionId).toEqual(activeSubscription.ID);
-            expect(state.value?.deletingSubscriptionId).toBeUndefined();
+            expect(state.value?.unsubscribingSubscriptionId).toBeUndefined();
         });
 
         it('should not reset the selected subscription if selected', () => {
