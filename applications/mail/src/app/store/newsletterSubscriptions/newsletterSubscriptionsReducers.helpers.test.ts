@@ -84,7 +84,7 @@ describe('newsletterSubscriptions reducers helpers', () => {
                     selectedTab: 'active',
                     selectedSubscriptionId: '1',
                     selectedElementId: undefined,
-                    deletingSubscriptionId: undefined,
+                    unsubscribingSubscriptionId: undefined,
                 },
                 error: undefined,
                 meta: {
@@ -135,7 +135,7 @@ describe('newsletterSubscriptions reducers helpers', () => {
                     selectedTab: 'active',
                     selectedSubscriptionId: undefined,
                     selectedElementId: undefined,
-                    deletingSubscriptionId: undefined,
+                    unsubscribingSubscriptionId: undefined,
                 },
                 error: undefined,
                 meta: {

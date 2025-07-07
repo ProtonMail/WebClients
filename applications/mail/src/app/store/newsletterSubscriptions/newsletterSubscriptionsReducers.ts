@@ -105,7 +105,7 @@ export const deleteSubscriptionAnimationEndedReducer = (state: NewsletterSubscri
         return;
     }
 
-    stateValue.deletingSubscriptionId = undefined;
+    stateValue.unsubscribingSubscriptionId = undefined;
 };
 
 export const unsubscribeSubscriptionPending = (
