@@ -2,9 +2,13 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import type { IconSize } from '@proton/components';
-import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import MailLogo from '@proton/components/components/logo/MailLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import type { IconSize } from '@proton/icons';
 import { PLANS, PLAN_SERVICES, type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
+import { getFreeTitle, getPlusTitle } from '@proton/shared/lib/apps/i18n';
 import {
     APPS,
     DRIVE_SHORT_APP_NAME,
@@ -13,14 +17,13 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
+import { CSS_BASE_UNIT_SIZE } from '@proton/styles/index';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import FreeLogo from '../FreeLogo';
-import { getFreeTitle } from '../helper';
+import FreeLogo from './FreeLogo/FreeLogo';
 
-import './PlanComparison.scss';
+import './PlusUnlimitedComparison.scss';
 
 const PlanItem = ({
     icon,
@@ -62,28 +65,28 @@ const getPaidMap = (plansMap: PlansMap, logoSize: IconSize): { [key in PLANS]?: 
     return {
         [PLANS.DRIVE]: {
             plan: PLANS.DRIVE,
-            title: plansMap[PLANS.DRIVE]?.Title || '',
+            title: getPlusTitle(DRIVE_SHORT_APP_NAME),
             icon: <DriveLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
         },
-        [PLANS.VPN]: {
-            plan: PLANS.VPN,
-            title: plansMap[PLANS.VPN]?.Title || '',
+        [PLANS.VPN2024]: {
+            plan: PLANS.VPN2024,
+            title: getPlusTitle(VPN_SHORT_APP_NAME),
             icon: <VpnLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
         },
         [PLANS.PASS]: {
             plan: PLANS.PASS,
-            title: plansMap[PLANS.PASS]?.Title || '',
+            title: getPlusTitle(PASS_SHORT_APP_NAME),
             icon: <PassLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
         },
         [PLANS.MAIL]: {
             plan: PLANS.MAIL,
-            title: plansMap[PLANS.MAIL]?.Title || '',
+            title: getPlusTitle(MAIL_SHORT_APP_NAME),
             icon: <MailLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
@@ -107,7 +110,7 @@ interface Props {
     dark: boolean;
 }
 
-const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, plansMap }: Props) => {
+const PlusUnlimitedComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, plansMap }: Props) => {
     const iconSize: IconSize = 5;
     const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
     const paidMap = getPaidMap(plansMap, iconSize);
@@ -148,7 +151,7 @@ const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, p
             service: PLAN_SERVICES.DRIVE,
         },
         {
-            plan: PLANS.VPN,
+            plan: PLANS.VPN2024,
             title: getFreeTitle(VPN_SHORT_APP_NAME),
             icon: <FreeLogo app={APPS.PROTONVPN_SETTINGS} size={iconImgSize} dark={dark} />,
             selected: false,
@@ -198,7 +201,9 @@ const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, p
         <div className="border border-primary rounded-xl p-4 pb-2">
             <div className="flex gap-6 px-4">
                 <div className="flex-1 text-center">
-                    <div className="mb-3 mt-2 text-sm color-weak text-ellipsis">{c('Title').t`Your plan`}</div>
+                    <div className="mb-3 mt-2 text-sm color-primary text-ellipsis text-bold">
+                        {c('Title').t`Your plan`}
+                    </div>
                     <ul className="unstyled w-full plan-comparison-list mt-0">
                         {sortedLeft.map((item, index, list) => {
                             return (
@@ -215,7 +220,7 @@ const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, p
                     </ul>
                 </div>
                 <div className="flex-1 text-center">
-                    <div className="mb-3 mt-2 text-sm color-weak text-ellipsis">
+                    <div className="mb-3 mt-2 text-sm color-primary text-ellipsis text-bold">
                         {c('pass_signup_2023: Title').t`${upsellPlanTitle} plan`}
                     </div>
                     <ul className="unstyled w-full plan-comparison-list mt-0">
@@ -224,7 +229,7 @@ const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, p
                                 <PlanItem
                                     key={item.plan}
                                     icon={item.icon}
-                                    bold={item.bold}
+                                    bold={true}
                                     title={item.title}
                                     selected={item.selected}
                                     isLastSelected={getIsLastSelected(item, index, list)}
@@ -238,4 +243,4 @@ const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, p
         </div>
     );
 };
-export default PlanComparison;
+export default PlusUnlimitedComparison;
