@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import PlusUnlimitedComparison from '@proton/components/containers/payments/subscription/PlusUnlimitedComparison';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -12,7 +13,6 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 
 import type { SubscriptionData } from '../../signup/interfaces';
-import PlanComparison from './PlanComparison';
 
 interface Props extends Omit<ModalProps, 'title'> {
     title: ReactNode;
@@ -92,7 +92,7 @@ const UnlockModal = ({
                         </div>
                     );
                 })()}
-                <PlanComparison
+                <PlusUnlimitedComparison
                     dark={dark}
                     currentPlan={currentPlan}
                     upsellPlan={upsellPlan}
@@ -105,7 +105,7 @@ const UnlockModal = ({
                     <Button shape="ghost" color="norm" fullWidth onClick={onFree}>
                         {c('pass_signup_2023: Action').t`Continue to ${appName} without upgrading`}
                     </Button>
-                </PlanComparison>
+                </PlusUnlimitedComparison>
             </ModalTwoContent>
         </ModalTwo>
     );

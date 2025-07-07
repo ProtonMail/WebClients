@@ -507,6 +507,22 @@ export const getHasProPlan = (planName?: PLANS) => {
     );
 };
 
+export const getHasPlusPlan = (planName?: PLANS | ADDON_NAMES) => {
+    return (
+        planName &&
+        [
+            PLANS.MAIL,
+            PLANS.VPN,
+            PLANS.VPN2024,
+            PLANS.PASS,
+            PLANS.DRIVE,
+            PLANS.DRIVE_1TB,
+            PLANS.VPN_PASS_BUNDLE,
+            PLANS.WALLET,
+        ].some((otherPlanName) => otherPlanName === planName)
+    );
+};
+
 export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {
     return (
         hasDeprecatedVPN(subscription) ||
@@ -1083,6 +1099,44 @@ export function isSubscriptionUnchanged(
     const cycleUnchanged = !cycle || cycle === subscription?.Cycle;
 
     return planIdsUnchanged && cycleUnchanged;
+}
+
+export function isForbiddenPlusToPlus({
+    subscription,
+    user,
+    newPlanName,
+}: {
+    subscription: Subscription | FreeSubscription | null | undefined;
+    user: UserModel;
+    newPlanName: PLANS | undefined;
+}): boolean {
+    if (!subscription) {
+        return false;
+    }
+    const subscribedPlans = getSubscriptionPlanTitles(user, subscription);
+    const isSubscribedToAPlusPlan = subscribedPlans.some(({ planName }) => getHasPlusPlan(planName));
+    const isNotSamePlanName = !subscribedPlans.some(({ planName }) => planName === newPlanName);
+    return Boolean(isSubscribedToAPlusPlan && getHasPlusPlan(newPlanName) && isNotSamePlanName);
+}
+
+export function getIsPlanTransitionForbidden({
+    subscription,
+    user,
+    plansMap,
+    planIDs,
+}: {
+    subscription: Subscription | FreeSubscription | null | undefined;
+    user: UserModel;
+    planIDs: PlanIDs;
+    cycle: CYCLE;
+    plansMap: PlansMap;
+}) {
+    const newPlan = getPlanFromPlanIDs(plansMap, planIDs);
+    const newPlanName = newPlan?.Name;
+    if (isForbiddenPlusToPlus({ subscription, user, newPlanName })) {
+        return { type: 'plus-to-plus', newPlanName };
+    }
+    return null;
 }
 
 export function isCheckForbidden(

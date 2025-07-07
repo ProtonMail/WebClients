@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
 import {
@@ -27,6 +25,7 @@ import {
     type SubscriptionPlan,
     getFreeCheckResult,
     getHas2024OfferCoupon,
+    getHasPlusPlan,
     getIsB2BAudienceFromPlan,
     getNormalCycleFromCustomCycle,
     getPaymentMethods,
@@ -62,10 +61,6 @@ import type { PlanCard } from './PlanCardSelector';
 import type { Options, PlanParameters, SignupConfiguration, SignupParameters2, Upsell } from './interface';
 import { UpsellTypes } from './interface';
 
-export const getFreeTitle = (appName: string) => {
-    return c('Title').t`${appName} Free`;
-};
-
 export const getIsProductB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
     const proPlans = [
         PLANS.MAIL_PRO,
@@ -82,12 +77,6 @@ export const getIsProductB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
 
 export const getIsBundleB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
     return [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].some((bundlePlan) => plan === bundlePlan);
-};
-
-export const getHasAnyPlusPlan = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
-    return [PLANS.MAIL, PLANS.DRIVE, PLANS.DRIVE_1TB, PLANS.VPN, PLANS.VPN2024, PLANS.PASS, PLANS.VPN_PASS_BUNDLE].some(
-        (plan) => plan === subscribedPlan
-    );
 };
 
 export const getFreeSubscriptionData = (
@@ -267,7 +256,7 @@ const getUpsell = ({
         }
 
         if (getHas2024OfferCoupon(options.coupon)) {
-            if (getHasAnyPlusPlan(currentPlan.Name)) {
+            if (getHasPlusPlan(currentPlan.Name)) {
                 if (currentPlan.Name === PLANS.PASS) {
                     if (
                         options.cycle === CYCLE.YEARLY &&
@@ -335,7 +324,7 @@ const getUpsell = ({
                 }
                 return noUpsell;
             } else {
-                if (getHasAnyPlusPlan(currentPlan.Name)) {
+                if (getHasPlusPlan(currentPlan.Name)) {
                     if (
                         hasSelectedPlan(planParameters.plan, [PLANS.PASS_FAMILY, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY])
                     ) {
