@@ -7,8 +7,8 @@ export const selectNewsletterSubscriptions = (state: MailState) => state.newslet
 export const selectedTab = (state: MailState) => state.newsletterSubscriptions.value?.selectedTab;
 export const selectedElementId = (state: MailState) => selectNewsletterSubscriptions(state)?.selectedElementId;
 const selectedSubscriptionID = (state: MailState) => selectNewsletterSubscriptions(state)?.selectedSubscriptionId;
-export const deletingSubscriptionIdSelector = (state: MailState) =>
-    selectNewsletterSubscriptions(state)?.deletingSubscriptionId;
+export const unsubscribingSubscriptionIdSelector = (state: MailState) =>
+    selectNewsletterSubscriptions(state)?.unsubscribingSubscriptionId;
 
 export const allSubscriptionCount = createSelector([selectNewsletterSubscriptions], (store) => {
     if (!store) {
