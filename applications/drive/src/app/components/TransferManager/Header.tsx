@@ -174,7 +174,7 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
                 headingElements.push(
                     c('Info').ngettext(
                         msgid`${scanErrorCount} scan failed`,
-                        `${scanErrorCount} scan failed`,
+                        `${scanErrorCount} scans failed`,
                         errorCount
                     )
                 );
