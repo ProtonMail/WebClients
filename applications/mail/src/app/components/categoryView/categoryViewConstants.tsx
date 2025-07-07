@@ -12,36 +12,48 @@ export enum CATEGORY_LABEL_IDS {
 
 export const categoryBadgeMapping: Record<
     string,
-    { label: string; className: string; darkClassName: string; icon?: IconName }
+    { label: string; className: string; darkClassName: string; icon: IconName }
 > = {
+    [CATEGORY_LABEL_IDS.CATEGORY_DEFAULT]: {
+        label: 'Primary',
+        className: 'category-badge--default',
+        darkClassName: 'category-badge--default-dark',
+        icon: 'bolt-filled',
+    },
     [CATEGORY_LABEL_IDS.CATEGORY_SOCIAL]: {
         label: 'Social',
         className: 'category-badge--social',
         darkClassName: 'category-badge--social-dark',
+        icon: 'person-filled-2',
     },
     [CATEGORY_LABEL_IDS.CATEGORY_PROMOTIONS]: {
         label: 'Promotions',
         className: 'category-badge--promotions',
         darkClassName: 'category-badge--promotions-dark',
-    },
-    [CATEGORY_LABEL_IDS.CATEGORY_UPDATES]: {
-        label: 'Updates',
-        className: 'category-badge--updates',
-        darkClassName: 'category-badge--updates-dark',
-    },
-    [CATEGORY_LABEL_IDS.CATEGORY_FORUMS]: {
-        label: 'Forums',
-        className: 'category-badge--forums',
-        darkClassName: 'category-badge--forums-dark',
-    },
-    [CATEGORY_LABEL_IDS.CATEGORY_DEFAULT]: {
-        label: 'Default',
-        className: 'category-badge--default',
-        darkClassName: 'category-badge--default-dark',
+        icon: 'bolt-filled',
     },
     [CATEGORY_LABEL_IDS.CATEGORY_NEWSLETTER]: {
         label: 'Newsletters',
         className: 'category-badge--newsletters',
         darkClassName: 'category-badge--newsletters-dark',
+        icon: 'news',
+    },
+    [CATEGORY_LABEL_IDS.CATEGORY_TRANSACTIONS]: {
+        label: 'Transactions',
+        className: 'category-badge--transactions',
+        darkClassName: 'category-badge--transactions-dark',
+        icon: 'credit-cards',
+    },
+    [CATEGORY_LABEL_IDS.CATEGORY_UPDATES]: {
+        label: 'Updates',
+        className: 'category-badge--updates',
+        darkClassName: 'category-badge--updates-dark',
+        icon: 'bell-filled-2',
+    },
+    [CATEGORY_LABEL_IDS.CATEGORY_FORUMS]: {
+        label: 'Forums',
+        className: 'category-badge--forums',
+        darkClassName: 'category-badge--forums-dark',
+        icon: 'speech-bubbles-filled',
     },
 };
