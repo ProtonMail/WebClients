@@ -1,30 +1,37 @@
 // This is temporary, we will need to use the theme colors and have better implementation
 .category-badge {
 	$iris-100: #ebefff;
+	$iris-200: #ced2ff;
 	$iris-300: #a0a1ff;
 	$iris-700: #4a2fa7;
 	$iris-900: #1e1340;
 	$sky-100: #e2f6ff;
+	$sky-200: #bfe7ff;
 	$sky-300: #85cdfd;
 	$sky-700: #00699f;
 	$sky-900: #00233c;
 	$teal-100: #e1f9f3;
+	$teal-200: #beede3;
 	$teal-300: #84d8c9;
 	$teal-700: #00766b;
 	$teal-900: #002925;
 	$pink-100: #ffebf6;
+	$pink-200: #ffcee5;
 	$pink-300: #fb9ccb;
 	$pink-700: #9d2767;
 	$pink-900: #3a0b23;
 	$blue-100: #e5f3ff;
+	$blue-200: #c4dfff;
 	$blue-300: #8dbdff;
 	$blue-700: #2655a8;
 	$blue-900: #0c1d41;
 	$purple-100: #f7ecff;
+	$purple-200: #e7d0ff;
 	$purple-300: #cf9ffd;
 	$purple-700: #6f2ea6;
 	$purple-900: #28113d;
 	$amber-100: #fbf4e3;
+	$amber-200: #f9e5c2;
 	$amber-300: #f6cc89;
 	$amber-700: #a15f0b;
 	$amber-900: #381904;
@@ -37,6 +44,11 @@
 			background-color: $iris-900;
 			color: $iris-300;
 		}
+
+		&:hover {
+			background-color: $iris-200;
+			color: $iris-900;
+		}
 	}
 
 	&--social {
@@ -46,6 +58,11 @@
 		&-dark {
 			background-color: $sky-900;
 			color: $sky-300;
+		}
+
+		&:hover {
+			background-color: $sky-200;
+			color: $sky-900;
 		}
 	}
 
@@ -57,6 +74,11 @@
 			background-color: $teal-900;
 			color: $teal-300;
 		}
+
+		&:hover {
+			background-color: $teal-200;
+			color: $teal-900;
+		}
 	}
 
 	&--newsletters {
@@ -66,6 +88,11 @@
 		&-dark {
 			background-color: $pink-900;
 			color: $pink-300;
+		}
+
+		&:hover {
+			background-color: $pink-200;
+			color: $pink-900;
 		}
 	}
 
@@ -77,6 +104,11 @@
 			background-color: $blue-900;
 			color: $blue-300;
 		}
+
+		&:hover {
+			background-color: $blue-200;
+			color: $blue-900;
+		}
 	}
 
 	&--updates {
@@ -87,6 +119,11 @@
 			background-color: $purple-900;
 			color: $purple-300;
 		}
+
+		&:hover {
+			background-color: $purple-200;
+			color: $purple-900;
+		}
 	}
 
 	&--forums {
@@ -96,6 +133,11 @@
 		&-dark {
 			background-color: $amber-900;
 			color: $amber-300;
+		}
+
+		&:hover {
+			background-color: $amber-200;
+			color: $amber-900;
 		}
 	}
 }
