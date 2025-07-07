@@ -39,9 +39,16 @@ import { type OrganizationKeyState, organizationKeyThunk } from '../organization
 import { type ProtonDomainsState, protonDomainsThunk } from '../protonDomains';
 import { type UserState, userThunk } from '../user';
 import { type UserKeysState, userKeysThunk } from '../userKeys';
+import { type UserSettingsState, userSettingsThunk } from '../userSettings';
 import { type AddressesState, addressesThunk } from './index';
 
-type RequiredState = KtState & UserState & OrganizationKeyState & AddressesState & UserKeysState & ProtonDomainsState;
+type RequiredState = KtState &
+    UserState &
+    OrganizationKeyState &
+    AddressesState &
+    UserKeysState &
+    ProtonDomainsState &
+    UserSettingsState;
 
 export const createAddress = ({
     member: selectedMember,
@@ -103,6 +110,7 @@ export const createAddress = ({
 
         if (shouldGenerateKeys) {
             const userKeys = await dispatch(userKeysThunk());
+            const userSettings = await dispatch(userSettingsThunk());
             const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
 
             const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
@@ -118,7 +126,8 @@ export const createAddress = ({
                     addresses,
                     addressesToGenerate: [Address],
                     password: extra.authentication.getPassword(),
-                    keyGenConfig,
+                    keyGenConfigForV4Keys: keyGenConfig,
+                    supportV6Keys: !!userSettings.Flags.SupportPgpV6Keys,
                     keyTransparencyVerify,
                 });
             } else {
@@ -183,6 +192,7 @@ export const createPremiumAddress = ({
     setDefault?: boolean;
 }): ThunkAction<Promise<Address>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
+        const userSettings = await dispatch(userSettingsThunk());
         const addresses = await dispatch(addressesThunk());
         const defaultAddress: Address | Partial<Address> = addresses?.[0] || {};
         const {
@@ -216,8 +226,9 @@ export const createPremiumAddress = ({
             addresses,
             addressesToGenerate: [Address],
             password: extra.authentication.getPassword(),
-            keyGenConfig: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
+            keyGenConfigForV4Keys: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
             keyTransparencyVerify,
+            supportV6Keys: !!userSettings.Flags.SupportPgpV6Keys,
         });
         await keyTransparencyCommit(await dispatch(userThunk()), userKeys);
 
@@ -319,10 +330,11 @@ export const createMissingKeys = ({
         };
 
         const processSelf = async () => {
-            const [user, userKeys, addresses] = await Promise.all([
+            const [user, userKeys, addresses, userSettings] = await Promise.all([
                 dispatch(userThunk()),
                 dispatch(userKeysThunk()),
                 dispatch(addressesThunk()),
+                dispatch(userSettingsThunk()),
             ]);
             const result = await missingKeysSelfProcess({
                 api,
@@ -330,7 +342,8 @@ export const createMissingKeys = ({
                 addresses,
                 addressesToGenerate,
                 password: extra.authentication.getPassword(),
-                keyGenConfig,
+                keyGenConfigForV4Keys: keyGenConfig,
+                supportV6Keys: !!userSettings.Flags.SupportPgpV6Keys,
                 onUpdate,
                 keyTransparencyVerify,
             });
@@ -473,6 +486,7 @@ export const createBYOEAddress = ({
             })
         );
 
+        const userSettings = await dispatch(userSettingsThunk());
         const userKeys = await dispatch(userKeysThunk());
         const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
             ktActivation: dispatch(getKTActivation()),
@@ -485,7 +499,8 @@ export const createBYOEAddress = ({
             addresses,
             addressesToGenerate: [Address],
             password: extra.authentication.getPassword(),
-            keyGenConfig: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
+            keyGenConfigForV4Keys: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
+            supportV6Keys: !!userSettings.Flags.SupportPgpV6Keys,
             keyTransparencyVerify,
         });
         await keyTransparencyCommit(await dispatch(userThunk()), userKeys);

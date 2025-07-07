@@ -41,7 +41,7 @@ export const getResetAddressesKeysV2 = async ({
     addresses: Address[];
     passphrase: string;
     supportV6Keys: boolean;
-    keyGenConfigForV4Keys?: KeyGenConfig; // no option v6
+    keyGenConfigForV4Keys?: KeyGenConfig; // no option for v6
     preAuthKTVerify: PreAuthKTVerify;
 }): Promise<ResetAddressKeysPayload | { [P in keyof ResetAddressKeysPayload]: undefined }> => {
     if (!addresses.length) {
