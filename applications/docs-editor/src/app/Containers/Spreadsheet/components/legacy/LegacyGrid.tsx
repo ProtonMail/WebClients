@@ -4,6 +4,7 @@ import type { ProtonSheetsState } from '../../state'
 import { functionDescriptions } from '@rowsncolumns/functions'
 import { ChartComponent } from '@rowsncolumns/charts'
 import { isDevOrBlack } from '@proton/utils/env'
+import { useEffect, useRef } from 'react'
 
 export type LegacyGridProps = {
   state: ProtonSheetsState
@@ -13,18 +14,64 @@ export type LegacyGridProps = {
   userName: string
 }
 
-const exposeCanvasGrid = (instance: CanvasGridMethods | null) => {
-  // Expose CanvasGrid to global window for e2e testing only in non-production environments
-  if (typeof window !== 'undefined' && instance && isDevOrBlack()) {
-    ;(window as any).spreadsheet = instance
+const exposeCanvasGrid = (instance: CanvasGridMethods | null, state: ProtonSheetsState) => {
+  // Force exposure for e2e testing - always expose in any development-like environment
+  const shouldExpose = typeof window !== 'undefined' && instance && isDevOrBlack()
+
+  if (shouldExpose) {
+    ;(window as any).spreadsheet = {
+      ...instance,
+      getCellDataWithValues: (coords: { rowIndex: number; columnIndex: number }) => {
+        // Build a proper CellData object using the available state methods
+        const { rowIndex, columnIndex } = coords
+
+        try {
+          const userEnteredValue = state.getUserEnteredValue(state.activeSheetId, rowIndex, columnIndex)
+          const effectiveValue = state.getEffectiveValue(state.activeSheetId, rowIndex, columnIndex)
+          const formattedValue = state.getFormattedValue(state.activeSheetId, rowIndex, columnIndex)
+
+          // Return a proper CellData object structure
+          const result = {
+            userEnteredValue,
+            effectiveValue,
+            formattedValue,
+          }
+          return result
+        } catch (e) {
+          // Store debug info even on error
+          ;(window as any).lastCellQuery = {
+            coords,
+            activeSheetId: state.activeSheetId,
+            error: e instanceof Error ? e.message : 'Unknown error',
+            stateExists: !!state,
+            availableMethods: {
+              getUserEnteredValue: typeof state.getUserEnteredValue === 'function',
+              getEffectiveValue: typeof state.getEffectiveValue === 'function',
+              getFormattedValue: typeof state.getFormattedValue === 'function',
+            },
+          }
+          return null
+        }
+      },
+    }
   }
 }
 
 export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridProps) {
+  const canvasGridRef = useRef<CanvasGridMethods | null>(null)
+
+  // Use useEffect to ensure API is exposed as soon as possible
+  useEffect(() => {
+    exposeCanvasGrid(canvasGridRef.current, state)
+  }, [state]) // Re-run when state changes
+
   return (
     <CanvasGrid
       {...state.spreadsheetColors}
-      ref={exposeCanvasGrid}
+      ref={(instance) => {
+        canvasGridRef.current = instance
+        exposeCanvasGrid(instance, state)
+      }}
       borderStyles={state.searchState.borderStyles}
       scale={state.scale}
       conditionalFormats={state.conditionalFormats}
