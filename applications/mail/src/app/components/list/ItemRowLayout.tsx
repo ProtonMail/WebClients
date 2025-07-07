@@ -124,7 +124,7 @@ const ItemRowLayout = ({
                     isCollapsed={false}
                 />
 
-                <CategoryBadge labelIDs={Object.keys(getLabelIDs(element, labelID))} />
+                <CategoryBadge labelIDs={Object.keys(getLabelIDs(element, labelID))} element={element} />
 
                 <div
                     className={clsx('item-subject flex items-center flex-nowrap', loading && 'w-custom')}
