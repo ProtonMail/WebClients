@@ -155,7 +155,7 @@ export const NewsletterSubscriptionView = ({
                         {loadingSubscriptions ? <NewsletterSubscriptionListLoader /> : <NewsletterSubscriptionList />}
                     </ResizableWrapper>
                     {!hideEmailList && (
-                        <div className="flex-1 flex flex-column">
+                        <div className="flex-1 flex flex-column flex-nowrap">
                             {selectedElement ? (
                                 <MessageOnlyView
                                     showBackButton
