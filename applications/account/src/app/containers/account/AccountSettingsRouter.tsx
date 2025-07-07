@@ -22,6 +22,7 @@ import {
     GiftCodeSection,
     GroupMembershipSection,
     InviteSection,
+    InviteSectionLegacy,
     InvoicesSection,
     LanguageAndTimeSection,
     LogsSection,
@@ -33,7 +34,9 @@ import {
     PrivateMainArea,
     PrivateMainSettingsArea,
     ReferralInvitesContextProvider,
+    ReferralInvitesContextProviderLegacy,
     RewardSection,
+    RewardSectionLegacy,
     SentinelSection,
     SessionRecoverySection,
     SessionsSection,
@@ -57,6 +60,7 @@ import {
 import NonPrivateRecoverySection from '@proton/components/containers/account/NonPrivateRecoveySection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
+import useFlag from '@proton/unleash/useFlag';
 
 import { recoveryIds } from './recoveryIds';
 import type { getAccountAppRoutes } from './routes';
@@ -72,6 +76,7 @@ const AccountSettingsRouter = ({
     accountAppRoutes: ReturnType<typeof getAccountAppRoutes>;
     app: APP_NAMES;
 }) => {
+    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const {
         routes: {
             dashboardV2,
@@ -221,12 +226,21 @@ const AccountSettingsRouter = ({
             </Route>
             {getIsSectionAvailable(referral) && (
                 <Route path={getSectionPath(path, referral)}>
-                    <ReferralInvitesContextProvider>
-                        <PrivateMainSettingsArea config={referral}>
-                            <InviteSection />
-                            <RewardSection />
-                        </PrivateMainSettingsArea>
-                    </ReferralInvitesContextProvider>
+                    {isReferralExpansionEnabled ? (
+                        <ReferralInvitesContextProvider>
+                            <PrivateMainSettingsArea config={referral}>
+                                <InviteSection />
+                                <RewardSection />
+                            </PrivateMainSettingsArea>
+                        </ReferralInvitesContextProvider>
+                    ) : (
+                        <ReferralInvitesContextProviderLegacy>
+                            <PrivateMainSettingsArea config={referral}>
+                                <InviteSectionLegacy />
+                                <RewardSectionLegacy />
+                            </PrivateMainSettingsArea>
+                        </ReferralInvitesContextProviderLegacy>
+                    )}
                 </Route>
             )}
             {getIsSectionAvailable(easySwitch) && (
