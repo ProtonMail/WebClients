@@ -43,6 +43,7 @@ enum CommonFeatureFlag {
     InboxBringYourOwnEmailSignup = 'InboxBringYourOwnEmailSignup',
     LumoPlusFrontend = 'LumoPlusFrontend',
     CryptoEnforceOpenpgpGrammar = 'CryptoEnforceOpenpgpGrammar',
+    ReferralExpansion = 'ReferralExpansion',
 }
 
 enum AccountFlag {

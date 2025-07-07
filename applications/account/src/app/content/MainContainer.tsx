@@ -160,6 +160,7 @@ const MainContainer = () => {
     const canDisplayPassReports = useFlag('PassB2BReports');
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
+    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -217,6 +218,7 @@ const MainContainer = () => {
         isCalendarHotkeysEnabled,
         isPasswordPolicyEnabled,
         isB2BTrial,
+        isReferralExpansionEnabled,
     });
 
     useEffect(() => {

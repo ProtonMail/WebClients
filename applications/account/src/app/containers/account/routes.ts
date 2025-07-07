@@ -52,6 +52,7 @@ export const getAccountAppRoutes = ({
     memberships,
     isZoomIntegrationEnabled,
     isB2BTrial,
+    isReferralExpansionEnabled,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -70,6 +71,7 @@ export const getAccountAppRoutes = ({
     memberships: GroupMembershipReturn[] | undefined;
     isZoomIntegrationEnabled: boolean;
     isB2BTrial: boolean;
+    isReferralExpansionEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
     const credits = getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
@@ -472,16 +474,21 @@ export const getAccountAppRoutes = ({
             },
             referral: <SectionConfig>{
                 text: c('Title').t`Refer a friend`,
-                description: c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
+                title: isReferralExpansionEnabled ? c('Title').t`Invite friends. Get credits.` : undefined,
+                description: isReferralExpansionEnabled
+                    ? // TODO: handle currency messaging
+                      c('Description')
+                          .t`You’ll receive $20 in ${BRAND_NAME} credit when the person you invite signs up for a ${BRAND_NAME} plan, and they’ll also get $20 in credits to get started.`
+                    : c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
                 to: '/referral',
-                icon: 'heart',
+                icon: isReferralExpansionEnabled ? 'money-bills' : 'heart',
                 available: !!isReferralProgramEnabled,
                 subsections: [
                     {
                         id: 'referral-invite-section',
                     },
                     {
-                        text: c('Title').t`Track your referrals`,
+                        text: c('Title').t`Your referrals`,
                         id: 'referral-reward-section',
                     },
                 ],
