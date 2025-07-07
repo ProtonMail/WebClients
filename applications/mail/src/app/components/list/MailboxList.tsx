@@ -1,5 +1,5 @@
-import { useRef } from 'react';
 import type { ReactNode, RefObject } from 'react';
+import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useLabels } from '@proton/mail/index';
@@ -120,16 +120,19 @@ export default function MailboxList({
                     checkedIDs={checkedIDs}
                     onCheckAll={handleCheckAll}
                 />
-                <MailboxListItems
-                    listRef={listRefToUse}
-                    onClick={handleElement}
-                    onFocus={handleFocus}
-                    onCheckOne={handleCheckOne}
-                    columnLayout={overrideColumnMode || columnLayout}
-                    onBack={navigation.handleBack}
-                    labels={labels}
-                />
-                <MailboxListPaginationWrapper />
+
+                <div className="overflow-auto">
+                    <MailboxListItems
+                        listRef={listRefToUse}
+                        onClick={handleElement}
+                        onFocus={handleFocus}
+                        onCheckOne={handleCheckOne}
+                        columnLayout={overrideColumnMode || columnLayout}
+                        onBack={navigation.handleBack}
+                        labels={labels}
+                    />
+                    <MailboxListPaginationWrapper />
+                </div>
             </MailboxListContainer>
         </MailboxListProvider>
     );
