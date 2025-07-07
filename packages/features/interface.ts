@@ -62,7 +62,6 @@ export enum FeatureCode {
     // Flags needed by the one-dollar post-signup promo
     SubscriptionLastReminderDate = 'SubscriptionLastReminderDate',
     MailPostSignupOneDollarState = 'MailPostSignupOneDollarState',
-    MailPostSignupOneDollarAccountAge = 'MailPostSignupOneDollarAccountAge',
     DrivePostSignupOneDollarState = 'DrivePostSignupOneDollarState',
     DrivePostSignupOneDollarAccountAge = 'DrivePostSignupOneDollarAccountAge',
 
