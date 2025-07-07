@@ -172,7 +172,7 @@ const SMTPSubmissionSection = () => {
             <SettingsSection>
                 <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
                     {c('Info')
-                        .jt`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses. This feature is only available to ${BRAND_NAME} for business users with custom domains.`}
+                        .jt`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses. This feature is only available to ${BRAND_NAME} for Business users with custom domains.`}
                 </SettingsParagraph>
                 <UpgradeBanner audience={Audience.B2B} upsellPath={upsellRef}>
                     {c('new_plans: upgrade')
