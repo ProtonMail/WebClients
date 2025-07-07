@@ -24,12 +24,18 @@ export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
         const colorsRef = useRef<OTPDonutColors>();
 
         const getColors = useCallback(
-            (canvas: HTMLCanvasElement): OTPDonutColors => {
+            (canvas: HTMLCanvasElement, countDown: number): OTPDonutColors => {
                 if (colorsRef.current) return colorsRef.current;
 
+                const mainColor = (() => {
+                    if (countDown <= 5) return '--signal-danger';
+                    if (countDown <= 10) return '--signal-warning';
+                    return colorFilled;
+                })();
+
                 const computedStyle = window.getComputedStyle(canvas);
-                const filled = computedStyle.getPropertyValue(reverse ? colorEmpty : colorFilled);
-                const empty = computedStyle.getPropertyValue(reverse ? colorFilled : colorEmpty);
+                const filled = computedStyle.getPropertyValue(reverse ? colorEmpty : mainColor);
+                const empty = computedStyle.getPropertyValue(reverse ? mainColor : colorEmpty);
 
                 return [empty, filled];
             },
@@ -40,7 +46,8 @@ export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
             ref,
             () => ({
                 draw: (percent, period) => {
-                    wrapperRef.current?.style.setProperty('--countdown-value', `"${Math.round(percent * period)}"`);
+                    const countDown = Math.round(percent * period);
+                    wrapperRef.current?.style.setProperty('--countdown-value', `"${countDown}"`);
 
                     const canvas = canvasRef.current;
                     const ctx = canvas?.getContext('2d');
@@ -48,7 +55,7 @@ export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
 
                     const size = 36;
                     const dpr = window.devicePixelRatio || 1;
-                    const [empty, filled] = getColors(canvas);
+                    const [empty, filled] = getColors(canvas, countDown);
 
                     canvas.width = size * dpr;
                     canvas.height = size * dpr;
