@@ -17,7 +17,6 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import type { UseRemoveDeviceModalState } from './useRemoveDeviceModalState';
 
 export type RemoveDeviceModalViewProps = UseRemoveDeviceModalState;
-
 export const RemoveDeviceModalView = ({
     model,
     setModel,
@@ -44,7 +43,11 @@ export const RemoveDeviceModalView = ({
             <ModalTwoContent>
                 <p key={'remove-device-modal-content-paragraph-1'}>
                     {c('Info')
-                        .jt`This will remove the synced device ${deviceName} from ${DRIVE_APP_NAME} and all it's data from ${DRIVE_APP_NAME}. Folders you added to My Computers will stop syncing.`}
+                        .jt`When you remove ${deviceName} as a synced device, all folders added to My Computers from this device will be permanently deleted from ${DRIVE_APP_NAME}.`}
+                </p>
+                <p key={'remove-device-modal-content-paragraph-1'}>
+                    {c('Info')
+                        .jt`If those files are not fully downloaded locally on ${deviceName} you will lose access to them.`}
                 </p>
                 <p key={'remove-device-modal-content-paragraph-2'}>
                     {c('Info').t`This can NOT be undone. Please enter the device name to confirm removal.`}
