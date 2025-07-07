@@ -256,7 +256,11 @@ const ItemColumnLayout = ({
 
             {hasLabels && !isCompactView && (
                 <div className="flex flex-nowrap items-center max-w-full overflow-hidden gap-1">
-                    <CategoryBadge className="mt-1" labelIDs={Object.keys(getLabelIDs(element, labelID))} />
+                    <CategoryBadge
+                        className="mt-1"
+                        element={element}
+                        labelIDs={Object.keys(getLabelIDs(element, labelID))}
+                    />
                     <div className="item-icons flex shrink-0 flex-nowrap mt-1">
                         <ItemLabels
                             className="ml-2"
