@@ -794,11 +794,7 @@ export { SessionRecoverySection } from './containers/recovery/SessionRecoverySec
 export { InviteSection } from './containers/referral/invite/InviteSection';
 export { getShouldOpenReferralModal } from './containers/referral/modals/helper';
 export { ReferralFeaturesList } from './containers/referral/ReferralFeaturesList';
-export { ReferralHowItWorks } from './containers/referral/ReferralHowItWorks';
-export {
-    ReferralInvitesContextProvider,
-    useReferralInvitesContext,
-} from './containers/referral/ReferralInvitesContext';
+export { ReferralInvitesContextProvider } from './containers/referral/ReferralInvitesContext';
 export { ReferralSpotlight } from './containers/referral/ReferralSpotlight';
 export { RewardSection } from './containers/referral/rewards/RewardSection';
 export { InviteSection as InviteSectionLegacy } from './containers/referralLegacy/invite/InviteSection';
