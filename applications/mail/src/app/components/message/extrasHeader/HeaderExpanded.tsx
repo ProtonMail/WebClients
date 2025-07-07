@@ -285,7 +285,7 @@ const HeaderExpanded = ({
             </div>
             {canSeeCategoryLabel && (
                 <Suspense fallback={null}>
-                    <ExtraMessageCategory message={message} />
+                    <ExtraMessageCategory message={message} element={message.data} />
                 </Suspense>
             )}
             {showDetails && (
