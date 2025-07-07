@@ -801,6 +801,12 @@ export {
 } from './containers/referral/ReferralInvitesContext';
 export { ReferralSpotlight } from './containers/referral/ReferralSpotlight';
 export { RewardSection } from './containers/referral/rewards/RewardSection';
+export { InviteSection as InviteSectionLegacy } from './containers/referralLegacy/invite/InviteSection';
+export { getShouldOpenReferralModal as getShouldOpenReferralModalLegacy } from './containers/referralLegacy/modals/helper';
+export { ReferralFeaturesList as ReferralFeaturesListLegacy } from './containers/referralLegacy/ReferralFeaturesList';
+export { ReferralInvitesContextProvider as ReferralInvitesContextProviderLegacy } from './containers/referralLegacy/ReferralInvitesContext';
+export { ReferralSpotlight as ReferralSpotlightLegacy } from './containers/referralLegacy/ReferralSpotlight';
+export { RewardSection as RewardSectionLegacy } from './containers/referralLegacy/rewards/RewardSection';
 export { RightToLeftProvider } from './containers/rightToLeft/Provider';
 export { useRightToLeft } from './containers/rightToLeft/useRightToLeft';
 export { AddressVerificationSection } from './containers/security/AddressVerificationSection';

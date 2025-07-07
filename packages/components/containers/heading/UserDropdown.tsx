@@ -15,7 +15,7 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import SessionRecoverySignOutConfirmPrompt from '@proton/components/containers/account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
 import type AccountSessionsSwitcher from '@proton/components/containers/heading/AccountSessionsSwitcher';
 import { useReferral } from '@proton/components/containers/heading/useReferral';
-import { ReferralSpotlight } from '@proton/components/containers/referral/ReferralSpotlight';
+import { ReferralSpotlight } from '@proton/components/containers/referralLegacy/ReferralSpotlight';
 import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
