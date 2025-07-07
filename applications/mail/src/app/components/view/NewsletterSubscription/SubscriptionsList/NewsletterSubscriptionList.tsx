@@ -6,9 +6,9 @@ import useLoading from '@proton/hooks/useLoading';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { fetchNextNewsletterSubscriptionsPage } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import {
-    deletingSubscriptionIdSelector,
     selectTabSubscriptionPaginationQueryString,
     selectTabSubscriptionsList,
+    unsubscribingSubscriptionIdSelector,
 } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
@@ -21,7 +21,7 @@ export const NewsletterSubscriptionList = () => {
 
     const subscriptionList = useMailSelector(selectTabSubscriptionsList);
     const paginationQueryString = useMailSelector(selectTabSubscriptionPaginationQueryString);
-    const deletingSubscriptionId = useMailSelector(deletingSubscriptionIdSelector);
+    const unsubscribingSubscriptionId = useMailSelector(unsubscribingSubscriptionIdSelector);
 
     const { sendNewslettersListPagination } = useNewsletterSubscriptionTelemetry();
 
@@ -42,7 +42,7 @@ export const NewsletterSubscriptionList = () => {
                         <NewsletterSubscriptionCard
                             key={sub.ID}
                             subscription={sub}
-                            isDeleting={deletingSubscriptionId === sub.ID}
+                            isDeleting={unsubscribingSubscriptionId === sub.ID}
                         />
                     ))}
                     {paginationQueryString ? (
