@@ -38,9 +38,6 @@ export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
     );
     const { feature: driveOfferState, loading: driveOfferStateLoading } =
         useFeature<PostSubscriptionOneDollarOfferState>(FeatureCode.DrivePostSignupOneDollarState);
-    const { feature: postSignupThreshold, loading: postSignupThresholdLoading } = useFeature(
-        FeatureCode.MailPostSignupOneDollarAccountAge
-    );
 
     const isDomBusy = domIsBusy();
 
@@ -49,19 +46,12 @@ export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
             user,
             protonConfig,
             offerStartDateTimeStamp: mailOfferState?.Value?.offerStartDate ?? 0,
-            minimalAccountAgeTimestamp: postSignupThreshold?.Value,
             mailOneDollarPostSignupFlag,
             nbrEmailsInAllMail: totalMessage,
             lastSubscriptionEnd: subscriptionEnd,
             driveOfferStartDateTimestamp: driveOfferState?.Value,
         }),
-        isLoading: !!(
-            userLoading ||
-            mailOfferStateLoading ||
-            driveOfferStateLoading ||
-            loadingSubscriptionEnd ||
-            postSignupThresholdLoading
-        ),
+        isLoading: !!(userLoading || mailOfferStateLoading || driveOfferStateLoading || loadingSubscriptionEnd),
         openSpotlight: isNotInFolder && shouldOpenPostSignupOffer(mailOfferState?.Value) && !isDomBusy,
     };
 };
