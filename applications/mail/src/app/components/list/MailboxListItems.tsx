@@ -76,7 +76,7 @@ const MailboxListItems = ({
 
     return (
         <>
-            <div className="overflow-auto h-full w-full" ref={listRef}>
+            <div ref={listRef}>
                 {elements.map((element, index) => {
                     return (
                         <Fragment key={element.ID}>
