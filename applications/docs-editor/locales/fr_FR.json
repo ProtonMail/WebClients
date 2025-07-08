@@ -442,6 +442,9 @@
       "Request timed out": [
         "La requête a expiré."
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Une erreur est survenue lors du traitement des mises à jour du document. Veuillez recharger la page et réessayer."
+      ],
       "Tried to import Sheet data into Lexical": [
         "Tentative d'importation des données de feuille dans Lexical"
       ],
@@ -782,6 +785,71 @@
         "Insérer"
       ]
     },
+    "sheets_2025:Spreadsheet editor more formats menu": {
+      "$ US Dollar": [
+        "$ Dollar américain"
+      ],
+      "Accounting": [
+        "Comptabilité"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Yuan chinois"
+      ],
+      "Currency": [
+        "Devise"
+      ],
+      "Currency rounded": [
+        "Devise arrondie"
+      ],
+      "Date": [
+        "Date"
+      ],
+      "Date time": [
+        "Date et heure"
+      ],
+      "Duration": [
+        "Durée"
+      ],
+      "Financial": [
+        "Finances"
+      ],
+      "General": [
+        "Généralités"
+      ],
+      "Long date": [
+        "Format de date longue"
+      ],
+      "More currency": [
+        "Plus de devises"
+      ],
+      "Number": [
+        "Nombre"
+      ],
+      "Percent": [
+        "Pourcentage"
+      ],
+      "Plain text": [
+        "Texte brut"
+      ],
+      "Scientific": [
+        "Scientifique"
+      ],
+      "Time": [
+        "Heure"
+      ],
+      "£ Pound": [
+        "£ Livre"
+      ],
+      "¥ Yen": [
+        "¥ Yen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Roupie"
+      ]
+    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Gras"
@@ -791,6 +859,9 @@
       ],
       "Decrease decimal places": [
         "Diminuer les décimales"
+      ],
+      "Decrease font size": [
+        "Diminuer la taille de la police"
       ],
       "Default (${ defaultFont })": [
         "Par défaut (${ defaultFont })"
@@ -804,8 +875,14 @@
       "Increase decimal places": [
         "Augmenter les décimales"
       ],
+      "Increase font size": [
+        "Augmenter la taille de la police"
+      ],
       "Italic": [
         "Italique"
+      ],
+      "More formats": [
+        "Plus de formats"
       ],
       "Redo": [
         "Rétablir"
