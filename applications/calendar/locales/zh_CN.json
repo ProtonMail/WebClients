@@ -1179,6 +1179,14 @@
         "非必填"
       ]
     },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "取消订阅"
+      ],
+      "Keep subscription": [
+        "继续订阅"
+      ]
+    },
     "Badge": {
       "New!": [
         "新！"
@@ -4927,6 +4935,9 @@
       "Dedicated servers": [
         "专用服务器"
       ],
+      "Dedicated VPN servers": [
+        "专用 VPN 服务器"
+      ],
       "default email address": [
         "首选邮箱地址"
       ],
@@ -5232,6 +5243,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "组织中的专用 VPN 服务器数量"
       ],
       "Numbers": [
         "数字"
@@ -5883,6 +5897,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "您将在 ${ boldEndDate } 失去对 ${ boldPlanTitle } 的访问权限。"
@@ -8131,8 +8148,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 优惠今天到期！"
       ],
+      "Don’t show this again": [
+        "不再显示此内容"
+      ],
       "Don’t show this offer again": [
         "不再显示此优惠"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "开通 ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "仅需 ${ pricingTitle } 即可获得 Drive Plus"
@@ -8186,9 +8209,20 @@
         "您的订阅即将续订"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "已加密的密码管理器"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 多项高级功能"
+      ],
+      "500 GB secure storage": [
+        "500 GB 安全存储空间"
+      ],
+      "Advanced threat protection": [
+        "高级威胁保护"
       ],
       "Custom email domain": [
         "自定义电子邮件域"
@@ -8210,6 +8244,9 @@
       ],
       "Storage": [
         "存储"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "遍布 110 多个国家/地区的超快 VPN 服务器"
       ]
     },
     "Onboarding": {
@@ -8464,6 +8501,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "银行转账"
       ],
@@ -8554,6 +8594,9 @@
       ],
       "Timeout exceeded": [
         "超时"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
@@ -9244,8 +9287,20 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "安全浏览"
+      ],
+      "Get unlimited aliases": [
+        "获取无限量邮箱别名"
+      ],
       "Go to subscription plans": [
         "查看账户等级"
+      ],
+      "Keep passwords safe": [
+        "确保密码安全"
+      ],
+      "Unblock streaming content": [
+        "解锁流媒体内容"
       ],
       "Upgrade": [
         "升级账户"
@@ -9323,6 +9378,15 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "访问世界范围内的流媒体服务"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "获得 500 GB 以安全地存储您的所有文件和照片"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "使用 Sentinel 保护您的账户免受威胁"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "一次性开通两年 ${ planName } 更加优惠"
       ]
@@ -10959,6 +11023,14 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "与经过验证的联系人端对端加密共享"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/每月"
+      ],
+      "Only": [
+        "仅"
       ]
     },
     "unprivatization": {
