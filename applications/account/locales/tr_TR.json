@@ -529,12 +529,6 @@
       "Download CSV sample": [
         "Örnek CSV dosyasını indir"
       ],
-      "Download for macOS": [
-        "macOS için indirin"
-      ],
-      "Download for Windows": [
-        "Windows için indirin"
-      ],
       "Download ICS": [
         "ICS dosyasını indir"
       ],
@@ -955,9 +949,6 @@
       "Next month": [
         "Sonraki ay"
       ],
-      "Next page": [
-        "Sonraki sayfa"
-      ],
       "No": [
         "Hayır"
       ],
@@ -1002,9 +993,6 @@
       ],
       "Previous month": [
         "Önceki ay"
-      ],
-      "Previous page": [
-        "Önceki sayfa"
       ],
       "Publish changes": [
         "Değişiklikleri yayınla"
@@ -1980,11 +1968,44 @@
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
       ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "\"Deneyin\" seçeneğine tıklayarak ${ termsAndConditions } kabul etmiş olursunuz."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Deneme süresi boyunca 10 kullanıcıya kadar sahip olabilirsiniz."
+      ],
+      "free for 14 days": [
+        "14 gün boyunca ücretsiz."
+      ],
       "on ${ formattedDate }": [
         "${ formattedDate } tarihinde"
       ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "${ selected } ${ freeFor14Days } Deneyin"
+      ],
       "Try it free for 14 days": [
         "14 gün boyunca ücretsiz deneyin"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "İptal ettiğinizde, ücretsiz denemeniz ücretli aboneliğe dönüştürülmez, ancak deneme süresi sonuna kadar plan avantajlarından yararlanmaya devam edebilirsiniz. Bundan sonra, ${ BRAND_NAME } Ücretsiz planına düşürüleceksiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucuya sahip olabilirsiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } Lumo koltuğuna sahip olabilirsiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğuna sahip olabilirsiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcıya sahip olabilirsiniz."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Deneme süresi boyunca özel alan adları ekleyemezsiniz."
+      ],
+      "You have reached the trial limit.": [
+        "Deneme limitine ulaştınız."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -4482,14 +4503,6 @@
         "Windows 8/8.1/7 veya Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu için .deb"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat için .rpm"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Dosyaya güvenle erişmek için ücretsiz bir ${ DRIVE_APP_NAME } hesabı açın"
@@ -6742,14 +6755,6 @@
         "Bilgisayar uygulamasını ücretsiz deneme süreniz sona erdi"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "App Store üzerinde ${ appName }"
-      ],
-      "${ appName } on Play Store": [
-        "Play Store üzerinde ${ appName }"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Otomatik olarak"
@@ -8512,9 +8517,6 @@
       "Failed to fetch logs.": [
         "Günlük kayıtları alınamadı."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Hızlı ve odaklanmış. E-posta ve takvim, doğrudan bilgisayarınızda."
-      ],
       "Featured in": [
         "Değerlendirmeler"
       ],
@@ -9588,9 +9590,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP gönderimi, üçüncü taraf hizmetlerin veya aygıtların özel etki alanı adreslerinizi kullanarak ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar. Bu özellik yalnızca özel etki alanları olan ${ BRAND_NAME } for Business kullanıcıları tarafından kullanılabilir."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP gönderimi özelliği, üçüncü taraf hizmetlerin veya aygıtların özel etki alanı adreslerinizle ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar. Erişim isteğinde bulunmak için lütfen kullanım durumlarınızı, hangi özel etki alanlarını kullanmak istediğinizi ve gerçekleşmesi beklenen saatlik ve günlük e-posta sayılarını açıklayan ${ createTicket }."
@@ -11405,9 +11404,6 @@
       "Backup password": [
         "Yedek parola"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -12130,9 +12126,6 @@
       ],
       "Second password": [
         "İkinci parola"
-      ],
-      "Select Linux package format": [
-        "Linux paketi biçimini seçin"
       ],
       "Select Linux platform": [
         "Linux platformunu seçin"
@@ -12857,9 +12850,6 @@
       ],
       "Sign in success (awaiting second factor)": [
         "Oturum açıldı (ikinci adım bekleniyor)"
-      ],
-      "Sign in success (awaiting verify)": [
-        "Oturum açıldı (doğrulama bekleniyor)"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -19792,15 +19782,6 @@
       ],
       "Folders and labels": [
         "Klasörler ve etiketler"
-      ],
-      "For Linux": [
-        "Linux için"
-      ],
-      "For macOS": [
-        "macOS için"
-      ],
-      "For Windows": [
-        "Windows için"
       ],
       "Forgot password": [
         "Parolamı unuttum"

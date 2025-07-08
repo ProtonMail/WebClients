@@ -2866,17 +2866,6 @@
         "${ PLAN_NAMES[PLANS.PASS] }-tilauksesi on erityishintaan ${ price } vuodessa. Jos vaihdat maksuttomaan tilaukseen, menetät alennuksen ikuisesti, vaikka päivittäisit uudelleen tulevaisuudessa."
       ]
     },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Lataa Linuxille"
-      ],
-      "Download for macOS": [
-        "Lataa macOS:lle"
-      ],
-      "Download for Windows": [
-        "Lataa Windowsille"
-      ]
-    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Avaa ${ DRIVE_SHORT_APP_NAME }ssä"
@@ -3423,9 +3412,6 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
-      ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "VPN-hallintapaneelia ei voi ladata. Tarkista yhteytesi ja yritä uudelleen."
       ],
       "Unable to set photo as cover": [
         "Kuvaa ei voitu asettaa kansikuvaksi"
@@ -4501,21 +4487,12 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } löytyy jo tästä sijainnista."
       ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } naamioi IP-osoitteesi, jotta verkkosivustot eivät voi tunnistaa sinua."
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } jäsen)",
         "(${ memberCount } jäsentä)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/kuukausi)"
-      ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Automaattinen yhdistäminen**: Avaa ja muodostaa VPN-yhteyden heti, kun käynnistät laitteen."
-      ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Tappokytkin**: Estää tietovuodot katkaisemalla Internet-yhteytesi, jos VPN-yhteys katkeaa yllättäen."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } lisätallennustilaa"
@@ -4536,29 +4513,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Yksittäisellä puhelinnumerolla voidaan vahvistaa ainoastaan yksi ${ BRAND_NAME }-tili"
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "Suojattu yhteys on välttämätön etätyöskenneltäessä. VPN suojaa yrityksen tietoja kyberuhkilta ja pitää työsi yksityisenä."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
-      ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "VPN salaa yhteytesi ja piilottaa IP-osoitteesi, mikä vaikeuttaa huomattavasti selaamisesi seuraamista tai valvomista."
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "VPN piilottaa IP-osoitteesi ja salaa selaustoimintasi, joten verkkosivustojen, mainostajien ja Internet-palveluntarjoajien on vaikeampi seurata sinua ajan mittaan."
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "VPN on suojattu tunneli laitteesi ja Internetin välillä. Se piilottaa sijaintisi ja toimintasi Internet-palveluntarjoajaltasi (ISP) ja verkkosivustoilta, joilla vierailet."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ole yhteydessä ylläpitoosi."
       ],
       "Account successfully updated": [
         "Tili on päivitetty"
-      ],
-      "Ad targeting": [
-        "Mainosten kohdentaminen"
       ],
       "Address copied to clipboard": [
         "Osoite kopioitiin leikepöydälle"
@@ -4742,9 +4704,6 @@
       ],
       "Conflict": [
         "Ristiriita"
-      ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "Yhdistä ${ VPN_APP_NAME }:ään selataksesi yksityisesti"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Yhteystieto lisättiin ryhmään ${ contactGroupName }"
@@ -5011,9 +4970,6 @@
       "from the version history?": [
         "versiohistoriasta?"
       ],
-      "Geoblocking": [
-        "Geoblokkaus"
-      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Hanki sovellus varmuuskopioidaksesi laitteesi kuvat tai tallentaaksesi niitä tänne."
       ],
@@ -5078,9 +5034,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
       ],
-      "In restrictive countries": [
-        "Rajoittavissa maissa"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Seuraavassa vaiheessa voit tehdä talletuksen Bitcoin-osoitteella."
       ],
@@ -5122,9 +5075,6 @@
       ],
       "Items moved to the trash will stay here until deleted": [
         "Roskakoriin siirretyt kohteet pysyvät täällä, kunnes ne poistetaan"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "VPN:ää kannattaa käyttää aina. Mutta näissä tilanteissa kyberturvauhat voivat olla suurimmat:"
       ],
       "It’s easy and secure": [
         "Se on helppoa ja turvallista"
@@ -5235,9 +5185,6 @@
       "More": [
         "Lisää"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "Useimmat julkiset Wi-Fi-verkot ovat turvallisia, mutta joskus puutteellisesti suojattuja, jolloin voit altistua kyberuhkille. VPN salaa tietoliikenteesi ja pitää sinut suojattuna."
-      ],
       "Moving files": [
         "Tiedostoja siirretään"
       ],
@@ -5286,9 +5233,6 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Kaikkia tiedostoja ei siirretty. Yritä tallentaa tai ladata ne uudelleen."
       ],
-      "Not connected": [
-        "Ei yhdistetty"
-      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Huomioi: Tiedot saattavat edelleen löytyä paikallisesti niiltä laitteilta, joille ${ DRIVE_APP_NAME } on asennettu."
       ],
@@ -5306,9 +5250,6 @@
       ],
       "of": [
         "/"
-      ],
-      "On public WiFi networks": [
-        "Julkisissa Wi-Fi-verkoissa"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Yksi salatuista levyistäsi on lukittu. Tämä johtuu todennäköisesti taannoisesta salasanan nollauksesta."
@@ -5537,9 +5478,6 @@
       "Scan issue": [
         "Skannausongelma"
       ],
-      "Scan the QR code with your mobile device": [
-        "Skannaa QR-koodi mobiililaitteellasi"
-      ],
       "Search cannot be enabled in this browser": [
         "Hakua ei voida käyttää tässä selaimessa"
       ],
@@ -5630,26 +5568,17 @@
       "Some files failed to upload. Try uploading the files again.": [
         "Joidenkin tiedostojen tallennus epäonnistui. Yritä tallentaa ne uudelleen."
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "Jotkut viranomaiset estävät tai rajoittavat pääsyä tietyille verkkosivustoille. VPN auttaa ohittamaan sensuurin ja pitämään toimintasi ja identiteettisi yksityisenä."
-      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Jotkin tiedostot eivät ole enää käytettävissä. Palauta ne käyttöösi. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Joitakin tämän albumin kuvia ei tallenneta aikajanallesi. Tämän albumin poistaminen poistaa nämä kuvat pysyvästi."
       ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Jotkin verkkosivustot ja suoratoistopalvelut estävät sisältöä aluekohtaisesti. VPN:n avulla voit kiertää nämä rajoitukset ja käyttää Internetiä vapaasti."
-      ],
       "Something went wrong, please try again later.": [
         "Jotain meni pieleen. Yritä myöhemmin uudelleen."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Aloita sen jakaminen yhteystietojen kanssa ja käytä sitä verkkopalveluissa."
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Pysy vaivattomasti yhdistettynä ottamalla käyttöön seuraavat VPN-asetukset:"
       ],
       "Storage allocated to other users in this organisation": [
         "Organisaation käyttäjille varattu tallennustila"
@@ -5675,9 +5604,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "Tarkkailu"
       ],
       "Symbols (#$&)": [
         "Symbolit (#$&)"
@@ -5757,14 +5683,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Linkki on luotu vanhalla Drive-versiolla, eikä sen muokkaus ole mahdollista. Muuttaaksesi asetuksia, poista linkki ja luo uusi."
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Tämä tarkoittaa, että Internet-palveluntarjoajasi ja vierailemasi verkkosivustot eivät voi yhdistää henkilötietojasi verkkotoimintaasi."
-      ],
       "This month": [
         "Tässä kuussa"
-      ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Verkkosivustot ja Internet-palveluntarjoajat (ISP) voivat käyttää tätä yksilöllistä koodia yhdistääkseen sijaintisi ja selaushistoriasi laitteeseesi"
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Tämä poistaa vain albumin. Kuvasi säilyvät aikajanallasi. Tätä toimintoa ei voi kumota."
@@ -5777,9 +5697,6 @@
       ],
       "This will permanently delete the selected items you uploaded.": [
         "Tämä poistaa lähettämäsi valitut kohteet pysyvästi."
-      ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
-        "Tämä poistaa synkronoidun laitteen ${ deviceName } ${ DRIVE_APP_NAME }:stä ja kaikki sen tiedot ${ DRIVE_APP_NAME }stä. Omiin tietokoneisiisi lisäämiäsi kansioita ei enää synkronoida."
       ],
       "This will replace the existing file with the folder": [
         "Tämä korvaa olemassa olevan tiedoston kansiolla"
@@ -5840,9 +5757,6 @@
       ],
       "Total VPN connections": [
         "VPN-yhteyksiä yhteensä"
-      ],
-      "Tracking": [
-        "Seuranta"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Tiedoston \"${ name }\" siirto peruttiin"
@@ -5943,9 +5857,6 @@
       "Visa Secure logo": [
         "Visa Secure -logo"
       ],
-      "VPN IP": [
-        "VPN:n IP-osoite"
-      ],
       "Want to sync files faster?": [
         "Haluatko synkronoida tiedostot nopeammin?"
       ],
@@ -5996,12 +5907,6 @@
       ],
       "What would you like to do?": [
         "Mitä haluat tehdä?"
-      ],
-      "When working remotely": [
-        "Etätyöskennellessä"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Kun yhdistät VPN:ään, se käyttää salaustekniikkaa IP-osoitteesi (laitteellesi annettu yksilöllinen koodi) salaamiseen."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Määrittäessäsi kaksivaiheisen tunnistautumisen saat myös palautuskoodit, joilla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
@@ -6189,15 +6094,6 @@
       "Your information was found on ${ displayedDate }": [
         "Tietosi havaittiin ${ displayedDate }"
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "Internet-palveluntarjoajasi voi valvoa ja saattaa myydä tietojasi tai jopa rajoittaa, mitä verkkosivustoja voit käyttää."
-      ],
-      "Your IP": [
-        "Sinun IP:si"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "IP-osoitteesi on havaittavissa, ja sitä voidaan käyttää verkkotoimintasi seuraamiseen."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
       ],
@@ -6207,17 +6103,11 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Seuraava laskutuspäiväsi on ${ renewalTime }. Jos haluat muuttaa tilausta heti, ota yhteyttä asiakaspalveluun."
       ],
-      "Your online activity is protected": [
-        "Verkkotoimintasi on suojattu"
-      ],
       "Your password was leaked:": [
         "Salasanasi paljastui:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "Fyysinen sijaintisi on havaittavissa, ja sitä voidaan käyttää Internet-käyttösi rajoittamiseen."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Tilauksesi on rajoitettu 10 versioon, joita säilytetään enintään 7 päivää"
@@ -6922,15 +6812,6 @@
       ],
       "Your alias": [
         "Sinun aliaksesi"
-      ],
-      "Your IP": [
-        "Sinun IP:si"
-      ],
-      "Your ISP": [
-        "Sinun ISP:si"
-      ],
-      "Your location": [
-        "Sinun sijaintisi"
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
@@ -10970,9 +10851,6 @@
       "Deleting contacts": [
         "Poistetaan yhteystietoja"
       ],
-      "Desktop": [
-        "Työpöytä"
-      ],
       "Discard": [
         "Hylätään"
       ],
@@ -10990,9 +10868,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Lataa ${ DRIVE_APP_NAME }-sovellukset"
-      ],
-      "Download the app": [
-        "Lataa sovellus"
       ],
       "Download unverified file?": [
         "Ladataanko vahvistamaton tiedosto?"
@@ -11076,9 +10951,6 @@
         "Löytyi ${ searchView.numberOfResults } tulos",
         "Löytyi ${ searchView.numberOfResults } tulosta"
       ],
-      "Get more from your VPN": [
-        "Saa enemmän VPN-yhteydestäsi"
-      ],
       "Get the apps": [
         "Hanki sovellukset"
       ],
@@ -11099,9 +10971,6 @@
       ],
       "Hm, we couldn't find that one": [
         "Hm, etsimääsi ei löytynyt"
-      ],
-      "How does it all work?": [
-        "Miten se kaikki toimii?"
       ],
       "Human verification": [
         "Ihmisvahvistus"
@@ -11143,9 +11012,6 @@
       "Location": [
         "Sijainti"
       ],
-      "Make a secure connection your default": [
-        "Aseta suojattu yhteys oletuksesi"
-      ],
       "Manage secure link": [
         "Hallitse suojattua linkkiä"
       ],
@@ -11160,9 +11026,6 @@
       ],
       "Minicalendar": [
         "Pienoiskalenteri"
-      ],
-      "Mobile": [
-        "Mobiili"
       ],
       "Modified": [
         "Muokattu"
@@ -11277,9 +11140,6 @@
       ],
       "Preview": [
         "Esikatselu"
-      ],
-      "Private browsing vs VPN": [
-        "Yksityinen selaus vs VPN"
       ],
       "Processing...": [
         "Käsitellään..."
@@ -11489,9 +11349,6 @@
       "Version history": [
         "Versiohistoria"
       ],
-      "VPN explained": [
-        "VPN selitetty"
-      ],
       "Warning": [
         "Varoitus"
       ],
@@ -11501,17 +11358,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Tervetuloa ${ BRAND_NAME } for Businessiin"
       ],
-      "What can a VPN protect you from?": [
-        "Miltä VPN voi suojata sinua?"
-      ],
-      "What is a VPN?": [
-        "Mikä on VPN?"
-      ],
       "What would you like to import?": [
         "Mitä haluat tuoda?"
-      ],
-      "When is it most important to use a VPN?": [
-        "Milloin VPN:n käyttäminen on tärkeintä?"
       ],
       "You can now create unlimited folders and labels": [
         "Voit nyt luoda rajattomasti kansioita ja tunnisteita"

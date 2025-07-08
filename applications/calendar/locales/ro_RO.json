@@ -1197,6 +1197,19 @@
         "Opțional"
       ]
     },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Anulare abonament"
+      ],
+      "Keep subscription": [
+        "Păstrare abonament"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Perioada de probare se încheie peste ${ timeRemaining }"
+      ]
+    },
     "Badge": {
       "New!": [
         "Nou!"
@@ -8868,9 +8881,6 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Se acceptă doar euro pentru zona SEPA. Moneda a fost schimbată. Utilizați selectorul dacă doriți să remodificați."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
       ],
@@ -8926,6 +8936,9 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
