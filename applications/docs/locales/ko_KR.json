@@ -391,7 +391,7 @@
         "라벨로 이동"
       ],
       "Got it": [
-        "알겠습니다"
+        "확인"
       ],
       "Help": [
         "도움말"
@@ -1099,6 +1099,19 @@
       ],
       "Unsupported event": [
         "지원되지 않는 이벤트"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "구독 취소하기"
+      ],
+      "Keep subscription": [
+        "구독 유지"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "무료 체험이 ${ timeRemaining } 에 종료됩니다"
       ]
     },
     "bf2023: Deal details": {
@@ -2541,7 +2554,7 @@
         "이벤트 초대장에 화상 회의 링크를 즉시 추가할 수 있습니다."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "연락처 병합 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
+        "연락처 병합 중... 몇 분 정도 소요될 수 있습니다. 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
       "Set a data recovery method to prevent data loss.": [
         "데이터 손실을 방지하려면 데이터 복구 방법을 설정하세요."
@@ -3176,6 +3189,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "외부 계정에 너무 많은 폴더가 있습니다. 일부 폴더를 삭제하려면 사용자 지정 가져오기를 설정하세요."
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "문서 업데이트 처리 중 오류가 발생했습니다. 페이지 새로고침 후 다시 시도해 주세요."
       ],
       "There was an error when exporting the contacts vCards": [
         "연락처 vCard를 내보낼 때 오류가 발생했어요."
@@ -8097,9 +8113,6 @@
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "유로화는 SEPA로만 결제 가능합니다. 사용자의 결제 수단이 변경되었습니다. 선택기를 사용하여 선택을 다시 확인하세요."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
       ],
@@ -8147,6 +8160,9 @@
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
       "Your payment is still being processed": [
         "회원님의 결제가 아직 처리 중입니다"
@@ -9518,7 +9534,7 @@
         "브라우저의 메모리가 부족할 수 있음"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "${ MAIL_SHORT_APP_NAME } 구독 해지"
+        "${ MAIL_SHORT_APP_NAME } 구독 취소"
       ],
       "Cancel subscription?": [
         "구독을 취소하시겠어요?"
