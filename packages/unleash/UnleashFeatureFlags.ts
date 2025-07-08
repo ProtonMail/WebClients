@@ -170,7 +170,6 @@ enum MailFeatureFlag {
     MailboxOptimisticRefactoring = 'MailboxOptimisticRefactoring',
     // Category view
     ShowMessageCategory = 'ShowMessageCategory',
-    MailCategoryView = 'MailCategoryView',
 }
 
 enum AdminFeatureFlag {
