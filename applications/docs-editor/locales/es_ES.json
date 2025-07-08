@@ -442,6 +442,9 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Hubo un error al actualizar el documento. Por favor, recarga la página y vuelve a intentarlo."
+      ],
       "Tried to import Sheet data into Lexical": [
         "Se ha intentado importar los datos de la hoja en Lexical."
       ],
@@ -782,6 +785,71 @@
         "Insertar"
       ]
     },
+    "sheets_2025:Spreadsheet editor more formats menu": {
+      "$ US Dollar": [
+        "$ Dólar estadounidense"
+      ],
+      "Accounting": [
+        "Contabilidad"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Yuan chino"
+      ],
+      "Currency": [
+        "Moneda"
+      ],
+      "Currency rounded": [
+        "Moneda redondeada"
+      ],
+      "Date": [
+        "Fecha"
+      ],
+      "Date time": [
+        "Fecha y hora"
+      ],
+      "Duration": [
+        "Duración"
+      ],
+      "Financial": [
+        "Financiero"
+      ],
+      "General": [
+        "General"
+      ],
+      "Long date": [
+        "Fecha larga"
+      ],
+      "More currency": [
+        "Más divisas"
+      ],
+      "Number": [
+        "Número"
+      ],
+      "Percent": [
+        "Porcentaje"
+      ],
+      "Plain text": [
+        "Texto sin formato"
+      ],
+      "Scientific": [
+        "Científico"
+      ],
+      "Time": [
+        "Fecha"
+      ],
+      "£ Pound": [
+        "£ Libra"
+      ],
+      "¥ Yen": [
+        "¥ Yen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupia"
+      ]
+    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Negrita"
@@ -791,6 +859,9 @@
       ],
       "Decrease decimal places": [
         "Disminuir decimales"
+      ],
+      "Decrease font size": [
+        "Reducir el tamaño de la fuente"
       ],
       "Default (${ defaultFont })": [
         "Predeterminado (${ defaultFont })"
@@ -804,8 +875,14 @@
       "Increase decimal places": [
         "Aumentar decimales"
       ],
+      "Increase font size": [
+        "Aumentar el tamaño de la fuente"
+      ],
       "Italic": [
         "Cursiva"
+      ],
+      "More formats": [
+        "Más formatos"
       ],
       "Redo": [
         "Rehacer"

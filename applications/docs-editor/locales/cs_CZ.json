@@ -442,6 +442,9 @@
       "Request timed out": [
         "Vypršel časový limit žádosti"
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Při zpracování aktualizací dokumentu došlo k chybě. Znovu načtěte stránku a zkuste to znovu."
+      ],
       "Tried to import Sheet data into Lexical": [
         "Pokus o import dat listu do aplikace Lexical"
       ],
@@ -784,6 +787,71 @@
         "Vložit"
       ]
     },
+    "sheets_2025:Spreadsheet editor more formats menu": {
+      "$ US Dollar": [
+        "$ Americký dolar"
+      ],
+      "Accounting": [
+        "Účetnictví"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ čínský jüan"
+      ],
+      "Currency": [
+        "Měna"
+      ],
+      "Currency rounded": [
+        "Měna zaokrouhlená"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date time": [
+        "Datum a čas"
+      ],
+      "Duration": [
+        "Doba trvání"
+      ],
+      "Financial": [
+        "Finanční"
+      ],
+      "General": [
+        "Obecné"
+      ],
+      "Long date": [
+        "Datum dlouhé"
+      ],
+      "More currency": [
+        "Další měna"
+      ],
+      "Number": [
+        "Číslo"
+      ],
+      "Percent": [
+        "Procento"
+      ],
+      "Plain text": [
+        "Prostý text"
+      ],
+      "Scientific": [
+        "Vědecké"
+      ],
+      "Time": [
+        "Čas"
+      ],
+      "£ Pound": [
+        "£ Libra"
+      ],
+      "¥ Yen": [
+        "¥ Yen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupie"
+      ]
+    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Tučně"
@@ -793,6 +861,9 @@
       ],
       "Decrease decimal places": [
         "Snížit počet desetinných míst"
+      ],
+      "Decrease font size": [
+        "Zmenšit písmo"
       ],
       "Default (${ defaultFont })": [
         "Výchozí (${ defaultFont })"
@@ -806,8 +877,14 @@
       "Increase decimal places": [
         "Zvýšit počet desetinných míst"
       ],
+      "Increase font size": [
+        "Zvětšit písmo"
+      ],
       "Italic": [
         "Kurzíva"
+      ],
+      "More formats": [
+        "Další formáty"
       ],
       "Redo": [
         "Znovu"
