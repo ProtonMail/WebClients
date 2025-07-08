@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { MeetingType } from '../../response-types';
 import type { CreateMeetingParams } from '../../types';
+import { getMeetingLink } from '../../utils/getMeetingLink';
 import { useSaveMeeting } from '../useSaveMeeting';
 import { useGetMeetingDependencies } from './useGetMeetingDependencies';
 
@@ -22,7 +23,7 @@ export const useCreateMeeting = () => {
         meetingName,
         startTime,
         endTime,
-        recurring,
+        recurrence,
         timeZone,
         customPassword = '',
         type = MeetingType.INSTANT,
@@ -31,13 +32,13 @@ export const useCreateMeeting = () => {
 
         try {
             const { response, passwordBase } = await saveMeeting({
-                params: { customPassword, meetingName, startTime, endTime, recurring, timeZone, type },
+                params: { customPassword, meetingName, startTime, endTime, recurrence, timeZone, type },
                 privateKey,
                 addressId,
             });
 
             return {
-                meetingLink: `/join/${response.Meeting.MeetingLinkName}#${passwordBase}`,
+                meetingLink: getMeetingLink(response.Meeting.MeetingLinkName, passwordBase),
                 id: response.Meeting.MeetingLinkName,
             };
         } catch (error) {

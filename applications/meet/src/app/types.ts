@@ -97,7 +97,7 @@ export interface CreateMeetingParams {
     meetingName: string;
     startTime: string | null;
     endTime: string | null;
-    recurring: boolean | null;
+    recurrence: string | null;
     timeZone?: string | null;
     customPassword?: string;
     type?: MeetingType;

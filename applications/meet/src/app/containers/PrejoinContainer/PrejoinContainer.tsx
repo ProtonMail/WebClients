@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
+import useFlag from '@proton/unleash/useFlag';
 
 import logo from '../../../assets/meet-logo.svg';
 import { DeviceSettings } from '../../components/DeviceSettings/DeviceSettings';
@@ -40,6 +41,8 @@ export const PrejoinContainer = ({
     roomId,
     instantMeeting = false,
 }: PrejoinContainerProps) => {
+    const isScheduleInAdvanceEnabled = useFlag('ScheduleInAdvance');
+
     const [selectedCamera, setSelectedCamera] = useState<MediaDeviceInfo | null>(null);
     const [selectedMicrophone, setSelectedMicrophone] = useState<MediaDeviceInfo | null>(null);
     const [selectedAudioOutputDevice, setSelectedAudioOutputDevice] = useState<MediaDeviceInfo | null>(null);
@@ -102,13 +105,17 @@ export const PrejoinContainer = ({
                     className="absolute top-custom right-custom flex items-center gap-2"
                     style={{ '--top-custom': '0.75rem', '--right-custom': '2rem' }}
                 >
-                    <Button
-                        className="action-button rounded-full border-none"
-                        onClick={() => (guestMode ? handleSignIn('admin/create') : history.replace('/admin/create'))}
-                        size="large"
-                    >
-                        {c('l10n_nightly Action').t`Schedule meeting`}
-                    </Button>
+                    {isScheduleInAdvanceEnabled && (
+                        <Button
+                            className="action-button rounded-full border-none"
+                            onClick={() =>
+                                guestMode ? handleSignIn('admin/create') : history.replace('/admin/create')
+                            }
+                            size="large"
+                        >
+                            {c('l10n_nightly Action').t`Schedule meeting`}
+                        </Button>
+                    )}
                     {guestMode ? (
                         <Button
                             className="action-button rounded-full border-none"

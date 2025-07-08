@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useApi } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
 
-import { type CreateMeetingResponse, CustomPasswordState, RecurringType } from '../response-types';
+import { type CreateMeetingResponse, CustomPasswordState } from '../response-types';
 import type { CreateMeetingParams } from '../types';
 import { prepareMeetingCryptoData } from '../utils/cryptoUtils';
 
@@ -15,16 +15,12 @@ export const createMeetingCall = () => {
     };
 };
 
-const getRecurringType = (recurring: boolean) => {
-    return recurring ? RecurringType.RECURRING : RecurringType.SCHEDULED;
-};
-
 export const useSaveMeeting = () => {
     const api = useApi();
 
     const saveMeeting = useCallback(
         async ({
-            params: { customPassword, meetingName, startTime, endTime, recurring, timeZone, type },
+            params: { customPassword, meetingName, startTime, endTime, recurrence, timeZone, type },
             privateKey,
             addressId,
             noPasswordSave = false,
@@ -51,8 +47,6 @@ export const useSaveMeeting = () => {
                 noEncryptedPasswordReturn: noPasswordSave,
             });
 
-            const recurringRule = recurring === null ? null : getRecurringType(recurring);
-
             const response = await api<CreateMeetingResponse>({
                 ...createMeetingCall(),
                 data: {
@@ -66,8 +60,8 @@ export const useSaveMeeting = () => {
                     AddressID: addressId,
                     StartTime: startTime,
                     EndTime: endTime,
-                    RRule: recurringRule,
-                    TimeZone: timeZone,
+                    RRule: recurrence,
+                    Timezone: timeZone,
                     CustomPassword: !!customPassword
                         ? CustomPasswordState.PASSWORD_SET
                         : CustomPasswordState.NO_PASSWORD,

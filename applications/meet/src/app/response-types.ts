@@ -28,8 +28,7 @@ export enum MeetingType {
     INSTANT = 0,
     PERSONAL = 1,
     SCHEDULED = 2,
-    RECURRING = 4,
-    UNAUTHENTICATED = 5,
+    RECURRING = 3,
 }
 
 export enum RecurringType {

@@ -30,7 +30,7 @@ export const useCreateInstantMeeting = () => {
                     customPassword: '',
                     startTime: null,
                     endTime: null,
-                    recurring: null,
+                    recurrence: null,
                     timeZone: null,
                     type: MeetingType.INSTANT,
                 } as CreateMeetingParams,

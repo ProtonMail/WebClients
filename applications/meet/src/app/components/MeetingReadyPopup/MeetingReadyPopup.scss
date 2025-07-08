@@ -23,3 +23,19 @@
 .meeting-ready-popup-meeting-link-text {
 	word-break: break-all;
 }
+
+.copy-meeting-link-button {
+	background-color: var(--interaction-weak);
+
+	&:hover {
+		background-color: var(--interaction-weak-major-1) !important;
+	}
+}
+
+.meeting-ready-popup-title {
+	margin-block: 2rem;
+}
+
+.meeting-ready-popup-meeting-link {
+	margin-block: 1rem 2.5rem;
+}

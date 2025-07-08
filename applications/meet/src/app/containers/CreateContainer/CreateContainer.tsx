@@ -1,205 +1,287 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import { DateInputTwo, InputFieldTwo, Label, Option, PasswordInputTwo, SelectTwo, Toggle } from '@proton/components';
-import { IcCalendarDay, IcClock } from '@proton/icons';
-import { format } from '@proton/shared/lib/date-fns-utc';
-import { getTimeZoneOptions } from '@proton/shared/lib/date/timezone';
+import { InputFieldTwo, Option, PasswordInputTwo, SelectTwo } from '@proton/components';
+import { IcArrowsRotate, IcCross, IcKey, IcTextAlignLeft } from '@proton/icons';
+import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
+import noop from '@proton/utils/noop';
 
+import { MeetingCreatedModal } from '../../components/MeetingCreatedModal/MeetingCreatedModal';
+import { TimeInputBlock } from '../../components/TimeInputBlock';
 import { useCreateMeeting } from '../../hooks/admin/useCreateMeeting';
 import { MeetingType } from '../../response-types';
-import type { MeetingDetails } from '../../types';
+import type { CreateMeetingParams, MeetingDetails } from '../../types';
+import { combineDateAndTime, getInitialValues, validate } from './utils';
 
 import './CreateContainer.scss';
 
-const durationOptions = [
-    { label: '15 minutes', value: 15 * 60 * 1000 },
-    { label: '30 minutes', value: 30 * 60 * 1000 },
-    { label: '45 minutes', value: 45 * 60 * 1000 },
-    { label: '1 hour', value: 60 * 60 * 1000 },
-    { label: '2 hours', value: 2 * 60 * 60 * 1000 },
-    { label: '3 hours', value: 3 * 60 * 60 * 1000 },
-    { label: '4 hours', value: 4 * 60 * 60 * 1000 },
+const repeatOptions = [
+    { label: 'No repeat', value: 'NO_REPEAT' },
+    { label: 'Every day', value: 'DAILY' },
+    { label: 'Every weekday', sublabel: 'Monday to Friday', value: 'EVERY_WEEKDAY' },
+    { label: 'Every month', value: 'EVERY_MONTH' },
+    { label: 'Every year', value: 'EVERY_YEAR' },
 ];
 
-const initialValues = {
-    meetingName: '',
-    startDate: new Date(),
-    time: format(new Date(), 'HH:mm'),
-    duration: durationOptions[1].value,
-    recurring: false,
-    timeZone: '',
-    customPassword: '',
-};
+const minutes = ['00', '15', '30', '45'];
+const timeOptions = [...Array(24).keys()]
+    .map((item) => {
+        const hourString = item > 9 ? item : `${0}${item}`;
+
+        return minutes.map((minute) => ({
+            value: `${hourString}:${minute}`,
+            label: `${hourString}:${minute}`,
+        }));
+    })
+    .flat();
 
 interface CreateContainerProps {
     onMeetingCreated: (meetingDetails: MeetingDetails) => void;
+    meetingDetails: CreateMeetingParams;
 }
 
-export const CreateContainer = ({ onMeetingCreated }: CreateContainerProps) => {
-    const history = useHistory();
+export const CreateContainer = ({ meetingDetails }: CreateContainerProps) => {
+    const [user] = useUser();
 
-    const [values, setValues] = useState(initialValues);
-
-    const { createMeeting } = useCreateMeeting();
-
-    const timeZoneOptions = useMemo(
+    const timeZoneSelectOptions = useMemo(
         () => getTimeZoneOptions().map((option) => ({ label: option.text, value: option.value })),
         []
     );
 
+    const userTimeZone = getTimezone();
+
+    const isEdit = !!meetingDetails;
+
+    const history = useHistory();
+
+    const [advancedOptions, setAdvancedOptions] = useState(false);
+
+    const [showTimezones, setShowTimezones] = useState(false);
+
+    const [result, setResult] = useState<{
+        meetingLink: string;
+        id: string;
+    } | null>(null);
+
+    const [values, setValues] = useState({
+        ...getInitialValues(),
+        timeZone: userTimeZone,
+        meetingName: c('l10n_nightly Info').t`${user.DisplayName}'s Meeting`,
+    });
+
+    const { createMeeting } = useCreateMeeting();
+
+    const timeZoneAction = showTimezones ? 'Hide' : 'Show';
+
+    const errors = useMemo(() => validate(values), [values]);
+
+    const isDisabled = useMemo(() => {
+        return Object.values(errors).some((error) => error);
+    }, [errors]);
+
     const handleSubmit = async () => {
-        const { startDate, time, duration, recurring, ...restOfValues } = values;
+        const { startDate, recurrence, ...restOfValues } = values;
 
-        const [hours, minutes] = time.split(':').map(Number);
+        const startTime = combineDateAndTime(startDate, values.startTime);
 
-        const startTime = new Date(startDate);
+        const endTime = combineDateAndTime(values.endDate, values.endTime);
 
-        startTime.setHours(hours, minutes, 0, 0);
+        const type = recurrence ? MeetingType.RECURRING : MeetingType.SCHEDULED;
 
-        const endTime = new Date(startTime.getTime() + duration);
-
-        const type = recurring ? MeetingType.RECURRING : MeetingType.SCHEDULED;
-
-        const rrule = recurring ? recurring : null;
+        const rrule = recurrence === 'NO_REPEAT' ? null : recurrence;
 
         try {
             const { meetingLink, id } = await createMeeting({
                 ...restOfValues,
                 startTime: startTime.toISOString(),
                 endTime: endTime.toISOString(),
-                recurring: rrule,
+                recurrence: rrule,
                 type,
             });
 
-            onMeetingCreated({
-                meetingId: id,
-                meetingName: values.meetingName,
-                date: startTime.toISOString(),
-                time: time,
-                meetingLink,
-                duration: durationOptions.find((option) => option.value === duration)?.label as string,
+            setResult({
+                meetingLink: `${window.location.origin}${meetingLink}`,
+                id,
             });
-
-            history.push(`/admin/details/${id}`);
         } catch (error) {
             window.alert(error instanceof Error ? error.message : 'Failed to create meeting');
         }
     };
 
+    useEffect(() => {
+        if (values.startTime >= values.endTime) {
+            setValues((prev) => ({
+                ...prev,
+                endTime: timeOptions.find((option) => option.value > values.startTime)?.value ?? values.startTime,
+            }));
+        }
+    }, [values.startTime, values.endTime]);
+
+    const startTimeOptions = useMemo(() => {
+        const now = new Date();
+        return timeOptions.filter((option) => combineDateAndTime(values.startDate, option.value) > now);
+    }, [values.startDate]);
+
+    const endTimeOptions = useMemo(() => {
+        const now = new Date();
+        return timeOptions.filter((option) => combineDateAndTime(values.endDate, option.value) > now);
+    }, [values.endDate]);
+
     return (
-        <div className="w-full h-full flex items-center justify-center">
+        <>
+            {result && (
+                <MeetingCreatedModal
+                    values={values}
+                    meetingLink={result.meetingLink}
+                    startTime={combineDateAndTime(values.startDate, values.startTime)}
+                    endTime={combineDateAndTime(values.endDate, values.endTime)}
+                    timeZone={values.timeZone}
+                    id={result.id}
+                    onClose={() => history.push('/join')}
+                />
+            )}
             <div
-                className="w-custom h-custom border border-strong rounded-xl p-4 flex flex-column bg-norm"
-                style={{ '--w-custom': '40rem', '--h-custom': '40rem' }}
+                className="create-container w-full h-full flex items-center justify-center w-custom p-4"
+                style={{ '--w-custom': '37.5rem' }}
             >
-                <h2 className="h2 mb-6">Schedule a Meeting</h2>
-                <div id="create_meeting_form" className="flex flex-column flex-1 gap-2">
-                    <InputFieldTwo
-                        id="meetingName"
-                        name="meetingName"
-                        label={c('l10n_nightly Label').t`Meeting Title`}
-                        placeholder={c('l10n_nightly Placeholder').t`Enter meeting title`}
-                        onChange={(e) => setValues({ ...values, meetingName: e.target.value })}
-                        autoComplete="off"
-                        value={values.meetingName}
-                    />
-                    <div className="flex flex-nowrap gap-2">
-                        <div className="flex flex-column w-1/2">
-                            <Label className="pt-0 mb-1" htmlFor="startDate">
-                                {c('l10n_nightly Label').t`Date`}
-                            </Label>
-                            <DateInputTwo
-                                min={new Date()}
-                                preventValueReset
-                                onChange={(date) => setValues({ ...values, startDate: date as Date })}
-                                className="date-input"
-                                inputClassName="date-input"
-                                suffix={<IcCalendarDay size={4} />}
-                                value={values.startDate}
-                            />
-                        </div>
+                <div className="mt-4 w-full absolute top-0 left-0 flex items-center justify-end gap-2">
+                    {isEdit && (
+                        <>
+                            <Button className="secondary-action-button rounded-full" onClick={noop} size="large">
+                                {c('l10n_nightly Action').t`Delete`}
+                            </Button>
+                            <Button className="secondary-action-button rounded-full" onClick={noop} size="large">
+                                {c('l10n_nightly Action').t`Share`}
+                            </Button>
+                        </>
+                    )}
+                    <Button
+                        className="bg-primary rounded-full"
+                        onClick={handleSubmit}
+                        size="large"
+                        disabled={isDisabled}
+                    >{c('l10n_nightly Action').t`Create meeting`}</Button>
 
+                    <Button shape="ghost" onClick={() => history.push('/')} className="rounded-full">
+                        <IcCross size={6} />
+                    </Button>
+                </div>
+                <div className="w-custom flex flex-column gap-2 my-auto" style={{ '--w-custom': '40rem' }}>
+                    <div className="text-4xl mb-6 w-full text-center">{c('l10n_nightly Title')
+                        .t`Schedule a meeting`}</div>
+
+                    <div className="w-full flex flex-nowrap items-center gap-4">
+                        <IcTextAlignLeft size={5} />
                         <InputFieldTwo
-                            rootClassName="w-1/2"
-                            name="time"
-                            label={c('l10n_nightly Label').t`Time`}
-                            suffix={<IcClock size={4} />}
-                            value={values.time}
-                            onChange={(e) => setValues({ ...values, time: e.target.value })}
+                            id="meetingName"
+                            name="meetingName"
+                            placeholder={c('l10n_nightly Placeholder').t`Enter meeting title`}
+                            onChange={(e) => setValues({ ...values, meetingName: e.target.value })}
+                            autoComplete="off"
+                            value={values.meetingName}
+                            error={errors.meetingName}
                         />
                     </div>
-
-                    <div className="flex flex-nowrap gap-2">
-                        <div className="flex flex-column w-1/2">
-                            <Label className="pt-0 mb-1" htmlFor="duration">
-                                {c('l10n_nightly Label').t`Duration`}
-                            </Label>
-                            <SelectTwo
-                                name="duration"
-                                className="w-1/2"
-                                onValue={(value: number) => setValues({ ...values, duration: value as number })}
-                                value={values.duration}
-                            >
-                                {durationOptions.map((option) => (
-                                    <Option key={option.value} value={option.value} title={option.label}>
-                                        {option.label}
-                                    </Option>
-                                ))}
-                            </SelectTwo>
-                        </div>
-                        <div className="flex flex-column w-1/2">
-                            <Label className="pt-0 mb-1" htmlFor="timeZone">
-                                {c('l10n_nightly Label').t`Time zone`}
-                            </Label>
-                            <SelectTwo
-                                name="timeZone"
-                                className="w-1/2"
-                                onValue={(value: string) => setValues({ ...values, timeZone: value as string })}
-                                value={values.timeZone}
-                                dropdownClassName="time-zone-dropdown"
-                            >
-                                {timeZoneOptions.map((option) => (
-                                    <Option key={option.value} value={option.value} title={option.label}>
-                                        {option.label}
-                                    </Option>
-                                ))}
-                            </SelectTwo>
-                        </div>
+                    <div className="w-full flex flex-nowrap items-center justify-end gap-2">
+                        <Button
+                            className="text-underline color-primary ml-auto rounded-full"
+                            shape="ghost"
+                            onClick={() => setShowTimezones(!showTimezones)}
+                        >
+                            {c('l10n_nightly Action').t`${timeZoneAction} timezones`}
+                        </Button>
                     </div>
-                    <InputFieldTwo
-                        id="customPassword"
-                        name="customPassword"
-                        label={c('l10n_nightly Label').t`Meeting password`}
-                        placeholder={c('l10n_nightly Placeholder')
-                            .t`Enter meeting password, leave empty for no password`}
-                        as={PasswordInputTwo}
-                        autoComplete="off"
-                        value={values.customPassword}
-                        onChange={(e) => setValues({ ...values, customPassword: e.target.value })}
+
+                    <TimeInputBlock
+                        name="start"
+                        values={values}
+                        setValues={setValues}
+                        showTimezones={showTimezones}
+                        timeOptions={startTimeOptions}
+                        timeZoneOptions={timeZoneSelectOptions}
+                        timeError={errors.startTime}
                     />
 
-                    <div className="flex items-center justify-space-between w-full">
-                        <Label className="mb-1" htmlFor="recurring">
-                            {c('l10n_nightly Label').t`Recurring Meeting`}
-                        </Label>
-                        <Toggle
-                            id="recurring"
-                            checked={values.recurring}
-                            onChange={() => setValues({ ...values, recurring: !values.recurring })}
-                        />
+                    <TimeInputBlock
+                        name="end"
+                        values={values}
+                        setValues={setValues}
+                        showTimezones={showTimezones}
+                        timeOptions={endTimeOptions}
+                        timeZoneOptions={timeZoneSelectOptions}
+                        showIcon={false}
+                        editableTimeZone={false}
+                        timeError={errors.endTime}
+                    />
+                    <div className="w-full flex flex-nowrap items-center gap-4">
+                        <IcArrowsRotate size={5} />
+                        <SelectTwo
+                            onChange={(item: { value: string }) => {
+                                setValues({ ...values, recurrence: item.value as string });
+                            }}
+                            value={values.recurrence}
+                        >
+                            {repeatOptions.map((option) => (
+                                <Option key={option.value} value={option.value} title={option.label}>
+                                    {option.label}
+                                </Option>
+                            ))}
+                        </SelectTwo>
                     </div>
 
-                    <div className="flex justify-end w-full mt-auto">
-                        <Button className="rounded-full" color="norm" type="submit" onClick={handleSubmit}>{c(
-                            'l10n_nightly Action'
-                        ).t`Schedule Meeting`}</Button>
+                    {advancedOptions && (
+                        <>
+                            <div className="w-full flex flex-nowrap items-center gap-1 text-center mt-4">
+                                <IcKey className="visibility-hidden" size={5} />
+                                <div className="flex flex-column flex-nowrap items-center gap-1">
+                                    <div className="text-xl text-semibold">{c('l10n_nightly Title')
+                                        .t`Secret Passphrase`}</div>
+                                    <div className="color-weak px-2">{c('l10n_nightly Info')
+                                        .t`For extra security, you can set a passphrase. It won’t be included in the calendar invite—remember to share it with your guests separately.`}</div>
+                                </div>
+                            </div>
+                            <div className="w-full flex flex-nowrap items-center gap-4">
+                                <IcKey size={5} />
+                                <InputFieldTwo
+                                    id="customPassword"
+                                    name="customPassword"
+                                    placeholder={c('l10n_nightly Placeholder').t`Enter secret passphrase`}
+                                    as={PasswordInputTwo}
+                                    autoComplete="off"
+                                    value={values.customPassword}
+                                    onChange={(e) => setValues({ ...values, customPassword: e.target.value })}
+                                />
+                            </div>
+                        </>
+                    )}
+
+                    <div className="w-full flex flex-nowrap items-start gap-4">
+                        {advancedOptions ? (
+                            <Button
+                                className="create-container-button text-underline color-primary rounded-full user-select-none ml-4"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setAdvancedOptions(false);
+                                }}
+                                shape="ghost"
+                            >{c('l10n_nightly Action').t`Hide advanced options`}</Button>
+                        ) : (
+                            <Button
+                                className="create-container-button text-underline color-primary rounded-full user-select-none ml-4"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setAdvancedOptions(true);
+                                }}
+                                shape="ghost"
+                            >{c('l10n_nightly Action').t`Show advanced options`}</Button>
+                        )}
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };

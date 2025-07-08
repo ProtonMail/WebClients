@@ -34,7 +34,7 @@ export const App = () => {
     }
 
     const href = window.location.href;
-    const joinPattern = /\/join\/[^\/#]+#[^\/#]+$/;
+    const joinPattern = /\/join\/id-[^\/#]+#[^\/#]+$/;
 
     const joinMeeting = joinPattern.test(href);
 

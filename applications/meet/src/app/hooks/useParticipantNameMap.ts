@@ -7,7 +7,7 @@ import type { ParticipantEntity } from '../types';
 export const queryParticipants = (meetingLinkName: string) => {
     return {
         method: 'get',
-        url: `/meet/v1/meetings/links/${meetingLinkName}/participants`,
+        url: `meet/v1/meetings/links/${meetingLinkName}/participants`,
         silence: true,
     };
 };
