@@ -1,30 +1,15 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { getOrganizationTokenThunk } from '@proton/account';
 import { Button, ButtonLike, Href } from '@proton/atoms';
-import type { PromptProps } from '@proton/components/components/prompt/Prompt';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import AuthModal from '@proton/components/containers/password/AuthModal';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import { useDispatch } from '@proton/redux-shared-store';
-import { revoke } from '@proton/shared/lib/api/auth';
-import { authMember } from '@proton/shared/lib/api/members';
-import { getUser } from '@proton/shared/lib/api/user';
+import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
-import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { User } from '@proton/shared/lib/interfaces';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
-import noop from '@proton/utils/noop';
 
 interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {
     member: Member;
@@ -32,77 +17,14 @@ interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {
 }
 
 const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
-    const normalApi = useApi();
-    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const [authed, setAuthed] = useState(false);
-    const [data, setData] = useState<{ LocalID: number }>();
-    const authentication = useAuthentication();
-    const dispatch = useDispatch();
+    const memberEmail = getMemberEmailOrName(member);
+    const memberAddress = <b key="member">{memberEmail}</b>;
 
     const switchUrl = useMemo(() => {
-        const href = getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT);
-        const search = `?product=${getSlugFromApp(app || APPS.PROTONMAIL)}`;
+        const href = getAppHref(`/${getSlugFromApp(app || APPS.PROTONMAIL)}`, APPS.PROTONACCOUNT);
+        const search = `?email=${memberEmail}`;
         return `${href}${search}`;
     }, [app]);
-
-    if (!authed || !data) {
-        const handleData = async (data: { UID: string; LocalID: number }) => {
-            const UID = data?.UID;
-            const LocalID = data?.LocalID;
-
-            if (!UID || !LocalID) {
-                throw new Error('Failed to get auth data');
-            }
-
-            const memberApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
-            const User = await memberApi<{ User: User }>(getUser()).then(({ User }) => User);
-
-            const validatedSession = await maybeResumeSessionByUser({
-                api: silentApi,
-                User,
-                // During proton login, ignore resuming an oauth session
-                options: { source: [SessionSource.Proton, SessionSource.Saml] },
-            });
-            if (validatedSession) {
-                memberApi(revoke()).catch(noop);
-                return validatedSession.localID;
-            }
-
-            const token = await dispatch(getOrganizationTokenThunk());
-
-            await persistSession({
-                api: memberApi,
-                keyPassword: token,
-                User,
-                LocalID,
-                UID,
-                // Signing into subuser doesn't need offline mode support
-                clearKeyPassword: '',
-                offlineKey: undefined,
-                persistent: authentication.getPersistent(),
-                trusted: false,
-                source: SessionSource.Proton,
-            });
-
-            return LocalID;
-        };
-        return (
-            <AuthModal
-                scope="password"
-                config={authMember(member.ID)}
-                {...rest}
-                onCancel={onClose}
-                onSuccess={async ({ response }) => {
-                    const data = await response.json();
-                    const LocalID = await handleData(data);
-                    setData({ LocalID });
-                    setAuthed(true);
-                }}
-            />
-        );
-    }
-
-    const memberAddress = <b key="member">{getMemberEmailOrName(member)}</b>;
 
     return (
         <Prompt
