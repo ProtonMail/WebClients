@@ -108,38 +108,35 @@ const AccountStepPaymentSummary = ({
             return <Price currency={subscriptionData.currency}>{price}</Price>;
         };
         return [
-            !hideDiscount && {
-                id: 'amount',
-                left: <span>{getTotalBillingText(options.cycle, currentCheckout.planIDs)}</span>,
-                right:
-                    isBFOffer || couponConfig?.hidden ? (
-                        <>
-                            {loading ? (
-                                loaderNode
-                            ) : (
-                                <>
-                                    <Price currency={subscriptionData.currency}>
-                                        {isTrial
-                                            ? (options.checkResult.BaseRenewAmount ?? 0)
-                                            : currentCheckout.withDiscountPerCycle}
-                                    </Price>
-                                    {!showAmountDue && showRenewalNotice && '*'}
-                                </>
-                            )}
-                        </>
-                    ) : (
-                        <>
-                            {getPrice(
-                                isTrial
-                                    ? (options.checkResult.BaseRenewAmount ?? 0)
-                                    : currentCheckout.regularAmountPerCycle
-                            )}
-                            {!showAmountDue && showRenewalNotice && '*'}
-                        </>
-                    ),
-                bold: true,
-                loader: !showAmountDue,
-            },
+            !hideDiscount &&
+                !isTrial && {
+                    id: 'amount',
+                    left: <span>{getTotalBillingText(options.cycle, currentCheckout.planIDs)}</span>,
+                    right:
+                        isBFOffer || couponConfig?.hidden ? (
+                            <>
+                                {loading ? (
+                                    loaderNode
+                                ) : (
+                                    <>
+                                        <Price currency={subscriptionData.currency}>
+                                            {isTrial
+                                                ? (options.checkResult.BaseRenewAmount ?? 0)
+                                                : currentCheckout.withDiscountPerCycle}
+                                        </Price>
+                                        {!showAmountDue && showRenewalNotice && '*'}
+                                    </>
+                                )}
+                            </>
+                        ) : (
+                            <>
+                                {getPrice(currentCheckout.regularAmountPerCycle)}
+                                {!showAmountDue && showRenewalNotice && '*'}
+                            </>
+                        ),
+                    bold: true,
+                    loader: !showAmountDue,
+                },
             !hideDiscount &&
                 couponDiscount !== 0 && {
                     id: 'discount',
