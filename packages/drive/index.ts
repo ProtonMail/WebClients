@@ -32,6 +32,8 @@ export type {
     NonProtonInvitation,
     Member,
     ShareNodeSettings,
+    Author,
+    InvalidNameError,
 } from '@protontech/drive-sdk';
 
 /* Other export */
