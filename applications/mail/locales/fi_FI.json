@@ -1141,9 +1141,6 @@
       "Save": [
         "Tallenna"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Tallenna ${ DRIVE_APP_NAME }en"
-      ],
       "Saving${ ellipsis }": [
         "Tallennetaan${ ellipsis }"
       ],
@@ -4724,8 +4721,8 @@
       "Username must end with a letter or digit": [
         "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
       ],
-      "Wrong second password": [
-        "Toinen salasana on väärin"
+      "Wrong password": [
+        "Väärä salasana"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
@@ -6120,10 +6117,6 @@
         "${ messagesNotAuthorizedToMove } viestiä ei voitu siirtää.",
         "${ messagesNotAuthorizedToMove } viestiä ei voitu siirtää."
       ],
-      "${ n } newsletter": [
-        "${ n } uutiskirje",
-        "${ n } uutiskirjettä"
-      ],
       "${ n } unread conversation": [
         "${ n } lukematon keskustelu",
         "${ n } lukematonta keskustelua"
@@ -6216,10 +6209,6 @@
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } seuranta estetty",
         "${ trackersCount } seurantaa estetty"
-      ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } uutiskirjetilaus",
-        "${ unreadCount } uutiskirjetilausta"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } ajoitettu viesti",
@@ -8989,10 +8978,6 @@
       "Mark as": [
         "Merkitse"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "${ unreadCount } viesti merkitty luetuksi.",
-        "${ unreadCount } viestiä merkitty luetuiksi."
-      ],
       "Message:": [
         "Viesti:"
       ],
@@ -9010,14 +8995,6 @@
       ],
       "Move to Inbox": [
         "Siirrä saapuneisiin"
-      ],
-      "Moved ${ count } message to Archive.": [
-        "${ count } Viesti siirretty arkistoon.",
-        "${ count } Viestiä siirretty arkistoon."
-      ],
-      "Moved ${ count } message to Trash.": [
-        "${ count } Viesti siirretty roskakoriin.",
-        "${ count } viestiä siirretty roskakoriin."
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Oltava vähintään ${ MIN_PASSWORD_LENGTH } merkkiä"
@@ -9337,14 +9314,6 @@
       ],
       "To: ${ to }": [
         "Vastaanottaja: ${ to }"
-      ]
-    },
-    "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Uutiskirjeet, joiden tilauksen peruutat, näkyvät täällä."
-      ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Näytä ja hallitse uutiskirjeiden ja postituslistojen tilauksia täällä."
       ]
     },
     "Landmarks": {
@@ -14123,9 +14092,6 @@
       ],
       "No breaches detected": [
         "Tietomurtoja ei ole havaittu"
-      ],
-      "No mail subscriptions": [
-        "Ei sähköpostitilauksia"
       ],
       "No need to empty the trash": [
         "Roskia ei tarvitse tyhjentää"

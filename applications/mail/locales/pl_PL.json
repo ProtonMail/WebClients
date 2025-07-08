@@ -1164,9 +1164,6 @@
       "Save": [
         "Zapisz"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Zapisz w ${ DRIVE_APP_NAME }"
-      ],
       "Saving${ ellipsis }": [
         "Zapisywanie${ ellipsis }"
       ],
@@ -1962,6 +1959,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_LUMO_SEATS } miejsc Lumo w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_SCRIBE_SEATS } miejsc Scribe w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_USERS } użytkowników w okresie próbnym."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nie możesz dodać niestandardowych domen w okresie próbnym."
+      ],
+      "You have reached the trial limit.": [
+        "Osiągnąłeś limit okresu próbnego."
       ]
     },
     "b2b_trials_Action": {
@@ -4926,8 +4941,8 @@
       "Username must end with a letter or digit": [
         "Nazwa użytkownika musi kończyć się literą lub cyfrą"
       ],
-      "Wrong second password": [
-        "Drugie hasło jest nieprawidłowe"
+      "Wrong password": [
+        "Hasło jest nieprawidłowe"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorcy",
@@ -6419,12 +6434,6 @@
         "${ messagesNotAuthorizedToMove } wiadomości nie mogło zostać przeniesionych.",
         "${ messagesNotAuthorizedToMove } wiadomości nie mogło zostać przeniesionych."
       ],
-      "${ n } newsletter": [
-        "${ n } newsletter",
-        "${ n } newslettery",
-        "${ n } newsletterów",
-        "${ n } newsletterów"
-      ],
       "${ n } unread conversation": [
         "${ n } nieprzeczytany wątek",
         "${ n } nieprzeczytane wątki",
@@ -6553,12 +6562,6 @@
         "Zablokowano ${ trackersCount } elementy śledzące",
         "Zablokowano ${ trackersCount } elementów śledzących",
         "Zablokowano ${ trackersCount } elementów śledzących"
-      ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } newsletter",
-        "${ unreadCount } newslettery",
-        "${ unreadCount } newsletterów",
-        "${ unreadCount } newsletterów"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } zaplanowana wiadomość",
@@ -9510,11 +9513,8 @@
       "Mark as": [
         "Oznacz jako"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "Oznaczono ${ unreadCount } wiadomość jako przeczytaną.",
-        "Oznaczono ${ unreadCount } wiadomości jako przeczytane.",
-        "Oznaczono ${ unreadCount } wiadomości jako przeczytane.",
-        "Oznaczono ${ unreadCount } wiadomości jako przeczytane."
+      "Marked as read": [
+        "Oznacz jako przeczytane"
       ],
       "Message:": [
         "Wiadomość:"
@@ -9534,23 +9534,14 @@
       "Move to Inbox": [
         "Przenieś do Odebranych"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "Przeniesiono ${ count } wiadomość do folderu ${ labelName }.",
-        "Przeniesiono ${ count } wiadomości do folderu ${ labelName }.",
-        "Przeniesiono ${ count } wiadomości do folderu ${ labelName }.",
-        "Przeniesiono ${ count } wiadomości do folderu ${ labelName }."
+      "Moved to ${ labelName }": [
+        "Przeniesiono do ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "Przeniesiono ${ count } wiadomość do archiwum.",
-        "Przeniesiono ${ count } wiadomości do archiwum.",
-        "Przeniesiono ${ count } wiadomości do archiwum.",
-        "Przeniesiono ${ count } wiadomości do archiwum."
+      "Moved to Archive": [
+        "Przeniesiono do archiwum"
       ],
-      "Moved ${ count } message to Trash.": [
-        "Przeniesiono ${ count } wiadomość do kosza.",
-        "Przeniesiono ${ count } wiadomości do kosza.",
-        "Przeniesiono ${ count } wiadomości do kosza.",
-        "Przeniesiono ${ count } wiadomości do kosza."
+      "Moved to Trash": [
+        "Przenieś do kosza"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Minimum ${ MIN_PASSWORD_LENGTH } znaków"
@@ -9870,14 +9861,6 @@
       ],
       "To: ${ to }": [
         "Do: ${ to }"
-      ]
-    },
-    "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Newslettery, z których zrezygnowano, będą wyświetlane tutaj."
-      ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Wyświetlaj i zarządzaj subskrypcjami"
       ]
     },
     "Landmarks": {
@@ -12067,9 +12050,6 @@
       ],
       "More plans are available in other currencies": [
         "Więcej planów jest dostępnych w innych walutach"
-      ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "W przelewach SEPA akceptowane jest tylko euro. Waluta została zmieniona. Użyj formularza, aby przywrócić swój wybór."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
@@ -15047,9 +15027,6 @@
       ],
       "No breaches detected": [
         "Brak wykrytych wycieków"
-      ],
-      "No mail subscriptions": [
-        "Brak subskrypcji poczty"
       ],
       "No need to empty the trash": [
         "Nie musisz opróżniać kosza"
