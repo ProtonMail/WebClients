@@ -1240,8 +1240,41 @@
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Facendo clic su «Prova», accetti i nostri ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Durante il periodo di prova, puoi avere fino a 10 utenti."
+      ],
+      "free for 14 days": [
+        "gratis per 14 giorni"
+      ],
       "on ${ formattedDate }": [
         "il ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Prova ${ selected } ${ freeFor14Days }"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Quando annulli, la tua prova gratuita non verrà convertita in un abbonamento a pagamento, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di prova. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze Lumo durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_USERS } utenti durante il periodo di prova."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Non puoi aggiungere domini personalizzati durante il periodo di prova."
+      ],
+      "You have reached the trial limit.": [
+        "Hai raggiunto il limite della prova."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -1250,6 +1283,19 @@
       ],
       "Amount due now": [
         "Importo dovuto ora"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Annulla l'abbonamento"
+      ],
+      "Keep subscription": [
+        "Mantieni l'abbonamento"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "La tua prova gratuita termina tra ${ timeRemaining }."
       ]
     },
     "Badge for domain": {
@@ -7476,7 +7522,7 @@
       "Sign in success (awaiting second factor)": [
         "Accesso riuscito (in attesa del secondo fattore)"
       ],
-      "Sign in success (awaiting verify)": [
+      "Sign in success (awaiting verification)": [
         "Accesso riuscito (in attesa di verifica)"
       ],
       "Sign out": [
@@ -9332,9 +9378,6 @@
       "More plans are available in other currencies": [
         "Sono disponibili altri piani in altre valute"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Per i pagamenti SEPA è accettato solo l’euro. La tua valuta è stata modificata. Usa il selettore per ripristinare la tua scelta."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
       ],
@@ -9395,6 +9438,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Ti verranno addebitati ${ amountToCharge } dal metodo di pagamento selezionato."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."

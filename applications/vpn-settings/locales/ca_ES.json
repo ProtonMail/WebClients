@@ -7456,8 +7456,8 @@
       "Sign in success (awaiting second factor)": [
         "Inici de sessió correcte (a l'espera del segon factor)"
       ],
-      "Sign in success (awaiting verify)": [
-        "Inici de sessió correcte (esperant la verificació)"
+      "Sign in success (awaiting verification)": [
+        "S'ha Iniciat la sessió correctament (a l'espera de la verificació)."
       ],
       "Sign out": [
         "Tanqueu la sessió"
@@ -9291,9 +9291,6 @@
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Només s'accepta l'euro per al SEPA. S'ha canviat la moneda. Utilitzeu el selector per revertir la vostra elecció."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
@@ -9354,6 +9351,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se us cobrarà ${ amountToCharge } al vostre mètode de pagament seleccionat."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
       "Your payment is still being processed": [
         "El vostre pagament encara s'està processant."

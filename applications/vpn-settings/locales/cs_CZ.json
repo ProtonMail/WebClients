@@ -1250,8 +1250,41 @@
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
       ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Kliknutím na \"Vyzkoušet\" vyjadřujete souhlas s našimi ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Během zkušební doby můžete mít až 10 uživatelů."
+      ],
+      "free for 14 days": [
+        "zdarma na 14 dnů"
+      ],
       "on ${ formattedDate }": [
         "dne ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Vyzkoušejte ${ selected } ${ freeFor14Days }"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Když zrušíte bezplatnou zkušební verzi, nebude převedena na placené předplatné, ale výhody tarifu můžete využívat až do konce zkušebního doby. Poté budete převedeni na tarif ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební verze."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_LUMO_SEATS } licencí Lumo během zkušební verze."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_SCRIBE_SEATS } licencí Scribe během zkušební verze."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_USERS } uživatelů během zkušební verze."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Během zkušební doby nelze přidávat vlastní domény."
+      ],
+      "You have reached the trial limit.": [
+        "Dosáhli jste limitu zkušební verze."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -1260,6 +1293,19 @@
       ],
       "Amount due now": [
         "Částka splatná nyní"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Zrušit předplatné"
+      ],
+      "Keep subscription": [
+        "Zachovat předplatné"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Bezplatná zkušební verze končí za ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -7646,7 +7692,7 @@
       "Sign in success (awaiting second factor)": [
         "Přihlášení úspěšné (čeká se na druhý faktor)"
       ],
-      "Sign in success (awaiting verify)": [
+      "Sign in success (awaiting verification)": [
         "Přihlášení úspěšné (čeká se na ověření)"
       ],
       "Sign out": [
@@ -9533,9 +9579,6 @@
       "More plans are available in other currencies": [
         "Další tarify jsou k dispozici v jiných měnách"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "V rámci SEPA je přijímáno pouze euro. Vaše měna byla změněna. Výběr můžete vrátit pomocí voliče."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
       ],
@@ -9604,6 +9647,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Z vybrané platební metody vám bude účtována částka ${ amountToCharge }."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Vaše měna byla změněna na euro (€), protože bankovní převody SEPA podporují pouze platby v eurech."
       ],
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
@@ -9844,6 +9890,9 @@
     "Protection type": {
       "Blocked": [
         "Blokováno"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Ověřování zařízení"

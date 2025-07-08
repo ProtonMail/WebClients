@@ -1240,8 +1240,41 @@
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Al pulsar en \"Probar\", aceptas nuestros ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Durante el período de prueba, puedes tener hasta 10 usuarios."
+      ],
+      "free for 14 days": [
+        "gratis durante 14 días"
+      ],
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Prueba ${ selected } ${ freeFor14Days }"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Cuando canceles, tu prueba gratuita no se convertirá en una suscripción de pago, pero podrás seguir disfrutando de los beneficios del plan hasta el final del periodo de prueba. Después de eso, pasarás al plan ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el periodo de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el periodo de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_USERS } usuarios durante el periodo de prueba."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "No puedes añadir dominios personalizados durante el periodo de prueba."
+      ],
+      "You have reached the trial limit.": [
+        "Has alcanzado el límite del periodo de prueba."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -7483,8 +7516,8 @@
       "Sign in success (awaiting second factor)": [
         "Se ha iniciado la sesión (esperando el segundo factor)."
       ],
-      "Sign in success (awaiting verify)": [
-        "Se ha iniciado la sesión (esperando verificación)."
+      "Sign in success (awaiting verification)": [
+        "Se ha iniciado la sesión (esperando la verificación)."
       ],
       "Sign out": [
         "Cerrar sesión"
@@ -9318,9 +9351,6 @@
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Solo se acepta el euro para SEPA. Tu moneda ha sido cambiada. Por favor, usa el selector para revertir tu elección."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -9381,6 +9411,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se te cobrará ${ amountToCharge } a tu método de pago seleccionado."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Tu moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo soportan pagos en euros."
       ],
       "Your payment is still being processed": [
         "Tu pago aún está siendo procesado."

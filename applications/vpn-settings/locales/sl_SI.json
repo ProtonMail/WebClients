@@ -1047,9 +1047,53 @@
         "Nova e-pošta"
       ]
     },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "200 GB storage": [
+        "200 GB prostora"
+      ],
+      "thanks to you": [
+        "Hvala vam"
+      ],
+      "years": [
+        "leta"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Ponudba za obletnico"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "/ month": [
+        "/mesec"
+      ],
+      "12 months": [
+        "12 mesecev"
+      ],
+      "15 months": [
+        "15 mesecev"
+      ],
+      "24 months": [
+        "24 mesecev"
+      ],
+      "30 months": [
+        "30 mesecev"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Prekliči naročnino"
+      ],
+      "Keep subscription": [
+        "Ohrani naročnino"
       ]
     },
     "Badge for domain": {
@@ -3072,6 +3116,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Napačna koda za preverjanje. Prepričajte se, da ste pravilno kopirali kodo za preverjanje in poskusite znova. Do uveljavitve sprememb lahko mine tudi do 24 ur."
       ],
+      "You have reached the number of contacts limit for your account": [
+        "Dosegli ste mejo za število stikov v vašem računu."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Uporabili ste vse naslove v svojem paketu. Prosimo nadgradite paket, da dodate nov naslov."
       ],
@@ -4253,6 +4300,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP je mogoče dodati v zasebne prehode, da se omogoči natančen nadzor dostopa."
+      ],
+      "Dedicated VPN servers": [
+        "Namenski VPN strežniki"
       ],
       "default email address": [
         "privzeti e-poštni naslov"
@@ -6527,6 +6577,11 @@
         "Naročnina se je končala. ${ cta } in se izognite izgubi podatkov."
       ]
     },
+    "Log event": {
+      "Authentication success": [
+        "Uspešno preverjanja pristnosti"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Omogoči ${ reason }"
@@ -7749,6 +7804,9 @@
       "${ pricingTitle } offer expires today!": [
         "Ponudba ${ pricingTitle } poteče danes!"
       ],
+      "Don’t show this again": [
+        "Tega ne prikaži več"
+      ],
       "Don’t show this offer again": [
         "Te ponudbe ne prikazuj več"
       ],
@@ -7804,9 +7862,17 @@
         "Vaša naročnina se bo kmalu obnovila"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Šifriran upravitelj gesel"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+Še 10 premijskih funkcij"
+      ],
+      "500 GB secure storage": [
+        "500 GB varne shrambe"
       ],
       "Custom email domain": [
         "E-poštna domena po meri"
@@ -7841,6 +7907,9 @@
       ],
       "Cancel anytime before then.": [
         "Prekličite kadar koli pred tem."
+      ],
+      "contact our support team": [
+        "kontaktirajte našo podporo"
       ],
       "Continue": [
         "Nadaljuj"
@@ -8030,6 +8099,9 @@
       ],
       "Organization identity": [
         "Identiteta organizacije"
+      ],
+      "Organization identity updated": [
+        "Identiteta organizacije je posodobljena"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -8200,6 +8272,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Bančno nakazilo"
       ],
@@ -9197,6 +9272,9 @@
       "Go to subscription plans": [
         "Ogled naročniških paketov"
       ],
+      "Guard against threats": [
+        "Zaščitite se pred grožnjami"
+      ],
       "Upgrade": [
         "Nadgradnja"
       ]
@@ -9448,6 +9526,9 @@
       ],
       "Inactive": [
         "Neaktivno"
+      ],
+      "Pending activation": [
+        "Čaka na aktivacijo"
       ],
       "Rejected": [
         "Zavrnjeno"
@@ -10316,6 +10397,14 @@
     "Themes": {
       "Themes": [
         "Teme"
+      ]
+    },
+    "Time unit": {
+      "${ ceilHours } hour": [
+        "${ ceilHours } ura",
+        "${ ceilHours } uri",
+        "${ ceilHours } ure",
+        "${ ceilHours } ur"
       ]
     },
     "Title": {
@@ -11291,6 +11380,14 @@
       ],
       "Refund": [
         "Povračilo denarja"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mesec"
+      ],
+      "Only": [
+        "Samo"
       ]
     },
     "unprivatization": {
