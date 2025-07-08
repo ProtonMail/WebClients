@@ -161,7 +161,6 @@ export const FilePreviewContent = ({
                 <VideoStreamingPreview
                     isLoading={isLoading}
                     isSharedFile={isSharedFile}
-                    onDownload={onDownload}
                     videoStreaming={videoStreaming}
                     imgThumbnailUrl={imgThumbnailUrl}
                 />
