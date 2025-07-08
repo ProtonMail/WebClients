@@ -595,6 +595,9 @@
       "Sort vault items": [
         "Сортировать элементы хранилища"
       ],
+      "Start from scratch": [
+        "Начать заново"
+      ],
       "Submit": [
         "Отправить"
       ],
@@ -1222,7 +1225,7 @@
         "Неверный дополнительный пароль"
       ],
       "Wrong password": [
-        "Неверный пароль"
+        "Неправильный пароль"
       ],
       "Wrong PIN code. Try again.": [
         "Неверный PIN-код. Попробуйте снова."
@@ -1343,6 +1346,12 @@
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Элемент \"${ payload.itemName }\" был отклонен"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Обновление \"${ payload.itemName }\" было отклонено"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } заблокировано",
         "${ blockedEmailsCount } заблокированы",
@@ -1688,6 +1697,9 @@
       "Enter the address you want to email.": [
         "Введите адрес, на который вы хотите отправить электронное письмо."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
+      ],
       "Enter your extra password": [
         "Введите дополнительный пароль"
       ],
@@ -1897,6 +1909,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"
@@ -2656,6 +2674,9 @@
       "Account": [
         "Аккаунт"
       ],
+      "Account Type": [
+        "Тип аккаунта"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Добавьте случайный префикс для этого домена при создании нового псевдонима."
       ],
@@ -2695,6 +2716,12 @@
       "Always show username field": [
         "Всегда показывать поле имени пользователя"
       ],
+      "API Credential": [
+        "Учетные данные API"
+      ],
+      "API Key": [
+        "Ключ API"
+      ],
       "Application logs": [
         "Журналы приложения"
       ],
@@ -2703,6 +2730,9 @@
       ],
       "Backup password": [
         "Пароль резервной копии"
+      ],
+      "Bank Account": [
+        "Банковский счёт"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "${ PASS_APP_NAME } не только хранит имена пользователя, но и защищает личные данные с помощью встроенной функции почтовых псевдонимов. Каждый раз, когда вы регистрируете аккаунт в Интернете, ${ PASS_APP_NAME } может автоматически создать псевдоним для защиты настоящего адреса электронной почты. "
@@ -2746,6 +2776,9 @@
       "City": [
         "Город"
       ],
+      "Class": [
+        "Класс"
+      ],
       "Clear clipboard after": [
         "Очистить буфер обмена через"
       ],
@@ -2782,6 +2815,9 @@
       "Create a credit card": [
         "Создать кредитную карту"
       ],
+      "Create a custom item": [
+        "Создать пользовательский элемент"
+      ],
       "Create a hide-my-email alias": [
         "Создать псевдоним hide-my-email"
       ],
@@ -2804,7 +2840,19 @@
         "Создано"
       ],
       "Credit cards": [
-        "Кредитные карты"
+        "Банковские карты"
+      ],
+      "Crypto Wallet": [
+        "Криптокошелёк"
+      ],
+      "Custom Items": [
+        "Пользовательские элементы"
+      ],
+      "Database": [
+        "База данных"
+      ],
+      "Database Type": [
+        "Тип базы данных"
       ],
       "Date": [
         "Дата"
@@ -2821,6 +2869,9 @@
       "DNS": [
         "DNS"
       ],
+      "Doctor": [
+        "Доктор"
+      ],
       "Domain": [
         "Домен"
       ],
@@ -2835,6 +2886,9 @@
       ],
       "Download logs": [
         "Скачать журналы"
+      ],
+      "Driver License": [
+        "Водительские права"
       ],
       "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
         "Легко делитесь конфиденциальной информацией с кем угодно, даже если он не использует ${ PASS_APP_NAME }. Вы можете поделиться одним паролем, заметкой или кредитной картой, а также несколькими элементами в одной папке."
@@ -2875,6 +2929,9 @@
       "Extra email addresses": [
         "Дополнительных адресов эл. почты"
       ],
+      "Extra fields": [
+        "Дополнительные поля"
+      ],
       "Extra password": [
         "Дополнительный пароль"
       ],
@@ -2892,6 +2949,9 @@
       ],
       "File format": [
         "Формат файла"
+      ],
+      "Finance": [
+        "Финансы"
       ],
       "First name": [
         "Имя"
@@ -2955,6 +3015,9 @@
       ],
       "Highest": [
         "Наивысшая"
+      ],
+      "Host": [
+        "Хост"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Как разблокировать ${ PASS_SHORT_APP_NAME }"
@@ -3022,6 +3085,12 @@
       "Key": [
         "Ключ"
       ],
+      "Key fingerprint": [
+        "Отпечаток ключа"
+      ],
+      "Key type": [
+        "Тип ключа"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Комбинация клавиш: ${ shortcut }"
       ],
@@ -3052,7 +3121,13 @@
       "License": [
         "Лицензия"
       ],
+      "License Key": [
+        "Лицензионный ключ"
+      ],
       "License number": [
+        "Номер лицензии"
+      ],
+      "License Number": [
         "Номер лицензии"
       ],
       "Limited time": [
@@ -3088,6 +3163,9 @@
       "max views reached": [
         "достигнуто максимальное количество просмотров"
       ],
+      "Medical Record": [
+        "Медицинская документация"
+      ],
       "Members": [
         "Участники"
       ],
@@ -3111,6 +3189,9 @@
       ],
       "Need help?": [
         "Нужна помощь?"
+      ],
+      "Network": [
+        "Сеть"
       ],
       "Never": [
         "Никогда"
@@ -3169,6 +3250,9 @@
       "Other": [
         "Другое"
       ],
+      "Owner": [
+        "Владелец"
+      ],
       "Passkey": [
         "Ключ доступа"
       ],
@@ -3189,6 +3273,12 @@
       ],
       "Password history": [
         "История паролей"
+      ],
+      "Patient Name": [
+        "Имя пациента"
+      ],
+      "Personal": [
+        "Личное"
       ],
       "Personal details": [
         "Личная информация"
@@ -3226,6 +3316,12 @@
       "Priority:": [
         "Приоритет:"
       ],
+      "Product": [
+        "Продукт"
+      ],
+      "Program Name": [
+        "Название программы"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Защитить ${ PASS_APP_NAME } дополнительным паролем"
       ],
@@ -3255,6 +3351,9 @@
       ],
       "Reveal password": [
         "Показать пароль"
+      ],
+      "Reward Program": [
+        "Программа вознаграждения"
       ],
       "Second password": [
         "Второй пароль"
@@ -3307,6 +3406,9 @@
       "Selected": [
         "Выбрано"
       ],
+      "Server": [
+        "Сервер"
+      ],
       "Share": [
         "Поделиться"
       ],
@@ -3336,6 +3438,12 @@
       ],
       "Special characters (!&*)": [
         "Специальные символы (!&*)"
+      ],
+      "SSH key": [
+        "Ключ SSH"
+      ],
+      "SSN": [
+        "ССН"
       ],
       "State or province": [
         "Штат или провинция"
@@ -3489,6 +3597,9 @@
       ],
       "What's included": [
         "Что включено"
+      ],
+      "WiFi network": [
+        "Сеть WiFi"
       ],
       "Work details": [
         "Информация о работе"
@@ -3745,6 +3856,9 @@
       ],
       "Add note": [
         "Добавить заметку"
+      ],
+      "Add password": [
+        "Добавить пароль"
       ],
       "Add text": [
         "Добавить текст"
