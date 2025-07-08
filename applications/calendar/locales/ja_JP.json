@@ -1019,6 +1019,9 @@
       ]
     },
     "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
       "200 GB storage": [
         "200GBストレージ"
       ],
@@ -1031,6 +1034,9 @@
       "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
         "${ BRAND_NAME } Mail、Pass、VPN、Drive、カレンダーの全てのプレミアム機能"
       ],
+      "Block ads, trackers, and malware": [
+        "広告、トラッカー、マルウェアをブロック"
+      ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "割引は標準の月額料金に基づいています。支払いサイクルの終わりに、お客様のサブスクリプションは標準の年間料金で更新されます。"
       ],
@@ -1040,17 +1046,35 @@
       "Encrypted password manager": [
         "暗号化されたパスワードマネージャー"
       ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "これまでの道のりを祝う特別な贈り物です。"
+      ],
+      "High speed streaming with VPN": [
+        "VPNでの高速ストリーミング"
+      ],
+      "of privacy": [
+        "プライバシーの"
+      ],
       "Online document editor": [
         "オンライン文書エディタ"
       ],
       "Online privacy for up to 2 people": [
         "最大2人までのオンラインプライバシー"
       ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "家族(6人まで)のためのオンラインプライバシー"
+      ],
+      "Protect up to 10 devices": [
+        "最大10台のデバイスを保護"
+      ],
       "Recover previous file versions": [
         "以前のファイルを復元"
       ],
       "Save big on premium Drive features with a limited-time discount.": [
         "期間限定の割引で、プレミアムDrive機能をお得にご利用いただけます。"
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムMail機能をお得にご利用いただけます。"
       ],
       "Save big on premium Pass features with a limited-time discount.": [
         "期間限定の割引で、プレミアムPass機能をお得にご利用いただけます。"
@@ -1061,11 +1085,29 @@
       "Save time with built-in 2FA": [
         "内蔵の2要素認証で時間を節約"
       ],
+      "Secure email with unlimited aliases": [
+        "無制限のエイリアスを備えたセキュアなメール"
+      ],
+      "Select any server": [
+        "サーバーを選択"
+      ],
       "Share passwords easily": [
         "パスワードを簡単に共有"
       ],
+      "Short @pm.me address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Stream your favorite content": [
+        "お気に入りのコンテンツをストリーミングする"
+      ],
       "thanks to you": [
         "ありがとうございます"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "お客様の暗号化済みストレージを3倍に — お客様のすべてのデータに3 TBを提供します"
+      ],
+      "Unlimited folders, labels and filters": [
+        "無制限のフォルダー、ラベル、フィルター"
       ],
       "Use your own email domain": [
         "独自メールドメインを使用する"
@@ -1086,8 +1128,20 @@
       "/ month": [
         "/ 月"
       ],
+      "12 months": [
+        "12 か月"
+      ],
       "15 months": [
         "15 か月"
+      ],
+      "24 months": [
+        "24 か月"
+      ],
+      "30 months": [
+        "30 か月"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal } の場合"
       ]
     },
     "Apps dropdown": {
@@ -1123,6 +1177,19 @@
     "Attendee role": {
       "Optional": [
         "任意"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "サブスクリプションをキャンセル"
+      ],
+      "Keep subscription": [
+        "サブスクリプションを継続"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "無料トライアルは ${ timeRemaining } に終了します。"
       ]
     },
     "Badge": {
@@ -4899,6 +4966,9 @@
       "Dedicated servers": [
         "専用サーバー"
       ],
+      "Dedicated VPN servers": [
+        "専用VPNサーバー"
+      ],
       "default email address": [
         "既定のメールアドレス"
       ],
@@ -5205,6 +5275,9 @@
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
+      "Number of dedicated VPN servers in the organization": [
+        "組織内の専用VPNサーバー数"
+      ],
       "Numbers": [
         "数字"
       ],
@@ -5423,6 +5496,9 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
+      ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "組織を保護するために ${ BRAND_NAME } をお選びいただきありがとうございます。"
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "ご登録ありがとうございます。安全なブラウジングをお楽しみください！"
@@ -5852,6 +5928,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "トライアルは${ timeRemaining }に終了します。"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "また、${ boldPlanTitle }の機能もご利用いただけなくなります。"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "${ boldEndDate }に${ boldPlanTitle }へアクセスできなくなります。"
@@ -7531,6 +7610,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "ファイルの保存、同期、共有を簡単に行える 1 TB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
+      ],
       "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "ファイルの保存、同期、共有を簡単に行える 200 GB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
       ],
@@ -8167,6 +8249,9 @@
       "+10 more premium features": [
         "+10 以上のプレミアム機能"
       ],
+      "500 GB secure storage": [
+        "500 GBの安全なストレージ"
+      ],
       "Advanced threat protection": [
         "高度な脅威保護"
       ],
@@ -8190,6 +8275,12 @@
       ],
       "Storage": [
         "ストレージ"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "110 か国以上にある超高速 VPN サーバー"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "無制限のエイリアスでお客様のユーザー情報を保護"
       ]
     },
     "Onboarding": {
@@ -8229,17 +8320,29 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " ${ helpCenterLink }をご覧いただくか、${ contactSupportLink }をご利用ください。"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "${ cancelDate }までにいつでもキャンセルできます。"
+      ],
       "Cancel anytime before then.": [
         "それまでにいつでもキャンセルできます。"
       ],
       "contact our support team": [
         "サポートチームにお問い合わせください"
       ],
+      "Continue": [
+        "続ける"
+      ],
       "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } まで無料のビジネスセキュリティ機能をお楽しみいただけます。"
       ],
       "help center": [
         "ヘルプセンター"
+      ],
+      "If you need help,": [
+        "助けが必要な場合は、"
       ],
       "Once your full subscription starts...": [
         "有料サブスクリプションが開始されると…"
@@ -8255,6 +8358,9 @@
       ],
       "Your free trial has started": [
         "無料トライアルが開始されました"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "あなたのフル ${ planTitle } サブスクリプションは ${ boldEndDate } に開始します。"
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
@@ -8475,9 +8581,6 @@
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "SEPAではユーロのみご利用いただけます。お客様の通貨が変更されました。選択を元に戻すには、セレクターをご利用ください。"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
@@ -8526,6 +8629,9 @@
       "Timeout exceeded": [
         "タイムアウトを超えました"
       ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "お客様の通貨はユーロ (€) に変更されました。これは、SEPA銀行振込がユーロ建ての支払いのみをサポートしているためです。"
+      ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
       ]
@@ -8558,6 +8664,9 @@
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Apple Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
+      ],
+      "Bank transfer - ${ details }": [
+        "銀行振込 - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -9220,6 +9329,15 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "安全に閲覧"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "${ BRAND_NAME } でより多くのことを"
+      ],
+      "Get unlimited aliases": [
+        "無制限のエイリアスを獲得"
+      ],
       "Go to subscription plans": [
         "サブスクリプションプランへ移動"
       ],
@@ -9228,6 +9346,9 @@
       ],
       "Increase your storage": [
         "ストレージを増やす"
+      ],
+      "Keep passwords safe": [
+        "パスワードを安全に保つ"
       ],
       "Unblock streaming content": [
         "ストリーミングコンテンツのブロックを解除"
@@ -9313,6 +9434,9 @@
       ],
       "Get 500 GB to securely store all your files and photos": [
         "すべてのファイルや写真を安全に保管する500 GBを入手"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "110ヶ国以上での最高速のVPNサービスへのアクセスを獲得"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "全てを含む1つのプラン、${ BRAND_NAME } Unlimitedをご利用ください。"
