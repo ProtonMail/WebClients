@@ -13,7 +13,6 @@ import useFlag from '@proton/unleash/useFlag';
 
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
-import { useAutoRestoreModal } from '../components/modals/AutoRestoreModal';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import * as config from '../config';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
@@ -74,7 +73,7 @@ const InitContainer = () => {
     const { init: initDrive, drive } = useDrive();
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const { migrateShares } = useShareActions();
-    const { autoRestore, restoreHashKey } = useSanitization();
+    const { restoreHashKey } = useSanitization();
     const [loading, withLoading] = useLoading(true);
     const [error, setError] = useState<Error>();
     const [defaultShareRoot, setDefaultShareRoot] =
@@ -87,7 +86,6 @@ const InitContainer = () => {
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
     const { photosEnabled } = useUserSettings();
-    const [autoRestoreModal, showAutoRestoreModal] = useAutoRestoreModal();
     const driveWebASVEnabled = useFlag('DriveWebRecoveryASV');
     useActivePing();
     useReactRouterNavigationLog();
@@ -134,7 +132,6 @@ const InitContainer = () => {
                 void migrateShares();
 
                 if (driveWebASVEnabled) {
-                    void autoRestore(showAutoRestoreModal);
                     void restoreHashKey();
                 }
             } catch (err) {
@@ -219,7 +216,6 @@ const InitContainer = () => {
                     {routes}
                 </Routes>
             </DriveWindow>
-            {autoRestoreModal}
         </ActiveShareProvider>
     );
 };
