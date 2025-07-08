@@ -616,7 +616,7 @@
         "설정으로 이동하기"
       ],
       "Got it": [
-        "알겠습니다"
+        "확인"
       ],
       "Help and feedback": [
         "도움말 및 의견"
@@ -1152,9 +1152,6 @@
       "Save": [
         "저장"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }에 저장"
-      ],
       "Saving${ ellipsis }": [
         "저장 중${ ellipsis }"
       ],
@@ -1228,7 +1225,7 @@
         "수신 확인 보내기"
       ],
       "Send unsubscribe email": [
-        "구독 해지 이메일 전송"
+        "구독 취소 이메일 전송"
       ],
       "Set": [
         "설정"
@@ -1459,13 +1456,13 @@
         "별표 제거"
       ],
       "Unsubscribe": [
-        "구독 해지"
+        "구독 취소"
       ],
       "Unsubscribed": [
-        "구독 해지됨"
+        "구독 취소됨"
       ],
       "Unsubscribing": [
-        "구독 해지 중"
+        "구독 취소 중"
       ],
       "Untrust": [
         "신뢰하지 않음"
@@ -1915,6 +1912,19 @@
       ],
       "Sender verification passed": [
         "발신자 검증 통과"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "구독 취소하기"
+      ],
+      "Keep subscription": [
+        "구독 유지"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "무료 체험이 ${ timeRemaining } 에 종료됩니다"
       ]
     },
     "bf2023: Deal details": {
@@ -3944,7 +3954,7 @@
         "이벤트 초대장에 화상 회의 링크를 즉시 추가할 수 있습니다."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "연락처 병합 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
+        "연락처 병합 중... 몇 분 정도 소요될 수 있습니다. 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
         "${ senderEmailAddress }을(를) 포함한 ${ otherSendersCount }개 주소로 새로운 이메일을 전송할 수 없으며, 완전히 삭제됩니다."
@@ -4798,8 +4808,8 @@
       "Username must end with a letter or digit": [
         "사용자 이름은 문자로 시작하여야 합니다."
       ],
-      "Wrong second password": [
-        "2차 비밀번호 모드가 알맞지 않습니다"
+      "Wrong password": [
+        "잘못된 비밀번호입니다"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
@@ -6162,9 +6172,6 @@
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 메시지가 이동되지 않을 수 있습니다."
       ],
-      "${ n } newsletter": [
-        "${ n }개 뉴스레터"
-      ],
       "${ n } unread conversation": [
         "읽지 않은 대화 ${ n }개"
       ],
@@ -6240,8 +6247,8 @@
       "${ trackersCount } tracker blocked": [
         "${ trackersCount }개 트래커 차단됨"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount }개 뉴스레터 구독"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount }개 뉴스레터"
       ],
       "${ unreadCount } scheduled message": [
         "예약된 메시지 ${ unreadCount }개"
@@ -6400,7 +6407,7 @@
         "이 수신자에 대해 알 수 없는 공개 키가 발견되었습니다."
       ],
       "An unsubscribe email will be sent on your behalf.": [
-        "사용자를 대신하여 구독 해지 이메일이 자동 발송됩니다."
+        "사용자를 대신하여 구독 취소 요청 이메일이 자동 발송됩니다."
       ],
       "and": [
         "그리고"
@@ -6748,7 +6755,7 @@
         "각각의 코드는 한 번만 사용할 수 있습니다."
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
-        "간편하게 뉴스레터 및 메일링 리스트를 관리 및 구독 해지할 수 있어요."
+        "간편하게 뉴스레터 및 메일링 리스트를 관리 및 구독 취소할 수 있어요."
       ],
       "Edit email address": [
         "이메일 주소 변경"
@@ -7178,6 +7185,9 @@
       ],
       "New": [
         "신규"
+      ],
+      "newsletter": [
+        "뉴스레터"
       ],
       "No action selected": [
         "선택한 액션 없음"
@@ -7939,7 +7949,7 @@
         "저장되지 않은 변경 사항"
       ],
       "Unsubscribe": [
-        "구독 해지"
+        "구독 취소"
       ],
       "Unsupported file": [
         "지원되지 않는 파일"
@@ -9034,8 +9044,8 @@
       "Mark as": [
         "표시"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "${ unreadCount }개 메시지를 읽음으로 표시했습니다."
+      "Marked as read": [
+        "읽음으로 표시"
       ],
       "Message:": [
         "메시지:"
@@ -9055,14 +9065,14 @@
       "Move to Inbox": [
         "받은 편지함으로 이동"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "${ labelName }(으)로 ${ count }개 메시지가 이동되었습니다."
+      "Moved to ${ labelName }": [
+        "${ labelName }(으)로 이동됨"
       ],
-      "Moved ${ count } message to Archive.": [
-        "${ count }개의 메시지를 보관함으로 이동했습니다."
+      "Moved to Archive": [
+        "보관함으로 이동됨"
       ],
-      "Moved ${ count } message to Trash.": [
-        "휴지통으로 ${ count }개 메시지가 이동되었습니다."
+      "Moved to Trash": [
+        "휴지통으로 이동됨"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "최소한 ${ MIN_PASSWORD_LENGTH }글자여야 합니다."
@@ -9385,11 +9395,14 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "구독 해지한 뉴스레터가 여기에 나타납니다."
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "구독 취소한 뉴스레터 또는 메일링 리스트가 여기에 나타납니다."
       ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "여기서 뉴스레터와 메일링 리스트 구독들을 확인 및 관리하세요."
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "활성 상태의 뉴스레터 또는 메일링 리스트 구독이 없습니다."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "활성 상태의 뉴스레터 또는 메일링 리스트 구독이 없습니다."
       ]
     },
     "Landmarks": {
@@ -11472,9 +11485,6 @@
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "유로화는 SEPA로만 결제 가능합니다. 사용자의 결제 수단이 변경되었습니다. 선택기를 사용하여 선택을 다시 확인하세요."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
       ],
@@ -11522,6 +11532,9 @@
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
       "Your payment is still being processed": [
         "회원님의 결제가 아직 처리 중입니다"
@@ -12613,7 +12626,7 @@
         "별칭 비활성화됨"
       ],
       "Unsubscribed": [
-        "구독 해지됨"
+        "구독 취소됨"
       ]
     },
     "Step": {
@@ -13725,7 +13738,7 @@
         "발신자 차단"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "${ MAIL_SHORT_APP_NAME } 구독 해지"
+        "${ MAIL_SHORT_APP_NAME } 구독 취소"
       ],
       "Cancel subscription?": [
         "구독을 취소하시겠어요?"
@@ -14174,23 +14187,26 @@
       "Night theme": [
         "야간 테마"
       ],
+      "No active newsletters": [
+        "활성 상태인 뉴스레터 없음"
+      ],
       "No attachment found": [
         "첨부 파일을 찾을 수 없습니다."
       ],
       "No breaches detected": [
         "감지한 침해사례 없음"
       ],
-      "No mail subscriptions": [
-        "메일 구독 없음"
-      ],
       "No need to empty the trash": [
         "휴지통을 비울 필요 없어요."
+      ],
+      "No newsletters found": [
+        "발견된 뉴스레터 없음"
       ],
       "No trackers found": [
         "트래커를 찾을 수 없음"
       ],
       "No unsubscribed newsletters": [
-        "구독 해지된 이메일 없음"
+        "구독 취소한 이메일 없음"
       ],
       "No-reply address detected": [
         "회신 불가 주소 감지됨"
@@ -14448,13 +14464,13 @@
         "${ DARK_WEB_MONITORING_NAME } 켜기"
       ],
       "Unsubscribe": [
-        "구독 해지"
+        "구독 취소"
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "${ subscription.Name }(을)를 구독 취소하시겠어요?"
       ],
       "Unsubscribe not available for this sender": [
-        "이 발신자에 대한 구독 해지가 지원되지 않습니다"
+        "이 발신자에 대한 구독 취소가 지원되지 않습니다"
       ],
       "Unsubscribe request sent": [
         "수신 거부 요청이 전송됨"

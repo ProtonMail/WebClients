@@ -1156,9 +1156,6 @@
       "Save": [
         "Guardar"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Guardar no ${ DRIVE_APP_NAME }"
-      ],
       "Saving${ ellipsis }": [
         "A guardar${ ellipsis }"
       ],
@@ -1931,6 +1928,19 @@
       ],
       "Sender verification passed": [
         "Verificação do remetente aprovada"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar a subscrição"
+      ],
+      "Keep subscription": [
+        "Manter a subscrição"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "A sua avaliação gratuita termina em ${ timeRemaining }."
       ]
     },
     "bf2023: Deal details": {
@@ -4834,8 +4844,8 @@
       "Username must end with a letter or digit": [
         "O nome de utilizador deve acabar com uma letra ou algarismo"
       ],
-      "Wrong second password": [
-        "Segunda palavra-passe errada"
+      "Wrong password": [
+        "A palavra-passe está errada."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Não pode enviar um e-mail para mais de ${ maxContacts } destinatário.",
@@ -6241,10 +6251,6 @@
         "Não é possível mover ${ messagesNotAuthorizedToMove } mensagem.",
         "Não é possível mover ${ messagesNotAuthorizedToMove } mensagens."
       ],
-      "${ n } newsletter": [
-        "${ n } boletim",
-        "${ n } boletins"
-      ],
       "${ n } unread conversation": [
         "${ n } conversa não lida",
         "${ n } conversas não lidas"
@@ -6338,9 +6344,9 @@
         "${ trackersCount } rastreador bloqueado",
         "${ trackersCount } rastreadores bloqueados"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } subscrição de boletim informativo",
-        "${ unreadCount } subscrições de boletim informativo"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } boletim",
+        "${ unreadCount } boletins"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } mensagem agendada",
@@ -7300,6 +7306,9 @@
       ],
       "New": [
         "Novo"
+      ],
+      "newsletter": [
+        "boletim"
       ],
       "No action selected": [
         "Nenhuma acção selecionada"
@@ -9186,9 +9195,8 @@
       "Mark as": [
         "Marcar como"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "${ unreadCount } mensagem foi marcada como lida.",
-        "${ unreadCount } mensagens foram marcadas como lidas."
+      "Marked as read": [
+        "Marcado como lido"
       ],
       "Message:": [
         "Mensagem:"
@@ -9208,17 +9216,14 @@
       "Move to Inbox": [
         "Mover para Caixa de entrada"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "${ count } mensagem foi movida para ${ labelName }.",
-        "${ count } mensagens foram movidas para ${ labelName }."
+      "Moved to ${ labelName }": [
+        "Movido para ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "${ count } mensagem foi movida para o arquivo.",
-        "${ count } mensagens foram movidas para o arquivo."
+      "Moved to Archive": [
+        "Movido para o arquivo"
       ],
-      "Moved ${ count } message to Trash.": [
-        "${ count } mensagem foi movida para o lixo.",
-        "${ count } mensagens foram movidas para o lixo."
+      "Moved to Trash": [
+        "Movida para o lixo"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres"
@@ -9541,11 +9546,14 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Os boletins das quais cancelou a subscrição aparecerão aqui."
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Os boletins informativos ou listas de correio das quais cancelar a subscrição aparecerão aqui."
       ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Veja e gira as subscrições de boletins e lista de correio aqui."
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Não tem nenhuma subscrição ativa de boletim ou de listas de correio."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Não tem nenhuma subscrição de boletim ou de lista de correio."
       ]
     },
     "Landmarks": {
@@ -11664,9 +11672,6 @@
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis noutras moedas."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Apenas o euro é aceite para os pagos SEPA. A sua moeda foi alterada. Utilize o seletor para reverter a sua escolha."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative primeiro a sua subscrição antes para diminuir o número de complementos."
       ],
@@ -11718,6 +11723,9 @@
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "A sua moeda foi alterada para euros (€) porque as transferências bancárias SEPA apenas aceitam pagamentos em euros."
       ],
       "Your payment is still being processed": [
         "O seu pagamento ainda está a ser processado."
@@ -14455,17 +14463,20 @@
       "Night theme": [
         "Tema noturno"
       ],
+      "No active newsletters": [
+        "Não há boletins ativos."
+      ],
       "No attachment found": [
         "Nenhum anexo encontrado"
       ],
       "No breaches detected": [
         "Nenhuma violação detetada"
       ],
-      "No mail subscriptions": [
-        "Sem subscrições de e-mails"
-      ],
       "No need to empty the trash": [
         "Não é necessário esvaziar o lixo."
+      ],
+      "No newsletters found": [
+        "Nenhum boletim encontrado"
       ],
       "No trackers found": [
         "Nenhum rastreador encontrado"

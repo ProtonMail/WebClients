@@ -1150,9 +1150,6 @@
       "Save": [
         "Mentés"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Mentés a ${ DRIVE_APP_NAME } alkalmazásba"
-      ],
       "Saving${ ellipsis }": [
         "Mentés${ ellipsis }"
       ],
@@ -4825,8 +4822,8 @@
       "Username must end with a letter or digit": [
         "Felhasználónévnek betűvel vagy számmal kell végződnie"
       ],
-      "Wrong second password": [
-        "Rossz második jelszó"
+      "Wrong password": [
+        "Hibás jelszó"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nem küldhet emailt több, mint ${ maxContacts } címzettnek",
@@ -6232,10 +6229,6 @@
         "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át.",
         "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át."
       ],
-      "${ n } newsletter": [
-        "${ n } hírlevél",
-        "${ n } hírlevél"
-      ],
       "${ n } unread conversation": [
         "${ n } olvasatlan beszélgetés",
         "${ n } olvasatlan beszélgetés"
@@ -6328,10 +6321,6 @@
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } követő blokkolva",
         "${ trackersCount } követő blokkolva"
-      ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } olvasatlan hírlevél",
-        "${ unreadCount } olvasatlan hírlevél"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } időzített üzenet",
@@ -9168,10 +9157,6 @@
       "Mark as": [
         "Megjelölés mint"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "${ unreadCount } Üzenet megjelölve olvasottként.",
-        "${ unreadCount } Üzenet megjelölve olvasottként."
-      ],
       "Message:": [
         "Üzenet:"
       ],
@@ -9189,18 +9174,6 @@
       ],
       "Move to Inbox": [
         "Áthelyezés a beérkezett üzenetekhez"
-      ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "${ count } üzenetet áthelyeztünk ide: ${ labelName }.",
-        "${ count } üzenetet áthelyeztünk ide: ${ labelName }."
-      ],
-      "Moved ${ count } message to Archive.": [
-        "${ count } üzenet áthelyezve az archívumba.",
-        "${ count } üzenet áthelyezve az archívumba."
-      ],
-      "Moved ${ count } message to Trash.": [
-        "${ count } üzenet áthelyezve a lomtárba.",
-        "${ count } üzenet áthelyezve a lomtárba."
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Legalább ${ MIN_PASSWORD_LENGTH } karakterrel kell rendelkeznie."
@@ -9520,14 +9493,6 @@
       ],
       "To: ${ to }": [
         "Címzett: ${ to }"
-      ]
-    },
-    "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Itt fognak megjelenni azok a hírlevelek, amelyekről leiratkozik."
-      ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Itt megtekintheti és kezelheti a hírlevél és a levelezőlista feliratkozásait."
       ]
     },
     "Landmarks": {
@@ -11636,9 +11601,6 @@
       ],
       "More plans are available in other currencies": [
         "További csomagok érhetők el más pénznemekben"
-      ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Csak eurót fogadunk el SEPA-hoz. Pénzneme megváltozott. Kérjük, a választó segítségével vonja vissza a választását."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Kérjük, először aktiválja újra az előfizetését, hogy csökkenthesse a bővítmények számát."
@@ -14425,9 +14387,6 @@
       ],
       "No breaches detected": [
         "Nem észleltünk adatszivárgást."
-      ],
-      "No mail subscriptions": [
-        "Nincs e-mail feliratkozás"
       ],
       "No need to empty the trash": [
         "Nincs szükség a lomtár ürítésére"

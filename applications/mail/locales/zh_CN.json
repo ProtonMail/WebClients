@@ -393,6 +393,12 @@
       "Delete permanently": [
         "永久删除"
       ],
+      "Deleting folder": [
+        "正在删除文件夹"
+      ],
+      "Deleting label": [
+        "正在删除标签"
+      ],
       "Deselect all": [
         "取消全选"
       ],
@@ -1142,9 +1148,6 @@
       ],
       "Save": [
         "保存"
-      ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "保存至 ${ DRIVE_APP_NAME }"
       ],
       "Saving${ ellipsis }": [
         "正在保存${ ellipsis }"
@@ -1915,6 +1918,14 @@
       ],
       "Sender verification passed": [
         "发送方验证通过"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "取消订阅"
+      ],
+      "Keep subscription": [
+        "继续订阅"
       ]
     },
     "bf2023: Deal details": {
@@ -4570,6 +4581,9 @@
       "Payment process not supported": [
         "不支持此支付流程"
       ],
+      "Permissions request failed.": [
+        "权限请求失败。"
+      ],
       "Please activate your search again": [
         "请重新开启全文搜索"
       ],
@@ -4792,8 +4806,8 @@
       "Username must end with a letter or digit": [
         "用户名必须以字母或数字结尾"
       ],
-      "Wrong second password": [
-        "副密码错误"
+      "Wrong password": [
+        "密码错误"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "邮件收件人不能超过 ${ maxContacts } 位"
@@ -6231,8 +6245,8 @@
       "${ trackersCount } tracker blocked": [
         "已屏蔽 ${ trackersCount } 个跟踪器"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } 条未读时事通讯"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } 份通讯"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } 封定时发送邮件"
@@ -6495,6 +6509,9 @@
       "Billing cycle: ${ text }": [
         "计费周期：${ text }"
       ],
+      "Block sender": [
+        "屏蔽发件人"
+      ],
       "Body: ": [
         "正文： "
       ],
@@ -6641,6 +6658,9 @@
       ],
       "Dedicated servers": [
         "专用服务器"
+      ],
+      "Dedicated VPN servers": [
+        "专用 VPN 服务器"
       ],
       "default email address": [
         "首选邮箱地址"
@@ -7164,6 +7184,9 @@
       "New": [
         "新"
       ],
+      "newsletter": [
+        "时事通讯"
+      ],
       "No action selected": [
         "未选择操作"
       ],
@@ -7220,6 +7243,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "组织中的专用 VPN 服务器数量"
       ],
       "Numbers": [
         "数字"
@@ -7361,6 +7387,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "请稍候，我们正在寻找包含用非活动密钥加密数据的联系人。"
+      ],
+      "Preferences updated": [
+        "偏好设定已更新"
       ],
       "Preview failed to be loaded": [
         "预览加载失败"
@@ -8355,6 +8384,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
       ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
+      ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "您将在 ${ boldEndDate } 失去对 ${ boldPlanTitle } 的访问权限。"
       ],
@@ -8776,6 +8808,9 @@
       "CC": [
         "抄送"
       ],
+      "Choose what to do instead": [
+        "请选择其他操作"
+      ],
       "City": [
         "城市"
       ],
@@ -8998,8 +9033,8 @@
       "Mark as": [
         "标为"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "已将 ${ unreadCount } 封邮件标为已读。"
+      "Marked as read": [
+        "标记为已读"
       ],
       "Message:": [
         "消息:"
@@ -9019,11 +9054,11 @@
       "Move to Inbox": [
         "移至收件箱"
       ],
-      "Moved ${ count } message to Archive.": [
-        "已将 ${ count } 封邮件归档。"
+      "Moved to Archive": [
+        "已移至归档"
       ],
-      "Moved ${ count } message to Trash.": [
-        "已将 ${ count } 封邮件移至回收站。"
+      "Moved to Trash": [
+        "已移至回收站"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "必须至少有 ${ MIN_PASSWORD_LENGTH } 个字符"
@@ -9346,11 +9381,8 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "您取消订阅的时事通讯将显示在此处。"
-      ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "在此查看并管理新闻通讯和邮件列表订阅。"
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "您没有任何活跃的时事通讯或邮件列表订阅。"
       ]
     },
     "Landmarks": {
@@ -10912,8 +10944,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 优惠今天到期！"
       ],
+      "Don’t show this again": [
+        "不再显示此内容"
+      ],
       "Don’t show this offer again": [
         "不再显示此优惠"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "开通 ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "仅需 ${ pricingTitle } 即可获得 Drive Plus"
@@ -10967,9 +11005,20 @@
         "您的订阅即将续订"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "已加密的密码管理器"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 多项高级功能"
+      ],
+      "500 GB secure storage": [
+        "500 GB 安全存储空间"
+      ],
+      "Advanced threat protection": [
+        "高级威胁保护"
       ],
       "Custom email domain": [
         "自定义电子邮件域"
@@ -10991,6 +11040,9 @@
       ],
       "Storage": [
         "存储"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "遍布 110 多个国家/地区的超快 VPN 服务器"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11034,6 +11086,9 @@
       ],
       "Activate selected": [
         "激活所选"
+      ],
+      "Ad-free promise": [
+        "无广告承诺"
       ],
       "Advanced encryption": [
         "先进加密技术"
@@ -11358,6 +11413,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "银行转账"
       ],
@@ -11448,6 +11506,9 @@
       ],
       "Timeout exceeded": [
         "超时"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
@@ -12327,8 +12388,20 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "安全浏览"
+      ],
+      "Get unlimited aliases": [
+        "获取无限量邮箱别名"
+      ],
       "Go to subscription plans": [
         "查看账户等级"
+      ],
+      "Keep passwords safe": [
+        "确保密码安全"
+      ],
+      "Unblock streaming content": [
+        "解锁流媒体内容"
       ],
       "Upgrade": [
         "升级账户"
@@ -12406,6 +12479,15 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "访问世界范围内的流媒体服务"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "获得 500 GB 以安全地存储您的所有文件和照片"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "使用 Sentinel 保护您的账户免受威胁"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "一次性开通两年 ${ planName } 更加优惠"
       ]
@@ -14050,14 +14132,14 @@
       "Night theme": [
         "夜间模式"
       ],
+      "No active newsletters": [
+        "没有活跃的邮件列表"
+      ],
       "No attachment found": [
         "未找到附件"
       ],
       "No breaches detected": [
         "未检测到数据泄露"
-      ],
-      "No mail subscriptions": [
-        "未订阅邮件"
       ],
       "No need to empty the trash": [
         "无需清空回收站"
@@ -14519,6 +14601,14 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "不支持此版本的 Tor 浏览器，请更新至最新版本 ${ stableRelease }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/每月"
+      ],
+      "Only": [
+        "仅"
       ]
     },
     "unprivatization": {
