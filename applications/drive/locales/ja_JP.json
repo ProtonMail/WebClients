@@ -1197,6 +1197,9 @@
       ]
     },
     "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
       "200 GB storage": [
         "200GBストレージ"
       ],
@@ -1209,6 +1212,9 @@
       "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
         "${ BRAND_NAME } Mail、Pass、VPN、Drive、カレンダーの全てのプレミアム機能"
       ],
+      "Block ads, trackers, and malware": [
+        "広告、トラッカー、マルウェアをブロック"
+      ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "割引は標準の月額料金に基づいています。支払いサイクルの終わりに、お客様のサブスクリプションは標準の年間料金で更新されます。"
       ],
@@ -1218,17 +1224,35 @@
       "Encrypted password manager": [
         "暗号化されたパスワードマネージャー"
       ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "これまでの道のりを祝う特別な贈り物です。"
+      ],
+      "High speed streaming with VPN": [
+        "VPNでの高速ストリーミング"
+      ],
+      "of privacy": [
+        "プライバシーの"
+      ],
       "Online document editor": [
         "オンライン文書エディタ"
       ],
       "Online privacy for up to 2 people": [
         "最大2人までのオンラインプライバシー"
       ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "家族(6人まで)のためのオンラインプライバシー"
+      ],
+      "Protect up to 10 devices": [
+        "最大10台のデバイスを保護"
+      ],
       "Recover previous file versions": [
         "以前のファイルを復元"
       ],
       "Save big on premium Drive features with a limited-time discount.": [
         "期間限定の割引で、プレミアムDrive機能をお得にご利用いただけます。"
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムMail機能をお得にご利用いただけます。"
       ],
       "Save big on premium Pass features with a limited-time discount.": [
         "期間限定の割引で、プレミアムPass機能をお得にご利用いただけます。"
@@ -1239,11 +1263,29 @@
       "Save time with built-in 2FA": [
         "内蔵の2要素認証で時間を節約"
       ],
+      "Secure email with unlimited aliases": [
+        "無制限のエイリアスを備えたセキュアなメール"
+      ],
+      "Select any server": [
+        "サーバーを選択"
+      ],
       "Share passwords easily": [
         "パスワードを簡単に共有"
       ],
+      "Short @pm.me address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Stream your favorite content": [
+        "お気に入りのコンテンツをストリーミングする"
+      ],
       "thanks to you": [
         "ありがとうございます"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "お客様の暗号化済みストレージを3倍に — お客様のすべてのデータに3 TBを提供します"
+      ],
+      "Unlimited folders, labels and filters": [
+        "無制限のフォルダー、ラベル、フィルター"
       ],
       "Use your own email domain": [
         "独自メールドメインを使用する"
@@ -1264,8 +1306,20 @@
       "/ month": [
         "/ 月"
       ],
+      "12 months": [
+        "12 か月"
+      ],
       "15 months": [
         "15 か月"
+      ],
+      "24 months": [
+        "24 か月"
+      ],
+      "30 months": [
+        "30 か月"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal } の場合"
       ]
     },
     "Apps dropdown": {
@@ -1296,6 +1350,19 @@
       ],
       "Unsupported event": [
         "サポートされていない予定です"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "サブスクリプションをキャンセル"
+      ],
+      "Keep subscription": [
+        "サブスクリプションを継続"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "無料トライアルは ${ timeRemaining } に終了します。"
       ]
     },
     "Badge": {
@@ -2889,17 +2956,6 @@
         "${ PLAN_NAMES[PLANS.PASS] } のサブスクリプションは、年間 ${ price } の特別価格でご利用いただけます。無料プランにダウングレードすると、将来再度アップグレードした場合でも、割引は永久に失われます。"
       ]
     },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Linux版をダウンロード"
-      ],
-      "Download for macOS": [
-        "macOS版ダウンロード"
-      ],
-      "Download for Windows": [
-        "Windows版をダウンロード"
-      ]
-    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } で開く"
@@ -3143,14 +3199,26 @@
       "Failed to create folder": [
         "フォルダーの作成に失敗しました"
       ],
+      "Failed to fetch node": [
+        "ノードの取得に失敗しました"
+      ],
+      "Failed to fetch sharing info": [
+        "共有情報の取得に失敗しました"
+      ],
       "Failed to load the STL preview": [
         "STLプレビューの読み込みに失敗しました"
       ],
       "Failed to move items": [
         "アイテムの移動に失敗しました"
       ],
+      "Failed to resend invitation": [
+        "招待の再送に失敗しました"
+      ],
       "Failed to save some photos to your Drive": [
         "一部の写真をドライブに保存できませんでした"
+      ],
+      "Failed to unshare node": [
+        "ノードの共有解除に失敗しました"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "エラー「${ error }」のためファイル「${ item.name }」はアップロードできませんでした。"
@@ -3439,9 +3507,6 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "文字、数字、_.- のみを使用してみてください。"
-      ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "VPNダッシュボードを読み込むことができません。接続を確認してもう一度お試しください。"
       ],
       "Unable to set photo as cover": [
         "写真をカバーとして設定できません"
@@ -4483,20 +4548,11 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName }はすでにこの場所に存在します。"
       ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } はあなたのIPアドレスをマスクするため、ウェブサイトに特定されることはありません。"
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } 人のメンバー)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /月)"
-      ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**自動接続**: デバイスをオンにするとすぐにVPNに接続します。"
-      ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**キルスイッチ**: VPNに予期せぬ問題が起きた場合、インターネット接続を切ってデータ漏洩を防ぎます。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
@@ -4516,29 +4572,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "リモートワークには、セキュアな接続が不可欠です。VPN は、企業のデータをサイバー脅威から保護し、仕事をプライベートに保ちます。"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "ユーザーとは、1つのユーザー名、メールボックス、人物に関連するアカウントのことです"
-      ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "VPNは接続を暗号化し、IPアドレスを隠すため、誰もがあなたのブラウジングを追跡または監視することが困難になります。"
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "VPNはIPアドレスを隠し、ブラウジング活動を暗号化し、ウェブサイト、広告主、ISPが時間をかけて追跡するのを困難にします。"
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "VPNは、デバイスとインターネットの間の安全なトンネルのようなものです。お客様の現在地やアクティビティをインターネットサービスプロバイダ（ISP）およびアクセスしたウェブサイトから隠します。"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
       ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
-      ],
-      "Ad targeting": [
-        "広告ターゲティング"
       ],
       "Address copied to clipboard": [
         "アドレスをコピーしました"
@@ -4548,9 +4589,6 @@
       ],
       "Admin account allocation": [
         "管理者アカウント割り当て"
-      ],
-      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "広告主はあなたのブラウジングを追跡してターゲット広告を表示します。 ${ VPN_APP_NAME } はトラッカーや広告をブロックし、接続を高速化し、オンラインエクスペリエンスを向上させます。"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
@@ -4726,9 +4764,6 @@
       "Conflict": [
         "競合"
       ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "${ VPN_APP_NAME } に接続してプライベートブラウズ"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "グループ ${ contactGroupName } に連絡先を追加しました"
       ],
@@ -4800,6 +4835,9 @@
       ],
       "Dedicated servers": [
         "専用サーバー"
+      ],
+      "Dedicated VPN servers": [
+        "専用VPNサーバー"
       ],
       "default email address": [
         "既定のメールアドレス"
@@ -4993,9 +5031,6 @@
       "from the version history?": [
         "バージョン履歴から"
       ],
-      "Geoblocking": [
-        "ジオブロック"
-      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "携帯電話から写真をバックアップするか、こちらにアップロードしてください。"
       ],
@@ -5010,9 +5045,6 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "「マイファイル」に移動し、ファイルをアップロードしてください。"
-      ],
-      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "政府やISPはあなたのオンライン活動を監視することができます。あなたの本当のIPを隠してあなたの活動を暗号化することによって、あなたのブラウジングはプライベートになります。"
       ],
       "here": [
         "こちら"
@@ -5068,9 +5100,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
-      "In restrictive countries": [
-        "制限のある国"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
       ],
@@ -5112,9 +5141,6 @@
       ],
       "Items moved to the trash will stay here until deleted": [
         "ごみ箱に移動されたアイテムは削除されるまでここに残ります"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "VPNを常に使用することをお勧めします。しかし、サイバーセキュリティの脅威が最も高い可能性がある場合は以下の通りです。"
       ],
       "It’s easy and secure": [
         "簡単に使用でき安全で"
@@ -5224,9 +5250,6 @@
       "More": [
         "その他"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "ほとんどの公共のWiFiネットワークは安全ですが、セキュリティが不十分なものもあり、サイバー攻撃の危険にさらされる可能性があります。VPNはトラフィックを暗号化してあなたを保護します。"
-      ],
       "Moving files": [
         "ファイルを移動中"
       ],
@@ -5275,9 +5298,6 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "一部転送が完了していないファイルがあります。当該ファイルの再ダウンロード・アップロードをお試しください。"
       ],
-      "Not connected": [
-        "未接続"
-      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "補足: データはまだ ${ DRIVE_APP_NAME } をインストールしているデバイスで開くことができる場合があります。"
       ],
@@ -5287,6 +5307,9 @@
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
+      "Number of dedicated VPN servers in the organization": [
+        "組織内の専用VPNサーバー数"
+      ],
       "Numbers": [
         "数字"
       ],
@@ -5295,9 +5318,6 @@
       ],
       "of": [
         " / "
-      ],
-      "On public WiFi networks": [
-        "公共WiFiネットワーク上"
       ],
       "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
         "このプロセスが完了すると、「自動復元(今日の日付)」という新しいフォルダに復元されたデータのコピーが見つかります。 このデータのコピーは、ストレージの割り当てにカウントされません。"
@@ -5479,9 +5499,6 @@
       "Primary": [
         "プライマリー"
       ],
-      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "プライベートブラウジング(またはシークレットモード)は、あなたのアクティビティをデバイス上で非表示にしておく場合にのみ有効です。 あなたのブラウザが履歴やクッキーを保存するのを防ぎますが、あなたが見えなくなることはありません。 ISP、ネットワーク管理者、あなたが訪問したウェブサイトは、あなたがオンラインで何をしているかを見ることができます。"
-      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "プライベート検索が有効化されました。このダイアログを閉じ、ファイルまたはフォルダーを検索することができます。"
       ],
@@ -5535,9 +5552,6 @@
       ],
       "Scan issue": [
         "スキャン中の問題"
-      ],
-      "Scan the QR code with your mobile device": [
-        "携帯のデバイスでQRコードをスキャンしてください"
       ],
       "Search cannot be enabled in this browser": [
         "このブラウザーでは検索を使用することができません。"
@@ -5638,26 +5652,17 @@
       "Some files failed to upload. Try uploading the files again.": [
         "アップロードに失敗したファイルがあります。再度アップロードしてください。"
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "一部の政府は特定のウェブサイトへのアクセスをブロックまたは制限します。VPNは、あなたのアクティビティとアイデンティティをプライベートに保ちながら検閲を回避するのに役立ちます。"
-      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "アクセスできなくなったファイルがあります。復元を開始を押すと、復元します。${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "このアルバムの一部の写真はあなたのタイムラインに保存されていません。このアルバムを削除すると、それらの写真は完全に削除されます。"
       ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "一部のウェブサイトやストリーミングサービスは、地域ごとにコンテンツをブロックします。VPNを使用すると、これらの制限を回避し、インターネットに自由にアクセスできます。"
-      ],
       "Something went wrong, please try again later.": [
         "問題が発生しました。後ほど再度お試しください。"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "連絡先と共有し、オンラインサービスでご利用ください。"
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "次のVPN設定を有効にして、簡単に接続を維持します。"
       ],
       "Storage allocated to other users in this organisation": [
         "この組織の他のユーザーに割り当てられたストレージ"
@@ -5683,14 +5688,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
       ],
-      "Surveillance": [
-        "監視"
-      ],
       "Symbols (#$&)": [
         "記号 (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
+      ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "組織を保護するために ${ BRAND_NAME } をお選びいただきありがとうございます。"
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "ご登録ありがとうございます。安全なブラウジングをお楽しみください！"
@@ -5773,14 +5778,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "このリンクは古いバージョンのProton Driveで作成されたため修正できません。このリンクを削除し、新しいリンクを作り直すことで設定を変更できます。"
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "これは、あなたのISPとあなたが訪問したウェブサイトがあなたの個人情報をあなたのオンライン活動に接続することができないことを意味します。"
-      ],
       "This month": [
         "今月"
-      ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "この固有のコードは、ウェブサイトやISP（インターネットサービスプロバイダ）によって、位置情報や閲覧副歴をあなたのデバイスと結びつけるのに利用されます。"
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "これはアルバムのみを削除します。あなたの写真はタイムラインに残ります。この操作は元に戻せません。"
@@ -5793,9 +5792,6 @@
       ],
       "This will permanently delete the selected items you uploaded.": [
         "アップロードした選択したアイテムは完全に削除されます。"
-      ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
-        "これにより${ DRIVE_APP_NAME }から同期されたデバイス${ deviceName }が削除され、${ DRIVE_APP_NAME }からすべてのデータが削除されます。マイコンピュータに追加されたフォルダは同期が停止します。"
       ],
       "This will replace the existing file with the folder": [
         "既存のファイルをフォルダーで置き換えます"
@@ -5856,9 +5852,6 @@
       ],
       "Total VPN connections": [
         "総VPN接続数"
-      ],
-      "Tracking": [
-        "トラッキング"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "ファイル「${ name }」の転送をキャンセルしました"
@@ -5959,9 +5952,6 @@
       "Visa Secure logo": [
         "Visa Secure ロゴ"
       ],
-      "VPN IP": [
-        "VPN IP"
-      ],
       "Want to sync files faster?": [
         "ファイルをより速く同期したいですか?"
       ],
@@ -6018,12 +6008,6 @@
       ],
       "What would you like to do?": [
         "どの手段を用いてドライブを開きますか？"
-      ],
-      "When working remotely": [
-        "リモートワークの時"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "VPNに接続すると、暗号化技術を使用してIPアドレス(デバイスに割り当てられた固有のコード)を非表示にします。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2要素認証を設定した時、認証アプリにアクセスできなくなってしまった場合にサインインに使用できる回復用コードを提供します。"
@@ -6223,15 +6207,6 @@
       "Your information was found on ${ displayedDate }": [
         "あなたの情報は ${ displayedDate }で見つかりました。"
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "インターネットサービスプロバイダーは、データを監視して販売したり、アクセスできるウェブサイトを制限したりすることもできます。"
-      ],
-      "Your IP": [
-        "IPアドレス"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "IPアドレスは表示されており、オンラインアクティビティを追跡するために使用できます。"
-      ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
       ],
@@ -6241,17 +6216,11 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "次回の請求日は ${ renewalTime }です。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
       ],
-      "Your online activity is protected": [
-        "オンラインアクティビティは保護されています"
-      ],
       "Your password was leaked:": [
         "パスワードが漏洩しました:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "物理的な場所が表示され、インターネットへのアクセスを制限するために使用できます。"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "あなたのプランでは、最大 7 日間 10 バージョンに制限されています"
@@ -6273,6 +6242,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "トライアルは${ timeRemaining }に終了します。"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "また、${ boldPlanTitle }の機能もご利用いただけなくなります。"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "${ boldEndDate }に${ boldPlanTitle }へアクセスできなくなります。"
@@ -6958,15 +6930,6 @@
       ],
       "Your alias": [
         "あなたのエイリアス"
-      ],
-      "Your IP": [
-        "あなたのIP"
-      ],
-      "Your ISP": [
-        "あなたのISP"
-      ],
-      "Your location": [
-        "あなたの現在地"
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
@@ -8009,6 +7972,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "ファイルの保存、同期、共有を簡単に行える 1 TB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
+      ],
       "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "ファイルの保存、同期、共有を簡単に行える 200 GB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
       ],
@@ -8535,6 +8501,9 @@
       "Encrypted search activated": [
         "暗号化検索が有効になりました"
       ],
+      "Error while listing devices": [
+        "デバイスの一覧表示中にエラーが発生しました。"
+      ],
       "External invitation removed from the share": [
         "共有から外部の招待が削除されました"
       ],
@@ -8562,8 +8531,14 @@
       "Failed to reject share invitation": [
         "共有への招待の拒否に失敗しました"
       ],
+      "Failed to remove device": [
+        "デバイスの削除に失敗しました"
+      ],
       "Failed to remove the file": [
         "ファイルの削除に失敗しました"
+      ],
+      "Failed to rename device": [
+        "デバイス名の変更に失敗しました"
       ],
       "Failed to upload files: ${ err }": [
         "ファイルのアップロードに失敗しました: ${ err }"
@@ -8648,6 +8623,9 @@
       ],
       "The link to your item was deleted": [
         "アイテムのリンクを削除しました"
+      ],
+      "The spreadsheet failed to be created": [
+        "スプレッドシートの作成に失敗しました"
       ],
       "This item was not removed from your list": [
         "このアイテムはリストから削除されました"
@@ -8777,6 +8755,9 @@
       "+10 more premium features": [
         "+10 以上のプレミアム機能"
       ],
+      "500 GB secure storage": [
+        "500 GBの安全なストレージ"
+      ],
       "Advanced threat protection": [
         "高度な脅威保護"
       ],
@@ -8800,6 +8781,12 @@
       ],
       "Storage": [
         "ストレージ"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "110 か国以上にある超高速 VPN サーバー"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "無制限のエイリアスでお客様のユーザー情報を保護"
       ]
     },
     "Onboarding": {
@@ -8953,17 +8940,29 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " ${ helpCenterLink }をご覧いただくか、${ contactSupportLink }をご利用ください。"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "${ cancelDate }までにいつでもキャンセルできます。"
+      ],
       "Cancel anytime before then.": [
         "それまでにいつでもキャンセルできます。"
       ],
       "contact our support team": [
         "サポートチームにお問い合わせください"
       ],
+      "Continue": [
+        "続ける"
+      ],
       "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } まで無料のビジネスセキュリティ機能をお楽しみいただけます。"
       ],
       "help center": [
         "ヘルプセンター"
+      ],
+      "If you need help,": [
+        "助けが必要な場合は、"
       ],
       "Once your full subscription starts...": [
         "有料サブスクリプションが開始されると…"
@@ -8979,6 +8978,9 @@
       ],
       "Your free trial has started": [
         "無料トライアルが開始されました"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "あなたのフル ${ planTitle } サブスクリプションは ${ boldEndDate } に開始します。"
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
@@ -9141,9 +9143,6 @@
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "SEPAではユーロのみご利用いただけます。お客様の通貨が変更されました。選択を元に戻すには、セレクターをご利用ください。"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
@@ -9192,6 +9191,9 @@
       "Timeout exceeded": [
         "タイムアウトを超えました"
       ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "お客様の通貨はユーロ (€) に変更されました。これは、SEPA銀行振込がユーロ建ての支払いのみをサポートしているためです。"
+      ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
       ]
@@ -9224,6 +9226,9 @@
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Apple Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
+      ],
+      "Bank transfer - ${ details }": [
+        "銀行振込 - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -9803,6 +9808,15 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "安全に閲覧"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "${ BRAND_NAME } でより多くのことを"
+      ],
+      "Get unlimited aliases": [
+        "無制限のエイリアスを獲得"
+      ],
       "Go to subscription plans": [
         "サブスクリプションプランへ移動"
       ],
@@ -9811,6 +9825,9 @@
       ],
       "Increase your storage": [
         "ストレージを増やす"
+      ],
+      "Keep passwords safe": [
+        "パスワードを安全に保つ"
       ],
       "Unblock streaming content": [
         "ストリーミングコンテンツのブロックを解除"
@@ -9896,6 +9913,9 @@
       ],
       "Get 500 GB to securely store all your files and photos": [
         "すべてのファイルや写真を安全に保管する500 GBを入手"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "110ヶ国以上での最高速のVPNサービスへのアクセスを獲得"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "全てを含む1つのプラン、${ BRAND_NAME } Unlimitedをご利用ください。"
@@ -10993,9 +11013,6 @@
       "Deleting contacts": [
         "連絡先を削除しています"
       ],
-      "Desktop": [
-        "デスクトップ"
-      ],
       "Discard": [
         "破棄"
       ],
@@ -11013,9 +11030,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } アプリをダウンロード"
-      ],
-      "Download the app": [
-        "アプリをダウンロード"
       ],
       "Download unverified file?": [
         "未検証のファイルをダウンロードしますか?"
@@ -11098,9 +11112,6 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults }件見つかりました"
       ],
-      "Get more from your VPN": [
-        "VPNからさらに入手する"
-      ],
       "Get the apps": [
         "アプリを入手"
       ],
@@ -11121,9 +11132,6 @@
       ],
       "Hm, we couldn't find that one": [
         "うーん、それは見つかりませんでした"
-      ],
-      "How does it all work?": [
-        "どのように機能しますか？"
       ],
       "Human verification": [
         "人間であることの検証"
@@ -11164,9 +11172,6 @@
       "Location": [
         "場所"
       ],
-      "Make a secure connection your default": [
-        "安全な接続をデフォルトにする"
-      ],
       "Manage secure link": [
         "セキュアリンクの管理"
       ],
@@ -11181,9 +11186,6 @@
       ],
       "Minicalendar": [
         "ミニカレンダー"
-      ],
-      "Mobile": [
-        "モバイル"
       ],
       "Modified": [
         "更新日時"
@@ -11301,9 +11303,6 @@
       ],
       "Preview": [
         "プレビュー"
-      ],
-      "Private browsing vs VPN": [
-        "プライベートブラウジング対VPN"
       ],
       "Processing...": [
         "処理中..."
@@ -11482,6 +11481,9 @@
       "Untitled document ${ date }": [
         "無題のドキュメント ${ date }"
       ],
+      "Untitled spreadsheet ${ date }": [
+        "無題のスプレッドシート ${ date }"
+      ],
       "Upgrade complete!": [
         "アップグレード完了!"
       ],
@@ -11515,9 +11517,6 @@
       "Version history": [
         "バージョン履歴"
       ],
-      "VPN explained": [
-        "VPNの説明"
-      ],
       "Warning": [
         "警告"
       ],
@@ -11527,17 +11526,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Businessへようこそ"
       ],
-      "What can a VPN protect you from?": [
-        "VPNは何からあなたを保護できますか?"
-      ],
-      "What is a VPN?": [
-        "VPNとは？"
-      ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
-      ],
-      "When is it most important to use a VPN?": [
-        "VPNを使用することが最も重要なのはいつですか?"
       ],
       "You can now create unlimited folders and labels": [
         "無制限のフォルダとラベルを作成できるようになりました"
