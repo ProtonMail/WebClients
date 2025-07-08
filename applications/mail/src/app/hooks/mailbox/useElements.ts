@@ -136,6 +136,7 @@ export const useElements: UseElements = ({
 
     const { esStatus } = useEncryptedSearchContext();
     const { esEnabled } = esStatus;
+    const esEnabledRef = useRef(esEnabled);
 
     const counts = { counts: countValues, loading: countsLoading };
 
@@ -197,7 +198,7 @@ export const useElements: UseElements = ({
 
         // Define the core reset conditions
         const hasSearchKeywordChange = search.keyword !== stateParams.search.keyword;
-        const hasESEnabledChange = !esEnabled && isSearch(search);
+        const hasESEnabledChange = esEnabled !== esEnabledRef.current && isSearch(search);
         const hasPageJump = !pageIsConsecutive;
         const hasSortChange = !isDeepEqual(sort, stateParams.sort);
 
@@ -369,6 +370,11 @@ export const useElements: UseElements = ({
             );
         }
     }, [stateInconsistency]);
+
+    // Keep track of previous esEnabled status
+    useEffect(() => {
+        esEnabledRef.current = esEnabled;
+    }, [esEnabled]);
 
     useElementsEvents(conversationMode);
 
