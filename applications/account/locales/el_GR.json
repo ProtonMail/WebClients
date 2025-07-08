@@ -970,9 +970,6 @@
       "Next month": [
         "Επόμενος μήνας"
       ],
-      "Next page": [
-        "Επόμενη σελίδα"
-      ],
       "No": [
         "Όχι"
       ],
@@ -1017,9 +1014,6 @@
       ],
       "Previous month": [
         "Προηγούμενος μήνας"
-      ],
-      "Previous page": [
-        "Προηγούμενη σελίδα"
       ],
       "Publish changes": [
         "Δημοσιεύστε τις αλλαγές"
@@ -9625,8 +9619,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Η υποβολή SMTP επιτρέπει σε υπηρεσίες τρίτων ή συσκευές για να στείλουν μηνύματα ηλεκτρονικού ταχυδρομείου ${ MAIL_APP_NAME } για τις προσαρμοσμένες διευθύνσεις τομέα σας. Αυτή η δυνατότητα είναι διαθέσιμη μόνο σε ${ BRAND_NAME } για επιχειρηματικούς χρήστες με προσαρμοσμένους τομείς."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "Η υποβολή SMTP επιτρέπει σε υπηρεσίες τρίτων ή συσκευές για να στείλουν μηνύματα ηλεκτρονικού ταχυδρομείου μέσω του ${ MAIL_APP_NAME } για τις προσαρμοσμένες διευθύνσεις τομέα σας. Αυτή η δυνατότητα είναι διαθέσιμη μόνο σε ${ BRAND_NAME } για Business με προσαρμοσμένους τομείς."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Οι υποβολές SMTP επιτρέπουν σε υπηρεσίες τρίτων μερών ή σε συσκευές να στείλουν ηλεκτρονικό μήνυμα μέσω του ${ MAIL_APP_NAME } για τις διευθύνσεις του δικού σας προσαρμοσμένου τομέα. Για να ζητήσετε πρόσβαση, παρακαλούμε ${ createTicket } περιγράφοντας τις περιπτώσεις που χρησιμοποιείτε, ποιούς προσαρμοσμένους τομείς θέλετε να χρησιμοποιήσετε, και τον αναμενόμενο ωριαίο και ημερήσιο όγκο ηλεκτρονικών μηνυμάτων."
@@ -12897,7 +12891,7 @@
       "Sign in success (awaiting second factor)": [
         "Επιτυχής είσοδος (αναμονή δεύτερου παράγοντα)"
       ],
-      "Sign in success (awaiting verify)": [
+      "Sign in success (awaiting verification)": [
         "Επιτυχής είσοδος (αναμονή επαλήθευσης)"
       ],
       "Sign out": [
@@ -15866,9 +15860,6 @@
       "More plans are available in other currencies": [
         "Περισσότερα πλάνα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Μόνο το ευρώ γίνεται δεκτό για SEPA. Το νόμισμά σας έχει αλλάξει. Χρησιμοποιήστε τον επιλογέα για να αναιρέσετε την επιλογή σας."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
       ],
@@ -15929,6 +15920,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Θα χρεωθείτε ${ amountToCharge } από τον επιλεγμένο τρόπο πληρωμής."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
@@ -17317,7 +17311,8 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
-      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email ψευδώνυμο για την καταπολέμηση των ενοχλητικών μηνυμάτων",
         "${ FREE_PASS_ALIASES } hide-my-email ψευδώνυμα για την καταπολέμηση των ενοχλητικών μηνυμάτων"
       ],
       "${ maxAddresses } address": [

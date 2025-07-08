@@ -1218,6 +1218,19 @@
         "აიყვანეთ ელფოსტის წარმადობა ახალ დონეებზე. მიეცით საშუალება ${ BRAND_NAME } Scribe-ს, რომ დაგეხმაროთ თქვენი ელფოსტების წერაში, პასუხში და გადამოწმებაში."
       ]
     },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "გამოწერის გაუქმება"
+      ],
+      "Keep subscription": [
+        "გამოწერის შენარჩუნება"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ timeRemaining }"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "გათიშულია"
@@ -7289,9 +7302,6 @@
       "Sign in success (awaiting second factor)": [
         "შესვლა წარმატებულია (მეორე ფაქტორის მოლოდინი)"
       ],
-      "Sign in success (awaiting verify)": [
-        "შესვლა წარმატებულია (შემოწმების მოლოდინი)"
-      ],
       "Sign out": [
         "გასვლა"
       ],
@@ -9371,6 +9381,9 @@
     "Protection type": {
       "Blocked": [
         "დაბლოკილია"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "მოწყობილობის შემოწმება"

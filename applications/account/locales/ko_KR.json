@@ -779,7 +779,7 @@
         "설정으로 이동하기"
       ],
       "Got it": [
-        "알겠습니다"
+        "확인"
       ],
       "Help and feedback": [
         "도움말 및 의견"
@@ -970,9 +970,6 @@
       "Next month": [
         "다음 달"
       ],
-      "Next page": [
-        "다음 페이지"
-      ],
       "No": [
         "아니오"
       ],
@@ -1017,9 +1014,6 @@
       ],
       "Previous month": [
         "지난 달"
-      ],
-      "Previous page": [
-        "이전 페이지"
       ],
       "Publish changes": [
         "변경 사항 게시"
@@ -1436,7 +1430,7 @@
         "번호가 없는 목록"
       ],
       "Unsubscribe": [
-        "구독 해지"
+        "구독 취소"
       ],
       "Update": [
         "업데이트"
@@ -1970,6 +1964,19 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "사무실에 가지 못해 이메일을 열람할 수 없는 상황입니다. 양해 부탁합니다."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "구독 취소하기"
+      ],
+      "Keep subscription": [
+        "구독 유지"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "무료 체험이 ${ timeRemaining } 에 종료됩니다"
       ]
     },
     "Badge for domain": {
@@ -4761,10 +4768,10 @@
         "그동안 감사했습니다 안녕히 가세요"
       ],
       "Unsubscribe": [
-        "구독 해지"
+        "구독 취소"
       ],
       "Unsubscribe?": [
-        "구독을 해지하시겠어요?"
+        "구독을 취소하시겠어요?"
       ],
       "Update email preferences": [
         "이메일 설정 업데이트"
@@ -9511,7 +9518,7 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
         "SMTP 권한을 허용하면 커스텀 도메인 주소를 사용하여 서드파티 서비스 또는 기기에서 ${ MAIL_APP_NAME }을 통해 이메일 전송을 할 수 있습니다. 이 기능은 커스텀 도메인이 있는 비즈니스용 ${ BRAND_NAME } 사용자만 사용할 수 있습니다."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
@@ -9767,7 +9774,7 @@
         "이 윈도우를 닫으면 이 토큰은 사용할 수 없으며, 그 누구와도 공유해선 안됩니다."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
-        "구독 해지 링크가 만료되었습니다. 이 메일링 리스트의 가장 최신의 이메일을 여세요."
+        "구독 취소 링크가 만료되었습니다. 이 메일링 리스트의 가장 최신의 이메일을 열어주세요."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "이 사용자는 현재 조직의 지불에 대한 책임이 있습니다. 이 멤버를 강등하면 귀하가 조직에 대한 지불 책임을 지게 됩니다."
@@ -9893,7 +9900,7 @@
         "계속하기 위해, 요청 검증이 필요합니다."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "인터넷 연결을 안전하게 보호하려면, 기기에 맞는 ${ VPN_APP_NAME } 애플리케이션을 다운로드 및 설치하여 서버에 접속하세요."
+        "인터넷 연결을 안전하게 보호하기 위해, 기기에 맞는 ${ VPN_APP_NAME } 애플리케이션을 다운로드 및 설치하여 서버에 접속하세요."
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "${ toAppName }과 모든 ${ BRAND_NAME } 서비스 사용하기"
@@ -9962,7 +9969,7 @@
         "저장되지 않은 변경 사항"
       ],
       "Unsubscribe link expired": [
-        "구독 해지 링크 만료됨"
+        "구독 취소 링크가 만료되었습니다"
       ],
       "Unsupported file": [
         "지원되지 않는 파일"
@@ -12758,7 +12765,7 @@
       "Sign in success (awaiting second factor)": [
         "로그인 성공 (2단계 인증 대기)"
       ],
-      "Sign in success (awaiting verify)": [
+      "Sign in success (awaiting verification)": [
         "로그인 성공 (인증 대기)"
       ],
       "Sign out": [
@@ -15702,9 +15709,6 @@
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "유로화는 SEPA로만 결제 가능합니다. 사용자의 결제 수단이 변경되었습니다. 선택기를 사용하여 선택을 다시 확인하세요."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
       ],
@@ -15761,6 +15765,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "선택된 결제 수단에서 ${ amountToCharge }이 청구됩니다."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
       "Your payment is still being processed": [
         "회원님의 결제가 아직 처리 중입니다"
@@ -16099,6 +16106,9 @@
       "Blocked": [
         "차단됨"
       ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Device verification": [
         "기기 인증"
       ],
@@ -16214,7 +16224,7 @@
         "캘린더 삭제"
       ],
       "Unsubscribe?": [
-        "구독을 해지하시겠어요?"
+        "구독을 취소하시겠어요?"
       ]
     },
     "Remove organization logo": {
@@ -17129,7 +17139,7 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
-      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "스팸을 방지할 수 있는 ${ FREE_PASS_ALIASES } hide-my-email 별칭"
       ],
       "${ maxAddresses } address": [
@@ -19255,7 +19265,7 @@
         "브라우저 확장 기능"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "${ MAIL_SHORT_APP_NAME } 구독 해지"
+        "${ MAIL_SHORT_APP_NAME } 구독 취소"
       ],
       "Cancel subscription": [
         "구독 취소"
@@ -19708,7 +19718,7 @@
         "Linux용"
       ],
       "For macOS": [
-        "macOS용"
+        "MacOS용"
       ],
       "For Windows": [
         "Windows용"

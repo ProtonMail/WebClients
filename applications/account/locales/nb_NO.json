@@ -970,9 +970,6 @@
       "Next month": [
         "Neste måned"
       ],
-      "Next page": [
-        "Neste side"
-      ],
       "No": [
         "Nei"
       ],
@@ -1017,9 +1014,6 @@
       ],
       "Previous month": [
         "Forrige måned"
-      ],
-      "Previous page": [
-        "Forrige side"
       ],
       "Publish changes": [
         "Publiser endringer"
@@ -4635,7 +4629,7 @@
         "Velg **Logg på på en annen enhet → Skann QR-kode**"
       ],
       "Sign in on another device": [
-        "Logg på en annen enhet"
+        "Logg inn på en annen enhet"
       ],
       "Sign in with QR code": [
         "Logg på med QR-kode"
@@ -4653,7 +4647,7 @@
         "Fungerer hvis du har en annen enhet som er logget på ${ BRAND_NAME }"
       ],
       "You have successfully signed in to another device": [
-        "Du har logget på en annen enhet"
+        "Du har logget inn på en annen enhet"
       ]
     },
     "Email": {
@@ -9628,9 +9622,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-innsending tillater tredjepartstjenester eller enheter å sende e-post via ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. Denne funksjonen er bare tilgjengelig for ${ BRAND_NAME } for forretningsbrukere med egendefinerte domener."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-innsending tillater tredje-parttjenester eller enheter å sende e-post gjennom ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. For å be om tilgang, ${ createTicket } der du beskriver dine bruksområder, hvilke egendefinerte domener du ønsker å bruke, og forventede timebaserte og daglige e-postvolumer."
       ],
@@ -12903,9 +12894,6 @@
       "Sign in success (awaiting second factor)": [
         "Vellykket pålogging (avventer tofaktor)"
       ],
-      "Sign in success (awaiting verify)": [
-        "Vellykket pålogging (avventer verifisering)"
-      ],
       "Sign out": [
         "Logg av"
       ],
@@ -15893,9 +15881,6 @@
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Kun Euro aksepteres for SEPA. Valutaen din er endret. Bruk velgeren for å angre valget ditt."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
@@ -15956,6 +15941,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du vil bli belastet ${ amountToCharge } fra den valgte betalingsmåten."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
@@ -17344,7 +17332,8 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
-      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email-alias for å bekjempe søppelpost",
         "${ FREE_PASS_ALIASES } hide-my-email-aliaser for å bekjempe søppelpost"
       ],
       "${ maxAddresses } address": [
