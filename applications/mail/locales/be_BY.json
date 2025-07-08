@@ -157,7 +157,7 @@
         "Аўтэнтыфікаваць"
       ],
       "Auto-delete spam and trash": [
-        "Аўтаматычнае выдаленне спаму і смецця"
+        "Аўтавыдаленне спаму і смецця"
       ],
       "Back": [
         "Назад"
@@ -1163,9 +1163,6 @@
       ],
       "Save": [
         "Захаваць"
-      ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Захаваць у ${ DRIVE_APP_NAME }"
       ],
       "Saving${ ellipsis }": [
         "Захаванне ${ ellipsis }"
@@ -4398,10 +4395,10 @@
         "Сума ніжэй за мінімум (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
-        "Адбылася памылка падчас загрузкі параметраў псеўданіма"
+        "Падчас загрузкі параметраў псеўданіма адбылася памылка"
       ],
       "An error occurred while saving your alias": [
-        "Адбылася памылка падчас захавання вашага псеўданіма"
+        "Падчас захавання вашага псеўданіма адбылася памылка"
       ],
       "Attachments are limited to 25 MB": [
         "Максімальны памер далучэнняў складае 25 МБ"
@@ -4807,9 +4804,9 @@
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Не ўдалося расшыфраваць далучэнне.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайл з дапамогай праграмы, напрыклад, GnuPG.",
-        "Не ўдалося расшыфраваць далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
-        "Не ўдалося расшыфраваць далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
-        "Не ўдалося расшыфраваць далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG."
+        "Не ўдалося расшыфраваць некаторыя далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
+        "Не ўдалося расшыфраваць некаторыя далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
+        "Не ўдалося расшыфраваць некаторыя далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG."
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -4907,8 +4904,8 @@
       "Username must end with a letter or digit": [
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
       ],
-      "Wrong second password": [
-        "Няправільны другі пароль"
+      "Wrong password": [
+        "Няправільны пароль"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
@@ -5673,7 +5670,7 @@
         "Цалкам блакіруйце электронныя лісты ад ашуканцаў."
       ],
       "Block unsavory senders": [
-        "Блакіруйце адпраўнікоў з дрэннай рэпутацыяй"
+        "Блакіруйце сумнеўных адпраўнікоў"
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Цудоўна, што робіце сваю электронную пошту яшчэ больш бяспечнай, зручнай, і актуальнай! Мы павялічылі аб'ём вашага бясплатнага месца ў сховішчы да 1 ГБ."
@@ -5940,16 +5937,16 @@
         "${ totalImported } падзей з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны."
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашай падзеі. Ніводная падзея не была імпартавана."
+        "Падчас шыфравання і дадавання вашай падзеі адбылася памылка. Ніводная падзея не была імпартавана."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашых падзей. Ніводная падзея не была імпартавана."
+        "Падчас шыфравання і дадавання вашых падзей адбылася памылка. Ніводная падзея не была імпартавана."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шыфраванне і дадаванне кантактаў: ${ totalImported }/${ totalToImport }"
@@ -6003,13 +6000,13 @@
         "${ totalImported } кантактаў з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашага кантакту. Ніводны кантакт не быў імпартаваны."
+        "Падчас шыфравання і дадавання вашага кантакту адбылася памылка. Ніводны кантакт не быў імпартаваны."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання кантактаў. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
+        "Падчас шыфравання і дадавання кантактаў адбылася памылка. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашых кантактаў. Ніводны кантакт не быў імпартаваны."
+        "Падчас шыфравання і дадавання вашых кантактаў адбылася памылка. Ніводны кантакт не быў імпартаваны."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Кантакт паспяхова імпартаваны. Імпартаваны кантакт цяпер з'явіцца ў вашым спісе кантактаў."
@@ -6400,12 +6397,6 @@
         "Не ўдалося перамясціць ${ messagesNotAuthorizedToMove } паведамленняў.",
         "Не ўдалося перамясціць ${ messagesNotAuthorizedToMove } паведамленняў."
       ],
-      "${ n } newsletter": [
-        "${ n } рассылка",
-        "${ n } рассылкі",
-        "${ n } рассылак",
-        "${ n } рассылак"
-      ],
       "${ n } unread conversation": [
         "${ n } непрачытаная размова",
         "${ n } непрачытаныя размовы",
@@ -6535,11 +6526,11 @@
         "Заблакіравана ${ trackersCount } праграм сачэння",
         "Заблакіравана ${ trackersCount } праграм сачэння"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "Падпіска на ${ unreadCount } рассылку",
-        "Падпіска на ${ unreadCount } рассылкі",
-        "Падпіска на ${ unreadCount } рассылак",
-        "Падпіска на ${ unreadCount } рассылак"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } рассылка",
+        "${ unreadCount } рассылкі",
+        "${ unreadCount } рассылак",
+        "${ unreadCount } рассылак"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } запланаванае паведамленне",
@@ -6830,7 +6821,7 @@
         "Асноўныя функцыі навігацыі і дзеянні застаюцца даступнымі незалежна ад таго, актыўныя спалучэнні клавіш у наладах або не."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
+        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
       ],
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
@@ -6842,7 +6833,7 @@
         "Цела: "
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Палепшыце ідэнтычнасць вашай арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
+        "Павысце ідэнтычнасць сваёй арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Перанясіце свае паведамленні, кантакты і календары ў ${ BRAND_NAME }."
@@ -7546,8 +7537,8 @@
       "New": [
         "Новае"
       ],
-      "newsletters": [
-        "рассылак"
+      "newsletter": [
+        "рассылка"
       ],
       "No action selected": [
         "Дзеянне не выбрана"
@@ -7583,7 +7574,7 @@
         "Больш нічога не знойдзена"
       ],
       "No payment is required at this time.": [
-        "Зараз аплата не патрабуецца."
+        "У дадзены момант аплата не патрабуецца."
       ],
       "No results found": [
         "Нічога не знойдзена"
@@ -9494,11 +9485,8 @@
       "Mark as": [
         "Пазначыць як"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "Пазначана ${ unreadCount } паведамленне як прачытанае.",
-        "Пазначана ${ unreadCount } паведамленні як прачытаныя.",
-        "Пазначана ${ unreadCount } паведамленняў як прачытаныя.",
-        "Пазначана ${ unreadCount } паведамленняў як прачытаныя."
+      "Marked as read": [
+        "Пазначыць як прачытанае"
       ],
       "Message:": [
         "Паведамленне:"
@@ -9518,23 +9506,14 @@
       "Move to Inbox": [
         "Перамясціць ва Уваходныя"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "Перамешчана ${ count } паведамленне ў папку ${ labelName }.",
-        "Перамешчана ${ count } паведамленні ў папку ${ labelName }.",
-        "Перамешчана ${ count } паведамленняў у папку ${ labelName }.",
-        "Перамешчана ${ count } паведамленняў у папку ${ labelName }."
+      "Moved to ${ labelName }": [
+        "Перамешчана ў ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "Перамешчана ${ count } паведамленне ў архіў.",
-        "Перамешчаны ${ count } паведамленні ў архіў.",
-        "Перамешчаны ${ count } паведамленняў у архіў.",
-        "Перамешчаны ${ count } паведамленняў у архіў."
+      "Moved to Archive": [
+        "Перамешчана ў Архіў"
       ],
-      "Moved ${ count } message to Trash.": [
-        "Перамешчана ${ count } паведамленне ў сметніцу.",
-        "Перамешчаны ${ count } паведамленні ў сметніцу.",
-        "Перамешчаны ${ count } паведамленняў у сметніцу.",
-        "Перамешчаны ${ count } паведамленняў у сметніцу."
+      "Moved to Trash": [
+        "Перамешчана ў Сметніцу"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Пароль павінен мець прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы(аў)"
@@ -9857,11 +9836,14 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Скасаваныя вамі рассылкі з'явяцца тут."
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Скасаваныя вамі рассылкі або спісы з рассылкамі з'явяцца тут."
       ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Праглядайце і кіруйце рассылкай і падпіскамі спіса рассылкі ў гэтым месцы."
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "У вас адсутнічаюць актыўныя рассылкі або падпіскі на спісы рассылкі."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "У вас адсутнічаюць рассылкі або падпіскі на спісы рассылкі."
       ]
     },
     "Landmarks": {
@@ -10706,16 +10688,16 @@
         "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Адна простая падпіска"
       ],
       "Auto-delete Spam and Trash": [
-        "Аўтаматычнае выдаленне спаму і смецця"
+        "Аўтавыдаленне спаму і смецця"
       ],
       "Auto-reply": [
-        "Аўтаматычны адказ"
+        "Аўтаадказ"
       ],
       "Autofill credit cards (coming soon)": [
         "Аўтазапаўненне крэдытных картак (неўзабаве з'явіцца)"
       ],
       "Automatic email forwarding": [
-        "Аўтаматычная перасылка пошты"
+        "Аўтаперасылка пошты"
       ],
       "Available on all platforms": [
         "Даступна на ўсіх платформах"
@@ -11194,7 +11176,7 @@
         "Забяспечвае доступ да некалькіх сетак адначасова. Напрыклад, вы можаце глядзець фільм з іншай краіны і адначасова атрымліваць мясцовыя вынікі на пошукавыя запыты"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        "Дазваляе вам наладжваць аўтаматычныя адказы (аўтаадказчык) для ўваходных паведамленняў"
+        "Дазваляе наладжваць аўтаматычныя адказы (аўтаадказчык) для ўваходных паведамленняў"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
         "Аўтаматычна выдаляе са сметніцы і спаму паведамленні, якія старэйшыя за 30 дзён"
@@ -11203,7 +11185,7 @@
         "Аўтаматычна перасылаць лісты адпраўленыя на ваш уліковы запіс ${ MAIL_APP_NAME } на любы іншы адрас электроннай пошты."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Масавая рассылка або адпраўка лістоў з дапамогай праграмных сродкаў у дадзены момант не падтрымліваюцца. Мы рэкамендуем для такіх выпадкаў знайсці спецыялізаваны сэрвіс пастаўшчыка паслуг электроннай пошты."
+        "Масавая рэкламная рассылка або адпраўка лістоў з дапамогай праграмных сродкаў у дадзены момант не падтрымліваюцца. Мы рэкамендуем для такіх выпадкаў знайсці спецыялізаваны сэрвіс пастаўшчыка паслуг электроннай пошты."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Выбірайце карыстальніцкі час для атрымання напаміну па электроннай пошце або для атрымання паведамлення"
@@ -11406,10 +11388,10 @@
         "Аўтаматычнае падключэнне"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
-        "Палепшыце прастору сховішча да ${ bundleStorage } на карыстальніка"
+        "Павысце прастору сховішча да ${ bundleStorage } на карыстальніка"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
+        "Павысце агульны аб'ём свайго сховішча да ${ bundleStorage }"
       ],
       "Browser extension": [
         "Пашырэнне для браўзера"
@@ -12052,9 +12034,6 @@
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Для SEPA прымаюцца толькі еўра. Ваша валюта зменена. Выкарыстоўвайце селектар, каб скінуць свой выбар."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
@@ -12114,6 +12093,9 @@
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
@@ -13612,13 +13594,13 @@
         "Любыя карыстальніцкія дамены электроннай пошты будуць адключаны"
       ],
       "Automatic email forwarding": [
-        "Аўтаматычная перасылка электроннай пошты"
+        "Аўтаперасылка электроннай пошты"
       ],
       "Back up photos from your devices": [
         "Рэзерваваць фатаграфіі з вашай прылады"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты ў вашым уласным дамене."
+        "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты са сваім уласным даменам."
       ],
       "Catch-all email address": [
         "Адрас для ўсёй пошты дамена"
@@ -13785,7 +13767,7 @@
         "і яшчэ 15 прэміяльных функцый"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+        "Аўтаперасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Папярэджанне ўцечкі даных ${ strongArgument }"
@@ -13823,10 +13805,10 @@
         "Вы ўпэўнены?"
       ],
       "Auto-pay is disabled": [
-        "Аўтаматычная аплата адключана"
+        "Аўтааплата адключана"
       ],
       "Auto-pay is enabled": [
-        "Аўтаматычная аплата ўключана"
+        "Аўтааплата ўключана"
       ],
       "Disable": [
         "Адключыць"
@@ -15021,17 +15003,20 @@
       "Night theme": [
         "Начная тэма"
       ],
+      "No active newsletters": [
+        "Актыўныя рассылкі адсутнічаюць"
+      ],
       "No attachment found": [
         "Далучэнні не знойдзены"
       ],
       "No breaches detected": [
         "Уцечкі не выяўлены"
       ],
-      "No mail subscriptions": [
-        "Няма паштовых падпісак"
-      ],
       "No need to empty the trash": [
         "Няма неабходнасці ачышчаць сметніцу"
+      ],
+      "No newsletters found": [
+        "Рассылкі не знойдзены"
       ],
       "No trackers found": [
         "Праграмы сачэння не знойдзены"
@@ -15585,10 +15570,10 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах"
       ],
       "Auto-selects from ${ numberOfCountries } country": [
-        "Аўтаматычны выбар з ${ numberOfCountries } краіны",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін"
+        "Аўтавыбар з ${ numberOfCountries } краіны",
+        "Аўтавыбар з ${ numberOfCountries } краін",
+        "Аўтавыбар з ${ numberOfCountries } краін",
+        "Аўтавыбар з ${ numberOfCountries } краін"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Серверы ў больш, чым ${ numberOfCountries } краіне",
