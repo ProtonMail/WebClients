@@ -442,6 +442,9 @@
       "Request timed out": [
         "A solicitação expirou"
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Houve um erro ao processar as atualizações do documento. Por favor, recarregue a página e tente novamente."
+      ],
       "Tried to import Sheet data into Lexical": [
         "Tentou importar dados da planilha para o Lexical"
       ],
@@ -782,6 +785,71 @@
         "Inserir"
       ]
     },
+    "sheets_2025:Spreadsheet editor more formats menu": {
+      "$ US Dollar": [
+        "$ Dólar americano"
+      ],
+      "Accounting": [
+        "Contabilidade"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Yuan chinês"
+      ],
+      "Currency": [
+        "Moeda"
+      ],
+      "Currency rounded": [
+        "Moeda arredondada"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Date time": [
+        "Data e hora"
+      ],
+      "Duration": [
+        "Duração"
+      ],
+      "Financial": [
+        "Financeiro"
+      ],
+      "General": [
+        "Geral"
+      ],
+      "Long date": [
+        "Data longa"
+      ],
+      "More currency": [
+        "Mais moeda"
+      ],
+      "Number": [
+        "Números"
+      ],
+      "Percent": [
+        "Percentual"
+      ],
+      "Plain text": [
+        "Texto Simples"
+      ],
+      "Scientific": [
+        "Científico"
+      ],
+      "Time": [
+        "Hora"
+      ],
+      "£ Pound": [
+        "£ Libra"
+      ],
+      "¥ Yen": [
+        "¥ Lene"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rúpia"
+      ]
+    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Negrito"
@@ -791,6 +859,9 @@
       ],
       "Decrease decimal places": [
         "Diminuir casas decimais"
+      ],
+      "Decrease font size": [
+        "Diminuir tamanho da fonte"
       ],
       "Default (${ defaultFont })": [
         "Padrão (${ defaultFont })"
@@ -804,8 +875,14 @@
       "Increase decimal places": [
         "Aumentar casas decimais"
       ],
+      "Increase font size": [
+        "Aumentar tamanho da fonte"
+      ],
       "Italic": [
         "Itálico"
+      ],
+      "More formats": [
+        "Mais formatos"
       ],
       "Redo": [
         "Refazer"
