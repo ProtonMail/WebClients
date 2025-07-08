@@ -1212,6 +1212,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_LUMO_SEATS } miejsc Lumo w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_SCRIBE_SEATS } miejsc Scribe w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_USERS } użytkowników w okresie próbnym."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nie możesz dodać niestandardowych domen w okresie próbnym."
+      ],
+      "You have reached the trial limit.": [
+        "Osiągnąłeś limit okresu próbnego."
       ]
     },
     "b2b_trials_Action": {
@@ -9043,9 +9061,6 @@
       ],
       "More plans are available in other currencies": [
         "Więcej planów jest dostępnych w innych walutach"
-      ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "W przelewach SEPA akceptowane jest tylko euro. Waluta została zmieniona. Użyj formularza, aby przywrócić swój wybór."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."

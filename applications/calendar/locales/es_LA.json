@@ -1194,6 +1194,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente mensualmente el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Usted puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Usted puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias Scribe durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Usted puede tener hasta ${ TRIAL_MAX_USERS } usuarios durante el período de prueba."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Usted no puede añadir dominios personalizados durante el período de prueba."
+      ],
+      "You have reached the trial limit.": [
+        "Usted ha alcanzado el límite de la prueba."
       ]
     },
     "b2b_trials_Action": {
@@ -8750,9 +8768,6 @@
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Solo se acepta el euro para SEPA. Su moneda ha sido cambiada. Por favor, use el selector para revertir su elección."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -8804,6 +8819,9 @@
       ],
       "Timeout exceeded": [
         "Tiempo de espera agotado"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo soportan pagos en euros."
       ],
       "Your payment is still being processed": [
         "Su pago aún está siendo procesado"
