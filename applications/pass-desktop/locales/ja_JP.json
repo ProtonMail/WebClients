@@ -46,6 +46,9 @@
       "Add domain": [
         "ドメインを追加"
       ],
+      "Add field": [
+        "フィールドを追加"
+      ],
       "Add forwarding mailbox": [
         "転送メールボックスを追加"
       ],
@@ -463,6 +466,9 @@
       "Reactivate now": [
         "今すぐ再アクティブ"
       ],
+      "Read More": [
+        "続きを読む"
+      ],
       "Refresh the page": [
         "ページを更新"
       ],
@@ -579,6 +585,9 @@
       ],
       "Show advanced options": [
         "高度なオプションを表示"
+      ],
+      "Show Less": [
+        "一部のみ表示"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } でサインイン"
@@ -1074,6 +1083,9 @@
       "File does not match expected format": [
         "予期しないファイル形式です"
       ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "保管庫「${ vaultData.name }」のインポートに失敗しました: ${ errorMessage }"
+      ],
       "Importing items failed": [
         "アイテムのインポートに失敗しました"
       ],
@@ -1187,6 +1199,9 @@
       ],
       "Unsupported 1Password file format": [
         "サポートされていない 1Password ファイル形式"
+      ],
+      "Unsupported Bitwarden file format": [
+        "サポートされていない Bitwaden ファイル形式"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "保管庫 “${ payload.content.name }” の更新に失敗しました"
@@ -1313,6 +1328,12 @@
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "「${ payload.itemName }」アイテムは無視されました"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "「${ payload.itemName }」更新が却下されました"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount }件のブロック済み"
       ],
@@ -1321,6 +1342,9 @@
       ],
       "${ count } view": [
         "${ count } 回表示"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } 表示"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount }件の転送済み"
@@ -1831,6 +1855,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2629,6 +2656,9 @@
       "Catch-All": [
         "キャッチオール"
       ],
+      "Checkbox": [
+        "チェックボックス"
+      ],
       "Choose unlock method": [
         "アンロック方法を選択"
       ],
@@ -2637,6 +2667,9 @@
       ],
       "City": [
         "市区町村"
+      ],
+      "Class": [
+        "クラス"
       ],
       "Clear clipboard after": [
         "した後にクリップボードをクリア"
@@ -2731,6 +2764,9 @@
       "DNS": [
         "DNS"
       ],
+      "Doctor": [
+        "医者"
+      ],
       "Domain": [
         "ドメイン"
       ],
@@ -2789,7 +2825,10 @@
         "エクスポート"
       ],
       "Extra email addresses": [
-        "個の追加のメールアドレス"
+        "追加のメールアドレス"
+      ],
+      "Extra fields": [
+        "追加フィールド"
       ],
       "Extra password": [
         "追加パスワード"
@@ -2878,6 +2917,9 @@
       "Holder Name": [
         "所有者名"
       ],
+      "Hospital": [
+        "病院"
+      ],
       "Host": [
         "ホスト"
       ],
@@ -2950,6 +2992,9 @@
       "Issuing Country": [
         "発行国"
       ],
+      "Issuing State/Country": [
+        "発行州/国"
+      ],
       "Item ID": [
         "アイテム ID"
       ],
@@ -2958,6 +3003,12 @@
       ],
       "Key": [
         "鍵"
+      ],
+      "Key fingerprint": [
+        "キーフィンガープリント"
+      ],
+      "Key type": [
+        "キー種類"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "キーボードショートカット: ${ shortcut }"
@@ -2995,6 +3046,9 @@
       "License number": [
         "免許証番号"
       ],
+      "License Number": [
+        "免許証番号"
+      ],
       "Limited time": [
         "期間限定"
       ],
@@ -3028,17 +3082,29 @@
       "max views reached": [
         "閲覧回数の上限に達しました"
       ],
+      "Medical Conditions": [
+        "医療状況"
+      ],
       "Medical Record": [
         "医療記録"
       ],
+      "Medications": [
+        "服用している薬"
+      ],
       "Member ID": [
         "メンバーID"
+      ],
+      "Member Name": [
+        "メンバー名"
       ],
       "Members": [
         "メンバー"
       ],
       "Membership": [
         "メンバーシップ"
+      ],
+      "Membership ID": [
+        "メンバーシップID"
       ],
       "Middle name": [
         "ミドルネーム"
@@ -3124,6 +3190,9 @@
       "Organization": [
         "組織"
       ],
+      "Organization Name": [
+        "組織名"
+      ],
       "Other": [
         "その他"
       ],
@@ -3153,6 +3222,9 @@
       ],
       "Password history": [
         "パスワードの履歴"
+      ],
+      "Patient Name": [
+        "患者氏名"
       ],
       "Permissions": [
         "許可"
@@ -3228,6 +3300,9 @@
       ],
       "Recent": [
         "最近"
+      ],
+      "Record Number": [
+        "レコード番号"
       ],
       "Reddit handle": [
         "Reddit ユーザー名"
@@ -3312,6 +3387,9 @@
       ],
       "Share": [
         "共有"
+      ],
+      "Share ID": [
+        "共有ID"
       ],
       "Shared": [
         "共有済み"
@@ -3405,6 +3483,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "このアイテムは、 ${ date } またはビューの上限に達するまでアクセスできます。"
+      ],
+      "Tier/Level": [
+        "階級/レベル"
       ],
       "Tier/Status": [
         "階級/ステータス"
@@ -3778,6 +3859,18 @@
       ],
       "Add note": [
         "メモを追加"
+      ],
+      "Add password": [
+        "パスワードを追加"
+      ],
+      "Add private key": [
+        "秘密鍵を追加"
+      ],
+      "Add public key": [
+        "公開鍵を追加"
+      ],
+      "Add SSID": [
+        "SSIDを追加"
       ],
       "Add text": [
         "テキストを追加"
@@ -4522,6 +4615,11 @@
       ],
       "URL is invalid": [
         "URL が無効です"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "アイテムを移動する"
       ]
     },
     "Warning": {
