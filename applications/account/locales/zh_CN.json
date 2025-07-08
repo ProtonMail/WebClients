@@ -376,6 +376,9 @@
       "Create folder": [
         "创建文件夹"
       ],
+      "Create free account now": [
+        "立即创建免费账户"
+      ],
       "Create Gateway": [
         "创建网关"
       ],
@@ -472,6 +475,12 @@
       "Delete “${ label.Name }”": [
         "删除 \"${ label.Name }\""
       ],
+      "Deleting folder": [
+        "正在删除文件夹"
+      ],
+      "Deleting label": [
+        "正在删除标签"
+      ],
       "Deny access": [
         "拒绝访问"
       ],
@@ -489,6 +498,9 @@
       ],
       "Disable recovery phrase?": [
         "禁用恢复密语吗？"
+      ],
+      "Disable security events": [
+        "停用安全事件"
       ],
       "Discard": [
         "放弃"
@@ -642,6 +654,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "浏览其他 ${ BRAND_NAME } 账户等级"
+      ],
+      "Explore other plans": [
+        "浏览其他套餐"
       ],
       "Export": [
         "导出"
@@ -955,9 +970,6 @@
       "Next month": [
         "下个月"
       ],
-      "Next page": [
-        "下一页"
-      ],
       "No": [
         "否"
       ],
@@ -1002,9 +1014,6 @@
       ],
       "Previous month": [
         "上个月"
-      ],
-      "Previous page": [
-        "上一页"
       ],
       "Publish changes": [
         "发布更改"
@@ -1961,6 +1970,14 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "您好，我现在有事不在，暂时无法处理邮件。"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "取消订阅"
+      ],
+      "Keep subscription": [
+        "继续订阅"
       ]
     },
     "Badge for domain": {
@@ -4431,10 +4448,10 @@
     },
     "Download link": {
       ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu (.deb)"
+        "Debian / Ubuntu （.deb）"
       ],
       ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat (.rpm)"
+        "Fedora / Red Hat（.rpm）"
       ]
     },
     "drive_signup_2023: Title": {
@@ -4500,6 +4517,11 @@
       ],
       "90 minutes": [
         "90 分钟"
+      ]
+    },
+    "Easy switch": {
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "您正在将来自${ MAX_SYNC_FREE_USER }个外部账户的电子邮件转发至${ MAIL_APP_NAME }。"
       ]
     },
     "Edit billing address form note": {
@@ -5373,6 +5395,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "目前付款不可用，请稍后再试"
+      ],
+      "Permissions request failed.": [
+        "权限请求失败。"
       ],
       "Please configure a custom domain before adding addresses.": [
         "添加地址前请先配置自有域名。"
@@ -6358,6 +6383,9 @@
     "Features: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
         "随时随地访问流媒体服务内容，包括 Netflix、Disney+、Prime Video 等"
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Secure Core 服务器通过 2 个 VPN 服务器路由您的流量，以提供额外安全。"
       ]
     },
     "fido2: Action": {
@@ -6841,6 +6869,9 @@
       ],
       "Permissions": [
         "权限"
+      ],
+      "Protection": [
+        "保护"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "在最优惠的 ${ VPN_APP_NAME } 交易中节省大笔开支"
@@ -8099,6 +8130,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "具有专用 IP 地址的专用服务器可以添加到专用网关，以实现微调的访问控制。"
       ],
+      "Dedicated VPN servers": [
+        "专用 VPN 服务器"
+      ],
       "default email address": [
         "首选邮箱地址"
       ],
@@ -8384,9 +8418,6 @@
       "Failed to fetch logs.": [
         "获取日志失败。"
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
-      ],
       "Featured in": [
         "推荐"
       ],
@@ -8434,6 +8465,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "删除旧邮件和其他数据释放空间"
+      ],
+      "Gain visibility across your organization": [
+        "提高您组织内部的可见度"
       ],
       "Gateways": [
         "网关"
@@ -8777,6 +8811,9 @@
       "Learn more": [
         "了解详情"
       ],
+      "Learn more about Activity Monitor": [
+        "详细了解活动监视器"
+      ],
       "Learn more about Gateways": [
         "了解网关"
       ],
@@ -8960,6 +8997,9 @@
       "No label selected": [
         "未选择标签"
       ],
+      "No logs yet.": [
+        "尚无日志"
+      ],
       "No payment is required at this time.": [
         "目前不需要支付。"
       ],
@@ -8977,6 +9017,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "组织中的专用 VPN 服务器数量"
       ],
       "Number of items the user has access to (includes owned items + shared items)": [
         "用户可访问的项目数量（包括自有项目 + 共享项目）"
@@ -9442,9 +9485,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP 投递功能允许第三方服务或设备通过 ${ MAIL_APP_NAME } 为您的自定义域名地址发送电子邮件。此功能仅适用于 ${ BRAND_NAME } 拥有自定义域名的企业用户。"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。如需开通此功能，请${ createTicket }并说明您的用途、希望使用的自有域名，以及每小时与每天的预计邮件数量。"
@@ -10516,6 +10556,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "您将能够立即将这些服务器添加到另一个网关。"
@@ -11957,7 +12000,7 @@
         "副密码"
       ],
       "Select Linux package format": [
-        "选择 Linux 软件包格式"
+        "请选择 Linux 软件包格式"
       ],
       "Select Linux platform": [
         "选择 Linux 平台"
@@ -12680,9 +12723,6 @@
       ],
       "Sign in success (awaiting second factor)": [
         "登录成功（等待 2FA）"
-      ],
-      "Sign in success (awaiting verify)": [
-        "登录成功（待验证）"
       ],
       "Sign out": [
         "登出"
@@ -14469,8 +14509,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 优惠今天到期！"
       ],
+      "Don’t show this again": [
+        "不再显示此内容"
+      ],
       "Don’t show this offer again": [
         "不再显示此优惠"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "开通 ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "仅需 ${ pricingTitle } 即可获得 Drive Plus"
@@ -14524,9 +14570,20 @@
         "您的订阅即将续订"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "已加密的密码管理器"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 多项高级功能"
+      ],
+      "500 GB secure storage": [
+        "500 GB 安全存储空间"
+      ],
+      "Advanced threat protection": [
+        "高级威胁保护"
       ],
       "Custom email domain": [
         "自定义电子邮件域"
@@ -14548,6 +14605,9 @@
       ],
       "Storage": [
         "存储"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "遍布 110 多个国家/地区的超快 VPN 服务器"
       ]
     },
     "Onboarding": {
@@ -15535,6 +15595,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "银行转账"
       ],
@@ -15634,6 +15697,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "您将从您选定的付款方式收取 ${ amountToCharge } 费用。"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
@@ -15963,6 +16029,9 @@
     "Protection type": {
       "Blocked": [
         "已拦截"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "设备验证"
@@ -16994,6 +17063,12 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } 个地址"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } 份日历"
+      ],
       "${ value } of secure storage": [
         "${ value } 安全存储空间"
       ],
@@ -17029,6 +17104,9 @@
       ],
       "End-to-end encryption": [
         "端到端加密"
+      ],
+      "Every free account comes with:": [
+        "每个免费账户都包含："
       ],
       "Free": [
         "Free"
@@ -17116,6 +17194,9 @@
       ],
       "Upload files of any size": [
         "上传任意大小的文件"
+      ],
+      "use your current email.": [
+        "使用您当前的邮箱。"
       ],
       "Use your email, or ${ externalButton }": [
         "使用您的电子邮箱，或 ${ externalButton }"
@@ -17347,8 +17428,20 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "安全浏览"
+      ],
+      "Get unlimited aliases": [
+        "获取无限量邮箱别名"
+      ],
       "Go to subscription plans": [
         "查看账户等级"
+      ],
+      "Keep passwords safe": [
+        "确保密码安全"
+      ],
+      "Unblock streaming content": [
+        "解锁流媒体内容"
       ],
       "Upgrade": [
         "升级账户"
@@ -17426,6 +17519,15 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "访问世界范围内的流媒体服务"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "获得 500 GB 以安全地存储您的所有文件和照片"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "使用 Sentinel 保护您的账户免受威胁"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "一次性开通两年 ${ planName } 更加优惠"
       ]
@@ -18365,6 +18467,9 @@
       ],
       "Address added": [
         "地址已添加"
+      ],
+      "Address successfully added": [
+        "地址已成功添加"
       ],
       "Address updated": [
         "地址已更新"
@@ -20427,6 +20532,9 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "允许在日历邀请中无缝添加视频会议链接。"
       ],
+      "An approximate location of the IP address": [
+        "IP 地址的大致位置"
+      ],
       "Any protection applied to suspicious activity": [
         "对于可疑操作所采取的所有防护措施"
       ],
@@ -20451,6 +20559,9 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "垃圾邮件与回收站中的邮件 30 天后自动删除。开启此选项时，现有的无用邮件按其存在于对应文件夹中的时长推算删除时间。"
       ],
+      "Device information such as operating system": [
+        "设备信息，如操作系统"
+      ],
       "Device name and app version": [
         "设备名称和应用版本"
       ],
@@ -20471,6 +20582,9 @@
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
         "启用/禁用“${ labelName }”的桌面和移动通知"
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "启用详细事件会记录每个事件的 IP 地址。"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "来自身份供应商的端点（如 https://idp.example.com/sso/saml）"
@@ -20552,6 +20666,9 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
+      ],
+      "The Internet Service Provider of the IP address": [
+        "IP 地址所属的运营商"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新的计费周期将从 ${ formattedTime } 开始"
@@ -20776,6 +20893,14 @@
       ],
       "Refund": [
         "退款"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/每月"
+      ],
+      "Only": [
+        "仅"
       ]
     },
     "unprivatization": {

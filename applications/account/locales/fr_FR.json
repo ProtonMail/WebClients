@@ -970,9 +970,6 @@
       "Next month": [
         "Mois suivant"
       ],
-      "Next page": [
-        "Page suivante"
-      ],
       "No": [
         "Non"
       ],
@@ -1017,9 +1014,6 @@
       ],
       "Previous month": [
         "Mois précédent"
-      ],
-      "Previous page": [
-        "Page précédente"
       ],
       "Publish changes": [
         "Publier les modifications"
@@ -1995,11 +1989,44 @@
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "En cliquant sur « Essayer », vous acceptez nos ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Vous pouvez ajouter jusqu’à 10 utilisateurs pendant la période d’essai."
+      ],
+      "free for 14 days": [
+        "gratuit pendant 14 jours"
+      ],
       "on ${ formattedDate }": [
         "le ${ formattedDate }"
       ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Essayez ${ selected } ${ freeFor14Days }"
+      ],
       "Try it free for 14 days": [
         "Essayez gratuitement pendant 14 jours"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Lorsque vous annulez, votre essai gratuit ne sera pas converti en abonnement payant, mais vous pourrez toujours profiter des avantages de l'abonnement jusqu'à la fin de la période d'essai. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié pendant la version d'essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_LUMO_SEATS } accès à Lumo pendant la période d’essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_SCRIBE_SEATS } accès à Scribe pendant la période d’essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_USERS } utilisateurs pendant la période d’essai."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Vous ne pouvez pas ajouter de domaines personnalisés pendant la période d’essai."
+      ],
+      "You have reached the trial limit.": [
+        "Vous avez atteint la limite de la version d'essai."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -9660,8 +9687,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Cette fonctionnalité n'est disponible que pour les utilisateurs de ${ BRAND_NAME } for Business avec des domaines personnalisés."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "La soumission SMTP permet aux services ou appareils tiers d'envoyer des courriels via ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Cette fonctionnalité est réservée aux utilisateurs de ${ BRAND_NAME } pour Entreprise ayant des domaines personnalisés."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Pour demander l'accès, nous vous invitons à ${ createTicket } en décrivant vos cas d'utilisation, les domaines personnalisés que vous voudriez utiliser et le nombre de messages prévus par heure et par jour."
@@ -12206,7 +12233,7 @@
         "Second mot de passe"
       ],
       "Select Linux package format": [
-        "Sélectionner le format du paquet Linux"
+        "Sélectionnez le format du paquet Linux"
       ],
       "Select Linux platform": [
         "Sélectionnez la distribution Linux"
@@ -12932,8 +12959,8 @@
       "Sign in success (awaiting second factor)": [
         "La connexion a abouti (en attente du second facteur)."
       ],
-      "Sign in success (awaiting verify)": [
-        "La connexion a abouti (en attente de vérification)."
+      "Sign in success (awaiting verification)": [
+        "Connexion réussie (en attente de vérification)"
       ],
       "Sign out": [
         "Déconnexion"
@@ -15901,9 +15928,6 @@
       "More plans are available in other currencies": [
         "D'autres abonnements sont disponibles dans d'autres devises."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Seul l'euro est accepté pour le moyen de paiement SEPA. Votre devise a été modifiée. Veuillez utiliser le sélecteur pour annuler votre choix."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
@@ -15964,6 +15988,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Un montant de ${ amountToCharge } sera débité selon votre méthode de paiement sélectionnée."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
@@ -17360,8 +17387,9 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
-      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
-        "Alias « hide-my-email » ${ FREE_PASS_ALIASES } pour lutter contre le spam"
+      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
+        "${ FREE_PASS_ALIASES } alias « hide-my-email » pour lutter contre le spam",
+        "${ FREE_PASS_ALIASES } alias « hide-my-email » pour lutter contre le spam"
       ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adresse",

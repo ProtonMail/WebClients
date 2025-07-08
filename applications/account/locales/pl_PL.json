@@ -541,12 +541,6 @@
       "Download CSV sample": [
         "Pobierz przykładowy plik CSV"
       ],
-      "Download for macOS": [
-        "Pobierz na macOS"
-      ],
-      "Download for Windows": [
-        "Pobierz na Windowsa"
-      ],
       "Download ICS": [
         "Pobierz plik ICS"
       ],
@@ -970,9 +964,6 @@
       "Next month": [
         "Następny miesiąc"
       ],
-      "Next page": [
-        "Następna strona"
-      ],
       "No": [
         "Nie"
       ],
@@ -1017,9 +1008,6 @@
       ],
       "Previous month": [
         "Poprzedni miesiąc"
-      ],
-      "Previous page": [
-        "Poprzednia strona"
       ],
       "Publish changes": [
         "Opublikuj zmiany"
@@ -2005,11 +1993,44 @@
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
       ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Klikając na „Wypróbuj”, zgadzasz się na nasze ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "W okresie próbnym możesz mieć do 10 użytkowników."
+      ],
+      "free for 14 days": [
+        "za darmo przez 14 dni"
+      ],
       "on ${ formattedDate }": [
         "dnia ${ formattedDate }"
       ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Wypróbuj ${ selected } ${ freeFor14Days }"
+      ],
       "Try it free for 14 days": [
         "Wypróbuj za darmo przez 14 dni"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Kiedy anulujesz, Twoja bezpłatna wersja próbna nie zostanie przekształcona w płatną subskrypcję, ale nadal możesz korzystać z korzyści planu do końca okresu próbnego. Następnie zostaniesz przeniesiony do planu ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_LUMO_SEATS } miejsc Lumo w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_SCRIBE_SEATS } miejsc Scribe w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_USERS } użytkowników w okresie próbnym."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nie możesz dodać niestandardowych domen w okresie próbnym."
+      ],
+      "You have reached the trial limit.": [
+        "Osiągnąłeś limit okresu próbnego."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -4558,14 +4579,6 @@
         "Windows 8 / 8.1 / 7 lub Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb dla Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm dla Fedora / Red Hat"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Utwórz darmowe konto ${ DRIVE_APP_NAME }, aby uzyskać bezpieczny dostęp do pliku"
@@ -6886,14 +6899,6 @@
         "Darmowa wersja próbna aplikacji desktopowej zakończyła się"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } w App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } w Google Play"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Automatyczne przekierowanie"
@@ -8755,9 +8760,6 @@
       "Failed to fetch logs.": [
         "Nie udało się pobrać logów."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Szybkość i skupienie. Poczta i kalendarz na pulpicie."
-      ],
       "Featured in": [
         "Wyróżniony w"
       ],
@@ -9852,9 +9854,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Funkcja jest dostępna dla użytkowników ${ BRAND_NAME } for Business z niestandardową domeną."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Aby uzyskać dostęp do tej funkcji, ${ createTicket } i opisz swoje potrzeby. Napisz jakiej niestandardowej domeny chcesz użyć i oszacuj zapotrzebowanie wiadomości."
@@ -11724,9 +11723,6 @@
       "Backup password": [
         "Hasło zapasowe"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -12449,9 +12445,6 @@
       ],
       "Second password": [
         "Drugie hasło"
-      ],
-      "Select Linux package format": [
-        "Wybierz format pakietu Linux"
       ],
       "Select Linux platform": [
         "Wybierz platformę Linux"
@@ -13180,9 +13173,6 @@
       ],
       "Sign in success (awaiting second factor)": [
         "Pomyślne logowanie (oczekiwanie na uwierzytelnianie dwustopniowe)"
-      ],
-      "Sign in success (awaiting verify)": [
-        "Pomyślne logowanie (oczekiwanie na weryfikację)"
       ],
       "Sign out": [
         "Wylogowanie"
@@ -16242,9 +16232,6 @@
       "More plans are available in other currencies": [
         "Więcej planów jest dostępnych w innych walutach"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "W przelewach SEPA akceptowane jest tylko euro. Waluta została zmieniona. Użyj formularza, aby przywrócić swój wybór."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
       ],
@@ -17740,7 +17727,10 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
-      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
+        "${ FREE_PASS_ALIASES } alias hide-my-email do walki ze spamem",
+        "${ FREE_PASS_ALIASES } aliasy hide-my-email do walki ze spamem",
+        "${ FREE_PASS_ALIASES } aliasów hide-my-email do walki ze spamem",
         "${ FREE_PASS_ALIASES } aliasów hide-my-email do walki ze spamem"
       ],
       "${ maxAddresses } address": [
@@ -20491,15 +20481,6 @@
       ],
       "Folders and labels": [
         "Foldery i etykiety"
-      ],
-      "For Linux": [
-        "Linux"
-      ],
-      "For macOS": [
-        "macOS"
-      ],
-      "For Windows": [
-        "Windows"
       ],
       "Forgot password": [
         "Przypomnij hasło"

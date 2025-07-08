@@ -853,6 +853,9 @@
       "More": [
         "Mere"
       ],
+      "More benefits": [
+        "Flere fordele"
+      ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
       ],
@@ -879,9 +882,6 @@
       ],
       "Next month": [
         "Næste måned"
-      ],
-      "Next page": [
-        "Næste side"
       ],
       "No": [
         "Nej"
@@ -927,9 +927,6 @@
       ],
       "Previous month": [
         "Forrige måned"
-      ],
-      "Previous page": [
-        "Forrige side"
       ],
       "Publish changes": [
         "Udgiv ændringer"
@@ -1645,6 +1642,17 @@
         "Ny e-mail"
       ]
     },
+    "anniversary_2025: Offer": {
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Rabatter er baserede på en standard månedlig pris. Ved slutningen af faktureringsperioden fornys dit abonnement efter den standard årlige pris."
+      ],
+      "Online document editor": [
+        "Online dokumenteditor"
+      ],
+      "Share passwords easily": [
+        "Del let kodeord"
+      ]
+    },
     "anniversary_2025: Offers": {
       "${ n } month": [
         "${ n } måned",
@@ -1729,6 +1737,11 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jeg har kun begrænset adgang til mine e-mails i øjeblikket."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Keep subscription": [
+        "Behold abonnement"
       ]
     },
     "Badge for domain": {
@@ -4077,14 +4090,6 @@
         "Windows 8/8.1/7 eller Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb til Debian/Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm til Fedora/Red Hat"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Opret en gratis ${ DRIVE_APP_NAME }-konto for at få sikker adgang til filen"
@@ -6183,14 +6188,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Din desktop app's gratis prøveperiode er slut"
-      ]
-    },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } i App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } i Play Store"
       ]
     },
     "Gmail forwarding": {
@@ -9634,6 +9631,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Der bliver ikke trukket noget hvis du annullerer inden ${ trialEndsOnFormatted }."
+      ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Du vil ikke kunne gendanne låste data ved hjælp af dine downloadede gendannelsesfiler."
       ],
@@ -10441,9 +10441,6 @@
       ],
       "Backup password": [
         "Backupadgangskode"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing cycle": [
         "Faktureringsperiode"
@@ -11778,6 +11775,9 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Din konto er i fare for at blive slettet. For at undgå datatab skal du bede din administrator om at opgradere. ${ cta }"
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Din lagerplads er fuld. Frigør plads eller ${ cta } for at fortsætte med at bruge ${ BRAND_NAME }-produkter."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Dit abonnement er ophørt. ${ cta } og for at undgå datatab."
@@ -13558,7 +13558,7 @@
         "Tag imod tilbuddet"
       ],
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Sidste chance for at spare 80% på den første måned af ${ plan } Plus "
+        "Sidste chance for at spare 80% på den første måned af ${ plan } Plus."
       ],
       "Last day to save": [
         "Sidste dag til at gemme"
@@ -13571,6 +13571,9 @@
       ],
       "Offer expires ${ formattedDate }.": [
         "Tilbud udløber ${ formattedDate }"
+      ],
+      "Pay annually, secure our best offer": [
+        "Betal årligt for at sikre vores bedste tilbud"
       ],
       "Save": [
         "Gem"
@@ -13634,6 +13637,11 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "For at komme i gang skal du vælge et visningsnavn. Det er det, folk vil se, når du sender en e-mail, inviterer dem til en begivenhed eller deler en fil."
+      ]
+    },
+    "Onboarding Trial": {
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Nyd gratis sikkerhedsfunktioner for virksomheder indtil ${ trialEndsOnFormatted }."
       ]
     },
     "Option": {
@@ -14142,6 +14150,9 @@
       "/month /user, billed biennially": [
         "/måned /bruger, faktureres hvert andet år"
       ],
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Adgang til alle ${ BRAND_NAME } apps og premiumfunktioner"
+      ],
       "Advanced protection that goes beyond industry standards": [
         "Avanceret sikkerhed der overgår branchens standarder"
       ],
@@ -14538,6 +14549,9 @@
       ],
       "CVC": [
         "CVC"
+      ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Under denne periode vil du ikke kunne ændre eller annullere dit abonnement. Vent venligst indtil betalingen er gennemført før du forsøger at foretage ændringer. Tak for din tålmodighed."
       ],
       "Got it": [
         "Forstået"
@@ -16130,6 +16144,9 @@
       "Go to subscription plans": [
         "Gå til abonnementer"
       ],
+      "Unblock streaming content": [
+        "Lås op for streamet indhold"
+      ],
       "Upgrade": [
         "Opgradér"
       ],
@@ -16207,6 +16224,9 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Få adgang til indhold på streamingtjenester verden rundt"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Opgradér og spar mere med 2 års ${ planName }"
       ]
@@ -18185,15 +18205,6 @@
       "Folders and labels": [
         "Mapper og etiketter"
       ],
-      "For Linux": [
-        "Til Linux"
-      ],
-      "For macOS": [
-        "Til macOS"
-      ],
-      "For Windows": [
-        "Til Windows"
-      ],
       "Forgot password": [
         "Glemt adgangskode"
       ],
@@ -18749,6 +18760,9 @@
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Subscription canceled": [
+        "Abonnement annulleret"
       ],
       "Success": [
         "Lykkedes"
