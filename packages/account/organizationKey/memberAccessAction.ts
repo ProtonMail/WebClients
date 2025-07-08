@@ -2,6 +2,7 @@ import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import type { MembersState } from '@proton/account/members';
+import { unprivatizeMembersManual } from '@proton/account/members/unprivatizeMembers';
 import type { OrganizationState } from '@proton/account/organization';
 import type { OrganizationKeyState } from '@proton/account/organizationKey/index';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -16,7 +17,7 @@ import {
     persistSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { Member } from '@proton/shared/lib/interfaces';
-import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
+import { getDecryptedUserKeysHelper, getIsMemberInManualApproveState } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { getOrganizationTokenThunk } from './actions';
@@ -34,6 +35,14 @@ export const accessMemberThunk = ({
     return async (dispatch, _, extra) => {
         let member = initialMember;
         const silentApi = getSilentApi(extra.api);
+
+        // If the member needs to get unprivatized, let's do it first
+        if (getIsMemberInManualApproveState(member)) {
+            const [updatedMember] = await dispatch(unprivatizeMembersManual({ membersToUnprivatize: [member] }));
+            if (updatedMember) {
+                member = updatedMember;
+            }
+        }
 
         const { UID, LocalID } = await silentApi<{ UID: string; LocalID: number }>(authMember(member.ID));
 
