@@ -2971,17 +2971,6 @@
         "Abonnementet ditt på ${ PLAN_NAMES[PLANS.PASS] } har en spesiell pris på ${ price } i året. Hvis du nedgraderer til Free, mister du rabatten for godt, selv om du oppgraderer på nytt i fremtiden."
       ]
     },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Last ned for Linux"
-      ],
-      "Download for macOS": [
-        "Last ned for macOS"
-      ],
-      "Download for Windows": [
-        "Last ned for Windows"
-      ]
-    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Åpne i ${ DRIVE_SHORT_APP_NAME }"
@@ -3227,6 +3216,9 @@
       "Failed to create folder": [
         "Kunne ikke opprette mappe"
       ],
+      "Failed to create public share node": [
+        "Kunne ikke opprette offentlig delingsnode"
+      ],
       "Failed to fetch node": [
         "Kunne ikke hente node"
       ],
@@ -3248,8 +3240,11 @@
       "Failed to unshare node": [
         "Kunne ikke oppheve deling av node"
       ],
-      "Failed to update share node": [
-        "Kunne ikke oppdatere delingsnode"
+      "Failed to update direct share node": [
+        "Kunne ikke oppdatere direkte delingsnode"
+      ],
+      "Failed to update public share node": [
+        "Kunne ikke oppdatere offentlig delingsnode"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fil \"${ item.name }\" kunne ikke lastes opp på grunn av \"${ error }\" feilmelding"
@@ -3463,6 +3458,9 @@
       "status page": [
         "statusside"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Det mislyktes å stoppe delingen av dette elementet"
+      ],
       "Tab closed": [
         "Fane lukket"
       ],
@@ -3492,6 +3490,9 @@
       ],
       "The label name is too long. Please choose a different name.": [
         "Etikettnavnet er for langt. Velg et annet navn."
+      ],
+      "The link to your item failed to be deleted": [
+        "Koblingen til elementet ditt kunne ikke slettes"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
@@ -3543,9 +3544,6 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prøv å bruke bare bokstaver, tall og _.-"
-      ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Kan ikke laste VPN-kontrollpanelet. Kontroller tilkoblingen og prøv på nytt."
       ],
       "Unable to set photo as cover": [
         "Kan ikke angi bilde som omslag"
@@ -4635,21 +4633,12 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } finnes allerede på denne plasseringen."
       ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } maskerer IP-adressen din, slik at nettsteder ikke kan identifisere deg."
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/måned)"
-      ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Automatisk tilkobling**: åpnes og kobles til VPN så snart du slår på enheten."
-      ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Nødstopp**: stopper datalekkasjer ved å blokkere internett hvis VPN-en dropper ut uventet."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
@@ -4670,29 +4659,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "En sikker tilkobling er avgjørende når du jobber eksternt. Et VPN beskytter bedriftsdata mot cybertrusler og holder arbeidet ditt privat."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
-      ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "Et VPN krypterer tilkoblingen din og skjuler IP-adressen, noe som gjør det mye vanskeligere for noen å spore eller overvåke surfingen din."
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "Et VPN skjuler IP-adressen din og krypterer nettleseraktiviteten din, noe som gjør det vanskeligere for nettsteder, annonsører og Internett-leverandører å spore deg over tid."
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "Et VPN er en sikker tunnel mellom enheten din og internett. Den skjuler posisjonen og aktiviteten din for internettleverandøren din (ISP) og nettstedene du besøker."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontotilgang begrenset på grunn av ubetalte fakturaer. Kontakt systemansvarlig."
       ],
       "Account successfully updated": [
         "Konto oppdatert"
-      ],
-      "Ad targeting": [
-        "Målretting mot annonser"
       ],
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
@@ -4702,9 +4676,6 @@
       ],
       "Admin account allocation": [
         "Adminkonto tildeling"
-      ],
-      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Annonsører sporer surfingen din for å vise målrettede annonser. ${ VPN_APP_NAME } blokkerer sporere og annonser, noe som gjør tilkoblingen din raskere og forbedrer nettopplevelsen din."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
@@ -4882,9 +4853,6 @@
       ],
       "Conflict": [
         "Konflikt"
-      ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "Koble til ${ VPN_APP_NAME } for å surfe privat"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilordnet gruppe ${ contactGroupName }"
@@ -5157,9 +5125,6 @@
       "from the version history?": [
         "fra versjonshistorikken?"
       ],
-      "Geoblocking": [
-        "Geoblokkering"
-      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Skaff deg appen til å sikkerhetskopiere bilder fra telefonen din eller last dem opp her."
       ],
@@ -5174,9 +5139,6 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Gå til \"mine filer\" og last opp noen filer først."
-      ],
-      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
       ],
       "here": [
         "her"
@@ -5233,9 +5195,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
-      "In restrictive countries": [
-        "I restriktive land"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I neste trinn, vil du kunne sende inn et innskudd ved å bruke en Bitcoin-adresse."
       ],
@@ -5277,9 +5236,6 @@
       ],
       "Items moved to the trash will stay here until deleted": [
         "Elementer som flyttes til papirkurven, blir værende her til de slettes."
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Det er best å bruke et VPN til enhver tid. Men her er når cybersikkerhetstrusler kan være høyest:"
       ],
       "It’s easy and secure": [
         "Det er enkelt og sikkert"
@@ -5390,9 +5346,6 @@
       "More": [
         "Mer"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
-      ],
       "Moving files": [
         "Flytter filer"
       ],
@@ -5441,9 +5394,6 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Ikke alle filer ble overført. Prøv å laste opp eller laste ned filene på nytt."
       ],
-      "Not connected": [
-        "Ikke tilkoblet"
-      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Merk: data kan fortsatt være tilgjengelig lokalt på enheter der du har installert ${ DRIVE_APP_NAME }."
       ],
@@ -5464,9 +5414,6 @@
       ],
       "of": [
         "av"
-      ],
-      "On public WiFi networks": [
-        "På offentlige Wi-Fi-nettverk"
       ],
       "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
         "Når denne prosessen er fullført, finner du en kopi av de gjenopprettede dataene dine i en ny mappe kalt \"Automatisert gjenoppretting (dagens dato)\". Denne kopien av dataene dine vil ikke telle mot lagringskvoten din."
@@ -5650,9 +5597,6 @@
       "Primary": [
         "Primær"
       ],
-      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
-      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privat søk aktivert. Du kan nå lukke denne dialogen og søke etter filer og mapper."
       ],
@@ -5706,9 +5650,6 @@
       ],
       "Scan issue": [
         "Skanningsproblem"
-      ],
-      "Scan the QR code with your mobile device": [
-        "Skann QR-koden med mobilenheten din"
       ],
       "Search cannot be enabled in this browser": [
         "Søk kan ikke aktiveres i denne nettleseren"
@@ -5809,26 +5750,17 @@
       "Some files failed to upload. Try uploading the files again.": [
         "Noen filer kunne ikke lastes opp. Prøv å laste opp filene på nytt."
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "Noen myndigheter blokkerer eller begrenser tilgangen til visse nettsteder. Et VPN hjelper til med å omgå sensur samtidig som aktiviteten og identiteten din holdes privat."
-      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Noen av filene dine er ikke lenger tilgjengelige. Gjenopprett tilgangen til filene dine. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Noen bilder i dette albumet er ikke lagret på tidslinjen din. Hvis du sletter dette albumet, slettes disse bildene permanent."
       ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Noen nettsteder og strømmetjenester blokkerer innhold etter region. Et VPN lar deg omgå disse begrensningene og gir fri tilgang til internett."
-      ],
       "Something went wrong, please try again later.": [
         "Noe gikk galt, prøv igjen senere."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynn å dele det med kontakter og bruk det til nettjenester."
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Hold deg tilkoblet uten problemer ved å aktivere følgende VPN-innstillinger:"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagringsplass allokert til andre brukere i denne organisasjonen"
@@ -5854,9 +5786,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnementet avsluttes: aktiver på nytt innen ${ byDate } for å beholde fordelene med ${ planName }. ${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "Overvåking"
       ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
@@ -5949,14 +5878,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Denne koblingen ble opprettet med en gammel versjon av Drive og kan ikke endres. Slett denne koblingen og opprett en ny for å endre innstillingene."
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Dette betyr at Internett-leverandøren din og nettstedene du besøker, ikke kan koble personopplysningene dine til nettaktiviteten din."
-      ],
       "This month": [
         "Denne måneden"
-      ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Denne unike koden kan brukes av nettsteder og Internett-leverandører for å koble posisjonen og nettleserloggen din til enheten din."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Dette vil bare slette albumet. Bildene dine forblir på tidslinjen din. Denne handlingen kan ikke angres."
@@ -5969,9 +5892,6 @@
       ],
       "This will permanently delete the selected items you uploaded.": [
         "Dette vil slette de valgte elementene du lastet opp permanent."
-      ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
-        "Dette vil fjerne den synkroniserte enheten ${ deviceName } fra ${ DRIVE_APP_NAME } og alle dens data fra ${ DRIVE_APP_NAME }. Mapper du har lagt til i Mine datamaskiner, slutter å synkronisere."
       ],
       "This will replace the existing file with the folder": [
         "Dette vil erstatte den eksisterende filen med mappen"
@@ -6032,9 +5952,6 @@
       ],
       "Total VPN connections": [
         "Totalt antall VPN-forbindelser"
-      ],
-      "Tracking": [
-        "Sporing"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Overføring avbrutt for fil \"${ name }\""
@@ -6135,9 +6052,6 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
-      "VPN IP": [
-        "VPN-IP"
-      ],
       "Want to sync files faster?": [
         "Ønsker du å synkronisere filer raskere?"
       ],
@@ -6194,12 +6108,6 @@
       ],
       "What would you like to do?": [
         "Hva ønsker du å gjøre?"
-      ],
-      "When working remotely": [
-        "Når du jobber eksternt"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Når du kobler til VPN, bruker det krypteringsteknologi for å skjule IP-adressen din (en unik kode som er tildelt enheten din)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
@@ -6405,15 +6313,6 @@
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "Internett-leverandøren din kan overvåke og noen ganger selge dataene dine, eller til og med begrense hvilke nettsteder du har tilgang til."
-      ],
-      "Your IP": [
-        "Din IP"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "IP-adressen din er synlig og kan brukes til å spore nettaktiviteten din."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
       ],
@@ -6423,17 +6322,11 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Neste faktureringsdato er ${ renewalTime }. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
       ],
-      "Your online activity is protected": [
-        "Nettaktiviteten din er beskyttet"
-      ],
       "Your password was leaked:": [
         "Passordet ditt ble lekket:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefonnummeret ditt vil kun bli brukt til denne engangsbekreftelsen."
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "Din fysiske plassering er synlig og kan brukes til å begrense tilgangen din til internett."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Planen din er begrenset til 10 versjoner i opptil 7 dager"
@@ -7150,15 +7043,6 @@
       ],
       "Your alias": [
         "Ditt alias"
-      ],
-      "Your IP": [
-        "Din IP"
-      ],
-      "Your ISP": [
-        "Din internettleverandør"
-      ],
-      "Your location": [
-        "Din plassering"
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
@@ -8830,6 +8714,9 @@
       "Encrypted search activated": [
         "Kryptert søk aktivert"
       ],
+      "Error while listing devices": [
+        "Feil ved opplisting av enheter"
+      ],
       "External invitation removed from the share": [
         "Ekstern invitasjon fjernet fra delingen"
       ],
@@ -8857,8 +8744,14 @@
       "Failed to reject share invitation": [
         "Kunne ikke avvise delingsinvitasjon"
       ],
+      "Failed to remove device": [
+        "Fjerning av enhet mislyktes"
+      ],
       "Failed to remove the file": [
         "Fjerning av filen mislyktes"
+      ],
+      "Failed to rename device": [
+        "Kan ikke gi nytt navn til enhet"
       ],
       "Failed to upload files: ${ err }": [
         "Kunne ikke laste opp filer: ${ err }"
@@ -9471,9 +9364,6 @@
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Kun Euro aksepteres for SEPA. Valutaen din er endret. Bruk velgeren for å angre valget ditt."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
@@ -9525,6 +9415,9 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
@@ -11400,9 +11293,6 @@
       "Deleting contacts": [
         "Sletter kontakter"
       ],
-      "Desktop": [
-        "Skrivebord"
-      ],
       "Discard": [
         "Forkast"
       ],
@@ -11420,9 +11310,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
-      ],
-      "Download the app": [
-        "Last ned appen"
       ],
       "Download unverified file?": [
         "Laste ned ubekreftet fil?"
@@ -11506,9 +11393,6 @@
         "Fant ${ searchView.numberOfResults } resultat",
         "Fant ${ searchView.numberOfResults } resultater"
       ],
-      "Get more from your VPN": [
-        "Får mer ut av ditt VPN"
-      ],
       "Get the apps": [
         "Skaff deg appene"
       ],
@@ -11529,9 +11413,6 @@
       ],
       "Hm, we couldn't find that one": [
         "Hm, vi kunne ikke finne den"
-      ],
-      "How does it all work?": [
-        "Hvordan fungerer det hele?"
       ],
       "Human verification": [
         "Menneskelig verifisering"
@@ -11573,9 +11454,6 @@
       "Location": [
         "Plassering"
       ],
-      "Make a secure connection your default": [
-        "Gjør en sikker tilkobling til standard"
-      ],
       "Manage secure link": [
         "Administrer sikker kobling"
       ],
@@ -11590,9 +11468,6 @@
       ],
       "Minicalendar": [
         "Minikalender"
-      ],
-      "Mobile": [
-        "Mobil"
       ],
       "Modified": [
         "Endret"
@@ -11710,9 +11585,6 @@
       ],
       "Preview": [
         "Forhåndsvis"
-      ],
-      "Private browsing vs VPN": [
-        "Privat surfing kontra VPN"
       ],
       "Processing...": [
         "Behandler..."
@@ -11928,9 +11800,6 @@
       "Version history": [
         "Versjonshistorikk"
       ],
-      "VPN explained": [
-        "VPN forklart"
-      ],
       "Warning": [
         "Advarsel"
       ],
@@ -11940,17 +11809,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
-      "What can a VPN protect you from?": [
-        "Hva kan et VPN beskytte deg mot?"
-      ],
-      "What is a VPN?": [
-        "Hva er et VPN?"
-      ],
       "What would you like to import?": [
         "Hva ønsker du å importere?"
-      ],
-      "When is it most important to use a VPN?": [
-        "Når er det viktigst å bruke et VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nå opprette ubegrenset antall mapper og etiketter"

@@ -1348,6 +1348,19 @@
         "გაუთვალისწინებელი შემთხვევა"
       ]
     },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "გამოწერის გაუქმება"
+      ],
+      "Keep subscription": [
+        "გამოწერის შენარჩუნება"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ timeRemaining }"
+      ]
+    },
     "Badge": {
       "Invited": [
         "მოწვეულია"
@@ -2928,17 +2941,6 @@
         "თქვენი ${ PLAN_NAMES[PLANS.PASS] }-ის გამოწერა წელიწადში სპეციალური ${ price } ღირს. Free სატარიფო გეგმაზე ჩამოწევით ფასადკლებას სამუდამოდ დაკარგავთ იმის მიუხედავად, ასწევთ თუ არა სატარიფო გეგმას მომავალში."
       ]
     },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "გადმოწერა Linux-სთვის"
-      ],
-      "Download for macOS": [
-        "გადმოწერა macOS-სთვის"
-      ],
-      "Download for Windows": [
-        "გადმოწერეთ Windows-სთვის"
-      ]
-    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME }-ში გახსნა"
@@ -3181,14 +3183,32 @@
       "Failed to create folder": [
         "საქაღალდის შექმნა ჩავარდა"
       ],
+      "Failed to create public share node": [
+        "საჯარო ზიარის კვანძის შექმნა ჩავარდა"
+      ],
+      "Failed to fetch node": [
+        "კვანზის მოთხოვნის შეცდომა"
+      ],
+      "Failed to fetch sharing info": [
+        "გაზიარების ინფორმაციის მოთხოვნის შეცდომა"
+      ],
       "Failed to load the STL preview": [
         "STL მინიატურის ჩატვირთვა ჩავარდა"
       ],
       "Failed to move items": [
         "ელემენტების გადატანა ჩავარდა"
       ],
+      "Failed to resend invitation": [
+        "მოსაწვევის თავიდან გაგზავნის შეცდომა"
+      ],
       "Failed to save some photos to your Drive": [
         "ზოგიერთი სურათის თქვენს Drive-ზე შენახვა ჩავარდა"
+      ],
+      "Failed to unshare node": [
+        "კვანძის გაზიარების გაუქმების შეცდომა"
+      ],
+      "Failed to update public share node": [
+        "საჯარო ზიარის კვანძის განახლება ჩავარდა"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "ფაილი \"${ item.name }\" ვერ აიტვირთა შეცდომის გამო: ${ error }"
@@ -3482,9 +3502,6 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
-      ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "VPN-ის სამუშაო მაგიდის ჩატვირთვა შეუძლებელია. გადაამოწმეთ თქვენი კავშირი და თავიდან სცადეთ."
       ],
       "Unable to set photo as cover": [
         "სურათის ყდად დაყენება შეუძლებელია"
@@ -4568,21 +4585,12 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } უკვე არსებობს."
       ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } ნიღბავს თქვენს IP მისამართს და ვებგვერდები თქვენს იდენტიფიკაციას ვერ მოახდენენ."
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } წევრი)",
         "(${ memberCount } წევრი)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /თვეში)"
-      ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**ავტოდაკავშირება**: გახსნის და დააკავშირებს VPN-ს მაშინვე, როცა თქვენს მოწყობილობას ჩართავთ."
-      ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Kill switch**: აჩერებს მონაცემების გაჟონვას თქვენი ინტერნეტის დაბლოკვით, თუ VPN გაითიშება."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
@@ -4611,9 +4619,6 @@
       ],
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
-      ],
-      "Ad targeting": [
-        "დამიზნებული რეკლამა"
       ],
       "Address copied to clipboard": [
         "მისამართი დაკოპირდა გაცვლის ბაფერში"
@@ -4797,9 +4802,6 @@
       ],
       "Conflict": [
         "კონფლიქტი"
-      ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "მიუერთდით ${ VPN_APP_NAME } ინტერნეტში უსაფრთხოდ სამუშაოდ"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "კონტაქტი მინიჭებულია ჯგუფზე ${ contactGroupName }"
@@ -5069,9 +5071,6 @@
       "from the version history?": [
         "ვერსიის ისტორიიდან?"
       ],
-      "Geoblocking": [
-        "გეოდაბლოკვა"
-      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "გადმოწერეთ აპი, რომ დაამარქაფოთ სურათები თქვენი ტელეფონიდან, ან აქ ატვირთოთ."
       ],
@@ -5139,9 +5138,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
       ],
-      "In restrictive countries": [
-        "აკრძალვების მქონე ქვეყნებში"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
       ],
@@ -5183,9 +5179,6 @@
       ],
       "Items moved to the trash will stay here until deleted": [
         "ელემენტები, რომლებიც ნაგვის ყუთში გადაიტანეთ, იქ წაშლამდე დარჩება"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "საუკეთესო გზაა, VPN ყოველთვის გამოიყენოთ. მაგრამ ეს ადგილებია, სადაც კიბერუსაფრთხოების საფრთხეები ყველაზე დიდია:"
       ],
       "It’s easy and secure": [
         "ეს ადვილია და დაცულია"
@@ -5344,9 +5337,6 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "ფაილების მიმოცვლის პრობლემა. თავიდან სცადეთ."
       ],
-      "Not connected": [
-        "მიერთებული არაა"
-      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "გაფრთხილება: მონაცემები ჯერ კიდევ შეიძლება ხელმისაწვდომი იყო იმ მოწყობილობებზე, სადაც ${ DRIVE_APP_NAME } დააყენეთ."
       ],
@@ -5367,9 +5357,6 @@
       ],
       "of": [
         "-დან"
-      ],
-      "On public WiFi networks": [
-        "ან საჯარო WiFi ქსელები"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "ერთ-ერთი თქვენი დაშიფრული დისკი დაბლოკილია. ალბათ, ახლახანს პაროლი შეცვალეთ."
@@ -5601,9 +5588,6 @@
       "Scan issue": [
         "სკანირების შეცდომა"
       ],
-      "Scan the QR code with your mobile device": [
-        "დაასკანერეთ QR კოდი თქვენი მობილური მოწყობილობით"
-      ],
       "Search cannot be enabled in this browser": [
         "ამ ბრაუზერში ძებნის ჩართვა შეუძლებელია"
       ],
@@ -5712,9 +5696,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "დაიწყეთ კონტაქტებთან გაზიარება და გამოიყენეთ ის ინტერნეტ-სერვისებისთვის."
       ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "დარჩით დაკავშირებული შემდეგი VPN-ის პარამეტრების ჩართვით:"
-      ],
       "Storage allocated to other users in this organisation": [
         "ამ ორგანიზაციის სხვა მომხმარებლებისთვის გამოყოფილი საცავი"
       ],
@@ -5739,9 +5720,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "დაზვერვა"
       ],
       "Symbols (#$&)": [
         "სიმბოლოები (#$&)"
@@ -5893,9 +5871,6 @@
       "Total VPN connections": [
         "VPN შეერთებები სულ"
       ],
-      "Tracking": [
-        "ტრეკინგი"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\"-ის გადაცემა გაუქმებულია"
       ],
@@ -5995,9 +5970,6 @@
       "Visa Secure logo": [
         "Visa-ის დაცულობის ლოგო"
       ],
-      "VPN IP": [
-        "VPN IP"
-      ],
       "Want to sync files faster?": [
         "გნებავთ უფრო სწრაფი სინქრონიზაცია?"
       ],
@@ -6051,12 +6023,6 @@
       ],
       "What would you like to do?": [
         "რას იზამდით?"
-      ],
-      "When working remotely": [
-        "დისტანციურად მუშაობისას"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "როცა მიუერთდებით VPN-ს, ის იყენებს დაშიფვრის ტექნოლოგიებს, რომ თქვენი IP მისამართი (თქვენი მოწყობილობისთვის მინიჭებული ნიკალური კოდი) დამალოს."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
@@ -6241,15 +6207,6 @@
       "Your information was found on ${ displayedDate }": [
         "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "თქვენს პროვაიდერს შეუძლია თქვენი მონიტორინგი და, ხანდახან, თქვენი მონაცემების გაყიდვა და შეზღუდვა, სად შეგიძლიათ შესვლა."
-      ],
-      "Your IP": [
-        "თქვენი IP"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "თქვენი IP მისამართი ხილულია და შეიძლება, თქვენი ინტერნეტში მუშაობის ტრეკინგისთვის იქნეს გამოყენებული."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
       ],
@@ -6259,17 +6216,11 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }. დაუკავშირდით მხარდაჭერის გუნდს, თუ სატარიფო გეგმის შეცვლა დაუყოვნებლივ გჭირდებათ."
       ],
-      "Your online activity is protected": [
-        "თქვენი აქტივობა ინტერნეეტში დაცულია"
-      ],
       "Your password was leaked:": [
         "თქვენი პაროლი გაჟონილია:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "თქვენი ფიზიკური მდებარეობა ხილულია და, შეიძლება, თქვენთვის ინტერნთან წვდომის შესაზღუდად იქნეს გამოყენებული."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "თქვენი გეგმა 7 დღეში 10 ვერსიითაა შეზღუდული"
@@ -6983,15 +6934,6 @@
       ],
       "Your alias": [
         "თქვენი ფსევდონიმი"
-      ],
-      "Your IP": [
-        "თქვენი IP"
-      ],
-      "Your ISP": [
-        "თქვენი ISP"
-      ],
-      "Your location": [
-        "თქვენი მდებარეობა"
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
@@ -8594,6 +8536,9 @@
       "Encrypted search activated": [
         "დაშიფრული ძებნა გააქტიურებულია"
       ],
+      "Error while listing devices": [
+        "შეცდომა მოწყობილობების სიის შექმნისას"
+      ],
       "External invitation removed from the share": [
         "ზიარიდან გარე მოსაწვევი წაშლილია"
       ],
@@ -8621,8 +8566,14 @@
       "Failed to reject share invitation": [
         "ზიარის მოსაწვეის უარყოფა ჩავარდა"
       ],
+      "Failed to remove device": [
+        "მოწყობილობის წაშლა ჩავარდა"
+      ],
       "Failed to remove the file": [
         "ფაილის წაშლა ჩავარდა"
+      ],
+      "Failed to rename device": [
+        "მოწყობილობის სახელის გადარქმევა ჩავარდა"
       ],
       "Failed to upload files: ${ err }": [
         "ფაილების ატვირთვის შეცდომა: ${ err }"
@@ -11121,9 +11072,6 @@
       "Deleting contacts": [
         "კონტაქტების წაშლა"
       ],
-      "Desktop": [
-        "სამუშაო მაგიდა"
-      ],
       "Discard": [
         "მოცილება"
       ],
@@ -11141,9 +11089,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
-      ],
-      "Download the app": [
-        "აპის გადმოწერა"
       ],
       "Download unverified file?": [
         "გადმოვწერო შეუმოწმებელი ფაილი?"
@@ -11227,9 +11172,6 @@
         "ნაპოვნია ${ searchView.numberOfResults } შედეგი",
         "ნაპოვნია ${ searchView.numberOfResults } შედეგი"
       ],
-      "Get more from your VPN": [
-        "მიიღეთ მეტი თქვენი VPN-სგან"
-      ],
       "Get the apps": [
         "აპების გადმოწერა"
       ],
@@ -11250,9 +11192,6 @@
       ],
       "Hm, we couldn't find that one": [
         "ეგ ვერ ვიპოვეთ"
-      ],
-      "How does it all work?": [
-        "როგორ მუშაობს ეს ყველაფერი?"
       ],
       "Human verification": [
         "ადამიანის შემოწმება"
@@ -11294,9 +11233,6 @@
       "Location": [
         "მდებარეობა"
       ],
-      "Make a secure connection your default": [
-        "დაცული კავშირის გამოყენება ნაგულისხმევად"
-      ],
       "Manage secure link": [
         "დაცული ბმულის მორგება"
       ],
@@ -11311,9 +11247,6 @@
       ],
       "Minicalendar": [
         "მინიკალენდარი"
-      ],
-      "Mobile": [
-        "მობილური"
       ],
       "Modified": [
         "შეცვლილია"
@@ -11431,9 +11364,6 @@
       ],
       "Preview": [
         "გადახედვა"
-      ],
-      "Private browsing vs VPN": [
-        "კონფიდენციალური რეჟიმი vs VPN"
       ],
       "Processing...": [
         "დამუშავება..."
@@ -11649,9 +11579,6 @@
       "Version history": [
         "ვერსიის ისტორია"
       ],
-      "VPN explained": [
-        "VPN-ის ახსნა"
-      ],
       "Warning": [
         "გაფრთხილება"
       ],
@@ -11661,17 +11588,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "მოგესალმებათ ${ BRAND_NAME } for Business"
       ],
-      "What can a VPN protect you from?": [
-        "რისგან გიცავთ VPN?"
-      ],
-      "What is a VPN?": [
-        "რა არის VPN?"
-      ],
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"
-      ],
-      "When is it most important to use a VPN?": [
-        "როდისაა VPN-ის გამოყენება ყველაზე მნიშვნელოვანი?"
       ],
       "You can now create unlimited folders and labels": [
         "ახლა, შეგიძლიათ, განუსაზღვრელი რაოდენობის საქაღალდეები და ჭდეები შექმნათ"
