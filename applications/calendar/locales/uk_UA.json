@@ -587,6 +587,9 @@
       "Remove Zoom meeting": [
         "Вилучити Zoom-зустріч"
       ],
+      "Reply with a note": [
+        "Відповісти із нотаткою"
+      ],
       "Report a problem": [
         "Повідомити про проблему"
       ],
@@ -1588,6 +1591,11 @@
       ],
       "strawberry": [
         "полуничний"
+      ]
+    },
+    "Commander action": {
+      "New event": [
+        "Нова подія"
       ]
     },
     "Confirm modal title": {
@@ -2641,6 +2649,12 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Позначайте події кольором, щоб легше організувати свій день, відстежувати час і визначати пріоритетність завдань."
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Приєднайте вашу CRM, сайт, принтери і т.д."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Миттєво створіть конференцію Zoom і додайте відомості для приєднання до події."
       ],
@@ -2655,6 +2669,9 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Отримуйте сповіщення, якщо ваш пароль або інші дані отримали витік зі стороннього сервісу."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Допоможіть вашій команді надійно зберігати паролі до конфіденційної ділової та клієнтської інформації."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
@@ -2796,6 +2813,11 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Ваша підписка ${ PLAN_NAMES[PLANS.PASS] } має спеціальну ціну ${ price } на рік. Перейшовши на тарифний план Безплатний, ви назавжди втратите знижку, навіть якщо в майбутньому знову перейдете на нього."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Завантажити для Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4523,6 +4545,9 @@
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
+      "Ad targeting": [
+        "Націлювання реклами"
+      ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Додані та вилучені учасники отримають сповіщення про всі події в цій серії."
       ],
@@ -5531,6 +5556,9 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Ваша наступна дата виставлення рахунку — ${ renewalTime }. Якщо вам потрібна негайна зміна тарифу, зверніться до служби підтримки."
       ],
+      "Your online activity is protected": [
+        "Ваша онлайн активність захищена"
+      ],
       "Your password was leaked:": [
         "Ваш пароль було викрито:"
       ],
@@ -6202,6 +6230,9 @@
       "Drafts": [
         "Чернетки"
       ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Як увімкнути ${ PROTON_SENTINEL_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Як оплатити за допомогою Bitcoin?"
       ],
@@ -6249,6 +6280,9 @@
       ],
       "Trash": [
         "Смітник"
+      ],
+      "Types of recovery methods": [
+        "Типи способів відновлення"
       ],
       "What’s this?": [
         "Що це?"
@@ -7890,6 +7924,9 @@
       ],
       "Custom": [
         "Власний"
+      ],
+      "Custom...": [
+        "Власний..."
       ],
       "Day": [
         "День",
@@ -9558,6 +9595,9 @@
       "Email address copied to clipboard": [
         "Адресу е-пошти скопійовано до буфера обміну"
       ],
+      "Event content search enabled": [
+        "Пошук вмісту подій увімкнено"
+      ],
       "Event created": [
         "Подію створено"
       ],
@@ -9980,6 +10020,9 @@
       "Deleting contacts": [
         "Видалення контактів"
       ],
+      "Desktop": [
+        "Настільний"
+      ],
       "Does not repeat": [
         "Не повторювати"
       ],
@@ -9988,6 +10031,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Понизити до ${ downgradedPlanName }?"
+      ],
+      "Download the app": [
+        "Завантажити програму"
       ],
       "Drop to upload": [
         "Перетягніть для вивантаження"
@@ -10034,6 +10080,9 @@
       "Every day": [
         "Щодня"
       ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Щотижня в ${ weekdaysLong[currentDay] }"
+      ],
       "Every year": [
         "Щороку"
       ],
@@ -10060,6 +10109,9 @@
       ],
       "High security for your account": [
         "Високий рівень безпеки для вашого облікового запису"
+      ],
+      "How does it all work?": [
+        "Як це все працює?"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
@@ -10184,6 +10236,9 @@
       "Save changes": [
         "Зберегти зміни"
       ],
+      "Schedule meetings in one click": [
+        "Запланувати зустрічі одним кліком"
+      ],
       "Security center": [
         "Центр безпеки"
       ],
@@ -10270,6 +10325,9 @@
       ],
       "Upgrade complete!": [
         "Оновлення завершено!"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
       ],
       "Verification failed": [
         "Не вдалося виконати перевірку"
