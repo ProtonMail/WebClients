@@ -158,7 +158,7 @@ export const getMemberPermissions = ({
 
 interface Props {
     member: EnhancedMember;
-    onLogin: (member: EnhancedMember) => void;
+    onLogin: (member: EnhancedMember) => Promise<void>;
     onAddAddress: (member: EnhancedMember) => void;
     onChangePassword: (member: EnhancedMember) => void;
     onEdit: (member: EnhancedMember) => void;
@@ -210,7 +210,7 @@ const MemberActions = ({
             text: c('Member action').t`Sign in`,
             disabled: isOrganizationDelinquent,
             onClick: () => {
-                onLogin(member);
+                void withLoading(onLogin(member));
             },
         },
         canAddAddress && {
