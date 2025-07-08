@@ -76,7 +76,7 @@ const MailboxListItems = ({
 
     return (
         <>
-            <div ref={listRef}>
+            <div className="w-full shrink-0" ref={listRef}>
                 {elements.map((element, index) => {
                     return (
                         <Fragment key={element.ID}>
