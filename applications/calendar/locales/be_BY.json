@@ -916,7 +916,7 @@
     },
     "Action subline": {
       "Anyone with the link can view your calendar": [
-        "Любы чалавек са спасылкай зможа праглядаць ваш каляндар"
+        "Любы карыстальнік са спасылкай зможа праглядаць ваш каляндар"
       ],
       "They can view or edit your calendar": [
         "Яны змогуць праглядаць або рэдагаваць ваш каляндар"
@@ -3354,10 +3354,10 @@
         "Сума ніжэй за мінімум (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
-        "Адбылася памылка падчас загрузкі параметраў псеўданіма"
+        "Падчас загрузкі параметраў псеўданіма адбылася памылка"
       ],
       "An error occurred while saving your alias": [
-        "Адбылася памылка падчас захавання вашага псеўданіма"
+        "Падчас захавання вашага псеўданіма адбылася памылка"
       ],
       "Answer failed to be sent": [
         "Не ўдалося адправіць адказ"
@@ -4490,16 +4490,16 @@
         "${ totalImported } падзей з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны."
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашай падзеі. Ніводная падзея не была імпартавана."
+        "Падчас шыфравання і дадавання вашай падзеі адбылася памылка. Ніводная падзея не была імпартавана."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашых падзей. Ніводная падзея не была імпартавана."
+        "Падчас шыфравання і дадавання вашых падзей адбылася памылка. Ніводная падзея не была імпартавана."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шыфраванне і дадаванне кантактаў: ${ totalImported }/${ totalToImport }"
@@ -4553,13 +4553,13 @@
         "${ totalImported } кантактаў з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашага кантакту. Ніводны кантакт не быў імпартаваны."
+        "Падчас шыфравання і дадавання вашага кантакту адбылася памылка. Ніводны кантакт не быў імпартаваны."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання кантактаў. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
+        "Падчас шыфравання і дадавання кантактаў адбылася памылка. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашых кантактаў. Ніводны кантакт не быў імпартаваны."
+        "Падчас шыфравання і дадавання вашых кантактаў адбылася памылка. Ніводны кантакт не быў імпартаваны."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Кантакт паспяхова імпартаваны. Імпартаваны кантакт цяпер з'явіцца ў вашым спісе кантактаў."
@@ -5033,10 +5033,10 @@
         "і"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Любы чалавек з гэтай спасылкай зможа ўбачыць падрабязнасці падзеі ў гэтым календары, напрыклад, назву, размяшчэнне або ўдзельнікаў."
+        "Любы карыстальнік з гэтай спасылкай зможа ўбачыць падрабязнасці падзеі ў гэтым календары, такія як назва, размяшчэнне або ўдзельнікі."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Любы чалавек з гэтай спасылкай зможа ўбачыць у вашым календары, ці маеце вы вольны час або заняты ўвесь дзень. Аднак, ён не зможа ўбачыць падрабязнасці падзеі, напрыклад, загаловак, размяшчэнне або ўдзельнікаў."
+        "Любы карыстальнік з гэтай спасылкай зможа ўбачыць у вашым календары, ці маеце вы вольны час або заняты ўвесь дзень. Аднак, ён не зможа ўбачыць падрабязнасці падзеі, такія як загаловак, размяшчэнне або ўдзельнікаў."
       ],
       "Are you sure you want to discard your import?": [
         "Вы сапраўды хочаце адхіліць імпартаванне?"
@@ -5060,13 +5060,13 @@
         "На падставе вашага часавага пояса"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
+        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
       ],
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Палепшыце ідэнтычнасць вашай арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
+        "Павысце ідэнтычнасць сваёй арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Перанясіце свае паведамленні, кантакты і календары ў ${ BRAND_NAME }."
@@ -5480,7 +5480,7 @@
         "Група не знойдзена"
       ],
       "No payment is required at this time.": [
-        "Зараз аплата не патрабуецца."
+        "У дадзены момант аплата не патрабуецца."
       ],
       "No results found": [
         "Нічога не знойдзена"
@@ -7624,16 +7624,16 @@
         "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Адна простая падпіска"
       ],
       "Auto-delete Spam and Trash": [
-        "Аўтаматычнае выдаленне спаму і смецця"
+        "Аўтавыдаленне спаму і смецця"
       ],
       "Auto-reply": [
-        "Аўтаматычны адказ"
+        "Аўтаадказ"
       ],
       "Autofill credit cards (coming soon)": [
         "Аўтазапаўненне крэдытных картак (неўзабаве з'явіцца)"
       ],
       "Automatic email forwarding": [
-        "Аўтаматычная перасылка пошты"
+        "Аўтаперасылка пошты"
       ],
       "Available on all platforms": [
         "Даступна на ўсіх платформах"
@@ -8112,7 +8112,7 @@
         "Забяспечвае доступ да некалькіх сетак адначасова. Напрыклад, вы можаце глядзець фільм з іншай краіны і адначасова атрымліваць мясцовыя вынікі на пошукавыя запыты"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        "Дазваляе вам наладжваць аўтаматычныя адказы (аўтаадказчык) для ўваходных паведамленняў"
+        "Дазваляе наладжваць аўтаматычныя адказы (аўтаадказчык) для ўваходных паведамленняў"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
         "Аўтаматычна выдаляе са сметніцы і спаму паведамленні, якія старэйшыя за 30 дзён"
@@ -8121,7 +8121,7 @@
         "Аўтаматычна перасылаць лісты адпраўленыя на ваш уліковы запіс ${ MAIL_APP_NAME } на любы іншы адрас электроннай пошты."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Масавая рассылка або адпраўка лістоў з дапамогай праграмных сродкаў у дадзены момант не падтрымліваюцца. Мы рэкамендуем для такіх выпадкаў знайсці спецыялізаваны сэрвіс пастаўшчыка паслуг электроннай пошты."
+        "Масавая рэкламная рассылка або адпраўка лістоў з дапамогай праграмных сродкаў у дадзены момант не падтрымліваюцца. Мы рэкамендуем для такіх выпадкаў знайсці спецыялізаваны сэрвіс пастаўшчыка паслуг электроннай пошты."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Выбірайце карыстальніцкі час для атрымання напаміну па электроннай пошце або для атрымання паведамлення"
@@ -8324,10 +8324,10 @@
         "Аўтаматычнае падключэнне"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
-        "Палепшыце прастору сховішча да ${ bundleStorage } на карыстальніка"
+        "Павысце прастору сховішча да ${ bundleStorage } на карыстальніка"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
+        "Павысце агульны аб'ём свайго сховішча да ${ bundleStorage }"
       ],
       "Browser extension": [
         "Пашырэнне для браўзера"
@@ -9031,9 +9031,6 @@
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Для SEPA прымаюцца толькі еўра. Ваша валюта зменена. Выкарыстоўвайце селектар, каб скінуць свой выбар."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
@@ -9093,6 +9090,9 @@
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
@@ -10340,13 +10340,13 @@
         "Любыя карыстальніцкія дамены электроннай пошты будуць адключаны"
       ],
       "Automatic email forwarding": [
-        "Аўтаматычная перасылка электроннай пошты"
+        "Аўтаперасылка электроннай пошты"
       ],
       "Back up photos from your devices": [
         "Рэзерваваць фатаграфіі з вашай прылады"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты ў вашым уласным дамене."
+        "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты са сваім уласным даменам."
       ],
       "Catch-all email address": [
         "Адрас для ўсёй пошты дамена"
@@ -10513,7 +10513,7 @@
         "і яшчэ 15 прэміяльных функцый"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+        "Аўтаперасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Папярэджанне ўцечкі даных ${ strongArgument }"
@@ -10551,10 +10551,10 @@
         "Вы ўпэўнены?"
       ],
       "Auto-pay is disabled": [
-        "Аўтаматычная аплата адключана"
+        "Аўтааплата адключана"
       ],
       "Auto-pay is enabled": [
-        "Аўтаматычная аплата ўключана"
+        "Аўтааплата ўключана"
       ],
       "Disable": [
         "Адключыць"
@@ -11787,10 +11787,10 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах"
       ],
       "Auto-selects from ${ numberOfCountries } country": [
-        "Аўтаматычны выбар з ${ numberOfCountries } краіны",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін"
+        "Аўтавыбар з ${ numberOfCountries } краіны",
+        "Аўтавыбар з ${ numberOfCountries } краін",
+        "Аўтавыбар з ${ numberOfCountries } краін",
+        "Аўтавыбар з ${ numberOfCountries } краін"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Серверы ў больш, чым ${ numberOfCountries } краіне",
