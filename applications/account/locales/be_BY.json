@@ -197,7 +197,7 @@
         "Аўтэнтыфікацыя"
       ],
       "Auto-delete spam and trash": [
-        "Аўтаматычнае выдаленне спаму і смецця"
+        "Аўтавыдаленне спаму і смецця"
       ],
       "Back": [
         "Назад"
@@ -970,9 +970,6 @@
       "Next month": [
         "Наступны месяц"
       ],
-      "Next page": [
-        "Наступная старонка"
-      ],
       "No": [
         "Не"
       ],
@@ -1017,9 +1014,6 @@
       ],
       "Previous month": [
         "Папярэдні месяц"
-      ],
-      "Previous page": [
-        "Папярэдняя старонка"
       ],
       "Publish changes": [
         "Апублікаваць змяненні"
@@ -1647,7 +1641,7 @@
     },
     "Address action": {
       "Allow unsigned mail": [
-        "Дазвол. непадпіс. пошту"
+        "Дазволіць непадпісаную пошту"
       ],
       "Delete address": [
         "Выдаліць адрас"
@@ -1706,7 +1700,7 @@
         "Актыўны"
       ],
       "Allow unsigned mail": [
-        "Дазвол. непадпіс. пошту"
+        "Дазволіць непадпісаную пошту"
       ],
       "Default": [
         "Прадвызначаны"
@@ -1951,7 +1945,7 @@
     },
     "Assistant toggle": {
       "Buy now": [
-        "Купіць зараз"
+        "Купіць"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
@@ -4297,7 +4291,7 @@
     },
     "Disable account": {
       "Back to ${ signIn }.": [
-        "Вярнуцца ў ${ signIn }."
+        "Вярнуцца да ${ signIn }."
       ],
       "Didn't create an account?": [
         "Яшчэ не стваралі ўліковы запіс?"
@@ -5222,10 +5216,10 @@
         "Памылка аўтэнтыфікацыі."
       ],
       "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
-        "Аўтаматычны адказ на паведамленне перавышае дазволеную даўжыню. Скараціце тэкст паведамлення, каб яно адпавядала ўстаноўленаму абмежаванню."
+        "Аўтадказ на паведамленне перавышае дазволеную даўжыню. Скараціце тэкст паведамлення, каб яно адпавядала ўстаноўленаму абмежаванню."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Аўтаматычныя адказы з'яўляюцца платнай функцыяй. Перайдзіце на платны ўліковы запіс, каб карыстацца ёй."
+        "Аўтаматычныя адказы з'яўляюцца платнай функцыяй. Перайдзіце на платны ўліковы запіс, каб карыстацца імі."
       ],
       "Calendar cannot be found": [
         "Не атрымалася знайсці каляндар"
@@ -6552,7 +6546,7 @@
         "Дазволіць ключы платформы"
       ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Дазваляе вам рэгістраваць убудаваныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID, або ўбудаваны TPM)"
+        "Дазваляе рэгістраваць убудаваныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID, або ўбудаваны TPM)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Вы сапраўды хочаце выдаліць ключ бяспекі ${ name }?"
@@ -7227,16 +7221,16 @@
         "${ totalImported } падзей з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны."
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашай падзеі. Ніводная падзея не была імпартавана."
+        "Падчас шыфравання і дадавання вашай падзеі адбылася памылка. Ніводная падзея не была імпартавана."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашых падзей. Ніводная падзея не была імпартавана."
+        "Падчас шыфравання і дадавання вашых падзей адбылася памылка. Ніводная падзея не была імпартавана."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шыфраванне і дадаванне кантактаў: ${ totalImported }/${ totalToImport }"
@@ -7290,13 +7284,13 @@
         "${ totalImported } кантактаў з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашага кантакту. Ніводны кантакт не быў імпартаваны."
+        "Падчас шыфравання і дадавання вашага кантакту адбылася памылка. Ніводны кантакт не быў імпартаваны."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання кантактаў. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
+        "Падчас шыфравання і дадавання кантактаў адбылася памылка. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашых кантактаў. Ніводны кантакт не быў імпартаваны."
+        "Падчас шыфравання і дадавання вашых кантактаў адбылася памылка. Ніводны кантакт не быў імпартаваны."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Кантакт паспяхова імпартаваны. Імпартаваны кантакт цяпер з'явіцца ў вашым спісе кантактаў."
@@ -8091,7 +8085,7 @@
         "Псеўданімы электроннай пошты працуюць аналагічна адрасам электроннай пошты, але змяншаюць колькасць спама і захоўваюць ваш фактычны адрас электроннай пошты і ідэнтычнасць схаванымі."
       ],
       "An error occurred while communicating with the extension": [
-        "Адбылася памылка падчас сувязі з пашырэннем"
+        "Падчас сувязі з пашырэннем адбылася памылка"
       ],
       "and": [
         "і"
@@ -8100,10 +8094,10 @@
         "Любыя падпапкі будуць выдалены таксама. Аднак лісты, якія захаваны ў папцы ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў папцы \"Уся пошта\"."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Любы чалавек з гэтай спасылкай зможа ўбачыць падрабязнасці падзеі ў гэтым календары, напрыклад, назву, размяшчэнне або ўдзельнікаў."
+        "Любы карыстальнік з гэтай спасылкай зможа ўбачыць падрабязнасці падзеі ў гэтым календары, такія як назва, размяшчэнне або ўдзельнікі."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Любы чалавек з гэтай спасылкай зможа ўбачыць у вашым календары, ці маеце вы вольны час або заняты ўвесь дзень. Аднак, ён не зможа ўбачыць падрабязнасці падзеі, напрыклад, загаловак, размяшчэнне або ўдзельнікаў."
+        "Любы карыстальнік з гэтай спасылкай зможа ўбачыць у вашым календары, ці маеце вы вольны час або заняты ўвесь дзень. Аднак, ён не зможа ўбачыць падрабязнасці падзеі, такія як загаловак, размяшчэнне або ўдзельнікаў."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Любыя карыстальнікі з гэтай спасылкай не змогуць сінхранізаваць або атрымліваць будучыя абнаўленні для вашага календара. Калі вы зноў захочаце даць ім доступ, вам неабходна будзе стварыць новую спасылку."
@@ -8115,10 +8109,10 @@
         "Вы сапраўды хочаце выдаліць гэты каляндар?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Вы сапраўды хочаце выдаліць гэты каляндар? Усе адрасы з якімі вы абагулілі гэты каляндар страцяць доступ да яго."
+        "Вы сапраўды хочаце выдаліць гэты каляндар? Усе адрасы, з якімі вы абагулілі гэты каляндар, страцяць доступ да яго."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Вы сапраўды хочаце выдаліць гэты каляндар? Усе падзеі ў ім будуць выдалены таксама."
+        "Вы сапраўды хочаце выдаліць гэты каляндар? Усе падзеі будуць выдалены з яго."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
         "Вы сапраўды хочаце выдаліць гэты каляндар? Вы зможаце дадаць каляндар са святамі пазней."
@@ -8139,7 +8133,7 @@
         "Вы сапраўды хочаце адхіліць імпартаванне?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
-        "Вы сапраўды хочаце даць гэтаму карыстальніку прывілеі адміністратара?"
+        "Вы сапраўды хочаце даць гэтаму карыстальніку правы адміністратара?"
       ],
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Вы сапраўды хочаце выйсці з групы? Вам неабходна будзе паўторна атрымаць запрашэнне адміністратара групы, калі вы выйдзеце з яе, а потым перадумаеце і захочаце вярнуцца."
@@ -8154,7 +8148,7 @@
         "Вы сапраўды хочаце выдаліць усіх удзельнікаў з гэтай групы?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
-        "Вы ўпэўнены, што хочаце выдаліць дамен ${ boldDomain }?"
+        "Вы сапраўды хочаце выдаліць дамен ${ boldDomain }?"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Папрасіце адміністратара сваёй арганізацыі наладзіць шлюзы."
@@ -8172,19 +8166,19 @@
         "Патрабуецца ўвага"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
-        "Аўтаматычны адказ актыўны кожны месяц з пачатковага па канчатковы час."
+        "Аўтаадказ актыўны кожны месяц з пачатковага па канчатковы час."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
-        "Аўтаматычны адказ актыўны кожны тыдзень з пачатковага па канчатковы час."
+        "Аўтаадказ актыўны кожны тыдзень з пачатковага па канчатковы час."
       ],
       "Auto-reply is active from the start time to the end time.": [
-        "Аўтаматычны адказ актыўны з пачатковага па канчатковы час."
+        "Аўтаадказ актыўны з пачатковага па канчатковы час."
       ],
       "Auto-reply is active until you turn it off.": [
-        "Аўтаматычны адказ актыўны да таго часу, пакуль вы не адключыце яго."
+        "Аўтаадказ актыўны да таго часу, пакуль вы не адключыце яго."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Аўтаматычны адказ заўсёды актыўны ў выбраныя вамі дні тыдня паміж выбранымі гадзінамі."
+        "Аўтаадказ заўсёды актыўны ў выбраныя вамі дні тыдня паміж выбранымі гадзінамі."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Аўтаматычна ачышчайце лісты, якія перамешчаны ў Сметніцу і Спам больш за 30 дзён таму."
@@ -8217,13 +8211,13 @@
         "Вам неабходна ўвесці пароль і стварыць зашыфраваныя ключы для адрасоў перад тым, як актываваць карыстальніка."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
-        "Перад стварэннем гэтага адраса, вам неабходна ўвесці пароль і стварыць для яго ключы шыфравання."
+        "Перад стварэннем гэтага адраса неабходна ўвесці пароль і стварыць для яго ключы шыфравання."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
+        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "Каб вы маглі атрымліваць электронныя лісты для адрасоў вашага карыстальніцкага дамена ў ${ MAIL_APP_NAME }, вам спатрэбіцца дадаць наступныя два запісы MX у кансоль DNS (якія размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен). У нашай базе ведаў вы зможаце знайсці прыклад і некаторыя карысныя парады ${ kbLink }."
+        "Каб вы змаглі атрымліваць электронныя лісты для адрасоў вашага карыстальніцкага дамена ў ${ MAIL_APP_NAME }, вам трэба дадаць наступныя два запісы MX у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Тут вы можаце знайсці прыклад і некалькі карысных парад ${ kbLink }."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перад тым, як пачаць адпраўляць і атрымліваць электронную пошту з вашых новых адрасоў, вам неабходна стварыць ключы шыфравання для іх."
@@ -8238,7 +8232,7 @@
         "Не дазваляе адпраўнікам бачыць ці адкрывалі вы паведамленне."
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Палепшыце ідэнтычнасць вашай арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
+        "Павысце ідэнтычнасць сваёй арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Перанясіце свае паведамленні, кантакты і календары ў ${ BRAND_NAME }."
@@ -9315,7 +9309,7 @@
         "Журналаў пакуль няма."
       ],
       "No payment is required at this time.": [
-        "Зараз аплата не патрабуецца."
+        "У дадзены момант аплата не патрабуецца."
       ],
       "No results found": [
         "Нічога не знойдзена"
@@ -9821,7 +9815,7 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
         "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для вашых адрасоў карыстальніцкага дамена. Функцыя даступна для карыстальнікаў ${ BRAND_NAME } for Business з карыстальніцкім даменам."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
@@ -11651,7 +11645,7 @@
         "Папрасіць удзельнікаў наладзіць 2ФА"
       ],
       "Assertion Consumer Service URL": [
-        "URL-адрас службы сцверджання кліентаў (ACS)"
+        "URL-адрас сэрвісу ACS (Assertion Consumer Service)"
       ],
       "Attach public key": [
         "Далучыць публічны ключ"
@@ -11675,13 +11669,13 @@
         "Аўтавыдаленне непажаданых паведамленняў"
       ],
       "Auto-detect primary time zone": [
-        "Аўтаматычнае вызначэнне асноўнага часавага пояса"
+        "Аўтавызначэнне асноўнага часавага пояса"
       ],
       "Auto-reply": [
-        "Аўтаматычны адказ"
+        "Аўтаадказ"
       ],
       "Auto-unsubscribe": [
-        "Аўтаматычнае скасаванне падпіскі"
+        "Аўтаскасаванне падпіскі"
       ],
       "Automatically save contacts": [
         "Аўтаматычна захоўваць кантакты"
@@ -13149,7 +13143,7 @@
       "Sign in success (awaiting second factor)": [
         "Паспяховы ўваход (чаканне другога фактару)"
       ],
-      "Sign in success (awaiting verify)": [
+      "Sign in success (awaiting verification)": [
         "Паспяховы ўваход (чаканне праверкі)"
       ],
       "Sign out": [
@@ -13630,7 +13624,7 @@
         "Вярнуцца ў дакументы"
       ],
       "Back to files": [
-        "Вярнуцца ў файлы"
+        "Вярнуцца да файлаў"
       ],
       "Back to inbox": [
         "Вярнуцца ва ўваходныя"
@@ -13916,16 +13910,16 @@
         "Праграмы для"
       ],
       "Auto-delete Spam and Trash": [
-        "Аўтаматычнае выдаленне спаму і смецця"
+        "Аўтавыдаленне спаму і смецця"
       ],
       "Auto-reply": [
-        "Аўтаматычны адказ"
+        "Аўтаадказ"
       ],
       "Autofill credit cards (coming soon)": [
         "Аўтазапаўненне крэдытных картак (неўзабаве з'явіцца)"
       ],
       "Automatic email forwarding": [
-        "Аўтаматычная перасылка пошты"
+        "Аўтаперасылка пошты"
       ],
       "Available on all platforms": [
         "Даступна на ўсіх платформах"
@@ -14528,7 +14522,7 @@
         "Забяспечвае доступ да некалькіх сетак адначасова. Напрыклад, вы можаце глядзець фільм з іншай краіны і адначасова атрымліваць мясцовыя вынікі на пошукавыя запыты"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        "Дазваляе вам наладжваць аўтаматычныя адказы (аўтаадказчык) для ўваходных паведамленняў"
+        "Дазваляе наладжваць аўтаматычныя адказы (аўтаадказчык) для ўваходных паведамленняў"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
         "Аўтаматычна выдаляе са сметніцы і спаму паведамленні, якія старэйшыя за 30 дзён"
@@ -14537,7 +14531,7 @@
         "Аўтаматычна перасылаць лісты адпраўленыя на ваш уліковы запіс ${ MAIL_APP_NAME } на любы іншы адрас электроннай пошты."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Масавая рассылка або адпраўка лістоў з дапамогай праграмных сродкаў у дадзены момант не падтрымліваюцца. Мы рэкамендуем для такіх выпадкаў знайсці спецыялізаваны сэрвіс пастаўшчыка паслуг электроннай пошты."
+        "Масавая рэкламная рассылка або адпраўка лістоў з дапамогай праграмных сродкаў у дадзены момант не падтрымліваюцца. Мы рэкамендуем для такіх выпадкаў знайсці спецыялізаваны сэрвіс пастаўшчыка паслуг электроннай пошты."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Выбірайце карыстальніцкі час для атрымання напаміну па электроннай пошце або для атрымання паведамлення"
@@ -14751,10 +14745,10 @@
         "Аўтаматычнае падключэнне"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
-        "Палепшыце прастору сховішча да ${ bundleStorage } на карыстальніка"
+        "Павысце прастору сховішча да ${ bundleStorage } на карыстальніка"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
+        "Павысце агульны аб'ём свайго сховішча да ${ bundleStorage }"
       ],
       "Browser extension": [
         "Пашырэнне для браўзера"
@@ -15785,16 +15779,16 @@
         "Знаходзіцца ў Швейцарыі і адпавядае патрабаванням GDPR"
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і атрымаць скідку ў памеры ${ discount }. Гэта ўсяго на ${ relativePrice } больш, чым вы плаціце цяпер."
+        "Але вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і атрымаць скідку ў памеры ${ discount }. Гэта ўсяго на ${ relativePrice } у месяц больш, чым вы плаціце цяпер."
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "Вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і атрымаць скідку ў памеры ${ discount }."
+        "Але вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і атрымаць скідку ў памеры ${ discount }."
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Але вы можаце разблакіраваць **${ unlockPlanTitle }** і ўсе прэміяльныя функцыі сэрвісаў ${ BRAND_NAME } , палепшыўшы да **${ upsellPlanTitle }** . І гэта ўсяго за ${ relativePrice } у месяц дадатковай платы."
+        "Але вы можаце разблакіраваць **${ unlockPlanTitle }** і ўсе прэміяльныя функцыі сэрвісаў ${ BRAND_NAME }, палепшыўшы да **${ upsellPlanTitle }**. Гэта ўсяго на ${ relativePrice } у месяц больш, чым вы плаціце цяпер."
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Вы можаце разблакіраваць **${ unlockPlanTitle }** і ўсе прэміяльныя функцыі сэрвісаў ${ BRAND_NAME } , палепшыўшы да **${ upsellPlanTitle }**."
+        "Але вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і разблакіраваць **${ unlockPlanTitle }**, а таксама ўсе прэміяльныя функцыі сэрвісаў ${ BRAND_NAME },"
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Працягваючы, вы пагаджаецеся з нашымі ${ termsAndConditionsLink } і ${ privacyPolicyLink }."
@@ -16071,7 +16065,7 @@
         "**Усе вашы існуючыя даныя** (лісты, падзеі, кантакты, файлы, запісы ${ PASS_APP_NAME } і г.д.) **будуць заблакіраваны** і іх можна будзе разблакіраваць толькі з дапамогай вашай **фразы аднаўлення** або вашага **старога пароля**."
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Любы спосаб **двухфактарнай аўтэнтыфікацыі (2ФА)** на ў вашым уліковым запісе будзе адключаны."
+        "Любы спосаб **двухфактарнай аўтэнтыфікацыі (2ФА)** у вашым уліковым запісе будзе адключаны."
       ]
     },
     "passwordless": {
@@ -16210,9 +16204,6 @@
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Для SEPA прымаюцца толькі еўра. Ваша валюта зменена. Выкарыстоўвайце селектар, каб скінуць свой выбар."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
@@ -16281,6 +16272,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
@@ -16544,7 +16538,7 @@
         "Усе прэміяльныя прадукты ${ BRAND_NAME }, які ўключае тарыфны план Duo."
       ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
-        "Найбольш пасуе, калі вам патрэбна сховішча ў памеры ${ maxSpace } і двух удзельнікаў."
+        "Найбольш пасуе, калі вам патрэбна сховішча ў памеры ${ maxSpace } і для двух удзельнікаў."
       ],
       "Great for everyday use and photo backups.": [
         "Ідэальна пасуе для штодзённага выкарыстання і рэзервавання вашых фатаграфій."
@@ -16811,7 +16805,7 @@
         "Дадаць нумар тэлефона для аднаўлення"
       ],
       "Back to Safety Review": [
-        "Вярнуцца ў бяспечны агляд"
+        "Вярнуцца да бяспечнага агляду"
       ],
       "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
         "Па прычыне таго, што вы скінулі пароль ваш бягучы камплект аднаўлення можа быць выкарыстаны толькі для аднаўлення даных, якія створаны перад яго скіданнем."
@@ -17051,7 +17045,7 @@
     },
     "saml: Info": {
       "An error occurred while testing your SSO configuration.": [
-        "Адбылася памылка пры тэсціраванні вашай канфігурацыі SSO."
+        "Падчас тэсціраванні вашай канфігурацыі SSO адбылася памылка."
       ],
       "Details": [
         "Падрабязнасці"
@@ -17703,8 +17697,11 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
-      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
-        "Псеўданімы hide-my-email ${ FREE_PASS_ALIASES } для барацьбы са спамам"
+      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
+        "${ FREE_PASS_ALIASES } псеўданім hide-my-email для барацьбы са спамам",
+        "${ FREE_PASS_ALIASES } псеўданімы hide-my-email для барацьбы са спамам",
+        "${ FREE_PASS_ALIASES } псеўданімаў hide-my-email для барацьбы са спамам",
+        "${ FREE_PASS_ALIASES } псеўданімаў hide-my-email для барацьбы са спамам"
       ],
       "${ maxAddresses } address": [
         "${ maxAddresses } адрас",
@@ -17996,7 +17993,7 @@
         "Адзінае рашэнне для бізнесу, якое:"
       ],
       "The only cloud storage with:": [
-        "Адзінае воблачнае сховішча з:"
+        "Адзінае воблачнае сховішча ў якога ёсць:"
       ],
       "The only email service with:": [
         "Адзіны сэрвіс электроннай пошты з:"
@@ -18977,13 +18974,13 @@
         "Любыя карыстальніцкія дамены электроннай пошты будуць адключаны"
       ],
       "Automatic email forwarding": [
-        "Аўтаматычная перасылка электроннай пошты"
+        "Аўтаперасылка электроннай пошты"
       ],
       "Back up photos from your devices": [
         "Рэзерваваць фатаграфіі з вашай прылады"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты ў вашым уласным дамене."
+        "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты са сваім уласным даменам."
       ],
       "Cancel subscription": [
         "Скасаваць падпіску"
@@ -19180,7 +19177,7 @@
         "і яшчэ 15 прэміяльных функцый"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+        "Аўтаперасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Папярэджанне ўцечкі даных ${ strongArgument }"
@@ -19218,10 +19215,10 @@
         "Вы ўпэўнены?"
       ],
       "Auto-pay is disabled": [
-        "Аўтаматычная аплата адключана"
+        "Аўтааплата адключана"
       ],
       "Auto-pay is enabled": [
-        "Аўтаматычная аплата ўключана"
+        "Аўтааплата ўключана"
       ],
       "Disable": [
         "Адключыць"
@@ -19277,10 +19274,10 @@
         "Прывілеі адміністратара адноўлены"
       ],
       "Auto-reply disabled": [
-        "Аўтаматычны адказ адключаны"
+        "Аўтаадказ адключаны"
       ],
       "Auto-reply updated": [
-        "Аўтаматычны адказ абноўлены"
+        "Аўтаадказ абноўлены"
       ],
       "Backup password updated": [
         "Рэзервовы пароль абноўлены"
@@ -19976,7 +19973,7 @@
         "Аўтавыдаленне ў актыўным стане"
       ],
       "Auto-reply": [
-        "Аўтаматычны адказ"
+        "Аўтаадказ"
       ],
       "Automatically sign outgoing messages?": [
         "Падпісваць выходныя паведамленні аўтаматычна?"
@@ -21666,7 +21663,7 @@
     },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Аўтаматычна падпісвайце ўсе свае выходныя паведамленні, каб карыстальнікі маглі праверыць іх сапраўднасць. Гэта дзеянне звязана з прадвызначанымі наладамі PGP, якія вы можаце сканфігураваць пазней."
+        "Аўтаматычна падпісвайце ўсе свае выходныя паведамленні, каб карыстальнікі маглі праверыць іх сапраўднасць. Гэта дзеянне звязана з прадвызначанымі наладамі PGP, якія вы можаце сканфігурыраваць пазней."
       ]
     },
     "Tooltip: PM signature locked": {
@@ -21724,7 +21721,7 @@
         "Банкаўскі перавод"
       ],
       "Bitcoin": [
-        "Біткойн"
+        "Bitcoin"
       ],
       "Cash": [
         "Наяўныя"
@@ -22153,10 +22150,10 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах"
       ],
       "Auto-selects from ${ numberOfCountries } country": [
-        "Аўтаматычны выбар з ${ numberOfCountries } краіны",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін"
+        "Аўтавыбар з ${ numberOfCountries } краіны",
+        "Аўтавыбар з ${ numberOfCountries } краін",
+        "Аўтавыбар з ${ numberOfCountries } краін",
+        "Аўтавыбар з ${ numberOfCountries } краін"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Серверы ў больш, чым ${ numberOfCountries } краіне",
@@ -22347,7 +22344,7 @@
     },
     "wallet_signup_2024:Navigation": {
       "Back to wallet": [
-        "Вярнуцца ў кашалёк"
+        "Вярнуцца да кашалька"
       ]
     },
     "wallet_signup_2024:Wallet Settings": {

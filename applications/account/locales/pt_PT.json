@@ -970,9 +970,6 @@
       "Next month": [
         "Mês seguinte"
       ],
-      "Next page": [
-        "Página seguinte"
-      ],
       "No": [
         "Não"
       ],
@@ -1017,9 +1014,6 @@
       ],
       "Previous month": [
         "Mês anterior"
-      ],
-      "Previous page": [
-        "Página anterior"
       ],
       "Publish changes": [
         "Publicar as alterações"
@@ -1981,6 +1975,19 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Estou fora do escritório com acesso limitado ao meu e-mail."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar a subscrição"
+      ],
+      "Keep subscription": [
+        "Manter a subscrição"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "A sua avaliação gratuita termina em ${ timeRemaining }."
       ]
     },
     "Badge for domain": {
@@ -9615,8 +9622,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "O envio de SMTP permite que serviços de terceiros ou dispositivos enviem e-mail através do${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Esta funcionalidade só está disponível para os utilizadores do ${ BRAND_NAME } for Business com domínios personalizados."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "O envio de SMTP permite que serviços de terceiros ou dispositivos enviem e-mail através do${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Esta funcionalidade só está disponível para os utilizadores do ${ BRAND_NAME } para utilizadores Business com domínios personalizados."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "A submissão SMTP permite que serviços ou dispositivos de terceiros enviem e-mails através de ${ MAIL_APP_NAME } para os seus endereços de domínio personalizados. Para solicitar acesso, ${ createTicket } e descreva os seus casos de utilização, os domínios personalizados que gostaria de utilizar e os volumes de e-mails previstos por hora e por dia."
@@ -11435,7 +11442,7 @@
         "Palavra-passe de backup"
       ],
       "Beta": [
-        "Versão Beta"
+        "Versão beta"
       ],
       "Billing cycle": [
         "Ciclo de faturação"
@@ -12161,7 +12168,7 @@
         "Segunda palavra-passe"
       ],
       "Select Linux package format": [
-        "Selecionar o formato do pacote Linux"
+        "Selecione o formato do pacote Linux"
       ],
       "Select Linux platform": [
         "Selecionar a distribuição Linux"
@@ -12887,7 +12894,7 @@
       "Sign in success (awaiting second factor)": [
         "A sessão foi iniciada (à espera do segundo fator)."
       ],
-      "Sign in success (awaiting verify)": [
+      "Sign in success (awaiting verification)": [
         "A sessão foi iniciada (à espera de verificação)."
       ],
       "Sign out": [
@@ -15865,9 +15872,6 @@
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis noutras moedas."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Apenas o euro é aceite para os pagos SEPA. A sua moeda foi alterada. Utilize o seletor para reverter a sua escolha."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative primeiro a sua subscrição antes para diminuir o número de complementos."
       ],
@@ -15928,6 +15932,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Será faturado ${ amountToCharge } com o método de pagamento selecionado."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "A sua moeda foi alterada para euros (€) porque as transferências bancárias SEPA apenas aceitam pagamentos em euros."
       ],
       "Your payment is still being processed": [
         "O seu pagamento ainda está a ser processado."
@@ -17316,8 +17323,9 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
-      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
-        "Aliases do Hide-my-email do ${ FREE_PASS_ALIASES } para combater spam"
+      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
+        "${ FREE_PASS_ALIASES } alias do hide-my-email para combater o spam",
+        "${ FREE_PASS_ALIASES } alias do hide-my-email para combater o spam"
       ],
       "${ maxAddresses } address": [
         "${ maxAddresses } endereço",
