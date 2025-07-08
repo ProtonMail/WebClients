@@ -50,6 +50,7 @@ enum CommonFeatureFlag {
     LumoTooling = 'LumoTooling',
     LumoHighLoad = 'LumoHighLoad',
     LumoDeactivateGuestModeFrontend = 'LumoDeactivateGuestModeFrontend',
+    ScheduleInAdvance = 'ScheduleInAdvance',
 }
 
 enum AccountFlag {

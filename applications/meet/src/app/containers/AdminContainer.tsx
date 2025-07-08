@@ -12,6 +12,7 @@ export const AdminContainer = () => {
 
     return (
         <div className="w-full h-full flex items-center justify-center">
+            {/* @ts-expect-error */}
             <Route path={`${path}/create`} render={() => <CreateContainer onMeetingCreated={setMeetingDetails} />} />
             <Route
                 path={`${path}/details`}

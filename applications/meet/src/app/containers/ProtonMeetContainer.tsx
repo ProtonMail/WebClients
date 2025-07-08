@@ -15,6 +15,7 @@ import { useMeetingJoin } from '../hooks/useMeetingJoin';
 import { useParticipantNameMap } from '../hooks/useParticipantNameMap';
 import { CustomPasswordState } from '../response-types';
 import { LoadingState, type ParticipantSettings } from '../types';
+import { getMeetingLink } from '../utils/getMeetingLink';
 import { MeetContainer } from './MeetContainer';
 import { PrejoinContainer } from './PrejoinContainer/PrejoinContainer';
 
@@ -31,7 +32,6 @@ interface ProtonMeetContainerProps {
 
 export const ProtonMeetContainer = ({ guestMode = false, instantMeeting = false }: ProtonMeetContainerProps) => {
     const history = useHistory();
-
     const createInstantMeeting = useCreateInstantMeeting();
 
     const [decryptionReadinessStatus, setDecryptionReadinessStatus] = useState(
@@ -178,7 +178,7 @@ export const ProtonMeetContainer = ({ guestMode = false, instantMeeting = false 
 
             await handleJoin(participantSettings, id);
 
-            history.push(`/join/${id}#${passwordBase}`);
+            history.push(getMeetingLink(id, passwordBase));
         },
         [createInstantMeeting, handleJoin, getRoomName, guestMode]
     );
@@ -224,7 +224,10 @@ export const ProtonMeetContainer = ({ guestMode = false, instantMeeting = false 
         return null;
     }
 
-    const shareLink = `${window.location.origin}/join/${meetingDetails.meetingId}#${meetingDetails.meetingPassword}`;
+    const shareLink = `${window.location.origin}${getMeetingLink(
+        meetingDetails.meetingId,
+        meetingDetails.meetingPassword
+    )}`;
 
     return (
         <DevicePermissionsContext.Provider

@@ -8,7 +8,7 @@ import { CryptoProxy } from '@proton/crypto';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 
-import { CustomPasswordState, RecurringType } from '../../response-types';
+import { CustomPasswordState } from '../../response-types';
 import { useCreateMeeting } from './useCreateMeeting';
 
 vi.mock('@proton/shared/lib/srp', () => ({
@@ -75,7 +75,7 @@ describe('useCreateMeeting', () => {
             meetingName: 'test meeting',
             startTime: '2025-06-23T00:00:00Z',
             endTime: '2025-06-23T01:00:00Z',
-            recurring: false,
+            recurrence: null,
             timeZone: 'UTC',
             customPassword: '',
         };
@@ -92,8 +92,8 @@ describe('useCreateMeeting', () => {
                 data: expect.objectContaining({
                     StartTime: meetingData.startTime,
                     EndTime: meetingData.endTime,
-                    RRule: meetingData.recurring ? RecurringType.RECURRING : RecurringType.SCHEDULED,
-                    TimeZone: meetingData.timeZone,
+                    RRule: meetingData.recurrence,
+                    Timezone: meetingData.timeZone,
                     CustomPassword: CustomPasswordState.NO_PASSWORD,
                     AddressID: 'test-address-id',
                 }),
@@ -101,7 +101,7 @@ describe('useCreateMeeting', () => {
         );
 
         expect(meeting).toEqual({
-            meetingLink: `/join/${meetingLinkName}#mockpassword`,
+            meetingLink: `/join/id-${meetingLinkName}#pwd=mockpassword`,
             id: meetingLinkName,
         });
     });

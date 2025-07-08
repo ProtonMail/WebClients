@@ -1,0 +1,11 @@
+.time-input-active-option {
+	background-color: var(--interaction-norm-minor-2) !important;
+	color: var(--text-norm) !important;
+}
+
+.time-input-option {
+	&:hover {
+		background-color: var(--interaction-norm-minor-3) !important;
+		color: var(--text-norm) !important;
+	}
+}

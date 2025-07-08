@@ -3,8 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { IcCheckmark, IcCross } from '@proton/icons';
+import { IcCross } from '@proton/icons';
 
+import { CopyButton } from '../../atoms/CopyButton/CopyButton';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 
 import './MeetingReadyPopup.scss';
@@ -72,17 +73,7 @@ export const MeetingReadyPopup = ({ meetingLink }: MeetingReadyPopupProps) => {
                 </div>
 
                 <div className="absolute bottom-custom w-full px-6" style={{ '--bottom-custom': '1rem' }}>
-                    <Button
-                        className="copy-meeting-link-button mx-auto w-full rounded-full border-none py-4 flex justify-center items-center gap-1"
-                        size="large"
-                        onClick={() => {
-                            void navigator.clipboard.writeText(meetingLink);
-                            setShowNotifications(true);
-                        }}
-                    >
-                        {showNotifications ? c('l10n_nightly Action').t`Copied` : c('l10n_nightly Action').t`Copy link`}
-                        {showNotifications && <IcCheckmark size={5} />}
-                    </Button>
+                    <CopyButton text={meetingLink} />
                 </div>
             </div>
         </div>

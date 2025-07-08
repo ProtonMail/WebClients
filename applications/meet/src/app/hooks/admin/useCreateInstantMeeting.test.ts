@@ -88,7 +88,7 @@ describe('useCreateMeeting', () => {
                     StartTime: null,
                     EndTime: null,
                     RRule: null,
-                    TimeZone: null,
+                    Timezone: null,
                     CustomPassword: CustomPasswordState.NO_PASSWORD,
                     AddressID: 'test-address-id',
                     Type: MeetingType.INSTANT,

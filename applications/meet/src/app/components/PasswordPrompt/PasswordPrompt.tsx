@@ -91,6 +91,7 @@ export const PasswordPrompt = ({ onPasswordSubmit }: PasswordPromptProps) => {
                                 color="norm"
                                 size="large"
                                 onClick={handleSubmit}
+                                disabled={!password}
                             >
                                 {c('l10n_nightly Action').t`Continue`}
                             </Button>

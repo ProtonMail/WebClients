@@ -51,3 +51,16 @@
 		border: none !important;
 	}
 }
+
+.continue-button {
+	&:hover {
+		color: var(--text-invert) !important;
+	}
+}
+
+.meeting-id-field {
+	&:focus-within::after {
+		box-shadow: none !important;
+		border: none !important;
+	}
+}
