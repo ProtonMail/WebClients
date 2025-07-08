@@ -1233,6 +1233,19 @@
         "Eleve a produtividade do e-mail a novos níveis. Deixe que o ${ BRAND_NAME } Scribe o ajude a escrever, responder e revisar os seus e-mails."
       ]
     },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar a subscrição"
+      ],
+      "Keep subscription": [
+        "Manter a subscrição"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "A sua avaliação gratuita termina em ${ timeRemaining }."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Desativado"
@@ -7446,7 +7459,7 @@
       "Sign in success (awaiting second factor)": [
         "A sessão foi iniciada (à espera do segundo fator)."
       ],
-      "Sign in success (awaiting verify)": [
+      "Sign in success (awaiting verification)": [
         "A sessão foi iniciada (à espera de verificação)."
       ],
       "Sign out": [
@@ -9290,9 +9303,6 @@
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis noutras moedas."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Apenas o euro é aceite para os pagos SEPA. A sua moeda foi alterada. Utilize o seletor para reverter a sua escolha."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative primeiro a sua subscrição antes para diminuir o número de complementos."
       ],
@@ -9353,6 +9363,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Será faturado ${ amountToCharge } com o método de pagamento selecionado."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "A sua moeda foi alterada para euros (€) porque as transferências bancárias SEPA apenas aceitam pagamentos em euros."
       ],
       "Your payment is still being processed": [
         "O seu pagamento ainda está a ser processado."
