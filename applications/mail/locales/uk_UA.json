@@ -3620,6 +3620,12 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Автоматично сортувати ваші вхідні повідомлення, перш ніж вони потрапляють до вхідних."
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Приєднайте вашу CRM, сайт, принтери і т.д."
+      ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Створюйте стільки міток або тек, скільки вам потрібно щоб зберігати вхідну скриньку охайною."
       ],
@@ -3640,6 +3646,9 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Отримуйте сповіщення, якщо ваш пароль або інші дані отримали витік зі стороннього сервісу."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Допоможіть вашій команді надійно зберігати паролі до конфіденційної ділової та клієнтської інформації."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
@@ -3813,6 +3822,11 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Ваша підписка ${ PLAN_NAMES[PLANS.PASS] } має спеціальну ціну ${ price } на рік. Перейшовши на тарифний план Безплатний, ви назавжди втратите знижку, навіть якщо в майбутньому знову перейдете на нього."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Завантажити для Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4492,8 +4506,8 @@
       "Username must end with a letter or digit": [
         "Ім'я користувача повинно закінчуватися літерою або цифрою"
       ],
-      "Wrong second password": [
-        "Неправильний другий пароль"
+      "Wrong password": [
+        "Неправильний пароль"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачу",
@@ -5938,12 +5952,6 @@
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити.",
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити."
       ],
-      "${ n } newsletter": [
-        "${ n } Розсилка, вісник",
-        "${ n } Розсилки, вісники",
-        "${ n } Розсилки, вісники",
-        "${ n } Розсилки, вісники"
-      ],
       "${ n } unread conversation": [
         "${ n } непрочитана розмова",
         "${ n } непрочитані розмови",
@@ -6111,6 +6119,9 @@
       ],
       "Active": [
         "Активні"
+      ],
+      "Ad targeting": [
+        "Націлювання реклами"
       ],
       "Add image URL": [
         "Додати URL-адресу зображення"
@@ -7984,6 +7995,9 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Ваша наступна дата виставлення рахунку — ${ renewalTime }. Якщо вам потрібна негайна зміна тарифу, зверніться до служби підтримки."
       ],
+      "Your online activity is protected": [
+        "Ваша онлайн активність захищена"
+      ],
       "Your password was leaked:": [
         "Ваш пароль було викрито:"
       ],
@@ -8628,12 +8642,6 @@
       "Move to Inbox": [
         "Перемістити до вхідних"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "Переміщено ${ count } повідомлення до ${ labelName }.",
-        "Переміщено ${ count } повідомлень до ${ labelName }.",
-        "Переміщено ${ count } повідомлення до ${ labelName }.",
-        "Переміщено ${ count } повідомлення до ${ labelName }."
-      ],
       "Name": [
         "Назва"
       ],
@@ -8994,6 +9002,9 @@
       "Folders": [
         "Теки"
       ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Як увімкнути ${ PROTON_SENTINEL_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Як оплатити за допомогою Bitcoin?"
       ],
@@ -9086,6 +9097,9 @@
       ],
       "Trash": [
         "Смітник"
+      ],
+      "Types of recovery methods": [
+        "Типи способів відновлення"
       ],
       "What’s this?": [
         "Що це?"
@@ -13295,6 +13309,9 @@
       "Deleting contacts": [
         "Видалення контактів"
       ],
+      "Desktop": [
+        "Настільний"
+      ],
       "Distraction-free emailing": [
         "Надсилайте листи, не відволікаючись"
       ],
@@ -13306,6 +13323,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Понизити до ${ downgradedPlanName }?"
+      ],
+      "Download the app": [
+        "Завантажити програму"
       ],
       "Edit contact": [
         "Змінити контакт"
@@ -13390,6 +13410,9 @@
       ],
       "High security for your account": [
         "Високий рівень безпеки для вашого облікового запису"
+      ],
+      "How does it all work?": [
+        "Як це все працює?"
       ],
       "How to update your email address": [
         "Як оновити вашу адресу електронної пошти"
@@ -13786,6 +13809,9 @@
       ],
       "Upgrade complete!": [
         "Оновлення завершено!"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
       ],
       "Verification error": [
         "Помилка підтвердження"

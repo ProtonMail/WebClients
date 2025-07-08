@@ -1164,9 +1164,6 @@
       "Save": [
         "Uložiť"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Uložiť do ${ DRIVE_APP_NAME }"
-      ],
       "Saving${ ellipsis }": [
         "Ukladanie${ ellipsis }"
       ],
@@ -1951,6 +1948,19 @@
       ],
       "Sender verification passed": [
         "Overenie odosielateľa bolo úspešné"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Zrušiť predplatné"
+      ],
+      "Keep subscription": [
+        "Ponechať predplatné"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Vaša bezplatná skúšobná verzia skončí o ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -4894,8 +4904,8 @@
       "Username must end with a letter or digit": [
         "Používateľské meno musí končiť písmenom alebo číslom"
       ],
-      "Wrong second password": [
-        "Nesprávne druhé heslo"
+      "Wrong password": [
+        "Nesprávne heslo"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcovi",
@@ -9466,11 +9476,8 @@
       "Mark as": [
         "Označiť ako"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "${ unreadCount } správa označená ako prečítaná",
-        "${ unreadCount } správy označené ako prečítané",
-        "${ unreadCount } správ označených ako prečítané",
-        "${ unreadCount } správ označených ako prečítané"
+      "Marked as read": [
+        "Označené ako prečítané"
       ],
       "Message:": [
         "Správa:"
@@ -9490,23 +9497,14 @@
       "Move to Inbox": [
         "Presunúť do Doručených"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "${ count } správa presunutá do ${ labelName }.",
-        "${ count } správy presunuté do ${ labelName }.",
-        "${ count } správ presunutých do ${ labelName }.",
-        "${ count } správ presunutých do ${ labelName }."
+      "Moved to ${ labelName }": [
+        "Presunuté do ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "${ count } správa presunutá do Archívu",
-        "${ count } správy presunuté do Archívu",
-        "${ count } správ presunutých do Archívu",
-        "${ count } správ presunutých do Archívu"
+      "Moved to Archive": [
+        "Presunuté do archívu"
       ],
-      "Moved ${ count } message to Trash.": [
-        "${ count } správa presunutá do Koša",
-        "${ count } správy presunuté do Koša",
-        "${ count } správ presunutých do Koša",
-        "${ count } správ presunutých do Koša"
+      "Moved to Trash": [
+        "Presunuté do koša"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
@@ -9823,11 +9821,6 @@
       ],
       "To: ${ to }": [
         "Komu: ${ to }"
-      ]
-    },
-    "Labels": {
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Tu si môžete zobraziť a spravovať odber noviniek a odber z emailového zoznamu."
       ]
     },
     "Landmarks": {
@@ -12018,9 +12011,6 @@
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Pre SEPA sa akceptuje len euro. Vaša mena bola zmenená. Na vrátenie pôvodnej voľby použite výber."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
@@ -12080,6 +12070,9 @@
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
@@ -14986,9 +14979,6 @@
       ],
       "No breaches detected": [
         "Nebol zistený únik"
-      ],
-      "No mail subscriptions": [
-        "Žiadne zasielanie pravidelných emailov"
       ],
       "No need to empty the trash": [
         "Kôš nie je potrebné vyprázdniť"

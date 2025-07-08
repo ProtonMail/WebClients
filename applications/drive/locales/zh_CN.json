@@ -1349,6 +1349,14 @@
         "不支持的日程"
       ]
     },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "取消订阅"
+      ],
+      "Keep subscription": [
+        "继续订阅"
+      ]
+    },
     "Badge": {
       "Invited": [
         "已被邀请"
@@ -2940,17 +2948,6 @@
         "您的 ${ PLAN_NAMES[PLANS.PASS] } 订阅特价为每年 ${ price }。如果降级为免费计划，您将永久失去折扣，即使将来再次升级也是如此。"
       ]
     },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "下载 Linux 版"
-      ],
-      "Download for macOS": [
-        "下载 macOS 版"
-      ],
-      "Download for Windows": [
-        "下载 Windows 版"
-      ]
-    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "在 ${ DRIVE_SHORT_APP_NAME } 中打开"
@@ -3487,9 +3484,6 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
-      ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "无法加载VPN控制面板。请检查你的网络连接，然后重试。"
       ],
       "Unable to set photo as cover": [
         "无法将照片设为封面"
@@ -4531,20 +4525,11 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } 已存在于该路径。"
       ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } 正在隐藏您的 IP 地址，网站因此无法识别您的身份。"
-      ],
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/月)"
-      ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Auto-connect**：在您开启设备后立即启动并连接至 VPN。"
-      ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Kill switch**：当 VPN 意外断开时，立即阻断互联网连接，防止数据泄漏。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 特权存储空间"
@@ -4564,29 +4549,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "远程办公时，安全连接是必不可少的第一道防线。VPN 不仅能帮助企业数据抵御网络威胁，更能为您的日常工作构筑隐私屏障，让敏感信息始终处于加密保护之中。"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "\"一个用户\"指联系着一个用户名、邮箱和个体的账号。"
-      ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "VPN 会加密您的网络连接并隐藏真实 IP 地址，使第三方极难追踪或监控您的在线活动。"
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "Proton 旗下的 VPN 服务会隐藏您的真实 IP 地址，并对浏览行为进行端到端加密，使网站、广告商和网络服务提供商无法通过长期追踪建立您的数字画像。\n"
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "VPN 是您的设备与互联网之间的安全加密通道。它能隐藏您的位置和在线活动，避免被互联网服务提供商（ISP）及您访问的网站追踪。"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "账户因欠费已被限制使用，请联系机构管理员。"
       ],
       "Account successfully updated": [
         "账户已成功更新"
-      ],
-      "Ad targeting": [
-        "广告定位"
       ],
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
@@ -4596,9 +4566,6 @@
       ],
       "Admin account allocation": [
         "分配管理员账户"
-      ],
-      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "广告商会追踪您的浏览记录来展示定向广告。${ VPN_APP_NAME } 能屏蔽追踪器和广告，从而加快连接速度，提升您的上网体验。"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "由 AI 驱动的助手，帮助您快速、轻松地制作出更好的电子邮件。"
@@ -4774,9 +4741,6 @@
       "Conflict": [
         "冲突"
       ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "连接到 ${ VPN_APP_NAME } 实现隐私浏览"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "联系人已加入 ${ contactGroupName } 群组"
       ],
@@ -4848,6 +4812,9 @@
       ],
       "Dedicated servers": [
         "专用服务器"
+      ],
+      "Dedicated VPN servers": [
+        "专用 VPN 服务器"
       ],
       "default email address": [
         "首选邮箱地址"
@@ -5041,9 +5008,6 @@
       "from the version history?": [
         "版本历史记录中永久删除吗？"
       ],
-      "Geoblocking": [
-        "地理限制"
-      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "获取应用程序以备份手机中的照片或将其上传到此处。"
       ],
@@ -5058,9 +5022,6 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "请先转到“我的文件”并上传一些文件。"
-      ],
-      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "政府和网络供应商可以监视您的在线活动。Proton 通过隐藏您的真实 IP 地址并加密网络活动，让您的浏览私密无忧。"
       ],
       "here": [
         "此处"
@@ -5116,9 +5077,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
       ],
-      "In restrictive countries": [
-        "在网络受限的国家"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步中，您将能够使用比特币地址提交存款。"
       ],
@@ -5160,9 +5118,6 @@
       ],
       "Items moved to the trash will stay here until deleted": [
         "移至回收站的项目将留在这里直至被删除"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "建议您始终使用VPN，但在以下情况下，网络安全威胁可能最为严重："
       ],
       "It’s easy and secure": [
         "简便与安全兼得"
@@ -5272,9 +5227,6 @@
       "More": [
         "其他选项"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "大多数公共 WiFi 网络都是安全的，但部分网络缺乏防护措施，使您面临网络威胁。通过 VPN 加密技术，您的网络活动将获得全程保护。"
-      ],
       "Moving files": [
         "正在移动文件"
       ],
@@ -5323,9 +5275,6 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "并非所有文件都已传输。请尝试重新上传或下载文件。"
       ],
-      "Not connected": [
-        "未连接"
-      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "请注意：安装过 ${ DRIVE_APP_NAME } 的设备上仍可能存在本地数据。"
       ],
@@ -5335,6 +5284,9 @@
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
       ],
+      "Number of dedicated VPN servers in the organization": [
+        "组织中的专用 VPN 服务器数量"
+      ],
       "Numbers": [
         "数字"
       ],
@@ -5343,9 +5295,6 @@
       ],
       "of": [
         "，共"
-      ],
-      "On public WiFi networks": [
-        "在公共 WiFi 网络环境下"
       ],
       "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
         "此过程完成后，您会在一个名为 \"自动恢复（今天的日期）\" 的新文件夹中找到已恢复数据的副本。该数据副本不计入存储配额。"
@@ -5527,9 +5476,6 @@
       "Primary": [
         "主要"
       ],
-      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "隐私浏览模式（或称「无痕模式」）仅能隐藏您在设备上的活动痕迹。它能阻止浏览器保存历史记录和 Cookie，但无法让您真正隐身。您的互联网服务提供商、网络管理员以及访问的网站仍可追踪您的在线行为。"
-      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "隐私搜索已启用，您可以关闭对话框并开始搜索文件和文件夹了。"
       ],
@@ -5583,9 +5529,6 @@
       ],
       "Scan issue": [
         "扫描问题"
-      ],
-      "Scan the QR code with your mobile device": [
-        "请使用移动设备扫描二维码"
       ],
       "Search cannot be enabled in this browser": [
         "此浏览器无法启用搜索功能"
@@ -5686,26 +5629,17 @@
       "Some files failed to upload. Try uploading the files again.": [
         "某些文件上传失败，请重试。"
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "某些国家/地区会屏蔽或限制访问某些网站。Proton VPN 能够帮助您突破网络审查，同时保护您的网络活动和身份隐私。"
-      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您的某些文件无法再访问，请恢复对其的访问权限。${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "本相册中的某些照片不会保存到您的时间轴。删除此相册将永久删除这些照片。"
       ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "某些网站和流媒体服务会根据您所在的地区屏蔽内容。Proton VPN 可帮助您绕过这些地域限制，让您随时随地自由访问互联网。"
-      ],
       "Something went wrong, please try again later.": [
         "出错了，请稍后再试。"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "开始与联系人分享，并将其用于在线服务。"
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "请启用以下 VPN 设置，即可轻松保持网络连接："
       ],
       "Storage allocated to other users in this organisation": [
         "此组织其他成员的存储空间分配量"
@@ -5730,9 +5664,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "您的账户等级即将失效：${ byDate } 前重新激活即可继续享受 ${ planName } 权益。${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "监控"
       ],
       "Symbols (#$&)": [
         "符号 (#$&)"
@@ -5824,14 +5755,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "此链接是通过旧版本网盘创建的，因此无法更改。如需调整设置，请删除此链接后重新创建。"
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "这意味着您的互联网服务提供商和您访问的网站都无法将您的个人身份信息与在线行为相关联。"
-      ],
       "This month": [
         "这个月"
-      ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "这段独特的识别码可能会被网站和互联网服务提供商（ISP）利用，将您的地理位置和浏览历史记录与您的设备相关联，从而导致您的隐私信息被追踪。"
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "这只会删除相册。您的照片将保留在时间轴中。此操作无法撤销。"
@@ -5844,9 +5769,6 @@
       ],
       "This will permanently delete the selected items you uploaded.": [
         "这将永久删除您上传的选定项目。"
-      ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
-        "这将从 ${ DRIVE_APP_NAME } 中移除同步设备 ${ deviceName }，并从 ${ DRIVE_APP_NAME } 中移除其所有数据。添加到“我的电脑”中的文件夹将停止同步。"
       ],
       "This will replace the existing file with the folder": [
         "这将用该文件夹替换现有文件"
@@ -5907,9 +5829,6 @@
       ],
       "Total VPN connections": [
         "VPN 同时在线设备总数"
-      ],
-      "Tracking": [
-        "追踪中"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "已取消文件“${ name }”的传输"
@@ -6010,9 +5929,6 @@
       "Visa Secure logo": [
         "Visa Secure 图标"
       ],
-      "VPN IP": [
-        "VPN IP 地址"
-      ],
       "Want to sync files faster?": [
         "想要更快地同步文件吗？"
       ],
@@ -6069,12 +5985,6 @@
       ],
       "What would you like to do?": [
         "您想要做些什么？"
-      ],
-      "When working remotely": [
-        "当您远程办公时"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "当您连接 VPN 时，它会通过加密技术隐藏您的 IP 地址（即分配给您设备的唯一识别代码）。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "当您设置双因素身份验证时，我们会提供恢复代码，当您无法访问身份验证应用时，可以使用这些代码登录。"
@@ -6274,15 +6184,6 @@
       "Your information was found on ${ displayedDate }": [
         "您的信息在 ${ displayedDate } 找到"
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "您的网络服务提供商能够监控您的在线活动，有时甚至会出售您的数据，更可能限制您访问特定网站的能力。"
-      ],
-      "Your IP": [
-        "您的 IP 地址"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "您的真实 IP 地址已暴露，他人可借此追踪您的在线活动。"
-      ],
       "Your login information will not be saved after the import is completed.": [
         "导入完成后我们不会留存您的账号和密码。"
       ],
@@ -6292,17 +6193,11 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "您的下一个账单日期是 ${ renewalTime }。如果您需要立即更改套餐，请联系支持部门。"
       ],
-      "Your online activity is protected": [
-        "您的在线活动受到保护"
-      ],
       "Your password was leaked:": [
         "您的密码已泄露："
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "您的实际地理位置可能被他人获取，进而用于限制您访问互联网。"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "您的计划仅限 10 个版本，最长 7 天"
@@ -6324,6 +6219,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "您将在 ${ boldEndDate } 失去对 ${ boldPlanTitle } 的访问权限。"
@@ -7009,15 +6907,6 @@
       ],
       "Your alias": [
         "您的别名"
-      ],
-      "Your IP": [
-        "您的 IP 地址"
-      ],
-      "Your ISP": [
-        "您的网络运营商"
-      ],
-      "Your location": [
-        "您的位置"
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
@@ -8761,8 +8650,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 优惠今天到期！"
       ],
+      "Don’t show this again": [
+        "不再显示此内容"
+      ],
       "Don’t show this offer again": [
         "不再显示此优惠"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "开通 ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "仅需 ${ pricingTitle } 即可获得 Drive Plus"
@@ -8816,9 +8711,20 @@
         "您的订阅即将续订"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "已加密的密码管理器"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 多项高级功能"
+      ],
+      "500 GB secure storage": [
+        "500 GB 安全存储空间"
+      ],
+      "Advanced threat protection": [
+        "高级威胁保护"
       ],
       "Custom email domain": [
         "自定义电子邮件域"
@@ -8840,6 +8746,9 @@
       ],
       "Storage": [
         "存储"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "遍布 110 多个国家/地区的超快 VPN 服务器"
       ]
     },
     "Onboarding": {
@@ -9150,6 +9059,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "银行转账"
       ],
@@ -9240,6 +9152,9 @@
       ],
       "Timeout exceeded": [
         "超时"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
@@ -9847,8 +9762,20 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "安全浏览"
+      ],
+      "Get unlimited aliases": [
+        "获取无限量邮箱别名"
+      ],
       "Go to subscription plans": [
         "查看账户等级"
+      ],
+      "Keep passwords safe": [
+        "确保密码安全"
+      ],
+      "Unblock streaming content": [
+        "解锁流媒体内容"
       ],
       "Upgrade": [
         "升级账户"
@@ -9926,6 +9853,15 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "访问世界范围内的流媒体服务"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "获得 500 GB 以安全地存储您的所有文件和照片"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "使用 Sentinel 保护您的账户免受威胁"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "一次性开通两年 ${ planName } 更加优惠"
       ]
@@ -11010,9 +10946,6 @@
       "Deleting contacts": [
         "删除联系人中"
       ],
-      "Desktop": [
-        "桌面版"
-      ],
       "Discard": [
         "放弃"
       ],
@@ -11030,9 +10963,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "下载 ${ DRIVE_APP_NAME } 应用"
-      ],
-      "Download the app": [
-        "下载 APP"
       ],
       "Download unverified file?": [
         "下载未经验证的文件？"
@@ -11115,9 +11045,6 @@
       "Found ${ searchView.numberOfResults } result": [
         "找到${ searchView.numberOfResults }条结果"
       ],
-      "Get more from your VPN": [
-        "从您的 VPN 获取更多信息"
-      ],
       "Get the apps": [
         "下载应用"
       ],
@@ -11138,9 +11065,6 @@
       ],
       "Hm, we couldn't find that one": [
         "额，我们找不到那个"
-      ],
-      "How does it all work?": [
-        "这一切是如何运作的呢？"
       ],
       "Human verification": [
         "身份验证"
@@ -11181,9 +11105,6 @@
       "Location": [
         "位置"
       ],
-      "Make a secure connection your default": [
-        "将安全连接设为默认首选"
-      ],
       "Manage secure link": [
         "管理安全链接"
       ],
@@ -11198,9 +11119,6 @@
       ],
       "Minicalendar": [
         "迷你日历"
-      ],
-      "Mobile": [
-        "移动版"
       ],
       "Modified": [
         "修改时间"
@@ -11318,9 +11236,6 @@
       ],
       "Preview": [
         "预览"
-      ],
-      "Private browsing vs VPN": [
-        "隐私浏览模式与 VPN 对比"
       ],
       "Processing...": [
         "正在处理..."
@@ -11532,9 +11447,6 @@
       "Version history": [
         "版本历史"
       ],
-      "VPN explained": [
-        "VPN 原理解析"
-      ],
       "Warning": [
         "警告"
       ],
@@ -11544,17 +11456,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "欢迎使用 ${ BRAND_NAME } 商业版"
       ],
-      "What can a VPN protect you from?": [
-        "VPN 能为您防护哪些威胁？"
-      ],
-      "What is a VPN?": [
-        "什么是VPN？\n"
-      ],
       "What would you like to import?": [
         "您需要导入哪些信息？"
-      ],
-      "When is it most important to use a VPN?": [
-        "什么时候最需要使用 VPN 呢？"
       ],
       "You can now create unlimited folders and labels": [
         "您现在可以创建无限的文件夹和标签"
@@ -11696,6 +11599,14 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成 2FA 等等。"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/每月"
+      ],
+      "Only": [
+        "仅"
       ]
     },
     "unprivatization": {

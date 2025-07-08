@@ -1243,6 +1243,19 @@
         "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ BRAND_NAME } Scribe, aby vám pomohol písať, odpovedať a opravovať emaily."
       ]
     },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Zrušiť predplatné"
+      ],
+      "Keep subscription": [
+        "Ponechať predplatné"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Vaša bezplatná skúšobná verzia skončí o ${ timeRemaining }"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Zakázané"
@@ -7613,9 +7626,6 @@
       "Sign in success (awaiting second factor)": [
         "Prihlásenie bolo úspešné (čaká sa na druhý faktor)"
       ],
-      "Sign in success (awaiting verify)": [
-        "Prihlásenie úspešné (čaká sa na overenie)"
-      ],
       "Sign out": [
         "Odhlásiť sa"
       ],
@@ -9482,9 +9492,6 @@
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Pre SEPA sa akceptuje len euro. Vaša mena bola zmenená. Na vrátenie pôvodnej voľby použite výber."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
@@ -9553,6 +9560,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Z vybraného spôsobu platby vám bude účtovaná suma ${ amountToCharge }."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
@@ -9793,6 +9803,9 @@
     "Protection type": {
       "Blocked": [
         "Blokované"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Overenie zariadenia"

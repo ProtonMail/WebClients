@@ -399,6 +399,9 @@
       "Delete permanently": [
         "Удалить безвозвратно"
       ],
+      "Deleting label": [
+        "Удаление ярлыка"
+      ],
       "Deselect all": [
         "Снять выделение со всех"
       ],
@@ -439,7 +442,7 @@
         "Скачать приложения ${ DRIVE_APP_NAME }"
       ],
       "Download now": [
-        "Загрузить"
+        "Скачать сейчас"
       ],
       "Download the desktop app": [
         "Скачать приложение для компьютера"
@@ -638,6 +641,9 @@
       ],
       "Hide toolbar": [
         "Скрыть панель инструментов"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
       ],
       "hide-my-email aliases": [
         "псевдонимы hide-my-email"
@@ -883,6 +889,9 @@
         "Переместить в"
       ],
       "Move to archive": [
+        "Переместить в Архив"
+      ],
+      "Move to Archive": [
         "Переместить в Архив"
       ],
       "Move to folder": [
@@ -1183,7 +1192,7 @@
         "Выбрать платежный цикл ${ billingText }"
       ],
       "Select country": [
-        "Выберите страну"
+        "Выбрать страну"
       ],
       "Select date and time": [
         "Выберите дату и время"
@@ -1705,6 +1714,45 @@
         "Новое письмо"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "200 GB storage": [
+        "200 ГБ хранилища"
+      ],
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Protect up to 10 devices": [
+        "Защитите до 10 устройств"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Stream your favorite content": [
+        "Смотрите любимый контент"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Используйте свой собственный домен электронной почты"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Приложения ${ BRAND_NAME }"
@@ -1780,6 +1828,14 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
+      "Keep subscription": [
+        "Продолжить подписку"
       ]
     },
     "bf2023: Deal details": {
@@ -4725,8 +4781,8 @@
       "Username must end with a letter or digit": [
         "Имя пользователя должно заканчиваться буквой или цифрой"
       ],
-      "Wrong second password": [
-        "Неверный второй пароль"
+      "Wrong password": [
+        "Неправильный пароль"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Нельзя отправить письмо более чем ${ maxContacts } получателю",
@@ -5473,10 +5529,10 @@
         "${ remainingDaysCount } дней"
       ],
       "${ remainingDaysCount } day left": [
-        "Остался ${ remainingDaysCount } день",
-        "Осталось ${ remainingDaysCount } дня",
-        "Осталось ${ remainingDaysCount } дней",
-        "Осталось ${ remainingDaysCount } дней"
+        "${ remainingDaysCount } день остался",
+        "${ remainingDaysCount } дня осталось",
+        "${ remainingDaysCount } дней осталось",
+        "${ remainingDaysCount } дней осталось"
       ],
       "account logins": [
         "имена пользователей аккаунта"
@@ -6524,6 +6580,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Все вложенные папки также будут удалены. Однако письма из папки ${ nameDeleted } не будут удалены и могут быть найдены в папке Всей почты."
       ],
+      "Apply to future messages": [
+        "Применить к будущим сообщениям"
+      ],
       "Applying actions to conversations": [
         "Применение действий к цепочкам писем"
       ],
@@ -6617,6 +6676,9 @@
       "Billing cycle: ${ text }": [
         "Платежный цикл: ${ text }"
       ],
+      "Block sender": [
+        "Заблокировать отправителя"
+      ],
       "Body: ": [
         "Тело сообщения: "
       ],
@@ -6679,6 +6741,9 @@
       ],
       "Close this screen to exit.": [
         "Закройте этот экран, чтобы выйти."
+      ],
+      "Composer:": [
+        "Редактор писем:"
       ],
       "Confirm phishing report": [
         "Подтвердить жалобу на фишинг"
@@ -6857,6 +6922,9 @@
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
       ],
+      "Each code can only be used once": [
+        "Каждый код может быть использован только один раз"
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Удобное управление и отказ от подписки на новостные рассылки и списки рассылок."
       ],
@@ -6922,6 +6990,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Введите свой пароль как администратора организации."
@@ -7259,6 +7330,9 @@
       "Message headers": [
         "Заголовки сообщений"
       ],
+      "Message list": [
+        "Список сообщений"
+      ],
       "Message sent": [
         "Сообщение отправлено"
       ],
@@ -7504,6 +7578,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пожалуйста, подождите, пока мы ищем контакты с данными, зашифрованными неактивным ключом."
+      ],
+      "Preferences updated": [
+        "Настройки обновлены"
       ],
       "Preview failed to be loaded": [
         "Не удалось загрузить предварительный просмотр"
@@ -9195,6 +9272,9 @@
       "Mark as": [
         "Отметить как"
       ],
+      "Message:": [
+        "Сообщение:"
+      ],
       "Move ${ sidebarElementName }": [
         "Переместить ${ sidebarElementName }"
       ],
@@ -9360,6 +9440,9 @@
       "Strong password": [
         "Надежный пароль"
       ],
+      "Subject:": [
+        "Тема:"
+      ],
       "Subscription options": [
         "Параметры подписки"
       ],
@@ -9516,11 +9599,6 @@
       ],
       "To: ${ to }": [
         "Кому: ${ to }"
-      ]
-    },
-    "Labels": {
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Просматривайте и управляйте подписками на новости и списки рассылки здесь."
       ]
     },
     "Landmarks": {
@@ -10679,10 +10757,10 @@
     },
     "new_plans: feature highlight": {
       "${ admins } admin": [
-        "${ admins }администратор",
-        "${ admins }администратора",
-        "${ admins }администраторов",
-        "${ admins }администраторов"
+        "${ admins } администратор",
+        "${ admins } администратора",
+        "${ admins } администраторов",
+        "${ admins } администраторов"
       ],
       "${ users } user": [
         "${ users } пользователь",
@@ -11175,8 +11253,14 @@
       "${ pricingTitle } offer expires today!": [
         "Предложение ${ pricingTitle } истекает сегодня!"
       ],
+      "Don’t show this again": [
+        "Больше не показывать"
+      ],
       "Don’t show this offer again": [
         "Больше не показывать это предложение"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Получить ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Попробуйте Drive Plus всего за ${ pricingTitle }"
@@ -11230,9 +11314,17 @@
         "Ваша подписка скоро обновится"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 дополнительных премиум-функций"
+      ],
+      "500 GB secure storage": [
+        "500 ГБ защищённого хранилища"
       ],
       "Custom email domain": [
         "Пользовательский домен электронной почты"
@@ -11415,6 +11507,11 @@
         "Вы сможете изменить тему в любое время в настройках."
       ]
     },
+    "Onboarding Trial": {
+      "Continue": [
+        "Продолжить"
+      ]
+    },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
         "У вас есть аккаунт одного из этих сервисов? Просто кликните, чтобы изменить адрес электронной почты на ваш адрес ${ MAIL_APP_NAME }."
@@ -11577,6 +11674,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Банковский перевод"
       ],
@@ -12337,7 +12437,7 @@
     },
     "session_recovery:available:notification": {
       "Password saved": [
-        "Пароль сохранен"
+        "Пароль сохранён"
       ]
     },
     "session_recovery:available:title": {
@@ -12449,7 +12549,7 @@
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Сбросить пароль"
+        "Сброс пароля"
       ]
     },
     "session_recovery:sign_out:title": {
@@ -12635,6 +12735,9 @@
       ]
     },
     "specialoffer: Link": {
+      "Get unlimited aliases": [
+        "Получить неограниченное число псевдонимов"
+      ],
       "Go to subscription plans": [
         "Перейти к тарифам"
       ],
@@ -14491,9 +14594,6 @@
       "No breaches detected": [
         "Нарушения не обнаружены"
       ],
-      "No mail subscriptions": [
-        "Нет подписок"
-      ],
       "No need to empty the trash": [
         "Не нужно очищать корзину"
       ],
@@ -14721,6 +14821,9 @@
       ],
       "Subject missing": [
         "Тема отсутствует"
+      ],
+      "Subscription canceled": [
+        "Подписка отменена"
       ],
       "Summary": [
         "Сводка"
@@ -14953,6 +15056,11 @@
         "Эта версия браузера Tor не поддерживается. Пожалуйста, обновите до последней ${ stableRelease }"
       ]
     },
+    "Unlimited offer": {
+      "Only": [
+        "Только"
+      ]
+    },
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
@@ -15011,8 +15119,8 @@
         "${ n } подключений к VPN"
       ],
       "${ numberOfCountries } country": [
+        "${ numberOfCountries } страна",
         "${ numberOfCountries } страны",
-        "${ numberOfCountries } стран",
         "${ numberOfCountries } стран",
         "${ numberOfCountries } стран"
       ],
