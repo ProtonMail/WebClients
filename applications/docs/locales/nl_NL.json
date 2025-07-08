@@ -1123,6 +1123,37 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } Lumo-plaatsen hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_USERS } gebruikers hebben tijdens de proefperiode."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "U kunt geen aangepaste domeinen toevoegen tijdens de proefperiode."
+      ],
+      "You have reached the trial limit.": [
+        "U hebt de proeflimiet bereikt."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Abonnement opzeggen"
+      ],
+      "Keep subscription": [
+        "Abonnement behouden"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Uw gratis proefversie eindigt over ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -3219,6 +3250,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Er zijn te veel mappen op uw externe account. Pas de import aan om enkele mappen te verwijderen."
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Er is een fout opgetreden bij het verwerken van wijzigingen in het document. Laad de pagina opnieuw en probeer het nogmaals."
       ],
       "There was an error when exporting the contacts vCards": [
         "Er is een fout opgetreden bij het exporteren van de contacten vCards"
@@ -7954,7 +7988,7 @@
         "Betaal jaarlijks om te genieten van ons beste aanbod"
       ],
       "Save": [
-        "Opslaan"
+        "Bespaar"
       ],
       "Save 80% on your first month.": [
         "Bespaar 80% op uw eerste maand."
@@ -8240,9 +8274,6 @@
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Alleen Euro wordt geaccepteerd voor SEPA. Uw valuta is gewijzigd. Gebruik de selector om uw keuze ongedaan te maken."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
       ],
@@ -8294,6 +8325,9 @@
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
       "Your payment is still being processed": [
         "Uw betaling wordt nog verwerkt"

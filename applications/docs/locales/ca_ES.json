@@ -3220,6 +3220,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "S'ha produït un error en processar les actualitzacions del document. Recarregueu la pàgina i torneu-ho a provar."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Hi ha hagut un error exportant les vcards dels contactes"
       ],
@@ -8300,9 +8303,6 @@
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Només s'accepta l'euro per al SEPA. S'ha canviat la moneda. Utilitzeu el selector per revertir la vostra elecció."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
@@ -8354,6 +8354,9 @@
       ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
       "Your payment is still being processed": [
         "El vostre pagament encara s'està processant."

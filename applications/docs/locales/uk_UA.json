@@ -2235,6 +2235,12 @@
       "Also included": [
         "Також включено"
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Приєднайте вашу CRM, сайт, принтери і т.д."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Розшифрування контактів… Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
       ],
@@ -2246,6 +2252,9 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Отримуйте сповіщення, якщо ваш пароль або інші дані отримали витік зі стороннього сервісу."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Допоможіть вашій команді надійно зберігати паролі до конфіденційної ділової та клієнтської інформації."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
@@ -2361,6 +2370,11 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Ваша підписка ${ PLAN_NAMES[PLANS.PASS] } має спеціальну ціну ${ price } на рік. Перейшовши на тарифний план Безплатний, ви назавжди втратите знижку, навіть якщо в майбутньому знову перейдете на нього."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Завантажити для Windows"
       ]
     },
     "drive:action": {
@@ -3932,6 +3946,9 @@
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
+      "Ad targeting": [
+        "Націлювання реклами"
+      ],
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"
       ],
@@ -5054,6 +5071,9 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Ваша наступна дата виставлення рахунку — ${ renewalTime }. Якщо вам потрібна негайна зміна тарифу, зверніться до служби підтримки."
       ],
+      "Your online activity is protected": [
+        "Ваша онлайн активність захищена"
+      ],
       "Your password was leaked:": [
         "Ваш пароль було викрито:"
       ],
@@ -5663,6 +5683,9 @@
       "click here": [
         "клацніть тут"
       ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Як увімкнути ${ PROTON_SENTINEL_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Як оплатити за допомогою Bitcoin?"
       ],
@@ -5683,6 +5706,9 @@
       ],
       "settings": [
         "налаштування"
+      ],
+      "Types of recovery methods": [
+        "Типи способів відновлення"
       ],
       "What’s this?": [
         "Що це?"
@@ -8923,6 +8949,9 @@
       "Deleting contacts": [
         "Видалення контактів"
       ],
+      "Desktop": [
+        "Настільний"
+      ],
       "Discard": [
         "Відхилити"
       ],
@@ -8943,6 +8972,9 @@
       ],
       "Download ${ date }": [
         "Завантажити ${ date }"
+      ],
+      "Download the app": [
+        "Завантажити програму"
       ],
       "Download unverified file?": [
         "Завантажити неперевірені файли?"
@@ -9021,6 +9053,9 @@
       ],
       "High security for your account": [
         "Високий рівень безпеки для вашого облікового запису"
+      ],
+      "How does it all work?": [
+        "Як це все працює?"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
@@ -9258,6 +9293,9 @@
       ],
       "Uploading a large file or folder": [
         "Вивантаження великого файлу або теки"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
       ],
       "Verification failed": [
         "Не вдалося виконати перевірку"
