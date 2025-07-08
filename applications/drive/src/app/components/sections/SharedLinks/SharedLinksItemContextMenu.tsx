@@ -1,4 +1,5 @@
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import type { DecryptedLink } from '../../../store';
 import { useActions } from '../../../store';
@@ -53,7 +54,9 @@ export function SharedLinksItemContextMenu({
                     <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
                 )}
                 {isOnlyOneFileItem && openInDocs.canOpen && <OpenInDocsButton {...openInDocs} close={close} />}
-                {<DownloadButton selectedBrowserItems={selectedLinks} close={close} />}
+                {selectedLink?.type !== LinkType.ALBUM && (
+                    <DownloadButton selectedBrowserItems={selectedLinks} close={close} />
+                )}
                 {isOnlyOneItem && <RenameButton showRenameModal={showRenameModal} link={selectedLink} close={close} />}
                 <DetailsButton
                     selectedBrowserItems={selectedLinks}
