@@ -1156,9 +1156,6 @@
       "Save": [
         "Spara"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Spara till ${ DRIVE_APP_NAME }"
-      ],
       "Saving${ ellipsis }": [
         "Sparar${ ellipsis }"
       ],
@@ -4841,8 +4838,8 @@
       "Username must end with a letter or digit": [
         "Användarnamn måste sluta med en bokstav eller siffra"
       ],
-      "Wrong second password": [
-        "Felaktigt andralösenord"
+      "Wrong password": [
+        "Fel lösenord"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
@@ -6245,10 +6242,6 @@
         "${ messagesNotAuthorizedToMove } meddelande kunde inte flyttas.",
         "${ messagesNotAuthorizedToMove } meddelanden kunde inte flyttas."
       ],
-      "${ n } newsletter": [
-        "${ n } nyhetsbrev",
-        "${ n } nyhetsbrev"
-      ],
       "${ n } unread conversation": [
         "${ n } oläst konversation",
         "${ n } olästa konversationer"
@@ -6338,9 +6331,9 @@
         "${ trackersCount } spårare blockerad",
         "${ trackersCount } spårare blockerade"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } nyhetsbrevsprenumeration",
-        "${ unreadCount } nyhetsbrevsprenumerationer"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } nyhetsbrev",
+        "${ unreadCount } nyhetsbrev"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } schemalagt meddelande",
@@ -7295,7 +7288,7 @@
       "New": [
         "Ny"
       ],
-      "newsletters": [
+      "newsletter": [
         "nyhetsbrev"
       ],
       "No action selected": [
@@ -9183,9 +9176,8 @@
       "Mark as": [
         "Markera som"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "Markerade ${ unreadCount } meddelande som läst.",
-        "Markerade ${ unreadCount } meddelanden som lästa."
+      "Marked as read": [
+        "Markerad som läst"
       ],
       "Message:": [
         "Meddelande:"
@@ -9205,17 +9197,14 @@
       "Move to Inbox": [
         "Flytta till Inkorg"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "Flyttade ${ count } meddelande till ${ labelName }.",
-        "Flyttade ${ count } meddelanden till ${ labelName }."
+      "Moved to ${ labelName }": [
+        "Flyttad till ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "Flyttade ${ count } meddelande till arkiv.",
-        "Flyttade ${ count } meddelanden till arkiv."
+      "Moved to Archive": [
+        "Flyttad till arkiv"
       ],
-      "Moved ${ count } message to Trash.": [
-        "Flyttade ${ count } meddelande till papperskorg.",
-        "Flyttade ${ count } meddelanden till papperskorg."
+      "Moved to Trash": [
+        "Flyttad till papperskorg"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Måste ha minst ${ MIN_PASSWORD_LENGTH } tecken"
@@ -9538,11 +9527,11 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Nyhetsbrev som du avslutar prenumeration på kommer visas här."
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Nyhetsbrev eller e-postlistor som du avslutar prenumeration på kommer visas här."
       ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Visa och hantera prenumerationer för nyhetsbrev och e-postlistor här."
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Du har inga prenumerationer på nyhetsbrev eller e-postlistor."
       ]
     },
     "Landmarks": {
@@ -11269,6 +11258,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } betyder att du aldrig kommer se sponsrade annonser i våra appar."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } säkerställer att endast du och avsedda mottagare kan komma åt din e-post"
       ],
@@ -14443,17 +14435,20 @@
       "Night theme": [
         "Nattema"
       ],
+      "No active newsletters": [
+        "Inga aktiva nyhetsbrev"
+      ],
       "No attachment found": [
         "Inga bilagor hittades"
       ],
       "No breaches detected": [
         "Inga intrång upptäckta"
       ],
-      "No mail subscriptions": [
-        "Inga e-postprenumerationer"
-      ],
       "No need to empty the trash": [
         "Inget behov att tömma papperskorgen"
+      ],
+      "No newsletters found": [
+        "Inga nyhetsbrev hittades"
       ],
       "No trackers found": [
         "Inga spårare hittades"

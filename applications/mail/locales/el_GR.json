@@ -1156,9 +1156,6 @@
       "Save": [
         "Αποθήκευση"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Αποθήκευση στο ${ DRIVE_APP_NAME }"
-      ],
       "Saving${ ellipsis }": [
         "Γίνεται αποθήκευση${ ellipsis }"
       ],
@@ -4847,8 +4844,8 @@
       "Username must end with a letter or digit": [
         "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
       ],
-      "Wrong second password": [
-        "Λανθασμένος δεύτερος κωδικός πρόσβασης"
+      "Wrong password": [
+        "Λανθασμένος κωδικός πρόσβασης"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
@@ -6254,10 +6251,6 @@
         "${ messagesNotAuthorizedToMove } μήνυμα δεν μπόρεσε να μετακινηθεί.",
         "${ messagesNotAuthorizedToMove } μηνύματα δεν μπόρεσαν να μετακινηθούν."
       ],
-      "${ n } newsletter": [
-        "${ n } ενημερωτικό δελτίο",
-        "${ n } ενημερωτικά δελτία"
-      ],
       "${ n } unread conversation": [
         "${ n } μη διαβασμένη συνομιλία",
         "${ n } μη διαβασμένες συνομιλίες"
@@ -6351,9 +6344,9 @@
         "${ trackersCount } ιχνηλάτης εμποδίστηκε",
         "${ trackersCount } ιχνηλάτες εμποδίστηκαν"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } συνδρομή ενημερωτικού δελτίου",
-        "${ unreadCount } συνδρομές ενημερωτικών δελτίων"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } ενημερωτικό δελτίο",
+        "${ unreadCount } ενημερωτικά δελτία"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } προγραμματισμένο μήνυμα",
@@ -7314,8 +7307,8 @@
       "New": [
         "Νέο"
       ],
-      "newsletters": [
-        "ενημερωτικά δελτία"
+      "newsletter": [
+        "ενημερωτικό δελτίο"
       ],
       "No action selected": [
         "Δεν έχει επιλεγεί καμία ενέργεια"
@@ -9202,9 +9195,8 @@
       "Mark as": [
         "Σήμανση ως"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "Επισημάνθηκε ${ unreadCount } μήνυμα ως αναγνωσμένο.",
-        "Επισημάνθηκαν ${ unreadCount } μηνύματα ως αναγνωσμένα."
+      "Marked as read": [
+        "Επισημάνθηκε ως αναγνωσμένο"
       ],
       "Message:": [
         "Μήνυμα:"
@@ -9224,17 +9216,14 @@
       "Move to Inbox": [
         "Μετακίνηση στα Εισερχόμενα"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "Μετακινήθηκε ${ count } μήνυμα στο ${ labelName }.",
-        "Μετακινήθηκαν ${ count } μηνύματα στο ${ labelName }."
+      "Moved to ${ labelName }": [
+        "Μετακινήθηκε στο ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "Μετακινήθηκε ${ count } μήνυμα στα Αρχειοθετημένα.",
-        "Μετακινήθηκαν ${ count } μηνύματα στα Αρχειοθετημένα."
+      "Moved to Archive": [
+        "Μετακινήθηκε στα Αρχειοθετημένα"
       ],
-      "Moved ${ count } message to Trash.": [
-        "Μετακινήθηκε ${ count } μήνυμα στον Κάδο Απορριμμάτων.",
-        "Μετακινήθηκαν ${ count } μηνύματα στον Κάδο Απορριμμάτων."
+      "Moved to Trash": [
+        "Μεταφέρθηκε στα Διαγραμμένα"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
@@ -9557,11 +9546,14 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Ενημερωτικά δελτία από τα οποία κάνετε απεγγραφή θα εμφανίζονται εδώ."
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Ενημερωτικά δελτία ή λίστες αλληλογραφίας από τα οποία κάνετε απεγγραφή θα εμφανίζονται εδώ."
       ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Δείτε και διαχειριστείτε τις συνδρομές ενημερωτικών δελτίων και λιστών αλληλογραφίας εδώ."
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Δεν έχετε ενεργά ενημερωτικά δελτία ή συνδρομές σε λίστες αλληλογραφίας."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Δεν έχετε ενημερωτικά δελτία ή συνδρομές σε λίστες αλληλογραφίας."
       ]
     },
     "Landmarks": {
@@ -11680,9 +11672,6 @@
       "More plans are available in other currencies": [
         "Περισσότερα πλάνα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Μόνο το ευρώ γίνεται δεκτό για SEPA. Το νόμισμά σας έχει αλλάξει. Χρησιμοποιήστε τον επιλογέα για να αναιρέσετε την επιλογή σας."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
       ],
@@ -11734,6 +11723,9 @@
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
@@ -14471,17 +14463,20 @@
       "Night theme": [
         "Σκούρο θέμα"
       ],
+      "No active newsletters": [
+        "Δεν υπάρχουν ενεργά ενημερωτικά δελτία"
+      ],
       "No attachment found": [
         "Κανένα συνημμένο"
       ],
       "No breaches detected": [
         "Δεν εντοπίστηκαν παραβιάσεις"
       ],
-      "No mail subscriptions": [
-        "Καμία συνδρομή email"
-      ],
       "No need to empty the trash": [
         "Δε χρειάζεται να αδειάσετε τα διαγραμμένα"
+      ],
+      "No newsletters found": [
+        "Δεν βρέθηκαν ενημερωτικά δελτία"
       ],
       "No trackers found": [
         "Δεν βρέθηκαν ιχνηλάτες"

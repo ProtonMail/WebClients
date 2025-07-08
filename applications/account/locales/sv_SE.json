@@ -970,9 +970,6 @@
       "Next month": [
         "Nästa månad"
       ],
-      "Next page": [
-        "Nästa sida"
-      ],
       "No": [
         "Nej"
       ],
@@ -1017,9 +1014,6 @@
       ],
       "Previous month": [
         "Föregående månad"
-      ],
-      "Previous page": [
-        "Föregående sida"
       ],
       "Publish changes": [
         "Publicera ändringar"
@@ -9582,9 +9576,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-inlämning låter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina e-postadresser med anpassade domäner. Denna funktion är endast tillgänglig för ${ BRAND_NAME } for Business-användare med anpassade domäner."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att begära åtkomst, ${ createTicket } som beskriver dina användningsfall, vilka anpassade domäner du vill använda och förväntade e-postvolymer per timme och dagligen."
       ],
@@ -12831,9 +12822,6 @@
       ],
       "Sign in success (awaiting second factor)": [
         "Inloggning lyckades (inväntar andra faktor)"
-      ],
-      "Sign in success (awaiting verify)": [
-        "Inloggning lyckades (väntar på verifiering)"
       ],
       "Sign out": [
         "Logga ut"
@@ -17264,9 +17252,6 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
-      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
-        "${ FREE_PASS_ALIASES } hide-my-email-alias för att bekämpa skräppost"
-      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adress",
         "${ maxAddresses } adresser"
@@ -17418,6 +17403,10 @@
       ],
       "use your own email.": [
         "använd din egen e-post."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN med servrar i ${ vpnServersCountData.free.countries } land",
+        "VPN med servrar i ${ vpnServersCountData.free.countries } länder"
       ],
       "Yearly": [
         "Årsvis"

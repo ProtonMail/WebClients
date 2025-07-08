@@ -427,6 +427,9 @@
       "Delete your account": [
         "Izbrišite vaš račun"
       ],
+      "Deleting folder": [
+        "Brisanje mape"
+      ],
       "Deny access": [
         "Zavrni dostop"
       ],
@@ -868,9 +871,6 @@
       "Next month": [
         "Naslednji mesec"
       ],
-      "Next page": [
-        "Naslednja stran"
-      ],
       "No": [
         "Ne"
       ],
@@ -915,9 +915,6 @@
       ],
       "Previous month": [
         "Prejšnji mesec"
-      ],
-      "Previous page": [
-        "Prejšnja stran"
       ],
       "Publish changes": [
         "Objavi spremembe"
@@ -1632,6 +1629,42 @@
         "Nova e-pošta"
       ]
     },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "200 GB storage": [
+        "200 GB prostora"
+      ],
+      "thanks to you": [
+        "Hvala vam"
+      ],
+      "years": [
+        "leta"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Ponudba za obletnico"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "/ month": [
+        "/mesec"
+      ],
+      "12 months": [
+        "12 mesecev"
+      ],
+      "15 months": [
+        "15 mesecev"
+      ],
+      "24 months": [
+        "24 mesecev"
+      ],
+      "30 months": [
+        "30 mesecev"
+      ]
+    },
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Zasebno brskajte po spletu in blokirajte oglase"
@@ -1707,6 +1740,14 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Sem izven pisarne in z omejenim dostopom do e-pošte."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Prekliči naročnino"
+      ],
+      "Keep subscription": [
+        "Ohrani naročnino"
       ]
     },
     "Badge for domain": {
@@ -1962,6 +2003,9 @@
       ],
       "Two-year": [
         "Dve leti"
+      ],
+      "Yearly": [
+        "Letno"
       ]
     },
     "Blog": {
@@ -4047,11 +4091,6 @@
         "Windows 10/11 (x64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb za Debian / Ubuntu"
-      ]
-    },
     "drive_signup_2024: Info": {
       "**Collaborative:** online document editor": [
         "**Sodelovalni:** urejevalnik spletnih dokumentov"
@@ -4350,6 +4389,9 @@
     "email_forwarding_2023: Header": {
       "Actions": [
         "Dejanja"
+      ],
+      "Forward from": [
+        "Posredovano od"
       ],
       "From": [
         "Od"
@@ -5069,6 +5111,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste največje število koledarjev."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Dosegli ste mejo za število stikov v vašem računu."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Uporabili ste vse naslove v svojem paketu. Prosimo nadgradite paket, da dodate nov naslov."
@@ -7469,6 +7514,9 @@
       ],
       "Dedicated servers": [
         "Namenski strežniki"
+      ],
+      "Dedicated VPN servers": [
+        "Namenski VPN strežniki"
       ],
       "default email address": [
         "privzeti e-poštni naslov"
@@ -10165,9 +10213,6 @@
       "Backup password": [
         "Varnostno geslo"
       ],
-      "Beta": [
-        "Beta različica"
-      ],
       "Billing cycle": [
         "Cikel obračunavanja"
       ],
@@ -11499,6 +11544,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Naročnina se je končala. ${ cta } in se izognite izgubi podatkov."
+      ]
+    },
+    "Log event": {
+      "Authentication success": [
+        "Uspešno preverjanja pristnosti"
       ]
     },
     "Log preference": {
@@ -13300,6 +13350,9 @@
       "${ pricingTitle } offer expires today!": [
         "Ponudba ${ pricingTitle } poteče danes!"
       ],
+      "Don’t show this again": [
+        "Tega ne prikaži več"
+      ],
       "Don’t show this offer again": [
         "Te ponudbe ne prikazuj več"
       ],
@@ -13355,9 +13408,17 @@
         "Vaša naročnina se bo kmalu obnovila"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Šifriran upravitelj gesel"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+Še 10 premijskih funkcij"
+      ],
+      "500 GB secure storage": [
+        "500 GB varne shrambe"
       ],
       "Custom email domain": [
         "E-poštna domena po meri"
@@ -13403,6 +13464,9 @@
       ],
       "Cancel anytime before then.": [
         "Prekličite kadar koli pred tem."
+      ],
+      "contact our support team": [
+        "kontaktirajte našo podporo"
       ],
       "Continue": [
         "Nadaljuj"
@@ -13798,6 +13862,9 @@
       ],
       "Organization identity": [
         "Identiteta organizacije"
+      ],
+      "Organization identity updated": [
+        "Identiteta organizacije je posodobljena"
       ]
     },
     "OS compatibility": {
@@ -14304,6 +14371,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Bančno nakazilo"
       ],
@@ -15798,6 +15868,9 @@
       "Go to subscription plans": [
         "Ogled naročniških paketov"
       ],
+      "Guard against threats": [
+        "Zaščitite se pred grožnjami"
+      ],
       "Upgrade": [
         "Nadgradnja"
       ]
@@ -16055,6 +16128,9 @@
       ],
       "Inactive": [
         "Neaktivno"
+      ],
+      "Pending activation": [
+        "Čaka na aktivacijo"
       ],
       "Rejected": [
         "Zavrnjeno"
@@ -17085,6 +17161,14 @@
         "Ni najdenih SMTP žetonov"
       ]
     },
+    "Time unit": {
+      "${ ceilHours } hour": [
+        "${ ceilHours } ura",
+        "${ ceilHours } uri",
+        "${ ceilHours } ure",
+        "${ ceilHours } ur"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } ura",
@@ -17748,15 +17832,6 @@
       ],
       "Folders and labels": [
         "Mape in oznake"
-      ],
-      "For Linux": [
-        "Za Linux"
-      ],
-      "For macOS": [
-        "Za macOS"
-      ],
-      "For Windows": [
-        "Za Windows"
       ],
       "Forgot password": [
         "Pozabljeno geslo"
@@ -18906,6 +18981,14 @@
       ],
       "Refund": [
         "Povračilo denarja"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mesec"
+      ],
+      "Only": [
+        "Samo"
       ]
     },
     "unprivatization": {

@@ -1117,6 +1117,19 @@
         "Evento não suportado"
       ]
     },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar a subscrição"
+      ],
+      "Keep subscription": [
+        "Manter a subscrição"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "A sua avaliação gratuita termina em ${ timeRemaining }."
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 utilizador"
@@ -3203,6 +3216,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Há pastas demais na sua conta externa. Personalize a importação para excluir algumas pastas."
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Ocorreu um erro ao processar as atualizações do documento. Por favor, recarregue a página e tente novamente."
       ],
       "There was an error when exporting the contacts vCards": [
         "Ocorreu um erro ao exportar os vCards dos contactos"
@@ -8224,9 +8240,6 @@
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis noutras moedas."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Apenas o euro é aceite para os pagos SEPA. A sua moeda foi alterada. Utilize o seletor para reverter a sua escolha."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative primeiro a sua subscrição antes para diminuir o número de complementos."
       ],
@@ -8278,6 +8291,9 @@
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "A sua moeda foi alterada para euros (€) porque as transferências bancárias SEPA apenas aceitam pagamentos em euros."
       ],
       "Your payment is still being processed": [
         "O seu pagamento ainda está a ser processado."

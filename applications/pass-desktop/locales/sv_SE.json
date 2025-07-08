@@ -1878,6 +1878,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2640,6 +2644,9 @@
       ],
       "Always show username field": [
         "Visa alltid fält för användarnamn"
+      ],
+      "API Credential": [
+        "API-uppgifter"
       ],
       "API Key": [
         "API-nyckel"
@@ -3421,6 +3428,9 @@
       "Share": [
         "Dela"
       ],
+      "Share ID": [
+        "Delnings-ID"
+      ],
       "Shared": [
         "Delat"
       ],
@@ -3876,6 +3886,9 @@
       ]
     },
     "PassOnboardingOffer": {
+      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
+        "${ PASS_SHORT_APP_NAME } Plus Livstid för ${ plusLifetimePrice }"
+      ],
       "${ price }/month": [
         "${ price }/månad"
       ]

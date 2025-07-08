@@ -1156,9 +1156,6 @@
       "Save": [
         "Opslaan"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Opslaan op ${ DRIVE_APP_NAME }"
-      ],
       "Saving${ ellipsis }": [
         "Opslaan${ ellipsis }"
       ],
@@ -1942,6 +1939,37 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } Lumo-plaatsen hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_USERS } gebruikers hebben tijdens de proefperiode."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "U kunt geen aangepaste domeinen toevoegen tijdens de proefperiode."
+      ],
+      "You have reached the trial limit.": [
+        "U hebt de proeflimiet bereikt."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Abonnement opzeggen"
+      ],
+      "Keep subscription": [
+        "Abonnement behouden"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Uw gratis proefversie eindigt over ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -4575,6 +4603,9 @@
       "No address with keys available to compose a message": [
         "Geen adres met sleutels beschikbaar om een bericht aan te maken"
       ],
+      "No address with sending permissions": [
+        "Geen adres met verzend machtigingen"
+      ],
       "No calendars found to import": [
         "Geen agenda's gevonden om te importeren"
       ],
@@ -4850,8 +4881,8 @@
       "Username must end with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
-      "Wrong second password": [
-        "Foutief tweede wachtwoord"
+      "Wrong password": [
+        "Fout wachtwoord"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
@@ -6257,10 +6288,6 @@
         "${ messagesNotAuthorizedToMove } bericht kon niet verplaatst worden.",
         "${ messagesNotAuthorizedToMove } berichten konden niet worden verplaatst."
       ],
-      "${ n } newsletter": [
-        "${ n } nieuwsbrief",
-        "${ n } nieuwsbrieven"
-      ],
       "${ n } unread conversation": [
         "${ n } ongelezen gesprek",
         "${ n } ongelezen gesprekken"
@@ -6354,9 +6381,9 @@
         "${ trackersCount } trackers geblokkeerd",
         "${ trackersCount } trackers geblokkeerd"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } nieuwsbriefabonnement",
-        "${ unreadCount } nieuwsbriefabonnementen"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } nieuwsbrief",
+        "${ unreadCount } nieuwsbrieven"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } ingepland bericht",
@@ -7316,6 +7343,9 @@
       ],
       "New": [
         "Nieuw"
+      ],
+      "newsletter": [
+        "nieuwsbrief"
       ],
       "No action selected": [
         "Geen actie geselecteerd"
@@ -9202,9 +9232,8 @@
       "Mark as": [
         "Markeren als"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "${ unreadCount } bericht als gelezen gemarkeerd.",
-        "${ unreadCount } berichten als gelezen gemarkeerd."
+      "Marked as read": [
+        "Gemarkeerd als gelezen"
       ],
       "Message:": [
         "Bericht:"
@@ -9224,17 +9253,14 @@
       "Move to Inbox": [
         "Verplaats naar inbox"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "${ count } bericht verplaatst naar ${ labelName }.",
-        "${ count } berichten verplaatst naar ${ labelName }."
+      "Moved to ${ labelName }": [
+        "Verplaatst naar ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "${ count } bericht verplaatst naar Archief.",
-        "${ count } berichten verplaatst naar Archief."
+      "Moved to Archive": [
+        "Verplaatst naar Archief"
       ],
-      "Moved ${ count } message to Trash.": [
-        "${ count } bericht verplaatst naar Prullenbak.",
-        "${ count } berichten verplaatst naar Prullenbak."
+      "Moved to Trash": [
+        "Verplaatst naar Prullenbak"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten"
@@ -9557,11 +9583,14 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Nieuwsbrieven waarvan u zich afmeldt, verschijnen hier."
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Nieuwsbrieven of adressenlijsten waarvan u zich afmeldt, verschijnen hier."
       ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Bekijk en beheer hier uw abonnementen op nieuwsbrieven en adressenlijsten."
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "U hebt geen actieve nieuwsbrieven of adressenlijst abonnementen."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "U hebt geen nieuwsbrieven of adressenlijst abonnementen."
       ]
     },
     "Landmarks": {
@@ -11195,7 +11224,7 @@
         "Betaal jaarlijks om te genieten van ons beste aanbod"
       ],
       "Save": [
-        "Opslaan"
+        "Bespaar"
       ],
       "Save 80% on your first month.": [
         "Bespaar 80% op uw eerste maand."
@@ -11283,6 +11312,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } betekent dat u nooit gesponsorde advertenties zult zien in onze apps."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } garandeert dat alleen u en de bedoelde ontvangers toegang hebben tot uw e-mails."
       ],
@@ -11677,9 +11709,6 @@
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Alleen Euro wordt geaccepteerd voor SEPA. Uw valuta is gewijzigd. Gebruik de selector om uw keuze ongedaan te maken."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
       ],
@@ -11731,6 +11760,9 @@
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
       "Your payment is still being processed": [
         "Uw betaling wordt nog verwerkt"
@@ -14473,17 +14505,20 @@
       "Night theme": [
         "Nacht thema"
       ],
+      "No active newsletters": [
+        "Geen actieve nieuwsbrieven"
+      ],
       "No attachment found": [
         "Geen bijlage gevonden"
       ],
       "No breaches detected": [
         "Geen inbreuken gevonden"
       ],
-      "No mail subscriptions": [
-        "Geen e-mail abonnementen"
-      ],
       "No need to empty the trash": [
         "Het is niet nodig om de prullenbak te legen"
+      ],
+      "No newsletters found": [
+        "Geen nieuwsbrieven gevonden"
       ],
       "No trackers found": [
         "Geen trackers gevonden"
