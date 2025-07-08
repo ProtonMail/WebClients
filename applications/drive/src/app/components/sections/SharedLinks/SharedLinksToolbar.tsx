@@ -15,6 +15,7 @@ import {
     ShareButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
+import { hasAlbumSelected } from '../ToolbarButtons/utils';
 import { getSelectedItems } from '../helpers';
 import { StopSharingButton } from './ToolbarButtons';
 
@@ -45,8 +46,13 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
             <>
                 <PreviewButton selectedBrowserItems={selectedItems} />
                 <OpenInDocsButton selectedBrowserItems={selectedItems} />
-                <DownloadButton selectedBrowserItems={selectedItems} />
-                <Vr />
+                {hasAlbumSelected(selectedItems) ? undefined : (
+                    <>
+                        <DownloadButton selectedBrowserItems={selectedItems} />
+                        <Vr />
+                    </>
+                )}
+
                 <RenameButton selectedLinks={selectedItems} renameLink={renameLink} />
                 <DetailsButton selectedBrowserItems={selectedItems} />
                 {selectedItem && (
