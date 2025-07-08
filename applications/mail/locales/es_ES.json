@@ -1156,9 +1156,6 @@
       "Save": [
         "Guardar"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Guardar en ${ DRIVE_APP_NAME }"
-      ],
       "Saving${ ellipsis }": [
         "Guardando${ ellipsis }"
       ],
@@ -1942,6 +1939,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el periodo de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el periodo de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_USERS } usuarios durante el periodo de prueba."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "No puedes añadir dominios personalizados durante el periodo de prueba."
+      ],
+      "You have reached the trial limit.": [
+        "Has alcanzado el límite del periodo de prueba."
       ]
     },
     "b2b_trials_Action": {
@@ -4866,8 +4881,8 @@
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o un número."
       ],
-      "Wrong second password": [
-        "La segunda contraseña no es correcta."
+      "Wrong password": [
+        "La contraseña no es correcta."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No puedes enviar un correo a más de ${ maxContacts } destinatario.",
@@ -6273,10 +6288,6 @@
         "No se ha podido mover ${ messagesNotAuthorizedToMove } mensaje.",
         "No se han podido mover ${ messagesNotAuthorizedToMove } mensajes."
       ],
-      "${ n } newsletter": [
-        "${ n } boletín",
-        "${ n } boletines"
-      ],
       "${ n } unread conversation": [
         "${ n } conversación sin leer",
         "${ n } conversaciones sin leer"
@@ -6370,9 +6381,9 @@
         "${ trackersCount } rastreador bloqueado",
         "${ trackersCount } rastreadores bloqueados"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } suscripción de boletín",
-        "${ unreadCount } suscripciones de boletín"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } boletín",
+        "${ unreadCount } boletines"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } mensaje programado",
@@ -7333,8 +7344,8 @@
       "New": [
         "Nuevo"
       ],
-      "newsletters": [
-        "boletines"
+      "newsletter": [
+        "boletín"
       ],
       "No action selected": [
         "Ninguna acción seleccionada"
@@ -9224,9 +9235,8 @@
       "Mark as": [
         "Marcar como"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "Se ha marcado ${ unreadCount } mensaje como leído.",
-        "Se han marcado ${ unreadCount } mensajes como leídos."
+      "Marked as read": [
+        "Marcado como leído"
       ],
       "Message:": [
         "Mensaje:"
@@ -9246,17 +9256,14 @@
       "Move to Inbox": [
         "Mover a la bandeja de entrada"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "Se ha movido ${ count } mensaje a ${ labelName }.",
-        "Se han movido ${ count } mensajes a ${ labelName }."
+      "Moved to ${ labelName }": [
+        "Movido a ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "Se ha movido ${ count } mensaje al archivo.",
-        "Se han movido ${ count } mensajes al archivo."
+      "Moved to Archive": [
+        "Archivado"
       ],
-      "Moved ${ count } message to Trash.": [
-        "Se ha movido ${ count } mensaje a la papelera.",
-        "Se han movido ${ count } mensajes a la papelera."
+      "Moved to Trash": [
+        "Movido a la Papelera"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
@@ -9579,11 +9586,14 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Los boletines cuyas suscripciones hayas cancelado aparecerán aquí."
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Los boletines o listas de direcciones de los que cancelas tu suscripción aparecerán aquí."
       ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Aquí puedes ver y administrar las suscripciones a boletines y listas de correo."
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "No tienes ninguna suscripción activa a boletines o listas de correo."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "No tiene ninguna suscripción a boletines o listas de correo."
       ]
     },
     "Landmarks": {
@@ -11708,9 +11718,6 @@
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Solo se acepta el euro para SEPA. Tu moneda ha sido cambiada. Por favor, usa el selector para revertir tu elección."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -11762,6 +11769,9 @@
       ],
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Tu moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo soportan pagos en euros."
       ],
       "Your payment is still being processed": [
         "Tu pago aún está siendo procesado."
@@ -14504,17 +14514,20 @@
       "Night theme": [
         "Tema de noche"
       ],
+      "No active newsletters": [
+        "No hay boletines activos."
+      ],
       "No attachment found": [
         "No se ha encontrado ningún archivo adjunto."
       ],
       "No breaches detected": [
         "No se han detectado vulneraciones."
       ],
-      "No mail subscriptions": [
-        "No hay suscripciones de correo"
-      ],
       "No need to empty the trash": [
         "No es necesario vaciar la papelera"
+      ],
+      "No newsletters found": [
+        "No se han encontrado boletines."
       ],
       "No trackers found": [
         "No se han encontrado rastreadores."

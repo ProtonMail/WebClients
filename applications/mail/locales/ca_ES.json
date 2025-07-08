@@ -1156,9 +1156,6 @@
       "Save": [
         "Desa"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Deseu-ho a ${ DRIVE_APP_NAME }"
-      ],
       "Saving${ ellipsis }": [
         "S'està desant${ ellipsis }"
       ],
@@ -4847,8 +4844,8 @@
       "Username must end with a letter or digit": [
         "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ],
-      "Wrong second password": [
-        "La segona contrasenya és incorrecta."
+      "Wrong password": [
+        "La contrasenya no es correcta."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
@@ -6254,10 +6251,6 @@
         "${ messagesNotAuthorizedToMove } missatge no s'ha pogut moure.",
         "${ messagesNotAuthorizedToMove } missatges no s'han pogut moure."
       ],
-      "${ n } newsletter": [
-        "${ n } butlletí",
-        "${ n } butlletins"
-      ],
       "${ n } unread conversation": [
         "${ n } conversació sense llegir",
         "${ n } conversacions sense llegir"
@@ -6351,9 +6344,9 @@
         "S'ha bloquejat ${ trackersCount } rastrejador",
         "S'han bloquejat ${ trackersCount } rastrejadors"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } subscripció a butlletins",
-        "${ unreadCount } subscripcions a butlletins"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } butlletí",
+        "${ unreadCount } butlletins"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } missatge programat",
@@ -7314,8 +7307,8 @@
       "New": [
         "Nova"
       ],
-      "newsletters": [
-        "butlletins"
+      "newsletter": [
+        "butlletí"
       ],
       "No action selected": [
         "No s'ha seleccionat cap acció"
@@ -9205,9 +9198,8 @@
       "Mark as": [
         "Marca com a"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "S'ha marcat ${ unreadCount } missatge com a llegit.",
-        "S'han marcat ${ unreadCount } missatges com a llegits."
+      "Marked as read": [
+        "S'ha marcat com a llegit"
       ],
       "Message:": [
         "Missatge:"
@@ -9227,17 +9219,14 @@
       "Move to Inbox": [
         "Mou a la safata d'entrada"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "S'ha mogut ${ count } missatge a ${ labelName }.",
-        "S'han mogut ${ count } missatges a ${ labelName }."
+      "Moved to ${ labelName }": [
+        "S\"ha mogut a ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "S'ha mogut ${ count } missatge a l'arxiu.",
-        "S'han mogut ${ count } missatges a l'arxiu."
+      "Moved to Archive": [
+        "S'ha mogut a l'Arxiu"
       ],
-      "Moved ${ count } message to Trash.": [
-        "S'ha mogut ${ count } missatge a la paperera.",
-        "S'han mogut ${ count } missatges a la paperera."
+      "Moved to Trash": [
+        "S'ha mogut a la paperera"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
@@ -9560,11 +9549,14 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Els butlletins informatius als quals anul·leu la subscripció apareixeran aquí."
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Els butlletins informatius o llistes de correu als quals anul·leu la subscripció apareixeran aquí."
       ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Visualitzeu i gestioneu les subscripcions a butlletins i llistes de correu aquí."
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "No teniu cap subscripció activa a butlletins informatius o a llistes de correu."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "No teniu cap subscripció a butlletins informatius o a llistes de correu."
       ]
     },
     "Landmarks": {
@@ -11689,9 +11681,6 @@
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Només s'accepta l'euro per al SEPA. S'ha canviat la moneda. Utilitzeu el selector per revertir la vostra elecció."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
@@ -11743,6 +11732,9 @@
       ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
       "Your payment is still being processed": [
         "El vostre pagament encara s'està processant."
@@ -14480,17 +14472,20 @@
       "Night theme": [
         "Tema de nit"
       ],
+      "No active newsletters": [
+        "No hi ha butlletins actius."
+      ],
       "No attachment found": [
         "No s'ha trobat cap adjunt"
       ],
       "No breaches detected": [
         "No s'han detectat infraccions"
       ],
-      "No mail subscriptions": [
-        "Sense subscripcions de correu"
-      ],
       "No need to empty the trash": [
         "No cal buidar la paperera"
+      ],
+      "No newsletters found": [
+        "No s'ha trobat cap butlletí."
       ],
       "No trackers found": [
         "No s'han trobat rastrejadors"

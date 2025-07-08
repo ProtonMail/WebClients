@@ -1156,9 +1156,6 @@
       "Save": [
         "Lagre"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Lagre i ${ DRIVE_APP_NAME }"
-      ],
       "Saving${ ellipsis }": [
         "Lagrer${ ellipsis }"
       ],
@@ -4847,8 +4844,8 @@
       "Username must end with a letter or digit": [
         "Brukernavn må ende med en bokstav eller ett tall"
       ],
-      "Wrong second password": [
-        "Feil andre passord"
+      "Wrong password": [
+        "Feil passord"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
@@ -6254,10 +6251,6 @@
         "${ messagesNotAuthorizedToMove } melding kunne ikke flyttes.",
         "${ messagesNotAuthorizedToMove } meldinger kunne ikke flyttes."
       ],
-      "${ n } newsletter": [
-        "${ n } nyhetsbrev",
-        "${ n } nyhetsbrev"
-      ],
       "${ n } unread conversation": [
         "${ n } ulest samtale",
         "${ n } uleste samtaler"
@@ -6351,9 +6344,9 @@
         "${ trackersCount } sporer blokkert",
         "${ trackersCount } sporere blokkert"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } nyhetsbrevabonnement",
-        "${ unreadCount } nyhetsbrevabonnementer"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } nyhetsbrev",
+        "${ unreadCount } nyhetsbrev"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } planlagt melding",
@@ -7314,7 +7307,7 @@
       "New": [
         "Ny"
       ],
-      "newsletters": [
+      "newsletter": [
         "nyhetsbrev"
       ],
       "No action selected": [
@@ -9202,9 +9195,8 @@
       "Mark as": [
         "Merk som"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "Merket ${ unreadCount } melding som lest.",
-        "Merket ${ unreadCount } meldinger som lest."
+      "Marked as read": [
+        "Merket som lest"
       ],
       "Message:": [
         "Melding:"
@@ -9224,17 +9216,14 @@
       "Move to Inbox": [
         "Flytt til innboks"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "${ count } melding flyttet til ${ labelName }.",
-        "${ count } meldinger flyttet til ${ labelName }."
+      "Moved to ${ labelName }": [
+        "Flyttet til ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "${ count } melding flyttet til arkivet.",
-        "${ count } meldinger flyttet til arkivet."
+      "Moved to Archive": [
+        "Flyttet til arkivet"
       ],
-      "Moved ${ count } message to Trash.": [
-        "${ count } melding flyttet til papirkurven.",
-        "${ count } meldinger flyttet til papirkurven."
+      "Moved to Trash": [
+        "Flyttet til papirkurven"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Må minst ha ${ MIN_PASSWORD_LENGTH } tegn"
@@ -9557,11 +9546,14 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Nyhetsbrev du avslutter abonnement på vises her."
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Nyhetsbrev eller e-postlister du avslutter abonnement på vises her."
       ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Vis og administrer abonnementer på nyhetsbrev og e-postlister her."
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Du har ingen aktive nyhetsbrev eller e-postlisteabonnementer."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Du har ingen nyhetsbrev eller e-postlisteabonnementer."
       ]
     },
     "Landmarks": {
@@ -11680,9 +11672,6 @@
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Kun Euro aksepteres for SEPA. Valutaen din er endret. Bruk velgeren for å angre valget ditt."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
@@ -11734,6 +11723,9 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
@@ -14471,17 +14463,20 @@
       "Night theme": [
         "Natt-tema"
       ],
+      "No active newsletters": [
+        "Ingen aktive nyhetsbrev"
+      ],
       "No attachment found": [
         "Ingen vedlegg funnet"
       ],
       "No breaches detected": [
         "Ingen sikkerhetsbrudd oppdaget"
       ],
-      "No mail subscriptions": [
-        "Ingen e-postabonnementer"
-      ],
       "No need to empty the trash": [
         "Du trenger ikke å tømme papirkurven"
+      ],
+      "No newsletters found": [
+        "Ingen nyhetsbrev funnet"
       ],
       "No trackers found": [
         "Ingen sporere funnet"
