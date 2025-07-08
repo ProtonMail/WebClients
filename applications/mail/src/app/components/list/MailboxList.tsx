@@ -121,18 +121,16 @@ export default function MailboxList({
                     onCheckAll={handleCheckAll}
                 />
 
-                <div className="overflow-auto">
-                    <MailboxListItems
-                        listRef={listRefToUse}
-                        onClick={handleElement}
-                        onFocus={handleFocus}
-                        onCheckOne={handleCheckOne}
-                        columnLayout={overrideColumnMode || columnLayout}
-                        onBack={navigation.handleBack}
-                        labels={labels}
-                    />
-                    <MailboxListPaginationWrapper />
-                </div>
+                <MailboxListItems
+                    listRef={listRefToUse}
+                    onClick={handleElement}
+                    onFocus={handleFocus}
+                    onCheckOne={handleCheckOne}
+                    columnLayout={overrideColumnMode || columnLayout}
+                    onBack={navigation.handleBack}
+                    labels={labels}
+                />
+                <MailboxListPaginationWrapper />
             </MailboxListContainer>
         </MailboxListProvider>
     );
