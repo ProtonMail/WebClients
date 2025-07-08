@@ -970,9 +970,6 @@
       "Next month": [
         "Mes següent"
       ],
-      "Next page": [
-        "Pàgina següent"
-      ],
       "No": [
         "No"
       ],
@@ -1017,9 +1014,6 @@
       ],
       "Previous month": [
         "Mes anterior"
-      ],
-      "Previous page": [
-        "Pàgina anterior"
       ],
       "Publish changes": [
         "Publica els canvis"
@@ -4490,10 +4484,10 @@
     },
     "Download link": {
       ".deb for Debian / Ubuntu": [
-        ".deb per al Debian/Ubuntu"
+        ".deb per a Debian/Ubuntu"
       ],
       ".rpm for Fedora / Red Hat": [
-        ".rpm per al Fedora/Red Hat"
+        ".rpm per a Fedora/Red Hat"
       ]
     },
     "drive_signup_2023: Title": {
@@ -6777,7 +6771,7 @@
         "${ appName } a l'App Store"
       ],
       "${ appName } on Play Store": [
-        "${ appName } a la Play Store"
+        "${ appName } a Play Store"
       ]
     },
     "Gmail forwarding": {
@@ -9625,8 +9619,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "La tramesa SMTP permet que serveis o dispositius de tercers enviïn correu electrònic a través de ${ MAIL_APP_NAME } per a les adreces de domini personalitzat. Aquesta funció només està disponible per a ${ BRAND_NAME } per als usuaris empresarials amb dominis personalitzats."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "L\"enviament SMTP permet que serveis o dispositius de tercers enviïn correus electrònics a través de ${ MAIL_APP_NAME } per adreces de domini personalitzades. Aquesta funció només està a disposició de ${ BRAND_NAME } per usuaris empreses amb dominis personalitzats."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "L'enviament per SMTP permet als serveis o dispositius de tercers enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les adreces del vostre domini personalitzat. Per a sol·licitar accés, ${ createTicket } descrivint els casos d'ús, quins dominis personalitzats voleu utilitzar i els volums de correu electrònic esperats per hora i per dia."
@@ -11445,7 +11439,7 @@
         "Contrasenya de recuperació"
       ],
       "Beta": [
-        "Versió Beta"
+        "Versió beta"
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -12897,8 +12891,8 @@
       "Sign in success (awaiting second factor)": [
         "Inici de sessió correcte (a l'espera del segon factor)"
       ],
-      "Sign in success (awaiting verify)": [
-        "Inici de sessió correcte (esperant la verificació)"
+      "Sign in success (awaiting verification)": [
+        "S'ha Iniciat la sessió correctament (a l'espera de la verificació)."
       ],
       "Sign out": [
         "Tanqueu la sessió"
@@ -15866,9 +15860,6 @@
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Només s'accepta l'euro per al SEPA. S'ha canviat la moneda. Utilitzeu el selector per revertir la vostra elecció."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
@@ -15929,6 +15920,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se us cobrarà ${ amountToCharge } al vostre mètode de pagament seleccionat."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
       "Your payment is still being processed": [
         "El vostre pagament encara s'està processant."
@@ -17320,8 +17314,9 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
-      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
-        "Àlies hide-my-email ${ FREE_PASS_ALIASES } per combatre el correu brossa"
+      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email àlies per combatre el correu brossa",
+        "${ FREE_PASS_ALIASES } hide-my-email àlies per combatre el correu brossa"
       ],
       "${ maxAddresses } address": [
         "Adreça de ${ maxAddresses }",
@@ -19970,10 +19965,10 @@
         "Per a Linux"
       ],
       "For macOS": [
-        "Per al macOS"
+        "Per a macOS"
       ],
       "For Windows": [
-        "Per al Windows"
+        "Per a Windows"
       ],
       "Forgot password": [
         "Heu oblidat la contrasenya."
