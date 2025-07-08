@@ -93,6 +93,9 @@
       "Apply": [
         "Применить"
       ],
+      "Ask me next time": [
+        "Спросить в следующий раз"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "В группе может быть не больше ${ maxContacts } контакта",
         "В группе может быть не больше ${ maxContacts } контактов",
@@ -429,6 +432,9 @@
       "Import contacts": [
         "Импортировать контакты"
       ],
+      "Import data": [
+        "Импортировать данные"
+      ],
       "Import emails": [
         "Импортировать электронную почту"
       ],
@@ -672,6 +678,9 @@
       "Save changes": [
         "Сохранить изменения"
       ],
+      "Save preferences": [
+        "Сохранить настройки"
+      ],
       "Search": [
         "Поиск"
       ],
@@ -700,7 +709,7 @@
         "Выбрать платежный цикл ${ billingText }"
       ],
       "Select country": [
-        "Выберите страну"
+        "Выбрать страну"
       ],
       "Set recovery methods": [
         "Установить методы восстановления"
@@ -946,6 +955,45 @@
         "Если выйти сейчас, импорт некоторых событий не завершится"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "200 GB storage": [
+        "200 ГБ хранилища"
+      ],
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Protect up to 10 devices": [
+        "Защитите до 10 устройств"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Stream your favorite content": [
+        "Смотрите любимый контент"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Используйте свой собственный домен электронной почты"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Приложения ${ BRAND_NAME }"
@@ -982,6 +1030,14 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
+      "Keep subscription": [
+        "Продолжить подписку"
       ]
     },
     "bf2023: Deal details": {
@@ -4366,6 +4422,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Контакт откреплен от группы ${ contactGroupName }"
       ],
+      "Converting document...": [
+        "Преобразование документа..."
+      ],
       "Copy the link to clipboard": [
         "Скопировать ссылку в буфер обмена"
       ],
@@ -4414,6 +4473,9 @@
       "Creating link to folder": [
         "Создание ссылки на папку"
       ],
+      "Creating new document...": [
+        "Создание нового документа..."
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
       ],
@@ -4454,7 +4516,7 @@
         "Документ находится в Корзине"
       ],
       "Document moved to trash": [
-        "Документ перемещен в Корзину"
+        "Документ перемещён в Корзину"
       ],
       "Document owner has the password": [
         "Пароль находится у владельца документа"
@@ -4485,6 +4547,9 @@
       ],
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
+      ],
+      "Each code can only be used once": [
+        "Каждый код может быть использован только один раз"
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
@@ -4522,8 +4587,14 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Введите собственный пароль (как администратор организации)."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Ошибка преобразования документа: ${ errorMessage }"
       ],
       "Error Syncing": [
         "Ошибка синхронизации"
@@ -4584,6 +4655,9 @@
       ],
       "Geoblocking": [
         "Геоблокировка"
+      ],
+      "Get Notified About Comments": [
+        "Получать уведомления о комментариях"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Перейти на ${ DRIVE_APP_NAME }"
@@ -4731,6 +4805,9 @@
       ],
       "Low Priority": [
         "Низкий приоритет"
+      ],
+      "Making a copy...": [
+        "Создание копии..."
       ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
@@ -5834,6 +5911,9 @@
       "Emails (last month)": [
         "Письма (последний месяц)"
       ],
+      "Enable email notifications": [
+        "Включить уведомления по электронной почте"
+      ],
       "Encrypt emails": [
         "Шифровать письма"
       ],
@@ -5890,6 +5970,9 @@
       ],
       "Import to:": [
         "Импортировать в:"
+      ],
+      "Include document name in notification": [
+        "Включить в уведомление название документа"
       ],
       "Include message and file name in invite email": [
         "Включите сообщение и имя файла в приглашение по электронной почте"
@@ -6482,7 +6565,7 @@
         "Comma-separated values (CSV)"
       ],
       "Electronic publication (EPUB)": [
-        "Электронная публикация (EPUP)"
+        "Electronic publication (EPUB)"
       ],
       "Flash Video": [
         "Видео Flash"
@@ -6581,7 +6664,7 @@
         "Неизвестный файл"
       ],
       "Video file": [
-        "Видео файл"
+        "Видеофайл"
       ],
       "Waveform Audio Format": [
         "Waveform Audio Format (WAV)"
@@ -7177,10 +7260,10 @@
     },
     "new_plans: feature highlight": {
       "${ admins } admin": [
-        "${ admins }администратор",
-        "${ admins }администратора",
-        "${ admins }администраторов",
-        "${ admins }администраторов"
+        "${ admins } администратор",
+        "${ admins } администратора",
+        "${ admins } администраторов",
+        "${ admins } администраторов"
       ],
       "${ users } user": [
         "${ users } пользователь",
@@ -7898,8 +7981,14 @@
       "${ pricingTitle } offer expires today!": [
         "Предложение ${ pricingTitle } истекает сегодня!"
       ],
+      "Don’t show this again": [
+        "Больше не показывать"
+      ],
       "Don’t show this offer again": [
         "Больше не показывать это предложение"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Получить ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Попробуйте Drive Plus всего за ${ pricingTitle }"
@@ -7953,9 +8042,17 @@
         "Ваша подписка скоро обновится"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 дополнительных премиум-функций"
+      ],
+      "500 GB secure storage": [
+        "500 ГБ защищённого хранилища"
       ],
       "Custom email domain": [
         "Пользовательский домен электронной почты"
@@ -7977,6 +8074,11 @@
       ],
       "Storage": [
         "Хранилище"
+      ]
+    },
+    "Onboarding Trial": {
+      "Continue": [
+        "Продолжить"
       ]
     },
     "Option": {
@@ -8107,6 +8209,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Банковский перевод"
       ],
@@ -8663,7 +8768,7 @@
     },
     "session_recovery:available:notification": {
       "Password saved": [
-        "Пароль сохранен"
+        "Пароль сохранён"
       ]
     },
     "session_recovery:available:title": {
@@ -8775,7 +8880,7 @@
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Сбросить пароль"
+        "Сброс пароля"
       ]
     },
     "session_recovery:sign_out:title": {
@@ -8966,6 +9071,9 @@
       ]
     },
     "specialoffer: Link": {
+      "Get unlimited aliases": [
+        "Получить неограниченное число псевдонимов"
+      ],
       "Go to subscription plans": [
         "Перейти к тарифам"
       ],
@@ -9812,7 +9920,7 @@
         "Сбросить изменения?"
       ],
       "Docs": [
-        "Документы"
+        "Docs"
       ],
       "Document verification failed": [
         "Проверка пользователя не удалась"
@@ -10171,6 +10279,9 @@
       "Stop sharing?": [
         "Прекратить доступ?"
       ],
+      "Subscription canceled": [
+        "Подписка отменена"
+      ],
       "Summary": [
         "Сводка"
       ],
@@ -10364,6 +10475,11 @@
         "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
+    "Unlimited offer": {
+      "Only": [
+        "Только"
+      ]
+    },
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
@@ -10422,8 +10538,8 @@
         "${ n } подключений к VPN"
       ],
       "${ numberOfCountries } country": [
+        "${ numberOfCountries } страна",
         "${ numberOfCountries } страны",
-        "${ numberOfCountries } стран",
         "${ numberOfCountries } стран",
         "${ numberOfCountries } стран"
       ],
