@@ -46,7 +46,7 @@ export const useRenameDeviceModalState = ({
                 createNotification({ text: successNotificationText });
             })
             .catch((e) => {
-                handleError(e, unhandledErrorNotificationText, { deviceUid, inputName });
+                handleError(e, unhandledErrorNotificationText, { deviceUid });
             });
 
         onClose?.();
