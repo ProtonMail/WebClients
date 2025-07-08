@@ -24,17 +24,19 @@ export const getCurrency = (searchParams: URLSearchParams, key: string = 'curren
     return undefined;
 };
 
-export const getCycle = (searchParams: URLSearchParams, key: string = 'cycle') => {
-    const cycleParam = searchParams.get(key) || '';
+export const getCycle = (searchParams: URLSearchParams, keys: string | string[] = ['cycle', 'billing']) => {
+    const keysArray = Array.isArray(keys) ? keys : [keys];
 
-    const cycle = +cycleParam;
+    for (const key of keysArray) {
+        const cycleParam = searchParams.get(key) || '';
 
-    if (isNaN(cycle)) {
-        return undefined;
-    }
+        if (cycleParam) {
+            const cycle = +cycleParam;
 
-    if (isEnumValue(cycle, CYCLE)) {
-        return cycle as Cycle;
+            if (!isNaN(cycle) && isEnumValue(cycle, CYCLE)) {
+                return cycle as Cycle;
+            }
+        }
     }
 
     return undefined;
